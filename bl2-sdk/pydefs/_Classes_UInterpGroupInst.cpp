@@ -3,13 +3,12 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpGroupInst()
+void Export_pystes_UInterpGroupInst(py::object m)
 {
-    py::class_< UInterpGroupInst,  UObject   >("UInterpGroupInst")
+    py::class_< UInterpGroupInst,  UObject   >(m, "UInterpGroupInst")
         .def_readwrite("Group", &UInterpGroupInst::Group)
         .def_readwrite("GroupActor", &UInterpGroupInst::GroupActor)
         .def_readwrite("TrackInst", &UInterpGroupInst::TrackInst)
         .def("StaticClass", &UInterpGroupInst::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

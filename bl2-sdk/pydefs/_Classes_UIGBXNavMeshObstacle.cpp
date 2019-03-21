@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIGBXNavMeshObstacle()
+void Export_pystes_UIGBXNavMeshObstacle(py::object m)
 {
-    py::class_< UIGBXNavMeshObstacle,  UInterface   >("UIGBXNavMeshObstacle")
+    py::class_< UIGBXNavMeshObstacle,  UInterface   >(m, "UIGBXNavMeshObstacle")
         .def("StaticClass", &UIGBXNavMeshObstacle::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FScaledHUDElement()
+void Export_pystes_FScaledHUDElement(py::object m)
 {
-    py::class_< FScaledHUDElement >("FScaledHUDElement")
+    py::class_< FScaledHUDElement >(m, "FScaledHUDElement")
         .def_readwrite("ElementName", &FScaledHUDElement::ElementName)
         .def_readwrite("Anchor", &FScaledHUDElement::Anchor)
   ;

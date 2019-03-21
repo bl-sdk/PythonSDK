@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowInventoryPartDefinition()
+void Export_pystes_UWillowInventoryPartDefinition(py::object m)
 {
-    py::class_< UWillowInventoryPartDefinition,  UGBXDefinition   >("UWillowInventoryPartDefinition")
+    py::class_< UWillowInventoryPartDefinition,  UGBXDefinition   >(m, "UWillowInventoryPartDefinition")
         .def_readwrite("Material", &UWillowInventoryPartDefinition::Material)
         .def_readwrite("GestaltModeSkeletalMeshName", &UWillowInventoryPartDefinition::GestaltModeSkeletalMeshName)
         .def_readwrite("NongestaltSkeletalMesh", &UWillowInventoryPartDefinition::NongestaltSkeletalMesh)
@@ -21,6 +21,5 @@ void Export_pystes_UWillowInventoryPartDefinition()
         .def("AddAdditionalGestaltMeshNames", &UWillowInventoryPartDefinition::AddAdditionalGestaltMeshNames)
         .def("GetSkeletalMeshName", &UWillowInventoryPartDefinition::GetSkeletalMeshName)
         .def("GetRarityLevel", &UWillowInventoryPartDefinition::GetRarityLevel)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

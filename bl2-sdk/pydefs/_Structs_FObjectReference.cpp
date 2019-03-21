@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FObjectReference()
+void Export_pystes_FObjectReference(py::object m)
 {
-    py::class_< FObjectReference >("FObjectReference")
+    py::class_< FObjectReference >(m, "FObjectReference")
         .def_readwrite("Obj", &FObjectReference::Obj)
   ;
 }

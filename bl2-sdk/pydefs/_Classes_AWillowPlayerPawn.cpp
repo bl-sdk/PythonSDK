@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowPlayerPawn()
+void Export_pystes_AWillowPlayerPawn(py::object m)
 {
-    py::class_< AWillowPlayerPawn,  AWillowPawn   >("AWillowPlayerPawn")
+    py::class_< AWillowPlayerPawn,  AWillowPawn   >(m, "AWillowPlayerPawn")
         .def_readwrite("VfTable_IIProtectionTimer", &AWillowPlayerPawn::VfTable_IIProtectionTimer)
         .def_readwrite("VfTable_IIWeatherBehavior", &AWillowPlayerPawn::VfTable_IIWeatherBehavior)
         .def_readwrite("VfTable_IIGFxActorMovie", &AWillowPlayerPawn::VfTable_IIGFxActorMovie)
@@ -300,6 +300,5 @@ void Export_pystes_AWillowPlayerPawn()
         .def("InitRagdoll", &AWillowPlayerPawn::InitRagdoll)
         .def("OnNoLongerTargetedByAI", &AWillowPlayerPawn::OnNoLongerTargetedByAI)
         .def("OnTargetedByAI", &AWillowPlayerPawn::OnTargetedByAI)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

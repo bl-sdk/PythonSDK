@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDrunkenWaveComponent()
+void Export_pystes_UDrunkenWaveComponent(py::object m)
 {
-    py::class_< UDrunkenWaveComponent,  UMovementComponent   >("UDrunkenWaveComponent")
+    py::class_< UDrunkenWaveComponent,  UMovementComponent   >(m, "UDrunkenWaveComponent")
         .def_readwrite("MaxRandomWaveOffsetTime", &UDrunkenWaveComponent::MaxRandomWaveOffsetTime)
         .def_readwrite("Waves", &UDrunkenWaveComponent::Waves)
         .def_readwrite("GlobalWaveScale", &UDrunkenWaveComponent::GlobalWaveScale)
@@ -22,6 +22,5 @@ void Export_pystes_UDrunkenWaveComponent()
         .def("GenerateRandomNumberSeed", &UDrunkenBaseComponent::GenerateRandomNumberSeed)
         .def("SetRandomNumberSeed", &UDrunkenBaseComponent::SetRandomNumberSeed)
         .def("Init", &UDrunkenBaseComponent::Init)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

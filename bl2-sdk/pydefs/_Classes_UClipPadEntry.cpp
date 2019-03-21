@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UClipPadEntry()
+void Export_pystes_UClipPadEntry(py::object m)
 {
-    py::class_< UClipPadEntry,  UObject   >("UClipPadEntry")
+    py::class_< UClipPadEntry,  UObject   >(m, "UClipPadEntry")
         .def_readwrite("Title", &UClipPadEntry::Title)
         .def_readwrite("Text", &UClipPadEntry::Text)
         .def("StaticClass", &UClipPadEntry::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

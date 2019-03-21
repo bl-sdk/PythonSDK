@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_URB_BodySetup()
+void Export_pystes_URB_BodySetup(py::object m)
 {
-    py::class_< URB_BodySetup,  UObject   >("URB_BodySetup")
+    py::class_< URB_BodySetup,  UObject   >(m, "URB_BodySetup")
         .def_readwrite("SleepFamily", &URB_BodySetup::SleepFamily)
         .def_readwrite("BoneName", &URB_BodySetup::BoneName)
         .def_readwrite("PhysMaterial", &URB_BodySetup::PhysMaterial)
@@ -18,6 +18,5 @@ void Export_pystes_URB_BodySetup()
         .def_readwrite("COMNudge", &UKMeshProps::COMNudge)
         .def_readwrite("AggGeom", &UKMeshProps::AggGeom)
         .def("StaticClass", &URB_BodySetup::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

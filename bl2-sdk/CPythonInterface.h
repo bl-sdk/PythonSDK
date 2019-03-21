@@ -30,7 +30,7 @@ private:
 	int				DoFileAbsolute(const std::string& path);
 
 	PyObject*		m_pModule;
-	boost::python::object m_mainNamespace;
+	pybind11::object m_mainNamespace;
 	std::string		m_PythonPath;
 	std::string		m_StdoutBuffer;
 	std::string		m_StderrBuffer;

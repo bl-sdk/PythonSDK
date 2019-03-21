@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPlayerUIPreferences()
+void Export_pystes_FPlayerUIPreferences(py::object m)
 {
-    py::class_< FPlayerUIPreferences >("FPlayerUIPreferences")
+    py::class_< FPlayerUIPreferences >(m, "FPlayerUIPreferences")
         .def_readwrite("CharacterName", &FPlayerUIPreferences::CharacterName)
         .def_readwrite("PrimaryColor", &FPlayerUIPreferences::PrimaryColor)
         .def_readwrite("SecondaryColor", &FPlayerUIPreferences::SecondaryColor)

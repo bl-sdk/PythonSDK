@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ATcpLink()
+void Export_pystes_ATcpLink(py::object m)
 {
-    py::class_< ATcpLink,  AInfo   >("ATcpLink")
+    py::class_< ATcpLink,  AInfo   >(m, "ATcpLink")
         .def_readwrite("LinkState", &ATcpLink::LinkState)
         .def_readwrite("RemoteAddr", &ATcpLink::RemoteAddr)
         .def_readwrite("AcceptClass", &ATcpLink::AcceptClass)
@@ -45,6 +45,5 @@ void Export_pystes_ATcpLink()
         .def("Resolve", &AInternetLink::Resolve)
         .def("ParseURL", &AInternetLink::ParseURL)
         .def("IsDataPending", &AInternetLink::IsDataPending)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

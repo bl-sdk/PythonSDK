@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIWillowScrollingListDataProvider()
+void Export_pystes_UIWillowScrollingListDataProvider(py::object m)
 {
-    py::class_< UIWillowScrollingListDataProvider,  UInterface   >("UIWillowScrollingListDataProvider")
+    py::class_< UIWillowScrollingListDataProvider,  UInterface   >(m, "UIWillowScrollingListDataProvider")
         .def("StaticClass", &UIWillowScrollingListDataProvider::StaticClass, py::return_value_policy::reference)
         .def("Cleanup", &UIWillowScrollingListDataProvider::Cleanup)
         .def("GetSubmenuForEvent", &UIWillowScrollingListDataProvider::GetSubmenuForEvent, py::return_value_policy::reference)
@@ -19,6 +19,5 @@ void Export_pystes_UIWillowScrollingListDataProvider()
         .def("OnPush", &UIWillowScrollingListDataProvider::OnPush)
         .def("GetMenuTooltip", &UIWillowScrollingListDataProvider::GetMenuTooltip)
         .def("GetMenuDisplayName", &UIWillowScrollingListDataProvider::GetMenuDisplayName)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

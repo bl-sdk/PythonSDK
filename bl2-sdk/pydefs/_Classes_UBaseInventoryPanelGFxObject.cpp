@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBaseInventoryPanelGFxObject()
+void Export_pystes_UBaseInventoryPanelGFxObject(py::object m)
 {
-    py::class_< UBaseInventoryPanelGFxObject,  UGFxObject   >("UBaseInventoryPanelGFxObject")
+    py::class_< UBaseInventoryPanelGFxObject,  UGFxObject   >(m, "UBaseInventoryPanelGFxObject")
         .def_readwrite("HandleRollOverArgs", &UBaseInventoryPanelGFxObject::HandleRollOverArgs)
         .def_readwrite("CellObjects", &UBaseInventoryPanelGFxObject::CellObjects)
         .def_readwrite("EmptyWidgetObjects", &UBaseInventoryPanelGFxObject::EmptyWidgetObjects)
@@ -34,6 +34,5 @@ void Export_pystes_UBaseInventoryPanelGFxObject()
         .def("GetSelectedThing", &UBaseInventoryPanelGFxObject::GetSelectedThing, py::return_value_policy::reference)
         .def("PanelOnInputKey", &UBaseInventoryPanelGFxObject::PanelOnInputKey)
         .def("Init", &UBaseInventoryPanelGFxObject::Init)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

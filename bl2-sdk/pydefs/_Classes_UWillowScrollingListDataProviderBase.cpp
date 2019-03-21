@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowScrollingListDataProviderBase()
+void Export_pystes_UWillowScrollingListDataProviderBase(py::object m)
 {
-    py::class_< UWillowScrollingListDataProviderBase,  UObject   >("UWillowScrollingListDataProviderBase")
+    py::class_< UWillowScrollingListDataProviderBase,  UObject   >(m, "UWillowScrollingListDataProviderBase")
         .def_readwrite("MenuDisplayName", &UWillowScrollingListDataProviderBase::MenuDisplayName)
         .def_readwrite("MenuTooltip", &UWillowScrollingListDataProviderBase::MenuTooltip)
         .def("StaticClass", &UWillowScrollingListDataProviderBase::StaticClass, py::return_value_policy::reference)
@@ -22,6 +22,5 @@ void Export_pystes_UWillowScrollingListDataProviderBase()
         .def("OnPush", &UWillowScrollingListDataProviderBase::OnPush)
         .def("GetMenuTooltip", &UWillowScrollingListDataProviderBase::GetMenuTooltip)
         .def("GetMenuDisplayName", &UWillowScrollingListDataProviderBase::GetMenuDisplayName)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

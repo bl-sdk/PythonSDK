@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTextureRenderTarget2D()
+void Export_pystes_UTextureRenderTarget2D(py::object m)
 {
-    py::class_< UTextureRenderTarget2D,  UTexture   >("UTextureRenderTarget2D")
+    py::class_< UTextureRenderTarget2D,  UTexture   >(m, "UTextureRenderTarget2D")
         .def_readwrite("SizeX", &UTextureRenderTarget2D::SizeX)
         .def_readwrite("SizeY", &UTextureRenderTarget2D::SizeY)
         .def_readwrite("Format", &UTextureRenderTarget2D::Format)
@@ -15,6 +15,5 @@ void Export_pystes_UTextureRenderTarget2D()
         .def_readwrite("TargetGamma", &UTextureRenderTarget::TargetGamma)
         .def("StaticClass", &UTextureRenderTarget2D::StaticClass, py::return_value_policy::reference)
         .def("Create", &UTextureRenderTarget2D::Create, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AInventoryManager()
+void Export_pystes_AInventoryManager(py::object m)
 {
-    py::class_< AInventoryManager,  AActor   >("AInventoryManager")
+    py::class_< AInventoryManager,  AActor   >(m, "AInventoryManager")
         .def_readwrite("InventoryChain", &AInventoryManager::InventoryChain)
         .def_readwrite("PendingWeapon", &AInventoryManager::PendingWeapon)
         .def_readwrite("PendingOffHandWeapon", &AInventoryManager::PendingOffHandWeapon)
@@ -50,6 +50,5 @@ void Export_pystes_AInventoryManager()
         .def("GetPendingFireLength", &AInventoryManager::GetPendingFireLength)
         .def("PostBeginPlay", &AInventoryManager::PostBeginPlay)
         .def("eventReplicatedEvent", &AInventoryManager::eventReplicatedEvent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

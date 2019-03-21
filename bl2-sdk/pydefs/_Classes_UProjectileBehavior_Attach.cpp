@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UProjectileBehavior_Attach()
+void Export_pystes_UProjectileBehavior_Attach(py::object m)
 {
-    py::class_< UProjectileBehavior_Attach,  UProjectileBehaviorBase   >("UProjectileBehavior_Attach")
+    py::class_< UProjectileBehavior_Attach,  UProjectileBehaviorBase   >(m, "UProjectileBehavior_Attach")
         .def_readwrite("AttachAkEvent", &UProjectileBehavior_Attach::AttachAkEvent)
         .def_readwrite("HitActor", &UProjectileBehavior_Attach::HitActor)
         .def_readwrite("HitNormal", &UProjectileBehavior_Attach::HitNormal)
@@ -13,6 +13,5 @@ void Export_pystes_UProjectileBehavior_Attach()
         .def_readwrite("BoneIndex", &UProjectileBehavior_Attach::BoneIndex)
         .def("StaticClass", &UProjectileBehavior_Attach::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UProjectileBehavior_Attach::ApplyBehaviorToContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

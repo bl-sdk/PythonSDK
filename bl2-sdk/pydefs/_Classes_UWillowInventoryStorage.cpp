@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowInventoryStorage()
+void Export_pystes_UWillowInventoryStorage(py::object m)
 {
-    py::class_< UWillowInventoryStorage,  UObject   >("UWillowInventoryStorage")
+    py::class_< UWillowInventoryStorage,  UObject   >(m, "UWillowInventoryStorage")
         .def_readwrite("MaxSlots", &UWillowInventoryStorage::MaxSlots)
         .def_readwrite("ChestSlots", &UWillowInventoryStorage::ChestSlots)
         .def_readwrite("TheChest", &UWillowInventoryStorage::TheChest)
@@ -35,6 +35,5 @@ void Export_pystes_UWillowInventoryStorage()
         .def("GetUnloadableCount", &UWillowInventoryStorage::GetUnloadableCount)
         .def("GetMaxSize", &UWillowInventoryStorage::GetMaxSize)
         .def("GetSize", &UWillowInventoryStorage::GetSize)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIDamageable()
+void Export_pystes_UIDamageable(py::object m)
 {
-    py::class_< UIDamageable,  UInterface   >("UIDamageable")
+    py::class_< UIDamageable,  UInterface   >(m, "UIDamageable")
         .def("StaticClass", &UIDamageable::StaticClass, py::return_value_policy::reference)
         .def("GetDamageSurfaceTypeFromHit", &UIDamageable::GetDamageSurfaceTypeFromHit)
         .def("GetIntrinsicArmor", &UIDamageable::GetIntrinsicArmor)
@@ -15,6 +15,5 @@ void Export_pystes_UIDamageable()
         .def("GetMaxShieldStrength", &UIDamageable::GetMaxShieldStrength)
         .def("GetShieldStrength", &UIDamageable::GetShieldStrength)
         .def("NotifyDamageTaken", &UIDamageable::NotifyDamageTaken)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

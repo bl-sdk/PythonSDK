@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRemovedPopulationActor()
+void Export_pystes_FRemovedPopulationActor(py::object m)
 {
-    py::class_< FRemovedPopulationActor >("FRemovedPopulationActor")
+    py::class_< FRemovedPopulationActor >(m, "FRemovedPopulationActor")
         .def_readwrite("CreationFlags", &FRemovedPopulationActor::CreationFlags)
         .def_readwrite("FactoryPath", &FRemovedPopulationActor::FactoryPath)
   ;

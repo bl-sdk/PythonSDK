@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPrefabSequenceContainer()
+void Export_pystes_UPrefabSequenceContainer(py::object m)
 {
-    py::class_< UPrefabSequenceContainer,  USequence   >("UPrefabSequenceContainer")
+    py::class_< UPrefabSequenceContainer,  USequence   >(m, "UPrefabSequenceContainer")
         .def("StaticClass", &UPrefabSequenceContainer::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

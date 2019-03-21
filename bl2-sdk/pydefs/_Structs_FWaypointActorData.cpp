@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FWaypointActorData()
+void Export_pystes_FWaypointActorData(py::object m)
 {
-    py::class_< FWaypointActorData >("FWaypointActorData")
+    py::class_< FWaypointActorData >(m, "FWaypointActorData")
         .def_readwrite("WaypointActor", &FWaypointActorData::WaypointActor)
         .def_readwrite("WaypointObjective", &FWaypointActorData::WaypointObjective)
         .def_readwrite("Waypoints", &FWaypointActorData::Waypoints)

@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionzSoftLight()
+void Export_pystes_UMaterialExpressionzSoftLight(py::object m)
 {
-    py::class_< UMaterialExpressionzSoftLight,  UMaterialExpressionBlendModeBase   >("UMaterialExpressionzSoftLight")
+    py::class_< UMaterialExpressionzSoftLight,  UMaterialExpressionBlendModeBase   >(m, "UMaterialExpressionzSoftLight")
         .def("StaticClass", &UMaterialExpressionzSoftLight::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

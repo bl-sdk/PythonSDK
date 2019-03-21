@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTViewTarget()
+void Export_pystes_FTViewTarget(py::object m)
 {
-    py::class_< FTViewTarget >("FTViewTarget")
+    py::class_< FTViewTarget >(m, "FTViewTarget")
         .def_readwrite("Target", &FTViewTarget::Target)
         .def_readwrite("Controller", &FTViewTarget::Controller)
         .def_readwrite("POV", &FTViewTarget::POV)

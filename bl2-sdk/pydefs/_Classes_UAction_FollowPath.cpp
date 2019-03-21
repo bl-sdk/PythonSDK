@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_FollowPath()
+void Export_pystes_UAction_FollowPath(py::object m)
 {
-    py::class_< UAction_FollowPath,  UWillowActionSequencePawn   >("UAction_FollowPath")
+    py::class_< UAction_FollowPath,  UWillowActionSequencePawn   >(m, "UAction_FollowPath")
         .def_readwrite("PerchData", &UAction_FollowPath::PerchData)
         .def_readwrite("MoveNode", &UAction_FollowPath::MoveNode)
         .def_readwrite("NextNode", &UAction_FollowPath::NextNode)
@@ -38,6 +38,5 @@ void Export_pystes_UAction_FollowPath()
         .def("ForceCloak", &UAction_Burrow::ForceCloak)
         .def("CheckStateTransition", &UAction_Burrow::CheckStateTransition)
         .def("eventStart", &UAction_Burrow::eventStart)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

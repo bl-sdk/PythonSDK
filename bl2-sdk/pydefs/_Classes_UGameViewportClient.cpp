@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGameViewportClient()
+void Export_pystes_UGameViewportClient(py::object m)
 {
-    py::class_< UGameViewportClient,  UObject   >("UGameViewportClient")
+    py::class_< UGameViewportClient,  UObject   >(m, "UGameViewportClient")
         .def_readwrite("VfTable_FViewportClient", &UGameViewportClient::VfTable_FViewportClient)
         .def_readwrite("VfTable_FExec", &UGameViewportClient::VfTable_FExec)
         .def_readwrite("Viewport", &UGameViewportClient::Viewport)
@@ -80,6 +80,5 @@ void Export_pystes_UGameViewportClient()
         .def("HandleInputChar", &UGameViewportClient::HandleInputChar)
         .def("HandleInputAxis", &UGameViewportClient::HandleInputAxis)
         .def("HandleInputKey", &UGameViewportClient::HandleInputKey)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

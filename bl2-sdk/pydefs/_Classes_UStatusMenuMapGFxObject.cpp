@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UStatusMenuMapGFxObject()
+void Export_pystes_UStatusMenuMapGFxObject(py::object m)
 {
-    py::class_< UStatusMenuMapGFxObject,  UGFxObject   >("UStatusMenuMapGFxObject")
+    py::class_< UStatusMenuMapGFxObject,  UGFxObject   >(m, "UStatusMenuMapGFxObject")
         .def_readwrite("ViewBorder", &UStatusMenuMapGFxObject::ViewBorder)
         .def_readwrite("PanRate", &UStatusMenuMapGFxObject::PanRate)
         .def_readonly("CompassIconFrames", &UStatusMenuMapGFxObject::CompassIconFrames)
@@ -78,6 +78,5 @@ void Export_pystes_UStatusMenuMapGFxObject()
         .def("ApplyFlash", &UStatusMenuMapGFxObject::ApplyFlash)
         .def("SetMapHeader", &UStatusMenuMapGFxObject::SetMapHeader)
         .def("InitMapFrameVars", &UStatusMenuMapGFxObject::InitMapFrameVars)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

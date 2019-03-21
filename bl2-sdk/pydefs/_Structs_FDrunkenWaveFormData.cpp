@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDrunkenWaveFormData()
+void Export_pystes_FDrunkenWaveFormData(py::object m)
 {
-    py::class_< FDrunkenWaveFormData >("FDrunkenWaveFormData")
+    py::class_< FDrunkenWaveFormData >(m, "FDrunkenWaveFormData")
         .def_readwrite("WaveFreq", &FDrunkenWaveFormData::WaveFreq)
         .def_readwrite("WaveAmp", &FDrunkenWaveFormData::WaveAmp)
         .def_readwrite("WavePhase", &FDrunkenWaveFormData::WavePhase)

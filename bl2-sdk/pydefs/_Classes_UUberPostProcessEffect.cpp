@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUberPostProcessEffect()
+void Export_pystes_UUberPostProcessEffect(py::object m)
 {
-    py::class_< UUberPostProcessEffect,  UPostProcessEffect   >("UUberPostProcessEffect")
+    py::class_< UUberPostProcessEffect,  UPostProcessEffect   >(m, "UUberPostProcessEffect")
         .def_readwrite("SceneShadows", &UUberPostProcessEffect::SceneShadows)
         .def_readwrite("SceneHighLights", &UUberPostProcessEffect::SceneHighLights)
         .def_readwrite("SceneMidTones", &UUberPostProcessEffect::SceneMidTones)
@@ -62,6 +62,5 @@ void Export_pystes_UUberPostProcessEffect()
         .def_readwrite("TunnelVisionScaleOverride", &UDOFEffect::TunnelVisionScaleOverride)
         .def_readwrite("TunnelVisionYOffsetOverride", &UDOFEffect::TunnelVisionYOffsetOverride)
         .def("StaticClass", &UUberPostProcessEffect::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTaggedGFxMovie()
+void Export_pystes_FTaggedGFxMovie(py::object m)
 {
-    py::class_< FTaggedGFxMovie >("FTaggedGFxMovie")
+    py::class_< FTaggedGFxMovie >(m, "FTaggedGFxMovie")
         .def_readwrite("Movie", &FTaggedGFxMovie::Movie)
         .def_readwrite("Tag", &FTaggedGFxMovie::Tag)
   ;

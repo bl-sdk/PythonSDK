@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APopulationEncounter()
+void Export_pystes_APopulationEncounter(py::object m)
 {
-    py::class_< APopulationEncounter,  AInfo   >("APopulationEncounter")
+    py::class_< APopulationEncounter,  AInfo   >(m, "APopulationEncounter")
         .def_readwrite("EncounterPopulationDef", &APopulationEncounter::EncounterPopulationDef)
         .def_readwrite("MemberOutposts", &APopulationEncounter::MemberOutposts)
         .def_readwrite("MemberOpportunities", &APopulationEncounter::MemberOpportunities)
@@ -20,6 +20,5 @@ void Export_pystes_APopulationEncounter()
         .def("OnToggle", &APopulationEncounter::OnToggle)
         .def("UpdateOpportunityEnabledStates", &APopulationEncounter::UpdateOpportunityEnabledStates)
         .def("UpdateKismetNotifications", &APopulationEncounter::UpdateKismetNotifications)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

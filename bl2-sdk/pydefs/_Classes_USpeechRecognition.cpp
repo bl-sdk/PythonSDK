@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpeechRecognition()
+void Export_pystes_USpeechRecognition(py::object m)
 {
-    py::class_< USpeechRecognition,  UObject   >("USpeechRecognition")
+    py::class_< USpeechRecognition,  UObject   >(m, "USpeechRecognition")
         .def_readwrite("Language", &USpeechRecognition::Language)
         .def_readwrite("ConfidenceThreshhold", &USpeechRecognition::ConfidenceThreshhold)
         .def_readwrite("Vocabularies", &USpeechRecognition::Vocabularies)
@@ -15,6 +15,5 @@ void Export_pystes_USpeechRecognition()
         .def_readonly("InstanceData", &USpeechRecognition::InstanceData)
         .def_readwrite("FnxVoiceData", &USpeechRecognition::FnxVoiceData)
         .def("StaticClass", &USpeechRecognition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSaveGameManager()
+void Export_pystes_UWillowSaveGameManager(py::object m)
 {
-    py::class_< UWillowSaveGameManager,  UObject   >("UWillowSaveGameManager")
+    py::class_< UWillowSaveGameManager,  UObject   >(m, "UWillowSaveGameManager")
         .def_readwrite("VfTable_FTickableObject", &UWillowSaveGameManager::VfTable_FTickableObject)
         .def_readonly("AsyncResult", &UWillowSaveGameManager::AsyncResult)
         .def_readonly("CurrentState", &UWillowSaveGameManager::CurrentState)
@@ -83,6 +83,5 @@ void Export_pystes_UWillowSaveGameManager()
         .def("OnValidationComplete", &UWillowSaveGameManager::OnValidationComplete)
         .def("OnDeleteComplete", &UWillowSaveGameManager::OnDeleteComplete)
         .def("GetResult", &UWillowSaveGameManager::GetResult)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHUDWidget_Missions()
+void Export_pystes_UHUDWidget_Missions(py::object m)
 {
-    py::class_< UHUDWidget_Missions,  UHUDWidget_Base   >("UHUDWidget_Missions")
+    py::class_< UHUDWidget_Missions,  UHUDWidget_Base   >(m, "UHUDWidget_Missions")
         .def_readwrite("CachedActiveMissionObjectives", &UHUDWidget_Missions::CachedActiveMissionObjectives)
         .def_readwrite("CachedBranchedMissionObjectives", &UHUDWidget_Missions::CachedBranchedMissionObjectives)
         .def_readwrite("DisplayedActiveMissionObjectives", &UHUDWidget_Missions::DisplayedActiveMissionObjectives)
@@ -43,6 +43,5 @@ void Export_pystes_UHUDWidget_Missions()
         .def("Update", &UHUDWidget_Missions::Update)
         .def("Deinit", &UHUDWidget_Missions::Deinit)
         .def("Init", &UHUDWidget_Missions::Init)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

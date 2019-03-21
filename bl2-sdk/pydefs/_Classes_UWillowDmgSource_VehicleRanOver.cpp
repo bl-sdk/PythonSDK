@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowDmgSource_VehicleRanOver()
+void Export_pystes_UWillowDmgSource_VehicleRanOver(py::object m)
 {
-    py::class_< UWillowDmgSource_VehicleRanOver,  UWillowDamageSource   >("UWillowDmgSource_VehicleRanOver")
+    py::class_< UWillowDmgSource_VehicleRanOver,  UWillowDamageSource   >(m, "UWillowDmgSource_VehicleRanOver")
         .def("StaticClass", &UWillowDmgSource_VehicleRanOver::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FObjectiveIcon()
+void Export_pystes_FObjectiveIcon(py::object m)
 {
-    py::class_< FObjectiveIcon >("FObjectiveIcon")
+    py::class_< FObjectiveIcon >(m, "FObjectiveIcon")
         .def_readwrite("TransitionStartTime", &FObjectiveIcon::TransitionStartTime)
         .def_readwrite("LastLocation", &FObjectiveIcon::LastLocation)
         .def_readwrite("FadeAlpha", &FObjectiveIcon::FadeAlpha)

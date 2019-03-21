@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowPlayerController()
+void Export_pystes_AWillowPlayerController(py::object m)
 {
-    py::class_< AWillowPlayerController,  AGearboxPlayerController   >("AWillowPlayerController")
+    py::class_< AWillowPlayerController,  AGearboxPlayerController   >(m, "AWillowPlayerController")
         .def_readwrite("VfTable_IIUpdatePostProcessOverride", &AWillowPlayerController::VfTable_IIUpdatePostProcessOverride)
         .def_readwrite("VfTable_IIControllerLocator", &AWillowPlayerController::VfTable_IIControllerLocator)
         .def_readwrite("VfTable_IIPlayerBehavior", &AWillowPlayerController::VfTable_IIPlayerBehavior)
@@ -2061,6 +2061,5 @@ void Export_pystes_AWillowPlayerController()
         .def("OnSkillGradeChanged", &AWillowPlayerController::OnSkillGradeChanged)
         .def("PreProfileWriteSaveComplete", &AWillowPlayerController::PreProfileWriteSaveComplete)
         .def("OnDownloadPatcherFilesComplete", &AWillowPlayerController::OnDownloadPatcherFilesComplete)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

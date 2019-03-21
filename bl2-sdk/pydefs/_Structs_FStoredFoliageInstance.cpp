@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FStoredFoliageInstance()
+void Export_pystes_FStoredFoliageInstance(py::object m)
 {
-    py::class_< FStoredFoliageInstance >("FStoredFoliageInstance")
+    py::class_< FStoredFoliageInstance >(m, "FStoredFoliageInstance")
         .def_readonly("StaticLighting", &FStoredFoliageInstance::StaticLighting)
         .def_readwrite("Location", &FFoliageInstanceBase::Location)
         .def_readwrite("XAxis", &FFoliageInstanceBase::XAxis)

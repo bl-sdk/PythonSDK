@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowDialogEchoActor()
+void Export_pystes_AWillowDialogEchoActor(py::object m)
 {
-    py::class_< AWillowDialogEchoActor,  AActor   >("AWillowDialogEchoActor")
+    py::class_< AWillowDialogEchoActor,  AActor   >(m, "AWillowDialogEchoActor")
         .def_readwrite("VfTable_IGearboxDialogInterface", &AWillowDialogEchoActor::VfTable_IGearboxDialogInterface)
         .def_readwrite("NameTag", &AWillowDialogEchoActor::NameTag)
         .def_readwrite("DialogComponent", &AWillowDialogEchoActor::DialogComponent)
@@ -21,6 +21,5 @@ void Export_pystes_AWillowDialogEchoActor()
         .def("CanTalk", &AWillowDialogEchoActor::CanTalk)
         .def("eventServerDialog_TriggerEvent", &AWillowDialogEchoActor::eventServerDialog_TriggerEvent)
         .def("eventReplicatedEvent", &AWillowDialogEchoActor::eventReplicatedEvent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

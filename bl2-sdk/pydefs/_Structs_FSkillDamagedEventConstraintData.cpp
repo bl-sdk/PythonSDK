@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSkillDamagedEventConstraintData()
+void Export_pystes_FSkillDamagedEventConstraintData(py::object m)
 {
-    py::class_< FSkillDamagedEventConstraintData >("FSkillDamagedEventConstraintData")
+    py::class_< FSkillDamagedEventConstraintData >(m, "FSkillDamagedEventConstraintData")
         .def_readwrite("DamageTypeConstraint", &FSkillDamagedEventConstraintData::DamageTypeConstraint)
         .def_readwrite("DamageSourceConstraint", &FSkillDamagedEventConstraintData::DamageSourceConstraint)
   ;

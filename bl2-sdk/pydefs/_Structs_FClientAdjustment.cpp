@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FClientAdjustment()
+void Export_pystes_FClientAdjustment(py::object m)
 {
-    py::class_< FClientAdjustment >("FClientAdjustment")
+    py::class_< FClientAdjustment >(m, "FClientAdjustment")
         .def_readwrite("TimeStamp", &FClientAdjustment::TimeStamp)
         .def_readwrite("newPhysics", &FClientAdjustment::newPhysics)
         .def_readwrite("NewLoc", &FClientAdjustment::NewLoc)

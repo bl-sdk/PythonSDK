@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPCContextMenuItem()
+void Export_pystes_FPCContextMenuItem(py::object m)
 {
-    py::class_< FPCContextMenuItem >("FPCContextMenuItem")
+    py::class_< FPCContextMenuItem >(m, "FPCContextMenuItem")
         .def_readwrite("Caption", &FPCContextMenuItem::Caption)
         .def_readwrite("Action", &FPCContextMenuItem::Action)
   ;

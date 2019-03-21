@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FEdgePointer()
+void Export_pystes_FEdgePointer(py::object m)
 {
-    py::class_< FEdgePointer >("FEdgePointer")
+    py::class_< FEdgePointer >(m, "FEdgePointer")
         .def_readwrite("Dummy", &FEdgePointer::Dummy)
   ;
 }

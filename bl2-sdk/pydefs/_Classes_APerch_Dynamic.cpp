@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APerch_Dynamic()
+void Export_pystes_APerch_Dynamic(py::object m)
 {
-    py::class_< APerch_Dynamic,  APerch   >("APerch_Dynamic")
+    py::class_< APerch_Dynamic,  APerch   >(m, "APerch_Dynamic")
         .def("StaticClass", &APerch_Dynamic::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

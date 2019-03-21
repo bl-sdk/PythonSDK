@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCharacterSelectionGFxObject()
+void Export_pystes_UCharacterSelectionGFxObject(py::object m)
 {
-    py::class_< UCharacterSelectionGFxObject,  UGFxObject   >("UCharacterSelectionGFxObject")
+    py::class_< UCharacterSelectionGFxObject,  UGFxObject   >(m, "UCharacterSelectionGFxObject")
         .def("StaticClass", &UCharacterSelectionGFxObject::StaticClass, py::return_value_policy::reference)
         .def("FadeIn", &UCharacterSelectionGFxObject::FadeIn)
         .def("BeginClose", &UCharacterSelectionGFxObject::BeginClose)
@@ -21,6 +21,5 @@ void Export_pystes_UCharacterSelectionGFxObject()
         .def("SetCharacterInfo", &UCharacterSelectionGFxObject::SetCharacterInfo)
         .def("CommitSelectableCharacters", &UCharacterSelectionGFxObject::CommitSelectableCharacters)
         .def("AddSelectableCharacter", &UCharacterSelectionGFxObject::AddSelectableCharacter)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

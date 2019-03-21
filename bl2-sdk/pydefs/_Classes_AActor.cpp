@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AActor()
+void Export_pystes_AActor(py::object m)
 {
-    py::class_< AActor,  UObject   >("AActor")
+    py::class_< AActor,  UObject   >(m, "AActor")
         .def_readwrite("VfTable_IIWorldBody", &AActor::VfTable_IIWorldBody)
         .def_readwrite("VfTable_IISpawnActor", &AActor::VfTable_IISpawnActor)
         .def_readwrite("VfTable_IIDamageCauser", &AActor::VfTable_IIDamageCauser)
@@ -366,6 +366,5 @@ void Export_pystes_AActor()
         .def("Sleep", &AActor::Sleep)
         .def("ConsoleCommand", &AActor::ConsoleCommand)
         .def("ForceUpdateComponents", &AActor::ForceUpdateComponents)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

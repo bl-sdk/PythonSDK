@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInstancedStaticMeshMappingInfo()
+void Export_pystes_FInstancedStaticMeshMappingInfo(py::object m)
 {
-    py::class_< FInstancedStaticMeshMappingInfo >("FInstancedStaticMeshMappingInfo")
+    py::class_< FInstancedStaticMeshMappingInfo >(m, "FInstancedStaticMeshMappingInfo")
         .def_readwrite("Mapping", &FInstancedStaticMeshMappingInfo::Mapping)
         .def_readwrite("LightMap", &FInstancedStaticMeshMappingInfo::LightMap)
         .def_readwrite("LightmapTexture", &FInstancedStaticMeshMappingInfo::LightmapTexture)

@@ -3,13 +3,12 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULocalItemMessage()
+void Export_pystes_ULocalItemMessage(py::object m)
 {
-    py::class_< ULocalItemMessage,  UWillowLocalMessage   >("ULocalItemMessage")
+    py::class_< ULocalItemMessage,  UWillowLocalMessage   >(m, "ULocalItemMessage")
         .def("StaticClass", &ULocalItemMessage::StaticClass, py::return_value_policy::reference)
         .def("GetItemString", &ULocalItemMessage::GetItemString)
         .def("GetItemColor", &ULocalItemMessage::GetItemColor)
         .def("ClientItemReceive", &ULocalItemMessage::ClientItemReceive)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

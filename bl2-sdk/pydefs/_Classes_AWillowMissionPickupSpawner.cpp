@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowMissionPickupSpawner()
+void Export_pystes_AWillowMissionPickupSpawner(py::object m)
 {
-    py::class_< AWillowMissionPickupSpawner,  AActor   >("AWillowMissionPickupSpawner")
+    py::class_< AWillowMissionPickupSpawner,  AActor   >(m, "AWillowMissionPickupSpawner")
         .def_readwrite("VfTable_IIMission", &AWillowMissionPickupSpawner::VfTable_IIMission)
         .def_readwrite("MissionItemDef", &AWillowMissionPickupSpawner::MissionItemDef)
         .def_readwrite("LinkedAreaWaypoint", &AWillowMissionPickupSpawner::LinkedAreaWaypoint)
@@ -22,6 +22,5 @@ void Export_pystes_AWillowMissionPickupSpawner()
         .def("eventMissionReactionStatusChanged", &AWillowMissionPickupSpawner::eventMissionReactionStatusChanged)
         .def("eventMissionReactionLevelLoad", &AWillowMissionPickupSpawner::eventMissionReactionLevelLoad)
         .def("eventPostBeginPlay", &AWillowMissionPickupSpawner::eventPostBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

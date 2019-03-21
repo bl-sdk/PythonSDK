@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AGearboxPlayerController()
+void Export_pystes_AGearboxPlayerController(py::object m)
 {
-    py::class_< AGearboxPlayerController,  AGamePlayerController   >("AGearboxPlayerController")
+    py::class_< AGearboxPlayerController,  AGamePlayerController   >(m, "AGearboxPlayerController")
         .def_readwrite("CurrentViewShake", &AGearboxPlayerController::CurrentViewShake)
         .def_readwrite("BaseDamageShake", &AGearboxPlayerController::BaseDamageShake)
         .def_readwrite("ShakeOffset", &AGearboxPlayerController::ShakeOffset)
@@ -105,6 +105,5 @@ void Export_pystes_AGearboxPlayerController()
         .def("PostBeginPlay", &AGearboxPlayerController::PostBeginPlay)
         .def("TryAndSpawnLeviathanChannel", &AGearboxPlayerController::TryAndSpawnLeviathanChannel)
         .def("GenerateNewSessionGuid", &AGearboxPlayerController::GenerateNewSessionGuid)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

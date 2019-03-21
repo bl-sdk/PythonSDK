@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSkillKillEventData()
+void Export_pystes_FSkillKillEventData(py::object m)
 {
-    py::class_< FSkillKillEventData,  FSpecializedBehaviorEvent   >("FSkillKillEventData")
+    py::class_< FSkillKillEventData,  FSpecializedBehaviorEvent   >(m, "FSkillKillEventData")
         .def_readwrite("EventType", &FSkillKillEventData::EventType)
         .def_readwrite("EventConstraints", &FSkillKillEventData::EventConstraints)
   ;

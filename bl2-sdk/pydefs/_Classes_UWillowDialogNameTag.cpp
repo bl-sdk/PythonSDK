@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowDialogNameTag()
+void Export_pystes_UWillowDialogNameTag(py::object m)
 {
-    py::class_< UWillowDialogNameTag,  UGearboxDialogNameTag   >("UWillowDialogNameTag")
+    py::class_< UWillowDialogNameTag,  UGearboxDialogNameTag   >(m, "UWillowDialogNameTag")
         .def_readwrite("CallerName", &UWillowDialogNameTag::CallerName)
         .def_readwrite("DefaultEchoPortrait", &UWillowDialogNameTag::DefaultEchoPortrait)
         .def_readwrite("EmotePortraits", &UWillowDialogNameTag::EmotePortraits)
@@ -16,6 +16,5 @@ void Export_pystes_UWillowDialogNameTag()
         .def("BeginStance", &UWillowDialogNameTag::BeginStance)
         .def("StaticHideEchoPortrait", &UWillowDialogNameTag::StaticHideEchoPortrait)
         .def("StaticShowEchoPortrait", &UWillowDialogNameTag::StaticShowEchoPortrait)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

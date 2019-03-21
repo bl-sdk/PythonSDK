@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SetRuleSet()
+void Export_pystes_UBehavior_SetRuleSet(py::object m)
 {
-    py::class_< UBehavior_SetRuleSet,  UBehaviorBase   >("UBehavior_SetRuleSet")
+    py::class_< UBehavior_SetRuleSet,  UBehaviorBase   >(m, "UBehavior_SetRuleSet")
         .def("StaticClass", &UBehavior_SetRuleSet::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

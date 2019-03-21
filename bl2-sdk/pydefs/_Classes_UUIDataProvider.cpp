@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIDataProvider()
+void Export_pystes_UUIDataProvider(py::object m)
 {
-    py::class_< UUIDataProvider,  UUIRoot   >("UUIDataProvider")
+    py::class_< UUIDataProvider,  UUIRoot   >(m, "UUIDataProvider")
         .def_readwrite("WriteAccessType", &UUIDataProvider::WriteAccessType)
         .def_readwrite("ProviderChangedNotifies", &UUIDataProvider::ProviderChangedNotifies)
         .def("StaticClass", &UUIDataProvider::StaticClass, py::return_value_policy::reference)
@@ -24,6 +24,5 @@ void Export_pystes_UUIDataProvider()
         .def("ParseArrayDelimiter", &UUIDataProvider::ParseArrayDelimiter)
         .def("GetProviderFieldType", &UUIDataProvider::GetProviderFieldType)
         .def("OnDataProviderPropertyChange", &UUIDataProvider::OnDataProviderPropertyChange)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGFxMovie3DDefinition()
+void Export_pystes_UWillowGFxMovie3DDefinition(py::object m)
 {
-    py::class_< UWillowGFxMovie3DDefinition,  UGFxMovieDefinition   >("UWillowGFxMovie3DDefinition")
+    py::class_< UWillowGFxMovie3DDefinition,  UGFxMovieDefinition   >(m, "UWillowGFxMovie3DDefinition")
         .def_readwrite("View3DFOV", &UWillowGFxMovie3DDefinition::View3DFOV)
         .def_readwrite("View3DScale", &UWillowGFxMovie3DDefinition::View3DScale)
         .def_readwrite("View3DTrans", &UWillowGFxMovie3DDefinition::View3DTrans)
@@ -15,6 +15,5 @@ void Export_pystes_UWillowGFxMovie3DDefinition()
         .def_readwrite("VerticalSplitscreenPanning", &UWillowGFxMovie3DDefinition::VerticalSplitscreenPanning)
         .def_readwrite("VerticalSplitscreenPanning_Spread", &UWillowGFxMovie3DDefinition::VerticalSplitscreenPanning_Spread)
         .def("StaticClass", &UWillowGFxMovie3DDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

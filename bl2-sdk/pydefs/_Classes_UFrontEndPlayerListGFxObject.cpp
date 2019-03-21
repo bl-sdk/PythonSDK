@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFrontEndPlayerListGFxObject()
+void Export_pystes_UFrontEndPlayerListGFxObject(py::object m)
 {
-    py::class_< UFrontEndPlayerListGFxObject,  UGFxObject   >("UFrontEndPlayerListGFxObject")
+    py::class_< UFrontEndPlayerListGFxObject,  UGFxObject   >(m, "UFrontEndPlayerListGFxObject")
         .def_readwrite("OwningMovie", &UFrontEndPlayerListGFxObject::OwningMovie)
         .def_readonly("UnknownData00", &UFrontEndPlayerListGFxObject::UnknownData00)
         .def_readwrite("PlayerListIds", &UFrontEndPlayerListGFxObject::PlayerListIds)
@@ -90,6 +90,5 @@ void Export_pystes_UFrontEndPlayerListGFxObject()
         .def("OnPlayerTalkingStateChange", &UFrontEndPlayerListGFxObject::OnPlayerTalkingStateChange)
         .def("ShutDown", &UFrontEndPlayerListGFxObject::ShutDown)
         .def("Init", &UFrontEndPlayerListGFxObject::Init)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULookingAtInjuredPlayerExpressionEvaluator()
+void Export_pystes_ULookingAtInjuredPlayerExpressionEvaluator(py::object m)
 {
-    py::class_< ULookingAtInjuredPlayerExpressionEvaluator,  UExpressionEvaluator   >("ULookingAtInjuredPlayerExpressionEvaluator")
+    py::class_< ULookingAtInjuredPlayerExpressionEvaluator,  UExpressionEvaluator   >(m, "ULookingAtInjuredPlayerExpressionEvaluator")
         .def("StaticClass", &ULookingAtInjuredPlayerExpressionEvaluator::StaticClass, py::return_value_policy::reference)
         .def("Evaluate", &ULookingAtInjuredPlayerExpressionEvaluator::Evaluate)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

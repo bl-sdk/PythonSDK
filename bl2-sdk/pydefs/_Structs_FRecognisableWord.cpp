@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRecognisableWord()
+void Export_pystes_FRecognisableWord(py::object m)
 {
-    py::class_< FRecognisableWord >("FRecognisableWord")
+    py::class_< FRecognisableWord >(m, "FRecognisableWord")
         .def_readwrite("Id", &FRecognisableWord::Id)
         .def_readwrite("ReferenceWord", &FRecognisableWord::ReferenceWord)
         .def_readwrite("PhoneticWord", &FRecognisableWord::PhoneticWord)

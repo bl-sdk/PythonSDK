@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USparkInitializationProcess()
+void Export_pystes_USparkInitializationProcess(py::object m)
 {
-    py::class_< USparkInitializationProcess,  UObject   >("USparkInitializationProcess")
+    py::class_< USparkInitializationProcess,  UObject   >(m, "USparkInitializationProcess")
         .def_readwrite("Data", &USparkInitializationProcess::Data)
         .def_readwrite("PlayerIndex", &USparkInitializationProcess::PlayerIndex)
         .def_readwrite("SparkInitializedDelegates", &USparkInitializationProcess::SparkInitializedDelegates)
@@ -49,6 +49,5 @@ void Export_pystes_USparkInitializationProcess()
         .def("Init", &UGearboxProcess::Init)
         .def("ContinueLoop", &UGearboxProcess::ContinueLoop)
         .def("StopLoop", &UGearboxProcess::StopLoop)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

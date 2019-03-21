@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UItemPickupGFxMovie()
+void Export_pystes_UItemPickupGFxMovie(py::object m)
 {
-    py::class_< UItemPickupGFxMovie,  UGearboxGFxMovie   >("UItemPickupGFxMovie")
+    py::class_< UItemPickupGFxMovie,  UGearboxGFxMovie   >(m, "UItemPickupGFxMovie")
         .def_readwrite("MatSrc", &UItemPickupGFxMovie::MatSrc)
         .def_readwrite("Particle", &UItemPickupGFxMovie::Particle)
         .def_readwrite("ParticleMatParamName", &UItemPickupGFxMovie::ParticleMatParamName)
@@ -75,6 +75,5 @@ void Export_pystes_UItemPickupGFxMovie()
         .def("UpdateHUDVisibility", &UWillowGFxMovie::UpdateHUDVisibility)
         .def("CleanupDestroyedMovies", &UWillowGFxMovie::CleanupDestroyedMovies)
         .def("SingleArgInvokeSF", &UWillowGFxMovie::SingleArgInvokeSF)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

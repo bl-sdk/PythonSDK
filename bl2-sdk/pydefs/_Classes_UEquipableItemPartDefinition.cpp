@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UEquipableItemPartDefinition()
+void Export_pystes_UEquipableItemPartDefinition(py::object m)
 {
-    py::class_< UEquipableItemPartDefinition,  UItemPartDefinition   >("UEquipableItemPartDefinition")
+    py::class_< UEquipableItemPartDefinition,  UItemPartDefinition   >(m, "UEquipableItemPartDefinition")
         .def("StaticClass", &UEquipableItemPartDefinition::StaticClass, py::return_value_policy::reference)
         .def("OnUnequipped", &UEquipableItemPartDefinition::OnUnequipped)
         .def("OnEquipped", &UEquipableItemPartDefinition::OnEquipped)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

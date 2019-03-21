@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAudioDevice()
+void Export_pystes_UAudioDevice(py::object m)
 {
-    py::class_< UAudioDevice,  USubsystem   >("UAudioDevice")
+    py::class_< UAudioDevice,  USubsystem   >(m, "UAudioDevice")
         .def_readwrite("MaxChannels", &UAudioDevice::MaxChannels)
         .def_readwrite("CommonAudioPoolSize", &UAudioDevice::CommonAudioPoolSize)
         .def_readwrite("LowPassFilterResonance", &UAudioDevice::LowPassFilterResonance)
@@ -54,6 +54,5 @@ void Export_pystes_UAudioDevice()
         .def("StaticClass", &UAudioDevice::StaticClass, py::return_value_policy::reference)
         .def("FindSoundClass", &UAudioDevice::FindSoundClass, py::return_value_policy::reference)
         .def("SetSoundMode", &UAudioDevice::SetSoundMode)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

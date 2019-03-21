@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGFxUIManagerDefinition()
+void Export_pystes_UWillowGFxUIManagerDefinition(py::object m)
 {
-    py::class_< UWillowGFxUIManagerDefinition,  UGBXDefinition   >("UWillowGFxUIManagerDefinition")
+    py::class_< UWillowGFxUIManagerDefinition,  UGBXDefinition   >(m, "UWillowGFxUIManagerDefinition")
         .def_readonly("MeshTranslation", &UWillowGFxUIManagerDefinition::MeshTranslation)
         .def_readwrite("MeshRotation", &UWillowGFxUIManagerDefinition::MeshRotation)
         .def_readwrite("ViewOffsetClamp", &UWillowGFxUIManagerDefinition::ViewOffsetClamp)
@@ -19,6 +19,5 @@ void Export_pystes_UWillowGFxUIManagerDefinition()
         .def_readwrite("RenderTextureSize", &UWillowGFxUIManagerDefinition::RenderTextureSize)
         .def("StaticClass", &UWillowGFxUIManagerDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetTranslation", &UWillowGFxUIManagerDefinition::GetTranslation)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

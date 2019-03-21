@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDownloadableItemSetDefinition()
+void Export_pystes_UDownloadableItemSetDefinition(py::object m)
 {
-    py::class_< UDownloadableItemSetDefinition,  UDownloadableContentDefinition   >("UDownloadableItemSetDefinition")
+    py::class_< UDownloadableItemSetDefinition,  UDownloadableContentDefinition   >(m, "UDownloadableItemSetDefinition")
         .def_readwrite("DefaultAttributePresentation", &UDownloadableItemSetDefinition::DefaultAttributePresentation)
         .def_readwrite("ItemAttributePresentationOverride", &UDownloadableItemSetDefinition::ItemAttributePresentationOverride)
         .def_readwrite("ArtifactAttributePresentationOverride", &UDownloadableItemSetDefinition::ArtifactAttributePresentationOverride)
@@ -16,6 +16,5 @@ void Export_pystes_UDownloadableItemSetDefinition()
         .def("StaticClass", &UDownloadableItemSetDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetDLCRestrictedMessage", &UDownloadableItemSetDefinition::GetDLCRestrictedMessage)
         .def("CanUse", &UDownloadableItemSetDefinition::CanUse)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

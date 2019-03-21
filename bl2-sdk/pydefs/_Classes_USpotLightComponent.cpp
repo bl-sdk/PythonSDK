@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpotLightComponent()
+void Export_pystes_USpotLightComponent(py::object m)
 {
-    py::class_< USpotLightComponent,  UPointLightComponent   >("USpotLightComponent")
+    py::class_< USpotLightComponent,  UPointLightComponent   >(m, "USpotLightComponent")
         .def_readwrite("InnerConeAngle", &USpotLightComponent::InnerConeAngle)
         .def_readwrite("OuterConeAngle", &USpotLightComponent::OuterConeAngle)
         .def_readwrite("LightShaftConeAngle", &USpotLightComponent::LightShaftConeAngle)
@@ -14,6 +14,5 @@ void Export_pystes_USpotLightComponent()
         .def_readwrite("Rotation", &USpotLightComponent::Rotation)
         .def("StaticClass", &USpotLightComponent::StaticClass, py::return_value_policy::reference)
         .def("SetRotation", &USpotLightComponent::SetRotation)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

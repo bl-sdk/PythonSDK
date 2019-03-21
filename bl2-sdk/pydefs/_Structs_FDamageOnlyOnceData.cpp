@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDamageOnlyOnceData()
+void Export_pystes_FDamageOnlyOnceData(py::object m)
 {
-    py::class_< FDamageOnlyOnceData >("FDamageOnlyOnceData")
+    py::class_< FDamageOnlyOnceData >(m, "FDamageOnlyOnceData")
         .def_readwrite("UniqueId", &FDamageOnlyOnceData::UniqueId)
         .def_readwrite("HurtActor", &FDamageOnlyOnceData::HurtActor)
   ;

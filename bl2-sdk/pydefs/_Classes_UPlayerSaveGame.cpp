@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerSaveGame()
+void Export_pystes_UPlayerSaveGame(py::object m)
 {
-    py::class_< UPlayerSaveGame,  UObject   >("UPlayerSaveGame")
+    py::class_< UPlayerSaveGame,  UObject   >(m, "UPlayerSaveGame")
         .def_readwrite("UIPreferences", &UPlayerSaveGame::UIPreferences)
         .def_readwrite("PlayerClassDefinition", &UPlayerSaveGame::PlayerClassDefinition)
         .def_readwrite("ExpLevel", &UPlayerSaveGame::ExpLevel)
@@ -58,6 +58,5 @@ void Export_pystes_UPlayerSaveGame()
         .def_readwrite("LastOverpowerChoice", &UPlayerSaveGame::LastOverpowerChoice)
         .def_readwrite("ChosenVehicleCustomizations", &UPlayerSaveGame::ChosenVehicleCustomizations)
         .def("StaticClass", &UPlayerSaveGame::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

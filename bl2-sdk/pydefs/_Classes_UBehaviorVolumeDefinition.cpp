@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehaviorVolumeDefinition()
+void Export_pystes_UBehaviorVolumeDefinition(py::object m)
 {
-    py::class_< UBehaviorVolumeDefinition,  UGBXDefinition   >("UBehaviorVolumeDefinition")
+    py::class_< UBehaviorVolumeDefinition,  UGBXDefinition   >(m, "UBehaviorVolumeDefinition")
         .def_readwrite("VfTable_IIConstructObject", &UBehaviorVolumeDefinition::VfTable_IIConstructObject)
         .def_readwrite("VfTable_IIBehaviorProvider", &UBehaviorVolumeDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("DefaultTouchImpact", &UBehaviorVolumeDefinition::DefaultTouchImpact)
@@ -19,6 +19,5 @@ void Export_pystes_UBehaviorVolumeDefinition()
         .def("OnEntry", &UBehaviorVolumeDefinition::OnEntry)
         .def("SetBehaviorProviderDefinition", &UBehaviorVolumeDefinition::SetBehaviorProviderDefinition)
         .def("GetBehaviorProviderDefinition", &UBehaviorVolumeDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USkillTreeGFxDefinition()
+void Export_pystes_USkillTreeGFxDefinition(py::object m)
 {
-    py::class_< USkillTreeGFxDefinition,  UGBXDefinition   >("USkillTreeGFxDefinition")
+    py::class_< USkillTreeGFxDefinition,  UGBXDefinition   >(m, "USkillTreeGFxDefinition")
         .def_readwrite("SkillMovieClip", &USkillTreeGFxDefinition::SkillMovieClip)
         .def_readwrite("ArtifactDialogMovieClip", &USkillTreeGFxDefinition::ArtifactDialogMovieClip)
         .def_readwrite("IconOnName", &USkillTreeGFxDefinition::IconOnName)
@@ -74,6 +74,5 @@ void Export_pystes_USkillTreeGFxDefinition()
         .def_readwrite("SelectedSkillZOffset", &USkillTreeGFxDefinition::SelectedSkillZOffset)
         .def_readwrite("SelectedSkillZTweenTime", &USkillTreeGFxDefinition::SelectedSkillZTweenTime)
         .def("StaticClass", &USkillTreeGFxDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

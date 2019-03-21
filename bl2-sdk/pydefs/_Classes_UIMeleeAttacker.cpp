@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIMeleeAttacker()
+void Export_pystes_UIMeleeAttacker(py::object m)
 {
-    py::class_< UIMeleeAttacker,  UInterface   >("UIMeleeAttacker")
+    py::class_< UIMeleeAttacker,  UInterface   >(m, "UIMeleeAttacker")
         .def("StaticClass", &UIMeleeAttacker::StaticClass, py::return_value_policy::reference)
         .def("ShouldIgnoreInstigatorVelocity", &UIMeleeAttacker::ShouldIgnoreInstigatorVelocity)
         .def("GetMeleeState", &UIMeleeAttacker::GetMeleeState)
@@ -17,6 +17,5 @@ void Export_pystes_UIMeleeAttacker()
         .def("GetMeleeTraceSourceLocationAndRotation", &UIMeleeAttacker::GetMeleeTraceSourceLocationAndRotation)
         .def("GetMeleeInstigator", &UIMeleeAttacker::GetMeleeInstigator, py::return_value_policy::reference)
         .def("GetMeleeTraceSourceActor", &UIMeleeAttacker::GetMeleeTraceSourceActor, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

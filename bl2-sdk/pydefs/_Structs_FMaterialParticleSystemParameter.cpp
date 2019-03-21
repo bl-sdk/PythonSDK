@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMaterialParticleSystemParameter()
+void Export_pystes_FMaterialParticleSystemParameter(py::object m)
 {
-    py::class_< FMaterialParticleSystemParameter >("FMaterialParticleSystemParameter")
+    py::class_< FMaterialParticleSystemParameter >(m, "FMaterialParticleSystemParameter")
         .def_readwrite("Name", &FMaterialParticleSystemParameter::Name)
         .def_readwrite("Value", &FMaterialParticleSystemParameter::Value)
   ;

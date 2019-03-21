@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UScene()
+void Export_pystes_UScene(py::object m)
 {
-    py::class_< UScene,  UObject   >("UScene")
+    py::class_< UScene,  UObject   >(m, "UScene")
         .def("StaticClass", &UScene::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

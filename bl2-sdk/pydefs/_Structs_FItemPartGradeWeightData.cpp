@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FItemPartGradeWeightData()
+void Export_pystes_FItemPartGradeWeightData(py::object m)
 {
-    py::class_< FItemPartGradeWeightData >("FItemPartGradeWeightData")
+    py::class_< FItemPartGradeWeightData >(m, "FItemPartGradeWeightData")
         .def_readwrite("Part", &FItemPartGradeWeightData::Part)
         .def_readwrite("Manufacturers", &FItemPartGradeWeightData::Manufacturers)
         .def_readwrite("MinGameStageIndex", &FItemPartGradeWeightData::MinGameStageIndex)

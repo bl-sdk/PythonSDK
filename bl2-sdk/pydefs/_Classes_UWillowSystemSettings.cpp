@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSystemSettings()
+void Export_pystes_UWillowSystemSettings(py::object m)
 {
-    py::class_< UWillowSystemSettings,  UObject   >("UWillowSystemSettings")
+    py::class_< UWillowSystemSettings,  UObject   >(m, "UWillowSystemSettings")
         .def_readwrite("SystemOptions", &UWillowSystemSettings::SystemOptions)
         .def_readwrite("SupportedResolutions", &UWillowSystemSettings::SupportedResolutions)
         .def_readwrite("QueuedResolution", &UWillowSystemSettings::QueuedResolution)
@@ -28,6 +28,5 @@ void Export_pystes_UWillowSystemSettings()
         .def("UpdateSystemOption", &UWillowSystemSettings::UpdateSystemOption)
         .def("UpdateTextureFade", &UWillowSystemSettings::UpdateTextureFade)
         .def("LoadSystemSettings", &UWillowSystemSettings::LoadSystemSettings)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

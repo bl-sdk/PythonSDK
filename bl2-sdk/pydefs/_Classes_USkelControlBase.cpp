@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USkelControlBase()
+void Export_pystes_USkelControlBase(py::object m)
 {
-    py::class_< USkelControlBase,  UAnimObject   >("USkelControlBase")
+    py::class_< USkelControlBase,  UAnimObject   >(m, "USkelControlBase")
         .def_readwrite("ControlName", &USkelControlBase::ControlName)
         .def_readwrite("ControlStrength", &USkelControlBase::ControlStrength)
         .def_readwrite("BlendInTime", &USkelControlBase::BlendInTime)
@@ -28,6 +28,5 @@ void Export_pystes_USkelControlBase()
         .def("eventTickSkelControl", &USkelControlBase::eventTickSkelControl)
         .def("SetSkelControlStrength", &USkelControlBase::SetSkelControlStrength)
         .def("SetSkelControlActive", &USkelControlBase::SetSkelControlActive)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

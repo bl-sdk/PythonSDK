@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPopulationOpportunityStat()
+void Export_pystes_FPopulationOpportunityStat(py::object m)
 {
-    py::class_< FPopulationOpportunityStat >("FPopulationOpportunityStat")
+    py::class_< FPopulationOpportunityStat >(m, "FPopulationOpportunityStat")
         .def_readwrite("PercentNodeReduction", &FPopulationOpportunityStat::PercentNodeReduction)
   ;
 }

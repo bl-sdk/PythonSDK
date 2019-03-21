@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_CombatPoint()
+void Export_pystes_UAction_CombatPoint(py::object m)
 {
-    py::class_< UAction_CombatPoint,  UWillowActionSequencePawn   >("UAction_CombatPoint")
+    py::class_< UAction_CombatPoint,  UWillowActionSequencePawn   >(m, "UAction_CombatPoint")
         .def_readwrite("Search", &UAction_CombatPoint::Search)
         .def_readwrite("Limits", &UAction_CoverAttack::Limits)
         .def_readwrite("LineOfSightTime", &UAction_CoverAttack::LineOfSightTime)
@@ -32,6 +32,5 @@ void Export_pystes_UAction_CombatPoint()
         .def("eventCanRun", &UAction_CoverAttack::eventCanRun)
         .def("eventInit", &UAction_CoverAttack::eventInit)
         .def("InitData", &UAction_CoverAttack::InitData)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

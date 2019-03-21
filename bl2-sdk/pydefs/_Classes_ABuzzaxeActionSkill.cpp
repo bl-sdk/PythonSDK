@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ABuzzaxeActionSkill()
+void Export_pystes_ABuzzaxeActionSkill(py::object m)
 {
-    py::class_< ABuzzaxeActionSkill,  AActionSkill   >("ABuzzaxeActionSkill")
+    py::class_< ABuzzaxeActionSkill,  AActionSkill   >(m, "ABuzzaxeActionSkill")
         .def_readwrite("ActiveWeaponSlot", &ABuzzaxeActionSkill::ActiveWeaponSlot)
         .def_readwrite("Buzzaxe", &ABuzzaxeActionSkill::Buzzaxe)
         .def_readwrite("MyActionSkill", &ABuzzaxeActionSkill::MyActionSkill)
@@ -55,6 +55,5 @@ void Export_pystes_ABuzzaxeActionSkill()
         .def("WeaponIsDown", &ABuzzaxeActionSkill::WeaponIsDown)
         .def("OnActionSkillStarted", &ABuzzaxeActionSkill::OnActionSkillStarted)
         .def("eventReplicatedEvent", &ABuzzaxeActionSkill::eventReplicatedEvent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

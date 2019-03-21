@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_Toggle()
+void Export_pystes_USeqAct_Toggle(py::object m)
 {
-    py::class_< USeqAct_Toggle,  UObject   >("USeqAct_Toggle")
+    py::class_< USeqAct_Toggle,  UObject   >(m, "USeqAct_Toggle")
         .def_readwrite("HandlerName", &USequenceAction::HandlerName)
         .def_readwrite("Targets", &USequenceAction::Targets)
         .def_readwrite("InputLinks", &USequenceOp::InputLinks)
@@ -42,6 +42,5 @@ void Export_pystes_USeqAct_Toggle()
         .def("eventIsValidLevelSequenceObject", &USequenceObject::eventIsValidLevelSequenceObject)
         .def("GetWorldInfo", &USequenceObject::GetWorldInfo, py::return_value_policy::reference)
         .def("ScriptLog", &USequenceObject::ScriptLog)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

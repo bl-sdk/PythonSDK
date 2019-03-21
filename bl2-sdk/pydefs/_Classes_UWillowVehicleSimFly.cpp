@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowVehicleSimFly()
+void Export_pystes_UWillowVehicleSimFly(py::object m)
 {
-    py::class_< UWillowVehicleSimFly,  USVehicleSimBase   >("UWillowVehicleSimFly")
+    py::class_< UWillowVehicleSimFly,  USVehicleSimBase   >(m, "UWillowVehicleSimFly")
         .def_readwrite("RiseSpeed", &UWillowVehicleSimFly::RiseSpeed)
         .def_readwrite("MoveSpeed", &UWillowVehicleSimFly::MoveSpeed)
         .def("StaticClass", &UWillowVehicleSimFly::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

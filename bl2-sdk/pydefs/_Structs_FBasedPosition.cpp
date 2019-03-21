@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBasedPosition()
+void Export_pystes_FBasedPosition(py::object m)
 {
-    py::class_< FBasedPosition >("FBasedPosition")
+    py::class_< FBasedPosition >(m, "FBasedPosition")
         .def_readwrite("Base", &FBasedPosition::Base)
         .def_readwrite("Position", &FBasedPosition::Position)
         .def_readwrite("CachedBaseLocation", &FBasedPosition::CachedBaseLocation)

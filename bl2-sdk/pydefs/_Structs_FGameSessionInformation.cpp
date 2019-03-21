@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGameSessionInformation()
+void Export_pystes_FGameSessionInformation(py::object m)
 {
-    py::class_< FGameSessionInformation >("FGameSessionInformation")
+    py::class_< FGameSessionInformation >(m, "FGameSessionInformation")
         .def_readwrite("AppTitleID", &FGameSessionInformation::AppTitleID)
         .def_readwrite("PlatformType", &FGameSessionInformation::PlatformType)
         .def_readwrite("Language", &FGameSessionInformation::Language)

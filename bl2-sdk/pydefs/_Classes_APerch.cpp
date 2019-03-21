@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APerch()
+void Export_pystes_APerch(py::object m)
 {
-    py::class_< APerch,  AGearboxAIMoveNode   >("APerch")
+    py::class_< APerch,  AGearboxAIMoveNode   >(m, "APerch")
         .def_readwrite("VfTable_IIInstanceData", &APerch::VfTable_IIInstanceData)
         .def_readwrite("VfTable_IIBodyCompositionInstance", &APerch::VfTable_IIBodyCompositionInstance)
         .def_readwrite("VfTable_IIBehaviorConsumer", &APerch::VfTable_IIBehaviorConsumer)
@@ -54,6 +54,5 @@ void Export_pystes_APerch()
         .def("SetPerchDef", &APerch::SetPerchDef)
         .def("eventReplicatedEvent", &APerch::eventReplicatedEvent)
         .def("eventNotifyPathChanged", &AWillowAIMoveNode::eventNotifyPathChanged)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AStaticLightCollectionActor()
+void Export_pystes_AStaticLightCollectionActor(py::object m)
 {
-    py::class_< AStaticLightCollectionActor,  ALight   >("AStaticLightCollectionActor")
+    py::class_< AStaticLightCollectionActor,  ALight   >(m, "AStaticLightCollectionActor")
         .def_readwrite("LightComponents", &AStaticLightCollectionActor::LightComponents)
         .def_readwrite("MaxLightComponents", &AStaticLightCollectionActor::MaxLightComponents)
         .def("StaticClass", &AStaticLightCollectionActor::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

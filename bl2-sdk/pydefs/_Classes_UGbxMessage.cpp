@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGbxMessage()
+void Export_pystes_UGbxMessage(py::object m)
 {
-    py::class_< UGbxMessage,  UObject   >("UGbxMessage")
+    py::class_< UGbxMessage,  UObject   >(m, "UGbxMessage")
         .def_readwrite("Definition", &UGbxMessage::Definition)
         .def_readwrite("NameKey", &UGbxMessage::NameKey)
         .def_readwrite("Sender", &UGbxMessage::Sender)
@@ -29,6 +29,5 @@ void Export_pystes_UGbxMessage()
         .def_readwrite("DupeCriteria", &UGbxMessage::DupeCriteria)
         .def("StaticClass", &UGbxMessage::StaticClass, py::return_value_policy::reference)
         .def("InitializeFromDefinition", &UGbxMessage::InitializeFromDefinition)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

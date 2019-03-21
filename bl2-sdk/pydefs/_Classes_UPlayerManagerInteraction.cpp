@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerManagerInteraction()
+void Export_pystes_UPlayerManagerInteraction(py::object m)
 {
-    py::class_< UPlayerManagerInteraction,  UInteraction   >("UPlayerManagerInteraction")
+    py::class_< UPlayerManagerInteraction,  UInteraction   >(m, "UPlayerManagerInteraction")
         .def("StaticClass", &UPlayerManagerInteraction::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

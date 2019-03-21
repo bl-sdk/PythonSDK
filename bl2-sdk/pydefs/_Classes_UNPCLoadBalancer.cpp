@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNPCLoadBalancer()
+void Export_pystes_UNPCLoadBalancer(py::object m)
 {
-    py::class_< UNPCLoadBalancer,  UObject   >("UNPCLoadBalancer")
+    py::class_< UNPCLoadBalancer,  UObject   >(m, "UNPCLoadBalancer")
         .def_readwrite("TheList", &UNPCLoadBalancer::TheList)
         .def_readwrite("LastPathTime", &UNPCLoadBalancer::LastPathTime)
         .def_readwrite("NumberNPCsMoving", &UNPCLoadBalancer::NumberNPCsMoving)
@@ -21,6 +21,5 @@ void Export_pystes_UNPCLoadBalancer()
         .def("IsPathing", &UNPCLoadBalancer::IsPathing)
         .def("CanContinuePath", &UNPCLoadBalancer::CanContinuePath)
         .def("CanStartPath", &UNPCLoadBalancer::CanStartPath)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UStaticMesh()
+void Export_pystes_UStaticMesh(py::object m)
 {
-    py::class_< UStaticMesh,  UObject   >("UStaticMesh")
+    py::class_< UStaticMesh,  UObject   >(m, "UStaticMesh")
         .def_readonly("UnknownData00", &UStaticMesh::UnknownData00)
         .def_readwrite("LODInfo", &UStaticMesh::LODInfo)
         .def_readwrite("LODDistanceRatio", &UStaticMesh::LODDistanceRatio)
@@ -19,6 +19,5 @@ void Export_pystes_UStaticMesh()
         .def_readwrite("StreamingDistanceMultiplier", &UStaticMesh::StreamingDistanceMultiplier)
         .def_readonly("UnknownData03", &UStaticMesh::UnknownData03)
         .def("StaticClass", &UStaticMesh::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

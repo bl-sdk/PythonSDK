@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAIComponent()
+void Export_pystes_UAIComponent(py::object m)
 {
-    py::class_< UAIComponent,  UActorComponent   >("UAIComponent")
+    py::class_< UAIComponent,  UActorComponent   >(m, "UAIComponent")
         .def_readwrite("UpdateRate", &UAIComponent::UpdateRate)
         .def_readwrite("AI", &UAIComponent::AI)
         .def_readonly("UnknownData00", &UAIComponent::UnknownData00)
@@ -75,6 +75,5 @@ void Export_pystes_UAIComponent()
         .def("GetAllegiance", &UAIComponent::GetAllegiance, py::return_value_policy::reference)
         .def("ClearState", &UAIComponent::ClearState)
         .def("ActivateEvent", &UAIComponent::ActivateEvent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

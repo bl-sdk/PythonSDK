@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSeasonPassOfferUnion()
+void Export_pystes_FSeasonPassOfferUnion(py::object m)
 {
-    py::class_< FSeasonPassOfferUnion >("FSeasonPassOfferUnion")
+    py::class_< FSeasonPassOfferUnion >(m, "FSeasonPassOfferUnion")
         .def_readwrite("AssociatedSeasonPassOfferId", &FSeasonPassOfferUnion::AssociatedSeasonPassOfferId)
         .def_readwrite("PaidOfferId", &FSeasonPassOfferUnion::PaidOfferId)
         .def_readwrite("FreeOfferId", &FSeasonPassOfferUnion::FreeOfferId)

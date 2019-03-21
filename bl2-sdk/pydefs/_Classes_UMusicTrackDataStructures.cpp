@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMusicTrackDataStructures()
+void Export_pystes_UMusicTrackDataStructures(py::object m)
 {
-    py::class_< UMusicTrackDataStructures,  UObject   >("UMusicTrackDataStructures")
+    py::class_< UMusicTrackDataStructures,  UObject   >(m, "UMusicTrackDataStructures")
         .def("StaticClass", &UMusicTrackDataStructures::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AFogVolumeSphericalDensityInfo()
+void Export_pystes_AFogVolumeSphericalDensityInfo(py::object m)
 {
-    py::class_< AFogVolumeSphericalDensityInfo,  AFogVolumeDensityInfo   >("AFogVolumeSphericalDensityInfo")
+    py::class_< AFogVolumeSphericalDensityInfo,  AFogVolumeDensityInfo   >(m, "AFogVolumeSphericalDensityInfo")
         .def("StaticClass", &AFogVolumeSphericalDensityInfo::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

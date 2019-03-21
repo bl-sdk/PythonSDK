@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBonusAttributeModifierUpgrade()
+void Export_pystes_FBonusAttributeModifierUpgrade(py::object m)
 {
-    py::class_< FBonusAttributeModifierUpgrade >("FBonusAttributeModifierUpgrade")
+    py::class_< FBonusAttributeModifierUpgrade >(m, "FBonusAttributeModifierUpgrade")
         .def_readwrite("GradeToApplyAt", &FBonusAttributeModifierUpgrade::GradeToApplyAt)
         .def_readwrite("Modifier", &FBonusAttributeModifierUpgrade::Modifier)
   ;

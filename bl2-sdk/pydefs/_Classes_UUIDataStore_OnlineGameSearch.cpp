@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIDataStore_OnlineGameSearch()
+void Export_pystes_UUIDataStore_OnlineGameSearch(py::object m)
 {
-    py::class_< UUIDataStore_OnlineGameSearch,  UUIDataStore_Remote   >("UUIDataStore_OnlineGameSearch")
+    py::class_< UUIDataStore_OnlineGameSearch,  UUIDataStore_Remote   >(m, "UUIDataStore_OnlineGameSearch")
         .def_readwrite("VfTable_IUIListElementProvider", &UUIDataStore_OnlineGameSearch::VfTable_IUIListElementProvider)
         .def_readwrite("VfTable_IUIListElementCellProvider", &UUIDataStore_OnlineGameSearch::VfTable_IUIListElementCellProvider)
         .def_readwrite("SearchResultsName", &UUIDataStore_OnlineGameSearch::SearchResultsName)
@@ -32,6 +32,5 @@ void Export_pystes_UUIDataStore_OnlineGameSearch()
         .def("eventSubmitGameSearch", &UUIDataStore_OnlineGameSearch::eventSubmitGameSearch)
         .def("InvalidateCurrentSearchResults", &UUIDataStore_OnlineGameSearch::InvalidateCurrentSearchResults)
         .def("eventInit", &UUIDataStore_OnlineGameSearch::eventInit)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

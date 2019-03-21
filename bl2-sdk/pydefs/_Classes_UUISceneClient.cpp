@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUISceneClient()
+void Export_pystes_UUISceneClient(py::object m)
 {
-    py::class_< UUISceneClient,  UUIRoot   >("UUISceneClient")
+    py::class_< UUISceneClient,  UUIRoot   >(m, "UUISceneClient")
         .def_readwrite("VfTable_FExec", &UUISceneClient::VfTable_FExec)
         .def_readwrite("RenderViewport", &UUISceneClient::RenderViewport)
         .def_readwrite("MousePosition", &UUISceneClient::MousePosition)
@@ -19,6 +19,5 @@ void Export_pystes_UUISceneClient()
         .def("GetInverseCanvasToScreen", &UUISceneClient::GetInverseCanvasToScreen)
         .def("GetCanvasToScreen", &UUISceneClient::GetCanvasToScreen)
         .def("IsUIActive", &UUISceneClient::IsUIActive)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UISimpleAnimPlayer()
+void Export_pystes_UISimpleAnimPlayer(py::object m)
 {
-    py::class_< UISimpleAnimPlayer,  UInterface   >("UISimpleAnimPlayer")
+    py::class_< UISimpleAnimPlayer,  UInterface   >(m, "UISimpleAnimPlayer")
         .def("StaticClass", &UISimpleAnimPlayer::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

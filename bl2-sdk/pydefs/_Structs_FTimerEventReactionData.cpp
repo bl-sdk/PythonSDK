@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTimerEventReactionData()
+void Export_pystes_FTimerEventReactionData(py::object m)
 {
-    py::class_< FTimerEventReactionData >("FTimerEventReactionData")
+    py::class_< FTimerEventReactionData >(m, "FTimerEventReactionData")
         .def_readwrite("EventType", &FTimerEventReactionData::EventType)
         .def_readwrite("Behaviors", &FTimerEventReactionData::Behaviors)
   ;

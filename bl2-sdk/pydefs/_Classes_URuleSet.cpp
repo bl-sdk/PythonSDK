@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_URuleSet()
+void Export_pystes_URuleSet(py::object m)
 {
-    py::class_< URuleSet,  UObject   >("URuleSet")
+    py::class_< URuleSet,  UObject   >(m, "URuleSet")
         .def_readwrite("TheAIFactory", &URuleSet::TheAIFactory)
         .def_readwrite("RuleTemplateRefs", &URuleSet::RuleTemplateRefs)
         .def_readwrite("Rules", &URuleSet::Rules)
@@ -15,6 +15,5 @@ void Export_pystes_URuleSet()
         .def_readwrite("FlagsOnExit", &URuleSet::FlagsOnExit)
         .def_readwrite("HACK_RuleSetsAllowedToFollow", &URuleSet::HACK_RuleSetsAllowedToFollow)
         .def("StaticClass", &URuleSet::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

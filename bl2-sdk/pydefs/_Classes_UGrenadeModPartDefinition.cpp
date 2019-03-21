@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGrenadeModPartDefinition()
+void Export_pystes_UGrenadeModPartDefinition(py::object m)
 {
-    py::class_< UGrenadeModPartDefinition,  UEquipableItemPartDefinition   >("UGrenadeModPartDefinition")
+    py::class_< UGrenadeModPartDefinition,  UEquipableItemPartDefinition   >(m, "UGrenadeModPartDefinition")
         .def_readwrite("CustomProjectileDefinition", &UGrenadeModPartDefinition::CustomProjectileDefinition)
         .def_readwrite("SetProjectileSequenceState", &UGrenadeModPartDefinition::SetProjectileSequenceState)
         .def_readwrite("FlashIconPartName", &UGrenadeModPartDefinition::FlashIconPartName)
@@ -18,6 +18,5 @@ void Export_pystes_UGrenadeModPartDefinition()
         .def("OnGrenadeDamagedEnemy", &UGrenadeModPartDefinition::OnGrenadeDamagedEnemy)
         .def("OnGrenadeExploded", &UGrenadeModPartDefinition::OnGrenadeExploded)
         .def("OnGrenadeSpawned", &UGrenadeModPartDefinition::OnGrenadeSpawned)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

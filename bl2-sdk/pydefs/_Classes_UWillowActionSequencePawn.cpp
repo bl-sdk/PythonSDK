@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowActionSequencePawn()
+void Export_pystes_UWillowActionSequencePawn(py::object m)
 {
-    py::class_< UWillowActionSequencePawn,  UActionSequencePawn   >("UWillowActionSequencePawn")
+    py::class_< UWillowActionSequencePawn,  UActionSequencePawn   >(m, "UWillowActionSequencePawn")
         .def_readwrite("WillowAI", &UWillowActionSequencePawn::WillowAI)
         .def_readwrite("MyNavHandle", &UWillowActionSequencePawn::MyNavHandle)
         .def_readwrite("MyWillowMind", &UWillowActionSequencePawn::MyWillowMind)
@@ -42,6 +42,5 @@ void Export_pystes_UWillowActionSequencePawn()
         .def("SetPawnMovementSpeed", &UWillowActionSequencePawn::SetPawnMovementSpeed)
         .def("WaitForPawnToTurn", &UWillowActionSequencePawn::WaitForPawnToTurn)
         .def("WaitForPawnToStop", &UWillowActionSequencePawn::WaitForPawnToStop)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

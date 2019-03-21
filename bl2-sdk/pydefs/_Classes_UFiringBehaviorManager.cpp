@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFiringBehaviorManager()
+void Export_pystes_UFiringBehaviorManager(py::object m)
 {
-    py::class_< UFiringBehaviorManager,  UObject   >("UFiringBehaviorManager")
+    py::class_< UFiringBehaviorManager,  UObject   >(m, "UFiringBehaviorManager")
         .def_readwrite("CurrentFiringPattern", &UFiringBehaviorManager::CurrentFiringPattern)
         .def_readwrite("CurrentTargetExposure", &UFiringBehaviorManager::CurrentTargetExposure)
         .def_readwrite("NumShotsThisBurst", &UFiringBehaviorManager::NumShotsThisBurst)
@@ -18,6 +18,5 @@ void Export_pystes_UFiringBehaviorManager()
         .def_readwrite("DefaultFiringPatternTemplate", &UFiringBehaviorManager::DefaultFiringPatternTemplate)
         .def("StaticClass", &UFiringBehaviorManager::StaticClass, py::return_value_policy::reference)
         .def("eventGetTemplateClass", &UFiringBehaviorManager::eventGetTemplateClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

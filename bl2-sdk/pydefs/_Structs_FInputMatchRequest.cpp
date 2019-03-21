@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInputMatchRequest()
+void Export_pystes_FInputMatchRequest(py::object m)
 {
-    py::class_< FInputMatchRequest >("FInputMatchRequest")
+    py::class_< FInputMatchRequest >(m, "FInputMatchRequest")
         .def_readwrite("Inputs", &FInputMatchRequest::Inputs)
         .def_readwrite("MatchActor", &FInputMatchRequest::MatchActor)
         .def_readwrite("MatchFuncName", &FInputMatchRequest::MatchFuncName)

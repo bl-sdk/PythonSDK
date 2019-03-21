@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FWeaponDefinitionData()
+void Export_pystes_FWeaponDefinitionData(py::object m)
 {
-    py::class_< FWeaponDefinitionData >("FWeaponDefinitionData")
+    py::class_< FWeaponDefinitionData >(m, "FWeaponDefinitionData")
         .def_readwrite("WeaponTypeDefinition", &FWeaponDefinitionData::WeaponTypeDefinition)
         .def_readwrite("BalanceDefinition", &FWeaponDefinitionData::BalanceDefinition)
         .def_readwrite("ManufacturerDefinition", &FWeaponDefinitionData::ManufacturerDefinition)

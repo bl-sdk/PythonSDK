@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRankMetaData()
+void Export_pystes_FRankMetaData(py::object m)
 {
-    py::class_< FRankMetaData >("FRankMetaData")
+    py::class_< FRankMetaData >(m, "FRankMetaData")
         .def_readwrite("RankName", &FRankMetaData::RankName)
         .def_readwrite("RankColumnName", &FRankMetaData::RankColumnName)
   ;

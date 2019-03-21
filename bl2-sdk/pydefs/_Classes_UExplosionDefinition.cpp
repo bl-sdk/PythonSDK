@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UExplosionDefinition()
+void Export_pystes_UExplosionDefinition(py::object m)
 {
-    py::class_< UExplosionDefinition,  UGBXDefinition   >("UExplosionDefinition")
+    py::class_< UExplosionDefinition,  UGBXDefinition   >(m, "UExplosionDefinition")
         .def_readwrite("ExplosionAkEvent", &UExplosionDefinition::ExplosionAkEvent)
         .def_readwrite("MultipleExplosionsAkEvent", &UExplosionDefinition::MultipleExplosionsAkEvent)
         .def_readwrite("ExplosionPSTemplate", &UExplosionDefinition::ExplosionPSTemplate)
@@ -30,6 +30,5 @@ void Export_pystes_UExplosionDefinition()
         .def("eventPlayExplosion", &UExplosionDefinition::eventPlayExplosion)
         .def("IsExplosionDebugEnabled", &UExplosionDefinition::IsExplosionDebugEnabled)
         .def("ToggleExplosionDebug", &UExplosionDefinition::ToggleExplosionDebug)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

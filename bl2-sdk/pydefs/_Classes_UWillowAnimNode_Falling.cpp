@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAnimNode_Falling()
+void Export_pystes_UWillowAnimNode_Falling(py::object m)
 {
-    py::class_< UWillowAnimNode_Falling,  UAnimNodeBlendList   >("UWillowAnimNode_Falling")
+    py::class_< UWillowAnimNode_Falling,  UAnimNodeBlendList   >(m, "UWillowAnimNode_Falling")
         .def_readwrite("DelayBeforeStartFalling", &UWillowAnimNode_Falling::DelayBeforeStartFalling)
         .def_readwrite("MinStartFallingVelocity", &UWillowAnimNode_Falling::MinStartFallingVelocity)
         .def_readwrite("InterruptEndFallMovementSpeed", &UWillowAnimNode_Falling::InterruptEndFallMovementSpeed)
@@ -13,6 +13,5 @@ void Export_pystes_UWillowAnimNode_Falling()
         .def_readwrite("StuckFallingTimer", &UWillowAnimNode_Falling::StuckFallingTimer)
         .def_readwrite("ChildBlendInTime", &UWillowAnimNodeBlendList::ChildBlendInTime)
         .def("StaticClass", &UWillowAnimNode_Falling::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

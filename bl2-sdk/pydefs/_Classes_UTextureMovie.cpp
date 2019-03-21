@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTextureMovie()
+void Export_pystes_UTextureMovie(py::object m)
 {
-    py::class_< UTextureMovie,  UTexture   >("UTextureMovie")
+    py::class_< UTextureMovie,  UTexture   >(m, "UTextureMovie")
         .def_readwrite("SizeX", &UTextureMovie::SizeX)
         .def_readwrite("SizeY", &UTextureMovie::SizeY)
         .def_readwrite("Format", &UTextureMovie::Format)
@@ -21,6 +21,5 @@ void Export_pystes_UTextureMovie()
         .def("Stop", &UTextureMovie::Stop)
         .def("Pause", &UTextureMovie::Pause)
         .def("Play", &UTextureMovie::Play)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

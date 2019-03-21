@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowInteractiveObjectAttributeContextResolver()
+void Export_pystes_UWillowInteractiveObjectAttributeContextResolver(py::object m)
 {
-    py::class_< UWillowInteractiveObjectAttributeContextResolver,  UAttributeContextResolver   >("UWillowInteractiveObjectAttributeContextResolver")
+    py::class_< UWillowInteractiveObjectAttributeContextResolver,  UAttributeContextResolver   >(m, "UWillowInteractiveObjectAttributeContextResolver")
         .def("StaticClass", &UWillowInteractiveObjectAttributeContextResolver::StaticClass, py::return_value_policy::reference)
         .def("GetAttributeContext", &UWillowInteractiveObjectAttributeContextResolver::GetAttributeContext, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

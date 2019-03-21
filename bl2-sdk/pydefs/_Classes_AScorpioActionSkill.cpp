@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AScorpioActionSkill()
+void Export_pystes_AScorpioActionSkill(py::object m)
 {
-    py::class_< AScorpioActionSkill,  AActionSkill   >("AScorpioActionSkill")
+    py::class_< AScorpioActionSkill,  AActionSkill   >(m, "AScorpioActionSkill")
         .def_readwrite("ScorpioSpawnedActor", &AScorpioActionSkill::ScorpioSpawnedActor)
         .def_readwrite("GeminiSpawnedActor", &AScorpioActionSkill::GeminiSpawnedActor)
         .def_readwrite("ActiveProjectile", &AScorpioActionSkill::ActiveProjectile)
@@ -28,6 +28,5 @@ void Export_pystes_AScorpioActionSkill()
         .def("OnActionSkillOwnerDied", &AScorpioActionSkill::OnActionSkillOwnerDied)
         .def("OnActionSkillEnded", &AScorpioActionSkill::OnActionSkillEnded)
         .def("OnActionSkillStarted", &AScorpioActionSkill::OnActionSkillStarted)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

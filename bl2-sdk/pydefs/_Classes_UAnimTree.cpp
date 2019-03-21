@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimTree()
+void Export_pystes_UAnimTree(py::object m)
 {
-    py::class_< UAnimTree,  UObject   >("UAnimTree")
+    py::class_< UAnimTree,  UObject   >(m, "UAnimTree")
         .def_readwrite("AnimTreeTemplate", &UAnimTree::AnimTreeTemplate)
         .def_readwrite("AnimGroups", &UAnimTree::AnimGroups)
         .def_readwrite("PrioritizedSkelBranches", &UAnimTree::PrioritizedSkelBranches)
@@ -52,6 +52,5 @@ void Export_pystes_UAnimTree()
         .def("eventOnCeaseRelevant", &UAnimNode::eventOnCeaseRelevant)
         .def("eventOnBecomeRelevant", &UAnimNode::eventOnBecomeRelevant)
         .def("eventOnInit", &UAnimNode::eventOnInit)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

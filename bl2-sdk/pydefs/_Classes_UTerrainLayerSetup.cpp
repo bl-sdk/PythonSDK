@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTerrainLayerSetup()
+void Export_pystes_UTerrainLayerSetup(py::object m)
 {
-    py::class_< UTerrainLayerSetup,  UObject   >("UTerrainLayerSetup")
+    py::class_< UTerrainLayerSetup,  UObject   >(m, "UTerrainLayerSetup")
         .def_readwrite("Materials", &UTerrainLayerSetup::Materials)
         .def("StaticClass", &UTerrainLayerSetup::StaticClass, py::return_value_policy::reference)
         .def("PostBeginPlay", &UTerrainLayerSetup::PostBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

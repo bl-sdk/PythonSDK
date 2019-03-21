@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowInventoryGFxMovie()
+void Export_pystes_UWillowInventoryGFxMovie(py::object m)
 {
-    py::class_< UWillowInventoryGFxMovie,  UWillowGFxMovie3D   >("UWillowInventoryGFxMovie")
+    py::class_< UWillowInventoryGFxMovie,  UWillowGFxMovie3D   >(m, "UWillowInventoryGFxMovie")
         .def_readwrite("RTM", &UWillowInventoryGFxMovie::RTM)
         .def_readwrite("CardContents", &UWillowInventoryGFxMovie::CardContents)
         .def_readwrite("FrozenThing", &UWillowInventoryGFxMovie::FrozenThing)
@@ -69,6 +69,5 @@ void Export_pystes_UWillowInventoryGFxMovie()
         .def("eventBeginClosing", &UWillowGFxThirdPersonMovie::eventBeginClosing)
         .def("eventGetCurrentTab", &UWillowGFxThirdPersonMovie::eventGetCurrentTab)
         .def("AmITheStatusMenu", &UWillowGFxThirdPersonMovie::AmITheStatusMenu)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

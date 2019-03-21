@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPursuitNode()
+void Export_pystes_FPursuitNode(py::object m)
 {
-    py::class_< FPursuitNode >("FPursuitNode")
+    py::class_< FPursuitNode >(m, "FPursuitNode")
         .def_readwrite("RelativeLocation", &FPursuitNode::RelativeLocation)
         .def_readwrite("RelativeDistance", &FPursuitNode::RelativeDistance)
         .def_readwrite("EvasiveActionDistance", &FPursuitNode::EvasiveActionDistance)

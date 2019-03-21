@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWebApplication()
+void Export_pystes_UWebApplication(py::object m)
 {
-    py::class_< UWebApplication,  UObject   >("UWebApplication")
+    py::class_< UWebApplication,  UObject   >(m, "UWebApplication")
         .def_readwrite("WorldInfo", &UWebApplication::WorldInfo)
         .def_readwrite("WebServer", &UWebApplication::WebServer)
         .def_readwrite("Path", &UWebApplication::Path)
@@ -16,6 +16,5 @@ void Export_pystes_UWebApplication()
         .def("CleanupApp", &UWebApplication::CleanupApp)
         .def("Cleanup", &UWebApplication::Cleanup)
         .def("Init", &UWebApplication::Init)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

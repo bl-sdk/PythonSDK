@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIPickupable()
+void Export_pystes_UIPickupable(py::object m)
 {
-    py::class_< UIPickupable,  UInterface   >("UIPickupable")
+    py::class_< UIPickupable,  UInterface   >(m, "UIPickupable")
         .def("StaticClass", &UIPickupable::StaticClass, py::return_value_policy::reference)
         .def("SetInteractionIcon", &UIPickupable::SetInteractionIcon)
         .def("MarkAsDiscovered", &UIPickupable::MarkAsDiscovered)
@@ -17,6 +17,5 @@ void Export_pystes_UIPickupable()
         .def("GetPickupableInventory", &UIPickupable::GetPickupableInventory, py::return_value_policy::reference)
         .def("GetPickupableMeshActor", &UIPickupable::GetPickupableMeshActor, py::return_value_policy::reference)
         .def("GiveTo", &UIPickupable::GiveTo)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerClassDefinition()
+void Export_pystes_UPlayerClassDefinition(py::object m)
 {
-    py::class_< UPlayerClassDefinition,  UCharacterClassDefinition   >("UPlayerClassDefinition")
+    py::class_< UPlayerClassDefinition,  UCharacterClassDefinition   >(m, "UPlayerClassDefinition")
         .def_readwrite("VfTable_IIConstructObject", &UPlayerClassDefinition::VfTable_IIConstructObject)
         .def_readwrite("PawnArchetypePath", &UPlayerClassDefinition::PawnArchetypePath)
         .def_readwrite("SkillTreePath", &UPlayerClassDefinition::SkillTreePath)
@@ -70,6 +70,5 @@ void Export_pystes_UPlayerClassDefinition()
         .def("ShouldUnlockPlayerClassAchievement", &UPlayerClassDefinition::ShouldUnlockPlayerClassAchievement)
         .def("SetBehaviorProviderDefinition", &UWillowCharacterClassDefinition::SetBehaviorProviderDefinition)
         .def("GetBehaviorProviderDefinition", &UWillowCharacterClassDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

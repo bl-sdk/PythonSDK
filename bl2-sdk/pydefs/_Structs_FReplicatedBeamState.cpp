@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FReplicatedBeamState()
+void Export_pystes_FReplicatedBeamState(py::object m)
 {
-    py::class_< FReplicatedBeamState >("FReplicatedBeamState")
+    py::class_< FReplicatedBeamState >(m, "FReplicatedBeamState")
         .def_readwrite("FireDef", &FReplicatedBeamState::FireDef)
         .def_readwrite("ImpactDefinition", &FReplicatedBeamState::ImpactDefinition)
         .def_readwrite("SourceData", &FReplicatedBeamState::SourceData)

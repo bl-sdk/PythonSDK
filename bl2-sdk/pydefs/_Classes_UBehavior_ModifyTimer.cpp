@@ -3,15 +3,14 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_ModifyTimer()
+void Export_pystes_UBehavior_ModifyTimer(py::object m)
 {
-    py::class_< UBehavior_ModifyTimer,  UBehaviorBase   >("UBehavior_ModifyTimer")
+    py::class_< UBehavior_ModifyTimer,  UBehaviorBase   >(m, "UBehavior_ModifyTimer")
         .def_readwrite("TimerId", &UBehavior_ModifyTimer::TimerId)
         .def_readwrite("Operation", &UBehavior_ModifyTimer::Operation)
         .def_readwrite("NewTimerDelay", &UBehavior_ModifyTimer::NewTimerDelay)
         .def("StaticClass", &UBehavior_ModifyTimer::StaticClass, py::return_value_policy::reference)
         .def("PublishBehaviorOutput", &UBehavior_ModifyTimer::PublishBehaviorOutput)
         .def("ApplyBehaviorToContext", &UBehavior_ModifyTimer::ApplyBehaviorToContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

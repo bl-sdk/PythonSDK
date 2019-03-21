@@ -3,13 +3,12 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowMapInfo()
+void Export_pystes_UWillowMapInfo(py::object m)
 {
-    py::class_< UWillowMapInfo,  UMapInfo   >("UWillowMapInfo")
+    py::class_< UWillowMapInfo,  UMapInfo   >(m, "UWillowMapInfo")
         .def_readwrite("TacticalMapMovie", &UWillowMapInfo::TacticalMapMovie)
         .def_readwrite("TacticalMapVolume", &UWillowMapInfo::TacticalMapVolume)
         .def_readwrite("FrontEndMovieDef", &UWillowMapInfo::FrontEndMovieDef)
         .def("StaticClass", &UWillowMapInfo::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

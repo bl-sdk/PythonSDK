@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SpawnLootAroundPoint()
+void Export_pystes_UBehavior_SpawnLootAroundPoint(py::object m)
 {
-    py::class_< UBehavior_SpawnLootAroundPoint,  UBehaviorBase   >("UBehavior_SpawnLootAroundPoint")
+    py::class_< UBehavior_SpawnLootAroundPoint,  UBehaviorBase   >(m, "UBehavior_SpawnLootAroundPoint")
         .def_readwrite("CustomLocation", &UBehavior_SpawnLootAroundPoint::CustomLocation)
         .def_readwrite("CircularScatterRadius", &UBehavior_SpawnLootAroundPoint::CircularScatterRadius)
         .def_readwrite("SpawnVelocity", &UBehavior_SpawnLootAroundPoint::SpawnVelocity)
@@ -18,6 +18,5 @@ void Export_pystes_UBehavior_SpawnLootAroundPoint()
         .def("GetOrientationFromContextObject", &UBehavior_SpawnLoot::GetOrientationFromContextObject)
         .def("GetLocationFromContextObject", &UBehavior_SpawnLoot::GetLocationFromContextObject)
         .def("ApplyBehaviorToContext", &UBehavior_SpawnLoot::ApplyBehaviorToContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

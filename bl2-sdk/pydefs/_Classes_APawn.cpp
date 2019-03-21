@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APawn()
+void Export_pystes_APawn(py::object m)
 {
-    py::class_< APawn,  AActor   >("APawn")
+    py::class_< APawn,  AActor   >(m, "APawn")
         .def_readwrite("VfTable_IInterface_Speaker", &APawn::VfTable_IInterface_Speaker)
         .def_readwrite("VfTable_IIKilledBehavior", &APawn::VfTable_IIKilledBehavior)
         .def_readwrite("VfTable_IITargetable", &APawn::VfTable_IITargetable)
@@ -528,6 +528,5 @@ void Export_pystes_APawn()
         .def("IsFriendly", &APawn::IsFriendly)
         .def("IsEnemy", &APawn::IsEnemy)
         .def("GetTargetableActor", &APawn::GetTargetableActor, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

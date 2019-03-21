@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AGearboxDialogActor()
+void Export_pystes_AGearboxDialogActor(py::object m)
 {
-    py::class_< AGearboxDialogActor,  AActor   >("AGearboxDialogActor")
+    py::class_< AGearboxDialogActor,  AActor   >(m, "AGearboxDialogActor")
         .def_readwrite("VfTable_IGearboxDialogInterface", &AGearboxDialogActor::VfTable_IGearboxDialogInterface)
         .def_readwrite("DialogGroups", &AGearboxDialogActor::DialogGroups)
         .def_readwrite("NameTag", &AGearboxDialogActor::NameTag)
@@ -24,6 +24,5 @@ void Export_pystes_AGearboxDialogActor()
         .def("CanTalk", &AGearboxDialogActor::CanTalk)
         .def("eventServerDialog_TriggerEvent", &AGearboxDialogActor::eventServerDialog_TriggerEvent)
         .def("eventReplicatedEvent", &AGearboxDialogActor::eventReplicatedEvent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

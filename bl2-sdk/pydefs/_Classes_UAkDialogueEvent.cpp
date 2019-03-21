@@ -3,13 +3,12 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAkDialogueEvent()
+void Export_pystes_UAkDialogueEvent(py::object m)
 {
-    py::class_< UAkDialogueEvent,  UAkObject   >("UAkDialogueEvent")
+    py::class_< UAkDialogueEvent,  UAkObject   >(m, "UAkDialogueEvent")
         .def_readwrite("RequiredBank", &UAkDialogueEvent::RequiredBank)
         .def_readwrite("Arguments", &UAkDialogueEvent::Arguments)
         .def_readwrite("FaceFXAnimSet", &UAkDialogueEvent::FaceFXAnimSet)
         .def("StaticClass", &UAkDialogueEvent::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

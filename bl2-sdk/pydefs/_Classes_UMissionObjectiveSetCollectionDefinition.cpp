@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMissionObjectiveSetCollectionDefinition()
+void Export_pystes_UMissionObjectiveSetCollectionDefinition(py::object m)
 {
-    py::class_< UMissionObjectiveSetCollectionDefinition,  UMissionObjectiveSetDefinition   >("UMissionObjectiveSetCollectionDefinition")
+    py::class_< UMissionObjectiveSetCollectionDefinition,  UMissionObjectiveSetDefinition   >(m, "UMissionObjectiveSetCollectionDefinition")
         .def_readwrite("ObjectiveSetDefinitions", &UMissionObjectiveSetCollectionDefinition::ObjectiveSetDefinitions)
         .def("StaticClass", &UMissionObjectiveSetCollectionDefinition::StaticClass, py::return_value_policy::reference)
         .def("ContainsObjective", &UMissionObjectiveSetCollectionDefinition::ContainsObjective)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

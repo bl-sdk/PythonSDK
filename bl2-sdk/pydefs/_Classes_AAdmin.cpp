@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AAdmin()
+void Export_pystes_AAdmin(py::object m)
 {
-    py::class_< AAdmin,  APlayerController   >("AAdmin")
+    py::class_< AAdmin,  APlayerController   >(m, "AAdmin")
         .def("StaticClass", &AAdmin::StaticClass, py::return_value_policy::reference)
         .def("ServerSwitch", &AAdmin::ServerSwitch)
         .def("Switch", &AAdmin::Switch)
@@ -19,6 +19,5 @@ void Export_pystes_AAdmin()
         .def("ServerAdmin", &AAdmin::ServerAdmin)
         .def("Admin", &AAdmin::Admin)
         .def("eventPostBeginPlay", &AAdmin::eventPostBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

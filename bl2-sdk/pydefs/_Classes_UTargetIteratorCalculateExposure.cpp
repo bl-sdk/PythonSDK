@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTargetIteratorCalculateExposure()
+void Export_pystes_UTargetIteratorCalculateExposure(py::object m)
 {
-    py::class_< UTargetIteratorCalculateExposure,  UTargetIterator   >("UTargetIteratorCalculateExposure")
+    py::class_< UTargetIteratorCalculateExposure,  UTargetIterator   >(m, "UTargetIteratorCalculateExposure")
         .def("StaticClass", &UTargetIteratorCalculateExposure::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

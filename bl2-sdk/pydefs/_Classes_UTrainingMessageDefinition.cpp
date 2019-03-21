@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTrainingMessageDefinition()
+void Export_pystes_UTrainingMessageDefinition(py::object m)
 {
-    py::class_< UTrainingMessageDefinition,  UGBXDefinition   >("UTrainingMessageDefinition")
+    py::class_< UTrainingMessageDefinition,  UGBXDefinition   >(m, "UTrainingMessageDefinition")
         .def_readwrite("StatId", &UTrainingMessageDefinition::StatId)
         .def_readwrite("StatTargetValue", &UTrainingMessageDefinition::StatTargetValue)
         .def_readwrite("Key", &UTrainingMessageDefinition::Key)
@@ -17,6 +17,5 @@ void Export_pystes_UTrainingMessageDefinition()
         .def_readwrite("StatusMenuTab", &UTrainingMessageDefinition::StatusMenuTab)
         .def_readwrite("DialogPriority", &UTrainingMessageDefinition::DialogPriority)
         .def("StaticClass", &UTrainingMessageDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

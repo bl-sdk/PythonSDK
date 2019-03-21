@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNavMeshRenderingComponent()
+void Export_pystes_UNavMeshRenderingComponent(py::object m)
 {
-    py::class_< UNavMeshRenderingComponent,  UPrimitiveComponent   >("UNavMeshRenderingComponent")
+    py::class_< UNavMeshRenderingComponent,  UPrimitiveComponent   >(m, "UNavMeshRenderingComponent")
         .def("StaticClass", &UNavMeshRenderingComponent::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

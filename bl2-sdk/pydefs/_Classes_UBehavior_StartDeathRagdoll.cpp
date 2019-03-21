@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_StartDeathRagdoll()
+void Export_pystes_UBehavior_StartDeathRagdoll(py::object m)
 {
-    py::class_< UBehavior_StartDeathRagdoll,  UBehaviorBase   >("UBehavior_StartDeathRagdoll")
+    py::class_< UBehavior_StartDeathRagdoll,  UBehaviorBase   >(m, "UBehavior_StartDeathRagdoll")
         .def("StaticClass", &UBehavior_StartDeathRagdoll::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_StartDeathRagdoll::ApplyBehaviorToContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

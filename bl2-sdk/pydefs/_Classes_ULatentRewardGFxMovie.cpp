@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULatentRewardGFxMovie()
+void Export_pystes_ULatentRewardGFxMovie(py::object m)
 {
-    py::class_< ULatentRewardGFxMovie,  UWillowGFxMovie3D   >("ULatentRewardGFxMovie")
+    py::class_< ULatentRewardGFxMovie,  UWillowGFxMovie3D   >(m, "ULatentRewardGFxMovie")
         .def_readwrite("RewardObject", &ULatentRewardGFxMovie::RewardObject)
         .def("StaticClass", &ULatentRewardGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("OnClosedOnDeath", &ULatentRewardGFxMovie::OnClosedOnDeath)
@@ -20,6 +20,5 @@ void Export_pystes_ULatentRewardGFxMovie()
         .def("extTryDisplayRewardPanel", &ULatentRewardGFxMovie::extTryDisplayRewardPanel)
         .def("eventOnClose", &ULatentRewardGFxMovie::eventOnClose)
         .def("eventStart", &ULatentRewardGFxMovie::eventStart)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

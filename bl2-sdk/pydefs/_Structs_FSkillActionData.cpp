@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSkillActionData()
+void Export_pystes_FSkillActionData(py::object m)
 {
-    py::class_< FSkillActionData >("FSkillActionData")
+    py::class_< FSkillActionData >(m, "FSkillActionData")
         .def_readwrite("ClientConsoleCommand", &FSkillActionData::ClientConsoleCommand)
         .def_readwrite("GradeType", &FSkillActionData::GradeType)
         .def_readwrite("HardcodedGrade", &FSkillActionData::HardcodedGrade)

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCameraAnim()
+void Export_pystes_UCameraAnim(py::object m)
 {
-    py::class_< UCameraAnim,  UObject   >("UCameraAnim")
+    py::class_< UCameraAnim,  UObject   >(m, "UCameraAnim")
         .def_readwrite("CameraInterpGroup", &UCameraAnim::CameraInterpGroup)
         .def_readwrite("AnimLength", &UCameraAnim::AnimLength)
         .def_readwrite("BoundingBox", &UCameraAnim::BoundingBox)
@@ -13,6 +13,5 @@ void Export_pystes_UCameraAnim()
         .def_readwrite("BasePPSettingsAlpha", &UCameraAnim::BasePPSettingsAlpha)
         .def_readwrite("BaseFOV", &UCameraAnim::BaseFOV)
         .def("StaticClass", &UCameraAnim::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FEventData()
+void Export_pystes_FEventData(py::object m)
 {
-    py::class_< FEventData >("FEventData")
+    py::class_< FEventData >(m, "FEventData")
         .def_readwrite("Type", &FEventData::Type)
         .def_readwrite("Data", &FEventData::Data)
         .def_readwrite("mouseIndex", &FEventData::mouseIndex)

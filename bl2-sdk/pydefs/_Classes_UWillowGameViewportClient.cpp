@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGameViewportClient()
+void Export_pystes_UWillowGameViewportClient(py::object m)
 {
-    py::class_< UWillowGameViewportClient,  UGameViewportClient   >("UWillowGameViewportClient")
+    py::class_< UWillowGameViewportClient,  UGameViewportClient   >(m, "UWillowGameViewportClient")
         .def_readwrite("ViewportUI", &UWillowGameViewportClient::ViewportUI)
         .def_readwrite("LoadBackground", &UWillowGameViewportClient::LoadBackground)
         .def_readwrite("LoadingImage", &UWillowGameViewportClient::LoadingImage)
@@ -64,6 +64,5 @@ void Export_pystes_UWillowGameViewportClient()
         .def("eventDlcManagerCreatedInit", &UWillowGameViewportClient::eventDlcManagerCreatedInit)
         .def("eventInit", &UWillowGameViewportClient::eventInit)
         .def("OpenMapMenu", &UWillowGameViewportClient::OpenMapMenu)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

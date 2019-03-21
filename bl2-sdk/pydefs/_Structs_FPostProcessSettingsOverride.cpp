@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPostProcessSettingsOverride()
+void Export_pystes_FPostProcessSettingsOverride(py::object m)
 {
-    py::class_< FPostProcessSettingsOverride >("FPostProcessSettingsOverride")
+    py::class_< FPostProcessSettingsOverride >(m, "FPostProcessSettingsOverride")
         .def_readwrite("Settings", &FPostProcessSettingsOverride::Settings)
         .def_readwrite("CurrentBlendInTime", &FPostProcessSettingsOverride::CurrentBlendInTime)
         .def_readwrite("CurrentBlendOutTime", &FPostProcessSettingsOverride::CurrentBlendOutTime)

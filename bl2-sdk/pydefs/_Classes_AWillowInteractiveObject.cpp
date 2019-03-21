@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowInteractiveObject()
+void Export_pystes_AWillowInteractiveObject(py::object m)
 {
-    py::class_< AWillowInteractiveObject,  AActor   >("AWillowInteractiveObject")
+    py::class_< AWillowInteractiveObject,  AActor   >(m, "AWillowInteractiveObject")
         .def_readwrite("VfTable_IITimerBehavior", &AWillowInteractiveObject::VfTable_IITimerBehavior)
         .def_readwrite("VfTable_IICustomEvent", &AWillowInteractiveObject::VfTable_IICustomEvent)
         .def_readwrite("VfTable_IIKilledBehavior", &AWillowInteractiveObject::VfTable_IIKilledBehavior)
@@ -326,6 +326,5 @@ void Export_pystes_AWillowInteractiveObject()
         .def("GetAllBarInfo", &AWillowInteractiveObject::GetAllBarInfo)
         .def("GetExpInfo", &AWillowInteractiveObject::GetExpInfo)
         .def("GetTargetableActor", &AWillowInteractiveObject::GetTargetableActor, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

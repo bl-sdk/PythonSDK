@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBehaviorKernelInfo()
+void Export_pystes_FBehaviorKernelInfo(py::object m)
 {
-    py::class_< FBehaviorKernelInfo >("FBehaviorKernelInfo")
+    py::class_< FBehaviorKernelInfo >(m, "FBehaviorKernelInfo")
         .def_readwrite("StateForThreadRunningThisBehavior", &FBehaviorKernelInfo::StateForThreadRunningThisBehavior)
         .def_readwrite("WorldTime", &FBehaviorKernelInfo::WorldTime)
         .def_readwrite("ExecutionTime", &FBehaviorKernelInfo::ExecutionTime)

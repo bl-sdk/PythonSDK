@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AKAsset()
+void Export_pystes_AKAsset(py::object m)
 {
-    py::class_< AKAsset,  AActor   >("AKAsset")
+    py::class_< AKAsset,  AActor   >(m, "AKAsset")
         .def_readwrite("SkeletalMeshComponent", &AKAsset::SkeletalMeshComponent)
         .def_readwrite("ReplicatedMesh", &AKAsset::ReplicatedMesh)
         .def_readwrite("ReplicatedPhysAsset", &AKAsset::ReplicatedPhysAsset)
@@ -18,6 +18,5 @@ void Export_pystes_AKAsset()
         .def("eventReplicatedEvent", &AKAsset::eventReplicatedEvent)
         .def("SetMeshAndPhysAsset", &AKAsset::SetMeshAndPhysAsset)
         .def("eventPostBeginPlay", &AKAsset::eventPostBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

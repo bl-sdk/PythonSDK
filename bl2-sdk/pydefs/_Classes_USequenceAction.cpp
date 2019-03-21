@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USequenceAction()
+void Export_pystes_USequenceAction(py::object m)
 {
-    py::class_< USequenceAction,  UObject   >("USequenceAction")
+    py::class_< USequenceAction,  UObject   >(m, "USequenceAction")
         .def_readwrite("HandlerName", &USequenceAction::HandlerName)
         .def_readwrite("Targets", &USequenceAction::Targets)
         .def_readwrite("InputLinks", &USequenceOp::InputLinks)
@@ -42,6 +42,5 @@ void Export_pystes_USequenceAction()
         .def("eventIsValidLevelSequenceObject", &USequenceObject::eventIsValidLevelSequenceObject)
         .def("GetWorldInfo", &USequenceObject::GetWorldInfo, py::return_value_policy::reference)
         .def("ScriptLog", &USequenceObject::ScriptLog)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

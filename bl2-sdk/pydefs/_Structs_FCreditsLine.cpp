@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCreditsLine()
+void Export_pystes_FCreditsLine(py::object m)
 {
-    py::class_< FCreditsLine >("FCreditsLine")
+    py::class_< FCreditsLine >(m, "FCreditsLine")
         .def_readwrite("LineType", &FCreditsLine::LineType)
         .def_readwrite("Text", &FCreditsLine::Text)
   ;

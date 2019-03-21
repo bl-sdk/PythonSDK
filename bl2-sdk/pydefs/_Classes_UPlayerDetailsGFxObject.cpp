@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerDetailsGFxObject()
+void Export_pystes_UPlayerDetailsGFxObject(py::object m)
 {
-    py::class_< UPlayerDetailsGFxObject,  UGFxObject   >("UPlayerDetailsGFxObject")
+    py::class_< UPlayerDetailsGFxObject,  UGFxObject   >(m, "UPlayerDetailsGFxObject")
         .def("StaticClass", &UPlayerDetailsGFxObject::StaticClass, py::return_value_policy::reference)
         .def("SetClickHandler", &UPlayerDetailsGFxObject::SetClickHandler)
         .def("NavigateDown", &UPlayerDetailsGFxObject::NavigateDown)
@@ -20,6 +20,5 @@ void Export_pystes_UPlayerDetailsGFxObject()
         .def("SetGamertag", &UPlayerDetailsGFxObject::SetGamertag)
         .def("Hide", &UPlayerDetailsGFxObject::Hide)
         .def("Show", &UPlayerDetailsGFxObject::Show)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

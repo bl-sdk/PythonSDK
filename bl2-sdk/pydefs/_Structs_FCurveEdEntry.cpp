@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCurveEdEntry()
+void Export_pystes_FCurveEdEntry(py::object m)
 {
-    py::class_< FCurveEdEntry >("FCurveEdEntry")
+    py::class_< FCurveEdEntry >(m, "FCurveEdEntry")
         .def_readwrite("CurveObject", &FCurveEdEntry::CurveObject)
         .def_readwrite("CurveColor", &FCurveEdEntry::CurveColor)
         .def_readwrite("CurveName", &FCurveEdEntry::CurveName)

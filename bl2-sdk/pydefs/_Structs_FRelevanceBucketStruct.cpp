@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRelevanceBucketStruct()
+void Export_pystes_FRelevanceBucketStruct(py::object m)
 {
-    py::class_< FRelevanceBucketStruct >("FRelevanceBucketStruct")
+    py::class_< FRelevanceBucketStruct >(m, "FRelevanceBucketStruct")
         .def_readwrite("NdxToStartCheckFrom", &FRelevanceBucketStruct::NdxToStartCheckFrom)
         .def_readwrite("DistanceSquared", &FRelevanceBucketStruct::DistanceSquared)
         .def_readwrite("MinLineChecksPerFrame", &FRelevanceBucketStruct::MinLineChecksPerFrame)

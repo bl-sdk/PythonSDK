@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_PawnMovementBase()
+void Export_pystes_UAction_PawnMovementBase(py::object m)
 {
-    py::class_< UAction_PawnMovementBase,  UActionSequencePawn   >("UAction_PawnMovementBase")
+    py::class_< UAction_PawnMovementBase,  UActionSequencePawn   >(m, "UAction_PawnMovementBase")
         .def_readwrite("CachedSearchOrigin", &UAction_PawnMovementBase::CachedSearchOrigin)
         .def_readwrite("CoverCheckThrottle", &UAction_PawnMovementBase::CoverCheckThrottle)
         .def_readwrite("CoverCheckThrottleInterval", &UAction_PawnMovementBase::CoverCheckThrottleInterval)
@@ -38,6 +38,5 @@ void Export_pystes_UAction_PawnMovementBase()
         .def("TakeDebugSnapshotMoveFailure", &UAction_PawnMovementBase::TakeDebugSnapshotMoveFailure)
         .def("SetMaxMovementSpeed", &UAction_PawnMovementBase::SetMaxMovementSpeed)
         .def("EndMovePawnToDestinationLocation", &UAction_PawnMovementBase::EndMovePawnToDestinationLocation)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

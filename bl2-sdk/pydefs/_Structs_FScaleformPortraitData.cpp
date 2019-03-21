@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FScaleformPortraitData()
+void Export_pystes_FScaleformPortraitData(py::object m)
 {
-    py::class_< FScaleformPortraitData >("FScaleformPortraitData")
+    py::class_< FScaleformPortraitData >(m, "FScaleformPortraitData")
         .def_readwrite("ScaleformName", &FScaleformPortraitData::ScaleformName)
         .def_readwrite("PortraitMovie", &FScaleformPortraitData::PortraitMovie)
   ;

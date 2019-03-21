@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPathGoalEvaluator()
+void Export_pystes_UPathGoalEvaluator(py::object m)
 {
-    py::class_< UPathGoalEvaluator,  UObject   >("UPathGoalEvaluator")
+    py::class_< UPathGoalEvaluator,  UObject   >(m, "UPathGoalEvaluator")
         .def_readwrite("NextEvaluator", &UPathGoalEvaluator::NextEvaluator)
         .def_readwrite("GeneratedGoal", &UPathGoalEvaluator::GeneratedGoal)
         .def_readwrite("MaxPathVisits", &UPathGoalEvaluator::MaxPathVisits)
@@ -13,6 +13,5 @@ void Export_pystes_UPathGoalEvaluator()
         .def("StaticClass", &UPathGoalEvaluator::StaticClass, py::return_value_policy::reference)
         .def("eventGetDumpString", &UPathGoalEvaluator::eventGetDumpString)
         .def("eventRecycle", &UPathGoalEvaluator::eventRecycle)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

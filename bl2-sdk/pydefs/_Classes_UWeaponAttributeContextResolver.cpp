@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWeaponAttributeContextResolver()
+void Export_pystes_UWeaponAttributeContextResolver(py::object m)
 {
-    py::class_< UWeaponAttributeContextResolver,  UAttributeContextResolver   >("UWeaponAttributeContextResolver")
+    py::class_< UWeaponAttributeContextResolver,  UAttributeContextResolver   >(m, "UWeaponAttributeContextResolver")
         .def("StaticClass", &UWeaponAttributeContextResolver::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

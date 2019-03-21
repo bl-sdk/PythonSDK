@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FConfiguredGameSetting()
+void Export_pystes_FConfiguredGameSetting(py::object m)
 {
-    py::class_< FConfiguredGameSetting >("FConfiguredGameSetting")
+    py::class_< FConfiguredGameSetting >(m, "FConfiguredGameSetting")
         .def_readwrite("GameSettingId", &FConfiguredGameSetting::GameSettingId)
         .def_readwrite("GameSettingsClassName", &FConfiguredGameSetting::GameSettingsClassName)
         .def_readwrite("URL", &FConfiguredGameSetting::URL)

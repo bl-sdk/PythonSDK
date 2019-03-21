@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowCoverComponent()
+void Export_pystes_UWillowCoverComponent(py::object m)
 {
-    py::class_< UWillowCoverComponent,  UActorComponent   >("UWillowCoverComponent")
+    py::class_< UWillowCoverComponent,  UActorComponent   >(m, "UWillowCoverComponent")
         .def_readwrite("AIPawn", &UWillowCoverComponent::AIPawn)
         .def_readwrite("LastAction", &UWillowCoverComponent::LastAction)
         .def("StaticClass", &UWillowCoverComponent::StaticClass, py::return_value_policy::reference)
@@ -22,6 +22,5 @@ void Export_pystes_UWillowCoverComponent()
         .def("GetCoverLocation", &UWillowCoverComponent::GetCoverLocation)
         .def("ResetExposure", &UWillowCoverComponent::ResetExposure)
         .def("ActionFinished", &UWillowCoverComponent::ActionFinished)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FParticleBurst()
+void Export_pystes_FParticleBurst(py::object m)
 {
-    py::class_< FParticleBurst >("FParticleBurst")
+    py::class_< FParticleBurst >(m, "FParticleBurst")
         .def_readwrite("Count", &FParticleBurst::Count)
         .def_readwrite("CountLow", &FParticleBurst::CountLow)
         .def_readwrite("Time", &FParticleBurst::Time)

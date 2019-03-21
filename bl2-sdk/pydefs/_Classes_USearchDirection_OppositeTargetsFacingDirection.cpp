@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USearchDirection_OppositeTargetsFacingDirection()
+void Export_pystes_USearchDirection_OppositeTargetsFacingDirection(py::object m)
 {
-    py::class_< USearchDirection_OppositeTargetsFacingDirection,  USearchDirection   >("USearchDirection_OppositeTargetsFacingDirection")
+    py::class_< USearchDirection_OppositeTargetsFacingDirection,  USearchDirection   >(m, "USearchDirection_OppositeTargetsFacingDirection")
         .def("StaticClass", &USearchDirection_OppositeTargetsFacingDirection::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSkeletalMeshLODInfo()
+void Export_pystes_FSkeletalMeshLODInfo(py::object m)
 {
-    py::class_< FSkeletalMeshLODInfo >("FSkeletalMeshLODInfo")
+    py::class_< FSkeletalMeshLODInfo >(m, "FSkeletalMeshLODInfo")
         .def_readwrite("DisplayFactor", &FSkeletalMeshLODInfo::DisplayFactor)
         .def_readwrite("LODHysteresis", &FSkeletalMeshLODInfo::LODHysteresis)
         .def_readwrite("LODMaterialMap", &FSkeletalMeshLODInfo::LODMaterialMap)

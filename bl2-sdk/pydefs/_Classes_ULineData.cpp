@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULineData()
+void Export_pystes_ULineData(py::object m)
 {
-    py::class_< ULineData,  UObject   >("ULineData")
+    py::class_< ULineData,  UObject   >(m, "ULineData")
         .def_readonly("RubberBand", &ULineData::RubberBand)
         .def_readwrite("ParentID", &ULineData::ParentID)
         .def_readwrite("SegmentID", &ULineData::SegmentID)
@@ -18,6 +18,5 @@ void Export_pystes_ULineData()
         .def_readwrite("EditorMode", &ULineData::EditorMode)
         .def_readwrite("Lines", &ULineData::Lines)
         .def("StaticClass", &ULineData::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

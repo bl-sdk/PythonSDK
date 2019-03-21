@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInstalledContentInfo()
+void Export_pystes_FInstalledContentInfo(py::object m)
 {
-    py::class_< FInstalledContentInfo >("FInstalledContentInfo")
+    py::class_< FInstalledContentInfo >(m, "FInstalledContentInfo")
         .def_readwrite("ContentType", &FInstalledContentInfo::ContentType)
         .def_readwrite("ContentName", &FInstalledContentInfo::ContentName)
         .def_readwrite("ContentPath", &FInstalledContentInfo::ContentPath)

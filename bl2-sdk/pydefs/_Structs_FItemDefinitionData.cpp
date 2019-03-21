@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FItemDefinitionData()
+void Export_pystes_FItemDefinitionData(py::object m)
 {
-    py::class_< FItemDefinitionData >("FItemDefinitionData")
+    py::class_< FItemDefinitionData >(m, "FItemDefinitionData")
         .def_readwrite("ItemDefinition", &FItemDefinitionData::ItemDefinition)
         .def_readwrite("BalanceDefinition", &FItemDefinitionData::BalanceDefinition)
         .def_readwrite("ManufacturerDefinition", &FItemDefinitionData::ManufacturerDefinition)

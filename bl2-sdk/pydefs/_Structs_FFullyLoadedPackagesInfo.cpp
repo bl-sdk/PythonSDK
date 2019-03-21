@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FFullyLoadedPackagesInfo()
+void Export_pystes_FFullyLoadedPackagesInfo(py::object m)
 {
-    py::class_< FFullyLoadedPackagesInfo >("FFullyLoadedPackagesInfo")
+    py::class_< FFullyLoadedPackagesInfo >(m, "FFullyLoadedPackagesInfo")
         .def_readwrite("FullyLoadType", &FFullyLoadedPackagesInfo::FullyLoadType)
         .def_readwrite("Tag", &FFullyLoadedPackagesInfo::Tag)
         .def_readwrite("PackagesToLoad", &FFullyLoadedPackagesInfo::PackagesToLoad)

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTradingGFxMovie()
+void Export_pystes_UTradingGFxMovie(py::object m)
 {
-    py::class_< UTradingGFxMovie,  UWillowInventoryGFxMovie   >("UTradingGFxMovie")
+    py::class_< UTradingGFxMovie,  UWillowInventoryGFxMovie   >(m, "UTradingGFxMovie")
         .def_readwrite("OfferingString", &UTradingGFxMovie::OfferingString)
         .def_readwrite("ReceivingString", &UTradingGFxMovie::ReceivingString)
         .def_readwrite("TooltipString", &UTradingGFxMovie::TooltipString)
@@ -60,6 +60,5 @@ void Export_pystes_UTradingGFxMovie()
         .def("InitForConsole", &UTradingGFxMovie::InitForConsole)
         .def("InitForPC", &UTradingGFxMovie::InitForPC)
         .def("eventStart", &UTradingGFxMovie::eventStart)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

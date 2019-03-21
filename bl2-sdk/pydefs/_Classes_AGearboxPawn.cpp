@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AGearboxPawn()
+void Export_pystes_AGearboxPawn(py::object m)
 {
-    py::class_< AGearboxPawn,  AGamePawn   >("AGearboxPawn")
+    py::class_< AGearboxPawn,  AGamePawn   >(m, "AGearboxPawn")
         .def_readwrite("VfTable_ISpecialMoveInterface", &AGearboxPawn::VfTable_ISpecialMoveInterface)
         .def_readwrite("VfTable_IGearboxDialogInterface", &AGearboxPawn::VfTable_IGearboxDialogInterface)
         .def_readwrite("NPCSightBone", &AGearboxPawn::NPCSightBone)
@@ -50,6 +50,5 @@ void Export_pystes_AGearboxPawn()
         .def("eventPostBeginPlay", &AGearboxPawn::eventPostBeginPlay)
         .def("NotifyShotAtBy", &AGearboxPawn::NotifyShotAtBy)
         .def("HaveIBeenShotAtRecently", &AGearboxPawn::HaveIBeenShotAtRecently)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

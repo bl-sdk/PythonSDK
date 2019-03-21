@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCameraShakeInstance()
+void Export_pystes_FCameraShakeInstance(py::object m)
 {
-    py::class_< FCameraShakeInstance >("FCameraShakeInstance")
+    py::class_< FCameraShakeInstance >(m, "FCameraShakeInstance")
         .def_readwrite("SourceShake", &FCameraShakeInstance::SourceShake)
         .def_readwrite("SourceShakeName", &FCameraShakeInstance::SourceShakeName)
         .def_readwrite("OscillatorTimeRemaining", &FCameraShakeInstance::OscillatorTimeRemaining)

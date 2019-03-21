@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ARB_HingeActor()
+void Export_pystes_ARB_HingeActor(py::object m)
 {
-    py::class_< ARB_HingeActor,  ARigidBodyBase   >("ARB_HingeActor")
+    py::class_< ARB_HingeActor,  ARigidBodyBase   >(m, "ARB_HingeActor")
         .def_readwrite("ConstraintActor1", &ARB_ConstraintActor::ConstraintActor1)
         .def_readwrite("ConstraintActor2", &ARB_ConstraintActor::ConstraintActor2)
         .def_readwrite("ConstraintSetup", &ARB_ConstraintActor::ConstraintSetup)
@@ -19,6 +19,5 @@ void Export_pystes_ARB_HingeActor()
         .def("TermConstraint", &ARB_ConstraintActor::TermConstraint)
         .def("InitConstraint", &ARB_ConstraintActor::InitConstraint)
         .def("SetDisableCollision", &ARB_ConstraintActor::SetDisableCollision)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

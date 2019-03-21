@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGFxMovie()
+void Export_pystes_UWillowGFxMovie(py::object m)
 {
-    py::class_< UWillowGFxMovie,  UGearboxGFxMovie   >("UWillowGFxMovie")
+    py::class_< UWillowGFxMovie,  UGearboxGFxMovie   >(m, "UWillowGFxMovie")
         .def_readwrite("DefaultRTTSize_PC", &UWillowGFxMovie::DefaultRTTSize_PC)
         .def_readwrite("DefaultRTTSize_Console", &UWillowGFxMovie::DefaultRTTSize_Console)
         .def_readwrite("WPCOwner", &UWillowGFxMovie::WPCOwner)
@@ -49,6 +49,5 @@ void Export_pystes_UWillowGFxMovie()
         .def("eventStart", &UWillowGFxMovie::eventStart)
         .def("CleanupDestroyedMovies", &UWillowGFxMovie::CleanupDestroyedMovies)
         .def("SingleArgInvokeSF", &UWillowGFxMovie::SingleArgInvokeSF)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

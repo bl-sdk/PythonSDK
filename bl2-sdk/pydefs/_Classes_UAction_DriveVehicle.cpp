@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_DriveVehicle()
+void Export_pystes_UAction_DriveVehicle(py::object m)
 {
-    py::class_< UAction_DriveVehicle,  UWillowActionSequencePawn   >("UAction_DriveVehicle")
+    py::class_< UAction_DriveVehicle,  UWillowActionSequencePawn   >(m, "UAction_DriveVehicle")
         .def_readwrite("MaxSpeedMultiplier", &UAction_DriveVehicle::MaxSpeedMultiplier)
         .def_readwrite("ReachedNodeWeighting", &UAction_DriveVehicle::ReachedNodeWeighting)
         .def_readwrite("MyVehicle", &UAction_DriveVehicle::MyVehicle)
@@ -23,6 +23,5 @@ void Export_pystes_UAction_DriveVehicle()
         .def("eventStart", &UAction_DriveVehicle::eventStart)
         .def("eventCanRun", &UAction_DriveVehicle::eventCanRun)
         .def("GetBestPatrolNode", &UAction_DriveVehicle::GetBestPatrolNode, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

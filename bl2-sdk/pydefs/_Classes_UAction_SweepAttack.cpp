@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_SweepAttack()
+void Export_pystes_UAction_SweepAttack(py::object m)
 {
-    py::class_< UAction_SweepAttack,  UWillowActionSequencePawn   >("UAction_SweepAttack")
+    py::class_< UAction_SweepAttack,  UWillowActionSequencePawn   >(m, "UAction_SweepAttack")
         .def_readwrite("Angle", &UAction_SweepAttack::Angle)
         .def_readwrite("Height", &UAction_SweepAttack::Height)
         .def_readwrite("Radius", &UAction_SweepAttack::Radius)
@@ -19,6 +19,5 @@ void Export_pystes_UAction_SweepAttack()
         .def("eventStop", &UAction_SweepAttack::eventStop)
         .def("eventStart", &UAction_SweepAttack::eventStart)
         .def("eventCanRun", &UAction_SweepAttack::eventCanRun)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

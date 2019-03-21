@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowReplicatedAmbientSoundSource()
+void Export_pystes_AWillowReplicatedAmbientSoundSource(py::object m)
 {
-    py::class_< AWillowReplicatedAmbientSoundSource,  ANote   >("AWillowReplicatedAmbientSoundSource")
+    py::class_< AWillowReplicatedAmbientSoundSource,  ANote   >(m, "AWillowReplicatedAmbientSoundSource")
         .def("StaticClass", &AWillowReplicatedAmbientSoundSource::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

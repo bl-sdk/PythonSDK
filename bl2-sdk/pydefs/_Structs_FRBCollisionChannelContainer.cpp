@@ -3,8 +3,8 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRBCollisionChannelContainer()
+void Export_pystes_FRBCollisionChannelContainer(py::object m)
 {
-    py::class_< FRBCollisionChannelContainer >("FRBCollisionChannelContainer")
+    py::class_< FRBCollisionChannelContainer >(m, "FRBCollisionChannelContainer")
   ;
 }

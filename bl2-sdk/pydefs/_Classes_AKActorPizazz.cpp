@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AKActorPizazz()
+void Export_pystes_AKActorPizazz(py::object m)
 {
-    py::class_< AKActorPizazz,  AKActor   >("AKActorPizazz")
+    py::class_< AKActorPizazz,  AKActor   >(m, "AKActorPizazz")
         .def_readwrite("ReplicatedImpulse", &AKActorPizazz::ReplicatedImpulse)
         .def("StaticClass", &AKActorPizazz::StaticClass, py::return_value_policy::reference)
         .def("ApplyReplicatedImpulse", &AKActorPizazz::ApplyReplicatedImpulse)
@@ -14,6 +14,5 @@ void Export_pystes_AKActorPizazz()
         .def("eventRecycleInternal", &AKActorSpawnable::eventRecycleInternal)
         .def("Recycle", &AKActorSpawnable::Recycle)
         .def("initialize", &AKActorSpawnable::initialize)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

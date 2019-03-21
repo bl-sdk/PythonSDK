@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxNavigationHandle()
+void Export_pystes_UGearboxNavigationHandle(py::object m)
 {
-    py::class_< UGearboxNavigationHandle,  UNavigationHandle   >("UGearboxNavigationHandle")
+    py::class_< UGearboxNavigationHandle,  UNavigationHandle   >(m, "UGearboxNavigationHandle")
         .def_readwrite("DesiredMovementSpeed", &UGearboxNavigationHandle::DesiredMovementSpeed)
         .def_readwrite("ActiveSpecialNavMeshMove", &UGearboxNavigationHandle::ActiveSpecialNavMeshMove)
         .def_readwrite("CurrentGoal", &UGearboxNavigationHandle::CurrentGoal)
@@ -41,6 +41,5 @@ void Export_pystes_UGearboxNavigationHandle()
         .def("ClearPath", &UGearboxNavigationHandle::ClearPath)
         .def("FollowPath", &UGearboxNavigationHandle::FollowPath)
         .def("CreatePathToLocation", &UGearboxNavigationHandle::CreatePathToLocation)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

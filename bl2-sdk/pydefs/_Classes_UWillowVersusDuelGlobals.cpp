@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowVersusDuelGlobals()
+void Export_pystes_UWillowVersusDuelGlobals(py::object m)
 {
-    py::class_< UWillowVersusDuelGlobals,  UGBXDefinition   >("UWillowVersusDuelGlobals")
+    py::class_< UWillowVersusDuelGlobals,  UGBXDefinition   >(m, "UWillowVersusDuelGlobals")
         .def_readwrite("ArenaMaterialIndex", &UWillowVersusDuelGlobals::ArenaMaterialIndex)
         .def_readwrite("ArenaMaterialParamName", &UWillowVersusDuelGlobals::ArenaMaterialParamName)
         .def_readwrite("ArenaMesh", &UWillowVersusDuelGlobals::ArenaMesh)
@@ -24,6 +24,5 @@ void Export_pystes_UWillowVersusDuelGlobals()
         .def_readwrite("DuelLength", &UWillowVersusDuelGlobals::DuelLength)
         .def_readwrite("DuelTeams", &UWillowVersusDuelGlobals::DuelTeams)
         .def("StaticClass", &UWillowVersusDuelGlobals::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

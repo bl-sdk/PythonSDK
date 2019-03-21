@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBulletEventResponse()
+void Export_pystes_FBulletEventResponse(py::object m)
 {
-    py::class_< FBulletEventResponse >("FBulletEventResponse")
+    py::class_< FBulletEventResponse >(m, "FBulletEventResponse")
         .def_readwrite("SplitNum", &FBulletEventResponse::SplitNum)
         .def_readwrite("SplitAngle", &FBulletEventResponse::SplitAngle)
         .def_readwrite("SplitAngleOffset", &FBulletEventResponse::SplitAngleOffset)

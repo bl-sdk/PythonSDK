@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPopulationOpportunitySavedActor()
+void Export_pystes_FPopulationOpportunitySavedActor(py::object m)
 {
-    py::class_< FPopulationOpportunitySavedActor >("FPopulationOpportunitySavedActor")
+    py::class_< FPopulationOpportunitySavedActor >(m, "FPopulationOpportunitySavedActor")
         .def_readwrite("FactoryPath", &FPopulationOpportunitySavedActor::FactoryPath)
         .def_readwrite("TimeActorSaved", &FPopulationOpportunitySavedActor::TimeActorSaved)
         .def_readwrite("SpawnActorLocation", &FPopulationOpportunitySavedActor::SpawnActorLocation)

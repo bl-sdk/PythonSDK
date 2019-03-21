@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPlayerSaveData()
+void Export_pystes_FPlayerSaveData(py::object m)
 {
-    py::class_< FPlayerSaveData >("FPlayerSaveData")
+    py::class_< FPlayerSaveData >(m, "FPlayerSaveData")
         .def_readwrite("FilePath", &FPlayerSaveData::FilePath)
         .def_readwrite("TimeStamp", &FPlayerSaveData::TimeStamp)
         .def_readwrite("PlayerClassDefName", &FPlayerSaveData::PlayerClassDefName)

@@ -3,13 +3,12 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowEmitter()
+void Export_pystes_AWillowEmitter(py::object m)
 {
-    py::class_< AWillowEmitter,  AEmitter   >("AWillowEmitter")
+    py::class_< AWillowEmitter,  AEmitter   >(m, "AWillowEmitter")
         .def_readwrite("NetCullDistanceSquared", &AWillowEmitter::NetCullDistanceSquared)
         .def("StaticClass", &AWillowEmitter::StaticClass, py::return_value_policy::reference)
         .def("SetOwnerNoSeeEmitter", &AWillowEmitter::SetOwnerNoSeeEmitter)
         .def("eventReplicatedEvent", &AWillowEmitter::eventReplicatedEvent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

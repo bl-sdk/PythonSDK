@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AStaticMeshActorBase()
+void Export_pystes_AStaticMeshActorBase(py::object m)
 {
-    py::class_< AStaticMeshActorBase,  AActor   >("AStaticMeshActorBase")
+    py::class_< AStaticMeshActorBase,  AActor   >(m, "AStaticMeshActorBase")
         .def("StaticClass", &AStaticMeshActorBase::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

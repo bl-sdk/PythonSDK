@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIHijackBehavior()
+void Export_pystes_UIHijackBehavior(py::object m)
 {
-    py::class_< UIHijackBehavior,  UInterface   >("UIHijackBehavior")
+    py::class_< UIHijackBehavior,  UInterface   >(m, "UIHijackBehavior")
         .def("StaticClass", &UIHijackBehavior::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

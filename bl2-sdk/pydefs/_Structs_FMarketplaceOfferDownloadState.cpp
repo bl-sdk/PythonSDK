@@ -3,8 +3,8 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMarketplaceOfferDownloadState()
+void Export_pystes_FMarketplaceOfferDownloadState(py::object m)
 {
-    py::class_< FMarketplaceOfferDownloadState >("FMarketplaceOfferDownloadState")
+    py::class_< FMarketplaceOfferDownloadState >(m, "FMarketplaceOfferDownloadState")
   ;
 }

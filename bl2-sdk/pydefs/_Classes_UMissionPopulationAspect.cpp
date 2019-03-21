@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMissionPopulationAspect()
+void Export_pystes_UMissionPopulationAspect(py::object m)
 {
-    py::class_< UMissionPopulationAspect,  UPopulationAspect   >("UMissionPopulationAspect")
+    py::class_< UMissionPopulationAspect,  UPopulationAspect   >(m, "UMissionPopulationAspect")
         .def_readwrite("VfTable_IIMission", &UMissionPopulationAspect::VfTable_IIMission)
         .def_readwrite("MissionObjective", &UMissionPopulationAspect::MissionObjective)
         .def_readwrite("Activation", &UMissionPopulationAspect::Activation)
@@ -36,6 +36,5 @@ void Export_pystes_UMissionPopulationAspect()
         .def("CreateWaypointFromWaypointSetting", &UMissionPopulationAspect::CreateWaypointFromWaypointSetting)
         .def("GrantItemsToActor", &UMissionPopulationAspect::GrantItemsToActor)
         .def("eventinitialize", &UMissionPopulationAspect::eventinitialize)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FIGBXNavMeshObstaclePointer()
+void Export_pystes_FIGBXNavMeshObstaclePointer(py::object m)
 {
-    py::class_< FIGBXNavMeshObstaclePointer >("FIGBXNavMeshObstaclePointer")
+    py::class_< FIGBXNavMeshObstaclePointer >(m, "FIGBXNavMeshObstaclePointer")
         .def_readwrite("Dummy", &FIGBXNavMeshObstaclePointer::Dummy)
   ;
 }

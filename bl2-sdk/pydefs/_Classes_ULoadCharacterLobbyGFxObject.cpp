@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULoadCharacterLobbyGFxObject()
+void Export_pystes_ULoadCharacterLobbyGFxObject(py::object m)
 {
-    py::class_< ULoadCharacterLobbyGFxObject,  UGFxObject   >("ULoadCharacterLobbyGFxObject")
+    py::class_< ULoadCharacterLobbyGFxObject,  UGFxObject   >(m, "ULoadCharacterLobbyGFxObject")
         .def("StaticClass", &ULoadCharacterLobbyGFxObject::StaticClass, py::return_value_policy::reference)
         .def("SetQuadrant", &ULoadCharacterLobbyGFxObject::SetQuadrant)
         .def("SetTooltips", &ULoadCharacterLobbyGFxObject::SetTooltips)
@@ -15,6 +15,5 @@ void Export_pystes_ULoadCharacterLobbyGFxObject()
         .def("SelectSlotIndex", &ULoadCharacterLobbyGFxObject::SelectSlotIndex)
         .def("HideCharacterInfo", &ULoadCharacterLobbyGFxObject::HideCharacterInfo)
         .def("ClearSlots", &ULoadCharacterLobbyGFxObject::ClearSlots)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AVehicle()
+void Export_pystes_AVehicle(py::object m)
 {
-    py::class_< AVehicle,  APawn   >("AVehicle")
+    py::class_< AVehicle,  APawn   >(m, "AVehicle")
         .def_readwrite("Driver", &AVehicle::Driver)
         .def_readwrite("ExitPositions", &AVehicle::ExitPositions)
         .def_readwrite("ExitRadius", &AVehicle::ExitRadius)
@@ -90,6 +90,5 @@ void Export_pystes_AVehicle()
         .def("GetVehicleBase", &AVehicle::GetVehicleBase, py::return_value_policy::reference)
         .def("Suicide", &AVehicle::Suicide)
         .def("NotifyTeamChanged", &AVehicle::NotifyTeamChanged)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

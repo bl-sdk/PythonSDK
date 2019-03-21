@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGameStateObject()
+void Export_pystes_UGameStateObject(py::object m)
 {
-    py::class_< UGameStateObject,  UGameplayEventsHandler   >("UGameStateObject")
+    py::class_< UGameStateObject,  UGameplayEventsHandler   >(m, "UGameStateObject")
         .def_readwrite("TeamStates", &UGameStateObject::TeamStates)
         .def_readwrite("PlayerStates", &UGameStateObject::PlayerStates)
         .def_readwrite("SessionType", &UGameStateObject::SessionType)
@@ -14,6 +14,5 @@ void Export_pystes_UGameStateObject()
         .def("StaticClass", &UGameStateObject::StaticClass, py::return_value_policy::reference)
         .def("Reset", &UGameStateObject::Reset)
         .def("eventPreProcessStream", &UGameStateObject::eventPreProcessStream)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

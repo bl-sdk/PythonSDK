@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UChallengeDefinition()
+void Export_pystes_UChallengeDefinition(py::object m)
 {
-    py::class_< UChallengeDefinition,  UGBXDefinition   >("UChallengeDefinition")
+    py::class_< UChallengeDefinition,  UGBXDefinition   >(m, "UChallengeDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UChallengeDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("VfTable_IIDlcLicensableObject", &UChallengeDefinition::VfTable_IIDlcLicensableObject)
         .def_readwrite("ChallengeName", &UChallengeDefinition::ChallengeName)
@@ -30,6 +30,5 @@ void Export_pystes_UChallengeDefinition()
         .def("OnLevelCompleted", &UChallengeDefinition::OnLevelCompleted)
         .def("SetBehaviorProviderDefinition", &UChallengeDefinition::SetBehaviorProviderDefinition)
         .def("GetBehaviorProviderDefinition", &UChallengeDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

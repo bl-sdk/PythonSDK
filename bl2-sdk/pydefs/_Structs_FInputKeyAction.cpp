@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInputKeyAction()
+void Export_pystes_FInputKeyAction(py::object m)
 {
-    py::class_< FInputKeyAction >("FInputKeyAction")
+    py::class_< FInputKeyAction >(m, "FInputKeyAction")
         .def_readwrite("InputKeyName", &FInputKeyAction::InputKeyName)
         .def_readwrite("InputKeyState", &FInputKeyAction::InputKeyState)
         .def_readwrite("TriggeredOps", &FInputKeyAction::TriggeredOps)

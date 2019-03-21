@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIAnimBehavior()
+void Export_pystes_UIAnimBehavior(py::object m)
 {
-    py::class_< UIAnimBehavior,  UInterface   >("UIAnimBehavior")
+    py::class_< UIAnimBehavior,  UInterface   >(m, "UIAnimBehavior")
         .def("StaticClass", &UIAnimBehavior::StaticClass, py::return_value_policy::reference)
         .def("SetAnimTreeTemplate", &UIAnimBehavior::SetAnimTreeTemplate)
         .def("Behavior_ChangeBoneVisibility", &UIAnimBehavior::Behavior_ChangeBoneVisibility)
@@ -18,6 +18,5 @@ void Export_pystes_UIAnimBehavior()
         .def("Behavior_SetMorphNodeWeight", &UIAnimBehavior::Behavior_SetMorphNodeWeight)
         .def("GetAnimTreeNodes", &UIAnimBehavior::GetAnimTreeNodes)
         .def("Behavior_SetSkelControlStrength", &UIAnimBehavior::Behavior_SetSkelControlStrength)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

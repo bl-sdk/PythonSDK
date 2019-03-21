@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AMatineeActor()
+void Export_pystes_AMatineeActor(py::object m)
 {
-    py::class_< AMatineeActor,  AActor   >("AMatineeActor")
+    py::class_< AMatineeActor,  AActor   >(m, "AMatineeActor")
         .def_readwrite("InterpAction", &AMatineeActor::InterpAction)
         .def_readwrite("PlayRate", &AMatineeActor::PlayRate)
         .def_readwrite("Position", &AMatineeActor::Position)
@@ -17,6 +17,5 @@ void Export_pystes_AMatineeActor()
         .def("CheckPriorityRefresh", &AMatineeActor::CheckPriorityRefresh)
         .def("eventUpdate", &AMatineeActor::eventUpdate)
         .def("AddAIGroupActor", &AMatineeActor::AddAIGroupActor)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APopulationOpportunityDen_Dynamic()
+void Export_pystes_APopulationOpportunityDen_Dynamic(py::object m)
 {
-    py::class_< APopulationOpportunityDen_Dynamic,  APopulationOpportunityDen   >("APopulationOpportunityDen_Dynamic")
+    py::class_< APopulationOpportunityDen_Dynamic,  APopulationOpportunityDen   >(m, "APopulationOpportunityDen_Dynamic")
         .def_readwrite("DynamicPointName", &APopulationOpportunityDen_Dynamic::DynamicPointName)
         .def_readwrite("DynamicPointRadius", &APopulationOpportunityDen_Dynamic::DynamicPointRadius)
         .def("StaticClass", &APopulationOpportunityDen_Dynamic::StaticClass, py::return_value_policy::reference)
@@ -13,6 +13,5 @@ void Export_pystes_APopulationOpportunityDen_Dynamic()
         .def("ApplyPreviewBodyComposition", &APopulationOpportunityDen_Dynamic::ApplyPreviewBodyComposition)
         .def("GetBodyInfoProvider", &APopulationOpportunityDen_Dynamic::GetBodyInfoProvider, py::return_value_policy::reference)
         .def("GetOpportunityGameStage", &APopulationOpportunityDen_Dynamic::GetOpportunityGameStage)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

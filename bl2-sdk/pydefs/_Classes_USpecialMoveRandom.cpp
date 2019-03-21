@@ -3,13 +3,12 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpecialMoveRandom()
+void Export_pystes_USpecialMoveRandom(py::object m)
 {
-    py::class_< USpecialMoveRandom,  USpecialMoveDefinition   >("USpecialMoveRandom")
+    py::class_< USpecialMoveRandom,  USpecialMoveDefinition   >(m, "USpecialMoveRandom")
         .def_readwrite("RandomList", &USpecialMoveRandom::RandomList)
         .def("StaticClass", &USpecialMoveRandom::StaticClass, py::return_value_policy::reference)
         .def("Contains", &USpecialMoveRandom::Contains)
         .def("GetSMDToPlay", &USpecialMoveRandom::GetSMDToPlay, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UEngineTypes()
+void Export_pystes_UEngineTypes(py::object m)
 {
-    py::class_< UEngineTypes,  UObject   >("UEngineTypes")
+    py::class_< UEngineTypes,  UObject   >(m, "UEngineTypes")
         .def("StaticClass", &UEngineTypes::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

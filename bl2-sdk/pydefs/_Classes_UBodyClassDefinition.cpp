@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBodyClassDefinition()
+void Export_pystes_UBodyClassDefinition(py::object m)
 {
-    py::class_< UBodyClassDefinition,  UGBXDefinition   >("UBodyClassDefinition")
+    py::class_< UBodyClassDefinition,  UGBXDefinition   >(m, "UBodyClassDefinition")
         .def_readwrite("VfTable_IIHitRegionInfoProvider", &UBodyClassDefinition::VfTable_IIHitRegionInfoProvider)
         .def_readwrite("HeadLookAtName", &UBodyClassDefinition::HeadLookAtName)
         .def_readwrite("BodyTag", &UBodyClassDefinition::BodyTag)
@@ -185,6 +185,5 @@ void Export_pystes_UBodyClassDefinition()
         .def("ShouldCloak", &UBodyClassDefinition::ShouldCloak)
         .def("GetCringeAnim", &UBodyClassDefinition::GetCringeAnim, py::return_value_policy::reference)
         .def("GetKnockbackBody", &UBodyClassDefinition::GetKnockbackBody, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

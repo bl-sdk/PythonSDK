@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxGFxMovie()
+void Export_pystes_UGearboxGFxMovie(py::object m)
 {
-    py::class_< UGearboxGFxMovie,  UGFxMovie   >("UGearboxGFxMovie")
+    py::class_< UGearboxGFxMovie,  UGFxMovie   >(m, "UGearboxGFxMovie")
         .def_readwrite("InteractionOverrideSounds", &UGearboxGFxMovie::InteractionOverrideSounds)
         .def_readwrite("TickRateSeconds", &UGearboxGFxMovie::TickRateSeconds)
         .def_readwrite("AllStyles", &UGearboxGFxMovie::AllStyles)
@@ -68,6 +68,5 @@ void Export_pystes_UGearboxGFxMovie()
         .def("WantsControllerInput", &UGearboxGFxMovie::WantsControllerInput)
         .def("SetExternalTexture", &UGearboxGFxMovie::SetExternalTexture)
         .def("OnInputAxis", &UGearboxGFxMovie::OnInputAxis)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

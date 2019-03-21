@@ -3,15 +3,14 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAkEvent()
+void Export_pystes_UAkEvent(py::object m)
 {
-    py::class_< UAkEvent,  UObject   >("UAkEvent")
+    py::class_< UAkEvent,  UObject   >(m, "UAkEvent")
         .def_readwrite("RequiredBank", &UAkEvent::RequiredBank)
         .def_readwrite("FaceFXAnimSet", &UAkEvent::FaceFXAnimSet)
         .def_readwrite("EnvironmentalEffectUpdateFrequency", &UAkEvent::EnvironmentalEffectUpdateFrequency)
         .def_readwrite("MaxAttenuationRadius", &UAkEvent::MaxAttenuationRadius)
         .def_readwrite("ShortId", &UAkObject::ShortId)
         .def("StaticClass", &UAkEvent::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

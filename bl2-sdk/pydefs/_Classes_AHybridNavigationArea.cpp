@@ -3,13 +3,12 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AHybridNavigationArea()
+void Export_pystes_AHybridNavigationArea(py::object m)
 {
-    py::class_< AHybridNavigationArea,  AInfo   >("AHybridNavigationArea")
+    py::class_< AHybridNavigationArea,  AInfo   >(m, "AHybridNavigationArea")
         .def_readwrite("CustomAreaName", &AHybridNavigationArea::CustomAreaName)
         .def_readwrite("AreaColor", &AHybridNavigationArea::AreaColor)
         .def("StaticClass", &AHybridNavigationArea::StaticClass, py::return_value_policy::reference)
         .def("GetAreaName", &AHybridNavigationArea::GetAreaName)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

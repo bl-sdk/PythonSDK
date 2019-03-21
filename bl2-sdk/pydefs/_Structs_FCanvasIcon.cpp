@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCanvasIcon()
+void Export_pystes_FCanvasIcon(py::object m)
 {
-    py::class_< FCanvasIcon >("FCanvasIcon")
+    py::class_< FCanvasIcon >(m, "FCanvasIcon")
         .def_readwrite("Texture", &FCanvasIcon::Texture)
         .def_readwrite("U", &FCanvasIcon::U)
         .def_readwrite("V", &FCanvasIcon::V)

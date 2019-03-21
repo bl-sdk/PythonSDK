@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AAutoLadder()
+void Export_pystes_AAutoLadder(py::object m)
 {
-    py::class_< AAutoLadder,  ALadder   >("AAutoLadder")
+    py::class_< AAutoLadder,  ALadder   >(m, "AAutoLadder")
         .def("StaticClass", &AAutoLadder::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTimerData()
+void Export_pystes_FTimerData(py::object m)
 {
-    py::class_< FTimerData >("FTimerData")
+    py::class_< FTimerData >(m, "FTimerData")
         .def_readwrite("FuncName", &FTimerData::FuncName)
         .def_readwrite("Rate", &FTimerData::Rate)
         .def_readwrite("Count", &FTimerData::Count)

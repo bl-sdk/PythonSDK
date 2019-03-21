@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UChallengesPanelGFxObject()
+void Export_pystes_UChallengesPanelGFxObject(py::object m)
 {
-    py::class_< UChallengesPanelGFxObject,  UBaseInventoryPanelGFxObject   >("UChallengesPanelGFxObject")
+    py::class_< UChallengesPanelGFxObject,  UBaseInventoryPanelGFxObject   >(m, "UChallengesPanelGFxObject")
         .def_readwrite("ChallengeLogTextList", &UChallengesPanelGFxObject::ChallengeLogTextList)
         .def_readwrite("StatusMenuDef", &UChallengesPanelGFxObject::StatusMenuDef)
         .def_readwrite("MyWPC", &UChallengesPanelGFxObject::MyWPC)
@@ -44,6 +44,5 @@ void Export_pystes_UChallengesPanelGFxObject()
         .def("SetLastHighlightedEntry", &UChallengesPanelGFxObject::SetLastHighlightedEntry)
         .def("GetLastHighlightedEntry", &UChallengesPanelGFxObject::GetLastHighlightedEntry)
         .def("UpdateChallengeTextList", &UChallengesPanelGFxObject::UpdateChallengeTextList)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

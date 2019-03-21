@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxProcess()
+void Export_pystes_UGearboxProcess(py::object m)
 {
-    py::class_< UGearboxProcess,  UObject   >("UGearboxProcess")
+    py::class_< UGearboxProcess,  UObject   >(m, "UGearboxProcess")
         .def_readwrite("FirstAttemptDelay", &UGearboxProcess::FirstAttemptDelay)
         .def_readwrite("BaseRetrySeconds", &UGearboxProcess::BaseRetrySeconds)
         .def_readwrite("MaxRetryAttempts", &UGearboxProcess::MaxRetryAttempts)
@@ -26,6 +26,5 @@ void Export_pystes_UGearboxProcess()
         .def("Init", &UGearboxProcess::Init)
         .def("ContinueLoop", &UGearboxProcess::ContinueLoop)
         .def("StopLoop", &UGearboxProcess::StopLoop)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

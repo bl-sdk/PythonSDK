@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTaggedMarketplaceContent()
+void Export_pystes_FTaggedMarketplaceContent(py::object m)
 {
-    py::class_< FTaggedMarketplaceContent >("FTaggedMarketplaceContent")
+    py::class_< FTaggedMarketplaceContent >(m, "FTaggedMarketplaceContent")
         .def_readwrite("Tag", &FTaggedMarketplaceContent::Tag)
         .def_readwrite("OfferId", &FTaggedMarketplaceContent::OfferId)
         .def_readwrite("OfferIdText", &FTaggedMarketplaceContent::OfferIdText)

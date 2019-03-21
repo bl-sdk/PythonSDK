@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPriorityData()
+void Export_pystes_FPriorityData(py::object m)
 {
-    py::class_< FPriorityData >("FPriorityData")
+    py::class_< FPriorityData >(m, "FPriorityData")
         .def_readwrite("Description", &FPriorityData::Description)
         .def_readwrite("Condition", &FPriorityData::Condition)
   ;

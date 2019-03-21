@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPartyBeaconClient()
+void Export_pystes_UPartyBeaconClient(py::object m)
 {
-    py::class_< UPartyBeaconClient,  UPartyBeacon   >("UPartyBeaconClient")
+    py::class_< UPartyBeaconClient,  UPartyBeacon   >(m, "UPartyBeaconClient")
         .def_readwrite("HostPendingRequest", &UPartyBeaconClient::HostPendingRequest)
         .def_readwrite("PendingRequest", &UPartyBeaconClient::PendingRequest)
         .def_readwrite("ClientBeaconState", &UPartyBeaconClient::ClientBeaconState)
@@ -25,6 +25,5 @@ void Export_pystes_UPartyBeaconClient()
         .def("OnTravelRequestReceived", &UPartyBeaconClient::OnTravelRequestReceived)
         .def("OnReservationCountUpdated", &UPartyBeaconClient::OnReservationCountUpdated)
         .def("OnReservationRequestComplete", &UPartyBeaconClient::OnReservationRequestComplete)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

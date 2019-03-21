@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBoundaryTurretRenderingComponent()
+void Export_pystes_UBoundaryTurretRenderingComponent(py::object m)
 {
-    py::class_< UBoundaryTurretRenderingComponent,  UPrimitiveComponent   >("UBoundaryTurretRenderingComponent")
+    py::class_< UBoundaryTurretRenderingComponent,  UPrimitiveComponent   >(m, "UBoundaryTurretRenderingComponent")
         .def("StaticClass", &UBoundaryTurretRenderingComponent::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

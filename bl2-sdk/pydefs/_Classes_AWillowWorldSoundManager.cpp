@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowWorldSoundManager()
+void Export_pystes_AWillowWorldSoundManager(py::object m)
 {
-    py::class_< AWillowWorldSoundManager,  AWorldSoundManager   >("AWillowWorldSoundManager")
+    py::class_< AWillowWorldSoundManager,  AWorldSoundManager   >(m, "AWillowWorldSoundManager")
         .def_readwrite("MusicComponent", &AWillowWorldSoundManager::MusicComponent)
         .def_readwrite("CurrentMusicStartAkEvent", &AWillowWorldSoundManager::CurrentMusicStartAkEvent)
         .def_readwrite("CurrentMusicStopAkEvent", &AWillowWorldSoundManager::CurrentMusicStopAkEvent)
@@ -27,6 +27,5 @@ void Export_pystes_AWillowWorldSoundManager()
         .def("StaticSetCustomAmbientMusicAkState", &AWillowWorldSoundManager::StaticSetCustomAmbientMusicAkState)
         .def("StaticSetBossAkState", &AWillowWorldSoundManager::StaticSetBossAkState)
         .def("StaticConfigureLevelMusic", &AWillowWorldSoundManager::StaticConfigureLevelMusic)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

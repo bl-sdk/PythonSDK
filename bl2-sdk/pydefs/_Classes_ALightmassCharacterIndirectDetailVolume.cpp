@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ALightmassCharacterIndirectDetailVolume()
+void Export_pystes_ALightmassCharacterIndirectDetailVolume(py::object m)
 {
-    py::class_< ALightmassCharacterIndirectDetailVolume,  AVolume   >("ALightmassCharacterIndirectDetailVolume")
+    py::class_< ALightmassCharacterIndirectDetailVolume,  AVolume   >(m, "ALightmassCharacterIndirectDetailVolume")
         .def("StaticClass", &ALightmassCharacterIndirectDetailVolume::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

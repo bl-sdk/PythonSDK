@@ -3,8 +3,8 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ANavMeshObstacle_FCheckpointRecord()
+void Export_pystes_ANavMeshObstacle_FCheckpointRecord(py::object m)
 {
-    py::class_< ANavMeshObstacle_FCheckpointRecord >("ANavMeshObstacle_FCheckpointRecord")
+    py::class_< ANavMeshObstacle_FCheckpointRecord >(m, "ANavMeshObstacle_FCheckpointRecord")
   ;
 }

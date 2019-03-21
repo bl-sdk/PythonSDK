@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMeleeDefinition()
+void Export_pystes_UMeleeDefinition(py::object m)
 {
-    py::class_< UMeleeDefinition,  UGBXDefinition   >("UMeleeDefinition")
+    py::class_< UMeleeDefinition,  UGBXDefinition   >(m, "UMeleeDefinition")
         .def_readwrite("VfTable_IIDamageCauser", &UMeleeDefinition::VfTable_IIDamageCauser)
         .def_readwrite("Damage", &UMeleeDefinition::Damage)
         .def_readwrite("DamageSource", &UMeleeDefinition::DamageSource)
@@ -42,6 +42,5 @@ void Export_pystes_UMeleeDefinition()
         .def("IsMeleeDebugEnabled", &UMeleeDefinition::IsMeleeDebugEnabled)
         .def("ToggleMeleeDebug", &UMeleeDefinition::ToggleMeleeDebug)
         .def("MeleeAttack", &UMeleeDefinition::MeleeAttack)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

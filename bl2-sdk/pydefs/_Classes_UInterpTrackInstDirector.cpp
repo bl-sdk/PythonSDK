@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackInstDirector()
+void Export_pystes_UInterpTrackInstDirector(py::object m)
 {
-    py::class_< UInterpTrackInstDirector,  UInterpTrackInst   >("UInterpTrackInstDirector")
+    py::class_< UInterpTrackInstDirector,  UInterpTrackInst   >(m, "UInterpTrackInstDirector")
         .def_readwrite("OldViewTarget", &UInterpTrackInstDirector::OldViewTarget)
         .def_readwrite("OldRenderingOverrides", &UInterpTrackInstDirector::OldRenderingOverrides)
         .def("StaticClass", &UInterpTrackInstDirector::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

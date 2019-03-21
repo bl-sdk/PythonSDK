@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AVehicleStandIn()
+void Export_pystes_AVehicleStandIn(py::object m)
 {
-    py::class_< AVehicleStandIn,  AActor   >("AVehicleStandIn")
+    py::class_< AVehicleStandIn,  AActor   >(m, "AVehicleStandIn")
         .def_readwrite("VfTable_IIBodyCompositionInstance", &AVehicleStandIn::VfTable_IIBodyCompositionInstance)
         .def_readwrite("VfTable_IICustomizable", &AVehicleStandIn::VfTable_IICustomizable)
         .def_readwrite("PreviewMesh", &AVehicleStandIn::PreviewMesh)
@@ -29,6 +29,5 @@ void Export_pystes_AVehicleStandIn()
         .def("GetCustomizableInstanceDataSets", &AVehicleStandIn::GetCustomizableInstanceDataSets)
         .def("GetDesiredCustomizationOfType", &AVehicleStandIn::GetDesiredCustomizationOfType, py::return_value_policy::reference)
         .def("CustomizationApplied", &AVehicleStandIn::CustomizationApplied)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAIPawnBalanceDefinition()
+void Export_pystes_UAIPawnBalanceDefinition(py::object m)
 {
-    py::class_< UAIPawnBalanceDefinition,  UBaseBalanceDefinition   >("UAIPawnBalanceDefinition")
+    py::class_< UAIPawnBalanceDefinition,  UBaseBalanceDefinition   >(m, "UAIPawnBalanceDefinition")
         .def_readwrite("VfTable_IIConstructObject", &UAIPawnBalanceDefinition::VfTable_IIConstructObject)
         .def_readwrite("CanSpawnIf", &UAIPawnBalanceDefinition::CanSpawnIf)
         .def_readwrite("PlayThroughs", &UAIPawnBalanceDefinition::PlayThroughs)
@@ -27,6 +27,5 @@ void Export_pystes_UAIPawnBalanceDefinition()
         .def("SetupPawnItemPoolList", &UAIPawnBalanceDefinition::SetupPawnItemPoolList)
         .def("GetPawnArchetype", &UAIPawnBalanceDefinition::GetPawnArchetype, py::return_value_policy::reference)
         .def("GetPlayThroughIndex", &UAIPawnBalanceDefinition::GetPlayThroughIndex)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

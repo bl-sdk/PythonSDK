@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDevelopmentDownloadableContentEnumerator()
+void Export_pystes_UDevelopmentDownloadableContentEnumerator(py::object m)
 {
-    py::class_< UDevelopmentDownloadableContentEnumerator,  UDownloadableContentEnumerator   >("UDevelopmentDownloadableContentEnumerator")
+    py::class_< UDevelopmentDownloadableContentEnumerator,  UDownloadableContentEnumerator   >(m, "UDevelopmentDownloadableContentEnumerator")
         .def("StaticClass", &UDevelopmentDownloadableContentEnumerator::StaticClass, py::return_value_policy::reference)
         .def("InstallAllDLC", &UDevelopmentDownloadableContentEnumerator::InstallAllDLC)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

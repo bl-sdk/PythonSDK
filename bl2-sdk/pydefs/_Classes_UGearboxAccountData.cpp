@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxAccountData()
+void Export_pystes_UGearboxAccountData(py::object m)
 {
-    py::class_< UGearboxAccountData,  UObject   >("UGearboxAccountData")
+    py::class_< UGearboxAccountData,  UObject   >(m, "UGearboxAccountData")
         .def_readwrite("RequestId", &UGearboxAccountData::RequestId)
         .def_readwrite("PlatformLoginName", &UGearboxAccountData::PlatformLoginName)
         .def_readwrite("NextEntitlementUpdateTime", &UGearboxAccountData::NextEntitlementUpdateTime)
@@ -39,6 +39,5 @@ void Export_pystes_UGearboxAccountData()
         .def("Clear", &UGearboxAccountData::Clear)
         .def("ExtractArchwayResultJson", &UGearboxAccountData::ExtractArchwayResultJson)
         .def("ExtractArchwayResult", &UGearboxAccountData::ExtractArchwayResult)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

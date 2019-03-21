@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ALensFlareSource()
+void Export_pystes_ALensFlareSource(py::object m)
 {
-    py::class_< ALensFlareSource,  AActor   >("ALensFlareSource")
+    py::class_< ALensFlareSource,  AActor   >(m, "ALensFlareSource")
         .def_readwrite("LensFlareComp", &ALensFlareSource::LensFlareComp)
         .def("StaticClass", &ALensFlareSource::StaticClass, py::return_value_policy::reference)
         .def("SetActorParameter", &ALensFlareSource::SetActorParameter)
@@ -17,6 +17,5 @@ void Export_pystes_ALensFlareSource()
         .def("OnToggle", &ALensFlareSource::OnToggle)
         .def("eventPostBeginPlay", &ALensFlareSource::eventPostBeginPlay)
         .def("SetTemplate", &ALensFlareSource::SetTemplate)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

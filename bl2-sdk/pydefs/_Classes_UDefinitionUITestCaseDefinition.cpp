@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDefinitionUITestCaseDefinition()
+void Export_pystes_UDefinitionUITestCaseDefinition(py::object m)
 {
-    py::class_< UDefinitionUITestCaseDefinition,  UGBXDefinition   >("UDefinitionUITestCaseDefinition")
+    py::class_< UDefinitionUITestCaseDefinition,  UGBXDefinition   >(m, "UDefinitionUITestCaseDefinition")
         .def_readwrite("ConstantFloat", &UDefinitionUITestCaseDefinition::ConstantFloat)
         .def_readwrite("ConstantFloatArray", &UDefinitionUITestCaseDefinition::ConstantFloatArray)
         .def_readwrite("Float", &UDefinitionUITestCaseDefinition::Float)
@@ -15,6 +15,5 @@ void Export_pystes_UDefinitionUITestCaseDefinition()
         .def_readwrite("ReferencedDefinition", &UDefinitionUITestCaseDefinition::ReferencedDefinition)
         .def_readwrite("ArrayOfReferences", &UDefinitionUITestCaseDefinition::ArrayOfReferences)
         .def("StaticClass", &UDefinitionUITestCaseDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowVehicleSeatDefinition()
+void Export_pystes_UWillowVehicleSeatDefinition(py::object m)
 {
-    py::class_< UWillowVehicleSeatDefinition,  UGBXDefinition   >("UWillowVehicleSeatDefinition")
+    py::class_< UWillowVehicleSeatDefinition,  UGBXDefinition   >(m, "UWillowVehicleSeatDefinition")
         .def_readwrite("VirtualSeatKey", &UWillowVehicleSeatDefinition::VirtualSeatKey)
         .def_readwrite("InteractIcon", &UWillowVehicleSeatDefinition::InteractIcon)
         .def_readwrite("SeatInteractTextDefinition", &UWillowVehicleSeatDefinition::SeatInteractTextDefinition)
@@ -54,6 +54,5 @@ void Export_pystes_UWillowVehicleSeatDefinition()
         .def_readwrite("EjectRandMax", &UWillowVehicleSeatDefinition::EjectRandMax)
         .def_readwrite("ControllerRumbleWhenRotating", &UWillowVehicleSeatDefinition::ControllerRumbleWhenRotating)
         .def("StaticClass", &UWillowVehicleSeatDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

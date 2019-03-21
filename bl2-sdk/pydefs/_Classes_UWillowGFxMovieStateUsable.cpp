@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGFxMovieStateUsable()
+void Export_pystes_UWillowGFxMovieStateUsable(py::object m)
 {
-    py::class_< UWillowGFxMovieStateUsable,  UGFxMovieState   >("UWillowGFxMovieStateUsable")
+    py::class_< UWillowGFxMovieStateUsable,  UGFxMovieState   >(m, "UWillowGFxMovieStateUsable")
         .def_readwrite("UsabilityStates", &UWillowGFxMovieStateUsable::UsabilityStates)
         .def("StaticClass", &UWillowGFxMovieStateUsable::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

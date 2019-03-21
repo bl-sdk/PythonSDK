@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMenuHeaderData()
+void Export_pystes_FMenuHeaderData(py::object m)
 {
-    py::class_< FMenuHeaderData >("FMenuHeaderData")
+    py::class_< FMenuHeaderData >(m, "FMenuHeaderData")
         .def_readwrite("Header", &FMenuHeaderData::Header)
         .def_readwrite("Width", &FMenuHeaderData::Width)
         .def_readwrite("InterfaceName", &FMenuHeaderData::InterfaceName)

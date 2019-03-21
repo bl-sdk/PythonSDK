@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSoundClassAdjuster()
+void Export_pystes_FSoundClassAdjuster(py::object m)
 {
-    py::class_< FSoundClassAdjuster >("FSoundClassAdjuster")
+    py::class_< FSoundClassAdjuster >(m, "FSoundClassAdjuster")
         .def_readwrite("SoundClassName", &FSoundClassAdjuster::SoundClassName)
         .def_readwrite("SoundClass", &FSoundClassAdjuster::SoundClass)
         .def_readwrite("VolumeAdjuster", &FSoundClassAdjuster::VolumeAdjuster)

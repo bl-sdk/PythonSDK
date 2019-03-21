@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBalancedInventoryDataMirror()
+void Export_pystes_FBalancedInventoryDataMirror(py::object m)
 {
-    py::class_< FBalancedInventoryDataMirror >("FBalancedInventoryDataMirror")
+    py::class_< FBalancedInventoryDataMirror >(m, "FBalancedInventoryDataMirror")
         .def_readwrite("ObjectName", &FBalancedInventoryDataMirror::ObjectName)
         .def_readwrite("ObjectPath", &FBalancedInventoryDataMirror::ObjectPath)
   ;

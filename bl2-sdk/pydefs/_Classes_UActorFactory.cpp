@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActorFactory()
+void Export_pystes_UActorFactory(py::object m)
 {
-    py::class_< UActorFactory,  UObject   >("UActorFactory")
+    py::class_< UActorFactory,  UObject   >(m, "UActorFactory")
         .def_readwrite("GameplayActorClass", &UActorFactory::GameplayActorClass)
         .def_readwrite("MenuName", &UActorFactory::MenuName)
         .def_readwrite("MenuPriority", &UActorFactory::MenuPriority)
@@ -17,6 +17,5 @@ void Export_pystes_UActorFactory()
         .def_readwrite("CustomPropertyEditorDelegateTargetClass", &UActorFactory::CustomPropertyEditorDelegateTargetClass)
         .def("StaticClass", &UActorFactory::StaticClass, py::return_value_policy::reference)
         .def("eventPostCreateActor", &UActorFactory::eventPostCreateActor)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

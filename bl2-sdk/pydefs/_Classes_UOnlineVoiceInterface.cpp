@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineVoiceInterface()
+void Export_pystes_UOnlineVoiceInterface(py::object m)
 {
-    py::class_< UOnlineVoiceInterface,  UInterface   >("UOnlineVoiceInterface")
+    py::class_< UOnlineVoiceInterface,  UInterface   >(m, "UOnlineVoiceInterface")
         .def("StaticClass", &UOnlineVoiceInterface::StaticClass, py::return_value_policy::reference)
         .def("SetVoiceVolume", &UOnlineVoiceInterface::SetVoiceVolume)
         .def("UnmuteAll", &UOnlineVoiceInterface::UnmuteAll)
@@ -33,6 +33,5 @@ void Export_pystes_UOnlineVoiceInterface()
         .def("RegisterRemoteTalker", &UOnlineVoiceInterface::RegisterRemoteTalker)
         .def("UnregisterLocalTalker", &UOnlineVoiceInterface::UnregisterLocalTalker)
         .def("RegisterLocalTalker", &UOnlineVoiceInterface::RegisterLocalTalker)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

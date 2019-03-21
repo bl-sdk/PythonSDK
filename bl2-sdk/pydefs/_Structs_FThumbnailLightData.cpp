@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FThumbnailLightData()
+void Export_pystes_FThumbnailLightData(py::object m)
 {
-    py::class_< FThumbnailLightData >("FThumbnailLightData")
+    py::class_< FThumbnailLightData >(m, "FThumbnailLightData")
         .def_readwrite("Direction", &FThumbnailLightData::Direction)
         .def_readwrite("Light", &FThumbnailLightData::Light)
   ;

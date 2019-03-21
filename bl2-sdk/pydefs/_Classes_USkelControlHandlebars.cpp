@@ -3,14 +3,13 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USkelControlHandlebars()
+void Export_pystes_USkelControlHandlebars(py::object m)
 {
-    py::class_< USkelControlHandlebars,  USkelControlSingleBone   >("USkelControlHandlebars")
+    py::class_< USkelControlHandlebars,  USkelControlSingleBone   >(m, "USkelControlHandlebars")
         .def_readwrite("WheelRollAxis", &USkelControlHandlebars::WheelRollAxis)
         .def_readwrite("HandlebarRotateAxis", &USkelControlHandlebars::HandlebarRotateAxis)
         .def_readwrite("WheelBoneName", &USkelControlHandlebars::WheelBoneName)
         .def_readwrite("SteerWheelBoneIndex", &USkelControlHandlebars::SteerWheelBoneIndex)
         .def("StaticClass", &USkelControlHandlebars::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

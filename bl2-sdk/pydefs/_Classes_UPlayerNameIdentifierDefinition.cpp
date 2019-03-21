@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerNameIdentifierDefinition()
+void Export_pystes_UPlayerNameIdentifierDefinition(py::object m)
 {
-    py::class_< UPlayerNameIdentifierDefinition,  UGBXDefinition   >("UPlayerNameIdentifierDefinition")
+    py::class_< UPlayerNameIdentifierDefinition,  UGBXDefinition   >(m, "UPlayerNameIdentifierDefinition")
         .def_readwrite("CharacterName", &UPlayerNameIdentifierDefinition::CharacterName)
         .def_readwrite("LocalizedCharacterName", &UPlayerNameIdentifierDefinition::LocalizedCharacterName)
         .def_readwrite("LocalizedCharacterDescription", &UPlayerNameIdentifierDefinition::LocalizedCharacterDescription)
@@ -47,6 +47,5 @@ void Export_pystes_UPlayerNameIdentifierDefinition()
         .def("eventGetCoopCharacterIconSwfMoviePath", &UPlayerNameIdentifierDefinition::eventGetCoopCharacterIconSwfMoviePath)
         .def("eventGetCharacterIconSwfMoviePath", &UPlayerNameIdentifierDefinition::eventGetCharacterIconSwfMoviePath)
         .def("eventGetPortraitSwfMoviePath", &UPlayerNameIdentifierDefinition::eventGetPortraitSwfMoviePath)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

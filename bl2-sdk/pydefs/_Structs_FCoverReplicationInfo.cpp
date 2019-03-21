@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCoverReplicationInfo()
+void Export_pystes_FCoverReplicationInfo(py::object m)
 {
-    py::class_< FCoverReplicationInfo >("FCoverReplicationInfo")
+    py::class_< FCoverReplicationInfo >(m, "FCoverReplicationInfo")
         .def_readwrite("Link", &FCoverReplicationInfo::Link)
         .def_readwrite("SlotsEnabled", &FCoverReplicationInfo::SlotsEnabled)
         .def_readwrite("SlotsDisabled", &FCoverReplicationInfo::SlotsDisabled)

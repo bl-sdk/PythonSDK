@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USparkServiceConfiguration()
+void Export_pystes_USparkServiceConfiguration(py::object m)
 {
-    py::class_< USparkServiceConfiguration,  UObject   >("USparkServiceConfiguration")
+    py::class_< USparkServiceConfiguration,  UObject   >(m, "USparkServiceConfiguration")
         .def_readwrite("ServiceName", &USparkServiceConfiguration::ServiceName)
         .def_readwrite("ConfigurationGroup", &USparkServiceConfiguration::ConfigurationGroup)
         .def_readwrite("Keys", &USparkServiceConfiguration::Keys)
@@ -18,6 +18,5 @@ void Export_pystes_USparkServiceConfiguration()
         .def("GetParameter", &USparkServiceConfiguration::GetParameter)
         .def("LoadService", &USparkServiceConfiguration::LoadService)
         .def("LoadOverrides", &USparkServiceConfiguration::LoadOverrides)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

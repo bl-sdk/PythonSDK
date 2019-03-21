@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ARB_RadialForceActor()
+void Export_pystes_ARB_RadialForceActor(py::object m)
 {
-    py::class_< ARB_RadialForceActor,  AActor   >("ARB_RadialForceActor")
+    py::class_< ARB_RadialForceActor,  AActor   >(m, "ARB_RadialForceActor")
         .def_readwrite("RenderComponent", &ARB_RadialForceActor::RenderComponent)
         .def_readwrite("ForceStrength", &ARB_RadialForceActor::ForceStrength)
         .def_readwrite("ForceRadius", &ARB_RadialForceActor::ForceRadius)
@@ -16,6 +16,5 @@ void Export_pystes_ARB_RadialForceActor()
         .def_readwrite("CollideWithChannels", &ARB_RadialForceActor::CollideWithChannels)
         .def("StaticClass", &ARB_RadialForceActor::StaticClass, py::return_value_policy::reference)
         .def("OnToggle", &ARB_RadialForceActor::OnToggle)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqEvent_Touch()
+void Export_pystes_USeqEvent_Touch(py::object m)
 {
-    py::class_< USeqEvent_Touch,  USequenceEvent   >("USeqEvent_Touch")
+    py::class_< USeqEvent_Touch,  USequenceEvent   >(m, "USeqEvent_Touch")
         .def_readwrite("ClassProximityTypes", &USeqEvent_Touch::ClassProximityTypes)
         .def_readwrite("ArchetypeFilter", &USeqEvent_Touch::ArchetypeFilter)
         .def_readwrite("IgnoredClassProximityTypes", &USeqEvent_Touch::IgnoredClassProximityTypes)
@@ -16,6 +16,5 @@ void Export_pystes_USeqEvent_Touch()
         .def("eventToggled", &USeqEvent_Touch::eventToggled)
         .def("CheckUnTouchActivate", &USeqEvent_Touch::CheckUnTouchActivate)
         .def("CheckTouchActivate", &USeqEvent_Touch::CheckTouchActivate)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

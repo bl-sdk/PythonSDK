@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNotify_Trails()
+void Export_pystes_UAnimNotify_Trails(py::object m)
 {
-    py::class_< UAnimNotify_Trails,  UAnimNotify   >("UAnimNotify_Trails")
+    py::class_< UAnimNotify_Trails,  UAnimNotify   >(m, "UAnimNotify_Trails")
         .def_readwrite("PSTemplate", &UAnimNotify_Trails::PSTemplate)
         .def_readwrite("FirstEdgeSocketName", &UAnimNotify_Trails::FirstEdgeSocketName)
         .def_readwrite("ControlPointSocketName", &UAnimNotify_Trails::ControlPointSocketName)
@@ -21,6 +21,5 @@ void Export_pystes_UAnimNotify_Trails()
         .def_readwrite("AnimNodeSeq", &UAnimNotify_Trails::AnimNodeSeq)
         .def("StaticClass", &UAnimNotify_Trails::StaticClass, py::return_value_policy::reference)
         .def("GetNumSteps", &UAnimNotify_Trails::GetNumSteps)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

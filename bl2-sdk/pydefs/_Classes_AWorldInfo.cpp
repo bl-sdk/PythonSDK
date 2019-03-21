@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWorldInfo()
+void Export_pystes_AWorldInfo(py::object m)
 {
-    py::class_< AWorldInfo,  AActor   >("AWorldInfo")
+    py::class_< AWorldInfo,  AActor   >(m, "AWorldInfo")
         .def_readwrite("DefaultPostProcessSettings", &AWorldInfo::DefaultPostProcessSettings)
         .def_readwrite("WorldPostProcessChain", &AWorldInfo::WorldPostProcessChain)
         .def_readwrite("SquintModeKernelSize", &AWorldInfo::SquintModeKernelSize)
@@ -187,6 +187,5 @@ void Export_pystes_AWorldInfo()
         .def("GetNavMeshPathGoalEvaluatorFromCache", &AWorldInfo::GetNavMeshPathGoalEvaluatorFromCache, py::return_value_policy::reference)
         .def("GetNavMeshPathConstraintFromCache", &AWorldInfo::GetNavMeshPathConstraintFromCache, py::return_value_policy::reference)
         .def("ReleaseCachedConstraintsAndEvaluators", &AWorldInfo::ReleaseCachedConstraintsAndEvaluators)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

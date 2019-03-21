@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInventoryCardGFx()
+void Export_pystes_UInventoryCardGFx(py::object m)
 {
-    py::class_< UInventoryCardGFx,  UObject   >("UInventoryCardGFx")
+    py::class_< UInventoryCardGFx,  UObject   >(m, "UInventoryCardGFx")
         .def("StaticClass", &UInventoryCardGFx::StaticClass, py::return_value_policy::reference)
         .def("UpdateCardPanel", &UInventoryCardGFx::UpdateCardPanel)
         .def("SetMissionItemCard", &UInventoryCardGFx::SetMissionItemCard)
@@ -17,6 +17,5 @@ void Export_pystes_UInventoryCardGFx()
         .def("SetWeaponCard", &UInventoryCardGFx::SetWeaponCard)
         .def("SetInventoryCard", &UInventoryCardGFx::SetInventoryCard)
         .def("SetCardUIStats", &UInventoryCardGFx::SetCardUIStats)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

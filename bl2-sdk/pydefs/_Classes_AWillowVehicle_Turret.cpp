@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowVehicle_Turret()
+void Export_pystes_AWillowVehicle_Turret(py::object m)
 {
-    py::class_< AWillowVehicle_Turret,  AWillowVehicle   >("AWillowVehicle_Turret")
+    py::class_< AWillowVehicle_Turret,  AWillowVehicle   >(m, "AWillowVehicle_Turret")
         .def("StaticClass", &AWillowVehicle_Turret::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

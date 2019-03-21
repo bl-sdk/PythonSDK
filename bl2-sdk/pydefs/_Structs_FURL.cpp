@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FURL()
+void Export_pystes_FURL(py::object m)
 {
-    py::class_< FURL >("FURL")
+    py::class_< FURL >(m, "FURL")
         .def_readwrite("Protocol", &FURL::Protocol)
         .def_readwrite("Host", &FURL::Host)
         .def_readwrite("Port", &FURL::Port)

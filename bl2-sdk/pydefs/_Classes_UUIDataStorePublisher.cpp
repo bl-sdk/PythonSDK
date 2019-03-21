@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIDataStorePublisher()
+void Export_pystes_UUIDataStorePublisher(py::object m)
 {
-    py::class_< UUIDataStorePublisher,  UUIDataStoreSubscriber   >("UUIDataStorePublisher")
+    py::class_< UUIDataStorePublisher,  UUIDataStoreSubscriber   >(m, "UUIDataStorePublisher")
         .def("StaticClass", &UUIDataStorePublisher::StaticClass, py::return_value_policy::reference)
         .def("SaveSubscriberValue", &UUIDataStorePublisher::SaveSubscriberValue)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

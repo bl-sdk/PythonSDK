@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCommunityContentFile()
+void Export_pystes_FCommunityContentFile(py::object m)
 {
-    py::class_< FCommunityContentFile >("FCommunityContentFile")
+    py::class_< FCommunityContentFile >(m, "FCommunityContentFile")
         .def_readwrite("ContentId", &FCommunityContentFile::ContentId)
         .def_readwrite("FileId", &FCommunityContentFile::FileId)
         .def_readwrite("ContentType", &FCommunityContentFile::ContentType)

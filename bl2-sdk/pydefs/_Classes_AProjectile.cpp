@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AProjectile()
+void Export_pystes_AProjectile(py::object m)
 {
-    py::class_< AProjectile,  AActor   >("AProjectile")
+    py::class_< AProjectile,  AActor   >(m, "AProjectile")
         .def_readwrite("Speed", &AProjectile::Speed)
         .def_readwrite("MaxSpeed", &AProjectile::MaxSpeed)
         .def_readwrite("ZeroCollider", &AProjectile::ZeroCollider)
@@ -47,6 +47,5 @@ void Export_pystes_AProjectile()
         .def("eventPostBeginPlay", &AProjectile::eventPostBeginPlay)
         .def("eventPreBeginPlay", &AProjectile::eventPreBeginPlay)
         .def("eventEncroachingOn", &AProjectile::eventEncroachingOn)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPlayerResponseLine()
+void Export_pystes_FPlayerResponseLine(py::object m)
 {
-    py::class_< FPlayerResponseLine >("FPlayerResponseLine")
+    py::class_< FPlayerResponseLine >(m, "FPlayerResponseLine")
         .def_readwrite("PlayerNum", &FPlayerResponseLine::PlayerNum)
         .def_readwrite("PlayerID", &FPlayerResponseLine::PlayerID)
         .def_readwrite("PlayerName", &FPlayerResponseLine::PlayerName)

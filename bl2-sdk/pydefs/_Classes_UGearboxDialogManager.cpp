@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxDialogManager()
+void Export_pystes_UGearboxDialogManager(py::object m)
 {
-    py::class_< UGearboxDialogManager,  UObject   >("UGearboxDialogManager")
+    py::class_< UGearboxDialogManager,  UObject   >(m, "UGearboxDialogManager")
         .def_readwrite("Talkers", &UGearboxDialogManager::Talkers)
         .def_readwrite("DisabledTalkers", &UGearboxDialogManager::DisabledTalkers)
         .def_readwrite("Groups", &UGearboxDialogManager::Groups)
@@ -29,6 +29,5 @@ void Export_pystes_UGearboxDialogManager()
         .def("DisableTalker", &UGearboxDialogManager::DisableTalker)
         .def("EnableTalker", &UGearboxDialogManager::EnableTalker)
         .def("GetPriority", &UGearboxDialogManager::GetPriority)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USequenceEventEnableByMission()
+void Export_pystes_USequenceEventEnableByMission(py::object m)
 {
-    py::class_< USequenceEventEnableByMission,  USequenceEventCustomEnableCondition   >("USequenceEventEnableByMission")
+    py::class_< USequenceEventEnableByMission,  USequenceEventCustomEnableCondition   >(m, "USequenceEventEnableByMission")
         .def_readwrite("VfTable_IIMission", &USequenceEventEnableByMission::VfTable_IIMission)
         .def_readwrite("LinkedMission", &USequenceEventEnableByMission::LinkedMission)
         .def_readwrite("MissionStatesToLinkTo", &USequenceEventEnableByMission::MissionStatesToLinkTo)
@@ -19,6 +19,5 @@ void Export_pystes_USequenceEventEnableByMission()
         .def("eventMissionReactionObjectiveSetChanged", &USequenceEventEnableByMission::eventMissionReactionObjectiveSetChanged)
         .def("eventMissionReactionStatusChanged", &USequenceEventEnableByMission::eventMissionReactionStatusChanged)
         .def("eventMissionReactionLevelLoad", &USequenceEventEnableByMission::eventMissionReactionLevelLoad)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

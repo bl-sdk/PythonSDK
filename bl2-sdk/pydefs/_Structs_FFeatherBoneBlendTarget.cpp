@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FFeatherBoneBlendTarget()
+void Export_pystes_FFeatherBoneBlendTarget(py::object m)
 {
-    py::class_< FFeatherBoneBlendTarget >("FFeatherBoneBlendTarget")
+    py::class_< FFeatherBoneBlendTarget >(m, "FFeatherBoneBlendTarget")
         .def_readwrite("StartBoneName", &FFeatherBoneBlendTarget::StartBoneName)
         .def_readwrite("BlendWeight", &FFeatherBoneBlendTarget::BlendWeight)
   ;

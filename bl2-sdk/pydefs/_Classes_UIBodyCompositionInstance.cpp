@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIBodyCompositionInstance()
+void Export_pystes_UIBodyCompositionInstance(py::object m)
 {
-    py::class_< UIBodyCompositionInstance,  UInterface   >("UIBodyCompositionInstance")
+    py::class_< UIBodyCompositionInstance,  UInterface   >(m, "UIBodyCompositionInstance")
         .def("StaticClass", &UIBodyCompositionInstance::StaticClass, py::return_value_policy::reference)
         .def("ClearBodyCompositionInstance", &UIBodyCompositionInstance::ClearBodyCompositionInstance)
         .def("ApplyPreviewBodyComposition", &UIBodyCompositionInstance::ApplyPreviewBodyComposition)
@@ -13,6 +13,5 @@ void Export_pystes_UIBodyCompositionInstance()
         .def("ChangeInstanceDataSwitch", &UIBodyCompositionInstance::ChangeInstanceDataSwitch)
         .def("PostInitBodyComposition", &UIBodyCompositionInstance::PostInitBodyComposition)
         .def("PreRemoveBodyComposition", &UIBodyCompositionInstance::PreRemoveBodyComposition)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

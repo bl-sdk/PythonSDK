@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APopulationPoint()
+void Export_pystes_APopulationPoint(py::object m)
 {
-    py::class_< APopulationPoint,  AActor   >("APopulationPoint")
+    py::class_< APopulationPoint,  AActor   >(m, "APopulationPoint")
         .def_readwrite("VfTable_IIPopulationSpawnPoint", &APopulationPoint::VfTable_IIPopulationSpawnPoint)
         .def_readwrite("Flags", &APopulationPoint::Flags)
         .def_readwrite("AISpawnStyle", &APopulationPoint::AISpawnStyle)
@@ -28,6 +28,5 @@ void Export_pystes_APopulationPoint()
         .def("GetInitialActionType", &APopulationPoint::GetInitialActionType)
         .def("GetSpawnStyleType", &APopulationPoint::GetSpawnStyleType)
         .def("OnToggle", &APopulationPoint::OnToggle)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

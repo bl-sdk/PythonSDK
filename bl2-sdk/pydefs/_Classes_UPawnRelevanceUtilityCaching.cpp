@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPawnRelevanceUtilityCaching()
+void Export_pystes_UPawnRelevanceUtilityCaching(py::object m)
 {
-    py::class_< UPawnRelevanceUtilityCaching,  UPawnRelevanceUtility   >("UPawnRelevanceUtilityCaching")
+    py::class_< UPawnRelevanceUtilityCaching,  UPawnRelevanceUtility   >(m, "UPawnRelevanceUtilityCaching")
         .def_readwrite("MaxCacheTime", &UPawnRelevanceUtilityCaching::MaxCacheTime)
         .def_readwrite("DistanceClose", &UPawnRelevanceUtilityCaching::DistanceClose)
         .def_readwrite("DistanceMed", &UPawnRelevanceUtilityCaching::DistanceMed)
@@ -20,6 +20,5 @@ void Export_pystes_UPawnRelevanceUtilityCaching()
         .def_readwrite("HasMovedDistThresholdRelevant", &UPawnRelevanceUtilityCaching::HasMovedDistThresholdRelevant)
         .def_readwrite("CachedRelevance", &UPawnRelevanceUtilityCaching::CachedRelevance)
         .def("StaticClass", &UPawnRelevanceUtilityCaching::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActionSequenceList()
+void Export_pystes_UActionSequenceList(py::object m)
 {
-    py::class_< UActionSequenceList,  UActionSequence   >("UActionSequenceList")
+    py::class_< UActionSequenceList,  UActionSequence   >(m, "UActionSequenceList")
         .def_readwrite("CurrentIndex", &UActionSequenceList::CurrentIndex)
         .def("StaticClass", &UActionSequenceList::StaticClass, py::return_value_policy::reference)
         .def("IsActionReadyToFinish", &UActionSequenceList::IsActionReadyToFinish)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

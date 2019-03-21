@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpecialMoveComponent()
+void Export_pystes_USpecialMoveComponent(py::object m)
 {
-    py::class_< USpecialMoveComponent,  UActorComponent   >("USpecialMoveComponent")
+    py::class_< USpecialMoveComponent,  UActorComponent   >(m, "USpecialMoveComponent")
         .def_readwrite("StartTime", &USpecialMoveComponent::StartTime)
         .def_readwrite("SMI", &USpecialMoveComponent::SMI)
         .def_readonly("UnknownData00", &USpecialMoveComponent::UnknownData00)
@@ -38,6 +38,5 @@ void Export_pystes_USpecialMoveComponent()
         .def("GetSMNode", &USpecialMoveComponent::GetSMNode, py::return_value_policy::reference)
         .def("PlayReplicated", &USpecialMoveComponent::PlayReplicated)
         .def("GetAnimLength", &USpecialMoveComponent::GetAnimLength)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

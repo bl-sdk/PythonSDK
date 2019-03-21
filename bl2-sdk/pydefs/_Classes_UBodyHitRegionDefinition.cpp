@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBodyHitRegionDefinition()
+void Export_pystes_UBodyHitRegionDefinition(py::object m)
 {
-    py::class_< UBodyHitRegionDefinition,  UBaseHitRegionDefinition   >("UBodyHitRegionDefinition")
+    py::class_< UBodyHitRegionDefinition,  UBaseHitRegionDefinition   >(m, "UBodyHitRegionDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UBodyHitRegionDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("VfTable_IIConstructObject", &UBodyHitRegionDefinition::VfTable_IIConstructObject)
         .def_readwrite("HitRegionName", &UBodyHitRegionDefinition::HitRegionName)
@@ -49,6 +49,5 @@ void Export_pystes_UBodyHitRegionDefinition()
         .def("GetDamageSurfaceType", &UBodyHitRegionDefinition::GetDamageSurfaceType)
         .def("GetDamageModifierPercentForImpact", &UBodyHitRegionDefinition::GetDamageModifierPercentForImpact)
         .def("GetResponseForImpact", &UBodyHitRegionDefinition::GetResponseForImpact)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

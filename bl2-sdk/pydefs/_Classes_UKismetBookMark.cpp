@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UKismetBookMark()
+void Export_pystes_UKismetBookMark(py::object m)
 {
-    py::class_< UKismetBookMark,  UBookMark2D   >("UKismetBookMark")
+    py::class_< UKismetBookMark,  UBookMark2D   >(m, "UKismetBookMark")
         .def_readwrite("BookMarkSequencePathName", &UKismetBookMark::BookMarkSequencePathName)
         .def("StaticClass", &UKismetBookMark::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPath_WithinDistanceEnvelope()
+void Export_pystes_UPath_WithinDistanceEnvelope(py::object m)
 {
-    py::class_< UPath_WithinDistanceEnvelope,  UPathConstraint   >("UPath_WithinDistanceEnvelope")
+    py::class_< UPath_WithinDistanceEnvelope,  UPathConstraint   >(m, "UPath_WithinDistanceEnvelope")
         .def_readwrite("MaxDistance", &UPath_WithinDistanceEnvelope::MaxDistance)
         .def_readwrite("MinDistance", &UPath_WithinDistanceEnvelope::MinDistance)
         .def_readwrite("SoftStartPenalty", &UPath_WithinDistanceEnvelope::SoftStartPenalty)
@@ -13,6 +13,5 @@ void Export_pystes_UPath_WithinDistanceEnvelope()
         .def("StaticClass", &UPath_WithinDistanceEnvelope::StaticClass, py::return_value_policy::reference)
         .def("Recycle", &UPath_WithinDistanceEnvelope::Recycle)
         .def("StayWithinEnvelopeToLoc", &UPath_WithinDistanceEnvelope::StayWithinEnvelopeToLoc)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

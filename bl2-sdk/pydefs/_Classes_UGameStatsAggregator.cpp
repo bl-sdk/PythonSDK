@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGameStatsAggregator()
+void Export_pystes_UGameStatsAggregator(py::object m)
 {
-    py::class_< UGameStatsAggregator,  UGameplayEventsHandler   >("UGameStatsAggregator")
+    py::class_< UGameStatsAggregator,  UGameplayEventsHandler   >(m, "UGameStatsAggregator")
         .def_readwrite("GameState", &UGameStatsAggregator::GameState)
         .def_readwrite("AggregatesList", &UGameStatsAggregator::AggregatesList)
         .def_readwrite("AggregateEventsMapping", &UGameStatsAggregator::AggregateEventsMapping)
@@ -23,6 +23,5 @@ void Export_pystes_UGameStatsAggregator()
         .def("Reset", &UGameStatsAggregator::Reset)
         .def("eventPostProcessStream", &UGameStatsAggregator::eventPostProcessStream)
         .def("eventPreProcessStream", &UGameStatsAggregator::eventPreProcessStream)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

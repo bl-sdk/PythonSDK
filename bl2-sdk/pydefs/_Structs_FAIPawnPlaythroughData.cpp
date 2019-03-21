@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAIPawnPlaythroughData()
+void Export_pystes_FAIPawnPlaythroughData(py::object m)
 {
-    py::class_< FAIPawnPlaythroughData >("FAIPawnPlaythroughData")
+    py::class_< FAIPawnPlaythroughData >(m, "FAIPawnPlaythroughData")
         .def_readwrite("PlayThrough", &FAIPawnPlaythroughData::PlayThrough)
         .def_readwrite("DisplayName", &FAIPawnPlaythroughData::DisplayName)
         .def_readwrite("TransformedNames", &FAIPawnPlaythroughData::TransformedNames)

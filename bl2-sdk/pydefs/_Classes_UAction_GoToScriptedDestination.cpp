@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_GoToScriptedDestination()
+void Export_pystes_UAction_GoToScriptedDestination(py::object m)
 {
-    py::class_< UAction_GoToScriptedDestination,  UWillowActionSequencePawn   >("UAction_GoToScriptedDestination")
+    py::class_< UAction_GoToScriptedDestination,  UWillowActionSequencePawn   >(m, "UAction_GoToScriptedDestination")
         .def_readwrite("FindLookAtTargetTime", &UAction_GoToScriptedDestination::FindLookAtTargetTime)
         .def_readwrite("PerchData", &UAction_FollowPath::PerchData)
         .def_readwrite("MoveNode", &UAction_FollowPath::MoveNode)
@@ -51,6 +51,5 @@ void Export_pystes_UAction_GoToScriptedDestination()
         .def("SafeToUncloak", &UAction_Burrow::SafeToUncloak)
         .def("ForceUncloak", &UAction_Burrow::ForceUncloak)
         .def("ForceCloak", &UAction_Burrow::ForceCloak)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

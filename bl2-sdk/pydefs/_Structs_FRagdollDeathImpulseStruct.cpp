@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRagdollDeathImpulseStruct()
+void Export_pystes_FRagdollDeathImpulseStruct(py::object m)
 {
-    py::class_< FRagdollDeathImpulseStruct >("FRagdollDeathImpulseStruct")
+    py::class_< FRagdollDeathImpulseStruct >(m, "FRagdollDeathImpulseStruct")
         .def_readwrite("Impulse", &FRagdollDeathImpulseStruct::Impulse)
         .def_readwrite("Offset", &FRagdollDeathImpulseStruct::Offset)
         .def_readwrite("BoneName", &FRagdollDeathImpulseStruct::BoneName)

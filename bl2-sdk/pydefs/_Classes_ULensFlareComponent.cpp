@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULensFlareComponent()
+void Export_pystes_ULensFlareComponent(py::object m)
 {
-    py::class_< ULensFlareComponent,  UPrimitiveComponent   >("ULensFlareComponent")
+    py::class_< ULensFlareComponent,  UPrimitiveComponent   >(m, "ULensFlareComponent")
         .def_readwrite("Template", &ULensFlareComponent::Template)
         .def_readwrite("PreviewInnerCone", &ULensFlareComponent::PreviewInnerCone)
         .def_readwrite("PreviewOuterCone", &ULensFlareComponent::PreviewOuterCone)
@@ -23,6 +23,5 @@ void Export_pystes_ULensFlareComponent()
         .def("SetIsActive", &ULensFlareComponent::SetIsActive)
         .def("SetSourceColor", &ULensFlareComponent::SetSourceColor)
         .def("SetTemplate", &ULensFlareComponent::SetTemplate)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

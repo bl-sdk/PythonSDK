@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRenderCommandFence_Mirror()
+void Export_pystes_FRenderCommandFence_Mirror(py::object m)
 {
-    py::class_< FRenderCommandFence_Mirror >("FRenderCommandFence_Mirror")
+    py::class_< FRenderCommandFence_Mirror >(m, "FRenderCommandFence_Mirror")
         .def_readwrite("NumPendingFences", &FRenderCommandFence_Mirror::NumPendingFences)
   ;
 }

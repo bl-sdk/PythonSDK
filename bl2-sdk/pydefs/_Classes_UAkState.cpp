@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAkState()
+void Export_pystes_UAkState(py::object m)
 {
-    py::class_< UAkState,  UAkObject   >("UAkState")
+    py::class_< UAkState,  UAkObject   >(m, "UAkState")
         .def_readwrite("StateGroup", &UAkState::StateGroup)
         .def("StaticClass", &UAkState::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

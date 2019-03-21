@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FVelocityObstacleStat()
+void Export_pystes_FVelocityObstacleStat(py::object m)
 {
-    py::class_< FVelocityObstacleStat >("FVelocityObstacleStat")
+    py::class_< FVelocityObstacleStat >(m, "FVelocityObstacleStat")
         .def_readwrite("Position", &FVelocityObstacleStat::Position)
         .def_readwrite("Velocity", &FVelocityObstacleStat::Velocity)
         .def_readwrite("Radius", &FVelocityObstacleStat::Radius)

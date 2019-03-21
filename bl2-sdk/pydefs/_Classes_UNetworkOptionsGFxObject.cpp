@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNetworkOptionsGFxObject()
+void Export_pystes_UNetworkOptionsGFxObject(py::object m)
 {
-    py::class_< UNetworkOptionsGFxObject,  UGFxObject   >("UNetworkOptionsGFxObject")
+    py::class_< UNetworkOptionsGFxObject,  UGFxObject   >(m, "UNetworkOptionsGFxObject")
         .def("StaticClass", &UNetworkOptionsGFxObject::StaticClass, py::return_value_policy::reference)
         .def("SetClickHandler", &UNetworkOptionsGFxObject::SetClickHandler)
         .def("NavigateDown", &UNetworkOptionsGFxObject::NavigateDown)
@@ -15,6 +15,5 @@ void Export_pystes_UNetworkOptionsGFxObject()
         .def("SetCurrentNetworkType", &UNetworkOptionsGFxObject::SetCurrentNetworkType)
         .def("Hide", &UNetworkOptionsGFxObject::Hide)
         .def("Show", &UNetworkOptionsGFxObject::Show)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

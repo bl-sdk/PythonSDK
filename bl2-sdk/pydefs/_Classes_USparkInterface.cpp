@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USparkInterface()
+void Export_pystes_USparkInterface(py::object m)
 {
-    py::class_< USparkInterface,  UInterface   >("USparkInterface")
+    py::class_< USparkInterface,  UInterface   >(m, "USparkInterface")
         .def("StaticClass", &USparkInterface::StaticClass, py::return_value_policy::reference)
         .def("GetNewsService", &USparkInterface::GetNewsService, py::return_value_policy::reference)
         .def("GetTitleStorageServiceConfiguration", &USparkInterface::GetTitleStorageServiceConfiguration, py::return_value_policy::reference)
@@ -44,6 +44,5 @@ void Export_pystes_USparkInterface()
         .def("eventIsSparkEnabled", &USparkInterface::eventIsSparkEnabled)
         .def("IssueSparkStringRequest", &USparkInterface::IssueSparkStringRequest)
         .def("IssueSparkRequest", &USparkInterface::IssueSparkRequest)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAttributeBaseValueData()
+void Export_pystes_FAttributeBaseValueData(py::object m)
 {
-    py::class_< FAttributeBaseValueData >("FAttributeBaseValueData")
+    py::class_< FAttributeBaseValueData >(m, "FAttributeBaseValueData")
         .def_readwrite("Attribute", &FAttributeBaseValueData::Attribute)
         .def_readwrite("BaseValue", &FAttributeBaseValueData::BaseValue)
   ;

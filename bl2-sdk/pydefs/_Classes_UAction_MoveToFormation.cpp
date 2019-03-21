@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_MoveToFormation()
+void Export_pystes_UAction_MoveToFormation(py::object m)
 {
-    py::class_< UAction_MoveToFormation,  UAction_Burrow   >("UAction_MoveToFormation")
+    py::class_< UAction_MoveToFormation,  UAction_Burrow   >(m, "UAction_MoveToFormation")
         .def_readwrite("HoldDistance", &UAction_MoveToFormation::HoldDistance)
         .def_readwrite("NameTag", &UAction_MoveToFormation::NameTag)
         .def_readwrite("MyFormation", &UAction_MoveToFormation::MyFormation)
@@ -24,6 +24,5 @@ void Export_pystes_UAction_MoveToFormation()
         .def("eventStop", &UAction_MoveToFormation::eventStop)
         .def("eventStart", &UAction_MoveToFormation::eventStart)
         .def("eventCanRun", &UAction_MoveToFormation::eventCanRun)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

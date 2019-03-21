@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UReceivedCreditsMessage()
+void Export_pystes_UReceivedCreditsMessage(py::object m)
 {
-    py::class_< UReceivedCreditsMessage,  UWillowLocalMessage   >("UReceivedCreditsMessage")
+    py::class_< UReceivedCreditsMessage,  UWillowLocalMessage   >(m, "UReceivedCreditsMessage")
         .def_readwrite("ReceivedCredits", &UReceivedCreditsMessage::ReceivedCredits)
         .def_readwrite("SelfReceivedCredits", &UReceivedCreditsMessage::SelfReceivedCredits)
         .def_readwrite("NumberOfCredits", &UReceivedCreditsMessage::NumberOfCredits)
@@ -17,6 +17,5 @@ void Export_pystes_UReceivedCreditsMessage()
         .def("GetNumberOfCreditsString", &UReceivedCreditsMessage::GetNumberOfCreditsString)
         .def("GetCreditString", &UReceivedCreditsMessage::GetCreditString)
         .def("ClientCreditReceive", &UReceivedCreditsMessage::ClientCreditReceive)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

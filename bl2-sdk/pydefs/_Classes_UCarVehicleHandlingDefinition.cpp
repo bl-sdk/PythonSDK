@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCarVehicleHandlingDefinition()
+void Export_pystes_UCarVehicleHandlingDefinition(py::object m)
 {
-    py::class_< UCarVehicleHandlingDefinition,  UVehicleHandlingDefinition   >("UCarVehicleHandlingDefinition")
+    py::class_< UCarVehicleHandlingDefinition,  UVehicleHandlingDefinition   >(m, "UCarVehicleHandlingDefinition")
         .def_readwrite("ChassisTorqueScale", &UCarVehicleHandlingDefinition::ChassisTorqueScale)
         .def_readwrite("MaxSteerAngleCurve", &UCarVehicleHandlingDefinition::MaxSteerAngleCurve)
         .def_readwrite("SteerSpeed", &UCarVehicleHandlingDefinition::SteerSpeed)
@@ -22,6 +22,5 @@ void Export_pystes_UCarVehicleHandlingDefinition()
         .def_readwrite("InAirUprightTorqueFactor", &UCarVehicleHandlingDefinition::InAirUprightTorqueFactor)
         .def_readwrite("InAirUprightMaxTorque", &UCarVehicleHandlingDefinition::InAirUprightMaxTorque)
         .def("StaticClass", &UCarVehicleHandlingDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

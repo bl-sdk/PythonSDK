@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIDamageCauser()
+void Export_pystes_UIDamageCauser(py::object m)
 {
-    py::class_< UIDamageCauser,  UInterface   >("UIDamageCauser")
+    py::class_< UIDamageCauser,  UInterface   >(m, "UIDamageCauser")
         .def("StaticClass", &UIDamageCauser::StaticClass, py::return_value_policy::reference)
         .def("GetControllerResponsibleForDamage", &UIDamageCauser::GetControllerResponsibleForDamage, py::return_value_policy::reference)
         .def("GetInstigator", &UIDamageCauser::GetInstigator, py::return_value_policy::reference)
@@ -14,6 +14,5 @@ void Export_pystes_UIDamageCauser()
         .def("GetStatusEffectBaseChanceModifier", &UIDamageCauser::GetStatusEffectBaseChanceModifier)
         .def("GetStatusEffectChanceModifier", &UIDamageCauser::GetStatusEffectChanceModifier)
         .def("GetStatusEffectBaseDamage", &UIDamageCauser::GetStatusEffectBaseDamage)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

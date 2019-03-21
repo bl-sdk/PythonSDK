@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFluidInfluenceComponent()
+void Export_pystes_UFluidInfluenceComponent(py::object m)
 {
-    py::class_< UFluidInfluenceComponent,  UPrimitiveComponent   >("UFluidInfluenceComponent")
+    py::class_< UFluidInfluenceComponent,  UPrimitiveComponent   >(m, "UFluidInfluenceComponent")
         .def_readwrite("FluidActor", &UFluidInfluenceComponent::FluidActor)
         .def_readwrite("InfluenceType", &UFluidInfluenceComponent::InfluenceType)
         .def_readwrite("MaxDistance", &UFluidInfluenceComponent::MaxDistance)
@@ -30,6 +30,5 @@ void Export_pystes_UFluidInfluenceComponent()
         .def_readwrite("CurrentTimer", &UFluidInfluenceComponent::CurrentTimer)
         .def_readwrite("CurrentFluidActor", &UFluidInfluenceComponent::CurrentFluidActor)
         .def("StaticClass", &UFluidInfluenceComponent::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

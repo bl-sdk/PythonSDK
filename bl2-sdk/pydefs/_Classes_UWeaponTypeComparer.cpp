@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWeaponTypeComparer()
+void Export_pystes_UWeaponTypeComparer(py::object m)
 {
-    py::class_< UWeaponTypeComparer,  UQSortComparer   >("UWeaponTypeComparer")
+    py::class_< UWeaponTypeComparer,  UQSortComparer   >(m, "UWeaponTypeComparer")
         .def("StaticClass", &UWeaponTypeComparer::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_ToggleTelescopeOverlay()
+void Export_pystes_UBehavior_ToggleTelescopeOverlay(py::object m)
 {
-    py::class_< UBehavior_ToggleTelescopeOverlay,  UBehaviorBase   >("UBehavior_ToggleTelescopeOverlay")
+    py::class_< UBehavior_ToggleTelescopeOverlay,  UBehaviorBase   >(m, "UBehavior_ToggleTelescopeOverlay")
         .def("StaticClass", &UBehavior_ToggleTelescopeOverlay::StaticClass, py::return_value_policy::reference)
         .def("ResolveController", &UBehavior_ToggleTelescopeOverlay::ResolveController, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_ToggleTelescopeOverlay::ApplyBehaviorToContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

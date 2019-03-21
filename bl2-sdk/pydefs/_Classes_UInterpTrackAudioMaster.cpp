@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackAudioMaster()
+void Export_pystes_UInterpTrackAudioMaster(py::object m)
 {
-    py::class_< UInterpTrackAudioMaster,  UInterpTrack   >("UInterpTrackAudioMaster")
+    py::class_< UInterpTrackAudioMaster,  UInterpTrack   >(m, "UInterpTrackAudioMaster")
         .def_readwrite("VectorTrack", &UInterpTrackVectorBase::VectorTrack)
         .def_readwrite("CurveTension", &UInterpTrackVectorBase::CurveTension)
         .def("StaticClass", &UInterpTrackAudioMaster::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

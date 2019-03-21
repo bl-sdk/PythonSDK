@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLandscapeWeightmapUsage()
+void Export_pystes_FLandscapeWeightmapUsage(py::object m)
 {
-    py::class_< FLandscapeWeightmapUsage >("FLandscapeWeightmapUsage")
+    py::class_< FLandscapeWeightmapUsage >(m, "FLandscapeWeightmapUsage")
         .def_readonly("ChannelUsage", &FLandscapeWeightmapUsage::ChannelUsage)
   ;
 }

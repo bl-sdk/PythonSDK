@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleMeshRotation_Seeded()
+void Export_pystes_UParticleModuleMeshRotation_Seeded(py::object m)
 {
-    py::class_< UParticleModuleMeshRotation_Seeded,  UParticleModuleRotationBase   >("UParticleModuleMeshRotation_Seeded")
+    py::class_< UParticleModuleMeshRotation_Seeded,  UParticleModuleRotationBase   >(m, "UParticleModuleMeshRotation_Seeded")
         .def_readwrite("RandomSeedInfo", &UParticleModuleMeshRotation_Seeded::RandomSeedInfo)
         .def_readwrite("StartRotation", &UParticleModuleMeshRotation::StartRotation)
         .def("StaticClass", &UParticleModuleMeshRotation_Seeded::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

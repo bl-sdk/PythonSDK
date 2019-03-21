@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USequenceEvent()
+void Export_pystes_USequenceEvent(py::object m)
 {
-    py::class_< USequenceEvent,  USequenceOp   >("USequenceEvent")
+    py::class_< USequenceEvent,  USequenceOp   >(m, "USequenceEvent")
         .def_readwrite("DuplicateEvts", &USequenceEvent::DuplicateEvts)
         .def_readwrite("Originator", &USequenceEvent::Originator)
         .def_readwrite("Instigator", &USequenceEvent::Instigator)
@@ -22,6 +22,5 @@ void Export_pystes_USequenceEvent()
         .def("Reset", &USequenceEvent::Reset)
         .def("CheckActivate", &USequenceEvent::CheckActivate)
         .def("eventRegisterEvent", &USequenceEvent::eventRegisterEvent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_WeaponThrow()
+void Export_pystes_UBehavior_WeaponThrow(py::object m)
 {
-    py::class_< UBehavior_WeaponThrow,  UBehaviorBase   >("UBehavior_WeaponThrow")
+    py::class_< UBehavior_WeaponThrow,  UBehaviorBase   >(m, "UBehavior_WeaponThrow")
         .def("StaticClass", &UBehavior_WeaponThrow::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_WeaponThrow::ApplyBehaviorToContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

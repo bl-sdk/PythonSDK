@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionFrac()
+void Export_pystes_UMaterialExpressionFrac(py::object m)
 {
-    py::class_< UMaterialExpressionFrac,  UMaterialExpression   >("UMaterialExpressionFrac")
+    py::class_< UMaterialExpressionFrac,  UMaterialExpression   >(m, "UMaterialExpressionFrac")
         .def_readwrite("Input", &UMaterialExpressionFrac::Input)
         .def("StaticClass", &UMaterialExpressionFrac::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIWeaponBoneController()
+void Export_pystes_UIWeaponBoneController(py::object m)
 {
-    py::class_< UIWeaponBoneController,  UInterface   >("UIWeaponBoneController")
+    py::class_< UIWeaponBoneController,  UInterface   >(m, "UIWeaponBoneController")
         .def("StaticClass", &UIWeaponBoneController::StaticClass, py::return_value_policy::reference)
         .def("UnPause", &UIWeaponBoneController::UnPause)
         .def("Pause", &UIWeaponBoneController::Pause)
@@ -15,6 +15,5 @@ void Export_pystes_UIWeaponBoneController()
         .def("BeginFire", &UIWeaponBoneController::BeginFire)
         .def("IncrementWeaponBoneControl", &UIWeaponBoneController::IncrementWeaponBoneControl)
         .def("GetControlName", &UIWeaponBoneController::GetControlName)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

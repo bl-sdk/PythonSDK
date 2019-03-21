@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FASDisplayInfo()
+void Export_pystes_FASDisplayInfo(py::object m)
 {
-    py::class_< FASDisplayInfo >("FASDisplayInfo")
+    py::class_< FASDisplayInfo >(m, "FASDisplayInfo")
         .def_readwrite("X", &FASDisplayInfo::X)
         .def_readwrite("Y", &FASDisplayInfo::Y)
         .def_readwrite("Z", &FASDisplayInfo::Z)

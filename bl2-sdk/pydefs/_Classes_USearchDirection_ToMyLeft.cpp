@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USearchDirection_ToMyLeft()
+void Export_pystes_USearchDirection_ToMyLeft(py::object m)
 {
-    py::class_< USearchDirection_ToMyLeft,  USearchDirection   >("USearchDirection_ToMyLeft")
+    py::class_< USearchDirection_ToMyLeft,  USearchDirection   >(m, "USearchDirection_ToMyLeft")
         .def("StaticClass", &USearchDirection_ToMyLeft::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

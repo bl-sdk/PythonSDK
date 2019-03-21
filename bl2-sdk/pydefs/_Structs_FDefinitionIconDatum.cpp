@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDefinitionIconDatum()
+void Export_pystes_FDefinitionIconDatum(py::object m)
 {
-    py::class_< FDefinitionIconDatum >("FDefinitionIconDatum")
+    py::class_< FDefinitionIconDatum >(m, "FDefinitionIconDatum")
         .def_readwrite("DefColor", &FDefinitionIconDatum::DefColor)
         .def_readwrite("DefIcon", &FDefinitionIconDatum::DefIcon)
         .def_readwrite("DefClass", &FDefinitionIconDatum::DefClass)

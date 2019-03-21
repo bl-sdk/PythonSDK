@@ -3,14 +3,13 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_URandomAttributeValueResolver()
+void Export_pystes_URandomAttributeValueResolver(py::object m)
 {
-    py::class_< URandomAttributeValueResolver,  UAttributeValueResolver   >("URandomAttributeValueResolver")
+    py::class_< URandomAttributeValueResolver,  UAttributeValueResolver   >(m, "URandomAttributeValueResolver")
         .def_readwrite("LowerBound", &URandomAttributeValueResolver::LowerBound)
         .def_readwrite("UpperBound", &URandomAttributeValueResolver::UpperBound)
         .def_readwrite("ValueLifetime", &URandomAttributeValueResolver::ValueLifetime)
         .def_readwrite("SavedRandomValues", &URandomAttributeValueResolver::SavedRandomValues)
         .def("StaticClass", &URandomAttributeValueResolver::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

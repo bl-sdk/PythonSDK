@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionSceneTexture()
+void Export_pystes_UMaterialExpressionSceneTexture(py::object m)
 {
-    py::class_< UMaterialExpressionSceneTexture,  UMaterialExpression   >("UMaterialExpressionSceneTexture")
+    py::class_< UMaterialExpressionSceneTexture,  UMaterialExpression   >(m, "UMaterialExpressionSceneTexture")
         .def_readwrite("Coordinates", &UMaterialExpressionSceneTexture::Coordinates)
         .def_readwrite("SceneTextureType", &UMaterialExpressionSceneTexture::SceneTextureType)
         .def("StaticClass", &UMaterialExpressionSceneTexture::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

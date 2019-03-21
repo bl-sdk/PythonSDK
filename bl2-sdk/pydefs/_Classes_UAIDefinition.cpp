@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAIDefinition()
+void Export_pystes_UAIDefinition(py::object m)
 {
-    py::class_< UAIDefinition,  UObject   >("UAIDefinition")
+    py::class_< UAIDefinition,  UObject   >(m, "UAIDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UAIDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("BehaviorProviderDefinition", &UAIDefinition::BehaviorProviderDefinition)
         .def_readwrite("AIBehaviorProviderDefinition", &UAIDefinition::AIBehaviorProviderDefinition)
@@ -34,6 +34,5 @@ void Export_pystes_UAIDefinition()
         .def("OnUsed", &UAIDefinition::OnUsed)
         .def("SetBehaviorProviderDefinition", &UAIDefinition::SetBehaviorProviderDefinition)
         .def("GetBehaviorProviderDefinition", &UAIDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

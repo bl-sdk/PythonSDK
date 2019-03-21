@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FThumbnailRenderData()
+void Export_pystes_FThumbnailRenderData(py::object m)
 {
-    py::class_< FThumbnailRenderData >("FThumbnailRenderData")
+    py::class_< FThumbnailRenderData >(m, "FThumbnailRenderData")
         .def_readwrite("Context", &FThumbnailRenderData::Context)
         .def_readwrite("RenderTarget", &FThumbnailRenderData::RenderTarget)
         .def_readwrite("ResultTexture", &FThumbnailRenderData::ResultTexture)

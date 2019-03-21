@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMorphNodeWeightByBoneRotation()
+void Export_pystes_UMorphNodeWeightByBoneRotation(py::object m)
 {
-    py::class_< UMorphNodeWeightByBoneRotation,  UMorphNodeWeightBase   >("UMorphNodeWeightByBoneRotation")
+    py::class_< UMorphNodeWeightByBoneRotation,  UMorphNodeWeightBase   >(m, "UMorphNodeWeightByBoneRotation")
         .def_readwrite("Angle", &UMorphNodeWeightByBoneRotation::Angle)
         .def_readwrite("NodeWeight", &UMorphNodeWeightByBoneRotation::NodeWeight)
         .def_readwrite("BoneName", &UMorphNodeWeightByBoneRotation::BoneName)
@@ -15,6 +15,5 @@ void Export_pystes_UMorphNodeWeightByBoneRotation()
         .def_readwrite("ScalarParameterName", &UMorphNodeWeightByBoneRotation::ScalarParameterName)
         .def_readwrite("MaterialInstanceConstant", &UMorphNodeWeightByBoneRotation::MaterialInstanceConstant)
         .def("StaticClass", &UMorphNodeWeightByBoneRotation::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

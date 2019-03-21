@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowDamageTypeDefinition()
+void Export_pystes_UWillowDamageTypeDefinition(py::object m)
 {
-    py::class_< UWillowDamageTypeDefinition,  UDamageTypeDefinition   >("UWillowDamageTypeDefinition")
+    py::class_< UWillowDamageTypeDefinition,  UDamageTypeDefinition   >(m, "UWillowDamageTypeDefinition")
         .def_readwrite("FleshDamageModifier", &UWillowDamageTypeDefinition::FleshDamageModifier)
         .def_readwrite("ArmorDamageModifier", &UWillowDamageTypeDefinition::ArmorDamageModifier)
         .def_readwrite("ShieldDamageModifier", &UWillowDamageTypeDefinition::ShieldDamageModifier)
@@ -41,6 +41,5 @@ void Export_pystes_UWillowDamageTypeDefinition()
         .def("GetRigidBodyMomentumScale", &UWillowDamageTypeDefinition::GetRigidBodyMomentumScale)
         .def("GetUpwardMomentumScale", &UWillowDamageTypeDefinition::GetUpwardMomentumScale)
         .def("ApplyUpwardMomentum", &UWillowDamageTypeDefinition::ApplyUpwardMomentum)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

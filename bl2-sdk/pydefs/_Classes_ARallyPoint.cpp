@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ARallyPoint()
+void Export_pystes_ARallyPoint(py::object m)
 {
-    py::class_< ARallyPoint,  AActor   >("ARallyPoint")
+    py::class_< ARallyPoint,  AActor   >(m, "ARallyPoint")
         .def("StaticClass", &ARallyPoint::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

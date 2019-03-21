@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ALevelStreamingVolume()
+void Export_pystes_ALevelStreamingVolume(py::object m)
 {
-    py::class_< ALevelStreamingVolume,  AVolume   >("ALevelStreamingVolume")
+    py::class_< ALevelStreamingVolume,  AVolume   >(m, "ALevelStreamingVolume")
         .def_readwrite("StreamingLevels", &ALevelStreamingVolume::StreamingLevels)
         .def_readwrite("StreamingUsage", &ALevelStreamingVolume::StreamingUsage)
         .def_readwrite("Usage", &ALevelStreamingVolume::Usage)
@@ -15,6 +15,5 @@ void Export_pystes_ALevelStreamingVolume()
         .def("ApplyCheckpointRecord", &ALevelStreamingVolume::ApplyCheckpointRecord)
         .def("CreateCheckpointRecord", &ALevelStreamingVolume::CreateCheckpointRecord)
         .def("OnToggle", &ALevelStreamingVolume::OnToggle)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

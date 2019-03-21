@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNetPendingLevel()
+void Export_pystes_UNetPendingLevel(py::object m)
 {
-    py::class_< UNetPendingLevel,  UPendingLevel   >("UNetPendingLevel")
+    py::class_< UNetPendingLevel,  UPendingLevel   >(m, "UNetPendingLevel")
         .def("StaticClass", &UNetPendingLevel::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

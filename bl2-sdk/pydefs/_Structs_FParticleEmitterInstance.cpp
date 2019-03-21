@@ -3,8 +3,8 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FParticleEmitterInstance()
+void Export_pystes_FParticleEmitterInstance(py::object m)
 {
-    py::class_< FParticleEmitterInstance >("FParticleEmitterInstance")
+    py::class_< FParticleEmitterInstance >(m, "FParticleEmitterInstance")
   ;
 }

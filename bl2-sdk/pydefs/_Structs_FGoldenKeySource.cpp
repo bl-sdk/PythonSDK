@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGoldenKeySource()
+void Export_pystes_FGoldenKeySource(py::object m)
 {
-    py::class_< FGoldenKeySource >("FGoldenKeySource")
+    py::class_< FGoldenKeySource >(m, "FGoldenKeySource")
         .def_readwrite("SourceId", &FGoldenKeySource::SourceId)
         .def_readwrite("NumKeys", &FGoldenKeySource::NumKeys)
         .def_readwrite("NumKeysSpent", &FGoldenKeySource::NumKeysSpent)

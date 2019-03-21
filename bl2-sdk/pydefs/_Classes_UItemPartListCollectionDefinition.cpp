@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UItemPartListCollectionDefinition()
+void Export_pystes_UItemPartListCollectionDefinition(py::object m)
 {
-    py::class_< UItemPartListCollectionDefinition,  UInventoryPartListCollectionDefinition   >("UItemPartListCollectionDefinition")
+    py::class_< UItemPartListCollectionDefinition,  UInventoryPartListCollectionDefinition   >(m, "UItemPartListCollectionDefinition")
         .def_readwrite("AssociatedItem", &UItemPartListCollectionDefinition::AssociatedItem)
         .def_readwrite("AlphaPartData", &UItemPartListCollectionDefinition::AlphaPartData)
         .def_readwrite("BetaPartData", &UItemPartListCollectionDefinition::BetaPartData)
@@ -17,6 +17,5 @@ void Export_pystes_UItemPartListCollectionDefinition()
         .def_readwrite("ThetaPartData", &UItemPartListCollectionDefinition::ThetaPartData)
         .def_readwrite("MaterialPartData", &UItemPartListCollectionDefinition::MaterialPartData)
         .def("StaticClass", &UItemPartListCollectionDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

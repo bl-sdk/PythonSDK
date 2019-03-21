@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAnimNodeAimOffset()
+void Export_pystes_UWillowAnimNodeAimOffset(py::object m)
 {
-    py::class_< UWillowAnimNodeAimOffset,  UAnimNodeAimOffset   >("UWillowAnimNodeAimOffset")
+    py::class_< UWillowAnimNodeAimOffset,  UAnimNodeAimOffset   >(m, "UWillowAnimNodeAimOffset")
         .def_readwrite("AimSpeed", &UWillowAnimNodeAimOffset::AimSpeed)
         .def_readwrite("PivotOverrideSocket", &UWillowAnimNodeAimOffset::PivotOverrideSocket)
         .def_readwrite("YawRange", &UWillowAnimNodeAimOffset::YawRange)
@@ -23,6 +23,5 @@ void Export_pystes_UWillowAnimNodeAimOffset()
         .def("DebugAimOffset", &UWillowAnimNodeAimOffset::DebugAimOffset)
         .def("IsAimNodeDebugEnabled", &UWillowAnimNodeAimOffset::IsAimNodeDebugEnabled)
         .def("ToggleAimNodeDebug", &UWillowAnimNodeAimOffset::ToggleAimNodeDebug)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

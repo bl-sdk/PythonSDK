@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxEngine()
+void Export_pystes_UGearboxEngine(py::object m)
 {
-    py::class_< UGearboxEngine,  UGameEngine   >("UGearboxEngine")
+    py::class_< UGearboxEngine,  UGameEngine   >(m, "UGearboxEngine")
         .def_readwrite("CurrentUserID", &UGearboxEngine::CurrentUserID)
         .def_readwrite("CurrentDeviceID", &UGearboxEngine::CurrentDeviceID)
         .def_readwrite("DefaultSparkInterfaceName", &UGearboxEngine::DefaultSparkInterfaceName)
@@ -17,6 +17,5 @@ void Export_pystes_UGearboxEngine()
         .def("HasStorageDeviceBeenRemoved", &UGearboxEngine::HasStorageDeviceBeenRemoved)
         .def("GetCurrentDeviceID", &UGearboxEngine::GetCurrentDeviceID)
         .def("SetCurrentDeviceID", &UGearboxEngine::SetCurrentDeviceID)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

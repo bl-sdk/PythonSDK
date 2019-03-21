@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UVehicleSpawnStationGFxDefinition()
+void Export_pystes_UVehicleSpawnStationGFxDefinition(py::object m)
 {
-    py::class_< UVehicleSpawnStationGFxDefinition,  UWillowGFxMovie3DDefinition   >("UVehicleSpawnStationGFxDefinition")
+    py::class_< UVehicleSpawnStationGFxDefinition,  UWillowGFxMovie3DDefinition   >(m, "UVehicleSpawnStationGFxDefinition")
         .def_readwrite("SupportedTags", &UVehicleSpawnStationGFxDefinition::SupportedTags)
         .def_readwrite("RequiredTags", &UVehicleSpawnStationGFxDefinition::RequiredTags)
         .def_readwrite("PostProcessInterpolationTime", &UVehicleSpawnStationGFxDefinition::PostProcessInterpolationTime)
@@ -17,6 +17,5 @@ void Export_pystes_UVehicleSpawnStationGFxDefinition()
         .def_readonly("MeshOffset", &UVehicleSpawnStationGFxDefinition::MeshOffset)
         .def_readwrite("HeaderTextOverrideKey", &UVehicleSpawnStationGFxDefinition::HeaderTextOverrideKey)
         .def("StaticClass", &UVehicleSpawnStationGFxDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

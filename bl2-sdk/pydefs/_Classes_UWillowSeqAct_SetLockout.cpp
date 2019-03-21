@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSeqAct_SetLockout()
+void Export_pystes_UWillowSeqAct_SetLockout(py::object m)
 {
-    py::class_< UWillowSeqAct_SetLockout,  USequenceAction   >("UWillowSeqAct_SetLockout")
+    py::class_< UWillowSeqAct_SetLockout,  USequenceAction   >(m, "UWillowSeqAct_SetLockout")
         .def_readwrite("LockoutDef", &UWillowSeqAct_SetLockout::LockoutDef)
         .def("StaticClass", &UWillowSeqAct_SetLockout::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPopulatedAIPawnMemento()
+void Export_pystes_FPopulatedAIPawnMemento(py::object m)
 {
-    py::class_< FPopulatedAIPawnMemento >("FPopulatedAIPawnMemento")
+    py::class_< FPopulatedAIPawnMemento >(m, "FPopulatedAIPawnMemento")
         .def_readwrite("PawnWeapons", &FPopulatedAIPawnMemento::PawnWeapons)
         .def_readwrite("PawnItems", &FPopulatedAIPawnMemento::PawnItems)
   ;

@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPopulationPointRenderingComponent()
+void Export_pystes_UPopulationPointRenderingComponent(py::object m)
 {
-    py::class_< UPopulationPointRenderingComponent,  UPrimitiveComponent   >("UPopulationPointRenderingComponent")
+    py::class_< UPopulationPointRenderingComponent,  UPrimitiveComponent   >(m, "UPopulationPointRenderingComponent")
         .def("StaticClass", &UPopulationPointRenderingComponent::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

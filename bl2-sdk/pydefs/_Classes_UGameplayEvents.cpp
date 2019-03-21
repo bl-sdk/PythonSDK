@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGameplayEvents()
+void Export_pystes_UGameplayEvents(py::object m)
 {
-    py::class_< UGameplayEvents,  UObject   >("UGameplayEvents")
+    py::class_< UGameplayEvents,  UObject   >(m, "UGameplayEvents")
         .def_readwrite("Archive", &UGameplayEvents::Archive)
         .def_readwrite("StatsFileName", &UGameplayEvents::StatsFileName)
         .def_readwrite("Header", &UGameplayEvents::Header)
@@ -23,6 +23,5 @@ void Export_pystes_UGameplayEvents()
         .def("eventGetFilename", &UGameplayEvents::eventGetFilename)
         .def("CloseStatsFile", &UGameplayEvents::CloseStatsFile)
         .def("OpenStatsFile", &UGameplayEvents::OpenStatsFile)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

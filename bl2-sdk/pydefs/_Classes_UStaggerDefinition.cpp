@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UStaggerDefinition()
+void Export_pystes_UStaggerDefinition(py::object m)
 {
-    py::class_< UStaggerDefinition,  UGBXDefinition   >("UStaggerDefinition")
+    py::class_< UStaggerDefinition,  UGBXDefinition   >(m, "UStaggerDefinition")
         .def_readwrite("StaggeredPhysicalMaterial", &UStaggerDefinition::StaggeredPhysicalMaterial)
         .def_readwrite("StaggeredGravity", &UStaggerDefinition::StaggeredGravity)
         .def_readwrite("StaggeredRestVelocity", &UStaggerDefinition::StaggeredRestVelocity)
@@ -20,6 +20,5 @@ void Export_pystes_UStaggerDefinition()
         .def_readwrite("HardFlinchAnimation", &UStaggerDefinition::HardFlinchAnimation)
         .def_readwrite("UnstaggerGiveUpTime", &UStaggerDefinition::UnstaggerGiveUpTime)
         .def("StaticClass", &UStaggerDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

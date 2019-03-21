@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowDialogAct_RandomBranch()
+void Export_pystes_UWillowDialogAct_RandomBranch(py::object m)
 {
-    py::class_< UWillowDialogAct_RandomBranch,  UGearboxDialogAction   >("UWillowDialogAct_RandomBranch")
+    py::class_< UWillowDialogAct_RandomBranch,  UGearboxDialogAction   >(m, "UWillowDialogAct_RandomBranch")
         .def_readwrite("Chances", &UWillowDialogAct_RandomBranch::Chances)
         .def_readwrite("QuietTimeMin", &UWillowDialogAct_RandomBranch::QuietTimeMin)
         .def_readwrite("QuietTimeMax", &UWillowDialogAct_RandomBranch::QuietTimeMax)
@@ -15,6 +15,5 @@ void Export_pystes_UWillowDialogAct_RandomBranch()
         .def_readwrite("DisableIndices", &UWillowDialogAct_RandomBranch::DisableIndices)
         .def("StaticClass", &UWillowDialogAct_RandomBranch::StaticClass, py::return_value_policy::reference)
         .def("eventActivate", &UWillowDialogAct_RandomBranch::eventActivate)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

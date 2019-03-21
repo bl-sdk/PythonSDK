@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_ConvertInstanceDataIntoPhysicsActor()
+void Export_pystes_UBehavior_ConvertInstanceDataIntoPhysicsActor(py::object m)
 {
-    py::class_< UBehavior_ConvertInstanceDataIntoPhysicsActor,  UBehaviorBase   >("UBehavior_ConvertInstanceDataIntoPhysicsActor")
+    py::class_< UBehavior_ConvertInstanceDataIntoPhysicsActor,  UBehaviorBase   >(m, "UBehavior_ConvertInstanceDataIntoPhysicsActor")
         .def_readwrite("DetachImpulse", &UBehavior_ConvertInstanceDataIntoPhysicsActor::DetachImpulse)
         .def_readwrite("ImpulseSourceLocation", &UBehavior_ConvertInstanceDataIntoPhysicsActor::ImpulseSourceLocation)
         .def_readwrite("PhysicsActorLifeTime", &UBehavior_ConvertInstanceDataIntoPhysicsActor::PhysicsActorLifeTime)
@@ -15,6 +15,5 @@ void Export_pystes_UBehavior_ConvertInstanceDataIntoPhysicsActor()
         .def("RemoveInstanceDataComponent", &UBehavior_ConvertInstanceDataIntoPhysicsActor::RemoveInstanceDataComponent)
         .def("ConvertInstanceDataToPhysicsActor", &UBehavior_ConvertInstanceDataIntoPhysicsActor::ConvertInstanceDataToPhysicsActor, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_ConvertInstanceDataIntoPhysicsActor::ApplyBehaviorToContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

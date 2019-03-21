@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APickupFactory()
+void Export_pystes_APickupFactory(py::object m)
 {
-    py::class_< APickupFactory,  ANavigationPoint   >("APickupFactory")
+    py::class_< APickupFactory,  ANavigationPoint   >(m, "APickupFactory")
         .def_readwrite("InventoryType", &APickupFactory::InventoryType)
         .def_readwrite("RespawnEffectTime", &APickupFactory::RespawnEffectTime)
         .def_readwrite("MaxDesireability", &APickupFactory::MaxDesireability)
@@ -35,6 +35,5 @@ void Export_pystes_APickupFactory()
         .def("InitializePickup", &APickupFactory::InitializePickup)
         .def("eventPreBeginPlay", &APickupFactory::eventPreBeginPlay)
         .def("eventReplicatedEvent", &APickupFactory::eventReplicatedEvent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

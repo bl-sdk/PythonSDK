@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPopulationMasterStat()
+void Export_pystes_FPopulationMasterStat(py::object m)
 {
-    py::class_< FPopulationMasterStat >("FPopulationMasterStat")
+    py::class_< FPopulationMasterStat >(m, "FPopulationMasterStat")
         .def_readwrite("StatName", &FPopulationMasterStat::StatName)
         .def_readwrite("StatTime", &FPopulationMasterStat::StatTime)
         .def_readwrite("StatMaxTime", &FPopulationMasterStat::StatMaxTime)

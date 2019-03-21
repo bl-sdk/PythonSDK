@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowGameReplicationInfo()
+void Export_pystes_AWillowGameReplicationInfo(py::object m)
 {
-    py::class_< AWillowGameReplicationInfo,  AGameReplicationInfo   >("AWillowGameReplicationInfo")
+    py::class_< AWillowGameReplicationInfo,  AGameReplicationInfo   >(m, "AWillowGameReplicationInfo")
         .def_readonly("ActiveWaypoints", &AWillowGameReplicationInfo::ActiveWaypoints)
         .def_readonly("ActiveAreaWaypoints", &AWillowGameReplicationInfo::ActiveAreaWaypoints)
         .def_readwrite("RadarMgr", &AWillowGameReplicationInfo::RadarMgr)
@@ -113,6 +113,5 @@ void Export_pystes_AWillowGameReplicationInfo()
         .def("GetCurrPlaythrough", &AWillowGameReplicationInfo::GetCurrPlaythrough)
         .def("SetPlaythroughOverride", &AWillowGameReplicationInfo::SetPlaythroughOverride)
         .def("SetCurrentPlaythrough", &AWillowGameReplicationInfo::SetCurrentPlaythrough)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

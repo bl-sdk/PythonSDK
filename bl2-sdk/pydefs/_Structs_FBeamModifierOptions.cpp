@@ -3,8 +3,8 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBeamModifierOptions()
+void Export_pystes_FBeamModifierOptions(py::object m)
 {
-    py::class_< FBeamModifierOptions >("FBeamModifierOptions")
+    py::class_< FBeamModifierOptions >(m, "FBeamModifierOptions")
   ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRemoteDynamicRadarIconData()
+void Export_pystes_FRemoteDynamicRadarIconData(py::object m)
 {
-    py::class_< FRemoteDynamicRadarIconData >("FRemoteDynamicRadarIconData")
+    py::class_< FRemoteDynamicRadarIconData >(m, "FRemoteDynamicRadarIconData")
         .def_readwrite("IconType", &FRemoteDynamicRadarIconData::IconType)
         .def_readwrite("Location", &FRemoteDynamicRadarIconData::Location)
   ;

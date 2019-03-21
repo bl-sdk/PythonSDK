@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UKillZDamageType()
+void Export_pystes_UKillZDamageType(py::object m)
 {
-    py::class_< UKillZDamageType,  UDamageType   >("UKillZDamageType")
+    py::class_< UKillZDamageType,  UDamageType   >(m, "UKillZDamageType")
         .def("StaticClass", &UKillZDamageType::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

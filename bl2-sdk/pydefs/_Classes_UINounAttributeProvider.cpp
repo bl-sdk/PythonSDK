@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UINounAttributeProvider()
+void Export_pystes_UINounAttributeProvider(py::object m)
 {
-    py::class_< UINounAttributeProvider,  UInterface   >("UINounAttributeProvider")
+    py::class_< UINounAttributeProvider,  UInterface   >(m, "UINounAttributeProvider")
         .def("StaticClass", &UINounAttributeProvider::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

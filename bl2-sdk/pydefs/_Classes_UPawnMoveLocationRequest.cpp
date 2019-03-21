@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPawnMoveLocationRequest()
+void Export_pystes_UPawnMoveLocationRequest(py::object m)
 {
-    py::class_< UPawnMoveLocationRequest,  UObject   >("UPawnMoveLocationRequest")
+    py::class_< UPawnMoveLocationRequest,  UObject   >(m, "UPawnMoveLocationRequest")
         .def_readwrite("CoverSearchFilter", &UPawnMoveLocationRequest::CoverSearchFilter)
         .def_readwrite("RepathOption", &UPawnMoveLocationRequest::RepathOption)
         .def_readwrite("CoverFailureResponse", &UPawnMoveLocationRequest::CoverFailureResponse)
@@ -28,6 +28,5 @@ void Export_pystes_UPawnMoveLocationRequest()
         .def("GetLastOrigin", &UGearboxLocationRequest::GetLastOrigin)
         .def("GetDirection", &UGearboxLocationRequest::GetDirection)
         .def("GetOrigin", &UGearboxLocationRequest::GetOrigin)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

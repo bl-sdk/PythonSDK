@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPlayerIcon()
+void Export_pystes_FPlayerIcon(py::object m)
 {
-    py::class_< FPlayerIcon,  FWorldSpaceIcon   >("FPlayerIcon")
+    py::class_< FPlayerIcon,  FWorldSpaceIcon   >(m, "FPlayerIcon")
         .def_readwrite("TextClip", &FPlayerIcon::TextClip)
         .def_readwrite("StateClip", &FPlayerIcon::StateClip)
   ;

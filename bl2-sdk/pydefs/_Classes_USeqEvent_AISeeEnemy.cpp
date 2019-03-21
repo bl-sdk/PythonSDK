@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqEvent_AISeeEnemy()
+void Export_pystes_USeqEvent_AISeeEnemy(py::object m)
 {
-    py::class_< USeqEvent_AISeeEnemy,  USequenceEvent   >("USeqEvent_AISeeEnemy")
+    py::class_< USeqEvent_AISeeEnemy,  USequenceEvent   >(m, "USeqEvent_AISeeEnemy")
         .def_readwrite("MaxSightDistance", &USeqEvent_AISeeEnemy::MaxSightDistance)
         .def("StaticClass", &USeqEvent_AISeeEnemy::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

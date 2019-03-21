@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHoverVehicleHandlingDefinition()
+void Export_pystes_UHoverVehicleHandlingDefinition(py::object m)
 {
-    py::class_< UHoverVehicleHandlingDefinition,  UVehicleHandlingDefinition   >("UHoverVehicleHandlingDefinition")
+    py::class_< UHoverVehicleHandlingDefinition,  UVehicleHandlingDefinition   >(m, "UHoverVehicleHandlingDefinition")
         .def_readwrite("AirTransFriction", &UHoverVehicleHandlingDefinition::AirTransFriction)
         .def_readwrite("AirRotFriction", &UHoverVehicleHandlingDefinition::AirRotFriction)
         .def_readwrite("ForceScalar", &UHoverVehicleHandlingDefinition::ForceScalar)
@@ -28,6 +28,5 @@ void Export_pystes_UHoverVehicleHandlingDefinition()
         .def_readwrite("InAirUprightTorqueFactor", &UCarVehicleHandlingDefinition::InAirUprightTorqueFactor)
         .def_readwrite("InAirUprightMaxTorque", &UCarVehicleHandlingDefinition::InAirUprightMaxTorque)
         .def("StaticClass", &UHoverVehicleHandlingDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

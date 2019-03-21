@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIDataProvider_OnlineProfileSettings()
+void Export_pystes_UUIDataProvider_OnlineProfileSettings(py::object m)
 {
-    py::class_< UUIDataProvider_OnlineProfileSettings,  UUIDataProvider_OnlinePlayerDataBase   >("UUIDataProvider_OnlineProfileSettings")
+    py::class_< UUIDataProvider_OnlineProfileSettings,  UUIDataProvider_OnlinePlayerDataBase   >(m, "UUIDataProvider_OnlineProfileSettings")
         .def_readwrite("Profile", &UUIDataProvider_OnlinePlayerStorage::Profile)
         .def_readwrite("ProviderName", &UUIDataProvider_OnlinePlayerStorage::ProviderName)
         .def_readwrite("PlayerStorageArrayProviders", &UUIDataProvider_OnlinePlayerStorage::PlayerStorageArrayProviders)
@@ -27,6 +27,5 @@ void Export_pystes_UUIDataProvider_OnlineProfileSettings()
         .def("OnReadStorageComplete", &UUIDataProvider_OnlinePlayerStorage::OnReadStorageComplete)
         .def("eventOnUnregister", &UUIDataProvider_OnlinePlayerStorage::eventOnUnregister)
         .def("eventOnRegister", &UUIDataProvider_OnlinePlayerStorage::eventOnRegister)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

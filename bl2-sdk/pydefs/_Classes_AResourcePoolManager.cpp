@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AResourcePoolManager()
+void Export_pystes_AResourcePoolManager(py::object m)
 {
-    py::class_< AResourcePoolManager,  AReplicationInfo   >("AResourcePoolManager")
+    py::class_< AResourcePoolManager,  AReplicationInfo   >(m, "AResourcePoolManager")
         .def_readonly("ResourcePools", &AResourcePoolManager::ResourcePools)
         .def_readonly("UnknownData00", &AResourcePoolManager::UnknownData00)
         .def_readwrite("NextPoolGUID", &AResourcePoolManager::NextPoolGUID)
@@ -31,6 +31,5 @@ void Export_pystes_AResourcePoolManager()
         .def("eventDestroyed", &AResourcePoolManager::eventDestroyed)
         .def("ShutDown", &AResourcePoolManager::ShutDown)
         .def("AllResourcePools", &AResourcePoolManager::AllResourcePools)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

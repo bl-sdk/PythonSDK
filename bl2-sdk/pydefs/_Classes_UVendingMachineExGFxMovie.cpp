@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UVendingMachineExGFxMovie()
+void Export_pystes_UVendingMachineExGFxMovie(py::object m)
 {
-    py::class_< UVendingMachineExGFxMovie,  UWillowInventoryGFxMovie   >("UVendingMachineExGFxMovie")
+    py::class_< UVendingMachineExGFxMovie,  UWillowInventoryGFxMovie   >(m, "UVendingMachineExGFxMovie")
         .def_readwrite("VM", &UVendingMachineExGFxMovie::VM)
         .def_readwrite("VMGFxDef", &UVendingMachineExGFxMovie::VMGFxDef)
         .def_readwrite("OwnerInventoryPawn", &UVendingMachineExGFxMovie::OwnerInventoryPawn)
@@ -132,6 +132,5 @@ void Export_pystes_UVendingMachineExGFxMovie()
         .def("extInitItemOfTheDayPanel", &UVendingMachineExGFxMovie::extInitItemOfTheDayPanel)
         .def("extInitVendingMachine", &UVendingMachineExGFxMovie::extInitVendingMachine)
         .def("eventStart", &UVendingMachineExGFxMovie::eventStart)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

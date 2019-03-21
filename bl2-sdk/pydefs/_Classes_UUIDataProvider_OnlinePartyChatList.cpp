@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIDataProvider_OnlinePartyChatList()
+void Export_pystes_UUIDataProvider_OnlinePartyChatList(py::object m)
 {
-    py::class_< UUIDataProvider_OnlinePartyChatList,  UUIDataProvider_OnlinePlayerDataBase   >("UUIDataProvider_OnlinePartyChatList")
+    py::class_< UUIDataProvider_OnlinePartyChatList,  UUIDataProvider_OnlinePlayerDataBase   >(m, "UUIDataProvider_OnlinePartyChatList")
         .def_readwrite("VfTable_IUIListElementCellProvider", &UUIDataProvider_OnlinePartyChatList::VfTable_IUIListElementCellProvider)
         .def_readwrite("PartyMembersList", &UUIDataProvider_OnlinePartyChatList::PartyMembersList)
         .def_readwrite("NatTypes", &UUIDataProvider_OnlinePartyChatList::NatTypes)
@@ -21,6 +21,5 @@ void Export_pystes_UUIDataProvider_OnlinePartyChatList()
         .def("OnLoginChange", &UUIDataProvider_OnlinePartyChatList::OnLoginChange)
         .def("eventOnUnregister", &UUIDataProvider_OnlinePartyChatList::eventOnUnregister)
         .def("eventOnRegister", &UUIDataProvider_OnlinePartyChatList::eventOnRegister)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

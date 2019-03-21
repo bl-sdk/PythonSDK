@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USVehicleWheel()
+void Export_pystes_USVehicleWheel(py::object m)
 {
-    py::class_< USVehicleWheel,  UComponent   >("USVehicleWheel")
+    py::class_< USVehicleWheel,  UComponent   >(m, "USVehicleWheel")
         .def_readwrite("Steer", &USVehicleWheel::Steer)
         .def_readwrite("MotorTorque", &USVehicleWheel::MotorTorque)
         .def_readwrite("BrakeTorque", &USVehicleWheel::BrakeTorque)
@@ -47,6 +47,5 @@ void Export_pystes_USVehicleWheel()
         .def_readwrite("WheelParticleComp", &USVehicleWheel::WheelParticleComp)
         .def_readwrite("SlipParticleParamName", &USVehicleWheel::SlipParticleParamName)
         .def("StaticClass", &USVehicleWheel::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

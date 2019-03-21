@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FUIStatModifierData()
+void Export_pystes_FUIStatModifierData(py::object m)
 {
-    py::class_< FUIStatModifierData >("FUIStatModifierData")
+    py::class_< FUIStatModifierData >(m, "FUIStatModifierData")
         .def_readwrite("AttributePresentation", &FUIStatModifierData::AttributePresentation)
         .def_readwrite("ConstraintAttributePresentation", &FUIStatModifierData::ConstraintAttributePresentation)
         .def_readwrite("AttributeStyle", &FUIStatModifierData::AttributeStyle)

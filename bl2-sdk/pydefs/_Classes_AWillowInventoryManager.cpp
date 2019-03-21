@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowInventoryManager()
+void Export_pystes_AWillowInventoryManager(py::object m)
 {
-    py::class_< AWillowInventoryManager,  AInventoryManager   >("AWillowInventoryManager")
+    py::class_< AWillowInventoryManager,  AInventoryManager   >(m, "AWillowInventoryManager")
         .def_readwrite("InventorySlotMax_Misc", &AWillowInventoryManager::InventorySlotMax_Misc)
         .def_readwrite("WeaponReadyMax", &AWillowInventoryManager::WeaponReadyMax)
         .def_readwrite("WeaponReadyMaxBaseValue", &AWillowInventoryManager::WeaponReadyMaxBaseValue)
@@ -137,6 +137,5 @@ void Export_pystes_AWillowInventoryManager()
         .def("FindLeastValuableWeapon", &AWillowInventoryManager::FindLeastValuableWeapon, py::return_value_policy::reference)
         .def("FindLeastValuableItem", &AWillowInventoryManager::FindLeastValuableItem, py::return_value_policy::reference)
         .def("ItemActors", &AWillowInventoryManager::ItemActors)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

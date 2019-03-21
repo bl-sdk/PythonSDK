@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimationCompressionAlgorithm_PerTrackCompression()
+void Export_pystes_UAnimationCompressionAlgorithm_PerTrackCompression(py::object m)
 {
-    py::class_< UAnimationCompressionAlgorithm_PerTrackCompression,  UObject   >("UAnimationCompressionAlgorithm_PerTrackCompression")
+    py::class_< UAnimationCompressionAlgorithm_PerTrackCompression,  UObject   >(m, "UAnimationCompressionAlgorithm_PerTrackCompression")
         .def_readwrite("MaxZeroingThreshold", &UAnimationCompressionAlgorithm_PerTrackCompression::MaxZeroingThreshold)
         .def_readwrite("MaxPosDiffBitwise", &UAnimationCompressionAlgorithm_PerTrackCompression::MaxPosDiffBitwise)
         .def_readwrite("MaxAngleDiffBitwise", &UAnimationCompressionAlgorithm_PerTrackCompression::MaxAngleDiffBitwise)
@@ -31,6 +31,5 @@ void Export_pystes_UAnimationCompressionAlgorithm_PerTrackCompression()
         .def_readwrite("TranslationCompressionChoice", &UAnimationCompressionAlgorithm::TranslationCompressionChoice)
         .def_readwrite("RotationCompressionChoice", &UAnimationCompressionAlgorithm::RotationCompressionChoice)
         .def("StaticClass", &UAnimationCompressionAlgorithm_PerTrackCompression::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

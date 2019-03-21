@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FEmoteStance()
+void Export_pystes_FEmoteStance(py::object m)
 {
-    py::class_< FEmoteStance >("FEmoteStance")
+    py::class_< FEmoteStance >(m, "FEmoteStance")
         .def_readwrite("Emote", &FEmoteStance::Emote)
         .def_readwrite("StanceSpecialMove", &FEmoteStance::StanceSpecialMove)
   ;

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGameEngine()
+void Export_pystes_UGameEngine(py::object m)
 {
-    py::class_< UGameEngine,  USubsystem   >("UGameEngine")
+    py::class_< UGameEngine,  USubsystem   >(m, "UGameEngine")
         .def_readwrite("GPendingLevel", &UGameEngine::GPendingLevel)
         .def_readwrite("PendingLevelPlayerControllerClassName", &UGameEngine::PendingLevelPlayerControllerClassName)
         .def_readwrite("LastURL", &UGameEngine::LastURL)
@@ -280,6 +280,5 @@ void Export_pystes_UGameEngine()
         .def("GetCurrentWorldInfo", &UEngine::GetCurrentWorldInfo, py::return_value_policy::reference)
         .def("IsGame", &UEngine::IsGame)
         .def("IsEditor", &UEngine::IsEditor)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

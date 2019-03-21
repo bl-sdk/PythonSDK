@@ -3,14 +3,13 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionBumpOffsetEx()
+void Export_pystes_UMaterialExpressionBumpOffsetEx(py::object m)
 {
-    py::class_< UMaterialExpressionBumpOffsetEx,  UMaterialExpression   >("UMaterialExpressionBumpOffsetEx")
+    py::class_< UMaterialExpressionBumpOffsetEx,  UMaterialExpression   >(m, "UMaterialExpressionBumpOffsetEx")
         .def_readwrite("Coordinate", &UMaterialExpressionBumpOffsetEx::Coordinate)
         .def_readwrite("Height", &UMaterialExpressionBumpOffsetEx::Height)
         .def_readwrite("HeightRatio", &UMaterialExpressionBumpOffsetEx::HeightRatio)
         .def_readwrite("ReferencePlane", &UMaterialExpressionBumpOffsetEx::ReferencePlane)
         .def("StaticClass", &UMaterialExpressionBumpOffsetEx::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

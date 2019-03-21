@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehaviorBase()
+void Export_pystes_UBehaviorBase(py::object m)
 {
-    py::class_< UBehaviorBase,  UObject   >("UBehaviorBase")
+    py::class_< UBehaviorBase,  UObject   >(m, "UBehaviorBase")
         .def_readwrite("Context", &UBehaviorBase::Context)
         .def("StaticClass", &UBehaviorBase::StaticClass, py::return_value_policy::reference)
         .def("IsBehaviorDebugEnabled", &UBehaviorBase::IsBehaviorDebugEnabled)
@@ -25,6 +25,5 @@ void Export_pystes_UBehaviorBase()
         .def("SetVectorParameter", &UBehaviorBase::SetVectorParameter)
         .def("GetWorldInfo", &UBehaviorBase::GetWorldInfo, py::return_value_policy::reference)
         .def("RunBehaviors", &UBehaviorBase::RunBehaviors)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

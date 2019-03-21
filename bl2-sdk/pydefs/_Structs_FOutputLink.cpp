@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FOutputLink()
+void Export_pystes_FOutputLink(py::object m)
 {
-    py::class_< FOutputLink >("FOutputLink")
+    py::class_< FOutputLink >(m, "FOutputLink")
         .def_readwrite("Links", &FOutputLink::Links)
   ;
 }

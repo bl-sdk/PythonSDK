@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNavMeshGoal_GenericFilterContainer()
+void Export_pystes_UNavMeshGoal_GenericFilterContainer(py::object m)
 {
-    py::class_< UNavMeshGoal_GenericFilterContainer,  UNavMeshPathGoalEvaluator   >("UNavMeshGoal_GenericFilterContainer")
+    py::class_< UNavMeshGoal_GenericFilterContainer,  UNavMeshPathGoalEvaluator   >(m, "UNavMeshGoal_GenericFilterContainer")
         .def_readwrite("GoalFilters", &UNavMeshGoal_GenericFilterContainer::GoalFilters)
         .def_readwrite("SuccessfulGoal", &UNavMeshGoal_GenericFilterContainer::SuccessfulGoal)
         .def_readwrite("MyNavigationHandle", &UNavMeshGoal_GenericFilterContainer::MyNavigationHandle)
@@ -14,6 +14,5 @@ void Export_pystes_UNavMeshGoal_GenericFilterContainer()
         .def("GetGoalPoint", &UNavMeshGoal_GenericFilterContainer::GetGoalPoint)
         .def("GetFilterOfType", &UNavMeshGoal_GenericFilterContainer::GetFilterOfType, py::return_value_policy::reference)
         .def("CreateAndAddFilterToNavHandle", &UNavMeshGoal_GenericFilterContainer::CreateAndAddFilterToNavHandle, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

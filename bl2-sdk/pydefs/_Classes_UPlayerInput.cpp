@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerInput()
+void Export_pystes_UPlayerInput(py::object m)
 {
-    py::class_< UPlayerInput,  UObject   >("UPlayerInput")
+    py::class_< UPlayerInput,  UObject   >(m, "UPlayerInput")
         .def_readwrite("LastAxisKeyName", &UPlayerInput::LastAxisKeyName)
         .def_readwrite("DoubleClickTimer", &UPlayerInput::DoubleClickTimer)
         .def_readwrite("DoubleClickTime", &UPlayerInput::DoubleClickTime)
@@ -98,6 +98,5 @@ void Export_pystes_UPlayerInput()
         .def("GetSceneClient", &UUIRoot::GetSceneClient, py::return_value_policy::reference)
         .def("GetCurrentUIController", &UUIRoot::GetCurrentUIController, py::return_value_policy::reference)
         .def("GetInputPlatformType", &UUIRoot::GetInputPlatformType)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

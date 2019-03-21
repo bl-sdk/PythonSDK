@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FtMenuData()
+void Export_pystes_FtMenuData(py::object m)
 {
-    py::class_< FtMenuData >("FtMenuData")
+    py::class_< FtMenuData >(m, "FtMenuData")
         .def_readwrite("ColumnText", &FtMenuData::ColumnText)
         .def_readwrite("PrimaryActionCmd", &FtMenuData::PrimaryActionCmd)
         .def_readwrite("SecondaryActionCmd", &FtMenuData::SecondaryActionCmd)

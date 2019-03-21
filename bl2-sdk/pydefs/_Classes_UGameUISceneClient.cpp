@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGameUISceneClient()
+void Export_pystes_UGameUISceneClient(py::object m)
 {
-    py::class_< UGameUISceneClient,  UUIRoot   >("UGameUISceneClient")
+    py::class_< UGameUISceneClient,  UUIRoot   >(m, "UGameUISceneClient")
         .def_readwrite("LatestDeltaTime", &UGameUISceneClient::LatestDeltaTime)
         .def_readwrite("DoubleClickStartTime", &UGameUISceneClient::DoubleClickStartTime)
         .def_readwrite("DoubleClickStartPosition", &UGameUISceneClient::DoubleClickStartPosition)
@@ -34,6 +34,5 @@ void Export_pystes_UGameUISceneClient()
         .def("GetInverseCanvasToScreen", &UUISceneClient::GetInverseCanvasToScreen)
         .def("GetCanvasToScreen", &UUISceneClient::GetCanvasToScreen)
         .def("IsUIActive", &UUISceneClient::IsUIActive)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

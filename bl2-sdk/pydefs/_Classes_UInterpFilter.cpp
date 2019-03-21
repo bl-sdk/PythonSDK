@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpFilter()
+void Export_pystes_UInterpFilter(py::object m)
 {
-    py::class_< UInterpFilter,  UObject   >("UInterpFilter")
+    py::class_< UInterpFilter,  UObject   >(m, "UInterpFilter")
         .def_readwrite("Caption", &UInterpFilter::Caption)
         .def("StaticClass", &UInterpFilter::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

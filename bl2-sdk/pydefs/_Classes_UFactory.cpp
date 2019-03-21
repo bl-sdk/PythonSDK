@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFactory()
+void Export_pystes_UFactory(py::object m)
 {
-    py::class_< UFactory,  UObject   >("UFactory")
+    py::class_< UFactory,  UObject   >(m, "UFactory")
         .def_readwrite("SupportedClass", &UFactory::SupportedClass)
         .def_readwrite("ContextClass", &UFactory::ContextClass)
         .def_readwrite("Description", &UFactory::Description)
@@ -13,6 +13,5 @@ void Export_pystes_UFactory()
         .def_readwrite("AutoPriority", &UFactory::AutoPriority)
         .def_readwrite("ValidGameNames", &UFactory::ValidGameNames)
         .def("StaticClass", &UFactory::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

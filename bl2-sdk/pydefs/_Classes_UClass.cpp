@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UClass()
+void Export_pystes_UClass(py::object m)
 {
-    py::class_< UClass,  UObject   >("UClass")
+    py::class_< UClass,  UObject   >(m, "UClass")
         .def_readonly("UnknownData00", &UClass::UnknownData00)
         .def_readwrite("SuperField", &UStruct::SuperField)
         .def_readwrite("Children", &UStruct::Children)
@@ -13,6 +13,5 @@ void Export_pystes_UClass()
         .def_readonly("UnknownData01", &UStruct::UnknownData01)
         .def_readwrite("Next", &UField::Next)
         .def("StaticClass", &UClass::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

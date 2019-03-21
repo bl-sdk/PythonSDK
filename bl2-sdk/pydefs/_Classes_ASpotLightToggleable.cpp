@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ASpotLightToggleable()
+void Export_pystes_ASpotLightToggleable(py::object m)
 {
-    py::class_< ASpotLightToggleable,  AActor   >("ASpotLightToggleable")
+    py::class_< ASpotLightToggleable,  AActor   >(m, "ASpotLightToggleable")
         .def_readwrite("LightComponent", &ALight::LightComponent)
         .def("StaticClass", &ASpotLightToggleable::StaticClass, py::return_value_policy::reference)
         .def("ApplyCheckpointRecord", &ASpotLightToggleable::ApplyCheckpointRecord)
@@ -13,6 +13,5 @@ void Export_pystes_ASpotLightToggleable()
         .def("ShouldSaveForCheckpoint", &ASpotLightToggleable::ShouldSaveForCheckpoint)
         .def("OnToggle", &ALight::OnToggle)
         .def("eventReplicatedEvent", &ALight::eventReplicatedEvent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

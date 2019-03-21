@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGFxColiseumOverlayDefinition()
+void Export_pystes_UWillowGFxColiseumOverlayDefinition(py::object m)
 {
-    py::class_< UWillowGFxColiseumOverlayDefinition,  UGFxMovieDefinition   >("UWillowGFxColiseumOverlayDefinition")
+    py::class_< UWillowGFxColiseumOverlayDefinition,  UGFxMovieDefinition   >(m, "UWillowGFxColiseumOverlayDefinition")
         .def_readwrite("CurrentRoundCounter", &UWillowGFxColiseumOverlayDefinition::CurrentRoundCounter)
         .def_readwrite("CurrentWaveCounter", &UWillowGFxColiseumOverlayDefinition::CurrentWaveCounter)
         .def_readwrite("MaxRoundCounter", &UWillowGFxColiseumOverlayDefinition::MaxRoundCounter)
@@ -17,6 +17,5 @@ void Export_pystes_UWillowGFxColiseumOverlayDefinition()
         .def_readwrite("AllRulesDefinition", &UWillowGFxColiseumOverlayDefinition::AllRulesDefinition)
         .def("StaticClass", &UWillowGFxColiseumOverlayDefinition::StaticClass, py::return_value_policy::reference)
         .def("EvaluateBalanceFormula", &UWillowGFxColiseumOverlayDefinition::EvaluateBalanceFormula)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

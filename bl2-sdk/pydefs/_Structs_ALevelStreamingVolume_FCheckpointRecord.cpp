@@ -3,8 +3,8 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ALevelStreamingVolume_FCheckpointRecord()
+void Export_pystes_ALevelStreamingVolume_FCheckpointRecord(py::object m)
 {
-    py::class_< ALevelStreamingVolume_FCheckpointRecord >("ALevelStreamingVolume_FCheckpointRecord")
+    py::class_< ALevelStreamingVolume_FCheckpointRecord >(m, "ALevelStreamingVolume_FCheckpointRecord")
   ;
 }

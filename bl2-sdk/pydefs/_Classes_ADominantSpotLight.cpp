@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ADominantSpotLight()
+void Export_pystes_ADominantSpotLight(py::object m)
 {
-    py::class_< ADominantSpotLight,  ASpotLight   >("ADominantSpotLight")
+    py::class_< ADominantSpotLight,  ASpotLight   >(m, "ADominantSpotLight")
         .def("StaticClass", &ADominantSpotLight::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

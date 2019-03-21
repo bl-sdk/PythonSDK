@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APopulationOpportunityDen()
+void Export_pystes_APopulationOpportunityDen(py::object m)
 {
-    py::class_< APopulationOpportunityDen,  APopulationOpportunity   >("APopulationOpportunityDen")
+    py::class_< APopulationOpportunityDen,  APopulationOpportunity   >(m, "APopulationOpportunityDen")
         .def_readwrite("VfTable_IIAIInterface", &APopulationOpportunityDen::VfTable_IIAIInterface)
         .def_readwrite("MaxActiveActorsIsNormal", &APopulationOpportunityDen::MaxActiveActorsIsNormal)
         .def_readwrite("MaxActiveActorsThreatened", &APopulationOpportunityDen::MaxActiveActorsThreatened)
@@ -73,6 +73,5 @@ void Export_pystes_APopulationOpportunityDen()
         .def("RespawnKilledActors", &APopulationOpportunityDen::RespawnKilledActors)
         .def("DoSpawning", &APopulationOpportunityDen::DoSpawning)
         .def("PostBeginPlay", &APopulationOpportunityDen::PostBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

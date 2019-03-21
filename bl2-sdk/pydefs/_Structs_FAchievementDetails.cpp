@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAchievementDetails()
+void Export_pystes_FAchievementDetails(py::object m)
 {
-    py::class_< FAchievementDetails >("FAchievementDetails")
+    py::class_< FAchievementDetails >(m, "FAchievementDetails")
         .def_readwrite("Id", &FAchievementDetails::Id)
         .def_readwrite("AchievementName", &FAchievementDetails::AchievementName)
         .def_readwrite("Description", &FAchievementDetails::Description)

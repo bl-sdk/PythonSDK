@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APopulationOpportunityArea()
+void Export_pystes_APopulationOpportunityArea(py::object m)
 {
-    py::class_< APopulationOpportunityArea,  APopulationOpportunity   >("APopulationOpportunityArea")
+    py::class_< APopulationOpportunityArea,  APopulationOpportunity   >(m, "APopulationOpportunityArea")
         .def_readwrite("SpawnOptions", &APopulationOpportunityArea::SpawnOptions)
         .def_readwrite("DetectionVolumes", &APopulationOpportunityArea::DetectionVolumes)
         .def_readwrite("DetectionRadius", &APopulationOpportunityArea::DetectionRadius)
@@ -18,6 +18,5 @@ void Export_pystes_APopulationOpportunityArea()
         .def("GetBodyInfoProvider", &APopulationOpportunityArea::GetBodyInfoProvider, py::return_value_policy::reference)
         .def("RespawnKilledActors", &APopulationOpportunityArea::RespawnKilledActors)
         .def("DoSpawning", &APopulationOpportunityArea::DoSpawning)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

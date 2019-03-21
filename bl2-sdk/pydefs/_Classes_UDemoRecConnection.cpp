@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDemoRecConnection()
+void Export_pystes_UDemoRecConnection(py::object m)
 {
-    py::class_< UDemoRecConnection,  UNetConnection   >("UDemoRecConnection")
+    py::class_< UDemoRecConnection,  UNetConnection   >(m, "UDemoRecConnection")
         .def("StaticClass", &UDemoRecConnection::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

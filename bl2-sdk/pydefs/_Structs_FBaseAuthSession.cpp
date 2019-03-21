@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBaseAuthSession()
+void Export_pystes_FBaseAuthSession(py::object m)
 {
-    py::class_< FBaseAuthSession >("FBaseAuthSession")
+    py::class_< FBaseAuthSession >(m, "FBaseAuthSession")
         .def_readwrite("EndPointIP", &FBaseAuthSession::EndPointIP)
         .def_readwrite("EndPointPort", &FBaseAuthSession::EndPointPort)
         .def_readwrite("EndPointUID", &FBaseAuthSession::EndPointUID)

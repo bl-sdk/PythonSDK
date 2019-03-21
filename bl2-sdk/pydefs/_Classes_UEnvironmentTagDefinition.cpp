@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UEnvironmentTagDefinition()
+void Export_pystes_UEnvironmentTagDefinition(py::object m)
 {
-    py::class_< UEnvironmentTagDefinition,  UGBXDefinition   >("UEnvironmentTagDefinition")
+    py::class_< UEnvironmentTagDefinition,  UGBXDefinition   >(m, "UEnvironmentTagDefinition")
         .def("StaticClass", &UEnvironmentTagDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

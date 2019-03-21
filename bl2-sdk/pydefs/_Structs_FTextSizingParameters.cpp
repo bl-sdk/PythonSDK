@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTextSizingParameters()
+void Export_pystes_FTextSizingParameters(py::object m)
 {
-    py::class_< FTextSizingParameters >("FTextSizingParameters")
+    py::class_< FTextSizingParameters >(m, "FTextSizingParameters")
         .def_readwrite("DrawX", &FTextSizingParameters::DrawX)
         .def_readwrite("DrawY", &FTextSizingParameters::DrawY)
         .def_readwrite("DrawXL", &FTextSizingParameters::DrawXL)

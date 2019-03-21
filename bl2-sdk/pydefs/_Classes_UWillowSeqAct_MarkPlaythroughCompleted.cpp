@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSeqAct_MarkPlaythroughCompleted()
+void Export_pystes_UWillowSeqAct_MarkPlaythroughCompleted(py::object m)
 {
-    py::class_< UWillowSeqAct_MarkPlaythroughCompleted,  USequenceAction   >("UWillowSeqAct_MarkPlaythroughCompleted")
+    py::class_< UWillowSeqAct_MarkPlaythroughCompleted,  USequenceAction   >(m, "UWillowSeqAct_MarkPlaythroughCompleted")
         .def("StaticClass", &UWillowSeqAct_MarkPlaythroughCompleted::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

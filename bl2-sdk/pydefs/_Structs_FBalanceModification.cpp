@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBalanceModification()
+void Export_pystes_FBalanceModification(py::object m)
 {
-    py::class_< FBalanceModification >("FBalanceModification")
+    py::class_< FBalanceModification >(m, "FBalanceModification")
         .def_readwrite("MinEffectiveLevel", &FBalanceModification::MinEffectiveLevel)
         .def_readwrite("EnemyHealthMultiplier", &FBalanceModification::EnemyHealthMultiplier)
         .def_readwrite("BadassEnemyHealthMultiplier", &FBalanceModification::BadassEnemyHealthMultiplier)

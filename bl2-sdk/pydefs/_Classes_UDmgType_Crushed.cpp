@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDmgType_Crushed()
+void Export_pystes_UDmgType_Crushed(py::object m)
 {
-    py::class_< UDmgType_Crushed,  UDamageType   >("UDmgType_Crushed")
+    py::class_< UDmgType_Crushed,  UDamageType   >(m, "UDmgType_Crushed")
         .def("StaticClass", &UDmgType_Crushed::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

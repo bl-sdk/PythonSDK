@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFontImportOptions()
+void Export_pystes_UFontImportOptions(py::object m)
 {
-    py::class_< UFontImportOptions,  UObject   >("UFontImportOptions")
+    py::class_< UFontImportOptions,  UObject   >(m, "UFontImportOptions")
         .def_readwrite("Data", &UFontImportOptions::Data)
         .def("StaticClass", &UFontImportOptions::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

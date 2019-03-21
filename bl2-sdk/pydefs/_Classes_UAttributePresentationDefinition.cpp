@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAttributePresentationDefinition()
+void Export_pystes_UAttributePresentationDefinition(py::object m)
 {
-    py::class_< UAttributePresentationDefinition,  UGBXDefinition   >("UAttributePresentationDefinition")
+    py::class_< UAttributePresentationDefinition,  UGBXDefinition   >(m, "UAttributePresentationDefinition")
         .def_readwrite("BasePriority", &UAttributePresentationDefinition::BasePriority)
         .def_readwrite("Attribute", &UAttributePresentationDefinition::Attribute)
         .def_readwrite("Description", &UAttributePresentationDefinition::Description)
@@ -44,6 +44,5 @@ void Export_pystes_UAttributePresentationDefinition()
         .def("ValueToString", &UAttributePresentationDefinition::ValueToString)
         .def("TranslateValue", &UAttributePresentationDefinition::TranslateValue)
         .def("TranslateStatData", &UAttributePresentationDefinition::TranslateStatData)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

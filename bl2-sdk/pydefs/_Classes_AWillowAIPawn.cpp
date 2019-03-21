@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowAIPawn()
+void Export_pystes_AWillowAIPawn(py::object m)
 {
-    py::class_< AWillowAIPawn,  AWillowPawn   >("AWillowAIPawn")
+    py::class_< AWillowAIPawn,  AWillowPawn   >(m, "AWillowAIPawn")
         .def_readwrite("VfTable_IIMissionDirector", &AWillowAIPawn::VfTable_IIMissionDirector)
         .def_readwrite("VfTable_IIFocusable", &AWillowAIPawn::VfTable_IIFocusable)
         .def_readwrite("VfTable_IITimerBehavior", &AWillowAIPawn::VfTable_IITimerBehavior)
@@ -330,6 +330,5 @@ void Export_pystes_AWillowAIPawn()
         .def("GetAwesomeLevel", &AWillowAIPawn::GetAwesomeLevel)
         .def("GetGameStageForSpawnedInventory", &AWillowAIPawn::GetGameStageForSpawnedInventory)
         .def("GetAWillowAIPawn", &AWillowAIPawn::GetAWillowAIPawn, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

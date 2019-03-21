@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCameraModifierLookAt()
+void Export_pystes_UCameraModifierLookAt(py::object m)
 {
-    py::class_< UCameraModifierLookAt,  UCameraModifier   >("UCameraModifierLookAt")
+    py::class_< UCameraModifierLookAt,  UCameraModifier   >(m, "UCameraModifierLookAt")
         .def_readwrite("LookAtMode", &UCameraModifierLookAt::LookAtMode)
         .def_readwrite("Duration", &UCameraModifierLookAt::Duration)
         .def_readwrite("TimeElapsed", &UCameraModifierLookAt::TimeElapsed)
@@ -51,6 +51,5 @@ void Export_pystes_UCameraModifierLookAt()
         .def("SetDesiredCamera", &UGearboxCameraModifier::SetDesiredCamera)
         .def("SetGBXCameraOwner", &UGearboxCameraModifier::SetGBXCameraOwner)
         .def("AddCameraModifier", &UGearboxCameraModifier::AddCameraModifier)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMissionRewardGFxObject()
+void Export_pystes_UMissionRewardGFxObject(py::object m)
 {
-    py::class_< UMissionRewardGFxObject,  UGFxObject   >("UMissionRewardGFxObject")
+    py::class_< UMissionRewardGFxObject,  UGFxObject   >(m, "UMissionRewardGFxObject")
         .def_readwrite("RewardData", &UMissionRewardGFxObject::RewardData)
         .def_readwrite("OwningMovie", &UMissionRewardGFxObject::OwningMovie)
         .def_readwrite("CardContents", &UMissionRewardGFxObject::CardContents)
@@ -43,6 +43,5 @@ void Export_pystes_UMissionRewardGFxObject()
         .def("SetNoReward", &UMissionRewardGFxObject::SetNoReward)
         .def("SetPendingMissionRewardData", &UMissionRewardGFxObject::SetPendingMissionRewardData)
         .def("Init", &UMissionRewardGFxObject::Init)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

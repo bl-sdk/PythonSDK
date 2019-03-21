@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSeqAct_KillPawnBasedOnAllegiance()
+void Export_pystes_UWillowSeqAct_KillPawnBasedOnAllegiance(py::object m)
 {
-    py::class_< UWillowSeqAct_KillPawnBasedOnAllegiance,  USequenceAction   >("UWillowSeqAct_KillPawnBasedOnAllegiance")
+    py::class_< UWillowSeqAct_KillPawnBasedOnAllegiance,  USequenceAction   >(m, "UWillowSeqAct_KillPawnBasedOnAllegiance")
         .def_readwrite("AllegianceToBaseKillsOn", &UWillowSeqAct_KillPawnBasedOnAllegiance::AllegianceToBaseKillsOn)
         .def_readwrite("AllegianceKillRelationship", &UWillowSeqAct_KillPawnBasedOnAllegiance::AllegianceKillRelationship)
         .def_readwrite("DamageSource", &UWillowSeqAct_KillPawnBasedOnAllegiance::DamageSource)
@@ -15,6 +15,5 @@ void Export_pystes_UWillowSeqAct_KillPawnBasedOnAllegiance()
         .def("GetAllegianceFromVariableLink", &UWillowSeqAct_KillPawnBasedOnAllegiance::GetAllegianceFromVariableLink, py::return_value_policy::reference)
         .def("KillBasedOnThisAllegiance", &UWillowSeqAct_KillPawnBasedOnAllegiance::KillBasedOnThisAllegiance)
         .def("eventActivated", &UWillowSeqAct_KillPawnBasedOnAllegiance::eventActivated)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

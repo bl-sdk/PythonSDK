@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIniLocPatcher()
+void Export_pystes_UIniLocPatcher(py::object m)
 {
-    py::class_< UIniLocPatcher,  UObject   >("UIniLocPatcher")
+    py::class_< UIniLocPatcher,  UObject   >(m, "UIniLocPatcher")
         .def_readwrite("Files", &UIniLocPatcher::Files)
         .def_readwrite("TitleFileInterface", &UIniLocPatcher::TitleFileInterface)
         .def_readonly("UnknownData00", &UIniLocPatcher::UnknownData00)
@@ -20,6 +20,5 @@ void Export_pystes_UIniLocPatcher()
         .def("DownloadFiles", &UIniLocPatcher::DownloadFiles)
         .def("Init", &UIniLocPatcher::Init)
         .def("OnReadTitleFileComplete", &UIniLocPatcher::OnReadTitleFileComplete)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIConfigFileProvider()
+void Export_pystes_UUIConfigFileProvider(py::object m)
 {
-    py::class_< UUIConfigFileProvider,  UUIConfigProvider   >("UUIConfigFileProvider")
+    py::class_< UUIConfigFileProvider,  UUIConfigProvider   >(m, "UUIConfigFileProvider")
         .def_readwrite("Sections", &UUIConfigFileProvider::Sections)
         .def_readwrite("ConfigFileName", &UUIConfigFileProvider::ConfigFileName)
         .def("StaticClass", &UUIConfigFileProvider::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

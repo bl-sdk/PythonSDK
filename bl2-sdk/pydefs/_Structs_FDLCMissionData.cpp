@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDLCMissionData()
+void Export_pystes_FDLCMissionData(py::object m)
 {
-    py::class_< FDLCMissionData >("FDLCMissionData")
+    py::class_< FDLCMissionData >(m, "FDLCMissionData")
         .def_readwrite("MinMissionNumber", &FDLCMissionData::MinMissionNumber)
         .def_readwrite("MaxMissionNumber", &FDLCMissionData::MaxMissionNumber)
         .def_readwrite("MissionNameLocKey", &FDLCMissionData::MissionNameLocKey)

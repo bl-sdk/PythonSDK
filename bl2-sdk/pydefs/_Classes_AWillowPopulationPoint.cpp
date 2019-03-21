@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowPopulationPoint()
+void Export_pystes_AWillowPopulationPoint(py::object m)
 {
-    py::class_< AWillowPopulationPoint,  APopulationPoint   >("AWillowPopulationPoint")
+    py::class_< AWillowPopulationPoint,  APopulationPoint   >(m, "AWillowPopulationPoint")
         .def_readwrite("VfTable_ISpecialMoveInterface", &AWillowPopulationPoint::VfTable_ISpecialMoveInterface)
         .def_readwrite("VfTable_IIInstanceData", &AWillowPopulationPoint::VfTable_IIInstanceData)
         .def_readwrite("VfTable_IIBodyCompositionInstance", &AWillowPopulationPoint::VfTable_IIBodyCompositionInstance)
@@ -57,6 +57,5 @@ void Export_pystes_AWillowPopulationPoint()
         .def("GetSpawnLocation", &AWillowPopulationPoint::GetSpawnLocation)
         .def("PostBeginPlay", &AWillowPopulationPoint::PostBeginPlay)
         .def("InitializeRBPhys", &AWillowPopulationPoint::InitializeRBPhys)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

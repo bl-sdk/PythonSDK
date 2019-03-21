@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPrimitiveMaterialRef()
+void Export_pystes_FPrimitiveMaterialRef(py::object m)
 {
-    py::class_< FPrimitiveMaterialRef >("FPrimitiveMaterialRef")
+    py::class_< FPrimitiveMaterialRef >(m, "FPrimitiveMaterialRef")
         .def_readwrite("Primitive", &FPrimitiveMaterialRef::Primitive)
         .def_readwrite("MaterialIndex", &FPrimitiveMaterialRef::MaterialIndex)
   ;

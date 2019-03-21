@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSnapshotRecord()
+void Export_pystes_UWillowSnapshotRecord(py::object m)
 {
-    py::class_< UWillowSnapshotRecord,  USnapshotRecord   >("UWillowSnapshotRecord")
+    py::class_< UWillowSnapshotRecord,  USnapshotRecord   >(m, "UWillowSnapshotRecord")
         .def("StaticClass", &UWillowSnapshotRecord::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

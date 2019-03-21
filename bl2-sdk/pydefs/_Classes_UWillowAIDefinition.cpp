@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAIDefinition()
+void Export_pystes_UWillowAIDefinition(py::object m)
 {
-    py::class_< UWillowAIDefinition,  UAIDefinition   >("UWillowAIDefinition")
+    py::class_< UWillowAIDefinition,  UAIDefinition   >(m, "UWillowAIDefinition")
         .def_readwrite("PatrolAction", &UWillowAIDefinition::PatrolAction)
         .def_readwrite("ScriptedAction", &UWillowAIDefinition::ScriptedAction)
         .def_readwrite("WantsFormation", &UWillowAIDefinition::WantsFormation)
@@ -15,6 +15,5 @@ void Export_pystes_UWillowAIDefinition()
         .def("StaticClass", &UWillowAIDefinition::StaticClass, py::return_value_policy::reference)
         .def("OnRevivedPlayerMaster", &UWillowAIDefinition::OnRevivedPlayerMaster)
         .def("OnDismount", &UWillowAIDefinition::OnDismount)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

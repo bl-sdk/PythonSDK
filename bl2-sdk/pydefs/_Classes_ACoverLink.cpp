@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ACoverLink()
+void Export_pystes_ACoverLink(py::object m)
 {
-    py::class_< ACoverLink,  ANavigationPoint   >("ACoverLink")
+    py::class_< ACoverLink,  ANavigationPoint   >(m, "ACoverLink")
         .def_readwrite("VfTable_IIGBXNavMeshSpecialMove", &ACoverLink::VfTable_IIGBXNavMeshSpecialMove)
         .def_readwrite("LeanTraceDist", &ACoverLink::LeanTraceDist)
         .def_readwrite("Slots", &ACoverLink::Slots)
@@ -69,6 +69,5 @@ void Export_pystes_ACoverLink()
         .def("UnPackFireLinkInteractionInfo", &ACoverLink::UnPackFireLinkInteractionInfo)
         .def("PackFireLinkInteractionInfo", &ACoverLink::PackFireLinkInteractionInfo)
         .def("GetFireLinkTargetCoverInfo", &ACoverLink::GetFireLinkTargetCoverInfo)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

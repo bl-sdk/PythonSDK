@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMaterialReferenceList()
+void Export_pystes_FMaterialReferenceList(py::object m)
 {
-    py::class_< FMaterialReferenceList >("FMaterialReferenceList")
+    py::class_< FMaterialReferenceList >(m, "FMaterialReferenceList")
         .def_readwrite("TargetMaterial", &FMaterialReferenceList::TargetMaterial)
         .def_readwrite("AffectedMaterialRefs", &FMaterialReferenceList::AffectedMaterialRefs)
         .def_readwrite("AffectedPPChainMaterialRefs", &FMaterialReferenceList::AffectedPPChainMaterialRefs)

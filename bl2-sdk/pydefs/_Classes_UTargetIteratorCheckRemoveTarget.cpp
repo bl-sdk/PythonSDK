@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTargetIteratorCheckRemoveTarget()
+void Export_pystes_UTargetIteratorCheckRemoveTarget(py::object m)
 {
-    py::class_< UTargetIteratorCheckRemoveTarget,  UTargetIterator   >("UTargetIteratorCheckRemoveTarget")
+    py::class_< UTargetIteratorCheckRemoveTarget,  UTargetIterator   >(m, "UTargetIteratorCheckRemoveTarget")
         .def("StaticClass", &UTargetIteratorCheckRemoveTarget::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

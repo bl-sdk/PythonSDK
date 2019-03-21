@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCardInfo()
+void Export_pystes_FCardInfo(py::object m)
 {
-    py::class_< FCardInfo >("FCardInfo")
+    py::class_< FCardInfo >(m, "FCardInfo")
         .def_readwrite("CardName", &FCardInfo::CardName)
         .def_readwrite("CellWidth", &FCardInfo::CellWidth)
         .def_readwrite("CellHeight", &FCardInfo::CellHeight)

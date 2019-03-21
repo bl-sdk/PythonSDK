@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIMissionDirector()
+void Export_pystes_UIMissionDirector(py::object m)
 {
-    py::class_< UIMissionDirector,  UInterface   >("UIMissionDirector")
+    py::class_< UIMissionDirector,  UInterface   >(m, "UIMissionDirector")
         .def("StaticClass", &UIMissionDirector::StaticClass, py::return_value_policy::reference)
         .def("OnPlayerClosedMissionUI", &UIMissionDirector::OnPlayerClosedMissionUI)
         .def("OnPlayerOpenedMissionUI", &UIMissionDirector::OnPlayerOpenedMissionUI)
@@ -21,6 +21,5 @@ void Export_pystes_UIMissionDirector()
         .def("GetEligibleMissions", &UIMissionDirector::GetEligibleMissions)
         .def("GetRedeemableMissions", &UIMissionDirector::GetRedeemableMissions)
         .def("eventAddMissionDirective", &UIMissionDirector::eventAddMissionDirective)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowObstacleUtility()
+void Export_pystes_UWillowObstacleUtility(py::object m)
 {
-    py::class_< UWillowObstacleUtility,  UObject   >("UWillowObstacleUtility")
+    py::class_< UWillowObstacleUtility,  UObject   >(m, "UWillowObstacleUtility")
         .def_readwrite("GridSize", &UWillowObstacleUtility::GridSize)
         .def_readwrite("MaxTime", &UWillowObstacleUtility::MaxTime)
         .def_readwrite("MaxDist", &UWillowObstacleUtility::MaxDist)
@@ -17,6 +17,5 @@ void Export_pystes_UWillowObstacleUtility()
         .def("IsDebugObstacle", &UWillowObstacleUtility::IsDebugObstacle)
         .def("UnRegisterObstacle", &UWillowObstacleUtility::UnRegisterObstacle)
         .def("RegisterObstacle", &UWillowObstacleUtility::RegisterObstacle)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

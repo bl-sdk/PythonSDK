@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGBXNavMeshPolyData()
+void Export_pystes_FGBXNavMeshPolyData(py::object m)
 {
-    py::class_< FGBXNavMeshPolyData >("FGBXNavMeshPolyData")
+    py::class_< FGBXNavMeshPolyData >(m, "FGBXNavMeshPolyData")
         .def_readwrite("CrossLevelConnections", &FGBXNavMeshPolyData::CrossLevelConnections)
         .def_readwrite("SpecialMoves", &FGBXNavMeshPolyData::SpecialMoves)
         .def_readonly("Obstacles", &FGBXNavMeshPolyData::Obstacles)

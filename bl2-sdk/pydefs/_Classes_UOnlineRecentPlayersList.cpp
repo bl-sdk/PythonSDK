@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineRecentPlayersList()
+void Export_pystes_UOnlineRecentPlayersList(py::object m)
 {
-    py::class_< UOnlineRecentPlayersList,  UObject   >("UOnlineRecentPlayersList")
+    py::class_< UOnlineRecentPlayersList,  UObject   >(m, "UOnlineRecentPlayersList")
         .def_readwrite("RecentPlayers", &UOnlineRecentPlayersList::RecentPlayers)
         .def_readwrite("RecentParties", &UOnlineRecentPlayersList::RecentParties)
         .def_readwrite("LastParty", &UOnlineRecentPlayersList::LastParty)
@@ -30,6 +30,5 @@ void Export_pystes_UOnlineRecentPlayersList()
         .def("AddPartyToRecentParties", &UOnlineRecentPlayersList::AddPartyToRecentParties)
         .def("ClearRecentPlayers", &UOnlineRecentPlayersList::ClearRecentPlayers)
         .def("AddPlayerToRecentPlayers", &UOnlineRecentPlayersList::AddPlayerToRecentPlayers)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,8 +3,8 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCustomEventReactionDataSpecialized()
+void Export_pystes_FCustomEventReactionDataSpecialized(py::object m)
 {
-    py::class_< FCustomEventReactionDataSpecialized,  FSpecializedBehaviorEvent   >("FCustomEventReactionDataSpecialized")
+    py::class_< FCustomEventReactionDataSpecialized,  FSpecializedBehaviorEvent   >(m, "FCustomEventReactionDataSpecialized")
   ;
 }

@@ -3,13 +3,12 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWeaponPartListDefinition()
+void Export_pystes_UWeaponPartListDefinition(py::object m)
 {
-    py::class_< UWeaponPartListDefinition,  UGBXDefinition   >("UWeaponPartListDefinition")
+    py::class_< UWeaponPartListDefinition,  UGBXDefinition   >(m, "UWeaponPartListDefinition")
         .def_readwrite("VfTable_IIConstructObject", &UWeaponPartListDefinition::VfTable_IIConstructObject)
         .def_readwrite("WeightedParts", &UWeaponPartListDefinition::WeightedParts)
         .def_readwrite("ConsolidatedAttributeInitData", &UWeaponPartListDefinition::ConsolidatedAttributeInitData)
         .def("StaticClass", &UWeaponPartListDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

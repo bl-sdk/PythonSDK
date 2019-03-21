@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNotify_PlayFaceFXAnim()
+void Export_pystes_UAnimNotify_PlayFaceFXAnim(py::object m)
 {
-    py::class_< UAnimNotify_PlayFaceFXAnim,  UAnimNotify_Scripted   >("UAnimNotify_PlayFaceFXAnim")
+    py::class_< UAnimNotify_PlayFaceFXAnim,  UAnimNotify_Scripted   >(m, "UAnimNotify_PlayFaceFXAnim")
         .def_readwrite("FaceFXAnimSetRef", &UAnimNotify_PlayFaceFXAnim::FaceFXAnimSetRef)
         .def_readwrite("GroupName", &UAnimNotify_PlayFaceFXAnim::GroupName)
         .def_readwrite("AnimName", &UAnimNotify_PlayFaceFXAnim::AnimName)
@@ -14,6 +14,5 @@ void Export_pystes_UAnimNotify_PlayFaceFXAnim()
         .def_readwrite("PlayFrequency", &UAnimNotify_PlayFaceFXAnim::PlayFrequency)
         .def("StaticClass", &UAnimNotify_PlayFaceFXAnim::StaticClass, py::return_value_policy::reference)
         .def("eventNotify", &UAnimNotify_PlayFaceFXAnim::eventNotify)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ATerrain()
+void Export_pystes_ATerrain(py::object m)
 {
-    py::class_< ATerrain,  AInfo   >("ATerrain")
+    py::class_< ATerrain,  AInfo   >(m, "ATerrain")
         .def_readwrite("Heights", &ATerrain::Heights)
         .def_readwrite("InfoData", &ATerrain::InfoData)
         .def_readwrite("Layers", &ATerrain::Layers)
@@ -39,6 +39,5 @@ void Export_pystes_ATerrain()
         .def_readwrite("SelectedVertices", &ATerrain::SelectedVertices)
         .def("StaticClass", &ATerrain::StaticClass, py::return_value_policy::reference)
         .def("eventPostBeginPlay", &ATerrain::eventPostBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

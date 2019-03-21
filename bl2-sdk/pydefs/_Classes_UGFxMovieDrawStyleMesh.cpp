@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGFxMovieDrawStyleMesh()
+void Export_pystes_UGFxMovieDrawStyleMesh(py::object m)
 {
-    py::class_< UGFxMovieDrawStyleMesh,  UGFxMovieDrawStyleComponent   >("UGFxMovieDrawStyleMesh")
+    py::class_< UGFxMovieDrawStyleMesh,  UGFxMovieDrawStyleComponent   >(m, "UGFxMovieDrawStyleMesh")
         .def_readwrite("MeshComponentArchetype", &UGFxMovieDrawStyleMesh::MeshComponentArchetype)
         .def_readwrite("UseStaticMesh", &UGFxMovieDrawStyleMesh::UseStaticMesh)
         .def_readwrite("UseSkeletalMesh", &UGFxMovieDrawStyleMesh::UseSkeletalMesh)
@@ -19,6 +19,5 @@ void Export_pystes_UGFxMovieDrawStyleMesh()
         .def("StaticClass", &UGFxMovieDrawStyleMesh::StaticClass, py::return_value_policy::reference)
         .def("GetStyleDebugString", &UGFxMovieDrawStyleMesh::GetStyleDebugString)
         .def("eventRequiresClientInstance", &UGFxMovieDrawStyleMesh::eventRequiresClientInstance)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

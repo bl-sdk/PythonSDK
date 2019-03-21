@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPhysicalMaterial()
+void Export_pystes_UPhysicalMaterial(py::object m)
 {
-    py::class_< UPhysicalMaterial,  UObject   >("UPhysicalMaterial")
+    py::class_< UPhysicalMaterial,  UObject   >(m, "UPhysicalMaterial")
         .def_readwrite("MaterialIndex", &UPhysicalMaterial::MaterialIndex)
         .def_readwrite("Friction", &UPhysicalMaterial::Friction)
         .def_readwrite("Restitution", &UPhysicalMaterial::Restitution)
@@ -34,6 +34,5 @@ void Export_pystes_UPhysicalMaterial()
         .def("GetPhysicalMaterialProperty", &UPhysicalMaterial::GetPhysicalMaterialProperty, py::return_value_policy::reference)
         .def("FindFractureSounds", &UPhysicalMaterial::FindFractureSounds)
         .def("FindPhysEffectInfo", &UPhysicalMaterial::FindPhysEffectInfo)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

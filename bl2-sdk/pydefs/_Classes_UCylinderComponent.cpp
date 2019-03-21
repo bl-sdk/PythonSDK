@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCylinderComponent()
+void Export_pystes_UCylinderComponent(py::object m)
 {
-    py::class_< UCylinderComponent,  UActorComponent   >("UCylinderComponent")
+    py::class_< UCylinderComponent,  UActorComponent   >(m, "UCylinderComponent")
         .def_readwrite("CollisionHeight", &UCylinderComponent::CollisionHeight)
         .def_readwrite("CollisionRadius", &UCylinderComponent::CollisionRadius)
         .def_readwrite("Tag", &UPrimitiveComponent::Tag)
@@ -107,6 +107,5 @@ void Export_pystes_UCylinderComponent()
         .def("AddForce", &UPrimitiveComponent::AddForce)
         .def("AddRadialImpulse", &UPrimitiveComponent::AddRadialImpulse)
         .def("AddImpulse", &UPrimitiveComponent::AddImpulse)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

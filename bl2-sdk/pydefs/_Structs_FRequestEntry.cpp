@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRequestEntry()
+void Export_pystes_FRequestEntry(py::object m)
 {
-    py::class_< FRequestEntry >("FRequestEntry")
+    py::class_< FRequestEntry >(m, "FRequestEntry")
         .def_readwrite("RemoteId", &FRequestEntry::RemoteId)
         .def_readwrite("NumProbesSent", &FRequestEntry::NumProbesSent)
         .def_readwrite("ChallengeTimestamp", &FRequestEntry::ChallengeTimestamp)

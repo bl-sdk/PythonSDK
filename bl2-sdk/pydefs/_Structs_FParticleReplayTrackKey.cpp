@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FParticleReplayTrackKey()
+void Export_pystes_FParticleReplayTrackKey(py::object m)
 {
-    py::class_< FParticleReplayTrackKey >("FParticleReplayTrackKey")
+    py::class_< FParticleReplayTrackKey >(m, "FParticleReplayTrackKey")
         .def_readwrite("Time", &FParticleReplayTrackKey::Time)
         .def_readwrite("Duration", &FParticleReplayTrackKey::Duration)
         .def_readwrite("ClipIDNumber", &FParticleReplayTrackKey::ClipIDNumber)

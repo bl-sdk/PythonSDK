@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowMissionItem()
+void Export_pystes_AWillowMissionItem(py::object m)
 {
-    py::class_< AWillowMissionItem,  AWillowItem   >("AWillowMissionItem")
+    py::class_< AWillowMissionItem,  AWillowItem   >(m, "AWillowMissionItem")
         .def_readwrite("PickupFailsafe", &AWillowMissionItem::PickupFailsafe)
         .def_readwrite("MissionItemString", &AWillowMissionItem::MissionItemString)
         .def_readwrite("VfTable_IIMissionObjective", &AWillowUsableItem::VfTable_IIMissionObjective)
@@ -33,6 +33,5 @@ void Export_pystes_AWillowMissionItem()
         .def("eventGetObjectiveBit", &AWillowUsableItem::eventGetObjectiveBit)
         .def("ValidateDefinition", &AWillowUsableItem::ValidateDefinition)
         .def("OnUsed", &AWillowUsableItem::OnUsed)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

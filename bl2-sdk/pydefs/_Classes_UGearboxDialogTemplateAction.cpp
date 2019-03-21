@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxDialogTemplateAction()
+void Export_pystes_UGearboxDialogTemplateAction(py::object m)
 {
-    py::class_< UGearboxDialogTemplateAction,  UGearboxDialogAction   >("UGearboxDialogTemplateAction")
+    py::class_< UGearboxDialogTemplateAction,  UGearboxDialogAction   >(m, "UGearboxDialogTemplateAction")
         .def("StaticClass", &UGearboxDialogTemplateAction::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

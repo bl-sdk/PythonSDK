@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPawnAllegiance()
+void Export_pystes_UPawnAllegiance(py::object m)
 {
-    py::class_< UPawnAllegiance,  UObject   >("UPawnAllegiance")
+    py::class_< UPawnAllegiance,  UObject   >(m, "UPawnAllegiance")
         .def_readwrite("DefaultOpinion", &UPawnAllegiance::DefaultOpinion)
         .def_readwrite("SelfOpinion", &UPawnAllegiance::SelfOpinion)
         .def_readwrite("ForcedOtherOpinion", &UPawnAllegiance::ForcedOtherOpinion)
@@ -30,6 +30,5 @@ void Export_pystes_UPawnAllegiance()
         .def("StaticGetFullNameForDefinition", &UGBXDefinition::StaticGetFullNameForDefinition)
         .def("GetFullDefinitionName", &UGBXDefinition::GetFullDefinitionName)
         .def("GetDefinition", &UGBXDefinition::GetDefinition, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

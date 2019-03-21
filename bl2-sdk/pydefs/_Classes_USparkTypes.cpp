@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USparkTypes()
+void Export_pystes_USparkTypes(py::object m)
 {
-    py::class_< USparkTypes,  UObject   >("USparkTypes")
+    py::class_< USparkTypes,  UObject   >(m, "USparkTypes")
         .def("StaticClass", &USparkTypes::StaticClass, py::return_value_policy::reference)
         .def("UTF8toString", &USparkTypes::UTF8toString)
         .def("OnEntitlementsUpdated", &USparkTypes::OnEntitlementsUpdated)
@@ -13,6 +13,5 @@ void Export_pystes_USparkTypes()
         .def("OnSparkInitialized", &USparkTypes::OnSparkInitialized)
         .def("OnSparkConfigReceived", &USparkTypes::OnSparkConfigReceived)
         .def("OnSparkRequestComplete", &USparkTypes::OnSparkRequestComplete)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FFontCharacter()
+void Export_pystes_FFontCharacter(py::object m)
 {
-    py::class_< FFontCharacter >("FFontCharacter")
+    py::class_< FFontCharacter >(m, "FFontCharacter")
         .def_readwrite("StartU", &FFontCharacter::StartU)
         .def_readwrite("StartV", &FFontCharacter::StartV)
         .def_readwrite("USize", &FFontCharacter::USize)

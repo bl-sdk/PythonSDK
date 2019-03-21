@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowPlayerInput()
+void Export_pystes_UWillowPlayerInput(py::object m)
 {
-    py::class_< UWillowPlayerInput,  UPlayerInput   >("UWillowPlayerInput")
+    py::class_< UWillowPlayerInput,  UPlayerInput   >(m, "UWillowPlayerInput")
         .def_readwrite("DebugBindOverrideKeyName", &UWillowPlayerInput::DebugBindOverrideKeyName)
         .def_readwrite("ButtonHoldEventTime", &UWillowPlayerInput::ButtonHoldEventTime)
         .def_readwrite("LastDuckTime", &UWillowPlayerInput::LastDuckTime)
@@ -65,6 +65,5 @@ void Export_pystes_UWillowPlayerInput()
         .def("ResetButtonState", &UWillowPlayerInput::ResetButtonState)
         .def("GetKeyForAction", &UWillowPlayerInput::GetKeyForAction)
         .def("SetupInputDevices", &UWillowPlayerInput::SetupInputDevices)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

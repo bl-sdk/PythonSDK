@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineGameInterface()
+void Export_pystes_UOnlineGameInterface(py::object m)
 {
-    py::class_< UOnlineGameInterface,  UInterface   >("UOnlineGameInterface")
+    py::class_< UOnlineGameInterface,  UInterface   >(m, "UOnlineGameInterface")
         .def("StaticClass", &UOnlineGameInterface::StaticClass, py::return_value_policy::reference)
         .def("HasPendingBootInvite", &UOnlineGameInterface::HasPendingBootInvite)
         .def("CancelNATNegotiation", &UOnlineGameInterface::CancelNATNegotiation)
@@ -86,6 +86,5 @@ void Export_pystes_UOnlineGameInterface()
         .def("AddCreateOnlineGameCompleteDelegate", &UOnlineGameInterface::AddCreateOnlineGameCompleteDelegate)
         .def("OnCreateOnlineGameComplete", &UOnlineGameInterface::OnCreateOnlineGameComplete)
         .def("CreateOnlineGame", &UOnlineGameInterface::CreateOnlineGame)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSkillTreeUICell()
+void Export_pystes_FSkillTreeUICell(py::object m)
 {
-    py::class_< FSkillTreeUICell >("FSkillTreeUICell")
+    py::class_< FSkillTreeUICell >(m, "FSkillTreeUICell")
         .def_readwrite("BranchNum", &FSkillTreeUICell::BranchNum)
         .def_readwrite("TierNum", &FSkillTreeUICell::TierNum)
         .def_readwrite("CellNum", &FSkillTreeUICell::CellNum)

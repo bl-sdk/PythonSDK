@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowBaseStats()
+void Export_pystes_AWillowBaseStats(py::object m)
 {
-    py::class_< AWillowBaseStats,  AInfo   >("AWillowBaseStats")
+    py::class_< AWillowBaseStats,  AInfo   >(m, "AWillowBaseStats")
         .def_readwrite("VfTable_ISparkUpdateCallback", &AWillowBaseStats::VfTable_ISparkUpdateCallback)
         .def_readwrite("SaveVersion", &AWillowBaseStats::SaveVersion)
         .def_readwrite("ReadVersion", &AWillowBaseStats::ReadVersion)
@@ -31,6 +31,5 @@ void Export_pystes_AWillowBaseStats()
         .def("IncrementIntStat", &AWillowBaseStats::IncrementIntStat)
         .def("PreviousDebugPage", &AWillowBaseStats::PreviousDebugPage)
         .def("NextDebugPage", &AWillowBaseStats::NextDebugPage)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

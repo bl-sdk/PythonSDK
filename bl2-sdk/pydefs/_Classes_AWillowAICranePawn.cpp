@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowAICranePawn()
+void Export_pystes_AWillowAICranePawn(py::object m)
 {
-    py::class_< AWillowAICranePawn,  AWillowAIPawn   >("AWillowAICranePawn")
+    py::class_< AWillowAICranePawn,  AWillowAIPawn   >(m, "AWillowAICranePawn")
         .def_readwrite("CraneSplineName", &AWillowAICranePawn::CraneSplineName)
         .def_readwrite("CraneSingleBoneName", &AWillowAICranePawn::CraneSingleBoneName)
         .def_readwrite("CraneSpline", &AWillowAICranePawn::CraneSpline)
@@ -27,6 +27,5 @@ void Export_pystes_AWillowAICranePawn()
         .def("CanBeBaseForPawn", &AWillowAICranePawn::CanBeBaseForPawn)
         .def("ApplyBodyClassStartingValues", &AWillowAICranePawn::ApplyBodyClassStartingValues)
         .def("Died", &AWillowAICranePawn::Died)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

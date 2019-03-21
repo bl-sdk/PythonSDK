@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFoliageComponent()
+void Export_pystes_UFoliageComponent(py::object m)
 {
-    py::class_< UFoliageComponent,  UPrimitiveComponent   >("UFoliageComponent")
+    py::class_< UFoliageComponent,  UPrimitiveComponent   >(m, "UFoliageComponent")
         .def_readwrite("LitInstances", &UFoliageComponent::LitInstances)
         .def_readwrite("StaticallyRelevantLights", &UFoliageComponent::StaticallyRelevantLights)
         .def_readwrite("StaticallyIrrelevantLights", &UFoliageComponent::StaticallyIrrelevantLights)
@@ -20,6 +20,5 @@ void Export_pystes_UFoliageComponent()
         .def_readwrite("MaxScale", &UFoliageComponent::MaxScale)
         .def_readwrite("SwayScale", &UFoliageComponent::SwayScale)
         .def("StaticClass", &UFoliageComponent::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULine()
+void Export_pystes_ULine(py::object m)
 {
-    py::class_< ULine,  UObject   >("ULine")
+    py::class_< ULine,  UObject   >(m, "ULine")
         .def_readwrite("Parent", &ULine::Parent)
         .def_readwrite("LineSegments", &ULine::LineSegments)
         .def_readwrite("Verts", &ULine::Verts)
@@ -17,6 +17,5 @@ void Export_pystes_ULine()
         .def_readwrite("CombatZoneName", &ULine::CombatZoneName)
         .def_readwrite("RegionData", &ULine::RegionData)
         .def("StaticClass", &ULine::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

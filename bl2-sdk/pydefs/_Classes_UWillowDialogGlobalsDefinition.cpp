@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowDialogGlobalsDefinition()
+void Export_pystes_UWillowDialogGlobalsDefinition(py::object m)
 {
-    py::class_< UWillowDialogGlobalsDefinition,  UGearboxDialogGlobalsDefinition   >("UWillowDialogGlobalsDefinition")
+    py::class_< UWillowDialogGlobalsDefinition,  UGearboxDialogGlobalsDefinition   >(m, "UWillowDialogGlobalsDefinition")
         .def_readwrite("DefaultTemplateGroup", &UWillowDialogGlobalsDefinition::DefaultTemplateGroup)
         .def_readwrite("DET_Jump", &UWillowDialogGlobalsDefinition::DET_Jump)
         .def_readwrite("DET_JumpLand", &UWillowDialogGlobalsDefinition::DET_JumpLand)
@@ -82,6 +82,5 @@ void Export_pystes_UWillowDialogGlobalsDefinition()
         .def("TriggerTemplateEvent", &UWillowDialogGlobalsDefinition::TriggerTemplateEvent)
         .def("StaticTriggerTemplateEvent", &UWillowDialogGlobalsDefinition::StaticTriggerTemplateEvent)
         .def("Get", &UWillowDialogGlobalsDefinition::Get, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowProjectile()
+void Export_pystes_AWillowProjectile(py::object m)
 {
-    py::class_< AWillowProjectile,  AProjectile   >("AWillowProjectile")
+    py::class_< AWillowProjectile,  AProjectile   >(m, "AWillowProjectile")
         .def_readwrite("VfTable_IICounterBehavior", &AWillowProjectile::VfTable_IICounterBehavior)
         .def_readwrite("VfTable_IITimerBehavior", &AWillowProjectile::VfTable_IITimerBehavior)
         .def_readwrite("VfTable_IIKilledBehavior", &AWillowProjectile::VfTable_IIKilledBehavior)
@@ -309,6 +309,5 @@ void Export_pystes_AWillowProjectile()
         .def("IsNeutral", &AWillowProjectile::IsNeutral)
         .def("IsFriendly", &AWillowProjectile::IsFriendly)
         .def("IsEnemy", &AWillowProjectile::IsEnemy)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

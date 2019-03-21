@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAnimBlendByPosture()
+void Export_pystes_UWillowAnimBlendByPosture(py::object m)
 {
-    py::class_< UWillowAnimBlendByPosture,  UAnimNodeBlendList   >("UWillowAnimBlendByPosture")
+    py::class_< UWillowAnimBlendByPosture,  UAnimNodeBlendList   >(m, "UWillowAnimBlendByPosture")
         .def_readwrite("BlendTime", &UWillowAnimBlendByPosture::BlendTime)
         .def("StaticClass", &UWillowAnimBlendByPosture::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_SetSequenceVariable()
+void Export_pystes_USeqAct_SetSequenceVariable(py::object m)
 {
-    py::class_< USeqAct_SetSequenceVariable,  USequenceAction   >("USeqAct_SetSequenceVariable")
+    py::class_< USeqAct_SetSequenceVariable,  USequenceAction   >(m, "USeqAct_SetSequenceVariable")
         .def("StaticClass", &USeqAct_SetSequenceVariable::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

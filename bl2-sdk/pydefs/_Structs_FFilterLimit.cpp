@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FFilterLimit()
+void Export_pystes_FFilterLimit(py::object m)
 {
-    py::class_< FFilterLimit >("FFilterLimit")
+    py::class_< FFilterLimit >(m, "FFilterLimit")
         .def_readwrite("Base", &FFilterLimit::Base)
         .def_readwrite("NoiseScale", &FFilterLimit::NoiseScale)
         .def_readwrite("NoiseAmount", &FFilterLimit::NoiseAmount)

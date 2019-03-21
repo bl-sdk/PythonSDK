@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpData()
+void Export_pystes_UInterpData(py::object m)
 {
-    py::class_< UInterpData,  USequenceVariable   >("UInterpData")
+    py::class_< UInterpData,  USequenceVariable   >(m, "UInterpData")
         .def_readwrite("InterpLength", &UInterpData::InterpLength)
         .def_readwrite("PathBuildTime", &UInterpData::PathBuildTime)
         .def_readwrite("InterpGroups", &UInterpData::InterpGroups)
@@ -15,6 +15,5 @@ void Export_pystes_UInterpData()
         .def_readwrite("BakeAndPruneStatus", &UInterpData::BakeAndPruneStatus)
         .def_readwrite("CachedDirectorGroup", &UInterpData::CachedDirectorGroup)
         .def("StaticClass", &UInterpData::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

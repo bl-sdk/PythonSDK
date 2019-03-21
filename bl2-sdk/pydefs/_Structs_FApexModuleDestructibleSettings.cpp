@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FApexModuleDestructibleSettings()
+void Export_pystes_FApexModuleDestructibleSettings(py::object m)
 {
-    py::class_< FApexModuleDestructibleSettings >("FApexModuleDestructibleSettings")
+    py::class_< FApexModuleDestructibleSettings >(m, "FApexModuleDestructibleSettings")
         .def_readwrite("MaxChunkIslandCount", &FApexModuleDestructibleSettings::MaxChunkIslandCount)
         .def_readwrite("MaxRrbActorCount", &FApexModuleDestructibleSettings::MaxRrbActorCount)
         .def_readwrite("MaxChunkSeparationLOD", &FApexModuleDestructibleSettings::MaxChunkSeparationLOD)

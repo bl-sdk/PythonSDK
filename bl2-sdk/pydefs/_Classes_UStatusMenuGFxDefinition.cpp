@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UStatusMenuGFxDefinition()
+void Export_pystes_UStatusMenuGFxDefinition(py::object m)
 {
-    py::class_< UStatusMenuGFxDefinition,  UWillowInventoryGFxDefinition   >("UStatusMenuGFxDefinition")
+    py::class_< UStatusMenuGFxDefinition,  UWillowInventoryGFxDefinition   >(m, "UStatusMenuGFxDefinition")
         .def_readwrite("Directions", &UStatusMenuGFxDefinition::Directions)
         .def_readwrite("NumEntriesOnMissionLog", &UStatusMenuGFxDefinition::NumEntriesOnMissionLog)
         .def_readwrite("MissionLogTextDefinition", &UStatusMenuGFxDefinition::MissionLogTextDefinition)
@@ -59,6 +59,5 @@ void Export_pystes_UStatusMenuGFxDefinition()
         .def_readwrite("ChallengesPanelDef", &UStatusMenuGFxDefinition::ChallengesPanelDef)
         .def_readwrite("LatentRewardDef", &UStatusMenuGFxDefinition::LatentRewardDef)
         .def("StaticClass", &UStatusMenuGFxDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

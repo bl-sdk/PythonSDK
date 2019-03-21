@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UQoSHandlerSteamworks()
+void Export_pystes_UQoSHandlerSteamworks(py::object m)
 {
-    py::class_< UQoSHandlerSteamworks,  UObject   >("UQoSHandlerSteamworks")
+    py::class_< UQoSHandlerSteamworks,  UObject   >(m, "UQoSHandlerSteamworks")
         .def_readwrite("MaxQoSRequest", &UQoSHandlerSteamworks::MaxQoSRequest)
         .def_readwrite("MaxQoSListen", &UQoSHandlerSteamworks::MaxQoSListen)
         .def_readwrite("NumPingProbes", &UQoSHandlerSteamworks::NumPingProbes)
@@ -17,6 +17,5 @@ void Export_pystes_UQoSHandlerSteamworks()
         .def_readwrite("RequestEntries", &UQoSHandlerSteamworks::RequestEntries)
         .def_readwrite("PendingRequests", &UQoSHandlerSteamworks::PendingRequests)
         .def("StaticClass", &UQoSHandlerSteamworks::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

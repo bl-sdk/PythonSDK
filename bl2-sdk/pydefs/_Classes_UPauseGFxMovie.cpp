@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPauseGFxMovie()
+void Export_pystes_UPauseGFxMovie(py::object m)
 {
-    py::class_< UPauseGFxMovie,  UFrontendGFxMovie   >("UPauseGFxMovie")
+    py::class_< UPauseGFxMovie,  UFrontendGFxMovie   >(m, "UPauseGFxMovie")
         .def_readwrite("PauseDlg", &UPauseGFxMovie::PauseDlg)
         .def_readwrite("SavingDlg", &UPauseGFxMovie::SavingDlg)
         .def_readwrite("SaveDurationTicker", &UPauseGFxMovie::SaveDurationTicker)
@@ -44,6 +44,5 @@ void Export_pystes_UPauseGFxMovie()
         .def("ShouldDoInitialDeviceSelection", &UPauseGFxMovie::ShouldDoInitialDeviceSelection)
         .def("eventOnClose", &UPauseGFxMovie::eventOnClose)
         .def("eventStart", &UPauseGFxMovie::eventStart)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

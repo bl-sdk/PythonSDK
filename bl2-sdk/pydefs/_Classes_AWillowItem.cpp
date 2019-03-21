@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowItem()
+void Export_pystes_AWillowItem(py::object m)
 {
-    py::class_< AWillowItem,  AWillowInventory   >("AWillowItem")
+    py::class_< AWillowItem,  AWillowInventory   >(m, "AWillowItem")
         .def_readwrite("VfTable_IIInstanceData", &AWillowItem::VfTable_IIInstanceData)
         .def_readwrite("VfTable_IIMissionInventory", &AWillowItem::VfTable_IIMissionInventory)
         .def_readwrite("VfTable_IIBehaviorConsumer", &AWillowItem::VfTable_IIBehaviorConsumer)
@@ -124,6 +124,5 @@ void Export_pystes_AWillowItem()
         .def("OnPickupAssociated", &AWillowItem::OnPickupAssociated)
         .def("OnCreate", &AWillowItem::OnCreate)
         .def("GetBehaviorConsumerHandle", &AWillowItem::GetBehaviorConsumerHandle)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

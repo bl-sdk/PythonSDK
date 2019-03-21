@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FParticleEmitterInstanceMotionBlurInfo()
+void Export_pystes_FParticleEmitterInstanceMotionBlurInfo(py::object m)
 {
-    py::class_< FParticleEmitterInstanceMotionBlurInfo >("FParticleEmitterInstanceMotionBlurInfo")
+    py::class_< FParticleEmitterInstanceMotionBlurInfo >(m, "FParticleEmitterInstanceMotionBlurInfo")
         .def_readwrite("ParticleMBInfoMap", &FParticleEmitterInstanceMotionBlurInfo::ParticleMBInfoMap)
   ;
 }

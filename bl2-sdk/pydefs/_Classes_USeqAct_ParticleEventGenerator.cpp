@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_ParticleEventGenerator()
+void Export_pystes_USeqAct_ParticleEventGenerator(py::object m)
 {
-    py::class_< USeqAct_ParticleEventGenerator,  USequenceAction   >("USeqAct_ParticleEventGenerator")
+    py::class_< USeqAct_ParticleEventGenerator,  USequenceAction   >(m, "USeqAct_ParticleEventGenerator")
         .def_readwrite("Instigator", &USeqAct_ParticleEventGenerator::Instigator)
         .def_readwrite("EventNames", &USeqAct_ParticleEventGenerator::EventNames)
         .def_readwrite("EventTime", &USeqAct_ParticleEventGenerator::EventTime)
@@ -15,6 +15,5 @@ void Export_pystes_USeqAct_ParticleEventGenerator()
         .def_readwrite("EventNormal", &USeqAct_ParticleEventGenerator::EventNormal)
         .def("StaticClass", &USeqAct_ParticleEventGenerator::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqAct_ParticleEventGenerator::eventGetObjClassVersion)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

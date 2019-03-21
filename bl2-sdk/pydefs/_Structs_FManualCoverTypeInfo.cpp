@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FManualCoverTypeInfo()
+void Export_pystes_FManualCoverTypeInfo(py::object m)
 {
-    py::class_< FManualCoverTypeInfo >("FManualCoverTypeInfo")
+    py::class_< FManualCoverTypeInfo >(m, "FManualCoverTypeInfo")
         .def_readwrite("SlotIndex", &FManualCoverTypeInfo::SlotIndex)
         .def_readwrite("ManualCoverType", &FManualCoverTypeInfo::ManualCoverType)
   ;

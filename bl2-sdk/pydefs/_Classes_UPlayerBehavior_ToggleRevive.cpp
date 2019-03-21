@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerBehavior_ToggleRevive()
+void Export_pystes_UPlayerBehavior_ToggleRevive(py::object m)
 {
-    py::class_< UPlayerBehavior_ToggleRevive,  UPlayerBehaviorBase   >("UPlayerBehavior_ToggleRevive")
+    py::class_< UPlayerBehavior_ToggleRevive,  UPlayerBehaviorBase   >(m, "UPlayerBehavior_ToggleRevive")
         .def("StaticClass", &UPlayerBehavior_ToggleRevive::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UPlayerBehavior_ToggleRevive::ApplyBehaviorToContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

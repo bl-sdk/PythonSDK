@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAttributeDefinitionMultiContext()
+void Export_pystes_UAttributeDefinitionMultiContext(py::object m)
 {
-    py::class_< UAttributeDefinitionMultiContext,  UAttributeDefinitionBase   >("UAttributeDefinitionMultiContext")
+    py::class_< UAttributeDefinitionMultiContext,  UAttributeDefinitionBase   >(m, "UAttributeDefinitionMultiContext")
         .def_readwrite("MultiContextResolver", &UAttributeDefinitionMultiContext::MultiContextResolver)
         .def("StaticClass", &UAttributeDefinitionMultiContext::StaticClass, py::return_value_policy::reference)
         .def("GetDescriptors", &UAttributeDefinitionMultiContext::GetDescriptors)
@@ -13,6 +13,5 @@ void Export_pystes_UAttributeDefinitionMultiContext()
         .def("GetValues", &UAttributeDefinitionMultiContext::GetValues)
         .def("StaticGetAttributeValues", &UAttributeDefinitionMultiContext::StaticGetAttributeValues)
         .def("ResolveContexts", &UAttributeDefinitionMultiContext::ResolveContexts)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

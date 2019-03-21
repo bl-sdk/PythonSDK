@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTargetPriorityInfo()
+void Export_pystes_FTargetPriorityInfo(py::object m)
 {
-    py::class_< FTargetPriorityInfo >("FTargetPriorityInfo")
+    py::class_< FTargetPriorityInfo >(m, "FTargetPriorityInfo")
         .def_readwrite("TargetName", &FTargetPriorityInfo::TargetName)
         .def_readwrite("ShortName", &FTargetPriorityInfo::ShortName)
         .def_readwrite("Value", &FTargetPriorityInfo::Value)

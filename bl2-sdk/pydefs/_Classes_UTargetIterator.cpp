@@ -3,13 +3,12 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTargetIterator()
+void Export_pystes_UTargetIterator(py::object m)
 {
-    py::class_< UTargetIterator,  UObject   >("UTargetIterator")
+    py::class_< UTargetIterator,  UObject   >(m, "UTargetIterator")
         .def_readwrite("IteratorType", &UTargetIterator::IteratorType)
         .def_readwrite("BarGraphShortName", &UTargetIterator::BarGraphShortName)
         .def("StaticClass", &UTargetIterator::StaticClass, py::return_value_policy::reference)
         .def("eventRecordEvalCallback", &UTargetIterator::eventRecordEvalCallback)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

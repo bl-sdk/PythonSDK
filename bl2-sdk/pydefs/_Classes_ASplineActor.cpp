@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ASplineActor()
+void Export_pystes_ASplineActor(py::object m)
 {
-    py::class_< ASplineActor,  AActor   >("ASplineActor")
+    py::class_< ASplineActor,  AActor   >(m, "ASplineActor")
         .def_readwrite("Connections", &ASplineActor::Connections)
         .def_readwrite("SplineActorTangent", &ASplineActor::SplineActorTangent)
         .def_readwrite("SplineColor", &ASplineActor::SplineColor)
@@ -33,6 +33,5 @@ void Export_pystes_ASplineActor()
         .def("UpdateConnectedSplineComponents", &ASplineActor::UpdateConnectedSplineComponents)
         .def("UpdateSplineComponents", &ASplineActor::UpdateSplineComponents)
         .def("GetWorldSpaceTangent", &ASplineActor::GetWorldSpaceTangent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

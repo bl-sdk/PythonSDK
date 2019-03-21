@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UProjectileDefinition()
+void Export_pystes_UProjectileDefinition(py::object m)
 {
-    py::class_< UProjectileDefinition,  UGBXDefinition   >("UProjectileDefinition")
+    py::class_< UProjectileDefinition,  UGBXDefinition   >(m, "UProjectileDefinition")
         .def_readwrite("VfTable_IIConstructObject", &UProjectileDefinition::VfTable_IIConstructObject)
         .def_readwrite("VfTable_IIBodyInfoProvider", &UProjectileDefinition::VfTable_IIBodyInfoProvider)
         .def_readwrite("VfTable_IIBehaviorProvider", &UProjectileDefinition::VfTable_IIBehaviorProvider)
@@ -104,6 +104,5 @@ void Export_pystes_UProjectileDefinition()
         .def("OnHitWater", &UProjectileDefinition::OnHitWater)
         .def("OnExplode", &UProjectileDefinition::OnExplode)
         .def("OnSpawn", &UProjectileDefinition::OnSpawn)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

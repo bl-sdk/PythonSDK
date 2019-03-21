@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRotationTrack()
+void Export_pystes_FRotationTrack(py::object m)
 {
-    py::class_< FRotationTrack >("FRotationTrack")
+    py::class_< FRotationTrack >(m, "FRotationTrack")
         .def_readwrite("RotKeys", &FRotationTrack::RotKeys)
         .def_readwrite("Times", &FRotationTrack::Times)
   ;

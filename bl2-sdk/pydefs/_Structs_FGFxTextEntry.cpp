@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGFxTextEntry()
+void Export_pystes_FGFxTextEntry(py::object m)
 {
-    py::class_< FGFxTextEntry >("FGFxTextEntry")
+    py::class_< FGFxTextEntry >(m, "FGFxTextEntry")
         .def_readwrite("ArrayIdx", &FGFxTextEntry::ArrayIdx)
         .def_readwrite("Kind", &FGFxTextEntry::Kind)
   ;

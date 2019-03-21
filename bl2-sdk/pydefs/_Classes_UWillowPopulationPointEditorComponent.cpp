@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowPopulationPointEditorComponent()
+void Export_pystes_UWillowPopulationPointEditorComponent(py::object m)
 {
-    py::class_< UWillowPopulationPointEditorComponent,  UPrimitiveComponent   >("UWillowPopulationPointEditorComponent")
+    py::class_< UWillowPopulationPointEditorComponent,  UPrimitiveComponent   >(m, "UWillowPopulationPointEditorComponent")
         .def("StaticClass", &UWillowPopulationPointEditorComponent::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

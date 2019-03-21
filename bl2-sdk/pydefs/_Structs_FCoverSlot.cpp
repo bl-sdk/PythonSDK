@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCoverSlot()
+void Export_pystes_FCoverSlot(py::object m)
 {
-    py::class_< FCoverSlot >("FCoverSlot")
+    py::class_< FCoverSlot >(m, "FCoverSlot")
         .def_readwrite("SlotOwner", &FCoverSlot::SlotOwner)
         .def_readwrite("SlotValidAfterTime", &FCoverSlot::SlotValidAfterTime)
         .def_readwrite("ForceCoverType", &FCoverSlot::ForceCoverType)

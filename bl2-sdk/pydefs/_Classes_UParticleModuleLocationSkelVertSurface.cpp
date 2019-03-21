@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleLocationSkelVertSurface()
+void Export_pystes_UParticleModuleLocationSkelVertSurface(py::object m)
 {
-    py::class_< UParticleModuleLocationSkelVertSurface,  UParticleModuleLocationBase   >("UParticleModuleLocationSkelVertSurface")
+    py::class_< UParticleModuleLocationSkelVertSurface,  UParticleModuleLocationBase   >(m, "UParticleModuleLocationSkelVertSurface")
         .def_readwrite("SourceType", &UParticleModuleLocationSkelVertSurface::SourceType)
         .def_readwrite("UniversalOffset", &UParticleModuleLocationSkelVertSurface::UniversalOffset)
         .def_readwrite("SkelMeshActorParamName", &UParticleModuleLocationSkelVertSurface::SkelMeshActorParamName)
@@ -15,6 +15,5 @@ void Export_pystes_UParticleModuleLocationSkelVertSurface()
         .def_readwrite("NormalCheckTolerance", &UParticleModuleLocationSkelVertSurface::NormalCheckTolerance)
         .def_readwrite("ValidMaterialIndices", &UParticleModuleLocationSkelVertSurface::ValidMaterialIndices)
         .def("StaticClass", &UParticleModuleLocationSkelVertSurface::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGFxColiseumOverlayMovie()
+void Export_pystes_UWillowGFxColiseumOverlayMovie(py::object m)
 {
-    py::class_< UWillowGFxColiseumOverlayMovie,  UWillowGFxMovie   >("UWillowGFxColiseumOverlayMovie")
+    py::class_< UWillowGFxColiseumOverlayMovie,  UWillowGFxMovie   >(m, "UWillowGFxColiseumOverlayMovie")
         .def_readwrite("OverlayDef", &UWillowGFxColiseumOverlayMovie::OverlayDef)
         .def_readonly("CurrentRules", &UWillowGFxColiseumOverlayMovie::CurrentRules)
         .def_readwrite("RoundPrefix", &UWillowGFxColiseumOverlayMovie::RoundPrefix)
@@ -79,6 +79,5 @@ void Export_pystes_UWillowGFxColiseumOverlayMovie()
         .def("OnResultsScreenInputKey", &UWillowGFxColiseumOverlayMovie::OnResultsScreenInputKey)
         .def("eventOnClose", &UWillowGFxColiseumOverlayMovie::eventOnClose)
         .def("eventStart", &UWillowGFxColiseumOverlayMovie::eventStart)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

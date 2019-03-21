@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UEditorLinkSelectionInterface()
+void Export_pystes_UEditorLinkSelectionInterface(py::object m)
 {
-    py::class_< UEditorLinkSelectionInterface,  UInterface   >("UEditorLinkSelectionInterface")
+    py::class_< UEditorLinkSelectionInterface,  UInterface   >(m, "UEditorLinkSelectionInterface")
         .def("StaticClass", &UEditorLinkSelectionInterface::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

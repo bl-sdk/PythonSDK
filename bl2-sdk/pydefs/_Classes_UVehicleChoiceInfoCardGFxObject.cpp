@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UVehicleChoiceInfoCardGFxObject()
+void Export_pystes_UVehicleChoiceInfoCardGFxObject(py::object m)
 {
-    py::class_< UVehicleChoiceInfoCardGFxObject,  UGFxObject   >("UVehicleChoiceInfoCardGFxObject")
+    py::class_< UVehicleChoiceInfoCardGFxObject,  UGFxObject   >(m, "UVehicleChoiceInfoCardGFxObject")
         .def("StaticClass", &UVehicleChoiceInfoCardGFxObject::StaticClass, py::return_value_policy::reference)
         .def("TryScrollDown", &UVehicleChoiceInfoCardGFxObject::TryScrollDown)
         .def("TryScrollUp", &UVehicleChoiceInfoCardGFxObject::TryScrollUp)
@@ -22,6 +22,5 @@ void Export_pystes_UVehicleChoiceInfoCardGFxObject()
         .def("EndAddVehicleCells", &UVehicleChoiceInfoCardGFxObject::EndAddVehicleCells)
         .def("AddVehicleTypeCell", &UVehicleChoiceInfoCardGFxObject::AddVehicleTypeCell)
         .def("BeginAddVehicleCells", &UVehicleChoiceInfoCardGFxObject::BeginAddVehicleCells)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

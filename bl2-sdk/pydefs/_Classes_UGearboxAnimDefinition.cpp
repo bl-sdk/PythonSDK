@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxAnimDefinition()
+void Export_pystes_UGearboxAnimDefinition(py::object m)
 {
-    py::class_< UGearboxAnimDefinition,  USpecialMoveDefinition   >("UGearboxAnimDefinition")
+    py::class_< UGearboxAnimDefinition,  USpecialMoveDefinition   >(m, "UGearboxAnimDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UGearboxAnimDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("AnimName", &UGearboxAnimDefinition::AnimName)
         .def_readwrite("BlendInTime", &UGearboxAnimDefinition::BlendInTime)
@@ -42,6 +42,5 @@ void Export_pystes_UGearboxAnimDefinition()
         .def("OnStart", &UGearboxAnimDefinition::OnStart)
         .def("SetBehaviorProviderDefinition", &UGearboxAnimDefinition::SetBehaviorProviderDefinition)
         .def("GetBehaviorProviderDefinition", &UGearboxAnimDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

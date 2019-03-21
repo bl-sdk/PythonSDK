@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSKURuntimeLibrarySet()
+void Export_pystes_FSKURuntimeLibrarySet(py::object m)
 {
-    py::class_< FSKURuntimeLibrarySet >("FSKURuntimeLibrarySet")
+    py::class_< FSKURuntimeLibrarySet >(m, "FSKURuntimeLibrarySet")
         .def_readwrite("Id", &FSKURuntimeLibrarySet::Id)
         .def_readonly("Libraries", &FSKURuntimeLibrarySet::Libraries)
   ;

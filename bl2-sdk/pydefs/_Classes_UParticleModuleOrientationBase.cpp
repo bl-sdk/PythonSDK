@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleOrientationBase()
+void Export_pystes_UParticleModuleOrientationBase(py::object m)
 {
-    py::class_< UParticleModuleOrientationBase,  UParticleModule   >("UParticleModuleOrientationBase")
+    py::class_< UParticleModuleOrientationBase,  UParticleModule   >(m, "UParticleModuleOrientationBase")
         .def("StaticClass", &UParticleModuleOrientationBase::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

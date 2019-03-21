@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APopulationOpportunity()
+void Export_pystes_APopulationOpportunity(py::object m)
 {
-    py::class_< APopulationOpportunity,  AInfo   >("APopulationOpportunity")
+    py::class_< APopulationOpportunity,  AInfo   >(m, "APopulationOpportunity")
         .def_readwrite("VfTable_IIBodyCompositionInstance", &APopulationOpportunity::VfTable_IIBodyCompositionInstance)
         .def_readwrite("CleanupParams", &APopulationOpportunity::CleanupParams)
         .def_readwrite("SpawnPoints", &APopulationOpportunity::SpawnPoints)
@@ -44,6 +44,5 @@ void Export_pystes_APopulationOpportunity()
         .def("GetNextSpawnTime", &APopulationOpportunity::GetNextSpawnTime)
         .def("RespawnKilledActors", &APopulationOpportunity::RespawnKilledActors)
         .def("DoSpawning", &APopulationOpportunity::DoSpawning)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

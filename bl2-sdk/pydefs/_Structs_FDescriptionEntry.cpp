@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDescriptionEntry()
+void Export_pystes_FDescriptionEntry(py::object m)
 {
-    py::class_< FDescriptionEntry >("FDescriptionEntry")
+    py::class_< FDescriptionEntry >(m, "FDescriptionEntry")
         .def_readwrite("EventID", &FDescriptionEntry::EventID)
         .def_readwrite("Description", &FDescriptionEntry::Description)
   ;

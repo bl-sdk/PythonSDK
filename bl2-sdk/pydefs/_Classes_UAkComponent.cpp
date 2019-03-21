@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAkComponent()
+void Export_pystes_UAkComponent(py::object m)
 {
-    py::class_< UAkComponent,  UActorComponent   >("UAkComponent")
+    py::class_< UAkComponent,  UActorComponent   >(m, "UAkComponent")
         .def_readwrite("SocketName", &UAkComponent::SocketName)
         .def_readwrite("CustomLocations", &UAkComponent::CustomLocations)
         .def_readwrite("CustomRotations", &UAkComponent::CustomRotations)
@@ -30,6 +30,5 @@ void Export_pystes_UAkComponent()
         .def("IsPlayingEvent", &UAkComponent::IsPlayingEvent)
         .def("UpdateComponentPosition", &UAkComponent::UpdateComponentPosition)
         .def("OnAkEventCompleted", &UAkComponent::OnAkEventCompleted)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

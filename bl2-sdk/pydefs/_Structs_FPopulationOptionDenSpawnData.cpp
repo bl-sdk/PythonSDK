@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPopulationOptionDenSpawnData()
+void Export_pystes_FPopulationOptionDenSpawnData(py::object m)
 {
-    py::class_< FPopulationOptionDenSpawnData >("FPopulationOptionDenSpawnData")
+    py::class_< FPopulationOptionDenSpawnData >(m, "FPopulationOptionDenSpawnData")
         .def_readwrite("PopulationDefName", &FPopulationOptionDenSpawnData::PopulationDefName)
         .def_readwrite("MaxActiveActors", &FPopulationOptionDenSpawnData::MaxActiveActors)
         .def_readwrite("NumTotalActors", &FPopulationOptionDenSpawnData::NumTotalActors)

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxDialogNode()
+void Export_pystes_UGearboxDialogNode(py::object m)
 {
-    py::class_< UGearboxDialogNode,  UObject   >("UGearboxDialogNode")
+    py::class_< UGearboxDialogNode,  UObject   >(m, "UGearboxDialogNode")
         .def_readwrite("NodeID", &UGearboxDialogNode::NodeID)
         .def_readwrite("Type", &UGearboxEditorNode::Type)
         .def_readwrite("OutputLinks", &UGearboxEditorNode::OutputLinks)
@@ -15,6 +15,5 @@ void Export_pystes_UGearboxDialogNode()
         .def("StaticClass", &UGearboxDialogNode::StaticClass, py::return_value_policy::reference)
         .def("ActivateOutput", &UGearboxDialogNode::ActivateOutput)
         .def("IsChild", &UGearboxEditorNode::IsChild)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

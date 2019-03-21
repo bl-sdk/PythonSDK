@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCheatManager()
+void Export_pystes_UCheatManager(py::object m)
 {
-    py::class_< UCheatManager,  UObject   >("UCheatManager")
+    py::class_< UCheatManager,  UObject   >(m, "UCheatManager")
         .def_readwrite("DebugCameraControllerRef", &UCheatManager::DebugCameraControllerRef)
         .def_readwrite("DebugCameraControllerClass", &UCheatManager::DebugCameraControllerClass)
         .def_readwrite("ViewingFrom", &UCheatManager::ViewingFrom)
@@ -28,6 +28,5 @@ void Export_pystes_UCheatManager()
         .def("LogParticleActivateSystemCalls", &UCheatManager::LogParticleActivateSystemCalls)
         .def("LogPlaySoundCalls", &UCheatManager::LogPlaySoundCalls)
         .def("InitCheatManager", &UCheatManager::InitCheatManager)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

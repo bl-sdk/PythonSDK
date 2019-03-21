@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxCameraModifier()
+void Export_pystes_UGearboxCameraModifier(py::object m)
 {
-    py::class_< UGearboxCameraModifier,  UCameraModifier   >("UGearboxCameraModifier")
+    py::class_< UGearboxCameraModifier,  UCameraModifier   >(m, "UGearboxCameraModifier")
         .def_readwrite("GBXCameraOwner", &UGearboxCameraModifier::GBXCameraOwner)
         .def_readwrite("DesiredPOV", &UGearboxCameraModifier::DesiredPOV)
         .def_readwrite("MasterFadeValue", &UGearboxCameraModifier::MasterFadeValue)
@@ -26,6 +26,5 @@ void Export_pystes_UGearboxCameraModifier()
         .def("SetDesiredCamera", &UGearboxCameraModifier::SetDesiredCamera)
         .def("SetGBXCameraOwner", &UGearboxCameraModifier::SetGBXCameraOwner)
         .def("AddCameraModifier", &UGearboxCameraModifier::AddCameraModifier)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

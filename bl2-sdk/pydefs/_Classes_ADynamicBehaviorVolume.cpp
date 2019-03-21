@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ADynamicBehaviorVolume()
+void Export_pystes_ADynamicBehaviorVolume(py::object m)
 {
-    py::class_< ADynamicBehaviorVolume,  APhysicsVolume   >("ADynamicBehaviorVolume")
+    py::class_< ADynamicBehaviorVolume,  APhysicsVolume   >(m, "ADynamicBehaviorVolume")
         .def_readwrite("VfTable_IIBehaviorConsumer", &ABehaviorVolume::VfTable_IIBehaviorConsumer)
         .def_readwrite("VfTable_IIInstanceData", &ABehaviorVolume::VfTable_IIInstanceData)
         .def_readwrite("VfTable_IIBalancedActor", &ABehaviorVolume::VfTable_IIBalancedActor)
@@ -58,6 +58,5 @@ void Export_pystes_ADynamicBehaviorVolume()
         .def("eventPostBeginPlay", &ABehaviorVolume::eventPostBeginPlay)
         .def("GetBehaviorConsumerHandle", &ABehaviorVolume::GetBehaviorConsumerHandle)
         .def("eventReplicatedEvent", &ABehaviorVolume::eventReplicatedEvent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

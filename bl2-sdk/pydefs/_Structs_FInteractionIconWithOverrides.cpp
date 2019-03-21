@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInteractionIconWithOverrides()
+void Export_pystes_FInteractionIconWithOverrides(py::object m)
 {
-    py::class_< FInteractionIconWithOverrides >("FInteractionIconWithOverrides")
+    py::class_< FInteractionIconWithOverrides >(m, "FInteractionIconWithOverrides")
         .def_readwrite("IconDef", &FInteractionIconWithOverrides::IconDef)
         .def_readwrite("OverrideIconDef", &FInteractionIconWithOverrides::OverrideIconDef)
         .def_readwrite("bCostsToUse", &FInteractionIconWithOverrides::bCostsToUse)

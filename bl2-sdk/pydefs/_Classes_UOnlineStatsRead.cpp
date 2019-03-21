@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineStatsRead()
+void Export_pystes_UOnlineStatsRead(py::object m)
 {
-    py::class_< UOnlineStatsRead,  UOnlineStats   >("UOnlineStatsRead")
+    py::class_< UOnlineStatsRead,  UOnlineStats   >(m, "UOnlineStatsRead")
         .def_readwrite("ViewId", &UOnlineStatsRead::ViewId)
         .def_readwrite("SortColumnId", &UOnlineStatsRead::SortColumnId)
         .def_readwrite("ColumnIds", &UOnlineStatsRead::ColumnIds)
@@ -24,6 +24,5 @@ void Export_pystes_UOnlineStatsRead()
         .def("SetIntStatValueForPlayer", &UOnlineStatsRead::SetIntStatValueForPlayer)
         .def("GetIntStatValueForPlayer", &UOnlineStatsRead::GetIntStatValueForPlayer)
         .def("eventOnReadComplete", &UOnlineStatsRead::eventOnReadComplete)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

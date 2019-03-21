@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWeaponScopeGFxMovie()
+void Export_pystes_UWeaponScopeGFxMovie(py::object m)
 {
-    py::class_< UWeaponScopeGFxMovie,  UWillowGFxMovie3D   >("UWeaponScopeGFxMovie")
+    py::class_< UWeaponScopeGFxMovie,  UWillowGFxMovie3D   >(m, "UWeaponScopeGFxMovie")
         .def_readwrite("MyScopeDefinition", &UWeaponScopeGFxMovie::MyScopeDefinition)
         .def_readwrite("CrosshairWidget", &UWeaponScopeGFxMovie::CrosshairWidget)
         .def_readwrite("CachedFLN_Housing", &UWeaponScopeGFxMovie::CachedFLN_Housing)
@@ -29,6 +29,5 @@ void Export_pystes_UWeaponScopeGFxMovie()
         .def("GetLinkageName", &UWeaponScopeGFxMovie::GetLinkageName)
         .def("eventOnClose", &UWeaponScopeGFxMovie::eventOnClose)
         .def("eventStart", &UWeaponScopeGFxMovie::eventStart)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

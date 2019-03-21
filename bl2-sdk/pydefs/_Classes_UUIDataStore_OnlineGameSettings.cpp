@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIDataStore_OnlineGameSettings()
+void Export_pystes_UUIDataStore_OnlineGameSettings(py::object m)
 {
-    py::class_< UUIDataStore_OnlineGameSettings,  UUIDataStore   >("UUIDataStore_OnlineGameSettings")
+    py::class_< UUIDataStore_OnlineGameSettings,  UUIDataStore   >(m, "UUIDataStore_OnlineGameSettings")
         .def_readwrite("GameSettingsCfgList", &UUIDataStore_OnlineGameSettings::GameSettingsCfgList)
         .def_readwrite("SettingsProviderClass", &UUIDataStore_OnlineGameSettings::SettingsProviderClass)
         .def_readwrite("SelectedIndex", &UUIDataStore_OnlineGameSettings::SelectedIndex)
@@ -20,6 +20,5 @@ void Export_pystes_UUIDataStore_OnlineGameSettings()
         .def("eventGetCurrentGameSettings", &UUIDataStore_OnlineGameSettings::eventGetCurrentGameSettings, py::return_value_policy::reference)
         .def("eventCreateGame", &UUIDataStore_OnlineGameSettings::eventCreateGame)
         .def("OnSettingProviderChanged", &UUIDataStore_OnlineGameSettings::OnSettingProviderChanged)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_PlaySound()
+void Export_pystes_USeqAct_PlaySound(py::object m)
 {
-    py::class_< USeqAct_PlaySound,  USeqAct_Latent   >("USeqAct_PlaySound")
+    py::class_< USeqAct_PlaySound,  USeqAct_Latent   >(m, "USeqAct_PlaySound")
         .def_readwrite("PlaySound", &USeqAct_PlaySound::PlaySound)
         .def_readwrite("ExtraDelay", &USeqAct_PlaySound::ExtraDelay)
         .def_readwrite("SoundDuration", &USeqAct_PlaySound::SoundDuration)
@@ -15,6 +15,5 @@ void Export_pystes_USeqAct_PlaySound()
         .def_readwrite("PitchMultiplier", &USeqAct_PlaySound::PitchMultiplier)
         .def("StaticClass", &USeqAct_PlaySound::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqAct_PlaySound::eventGetObjClassVersion)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

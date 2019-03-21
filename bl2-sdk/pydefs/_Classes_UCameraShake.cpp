@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCameraShake()
+void Export_pystes_UCameraShake(py::object m)
 {
-    py::class_< UCameraShake,  UObject   >("UCameraShake")
+    py::class_< UCameraShake,  UObject   >(m, "UCameraShake")
         .def_readwrite("OscillationDuration", &UCameraShake::OscillationDuration)
         .def_readwrite("OscillationBlendInTime", &UCameraShake::OscillationBlendInTime)
         .def_readwrite("OscillationBlendOutTime", &UCameraShake::OscillationBlendOutTime)
@@ -21,6 +21,5 @@ void Export_pystes_UCameraShake()
         .def("StaticClass", &UCameraShake::StaticClass, py::return_value_policy::reference)
         .def("GetLocOscillationMagnitude", &UCameraShake::GetLocOscillationMagnitude)
         .def("GetRotOscillationMagnitude", &UCameraShake::GetRotOscillationMagnitude)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

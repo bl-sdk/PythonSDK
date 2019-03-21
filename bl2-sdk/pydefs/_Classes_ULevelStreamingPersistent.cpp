@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULevelStreamingPersistent()
+void Export_pystes_ULevelStreamingPersistent(py::object m)
 {
-    py::class_< ULevelStreamingPersistent,  ULevelStreaming   >("ULevelStreamingPersistent")
+    py::class_< ULevelStreamingPersistent,  ULevelStreaming   >(m, "ULevelStreamingPersistent")
         .def("StaticClass", &ULevelStreamingPersistent::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

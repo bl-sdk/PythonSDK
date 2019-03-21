@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_FireShot()
+void Export_pystes_UBehavior_FireShot(py::object m)
 {
-    py::class_< UBehavior_FireShot,  UBehaviorBase   >("UBehavior_FireShot")
+    py::class_< UBehavior_FireShot,  UBehaviorBase   >(m, "UBehavior_FireShot")
         .def_readwrite("WeaponOwnerContext", &UBehavior_FireShot::WeaponOwnerContext)
         .def_readwrite("NumProjectiles", &UBehavior_FireShot::NumProjectiles)
         .def_readwrite("SpawnDirection", &UBehavior_FireShot::SpawnDirection)
@@ -27,6 +27,5 @@ void Export_pystes_UBehavior_FireShot()
         .def("StaticClass", &UBehavior_FireShot::StaticClass, py::return_value_policy::reference)
         .def("FireNextShot", &UBehavior_FireShot::FireNextShot)
         .def("ApplyBehaviorToContext", &UBehavior_FireShot::ApplyBehaviorToContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

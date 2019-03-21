@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FVehicleGradeModifierData()
+void Export_pystes_FVehicleGradeModifierData(py::object m)
 {
-    py::class_< FVehicleGradeModifierData >("FVehicleGradeModifierData")
+    py::class_< FVehicleGradeModifierData >(m, "FVehicleGradeModifierData")
         .def_readwrite("CustomVehicle", &FVehicleGradeModifierData::CustomVehicle)
         .def_readwrite("DisplayName", &FVehicleGradeModifierData::DisplayName)
         .def_readwrite("ExpLevel", &FVehicleGradeModifierData::ExpLevel)

@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTradingGFxDefinition()
+void Export_pystes_UTradingGFxDefinition(py::object m)
 {
-    py::class_< UTradingGFxDefinition,  UWillowInventoryGFxDefinition   >("UTradingGFxDefinition")
+    py::class_< UTradingGFxDefinition,  UWillowInventoryGFxDefinition   >(m, "UTradingGFxDefinition")
         .def("StaticClass", &UTradingGFxDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

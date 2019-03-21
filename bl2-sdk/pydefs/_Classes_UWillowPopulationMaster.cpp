@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowPopulationMaster()
+void Export_pystes_UWillowPopulationMaster(py::object m)
 {
-    py::class_< UWillowPopulationMaster,  UPopulationMaster   >("UWillowPopulationMaster")
+    py::class_< UWillowPopulationMaster,  UPopulationMaster   >(m, "UWillowPopulationMaster")
         .def_readonly("VehicleSpawnStationSlots", &UWillowPopulationMaster::VehicleSpawnStationSlots)
         .def("StaticClass", &UWillowPopulationMaster::StaticClass, py::return_value_policy::reference)
         .def("UpdateGRI", &UWillowPopulationMaster::UpdateGRI)
@@ -16,6 +16,5 @@ void Export_pystes_UWillowPopulationMaster()
         .def("DespawnVehicleFromVehicleSpawnStation", &UWillowPopulationMaster::DespawnVehicleFromVehicleSpawnStation)
         .def("SpawnVehicleFromVehicleSpawnStation", &UWillowPopulationMaster::SpawnVehicleFromVehicleSpawnStation)
         .def("SpawnActorFromOpportunity", &UWillowPopulationMaster::SpawnActorFromOpportunity, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

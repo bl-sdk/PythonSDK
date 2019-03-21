@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCurrentPostProcessVolumeInfo()
+void Export_pystes_FCurrentPostProcessVolumeInfo(py::object m)
 {
-    py::class_< FCurrentPostProcessVolumeInfo >("FCurrentPostProcessVolumeInfo")
+    py::class_< FCurrentPostProcessVolumeInfo >(m, "FCurrentPostProcessVolumeInfo")
         .def_readwrite("LastSettings", &FCurrentPostProcessVolumeInfo::LastSettings)
         .def_readwrite("LastVolumeUsed", &FCurrentPostProcessVolumeInfo::LastVolumeUsed)
         .def_readwrite("BlendStartTime", &FCurrentPostProcessVolumeInfo::BlendStartTime)

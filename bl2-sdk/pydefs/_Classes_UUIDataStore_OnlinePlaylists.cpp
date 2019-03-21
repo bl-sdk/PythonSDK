@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIDataStore_OnlinePlaylists()
+void Export_pystes_UUIDataStore_OnlinePlaylists(py::object m)
 {
-    py::class_< UUIDataStore_OnlinePlaylists,  UUIDataStore   >("UUIDataStore_OnlinePlaylists")
+    py::class_< UUIDataStore_OnlinePlaylists,  UUIDataStore   >(m, "UUIDataStore_OnlinePlaylists")
         .def_readwrite("VfTable_IUIListElementProvider", &UUIDataStore_OnlinePlaylists::VfTable_IUIListElementProvider)
         .def_readwrite("ProviderClassName", &UUIDataStore_OnlinePlaylists::ProviderClassName)
         .def_readwrite("ProviderClass", &UUIDataStore_OnlinePlaylists::ProviderClass)
@@ -24,6 +24,5 @@ void Export_pystes_UUIDataStore_OnlinePlaylists()
         .def("GetResourceProviders", &UUIDataStore_OnlinePlaylists::GetResourceProviders)
         .def("GetProviderCount", &UUIDataStore_OnlinePlaylists::GetProviderCount)
         .def("eventInit", &UUIDataStore_OnlinePlaylists::eventInit)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

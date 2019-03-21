@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FNetViewer()
+void Export_pystes_FNetViewer(py::object m)
 {
-    py::class_< FNetViewer >("FNetViewer")
+    py::class_< FNetViewer >(m, "FNetViewer")
         .def_readwrite("InViewer", &FNetViewer::InViewer)
         .def_readwrite("Viewer", &FNetViewer::Viewer)
         .def_readwrite("ViewLocation", &FNetViewer::ViewLocation)

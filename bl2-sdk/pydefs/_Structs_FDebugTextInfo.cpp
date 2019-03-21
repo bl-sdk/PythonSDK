@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDebugTextInfo()
+void Export_pystes_FDebugTextInfo(py::object m)
 {
-    py::class_< FDebugTextInfo >("FDebugTextInfo")
+    py::class_< FDebugTextInfo >(m, "FDebugTextInfo")
         .def_readwrite("SrcActor", &FDebugTextInfo::SrcActor)
         .def_readwrite("SrcActorOffset", &FDebugTextInfo::SrcActorOffset)
         .def_readwrite("SrcActorDesiredOffset", &FDebugTextInfo::SrcActorDesiredOffset)

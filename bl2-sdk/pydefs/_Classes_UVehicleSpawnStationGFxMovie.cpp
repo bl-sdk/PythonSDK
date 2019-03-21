@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UVehicleSpawnStationGFxMovie()
+void Export_pystes_UVehicleSpawnStationGFxMovie(py::object m)
 {
-    py::class_< UVehicleSpawnStationGFxMovie,  UWillowGFxMovie3D   >("UVehicleSpawnStationGFxMovie")
+    py::class_< UVehicleSpawnStationGFxMovie,  UWillowGFxMovie3D   >(m, "UVehicleSpawnStationGFxMovie")
         .def_readwrite("VfTable_IIStreamingDataEvent", &UVehicleSpawnStationGFxMovie::VfTable_IIStreamingDataEvent)
         .def_readwrite("VSSWrapperObj", &UVehicleSpawnStationGFxMovie::VSSWrapperObj)
         .def_readwrite("VehicleFamilySelector", &UVehicleSpawnStationGFxMovie::VehicleFamilySelector)
@@ -99,6 +99,5 @@ void Export_pystes_UVehicleSpawnStationGFxMovie()
         .def("UpdateSkinsOnVehicleTypeChange", &UVehicleSpawnStationGFxMovie::UpdateSkinsOnVehicleTypeChange)
         .def("CacheDefinitions", &UVehicleSpawnStationGFxMovie::CacheDefinitions)
         .def("CacheVehicleFamilies", &UVehicleSpawnStationGFxMovie::CacheVehicleFamilies)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FComponentData()
+void Export_pystes_FComponentData(py::object m)
 {
-    py::class_< FComponentData >("FComponentData")
+    py::class_< FComponentData >(m, "FComponentData")
         .def_readwrite("Component", &FComponentData::Component)
         .def_readwrite("CollisionType", &FComponentData::CollisionType)
         .def_readwrite("MeshSocketName", &FComponentData::MeshSocketName)

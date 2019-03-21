@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FProviderRemovalRequest()
+void Export_pystes_FProviderRemovalRequest(py::object m)
 {
-    py::class_< FProviderRemovalRequest >("FProviderRemovalRequest")
+    py::class_< FProviderRemovalRequest >(m, "FProviderRemovalRequest")
         .def_readwrite("ConsumerHandle", &FProviderRemovalRequest::ConsumerHandle)
         .def_readwrite("ProvidersIndex", &FProviderRemovalRequest::ProvidersIndex)
   ;

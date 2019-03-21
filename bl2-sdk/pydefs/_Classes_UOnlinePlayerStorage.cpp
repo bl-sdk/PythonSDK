@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlinePlayerStorage()
+void Export_pystes_UOnlinePlayerStorage(py::object m)
 {
-    py::class_< UOnlinePlayerStorage,  UObject   >("UOnlinePlayerStorage")
+    py::class_< UOnlinePlayerStorage,  UObject   >(m, "UOnlinePlayerStorage")
         .def_readwrite("VersionNumber", &UOnlinePlayerStorage::VersionNumber)
         .def_readwrite("VersionSettingsId", &UOnlinePlayerStorage::VersionSettingsId)
         .def_readwrite("SaveCountSettingId", &UOnlinePlayerStorage::SaveCountSettingId)
@@ -48,6 +48,5 @@ void Export_pystes_UOnlinePlayerStorage()
         .def("GetProfileSettingColumnHeader", &UOnlinePlayerStorage::GetProfileSettingColumnHeader)
         .def("GetProfileSettingName", &UOnlinePlayerStorage::GetProfileSettingName)
         .def("GetProfileSettingId", &UOnlinePlayerStorage::GetProfileSettingId)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBodyHandIKHoldData()
+void Export_pystes_FBodyHandIKHoldData(py::object m)
 {
-    py::class_< FBodyHandIKHoldData >("FBodyHandIKHoldData")
+    py::class_< FBodyHandIKHoldData >(m, "FBodyHandIKHoldData")
         .def_readwrite("JointLocation", &FBodyHandIKHoldData::JointLocation)
         .def_readwrite("HandLocation", &FBodyHandIKHoldData::HandLocation)
         .def_readwrite("HandRotation", &FBodyHandIKHoldData::HandRotation)

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpecialMove_FirstPersonDualWieldAction()
+void Export_pystes_USpecialMove_FirstPersonDualWieldAction(py::object m)
 {
-    py::class_< USpecialMove_FirstPersonDualWieldAction,  USpecialMove_FirstPerson   >("USpecialMove_FirstPersonDualWieldAction")
+    py::class_< USpecialMove_FirstPersonDualWieldAction,  USpecialMove_FirstPerson   >(m, "USpecialMove_FirstPersonDualWieldAction")
         .def_readwrite("OffHandAnimNodeName", &USpecialMove_FirstPersonDualWieldAction::OffHandAnimNodeName)
         .def_readwrite("HolsterAnimName", &USpecialMove_FirstPersonDualWieldAction::HolsterAnimName)
         .def_readwrite("HolsterDuration", &USpecialMove_FirstPersonDualWieldAction::HolsterDuration)
@@ -24,6 +24,5 @@ void Export_pystes_USpecialMove_FirstPersonDualWieldAction()
         .def("eventAnimFinished", &USpecialMove_FirstPersonDualWieldAction::eventAnimFinished)
         .def("StopWeaponRecoilAnim", &USpecialMove_FirstPersonDualWieldAction::StopWeaponRecoilAnim)
         .def("GetAnimLength", &USpecialMove_FirstPersonDualWieldAction::GetAnimLength)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

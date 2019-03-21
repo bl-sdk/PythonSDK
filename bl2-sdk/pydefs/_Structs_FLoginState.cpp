@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLoginState()
+void Export_pystes_FLoginState(py::object m)
 {
-    py::class_< FLoginState >("FLoginState")
+    py::class_< FLoginState >(m, "FLoginState")
         .def_readwrite("LoginName", &FLoginState::LoginName)
   ;
 }

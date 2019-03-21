@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActionSequence()
+void Export_pystes_UActionSequence(py::object m)
 {
-    py::class_< UActionSequence,  UObject   >("UActionSequence")
+    py::class_< UActionSequence,  UObject   >(m, "UActionSequence")
         .def_readwrite("ResourcesUsed", &UActionSequence::ResourcesUsed)
         .def_readwrite("MyRuleEngine", &UActionSequence::MyRuleEngine)
         .def_readwrite("AttachedRule", &UActionSequence::AttachedRule)
@@ -52,6 +52,5 @@ void Export_pystes_UActionSequence()
         .def("StopAtomic", &UActionSequence::StopAtomic)
         .def("StartAtomic", &UActionSequence::StartAtomic)
         .def("IsActionReadyToFinish", &UActionSequence::IsActionReadyToFinish)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

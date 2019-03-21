@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGFxInteraction()
+void Export_pystes_UGFxInteraction(py::object m)
 {
-    py::class_< UGFxInteraction,  UInteraction   >("UGFxInteraction")
+    py::class_< UGFxInteraction,  UInteraction   >(m, "UGFxInteraction")
         .def_readwrite("VfTable_FCallbackEventDevice", &UGFxInteraction::VfTable_FCallbackEventDevice)
         .def("StaticClass", &UGFxInteraction::StaticClass, py::return_value_policy::reference)
         .def("CloseAllMoviePlayers", &UGFxInteraction::CloseAllMoviePlayers)
@@ -14,6 +14,5 @@ void Export_pystes_UGFxInteraction()
         .def("NotifyPlayerAdded", &UGFxInteraction::NotifyPlayerAdded)
         .def("NotifyGameSessionEnded", &UGFxInteraction::NotifyGameSessionEnded)
         .def("GetFocusMovie", &UGFxInteraction::GetFocusMovie, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

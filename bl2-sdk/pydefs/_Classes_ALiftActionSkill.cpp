@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ALiftActionSkill()
+void Export_pystes_ALiftActionSkill(py::object m)
 {
-    py::class_< ALiftActionSkill,  AActionSkill   >("ALiftActionSkill")
+    py::class_< ALiftActionSkill,  AActionSkill   >(m, "ALiftActionSkill")
         .def_readwrite("CurrentState", &ALiftActionSkill::CurrentState)
         .def_readwrite("LiftedPawn", &ALiftActionSkill::LiftedPawn)
         .def_readwrite("StateStartTime", &ALiftActionSkill::StateStartTime)
@@ -144,6 +144,5 @@ void Export_pystes_ALiftActionSkill()
         .def("OnActionSkillStarted", &ALiftActionSkill::OnActionSkillStarted)
         .def("UpdateTargetPawn", &ALiftActionSkill::UpdateTargetPawn)
         .def("eventReplicatedEvent", &ALiftActionSkill::eventReplicatedEvent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

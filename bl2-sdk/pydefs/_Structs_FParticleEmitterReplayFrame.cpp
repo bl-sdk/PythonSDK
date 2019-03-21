@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FParticleEmitterReplayFrame()
+void Export_pystes_FParticleEmitterReplayFrame(py::object m)
 {
-    py::class_< FParticleEmitterReplayFrame >("FParticleEmitterReplayFrame")
+    py::class_< FParticleEmitterReplayFrame >(m, "FParticleEmitterReplayFrame")
         .def_readwrite("EmitterType", &FParticleEmitterReplayFrame::EmitterType)
         .def_readwrite("OriginalEmitterIndex", &FParticleEmitterReplayFrame::OriginalEmitterIndex)
         .def_readwrite("FrameState", &FParticleEmitterReplayFrame::FrameState)

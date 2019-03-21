@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSlotAnimParameters()
+void Export_pystes_FSlotAnimParameters(py::object m)
 {
-    py::class_< FSlotAnimParameters >("FSlotAnimParameters")
+    py::class_< FSlotAnimParameters >(m, "FSlotAnimParameters")
         .def_readwrite("SMData", &FSlotAnimParameters::SMData)
         .def_readwrite("CustomAnimDef", &FSlotAnimParameters::CustomAnimDef)
         .def_readwrite("CustomAnimName", &FSlotAnimParameters::CustomAnimName)

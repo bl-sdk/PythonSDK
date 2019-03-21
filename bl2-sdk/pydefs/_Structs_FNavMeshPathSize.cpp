@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FNavMeshPathSize()
+void Export_pystes_FNavMeshPathSize(py::object m)
 {
-    py::class_< FNavMeshPathSize >("FNavMeshPathSize")
+    py::class_< FNavMeshPathSize >(m, "FNavMeshPathSize")
         .def_readwrite("Size", &FNavMeshPathSize::Size)
         .def_readwrite("Height", &FNavMeshPathSize::Height)
         .def_readwrite("PolyColor", &FNavMeshPathSize::PolyColor)

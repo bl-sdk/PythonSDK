@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FProjectileEvents()
+void Export_pystes_FProjectileEvents(py::object m)
 {
-    py::class_< FProjectileEvents >("FProjectileEvents")
+    py::class_< FProjectileEvents >(m, "FProjectileEvents")
         .def_readwrite("TotalEvents", &FEventsBase::TotalEvents)
         .def_readwrite("EventsByClass", &FEventsBase::EventsByClass)
   ;

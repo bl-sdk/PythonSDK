@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGFxMovie()
+void Export_pystes_UGFxMovie(py::object m)
 {
-    py::class_< UGFxMovie,  UObject   >("UGFxMovie")
+    py::class_< UGFxMovie,  UObject   >(m, "UGFxMovie")
         .def_readwrite("pMovie", &UGFxMoviePlayer::pMovie)
         .def_readwrite("pCaptureKeys", &UGFxMoviePlayer::pCaptureKeys)
         .def_readwrite("pFocusIgnoreKeys", &UGFxMoviePlayer::pFocusIgnoreKeys)
@@ -124,6 +124,5 @@ void Export_pystes_UGFxMovie()
         .def("PostAdvance", &UGFxMoviePlayer::PostAdvance)
         .def("Advance", &UGFxMoviePlayer::Advance)
         .def("eventStart", &UGFxMoviePlayer::eventStart)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

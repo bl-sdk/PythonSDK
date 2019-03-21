@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActionSequencePawn()
+void Export_pystes_UActionSequencePawn(py::object m)
 {
-    py::class_< UActionSequencePawn,  UActionSequence   >("UActionSequencePawn")
+    py::class_< UActionSequencePawn,  UActionSequence   >(m, "UActionSequencePawn")
         .def_readwrite("MyGearboxMind", &UActionSequencePawn::MyGearboxMind)
         .def_readwrite("MyGearboxPawn", &UActionSequencePawn::MyGearboxPawn)
         .def("StaticClass", &UActionSequencePawn::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

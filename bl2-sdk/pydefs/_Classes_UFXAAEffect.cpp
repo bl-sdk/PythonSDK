@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFXAAEffect()
+void Export_pystes_UFXAAEffect(py::object m)
 {
-    py::class_< UFXAAEffect,  UPostProcessEffect   >("UFXAAEffect")
+    py::class_< UFXAAEffect,  UPostProcessEffect   >(m, "UFXAAEffect")
         .def("StaticClass", &UFXAAEffect::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

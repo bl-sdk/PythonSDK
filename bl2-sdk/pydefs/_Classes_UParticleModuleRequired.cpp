@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleRequired()
+void Export_pystes_UParticleModuleRequired(py::object m)
 {
-    py::class_< UParticleModuleRequired,  UObject   >("UParticleModuleRequired")
+    py::class_< UParticleModuleRequired,  UObject   >(m, "UParticleModuleRequired")
         .def_readwrite("Material", &UParticleModuleRequired::Material)
         .def_readwrite("ScreenAlignment", &UParticleModuleRequired::ScreenAlignment)
         .def_readwrite("SortMode", &UParticleModuleRequired::SortMode)
@@ -29,6 +29,5 @@ void Export_pystes_UParticleModuleRequired()
         .def_readwrite("NormalsCylinderDirection", &UParticleModuleRequired::NormalsCylinderDirection)
         .def_readwrite("LODValidity", &UParticleModule::LODValidity)
         .def("StaticClass", &UParticleModuleRequired::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

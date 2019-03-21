@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialInstanceTimeVarying()
+void Export_pystes_UMaterialInstanceTimeVarying(py::object m)
 {
-    py::class_< UMaterialInstanceTimeVarying,  UMaterialInstance   >("UMaterialInstanceTimeVarying")
+    py::class_< UMaterialInstanceTimeVarying,  UMaterialInstance   >(m, "UMaterialInstanceTimeVarying")
         .def_readwrite("Duration", &UMaterialInstanceTimeVarying::Duration)
         .def_readwrite("FontParameterValues", &UMaterialInstanceTimeVarying::FontParameterValues)
         .def_readwrite("ScalarParameterValues", &UMaterialInstanceTimeVarying::ScalarParameterValues)
@@ -24,6 +24,5 @@ void Export_pystes_UMaterialInstanceTimeVarying()
         .def("SetScalarCurveParameterValue", &UMaterialInstanceTimeVarying::SetScalarCurveParameterValue)
         .def("SetScalarParameterValue", &UMaterialInstanceTimeVarying::SetScalarParameterValue)
         .def("SetParent", &UMaterialInstanceTimeVarying::SetParent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

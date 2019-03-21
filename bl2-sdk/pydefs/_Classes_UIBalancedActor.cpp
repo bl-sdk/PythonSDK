@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIBalancedActor()
+void Export_pystes_UIBalancedActor(py::object m)
 {
-    py::class_< UIBalancedActor,  UInterface   >("UIBalancedActor")
+    py::class_< UIBalancedActor,  UInterface   >(m, "UIBalancedActor")
         .def("StaticClass", &UIBalancedActor::StaticClass, py::return_value_policy::reference)
         .def("GetBalancedActorTypeIdentifier", &UIBalancedActor::GetBalancedActorTypeIdentifier)
         .def("SetExpLevel", &UIBalancedActor::SetExpLevel)
@@ -15,6 +15,5 @@ void Export_pystes_UIBalancedActor()
         .def("GetExpLevel", &UIBalancedActor::GetExpLevel)
         .def("GetAwesomeLevel", &UIBalancedActor::GetAwesomeLevel)
         .def("GetGameStage", &UIBalancedActor::GetGameStage)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

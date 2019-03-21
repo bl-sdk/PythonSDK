@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCoordinatedAudioDefinition()
+void Export_pystes_FCoordinatedAudioDefinition(py::object m)
 {
-    py::class_< FCoordinatedAudioDefinition >("FCoordinatedAudioDefinition")
+    py::class_< FCoordinatedAudioDefinition >(m, "FCoordinatedAudioDefinition")
         .def_readwrite("TriggerEvent", &FCoordinatedAudioDefinition::TriggerEvent)
         .def_readwrite("TriggerTime", &FCoordinatedAudioDefinition::TriggerTime)
         .def_readwrite("RTPC", &FCoordinatedAudioDefinition::RTPC)

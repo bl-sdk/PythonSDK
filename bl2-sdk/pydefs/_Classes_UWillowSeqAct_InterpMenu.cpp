@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSeqAct_InterpMenu()
+void Export_pystes_UWillowSeqAct_InterpMenu(py::object m)
 {
-    py::class_< UWillowSeqAct_InterpMenu,  USeqAct_Interp   >("UWillowSeqAct_InterpMenu")
+    py::class_< UWillowSeqAct_InterpMenu,  USeqAct_Interp   >(m, "UWillowSeqAct_InterpMenu")
         .def_readwrite("IdleTime", &UWillowSeqAct_InterpMenu::IdleTime)
         .def_readwrite("ControllerSensitivityScale", &UWillowSeqAct_InterpMenu::ControllerSensitivityScale)
         .def_readwrite("MouseSensitivityScale", &UWillowSeqAct_InterpMenu::MouseSensitivityScale)
@@ -15,6 +15,5 @@ void Export_pystes_UWillowSeqAct_InterpMenu()
         .def_readwrite("InputTime", &UWillowSeqAct_InterpMenu::InputTime)
         .def("StaticClass", &UWillowSeqAct_InterpMenu::StaticClass, py::return_value_policy::reference)
         .def("InputAxis", &UWillowSeqAct_InterpMenu::InputAxis)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

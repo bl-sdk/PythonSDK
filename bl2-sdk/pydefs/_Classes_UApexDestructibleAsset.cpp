@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UApexDestructibleAsset()
+void Export_pystes_UApexDestructibleAsset(py::object m)
 {
-    py::class_< UApexDestructibleAsset,  UApexAsset   >("UApexDestructibleAsset")
+    py::class_< UApexDestructibleAsset,  UApexAsset   >(m, "UApexDestructibleAsset")
         .def_readwrite("MApexAsset", &UApexDestructibleAsset::MApexAsset)
         .def_readwrite("Materials", &UApexDestructibleAsset::Materials)
         .def_readwrite("FractureMaterials", &UApexDestructibleAsset::FractureMaterials)
@@ -15,6 +15,5 @@ void Export_pystes_UApexDestructibleAsset()
         .def_readwrite("DustEmitterName", &UApexDestructibleAsset::DustEmitterName)
         .def_readwrite("DestructibleParameters", &UApexDestructibleAsset::DestructibleParameters)
         .def("StaticClass", &UApexDestructibleAsset::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLightmassWorldInfoSettings()
+void Export_pystes_FLightmassWorldInfoSettings(py::object m)
 {
-    py::class_< FLightmassWorldInfoSettings >("FLightmassWorldInfoSettings")
+    py::class_< FLightmassWorldInfoSettings >(m, "FLightmassWorldInfoSettings")
         .def_readwrite("StaticLightingLevelScale", &FLightmassWorldInfoSettings::StaticLightingLevelScale)
         .def_readwrite("NumIndirectLightingBounces", &FLightmassWorldInfoSettings::NumIndirectLightingBounces)
         .def_readwrite("EnvironmentColor", &FLightmassWorldInfoSettings::EnvironmentColor)

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_CheckMapChangeConditions()
+void Export_pystes_UBehavior_CheckMapChangeConditions(py::object m)
 {
-    py::class_< UBehavior_CheckMapChangeConditions,  UBehaviorBase   >("UBehavior_CheckMapChangeConditions")
+    py::class_< UBehavior_CheckMapChangeConditions,  UBehaviorBase   >(m, "UBehavior_CheckMapChangeConditions")
         .def_readwrite("MapChangeCustomEvent", &UBehavior_CheckMapChangeConditions::MapChangeCustomEvent)
         .def_readwrite("PlayerBusyCustomEvent", &UBehavior_CheckMapChangeConditions::PlayerBusyCustomEvent)
         .def("StaticClass", &UBehavior_CheckMapChangeConditions::StaticClass, py::return_value_policy::reference)
@@ -13,6 +13,5 @@ void Export_pystes_UBehavior_CheckMapChangeConditions()
         .def("MapChangeEvent", &UBehavior_CheckMapChangeConditions::MapChangeEvent)
         .def("GetDestinationStationDefinition", &UBehavior_CheckMapChangeConditions::GetDestinationStationDefinition, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_CheckMapChangeConditions::ApplyBehaviorToContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

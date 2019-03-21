@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActorComponent()
+void Export_pystes_UActorComponent(py::object m)
 {
-    py::class_< UActorComponent,  UComponent   >("UActorComponent")
+    py::class_< UActorComponent,  UComponent   >(m, "UActorComponent")
         .def_readwrite("VfTable_IIWorldBody", &UActorComponent::VfTable_IIWorldBody)
         .def_readwrite("Scene", &UActorComponent::Scene)
         .def_readwrite("Owner", &UActorComponent::Owner)
@@ -29,6 +29,5 @@ void Export_pystes_UActorComponent()
         .def("ForceUpdate", &UActorComponent::ForceUpdate)
         .def("SetComponentRBFixed", &UActorComponent::SetComponentRBFixed)
         .def("SetTickGroup", &UActorComponent::SetTickGroup)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

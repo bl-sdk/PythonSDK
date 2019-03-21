@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPopulationFactoryWillowProjectile()
+void Export_pystes_UPopulationFactoryWillowProjectile(py::object m)
 {
-    py::class_< UPopulationFactoryWillowProjectile,  UPopulationFactory   >("UPopulationFactoryWillowProjectile")
+    py::class_< UPopulationFactoryWillowProjectile,  UPopulationFactory   >(m, "UPopulationFactoryWillowProjectile")
         .def_readwrite("AttachmentPointName", &UPopulationFactoryWillowProjectile::AttachmentPointName)
         .def_readwrite("SpawnDirection", &UPopulationFactoryWillowProjectile::SpawnDirection)
         .def_readwrite("ProjectileDefinition", &UPopulationFactoryWillowProjectile::ProjectileDefinition)
@@ -17,6 +17,5 @@ void Export_pystes_UPopulationFactoryWillowProjectile()
         .def("eventDestroyPopulationActor", &UPopulationFactoryWillowProjectile::eventDestroyPopulationActor)
         .def("eventCreatePopulationActor", &UPopulationFactoryWillowProjectile::eventCreatePopulationActor, py::return_value_policy::reference)
         .def("GetActorAllegiance", &UPopulationFactoryWillowProjectile::GetActorAllegiance, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowAccessControl()
+void Export_pystes_AWillowAccessControl(py::object m)
 {
-    py::class_< AWillowAccessControl,  AAccessControl   >("AWillowAccessControl")
+    py::class_< AWillowAccessControl,  AAccessControl   >(m, "AWillowAccessControl")
         .def("StaticClass", &AWillowAccessControl::StaticClass, py::return_value_policy::reference)
         .def("ForceKickPlayer", &AWillowAccessControl::ForceKickPlayer)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

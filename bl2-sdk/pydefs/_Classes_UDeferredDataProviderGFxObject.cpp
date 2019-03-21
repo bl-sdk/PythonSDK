@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDeferredDataProviderGFxObject()
+void Export_pystes_UDeferredDataProviderGFxObject(py::object m)
 {
-    py::class_< UDeferredDataProviderGFxObject,  UGFxObject   >("UDeferredDataProviderGFxObject")
+    py::class_< UDeferredDataProviderGFxObject,  UGFxObject   >(m, "UDeferredDataProviderGFxObject")
         .def_readwrite("BaseOwningMovie", &UDeferredDataProviderGFxObject::BaseOwningMovie)
         .def_readwrite("CachedObjects", &UDeferredDataProviderGFxObject::CachedObjects)
         .def("StaticClass", &UDeferredDataProviderGFxObject::StaticClass, py::return_value_policy::reference)
@@ -15,6 +15,5 @@ void Export_pystes_UDeferredDataProviderGFxObject()
         .def("RequestItemRange", &UDeferredDataProviderGFxObject::RequestItemRange, py::return_value_policy::reference)
         .def("RequestItemAt", &UDeferredDataProviderGFxObject::RequestItemAt, py::return_value_policy::reference)
         .def("Init", &UDeferredDataProviderGFxObject::Init)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

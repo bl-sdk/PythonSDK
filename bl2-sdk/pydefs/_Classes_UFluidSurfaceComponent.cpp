@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFluidSurfaceComponent()
+void Export_pystes_UFluidSurfaceComponent(py::object m)
 {
-    py::class_< UFluidSurfaceComponent,  UPrimitiveComponent   >("UFluidSurfaceComponent")
+    py::class_< UFluidSurfaceComponent,  UPrimitiveComponent   >(m, "UFluidSurfaceComponent")
         .def_readwrite("FluidMaterial", &UFluidSurfaceComponent::FluidMaterial)
         .def_readwrite("LightMapResolution", &UFluidSurfaceComponent::LightMapResolution)
         .def_readwrite("SimulationQuadsX", &UFluidSurfaceComponent::SimulationQuadsX)
@@ -50,6 +50,5 @@ void Export_pystes_UFluidSurfaceComponent()
         .def("SetSimulationPosition", &UFluidSurfaceComponent::SetSimulationPosition)
         .def("SetDetailPosition", &UFluidSurfaceComponent::SetDetailPosition)
         .def("ApplyForce", &UFluidSurfaceComponent::ApplyForce)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

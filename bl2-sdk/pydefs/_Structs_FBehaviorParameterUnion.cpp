@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBehaviorParameterUnion()
+void Export_pystes_FBehaviorParameterUnion(py::object m)
 {
-    py::class_< FBehaviorParameterUnion >("FBehaviorParameterUnion")
+    py::class_< FBehaviorParameterUnion >(m, "FBehaviorParameterUnion")
         .def_readwrite("ParameterName", &FBehaviorParameterUnion::ParameterName)
         .def_readwrite("VectorData", &FBehaviorParameterUnion::VectorData)
         .def_readwrite("ActorData", &FBehaviorParameterUnion::ActorData)

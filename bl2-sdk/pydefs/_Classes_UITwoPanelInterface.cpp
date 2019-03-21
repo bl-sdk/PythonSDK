@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UITwoPanelInterface()
+void Export_pystes_UITwoPanelInterface(py::object m)
 {
-    py::class_< UITwoPanelInterface,  UInterface   >("UITwoPanelInterface")
+    py::class_< UITwoPanelInterface,  UInterface   >(m, "UITwoPanelInterface")
         .def("StaticClass", &UITwoPanelInterface::StaticClass, py::return_value_policy::reference)
         .def("OnCellPressed", &UITwoPanelInterface::OnCellPressed)
         .def("OnLeftPanelInit", &UITwoPanelInterface::OnLeftPanelInit)
@@ -27,6 +27,5 @@ void Export_pystes_UITwoPanelInterface()
         .def("GetStoragePanelItems", &UITwoPanelInterface::GetStoragePanelItems)
         .def("GetTitle", &UITwoPanelInterface::GetTitle)
         .def("ShouldStartOnLeftPanel", &UITwoPanelInterface::ShouldStartOnLeftPanel)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

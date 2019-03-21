@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FFlag()
+void Export_pystes_FFlag(py::object m)
 {
-    py::class_< FFlag >("FFlag")
+    py::class_< FFlag >(m, "FFlag")
         .def_readwrite("Value", &FFlag::Value)
         .def_readwrite("Raised", &FFlag::Raised)
         .def_readwrite("Lowered", &FFlag::Lowered)

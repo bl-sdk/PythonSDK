@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGFxDataStoreBinding()
+void Export_pystes_FGFxDataStoreBinding(py::object m)
 {
-    py::class_< FGFxDataStoreBinding >("FGFxDataStoreBinding")
+    py::class_< FGFxDataStoreBinding >(m, "FGFxDataStoreBinding")
         .def_readwrite("DataSource", &FGFxDataStoreBinding::DataSource)
         .def_readwrite("VarPath", &FGFxDataStoreBinding::VarPath)
         .def_readwrite("ModelId", &FGFxDataStoreBinding::ModelId)

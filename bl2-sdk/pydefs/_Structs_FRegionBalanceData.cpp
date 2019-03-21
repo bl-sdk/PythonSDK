@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRegionBalanceData()
+void Export_pystes_FRegionBalanceData(py::object m)
 {
-    py::class_< FRegionBalanceData >("FRegionBalanceData")
+    py::class_< FRegionBalanceData >(m, "FRegionBalanceData")
         .def_readwrite("Region", &FRegionBalanceData::Region)
         .def_readwrite("MinDefaultGameStage", &FRegionBalanceData::MinDefaultGameStage)
         .def_readwrite("MaxDefaultGameStage", &FRegionBalanceData::MaxDefaultGameStage)

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ATemporalField()
+void Export_pystes_ATemporalField(py::object m)
 {
-    py::class_< ATemporalField,  AActor   >("ATemporalField")
+    py::class_< ATemporalField,  AActor   >(m, "ATemporalField")
         .def_readwrite("StaticMeshComponent", &ATemporalField::StaticMeshComponent)
         .def_readwrite("SkillEffect", &ATemporalField::SkillEffect)
         .def_readwrite("MyTickMultiplier", &ATemporalField::MyTickMultiplier)
@@ -21,6 +21,5 @@ void Export_pystes_ATemporalField()
         .def("GetFieldNormal", &ATemporalField::GetFieldNormal)
         .def("IsTemporalFieldDebugEnabled", &ATemporalField::IsTemporalFieldDebugEnabled)
         .def("ToggleTemporalFieldDebug", &ATemporalField::ToggleTemporalFieldDebug)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

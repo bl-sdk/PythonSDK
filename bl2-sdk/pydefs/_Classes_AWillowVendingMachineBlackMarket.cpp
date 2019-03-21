@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowVendingMachineBlackMarket()
+void Export_pystes_AWillowVendingMachineBlackMarket(py::object m)
 {
-    py::class_< AWillowVendingMachineBlackMarket,  AWillowVendingMachineBase   >("AWillowVendingMachineBlackMarket")
+    py::class_< AWillowVendingMachineBlackMarket,  AWillowVendingMachineBase   >(m, "AWillowVendingMachineBlackMarket")
         .def_readwrite("DefinitionData", &AWillowVendingMachineBlackMarket::DefinitionData)
         .def("StaticClass", &AWillowVendingMachineBlackMarket::StaticClass, py::return_value_policy::reference)
         .def("PlayerBuyItem", &AWillowVendingMachineBlackMarket::PlayerBuyItem)
@@ -19,6 +19,5 @@ void Export_pystes_AWillowVendingMachineBlackMarket()
         .def("GetItemList", &AWillowVendingMachineBlackMarket::GetItemList)
         .def("StaticGetSellingPriceForBlackMarketInventory", &AWillowVendingMachineBlackMarket::StaticGetSellingPriceForBlackMarketInventory)
         .def("GetSellingPriceForInventory", &AWillowVendingMachineBlackMarket::GetSellingPriceForInventory)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

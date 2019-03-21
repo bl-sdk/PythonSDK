@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpecialMoveInterface()
+void Export_pystes_USpecialMoveInterface(py::object m)
 {
-    py::class_< USpecialMoveInterface,  UInterface   >("USpecialMoveInterface")
+    py::class_< USpecialMoveInterface,  UInterface   >(m, "USpecialMoveInterface")
         .def("StaticClass", &USpecialMoveInterface::StaticClass, py::return_value_policy::reference)
         .def("SetReplicatedSMData", &USpecialMoveInterface::SetReplicatedSMData)
         .def("eventServerSpecialMove_StopAny", &USpecialMoveInterface::eventServerSpecialMove_StopAny)
@@ -17,6 +17,5 @@ void Export_pystes_USpecialMoveInterface()
         .def("GetSkelMesh", &USpecialMoveInterface::GetSkelMesh, py::return_value_policy::reference)
         .def("GetSMComponent", &USpecialMoveInterface::GetSMComponent, py::return_value_policy::reference)
         .def("GetActor", &USpecialMoveInterface::GetActor, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

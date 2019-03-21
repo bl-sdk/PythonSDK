@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowElevatorButton()
+void Export_pystes_AWillowElevatorButton(py::object m)
 {
-    py::class_< AWillowElevatorButton,  AWillowInteractiveObject   >("AWillowElevatorButton")
+    py::class_< AWillowElevatorButton,  AWillowInteractiveObject   >(m, "AWillowElevatorButton")
         .def_readwrite("Usage", &AWillowElevatorButton::Usage)
         .def_readwrite("ButtonState", &AWillowElevatorButton::ButtonState)
         .def_readwrite("CallFloor", &AWillowElevatorButton::CallFloor)
@@ -22,6 +22,5 @@ void Export_pystes_AWillowElevatorButton()
         .def("UpdateState", &AWillowElevatorButton::UpdateState)
         .def("CanBeUsedForAnyAssociatedElevator", &AWillowElevatorButton::CanBeUsedForAnyAssociatedElevator)
         .def("UseObject", &AWillowElevatorButton::UseObject)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

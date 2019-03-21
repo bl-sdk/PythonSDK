@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGFxMovieDrawStyleSplitscreen()
+void Export_pystes_UGFxMovieDrawStyleSplitscreen(py::object m)
 {
-    py::class_< UGFxMovieDrawStyleSplitscreen,  UGFxMovieDrawStyle   >("UGFxMovieDrawStyleSplitscreen")
+    py::class_< UGFxMovieDrawStyleSplitscreen,  UGFxMovieDrawStyle   >(m, "UGFxMovieDrawStyleSplitscreen")
         .def("StaticClass", &UGFxMovieDrawStyleSplitscreen::StaticClass, py::return_value_policy::reference)
         .def("eventRequiresClientInstance", &UGFxMovieDrawStyleSplitscreen::eventRequiresClientInstance)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

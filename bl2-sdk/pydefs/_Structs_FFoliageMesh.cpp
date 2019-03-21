@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FFoliageMesh()
+void Export_pystes_FFoliageMesh(py::object m)
 {
-    py::class_< FFoliageMesh >("FFoliageMesh")
+    py::class_< FFoliageMesh >(m, "FFoliageMesh")
         .def_readwrite("InstanceStaticMesh", &FFoliageMesh::InstanceStaticMesh)
         .def_readwrite("Material", &FFoliageMesh::Material)
         .def_readwrite("MaxDrawRadius", &FFoliageMesh::MaxDrawRadius)

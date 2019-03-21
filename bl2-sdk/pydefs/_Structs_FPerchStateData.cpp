@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPerchStateData()
+void Export_pystes_FPerchStateData(py::object m)
 {
-    py::class_< FPerchStateData >("FPerchStateData")
+    py::class_< FPerchStateData >(m, "FPerchStateData")
         .def_readwrite("AttachmentName", &FPerchStateData::AttachmentName)
         .def_readwrite("StaticMesh", &FPerchStateData::StaticMesh)
         .def_readwrite("SkelMesh", &FPerchStateData::SkelMesh)

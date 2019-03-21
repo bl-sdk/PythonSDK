@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGFxDialogBox()
+void Export_pystes_UWillowGFxDialogBox(py::object m)
 {
-    py::class_< UWillowGFxDialogBox,  UWillowGFxMovie   >("UWillowGFxDialogBox")
+    py::class_< UWillowGFxDialogBox,  UWillowGFxMovie   >(m, "UWillowGFxDialogBox")
         .def_readwrite("Layouts", &UWillowGFxDialogBox::Layouts)
         .def_readwrite("Buttons", &UWillowGFxDialogBox::Buttons)
         .def_readwrite("DlgCaptionMarkup", &UWillowGFxDialogBox::DlgCaptionMarkup)
@@ -73,6 +73,5 @@ void Export_pystes_UWillowGFxDialogBox()
         .def("OnHandleInputKey", &UWillowGFxDialogBox::OnHandleInputKey)
         .def("OnButtonClicked", &UWillowGFxDialogBox::OnButtonClicked)
         .def("OnStorageDeviceChanged", &UWillowGFxDialogBox::OnStorageDeviceChanged)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

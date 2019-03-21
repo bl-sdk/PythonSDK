@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowHUDGFxMovieDefinition()
+void Export_pystes_UWillowHUDGFxMovieDefinition(py::object m)
 {
-    py::class_< UWillowHUDGFxMovieDefinition,  UWillowGFxMovie3DDefinition   >("UWillowHUDGFxMovieDefinition")
+    py::class_< UWillowHUDGFxMovieDefinition,  UWillowGFxMovie3DDefinition   >(m, "UWillowHUDGFxMovieDefinition")
         .def_readwrite("MinimapRadius", &UWillowHUDGFxMovieDefinition::MinimapRadius)
         .def_readwrite("MinimapRadiusInVehicle", &UWillowHUDGFxMovieDefinition::MinimapRadiusInVehicle)
         .def_readwrite("MinimapRadiusLerpTime", &UWillowHUDGFxMovieDefinition::MinimapRadiusLerpTime)
@@ -28,6 +28,5 @@ void Export_pystes_UWillowHUDGFxMovieDefinition()
         .def_readwrite("ScaledElements", &UWillowHUDGFxMovieDefinition::ScaledElements)
         .def_readwrite("InjuredStringReplacements", &UWillowHUDGFxMovieDefinition::InjuredStringReplacements)
         .def("StaticClass", &UWillowHUDGFxMovieDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

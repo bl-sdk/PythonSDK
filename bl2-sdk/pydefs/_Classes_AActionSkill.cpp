@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AActionSkill()
+void Export_pystes_AActionSkill(py::object m)
 {
-    py::class_< AActionSkill,  AActor   >("AActionSkill")
+    py::class_< AActionSkill,  AActor   >(m, "AActionSkill")
         .def_readwrite("VfTable_IIInstanceData", &AActionSkill::VfTable_IIInstanceData)
         .def_readwrite("VfTable_IITimerBehavior", &AActionSkill::VfTable_IITimerBehavior)
         .def_readwrite("VfTable_IICustomEvent", &AActionSkill::VfTable_IICustomEvent)
@@ -103,6 +103,5 @@ void Export_pystes_AActionSkill()
         .def("OnActionSkillActiveAbilityActivated", &AActionSkill::OnActionSkillActiveAbilityActivated)
         .def("SetBehaviorProviderDefinition", &AActionSkill::SetBehaviorProviderDefinition)
         .def("GetBehaviorProviderDefinition", &AActionSkill::GetBehaviorProviderDefinition, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

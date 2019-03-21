@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlinePlayerInterface()
+void Export_pystes_UOnlinePlayerInterface(py::object m)
 {
-    py::class_< UOnlinePlayerInterface,  UInterface   >("UOnlinePlayerInterface")
+    py::class_< UOnlinePlayerInterface,  UInterface   >(m, "UOnlinePlayerInterface")
         .def("StaticClass", &UOnlinePlayerInterface::StaticClass, py::return_value_policy::reference)
         .def("GetAchievements", &UOnlinePlayerInterface::GetAchievements)
         .def("ClearReadAchievementsCompleteDelegate", &UOnlinePlayerInterface::ClearReadAchievementsCompleteDelegate)
@@ -122,6 +122,5 @@ void Export_pystes_UOnlinePlayerInterface()
         .def("OnMutingChange", &UOnlinePlayerInterface::OnMutingChange)
         .def("OnLoginCancelled", &UOnlinePlayerInterface::OnLoginCancelled)
         .def("OnLoginChange", &UOnlinePlayerInterface::OnLoginChange)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

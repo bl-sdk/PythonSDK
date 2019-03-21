@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_ChargeTarget()
+void Export_pystes_UAction_ChargeTarget(py::object m)
 {
-    py::class_< UAction_ChargeTarget,  UAction_BasicAttack   >("UAction_ChargeTarget")
+    py::class_< UAction_ChargeTarget,  UAction_BasicAttack   >(m, "UAction_ChargeTarget")
         .def_readwrite("MissDistance", &UAction_ChargeTarget::MissDistance)
         .def_readwrite("StrikeDistance", &UAction_ChargeTarget::StrikeDistance)
         .def_readwrite("ChargeStart", &UAction_ChargeTarget::ChargeStart)
@@ -16,6 +16,5 @@ void Export_pystes_UAction_ChargeTarget()
         .def("StopCharge", &UAction_ChargeTarget::StopCharge)
         .def("ChargeFinished", &UAction_ChargeTarget::ChargeFinished)
         .def("eventCanRun", &UAction_ChargeTarget::eventCanRun)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

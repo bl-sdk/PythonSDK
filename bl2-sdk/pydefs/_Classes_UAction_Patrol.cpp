@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_Patrol()
+void Export_pystes_UAction_Patrol(py::object m)
 {
-    py::class_< UAction_Patrol,  UAction_FollowPath   >("UAction_Patrol")
+    py::class_< UAction_Patrol,  UAction_FollowPath   >(m, "UAction_Patrol")
         .def_readwrite("TimeBetweenPatrolMovement", &UAction_Patrol::TimeBetweenPatrolMovement)
         .def_readwrite("TimeOfNextRandomPatrol", &UAction_Patrol::TimeOfNextRandomPatrol)
         .def_readwrite("HideLocation", &UAction_Patrol::HideLocation)
@@ -23,6 +23,5 @@ void Export_pystes_UAction_Patrol()
         .def("eventStop", &UAction_Patrol::eventStop)
         .def("eventStart", &UAction_Patrol::eventStart)
         .def("eventScriptCleanUp", &UAction_Patrol::eventScriptCleanUp)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

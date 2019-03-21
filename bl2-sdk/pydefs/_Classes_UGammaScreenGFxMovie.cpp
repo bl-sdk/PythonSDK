@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGammaScreenGFxMovie()
+void Export_pystes_UGammaScreenGFxMovie(py::object m)
 {
-    py::class_< UGammaScreenGFxMovie,  UWillowGFxMovie3D   >("UGammaScreenGFxMovie")
+    py::class_< UGammaScreenGFxMovie,  UWillowGFxMovie3D   >(m, "UGammaScreenGFxMovie")
         .def("StaticClass", &UGammaScreenGFxMovie::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FContentState()
+void Export_pystes_FContentState(py::object m)
 {
-    py::class_< FContentState >("FContentState")
+    py::class_< FContentState >(m, "FContentState")
         .def_readwrite("LicensedMask", &FContentState::LicensedMask)
         .def_readwrite("InstalledMask", &FContentState::InstalledMask)
   ;

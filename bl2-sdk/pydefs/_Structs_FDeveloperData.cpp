@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDeveloperData()
+void Export_pystes_FDeveloperData(py::object m)
 {
-    py::class_< FDeveloperData >("FDeveloperData")
+    py::class_< FDeveloperData >(m, "FDeveloperData")
         .def_readwrite("Gamertag", &FDeveloperData::Gamertag)
         .def_readwrite("UniqueId", &FDeveloperData::UniqueId)
         .def_readwrite("Platform", &FDeveloperData::Platform)

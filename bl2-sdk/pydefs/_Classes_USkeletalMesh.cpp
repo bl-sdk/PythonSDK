@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USkeletalMesh()
+void Export_pystes_USkeletalMesh(py::object m)
 {
-    py::class_< USkeletalMesh,  UObject   >("USkeletalMesh")
+    py::class_< USkeletalMesh,  UObject   >(m, "USkeletalMesh")
         .def_readwrite("Bounds", &USkeletalMesh::Bounds)
         .def_readwrite("Materials", &USkeletalMesh::Materials)
         .def_readwrite("ClothingAssets", &USkeletalMesh::ClothingAssets)
@@ -100,6 +100,5 @@ void Export_pystes_USkeletalMesh()
         .def_readwrite("CachedRefBoneAtoms", &USkeletalMesh::CachedRefBoneAtoms)
         .def_readwrite("CachedAnimSetLinkupName", &USkeletalMesh::CachedAnimSetLinkupName)
         .def("StaticClass", &USkeletalMesh::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

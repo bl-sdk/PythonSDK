@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCodecMovieFallback()
+void Export_pystes_UCodecMovieFallback(py::object m)
 {
-    py::class_< UCodecMovieFallback,  UCodecMovie   >("UCodecMovieFallback")
+    py::class_< UCodecMovieFallback,  UCodecMovie   >(m, "UCodecMovieFallback")
         .def_readwrite("CurrentTime", &UCodecMovieFallback::CurrentTime)
         .def("StaticClass", &UCodecMovieFallback::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

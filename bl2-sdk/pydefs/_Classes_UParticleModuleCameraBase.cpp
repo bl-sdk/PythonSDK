@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleCameraBase()
+void Export_pystes_UParticleModuleCameraBase(py::object m)
 {
-    py::class_< UParticleModuleCameraBase,  UParticleModule   >("UParticleModuleCameraBase")
+    py::class_< UParticleModuleCameraBase,  UParticleModule   >(m, "UParticleModuleCameraBase")
         .def("StaticClass", &UParticleModuleCameraBase::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

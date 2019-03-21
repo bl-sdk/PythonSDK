@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_AIMoveToActor()
+void Export_pystes_USeqAct_AIMoveToActor(py::object m)
 {
-    py::class_< USeqAct_AIMoveToActor,  USequenceAction   >("USeqAct_AIMoveToActor")
+    py::class_< USeqAct_AIMoveToActor,  USequenceAction   >(m, "USeqAct_AIMoveToActor")
         .def_readwrite("Destination", &USeqAct_AIMoveToActor::Destination)
         .def_readwrite("MovementSpeedModifier", &USeqAct_AIMoveToActor::MovementSpeedModifier)
         .def_readwrite("LookAt", &USeqAct_AIMoveToActor::LookAt)
@@ -16,6 +16,5 @@ void Export_pystes_USeqAct_AIMoveToActor()
         .def("eventGetObjClassVersion", &USeqAct_AIMoveToActor::eventGetObjClassVersion)
         .def("eventUpdate", &USeqAct_Latent::eventUpdate)
         .def("AbortFor", &USeqAct_Latent::AbortFor)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

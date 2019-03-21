@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPawnClassEventData()
+void Export_pystes_FPawnClassEventData(py::object m)
 {
-    py::class_< FPawnClassEventData >("FPawnClassEventData")
+    py::class_< FPawnClassEventData >(m, "FPawnClassEventData")
         .def_readwrite("PawnClassName", &FPawnClassEventData::PawnClassName)
   ;
 }

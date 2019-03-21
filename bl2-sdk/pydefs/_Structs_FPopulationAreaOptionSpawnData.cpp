@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPopulationAreaOptionSpawnData()
+void Export_pystes_FPopulationAreaOptionSpawnData(py::object m)
 {
-    py::class_< FPopulationAreaOptionSpawnData >("FPopulationAreaOptionSpawnData")
+    py::class_< FPopulationAreaOptionSpawnData >(m, "FPopulationAreaOptionSpawnData")
         .def_readwrite("Data", &FPopulationAreaOptionSpawnData::Data)
   ;
 }

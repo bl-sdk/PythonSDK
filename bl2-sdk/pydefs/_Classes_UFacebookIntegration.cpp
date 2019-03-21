@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFacebookIntegration()
+void Export_pystes_UFacebookIntegration(py::object m)
 {
-    py::class_< UFacebookIntegration,  UObject   >("UFacebookIntegration")
+    py::class_< UFacebookIntegration,  UObject   >(m, "UFacebookIntegration")
         .def_readwrite("AppID", &UFacebookIntegration::AppID)
         .def_readwrite("UserName", &UFacebookIntegration::UserName)
         .def_readwrite("UserId", &UFacebookIntegration::UserId)
@@ -29,6 +29,5 @@ void Export_pystes_UFacebookIntegration()
         .def("eventIsAuthorized", &UFacebookIntegration::eventIsAuthorized)
         .def("eventAuthorize", &UFacebookIntegration::eventAuthorize)
         .def("eventInit", &UFacebookIntegration::eventInit)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPathFindData()
+void Export_pystes_FPathFindData(py::object m)
 {
-    py::class_< FPathFindData >("FPathFindData")
+    py::class_< FPathFindData >(m, "FPathFindData")
         .def_readwrite("Path", &FPathFindData::Path)
         .def_readwrite("FinalDest", &FPathFindData::FinalDest)
         .def_readwrite("MaxRangeToDest", &FPathFindData::MaxRangeToDest)

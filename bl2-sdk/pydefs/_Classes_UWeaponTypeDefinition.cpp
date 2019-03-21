@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWeaponTypeDefinition()
+void Export_pystes_UWeaponTypeDefinition(py::object m)
 {
-    py::class_< UWeaponTypeDefinition,  UWillowInventoryDefinition   >("UWeaponTypeDefinition")
+    py::class_< UWeaponTypeDefinition,  UWillowInventoryDefinition   >(m, "UWeaponTypeDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UWeaponTypeDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("VfTable_IIConstructObject", &UWeaponTypeDefinition::VfTable_IIConstructObject)
         .def_readwrite("WeaponType", &UWeaponTypeDefinition::WeaponType)
@@ -198,6 +198,5 @@ void Export_pystes_UWeaponTypeDefinition()
         .def("GetHolsteredWeaponSizeType", &UWeaponTypeDefinition::GetHolsteredWeaponSizeType)
         .def("SetBehaviorProviderDefinition", &UWeaponTypeDefinition::SetBehaviorProviderDefinition)
         .def("GetBehaviorProviderDefinition", &UWeaponTypeDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackBehaviors()
+void Export_pystes_UInterpTrackBehaviors(py::object m)
 {
-    py::class_< UInterpTrackBehaviors,  UInterpTrack   >("UInterpTrackBehaviors")
+    py::class_< UInterpTrackBehaviors,  UInterpTrack   >(m, "UInterpTrackBehaviors")
         .def_readwrite("VfTable_IIConstructObject", &UInterpTrackBehaviors::VfTable_IIConstructObject)
         .def_readwrite("VfTable_IIBehaviorProvider", &UInterpTrackBehaviors::VfTable_IIBehaviorProvider)
         .def_readwrite("LastAddedKeyFrameName", &UInterpTrackBehaviors::LastAddedKeyFrameName)
@@ -15,6 +15,5 @@ void Export_pystes_UInterpTrackBehaviors()
         .def("BehaviorKeyFrameEvent", &UInterpTrackBehaviors::BehaviorKeyFrameEvent)
         .def("SetBehaviorProviderDefinition", &UInterpTrackBehaviors::SetBehaviorProviderDefinition)
         .def("GetBehaviorProviderDefinition", &UInterpTrackBehaviors::GetBehaviorProviderDefinition, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

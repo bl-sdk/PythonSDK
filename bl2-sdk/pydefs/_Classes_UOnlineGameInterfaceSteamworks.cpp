@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineGameInterfaceSteamworks()
+void Export_pystes_UOnlineGameInterfaceSteamworks(py::object m)
 {
-    py::class_< UOnlineGameInterfaceSteamworks,  UOnlineGameInterfaceImpl   >("UOnlineGameInterfaceSteamworks")
+    py::class_< UOnlineGameInterfaceSteamworks,  UOnlineGameInterfaceImpl   >(m, "UOnlineGameInterfaceSteamworks")
         .def_readwrite("QueryToRulesResponseMap", &UOnlineGameInterfaceSteamworks::QueryToRulesResponseMap)
         .def_readwrite("QueryToPingResponseMap", &UOnlineGameInterfaceSteamworks::QueryToPingResponseMap)
         .def_readwrite("ServerListResponse", &UOnlineGameInterfaceSteamworks::ServerListResponse)
@@ -38,6 +38,5 @@ void Export_pystes_UOnlineGameInterfaceSteamworks()
         .def("ClearGameInviteAcceptedDelegate", &UOnlineGameInterfaceSteamworks::ClearGameInviteAcceptedDelegate)
         .def("AddGameInviteAcceptedDelegate", &UOnlineGameInterfaceSteamworks::AddGameInviteAcceptedDelegate)
         .def("UpdateOnlineGame", &UOnlineGameInterfaceSteamworks::UpdateOnlineGame)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

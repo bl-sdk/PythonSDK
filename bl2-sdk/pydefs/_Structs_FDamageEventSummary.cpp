@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDamageEventSummary()
+void Export_pystes_FDamageEventSummary(py::object m)
 {
-    py::class_< FDamageEventSummary >("FDamageEventSummary")
+    py::class_< FDamageEventSummary >(m, "FDamageEventSummary")
         .def_readwrite("InitialDamage", &FDamageEventSummary::InitialDamage)
         .def_readwrite("AIDamageScaleReduction", &FDamageEventSummary::AIDamageScaleReduction)
         .def_readwrite("DamageSourceReduction", &FDamageEventSummary::DamageSourceReduction)

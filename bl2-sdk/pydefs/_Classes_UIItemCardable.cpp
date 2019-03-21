@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIItemCardable()
+void Export_pystes_UIItemCardable(py::object m)
 {
-    py::class_< UIItemCardable,  UInterface   >("UIItemCardable")
+    py::class_< UIItemCardable,  UInterface   >(m, "UIItemCardable")
         .def("StaticClass", &UIItemCardable::StaticClass, py::return_value_policy::reference)
         .def("IsUsefulToThisPlayer", &UIItemCardable::IsUsefulToThisPlayer)
         .def("IsReadied", &UIItemCardable::IsReadied)
@@ -22,6 +22,5 @@ void Export_pystes_UIItemCardable()
         .def("GenerateFunStatsText", &UIItemCardable::GenerateFunStatsText)
         .def("GetInventoryStatTextData", &UIItemCardable::GetInventoryStatTextData)
         .def("GetInventoryStatNumberData", &UIItemCardable::GetInventoryStatNumberData)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

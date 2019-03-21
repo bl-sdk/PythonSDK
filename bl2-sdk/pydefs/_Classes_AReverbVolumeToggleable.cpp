@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AReverbVolumeToggleable()
+void Export_pystes_AReverbVolumeToggleable(py::object m)
 {
-    py::class_< AReverbVolumeToggleable,  AReverbVolume   >("AReverbVolumeToggleable")
+    py::class_< AReverbVolumeToggleable,  AReverbVolume   >(m, "AReverbVolumeToggleable")
         .def("StaticClass", &AReverbVolumeToggleable::StaticClass, py::return_value_policy::reference)
         .def("OnToggle", &AReverbVolumeToggleable::OnToggle)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

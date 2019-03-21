@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UExposureUtilityBasicCaching()
+void Export_pystes_UExposureUtilityBasicCaching(py::object m)
 {
-    py::class_< UExposureUtilityBasicCaching,  UExposureUtilityBase   >("UExposureUtilityBasicCaching")
+    py::class_< UExposureUtilityBasicCaching,  UExposureUtilityBase   >(m, "UExposureUtilityBasicCaching")
         .def_readwrite("MaxCacheTime", &UExposureUtilityBasicCaching::MaxCacheTime)
         .def_readwrite("DistanceClose", &UExposureUtilityBasicCaching::DistanceClose)
         .def_readwrite("DistanceMed", &UExposureUtilityBasicCaching::DistanceMed)
@@ -20,6 +20,5 @@ void Export_pystes_UExposureUtilityBasicCaching()
         .def_readwrite("HasMovedDistThresholdPlayer", &UExposureUtilityBasicCaching::HasMovedDistThresholdPlayer)
         .def_readwrite("CachedExposures", &UExposureUtilityBasicCaching::CachedExposures)
         .def("StaticClass", &UExposureUtilityBasicCaching::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

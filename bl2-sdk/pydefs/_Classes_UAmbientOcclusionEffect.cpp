@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAmbientOcclusionEffect()
+void Export_pystes_UAmbientOcclusionEffect(py::object m)
 {
-    py::class_< UAmbientOcclusionEffect,  UPostProcessEffect   >("UAmbientOcclusionEffect")
+    py::class_< UAmbientOcclusionEffect,  UPostProcessEffect   >(m, "UAmbientOcclusionEffect")
         .def_readwrite("OcclusionColor", &UAmbientOcclusionEffect::OcclusionColor)
         .def_readwrite("OcclusionPower", &UAmbientOcclusionEffect::OcclusionPower)
         .def_readwrite("OcclusionScale", &UAmbientOcclusionEffect::OcclusionScale)
@@ -26,6 +26,5 @@ void Export_pystes_UAmbientOcclusionEffect()
         .def_readwrite("HistoryConvergenceTime", &UAmbientOcclusionEffect::HistoryConvergenceTime)
         .def_readwrite("HistoryWeightConvergenceTime", &UAmbientOcclusionEffect::HistoryWeightConvergenceTime)
         .def("StaticClass", &UAmbientOcclusionEffect::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

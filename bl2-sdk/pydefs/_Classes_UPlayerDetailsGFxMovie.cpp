@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerDetailsGFxMovie()
+void Export_pystes_UPlayerDetailsGFxMovie(py::object m)
 {
-    py::class_< UPlayerDetailsGFxMovie,  UWillowGFxMovie   >("UPlayerDetailsGFxMovie")
+    py::class_< UPlayerDetailsGFxMovie,  UWillowGFxMovie   >(m, "UPlayerDetailsGFxMovie")
         .def_readwrite("PlayerDetailsObject", &UPlayerDetailsGFxMovie::PlayerDetailsObject)
         .def_readwrite("OwningMovie", &UPlayerDetailsGFxMovie::OwningMovie)
         .def_readonly("UnknownData00", &UPlayerDetailsGFxMovie::UnknownData00)
@@ -16,6 +16,5 @@ void Export_pystes_UPlayerDetailsGFxMovie()
         .def("eventOnClose", &UPlayerDetailsGFxMovie::eventOnClose)
         .def("eventStart", &UPlayerDetailsGFxMovie::eventStart)
         .def("OnLoad", &UPlayerDetailsGFxMovie::OnLoad)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

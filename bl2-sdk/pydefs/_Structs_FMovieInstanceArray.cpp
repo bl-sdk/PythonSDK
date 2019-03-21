@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMovieInstanceArray()
+void Export_pystes_FMovieInstanceArray(py::object m)
 {
-    py::class_< FMovieInstanceArray >("FMovieInstanceArray")
+    py::class_< FMovieInstanceArray >(m, "FMovieInstanceArray")
         .def_readwrite("Movies", &FMovieInstanceArray::Movies)
         .def_readwrite("PoolParent", &FMovieInstanceArray::PoolParent)
   ;

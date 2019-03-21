@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCreditsLineDefinition()
+void Export_pystes_UCreditsLineDefinition(py::object m)
 {
-    py::class_< UCreditsLineDefinition,  UGBXDefinition   >("UCreditsLineDefinition")
+    py::class_< UCreditsLineDefinition,  UGBXDefinition   >(m, "UCreditsLineDefinition")
         .def_readwrite("LinkageName", &UCreditsLineDefinition::LinkageName)
         .def("StaticClass", &UCreditsLineDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

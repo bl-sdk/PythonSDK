@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSeqAct_ClientFlagSet()
+void Export_pystes_UWillowSeqAct_ClientFlagSet(py::object m)
 {
-    py::class_< UWillowSeqAct_ClientFlagSet,  USequenceAction   >("UWillowSeqAct_ClientFlagSet")
+    py::class_< UWillowSeqAct_ClientFlagSet,  USequenceAction   >(m, "UWillowSeqAct_ClientFlagSet")
         .def_readwrite("ClientFlagName", &UWillowSeqAct_ClientFlagSet::ClientFlagName)
         .def("StaticClass", &UWillowSeqAct_ClientFlagSet::StaticClass, py::return_value_policy::reference)
         .def("eventActivated", &UWillowSeqAct_ClientFlagSet::eventActivated)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

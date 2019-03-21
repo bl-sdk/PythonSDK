@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ATrigger_PawnsOnly()
+void Export_pystes_ATrigger_PawnsOnly(py::object m)
 {
-    py::class_< ATrigger_PawnsOnly,  ATrigger   >("ATrigger_PawnsOnly")
+    py::class_< ATrigger_PawnsOnly,  ATrigger   >(m, "ATrigger_PawnsOnly")
         .def("StaticClass", &ATrigger_PawnsOnly::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

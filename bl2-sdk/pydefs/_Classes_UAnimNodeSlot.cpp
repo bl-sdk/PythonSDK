@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNodeSlot()
+void Export_pystes_UAnimNodeSlot(py::object m)
 {
-    py::class_< UAnimNodeSlot,  UAnimNodeBlendBase   >("UAnimNodeSlot")
+    py::class_< UAnimNodeSlot,  UAnimNodeBlendBase   >(m, "UAnimNodeSlot")
         .def_readwrite("PendingBlendOutTime", &UAnimNodeSlot::PendingBlendOutTime)
         .def_readwrite("CustomChildIndex", &UAnimNodeSlot::CustomChildIndex)
         .def_readwrite("TargetChildIndex", &UAnimNodeSlot::TargetChildIndex)
@@ -24,6 +24,5 @@ void Export_pystes_UAnimNodeSlot()
         .def("GetPlayedAnimation", &UAnimNodeSlot::GetPlayedAnimation)
         .def("PlayCustomAnimByDuration", &UAnimNodeSlot::PlayCustomAnimByDuration)
         .def("PlayCustomAnim", &UAnimNodeSlot::PlayCustomAnim)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

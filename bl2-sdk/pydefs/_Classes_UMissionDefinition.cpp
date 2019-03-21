@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMissionDefinition()
+void Export_pystes_UMissionDefinition(py::object m)
 {
-    py::class_< UMissionDefinition,  UGBXDefinition   >("UMissionDefinition")
+    py::class_< UMissionDefinition,  UGBXDefinition   >(m, "UMissionDefinition")
         .def_readwrite("VfTable_IIBalancedActor", &UMissionDefinition::VfTable_IIBalancedActor)
         .def_readwrite("VfTable_IIBehaviorProvider", &UMissionDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("VfTable_IIDlcLicensableObject", &UMissionDefinition::VfTable_IIDlcLicensableObject)
@@ -70,6 +70,5 @@ void Export_pystes_UMissionDefinition()
         .def("GetExpLevel", &UMissionDefinition::GetExpLevel)
         .def("GetAwesomeLevel", &UMissionDefinition::GetAwesomeLevel)
         .def("GetGameStage", &UMissionDefinition::GetGameStage)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerBehavior_ToggleMeleeWeapon()
+void Export_pystes_UPlayerBehavior_ToggleMeleeWeapon(py::object m)
 {
-    py::class_< UPlayerBehavior_ToggleMeleeWeapon,  UPlayerBehaviorBase   >("UPlayerBehavior_ToggleMeleeWeapon")
+    py::class_< UPlayerBehavior_ToggleMeleeWeapon,  UPlayerBehaviorBase   >(m, "UPlayerBehavior_ToggleMeleeWeapon")
         .def("StaticClass", &UPlayerBehavior_ToggleMeleeWeapon::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UPlayerBehavior_ToggleMeleeWeapon::ApplyBehaviorToContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

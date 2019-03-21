@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AGameInfo()
+void Export_pystes_AGameInfo(py::object m)
 {
-    py::class_< AGameInfo,  AInfo   >("AGameInfo")
+    py::class_< AGameInfo,  AInfo   >(m, "AGameInfo")
         .def_readwrite("CauseEventCommand", &AGameInfo::CauseEventCommand)
         .def_readwrite("BugLocString", &AGameInfo::BugLocString)
         .def_readwrite("BugRotString", &AGameInfo::BugRotString)
@@ -252,6 +252,5 @@ void Export_pystes_AGameInfo()
         .def("eventPreBeginPlay", &AGameInfo::eventPreBeginPlay)
         .def("GetMapCommonPackageName", &AGameInfo::GetMapCommonPackageName)
         .def("GetSupportedGameTypes", &AGameInfo::GetSupportedGameTypes)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

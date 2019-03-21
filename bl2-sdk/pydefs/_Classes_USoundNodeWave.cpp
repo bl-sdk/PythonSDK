@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USoundNodeWave()
+void Export_pystes_USoundNodeWave(py::object m)
 {
-    py::class_< USoundNodeWave,  USoundNode   >("USoundNodeWave")
+    py::class_< USoundNodeWave,  USoundNode   >(m, "USoundNodeWave")
         .def_readwrite("CompressionQuality", &USoundNodeWave::CompressionQuality)
         .def_readwrite("TTSSpeaker", &USoundNodeWave::TTSSpeaker)
         .def_readwrite("DecompressionType", &USoundNodeWave::DecompressionType)
@@ -29,6 +29,5 @@ void Export_pystes_USoundNodeWave()
         .def_readwrite("LocalizedSubtitles", &USoundNodeWave::LocalizedSubtitles)
         .def("StaticClass", &USoundNodeWave::StaticClass, py::return_value_policy::reference)
         .def("eventGeneratePCMData", &USoundNodeWave::eventGeneratePCMData)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

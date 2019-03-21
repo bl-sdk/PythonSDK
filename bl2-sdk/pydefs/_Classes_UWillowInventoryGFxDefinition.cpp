@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowInventoryGFxDefinition()
+void Export_pystes_UWillowInventoryGFxDefinition(py::object m)
 {
-    py::class_< UWillowInventoryGFxDefinition,  UWillowGFxThirdPersonDefinition   >("UWillowInventoryGFxDefinition")
+    py::class_< UWillowInventoryGFxDefinition,  UWillowGFxThirdPersonDefinition   >(m, "UWillowInventoryGFxDefinition")
         .def_readwrite("TF_Standard", &UWillowInventoryGFxDefinition::TF_Standard)
         .def_readwrite("TF_Trash", &UWillowInventoryGFxDefinition::TF_Trash)
         .def_readwrite("TF_Favorite", &UWillowInventoryGFxDefinition::TF_Favorite)
@@ -15,6 +15,5 @@ void Export_pystes_UWillowInventoryGFxDefinition()
         .def_readwrite("ExternalTextureMap", &UWillowInventoryGFxDefinition::ExternalTextureMap)
         .def_readwrite("CardExternalTextureMap", &UWillowInventoryGFxDefinition::CardExternalTextureMap)
         .def("StaticClass", &UWillowInventoryGFxDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

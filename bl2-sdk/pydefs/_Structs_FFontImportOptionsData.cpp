@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FFontImportOptionsData()
+void Export_pystes_FFontImportOptionsData(py::object m)
 {
-    py::class_< FFontImportOptionsData >("FFontImportOptionsData")
+    py::class_< FFontImportOptionsData >(m, "FFontImportOptionsData")
         .def_readwrite("FontName", &FFontImportOptionsData::FontName)
         .def_readwrite("Height", &FFontImportOptionsData::Height)
         .def_readwrite("CharacterSet", &FFontImportOptionsData::CharacterSet)

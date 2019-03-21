@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAttributeInitializationDefinition()
+void Export_pystes_UAttributeInitializationDefinition(py::object m)
 {
-    py::class_< UAttributeInitializationDefinition,  UGBXDefinition   >("UAttributeInitializationDefinition")
+    py::class_< UAttributeInitializationDefinition,  UGBXDefinition   >(m, "UAttributeInitializationDefinition")
         .def_readwrite("BaseValueMode", &UAttributeInitializationDefinition::BaseValueMode)
         .def_readwrite("RoundingMode", &UAttributeInitializationDefinition::RoundingMode)
         .def_readwrite("ValueFormula", &UAttributeInitializationDefinition::ValueFormula)
@@ -15,6 +15,5 @@ void Export_pystes_UAttributeInitializationDefinition()
         .def("StaticClass", &UAttributeInitializationDefinition::StaticClass, py::return_value_policy::reference)
         .def("SetBaseValue", &UAttributeInitializationDefinition::SetBaseValue)
         .def("EvaluateInitializationData", &UAttributeInitializationDefinition::EvaluateInitializationData)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

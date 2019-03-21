@@ -3,13 +3,12 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APersistentTransitionLandmark()
+void Export_pystes_APersistentTransitionLandmark(py::object m)
 {
-    py::class_< APersistentTransitionLandmark,  ALevelLandmark   >("APersistentTransitionLandmark")
+    py::class_< APersistentTransitionLandmark,  ALevelLandmark   >(m, "APersistentTransitionLandmark")
         .def_readwrite("FromMapName", &APersistentTransitionLandmark::FromMapName)
         .def_readwrite("ToMapName", &APersistentTransitionLandmark::ToMapName)
         .def_readwrite("RequiredSublevelNames", &APersistentTransitionLandmark::RequiredSublevelNames)
         .def("StaticClass", &APersistentTransitionLandmark::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

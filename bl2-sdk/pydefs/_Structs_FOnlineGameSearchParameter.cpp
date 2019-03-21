@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FOnlineGameSearchParameter()
+void Export_pystes_FOnlineGameSearchParameter(py::object m)
 {
-    py::class_< FOnlineGameSearchParameter >("FOnlineGameSearchParameter")
+    py::class_< FOnlineGameSearchParameter >(m, "FOnlineGameSearchParameter")
         .def_readwrite("EntryId", &FOnlineGameSearchParameter::EntryId)
         .def_readwrite("CompareValueId", &FOnlineGameSearchParameter::CompareValueId)
         .def_readwrite("ObjectPropertyName", &FOnlineGameSearchParameter::ObjectPropertyName)

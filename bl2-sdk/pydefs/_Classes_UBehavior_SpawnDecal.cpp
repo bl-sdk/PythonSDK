@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SpawnDecal()
+void Export_pystes_UBehavior_SpawnDecal(py::object m)
 {
-    py::class_< UBehavior_SpawnDecal,  UBehaviorBase   >("UBehavior_SpawnDecal")
+    py::class_< UBehavior_SpawnDecal,  UBehaviorBase   >(m, "UBehavior_SpawnDecal")
         .def_readwrite("Material", &UBehavior_SpawnDecal::Material)
         .def_readwrite("BoneName", &UBehavior_SpawnDecal::BoneName)
         .def_readwrite("AlignToAxis", &UBehavior_SpawnDecal::AlignToAxis)
@@ -15,6 +15,5 @@ void Export_pystes_UBehavior_SpawnDecal()
         .def_readwrite("Thickness", &UBehavior_SpawnDecal::Thickness)
         .def("StaticClass", &UBehavior_SpawnDecal::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_SpawnDecal::ApplyBehaviorToContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FOnlineContentNameInfo()
+void Export_pystes_FOnlineContentNameInfo(py::object m)
 {
-    py::class_< FOnlineContentNameInfo >("FOnlineContentNameInfo")
+    py::class_< FOnlineContentNameInfo >(m, "FOnlineContentNameInfo")
         .def_readwrite("ContentName", &FOnlineContentNameInfo::ContentName)
         .def_readwrite("EngineVersion", &FOnlineContentNameInfo::EngineVersion)
         .def_readwrite("CookedVersionID", &FOnlineContentNameInfo::CookedVersionID)

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPhaseLockDefinition()
+void Export_pystes_UPhaseLockDefinition(py::object m)
 {
-    py::class_< UPhaseLockDefinition,  UGBXDefinition   >("UPhaseLockDefinition")
+    py::class_< UPhaseLockDefinition,  UGBXDefinition   >(m, "UPhaseLockDefinition")
         .def_readwrite("DropTime", &UPhaseLockDefinition::DropTime)
         .def_readwrite("HeightFromGround", &UPhaseLockDefinition::HeightFromGround)
         .def_readwrite("CanPlayDropAnims", &UPhaseLockDefinition::CanPlayDropAnims)
@@ -14,6 +14,5 @@ void Export_pystes_UPhaseLockDefinition()
         .def_readwrite("DropAnim", &UPhaseLockDefinition::DropAnim)
         .def_readwrite("LandAnim", &UPhaseLockDefinition::LandAnim)
         .def("StaticClass", &UPhaseLockDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDominantDirectionalLightComponent()
+void Export_pystes_UDominantDirectionalLightComponent(py::object m)
 {
-    py::class_< UDominantDirectionalLightComponent,  ULightComponent   >("UDominantDirectionalLightComponent")
+    py::class_< UDominantDirectionalLightComponent,  ULightComponent   >(m, "UDominantDirectionalLightComponent")
         .def_readwrite("DominantLightmassBrightness", &UDominantDirectionalLightComponent::DominantLightmassBrightness)
         .def_readwrite("TimeOfDayDiffuseBrightness", &UDominantDirectionalLightComponent::TimeOfDayDiffuseBrightness)
         .def_readwrite("TimeOfDayDiffuseColor", &UDominantDirectionalLightComponent::TimeOfDayDiffuseColor)
@@ -28,6 +28,5 @@ void Export_pystes_UDominantDirectionalLightComponent()
         .def("OnUpdatePropertyLightEnv_BouncedModulationColor", &UDirectionalLightComponent::OnUpdatePropertyLightEnv_BouncedModulationColor)
         .def("OnUpdatePropertyBrightness", &UDirectionalLightComponent::OnUpdatePropertyBrightness)
         .def("OnUpdatePropertyLightColor", &UDirectionalLightComponent::OnUpdatePropertyLightColor)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

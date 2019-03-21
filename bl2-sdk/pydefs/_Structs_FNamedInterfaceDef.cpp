@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FNamedInterfaceDef()
+void Export_pystes_FNamedInterfaceDef(py::object m)
 {
-    py::class_< FNamedInterfaceDef >("FNamedInterfaceDef")
+    py::class_< FNamedInterfaceDef >(m, "FNamedInterfaceDef")
         .def_readwrite("InterfaceName", &FNamedInterfaceDef::InterfaceName)
         .def_readwrite("InterfaceClassName", &FNamedInterfaceDef::InterfaceClassName)
   ;

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FWeaponSaveGameData()
+void Export_pystes_FWeaponSaveGameData(py::object m)
 {
-    py::class_< FWeaponSaveGameData >("FWeaponSaveGameData")
+    py::class_< FWeaponSaveGameData >(m, "FWeaponSaveGameData")
         .def_readwrite("WeaponDefinitionData", &FWeaponSaveGameData::WeaponDefinitionData)
         .def_readwrite("QuickSlot", &FWeaponSaveGameData::QuickSlot)
         .def_readwrite("Mark", &FWeaponSaveGameData::Mark)

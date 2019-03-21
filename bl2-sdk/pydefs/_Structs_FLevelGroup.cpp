@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLevelGroup()
+void Export_pystes_FLevelGroup(py::object m)
 {
-    py::class_< FLevelGroup >("FLevelGroup")
+    py::class_< FLevelGroup >(m, "FLevelGroup")
         .def_readwrite("GroupColor", &FLevelGroup::GroupColor)
         .def_readwrite("Levels", &FLevelGroup::Levels)
         .def_readwrite("LevelGridVolumes", &FLevelGroup::LevelGridVolumes)

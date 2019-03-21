@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackHeadTracking()
+void Export_pystes_UInterpTrackHeadTracking(py::object m)
 {
-    py::class_< UInterpTrackHeadTracking,  UInterpTrack   >("UInterpTrackHeadTracking")
+    py::class_< UInterpTrackHeadTracking,  UInterpTrack   >(m, "UInterpTrackHeadTracking")
         .def_readwrite("HeadTrackingTrack", &UInterpTrackHeadTracking::HeadTrackingTrack)
         .def_readwrite("TrackControllerName", &UInterpTrackHeadTracking::TrackControllerName)
         .def_readwrite("LookAtActorRadius", &UInterpTrackHeadTracking::LookAtActorRadius)
@@ -15,6 +15,5 @@ void Export_pystes_UInterpTrackHeadTracking()
         .def_readwrite("ActorClassesToLookAt", &UInterpTrackHeadTracking::ActorClassesToLookAt)
         .def_readwrite("TargetBoneNames", &UInterpTrackHeadTracking::TargetBoneNames)
         .def("StaticClass", &UInterpTrackHeadTracking::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

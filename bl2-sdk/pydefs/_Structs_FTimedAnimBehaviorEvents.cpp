@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTimedAnimBehaviorEvent()
+void Export_pystes_FTimedAnimBehaviorEvent(py::object m)
 {
-    py::class_< FTimedAnimBehaviorEvent,  FSpecializedBehaviorEvent   >("FTimedAnimBehaviorEvent")
+    py::class_< FTimedAnimBehaviorEvent,  FSpecializedBehaviorEvent   >(m, "FTimedAnimBehaviorEvent")
         .def_readwrite("Time", &FTimedAnimBehaviorEvent::Time)
   ;
 }

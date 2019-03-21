@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInGameAdManager()
+void Export_pystes_UInGameAdManager(py::object m)
 {
-    py::class_< UInGameAdManager,  UObject   >("UInGameAdManager")
+    py::class_< UInGameAdManager,  UObject   >(m, "UInGameAdManager")
         .def_readwrite("ClickedBannerDelegates", &UInGameAdManager::ClickedBannerDelegates)
         .def_readwrite("ClosedAdDelegates", &UInGameAdManager::ClosedAdDelegates)
         .def("StaticClass", &UInGameAdManager::StaticClass, py::return_value_policy::reference)
@@ -20,6 +20,5 @@ void Export_pystes_UInGameAdManager()
         .def("HideBanner", &UInGameAdManager::HideBanner)
         .def("ShowBanner", &UInGameAdManager::ShowBanner)
         .def("eventInit", &UInGameAdManager::eventInit)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AEmitterPool()
+void Export_pystes_AEmitterPool(py::object m)
 {
-    py::class_< AEmitterPool,  AActor   >("AEmitterPool")
+    py::class_< AEmitterPool,  AActor   >(m, "AEmitterPool")
         .def_readwrite("PSCTemplate", &AEmitterPool::PSCTemplate)
         .def_readwrite("PoolComponents", &AEmitterPool::PoolComponents)
         .def_readwrite("ActiveComponents", &AEmitterPool::ActiveComponents)
@@ -35,6 +35,5 @@ void Export_pystes_AEmitterPool()
         .def("ClearAllPoolComponents", &AEmitterPool::ClearAllPoolComponents)
         .def("ClearPoolComponents", &AEmitterPool::ClearPoolComponents)
         .def("OnParticleSystemFinished", &AEmitterPool::OnParticleSystemFinished)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

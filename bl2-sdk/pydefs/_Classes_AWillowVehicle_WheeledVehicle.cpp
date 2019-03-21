@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowVehicle_WheeledVehicle()
+void Export_pystes_AWillowVehicle_WheeledVehicle(py::object m)
 {
-    py::class_< AWillowVehicle_WheeledVehicle,  AWillowVehicle   >("AWillowVehicle_WheeledVehicle")
+    py::class_< AWillowVehicle_WheeledVehicle,  AWillowVehicle   >(m, "AWillowVehicle_WheeledVehicle")
         .def_readwrite("DriftingTimeStamp", &AWillowVehicle_WheeledVehicle::DriftingTimeStamp)
         .def_readwrite("BeamTemplate", &AWillowVehicle_WheeledVehicle::BeamTemplate)
         .def_readwrite("TemplateFF", &AWillowVehicle_WheeledVehicle::TemplateFF)
@@ -19,6 +19,5 @@ void Export_pystes_AWillowVehicle_WheeledVehicle()
         .def("Handbrake", &AWillowVehicle_WheeledVehicle::Handbrake)
         .def("PostBeginPlay", &AWillowVehicle_WheeledVehicle::PostBeginPlay)
         .def("PreBeginPlay", &AWillowVehicle_WheeledVehicle::PreBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

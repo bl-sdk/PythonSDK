@@ -3,8 +3,8 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGamepadState()
+void Export_pystes_FGamepadState(py::object m)
 {
-    py::class_< FGamepadState >("FGamepadState")
+    py::class_< FGamepadState >(m, "FGamepadState")
   ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAIDebugCamera()
+void Export_pystes_UAIDebugCamera(py::object m)
 {
-    py::class_< UAIDebugCamera,  UObject   >("UAIDebugCamera")
+    py::class_< UAIDebugCamera,  UObject   >(m, "UAIDebugCamera")
         .def_readwrite("Mind", &UAIDebugCamera::Mind)
         .def_readwrite("RuleEngine", &UAIDebugCamera::RuleEngine)
         .def_readwrite("DisplayList", &UAIDebugCamera::DisplayList)
@@ -47,6 +47,5 @@ void Export_pystes_UAIDebugCamera()
         .def("NotifyGameUnPaused", &UAIDebugCamera::NotifyGameUnPaused)
         .def("NotifyGamePaused", &UAIDebugCamera::NotifyGamePaused)
         .def("Display", &UAIDebugCamera::Display)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

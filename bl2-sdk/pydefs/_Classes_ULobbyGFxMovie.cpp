@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULobbyGFxMovie()
+void Export_pystes_ULobbyGFxMovie(py::object m)
 {
-    py::class_< ULobbyGFxMovie,  UFrontendGFxMovie   >("ULobbyGFxMovie")
+    py::class_< ULobbyGFxMovie,  UFrontendGFxMovie   >(m, "ULobbyGFxMovie")
         .def_readwrite("PrimaryPlayerPRI", &ULobbyGFxMovie::PrimaryPlayerPRI)
         .def_readwrite("SplitPlayerPRI", &ULobbyGFxMovie::SplitPlayerPRI)
         .def("StaticClass", &ULobbyGFxMovie::StaticClass, py::return_value_policy::reference)
@@ -19,6 +19,5 @@ void Export_pystes_ULobbyGFxMovie()
         .def("eventOnClose", &ULobbyGFxMovie::eventOnClose)
         .def("CheckSpectatorPoint", &ULobbyGFxMovie::CheckSpectatorPoint)
         .def("eventStart", &ULobbyGFxMovie::eventStart)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

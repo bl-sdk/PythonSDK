@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AGBXNavMesh()
+void Export_pystes_AGBXNavMesh(py::object m)
 {
-    py::class_< AGBXNavMesh,  AActor   >("AGBXNavMesh")
+    py::class_< AGBXNavMesh,  AActor   >(m, "AGBXNavMesh")
         .def_readwrite("BuildVersion", &AGBXNavMesh::BuildVersion)
         .def_readwrite("BuildGUID", &AGBXNavMesh::BuildGUID)
         .def_readwrite("MeshID", &AGBXNavMesh::MeshID)
@@ -32,6 +32,5 @@ void Export_pystes_AGBXNavMesh()
         .def("FixupOldVersions", &AGBXNavMesh::FixupOldVersions)
         .def("eventDestroyed", &AGBXNavMesh::eventDestroyed)
         .def("eventPostBeginPlay", &AGBXNavMesh::eventPostBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

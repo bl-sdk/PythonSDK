@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowVehicle_ChopperVehicle()
+void Export_pystes_AWillowVehicle_ChopperVehicle(py::object m)
 {
-    py::class_< AWillowVehicle_ChopperVehicle,  AWillowVehicle   >("AWillowVehicle_ChopperVehicle")
+    py::class_< AWillowVehicle_ChopperVehicle,  AWillowVehicle   >(m, "AWillowVehicle_ChopperVehicle")
         .def_readwrite("GroundEffectIndices", &AWillowVehicle_ChopperVehicle::GroundEffectIndices)
         .def_readwrite("MaxGroundEffectDist", &AWillowVehicle_ChopperVehicle::MaxGroundEffectDist)
         .def_readwrite("GroundEffectDistParameterName", &AWillowVehicle_ChopperVehicle::GroundEffectDistParameterName)
@@ -25,6 +25,5 @@ void Export_pystes_AWillowVehicle_ChopperVehicle()
         .def("FastVehicle", &AWillowVehicle_ChopperVehicle::FastVehicle)
         .def("RecommendLongRangedAttack", &AWillowVehicle_ChopperVehicle::RecommendLongRangedAttack)
         .def("SetDriving", &AWillowVehicle_ChopperVehicle::SetDriving)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

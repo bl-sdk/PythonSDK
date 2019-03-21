@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxAccountGFxMovie()
+void Export_pystes_UGearboxAccountGFxMovie(py::object m)
 {
-    py::class_< UGearboxAccountGFxMovie,  UWillowGFxMovie   >("UGearboxAccountGFxMovie")
+    py::class_< UGearboxAccountGFxMovie,  UWillowGFxMovie   >(m, "UGearboxAccountGFxMovie")
         .def_readwrite("GearboxAccountObj", &UGearboxAccountGFxMovie::GearboxAccountObj)
         .def_readwrite("ScreenStack", &UGearboxAccountGFxMovie::ScreenStack)
         .def_readwrite("CurrentAgeString", &UGearboxAccountGFxMovie::CurrentAgeString)
@@ -96,6 +96,5 @@ void Export_pystes_UGearboxAccountGFxMovie()
         .def("GetRegion", &UGearboxAccountGFxMovie::GetRegion)
         .def("IsKeyValid", &UGearboxAccountGFxMovie::IsKeyValid)
         .def("GetCurrentDate", &UGearboxAccountGFxMovie::GetCurrentDate)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

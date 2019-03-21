@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPawnInteractionDefinition()
+void Export_pystes_UPawnInteractionDefinition(py::object m)
 {
-    py::class_< UPawnInteractionDefinition,  UGBXDefinition   >("UPawnInteractionDefinition")
+    py::class_< UPawnInteractionDefinition,  UGBXDefinition   >(m, "UPawnInteractionDefinition")
         .def_readwrite("InteractDistance", &UPawnInteractionDefinition::InteractDistance)
         .def_readwrite("TouchRadius", &UPawnInteractionDefinition::TouchRadius)
         .def_readwrite("TouchHeight", &UPawnInteractionDefinition::TouchHeight)
@@ -13,6 +13,5 @@ void Export_pystes_UPawnInteractionDefinition()
         .def_readwrite("OnUnTouch", &UPawnInteractionDefinition::OnUnTouch)
         .def_readwrite("OnUse", &UPawnInteractionDefinition::OnUse)
         .def("StaticClass", &UPawnInteractionDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

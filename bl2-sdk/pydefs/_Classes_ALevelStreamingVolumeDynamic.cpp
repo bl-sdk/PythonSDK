@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ALevelStreamingVolumeDynamic()
+void Export_pystes_ALevelStreamingVolumeDynamic(py::object m)
 {
-    py::class_< ALevelStreamingVolumeDynamic,  ALevelStreamingVolume   >("ALevelStreamingVolumeDynamic")
+    py::class_< ALevelStreamingVolumeDynamic,  ALevelStreamingVolume   >(m, "ALevelStreamingVolumeDynamic")
         .def("StaticClass", &ALevelStreamingVolumeDynamic::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

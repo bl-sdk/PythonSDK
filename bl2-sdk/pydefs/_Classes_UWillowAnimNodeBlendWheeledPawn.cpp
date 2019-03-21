@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAnimNodeBlendWheeledPawn()
+void Export_pystes_UWillowAnimNodeBlendWheeledPawn(py::object m)
 {
-    py::class_< UWillowAnimNodeBlendWheeledPawn,  UAnimNodeBlendBase   >("UWillowAnimNodeBlendWheeledPawn")
+    py::class_< UWillowAnimNodeBlendWheeledPawn,  UAnimNodeBlendBase   >(m, "UWillowAnimNodeBlendWheeledPawn")
         .def_readwrite("DirChangeRateMin", &UWillowAnimNodeBlendWheeledPawn::DirChangeRateMin)
         .def_readwrite("DirChangeRateMax", &UWillowAnimNodeBlendWheeledPawn::DirChangeRateMax)
         .def_readwrite("BlendTime", &UWillowAnimNodeBlendWheeledPawn::BlendTime)
@@ -17,6 +17,5 @@ void Export_pystes_UWillowAnimNodeBlendWheeledPawn()
         .def_readwrite("DirAngle", &UWillowAnimNodeBlendWheeledPawn::DirAngle)
         .def_readwrite("CurSpeed", &UWillowAnimNodeBlendWheeledPawn::CurSpeed)
         .def("StaticClass", &UWillowAnimNodeBlendWheeledPawn::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

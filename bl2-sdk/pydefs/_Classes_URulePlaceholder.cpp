@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_URulePlaceholder()
+void Export_pystes_URulePlaceholder(py::object m)
 {
-    py::class_< URulePlaceholder,  URule   >("URulePlaceholder")
+    py::class_< URulePlaceholder,  URule   >(m, "URulePlaceholder")
         .def("StaticClass", &URulePlaceholder::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

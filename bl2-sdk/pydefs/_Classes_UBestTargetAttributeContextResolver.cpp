@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBestTargetAttributeContextResolver()
+void Export_pystes_UBestTargetAttributeContextResolver(py::object m)
 {
-    py::class_< UBestTargetAttributeContextResolver,  UAttributeContextResolver   >("UBestTargetAttributeContextResolver")
+    py::class_< UBestTargetAttributeContextResolver,  UAttributeContextResolver   >(m, "UBestTargetAttributeContextResolver")
         .def("StaticClass", &UBestTargetAttributeContextResolver::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

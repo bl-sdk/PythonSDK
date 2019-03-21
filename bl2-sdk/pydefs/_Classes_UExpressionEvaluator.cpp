@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UExpressionEvaluator()
+void Export_pystes_UExpressionEvaluator(py::object m)
 {
-    py::class_< UExpressionEvaluator,  UObject   >("UExpressionEvaluator")
+    py::class_< UExpressionEvaluator,  UObject   >(m, "UExpressionEvaluator")
         .def("StaticClass", &UExpressionEvaluator::StaticClass, py::return_value_policy::reference)
         .def("Evaluate", &UExpressionEvaluator::Evaluate)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

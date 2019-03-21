@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_PlayCameraAnim()
+void Export_pystes_USeqAct_PlayCameraAnim(py::object m)
 {
-    py::class_< USeqAct_PlayCameraAnim,  USequenceAction   >("USeqAct_PlayCameraAnim")
+    py::class_< USeqAct_PlayCameraAnim,  USequenceAction   >(m, "USeqAct_PlayCameraAnim")
         .def_readwrite("CameraAnim", &USeqAct_PlayCameraAnim::CameraAnim)
         .def_readwrite("BlendInTime", &USeqAct_PlayCameraAnim::BlendInTime)
         .def_readwrite("BlendOutTime", &USeqAct_PlayCameraAnim::BlendOutTime)
@@ -15,6 +15,5 @@ void Export_pystes_USeqAct_PlayCameraAnim()
         .def_readwrite("UserDefinedSpaceActor", &USeqAct_PlayCameraAnim::UserDefinedSpaceActor)
         .def("StaticClass", &USeqAct_PlayCameraAnim::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqAct_PlayCameraAnim::eventGetObjClassVersion)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

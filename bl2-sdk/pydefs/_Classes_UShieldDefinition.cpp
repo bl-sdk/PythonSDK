@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UShieldDefinition()
+void Export_pystes_UShieldDefinition(py::object m)
 {
-    py::class_< UShieldDefinition,  UItemDefinition   >("UShieldDefinition")
+    py::class_< UShieldDefinition,  UItemDefinition   >(m, "UShieldDefinition")
         .def_readwrite("ShieldType", &UShieldDefinition::ShieldType)
         .def_readwrite("ShieldPrimeMechanism", &UShieldDefinition::ShieldPrimeMechanism)
         .def_readwrite("ShieldTypeFlashFrameName", &UShieldDefinition::ShieldTypeFlashFrameName)
@@ -26,6 +26,5 @@ void Export_pystes_UShieldDefinition()
         .def("OnAmmoAbsorbed", &UShieldDefinition::OnAmmoAbsorbed)
         .def("OnUnequipped", &UEquipableItemDefinition::OnUnequipped)
         .def("OnEquipped", &UEquipableItemDefinition::OnEquipped)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

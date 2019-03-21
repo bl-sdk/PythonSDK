@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTerrainDecoration()
+void Export_pystes_FTerrainDecoration(py::object m)
 {
-    py::class_< FTerrainDecoration >("FTerrainDecoration")
+    py::class_< FTerrainDecoration >(m, "FTerrainDecoration")
         .def_readwrite("Factory", &FTerrainDecoration::Factory)
         .def_readwrite("MinScale", &FTerrainDecoration::MinScale)
         .def_readwrite("MaxScale", &FTerrainDecoration::MaxScale)

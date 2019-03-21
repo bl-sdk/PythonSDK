@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FChildBoneBlendInfo()
+void Export_pystes_FChildBoneBlendInfo(py::object m)
 {
-    py::class_< FChildBoneBlendInfo >("FChildBoneBlendInfo")
+    py::class_< FChildBoneBlendInfo >(m, "FChildBoneBlendInfo")
         .def_readwrite("TargetPerBoneWeight", &FChildBoneBlendInfo::TargetPerBoneWeight)
         .def_readwrite("InitTargetStartBone", &FChildBoneBlendInfo::InitTargetStartBone)
         .def_readwrite("InitPerBoneIncrease", &FChildBoneBlendInfo::InitPerBoneIncrease)

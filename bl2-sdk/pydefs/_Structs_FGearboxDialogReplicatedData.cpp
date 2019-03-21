@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGearboxDialogReplicatedData()
+void Export_pystes_FGearboxDialogReplicatedData(py::object m)
 {
-    py::class_< FGearboxDialogReplicatedData >("FGearboxDialogReplicatedData")
+    py::class_< FGearboxDialogReplicatedData >(m, "FGearboxDialogReplicatedData")
         .def_readwrite("Pitch", &FGearboxDialogReplicatedData::Pitch)
         .def_readwrite("TalkAkEvent", &FGearboxDialogReplicatedData::TalkAkEvent)
         .def_readwrite("AkAudioUniqueID", &FGearboxDialogReplicatedData::AkAudioUniqueID)

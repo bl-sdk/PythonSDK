@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULeviathanService()
+void Export_pystes_ULeviathanService(py::object m)
 {
-    py::class_< ULeviathanService,  UObject   >("ULeviathanService")
+    py::class_< ULeviathanService,  UObject   >(m, "ULeviathanService")
         .def_readwrite("VfTable_ISparkUpdateCallback", &ULeviathanService::VfTable_ISparkUpdateCallback)
         .def_readwrite("EventBufferSize", &ULeviathanService::EventBufferSize)
         .def_readwrite("StatBufferSize", &ULeviathanService::StatBufferSize)
@@ -15,6 +15,5 @@ void Export_pystes_ULeviathanService()
         .def("OnSparkInitialized", &ULeviathanService::OnSparkInitialized)
         .def("LoadServiceConfigurationForPlayer", &ULeviathanService::LoadServiceConfigurationForPlayer)
         .def("GetLeviathanService", &ULeviathanService::GetLeviathanService, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

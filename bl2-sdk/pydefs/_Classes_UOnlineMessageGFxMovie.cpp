@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineMessageGFxMovie()
+void Export_pystes_UOnlineMessageGFxMovie(py::object m)
 {
-    py::class_< UOnlineMessageGFxMovie,  UWillowGFxMovie   >("UOnlineMessageGFxMovie")
+    py::class_< UOnlineMessageGFxMovie,  UWillowGFxMovie   >(m, "UOnlineMessageGFxMovie")
         .def_readwrite("BlockingMessageClip", &UOnlineMessageGFxMovie::BlockingMessageClip)
         .def_readwrite("NonBlockingMessageClip", &UOnlineMessageGFxMovie::NonBlockingMessageClip)
         .def_readwrite("BlockingSubtitle", &UOnlineMessageGFxMovie::BlockingSubtitle)
@@ -25,6 +25,5 @@ void Export_pystes_UOnlineMessageGFxMovie()
         .def("DisplayBlockingMessage", &UOnlineMessageGFxMovie::DisplayBlockingMessage)
         .def("eventOnClose", &UOnlineMessageGFxMovie::eventOnClose)
         .def("eventStart", &UOnlineMessageGFxMovie::eventStart)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

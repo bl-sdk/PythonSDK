@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPopulationAspect()
+void Export_pystes_UPopulationAspect(py::object m)
 {
-    py::class_< UPopulationAspect,  UObject   >("UPopulationAspect")
+    py::class_< UPopulationAspect,  UObject   >(m, "UPopulationAspect")
         .def("StaticClass", &UPopulationAspect::StaticClass, py::return_value_policy::reference)
         .def("eventDenStatRemoved", &UPopulationAspect::eventDenStatRemoved)
         .def("eventDenStatAdded", &UPopulationAspect::eventDenStatAdded)
@@ -14,6 +14,5 @@ void Export_pystes_UPopulationAspect()
         .def("eventOnActorDeath", &UPopulationAspect::eventOnActorDeath)
         .def("eventOnSpawnActor", &UPopulationAspect::eventOnSpawnActor)
         .def("eventinitialize", &UPopulationAspect::eventinitialize)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

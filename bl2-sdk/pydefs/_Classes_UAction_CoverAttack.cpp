@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_CoverAttack()
+void Export_pystes_UAction_CoverAttack(py::object m)
 {
-    py::class_< UAction_CoverAttack,  UWillowActionSequencePawn   >("UAction_CoverAttack")
+    py::class_< UAction_CoverAttack,  UWillowActionSequencePawn   >(m, "UAction_CoverAttack")
         .def_readwrite("Limits", &UAction_CoverAttack::Limits)
         .def_readwrite("LineOfSightTime", &UAction_CoverAttack::LineOfSightTime)
         .def_readwrite("MyCover", &UAction_CoverAttack::MyCover)
@@ -31,6 +31,5 @@ void Export_pystes_UAction_CoverAttack()
         .def("eventCanRun", &UAction_CoverAttack::eventCanRun)
         .def("eventInit", &UAction_CoverAttack::eventInit)
         .def("InitData", &UAction_CoverAttack::InitData)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

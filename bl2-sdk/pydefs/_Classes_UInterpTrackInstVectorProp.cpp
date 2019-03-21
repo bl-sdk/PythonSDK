@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackInstVectorProp()
+void Export_pystes_UInterpTrackInstVectorProp(py::object m)
 {
-    py::class_< UInterpTrackInstVectorProp,  UInterpTrackInstProperty   >("UInterpTrackInstVectorProp")
+    py::class_< UInterpTrackInstVectorProp,  UInterpTrackInstProperty   >(m, "UInterpTrackInstVectorProp")
         .def_readwrite("VectorProp", &UInterpTrackInstVectorProp::VectorProp)
         .def_readwrite("ResetVector", &UInterpTrackInstVectorProp::ResetVector)
         .def("StaticClass", &UInterpTrackInstVectorProp::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

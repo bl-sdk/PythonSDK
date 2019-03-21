@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPrimitiveComponentFactory()
+void Export_pystes_UPrimitiveComponentFactory(py::object m)
 {
-    py::class_< UPrimitiveComponentFactory,  UObject   >("UPrimitiveComponentFactory")
+    py::class_< UPrimitiveComponentFactory,  UObject   >(m, "UPrimitiveComponentFactory")
         .def("StaticClass", &UPrimitiveComponentFactory::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

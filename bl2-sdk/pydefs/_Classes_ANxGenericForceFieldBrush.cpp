@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ANxGenericForceFieldBrush()
+void Export_pystes_ANxGenericForceFieldBrush(py::object m)
 {
-    py::class_< ANxGenericForceFieldBrush,  AVolume   >("ANxGenericForceFieldBrush")
+    py::class_< ANxGenericForceFieldBrush,  AVolume   >(m, "ANxGenericForceFieldBrush")
         .def_readwrite("ExcludeChannel", &ANxGenericForceFieldBrush::ExcludeChannel)
         .def_readwrite("CollideWithChannels", &ANxGenericForceFieldBrush::CollideWithChannels)
         .def_readwrite("RBChannel", &ANxGenericForceFieldBrush::RBChannel)
@@ -31,6 +31,5 @@ void Export_pystes_ANxGenericForceFieldBrush()
         .def("StaticClass", &ANxGenericForceFieldBrush::StaticClass, py::return_value_policy::reference)
         .def("StopsProjectile", &ANxGenericForceFieldBrush::StopsProjectile)
         .def("eventPostBeginPlay", &ANxGenericForceFieldBrush::eventPostBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

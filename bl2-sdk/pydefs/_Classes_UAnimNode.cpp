@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNode()
+void Export_pystes_UAnimNode(py::object m)
 {
-    py::class_< UAnimNode,  UObject   >("UAnimNode")
+    py::class_< UAnimNode,  UObject   >(m, "UAnimNode")
         .def_readwrite("NodeTickTag", &UAnimNode::NodeTickTag)
         .def_readwrite("NodeInitTag", &UAnimNode::NodeInitTag)
         .def_readwrite("TickArrayIndex", &UAnimNode::TickArrayIndex)
@@ -30,6 +30,5 @@ void Export_pystes_UAnimNode()
         .def("eventOnCeaseRelevant", &UAnimNode::eventOnCeaseRelevant)
         .def("eventOnBecomeRelevant", &UAnimNode::eventOnBecomeRelevant)
         .def("eventOnInit", &UAnimNode::eventOnInit)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

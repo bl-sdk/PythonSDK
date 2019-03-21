@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FArchwayResult()
+void Export_pystes_FArchwayResult(py::object m)
 {
-    py::class_< FArchwayResult >("FArchwayResult")
+    py::class_< FArchwayResult >(m, "FArchwayResult")
         .def_readwrite("RequestId", &FArchwayResult::RequestId)
         .def_readwrite("GearboxUserToken", &FArchwayResult::GearboxUserToken)
         .def_readwrite("GearboxUserEmail", &FArchwayResult::GearboxUserEmail)

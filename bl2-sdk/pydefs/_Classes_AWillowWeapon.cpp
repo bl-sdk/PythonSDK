@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowWeapon()
+void Export_pystes_AWillowWeapon(py::object m)
 {
-    py::class_< AWillowWeapon,  AWeapon   >("AWillowWeapon")
+    py::class_< AWillowWeapon,  AWeapon   >(m, "AWillowWeapon")
         .def_readwrite("VfTable_IIInstanceData", &AWillowWeapon::VfTable_IIInstanceData)
         .def_readwrite("VfTable_IIMissionInventory", &AWillowWeapon::VfTable_IIMissionInventory)
         .def_readwrite("VfTable_IIBehaviorConsumer", &AWillowWeapon::VfTable_IIBehaviorConsumer)
@@ -569,6 +569,5 @@ void Export_pystes_AWillowWeapon()
         .def("ToggleZoomSocketsDebug", &AWillowWeapon::ToggleZoomSocketsDebug)
         .def("IsZoomDebugEnabled", &AWillowWeapon::IsZoomDebugEnabled)
         .def("ToggleZoomDebug", &AWillowWeapon::ToggleZoomDebug)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

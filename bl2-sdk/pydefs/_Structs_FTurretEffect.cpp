@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTurretEffect()
+void Export_pystes_FTurretEffect(py::object m)
 {
-    py::class_< FTurretEffect >("FTurretEffect")
+    py::class_< FTurretEffect >(m, "FTurretEffect")
         .def_readwrite("EffectStartTag", &FTurretEffect::EffectStartTag)
         .def_readwrite("EffectEndTag", &FTurretEffect::EffectEndTag)
         .def_readwrite("EffectTemplate", &FTurretEffect::EffectTemplate)

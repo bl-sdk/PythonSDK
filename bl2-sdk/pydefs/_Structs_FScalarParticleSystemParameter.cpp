@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FScalarParticleSystemParameter()
+void Export_pystes_FScalarParticleSystemParameter(py::object m)
 {
-    py::class_< FScalarParticleSystemParameter >("FScalarParticleSystemParameter")
+    py::class_< FScalarParticleSystemParameter >(m, "FScalarParticleSystemParameter")
         .def_readwrite("Name", &FScalarParticleSystemParameter::Name)
         .def_readwrite("Value", &FScalarParticleSystemParameter::Value)
   ;

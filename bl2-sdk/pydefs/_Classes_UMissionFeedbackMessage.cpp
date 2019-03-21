@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMissionFeedbackMessage()
+void Export_pystes_UMissionFeedbackMessage(py::object m)
 {
-    py::class_< UMissionFeedbackMessage,  UWillowLocalMessage   >("UMissionFeedbackMessage")
+    py::class_< UMissionFeedbackMessage,  UWillowLocalMessage   >(m, "UMissionFeedbackMessage")
         .def_readwrite("MissionAdded", &UMissionFeedbackMessage::MissionAdded)
         .def_readwrite("MissionCompleted", &UMissionFeedbackMessage::MissionCompleted)
         .def_readwrite("MissionFailed", &UMissionFeedbackMessage::MissionFailed)
@@ -13,6 +13,5 @@ void Export_pystes_UMissionFeedbackMessage()
         .def_readwrite("MissionReadyToTurnIn", &UMissionFeedbackMessage::MissionReadyToTurnIn)
         .def("StaticClass", &UMissionFeedbackMessage::StaticClass, py::return_value_policy::reference)
         .def("GetString", &UMissionFeedbackMessage::GetString)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

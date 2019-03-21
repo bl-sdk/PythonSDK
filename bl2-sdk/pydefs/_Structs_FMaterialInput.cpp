@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMaterialInput()
+void Export_pystes_FMaterialInput(py::object m)
 {
-    py::class_< FMaterialInput >("FMaterialInput")
+    py::class_< FMaterialInput >(m, "FMaterialInput")
         .def_readwrite("Expression", &FMaterialInput::Expression)
         .def_readwrite("Mask", &FMaterialInput::Mask)
         .def_readwrite("MaskR", &FMaterialInput::MaskR)

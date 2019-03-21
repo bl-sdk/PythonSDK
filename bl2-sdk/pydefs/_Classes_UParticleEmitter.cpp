@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleEmitter()
+void Export_pystes_UParticleEmitter(py::object m)
 {
-    py::class_< UParticleEmitter,  UObject   >("UParticleEmitter")
+    py::class_< UParticleEmitter,  UObject   >(m, "UParticleEmitter")
         .def_readwrite("EmitterName", &UParticleEmitter::EmitterName)
         .def_readwrite("SubUVDataOffset", &UParticleEmitter::SubUVDataOffset)
         .def_readwrite("EmitterRenderMode", &UParticleEmitter::EmitterRenderMode)
@@ -15,6 +15,5 @@ void Export_pystes_UParticleEmitter()
         .def_readwrite("MediumDetailSpawnRateScale", &UParticleEmitter::MediumDetailSpawnRateScale)
         .def("StaticClass", &UParticleEmitter::StaticClass, py::return_value_policy::reference)
         .def("GetMaxLifespan", &UParticleEmitter::GetMaxLifespan)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

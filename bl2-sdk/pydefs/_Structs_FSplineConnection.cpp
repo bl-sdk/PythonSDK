@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSplineConnection()
+void Export_pystes_FSplineConnection(py::object m)
 {
-    py::class_< FSplineConnection >("FSplineConnection")
+    py::class_< FSplineConnection >(m, "FSplineConnection")
         .def_readwrite("SplineComponent", &FSplineConnection::SplineComponent)
         .def_readwrite("ConnectTo", &FSplineConnection::ConnectTo)
   ;

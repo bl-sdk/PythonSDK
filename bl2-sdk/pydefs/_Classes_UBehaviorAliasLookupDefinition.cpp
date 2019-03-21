@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehaviorAliasLookupDefinition()
+void Export_pystes_UBehaviorAliasLookupDefinition(py::object m)
 {
-    py::class_< UBehaviorAliasLookupDefinition,  UGBXDefinition   >("UBehaviorAliasLookupDefinition")
+    py::class_< UBehaviorAliasLookupDefinition,  UGBXDefinition   >(m, "UBehaviorAliasLookupDefinition")
         .def_readwrite("BehaviorAliasList", &UBehaviorAliasLookupDefinition::BehaviorAliasList)
         .def("StaticClass", &UBehaviorAliasLookupDefinition::StaticClass, py::return_value_policy::reference)
         .def("RunBehaviorAlias", &UBehaviorAliasLookupDefinition::RunBehaviorAlias)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

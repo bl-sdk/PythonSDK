@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UItemInspectionGFxMovieDefinition()
+void Export_pystes_UItemInspectionGFxMovieDefinition(py::object m)
 {
-    py::class_< UItemInspectionGFxMovieDefinition,  UWillowGFxMovie3DDefinition   >("UItemInspectionGFxMovieDefinition")
+    py::class_< UItemInspectionGFxMovieDefinition,  UWillowGFxMovie3DDefinition   >(m, "UItemInspectionGFxMovieDefinition")
         .def_readwrite("ItemFOV", &UItemInspectionGFxMovieDefinition::ItemFOV)
         .def_readwrite("ItemScale", &UItemInspectionGFxMovieDefinition::ItemScale)
         .def_readwrite("RotationSpeed", &UItemInspectionGFxMovieDefinition::RotationSpeed)
@@ -18,6 +18,5 @@ void Export_pystes_UItemInspectionGFxMovieDefinition()
         .def_readwrite("IntroRotationAlphaPowerRandomness", &UItemInspectionGFxMovieDefinition::IntroRotationAlphaPowerRandomness)
         .def_readwrite("HeightThreshold", &UItemInspectionGFxMovieDefinition::HeightThreshold)
         .def("StaticClass", &UItemInspectionGFxMovieDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDistributionVectorParticleParameter()
+void Export_pystes_UDistributionVectorParticleParameter(py::object m)
 {
-    py::class_< UDistributionVectorParticleParameter,  UDistributionVectorParameterBase   >("UDistributionVectorParticleParameter")
+    py::class_< UDistributionVectorParticleParameter,  UDistributionVectorParameterBase   >(m, "UDistributionVectorParticleParameter")
         .def("StaticClass", &UDistributionVectorParticleParameter::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

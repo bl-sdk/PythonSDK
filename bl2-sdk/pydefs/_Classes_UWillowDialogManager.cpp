@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowDialogManager()
+void Export_pystes_UWillowDialogManager(py::object m)
 {
-    py::class_< UWillowDialogManager,  UGearboxDialogManager   >("UWillowDialogManager")
+    py::class_< UWillowDialogManager,  UGearboxDialogManager   >(m, "UWillowDialogManager")
         .def_readwrite("EchoActor", &UWillowDialogManager::EchoActor)
         .def_readwrite("EchoEmote", &UWillowDialogManager::EchoEmote)
         .def_readwrite("PureEchoActors", &UWillowDialogManager::PureEchoActors)
@@ -16,6 +16,5 @@ void Export_pystes_UWillowDialogManager()
         .def("GetPriorityForEchoActor", &UWillowDialogManager::GetPriorityForEchoActor)
         .def("Cleanup", &UWillowDialogManager::Cleanup)
         .def("PlayEchoDialog", &UWillowDialogManager::PlayEchoDialog)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

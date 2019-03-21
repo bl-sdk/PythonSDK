@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSkelMeshComponentLODInfo()
+void Export_pystes_FSkelMeshComponentLODInfo(py::object m)
 {
-    py::class_< FSkelMeshComponentLODInfo >("FSkelMeshComponentLODInfo")
+    py::class_< FSkelMeshComponentLODInfo >(m, "FSkelMeshComponentLODInfo")
         .def_readwrite("HiddenMaterials", &FSkelMeshComponentLODInfo::HiddenMaterials)
         .def_readwrite("InstanceWeightUsage", &FSkelMeshComponentLODInfo::InstanceWeightUsage)
         .def_readwrite("InstanceWeightIdx", &FSkelMeshComponentLODInfo::InstanceWeightIdx)

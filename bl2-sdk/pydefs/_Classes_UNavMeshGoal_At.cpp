@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNavMeshGoal_At()
+void Export_pystes_UNavMeshGoal_At(py::object m)
 {
-    py::class_< UNavMeshGoal_At,  UNavMeshPathGoalEvaluator   >("UNavMeshGoal_At")
+    py::class_< UNavMeshGoal_At,  UNavMeshPathGoalEvaluator   >(m, "UNavMeshGoal_At")
         .def_readwrite("Goal", &UNavMeshGoal_At::Goal)
         .def_readwrite("GoalDist", &UNavMeshGoal_At::GoalDist)
         .def_readwrite("PartialDistSq", &UNavMeshGoal_At::PartialDistSq)
@@ -16,6 +16,5 @@ void Export_pystes_UNavMeshGoal_At()
         .def("AtLocation", &UNavMeshGoal_At::AtLocation)
         .def("AtActor", &UNavMeshGoal_At::AtActor)
         .def("RecycleNative", &UNavMeshGoal_At::RecycleNative)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

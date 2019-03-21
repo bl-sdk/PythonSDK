@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCoverDebugPriority()
+void Export_pystes_FCoverDebugPriority(py::object m)
 {
-    py::class_< FCoverDebugPriority >("FCoverDebugPriority")
+    py::class_< FCoverDebugPriority >(m, "FCoverDebugPriority")
         .def_readwrite("Score", &FCoverDebugPriority::Score)
         .def_readwrite("Distance", &FCoverDebugPriority::Distance)
         .def_readwrite("TheCoverActor", &FCoverDebugPriority::TheCoverActor)

@@ -3,8 +3,8 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APhysicsVolume_FCheckpointRecord()
+void Export_pystes_APhysicsVolume_FCheckpointRecord(py::object m)
 {
-    py::class_< APhysicsVolume_FCheckpointRecord >("APhysicsVolume_FCheckpointRecord")
+    py::class_< APhysicsVolume_FCheckpointRecord >(m, "APhysicsVolume_FCheckpointRecord")
   ;
 }

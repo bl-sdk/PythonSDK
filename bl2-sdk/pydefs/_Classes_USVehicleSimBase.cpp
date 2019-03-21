@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USVehicleSimBase()
+void Export_pystes_USVehicleSimBase(py::object m)
 {
-    py::class_< USVehicleSimBase,  UActorComponent   >("USVehicleSimBase")
+    py::class_< USVehicleSimBase,  UActorComponent   >(m, "USVehicleSimBase")
         .def_readwrite("WheelSuspensionStiffness", &USVehicleSimBase::WheelSuspensionStiffness)
         .def_readwrite("WheelSuspensionDamping", &USVehicleSimBase::WheelSuspensionDamping)
         .def_readwrite("WheelSuspensionBias", &USVehicleSimBase::WheelSuspensionBias)
@@ -20,6 +20,5 @@ void Export_pystes_USVehicleSimBase()
         .def_readwrite("WheelInertia", &USVehicleSimBase::WheelInertia)
         .def_readwrite("AutoDriveSteer", &USVehicleSimBase::AutoDriveSteer)
         .def("StaticClass", &USVehicleSimBase::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

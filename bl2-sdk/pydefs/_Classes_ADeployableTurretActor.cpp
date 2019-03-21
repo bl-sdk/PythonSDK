@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ADeployableTurretActor()
+void Export_pystes_ADeployableTurretActor(py::object m)
 {
-    py::class_< ADeployableTurretActor,  AWillowAIPawn   >("ADeployableTurretActor")
+    py::class_< ADeployableTurretActor,  AWillowAIPawn   >(m, "ADeployableTurretActor")
         .def_readwrite("BounceImpact", &ADeployableTurretActor::BounceImpact)
         .def_readwrite("AtRestSpeedThreshold", &ADeployableTurretActor::AtRestSpeedThreshold)
         .def_readwrite("TurretEffects", &ADeployableTurretActor::TurretEffects)
@@ -22,6 +22,5 @@ void Export_pystes_ADeployableTurretActor()
         .def("ShutOffTurretEffectsOnDeath", &ADeployableTurretActor::ShutOffTurretEffectsOnDeath)
         .def("PostBeginPlay", &ADeployableTurretActor::PostBeginPlay)
         .def("eventReplicatedEvent", &ADeployableTurretActor::eventReplicatedEvent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

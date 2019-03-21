@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFaceFXAsset()
+void Export_pystes_UFaceFXAsset(py::object m)
 {
-    py::class_< UFaceFXAsset,  UObject   >("UFaceFXAsset")
+    py::class_< UFaceFXAsset,  UObject   >(m, "UFaceFXAsset")
         .def_readwrite("FaceFXActor", &UFaceFXAsset::FaceFXActor)
         .def_readwrite("RawFaceFXActorBytes", &UFaceFXAsset::RawFaceFXActorBytes)
         .def_readwrite("RawFaceFXSessionBytes", &UFaceFXAsset::RawFaceFXSessionBytes)
@@ -16,6 +16,5 @@ void Export_pystes_UFaceFXAsset()
         .def("PlayFaceFxAnimFromSoundNodeOnActor", &UFaceFXAsset::PlayFaceFxAnimFromSoundNodeOnActor)
         .def("UnmountFaceFXAnimSet", &UFaceFXAsset::UnmountFaceFXAnimSet)
         .def("MountFaceFXAnimSet", &UFaceFXAsset::MountFaceFXAnimSet)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

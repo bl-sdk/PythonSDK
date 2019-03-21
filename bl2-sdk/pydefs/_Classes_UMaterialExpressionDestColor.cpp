@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionDestColor()
+void Export_pystes_UMaterialExpressionDestColor(py::object m)
 {
-    py::class_< UMaterialExpressionDestColor,  UMaterialExpression   >("UMaterialExpressionDestColor")
+    py::class_< UMaterialExpressionDestColor,  UMaterialExpression   >(m, "UMaterialExpressionDestColor")
         .def("StaticClass", &UMaterialExpressionDestColor::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

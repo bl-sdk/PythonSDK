@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAIDebugCamera()
+void Export_pystes_UWillowAIDebugCamera(py::object m)
 {
-    py::class_< UWillowAIDebugCamera,  UAIDebugCamera   >("UWillowAIDebugCamera")
+    py::class_< UWillowAIDebugCamera,  UAIDebugCamera   >(m, "UWillowAIDebugCamera")
         .def_readwrite("Dummies", &UWillowAIDebugCamera::Dummies)
         .def_readwrite("AIDebugDummyClass", &UWillowAIDebugCamera::AIDebugDummyClass)
         .def_readwrite("NumDummies", &UWillowAIDebugCamera::NumDummies)
@@ -20,6 +20,5 @@ void Export_pystes_UWillowAIDebugCamera()
         .def("SetNextSnapshot", &UWillowAIDebugCamera::SetNextSnapshot)
         .def("NotifyGameUnPaused", &UWillowAIDebugCamera::NotifyGameUnPaused)
         .def("NotifyGamePaused", &UWillowAIDebugCamera::NotifyGamePaused)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

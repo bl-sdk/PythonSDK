@@ -3,14 +3,13 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpecialMove_PhaseLock()
+void Export_pystes_USpecialMove_PhaseLock(py::object m)
 {
-    py::class_< USpecialMove_PhaseLock,  UWillowAnimDefinition   >("USpecialMove_PhaseLock")
+    py::class_< USpecialMove_PhaseLock,  UWillowAnimDefinition   >(m, "USpecialMove_PhaseLock")
         .def("StaticClass", &USpecialMove_PhaseLock::StaticClass, py::return_value_policy::reference)
         .def("eventClientFinished", &USpecialMove_PhaseLock::eventClientFinished)
         .def("eventServerFinished", &USpecialMove_PhaseLock::eventServerFinished)
         .def("eventServerStarted", &USpecialMove_PhaseLock::eventServerStarted)
         .def("eventAuthorityCanPlay", &USpecialMove_PhaseLock::eventAuthorityCanPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHeightFogComponent()
+void Export_pystes_UHeightFogComponent(py::object m)
 {
-    py::class_< UHeightFogComponent,  UActorComponent   >("UHeightFogComponent")
+    py::class_< UHeightFogComponent,  UActorComponent   >(m, "UHeightFogComponent")
         .def_readwrite("Height", &UHeightFogComponent::Height)
         .def_readwrite("Density", &UHeightFogComponent::Density)
         .def_readwrite("LightBrightness", &UHeightFogComponent::LightBrightness)
@@ -14,6 +14,5 @@ void Export_pystes_UHeightFogComponent()
         .def_readwrite("StartDistance", &UHeightFogComponent::StartDistance)
         .def("StaticClass", &UHeightFogComponent::StaticClass, py::return_value_policy::reference)
         .def("SetEnabled", &UHeightFogComponent::SetEnabled)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

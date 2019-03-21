@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_UnlockCustomization()
+void Export_pystes_UBehavior_UnlockCustomization(py::object m)
 {
-    py::class_< UBehavior_UnlockCustomization,  UBehaviorBase   >("UBehavior_UnlockCustomization")
+    py::class_< UBehavior_UnlockCustomization,  UBehaviorBase   >(m, "UBehavior_UnlockCustomization")
         .def_readwrite("DefinitionToUnlock", &UBehavior_UnlockCustomization::DefinitionToUnlock)
         .def("StaticClass", &UBehavior_UnlockCustomization::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_UnlockCustomization::ApplyBehaviorToContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

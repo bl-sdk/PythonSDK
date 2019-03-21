@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBodyClassDeathDefinition()
+void Export_pystes_UBodyClassDeathDefinition(py::object m)
 {
-    py::class_< UBodyClassDeathDefinition,  UGBXDefinition   >("UBodyClassDeathDefinition")
+    py::class_< UBodyClassDeathDefinition,  UGBXDefinition   >(m, "UBodyClassDeathDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UBodyClassDeathDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("TechDeaths", &UBodyClassDeathDefinition::TechDeaths)
         .def_readwrite("NonRagdollDeathSpecialMove", &UBodyClassDeathDefinition::NonRagdollDeathSpecialMove)
@@ -33,6 +33,5 @@ void Export_pystes_UBodyClassDeathDefinition()
         .def("OnPlayDeathPizazz", &UBodyClassDeathDefinition::OnPlayDeathPizazz)
         .def("SetBehaviorProviderDefinition", &UBodyClassDeathDefinition::SetBehaviorProviderDefinition)
         .def("GetBehaviorProviderDefinition", &UBodyClassDeathDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

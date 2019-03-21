@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMatchmakingResultEntry()
+void Export_pystes_FMatchmakingResultEntry(py::object m)
 {
-    py::class_< FMatchmakingResultEntry >("FMatchmakingResultEntry")
+    py::class_< FMatchmakingResultEntry >(m, "FMatchmakingResultEntry")
         .def_readwrite("MatchTypeIconFrameName", &FMatchmakingResultEntry::MatchTypeIconFrameName)
         .def_readwrite("StatusIconFrameName", &FMatchmakingResultEntry::StatusIconFrameName)
         .def_readwrite("Message", &FMatchmakingResultEntry::Message)

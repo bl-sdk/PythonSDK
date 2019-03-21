@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FParticleCurvePair()
+void Export_pystes_FParticleCurvePair(py::object m)
 {
-    py::class_< FParticleCurvePair >("FParticleCurvePair")
+    py::class_< FParticleCurvePair >(m, "FParticleCurvePair")
         .def_readwrite("CurveName", &FParticleCurvePair::CurveName)
         .def_readwrite("CurveObject", &FParticleCurvePair::CurveObject)
   ;

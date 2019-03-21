@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIAkEnvironmentalEffectProvider()
+void Export_pystes_UIAkEnvironmentalEffectProvider(py::object m)
 {
-    py::class_< UIAkEnvironmentalEffectProvider,  UInterface   >("UIAkEnvironmentalEffectProvider")
+    py::class_< UIAkEnvironmentalEffectProvider,  UInterface   >(m, "UIAkEnvironmentalEffectProvider")
         .def("StaticClass", &UIAkEnvironmentalEffectProvider::StaticClass, py::return_value_policy::reference)
         .def("GetEnvironmentalEffectsForLocation", &UIAkEnvironmentalEffectProvider::GetEnvironmentalEffectsForLocation)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

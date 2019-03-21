@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APatrolDestination()
+void Export_pystes_APatrolDestination(py::object m)
 {
-    py::class_< APatrolDestination,  AActor   >("APatrolDestination")
+    py::class_< APatrolDestination,  AActor   >(m, "APatrolDestination")
         .def_readwrite("NextPatrolPoints", &APatrolDestination::NextPatrolPoints)
         .def("StaticClass", &APatrolDestination::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

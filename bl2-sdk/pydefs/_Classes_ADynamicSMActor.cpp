@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ADynamicSMActor()
+void Export_pystes_ADynamicSMActor(py::object m)
 {
-    py::class_< ADynamicSMActor,  AActor   >("ADynamicSMActor")
+    py::class_< ADynamicSMActor,  AActor   >(m, "ADynamicSMActor")
         .def_readwrite("StaticMeshComponent", &ADynamicSMActor::StaticMeshComponent)
         .def_readwrite("LightEnvironment", &ADynamicSMActor::LightEnvironment)
         .def_readwrite("ReplicatedMesh", &ADynamicSMActor::ReplicatedMesh)
@@ -24,6 +24,5 @@ void Export_pystes_ADynamicSMActor()
         .def("OnSetMesh", &ADynamicSMActor::OnSetMesh)
         .def("eventReplicatedEvent", &ADynamicSMActor::eventReplicatedEvent)
         .def("eventPostBeginPlay", &ADynamicSMActor::eventPostBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

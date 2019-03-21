@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_AimAtScanRange()
+void Export_pystes_UAction_AimAtScanRange(py::object m)
 {
-    py::class_< UAction_AimAtScanRange,  UWillowActionSequencePawn   >("UAction_AimAtScanRange")
+    py::class_< UAction_AimAtScanRange,  UWillowActionSequencePawn   >(m, "UAction_AimAtScanRange")
         .def_readwrite("YawRange", &UAction_AimAtScanRange::YawRange)
         .def_readwrite("ScanSpeed", &UAction_AimAtScanRange::ScanSpeed)
         .def_readwrite("PointDelay", &UAction_AimAtScanRange::PointDelay)
@@ -14,6 +14,5 @@ void Export_pystes_UAction_AimAtScanRange()
         .def("SetNewRotation", &UAction_AimAtScanRange::SetNewRotation)
         .def("eventStop", &UAction_AimAtScanRange::eventStop)
         .def("eventStart", &UAction_AimAtScanRange::eventStart)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

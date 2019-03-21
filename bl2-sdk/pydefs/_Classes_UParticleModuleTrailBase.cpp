@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleTrailBase()
+void Export_pystes_UParticleModuleTrailBase(py::object m)
 {
-    py::class_< UParticleModuleTrailBase,  UParticleModule   >("UParticleModuleTrailBase")
+    py::class_< UParticleModuleTrailBase,  UParticleModule   >(m, "UParticleModuleTrailBase")
         .def("StaticClass", &UParticleModuleTrailBase::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

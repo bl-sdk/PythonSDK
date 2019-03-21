@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UQuestAcceptGFxDefinition()
+void Export_pystes_UQuestAcceptGFxDefinition(py::object m)
 {
-    py::class_< UQuestAcceptGFxDefinition,  UWillowGFxMovie3DDefinition   >("UQuestAcceptGFxDefinition")
+    py::class_< UQuestAcceptGFxDefinition,  UWillowGFxMovie3DDefinition   >(m, "UQuestAcceptGFxDefinition")
         .def_readwrite("MissionTextDefinition", &UQuestAcceptGFxDefinition::MissionTextDefinition)
         .def_readwrite("NumEntriesOnMissionList", &UQuestAcceptGFxDefinition::NumEntriesOnMissionList)
         .def_readwrite("Pres_Available", &UQuestAcceptGFxDefinition::Pres_Available)
@@ -17,6 +17,5 @@ void Export_pystes_UQuestAcceptGFxDefinition()
         .def_readwrite("Pres_Failed", &UQuestAcceptGFxDefinition::Pres_Failed)
         .def_readwrite("PostProcessInterpolationTime", &UQuestAcceptGFxDefinition::PostProcessInterpolationTime)
         .def("StaticClass", &UQuestAcceptGFxDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

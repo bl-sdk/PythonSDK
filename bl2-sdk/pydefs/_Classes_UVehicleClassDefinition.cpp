@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UVehicleClassDefinition()
+void Export_pystes_UVehicleClassDefinition(py::object m)
 {
-    py::class_< UVehicleClassDefinition,  UGBXDefinition   >("UVehicleClassDefinition")
+    py::class_< UVehicleClassDefinition,  UGBXDefinition   >(m, "UVehicleClassDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UVehicleClassDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("BehaviorProviderDefinition", &UVehicleClassDefinition::BehaviorProviderDefinition)
         .def_readwrite("VehicleImpactDamage", &UVehicleClassDefinition::VehicleImpactDamage)
@@ -102,6 +102,5 @@ void Export_pystes_UVehicleClassDefinition()
         .def("GetCollisionDamageTypeForSpeed", &UVehicleClassDefinition::GetCollisionDamageTypeForSpeed, py::return_value_policy::reference)
         .def("SetBehaviorProviderDefinition", &UVehicleClassDefinition::SetBehaviorProviderDefinition)
         .def("GetBehaviorProviderDefinition", &UVehicleClassDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

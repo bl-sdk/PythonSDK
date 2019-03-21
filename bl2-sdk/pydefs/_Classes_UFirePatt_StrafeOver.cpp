@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFirePatt_StrafeOver()
+void Export_pystes_UFirePatt_StrafeOver(py::object m)
 {
-    py::class_< UFirePatt_StrafeOver,  UFiringPattern   >("UFirePatt_StrafeOver")
+    py::class_< UFirePatt_StrafeOver,  UFiringPattern   >(m, "UFirePatt_StrafeOver")
         .def_readwrite("CurrentAimRotation", &UFirePatt_StrafeOver::CurrentAimRotation)
         .def_readwrite("PitchDeltaPerShot", &UFirePatt_StrafeOver::PitchDeltaPerShot)
         .def_readwrite("MaxYawDeltaPerShot", &UFirePatt_StrafeOver::MaxYawDeltaPerShot)
@@ -15,6 +15,5 @@ void Export_pystes_UFirePatt_StrafeOver()
         .def_readwrite("YawDeltaRatio", &UFirePatt_StrafeOver::YawDeltaRatio)
         .def_readwrite("TargetPosition", &UFirePatt_StrafeOver::TargetPosition)
         .def("StaticClass", &UFirePatt_StrafeOver::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UExposureUtilityStrategy()
+void Export_pystes_UExposureUtilityStrategy(py::object m)
 {
-    py::class_< UExposureUtilityStrategy,  UObject   >("UExposureUtilityStrategy")
+    py::class_< UExposureUtilityStrategy,  UObject   >(m, "UExposureUtilityStrategy")
         .def("StaticClass", &UExposureUtilityStrategy::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

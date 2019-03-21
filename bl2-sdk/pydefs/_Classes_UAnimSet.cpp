@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimSet()
+void Export_pystes_UAnimSet(py::object m)
 {
-    py::class_< UAnimSet,  UObject   >("UAnimSet")
+    py::class_< UAnimSet,  UObject   >(m, "UAnimSet")
         .def_readwrite("TrackBoneNames", &UAnimSet::TrackBoneNames)
         .def_readwrite("Sequences", &UAnimSet::Sequences)
         .def_readonly("UnknownData00", &UAnimSet::UnknownData00)
@@ -18,6 +18,5 @@ void Export_pystes_UAnimSet()
         .def_readwrite("PreviewSkelMeshName", &UAnimSet::PreviewSkelMeshName)
         .def_readwrite("BestRatioSkelMeshName", &UAnimSet::BestRatioSkelMeshName)
         .def("StaticClass", &UAnimSet::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

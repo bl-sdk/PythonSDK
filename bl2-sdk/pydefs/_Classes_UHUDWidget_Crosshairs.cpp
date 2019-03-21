@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHUDWidget_Crosshairs()
+void Export_pystes_UHUDWidget_Crosshairs(py::object m)
 {
-    py::class_< UHUDWidget_Crosshairs,  UGFxObject   >("UHUDWidget_Crosshairs")
+    py::class_< UHUDWidget_Crosshairs,  UGFxObject   >(m, "UHUDWidget_Crosshairs")
         .def_readwrite("CrosshairSize", &UHUDWidget_Crosshairs::CrosshairSize)
         .def_readwrite("CrosshairFrame", &UHUDWidget_Crosshairs::CrosshairFrame)
         .def_readwrite("CrosshairVisibility", &UHUDWidget_Crosshairs::CrosshairVisibility)
@@ -24,6 +24,5 @@ void Export_pystes_UHUDWidget_Crosshairs()
         .def("Update", &UHUDWidget_Crosshairs::Update)
         .def("Deinit", &UHUDWidget_Crosshairs::Deinit)
         .def("Init", &UHUDWidget_Crosshairs::Init)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowNavDebug()
+void Export_pystes_AWillowNavDebug(py::object m)
 {
-    py::class_< AWillowNavDebug,  AActor   >("AWillowNavDebug")
+    py::class_< AWillowNavDebug,  AActor   >(m, "AWillowNavDebug")
         .def("StaticClass", &AWillowNavDebug::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

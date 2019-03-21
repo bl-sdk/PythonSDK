@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UVehicleSeatSwap_PlayerInteractionServer()
+void Export_pystes_UVehicleSeatSwap_PlayerInteractionServer(py::object m)
 {
-    py::class_< UVehicleSeatSwap_PlayerInteractionServer,  UPlayerInteractionServer   >("UVehicleSeatSwap_PlayerInteractionServer")
+    py::class_< UVehicleSeatSwap_PlayerInteractionServer,  UPlayerInteractionServer   >(m, "UVehicleSeatSwap_PlayerInteractionServer")
         .def_readwrite("PlayerVehicle", &UVehicleSeatSwap_PlayerInteractionServer::PlayerVehicle)
         .def_readwrite("RequestedSeat", &UVehicleSeatSwap_PlayerInteractionServer::RequestedSeat)
         .def("StaticClass", &UVehicleSeatSwap_PlayerInteractionServer::StaticClass, py::return_value_policy::reference)
@@ -14,6 +14,5 @@ void Export_pystes_UVehicleSeatSwap_PlayerInteractionServer()
         .def("GetClientType", &UVehicleSeatSwap_PlayerInteractionServer::GetClientType, py::return_value_policy::reference)
         .def("GetInitialMessageForPlayer", &UVehicleSeatSwap_PlayerInteractionServer::GetInitialMessageForPlayer)
         .def("HandleMessage", &UVehicleSeatSwap_PlayerInteractionServer::HandleMessage)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

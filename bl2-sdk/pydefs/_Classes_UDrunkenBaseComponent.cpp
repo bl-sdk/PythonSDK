@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDrunkenBaseComponent()
+void Export_pystes_UDrunkenBaseComponent(py::object m)
 {
-    py::class_< UDrunkenBaseComponent,  UMovementComponent   >("UDrunkenBaseComponent")
+    py::class_< UDrunkenBaseComponent,  UMovementComponent   >(m, "UDrunkenBaseComponent")
         .def_readwrite("StartApproachDistance", &UDrunkenBaseComponent::StartApproachDistance)
         .def_readwrite("StartDelayTime", &UDrunkenBaseComponent::StartDelayTime)
         .def_readwrite("EaseInTime", &UDrunkenBaseComponent::EaseInTime)
@@ -18,6 +18,5 @@ void Export_pystes_UDrunkenBaseComponent()
         .def("GenerateRandomNumberSeed", &UDrunkenBaseComponent::GenerateRandomNumberSeed)
         .def("SetRandomNumberSeed", &UDrunkenBaseComponent::SetRandomNumberSeed)
         .def("Init", &UDrunkenBaseComponent::Init)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

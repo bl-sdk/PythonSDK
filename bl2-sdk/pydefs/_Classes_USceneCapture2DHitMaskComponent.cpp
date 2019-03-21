@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USceneCapture2DHitMaskComponent()
+void Export_pystes_USceneCapture2DHitMaskComponent(py::object m)
 {
-    py::class_< USceneCapture2DHitMaskComponent,  USceneCaptureComponent   >("USceneCapture2DHitMaskComponent")
+    py::class_< USceneCapture2DHitMaskComponent,  USceneCaptureComponent   >(m, "USceneCapture2DHitMaskComponent")
         .def_readwrite("TextureTarget", &USceneCapture2DHitMaskComponent::TextureTarget)
         .def_readwrite("SkeletalMeshComp", &USceneCapture2DHitMaskComponent::SkeletalMeshComp)
         .def_readwrite("MaterialIndex", &USceneCapture2DHitMaskComponent::MaterialIndex)
@@ -19,6 +19,5 @@ void Export_pystes_USceneCapture2DHitMaskComponent()
         .def("SetFadingStartTimeSinceHit", &USceneCapture2DHitMaskComponent::SetFadingStartTimeSinceHit)
         .def("SetCaptureParameters", &USceneCapture2DHitMaskComponent::SetCaptureParameters)
         .def("SetCaptureTargetTexture", &USceneCapture2DHitMaskComponent::SetCaptureTargetTexture)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

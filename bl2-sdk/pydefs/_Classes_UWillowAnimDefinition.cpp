@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAnimDefinition()
+void Export_pystes_UWillowAnimDefinition(py::object m)
 {
-    py::class_< UWillowAnimDefinition,  UGearboxAnimDefinition   >("UWillowAnimDefinition")
+    py::class_< UWillowAnimDefinition,  UGearboxAnimDefinition   >(m, "UWillowAnimDefinition")
         .def_readwrite("InstanceDataName", &UWillowAnimDefinition::InstanceDataName)
         .def("StaticClass", &UWillowAnimDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetSMNode", &UWillowAnimDefinition::GetSMNode, py::return_value_policy::reference)
@@ -14,6 +14,5 @@ void Export_pystes_UWillowAnimDefinition()
         .def("eventServerFinished", &UWillowAnimDefinition::eventServerFinished)
         .def("eventServerStarted", &UWillowAnimDefinition::eventServerStarted)
         .def("eventAuthorityCanPlay", &UWillowAnimDefinition::eventAuthorityCanPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

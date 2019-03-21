@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGBXConnectedNavMesh()
+void Export_pystes_FGBXConnectedNavMesh(py::object m)
 {
-    py::class_< FGBXConnectedNavMesh >("FGBXConnectedNavMesh")
+    py::class_< FGBXConnectedNavMesh >(m, "FGBXConnectedNavMesh")
         .def_readwrite("Mesh", &FGBXConnectedNavMesh::Mesh)
         .def_readwrite("MeshID", &FGBXConnectedNavMesh::MeshID)
   ;

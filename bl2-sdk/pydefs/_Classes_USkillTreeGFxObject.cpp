@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USkillTreeGFxObject()
+void Export_pystes_USkillTreeGFxObject(py::object m)
 {
-    py::class_< USkillTreeGFxObject,  UGFxObject   >("USkillTreeGFxObject")
+    py::class_< USkillTreeGFxObject,  UGFxObject   >(m, "USkillTreeGFxObject")
         .def_readwrite("Artifacts", &USkillTreeGFxObject::Artifacts)
         .def_readwrite("NoArtifactsDescription", &USkillTreeGFxObject::NoArtifactsDescription)
         .def_readwrite("ArtifactsDescription", &USkillTreeGFxObject::ArtifactsDescription)
@@ -119,6 +119,5 @@ void Export_pystes_USkillTreeGFxObject()
         .def("HandleOpen", &USkillTreeGFxObject::HandleOpen)
         .def("CalculateBranchProgression", &USkillTreeGFxObject::CalculateBranchProgression)
         .def("Flash_SendInitialSkillData", &USkillTreeGFxObject::Flash_SendInitialSkillData)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

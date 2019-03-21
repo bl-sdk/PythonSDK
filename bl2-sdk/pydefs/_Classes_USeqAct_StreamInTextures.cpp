@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_StreamInTextures()
+void Export_pystes_USeqAct_StreamInTextures(py::object m)
 {
-    py::class_< USeqAct_StreamInTextures,  USeqAct_Latent   >("USeqAct_StreamInTextures")
+    py::class_< USeqAct_StreamInTextures,  USeqAct_Latent   >(m, "USeqAct_StreamInTextures")
         .def_readwrite("Seconds", &USeqAct_StreamInTextures::Seconds)
         .def_readwrite("StreamingDistanceMultiplier", &USeqAct_StreamInTextures::StreamingDistanceMultiplier)
         .def_readwrite("NumWantingResourcesID", &USeqAct_StreamInTextures::NumWantingResourcesID)
@@ -16,6 +16,5 @@ void Export_pystes_USeqAct_StreamInTextures()
         .def_readwrite("SelectedCinematicTextureGroups", &USeqAct_StreamInTextures::SelectedCinematicTextureGroups)
         .def("StaticClass", &USeqAct_StreamInTextures::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqAct_StreamInTextures::eventGetObjClassVersion)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFrontendGFxMovieDefinition()
+void Export_pystes_UFrontendGFxMovieDefinition(py::object m)
 {
-    py::class_< UFrontendGFxMovieDefinition,  UWillowGFxMovie3DDefinition   >("UFrontendGFxMovieDefinition")
+    py::class_< UFrontendGFxMovieDefinition,  UWillowGFxMovie3DDefinition   >(m, "UFrontendGFxMovieDefinition")
         .def_readwrite("OnStart", &UFrontendGFxMovieDefinition::OnStart)
         .def_readwrite("WalkableMapList", &UFrontendGFxMovieDefinition::WalkableMapList)
         .def_readwrite("BlockoutMapList", &UFrontendGFxMovieDefinition::BlockoutMapList)
@@ -25,6 +25,5 @@ void Export_pystes_UFrontendGFxMovieDefinition()
         .def_readwrite("ConfirmCharacterMovieDef", &UFrontendGFxMovieDefinition::ConfirmCharacterMovieDef)
         .def_readwrite("InitialScrollingListProviderClass", &UFrontendGFxMovieDefinition::InitialScrollingListProviderClass)
         .def("StaticClass", &UFrontendGFxMovieDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

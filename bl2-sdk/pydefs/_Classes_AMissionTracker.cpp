@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AMissionTracker()
+void Export_pystes_AMissionTracker(py::object m)
 {
-    py::class_< AMissionTracker,  AActor   >("AMissionTracker")
+    py::class_< AMissionTracker,  AActor   >(m, "AMissionTracker")
         .def_readwrite("VfTable_IIBehaviorConsumer", &AMissionTracker::VfTable_IIBehaviorConsumer)
         .def_readwrite("VfTable_IIPlayerBehavior", &AMissionTracker::VfTable_IIPlayerBehavior)
         .def_readwrite("VfTable_IIScreenParticle", &AMissionTracker::VfTable_IIScreenParticle)
@@ -160,6 +160,5 @@ void Export_pystes_AMissionTracker()
         .def("IsMissionFiltered", &AMissionTracker::IsMissionFiltered)
         .def("ToggleMissionFiltered", &AMissionTracker::ToggleMissionFiltered)
         .def("SetMissionStatus", &AMissionTracker::SetMissionStatus)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

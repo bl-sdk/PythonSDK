@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIDynamicDataProvider()
+void Export_pystes_UUIDynamicDataProvider(py::object m)
 {
-    py::class_< UUIDynamicDataProvider,  UUIDataProvider   >("UUIDynamicDataProvider")
+    py::class_< UUIDynamicDataProvider,  UUIDataProvider   >(m, "UUIDynamicDataProvider")
         .def_readwrite("VfTable_IUIListElementCellProvider", &UUIDynamicDataProvider::VfTable_IUIListElementCellProvider)
         .def_readwrite("DataClass", &UUIDynamicDataProvider::DataClass)
         .def_readwrite("DataSource", &UUIDynamicDataProvider::DataSource)
@@ -20,6 +20,5 @@ void Export_pystes_UUIDynamicDataProvider()
         .def("BindProviderInstance", &UUIDynamicDataProvider::BindProviderInstance)
         .def("eventGetCustomPropertyValue", &UUIPropertyDataProvider::eventGetCustomPropertyValue)
         .def("CanSupportComplexPropertyType", &UUIPropertyDataProvider::CanSupportComplexPropertyType)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

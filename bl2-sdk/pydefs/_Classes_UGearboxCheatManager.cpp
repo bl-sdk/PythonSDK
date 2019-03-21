@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxCheatManager()
+void Export_pystes_UGearboxCheatManager(py::object m)
 {
-    py::class_< UGearboxCheatManager,  UCheatManager   >("UGearboxCheatManager")
+    py::class_< UGearboxCheatManager,  UCheatManager   >(m, "UGearboxCheatManager")
         .def("StaticClass", &UGearboxCheatManager::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

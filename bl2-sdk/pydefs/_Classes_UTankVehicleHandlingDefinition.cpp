@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTankVehicleHandlingDefinition()
+void Export_pystes_UTankVehicleHandlingDefinition(py::object m)
 {
-    py::class_< UTankVehicleHandlingDefinition,  UCarVehicleHandlingDefinition   >("UTankVehicleHandlingDefinition")
+    py::class_< UTankVehicleHandlingDefinition,  UCarVehicleHandlingDefinition   >(m, "UTankVehicleHandlingDefinition")
         .def_readwrite("MaxEngineTorque", &UTankVehicleHandlingDefinition::MaxEngineTorque)
         .def_readwrite("EngineDamping", &UTankVehicleHandlingDefinition::EngineDamping)
         .def_readwrite("InsideTrackTorqueFactor", &UTankVehicleHandlingDefinition::InsideTrackTorqueFactor)
@@ -16,6 +16,5 @@ void Export_pystes_UTankVehicleHandlingDefinition()
         .def_readwrite("SteeringThresholdForStoppedTurns", &UTankVehicleHandlingDefinition::SteeringThresholdForStoppedTurns)
         .def_readwrite("EngineDampingOnStoppedTurns", &UTankVehicleHandlingDefinition::EngineDampingOnStoppedTurns)
         .def("StaticClass", &UTankVehicleHandlingDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

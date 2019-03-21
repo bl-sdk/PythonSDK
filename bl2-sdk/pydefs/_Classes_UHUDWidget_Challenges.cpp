@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHUDWidget_Challenges()
+void Export_pystes_UHUDWidget_Challenges(py::object m)
 {
-    py::class_< UHUDWidget_Challenges,  UHUDWidget_Base   >("UHUDWidget_Challenges")
+    py::class_< UHUDWidget_Challenges,  UHUDWidget_Base   >(m, "UHUDWidget_Challenges")
         .def_readwrite("InnerClip", &UHUDWidget_Challenges::InnerClip)
         .def_readwrite("HeaderClip", &UHUDWidget_Challenges::HeaderClip)
         .def_readwrite("SubtextClip", &UHUDWidget_Challenges::SubtextClip)
@@ -26,6 +26,5 @@ void Export_pystes_UHUDWidget_Challenges()
         .def("Update", &UHUDWidget_Challenges::Update)
         .def("Deinit", &UHUDWidget_Challenges::Deinit)
         .def("Init", &UHUDWidget_Challenges::Init)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

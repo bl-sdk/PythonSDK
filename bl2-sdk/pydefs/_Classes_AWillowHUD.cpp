@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowHUD()
+void Export_pystes_AWillowHUD(py::object m)
 {
-    py::class_< AWillowHUD,  AHUD   >("AWillowHUD")
+    py::class_< AWillowHUD,  AHUD   >(m, "AWillowHUD")
         .def_readwrite("DlcVersionErrorDisplayDuration", &AWillowHUD::DlcVersionErrorDisplayDuration)
         .def_readwrite("DlcVersionErrorDisplayStartTime", &AWillowHUD::DlcVersionErrorDisplayStartTime)
         .def_readwrite("PlayerInfoHeight", &AWillowHUD::PlayerInfoHeight)
@@ -185,6 +185,5 @@ void Export_pystes_AWillowHUD()
         .def("ClearCustomMessage", &AWillowHUD::ClearCustomMessage)
         .def("DisplayCustomMessage", &AWillowHUD::DisplayCustomMessage)
         .def("LoadBuildInfo", &AWillowHUD::LoadBuildInfo)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

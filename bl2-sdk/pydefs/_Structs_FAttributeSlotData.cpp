@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAttributeSlotData()
+void Export_pystes_FAttributeSlotData(py::object m)
 {
-    py::class_< FAttributeSlotData >("FAttributeSlotData")
+    py::class_< FAttributeSlotData >(m, "FAttributeSlotData")
         .def_readwrite("SlotName", &FAttributeSlotData::SlotName)
         .def_readwrite("MinimumGrade", &FAttributeSlotData::MinimumGrade)
         .def_readwrite("MaximumGrade", &FAttributeSlotData::MaximumGrade)

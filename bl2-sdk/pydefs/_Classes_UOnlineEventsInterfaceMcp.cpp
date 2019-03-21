@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineEventsInterfaceMcp()
+void Export_pystes_UOnlineEventsInterfaceMcp(py::object m)
 {
-    py::class_< UOnlineEventsInterfaceMcp,  UMCPBase   >("UOnlineEventsInterfaceMcp")
+    py::class_< UOnlineEventsInterfaceMcp,  UMCPBase   >(m, "UOnlineEventsInterfaceMcp")
         .def_readwrite("EventUploadConfigs", &UOnlineEventsInterfaceMcp::EventUploadConfigs)
         .def_readwrite("MCPEventPostObjects", &UOnlineEventsInterfaceMcp::MCPEventPostObjects)
         .def_readwrite("DisabledUploadTypes", &UOnlineEventsInterfaceMcp::DisabledUploadTypes)
@@ -14,6 +14,5 @@ void Export_pystes_UOnlineEventsInterfaceMcp()
         .def("UpdatePlaylistPopulation", &UOnlineEventsInterfaceMcp::UpdatePlaylistPopulation)
         .def("UploadGameplayEventsData", &UOnlineEventsInterfaceMcp::UploadGameplayEventsData)
         .def("UploadPlayerData", &UOnlineEventsInterfaceMcp::UploadPlayerData)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMapProperty()
+void Export_pystes_UMapProperty(py::object m)
 {
-    py::class_< UMapProperty,  UProperty   >("UMapProperty")
+    py::class_< UMapProperty,  UProperty   >(m, "UMapProperty")
         .def_readonly("UnknownData00", &UMapProperty::UnknownData00)
         .def("StaticClass", &UMapProperty::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

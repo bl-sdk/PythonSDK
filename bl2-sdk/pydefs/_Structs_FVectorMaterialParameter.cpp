@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FVectorMaterialParameter()
+void Export_pystes_FVectorMaterialParameter(py::object m)
 {
-    py::class_< FVectorMaterialParameter >("FVectorMaterialParameter")
+    py::class_< FVectorMaterialParameter >(m, "FVectorMaterialParameter")
         .def_readwrite("Name", &FVectorMaterialParameter::Name)
         .def_readwrite("Value", &FVectorMaterialParameter::Value)
         .def_readwrite("VectorScale", &FVectorMaterialParameter::VectorScale)

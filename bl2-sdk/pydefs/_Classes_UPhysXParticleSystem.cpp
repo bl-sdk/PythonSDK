@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPhysXParticleSystem()
+void Export_pystes_UPhysXParticleSystem(py::object m)
 {
-    py::class_< UPhysXParticleSystem,  UObject   >("UPhysXParticleSystem")
+    py::class_< UPhysXParticleSystem,  UObject   >(m, "UPhysXParticleSystem")
         .def_readwrite("MaxParticles1", &UPhysXParticleSystem::MaxParticles1)
         .def_readwrite("MaxParticles2", &UPhysXParticleSystem::MaxParticles2)
         .def_readwrite("MaxParticles", &UPhysXParticleSystem::MaxParticles)
@@ -33,6 +33,5 @@ void Export_pystes_UPhysXParticleSystem()
         .def_readwrite("CascadeScene", &UPhysXParticleSystem::CascadeScene)
         .def_readwrite("PSys", &UPhysXParticleSystem::PSys)
         .def("StaticClass", &UPhysXParticleSystem::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

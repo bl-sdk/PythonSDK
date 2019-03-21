@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAttributeCategory()
+void Export_pystes_FAttributeCategory(py::object m)
 {
-    py::class_< FAttributeCategory >("FAttributeCategory")
+    py::class_< FAttributeCategory >(m, "FAttributeCategory")
         .def_readwrite("Category", &FAttributeCategory::Category)
         .def_readwrite("Attributes", &FAttributeCategory::Attributes)
   ;

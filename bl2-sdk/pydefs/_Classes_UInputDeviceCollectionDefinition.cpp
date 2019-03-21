@@ -3,14 +3,13 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInputDeviceCollectionDefinition()
+void Export_pystes_UInputDeviceCollectionDefinition(py::object m)
 {
-    py::class_< UInputDeviceCollectionDefinition,  UGBXDefinition   >("UInputDeviceCollectionDefinition")
+    py::class_< UInputDeviceCollectionDefinition,  UGBXDefinition   >(m, "UInputDeviceCollectionDefinition")
         .def_readwrite("XboxInputDevices", &UInputDeviceCollectionDefinition::XboxInputDevices)
         .def_readwrite("PS3InputDevices", &UInputDeviceCollectionDefinition::PS3InputDevices)
         .def_readwrite("PCInputDevices", &UInputDeviceCollectionDefinition::PCInputDevices)
         .def_readwrite("PCKeyBindGroups", &UInputDeviceCollectionDefinition::PCKeyBindGroups)
         .def("StaticClass", &UInputDeviceCollectionDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

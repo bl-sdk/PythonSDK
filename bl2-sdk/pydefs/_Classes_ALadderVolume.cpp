@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ALadderVolume()
+void Export_pystes_ALadderVolume(py::object m)
 {
-    py::class_< ALadderVolume,  APhysicsVolume   >("ALadderVolume")
+    py::class_< ALadderVolume,  APhysicsVolume   >(m, "ALadderVolume")
         .def_readwrite("WallDir", &ALadderVolume::WallDir)
         .def_readwrite("LookDir", &ALadderVolume::LookDir)
         .def_readwrite("ClimbDir", &ALadderVolume::ClimbDir)
@@ -18,6 +18,5 @@ void Export_pystes_ALadderVolume()
         .def("eventPawnEnteredVolume", &ALadderVolume::eventPawnEnteredVolume)
         .def("InUse", &ALadderVolume::InUse)
         .def("eventPostBeginPlay", &ALadderVolume::eventPostBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

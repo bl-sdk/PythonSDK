@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNotify_ViewShake()
+void Export_pystes_UAnimNotify_ViewShake(py::object m)
 {
-    py::class_< UAnimNotify_ViewShake,  UAnimNotify_Scripted   >("UAnimNotify_ViewShake")
+    py::class_< UAnimNotify_ViewShake,  UAnimNotify_Scripted   >(m, "UAnimNotify_ViewShake")
         .def_readwrite("Duration", &UAnimNotify_ViewShake::Duration)
         .def_readwrite("RotAmplitude", &UAnimNotify_ViewShake::RotAmplitude)
         .def_readwrite("RotFrequency", &UAnimNotify_ViewShake::RotFrequency)
@@ -18,6 +18,5 @@ void Export_pystes_UAnimNotify_ViewShake()
         .def_readwrite("ShakeParams", &UAnimNotify_ViewShake::ShakeParams)
         .def("StaticClass", &UAnimNotify_ViewShake::StaticClass, py::return_value_policy::reference)
         .def("eventNotify", &UAnimNotify_ViewShake::eventNotify)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

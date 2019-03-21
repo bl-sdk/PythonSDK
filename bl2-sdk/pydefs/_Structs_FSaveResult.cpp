@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSaveResult()
+void Export_pystes_FSaveResult(py::object m)
 {
-    py::class_< FSaveResult >("FSaveResult")
+    py::class_< FSaveResult >(m, "FSaveResult")
         .def_readwrite("charID", &FSaveResult::charID)
         .def_readwrite("Data", &FSaveResult::Data)
   ;

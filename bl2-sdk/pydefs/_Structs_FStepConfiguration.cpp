@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FStepConfiguration()
+void Export_pystes_FStepConfiguration(py::object m)
 {
-    py::class_< FStepConfiguration >("FStepConfiguration")
+    py::class_< FStepConfiguration >(m, "FStepConfiguration")
         .def_readwrite("FirstAttemptDelay", &FStepConfiguration::FirstAttemptDelay)
         .def_readwrite("BaseRetrySeconds", &FStepConfiguration::BaseRetrySeconds)
         .def_readwrite("RetryMultiplier", &FStepConfiguration::RetryMultiplier)

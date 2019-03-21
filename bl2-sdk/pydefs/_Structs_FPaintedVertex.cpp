@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPaintedVertex()
+void Export_pystes_FPaintedVertex(py::object m)
 {
-    py::class_< FPaintedVertex >("FPaintedVertex")
+    py::class_< FPaintedVertex >(m, "FPaintedVertex")
         .def_readwrite("Position", &FPaintedVertex::Position)
         .def_readwrite("Normal", &FPaintedVertex::Normal)
         .def_readwrite("Color", &FPaintedVertex::Color)

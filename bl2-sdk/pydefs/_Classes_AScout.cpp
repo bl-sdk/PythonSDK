@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AScout()
+void Export_pystes_AScout(py::object m)
 {
-    py::class_< AScout,  APawn   >("AScout")
+    py::class_< AScout,  APawn   >(m, "AScout")
         .def_readwrite("PathSizes", &AScout::PathSizes)
         .def_readwrite("TestJumpZ", &AScout::TestJumpZ)
         .def_readwrite("TestGroundSpeed", &AScout::TestGroundSpeed)
@@ -39,6 +39,5 @@ void Export_pystes_AScout()
         .def_readwrite("MaxMantleFallTime", &AScout::MaxMantleFallTime)
         .def("StaticClass", &AScout::StaticClass, py::return_value_policy::reference)
         .def("eventPreBeginPlay", &AScout::eventPreBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

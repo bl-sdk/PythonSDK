@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBalancedActorAttributeContextResolver()
+void Export_pystes_UBalancedActorAttributeContextResolver(py::object m)
 {
-    py::class_< UBalancedActorAttributeContextResolver,  UAttributeContextResolver   >("UBalancedActorAttributeContextResolver")
+    py::class_< UBalancedActorAttributeContextResolver,  UAttributeContextResolver   >(m, "UBalancedActorAttributeContextResolver")
         .def("StaticClass", &UBalancedActorAttributeContextResolver::StaticClass, py::return_value_policy::reference)
         .def("GetAttributeContext", &UBalancedActorAttributeContextResolver::GetAttributeContext, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

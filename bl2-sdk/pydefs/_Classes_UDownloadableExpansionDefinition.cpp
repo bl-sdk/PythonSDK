@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDownloadableExpansionDefinition()
+void Export_pystes_UDownloadableExpansionDefinition(py::object m)
 {
-    py::class_< UDownloadableExpansionDefinition,  UDownloadableContentDefinition   >("UDownloadableExpansionDefinition")
+    py::class_< UDownloadableExpansionDefinition,  UDownloadableContentDefinition   >(m, "UDownloadableExpansionDefinition")
         .def_readwrite("LevelTravelPairs", &UDownloadableExpansionDefinition::LevelTravelPairs)
         .def_readwrite("LevelDependencyList", &UDownloadableExpansionDefinition::LevelDependencyList)
         .def_readwrite("ChallengeList", &UDownloadableExpansionDefinition::ChallengeList)
@@ -21,6 +21,5 @@ void Export_pystes_UDownloadableExpansionDefinition()
         .def("StaticClass", &UDownloadableExpansionDefinition::StaticClass, py::return_value_policy::reference)
         .def("IsLevelTravelAccessible", &UDownloadableExpansionDefinition::IsLevelTravelAccessible)
         .def("CanTravelTo", &UDownloadableExpansionDefinition::CanTravelTo)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

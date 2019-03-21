@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSwitchObjectCase()
+void Export_pystes_FSwitchObjectCase(py::object m)
 {
-    py::class_< FSwitchObjectCase >("FSwitchObjectCase")
+    py::class_< FSwitchObjectCase >(m, "FSwitchObjectCase")
         .def_readwrite("ObjectValue", &FSwitchObjectCase::ObjectValue)
   ;
 }

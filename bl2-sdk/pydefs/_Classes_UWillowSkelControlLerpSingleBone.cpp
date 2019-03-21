@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSkelControlLerpSingleBone()
+void Export_pystes_UWillowSkelControlLerpSingleBone(py::object m)
 {
-    py::class_< UWillowSkelControlLerpSingleBone,  USkelControlSingleBone   >("UWillowSkelControlLerpSingleBone")
+    py::class_< UWillowSkelControlLerpSingleBone,  USkelControlSingleBone   >(m, "UWillowSkelControlLerpSingleBone")
         .def_readwrite("VfTable_IIWeaponBoneController", &UWillowSkelControlLerpSingleBone::VfTable_IIWeaponBoneController)
         .def_readwrite("RotationExtent", &UWillowSkelControlLerpSingleBone::RotationExtent)
         .def_readwrite("RotationRate", &UWillowSkelControlLerpSingleBone::RotationRate)
@@ -23,6 +23,5 @@ void Export_pystes_UWillowSkelControlLerpSingleBone()
         .def("BeginFire", &UWillowSkelControlLerpSingleBone::BeginFire)
         .def("IncrementWeaponBoneControl", &UWillowSkelControlLerpSingleBone::IncrementWeaponBoneControl)
         .def("GetControlName", &UWillowSkelControlLerpSingleBone::GetControlName)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

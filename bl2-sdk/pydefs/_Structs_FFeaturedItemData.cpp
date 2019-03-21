@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FFeaturedItemData()
+void Export_pystes_FFeaturedItemData(py::object m)
 {
-    py::class_< FFeaturedItemData >("FFeaturedItemData")
+    py::class_< FFeaturedItemData >(m, "FFeaturedItemData")
         .def_readwrite("CommerceMarkup", &FFeaturedItemData::CommerceMarkup)
         .def_readwrite("LootConfiguration", &FFeaturedItemData::LootConfiguration)
         .def_readwrite("GameStageValue", &FFeaturedItemData::GameStageValue)

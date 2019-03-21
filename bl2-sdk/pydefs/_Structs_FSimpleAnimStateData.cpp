@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSimpleAnimStateData()
+void Export_pystes_FSimpleAnimStateData(py::object m)
 {
-    py::class_< FSimpleAnimStateData >("FSimpleAnimStateData")
+    py::class_< FSimpleAnimStateData >(m, "FSimpleAnimStateData")
         .def_readwrite("AnimState", &FSimpleAnimStateData::AnimState)
   ;
 }

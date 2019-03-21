@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInterpCurvePointVector()
+void Export_pystes_FInterpCurvePointVector(py::object m)
 {
-    py::class_< FInterpCurvePointVector >("FInterpCurvePointVector")
+    py::class_< FInterpCurvePointVector >(m, "FInterpCurvePointVector")
         .def_readwrite("InVal", &FInterpCurvePointVector::InVal)
         .def_readwrite("OutVal", &FInterpCurvePointVector::OutVal)
         .def_readwrite("ArriveTangent", &FInterpCurvePointVector::ArriveTangent)

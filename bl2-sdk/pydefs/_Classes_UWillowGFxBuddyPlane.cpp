@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGFxBuddyPlane()
+void Export_pystes_UWillowGFxBuddyPlane(py::object m)
 {
-    py::class_< UWillowGFxBuddyPlane,  UWillowGFxMovie   >("UWillowGFxBuddyPlane")
+    py::class_< UWillowGFxBuddyPlane,  UWillowGFxMovie   >(m, "UWillowGFxBuddyPlane")
         .def("StaticClass", &UWillowGFxBuddyPlane::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

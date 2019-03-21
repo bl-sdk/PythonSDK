@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SpawnLootAtPoints()
+void Export_pystes_UBehavior_SpawnLootAtPoints(py::object m)
 {
-    py::class_< UBehavior_SpawnLootAtPoints,  UBehavior_SpawnLoot   >("UBehavior_SpawnLootAtPoints")
+    py::class_< UBehavior_SpawnLootAtPoints,  UBehavior_SpawnLoot   >(m, "UBehavior_SpawnLootAtPoints")
         .def_readwrite("SpawnPoints", &UBehavior_SpawnLootAtPoints::SpawnPoints)
         .def_readwrite("SpawnVelocity", &UBehavior_SpawnLootAtPoints::SpawnVelocity)
         .def_readwrite("SpawnVelocityRelativeTo", &UBehavior_SpawnLootAtPoints::SpawnVelocityRelativeTo)
@@ -15,6 +15,5 @@ void Export_pystes_UBehavior_SpawnLootAtPoints()
         .def("DropItemFromSpawnPoint", &UBehavior_SpawnLootAtPoints::DropItemFromSpawnPoint)
         .def("AttachItemToSpawnPoint", &UBehavior_SpawnLootAtPoints::AttachItemToSpawnPoint)
         .def("PlaceSpawnedItems", &UBehavior_SpawnLootAtPoints::PlaceSpawnedItems)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

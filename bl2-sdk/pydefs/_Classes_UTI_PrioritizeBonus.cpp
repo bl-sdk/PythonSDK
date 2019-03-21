@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTI_PrioritizeBonus()
+void Export_pystes_UTI_PrioritizeBonus(py::object m)
 {
-    py::class_< UTI_PrioritizeBonus,  UTI_Prioritize   >("UTI_PrioritizeBonus")
+    py::class_< UTI_PrioritizeBonus,  UTI_Prioritize   >(m, "UTI_PrioritizeBonus")
         .def("StaticClass", &UTI_PrioritizeBonus::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

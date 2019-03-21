@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FWillowStatProperty()
+void Export_pystes_FWillowStatProperty(py::object m)
 {
-    py::class_< FWillowStatProperty >("FWillowStatProperty")
+    py::class_< FWillowStatProperty >(m, "FWillowStatProperty")
         .def_readwrite("Id", &FWillowStatProperty::Id)
         .def_readwrite("Data", &FWillowStatProperty::Data)
         .def_readwrite("MaxData", &FWillowStatProperty::MaxData)

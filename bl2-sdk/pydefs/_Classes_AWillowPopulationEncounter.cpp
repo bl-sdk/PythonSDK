@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowPopulationEncounter()
+void Export_pystes_AWillowPopulationEncounter(py::object m)
 {
-    py::class_< AWillowPopulationEncounter,  APopulationEncounter   >("AWillowPopulationEncounter")
+    py::class_< AWillowPopulationEncounter,  APopulationEncounter   >(m, "AWillowPopulationEncounter")
         .def("StaticClass", &AWillowPopulationEncounter::StaticClass, py::return_value_policy::reference)
         .def("OnAIAbortMoveToActor", &AWillowPopulationEncounter::OnAIAbortMoveToActor)
         .def("OnAICombatVolume", &AWillowPopulationEncounter::OnAICombatVolume)
@@ -16,6 +16,5 @@ void Export_pystes_AWillowPopulationEncounter()
         .def("OnAIScriptedHold", &AWillowPopulationEncounter::OnAIScriptedHold)
         .def("OnAISetItemTossTarget", &AWillowPopulationEncounter::OnAISetItemTossTarget)
         .def("OnAIProvoke", &AWillowPopulationEncounter::OnAIProvoke)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDrunkenRandomComponent()
+void Export_pystes_UDrunkenRandomComponent(py::object m)
 {
-    py::class_< UDrunkenRandomComponent,  UDrunkenBaseComponent   >("UDrunkenRandomComponent")
+    py::class_< UDrunkenRandomComponent,  UDrunkenBaseComponent   >(m, "UDrunkenRandomComponent")
         .def_readwrite("PathCorrectionInterval", &UDrunkenRandomComponent::PathCorrectionInterval)
         .def_readwrite("TurnSpeed", &UDrunkenRandomComponent::TurnSpeed)
         .def_readwrite("ApproachTurnSpeed", &UDrunkenRandomComponent::ApproachTurnSpeed)
@@ -16,6 +16,5 @@ void Export_pystes_UDrunkenRandomComponent()
         .def_readwrite("LastRotationOffset", &UDrunkenRandomComponent::LastRotationOffset)
         .def_readwrite("TargetRotationOffset", &UDrunkenRandomComponent::TargetRotationOffset)
         .def("StaticClass", &UDrunkenRandomComponent::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

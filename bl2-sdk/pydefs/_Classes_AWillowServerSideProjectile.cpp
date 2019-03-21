@@ -3,13 +3,12 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowServerSideProjectile()
+void Export_pystes_AWillowServerSideProjectile(py::object m)
 {
-    py::class_< AWillowServerSideProjectile,  AWillowProjectile   >("AWillowServerSideProjectile")
+    py::class_< AWillowServerSideProjectile,  AWillowProjectile   >(m, "AWillowServerSideProjectile")
         .def_readwrite("ServerLocation", &AWillowServerSideProjectile::ServerLocation)
         .def_readwrite("ServerVelocity", &AWillowServerSideProjectile::ServerVelocity)
         .def_readwrite("ServerAcceleration", &AWillowServerSideProjectile::ServerAcceleration)
         .def("StaticClass", &AWillowServerSideProjectile::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

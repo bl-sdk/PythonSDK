@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActorFactoryDecal()
+void Export_pystes_UActorFactoryDecal(py::object m)
 {
-    py::class_< UActorFactoryDecal,  UActorFactory   >("UActorFactoryDecal")
+    py::class_< UActorFactoryDecal,  UActorFactory   >(m, "UActorFactoryDecal")
         .def_readwrite("DecalMaterial", &UActorFactoryDecal::DecalMaterial)
         .def("StaticClass", &UActorFactoryDecal::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

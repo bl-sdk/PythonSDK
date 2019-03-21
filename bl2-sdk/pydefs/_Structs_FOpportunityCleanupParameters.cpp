@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FOpportunityCleanupParameters()
+void Export_pystes_FOpportunityCleanupParameters(py::object m)
 {
-    py::class_< FOpportunityCleanupParameters >("FOpportunityCleanupParameters")
+    py::class_< FOpportunityCleanupParameters >(m, "FOpportunityCleanupParameters")
         .def_readwrite("ActorIrrelvantDistance", &FOpportunityCleanupParameters::ActorIrrelvantDistance)
   ;
 }

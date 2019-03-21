@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInterpCurvePointQuat()
+void Export_pystes_FInterpCurvePointQuat(py::object m)
 {
-    py::class_< FInterpCurvePointQuat >("FInterpCurvePointQuat")
+    py::class_< FInterpCurvePointQuat >(m, "FInterpCurvePointQuat")
         .def_readwrite("InVal", &FInterpCurvePointQuat::InVal)
         .def_readonly("UnknownData00", &FInterpCurvePointQuat::UnknownData00)
         .def_readwrite("OutVal", &FInterpCurvePointQuat::OutVal)

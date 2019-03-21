@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBehaviorExecutionRecord()
+void Export_pystes_FBehaviorExecutionRecord(py::object m)
 {
-    py::class_< FBehaviorExecutionRecord >("FBehaviorExecutionRecord")
+    py::class_< FBehaviorExecutionRecord >(m, "FBehaviorExecutionRecord")
         .def_readwrite("OwningProcessID", &FBehaviorExecutionRecord::OwningProcessID)
         .def_readwrite("ProvidersIndex", &FBehaviorExecutionRecord::ProvidersIndex)
         .def_readwrite("SequencesDataIndex", &FBehaviorExecutionRecord::SequencesDataIndex)

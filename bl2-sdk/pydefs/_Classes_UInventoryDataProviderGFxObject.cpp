@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInventoryDataProviderGFxObject()
+void Export_pystes_UInventoryDataProviderGFxObject(py::object m)
 {
-    py::class_< UInventoryDataProviderGFxObject,  UGFxObject   >("UInventoryDataProviderGFxObject")
+    py::class_< UInventoryDataProviderGFxObject,  UGFxObject   >(m, "UInventoryDataProviderGFxObject")
         .def_readwrite("OwningMovie", &UInventoryDataProviderGFxObject::OwningMovie)
         .def_readwrite("OwningPanel", &UInventoryDataProviderGFxObject::OwningPanel)
         .def_readwrite("HeavyweightArray", &UInventoryDataProviderGFxObject::HeavyweightArray)
@@ -26,6 +26,5 @@ void Export_pystes_UInventoryDataProviderGFxObject()
         .def("eventInvalidate", &UDeferredDataProviderGFxObject::eventInvalidate)
         .def("RequestItemRange", &UDeferredDataProviderGFxObject::RequestItemRange, py::return_value_policy::reference)
         .def("RequestItemAt", &UDeferredDataProviderGFxObject::RequestItemAt, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

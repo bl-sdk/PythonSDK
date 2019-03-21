@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AAkAmbientSound()
+void Export_pystes_AAkAmbientSound(py::object m)
 {
-    py::class_< AAkAmbientSound,  AKeypoint   >("AAkAmbientSound")
+    py::class_< AAkAmbientSound,  AKeypoint   >(m, "AAkAmbientSound")
         .def_readwrite("PlayEvent", &AAkAmbientSound::PlayEvent)
         .def_readwrite("Group", &AAkAmbientSound::Group)
         .def("StaticClass", &AAkAmbientSound::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

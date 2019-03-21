@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGBXLineCheckResult()
+void Export_pystes_FGBXLineCheckResult(py::object m)
 {
-    py::class_< FGBXLineCheckResult >("FGBXLineCheckResult")
+    py::class_< FGBXLineCheckResult >(m, "FGBXLineCheckResult")
         .def_readwrite("Location", &FGBXLineCheckResult::Location)
         .def_readwrite("Normal", &FGBXLineCheckResult::Normal)
         .def_readwrite("Time", &FGBXLineCheckResult::Time)

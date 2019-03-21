@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInventorySwap()
+void Export_pystes_FInventorySwap(py::object m)
 {
-    py::class_< FInventorySwap >("FInventorySwap")
+    py::class_< FInventorySwap >(m, "FInventorySwap")
         .def_readwrite("Original", &FInventorySwap::Original)
         .def_readwrite("SwapTo", &FInventorySwap::SwapTo)
   ;

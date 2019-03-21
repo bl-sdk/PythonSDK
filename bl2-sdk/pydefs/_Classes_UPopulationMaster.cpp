@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPopulationMaster()
+void Export_pystes_UPopulationMaster(py::object m)
 {
-    py::class_< UPopulationMaster,  UObject   >("UPopulationMaster")
+    py::class_< UPopulationMaster,  UObject   >(m, "UPopulationMaster")
         .def_readwrite("OpportunityList", &UPopulationMaster::OpportunityList)
         .def_readwrite("ActiveActorCost", &UPopulationMaster::ActiveActorCost)
         .def_readwrite("MaxActorCost", &UPopulationMaster::MaxActorCost)
@@ -46,6 +46,5 @@ void Export_pystes_UPopulationMaster()
         .def("GetPopulationOpportunityIndex", &UPopulationMaster::GetPopulationOpportunityIndex)
         .def("GetActorsOpportunity", &UPopulationMaster::GetActorsOpportunity, py::return_value_policy::reference)
         .def("SpawnPopulationControlledActor", &UPopulationMaster::SpawnPopulationControlledActor, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

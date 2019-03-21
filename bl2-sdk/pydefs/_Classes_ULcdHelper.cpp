@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULcdHelper()
+void Export_pystes_ULcdHelper(py::object m)
 {
-    py::class_< ULcdHelper,  UObject   >("ULcdHelper")
+    py::class_< ULcdHelper,  UObject   >(m, "ULcdHelper")
         .def_readwrite("VfTable_FTickableObject", &ULcdHelper::VfTable_FTickableObject)
         .def("StaticClass", &ULcdHelper::StaticClass, py::return_value_policy::reference)
         .def("IsLcdScreenConnected", &ULcdHelper::IsLcdScreenConnected)
@@ -18,6 +18,5 @@ void Export_pystes_ULcdHelper()
         .def("SetLevel", &ULcdHelper::SetLevel)
         .def("SetLevelProgress", &ULcdHelper::SetLevelProgress)
         .def("NotifyLoading", &ULcdHelper::NotifyLoading)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCoordinatedEffectProcess()
+void Export_pystes_FCoordinatedEffectProcess(py::object m)
 {
-    py::class_< FCoordinatedEffectProcess >("FCoordinatedEffectProcess")
+    py::class_< FCoordinatedEffectProcess >(m, "FCoordinatedEffectProcess")
         .def_readwrite("Target", &FCoordinatedEffectProcess::Target)
         .def_readwrite("Threads", &FCoordinatedEffectProcess::Threads)
         .def_readwrite("Player0MatIndex", &FCoordinatedEffectProcess::Player0MatIndex)

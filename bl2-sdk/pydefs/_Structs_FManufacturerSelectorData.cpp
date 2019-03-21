@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FManufacturerSelectorData()
+void Export_pystes_FManufacturerSelectorData(py::object m)
 {
-    py::class_< FManufacturerSelectorData >("FManufacturerSelectorData")
+    py::class_< FManufacturerSelectorData >(m, "FManufacturerSelectorData")
         .def_readwrite("AssociatedManufacturerName", &FManufacturerSelectorData::AssociatedManufacturerName)
         .def_readwrite("ValueIfMatched", &FManufacturerSelectorData::ValueIfMatched)
   ;

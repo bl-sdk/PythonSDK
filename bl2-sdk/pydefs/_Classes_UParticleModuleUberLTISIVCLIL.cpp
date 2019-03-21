@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleUberLTISIVCLIL()
+void Export_pystes_UParticleModuleUberLTISIVCLIL(py::object m)
 {
-    py::class_< UParticleModuleUberLTISIVCLIL,  UParticleModuleUberBase   >("UParticleModuleUberLTISIVCLIL")
+    py::class_< UParticleModuleUberLTISIVCLIL,  UParticleModuleUberBase   >(m, "UParticleModuleUberLTISIVCLIL")
         .def_readwrite("Lifetime", &UParticleModuleUberLTISIVCLIL::Lifetime)
         .def_readwrite("StartSize", &UParticleModuleUberLTISIVCLIL::StartSize)
         .def_readwrite("StartVelocity", &UParticleModuleUberLTISIVCLIL::StartVelocity)
@@ -14,6 +14,5 @@ void Export_pystes_UParticleModuleUberLTISIVCLIL()
         .def_readwrite("AlphaOverLife", &UParticleModuleUberLTISIVCLIL::AlphaOverLife)
         .def_readwrite("StartLocation", &UParticleModuleUberLTISIVCLIL::StartLocation)
         .def("StaticClass", &UParticleModuleUberLTISIVCLIL::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USkeletalMeshComponent()
+void Export_pystes_USkeletalMeshComponent(py::object m)
 {
-    py::class_< USkeletalMeshComponent,  UMeshComponent   >("USkeletalMeshComponent")
+    py::class_< USkeletalMeshComponent,  UMeshComponent   >(m, "USkeletalMeshComponent")
         .def_readwrite("VfTable_IIAnimBehavior", &USkeletalMeshComponent::VfTable_IIAnimBehavior)
         .def_readwrite("SkeletalMesh", &USkeletalMeshComponent::SkeletalMesh)
         .def_readwrite("AttachedToSkelComponent", &USkeletalMeshComponent::AttachedToSkelComponent)
@@ -291,6 +291,5 @@ void Export_pystes_USkeletalMeshComponent()
         .def("AttachComponentToSocket", &USkeletalMeshComponent::AttachComponentToSocket)
         .def("DetachComponent", &USkeletalMeshComponent::DetachComponent)
         .def("AttachComponent", &USkeletalMeshComponent::AttachComponent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

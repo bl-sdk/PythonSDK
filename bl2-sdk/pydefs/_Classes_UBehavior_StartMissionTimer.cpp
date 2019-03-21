@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_StartMissionTimer()
+void Export_pystes_UBehavior_StartMissionTimer(py::object m)
 {
-    py::class_< UBehavior_StartMissionTimer,  UBehaviorBase   >("UBehavior_StartMissionTimer")
+    py::class_< UBehavior_StartMissionTimer,  UBehaviorBase   >(m, "UBehavior_StartMissionTimer")
         .def("StaticClass", &UBehavior_StartMissionTimer::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_StartMissionTimer::ApplyBehaviorToContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

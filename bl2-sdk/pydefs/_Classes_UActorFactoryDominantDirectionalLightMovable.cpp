@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActorFactoryDominantDirectionalLightMovable()
+void Export_pystes_UActorFactoryDominantDirectionalLightMovable(py::object m)
 {
-    py::class_< UActorFactoryDominantDirectionalLightMovable,  UObject   >("UActorFactoryDominantDirectionalLightMovable")
+    py::class_< UActorFactoryDominantDirectionalLightMovable,  UObject   >(m, "UActorFactoryDominantDirectionalLightMovable")
         .def_readwrite("GameplayActorClass", &UActorFactory::GameplayActorClass)
         .def_readwrite("MenuName", &UActorFactory::MenuName)
         .def_readwrite("MenuPriority", &UActorFactory::MenuPriority)
@@ -17,6 +17,5 @@ void Export_pystes_UActorFactoryDominantDirectionalLightMovable()
         .def_readwrite("CustomPropertyEditorDelegateTargetClass", &UActorFactory::CustomPropertyEditorDelegateTargetClass)
         .def("StaticClass", &UActorFactoryDominantDirectionalLightMovable::StaticClass, py::return_value_policy::reference)
         .def("eventPostCreateActor", &UActorFactory::eventPostCreateActor)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,13 +3,12 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMarketingUnlockDefinition()
+void Export_pystes_UMarketingUnlockDefinition(py::object m)
 {
-    py::class_< UMarketingUnlockDefinition,  UGBXDefinition   >("UMarketingUnlockDefinition")
+    py::class_< UMarketingUnlockDefinition,  UGBXDefinition   >(m, "UMarketingUnlockDefinition")
         .def_readwrite("UnlockCode", &UMarketingUnlockDefinition::UnlockCode)
         .def_readwrite("DialogLocFile", &UMarketingUnlockDefinition::DialogLocFile)
         .def_readwrite("DialogLocSection", &UMarketingUnlockDefinition::DialogLocSection)
         .def("StaticClass", &UMarketingUnlockDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

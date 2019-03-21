@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UReachSpec()
+void Export_pystes_UReachSpec(py::object m)
 {
-    py::class_< UReachSpec,  UObject   >("UReachSpec")
+    py::class_< UReachSpec,  UObject   >(m, "UReachSpec")
         .def_readwrite("NavOctreeObject", &UReachSpec::NavOctreeObject)
         .def_readwrite("Direction", &UReachSpec::Direction)
         .def_readwrite("BlockedBy", &UReachSpec::BlockedBy)
@@ -23,6 +23,5 @@ void Export_pystes_UReachSpec()
         .def("GetDirection", &UReachSpec::GetDirection)
         .def("GetEnd", &UReachSpec::GetEnd, py::return_value_policy::reference)
         .def("CostFor", &UReachSpec::CostFor)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

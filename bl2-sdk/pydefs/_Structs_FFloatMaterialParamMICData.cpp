@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FFloatMaterialParamMICData()
+void Export_pystes_FFloatMaterialParamMICData(py::object m)
 {
-    py::class_< FFloatMaterialParamMICData >("FFloatMaterialParamMICData")
+    py::class_< FFloatMaterialParamMICData >(m, "FFloatMaterialParamMICData")
         .def_readwrite("MICs", &FFloatMaterialParamMICData::MICs)
         .def_readwrite("MICResetFloats", &FFloatMaterialParamMICData::MICResetFloats)
   ;

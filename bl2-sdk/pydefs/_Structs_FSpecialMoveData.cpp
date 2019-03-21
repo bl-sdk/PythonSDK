@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSpecialMoveData()
+void Export_pystes_FSpecialMoveData(py::object m)
 {
-    py::class_< FSpecialMoveData >("FSpecialMoveData")
+    py::class_< FSpecialMoveData >(m, "FSpecialMoveData")
         .def_readwrite("Data", &FSpecialMoveData::Data)
         .def_readwrite("PlayRateScale", &FSpecialMoveData::PlayRateScale)
         .def_readwrite("Duration", &FSpecialMoveData::Duration)

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDownloadableContentOfferEnumerator()
+void Export_pystes_UDownloadableContentOfferEnumerator(py::object m)
 {
-    py::class_< UDownloadableContentOfferEnumerator,  UObject   >("UDownloadableContentOfferEnumerator")
+    py::class_< UDownloadableContentOfferEnumerator,  UObject   >(m, "UDownloadableContentOfferEnumerator")
         .def_readwrite("CurrentEnumerationState", &UDownloadableContentOfferEnumerator::CurrentEnumerationState)
         .def_readwrite("MarketplaceOffers", &UDownloadableContentOfferEnumerator::MarketplaceOffers)
         .def_readwrite("FindDlcOfferDelegates", &UDownloadableContentOfferEnumerator::FindDlcOfferDelegates)
@@ -16,6 +16,5 @@ void Export_pystes_UDownloadableContentOfferEnumerator()
         .def("AddFindDlcOfferDelegate", &UDownloadableContentOfferEnumerator::AddFindDlcOfferDelegate)
         .def("OnFindDlcOfferComplete", &UDownloadableContentOfferEnumerator::OnFindDlcOfferComplete)
         .def("FindContentOffers", &UDownloadableContentOfferEnumerator::FindContentOffers)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FEntitlementResult()
+void Export_pystes_FEntitlementResult(py::object m)
 {
-    py::class_< FEntitlementResult >("FEntitlementResult")
+    py::class_< FEntitlementResult >(m, "FEntitlementResult")
         .def_readwrite("Identifier", &FEntitlementResult::Identifier)
         .def_readwrite("Payload", &FEntitlementResult::Payload)
         .def_readwrite("Id", &FEntitlementResult::Id)

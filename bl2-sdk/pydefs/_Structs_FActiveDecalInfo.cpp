@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FActiveDecalInfo()
+void Export_pystes_FActiveDecalInfo(py::object m)
 {
-    py::class_< FActiveDecalInfo >("FActiveDecalInfo")
+    py::class_< FActiveDecalInfo >(m, "FActiveDecalInfo")
         .def_readwrite("Decal", &FActiveDecalInfo::Decal)
         .def_readwrite("LifetimeRemaining", &FActiveDecalInfo::LifetimeRemaining)
   ;

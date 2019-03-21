@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AGearboxMind()
+void Export_pystes_AGearboxMind(py::object m)
 {
-    py::class_< AGearboxMind,  AAIController   >("AGearboxMind")
+    py::class_< AGearboxMind,  AAIController   >(m, "AGearboxMind")
         .def_readwrite("VfTable_IIRuleEngineOwner", &AGearboxMind::VfTable_IIRuleEngineOwner)
         .def_readwrite("VfTable_IINounAttributeProvider", &AGearboxMind::VfTable_IINounAttributeProvider)
         .def_readwrite("VfTable_IIFlagProvider", &AGearboxMind::VfTable_IIFlagProvider)
@@ -81,6 +81,5 @@ void Export_pystes_AGearboxMind()
         .def("RemoveEnemyFromQueue", &AGearboxMind::RemoveEnemyFromQueue)
         .def("GetNavigationHandle", &AGearboxMind::GetNavigationHandle, py::return_value_policy::reference)
         .def("ForceMoveToActor", &AGearboxAIController::ForceMoveToActor)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

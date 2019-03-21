@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowUIInteraction()
+void Export_pystes_UWillowUIInteraction(py::object m)
 {
-    py::class_< UWillowUIInteraction,  UUIInteraction   >("UWillowUIInteraction")
+    py::class_< UWillowUIInteraction,  UUIInteraction   >(m, "UWillowUIInteraction")
         .def_readwrite("VfTable_IIBalancedActor", &UWillowUIInteraction::VfTable_IIBalancedActor)
         .def_readwrite("ExpandedMissions", &UWillowUIInteraction::ExpandedMissions)
         .def_readwrite("BlankEntry", &UWillowUIInteraction::BlankEntry)
@@ -131,6 +131,5 @@ void Export_pystes_UWillowUIInteraction()
         .def("GetExpLevel", &UWillowUIInteraction::GetExpLevel)
         .def("GetAwesomeLevel", &UWillowUIInteraction::GetAwesomeLevel)
         .def("GetGameStage", &UWillowUIInteraction::GetGameStage)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

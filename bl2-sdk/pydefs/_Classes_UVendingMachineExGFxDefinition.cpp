@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UVendingMachineExGFxDefinition()
+void Export_pystes_UVendingMachineExGFxDefinition(py::object m)
 {
-    py::class_< UVendingMachineExGFxDefinition,  UWillowInventoryGFxDefinition   >("UVendingMachineExGFxDefinition")
+    py::class_< UVendingMachineExGFxDefinition,  UWillowInventoryGFxDefinition   >(m, "UVendingMachineExGFxDefinition")
         .def_readwrite("CustomStoragePanelTint", &UVendingMachineExGFxDefinition::CustomStoragePanelTint)
         .def_readwrite("CustomStoragePanelHeaderIcon", &UVendingMachineExGFxDefinition::CustomStoragePanelHeaderIcon)
         .def_readwrite("CellWidth", &UVendingMachineExGFxDefinition::CellWidth)
@@ -20,6 +20,5 @@ void Export_pystes_UVendingMachineExGFxDefinition()
         .def_readwrite("bUseAdvancedCustomStoragePanelTint", &UVendingMachineExGFxDefinition::bUseAdvancedCustomStoragePanelTint)
         .def_readwrite("AdvancedCustomTint", &UVendingMachineExGFxDefinition::AdvancedCustomTint)
         .def("StaticClass", &UVendingMachineExGFxDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FReferencePoint()
+void Export_pystes_FReferencePoint(py::object m)
 {
-    py::class_< FReferencePoint >("FReferencePoint")
+    py::class_< FReferencePoint >(m, "FReferencePoint")
         .def_readwrite("Type", &FReferencePoint::Type)
         .def_readwrite("Name", &FReferencePoint::Name)
   ;

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWebConnection()
+void Export_pystes_AWebConnection(py::object m)
 {
-    py::class_< AWebConnection,  AInfo   >("AWebConnection")
+    py::class_< AWebConnection,  AInfo   >(m, "AWebConnection")
         .def_readwrite("WebServer", &AWebConnection::WebServer)
         .def_readwrite("ReceivedData", &AWebConnection::ReceivedData)
         .def_readwrite("Request", &AWebConnection::Request)
@@ -64,6 +64,5 @@ void Export_pystes_AWebConnection()
         .def("Resolve", &AInternetLink::Resolve)
         .def("ParseURL", &AInternetLink::ParseURL)
         .def("IsDataPending", &AInternetLink::IsDataPending)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

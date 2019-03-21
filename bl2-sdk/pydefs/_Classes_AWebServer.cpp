@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWebServer()
+void Export_pystes_AWebServer(py::object m)
 {
-    py::class_< AWebServer,  ATcpLink   >("AWebServer")
+    py::class_< AWebServer,  ATcpLink   >(m, "AWebServer")
         .def_readwrite("ServerName", &AWebServer::ServerName)
         .def_readonly("Applications", &AWebServer::Applications)
         .def_readonly("ApplicationPaths", &AWebServer::ApplicationPaths)
@@ -23,6 +23,5 @@ void Export_pystes_AWebServer()
         .def("eventGainedChild", &AWebServer::eventGainedChild)
         .def("eventDestroyed", &AWebServer::eventDestroyed)
         .def("PostBeginPlay", &AWebServer::PostBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

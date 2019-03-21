@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPopulationFactory()
+void Export_pystes_UPopulationFactory(py::object m)
 {
-    py::class_< UPopulationFactory,  UObject   >("UPopulationFactory")
+    py::class_< UPopulationFactory,  UObject   >(m, "UPopulationFactory")
         .def_readwrite("VfTable_IIConstructObject", &UPopulationFactory::VfTable_IIConstructObject)
         .def_readwrite("OnActorSpawn", &UPopulationFactory::OnActorSpawn)
         .def_readwrite("DestructionParams", &UPopulationFactory::DestructionParams)
@@ -24,6 +24,5 @@ void Export_pystes_UPopulationFactory()
         .def("GetSpawnProbabilityAtThisGameStage", &UPopulationFactory::GetSpawnProbabilityAtThisGameStage)
         .def("IsFactoryWithin", &UPopulationFactory::IsFactoryWithin)
         .def("CanSpawn", &UPopulationFactory::CanSpawn)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

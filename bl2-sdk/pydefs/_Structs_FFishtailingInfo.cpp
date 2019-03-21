@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FFishtailingInfo()
+void Export_pystes_FFishtailingInfo(py::object m)
 {
-    py::class_< FFishtailingInfo >("FFishtailingInfo")
+    py::class_< FFishtailingInfo >(m, "FFishtailingInfo")
         .def_readwrite("ContactPoint", &FFishtailingInfo::ContactPoint)
         .def_readwrite("Impulse", &FFishtailingInfo::Impulse)
   ;

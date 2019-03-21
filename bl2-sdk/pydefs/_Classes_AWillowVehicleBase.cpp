@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowVehicleBase()
+void Export_pystes_AWillowVehicleBase(py::object m)
 {
-    py::class_< AWillowVehicleBase,  ASVehicle   >("AWillowVehicleBase")
+    py::class_< AWillowVehicleBase,  ASVehicle   >(m, "AWillowVehicleBase")
         .def_readwrite("VfTable_IIResourcePoolProvider", &AWillowVehicleBase::VfTable_IIResourcePoolProvider)
         .def_readwrite("VfTable_IIBodyPawn", &AWillowVehicleBase::VfTable_IIBodyPawn)
         .def_readwrite("CustomGravityZ", &AWillowVehicleBase::CustomGravityZ)
@@ -66,6 +66,5 @@ void Export_pystes_AWillowVehicleBase()
         .def("IsTargetable", &AWillowVehicleBase::IsTargetable)
         .def("GetVehicleAndSeatIndex", &AWillowVehicleBase::GetVehicleAndSeatIndex)
         .def("TickReplicatedAmmoCount", &AWillowVehicleBase::TickReplicatedAmmoCount)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

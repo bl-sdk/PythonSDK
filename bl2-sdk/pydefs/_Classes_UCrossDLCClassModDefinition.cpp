@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCrossDLCClassModDefinition()
+void Export_pystes_UCrossDLCClassModDefinition(py::object m)
 {
-    py::class_< UCrossDLCClassModDefinition,  UEquipableItemDefinition   >("UCrossDLCClassModDefinition")
+    py::class_< UCrossDLCClassModDefinition,  UEquipableItemDefinition   >(m, "UCrossDLCClassModDefinition")
         .def_readwrite("RequiredPlayerClassPathName", &UCrossDLCClassModDefinition::RequiredPlayerClassPathName)
         .def_readwrite("ManufacturerOverride", &UClassModDefinition::ManufacturerOverride)
         .def_readwrite("DisplayClassModAtBeginningOfName", &UClassModDefinition::DisplayClassModAtBeginningOfName)
@@ -14,6 +14,5 @@ void Export_pystes_UCrossDLCClassModDefinition()
         .def("GetManufacturerOverrideOrDefault", &UClassModDefinition::GetManufacturerOverrideOrDefault, py::return_value_policy::reference)
         .def("GetEquipmentLocation", &UClassModDefinition::GetEquipmentLocation)
         .def("PlayerClassRequirementMet", &UClassModDefinition::PlayerClassRequirementMet)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTradingPanelGFxObject()
+void Export_pystes_UTradingPanelGFxObject(py::object m)
 {
-    py::class_< UTradingPanelGFxObject,  UBaseTopLevelPanelGFxObject   >("UTradingPanelGFxObject")
+    py::class_< UTradingPanelGFxObject,  UBaseTopLevelPanelGFxObject   >(m, "UTradingPanelGFxObject")
         .def_readwrite("BackpackPanel", &UTradingPanelGFxObject::BackpackPanel)
         .def_readwrite("OffersPanel", &UTradingPanelGFxObject::OffersPanel)
         .def_readwrite("CurrentPanel", &UTradingPanelGFxObject::CurrentPanel)
@@ -48,6 +48,5 @@ void Export_pystes_UTradingPanelGFxObject()
         .def("InitItemCards", &UTradingPanelGFxObject::InitItemCards)
         .def("AssignItemCards", &UTradingPanelGFxObject::AssignItemCards)
         .def("Init", &UTradingPanelGFxObject::Init)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

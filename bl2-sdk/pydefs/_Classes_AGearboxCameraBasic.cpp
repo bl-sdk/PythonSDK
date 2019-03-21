@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AGearboxCameraBasic()
+void Export_pystes_AGearboxCameraBasic(py::object m)
 {
-    py::class_< AGearboxCameraBasic,  ACamera   >("AGearboxCameraBasic")
+    py::class_< AGearboxCameraBasic,  ACamera   >(m, "AGearboxCameraBasic")
         .def_readwrite("VfTable_IInterfaceGearboxCamera", &AGearboxCameraBasic::VfTable_IInterfaceGearboxCamera)
         .def("StaticClass", &AGearboxCameraBasic::StaticClass, py::return_value_policy::reference)
         .def("eventFinishCameraLookAt", &AGearboxCameraBasic::eventFinishCameraLookAt)
@@ -14,6 +14,5 @@ void Export_pystes_AGearboxCameraBasic()
         .def("CalcSimpleThirdPersonView", &AGearboxCameraBasic::CalcSimpleThirdPersonView)
         .def("CalcBaseView", &AGearboxCameraBasic::CalcBaseView)
         .def("UpdateViewTarget", &AGearboxCameraBasic::UpdateViewTarget)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

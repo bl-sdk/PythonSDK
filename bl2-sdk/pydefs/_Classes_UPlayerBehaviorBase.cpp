@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerBehaviorBase()
+void Export_pystes_UPlayerBehaviorBase(py::object m)
 {
-    py::class_< UPlayerBehaviorBase,  UBehaviorBase   >("UPlayerBehaviorBase")
+    py::class_< UPlayerBehaviorBase,  UBehaviorBase   >(m, "UPlayerBehaviorBase")
         .def("StaticClass", &UPlayerBehaviorBase::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

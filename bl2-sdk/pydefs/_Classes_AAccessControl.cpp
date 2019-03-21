@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AAccessControl()
+void Export_pystes_AAccessControl(py::object m)
 {
-    py::class_< AAccessControl,  AInfo   >("AAccessControl")
+    py::class_< AAccessControl,  AInfo   >(m, "AAccessControl")
         .def_readwrite("IPPolicies", &AAccessControl::IPPolicies)
         .def_readwrite("BannedIDs", &AAccessControl::BannedIDs)
         .def_readwrite("IPBanned", &AAccessControl::IPBanned)
@@ -71,6 +71,5 @@ void Export_pystes_AAccessControl()
         .def("IsAdmin", &AAccessControl::IsAdmin)
         .def("Destroyed", &AAccessControl::Destroyed)
         .def("PostBeginPlay", &AAccessControl::PostBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

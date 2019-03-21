@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowPropObject()
+void Export_pystes_AWillowPropObject(py::object m)
 {
-    py::class_< AWillowPropObject,  AWillowInteractiveObject   >("AWillowPropObject")
+    py::class_< AWillowPropObject,  AWillowInteractiveObject   >(m, "AWillowPropObject")
         .def("StaticClass", &AWillowPropObject::StaticClass, py::return_value_policy::reference)
         .def("PostBeginPlay", &AWillowPropObject::PostBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

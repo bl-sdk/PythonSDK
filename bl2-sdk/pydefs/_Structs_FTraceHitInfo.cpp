@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTraceHitInfo()
+void Export_pystes_FTraceHitInfo(py::object m)
 {
-    py::class_< FTraceHitInfo >("FTraceHitInfo")
+    py::class_< FTraceHitInfo >(m, "FTraceHitInfo")
         .def_readwrite("Material", &FTraceHitInfo::Material)
         .def_readwrite("PhysMaterial", &FTraceHitInfo::PhysMaterial)
         .def_readwrite("Item", &FTraceHitInfo::Item)

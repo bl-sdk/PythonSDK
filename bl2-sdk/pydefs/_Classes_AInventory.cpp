@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AInventory()
+void Export_pystes_AInventory(py::object m)
 {
-    py::class_< AInventory,  AActor   >("AInventory")
+    py::class_< AInventory,  AActor   >(m, "AInventory")
         .def_readwrite("Inventory", &AInventory::Inventory)
         .def_readwrite("InvManager", &AInventory::InvManager)
         .def_readwrite("ItemName", &AInventory::ItemName)
@@ -37,6 +37,5 @@ void Export_pystes_AInventory()
         .def("eventDestroyed", &AInventory::eventDestroyed)
         .def("GetHumanReadableName", &AInventory::GetHumanReadableName)
         .def("eventReplicatedEvent", &AInventory::eventReplicatedEvent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

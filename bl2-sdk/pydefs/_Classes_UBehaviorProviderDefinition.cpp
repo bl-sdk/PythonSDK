@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehaviorProviderDefinition()
+void Export_pystes_UBehaviorProviderDefinition(py::object m)
 {
-    py::class_< UBehaviorProviderDefinition,  UGBXDefinition   >("UBehaviorProviderDefinition")
+    py::class_< UBehaviorProviderDefinition,  UGBXDefinition   >(m, "UBehaviorProviderDefinition")
         .def_readwrite("CurrentVersion", &UBehaviorProviderDefinition::CurrentVersion)
         .def_readwrite("BehaviorSequences", &UBehaviorProviderDefinition::BehaviorSequences)
         .def("StaticClass", &UBehaviorProviderDefinition::StaticClass, py::return_value_policy::reference)
@@ -14,6 +14,5 @@ void Export_pystes_UBehaviorProviderDefinition()
         .def("SetFloatBehaviorVariable", &UBehaviorProviderDefinition::SetFloatBehaviorVariable)
         .def("SetIntBehaviorVariable", &UBehaviorProviderDefinition::SetIntBehaviorVariable)
         .def("SetBoolBehaviorVariable", &UBehaviorProviderDefinition::SetBoolBehaviorVariable)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

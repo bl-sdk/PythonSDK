@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPopUpDebugBarGraph()
+void Export_pystes_UPopUpDebugBarGraph(py::object m)
 {
-    py::class_< UPopUpDebugBarGraph,  UObject   >("UPopUpDebugBarGraph")
+    py::class_< UPopUpDebugBarGraph,  UObject   >(m, "UPopUpDebugBarGraph")
         .def_readwrite("Columns", &UPopUpDebugBarGraph::Columns)
         .def_readwrite("TitleText", &UPopUpDebugBarGraph::TitleText)
         .def_readwrite("BaseLineColor", &UPopUpDebugBarGraph::BaseLineColor)
@@ -24,6 +24,5 @@ void Export_pystes_UPopUpDebugBarGraph()
         .def("SetValue", &UPopUpDebugBarGraph::SetValue)
         .def("AddNewColumn", &UPopUpDebugBarGraph::AddNewColumn)
         .def("AddTitleText", &UPopUpDebugBarGraph::AddTitleText)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

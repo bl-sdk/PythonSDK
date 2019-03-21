@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowAutoTestManager()
+void Export_pystes_AWillowAutoTestManager(py::object m)
 {
-    py::class_< AWillowAutoTestManager,  AAutoTestManager   >("AWillowAutoTestManager")
+    py::class_< AWillowAutoTestManager,  AAutoTestManager   >(m, "AWillowAutoTestManager")
         .def_readwrite("WillowSentinelPC", &AWillowAutoTestManager::WillowSentinelPC)
         .def_readwrite("TotalLevelLoads", &AWillowAutoTestManager::TotalLevelLoads)
         .def("StaticClass", &AWillowAutoTestManager::StaticClass, py::return_value_policy::reference)
@@ -27,6 +27,5 @@ void Export_pystes_AWillowAutoTestManager()
         .def("DoAutomatedSmokeTest", &AWillowAutoTestManager::DoAutomatedSmokeTest)
         .def("DoUIAutoMemTest", &AWillowAutoTestManager::DoUIAutoMemTest)
         .def("eventPostBeginPlay", &AWillowAutoTestManager::eventPostBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

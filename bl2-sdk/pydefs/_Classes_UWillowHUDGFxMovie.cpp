@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowHUDGFxMovie()
+void Export_pystes_UWillowHUDGFxMovie(py::object m)
 {
-    py::class_< UWillowHUDGFxMovie,  UWillowGFxMovie   >("UWillowHUDGFxMovie")
+    py::class_< UWillowHUDGFxMovie,  UWillowGFxMovie   >(m, "UWillowHUDGFxMovie")
         .def_readwrite("SplitscreenMode", &UWillowHUDGFxMovie::SplitscreenMode)
         .def_readwrite("bIsInVehicle", &UWillowHUDGFxMovie::bIsInVehicle)
         .def_readwrite("bNeedsWidgetsRenewed", &UWillowHUDGFxMovie::bNeedsWidgetsRenewed)
@@ -345,6 +345,5 @@ void Export_pystes_UWillowHUDGFxMovie()
         .def("Get3DRotationOffset", &UWillowGFxMovie3D::Get3DRotationOffset)
         .def("Get3DLocationOffset", &UWillowGFxMovie3D::Get3DLocationOffset)
         .def("Set3DMatrices", &UWillowGFxMovie3D::Set3DMatrices)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

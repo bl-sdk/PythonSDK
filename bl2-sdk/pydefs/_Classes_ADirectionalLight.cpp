@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ADirectionalLight()
+void Export_pystes_ADirectionalLight(py::object m)
 {
-    py::class_< ADirectionalLight,  ALight   >("ADirectionalLight")
+    py::class_< ADirectionalLight,  ALight   >(m, "ADirectionalLight")
         .def("StaticClass", &ADirectionalLight::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

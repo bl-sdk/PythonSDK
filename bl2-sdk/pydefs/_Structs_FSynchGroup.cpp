@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSynchGroup()
+void Export_pystes_FSynchGroup(py::object m)
 {
-    py::class_< FSynchGroup >("FSynchGroup")
+    py::class_< FSynchGroup >(m, "FSynchGroup")
         .def_readwrite("SeqNodes", &FSynchGroup::SeqNodes)
         .def_readwrite("MasterNode", &FSynchGroup::MasterNode)
         .def_readwrite("GroupName", &FSynchGroup::GroupName)

@@ -3,8 +3,8 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCoverExposureData()
+void Export_pystes_FCoverExposureData(py::object m)
 {
-    py::class_< FCoverExposureData >("FCoverExposureData")
+    py::class_< FCoverExposureData >(m, "FCoverExposureData")
   ;
 }

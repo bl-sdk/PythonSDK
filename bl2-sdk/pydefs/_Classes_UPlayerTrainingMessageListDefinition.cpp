@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerTrainingMessageListDefinition()
+void Export_pystes_UPlayerTrainingMessageListDefinition(py::object m)
 {
-    py::class_< UPlayerTrainingMessageListDefinition,  UGBXDefinition   >("UPlayerTrainingMessageListDefinition")
+    py::class_< UPlayerTrainingMessageListDefinition,  UGBXDefinition   >(m, "UPlayerTrainingMessageListDefinition")
         .def_readwrite("TrainingMessages", &UPlayerTrainingMessageListDefinition::TrainingMessages)
         .def("StaticClass", &UPlayerTrainingMessageListDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

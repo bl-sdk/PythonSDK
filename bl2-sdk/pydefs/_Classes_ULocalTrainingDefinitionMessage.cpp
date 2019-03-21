@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULocalTrainingDefinitionMessage()
+void Export_pystes_ULocalTrainingDefinitionMessage(py::object m)
 {
-    py::class_< ULocalTrainingDefinitionMessage,  UWillowLocalMessage   >("ULocalTrainingDefinitionMessage")
+    py::class_< ULocalTrainingDefinitionMessage,  UWillowLocalMessage   >(m, "ULocalTrainingDefinitionMessage")
         .def("StaticClass", &ULocalTrainingDefinitionMessage::StaticClass, py::return_value_policy::reference)
         .def("ClientTrainingDefinitionReceive", &ULocalTrainingDefinitionMessage::ClientTrainingDefinitionReceive)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

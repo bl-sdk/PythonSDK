@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowBuzzaxeWeapon()
+void Export_pystes_AWillowBuzzaxeWeapon(py::object m)
 {
-    py::class_< AWillowBuzzaxeWeapon,  AWillowWeapon   >("AWillowBuzzaxeWeapon")
+    py::class_< AWillowBuzzaxeWeapon,  AWillowWeapon   >(m, "AWillowBuzzaxeWeapon")
         .def_readwrite("VfTable_IIWeaponThrow", &AWillowBuzzaxeWeapon::VfTable_IIWeaponThrow)
         .def_readwrite("BodyWeaponHoldNameOverride", &AWillowBuzzaxeWeapon::BodyWeaponHoldNameOverride)
         .def_readwrite("PreviousActiveWeaponSlot", &AWillowBuzzaxeWeapon::PreviousActiveWeaponSlot)
@@ -30,6 +30,5 @@ void Export_pystes_AWillowBuzzaxeWeapon()
         .def("IsCrosshairEnabled", &AWillowBuzzaxeWeapon::IsCrosshairEnabled)
         .def("GetZoomFOVEffect", &AWillowBuzzaxeWeapon::GetZoomFOVEffect)
         .def("GetZoomSocket", &AWillowBuzzaxeWeapon::GetZoomSocket)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

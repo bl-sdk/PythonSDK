@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_Drive_Pursuit()
+void Export_pystes_UAction_Drive_Pursuit(py::object m)
 {
-    py::class_< UAction_Drive_Pursuit,  UWillowActionSequencePawn   >("UAction_Drive_Pursuit")
+    py::class_< UAction_Drive_Pursuit,  UWillowActionSequencePawn   >(m, "UAction_Drive_Pursuit")
         .def_readwrite("TargetForwardVelocityStartAction", &UAction_Drive_Pursuit::TargetForwardVelocityStartAction)
         .def_readwrite("TargetForwardVelocityStopAction", &UAction_Drive_Pursuit::TargetForwardVelocityStopAction)
         .def_readwrite("TimeBeforeExitingActionIfTargetSlowsDown", &UAction_Drive_Pursuit::TimeBeforeExitingActionIfTargetSlowsDown)
@@ -46,6 +46,5 @@ void Export_pystes_UAction_Drive_Pursuit()
         .def("eventStart", &UAction_Drive_Pursuit::eventStart)
         .def("eventCanRun", &UAction_Drive_Pursuit::eventCanRun)
         .def("ComputeCurrentState", &UAction_Drive_Pursuit::ComputeCurrentState)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

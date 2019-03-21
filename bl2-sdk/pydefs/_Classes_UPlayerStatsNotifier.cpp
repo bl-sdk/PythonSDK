@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerStatsNotifier()
+void Export_pystes_UPlayerStatsNotifier(py::object m)
 {
-    py::class_< UPlayerStatsNotifier,  UObject   >("UPlayerStatsNotifier")
+    py::class_< UPlayerStatsNotifier,  UObject   >(m, "UPlayerStatsNotifier")
         .def_readwrite("StatIdListenerMap", &UPlayerStatsNotifier::StatIdListenerMap)
         .def("StaticClass", &UPlayerStatsNotifier::StaticClass, py::return_value_policy::reference)
         .def("DisplayDebug", &UPlayerStatsNotifier::DisplayDebug)
@@ -13,6 +13,5 @@ void Export_pystes_UPlayerStatsNotifier()
         .def("UnRegisterListeners", &UPlayerStatsNotifier::UnRegisterListeners)
         .def("UnRegisterListener", &UPlayerStatsNotifier::UnRegisterListener)
         .def("RegisterListener", &UPlayerStatsNotifier::RegisterListener)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineCommunityContentInterface()
+void Export_pystes_UOnlineCommunityContentInterface(py::object m)
 {
-    py::class_< UOnlineCommunityContentInterface,  UInterface   >("UOnlineCommunityContentInterface")
+    py::class_< UOnlineCommunityContentInterface,  UInterface   >(m, "UOnlineCommunityContentInterface")
         .def("StaticClass", &UOnlineCommunityContentInterface::StaticClass, py::return_value_policy::reference)
         .def("RateContent", &UOnlineCommunityContentInterface::RateContent)
         .def("ClearGetContentPayloadCompleteDelegate", &UOnlineCommunityContentInterface::ClearGetContentPayloadCompleteDelegate)
@@ -32,6 +32,5 @@ void Export_pystes_UOnlineCommunityContentInterface()
         .def("ReadContentList", &UOnlineCommunityContentInterface::ReadContentList)
         .def("Exit", &UOnlineCommunityContentInterface::Exit)
         .def("Init", &UOnlineCommunityContentInterface::Init)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

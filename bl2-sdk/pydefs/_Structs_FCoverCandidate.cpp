@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCoverCandidate()
+void Export_pystes_FCoverCandidate(py::object m)
 {
-    py::class_< FCoverCandidate >("FCoverCandidate")
+    py::class_< FCoverCandidate >(m, "FCoverCandidate")
         .def_readwrite("TheCoverActor", &FCoverCandidate::TheCoverActor)
         .def_readwrite("SlotNdx", &FCoverCandidate::SlotNdx)
         .def_readwrite("Score", &FCoverCandidate::Score)

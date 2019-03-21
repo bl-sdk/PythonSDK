@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ABlockingMeshReplicatedActor()
+void Export_pystes_ABlockingMeshReplicatedActor(py::object m)
 {
-    py::class_< ABlockingMeshReplicatedActor,  AStaticMeshActorBase   >("ABlockingMeshReplicatedActor")
+    py::class_< ABlockingMeshReplicatedActor,  AStaticMeshActorBase   >(m, "ABlockingMeshReplicatedActor")
         .def_readwrite("VfTable_IIGBXNavMeshObstacle", &ABlockingMeshActor::VfTable_IIGBXNavMeshObstacle)
         .def_readwrite("BlockingMeshComponent", &ABlockingMeshActor::BlockingMeshComponent)
         .def_readwrite("BlockingMeshMaterial", &ABlockingMeshActor::BlockingMeshMaterial)
@@ -16,6 +16,5 @@ void Export_pystes_ABlockingMeshReplicatedActor()
         .def("OnInterpToggle", &ABlockingMeshReplicatedActor::OnInterpToggle)
         .def("OnToggle", &ABlockingMeshReplicatedActor::OnToggle)
         .def("eventReplicatedEvent", &ABlockingMeshReplicatedActor::eventReplicatedEvent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

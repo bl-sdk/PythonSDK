@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMatchmakingLobbyGFxMovie()
+void Export_pystes_UMatchmakingLobbyGFxMovie(py::object m)
 {
-    py::class_< UMatchmakingLobbyGFxMovie,  UWillowGFxMovie3D   >("UMatchmakingLobbyGFxMovie")
+    py::class_< UMatchmakingLobbyGFxMovie,  UWillowGFxMovie3D   >(m, "UMatchmakingLobbyGFxMovie")
         .def_readwrite("CharacterInfoGFxObj", &UMatchmakingLobbyGFxMovie::CharacterInfoGFxObj)
         .def_readwrite("ResultsGFxObj", &UMatchmakingLobbyGFxMovie::ResultsGFxObj)
         .def_readwrite("TooltipsGFxObj", &UMatchmakingLobbyGFxMovie::TooltipsGFxObj)
@@ -26,6 +26,5 @@ void Export_pystes_UMatchmakingLobbyGFxMovie()
         .def("eventStart", &UMatchmakingLobbyGFxMovie::eventStart)
         .def("OnHostGameAccept", &UMatchmakingLobbyGFxMovie::OnHostGameAccept)
         .def("OnCancel", &UMatchmakingLobbyGFxMovie::OnCancel)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

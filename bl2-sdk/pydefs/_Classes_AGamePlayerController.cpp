@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AGamePlayerController()
+void Export_pystes_AGamePlayerController(py::object m)
 {
-    py::class_< AGamePlayerController,  APlayerController   >("AGamePlayerController")
+    py::class_< AGamePlayerController,  APlayerController   >(m, "AGamePlayerController")
         .def_readwrite("CurrentSoundMode", &AGamePlayerController::CurrentSoundMode)
         .def("StaticClass", &AGamePlayerController::StaticClass, py::return_value_policy::reference)
         .def("ClientColorFade", &AGamePlayerController::ClientColorFade)
@@ -22,6 +22,5 @@ void Export_pystes_AGamePlayerController()
         .def("SetSoundMode", &AGamePlayerController::SetSoundMode)
         .def("DoForceFeedbackForScreenShake", &AGamePlayerController::DoForceFeedbackForScreenShake)
         .def("GetUIPlayerIndex", &AGamePlayerController::GetUIPlayerIndex)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

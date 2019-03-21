@@ -3,8 +3,8 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDestructionParameters()
+void Export_pystes_FDestructionParameters(py::object m)
 {
-    py::class_< FDestructionParameters >("FDestructionParameters")
+    py::class_< FDestructionParameters >(m, "FDestructionParameters")
   ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FWeaponTypeSelectorData()
+void Export_pystes_FWeaponTypeSelectorData(py::object m)
 {
-    py::class_< FWeaponTypeSelectorData >("FWeaponTypeSelectorData")
+    py::class_< FWeaponTypeSelectorData >(m, "FWeaponTypeSelectorData")
         .def_readwrite("WeaponType", &FWeaponTypeSelectorData::WeaponType)
         .def_readwrite("ValueIfMatched", &FWeaponTypeSelectorData::ValueIfMatched)
   ;

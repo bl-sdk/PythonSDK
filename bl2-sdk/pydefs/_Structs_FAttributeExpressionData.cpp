@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAttributeExpressionData()
+void Export_pystes_FAttributeExpressionData(py::object m)
 {
-    py::class_< FAttributeExpressionData >("FAttributeExpressionData")
+    py::class_< FAttributeExpressionData >(m, "FAttributeExpressionData")
         .def_readwrite("AttributeOperand1", &FAttributeExpressionData::AttributeOperand1)
         .def_readwrite("ComparisonOperator", &FAttributeExpressionData::ComparisonOperator)
         .def_readwrite("Operand2Usage", &FAttributeExpressionData::Operand2Usage)

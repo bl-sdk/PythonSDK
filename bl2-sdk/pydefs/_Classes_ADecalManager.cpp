@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ADecalManager()
+void Export_pystes_ADecalManager(py::object m)
 {
-    py::class_< ADecalManager,  AActor   >("ADecalManager")
+    py::class_< ADecalManager,  AActor   >(m, "ADecalManager")
         .def_readwrite("DecalTemplate", &ADecalManager::DecalTemplate)
         .def_readwrite("PoolDecals", &ADecalManager::PoolDecals)
         .def_readwrite("MaxActiveDecals", &ADecalManager::MaxActiveDecals)
@@ -31,6 +31,5 @@ void Export_pystes_ADecalManager()
         .def("AreDynamicDecalsEnabled", &ADecalManager::AreDynamicDecalsEnabled)
         .def("PostBeginPlay", &ADecalManager::PostBeginPlay)
         .def("SetNumberOfDecals", &ADecalManager::SetNumberOfDecals)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

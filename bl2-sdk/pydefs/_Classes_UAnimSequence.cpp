@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimSequence()
+void Export_pystes_UAnimSequence(py::object m)
 {
-    py::class_< UAnimSequence,  UObject   >("UAnimSequence")
+    py::class_< UAnimSequence,  UObject   >(m, "UAnimSequence")
         .def_readwrite("SequenceName", &UAnimSequence::SequenceName)
         .def_readwrite("Notifies", &UAnimSequence::Notifies)
         .def_readwrite("MetaData", &UAnimSequence::MetaData)
@@ -32,6 +32,5 @@ void Export_pystes_UAnimSequence()
         .def_readwrite("DeltaTrackCache", &UAnimSequence::DeltaTrackCache)
         .def("StaticClass", &UAnimSequence::StaticClass, py::return_value_policy::reference)
         .def("GetNotifyTimeByClass", &UAnimSequence::GetNotifyTimeByClass)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SetSkelControlTurretConstrainedValues()
+void Export_pystes_UBehavior_SetSkelControlTurretConstrainedValues(py::object m)
 {
-    py::class_< UBehavior_SetSkelControlTurretConstrainedValues,  UBehaviorBase   >("UBehavior_SetSkelControlTurretConstrainedValues")
+    py::class_< UBehavior_SetSkelControlTurretConstrainedValues,  UBehaviorBase   >(m, "UBehavior_SetSkelControlTurretConstrainedValues")
         .def_readwrite("SkelControlName", &UBehavior_SetSkelControlTurretConstrainedValues::SkelControlName)
         .def_readwrite("MaxAngle", &UBehavior_SetSkelControlTurretConstrainedValues::MaxAngle)
         .def_readwrite("MinAngle", &UBehavior_SetSkelControlTurretConstrainedValues::MinAngle)
@@ -14,6 +14,5 @@ void Export_pystes_UBehavior_SetSkelControlTurretConstrainedValues()
         .def_readwrite("LagDegreesPerSecondRoll", &UBehavior_SetSkelControlTurretConstrainedValues::LagDegreesPerSecondRoll)
         .def("StaticClass", &UBehavior_SetSkelControlTurretConstrainedValues::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_SetSkelControlTurretConstrainedValues::ApplyBehaviorToContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDOFAndBloomEffect()
+void Export_pystes_UDOFAndBloomEffect(py::object m)
 {
-    py::class_< UDOFAndBloomEffect,  UPostProcessEffect   >("UDOFAndBloomEffect")
+    py::class_< UDOFAndBloomEffect,  UPostProcessEffect   >(m, "UDOFAndBloomEffect")
         .def_readwrite("BloomScale", &UDOFAndBloomEffect::BloomScale)
         .def_readwrite("BloomThreshold", &UDOFAndBloomEffect::BloomThreshold)
         .def_readwrite("BloomTint", &UDOFAndBloomEffect::BloomTint)
@@ -36,6 +36,5 @@ void Export_pystes_UDOFAndBloomEffect()
         .def_readwrite("TunnelVisionScaleOverride", &UDOFEffect::TunnelVisionScaleOverride)
         .def_readwrite("TunnelVisionYOffsetOverride", &UDOFEffect::TunnelVisionYOffsetOverride)
         .def("StaticClass", &UDOFAndBloomEffect::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

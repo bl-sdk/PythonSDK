@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCellInfo()
+void Export_pystes_FCellInfo(py::object m)
 {
-    py::class_< FCellInfo >("FCellInfo")
+    py::class_< FCellInfo >(m, "FCellInfo")
         .def_readwrite("AbsolutePosition", &FCellInfo::AbsolutePosition)
         .def_readwrite("Width", &FCellInfo::Width)
         .def_readwrite("Height", &FCellInfo::Height)

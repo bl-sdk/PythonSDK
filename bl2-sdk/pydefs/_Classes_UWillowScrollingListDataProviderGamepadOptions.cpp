@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowScrollingListDataProviderGamepadOptions()
+void Export_pystes_UWillowScrollingListDataProviderGamepadOptions(py::object m)
 {
-    py::class_< UWillowScrollingListDataProviderGamepadOptions,  UWillowScrollingListDataProviderOptionsBase   >("UWillowScrollingListDataProviderGamepadOptions")
+    py::class_< UWillowScrollingListDataProviderGamepadOptions,  UWillowScrollingListDataProviderOptionsBase   >(m, "UWillowScrollingListDataProviderGamepadOptions")
         .def_readwrite("KeyCaptionList", &UWillowScrollingListDataProviderGamepadOptions::KeyCaptionList)
         .def_readonly("PlatformFrames", &UWillowScrollingListDataProviderGamepadOptions::PlatformFrames)
         .def_readwrite("ControllerPresetTags", &UWillowScrollingListDataProviderGamepadOptions::ControllerPresetTags)
@@ -43,6 +43,5 @@ void Export_pystes_UWillowScrollingListDataProviderGamepadOptions()
         .def("AddControllerPresets", &UWillowScrollingListDataProviderGamepadOptions::AddControllerPresets)
         .def("HandleCustomizeModeDlgInputKey", &UWillowScrollingListDataProviderGamepadOptions::HandleCustomizeModeDlgInputKey)
         .def("Populate", &UWillowScrollingListDataProviderGamepadOptions::Populate)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

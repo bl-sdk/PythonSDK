@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGFxMovie3D()
+void Export_pystes_UWillowGFxMovie3D(py::object m)
 {
-    py::class_< UWillowGFxMovie3D,  UWillowGFxMovie   >("UWillowGFxMovie3D")
+    py::class_< UWillowGFxMovie3D,  UWillowGFxMovie   >(m, "UWillowGFxMovie3D")
         .def_readwrite("My3DDefinition", &UWillowGFxMovie3D::My3DDefinition)
         .def_readwrite("SplitRegionOrg", &UWillowGFxMovie3D::SplitRegionOrg)
         .def_readwrite("SplitRegionExt", &UWillowGFxMovie3D::SplitRegionExt)
@@ -55,6 +55,5 @@ void Export_pystes_UWillowGFxMovie3D()
         .def("InitFromDefinition", &UWillowGFxMovie3D::InitFromDefinition)
         .def("eventOnSetViewport", &UWillowGFxMovie3D::eventOnSetViewport)
         .def("eventStart", &UWillowGFxMovie3D::eventStart)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDamageTypeDefinition()
+void Export_pystes_UDamageTypeDefinition(py::object m)
 {
-    py::class_< UDamageTypeDefinition,  UGBXDefinition   >("UDamageTypeDefinition")
+    py::class_< UDamageTypeDefinition,  UGBXDefinition   >(m, "UDamageTypeDefinition")
         .def("StaticClass", &UDamageTypeDefinition::StaticClass, py::return_value_policy::reference)
         .def("CalcRadiusDamageScale", &UDamageTypeDefinition::CalcRadiusDamageScale)
         .def("GetMinDamagePercent", &UDamageTypeDefinition::GetMinDamagePercent)
@@ -19,6 +19,5 @@ void Export_pystes_UDamageTypeDefinition()
         .def("GetPawnDamageTypeModifier", &UDamageTypeDefinition::GetPawnDamageTypeModifier)
         .def("GetSurfaceDamageTypeModifier", &UDamageTypeDefinition::GetSurfaceDamageTypeModifier)
         .def("GetSurfaceMomentumTypeModifier", &UDamageTypeDefinition::GetSurfaceMomentumTypeModifier)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

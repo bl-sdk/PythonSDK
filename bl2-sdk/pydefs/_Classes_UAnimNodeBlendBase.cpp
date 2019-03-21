@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNodeBlendBase()
+void Export_pystes_UAnimNodeBlendBase(py::object m)
 {
-    py::class_< UAnimNodeBlendBase,  UObject   >("UAnimNodeBlendBase")
+    py::class_< UAnimNodeBlendBase,  UObject   >(m, "UAnimNodeBlendBase")
         .def_readwrite("Children", &UAnimNodeBlendBase::Children)
         .def_readwrite("BlendType", &UAnimNodeBlendBase::BlendType)
         .def_readwrite("NodeTickTag", &UAnimNode::NodeTickTag)
@@ -32,6 +32,5 @@ void Export_pystes_UAnimNodeBlendBase()
         .def("eventOnCeaseRelevant", &UAnimNode::eventOnCeaseRelevant)
         .def("eventOnBecomeRelevant", &UAnimNode::eventOnBecomeRelevant)
         .def("eventOnInit", &UAnimNode::eventOnInit)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

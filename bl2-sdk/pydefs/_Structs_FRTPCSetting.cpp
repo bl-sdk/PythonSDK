@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRTPCSetting()
+void Export_pystes_FRTPCSetting(py::object m)
 {
-    py::class_< FRTPCSetting >("FRTPCSetting")
+    py::class_< FRTPCSetting >(m, "FRTPCSetting")
         .def_readwrite("Target", &FRTPCSetting::Target)
         .def_readwrite("AkRtpc", &FRTPCSetting::AkRtpc)
         .def_readwrite("ValueAtMaxRange", &FRTPCSetting::ValueAtMaxRange)

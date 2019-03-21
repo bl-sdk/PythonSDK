@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGameMessage()
+void Export_pystes_UWillowGameMessage(py::object m)
 {
-    py::class_< UWillowGameMessage,  ULocalMessage   >("UWillowGameMessage")
+    py::class_< UWillowGameMessage,  ULocalMessage   >(m, "UWillowGameMessage")
         .def_readwrite("PlayerEnteredGame", &UWillowGameMessage::PlayerEnteredGame)
         .def_readwrite("PlayerLeftGame", &UWillowGameMessage::PlayerLeftGame)
         .def_readwrite("CreaturesGrowStronger", &UWillowGameMessage::CreaturesGrowStronger)
@@ -13,6 +13,5 @@ void Export_pystes_UWillowGameMessage()
         .def("StaticClass", &UWillowGameMessage::StaticClass, py::return_value_policy::reference)
         .def("GetString", &UWillowGameMessage::GetString)
         .def("ClientReceive", &UWillowGameMessage::ClientReceive)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

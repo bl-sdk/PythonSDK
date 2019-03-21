@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FImpulseData()
+void Export_pystes_FImpulseData(py::object m)
 {
-    py::class_< FImpulseData >("FImpulseData")
+    py::class_< FImpulseData >(m, "FImpulseData")
         .def_readwrite("Impulse", &FImpulseData::Impulse)
         .def_readwrite("Source", &FImpulseData::Source)
   ;

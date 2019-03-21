@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPointLightComponent()
+void Export_pystes_UPointLightComponent(py::object m)
 {
-    py::class_< UPointLightComponent,  ULightComponent   >("UPointLightComponent")
+    py::class_< UPointLightComponent,  ULightComponent   >(m, "UPointLightComponent")
         .def_readwrite("ShadowRadiusMultiplier", &UPointLightComponent::ShadowRadiusMultiplier)
         .def_readwrite("Radius", &UPointLightComponent::Radius)
         .def_readwrite("FalloffExponent", &UPointLightComponent::FalloffExponent)
@@ -25,6 +25,5 @@ void Export_pystes_UPointLightComponent()
         .def("OnUpdatePropertyBrightness", &UPointLightComponent::OnUpdatePropertyBrightness)
         .def("OnUpdatePropertyLightColor", &UPointLightComponent::OnUpdatePropertyLightColor)
         .def("SetTranslation", &UPointLightComponent::SetTranslation)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMMStats_Timer()
+void Export_pystes_FMMStats_Timer(py::object m)
 {
-    py::class_< FMMStats_Timer >("FMMStats_Timer")
+    py::class_< FMMStats_Timer >(m, "FMMStats_Timer")
         .def_readwrite("MSecs", &FMMStats_Timer::MSecs)
   ;
 }

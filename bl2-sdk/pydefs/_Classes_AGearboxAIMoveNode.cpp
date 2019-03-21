@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AGearboxAIMoveNode()
+void Export_pystes_AGearboxAIMoveNode(py::object m)
 {
-    py::class_< AGearboxAIMoveNode,  AActor   >("AGearboxAIMoveNode")
+    py::class_< AGearboxAIMoveNode,  AActor   >(m, "AGearboxAIMoveNode")
         .def_readwrite("NextNodes", &AGearboxAIMoveNode::NextNodes)
         .def_readwrite("PreviousNodes", &AGearboxAIMoveNode::PreviousNodes)
         .def_readwrite("HoldTime", &AGearboxAIMoveNode::HoldTime)
@@ -21,6 +21,5 @@ void Export_pystes_AGearboxAIMoveNode()
         .def("AddNode", &AGearboxAIMoveNode::AddNode)
         .def("ClearLinks", &AGearboxAIMoveNode::ClearLinks)
         .def("OnToggle", &AGearboxAIMoveNode::OnToggle)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

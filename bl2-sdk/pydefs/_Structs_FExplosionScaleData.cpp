@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FExplosionScaleData()
+void Export_pystes_FExplosionScaleData(py::object m)
 {
-    py::class_< FExplosionScaleData >("FExplosionScaleData")
+    py::class_< FExplosionScaleData >(m, "FExplosionScaleData")
         .def_readwrite("ExplosionPSTemplate", &FExplosionScaleData::ExplosionPSTemplate)
         .def_readwrite("MinRadius", &FExplosionScaleData::MinRadius)
         .def_readwrite("MaxRadius", &FExplosionScaleData::MaxRadius)

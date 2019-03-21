@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_GenericAttack()
+void Export_pystes_UAction_GenericAttack(py::object m)
 {
-    py::class_< UAction_GenericAttack,  UAction_Burrow   >("UAction_GenericAttack")
+    py::class_< UAction_GenericAttack,  UAction_Burrow   >(m, "UAction_GenericAttack")
         .def_readwrite("Limits", &UAction_GenericAttack::Limits)
         .def_readwrite("CrouchIdleChance", &UAction_GenericAttack::CrouchIdleChance)
         .def_readwrite("CrouchMoveChance", &UAction_GenericAttack::CrouchMoveChance)
@@ -42,6 +42,5 @@ void Export_pystes_UAction_GenericAttack()
         .def("eventCanRun", &UAction_GenericAttack::eventCanRun)
         .def("eventInit", &UAction_GenericAttack::eventInit)
         .def("InitData", &UAction_GenericAttack::InitData)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

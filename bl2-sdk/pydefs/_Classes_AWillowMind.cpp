@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowMind()
+void Export_pystes_AWillowMind(py::object m)
 {
-    py::class_< AWillowMind,  AGearboxMind   >("AWillowMind")
+    py::class_< AWillowMind,  AGearboxMind   >(m, "AWillowMind")
         .def_readwrite("VfTable_IISeeTargetable", &AWillowMind::VfTable_IISeeTargetable)
         .def_readwrite("VfTable_IIControllerLocator", &AWillowMind::VfTable_IIControllerLocator)
         .def_readwrite("VfTable_IIConstructObject", &AWillowMind::VfTable_IIConstructObject)
@@ -147,6 +147,5 @@ void Export_pystes_AWillowMind()
         .def("GetWorldPawn", &AWillowMind::GetWorldPawn, py::return_value_policy::reference)
         .def("GetActor", &AWillowMind::GetActor, py::return_value_policy::reference)
         .def("eventDestroyed", &AWillowMind::eventDestroyed)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

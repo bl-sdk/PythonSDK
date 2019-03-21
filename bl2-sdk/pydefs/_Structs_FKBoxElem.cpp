@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FKBoxElem()
+void Export_pystes_FKBoxElem(py::object m)
 {
-    py::class_< FKBoxElem >("FKBoxElem")
+    py::class_< FKBoxElem >(m, "FKBoxElem")
         .def_readwrite("TM", &FKBoxElem::TM)
         .def_readwrite("X", &FKBoxElem::X)
         .def_readwrite("Y", &FKBoxElem::Y)

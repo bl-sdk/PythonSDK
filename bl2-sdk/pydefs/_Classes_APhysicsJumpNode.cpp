@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APhysicsJumpNode()
+void Export_pystes_APhysicsJumpNode(py::object m)
 {
-    py::class_< APhysicsJumpNode,  APathNode   >("APhysicsJumpNode")
+    py::class_< APhysicsJumpNode,  APathNode   >(m, "APhysicsJumpNode")
         .def_readwrite("VfTable_IIGBXNavMeshSpecialMove", &APhysicsJumpNode::VfTable_IIGBXNavMeshSpecialMove)
         .def_readwrite("VfTable_IIGBXNavMeshSeed", &APhysicsJumpNode::VfTable_IIGBXNavMeshSeed)
         .def_readwrite("VfTable_IIGBXNavMeshBuildEvents", &APhysicsJumpNode::VfTable_IIGBXNavMeshBuildEvents)
@@ -27,6 +27,5 @@ void Export_pystes_APhysicsJumpNode()
         .def("RemoveJumpDestination", &APhysicsJumpNode::RemoveJumpDestination)
         .def("AddJumpDestination", &APhysicsJumpNode::AddJumpDestination)
         .def("GetJumpIndex", &APhysicsJumpNode::GetJumpIndex)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

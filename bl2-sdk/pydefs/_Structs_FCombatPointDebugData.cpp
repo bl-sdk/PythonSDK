@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCombatPointDebugData()
+void Export_pystes_FCombatPointDebugData(py::object m)
 {
-    py::class_< FCombatPointDebugData >("FCombatPointDebugData")
+    py::class_< FCombatPointDebugData >(m, "FCombatPointDebugData")
         .def_readwrite("Score", &FCombatPointDebugData::Score)
         .def_readwrite("Location", &FCombatPointDebugData::Location)
   ;

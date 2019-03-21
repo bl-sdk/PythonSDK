@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UImpactDefinition()
+void Export_pystes_UImpactDefinition(py::object m)
 {
-    py::class_< UImpactDefinition,  UGBXDefinition   >("UImpactDefinition")
+    py::class_< UImpactDefinition,  UGBXDefinition   >(m, "UImpactDefinition")
         .def("StaticClass", &UImpactDefinition::StaticClass, py::return_value_policy::reference)
         .def("HandleRigidBodyImpact", &UImpactDefinition::HandleRigidBodyImpact)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

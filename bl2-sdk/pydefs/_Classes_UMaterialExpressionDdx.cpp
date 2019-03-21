@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionDdx()
+void Export_pystes_UMaterialExpressionDdx(py::object m)
 {
-    py::class_< UMaterialExpressionDdx,  UMaterialExpression   >("UMaterialExpressionDdx")
+    py::class_< UMaterialExpressionDdx,  UMaterialExpression   >(m, "UMaterialExpressionDdx")
         .def_readwrite("Input", &UMaterialExpressionDdx::Input)
         .def("StaticClass", &UMaterialExpressionDdx::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

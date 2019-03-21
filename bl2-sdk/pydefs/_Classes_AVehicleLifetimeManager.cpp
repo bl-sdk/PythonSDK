@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AVehicleLifetimeManager()
+void Export_pystes_AVehicleLifetimeManager(py::object m)
 {
-    py::class_< AVehicleLifetimeManager,  AInfo   >("AVehicleLifetimeManager")
+    py::class_< AVehicleLifetimeManager,  AInfo   >(m, "AVehicleLifetimeManager")
         .def_readwrite("NextTickUpdateTime", &AVehicleLifetimeManager::NextTickUpdateTime)
         .def_readwrite("NextCheckUsersTime", &AVehicleLifetimeManager::NextCheckUsersTime)
         .def_readwrite("CurrentVehicleFamily", &AVehicleLifetimeManager::CurrentVehicleFamily)
@@ -28,6 +28,5 @@ void Export_pystes_AVehicleLifetimeManager()
         .def("IsSpawnStationInUseByOtherThan", &AVehicleLifetimeManager::IsSpawnStationInUseByOtherThan)
         .def("SetSpawnStationInUse", &AVehicleLifetimeManager::SetSpawnStationInUse)
         .def("initialize", &AVehicleLifetimeManager::initialize)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

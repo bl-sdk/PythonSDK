@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMultitypeScrollingListGFxObject()
+void Export_pystes_UMultitypeScrollingListGFxObject(py::object m)
 {
-    py::class_< UMultitypeScrollingListGFxObject,  UGFxObject   >("UMultitypeScrollingListGFxObject")
+    py::class_< UMultitypeScrollingListGFxObject,  UGFxObject   >(m, "UMultitypeScrollingListGFxObject")
         .def_readwrite("ParentPanel", &UMultitypeScrollingListGFxObject::ParentPanel)
         .def_readonly("UnknownData00", &UMultitypeScrollingListGFxObject::UnknownData00)
         .def("StaticClass", &UMultitypeScrollingListGFxObject::StaticClass, py::return_value_policy::reference)
@@ -18,6 +18,5 @@ void Export_pystes_UMultitypeScrollingListGFxObject()
         .def("InitMultitype", &UMultitypeScrollingListGFxObject::InitMultitype)
         .def("eventSetSelectedIndex", &UScrollingListGFxObject::eventSetSelectedIndex)
         .def("ScrollToIndex", &UScrollingListGFxObject::ScrollToIndex)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

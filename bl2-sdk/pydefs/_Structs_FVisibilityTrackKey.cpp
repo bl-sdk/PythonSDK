@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FVisibilityTrackKey()
+void Export_pystes_FVisibilityTrackKey(py::object m)
 {
-    py::class_< FVisibilityTrackKey >("FVisibilityTrackKey")
+    py::class_< FVisibilityTrackKey >(m, "FVisibilityTrackKey")
         .def_readwrite("Time", &FVisibilityTrackKey::Time)
         .def_readwrite("Action", &FVisibilityTrackKey::Action)
         .def_readwrite("ActiveCondition", &FVisibilityTrackKey::ActiveCondition)

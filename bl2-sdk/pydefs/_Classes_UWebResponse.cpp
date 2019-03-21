@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWebResponse()
+void Export_pystes_UWebResponse(py::object m)
 {
-    py::class_< UWebResponse,  UObject   >("UWebResponse")
+    py::class_< UWebResponse,  UObject   >(m, "UWebResponse")
         .def_readwrite("headers", &UWebResponse::headers)
         .def_readwrite("ReplacementMap", &UWebResponse::ReplacementMap)
         .def_readwrite("IncludePath", &UWebResponse::IncludePath)
@@ -33,6 +33,5 @@ void Export_pystes_UWebResponse()
         .def("ClearSubst", &UWebResponse::ClearSubst)
         .def("Subst", &UWebResponse::Subst)
         .def("FileExists", &UWebResponse::FileExists)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

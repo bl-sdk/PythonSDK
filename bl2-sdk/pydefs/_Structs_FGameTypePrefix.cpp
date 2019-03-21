@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGameTypePrefix()
+void Export_pystes_FGameTypePrefix(py::object m)
 {
-    py::class_< FGameTypePrefix >("FGameTypePrefix")
+    py::class_< FGameTypePrefix >(m, "FGameTypePrefix")
         .def_readwrite("Prefix", &FGameTypePrefix::Prefix)
         .def_readwrite("GameType", &FGameTypePrefix::GameType)
         .def_readwrite("AdditionalGameTypes", &FGameTypePrefix::AdditionalGameTypes)

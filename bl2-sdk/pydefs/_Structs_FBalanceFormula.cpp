@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBalanceFormula()
+void Export_pystes_FBalanceFormula(py::object m)
 {
-    py::class_< FBalanceFormula >("FBalanceFormula")
+    py::class_< FBalanceFormula >(m, "FBalanceFormula")
         .def_readwrite("Multiplier", &FBalanceFormula::Multiplier)
         .def_readwrite("Level", &FBalanceFormula::Level)
         .def_readwrite("Power", &FBalanceFormula::Power)

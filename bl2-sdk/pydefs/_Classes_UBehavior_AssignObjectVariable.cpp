@@ -3,13 +3,12 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_AssignObjectVariable()
+void Export_pystes_UBehavior_AssignObjectVariable(py::object m)
 {
-    py::class_< UBehavior_AssignObjectVariable,  UBehaviorBase   >("UBehavior_AssignObjectVariable")
+    py::class_< UBehavior_AssignObjectVariable,  UBehaviorBase   >(m, "UBehavior_AssignObjectVariable")
         .def_readwrite("Value", &UBehavior_AssignObjectVariable::Value)
         .def("StaticClass", &UBehavior_AssignObjectVariable::StaticClass, py::return_value_policy::reference)
         .def("PublishBehaviorOutput", &UBehavior_AssignObjectVariable::PublishBehaviorOutput)
         .def("ApplyBehaviorToContext", &UBehavior_AssignObjectVariable::ApplyBehaviorToContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

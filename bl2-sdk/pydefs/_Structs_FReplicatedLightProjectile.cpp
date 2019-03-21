@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FReplicatedLightProjectile()
+void Export_pystes_FReplicatedLightProjectile(py::object m)
 {
-    py::class_< FReplicatedLightProjectile >("FReplicatedLightProjectile")
+    py::class_< FReplicatedLightProjectile >(m, "FReplicatedLightProjectile")
         .def_readwrite("Id", &FReplicatedLightProjectile::Id)
         .def_readwrite("StartTrace", &FReplicatedLightProjectile::StartTrace)
         .def_readwrite("EndTrace", &FReplicatedLightProjectile::EndTrace)

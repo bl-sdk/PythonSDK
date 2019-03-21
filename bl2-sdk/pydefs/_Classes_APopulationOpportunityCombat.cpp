@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APopulationOpportunityCombat()
+void Export_pystes_APopulationOpportunityCombat(py::object m)
 {
-    py::class_< APopulationOpportunityCombat,  APopulationOpportunity   >("APopulationOpportunityCombat")
+    py::class_< APopulationOpportunityCombat,  APopulationOpportunity   >(m, "APopulationOpportunityCombat")
         .def_readwrite("VfTable_IIGbxMessageListener", &APopulationOpportunityCombat::VfTable_IIGbxMessageListener)
         .def_readwrite("ParentEncounter", &APopulationOpportunityCombat::ParentEncounter)
         .def_readwrite("ParentEncounterWave", &APopulationOpportunityCombat::ParentEncounterWave)
@@ -44,6 +44,5 @@ void Export_pystes_APopulationOpportunityCombat()
         .def("EnableDebugging", &APopulationOpportunityCombat::EnableDebugging)
         .def("RespawnKilledActors", &APopulationOpportunityCombat::RespawnKilledActors)
         .def("DoSpawning", &APopulationOpportunityCombat::DoSpawning)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

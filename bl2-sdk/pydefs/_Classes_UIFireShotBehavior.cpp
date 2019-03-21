@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIFireShotBehavior()
+void Export_pystes_UIFireShotBehavior(py::object m)
 {
-    py::class_< UIFireShotBehavior,  UInterface   >("UIFireShotBehavior")
+    py::class_< UIFireShotBehavior,  UInterface   >(m, "UIFireShotBehavior")
         .def("StaticClass", &UIFireShotBehavior::StaticClass, py::return_value_policy::reference)
         .def("Behavior_Fire", &UIFireShotBehavior::Behavior_Fire)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

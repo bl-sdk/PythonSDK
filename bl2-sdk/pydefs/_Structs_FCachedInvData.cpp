@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCachedInvData()
+void Export_pystes_FCachedInvData(py::object m)
 {
-    py::class_< FCachedInvData >("FCachedInvData")
+    py::class_< FCachedInvData >(m, "FCachedInvData")
         .def_readwrite("Inv", &FCachedInvData::Inv)
         .def_readwrite("TrashOrFavorite", &FCachedInvData::TrashOrFavorite)
   ;

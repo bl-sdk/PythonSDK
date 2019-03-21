@@ -3,13 +3,12 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIHealable()
+void Export_pystes_UIHealable(py::object m)
 {
-    py::class_< UIHealable,  UInterface   >("UIHealable")
+    py::class_< UIHealable,  UInterface   >(m, "UIHealable")
         .def("StaticClass", &UIHealable::StaticClass, py::return_value_policy::reference)
         .def("RemoveAllStatusEffects", &UIHealable::RemoveAllStatusEffects)
         .def("FullyReplenishShields", &UIHealable::FullyReplenishShields)
         .def("FullyReplenishLife", &UIHealable::FullyReplenishLife)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

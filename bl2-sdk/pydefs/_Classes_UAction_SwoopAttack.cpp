@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_SwoopAttack()
+void Export_pystes_UAction_SwoopAttack(py::object m)
 {
-    py::class_< UAction_SwoopAttack,  UWillowActionSequencePawn   >("UAction_SwoopAttack")
+    py::class_< UAction_SwoopAttack,  UWillowActionSequencePawn   >(m, "UAction_SwoopAttack")
         .def_readwrite("SwoopFarDistance", &UAction_SwoopAttack::SwoopFarDistance)
         .def_readwrite("SwoopFarHeight", &UAction_SwoopAttack::SwoopFarHeight)
         .def_readwrite("SwoopCloseDistance", &UAction_SwoopAttack::SwoopCloseDistance)
@@ -29,6 +29,5 @@ void Export_pystes_UAction_SwoopAttack()
         .def("eventStart", &UAction_SwoopAttack::eventStart)
         .def("eventCanRun", &UAction_SwoopAttack::eventCanRun)
         .def("eventInit", &UAction_SwoopAttack::eventInit)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

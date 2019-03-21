@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UImageServer()
+void Export_pystes_UImageServer(py::object m)
 {
-    py::class_< UImageServer,  UWebApplication   >("UImageServer")
+    py::class_< UImageServer,  UWebApplication   >(m, "UImageServer")
         .def("StaticClass", &UImageServer::StaticClass, py::return_value_policy::reference)
         .def("eventQuery", &UImageServer::eventQuery)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

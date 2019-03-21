@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPackageReferencer()
+void Export_pystes_UPackageReferencer(py::object m)
 {
-    py::class_< UPackageReferencer,  UObject   >("UPackageReferencer")
+    py::class_< UPackageReferencer,  UObject   >(m, "UPackageReferencer")
         .def_readwrite("PackageNames", &UPackageReferencer::PackageNames)
         .def("StaticClass", &UPackageReferencer::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

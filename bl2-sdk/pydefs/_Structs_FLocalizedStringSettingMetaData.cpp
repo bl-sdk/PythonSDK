@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLocalizedStringSettingMetaData()
+void Export_pystes_FLocalizedStringSettingMetaData(py::object m)
 {
-    py::class_< FLocalizedStringSettingMetaData >("FLocalizedStringSettingMetaData")
+    py::class_< FLocalizedStringSettingMetaData >(m, "FLocalizedStringSettingMetaData")
         .def_readwrite("Id", &FLocalizedStringSettingMetaData::Id)
         .def_readwrite("Name", &FLocalizedStringSettingMetaData::Name)
         .def_readwrite("ColumnHeaderText", &FLocalizedStringSettingMetaData::ColumnHeaderText)

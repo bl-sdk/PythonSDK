@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxRuleEngine()
+void Export_pystes_UGearboxRuleEngine(py::object m)
 {
-    py::class_< UGearboxRuleEngine,  UObject   >("UGearboxRuleEngine")
+    py::class_< UGearboxRuleEngine,  UObject   >(m, "UGearboxRuleEngine")
         .def_readwrite("MyGearboxPawn", &UGearboxRuleEngine::MyGearboxPawn)
         .def_readwrite("MyGearboxMind", &UGearboxRuleEngine::MyGearboxMind)
         .def_readwrite("VfTable_IIFlagProvider", &URuleEngine::VfTable_IIFlagProvider)
@@ -56,6 +56,5 @@ void Export_pystes_UGearboxRuleEngine()
         .def("CleanUpRuleEngineData", &URuleEngine::CleanUpRuleEngineData)
         .def("ActivateEventRule", &URuleEngine::ActivateEventRule)
         .def("ActivateEventRuleByDefinition", &URuleEngine::ActivateEventRuleByDefinition)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

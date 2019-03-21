@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCoverMeshes()
+void Export_pystes_FCoverMeshes(py::object m)
 {
-    py::class_< FCoverMeshes >("FCoverMeshes")
+    py::class_< FCoverMeshes >(m, "FCoverMeshes")
         .def_readwrite("Base", &FCoverMeshes::Base)
         .def_readwrite("LeanLeft", &FCoverMeshes::LeanLeft)
         .def_readwrite("LeanRight", &FCoverMeshes::LeanRight)

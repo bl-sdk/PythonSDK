@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_CompleteMission()
+void Export_pystes_UBehavior_CompleteMission(py::object m)
 {
-    py::class_< UBehavior_CompleteMission,  UBehaviorBase   >("UBehavior_CompleteMission")
+    py::class_< UBehavior_CompleteMission,  UBehaviorBase   >(m, "UBehavior_CompleteMission")
         .def("StaticClass", &UBehavior_CompleteMission::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_CompleteMission::ApplyBehaviorToContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

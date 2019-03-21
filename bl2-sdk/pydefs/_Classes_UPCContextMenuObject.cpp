@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPCContextMenuObject()
+void Export_pystes_UPCContextMenuObject(py::object m)
 {
-    py::class_< UPCContextMenuObject,  UGFxMoviePlayer   >("UPCContextMenuObject")
+    py::class_< UPCContextMenuObject,  UGFxMoviePlayer   >(m, "UPCContextMenuObject")
         .def_readwrite("MenuListObject", &UPCContextMenuObject::MenuListObject)
         .def_readwrite("Str_Buy", &UPCContextMenuObject::Str_Buy)
         .def_readwrite("Str_BuyBack", &UPCContextMenuObject::Str_BuyBack)
@@ -29,6 +29,5 @@ void Export_pystes_UPCContextMenuObject()
         .def("Init", &UPCContextMenuObject::Init)
         .def("OnMenuItemClicked", &UPCContextMenuObject::OnMenuItemClicked)
         .def("OnMenuClosed", &UPCContextMenuObject::OnMenuClosed)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

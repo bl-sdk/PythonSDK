@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialInstance()
+void Export_pystes_UMaterialInstance(py::object m)
 {
-    py::class_< UMaterialInstance,  UMaterialInterface   >("UMaterialInstance")
+    py::class_< UMaterialInstance,  UMaterialInterface   >(m, "UMaterialInstance")
         .def_readwrite("PhysMaterial", &UMaterialInstance::PhysMaterial)
         .def_readwrite("Parent", &UMaterialInstance::Parent)
         .def_readwrite("PhysMaterialMask", &UMaterialInstance::PhysMaterialMask)
@@ -26,6 +26,5 @@ void Export_pystes_UMaterialInstance()
         .def("SetScalarParameterValue", &UMaterialInstance::SetScalarParameterValue)
         .def("SetVectorParameterValue", &UMaterialInstance::SetVectorParameterValue)
         .def("SetParent", &UMaterialInstance::SetParent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

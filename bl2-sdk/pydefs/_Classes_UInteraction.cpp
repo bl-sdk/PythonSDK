@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInteraction()
+void Export_pystes_UInteraction(py::object m)
 {
-    py::class_< UInteraction,  UObject   >("UInteraction")
+    py::class_< UInteraction,  UObject   >(m, "UInteraction")
         .def_readwrite("BadCapsLocContexts", &UUIRoot::BadCapsLocContexts)
         .def("StaticClass", &UInteraction::StaticClass, py::return_value_policy::reference)
         .def("NotifyPlayerRemoved", &UInteraction::NotifyPlayerRemoved)
@@ -31,6 +31,5 @@ void Export_pystes_UInteraction()
         .def("GetSceneClient", &UUIRoot::GetSceneClient, py::return_value_policy::reference)
         .def("GetCurrentUIController", &UUIRoot::GetCurrentUIController, py::return_value_policy::reference)
         .def("GetInputPlatformType", &UUIRoot::GetInputPlatformType)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

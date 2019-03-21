@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMatrix()
+void Export_pystes_FMatrix(py::object m)
 {
-    py::class_< FMatrix >("FMatrix")
+    py::class_< FMatrix >(m, "FMatrix")
         .def_readwrite("XPlane", &FMatrix::XPlane)
         .def_readwrite("YPlane", &FMatrix::YPlane)
         .def_readwrite("ZPlane", &FMatrix::ZPlane)

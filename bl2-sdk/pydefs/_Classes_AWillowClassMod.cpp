@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowClassMod()
+void Export_pystes_AWillowClassMod(py::object m)
 {
-    py::class_< AWillowClassMod,  AWillowEquipAbleItem   >("AWillowClassMod")
+    py::class_< AWillowClassMod,  AWillowEquipAbleItem   >(m, "AWillowClassMod")
         .def_readwrite("ClassRequirementMetString", &AWillowClassMod::ClassRequirementMetString)
         .def_readwrite("ClassRequirementNotMetString", &AWillowClassMod::ClassRequirementNotMetString)
         .def("StaticClass", &AWillowClassMod::StaticClass, py::return_value_policy::reference)
@@ -18,6 +18,5 @@ void Export_pystes_AWillowClassMod()
         .def("ValidateDefinitions", &AWillowClassMod::ValidateDefinitions)
         .def("GetEquippedStat", &AWillowClassMod::GetEquippedStat)
         .def("eventGetEquipmentLocation", &AWillowClassMod::eventGetEquipmentLocation)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

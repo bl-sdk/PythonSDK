@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowDialogVar_Passenger()
+void Export_pystes_UWillowDialogVar_Passenger(py::object m)
 {
-    py::class_< UWillowDialogVar_Passenger,  UGearboxDialogVariable   >("UWillowDialogVar_Passenger")
+    py::class_< UWillowDialogVar_Passenger,  UGearboxDialogVariable   >(m, "UWillowDialogVar_Passenger")
         .def("StaticClass", &UWillowDialogVar_Passenger::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UApexGenericAsset()
+void Export_pystes_UApexGenericAsset(py::object m)
 {
-    py::class_< UApexGenericAsset,  UApexAsset   >("UApexGenericAsset")
+    py::class_< UApexGenericAsset,  UApexAsset   >(m, "UApexGenericAsset")
         .def_readwrite("MApexAsset", &UApexGenericAsset::MApexAsset)
         .def("StaticClass", &UApexGenericAsset::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

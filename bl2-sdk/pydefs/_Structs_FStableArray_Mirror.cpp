@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FStableArray_Mirror()
+void Export_pystes_FStableArray_Mirror(py::object m)
 {
-    py::class_< FStableArray_Mirror >("FStableArray_Mirror")
+    py::class_< FStableArray_Mirror >(m, "FStableArray_Mirror")
         .def_readwrite("ArrayNumInUse", &FStableArray_Mirror::ArrayNumInUse)
         .def_readwrite("ArrayNumAllocated", &FStableArray_Mirror::ArrayNumAllocated)
         .def_readwrite("ArrayCapacity", &FStableArray_Mirror::ArrayCapacity)

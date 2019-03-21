@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowArtifact()
+void Export_pystes_AWillowArtifact(py::object m)
 {
-    py::class_< AWillowArtifact,  AWillowEquipAbleItem   >("AWillowArtifact")
+    py::class_< AWillowArtifact,  AWillowEquipAbleItem   >(m, "AWillowArtifact")
         .def("StaticClass", &AWillowArtifact::StaticClass, py::return_value_policy::reference)
         .def("GetItemCardTopSectionString", &AWillowArtifact::GetItemCardTopSectionString)
         .def("GetAttributePresentationOverride", &AWillowArtifact::GetAttributePresentationOverride, py::return_value_policy::reference)
@@ -13,6 +13,5 @@ void Export_pystes_AWillowArtifact()
         .def("ValidateDefinitions", &AWillowArtifact::ValidateDefinitions)
         .def("GetEquippedStat", &AWillowArtifact::GetEquippedStat)
         .def("eventGetEquipmentLocation", &AWillowArtifact::eventGetEquipmentLocation)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

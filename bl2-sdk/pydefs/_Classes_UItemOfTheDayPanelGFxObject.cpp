@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UItemOfTheDayPanelGFxObject()
+void Export_pystes_UItemOfTheDayPanelGFxObject(py::object m)
 {
-    py::class_< UItemOfTheDayPanelGFxObject,  UGFxObject   >("UItemOfTheDayPanelGFxObject")
+    py::class_< UItemOfTheDayPanelGFxObject,  UGFxObject   >(m, "UItemOfTheDayPanelGFxObject")
         .def_readwrite("VendingMachineMovie", &UItemOfTheDayPanelGFxObject::VendingMachineMovie)
         .def_readwrite("CellThumbnail", &UItemOfTheDayPanelGFxObject::CellThumbnail)
         .def_readwrite("CustomMovieClip", &UItemOfTheDayPanelGFxObject::CustomMovieClip)
@@ -27,6 +27,5 @@ void Export_pystes_UItemOfTheDayPanelGFxObject()
         .def("Cleanup", &UItemOfTheDayPanelGFxObject::Cleanup)
         .def("InitLabels", &UItemOfTheDayPanelGFxObject::InitLabels)
         .def("Init", &UItemOfTheDayPanelGFxObject::Init)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTriangleSortSettings()
+void Export_pystes_FTriangleSortSettings(py::object m)
 {
-    py::class_< FTriangleSortSettings >("FTriangleSortSettings")
+    py::class_< FTriangleSortSettings >(m, "FTriangleSortSettings")
         .def_readwrite("TriangleSorting", &FTriangleSortSettings::TriangleSorting)
         .def_readwrite("CustomLeftRightAxis", &FTriangleSortSettings::CustomLeftRightAxis)
         .def_readwrite("CustomLeftRightBoneName", &FTriangleSortSettings::CustomLeftRightBoneName)

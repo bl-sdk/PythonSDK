@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTargetIteratorPrioritizeNearbyTarget()
+void Export_pystes_UTargetIteratorPrioritizeNearbyTarget(py::object m)
 {
-    py::class_< UTargetIteratorPrioritizeNearbyTarget,  UTI_Prioritize   >("UTargetIteratorPrioritizeNearbyTarget")
+    py::class_< UTargetIteratorPrioritizeNearbyTarget,  UTI_Prioritize   >(m, "UTargetIteratorPrioritizeNearbyTarget")
         .def_readwrite("MaxDistance", &UTargetIteratorPrioritizeNearbyTarget::MaxDistance)
         .def("StaticClass", &UTargetIteratorPrioritizeNearbyTarget::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

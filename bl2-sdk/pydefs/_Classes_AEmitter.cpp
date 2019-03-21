@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AEmitter()
+void Export_pystes_AEmitter(py::object m)
 {
-    py::class_< AEmitter,  AActor   >("AEmitter")
+    py::class_< AEmitter,  AActor   >(m, "AEmitter")
         .def_readwrite("ParticleSystemComponent", &AEmitter::ParticleSystemComponent)
         .def_readwrite("LightEnvironment", &AEmitter::LightEnvironment)
         .def("StaticClass", &AEmitter::StaticClass, py::return_value_policy::reference)
@@ -27,6 +27,5 @@ void Export_pystes_AEmitter()
         .def("eventReplicatedEvent", &AEmitter::eventReplicatedEvent)
         .def("eventPostBeginPlay", &AEmitter::eventPostBeginPlay)
         .def("eventSetTemplate", &AEmitter::eventSetTemplate)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AChallengeManager()
+void Export_pystes_AChallengeManager(py::object m)
 {
-    py::class_< AChallengeManager,  AActor   >("AChallengeManager")
+    py::class_< AChallengeManager,  AActor   >(m, "AChallengeManager")
         .def_readwrite("VfTable_IIBehaviorConsumer", &AChallengeManager::VfTable_IIBehaviorConsumer)
         .def_readwrite("StatIdChallengeMap", &AChallengeManager::StatIdChallengeMap)
         .def_readwrite("BPRewardText", &AChallengeManager::BPRewardText)
@@ -16,6 +16,5 @@ void Export_pystes_AChallengeManager()
         .def("UnregisterChallenges", &AChallengeManager::UnregisterChallenges)
         .def("UnregisterChallenge", &AChallengeManager::UnregisterChallenge)
         .def("RegisterChallenge", &AChallengeManager::RegisterChallenge)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

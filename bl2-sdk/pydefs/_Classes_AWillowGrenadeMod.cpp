@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowGrenadeMod()
+void Export_pystes_AWillowGrenadeMod(py::object m)
 {
-    py::class_< AWillowGrenadeMod,  AWillowEquipAbleItem   >("AWillowGrenadeMod")
+    py::class_< AWillowGrenadeMod,  AWillowEquipAbleItem   >(m, "AWillowGrenadeMod")
         .def_readwrite("GrenadeDamage", &AWillowGrenadeMod::GrenadeDamage)
         .def_readwrite("GrenadeDamageBaseValue", &AWillowGrenadeMod::GrenadeDamageBaseValue)
         .def_readwrite("GrenadeDamageModifierStack", &AWillowGrenadeMod::GrenadeDamageModifierStack)
@@ -52,6 +52,5 @@ void Export_pystes_AWillowGrenadeMod()
         .def("OnGrenadeDamagedEnemy", &AWillowGrenadeMod::OnGrenadeDamagedEnemy)
         .def("OnGrenadeExploded", &AWillowGrenadeMod::OnGrenadeExploded)
         .def("OnGrenadeSpawned", &AWillowGrenadeMod::OnGrenadeSpawned)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

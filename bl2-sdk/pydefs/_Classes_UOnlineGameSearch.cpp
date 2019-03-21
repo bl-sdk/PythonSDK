@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineGameSearch()
+void Export_pystes_UOnlineGameSearch(py::object m)
 {
-    py::class_< UOnlineGameSearch,  USettings   >("UOnlineGameSearch")
+    py::class_< UOnlineGameSearch,  USettings   >(m, "UOnlineGameSearch")
         .def_readwrite("MaxSearchResults", &UOnlineGameSearch::MaxSearchResults)
         .def_readwrite("Query", &UOnlineGameSearch::Query)
         .def_readwrite("GameSettingsClass", &UOnlineGameSearch::GameSettingsClass)
@@ -21,6 +21,5 @@ void Export_pystes_UOnlineGameSearch()
         .def("StaticClass", &UOnlineGameSearch::StaticClass, py::return_value_policy::reference)
         .def("eventSortSearchResults", &UOnlineGameSearch::eventSortSearchResults)
         .def("SetSkillOverride", &UOnlineGameSearch::SetSkillOverride)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMindTargetInfo()
+void Export_pystes_UMindTargetInfo(py::object m)
 {
-    py::class_< UMindTargetInfo,  UObject   >("UMindTargetInfo")
+    py::class_< UMindTargetInfo,  UObject   >(m, "UMindTargetInfo")
         .def_readwrite("Target", &UMindTargetInfo::Target)
         .def_readwrite("Distance", &UMindTargetInfo::Distance)
         .def_readwrite("bCanFireAt", &UMindTargetInfo::bCanFireAt)
@@ -25,6 +25,5 @@ void Export_pystes_UMindTargetInfo()
         .def("StaticClass", &UMindTargetInfo::StaticClass, py::return_value_policy::reference)
         .def("GetAverageHitTime", &UMindTargetInfo::GetAverageHitTime)
         .def("AddHitTargetRecord", &UMindTargetInfo::AddHitTargetRecord)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

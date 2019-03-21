@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGFxMenuHelperSaveGame()
+void Export_pystes_UWillowGFxMenuHelperSaveGame(py::object m)
 {
-    py::class_< UWillowGFxMenuHelperSaveGame,  UObject   >("UWillowGFxMenuHelperSaveGame")
+    py::class_< UWillowGFxMenuHelperSaveGame,  UObject   >(m, "UWillowGFxMenuHelperSaveGame")
         .def_readwrite("LoadingListDlg", &UWillowGFxMenuHelperSaveGame::LoadingListDlg)
         .def_readwrite("DeletingDlg", &UWillowGFxMenuHelperSaveGame::DeletingDlg)
         .def_readwrite("ValidatingDlg", &UWillowGFxMenuHelperSaveGame::ValidatingDlg)
@@ -45,6 +45,5 @@ void Export_pystes_UWillowGFxMenuHelperSaveGame()
         .def("OnDeleteStarted", &UWillowGFxMenuHelperSaveGame::OnDeleteStarted)
         .def("OnSaveGamesUpdated", &UWillowGFxMenuHelperSaveGame::OnSaveGamesUpdated)
         .def("OnDeleted", &UWillowGFxMenuHelperSaveGame::OnDeleted)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

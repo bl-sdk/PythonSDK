@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UVehicleWheelDefinition()
+void Export_pystes_UVehicleWheelDefinition(py::object m)
 {
-    py::class_< UVehicleWheelDefinition,  UGBXDefinition   >("UVehicleWheelDefinition")
+    py::class_< UVehicleWheelDefinition,  UGBXDefinition   >(m, "UVehicleWheelDefinition")
         .def_readwrite("BoneOffset", &UVehicleWheelDefinition::BoneOffset)
         .def_readwrite("WheelRadius", &UVehicleWheelDefinition::WheelRadius)
         .def_readwrite("SuspensionTravel", &UVehicleWheelDefinition::SuspensionTravel)
@@ -17,6 +17,5 @@ void Export_pystes_UVehicleWheelDefinition()
         .def_readwrite("ParkedSlipFactorLat", &UVehicleWheelDefinition::ParkedSlipFactorLat)
         .def_readwrite("ParkedSlipFactorLong", &UVehicleWheelDefinition::ParkedSlipFactorLong)
         .def("StaticClass", &UVehicleWheelDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

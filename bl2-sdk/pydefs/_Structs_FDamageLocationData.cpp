@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDamageLocationData()
+void Export_pystes_FDamageLocationData(py::object m)
 {
-    py::class_< FDamageLocationData >("FDamageLocationData")
+    py::class_< FDamageLocationData >(m, "FDamageLocationData")
         .def_readwrite("Time", &FDamageLocationData::Time)
         .def_readwrite("Location", &FDamageLocationData::Location)
   ;

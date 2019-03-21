@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_AIThrowProjectileAtTarget()
+void Export_pystes_UBehavior_AIThrowProjectileAtTarget(py::object m)
 {
-    py::class_< UBehavior_AIThrowProjectileAtTarget,  UBehaviorBase   >("UBehavior_AIThrowProjectileAtTarget")
+    py::class_< UBehavior_AIThrowProjectileAtTarget,  UBehaviorBase   >(m, "UBehavior_AIThrowProjectileAtTarget")
         .def_readwrite("NumProjectiles", &UBehavior_AIThrowProjectileAtTarget::NumProjectiles)
         .def_readwrite("Options", &UBehavior_AIThrowProjectileAtTarget::Options)
         .def_readwrite("StartOffset", &UBehavior_AIThrowProjectileAtTarget::StartOffset)
@@ -19,6 +19,5 @@ void Export_pystes_UBehavior_AIThrowProjectileAtTarget()
         .def("ThrowExisting", &UBehavior_AIThrowProjectileAtTarget::ThrowExisting)
         .def("ThrowProjectile", &UBehavior_AIThrowProjectileAtTarget::ThrowProjectile)
         .def("ApplyBehaviorToContext", &UBehavior_AIThrowProjectileAtTarget::ApplyBehaviorToContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

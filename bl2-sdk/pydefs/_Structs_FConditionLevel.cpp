@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FConditionLevel()
+void Export_pystes_FConditionLevel(py::object m)
 {
-    py::class_< FConditionLevel >("FConditionLevel")
+    py::class_< FConditionLevel >(m, "FConditionLevel")
         .def_readwrite("ConditionDefinitions", &FConditionLevel::ConditionDefinitions)
         .def_readwrite("ProgressNotificationOverride", &FConditionLevel::ProgressNotificationOverride)
         .def_readwrite("CompletedAttributeEffects", &FConditionLevel::CompletedAttributeEffects)

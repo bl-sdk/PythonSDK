@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBehaviorSequenceData()
+void Export_pystes_FBehaviorSequenceData(py::object m)
 {
-    py::class_< FBehaviorSequenceData >("FBehaviorSequenceData")
+    py::class_< FBehaviorSequenceData >(m, "FBehaviorSequenceData")
         .def_readwrite("BehaviorSequenceName", &FBehaviorSequenceData::BehaviorSequenceName)
         .def_readwrite("CustomEnableCondition", &FBehaviorSequenceData::CustomEnableCondition)
         .def_readwrite("EventData", &FBehaviorSequenceData::EventData)

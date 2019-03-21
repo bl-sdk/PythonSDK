@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_AttachToEvent()
+void Export_pystes_USeqAct_AttachToEvent(py::object m)
 {
-    py::class_< USeqAct_AttachToEvent,  USequenceAction   >("USeqAct_AttachToEvent")
+    py::class_< USeqAct_AttachToEvent,  USequenceAction   >(m, "USeqAct_AttachToEvent")
         .def("StaticClass", &USeqAct_AttachToEvent::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

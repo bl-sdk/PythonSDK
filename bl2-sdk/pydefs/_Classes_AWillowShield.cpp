@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowShield()
+void Export_pystes_AWillowShield(py::object m)
 {
-    py::class_< AWillowShield,  AWillowEquipAbleItem   >("AWillowShield")
+    py::class_< AWillowShield,  AWillowEquipAbleItem   >(m, "AWillowShield")
         .def_readwrite("PercentChanceToAbsorbAmmo", &AWillowShield::PercentChanceToAbsorbAmmo)
         .def_readwrite("PercentChanceToAbsorbAmmoBaseValue", &AWillowShield::PercentChanceToAbsorbAmmoBaseValue)
         .def_readwrite("PercentChanceToAbsorbAmmoModifierStack", &AWillowShield::PercentChanceToAbsorbAmmoModifierStack)
@@ -94,6 +94,5 @@ void Export_pystes_AWillowShield()
         .def("ItemEquipped", &AWillowShield::ItemEquipped)
         .def("ClientInitializeFromItemDefinition", &AWillowShield::ClientInitializeFromItemDefinition)
         .def("eventReplicatedEvent", &AWillowShield::eventReplicatedEvent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

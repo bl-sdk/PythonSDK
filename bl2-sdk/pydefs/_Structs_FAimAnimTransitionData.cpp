@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAimAnimTransitionData()
+void Export_pystes_FAimAnimTransitionData(py::object m)
 {
-    py::class_< FAimAnimTransitionData >("FAimAnimTransitionData")
+    py::class_< FAimAnimTransitionData >(m, "FAimAnimTransitionData")
         .def_readwrite("FromState", &FAimAnimTransitionData::FromState)
         .def_readwrite("ToState", &FAimAnimTransitionData::ToState)
         .def_readwrite("AnimName", &FAimAnimTransitionData::AnimName)

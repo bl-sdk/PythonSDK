@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleSubUV()
+void Export_pystes_UParticleModuleSubUV(py::object m)
 {
-    py::class_< UParticleModuleSubUV,  UParticleModule   >("UParticleModuleSubUV")
+    py::class_< UParticleModuleSubUV,  UParticleModule   >(m, "UParticleModuleSubUV")
         .def_readwrite("SubImageIndex", &UParticleModuleSubUV::SubImageIndex)
         .def("StaticClass", &UParticleModuleSubUV::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDistributionFloatParameterBase()
+void Export_pystes_UDistributionFloatParameterBase(py::object m)
 {
-    py::class_< UDistributionFloatParameterBase,  UDistributionFloat   >("UDistributionFloatParameterBase")
+    py::class_< UDistributionFloatParameterBase,  UDistributionFloat   >(m, "UDistributionFloatParameterBase")
         .def_readwrite("ParameterName", &UDistributionFloatParameterBase::ParameterName)
         .def_readwrite("MinInput", &UDistributionFloatParameterBase::MinInput)
         .def_readwrite("MaxInput", &UDistributionFloatParameterBase::MaxInput)
@@ -14,6 +14,5 @@ void Export_pystes_UDistributionFloatParameterBase()
         .def_readwrite("ParamMode", &UDistributionFloatParameterBase::ParamMode)
         .def_readwrite("Constant", &UDistributionFloatConstant::Constant)
         .def("StaticClass", &UDistributionFloatParameterBase::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

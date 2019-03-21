@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowTrigger()
+void Export_pystes_AWillowTrigger(py::object m)
 {
-    py::class_< AWillowTrigger,  ATrigger   >("AWillowTrigger")
+    py::class_< AWillowTrigger,  ATrigger   >(m, "AWillowTrigger")
         .def_readwrite("VfTable_IIUsable", &AWillowTrigger::VfTable_IIUsable)
         .def_readwrite("HUDIcon", &AWillowTrigger::HUDIcon)
         .def_readwrite("CostsToUseType", &AWillowTrigger::CostsToUseType)
@@ -18,6 +18,5 @@ void Export_pystes_AWillowTrigger()
         .def("SetInteractionIcon", &AWillowTrigger::SetInteractionIcon)
         .def("UseObject", &AWillowTrigger::UseObject)
         .def("PostBeginPlay", &AWillowTrigger::PostBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

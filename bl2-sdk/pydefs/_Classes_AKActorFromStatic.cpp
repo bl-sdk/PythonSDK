@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AKActorFromStatic()
+void Export_pystes_AKActorFromStatic(py::object m)
 {
-    py::class_< AKActorFromStatic,  AKActor   >("AKActorFromStatic")
+    py::class_< AKActorFromStatic,  AKActor   >(m, "AKActorFromStatic")
         .def_readwrite("MyStaticMeshActor", &AKActorFromStatic::MyStaticMeshActor)
         .def_readwrite("MaxImpulseSpeed", &AKActorFromStatic::MaxImpulseSpeed)
         .def("StaticClass", &AKActorFromStatic::StaticClass, py::return_value_policy::reference)
@@ -20,6 +20,5 @@ void Export_pystes_AKActorFromStatic()
         .def("eventOnWakeRBPhysics", &AKActorFromStatic::eventOnWakeRBPhysics)
         .def("eventOnSleepRBPhysics", &AKActorFromStatic::eventOnSleepRBPhysics)
         .def("DisablePrecomputedLighting", &AKActorFromStatic::DisablePrecomputedLighting)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

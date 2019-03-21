@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULocalPlayer()
+void Export_pystes_ULocalPlayer(py::object m)
 {
-    py::class_< ULocalPlayer,  UObject   >("ULocalPlayer")
+    py::class_< ULocalPlayer,  UObject   >(m, "ULocalPlayer")
         .def_readwrite("VfTable_FObserverInterface", &ULocalPlayer::VfTable_FObserverInterface)
         .def_readwrite("ControllerId", &ULocalPlayer::ControllerId)
         .def_readwrite("ViewportClient", &ULocalPlayer::ViewportClient)
@@ -75,6 +75,5 @@ void Export_pystes_ULocalPlayer()
         .def("SendSplitJoin", &ULocalPlayer::SendSplitJoin)
         .def("SpawnPlayActor", &ULocalPlayer::SpawnPlayActor)
         .def("SwitchController", &UPlayer::SwitchController)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

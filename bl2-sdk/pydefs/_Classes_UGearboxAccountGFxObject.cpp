@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxAccountGFxObject()
+void Export_pystes_UGearboxAccountGFxObject(py::object m)
 {
-    py::class_< UGearboxAccountGFxObject,  UGFxObject   >("UGearboxAccountGFxObject")
+    py::class_< UGearboxAccountGFxObject,  UGFxObject   >(m, "UGearboxAccountGFxObject")
         .def("StaticClass", &UGearboxAccountGFxObject::StaticClass, py::return_value_policy::reference)
         .def("SelectIsEnabled", &UGearboxAccountGFxObject::SelectIsEnabled)
         .def("ClearKeyCode", &UGearboxAccountGFxObject::ClearKeyCode)
@@ -38,6 +38,5 @@ void Export_pystes_UGearboxAccountGFxObject()
         .def("OffersBoxIsChecked", &UGearboxAccountGFxObject::OffersBoxIsChecked)
         .def("RefreshWelcomeScreen", &UGearboxAccountGFxObject::RefreshWelcomeScreen)
         .def("DisplayScreen", &UGearboxAccountGFxObject::DisplayScreen)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBodyWeaponActionData()
+void Export_pystes_FBodyWeaponActionData(py::object m)
 {
-    py::class_< FBodyWeaponActionData >("FBodyWeaponActionData")
+    py::class_< FBodyWeaponActionData >(m, "FBodyWeaponActionData")
         .def_readwrite("Action", &FBodyWeaponActionData::Action)
         .def_readwrite("Expression", &FBodyWeaponActionData::Expression)
         .def_readwrite("Animations", &FBodyWeaponActionData::Animations)

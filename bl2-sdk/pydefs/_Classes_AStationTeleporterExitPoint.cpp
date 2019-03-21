@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AStationTeleporterExitPoint()
+void Export_pystes_AStationTeleporterExitPoint(py::object m)
 {
-    py::class_< AStationTeleporterExitPoint,  AKeypoint   >("AStationTeleporterExitPoint")
+    py::class_< AStationTeleporterExitPoint,  AKeypoint   >(m, "AStationTeleporterExitPoint")
         .def("StaticClass", &AStationTeleporterExitPoint::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

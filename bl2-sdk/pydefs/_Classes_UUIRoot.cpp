@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIRoot()
+void Export_pystes_UUIRoot(py::object m)
 {
-    py::class_< UUIRoot,  UObject   >("UUIRoot")
+    py::class_< UUIRoot,  UObject   >(m, "UUIRoot")
         .def_readwrite("BadCapsLocContexts", &UUIRoot::BadCapsLocContexts)
         .def("StaticClass", &UUIRoot::StaticClass, py::return_value_policy::reference)
         .def("SafeCaps", &UUIRoot::SafeCaps)
@@ -20,6 +20,5 @@ void Export_pystes_UUIRoot()
         .def("GetSceneClient", &UUIRoot::GetSceneClient, py::return_value_policy::reference)
         .def("GetCurrentUIController", &UUIRoot::GetCurrentUIController, py::return_value_policy::reference)
         .def("GetInputPlatformType", &UUIRoot::GetInputPlatformType)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

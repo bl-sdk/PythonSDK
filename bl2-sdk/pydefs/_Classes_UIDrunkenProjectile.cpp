@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIDrunkenProjectile()
+void Export_pystes_UIDrunkenProjectile(py::object m)
 {
-    py::class_< UIDrunkenProjectile,  UInterface   >("UIDrunkenProjectile")
+    py::class_< UIDrunkenProjectile,  UInterface   >(m, "UIDrunkenProjectile")
         .def("StaticClass", &UIDrunkenProjectile::StaticClass, py::return_value_policy::reference)
         .def("SetDrunkenRandomNumberSeed", &UIDrunkenProjectile::SetDrunkenRandomNumberSeed)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

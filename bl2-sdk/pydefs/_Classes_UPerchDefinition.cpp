@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPerchDefinition()
+void Export_pystes_UPerchDefinition(py::object m)
 {
-    py::class_< UPerchDefinition,  UGBXDefinition   >("UPerchDefinition")
+    py::class_< UPerchDefinition,  UGBXDefinition   >(m, "UPerchDefinition")
         .def_readwrite("VfTable_IIBodyInfoProvider", &UPerchDefinition::VfTable_IIBodyInfoProvider)
         .def_readwrite("VfTable_IIBehaviorProvider", &UPerchDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("VfTable_IIAnimProvider", &UPerchDefinition::VfTable_IIAnimProvider)
@@ -42,6 +42,5 @@ void Export_pystes_UPerchDefinition()
         .def("CanUse", &UPerchDefinition::CanUse)
         .def("GetPerchData", &UPerchDefinition::GetPerchData)
         .def("Supports", &UPerchDefinition::Supports)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxGlobals()
+void Export_pystes_UGearboxGlobals(py::object m)
 {
-    py::class_< UGearboxGlobals,  UGearboxEngineGlobals   >("UGearboxGlobals")
+    py::class_< UGearboxGlobals,  UGearboxEngineGlobals   >(m, "UGearboxGlobals")
         .def_readwrite("TheGlobalsDefinition", &UGearboxGlobals::TheGlobalsDefinition)
         .def_readwrite("ExposureUtilityClass", &UGearboxGlobals::ExposureUtilityClass)
         .def_readwrite("ExposureUtilityStrategyClass", &UGearboxGlobals::ExposureUtilityStrategyClass)
@@ -56,6 +56,5 @@ void Export_pystes_UGearboxGlobals()
         .def("GetGearboxAIFactory", &UGearboxGlobals::GetGearboxAIFactory, py::return_value_policy::reference)
         .def("GetExposureUtility", &UGearboxGlobals::GetExposureUtility, py::return_value_policy::reference)
         .def("GetGearboxGlobals", &UGearboxGlobals::GetGearboxGlobals, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

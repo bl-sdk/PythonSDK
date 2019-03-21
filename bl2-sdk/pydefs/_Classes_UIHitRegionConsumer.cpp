@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIHitRegionConsumer()
+void Export_pystes_UIHitRegionConsumer(py::object m)
 {
-    py::class_< UIHitRegionConsumer,  UInterface   >("UIHitRegionConsumer")
+    py::class_< UIHitRegionConsumer,  UInterface   >(m, "UIHitRegionConsumer")
         .def("StaticClass", &UIHitRegionConsumer::StaticClass, py::return_value_policy::reference)
         .def("PlayHit", &UIHitRegionConsumer::PlayHit)
         .def("ResetHitRegionHealth", &UIHitRegionConsumer::ResetHitRegionHealth)
@@ -16,6 +16,5 @@ void Export_pystes_UIHitRegionConsumer()
         .def("AddDamageToHitRegion", &UIHitRegionConsumer::AddDamageToHitRegion)
         .def("GetHitRegionHealthValues", &UIHitRegionConsumer::GetHitRegionHealthValues)
         .def("GetHitRegionForTakenDamage", &UIHitRegionConsumer::GetHitRegionForTakenDamage, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSparkOutstandingRequest()
+void Export_pystes_FSparkOutstandingRequest(py::object m)
 {
-    py::class_< FSparkOutstandingRequest >("FSparkOutstandingRequest")
+    py::class_< FSparkOutstandingRequest >(m, "FSparkOutstandingRequest")
         .def_readwrite("State", &FSparkOutstandingRequest::State)
         .def_readwrite("SleepUntil", &FSparkOutstandingRequest::SleepUntil)
         .def_readwrite("RequestCompleteDelegate", &FSparkOutstandingRequest::RequestCompleteDelegate)

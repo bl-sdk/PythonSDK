@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSeqVarLink()
+void Export_pystes_FSeqVarLink(py::object m)
 {
-    py::class_< FSeqVarLink >("FSeqVarLink")
+    py::class_< FSeqVarLink >(m, "FSeqVarLink")
         .def_readwrite("ExpectedType", &FSeqVarLink::ExpectedType)
         .def_readwrite("LinkedVariables", &FSeqVarLink::LinkedVariables)
         .def_readwrite("LinkDesc", &FSeqVarLink::LinkDesc)

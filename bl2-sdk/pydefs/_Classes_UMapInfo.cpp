@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMapInfo()
+void Export_pystes_UMapInfo(py::object m)
 {
-    py::class_< UMapInfo,  UObject   >("UMapInfo")
+    py::class_< UMapInfo,  UObject   >(m, "UMapInfo")
         .def("StaticClass", &UMapInfo::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

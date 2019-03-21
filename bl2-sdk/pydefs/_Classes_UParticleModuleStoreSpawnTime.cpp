@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleStoreSpawnTime()
+void Export_pystes_UParticleModuleStoreSpawnTime(py::object m)
 {
-    py::class_< UParticleModuleStoreSpawnTime,  UParticleModule   >("UParticleModuleStoreSpawnTime")
+    py::class_< UParticleModuleStoreSpawnTime,  UParticleModule   >(m, "UParticleModuleStoreSpawnTime")
         .def("StaticClass", &UParticleModuleStoreSpawnTime::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

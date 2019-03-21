@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPlayerState()
+void Export_pystes_FPlayerState(py::object m)
 {
-    py::class_< FPlayerState >("FPlayerState")
+    py::class_< FPlayerState >(m, "FPlayerState")
         .def_readwrite("PlayerIndex", &FPlayerState::PlayerIndex)
         .def_readwrite("CurrentTeamIndex", &FPlayerState::CurrentTeamIndex)
         .def_readwrite("TimeSpawned", &FPlayerState::TimeSpawned)

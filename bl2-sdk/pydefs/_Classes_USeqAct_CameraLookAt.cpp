@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_CameraLookAt()
+void Export_pystes_USeqAct_CameraLookAt(py::object m)
 {
-    py::class_< USeqAct_CameraLookAt,  USequenceAction   >("USeqAct_CameraLookAt")
+    py::class_< USeqAct_CameraLookAt,  USequenceAction   >(m, "USeqAct_CameraLookAt")
         .def_readwrite("InterpSpeedRange", &USeqAct_CameraLookAt::InterpSpeedRange)
         .def_readwrite("InFocusFOV", &USeqAct_CameraLookAt::InFocusFOV)
         .def_readwrite("FocusBoneName", &USeqAct_CameraLookAt::FocusBoneName)
@@ -15,6 +15,5 @@ void Export_pystes_USeqAct_CameraLookAt()
         .def_readwrite("RemainingTime", &USeqAct_CameraLookAt::RemainingTime)
         .def("StaticClass", &USeqAct_CameraLookAt::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqAct_CameraLookAt::eventGetObjClassVersion)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

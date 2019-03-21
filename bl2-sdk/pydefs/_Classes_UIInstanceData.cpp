@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIInstanceData()
+void Export_pystes_UIInstanceData(py::object m)
 {
-    py::class_< UIInstanceData,  UInterface   >("UIInstanceData")
+    py::class_< UIInstanceData,  UInterface   >(m, "UIInstanceData")
         .def("StaticClass", &UIInstanceData::StaticClass, py::return_value_policy::reference)
         .def("GetReplicatedInstanceDataState", &UIInstanceData::GetReplicatedInstanceDataState)
         .def("GetInstanceDataState", &UIInstanceData::GetInstanceDataState)
@@ -14,6 +14,5 @@ void Export_pystes_UIInstanceData()
         .def("eventRemoveInstanceData", &UIInstanceData::eventRemoveInstanceData)
         .def("eventGetInstanceData", &UIInstanceData::eventGetInstanceData)
         .def("SetInstanceData", &UIInstanceData::SetInstanceData)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

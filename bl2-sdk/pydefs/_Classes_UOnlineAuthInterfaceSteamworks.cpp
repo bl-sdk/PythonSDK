@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineAuthInterfaceSteamworks()
+void Export_pystes_UOnlineAuthInterfaceSteamworks(py::object m)
 {
-    py::class_< UOnlineAuthInterfaceSteamworks,  UOnlineAuthInterfaceImpl   >("UOnlineAuthInterfaceSteamworks")
+    py::class_< UOnlineAuthInterfaceSteamworks,  UOnlineAuthInterfaceImpl   >(m, "UOnlineAuthInterfaceSteamworks")
         .def_readwrite("AuthCallbackBridge", &UOnlineAuthInterfaceSteamworks::AuthCallbackBridge)
         .def("StaticClass", &UOnlineAuthInterfaceSteamworks::StaticClass, py::return_value_policy::reference)
         .def("GetServerAddr", &UOnlineAuthInterfaceSteamworks::GetServerAddr)
@@ -20,6 +20,5 @@ void Export_pystes_UOnlineAuthInterfaceSteamworks()
         .def("CreateClientAuthSession", &UOnlineAuthInterfaceSteamworks::CreateClientAuthSession)
         .def("SendAuthRequestServer", &UOnlineAuthInterfaceSteamworks::SendAuthRequestServer)
         .def("SendAuthRequestClient", &UOnlineAuthInterfaceSteamworks::SendAuthRequestClient)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

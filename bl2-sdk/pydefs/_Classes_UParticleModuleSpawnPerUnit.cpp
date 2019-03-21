@@ -3,14 +3,13 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleSpawnPerUnit()
+void Export_pystes_UParticleModuleSpawnPerUnit(py::object m)
 {
-    py::class_< UParticleModuleSpawnPerUnit,  UParticleModuleSpawnBase   >("UParticleModuleSpawnPerUnit")
+    py::class_< UParticleModuleSpawnPerUnit,  UParticleModuleSpawnBase   >(m, "UParticleModuleSpawnPerUnit")
         .def_readwrite("UnitScalar", &UParticleModuleSpawnPerUnit::UnitScalar)
         .def_readwrite("SpawnPerUnit", &UParticleModuleSpawnPerUnit::SpawnPerUnit)
         .def_readwrite("MovementTolerance", &UParticleModuleSpawnPerUnit::MovementTolerance)
         .def_readwrite("MaxFrameDistance", &UParticleModuleSpawnPerUnit::MaxFrameDistance)
         .def("StaticClass", &UParticleModuleSpawnPerUnit::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

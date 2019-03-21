@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGlobals()
+void Export_pystes_UWillowGlobals(py::object m)
 {
-    py::class_< UWillowGlobals,  UGearboxGlobals   >("UWillowGlobals")
+    py::class_< UWillowGlobals,  UGearboxGlobals   >(m, "UWillowGlobals")
         .def_readwrite("PlayerClassIdentifiers", &UWillowGlobals::PlayerClassIdentifiers)
         .def_readwrite("PlayerNameIdentifiers", &UWillowGlobals::PlayerNameIdentifiers)
         .def_readwrite("DefaultWorldBodyStandIn", &UWillowGlobals::DefaultWorldBodyStandIn)
@@ -95,6 +95,5 @@ void Export_pystes_UWillowGlobals()
         .def("GetWillowGlobals", &UWillowGlobals::GetWillowGlobals, py::return_value_policy::reference)
         .def("RemoveInteractiveObject", &UWillowGlobals::RemoveInteractiveObject)
         .def("AddInteractiveObject", &UWillowGlobals::AddInteractiveObject)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

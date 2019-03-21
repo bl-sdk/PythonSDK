@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPerBoneMaskInfo()
+void Export_pystes_FPerBoneMaskInfo(py::object m)
 {
-    py::class_< FPerBoneMaskInfo >("FPerBoneMaskInfo")
+    py::class_< FPerBoneMaskInfo >(m, "FPerBoneMaskInfo")
         .def_readwrite("BranchList", &FPerBoneMaskInfo::BranchList)
         .def_readwrite("DesiredWeight", &FPerBoneMaskInfo::DesiredWeight)
         .def_readwrite("BlendTimeToGo", &FPerBoneMaskInfo::BlendTimeToGo)

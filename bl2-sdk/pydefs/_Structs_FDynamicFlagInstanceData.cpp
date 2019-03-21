@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDynamicFlagInstanceData()
+void Export_pystes_FDynamicFlagInstanceData(py::object m)
 {
-    py::class_< FDynamicFlagInstanceData >("FDynamicFlagInstanceData")
+    py::class_< FDynamicFlagInstanceData >(m, "FDynamicFlagInstanceData")
         .def_readwrite("DynamicFlag", &FDynamicFlagInstanceData::DynamicFlag)
         .def_readwrite("LastEvaluatedExpressionTime", &FDynamicFlagInstanceData::LastEvaluatedExpressionTime)
   ;

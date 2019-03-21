@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APlayerController()
+void Export_pystes_APlayerController(py::object m)
 {
-    py::class_< APlayerController,  UObject   >("APlayerController")
+    py::class_< APlayerController,  UObject   >(m, "APlayerController")
         .def_readwrite("Player", &APlayerController::Player)
         .def_readwrite("PlayerCamera", &APlayerController::PlayerCamera)
         .def_readwrite("CameraClass", &APlayerController::CameraClass)
@@ -1168,6 +1168,5 @@ void Export_pystes_APlayerController()
         .def("SetCollision", &AActor::SetCollision)
         .def("Sleep", &AActor::Sleep)
         .def("ForceUpdateComponents", &AActor::ForceUpdateComponents)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

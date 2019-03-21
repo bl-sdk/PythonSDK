@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAutoAimStrategy()
+void Export_pystes_UWillowAutoAimStrategy(py::object m)
 {
-    py::class_< UWillowAutoAimStrategy,  UObject   >("UWillowAutoAimStrategy")
+    py::class_< UWillowAutoAimStrategy,  UObject   >(m, "UWillowAutoAimStrategy")
         .def_readwrite("DataDefinition", &UWillowAutoAimStrategy::DataDefinition)
         .def_readwrite("CurrentFrame", &UWillowAutoAimStrategy::CurrentFrame)
         .def_readwrite("LastFrame", &UWillowAutoAimStrategy::LastFrame)
@@ -28,6 +28,5 @@ void Export_pystes_UWillowAutoAimStrategy()
         .def("eventDrawAutoAimDebug", &UWillowAutoAimStrategy::eventDrawAutoAimDebug)
         .def("GetPreferredTarget", &UWillowAutoAimStrategy::GetPreferredTarget, py::return_value_policy::reference)
         .def("ModifyInput", &UWillowAutoAimStrategy::ModifyInput)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

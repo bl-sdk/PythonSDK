@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FEmitterBaseInfo()
+void Export_pystes_FEmitterBaseInfo(py::object m)
 {
-    py::class_< FEmitterBaseInfo >("FEmitterBaseInfo")
+    py::class_< FEmitterBaseInfo >(m, "FEmitterBaseInfo")
         .def_readwrite("PSC", &FEmitterBaseInfo::PSC)
         .def_readwrite("Base", &FEmitterBaseInfo::Base)
         .def_readwrite("RelativeLocation", &FEmitterBaseInfo::RelativeLocation)

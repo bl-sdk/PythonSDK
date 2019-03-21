@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UITargetable()
+void Export_pystes_UITargetable(py::object m)
 {
-    py::class_< UITargetable,  UInterface   >("UITargetable")
+    py::class_< UITargetable,  UInterface   >(m, "UITargetable")
         .def("StaticClass", &UITargetable::StaticClass, py::return_value_policy::reference)
         .def("SetPatsy", &UITargetable::SetPatsy)
         .def("GetPatsy", &UITargetable::GetPatsy, py::return_value_policy::reference)
@@ -45,6 +45,5 @@ void Export_pystes_UITargetable()
         .def("GetAllBarInfo", &UITargetable::GetAllBarInfo)
         .def("GetExpInfo", &UITargetable::GetExpInfo)
         .def("GetTargetableActor", &UITargetable::GetTargetableActor, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

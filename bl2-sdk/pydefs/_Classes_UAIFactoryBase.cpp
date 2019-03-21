@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAIFactoryBase()
+void Export_pystes_UAIFactoryBase(py::object m)
 {
-    py::class_< UAIFactoryBase,  UObject   >("UAIFactoryBase")
+    py::class_< UAIFactoryBase,  UObject   >(m, "UAIFactoryBase")
         .def_readwrite("KnowledgeRecordList", &UAIFactoryBase::KnowledgeRecordList)
         .def_readwrite("RuleSets", &UAIFactoryBase::RuleSets)
         .def_readwrite("Rules", &UAIFactoryBase::Rules)
@@ -31,6 +31,5 @@ void Export_pystes_UAIFactoryBase()
         .def("GetRuleFromArchetype", &UAIFactoryBase::GetRuleFromArchetype)
         .def("GetRule", &UAIFactoryBase::GetRule)
         .def("ReturnRuleEngine", &UAIFactoryBase::ReturnRuleEngine)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

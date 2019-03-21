@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowMindTargetInfo()
+void Export_pystes_UWillowMindTargetInfo(py::object m)
 {
-    py::class_< UWillowMindTargetInfo,  UMindTargetInfo   >("UWillowMindTargetInfo")
+    py::class_< UWillowMindTargetInfo,  UMindTargetInfo   >(m, "UWillowMindTargetInfo")
         .def_readwrite("Targetable", &UWillowMindTargetInfo::Targetable)
         .def_readonly("UnknownData00", &UWillowMindTargetInfo::UnknownData00)
         .def_readwrite("Distance2D", &UWillowMindTargetInfo::Distance2D)
@@ -28,6 +28,5 @@ void Export_pystes_UWillowMindTargetInfo()
         .def_readonly("UnknownData01", &UWillowMindTargetInfo::UnknownData01)
         .def("StaticClass", &UWillowMindTargetInfo::StaticClass, py::return_value_policy::reference)
         .def("GetTargetLocation", &UWillowMindTargetInfo::GetTargetLocation)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

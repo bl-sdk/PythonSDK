@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMeshBeaconHost()
+void Export_pystes_UMeshBeaconHost(py::object m)
 {
-    py::class_< UMeshBeaconHost,  UObject   >("UMeshBeaconHost")
+    py::class_< UMeshBeaconHost,  UObject   >(m, "UMeshBeaconHost")
         .def_readwrite("ClientConnections", &UMeshBeaconHost::ClientConnections)
         .def_readwrite("PendingPlayerConnections", &UMeshBeaconHost::PendingPlayerConnections)
         .def_readwrite("OwningPlayerId", &UMeshBeaconHost::OwningPlayerId)
@@ -42,6 +42,5 @@ void Export_pystes_UMeshBeaconHost()
         .def("RequestClientBandwidthTest", &UMeshBeaconHost::RequestClientBandwidthTest)
         .def("eventDestroyBeacon", &UMeshBeaconHost::eventDestroyBeacon)
         .def("InitHostBeacon", &UMeshBeaconHost::InitHostBeacon)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

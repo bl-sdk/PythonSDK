@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBonePair()
+void Export_pystes_FBonePair(py::object m)
 {
-    py::class_< FBonePair >("FBonePair")
+    py::class_< FBonePair >(m, "FBonePair")
         .def_readonly("Bones", &FBonePair::Bones)
   ;
 }

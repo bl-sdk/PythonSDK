@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGearBuilderWeightedWeaponPart()
+void Export_pystes_FGearBuilderWeightedWeaponPart(py::object m)
 {
-    py::class_< FGearBuilderWeightedWeaponPart >("FGearBuilderWeightedWeaponPart")
+    py::class_< FGearBuilderWeightedWeaponPart >(m, "FGearBuilderWeightedWeaponPart")
         .def_readwrite("Part", &FGearBuilderWeightedWeaponPart::Part)
         .def_readwrite("Weight", &FGearBuilderWeightedWeaponPart::Weight)
         .def_readwrite("ProbabilityOfPickingThisPart", &FGearBuilderWeightedWeaponPart::ProbabilityOfPickingThisPart)

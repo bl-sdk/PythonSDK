@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UStatusMenuInventoryPanelGFxObject()
+void Export_pystes_UStatusMenuInventoryPanelGFxObject(py::object m)
 {
-    py::class_< UStatusMenuInventoryPanelGFxObject,  UBaseTopLevelPanelGFxObject   >("UStatusMenuInventoryPanelGFxObject")
+    py::class_< UStatusMenuInventoryPanelGFxObject,  UBaseTopLevelPanelGFxObject   >(m, "UStatusMenuInventoryPanelGFxObject")
         .def_readwrite("EquippedPanel", &UStatusMenuInventoryPanelGFxObject::EquippedPanel)
         .def_readwrite("BackpackPanel", &UStatusMenuInventoryPanelGFxObject::BackpackPanel)
         .def_readwrite("AmmoPanel", &UStatusMenuInventoryPanelGFxObject::AmmoPanel)
@@ -86,6 +86,5 @@ void Export_pystes_UStatusMenuInventoryPanelGFxObject()
         .def("InitItemCards", &UStatusMenuInventoryPanelGFxObject::InitItemCards)
         .def("AssignItemCards", &UStatusMenuInventoryPanelGFxObject::AssignItemCards)
         .def("Init", &UStatusMenuInventoryPanelGFxObject::Init)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

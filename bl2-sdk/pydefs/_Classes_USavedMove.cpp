@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USavedMove()
+void Export_pystes_USavedMove(py::object m)
 {
-    py::class_< USavedMove,  UObject   >("USavedMove")
+    py::class_< USavedMove,  UObject   >(m, "USavedMove")
         .def_readwrite("NextMove", &USavedMove::NextMove)
         .def_readwrite("TimeStamp", &USavedMove::TimeStamp)
         .def_readwrite("Delta", &USavedMove::Delta)
@@ -42,6 +42,5 @@ void Export_pystes_USavedMove()
         .def("IsImportantMove", &USavedMove::IsImportantMove)
         .def("PostUpdate", &USavedMove::PostUpdate)
         .def("Clear", &USavedMove::Clear)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

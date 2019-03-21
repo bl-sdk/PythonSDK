@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UForceFieldShapeBox()
+void Export_pystes_UForceFieldShapeBox(py::object m)
 {
-    py::class_< UForceFieldShapeBox,  UForceFieldShape   >("UForceFieldShapeBox")
+    py::class_< UForceFieldShapeBox,  UForceFieldShape   >(m, "UForceFieldShapeBox")
         .def_readwrite("Shape", &UForceFieldShapeBox::Shape)
         .def("StaticClass", &UForceFieldShapeBox::StaticClass, py::return_value_policy::reference)
         .def("eventGetDrawComponent", &UForceFieldShapeBox::eventGetDrawComponent, py::return_value_policy::reference)
@@ -14,6 +14,5 @@ void Export_pystes_UForceFieldShapeBox()
         .def("eventFillByBox", &UForceFieldShapeBox::eventFillByBox)
         .def("eventFillBySphere", &UForceFieldShapeBox::eventFillBySphere)
         .def("eventGetRadii", &UForceFieldShapeBox::eventGetRadii)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

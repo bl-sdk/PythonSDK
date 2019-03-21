@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ALiftCenter()
+void Export_pystes_ALiftCenter(py::object m)
 {
-    py::class_< ALiftCenter,  ANavigationPoint   >("ALiftCenter")
+    py::class_< ALiftCenter,  ANavigationPoint   >(m, "ALiftCenter")
         .def_readwrite("MyLift", &ALiftCenter::MyLift)
         .def_readwrite("MaxDist2D", &ALiftCenter::MaxDist2D)
         .def_readwrite("LiftOffset", &ALiftCenter::LiftOffset)
@@ -16,6 +16,5 @@ void Export_pystes_ALiftCenter()
         .def("eventSuggestMovePreparation", &ALiftCenter::eventSuggestMovePreparation)
         .def("eventSpecialHandling", &ALiftCenter::eventSpecialHandling, py::return_value_policy::reference)
         .def("eventPostBeginPlay", &ALiftCenter::eventPostBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

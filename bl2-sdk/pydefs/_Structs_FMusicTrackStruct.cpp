@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMusicTrackStruct()
+void Export_pystes_FMusicTrackStruct(py::object m)
 {
-    py::class_< FMusicTrackStruct >("FMusicTrackStruct")
+    py::class_< FMusicTrackStruct >(m, "FMusicTrackStruct")
         .def_readwrite("TheSoundCue", &FMusicTrackStruct::TheSoundCue)
         .def_readwrite("FadeInTime", &FMusicTrackStruct::FadeInTime)
         .def_readwrite("FadeInVolumeLevel", &FMusicTrackStruct::FadeInVolumeLevel)

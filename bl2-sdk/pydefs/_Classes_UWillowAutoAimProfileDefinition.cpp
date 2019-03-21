@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAutoAimProfileDefinition()
+void Export_pystes_UWillowAutoAimProfileDefinition(py::object m)
 {
-    py::class_< UWillowAutoAimProfileDefinition,  UGBXDefinition   >("UWillowAutoAimProfileDefinition")
+    py::class_< UWillowAutoAimProfileDefinition,  UGBXDefinition   >(m, "UWillowAutoAimProfileDefinition")
         .def_readwrite("MagnetismMin", &UWillowAutoAimProfileDefinition::MagnetismMin)
         .def_readwrite("MagnetismMax", &UWillowAutoAimProfileDefinition::MagnetismMax)
         .def_readwrite("MaxRotationH", &UWillowAutoAimProfileDefinition::MaxRotationH)
@@ -13,6 +13,5 @@ void Export_pystes_UWillowAutoAimProfileDefinition()
         .def_readwrite("LockStrengthH", &UWillowAutoAimProfileDefinition::LockStrengthH)
         .def_readwrite("LockStrengthV", &UWillowAutoAimProfileDefinition::LockStrengthV)
         .def("StaticClass", &UWillowAutoAimProfileDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

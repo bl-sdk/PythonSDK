@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHitRegionHelper()
+void Export_pystes_UHitRegionHelper(py::object m)
 {
-    py::class_< UHitRegionHelper,  UObject   >("UHitRegionHelper")
+    py::class_< UHitRegionHelper,  UObject   >(m, "UHitRegionHelper")
         .def_readwrite("HitRegionDamageList", &UHitRegionHelper::HitRegionDamageList)
         .def("StaticClass", &UHitRegionHelper::StaticClass, py::return_value_policy::reference)
         .def("PlayHit", &UHitRegionHelper::PlayHit)
@@ -22,6 +22,5 @@ void Export_pystes_UHitRegionHelper()
         .def("PlayDamage", &UHitRegionHelper::PlayDamage)
         .def("PlayReplicatedDamage", &UHitRegionHelper::PlayReplicatedDamage)
         .def("GetHitRegionHealthValues", &UHitRegionHelper::GetHitRegionHealthValues)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

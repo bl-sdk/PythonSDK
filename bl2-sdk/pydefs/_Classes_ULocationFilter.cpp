@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULocationFilter()
+void Export_pystes_ULocationFilter(py::object m)
 {
-    py::class_< ULocationFilter,  UObject   >("ULocationFilter")
+    py::class_< ULocationFilter,  UObject   >(m, "ULocationFilter")
         .def("StaticClass", &ULocationFilter::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

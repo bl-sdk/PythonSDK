@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActorFactoryPylon()
+void Export_pystes_UActorFactoryPylon(py::object m)
 {
-    py::class_< UActorFactoryPylon,  UActorFactory   >("UActorFactoryPylon")
+    py::class_< UActorFactoryPylon,  UActorFactory   >(m, "UActorFactoryPylon")
         .def("StaticClass", &UActorFactoryPylon::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

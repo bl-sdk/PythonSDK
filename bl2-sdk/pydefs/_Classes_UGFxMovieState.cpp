@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGFxMovieState()
+void Export_pystes_UGFxMovieState(py::object m)
 {
-    py::class_< UGFxMovieState,  UObject   >("UGFxMovieState")
+    py::class_< UGFxMovieState,  UObject   >(m, "UGFxMovieState")
         .def_readwrite("StateName", &UGFxMovieState::StateName)
         .def_readwrite("DefaultState", &UGFxMovieState::DefaultState)
         .def_readwrite("StateType", &UGFxMovieState::StateType)
@@ -17,6 +17,5 @@ void Export_pystes_UGFxMovieState()
         .def("TestState", &UGFxMovieState::TestState)
         .def("ToggleState", &UGFxMovieState::ToggleState)
         .def("EnableState", &UGFxMovieState::EnableState)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

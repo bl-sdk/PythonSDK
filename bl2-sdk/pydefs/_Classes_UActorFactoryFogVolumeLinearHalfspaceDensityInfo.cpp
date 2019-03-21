@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActorFactoryFogVolumeLinearHalfspaceDensityInfo()
+void Export_pystes_UActorFactoryFogVolumeLinearHalfspaceDensityInfo(py::object m)
 {
-    py::class_< UActorFactoryFogVolumeLinearHalfspaceDensityInfo,  UActorFactoryFogVolumeConstantDensityInfo   >("UActorFactoryFogVolumeLinearHalfspaceDensityInfo")
+    py::class_< UActorFactoryFogVolumeLinearHalfspaceDensityInfo,  UActorFactoryFogVolumeConstantDensityInfo   >(m, "UActorFactoryFogVolumeLinearHalfspaceDensityInfo")
         .def("StaticClass", &UActorFactoryFogVolumeLinearHalfspaceDensityInfo::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

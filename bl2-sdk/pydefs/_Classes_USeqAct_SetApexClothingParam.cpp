@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_SetApexClothingParam()
+void Export_pystes_USeqAct_SetApexClothingParam(py::object m)
 {
-    py::class_< USeqAct_SetApexClothingParam,  USequenceAction   >("USeqAct_SetApexClothingParam")
+    py::class_< USeqAct_SetApexClothingParam,  USequenceAction   >(m, "USeqAct_SetApexClothingParam")
         .def("StaticClass", &USeqAct_SetApexClothingParam::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

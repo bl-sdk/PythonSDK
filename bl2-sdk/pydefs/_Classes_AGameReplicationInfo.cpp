@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AGameReplicationInfo()
+void Export_pystes_AGameReplicationInfo(py::object m)
 {
-    py::class_< AGameReplicationInfo,  AReplicationInfo   >("AGameReplicationInfo")
+    py::class_< AGameReplicationInfo,  AReplicationInfo   >(m, "AGameReplicationInfo")
         .def_readwrite("VfTable_IIResourcePoolProvider", &AGameReplicationInfo::VfTable_IIResourcePoolProvider)
         .def_readwrite("GameClass", &AGameReplicationInfo::GameClass)
         .def_readwrite("RemainingTime", &AGameReplicationInfo::RemainingTime)
@@ -37,6 +37,5 @@ void Export_pystes_AGameReplicationInfo()
         .def("ReceivedGameClass", &AGameReplicationInfo::ReceivedGameClass)
         .def("eventReplicatedEvent", &AGameReplicationInfo::eventReplicatedEvent)
         .def("eventPostBeginPlay", &AGameReplicationInfo::eventPostBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

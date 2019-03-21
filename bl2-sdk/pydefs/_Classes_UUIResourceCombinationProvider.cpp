@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIResourceCombinationProvider()
+void Export_pystes_UUIResourceCombinationProvider(py::object m)
 {
-    py::class_< UUIResourceCombinationProvider,  UUIDataProvider   >("UUIResourceCombinationProvider")
+    py::class_< UUIResourceCombinationProvider,  UUIDataProvider   >(m, "UUIResourceCombinationProvider")
         .def_readwrite("VfTable_IUIListElementProvider", &UUIResourceCombinationProvider::VfTable_IUIListElementProvider)
         .def_readwrite("VfTable_IUIListElementCellProvider", &UUIResourceCombinationProvider::VfTable_IUIListElementCellProvider)
         .def_readwrite("StaticDataProvider", &UUIResourceCombinationProvider::StaticDataProvider)
@@ -24,6 +24,5 @@ void Export_pystes_UUIResourceCombinationProvider()
         .def("eventGetElementCount", &UUIResourceCombinationProvider::eventGetElementCount)
         .def("eventGetElementProviderTags", &UUIResourceCombinationProvider::eventGetElementProviderTags)
         .def("eventInitializeProvider", &UUIResourceCombinationProvider::eventInitializeProvider)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

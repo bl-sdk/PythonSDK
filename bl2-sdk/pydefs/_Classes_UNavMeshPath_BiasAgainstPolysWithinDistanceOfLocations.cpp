@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations()
+void Export_pystes_UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations(py::object m)
 {
-    py::class_< UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations,  UNavMeshPathConstraint   >("UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations")
+    py::class_< UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations,  UNavMeshPathConstraint   >(m, "UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations")
         .def_readwrite("Location", &UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations::Location)
         .def_readwrite("Rotation", &UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations::Rotation)
         .def_readwrite("DistanceToCheck", &UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations::DistanceToCheck)
@@ -13,6 +13,5 @@ void Export_pystes_UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations()
         .def("StaticClass", &UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations::StaticClass, py::return_value_policy::reference)
         .def("Recycle", &UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations::Recycle)
         .def("BiasAgainstPolysWithinDistanceOfLocations", &UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations::BiasAgainstPolysWithinDistanceOfLocations)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

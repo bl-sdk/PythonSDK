@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNodeScalePlayRate()
+void Export_pystes_UAnimNodeScalePlayRate(py::object m)
 {
-    py::class_< UAnimNodeScalePlayRate,  UAnimNodeBlendBase   >("UAnimNodeScalePlayRate")
+    py::class_< UAnimNodeScalePlayRate,  UAnimNodeBlendBase   >(m, "UAnimNodeScalePlayRate")
         .def_readwrite("ScaleByValue", &UAnimNodeScalePlayRate::ScaleByValue)
         .def("StaticClass", &UAnimNodeScalePlayRate::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

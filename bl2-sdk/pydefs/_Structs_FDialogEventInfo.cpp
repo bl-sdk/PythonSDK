@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDialogEventInfo()
+void Export_pystes_FDialogEventInfo(py::object m)
 {
-    py::class_< FDialogEventInfo >("FDialogEventInfo")
+    py::class_< FDialogEventInfo >(m, "FDialogEventInfo")
         .def_readwrite("Event", &FDialogEventInfo::Event)
         .def_readwrite("NodeID", &FDialogEventInfo::NodeID)
   ;

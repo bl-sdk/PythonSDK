@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_Interp()
+void Export_pystes_USeqAct_Interp(py::object m)
 {
-    py::class_< USeqAct_Interp,  USeqAct_Latent   >("USeqAct_Interp")
+    py::class_< USeqAct_Interp,  USeqAct_Latent   >(m, "USeqAct_Interp")
         .def_readonly("UnknownData00", &USeqAct_Interp::UnknownData00)
         .def_readonly("UnknownData01", &USeqAct_Interp::UnknownData01)
         .def_readwrite("PlayRate", &USeqAct_Interp::PlayRate)
@@ -27,6 +27,5 @@ void Export_pystes_USeqAct_Interp()
         .def("AddPlayerToDirectorTracks", &USeqAct_Interp::AddPlayerToDirectorTracks)
         .def("Stop", &USeqAct_Interp::Stop)
         .def("SetPosition", &USeqAct_Interp::SetPosition)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

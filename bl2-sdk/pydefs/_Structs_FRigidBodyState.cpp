@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRigidBodyState()
+void Export_pystes_FRigidBodyState(py::object m)
 {
-    py::class_< FRigidBodyState >("FRigidBodyState")
+    py::class_< FRigidBodyState >(m, "FRigidBodyState")
         .def_readwrite("Position", &FRigidBodyState::Position)
         .def_readonly("UnknownData00", &FRigidBodyState::UnknownData00)
         .def_readwrite("Quaternion", &FRigidBodyState::Quaternion)

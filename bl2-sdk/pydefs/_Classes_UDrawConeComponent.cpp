@@ -3,14 +3,13 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDrawConeComponent()
+void Export_pystes_UDrawConeComponent(py::object m)
 {
-    py::class_< UDrawConeComponent,  UPrimitiveComponent   >("UDrawConeComponent")
+    py::class_< UDrawConeComponent,  UPrimitiveComponent   >(m, "UDrawConeComponent")
         .def_readwrite("ConeColor", &UDrawConeComponent::ConeColor)
         .def_readwrite("ConeRadius", &UDrawConeComponent::ConeRadius)
         .def_readwrite("ConeAngle", &UDrawConeComponent::ConeAngle)
         .def_readwrite("ConeSides", &UDrawConeComponent::ConeSides)
         .def("StaticClass", &UDrawConeComponent::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

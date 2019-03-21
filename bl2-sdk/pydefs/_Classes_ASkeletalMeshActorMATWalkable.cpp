@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ASkeletalMeshActorMATWalkable()
+void Export_pystes_ASkeletalMeshActorMATWalkable(py::object m)
 {
-    py::class_< ASkeletalMeshActorMATWalkable,  ASkeletalMeshActor   >("ASkeletalMeshActorMATWalkable")
+    py::class_< ASkeletalMeshActorMATWalkable,  ASkeletalMeshActor   >(m, "ASkeletalMeshActorMATWalkable")
         .def_readwrite("SlotNodes", &ASkeletalMeshActorMAT::SlotNodes)
         .def("StaticClass", &ASkeletalMeshActorMATWalkable::StaticClass, py::return_value_policy::reference)
         .def("eventSetSkelControlScale", &ASkeletalMeshActorMAT::eventSetSkelControlScale)
@@ -21,6 +21,5 @@ void Export_pystes_ASkeletalMeshActorMATWalkable()
         .def("MAT_SetSkelControlScale", &ASkeletalMeshActorMAT::MAT_SetSkelControlScale)
         .def("MAT_SetMorphWeight", &ASkeletalMeshActorMAT::MAT_SetMorphWeight)
         .def("MAT_SetAnimWeights", &ASkeletalMeshActorMAT::MAT_SetAnimWeights)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

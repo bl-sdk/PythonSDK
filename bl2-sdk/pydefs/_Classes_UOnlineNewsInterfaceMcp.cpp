@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineNewsInterfaceMcp()
+void Export_pystes_UOnlineNewsInterfaceMcp(py::object m)
 {
-    py::class_< UOnlineNewsInterfaceMcp,  UMCPBase   >("UOnlineNewsInterfaceMcp")
+    py::class_< UOnlineNewsInterfaceMcp,  UMCPBase   >(m, "UOnlineNewsInterfaceMcp")
         .def_readwrite("NewsItems", &UOnlineNewsInterfaceMcp::NewsItems)
         .def_readwrite("ReadNewsDelegates", &UOnlineNewsInterfaceMcp::ReadNewsDelegates)
         .def("StaticClass", &UOnlineNewsInterfaceMcp::StaticClass, py::return_value_policy::reference)
@@ -14,6 +14,5 @@ void Export_pystes_UOnlineNewsInterfaceMcp()
         .def("AddReadNewsCompletedDelegate", &UOnlineNewsInterfaceMcp::AddReadNewsCompletedDelegate)
         .def("OnReadNewsCompleted", &UOnlineNewsInterfaceMcp::OnReadNewsCompleted)
         .def("ReadNews", &UOnlineNewsInterfaceMcp::ReadNews)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

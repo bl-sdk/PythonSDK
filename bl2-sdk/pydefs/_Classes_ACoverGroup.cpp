@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ACoverGroup()
+void Export_pystes_ACoverGroup(py::object m)
 {
-    py::class_< ACoverGroup,  AInfo   >("ACoverGroup")
+    py::class_< ACoverGroup,  AInfo   >(m, "ACoverGroup")
         .def_readwrite("CoverLinkRefs", &ACoverGroup::CoverLinkRefs)
         .def_readwrite("AutoSelectRadius", &ACoverGroup::AutoSelectRadius)
         .def_readwrite("AutoSelectHeight", &ACoverGroup::AutoSelectHeight)
@@ -14,6 +14,5 @@ void Export_pystes_ACoverGroup()
         .def("ToggleGroup", &ACoverGroup::ToggleGroup)
         .def("DisableGroup", &ACoverGroup::DisableGroup)
         .def("EnableGroup", &ACoverGroup::EnableGroup)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

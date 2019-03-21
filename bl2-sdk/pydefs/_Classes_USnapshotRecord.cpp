@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USnapshotRecord()
+void Export_pystes_USnapshotRecord(py::object m)
 {
-    py::class_< USnapshotRecord,  USnapshotInterface   >("USnapshotRecord")
+    py::class_< USnapshotRecord,  USnapshotInterface   >(m, "USnapshotRecord")
         .def_readwrite("MyName", &USnapshotRecord::MyName)
         .def_readwrite("RuleSet", &USnapshotRecord::RuleSet)
         .def_readwrite("CurrentRules", &USnapshotRecord::CurrentRules)
@@ -35,6 +35,5 @@ void Export_pystes_USnapshotRecord()
         .def_readwrite("FlagsColor", &USnapshotRecord::FlagsColor)
         .def_readwrite("ResourcesColor", &USnapshotRecord::ResourcesColor)
         .def("StaticClass", &USnapshotRecord::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWindPointSourceComponent()
+void Export_pystes_UWindPointSourceComponent(py::object m)
 {
-    py::class_< UWindPointSourceComponent,  UWindDirectionalSourceComponent   >("UWindPointSourceComponent")
+    py::class_< UWindPointSourceComponent,  UWindDirectionalSourceComponent   >(m, "UWindPointSourceComponent")
         .def_readwrite("PreviewRadiusComponent", &UWindPointSourceComponent::PreviewRadiusComponent)
         .def_readwrite("Radius", &UWindPointSourceComponent::Radius)
         .def("StaticClass", &UWindPointSourceComponent::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCreditsGFxDefinition()
+void Export_pystes_UCreditsGFxDefinition(py::object m)
 {
-    py::class_< UCreditsGFxDefinition,  UWillowGFxMovie3DDefinition   >("UCreditsGFxDefinition")
+    py::class_< UCreditsGFxDefinition,  UWillowGFxMovie3DDefinition   >(m, "UCreditsGFxDefinition")
         .def_readwrite("CreditData", &UCreditsGFxDefinition::CreditData)
         .def_readwrite("DefaultSpeed", &UCreditsGFxDefinition::DefaultSpeed)
         .def_readwrite("MaxFastForwardSpeed", &UCreditsGFxDefinition::MaxFastForwardSpeed)
@@ -20,6 +20,5 @@ void Export_pystes_UCreditsGFxDefinition()
         .def_readwrite("SplatPackageName", &UCreditsGFxDefinition::SplatPackageName)
         .def_readwrite("SplatTexturePath", &UCreditsGFxDefinition::SplatTexturePath)
         .def("StaticClass", &UCreditsGFxDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNetDriver()
+void Export_pystes_UNetDriver(py::object m)
 {
-    py::class_< UNetDriver,  USubsystem   >("UNetDriver")
+    py::class_< UNetDriver,  USubsystem   >(m, "UNetDriver")
         .def_readonly("UnknownData00", &UNetDriver::UnknownData00)
         .def_readwrite("ConnectionTimeout", &UNetDriver::ConnectionTimeout)
         .def_readwrite("InitialConnectTimeout", &UNetDriver::InitialConnectTimeout)
@@ -23,6 +23,5 @@ void Export_pystes_UNetDriver()
         .def_readwrite("NetConnectionClassName", &UNetDriver::NetConnectionClassName)
         .def_readonly("UnknownData03", &UNetDriver::UnknownData03)
         .def("StaticClass", &UNetDriver::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

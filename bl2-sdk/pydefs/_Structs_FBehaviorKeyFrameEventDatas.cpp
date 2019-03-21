@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBehaviorKeyFrameEventData()
+void Export_pystes_FBehaviorKeyFrameEventData(py::object m)
 {
-    py::class_< FBehaviorKeyFrameEventData,  FSpecializedBehaviorEvent   >("FBehaviorKeyFrameEventData")
+    py::class_< FBehaviorKeyFrameEventData,  FSpecializedBehaviorEvent   >(m, "FBehaviorKeyFrameEventData")
         .def_readwrite("KeyTime", &FBehaviorKeyFrameEventData::KeyTime)
   ;
 }

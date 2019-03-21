@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowOnlineGameSearch_DataStore()
+void Export_pystes_UWillowOnlineGameSearch_DataStore(py::object m)
 {
-    py::class_< UWillowOnlineGameSearch_DataStore,  UUIDataStore_OnlineGameSearch   >("UWillowOnlineGameSearch_DataStore")
+    py::class_< UWillowOnlineGameSearch_DataStore,  UUIDataStore_OnlineGameSearch   >(m, "UWillowOnlineGameSearch_DataStore")
         .def("StaticClass", &UWillowOnlineGameSearch_DataStore::StaticClass, py::return_value_policy::reference)
         .def("GetCurrentSearchName", &UWillowOnlineGameSearch_DataStore::GetCurrentSearchName)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

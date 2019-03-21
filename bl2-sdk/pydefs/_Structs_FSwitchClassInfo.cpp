@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSwitchClassInfo()
+void Export_pystes_FSwitchClassInfo(py::object m)
 {
-    py::class_< FSwitchClassInfo >("FSwitchClassInfo")
+    py::class_< FSwitchClassInfo >(m, "FSwitchClassInfo")
         .def_readwrite("ClassName", &FSwitchClassInfo::ClassName)
         .def_readwrite("bFallThru", &FSwitchClassInfo::bFallThru)
   ;

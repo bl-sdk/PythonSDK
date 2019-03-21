@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPriorityDebugStruct()
+void Export_pystes_FPriorityDebugStruct(py::object m)
 {
-    py::class_< FPriorityDebugStruct >("FPriorityDebugStruct")
+    py::class_< FPriorityDebugStruct >(m, "FPriorityDebugStruct")
         .def_readwrite("IteratorName", &FPriorityDebugStruct::IteratorName)
         .def_readwrite("ShortName", &FPriorityDebugStruct::ShortName)
         .def_readwrite("PriorityValue", &FPriorityDebugStruct::PriorityValue)

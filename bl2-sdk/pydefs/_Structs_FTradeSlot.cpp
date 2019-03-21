@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTradeSlot()
+void Export_pystes_FTradeSlot(py::object m)
 {
-    py::class_< FTradeSlot >("FTradeSlot")
+    py::class_< FTradeSlot >(m, "FTradeSlot")
         .def_readwrite("Status", &FTradeSlot::Status)
         .def_readwrite("WeaponData", &FTradeSlot::WeaponData)
         .def_readwrite("ItemData", &FTradeSlot::ItemData)

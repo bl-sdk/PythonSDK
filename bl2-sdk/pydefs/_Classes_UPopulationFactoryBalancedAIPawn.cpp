@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPopulationFactoryBalancedAIPawn()
+void Export_pystes_UPopulationFactoryBalancedAIPawn(py::object m)
 {
-    py::class_< UPopulationFactoryBalancedAIPawn,  UPopulationFactory   >("UPopulationFactoryBalancedAIPawn")
+    py::class_< UPopulationFactoryBalancedAIPawn,  UPopulationFactory   >(m, "UPopulationFactoryBalancedAIPawn")
         .def_readwrite("PawnBalanceDefinition", &UPopulationFactoryBalancedAIPawn::PawnBalanceDefinition)
         .def_readwrite("WillowAIPawnArchetype", &UPopulationFactoryWillowAIPawn::WillowAIPawnArchetype)
         .def_readwrite("PawnExpLevel", &UPopulationFactoryWillowAIPawn::PawnExpLevel)
@@ -35,6 +35,5 @@ void Export_pystes_UPopulationFactoryBalancedAIPawn()
         .def("ApplyPopulationDefinition", &UPopulationFactoryWillowAIPawn::ApplyPopulationDefinition)
         .def("GetAContextSourceForThePopulationActor", &UPopulationFactoryWillowAIPawn::GetAContextSourceForThePopulationActor, py::return_value_policy::reference)
         .def("eventSetupMatineeForActor", &UPopulationFactoryWillowAIPawn::eventSetupMatineeForActor)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

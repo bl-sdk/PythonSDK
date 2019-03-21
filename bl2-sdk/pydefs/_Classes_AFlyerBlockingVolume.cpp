@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AFlyerBlockingVolume()
+void Export_pystes_AFlyerBlockingVolume(py::object m)
 {
-    py::class_< AFlyerBlockingVolume,  ABlockingVolume   >("AFlyerBlockingVolume")
+    py::class_< AFlyerBlockingVolume,  ABlockingVolume   >(m, "AFlyerBlockingVolume")
         .def("StaticClass", &AFlyerBlockingVolume::StaticClass, py::return_value_policy::reference)
         .def("StopsProjectile", &AFlyerBlockingVolume::StopsProjectile)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

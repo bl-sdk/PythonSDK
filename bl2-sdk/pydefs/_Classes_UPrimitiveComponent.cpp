@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPrimitiveComponent()
+void Export_pystes_UPrimitiveComponent(py::object m)
 {
-    py::class_< UPrimitiveComponent,  UActorComponent   >("UPrimitiveComponent")
+    py::class_< UPrimitiveComponent,  UActorComponent   >(m, "UPrimitiveComponent")
         .def_readwrite("Tag", &UPrimitiveComponent::Tag)
         .def_readwrite("Bounds", &UPrimitiveComponent::Bounds)
         .def_readwrite("SceneInfo", &UPrimitiveComponent::SceneInfo)
@@ -104,6 +104,5 @@ void Export_pystes_UPrimitiveComponent()
         .def("AddForce", &UPrimitiveComponent::AddForce)
         .def("AddRadialImpulse", &UPrimitiveComponent::AddRadialImpulse)
         .def("AddImpulse", &UPrimitiveComponent::AddImpulse)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIGFxMenuScreenTickable()
+void Export_pystes_UIGFxMenuScreenTickable(py::object m)
 {
-    py::class_< UIGFxMenuScreenTickable,  UInterface   >("UIGFxMenuScreenTickable")
+    py::class_< UIGFxMenuScreenTickable,  UInterface   >(m, "UIGFxMenuScreenTickable")
         .def("StaticClass", &UIGFxMenuScreenTickable::StaticClass, py::return_value_policy::reference)
         .def("OnTick", &UIGFxMenuScreenTickable::OnTick)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

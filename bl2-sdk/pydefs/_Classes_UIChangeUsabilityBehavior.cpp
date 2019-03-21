@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIChangeUsabilityBehavior()
+void Export_pystes_UIChangeUsabilityBehavior(py::object m)
 {
-    py::class_< UIChangeUsabilityBehavior,  UInterface   >("UIChangeUsabilityBehavior")
+    py::class_< UIChangeUsabilityBehavior,  UInterface   >(m, "UIChangeUsabilityBehavior")
         .def("StaticClass", &UIChangeUsabilityBehavior::StaticClass, py::return_value_policy::reference)
         .def("Behavior_ChangeUsabilityCost", &UIChangeUsabilityBehavior::Behavior_ChangeUsabilityCost)
         .def("Behavior_ChangeUsability", &UIChangeUsabilityBehavior::Behavior_ChangeUsability)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

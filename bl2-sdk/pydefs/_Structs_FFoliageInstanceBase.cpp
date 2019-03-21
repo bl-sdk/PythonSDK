@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FFoliageInstanceBase()
+void Export_pystes_FFoliageInstanceBase(py::object m)
 {
-    py::class_< FFoliageInstanceBase >("FFoliageInstanceBase")
+    py::class_< FFoliageInstanceBase >(m, "FFoliageInstanceBase")
         .def_readwrite("Location", &FFoliageInstanceBase::Location)
         .def_readwrite("XAxis", &FFoliageInstanceBase::XAxis)
         .def_readwrite("YAxis", &FFoliageInstanceBase::YAxis)

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBlockedMissionData()
+void Export_pystes_FBlockedMissionData(py::object m)
 {
-    py::class_< FBlockedMissionData >("FBlockedMissionData")
+    py::class_< FBlockedMissionData >(m, "FBlockedMissionData")
         .def_readwrite("BlockedMission", &FBlockedMissionData::BlockedMission)
         .def_readwrite("MissionBlockers", &FBlockedMissionData::MissionBlockers)
   ;

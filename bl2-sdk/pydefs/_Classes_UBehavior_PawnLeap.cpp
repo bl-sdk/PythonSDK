@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_PawnLeap()
+void Export_pystes_UBehavior_PawnLeap(py::object m)
 {
-    py::class_< UBehavior_PawnLeap,  UBehaviorBase   >("UBehavior_PawnLeap")
+    py::class_< UBehavior_PawnLeap,  UBehaviorBase   >(m, "UBehavior_PawnLeap")
         .def_readwrite("LeapSpeed", &UBehavior_PawnLeap::LeapSpeed)
         .def_readwrite("LeapAngle", &UBehavior_PawnLeap::LeapAngle)
         .def_readwrite("OffsetLocation", &UBehavior_PawnLeap::OffsetLocation)
@@ -19,6 +19,5 @@ void Export_pystes_UBehavior_PawnLeap()
         .def("StaticClass", &UBehavior_PawnLeap::StaticClass, py::return_value_policy::reference)
         .def("FindLandingLocation", &UBehavior_PawnLeap::FindLandingLocation)
         .def("ApplyBehaviorToContext", &UBehavior_PawnLeap::ApplyBehaviorToContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

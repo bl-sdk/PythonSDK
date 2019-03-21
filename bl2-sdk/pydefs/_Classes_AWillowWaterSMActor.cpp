@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowWaterSMActor()
+void Export_pystes_AWillowWaterSMActor(py::object m)
 {
-    py::class_< AWillowWaterSMActor,  AStaticMeshActor   >("AWillowWaterSMActor")
+    py::class_< AWillowWaterSMActor,  AStaticMeshActor   >(m, "AWillowWaterSMActor")
         .def("StaticClass", &AWillowWaterSMActor::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

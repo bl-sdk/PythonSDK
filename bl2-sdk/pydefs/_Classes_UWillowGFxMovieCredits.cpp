@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGFxMovieCredits()
+void Export_pystes_UWillowGFxMovieCredits(py::object m)
 {
-    py::class_< UWillowGFxMovieCredits,  UWillowGFxMovie3D   >("UWillowGFxMovieCredits")
+    py::class_< UWillowGFxMovieCredits,  UWillowGFxMovie3D   >(m, "UWillowGFxMovieCredits")
         .def_readwrite("ceStarted", &UWillowGFxMovieCredits::ceStarted)
         .def_readwrite("ceFinished", &UWillowGFxMovieCredits::ceFinished)
         .def_readwrite("Credits", &UWillowGFxMovieCredits::Credits)
@@ -36,6 +36,5 @@ void Export_pystes_UWillowGFxMovieCredits()
         .def("eventOnTick", &UWillowGFxMovieCredits::eventOnTick)
         .def("eventOnClose", &UWillowGFxMovieCredits::eventOnClose)
         .def("eventStart", &UWillowGFxMovieCredits::eventStart)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

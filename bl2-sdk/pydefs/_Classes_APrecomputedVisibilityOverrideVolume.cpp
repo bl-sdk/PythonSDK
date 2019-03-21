@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APrecomputedVisibilityOverrideVolume()
+void Export_pystes_APrecomputedVisibilityOverrideVolume(py::object m)
 {
-    py::class_< APrecomputedVisibilityOverrideVolume,  AVolume   >("APrecomputedVisibilityOverrideVolume")
+    py::class_< APrecomputedVisibilityOverrideVolume,  AVolume   >(m, "APrecomputedVisibilityOverrideVolume")
         .def_readwrite("OverrideVisibleActors", &APrecomputedVisibilityOverrideVolume::OverrideVisibleActors)
         .def_readwrite("OverrideInvisibleActors", &APrecomputedVisibilityOverrideVolume::OverrideInvisibleActors)
         .def("StaticClass", &APrecomputedVisibilityOverrideVolume::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

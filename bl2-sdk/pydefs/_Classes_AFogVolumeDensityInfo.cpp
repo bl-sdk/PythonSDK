@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AFogVolumeDensityInfo()
+void Export_pystes_AFogVolumeDensityInfo(py::object m)
 {
-    py::class_< AFogVolumeDensityInfo,  AInfo   >("AFogVolumeDensityInfo")
+    py::class_< AFogVolumeDensityInfo,  AInfo   >(m, "AFogVolumeDensityInfo")
         .def_readwrite("DensityComponent", &AFogVolumeDensityInfo::DensityComponent)
         .def_readwrite("AutomaticMeshComponent", &AFogVolumeDensityInfo::AutomaticMeshComponent)
         .def("StaticClass", &AFogVolumeDensityInfo::StaticClass, py::return_value_policy::reference)
@@ -15,6 +15,5 @@ void Export_pystes_AFogVolumeDensityInfo()
         .def("OnToggle", &AFogVolumeDensityInfo::OnToggle)
         .def("eventReplicatedEvent", &AFogVolumeDensityInfo::eventReplicatedEvent)
         .def("eventPostBeginPlay", &AFogVolumeDensityInfo::eventPostBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

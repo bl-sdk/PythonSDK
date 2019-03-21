@@ -3,14 +3,13 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_AttachPlayerPawnToBase()
+void Export_pystes_USeqAct_AttachPlayerPawnToBase(py::object m)
 {
-    py::class_< USeqAct_AttachPlayerPawnToBase,  USequenceAction   >("USeqAct_AttachPlayerPawnToBase")
+    py::class_< USeqAct_AttachPlayerPawnToBase,  USequenceAction   >(m, "USeqAct_AttachPlayerPawnToBase")
         .def_readwrite("BoneName", &USeqAct_AttachPlayerPawnToBase::BoneName)
         .def_readwrite("RelativeOffset", &USeqAct_AttachPlayerPawnToBase::RelativeOffset)
         .def_readwrite("RelativeRotation", &USeqAct_AttachPlayerPawnToBase::RelativeRotation)
         .def_readwrite("PhysicsMode", &USeqAct_AttachPlayerPawnToBase::PhysicsMode)
         .def("StaticClass", &USeqAct_AttachPlayerPawnToBase::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

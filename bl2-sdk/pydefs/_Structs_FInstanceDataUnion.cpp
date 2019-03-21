@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInstanceDataUnion()
+void Export_pystes_FInstanceDataUnion(py::object m)
 {
-    py::class_< FInstanceDataUnion >("FInstanceDataUnion")
+    py::class_< FInstanceDataUnion >(m, "FInstanceDataUnion")
         .def_readwrite("Name", &FInstanceDataUnion::Name)
         .def_readwrite("Type", &FInstanceDataUnion::Type)
         .def_readwrite("Replication", &FInstanceDataUnion::Replication)

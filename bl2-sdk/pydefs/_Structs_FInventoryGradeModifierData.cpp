@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInventoryGradeModifierData()
+void Export_pystes_FInventoryGradeModifierData(py::object m)
 {
-    py::class_< FInventoryGradeModifierData >("FInventoryGradeModifierData")
+    py::class_< FInventoryGradeModifierData >(m, "FInventoryGradeModifierData")
         .def_readwrite("ExpLevel", &FInventoryGradeModifierData::ExpLevel)
         .def_readwrite("CustomInventoryDefinition", &FInventoryGradeModifierData::CustomInventoryDefinition)
   ;

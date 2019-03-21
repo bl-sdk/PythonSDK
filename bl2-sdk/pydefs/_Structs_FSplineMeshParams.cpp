@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSplineMeshParams()
+void Export_pystes_FSplineMeshParams(py::object m)
 {
-    py::class_< FSplineMeshParams >("FSplineMeshParams")
+    py::class_< FSplineMeshParams >(m, "FSplineMeshParams")
         .def_readwrite("StartPos", &FSplineMeshParams::StartPos)
         .def_readwrite("StartTangent", &FSplineMeshParams::StartTangent)
         .def_readwrite("StartScale", &FSplineMeshParams::StartScale)

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTargetInfoRecord()
+void Export_pystes_FTargetInfoRecord(py::object m)
 {
-    py::class_< FTargetInfoRecord,  FTimeStampedRecord   >("FTargetInfoRecord")
+    py::class_< FTargetInfoRecord,  FTimeStampedRecord   >(m, "FTargetInfoRecord")
         .def_readwrite("TheObj", &FTargetInfoRecord::TheObj)
         .def_readwrite("InUse", &FTargetInfoRecord::InUse)
   ;

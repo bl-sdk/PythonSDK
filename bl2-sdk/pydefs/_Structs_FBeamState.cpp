@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBeamState()
+void Export_pystes_FBeamState(py::object m)
 {
-    py::class_< FBeamState >("FBeamState")
+    py::class_< FBeamState >(m, "FBeamState")
         .def_readwrite("BeamIndex", &FBeamState::BeamIndex)
         .def_readwrite("ServerOnlyState", &FBeamState::ServerOnlyState)
         .def_readwrite("CoreBeamState", &FBeamState::CoreBeamState)

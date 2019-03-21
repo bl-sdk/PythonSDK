@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowPhysicalMaterialProperty()
+void Export_pystes_UWillowPhysicalMaterialProperty(py::object m)
 {
-    py::class_< UWillowPhysicalMaterialProperty,  UPhysicalMaterialPropertyBase   >("UWillowPhysicalMaterialProperty")
+    py::class_< UWillowPhysicalMaterialProperty,  UPhysicalMaterialPropertyBase   >(m, "UWillowPhysicalMaterialProperty")
         .def_readwrite("MaterialAkSwitch", &UWillowPhysicalMaterialProperty::MaterialAkSwitch)
         .def_readwrite("DamageSurfaceType", &UWillowPhysicalMaterialProperty::DamageSurfaceType)
         .def_readwrite("ImpactResponses", &UWillowPhysicalMaterialProperty::ImpactResponses)
@@ -28,6 +28,5 @@ void Export_pystes_UWillowPhysicalMaterialProperty()
         .def("StaticTraceImpact", &UWillowPhysicalMaterialProperty::StaticTraceImpact)
         .def("IsImpactDebugEnabled", &UWillowPhysicalMaterialProperty::IsImpactDebugEnabled)
         .def("ToggleImpactDebug", &UWillowPhysicalMaterialProperty::ToggleImpactDebug)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

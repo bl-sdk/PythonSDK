@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FEncounterWaveData()
+void Export_pystes_FEncounterWaveData(py::object m)
 {
-    py::class_< FEncounterWaveData >("FEncounterWaveData")
+    py::class_< FEncounterWaveData >(m, "FEncounterWaveData")
         .def_readwrite("InitialDelay", &FEncounterWaveData::InitialDelay)
         .def_readwrite("PercentToComplete", &FEncounterWaveData::PercentToComplete)
         .def_readwrite("EncounterPopulationDef", &FEncounterWaveData::EncounterPopulationDef)

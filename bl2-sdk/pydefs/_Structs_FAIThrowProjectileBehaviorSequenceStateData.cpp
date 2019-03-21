@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAIThrowProjectileBehaviorSequenceStateData()
+void Export_pystes_FAIThrowProjectileBehaviorSequenceStateData(py::object m)
 {
-    py::class_< FAIThrowProjectileBehaviorSequenceStateData >("FAIThrowProjectileBehaviorSequenceStateData")
+    py::class_< FAIThrowProjectileBehaviorSequenceStateData >(m, "FAIThrowProjectileBehaviorSequenceStateData")
         .def_readwrite("Action", &FAIThrowProjectileBehaviorSequenceStateData::Action)
         .def_readwrite("SequenceName", &FAIThrowProjectileBehaviorSequenceStateData::SequenceName)
   ;

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAttachment()
+void Export_pystes_FAttachment(py::object m)
 {
-    py::class_< FAttachment >("FAttachment")
+    py::class_< FAttachment >(m, "FAttachment")
         .def_readwrite("Component", &FAttachment::Component)
         .def_readwrite("BoneName", &FAttachment::BoneName)
         .def_readwrite("RelativeLocation", &FAttachment::RelativeLocation)

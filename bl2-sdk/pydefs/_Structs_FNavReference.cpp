@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FNavReference()
+void Export_pystes_FNavReference(py::object m)
 {
-    py::class_< FNavReference >("FNavReference")
+    py::class_< FNavReference >(m, "FNavReference")
         .def_readwrite("Nav", &FNavReference::Nav)
         .def_readwrite("Guid", &FNavReference::Guid)
   ;

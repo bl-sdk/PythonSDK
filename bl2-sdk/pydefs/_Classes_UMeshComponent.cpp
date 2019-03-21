@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMeshComponent()
+void Export_pystes_UMeshComponent(py::object m)
 {
-    py::class_< UMeshComponent,  UPrimitiveComponent   >("UMeshComponent")
+    py::class_< UMeshComponent,  UPrimitiveComponent   >(m, "UMeshComponent")
         .def_readwrite("Materials", &UMeshComponent::Materials)
         .def("StaticClass", &UMeshComponent::StaticClass, py::return_value_policy::reference)
         .def("GetInstancedMaterialInstanceConstant", &UMeshComponent::GetInstancedMaterialInstanceConstant, py::return_value_policy::reference)
@@ -23,6 +23,5 @@ void Export_pystes_UMeshComponent()
         .def("GetNumElements", &UMeshComponent::GetNumElements)
         .def("SetMaterial", &UMeshComponent::SetMaterial)
         .def("GetMaterial", &UMeshComponent::GetMaterial, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxPawnSnapshotRecord()
+void Export_pystes_UGearboxPawnSnapshotRecord(py::object m)
 {
-    py::class_< UGearboxPawnSnapshotRecord,  USnapshotRecord   >("UGearboxPawnSnapshotRecord")
+    py::class_< UGearboxPawnSnapshotRecord,  USnapshotRecord   >(m, "UGearboxPawnSnapshotRecord")
         .def_readwrite("PawnIconZOffset", &UGearboxPawnSnapshotRecord::PawnIconZOffset)
         .def_readwrite("PawnExposureZOffset", &UGearboxPawnSnapshotRecord::PawnExposureZOffset)
         .def_readwrite("CollectionNameOffset", &UGearboxPawnSnapshotRecord::CollectionNameOffset)
@@ -72,6 +72,5 @@ void Export_pystes_UGearboxPawnSnapshotRecord()
         .def_readwrite("DemigodHolds", &UGearboxPawnSnapshotRecord::DemigodHolds)
         .def_readwrite("GodHolds", &UGearboxPawnSnapshotRecord::GodHolds)
         .def("StaticClass", &UGearboxPawnSnapshotRecord::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

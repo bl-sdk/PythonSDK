@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowScrollingListDataProviderResolutionOptions()
+void Export_pystes_UWillowScrollingListDataProviderResolutionOptions(py::object m)
 {
-    py::class_< UWillowScrollingListDataProviderResolutionOptions,  UWillowScrollingListDataProviderApplyRequiredOption   >("UWillowScrollingListDataProviderResolutionOptions")
+    py::class_< UWillowScrollingListDataProviderResolutionOptions,  UWillowScrollingListDataProviderApplyRequiredOption   >(m, "UWillowScrollingListDataProviderResolutionOptions")
         .def("StaticClass", &UWillowScrollingListDataProviderResolutionOptions::StaticClass, py::return_value_policy::reference)
         .def("HandleClick", &UWillowScrollingListDataProviderResolutionOptions::HandleClick)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

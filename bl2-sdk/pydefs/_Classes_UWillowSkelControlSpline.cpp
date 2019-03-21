@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSkelControlSpline()
+void Export_pystes_UWillowSkelControlSpline(py::object m)
 {
-    py::class_< UWillowSkelControlSpline,  USkelControlBase   >("UWillowSkelControlSpline")
+    py::class_< UWillowSkelControlSpline,  USkelControlBase   >(m, "UWillowSkelControlSpline")
         .def_readwrite("SplineLength", &UWillowSkelControlSpline::SplineLength)
         .def_readwrite("SplineBoneAxis", &UWillowSkelControlSpline::SplineBoneAxis)
         .def_readwrite("BoneRotMode", &UWillowSkelControlSpline::BoneRotMode)
@@ -14,6 +14,5 @@ void Export_pystes_UWillowSkelControlSpline()
         .def_readwrite("EndSplineOffset", &UWillowSkelControlSpline::EndSplineOffset)
         .def_readwrite("StartSplineOffset", &UWillowSkelControlSpline::StartSplineOffset)
         .def("StaticClass", &UWillowSkelControlSpline::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

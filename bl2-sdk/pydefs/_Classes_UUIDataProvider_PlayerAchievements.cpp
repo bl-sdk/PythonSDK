@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIDataProvider_PlayerAchievements()
+void Export_pystes_UUIDataProvider_PlayerAchievements(py::object m)
 {
-    py::class_< UUIDataProvider_PlayerAchievements,  UUIDataProvider_OnlinePlayerDataBase   >("UUIDataProvider_PlayerAchievements")
+    py::class_< UUIDataProvider_PlayerAchievements,  UUIDataProvider_OnlinePlayerDataBase   >(m, "UUIDataProvider_PlayerAchievements")
         .def_readwrite("VfTable_IUIListElementCellProvider", &UUIDataProvider_PlayerAchievements::VfTable_IUIListElementCellProvider)
         .def_readwrite("Achievements", &UUIDataProvider_PlayerAchievements::Achievements)
         .def("StaticClass", &UUIDataProvider_PlayerAchievements::StaticClass, py::return_value_policy::reference)
@@ -20,6 +20,5 @@ void Export_pystes_UUIDataProvider_PlayerAchievements()
         .def("PopulateAchievementIcons", &UUIDataProvider_PlayerAchievements::PopulateAchievementIcons)
         .def("GetMaxTotalGamerScore", &UUIDataProvider_PlayerAchievements::GetMaxTotalGamerScore)
         .def("GetTotalGamerScore", &UUIDataProvider_PlayerAchievements::GetTotalGamerScore)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

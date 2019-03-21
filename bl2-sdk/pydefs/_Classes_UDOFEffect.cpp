@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDOFEffect()
+void Export_pystes_UDOFEffect(py::object m)
 {
-    py::class_< UDOFEffect,  UPostProcessEffect   >("UDOFEffect")
+    py::class_< UDOFEffect,  UPostProcessEffect   >(m, "UDOFEffect")
         .def_readwrite("FalloffExponent", &UDOFEffect::FalloffExponent)
         .def_readwrite("BlurKernelSize", &UDOFEffect::BlurKernelSize)
         .def_readwrite("MaxNearBlurAmount", &UDOFEffect::MaxNearBlurAmount)
@@ -27,6 +27,5 @@ void Export_pystes_UDOFEffect()
         .def_readwrite("TunnelVisionScaleOverride", &UDOFEffect::TunnelVisionScaleOverride)
         .def_readwrite("TunnelVisionYOffsetOverride", &UDOFEffect::TunnelVisionYOffsetOverride)
         .def("StaticClass", &UDOFEffect::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

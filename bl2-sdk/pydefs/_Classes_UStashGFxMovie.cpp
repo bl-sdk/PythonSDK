@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UStashGFxMovie()
+void Export_pystes_UStashGFxMovie(py::object m)
 {
-    py::class_< UStashGFxMovie,  UTwoPanelInterfaceGFxMovie   >("UStashGFxMovie")
+    py::class_< UStashGFxMovie,  UTwoPanelInterfaceGFxMovie   >(m, "UStashGFxMovie")
         .def_readwrite("StashTitle", &UStashGFxMovie::StashTitle)
         .def_readwrite("StashAddTip", &UStashGFxMovie::StashAddTip)
         .def_readwrite("StashStorage", &UStashGFxMovie::StashStorage)
@@ -24,6 +24,5 @@ void Export_pystes_UStashGFxMovie()
         .def("extInitMainPanel", &UStashGFxMovie::extInitMainPanel)
         .def("eventOnClose", &UStashGFxMovie::eventOnClose)
         .def("eventStart", &UStashGFxMovie::eventStart)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

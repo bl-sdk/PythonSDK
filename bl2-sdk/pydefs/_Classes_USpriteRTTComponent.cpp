@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpriteRTTComponent()
+void Export_pystes_USpriteRTTComponent(py::object m)
 {
-    py::class_< USpriteRTTComponent,  USpriteComponent   >("USpriteRTTComponent")
+    py::class_< USpriteRTTComponent,  USpriteComponent   >(m, "USpriteRTTComponent")
         .def_readwrite("SpriteRTT", &USpriteRTTComponent::SpriteRTT)
         .def("StaticClass", &USpriteRTTComponent::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

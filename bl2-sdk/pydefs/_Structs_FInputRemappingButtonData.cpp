@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInputRemappingButtonData()
+void Export_pystes_FInputRemappingButtonData(py::object m)
 {
-    py::class_< FInputRemappingButtonData >("FInputRemappingButtonData")
+    py::class_< FInputRemappingButtonData >(m, "FInputRemappingButtonData")
         .def_readwrite("DefaultKeyName", &FInputRemappingButtonData::DefaultKeyName)
         .def_readwrite("RemappedKeyName", &FInputRemappingButtonData::RemappedKeyName)
         .def_readwrite("RemappedPressActions", &FInputRemappingButtonData::RemappedPressActions)

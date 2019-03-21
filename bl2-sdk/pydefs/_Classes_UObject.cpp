@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UObject()
+void Export_pystes_UObject(py::object m)
 {
-	py::class_<UObject>("UObject")
+	py::class_<UObject>(m, "UObject")
 		.def_readwrite("HashNext", &UObject::HashNext)
 		.def_readwrite("ObjectFlags", &UObject::ObjectFlags)
 		.def_readwrite("HashOuterNext", &UObject::HashOuterNext)
@@ -607,6 +607,5 @@ void Export_pystes_UObject()
         .def("Not_PreBool", &UObject::Not_PreBool)
         .staticmethod("GObjObjects")
         .staticmethod("FindClass")
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

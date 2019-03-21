@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTOCInfo()
+void Export_pystes_FTOCInfo(py::object m)
 {
-    py::class_< FTOCInfo >("FTOCInfo")
+    py::class_< FTOCInfo >(m, "FTOCInfo")
         .def_readwrite("TOC", &FTOCInfo::TOC)
         .def_readwrite("RootPath", &FTOCInfo::RootPath)
         .def_readwrite("Path", &FTOCInfo::Path)

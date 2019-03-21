@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USVehicleSimTank()
+void Export_pystes_USVehicleSimTank(py::object m)
 {
-    py::class_< USVehicleSimTank,  USVehicleSimCar   >("USVehicleSimTank")
+    py::class_< USVehicleSimTank,  USVehicleSimCar   >(m, "USVehicleSimTank")
         .def_readwrite("LeftTrackVel", &USVehicleSimTank::LeftTrackVel)
         .def_readwrite("RightTrackVel", &USVehicleSimTank::RightTrackVel)
         .def_readwrite("LeftTrackTorque", &USVehicleSimTank::LeftTrackTorque)
@@ -18,6 +18,5 @@ void Export_pystes_USVehicleSimTank()
         .def_readwrite("TurnMaxGripReduction", &USVehicleSimTank::TurnMaxGripReduction)
         .def_readwrite("TurnGripScaleRate", &USVehicleSimTank::TurnGripScaleRate)
         .def("StaticClass", &USVehicleSimTank::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

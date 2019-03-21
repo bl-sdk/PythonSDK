@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULensFlare()
+void Export_pystes_ULensFlare(py::object m)
 {
-    py::class_< ULensFlare,  UObject   >("ULensFlare")
+    py::class_< ULensFlare,  UObject   >(m, "ULensFlare")
         .def_readwrite("SourceElement", &ULensFlare::SourceElement)
         .def_readwrite("SourceMesh", &ULensFlare::SourceMesh)
         .def_readwrite("SourceDPG", &ULensFlare::SourceDPG)
@@ -24,6 +24,5 @@ void Export_pystes_ULensFlare()
         .def_readwrite("ThumbnailDistance", &ULensFlare::ThumbnailDistance)
         .def_readwrite("ThumbnailImage", &ULensFlare::ThumbnailImage)
         .def("StaticClass", &ULensFlare::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

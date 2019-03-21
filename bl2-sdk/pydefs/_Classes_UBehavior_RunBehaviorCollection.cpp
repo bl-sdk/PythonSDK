@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_RunBehaviorCollection()
+void Export_pystes_UBehavior_RunBehaviorCollection(py::object m)
 {
-    py::class_< UBehavior_RunBehaviorCollection,  UBehaviorBase   >("UBehavior_RunBehaviorCollection")
+    py::class_< UBehavior_RunBehaviorCollection,  UBehaviorBase   >(m, "UBehavior_RunBehaviorCollection")
         .def_readwrite("CollectionDefinition", &UBehavior_RunBehaviorCollection::CollectionDefinition)
         .def_readwrite("OverrideName", &UBehavior_RunBehaviorCollection::OverrideName)
         .def_readwrite("OverrideContext", &UBehavior_RunBehaviorCollection::OverrideContext)
@@ -13,6 +13,5 @@ void Export_pystes_UBehavior_RunBehaviorCollection()
         .def("RunBehaviorCollection", &UBehavior_RunBehaviorCollection::RunBehaviorCollection)
         .def("ApplyBehaviorToContext", &UBehavior_RunBehaviorCollection::ApplyBehaviorToContext)
         .def("ApplyBehavior", &UBehavior_RunBehaviorCollection::ApplyBehavior)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

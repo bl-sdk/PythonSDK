@@ -3,14 +3,13 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCharacterSelectionCustomizationListGFxObject()
+void Export_pystes_UCharacterSelectionCustomizationListGFxObject(py::object m)
 {
-    py::class_< UCharacterSelectionCustomizationListGFxObject,  UGFxObject   >("UCharacterSelectionCustomizationListGFxObject")
+    py::class_< UCharacterSelectionCustomizationListGFxObject,  UGFxObject   >(m, "UCharacterSelectionCustomizationListGFxObject")
         .def("StaticClass", &UCharacterSelectionCustomizationListGFxObject::StaticClass, py::return_value_policy::reference)
         .def("ScrollDown", &UCharacterSelectionCustomizationListGFxObject::ScrollDown)
         .def("ScrollUp", &UCharacterSelectionCustomizationListGFxObject::ScrollUp)
         .def("PopulateScrollingList", &UCharacterSelectionCustomizationListGFxObject::PopulateScrollingList)
         .def("GetSelectedIndex", &UCharacterSelectionCustomizationListGFxObject::GetSelectedIndex)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

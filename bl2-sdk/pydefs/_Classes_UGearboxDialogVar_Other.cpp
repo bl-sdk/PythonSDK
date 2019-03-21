@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxDialogVar_Other()
+void Export_pystes_UGearboxDialogVar_Other(py::object m)
 {
-    py::class_< UGearboxDialogVar_Other,  UGearboxDialogVariable   >("UGearboxDialogVar_Other")
+    py::class_< UGearboxDialogVar_Other,  UGearboxDialogVariable   >(m, "UGearboxDialogVar_Other")
         .def("StaticClass", &UGearboxDialogVar_Other::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

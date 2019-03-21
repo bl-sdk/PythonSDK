@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UObjectReferencer()
+void Export_pystes_UObjectReferencer(py::object m)
 {
-    py::class_< UObjectReferencer,  UObject   >("UObjectReferencer")
+    py::class_< UObjectReferencer,  UObject   >(m, "UObjectReferencer")
         .def_readwrite("ReferencedObjects", &UObjectReferencer::ReferencedObjects)
         .def("StaticClass", &UObjectReferencer::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

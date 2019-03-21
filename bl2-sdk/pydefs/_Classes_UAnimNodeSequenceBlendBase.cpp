@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNodeSequenceBlendBase()
+void Export_pystes_UAnimNodeSequenceBlendBase(py::object m)
 {
-    py::class_< UAnimNodeSequenceBlendBase,  UAnimNodeSequence   >("UAnimNodeSequenceBlendBase")
+    py::class_< UAnimNodeSequenceBlendBase,  UAnimNodeSequence   >(m, "UAnimNodeSequenceBlendBase")
         .def_readwrite("Anims", &UAnimNodeSequenceBlendBase::Anims)
         .def("StaticClass", &UAnimNodeSequenceBlendBase::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCustomizationData()
+void Export_pystes_UCustomizationData(py::object m)
 {
-    py::class_< UCustomizationData,  UGBXDefinition   >("UCustomizationData")
+    py::class_< UCustomizationData,  UGBXDefinition   >(m, "UCustomizationData")
         .def_readwrite("MyDefinition", &UCustomizationData::MyDefinition)
         .def_readwrite("PickupMesh", &UCustomizationData::PickupMesh)
         .def_readwrite("PickupFlagIcon", &UCustomizationData::PickupFlagIcon)
@@ -14,6 +14,5 @@ void Export_pystes_UCustomizationData()
         .def("ApplyCustomizationToInstanceDataSet", &UCustomizationData::ApplyCustomizationToInstanceDataSet)
         .def("ApplyCustomization", &UCustomizationData::ApplyCustomization)
         .def("ApplyCustomizationToDataSets", &UCustomizationData::ApplyCustomizationToDataSets)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

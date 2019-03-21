@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UStatusEffectDefinition()
+void Export_pystes_UStatusEffectDefinition(py::object m)
 {
-    py::class_< UStatusEffectDefinition,  UGBXDefinition   >("UStatusEffectDefinition")
+    py::class_< UStatusEffectDefinition,  UGBXDefinition   >(m, "UStatusEffectDefinition")
         .def_readwrite("BaseDuration", &UStatusEffectDefinition::BaseDuration)
         .def_readwrite("BaseSpreadTimeInterval", &UStatusEffectDefinition::BaseSpreadTimeInterval)
         .def_readwrite("BaseSpreadDistanceFromSource", &UStatusEffectDefinition::BaseSpreadDistanceFromSource)
@@ -23,6 +23,5 @@ void Export_pystes_UStatusEffectDefinition()
         .def_readwrite("AppliedEffectStatId", &UStatusEffectDefinition::AppliedEffectStatId)
         .def_readwrite("ScreenParticleInit", &UStatusEffectDefinition::ScreenParticleInit)
         .def("StaticClass", &UStatusEffectDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

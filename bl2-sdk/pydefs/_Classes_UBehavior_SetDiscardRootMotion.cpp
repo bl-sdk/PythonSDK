@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SetDiscardRootMotion()
+void Export_pystes_UBehavior_SetDiscardRootMotion(py::object m)
 {
-    py::class_< UBehavior_SetDiscardRootMotion,  UBehaviorBase   >("UBehavior_SetDiscardRootMotion")
+    py::class_< UBehavior_SetDiscardRootMotion,  UBehaviorBase   >(m, "UBehavior_SetDiscardRootMotion")
         .def("StaticClass", &UBehavior_SetDiscardRootMotion::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_SetDiscardRootMotion::ApplyBehaviorToContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

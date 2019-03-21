@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMorphNodeMultiPose()
+void Export_pystes_UMorphNodeMultiPose(py::object m)
 {
-    py::class_< UMorphNodeMultiPose,  UMorphNodeBase   >("UMorphNodeMultiPose")
+    py::class_< UMorphNodeMultiPose,  UMorphNodeBase   >(m, "UMorphNodeMultiPose")
         .def_readwrite("Targets", &UMorphNodeMultiPose::Targets)
         .def_readwrite("MorphNames", &UMorphNodeMultiPose::MorphNames)
         .def_readwrite("Weights", &UMorphNodeMultiPose::Weights)
@@ -13,6 +13,5 @@ void Export_pystes_UMorphNodeMultiPose()
         .def("UpdateMorphTarget", &UMorphNodeMultiPose::UpdateMorphTarget)
         .def("RemoveMorphTarget", &UMorphNodeMultiPose::RemoveMorphTarget)
         .def("AddMorphTarget", &UMorphNodeMultiPose::AddMorphTarget)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

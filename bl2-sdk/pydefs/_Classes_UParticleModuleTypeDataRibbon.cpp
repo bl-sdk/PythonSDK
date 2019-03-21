@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleTypeDataRibbon()
+void Export_pystes_UParticleModuleTypeDataRibbon(py::object m)
 {
-    py::class_< UParticleModuleTypeDataRibbon,  UParticleModuleTypeDataBase   >("UParticleModuleTypeDataRibbon")
+    py::class_< UParticleModuleTypeDataRibbon,  UParticleModuleTypeDataBase   >(m, "UParticleModuleTypeDataRibbon")
         .def_readwrite("MaxTessellationBetweenParticles", &UParticleModuleTypeDataRibbon::MaxTessellationBetweenParticles)
         .def_readwrite("SheetsPerTrail", &UParticleModuleTypeDataRibbon::SheetsPerTrail)
         .def_readwrite("MaxTrailCount", &UParticleModuleTypeDataRibbon::MaxTrailCount)
@@ -16,6 +16,5 @@ void Export_pystes_UParticleModuleTypeDataRibbon()
         .def_readwrite("DistanceTessellationStepSize", &UParticleModuleTypeDataRibbon::DistanceTessellationStepSize)
         .def_readwrite("TangentTessellationScalar", &UParticleModuleTypeDataRibbon::TangentTessellationScalar)
         .def("StaticClass", &UParticleModuleTypeDataRibbon::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

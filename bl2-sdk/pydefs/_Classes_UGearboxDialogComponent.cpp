@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxDialogComponent()
+void Export_pystes_UGearboxDialogComponent(py::object m)
 {
-    py::class_< UGearboxDialogComponent,  UActorComponent   >("UGearboxDialogComponent")
+    py::class_< UGearboxDialogComponent,  UActorComponent   >(m, "UGearboxDialogComponent")
         .def_readwrite("EventData", &UGearboxDialogComponent::EventData)
         .def_readwrite("ClientPlayingInfo", &UGearboxDialogComponent::ClientPlayingInfo)
         .def("StaticClass", &UGearboxDialogComponent::StaticClass, py::return_value_policy::reference)
@@ -16,6 +16,5 @@ void Export_pystes_UGearboxDialogComponent()
         .def("GetMatchingEvent", &UGearboxDialogComponent::GetMatchingEvent)
         .def("TriggerEvent", &UGearboxDialogComponent::TriggerEvent, py::return_value_policy::reference)
         .def("GetDialogInterface", &UGearboxDialogComponent::GetDialogInterface, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

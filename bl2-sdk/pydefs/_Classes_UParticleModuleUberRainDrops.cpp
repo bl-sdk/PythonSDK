@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleUberRainDrops()
+void Export_pystes_UParticleModuleUberRainDrops(py::object m)
 {
-    py::class_< UParticleModuleUberRainDrops,  UParticleModule   >("UParticleModuleUberRainDrops")
+    py::class_< UParticleModuleUberRainDrops,  UParticleModule   >(m, "UParticleModuleUberRainDrops")
         .def_readwrite("LifetimeMin", &UParticleModuleUberRainDrops::LifetimeMin)
         .def_readwrite("LifetimeMax", &UParticleModuleUberRainDrops::LifetimeMax)
         .def_readwrite("StartSizeMin", &UParticleModuleUberRainDrops::StartSizeMin)
@@ -25,6 +25,5 @@ void Export_pystes_UParticleModuleUberRainDrops()
         .def_readwrite("StartLocationMax", &UParticleModuleUberRainDrops::StartLocationMax)
         .def_readwrite("RequiredModules", &UParticleModuleUberBase::RequiredModules)
         .def("StaticClass", &UParticleModuleUberRainDrops::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AInterpActor()
+void Export_pystes_AInterpActor(py::object m)
 {
-    py::class_< AInterpActor,  AActor   >("AInterpActor")
+    py::class_< AInterpActor,  AActor   >(m, "AInterpActor")
         .def_readwrite("MyMarker", &AInterpActor::MyMarker)
         .def_readwrite("MaxZVelocity", &AInterpActor::MaxZVelocity)
         .def_readwrite("StayOpenTime", &AInterpActor::StayOpenTime)
@@ -50,6 +50,5 @@ void Export_pystes_AInterpActor()
         .def("OnSetMaterial", &ADynamicSMActor::OnSetMaterial)
         .def("OnSetMesh", &ADynamicSMActor::OnSetMesh)
         .def("eventReplicatedEvent", &ADynamicSMActor::eventReplicatedEvent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDrawCylinderComponent()
+void Export_pystes_UDrawCylinderComponent(py::object m)
 {
-    py::class_< UDrawCylinderComponent,  UPrimitiveComponent   >("UDrawCylinderComponent")
+    py::class_< UDrawCylinderComponent,  UPrimitiveComponent   >(m, "UDrawCylinderComponent")
         .def_readwrite("CylinderColor", &UDrawCylinderComponent::CylinderColor)
         .def_readwrite("CylinderMaterial", &UDrawCylinderComponent::CylinderMaterial)
         .def_readwrite("CylinderRadius", &UDrawCylinderComponent::CylinderRadius)
@@ -14,6 +14,5 @@ void Export_pystes_UDrawCylinderComponent()
         .def_readwrite("CylinderHeightOffset", &UDrawCylinderComponent::CylinderHeightOffset)
         .def_readwrite("CylinderSides", &UDrawCylinderComponent::CylinderSides)
         .def("StaticClass", &UDrawCylinderComponent::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowVehicleCombatArea()
+void Export_pystes_AWillowVehicleCombatArea(py::object m)
 {
-    py::class_< AWillowVehicleCombatArea,  AActor   >("AWillowVehicleCombatArea")
+    py::class_< AWillowVehicleCombatArea,  AActor   >(m, "AWillowVehicleCombatArea")
         .def_readwrite("CombatRadius", &AWillowVehicleCombatArea::CombatRadius)
         .def_readwrite("CombatDisplayHeight", &AWillowVehicleCombatArea::CombatDisplayHeight)
         .def_readwrite("NextVehicleCombatArea", &AWillowVehicleCombatArea::NextVehicleCombatArea)
@@ -15,6 +15,5 @@ void Export_pystes_AWillowVehicleCombatArea()
         .def("IsActorInside", &AWillowVehicleCombatArea::IsActorInside)
         .def("RemoveFromList", &AWillowVehicleCombatArea::RemoveFromList)
         .def("AddToList", &AWillowVehicleCombatArea::AddToList)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

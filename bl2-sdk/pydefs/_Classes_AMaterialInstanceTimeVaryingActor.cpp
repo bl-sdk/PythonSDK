@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AMaterialInstanceTimeVaryingActor()
+void Export_pystes_AMaterialInstanceTimeVaryingActor(py::object m)
 {
-    py::class_< AMaterialInstanceTimeVaryingActor,  AActor   >("AMaterialInstanceTimeVaryingActor")
+    py::class_< AMaterialInstanceTimeVaryingActor,  AActor   >(m, "AMaterialInstanceTimeVaryingActor")
         .def_readwrite("MatInst", &AMaterialInstanceTimeVaryingActor::MatInst)
         .def("StaticClass", &AMaterialInstanceTimeVaryingActor::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

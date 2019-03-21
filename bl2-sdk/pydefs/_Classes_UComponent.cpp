@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UComponent()
+void Export_pystes_UComponent(py::object m)
 {
-    py::class_< UComponent,  UObject   >("UComponent")
+    py::class_< UComponent,  UObject   >(m, "UComponent")
         .def_readwrite("TemplateOwnerClass", &UComponent::TemplateOwnerClass)
         .def_readwrite("TemplateName", &UComponent::TemplateName)
         .def("StaticClass", &UComponent::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

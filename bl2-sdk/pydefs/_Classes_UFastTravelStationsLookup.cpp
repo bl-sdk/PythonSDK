@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFastTravelStationsLookup()
+void Export_pystes_UFastTravelStationsLookup(py::object m)
 {
-    py::class_< UFastTravelStationsLookup,  UObject   >("UFastTravelStationsLookup")
+    py::class_< UFastTravelStationsLookup,  UObject   >(m, "UFastTravelStationsLookup")
         .def_readwrite("FastTravelStationLookupList", &UFastTravelStationsLookup::FastTravelStationLookupList)
         .def_readwrite("LevelTravelStationLookupList", &UFastTravelStationsLookup::LevelTravelStationLookupList)
         .def("StaticClass", &UFastTravelStationsLookup::StaticClass, py::return_value_policy::reference)
@@ -21,6 +21,5 @@ void Export_pystes_UFastTravelStationsLookup()
         .def("GetDisplayName", &UFastTravelStationsLookup::GetDisplayName)
         .def("FindTravelStationLookupObject", &UFastTravelStationsLookup::FindTravelStationLookupObject, py::return_value_policy::reference)
         .def("FindFastTravelStationLookupObject", &UFastTravelStationsLookup::FindFastTravelStationLookupObject, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

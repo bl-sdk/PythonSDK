@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FServerResponseLine()
+void Export_pystes_FServerResponseLine(py::object m)
 {
-    py::class_< FServerResponseLine >("FServerResponseLine")
+    py::class_< FServerResponseLine >(m, "FServerResponseLine")
         .def_readwrite("ServerID", &FServerResponseLine::ServerID)
         .def_readwrite("IP", &FServerResponseLine::IP)
         .def_readwrite("Port", &FServerResponseLine::Port)

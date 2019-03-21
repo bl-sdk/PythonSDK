@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWeaponAmmoResourceAttributeValueResolver()
+void Export_pystes_UWeaponAmmoResourceAttributeValueResolver(py::object m)
 {
-    py::class_< UWeaponAmmoResourceAttributeValueResolver,  UAttributeValueResolver   >("UWeaponAmmoResourceAttributeValueResolver")
+    py::class_< UWeaponAmmoResourceAttributeValueResolver,  UAttributeValueResolver   >(m, "UWeaponAmmoResourceAttributeValueResolver")
         .def_readwrite("ValueIfNotMatched", &UWeaponAmmoResourceAttributeValueResolver::ValueIfNotMatched)
         .def_readwrite("AmmoResources", &UWeaponAmmoResourceAttributeValueResolver::AmmoResources)
         .def("StaticClass", &UWeaponAmmoResourceAttributeValueResolver::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

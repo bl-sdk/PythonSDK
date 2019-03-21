@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBehaviorTriggerMessageStruct()
+void Export_pystes_FBehaviorTriggerMessageStruct(py::object m)
 {
-    py::class_< FBehaviorTriggerMessageStruct >("FBehaviorTriggerMessageStruct")
+    py::class_< FBehaviorTriggerMessageStruct >(m, "FBehaviorTriggerMessageStruct")
         .def_readwrite("MessageDefinition", &FBehaviorTriggerMessageStruct::MessageDefinition)
         .def_readwrite("Instigator", &FBehaviorTriggerMessageStruct::Instigator)
         .def_readwrite("OtherEventParticipant", &FBehaviorTriggerMessageStruct::OtherEventParticipant)

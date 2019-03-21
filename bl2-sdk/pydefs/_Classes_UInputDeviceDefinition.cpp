@@ -3,13 +3,12 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInputDeviceDefinition()
+void Export_pystes_UInputDeviceDefinition(py::object m)
 {
-    py::class_< UInputDeviceDefinition,  UGBXDefinition   >("UInputDeviceDefinition")
+    py::class_< UInputDeviceDefinition,  UGBXDefinition   >(m, "UInputDeviceDefinition")
         .def_readwrite("Axes", &UInputDeviceDefinition::Axes)
         .def_readwrite("LookAxisDefinitions", &UInputDeviceDefinition::LookAxisDefinitions)
         .def_readwrite("Buttons", &UInputDeviceDefinition::Buttons)
         .def("StaticClass", &UInputDeviceDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

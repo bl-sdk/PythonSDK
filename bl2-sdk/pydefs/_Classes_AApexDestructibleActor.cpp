@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AApexDestructibleActor()
+void Export_pystes_AApexDestructibleActor(py::object m)
 {
-    py::class_< AApexDestructibleActor,  AActor   >("AApexDestructibleActor")
+    py::class_< AApexDestructibleActor,  AActor   >(m, "AApexDestructibleActor")
         .def_readwrite("LightEnvironment", &AApexDestructibleActor::LightEnvironment)
         .def_readwrite("FractureMaterials", &AApexDestructibleActor::FractureMaterials)
         .def_readwrite("StaticDestructibleComponent", &AApexDestructibleActor::StaticDestructibleComponent)
@@ -22,6 +22,5 @@ void Export_pystes_AApexDestructibleActor()
         .def("CacheFractureEffects", &AApexDestructibleActor::CacheFractureEffects)
         .def("eventSpawnFractureEmitter", &AApexDestructibleActor::eventSpawnFractureEmitter)
         .def("eventReplicatedEvent", &AApexDestructibleActor::eventReplicatedEvent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

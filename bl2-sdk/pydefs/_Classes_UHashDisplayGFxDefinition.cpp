@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHashDisplayGFxDefinition()
+void Export_pystes_UHashDisplayGFxDefinition(py::object m)
 {
-    py::class_< UHashDisplayGFxDefinition,  UGFxMovieDefinition   >("UHashDisplayGFxDefinition")
+    py::class_< UHashDisplayGFxDefinition,  UGFxMovieDefinition   >(m, "UHashDisplayGFxDefinition")
         .def_readwrite("LeftSideDef", &UHashDisplayGFxDefinition::LeftSideDef)
         .def_readwrite("EmptySlotColor", &UHashDisplayGFxDefinition::EmptySlotColor)
         .def_readwrite("CardCellWidth", &UHashDisplayGFxDefinition::CardCellWidth)
@@ -14,6 +14,5 @@ void Export_pystes_UHashDisplayGFxDefinition()
         .def_readwrite("CardTextureHeight", &UHashDisplayGFxDefinition::CardTextureHeight)
         .def_readwrite("Card1ExternalTextureMap", &UHashDisplayGFxDefinition::Card1ExternalTextureMap)
         .def("StaticClass", &UHashDisplayGFxDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

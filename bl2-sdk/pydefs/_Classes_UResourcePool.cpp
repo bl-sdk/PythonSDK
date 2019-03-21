@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UResourcePool()
+void Export_pystes_UResourcePool(py::object m)
 {
-    py::class_< UResourcePool,  UObject   >("UResourcePool")
+    py::class_< UResourcePool,  UObject   >(m, "UResourcePool")
         .def_readwrite("Definition", &UResourcePool::Definition)
         .def_readwrite("PoolGUID", &UResourcePool::PoolGUID)
         .def_readwrite("MinValue", &UResourcePool::MinValue)
@@ -76,6 +76,5 @@ void Export_pystes_UResourcePool()
         .def("ClearAttributeModifierStacks", &UResourcePool::ClearAttributeModifierStacks)
         .def("eventShutDown", &UResourcePool::eventShutDown)
         .def("eventInitializeAuthoritative", &UResourcePool::eventInitializeAuthoritative)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

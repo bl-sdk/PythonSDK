@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_URadialBlurComponent()
+void Export_pystes_URadialBlurComponent(py::object m)
 {
-    py::class_< URadialBlurComponent,  UActorComponent   >("URadialBlurComponent")
+    py::class_< URadialBlurComponent,  UActorComponent   >(m, "URadialBlurComponent")
         .def_readwrite("Material", &URadialBlurComponent::Material)
         .def_readwrite("DepthPriorityGroup", &URadialBlurComponent::DepthPriorityGroup)
         .def_readwrite("BlurScale", &URadialBlurComponent::BlurScale)
@@ -24,6 +24,5 @@ void Export_pystes_URadialBlurComponent()
         .def("SetBlurFalloffExponent", &URadialBlurComponent::SetBlurFalloffExponent)
         .def("SetBlurScale", &URadialBlurComponent::SetBlurScale)
         .def("SetMaterial", &URadialBlurComponent::SetMaterial)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

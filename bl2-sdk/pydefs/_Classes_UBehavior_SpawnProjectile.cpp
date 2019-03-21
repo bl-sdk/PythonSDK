@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SpawnProjectile()
+void Export_pystes_UBehavior_SpawnProjectile(py::object m)
 {
-    py::class_< UBehavior_SpawnProjectile,  UBehaviorBase   >("UBehavior_SpawnProjectile")
+    py::class_< UBehavior_SpawnProjectile,  UBehaviorBase   >(m, "UBehavior_SpawnProjectile")
         .def_readwrite("OwnerContext", &UBehavior_SpawnProjectile::OwnerContext)
         .def_readwrite("AttachmentPointName", &UBehavior_SpawnProjectile::AttachmentPointName)
         .def_readwrite("InstanceDataContext", &UBehavior_SpawnProjectile::InstanceDataContext)
@@ -39,6 +39,5 @@ void Export_pystes_UBehavior_SpawnProjectile()
         .def("CalculateConeVector", &UBehavior_SpawnProjectile::CalculateConeVector)
         .def("PerformMaterialOverride", &UBehavior_SpawnProjectile::PerformMaterialOverride)
         .def("ApplyBehaviorToContext", &UBehavior_SpawnProjectile::ApplyBehaviorToContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

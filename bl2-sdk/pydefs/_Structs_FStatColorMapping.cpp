@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FStatColorMapping()
+void Export_pystes_FStatColorMapping(py::object m)
 {
-    py::class_< FStatColorMapping >("FStatColorMapping")
+    py::class_< FStatColorMapping >(m, "FStatColorMapping")
         .def_readwrite("StatName", &FStatColorMapping::StatName)
         .def_readwrite("ColorMap", &FStatColorMapping::ColorMap)
   ;

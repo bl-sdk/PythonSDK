@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGameEngine()
+void Export_pystes_UWillowGameEngine(py::object m)
 {
-    py::class_< UWillowGameEngine,  UGearboxEngine   >("UWillowGameEngine")
+    py::class_< UWillowGameEngine,  UGearboxEngine   >(m, "UWillowGameEngine")
         .def_readwrite("VfTable_ISparkUpdateCallback", &UWillowGameEngine::VfTable_ISparkUpdateCallback)
         .def_readwrite("SourceMapName", &UWillowGameEngine::SourceMapName)
         .def_readwrite("DestMapName", &UWillowGameEngine::DestMapName)
@@ -23,6 +23,5 @@ void Export_pystes_UWillowGameEngine()
         .def("eventUnpauseForLevelLoad", &UWillowGameEngine::eventUnpauseForLevelLoad)
         .def("eventPauseForLevelLoad", &UWillowGameEngine::eventPauseForLevelLoad)
         .def("CanUnpause", &UWillowGameEngine::CanUnpause)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

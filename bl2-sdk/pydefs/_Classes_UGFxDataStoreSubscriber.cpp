@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGFxDataStoreSubscriber()
+void Export_pystes_UGFxDataStoreSubscriber(py::object m)
 {
-    py::class_< UGFxDataStoreSubscriber,  UObject   >("UGFxDataStoreSubscriber")
+    py::class_< UGFxDataStoreSubscriber,  UObject   >(m, "UGFxDataStoreSubscriber")
         .def_readwrite("VfTable_IUIDataStorePublisher", &UGFxDataStoreSubscriber::VfTable_IUIDataStorePublisher)
         .def_readwrite("Movie", &UGFxDataStoreSubscriber::Movie)
         .def("StaticClass", &UGFxDataStoreSubscriber::StaticClass, py::return_value_policy::reference)
@@ -17,6 +17,5 @@ void Export_pystes_UGFxDataStoreSubscriber()
         .def("GetDataStoreBinding", &UGFxDataStoreSubscriber::GetDataStoreBinding)
         .def("SetDataStoreBinding", &UGFxDataStoreSubscriber::SetDataStoreBinding)
         .def("PublishValues", &UGFxDataStoreSubscriber::PublishValues)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

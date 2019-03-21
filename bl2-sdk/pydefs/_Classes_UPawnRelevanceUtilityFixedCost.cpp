@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPawnRelevanceUtilityFixedCost()
+void Export_pystes_UPawnRelevanceUtilityFixedCost(py::object m)
 {
-    py::class_< UPawnRelevanceUtilityFixedCost,  UPawnRelevanceUtility   >("UPawnRelevanceUtilityFixedCost")
+    py::class_< UPawnRelevanceUtilityFixedCost,  UPawnRelevanceUtility   >(m, "UPawnRelevanceUtilityFixedCost")
         .def_readwrite("CloseDistanceSquared", &UPawnRelevanceUtilityFixedCost::CloseDistanceSquared)
         .def_readwrite("MedDistanceSquared", &UPawnRelevanceUtilityFixedCost::MedDistanceSquared)
         .def_readwrite("MaxLineChecksPerFrame", &UPawnRelevanceUtilityFixedCost::MaxLineChecksPerFrame)
@@ -31,6 +31,5 @@ void Export_pystes_UPawnRelevanceUtilityFixedCost()
         .def("SetBucket", &UPawnRelevanceUtilityFixedCost::SetBucket)
         .def("ShowBucketSettings", &UPawnRelevanceUtilityFixedCost::ShowBucketSettings)
         .def("PrintBuckets", &UPawnRelevanceUtilityFixedCost::PrintBuckets)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

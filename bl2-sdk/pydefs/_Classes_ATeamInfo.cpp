@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ATeamInfo()
+void Export_pystes_ATeamInfo(py::object m)
 {
-    py::class_< ATeamInfo,  AReplicationInfo   >("ATeamInfo")
+    py::class_< ATeamInfo,  AReplicationInfo   >(m, "ATeamInfo")
         .def_readwrite("TeamName", &ATeamInfo::TeamName)
         .def_readwrite("Size", &ATeamInfo::Size)
         .def_readwrite("Score", &ATeamInfo::Score)
@@ -18,6 +18,5 @@ void Export_pystes_ATeamInfo()
         .def("AddToTeam", &ATeamInfo::AddToTeam)
         .def("eventDestroyed", &ATeamInfo::eventDestroyed)
         .def("eventReplicatedEvent", &ATeamInfo::eventReplicatedEvent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

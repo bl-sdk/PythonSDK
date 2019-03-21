@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackFloatProp()
+void Export_pystes_UInterpTrackFloatProp(py::object m)
 {
-    py::class_< UInterpTrackFloatProp,  UInterpTrackFloatBase   >("UInterpTrackFloatProp")
+    py::class_< UInterpTrackFloatProp,  UInterpTrackFloatBase   >(m, "UInterpTrackFloatProp")
         .def_readwrite("PropertyName", &UInterpTrackFloatProp::PropertyName)
         .def("StaticClass", &UInterpTrackFloatProp::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APointLightMovable()
+void Export_pystes_APointLightMovable(py::object m)
 {
-    py::class_< APointLightMovable,  APointLight   >("APointLightMovable")
+    py::class_< APointLightMovable,  APointLight   >(m, "APointLightMovable")
         .def("StaticClass", &APointLightMovable::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

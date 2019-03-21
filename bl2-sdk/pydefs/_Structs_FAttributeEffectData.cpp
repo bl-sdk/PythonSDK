@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAttributeEffectData()
+void Export_pystes_FAttributeEffectData(py::object m)
 {
-    py::class_< FAttributeEffectData >("FAttributeEffectData")
+    py::class_< FAttributeEffectData >(m, "FAttributeEffectData")
         .def_readwrite("AttributeToModify", &FAttributeEffectData::AttributeToModify)
         .def_readwrite("ModifierType", &FAttributeEffectData::ModifierType)
         .def_readwrite("BaseModifierValue", &FAttributeEffectData::BaseModifierValue)

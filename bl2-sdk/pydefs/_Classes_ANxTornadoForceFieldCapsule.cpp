@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ANxTornadoForceFieldCapsule()
+void Export_pystes_ANxTornadoForceFieldCapsule(py::object m)
 {
-    py::class_< ANxTornadoForceFieldCapsule,  ANxTornadoForceField   >("ANxTornadoForceFieldCapsule")
+    py::class_< ANxTornadoForceFieldCapsule,  ANxTornadoForceField   >(m, "ANxTornadoForceFieldCapsule")
         .def_readwrite("RenderComponent", &ANxTornadoForceFieldCapsule::RenderComponent)
         .def("StaticClass", &ANxTornadoForceFieldCapsule::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowDamagePipeline()
+void Export_pystes_UWillowDamagePipeline(py::object m)
 {
-    py::class_< UWillowDamagePipeline,  UDamagePipeline   >("UWillowDamagePipeline")
+    py::class_< UWillowDamagePipeline,  UDamagePipeline   >(m, "UWillowDamagePipeline")
         .def_readwrite("WillowDamageTypeDef", &UWillowDamagePipeline::WillowDamageTypeDef)
         .def_readwrite("WillowImpactDefinition", &UWillowDamagePipeline::WillowImpactDefinition)
         .def_readwrite("DamageInstigator", &UWillowDamagePipeline::DamageInstigator)
@@ -54,6 +54,5 @@ void Export_pystes_UWillowDamagePipeline()
         .def("ResetToDefaults", &UWillowDamagePipeline::ResetToDefaults)
         .def("ConvertDamageToHealing", &UWillowDamagePipeline::ConvertDamageToHealing)
         .def("AdjustDamage", &UWillowDamagePipeline::AdjustDamage)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

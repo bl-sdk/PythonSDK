@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerSkillAttributeValueResolver()
+void Export_pystes_UPlayerSkillAttributeValueResolver(py::object m)
 {
-    py::class_< UPlayerSkillAttributeValueResolver,  UAttributeValueResolver   >("UPlayerSkillAttributeValueResolver")
+    py::class_< UPlayerSkillAttributeValueResolver,  UAttributeValueResolver   >(m, "UPlayerSkillAttributeValueResolver")
         .def_readwrite("AssociatedSkill", &UPlayerSkillAttributeValueResolver::AssociatedSkill)
         .def("StaticClass", &UPlayerSkillAttributeValueResolver::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

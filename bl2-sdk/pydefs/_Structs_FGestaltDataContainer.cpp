@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGestaltDataContainer()
+void Export_pystes_FGestaltDataContainer(py::object m)
 {
-    py::class_< FGestaltDataContainer >("FGestaltDataContainer")
+    py::class_< FGestaltDataContainer >(m, "FGestaltDataContainer")
         .def_readwrite("SkeletalMesh", &FGestaltDataContainer::SkeletalMesh)
         .def_readwrite("LODModelData", &FGestaltDataContainer::LODModelData)
         .def_readwrite("SocketMappings", &FGestaltDataContainer::SocketMappings)

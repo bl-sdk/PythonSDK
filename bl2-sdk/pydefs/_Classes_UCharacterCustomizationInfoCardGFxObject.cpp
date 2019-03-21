@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCharacterCustomizationInfoCardGFxObject()
+void Export_pystes_UCharacterCustomizationInfoCardGFxObject(py::object m)
 {
-    py::class_< UCharacterCustomizationInfoCardGFxObject,  UGFxObject   >("UCharacterCustomizationInfoCardGFxObject")
+    py::class_< UCharacterCustomizationInfoCardGFxObject,  UGFxObject   >(m, "UCharacterCustomizationInfoCardGFxObject")
         .def("StaticClass", &UCharacterCustomizationInfoCardGFxObject::StaticClass, py::return_value_policy::reference)
         .def("SetAutoSizeTextOnFields", &UCharacterCustomizationInfoCardGFxObject::SetAutoSizeTextOnFields)
         .def("TryFocusList", &UCharacterCustomizationInfoCardGFxObject::TryFocusList)
@@ -17,6 +17,5 @@ void Export_pystes_UCharacterCustomizationInfoCardGFxObject()
         .def("DisplayHeadCard", &UCharacterCustomizationInfoCardGFxObject::DisplayHeadCard)
         .def("DisplayRespecCard", &UCharacterCustomizationInfoCardGFxObject::DisplayRespecCard)
         .def("DisplayNameCard", &UCharacterCustomizationInfoCardGFxObject::DisplayNameCard)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

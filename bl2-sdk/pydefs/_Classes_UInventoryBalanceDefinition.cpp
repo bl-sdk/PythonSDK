@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInventoryBalanceDefinition()
+void Export_pystes_UInventoryBalanceDefinition(py::object m)
 {
-    py::class_< UInventoryBalanceDefinition,  UBaseBalanceDefinition   >("UInventoryBalanceDefinition")
+    py::class_< UInventoryBalanceDefinition,  UBaseBalanceDefinition   >(m, "UInventoryBalanceDefinition")
         .def_readwrite("VfTable_IIDlcLicensableObject", &UInventoryBalanceDefinition::VfTable_IIDlcLicensableObject)
         .def_readwrite("InventoryDefinition", &UInventoryBalanceDefinition::InventoryDefinition)
         .def_readwrite("BaseDefinition", &UInventoryBalanceDefinition::BaseDefinition)
@@ -21,6 +21,5 @@ void Export_pystes_UInventoryBalanceDefinition()
         .def("GetExpLevelFromManufacturerData", &UInventoryBalanceDefinition::GetExpLevelFromManufacturerData)
         .def("GetRequiredPlayerClassId", &UInventoryBalanceDefinition::GetRequiredPlayerClassId, py::return_value_policy::reference)
         .def("GetInventoryDefinition", &UInventoryBalanceDefinition::GetInventoryDefinition, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,14 +3,13 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPackageAssetSublibrary()
+void Export_pystes_UPackageAssetSublibrary(py::object m)
 {
-    py::class_< UPackageAssetSublibrary,  UGBXDefinition   >("UPackageAssetSublibrary")
+    py::class_< UPackageAssetSublibrary,  UGBXDefinition   >(m, "UPackageAssetSublibrary")
         .def_readwrite("LibraryType", &UPackageAssetSublibrary::LibraryType)
         .def_readwrite("Assets", &UPackageAssetSublibrary::Assets)
         .def_readwrite("AssetPaths", &UPackageAssetSublibrary::AssetPaths)
         .def_readwrite("CachedPackageName", &UPackageAssetSublibrary::CachedPackageName)
         .def("StaticClass", &UPackageAssetSublibrary::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

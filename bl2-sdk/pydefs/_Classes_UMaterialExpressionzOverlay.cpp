@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionzOverlay()
+void Export_pystes_UMaterialExpressionzOverlay(py::object m)
 {
-    py::class_< UMaterialExpressionzOverlay,  UMaterialExpressionBlendModeBase   >("UMaterialExpressionzOverlay")
+    py::class_< UMaterialExpressionzOverlay,  UMaterialExpressionBlendModeBase   >(m, "UMaterialExpressionzOverlay")
         .def("StaticClass", &UMaterialExpressionzOverlay::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

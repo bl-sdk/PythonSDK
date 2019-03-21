@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionVectorParameter()
+void Export_pystes_UMaterialExpressionVectorParameter(py::object m)
 {
-    py::class_< UMaterialExpressionVectorParameter,  UMaterialExpressionParameter   >("UMaterialExpressionVectorParameter")
+    py::class_< UMaterialExpressionVectorParameter,  UMaterialExpressionParameter   >(m, "UMaterialExpressionVectorParameter")
         .def_readwrite("DefaultValue", &UMaterialExpressionVectorParameter::DefaultValue)
         .def("StaticClass", &UMaterialExpressionVectorParameter::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionStaticComponentMaskParameter()
+void Export_pystes_UMaterialExpressionStaticComponentMaskParameter(py::object m)
 {
-    py::class_< UMaterialExpressionStaticComponentMaskParameter,  UMaterialExpressionParameter   >("UMaterialExpressionStaticComponentMaskParameter")
+    py::class_< UMaterialExpressionStaticComponentMaskParameter,  UMaterialExpressionParameter   >(m, "UMaterialExpressionStaticComponentMaskParameter")
         .def_readwrite("Input", &UMaterialExpressionStaticComponentMaskParameter::Input)
         .def_readwrite("InstanceOverride", &UMaterialExpressionStaticComponentMaskParameter::InstanceOverride)
         .def("StaticClass", &UMaterialExpressionStaticComponentMaskParameter::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FVelocityObstacle()
+void Export_pystes_FVelocityObstacle(py::object m)
 {
-    py::class_< FVelocityObstacle >("FVelocityObstacle")
+    py::class_< FVelocityObstacle >(m, "FVelocityObstacle")
         .def_readonly("Segments", &FVelocityObstacle::Segments)
   ;
 }

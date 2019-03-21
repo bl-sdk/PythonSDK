@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULineSegment()
+void Export_pystes_ULineSegment(py::object m)
 {
-    py::class_< ULineSegment,  UObject   >("ULineSegment")
+    py::class_< ULineSegment,  UObject   >(m, "ULineSegment")
         .def_readwrite("ParentLine", &ULineSegment::ParentLine)
         .def_readonly("Verts", &ULineSegment::Verts)
         .def_readwrite("Direction", &ULineSegment::Direction)
@@ -23,6 +23,5 @@ void Export_pystes_ULineSegment()
         .def_readwrite("RetreatColor", &ULineSegment::RetreatColor)
         .def_readwrite("StealthColor", &ULineSegment::StealthColor)
         .def("StaticClass", &ULineSegment::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

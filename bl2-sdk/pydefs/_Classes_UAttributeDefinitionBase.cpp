@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAttributeDefinitionBase()
+void Export_pystes_UAttributeDefinitionBase(py::object m)
 {
-    py::class_< UAttributeDefinitionBase,  UGBXDefinition   >("UAttributeDefinitionBase")
+    py::class_< UAttributeDefinitionBase,  UGBXDefinition   >(m, "UAttributeDefinitionBase")
         .def_readwrite("AttributeDataType", &UAttributeDefinitionBase::AttributeDataType)
         .def_readwrite("ContextResolverChain", &UAttributeDefinitionBase::ContextResolverChain)
         .def_readwrite("ValueResolverChain", &UAttributeDefinitionBase::ValueResolverChain)
@@ -18,6 +18,5 @@ void Export_pystes_UAttributeDefinitionBase()
         .def("GetValueFromContext", &UAttributeDefinitionBase::GetValueFromContext)
         .def("ResolveContexts", &UAttributeDefinitionBase::ResolveContexts)
         .def("ResolveContext", &UAttributeDefinitionBase::ResolveContext, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

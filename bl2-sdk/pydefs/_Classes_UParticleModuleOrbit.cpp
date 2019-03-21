@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleOrbit()
+void Export_pystes_UParticleModuleOrbit(py::object m)
 {
-    py::class_< UParticleModuleOrbit,  UParticleModule   >("UParticleModuleOrbit")
+    py::class_< UParticleModuleOrbit,  UParticleModule   >(m, "UParticleModuleOrbit")
         .def_readwrite("ChainMode", &UParticleModuleOrbit::ChainMode)
         .def_readwrite("OffsetAmount", &UParticleModuleOrbit::OffsetAmount)
         .def_readwrite("OffsetOptions", &UParticleModuleOrbit::OffsetOptions)
@@ -14,6 +14,5 @@ void Export_pystes_UParticleModuleOrbit()
         .def_readwrite("RotationRateAmount", &UParticleModuleOrbit::RotationRateAmount)
         .def_readwrite("RotationRateOptions", &UParticleModuleOrbit::RotationRateOptions)
         .def("StaticClass", &UParticleModuleOrbit::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

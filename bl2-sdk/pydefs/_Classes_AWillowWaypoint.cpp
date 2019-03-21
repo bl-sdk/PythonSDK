@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowWaypoint()
+void Export_pystes_AWillowWaypoint(py::object m)
 {
-    py::class_< AWillowWaypoint,  ATrigger   >("AWillowWaypoint")
+    py::class_< AWillowWaypoint,  ATrigger   >(m, "AWillowWaypoint")
         .def_readwrite("VfTable_IIMission", &AWillowWaypoint::VfTable_IIMission)
         .def_readwrite("WaypointInfo", &AWillowWaypoint::WaypointInfo)
         .def_readwrite("AreaRadius", &AWillowWaypoint::AreaRadius)
@@ -31,6 +31,5 @@ void Export_pystes_AWillowWaypoint()
         .def("NotifyUserCouldNotAffordAttemptedUse", &AWillowTrigger::NotifyUserCouldNotAffordAttemptedUse)
         .def("SetInteractionIcon", &AWillowTrigger::SetInteractionIcon)
         .def("UseObject", &AWillowTrigger::UseObject)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

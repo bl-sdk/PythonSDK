@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxAIMoveNodeRenderComponent()
+void Export_pystes_UGearboxAIMoveNodeRenderComponent(py::object m)
 {
-    py::class_< UGearboxAIMoveNodeRenderComponent,  UPrimitiveComponent   >("UGearboxAIMoveNodeRenderComponent")
+    py::class_< UGearboxAIMoveNodeRenderComponent,  UPrimitiveComponent   >(m, "UGearboxAIMoveNodeRenderComponent")
         .def("StaticClass", &UGearboxAIMoveNodeRenderComponent::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

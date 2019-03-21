@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActorFactoryPopulationOpportunityPoint()
+void Export_pystes_UActorFactoryPopulationOpportunityPoint(py::object m)
 {
-    py::class_< UActorFactoryPopulationOpportunityPoint,  UActorFactory   >("UActorFactoryPopulationOpportunityPoint")
+    py::class_< UActorFactoryPopulationOpportunityPoint,  UActorFactory   >(m, "UActorFactoryPopulationOpportunityPoint")
         .def("StaticClass", &UActorFactoryPopulationOpportunityPoint::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

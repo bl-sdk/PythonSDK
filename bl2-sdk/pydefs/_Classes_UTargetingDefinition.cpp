@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTargetingDefinition()
+void Export_pystes_UTargetingDefinition(py::object m)
 {
-    py::class_< UTargetingDefinition,  UGBXDefinition   >("UTargetingDefinition")
+    py::class_< UTargetingDefinition,  UGBXDefinition   >(m, "UTargetingDefinition")
         .def_readwrite("Knowledge", &UTargetingDefinition::Knowledge)
         .def_readwrite("Prioritization", &UTargetingDefinition::Prioritization)
         .def_readwrite("CanTargetIf", &UTargetingDefinition::CanTargetIf)
@@ -13,6 +13,5 @@ void Export_pystes_UTargetingDefinition()
         .def_readwrite("CanTargetFriendliesIf", &UTargetingDefinition::CanTargetFriendliesIf)
         .def_readwrite("SearchRadius", &UTargetingDefinition::SearchRadius)
         .def("StaticClass", &UTargetingDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

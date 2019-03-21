@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDeveloperPerksDefinition()
+void Export_pystes_UDeveloperPerksDefinition(py::object m)
 {
-    py::class_< UDeveloperPerksDefinition,  UGBXDefinition   >("UDeveloperPerksDefinition")
+    py::class_< UDeveloperPerksDefinition,  UGBXDefinition   >(m, "UDeveloperPerksDefinition")
         .def_readwrite("DeveloperInfo", &UDeveloperPerksDefinition::DeveloperInfo)
         .def_readwrite("PerkInfo", &UDeveloperPerksDefinition::PerkInfo)
         .def_readwrite("DeveloperCustomizationUnlocks", &UDeveloperPerksDefinition::DeveloperCustomizationUnlocks)
@@ -16,6 +16,5 @@ void Export_pystes_UDeveloperPerksDefinition()
         .def("IsValidPlatform", &UDeveloperPerksDefinition::IsValidPlatform)
         .def("CheckForButtonChain", &UDeveloperPerksDefinition::CheckForButtonChain)
         .def("PopulatePatchedPerkInfo", &UDeveloperPerksDefinition::PopulatePatchedPerkInfo)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

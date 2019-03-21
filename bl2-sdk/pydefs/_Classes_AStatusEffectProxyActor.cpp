@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AStatusEffectProxyActor()
+void Export_pystes_AStatusEffectProxyActor(py::object m)
 {
-    py::class_< AStatusEffectProxyActor,  AActor   >("AStatusEffectProxyActor")
+    py::class_< AStatusEffectProxyActor,  AActor   >(m, "AStatusEffectProxyActor")
         .def_readwrite("VfTable_IIStatusEffectTarget", &AStatusEffectProxyActor::VfTable_IIStatusEffectTarget)
         .def("StaticClass", &AStatusEffectProxyActor::StaticClass, py::return_value_policy::reference)
         .def("ServerClearStatusEffects", &AStatusEffectProxyActor::ServerClearStatusEffects)
@@ -21,6 +21,5 @@ void Export_pystes_AStatusEffectProxyActor()
         .def("GetDefaultStatusEffectSockets", &AStatusEffectProxyActor::GetDefaultStatusEffectSockets)
         .def("GetStatusEffectsComponent", &AStatusEffectProxyActor::GetStatusEffectsComponent, py::return_value_policy::reference)
         .def("eventDestroyed", &AStatusEffectProxyActor::eventDestroyed)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

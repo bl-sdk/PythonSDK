@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UExperienceResourcePool()
+void Export_pystes_UExperienceResourcePool(py::object m)
 {
-    py::class_< UExperienceResourcePool,  UResourcePool   >("UExperienceResourcePool")
+    py::class_< UExperienceResourcePool,  UResourcePool   >(m, "UExperienceResourcePool")
         .def_readwrite("ExpCombatPointsScale", &UExperienceResourcePool::ExpCombatPointsScale)
         .def_readwrite("ExpCombatPointsScaleBaseValue", &UExperienceResourcePool::ExpCombatPointsScaleBaseValue)
         .def_readwrite("ExpCombatPointsScaleModifierStack", &UExperienceResourcePool::ExpCombatPointsScaleModifierStack)
@@ -17,6 +17,5 @@ void Export_pystes_UExperienceResourcePool()
         .def_readwrite("ExpAllPointsScaleModifierStack", &UExperienceResourcePool::ExpAllPointsScaleModifierStack)
         .def("StaticClass", &UExperienceResourcePool::StaticClass, py::return_value_policy::reference)
         .def("ApplyExpPointsToExpLevel", &UExperienceResourcePool::ApplyExpPointsToExpLevel)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

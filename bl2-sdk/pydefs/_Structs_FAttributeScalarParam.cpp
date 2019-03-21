@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAttributeScalarParam()
+void Export_pystes_FAttributeScalarParam(py::object m)
 {
-    py::class_< FAttributeScalarParam >("FAttributeScalarParam")
+    py::class_< FAttributeScalarParam >(m, "FAttributeScalarParam")
         .def_readwrite("ParamName", &FAttributeScalarParam::ParamName)
         .def_readwrite("Input", &FAttributeScalarParam::Input)
         .def_readwrite("MinInput", &FAttributeScalarParam::MinInput)

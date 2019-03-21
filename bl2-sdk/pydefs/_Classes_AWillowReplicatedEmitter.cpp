@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowReplicatedEmitter()
+void Export_pystes_AWillowReplicatedEmitter(py::object m)
 {
-    py::class_< AWillowReplicatedEmitter,  AWillowEmitter   >("AWillowReplicatedEmitter")
+    py::class_< AWillowReplicatedEmitter,  AWillowEmitter   >(m, "AWillowReplicatedEmitter")
         .def_readwrite("EmitterTemplate", &AWillowReplicatedEmitter::EmitterTemplate)
         .def_readwrite("ServerLifeSpan", &AWillowReplicatedEmitter::ServerLifeSpan)
         .def_readwrite("NumFloatParameters", &AWillowReplicatedEmitter::NumFloatParameters)
@@ -34,6 +34,5 @@ void Export_pystes_AWillowReplicatedEmitter()
         .def("SetTemplateWithCensoredAlternative", &AWillowReplicatedEmitter::SetTemplateWithCensoredAlternative)
         .def("eventReplicatedEvent", &AWillowReplicatedEmitter::eventReplicatedEvent)
         .def("PostBeginPlay", &AWillowReplicatedEmitter::PostBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

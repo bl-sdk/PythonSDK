@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FWireLinkage()
+void Export_pystes_FWireLinkage(py::object m)
 {
-    py::class_< FWireLinkage >("FWireLinkage")
+    py::class_< FWireLinkage >(m, "FWireLinkage")
         .def_readwrite("Offset", &FWireLinkage::Offset)
         .def_readwrite("Width", &FWireLinkage::Width)
         .def_readwrite("Slack", &FWireLinkage::Slack)

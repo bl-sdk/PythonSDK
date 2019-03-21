@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowGameInfo()
+void Export_pystes_AWillowGameInfo(py::object m)
 {
-    py::class_< AWillowGameInfo,  AGearboxGameInfo   >("AWillowGameInfo")
+    py::class_< AWillowGameInfo,  AGearboxGameInfo   >(m, "AWillowGameInfo")
         .def_readwrite("VfTable_IIDesignerAttributeProvider", &AWillowGameInfo::VfTable_IIDesignerAttributeProvider)
         .def_readwrite("VfTable_IIAIInterface", &AWillowGameInfo::VfTable_IIAIInterface)
         .def_readwrite("AdjustedDifficulty", &AWillowGameInfo::AdjustedDifficulty)
@@ -198,6 +198,5 @@ void Export_pystes_AWillowGameInfo()
         .def("eventInitGame", &AWillowGameInfo::eventInitGame)
         .def("PostBeginPlay", &AWillowGameInfo::PostBeginPlay)
         .def("PreBeginPlay", &AWillowGameInfo::PreBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

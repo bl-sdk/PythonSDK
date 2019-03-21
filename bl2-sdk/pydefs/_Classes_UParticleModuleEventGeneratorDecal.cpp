@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleEventGeneratorDecal()
+void Export_pystes_UParticleModuleEventGeneratorDecal(py::object m)
 {
-    py::class_< UParticleModuleEventGeneratorDecal,  UParticleModuleEventGenerator   >("UParticleModuleEventGeneratorDecal")
+    py::class_< UParticleModuleEventGeneratorDecal,  UParticleModuleEventGenerator   >(m, "UParticleModuleEventGeneratorDecal")
         .def_readwrite("DecalMaterials", &UParticleModuleEventGeneratorDecal::DecalMaterials)
         .def_readwrite("DecalWidth", &UParticleModuleEventGeneratorDecal::DecalWidth)
         .def_readwrite("DecalHeight", &UParticleModuleEventGeneratorDecal::DecalHeight)
@@ -16,6 +16,5 @@ void Export_pystes_UParticleModuleEventGeneratorDecal()
         .def_readwrite("DecalBlendRange", &UParticleModuleEventGeneratorDecal::DecalBlendRange)
         .def("StaticClass", &UParticleModuleEventGeneratorDecal::StaticClass, py::return_value_policy::reference)
         .def("eventSpawnDecal", &UParticleModuleEventGeneratorDecal::eventSpawnDecal)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APlayerReplicationInfo()
+void Export_pystes_APlayerReplicationInfo(py::object m)
 {
-    py::class_< APlayerReplicationInfo,  AInfo   >("APlayerReplicationInfo")
+    py::class_< APlayerReplicationInfo,  AInfo   >(m, "APlayerReplicationInfo")
         .def_readwrite("Score", &APlayerReplicationInfo::Score)
         .def_readwrite("Deaths", &APlayerReplicationInfo::Deaths)
         .def_readwrite("Ping", &APlayerReplicationInfo::Ping)
@@ -62,6 +62,5 @@ void Export_pystes_APlayerReplicationInfo()
         .def("SetPlayerTeam", &APlayerReplicationInfo::SetPlayerTeam)
         .def("ClientInitialize", &APlayerReplicationInfo::ClientInitialize)
         .def("eventPostBeginPlay", &APlayerReplicationInfo::eventPostBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

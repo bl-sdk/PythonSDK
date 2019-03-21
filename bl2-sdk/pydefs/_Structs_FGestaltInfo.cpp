@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGestaltInfo()
+void Export_pystes_FGestaltInfo(py::object m)
 {
-    py::class_< FGestaltInfo >("FGestaltInfo")
+    py::class_< FGestaltInfo >(m, "FGestaltInfo")
         .def_readwrite("Parts", &FGestaltInfo::Parts)
   ;
 }

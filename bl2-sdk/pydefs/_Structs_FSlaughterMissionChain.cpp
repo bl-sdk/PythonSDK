@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSlaughterMissionChain()
+void Export_pystes_FSlaughterMissionChain(py::object m)
 {
-    py::class_< FSlaughterMissionChain >("FSlaughterMissionChain")
+    py::class_< FSlaughterMissionChain >(m, "FSlaughterMissionChain")
         .def_readwrite("SlaughterMissions", &FSlaughterMissionChain::SlaughterMissions)
   ;
 }

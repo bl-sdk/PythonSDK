@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FActiveStatusEffect()
+void Export_pystes_FActiveStatusEffect(py::object m)
 {
-    py::class_< FActiveStatusEffect >("FActiveStatusEffect")
+    py::class_< FActiveStatusEffect >(m, "FActiveStatusEffect")
         .def_readwrite("Duration", &FActiveStatusEffect::Duration)
         .def_readwrite("TotalElapsedTime", &FActiveStatusEffect::TotalElapsedTime)
         .def_readwrite("AccumulatedTime", &FActiveStatusEffect::AccumulatedTime)

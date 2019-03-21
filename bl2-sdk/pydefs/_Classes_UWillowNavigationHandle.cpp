@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowNavigationHandle()
+void Export_pystes_UWillowNavigationHandle(py::object m)
 {
-    py::class_< UWillowNavigationHandle,  UGearboxNavigationHandle   >("UWillowNavigationHandle")
+    py::class_< UWillowNavigationHandle,  UGearboxNavigationHandle   >(m, "UWillowNavigationHandle")
         .def_readwrite("MyWillowMind", &UWillowNavigationHandle::MyWillowMind)
         .def_readwrite("MyWillowPawn", &UWillowNavigationHandle::MyWillowPawn)
         .def_readwrite("ControllingAction", &UWillowNavigationHandle::ControllingAction)
@@ -61,6 +61,5 @@ void Export_pystes_UWillowNavigationHandle()
         .def("CanFollowPath", &UWillowNavigationHandle::CanFollowPath)
         .def("FollowPath", &UWillowNavigationHandle::FollowPath)
         .def("CreateConstrainedPath", &UWillowNavigationHandle::CreateConstrainedPath)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

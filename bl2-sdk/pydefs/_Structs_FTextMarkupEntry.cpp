@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTextMarkupEntry()
+void Export_pystes_FTextMarkupEntry(py::object m)
 {
-    py::class_< FTextMarkupEntry >("FTextMarkupEntry")
+    py::class_< FTextMarkupEntry >(m, "FTextMarkupEntry")
         .def_readwrite("MarkupTag", &FTextMarkupEntry::MarkupTag)
         .def_readwrite("HTMLMarkupBeginText", &FTextMarkupEntry::HTMLMarkupBeginText)
         .def_readwrite("HTMLMarkupEndText", &FTextMarkupEntry::HTMLMarkupEndText)

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AVehicleSpawnStationTerminal()
+void Export_pystes_AVehicleSpawnStationTerminal(py::object m)
 {
-    py::class_< AVehicleSpawnStationTerminal,  AWillowInteractiveObject   >("AVehicleSpawnStationTerminal")
+    py::class_< AVehicleSpawnStationTerminal,  AWillowInteractiveObject   >(m, "AVehicleSpawnStationTerminal")
         .def_readonly("SpawnPlatforms", &AVehicleSpawnStationTerminal::SpawnPlatforms)
         .def("StaticClass", &AVehicleSpawnStationTerminal::StaticClass, py::return_value_policy::reference)
         .def("eventDespawnVehicle", &AVehicleSpawnStationTerminal::eventDespawnVehicle)
@@ -16,6 +16,5 @@ void Export_pystes_AVehicleSpawnStationTerminal()
         .def("UnlockForOtherUsers", &AVehicleSpawnStationTerminal::UnlockForOtherUsers)
         .def("LockOutOtherUsers", &AVehicleSpawnStationTerminal::LockOutOtherUsers)
         .def("eventPostBeginPlay", &AVehicleSpawnStationTerminal::eventPostBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

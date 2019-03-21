@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_URB_Handle()
+void Export_pystes_URB_Handle(py::object m)
 {
-    py::class_< URB_Handle,  UActorComponent   >("URB_Handle")
+    py::class_< URB_Handle,  UActorComponent   >(m, "URB_Handle")
         .def_readwrite("GrabbedComponent", &URB_Handle::GrabbedComponent)
         .def_readwrite("GrabbedBoneName", &URB_Handle::GrabbedBoneName)
         .def_readwrite("SceneIndex", &URB_Handle::SceneIndex)
@@ -28,6 +28,5 @@ void Export_pystes_URB_Handle()
         .def("SetLocation", &URB_Handle::SetLocation)
         .def("ReleaseComponent", &URB_Handle::ReleaseComponent)
         .def("GrabComponent", &URB_Handle::GrabComponent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

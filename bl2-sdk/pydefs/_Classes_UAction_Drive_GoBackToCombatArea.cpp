@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_Drive_GoBackToCombatArea()
+void Export_pystes_UAction_Drive_GoBackToCombatArea(py::object m)
 {
-    py::class_< UAction_Drive_GoBackToCombatArea,  UWillowActionSequencePawn   >("UAction_Drive_GoBackToCombatArea")
+    py::class_< UAction_Drive_GoBackToCombatArea,  UWillowActionSequencePawn   >(m, "UAction_Drive_GoBackToCombatArea")
         .def_readwrite("MinSpeedMultiplier", &UAction_Drive_GoBackToCombatArea::MinSpeedMultiplier)
         .def_readwrite("MaxSpeedMultiplier", &UAction_Drive_GoBackToCombatArea::MaxSpeedMultiplier)
         .def_readwrite("MyVehicle", &UAction_Drive_GoBackToCombatArea::MyVehicle)
@@ -14,6 +14,5 @@ void Export_pystes_UAction_Drive_GoBackToCombatArea()
         .def("eventStop", &UAction_Drive_GoBackToCombatArea::eventStop)
         .def("eventStart", &UAction_Drive_GoBackToCombatArea::eventStart)
         .def("eventCanRun", &UAction_Drive_GoBackToCombatArea::eventCanRun)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APortalTeleporter()
+void Export_pystes_APortalTeleporter(py::object m)
 {
-    py::class_< APortalTeleporter,  AActor   >("APortalTeleporter")
+    py::class_< APortalTeleporter,  AActor   >(m, "APortalTeleporter")
         .def_readwrite("SisterPortal", &APortalTeleporter::SisterPortal)
         .def_readwrite("TextureResolutionX", &APortalTeleporter::TextureResolutionX)
         .def_readwrite("TextureResolutionY", &APortalTeleporter::TextureResolutionY)
@@ -20,6 +20,5 @@ void Export_pystes_APortalTeleporter()
         .def("TransformVectorDir", &APortalTeleporter::TransformVectorDir)
         .def("TransformActor", &APortalTeleporter::TransformActor)
         .def("OnToggle", &ASceneCaptureActor::OnToggle)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

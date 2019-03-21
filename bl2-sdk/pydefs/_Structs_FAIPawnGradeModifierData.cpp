@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAIPawnGradeModifierData()
+void Export_pystes_FAIPawnGradeModifierData(py::object m)
 {
-    py::class_< FAIPawnGradeModifierData >("FAIPawnGradeModifierData")
+    py::class_< FAIPawnGradeModifierData >(m, "FAIPawnGradeModifierData")
         .def_readwrite("CustomAIPawnArchetype", &FAIPawnGradeModifierData::CustomAIPawnArchetype)
         .def_readwrite("DisplayName", &FAIPawnGradeModifierData::DisplayName)
         .def_readwrite("ExpLevel", &FAIPawnGradeModifierData::ExpLevel)

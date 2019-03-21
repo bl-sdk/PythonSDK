@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWwiseSoundGroup()
+void Export_pystes_AWwiseSoundGroup(py::object m)
 {
-    py::class_< AWwiseSoundGroup,  AKeypoint   >("AWwiseSoundGroup")
+    py::class_< AWwiseSoundGroup,  AKeypoint   >(m, "AWwiseSoundGroup")
         .def_readwrite("VfTable_IISpecialOcclusionProvider", &AWwiseSoundGroup::VfTable_IISpecialOcclusionProvider)
         .def_readwrite("VfTable_IISpecialOcclusionAccumulator", &AWwiseSoundGroup::VfTable_IISpecialOcclusionAccumulator)
         .def_readwrite("Members", &AWwiseSoundGroup::Members)
@@ -16,6 +16,5 @@ void Export_pystes_AWwiseSoundGroup()
         .def("GetOcclusionAmount", &AWwiseSoundGroup::GetOcclusionAmount)
         .def("SetAkSwitchObject", &AWwiseSoundGroup::SetAkSwitchObject)
         .def("SetRTPCObjectValue", &AWwiseSoundGroup::SetRTPCObjectValue)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowPlayerReplicationInfo()
+void Export_pystes_AWillowPlayerReplicationInfo(py::object m)
 {
-    py::class_< AWillowPlayerReplicationInfo,  APlayerReplicationInfo   >("AWillowPlayerReplicationInfo")
+    py::class_< AWillowPlayerReplicationInfo,  APlayerReplicationInfo   >(m, "AWillowPlayerReplicationInfo")
         .def_readwrite("VfTable_IINounAttributeProvider", &AWillowPlayerReplicationInfo::VfTable_IINounAttributeProvider)
         .def_readwrite("ExpLevel", &AWillowPlayerReplicationInfo::ExpLevel)
         .def_readwrite("ExpPointsNextLevelAt", &AWillowPlayerReplicationInfo::ExpPointsNextLevelAt)
@@ -89,6 +89,5 @@ void Export_pystes_AWillowPlayerReplicationInfo()
         .def("RunOnceClientinitialize", &AWillowPlayerReplicationInfo::RunOnceClientinitialize)
         .def("ClientInitialize", &AWillowPlayerReplicationInfo::ClientInitialize)
         .def("eventReplicatedEvent", &AWillowPlayerReplicationInfo::eventReplicatedEvent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

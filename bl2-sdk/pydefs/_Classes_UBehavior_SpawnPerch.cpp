@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SpawnPerch()
+void Export_pystes_UBehavior_SpawnPerch(py::object m)
 {
-    py::class_< UBehavior_SpawnPerch,  UBehaviorBase   >("UBehavior_SpawnPerch")
+    py::class_< UBehavior_SpawnPerch,  UBehaviorBase   >(m, "UBehavior_SpawnPerch")
         .def_readwrite("AttachPoint", &UBehavior_SpawnPerch::AttachPoint)
         .def_readwrite("PerchDef", &UBehavior_SpawnPerch::PerchDef)
         .def_readwrite("PerchLifetime", &UBehavior_SpawnPerch::PerchLifetime)
@@ -14,6 +14,5 @@ void Export_pystes_UBehavior_SpawnPerch()
         .def("StaticClass", &UBehavior_SpawnPerch::StaticClass, py::return_value_policy::reference)
         .def("PublishBehaviorOutput", &UBehavior_SpawnPerch::PublishBehaviorOutput)
         .def("ApplyBehaviorToContext", &UBehavior_SpawnPerch::ApplyBehaviorToContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

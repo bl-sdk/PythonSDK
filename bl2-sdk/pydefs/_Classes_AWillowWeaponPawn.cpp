@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowWeaponPawn()
+void Export_pystes_AWillowWeaponPawn(py::object m)
 {
-    py::class_< AWillowWeaponPawn,  AWillowVehicleBase   >("AWillowWeaponPawn")
+    py::class_< AWillowWeaponPawn,  AWillowVehicleBase   >(m, "AWillowWeaponPawn")
         .def_readwrite("MyVehicleWeapon", &AWillowWeaponPawn::MyVehicleWeapon)
         .def_readwrite("MyVehicle", &AWillowWeaponPawn::MyVehicle)
         .def_readwrite("MySeatIndex", &AWillowWeaponPawn::MySeatIndex)
@@ -69,6 +69,5 @@ void Export_pystes_AWillowWeaponPawn()
         .def("IsAttachedRiderSeat", &AWillowWeaponPawn::IsAttachedRiderSeat)
         .def("GetDriverController", &AWillowWeaponPawn::GetDriverController, py::return_value_policy::reference)
         .def("eventReplicatedEvent", &AWillowWeaponPawn::eventReplicatedEvent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

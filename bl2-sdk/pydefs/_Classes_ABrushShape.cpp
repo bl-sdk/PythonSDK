@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ABrushShape()
+void Export_pystes_ABrushShape(py::object m)
 {
-    py::class_< ABrushShape,  ABrush   >("ABrushShape")
+    py::class_< ABrushShape,  ABrush   >(m, "ABrushShape")
         .def("StaticClass", &ABrushShape::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

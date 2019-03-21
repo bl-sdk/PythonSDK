@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBucketStruct()
+void Export_pystes_FBucketStruct(py::object m)
 {
-    py::class_< FBucketStruct >("FBucketStruct")
+    py::class_< FBucketStruct >(m, "FBucketStruct")
         .def_readwrite("NdxToStartCheckFrom", &FBucketStruct::NdxToStartCheckFrom)
         .def_readwrite("DistanceSquared", &FBucketStruct::DistanceSquared)
         .def_readwrite("MaxLineChecksPerFrame", &FBucketStruct::MaxLineChecksPerFrame)

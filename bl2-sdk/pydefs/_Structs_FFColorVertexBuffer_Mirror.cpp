@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FFColorVertexBuffer_Mirror()
+void Export_pystes_FFColorVertexBuffer_Mirror(py::object m)
 {
-    py::class_< FFColorVertexBuffer_Mirror >("FFColorVertexBuffer_Mirror")
+    py::class_< FFColorVertexBuffer_Mirror >(m, "FFColorVertexBuffer_Mirror")
         .def_readwrite("VfTable", &FFColorVertexBuffer_Mirror::VfTable)
         .def_readwrite("VertexData", &FFColorVertexBuffer_Mirror::VertexData)
         .def_readwrite("Data", &FFColorVertexBuffer_Mirror::Data)

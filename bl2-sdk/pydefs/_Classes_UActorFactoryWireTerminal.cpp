@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActorFactoryWireTerminal()
+void Export_pystes_UActorFactoryWireTerminal(py::object m)
 {
-    py::class_< UActorFactoryWireTerminal,  UActorFactory   >("UActorFactoryWireTerminal")
+    py::class_< UActorFactoryWireTerminal,  UActorFactory   >(m, "UActorFactoryWireTerminal")
         .def("StaticClass", &UActorFactoryWireTerminal::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

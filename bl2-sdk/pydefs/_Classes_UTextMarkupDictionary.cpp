@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTextMarkupDictionary()
+void Export_pystes_UTextMarkupDictionary(py::object m)
 {
-    py::class_< UTextMarkupDictionary,  UGBXDefinition   >("UTextMarkupDictionary")
+    py::class_< UTextMarkupDictionary,  UGBXDefinition   >(m, "UTextMarkupDictionary")
         .def_readwrite("Dictionary", &UTextMarkupDictionary::Dictionary)
         .def("StaticClass", &UTextMarkupDictionary::StaticClass, py::return_value_policy::reference)
         .def("ResolveCustomMarkupString", &UTextMarkupDictionary::ResolveCustomMarkupString)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

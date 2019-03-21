@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ABlockingMeshCollectionActor()
+void Export_pystes_ABlockingMeshCollectionActor(py::object m)
 {
-    py::class_< ABlockingMeshCollectionActor,  AStaticMeshActorBase   >("ABlockingMeshCollectionActor")
+    py::class_< ABlockingMeshCollectionActor,  AStaticMeshActorBase   >(m, "ABlockingMeshCollectionActor")
         .def_readwrite("BlockingMeshComponents", &ABlockingMeshCollectionActor::BlockingMeshComponents)
         .def_readwrite("MaxBlockingMeshComponents", &ABlockingMeshCollectionActor::MaxBlockingMeshComponents)
         .def("StaticClass", &ABlockingMeshCollectionActor::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

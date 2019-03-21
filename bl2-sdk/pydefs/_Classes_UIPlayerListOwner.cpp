@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIPlayerListOwner()
+void Export_pystes_UIPlayerListOwner(py::object m)
 {
-    py::class_< UIPlayerListOwner,  UInterface   >("UIPlayerListOwner")
+    py::class_< UIPlayerListOwner,  UInterface   >(m, "UIPlayerListOwner")
         .def("StaticClass", &UIPlayerListOwner::StaticClass, py::return_value_policy::reference)
         .def("eventPlayUISound", &UIPlayerListOwner::eventPlayUISound)
         .def("GetPlayerDetailsMovieDef", &UIPlayerListOwner::GetPlayerDetailsMovieDef, py::return_value_policy::reference)
@@ -20,6 +20,5 @@ void Export_pystes_UIPlayerListOwner()
         .def("CanInvite", &UIPlayerListOwner::CanInvite)
         .def("CanJoin", &UIPlayerListOwner::CanJoin)
         .def("GetWPCOwner", &UIPlayerListOwner::GetWPCOwner, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

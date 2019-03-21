@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowVehicleFactory()
+void Export_pystes_AWillowVehicleFactory(py::object m)
 {
-    py::class_< AWillowVehicleFactory,  ANavigationPoint   >("AWillowVehicleFactory")
+    py::class_< AWillowVehicleFactory,  ANavigationPoint   >(m, "AWillowVehicleFactory")
         .def_readwrite("VehicleClass", &AWillowVehicleFactory::VehicleClass)
         .def_readwrite("VehicleArchetype", &AWillowVehicleFactory::VehicleArchetype)
         .def_readwrite("ChildVehicle", &AWillowVehicleFactory::ChildVehicle)
@@ -27,6 +27,5 @@ void Export_pystes_AWillowVehicleFactory()
         .def("SetHUDLocation", &AWillowVehicleFactory::SetHUDLocation)
         .def("eventSetInitialState", &AWillowVehicleFactory::eventSetInitialState)
         .def("PostBeginPlay", &AWillowVehicleFactory::PostBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

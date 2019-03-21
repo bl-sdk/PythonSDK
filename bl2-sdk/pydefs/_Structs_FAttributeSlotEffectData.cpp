@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAttributeSlotEffectData()
+void Export_pystes_FAttributeSlotEffectData(py::object m)
 {
-    py::class_< FAttributeSlotEffectData >("FAttributeSlotEffectData")
+    py::class_< FAttributeSlotEffectData >(m, "FAttributeSlotEffectData")
         .def_readwrite("SlotName", &FAttributeSlotEffectData::SlotName)
         .def_readwrite("AttributeToModify", &FAttributeSlotEffectData::AttributeToModify)
         .def_readwrite("ConstraintAttribute", &FAttributeSlotEffectData::ConstraintAttribute)

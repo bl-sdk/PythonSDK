@@ -3,13 +3,12 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowClanDefinition()
+void Export_pystes_UWillowClanDefinition(py::object m)
 {
-    py::class_< UWillowClanDefinition,  UGBXDefinition   >("UWillowClanDefinition")
+    py::class_< UWillowClanDefinition,  UGBXDefinition   >(m, "UWillowClanDefinition")
         .def_readwrite("MaterialMap", &UWillowClanDefinition::MaterialMap)
         .def_readwrite("SwitchData", &UWillowClanDefinition::SwitchData)
         .def("StaticClass", &UWillowClanDefinition::StaticClass, py::return_value_policy::reference)
         .def("ChangeObjectMaterials", &UWillowClanDefinition::ChangeObjectMaterials)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FExternalTexture()
+void Export_pystes_FExternalTexture(py::object m)
 {
-    py::class_< FExternalTexture >("FExternalTexture")
+    py::class_< FExternalTexture >(m, "FExternalTexture")
         .def_readwrite("Resource", &FExternalTexture::Resource)
         .def_readwrite("Texture", &FExternalTexture::Texture)
   ;

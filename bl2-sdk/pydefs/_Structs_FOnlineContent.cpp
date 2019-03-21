@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FOnlineContent()
+void Export_pystes_FOnlineContent(py::object m)
 {
-    py::class_< FOnlineContent >("FOnlineContent")
+    py::class_< FOnlineContent >(m, "FOnlineContent")
         .def_readwrite("ContentType", &FOnlineContent::ContentType)
         .def_readwrite("UserIndex", &FOnlineContent::UserIndex)
         .def_readwrite("DeviceID", &FOnlineContent::DeviceID)

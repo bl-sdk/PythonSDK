@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDuelTeamPair()
+void Export_pystes_FDuelTeamPair(py::object m)
 {
-    py::class_< FDuelTeamPair >("FDuelTeamPair")
+    py::class_< FDuelTeamPair >(m, "FDuelTeamPair")
         .def_readwrite("ChallengerTeam", &FDuelTeamPair::ChallengerTeam)
         .def_readwrite("CompetitorTeam", &FDuelTeamPair::CompetitorTeam)
   ;

@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerChallengeListDefinition()
+void Export_pystes_UPlayerChallengeListDefinition(py::object m)
 {
-    py::class_< UPlayerChallengeListDefinition,  UGBXDefinition   >("UPlayerChallengeListDefinition")
+    py::class_< UPlayerChallengeListDefinition,  UGBXDefinition   >(m, "UPlayerChallengeListDefinition")
         .def_readwrite("PlayerChallenges", &UPlayerChallengeListDefinition::PlayerChallenges)
         .def("StaticClass", &UPlayerChallengeListDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

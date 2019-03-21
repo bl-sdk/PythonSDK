@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFastTravelStationsListOrder()
+void Export_pystes_UFastTravelStationsListOrder(py::object m)
 {
-    py::class_< UFastTravelStationsListOrder,  UGBXDefinition   >("UFastTravelStationsListOrder")
+    py::class_< UFastTravelStationsListOrder,  UGBXDefinition   >(m, "UFastTravelStationsListOrder")
         .def_readwrite("FastTravelStationOrderList", &UFastTravelStationsListOrder::FastTravelStationOrderList)
         .def_readwrite("DlcExpansion", &UFastTravelStationsListOrder::DlcExpansion)
         .def("StaticClass", &UFastTravelStationsListOrder::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

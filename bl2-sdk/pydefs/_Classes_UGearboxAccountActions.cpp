@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxAccountActions()
+void Export_pystes_UGearboxAccountActions(py::object m)
 {
-    py::class_< UGearboxAccountActions,  UObject   >("UGearboxAccountActions")
+    py::class_< UGearboxAccountActions,  UObject   >(m, "UGearboxAccountActions")
         .def_readwrite("CurrentConsumeCount", &UGearboxAccountActions::CurrentConsumeCount)
         .def_readwrite("CurrentControllerId", &UGearboxAccountActions::CurrentControllerId)
         .def_readwrite("CurrentEntitlement", &UGearboxAccountActions::CurrentEntitlement)
@@ -35,6 +35,5 @@ void Export_pystes_UGearboxAccountActions()
         .def("OnResetPasswordGearboxAccount", &UGearboxAccountActions::OnResetPasswordGearboxAccount)
         .def("OnSignUpGearboxAccount", &UGearboxAccountActions::OnSignUpGearboxAccount)
         .def("OnSignInGearboxAccount", &UGearboxAccountActions::OnSignInGearboxAccount)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

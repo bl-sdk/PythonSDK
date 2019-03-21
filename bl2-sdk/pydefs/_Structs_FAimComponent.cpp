@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAimComponent()
+void Export_pystes_FAimComponent(py::object m)
 {
-    py::class_< FAimComponent >("FAimComponent")
+    py::class_< FAimComponent >(m, "FAimComponent")
         .def_readwrite("BoneName", &FAimComponent::BoneName)
         .def_readonly("UnknownData00", &FAimComponent::UnknownData00)
         .def_readwrite("LU", &FAimComponent::LU)

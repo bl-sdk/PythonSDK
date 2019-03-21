@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_FlyThroughHasEnded()
+void Export_pystes_USeqAct_FlyThroughHasEnded(py::object m)
 {
-    py::class_< USeqAct_FlyThroughHasEnded,  USequenceAction   >("USeqAct_FlyThroughHasEnded")
+    py::class_< USeqAct_FlyThroughHasEnded,  USequenceAction   >(m, "USeqAct_FlyThroughHasEnded")
         .def("StaticClass", &USeqAct_FlyThroughHasEnded::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

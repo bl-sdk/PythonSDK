@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIDataProvider_MenuItem()
+void Export_pystes_UUIDataProvider_MenuItem(py::object m)
 {
-    py::class_< UUIDataProvider_MenuItem,  UUIResourceDataProvider   >("UUIDataProvider_MenuItem")
+    py::class_< UUIDataProvider_MenuItem,  UUIResourceDataProvider   >(m, "UUIDataProvider_MenuItem")
         .def_readwrite("OptionType", &UUIDataProvider_MenuItem::OptionType)
         .def_readwrite("OptionSet", &UUIDataProvider_MenuItem::OptionSet)
         .def_readwrite("DataStoreMarkup", &UUIDataProvider_MenuItem::DataStoreMarkup)
@@ -20,6 +20,5 @@ void Export_pystes_UUIDataProvider_MenuItem()
         .def_readwrite("IniName", &UUIDataProvider_MenuItem::IniName)
         .def("StaticClass", &UUIDataProvider_MenuItem::StaticClass, py::return_value_policy::reference)
         .def("IsFiltered", &UUIDataProvider_MenuItem::IsFiltered)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

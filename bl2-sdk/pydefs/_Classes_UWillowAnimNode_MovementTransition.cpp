@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAnimNode_MovementTransition()
+void Export_pystes_UWillowAnimNode_MovementTransition(py::object m)
 {
-    py::class_< UWillowAnimNode_MovementTransition,  UAnimNodeBlendList   >("UWillowAnimNode_MovementTransition")
+    py::class_< UWillowAnimNode_MovementTransition,  UAnimNodeBlendList   >(m, "UWillowAnimNode_MovementTransition")
         .def_readwrite("LaunchBlendTime", &UWillowAnimNode_MovementTransition::LaunchBlendTime)
         .def_readwrite("PostLaunchBlendTime", &UWillowAnimNode_MovementTransition::PostLaunchBlendTime)
         .def_readwrite("StoppingBlendTime", &UWillowAnimNode_MovementTransition::StoppingBlendTime)
@@ -17,6 +17,5 @@ void Export_pystes_UWillowAnimNode_MovementTransition()
         .def_readwrite("CurrentLaunchDelayTime", &UWillowAnimNode_MovementTransition::CurrentLaunchDelayTime)
         .def("StaticClass", &UWillowAnimNode_MovementTransition::StaticClass, py::return_value_policy::reference)
         .def("NodeIsIdle", &UWillowAnimNode_MovementTransition::NodeIsIdle)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

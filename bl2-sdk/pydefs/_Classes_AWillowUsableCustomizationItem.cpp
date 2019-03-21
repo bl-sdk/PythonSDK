@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowUsableCustomizationItem()
+void Export_pystes_AWillowUsableCustomizationItem(py::object m)
 {
-    py::class_< AWillowUsableCustomizationItem,  AWillowUsableItem   >("AWillowUsableCustomizationItem")
+    py::class_< AWillowUsableCustomizationItem,  AWillowUsableItem   >(m, "AWillowUsableCustomizationItem")
         .def("StaticClass", &AWillowUsableCustomizationItem::StaticClass, py::return_value_policy::reference)
         .def("IsUsefulToThisPlayer", &AWillowUsableCustomizationItem::IsUsefulToThisPlayer)
         .def("GetItemCardTopSectionString", &AWillowUsableCustomizationItem::GetItemCardTopSectionString)
@@ -16,6 +16,5 @@ void Export_pystes_AWillowUsableCustomizationItem()
         .def("TryConsume", &AWillowUsableCustomizationItem::TryConsume)
         .def("IsConsumable", &AWillowUsableCustomizationItem::IsConsumable)
         .def("ValidateDefinition", &AWillowUsableCustomizationItem::ValidateDefinition)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FEnemyBreadCrumbStruct()
+void Export_pystes_FEnemyBreadCrumbStruct(py::object m)
 {
-    py::class_< FEnemyBreadCrumbStruct >("FEnemyBreadCrumbStruct")
+    py::class_< FEnemyBreadCrumbStruct >(m, "FEnemyBreadCrumbStruct")
         .def_readwrite("pos", &FEnemyBreadCrumbStruct::pos)
         .def_readwrite("CombatArea", &FEnemyBreadCrumbStruct::CombatArea)
   ;

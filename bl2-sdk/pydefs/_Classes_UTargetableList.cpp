@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTargetableList()
+void Export_pystes_UTargetableList(py::object m)
 {
-    py::class_< UTargetableList,  UObject   >("UTargetableList")
+    py::class_< UTargetableList,  UObject   >(m, "UTargetableList")
         .def_readwrite("TargetableAllegianceMap", &UTargetableList::TargetableAllegianceMap)
         .def_readwrite("FullTargetableList", &UTargetableList::FullTargetableList)
         .def("StaticClass", &UTargetableList::StaticClass, py::return_value_policy::reference)
@@ -15,6 +15,5 @@ void Export_pystes_UTargetableList()
         .def("StartSearch", &UTargetableList::StartSearch, py::return_value_policy::reference)
         .def("UnRegisterTargetable", &UTargetableList::UnRegisterTargetable)
         .def("RegisterTargetable", &UTargetableList::RegisterTargetable)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USkelControlWheel()
+void Export_pystes_USkelControlWheel(py::object m)
 {
-    py::class_< USkelControlWheel,  USkelControlBase   >("USkelControlWheel")
+    py::class_< USkelControlWheel,  USkelControlBase   >(m, "USkelControlWheel")
         .def_readwrite("WheelDisplacement", &USkelControlWheel::WheelDisplacement)
         .def_readwrite("WheelMaxRenderDisplacement", &USkelControlWheel::WheelMaxRenderDisplacement)
         .def_readwrite("WheelRoll", &USkelControlWheel::WheelRoll)
@@ -19,6 +19,5 @@ void Export_pystes_USkelControlWheel()
         .def_readwrite("BoneRotation", &USkelControlSingleBone::BoneRotation)
         .def_readwrite("RotationSpaceBoneName", &USkelControlSingleBone::RotationSpaceBoneName)
         .def("StaticClass", &USkelControlWheel::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

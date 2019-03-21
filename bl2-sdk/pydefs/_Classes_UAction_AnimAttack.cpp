@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_AnimAttack()
+void Export_pystes_UAction_AnimAttack(py::object m)
 {
-    py::class_< UAction_AnimAttack,  UAction_Burrow   >("UAction_AnimAttack")
+    py::class_< UAction_AnimAttack,  UAction_Burrow   >(m, "UAction_AnimAttack")
         .def_readwrite("AimType", &UAction_AnimAttack::AimType)
         .def_readwrite("VisionAngle", &UAction_AnimAttack::VisionAngle)
         .def_readwrite("AttackAnim", &UAction_AnimAttack::AttackAnim)
@@ -50,6 +50,5 @@ void Export_pystes_UAction_AnimAttack()
         .def("TargetIsDownedPlayer", &UAction_GenericAttack::TargetIsDownedPlayer)
         .def("eventCanRun", &UAction_GenericAttack::eventCanRun)
         .def("InitData", &UAction_GenericAttack::InitData)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

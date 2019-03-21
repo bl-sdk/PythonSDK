@@ -3,13 +3,12 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPopulationFactoryGeneric()
+void Export_pystes_UPopulationFactoryGeneric(py::object m)
 {
-    py::class_< UPopulationFactoryGeneric,  UPopulationFactory   >("UPopulationFactoryGeneric")
+    py::class_< UPopulationFactoryGeneric,  UPopulationFactory   >(m, "UPopulationFactoryGeneric")
         .def_readwrite("ActorArchetype", &UPopulationFactoryGeneric::ActorArchetype)
         .def("StaticClass", &UPopulationFactoryGeneric::StaticClass, py::return_value_policy::reference)
         .def("eventCreatePopulationActor", &UPopulationFactoryGeneric::eventCreatePopulationActor, py::return_value_policy::reference)
         .def("eventGetSpawnVisibilityBounds", &UPopulationFactoryGeneric::eventGetSpawnVisibilityBounds)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

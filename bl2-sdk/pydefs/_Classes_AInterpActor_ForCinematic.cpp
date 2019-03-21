@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AInterpActor_ForCinematic()
+void Export_pystes_AInterpActor_ForCinematic(py::object m)
 {
-    py::class_< AInterpActor_ForCinematic,  AInterpActor   >("AInterpActor_ForCinematic")
+    py::class_< AInterpActor_ForCinematic,  AInterpActor   >(m, "AInterpActor_ForCinematic")
         .def("StaticClass", &AInterpActor_ForCinematic::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

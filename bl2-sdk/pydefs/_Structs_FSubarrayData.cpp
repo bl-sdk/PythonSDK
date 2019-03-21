@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSubarrayData()
+void Export_pystes_FSubarrayData(py::object m)
 {
-    py::class_< FSubarrayData >("FSubarrayData")
+    py::class_< FSubarrayData >(m, "FSubarrayData")
         .def_readwrite("ArrayIndexAndLength", &FSubarrayData::ArrayIndexAndLength)
   ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMeshBeacon()
+void Export_pystes_UMeshBeacon(py::object m)
 {
-    py::class_< UMeshBeacon,  UObject   >("UMeshBeacon")
+    py::class_< UMeshBeacon,  UObject   >(m, "UMeshBeacon")
         .def_readwrite("VfTable_FTickableObject", &UMeshBeacon::VfTable_FTickableObject)
         .def_readwrite("MeshBeaconPort", &UMeshBeacon::MeshBeaconPort)
         .def_readwrite("Socket", &UMeshBeacon::Socket)
@@ -21,6 +21,5 @@ void Export_pystes_UMeshBeacon()
         .def_readwrite("MaxBandwidthHistoryEntries", &UMeshBeacon::MaxBandwidthHistoryEntries)
         .def("StaticClass", &UMeshBeacon::StaticClass, py::return_value_policy::reference)
         .def("eventDestroyBeacon", &UMeshBeacon::eventDestroyBeacon)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

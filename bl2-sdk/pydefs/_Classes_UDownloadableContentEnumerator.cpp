@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDownloadableContentEnumerator()
+void Export_pystes_UDownloadableContentEnumerator(py::object m)
 {
-    py::class_< UDownloadableContentEnumerator,  UObject   >("UDownloadableContentEnumerator")
+    py::class_< UDownloadableContentEnumerator,  UObject   >(m, "UDownloadableContentEnumerator")
         .def_readwrite("DLCBundles", &UDownloadableContentEnumerator::DLCBundles)
         .def_readwrite("NamedDLCBundles", &UDownloadableContentEnumerator::NamedDLCBundles)
         .def_readwrite("NamedDLCCompatibilityBundles", &UDownloadableContentEnumerator::NamedDLCCompatibilityBundles)
@@ -23,6 +23,5 @@ void Export_pystes_UDownloadableContentEnumerator()
         .def("AddFindDLCDelegate", &UDownloadableContentEnumerator::AddFindDLCDelegate)
         .def("OnFindDLCComplete", &UDownloadableContentEnumerator::OnFindDLCComplete)
         .def("FindDLC", &UDownloadableContentEnumerator::FindDLC)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

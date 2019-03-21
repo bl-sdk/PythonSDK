@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTrailSample()
+void Export_pystes_FTrailSample(py::object m)
 {
-    py::class_< FTrailSample >("FTrailSample")
+    py::class_< FTrailSample >(m, "FTrailSample")
         .def_readwrite("RelativeTime", &FTrailSample::RelativeTime)
         .def_readwrite("FirstEdgeSample", &FTrailSample::FirstEdgeSample)
         .def_readwrite("ControlPointSample", &FTrailSample::ControlPointSample)

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SpawnTemporalField()
+void Export_pystes_UBehavior_SpawnTemporalField(py::object m)
 {
-    py::class_< UBehavior_SpawnTemporalField,  UBehaviorBase   >("UBehavior_SpawnTemporalField")
+    py::class_< UBehavior_SpawnTemporalField,  UBehaviorBase   >(m, "UBehavior_SpawnTemporalField")
         .def_readwrite("TemporalField", &UBehavior_SpawnTemporalField::TemporalField)
         .def_readwrite("LifeSpan", &UBehavior_SpawnTemporalField::LifeSpan)
         .def_readwrite("LocationContext", &UBehavior_SpawnTemporalField::LocationContext)
@@ -15,6 +15,5 @@ void Export_pystes_UBehavior_SpawnTemporalField()
         .def("StaticClass", &UBehavior_SpawnTemporalField::StaticClass, py::return_value_policy::reference)
         .def("GetAttachmentLocation", &UBehavior_SpawnTemporalField::GetAttachmentLocation)
         .def("ApplyBehaviorToContext", &UBehavior_SpawnTemporalField::ApplyBehaviorToContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

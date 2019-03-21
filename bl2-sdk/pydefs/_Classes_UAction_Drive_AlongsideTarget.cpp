@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_Drive_AlongsideTarget()
+void Export_pystes_UAction_Drive_AlongsideTarget(py::object m)
 {
-    py::class_< UAction_Drive_AlongsideTarget,  UWillowActionSequencePawn   >("UAction_Drive_AlongsideTarget")
+    py::class_< UAction_Drive_AlongsideTarget,  UWillowActionSequencePawn   >(m, "UAction_Drive_AlongsideTarget")
         .def_readwrite("IdealDistanceFromTarget", &UAction_Drive_AlongsideTarget::IdealDistanceFromTarget)
         .def_readwrite("IdealDistanceAheadOfTarget", &UAction_Drive_AlongsideTarget::IdealDistanceAheadOfTarget)
         .def_readwrite("MinSpeedMultiplierWhenAheadOfTarget", &UAction_Drive_AlongsideTarget::MinSpeedMultiplierWhenAheadOfTarget)
@@ -54,6 +54,5 @@ void Export_pystes_UAction_Drive_AlongsideTarget()
         .def("eventStart", &UAction_Drive_Pursuit::eventStart)
         .def("eventCanRun", &UAction_Drive_Pursuit::eventCanRun)
         .def("ComputeCurrentState", &UAction_Drive_Pursuit::ComputeCurrentState)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

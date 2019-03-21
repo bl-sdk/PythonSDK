@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIChangeBehaviorSetStateBehavior()
+void Export_pystes_UIChangeBehaviorSetStateBehavior(py::object m)
 {
-    py::class_< UIChangeBehaviorSetStateBehavior,  UInterface   >("UIChangeBehaviorSetStateBehavior")
+    py::class_< UIChangeBehaviorSetStateBehavior,  UInterface   >(m, "UIChangeBehaviorSetStateBehavior")
         .def("StaticClass", &UIChangeBehaviorSetStateBehavior::StaticClass, py::return_value_policy::reference)
         .def("Behavior_ChangeBehaviorSet", &UIChangeBehaviorSetStateBehavior::Behavior_ChangeBehaviorSet)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

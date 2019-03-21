@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGFxLobbyTools()
+void Export_pystes_UWillowGFxLobbyTools(py::object m)
 {
-    py::class_< UWillowGFxLobbyTools,  UObject   >("UWillowGFxLobbyTools")
+    py::class_< UWillowGFxLobbyTools,  UObject   >(m, "UWillowGFxLobbyTools")
         .def_readwrite("Movie", &UWillowGFxLobbyTools::Movie)
         .def_readwrite("InputMenuTag", &UWillowGFxLobbyTools::InputMenuTag)
         .def_readwrite("InputPlayerID", &UWillowGFxLobbyTools::InputPlayerID)
@@ -38,6 +38,5 @@ void Export_pystes_UWillowGFxLobbyTools()
         .def("inCloseAllMenus", &UWillowGFxLobbyTools::inCloseAllMenus)
         .def("inFocus", &UWillowGFxLobbyTools::inFocus)
         .def("Init", &UWillowGFxLobbyTools::Init)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

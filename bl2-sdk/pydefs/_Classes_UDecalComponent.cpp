@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDecalComponent()
+void Export_pystes_UDecalComponent(py::object m)
 {
-    py::class_< UDecalComponent,  UPrimitiveComponent   >("UDecalComponent")
+    py::class_< UDecalComponent,  UPrimitiveComponent   >(m, "UDecalComponent")
         .def_readwrite("DecalMaterial", &UDecalComponent::DecalMaterial)
         .def_readwrite("Width", &UDecalComponent::Width)
         .def_readwrite("Height", &UDecalComponent::Height)
@@ -52,6 +52,5 @@ void Export_pystes_UDecalComponent()
         .def("GetDecalMaterial", &UDecalComponent::GetDecalMaterial, py::return_value_policy::reference)
         .def("SetDecalMaterial", &UDecalComponent::SetDecalMaterial)
         .def("ResetToDefaults", &UDecalComponent::ResetToDefaults)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

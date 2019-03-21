@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UApexAsset()
+void Export_pystes_UApexAsset(py::object m)
 {
-    py::class_< UApexAsset,  UObject   >("UApexAsset")
+    py::class_< UApexAsset,  UObject   >(m, "UApexAsset")
         .def_readwrite("OriginalApexName", &UApexAsset::OriginalApexName)
         .def_readwrite("ApexComponents", &UApexAsset::ApexComponents)
         .def("StaticClass", &UApexAsset::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

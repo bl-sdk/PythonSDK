@@ -4,6 +4,7 @@
 #define WIN32_LEAN_AND_MEAN
 
 #include <pybind11/pybind11.h>
+#include <pybind11/embed.h>
 
 #include <windows.h>
 #include <stdio.h>

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleBeamTarget()
+void Export_pystes_UParticleModuleBeamTarget(py::object m)
 {
-    py::class_< UParticleModuleBeamTarget,  UParticleModuleBeamBase   >("UParticleModuleBeamTarget")
+    py::class_< UParticleModuleBeamTarget,  UParticleModuleBeamBase   >(m, "UParticleModuleBeamTarget")
         .def_readwrite("TargetMethod", &UParticleModuleBeamTarget::TargetMethod)
         .def_readwrite("TargetTangentMethod", &UParticleModuleBeamTarget::TargetTangentMethod)
         .def_readwrite("TargetName", &UParticleModuleBeamTarget::TargetName)
@@ -14,6 +14,5 @@ void Export_pystes_UParticleModuleBeamTarget()
         .def_readwrite("TargetStrength", &UParticleModuleBeamTarget::TargetStrength)
         .def_readwrite("LockRadius", &UParticleModuleBeamTarget::LockRadius)
         .def("StaticClass", &UParticleModuleBeamTarget::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

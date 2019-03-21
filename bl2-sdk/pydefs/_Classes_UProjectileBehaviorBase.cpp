@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UProjectileBehaviorBase()
+void Export_pystes_UProjectileBehaviorBase(py::object m)
 {
-    py::class_< UProjectileBehaviorBase,  UBehaviorBase   >("UProjectileBehaviorBase")
+    py::class_< UProjectileBehaviorBase,  UBehaviorBase   >(m, "UProjectileBehaviorBase")
         .def("StaticClass", &UProjectileBehaviorBase::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

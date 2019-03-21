@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUBMGraveyardSaveData()
+void Export_pystes_UUBMGraveyardSaveData(py::object m)
 {
-    py::class_< UUBMGraveyardSaveData,  UObject   >("UUBMGraveyardSaveData")
+    py::class_< UUBMGraveyardSaveData,  UObject   >(m, "UUBMGraveyardSaveData")
         .def_readwrite("TombstoneList", &UUBMGraveyardSaveData::TombstoneList)
         .def("StaticClass", &UUBMGraveyardSaveData::StaticClass, py::return_value_policy::reference)
         .def("GetFormattedChallengesComplete", &UUBMGraveyardSaveData::GetFormattedChallengesComplete)
@@ -14,6 +14,5 @@ void Export_pystes_UUBMGraveyardSaveData()
         .def("GetFormattedTotalTimePlayed", &UUBMGraveyardSaveData::GetFormattedTotalTimePlayed)
         .def("GetLatestTombstoneData", &UUBMGraveyardSaveData::GetLatestTombstoneData)
         .def("AddTombstone", &UUBMGraveyardSaveData::AddTombstone)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

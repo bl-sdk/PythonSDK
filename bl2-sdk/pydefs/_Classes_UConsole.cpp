@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UConsole()
+void Export_pystes_UConsole(py::object m)
 {
-    py::class_< UConsole,  UInteraction   >("UConsole")
+    py::class_< UConsole,  UInteraction   >(m, "UConsole")
         .def_readwrite("ConsoleTargetPlayer", &UConsole::ConsoleTargetPlayer)
         .def_readwrite("DefaultTexture_Black", &UConsole::DefaultTexture_Black)
         .def_readwrite("DefaultTexture_White", &UConsole::DefaultTexture_White)
@@ -45,6 +45,5 @@ void Export_pystes_UConsole()
         .def("SetCursorPos", &UConsole::SetCursorPos)
         .def("SetInputText", &UConsole::SetInputText)
         .def("Initialized", &UConsole::Initialized)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

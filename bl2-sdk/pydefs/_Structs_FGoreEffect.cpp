@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGoreEffect()
+void Export_pystes_FGoreEffect(py::object m)
 {
-    py::class_< FGoreEffect >("FGoreEffect")
+    py::class_< FGoreEffect >(m, "FGoreEffect")
         .def_readwrite("HitRegion", &FGoreEffect::HitRegion)
         .def_readwrite("GoreDataIndex", &FGoreEffect::GoreDataIndex)
         .def_readwrite("InstigatedBy", &FGoreEffect::InstigatedBy)

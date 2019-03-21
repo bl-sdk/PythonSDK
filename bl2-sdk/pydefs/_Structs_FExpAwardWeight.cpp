@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FExpAwardWeight()
+void Export_pystes_FExpAwardWeight(py::object m)
 {
-    py::class_< FExpAwardWeight >("FExpAwardWeight")
+    py::class_< FExpAwardWeight >(m, "FExpAwardWeight")
         .def_readwrite("Players", &FExpAwardWeight::Players)
         .def_readwrite("KillerExpBonus", &FExpAwardWeight::KillerExpBonus)
         .def_readwrite("ExpWeight", &FExpAwardWeight::ExpWeight)

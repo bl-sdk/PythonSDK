@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULANServerBrowserGFxObject()
+void Export_pystes_ULANServerBrowserGFxObject(py::object m)
 {
-    py::class_< ULANServerBrowserGFxObject,  UGFxObject   >("ULANServerBrowserGFxObject")
+    py::class_< ULANServerBrowserGFxObject,  UGFxObject   >(m, "ULANServerBrowserGFxObject")
         .def("StaticClass", &ULANServerBrowserGFxObject::StaticClass, py::return_value_policy::reference)
         .def("SetSortDirectionButtonLabel", &ULANServerBrowserGFxObject::SetSortDirectionButtonLabel)
         .def("SetSortTypeButtonLabel", &ULANServerBrowserGFxObject::SetSortTypeButtonLabel)
@@ -16,6 +16,5 @@ void Export_pystes_ULANServerBrowserGFxObject()
         .def("EndConfigureServerList", &ULANServerBrowserGFxObject::EndConfigureServerList)
         .def("BeginConfigureServerList", &ULANServerBrowserGFxObject::BeginConfigureServerList)
         .def("AddServerListEntry", &ULANServerBrowserGFxObject::AddServerListEntry)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

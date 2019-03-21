@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSkillEventResponseData()
+void Export_pystes_FSkillEventResponseData(py::object m)
 {
-    py::class_< FSkillEventResponseData >("FSkillEventResponseData")
+    py::class_< FSkillEventResponseData >(m, "FSkillEventResponseData")
         .def_readwrite("EventType", &FSkillEventResponseData::EventType)
         .def_readwrite("Action", &FSkillEventResponseData::Action)
   ;

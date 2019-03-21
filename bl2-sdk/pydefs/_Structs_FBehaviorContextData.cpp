@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBehaviorContextData()
+void Export_pystes_FBehaviorContextData(py::object m)
 {
-    py::class_< FBehaviorContextData >("FBehaviorContextData")
+    py::class_< FBehaviorContextData >(m, "FBehaviorContextData")
         .def_readwrite("InstancedDataContextName", &FBehaviorContextData::InstancedDataContextName)
         .def_readwrite("ContextObject", &FBehaviorContextData::ContextObject)
         .def_readwrite("BehaviorContext", &FBehaviorContextData::BehaviorContext)

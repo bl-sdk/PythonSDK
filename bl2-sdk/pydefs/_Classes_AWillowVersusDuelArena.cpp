@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowVersusDuelArena()
+void Export_pystes_AWillowVersusDuelArena(py::object m)
 {
-    py::class_< AWillowVersusDuelArena,  AActor   >("AWillowVersusDuelArena")
+    py::class_< AWillowVersusDuelArena,  AActor   >(m, "AWillowVersusDuelArena")
         .def_readwrite("DuelInfo", &AWillowVersusDuelArena::DuelInfo)
         .def_readwrite("ArenaIndex", &AWillowVersusDuelArena::ArenaIndex)
         .def_readwrite("Challenger", &AWillowVersusDuelArena::Challenger)
@@ -26,6 +26,5 @@ void Export_pystes_AWillowVersusDuelArena()
         .def("eventCreateDuelArena", &AWillowVersusDuelArena::eventCreateDuelArena)
         .def("InitializeDuelArena", &AWillowVersusDuelArena::InitializeDuelArena)
         .def("ReplicatedEvent", &AWillowVersusDuelArena::ReplicatedEvent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

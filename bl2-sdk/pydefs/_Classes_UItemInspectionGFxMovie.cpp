@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UItemInspectionGFxMovie()
+void Export_pystes_UItemInspectionGFxMovie(py::object m)
 {
-    py::class_< UItemInspectionGFxMovie,  UWillowGFxMovie3D   >("UItemInspectionGFxMovie")
+    py::class_< UItemInspectionGFxMovie,  UWillowGFxMovie3D   >(m, "UItemInspectionGFxMovie")
         .def_readwrite("MyInspDef", &UItemInspectionGFxMovie::MyInspDef)
         .def_readwrite("StartTime", &UItemInspectionGFxMovie::StartTime)
         .def_readwrite("MyInspectionMesh", &UItemInspectionGFxMovie::MyInspectionMesh)
@@ -64,6 +64,5 @@ void Export_pystes_UItemInspectionGFxMovie()
         .def("HandleInputKey", &UItemInspectionGFxMovie::HandleInputKey)
         .def("eventUpdateFrameForAspectRatio", &UItemInspectionGFxMovie::eventUpdateFrameForAspectRatio)
         .def("eventStart", &UItemInspectionGFxMovie::eventStart)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

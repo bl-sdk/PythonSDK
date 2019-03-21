@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCustomizationDefinition()
+void Export_pystes_UCustomizationDefinition(py::object m)
 {
-    py::class_< UCustomizationDefinition,  UGBXDefinition   >("UCustomizationDefinition")
+    py::class_< UCustomizationDefinition,  UGBXDefinition   >(m, "UCustomizationDefinition")
         .def_readwrite("VfTable_IIDlcLicensableObject", &UCustomizationDefinition::VfTable_IIDlcLicensableObject)
         .def_readwrite("CustomizationName", &UCustomizationDefinition::CustomizationName)
         .def_readwrite("CustomizationType", &UCustomizationDefinition::CustomizationType)
@@ -30,6 +30,5 @@ void Export_pystes_UCustomizationDefinition()
         .def("GetAvailableAndUnauthorizedCustomizationsForPlayer", &UCustomizationDefinition::GetAvailableAndUnauthorizedCustomizationsForPlayer)
         .def("GetAvailableCustomizationsForVehicle", &UCustomizationDefinition::GetAvailableCustomizationsForVehicle)
         .def("GetAvailableCustomizationsForPlayer", &UCustomizationDefinition::GetAvailableCustomizationsForPlayer)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

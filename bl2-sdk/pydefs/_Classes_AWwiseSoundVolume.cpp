@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWwiseSoundVolume()
+void Export_pystes_AWwiseSoundVolume(py::object m)
 {
-    py::class_< AWwiseSoundVolume,  AVolume   >("AWwiseSoundVolume")
+    py::class_< AWwiseSoundVolume,  AVolume   >(m, "AWwiseSoundVolume")
         .def_readwrite("VfTable_IIAkEnvironmentalEffectProvider", &AWwiseSoundVolume::VfTable_IIAkEnvironmentalEffectProvider)
         .def_readwrite("VfTable_IISpecialOcclusionProvider", &AWwiseSoundVolume::VfTable_IISpecialOcclusionProvider)
         .def_readwrite("VfTable_IISpecialOcclusionAccumulator", &AWwiseSoundVolume::VfTable_IISpecialOcclusionAccumulator)
@@ -42,6 +42,5 @@ void Export_pystes_AWwiseSoundVolume()
         .def("UpdateAkComponentPosition", &AWwiseSoundVolume::UpdateAkComponentPosition)
         .def("GetEnvironmentalEffectsForLocation", &AWwiseSoundVolume::GetEnvironmentalEffectsForLocation)
         .def("CalculateFacePlanes", &AWwiseSoundVolume::CalculateFacePlanes)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

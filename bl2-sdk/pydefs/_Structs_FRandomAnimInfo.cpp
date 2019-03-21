@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRandomAnimInfo()
+void Export_pystes_FRandomAnimInfo(py::object m)
 {
-    py::class_< FRandomAnimInfo >("FRandomAnimInfo")
+    py::class_< FRandomAnimInfo >(m, "FRandomAnimInfo")
         .def_readwrite("Chance", &FRandomAnimInfo::Chance)
         .def_readwrite("LoopCountMin", &FRandomAnimInfo::LoopCountMin)
         .def_readwrite("LoopCountMax", &FRandomAnimInfo::LoopCountMax)

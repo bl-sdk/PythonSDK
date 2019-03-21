@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowScrollingListDataProviderLobby()
+void Export_pystes_UWillowScrollingListDataProviderLobby(py::object m)
 {
-    py::class_< UWillowScrollingListDataProviderLobby,  UWillowScrollingListDataProviderBase   >("UWillowScrollingListDataProviderLobby")
+    py::class_< UWillowScrollingListDataProviderLobby,  UWillowScrollingListDataProviderBase   >(m, "UWillowScrollingListDataProviderLobby")
         .def("StaticClass", &UWillowScrollingListDataProviderLobby::StaticClass, py::return_value_policy::reference)
         .def("Populate", &UWillowScrollingListDataProviderLobby::Populate)
         .def("HandleClick", &UWillowScrollingListDataProviderLobby::HandleClick)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

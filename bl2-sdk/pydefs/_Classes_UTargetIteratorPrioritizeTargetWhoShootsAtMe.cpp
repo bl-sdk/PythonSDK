@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTargetIteratorPrioritizeTargetWhoShootsAtMe()
+void Export_pystes_UTargetIteratorPrioritizeTargetWhoShootsAtMe(py::object m)
 {
-    py::class_< UTargetIteratorPrioritizeTargetWhoShootsAtMe,  UTI_Prioritize   >("UTargetIteratorPrioritizeTargetWhoShootsAtMe")
+    py::class_< UTargetIteratorPrioritizeTargetWhoShootsAtMe,  UTI_Prioritize   >(m, "UTargetIteratorPrioritizeTargetWhoShootsAtMe")
         .def("StaticClass", &UTargetIteratorPrioritizeTargetWhoShootsAtMe::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

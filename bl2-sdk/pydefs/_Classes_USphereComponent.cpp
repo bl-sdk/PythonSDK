@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USphereComponent()
+void Export_pystes_USphereComponent(py::object m)
 {
-    py::class_< USphereComponent,  UCylinderComponent   >("USphereComponent")
+    py::class_< USphereComponent,  UCylinderComponent   >(m, "USphereComponent")
         .def("StaticClass", &USphereComponent::StaticClass, py::return_value_policy::reference)
         .def("SetSphereSize", &USphereComponent::SetSphereSize)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

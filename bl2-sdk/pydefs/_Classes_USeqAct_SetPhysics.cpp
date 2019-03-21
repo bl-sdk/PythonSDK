@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_SetPhysics()
+void Export_pystes_USeqAct_SetPhysics(py::object m)
 {
-    py::class_< USeqAct_SetPhysics,  USequenceAction   >("USeqAct_SetPhysics")
+    py::class_< USeqAct_SetPhysics,  USequenceAction   >(m, "USeqAct_SetPhysics")
         .def_readwrite("newPhysics", &USeqAct_SetPhysics::newPhysics)
         .def("StaticClass", &USeqAct_SetPhysics::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

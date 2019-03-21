@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_BikeMove()
+void Export_pystes_UAction_BikeMove(py::object m)
 {
-    py::class_< UAction_BikeMove,  UWillowActionSequencePawn   >("UAction_BikeMove")
+    py::class_< UAction_BikeMove,  UWillowActionSequencePawn   >(m, "UAction_BikeMove")
         .def_readwrite("TargetOffsets", &UAction_BikeMove::TargetOffsets)
         .def_readwrite("RecalcDestTargetMoveDist", &UAction_BikeMove::RecalcDestTargetMoveDist)
         .def_readwrite("ReachDistance", &UAction_BikeMove::ReachDistance)
@@ -27,6 +27,5 @@ void Export_pystes_UAction_BikeMove()
         .def("eventStop", &UAction_BikeMove::eventStop)
         .def("eventStart", &UAction_BikeMove::eventStart)
         .def("eventCanRun", &UAction_BikeMove::eventCanRun)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

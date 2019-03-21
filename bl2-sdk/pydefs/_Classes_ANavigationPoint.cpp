@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ANavigationPoint()
+void Export_pystes_ANavigationPoint(py::object m)
 {
-    py::class_< ANavigationPoint,  AActor   >("ANavigationPoint")
+    py::class_< ANavigationPoint,  AActor   >(m, "ANavigationPoint")
         .def_readwrite("NavOctreeObject", &ANavigationPoint::NavOctreeObject)
         .def_readwrite("PathRenderingComponentClass", &ANavigationPoint::PathRenderingComponentClass)
         .def_readwrite("PathList", &ANavigationPoint::PathList)
@@ -58,6 +58,5 @@ void Export_pystes_ANavigationPoint()
         .def("IsUsableAnchorFor", &ANavigationPoint::IsUsableAnchorFor)
         .def("GetReachSpecTo", &ANavigationPoint::GetReachSpecTo, py::return_value_policy::reference)
         .def("GetBoundingCylinder", &ANavigationPoint::GetBoundingCylinder)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

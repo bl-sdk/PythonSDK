@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInteriorSettings()
+void Export_pystes_FInteriorSettings(py::object m)
 {
-    py::class_< FInteriorSettings >("FInteriorSettings")
+    py::class_< FInteriorSettings >(m, "FInteriorSettings")
         .def_readwrite("ExteriorVolume", &FInteriorSettings::ExteriorVolume)
         .def_readwrite("ExteriorTime", &FInteriorSettings::ExteriorTime)
         .def_readwrite("ExteriorLPF", &FInteriorSettings::ExteriorLPF)

@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAIStateBase()
+void Export_pystes_UAIStateBase(py::object m)
 {
-    py::class_< UAIStateBase,  UGearboxEditorNode   >("UAIStateBase")
+    py::class_< UAIStateBase,  UGearboxEditorNode   >(m, "UAIStateBase")
         .def("StaticClass", &UAIStateBase::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

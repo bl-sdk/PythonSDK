@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLightMapRef()
+void Export_pystes_FLightMapRef(py::object m)
 {
-    py::class_< FLightMapRef >("FLightMapRef")
+    py::class_< FLightMapRef >(m, "FLightMapRef")
         .def_readwrite("Reference", &FLightMapRef::Reference)
   ;
 }

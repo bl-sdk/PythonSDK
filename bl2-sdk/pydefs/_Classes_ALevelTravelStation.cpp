@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ALevelTravelStation()
+void Export_pystes_ALevelTravelStation(py::object m)
 {
-    py::class_< ALevelTravelStation,  AWillowInteractiveObject   >("ALevelTravelStation")
+    py::class_< ALevelTravelStation,  AWillowInteractiveObject   >(m, "ALevelTravelStation")
         .def_readwrite("TravelDefinition", &ALevelTravelStation::TravelDefinition)
         .def_readwrite("WaypointExceptions", &ALevelTravelStation::WaypointExceptions)
         .def_readwrite("LevelTravelMapDisplayName", &ALevelTravelStation::LevelTravelMapDisplayName)
@@ -50,6 +50,5 @@ void Export_pystes_ALevelTravelStation()
         .def("InitializeFromDefinition", &ATravelStation::InitializeFromDefinition)
         .def("eventReplicatedEvent", &ATravelStation::eventReplicatedEvent)
         .def("UpdateCollideAsEncroacher", &ATravelStation::UpdateCollideAsEncroacher)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

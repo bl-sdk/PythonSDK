@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWaveFormBase()
+void Export_pystes_UWaveFormBase(py::object m)
 {
-    py::class_< UWaveFormBase,  UObject   >("UWaveFormBase")
+    py::class_< UWaveFormBase,  UObject   >(m, "UWaveFormBase")
         .def_readwrite("TheWaveForm", &UWaveFormBase::TheWaveForm)
         .def("StaticClass", &UWaveFormBase::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

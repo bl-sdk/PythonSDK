@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UQSortAttributeComparer()
+void Export_pystes_UQSortAttributeComparer(py::object m)
 {
-    py::class_< UQSortAttributeComparer,  UQSortComparer   >("UQSortAttributeComparer")
+    py::class_< UQSortAttributeComparer,  UQSortComparer   >(m, "UQSortAttributeComparer")
         .def_readwrite("Attribute", &UQSortAttributeComparer::Attribute)
         .def("StaticClass", &UQSortAttributeComparer::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

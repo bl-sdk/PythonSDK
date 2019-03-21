@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowPlayerPawnDataManager()
+void Export_pystes_UWillowPlayerPawnDataManager(py::object m)
 {
-    py::class_< UWillowPlayerPawnDataManager,  UObject   >("UWillowPlayerPawnDataManager")
+    py::class_< UWillowPlayerPawnDataManager,  UObject   >(m, "UWillowPlayerPawnDataManager")
         .def_readwrite("LoadedOnDemandPackageNames", &UWillowPlayerPawnDataManager::LoadedOnDemandPackageNames)
         .def_readwrite("LoadedOnDemandPackageReferencers", &UWillowPlayerPawnDataManager::LoadedOnDemandPackageReferencers)
         .def_readwrite("PackagesUnloadedDuringGC", &UWillowPlayerPawnDataManager::PackagesUnloadedDuringGC)
@@ -26,6 +26,5 @@ void Export_pystes_UWillowPlayerPawnDataManager()
         .def("LoadSkillTreeDefinition", &UWillowPlayerPawnDataManager::LoadSkillTreeDefinition, py::return_value_policy::reference)
         .def("LoadPlayerPawnDataAsync", &UWillowPlayerPawnDataManager::LoadPlayerPawnDataAsync)
         .def("LoadPlayerPawnData", &UWillowPlayerPawnDataManager::LoadPlayerPawnData, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

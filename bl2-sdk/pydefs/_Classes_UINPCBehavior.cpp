@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UINPCBehavior()
+void Export_pystes_UINPCBehavior(py::object m)
 {
-    py::class_< UINPCBehavior,  UInterface   >("UINPCBehavior")
+    py::class_< UINPCBehavior,  UInterface   >(m, "UINPCBehavior")
         .def("StaticClass", &UINPCBehavior::StaticClass, py::return_value_policy::reference)
         .def("GetCurrentProjectile", &UINPCBehavior::GetCurrentProjectile, py::return_value_policy::reference)
         .def("GetGrenadeMod", &UINPCBehavior::GetGrenadeMod, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

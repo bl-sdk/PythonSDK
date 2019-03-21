@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCanvas()
+void Export_pystes_UCanvas(py::object m)
 {
-    py::class_< UCanvas,  UObject   >("UCanvas")
+    py::class_< UCanvas,  UObject   >(m, "UCanvas")
         .def_readwrite("Font", &UCanvas::Font)
         .def_readwrite("OrgX", &UCanvas::OrgX)
         .def_readwrite("OrgY", &UCanvas::OrgY)
@@ -61,6 +61,5 @@ void Export_pystes_UCanvas()
         .def("DrawMaterialTile", &UCanvas::DrawMaterialTile)
         .def("PreOptimizeDrawTiles", &UCanvas::PreOptimizeDrawTiles)
         .def("DrawTile", &UCanvas::DrawTile)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

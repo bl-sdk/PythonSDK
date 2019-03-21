@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FFiringPatternLine()
+void Export_pystes_FFiringPatternLine(py::object m)
 {
-    py::class_< FFiringPatternLine >("FFiringPatternLine")
+    py::class_< FFiringPatternLine >(m, "FFiringPatternLine")
         .def_readwrite("StartPoint", &FFiringPatternLine::StartPoint)
         .def_readwrite("EndPoint", &FFiringPatternLine::EndPoint)
         .def_readwrite("CustomWaveMotion", &FFiringPatternLine::CustomWaveMotion)

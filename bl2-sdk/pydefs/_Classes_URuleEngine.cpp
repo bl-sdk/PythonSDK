@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_URuleEngine()
+void Export_pystes_URuleEngine(py::object m)
 {
-    py::class_< URuleEngine,  UObject   >("URuleEngine")
+    py::class_< URuleEngine,  UObject   >(m, "URuleEngine")
         .def_readwrite("VfTable_IIFlagProvider", &URuleEngine::VfTable_IIFlagProvider)
         .def_readwrite("TheAIFactory", &URuleEngine::TheAIFactory)
         .def_readwrite("ActorProxy", &URuleEngine::ActorProxy)
@@ -53,6 +53,5 @@ void Export_pystes_URuleEngine()
         .def("CleanUpRuleEngineData", &URuleEngine::CleanUpRuleEngineData)
         .def("ActivateEventRule", &URuleEngine::ActivateEventRule)
         .def("ActivateEventRuleByDefinition", &URuleEngine::ActivateEventRuleByDefinition)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

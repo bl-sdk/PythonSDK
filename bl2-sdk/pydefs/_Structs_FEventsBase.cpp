@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FEventsBase()
+void Export_pystes_FEventsBase(py::object m)
 {
-    py::class_< FEventsBase >("FEventsBase")
+    py::class_< FEventsBase >(m, "FEventsBase")
         .def_readwrite("TotalEvents", &FEventsBase::TotalEvents)
         .def_readwrite("EventsByClass", &FEventsBase::EventsByClass)
   ;

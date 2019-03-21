@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FColumnLayoutData()
+void Export_pystes_FColumnLayoutData(py::object m)
 {
-    py::class_< FColumnLayoutData >("FColumnLayoutData")
+    py::class_< FColumnLayoutData >(m, "FColumnLayoutData")
         .def_readwrite("HeaderHAlign", &FColumnLayoutData::HeaderHAlign)
         .def_readwrite("Header", &FColumnLayoutData::Header)
         .def_readwrite("Width", &FColumnLayoutData::Width)

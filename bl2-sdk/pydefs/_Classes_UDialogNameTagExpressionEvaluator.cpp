@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDialogNameTagExpressionEvaluator()
+void Export_pystes_UDialogNameTagExpressionEvaluator(py::object m)
 {
-    py::class_< UDialogNameTagExpressionEvaluator,  UExpressionEvaluator   >("UDialogNameTagExpressionEvaluator")
+    py::class_< UDialogNameTagExpressionEvaluator,  UExpressionEvaluator   >(m, "UDialogNameTagExpressionEvaluator")
         .def_readwrite("NameTag", &UDialogNameTagExpressionEvaluator::NameTag)
         .def("StaticClass", &UDialogNameTagExpressionEvaluator::StaticClass, py::return_value_policy::reference)
         .def("Evaluate", &UDialogNameTagExpressionEvaluator::Evaluate)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

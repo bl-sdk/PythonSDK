@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBeamLocationData()
+void Export_pystes_FBeamLocationData(py::object m)
 {
-    py::class_< FBeamLocationData >("FBeamLocationData")
+    py::class_< FBeamLocationData >(m, "FBeamLocationData")
         .def_readwrite("Actor", &FBeamLocationData::Actor)
         .def_readwrite("Socket", &FBeamLocationData::Socket)
         .def_readwrite("Offset", &FBeamLocationData::Offset)

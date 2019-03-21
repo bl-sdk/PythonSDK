@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULevelStreaming()
+void Export_pystes_ULevelStreaming(py::object m)
 {
-    py::class_< ULevelStreaming,  UObject   >("ULevelStreaming")
+    py::class_< ULevelStreaming,  UObject   >(m, "ULevelStreaming")
         .def_readwrite("PackageName", &ULevelStreaming::PackageName)
         .def_readwrite("LoadedLevel", &ULevelStreaming::LoadedLevel)
         .def_readwrite("Offset", &ULevelStreaming::Offset)
@@ -18,6 +18,5 @@ void Export_pystes_ULevelStreaming()
         .def_readwrite("EditorGridVolume", &ULevelStreaming::EditorGridVolume)
         .def_readonly("GridPosition", &ULevelStreaming::GridPosition)
         .def("StaticClass", &ULevelStreaming::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

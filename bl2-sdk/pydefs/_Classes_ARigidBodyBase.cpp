@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ARigidBodyBase()
+void Export_pystes_ARigidBodyBase(py::object m)
 {
-    py::class_< ARigidBodyBase,  AActor   >("ARigidBodyBase")
+    py::class_< ARigidBodyBase,  AActor   >(m, "ARigidBodyBase")
         .def("StaticClass", &ARigidBodyBase::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

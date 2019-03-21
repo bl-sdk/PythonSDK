@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPlayThroughData()
+void Export_pystes_FPlayThroughData(py::object m)
 {
-    py::class_< FPlayThroughData >("FPlayThroughData")
+    py::class_< FPlayThroughData >(m, "FPlayThroughData")
         .def_readwrite("PlayThroughNumber", &FPlayThroughData::PlayThroughNumber)
         .def_readwrite("BalanceDefinitions", &FPlayThroughData::BalanceDefinitions)
   ;

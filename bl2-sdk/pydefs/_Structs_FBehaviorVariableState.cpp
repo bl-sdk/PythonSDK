@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBehaviorVariableState()
+void Export_pystes_FBehaviorVariableState(py::object m)
 {
-    py::class_< FBehaviorVariableState >("FBehaviorVariableState")
+    py::class_< FBehaviorVariableState >(m, "FBehaviorVariableState")
         .def_readwrite("Name", &FBehaviorVariableState::Name)
         .def_readwrite("Type", &FBehaviorVariableState::Type)
         .def_readwrite("Value", &FBehaviorVariableState::Value)

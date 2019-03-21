@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionWorldPosition()
+void Export_pystes_UMaterialExpressionWorldPosition(py::object m)
 {
-    py::class_< UMaterialExpressionWorldPosition,  UMaterialExpression   >("UMaterialExpressionWorldPosition")
+    py::class_< UMaterialExpressionWorldPosition,  UMaterialExpression   >(m, "UMaterialExpressionWorldPosition")
         .def("StaticClass", &UMaterialExpressionWorldPosition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

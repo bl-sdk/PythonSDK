@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APathTargetPoint()
+void Export_pystes_APathTargetPoint(py::object m)
 {
-    py::class_< APathTargetPoint,  AKeypoint   >("APathTargetPoint")
+    py::class_< APathTargetPoint,  AKeypoint   >(m, "APathTargetPoint")
         .def("StaticClass", &APathTargetPoint::StaticClass, py::return_value_policy::reference)
         .def("ShouldBeHiddenBySHOW_NavigationNodes", &APathTargetPoint::ShouldBeHiddenBySHOW_NavigationNodes)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

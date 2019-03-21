@@ -3,8 +3,8 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLandscapeAddCollision()
+void Export_pystes_FLandscapeAddCollision(py::object m)
 {
-    py::class_< FLandscapeAddCollision >("FLandscapeAddCollision")
+    py::class_< FLandscapeAddCollision >(m, "FLandscapeAddCollision")
   ;
 }

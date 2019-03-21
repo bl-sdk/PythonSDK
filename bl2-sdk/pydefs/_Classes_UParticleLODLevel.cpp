@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleLODLevel()
+void Export_pystes_UParticleLODLevel(py::object m)
 {
-    py::class_< UParticleLODLevel,  UObject   >("UParticleLODLevel")
+    py::class_< UParticleLODLevel,  UObject   >(m, "UParticleLODLevel")
         .def_readwrite("Level", &UParticleLODLevel::Level)
         .def_readwrite("RequiredModule", &UParticleLODLevel::RequiredModule)
         .def_readwrite("Modules", &UParticleLODLevel::Modules)
@@ -19,6 +19,5 @@ void Export_pystes_UParticleLODLevel()
         .def_readwrite("EventReceiverModules", &UParticleLODLevel::EventReceiverModules)
         .def_readwrite("PeakActiveParticles", &UParticleLODLevel::PeakActiveParticles)
         .def("StaticClass", &UParticleLODLevel::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

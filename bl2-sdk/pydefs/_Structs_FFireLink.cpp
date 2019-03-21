@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FFireLink()
+void Export_pystes_FFireLink(py::object m)
 {
-    py::class_< FFireLink >("FFireLink")
+    py::class_< FFireLink >(m, "FFireLink")
         .def_readwrite("Interactions", &FFireLink::Interactions)
         .def_readwrite("PackedProperties_CoverPairRefAndDynamicInfo", &FFireLink::PackedProperties_CoverPairRefAndDynamicInfo)
   ;

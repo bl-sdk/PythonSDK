@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UForceFeedbackManager()
+void Export_pystes_UForceFeedbackManager(py::object m)
 {
-    py::class_< UForceFeedbackManager,  UObject   >("UForceFeedbackManager")
+    py::class_< UForceFeedbackManager,  UObject   >(m, "UForceFeedbackManager")
         .def_readwrite("FFWaveform", &UForceFeedbackManager::FFWaveform)
         .def_readwrite("CurrentSample", &UForceFeedbackManager::CurrentSample)
         .def_readwrite("ElapsedTime", &UForceFeedbackManager::ElapsedTime)
@@ -17,6 +17,5 @@ void Export_pystes_UForceFeedbackManager()
         .def("StopForceFeedbackWaveform", &UForceFeedbackManager::StopForceFeedbackWaveform)
         .def("eventSetWaveform", &UForceFeedbackManager::eventSetWaveform)
         .def("PlayForceFeedbackWaveform", &UForceFeedbackManager::PlayForceFeedbackWaveform)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

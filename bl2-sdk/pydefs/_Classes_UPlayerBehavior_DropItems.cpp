@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerBehavior_DropItems()
+void Export_pystes_UPlayerBehavior_DropItems(py::object m)
 {
-    py::class_< UPlayerBehavior_DropItems,  UBehaviorBase   >("UPlayerBehavior_DropItems")
+    py::class_< UPlayerBehavior_DropItems,  UBehaviorBase   >(m, "UPlayerBehavior_DropItems")
         .def_readwrite("ConfigurationName", &UPlayerBehavior_DropItems::ConfigurationName)
         .def_readwrite("TargetContext", &UPlayerBehavior_DropItems::TargetContext)
         .def_readwrite("LocationContext", &UPlayerBehavior_DropItems::LocationContext)
@@ -18,6 +18,5 @@ void Export_pystes_UPlayerBehavior_DropItems()
         .def("StaticClass", &UPlayerBehavior_DropItems::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UPlayerBehavior_DropItems::ApplyBehaviorToContext)
         .def("DropItems", &UBehavior_DropItems::DropItems)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

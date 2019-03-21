@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpecialMoveDefinition()
+void Export_pystes_USpecialMoveDefinition(py::object m)
 {
-    py::class_< USpecialMoveDefinition,  UGBXDefinition   >("USpecialMoveDefinition")
+    py::class_< USpecialMoveDefinition,  UGBXDefinition   >(m, "USpecialMoveDefinition")
         .def_readwrite("NextSpecialMove", &USpecialMoveDefinition::NextSpecialMove)
         .def_readwrite("StopExpression", &USpecialMoveDefinition::StopExpression)
         .def("StaticClass", &USpecialMoveDefinition::StaticClass, py::return_value_policy::reference)
@@ -18,6 +18,5 @@ void Export_pystes_USpecialMoveDefinition()
         .def("eventServerStarted", &USpecialMoveDefinition::eventServerStarted)
         .def("IsLocalAuthority", &USpecialMoveDefinition::IsLocalAuthority)
         .def("eventAuthorityCanPlay", &USpecialMoveDefinition::eventAuthorityCanPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_DebugMessage()
+void Export_pystes_UBehavior_DebugMessage(py::object m)
 {
-    py::class_< UBehavior_DebugMessage,  UBehaviorBase   >("UBehavior_DebugMessage")
+    py::class_< UBehavior_DebugMessage,  UBehaviorBase   >(m, "UBehavior_DebugMessage")
         .def_readwrite("DebugMessage", &UBehavior_DebugMessage::DebugMessage)
         .def_readwrite("Duration", &UBehavior_DebugMessage::Duration)
         .def_readwrite("DebugFloat", &UBehavior_DebugMessage::DebugFloat)
@@ -14,6 +14,5 @@ void Export_pystes_UBehavior_DebugMessage()
         .def_readwrite("DebugVector", &UBehavior_DebugMessage::DebugVector)
         .def("StaticClass", &UBehavior_DebugMessage::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_DebugMessage::ApplyBehaviorToContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGFxMovieDefinition()
+void Export_pystes_UGFxMovieDefinition(py::object m)
 {
-    py::class_< UGFxMovieDefinition,  UGBXDefinition   >("UGFxMovieDefinition")
+    py::class_< UGFxMovieDefinition,  UGBXDefinition   >(m, "UGFxMovieDefinition")
         .def_readwrite("SwfMovie", &UGFxMovieDefinition::SwfMovie)
         .def_readwrite("SwfMovieClass", &UGFxMovieDefinition::SwfMovieClass)
         .def_readwrite("Movie", &UGFxMovieDefinition::Movie)
@@ -33,6 +33,5 @@ void Export_pystes_UGFxMovieDefinition()
         .def("SpawnPlayerMovie", &UGFxMovieDefinition::SpawnPlayerMovie, py::return_value_policy::reference)
         .def("SupportsStatePooling", &UGFxMovieDefinition::SupportsStatePooling)
         .def("GetPoolStyle", &UGFxMovieDefinition::GetPoolStyle)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

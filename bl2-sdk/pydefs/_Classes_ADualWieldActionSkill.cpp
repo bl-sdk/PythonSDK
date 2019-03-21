@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ADualWieldActionSkill()
+void Export_pystes_ADualWieldActionSkill(py::object m)
 {
-    py::class_< ADualWieldActionSkill,  AActionSkill   >("ADualWieldActionSkill")
+    py::class_< ADualWieldActionSkill,  AActionSkill   >(m, "ADualWieldActionSkill")
         .def_readwrite("WeaponCache", &ADualWieldActionSkill::WeaponCache)
         .def_readwrite("OffhandWeaponCache", &ADualWieldActionSkill::OffhandWeaponCache)
         .def_readwrite("CrosshairWidget", &ADualWieldActionSkill::CrosshairWidget)
@@ -31,6 +31,5 @@ void Export_pystes_ADualWieldActionSkill()
         .def("OnActionSkillOwnerWeaponSwitched", &ADualWieldActionSkill::OnActionSkillOwnerWeaponSwitched)
         .def("OnActionSkillEnded", &ADualWieldActionSkill::OnActionSkillEnded)
         .def("OnActionSkillStarted", &ADualWieldActionSkill::OnActionSkillStarted)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

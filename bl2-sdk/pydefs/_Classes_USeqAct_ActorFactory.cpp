@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_ActorFactory()
+void Export_pystes_USeqAct_ActorFactory(py::object m)
 {
-    py::class_< USeqAct_ActorFactory,  USeqAct_Latent   >("USeqAct_ActorFactory")
+    py::class_< USeqAct_ActorFactory,  USeqAct_Latent   >(m, "USeqAct_ActorFactory")
         .def_readwrite("Factory", &USeqAct_ActorFactory::Factory)
         .def_readwrite("PointSelection", &USeqAct_ActorFactory::PointSelection)
         .def_readwrite("SpawnPoints", &USeqAct_ActorFactory::SpawnPoints)
@@ -18,6 +18,5 @@ void Export_pystes_USeqAct_ActorFactory()
         .def_readwrite("RemainingDelay", &USeqAct_ActorFactory::RemainingDelay)
         .def("StaticClass", &USeqAct_ActorFactory::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqAct_ActorFactory::eventGetObjClassVersion)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

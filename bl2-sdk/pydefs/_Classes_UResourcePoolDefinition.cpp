@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UResourcePoolDefinition()
+void Export_pystes_UResourcePoolDefinition(py::object m)
 {
-    py::class_< UResourcePoolDefinition,  UGBXDefinition   >("UResourcePoolDefinition")
+    py::class_< UResourcePoolDefinition,  UGBXDefinition   >(m, "UResourcePoolDefinition")
         .def_readwrite("Resource", &UResourcePoolDefinition::Resource)
         .def_readwrite("NetRelevancy", &UResourcePoolDefinition::NetRelevancy)
         .def_readwrite("RegenerationResource", &UResourcePoolDefinition::RegenerationResource)
@@ -28,6 +28,5 @@ void Export_pystes_UResourcePoolDefinition()
         .def_readwrite("TotalUpgradeCount", &UResourcePoolDefinition::TotalUpgradeCount)
         .def_readwrite("MaxValueUpgrade", &UResourcePoolDefinition::MaxValueUpgrade)
         .def("StaticClass", &UResourcePoolDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

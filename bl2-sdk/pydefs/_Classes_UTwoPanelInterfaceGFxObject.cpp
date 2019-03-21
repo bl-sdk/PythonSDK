@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTwoPanelInterfaceGFxObject()
+void Export_pystes_UTwoPanelInterfaceGFxObject(py::object m)
 {
-    py::class_< UTwoPanelInterfaceGFxObject,  UBaseTopLevelPanelGFxObject   >("UTwoPanelInterfaceGFxObject")
+    py::class_< UTwoPanelInterfaceGFxObject,  UBaseTopLevelPanelGFxObject   >(m, "UTwoPanelInterfaceGFxObject")
         .def_readwrite("TwoPanelInterface", &UTwoPanelInterfaceGFxObject::TwoPanelInterface)
         .def_readonly("UnknownData00", &UTwoPanelInterfaceGFxObject::UnknownData00)
         .def_readwrite("StoragePanel", &UTwoPanelInterfaceGFxObject::StoragePanel)
@@ -78,6 +78,5 @@ void Export_pystes_UTwoPanelInterfaceGFxObject()
         .def("Init", &UTwoPanelInterfaceGFxObject::Init)
         .def("OnDynamicCardUpdated", &UTwoPanelInterfaceGFxObject::OnDynamicCardUpdated)
         .def("SwitchToStartingPanel", &UTwoPanelInterfaceGFxObject::SwitchToStartingPanel)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

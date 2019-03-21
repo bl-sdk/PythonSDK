@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPendingEntry()
+void Export_pystes_FPendingEntry(py::object m)
 {
-    py::class_< FPendingEntry >("FPendingEntry")
+    py::class_< FPendingEntry >(m, "FPendingEntry")
         .def_readwrite("RemoteId", &FPendingEntry::RemoteId)
         .def_readwrite("CallbackFunc", &FPendingEntry::CallbackFunc)
         .def_readwrite("UserData", &FPendingEntry::UserData)

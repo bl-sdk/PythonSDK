@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ALandscapeProxy()
+void Export_pystes_ALandscapeProxy(py::object m)
 {
-    py::class_< ALandscapeProxy,  AInfo   >("ALandscapeProxy")
+    py::class_< ALandscapeProxy,  AInfo   >(m, "ALandscapeProxy")
         .def_readwrite("LandscapeComponents", &ALandscapeProxy::LandscapeComponents)
         .def_readwrite("CollisionComponents", &ALandscapeProxy::CollisionComponents)
         .def_readonly("UnknownData00", &ALandscapeProxy::UnknownData00)
@@ -13,6 +13,5 @@ void Export_pystes_ALandscapeProxy()
         .def_readwrite("StaticLightingResolution", &ALandscapeProxy::StaticLightingResolution)
         .def_readwrite("LandscapeActor", &ALandscapeProxy::LandscapeActor)
         .def("StaticClass", &ALandscapeProxy::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFrontendGFxMovie()
+void Export_pystes_UFrontendGFxMovie(py::object m)
 {
-    py::class_< UFrontendGFxMovie,  UWillowGFxMovie3D   >("UFrontendGFxMovie")
+    py::class_< UFrontendGFxMovie,  UWillowGFxMovie3D   >(m, "UFrontendGFxMovie")
         .def_readwrite("MyFrontendDefinition", &UFrontendGFxMovie::MyFrontendDefinition)
         .def_readwrite("FrontendMenu", &UFrontendGFxMovie::FrontendMenu)
         .def_readwrite("TheList", &UFrontendGFxMovie::TheList)
@@ -236,6 +236,5 @@ void Export_pystes_UFrontendGFxMovie()
         .def("OnProfileWriteComplete", &UFrontendGFxMovie::OnProfileWriteComplete)
         .def("eventStart", &UFrontendGFxMovie::eventStart)
         .def("PrePopupInputHandler", &UFrontendGFxMovie::PrePopupInputHandler)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPointExposureData()
+void Export_pystes_FPointExposureData(py::object m)
 {
-    py::class_< FPointExposureData >("FPointExposureData")
+    py::class_< FPointExposureData >(m, "FPointExposureData")
         .def_readwrite("Looker", &FPointExposureData::Looker)
         .def_readwrite("Point", &FPointExposureData::Point)
         .def_readwrite("Point2", &FPointExposureData::Point2)

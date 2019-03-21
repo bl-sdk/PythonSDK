@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehaviorKernel()
+void Export_pystes_UBehaviorKernel(py::object m)
 {
-    py::class_< UBehaviorKernel,  UObject   >("UBehaviorKernel")
+    py::class_< UBehaviorKernel,  UObject   >(m, "UBehaviorKernel")
         .def_readwrite("Processes", &UBehaviorKernel::Processes)
         .def_readwrite("ProcessDeathList", &UBehaviorKernel::ProcessDeathList)
         .def_readwrite("WaitingThreads", &UBehaviorKernel::WaitingThreads)
@@ -53,6 +53,5 @@ void Export_pystes_UBehaviorKernel()
         .def("IntializeBehaviorProviderForConsumer", &UBehaviorKernel::IntializeBehaviorProviderForConsumer)
         .def("ForceUnregisterBehaviorConsumer", &UBehaviorKernel::ForceUnregisterBehaviorConsumer)
         .def("RegisterBehaviorConsumer", &UBehaviorKernel::RegisterBehaviorConsumer)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

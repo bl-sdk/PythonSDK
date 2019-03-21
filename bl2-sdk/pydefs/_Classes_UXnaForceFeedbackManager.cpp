@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UXnaForceFeedbackManager()
+void Export_pystes_UXnaForceFeedbackManager(py::object m)
 {
-    py::class_< UXnaForceFeedbackManager,  UForceFeedbackManager   >("UXnaForceFeedbackManager")
+    py::class_< UXnaForceFeedbackManager,  UForceFeedbackManager   >(m, "UXnaForceFeedbackManager")
         .def("StaticClass", &UXnaForceFeedbackManager::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_Teleport()
+void Export_pystes_USeqAct_Teleport(py::object m)
 {
-    py::class_< USeqAct_Teleport,  USequenceAction   >("USeqAct_Teleport")
+    py::class_< USeqAct_Teleport,  USequenceAction   >(m, "USeqAct_Teleport")
         .def_readwrite("TeleportDistance", &USeqAct_Teleport::TeleportDistance)
         .def_readwrite("TeleportVolumes", &USeqAct_Teleport::TeleportVolumes)
         .def_readwrite("Source", &USeqAct_Teleport::Source)
@@ -16,6 +16,5 @@ void Export_pystes_USeqAct_Teleport()
         .def("GetTeleportHoldingCell", &USeqAct_Teleport::GetTeleportHoldingCell, py::return_value_policy::reference)
         .def("GetTeleportDestination", &USeqAct_Teleport::GetTeleportDestination, py::return_value_policy::reference)
         .def("ShouldTeleport", &USeqAct_Teleport::ShouldTeleport)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

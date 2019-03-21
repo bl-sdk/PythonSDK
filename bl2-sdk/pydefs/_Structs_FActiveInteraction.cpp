@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FActiveInteraction()
+void Export_pystes_FActiveInteraction(py::object m)
 {
-    py::class_< FActiveInteraction >("FActiveInteraction")
+    py::class_< FActiveInteraction >(m, "FActiveInteraction")
         .def_readwrite("TimeLength", &FActiveInteraction::TimeLength)
         .def_readwrite("TimeRemaining", &FActiveInteraction::TimeRemaining)
         .def_readwrite("InteractionServer", &FActiveInteraction::InteractionServer)

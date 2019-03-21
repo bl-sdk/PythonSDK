@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterface_NavMeshPathObject()
+void Export_pystes_UInterface_NavMeshPathObject(py::object m)
 {
-    py::class_< UInterface_NavMeshPathObject,  UInterface   >("UInterface_NavMeshPathObject")
+    py::class_< UInterface_NavMeshPathObject,  UInterface   >(m, "UInterface_NavMeshPathObject")
         .def("StaticClass", &UInterface_NavMeshPathObject::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,8 +3,8 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAlphaMap()
+void Export_pystes_FAlphaMap(py::object m)
 {
-    py::class_< FAlphaMap >("FAlphaMap")
+    py::class_< FAlphaMap >(m, "FAlphaMap")
   ;
 }

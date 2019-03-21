@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTradingOffersPanelGFxObject()
+void Export_pystes_UTradingOffersPanelGFxObject(py::object m)
 {
-    py::class_< UTradingOffersPanelGFxObject,  UBaseInventoryPanelGFxObject   >("UTradingOffersPanelGFxObject")
+    py::class_< UTradingOffersPanelGFxObject,  UBaseInventoryPanelGFxObject   >(m, "UTradingOffersPanelGFxObject")
         .def_readwrite("SelectedCellSuffix", &UTradingOffersPanelGFxObject::SelectedCellSuffix)
         .def_readwrite("NonCellButtonFocused", &UTradingOffersPanelGFxObject::NonCellButtonFocused)
         .def_readwrite("OfferingThing", &UTradingOffersPanelGFxObject::OfferingThing)
@@ -38,6 +38,5 @@ void Export_pystes_UTradingOffersPanelGFxObject()
         .def("DeferInput", &UTradingOffersPanelGFxObject::DeferInput)
         .def("Init", &UTradingOffersPanelGFxObject::Init)
         .def("MoveFunction", &UTradingOffersPanelGFxObject::MoveFunction)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

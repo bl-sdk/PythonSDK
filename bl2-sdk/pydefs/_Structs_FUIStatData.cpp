@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FUIStatData()
+void Export_pystes_FUIStatData(py::object m)
 {
-    py::class_< FUIStatData >("FUIStatData")
+    py::class_< FUIStatData >(m, "FUIStatData")
         .def_readwrite("AttributeStyle", &FUIStatData::AttributeStyle)
         .def_readwrite("SupplementalAttributeStyle", &FUIStatData::SupplementalAttributeStyle)
         .def_readwrite("StatCombinationMethod", &FUIStatData::StatCombinationMethod)

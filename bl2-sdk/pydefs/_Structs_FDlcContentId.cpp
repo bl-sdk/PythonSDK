@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDlcContentId()
+void Export_pystes_FDlcContentId(py::object m)
 {
-    py::class_< FDlcContentId >("FDlcContentId")
+    py::class_< FDlcContentId >(m, "FDlcContentId")
         .def_readwrite("PackageId", &FDlcContentId::PackageId)
         .def_readwrite("ContentId", &FDlcContentId::ContentId)
   ;

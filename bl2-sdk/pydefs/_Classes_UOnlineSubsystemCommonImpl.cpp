@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineSubsystemCommonImpl()
+void Export_pystes_UOnlineSubsystemCommonImpl(py::object m)
 {
-    py::class_< UOnlineSubsystemCommonImpl,  UOnlineSubsystem   >("UOnlineSubsystemCommonImpl")
+    py::class_< UOnlineSubsystemCommonImpl,  UOnlineSubsystem   >(m, "UOnlineSubsystemCommonImpl")
         .def_readwrite("VoiceEngine", &UOnlineSubsystemCommonImpl::VoiceEngine)
         .def_readwrite("MaxLocalTalkers", &UOnlineSubsystemCommonImpl::MaxLocalTalkers)
         .def_readwrite("MaxRemoteTalkers", &UOnlineSubsystemCommonImpl::MaxRemoteTalkers)
@@ -15,6 +15,5 @@ void Export_pystes_UOnlineSubsystemCommonImpl()
         .def("GetRegisteredPlayers", &UOnlineSubsystemCommonImpl::GetRegisteredPlayers)
         .def("IsPlayerInSession", &UOnlineSubsystemCommonImpl::IsPlayerInSession)
         .def("eventGetPlayerNicknameFromIndex", &UOnlineSubsystemCommonImpl::eventGetPlayerNicknameFromIndex)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

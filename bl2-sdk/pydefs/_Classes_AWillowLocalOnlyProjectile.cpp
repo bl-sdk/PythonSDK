@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowLocalOnlyProjectile()
+void Export_pystes_AWillowLocalOnlyProjectile(py::object m)
 {
-    py::class_< AWillowLocalOnlyProjectile,  AWillowProjectile   >("AWillowLocalOnlyProjectile")
+    py::class_< AWillowLocalOnlyProjectile,  AWillowProjectile   >(m, "AWillowLocalOnlyProjectile")
         .def("StaticClass", &AWillowLocalOnlyProjectile::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

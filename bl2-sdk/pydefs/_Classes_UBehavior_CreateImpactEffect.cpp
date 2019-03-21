@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_CreateImpactEffect()
+void Export_pystes_UBehavior_CreateImpactEffect(py::object m)
 {
-    py::class_< UBehavior_CreateImpactEffect,  UBehaviorBase   >("UBehavior_CreateImpactEffect")
+    py::class_< UBehavior_CreateImpactEffect,  UBehaviorBase   >(m, "UBehavior_CreateImpactEffect")
         .def_readwrite("ImpactDefinition", &UBehavior_CreateImpactEffect::ImpactDefinition)
         .def_readwrite("ImpactPointName", &UBehavior_CreateImpactEffect::ImpactPointName)
         .def_readwrite("ImpactDirection", &UBehavior_CreateImpactEffect::ImpactDirection)
@@ -13,6 +13,5 @@ void Export_pystes_UBehavior_CreateImpactEffect()
         .def_readwrite("ImpactTraceStartBackupLength", &UBehavior_CreateImpactEffect::ImpactTraceStartBackupLength)
         .def("StaticClass", &UBehavior_CreateImpactEffect::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_CreateImpactEffect::ApplyBehaviorToContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

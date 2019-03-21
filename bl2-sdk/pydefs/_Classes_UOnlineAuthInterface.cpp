@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineAuthInterface()
+void Export_pystes_UOnlineAuthInterface(py::object m)
 {
-    py::class_< UOnlineAuthInterface,  UInterface   >("UOnlineAuthInterface")
+    py::class_< UOnlineAuthInterface,  UInterface   >(m, "UOnlineAuthInterface")
         .def("StaticClass", &UOnlineAuthInterface::StaticClass, py::return_value_policy::reference)
         .def("GetServerAddr", &UOnlineAuthInterface::GetServerAddr)
         .def("GetServerUniqueId", &UOnlineAuthInterface::GetServerUniqueId)
@@ -57,6 +57,5 @@ void Export_pystes_UOnlineAuthInterface()
         .def("AddAuthReadyDelegate", &UOnlineAuthInterface::AddAuthReadyDelegate)
         .def("OnAuthReady", &UOnlineAuthInterface::OnAuthReady)
         .def("IsReady", &UOnlineAuthInterface::IsReady)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

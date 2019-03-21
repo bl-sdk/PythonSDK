@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UVehicleHandlingDefinition()
+void Export_pystes_UVehicleHandlingDefinition(py::object m)
 {
-    py::class_< UVehicleHandlingDefinition,  UGBXDefinition   >("UVehicleHandlingDefinition")
+    py::class_< UVehicleHandlingDefinition,  UGBXDefinition   >(m, "UVehicleHandlingDefinition")
         .def_readwrite("WheelSuspensionStiffness", &UVehicleHandlingDefinition::WheelSuspensionStiffness)
         .def_readwrite("WheelSuspensionDamping", &UVehicleHandlingDefinition::WheelSuspensionDamping)
         .def_readwrite("WheelSuspensionBias", &UVehicleHandlingDefinition::WheelSuspensionBias)
@@ -31,6 +31,5 @@ void Export_pystes_UVehicleHandlingDefinition()
         .def_readwrite("FishtailCameraShakeMinVehicleSpeed", &UVehicleHandlingDefinition::FishtailCameraShakeMinVehicleSpeed)
         .def("StaticClass", &UVehicleHandlingDefinition::StaticClass, py::return_value_policy::reference)
         .def("ApplyDefinitionToVehicle", &UVehicleHandlingDefinition::ApplyDefinitionToVehicle)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

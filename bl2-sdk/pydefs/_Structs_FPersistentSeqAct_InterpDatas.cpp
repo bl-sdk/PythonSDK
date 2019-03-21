@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPersistentSeqAct_InterpData()
+void Export_pystes_FPersistentSeqAct_InterpData(py::object m)
 {
-    py::class_< FPersistentSeqAct_InterpData,  FPersistentData   >("FPersistentSeqAct_InterpData")
+    py::class_< FPersistentSeqAct_InterpData,  FPersistentData   >(m, "FPersistentSeqAct_InterpData")
         .def_readwrite("Position", &FPersistentSeqAct_InterpData::Position)
   ;
 }

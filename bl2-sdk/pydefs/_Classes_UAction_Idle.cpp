@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_Idle()
+void Export_pystes_UAction_Idle(py::object m)
 {
-    py::class_< UAction_Idle,  UAction_Burrow   >("UAction_Idle")
+    py::class_< UAction_Idle,  UAction_Burrow   >(m, "UAction_Idle")
         .def_readwrite("IdleTime", &UAction_Idle::IdleTime)
         .def_readwrite("CloakBehavior", &UAction_Idle::CloakBehavior)
         .def_readwrite("FollowType", &UAction_Idle::FollowType)
@@ -20,6 +20,5 @@ void Export_pystes_UAction_Idle()
         .def("eventStop", &UAction_Idle::eventStop)
         .def("eventStart", &UAction_Idle::eventStart)
         .def("eventCanRun", &UAction_Idle::eventCanRun)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

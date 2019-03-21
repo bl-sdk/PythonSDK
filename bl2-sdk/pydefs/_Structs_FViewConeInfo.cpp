@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FViewConeInfo()
+void Export_pystes_FViewConeInfo(py::object m)
 {
-    py::class_< FViewConeInfo >("FViewConeInfo")
+    py::class_< FViewConeInfo >(m, "FViewConeInfo")
         .def_readwrite("ConeOrigin", &FViewConeInfo::ConeOrigin)
         .def_readwrite("ConeDirection", &FViewConeInfo::ConeDirection)
         .def_readwrite("ConeAngle", &FViewConeInfo::ConeAngle)

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FConnectionBandwidthStats()
+void Export_pystes_FConnectionBandwidthStats(py::object m)
 {
-    py::class_< FConnectionBandwidthStats >("FConnectionBandwidthStats")
+    py::class_< FConnectionBandwidthStats >(m, "FConnectionBandwidthStats")
         .def_readwrite("UpstreamRate", &FConnectionBandwidthStats::UpstreamRate)
         .def_readwrite("DownstreamRate", &FConnectionBandwidthStats::DownstreamRate)
         .def_readwrite("RoundtripLatency", &FConnectionBandwidthStats::RoundtripLatency)

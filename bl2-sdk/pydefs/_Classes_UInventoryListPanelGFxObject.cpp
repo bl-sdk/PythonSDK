@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInventoryListPanelGFxObject()
+void Export_pystes_UInventoryListPanelGFxObject(py::object m)
 {
-    py::class_< UInventoryListPanelGFxObject,  UGFxObject   >("UInventoryListPanelGFxObject")
+    py::class_< UInventoryListPanelGFxObject,  UGFxObject   >(m, "UInventoryListPanelGFxObject")
         .def_readwrite("DataProvider", &UInventoryListPanelGFxObject::DataProvider)
         .def_readwrite("InventoryList", &UInventoryListPanelGFxObject::InventoryList)
         .def_readwrite("CurrentSelectedIndex", &UInventoryListPanelGFxObject::CurrentSelectedIndex)
@@ -83,6 +83,5 @@ void Export_pystes_UInventoryListPanelGFxObject()
         .def("OnSettingPanelForTransferring", &UBaseInventoryPanelGFxObject::OnSettingPanelForTransferring)
         .def("SetActive", &UBaseInventoryPanelGFxObject::SetActive)
         .def("InspectItem", &UBaseInventoryPanelGFxObject::InspectItem)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

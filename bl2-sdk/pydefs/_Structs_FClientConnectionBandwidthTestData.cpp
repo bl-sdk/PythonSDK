@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FClientConnectionBandwidthTestData()
+void Export_pystes_FClientConnectionBandwidthTestData(py::object m)
 {
-    py::class_< FClientConnectionBandwidthTestData >("FClientConnectionBandwidthTestData")
+    py::class_< FClientConnectionBandwidthTestData >(m, "FClientConnectionBandwidthTestData")
         .def_readwrite("CurrentState", &FClientConnectionBandwidthTestData::CurrentState)
         .def_readwrite("TestType", &FClientConnectionBandwidthTestData::TestType)
         .def_readwrite("BytesTotalNeeded", &FClientConnectionBandwidthTestData::BytesTotalNeeded)

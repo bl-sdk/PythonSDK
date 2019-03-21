@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDistributionFloatUniformCurve()
+void Export_pystes_UDistributionFloatUniformCurve(py::object m)
 {
-    py::class_< UDistributionFloatUniformCurve,  UDistributionFloat   >("UDistributionFloatUniformCurve")
+    py::class_< UDistributionFloatUniformCurve,  UDistributionFloat   >(m, "UDistributionFloatUniformCurve")
         .def_readwrite("ConstantCurve", &UDistributionFloatUniformCurve::ConstantCurve)
         .def("StaticClass", &UDistributionFloatUniformCurve::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

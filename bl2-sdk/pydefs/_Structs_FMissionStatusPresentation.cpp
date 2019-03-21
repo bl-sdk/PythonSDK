@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMissionStatusPresentation()
+void Export_pystes_FMissionStatusPresentation(py::object m)
 {
-    py::class_< FMissionStatusPresentation >("FMissionStatusPresentation")
+    py::class_< FMissionStatusPresentation >(m, "FMissionStatusPresentation")
         .def_readwrite("TextColor", &FMissionStatusPresentation::TextColor)
         .def_readwrite("IconFrame", &FMissionStatusPresentation::IconFrame)
   ;

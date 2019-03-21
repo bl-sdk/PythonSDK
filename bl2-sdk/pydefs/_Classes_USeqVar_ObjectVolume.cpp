@@ -3,13 +3,12 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqVar_ObjectVolume()
+void Export_pystes_USeqVar_ObjectVolume(py::object m)
 {
-    py::class_< USeqVar_ObjectVolume,  USeqVar_Object   >("USeqVar_ObjectVolume")
+    py::class_< USeqVar_ObjectVolume,  USeqVar_Object   >(m, "USeqVar_ObjectVolume")
         .def_readwrite("LastUpdateTime", &USeqVar_ObjectVolume::LastUpdateTime)
         .def_readwrite("ContainedObjects", &USeqVar_ObjectVolume::ContainedObjects)
         .def_readwrite("ExcludeClassList", &USeqVar_ObjectVolume::ExcludeClassList)
         .def("StaticClass", &USeqVar_ObjectVolume::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

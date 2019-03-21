@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FIndependentSelectionData()
+void Export_pystes_FIndependentSelectionData(py::object m)
 {
-    py::class_< FIndependentSelectionData >("FIndependentSelectionData")
+    py::class_< FIndependentSelectionData >(m, "FIndependentSelectionData")
         .def_readwrite("Probability", &FIndependentSelectionData::Probability)
         .def_readwrite("Behaviors", &FIndependentSelectionData::Behaviors)
   ;

@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPhysicsJumpNodeEditorComponent()
+void Export_pystes_UPhysicsJumpNodeEditorComponent(py::object m)
 {
-    py::class_< UPhysicsJumpNodeEditorComponent,  UPrimitiveComponent   >("UPhysicsJumpNodeEditorComponent")
+    py::class_< UPhysicsJumpNodeEditorComponent,  UPrimitiveComponent   >(m, "UPhysicsJumpNodeEditorComponent")
         .def("StaticClass", &UPhysicsJumpNodeEditorComponent::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

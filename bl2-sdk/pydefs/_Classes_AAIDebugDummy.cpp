@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AAIDebugDummy()
+void Export_pystes_AAIDebugDummy(py::object m)
 {
-    py::class_< AAIDebugDummy,  AAIDebugDummyBase   >("AAIDebugDummy")
+    py::class_< AAIDebugDummy,  AAIDebugDummyBase   >(m, "AAIDebugDummy")
         .def("StaticClass", &AAIDebugDummy::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

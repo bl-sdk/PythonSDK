@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowProfileSettings()
+void Export_pystes_UWillowProfileSettings(py::object m)
 {
-    py::class_< UWillowProfileSettings,  UGearboxProfileSettings   >("UWillowProfileSettings")
+    py::class_< UWillowProfileSettings,  UGearboxProfileSettings   >(m, "UWillowProfileSettings")
         .def("StaticClass", &UWillowProfileSettings::StaticClass, py::return_value_policy::reference)
         .def("IsSetToDefaults", &UWillowProfileSettings::IsSetToDefaults)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowScrollingList()
+void Export_pystes_UWillowScrollingList(py::object m)
 {
-    py::class_< UWillowScrollingList,  UGFxClikWidget   >("UWillowScrollingList")
+    py::class_< UWillowScrollingList,  UGFxClikWidget   >(m, "UWillowScrollingList")
         .def_readwrite("DataProviderStack", &UWillowScrollingList::DataProviderStack)
         .def_readwrite("IndexToEventId", &UWillowScrollingList::IndexToEventId)
         .def_readwrite("MyOwnerMovie", &UWillowScrollingList::MyOwnerMovie)
@@ -41,6 +41,5 @@ void Export_pystes_UWillowScrollingList()
         .def("OnListChanged", &UWillowScrollingList::OnListChanged)
         .def("OnEvent", &UWillowGFxClikWidget::OnEvent)
         .def("AddClikEvent", &UWillowGFxClikWidget::AddClikEvent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

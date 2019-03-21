@@ -3,8 +3,8 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AFogVolumeDensityInfo_FCheckpointRecord()
+void Export_pystes_AFogVolumeDensityInfo_FCheckpointRecord(py::object m)
 {
-    py::class_< AFogVolumeDensityInfo_FCheckpointRecord >("AFogVolumeDensityInfo_FCheckpointRecord")
+    py::class_< AFogVolumeDensityInfo_FCheckpointRecord >(m, "AFogVolumeDensityInfo_FCheckpointRecord")
   ;
 }

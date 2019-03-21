@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleAccelerationOverLifetime()
+void Export_pystes_UParticleModuleAccelerationOverLifetime(py::object m)
 {
-    py::class_< UParticleModuleAccelerationOverLifetime,  UParticleModuleAccelerationBase   >("UParticleModuleAccelerationOverLifetime")
+    py::class_< UParticleModuleAccelerationOverLifetime,  UParticleModuleAccelerationBase   >(m, "UParticleModuleAccelerationOverLifetime")
         .def_readwrite("AccelOverLife", &UParticleModuleAccelerationOverLifetime::AccelOverLife)
         .def("StaticClass", &UParticleModuleAccelerationOverLifetime::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

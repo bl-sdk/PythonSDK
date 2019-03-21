@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ADebugCameraController()
+void Export_pystes_ADebugCameraController(py::object m)
 {
-    py::class_< ADebugCameraController,  APlayerController   >("ADebugCameraController")
+    py::class_< ADebugCameraController,  APlayerController   >(m, "ADebugCameraController")
         .def_readwrite("PrimaryKey", &ADebugCameraController::PrimaryKey)
         .def_readwrite("SecondaryKey", &ADebugCameraController::SecondaryKey)
         .def_readwrite("UnselectKey", &ADebugCameraController::UnselectKey)
@@ -28,6 +28,5 @@ void Export_pystes_ADebugCameraController()
         .def("Unselect", &ADebugCameraController::Unselect)
         .def("SecondarySelect", &ADebugCameraController::SecondarySelect)
         .def("PrimarySelect", &ADebugCameraController::PrimarySelect)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

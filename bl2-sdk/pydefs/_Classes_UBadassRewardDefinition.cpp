@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBadassRewardDefinition()
+void Export_pystes_UBadassRewardDefinition(py::object m)
 {
-    py::class_< UBadassRewardDefinition,  UGBXDefinition   >("UBadassRewardDefinition")
+    py::class_< UBadassRewardDefinition,  UGBXDefinition   >(m, "UBadassRewardDefinition")
         .def_readwrite("RewardName", &UBadassRewardDefinition::RewardName)
         .def_readwrite("Description", &UBadassRewardDefinition::Description)
         .def_readwrite("RewardString", &UBadassRewardDefinition::RewardString)
@@ -14,6 +14,5 @@ void Export_pystes_UBadassRewardDefinition()
         .def_readwrite("CachedRewardIndex", &UBadassRewardDefinition::CachedRewardIndex)
         .def("StaticClass", &UBadassRewardDefinition::StaticClass, py::return_value_policy::reference)
         .def("UpdateCachedRewardIndex", &UBadassRewardDefinition::UpdateCachedRewardIndex)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInstanceDataHelper()
+void Export_pystes_UInstanceDataHelper(py::object m)
 {
-    py::class_< UInstanceDataHelper,  UObject   >("UInstanceDataHelper")
+    py::class_< UInstanceDataHelper,  UObject   >(m, "UInstanceDataHelper")
         .def("StaticClass", &UInstanceDataHelper::StaticClass, py::return_value_policy::reference)
         .def("DestroyOwnedInstanceData", &UInstanceDataHelper::DestroyOwnedInstanceData)
         .def("ForceDetachDelegate", &UInstanceDataHelper::ForceDetachDelegate)
@@ -24,6 +24,5 @@ void Export_pystes_UInstanceDataHelper()
         .def("DestroyInstanceDataAtIndex", &UInstanceDataHelper::DestroyInstanceDataAtIndex)
         .def("UpdateBodyComposition", &UInstanceDataHelper::UpdateBodyComposition)
         .def("InitializeBodyComposition", &UInstanceDataHelper::InitializeBodyComposition)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

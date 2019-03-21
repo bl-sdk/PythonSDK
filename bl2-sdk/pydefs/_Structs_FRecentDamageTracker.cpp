@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRecentDamageTracker()
+void Export_pystes_FRecentDamageTracker(py::object m)
 {
-    py::class_< FRecentDamageTracker >("FRecentDamageTracker")
+    py::class_< FRecentDamageTracker >(m, "FRecentDamageTracker")
         .def_readwrite("TotalDamage", &FRecentDamageTracker::TotalDamage)
         .def_readwrite("HealthDamage", &FRecentDamageTracker::HealthDamage)
         .def_readwrite("ShieldDamage", &FRecentDamageTracker::ShieldDamage)

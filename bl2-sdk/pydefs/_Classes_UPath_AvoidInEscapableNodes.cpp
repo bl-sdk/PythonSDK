@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPath_AvoidInEscapableNodes()
+void Export_pystes_UPath_AvoidInEscapableNodes(py::object m)
 {
-    py::class_< UPath_AvoidInEscapableNodes,  UPathConstraint   >("UPath_AvoidInEscapableNodes")
+    py::class_< UPath_AvoidInEscapableNodes,  UPathConstraint   >(m, "UPath_AvoidInEscapableNodes")
         .def_readwrite("Radius", &UPath_AvoidInEscapableNodes::Radius)
         .def_readwrite("Height", &UPath_AvoidInEscapableNodes::Height)
         .def_readwrite("MaxFallSpeed", &UPath_AvoidInEscapableNodes::MaxFallSpeed)
@@ -14,6 +14,5 @@ void Export_pystes_UPath_AvoidInEscapableNodes()
         .def("Recycle", &UPath_AvoidInEscapableNodes::Recycle)
         .def("DontGetStuck", &UPath_AvoidInEscapableNodes::DontGetStuck)
         .def("CachePawnReacFlags", &UPath_AvoidInEscapableNodes::CachePawnReacFlags)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

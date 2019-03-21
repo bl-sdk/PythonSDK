@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AGearboxPlayerReplicationInfo()
+void Export_pystes_AGearboxPlayerReplicationInfo(py::object m)
 {
-    py::class_< AGearboxPlayerReplicationInfo,  APlayerReplicationInfo   >("AGearboxPlayerReplicationInfo")
+    py::class_< AGearboxPlayerReplicationInfo,  APlayerReplicationInfo   >(m, "AGearboxPlayerReplicationInfo")
         .def_readwrite("Difficulty", &AGearboxPlayerReplicationInfo::Difficulty)
         .def_readwrite("Dummy", &AGearboxPlayerReplicationInfo::Dummy)
         .def("StaticClass", &AGearboxPlayerReplicationInfo::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

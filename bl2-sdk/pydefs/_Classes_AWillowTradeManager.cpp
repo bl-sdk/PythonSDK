@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowTradeManager()
+void Export_pystes_AWillowTradeManager(py::object m)
 {
-    py::class_< AWillowTradeManager,  AActor   >("AWillowTradeManager")
+    py::class_< AWillowTradeManager,  AActor   >(m, "AWillowTradeManager")
         .def_readwrite("Status", &AWillowTradeManager::Status)
         .def_readwrite("Stance", &AWillowTradeManager::Stance)
         .def_readwrite("PartnerStance", &AWillowTradeManager::PartnerStance)
@@ -90,6 +90,5 @@ void Export_pystes_AWillowTradeManager()
         .def("eventReplicatedEvent", &AWillowTradeManager::eventReplicatedEvent)
         .def("CanRetractOffer", &AWillowTradeManager::CanRetractOffer)
         .def("CanStartOffer", &AWillowTradeManager::CanStartOffer)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

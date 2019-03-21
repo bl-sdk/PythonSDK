@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FScalarMaterialParameter()
+void Export_pystes_FScalarMaterialParameter(py::object m)
 {
-    py::class_< FScalarMaterialParameter >("FScalarMaterialParameter")
+    py::class_< FScalarMaterialParameter >(m, "FScalarMaterialParameter")
         .def_readwrite("Name", &FScalarMaterialParameter::Name)
         .def_readwrite("Value", &FScalarMaterialParameter::Value)
         .def_readwrite("ValueFromAttribute", &FScalarMaterialParameter::ValueFromAttribute)

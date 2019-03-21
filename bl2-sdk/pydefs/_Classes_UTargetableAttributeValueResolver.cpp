@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTargetableAttributeValueResolver()
+void Export_pystes_UTargetableAttributeValueResolver(py::object m)
 {
-    py::class_< UTargetableAttributeValueResolver,  UAttributeValueResolver   >("UTargetableAttributeValueResolver")
+    py::class_< UTargetableAttributeValueResolver,  UAttributeValueResolver   >(m, "UTargetableAttributeValueResolver")
         .def_readwrite("ValueToResolve", &UTargetableAttributeValueResolver::ValueToResolve)
         .def("StaticClass", &UTargetableAttributeValueResolver::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

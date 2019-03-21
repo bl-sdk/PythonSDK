@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ACamera()
+void Export_pystes_ACamera(py::object m)
 {
-    py::class_< ACamera,  AActor   >("ACamera")
+    py::class_< ACamera,  AActor   >(m, "ACamera")
         .def_readwrite("PCOwner", &ACamera::PCOwner)
         .def_readwrite("CameraStyle", &ACamera::CameraStyle)
         .def_readwrite("DefaultFOV", &ACamera::DefaultFOV)
@@ -39,7 +39,7 @@ void Export_pystes_ACamera()
         .def_readwrite("CameraLensEffects", &ACamera::CameraLensEffects)
         .def_readwrite("CameraShakeCamMod", &ACamera::CameraShakeCamMod)
         .def_readwrite("CameraShakeCamModClass", &ACamera::CameraShakeCamModClass)
-        .def_readonly("AnimInstPool", &ACamera::AnimInstPool)
+		.def_property_readonly("AnimInstPool", &ACamera::AnimInstPool)
         .def_readwrite("ActiveAnims", &ACamera::ActiveAnims)
         .def_readwrite("FreeAnims", &ACamera::FreeAnims)
         .def_readwrite("AnimCameraActor", &ACamera::AnimCameraActor)
@@ -75,6 +75,5 @@ void Export_pystes_ACamera()
         .def("eventDestroyed", &ACamera::eventDestroyed)
         .def("PostBeginPlay", &ACamera::PostBeginPlay)
         .def("CreateCameraModifier", &ACamera::CreateCameraModifier, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

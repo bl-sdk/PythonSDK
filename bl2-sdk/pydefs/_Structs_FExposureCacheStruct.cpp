@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FExposureCacheStruct()
+void Export_pystes_FExposureCacheStruct(py::object m)
 {
-    py::class_< FExposureCacheStruct >("FExposureCacheStruct")
+    py::class_< FExposureCacheStruct >(m, "FExposureCacheStruct")
         .def_readwrite("FromPawnName", &FExposureCacheStruct::FromPawnName)
         .def_readwrite("ToActorName", &FExposureCacheStruct::ToActorName)
         .def_readwrite("TimeCached", &FExposureCacheStruct::TimeCached)

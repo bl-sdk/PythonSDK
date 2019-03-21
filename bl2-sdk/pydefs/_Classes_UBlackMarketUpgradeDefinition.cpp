@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBlackMarketUpgradeDefinition()
+void Export_pystes_UBlackMarketUpgradeDefinition(py::object m)
 {
-    py::class_< UBlackMarketUpgradeDefinition,  UGBXDefinition   >("UBlackMarketUpgradeDefinition")
+    py::class_< UBlackMarketUpgradeDefinition,  UGBXDefinition   >(m, "UBlackMarketUpgradeDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UBlackMarketUpgradeDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("UpgradeName", &UBlackMarketUpgradeDefinition::UpgradeName)
         .def_readwrite("BalanceDefinition", &UBlackMarketUpgradeDefinition::BalanceDefinition)
@@ -17,6 +17,5 @@ void Export_pystes_UBlackMarketUpgradeDefinition()
         .def("OnPurchased", &UBlackMarketUpgradeDefinition::OnPurchased)
         .def("SetBehaviorProviderDefinition", &UBlackMarketUpgradeDefinition::SetBehaviorProviderDefinition)
         .def("GetBehaviorProviderDefinition", &UBlackMarketUpgradeDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

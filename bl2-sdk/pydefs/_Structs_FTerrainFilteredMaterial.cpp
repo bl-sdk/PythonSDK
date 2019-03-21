@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTerrainFilteredMaterial()
+void Export_pystes_FTerrainFilteredMaterial(py::object m)
 {
-    py::class_< FTerrainFilteredMaterial >("FTerrainFilteredMaterial")
+    py::class_< FTerrainFilteredMaterial >(m, "FTerrainFilteredMaterial")
         .def_readwrite("NoiseScale", &FTerrainFilteredMaterial::NoiseScale)
         .def_readwrite("NoisePercent", &FTerrainFilteredMaterial::NoisePercent)
         .def_readwrite("MinHeight", &FTerrainFilteredMaterial::MinHeight)

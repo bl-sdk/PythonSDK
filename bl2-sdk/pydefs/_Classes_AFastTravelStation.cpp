@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AFastTravelStation()
+void Export_pystes_AFastTravelStation(py::object m)
 {
-    py::class_< AFastTravelStation,  ATravelStation   >("AFastTravelStation")
+    py::class_< AFastTravelStation,  ATravelStation   >(m, "AFastTravelStation")
         .def_readwrite("TravelDefinition", &AFastTravelStation::TravelDefinition)
         .def("StaticClass", &AFastTravelStation::StaticClass, py::return_value_policy::reference)
         .def("CanResurrectHere", &AFastTravelStation::CanResurrectHere)
@@ -13,6 +13,5 @@ void Export_pystes_AFastTravelStation()
         .def("GetHumanReadableName", &AFastTravelStation::GetHumanReadableName)
         .def("GetIsRegistered", &AFastTravelStation::GetIsRegistered)
         .def("GetTravelStationDefinition", &AFastTravelStation::GetTravelStationDefinition, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

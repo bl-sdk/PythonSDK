@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowPickup()
+void Export_pystes_AWillowPickup(py::object m)
 {
-    py::class_< AWillowPickup,  ADroppedPickup   >("AWillowPickup")
+    py::class_< AWillowPickup,  ADroppedPickup   >(m, "AWillowPickup")
         .def_readwrite("VfTable_IIMission", &AWillowPickup::VfTable_IIMission)
         .def_readwrite("VfTable_IIMissionDirector", &AWillowPickup::VfTable_IIMissionDirector)
         .def_readwrite("VfTable_IIFocusable", &AWillowPickup::VfTable_IIFocusable)
@@ -110,6 +110,5 @@ void Export_pystes_AWillowPickup()
         .def("eventReplicatedEvent", &AWillowPickup::eventReplicatedEvent)
         .def("eventDestroyed", &AWillowPickup::eventDestroyed)
         .def("PostBeginPlay", &AWillowPickup::PostBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

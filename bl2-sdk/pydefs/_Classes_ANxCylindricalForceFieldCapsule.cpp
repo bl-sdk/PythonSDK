@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ANxCylindricalForceFieldCapsule()
+void Export_pystes_ANxCylindricalForceFieldCapsule(py::object m)
 {
-    py::class_< ANxCylindricalForceFieldCapsule,  ANxForceField   >("ANxCylindricalForceFieldCapsule")
+    py::class_< ANxCylindricalForceFieldCapsule,  ANxForceField   >(m, "ANxCylindricalForceFieldCapsule")
         .def_readwrite("RenderComponent", &ANxCylindricalForceFieldCapsule::RenderComponent)
         .def_readwrite("RadialStrength", &ANxCylindricalForceField::RadialStrength)
         .def_readwrite("RotationalStrength", &ANxCylindricalForceField::RotationalStrength)
@@ -19,6 +19,5 @@ void Export_pystes_ANxCylindricalForceFieldCapsule()
         .def_readwrite("Kernel", &ANxCylindricalForceField::Kernel)
         .def("StaticClass", &ANxCylindricalForceFieldCapsule::StaticClass, py::return_value_policy::reference)
         .def("DoInitRBPhys", &ANxCylindricalForceFieldCapsule::DoInitRBPhys)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

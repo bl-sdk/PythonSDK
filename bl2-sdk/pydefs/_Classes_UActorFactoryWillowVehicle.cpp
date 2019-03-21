@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActorFactoryWillowVehicle()
+void Export_pystes_UActorFactoryWillowVehicle(py::object m)
 {
-    py::class_< UActorFactoryWillowVehicle,  UActorFactory   >("UActorFactoryWillowVehicle")
+    py::class_< UActorFactoryWillowVehicle,  UActorFactory   >(m, "UActorFactoryWillowVehicle")
         .def_readwrite("VehicleArchetype", &UActorFactoryWillowVehicle::VehicleArchetype)
         .def("StaticClass", &UActorFactoryWillowVehicle::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

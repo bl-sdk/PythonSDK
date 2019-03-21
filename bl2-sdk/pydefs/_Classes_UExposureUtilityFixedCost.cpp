@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UExposureUtilityFixedCost()
+void Export_pystes_UExposureUtilityFixedCost(py::object m)
 {
-    py::class_< UExposureUtilityFixedCost,  UExposureUtilityBase   >("UExposureUtilityFixedCost")
+    py::class_< UExposureUtilityFixedCost,  UExposureUtilityBase   >(m, "UExposureUtilityFixedCost")
         .def_readwrite("CloseDistanceSquared", &UExposureUtilityFixedCost::CloseDistanceSquared)
         .def_readwrite("MedDistanceSquared", &UExposureUtilityFixedCost::MedDistanceSquared)
         .def_readwrite("MaxLineChecksPerFrame", &UExposureUtilityFixedCost::MaxLineChecksPerFrame)
@@ -34,6 +34,5 @@ void Export_pystes_UExposureUtilityFixedCost()
         .def_readwrite("HasMovedDistThresholdPlayer", &UExposureUtilityBasicCaching::HasMovedDistThresholdPlayer)
         .def_readwrite("CachedExposures", &UExposureUtilityBasicCaching::CachedExposures)
         .def("StaticClass", &UExposureUtilityFixedCost::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

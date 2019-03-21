@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDamageType()
+void Export_pystes_UDamageType(py::object m)
 {
-    py::class_< UDamageType,  UObject   >("UDamageType")
+    py::class_< UDamageType,  UObject   >(m, "UDamageType")
         .def_readwrite("KDamageImpulse", &UDamageType::KDamageImpulse)
         .def_readwrite("KDeathVel", &UDamageType::KDeathVel)
         .def_readwrite("KDeathUpKick", &UDamageType::KDeathUpKick)
@@ -17,6 +17,5 @@ void Export_pystes_UDamageType()
         .def_readwrite("FracturedMeshDamage", &UDamageType::FracturedMeshDamage)
         .def("StaticClass", &UDamageType::StaticClass, py::return_value_policy::reference)
         .def("VehicleDamageScalingFor", &UDamageType::VehicleDamageScalingFor)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

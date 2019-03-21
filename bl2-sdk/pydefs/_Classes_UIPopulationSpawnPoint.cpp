@@ -3,14 +3,13 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIPopulationSpawnPoint()
+void Export_pystes_UIPopulationSpawnPoint(py::object m)
 {
-    py::class_< UIPopulationSpawnPoint,  UInterface   >("UIPopulationSpawnPoint")
+    py::class_< UIPopulationSpawnPoint,  UInterface   >(m, "UIPopulationSpawnPoint")
         .def("StaticClass", &UIPopulationSpawnPoint::StaticClass, py::return_value_policy::reference)
         .def("GetInitialMovementHoldTime", &UIPopulationSpawnPoint::GetInitialMovementHoldTime)
         .def("GetInitialDestination", &UIPopulationSpawnPoint::GetInitialDestination, py::return_value_policy::reference)
         .def("GetInitialActionType", &UIPopulationSpawnPoint::GetInitialActionType)
         .def("GetSpawnStyleType", &UIPopulationSpawnPoint::GetSpawnStyleType)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

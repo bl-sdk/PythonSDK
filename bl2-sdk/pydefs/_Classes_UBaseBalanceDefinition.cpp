@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBaseBalanceDefinition()
+void Export_pystes_UBaseBalanceDefinition(py::object m)
 {
-    py::class_< UBaseBalanceDefinition,  UGBXDefinition   >("UBaseBalanceDefinition")
+    py::class_< UBaseBalanceDefinition,  UGBXDefinition   >(m, "UBaseBalanceDefinition")
         .def("StaticClass", &UBaseBalanceDefinition::StaticClass, py::return_value_policy::reference)
         .def("ApplyGradeCustomizations", &UBaseBalanceDefinition::ApplyGradeCustomizations)
         .def("DoesSpawnChampion", &UBaseBalanceDefinition::DoesSpawnChampion)
@@ -13,6 +13,5 @@ void Export_pystes_UBaseBalanceDefinition()
         .def("GetSpawnProbabilityModifier", &UBaseBalanceDefinition::GetSpawnProbabilityModifier)
         .def("IsGameStageSupported", &UBaseBalanceDefinition::IsGameStageSupported)
         .def("SelectGradeIndex", &UBaseBalanceDefinition::SelectGradeIndex)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleSpriteEmitter()
+void Export_pystes_UParticleSpriteEmitter(py::object m)
 {
-    py::class_< UParticleSpriteEmitter,  UParticleEmitter   >("UParticleSpriteEmitter")
+    py::class_< UParticleSpriteEmitter,  UParticleEmitter   >(m, "UParticleSpriteEmitter")
         .def("StaticClass", &UParticleSpriteEmitter::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AKActor()
+void Export_pystes_AKActor(py::object m)
 {
-    py::class_< AKActor,  ADynamicSMActor   >("AKActor")
+    py::class_< AKActor,  ADynamicSMActor   >(m, "AKActor")
         .def_readwrite("ImpactEffectComponent", &AKActor::ImpactEffectComponent)
         .def_readwrite("ImpactSoundComponent", &AKActor::ImpactSoundComponent)
         .def_readwrite("ImpactSoundComponent2", &AKActor::ImpactSoundComponent2)
@@ -40,6 +40,5 @@ void Export_pystes_AKActor()
         .def("eventPostBeginPlay", &AKActor::eventPostBeginPlay)
         .def("ResolveRBState", &AKActor::ResolveRBState)
         .def("GetKActorPhysMaterial", &AKActor::GetKActorPhysMaterial, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

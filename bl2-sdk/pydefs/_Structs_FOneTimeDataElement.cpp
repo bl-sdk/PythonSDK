@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FOneTimeDataElement()
+void Export_pystes_FOneTimeDataElement(py::object m)
 {
-    py::class_< FOneTimeDataElement >("FOneTimeDataElement")
+    py::class_< FOneTimeDataElement >(m, "FOneTimeDataElement")
         .def_readwrite("Text", &FOneTimeDataElement::Text)
         .def_readwrite("Icon", &FOneTimeDataElement::Icon)
         .def_readwrite("IconOverride", &FOneTimeDataElement::IconOverride)

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIDataProvider_OnlineFriends()
+void Export_pystes_UUIDataProvider_OnlineFriends(py::object m)
 {
-    py::class_< UUIDataProvider_OnlineFriends,  UUIDataProvider   >("UUIDataProvider_OnlineFriends")
+    py::class_< UUIDataProvider_OnlineFriends,  UUIDataProvider   >(m, "UUIDataProvider_OnlineFriends")
         .def_readwrite("VfTable_IUIListElementCellProvider", &UUIDataProvider_OnlineFriends::VfTable_IUIListElementCellProvider)
         .def_readwrite("FriendsList", &UUIDataProvider_OnlineFriends::FriendsList)
         .def_readwrite("NickNameCol", &UUIDataProvider_OnlineFriends::NickNameCol)
@@ -31,6 +31,5 @@ void Export_pystes_UUIDataProvider_OnlineFriends()
         .def("OnFriendsReadComplete", &UUIDataProvider_OnlineFriends::OnFriendsReadComplete)
         .def("eventOnUnregister", &UUIDataProvider_OnlineFriends::eventOnUnregister)
         .def("eventOnRegister", &UUIDataProvider_OnlineFriends::eventOnRegister)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

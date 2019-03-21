@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAIState_Priority()
+void Export_pystes_UAIState_Priority(py::object m)
 {
-    py::class_< UAIState_Priority,  UAIStateBase   >("UAIState_Priority")
+    py::class_< UAIState_Priority,  UAIStateBase   >(m, "UAIState_Priority")
         .def("StaticClass", &UAIState_Priority::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

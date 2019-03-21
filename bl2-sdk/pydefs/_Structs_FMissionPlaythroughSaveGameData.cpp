@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMissionPlaythroughSaveGameData()
+void Export_pystes_FMissionPlaythroughSaveGameData(py::object m)
 {
-    py::class_< FMissionPlaythroughSaveGameData >("FMissionPlaythroughSaveGameData")
+    py::class_< FMissionPlaythroughSaveGameData >(m, "FMissionPlaythroughSaveGameData")
         .def_readwrite("PlayThroughNumber", &FMissionPlaythroughSaveGameData::PlayThroughNumber)
         .def_readwrite("MissionData", &FMissionPlaythroughSaveGameData::MissionData)
         .def_readwrite("UnloadableDlcMissionData", &FMissionPlaythroughSaveGameData::UnloadableDlcMissionData)

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FVariance()
+void Export_pystes_FVariance(py::object m)
 {
-    py::class_< FVariance >("FVariance")
+    py::class_< FVariance >(m, "FVariance")
         .def_readwrite("LowerBound", &FVariance::LowerBound)
         .def_readwrite("UpperBound", &FVariance::UpperBound)
   ;

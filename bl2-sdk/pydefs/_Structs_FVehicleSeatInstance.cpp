@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FVehicleSeatInstance()
+void Export_pystes_FVehicleSeatInstance(py::object m)
 {
-    py::class_< FVehicleSeatInstance >("FVehicleSeatInstance")
+    py::class_< FVehicleSeatInstance >(m, "FVehicleSeatInstance")
         .def_readwrite("StoragePawn", &FVehicleSeatInstance::StoragePawn)
         .def_readwrite("LastStoragePawn", &FVehicleSeatInstance::LastStoragePawn)
         .def_readwrite("SeatPawn", &FVehicleSeatInstance::SeatPawn)

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBehaviorProcess()
+void Export_pystes_FBehaviorProcess(py::object m)
 {
-    py::class_< FBehaviorProcess >("FBehaviorProcess")
+    py::class_< FBehaviorProcess >(m, "FBehaviorProcess")
         .def_readwrite("Owner", &FBehaviorProcess::Owner)
         .def_readwrite("ProcessID", &FBehaviorProcess::ProcessID)
         .def_readwrite("SequenceEnabledBitField", &FBehaviorProcess::SequenceEnabledBitField)

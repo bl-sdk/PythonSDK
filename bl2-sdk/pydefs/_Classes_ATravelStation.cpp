@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ATravelStation()
+void Export_pystes_ATravelStation(py::object m)
 {
-    py::class_< ATravelStation,  AWillowInteractiveObject   >("ATravelStation")
+    py::class_< ATravelStation,  AWillowInteractiveObject   >(m, "ATravelStation")
         .def_readwrite("VfTable_IIMission", &ATravelStation::VfTable_IIMission)
         .def_readwrite("StationAntennaLight", &ATravelStation::StationAntennaLight)
         .def_readwrite("TeleportDest", &ATravelStation::TeleportDest)
@@ -43,6 +43,5 @@ void Export_pystes_ATravelStation()
         .def("eventPostBeginPlay", &ATravelStation::eventPostBeginPlay)
         .def("eventReplicatedEvent", &ATravelStation::eventReplicatedEvent)
         .def("UpdateCollideAsEncroacher", &ATravelStation::UpdateCollideAsEncroacher)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

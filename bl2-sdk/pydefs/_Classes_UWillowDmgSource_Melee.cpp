@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowDmgSource_Melee()
+void Export_pystes_UWillowDmgSource_Melee(py::object m)
 {
-    py::class_< UWillowDmgSource_Melee,  UWillowDamageSource   >("UWillowDmgSource_Melee")
+    py::class_< UWillowDmgSource_Melee,  UWillowDamageSource   >(m, "UWillowDmgSource_Melee")
         .def("StaticClass", &UWillowDmgSource_Melee::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

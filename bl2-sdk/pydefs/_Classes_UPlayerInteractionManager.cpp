@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerInteractionManager()
+void Export_pystes_UPlayerInteractionManager(py::object m)
 {
-    py::class_< UPlayerInteractionManager,  UObject   >("UPlayerInteractionManager")
+    py::class_< UPlayerInteractionManager,  UObject   >(m, "UPlayerInteractionManager")
         .def_readwrite("Interactions", &UPlayerInteractionManager::Interactions)
         .def_readwrite("TickDelay", &UPlayerInteractionManager::TickDelay)
         .def_readwrite("TimeToTick", &UPlayerInteractionManager::TimeToTick)
@@ -16,6 +16,5 @@ void Export_pystes_UPlayerInteractionManager()
         .def("GetInstigator", &UPlayerInteractionManager::GetInstigator, py::return_value_policy::reference)
         .def("RelayMessage", &UPlayerInteractionManager::RelayMessage)
         .def("StartInteraction", &UPlayerInteractionManager::StartInteraction)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

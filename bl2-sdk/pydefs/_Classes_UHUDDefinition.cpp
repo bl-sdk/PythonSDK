@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHUDDefinition()
+void Export_pystes_UHUDDefinition(py::object m)
 {
-    py::class_< UHUDDefinition,  UGBXDefinition   >("UHUDDefinition")
+    py::class_< UHUDDefinition,  UGBXDefinition   >(m, "UHUDDefinition")
         .def_readwrite("MaxDamageIndicators", &UHUDDefinition::MaxDamageIndicators)
         .def_readwrite("DamageIndicatorLifetime", &UHUDDefinition::DamageIndicatorLifetime)
         .def_readwrite("ItemCardAwarenessRange", &UHUDDefinition::ItemCardAwarenessRange)
@@ -37,6 +37,5 @@ void Export_pystes_UHUDDefinition()
         .def_readwrite("HealthAnimationTime", &UHUDDefinition::HealthAnimationTime)
         .def_readwrite("AutosaveAkEvent", &UHUDDefinition::AutosaveAkEvent)
         .def("StaticClass", &UHUDDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,13 +3,12 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AZoneInfo()
+void Export_pystes_AZoneInfo(py::object m)
 {
-    py::class_< AZoneInfo,  AActor   >("AZoneInfo")
+    py::class_< AZoneInfo,  AActor   >(m, "AZoneInfo")
         .def_readwrite("KillZ", &AZoneInfo::KillZ)
         .def_readwrite("SoftKill", &AZoneInfo::SoftKill)
         .def_readwrite("KillZDamageType", &AZoneInfo::KillZDamageType)
         .def("StaticClass", &AZoneInfo::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

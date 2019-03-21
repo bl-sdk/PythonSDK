@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGFxMovieDrawStyleInstanceData()
+void Export_pystes_UGFxMovieDrawStyleInstanceData(py::object m)
 {
-    py::class_< UGFxMovieDrawStyleInstanceData,  UGFxMovieDrawStyleRTT   >("UGFxMovieDrawStyleInstanceData")
+    py::class_< UGFxMovieDrawStyleInstanceData,  UGFxMovieDrawStyleRTT   >(m, "UGFxMovieDrawStyleInstanceData")
         .def_readwrite("ComponentIDName", &UGFxMovieDrawStyleInstanceData::ComponentIDName)
         .def_readwrite("MatIndexName", &UGFxMovieDrawStyleInstanceData::MatIndexName)
         .def_readwrite("MatiSource", &UGFxMovieDrawStyleInstanceData::MatiSource)
@@ -15,6 +15,5 @@ void Export_pystes_UGFxMovieDrawStyleInstanceData()
         .def_readwrite("Mati", &UGFxMovieDrawStyleInstanceData::Mati)
         .def("StaticClass", &UGFxMovieDrawStyleInstanceData::StaticClass, py::return_value_policy::reference)
         .def("eventRequiresClientInstance", &UGFxMovieDrawStyleInstanceData::eventRequiresClientInstance)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

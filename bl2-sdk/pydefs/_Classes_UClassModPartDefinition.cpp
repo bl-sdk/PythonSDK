@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UClassModPartDefinition()
+void Export_pystes_UClassModPartDefinition(py::object m)
 {
-    py::class_< UClassModPartDefinition,  UEquipableItemPartDefinition   >("UClassModPartDefinition")
+    py::class_< UClassModPartDefinition,  UEquipableItemPartDefinition   >(m, "UClassModPartDefinition")
         .def("StaticClass", &UClassModPartDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

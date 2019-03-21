@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSubtitleProfile()
+void Export_pystes_FSubtitleProfile(py::object m)
 {
-    py::class_< FSubtitleProfile >("FSubtitleProfile")
+    py::class_< FSubtitleProfile >(m, "FSubtitleProfile")
         .def_readwrite("MinX", &FSubtitleProfile::MinX)
         .def_readwrite("MaxX", &FSubtitleProfile::MaxX)
         .def_readwrite("MinY", &FSubtitleProfile::MinY)

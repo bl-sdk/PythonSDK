@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMissionWidgetMessage()
+void Export_pystes_FMissionWidgetMessage(py::object m)
 {
-    py::class_< FMissionWidgetMessage >("FMissionWidgetMessage")
+    py::class_< FMissionWidgetMessage >(m, "FMissionWidgetMessage")
         .def_readwrite("Type", &FMissionWidgetMessage::Type)
         .def_readwrite("Category", &FMissionWidgetMessage::Category)
         .def_readwrite("MissDef", &FMissionWidgetMessage::MissDef)

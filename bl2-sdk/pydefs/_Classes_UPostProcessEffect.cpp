@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPostProcessEffect()
+void Export_pystes_UPostProcessEffect(py::object m)
 {
-    py::class_< UPostProcessEffect,  UObject   >("UPostProcessEffect")
+    py::class_< UPostProcessEffect,  UObject   >(m, "UPostProcessEffect")
         .def_readwrite("EffectName", &UPostProcessEffect::EffectName)
         .def_readwrite("NodePosY", &UPostProcessEffect::NodePosY)
         .def_readwrite("NodePosX", &UPostProcessEffect::NodePosX)
@@ -15,6 +15,5 @@ void Export_pystes_UPostProcessEffect()
         .def_readwrite("InDrawY", &UPostProcessEffect::InDrawY)
         .def_readwrite("SceneDPG", &UPostProcessEffect::SceneDPG)
         .def("StaticClass", &UPostProcessEffect::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

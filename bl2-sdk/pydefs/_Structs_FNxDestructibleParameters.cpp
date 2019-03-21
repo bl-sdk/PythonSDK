@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FNxDestructibleParameters()
+void Export_pystes_FNxDestructibleParameters(py::object m)
 {
-    py::class_< FNxDestructibleParameters >("FNxDestructibleParameters")
+    py::class_< FNxDestructibleParameters >(m, "FNxDestructibleParameters")
         .def_readwrite("DamageThreshold", &FNxDestructibleParameters::DamageThreshold)
         .def_readwrite("DamageToRadius", &FNxDestructibleParameters::DamageToRadius)
         .def_readwrite("DamageCap", &FNxDestructibleParameters::DamageCap)

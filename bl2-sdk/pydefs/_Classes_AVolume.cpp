@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AVolume()
+void Export_pystes_AVolume(py::object m)
 {
-    py::class_< AVolume,  AActor   >("AVolume")
+    py::class_< AVolume,  AActor   >(m, "AVolume")
         .def_readwrite("AssociatedActors", &AVolume::AssociatedActors)
         .def_readwrite("CsgOper", &ABrush::CsgOper)
         .def_readwrite("BrushColor", &ABrush::BrushColor)
@@ -22,6 +22,5 @@ void Export_pystes_AVolume()
         .def("AssociateActor", &AVolume::AssociateActor)
         .def("EncompassesPoint", &AVolume::EncompassesPoint)
         .def("Encompasses", &AVolume::Encompasses)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

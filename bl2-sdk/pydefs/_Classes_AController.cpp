@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AController()
+void Export_pystes_AController(py::object m)
 {
-    py::class_< AController,  UObject   >("AController")
+    py::class_< AController,  UObject   >(m, "AController")
         .def_readwrite("VfTable_IIResourcePoolProvider", &AController::VfTable_IIResourcePoolProvider)
         .def_readwrite("VfTable_IInterface_NavigationHandle", &AController::VfTable_IInterface_NavigationHandle)
         .def_readwrite("Pawn", &AController::Pawn)
@@ -667,6 +667,5 @@ void Export_pystes_AController()
         .def("Sleep", &AActor::Sleep)
         .def("ConsoleCommand", &AActor::ConsoleCommand)
         .def("ForceUpdateComponents", &AActor::ForceUpdateComponents)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

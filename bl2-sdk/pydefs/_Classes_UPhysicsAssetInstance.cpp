@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPhysicsAssetInstance()
+void Export_pystes_UPhysicsAssetInstance(py::object m)
 {
-    py::class_< UPhysicsAssetInstance,  UObject   >("UPhysicsAssetInstance")
+    py::class_< UPhysicsAssetInstance,  UObject   >(m, "UPhysicsAssetInstance")
         .def_readwrite("Owner", &UPhysicsAssetInstance::Owner)
         .def_readwrite("RootBodyIndex", &UPhysicsAssetInstance::RootBodyIndex)
         .def_readwrite("Bodies", &UPhysicsAssetInstance::Bodies)
@@ -37,6 +37,5 @@ void Export_pystes_UPhysicsAssetInstance()
         .def("GetTotalMassBelowBone", &UPhysicsAssetInstance::GetTotalMassBelowBone)
         .def("SetAngularDriveScale", &UPhysicsAssetInstance::SetAngularDriveScale)
         .def("SetLinearDriveScale", &UPhysicsAssetInstance::SetLinearDriveScale)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

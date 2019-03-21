@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowInventoryDefinition()
+void Export_pystes_UWillowInventoryDefinition(py::object m)
 {
-    py::class_< UWillowInventoryDefinition,  UGBXDefinition   >("UWillowInventoryDefinition")
+    py::class_< UWillowInventoryDefinition,  UGBXDefinition   >(m, "UWillowInventoryDefinition")
         .def_readwrite("InventoryClass", &UWillowInventoryDefinition::InventoryClass)
         .def_readwrite("PlayerDroppability", &UWillowInventoryDefinition::PlayerDroppability)
         .def_readwrite("FormOfCurrency", &UWillowInventoryDefinition::FormOfCurrency)
@@ -51,6 +51,5 @@ void Export_pystes_UWillowInventoryDefinition()
         .def("GetLocalizedInventoryName", &UWillowInventoryDefinition::GetLocalizedInventoryName)
         .def("GetInventorySpaceRequirement", &UWillowInventoryDefinition::GetInventorySpaceRequirement)
         .def("GetBaseRarityLevel", &UWillowInventoryDefinition::GetBaseRarityLevel)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

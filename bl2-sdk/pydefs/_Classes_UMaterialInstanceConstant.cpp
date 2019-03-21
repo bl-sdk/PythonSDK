@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialInstanceConstant()
+void Export_pystes_UMaterialInstanceConstant(py::object m)
 {
-    py::class_< UMaterialInstanceConstant,  UMaterialInterface   >("UMaterialInstanceConstant")
+    py::class_< UMaterialInstanceConstant,  UMaterialInterface   >(m, "UMaterialInstanceConstant")
         .def_readwrite("FontParameterValues", &UMaterialInstanceConstant::FontParameterValues)
         .def_readwrite("ScalarParameterValues", &UMaterialInstanceConstant::ScalarParameterValues)
         .def_readwrite("TextureParameterValues", &UMaterialInstanceConstant::TextureParameterValues)
@@ -38,6 +38,5 @@ void Export_pystes_UMaterialInstanceConstant()
         .def("SetParent", &UMaterialInstanceConstant::SetParent)
         .def("IsInMapOrTransientPackage", &UMaterialInstance::IsInMapOrTransientPackage)
         .def("SetScalarCurveParameterValue", &UMaterialInstance::SetScalarCurveParameterValue)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

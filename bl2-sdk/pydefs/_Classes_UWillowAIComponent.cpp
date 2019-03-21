@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAIComponent()
+void Export_pystes_UWillowAIComponent(py::object m)
 {
-    py::class_< UWillowAIComponent,  UAIComponent   >("UWillowAIComponent")
+    py::class_< UWillowAIComponent,  UAIComponent   >(m, "UWillowAIComponent")
         .def_readwrite("MyWillowMind", &UWillowAIComponent::MyWillowMind)
         .def_readwrite("MyDen", &UWillowAIComponent::MyDen)
         .def_readwrite("MyBlackboard", &UWillowAIComponent::MyBlackboard)
@@ -78,6 +78,5 @@ void Export_pystes_UWillowAIComponent()
         .def("GetTargets", &UWillowAIComponent::GetTargets)
         .def("NotifyAttackedBy", &UWillowAIComponent::NotifyAttackedBy)
         .def("ClearState", &UWillowAIComponent::ClearState)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRecoilDef()
+void Export_pystes_FRecoilDef(py::object m)
 {
-    py::class_< FRecoilDef >("FRecoilDef")
+    py::class_< FRecoilDef >(m, "FRecoilDef")
         .def_readwrite("TimeToGo", &FRecoilDef::TimeToGo)
         .def_readwrite("TimeDuration", &FRecoilDef::TimeDuration)
         .def_readwrite("RotAmplitude", &FRecoilDef::RotAmplitude)

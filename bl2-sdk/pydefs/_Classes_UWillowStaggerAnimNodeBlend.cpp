@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowStaggerAnimNodeBlend()
+void Export_pystes_UWillowStaggerAnimNodeBlend(py::object m)
 {
-    py::class_< UWillowStaggerAnimNodeBlend,  UAnimNodeBlendBase   >("UWillowStaggerAnimNodeBlend")
+    py::class_< UWillowStaggerAnimNodeBlend,  UAnimNodeBlendBase   >(m, "UWillowStaggerAnimNodeBlend")
         .def_readwrite("StaggerNodeIndex", &UWillowStaggerAnimNodeBlend::StaggerNodeIndex)
         .def_readwrite("StaggerNodeWeight", &UWillowStaggerAnimNodeBlend::StaggerNodeWeight)
         .def_readwrite("StaggerNodeWeightTarget", &UWillowStaggerAnimNodeBlend::StaggerNodeWeightTarget)
@@ -18,6 +18,5 @@ void Export_pystes_UWillowStaggerAnimNodeBlend()
         .def("StartStaggerBlend", &UWillowStaggerAnimNodeBlend::StartStaggerBlend)
         .def("PlayStaggerAnimation", &UWillowStaggerAnimNodeBlend::PlayStaggerAnimation)
         .def("StopStaggerAnimation", &UWillowStaggerAnimNodeBlend::StopStaggerAnimation)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

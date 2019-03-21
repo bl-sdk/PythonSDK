@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlinePlaylistManager()
+void Export_pystes_UOnlinePlaylistManager(py::object m)
 {
-    py::class_< UOnlinePlaylistManager,  UObject   >("UOnlinePlaylistManager")
+    py::class_< UOnlinePlaylistManager,  UObject   >(m, "UOnlinePlaylistManager")
         .def_readwrite("VfTable_FTickableObject", &UOnlinePlaylistManager::VfTable_FTickableObject)
         .def_readwrite("Playlists", &UOnlinePlaylistManager::Playlists)
         .def_readwrite("PlaylistFileNames", &UOnlinePlaylistManager::PlaylistFileNames)
@@ -56,6 +56,5 @@ void Export_pystes_UOnlinePlaylistManager()
         .def("DetermineFilesToDownload", &UOnlinePlaylistManager::DetermineFilesToDownload)
         .def("DownloadPlaylist", &UOnlinePlaylistManager::DownloadPlaylist)
         .def("OnReadPlaylistComplete", &UOnlinePlaylistManager::OnReadPlaylistComplete)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

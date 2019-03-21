@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APathBlockingVolume()
+void Export_pystes_APathBlockingVolume(py::object m)
 {
-    py::class_< APathBlockingVolume,  AVolume   >("APathBlockingVolume")
+    py::class_< APathBlockingVolume,  AVolume   >(m, "APathBlockingVolume")
         .def("StaticClass", &APathBlockingVolume::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

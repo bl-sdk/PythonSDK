@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ABroadcastHandler()
+void Export_pystes_ABroadcastHandler(py::object m)
 {
-    py::class_< ABroadcastHandler,  AInfo   >("ABroadcastHandler")
+    py::class_< ABroadcastHandler,  AInfo   >(m, "ABroadcastHandler")
         .def_readwrite("SentText", &ABroadcastHandler::SentText)
         .def("StaticClass", &ABroadcastHandler::StaticClass, py::return_value_policy::reference)
         .def("eventAllowBroadcastLocalizedTeam", &ABroadcastHandler::eventAllowBroadcastLocalizedTeam)
@@ -16,6 +16,5 @@ void Export_pystes_ABroadcastHandler()
         .def("BroadcastText", &ABroadcastHandler::BroadcastText)
         .def("AllowsBroadcast", &ABroadcastHandler::AllowsBroadcast)
         .def("UpdateSentText", &ABroadcastHandler::UpdateSentText)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

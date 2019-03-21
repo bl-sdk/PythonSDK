@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNodeSequenceBlendByAim()
+void Export_pystes_UAnimNodeSequenceBlendByAim(py::object m)
 {
-    py::class_< UAnimNodeSequenceBlendByAim,  UAnimNodeSequenceBlendBase   >("UAnimNodeSequenceBlendByAim")
+    py::class_< UAnimNodeSequenceBlendByAim,  UAnimNodeSequenceBlendBase   >(m, "UAnimNodeSequenceBlendByAim")
         .def_readwrite("Aim", &UAnimNodeSequenceBlendByAim::Aim)
         .def_readwrite("PreviousAim", &UAnimNodeSequenceBlendByAim::PreviousAim)
         .def_readwrite("HorizontalRange", &UAnimNodeSequenceBlendByAim::HorizontalRange)
@@ -22,6 +22,5 @@ void Export_pystes_UAnimNodeSequenceBlendByAim()
         .def_readwrite("AnimName_RD", &UAnimNodeSequenceBlendByAim::AnimName_RD)
         .def("StaticClass", &UAnimNodeSequenceBlendByAim::StaticClass, py::return_value_policy::reference)
         .def("CheckAnimsUpToDate", &UAnimNodeSequenceBlendByAim::CheckAnimsUpToDate)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

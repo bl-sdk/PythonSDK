@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDownloadablePackageDefinition()
+void Export_pystes_UDownloadablePackageDefinition(py::object m)
 {
-    py::class_< UDownloadablePackageDefinition,  UGBXDefinition   >("UDownloadablePackageDefinition")
+    py::class_< UDownloadablePackageDefinition,  UGBXDefinition   >(m, "UDownloadablePackageDefinition")
         .def_readwrite("VfTable_IIDlcLicenseObject", &UDownloadablePackageDefinition::VfTable_IIDlcLicenseObject)
         .def_readwrite("PackageId", &UDownloadablePackageDefinition::PackageId)
         .def_readwrite("PackageMask", &UDownloadablePackageDefinition::PackageMask)
@@ -19,6 +19,5 @@ void Export_pystes_UDownloadablePackageDefinition()
         .def("IsFullyInstalled", &UDownloadablePackageDefinition::IsFullyInstalled)
         .def("IsFullyLicensed", &UDownloadablePackageDefinition::IsFullyLicensed)
         .def("GetContentDefinitionById", &UDownloadablePackageDefinition::GetContentDefinitionById, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

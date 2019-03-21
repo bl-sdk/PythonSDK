@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPlayerSkillTreeBranchData()
+void Export_pystes_FPlayerSkillTreeBranchData(py::object m)
 {
-    py::class_< FPlayerSkillTreeBranchData >("FPlayerSkillTreeBranchData")
+    py::class_< FPlayerSkillTreeBranchData >(m, "FPlayerSkillTreeBranchData")
         .def_readwrite("Definition", &FPlayerSkillTreeBranchData::Definition)
         .def_readwrite("BranchPointsToUnlockNextBranch", &FPlayerSkillTreeBranchData::BranchPointsToUnlockNextBranch)
         .def_readwrite("Index", &FPlayerSkillTreeBranchData::Index)

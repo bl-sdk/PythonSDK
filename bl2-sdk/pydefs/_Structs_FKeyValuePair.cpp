@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FKeyValuePair()
+void Export_pystes_FKeyValuePair(py::object m)
 {
-    py::class_< FKeyValuePair >("FKeyValuePair")
+    py::class_< FKeyValuePair >(m, "FKeyValuePair")
         .def_readwrite("Key", &FKeyValuePair::Key)
         .def_readwrite("Value", &FKeyValuePair::Value)
   ;

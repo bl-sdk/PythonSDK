@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNavMeshGoal_WithinDistanceEnvelope()
+void Export_pystes_UNavMeshGoal_WithinDistanceEnvelope(py::object m)
 {
-    py::class_< UNavMeshGoal_WithinDistanceEnvelope,  UNavMeshPathGoalEvaluator   >("UNavMeshGoal_WithinDistanceEnvelope")
+    py::class_< UNavMeshGoal_WithinDistanceEnvelope,  UNavMeshPathGoalEvaluator   >(m, "UNavMeshGoal_WithinDistanceEnvelope")
         .def_readwrite("MaxDistance", &UNavMeshGoal_WithinDistanceEnvelope::MaxDistance)
         .def_readwrite("MinDistance", &UNavMeshGoal_WithinDistanceEnvelope::MinDistance)
         .def_readwrite("MinTraversalDist", &UNavMeshGoal_WithinDistanceEnvelope::MinTraversalDist)
@@ -13,6 +13,5 @@ void Export_pystes_UNavMeshGoal_WithinDistanceEnvelope()
         .def("StaticClass", &UNavMeshGoal_WithinDistanceEnvelope::StaticClass, py::return_value_policy::reference)
         .def("Recycle", &UNavMeshGoal_WithinDistanceEnvelope::Recycle)
         .def("GoalWithinEnvelopeToLoc", &UNavMeshGoal_WithinDistanceEnvelope::GoalWithinEnvelopeToLoc)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

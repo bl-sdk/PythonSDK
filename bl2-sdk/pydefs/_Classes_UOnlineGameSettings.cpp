@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineGameSettings()
+void Export_pystes_UOnlineGameSettings(py::object m)
 {
-    py::class_< UOnlineGameSettings,  UObject   >("UOnlineGameSettings")
+    py::class_< UOnlineGameSettings,  UObject   >(m, "UOnlineGameSettings")
         .def_readwrite("NumPublicConnections", &UOnlineGameSettings::NumPublicConnections)
         .def_readwrite("NumPrivateConnections", &UOnlineGameSettings::NumPrivateConnections)
         .def_readwrite("NumOpenPublicConnections", &UOnlineGameSettings::NumOpenPublicConnections)
@@ -81,6 +81,5 @@ void Export_pystes_UOnlineGameSettings()
         .def("SetSettingsDataInt", &USettings::SetSettingsDataInt)
         .def("SetSettingsDataFloat", &USettings::SetSettingsDataFloat)
         .def("SetSettingsDataString", &USettings::SetSettingsDataString)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

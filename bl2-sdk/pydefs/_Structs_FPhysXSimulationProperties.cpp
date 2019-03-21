@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPhysXSimulationProperties()
+void Export_pystes_FPhysXSimulationProperties(py::object m)
 {
-    py::class_< FPhysXSimulationProperties >("FPhysXSimulationProperties")
+    py::class_< FPhysXSimulationProperties >(m, "FPhysXSimulationProperties")
         .def_readwrite("TimeStep", &FPhysXSimulationProperties::TimeStep)
         .def_readwrite("MaxSubSteps", &FPhysXSimulationProperties::MaxSubSteps)
   ;

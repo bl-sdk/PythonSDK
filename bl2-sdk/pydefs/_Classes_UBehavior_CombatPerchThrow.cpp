@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_CombatPerchThrow()
+void Export_pystes_UBehavior_CombatPerchThrow(py::object m)
 {
-    py::class_< UBehavior_CombatPerchThrow,  UBehaviorBase   >("UBehavior_CombatPerchThrow")
+    py::class_< UBehavior_CombatPerchThrow,  UBehaviorBase   >(m, "UBehavior_CombatPerchThrow")
         .def_readwrite("NumProjectiles", &UBehavior_AIThrowProjectileAtTarget::NumProjectiles)
         .def_readwrite("Options", &UBehavior_AIThrowProjectileAtTarget::Options)
         .def_readwrite("StartOffset", &UBehavior_AIThrowProjectileAtTarget::StartOffset)
@@ -19,6 +19,5 @@ void Export_pystes_UBehavior_CombatPerchThrow()
         .def("ApplyBehaviorToContext", &UBehavior_CombatPerchThrow::ApplyBehaviorToContext)
         .def("PublishBehaviorOutput", &UBehavior_AIThrowProjectileAtTarget::PublishBehaviorOutput)
         .def("ThrowExisting", &UBehavior_AIThrowProjectileAtTarget::ThrowExisting)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

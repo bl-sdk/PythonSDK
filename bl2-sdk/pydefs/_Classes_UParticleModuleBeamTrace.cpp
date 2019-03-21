@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleBeamTrace()
+void Export_pystes_UParticleModuleBeamTrace(py::object m)
 {
-    py::class_< UParticleModuleBeamTrace,  UParticleModuleBeamTarget   >("UParticleModuleBeamTrace")
+    py::class_< UParticleModuleBeamTrace,  UParticleModuleBeamTarget   >(m, "UParticleModuleBeamTrace")
         .def_readwrite("TraceExtent", &UParticleModuleBeamTrace::TraceExtent)
         .def_readwrite("TraceRotation", &UParticleModuleBeamTrace::TraceRotation)
         .def_readwrite("TraceMaxDistance", &UParticleModuleBeamTrace::TraceMaxDistance)
@@ -14,6 +14,5 @@ void Export_pystes_UParticleModuleBeamTrace()
         .def_readwrite("LastDistance", &UParticleModuleBeamTrace::LastDistance)
         .def_readwrite("LastUpdateTime", &UParticleModuleBeamTrace::LastUpdateTime)
         .def("StaticClass", &UParticleModuleBeamTrace::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleSizeBase()
+void Export_pystes_UParticleModuleSizeBase(py::object m)
 {
-    py::class_< UParticleModuleSizeBase,  UParticleModule   >("UParticleModuleSizeBase")
+    py::class_< UParticleModuleSizeBase,  UParticleModule   >(m, "UParticleModuleSizeBase")
         .def("StaticClass", &UParticleModuleSizeBase::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

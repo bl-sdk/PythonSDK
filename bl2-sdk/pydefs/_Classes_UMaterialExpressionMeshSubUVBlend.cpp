@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionMeshSubUVBlend()
+void Export_pystes_UMaterialExpressionMeshSubUVBlend(py::object m)
 {
-    py::class_< UMaterialExpressionMeshSubUVBlend,  UMaterialExpressionTextureSample   >("UMaterialExpressionMeshSubUVBlend")
+    py::class_< UMaterialExpressionMeshSubUVBlend,  UMaterialExpressionTextureSample   >(m, "UMaterialExpressionMeshSubUVBlend")
         .def("StaticClass", &UMaterialExpressionMeshSubUVBlend::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FResourceSaveGameData()
+void Export_pystes_FResourceSaveGameData(py::object m)
 {
-    py::class_< FResourceSaveGameData >("FResourceSaveGameData")
+    py::class_< FResourceSaveGameData >(m, "FResourceSaveGameData")
         .def_readwrite("ResourceDefinition", &FResourceSaveGameData::ResourceDefinition)
         .def_readwrite("ResourcePoolDefinition", &FResourceSaveGameData::ResourcePoolDefinition)
         .def_readwrite("Amount", &FResourceSaveGameData::Amount)

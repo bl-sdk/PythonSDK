@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackSkelControlStrength()
+void Export_pystes_UInterpTrackSkelControlStrength(py::object m)
 {
-    py::class_< UInterpTrackSkelControlStrength,  UInterpTrackFloatBase   >("UInterpTrackSkelControlStrength")
+    py::class_< UInterpTrackSkelControlStrength,  UInterpTrackFloatBase   >(m, "UInterpTrackSkelControlStrength")
         .def_readwrite("SkelControlName", &UInterpTrackSkelControlStrength::SkelControlName)
         .def("StaticClass", &UInterpTrackSkelControlStrength::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleOrientationAxisLock()
+void Export_pystes_UParticleModuleOrientationAxisLock(py::object m)
 {
-    py::class_< UParticleModuleOrientationAxisLock,  UParticleModuleOrientationBase   >("UParticleModuleOrientationAxisLock")
+    py::class_< UParticleModuleOrientationAxisLock,  UParticleModuleOrientationBase   >(m, "UParticleModuleOrientationAxisLock")
         .def_readwrite("LockAxisFlags", &UParticleModuleOrientationAxisLock::LockAxisFlags)
         .def("StaticClass", &UParticleModuleOrientationAxisLock::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

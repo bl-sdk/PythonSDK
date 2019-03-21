@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_URule()
+void Export_pystes_URule(py::object m)
 {
-    py::class_< URule,  UObject   >("URule")
+    py::class_< URule,  UObject   >(m, "URule")
         .def_readwrite("MyRuleEngine", &URule::MyRuleEngine)
         .def_readwrite("Priority", &URule::Priority)
         .def_readwrite("BasePriority", &URule::BasePriority)
@@ -34,6 +34,5 @@ void Export_pystes_URule()
         .def("GetRuleName", &URule::GetRuleName)
         .def("GetRuleFName", &URule::GetRuleFName)
         .def("GetOtherEventParticipant", &URule::GetOtherEventParticipant, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

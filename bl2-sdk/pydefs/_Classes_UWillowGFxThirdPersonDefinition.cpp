@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGFxThirdPersonDefinition()
+void Export_pystes_UWillowGFxThirdPersonDefinition(py::object m)
 {
-    py::class_< UWillowGFxThirdPersonDefinition,  UWillowGFxMovie3DDefinition   >("UWillowGFxThirdPersonDefinition")
+    py::class_< UWillowGFxThirdPersonDefinition,  UWillowGFxMovie3DDefinition   >(m, "UWillowGFxThirdPersonDefinition")
         .def_readwrite("CameraInterpSpeed", &UWillowGFxThirdPersonDefinition::CameraInterpSpeed)
         .def_readwrite("CloseInterpTime", &UWillowGFxThirdPersonDefinition::CloseInterpTime)
         .def_readwrite("CloseInterpDistSqThreshold", &UWillowGFxThirdPersonDefinition::CloseInterpDistSqThreshold)
@@ -16,6 +16,5 @@ void Export_pystes_UWillowGFxThirdPersonDefinition()
         .def_readwrite("MenuRotationSpeed", &UWillowGFxThirdPersonDefinition::MenuRotationSpeed)
         .def_readwrite("MenuRotationSmoothingSpeed", &UWillowGFxThirdPersonDefinition::MenuRotationSmoothingSpeed)
         .def("StaticClass", &UWillowGFxThirdPersonDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

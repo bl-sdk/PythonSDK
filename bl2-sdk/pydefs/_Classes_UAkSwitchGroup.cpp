@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAkSwitchGroup()
+void Export_pystes_UAkSwitchGroup(py::object m)
 {
-    py::class_< UAkSwitchGroup,  UAkObject   >("UAkSwitchGroup")
+    py::class_< UAkSwitchGroup,  UAkObject   >(m, "UAkSwitchGroup")
         .def("StaticClass", &UAkSwitchGroup::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

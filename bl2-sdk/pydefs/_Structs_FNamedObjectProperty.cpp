@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FNamedObjectProperty()
+void Export_pystes_FNamedObjectProperty(py::object m)
 {
-    py::class_< FNamedObjectProperty >("FNamedObjectProperty")
+    py::class_< FNamedObjectProperty >(m, "FNamedObjectProperty")
         .def_readwrite("ObjectPropertyName", &FNamedObjectProperty::ObjectPropertyName)
         .def_readwrite("ObjectPropertyValue", &FNamedObjectProperty::ObjectPropertyValue)
   ;

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineSubsystem()
+void Export_pystes_UOnlineSubsystem(py::object m)
 {
-    py::class_< UOnlineSubsystem,  UObject   >("UOnlineSubsystem")
+    py::class_< UOnlineSubsystem,  UObject   >(m, "UOnlineSubsystem")
         .def_readwrite("VfTable_FTickableObject", &UOnlineSubsystem::VfTable_FTickableObject)
         .def_readwrite("AccountInterface", &UOnlineSubsystem::AccountInterface)
         .def_readonly("UnknownData00", &UOnlineSubsystem::UnknownData00)
@@ -68,6 +68,5 @@ void Export_pystes_UOnlineSubsystem()
         .def("eventExit", &UOnlineSubsystem::eventExit)
         .def("eventPostInit", &UOnlineSubsystem::eventPostInit)
         .def("eventInit", &UOnlineSubsystem::eventInit)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

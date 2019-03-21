@@ -3,8 +3,8 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FParticleSystemLOD()
+void Export_pystes_FParticleSystemLOD(py::object m)
 {
-    py::class_< FParticleSystemLOD >("FParticleSystemLOD")
+    py::class_< FParticleSystemLOD >(m, "FParticleSystemLOD")
   ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FClientMeshBeaconConnection()
+void Export_pystes_FClientMeshBeaconConnection(py::object m)
 {
-    py::class_< FClientMeshBeaconConnection >("FClientMeshBeaconConnection")
+    py::class_< FClientMeshBeaconConnection >(m, "FClientMeshBeaconConnection")
         .def_readwrite("PlayerNetId", &FClientMeshBeaconConnection::PlayerNetId)
         .def_readwrite("ElapsedHeartbeatTime", &FClientMeshBeaconConnection::ElapsedHeartbeatTime)
         .def_readwrite("Socket", &FClientMeshBeaconConnection::Socket)

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UChassisDefinition()
+void Export_pystes_UChassisDefinition(py::object m)
 {
-    py::class_< UChassisDefinition,  UGBXDefinition   >("UChassisDefinition")
+    py::class_< UChassisDefinition,  UGBXDefinition   >(m, "UChassisDefinition")
         .def_readwrite("VfTable_IIHitRegionInfoProvider", &UChassisDefinition::VfTable_IIHitRegionInfoProvider)
         .def_readwrite("BodyComposition", &UChassisDefinition::BodyComposition)
         .def_readwrite("DefaultHitRegion", &UChassisDefinition::DefaultHitRegion)
@@ -24,6 +24,5 @@ void Export_pystes_UChassisDefinition()
         .def_readwrite("StatusEffectParticleSystemTemplate", &UChassisDefinition::StatusEffectParticleSystemTemplate)
         .def("StaticClass", &UChassisDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetHitRegions", &UChassisDefinition::GetHitRegions)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

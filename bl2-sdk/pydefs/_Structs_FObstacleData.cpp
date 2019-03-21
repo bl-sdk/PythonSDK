@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FObstacleData()
+void Export_pystes_FObstacleData(py::object m)
 {
-    py::class_< FObstacleData >("FObstacleData")
+    py::class_< FObstacleData >(m, "FObstacleData")
         .def_readwrite("Actor", &FObstacleData::Actor)
         .def_readwrite("Leader", &FObstacleData::Leader)
         .def_readwrite("Radius", &FObstacleData::Radius)

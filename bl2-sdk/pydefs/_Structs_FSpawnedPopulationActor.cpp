@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSpawnedPopulationActor()
+void Export_pystes_FSpawnedPopulationActor(py::object m)
 {
-    py::class_< FSpawnedPopulationActor >("FSpawnedPopulationActor")
+    py::class_< FSpawnedPopulationActor >(m, "FSpawnedPopulationActor")
         .def_readwrite("SpawnedActor", &FSpawnedPopulationActor::SpawnedActor)
         .def_readwrite("SpawnFactory", &FSpawnedPopulationActor::SpawnFactory)
         .def_readwrite("FactoryDestructionParams", &FSpawnedPopulationActor::FactoryDestructionParams)

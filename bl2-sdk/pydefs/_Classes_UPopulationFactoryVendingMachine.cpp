@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPopulationFactoryVendingMachine()
+void Export_pystes_UPopulationFactoryVendingMachine(py::object m)
 {
-    py::class_< UPopulationFactoryVendingMachine,  UPopulationFactory   >("UPopulationFactoryVendingMachine")
+    py::class_< UPopulationFactoryVendingMachine,  UPopulationFactory   >(m, "UPopulationFactoryVendingMachine")
         .def_readwrite("ShopType", &UPopulationFactoryVendingMachine::ShopType)
         .def_readwrite("FormOfCurrency", &UPopulationFactoryVendingMachine::FormOfCurrency)
         .def_readwrite("CommerceMarkup", &UPopulationFactoryVendingMachine::CommerceMarkup)
@@ -28,6 +28,5 @@ void Export_pystes_UPopulationFactoryVendingMachine()
         .def("eventGetSpawnVisibilityBounds", &UPopulationFactoryInteractiveObject::eventGetSpawnVisibilityBounds)
         .def("GetActorAllegiance", &UPopulationFactoryInteractiveObject::GetActorAllegiance, py::return_value_policy::reference)
         .def("GetObjectDefinition", &UPopulationFactoryInteractiveObject::GetObjectDefinition, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

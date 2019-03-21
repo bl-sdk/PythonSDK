@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FItemBuilderData()
+void Export_pystes_FItemBuilderData(py::object m)
 {
-    py::class_< FItemBuilderData >("FItemBuilderData")
+    py::class_< FItemBuilderData >(m, "FItemBuilderData")
         .def_readwrite("TabName", &FItemBuilderData::TabName)
         .def_readwrite("ItemName", &FItemBuilderData::ItemName)
         .def_readwrite("BuildItemMessage", &FItemBuilderData::BuildItemMessage)

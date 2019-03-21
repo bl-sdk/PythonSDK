@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ASplineLoftActorMovable()
+void Export_pystes_ASplineLoftActorMovable(py::object m)
 {
-    py::class_< ASplineLoftActorMovable,  ASplineLoftActor   >("ASplineLoftActorMovable")
+    py::class_< ASplineLoftActorMovable,  ASplineLoftActor   >(m, "ASplineLoftActorMovable")
         .def("StaticClass", &ASplineLoftActorMovable::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

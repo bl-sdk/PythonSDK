@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AInternetLink()
+void Export_pystes_AInternetLink(py::object m)
 {
-    py::class_< AInternetLink,  AInfo   >("AInternetLink")
+    py::class_< AInternetLink,  AInfo   >(m, "AInternetLink")
         .def_readwrite("LinkMode", &AInternetLink::LinkMode)
         .def_readwrite("InLineMode", &AInternetLink::InLineMode)
         .def_readwrite("OutLineMode", &AInternetLink::OutLineMode)
@@ -25,6 +25,5 @@ void Export_pystes_AInternetLink()
         .def("Resolve", &AInternetLink::Resolve)
         .def("ParseURL", &AInternetLink::ParseURL)
         .def("IsDataPending", &AInternetLink::IsDataPending)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

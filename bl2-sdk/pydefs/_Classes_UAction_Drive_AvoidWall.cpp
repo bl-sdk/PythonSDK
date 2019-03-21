@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_Drive_AvoidWall()
+void Export_pystes_UAction_Drive_AvoidWall(py::object m)
 {
-    py::class_< UAction_Drive_AvoidWall,  UWillowActionSequencePawn   >("UAction_Drive_AvoidWall")
+    py::class_< UAction_Drive_AvoidWall,  UWillowActionSequencePawn   >(m, "UAction_Drive_AvoidWall")
         .def_readwrite("LineCheckDistance", &UAction_Drive_AvoidWall::LineCheckDistance)
         .def_readwrite("NumLineChecks", &UAction_Drive_AvoidWall::NumLineChecks)
         .def_readwrite("HitNormalDotZThreshold", &UAction_Drive_AvoidWall::HitNormalDotZThreshold)
@@ -22,6 +22,5 @@ void Export_pystes_UAction_Drive_AvoidWall()
         .def("eventStart", &UAction_Drive_AvoidWall::eventStart)
         .def("eventCanRun", &UAction_Drive_AvoidWall::eventCanRun)
         .def("TestForCollision", &UAction_Drive_AvoidWall::TestForCollision)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

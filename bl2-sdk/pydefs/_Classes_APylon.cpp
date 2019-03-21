@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APylon()
+void Export_pystes_APylon(py::object m)
 {
-    py::class_< APylon,  ANavigationPoint   >("APylon")
+    py::class_< APylon,  ANavigationPoint   >(m, "APylon")
         .def_readwrite("VfTable_IEditorLinkSelectionInterface", &APylon::VfTable_IEditorLinkSelectionInterface)
         .def_readwrite("NavMeshPtr", &APylon::NavMeshPtr)
         .def_readwrite("ObstacleMesh", &APylon::ObstacleMesh)
@@ -41,6 +41,5 @@ void Export_pystes_APylon()
         .def("eventSetEnabled", &APylon::eventSetEnabled)
         .def("PostBeginPlay", &APylon::PostBeginPlay)
         .def("OnPylonStatusChange", &APylon::OnPylonStatusChange)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

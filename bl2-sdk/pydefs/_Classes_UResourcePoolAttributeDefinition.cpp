@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UResourcePoolAttributeDefinition()
+void Export_pystes_UResourcePoolAttributeDefinition(py::object m)
 {
-    py::class_< UResourcePoolAttributeDefinition,  UAttributeDefinition   >("UResourcePoolAttributeDefinition")
+    py::class_< UResourcePoolAttributeDefinition,  UAttributeDefinition   >(m, "UResourcePoolAttributeDefinition")
         .def_readwrite("Resource", &UResourcePoolAttributeDefinition::Resource)
         .def("StaticClass", &UResourcePoolAttributeDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

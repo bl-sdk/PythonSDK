@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USystem()
+void Export_pystes_USystem(py::object m)
 {
-    py::class_< USystem,  UObject   >("USystem")
+    py::class_< USystem,  UObject   >(m, "USystem")
         .def_readwrite("StaleCacheDays", &USystem::StaleCacheDays)
         .def_readwrite("MaxStaleCacheSize", &USystem::MaxStaleCacheSize)
         .def_readwrite("MaxOverallCacheSize", &USystem::MaxOverallCacheSize)
@@ -33,6 +33,5 @@ void Export_pystes_USystem()
         .def_readwrite("Unsuppress", &USystem::Unsuppress)
         .def_readwrite("VfTable_FExec", &USubsystem::VfTable_FExec)
         .def("StaticClass", &USystem::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

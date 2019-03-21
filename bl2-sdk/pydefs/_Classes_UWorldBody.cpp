@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWorldBody()
+void Export_pystes_UWorldBody(py::object m)
 {
-    py::class_< UWorldBody,  UObject   >("UWorldBody")
+    py::class_< UWorldBody,  UObject   >(m, "UWorldBody")
         .def_readwrite("VfTable_IIWorldBody", &UWorldBody::VfTable_IIWorldBody)
         .def_readwrite("Instigator", &UWorldBody::Instigator)
         .def_readwrite("Location", &UWorldBody::Location)
@@ -31,6 +31,5 @@ void Export_pystes_UWorldBody()
         .def("GetWorldBodyVelocity", &UWorldBody::GetWorldBodyVelocity)
         .def("GetWorldBodyRotation", &UWorldBody::GetWorldBodyRotation)
         .def("GetWorldBodyLocation", &UWorldBody::GetWorldBodyLocation)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_CustomAnimation()
+void Export_pystes_UBehavior_CustomAnimation(py::object m)
 {
-    py::class_< UBehavior_CustomAnimation,  UBehaviorBase   >("UBehavior_CustomAnimation")
+    py::class_< UBehavior_CustomAnimation,  UBehaviorBase   >(m, "UBehavior_CustomAnimation")
         .def_readwrite("Reaction", &UBehavior_CustomAnimation::Reaction)
         .def_readwrite("CustomAnimNodeName", &UBehavior_CustomAnimation::CustomAnimNodeName)
         .def_readwrite("AnimName", &UBehavior_CustomAnimation::AnimName)
@@ -15,6 +15,5 @@ void Export_pystes_UBehavior_CustomAnimation()
         .def_readwrite("AnimRate", &UBehavior_CustomAnimation::AnimRate)
         .def("StaticClass", &UBehavior_CustomAnimation::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_CustomAnimation::ApplyBehaviorToContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

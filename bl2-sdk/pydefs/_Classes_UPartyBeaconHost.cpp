@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPartyBeaconHost()
+void Export_pystes_UPartyBeaconHost(py::object m)
 {
-    py::class_< UPartyBeaconHost,  UObject   >("UPartyBeaconHost")
+    py::class_< UPartyBeaconHost,  UObject   >(m, "UPartyBeaconHost")
         .def_readwrite("Clients", &UPartyBeaconHost::Clients)
         .def_readwrite("NumTeams", &UPartyBeaconHost::NumTeams)
         .def_readwrite("NumPlayersPerTeam", &UPartyBeaconHost::NumPlayersPerTeam)
@@ -46,6 +46,5 @@ void Export_pystes_UPartyBeaconHost()
         .def("InitHostBeacon", &UPartyBeaconHost::InitHostBeacon)
         .def("PauseReservationRequests", &UPartyBeaconHost::PauseReservationRequests)
         .def("OnDestroyComplete", &UPartyBeacon::OnDestroyComplete)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

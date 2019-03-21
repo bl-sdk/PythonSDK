@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPresetGeneratedPoint()
+void Export_pystes_FPresetGeneratedPoint(py::object m)
 {
-    py::class_< FPresetGeneratedPoint >("FPresetGeneratedPoint")
+    py::class_< FPresetGeneratedPoint >(m, "FPresetGeneratedPoint")
         .def_readwrite("KeyIn", &FPresetGeneratedPoint::KeyIn)
         .def_readwrite("KeyOut", &FPresetGeneratedPoint::KeyOut)
         .def_readwrite("TangentIn", &FPresetGeneratedPoint::TangentIn)

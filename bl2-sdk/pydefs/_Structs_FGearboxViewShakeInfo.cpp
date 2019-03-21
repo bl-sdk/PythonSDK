@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGearboxViewShakeInfo()
+void Export_pystes_FGearboxViewShakeInfo(py::object m)
 {
-    py::class_< FGearboxViewShakeInfo >("FGearboxViewShakeInfo")
+    py::class_< FGearboxViewShakeInfo >(m, "FGearboxViewShakeInfo")
         .def_readwrite("OffsetMag", &FGearboxViewShakeInfo::OffsetMag)
         .def_readwrite("OffsetRate", &FGearboxViewShakeInfo::OffsetRate)
         .def_readwrite("OffsetTime", &FGearboxViewShakeInfo::OffsetTime)

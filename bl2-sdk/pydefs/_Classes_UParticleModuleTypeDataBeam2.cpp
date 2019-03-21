@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleTypeDataBeam2()
+void Export_pystes_UParticleModuleTypeDataBeam2(py::object m)
 {
-    py::class_< UParticleModuleTypeDataBeam2,  UParticleModuleTypeDataBase   >("UParticleModuleTypeDataBeam2")
+    py::class_< UParticleModuleTypeDataBeam2,  UParticleModuleTypeDataBase   >(m, "UParticleModuleTypeDataBeam2")
         .def_readwrite("BeamMethod", &UParticleModuleTypeDataBeam2::BeamMethod)
         .def_readwrite("TaperMethod", &UParticleModuleTypeDataBeam2::TaperMethod)
         .def_readwrite("TextureTile", &UParticleModuleTypeDataBeam2::TextureTile)
@@ -20,6 +20,5 @@ void Export_pystes_UParticleModuleTypeDataBeam2()
         .def_readwrite("TaperFactor", &UParticleModuleTypeDataBeam2::TaperFactor)
         .def_readwrite("TaperScale", &UParticleModuleTypeDataBeam2::TaperScale)
         .def("StaticClass", &UParticleModuleTypeDataBeam2::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

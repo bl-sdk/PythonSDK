@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCounterBehaviorUserState()
+void Export_pystes_FCounterBehaviorUserState(py::object m)
 {
-    py::class_< FCounterBehaviorUserState >("FCounterBehaviorUserState")
+    py::class_< FCounterBehaviorUserState >(m, "FCounterBehaviorUserState")
         .def_readonly("Counters", &FCounterBehaviorUserState::Counters)
   ;
 }

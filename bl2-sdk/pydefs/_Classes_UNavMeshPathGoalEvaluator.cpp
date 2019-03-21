@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNavMeshPathGoalEvaluator()
+void Export_pystes_UNavMeshPathGoalEvaluator(py::object m)
 {
-    py::class_< UNavMeshPathGoalEvaluator,  UObject   >("UNavMeshPathGoalEvaluator")
+    py::class_< UNavMeshPathGoalEvaluator,  UObject   >(m, "UNavMeshPathGoalEvaluator")
         .def_readwrite("NextEvaluator", &UNavMeshPathGoalEvaluator::NextEvaluator)
         .def_readwrite("MaxPathVisits", &UNavMeshPathGoalEvaluator::MaxPathVisits)
         .def_readwrite("NumNodesThrownOut", &UNavMeshPathGoalEvaluator::NumNodesThrownOut)
@@ -13,6 +13,5 @@ void Export_pystes_UNavMeshPathGoalEvaluator()
         .def("StaticClass", &UNavMeshPathGoalEvaluator::StaticClass, py::return_value_policy::reference)
         .def("eventGetDumpString", &UNavMeshPathGoalEvaluator::eventGetDumpString)
         .def("eventRecycle", &UNavMeshPathGoalEvaluator::eventRecycle)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

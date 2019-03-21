@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UItemNamePartDefinition()
+void Export_pystes_UItemNamePartDefinition(py::object m)
 {
-    py::class_< UItemNamePartDefinition,  UWillowInventoryPartDefinition   >("UItemNamePartDefinition")
+    py::class_< UItemNamePartDefinition,  UWillowInventoryPartDefinition   >(m, "UItemNamePartDefinition")
         .def_readwrite("PartName", &UItemNamePartDefinition::PartName)
         .def_readwrite("Expressions", &UItemNamePartDefinition::Expressions)
         .def_readwrite("MinExpLevelRequirement", &UItemNamePartDefinition::MinExpLevelRequirement)
@@ -26,6 +26,5 @@ void Export_pystes_UItemNamePartDefinition()
         .def("OnCreate", &UItemPartDefinition::OnCreate)
         .def("SetBehaviorProviderDefinition", &UItemPartDefinition::SetBehaviorProviderDefinition)
         .def("GetBehaviorProviderDefinition", &UItemPartDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

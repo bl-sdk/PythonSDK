@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPS3InvitesPopupGFxObject()
+void Export_pystes_UPS3InvitesPopupGFxObject(py::object m)
 {
-    py::class_< UPS3InvitesPopupGFxObject,  UGFxObject   >("UPS3InvitesPopupGFxObject")
+    py::class_< UPS3InvitesPopupGFxObject,  UGFxObject   >(m, "UPS3InvitesPopupGFxObject")
         .def("StaticClass", &UPS3InvitesPopupGFxObject::StaticClass, py::return_value_policy::reference)
         .def("Hide", &UPS3InvitesPopupGFxObject::Hide)
         .def("Show", &UPS3InvitesPopupGFxObject::Show)
@@ -16,6 +16,5 @@ void Export_pystes_UPS3InvitesPopupGFxObject()
         .def("GetSelectedInviteIndex", &UPS3InvitesPopupGFxObject::GetSelectedInviteIndex)
         .def("ClearInvites", &UPS3InvitesPopupGFxObject::ClearInvites)
         .def("AddInvite", &UPS3InvitesPopupGFxObject::AddInvite)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

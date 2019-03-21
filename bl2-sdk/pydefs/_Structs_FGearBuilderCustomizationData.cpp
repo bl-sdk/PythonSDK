@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGearBuilderCustomizationData()
+void Export_pystes_FGearBuilderCustomizationData(py::object m)
 {
-    py::class_< FGearBuilderCustomizationData >("FGearBuilderCustomizationData")
+    py::class_< FGearBuilderCustomizationData >(m, "FGearBuilderCustomizationData")
         .def_readwrite("SortValue", &FGearBuilderCustomizationData::SortValue)
         .def_readwrite("BalanceDefinition", &FGearBuilderCustomizationData::BalanceDefinition)
   ;

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_Crane()
+void Export_pystes_UBehavior_Crane(py::object m)
 {
-    py::class_< UBehavior_Crane,  UBehaviorBase   >("UBehavior_Crane")
+    py::class_< UBehavior_Crane,  UBehaviorBase   >(m, "UBehavior_Crane")
         .def_readwrite("Action", &UBehavior_Crane::Action)
         .def("StaticClass", &UBehavior_Crane::StaticClass, py::return_value_policy::reference)
         .def("DontDoShit", &UBehavior_Crane::DontDoShit)
@@ -14,6 +14,5 @@ void Export_pystes_UBehavior_Crane()
         .def("AttachDummy", &UBehavior_Crane::AttachDummy)
         .def("FindDummy", &UBehavior_Crane::FindDummy)
         .def("ApplyBehaviorToContext", &UBehavior_Crane::ApplyBehaviorToContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

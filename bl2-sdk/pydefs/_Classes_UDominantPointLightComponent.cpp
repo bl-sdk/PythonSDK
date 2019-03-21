@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDominantPointLightComponent()
+void Export_pystes_UDominantPointLightComponent(py::object m)
 {
-    py::class_< UDominantPointLightComponent,  UPointLightComponent   >("UDominantPointLightComponent")
+    py::class_< UDominantPointLightComponent,  UPointLightComponent   >(m, "UDominantPointLightComponent")
         .def("StaticClass", &UDominantPointLightComponent::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

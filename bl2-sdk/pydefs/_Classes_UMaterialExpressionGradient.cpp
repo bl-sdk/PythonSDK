@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionGradient()
+void Export_pystes_UMaterialExpressionGradient(py::object m)
 {
-    py::class_< UMaterialExpressionGradient,  UMaterialExpression   >("UMaterialExpressionGradient")
+    py::class_< UMaterialExpressionGradient,  UMaterialExpression   >(m, "UMaterialExpressionGradient")
         .def_readwrite("Coordinates", &UMaterialExpressionGradient::Coordinates)
         .def_readwrite("GradientStyle", &UMaterialExpressionGradient::GradientStyle)
         .def_readwrite("AddressX", &UMaterialExpressionGradient::AddressX)
@@ -15,6 +15,5 @@ void Export_pystes_UMaterialExpressionGradient()
         .def_readwrite("ForegroundOffset", &UMaterialExpressionGradient::ForegroundOffset)
         .def_readwrite("BackgroundOffset", &UMaterialExpressionGradient::BackgroundOffset)
         .def("StaticClass", &UMaterialExpressionGradient::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

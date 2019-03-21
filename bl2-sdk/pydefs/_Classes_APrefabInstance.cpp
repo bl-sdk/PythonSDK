@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APrefabInstance()
+void Export_pystes_APrefabInstance(py::object m)
 {
-    py::class_< APrefabInstance,  AActor   >("APrefabInstance")
+    py::class_< APrefabInstance,  AActor   >(m, "APrefabInstance")
         .def_readwrite("TemplatePrefab", &APrefabInstance::TemplatePrefab)
         .def_readwrite("TemplateVersion", &APrefabInstance::TemplateVersion)
         .def_readonly("UnknownData00", &APrefabInstance::UnknownData00)
@@ -19,6 +19,5 @@ void Export_pystes_APrefabInstance()
         .def_readwrite("PI_SavedNames", &APrefabInstance::PI_SavedNames)
         .def_readonly("UnknownData01", &APrefabInstance::UnknownData01)
         .def("StaticClass", &APrefabInstance::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

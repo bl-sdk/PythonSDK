@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UObjectSerializer()
+void Export_pystes_UObjectSerializer(py::object m)
 {
-    py::class_< UObjectSerializer,  UObject   >("UObjectSerializer")
+    py::class_< UObjectSerializer,  UObject   >(m, "UObjectSerializer")
         .def_readonly("UnknownData00", &UObjectSerializer::UnknownData00)
         .def("StaticClass", &UObjectSerializer::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

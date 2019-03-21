@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ATrigger()
+void Export_pystes_ATrigger(py::object m)
 {
-    py::class_< ATrigger,  AActor   >("ATrigger")
+    py::class_< ATrigger,  AActor   >(m, "ATrigger")
         .def_readwrite("CylinderComponent", &ATrigger::CylinderComponent)
         .def_readwrite("AITriggerDelay", &ATrigger::AITriggerDelay)
         .def("StaticClass", &ATrigger::StaticClass, py::return_value_policy::reference)
@@ -18,6 +18,5 @@ void Export_pystes_ATrigger()
         .def("eventTouch", &ATrigger::eventTouch)
         .def("eventPostBeginPlay", &ATrigger::eventPostBeginPlay)
         .def("TriggerDetachSprites", &ATrigger::TriggerDetachSprites)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

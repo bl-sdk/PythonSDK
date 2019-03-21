@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGFxFSCmdHandler()
+void Export_pystes_UGFxFSCmdHandler(py::object m)
 {
-    py::class_< UGFxFSCmdHandler,  UObject   >("UGFxFSCmdHandler")
+    py::class_< UGFxFSCmdHandler,  UObject   >(m, "UGFxFSCmdHandler")
         .def("StaticClass", &UGFxFSCmdHandler::StaticClass, py::return_value_policy::reference)
         .def("eventFSCommand", &UGFxFSCmdHandler::eventFSCommand)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

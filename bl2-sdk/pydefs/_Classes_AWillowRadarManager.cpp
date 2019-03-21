@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowRadarManager()
+void Export_pystes_AWillowRadarManager(py::object m)
 {
-    py::class_< AWillowRadarManager,  AActor   >("AWillowRadarManager")
+    py::class_< AWillowRadarManager,  AActor   >(m, "AWillowRadarManager")
         .def_readonly("DefaultIconLifeTime", &AWillowRadarManager::DefaultIconLifeTime)
         .def_readwrite("NumberOfDynamicIcons", &AWillowRadarManager::NumberOfDynamicIcons)
         .def_readonly("ServerDynamicIcons", &AWillowRadarManager::ServerDynamicIcons)
@@ -18,6 +18,5 @@ void Export_pystes_AWillowRadarManager()
         .def("AddSkillStation", &AWillowRadarManager::AddSkillStation)
         .def("RemoveDynamicIcon", &AWillowRadarManager::RemoveDynamicIcon)
         .def("AddDynamicIcon", &AWillowRadarManager::AddDynamicIcon)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

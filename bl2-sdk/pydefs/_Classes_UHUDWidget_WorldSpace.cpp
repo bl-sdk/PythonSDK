@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHUDWidget_WorldSpace()
+void Export_pystes_UHUDWidget_WorldSpace(py::object m)
 {
-    py::class_< UHUDWidget_WorldSpace,  UHUDWidget_Base   >("UHUDWidget_WorldSpace")
+    py::class_< UHUDWidget_WorldSpace,  UHUDWidget_Base   >(m, "UHUDWidget_WorldSpace")
         .def_readwrite("ObjectiveIcons", &UHUDWidget_WorldSpace::ObjectiveIcons)
         .def_readwrite("PlayerIcons", &UHUDWidget_WorldSpace::PlayerIcons)
         .def_readwrite("NPCAllyIcons", &UHUDWidget_WorldSpace::NPCAllyIcons)
@@ -32,6 +32,5 @@ void Export_pystes_UHUDWidget_WorldSpace()
         .def("Update", &UHUDWidget_WorldSpace::Update)
         .def("Deinit", &UHUDWidget_WorldSpace::Deinit)
         .def("Init", &UHUDWidget_WorldSpace::Init)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

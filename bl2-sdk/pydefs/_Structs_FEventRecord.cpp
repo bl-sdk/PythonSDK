@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FEventRecord()
+void Export_pystes_FEventRecord(py::object m)
 {
-    py::class_< FEventRecord >("FEventRecord")
+    py::class_< FEventRecord >(m, "FEventRecord")
         .def_readwrite("EventDefinition", &FEventRecord::EventDefinition)
         .def_readwrite("OtherEventParticipantObject", &FEventRecord::OtherEventParticipantObject)
   ;

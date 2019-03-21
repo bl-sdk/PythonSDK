@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGbxMessageManager()
+void Export_pystes_UGbxMessageManager(py::object m)
 {
-    py::class_< UGbxMessageManager,  UObject   >("UGbxMessageManager")
+    py::class_< UGbxMessageManager,  UObject   >(m, "UGbxMessageManager")
         .def_readwrite("Listeners", &UGbxMessageManager::Listeners)
         .def_readwrite("MessagesToSend", &UGbxMessageManager::MessagesToSend)
         .def_readwrite("SentMessagesRecently", &UGbxMessageManager::SentMessagesRecently)
@@ -16,6 +16,5 @@ void Export_pystes_UGbxMessageManager()
         .def("AddListener", &UGbxMessageManager::AddListener)
         .def("PostMessage", &UGbxMessageManager::PostMessage)
         .def("AllocateMessage", &UGbxMessageManager::AllocateMessage, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

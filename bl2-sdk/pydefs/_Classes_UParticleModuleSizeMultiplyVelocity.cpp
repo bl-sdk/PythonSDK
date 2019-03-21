@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleSizeMultiplyVelocity()
+void Export_pystes_UParticleModuleSizeMultiplyVelocity(py::object m)
 {
-    py::class_< UParticleModuleSizeMultiplyVelocity,  UParticleModuleSizeBase   >("UParticleModuleSizeMultiplyVelocity")
+    py::class_< UParticleModuleSizeMultiplyVelocity,  UParticleModuleSizeBase   >(m, "UParticleModuleSizeMultiplyVelocity")
         .def_readwrite("VelocityMultiplier", &UParticleModuleSizeMultiplyVelocity::VelocityMultiplier)
         .def("StaticClass", &UParticleModuleSizeMultiplyVelocity::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

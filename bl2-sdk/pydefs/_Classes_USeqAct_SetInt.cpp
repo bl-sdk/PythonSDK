@@ -3,13 +3,12 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_SetInt()
+void Export_pystes_USeqAct_SetInt(py::object m)
 {
-    py::class_< USeqAct_SetInt,  USeqAct_SetSequenceVariable   >("USeqAct_SetInt")
+    py::class_< USeqAct_SetInt,  USeqAct_SetSequenceVariable   >(m, "USeqAct_SetInt")
         .def_readwrite("Target", &USeqAct_SetInt::Target)
         .def_readwrite("Value", &USeqAct_SetInt::Value)
         .def("StaticClass", &USeqAct_SetInt::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqAct_SetInt::eventGetObjClassVersion)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

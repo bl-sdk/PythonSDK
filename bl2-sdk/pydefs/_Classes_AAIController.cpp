@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AAIController()
+void Export_pystes_AAIController(py::object m)
 {
-    py::class_< AAIController,  AController   >("AAIController")
+    py::class_< AAIController,  AController   >(m, "AAIController")
         .def_readwrite("Skill", &AAIController::Skill)
         .def_readwrite("ScriptedMoveTarget", &AAIController::ScriptedMoveTarget)
         .def_readwrite("ScriptedRoute", &AAIController::ScriptedRoute)
@@ -20,6 +20,5 @@ void Export_pystes_AAIController()
         .def("eventSetTeam", &AAIController::eventSetTeam)
         .def("Reset", &AAIController::Reset)
         .def("eventPreBeginPlay", &AAIController::eventPreBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

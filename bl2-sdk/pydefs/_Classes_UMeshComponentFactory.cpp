@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMeshComponentFactory()
+void Export_pystes_UMeshComponentFactory(py::object m)
 {
-    py::class_< UMeshComponentFactory,  UPrimitiveComponentFactory   >("UMeshComponentFactory")
+    py::class_< UMeshComponentFactory,  UPrimitiveComponentFactory   >(m, "UMeshComponentFactory")
         .def_readwrite("Materials", &UMeshComponentFactory::Materials)
         .def("StaticClass", &UMeshComponentFactory::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

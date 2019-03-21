@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxStaticMeshComponent()
+void Export_pystes_UGearboxStaticMeshComponent(py::object m)
 {
-    py::class_< UGearboxStaticMeshComponent,  UStaticMeshComponent   >("UGearboxStaticMeshComponent")
+    py::class_< UGearboxStaticMeshComponent,  UStaticMeshComponent   >(m, "UGearboxStaticMeshComponent")
         .def_readwrite("FOV", &UGearboxStaticMeshComponent::FOV)
         .def("StaticClass", &UGearboxStaticMeshComponent::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

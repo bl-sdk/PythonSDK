@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowDamageArea()
+void Export_pystes_AWillowDamageArea(py::object m)
 {
-    py::class_< AWillowDamageArea,  AActor   >("AWillowDamageArea")
+    py::class_< AWillowDamageArea,  AActor   >(m, "AWillowDamageArea")
         .def_readwrite("CollisionPrimitiveType", &AWillowDamageArea::CollisionPrimitiveType)
         .def_readwrite("DamagePerSecond", &AWillowDamageArea::DamagePerSecond)
         .def_readwrite("StatusEffectDamage", &AWillowDamageArea::StatusEffectDamage)
@@ -33,6 +33,5 @@ void Export_pystes_AWillowDamageArea()
         .def("GetStatusEffectChanceModifier", &AWillowDamageArea::GetStatusEffectChanceModifier)
         .def("GetStatusEffectBaseChanceModifier", &AWillowDamageArea::GetStatusEffectBaseChanceModifier)
         .def("GetStatusEffectBaseDamage", &AWillowDamageArea::GetStatusEffectBaseDamage)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

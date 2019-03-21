@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNodeCrossfader()
+void Export_pystes_UAnimNodeCrossfader(py::object m)
 {
-    py::class_< UAnimNodeCrossfader,  UAnimNodeBlend   >("UAnimNodeCrossfader")
+    py::class_< UAnimNodeCrossfader,  UAnimNodeBlend   >(m, "UAnimNodeCrossfader")
         .def_readwrite("DefaultAnimSeqName", &UAnimNodeCrossfader::DefaultAnimSeqName)
         .def_readwrite("PendingBlendOutTimeOneShot", &UAnimNodeCrossfader::PendingBlendOutTimeOneShot)
         .def("StaticClass", &UAnimNodeCrossfader::StaticClass, py::return_value_policy::reference)
@@ -13,6 +13,5 @@ void Export_pystes_UAnimNodeCrossfader()
         .def("GetAnimName", &UAnimNodeCrossfader::GetAnimName)
         .def("BlendToLoopingAnim", &UAnimNodeCrossfader::BlendToLoopingAnim)
         .def("PlayOneShotAnim", &UAnimNodeCrossfader::PlayOneShotAnim)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

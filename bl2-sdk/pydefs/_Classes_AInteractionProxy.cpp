@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AInteractionProxy()
+void Export_pystes_AInteractionProxy(py::object m)
 {
-    py::class_< AInteractionProxy,  ATrigger   >("AInteractionProxy")
+    py::class_< AInteractionProxy,  ATrigger   >(m, "AInteractionProxy")
         .def_readwrite("VfTable_IIUsable", &AInteractionProxy::VfTable_IIUsable)
         .def_readwrite("Definition", &AInteractionProxy::Definition)
         .def_readwrite("CostsToUseType", &AInteractionProxy::CostsToUseType)
@@ -26,6 +26,5 @@ void Export_pystes_AInteractionProxy()
         .def("AllowUseEvent", &AInteractionProxy::AllowUseEvent)
         .def("IsInteractionDebugEnabled", &AInteractionProxy::IsInteractionDebugEnabled)
         .def("ToggleInteractionDebug", &AInteractionProxy::ToggleInteractionDebug)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

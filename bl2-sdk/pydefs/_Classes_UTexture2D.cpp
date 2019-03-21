@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTexture2D()
+void Export_pystes_UTexture2D(py::object m)
 {
-    py::class_< UTexture2D,  UTexture   >("UTexture2D")
+    py::class_< UTexture2D,  UTexture   >(m, "UTexture2D")
         .def_readwrite("Mips", &UTexture2D::Mips)
         .def_readwrite("SizeX", &UTexture2D::SizeX)
         .def_readwrite("SizeY", &UTexture2D::SizeY)
@@ -29,6 +29,5 @@ void Export_pystes_UTexture2D()
         .def("StaticClass", &UTexture2D::StaticClass, py::return_value_policy::reference)
         .def("Create", &UTexture2D::Create, py::return_value_policy::reference)
         .def("SetForceMipLevelsToBeResident", &UTexture2D::SetForceMipLevelsToBeResident)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

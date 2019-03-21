@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowElevator()
+void Export_pystes_AWillowElevator(py::object m)
 {
-    py::class_< AWillowElevator,  AInterpActor   >("AWillowElevator")
+    py::class_< AWillowElevator,  AInterpActor   >(m, "AWillowElevator")
         .def_readwrite("FloorIndex", &AWillowElevator::FloorIndex)
         .def_readwrite("DestFloorIndex", &AWillowElevator::DestFloorIndex)
         .def_readwrite("InitialFloorIndex", &AWillowElevator::InitialFloorIndex)
@@ -20,6 +20,5 @@ void Export_pystes_AWillowElevator()
         .def("TryGoToInitialState", &AWillowElevator::TryGoToInitialState)
         .def("ChildEncroachingOn", &AWillowElevator::ChildEncroachingOn)
         .def("PostBeginPlay", &AWillowElevator::PostBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

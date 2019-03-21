@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCurveEdTab()
+void Export_pystes_FCurveEdTab(py::object m)
 {
-    py::class_< FCurveEdTab >("FCurveEdTab")
+    py::class_< FCurveEdTab >(m, "FCurveEdTab")
         .def_readwrite("TabName", &FCurveEdTab::TabName)
         .def_readwrite("Curves", &FCurveEdTab::Curves)
         .def_readwrite("ViewStartInput", &FCurveEdTab::ViewStartInput)

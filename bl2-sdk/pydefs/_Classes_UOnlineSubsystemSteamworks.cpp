@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineSubsystemSteamworks()
+void Export_pystes_UOnlineSubsystemSteamworks(py::object m)
 {
-    py::class_< UOnlineSubsystemSteamworks,  UOnlineSubsystemCommonImpl   >("UOnlineSubsystemSteamworks")
+    py::class_< UOnlineSubsystemSteamworks,  UOnlineSubsystemCommonImpl   >(m, "UOnlineSubsystemSteamworks")
         .def_readwrite("CallbackBridge", &UOnlineSubsystemSteamworks::CallbackBridge)
         .def_readwrite("AsyncTasks", &UOnlineSubsystemSteamworks::AsyncTasks)
         .def_readwrite("TotalGSStatsStoresPending", &UOnlineSubsystemSteamworks::TotalGSStatsStoresPending)
@@ -423,6 +423,5 @@ void Export_pystes_UOnlineSubsystemSteamworks()
         .def("OnLoginChange", &UOnlineSubsystemSteamworks::OnLoginChange)
         .def("eventExit", &UOnlineSubsystemSteamworks::eventExit)
         .def("eventInit", &UOnlineSubsystemSteamworks::eventInit)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

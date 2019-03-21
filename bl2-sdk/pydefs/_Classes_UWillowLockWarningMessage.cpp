@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowLockWarningMessage()
+void Export_pystes_UWillowLockWarningMessage(py::object m)
 {
-    py::class_< UWillowLockWarningMessage,  UWillowLocalMessage   >("UWillowLockWarningMessage")
+    py::class_< UWillowLockWarningMessage,  UWillowLocalMessage   >(m, "UWillowLockWarningMessage")
         .def_readwrite("MissileLockOnString", &UWillowLockWarningMessage::MissileLockOnString)
         .def_readwrite("AvrilLockOnString", &UWillowLockWarningMessage::AvrilLockOnString)
         .def_readwrite("RadarLockString", &UWillowLockWarningMessage::RadarLockString)
@@ -16,6 +16,5 @@ void Export_pystes_UWillowLockWarningMessage()
         .def("GetColor", &UWillowLockWarningMessage::GetColor)
         .def("GetString", &UWillowLockWarningMessage::GetString)
         .def("AnnouncementLevel", &UWillowLockWarningMessage::AnnouncementLevel)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

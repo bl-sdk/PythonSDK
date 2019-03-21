@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UVendingMachineGFxDefinition()
+void Export_pystes_UVendingMachineGFxDefinition(py::object m)
 {
-    py::class_< UVendingMachineGFxDefinition,  UWillowGFxMovie3DDefinition   >("UVendingMachineGFxDefinition")
+    py::class_< UVendingMachineGFxDefinition,  UWillowGFxMovie3DDefinition   >(m, "UVendingMachineGFxDefinition")
         .def_readwrite("StrictGiveUpDistance", &UVendingMachineGFxDefinition::StrictGiveUpDistance)
         .def_readwrite("LooseGiveUpDistance", &UVendingMachineGFxDefinition::LooseGiveUpDistance)
         .def_readwrite("StrictTolerance", &UVendingMachineGFxDefinition::StrictTolerance)
@@ -38,6 +38,5 @@ void Export_pystes_UVendingMachineGFxDefinition()
         .def_readwrite("Card2TextureLinkage", &UVendingMachineGFxDefinition::Card2TextureLinkage)
         .def_readwrite("RefreshInterval", &UVendingMachineGFxDefinition::RefreshInterval)
         .def("StaticClass", &UVendingMachineGFxDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

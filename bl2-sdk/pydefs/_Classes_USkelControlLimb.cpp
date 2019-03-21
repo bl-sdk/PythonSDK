@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USkelControlLimb()
+void Export_pystes_USkelControlLimb(py::object m)
 {
-    py::class_< USkelControlLimb,  USkelControlBase   >("USkelControlLimb")
+    py::class_< USkelControlLimb,  USkelControlBase   >(m, "USkelControlLimb")
         .def_readwrite("EffectorLocation", &USkelControlLimb::EffectorLocation)
         .def_readwrite("EffectorRotation", &USkelControlLimb::EffectorRotation)
         .def_readwrite("EffectorLocationSpace", &USkelControlLimb::EffectorLocationSpace)
@@ -22,6 +22,5 @@ void Export_pystes_USkelControlLimb()
         .def_readwrite("StretchRollBoneName", &USkelControlLimb::StretchRollBoneName)
         .def_readwrite("CachedTwistBoneIndex", &USkelControlLimb::CachedTwistBoneIndex)
         .def("StaticClass", &USkelControlLimb::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

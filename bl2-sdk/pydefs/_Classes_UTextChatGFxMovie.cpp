@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTextChatGFxMovie()
+void Export_pystes_UTextChatGFxMovie(py::object m)
 {
-    py::class_< UTextChatGFxMovie,  UWillowGFxMovie   >("UTextChatGFxMovie")
+    py::class_< UTextChatGFxMovie,  UWillowGFxMovie   >(m, "UTextChatGFxMovie")
         .def_readwrite("ChatObj", &UTextChatGFxMovie::ChatObj)
         .def("StaticClass", &UTextChatGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("extTextChatOnLoad", &UTextChatGFxMovie::extTextChatOnLoad)
@@ -19,6 +19,5 @@ void Export_pystes_UTextChatGFxMovie()
         .def("StartTextChat", &UTextChatGFxMovie::StartTextChat)
         .def("eventOnClose", &UTextChatGFxMovie::eventOnClose)
         .def("eventStart", &UTextChatGFxMovie::eventStart)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

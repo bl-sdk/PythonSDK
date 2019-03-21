@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FUniqueNetId()
+void Export_pystes_FUniqueNetId(py::object m)
 {
-    py::class_< FUniqueNetId >("FUniqueNetId")
+    py::class_< FUniqueNetId >(m, "FUniqueNetId")
         .def_readwrite("Uid", &FUniqueNetId::Uid)
         .def_readonly("NpId", &FUniqueNetId::NpId)
   ;

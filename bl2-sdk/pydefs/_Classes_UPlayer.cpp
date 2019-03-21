@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayer()
+void Export_pystes_UPlayer(py::object m)
 {
-    py::class_< UPlayer,  UObject   >("UPlayer")
+    py::class_< UPlayer,  UObject   >(m, "UPlayer")
         .def_readwrite("VfTable_FExec", &UPlayer::VfTable_FExec)
         .def_readwrite("Actor", &UPlayer::Actor)
         .def_readwrite("CurrentNetSpeed", &UPlayer::CurrentNetSpeed)
@@ -17,6 +17,5 @@ void Export_pystes_UPlayer()
         .def_readwrite("PP_ShadowsMultiplier", &UPlayer::PP_ShadowsMultiplier)
         .def("StaticClass", &UPlayer::StaticClass, py::return_value_policy::reference)
         .def("SwitchController", &UPlayer::SwitchController)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

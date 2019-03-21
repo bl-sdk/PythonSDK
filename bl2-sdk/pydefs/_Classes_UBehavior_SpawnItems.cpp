@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SpawnItems()
+void Export_pystes_UBehavior_SpawnItems(py::object m)
 {
-    py::class_< UBehavior_SpawnItems,  UBehaviorBase   >("UBehavior_SpawnItems")
+    py::class_< UBehavior_SpawnItems,  UBehaviorBase   >(m, "UBehavior_SpawnItems")
         .def_readwrite("ItemDropOffset", &UBehavior_SpawnItems::ItemDropOffset)
         .def_readwrite("ItemDropVelocity", &UBehavior_SpawnItems::ItemDropVelocity)
         .def_readwrite("ItemScatterOffset", &UBehavior_SpawnItems::ItemScatterOffset)
@@ -18,6 +18,5 @@ void Export_pystes_UBehavior_SpawnItems()
         .def_readwrite("ItemSpawnSocket", &UBehavior_SpawnItems::ItemSpawnSocket)
         .def("StaticClass", &UBehavior_SpawnItems::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_SpawnItems::ApplyBehaviorToContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

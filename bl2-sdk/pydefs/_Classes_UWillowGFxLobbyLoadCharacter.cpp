@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGFxLobbyLoadCharacter()
+void Export_pystes_UWillowGFxLobbyLoadCharacter(py::object m)
 {
-    py::class_< UWillowGFxLobbyLoadCharacter,  UWillowGFxMovie   >("UWillowGFxLobbyLoadCharacter")
+    py::class_< UWillowGFxLobbyLoadCharacter,  UWillowGFxMovie   >(m, "UWillowGFxLobbyLoadCharacter")
         .def_readwrite("LoadCharacterLobby", &UWillowGFxLobbyLoadCharacter::LoadCharacterLobby)
         .def_readwrite("DisplayedCharacterDataList", &UWillowGFxLobbyLoadCharacter::DisplayedCharacterDataList)
         .def_readwrite("SaveGameHelper", &UWillowGFxLobbyLoadCharacter::SaveGameHelper)
@@ -62,6 +62,5 @@ void Export_pystes_UWillowGFxLobbyLoadCharacter()
         .def("eventStart", &UWillowGFxLobbyLoadCharacter::eventStart)
         .def("OnCloseNoLoad", &UWillowGFxLobbyLoadCharacter::OnCloseNoLoad)
         .def("OnLoadGame", &UWillowGFxLobbyLoadCharacter::OnLoadGame)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

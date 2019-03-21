@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowVehicleSimHover()
+void Export_pystes_UWillowVehicleSimHover(py::object m)
 {
-    py::class_< UWillowVehicleSimHover,  USVehicleSimCar   >("UWillowVehicleSimHover")
+    py::class_< UWillowVehicleSimHover,  USVehicleSimCar   >(m, "UWillowVehicleSimHover")
         .def_readwrite("FlyingVehicle", &UWillowVehicleSimHover::FlyingVehicle)
         .def_readwrite("AirTransFriction", &UWillowVehicleSimHover::AirTransFriction)
         .def_readwrite("AirRotFriction", &UWillowVehicleSimHover::AirRotFriction)
@@ -14,6 +14,5 @@ void Export_pystes_UWillowVehicleSimHover()
         .def_readwrite("TiltScalar", &UWillowVehicleSimHover::TiltScalar)
         .def_readwrite("MoveTiltAmount", &UWillowVehicleSimHover::MoveTiltAmount)
         .def("StaticClass", &UWillowVehicleSimHover::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

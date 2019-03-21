@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowVendingMachine()
+void Export_pystes_AWillowVendingMachine(py::object m)
 {
-    py::class_< AWillowVendingMachine,  AWillowVendingMachineBase   >("AWillowVendingMachine")
+    py::class_< AWillowVendingMachine,  AWillowVendingMachineBase   >(m, "AWillowVendingMachine")
         .def_readonly("ShopInventory", &AWillowVendingMachine::ShopInventory)
         .def_readwrite("FeaturedItem", &AWillowVendingMachine::FeaturedItem)
         .def_readwrite("FeaturedItemPickup", &AWillowVendingMachine::FeaturedItemPickup)
@@ -31,6 +31,5 @@ void Export_pystes_AWillowVendingMachine()
         .def("GetItemList", &AWillowVendingMachine::GetItemList)
         .def("GetSellingPriceForInventory", &AWillowVendingMachine::GetSellingPriceForInventory)
         .def("GenerateInventory", &AWillowVendingMachine::GenerateInventory)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

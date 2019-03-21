@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USkelControlLookAt()
+void Export_pystes_USkelControlLookAt(py::object m)
 {
-    py::class_< USkelControlLookAt,  USkelControlBase   >("USkelControlLookAt")
+    py::class_< USkelControlLookAt,  USkelControlBase   >(m, "USkelControlLookAt")
         .def_readwrite("TargetLocation", &USkelControlLookAt::TargetLocation)
         .def_readwrite("TargetLocationSpace", &USkelControlLookAt::TargetLocationSpace)
         .def_readwrite("LookAtAxis", &USkelControlLookAt::LookAtAxis)
@@ -35,6 +35,5 @@ void Export_pystes_USkelControlLookAt()
         .def("SetLookAtAlpha", &USkelControlLookAt::SetLookAtAlpha)
         .def("InterpolateTargetLocation", &USkelControlLookAt::InterpolateTargetLocation)
         .def("SetTargetLocation", &USkelControlLookAt::SetTargetLocation)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

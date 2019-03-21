@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGFxThirdPersonMovie()
+void Export_pystes_UWillowGFxThirdPersonMovie(py::object m)
 {
-    py::class_< UWillowGFxThirdPersonMovie,  UWillowGFxMovie3D   >("UWillowGFxThirdPersonMovie")
+    py::class_< UWillowGFxThirdPersonMovie,  UWillowGFxMovie3D   >(m, "UWillowGFxThirdPersonMovie")
         .def_readwrite("MyThirdPersonDefinition", &UWillowGFxThirdPersonMovie::MyThirdPersonDefinition)
         .def_readwrite("CameraYaw", &UWillowGFxThirdPersonMovie::CameraYaw)
         .def_readwrite("CameraPitch", &UWillowGFxThirdPersonMovie::CameraPitch)
@@ -51,6 +51,5 @@ void Export_pystes_UWillowGFxThirdPersonMovie()
         .def("eventGetCurrentTab", &UWillowGFxThirdPersonMovie::eventGetCurrentTab)
         .def("eventStart", &UWillowGFxThirdPersonMovie::eventStart)
         .def("AmITheStatusMenu", &UWillowGFxThirdPersonMovie::AmITheStatusMenu)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

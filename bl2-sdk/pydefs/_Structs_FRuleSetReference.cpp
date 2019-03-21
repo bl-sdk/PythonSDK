@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRuleSetReference()
+void Export_pystes_FRuleSetReference(py::object m)
 {
-    py::class_< FRuleSetReference >("FRuleSetReference")
+    py::class_< FRuleSetReference >(m, "FRuleSetReference")
         .def_readwrite("ReferenceName", &FRuleSetReference::ReferenceName)
         .def_readwrite("ReferenceRuleSet", &FRuleSetReference::ReferenceRuleSet)
   ;

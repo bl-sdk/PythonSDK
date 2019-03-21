@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIGbxMessageListener()
+void Export_pystes_UIGbxMessageListener(py::object m)
 {
-    py::class_< UIGbxMessageListener,  UInterface   >("UIGbxMessageListener")
+    py::class_< UIGbxMessageListener,  UInterface   >(m, "UIGbxMessageListener")
         .def("StaticClass", &UIGbxMessageListener::StaticClass, py::return_value_policy::reference)
         .def("WantsToStopListening", &UIGbxMessageListener::WantsToStopListening)
         .def("GetActor", &UIGbxMessageListener::GetActor, py::return_value_policy::reference)
@@ -13,6 +13,5 @@ void Export_pystes_UIGbxMessageListener()
         .def("GetAllegiance", &UIGbxMessageListener::GetAllegiance, py::return_value_policy::reference)
         .def("ReceiveMessage", &UIGbxMessageListener::ReceiveMessage)
         .def("CaresAboutMessage", &UIGbxMessageListener::CaresAboutMessage)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

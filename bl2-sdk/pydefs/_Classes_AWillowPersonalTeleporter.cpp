@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowPersonalTeleporter()
+void Export_pystes_AWillowPersonalTeleporter(py::object m)
 {
-    py::class_< AWillowPersonalTeleporter,  ATeleporterDestination   >("AWillowPersonalTeleporter")
+    py::class_< AWillowPersonalTeleporter,  ATeleporterDestination   >(m, "AWillowPersonalTeleporter")
         .def_readwrite("TeleportedPlayers", &AWillowPersonalTeleporter::TeleportedPlayers)
         .def_readwrite("Definition", &AWillowPersonalTeleporter::Definition)
         .def_readwrite("CylinderComponent", &AWillowPersonalTeleporter::CylinderComponent)
@@ -32,6 +32,5 @@ void Export_pystes_AWillowPersonalTeleporter()
         .def("PlaceTeleporter", &AWillowPersonalTeleporter::PlaceTeleporter)
         .def("ActivateTeleporterPlacedEvent", &AWillowPersonalTeleporter::ActivateTeleporterPlacedEvent)
         .def("eventReplicatedEvent", &AWillowPersonalTeleporter::eventReplicatedEvent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

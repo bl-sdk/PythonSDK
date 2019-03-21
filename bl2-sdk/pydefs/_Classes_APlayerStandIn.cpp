@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APlayerStandIn()
+void Export_pystes_APlayerStandIn(py::object m)
 {
-    py::class_< APlayerStandIn,  AActor   >("APlayerStandIn")
+    py::class_< APlayerStandIn,  AActor   >(m, "APlayerStandIn")
         .def_readwrite("VfTable_IIGearLikenessConsumer", &APlayerStandIn::VfTable_IIGearLikenessConsumer)
         .def_readwrite("VfTable_IIBodyCompositionInstance", &APlayerStandIn::VfTable_IIBodyCompositionInstance)
         .def_readwrite("VfTable_IIBodyInfoProvider", &APlayerStandIn::VfTable_IIBodyInfoProvider)
@@ -54,6 +54,5 @@ void Export_pystes_APlayerStandIn()
         .def("CustomizationApplied", &APlayerStandIn::CustomizationApplied)
         .def("Destroyed", &APlayerStandIn::Destroyed)
         .def("PostBeginPlay", &APlayerStandIn::PostBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

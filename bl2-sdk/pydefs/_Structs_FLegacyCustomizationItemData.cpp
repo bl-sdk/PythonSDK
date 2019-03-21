@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLegacyCustomizationItemData()
+void Export_pystes_FLegacyCustomizationItemData(py::object m)
 {
-    py::class_< FLegacyCustomizationItemData >("FLegacyCustomizationItemData")
+    py::class_< FLegacyCustomizationItemData >(m, "FLegacyCustomizationItemData")
         .def_readwrite("ItemPoolDefPath", &FLegacyCustomizationItemData::ItemPoolDefPath)
         .def_readwrite("ItemPoolKey", &FLegacyCustomizationItemData::ItemPoolKey)
         .def_readwrite("CustomizationItemPool", &FLegacyCustomizationItemData::CustomizationItemPool)

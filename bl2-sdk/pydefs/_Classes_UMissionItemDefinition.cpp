@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMissionItemDefinition()
+void Export_pystes_UMissionItemDefinition(py::object m)
 {
-    py::class_< UMissionItemDefinition,  UItemDefinition   >("UMissionItemDefinition")
+    py::class_< UMissionItemDefinition,  UItemDefinition   >(m, "UMissionItemDefinition")
         .def_readwrite("AssociatedMissionObjective", &UMissionItemDefinition::AssociatedMissionObjective)
         .def_readwrite("MissionDirective", &UMissionItemDefinition::MissionDirective)
         .def_readwrite("DirectiveMovieDefinition", &UMissionItemDefinition::DirectiveMovieDefinition)
@@ -14,6 +14,5 @@ void Export_pystes_UMissionItemDefinition()
         .def("CanPickupInBulk", &UMissionItemDefinition::CanPickupInBulk)
         .def("ShouldPlayerAutomaticallyPickup", &UMissionItemDefinition::ShouldPlayerAutomaticallyPickup)
         .def("OnUsed", &UUsableItemDefinition::OnUsed)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

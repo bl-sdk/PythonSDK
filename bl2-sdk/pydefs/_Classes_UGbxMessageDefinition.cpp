@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGbxMessageDefinition()
+void Export_pystes_UGbxMessageDefinition(py::object m)
 {
-    py::class_< UGbxMessageDefinition,  UGBXDefinition   >("UGbxMessageDefinition")
+    py::class_< UGbxMessageDefinition,  UGBXDefinition   >(m, "UGbxMessageDefinition")
         .def_readwrite("NameKey", &UGbxMessageDefinition::NameKey)
         .def_readwrite("Radius", &UGbxMessageDefinition::Radius)
         .def_readwrite("SecondsBetweenSends", &UGbxMessageDefinition::SecondsBetweenSends)
@@ -13,6 +13,5 @@ void Export_pystes_UGbxMessageDefinition()
         .def_readwrite("DupeCriteria", &UGbxMessageDefinition::DupeCriteria)
         .def_readwrite("MaxRecipients", &UGbxMessageDefinition::MaxRecipients)
         .def("StaticClass", &UGbxMessageDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

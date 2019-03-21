@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FConditionalExplosionData()
+void Export_pystes_FConditionalExplosionData(py::object m)
 {
-    py::class_< FConditionalExplosionData >("FConditionalExplosionData")
+    py::class_< FConditionalExplosionData >(m, "FConditionalExplosionData")
         .def_readwrite("Expression", &FConditionalExplosionData::Expression)
         .def_readwrite("Explosion", &FConditionalExplosionData::Explosion)
   ;

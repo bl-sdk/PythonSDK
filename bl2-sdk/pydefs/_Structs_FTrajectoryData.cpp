@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTrajectoryData()
+void Export_pystes_FTrajectoryData(py::object m)
 {
-    py::class_< FTrajectoryData >("FTrajectoryData")
+    py::class_< FTrajectoryData >(m, "FTrajectoryData")
         .def_readwrite("Speed", &FTrajectoryData::Speed)
         .def_readwrite("AnglePct", &FTrajectoryData::AnglePct)
         .def_readwrite("Angle", &FTrajectoryData::Angle)

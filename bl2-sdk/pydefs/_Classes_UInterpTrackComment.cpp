@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackComment()
+void Export_pystes_UInterpTrackComment(py::object m)
 {
-    py::class_< UInterpTrackComment,  UInterpTrack   >("UInterpTrackComment")
+    py::class_< UInterpTrackComment,  UInterpTrack   >(m, "UInterpTrackComment")
         .def_readwrite("CommentTrack", &UInterpTrackComment::CommentTrack)
         .def("StaticClass", &UInterpTrackComment::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

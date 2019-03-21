@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWorldDiscoveryArea()
+void Export_pystes_AWorldDiscoveryArea(py::object m)
 {
-    py::class_< AWorldDiscoveryArea,  AActor   >("AWorldDiscoveryArea")
+    py::class_< AWorldDiscoveryArea,  AActor   >(m, "AWorldDiscoveryArea")
         .def_readwrite("VfTable_IIBalancedActor", &AWorldDiscoveryArea::VfTable_IIBalancedActor)
         .def_readwrite("DefaultWorldAreaShortName", &AWorldDiscoveryArea::DefaultWorldAreaShortName)
         .def_readwrite("CustomName", &AWorldDiscoveryArea::CustomName)
@@ -30,6 +30,5 @@ void Export_pystes_AWorldDiscoveryArea()
         .def("GetGameStage", &AWorldDiscoveryArea::GetGameStage)
         .def("GetExperienceReward", &AWorldDiscoveryArea::GetExperienceReward)
         .def("GetWorldAreaShortName", &AWorldDiscoveryArea::GetWorldAreaShortName)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

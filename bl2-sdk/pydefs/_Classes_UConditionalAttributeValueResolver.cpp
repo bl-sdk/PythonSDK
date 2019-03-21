@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UConditionalAttributeValueResolver()
+void Export_pystes_UConditionalAttributeValueResolver(py::object m)
 {
-    py::class_< UConditionalAttributeValueResolver,  UAttributeValueResolver   >("UConditionalAttributeValueResolver")
+    py::class_< UConditionalAttributeValueResolver,  UAttributeValueResolver   >(m, "UConditionalAttributeValueResolver")
         .def_readwrite("ValueExpressions", &UConditionalAttributeValueResolver::ValueExpressions)
         .def("StaticClass", &UConditionalAttributeValueResolver::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

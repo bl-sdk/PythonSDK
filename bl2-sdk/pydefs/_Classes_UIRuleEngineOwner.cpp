@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIRuleEngineOwner()
+void Export_pystes_UIRuleEngineOwner(py::object m)
 {
-    py::class_< UIRuleEngineOwner,  UInterface   >("UIRuleEngineOwner")
+    py::class_< UIRuleEngineOwner,  UInterface   >(m, "UIRuleEngineOwner")
         .def("StaticClass", &UIRuleEngineOwner::StaticClass, py::return_value_policy::reference)
         .def("GetRuleEngine", &UIRuleEngineOwner::GetRuleEngine, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

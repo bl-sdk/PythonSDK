@@ -3,14 +3,13 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSeqAct_MissionSmokeTest()
+void Export_pystes_UWillowSeqAct_MissionSmokeTest(py::object m)
 {
-    py::class_< UWillowSeqAct_MissionSmokeTest,  USeqAct_Latent   >("UWillowSeqAct_MissionSmokeTest")
+    py::class_< UWillowSeqAct_MissionSmokeTest,  USeqAct_Latent   >(m, "UWillowSeqAct_MissionSmokeTest")
         .def_readwrite("SaveGameList", &UWillowSeqAct_MissionSmokeTest::SaveGameList)
         .def_readwrite("CurrentSavegame", &UWillowSeqAct_MissionSmokeTest::CurrentSavegame)
         .def_readwrite("TestStatus", &UWillowSeqAct_MissionSmokeTest::TestStatus)
         .def_readwrite("LatentFloat", &UWillowSeqAct_MissionSmokeTest::LatentFloat)
         .def("StaticClass", &UWillowSeqAct_MissionSmokeTest::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

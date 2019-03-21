@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AFoliageFactory()
+void Export_pystes_AFoliageFactory(py::object m)
 {
-    py::class_< AFoliageFactory,  AVolume   >("AFoliageFactory")
+    py::class_< AFoliageFactory,  AVolume   >(m, "AFoliageFactory")
         .def_readwrite("Meshes", &AFoliageFactory::Meshes)
         .def_readwrite("VolumeFalloffRadius", &AFoliageFactory::VolumeFalloffRadius)
         .def_readwrite("VolumeFalloffExponent", &AFoliageFactory::VolumeFalloffExponent)
@@ -15,6 +15,5 @@ void Export_pystes_AFoliageFactory()
         .def_readwrite("FacingFalloffExponent", &AFoliageFactory::FacingFalloffExponent)
         .def_readwrite("MaxInstanceCount", &AFoliageFactory::MaxInstanceCount)
         .def("StaticClass", &AFoliageFactory::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

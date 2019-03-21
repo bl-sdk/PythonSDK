@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMenuItemCallback()
+void Export_pystes_FMenuItemCallback(py::object m)
 {
-    py::class_< FMenuItemCallback >("FMenuItemCallback")
+    py::class_< FMenuItemCallback >(m, "FMenuItemCallback")
         .def_readwrite("Tag", &FMenuItemCallback::Tag)
         .def_readwrite("OnClicked", &FMenuItemCallback::OnClicked)
   ;

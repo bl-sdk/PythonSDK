@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGBXNavMeshSpecialMove()
+void Export_pystes_FGBXNavMeshSpecialMove(py::object m)
 {
-    py::class_< FGBXNavMeshSpecialMove >("FGBXNavMeshSpecialMove")
+    py::class_< FGBXNavMeshSpecialMove >(m, "FGBXNavMeshSpecialMove")
         .def_readwrite("DestinationPolyIdx", &FGBXNavMeshSpecialMove::DestinationPolyIdx)
         .def_readwrite("DestinationMeshIdx", &FGBXNavMeshSpecialMove::DestinationMeshIdx)
         .def_readwrite("CrossLevelMoverIdx", &FGBXNavMeshSpecialMove::CrossLevelMoverIdx)

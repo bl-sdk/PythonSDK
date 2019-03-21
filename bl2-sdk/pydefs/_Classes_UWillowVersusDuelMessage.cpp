@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowVersusDuelMessage()
+void Export_pystes_UWillowVersusDuelMessage(py::object m)
 {
-    py::class_< UWillowVersusDuelMessage,  ULocalMessage   >("UWillowVersusDuelMessage")
+    py::class_< UWillowVersusDuelMessage,  ULocalMessage   >(m, "UWillowVersusDuelMessage")
         .def_readwrite("DuelingDisabled", &UWillowVersusDuelMessage::DuelingDisabled)
         .def_readwrite("AlreadyDueling", &UWillowVersusDuelMessage::AlreadyDueling)
         .def_readwrite("AlreadyChallenged", &UWillowVersusDuelMessage::AlreadyChallenged)
@@ -22,6 +22,5 @@ void Export_pystes_UWillowVersusDuelMessage()
         .def("GetLifeTime", &UWillowVersusDuelMessage::GetLifeTime)
         .def("GetMsgType", &UWillowVersusDuelMessage::GetMsgType)
         .def("GetString", &UWillowVersusDuelMessage::GetString)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

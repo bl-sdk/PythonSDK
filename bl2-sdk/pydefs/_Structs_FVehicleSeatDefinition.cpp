@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FVehicleSeatDefinition()
+void Export_pystes_FVehicleSeatDefinition(py::object m)
 {
-    py::class_< FVehicleSeatDefinition >("FVehicleSeatDefinition")
+    py::class_< FVehicleSeatDefinition >(m, "FVehicleSeatDefinition")
         .def_readwrite("SeatDefinition", &FVehicleSeatDefinition::SeatDefinition)
         .def_readwrite("WeaponBalanceDefinition", &FVehicleSeatDefinition::WeaponBalanceDefinition)
         .def_readwrite("WeaponFireSMD", &FVehicleSeatDefinition::WeaponFireSMD)

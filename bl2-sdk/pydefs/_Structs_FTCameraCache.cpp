@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTCameraCache()
+void Export_pystes_FTCameraCache(py::object m)
 {
-    py::class_< FTCameraCache >("FTCameraCache")
+    py::class_< FTCameraCache >(m, "FTCameraCache")
         .def_readwrite("TimeStamp", &FTCameraCache::TimeStamp)
         .def_readwrite("POV", &FTCameraCache::POV)
   ;

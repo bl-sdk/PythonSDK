@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowLightProjectileManager()
+void Export_pystes_AWillowLightProjectileManager(py::object m)
 {
-    py::class_< AWillowLightProjectileManager,  AActor   >("AWillowLightProjectileManager")
+    py::class_< AWillowLightProjectileManager,  AActor   >(m, "AWillowLightProjectileManager")
         .def_readwrite("WeaponOwner", &AWillowLightProjectileManager::WeaponOwner)
         .def_readwrite("PawnOwner", &AWillowLightProjectileManager::PawnOwner)
         .def_readwrite("MyProjs", &AWillowLightProjectileManager::MyProjs)
@@ -36,6 +36,5 @@ void Export_pystes_AWillowLightProjectileManager()
         .def("AddWeaponBeam", &AWillowLightProjectileManager::AddWeaponBeam)
         .def("AddProj", &AWillowLightProjectileManager::AddProj)
         .def("eventDestroyed", &AWillowLightProjectileManager::eventDestroyed)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

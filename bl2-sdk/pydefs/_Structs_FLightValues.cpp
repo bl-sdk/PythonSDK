@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLightValues()
+void Export_pystes_FLightValues(py::object m)
 {
-    py::class_< FLightValues >("FLightValues")
+    py::class_< FLightValues >(m, "FLightValues")
         .def_readwrite("StartTime", &FLightValues::StartTime)
         .def_readwrite("Radius", &FLightValues::Radius)
         .def_readwrite("Brightness", &FLightValues::Brightness)

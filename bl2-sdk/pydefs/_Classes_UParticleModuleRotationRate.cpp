@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleRotationRate()
+void Export_pystes_UParticleModuleRotationRate(py::object m)
 {
-    py::class_< UParticleModuleRotationRate,  UParticleModule   >("UParticleModuleRotationRate")
+    py::class_< UParticleModuleRotationRate,  UParticleModule   >(m, "UParticleModuleRotationRate")
         .def_readwrite("StartRotationRate", &UParticleModuleRotationRate::StartRotationRate)
         .def("StaticClass", &UParticleModuleRotationRate::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

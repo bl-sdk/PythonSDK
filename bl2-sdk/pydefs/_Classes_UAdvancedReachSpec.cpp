@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAdvancedReachSpec()
+void Export_pystes_UAdvancedReachSpec(py::object m)
 {
-    py::class_< UAdvancedReachSpec,  UReachSpec   >("UAdvancedReachSpec")
+    py::class_< UAdvancedReachSpec,  UReachSpec   >(m, "UAdvancedReachSpec")
         .def("StaticClass", &UAdvancedReachSpec::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

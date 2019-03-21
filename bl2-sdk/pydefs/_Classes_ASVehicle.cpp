@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ASVehicle()
+void Export_pystes_ASVehicle(py::object m)
 {
-    py::class_< ASVehicle,  AVehicle   >("ASVehicle")
+    py::class_< ASVehicle,  AVehicle   >(m, "ASVehicle")
         .def_readwrite("SimObj", &ASVehicle::SimObj)
         .def_readwrite("Wheels", &ASVehicle::Wheels)
         .def_readwrite("COMOffset", &ASVehicle::COMOffset)
@@ -80,6 +80,5 @@ void Export_pystes_ASVehicle()
         .def("AddTorque", &ASVehicle::AddTorque)
         .def("AddImpulse", &ASVehicle::AddImpulse)
         .def("AddForce", &ASVehicle::AddForce)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

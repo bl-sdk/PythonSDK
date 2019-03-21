@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAnimNode_Simple()
+void Export_pystes_UWillowAnimNode_Simple(py::object m)
 {
-    py::class_< UWillowAnimNode_Simple,  UAnimNodeAdditiveBlending   >("UWillowAnimNode_Simple")
+    py::class_< UWillowAnimNode_Simple,  UAnimNodeAdditiveBlending   >(m, "UWillowAnimNode_Simple")
         .def_readwrite("SimpleAnimName", &UWillowAnimNode_Simple::SimpleAnimName)
         .def_readwrite("BlendInTime", &UWillowAnimNode_Simple::BlendInTime)
         .def_readwrite("BlendOutTime", &UWillowAnimNode_Simple::BlendOutTime)
@@ -28,6 +28,5 @@ void Export_pystes_UWillowAnimNode_Simple()
         .def("CacheSimpleAnims", &UWillowAnimNode_Simple::CacheSimpleAnims)
         .def("Stop", &UWillowAnimNode_Simple::Stop)
         .def("Play", &UWillowAnimNode_Simple::Play)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

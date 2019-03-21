@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AFileWriter()
+void Export_pystes_AFileWriter(py::object m)
 {
-    py::class_< AFileWriter,  AInfo   >("AFileWriter")
+    py::class_< AFileWriter,  AInfo   >(m, "AFileWriter")
         .def_readwrite("ArchivePtr", &AFileWriter::ArchivePtr)
         .def_readwrite("Filename", &AFileWriter::Filename)
         .def_readwrite("FileType", &AFileWriter::FileType)
@@ -14,6 +14,5 @@ void Export_pystes_AFileWriter()
         .def("Logf", &AFileWriter::Logf)
         .def("CloseFile", &AFileWriter::CloseFile)
         .def("OpenFile", &AFileWriter::OpenFile)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

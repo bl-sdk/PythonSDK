@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AMutator()
+void Export_pystes_AMutator(py::object m)
 {
-    py::class_< AMutator,  AInfo   >("AMutator")
+    py::class_< AMutator,  AInfo   >(m, "AMutator")
         .def_readwrite("NextMutator", &AMutator::NextMutator)
         .def_readwrite("GroupNames", &AMutator::GroupNames)
         .def("StaticClass", &AMutator::StaticClass, py::return_value_policy::reference)
@@ -35,6 +35,5 @@ void Export_pystes_AMutator()
         .def("eventDestroyed", &AMutator::eventDestroyed)
         .def("MutatorIsAllowed", &AMutator::MutatorIsAllowed)
         .def("eventPreBeginPlay", &AMutator::eventPreBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

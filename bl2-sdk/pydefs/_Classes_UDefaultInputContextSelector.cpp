@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDefaultInputContextSelector()
+void Export_pystes_UDefaultInputContextSelector(py::object m)
 {
-    py::class_< UDefaultInputContextSelector,  UInputContextSelectorBase   >("UDefaultInputContextSelector")
+    py::class_< UDefaultInputContextSelector,  UInputContextSelectorBase   >(m, "UDefaultInputContextSelector")
         .def("StaticClass", &UDefaultInputContextSelector::StaticClass, py::return_value_policy::reference)
         .def("SelectContext", &UDefaultInputContextSelector::SelectContext)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

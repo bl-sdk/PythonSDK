@@ -3,15 +3,14 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPhysicsJumpConnection()
+void Export_pystes_UPhysicsJumpConnection(py::object m)
 {
-    py::class_< UPhysicsJumpConnection,  UObject   >("UPhysicsJumpConnection")
+    py::class_< UPhysicsJumpConnection,  UObject   >(m, "UPhysicsJumpConnection")
         .def_readwrite("Source", &UPhysicsJumpConnection::Source)
         .def_readwrite("Destination", &UPhysicsJumpConnection::Destination)
         .def_readwrite("Speed", &UPhysicsJumpConnection::Speed)
         .def_readwrite("Angle", &UPhysicsJumpConnection::Angle)
         .def_readwrite("Velocity", &UPhysicsJumpConnection::Velocity)
         .def("StaticClass", &UPhysicsJumpConnection::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

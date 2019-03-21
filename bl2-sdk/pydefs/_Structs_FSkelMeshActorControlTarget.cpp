@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSkelMeshActorControlTarget()
+void Export_pystes_FSkelMeshActorControlTarget(py::object m)
 {
-    py::class_< FSkelMeshActorControlTarget >("FSkelMeshActorControlTarget")
+    py::class_< FSkelMeshActorControlTarget >(m, "FSkelMeshActorControlTarget")
         .def_readwrite("ControlName", &FSkelMeshActorControlTarget::ControlName)
         .def_readwrite("TargetActor", &FSkelMeshActorControlTarget::TargetActor)
   ;

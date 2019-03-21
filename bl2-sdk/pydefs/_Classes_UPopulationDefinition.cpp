@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPopulationDefinition()
+void Export_pystes_UPopulationDefinition(py::object m)
 {
-    py::class_< UPopulationDefinition,  UGBXDefinition   >("UPopulationDefinition")
+    py::class_< UPopulationDefinition,  UGBXDefinition   >(m, "UPopulationDefinition")
         .def_readwrite("VfTable_IIConstructObject", &UPopulationDefinition::VfTable_IIConstructObject)
         .def_readwrite("ActorArchetypeList", &UPopulationDefinition::ActorArchetypeList)
         .def_readwrite("RespawnStyle", &UPopulationDefinition::RespawnStyle)
@@ -13,6 +13,5 @@ void Export_pystes_UPopulationDefinition()
         .def("IsAllSpawnTypesDebugEnabled", &UPopulationDefinition::IsAllSpawnTypesDebugEnabled)
         .def("ToggleAllSpawnTypesDebug", &UPopulationDefinition::ToggleAllSpawnTypesDebug)
         .def("GetRandomFactory", &UPopulationDefinition::GetRandomFactory, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

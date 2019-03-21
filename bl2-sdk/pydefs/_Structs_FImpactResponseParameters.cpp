@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FImpactResponseParameters()
+void Export_pystes_FImpactResponseParameters(py::object m)
 {
-    py::class_< FImpactResponseParameters >("FImpactResponseParameters")
+    py::class_< FImpactResponseParameters >(m, "FImpactResponseParameters")
         .def_readwrite("ParticleParameters", &FImpactResponseParameters::ParticleParameters)
         .def_readwrite("FontParameterValues", &FImpactResponseParameters::FontParameterValues)
         .def_readwrite("ScalarParameterValues", &FImpactResponseParameters::ScalarParameterValues)

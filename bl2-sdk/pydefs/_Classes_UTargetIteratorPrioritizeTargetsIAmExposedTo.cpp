@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTargetIteratorPrioritizeTargetsIAmExposedTo()
+void Export_pystes_UTargetIteratorPrioritizeTargetsIAmExposedTo(py::object m)
 {
-    py::class_< UTargetIteratorPrioritizeTargetsIAmExposedTo,  UTargetIterator   >("UTargetIteratorPrioritizeTargetsIAmExposedTo")
+    py::class_< UTargetIteratorPrioritizeTargetsIAmExposedTo,  UTargetIterator   >(m, "UTargetIteratorPrioritizeTargetsIAmExposedTo")
         .def("StaticClass", &UTargetIteratorPrioritizeTargetsIAmExposedTo::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

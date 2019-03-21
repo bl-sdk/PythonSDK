@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineSystemInterface()
+void Export_pystes_UOnlineSystemInterface(py::object m)
 {
-    py::class_< UOnlineSystemInterface,  UInterface   >("UOnlineSystemInterface")
+    py::class_< UOnlineSystemInterface,  UInterface   >(m, "UOnlineSystemInterface")
         .def("StaticClass", &UOnlineSystemInterface::StaticClass, py::return_value_policy::reference)
         .def("ClearContentChangeDelegateEx", &UOnlineSystemInterface::ClearContentChangeDelegateEx)
         .def("AddContentChangeDelegateEx", &UOnlineSystemInterface::AddContentChangeDelegateEx)
@@ -31,6 +31,5 @@ void Export_pystes_UOnlineSystemInterface()
         .def("AddLinkStatusChangeDelegate", &UOnlineSystemInterface::AddLinkStatusChangeDelegate)
         .def("OnLinkStatusChange", &UOnlineSystemInterface::OnLinkStatusChange)
         .def("HasLinkConnection", &UOnlineSystemInterface::HasLinkConnection)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

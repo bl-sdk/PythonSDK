@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowPlayerSnapshotRecord()
+void Export_pystes_UWillowPlayerSnapshotRecord(py::object m)
 {
-    py::class_< UWillowPlayerSnapshotRecord,  USnapshotRecord   >("UWillowPlayerSnapshotRecord")
+    py::class_< UWillowPlayerSnapshotRecord,  USnapshotRecord   >(m, "UWillowPlayerSnapshotRecord")
         .def_readwrite("MyWillowPawnName", &UWillowPlayerSnapshotRecord::MyWillowPawnName)
         .def("StaticClass", &UWillowPlayerSnapshotRecord::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

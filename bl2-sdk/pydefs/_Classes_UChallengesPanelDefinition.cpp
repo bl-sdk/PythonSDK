@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UChallengesPanelDefinition()
+void Export_pystes_UChallengesPanelDefinition(py::object m)
 {
-    py::class_< UChallengesPanelDefinition,  UGBXDefinition   >("UChallengesPanelDefinition")
+    py::class_< UChallengesPanelDefinition,  UGBXDefinition   >(m, "UChallengesPanelDefinition")
         .def("StaticClass", &UChallengesPanelDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackInstAkRTPC()
+void Export_pystes_UInterpTrackInstAkRTPC(py::object m)
 {
-    py::class_< UInterpTrackInstAkRTPC,  UInterpTrackInst   >("UInterpTrackInstAkRTPC")
+    py::class_< UInterpTrackInstAkRTPC,  UInterpTrackInst   >(m, "UInterpTrackInstAkRTPC")
         .def("StaticClass", &UInterpTrackInstAkRTPC::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

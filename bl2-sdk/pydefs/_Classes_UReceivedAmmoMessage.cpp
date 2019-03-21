@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UReceivedAmmoMessage()
+void Export_pystes_UReceivedAmmoMessage(py::object m)
 {
-    py::class_< UReceivedAmmoMessage,  UWillowLocalMessage   >("UReceivedAmmoMessage")
+    py::class_< UReceivedAmmoMessage,  UWillowLocalMessage   >(m, "UReceivedAmmoMessage")
         .def_readwrite("ReceivedAmmo", &UReceivedAmmoMessage::ReceivedAmmo)
         .def_readwrite("SelfReceivedAmmo", &UReceivedAmmoMessage::SelfReceivedAmmo)
         .def_readwrite("NumberOfRounds", &UReceivedAmmoMessage::NumberOfRounds)
@@ -15,6 +15,5 @@ void Export_pystes_UReceivedAmmoMessage()
         .def("GetNumberOfRoundsString", &UReceivedAmmoMessage::GetNumberOfRoundsString)
         .def("GetAmmoString", &UReceivedAmmoMessage::GetAmmoString)
         .def("ClientAmmoReceive", &UReceivedAmmoMessage::ClientAmmoReceive)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

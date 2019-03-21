@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHUDWidget_Trading()
+void Export_pystes_UHUDWidget_Trading(py::object m)
 {
-    py::class_< UHUDWidget_Trading,  UHUDWidget_Base   >("UHUDWidget_Trading")
+    py::class_< UHUDWidget_Trading,  UHUDWidget_Base   >(m, "UHUDWidget_Trading")
         .def_readwrite("TradePrompt_Send", &UHUDWidget_Trading::TradePrompt_Send)
         .def_readwrite("TradePrompt_Accept", &UHUDWidget_Trading::TradePrompt_Accept)
         .def_readwrite("TradeSentTo", &UHUDWidget_Trading::TradeSentTo)
@@ -41,6 +41,5 @@ void Export_pystes_UHUDWidget_Trading()
         .def("Update", &UHUDWidget_Trading::Update)
         .def("Deinit", &UHUDWidget_Trading::Deinit)
         .def("Init", &UHUDWidget_Trading::Init)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

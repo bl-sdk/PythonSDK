@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHashDisplayGFxMovie()
+void Export_pystes_UHashDisplayGFxMovie(py::object m)
 {
-    py::class_< UHashDisplayGFxMovie,  UWillowGFxMovie   >("UHashDisplayGFxMovie")
+    py::class_< UHashDisplayGFxMovie,  UWillowGFxMovie   >(m, "UHashDisplayGFxMovie")
         .def_readwrite("WInvMgr", &UHashDisplayGFxMovie::WInvMgr)
         .def_readwrite("HashDisplayDef", &UHashDisplayGFxMovie::HashDisplayDef)
         .def_readwrite("LeftSideTextList", &UHashDisplayGFxMovie::LeftSideTextList)
@@ -47,6 +47,5 @@ void Export_pystes_UHashDisplayGFxMovie()
         .def("eventOnClose", &UHashDisplayGFxMovie::eventOnClose)
         .def("eventStart", &UHashDisplayGFxMovie::eventStart)
         .def("OnStatefulInputKey", &UHashDisplayGFxMovie::OnStatefulInputKey)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

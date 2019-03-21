@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FNavMeshPathConstraintCacheDatum()
+void Export_pystes_FNavMeshPathConstraintCacheDatum(py::object m)
 {
-    py::class_< FNavMeshPathConstraintCacheDatum >("FNavMeshPathConstraintCacheDatum")
+    py::class_< FNavMeshPathConstraintCacheDatum >(m, "FNavMeshPathConstraintCacheDatum")
         .def_readwrite("ListIdx", &FNavMeshPathConstraintCacheDatum::ListIdx)
         .def_readonly("List", &FNavMeshPathConstraintCacheDatum::List)
   ;

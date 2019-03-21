@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ADynamicCameraActor()
+void Export_pystes_ADynamicCameraActor(py::object m)
 {
-    py::class_< ADynamicCameraActor,  AActor   >("ADynamicCameraActor")
+    py::class_< ADynamicCameraActor,  AActor   >(m, "ADynamicCameraActor")
         .def_readwrite("AspectRatio", &ACameraActor::AspectRatio)
         .def_readwrite("FOVAngle", &ACameraActor::FOVAngle)
         .def_readwrite("CamOverridePostProcessAlpha", &ACameraActor::CamOverridePostProcessAlpha)
@@ -14,6 +14,5 @@ void Export_pystes_ADynamicCameraActor()
         .def_readwrite("MeshComp", &ACameraActor::MeshComp)
         .def("StaticClass", &ADynamicCameraActor::StaticClass, py::return_value_policy::reference)
         .def("GetCameraView", &ACameraActor::GetCameraView)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

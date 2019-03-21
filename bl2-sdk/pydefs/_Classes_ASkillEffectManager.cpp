@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ASkillEffectManager()
+void Export_pystes_ASkillEffectManager(py::object m)
 {
-    py::class_< ASkillEffectManager,  AActor   >("ASkillEffectManager")
+    py::class_< ASkillEffectManager,  AActor   >(m, "ASkillEffectManager")
         .def_readwrite("DeferredSkillActivationList", &ASkillEffectManager::DeferredSkillActivationList)
         .def_readwrite("ActiveSkills", &ASkillEffectManager::ActiveSkills)
         .def("StaticClass", &ASkillEffectManager::StaticClass, py::return_value_policy::reference)
@@ -24,6 +24,5 @@ void Export_pystes_ASkillEffectManager()
         .def("RefreshSkillsForInstigator", &ASkillEffectManager::RefreshSkillsForInstigator)
         .def("DeactivateAllSkillTreeSkillsForPlayer", &ASkillEffectManager::DeactivateAllSkillTreeSkillsForPlayer)
         .def("DeactivateAllSkillsForInstigator", &ASkillEffectManager::DeactivateAllSkillsForInstigator)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCustomizationUsage_Soldier()
+void Export_pystes_UCustomizationUsage_Soldier(py::object m)
 {
-    py::class_< UCustomizationUsage_Soldier,  UCustomizationUsage_Player   >("UCustomizationUsage_Soldier")
+    py::class_< UCustomizationUsage_Soldier,  UCustomizationUsage_Player   >(m, "UCustomizationUsage_Soldier")
         .def("StaticClass", &UCustomizationUsage_Soldier::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

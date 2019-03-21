@@ -75,8 +75,8 @@
     <LinkIncremental>true</LinkIncremental>
     <TargetName>binkw32</TargetName>
     <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
-    <IncludePath>$(PYTHONPATH)\include</IncludePath>
-    <LibraryPath>$(PYTHONPATH)\libs</LibraryPath>
+    <IncludePath>$(PYTHONPATH)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(PYTHONPATH)\libs;$(LibraryPath)</LibraryPath>
     <OutDir>C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\Binaries\Win32\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -87,8 +87,8 @@
     </LinkIncremental>
     <TargetName>binkw32</TargetName>
     <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
-    <IncludePath>$(PYTHONPATH)\include</IncludePath>
-    <LibraryPath>$(PYTHONPATH)\libs</LibraryPath>
+    <IncludePath>$(PYTHONPATH)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(PYTHONPATH)\libs;$(LibraryPath)</LibraryPath>
     <OutDir>C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\Binaries\Win32\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

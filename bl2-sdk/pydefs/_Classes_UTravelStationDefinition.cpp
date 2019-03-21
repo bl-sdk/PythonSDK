@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTravelStationDefinition()
+void Export_pystes_UTravelStationDefinition(py::object m)
 {
-    py::class_< UTravelStationDefinition,  UGBXDefinition   >("UTravelStationDefinition")
+    py::class_< UTravelStationDefinition,  UGBXDefinition   >(m, "UTravelStationDefinition")
         .def_readwrite("StationLevelName", &UTravelStationDefinition::StationLevelName)
         .def_readwrite("PreviousStation", &UTravelStationDefinition::PreviousStation)
         .def_readwrite("DlcExpansion", &UTravelStationDefinition::DlcExpansion)
@@ -16,6 +16,5 @@ void Export_pystes_UTravelStationDefinition()
         .def("StaticClass", &UTravelStationDefinition::StaticClass, py::return_value_policy::reference)
         .def("StaticGetAccessibleLevelName", &UTravelStationDefinition::StaticGetAccessibleLevelName)
         .def("GetStationLevelName", &UTravelStationDefinition::GetStationLevelName)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

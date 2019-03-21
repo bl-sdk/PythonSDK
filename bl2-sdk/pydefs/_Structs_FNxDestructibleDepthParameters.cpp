@@ -3,8 +3,8 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FNxDestructibleDepthParameters()
+void Export_pystes_FNxDestructibleDepthParameters(py::object m)
 {
-    py::class_< FNxDestructibleDepthParameters >("FNxDestructibleDepthParameters")
+    py::class_< FNxDestructibleDepthParameters >(m, "FNxDestructibleDepthParameters")
   ;
 }

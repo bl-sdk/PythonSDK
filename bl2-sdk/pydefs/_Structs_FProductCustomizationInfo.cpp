@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FProductCustomizationInfo()
+void Export_pystes_FProductCustomizationInfo(py::object m)
 {
-    py::class_< FProductCustomizationInfo >("FProductCustomizationInfo")
+    py::class_< FProductCustomizationInfo >(m, "FProductCustomizationInfo")
         .def_readwrite("ProductID", &FProductCustomizationInfo::ProductID)
         .def_readwrite("NumUnlockableCustomizations", &FProductCustomizationInfo::NumUnlockableCustomizations)
         .def_readwrite("NumCustomizations", &FProductCustomizationInfo::NumCustomizations)

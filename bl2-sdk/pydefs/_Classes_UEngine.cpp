@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UEngine()
+void Export_pystes_UEngine(py::object m)
 {
-    py::class_< UEngine,  USubsystem   >("UEngine")
+    py::class_< UEngine,  USubsystem   >(m, "UEngine")
         .def_readwrite("TinyFont", &UEngine::TinyFont)
         .def_readwrite("TinyFontName", &UEngine::TinyFontName)
         .def_readwrite("SmallFont", &UEngine::SmallFont)
@@ -247,6 +247,5 @@ void Export_pystes_UEngine()
         .def("GetCurrentWorldInfo", &UEngine::GetCurrentWorldInfo, py::return_value_policy::reference)
         .def("IsGame", &UEngine::IsGame)
         .def("IsEditor", &UEngine::IsEditor)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

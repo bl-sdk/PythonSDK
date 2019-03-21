@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowInventory()
+void Export_pystes_AWillowInventory(py::object m)
 {
-    py::class_< AWillowInventory,  AActor   >("AWillowInventory")
+    py::class_< AWillowInventory,  AActor   >(m, "AWillowInventory")
         .def_readwrite("VfTable_IIBalancedActor", &AWillowInventory::VfTable_IIBalancedActor)
         .def_readwrite("VfTable_IIAttributeSlotEffectProvider", &AWillowInventory::VfTable_IIAttributeSlotEffectProvider)
         .def_readwrite("MonetaryValue", &AWillowInventory::MonetaryValue)
@@ -169,6 +169,5 @@ void Export_pystes_AWillowInventory()
         .def("BotDesireability", &AInventory::BotDesireability)
         .def("eventDestroyed", &AInventory::eventDestroyed)
         .def("eventReplicatedEvent", &AInventory::eventReplicatedEvent)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

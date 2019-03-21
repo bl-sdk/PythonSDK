@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USurface()
+void Export_pystes_USurface(py::object m)
 {
-    py::class_< USurface,  UObject   >("USurface")
+    py::class_< USurface,  UObject   >(m, "USurface")
         .def("StaticClass", &USurface::StaticClass, py::return_value_policy::reference)
         .def("GetSurfaceHeight", &USurface::GetSurfaceHeight)
         .def("GetSurfaceWidth", &USurface::GetSurfaceWidth)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

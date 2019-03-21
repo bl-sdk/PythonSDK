@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDlcCompatibilityData()
+void Export_pystes_FDlcCompatibilityData(py::object m)
 {
-    py::class_< FDlcCompatibilityData >("FDlcCompatibilityData")
+    py::class_< FDlcCompatibilityData >(m, "FDlcCompatibilityData")
         .def_readwrite("A", &FDlcCompatibilityData::A)
         .def_readwrite("B", &FDlcCompatibilityData::B)
         .def_readwrite("C", &FDlcCompatibilityData::C)

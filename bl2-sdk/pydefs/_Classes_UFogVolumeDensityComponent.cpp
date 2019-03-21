@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFogVolumeDensityComponent()
+void Export_pystes_UFogVolumeDensityComponent(py::object m)
 {
-    py::class_< UFogVolumeDensityComponent,  UActorComponent   >("UFogVolumeDensityComponent")
+    py::class_< UFogVolumeDensityComponent,  UActorComponent   >(m, "UFogVolumeDensityComponent")
         .def_readwrite("FogMaterial", &UFogVolumeDensityComponent::FogMaterial)
         .def_readwrite("DefaultFogVolumeMaterial", &UFogVolumeDensityComponent::DefaultFogVolumeMaterial)
         .def_readwrite("SimpleLightColor", &UFogVolumeDensityComponent::SimpleLightColor)
@@ -15,6 +15,5 @@ void Export_pystes_UFogVolumeDensityComponent()
         .def_readwrite("FogVolumeActors", &UFogVolumeDensityComponent::FogVolumeActors)
         .def("StaticClass", &UFogVolumeDensityComponent::StaticClass, py::return_value_policy::reference)
         .def("SetEnabled", &UFogVolumeDensityComponent::SetEnabled)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

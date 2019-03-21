@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMantleReachSpec()
+void Export_pystes_UMantleReachSpec(py::object m)
 {
-    py::class_< UMantleReachSpec,  UForcedReachSpec   >("UMantleReachSpec")
+    py::class_< UMantleReachSpec,  UForcedReachSpec   >(m, "UMantleReachSpec")
         .def("StaticClass", &UMantleReachSpec::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

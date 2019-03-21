@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowScrollingListDataProviderKeyboardMouseOptions()
+void Export_pystes_UWillowScrollingListDataProviderKeyboardMouseOptions(py::object m)
 {
-    py::class_< UWillowScrollingListDataProviderKeyboardMouseOptions,  UWillowScrollingListDataProviderOptionsBase   >("UWillowScrollingListDataProviderKeyboardMouseOptions")
+    py::class_< UWillowScrollingListDataProviderKeyboardMouseOptions,  UWillowScrollingListDataProviderOptionsBase   >(m, "UWillowScrollingListDataProviderKeyboardMouseOptions")
         .def_readwrite("WPCOwner", &UWillowScrollingListDataProviderKeyboardMouseOptions::WPCOwner)
         .def_readwrite("ControllerMappingClip", &UWillowScrollingListDataProviderKeyboardMouseOptions::ControllerMappingClip)
         .def_readwrite("DeviceCollection", &UWillowScrollingListDataProviderKeyboardMouseOptions::DeviceCollection)
@@ -39,6 +39,5 @@ void Export_pystes_UWillowScrollingListDataProviderKeyboardMouseOptions()
         .def("InitKeyBinding", &UWillowScrollingListDataProviderKeyboardMouseOptions::InitKeyBinding)
         .def("InitDeviceCollection", &UWillowScrollingListDataProviderKeyboardMouseOptions::InitDeviceCollection)
         .def("Populate", &UWillowScrollingListDataProviderKeyboardMouseOptions::Populate)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackToggle()
+void Export_pystes_UInterpTrackToggle(py::object m)
 {
-    py::class_< UInterpTrackToggle,  UInterpTrack   >("UInterpTrackToggle")
+    py::class_< UInterpTrackToggle,  UInterpTrack   >(m, "UInterpTrackToggle")
         .def_readwrite("ToggleTrack", &UInterpTrackToggle::ToggleTrack)
         .def("StaticClass", &UInterpTrackToggle::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

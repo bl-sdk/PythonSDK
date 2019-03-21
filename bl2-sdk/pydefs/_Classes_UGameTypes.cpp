@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGameTypes()
+void Export_pystes_UGameTypes(py::object m)
 {
-    py::class_< UGameTypes,  UObject   >("UGameTypes")
+    py::class_< UGameTypes,  UObject   >(m, "UGameTypes")
         .def("StaticClass", &UGameTypes::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

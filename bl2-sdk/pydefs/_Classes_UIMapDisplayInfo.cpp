@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIMapDisplayInfo()
+void Export_pystes_UIMapDisplayInfo(py::object m)
 {
-    py::class_< UIMapDisplayInfo,  UInterface   >("UIMapDisplayInfo")
+    py::class_< UIMapDisplayInfo,  UInterface   >(m, "UIMapDisplayInfo")
         .def("StaticClass", &UIMapDisplayInfo::StaticClass, py::return_value_policy::reference)
         .def("eventGetMapDisplayName", &UIMapDisplayInfo::eventGetMapDisplayName)
         .def("eventGetMapDisplayHeader", &UIMapDisplayInfo::eventGetMapDisplayHeader)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

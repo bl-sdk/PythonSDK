@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlinePlayerInterfaceEx()
+void Export_pystes_UOnlinePlayerInterfaceEx(py::object m)
 {
-    py::class_< UOnlinePlayerInterfaceEx,  UInterface   >("UOnlinePlayerInterfaceEx")
+    py::class_< UOnlinePlayerInterfaceEx,  UInterface   >(m, "UOnlinePlayerInterfaceEx")
         .def("StaticClass", &UOnlinePlayerInterfaceEx::StaticClass, py::return_value_policy::reference)
         .def("ShowRedeemCodeUI", &UOnlinePlayerInterfaceEx::ShowRedeemCodeUI)
         .def("ClearUnlockAvatarAwardCompleteDelegate", &UOnlinePlayerInterfaceEx::ClearUnlockAvatarAwardCompleteDelegate)
@@ -39,6 +39,5 @@ void Export_pystes_UOnlinePlayerInterfaceEx()
         .def("ShowMessagesUI", &UOnlinePlayerInterfaceEx::ShowMessagesUI)
         .def("ShowGamerCardUI", &UOnlinePlayerInterfaceEx::ShowGamerCardUI)
         .def("ShowFeedbackUI", &UOnlinePlayerInterfaceEx::ShowFeedbackUI)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

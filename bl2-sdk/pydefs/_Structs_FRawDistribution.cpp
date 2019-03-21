@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRawDistribution()
+void Export_pystes_FRawDistribution(py::object m)
 {
-    py::class_< FRawDistribution >("FRawDistribution")
+    py::class_< FRawDistribution >(m, "FRawDistribution")
         .def_readwrite("Type", &FRawDistribution::Type)
         .def_readwrite("Op", &FRawDistribution::Op)
         .def_readwrite("LookupTableNumElements", &FRawDistribution::LookupTableNumElements)

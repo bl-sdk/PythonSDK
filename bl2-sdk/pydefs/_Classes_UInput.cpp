@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInput()
+void Export_pystes_UInput(py::object m)
 {
-    py::class_< UInput,  UObject   >("UInput")
+    py::class_< UInput,  UObject   >(m, "UInput")
         .def_readwrite("Bindings", &UInput::Bindings)
         .def_readwrite("PressedKeys", &UInput::PressedKeys)
         .def_readwrite("CurrentEvent", &UInput::CurrentEvent)
@@ -41,6 +41,5 @@ void Export_pystes_UInput()
         .def("GetSceneClient", &UUIRoot::GetSceneClient, py::return_value_policy::reference)
         .def("GetCurrentUIController", &UUIRoot::GetCurrentUIController, py::return_value_policy::reference)
         .def("GetInputPlatformType", &UUIRoot::GetInputPlatformType)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

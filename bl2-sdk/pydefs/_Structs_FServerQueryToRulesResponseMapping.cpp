@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FServerQueryToRulesResponseMapping()
+void Export_pystes_FServerQueryToRulesResponseMapping(py::object m)
 {
-    py::class_< FServerQueryToRulesResponseMapping >("FServerQueryToRulesResponseMapping")
+    py::class_< FServerQueryToRulesResponseMapping >(m, "FServerQueryToRulesResponseMapping")
         .def_readwrite("Query", &FServerQueryToRulesResponseMapping::Query)
         .def_readwrite("Response", &FServerQueryToRulesResponseMapping::Response)
   ;

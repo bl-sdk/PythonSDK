@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleTypeDataBeam()
+void Export_pystes_UParticleModuleTypeDataBeam(py::object m)
 {
-    py::class_< UParticleModuleTypeDataBeam,  UParticleModule   >("UParticleModuleTypeDataBeam")
+    py::class_< UParticleModuleTypeDataBeam,  UParticleModule   >(m, "UParticleModuleTypeDataBeam")
         .def_readwrite("BeamMethod", &UParticleModuleTypeDataBeam::BeamMethod)
         .def_readwrite("EndPointMethod", &UParticleModuleTypeDataBeam::EndPointMethod)
         .def_readwrite("Distance", &UParticleModuleTypeDataBeam::Distance)
@@ -16,6 +16,5 @@ void Export_pystes_UParticleModuleTypeDataBeam()
         .def_readwrite("EndPointDirection", &UParticleModuleTypeDataBeam::EndPointDirection)
         .def_readwrite("TextureTile", &UParticleModuleTypeDataBeam::TextureTile)
         .def("StaticClass", &UParticleModuleTypeDataBeam::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

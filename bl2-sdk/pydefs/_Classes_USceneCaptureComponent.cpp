@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USceneCaptureComponent()
+void Export_pystes_USceneCaptureComponent(py::object m)
 {
-    py::class_< USceneCaptureComponent,  UActorComponent   >("USceneCaptureComponent")
+    py::class_< USceneCaptureComponent,  UActorComponent   >(m, "USceneCaptureComponent")
         .def_readwrite("ClearColor", &USceneCaptureComponent::ClearColor)
         .def_readwrite("ViewMode", &USceneCaptureComponent::ViewMode)
         .def_readwrite("SceneLOD", &USceneCaptureComponent::SceneLOD)
@@ -20,6 +20,5 @@ void Export_pystes_USceneCaptureComponent()
         .def("StaticClass", &USceneCaptureComponent::StaticClass, py::return_value_policy::reference)
         .def("SetEnabled", &USceneCaptureComponent::SetEnabled)
         .def("SetFrameRate", &USceneCaptureComponent::SetFrameRate)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

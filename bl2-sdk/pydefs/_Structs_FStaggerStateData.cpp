@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FStaggerStateData()
+void Export_pystes_FStaggerStateData(py::object m)
 {
-    py::class_< FStaggerStateData >("FStaggerStateData")
+    py::class_< FStaggerStateData >(m, "FStaggerStateData")
         .def_readwrite("State", &FStaggerStateData::State)
         .def_readwrite("StaggerStartTime", &FStaggerStateData::StaggerStartTime)
         .def_readwrite("StaggerEndTime", &FStaggerStateData::StaggerEndTime)

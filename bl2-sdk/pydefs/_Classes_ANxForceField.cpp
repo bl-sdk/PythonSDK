@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ANxForceField()
+void Export_pystes_ANxForceField(py::object m)
 {
-    py::class_< ANxForceField,  AActor   >("ANxForceField")
+    py::class_< ANxForceField,  AActor   >(m, "ANxForceField")
         .def_readwrite("ExcludeChannel", &ANxForceField::ExcludeChannel)
         .def_readwrite("CollideWithChannels", &ANxForceField::CollideWithChannels)
         .def_readwrite("RBChannel", &ANxForceField::RBChannel)
@@ -18,6 +18,5 @@ void Export_pystes_ANxForceField()
         .def("StaticClass", &ANxForceField::StaticClass, py::return_value_policy::reference)
         .def("OnToggle", &ANxForceField::OnToggle)
         .def("DoInitRBPhys", &ANxForceField::DoInitRBPhys)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

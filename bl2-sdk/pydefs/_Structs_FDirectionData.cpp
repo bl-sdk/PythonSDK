@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDirectionData()
+void Export_pystes_FDirectionData(py::object m)
 {
-    py::class_< FDirectionData >("FDirectionData")
+    py::class_< FDirectionData >(m, "FDirectionData")
         .def_readwrite("This", &FDirectionData::This)
         .def_readwrite("Left", &FDirectionData::Left)
         .def_readwrite("Right", &FDirectionData::Right)

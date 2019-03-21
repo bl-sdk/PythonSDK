@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDistributionFloatUniform()
+void Export_pystes_UDistributionFloatUniform(py::object m)
 {
-    py::class_< UDistributionFloatUniform,  UDistributionFloat   >("UDistributionFloatUniform")
+    py::class_< UDistributionFloatUniform,  UDistributionFloat   >(m, "UDistributionFloatUniform")
         .def_readwrite("Min", &UDistributionFloatUniform::Min)
         .def_readwrite("Max", &UDistributionFloatUniform::Max)
         .def("StaticClass", &UDistributionFloatUniform::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

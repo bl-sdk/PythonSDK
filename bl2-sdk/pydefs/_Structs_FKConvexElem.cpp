@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FKConvexElem()
+void Export_pystes_FKConvexElem(py::object m)
 {
-    py::class_< FKConvexElem >("FKConvexElem")
+    py::class_< FKConvexElem >(m, "FKConvexElem")
         .def_readwrite("VertexData", &FKConvexElem::VertexData)
         .def_readwrite("PermutedVertexData", &FKConvexElem::PermutedVertexData)
         .def_readwrite("FaceTriData", &FKConvexElem::FaceTriData)

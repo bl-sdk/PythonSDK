@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPopulationFactoryInteractiveObject()
+void Export_pystes_UPopulationFactoryInteractiveObject(py::object m)
 {
-    py::class_< UPopulationFactoryInteractiveObject,  UPopulationFactory   >("UPopulationFactoryInteractiveObject")
+    py::class_< UPopulationFactoryInteractiveObject,  UPopulationFactory   >(m, "UPopulationFactoryInteractiveObject")
         .def_readwrite("ObjectDefinition", &UPopulationFactoryInteractiveObject::ObjectDefinition)
         .def_readwrite("ObjectBalanceDefinition", &UPopulationFactoryInteractiveObject::ObjectBalanceDefinition)
         .def_readwrite("EnabledBehaviorSets", &UPopulationFactoryInteractiveObject::EnabledBehaviorSets)
@@ -21,6 +21,5 @@ void Export_pystes_UPopulationFactoryInteractiveObject()
         .def("eventGetSpawnVisibilityBounds", &UPopulationFactoryInteractiveObject::eventGetSpawnVisibilityBounds)
         .def("GetActorAllegiance", &UPopulationFactoryInteractiveObject::GetActorAllegiance, py::return_value_policy::reference)
         .def("GetObjectDefinition", &UPopulationFactoryInteractiveObject::GetObjectDefinition, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

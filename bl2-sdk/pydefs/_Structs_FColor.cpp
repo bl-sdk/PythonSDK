@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FColor()
+void Export_pystes_FColor(py::object m)
 {
-    py::class_< FColor >("FColor")
+    py::class_< FColor >(m, "FColor")
         .def_readwrite("B", &FColor::B)
         .def_readwrite("G", &FColor::G)
         .def_readwrite("R", &FColor::R)

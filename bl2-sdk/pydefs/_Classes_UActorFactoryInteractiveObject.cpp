@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActorFactoryInteractiveObject()
+void Export_pystes_UActorFactoryInteractiveObject(py::object m)
 {
-    py::class_< UActorFactoryInteractiveObject,  UActorFactory   >("UActorFactoryInteractiveObject")
+    py::class_< UActorFactoryInteractiveObject,  UActorFactory   >(m, "UActorFactoryInteractiveObject")
         .def_readwrite("Definition", &UActorFactoryInteractiveObject::Definition)
         .def("StaticClass", &UActorFactoryInteractiveObject::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

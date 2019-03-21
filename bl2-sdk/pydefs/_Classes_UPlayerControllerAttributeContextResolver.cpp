@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerControllerAttributeContextResolver()
+void Export_pystes_UPlayerControllerAttributeContextResolver(py::object m)
 {
-    py::class_< UPlayerControllerAttributeContextResolver,  UAttributeContextResolver   >("UPlayerControllerAttributeContextResolver")
+    py::class_< UPlayerControllerAttributeContextResolver,  UAttributeContextResolver   >(m, "UPlayerControllerAttributeContextResolver")
         .def("StaticClass", &UPlayerControllerAttributeContextResolver::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

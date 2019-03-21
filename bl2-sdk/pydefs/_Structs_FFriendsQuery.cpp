@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FFriendsQuery()
+void Export_pystes_FFriendsQuery(py::object m)
 {
-    py::class_< FFriendsQuery >("FFriendsQuery")
+    py::class_< FFriendsQuery >(m, "FFriendsQuery")
         .def_readwrite("UniqueId", &FFriendsQuery::UniqueId)
   ;
 }

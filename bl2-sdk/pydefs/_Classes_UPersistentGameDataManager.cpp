@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPersistentGameDataManager()
+void Export_pystes_UPersistentGameDataManager(py::object m)
 {
-    py::class_< UPersistentGameDataManager,  UObject   >("UPersistentGameDataManager")
+    py::class_< UPersistentGameDataManager,  UObject   >(m, "UPersistentGameDataManager")
         .def_readwrite("SequencesWithPersistentData", &UPersistentGameDataManager::SequencesWithPersistentData)
         .def("StaticClass", &UPersistentGameDataManager::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

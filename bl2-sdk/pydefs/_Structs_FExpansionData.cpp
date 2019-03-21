@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FExpansionData()
+void Export_pystes_FExpansionData(py::object m)
 {
-    py::class_< FExpansionData >("FExpansionData")
+    py::class_< FExpansionData >(m, "FExpansionData")
         .def_readwrite("Tag", &FExpansionData::Tag)
         .def_readwrite("Data", &FExpansionData::Data)
   ;

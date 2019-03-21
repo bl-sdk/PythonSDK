@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APopulationOpportunityCloner()
+void Export_pystes_APopulationOpportunityCloner(py::object m)
 {
-    py::class_< APopulationOpportunityCloner,  APopulationOpportunity   >("APopulationOpportunityCloner")
+    py::class_< APopulationOpportunityCloner,  APopulationOpportunity   >(m, "APopulationOpportunityCloner")
         .def_readwrite("Conditions", &APopulationOpportunityCloner::Conditions)
         .def_readwrite("SpawnFactory", &APopulationOpportunityCloner::SpawnFactory)
         .def_readwrite("MaxTotalActors", &APopulationOpportunityCloner::MaxTotalActors)
@@ -21,6 +21,5 @@ void Export_pystes_APopulationOpportunityCloner()
         .def("CloneTimer", &APopulationOpportunityCloner::CloneTimer)
         .def("RespawnKilledActors", &APopulationOpportunityCloner::RespawnKilledActors)
         .def("DoSpawning", &APopulationOpportunityCloner::DoSpawning)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

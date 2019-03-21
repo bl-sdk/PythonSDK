@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIGBXNavMeshBuildEvents()
+void Export_pystes_UIGBXNavMeshBuildEvents(py::object m)
 {
-    py::class_< UIGBXNavMeshBuildEvents,  UInterface   >("UIGBXNavMeshBuildEvents")
+    py::class_< UIGBXNavMeshBuildEvents,  UInterface   >(m, "UIGBXNavMeshBuildEvents")
         .def("StaticClass", &UIGBXNavMeshBuildEvents::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

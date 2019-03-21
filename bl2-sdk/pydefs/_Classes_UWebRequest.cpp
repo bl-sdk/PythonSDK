@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWebRequest()
+void Export_pystes_UWebRequest(py::object m)
 {
-    py::class_< UWebRequest,  UObject   >("UWebRequest")
+    py::class_< UWebRequest,  UObject   >(m, "UWebRequest")
         .def_readwrite("RemoteAddr", &UWebRequest::RemoteAddr)
         .def_readwrite("URI", &UWebRequest::URI)
         .def_readwrite("UserName", &UWebRequest::UserName)
@@ -30,6 +30,5 @@ void Export_pystes_UWebRequest()
         .def("AddHeader", &UWebRequest::AddHeader)
         .def("EncodeBase64", &UWebRequest::EncodeBase64)
         .def("DecodeBase64", &UWebRequest::DecodeBase64)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

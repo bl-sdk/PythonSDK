@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ASkeletalMeshActor()
+void Export_pystes_ASkeletalMeshActor(py::object m)
 {
-    py::class_< ASkeletalMeshActor,  AActor   >("ASkeletalMeshActor")
+    py::class_< ASkeletalMeshActor,  AActor   >(m, "ASkeletalMeshActor")
         .def_readwrite("VfTable_IIFaceFXActor", &ASkeletalMeshActor::VfTable_IIFaceFXActor)
         .def_readwrite("SkeletalMeshComponent", &ASkeletalMeshActor::SkeletalMeshComponent)
         .def_readwrite("LightEnvironment", &ASkeletalMeshActor::LightEnvironment)
@@ -51,6 +51,5 @@ void Export_pystes_ASkeletalMeshActor()
         .def("UpdateAnimSetList", &ASkeletalMeshActor::UpdateAnimSetList)
         .def("eventDestroyed", &ASkeletalMeshActor::eventDestroyed)
         .def("eventPostBeginPlay", &ASkeletalMeshActor::eventPostBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

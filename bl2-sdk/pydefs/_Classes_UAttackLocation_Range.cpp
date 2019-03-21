@@ -3,13 +3,12 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAttackLocation_Range()
+void Export_pystes_UAttackLocation_Range(py::object m)
 {
-    py::class_< UAttackLocation_Range,  UAttackLocation   >("UAttackLocation_Range")
+    py::class_< UAttackLocation_Range,  UAttackLocation   >(m, "UAttackLocation_Range")
         .def_readwrite("Range", &UAttackLocation_Range::Range)
         .def("StaticClass", &UAttackLocation_Range::StaticClass, py::return_value_policy::reference)
         .def("ValidLocation", &UAttackLocation_Range::ValidLocation)
         .def("CanPath", &UAttackLocation_Range::CanPath)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

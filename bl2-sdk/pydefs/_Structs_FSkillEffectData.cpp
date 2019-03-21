@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSkillEffectData()
+void Export_pystes_FSkillEffectData(py::object m)
 {
-    py::class_< FSkillEffectData >("FSkillEffectData")
+    py::class_< FSkillEffectData >(m, "FSkillEffectData")
         .def_readwrite("AttributeToModify", &FSkillEffectData::AttributeToModify)
         .def_readwrite("EffectTarget", &FSkillEffectData::EffectTarget)
         .def_readwrite("TargetInstanceDataName", &FSkillEffectData::TargetInstanceDataName)

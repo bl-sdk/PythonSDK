@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIGameInfoSummary()
+void Export_pystes_UUIGameInfoSummary(py::object m)
 {
-    py::class_< UUIGameInfoSummary,  UUIResourceDataProvider   >("UUIGameInfoSummary")
+    py::class_< UUIGameInfoSummary,  UUIResourceDataProvider   >(m, "UUIGameInfoSummary")
         .def_readwrite("ClassName", &UUIGameInfoSummary::ClassName)
         .def_readwrite("GameAcronym", &UUIGameInfoSummary::GameAcronym)
         .def_readwrite("MapPrefix", &UUIGameInfoSummary::MapPrefix)
@@ -14,6 +14,5 @@ void Export_pystes_UUIGameInfoSummary()
         .def_readwrite("Description", &UUIGameInfoSummary::Description)
         .def("StaticClass", &UUIGameInfoSummary::StaticClass, py::return_value_policy::reference)
         .def("eventIsProviderDisabled", &UUIGameInfoSummary::eventIsProviderDisabled)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

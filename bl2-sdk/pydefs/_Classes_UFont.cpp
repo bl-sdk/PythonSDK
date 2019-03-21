@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFont()
+void Export_pystes_UFont(py::object m)
 {
-    py::class_< UFont,  UObject   >("UFont")
+    py::class_< UFont,  UObject   >(m, "UFont")
         .def_readwrite("Characters", &UFont::Characters)
         .def_readwrite("Textures", &UFont::Textures)
         .def_readonly("UnknownData00", &UFont::UnknownData00)
@@ -25,6 +25,5 @@ void Export_pystes_UFont()
         .def("GetAuthoredViewportHeight", &UFont::GetAuthoredViewportHeight)
         .def("GetScalingFactor", &UFont::GetScalingFactor)
         .def("GetResolutionPageIndex", &UFont::GetResolutionPageIndex)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFunction()
+void Export_pystes_UFunction(py::object m)
 {
-    py::class_< UFunction,  UStruct   >("UFunction")
+    py::class_< UFunction,  UStruct   >(m, "UFunction")
         .def_readwrite("iNative", &UFunction::iNative)
         .def_readwrite("RepOffset", &UFunction::RepOffset)
         .def_readwrite("FriendlyName", &UFunction::FriendlyName)
@@ -14,6 +14,5 @@ void Export_pystes_UFunction()
         .def_readonly("UnknownData00", &UFunction::UnknownData00)
         .def_readwrite("Func", &UFunction::Func)
         .def("StaticClass", &UFunction::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

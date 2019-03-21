@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSMNotify()
+void Export_pystes_FSMNotify(py::object m)
 {
-    py::class_< FSMNotify,  FSMBehavior   >("FSMNotify")
+    py::class_< FSMNotify,  FSMBehavior   >(m, "FSMNotify")
         .def_readwrite("Time", &FSMNotify::Time)
   ;
 }

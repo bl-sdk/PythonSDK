@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAttributeSlotEffectAttributeValueResolver()
+void Export_pystes_UAttributeSlotEffectAttributeValueResolver(py::object m)
 {
-    py::class_< UAttributeSlotEffectAttributeValueResolver,  UAttributeValueResolver   >("UAttributeSlotEffectAttributeValueResolver")
+    py::class_< UAttributeSlotEffectAttributeValueResolver,  UAttributeValueResolver   >(m, "UAttributeSlotEffectAttributeValueResolver")
         .def_readwrite("SlotProperty", &UAttributeSlotEffectAttributeValueResolver::SlotProperty)
         .def_readwrite("SlotName", &UAttributeSlotEffectAttributeValueResolver::SlotName)
         .def("StaticClass", &UAttributeSlotEffectAttributeValueResolver::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

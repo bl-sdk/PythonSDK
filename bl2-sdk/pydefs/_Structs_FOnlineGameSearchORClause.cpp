@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FOnlineGameSearchORClause()
+void Export_pystes_FOnlineGameSearchORClause(py::object m)
 {
-    py::class_< FOnlineGameSearchORClause >("FOnlineGameSearchORClause")
+    py::class_< FOnlineGameSearchORClause >(m, "FOnlineGameSearchORClause")
         .def_readwrite("OrParams", &FOnlineGameSearchORClause::OrParams)
   ;
 }

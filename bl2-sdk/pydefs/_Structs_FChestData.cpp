@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FChestData()
+void Export_pystes_FChestData(py::object m)
 {
-    py::class_< FChestData >("FChestData")
+    py::class_< FChestData >(m, "FChestData")
         .def_readwrite("InventoryClass", &FChestData::InventoryClass)
         .def_readwrite("InventorySerialNumber", &FChestData::InventorySerialNumber)
         .def_readwrite("Inventory", &FChestData::Inventory)

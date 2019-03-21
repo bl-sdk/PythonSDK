@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGFxUIManager()
+void Export_pystes_UWillowGFxUIManager(py::object m)
 {
-    py::class_< UWillowGFxUIManager,  UObject   >("UWillowGFxUIManager")
+    py::class_< UWillowGFxUIManager,  UObject   >(m, "UWillowGFxUIManager")
         .def_readwrite("MyDefinition", &UWillowGFxUIManager::MyDefinition)
         .def_readwrite("PlayerOwner", &UWillowGFxUIManager::PlayerOwner)
         .def_readwrite("PlayerViewOffset", &UWillowGFxUIManager::PlayerViewOffset)
@@ -35,6 +35,5 @@ void Export_pystes_UWillowGFxUIManager()
         .def("ProcessViewRotation", &UWillowGFxUIManager::ProcessViewRotation)
         .def("CalcCamera", &UWillowGFxUIManager::CalcCamera)
         .def("UpdateScreenMesh", &UWillowGFxUIManager::UpdateScreenMesh)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

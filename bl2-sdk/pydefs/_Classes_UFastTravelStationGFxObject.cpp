@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFastTravelStationGFxObject()
+void Export_pystes_UFastTravelStationGFxObject(py::object m)
 {
-    py::class_< UFastTravelStationGFxObject,  UGFxObject   >("UFastTravelStationGFxObject")
+    py::class_< UFastTravelStationGFxObject,  UGFxObject   >(m, "UFastTravelStationGFxObject")
         .def("StaticClass", &UFastTravelStationGFxObject::StaticClass, py::return_value_policy::reference)
         .def("SetCurrentWaypoint", &UFastTravelStationGFxObject::SetCurrentWaypoint)
         .def("SetSortMode", &UFastTravelStationGFxObject::SetSortMode)
@@ -15,6 +15,5 @@ void Export_pystes_UFastTravelStationGFxObject()
         .def("RegisterMapLocationBlob", &UFastTravelStationGFxObject::RegisterMapLocationBlob)
         .def("CacheLocationMissionData", &UFastTravelStationGFxObject::CacheLocationMissionData)
         .def("AddDLCMapLocations", &UFastTravelStationGFxObject::AddDLCMapLocations)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

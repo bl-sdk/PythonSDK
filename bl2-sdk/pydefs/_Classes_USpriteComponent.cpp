@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpriteComponent()
+void Export_pystes_USpriteComponent(py::object m)
 {
-    py::class_< USpriteComponent,  UPrimitiveComponent   >("USpriteComponent")
+    py::class_< USpriteComponent,  UPrimitiveComponent   >(m, "USpriteComponent")
         .def_readwrite("Sprite", &USpriteComponent::Sprite)
         .def_readwrite("ScreenSize", &USpriteComponent::ScreenSize)
         .def_readwrite("U", &USpriteComponent::U)
@@ -16,6 +16,5 @@ void Export_pystes_USpriteComponent()
         .def("SetSpriteAndUV", &USpriteComponent::SetSpriteAndUV)
         .def("SetUV", &USpriteComponent::SetUV)
         .def("SetSprite", &USpriteComponent::SetSprite)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

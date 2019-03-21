@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FNavMeshPathParams()
+void Export_pystes_FNavMeshPathParams(py::object m)
 {
-    py::class_< FNavMeshPathParams >("FNavMeshPathParams")
+    py::class_< FNavMeshPathParams >(m, "FNavMeshPathParams")
         .def_readwrite("Interface", &FNavMeshPathParams::Interface)
         .def_readwrite("PhysicsJumpCostMultiplier", &FNavMeshPathParams::PhysicsJumpCostMultiplier)
         .def_readwrite("SearchExtent", &FNavMeshPathParams::SearchExtent)

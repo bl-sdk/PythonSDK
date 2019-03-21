@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FHybridNavVisualizationPerfStats()
+void Export_pystes_FHybridNavVisualizationPerfStats(py::object m)
 {
-    py::class_< FHybridNavVisualizationPerfStats >("FHybridNavVisualizationPerfStats")
+    py::class_< FHybridNavVisualizationPerfStats >(m, "FHybridNavVisualizationPerfStats")
         .def_readwrite("VisualizationBuildingStartTime", &FHybridNavVisualizationPerfStats::VisualizationBuildingStartTime)
         .def_readwrite("VisualizationBuildingEndTime", &FHybridNavVisualizationPerfStats::VisualizationBuildingEndTime)
         .def_readwrite("CyclesBuildingVisualization", &FHybridNavVisualizationPerfStats::CyclesBuildingVisualization)

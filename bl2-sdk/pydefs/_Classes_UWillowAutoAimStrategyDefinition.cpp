@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAutoAimStrategyDefinition()
+void Export_pystes_UWillowAutoAimStrategyDefinition(py::object m)
 {
-    py::class_< UWillowAutoAimStrategyDefinition,  UGBXDefinition   >("UWillowAutoAimStrategyDefinition")
+    py::class_< UWillowAutoAimStrategyDefinition,  UGBXDefinition   >(m, "UWillowAutoAimStrategyDefinition")
         .def_readwrite("MaxTargetDistance", &UWillowAutoAimStrategyDefinition::MaxTargetDistance)
         .def_readwrite("MinTargetDistance", &UWillowAutoAimStrategyDefinition::MinTargetDistance)
         .def_readwrite("RadiusMultiplier", &UWillowAutoAimStrategyDefinition::RadiusMultiplier)
@@ -18,6 +18,5 @@ void Export_pystes_UWillowAutoAimStrategyDefinition()
         .def_readwrite("DefaultProfile", &UWillowAutoAimStrategyDefinition::DefaultProfile)
         .def("StaticClass", &UWillowAutoAimStrategyDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetProfileDefinition", &UWillowAutoAimStrategyDefinition::GetProfileDefinition, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

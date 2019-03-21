@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCylinder()
+void Export_pystes_FCylinder(py::object m)
 {
-    py::class_< FCylinder >("FCylinder")
+    py::class_< FCylinder >(m, "FCylinder")
         .def_readwrite("Radius", &FCylinder::Radius)
         .def_readwrite("Height", &FCylinder::Height)
   ;

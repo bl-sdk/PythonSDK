@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FListener()
+void Export_pystes_FListener(py::object m)
 {
-    py::class_< FListener >("FListener")
+    py::class_< FListener >(m, "FListener")
         .def_readwrite("PortalVolume", &FListener::PortalVolume)
         .def_readwrite("Location", &FListener::Location)
         .def_readwrite("Up", &FListener::Up)

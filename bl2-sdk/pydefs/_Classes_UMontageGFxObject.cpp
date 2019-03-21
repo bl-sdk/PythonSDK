@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMontageGFxObject()
+void Export_pystes_UMontageGFxObject(py::object m)
 {
-    py::class_< UMontageGFxObject,  UGFxObject   >("UMontageGFxObject")
+    py::class_< UMontageGFxObject,  UGFxObject   >(m, "UMontageGFxObject")
         .def_readwrite("WPCOwner", &UMontageGFxObject::WPCOwner)
         .def_readwrite("CreditsDef", &UMontageGFxObject::CreditsDef)
         .def_readwrite("LinkageName", &UMontageGFxObject::LinkageName)
@@ -24,6 +24,5 @@ void Export_pystes_UMontageGFxObject()
         .def("SetShouldShowImages", &UMontageGFxObject::SetShouldShowImages)
         .def("ClearMontageTextures", &UMontageGFxObject::ClearMontageTextures)
         .def("AddMontageTextures", &UMontageGFxObject::AddMontageTextures)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

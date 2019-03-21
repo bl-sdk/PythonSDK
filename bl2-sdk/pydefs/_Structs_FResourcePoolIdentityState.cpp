@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FResourcePoolIdentityState()
+void Export_pystes_FResourcePoolIdentityState(py::object m)
 {
-    py::class_< FResourcePoolIdentityState >("FResourcePoolIdentityState")
+    py::class_< FResourcePoolIdentityState >(m, "FResourcePoolIdentityState")
         .def_readwrite("PoolDefinition", &FResourcePoolIdentityState::PoolDefinition)
         .def_readwrite("PoolGUID", &FResourcePoolIdentityState::PoolGUID)
   ;

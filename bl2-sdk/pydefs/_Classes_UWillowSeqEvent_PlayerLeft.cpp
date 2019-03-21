@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSeqEvent_PlayerLeft()
+void Export_pystes_UWillowSeqEvent_PlayerLeft(py::object m)
 {
-    py::class_< UWillowSeqEvent_PlayerLeft,  USequenceEvent   >("UWillowSeqEvent_PlayerLeft")
+    py::class_< UWillowSeqEvent_PlayerLeft,  USequenceEvent   >(m, "UWillowSeqEvent_PlayerLeft")
         .def("StaticClass", &UWillowSeqEvent_PlayerLeft::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

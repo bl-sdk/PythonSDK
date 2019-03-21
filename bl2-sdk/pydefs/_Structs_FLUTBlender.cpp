@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLUTBlender()
+void Export_pystes_FLUTBlender(py::object m)
 {
-    py::class_< FLUTBlender >("FLUTBlender")
+    py::class_< FLUTBlender >(m, "FLUTBlender")
         .def_readwrite("LUTTextures", &FLUTBlender::LUTTextures)
         .def_readwrite("LUTWeights", &FLUTBlender::LUTWeights)
   ;

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCoordinatedEffectThread()
+void Export_pystes_FCoordinatedEffectThread(py::object m)
 {
-    py::class_< FCoordinatedEffectThread >("FCoordinatedEffectThread")
+    py::class_< FCoordinatedEffectThread >(m, "FCoordinatedEffectThread")
         .def_readwrite("EffectDefinition", &FCoordinatedEffectThread::EffectDefinition)
         .def_readwrite("IgnoreInstanceData", &FCoordinatedEffectThread::IgnoreInstanceData)
         .def_readwrite("LatentFloat", &FCoordinatedEffectThread::LatentFloat)

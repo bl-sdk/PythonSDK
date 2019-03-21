@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULandscapeHeightfieldCollisionComponent()
+void Export_pystes_ULandscapeHeightfieldCollisionComponent(py::object m)
 {
-    py::class_< ULandscapeHeightfieldCollisionComponent,  UPrimitiveComponent   >("ULandscapeHeightfieldCollisionComponent")
+    py::class_< ULandscapeHeightfieldCollisionComponent,  UPrimitiveComponent   >(m, "ULandscapeHeightfieldCollisionComponent")
         .def_readwrite("CollisionHeightData", &ULandscapeHeightfieldCollisionComponent::CollisionHeightData)
         .def_readwrite("SectionBaseX", &ULandscapeHeightfieldCollisionComponent::SectionBaseX)
         .def_readwrite("SectionBaseY", &ULandscapeHeightfieldCollisionComponent::SectionBaseY)
@@ -16,6 +16,5 @@ void Export_pystes_ULandscapeHeightfieldCollisionComponent()
         .def_readwrite("RBHeightfield", &ULandscapeHeightfieldCollisionComponent::RBHeightfield)
         .def_readwrite("CachedBoxSphereBounds", &ULandscapeHeightfieldCollisionComponent::CachedBoxSphereBounds)
         .def("StaticClass", &ULandscapeHeightfieldCollisionComponent::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

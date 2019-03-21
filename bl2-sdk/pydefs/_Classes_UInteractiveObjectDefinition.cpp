@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInteractiveObjectDefinition()
+void Export_pystes_UInteractiveObjectDefinition(py::object m)
 {
-    py::class_< UInteractiveObjectDefinition,  UGBXDefinition   >("UInteractiveObjectDefinition")
+    py::class_< UInteractiveObjectDefinition,  UGBXDefinition   >(m, "UInteractiveObjectDefinition")
         .def_readwrite("VfTable_IIConstructObject", &UInteractiveObjectDefinition::VfTable_IIConstructObject)
         .def_readwrite("VfTable_IIBodyInfoProvider", &UInteractiveObjectDefinition::VfTable_IIBodyInfoProvider)
         .def_readwrite("VfTable_IIBehaviorProvider", &UInteractiveObjectDefinition::VfTable_IIBehaviorProvider)
@@ -74,6 +74,5 @@ void Export_pystes_UInteractiveObjectDefinition()
         .def("OnUnTouch", &UInteractiveObjectDefinition::OnUnTouch)
         .def("OnTouch", &UInteractiveObjectDefinition::OnTouch)
         .def("OnSpawn", &UInteractiveObjectDefinition::OnSpawn)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

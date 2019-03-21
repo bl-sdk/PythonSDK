@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_FinalBossFly()
+void Export_pystes_UAction_FinalBossFly(py::object m)
 {
-    py::class_< UAction_FinalBossFly,  UAction_FollowPath   >("UAction_FinalBossFly")
+    py::class_< UAction_FinalBossFly,  UAction_FollowPath   >(m, "UAction_FinalBossFly")
         .def_readwrite("LandPerchID", &UAction_FinalBossFly::LandPerchID)
         .def_readwrite("FlightSplineName", &UAction_FinalBossFly::FlightSplineName)
         .def_readwrite("FlightSplineReverseName", &UAction_FinalBossFly::FlightSplineReverseName)
@@ -19,6 +19,5 @@ void Export_pystes_UAction_FinalBossFly()
         .def("eventStop", &UAction_FinalBossFly::eventStop)
         .def("eventStart", &UAction_FinalBossFly::eventStart)
         .def("eventCanRun", &UAction_FinalBossFly::eventCanRun)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

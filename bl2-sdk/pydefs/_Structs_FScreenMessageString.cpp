@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FScreenMessageString()
+void Export_pystes_FScreenMessageString(py::object m)
 {
-    py::class_< FScreenMessageString >("FScreenMessageString")
+    py::class_< FScreenMessageString >(m, "FScreenMessageString")
         .def_readwrite("Key", &FScreenMessageString::Key)
         .def_readwrite("ScreenMessage", &FScreenMessageString::ScreenMessage)
         .def_readwrite("DisplayColor", &FScreenMessageString::DisplayColor)

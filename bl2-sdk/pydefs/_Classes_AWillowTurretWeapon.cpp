@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowTurretWeapon()
+void Export_pystes_AWillowTurretWeapon(py::object m)
 {
-    py::class_< AWillowTurretWeapon,  AWillowWeapon   >("AWillowTurretWeapon")
+    py::class_< AWillowTurretWeapon,  AWillowWeapon   >(m, "AWillowTurretWeapon")
         .def_readwrite("FireTriggerTags", &AWillowTurretWeapon::FireTriggerTags)
         .def_readwrite("AltFireTriggerTags", &AWillowTurretWeapon::AltFireTriggerTags)
         .def_readwrite("AimTraceRange", &AWillowTurretWeapon::AimTraceRange)
@@ -26,6 +26,5 @@ void Export_pystes_AWillowTurretWeapon()
         .def("eventDetachThirdPersonMesh", &AWillowTurretWeapon::eventDetachThirdPersonMesh)
         .def("InitMeshes", &AWillowTurretWeapon::InitMeshes)
         .def("PostBeginPlay", &AWillowTurretWeapon::PostBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

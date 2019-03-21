@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionMeshEmitterDynamicParameter()
+void Export_pystes_UMaterialExpressionMeshEmitterDynamicParameter(py::object m)
 {
-    py::class_< UMaterialExpressionMeshEmitterDynamicParameter,  UMaterialExpression   >("UMaterialExpressionMeshEmitterDynamicParameter")
+    py::class_< UMaterialExpressionMeshEmitterDynamicParameter,  UMaterialExpression   >(m, "UMaterialExpressionMeshEmitterDynamicParameter")
         .def_readwrite("ParamNames", &UMaterialExpressionDynamicParameter::ParamNames)
         .def("StaticClass", &UMaterialExpressionMeshEmitterDynamicParameter::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

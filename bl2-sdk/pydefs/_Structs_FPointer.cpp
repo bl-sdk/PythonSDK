@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPointer()
+void Export_pystes_FPointer(py::object m)
 {
-    py::class_< FPointer >("FPointer")
+    py::class_< FPointer >(m, "FPointer")
         .def_readwrite("Dummy", &FPointer::Dummy)
   ;
 }

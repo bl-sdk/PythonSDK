@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGestaltAccessoryEntry()
+void Export_pystes_FGestaltAccessoryEntry(py::object m)
 {
-    py::class_< FGestaltAccessoryEntry >("FGestaltAccessoryEntry")
+    py::class_< FGestaltAccessoryEntry >(m, "FGestaltAccessoryEntry")
         .def_readwrite("TransformIndex", &FGestaltAccessoryEntry::TransformIndex)
         .def_readwrite("OriginalBoneIndex", &FGestaltAccessoryEntry::OriginalBoneIndex)
         .def_readwrite("GPUBoneIndex", &FGestaltAccessoryEntry::GPUBoneIndex)

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIDataStore_GameResource()
+void Export_pystes_UUIDataStore_GameResource(py::object m)
 {
-    py::class_< UUIDataStore_GameResource,  UUIDataStore   >("UUIDataStore_GameResource")
+    py::class_< UUIDataStore_GameResource,  UUIDataStore   >(m, "UUIDataStore_GameResource")
         .def_readwrite("VfTable_IUIListElementProvider", &UUIDataStore_GameResource::VfTable_IUIListElementProvider)
         .def_readwrite("ElementProviderTypes", &UUIDataStore_GameResource::ElementProviderTypes)
         .def_readwrite("ListElementProviders", &UUIDataStore_GameResource::ListElementProviders)
@@ -17,6 +17,5 @@ void Export_pystes_UUIDataStore_GameResource()
         .def("GetProviderCount", &UUIDataStore_GameResource::GetProviderCount)
         .def("GenerateProviderAccessTag", &UUIDataStore_GameResource::GenerateProviderAccessTag)
         .def("FindProviderTypeIndex", &UUIDataStore_GameResource::FindProviderTypeIndex)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

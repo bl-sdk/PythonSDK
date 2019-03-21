@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHUDWidget_Minimap()
+void Export_pystes_UHUDWidget_Minimap(py::object m)
 {
-    py::class_< UHUDWidget_Minimap,  UHUDWidget_Base   >("UHUDWidget_Minimap")
+    py::class_< UHUDWidget_Minimap,  UHUDWidget_Base   >(m, "UHUDWidget_Minimap")
         .def_readwrite("WorldRadius", &UHUDWidget_Minimap::WorldRadius)
         .def_readwrite("UnrealUnitsPerPixel", &UHUDWidget_Minimap::UnrealUnitsPerPixel)
         .def_readwrite("TargetWorldRadius", &UHUDWidget_Minimap::TargetWorldRadius)
@@ -43,6 +43,5 @@ void Export_pystes_UHUDWidget_Minimap()
         .def("Deinit", &UHUDWidget_Minimap::Deinit)
         .def("InitOverheadMapVolume", &UHUDWidget_Minimap::InitOverheadMapVolume)
         .def("Init", &UHUDWidget_Minimap::Init)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

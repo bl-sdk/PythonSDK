@@ -3,8 +3,8 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTextureGroupContainer()
+void Export_pystes_FTextureGroupContainer(py::object m)
 {
-    py::class_< FTextureGroupContainer >("FTextureGroupContainer")
+    py::class_< FTextureGroupContainer >(m, "FTextureGroupContainer")
   ;
 }

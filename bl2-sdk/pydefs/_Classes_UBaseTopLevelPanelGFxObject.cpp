@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBaseTopLevelPanelGFxObject()
+void Export_pystes_UBaseTopLevelPanelGFxObject(py::object m)
 {
-    py::class_< UBaseTopLevelPanelGFxObject,  UGFxObject   >("UBaseTopLevelPanelGFxObject")
+    py::class_< UBaseTopLevelPanelGFxObject,  UGFxObject   >(m, "UBaseTopLevelPanelGFxObject")
         .def_readwrite("ParentMovie", &UBaseTopLevelPanelGFxObject::ParentMovie)
         .def_readwrite("ParentMovieDef", &UBaseTopLevelPanelGFxObject::ParentMovieDef)
         .def_readwrite("ItemCards", &UBaseTopLevelPanelGFxObject::ItemCards)
@@ -46,6 +46,5 @@ void Export_pystes_UBaseTopLevelPanelGFxObject()
         .def("QueueNewInputHandler", &UBaseTopLevelPanelGFxObject::QueueNewInputHandler)
         .def("Init", &UBaseTopLevelPanelGFxObject::Init)
         .def("OnInputKey", &UBaseTopLevelPanelGFxObject::OnInputKey)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

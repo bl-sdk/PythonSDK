@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionLightmapUVs()
+void Export_pystes_UMaterialExpressionLightmapUVs(py::object m)
 {
-    py::class_< UMaterialExpressionLightmapUVs,  UMaterialExpression   >("UMaterialExpressionLightmapUVs")
+    py::class_< UMaterialExpressionLightmapUVs,  UMaterialExpression   >(m, "UMaterialExpressionLightmapUVs")
         .def("StaticClass", &UMaterialExpressionLightmapUVs::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

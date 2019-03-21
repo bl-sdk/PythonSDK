@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AVehicleSpawnStationPlatform()
+void Export_pystes_AVehicleSpawnStationPlatform(py::object m)
 {
-    py::class_< AVehicleSpawnStationPlatform,  AWillowInteractiveObject   >("AVehicleSpawnStationPlatform")
+    py::class_< AVehicleSpawnStationPlatform,  AWillowInteractiveObject   >(m, "AVehicleSpawnStationPlatform")
         .def_readwrite("StationSlot", &AVehicleSpawnStationPlatform::StationSlot)
         .def_readwrite("CachedVSSVehicleDefinition", &AVehicleSpawnStationPlatform::CachedVSSVehicleDefinition)
         .def_readwrite("SeatOccupiedFlags", &AVehicleSpawnStationPlatform::SeatOccupiedFlags)
@@ -19,6 +19,5 @@ void Export_pystes_AVehicleSpawnStationPlatform()
         .def("TryToTeleportToVehicle", &AVehicleSpawnStationPlatform::TryToTeleportToVehicle)
         .def("IsActorSpawnedVehicle", &AVehicleSpawnStationPlatform::IsActorSpawnedVehicle)
         .def("SetSeatOccupied", &AVehicleSpawnStationPlatform::SetSeatOccupied)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

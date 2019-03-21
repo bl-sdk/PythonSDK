@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UICustomizable()
+void Export_pystes_UICustomizable(py::object m)
 {
-    py::class_< UICustomizable,  UInterface   >("UICustomizable")
+    py::class_< UICustomizable,  UInterface   >(m, "UICustomizable")
         .def("StaticClass", &UICustomizable::StaticClass, py::return_value_policy::reference)
         .def("AllowFallbackToDefaultCustomizations", &UICustomizable::AllowFallbackToDefaultCustomizations)
         .def("RefreshCustomizationsOnInstanceData", &UICustomizable::RefreshCustomizationsOnInstanceData)
@@ -13,6 +13,5 @@ void Export_pystes_UICustomizable()
         .def("GetDesiredCustomizationOfType", &UICustomizable::GetDesiredCustomizationOfType, py::return_value_policy::reference)
         .def("CustomizationApplied", &UICustomizable::CustomizationApplied)
         .def("GetCustomizableInstanceDataSets", &UICustomizable::GetCustomizableInstanceDataSets)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

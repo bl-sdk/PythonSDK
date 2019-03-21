@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionLensFlareRayDistance()
+void Export_pystes_UMaterialExpressionLensFlareRayDistance(py::object m)
 {
-    py::class_< UMaterialExpressionLensFlareRayDistance,  UMaterialExpression   >("UMaterialExpressionLensFlareRayDistance")
+    py::class_< UMaterialExpressionLensFlareRayDistance,  UMaterialExpression   >(m, "UMaterialExpressionLensFlareRayDistance")
         .def("StaticClass", &UMaterialExpressionLensFlareRayDistance::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

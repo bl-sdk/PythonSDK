@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPartyBeacon()
+void Export_pystes_UPartyBeacon(py::object m)
 {
-    py::class_< UPartyBeacon,  UObject   >("UPartyBeacon")
+    py::class_< UPartyBeacon,  UObject   >(m, "UPartyBeacon")
         .def_readwrite("VfTable_FTickableObject", &UPartyBeacon::VfTable_FTickableObject)
         .def_readwrite("PartyBeaconPort", &UPartyBeacon::PartyBeaconPort)
         .def_readwrite("Socket", &UPartyBeacon::Socket)
@@ -15,6 +15,5 @@ void Export_pystes_UPartyBeacon()
         .def("StaticClass", &UPartyBeacon::StaticClass, py::return_value_policy::reference)
         .def("OnDestroyComplete", &UPartyBeacon::OnDestroyComplete)
         .def("eventDestroyBeacon", &UPartyBeacon::eventDestroyBeacon)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

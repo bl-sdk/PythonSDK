@@ -3,8 +3,8 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMaterialViewRelevance()
+void Export_pystes_FMaterialViewRelevance(py::object m)
 {
-    py::class_< FMaterialViewRelevance >("FMaterialViewRelevance")
+    py::class_< FMaterialViewRelevance >(m, "FMaterialViewRelevance")
   ;
 }

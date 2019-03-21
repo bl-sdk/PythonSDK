@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineTitleFileDownloadMcp()
+void Export_pystes_UOnlineTitleFileDownloadMcp(py::object m)
 {
-    py::class_< UOnlineTitleFileDownloadMcp,  UObject   >("UOnlineTitleFileDownloadMcp")
+    py::class_< UOnlineTitleFileDownloadMcp,  UObject   >(m, "UOnlineTitleFileDownloadMcp")
         .def_readwrite("ReadTitleFileCompleteDelegates", &UOnlineTitleFileDownloadMcp::ReadTitleFileCompleteDelegates)
         .def_readwrite("TitleFiles", &UOnlineTitleFileDownloadMcp::TitleFiles)
         .def_readwrite("DownloadCount", &UOnlineTitleFileDownloadMcp::DownloadCount)
@@ -26,6 +26,5 @@ void Export_pystes_UOnlineTitleFileDownloadMcp()
         .def("ReadTitleFile", &UOnlineTitleFileDownloadMcp::ReadTitleFile)
         .def("OnShareTitleFileComplete", &UOnlineTitleFileDownloadMcp::OnShareTitleFileComplete)
         .def("OnReadTitleFileComplete", &UOnlineTitleFileDownloadMcp::OnReadTitleFileComplete)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

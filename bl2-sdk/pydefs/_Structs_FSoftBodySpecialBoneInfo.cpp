@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSoftBodySpecialBoneInfo()
+void Export_pystes_FSoftBodySpecialBoneInfo(py::object m)
 {
-    py::class_< FSoftBodySpecialBoneInfo >("FSoftBodySpecialBoneInfo")
+    py::class_< FSoftBodySpecialBoneInfo >(m, "FSoftBodySpecialBoneInfo")
         .def_readwrite("BoneName", &FSoftBodySpecialBoneInfo::BoneName)
         .def_readwrite("BoneType", &FSoftBodySpecialBoneInfo::BoneType)
         .def_readwrite("AttachedVertexIndices", &FSoftBodySpecialBoneInfo::AttachedVertexIndices)

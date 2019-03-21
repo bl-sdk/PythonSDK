@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGlobalsDefinition()
+void Export_pystes_UGlobalsDefinition(py::object m)
 {
-    py::class_< UGlobalsDefinition,  UGearboxGlobalsDefinition   >("UGlobalsDefinition")
+    py::class_< UGlobalsDefinition,  UGearboxGlobalsDefinition   >(m, "UGlobalsDefinition")
         .def_readwrite("BulletReflectionRadius", &UGlobalsDefinition::BulletReflectionRadius)
         .def_readwrite("BulletReflectionSpeedAdjustment", &UGlobalsDefinition::BulletReflectionSpeedAdjustment)
         .def_readwrite("BulletReflectionParticle", &UGlobalsDefinition::BulletReflectionParticle)
@@ -375,6 +375,5 @@ void Export_pystes_UGlobalsDefinition()
         .def("GetRarityColorForRarityRating", &UGlobalsDefinition::GetRarityColorForRarityRating)
         .def("GetRarityColorForLevel", &UGlobalsDefinition::GetRarityColorForLevel)
         .def("GetRarityForLevel", &UGlobalsDefinition::GetRarityForLevel)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

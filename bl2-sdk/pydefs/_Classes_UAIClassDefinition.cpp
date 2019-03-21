@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAIClassDefinition()
+void Export_pystes_UAIClassDefinition(py::object m)
 {
-    py::class_< UAIClassDefinition,  UWillowCharacterClassDefinition   >("UAIClassDefinition")
+    py::class_< UAIClassDefinition,  UWillowCharacterClassDefinition   >(m, "UAIClassDefinition")
         .def_readwrite("AIDef", &UAIClassDefinition::AIDef)
         .def_readwrite("DefaultDisplayName", &UAIClassDefinition::DefaultDisplayName)
         .def_readwrite("UBMKilledByMessageString", &UAIClassDefinition::UBMKilledByMessageString)
@@ -66,6 +66,5 @@ void Export_pystes_UAIClassDefinition()
         .def("OnUserCouldNotAfford", &UAIClassDefinition::OnUserCouldNotAfford)
         .def("OnSecondaryUsed", &UAIClassDefinition::OnSecondaryUsed)
         .def("OnUsed", &UAIClassDefinition::OnUsed)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

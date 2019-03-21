@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCustomizationGFxMovie()
+void Export_pystes_UCustomizationGFxMovie(py::object m)
 {
-    py::class_< UCustomizationGFxMovie,  UWillowGFxThirdPersonMovie   >("UCustomizationGFxMovie")
+    py::class_< UCustomizationGFxMovie,  UWillowGFxThirdPersonMovie   >(m, "UCustomizationGFxMovie")
         .def_readwrite("CharacterCustomizationMenu", &UCustomizationGFxMovie::CharacterCustomizationMenu)
         .def_readwrite("CharacterCustomizationInfoCard", &UCustomizationGFxMovie::CharacterCustomizationInfoCard)
         .def_readonly("SkillBranchDescriptions", &UCustomizationGFxMovie::SkillBranchDescriptions)
@@ -78,6 +78,5 @@ void Export_pystes_UCustomizationGFxMovie()
         .def("BeginClosing", &UCustomizationGFxMovie::BeginClosing)
         .def("eventStart", &UCustomizationGFxMovie::eventStart)
         .def("GetSonyTitleID", &UCustomizationGFxMovie::GetSonyTitleID)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

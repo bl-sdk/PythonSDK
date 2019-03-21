@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIShop()
+void Export_pystes_UIShop(py::object m)
 {
-    py::class_< UIShop,  UInterface   >("UIShop")
+    py::class_< UIShop,  UInterface   >(m, "UIShop")
         .def("StaticClass", &UIShop::StaticClass, py::return_value_policy::reference)
         .def("GetSellingPriceForInventory", &UIShop::GetSellingPriceForInventory)
         .def("GetCurrencyTypeInventoryIsSoldIn", &UIShop::GetCurrencyTypeInventoryIsSoldIn)
@@ -21,6 +21,5 @@ void Export_pystes_UIShop()
         .def("RemoveSoldInventory", &UIShop::RemoveSoldInventory)
         .def("GetResetCost", &UIShop::GetResetCost)
         .def("eventResetInventory", &UIShop::eventResetInventory)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

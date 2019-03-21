@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowCharacterClassDefinition()
+void Export_pystes_UWillowCharacterClassDefinition(py::object m)
 {
-    py::class_< UWillowCharacterClassDefinition,  UCharacterClassDefinition   >("UWillowCharacterClassDefinition")
+    py::class_< UWillowCharacterClassDefinition,  UCharacterClassDefinition   >(m, "UWillowCharacterClassDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UWillowCharacterClassDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("AttributeParentClass", &UWillowCharacterClassDefinition::AttributeParentClass)
         .def_readwrite("AttributeStartingValues", &UWillowCharacterClassDefinition::AttributeStartingValues)
@@ -36,6 +36,5 @@ void Export_pystes_UWillowCharacterClassDefinition()
         .def("StaticClass", &UWillowCharacterClassDefinition::StaticClass, py::return_value_policy::reference)
         .def("SetBehaviorProviderDefinition", &UWillowCharacterClassDefinition::SetBehaviorProviderDefinition)
         .def("GetBehaviorProviderDefinition", &UWillowCharacterClassDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

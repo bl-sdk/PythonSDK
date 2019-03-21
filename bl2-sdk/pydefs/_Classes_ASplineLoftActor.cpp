@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ASplineLoftActor()
+void Export_pystes_ASplineLoftActor(py::object m)
 {
-    py::class_< ASplineLoftActor,  ASplineActor   >("ASplineLoftActor")
+    py::class_< ASplineLoftActor,  ASplineActor   >(m, "ASplineLoftActor")
         .def_readwrite("ScaleX", &ASplineLoftActor::ScaleX)
         .def_readwrite("ScaleY", &ASplineLoftActor::ScaleY)
         .def_readwrite("SplineMeshComps", &ASplineLoftActor::SplineMeshComps)
@@ -19,6 +19,5 @@ void Export_pystes_ASplineLoftActor()
         .def("StaticClass", &ASplineLoftActor::StaticClass, py::return_value_policy::reference)
         .def("UpdateSplineParams", &ASplineLoftActor::UpdateSplineParams)
         .def("ClearLoftMesh", &ASplineLoftActor::ClearLoftMesh)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

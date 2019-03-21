@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTargetIteratorForgetAboutTarget()
+void Export_pystes_UTargetIteratorForgetAboutTarget(py::object m)
 {
-    py::class_< UTargetIteratorForgetAboutTarget,  UTargetIterator   >("UTargetIteratorForgetAboutTarget")
+    py::class_< UTargetIteratorForgetAboutTarget,  UTargetIterator   >(m, "UTargetIteratorForgetAboutTarget")
         .def("StaticClass", &UTargetIteratorForgetAboutTarget::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

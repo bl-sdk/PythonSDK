@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USequenceDefinition()
+void Export_pystes_USequenceDefinition(py::object m)
 {
-    py::class_< USequenceDefinition,  USequence   >("USequenceDefinition")
+    py::class_< USequenceDefinition,  USequence   >(m, "USequenceDefinition")
         .def("StaticClass", &USequenceDefinition::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

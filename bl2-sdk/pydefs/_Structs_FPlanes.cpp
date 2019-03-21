@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPlane()
+void Export_pystes_FPlane(py::object m)
 {
-    py::class_< FPlane,  FVector   >("FPlane")
+    py::class_< FPlane,  FVector   >(m, "FPlane")
         .def_readwrite("W", &FPlane::W)
   ;
 }

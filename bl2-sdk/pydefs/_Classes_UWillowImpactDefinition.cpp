@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowImpactDefinition()
+void Export_pystes_UWillowImpactDefinition(py::object m)
 {
-    py::class_< UWillowImpactDefinition,  UImpactDefinition   >("UWillowImpactDefinition")
+    py::class_< UWillowImpactDefinition,  UImpactDefinition   >(m, "UWillowImpactDefinition")
         .def_readwrite("FallbackEffect", &UWillowImpactDefinition::FallbackEffect)
         .def_readwrite("Usage", &UWillowImpactDefinition::Usage)
         .def_readwrite("Parent", &UWillowImpactDefinition::Parent)
@@ -14,6 +14,5 @@ void Export_pystes_UWillowImpactDefinition()
         .def_readwrite("ImpactAkEvent", &UWillowImpactDefinition::ImpactAkEvent)
         .def("StaticClass", &UWillowImpactDefinition::StaticClass, py::return_value_policy::reference)
         .def("HandleRigidBodyImpact", &UWillowImpactDefinition::HandleRigidBodyImpact)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

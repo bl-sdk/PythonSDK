@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAIPawnGameStageGradeWeightData()
+void Export_pystes_FAIPawnGameStageGradeWeightData(py::object m)
 {
-    py::class_< FAIPawnGameStageGradeWeightData,  FGameStageGradeWeightData   >("FAIPawnGameStageGradeWeightData")
+    py::class_< FAIPawnGameStageGradeWeightData,  FGameStageGradeWeightData   >(m, "FAIPawnGameStageGradeWeightData")
         .def_readwrite("GradeModifiers", &FAIPawnGameStageGradeWeightData::GradeModifiers)
   ;
 }

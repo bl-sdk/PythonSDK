@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAIState_Random()
+void Export_pystes_UAIState_Random(py::object m)
 {
-    py::class_< UAIState_Random,  UGearboxEditorNode   >("UAIState_Random")
+    py::class_< UAIState_Random,  UGearboxEditorNode   >(m, "UAIState_Random")
         .def("StaticClass", &UAIState_Random::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

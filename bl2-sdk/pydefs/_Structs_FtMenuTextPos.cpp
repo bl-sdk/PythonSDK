@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FtMenuTextPos()
+void Export_pystes_FtMenuTextPos(py::object m)
 {
-    py::class_< FtMenuTextPos >("FtMenuTextPos")
+    py::class_< FtMenuTextPos >(m, "FtMenuTextPos")
         .def_readwrite("TextHAlign", &FtMenuTextPos::TextHAlign)
         .def_readwrite("TextXPos", &FtMenuTextPos::TextXPos)
         .def_readwrite("TextVAlign", &FtMenuTextPos::TextVAlign)

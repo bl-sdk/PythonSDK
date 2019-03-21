@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpecialMove_WeaponAction()
+void Export_pystes_USpecialMove_WeaponAction(py::object m)
 {
-    py::class_< USpecialMove_WeaponAction,  UWillowAnimDefinition   >("USpecialMove_WeaponAction")
+    py::class_< USpecialMove_WeaponAction,  UWillowAnimDefinition   >(m, "USpecialMove_WeaponAction")
         .def("StaticClass", &USpecialMove_WeaponAction::StaticClass, py::return_value_policy::reference)
         .def("eventClientStarted", &USpecialMove_WeaponAction::eventClientStarted)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpecialMove_PhysicsJump()
+void Export_pystes_USpecialMove_PhysicsJump(py::object m)
 {
-    py::class_< USpecialMove_PhysicsJump,  UWillowAnimDefinition   >("USpecialMove_PhysicsJump")
+    py::class_< USpecialMove_PhysicsJump,  UWillowAnimDefinition   >(m, "USpecialMove_PhysicsJump")
         .def_readwrite("AnimIdle", &USpecialMove_PhysicsJump::AnimIdle)
         .def_readwrite("AnimLand", &USpecialMove_PhysicsJump::AnimLand)
         .def_readwrite("BodyTag", &USpecialMove_PhysicsJump::BodyTag)
@@ -22,6 +22,5 @@ void Export_pystes_USpecialMove_PhysicsJump()
         .def("eventServerStarted", &USpecialMove_PhysicsJump::eventServerStarted)
         .def("OnStartLand", &USpecialMove_PhysicsJump::OnStartLand)
         .def("OnStartIdle", &USpecialMove_PhysicsJump::OnStartIdle)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

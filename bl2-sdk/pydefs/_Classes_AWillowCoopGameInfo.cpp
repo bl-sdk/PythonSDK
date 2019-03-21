@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowCoopGameInfo()
+void Export_pystes_AWillowCoopGameInfo(py::object m)
 {
-    py::class_< AWillowCoopGameInfo,  AWillowGameInfo   >("AWillowCoopGameInfo")
+    py::class_< AWillowCoopGameInfo,  AWillowGameInfo   >(m, "AWillowCoopGameInfo")
         .def_readwrite("Teams", &AWillowCoopGameInfo::Teams)
         .def("StaticClass", &AWillowCoopGameInfo::StaticClass, py::return_value_policy::reference)
         .def("InitializeTeams", &AWillowCoopGameInfo::InitializeTeams)
@@ -30,6 +30,5 @@ void Export_pystes_AWillowCoopGameInfo()
         .def("ChangeTeam", &AWillowCoopGameInfo::ChangeTeam)
         .def("PickTeam", &AWillowCoopGameInfo::PickTeam)
         .def("CreateTeam", &AWillowCoopGameInfo::CreateTeam)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

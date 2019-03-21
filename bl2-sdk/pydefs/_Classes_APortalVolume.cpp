@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APortalVolume()
+void Export_pystes_APortalVolume(py::object m)
 {
-    py::class_< APortalVolume,  AActor   >("APortalVolume")
+    py::class_< APortalVolume,  AActor   >(m, "APortalVolume")
         .def_readwrite("Portals", &APortalVolume::Portals)
         .def_readwrite("AssociatedActors", &AVolume::AssociatedActors)
         .def_readwrite("CsgOper", &ABrush::CsgOper)
@@ -23,6 +23,5 @@ void Export_pystes_APortalVolume()
         .def("AssociateActor", &AVolume::AssociateActor)
         .def("EncompassesPoint", &AVolume::EncompassesPoint)
         .def("Encompasses", &AVolume::Encompasses)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

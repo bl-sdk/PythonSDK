@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIDataStore_MenuItems()
+void Export_pystes_UUIDataStore_MenuItems(py::object m)
 {
-    py::class_< UUIDataStore_MenuItems,  UUIDataStore_GameResource   >("UUIDataStore_MenuItems")
+    py::class_< UUIDataStore_MenuItems,  UUIDataStore_GameResource   >(m, "UUIDataStore_MenuItems")
         .def_readwrite("CurrentGameSettingsTag", &UUIDataStore_MenuItems::CurrentGameSettingsTag)
         .def_readwrite("OptionProviders", &UUIDataStore_MenuItems::OptionProviders)
         .def_readwrite("DynamicProviders", &UUIDataStore_MenuItems::DynamicProviders)
@@ -16,6 +16,5 @@ void Export_pystes_UUIDataStore_MenuItems()
         .def("GetSet", &UUIDataStore_MenuItems::GetSet)
         .def("AppendToSet", &UUIDataStore_MenuItems::AppendToSet)
         .def("ClearSet", &UUIDataStore_MenuItems::ClearSet)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

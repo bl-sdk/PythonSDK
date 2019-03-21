@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ADynamicTriggerVolume()
+void Export_pystes_ADynamicTriggerVolume(py::object m)
 {
-    py::class_< ADynamicTriggerVolume,  ATriggerVolume   >("ADynamicTriggerVolume")
+    py::class_< ADynamicTriggerVolume,  ATriggerVolume   >(m, "ADynamicTriggerVolume")
         .def("StaticClass", &ADynamicTriggerVolume::StaticClass, py::return_value_policy::reference)
         .def("eventPostBeginPlay", &ADynamicTriggerVolume::eventPostBeginPlay)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

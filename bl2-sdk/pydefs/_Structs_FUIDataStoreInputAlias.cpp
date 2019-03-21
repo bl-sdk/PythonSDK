@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FUIDataStoreInputAlias()
+void Export_pystes_FUIDataStoreInputAlias(py::object m)
 {
-    py::class_< FUIDataStoreInputAlias >("FUIDataStoreInputAlias")
+    py::class_< FUIDataStoreInputAlias >(m, "FUIDataStoreInputAlias")
         .def_readwrite("AliasName", &FUIDataStoreInputAlias::AliasName)
         .def_readonly("PlatformInputKeys", &FUIDataStoreInputAlias::PlatformInputKeys)
   ;

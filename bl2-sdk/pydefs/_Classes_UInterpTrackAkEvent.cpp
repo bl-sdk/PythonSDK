@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackAkEvent()
+void Export_pystes_UInterpTrackAkEvent(py::object m)
 {
-    py::class_< UInterpTrackAkEvent,  UInterpTrack   >("UInterpTrackAkEvent")
+    py::class_< UInterpTrackAkEvent,  UInterpTrack   >(m, "UInterpTrackAkEvent")
         .def_readwrite("AkEvents", &UInterpTrackAkEvent::AkEvents)
         .def("StaticClass", &UInterpTrackAkEvent::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIDataStore_StringAliasMap()
+void Export_pystes_UUIDataStore_StringAliasMap(py::object m)
 {
-    py::class_< UUIDataStore_StringAliasMap,  UUIDataStore   >("UUIDataStore_StringAliasMap")
+    py::class_< UUIDataStore_StringAliasMap,  UUIDataStore   >(m, "UUIDataStore_StringAliasMap")
         .def_readwrite("MenuInputMapArray", &UUIDataStore_StringAliasMap::MenuInputMapArray)
         .def_readwrite("MenuInputSets", &UUIDataStore_StringAliasMap::MenuInputSets)
         .def_readwrite("PlayerIndex", &UUIDataStore_StringAliasMap::PlayerIndex)
@@ -13,6 +13,5 @@ void Export_pystes_UUIDataStore_StringAliasMap()
         .def("GetStringWithFieldName", &UUIDataStore_StringAliasMap::GetStringWithFieldName)
         .def("FindMappingWithFieldName", &UUIDataStore_StringAliasMap::FindMappingWithFieldName)
         .def("GetPlayerOwner", &UUIDataStore_StringAliasMap::GetPlayerOwner, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

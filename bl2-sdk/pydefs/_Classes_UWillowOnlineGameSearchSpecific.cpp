@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowOnlineGameSearchSpecific()
+void Export_pystes_UWillowOnlineGameSearchSpecific(py::object m)
 {
-    py::class_< UWillowOnlineGameSearchSpecific,  UOnlineGameSearch   >("UWillowOnlineGameSearchSpecific")
+    py::class_< UWillowOnlineGameSearchSpecific,  UOnlineGameSearch   >(m, "UWillowOnlineGameSearchSpecific")
         .def_readwrite("LevelVariance", &UWillowOnlineGameSearch::LevelVariance)
         .def_readwrite("MaxPing", &UWillowOnlineGameSearch::MaxPing)
         .def("StaticClass", &UWillowOnlineGameSearchSpecific::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

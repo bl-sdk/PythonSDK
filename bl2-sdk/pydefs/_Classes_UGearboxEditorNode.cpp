@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxEditorNode()
+void Export_pystes_UGearboxEditorNode(py::object m)
 {
-    py::class_< UGearboxEditorNode,  UObject   >("UGearboxEditorNode")
+    py::class_< UGearboxEditorNode,  UObject   >(m, "UGearboxEditorNode")
         .def_readwrite("Type", &UGearboxEditorNode::Type)
         .def_readwrite("OutputLinks", &UGearboxEditorNode::OutputLinks)
         .def_readwrite("InputLinks", &UGearboxEditorNode::InputLinks)
@@ -13,6 +13,5 @@ void Export_pystes_UGearboxEditorNode()
         .def_readwrite("SliderPosition", &UGearboxEditorNode::SliderPosition)
         .def("StaticClass", &UGearboxEditorNode::StaticClass, py::return_value_policy::reference)
         .def("IsChild", &UGearboxEditorNode::IsChild)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

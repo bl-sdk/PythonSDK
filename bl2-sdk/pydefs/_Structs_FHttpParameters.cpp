@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FHttpParameters()
+void Export_pystes_FHttpParameters(py::object m)
 {
-    py::class_< FHttpParameters >("FHttpParameters")
+    py::class_< FHttpParameters >(m, "FHttpParameters")
         .def_readwrite("ServiceConfiguration", &FHttpParameters::ServiceConfiguration)
         .def_readwrite("SubService", &FHttpParameters::SubService)
         .def_readwrite("ContentType", &FHttpParameters::ContentType)

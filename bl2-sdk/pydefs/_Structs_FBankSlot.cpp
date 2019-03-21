@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBankSlot()
+void Export_pystes_FBankSlot(py::object m)
 {
-    py::class_< FBankSlot >("FBankSlot")
+    py::class_< FBankSlot >(m, "FBankSlot")
         .def_readwrite("InventorySerialNumber", &FBankSlot::InventorySerialNumber)
   ;
 }

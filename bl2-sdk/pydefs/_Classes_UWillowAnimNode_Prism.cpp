@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAnimNode_Prism()
+void Export_pystes_UWillowAnimNode_Prism(py::object m)
 {
-    py::class_< UWillowAnimNode_Prism,  UAnimNodeBlendBase   >("UWillowAnimNode_Prism")
+    py::class_< UWillowAnimNode_Prism,  UAnimNodeBlendBase   >(m, "UWillowAnimNode_Prism")
         .def_readwrite("PrismData", &UWillowAnimNode_Prism::PrismData)
         .def_readwrite("BlendTime", &UWillowAnimNode_Prism::BlendTime)
         .def_readwrite("MeshOffsetTurnThreshold", &UWillowAnimNode_Prism::MeshOffsetTurnThreshold)
@@ -16,6 +16,5 @@ void Export_pystes_UWillowAnimNode_Prism()
         .def_readwrite("EditorSliderValue", &UWillowAnimNode_Prism::EditorSliderValue)
         .def("StaticClass", &UWillowAnimNode_Prism::StaticClass, py::return_value_policy::reference)
         .def("NodeIsActive", &UWillowAnimNode_Prism::NodeIsActive)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

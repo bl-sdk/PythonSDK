@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqEvent_PlayerSpawned()
+void Export_pystes_USeqEvent_PlayerSpawned(py::object m)
 {
-    py::class_< USeqEvent_PlayerSpawned,  USequenceEvent   >("USeqEvent_PlayerSpawned")
+    py::class_< USeqEvent_PlayerSpawned,  USequenceEvent   >(m, "USeqEvent_PlayerSpawned")
         .def_readwrite("SpawnPoint", &USeqEvent_PlayerSpawned::SpawnPoint)
         .def("StaticClass", &USeqEvent_PlayerSpawned::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

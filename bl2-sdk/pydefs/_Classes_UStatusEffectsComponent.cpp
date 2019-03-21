@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UStatusEffectsComponent()
+void Export_pystes_UStatusEffectsComponent(py::object m)
 {
-    py::class_< UStatusEffectsComponent,  UActorComponent   >("UStatusEffectsComponent")
+    py::class_< UStatusEffectsComponent,  UActorComponent   >(m, "UStatusEffectsComponent")
         .def_readwrite("OwnerTarget", &UStatusEffectsComponent::OwnerTarget)
         .def_readonly("UnknownData00", &UStatusEffectsComponent::UnknownData00)
         .def_readwrite("BodyConsumptionPercent", &UStatusEffectsComponent::BodyConsumptionPercent)
@@ -93,6 +93,5 @@ void Export_pystes_UStatusEffectsComponent()
         .def("HasActiveStatusEffects", &UStatusEffectsComponent::HasActiveStatusEffects)
         .def("eventGetMostRecentStatusEffect", &UStatusEffectsComponent::eventGetMostRecentStatusEffect, py::return_value_policy::reference)
         .def("GetMostRecentEffectHitRegion", &UStatusEffectsComponent::GetMostRecentEffectHitRegion, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

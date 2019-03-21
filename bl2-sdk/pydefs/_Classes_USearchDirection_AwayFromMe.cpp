@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USearchDirection_AwayFromMe()
+void Export_pystes_USearchDirection_AwayFromMe(py::object m)
 {
-    py::class_< USearchDirection_AwayFromMe,  USearchDirection   >("USearchDirection_AwayFromMe")
+    py::class_< USearchDirection_AwayFromMe,  USearchDirection   >(m, "USearchDirection_AwayFromMe")
         .def("StaticClass", &USearchDirection_AwayFromMe::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

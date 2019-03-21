@@ -3,11 +3,10 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionFluidNormal()
+void Export_pystes_UMaterialExpressionFluidNormal(py::object m)
 {
-    py::class_< UMaterialExpressionFluidNormal,  UMaterialExpression   >("UMaterialExpressionFluidNormal")
+    py::class_< UMaterialExpressionFluidNormal,  UMaterialExpression   >(m, "UMaterialExpressionFluidNormal")
         .def_readwrite("Coordinates", &UMaterialExpressionFluidNormal::Coordinates)
         .def("StaticClass", &UMaterialExpressionFluidNormal::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

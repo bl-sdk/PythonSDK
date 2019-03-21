@@ -3,12 +3,11 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInjuredFeedbackMessage()
+void Export_pystes_UInjuredFeedbackMessage(py::object m)
 {
-    py::class_< UInjuredFeedbackMessage,  UWillowLocalMessage   >("UInjuredFeedbackMessage")
+    py::class_< UInjuredFeedbackMessage,  UWillowLocalMessage   >(m, "UInjuredFeedbackMessage")
         .def_readwrite("SecondWind", &UInjuredFeedbackMessage::SecondWind)
         .def("StaticClass", &UInjuredFeedbackMessage::StaticClass, py::return_value_policy::reference)
         .def("GetString", &UInjuredFeedbackMessage::GetString)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

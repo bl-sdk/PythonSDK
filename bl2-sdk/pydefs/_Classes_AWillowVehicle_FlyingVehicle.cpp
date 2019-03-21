@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowVehicle_FlyingVehicle()
+void Export_pystes_AWillowVehicle_FlyingVehicle(py::object m)
 {
-    py::class_< AWillowVehicle_FlyingVehicle,  AWillowVehicle   >("AWillowVehicle_FlyingVehicle")
+    py::class_< AWillowVehicle_FlyingVehicle,  AWillowVehicle   >(m, "AWillowVehicle_FlyingVehicle")
         .def_readwrite("FlyingSpeed", &AWillowVehicle_FlyingVehicle::FlyingSpeed)
         .def_readwrite("AirTransFriction", &AWillowVehicle_FlyingVehicle::AirTransFriction)
         .def_readwrite("AirRotFriction", &AWillowVehicle_FlyingVehicle::AirRotFriction)
@@ -29,6 +29,5 @@ void Export_pystes_AWillowVehicle_FlyingVehicle()
         .def("eventSetAIInputs", &AWillowVehicle_FlyingVehicle::eventSetAIInputs)
         .def("SetInputs", &AWillowVehicle_FlyingVehicle::SetInputs)
         .def("UnwrapToSimObj", &AWillowVehicle_FlyingVehicle::UnwrapToSimObj)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

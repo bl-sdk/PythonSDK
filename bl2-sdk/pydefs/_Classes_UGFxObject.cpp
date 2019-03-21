@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGFxObject()
+void Export_pystes_UGFxObject(py::object m)
 {
-    py::class_< UGFxObject,  UObject   >("UGFxObject")
+    py::class_< UGFxObject,  UObject   >(m, "UGFxObject")
         .def_readonly("Value", &UGFxObject::Value)
         .def_readwrite("SubWidgetBindings", &UGFxObject::SubWidgetBindings)
         .def("StaticClass", &UGFxObject::StaticClass, py::return_value_policy::reference)
@@ -82,6 +82,5 @@ void Export_pystes_UGFxObject()
         .def("GetFloat", &UGFxObject::GetFloat)
         .def("GetBool", &UGFxObject::GetBool)
         .def("Get", &UGFxObject::Get)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

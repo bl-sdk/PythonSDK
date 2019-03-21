@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FUIInputKeyData()
+void Export_pystes_FUIInputKeyData(py::object m)
 {
-    py::class_< FUIInputKeyData >("FUIInputKeyData")
+    py::class_< FUIInputKeyData >(m, "FUIInputKeyData")
         .def_readwrite("InputKeyData", &FUIInputKeyData::InputKeyData)
         .def_readwrite("ButtonFontMarkupString", &FUIInputKeyData::ButtonFontMarkupString)
   ;

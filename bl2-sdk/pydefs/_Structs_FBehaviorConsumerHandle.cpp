@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBehaviorConsumerHandle()
+void Export_pystes_FBehaviorConsumerHandle(py::object m)
 {
-    py::class_< FBehaviorConsumerHandle >("FBehaviorConsumerHandle")
+    py::class_< FBehaviorConsumerHandle >(m, "FBehaviorConsumerHandle")
         .def_readwrite("PID", &FBehaviorConsumerHandle::PID)
   ;
 }

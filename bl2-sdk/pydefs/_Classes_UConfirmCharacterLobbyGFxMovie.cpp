@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UConfirmCharacterLobbyGFxMovie()
+void Export_pystes_UConfirmCharacterLobbyGFxMovie(py::object m)
 {
-    py::class_< UConfirmCharacterLobbyGFxMovie,  UWillowGFxMovie   >("UConfirmCharacterLobbyGFxMovie")
+    py::class_< UConfirmCharacterLobbyGFxMovie,  UWillowGFxMovie   >(m, "UConfirmCharacterLobbyGFxMovie")
         .def_readwrite("ConfirmCharacterLobbyObj", &UConfirmCharacterLobbyGFxMovie::ConfirmCharacterLobbyObj)
         .def_readonly("WPRI", &UConfirmCharacterLobbyGFxMovie::WPRI)
         .def("StaticClass", &UConfirmCharacterLobbyGFxMovie::StaticClass, py::return_value_policy::reference)
@@ -30,6 +30,5 @@ void Export_pystes_UConfirmCharacterLobbyGFxMovie()
         .def("extConfirmCharacterLobbyReady", &UConfirmCharacterLobbyGFxMovie::extConfirmCharacterLobbyReady)
         .def("eventStart", &UConfirmCharacterLobbyGFxMovie::eventStart)
         .def("OnConfirmCharacters", &UConfirmCharacterLobbyGFxMovie::OnConfirmCharacters)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

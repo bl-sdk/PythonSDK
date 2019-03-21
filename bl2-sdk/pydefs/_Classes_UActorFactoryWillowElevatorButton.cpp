@@ -3,10 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActorFactoryWillowElevatorButton()
+void Export_pystes_UActorFactoryWillowElevatorButton(py::object m)
 {
-    py::class_< UActorFactoryWillowElevatorButton,  UActorFactoryInteractiveObject   >("UActorFactoryWillowElevatorButton")
+    py::class_< UActorFactoryWillowElevatorButton,  UActorFactoryInteractiveObject   >(m, "UActorFactoryWillowElevatorButton")
         .def("StaticClass", &UActorFactoryWillowElevatorButton::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APhysicsVolume()
+void Export_pystes_APhysicsVolume(py::object m)
 {
-    py::class_< APhysicsVolume,  AVolume   >("APhysicsVolume")
+    py::class_< APhysicsVolume,  AVolume   >(m, "APhysicsVolume")
         .def_readwrite("ZoneVelocity", &APhysicsVolume::ZoneVelocity)
         .def_readwrite("GroundFriction", &APhysicsVolume::GroundFriction)
         .def_readwrite("TerminalVelocity", &APhysicsVolume::TerminalVelocity)
@@ -42,6 +42,5 @@ void Export_pystes_APhysicsVolume()
         .def("eventPostBeginPlay", &APhysicsVolume::eventPostBeginPlay)
         .def("GetZoneVelocityForActor", &APhysicsVolume::GetZoneVelocityForActor)
         .def("GetGravityZ", &APhysicsVolume::GetGravityZ)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

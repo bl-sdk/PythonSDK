@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGFxEditDialog()
+void Export_pystes_UWillowGFxEditDialog(py::object m)
 {
-    py::class_< UWillowGFxEditDialog,  UWillowGFxMovie   >("UWillowGFxEditDialog")
+    py::class_< UWillowGFxEditDialog,  UWillowGFxMovie   >(m, "UWillowGFxEditDialog")
         .def_readwrite("Tools", &UWillowGFxEditDialog::Tools)
         .def_readwrite("MenuItemCallbacks", &UWillowGFxEditDialog::MenuItemCallbacks)
         .def("StaticClass", &UWillowGFxEditDialog::StaticClass, py::return_value_policy::reference)
@@ -23,6 +23,5 @@ void Export_pystes_UWillowGFxEditDialog()
         .def("eventOnClose", &UWillowGFxEditDialog::eventOnClose)
         .def("eventStart", &UWillowGFxEditDialog::eventStart)
         .def("OnMenuItemClicked", &UWillowGFxEditDialog::OnMenuItemClicked)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AHUD()
+void Export_pystes_AHUD(py::object m)
 {
-    py::class_< AHUD,  AActor   >("AHUD")
+    py::class_< AHUD,  AActor   >(m, "AHUD")
         .def_readwrite("WhiteColor", &AHUD::WhiteColor)
         .def_readwrite("GreenColor", &AHUD::GreenColor)
         .def_readwrite("RedColor", &AHUD::RedColor)
@@ -59,6 +59,5 @@ void Export_pystes_AHUD()
         .def("eventPostBeginPlay", &AHUD::eventPostBeginPlay)
         .def("Draw2DLine", &AHUD::Draw2DLine)
         .def("Draw3DLine", &AHUD::Draw3DLine)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

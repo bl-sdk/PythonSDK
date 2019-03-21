@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UVSSUIDefinition()
+void Export_pystes_UVSSUIDefinition(py::object m)
 {
-    py::class_< UVSSUIDefinition,  UGBXDefinition   >("UVSSUIDefinition")
+    py::class_< UVSSUIDefinition,  UGBXDefinition   >(m, "UVSSUIDefinition")
         .def_readwrite("VfTable_IIDlcLicensableObject", &UVSSUIDefinition::VfTable_IIDlcLicensableObject)
         .def_readwrite("VehicleFamily", &UVSSUIDefinition::VehicleFamily)
         .def_readwrite("VehicleName", &UVSSUIDefinition::VehicleName)
@@ -23,6 +23,5 @@ void Export_pystes_UVSSUIDefinition()
         .def("GetVehiclePreviewMoviePath", &UVSSUIDefinition::GetVehiclePreviewMoviePath)
         .def("GetDownloadableContentDefinition", &UVSSUIDefinition::GetDownloadableContentDefinition, py::return_value_policy::reference)
         .def("GetHumanReadableVehicleName", &UVSSUIDefinition::GetHumanReadableVehicleName)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

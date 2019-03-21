@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSkelControl_UpperEyelidLook()
+void Export_pystes_UWillowSkelControl_UpperEyelidLook(py::object m)
 {
-    py::class_< UWillowSkelControl_UpperEyelidLook,  USkelControlSingleBone   >("UWillowSkelControl_UpperEyelidLook")
+    py::class_< UWillowSkelControl_UpperEyelidLook,  USkelControlSingleBone   >(m, "UWillowSkelControl_UpperEyelidLook")
         .def_readwrite("LookAtOffset", &UWillowSkelControl_UpperEyelidLook::LookAtOffset)
         .def_readwrite("EyeInterpSpeed", &UWillowSkelControl_UpperEyelidLook::EyeInterpSpeed)
         .def_readwrite("OriginalHorizAngle", &UWillowSkelControl_EyelidLook::OriginalHorizAngle)
@@ -20,6 +20,5 @@ void Export_pystes_UWillowSkelControl_UpperEyelidLook()
         .def_readwrite("minOpenValue", &UWillowSkelControl_EyelidLook::minOpenValue)
         .def_readwrite("ClosedValue", &UWillowSkelControl_EyelidLook::ClosedValue)
         .def("StaticClass", &UWillowSkelControl_UpperEyelidLook::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTerrainMaterial()
+void Export_pystes_UTerrainMaterial(py::object m)
 {
-    py::class_< UTerrainMaterial,  UObject   >("UTerrainMaterial")
+    py::class_< UTerrainMaterial,  UObject   >(m, "UTerrainMaterial")
         .def_readonly("UnknownData00", &UTerrainMaterial::UnknownData00)
         .def_readwrite("LocalToMapping", &UTerrainMaterial::LocalToMapping)
         .def_readwrite("MappingType", &UTerrainMaterial::MappingType)
@@ -18,6 +18,5 @@ void Export_pystes_UTerrainMaterial()
         .def_readwrite("DisplacementScale", &UTerrainMaterial::DisplacementScale)
         .def_readwrite("FoliageMeshes", &UTerrainMaterial::FoliageMeshes)
         .def("StaticClass", &UTerrainMaterial::StaticClass, py::return_value_policy::reference)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }

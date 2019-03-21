@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBalanceModifierDefinition()
+void Export_pystes_UBalanceModifierDefinition(py::object m)
 {
-    py::class_< UBalanceModifierDefinition,  UGBXDefinition   >("UBalanceModifierDefinition")
+    py::class_< UBalanceModifierDefinition,  UGBXDefinition   >(m, "UBalanceModifierDefinition")
         .def_readwrite("PlaythroughToBalance", &UBalanceModifierDefinition::PlaythroughToBalance)
         .def_readwrite("BalanceModifiers", &UBalanceModifierDefinition::BalanceModifiers)
         .def_readonly("ModifierToXPGainedTowardsNewLevelsInEarlierPlaythroughs", &UBalanceModifierDefinition::ModifierToXPGainedTowardsNewLevelsInEarlierPlaythroughs)
@@ -34,6 +34,5 @@ void Export_pystes_UBalanceModifierDefinition()
         .def("ApplyPlayThroughBasedPlayerAttributeEffects", &UBalanceModifierDefinition::ApplyPlayThroughBasedPlayerAttributeEffects)
         .def("UpdateSpawnedPlayerEnemyAIPawn", &UBalanceModifierDefinition::UpdateSpawnedPlayerEnemyAIPawn)
         .def("GetXPEarnedMultiplier", &UBalanceModifierDefinition::GetXPEarnedMultiplier)
-        .staticmethod("StaticClass")
-  ;
+          ;
 }
