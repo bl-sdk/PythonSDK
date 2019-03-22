@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGFxMovieDrawStyleRTT(py::object m)
+void Export_pystes_UGFxMovieDrawStyleRTT(py::module &m)
 {
     py::class_< UGFxMovieDrawStyleRTT,  UGFxMovieDrawStyle   >(m, "UGFxMovieDrawStyleRTT")
         .def_readwrite("TextureSize", &UGFxMovieDrawStyleRTT::TextureSize)

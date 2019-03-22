@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SetParticleSystemParameters(py::object m)
+void Export_pystes_UBehavior_SetParticleSystemParameters(py::module &m)
 {
     py::class_< UBehavior_SetParticleSystemParameters,  UBehaviorBase   >(m, "UBehavior_SetParticleSystemParameters")
         .def_readwrite("AttributeContext", &UBehavior_SetParticleSystemParameters::AttributeContext)

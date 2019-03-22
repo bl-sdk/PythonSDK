@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPathSizeInfo(py::object m)
+void Export_pystes_FPathSizeInfo(py::module &m)
 {
     py::class_< FPathSizeInfo >(m, "FPathSizeInfo")
         .def_readwrite("Desc", &FPathSizeInfo::Desc)

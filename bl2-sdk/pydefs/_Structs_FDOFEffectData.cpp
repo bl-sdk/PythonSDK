@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDOFEffectData(py::object m)
+void Export_pystes_FDOFEffectData(py::module &m)
 {
     py::class_< FDOFEffectData >(m, "FDOFEffectData")
         .def_readwrite("FalloffExponent", &FDOFEffectData::FalloffExponent)

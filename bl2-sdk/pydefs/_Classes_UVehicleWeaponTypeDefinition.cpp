@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UVehicleWeaponTypeDefinition(py::object m)
+void Export_pystes_UVehicleWeaponTypeDefinition(py::module &m)
 {
     py::class_< UVehicleWeaponTypeDefinition,  UWeaponTypeDefinition   >(m, "UVehicleWeaponTypeDefinition")
         .def_readwrite("WeaponMeshInstanceDataName", &UVehicleWeaponTypeDefinition::WeaponMeshInstanceDataName)

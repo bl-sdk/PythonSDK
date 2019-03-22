@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UExposureUtilityBase(py::object m)
+void Export_pystes_UExposureUtilityBase(py::module &m)
 {
     py::class_< UExposureUtilityBase,  UObject   >(m, "UExposureUtilityBase")
         .def_readwrite("ExposureStrategy", &UExposureUtilityBase::ExposureStrategy)

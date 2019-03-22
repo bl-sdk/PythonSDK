@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionSceneDepth(py::object m)
+void Export_pystes_UMaterialExpressionSceneDepth(py::module &m)
 {
     py::class_< UMaterialExpressionSceneDepth,  UMaterialExpression   >(m, "UMaterialExpressionSceneDepth")
         .def_readwrite("Coordinates", &UMaterialExpressionSceneDepth::Coordinates)

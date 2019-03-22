@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIDataProvider_OnlineFriends(py::object m)
+void Export_pystes_UUIDataProvider_OnlineFriends(py::module &m)
 {
     py::class_< UUIDataProvider_OnlineFriends,  UUIDataProvider   >(m, "UUIDataProvider_OnlineFriends")
         .def_readwrite("VfTable_IUIListElementCellProvider", &UUIDataProvider_OnlineFriends::VfTable_IUIListElementCellProvider)

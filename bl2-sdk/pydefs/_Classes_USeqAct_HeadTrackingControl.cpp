@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_HeadTrackingControl(py::object m)
+void Export_pystes_USeqAct_HeadTrackingControl(py::module &m)
 {
     py::class_< USeqAct_HeadTrackingControl,  USequenceAction   >(m, "USeqAct_HeadTrackingControl")
         .def_readwrite("TrackControllerName", &USeqAct_HeadTrackingControl::TrackControllerName)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTopStatData(py::object m)
+void Export_pystes_FTopStatData(py::module &m)
 {
     py::class_< FTopStatData >(m, "FTopStatData")
         .def_readwrite("LabelText", &FTopStatData::LabelText)

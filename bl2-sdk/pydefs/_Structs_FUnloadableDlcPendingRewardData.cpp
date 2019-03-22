@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FUnloadableDlcPendingRewardData(py::object m)
+void Export_pystes_FUnloadableDlcPendingRewardData(py::module &m)
 {
     py::class_< FUnloadableDlcPendingRewardData >(m, "FUnloadableDlcPendingRewardData")
         .def_readwrite("MissionDefName", &FUnloadableDlcPendingRewardData::MissionDefName)

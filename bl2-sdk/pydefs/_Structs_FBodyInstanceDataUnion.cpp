@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBodyInstanceDataUnion(py::object m)
+void Export_pystes_FBodyInstanceDataUnion(py::module &m)
 {
     py::class_< FBodyInstanceDataUnion >(m, "FBodyInstanceDataUnion")
         .def_readwrite("Data", &FBodyInstanceDataUnion::Data)

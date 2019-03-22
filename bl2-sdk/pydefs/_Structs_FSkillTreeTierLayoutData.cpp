@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSkillTreeTierLayoutData(py::object m)
+void Export_pystes_FSkillTreeTierLayoutData(py::module &m)
 {
     py::class_< FSkillTreeTierLayoutData >(m, "FSkillTreeTierLayoutData")
         .def_readwrite("ParentBranchDefinition", &FSkillTreeTierLayoutData::ParentBranchDefinition)

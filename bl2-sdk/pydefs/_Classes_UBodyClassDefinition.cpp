@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBodyClassDefinition(py::object m)
+void Export_pystes_UBodyClassDefinition(py::module &m)
 {
     py::class_< UBodyClassDefinition,  UGBXDefinition   >(m, "UBodyClassDefinition")
         .def_readwrite("VfTable_IIHitRegionInfoProvider", &UBodyClassDefinition::VfTable_IIHitRegionInfoProvider)

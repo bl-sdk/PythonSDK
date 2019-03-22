@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FImpactInfo(py::object m)
+void Export_pystes_FImpactInfo(py::module &m)
 {
     py::class_< FImpactInfo >(m, "FImpactInfo")
         .def_readwrite("HitActor", &FImpactInfo::HitActor)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDepthFieldGlowInfo(py::object m)
+void Export_pystes_FDepthFieldGlowInfo(py::module &m)
 {
     py::class_< FDepthFieldGlowInfo >(m, "FDepthFieldGlowInfo")
         .def_readwrite("GlowColor", &FDepthFieldGlowInfo::GlowColor)

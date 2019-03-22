@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UResourcePoolStateAttributeValueResolver(py::object m)
+void Export_pystes_UResourcePoolStateAttributeValueResolver(py::module &m)
 {
     py::class_< UResourcePoolStateAttributeValueResolver,  UAttributeValueResolver   >(m, "UResourcePoolStateAttributeValueResolver")
         .def_readwrite("PoolState", &UResourcePoolStateAttributeValueResolver::PoolState)

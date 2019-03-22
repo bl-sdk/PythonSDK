@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowGrenadeMod(py::object m)
+void Export_pystes_AWillowGrenadeMod(py::module &m)
 {
     py::class_< AWillowGrenadeMod,  AWillowEquipAbleItem   >(m, "AWillowGrenadeMod")
         .def_readwrite("GrenadeDamage", &AWillowGrenadeMod::GrenadeDamage)

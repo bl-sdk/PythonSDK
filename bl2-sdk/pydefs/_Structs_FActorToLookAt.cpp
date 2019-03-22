@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FActorToLookAt(py::object m)
+void Export_pystes_FActorToLookAt(py::module &m)
 {
     py::class_< FActorToLookAt >(m, "FActorToLookAt")
         .def_readwrite("Actor", &FActorToLookAt::Actor)

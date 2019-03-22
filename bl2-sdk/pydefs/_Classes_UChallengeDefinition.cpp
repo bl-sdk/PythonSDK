@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UChallengeDefinition(py::object m)
+void Export_pystes_UChallengeDefinition(py::module &m)
 {
     py::class_< UChallengeDefinition,  UGBXDefinition   >(m, "UChallengeDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UChallengeDefinition::VfTable_IIBehaviorProvider)

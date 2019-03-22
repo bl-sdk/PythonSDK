@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AAccessControl(py::object m)
+void Export_pystes_AAccessControl(py::module &m)
 {
     py::class_< AAccessControl,  AInfo   >(m, "AAccessControl")
         .def_readwrite("IPPolicies", &AAccessControl::IPPolicies)

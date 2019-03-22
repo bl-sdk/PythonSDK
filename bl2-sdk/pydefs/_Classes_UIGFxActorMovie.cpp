@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIGFxActorMovie(py::object m)
+void Export_pystes_UIGFxActorMovie(py::module &m)
 {
     py::class_< UIGFxActorMovie,  UInterface   >(m, "UIGFxActorMovie")
         .def("StaticClass", &UIGFxActorMovie::StaticClass, py::return_value_policy::reference)

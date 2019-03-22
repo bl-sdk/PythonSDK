@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_AdjustCameraAnimByEyeHeight(py::object m)
+void Export_pystes_UBehavior_AdjustCameraAnimByEyeHeight(py::module &m)
 {
     py::class_< UBehavior_AdjustCameraAnimByEyeHeight,  UBehaviorBase   >(m, "UBehavior_AdjustCameraAnimByEyeHeight")
         .def_readwrite("BaseEyeHeight", &UBehavior_AdjustCameraAnimByEyeHeight::BaseEyeHeight)

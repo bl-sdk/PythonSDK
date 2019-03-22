@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGrenadeModPartBehaviorSequenceStateData(py::object m)
+void Export_pystes_FGrenadeModPartBehaviorSequenceStateData(py::module &m)
 {
     py::class_< FGrenadeModPartBehaviorSequenceStateData >(m, "FGrenadeModPartBehaviorSequenceStateData")
         .def_readwrite("Action", &FGrenadeModPartBehaviorSequenceStateData::Action)

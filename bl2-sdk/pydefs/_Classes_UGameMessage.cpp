@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGameMessage(py::object m)
+void Export_pystes_UGameMessage(py::module &m)
 {
     py::class_< UGameMessage,  ULocalMessage   >(m, "UGameMessage")
         .def_readwrite("SwitchLevelMessage", &UGameMessage::SwitchLevelMessage)

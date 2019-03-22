@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCurveTrack(py::object m)
+void Export_pystes_FCurveTrack(py::module &m)
 {
     py::class_< FCurveTrack >(m, "FCurveTrack")
         .def_readwrite("CurveName", &FCurveTrack::CurveName)

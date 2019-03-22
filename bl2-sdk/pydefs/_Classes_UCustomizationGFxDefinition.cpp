@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCustomizationGFxDefinition(py::object m)
+void Export_pystes_UCustomizationGFxDefinition(py::module &m)
 {
     py::class_< UCustomizationGFxDefinition,  UWillowGFxThirdPersonDefinition   >(m, "UCustomizationGFxDefinition")
         .def("StaticClass", &UCustomizationGFxDefinition::StaticClass, py::return_value_policy::reference)

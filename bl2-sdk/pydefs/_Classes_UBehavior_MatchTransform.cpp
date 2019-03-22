@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_MatchTransform(py::object m)
+void Export_pystes_UBehavior_MatchTransform(py::module &m)
 {
     py::class_< UBehavior_MatchTransform,  UBehaviorBase   >(m, "UBehavior_MatchTransform")
         .def_readwrite("AttachmentName", &UBehavior_MatchTransform::AttachmentName)

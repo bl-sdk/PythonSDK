@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowVersusDuelBehavior(py::object m)
+void Export_pystes_UWillowVersusDuelBehavior(py::module &m)
 {
     py::class_< UWillowVersusDuelBehavior,  UBehaviorBase   >(m, "UWillowVersusDuelBehavior")
         .def("StaticClass", &UWillowVersusDuelBehavior::StaticClass, py::return_value_policy::reference)

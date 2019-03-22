@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIProjectileReflector(py::object m)
+void Export_pystes_UIProjectileReflector(py::module &m)
 {
     py::class_< UIProjectileReflector,  UInterface   >(m, "UIProjectileReflector")
         .def("StaticClass", &UIProjectileReflector::StaticClass, py::return_value_policy::reference)

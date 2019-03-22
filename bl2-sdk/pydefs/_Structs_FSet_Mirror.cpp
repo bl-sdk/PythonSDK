@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSet_Mirror(py::object m)
+void Export_pystes_FSet_Mirror(py::module &m)
 {
     py::class_< FSet_Mirror >(m, "FSet_Mirror")
         .def_readwrite("Elements", &FSet_Mirror::Elements)

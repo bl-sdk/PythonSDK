@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowVehicleSeatDefinition(py::object m)
+void Export_pystes_UWillowVehicleSeatDefinition(py::module &m)
 {
     py::class_< UWillowVehicleSeatDefinition,  UGBXDefinition   >(m, "UWillowVehicleSeatDefinition")
         .def_readwrite("VirtualSeatKey", &UWillowVehicleSeatDefinition::VirtualSeatKey)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCoordinatedEffectDefinition(py::object m)
+void Export_pystes_UCoordinatedEffectDefinition(py::module &m)
 {
     py::class_< UCoordinatedEffectDefinition,  UGBXDefinition   >(m, "UCoordinatedEffectDefinition")
         .def_readwrite("OverrideMaterial", &UCoordinatedEffectDefinition::OverrideMaterial)

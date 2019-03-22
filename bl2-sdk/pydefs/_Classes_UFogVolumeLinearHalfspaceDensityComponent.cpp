@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFogVolumeLinearHalfspaceDensityComponent(py::object m)
+void Export_pystes_UFogVolumeLinearHalfspaceDensityComponent(py::module &m)
 {
     py::class_< UFogVolumeLinearHalfspaceDensityComponent,  UFogVolumeDensityComponent   >(m, "UFogVolumeLinearHalfspaceDensityComponent")
         .def_readwrite("PlaneDistanceFactor", &UFogVolumeLinearHalfspaceDensityComponent::PlaneDistanceFactor)

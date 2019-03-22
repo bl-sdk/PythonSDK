@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_URES_SpeedChange(py::object m)
+void Export_pystes_URES_SpeedChange(py::module &m)
 {
     py::class_< URES_SpeedChange,  UActionResource   >(m, "URES_SpeedChange")
         .def("StaticClass", &URES_SpeedChange::StaticClass, py::return_value_policy::reference)

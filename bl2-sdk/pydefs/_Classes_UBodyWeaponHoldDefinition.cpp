@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBodyWeaponHoldDefinition(py::object m)
+void Export_pystes_UBodyWeaponHoldDefinition(py::module &m)
 {
     py::class_< UBodyWeaponHoldDefinition,  UGBXDefinition   >(m, "UBodyWeaponHoldDefinition")
         .def_readwrite("HoldName", &UBodyWeaponHoldDefinition::HoldName)

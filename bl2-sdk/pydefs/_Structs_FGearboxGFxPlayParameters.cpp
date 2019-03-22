@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGearboxGFxPlayParameters(py::object m)
+void Export_pystes_FGearboxGFxPlayParameters(py::module &m)
 {
     py::class_< FGearboxGFxPlayParameters >(m, "FGearboxGFxPlayParameters")
         .def_readwrite("Definition", &FGearboxGFxPlayParameters::Definition)

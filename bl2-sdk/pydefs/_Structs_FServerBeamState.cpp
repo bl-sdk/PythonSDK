@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FServerBeamState(py::object m)
+void Export_pystes_FServerBeamState(py::module &m)
 {
     py::class_< FServerBeamState >(m, "FServerBeamState")
         .def_readwrite("DamageData", &FServerBeamState::DamageData)

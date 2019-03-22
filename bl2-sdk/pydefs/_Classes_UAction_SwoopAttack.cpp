@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_SwoopAttack(py::object m)
+void Export_pystes_UAction_SwoopAttack(py::module &m)
 {
     py::class_< UAction_SwoopAttack,  UWillowActionSequencePawn   >(m, "UAction_SwoopAttack")
         .def_readwrite("SwoopFarDistance", &UAction_SwoopAttack::SwoopFarDistance)

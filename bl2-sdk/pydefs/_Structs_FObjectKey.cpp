@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FObjectKey(py::object m)
+void Export_pystes_FObjectKey(py::module &m)
 {
     py::class_< FObjectKey >(m, "FObjectKey")
         .def_readwrite("ObjectName", &FObjectKey::ObjectName)

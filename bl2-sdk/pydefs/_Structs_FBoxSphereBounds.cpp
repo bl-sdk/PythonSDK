@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBoxSphereBounds(py::object m)
+void Export_pystes_FBoxSphereBounds(py::module &m)
 {
     py::class_< FBoxSphereBounds >(m, "FBoxSphereBounds")
         .def_readwrite("Origin", &FBoxSphereBounds::Origin)

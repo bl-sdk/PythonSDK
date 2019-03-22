@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USVehicleWheel(py::object m)
+void Export_pystes_USVehicleWheel(py::module &m)
 {
     py::class_< USVehicleWheel,  UComponent   >(m, "USVehicleWheel")
         .def_readwrite("Steer", &USVehicleWheel::Steer)

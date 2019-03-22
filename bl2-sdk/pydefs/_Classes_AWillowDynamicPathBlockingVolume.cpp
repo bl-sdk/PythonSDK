@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowDynamicPathBlockingVolume(py::object m)
+void Export_pystes_AWillowDynamicPathBlockingVolume(py::module &m)
 {
     py::class_< AWillowDynamicPathBlockingVolume,  AVolume   >(m, "AWillowDynamicPathBlockingVolume")
         .def_readwrite("VfTable_IIGBXNavMeshObstacle", &AWillowDynamicPathBlockingVolume::VfTable_IIGBXNavMeshObstacle)

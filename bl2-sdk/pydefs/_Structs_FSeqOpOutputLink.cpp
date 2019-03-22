@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSeqOpOutputLink(py::object m)
+void Export_pystes_FSeqOpOutputLink(py::module &m)
 {
     py::class_< FSeqOpOutputLink >(m, "FSeqOpOutputLink")
         .def_readwrite("Links", &FSeqOpOutputLink::Links)

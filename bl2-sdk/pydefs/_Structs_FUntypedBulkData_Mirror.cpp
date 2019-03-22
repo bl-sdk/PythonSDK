@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FUntypedBulkData_Mirror(py::object m)
+void Export_pystes_FUntypedBulkData_Mirror(py::module &m)
 {
     py::class_< FUntypedBulkData_Mirror >(m, "FUntypedBulkData_Mirror")
         .def_readwrite("VfTable", &FUntypedBulkData_Mirror::VfTable)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAIDefinition(py::object m)
+void Export_pystes_UWillowAIDefinition(py::module &m)
 {
     py::class_< UWillowAIDefinition,  UAIDefinition   >(m, "UWillowAIDefinition")
         .def_readwrite("PatrolAction", &UWillowAIDefinition::PatrolAction)

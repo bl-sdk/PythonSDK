@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ARB_RadialImpulseActor(py::object m)
+void Export_pystes_ARB_RadialImpulseActor(py::module &m)
 {
     py::class_< ARB_RadialImpulseActor,  ARigidBodyBase   >(m, "ARB_RadialImpulseActor")
         .def_readwrite("RenderComponent", &ARB_RadialImpulseActor::RenderComponent)

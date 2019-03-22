@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpecialMoveRandom(py::object m)
+void Export_pystes_USpecialMoveRandom(py::module &m)
 {
     py::class_< USpecialMoveRandom,  USpecialMoveDefinition   >(m, "USpecialMoveRandom")
         .def_readwrite("RandomList", &USpecialMoveRandom::RandomList)

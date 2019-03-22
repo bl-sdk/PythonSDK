@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGameUISceneClient(py::object m)
+void Export_pystes_UGameUISceneClient(py::module &m)
 {
     py::class_< UGameUISceneClient,  UUIRoot   >(m, "UGameUISceneClient")
         .def_readwrite("LatestDeltaTime", &UGameUISceneClient::LatestDeltaTime)

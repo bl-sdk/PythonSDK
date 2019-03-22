@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDOFAndBloomEffect(py::object m)
+void Export_pystes_UDOFAndBloomEffect(py::module &m)
 {
     py::class_< UDOFAndBloomEffect,  UPostProcessEffect   >(m, "UDOFAndBloomEffect")
         .def_readwrite("BloomScale", &UDOFAndBloomEffect::BloomScale)

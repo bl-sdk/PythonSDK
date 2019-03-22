@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FReplicatedInstanceDataState(py::object m)
+void Export_pystes_FReplicatedInstanceDataState(py::module &m)
 {
     py::class_< FReplicatedInstanceDataState >(m, "FReplicatedInstanceDataState")
         .def_readwrite("SwitchStateBitField", &FReplicatedInstanceDataState::SwitchStateBitField)

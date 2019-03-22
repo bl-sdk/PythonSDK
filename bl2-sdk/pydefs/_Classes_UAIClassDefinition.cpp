@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAIClassDefinition(py::object m)
+void Export_pystes_UAIClassDefinition(py::module &m)
 {
     py::class_< UAIClassDefinition,  UWillowCharacterClassDefinition   >(m, "UAIClassDefinition")
         .def_readwrite("AIDef", &UAIClassDefinition::AIDef)

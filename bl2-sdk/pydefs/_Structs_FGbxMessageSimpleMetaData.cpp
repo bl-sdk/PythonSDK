@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGbxMessageSimpleMetaData(py::object m)
+void Export_pystes_FGbxMessageSimpleMetaData(py::module &m)
 {
     py::class_< FGbxMessageSimpleMetaData >(m, "FGbxMessageSimpleMetaData")
         .def_readwrite("FloatData", &FGbxMessageSimpleMetaData::FloatData)

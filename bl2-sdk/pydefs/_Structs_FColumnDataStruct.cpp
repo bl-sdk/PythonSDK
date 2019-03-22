@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FColumnDataStruct(py::object m)
+void Export_pystes_FColumnDataStruct(py::module &m)
 {
     py::class_< FColumnDataStruct >(m, "FColumnDataStruct")
         .def_readwrite("HeaderText", &FColumnDataStruct::HeaderText)

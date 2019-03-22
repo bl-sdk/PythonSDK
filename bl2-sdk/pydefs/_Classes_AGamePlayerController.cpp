@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AGamePlayerController(py::object m)
+void Export_pystes_AGamePlayerController(py::module &m)
 {
     py::class_< AGamePlayerController,  APlayerController   >(m, "AGamePlayerController")
         .def_readwrite("CurrentSoundMode", &AGamePlayerController::CurrentSoundMode)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpecialMove_Vehicle(py::object m)
+void Export_pystes_USpecialMove_Vehicle(py::module &m)
 {
     py::class_< USpecialMove_Vehicle,  UWillowAnimDefinition   >(m, "USpecialMove_Vehicle")
         .def_readwrite("TransitionType", &USpecialMove_Vehicle::TransitionType)

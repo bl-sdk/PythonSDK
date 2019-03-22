@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SpawnTemporalField(py::object m)
+void Export_pystes_UBehavior_SpawnTemporalField(py::module &m)
 {
     py::class_< UBehavior_SpawnTemporalField,  UBehaviorBase   >(m, "UBehavior_SpawnTemporalField")
         .def_readwrite("TemporalField", &UBehavior_SpawnTemporalField::TemporalField)

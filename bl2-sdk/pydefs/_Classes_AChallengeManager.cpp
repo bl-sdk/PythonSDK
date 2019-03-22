@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AChallengeManager(py::object m)
+void Export_pystes_AChallengeManager(py::module &m)
 {
     py::class_< AChallengeManager,  AActor   >(m, "AChallengeManager")
         .def_readwrite("VfTable_IIBehaviorConsumer", &AChallengeManager::VfTable_IIBehaviorConsumer)

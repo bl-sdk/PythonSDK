@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTextureRenderTarget2D(py::object m)
+void Export_pystes_UTextureRenderTarget2D(py::module &m)
 {
     py::class_< UTextureRenderTarget2D,  UTexture   >(m, "UTextureRenderTarget2D")
         .def_readwrite("SizeX", &UTextureRenderTarget2D::SizeX)

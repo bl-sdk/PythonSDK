@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLightmassLightSettings(py::object m)
+void Export_pystes_FLightmassLightSettings(py::module &m)
 {
     py::class_< FLightmassLightSettings >(m, "FLightmassLightSettings")
         .def_readwrite("IndirectLightingScale", &FLightmassLightSettings::IndirectLightingScale)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULocalWeaponMessage(py::object m)
+void Export_pystes_ULocalWeaponMessage(py::module &m)
 {
     py::class_< ULocalWeaponMessage,  UWillowLocalMessage   >(m, "ULocalWeaponMessage")
         .def("StaticClass", &ULocalWeaponMessage::StaticClass, py::return_value_policy::reference)

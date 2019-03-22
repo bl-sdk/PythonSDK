@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDialogBoxLayout(py::object m)
+void Export_pystes_FDialogBoxLayout(py::module &m)
 {
     py::class_< FDialogBoxLayout >(m, "FDialogBoxLayout")
         .def_readwrite("LayoutTag", &FDialogBoxLayout::LayoutTag)

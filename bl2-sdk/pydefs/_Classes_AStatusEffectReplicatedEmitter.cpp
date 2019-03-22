@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AStatusEffectReplicatedEmitter(py::object m)
+void Export_pystes_AStatusEffectReplicatedEmitter(py::module &m)
 {
     py::class_< AStatusEffectReplicatedEmitter,  AEmitter   >(m, "AStatusEffectReplicatedEmitter")
         .def_readwrite("EmitterTemplate", &AStatusEffectReplicatedEmitter::EmitterTemplate)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_ChangeDialogName(py::object m)
+void Export_pystes_UBehavior_ChangeDialogName(py::module &m)
 {
     py::class_< UBehavior_ChangeDialogName,  UBehaviorBase   >(m, "UBehavior_ChangeDialogName")
         .def_readwrite("NewNameTag", &UBehavior_ChangeDialogName::NewNameTag)

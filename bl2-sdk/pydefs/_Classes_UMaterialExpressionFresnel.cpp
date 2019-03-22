@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionFresnel(py::object m)
+void Export_pystes_UMaterialExpressionFresnel(py::module &m)
 {
     py::class_< UMaterialExpressionFresnel,  UMaterialExpression   >(m, "UMaterialExpressionFresnel")
         .def_readwrite("Exponent", &UMaterialExpressionFresnel::Exponent)

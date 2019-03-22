@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMissionStateBalanceAdjustment(py::object m)
+void Export_pystes_FMissionStateBalanceAdjustment(py::module &m)
 {
     py::class_< FMissionStateBalanceAdjustment >(m, "FMissionStateBalanceAdjustment")
         .def_readwrite("Mission", &FMissionStateBalanceAdjustment::Mission)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FColorMaterialInput(py::object m)
+void Export_pystes_FColorMaterialInput(py::module &m)
 {
     py::class_< FColorMaterialInput >(m, "FColorMaterialInput")
         .def_readwrite("Constant", &FColorMaterialInput::Constant)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxSeqAct_TargetPriority(py::object m)
+void Export_pystes_UGearboxSeqAct_TargetPriority(py::module &m)
 {
     py::class_< UGearboxSeqAct_TargetPriority,  USequenceAction   >(m, "UGearboxSeqAct_TargetPriority")
         .def_readwrite("AITargets", &UGearboxSeqAct_TargetPriority::AITargets)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UScrollingListGFxObject(py::object m)
+void Export_pystes_UScrollingListGFxObject(py::module &m)
 {
     py::class_< UScrollingListGFxObject,  UGFxObject   >(m, "UScrollingListGFxObject")
         .def("StaticClass", &UScrollingListGFxObject::StaticClass, py::return_value_policy::reference)

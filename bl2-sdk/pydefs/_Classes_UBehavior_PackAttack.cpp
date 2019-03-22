@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_PackAttack(py::object m)
+void Export_pystes_UBehavior_PackAttack(py::module &m)
 {
     py::class_< UBehavior_PackAttack,  UBehaviorBase   >(m, "UBehavior_PackAttack")
         .def("StaticClass", &UBehavior_PackAttack::StaticClass, py::return_value_policy::reference)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FReverbSettings(py::object m)
+void Export_pystes_FReverbSettings(py::module &m)
 {
     py::class_< FReverbSettings >(m, "FReverbSettings")
         .def_readwrite("ReverbType", &FReverbSettings::ReverbType)

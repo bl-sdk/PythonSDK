@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFactory(py::object m)
+void Export_pystes_UFactory(py::module &m)
 {
     py::class_< UFactory,  UObject   >(m, "UFactory")
         .def_readwrite("SupportedClass", &UFactory::SupportedClass)

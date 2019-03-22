@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTargetIteratorCalculateDistance(py::object m)
+void Export_pystes_UTargetIteratorCalculateDistance(py::module &m)
 {
     py::class_< UTargetIteratorCalculateDistance,  UTargetIterator   >(m, "UTargetIteratorCalculateDistance")
         .def("StaticClass", &UTargetIteratorCalculateDistance::StaticClass, py::return_value_policy::reference)

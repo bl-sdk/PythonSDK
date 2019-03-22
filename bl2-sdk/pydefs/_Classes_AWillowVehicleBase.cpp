@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowVehicleBase(py::object m)
+void Export_pystes_AWillowVehicleBase(py::module &m)
 {
     py::class_< AWillowVehicleBase,  ASVehicle   >(m, "AWillowVehicleBase")
         .def_readwrite("VfTable_IIResourcePoolProvider", &AWillowVehicleBase::VfTable_IIResourcePoolProvider)

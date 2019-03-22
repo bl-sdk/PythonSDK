@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FEnvironmentalEffectSetting(py::object m)
+void Export_pystes_FEnvironmentalEffectSetting(py::module &m)
 {
     py::class_< FEnvironmentalEffectSetting >(m, "FEnvironmentalEffectSetting")
         .def_readwrite("Effect", &FEnvironmentalEffectSetting::Effect)

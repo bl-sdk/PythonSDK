@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqVar_Int(py::object m)
+void Export_pystes_USeqVar_Int(py::module &m)
 {
     py::class_< USeqVar_Int,  USequenceVariable   >(m, "USeqVar_Int")
         .def_readwrite("IntValue", &USeqVar_Int::IntValue)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBehaviorVariableValue(py::object m)
+void Export_pystes_FBehaviorVariableValue(py::module &m)
 {
     py::class_< FBehaviorVariableValue >(m, "FBehaviorVariableValue")
         .def_readwrite("IntValue", &FBehaviorVariableValue::IntValue)

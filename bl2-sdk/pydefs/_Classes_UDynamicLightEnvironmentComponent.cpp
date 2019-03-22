@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDynamicLightEnvironmentComponent(py::object m)
+void Export_pystes_UDynamicLightEnvironmentComponent(py::module &m)
 {
     py::class_< UDynamicLightEnvironmentComponent,  ULightEnvironmentComponent   >(m, "UDynamicLightEnvironmentComponent")
         .def_readwrite("State", &UDynamicLightEnvironmentComponent::State)

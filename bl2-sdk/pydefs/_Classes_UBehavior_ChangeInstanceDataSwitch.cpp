@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_ChangeInstanceDataSwitch(py::object m)
+void Export_pystes_UBehavior_ChangeInstanceDataSwitch(py::module &m)
 {
     py::class_< UBehavior_ChangeInstanceDataSwitch,  UBehaviorBase   >(m, "UBehavior_ChangeInstanceDataSwitch")
         .def_readwrite("SwitchName", &UBehavior_ChangeInstanceDataSwitch::SwitchName)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionAntialiasedTextureMask(py::object m)
+void Export_pystes_UMaterialExpressionAntialiasedTextureMask(py::module &m)
 {
     py::class_< UMaterialExpressionAntialiasedTextureMask,  UMaterialExpressionTextureSampleParameter2D   >(m, "UMaterialExpressionAntialiasedTextureMask")
         .def_readwrite("Threshold", &UMaterialExpressionAntialiasedTextureMask::Threshold)

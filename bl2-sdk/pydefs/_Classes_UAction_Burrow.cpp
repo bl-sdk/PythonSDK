@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_Burrow(py::object m)
+void Export_pystes_UAction_Burrow(py::module &m)
 {
     py::class_< UAction_Burrow,  UWillowActionSequencePawn   >(m, "UAction_Burrow")
         .def_readwrite("BurrowEnter", &UAction_Burrow::BurrowEnter)

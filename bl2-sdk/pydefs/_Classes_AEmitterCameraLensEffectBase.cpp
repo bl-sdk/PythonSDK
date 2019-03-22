@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AEmitterCameraLensEffectBase(py::object m)
+void Export_pystes_AEmitterCameraLensEffectBase(py::module &m)
 {
     py::class_< AEmitterCameraLensEffectBase,  AActor   >(m, "AEmitterCameraLensEffectBase")
         .def_readwrite("PS_CameraEffect", &AEmitterCameraLensEffectBase::PS_CameraEffect)

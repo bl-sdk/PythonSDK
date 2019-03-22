@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AMassiveLODOverrideVolume(py::object m)
+void Export_pystes_AMassiveLODOverrideVolume(py::module &m)
 {
     py::class_< AMassiveLODOverrideVolume,  AVolume   >(m, "AMassiveLODOverrideVolume")
         .def("StaticClass", &AMassiveLODOverrideVolume::StaticClass, py::return_value_policy::reference)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCompatibilityOnlineContent(py::object m)
+void Export_pystes_FCompatibilityOnlineContent(py::module &m)
 {
     py::class_< FCompatibilityOnlineContent >(m, "FCompatibilityOnlineContent")
         .def_readwrite("VersionNumber", &FCompatibilityOnlineContent::VersionNumber)

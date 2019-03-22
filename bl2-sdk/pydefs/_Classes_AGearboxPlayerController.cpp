@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AGearboxPlayerController(py::object m)
+void Export_pystes_AGearboxPlayerController(py::module &m)
 {
     py::class_< AGearboxPlayerController,  AGamePlayerController   >(m, "AGearboxPlayerController")
         .def_readwrite("CurrentViewShake", &AGearboxPlayerController::CurrentViewShake)

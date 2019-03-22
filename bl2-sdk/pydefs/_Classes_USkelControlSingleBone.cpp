@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USkelControlSingleBone(py::object m)
+void Export_pystes_USkelControlSingleBone(py::module &m)
 {
     py::class_< USkelControlSingleBone,  USkelControlBase   >(m, "USkelControlSingleBone")
         .def_readwrite("BoneTranslation", &USkelControlSingleBone::BoneTranslation)

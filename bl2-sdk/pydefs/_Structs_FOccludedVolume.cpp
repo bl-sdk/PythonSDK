@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FOccludedVolume(py::object m)
+void Export_pystes_FOccludedVolume(py::module &m)
 {
     py::class_< FOccludedVolume >(m, "FOccludedVolume")
         .def_readwrite("SoundVolume", &FOccludedVolume::SoundVolume)

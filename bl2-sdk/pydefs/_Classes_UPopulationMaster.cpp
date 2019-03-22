@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPopulationMaster(py::object m)
+void Export_pystes_UPopulationMaster(py::module &m)
 {
     py::class_< UPopulationMaster,  UObject   >(m, "UPopulationMaster")
         .def_readwrite("OpportunityList", &UPopulationMaster::OpportunityList)

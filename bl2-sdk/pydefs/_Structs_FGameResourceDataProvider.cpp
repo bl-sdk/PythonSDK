@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGameResourceDataProvider(py::object m)
+void Export_pystes_FGameResourceDataProvider(py::module &m)
 {
     py::class_< FGameResourceDataProvider >(m, "FGameResourceDataProvider")
         .def_readwrite("ProviderTag", &FGameResourceDataProvider::ProviderTag)

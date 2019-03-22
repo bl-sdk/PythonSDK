@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIWorldBody(py::object m)
+void Export_pystes_UIWorldBody(py::module &m)
 {
     py::class_< UIWorldBody,  UInterface   >(m, "UIWorldBody")
         .def("StaticClass", &UIWorldBody::StaticClass, py::return_value_policy::reference)

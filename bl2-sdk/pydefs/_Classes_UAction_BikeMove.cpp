@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_BikeMove(py::object m)
+void Export_pystes_UAction_BikeMove(py::module &m)
 {
     py::class_< UAction_BikeMove,  UWillowActionSequencePawn   >(m, "UAction_BikeMove")
         .def_readwrite("TargetOffsets", &UAction_BikeMove::TargetOffsets)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UApexClothingAsset(py::object m)
+void Export_pystes_UApexClothingAsset(py::module &m)
 {
     py::class_< UApexClothingAsset,  UObject   >(m, "UApexClothingAsset")
         .def_readwrite("MApexAsset", &UApexClothingAsset::MApexAsset)

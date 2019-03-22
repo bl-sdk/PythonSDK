@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowCombatPoint(py::object m)
+void Export_pystes_AWillowCombatPoint(py::module &m)
 {
     py::class_< AWillowCombatPoint,  AActor   >(m, "AWillowCombatPoint")
         .def_readwrite("ConstraintType", &AWillowCombatPoint::ConstraintType)

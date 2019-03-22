@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_MultiplyInt(py::object m)
+void Export_pystes_USeqAct_MultiplyInt(py::module &m)
 {
     py::class_< USeqAct_MultiplyInt,  USeqAct_SetSequenceVariable   >(m, "USeqAct_MultiplyInt")
         .def_readwrite("ValueA", &USeqAct_MultiplyInt::ValueA)

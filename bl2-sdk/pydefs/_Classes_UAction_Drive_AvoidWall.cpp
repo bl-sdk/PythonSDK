@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_Drive_AvoidWall(py::object m)
+void Export_pystes_UAction_Drive_AvoidWall(py::module &m)
 {
     py::class_< UAction_Drive_AvoidWall,  UWillowActionSequencePawn   >(m, "UAction_Drive_AvoidWall")
         .def_readwrite("LineCheckDistance", &UAction_Drive_AvoidWall::LineCheckDistance)

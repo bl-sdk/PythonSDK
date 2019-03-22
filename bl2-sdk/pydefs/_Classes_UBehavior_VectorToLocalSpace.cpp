@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_VectorToLocalSpace(py::object m)
+void Export_pystes_UBehavior_VectorToLocalSpace(py::module &m)
 {
     py::class_< UBehavior_VectorToLocalSpace,  UBehaviorBase   >(m, "UBehavior_VectorToLocalSpace")
         .def_readwrite("WorldSpaceVector", &UBehavior_VectorToLocalSpace::WorldSpaceVector)

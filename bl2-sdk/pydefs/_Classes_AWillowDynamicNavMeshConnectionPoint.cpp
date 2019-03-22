@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowDynamicNavMeshConnectionPoint(py::object m)
+void Export_pystes_AWillowDynamicNavMeshConnectionPoint(py::module &m)
 {
     py::class_< AWillowDynamicNavMeshConnectionPoint,  ANavigationPoint   >(m, "AWillowDynamicNavMeshConnectionPoint")
         .def_readwrite("VfTable_IIGBXNavMeshSpecialMove", &AWillowDynamicNavMeshConnectionPoint::VfTable_IIGBXNavMeshSpecialMove)

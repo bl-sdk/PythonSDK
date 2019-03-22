@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIWeaponSummary(py::object m)
+void Export_pystes_UUIWeaponSummary(py::module &m)
 {
     py::class_< UUIWeaponSummary,  UUIResourceDataProvider   >(m, "UUIWeaponSummary")
         .def_readwrite("ClassPathName", &UUIWeaponSummary::ClassPathName)

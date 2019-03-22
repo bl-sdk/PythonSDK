@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ASpotLightToggleable(py::object m)
+void Export_pystes_ASpotLightToggleable(py::module &m)
 {
     py::class_< ASpotLightToggleable,  AActor   >(m, "ASpotLightToggleable")
         .def_readwrite("LightComponent", &ALight::LightComponent)

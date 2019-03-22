@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFloatProperty(py::object m)
+void Export_pystes_UFloatProperty(py::module &m)
 {
     py::class_< UFloatProperty,  UProperty   >(m, "UFloatProperty")
         .def("StaticClass", &UFloatProperty::StaticClass, py::return_value_policy::reference)

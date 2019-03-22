@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULocalMessage(py::object m)
+void Export_pystes_ULocalMessage(py::module &m)
 {
     py::class_< ULocalMessage,  UObject   >(m, "ULocalMessage")
         .def_readwrite("Lifetime", &ULocalMessage::Lifetime)

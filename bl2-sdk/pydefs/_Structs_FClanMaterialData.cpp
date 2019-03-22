@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FClanMaterialData(py::object m)
+void Export_pystes_FClanMaterialData(py::module &m)
 {
     py::class_< FClanMaterialData >(m, "FClanMaterialData")
         .def_readwrite("SourceMaterial", &FClanMaterialData::SourceMaterial)

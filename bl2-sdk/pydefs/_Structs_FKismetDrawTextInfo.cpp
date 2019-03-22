@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FKismetDrawTextInfo(py::object m)
+void Export_pystes_FKismetDrawTextInfo(py::module &m)
 {
     py::class_< FKismetDrawTextInfo >(m, "FKismetDrawTextInfo")
         .def_readwrite("MessageText", &FKismetDrawTextInfo::MessageText)

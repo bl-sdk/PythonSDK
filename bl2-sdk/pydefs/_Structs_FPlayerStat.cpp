@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPlayerStat(py::object m)
+void Export_pystes_FPlayerStat(py::module &m)
 {
     py::class_< FPlayerStat >(m, "FPlayerStat")
         .def_readwrite("ViewId", &FPlayerStat::ViewId)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleTrailTaper(py::object m)
+void Export_pystes_UParticleModuleTrailTaper(py::module &m)
 {
     py::class_< UParticleModuleTrailTaper,  UParticleModule   >(m, "UParticleModuleTrailTaper")
         .def_readwrite("TaperMethod", &UParticleModuleTrailTaper::TaperMethod)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIMissionDirector(py::object m)
+void Export_pystes_UIMissionDirector(py::module &m)
 {
     py::class_< UIMissionDirector,  UInterface   >(m, "UIMissionDirector")
         .def("StaticClass", &UIMissionDirector::StaticClass, py::return_value_policy::reference)

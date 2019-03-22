@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowReplicatedAmbientSound(py::object m)
+void Export_pystes_AWillowReplicatedAmbientSound(py::module &m)
 {
     py::class_< AWillowReplicatedAmbientSound,  AActor   >(m, "AWillowReplicatedAmbientSound")
         .def_readwrite("AkEvent", &AWillowReplicatedAmbientSound::AkEvent)

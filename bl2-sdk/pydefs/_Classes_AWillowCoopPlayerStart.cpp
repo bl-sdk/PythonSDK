@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowCoopPlayerStart(py::object m)
+void Export_pystes_AWillowCoopPlayerStart(py::module &m)
 {
     py::class_< AWillowCoopPlayerStart,  APlayerStart   >(m, "AWillowCoopPlayerStart")
         .def("StaticClass", &AWillowCoopPlayerStart::StaticClass, py::return_value_policy::reference)

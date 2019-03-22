@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineAuthInterfaceImpl(py::object m)
+void Export_pystes_UOnlineAuthInterfaceImpl(py::module &m)
 {
     py::class_< UOnlineAuthInterfaceImpl,  UOnlineAuthInterfaceBaseImpl   >(m, "UOnlineAuthInterfaceImpl")
         .def_readwrite("OwningSubsystem", &UOnlineAuthInterfaceImpl::OwningSubsystem)

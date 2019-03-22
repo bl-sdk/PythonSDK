@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSkelControl_RotateWeaponBoneFromFiring(py::object m)
+void Export_pystes_UWillowSkelControl_RotateWeaponBoneFromFiring(py::module &m)
 {
     py::class_< UWillowSkelControl_RotateWeaponBoneFromFiring,  USkelControlSingleBone   >(m, "UWillowSkelControl_RotateWeaponBoneFromFiring")
         .def_readwrite("VfTable_IIWeaponBoneController", &UWillowSkelControl_RotateWeaponBoneFromFiring::VfTable_IIWeaponBoneController)

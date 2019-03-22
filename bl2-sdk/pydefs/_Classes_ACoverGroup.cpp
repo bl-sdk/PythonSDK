@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ACoverGroup(py::object m)
+void Export_pystes_ACoverGroup(py::module &m)
 {
     py::class_< ACoverGroup,  AInfo   >(m, "ACoverGroup")
         .def_readwrite("CoverLinkRefs", &ACoverGroup::CoverLinkRefs)

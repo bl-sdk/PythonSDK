@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMultitypeScrollingListGFxObject(py::object m)
+void Export_pystes_UMultitypeScrollingListGFxObject(py::module &m)
 {
     py::class_< UMultitypeScrollingListGFxObject,  UGFxObject   >(m, "UMultitypeScrollingListGFxObject")
         .def_readwrite("ParentPanel", &UMultitypeScrollingListGFxObject::ParentPanel)

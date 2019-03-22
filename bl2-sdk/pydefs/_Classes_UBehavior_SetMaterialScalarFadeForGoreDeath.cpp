@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SetMaterialScalarFadeForGoreDeath(py::object m)
+void Export_pystes_UBehavior_SetMaterialScalarFadeForGoreDeath(py::module &m)
 {
     py::class_< UBehavior_SetMaterialScalarFadeForGoreDeath,  UBehavior_SetMaterialScalarFade   >(m, "UBehavior_SetMaterialScalarFadeForGoreDeath")
         .def("StaticClass", &UBehavior_SetMaterialScalarFadeForGoreDeath::StaticClass, py::return_value_policy::reference)

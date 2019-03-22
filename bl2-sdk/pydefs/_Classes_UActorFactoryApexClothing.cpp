@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActorFactoryApexClothing(py::object m)
+void Export_pystes_UActorFactoryApexClothing(py::module &m)
 {
     py::class_< UActorFactoryApexClothing,  UActorFactorySkeletalMesh   >(m, "UActorFactoryApexClothing")
         .def_readwrite("ClothingAssets", &UActorFactoryApexClothing::ClothingAssets)

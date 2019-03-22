@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIDataStore(py::object m)
+void Export_pystes_UUIDataStore(py::module &m)
 {
     py::class_< UUIDataStore,  UUIRoot   >(m, "UUIDataStore")
         .def_readwrite("Tag", &UUIDataStore::Tag)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPersistentSequenceData(py::object m)
+void Export_pystes_UPersistentSequenceData(py::module &m)
 {
     py::class_< UPersistentSequenceData,  UObject   >(m, "UPersistentSequenceData")
         .def_readwrite("LevelPackageName", &UPersistentSequenceData::LevelPackageName)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMeshBeaconClient(py::object m)
+void Export_pystes_UMeshBeaconClient(py::module &m)
 {
     py::class_< UMeshBeaconClient,  UMeshBeacon   >(m, "UMeshBeaconClient")
         .def_readwrite("HostPendingRequest", &UMeshBeaconClient::HostPendingRequest)

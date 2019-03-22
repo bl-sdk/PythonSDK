@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRarelyChangedPoolState(py::object m)
+void Export_pystes_FRarelyChangedPoolState(py::module &m)
 {
     py::class_< FRarelyChangedPoolState >(m, "FRarelyChangedPoolState")
         .def_readwrite("ConsumptionRate", &FRarelyChangedPoolState::ConsumptionRate)

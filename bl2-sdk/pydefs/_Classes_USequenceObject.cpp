@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USequenceObject(py::object m)
+void Export_pystes_USequenceObject(py::module &m)
 {
     py::class_< USequenceObject,  UObject   >(m, "USequenceObject")
         .def_readwrite("ObjInstanceVersion", &USequenceObject::ObjInstanceVersion)

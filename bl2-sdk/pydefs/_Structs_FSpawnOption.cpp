@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSpawnOption(py::object m)
+void Export_pystes_FSpawnOption(py::module &m)
 {
     py::class_< FSpawnOption >(m, "FSpawnOption")
         .def_readwrite("Factory", &FSpawnOption::Factory)

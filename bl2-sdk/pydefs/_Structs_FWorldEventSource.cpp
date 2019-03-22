@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FWorldEventSource(py::object m)
+void Export_pystes_FWorldEventSource(py::module &m)
 {
     py::class_< FWorldEventSource >(m, "FWorldEventSource")
         .def_readwrite("AkEvent", &FWorldEventSource::AkEvent)

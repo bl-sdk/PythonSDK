@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDynamicResourceProviderDefinition(py::object m)
+void Export_pystes_FDynamicResourceProviderDefinition(py::module &m)
 {
     py::class_< FDynamicResourceProviderDefinition >(m, "FDynamicResourceProviderDefinition")
         .def_readwrite("ProviderTag", &FDynamicResourceProviderDefinition::ProviderTag)

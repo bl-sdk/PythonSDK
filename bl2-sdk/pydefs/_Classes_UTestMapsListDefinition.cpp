@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTestMapsListDefinition(py::object m)
+void Export_pystes_UTestMapsListDefinition(py::module &m)
 {
     py::class_< UTestMapsListDefinition,  UGBXDefinition   >(m, "UTestMapsListDefinition")
         .def_readwrite("ListItems", &UTestMapsListDefinition::ListItems)

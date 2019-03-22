@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSeqAct_RunCustomEvent(py::object m)
+void Export_pystes_UWillowSeqAct_RunCustomEvent(py::module &m)
 {
     py::class_< UWillowSeqAct_RunCustomEvent,  USequenceAction   >(m, "UWillowSeqAct_RunCustomEvent")
         .def_readwrite("CustomEventName", &UWillowSeqAct_RunCustomEvent::CustomEventName)

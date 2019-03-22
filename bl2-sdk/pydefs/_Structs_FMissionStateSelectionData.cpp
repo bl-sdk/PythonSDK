@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMissionStateSelectionData(py::object m)
+void Export_pystes_FMissionStateSelectionData(py::module &m)
 {
     py::class_< FMissionStateSelectionData >(m, "FMissionStateSelectionData")
   ;

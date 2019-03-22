@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIDataStore_MenuItems(py::object m)
+void Export_pystes_UUIDataStore_MenuItems(py::module &m)
 {
     py::class_< UUIDataStore_MenuItems,  UUIDataStore_GameResource   >(m, "UUIDataStore_MenuItems")
         .def_readwrite("CurrentGameSettingsTag", &UUIDataStore_MenuItems::CurrentGameSettingsTag)

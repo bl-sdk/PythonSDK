@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_ShowGenericReviveMessage(py::object m)
+void Export_pystes_UBehavior_ShowGenericReviveMessage(py::module &m)
 {
     py::class_< UBehavior_ShowGenericReviveMessage,  UBehaviorBase   >(m, "UBehavior_ShowGenericReviveMessage")
         .def_readwrite("ReviveMessageDef", &UBehavior_ShowGenericReviveMessage::ReviveMessageDef)

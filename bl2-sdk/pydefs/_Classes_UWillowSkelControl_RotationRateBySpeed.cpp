@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSkelControl_RotationRateBySpeed(py::object m)
+void Export_pystes_UWillowSkelControl_RotationRateBySpeed(py::module &m)
 {
     py::class_< UWillowSkelControl_RotationRateBySpeed,  UWillowSkelControl_RotationRate   >(m, "UWillowSkelControl_RotationRateBySpeed")
         .def_readwrite("SpeedComponent", &UWillowSkelControl_RotationRateBySpeed::SpeedComponent)

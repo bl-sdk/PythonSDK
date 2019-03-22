@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNodeSynch(py::object m)
+void Export_pystes_UAnimNodeSynch(py::module &m)
 {
     py::class_< UAnimNodeSynch,  UAnimNodeBlendBase   >(m, "UAnimNodeSynch")
         .def_readwrite("Groups", &UAnimNodeSynch::Groups)

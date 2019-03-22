@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleColorByParameter(py::object m)
+void Export_pystes_UParticleModuleColorByParameter(py::module &m)
 {
     py::class_< UParticleModuleColorByParameter,  UParticleModuleColorBase   >(m, "UParticleModuleColorByParameter")
         .def_readwrite("ColorParam", &UParticleModuleColorByParameter::ColorParam)

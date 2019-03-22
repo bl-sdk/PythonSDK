@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USparkInitializationProcess(py::object m)
+void Export_pystes_USparkInitializationProcess(py::module &m)
 {
     py::class_< USparkInitializationProcess,  UObject   >(m, "USparkInitializationProcess")
         .def_readwrite("Data", &USparkInitializationProcess::Data)

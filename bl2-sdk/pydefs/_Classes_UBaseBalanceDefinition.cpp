@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBaseBalanceDefinition(py::object m)
+void Export_pystes_UBaseBalanceDefinition(py::module &m)
 {
     py::class_< UBaseBalanceDefinition,  UGBXDefinition   >(m, "UBaseBalanceDefinition")
         .def("StaticClass", &UBaseBalanceDefinition::StaticClass, py::return_value_policy::reference)

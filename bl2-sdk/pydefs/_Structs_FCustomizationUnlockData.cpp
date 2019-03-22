@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCustomizationUnlockData(py::object m)
+void Export_pystes_FCustomizationUnlockData(py::module &m)
 {
     py::class_< FCustomizationUnlockData >(m, "FCustomizationUnlockData")
         .def_readwrite("ProductID", &FCustomizationUnlockData::ProductID)

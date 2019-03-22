@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowPlayerController(py::object m)
+void Export_pystes_AWillowPlayerController(py::module &m)
 {
     py::class_< AWillowPlayerController,  AGearboxPlayerController   >(m, "AWillowPlayerController")
         .def_readwrite("VfTable_IIUpdatePostProcessOverride", &AWillowPlayerController::VfTable_IIUpdatePostProcessOverride)

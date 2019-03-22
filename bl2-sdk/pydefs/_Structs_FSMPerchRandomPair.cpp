@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSMPerchRandomPair(py::object m)
+void Export_pystes_FSMPerchRandomPair(py::module &m)
 {
     py::class_< FSMPerchRandomPair >(m, "FSMPerchRandomPair")
         .def_readwrite("Weight", &FSMPerchRandomPair::Weight)

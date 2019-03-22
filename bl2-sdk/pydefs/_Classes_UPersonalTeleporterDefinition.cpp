@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPersonalTeleporterDefinition(py::object m)
+void Export_pystes_UPersonalTeleporterDefinition(py::module &m)
 {
     py::class_< UPersonalTeleporterDefinition,  UGBXDefinition   >(m, "UPersonalTeleporterDefinition")
         .def_readwrite("ParticleEffect", &UPersonalTeleporterDefinition::ParticleEffect)

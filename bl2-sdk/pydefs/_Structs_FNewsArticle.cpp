@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FNewsArticle(py::object m)
+void Export_pystes_FNewsArticle(py::module &m)
 {
     py::class_< FNewsArticle >(m, "FNewsArticle")
         .def_readwrite("Header", &FNewsArticle::Header)

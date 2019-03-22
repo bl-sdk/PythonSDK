@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHealthBarGFxObject(py::object m)
+void Export_pystes_UHealthBarGFxObject(py::module &m)
 {
     py::class_< UHealthBarGFxObject,  UGFxObject   >(m, "UHealthBarGFxObject")
         .def_readwrite("CachedCurrentHealth", &UHealthBarGFxObject::CachedCurrentHealth)

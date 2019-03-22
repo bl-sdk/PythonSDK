@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FNPCList(py::object m)
+void Export_pystes_FNPCList(py::module &m)
 {
     py::class_< FNPCList >(m, "FNPCList")
         .def_readwrite("Mind", &FNPCList::Mind)

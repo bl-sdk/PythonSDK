@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGBXActorList(py::object m)
+void Export_pystes_UGBXActorList(py::module &m)
 {
     py::class_< UGBXActorList,  UObject   >(m, "UGBXActorList")
         .def_readwrite("ActorList", &UGBXActorList::ActorList)

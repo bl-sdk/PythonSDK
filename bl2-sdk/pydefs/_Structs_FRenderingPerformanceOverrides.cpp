@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRenderingPerformanceOverrides(py::object m)
+void Export_pystes_FRenderingPerformanceOverrides(py::module &m)
 {
     py::class_< FRenderingPerformanceOverrides >(m, "FRenderingPerformanceOverrides")
   ;

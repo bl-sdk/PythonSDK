@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APlayerCollectorGame(py::object m)
+void Export_pystes_APlayerCollectorGame(py::module &m)
 {
     py::class_< APlayerCollectorGame,  AGameInfo   >(m, "APlayerCollectorGame")
         .def_readwrite("NumberOfClientsToWaitFor", &APlayerCollectorGame::NumberOfClientsToWaitFor)

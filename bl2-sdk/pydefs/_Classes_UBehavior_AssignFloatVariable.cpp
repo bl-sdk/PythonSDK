@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_AssignFloatVariable(py::object m)
+void Export_pystes_UBehavior_AssignFloatVariable(py::module &m)
 {
     py::class_< UBehavior_AssignFloatVariable,  UBehaviorBase   >(m, "UBehavior_AssignFloatVariable")
         .def_readwrite("Value", &UBehavior_AssignFloatVariable::Value)

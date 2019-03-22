@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDamagePair(py::object m)
+void Export_pystes_FDamagePair(py::module &m)
 {
     py::class_< FDamagePair >(m, "FDamagePair")
         .def_readwrite("DamageCauserName", &FDamagePair::DamageCauserName)

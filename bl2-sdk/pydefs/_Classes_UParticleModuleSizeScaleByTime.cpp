@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleSizeScaleByTime(py::object m)
+void Export_pystes_UParticleModuleSizeScaleByTime(py::module &m)
 {
     py::class_< UParticleModuleSizeScaleByTime,  UParticleModuleSizeBase   >(m, "UParticleModuleSizeScaleByTime")
         .def_readwrite("SizeScaleByTime", &UParticleModuleSizeScaleByTime::SizeScaleByTime)

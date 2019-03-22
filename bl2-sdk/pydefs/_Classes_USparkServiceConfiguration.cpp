@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USparkServiceConfiguration(py::object m)
+void Export_pystes_USparkServiceConfiguration(py::module &m)
 {
     py::class_< USparkServiceConfiguration,  UObject   >(m, "USparkServiceConfiguration")
         .def_readwrite("ServiceName", &USparkServiceConfiguration::ServiceName)

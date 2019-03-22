@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLoadingMovieExceptionInfo(py::object m)
+void Export_pystes_FLoadingMovieExceptionInfo(py::module &m)
 {
     py::class_< FLoadingMovieExceptionInfo >(m, "FLoadingMovieExceptionInfo")
         .def_readwrite("PersistentMapName", &FLoadingMovieExceptionInfo::PersistentMapName)

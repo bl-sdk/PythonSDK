@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSkillTreeSkillStateData(py::object m)
+void Export_pystes_FSkillTreeSkillStateData(py::module &m)
 {
     py::class_< FSkillTreeSkillStateData >(m, "FSkillTreeSkillStateData")
         .def_readwrite("SkillDefinition", &FSkillTreeSkillStateData::SkillDefinition)

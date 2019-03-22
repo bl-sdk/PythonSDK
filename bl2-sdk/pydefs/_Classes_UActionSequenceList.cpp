@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActionSequenceList(py::object m)
+void Export_pystes_UActionSequenceList(py::module &m)
 {
     py::class_< UActionSequenceList,  UActionSequence   >(m, "UActionSequenceList")
         .def_readwrite("CurrentIndex", &UActionSequenceList::CurrentIndex)

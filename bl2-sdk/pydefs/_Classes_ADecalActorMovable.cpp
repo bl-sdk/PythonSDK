@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ADecalActorMovable(py::object m)
+void Export_pystes_ADecalActorMovable(py::module &m)
 {
     py::class_< ADecalActorMovable,  AActor   >(m, "ADecalActorMovable")
         .def_readwrite("Decal", &ADecalActorBase::Decal)

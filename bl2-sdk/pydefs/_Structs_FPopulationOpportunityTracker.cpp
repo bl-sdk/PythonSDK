@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPopulationOpportunityTracker(py::object m)
+void Export_pystes_FPopulationOpportunityTracker(py::module &m)
 {
     py::class_< FPopulationOpportunityTracker >(m, "FPopulationOpportunityTracker")
         .def_readwrite("OpportunityOutermostName", &FPopulationOpportunityTracker::OpportunityOutermostName)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGBXNavMeshSpecialMoveConnection(py::object m)
+void Export_pystes_FGBXNavMeshSpecialMoveConnection(py::module &m)
 {
     py::class_< FGBXNavMeshSpecialMoveConnection >(m, "FGBXNavMeshSpecialMoveConnection")
         .def_readwrite("SrcPoly", &FGBXNavMeshSpecialMoveConnection::SrcPoly)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPlayerDataStoreGroup(py::object m)
+void Export_pystes_FPlayerDataStoreGroup(py::module &m)
 {
     py::class_< FPlayerDataStoreGroup >(m, "FPlayerDataStoreGroup")
         .def_readwrite("PlayerOwner", &FPlayerDataStoreGroup::PlayerOwner)

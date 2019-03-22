@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowInteractiveSwitch(py::object m)
+void Export_pystes_AWillowInteractiveSwitch(py::module &m)
 {
     py::class_< AWillowInteractiveSwitch,  AWillowInteractiveObject   >(m, "AWillowInteractiveSwitch")
         .def_readwrite("OnBehaviorSetName", &AWillowInteractiveSwitch::OnBehaviorSetName)

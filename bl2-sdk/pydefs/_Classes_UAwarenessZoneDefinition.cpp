@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAwarenessZoneDefinition(py::object m)
+void Export_pystes_UAwarenessZoneDefinition(py::module &m)
 {
     py::class_< UAwarenessZoneDefinition,  UGBXDefinition   >(m, "UAwarenessZoneDefinition")
         .def_readwrite("ZoneName", &UAwarenessZoneDefinition::ZoneName)

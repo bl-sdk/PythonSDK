@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleLocationEmitter(py::object m)
+void Export_pystes_UParticleModuleLocationEmitter(py::module &m)
 {
     py::class_< UParticleModuleLocationEmitter,  UParticleModuleLocationBase   >(m, "UParticleModuleLocationEmitter")
         .def_readwrite("EmitterName", &UParticleModuleLocationEmitter::EmitterName)

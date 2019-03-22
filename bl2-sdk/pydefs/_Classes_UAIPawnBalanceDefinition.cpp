@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAIPawnBalanceDefinition(py::object m)
+void Export_pystes_UAIPawnBalanceDefinition(py::module &m)
 {
     py::class_< UAIPawnBalanceDefinition,  UBaseBalanceDefinition   >(m, "UAIPawnBalanceDefinition")
         .def_readwrite("VfTable_IIConstructObject", &UAIPawnBalanceDefinition::VfTable_IIConstructObject)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIConsoleCommandBehavior(py::object m)
+void Export_pystes_UIConsoleCommandBehavior(py::module &m)
 {
     py::class_< UIConsoleCommandBehavior,  UInterface   >(m, "UIConsoleCommandBehavior")
         .def("StaticClass", &UIConsoleCommandBehavior::StaticClass, py::return_value_policy::reference)

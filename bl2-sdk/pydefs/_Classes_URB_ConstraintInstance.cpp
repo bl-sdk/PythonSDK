@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_URB_ConstraintInstance(py::object m)
+void Export_pystes_URB_ConstraintInstance(py::module &m)
 {
     py::class_< URB_ConstraintInstance,  UObject   >(m, "URB_ConstraintInstance")
         .def_readwrite("Owner", &URB_ConstraintInstance::Owner)

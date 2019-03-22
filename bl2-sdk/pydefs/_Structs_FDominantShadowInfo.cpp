@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDominantShadowInfo(py::object m)
+void Export_pystes_FDominantShadowInfo(py::module &m)
 {
     py::class_< FDominantShadowInfo >(m, "FDominantShadowInfo")
         .def_readwrite("WorldToLight", &FDominantShadowInfo::WorldToLight)

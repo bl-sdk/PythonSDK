@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPawnInteractionDefinition(py::object m)
+void Export_pystes_UPawnInteractionDefinition(py::module &m)
 {
     py::class_< UPawnInteractionDefinition,  UGBXDefinition   >(m, "UPawnInteractionDefinition")
         .def_readwrite("InteractDistance", &UPawnInteractionDefinition::InteractDistance)

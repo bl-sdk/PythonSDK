@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGBXNavMeshPolyRef(py::object m)
+void Export_pystes_FGBXNavMeshPolyRef(py::module &m)
 {
     py::class_< FGBXNavMeshPolyRef >(m, "FGBXNavMeshPolyRef")
         .def_readwrite("NavMesh", &FGBXNavMeshPolyRef::NavMesh)

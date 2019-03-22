@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_RotatePawn(py::object m)
+void Export_pystes_UBehavior_RotatePawn(py::module &m)
 {
     py::class_< UBehavior_RotatePawn,  UBehaviorBase   >(m, "UBehavior_RotatePawn")
         .def_readwrite("RotateDirection", &UBehavior_RotatePawn::RotateDirection)

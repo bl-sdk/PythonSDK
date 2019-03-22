@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMorphTargetSet(py::object m)
+void Export_pystes_UMorphTargetSet(py::module &m)
 {
     py::class_< UMorphTargetSet,  UObject   >(m, "UMorphTargetSet")
         .def_readwrite("Targets", &UMorphTargetSet::Targets)

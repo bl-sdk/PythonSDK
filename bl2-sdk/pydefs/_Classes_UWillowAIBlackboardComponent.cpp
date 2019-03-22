@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAIBlackboardComponent(py::object m)
+void Export_pystes_UWillowAIBlackboardComponent(py::module &m)
 {
     py::class_< UWillowAIBlackboardComponent,  UWillowAIComponent   >(m, "UWillowAIBlackboardComponent")
         .def_readwrite("Allegiance", &UWillowAIBlackboardComponent::Allegiance)

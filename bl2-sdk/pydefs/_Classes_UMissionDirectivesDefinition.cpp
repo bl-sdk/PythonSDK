@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMissionDirectivesDefinition(py::object m)
+void Export_pystes_UMissionDirectivesDefinition(py::module &m)
 {
     py::class_< UMissionDirectivesDefinition,  UGBXDefinition   >(m, "UMissionDirectivesDefinition")
         .def_readwrite("MissionDirectives", &UMissionDirectivesDefinition::MissionDirectives)

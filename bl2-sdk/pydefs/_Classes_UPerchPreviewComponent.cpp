@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPerchPreviewComponent(py::object m)
+void Export_pystes_UPerchPreviewComponent(py::module &m)
 {
     py::class_< UPerchPreviewComponent,  USkeletalMeshComponent   >(m, "UPerchPreviewComponent")
         .def_readwrite("PerchDef", &UPerchPreviewComponent::PerchDef)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCompatibilityVersionInfo(py::object m)
+void Export_pystes_FCompatibilityVersionInfo(py::module &m)
 {
     py::class_< FCompatibilityVersionInfo >(m, "FCompatibilityVersionInfo")
         .def_readwrite("CurrentCompatPackVersion", &FCompatibilityVersionInfo::CurrentCompatPackVersion)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APopulationOpportunityCloner(py::object m)
+void Export_pystes_APopulationOpportunityCloner(py::module &m)
 {
     py::class_< APopulationOpportunityCloner,  APopulationOpportunity   >(m, "APopulationOpportunityCloner")
         .def_readwrite("Conditions", &APopulationOpportunityCloner::Conditions)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UVendingMachineFeedbackGFxObject(py::object m)
+void Export_pystes_UVendingMachineFeedbackGFxObject(py::module &m)
 {
     py::class_< UVendingMachineFeedbackGFxObject,  UGFxObject   >(m, "UVendingMachineFeedbackGFxObject")
         .def_readwrite("PurchasedLabel", &UVendingMachineFeedbackGFxObject::PurchasedLabel)

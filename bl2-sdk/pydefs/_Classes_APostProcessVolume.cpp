@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APostProcessVolume(py::object m)
+void Export_pystes_APostProcessVolume(py::module &m)
 {
     py::class_< APostProcessVolume,  AVolume   >(m, "APostProcessVolume")
         .def_readwrite("Priority", &APostProcessVolume::Priority)

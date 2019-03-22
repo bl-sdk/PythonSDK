@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ASkeletalMeshActorBasedOnExtremeContent(py::object m)
+void Export_pystes_ASkeletalMeshActorBasedOnExtremeContent(py::module &m)
 {
     py::class_< ASkeletalMeshActorBasedOnExtremeContent,  ASkeletalMeshActor   >(m, "ASkeletalMeshActorBasedOnExtremeContent")
         .def_readwrite("ExtremeContent", &ASkeletalMeshActorBasedOnExtremeContent::ExtremeContent)

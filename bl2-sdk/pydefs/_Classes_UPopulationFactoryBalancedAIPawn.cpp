@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPopulationFactoryBalancedAIPawn(py::object m)
+void Export_pystes_UPopulationFactoryBalancedAIPawn(py::module &m)
 {
     py::class_< UPopulationFactoryBalancedAIPawn,  UPopulationFactory   >(m, "UPopulationFactoryBalancedAIPawn")
         .def_readwrite("PawnBalanceDefinition", &UPopulationFactoryBalancedAIPawn::PawnBalanceDefinition)

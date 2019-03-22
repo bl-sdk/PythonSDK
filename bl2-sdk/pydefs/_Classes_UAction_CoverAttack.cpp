@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_CoverAttack(py::object m)
+void Export_pystes_UAction_CoverAttack(py::module &m)
 {
     py::class_< UAction_CoverAttack,  UWillowActionSequencePawn   >(m, "UAction_CoverAttack")
         .def_readwrite("Limits", &UAction_CoverAttack::Limits)

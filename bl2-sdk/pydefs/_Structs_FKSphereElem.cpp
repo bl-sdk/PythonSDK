@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FKSphereElem(py::object m)
+void Export_pystes_FKSphereElem(py::module &m)
 {
     py::class_< FKSphereElem >(m, "FKSphereElem")
         .def_readwrite("TM", &FKSphereElem::TM)

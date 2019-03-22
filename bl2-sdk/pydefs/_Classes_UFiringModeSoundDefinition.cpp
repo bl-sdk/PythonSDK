@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFiringModeSoundDefinition(py::object m)
+void Export_pystes_UFiringModeSoundDefinition(py::module &m)
 {
     py::class_< UFiringModeSoundDefinition,  UGBXDefinition   >(m, "UFiringModeSoundDefinition")
         .def_readwrite("FireSounds", &UFiringModeSoundDefinition::FireSounds)

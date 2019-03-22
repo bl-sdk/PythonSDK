@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPopulationFactory(py::object m)
+void Export_pystes_UPopulationFactory(py::module &m)
 {
     py::class_< UPopulationFactory,  UObject   >(m, "UPopulationFactory")
         .def_readwrite("VfTable_IIConstructObject", &UPopulationFactory::VfTable_IIConstructObject)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowVersusDuelInfo(py::object m)
+void Export_pystes_AWillowVersusDuelInfo(py::module &m)
 {
     py::class_< AWillowVersusDuelInfo,  AReplicationInfo   >(m, "AWillowVersusDuelInfo")
         .def_readwrite("DuelGlobals", &AWillowVersusDuelInfo::DuelGlobals)

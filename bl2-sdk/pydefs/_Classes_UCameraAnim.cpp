@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCameraAnim(py::object m)
+void Export_pystes_UCameraAnim(py::module &m)
 {
     py::class_< UCameraAnim,  UObject   >(m, "UCameraAnim")
         .def_readwrite("CameraInterpGroup", &UCameraAnim::CameraInterpGroup)

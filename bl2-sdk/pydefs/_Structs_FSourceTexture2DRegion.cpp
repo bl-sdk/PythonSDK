@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSourceTexture2DRegion(py::object m)
+void Export_pystes_FSourceTexture2DRegion(py::module &m)
 {
     py::class_< FSourceTexture2DRegion >(m, "FSourceTexture2DRegion")
         .def_readwrite("OffsetX", &FSourceTexture2DRegion::OffsetX)

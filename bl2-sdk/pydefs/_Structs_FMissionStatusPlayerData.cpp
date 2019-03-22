@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMissionStatusPlayerData(py::object m)
+void Export_pystes_FMissionStatusPlayerData(py::module &m)
 {
     py::class_< FMissionStatusPlayerData >(m, "FMissionStatusPlayerData")
         .def_readwrite("MissionDef", &FMissionStatusPlayerData::MissionDef)

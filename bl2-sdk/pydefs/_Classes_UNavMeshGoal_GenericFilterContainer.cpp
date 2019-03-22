@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNavMeshGoal_GenericFilterContainer(py::object m)
+void Export_pystes_UNavMeshGoal_GenericFilterContainer(py::module &m)
 {
     py::class_< UNavMeshGoal_GenericFilterContainer,  UNavMeshPathGoalEvaluator   >(m, "UNavMeshGoal_GenericFilterContainer")
         .def_readwrite("GoalFilters", &UNavMeshGoal_GenericFilterContainer::GoalFilters)

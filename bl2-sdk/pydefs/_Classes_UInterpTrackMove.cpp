@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackMove(py::object m)
+void Export_pystes_UInterpTrackMove(py::module &m)
 {
     py::class_< UInterpTrackMove,  UInterpTrack   >(m, "UInterpTrackMove")
         .def_readwrite("PosTrack", &UInterpTrackMove::PosTrack)

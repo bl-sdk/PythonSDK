@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSoftBodySpecialBoneInfo(py::object m)
+void Export_pystes_FSoftBodySpecialBoneInfo(py::module &m)
 {
     py::class_< FSoftBodySpecialBoneInfo >(m, "FSoftBodySpecialBoneInfo")
         .def_readwrite("BoneName", &FSoftBodySpecialBoneInfo::BoneName)

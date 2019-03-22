@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCoverSearchCriteria(py::object m)
+void Export_pystes_UCoverSearchCriteria(py::module &m)
 {
     py::class_< UCoverSearchCriteria,  UGBXDefinition   >(m, "UCoverSearchCriteria")
         .def_readwrite("DistanceToOriginCandidateTestMax", &UCoverSearchCriteria::DistanceToOriginCandidateTestMax)

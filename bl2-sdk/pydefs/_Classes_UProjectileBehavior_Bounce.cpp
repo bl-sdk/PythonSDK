@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UProjectileBehavior_Bounce(py::object m)
+void Export_pystes_UProjectileBehavior_Bounce(py::module &m)
 {
     py::class_< UProjectileBehavior_Bounce,  UProjectileBehaviorBase   >(m, "UProjectileBehavior_Bounce")
         .def_readwrite("BounceAkEvent", &UProjectileBehavior_Bounce::BounceAkEvent)

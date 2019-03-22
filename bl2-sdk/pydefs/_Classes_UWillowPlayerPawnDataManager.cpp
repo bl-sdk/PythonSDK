@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowPlayerPawnDataManager(py::object m)
+void Export_pystes_UWillowPlayerPawnDataManager(py::module &m)
 {
     py::class_< UWillowPlayerPawnDataManager,  UObject   >(m, "UWillowPlayerPawnDataManager")
         .def_readwrite("LoadedOnDemandPackageNames", &UWillowPlayerPawnDataManager::LoadedOnDemandPackageNames)

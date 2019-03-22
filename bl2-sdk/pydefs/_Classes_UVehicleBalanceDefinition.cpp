@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UVehicleBalanceDefinition(py::object m)
+void Export_pystes_UVehicleBalanceDefinition(py::module &m)
 {
     py::class_< UVehicleBalanceDefinition,  UBaseBalanceDefinition   >(m, "UVehicleBalanceDefinition")
         .def_readwrite("VfTable_IIConstructObject", &UVehicleBalanceDefinition::VfTable_IIConstructObject)

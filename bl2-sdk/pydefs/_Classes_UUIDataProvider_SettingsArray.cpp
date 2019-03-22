@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIDataProvider_SettingsArray(py::object m)
+void Export_pystes_UUIDataProvider_SettingsArray(py::module &m)
 {
     py::class_< UUIDataProvider_SettingsArray,  UUIDataProvider   >(m, "UUIDataProvider_SettingsArray")
         .def_readwrite("VfTable_IUIListElementProvider", &UUIDataProvider_SettingsArray::VfTable_IUIListElementProvider)

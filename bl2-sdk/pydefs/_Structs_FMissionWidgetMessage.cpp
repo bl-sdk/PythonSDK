@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMissionWidgetMessage(py::object m)
+void Export_pystes_FMissionWidgetMessage(py::module &m)
 {
     py::class_< FMissionWidgetMessage >(m, "FMissionWidgetMessage")
         .def_readwrite("Type", &FMissionWidgetMessage::Type)

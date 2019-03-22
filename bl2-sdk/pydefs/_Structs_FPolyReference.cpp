@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPolyReference(py::object m)
+void Export_pystes_FPolyReference(py::module &m)
 {
     py::class_< FPolyReference >(m, "FPolyReference")
         .def_readwrite("OwningPylon", &FPolyReference::OwningPylon)

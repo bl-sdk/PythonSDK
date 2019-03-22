@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNavMeshGoal_OutOfViewFrom(py::object m)
+void Export_pystes_UNavMeshGoal_OutOfViewFrom(py::module &m)
 {
     py::class_< UNavMeshGoal_OutOfViewFrom,  UNavMeshPathGoalEvaluator   >(m, "UNavMeshGoal_OutOfViewFrom")
         .def_readwrite("GoalPoly", &UNavMeshGoal_OutOfViewFrom::GoalPoly)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAIDebugCamera(py::object m)
+void Export_pystes_UAIDebugCamera(py::module &m)
 {
     py::class_< UAIDebugCamera,  UObject   >(m, "UAIDebugCamera")
         .def_readwrite("Mind", &UAIDebugCamera::Mind)

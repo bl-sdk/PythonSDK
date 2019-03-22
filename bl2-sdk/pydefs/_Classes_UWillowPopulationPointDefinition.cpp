@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowPopulationPointDefinition(py::object m)
+void Export_pystes_UWillowPopulationPointDefinition(py::module &m)
 {
     py::class_< UWillowPopulationPointDefinition,  UGBXDefinition   >(m, "UWillowPopulationPointDefinition")
         .def_readwrite("VfTable_IIBodyInfoProvider", &UWillowPopulationPointDefinition::VfTable_IIBodyInfoProvider)

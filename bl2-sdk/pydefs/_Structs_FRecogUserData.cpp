@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRecogUserData(py::object m)
+void Export_pystes_FRecogUserData(py::module &m)
 {
     py::class_< FRecogUserData >(m, "FRecogUserData")
         .def_readwrite("ActiveVocabularies", &FRecogUserData::ActiveVocabularies)

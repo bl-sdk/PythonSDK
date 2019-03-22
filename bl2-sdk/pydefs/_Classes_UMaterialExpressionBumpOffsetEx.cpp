@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionBumpOffsetEx(py::object m)
+void Export_pystes_UMaterialExpressionBumpOffsetEx(py::module &m)
 {
     py::class_< UMaterialExpressionBumpOffsetEx,  UMaterialExpression   >(m, "UMaterialExpressionBumpOffsetEx")
         .def_readwrite("Coordinate", &UMaterialExpressionBumpOffsetEx::Coordinate)

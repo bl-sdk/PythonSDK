@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAnimInfo(py::object m)
+void Export_pystes_FAnimInfo(py::module &m)
 {
     py::class_< FAnimInfo >(m, "FAnimInfo")
         .def_readwrite("AnimSeqName", &FAnimInfo::AnimSeqName)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDecalData(py::object m)
+void Export_pystes_FDecalData(py::module &m)
 {
     py::class_< FDecalData >(m, "FDecalData")
         .def_readwrite("Materials", &FDecalData::Materials)

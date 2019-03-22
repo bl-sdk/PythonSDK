@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowPopulationMaster(py::object m)
+void Export_pystes_UWillowPopulationMaster(py::module &m)
 {
     py::class_< UWillowPopulationMaster,  UPopulationMaster   >(m, "UWillowPopulationMaster")
         .def("StaticClass", &UWillowPopulationMaster::StaticClass, py::return_value_policy::reference)

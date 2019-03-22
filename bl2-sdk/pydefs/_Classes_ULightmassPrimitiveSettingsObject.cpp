@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULightmassPrimitiveSettingsObject(py::object m)
+void Export_pystes_ULightmassPrimitiveSettingsObject(py::module &m)
 {
     py::class_< ULightmassPrimitiveSettingsObject,  UObject   >(m, "ULightmassPrimitiveSettingsObject")
         .def_readwrite("LightmassSettings", &ULightmassPrimitiveSettingsObject::LightmassSettings)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCharacterClassDefinition(py::object m)
+void Export_pystes_UCharacterClassDefinition(py::module &m)
 {
     py::class_< UCharacterClassDefinition,  UGBXDefinition   >(m, "UCharacterClassDefinition")
         .def_readwrite("GroundSpeed", &UCharacterClassDefinition::GroundSpeed)

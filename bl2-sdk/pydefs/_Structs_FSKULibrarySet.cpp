@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSKULibrarySet(py::object m)
+void Export_pystes_FSKULibrarySet(py::module &m)
 {
     py::class_< FSKULibrarySet >(m, "FSKULibrarySet")
         .def_readwrite("Id", &FSKULibrarySet::Id)

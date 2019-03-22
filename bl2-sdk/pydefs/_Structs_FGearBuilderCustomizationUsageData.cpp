@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGearBuilderCustomizationUsageData(py::object m)
+void Export_pystes_FGearBuilderCustomizationUsageData(py::module &m)
 {
     py::class_< FGearBuilderCustomizationUsageData >(m, "FGearBuilderCustomizationUsageData")
         .def_readwrite("Usage", &FGearBuilderCustomizationUsageData::Usage)

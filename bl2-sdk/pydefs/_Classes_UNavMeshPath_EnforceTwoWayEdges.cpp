@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNavMeshPath_EnforceTwoWayEdges(py::object m)
+void Export_pystes_UNavMeshPath_EnforceTwoWayEdges(py::module &m)
 {
     py::class_< UNavMeshPath_EnforceTwoWayEdges,  UNavMeshPathConstraint   >(m, "UNavMeshPath_EnforceTwoWayEdges")
         .def("StaticClass", &UNavMeshPath_EnforceTwoWayEdges::StaticClass, py::return_value_policy::reference)

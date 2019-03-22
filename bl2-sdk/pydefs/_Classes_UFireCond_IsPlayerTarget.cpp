@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFireCond_IsPlayerTarget(py::object m)
+void Export_pystes_UFireCond_IsPlayerTarget(py::module &m)
 {
     py::class_< UFireCond_IsPlayerTarget,  UFiringCondition   >(m, "UFireCond_IsPlayerTarget")
         .def("StaticClass", &UFireCond_IsPlayerTarget::StaticClass, py::return_value_policy::reference)

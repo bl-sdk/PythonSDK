@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAnimNode_Simple(py::object m)
+void Export_pystes_UWillowAnimNode_Simple(py::module &m)
 {
     py::class_< UWillowAnimNode_Simple,  UAnimNodeAdditiveBlending   >(m, "UWillowAnimNode_Simple")
         .def_readwrite("SimpleAnimName", &UWillowAnimNode_Simple::SimpleAnimName)

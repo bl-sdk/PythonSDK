@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowInteractiveSwitchRenderingComponent(py::object m)
+void Export_pystes_UWillowInteractiveSwitchRenderingComponent(py::module &m)
 {
     py::class_< UWillowInteractiveSwitchRenderingComponent,  UPrimitiveComponent   >(m, "UWillowInteractiveSwitchRenderingComponent")
         .def("StaticClass", &UWillowInteractiveSwitchRenderingComponent::StaticClass, py::return_value_policy::reference)

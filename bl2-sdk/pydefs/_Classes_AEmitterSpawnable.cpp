@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AEmitterSpawnable(py::object m)
+void Export_pystes_AEmitterSpawnable(py::module &m)
 {
     py::class_< AEmitterSpawnable,  AEmitter   >(m, "AEmitterSpawnable")
         .def_readwrite("ParticleTemplate", &AEmitterSpawnable::ParticleTemplate)

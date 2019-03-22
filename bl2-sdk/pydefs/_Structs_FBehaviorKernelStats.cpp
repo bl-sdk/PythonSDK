@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBehaviorKernelStats(py::object m)
+void Export_pystes_FBehaviorKernelStats(py::module &m)
 {
     py::class_< FBehaviorKernelStats >(m, "FBehaviorKernelStats")
         .def_readwrite("NumProcessesCreated", &FBehaviorKernelStats::NumProcessesCreated)

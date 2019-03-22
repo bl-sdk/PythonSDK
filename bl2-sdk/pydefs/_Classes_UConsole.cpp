@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UConsole(py::object m)
+void Export_pystes_UConsole(py::module &m)
 {
     py::class_< UConsole,  UInteraction   >(m, "UConsole")
         .def_readwrite("ConsoleTargetPlayer", &UConsole::ConsoleTargetPlayer)

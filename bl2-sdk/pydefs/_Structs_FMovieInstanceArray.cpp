@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMovieInstanceArray(py::object m)
+void Export_pystes_FMovieInstanceArray(py::module &m)
 {
     py::class_< FMovieInstanceArray >(m, "FMovieInstanceArray")
         .def_readwrite("Movies", &FMovieInstanceArray::Movies)

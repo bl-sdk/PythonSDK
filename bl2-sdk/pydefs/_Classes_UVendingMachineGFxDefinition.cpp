@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UVendingMachineGFxDefinition(py::object m)
+void Export_pystes_UVendingMachineGFxDefinition(py::module &m)
 {
     py::class_< UVendingMachineGFxDefinition,  UWillowGFxMovie3DDefinition   >(m, "UVendingMachineGFxDefinition")
         .def_readwrite("StrictGiveUpDistance", &UVendingMachineGFxDefinition::StrictGiveUpDistance)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCovPosInfo(py::object m)
+void Export_pystes_FCovPosInfo(py::module &m)
 {
     py::class_< FCovPosInfo >(m, "FCovPosInfo")
         .def_readwrite("Link", &FCovPosInfo::Link)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRemoteTalker(py::object m)
+void Export_pystes_FRemoteTalker(py::module &m)
 {
     py::class_< FRemoteTalker >(m, "FRemoteTalker")
         .def_readwrite("TalkerId", &FRemoteTalker::TalkerId)

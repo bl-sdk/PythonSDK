@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBeamTargetData(py::object m)
+void Export_pystes_FBeamTargetData(py::module &m)
 {
     py::class_< FBeamTargetData >(m, "FBeamTargetData")
         .def_readwrite("TargetName", &FBeamTargetData::TargetName)

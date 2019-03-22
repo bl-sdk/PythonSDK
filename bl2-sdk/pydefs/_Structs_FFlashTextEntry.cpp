@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FFlashTextEntry(py::object m)
+void Export_pystes_FFlashTextEntry(py::module &m)
 {
     py::class_< FFlashTextEntry >(m, "FFlashTextEntry")
         .def_readwrite("TextEntry", &FFlashTextEntry::TextEntry)

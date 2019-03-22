@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_WeaponGlowEffect(py::object m)
+void Export_pystes_UBehavior_WeaponGlowEffect(py::module &m)
 {
     py::class_< UBehavior_WeaponGlowEffect,  UBehaviorBase   >(m, "UBehavior_WeaponGlowEffect")
         .def_readwrite("Action", &UBehavior_WeaponGlowEffect::Action)

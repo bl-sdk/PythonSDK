@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCustomizationItemData(py::object m)
+void Export_pystes_FCustomizationItemData(py::module &m)
 {
     py::class_< FCustomizationItemData >(m, "FCustomizationItemData")
         .def_readwrite("ItemPoolKey", &FCustomizationItemData::ItemPoolKey)

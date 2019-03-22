@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWeaponScopeGFxMovie(py::object m)
+void Export_pystes_UWeaponScopeGFxMovie(py::module &m)
 {
     py::class_< UWeaponScopeGFxMovie,  UWillowGFxMovie3D   >(m, "UWeaponScopeGFxMovie")
         .def_readwrite("MyScopeDefinition", &UWeaponScopeGFxMovie::MyScopeDefinition)

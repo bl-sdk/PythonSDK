@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAttributeInitializationData(py::object m)
+void Export_pystes_FAttributeInitializationData(py::module &m)
 {
     py::class_< FAttributeInitializationData >(m, "FAttributeInitializationData")
         .def_readwrite("BaseValueConstant", &FAttributeInitializationData::BaseValueConstant)

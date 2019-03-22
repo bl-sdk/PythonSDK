@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionTerrainLayerCoords(py::object m)
+void Export_pystes_UMaterialExpressionTerrainLayerCoords(py::module &m)
 {
     py::class_< UMaterialExpressionTerrainLayerCoords,  UMaterialExpression   >(m, "UMaterialExpressionTerrainLayerCoords")
         .def_readwrite("MappingType", &UMaterialExpressionTerrainLayerCoords::MappingType)

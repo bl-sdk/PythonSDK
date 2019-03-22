@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInventoryBalanceDefinition(py::object m)
+void Export_pystes_UInventoryBalanceDefinition(py::module &m)
 {
     py::class_< UInventoryBalanceDefinition,  UBaseBalanceDefinition   >(m, "UInventoryBalanceDefinition")
         .def_readwrite("VfTable_IIDlcLicensableObject", &UInventoryBalanceDefinition::VfTable_IIDlcLicensableObject)

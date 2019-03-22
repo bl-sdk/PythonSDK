@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTargetIteratorData(py::object m)
+void Export_pystes_FTargetIteratorData(py::module &m)
 {
     py::class_< FTargetIteratorData >(m, "FTargetIteratorData")
         .def_readwrite("Iterator", &FTargetIteratorData::Iterator)

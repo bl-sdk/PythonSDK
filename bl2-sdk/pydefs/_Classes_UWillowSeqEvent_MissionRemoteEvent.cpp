@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSeqEvent_MissionRemoteEvent(py::object m)
+void Export_pystes_UWillowSeqEvent_MissionRemoteEvent(py::module &m)
 {
     py::class_< UWillowSeqEvent_MissionRemoteEvent,  USequenceEvent   >(m, "UWillowSeqEvent_MissionRemoteEvent")
         .def_readwrite("AssociatedMissionDefinition", &UWillowSeqEvent_MissionRemoteEvent::AssociatedMissionDefinition)

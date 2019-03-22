@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFrontendMenuGFxObject(py::object m)
+void Export_pystes_UFrontendMenuGFxObject(py::module &m)
 {
     py::class_< UFrontendMenuGFxObject,  UGFxObject   >(m, "UFrontendMenuGFxObject")
         .def("StaticClass", &UFrontendMenuGFxObject::StaticClass, py::return_value_policy::reference)

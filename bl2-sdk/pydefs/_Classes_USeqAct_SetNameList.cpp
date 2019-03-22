@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_SetNameList(py::object m)
+void Export_pystes_USeqAct_SetNameList(py::module &m)
 {
     py::class_< USeqAct_SetNameList,  USequenceAction   >(m, "USeqAct_SetNameList")
         .def_readwrite("SetType", &USeqAct_SetNameList::SetType)

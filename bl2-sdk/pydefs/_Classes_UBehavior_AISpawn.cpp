@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_AISpawn(py::object m)
+void Export_pystes_UBehavior_AISpawn(py::module &m)
 {
     py::class_< UBehavior_AISpawn,  UBehaviorBase   >(m, "UBehavior_AISpawn")
         .def_readwrite("SpawnPointName", &UBehavior_AISpawn::SpawnPointName)

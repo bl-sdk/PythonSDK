@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_Drive_AlongsideTarget(py::object m)
+void Export_pystes_UAction_Drive_AlongsideTarget(py::module &m)
 {
     py::class_< UAction_Drive_AlongsideTarget,  UWillowActionSequencePawn   >(m, "UAction_Drive_AlongsideTarget")
         .def_readwrite("IdealDistanceFromTarget", &UAction_Drive_AlongsideTarget::IdealDistanceFromTarget)

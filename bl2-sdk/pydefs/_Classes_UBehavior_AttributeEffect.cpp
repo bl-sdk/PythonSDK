@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_AttributeEffect(py::object m)
+void Export_pystes_UBehavior_AttributeEffect(py::module &m)
 {
     py::class_< UBehavior_AttributeEffect,  UBehaviorBase   >(m, "UBehavior_AttributeEffect")
         .def_readwrite("AttributeEffect", &UBehavior_AttributeEffect::AttributeEffect)

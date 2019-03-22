@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FScreenParticleParamOverTime(py::object m)
+void Export_pystes_FScreenParticleParamOverTime(py::module &m)
 {
     py::class_< FScreenParticleParamOverTime >(m, "FScreenParticleParamOverTime")
         .def_readwrite("ScalarParams", &FScreenParticleParamOverTime::ScalarParams)

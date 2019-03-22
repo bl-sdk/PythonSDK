@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UStruct(py::object m)
+void Export_pystes_UStruct(py::module &m)
 {
     py::class_< UStruct,  UObject   >(m, "UStruct")
         .def_readwrite("SuperField", &UStruct::SuperField)

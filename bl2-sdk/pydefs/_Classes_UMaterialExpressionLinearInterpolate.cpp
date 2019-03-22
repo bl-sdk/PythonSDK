@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionLinearInterpolate(py::object m)
+void Export_pystes_UMaterialExpressionLinearInterpolate(py::module &m)
 {
     py::class_< UMaterialExpressionLinearInterpolate,  UMaterialExpression   >(m, "UMaterialExpressionLinearInterpolate")
         .def_readwrite("A", &UMaterialExpressionLinearInterpolate::A)

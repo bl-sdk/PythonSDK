@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowScrollingListDataProviderExtras(py::object m)
+void Export_pystes_UWillowScrollingListDataProviderExtras(py::module &m)
 {
     py::class_< UWillowScrollingListDataProviderExtras,  UWillowScrollingListDataProviderBase   >(m, "UWillowScrollingListDataProviderExtras")
         .def("StaticClass", &UWillowScrollingListDataProviderExtras::StaticClass, py::return_value_policy::reference)

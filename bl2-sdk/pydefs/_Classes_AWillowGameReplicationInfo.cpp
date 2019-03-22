@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowGameReplicationInfo(py::object m)
+void Export_pystes_AWillowGameReplicationInfo(py::module &m)
 {
     py::class_< AWillowGameReplicationInfo,  AGameReplicationInfo   >(m, "AWillowGameReplicationInfo")
         .def_readwrite("RadarMgr", &AWillowGameReplicationInfo::RadarMgr)

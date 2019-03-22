@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimSet(py::object m)
+void Export_pystes_UAnimSet(py::module &m)
 {
     py::class_< UAnimSet,  UObject   >(m, "UAnimSet")
         .def_readwrite("TrackBoneNames", &UAnimSet::TrackBoneNames)

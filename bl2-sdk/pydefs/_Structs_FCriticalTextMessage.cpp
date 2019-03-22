@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCriticalTextMessage(py::object m)
+void Export_pystes_FCriticalTextMessage(py::module &m)
 {
     py::class_< FCriticalTextMessage >(m, "FCriticalTextMessage")
         .def_readwrite("Message", &FCriticalTextMessage::Message)

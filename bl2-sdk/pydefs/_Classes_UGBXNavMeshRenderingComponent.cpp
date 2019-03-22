@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGBXNavMeshRenderingComponent(py::object m)
+void Export_pystes_UGBXNavMeshRenderingComponent(py::module &m)
 {
     py::class_< UGBXNavMeshRenderingComponent,  UPrimitiveComponent   >(m, "UGBXNavMeshRenderingComponent")
         .def_readwrite("MeshSpacingHullsToDraw", &UGBXNavMeshRenderingComponent::MeshSpacingHullsToDraw)

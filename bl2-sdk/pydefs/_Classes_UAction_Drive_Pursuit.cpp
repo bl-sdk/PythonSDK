@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_Drive_Pursuit(py::object m)
+void Export_pystes_UAction_Drive_Pursuit(py::module &m)
 {
     py::class_< UAction_Drive_Pursuit,  UWillowActionSequencePawn   >(m, "UAction_Drive_Pursuit")
         .def_readwrite("TargetForwardVelocityStartAction", &UAction_Drive_Pursuit::TargetForwardVelocityStartAction)

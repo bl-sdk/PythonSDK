@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPlayerRecentDamageEventData(py::object m)
+void Export_pystes_FPlayerRecentDamageEventData(py::module &m)
 {
     py::class_< FPlayerRecentDamageEventData >(m, "FPlayerRecentDamageEventData")
         .def_readwrite("DamageTypeDefinition", &FPlayerRecentDamageEventData::DamageTypeDefinition)

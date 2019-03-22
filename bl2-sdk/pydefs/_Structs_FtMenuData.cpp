@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FtMenuData(py::object m)
+void Export_pystes_FtMenuData(py::module &m)
 {
     py::class_< FtMenuData >(m, "FtMenuData")
         .def_readwrite("ColumnText", &FtMenuData::ColumnText)

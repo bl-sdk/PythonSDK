@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMarketplaceListCache(py::object m)
+void Export_pystes_FMarketplaceListCache(py::module &m)
 {
     py::class_< FMarketplaceListCache >(m, "FMarketplaceListCache")
         .def_readwrite("Content", &FMarketplaceListCache::Content)

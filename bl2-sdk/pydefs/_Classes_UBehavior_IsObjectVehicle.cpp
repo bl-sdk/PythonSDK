@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_IsObjectVehicle(py::object m)
+void Export_pystes_UBehavior_IsObjectVehicle(py::module &m)
 {
     py::class_< UBehavior_IsObjectVehicle,  UBehaviorBase   >(m, "UBehavior_IsObjectVehicle")
         .def_readwrite("VehicleCandidate", &UBehavior_IsObjectVehicle::VehicleCandidate)

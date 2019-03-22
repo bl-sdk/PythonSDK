@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNotify_Sound(py::object m)
+void Export_pystes_UAnimNotify_Sound(py::module &m)
 {
     py::class_< UAnimNotify_Sound,  UAnimNotify   >(m, "UAnimNotify_Sound")
         .def_readwrite("SoundCue", &UAnimNotify_Sound::SoundCue)

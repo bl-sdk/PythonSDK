@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ALight(py::object m)
+void Export_pystes_ALight(py::module &m)
 {
     py::class_< ALight,  AActor   >(m, "ALight")
         .def_readwrite("LightComponent", &ALight::LightComponent)

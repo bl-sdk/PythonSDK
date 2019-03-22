@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSeqAct_ReleaseTeleporterHeldLevel(py::object m)
+void Export_pystes_UWillowSeqAct_ReleaseTeleporterHeldLevel(py::module &m)
 {
     py::class_< UWillowSeqAct_ReleaseTeleporterHeldLevel,  USequenceAction   >(m, "UWillowSeqAct_ReleaseTeleporterHeldLevel")
         .def("StaticClass", &UWillowSeqAct_ReleaseTeleporterHeldLevel::StaticClass, py::return_value_policy::reference)

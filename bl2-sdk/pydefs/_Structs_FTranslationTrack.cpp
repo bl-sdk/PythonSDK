@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTranslationTrack(py::object m)
+void Export_pystes_FTranslationTrack(py::module &m)
 {
     py::class_< FTranslationTrack >(m, "FTranslationTrack")
         .def_readwrite("PosKeys", &FTranslationTrack::PosKeys)

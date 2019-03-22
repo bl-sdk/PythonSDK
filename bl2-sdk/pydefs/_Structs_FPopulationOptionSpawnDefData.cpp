@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPopulationOptionSpawnDefData(py::object m)
+void Export_pystes_FPopulationOptionSpawnDefData(py::module &m)
 {
     py::class_< FPopulationOptionSpawnDefData >(m, "FPopulationOptionSpawnDefData")
         .def_readwrite("PopulationDefName", &FPopulationOptionSpawnDefData::PopulationDefName)

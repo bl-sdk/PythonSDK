@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_FireShot(py::object m)
+void Export_pystes_UBehavior_FireShot(py::module &m)
 {
     py::class_< UBehavior_FireShot,  UBehaviorBase   >(m, "UBehavior_FireShot")
         .def_readwrite("WeaponOwnerContext", &UBehavior_FireShot::WeaponOwnerContext)

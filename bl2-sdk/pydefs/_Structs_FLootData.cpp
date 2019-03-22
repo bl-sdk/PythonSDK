@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLootData(py::object m)
+void Export_pystes_FLootData(py::module &m)
 {
     py::class_< FLootData >(m, "FLootData")
         .def_readwrite("Weight", &FLootData::Weight)

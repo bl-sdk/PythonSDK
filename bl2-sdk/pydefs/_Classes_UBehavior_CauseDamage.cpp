@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_CauseDamage(py::object m)
+void Export_pystes_UBehavior_CauseDamage(py::module &m)
 {
     py::class_< UBehavior_CauseDamage,  UBehaviorBase   >(m, "UBehavior_CauseDamage")
         .def_readwrite("VfTable_IIDamageCauser", &UBehavior_CauseDamage::VfTable_IIDamageCauser)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleLocationPrimitiveSphere_Seeded(py::object m)
+void Export_pystes_UParticleModuleLocationPrimitiveSphere_Seeded(py::module &m)
 {
     py::class_< UParticleModuleLocationPrimitiveSphere_Seeded,  UParticleModuleLocationBase   >(m, "UParticleModuleLocationPrimitiveSphere_Seeded")
         .def_readwrite("RandomSeedInfo", &UParticleModuleLocationPrimitiveSphere_Seeded::RandomSeedInfo)

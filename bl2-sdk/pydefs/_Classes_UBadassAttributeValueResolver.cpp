@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBadassAttributeValueResolver(py::object m)
+void Export_pystes_UBadassAttributeValueResolver(py::module &m)
 {
     py::class_< UBadassAttributeValueResolver,  UAttributeValueResolver   >(m, "UBadassAttributeValueResolver")
         .def_readwrite("AssociatedBadassReward", &UBadassAttributeValueResolver::AssociatedBadassReward)

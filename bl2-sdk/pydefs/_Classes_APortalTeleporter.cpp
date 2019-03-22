@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APortalTeleporter(py::object m)
+void Export_pystes_APortalTeleporter(py::module &m)
 {
     py::class_< APortalTeleporter,  AActor   >(m, "APortalTeleporter")
         .def_readwrite("SisterPortal", &APortalTeleporter::SisterPortal)

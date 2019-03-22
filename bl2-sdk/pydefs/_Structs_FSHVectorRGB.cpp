@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSHVectorRGB(py::object m)
+void Export_pystes_FSHVectorRGB(py::module &m)
 {
     py::class_< FSHVectorRGB >(m, "FSHVectorRGB")
         .def_readwrite("R", &FSHVectorRGB::R)

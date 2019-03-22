@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_MoveToFormation(py::object m)
+void Export_pystes_UAction_MoveToFormation(py::module &m)
 {
     py::class_< UAction_MoveToFormation,  UAction_Burrow   >(m, "UAction_MoveToFormation")
         .def_readwrite("HoldDistance", &UAction_MoveToFormation::HoldDistance)

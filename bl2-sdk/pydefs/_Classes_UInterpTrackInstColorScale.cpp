@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackInstColorScale(py::object m)
+void Export_pystes_UInterpTrackInstColorScale(py::module &m)
 {
     py::class_< UInterpTrackInstColorScale,  UInterpTrackInst   >(m, "UInterpTrackInstColorScale")
         .def("StaticClass", &UInterpTrackInstColorScale::StaticClass, py::return_value_policy::reference)

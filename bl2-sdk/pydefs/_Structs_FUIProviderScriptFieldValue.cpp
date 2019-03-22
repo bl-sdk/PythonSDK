@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FUIProviderScriptFieldValue(py::object m)
+void Export_pystes_FUIProviderScriptFieldValue(py::module &m)
 {
     py::class_< FUIProviderScriptFieldValue >(m, "FUIProviderScriptFieldValue")
         .def_readwrite("PropertyTag", &FUIProviderScriptFieldValue::PropertyTag)

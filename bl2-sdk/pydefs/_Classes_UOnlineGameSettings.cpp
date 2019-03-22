@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineGameSettings(py::object m)
+void Export_pystes_UOnlineGameSettings(py::module &m)
 {
     py::class_< UOnlineGameSettings,  UObject   >(m, "UOnlineGameSettings")
         .def_readwrite("NumPublicConnections", &UOnlineGameSettings::NumPublicConnections)

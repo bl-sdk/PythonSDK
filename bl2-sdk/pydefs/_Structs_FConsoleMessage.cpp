@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FConsoleMessage(py::object m)
+void Export_pystes_FConsoleMessage(py::module &m)
 {
     py::class_< FConsoleMessage >(m, "FConsoleMessage")
         .def_readwrite("Text", &FConsoleMessage::Text)

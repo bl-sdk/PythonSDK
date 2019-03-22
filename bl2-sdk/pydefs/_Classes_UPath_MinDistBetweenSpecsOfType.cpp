@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPath_MinDistBetweenSpecsOfType(py::object m)
+void Export_pystes_UPath_MinDistBetweenSpecsOfType(py::module &m)
 {
     py::class_< UPath_MinDistBetweenSpecsOfType,  UPathConstraint   >(m, "UPath_MinDistBetweenSpecsOfType")
         .def_readwrite("MinDistBetweenSpecTypes", &UPath_MinDistBetweenSpecsOfType::MinDistBetweenSpecTypes)

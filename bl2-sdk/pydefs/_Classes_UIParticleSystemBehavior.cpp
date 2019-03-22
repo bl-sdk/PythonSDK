@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIParticleSystemBehavior(py::object m)
+void Export_pystes_UIParticleSystemBehavior(py::module &m)
 {
     py::class_< UIParticleSystemBehavior,  UInterface   >(m, "UIParticleSystemBehavior")
         .def("StaticClass", &UIParticleSystemBehavior::StaticClass, py::return_value_policy::reference)

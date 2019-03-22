@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AHybridNavigationArea(py::object m)
+void Export_pystes_AHybridNavigationArea(py::module &m)
 {
     py::class_< AHybridNavigationArea,  AInfo   >(m, "AHybridNavigationArea")
         .def_readwrite("CustomAreaName", &AHybridNavigationArea::CustomAreaName)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FServerAuthRetry(py::object m)
+void Export_pystes_FServerAuthRetry(py::module &m)
 {
     py::class_< FServerAuthRetry >(m, "FServerAuthRetry")
         .def_readwrite("ClientUID", &FServerAuthRetry::ClientUID)

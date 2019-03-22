@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_Kill(py::object m)
+void Export_pystes_UBehavior_Kill(py::module &m)
 {
     py::class_< UBehavior_Kill,  UBehaviorBase   >(m, "UBehavior_Kill")
         .def_readwrite("DeathType", &UBehavior_Kill::DeathType)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPawnMoveLocationRequest(py::object m)
+void Export_pystes_UPawnMoveLocationRequest(py::module &m)
 {
     py::class_< UPawnMoveLocationRequest,  UObject   >(m, "UPawnMoveLocationRequest")
         .def_readwrite("CoverSearchFilter", &UPawnMoveLocationRequest::CoverSearchFilter)

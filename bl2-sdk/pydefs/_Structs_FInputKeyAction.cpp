@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInputKeyAction(py::object m)
+void Export_pystes_FInputKeyAction(py::module &m)
 {
     py::class_< FInputKeyAction >(m, "FInputKeyAction")
         .def_readwrite("InputKeyName", &FInputKeyAction::InputKeyName)

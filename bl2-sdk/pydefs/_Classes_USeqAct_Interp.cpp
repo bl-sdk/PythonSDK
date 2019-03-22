@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_Interp(py::object m)
+void Export_pystes_USeqAct_Interp(py::module &m)
 {
     py::class_< USeqAct_Interp,  USeqAct_Latent   >(m, "USeqAct_Interp")
         .def_readwrite("PlayRate", &USeqAct_Interp::PlayRate)

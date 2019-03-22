@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWindDirectionalSource(py::object m)
+void Export_pystes_AWindDirectionalSource(py::module &m)
 {
     py::class_< AWindDirectionalSource,  AInfo   >(m, "AWindDirectionalSource")
         .def_readwrite("Component", &AWindDirectionalSource::Component)

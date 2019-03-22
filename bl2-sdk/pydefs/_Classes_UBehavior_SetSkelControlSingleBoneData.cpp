@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SetSkelControlSingleBoneData(py::object m)
+void Export_pystes_UBehavior_SetSkelControlSingleBoneData(py::module &m)
 {
     py::class_< UBehavior_SetSkelControlSingleBoneData,  UBehaviorBase   >(m, "UBehavior_SetSkelControlSingleBoneData")
         .def_readwrite("SkelControlName", &UBehavior_SetSkelControlSingleBoneData::SkelControlName)

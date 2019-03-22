@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHUDWidget_WorldSpace(py::object m)
+void Export_pystes_UHUDWidget_WorldSpace(py::module &m)
 {
     py::class_< UHUDWidget_WorldSpace,  UHUDWidget_Base   >(m, "UHUDWidget_WorldSpace")
         .def_readwrite("ObjectiveIcons", &UHUDWidget_WorldSpace::ObjectiveIcons)

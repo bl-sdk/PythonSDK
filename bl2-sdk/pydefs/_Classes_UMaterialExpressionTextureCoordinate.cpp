@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionTextureCoordinate(py::object m)
+void Export_pystes_UMaterialExpressionTextureCoordinate(py::module &m)
 {
     py::class_< UMaterialExpressionTextureCoordinate,  UMaterialExpression   >(m, "UMaterialExpressionTextureCoordinate")
         .def_readwrite("CoordinateIndex", &UMaterialExpressionTextureCoordinate::CoordinateIndex)

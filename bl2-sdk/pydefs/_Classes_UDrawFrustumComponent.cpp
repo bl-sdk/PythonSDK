@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDrawFrustumComponent(py::object m)
+void Export_pystes_UDrawFrustumComponent(py::module &m)
 {
     py::class_< UDrawFrustumComponent,  UPrimitiveComponent   >(m, "UDrawFrustumComponent")
         .def_readwrite("FrustumColor", &UDrawFrustumComponent::FrustumColor)

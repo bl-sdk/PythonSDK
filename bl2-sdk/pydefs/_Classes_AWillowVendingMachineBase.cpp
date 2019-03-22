@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowVendingMachineBase(py::object m)
+void Export_pystes_AWillowVendingMachineBase(py::module &m)
 {
     py::class_< AWillowVendingMachineBase,  AWillowInteractiveObject   >(m, "AWillowVendingMachineBase")
         .def_readwrite("VfTable_IIShop", &AWillowVendingMachineBase::VfTable_IIShop)

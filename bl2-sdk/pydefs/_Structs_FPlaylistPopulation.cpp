@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPlaylistPopulation(py::object m)
+void Export_pystes_FPlaylistPopulation(py::module &m)
 {
     py::class_< FPlaylistPopulation >(m, "FPlaylistPopulation")
         .def_readwrite("PlaylistId", &FPlaylistPopulation::PlaylistId)

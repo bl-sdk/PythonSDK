@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTestMapsListDatum(py::object m)
+void Export_pystes_FTestMapsListDatum(py::module &m)
 {
     py::class_< FTestMapsListDatum >(m, "FTestMapsListDatum")
         .def_readwrite("MapDisplayName", &FTestMapsListDatum::MapDisplayName)

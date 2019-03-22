@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInterpCurveFloat(py::object m)
+void Export_pystes_FInterpCurveFloat(py::module &m)
 {
     py::class_< FInterpCurveFloat >(m, "FInterpCurveFloat")
         .def_readwrite("Points", &FInterpCurveFloat::Points)

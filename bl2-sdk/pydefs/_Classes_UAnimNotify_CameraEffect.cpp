@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNotify_CameraEffect(py::object m)
+void Export_pystes_UAnimNotify_CameraEffect(py::module &m)
 {
     py::class_< UAnimNotify_CameraEffect,  UAnimNotify   >(m, "UAnimNotify_CameraEffect")
         .def_readwrite("CameraLensEffect", &UAnimNotify_CameraEffect::CameraLensEffect)

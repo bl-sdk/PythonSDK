@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBranchInfo(py::object m)
+void Export_pystes_FBranchInfo(py::module &m)
 {
     py::class_< FBranchInfo >(m, "FBranchInfo")
         .def_readwrite("BoneName", &FBranchInfo::BoneName)

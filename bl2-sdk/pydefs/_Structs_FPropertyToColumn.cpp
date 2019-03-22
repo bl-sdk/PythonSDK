@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPropertyToColumn(py::object m)
+void Export_pystes_FPropertyToColumn(py::module &m)
 {
     py::class_< FPropertyToColumn >(m, "FPropertyToColumn")
         .def_readwrite("PropertyId", &FPropertyToColumn::PropertyId)

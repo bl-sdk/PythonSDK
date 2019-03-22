@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AInternetLink(py::object m)
+void Export_pystes_AInternetLink(py::module &m)
 {
     py::class_< AInternetLink,  AInfo   >(m, "AInternetLink")
         .def_readwrite("LinkMode", &AInternetLink::LinkMode)

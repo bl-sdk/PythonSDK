@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMorphWeightSequence(py::object m)
+void Export_pystes_UMorphWeightSequence(py::module &m)
 {
     py::class_< UMorphWeightSequence,  UObject   >(m, "UMorphWeightSequence")
         .def("StaticClass", &UMorphWeightSequence::StaticClass, py::return_value_policy::reference)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAIRange(py::object m)
+void Export_pystes_FAIRange(py::module &m)
 {
     py::class_< FAIRange >(m, "FAIRange")
         .def_readwrite("MinVal", &FAIRange::MinVal)

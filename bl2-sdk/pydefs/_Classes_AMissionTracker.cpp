@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AMissionTracker(py::object m)
+void Export_pystes_AMissionTracker(py::module &m)
 {
     py::class_< AMissionTracker,  AActor   >(m, "AMissionTracker")
         .def_readwrite("VfTable_IIBehaviorConsumer", &AMissionTracker::VfTable_IIBehaviorConsumer)

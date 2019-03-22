@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPhysXSceneProperties(py::object m)
+void Export_pystes_FPhysXSceneProperties(py::module &m)
 {
     py::class_< FPhysXSceneProperties >(m, "FPhysXSceneProperties")
         .def_readwrite("PrimaryScene", &FPhysXSceneProperties::PrimaryScene)

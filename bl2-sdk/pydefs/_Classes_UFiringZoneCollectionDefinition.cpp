@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFiringZoneCollectionDefinition(py::object m)
+void Export_pystes_UFiringZoneCollectionDefinition(py::module &m)
 {
     py::class_< UFiringZoneCollectionDefinition,  UGBXDefinition   >(m, "UFiringZoneCollectionDefinition")
         .def_readwrite("Zones", &UFiringZoneCollectionDefinition::Zones)

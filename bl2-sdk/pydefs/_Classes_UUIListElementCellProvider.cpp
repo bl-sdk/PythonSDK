@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIListElementCellProvider(py::object m)
+void Export_pystes_UUIListElementCellProvider(py::module &m)
 {
     py::class_< UUIListElementCellProvider,  UInterface   >(m, "UUIListElementCellProvider")
         .def("StaticClass", &UUIListElementCellProvider::StaticClass, py::return_value_policy::reference)

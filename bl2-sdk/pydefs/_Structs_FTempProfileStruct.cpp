@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTempProfileStruct(py::object m)
+void Export_pystes_FTempProfileStruct(py::module &m)
 {
     py::class_< FTempProfileStruct >(m, "FTempProfileStruct")
         .def_readwrite("Allegiance", &FTempProfileStruct::Allegiance)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLocalizedSubtitle(py::object m)
+void Export_pystes_FLocalizedSubtitle(py::module &m)
 {
     py::class_< FLocalizedSubtitle >(m, "FLocalizedSubtitle")
         .def_readwrite("LanguageExt", &FLocalizedSubtitle::LanguageExt)

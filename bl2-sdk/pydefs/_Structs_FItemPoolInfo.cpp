@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FItemPoolInfo(py::object m)
+void Export_pystes_FItemPoolInfo(py::module &m)
 {
     py::class_< FItemPoolInfo >(m, "FItemPoolInfo")
         .def_readwrite("ItemPool", &FItemPoolInfo::ItemPool)

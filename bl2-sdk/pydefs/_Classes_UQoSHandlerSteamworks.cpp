@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UQoSHandlerSteamworks(py::object m)
+void Export_pystes_UQoSHandlerSteamworks(py::module &m)
 {
     py::class_< UQoSHandlerSteamworks,  UObject   >(m, "UQoSHandlerSteamworks")
         .def_readwrite("MaxQoSRequest", &UQoSHandlerSteamworks::MaxQoSRequest)

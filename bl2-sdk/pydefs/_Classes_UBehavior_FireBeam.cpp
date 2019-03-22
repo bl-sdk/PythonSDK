@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_FireBeam(py::object m)
+void Export_pystes_UBehavior_FireBeam(py::module &m)
 {
     py::class_< UBehavior_FireBeam,  UBehaviorBase   >(m, "UBehavior_FireBeam")
         .def_readwrite("SourceSocket", &UBehavior_FireBeam::SourceSocket)

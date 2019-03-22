@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCustomizationUsage(py::object m)
+void Export_pystes_UCustomizationUsage(py::module &m)
 {
     py::class_< UCustomizationUsage,  UGBXDefinition   >(m, "UCustomizationUsage")
         .def_readwrite("CustomizationUsageName", &UCustomizationUsage::CustomizationUsageName)

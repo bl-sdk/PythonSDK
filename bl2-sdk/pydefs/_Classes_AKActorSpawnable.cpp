@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AKActorSpawnable(py::object m)
+void Export_pystes_AKActorSpawnable(py::module &m)
 {
     py::class_< AKActorSpawnable,  AKActor   >(m, "AKActorSpawnable")
         .def("StaticClass", &AKActorSpawnable::StaticClass, py::return_value_policy::reference)

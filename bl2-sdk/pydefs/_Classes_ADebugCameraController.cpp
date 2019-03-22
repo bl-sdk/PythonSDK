@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ADebugCameraController(py::object m)
+void Export_pystes_ADebugCameraController(py::module &m)
 {
     py::class_< ADebugCameraController,  APlayerController   >(m, "ADebugCameraController")
         .def_readwrite("PrimaryKey", &ADebugCameraController::PrimaryKey)

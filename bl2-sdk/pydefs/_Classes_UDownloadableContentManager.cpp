@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDownloadableContentManager(py::object m)
+void Export_pystes_UDownloadableContentManager(py::module &m)
 {
     py::class_< UDownloadableContentManager,  UObject   >(m, "UDownloadableContentManager")
         .def_readwrite("DLCConfigCacheChanges", &UDownloadableContentManager::DLCConfigCacheChanges)

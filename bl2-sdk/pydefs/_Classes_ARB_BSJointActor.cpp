@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ARB_BSJointActor(py::object m)
+void Export_pystes_ARB_BSJointActor(py::module &m)
 {
     py::class_< ARB_BSJointActor,  ARB_ConstraintActor   >(m, "ARB_BSJointActor")
         .def("StaticClass", &ARB_BSJointActor::StaticClass, py::return_value_policy::reference)

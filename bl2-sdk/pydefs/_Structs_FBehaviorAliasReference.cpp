@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBehaviorAliasReference(py::object m)
+void Export_pystes_FBehaviorAliasReference(py::module &m)
 {
     py::class_< FBehaviorAliasReference >(m, "FBehaviorAliasReference")
         .def_readwrite("BehaviorAlias", &FBehaviorAliasReference::BehaviorAlias)

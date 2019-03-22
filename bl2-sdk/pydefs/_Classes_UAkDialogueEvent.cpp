@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAkDialogueEvent(py::object m)
+void Export_pystes_UAkDialogueEvent(py::module &m)
 {
     py::class_< UAkDialogueEvent,  UAkObject   >(m, "UAkDialogueEvent")
         .def_readwrite("RequiredBank", &UAkDialogueEvent::RequiredBank)

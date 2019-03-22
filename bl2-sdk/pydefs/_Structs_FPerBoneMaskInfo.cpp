@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPerBoneMaskInfo(py::object m)
+void Export_pystes_FPerBoneMaskInfo(py::module &m)
 {
     py::class_< FPerBoneMaskInfo >(m, "FPerBoneMaskInfo")
         .def_readwrite("BranchList", &FPerBoneMaskInfo::BranchList)

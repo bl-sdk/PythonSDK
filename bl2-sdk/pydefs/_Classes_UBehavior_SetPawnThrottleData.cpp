@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SetPawnThrottleData(py::object m)
+void Export_pystes_UBehavior_SetPawnThrottleData(py::module &m)
 {
     py::class_< UBehavior_SetPawnThrottleData,  UBehaviorBase   >(m, "UBehavior_SetPawnThrottleData")
         .def_readwrite("FullThrottleDistance", &UBehavior_SetPawnThrottleData::FullThrottleDistance)

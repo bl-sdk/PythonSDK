@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APlayerKillVolume(py::object m)
+void Export_pystes_APlayerKillVolume(py::module &m)
 {
     py::class_< APlayerKillVolume,  AVolume   >(m, "APlayerKillVolume")
         .def("StaticClass", &APlayerKillVolume::StaticClass, py::return_value_policy::reference)

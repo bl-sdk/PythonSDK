@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBreathingLoopInfo(py::object m)
+void Export_pystes_FBreathingLoopInfo(py::module &m)
 {
     py::class_< FBreathingLoopInfo >(m, "FBreathingLoopInfo")
         .def_readwrite("Condition", &FBreathingLoopInfo::Condition)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FHttpParameters(py::object m)
+void Export_pystes_FHttpParameters(py::module &m)
 {
     py::class_< FHttpParameters >(m, "FHttpParameters")
         .def_readwrite("ServiceConfiguration", &FHttpParameters::ServiceConfiguration)

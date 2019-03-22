@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNounAttributeValueResolver(py::object m)
+void Export_pystes_UNounAttributeValueResolver(py::module &m)
 {
     py::class_< UNounAttributeValueResolver,  UAttributeValueResolver   >(m, "UNounAttributeValueResolver")
         .def_readwrite("ReplicationStrategy", &UNounAttributeValueResolver::ReplicationStrategy)

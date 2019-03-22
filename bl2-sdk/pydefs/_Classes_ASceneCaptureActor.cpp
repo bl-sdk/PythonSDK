@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ASceneCaptureActor(py::object m)
+void Export_pystes_ASceneCaptureActor(py::module &m)
 {
     py::class_< ASceneCaptureActor,  AActor   >(m, "ASceneCaptureActor")
         .def_readwrite("SceneCapture", &ASceneCaptureActor::SceneCapture)

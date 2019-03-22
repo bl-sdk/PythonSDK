@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFlagDefinition(py::object m)
+void Export_pystes_UFlagDefinition(py::module &m)
 {
     py::class_< UFlagDefinition,  UGBXDefinition   >(m, "UFlagDefinition")
         .def_readwrite("EvaluationExpression", &UFlagDefinition::EvaluationExpression)

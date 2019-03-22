@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UForceFieldShape(py::object m)
+void Export_pystes_UForceFieldShape(py::module &m)
 {
     py::class_< UForceFieldShape,  UObject   >(m, "UForceFieldShape")
         .def("StaticClass", &UForceFieldShape::StaticClass, py::return_value_policy::reference)

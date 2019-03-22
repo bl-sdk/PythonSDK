@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqCond_IncrementFloat(py::object m)
+void Export_pystes_USeqCond_IncrementFloat(py::module &m)
 {
     py::class_< USeqCond_IncrementFloat,  USequenceCondition   >(m, "USeqCond_IncrementFloat")
         .def_readwrite("IncrementAmount", &USeqCond_IncrementFloat::IncrementAmount)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FOnlineArbitrationRegistrant(py::object m)
+void Export_pystes_FOnlineArbitrationRegistrant(py::module &m)
 {
     py::class_< FOnlineArbitrationRegistrant >(m, "FOnlineArbitrationRegistrant")
         .def_readwrite("MachineId", &FOnlineArbitrationRegistrant::MachineId)

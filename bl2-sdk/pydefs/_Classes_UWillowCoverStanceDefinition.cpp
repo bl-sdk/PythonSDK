@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowCoverStanceDefinition(py::object m)
+void Export_pystes_UWillowCoverStanceDefinition(py::module &m)
 {
     py::class_< UWillowCoverStanceDefinition,  UGBXDefinition   >(m, "UWillowCoverStanceDefinition")
         .def_readwrite("AimProfile", &UWillowCoverStanceDefinition::AimProfile)

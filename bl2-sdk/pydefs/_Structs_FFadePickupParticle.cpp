@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FFadePickupParticle(py::object m)
+void Export_pystes_FFadePickupParticle(py::module &m)
 {
     py::class_< FFadePickupParticle >(m, "FFadePickupParticle")
         .def_readwrite("SourceActor", &FFadePickupParticle::SourceActor)

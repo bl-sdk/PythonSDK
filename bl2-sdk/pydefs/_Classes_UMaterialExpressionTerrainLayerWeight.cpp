@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionTerrainLayerWeight(py::object m)
+void Export_pystes_UMaterialExpressionTerrainLayerWeight(py::module &m)
 {
     py::class_< UMaterialExpressionTerrainLayerWeight,  UMaterialExpression   >(m, "UMaterialExpressionTerrainLayerWeight")
         .def_readwrite("InstanceOverride", &UMaterialExpressionTerrainLayerWeight::InstanceOverride)

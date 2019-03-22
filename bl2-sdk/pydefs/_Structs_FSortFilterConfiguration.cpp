@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSortFilterConfiguration(py::object m)
+void Export_pystes_FSortFilterConfiguration(py::module &m)
 {
     py::class_< FSortFilterConfiguration >(m, "FSortFilterConfiguration")
         .def_readwrite("SortType", &FSortFilterConfiguration::SortType)

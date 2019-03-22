@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_URuleEngineLoadBalanceManager(py::object m)
+void Export_pystes_URuleEngineLoadBalanceManager(py::module &m)
 {
     py::class_< URuleEngineLoadBalanceManager,  UObject   >(m, "URuleEngineLoadBalanceManager")
         .def_readwrite("NumTimeSpentThisFrame", &URuleEngineLoadBalanceManager::NumTimeSpentThisFrame)

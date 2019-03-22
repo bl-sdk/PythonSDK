@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USkillDefinition(py::object m)
+void Export_pystes_USkillDefinition(py::module &m)
 {
     py::class_< USkillDefinition,  UGBXDefinition   >(m, "USkillDefinition")
         .def_readwrite("VfTable_IIConstructObject", &USkillDefinition::VfTable_IIConstructObject)

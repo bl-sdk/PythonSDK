@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_Charm(py::object m)
+void Export_pystes_UBehavior_Charm(py::module &m)
 {
     py::class_< UBehavior_Charm,  UBehaviorBase   >(m, "UBehavior_Charm")
         .def_readwrite("Action", &UBehavior_Charm::Action)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_Gate(py::object m)
+void Export_pystes_UBehavior_Gate(py::module &m)
 {
     py::class_< UBehavior_Gate,  UBehaviorBase   >(m, "UBehavior_Gate")
         .def_readwrite("GateCount", &UBehavior_Gate::GateCount)

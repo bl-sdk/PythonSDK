@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSkelControl_FootPlacement(py::object m)
+void Export_pystes_UWillowSkelControl_FootPlacement(py::module &m)
 {
     py::class_< UWillowSkelControl_FootPlacement,  USkelControlFootPlacement   >(m, "UWillowSkelControl_FootPlacement")
         .def_readwrite("LastOffset", &UWillowSkelControl_FootPlacement::LastOffset)

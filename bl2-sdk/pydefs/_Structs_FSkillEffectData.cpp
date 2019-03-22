@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSkillEffectData(py::object m)
+void Export_pystes_FSkillEffectData(py::module &m)
 {
     py::class_< FSkillEffectData >(m, "FSkillEffectData")
         .def_readwrite("AttributeToModify", &FSkillEffectData::AttributeToModify)

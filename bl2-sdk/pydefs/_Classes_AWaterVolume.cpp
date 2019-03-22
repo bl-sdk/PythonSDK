@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWaterVolume(py::object m)
+void Export_pystes_AWaterVolume(py::module &m)
 {
     py::class_< AWaterVolume,  APhysicsVolume   >(m, "AWaterVolume")
         .def_readwrite("EntrySound", &AWaterVolume::EntrySound)

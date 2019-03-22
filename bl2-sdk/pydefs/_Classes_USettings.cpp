@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USettings(py::object m)
+void Export_pystes_USettings(py::module &m)
 {
     py::class_< USettings,  UObject   >(m, "USettings")
         .def_readwrite("LocalizedSettings", &USettings::LocalizedSettings)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowPlayerPawn(py::object m)
+void Export_pystes_AWillowPlayerPawn(py::module &m)
 {
     py::class_< AWillowPlayerPawn,  AWillowPawn   >(m, "AWillowPlayerPawn")
         .def_readwrite("VfTable_IIProtectionTimer", &AWillowPlayerPawn::VfTable_IIProtectionTimer)

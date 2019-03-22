@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDOFBloomMotionBlurEffect(py::object m)
+void Export_pystes_UDOFBloomMotionBlurEffect(py::module &m)
 {
     py::class_< UDOFBloomMotionBlurEffect,  UPostProcessEffect   >(m, "UDOFBloomMotionBlurEffect")
         .def_readwrite("MaxVelocity", &UDOFBloomMotionBlurEffect::MaxVelocity)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UStatusMenuExGFxMovie(py::object m)
+void Export_pystes_UStatusMenuExGFxMovie(py::module &m)
 {
     py::class_< UStatusMenuExGFxMovie,  UWillowGFxMovie3D   >(m, "UStatusMenuExGFxMovie")
         .def_readwrite("StatusDef", &UStatusMenuExGFxMovie::StatusDef)

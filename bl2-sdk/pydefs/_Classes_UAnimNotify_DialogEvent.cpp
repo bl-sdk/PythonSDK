@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNotify_DialogEvent(py::object m)
+void Export_pystes_UAnimNotify_DialogEvent(py::module &m)
 {
     py::class_< UAnimNotify_DialogEvent,  UAnimNotify   >(m, "UAnimNotify_DialogEvent")
         .def_readwrite("EventTag", &UAnimNotify_DialogEvent::EventTag)

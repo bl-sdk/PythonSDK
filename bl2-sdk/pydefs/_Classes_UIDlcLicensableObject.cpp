@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIDlcLicensableObject(py::object m)
+void Export_pystes_UIDlcLicensableObject(py::module &m)
 {
     py::class_< UIDlcLicensableObject,  UInterface   >(m, "UIDlcLicensableObject")
         .def("StaticClass", &UIDlcLicensableObject::StaticClass, py::return_value_policy::reference)

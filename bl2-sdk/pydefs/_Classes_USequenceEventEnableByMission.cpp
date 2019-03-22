@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USequenceEventEnableByMission(py::object m)
+void Export_pystes_USequenceEventEnableByMission(py::module &m)
 {
     py::class_< USequenceEventEnableByMission,  USequenceEventCustomEnableCondition   >(m, "USequenceEventEnableByMission")
         .def_readwrite("VfTable_IIMission", &USequenceEventEnableByMission::VfTable_IIMission)

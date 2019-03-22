@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWeaponGlowEffectDefinition(py::object m)
+void Export_pystes_UWeaponGlowEffectDefinition(py::module &m)
 {
     py::class_< UWeaponGlowEffectDefinition,  UGBXDefinition   >(m, "UWeaponGlowEffectDefinition")
         .def_readwrite("GlowScaleCurve", &UWeaponGlowEffectDefinition::GlowScaleCurve)

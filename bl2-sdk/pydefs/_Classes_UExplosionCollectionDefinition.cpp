@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UExplosionCollectionDefinition(py::object m)
+void Export_pystes_UExplosionCollectionDefinition(py::module &m)
 {
     py::class_< UExplosionCollectionDefinition,  UGBXDefinition   >(m, "UExplosionCollectionDefinition")
         .def_readwrite("Explosions", &UExplosionCollectionDefinition::Explosions)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDirectorTrackCut(py::object m)
+void Export_pystes_FDirectorTrackCut(py::module &m)
 {
     py::class_< FDirectorTrackCut >(m, "FDirectorTrackCut")
         .def_readwrite("Time", &FDirectorTrackCut::Time)

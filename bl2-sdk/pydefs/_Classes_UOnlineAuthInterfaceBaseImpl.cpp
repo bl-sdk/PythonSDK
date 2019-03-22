@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineAuthInterfaceBaseImpl(py::object m)
+void Export_pystes_UOnlineAuthInterfaceBaseImpl(py::module &m)
 {
     py::class_< UOnlineAuthInterfaceBaseImpl,  UObject   >(m, "UOnlineAuthInterfaceBaseImpl")
         .def_readwrite("ClientAuthSessions", &UOnlineAuthInterfaceBaseImpl::ClientAuthSessions)

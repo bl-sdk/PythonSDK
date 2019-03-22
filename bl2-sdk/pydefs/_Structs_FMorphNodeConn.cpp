@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMorphNodeConn(py::object m)
+void Export_pystes_FMorphNodeConn(py::module &m)
 {
     py::class_< FMorphNodeConn >(m, "FMorphNodeConn")
         .def_readwrite("ChildNodes", &FMorphNodeConn::ChildNodes)

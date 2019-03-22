@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UItemDefinition(py::object m)
+void Export_pystes_UItemDefinition(py::module &m)
 {
     py::class_< UItemDefinition,  UWillowInventoryDefinition   >(m, "UItemDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UItemDefinition::VfTable_IIBehaviorProvider)

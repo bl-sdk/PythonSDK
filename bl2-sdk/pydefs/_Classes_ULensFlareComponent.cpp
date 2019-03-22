@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULensFlareComponent(py::object m)
+void Export_pystes_ULensFlareComponent(py::module &m)
 {
     py::class_< ULensFlareComponent,  UPrimitiveComponent   >(m, "ULensFlareComponent")
         .def_readwrite("Template", &ULensFlareComponent::Template)

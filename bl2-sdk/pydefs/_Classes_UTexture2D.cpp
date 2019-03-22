@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTexture2D(py::object m)
+void Export_pystes_UTexture2D(py::module &m)
 {
     py::class_< UTexture2D,  UTexture   >(m, "UTexture2D")
         .def_readwrite("Mips", &UTexture2D::Mips)

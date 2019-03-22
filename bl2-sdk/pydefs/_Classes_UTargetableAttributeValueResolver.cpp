@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTargetableAttributeValueResolver(py::object m)
+void Export_pystes_UTargetableAttributeValueResolver(py::module &m)
 {
     py::class_< UTargetableAttributeValueResolver,  UAttributeValueResolver   >(m, "UTargetableAttributeValueResolver")
         .def_readwrite("ValueToResolve", &UTargetableAttributeValueResolver::ValueToResolve)

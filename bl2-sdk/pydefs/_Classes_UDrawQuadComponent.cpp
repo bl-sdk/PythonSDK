@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDrawQuadComponent(py::object m)
+void Export_pystes_UDrawQuadComponent(py::module &m)
 {
     py::class_< UDrawQuadComponent,  UPrimitiveComponent   >(m, "UDrawQuadComponent")
         .def_readwrite("Texture", &UDrawQuadComponent::Texture)

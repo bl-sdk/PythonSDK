@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FWeaponAmmoResourceSelectorData(py::object m)
+void Export_pystes_FWeaponAmmoResourceSelectorData(py::module &m)
 {
     py::class_< FWeaponAmmoResourceSelectorData >(m, "FWeaponAmmoResourceSelectorData")
         .def_readwrite("AssociatedResourceName", &FWeaponAmmoResourceSelectorData::AssociatedResourceName)

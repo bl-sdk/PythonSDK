@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAuthSession(py::object m)
+void Export_pystes_FAuthSession(py::module &m)
 {
     py::class_< FAuthSession >(m, "FAuthSession")
         .def_readwrite("AuthStatus", &FAuthSession::AuthStatus)

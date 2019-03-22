@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FIniLocFileEntry(py::object m)
+void Export_pystes_FIniLocFileEntry(py::module &m)
 {
     py::class_< FIniLocFileEntry >(m, "FIniLocFileEntry")
         .def_readwrite("Filename", &FIniLocFileEntry::Filename)

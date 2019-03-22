@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ASkeletalMeshActor(py::object m)
+void Export_pystes_ASkeletalMeshActor(py::module &m)
 {
     py::class_< ASkeletalMeshActor,  AActor   >(m, "ASkeletalMeshActor")
         .def_readwrite("VfTable_IIFaceFXActor", &ASkeletalMeshActor::VfTable_IIFaceFXActor)

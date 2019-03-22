@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_CheckMapChangeConditions(py::object m)
+void Export_pystes_UBehavior_CheckMapChangeConditions(py::module &m)
 {
     py::class_< UBehavior_CheckMapChangeConditions,  UBehaviorBase   >(m, "UBehavior_CheckMapChangeConditions")
         .def_readwrite("MapChangeCustomEvent", &UBehavior_CheckMapChangeConditions::MapChangeCustomEvent)

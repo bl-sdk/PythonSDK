@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBankGFxMovie(py::object m)
+void Export_pystes_UBankGFxMovie(py::module &m)
 {
     py::class_< UBankGFxMovie,  UTwoPanelInterfaceGFxMovie   >(m, "UBankGFxMovie")
         .def_readwrite("BankTitle", &UBankGFxMovie::BankTitle)

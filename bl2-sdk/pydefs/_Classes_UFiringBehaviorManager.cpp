@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFiringBehaviorManager(py::object m)
+void Export_pystes_UFiringBehaviorManager(py::module &m)
 {
     py::class_< UFiringBehaviorManager,  UObject   >(m, "UFiringBehaviorManager")
         .def_readwrite("CurrentFiringPattern", &UFiringBehaviorManager::CurrentFiringPattern)

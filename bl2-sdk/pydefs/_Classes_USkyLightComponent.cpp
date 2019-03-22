@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USkyLightComponent(py::object m)
+void Export_pystes_USkyLightComponent(py::module &m)
 {
     py::class_< USkyLightComponent,  ULightComponent   >(m, "USkyLightComponent")
         .def_readwrite("LowerBrightness", &USkyLightComponent::LowerBrightness)

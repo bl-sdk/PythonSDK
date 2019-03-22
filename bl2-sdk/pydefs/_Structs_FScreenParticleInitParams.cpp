@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FScreenParticleInitParams(py::object m)
+void Export_pystes_FScreenParticleInitParams(py::module &m)
 {
     py::class_< FScreenParticleInitParams >(m, "FScreenParticleInitParams")
         .def_readwrite("Template", &FScreenParticleInitParams::Template)

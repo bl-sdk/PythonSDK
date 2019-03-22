@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAITreeData(py::object m)
+void Export_pystes_FAITreeData(py::module &m)
 {
     py::class_< FAITreeData >(m, "FAITreeData")
         .def_readwrite("AI", &FAITreeData::AI)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_GoToScriptedDestination(py::object m)
+void Export_pystes_UAction_GoToScriptedDestination(py::module &m)
 {
     py::class_< UAction_GoToScriptedDestination,  UWillowActionSequencePawn   >(m, "UAction_GoToScriptedDestination")
         .def_readwrite("FindLookAtTargetTime", &UAction_GoToScriptedDestination::FindLookAtTargetTime)

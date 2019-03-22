@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FHitRegionDamage(py::object m)
+void Export_pystes_FHitRegionDamage(py::module &m)
 {
     py::class_< FHitRegionDamage >(m, "FHitRegionDamage")
         .def_readwrite("BodyHitRegion", &FHitRegionDamage::BodyHitRegion)

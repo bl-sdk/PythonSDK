@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ATriggerStreamingLevel(py::object m)
+void Export_pystes_ATriggerStreamingLevel(py::module &m)
 {
     py::class_< ATriggerStreamingLevel,  ATrigger   >(m, "ATriggerStreamingLevel")
         .def_readwrite("Levels", &ATriggerStreamingLevel::Levels)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSpawnedDroppedLootData(py::object m)
+void Export_pystes_FSpawnedDroppedLootData(py::module &m)
 {
     py::class_< FSpawnedDroppedLootData >(m, "FSpawnedDroppedLootData")
         .def_readwrite("Inv", &FSpawnedDroppedLootData::Inv)

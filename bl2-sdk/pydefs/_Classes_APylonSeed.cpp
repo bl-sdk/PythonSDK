@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APylonSeed(py::object m)
+void Export_pystes_APylonSeed(py::module &m)
 {
     py::class_< APylonSeed,  AActor   >(m, "APylonSeed")
         .def_readwrite("VfTable_IInterface_NavMeshPathObject", &APylonSeed::VfTable_IInterface_NavMeshPathObject)

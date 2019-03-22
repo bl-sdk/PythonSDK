@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FEncounterTracker(py::object m)
+void Export_pystes_FEncounterTracker(py::module &m)
 {
     py::class_< FEncounterTracker >(m, "FEncounterTracker")
         .def_readwrite("LoadedEncounter", &FEncounterTracker::LoadedEncounter)

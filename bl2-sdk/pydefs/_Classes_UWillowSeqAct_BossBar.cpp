@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSeqAct_BossBar(py::object m)
+void Export_pystes_UWillowSeqAct_BossBar(py::module &m)
 {
     py::class_< UWillowSeqAct_BossBar,  USequenceAction   >(m, "UWillowSeqAct_BossBar")
         .def_readwrite("BossActor", &UWillowSeqAct_BossBar::BossActor)

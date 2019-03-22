@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFoliageComponent(py::object m)
+void Export_pystes_UFoliageComponent(py::module &m)
 {
     py::class_< UFoliageComponent,  UPrimitiveComponent   >(m, "UFoliageComponent")
         .def_readwrite("LitInstances", &UFoliageComponent::LitInstances)

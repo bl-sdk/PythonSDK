@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AGameReplicationInfo(py::object m)
+void Export_pystes_AGameReplicationInfo(py::module &m)
 {
     py::class_< AGameReplicationInfo,  AReplicationInfo   >(m, "AGameReplicationInfo")
         .def_readwrite("VfTable_IIResourcePoolProvider", &AGameReplicationInfo::VfTable_IIResourcePoolProvider)

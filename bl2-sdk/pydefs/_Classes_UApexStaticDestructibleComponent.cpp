@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UApexStaticDestructibleComponent(py::object m)
+void Export_pystes_UApexStaticDestructibleComponent(py::module &m)
 {
     py::class_< UApexStaticDestructibleComponent,  UApexComponentBase   >(m, "UApexStaticDestructibleComponent")
         .def_readwrite("SleepEnergyThreshold", &UApexStaticDestructibleComponent::SleepEnergyThreshold)

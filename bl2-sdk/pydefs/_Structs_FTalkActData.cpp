@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTalkActData(py::object m)
+void Export_pystes_FTalkActData(py::module &m)
 {
     py::class_< FTalkActData >(m, "FTalkActData")
         .def_readwrite("OutputDelay", &FTalkActData::OutputDelay)

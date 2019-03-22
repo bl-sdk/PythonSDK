@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDownloadableExpansionDefinition(py::object m)
+void Export_pystes_UDownloadableExpansionDefinition(py::module &m)
 {
     py::class_< UDownloadableExpansionDefinition,  UDownloadableContentDefinition   >(m, "UDownloadableExpansionDefinition")
         .def_readwrite("LevelTravelPairs", &UDownloadableExpansionDefinition::LevelTravelPairs)

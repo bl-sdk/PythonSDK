@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_SetMesh(py::object m)
+void Export_pystes_USeqAct_SetMesh(py::module &m)
 {
     py::class_< USeqAct_SetMesh,  USequenceAction   >(m, "USeqAct_SetMesh")
         .def_readwrite("NewSkeletalMesh", &USeqAct_SetMesh::NewSkeletalMesh)

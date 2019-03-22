@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpecialMove_FirstPerson(py::object m)
+void Export_pystes_USpecialMove_FirstPerson(py::module &m)
 {
     py::class_< USpecialMove_FirstPerson,  UGearboxAnimDefinition   >(m, "USpecialMove_FirstPerson")
         .def("StaticClass", &USpecialMove_FirstPerson::StaticClass, py::return_value_policy::reference)

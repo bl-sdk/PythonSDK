@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBeamDamageData(py::object m)
+void Export_pystes_FBeamDamageData(py::module &m)
 {
     py::class_< FBeamDamageData >(m, "FBeamDamageData")
         .def_readwrite("Momentum", &FBeamDamageData::Momentum)

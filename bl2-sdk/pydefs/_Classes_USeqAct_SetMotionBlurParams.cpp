@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_SetMotionBlurParams(py::object m)
+void Export_pystes_USeqAct_SetMotionBlurParams(py::module &m)
 {
     py::class_< USeqAct_SetMotionBlurParams,  USeqAct_Latent   >(m, "USeqAct_SetMotionBlurParams")
         .def_readwrite("MotionBlurAmount", &USeqAct_SetMotionBlurParams::MotionBlurAmount)

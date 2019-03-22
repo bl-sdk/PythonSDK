@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPostProcessEffect(py::object m)
+void Export_pystes_UPostProcessEffect(py::module &m)
 {
     py::class_< UPostProcessEffect,  UObject   >(m, "UPostProcessEffect")
         .def_readwrite("EffectName", &UPostProcessEffect::EffectName)

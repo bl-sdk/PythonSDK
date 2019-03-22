@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRuleInfo(py::object m)
+void Export_pystes_FRuleInfo(py::module &m)
 {
     py::class_< FRuleInfo >(m, "FRuleInfo")
         .def_readwrite("RuleName", &FRuleInfo::RuleName)

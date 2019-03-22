@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIPropertyDataProvider(py::object m)
+void Export_pystes_UUIPropertyDataProvider(py::module &m)
 {
     py::class_< UUIPropertyDataProvider,  UUIDataProvider   >(m, "UUIPropertyDataProvider")
         .def_readwrite("ComplexPropertyTypes", &UUIPropertyDataProvider::ComplexPropertyTypes)

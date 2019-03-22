@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionDepthBiasBlend(py::object m)
+void Export_pystes_UMaterialExpressionDepthBiasBlend(py::module &m)
 {
     py::class_< UMaterialExpressionDepthBiasBlend,  UMaterialExpressionTextureSample   >(m, "UMaterialExpressionDepthBiasBlend")
         .def_readwrite("BiasScale", &UMaterialExpressionDepthBiasBlend::BiasScale)

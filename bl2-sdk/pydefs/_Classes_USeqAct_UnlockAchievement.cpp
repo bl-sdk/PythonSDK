@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_UnlockAchievement(py::object m)
+void Export_pystes_USeqAct_UnlockAchievement(py::module &m)
 {
     py::class_< USeqAct_UnlockAchievement,  USequenceAction   >(m, "USeqAct_UnlockAchievement")
         .def_readwrite("AchievementId", &USeqAct_UnlockAchievement::AchievementId)

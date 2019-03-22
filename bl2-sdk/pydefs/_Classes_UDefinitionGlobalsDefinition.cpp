@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDefinitionGlobalsDefinition(py::object m)
+void Export_pystes_UDefinitionGlobalsDefinition(py::module &m)
 {
     py::class_< UDefinitionGlobalsDefinition,  UGBXDefinition   >(m, "UDefinitionGlobalsDefinition")
         .def_readwrite("DefaultColor", &UDefinitionGlobalsDefinition::DefaultColor)

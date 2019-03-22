@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBoneMirrorInfo(py::object m)
+void Export_pystes_FBoneMirrorInfo(py::module &m)
 {
     py::class_< FBoneMirrorInfo >(m, "FBoneMirrorInfo")
         .def_readwrite("SourceIndex", &FBoneMirrorInfo::SourceIndex)

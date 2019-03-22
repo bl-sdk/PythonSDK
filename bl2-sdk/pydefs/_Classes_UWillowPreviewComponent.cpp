@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowPreviewComponent(py::object m)
+void Export_pystes_UWillowPreviewComponent(py::module &m)
 {
     py::class_< UWillowPreviewComponent,  USkeletalMeshComponent   >(m, "UWillowPreviewComponent")
         .def_readwrite("CurrentPawn", &UWillowPreviewComponent::CurrentPawn)

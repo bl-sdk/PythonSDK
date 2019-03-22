@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FScreenParticleRecord(py::object m)
+void Export_pystes_FScreenParticleRecord(py::module &m)
 {
     py::class_< FScreenParticleRecord >(m, "FScreenParticleRecord")
         .def_readwrite("Tag", &FScreenParticleRecord::Tag)

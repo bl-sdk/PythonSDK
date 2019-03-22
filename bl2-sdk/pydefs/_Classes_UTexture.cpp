@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTexture(py::object m)
+void Export_pystes_UTexture(py::module &m)
 {
     py::class_< UTexture,  USurface   >(m, "UTexture")
         .def_readwrite("CompressionSettings", &UTexture::CompressionSettings)

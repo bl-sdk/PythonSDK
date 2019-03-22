@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDefendTargetData(py::object m)
+void Export_pystes_FDefendTargetData(py::module &m)
 {
     py::class_< FDefendTargetData >(m, "FDefendTargetData")
         .def_readwrite("Objective", &FDefendTargetData::Objective)

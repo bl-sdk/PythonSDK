@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPauseTimerData(py::object m)
+void Export_pystes_FPauseTimerData(py::module &m)
 {
     py::class_< FPauseTimerData >(m, "FPauseTimerData")
         .def_readwrite("FuncName", &FPauseTimerData::FuncName)

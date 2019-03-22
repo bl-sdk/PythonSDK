@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UISpecialOcclusionAccumulator(py::object m)
+void Export_pystes_UISpecialOcclusionAccumulator(py::module &m)
 {
     py::class_< UISpecialOcclusionAccumulator,  UInterface   >(m, "UISpecialOcclusionAccumulator")
         .def("StaticClass", &UISpecialOcclusionAccumulator::StaticClass, py::return_value_policy::reference)

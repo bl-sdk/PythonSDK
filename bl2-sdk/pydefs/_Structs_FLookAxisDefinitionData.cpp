@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLookAxisDefinitionData(py::object m)
+void Export_pystes_FLookAxisDefinitionData(py::module &m)
 {
     py::class_< FLookAxisDefinitionData >(m, "FLookAxisDefinitionData")
         .def_readwrite("Horizontal", &FLookAxisDefinitionData::Horizontal)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGearboxDialogReplicatedData(py::object m)
+void Export_pystes_FGearboxDialogReplicatedData(py::module &m)
 {
     py::class_< FGearboxDialogReplicatedData >(m, "FGearboxDialogReplicatedData")
         .def_readwrite("Pitch", &FGearboxDialogReplicatedData::Pitch)

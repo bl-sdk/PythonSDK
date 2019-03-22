@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMissionPlaythroughSaveGameData(py::object m)
+void Export_pystes_FMissionPlaythroughSaveGameData(py::module &m)
 {
     py::class_< FMissionPlaythroughSaveGameData >(m, "FMissionPlaythroughSaveGameData")
         .def_readwrite("PlayThroughNumber", &FMissionPlaythroughSaveGameData::PlayThroughNumber)

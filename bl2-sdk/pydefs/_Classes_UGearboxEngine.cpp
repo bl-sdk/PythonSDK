@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxEngine(py::object m)
+void Export_pystes_UGearboxEngine(py::module &m)
 {
     py::class_< UGearboxEngine,  UGameEngine   >(m, "UGearboxEngine")
         .def_readwrite("CurrentUserID", &UGearboxEngine::CurrentUserID)

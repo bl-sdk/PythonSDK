@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APrefabInstance(py::object m)
+void Export_pystes_APrefabInstance(py::module &m)
 {
     py::class_< APrefabInstance,  AActor   >(m, "APrefabInstance")
         .def_readwrite("TemplatePrefab", &APrefabInstance::TemplatePrefab)

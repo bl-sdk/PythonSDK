@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInputRemappingDefinition(py::object m)
+void Export_pystes_UInputRemappingDefinition(py::module &m)
 {
     py::class_< UInputRemappingDefinition,  UGBXDefinition   >(m, "UInputRemappingDefinition")
         .def_readwrite("PresetTag", &UInputRemappingDefinition::PresetTag)

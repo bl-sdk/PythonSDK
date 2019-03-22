@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionClamp(py::object m)
+void Export_pystes_UMaterialExpressionClamp(py::module &m)
 {
     py::class_< UMaterialExpressionClamp,  UMaterialExpression   >(m, "UMaterialExpressionClamp")
         .def_readwrite("Input", &UMaterialExpressionClamp::Input)

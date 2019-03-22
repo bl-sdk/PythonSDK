@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRecentlyResistedAttackData(py::object m)
+void Export_pystes_FRecentlyResistedAttackData(py::module &m)
 {
     py::class_< FRecentlyResistedAttackData >(m, "FRecentlyResistedAttackData")
         .def_readwrite("DamagedActor", &FRecentlyResistedAttackData::DamagedActor)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxGFxMovie(py::object m)
+void Export_pystes_UGearboxGFxMovie(py::module &m)
 {
     py::class_< UGearboxGFxMovie,  UGFxMovie   >(m, "UGearboxGFxMovie")
         .def_readwrite("InteractionOverrideSounds", &UGearboxGFxMovie::InteractionOverrideSounds)

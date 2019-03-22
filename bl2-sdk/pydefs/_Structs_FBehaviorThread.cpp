@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBehaviorThread(py::object m)
+void Export_pystes_FBehaviorThread(py::module &m)
 {
     py::class_< FBehaviorThread >(m, "FBehaviorThread")
         .def_readwrite("ThreadState", &FBehaviorThread::ThreadState)

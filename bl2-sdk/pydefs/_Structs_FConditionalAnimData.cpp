@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FConditionalAnimData(py::object m)
+void Export_pystes_FConditionalAnimData(py::module &m)
 {
     py::class_< FConditionalAnimData >(m, "FConditionalAnimData")
         .def_readwrite("Expression", &FConditionalAnimData::Expression)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqVar_RandomInt(py::object m)
+void Export_pystes_USeqVar_RandomInt(py::module &m)
 {
     py::class_< USeqVar_RandomInt,  USequenceVariable   >(m, "USeqVar_RandomInt")
         .def_readwrite("Min", &USeqVar_RandomInt::Min)

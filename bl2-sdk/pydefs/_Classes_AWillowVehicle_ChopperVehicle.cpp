@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowVehicle_ChopperVehicle(py::object m)
+void Export_pystes_AWillowVehicle_ChopperVehicle(py::module &m)
 {
     py::class_< AWillowVehicle_ChopperVehicle,  AWillowVehicle   >(m, "AWillowVehicle_ChopperVehicle")
         .def_readwrite("GroundEffectIndices", &AWillowVehicle_ChopperVehicle::GroundEffectIndices)

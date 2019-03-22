@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FWeaponAccessorySetup(py::object m)
+void Export_pystes_FWeaponAccessorySetup(py::module &m)
 {
     py::class_< FWeaponAccessorySetup >(m, "FWeaponAccessorySetup")
         .def_readwrite("WeaponArchetypeName", &FWeaponAccessorySetup::WeaponArchetypeName)

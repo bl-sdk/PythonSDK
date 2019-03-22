@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineSubsystem(py::object m)
+void Export_pystes_UOnlineSubsystem(py::module &m)
 {
     py::class_< UOnlineSubsystem,  UObject   >(m, "UOnlineSubsystem")
         .def_readwrite("VfTable_FTickableObject", &UOnlineSubsystem::VfTable_FTickableObject)

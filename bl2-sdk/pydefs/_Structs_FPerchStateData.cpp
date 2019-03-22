@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPerchStateData(py::object m)
+void Export_pystes_FPerchStateData(py::module &m)
 {
     py::class_< FPerchStateData >(m, "FPerchStateData")
         .def_readwrite("AttachmentName", &FPerchStateData::AttachmentName)

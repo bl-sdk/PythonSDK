@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UChopperVehicleHandlingDefinition(py::object m)
+void Export_pystes_UChopperVehicleHandlingDefinition(py::module &m)
 {
     py::class_< UChopperVehicleHandlingDefinition,  UVehicleHandlingDefinition   >(m, "UChopperVehicleHandlingDefinition")
         .def_readwrite("MaxThrustForce", &UChopperVehicleHandlingDefinition::MaxThrustForce)

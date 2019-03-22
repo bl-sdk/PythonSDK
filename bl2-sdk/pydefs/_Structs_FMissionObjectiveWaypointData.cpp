@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMissionObjectiveWaypointData(py::object m)
+void Export_pystes_FMissionObjectiveWaypointData(py::module &m)
 {
     py::class_< FMissionObjectiveWaypointData >(m, "FMissionObjectiveWaypointData")
         .def_readwrite("LinkedObjective", &FMissionObjectiveWaypointData::LinkedObjective)

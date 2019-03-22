@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIMaterialFadeBehavior(py::object m)
+void Export_pystes_UIMaterialFadeBehavior(py::module &m)
 {
     py::class_< UIMaterialFadeBehavior,  UInterface   >(m, "UIMaterialFadeBehavior")
         .def("StaticClass", &UIMaterialFadeBehavior::StaticClass, py::return_value_policy::reference)

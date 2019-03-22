@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDistributionFloatUniform(py::object m)
+void Export_pystes_UDistributionFloatUniform(py::module &m)
 {
     py::class_< UDistributionFloatUniform,  UDistributionFloat   >(m, "UDistributionFloatUniform")
         .def_readwrite("Min", &UDistributionFloatUniform::Min)

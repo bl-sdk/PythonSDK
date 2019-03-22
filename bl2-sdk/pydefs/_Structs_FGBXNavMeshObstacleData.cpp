@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGBXNavMeshObstacleData(py::object m)
+void Export_pystes_FGBXNavMeshObstacleData(py::module &m)
 {
     py::class_< FGBXNavMeshObstacleData >(m, "FGBXNavMeshObstacleData")
         .def_readwrite("Obstacle", &FGBXNavMeshObstacleData::Obstacle)

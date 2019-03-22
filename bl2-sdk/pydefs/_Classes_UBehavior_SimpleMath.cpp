@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SimpleMath(py::object m)
+void Export_pystes_UBehavior_SimpleMath(py::module &m)
 {
     py::class_< UBehavior_SimpleMath,  UBehaviorBase   >(m, "UBehavior_SimpleMath")
         .def_readwrite("A", &UBehavior_SimpleMath::A)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UApexComponentBase(py::object m)
+void Export_pystes_UApexComponentBase(py::module &m)
 {
     py::class_< UApexComponentBase,  UMeshComponent   >(m, "UApexComponentBase")
         .def_readwrite("ComponentBaseResources", &UApexComponentBase::ComponentBaseResources)

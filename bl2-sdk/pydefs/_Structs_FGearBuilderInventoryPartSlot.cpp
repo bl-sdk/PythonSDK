@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGearBuilderInventoryPartSlot(py::object m)
+void Export_pystes_FGearBuilderInventoryPartSlot(py::module &m)
 {
     py::class_< FGearBuilderInventoryPartSlot >(m, "FGearBuilderInventoryPartSlot")
         .def_readwrite("PartName", &FGearBuilderInventoryPartSlot::PartName)

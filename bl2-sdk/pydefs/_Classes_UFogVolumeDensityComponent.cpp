@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFogVolumeDensityComponent(py::object m)
+void Export_pystes_UFogVolumeDensityComponent(py::module &m)
 {
     py::class_< UFogVolumeDensityComponent,  UActorComponent   >(m, "UFogVolumeDensityComponent")
         .def_readwrite("FogMaterial", &UFogVolumeDensityComponent::FogMaterial)

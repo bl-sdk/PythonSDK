@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDebugConsoleCommand(py::object m)
+void Export_pystes_FDebugConsoleCommand(py::module &m)
 {
     py::class_< FDebugConsoleCommand >(m, "FDebugConsoleCommand")
         .def_readwrite("MenuName", &FDebugConsoleCommand::MenuName)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AHUD(py::object m)
+void Export_pystes_AHUD(py::module &m)
 {
     py::class_< AHUD,  AActor   >(m, "AHUD")
         .def_readwrite("WhiteColor", &AHUD::WhiteColor)

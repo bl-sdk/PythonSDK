@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_ActorFactory(py::object m)
+void Export_pystes_USeqAct_ActorFactory(py::module &m)
 {
     py::class_< USeqAct_ActorFactory,  USeqAct_Latent   >(m, "USeqAct_ActorFactory")
         .def_readwrite("Factory", &USeqAct_ActorFactory::Factory)

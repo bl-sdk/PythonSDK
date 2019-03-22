@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxAccountActions(py::object m)
+void Export_pystes_UGearboxAccountActions(py::module &m)
 {
     py::class_< UGearboxAccountActions,  UObject   >(m, "UGearboxAccountActions")
         .def_readwrite("CurrentConsumeCount", &UGearboxAccountActions::CurrentConsumeCount)

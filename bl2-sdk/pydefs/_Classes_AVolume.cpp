@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AVolume(py::object m)
+void Export_pystes_AVolume(py::module &m)
 {
     py::class_< AVolume,  AActor   >(m, "AVolume")
         .def_readwrite("AssociatedActors", &AVolume::AssociatedActors)

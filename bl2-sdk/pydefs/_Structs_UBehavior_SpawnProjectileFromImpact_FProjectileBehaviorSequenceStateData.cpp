@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SpawnProjectileFromImpact_FProjectileBehaviorSequenceStateData(py::object m)
+void Export_pystes_UBehavior_SpawnProjectileFromImpact_FProjectileBehaviorSequenceStateData(py::module &m)
 {
     py::class_< UBehavior_SpawnProjectileFromImpact_FProjectileBehaviorSequenceStateData >(m, "UBehavior_SpawnProjectileFromImpact_FProjectileBehaviorSequenceStateData")
         .def_readwrite("Action", &UBehavior_SpawnProjectileFromImpact_FProjectileBehaviorSequenceStateData::Action)

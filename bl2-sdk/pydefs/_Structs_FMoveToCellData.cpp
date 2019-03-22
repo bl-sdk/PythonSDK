@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMoveToCellData(py::object m)
+void Export_pystes_FMoveToCellData(py::module &m)
 {
     py::class_< FMoveToCellData >(m, "FMoveToCellData")
         .def_readwrite("IndexInCellsList", &FMoveToCellData::IndexInCellsList)

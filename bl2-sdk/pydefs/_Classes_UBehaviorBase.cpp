@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehaviorBase(py::object m)
+void Export_pystes_UBehaviorBase(py::module &m)
 {
     py::class_< UBehaviorBase,  UObject   >(m, "UBehaviorBase")
         .def_readwrite("Context", &UBehaviorBase::Context)

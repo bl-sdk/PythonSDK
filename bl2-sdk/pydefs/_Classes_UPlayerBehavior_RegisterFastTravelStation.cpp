@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerBehavior_RegisterFastTravelStation(py::object m)
+void Export_pystes_UPlayerBehavior_RegisterFastTravelStation(py::module &m)
 {
     py::class_< UPlayerBehavior_RegisterFastTravelStation,  UPlayerBehaviorBase   >(m, "UPlayerBehavior_RegisterFastTravelStation")
         .def("StaticClass", &UPlayerBehavior_RegisterFastTravelStation::StaticClass, py::return_value_policy::reference)

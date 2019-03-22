@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UEdCoordSystem(py::object m)
+void Export_pystes_UEdCoordSystem(py::module &m)
 {
     py::class_< UEdCoordSystem,  UObject   >(m, "UEdCoordSystem")
         .def_readwrite("M", &UEdCoordSystem::M)

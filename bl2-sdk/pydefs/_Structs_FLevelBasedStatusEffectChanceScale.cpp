@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLevelBasedStatusEffectChanceScale(py::object m)
+void Export_pystes_FLevelBasedStatusEffectChanceScale(py::module &m)
 {
     py::class_< FLevelBasedStatusEffectChanceScale >(m, "FLevelBasedStatusEffectChanceScale")
         .def_readwrite("LevelDifference", &FLevelBasedStatusEffectChanceScale::LevelDifference)

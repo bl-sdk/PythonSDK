@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBlackMarketDefinition(py::object m)
+void Export_pystes_UBlackMarketDefinition(py::module &m)
 {
     py::class_< UBlackMarketDefinition,  UGBXDefinition   >(m, "UBlackMarketDefinition")
         .def_readwrite("BlackMarketName", &UBlackMarketDefinition::BlackMarketName)

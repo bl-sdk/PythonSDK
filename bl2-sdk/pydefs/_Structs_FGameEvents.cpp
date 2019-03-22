@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGameEvents(py::object m)
+void Export_pystes_FGameEvents(py::module &m)
 {
     py::class_< FGameEvents >(m, "FGameEvents")
         .def_readwrite("Events", &FGameEvents::Events)

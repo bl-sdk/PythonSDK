@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCellsNavigator(py::object m)
+void Export_pystes_UCellsNavigator(py::module &m)
 {
     py::class_< UCellsNavigator,  UObject   >(m, "UCellsNavigator")
         .def_readwrite("Cells", &UCellsNavigator::Cells)

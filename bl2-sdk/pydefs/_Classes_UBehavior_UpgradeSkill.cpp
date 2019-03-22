@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_UpgradeSkill(py::object m)
+void Export_pystes_UBehavior_UpgradeSkill(py::module &m)
 {
     py::class_< UBehavior_UpgradeSkill,  UBehaviorBase   >(m, "UBehavior_UpgradeSkill")
         .def_readwrite("SkillToUpgrade", &UBehavior_UpgradeSkill::SkillToUpgrade)

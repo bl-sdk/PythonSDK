@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UResourcePoolDefinition(py::object m)
+void Export_pystes_UResourcePoolDefinition(py::module &m)
 {
     py::class_< UResourcePoolDefinition,  UGBXDefinition   >(m, "UResourcePoolDefinition")
         .def_readwrite("Resource", &UResourcePoolDefinition::Resource)

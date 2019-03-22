@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNodeBlendByProperty(py::object m)
+void Export_pystes_UAnimNodeBlendByProperty(py::module &m)
 {
     py::class_< UAnimNodeBlendByProperty,  UAnimNodeBlendList   >(m, "UAnimNodeBlendByProperty")
         .def_readwrite("PropertyName", &UAnimNodeBlendByProperty::PropertyName)

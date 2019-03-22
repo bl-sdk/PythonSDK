@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UForcedReachSpec(py::object m)
+void Export_pystes_UForcedReachSpec(py::module &m)
 {
     py::class_< UForcedReachSpec,  UReachSpec   >(m, "UForcedReachSpec")
         .def("StaticClass", &UForcedReachSpec::StaticClass, py::return_value_policy::reference)

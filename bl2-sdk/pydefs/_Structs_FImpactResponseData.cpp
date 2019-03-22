@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FImpactResponseData(py::object m)
+void Export_pystes_FImpactResponseData(py::module &m)
 {
     py::class_< FImpactResponseData >(m, "FImpactResponseData")
         .def_readwrite("ImpactType", &FImpactResponseData::ImpactType)

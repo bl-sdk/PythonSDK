@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNotify_Rumble(py::object m)
+void Export_pystes_UAnimNotify_Rumble(py::module &m)
 {
     py::class_< UAnimNotify_Rumble,  UAnimNotify   >(m, "UAnimNotify_Rumble")
         .def_readwrite("PredefinedWaveForm", &UAnimNotify_Rumble::PredefinedWaveForm)

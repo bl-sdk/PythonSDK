@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowShield(py::object m)
+void Export_pystes_AWillowShield(py::module &m)
 {
     py::class_< AWillowShield,  AWillowEquipAbleItem   >(m, "AWillowShield")
         .def_readwrite("PercentChanceToAbsorbAmmo", &AWillowShield::PercentChanceToAbsorbAmmo)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SimpleAnimPlay(py::object m)
+void Export_pystes_UBehavior_SimpleAnimPlay(py::module &m)
 {
     py::class_< UBehavior_SimpleAnimPlay,  UBehaviorBase   >(m, "UBehavior_SimpleAnimPlay")
         .def_readwrite("Tree", &UBehavior_SimpleAnimPlay::Tree)

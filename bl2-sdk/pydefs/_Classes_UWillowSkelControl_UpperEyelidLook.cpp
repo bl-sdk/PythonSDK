@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSkelControl_UpperEyelidLook(py::object m)
+void Export_pystes_UWillowSkelControl_UpperEyelidLook(py::module &m)
 {
     py::class_< UWillowSkelControl_UpperEyelidLook,  USkelControlSingleBone   >(m, "UWillowSkelControl_UpperEyelidLook")
         .def_readwrite("LookAtOffset", &UWillowSkelControl_UpperEyelidLook::LookAtOffset)

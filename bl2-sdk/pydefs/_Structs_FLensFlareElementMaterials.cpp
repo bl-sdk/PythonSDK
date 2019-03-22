@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLensFlareElementMaterials(py::object m)
+void Export_pystes_FLensFlareElementMaterials(py::module &m)
 {
     py::class_< FLensFlareElementMaterials >(m, "FLensFlareElementMaterials")
         .def_readwrite("ElementMaterials", &FLensFlareElementMaterials::ElementMaterials)

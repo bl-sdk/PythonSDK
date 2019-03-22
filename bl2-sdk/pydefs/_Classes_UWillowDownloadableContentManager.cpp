@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowDownloadableContentManager(py::object m)
+void Export_pystes_UWillowDownloadableContentManager(py::module &m)
 {
     py::class_< UWillowDownloadableContentManager,  UDownloadableContentManager   >(m, "UWillowDownloadableContentManager")
         .def_readwrite("ContentPackages", &UWillowDownloadableContentManager::ContentPackages)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UEridiumValueGFxObject(py::object m)
+void Export_pystes_UEridiumValueGFxObject(py::module &m)
 {
     py::class_< UEridiumValueGFxObject,  UValueGFxObject   >(m, "UEridiumValueGFxObject")
         .def_readwrite("CurrencyFrames", &UEridiumValueGFxObject::CurrencyFrames)

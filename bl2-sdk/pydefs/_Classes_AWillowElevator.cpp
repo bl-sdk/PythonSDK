@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowElevator(py::object m)
+void Export_pystes_AWillowElevator(py::module &m)
 {
     py::class_< AWillowElevator,  AInterpActor   >(m, "AWillowElevator")
         .def_readwrite("FloorIndex", &AWillowElevator::FloorIndex)

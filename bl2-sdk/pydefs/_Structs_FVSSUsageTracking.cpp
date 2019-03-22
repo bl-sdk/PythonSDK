@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FVSSUsageTracking(py::object m)
+void Export_pystes_FVSSUsageTracking(py::module &m)
 {
     py::class_< FVSSUsageTracking >(m, "FVSSUsageTracking")
         .def_readwrite("TheTerminal", &FVSSUsageTracking::TheTerminal)

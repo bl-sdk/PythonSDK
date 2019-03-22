@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGestaltSocketRemapEntry(py::object m)
+void Export_pystes_FGestaltSocketRemapEntry(py::module &m)
 {
     py::class_< FGestaltSocketRemapEntry >(m, "FGestaltSocketRemapEntry")
         .def_readwrite("SkeletalMeshFragment", &FGestaltSocketRemapEntry::SkeletalMeshFragment)

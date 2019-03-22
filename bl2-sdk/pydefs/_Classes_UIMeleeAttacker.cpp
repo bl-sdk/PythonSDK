@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIMeleeAttacker(py::object m)
+void Export_pystes_UIMeleeAttacker(py::module &m)
 {
     py::class_< UIMeleeAttacker,  UInterface   >(m, "UIMeleeAttacker")
         .def("StaticClass", &UIMeleeAttacker::StaticClass, py::return_value_policy::reference)

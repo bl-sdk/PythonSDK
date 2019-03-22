@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGlobals(py::object m)
+void Export_pystes_UWillowGlobals(py::module &m)
 {
     py::class_< UWillowGlobals,  UGearboxGlobals   >(m, "UWillowGlobals")
         .def_readwrite("PlayerClassIdentifiers", &UWillowGlobals::PlayerClassIdentifiers)

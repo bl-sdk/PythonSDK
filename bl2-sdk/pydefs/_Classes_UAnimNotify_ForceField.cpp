@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNotify_ForceField(py::object m)
+void Export_pystes_UAnimNotify_ForceField(py::module &m)
 {
     py::class_< UAnimNotify_ForceField,  UAnimNotify   >(m, "UAnimNotify_ForceField")
         .def_readwrite("ForceFieldComponent", &UAnimNotify_ForceField::ForceFieldComponent)

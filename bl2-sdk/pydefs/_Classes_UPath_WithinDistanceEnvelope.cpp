@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPath_WithinDistanceEnvelope(py::object m)
+void Export_pystes_UPath_WithinDistanceEnvelope(py::module &m)
 {
     py::class_< UPath_WithinDistanceEnvelope,  UPathConstraint   >(m, "UPath_WithinDistanceEnvelope")
         .def_readwrite("MaxDistance", &UPath_WithinDistanceEnvelope::MaxDistance)

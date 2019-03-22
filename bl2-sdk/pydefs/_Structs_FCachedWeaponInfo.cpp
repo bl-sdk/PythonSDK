@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCachedWeaponInfo(py::object m)
+void Export_pystes_FCachedWeaponInfo(py::module &m)
 {
     py::class_< FCachedWeaponInfo >(m, "FCachedWeaponInfo")
         .def_readwrite("CachedClipSize", &FCachedWeaponInfo::CachedClipSize)

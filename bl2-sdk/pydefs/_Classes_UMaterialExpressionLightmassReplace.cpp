@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionLightmassReplace(py::object m)
+void Export_pystes_UMaterialExpressionLightmassReplace(py::module &m)
 {
     py::class_< UMaterialExpressionLightmassReplace,  UMaterialExpression   >(m, "UMaterialExpressionLightmassReplace")
         .def_readwrite("Realtime", &UMaterialExpressionLightmassReplace::Realtime)

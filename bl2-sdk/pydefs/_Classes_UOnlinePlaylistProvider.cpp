@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlinePlaylistProvider(py::object m)
+void Export_pystes_UOnlinePlaylistProvider(py::module &m)
 {
     py::class_< UOnlinePlaylistProvider,  UUIResourceDataProvider   >(m, "UOnlinePlaylistProvider")
         .def_readwrite("PlaylistId", &UOnlinePlaylistProvider::PlaylistId)

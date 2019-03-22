@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowDialogGlobalsDefinition(py::object m)
+void Export_pystes_UWillowDialogGlobalsDefinition(py::module &m)
 {
     py::class_< UWillowDialogGlobalsDefinition,  UGearboxDialogGlobalsDefinition   >(m, "UWillowDialogGlobalsDefinition")
         .def_readwrite("DefaultTemplateGroup", &UWillowDialogGlobalsDefinition::DefaultTemplateGroup)

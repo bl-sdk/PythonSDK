@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpeechRecognition(py::object m)
+void Export_pystes_USpeechRecognition(py::module &m)
 {
     py::class_< USpeechRecognition,  UObject   >(m, "USpeechRecognition")
         .def_readwrite("Language", &USpeechRecognition::Language)

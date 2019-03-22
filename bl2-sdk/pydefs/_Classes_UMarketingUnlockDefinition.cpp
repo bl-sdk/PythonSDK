@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMarketingUnlockDefinition(py::object m)
+void Export_pystes_UMarketingUnlockDefinition(py::module &m)
 {
     py::class_< UMarketingUnlockDefinition,  UGBXDefinition   >(m, "UMarketingUnlockDefinition")
         .def_readwrite("UnlockCode", &UMarketingUnlockDefinition::UnlockCode)

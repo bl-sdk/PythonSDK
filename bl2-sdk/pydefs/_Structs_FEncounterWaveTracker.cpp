@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FEncounterWaveTracker(py::object m)
+void Export_pystes_FEncounterWaveTracker(py::module &m)
 {
     py::class_< FEncounterWaveTracker >(m, "FEncounterWaveTracker")
         .def_readwrite("nWaveIdx", &FEncounterWaveTracker::nWaveIdx)

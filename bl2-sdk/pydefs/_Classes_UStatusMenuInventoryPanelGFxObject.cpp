@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UStatusMenuInventoryPanelGFxObject(py::object m)
+void Export_pystes_UStatusMenuInventoryPanelGFxObject(py::module &m)
 {
     py::class_< UStatusMenuInventoryPanelGFxObject,  UBaseTopLevelPanelGFxObject   >(m, "UStatusMenuInventoryPanelGFxObject")
         .def_readwrite("EquippedPanel", &UStatusMenuInventoryPanelGFxObject::EquippedPanel)

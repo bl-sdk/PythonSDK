@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_AIFollow(py::object m)
+void Export_pystes_UBehavior_AIFollow(py::module &m)
 {
     py::class_< UBehavior_AIFollow,  UBehaviorBase   >(m, "UBehavior_AIFollow")
         .def_readwrite("ToFollow", &UBehavior_AIFollow::ToFollow)

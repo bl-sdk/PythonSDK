@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_RadarIcon(py::object m)
+void Export_pystes_UBehavior_RadarIcon(py::module &m)
 {
     py::class_< UBehavior_RadarIcon,  UBehaviorBase   >(m, "UBehavior_RadarIcon")
         .def_readwrite("IconType", &UBehavior_RadarIcon::IconType)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_CompareFloat(py::object m)
+void Export_pystes_UBehavior_CompareFloat(py::module &m)
 {
     py::class_< UBehavior_CompareFloat,  UBehaviorBase   >(m, "UBehavior_CompareFloat")
         .def_readwrite("ValueA", &UBehavior_CompareFloat::ValueA)

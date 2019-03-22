@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxDialogAct_Talk(py::object m)
+void Export_pystes_UGearboxDialogAct_Talk(py::module &m)
 {
     py::class_< UGearboxDialogAct_Talk,  UGearboxDialogNode   >(m, "UGearboxDialogAct_Talk")
         .def_readwrite("OutputDelay", &UGearboxDialogAct_Talk::OutputDelay)

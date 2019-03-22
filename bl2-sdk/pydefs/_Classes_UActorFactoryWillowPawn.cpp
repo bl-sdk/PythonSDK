@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActorFactoryWillowPawn(py::object m)
+void Export_pystes_UActorFactoryWillowPawn(py::module &m)
 {
     py::class_< UActorFactoryWillowPawn,  UActorFactory   >(m, "UActorFactoryWillowPawn")
         .def_readwrite("PawnArchetype", &UActorFactoryWillowPawn::PawnArchetype)

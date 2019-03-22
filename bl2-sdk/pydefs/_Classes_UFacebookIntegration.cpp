@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFacebookIntegration(py::object m)
+void Export_pystes_UFacebookIntegration(py::module &m)
 {
     py::class_< UFacebookIntegration,  UObject   >(m, "UFacebookIntegration")
         .def_readwrite("AppID", &UFacebookIntegration::AppID)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_ControlGameMovie(py::object m)
+void Export_pystes_USeqAct_ControlGameMovie(py::module &m)
 {
     py::class_< USeqAct_ControlGameMovie,  USeqAct_Latent   >(m, "USeqAct_ControlGameMovie")
         .def_readwrite("MovieName", &USeqAct_ControlGameMovie::MovieName)

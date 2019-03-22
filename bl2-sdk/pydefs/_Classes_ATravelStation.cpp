@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ATravelStation(py::object m)
+void Export_pystes_ATravelStation(py::module &m)
 {
     py::class_< ATravelStation,  AWillowInteractiveObject   >(m, "ATravelStation")
         .def_readwrite("VfTable_IIMission", &ATravelStation::VfTable_IIMission)

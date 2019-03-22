@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCustomizationSizeMapping(py::object m)
+void Export_pystes_FCustomizationSizeMapping(py::module &m)
 {
     py::class_< FCustomizationSizeMapping >(m, "FCustomizationSizeMapping")
         .def_readwrite("ProductID", &FCustomizationSizeMapping::ProductID)

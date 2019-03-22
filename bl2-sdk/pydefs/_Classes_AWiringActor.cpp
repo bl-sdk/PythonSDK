@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWiringActor(py::object m)
+void Export_pystes_AWiringActor(py::module &m)
 {
     py::class_< AWiringActor,  AStaticMeshActor   >(m, "AWiringActor")
         .def("StaticClass", &AWiringActor::StaticClass, py::return_value_policy::reference)

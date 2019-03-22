@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPendingSubtitleInfo(py::object m)
+void Export_pystes_FPendingSubtitleInfo(py::module &m)
 {
     py::class_< FPendingSubtitleInfo >(m, "FPendingSubtitleInfo")
         .def_readwrite("PendingSubtitlePlayingInfoPtr", &FPendingSubtitleInfo::PendingSubtitlePlayingInfoPtr)

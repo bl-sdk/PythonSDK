@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APopulationEncounter(py::object m)
+void Export_pystes_APopulationEncounter(py::module &m)
 {
     py::class_< APopulationEncounter,  AInfo   >(m, "APopulationEncounter")
         .def_readwrite("EncounterPopulationDef", &APopulationEncounter::EncounterPopulationDef)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UStaggerDefinition(py::object m)
+void Export_pystes_UStaggerDefinition(py::module &m)
 {
     py::class_< UStaggerDefinition,  UGBXDefinition   >(m, "UStaggerDefinition")
         .def_readwrite("StaggeredPhysicalMaterial", &UStaggerDefinition::StaggeredPhysicalMaterial)

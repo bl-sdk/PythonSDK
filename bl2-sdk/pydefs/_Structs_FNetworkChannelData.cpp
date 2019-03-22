@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FNetworkChannelData(py::object m)
+void Export_pystes_FNetworkChannelData(py::module &m)
 {
     py::class_< FNetworkChannelData >(m, "FNetworkChannelData")
         .def_readwrite("ChannelName", &FNetworkChannelData::ChannelName)

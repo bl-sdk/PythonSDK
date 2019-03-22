@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowTradeManager(py::object m)
+void Export_pystes_AWillowTradeManager(py::module &m)
 {
     py::class_< AWillowTradeManager,  AActor   >(m, "AWillowTradeManager")
         .def_readwrite("Status", &AWillowTradeManager::Status)

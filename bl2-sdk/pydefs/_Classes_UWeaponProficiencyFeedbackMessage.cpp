@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWeaponProficiencyFeedbackMessage(py::object m)
+void Export_pystes_UWeaponProficiencyFeedbackMessage(py::module &m)
 {
     py::class_< UWeaponProficiencyFeedbackMessage,  ULocalMessage   >(m, "UWeaponProficiencyFeedbackMessage")
         .def_readwrite("IsNowLevel", &UWeaponProficiencyFeedbackMessage::IsNowLevel)

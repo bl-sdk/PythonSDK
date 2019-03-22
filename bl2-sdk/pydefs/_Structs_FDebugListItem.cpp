@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDebugListItem(py::object m)
+void Export_pystes_FDebugListItem(py::module &m)
 {
     py::class_< FDebugListItem >(m, "FDebugListItem")
         .def_readwrite("DisplayType", &FDebugListItem::DisplayType)

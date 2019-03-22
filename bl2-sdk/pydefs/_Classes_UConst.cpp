@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UConst(py::object m)
+void Export_pystes_UConst(py::module &m)
 {
     py::class_< UConst,  UField   >(m, "UConst")
         .def("StaticClass", &UConst::StaticClass, py::return_value_policy::reference)

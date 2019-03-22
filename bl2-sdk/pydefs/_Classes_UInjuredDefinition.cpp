@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInjuredDefinition(py::object m)
+void Export_pystes_UInjuredDefinition(py::module &m)
 {
     py::class_< UInjuredDefinition,  UGBXDefinition   >(m, "UInjuredDefinition")
         .def_readwrite("InjuredInteractionDefinition", &UInjuredDefinition::InjuredInteractionDefinition)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActorFactoryClone(py::object m)
+void Export_pystes_UActorFactoryClone(py::module &m)
 {
     py::class_< UActorFactoryClone,  UActorFactory   >(m, "UActorFactoryClone")
         .def_readwrite("CloneArchetype", &UActorFactoryClone::CloneArchetype)

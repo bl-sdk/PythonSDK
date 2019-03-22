@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionTextureSampleParameter(py::object m)
+void Export_pystes_UMaterialExpressionTextureSampleParameter(py::module &m)
 {
     py::class_< UMaterialExpressionTextureSampleParameter,  UMaterialExpression   >(m, "UMaterialExpressionTextureSampleParameter")
         .def_readwrite("ParameterName", &UMaterialExpressionTextureSampleParameter::ParameterName)

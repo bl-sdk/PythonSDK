@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UChallengeFeedbackMessage(py::object m)
+void Export_pystes_UChallengeFeedbackMessage(py::module &m)
 {
     py::class_< UChallengeFeedbackMessage,  ULocalMessage   >(m, "UChallengeFeedbackMessage")
         .def_readwrite("ChallengeCompleted", &UChallengeFeedbackMessage::ChallengeCompleted)

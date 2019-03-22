@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULevelTransitionWaypointComponent(py::object m)
+void Export_pystes_ULevelTransitionWaypointComponent(py::module &m)
 {
     py::class_< ULevelTransitionWaypointComponent,  UWaypointComponent   >(m, "ULevelTransitionWaypointComponent")
         .def_readwrite("Mission", &ULevelTransitionWaypointComponent::Mission)

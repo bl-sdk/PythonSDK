@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FNewsCacheEntry(py::object m)
+void Export_pystes_FNewsCacheEntry(py::module &m)
 {
     py::class_< FNewsCacheEntry >(m, "FNewsCacheEntry")
         .def_readwrite("NewsUrl", &FNewsCacheEntry::NewsUrl)

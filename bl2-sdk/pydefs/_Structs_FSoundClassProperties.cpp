@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSoundClassProperties(py::object m)
+void Export_pystes_FSoundClassProperties(py::module &m)
 {
     py::class_< FSoundClassProperties >(m, "FSoundClassProperties")
         .def_readwrite("Volume", &FSoundClassProperties::Volume)

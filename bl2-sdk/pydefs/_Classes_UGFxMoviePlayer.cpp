@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGFxMoviePlayer(py::object m)
+void Export_pystes_UGFxMoviePlayer(py::module &m)
 {
     py::class_< UGFxMoviePlayer,  UObject   >(m, "UGFxMoviePlayer")
         .def_readwrite("pMovie", &UGFxMoviePlayer::pMovie)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDownloadableContentDefinition(py::object m)
+void Export_pystes_UDownloadableContentDefinition(py::module &m)
 {
     py::class_< UDownloadableContentDefinition,  UGBXDefinition   >(m, "UDownloadableContentDefinition")
         .def_readwrite("VfTable_IIDlcLicenseObject", &UDownloadableContentDefinition::VfTable_IIDlcLicenseObject)

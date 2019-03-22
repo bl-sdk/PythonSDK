@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowDialogEventTagSpecialized(py::object m)
+void Export_pystes_UWillowDialogEventTagSpecialized(py::module &m)
 {
     py::class_< UWillowDialogEventTagSpecialized,  UWillowDialogEventTag   >(m, "UWillowDialogEventTagSpecialized")
         .def_readwrite("SpecializationOfEventTag", &UWillowDialogEventTagSpecialized::SpecializationOfEventTag)

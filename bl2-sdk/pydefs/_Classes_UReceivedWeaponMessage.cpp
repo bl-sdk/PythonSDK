@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UReceivedWeaponMessage(py::object m)
+void Export_pystes_UReceivedWeaponMessage(py::module &m)
 {
     py::class_< UReceivedWeaponMessage,  UWillowLocalMessage   >(m, "UReceivedWeaponMessage")
         .def_readwrite("ReceivedWeapon", &UReceivedWeaponMessage::ReceivedWeapon)

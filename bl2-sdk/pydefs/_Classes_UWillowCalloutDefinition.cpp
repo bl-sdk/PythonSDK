@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowCalloutDefinition(py::object m)
+void Export_pystes_UWillowCalloutDefinition(py::module &m)
 {
     py::class_< UWillowCalloutDefinition,  UGearboxCalloutDefinition   >(m, "UWillowCalloutDefinition")
         .def_readwrite("DialogEvent", &UWillowCalloutDefinition::DialogEvent)

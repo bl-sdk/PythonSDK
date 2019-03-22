@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGFxEvent_FSCommand(py::object m)
+void Export_pystes_UGFxEvent_FSCommand(py::module &m)
 {
     py::class_< UGFxEvent_FSCommand,  USequenceEvent   >(m, "UGFxEvent_FSCommand")
         .def_readwrite("Movie", &UGFxEvent_FSCommand::Movie)

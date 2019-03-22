@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerStatAttributeValueResolver(py::object m)
+void Export_pystes_UPlayerStatAttributeValueResolver(py::module &m)
 {
     py::class_< UPlayerStatAttributeValueResolver,  UAttributeValueResolver   >(m, "UPlayerStatAttributeValueResolver")
         .def_readwrite("StatName", &UPlayerStatAttributeValueResolver::StatName)

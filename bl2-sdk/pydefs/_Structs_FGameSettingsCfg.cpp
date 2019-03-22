@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGameSettingsCfg(py::object m)
+void Export_pystes_FGameSettingsCfg(py::module &m)
 {
     py::class_< FGameSettingsCfg >(m, "FGameSettingsCfg")
         .def_readwrite("GameSettingsClass", &FGameSettingsCfg::GameSettingsClass)

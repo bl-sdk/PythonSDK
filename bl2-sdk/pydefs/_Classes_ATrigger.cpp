@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ATrigger(py::object m)
+void Export_pystes_ATrigger(py::module &m)
 {
     py::class_< ATrigger,  AActor   >(m, "ATrigger")
         .def_readwrite("CylinderComponent", &ATrigger::CylinderComponent)

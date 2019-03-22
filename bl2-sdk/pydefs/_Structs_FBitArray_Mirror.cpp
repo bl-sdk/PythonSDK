@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBitArray_Mirror(py::object m)
+void Export_pystes_FBitArray_Mirror(py::module &m)
 {
     py::class_< FBitArray_Mirror >(m, "FBitArray_Mirror")
         .def_readwrite("IndirectData", &FBitArray_Mirror::IndirectData)

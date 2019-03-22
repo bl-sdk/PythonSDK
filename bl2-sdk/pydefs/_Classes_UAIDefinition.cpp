@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAIDefinition(py::object m)
+void Export_pystes_UAIDefinition(py::module &m)
 {
     py::class_< UAIDefinition,  UObject   >(m, "UAIDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UAIDefinition::VfTable_IIBehaviorProvider)

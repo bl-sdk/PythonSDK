@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAITracker(py::object m)
+void Export_pystes_UAITracker(py::module &m)
 {
     py::class_< UAITracker,  UObject   >(m, "UAITracker")
         .def_readwrite("SnapshotSize", &UAITracker::SnapshotSize)

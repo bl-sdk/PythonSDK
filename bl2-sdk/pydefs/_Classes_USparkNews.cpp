@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USparkNews(py::object m)
+void Export_pystes_USparkNews(py::module &m)
 {
     py::class_< USparkNews,  UObject   >(m, "USparkNews")
         .def_readwrite("Articles", &USparkNews::Articles)

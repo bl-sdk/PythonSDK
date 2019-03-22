@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTextureParameterValue(py::object m)
+void Export_pystes_FTextureParameterValue(py::module &m)
 {
     py::class_< FTextureParameterValue >(m, "FTextureParameterValue")
         .def_readwrite("ParameterName", &FTextureParameterValue::ParameterName)

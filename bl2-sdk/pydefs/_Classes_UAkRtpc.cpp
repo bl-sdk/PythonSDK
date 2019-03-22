@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAkRtpc(py::object m)
+void Export_pystes_UAkRtpc(py::module &m)
 {
     py::class_< UAkRtpc,  UAkObject   >(m, "UAkRtpc")
         .def_readwrite("MinRange", &UAkRtpc::MinRange)

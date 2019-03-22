@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_GFxMovieRegister(py::object m)
+void Export_pystes_UBehavior_GFxMovieRegister(py::module &m)
 {
     py::class_< UBehavior_GFxMovieRegister,  UBehaviorBase   >(m, "UBehavior_GFxMovieRegister")
         .def_readwrite("MovieDefinition", &UBehavior_GFxMovieRegister::MovieDefinition)

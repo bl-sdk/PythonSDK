@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FUnloadableDlcLockoutData(py::object m)
+void Export_pystes_FUnloadableDlcLockoutData(py::module &m)
 {
     py::class_< FUnloadableDlcLockoutData >(m, "FUnloadableDlcLockoutData")
         .def_readwrite("LockoutDefName", &FUnloadableDlcLockoutData::LockoutDefName)

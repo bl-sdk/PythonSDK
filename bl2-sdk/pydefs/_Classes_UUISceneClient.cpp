@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUISceneClient(py::object m)
+void Export_pystes_UUISceneClient(py::module &m)
 {
     py::class_< UUISceneClient,  UUIRoot   >(m, "UUISceneClient")
         .def_readwrite("VfTable_FExec", &UUISceneClient::VfTable_FExec)

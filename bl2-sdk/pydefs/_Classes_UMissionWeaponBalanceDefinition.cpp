@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMissionWeaponBalanceDefinition(py::object m)
+void Export_pystes_UMissionWeaponBalanceDefinition(py::module &m)
 {
     py::class_< UMissionWeaponBalanceDefinition,  UInventoryBalanceDefinition   >(m, "UMissionWeaponBalanceDefinition")
         .def_readwrite("MissionObjective", &UMissionWeaponBalanceDefinition::MissionObjective)

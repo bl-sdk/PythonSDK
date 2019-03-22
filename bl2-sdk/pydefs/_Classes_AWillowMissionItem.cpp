@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowMissionItem(py::object m)
+void Export_pystes_AWillowMissionItem(py::module &m)
 {
     py::class_< AWillowMissionItem,  AWillowItem   >(m, "AWillowMissionItem")
         .def_readwrite("PickupFailsafe", &AWillowMissionItem::PickupFailsafe)

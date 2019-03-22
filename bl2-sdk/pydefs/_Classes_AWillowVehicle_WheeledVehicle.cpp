@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowVehicle_WheeledVehicle(py::object m)
+void Export_pystes_AWillowVehicle_WheeledVehicle(py::module &m)
 {
     py::class_< AWillowVehicle_WheeledVehicle,  AWillowVehicle   >(m, "AWillowVehicle_WheeledVehicle")
         .def_readwrite("DriftingTimeStamp", &AWillowVehicle_WheeledVehicle::DriftingTimeStamp)

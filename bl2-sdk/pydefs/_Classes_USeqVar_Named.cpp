@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqVar_Named(py::object m)
+void Export_pystes_USeqVar_Named(py::module &m)
 {
     py::class_< USeqVar_Named,  USequenceVariable   >(m, "USeqVar_Named")
         .def_readwrite("ExpectedType", &USeqVar_Named::ExpectedType)

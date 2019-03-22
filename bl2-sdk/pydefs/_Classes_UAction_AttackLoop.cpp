@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_AttackLoop(py::object m)
+void Export_pystes_UAction_AttackLoop(py::module &m)
 {
     py::class_< UAction_AttackLoop,  UAction_BasicAttack   >(m, "UAction_AttackLoop")
         .def_readwrite("LoopCount", &UAction_AttackLoop::LoopCount)

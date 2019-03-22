@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FQueuedPersonalEchoLog(py::object m)
+void Export_pystes_FQueuedPersonalEchoLog(py::module &m)
 {
     py::class_< FQueuedPersonalEchoLog >(m, "FQueuedPersonalEchoLog")
         .def_readwrite("Event", &FQueuedPersonalEchoLog::Event)

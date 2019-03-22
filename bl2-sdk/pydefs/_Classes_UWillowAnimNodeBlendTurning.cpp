@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAnimNodeBlendTurning(py::object m)
+void Export_pystes_UWillowAnimNodeBlendTurning(py::module &m)
 {
     py::class_< UWillowAnimNodeBlendTurning,  UAnimNodeBlendList   >(m, "UWillowAnimNodeBlendTurning")
         .def_readwrite("TurnTransitionDelay", &UWillowAnimNodeBlendTurning::TurnTransitionDelay)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ADynamicSMActor(py::object m)
+void Export_pystes_ADynamicSMActor(py::module &m)
 {
     py::class_< ADynamicSMActor,  AActor   >(m, "ADynamicSMActor")
         .def_readwrite("StaticMeshComponent", &ADynamicSMActor::StaticMeshComponent)

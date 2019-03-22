@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGlobalsDefinition(py::object m)
+void Export_pystes_UGlobalsDefinition(py::module &m)
 {
     py::class_< UGlobalsDefinition,  UGearboxGlobalsDefinition   >(m, "UGlobalsDefinition")
         .def_readwrite("BulletReflectionRadius", &UGlobalsDefinition::BulletReflectionRadius)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGestaltPartMatricesCollectionDefinition(py::object m)
+void Export_pystes_UGestaltPartMatricesCollectionDefinition(py::module &m)
 {
     py::class_< UGestaltPartMatricesCollectionDefinition,  UGBXDefinition   >(m, "UGestaltPartMatricesCollectionDefinition")
         .def_readwrite("Collection", &UGestaltPartMatricesCollectionDefinition::Collection)

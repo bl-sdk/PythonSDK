@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_RemoveInventoryFromStorage(py::object m)
+void Export_pystes_UBehavior_RemoveInventoryFromStorage(py::module &m)
 {
     py::class_< UBehavior_RemoveInventoryFromStorage,  UBehaviorBase   >(m, "UBehavior_RemoveInventoryFromStorage")
         .def_readwrite("ItemDef", &UBehavior_RemoveInventoryFromStorage::ItemDef)

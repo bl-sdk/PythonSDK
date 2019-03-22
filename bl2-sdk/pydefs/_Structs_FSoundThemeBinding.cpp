@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSoundThemeBinding(py::object m)
+void Export_pystes_FSoundThemeBinding(py::module &m)
 {
     py::class_< FSoundThemeBinding >(m, "FSoundThemeBinding")
         .def_readwrite("ThemeName", &FSoundThemeBinding::ThemeName)

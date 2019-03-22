@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_Latent(py::object m)
+void Export_pystes_USeqAct_Latent(py::module &m)
 {
     py::class_< USeqAct_Latent,  USequenceAction   >(m, "USeqAct_Latent")
         .def_readwrite("LatentActors", &USeqAct_Latent::LatentActors)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInteractiveObjectDefinition(py::object m)
+void Export_pystes_UInteractiveObjectDefinition(py::module &m)
 {
     py::class_< UInteractiveObjectDefinition,  UGBXDefinition   >(m, "UInteractiveObjectDefinition")
         .def_readwrite("VfTable_IIConstructObject", &UInteractiveObjectDefinition::VfTable_IIConstructObject)

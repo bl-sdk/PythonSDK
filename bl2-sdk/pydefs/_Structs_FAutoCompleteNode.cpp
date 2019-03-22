@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAutoCompleteNode(py::object m)
+void Export_pystes_FAutoCompleteNode(py::module &m)
 {
     py::class_< FAutoCompleteNode >(m, "FAutoCompleteNode")
         .def_readwrite("IndexChar", &FAutoCompleteNode::IndexChar)

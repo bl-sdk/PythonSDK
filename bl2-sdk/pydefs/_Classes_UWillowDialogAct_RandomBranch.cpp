@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowDialogAct_RandomBranch(py::object m)
+void Export_pystes_UWillowDialogAct_RandomBranch(py::module &m)
 {
     py::class_< UWillowDialogAct_RandomBranch,  UGearboxDialogAction   >(m, "UWillowDialogAct_RandomBranch")
         .def_readwrite("Chances", &UWillowDialogAct_RandomBranch::Chances)

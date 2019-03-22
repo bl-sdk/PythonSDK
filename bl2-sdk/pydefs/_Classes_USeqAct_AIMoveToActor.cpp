@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_AIMoveToActor(py::object m)
+void Export_pystes_USeqAct_AIMoveToActor(py::module &m)
 {
     py::class_< USeqAct_AIMoveToActor,  USequenceAction   >(m, "USeqAct_AIMoveToActor")
         .def_readwrite("Destination", &USeqAct_AIMoveToActor::Destination)

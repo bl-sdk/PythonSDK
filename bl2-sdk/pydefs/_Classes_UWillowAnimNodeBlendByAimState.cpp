@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAnimNodeBlendByAimState(py::object m)
+void Export_pystes_UWillowAnimNodeBlendByAimState(py::module &m)
 {
     py::class_< UWillowAnimNodeBlendByAimState,  UAnimNodeBlendList   >(m, "UWillowAnimNodeBlendByAimState")
         .def_readwrite("BlendTime", &UWillowAnimNodeBlendByAimState::BlendTime)

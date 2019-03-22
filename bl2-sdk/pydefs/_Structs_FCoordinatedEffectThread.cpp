@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCoordinatedEffectThread(py::object m)
+void Export_pystes_FCoordinatedEffectThread(py::module &m)
 {
     py::class_< FCoordinatedEffectThread >(m, "FCoordinatedEffectThread")
         .def_readwrite("EffectDefinition", &FCoordinatedEffectThread::EffectDefinition)

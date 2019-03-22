@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowHUD(py::object m)
+void Export_pystes_AWillowHUD(py::module &m)
 {
     py::class_< AWillowHUD,  AHUD   >(m, "AWillowHUD")
         .def_readwrite("DlcVersionErrorDisplayDuration", &AWillowHUD::DlcVersionErrorDisplayDuration)

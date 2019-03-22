@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SetAlternateVertexWeight(py::object m)
+void Export_pystes_UBehavior_SetAlternateVertexWeight(py::module &m)
 {
     py::class_< UBehavior_SetAlternateVertexWeight,  UBehaviorBase   >(m, "UBehavior_SetAlternateVertexWeight")
         .def_readwrite("BoneName", &UBehavior_SetAlternateVertexWeight::BoneName)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWwiseSoundGroup(py::object m)
+void Export_pystes_AWwiseSoundGroup(py::module &m)
 {
     py::class_< AWwiseSoundGroup,  AKeypoint   >(m, "AWwiseSoundGroup")
         .def_readwrite("VfTable_IISpecialOcclusionProvider", &AWwiseSoundGroup::VfTable_IISpecialOcclusionProvider)

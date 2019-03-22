@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowVehicleFactory(py::object m)
+void Export_pystes_AWillowVehicleFactory(py::module &m)
 {
     py::class_< AWillowVehicleFactory,  ANavigationPoint   >(m, "AWillowVehicleFactory")
         .def_readwrite("VehicleClass", &AWillowVehicleFactory::VehicleClass)

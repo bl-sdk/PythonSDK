@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFastTravelStationsListOrder(py::object m)
+void Export_pystes_UFastTravelStationsListOrder(py::module &m)
 {
     py::class_< UFastTravelStationsListOrder,  UGBXDefinition   >(m, "UFastTravelStationsListOrder")
         .def_readwrite("FastTravelStationOrderList", &UFastTravelStationsListOrder::FastTravelStationOrderList)

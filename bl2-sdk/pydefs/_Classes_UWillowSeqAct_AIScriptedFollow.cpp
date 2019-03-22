@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSeqAct_AIScriptedFollow(py::object m)
+void Export_pystes_UWillowSeqAct_AIScriptedFollow(py::module &m)
 {
     py::class_< UWillowSeqAct_AIScriptedFollow,  USequenceAction   >(m, "UWillowSeqAct_AIScriptedFollow")
         .def_readwrite("ToFollow", &UWillowSeqAct_AIScriptedFollow::ToFollow)

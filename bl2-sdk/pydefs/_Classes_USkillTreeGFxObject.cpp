@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USkillTreeGFxObject(py::object m)
+void Export_pystes_USkillTreeGFxObject(py::module &m)
 {
     py::class_< USkillTreeGFxObject,  UGFxObject   >(m, "USkillTreeGFxObject")
         .def_readwrite("Artifacts", &USkillTreeGFxObject::Artifacts)

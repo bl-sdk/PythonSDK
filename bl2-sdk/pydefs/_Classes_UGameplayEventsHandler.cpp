@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGameplayEventsHandler(py::object m)
+void Export_pystes_UGameplayEventsHandler(py::module &m)
 {
     py::class_< UGameplayEventsHandler,  UObject   >(m, "UGameplayEventsHandler")
         .def_readwrite("EventIDFilter", &UGameplayEventsHandler::EventIDFilter)

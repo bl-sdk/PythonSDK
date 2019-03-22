@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowProjectile(py::object m)
+void Export_pystes_AWillowProjectile(py::module &m)
 {
     py::class_< AWillowProjectile,  AProjectile   >(m, "AWillowProjectile")
         .def_readwrite("VfTable_IICounterBehavior", &AWillowProjectile::VfTable_IICounterBehavior)

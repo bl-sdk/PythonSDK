@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSkillSaveGameData(py::object m)
+void Export_pystes_FSkillSaveGameData(py::module &m)
 {
     py::class_< FSkillSaveGameData >(m, "FSkillSaveGameData")
         .def_readwrite("SkillDefinition", &FSkillSaveGameData::SkillDefinition)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNodeCrossfader(py::object m)
+void Export_pystes_UAnimNodeCrossfader(py::module &m)
 {
     py::class_< UAnimNodeCrossfader,  UAnimNodeBlend   >(m, "UAnimNodeCrossfader")
         .def_readwrite("DefaultAnimSeqName", &UAnimNodeCrossfader::DefaultAnimSeqName)

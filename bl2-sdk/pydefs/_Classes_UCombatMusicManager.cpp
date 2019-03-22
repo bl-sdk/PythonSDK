@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCombatMusicManager(py::object m)
+void Export_pystes_UCombatMusicManager(py::module &m)
 {
     py::class_< UCombatMusicManager,  UObject   >(m, "UCombatMusicManager")
         .def_readwrite("TargetedPlayerStates", &UCombatMusicManager::TargetedPlayerStates)

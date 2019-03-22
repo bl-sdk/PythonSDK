@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAttributeDefinitionDefault(py::object m)
+void Export_pystes_FAttributeDefinitionDefault(py::module &m)
 {
     py::class_< FAttributeDefinitionDefault >(m, "FAttributeDefinitionDefault")
         .def_readwrite("Attribute", &FAttributeDefinitionDefault::Attribute)

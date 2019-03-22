@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AActionSkill(py::object m)
+void Export_pystes_AActionSkill(py::module &m)
 {
     py::class_< AActionSkill,  AActor   >(m, "AActionSkill")
         .def_readwrite("VfTable_IIInstanceData", &AActionSkill::VfTable_IIInstanceData)

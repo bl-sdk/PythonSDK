@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionStaticComponentMaskParameter(py::object m)
+void Export_pystes_UMaterialExpressionStaticComponentMaskParameter(py::module &m)
 {
     py::class_< UMaterialExpressionStaticComponentMaskParameter,  UMaterialExpressionParameter   >(m, "UMaterialExpressionStaticComponentMaskParameter")
         .def_readwrite("Input", &UMaterialExpressionStaticComponentMaskParameter::Input)

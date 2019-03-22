@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNotify_Footstep(py::object m)
+void Export_pystes_UAnimNotify_Footstep(py::module &m)
 {
     py::class_< UAnimNotify_Footstep,  UAnimNotify   >(m, "UAnimNotify_Footstep")
         .def_readwrite("FootDown", &UAnimNotify_Footstep::FootDown)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ATeleporterDestination(py::object m)
+void Export_pystes_ATeleporterDestination(py::module &m)
 {
     py::class_< ATeleporterDestination,  AActor   >(m, "ATeleporterDestination")
         .def_readwrite("ExitPoints", &ATeleporterDestination::ExitPoints)

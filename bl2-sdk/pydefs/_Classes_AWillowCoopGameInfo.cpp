@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowCoopGameInfo(py::object m)
+void Export_pystes_AWillowCoopGameInfo(py::module &m)
 {
     py::class_< AWillowCoopGameInfo,  AWillowGameInfo   >(m, "AWillowCoopGameInfo")
         .def_readwrite("Teams", &AWillowCoopGameInfo::Teams)

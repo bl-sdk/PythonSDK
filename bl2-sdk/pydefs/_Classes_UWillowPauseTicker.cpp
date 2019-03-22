@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowPauseTicker(py::object m)
+void Export_pystes_UWillowPauseTicker(py::module &m)
 {
     py::class_< UWillowPauseTicker,  UObject   >(m, "UWillowPauseTicker")
         .def_readwrite("VfTable_FTickableObject", &UWillowPauseTicker::VfTable_FTickableObject)

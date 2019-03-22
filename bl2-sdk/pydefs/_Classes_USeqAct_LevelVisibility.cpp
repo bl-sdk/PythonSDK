@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_LevelVisibility(py::object m)
+void Export_pystes_USeqAct_LevelVisibility(py::module &m)
 {
     py::class_< USeqAct_LevelVisibility,  USeqAct_Latent   >(m, "USeqAct_LevelVisibility")
         .def_readwrite("Level", &USeqAct_LevelVisibility::Level)

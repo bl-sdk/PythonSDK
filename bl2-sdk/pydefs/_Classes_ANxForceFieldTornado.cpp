@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ANxForceFieldTornado(py::object m)
+void Export_pystes_ANxForceFieldTornado(py::module &m)
 {
     py::class_< ANxForceFieldTornado,  ANxForceField   >(m, "ANxForceFieldTornado")
         .def_readwrite("Shape", &ANxForceFieldTornado::Shape)

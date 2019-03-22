@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIAttachableActor(py::object m)
+void Export_pystes_UIAttachableActor(py::module &m)
 {
     py::class_< UIAttachableActor,  UInterface   >(m, "UIAttachableActor")
         .def("StaticClass", &UIAttachableActor::StaticClass, py::return_value_policy::reference)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNotify_UseBehavior(py::object m)
+void Export_pystes_UAnimNotify_UseBehavior(py::module &m)
 {
     py::class_< UAnimNotify_UseBehavior,  UAnimNotify   >(m, "UAnimNotify_UseBehavior")
         .def_readwrite("Behaviors", &UAnimNotify_UseBehavior::Behaviors)

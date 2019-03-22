@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FParticleRandomSeedInfo(py::object m)
+void Export_pystes_FParticleRandomSeedInfo(py::module &m)
 {
     py::class_< FParticleRandomSeedInfo >(m, "FParticleRandomSeedInfo")
         .def_readwrite("ParameterName", &FParticleRandomSeedInfo::ParameterName)

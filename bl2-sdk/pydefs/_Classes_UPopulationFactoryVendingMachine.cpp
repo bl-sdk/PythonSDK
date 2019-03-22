@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPopulationFactoryVendingMachine(py::object m)
+void Export_pystes_UPopulationFactoryVendingMachine(py::module &m)
 {
     py::class_< UPopulationFactoryVendingMachine,  UPopulationFactory   >(m, "UPopulationFactoryVendingMachine")
         .def_readwrite("ShopType", &UPopulationFactoryVendingMachine::ShopType)

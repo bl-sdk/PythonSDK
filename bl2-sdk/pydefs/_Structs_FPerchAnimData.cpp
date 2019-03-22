@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPerchAnimData(py::object m)
+void Export_pystes_FPerchAnimData(py::module &m)
 {
     py::class_< FPerchAnimData >(m, "FPerchAnimData")
         .def_readwrite("Key", &FPerchAnimData::Key)

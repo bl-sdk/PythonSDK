@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAIPawnPlaythroughData(py::object m)
+void Export_pystes_FAIPawnPlaythroughData(py::module &m)
 {
     py::class_< FAIPawnPlaythroughData >(m, "FAIPawnPlaythroughData")
         .def_readwrite("PlayThrough", &FAIPawnPlaythroughData::PlayThrough)

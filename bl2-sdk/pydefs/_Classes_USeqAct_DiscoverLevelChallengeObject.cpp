@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_DiscoverLevelChallengeObject(py::object m)
+void Export_pystes_USeqAct_DiscoverLevelChallengeObject(py::module &m)
 {
     py::class_< USeqAct_DiscoverLevelChallengeObject,  USequenceAction   >(m, "USeqAct_DiscoverLevelChallengeObject")
         .def_readwrite("LevelChallengeObject", &USeqAct_DiscoverLevelChallengeObject::LevelChallengeObject)

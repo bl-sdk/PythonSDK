@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowScrollingListDataProviderMapList(py::object m)
+void Export_pystes_UWillowScrollingListDataProviderMapList(py::module &m)
 {
     py::class_< UWillowScrollingListDataProviderMapList,  UWillowScrollingListDataProviderBase   >(m, "UWillowScrollingListDataProviderMapList")
         .def_readwrite("MapListDef", &UWillowScrollingListDataProviderMapList::MapListDef)

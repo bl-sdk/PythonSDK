@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqCond_IsLoggedIn(py::object m)
+void Export_pystes_USeqCond_IsLoggedIn(py::module &m)
 {
     py::class_< USeqCond_IsLoggedIn,  USequenceCondition   >(m, "USeqCond_IsLoggedIn")
         .def_readwrite("NumNeededLoggedIn", &USeqCond_IsLoggedIn::NumNeededLoggedIn)

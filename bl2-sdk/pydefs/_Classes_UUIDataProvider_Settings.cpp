@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIDataProvider_Settings(py::object m)
+void Export_pystes_UUIDataProvider_Settings(py::module &m)
 {
     py::class_< UUIDataProvider_Settings,  UUIDataProvider   >(m, "UUIDataProvider_Settings")
         .def_readwrite("Settings", &UUIDataProvider_Settings::Settings)

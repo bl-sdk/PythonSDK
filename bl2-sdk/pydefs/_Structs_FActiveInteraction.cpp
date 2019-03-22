@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FActiveInteraction(py::object m)
+void Export_pystes_FActiveInteraction(py::module &m)
 {
     py::class_< FActiveInteraction >(m, "FActiveInteraction")
         .def_readwrite("TimeLength", &FActiveInteraction::TimeLength)

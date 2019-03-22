@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USimpleMathValueResolver(py::object m)
+void Export_pystes_USimpleMathValueResolver(py::module &m)
 {
     py::class_< USimpleMathValueResolver,  UAttributeValueResolver   >(m, "USimpleMathValueResolver")
         .def_readwrite("Arg1Option", &USimpleMathValueResolver::Arg1Option)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGFxDataStoreSubscriber(py::object m)
+void Export_pystes_UGFxDataStoreSubscriber(py::module &m)
 {
     py::class_< UGFxDataStoreSubscriber,  UObject   >(m, "UGFxDataStoreSubscriber")
         .def_readwrite("VfTable_IUIDataStorePublisher", &UGFxDataStoreSubscriber::VfTable_IUIDataStorePublisher)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLevelBasedExpScale(py::object m)
+void Export_pystes_FLevelBasedExpScale(py::module &m)
 {
     py::class_< FLevelBasedExpScale >(m, "FLevelBasedExpScale")
         .def_readwrite("LevelDifference", &FLevelBasedExpScale::LevelDifference)

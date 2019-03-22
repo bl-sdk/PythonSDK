@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FProfileSettingsCache(py::object m)
+void Export_pystes_FProfileSettingsCache(py::module &m)
 {
     py::class_< FProfileSettingsCache >(m, "FProfileSettingsCache")
         .def_readwrite("Profile", &FProfileSettingsCache::Profile)

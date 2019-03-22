@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxEditorNode(py::object m)
+void Export_pystes_UGearboxEditorNode(py::module &m)
 {
     py::class_< UGearboxEditorNode,  UObject   >(m, "UGearboxEditorNode")
         .def_readwrite("Type", &UGearboxEditorNode::Type)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBalancedInventoryData(py::object m)
+void Export_pystes_FBalancedInventoryData(py::module &m)
 {
     py::class_< FBalancedInventoryData >(m, "FBalancedInventoryData")
         .def_readwrite("ItmPoolDefinition", &FBalancedInventoryData::ItmPoolDefinition)

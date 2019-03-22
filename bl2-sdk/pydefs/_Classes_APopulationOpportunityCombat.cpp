@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APopulationOpportunityCombat(py::object m)
+void Export_pystes_APopulationOpportunityCombat(py::module &m)
 {
     py::class_< APopulationOpportunityCombat,  APopulationOpportunity   >(m, "APopulationOpportunityCombat")
         .def_readwrite("VfTable_IIGbxMessageListener", &APopulationOpportunityCombat::VfTable_IIGbxMessageListener)

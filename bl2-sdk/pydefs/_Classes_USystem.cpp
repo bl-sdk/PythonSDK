@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USystem(py::object m)
+void Export_pystes_USystem(py::module &m)
 {
     py::class_< USystem,  UObject   >(m, "USystem")
         .def_readwrite("StaleCacheDays", &USystem::StaleCacheDays)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNotify_Trails(py::object m)
+void Export_pystes_UAnimNotify_Trails(py::module &m)
 {
     py::class_< UAnimNotify_Trails,  UAnimNotify   >(m, "UAnimNotify_Trails")
         .def_readwrite("PSTemplate", &UAnimNotify_Trails::PSTemplate)

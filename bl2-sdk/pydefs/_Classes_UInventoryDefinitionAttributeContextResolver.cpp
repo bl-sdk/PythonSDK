@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInventoryDefinitionAttributeContextResolver(py::object m)
+void Export_pystes_UInventoryDefinitionAttributeContextResolver(py::module &m)
 {
     py::class_< UInventoryDefinitionAttributeContextResolver,  UAttributeContextResolver   >(m, "UInventoryDefinitionAttributeContextResolver")
         .def("StaticClass", &UInventoryDefinitionAttributeContextResolver::StaticClass, py::return_value_policy::reference)

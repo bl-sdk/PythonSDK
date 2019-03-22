@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRTPCSetting(py::object m)
+void Export_pystes_FRTPCSetting(py::module &m)
 {
     py::class_< FRTPCSetting >(m, "FRTPCSetting")
         .def_readwrite("Target", &FRTPCSetting::Target)

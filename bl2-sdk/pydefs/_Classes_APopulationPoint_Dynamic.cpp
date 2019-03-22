@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APopulationPoint_Dynamic(py::object m)
+void Export_pystes_APopulationPoint_Dynamic(py::module &m)
 {
     py::class_< APopulationPoint_Dynamic,  APopulationPoint   >(m, "APopulationPoint_Dynamic")
         .def_readwrite("DynamicPointName", &APopulationPoint_Dynamic::DynamicPointName)

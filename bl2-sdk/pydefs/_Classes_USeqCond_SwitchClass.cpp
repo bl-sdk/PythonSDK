@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqCond_SwitchClass(py::object m)
+void Export_pystes_USeqCond_SwitchClass(py::module &m)
 {
     py::class_< USeqCond_SwitchClass,  USeqCond_SwitchBase   >(m, "USeqCond_SwitchClass")
         .def_readwrite("ClassArray", &USeqCond_SwitchClass::ClassArray)

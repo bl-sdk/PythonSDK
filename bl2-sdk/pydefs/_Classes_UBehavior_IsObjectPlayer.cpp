@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_IsObjectPlayer(py::object m)
+void Export_pystes_UBehavior_IsObjectPlayer(py::module &m)
 {
     py::class_< UBehavior_IsObjectPlayer,  UBehaviorBase   >(m, "UBehavior_IsObjectPlayer")
         .def_readwrite("PlayerCandidate", &UBehavior_IsObjectPlayer::PlayerCandidate)

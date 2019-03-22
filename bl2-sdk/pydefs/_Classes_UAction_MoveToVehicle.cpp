@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_MoveToVehicle(py::object m)
+void Export_pystes_UAction_MoveToVehicle(py::module &m)
 {
     py::class_< UAction_MoveToVehicle,  UAction_Burrow   >(m, "UAction_MoveToVehicle")
         .def_readwrite("EnterDistance", &UAction_MoveToVehicle::EnterDistance)

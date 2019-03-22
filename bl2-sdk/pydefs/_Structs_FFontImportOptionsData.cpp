@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FFontImportOptionsData(py::object m)
+void Export_pystes_FFontImportOptionsData(py::module &m)
 {
     py::class_< FFontImportOptionsData >(m, "FFontImportOptionsData")
         .def_readwrite("FontName", &FFontImportOptionsData::FontName)

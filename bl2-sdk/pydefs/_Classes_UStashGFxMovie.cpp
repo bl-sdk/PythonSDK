@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UStashGFxMovie(py::object m)
+void Export_pystes_UStashGFxMovie(py::module &m)
 {
     py::class_< UStashGFxMovie,  UTwoPanelInterfaceGFxMovie   >(m, "UStashGFxMovie")
         .def_readwrite("StashTitle", &UStashGFxMovie::StashTitle)

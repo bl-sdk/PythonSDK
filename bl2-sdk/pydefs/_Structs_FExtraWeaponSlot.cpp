@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FExtraWeaponSlot(py::object m)
+void Export_pystes_FExtraWeaponSlot(py::module &m)
 {
     py::class_< FExtraWeaponSlot >(m, "FExtraWeaponSlot")
         .def_readwrite("Socket", &FExtraWeaponSlot::Socket)

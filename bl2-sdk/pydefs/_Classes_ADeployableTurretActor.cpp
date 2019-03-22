@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ADeployableTurretActor(py::object m)
+void Export_pystes_ADeployableTurretActor(py::module &m)
 {
     py::class_< ADeployableTurretActor,  AWillowAIPawn   >(m, "ADeployableTurretActor")
         .def_readwrite("BounceImpact", &ADeployableTurretActor::BounceImpact)

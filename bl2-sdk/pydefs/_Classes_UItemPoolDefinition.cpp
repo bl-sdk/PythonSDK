@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UItemPoolDefinition(py::object m)
+void Export_pystes_UItemPoolDefinition(py::module &m)
 {
     py::class_< UItemPoolDefinition,  UGBXDefinition   >(m, "UItemPoolDefinition")
         .def_readwrite("CheatSpawnLevel", &UItemPoolDefinition::CheatSpawnLevel)

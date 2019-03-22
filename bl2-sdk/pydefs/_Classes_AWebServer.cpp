@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWebServer(py::object m)
+void Export_pystes_AWebServer(py::module &m)
 {
     py::class_< AWebServer,  ATcpLink   >(m, "AWebServer")
         .def_readwrite("ServerName", &AWebServer::ServerName)

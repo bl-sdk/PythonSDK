@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCoverDebugInfo(py::object m)
+void Export_pystes_FCoverDebugInfo(py::module &m)
 {
     py::class_< FCoverDebugInfo >(m, "FCoverDebugInfo")
         .def_readwrite("CoverRegionName", &FCoverDebugInfo::CoverRegionName)

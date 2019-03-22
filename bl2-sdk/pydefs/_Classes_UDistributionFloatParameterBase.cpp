@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDistributionFloatParameterBase(py::object m)
+void Export_pystes_UDistributionFloatParameterBase(py::module &m)
 {
     py::class_< UDistributionFloatParameterBase,  UDistributionFloat   >(m, "UDistributionFloatParameterBase")
         .def_readwrite("ParameterName", &UDistributionFloatParameterBase::ParameterName)

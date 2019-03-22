@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UProjectileBehavior_SetDamageTypeDefinition(py::object m)
+void Export_pystes_UProjectileBehavior_SetDamageTypeDefinition(py::module &m)
 {
     py::class_< UProjectileBehavior_SetDamageTypeDefinition,  UBehaviorBase   >(m, "UProjectileBehavior_SetDamageTypeDefinition")
         .def_readwrite("DamageTypeDefinition", &UProjectileBehavior_SetDamageTypeDefinition::DamageTypeDefinition)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCollisionImpactData(py::object m)
+void Export_pystes_FCollisionImpactData(py::module &m)
 {
     py::class_< FCollisionImpactData >(m, "FCollisionImpactData")
         .def_readwrite("ContactInfos", &FCollisionImpactData::ContactInfos)

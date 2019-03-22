@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpriteComponent(py::object m)
+void Export_pystes_USpriteComponent(py::module &m)
 {
     py::class_< USpriteComponent,  UPrimitiveComponent   >(m, "USpriteComponent")
         .def_readwrite("Sprite", &USpriteComponent::Sprite)

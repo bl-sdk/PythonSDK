@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInterpLookupPoint(py::object m)
+void Export_pystes_FInterpLookupPoint(py::module &m)
 {
     py::class_< FInterpLookupPoint >(m, "FInterpLookupPoint")
         .def_readwrite("GroupName", &FInterpLookupPoint::GroupName)

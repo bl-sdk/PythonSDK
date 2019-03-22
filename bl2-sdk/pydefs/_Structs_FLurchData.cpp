@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLurchData(py::object m)
+void Export_pystes_FLurchData(py::module &m)
 {
     py::class_< FLurchData >(m, "FLurchData")
         .def_readwrite("StartTime", &FLurchData::StartTime)

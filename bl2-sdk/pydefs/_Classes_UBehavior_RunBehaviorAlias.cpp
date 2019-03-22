@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_RunBehaviorAlias(py::object m)
+void Export_pystes_UBehavior_RunBehaviorAlias(py::module &m)
 {
     py::class_< UBehavior_RunBehaviorAlias,  UBehaviorBase   >(m, "UBehavior_RunBehaviorAlias")
         .def_readwrite("BehaviorAlias", &UBehavior_RunBehaviorAlias::BehaviorAlias)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPrimitiveComponent(py::object m)
+void Export_pystes_UPrimitiveComponent(py::module &m)
 {
     py::class_< UPrimitiveComponent,  UActorComponent   >(m, "UPrimitiveComponent")
         .def_readwrite("Tag", &UPrimitiveComponent::Tag)

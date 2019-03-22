@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTurretDamageEffectData(py::object m)
+void Export_pystes_FTurretDamageEffectData(py::module &m)
 {
     py::class_< FTurretDamageEffectData >(m, "FTurretDamageEffectData")
         .def_readwrite("DamageThreshold", &FTurretDamageEffectData::DamageThreshold)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_PlayHardFlinch(py::object m)
+void Export_pystes_UBehavior_PlayHardFlinch(py::module &m)
 {
     py::class_< UBehavior_PlayHardFlinch,  UBehaviorBase   >(m, "UBehavior_PlayHardFlinch")
         .def_readwrite("HitLocation", &UBehavior_PlayHardFlinch::HitLocation)

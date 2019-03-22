@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SetSkelControlTurretConstrainedValues(py::object m)
+void Export_pystes_UBehavior_SetSkelControlTurretConstrainedValues(py::module &m)
 {
     py::class_< UBehavior_SetSkelControlTurretConstrainedValues,  UBehaviorBase   >(m, "UBehavior_SetSkelControlTurretConstrainedValues")
         .def_readwrite("SkelControlName", &UBehavior_SetSkelControlTurretConstrainedValues::SkelControlName)

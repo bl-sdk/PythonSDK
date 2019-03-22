@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_AttemptStatusEffect(py::object m)
+void Export_pystes_UBehavior_AttemptStatusEffect(py::module &m)
 {
     py::class_< UBehavior_AttemptStatusEffect,  UBehaviorBase   >(m, "UBehavior_AttemptStatusEffect")
         .def_readwrite("VfTable_IIDamageCauser", &UBehavior_AttemptStatusEffect::VfTable_IIDamageCauser)

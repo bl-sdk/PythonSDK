@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USVehicleSimBase(py::object m)
+void Export_pystes_USVehicleSimBase(py::module &m)
 {
     py::class_< USVehicleSimBase,  UActorComponent   >(m, "USVehicleSimBase")
         .def_readwrite("WheelSuspensionStiffness", &USVehicleSimBase::WheelSuspensionStiffness)

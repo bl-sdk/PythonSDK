@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAIComponent(py::object m)
+void Export_pystes_UAIComponent(py::module &m)
 {
     py::class_< UAIComponent,  UActorComponent   >(m, "UAIComponent")
         .def_readwrite("UpdateRate", &UAIComponent::UpdateRate)

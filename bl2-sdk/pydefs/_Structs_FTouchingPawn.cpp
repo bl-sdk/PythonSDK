@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTouchingPawn(py::object m)
+void Export_pystes_FTouchingPawn(py::module &m)
 {
     py::class_< FTouchingPawn >(m, "FTouchingPawn")
         .def_readwrite("Pawn", &FTouchingPawn::Pawn)

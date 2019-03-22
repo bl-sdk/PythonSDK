@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTwoPanelInterfaceGFxDefinition(py::object m)
+void Export_pystes_UTwoPanelInterfaceGFxDefinition(py::module &m)
 {
     py::class_< UTwoPanelInterfaceGFxDefinition,  UWillowInventoryGFxDefinition   >(m, "UTwoPanelInterfaceGFxDefinition")
         .def_readwrite("PathToBackgroundArtClip", &UTwoPanelInterfaceGFxDefinition::PathToBackgroundArtClip)

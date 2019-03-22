@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNotify(py::object m)
+void Export_pystes_UAnimNotify(py::module &m)
 {
     py::class_< UAnimNotify,  UObject   >(m, "UAnimNotify")
         .def("StaticClass", &UAnimNotify::StaticClass, py::return_value_policy::reference)

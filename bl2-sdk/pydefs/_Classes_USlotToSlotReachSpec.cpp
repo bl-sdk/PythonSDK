@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USlotToSlotReachSpec(py::object m)
+void Export_pystes_USlotToSlotReachSpec(py::module &m)
 {
     py::class_< USlotToSlotReachSpec,  UForcedReachSpec   >(m, "USlotToSlotReachSpec")
         .def_readwrite("SpecDirection", &USlotToSlotReachSpec::SpecDirection)

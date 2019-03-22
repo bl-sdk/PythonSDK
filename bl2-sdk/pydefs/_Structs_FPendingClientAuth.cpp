@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPendingClientAuth(py::object m)
+void Export_pystes_FPendingClientAuth(py::module &m)
 {
     py::class_< FPendingClientAuth >(m, "FPendingClientAuth")
         .def_readwrite("ClientConnection", &FPendingClientAuth::ClientConnection)

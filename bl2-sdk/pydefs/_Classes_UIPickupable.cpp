@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIPickupable(py::object m)
+void Export_pystes_UIPickupable(py::module &m)
 {
     py::class_< UIPickupable,  UInterface   >(m, "UIPickupable")
         .def("StaticClass", &UIPickupable::StaticClass, py::return_value_policy::reference)

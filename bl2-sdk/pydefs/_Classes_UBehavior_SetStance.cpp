@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SetStance(py::object m)
+void Export_pystes_UBehavior_SetStance(py::module &m)
 {
     py::class_< UBehavior_SetStance,  UBehaviorBase   >(m, "UBehavior_SetStance")
         .def_readwrite("SetType", &UBehavior_SetStance::SetType)

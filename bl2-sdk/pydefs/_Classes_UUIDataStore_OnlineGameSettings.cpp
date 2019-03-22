@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIDataStore_OnlineGameSettings(py::object m)
+void Export_pystes_UUIDataStore_OnlineGameSettings(py::module &m)
 {
     py::class_< UUIDataStore_OnlineGameSettings,  UUIDataStore   >(m, "UUIDataStore_OnlineGameSettings")
         .def_readwrite("GameSettingsCfgList", &UUIDataStore_OnlineGameSettings::GameSettingsCfgList)

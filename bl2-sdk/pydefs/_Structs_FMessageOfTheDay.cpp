@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMessageOfTheDay(py::object m)
+void Export_pystes_FMessageOfTheDay(py::module &m)
 {
     py::class_< FMessageOfTheDay >(m, "FMessageOfTheDay")
         .def_readwrite("Header", &FMessageOfTheDay::Header)

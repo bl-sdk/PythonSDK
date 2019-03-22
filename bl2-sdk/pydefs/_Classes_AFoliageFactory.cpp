@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AFoliageFactory(py::object m)
+void Export_pystes_AFoliageFactory(py::module &m)
 {
     py::class_< AFoliageFactory,  AVolume   >(m, "AFoliageFactory")
         .def_readwrite("Meshes", &AFoliageFactory::Meshes)

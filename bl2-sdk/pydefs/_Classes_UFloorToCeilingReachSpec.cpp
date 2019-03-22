@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFloorToCeilingReachSpec(py::object m)
+void Export_pystes_UFloorToCeilingReachSpec(py::module &m)
 {
     py::class_< UFloorToCeilingReachSpec,  UForcedReachSpec   >(m, "UFloorToCeilingReachSpec")
         .def("StaticClass", &UFloorToCeilingReachSpec::StaticClass, py::return_value_policy::reference)

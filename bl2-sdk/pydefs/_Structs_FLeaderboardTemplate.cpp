@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLeaderboardTemplate(py::object m)
+void Export_pystes_FLeaderboardTemplate(py::module &m)
 {
     py::class_< FLeaderboardTemplate >(m, "FLeaderboardTemplate")
         .def_readwrite("LeaderboardName", &FLeaderboardTemplate::LeaderboardName)

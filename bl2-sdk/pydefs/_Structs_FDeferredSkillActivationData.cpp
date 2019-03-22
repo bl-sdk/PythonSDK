@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDeferredSkillActivationData(py::object m)
+void Export_pystes_FDeferredSkillActivationData(py::module &m)
 {
     py::class_< FDeferredSkillActivationData >(m, "FDeferredSkillActivationData")
         .def_readwrite("SkillInstigator", &FDeferredSkillActivationData::SkillInstigator)

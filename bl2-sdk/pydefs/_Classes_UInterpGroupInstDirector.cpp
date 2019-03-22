@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpGroupInstDirector(py::object m)
+void Export_pystes_UInterpGroupInstDirector(py::module &m)
 {
     py::class_< UInterpGroupInstDirector,  UInterpGroupInst   >(m, "UInterpGroupInstDirector")
         .def("StaticClass", &UInterpGroupInstDirector::StaticClass, py::return_value_policy::reference)

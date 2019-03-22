@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_IntMath(py::object m)
+void Export_pystes_UBehavior_IntMath(py::module &m)
 {
     py::class_< UBehavior_IntMath,  UBehaviorBase   >(m, "UBehavior_IntMath")
         .def_readwrite("A", &UBehavior_IntMath::A)

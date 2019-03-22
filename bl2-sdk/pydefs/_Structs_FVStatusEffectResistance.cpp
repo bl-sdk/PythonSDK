@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FVStatusEffectResistance(py::object m)
+void Export_pystes_FVStatusEffectResistance(py::module &m)
 {
     py::class_< FVStatusEffectResistance >(m, "FVStatusEffectResistance")
         .def_readwrite("ChanceResistance", &FVStatusEffectResistance::ChanceResistance)

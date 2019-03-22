@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIDesignerAttributeProvider(py::object m)
+void Export_pystes_UIDesignerAttributeProvider(py::module &m)
 {
     py::class_< UIDesignerAttributeProvider,  UInterface   >(m, "UIDesignerAttributeProvider")
         .def("StaticClass", &UIDesignerAttributeProvider::StaticClass, py::return_value_policy::reference)

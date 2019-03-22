@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULightShaftComponent(py::object m)
+void Export_pystes_ULightShaftComponent(py::module &m)
 {
     py::class_< ULightShaftComponent,  ULightComponent   >(m, "ULightShaftComponent")
         .def_readwrite("TraceDistance", &ULightShaftComponent::TraceDistance)

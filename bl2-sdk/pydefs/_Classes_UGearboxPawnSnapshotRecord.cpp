@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxPawnSnapshotRecord(py::object m)
+void Export_pystes_UGearboxPawnSnapshotRecord(py::module &m)
 {
     py::class_< UGearboxPawnSnapshotRecord,  USnapshotRecord   >(m, "UGearboxPawnSnapshotRecord")
         .def_readwrite("PawnIconZOffset", &UGearboxPawnSnapshotRecord::PawnIconZOffset)

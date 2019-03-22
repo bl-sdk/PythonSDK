@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNodeBlendList(py::object m)
+void Export_pystes_UAnimNodeBlendList(py::module &m)
 {
     py::class_< UAnimNodeBlendList,  UAnimNodeBlendBase   >(m, "UAnimNodeBlendList")
         .def_readwrite("TargetWeight", &UAnimNodeBlendList::TargetWeight)

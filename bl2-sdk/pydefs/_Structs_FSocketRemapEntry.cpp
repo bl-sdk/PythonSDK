@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSocketRemapEntry(py::object m)
+void Export_pystes_FSocketRemapEntry(py::module &m)
 {
     py::class_< FSocketRemapEntry >(m, "FSocketRemapEntry")
         .def_readwrite("OriginalSocketName", &FSocketRemapEntry::OriginalSocketName)

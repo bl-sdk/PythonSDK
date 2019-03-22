@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UReferenceSet(py::object m)
+void Export_pystes_UReferenceSet(py::module &m)
 {
     py::class_< UReferenceSet,  UObject   >(m, "UReferenceSet")
         .def_readwrite("References", &UReferenceSet::References)

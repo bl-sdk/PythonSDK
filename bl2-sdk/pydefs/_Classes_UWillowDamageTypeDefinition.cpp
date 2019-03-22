@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowDamageTypeDefinition(py::object m)
+void Export_pystes_UWillowDamageTypeDefinition(py::module &m)
 {
     py::class_< UWillowDamageTypeDefinition,  UDamageTypeDefinition   >(m, "UWillowDamageTypeDefinition")
         .def_readwrite("FleshDamageModifier", &UWillowDamageTypeDefinition::FleshDamageModifier)

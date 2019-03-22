@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxSeqAct_TriggerDialog(py::object m)
+void Export_pystes_UGearboxSeqAct_TriggerDialog(py::module &m)
 {
     py::class_< UGearboxSeqAct_TriggerDialog,  USeqAct_Latent   >(m, "UGearboxSeqAct_TriggerDialog")
         .def_readwrite("Other", &UGearboxSeqAct_TriggerDialog::Other)

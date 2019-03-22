@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USkelControlLookAt(py::object m)
+void Export_pystes_USkelControlLookAt(py::module &m)
 {
     py::class_< USkelControlLookAt,  USkelControlBase   >(m, "USkelControlLookAt")
         .def_readwrite("TargetLocation", &USkelControlLookAt::TargetLocation)

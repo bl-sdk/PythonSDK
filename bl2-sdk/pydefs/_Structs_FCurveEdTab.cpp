@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCurveEdTab(py::object m)
+void Export_pystes_FCurveEdTab(py::module &m)
 {
     py::class_< FCurveEdTab >(m, "FCurveEdTab")
         .def_readwrite("TabName", &FCurveEdTab::TabName)

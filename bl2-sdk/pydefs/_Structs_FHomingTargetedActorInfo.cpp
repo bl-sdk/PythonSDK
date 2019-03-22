@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FHomingTargetedActorInfo(py::object m)
+void Export_pystes_FHomingTargetedActorInfo(py::module &m)
 {
     py::class_< FHomingTargetedActorInfo >(m, "FHomingTargetedActorInfo")
         .def_readwrite("HomingActor", &FHomingTargetedActorInfo::HomingActor)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGestaltPartPermutation(py::object m)
+void Export_pystes_FGestaltPartPermutation(py::module &m)
 {
     py::class_< FGestaltPartPermutation >(m, "FGestaltPartPermutation")
         .def_readwrite("MeshName", &FGestaltPartPermutation::MeshName)

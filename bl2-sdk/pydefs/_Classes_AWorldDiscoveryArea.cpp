@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWorldDiscoveryArea(py::object m)
+void Export_pystes_AWorldDiscoveryArea(py::module &m)
 {
     py::class_< AWorldDiscoveryArea,  AActor   >(m, "AWorldDiscoveryArea")
         .def_readwrite("VfTable_IIBalancedActor", &AWorldDiscoveryArea::VfTable_IIBalancedActor)

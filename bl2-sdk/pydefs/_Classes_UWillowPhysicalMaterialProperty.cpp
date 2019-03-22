@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowPhysicalMaterialProperty(py::object m)
+void Export_pystes_UWillowPhysicalMaterialProperty(py::module &m)
 {
     py::class_< UWillowPhysicalMaterialProperty,  UPhysicalMaterialPropertyBase   >(m, "UWillowPhysicalMaterialProperty")
         .def_readwrite("MaterialAkSwitch", &UWillowPhysicalMaterialProperty::MaterialAkSwitch)

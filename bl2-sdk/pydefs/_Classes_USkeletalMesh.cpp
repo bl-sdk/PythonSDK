@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USkeletalMesh(py::object m)
+void Export_pystes_USkeletalMesh(py::module &m)
 {
     py::class_< USkeletalMesh,  UObject   >(m, "USkeletalMesh")
         .def_readwrite("Bounds", &USkeletalMesh::Bounds)

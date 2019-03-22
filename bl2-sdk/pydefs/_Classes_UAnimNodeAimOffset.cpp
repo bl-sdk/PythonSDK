@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNodeAimOffset(py::object m)
+void Export_pystes_UAnimNodeAimOffset(py::module &m)
 {
     py::class_< UAnimNodeAimOffset,  UAnimNodeBlendBase   >(m, "UAnimNodeAimOffset")
         .def_readwrite("Aim", &UAnimNodeAimOffset::Aim)

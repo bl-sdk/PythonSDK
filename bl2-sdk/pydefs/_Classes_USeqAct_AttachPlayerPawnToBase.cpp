@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_AttachPlayerPawnToBase(py::object m)
+void Export_pystes_USeqAct_AttachPlayerPawnToBase(py::module &m)
 {
     py::class_< USeqAct_AttachPlayerPawnToBase,  USequenceAction   >(m, "USeqAct_AttachPlayerPawnToBase")
         .def_readwrite("BoneName", &USeqAct_AttachPlayerPawnToBase::BoneName)

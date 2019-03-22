@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ATeleporter(py::object m)
+void Export_pystes_ATeleporter(py::module &m)
 {
     py::class_< ATeleporter,  ANavigationPoint   >(m, "ATeleporter")
         .def_readwrite("URL", &ATeleporter::URL)

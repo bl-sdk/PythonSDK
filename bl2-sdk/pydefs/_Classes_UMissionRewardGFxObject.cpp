@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMissionRewardGFxObject(py::object m)
+void Export_pystes_UMissionRewardGFxObject(py::module &m)
 {
     py::class_< UMissionRewardGFxObject,  UGFxObject   >(m, "UMissionRewardGFxObject")
         .def_readwrite("RewardData", &UMissionRewardGFxObject::RewardData)

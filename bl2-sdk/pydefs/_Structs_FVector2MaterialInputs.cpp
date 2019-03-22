@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FVector2MaterialInput(py::object m)
+void Export_pystes_FVector2MaterialInput(py::module &m)
 {
     py::class_< FVector2MaterialInput,  FMaterialInput   >(m, "FVector2MaterialInput")
         .def_readwrite("ConstantX", &FVector2MaterialInput::ConstantX)

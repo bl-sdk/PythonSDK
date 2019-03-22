@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleUberLTISIVCL(py::object m)
+void Export_pystes_UParticleModuleUberLTISIVCL(py::module &m)
 {
     py::class_< UParticleModuleUberLTISIVCL,  UParticleModuleUberBase   >(m, "UParticleModuleUberLTISIVCL")
         .def_readwrite("Lifetime", &UParticleModuleUberLTISIVCL::Lifetime)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRELBManagerStats(py::object m)
+void Export_pystes_FRELBManagerStats(py::module &m)
 {
     py::class_< FRELBManagerStats >(m, "FRELBManagerStats")
         .def_readwrite("TotalTimeUpdated", &FRELBManagerStats::TotalTimeUpdated)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTerrainMaterial(py::object m)
+void Export_pystes_UTerrainMaterial(py::module &m)
 {
     py::class_< UTerrainMaterial,  UObject   >(m, "UTerrainMaterial")
         .def_readwrite("LocalToMapping", &UTerrainMaterial::LocalToMapping)

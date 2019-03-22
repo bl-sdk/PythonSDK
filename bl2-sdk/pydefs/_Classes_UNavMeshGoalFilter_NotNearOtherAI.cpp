@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNavMeshGoalFilter_NotNearOtherAI(py::object m)
+void Export_pystes_UNavMeshGoalFilter_NotNearOtherAI(py::module &m)
 {
     py::class_< UNavMeshGoalFilter_NotNearOtherAI,  UNavMeshGoal_Filter   >(m, "UNavMeshGoalFilter_NotNearOtherAI")
         .def_readwrite("DistanceToCheck", &UNavMeshGoalFilter_NotNearOtherAI::DistanceToCheck)

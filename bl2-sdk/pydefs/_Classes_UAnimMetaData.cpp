@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimMetaData(py::object m)
+void Export_pystes_UAnimMetaData(py::module &m)
 {
     py::class_< UAnimMetaData,  UObject   >(m, "UAnimMetaData")
         .def("StaticClass", &UAnimMetaData::StaticClass, py::return_value_policy::reference)

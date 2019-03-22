@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHybridNavigationVisualizationComponent(py::object m)
+void Export_pystes_UHybridNavigationVisualizationComponent(py::module &m)
 {
     py::class_< UHybridNavigationVisualizationComponent,  UPrimitiveComponent   >(m, "UHybridNavigationVisualizationComponent")
         .def_readwrite("AllNavPoints", &UHybridNavigationVisualizationComponent::AllNavPoints)

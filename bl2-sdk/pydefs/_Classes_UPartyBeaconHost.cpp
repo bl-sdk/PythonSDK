@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPartyBeaconHost(py::object m)
+void Export_pystes_UPartyBeaconHost(py::module &m)
 {
     py::class_< UPartyBeaconHost,  UObject   >(m, "UPartyBeaconHost")
         .def_readwrite("Clients", &UPartyBeaconHost::Clients)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UClassModDefinition(py::object m)
+void Export_pystes_UClassModDefinition(py::module &m)
 {
     py::class_< UClassModDefinition,  UEquipableItemDefinition   >(m, "UClassModDefinition")
         .def_readwrite("ManufacturerOverride", &UClassModDefinition::ManufacturerOverride)

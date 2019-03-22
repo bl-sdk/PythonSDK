@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCheatManager(py::object m)
+void Export_pystes_UCheatManager(py::module &m)
 {
     py::class_< UCheatManager,  UObject   >(m, "UCheatManager")
         .def_readwrite("DebugCameraControllerRef", &UCheatManager::DebugCameraControllerRef)

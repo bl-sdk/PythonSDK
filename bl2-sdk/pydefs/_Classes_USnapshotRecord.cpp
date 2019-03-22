@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USnapshotRecord(py::object m)
+void Export_pystes_USnapshotRecord(py::module &m)
 {
     py::class_< USnapshotRecord,  USnapshotInterface   >(m, "USnapshotRecord")
         .def_readwrite("MyName", &USnapshotRecord::MyName)

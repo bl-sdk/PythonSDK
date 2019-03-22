@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UExporter(py::object m)
+void Export_pystes_UExporter(py::module &m)
 {
     py::class_< UExporter,  UObject   >(m, "UExporter")
         .def_readwrite("FormatExtension", &UExporter::FormatExtension)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowVehicleSimCar(py::object m)
+void Export_pystes_UWillowVehicleSimCar(py::module &m)
 {
     py::class_< UWillowVehicleSimCar,  USVehicleSimCar   >(m, "UWillowVehicleSimCar")
         .def_readwrite("TorqueVSpeedCurve", &UWillowVehicleSimCar::TorqueVSpeedCurve)

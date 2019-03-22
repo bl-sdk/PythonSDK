@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCoverSpotInfo(py::object m)
+void Export_pystes_FCoverSpotInfo(py::module &m)
 {
     py::class_< FCoverSpotInfo >(m, "FCoverSpotInfo")
         .def_readwrite("TheCoverActor", &FCoverSpotInfo::TheCoverActor)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USkelControlHandModifier(py::object m)
+void Export_pystes_USkelControlHandModifier(py::module &m)
 {
     py::class_< USkelControlHandModifier,  USkelControlBase   >(m, "USkelControlHandModifier")
         .def_readwrite("HandAnimSeq", &USkelControlHandModifier::HandAnimSeq)

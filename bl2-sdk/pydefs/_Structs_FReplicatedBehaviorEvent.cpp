@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FReplicatedBehaviorEvent(py::object m)
+void Export_pystes_FReplicatedBehaviorEvent(py::module &m)
 {
     py::class_< FReplicatedBehaviorEvent >(m, "FReplicatedBehaviorEvent")
         .def_readwrite("SequenceIndex", &FReplicatedBehaviorEvent::SequenceIndex)

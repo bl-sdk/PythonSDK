@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHUDWidget_Trading(py::object m)
+void Export_pystes_UHUDWidget_Trading(py::module &m)
 {
     py::class_< UHUDWidget_Trading,  UHUDWidget_Base   >(m, "UHUDWidget_Trading")
         .def_readwrite("TradePrompt_Send", &UHUDWidget_Trading::TradePrompt_Send)

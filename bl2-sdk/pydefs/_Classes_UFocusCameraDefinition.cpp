@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFocusCameraDefinition(py::object m)
+void Export_pystes_UFocusCameraDefinition(py::module &m)
 {
     py::class_< UFocusCameraDefinition,  UGBXDefinition   >(m, "UFocusCameraDefinition")
         .def_readwrite("CamReturnTime", &UFocusCameraDefinition::CamReturnTime)

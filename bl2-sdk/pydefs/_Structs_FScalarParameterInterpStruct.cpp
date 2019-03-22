@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FScalarParameterInterpStruct(py::object m)
+void Export_pystes_FScalarParameterInterpStruct(py::module &m)
 {
     py::class_< FScalarParameterInterpStruct >(m, "FScalarParameterInterpStruct")
         .def_readwrite("ParameterName", &FScalarParameterInterpStruct::ParameterName)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionRotate3D(py::object m)
+void Export_pystes_UMaterialExpressionRotate3D(py::module &m)
 {
     py::class_< UMaterialExpressionRotate3D,  UMaterialExpression   >(m, "UMaterialExpressionRotate3D")
         .def_readwrite("Vec", &UMaterialExpressionRotate3D::Vec)

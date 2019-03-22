@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUsableCustomizationItemDefinition(py::object m)
+void Export_pystes_UUsableCustomizationItemDefinition(py::module &m)
 {
     py::class_< UUsableCustomizationItemDefinition,  UUsableItemDefinition   >(m, "UUsableCustomizationItemDefinition")
         .def_readwrite("OverridePool", &UUsableCustomizationItemDefinition::OverridePool)

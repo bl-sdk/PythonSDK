@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SetMaterialParameters(py::object m)
+void Export_pystes_UBehavior_SetMaterialParameters(py::module &m)
 {
     py::class_< UBehavior_SetMaterialParameters,  UBehaviorBase   >(m, "UBehavior_SetMaterialParameters")
         .def_readwrite("AttributeContext", &UBehavior_SetMaterialParameters::AttributeContext)

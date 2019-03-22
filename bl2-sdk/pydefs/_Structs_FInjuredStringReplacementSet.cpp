@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInjuredStringReplacementSet(py::object m)
+void Export_pystes_FInjuredStringReplacementSet(py::module &m)
 {
     py::class_< FInjuredStringReplacementSet >(m, "FInjuredStringReplacementSet")
         .def_readwrite("Skills", &FInjuredStringReplacementSet::Skills)

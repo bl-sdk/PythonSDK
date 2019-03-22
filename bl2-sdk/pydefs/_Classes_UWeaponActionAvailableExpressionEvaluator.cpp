@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWeaponActionAvailableExpressionEvaluator(py::object m)
+void Export_pystes_UWeaponActionAvailableExpressionEvaluator(py::module &m)
 {
     py::class_< UWeaponActionAvailableExpressionEvaluator,  UExpressionEvaluator   >(m, "UWeaponActionAvailableExpressionEvaluator")
         .def("StaticClass", &UWeaponActionAvailableExpressionEvaluator::StaticClass, py::return_value_policy::reference)

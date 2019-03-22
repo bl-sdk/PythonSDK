@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UKeyedItemPoolDefinition(py::object m)
+void Export_pystes_UKeyedItemPoolDefinition(py::module &m)
 {
     py::class_< UKeyedItemPoolDefinition,  UItemPoolDefinition   >(m, "UKeyedItemPoolDefinition")
         .def_readwrite("Key", &UKeyedItemPoolDefinition::Key)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHoverVehicleHandlingDefinition(py::object m)
+void Export_pystes_UHoverVehicleHandlingDefinition(py::module &m)
 {
     py::class_< UHoverVehicleHandlingDefinition,  UVehicleHandlingDefinition   >(m, "UHoverVehicleHandlingDefinition")
         .def_readwrite("AirTransFriction", &UHoverVehicleHandlingDefinition::AirTransFriction)

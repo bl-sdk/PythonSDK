@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowLevelTimerDefinition(py::object m)
+void Export_pystes_UWillowLevelTimerDefinition(py::module &m)
 {
     py::class_< UWillowLevelTimerDefinition,  UGBXDefinition   >(m, "UWillowLevelTimerDefinition")
         .def_readwrite("TimerHeader", &UWillowLevelTimerDefinition::TimerHeader)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNetDriver(py::object m)
+void Export_pystes_UNetDriver(py::module &m)
 {
     py::class_< UNetDriver,  USubsystem   >(m, "UNetDriver")
         .def_readwrite("ConnectionTimeout", &UNetDriver::ConnectionTimeout)

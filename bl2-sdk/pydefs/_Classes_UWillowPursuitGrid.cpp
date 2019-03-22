@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowPursuitGrid(py::object m)
+void Export_pystes_UWillowPursuitGrid(py::module &m)
 {
     py::class_< UWillowPursuitGrid,  UObject   >(m, "UWillowPursuitGrid")
         .def_readwrite("PursuitNodes", &UWillowPursuitGrid::PursuitNodes)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FOneOffLevelChallengeData(py::object m)
+void Export_pystes_FOneOffLevelChallengeData(py::module &m)
 {
     py::class_< FOneOffLevelChallengeData >(m, "FOneOffLevelChallengeData")
         .def_readwrite("PackageId", &FOneOffLevelChallengeData::PackageId)

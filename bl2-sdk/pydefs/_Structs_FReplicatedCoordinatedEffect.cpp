@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FReplicatedCoordinatedEffect(py::object m)
+void Export_pystes_FReplicatedCoordinatedEffect(py::module &m)
 {
     py::class_< FReplicatedCoordinatedEffect >(m, "FReplicatedCoordinatedEffect")
         .def_readwrite("Effects", &FReplicatedCoordinatedEffect::Effects)

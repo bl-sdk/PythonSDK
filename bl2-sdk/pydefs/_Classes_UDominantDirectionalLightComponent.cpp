@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDominantDirectionalLightComponent(py::object m)
+void Export_pystes_UDominantDirectionalLightComponent(py::module &m)
 {
     py::class_< UDominantDirectionalLightComponent,  ULightComponent   >(m, "UDominantDirectionalLightComponent")
         .def_readwrite("DominantLightmassBrightness", &UDominantDirectionalLightComponent::DominantLightmassBrightness)

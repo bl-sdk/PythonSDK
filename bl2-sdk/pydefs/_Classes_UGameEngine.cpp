@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGameEngine(py::object m)
+void Export_pystes_UGameEngine(py::module &m)
 {
     py::class_< UGameEngine,  USubsystem   >(m, "UGameEngine")
         .def_readwrite("GPendingLevel", &UGameEngine::GPendingLevel)

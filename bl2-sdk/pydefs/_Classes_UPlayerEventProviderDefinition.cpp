@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerEventProviderDefinition(py::object m)
+void Export_pystes_UPlayerEventProviderDefinition(py::module &m)
 {
     py::class_< UPlayerEventProviderDefinition,  UGBXDefinition   >(m, "UPlayerEventProviderDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UPlayerEventProviderDefinition::VfTable_IIBehaviorProvider)

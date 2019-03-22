@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleTypeDataRibbon(py::object m)
+void Export_pystes_UParticleModuleTypeDataRibbon(py::module &m)
 {
     py::class_< UParticleModuleTypeDataRibbon,  UParticleModuleTypeDataBase   >(m, "UParticleModuleTypeDataRibbon")
         .def_readwrite("MaxTessellationBetweenParticles", &UParticleModuleTypeDataRibbon::MaxTessellationBetweenParticles)

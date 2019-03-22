@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNavMeshGoal_WithinDistanceEnvelope(py::object m)
+void Export_pystes_UNavMeshGoal_WithinDistanceEnvelope(py::module &m)
 {
     py::class_< UNavMeshGoal_WithinDistanceEnvelope,  UNavMeshPathGoalEvaluator   >(m, "UNavMeshGoal_WithinDistanceEnvelope")
         .def_readwrite("MaxDistance", &UNavMeshGoal_WithinDistanceEnvelope::MaxDistance)

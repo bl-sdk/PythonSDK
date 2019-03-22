@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGameViewportClient(py::object m)
+void Export_pystes_UWillowGameViewportClient(py::module &m)
 {
     py::class_< UWillowGameViewportClient,  UGameViewportClient   >(m, "UWillowGameViewportClient")
         .def_readwrite("ViewportUI", &UWillowGameViewportClient::ViewportUI)

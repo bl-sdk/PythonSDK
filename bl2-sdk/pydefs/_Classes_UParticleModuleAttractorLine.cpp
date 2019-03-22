@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleAttractorLine(py::object m)
+void Export_pystes_UParticleModuleAttractorLine(py::module &m)
 {
     py::class_< UParticleModuleAttractorLine,  UParticleModuleAttractorBase   >(m, "UParticleModuleAttractorLine")
         .def_readwrite("EndPoint0", &UParticleModuleAttractorLine::EndPoint0)

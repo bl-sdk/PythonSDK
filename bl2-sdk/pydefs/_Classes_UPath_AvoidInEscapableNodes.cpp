@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPath_AvoidInEscapableNodes(py::object m)
+void Export_pystes_UPath_AvoidInEscapableNodes(py::module &m)
 {
     py::class_< UPath_AvoidInEscapableNodes,  UPathConstraint   >(m, "UPath_AvoidInEscapableNodes")
         .def_readwrite("Radius", &UPath_AvoidInEscapableNodes::Radius)

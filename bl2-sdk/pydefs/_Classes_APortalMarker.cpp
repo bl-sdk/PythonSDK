@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APortalMarker(py::object m)
+void Export_pystes_APortalMarker(py::module &m)
 {
     py::class_< APortalMarker,  ANavigationPoint   >(m, "APortalMarker")
         .def_readwrite("MyPortal", &APortalMarker::MyPortal)

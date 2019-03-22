@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FNamedSkillEvent(py::object m)
+void Export_pystes_FNamedSkillEvent(py::module &m)
 {
     py::class_< FNamedSkillEvent >(m, "FNamedSkillEvent")
         .def_readwrite("EventName", &FNamedSkillEvent::EventName)

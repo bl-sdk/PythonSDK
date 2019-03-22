@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIFocusable(py::object m)
+void Export_pystes_UIFocusable(py::module &m)
 {
     py::class_< UIFocusable,  UInterface   >(m, "UIFocusable")
         .def("StaticClass", &UIFocusable::StaticClass, py::return_value_policy::reference)

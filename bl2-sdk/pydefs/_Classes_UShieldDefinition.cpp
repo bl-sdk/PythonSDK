@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UShieldDefinition(py::object m)
+void Export_pystes_UShieldDefinition(py::module &m)
 {
     py::class_< UShieldDefinition,  UItemDefinition   >(m, "UShieldDefinition")
         .def_readwrite("ShieldType", &UShieldDefinition::ShieldType)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionCustom(py::object m)
+void Export_pystes_UMaterialExpressionCustom(py::module &m)
 {
     py::class_< UMaterialExpressionCustom,  UMaterialExpression   >(m, "UMaterialExpressionCustom")
         .def_readwrite("Code", &UMaterialExpressionCustom::Code)

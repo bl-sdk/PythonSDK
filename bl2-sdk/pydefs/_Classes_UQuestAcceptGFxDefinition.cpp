@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UQuestAcceptGFxDefinition(py::object m)
+void Export_pystes_UQuestAcceptGFxDefinition(py::module &m)
 {
     py::class_< UQuestAcceptGFxDefinition,  UWillowGFxMovie3DDefinition   >(m, "UQuestAcceptGFxDefinition")
         .def_readwrite("MissionTextDefinition", &UQuestAcceptGFxDefinition::MissionTextDefinition)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FViewTargetTransitionParams(py::object m)
+void Export_pystes_FViewTargetTransitionParams(py::module &m)
 {
     py::class_< FViewTargetTransitionParams >(m, "FViewTargetTransitionParams")
         .def_readwrite("BlendTime", &FViewTargetTransitionParams::BlendTime)

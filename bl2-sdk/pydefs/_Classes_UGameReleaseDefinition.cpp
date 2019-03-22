@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGameReleaseDefinition(py::object m)
+void Export_pystes_UGameReleaseDefinition(py::module &m)
 {
     py::class_< UGameReleaseDefinition,  UGBXDefinition   >(m, "UGameReleaseDefinition")
         .def_readwrite("WorldDiscoveryStatID", &UGameReleaseDefinition::WorldDiscoveryStatID)

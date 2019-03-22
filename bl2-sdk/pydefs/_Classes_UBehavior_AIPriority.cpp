@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_AIPriority(py::object m)
+void Export_pystes_UBehavior_AIPriority(py::module &m)
 {
     py::class_< UBehavior_AIPriority,  UBehaviorBase   >(m, "UBehavior_AIPriority")
         .def_readwrite("PriorityModifier", &UBehavior_AIPriority::PriorityModifier)

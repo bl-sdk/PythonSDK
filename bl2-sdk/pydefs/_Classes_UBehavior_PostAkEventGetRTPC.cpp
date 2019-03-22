@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_PostAkEventGetRTPC(py::object m)
+void Export_pystes_UBehavior_PostAkEventGetRTPC(py::module &m)
 {
     py::class_< UBehavior_PostAkEventGetRTPC,  UBehavior_PostAkEvent   >(m, "UBehavior_PostAkEventGetRTPC")
         .def_readwrite("RTPC", &UBehavior_PostAkEventGetRTPC::RTPC)

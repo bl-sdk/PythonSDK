@@ -14585,6 +14585,9 @@
     <ClInclude Include="include\pybind11\detail\typeid.h">
       <Filter>Header Files\pydef11\detail</Filter>
     </ClInclude>
+    <ClInclude Include="pydef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Plugin Loader.rc">

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleMaterialByParameter(py::object m)
+void Export_pystes_UParticleModuleMaterialByParameter(py::module &m)
 {
     py::class_< UParticleModuleMaterialByParameter,  UParticleModuleMaterialBase   >(m, "UParticleModuleMaterialByParameter")
         .def_readwrite("MaterialParameters", &UParticleModuleMaterialByParameter::MaterialParameters)

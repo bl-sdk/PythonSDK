@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTexture2DDynamic(py::object m)
+void Export_pystes_UTexture2DDynamic(py::module &m)
 {
     py::class_< UTexture2DDynamic,  UTexture   >(m, "UTexture2DDynamic")
         .def_readwrite("SizeX", &UTexture2DDynamic::SizeX)

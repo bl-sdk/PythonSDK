@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleSystem(py::object m)
+void Export_pystes_UParticleSystem(py::module &m)
 {
     py::class_< UParticleSystem,  UObject   >(m, "UParticleSystem")
         .def_readwrite("SystemUpdateMode", &UParticleSystem::SystemUpdateMode)

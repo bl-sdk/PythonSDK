@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRawAnimSequenceTrack(py::object m)
+void Export_pystes_FRawAnimSequenceTrack(py::module &m)
 {
     py::class_< FRawAnimSequenceTrack >(m, "FRawAnimSequenceTrack")
         .def_readwrite("PosKeys", &FRawAnimSequenceTrack::PosKeys)

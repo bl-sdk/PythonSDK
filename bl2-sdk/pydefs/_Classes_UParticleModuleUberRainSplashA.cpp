@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleUberRainSplashA(py::object m)
+void Export_pystes_UParticleModuleUberRainSplashA(py::module &m)
 {
     py::class_< UParticleModuleUberRainSplashA,  UParticleModuleUberBase   >(m, "UParticleModuleUberRainSplashA")
         .def_readwrite("Lifetime", &UParticleModuleUberRainSplashA::Lifetime)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxDialogPriority(py::object m)
+void Export_pystes_UGearboxDialogPriority(py::module &m)
 {
     py::class_< UGearboxDialogPriority,  UGBXDefinition   >(m, "UGearboxDialogPriority")
         .def("StaticClass", &UGearboxDialogPriority::StaticClass, py::return_value_policy::reference)

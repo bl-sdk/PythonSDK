@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLockOnTargetStateStruct(py::object m)
+void Export_pystes_FLockOnTargetStateStruct(py::module &m)
 {
     py::class_< FLockOnTargetStateStruct >(m, "FLockOnTargetStateStruct")
         .def_readwrite("CurrentTarget", &FLockOnTargetStateStruct::CurrentTarget)

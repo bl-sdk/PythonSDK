@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAICostExpressionEvaluator(py::object m)
+void Export_pystes_UAICostExpressionEvaluator(py::module &m)
 {
     py::class_< UAICostExpressionEvaluator,  UExpressionEvaluator   >(m, "UAICostExpressionEvaluator")
         .def_readwrite("Multiplier", &UAICostExpressionEvaluator::Multiplier)

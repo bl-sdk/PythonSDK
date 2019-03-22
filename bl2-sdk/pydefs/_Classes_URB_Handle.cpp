@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_URB_Handle(py::object m)
+void Export_pystes_URB_Handle(py::module &m)
 {
     py::class_< URB_Handle,  UActorComponent   >(m, "URB_Handle")
         .def_readwrite("GrabbedComponent", &URB_Handle::GrabbedComponent)

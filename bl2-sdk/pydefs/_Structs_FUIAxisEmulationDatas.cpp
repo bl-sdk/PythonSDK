@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FUIAxisEmulationData(py::object m)
+void Export_pystes_FUIAxisEmulationData(py::module &m)
 {
     py::class_< FUIAxisEmulationData,  FUIKeyRepeatData   >(m, "FUIAxisEmulationData")
   ;

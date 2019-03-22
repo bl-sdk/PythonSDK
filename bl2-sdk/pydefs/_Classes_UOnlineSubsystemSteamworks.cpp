@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineSubsystemSteamworks(py::object m)
+void Export_pystes_UOnlineSubsystemSteamworks(py::module &m)
 {
     py::class_< UOnlineSubsystemSteamworks,  UOnlineSubsystemCommonImpl   >(m, "UOnlineSubsystemSteamworks")
         .def_readwrite("CallbackBridge", &UOnlineSubsystemSteamworks::CallbackBridge)

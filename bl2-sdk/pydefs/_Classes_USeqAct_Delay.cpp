@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_Delay(py::object m)
+void Export_pystes_USeqAct_Delay(py::module &m)
 {
     py::class_< USeqAct_Delay,  USeqAct_Latent   >(m, "USeqAct_Delay")
         .def_readwrite("DefaultDuration", &USeqAct_Delay::DefaultDuration)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_Log(py::object m)
+void Export_pystes_USeqAct_Log(py::module &m)
 {
     py::class_< USeqAct_Log,  USequenceAction   >(m, "USeqAct_Log")
         .def_readwrite("TargetDuration", &USeqAct_Log::TargetDuration)

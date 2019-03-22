@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_CreateImpactEffect(py::object m)
+void Export_pystes_UBehavior_CreateImpactEffect(py::module &m)
 {
     py::class_< UBehavior_CreateImpactEffect,  UBehaviorBase   >(m, "UBehavior_CreateImpactEffect")
         .def_readwrite("ImpactDefinition", &UBehavior_CreateImpactEffect::ImpactDefinition)

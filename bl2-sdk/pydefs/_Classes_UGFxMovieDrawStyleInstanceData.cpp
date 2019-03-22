@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGFxMovieDrawStyleInstanceData(py::object m)
+void Export_pystes_UGFxMovieDrawStyleInstanceData(py::module &m)
 {
     py::class_< UGFxMovieDrawStyleInstanceData,  UGFxMovieDrawStyleRTT   >(m, "UGFxMovieDrawStyleInstanceData")
         .def_readwrite("ComponentIDName", &UGFxMovieDrawStyleInstanceData::ComponentIDName)

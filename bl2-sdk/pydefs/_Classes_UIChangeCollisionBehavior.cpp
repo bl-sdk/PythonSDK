@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIChangeCollisionBehavior(py::object m)
+void Export_pystes_UIChangeCollisionBehavior(py::module &m)
 {
     py::class_< UIChangeCollisionBehavior,  UInterface   >(m, "UIChangeCollisionBehavior")
         .def("StaticClass", &UIChangeCollisionBehavior::StaticClass, py::return_value_policy::reference)

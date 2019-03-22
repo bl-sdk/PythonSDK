@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSoftBodyTetraLink(py::object m)
+void Export_pystes_FSoftBodyTetraLink(py::module &m)
 {
     py::class_< FSoftBodyTetraLink >(m, "FSoftBodyTetraLink")
         .def_readwrite("Index", &FSoftBodyTetraLink::Index)

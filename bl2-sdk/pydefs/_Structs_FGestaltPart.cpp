@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGestaltPart(py::object m)
+void Export_pystes_FGestaltPart(py::module &m)
 {
     py::class_< FGestaltPart >(m, "FGestaltPart")
         .def_readwrite("SkeletalMeshFragment", &FGestaltPart::SkeletalMeshFragment)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionConstantBiasScale(py::object m)
+void Export_pystes_UMaterialExpressionConstantBiasScale(py::module &m)
 {
     py::class_< UMaterialExpressionConstantBiasScale,  UMaterialExpression   >(m, "UMaterialExpressionConstantBiasScale")
         .def_readwrite("Input", &UMaterialExpressionConstantBiasScale::Input)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowDialogAct_MissionSwitch(py::object m)
+void Export_pystes_UWillowDialogAct_MissionSwitch(py::module &m)
 {
     py::class_< UWillowDialogAct_MissionSwitch,  UGearboxDialogAction   >(m, "UWillowDialogAct_MissionSwitch")
         .def_readwrite("TrackedState", &UWillowDialogAct_MissionSwitch::TrackedState)

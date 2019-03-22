@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUICharacterSummary(py::object m)
+void Export_pystes_UUICharacterSummary(py::module &m)
 {
     py::class_< UUICharacterSummary,  UUIResourceDataProvider   >(m, "UUICharacterSummary")
         .def_readwrite("ClassPathName", &UUICharacterSummary::ClassPathName)

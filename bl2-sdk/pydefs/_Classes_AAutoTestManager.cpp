@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AAutoTestManager(py::object m)
+void Export_pystes_AAutoTestManager(py::module &m)
 {
     py::class_< AAutoTestManager,  AInfo   >(m, "AAutoTestManager")
         .def_readwrite("AutomatedPerfRemainingTime", &AAutoTestManager::AutomatedPerfRemainingTime)

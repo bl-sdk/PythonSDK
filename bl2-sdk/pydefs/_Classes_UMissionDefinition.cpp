@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMissionDefinition(py::object m)
+void Export_pystes_UMissionDefinition(py::module &m)
 {
     py::class_< UMissionDefinition,  UGBXDefinition   >(m, "UMissionDefinition")
         .def_readwrite("VfTable_IIBalancedActor", &UMissionDefinition::VfTable_IIBalancedActor)

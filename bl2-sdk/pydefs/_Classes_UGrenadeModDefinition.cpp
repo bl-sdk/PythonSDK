@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGrenadeModDefinition(py::object m)
+void Export_pystes_UGrenadeModDefinition(py::module &m)
 {
     py::class_< UGrenadeModDefinition,  UEquipableItemDefinition   >(m, "UGrenadeModDefinition")
         .def_readwrite("DefaultProjectileDefinition", &UGrenadeModDefinition::DefaultProjectileDefinition)

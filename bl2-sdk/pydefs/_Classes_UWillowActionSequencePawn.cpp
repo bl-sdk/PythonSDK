@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowActionSequencePawn(py::object m)
+void Export_pystes_UWillowActionSequencePawn(py::module &m)
 {
     py::class_< UWillowActionSequencePawn,  UActionSequencePawn   >(m, "UWillowActionSequencePawn")
         .def_readwrite("WillowAI", &UWillowActionSequencePawn::WillowAI)

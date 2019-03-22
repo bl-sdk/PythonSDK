@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGFxManagerDefinition(py::object m)
+void Export_pystes_UGFxManagerDefinition(py::module &m)
 {
     py::class_< UGFxManagerDefinition,  UGBXDefinition   >(m, "UGFxManagerDefinition")
         .def_readwrite("ManagerClass", &UGFxManagerDefinition::ManagerClass)

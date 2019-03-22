@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBloodSplatterTrace(py::object m)
+void Export_pystes_FBloodSplatterTrace(py::module &m)
 {
     py::class_< FBloodSplatterTrace >(m, "FBloodSplatterTrace")
         .def_readwrite("HitRegion", &FBloodSplatterTrace::HitRegion)

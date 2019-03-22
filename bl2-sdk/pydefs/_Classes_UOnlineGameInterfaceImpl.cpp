@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineGameInterfaceImpl(py::object m)
+void Export_pystes_UOnlineGameInterfaceImpl(py::module &m)
 {
     py::class_< UOnlineGameInterfaceImpl,  UObject   >(m, "UOnlineGameInterfaceImpl")
         .def_readwrite("OwningSubsystem", &UOnlineGameInterfaceImpl::OwningSubsystem)

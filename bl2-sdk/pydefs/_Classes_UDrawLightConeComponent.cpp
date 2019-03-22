@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDrawLightConeComponent(py::object m)
+void Export_pystes_UDrawLightConeComponent(py::module &m)
 {
     py::class_< UDrawLightConeComponent,  UPrimitiveComponent   >(m, "UDrawLightConeComponent")
         .def_readwrite("ConeColor", &UDrawConeComponent::ConeColor)

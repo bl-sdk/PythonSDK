@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInputDeviceCollectionDefinition(py::object m)
+void Export_pystes_UInputDeviceCollectionDefinition(py::module &m)
 {
     py::class_< UInputDeviceCollectionDefinition,  UGBXDefinition   >(m, "UInputDeviceCollectionDefinition")
         .def_readwrite("XboxInputDevices", &UInputDeviceCollectionDefinition::XboxInputDevices)

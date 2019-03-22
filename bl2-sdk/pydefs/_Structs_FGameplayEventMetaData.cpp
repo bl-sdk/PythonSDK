@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGameplayEventMetaData(py::object m)
+void Export_pystes_FGameplayEventMetaData(py::module &m)
 {
     py::class_< FGameplayEventMetaData >(m, "FGameplayEventMetaData")
         .def_readwrite("EventID", &FGameplayEventMetaData::EventID)

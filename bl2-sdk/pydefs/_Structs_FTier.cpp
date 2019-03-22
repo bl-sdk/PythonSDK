@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTier(py::object m)
+void Export_pystes_FTier(py::module &m)
 {
     py::class_< FTier >(m, "FTier")
         .def_readwrite("Skills", &FTier::Skills)

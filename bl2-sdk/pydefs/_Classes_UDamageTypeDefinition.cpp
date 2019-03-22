@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDamageTypeDefinition(py::object m)
+void Export_pystes_UDamageTypeDefinition(py::module &m)
 {
     py::class_< UDamageTypeDefinition,  UGBXDefinition   >(m, "UDamageTypeDefinition")
         .def("StaticClass", &UDamageTypeDefinition::StaticClass, py::return_value_policy::reference)

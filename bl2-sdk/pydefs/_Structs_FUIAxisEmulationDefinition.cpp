@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FUIAxisEmulationDefinition(py::object m)
+void Export_pystes_FUIAxisEmulationDefinition(py::module &m)
 {
     py::class_< FUIAxisEmulationDefinition >(m, "FUIAxisEmulationDefinition")
         .def_readwrite("AxisInputKey", &FUIAxisEmulationDefinition::AxisInputKey)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_RandomBranch(py::object m)
+void Export_pystes_UBehavior_RandomBranch(py::module &m)
 {
     py::class_< UBehavior_RandomBranch,  UBehaviorBase   >(m, "UBehavior_RandomBranch")
         .def_readwrite("Conditions", &UBehavior_RandomBranch::Conditions)

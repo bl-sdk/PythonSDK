@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FControllerConnectionState(py::object m)
+void Export_pystes_FControllerConnectionState(py::module &m)
 {
     py::class_< FControllerConnectionState >(m, "FControllerConnectionState")
         .def_readwrite("bIsControllerConnected", &FControllerConnectionState::bIsControllerConnected)

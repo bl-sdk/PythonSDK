@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPauseGFxMovie(py::object m)
+void Export_pystes_UPauseGFxMovie(py::module &m)
 {
     py::class_< UPauseGFxMovie,  UFrontendGFxMovie   >(m, "UPauseGFxMovie")
         .def_readwrite("PauseDlg", &UPauseGFxMovie::PauseDlg)

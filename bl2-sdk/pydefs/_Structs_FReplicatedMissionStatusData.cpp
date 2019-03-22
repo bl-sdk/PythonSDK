@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FReplicatedMissionStatusData(py::object m)
+void Export_pystes_FReplicatedMissionStatusData(py::module &m)
 {
     py::class_< FReplicatedMissionStatusData >(m, "FReplicatedMissionStatusData")
         .def_readwrite("Mission", &FReplicatedMissionStatusData::Mission)

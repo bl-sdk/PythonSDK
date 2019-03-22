@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AEmitterPool(py::object m)
+void Export_pystes_AEmitterPool(py::module &m)
 {
     py::class_< AEmitterPool,  AActor   >(m, "AEmitterPool")
         .def_readwrite("PSCTemplate", &AEmitterPool::PSCTemplate)

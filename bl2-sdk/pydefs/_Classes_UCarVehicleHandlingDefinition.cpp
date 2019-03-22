@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCarVehicleHandlingDefinition(py::object m)
+void Export_pystes_UCarVehicleHandlingDefinition(py::module &m)
 {
     py::class_< UCarVehicleHandlingDefinition,  UVehicleHandlingDefinition   >(m, "UCarVehicleHandlingDefinition")
         .def_readwrite("ChassisTorqueScale", &UCarVehicleHandlingDefinition::ChassisTorqueScale)

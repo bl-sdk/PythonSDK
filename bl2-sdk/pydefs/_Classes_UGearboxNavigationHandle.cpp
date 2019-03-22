@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxNavigationHandle(py::object m)
+void Export_pystes_UGearboxNavigationHandle(py::module &m)
 {
     py::class_< UGearboxNavigationHandle,  UNavigationHandle   >(m, "UGearboxNavigationHandle")
         .def_readwrite("DesiredMovementSpeed", &UGearboxNavigationHandle::DesiredMovementSpeed)

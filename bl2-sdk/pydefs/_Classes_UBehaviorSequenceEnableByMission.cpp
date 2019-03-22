@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehaviorSequenceEnableByMission(py::object m)
+void Export_pystes_UBehaviorSequenceEnableByMission(py::module &m)
 {
     py::class_< UBehaviorSequenceEnableByMission,  UBehaviorSequenceCustomEnableCondition   >(m, "UBehaviorSequenceEnableByMission")
         .def_readwrite("VfTable_IIMission", &UBehaviorSequenceEnableByMission::VfTable_IIMission)

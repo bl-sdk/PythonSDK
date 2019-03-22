@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FImpactResponseEffect(py::object m)
+void Export_pystes_FImpactResponseEffect(py::module &m)
 {
     py::class_< FImpactResponseEffect >(m, "FImpactResponseEffect")
         .def_readwrite("CensoredEffectAlternative", &FImpactResponseEffect::CensoredEffectAlternative)

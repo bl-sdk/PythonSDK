@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UObjectPropertyAttributeValueResolver(py::object m)
+void Export_pystes_UObjectPropertyAttributeValueResolver(py::module &m)
 {
     py::class_< UObjectPropertyAttributeValueResolver,  UAttributeValueResolver   >(m, "UObjectPropertyAttributeValueResolver")
         .def_readwrite("PropertyName", &UObjectPropertyAttributeValueResolver::PropertyName)

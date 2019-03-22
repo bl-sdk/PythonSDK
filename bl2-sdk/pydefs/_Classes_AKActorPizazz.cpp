@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AKActorPizazz(py::object m)
+void Export_pystes_AKActorPizazz(py::module &m)
 {
     py::class_< AKActorPizazz,  AKActor   >(m, "AKActorPizazz")
         .def_readwrite("ReplicatedImpulse", &AKActorPizazz::ReplicatedImpulse)

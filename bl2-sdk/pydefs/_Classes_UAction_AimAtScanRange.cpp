@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_AimAtScanRange(py::object m)
+void Export_pystes_UAction_AimAtScanRange(py::module &m)
 {
     py::class_< UAction_AimAtScanRange,  UWillowActionSequencePawn   >(m, "UAction_AimAtScanRange")
         .def_readwrite("YawRange", &UAction_AimAtScanRange::YawRange)

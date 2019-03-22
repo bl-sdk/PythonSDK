@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIParameterBehavior(py::object m)
+void Export_pystes_UIParameterBehavior(py::module &m)
 {
     py::class_< UIParameterBehavior,  UInterface   >(m, "UIParameterBehavior")
         .def("StaticClass", &UIParameterBehavior::StaticClass, py::return_value_policy::reference)

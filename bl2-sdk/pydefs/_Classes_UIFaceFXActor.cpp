@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIFaceFXActor(py::object m)
+void Export_pystes_UIFaceFXActor(py::module &m)
 {
     py::class_< UIFaceFXActor,  UInterface   >(m, "UIFaceFXActor")
         .def("StaticClass", &UIFaceFXActor::StaticClass, py::return_value_policy::reference)

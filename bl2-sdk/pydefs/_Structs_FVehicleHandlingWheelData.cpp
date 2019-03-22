@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FVehicleHandlingWheelData(py::object m)
+void Export_pystes_FVehicleHandlingWheelData(py::module &m)
 {
     py::class_< FVehicleHandlingWheelData >(m, "FVehicleHandlingWheelData")
         .def_readwrite("BoneName", &FVehicleHandlingWheelData::BoneName)

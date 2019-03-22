@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqEvent_Mover(py::object m)
+void Export_pystes_USeqEvent_Mover(py::module &m)
 {
     py::class_< USeqEvent_Mover,  USequenceEvent   >(m, "USeqEvent_Mover")
         .def_readwrite("StayOpenTime", &USeqEvent_Mover::StayOpenTime)

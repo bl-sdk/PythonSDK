@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ALevelStreamingVolume(py::object m)
+void Export_pystes_ALevelStreamingVolume(py::module &m)
 {
     py::class_< ALevelStreamingVolume,  AVolume   >(m, "ALevelStreamingVolume")
         .def_readwrite("StreamingLevels", &ALevelStreamingVolume::StreamingLevels)

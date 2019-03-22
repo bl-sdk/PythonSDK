@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FOnlinePlayerScore(py::object m)
+void Export_pystes_FOnlinePlayerScore(py::module &m)
 {
     py::class_< FOnlinePlayerScore >(m, "FOnlinePlayerScore")
         .def_readwrite("PlayerID", &FOnlinePlayerScore::PlayerID)

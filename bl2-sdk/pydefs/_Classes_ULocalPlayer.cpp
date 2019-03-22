@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULocalPlayer(py::object m)
+void Export_pystes_ULocalPlayer(py::module &m)
 {
     py::class_< ULocalPlayer,  UObject   >(m, "ULocalPlayer")
         .def_readwrite("VfTable_FObserverInterface", &ULocalPlayer::VfTable_FObserverInterface)

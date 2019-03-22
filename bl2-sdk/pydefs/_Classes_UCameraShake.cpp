@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCameraShake(py::object m)
+void Export_pystes_UCameraShake(py::module &m)
 {
     py::class_< UCameraShake,  UObject   >(m, "UCameraShake")
         .def_readwrite("OscillationDuration", &UCameraShake::OscillationDuration)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleLightEnvironmentComponent(py::object m)
+void Export_pystes_UParticleLightEnvironmentComponent(py::module &m)
 {
     py::class_< UParticleLightEnvironmentComponent,  UDynamicLightEnvironmentComponent   >(m, "UParticleLightEnvironmentComponent")
         .def_readwrite("ReferenceCount", &UParticleLightEnvironmentComponent::ReferenceCount)

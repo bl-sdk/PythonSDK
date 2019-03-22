@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAutoAimProfileDefinition(py::object m)
+void Export_pystes_UWillowAutoAimProfileDefinition(py::module &m)
 {
     py::class_< UWillowAutoAimProfileDefinition,  UGBXDefinition   >(m, "UWillowAutoAimProfileDefinition")
         .def_readwrite("MagnetismMin", &UWillowAutoAimProfileDefinition::MagnetismMin)

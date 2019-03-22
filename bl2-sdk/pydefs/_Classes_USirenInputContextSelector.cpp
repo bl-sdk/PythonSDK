@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USirenInputContextSelector(py::object m)
+void Export_pystes_USirenInputContextSelector(py::module &m)
 {
     py::class_< USirenInputContextSelector,  UDefaultInputContextSelector   >(m, "USirenInputContextSelector")
         .def("StaticClass", &USirenInputContextSelector::StaticClass, py::return_value_policy::reference)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWeaponScopeGFxDefinition(py::object m)
+void Export_pystes_UWeaponScopeGFxDefinition(py::module &m)
 {
     py::class_< UWeaponScopeGFxDefinition,  UWillowGFxMovie3DDefinition   >(m, "UWeaponScopeGFxDefinition")
         .def_readwrite("LinkageMappings_Manufacturers", &UWeaponScopeGFxDefinition::LinkageMappings_Manufacturers)

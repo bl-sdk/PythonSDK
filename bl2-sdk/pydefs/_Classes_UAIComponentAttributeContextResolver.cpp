@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAIComponentAttributeContextResolver(py::object m)
+void Export_pystes_UAIComponentAttributeContextResolver(py::module &m)
 {
     py::class_< UAIComponentAttributeContextResolver,  UAttributeContextResolver   >(m, "UAIComponentAttributeContextResolver")
         .def("StaticClass", &UAIComponentAttributeContextResolver::StaticClass, py::return_value_policy::reference)

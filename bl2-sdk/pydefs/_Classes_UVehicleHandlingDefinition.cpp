@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UVehicleHandlingDefinition(py::object m)
+void Export_pystes_UVehicleHandlingDefinition(py::module &m)
 {
     py::class_< UVehicleHandlingDefinition,  UGBXDefinition   >(m, "UVehicleHandlingDefinition")
         .def_readwrite("WheelSuspensionStiffness", &UVehicleHandlingDefinition::WheelSuspensionStiffness)

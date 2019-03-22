@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FWeaponBoneControllerData(py::object m)
+void Export_pystes_FWeaponBoneControllerData(py::module &m)
 {
     py::class_< FWeaponBoneControllerData >(m, "FWeaponBoneControllerData")
         .def_readwrite("BoneName", &FWeaponBoneControllerData::BoneName)

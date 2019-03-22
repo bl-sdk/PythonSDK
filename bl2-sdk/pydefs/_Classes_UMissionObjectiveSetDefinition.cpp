@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMissionObjectiveSetDefinition(py::object m)
+void Export_pystes_UMissionObjectiveSetDefinition(py::module &m)
 {
     py::class_< UMissionObjectiveSetDefinition,  UGBXDefinition   >(m, "UMissionObjectiveSetDefinition")
         .def_readwrite("ObjectiveDefinitions", &UMissionObjectiveSetDefinition::ObjectiveDefinitions)

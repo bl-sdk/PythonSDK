@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowMind(py::object m)
+void Export_pystes_AWillowMind(py::module &m)
 {
     py::class_< AWillowMind,  AGearboxMind   >(m, "AWillowMind")
         .def_readwrite("VfTable_IISeeTargetable", &AWillowMind::VfTable_IISeeTargetable)

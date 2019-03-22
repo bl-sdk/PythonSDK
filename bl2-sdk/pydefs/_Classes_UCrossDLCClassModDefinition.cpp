@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCrossDLCClassModDefinition(py::object m)
+void Export_pystes_UCrossDLCClassModDefinition(py::module &m)
 {
     py::class_< UCrossDLCClassModDefinition,  UEquipableItemDefinition   >(m, "UCrossDLCClassModDefinition")
         .def_readwrite("RequiredPlayerClassPathName", &UCrossDLCClassModDefinition::RequiredPlayerClassPathName)

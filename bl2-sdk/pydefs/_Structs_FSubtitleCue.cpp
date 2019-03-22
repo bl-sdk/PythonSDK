@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSubtitleCue(py::object m)
+void Export_pystes_FSubtitleCue(py::module &m)
 {
     py::class_< FSubtitleCue >(m, "FSubtitleCue")
         .def_readwrite("Text", &FSubtitleCue::Text)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBlackMarketUpgradeDefinition(py::object m)
+void Export_pystes_UBlackMarketUpgradeDefinition(py::module &m)
 {
     py::class_< UBlackMarketUpgradeDefinition,  UGBXDefinition   >(m, "UBlackMarketUpgradeDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UBlackMarketUpgradeDefinition::VfTable_IIBehaviorProvider)

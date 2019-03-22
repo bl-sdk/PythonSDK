@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FParameterValueOverTime(py::object m)
+void Export_pystes_FParameterValueOverTime(py::module &m)
 {
     py::class_< FParameterValueOverTime >(m, "FParameterValueOverTime")
         .def_readwrite("ExpressionGUID", &FParameterValueOverTime::ExpressionGUID)

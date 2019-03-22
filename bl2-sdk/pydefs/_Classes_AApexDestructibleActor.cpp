@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AApexDestructibleActor(py::object m)
+void Export_pystes_AApexDestructibleActor(py::module &m)
 {
     py::class_< AApexDestructibleActor,  AActor   >(m, "AApexDestructibleActor")
         .def_readwrite("LightEnvironment", &AApexDestructibleActor::LightEnvironment)

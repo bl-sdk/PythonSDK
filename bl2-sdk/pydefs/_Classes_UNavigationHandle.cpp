@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNavigationHandle(py::object m)
+void Export_pystes_UNavigationHandle(py::module &m)
 {
     py::class_< UNavigationHandle,  UObject   >(m, "UNavigationHandle")
         .def_readwrite("AnchorPylon", &UNavigationHandle::AnchorPylon)

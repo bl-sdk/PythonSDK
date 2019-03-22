@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowDialogAct_Talk(py::object m)
+void Export_pystes_UWillowDialogAct_Talk(py::module &m)
 {
     py::class_< UWillowDialogAct_Talk,  UGearboxDialogAct_Talk   >(m, "UWillowDialogAct_Talk")
         .def_readwrite("Emote", &UWillowDialogAct_Talk::Emote)

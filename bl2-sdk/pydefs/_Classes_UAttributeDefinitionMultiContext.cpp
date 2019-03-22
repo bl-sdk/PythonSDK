@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAttributeDefinitionMultiContext(py::object m)
+void Export_pystes_UAttributeDefinitionMultiContext(py::module &m)
 {
     py::class_< UAttributeDefinitionMultiContext,  UAttributeDefinitionBase   >(m, "UAttributeDefinitionMultiContext")
         .def_readwrite("MultiContextResolver", &UAttributeDefinitionMultiContext::MultiContextResolver)

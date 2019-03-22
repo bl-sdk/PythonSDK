@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowPopulationPoint_Dynamic(py::object m)
+void Export_pystes_AWillowPopulationPoint_Dynamic(py::module &m)
 {
     py::class_< AWillowPopulationPoint_Dynamic,  APopulationPoint   >(m, "AWillowPopulationPoint_Dynamic")
         .def_readwrite("VfTable_ISpecialMoveInterface", &AWillowPopulationPoint::VfTable_ISpecialMoveInterface)

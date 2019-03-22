@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowPlayerReplicationInfo(py::object m)
+void Export_pystes_AWillowPlayerReplicationInfo(py::module &m)
 {
     py::class_< AWillowPlayerReplicationInfo,  APlayerReplicationInfo   >(m, "AWillowPlayerReplicationInfo")
         .def_readwrite("VfTable_IINounAttributeProvider", &AWillowPlayerReplicationInfo::VfTable_IINounAttributeProvider)

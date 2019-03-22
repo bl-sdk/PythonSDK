@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAwarenessInfo(py::object m)
+void Export_pystes_FAwarenessInfo(py::module &m)
 {
     py::class_< FAwarenessInfo >(m, "FAwarenessInfo")
         .def_readwrite("Location", &FAwarenessInfo::Location)

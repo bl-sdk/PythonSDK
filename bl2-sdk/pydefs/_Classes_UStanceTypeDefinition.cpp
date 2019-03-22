@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UStanceTypeDefinition(py::object m)
+void Export_pystes_UStanceTypeDefinition(py::module &m)
 {
     py::class_< UStanceTypeDefinition,  UGBXDefinition   >(m, "UStanceTypeDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UStanceTypeDefinition::VfTable_IIBehaviorProvider)

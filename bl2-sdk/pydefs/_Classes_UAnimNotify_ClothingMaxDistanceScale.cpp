@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNotify_ClothingMaxDistanceScale(py::object m)
+void Export_pystes_UAnimNotify_ClothingMaxDistanceScale(py::module &m)
 {
     py::class_< UAnimNotify_ClothingMaxDistanceScale,  UAnimNotify   >(m, "UAnimNotify_ClothingMaxDistanceScale")
         .def_readwrite("StartScale", &UAnimNotify_ClothingMaxDistanceScale::StartScale)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SelectPhaselockTarget(py::object m)
+void Export_pystes_UBehavior_SelectPhaselockTarget(py::module &m)
 {
     py::class_< UBehavior_SelectPhaselockTarget,  UBehaviorBase   >(m, "UBehavior_SelectPhaselockTarget")
         .def_readwrite("LifterSkillContext", &UBehavior_SelectPhaselockTarget::LifterSkillContext)

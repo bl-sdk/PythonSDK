@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTurnDefinition(py::object m)
+void Export_pystes_UTurnDefinition(py::module &m)
 {
     py::class_< UTurnDefinition,  UGBXDefinition   >(m, "UTurnDefinition")
         .def_readwrite("Idle", &UTurnDefinition::Idle)

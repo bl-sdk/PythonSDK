@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionMin(py::object m)
+void Export_pystes_UMaterialExpressionMin(py::module &m)
 {
     py::class_< UMaterialExpressionMin,  UMaterialExpression   >(m, "UMaterialExpressionMin")
         .def_readwrite("A", &UMaterialExpressionMin::A)

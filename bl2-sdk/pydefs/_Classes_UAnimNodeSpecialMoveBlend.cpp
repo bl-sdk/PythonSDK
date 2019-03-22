@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNodeSpecialMoveBlend(py::object m)
+void Export_pystes_UAnimNodeSpecialMoveBlend(py::module &m)
 {
     py::class_< UAnimNodeSpecialMoveBlend,  UAnimNodeSlot   >(m, "UAnimNodeSpecialMoveBlend")
         .def_readwrite("AnimState", &UAnimNodeSpecialMoveBlend::AnimState)

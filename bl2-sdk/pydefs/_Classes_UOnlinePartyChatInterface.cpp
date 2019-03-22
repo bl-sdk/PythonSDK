@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlinePartyChatInterface(py::object m)
+void Export_pystes_UOnlinePartyChatInterface(py::module &m)
 {
     py::class_< UOnlinePartyChatInterface,  UInterface   >(m, "UOnlinePartyChatInterface")
         .def("StaticClass", &UOnlinePartyChatInterface::StaticClass, py::return_value_policy::reference)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowInventoryDefinition(py::object m)
+void Export_pystes_UWillowInventoryDefinition(py::module &m)
 {
     py::class_< UWillowInventoryDefinition,  UGBXDefinition   >(m, "UWillowInventoryDefinition")
         .def_readwrite("InventoryClass", &UWillowInventoryDefinition::InventoryClass)

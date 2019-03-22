@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FNodeData(py::object m)
+void Export_pystes_FNodeData(py::module &m)
 {
     py::class_< FNodeData >(m, "FNodeData")
         .def_readwrite("Node", &FNodeData::Node)

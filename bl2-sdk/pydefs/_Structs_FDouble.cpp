@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDouble(py::object m)
+void Export_pystes_FDouble(py::module &m)
 {
     py::class_< FDouble >(m, "FDouble")
         .def_readwrite("A", &FDouble::A)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FReferencePointComparisonData(py::object m)
+void Export_pystes_FReferencePointComparisonData(py::module &m)
 {
     py::class_< FReferencePointComparisonData >(m, "FReferencePointComparisonData")
         .def_readwrite("A", &FReferencePointComparisonData::A)

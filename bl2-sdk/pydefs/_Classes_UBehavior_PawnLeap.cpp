@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_PawnLeap(py::object m)
+void Export_pystes_UBehavior_PawnLeap(py::module &m)
 {
     py::class_< UBehavior_PawnLeap,  UBehaviorBase   >(m, "UBehavior_PawnLeap")
         .def_readwrite("LeapSpeed", &UBehavior_PawnLeap::LeapSpeed)

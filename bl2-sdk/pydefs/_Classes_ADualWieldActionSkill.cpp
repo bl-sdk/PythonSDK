@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ADualWieldActionSkill(py::object m)
+void Export_pystes_ADualWieldActionSkill(py::module &m)
 {
     py::class_< ADualWieldActionSkill,  AActionSkill   >(m, "ADualWieldActionSkill")
         .def_readwrite("WeaponCache", &ADualWieldActionSkill::WeaponCache)

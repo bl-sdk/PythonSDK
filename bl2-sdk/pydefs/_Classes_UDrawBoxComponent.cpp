@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDrawBoxComponent(py::object m)
+void Export_pystes_UDrawBoxComponent(py::module &m)
 {
     py::class_< UDrawBoxComponent,  UPrimitiveComponent   >(m, "UDrawBoxComponent")
         .def_readwrite("BoxColor", &UDrawBoxComponent::BoxColor)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_PawnMovementBase(py::object m)
+void Export_pystes_UAction_PawnMovementBase(py::module &m)
 {
     py::class_< UAction_PawnMovementBase,  UActionSequencePawn   >(m, "UAction_PawnMovementBase")
         .def_readwrite("CachedSearchOrigin", &UAction_PawnMovementBase::CachedSearchOrigin)

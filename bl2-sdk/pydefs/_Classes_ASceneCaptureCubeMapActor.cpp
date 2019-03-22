@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ASceneCaptureCubeMapActor(py::object m)
+void Export_pystes_ASceneCaptureCubeMapActor(py::module &m)
 {
     py::class_< ASceneCaptureCubeMapActor,  ASceneCaptureActor   >(m, "ASceneCaptureCubeMapActor")
         .def_readwrite("StaticMesh", &ASceneCaptureCubeMapActor::StaticMesh)

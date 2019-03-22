@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBoolTrackKey(py::object m)
+void Export_pystes_FBoolTrackKey(py::module &m)
 {
     py::class_< FBoolTrackKey >(m, "FBoolTrackKey")
         .def_readwrite("Time", &FBoolTrackKey::Time)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AGearboxGameInfo(py::object m)
+void Export_pystes_AGearboxGameInfo(py::module &m)
 {
     py::class_< AGearboxGameInfo,  AGameInfo   >(m, "AGearboxGameInfo")
         .def("StaticClass", &AGearboxGameInfo::StaticClass, py::return_value_policy::reference)

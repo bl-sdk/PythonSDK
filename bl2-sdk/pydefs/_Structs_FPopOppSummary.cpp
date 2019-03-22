@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPopOppSummary(py::object m)
+void Export_pystes_FPopOppSummary(py::module &m)
 {
     py::class_< FPopOppSummary >(m, "FPopOppSummary")
         .def_readwrite("Summary", &FPopOppSummary::Summary)

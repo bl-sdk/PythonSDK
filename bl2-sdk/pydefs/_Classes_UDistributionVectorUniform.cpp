@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDistributionVectorUniform(py::object m)
+void Export_pystes_UDistributionVectorUniform(py::module &m)
 {
     py::class_< UDistributionVectorUniform,  UDistributionVector   >(m, "UDistributionVectorUniform")
         .def_readwrite("Max", &UDistributionVectorUniform::Max)

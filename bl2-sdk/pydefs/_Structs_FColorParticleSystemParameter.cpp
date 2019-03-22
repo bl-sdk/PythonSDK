@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FColorParticleSystemParameter(py::object m)
+void Export_pystes_FColorParticleSystemParameter(py::module &m)
 {
     py::class_< FColorParticleSystemParameter >(m, "FColorParticleSystemParameter")
         .def_readwrite("Name", &FColorParticleSystemParameter::Name)

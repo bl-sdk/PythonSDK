@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackFloatMaterialParam(py::object m)
+void Export_pystes_UInterpTrackFloatMaterialParam(py::module &m)
 {
     py::class_< UInterpTrackFloatMaterialParam,  UInterpTrack   >(m, "UInterpTrackFloatMaterialParam")
         .def_readwrite("Materials", &UInterpTrackFloatMaterialParam::Materials)

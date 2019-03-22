@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackMorphWeight(py::object m)
+void Export_pystes_UInterpTrackMorphWeight(py::module &m)
 {
     py::class_< UInterpTrackMorphWeight,  UInterpTrackFloatBase   >(m, "UInterpTrackMorphWeight")
         .def_readwrite("MorphNodeName", &UInterpTrackMorphWeight::MorphNodeName)

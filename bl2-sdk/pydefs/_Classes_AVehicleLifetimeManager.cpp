@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AVehicleLifetimeManager(py::object m)
+void Export_pystes_AVehicleLifetimeManager(py::module &m)
 {
     py::class_< AVehicleLifetimeManager,  AInfo   >(m, "AVehicleLifetimeManager")
         .def_readwrite("NextTickUpdateTime", &AVehicleLifetimeManager::NextTickUpdateTime)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPostProcessOverlay(py::object m)
+void Export_pystes_FPostProcessOverlay(py::module &m)
 {
     py::class_< FPostProcessOverlay >(m, "FPostProcessOverlay")
         .def_readwrite("OverlayName", &FPostProcessOverlay::OverlayName)

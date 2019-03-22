@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMissionPopulationAspect(py::object m)
+void Export_pystes_UMissionPopulationAspect(py::module &m)
 {
     py::class_< UMissionPopulationAspect,  UPopulationAspect   >(m, "UMissionPopulationAspect")
         .def_readwrite("VfTable_IIMission", &UMissionPopulationAspect::VfTable_IIMission)

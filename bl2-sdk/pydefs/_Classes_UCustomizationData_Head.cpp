@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCustomizationData_Head(py::object m)
+void Export_pystes_UCustomizationData_Head(py::module &m)
 {
     py::class_< UCustomizationData_Head,  UCustomizationData   >(m, "UCustomizationData_Head")
         .def_readwrite("HeadMesh", &UCustomizationData_Head::HeadMesh)

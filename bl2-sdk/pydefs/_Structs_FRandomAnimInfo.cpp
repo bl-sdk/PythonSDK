@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRandomAnimInfo(py::object m)
+void Export_pystes_FRandomAnimInfo(py::module &m)
 {
     py::class_< FRandomAnimInfo >(m, "FRandomAnimInfo")
         .def_readwrite("Chance", &FRandomAnimInfo::Chance)

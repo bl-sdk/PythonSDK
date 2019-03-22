@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USequenceEvent(py::object m)
+void Export_pystes_USequenceEvent(py::module &m)
 {
     py::class_< USequenceEvent,  USequenceOp   >(m, "USequenceEvent")
         .def_readwrite("DuplicateEvts", &USequenceEvent::DuplicateEvts)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_GenericAttack(py::object m)
+void Export_pystes_UAction_GenericAttack(py::module &m)
 {
     py::class_< UAction_GenericAttack,  UAction_Burrow   >(m, "UAction_GenericAttack")
         .def_readwrite("Limits", &UAction_GenericAttack::Limits)

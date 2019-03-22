@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FViewProfile(py::object m)
+void Export_pystes_FViewProfile(py::module &m)
 {
     py::class_< FViewProfile >(m, "FViewProfile")
         .def_readwrite("InPlayer", &FViewProfile::InPlayer)

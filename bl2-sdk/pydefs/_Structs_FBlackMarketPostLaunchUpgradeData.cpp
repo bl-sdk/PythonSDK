@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBlackMarketPostLaunchUpgradeData(py::object m)
+void Export_pystes_FBlackMarketPostLaunchUpgradeData(py::module &m)
 {
     py::class_< FBlackMarketPostLaunchUpgradeData >(m, "FBlackMarketPostLaunchUpgradeData")
         .def_readwrite("EridiumCostForUpgrade", &FBlackMarketPostLaunchUpgradeData::EridiumCostForUpgrade)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActorFactoryMissionPickupFailsafe(py::object m)
+void Export_pystes_UActorFactoryMissionPickupFailsafe(py::module &m)
 {
     py::class_< UActorFactoryMissionPickupFailsafe,  UActorFactory   >(m, "UActorFactoryMissionPickupFailsafe")
         .def_readwrite("Definition", &UActorFactoryMissionPickupSpawner::Definition)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_Metronome(py::object m)
+void Export_pystes_UBehavior_Metronome(py::module &m)
 {
     py::class_< UBehavior_Metronome,  UBehaviorBase   >(m, "UBehavior_Metronome")
         .def_readwrite("MaxTickCount", &UBehavior_Metronome::MaxTickCount)

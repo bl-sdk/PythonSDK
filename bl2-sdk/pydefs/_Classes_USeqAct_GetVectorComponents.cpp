@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_GetVectorComponents(py::object m)
+void Export_pystes_USeqAct_GetVectorComponents(py::module &m)
 {
     py::class_< USeqAct_GetVectorComponents,  USequenceAction   >(m, "USeqAct_GetVectorComponents")
         .def_readwrite("InVector", &USeqAct_GetVectorComponents::InVector)

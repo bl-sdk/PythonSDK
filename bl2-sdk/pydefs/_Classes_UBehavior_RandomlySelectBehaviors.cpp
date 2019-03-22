@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_RandomlySelectBehaviors(py::object m)
+void Export_pystes_UBehavior_RandomlySelectBehaviors(py::module &m)
 {
     py::class_< UBehavior_RandomlySelectBehaviors,  UBehaviorBase   >(m, "UBehavior_RandomlySelectBehaviors")
         .def_readwrite("Possibilities", &UBehavior_RandomlySelectBehaviors::Possibilities)

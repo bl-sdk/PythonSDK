@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UJsonObject(py::object m)
+void Export_pystes_UJsonObject(py::module &m)
 {
     py::class_< UJsonObject,  UObject   >(m, "UJsonObject")
         .def_readwrite("ValueMap", &UJsonObject::ValueMap)

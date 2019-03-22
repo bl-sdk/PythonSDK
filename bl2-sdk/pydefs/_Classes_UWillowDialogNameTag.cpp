@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowDialogNameTag(py::object m)
+void Export_pystes_UWillowDialogNameTag(py::module &m)
 {
     py::class_< UWillowDialogNameTag,  UGearboxDialogNameTag   >(m, "UWillowDialogNameTag")
         .def_readwrite("CallerName", &UWillowDialogNameTag::CallerName)

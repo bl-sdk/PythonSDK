@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLungeData(py::object m)
+void Export_pystes_FLungeData(py::module &m)
 {
     py::class_< FLungeData >(m, "FLungeData")
         .def_readwrite("Target", &FLungeData::Target)

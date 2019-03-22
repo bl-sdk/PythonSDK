@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSeqAct_AIScriptedDeath(py::object m)
+void Export_pystes_UWillowSeqAct_AIScriptedDeath(py::module &m)
 {
     py::class_< UWillowSeqAct_AIScriptedDeath,  USequenceAction   >(m, "UWillowSeqAct_AIScriptedDeath")
         .def_readwrite("DamageType", &UWillowSeqAct_AIScriptedDeath::DamageType)

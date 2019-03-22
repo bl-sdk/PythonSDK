@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHUDDefinition(py::object m)
+void Export_pystes_UHUDDefinition(py::module &m)
 {
     py::class_< UHUDDefinition,  UGBXDefinition   >(m, "UHUDDefinition")
         .def_readwrite("MaxDamageIndicators", &UHUDDefinition::MaxDamageIndicators)

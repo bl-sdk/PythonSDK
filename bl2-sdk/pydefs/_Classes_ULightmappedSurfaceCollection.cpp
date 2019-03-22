@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULightmappedSurfaceCollection(py::object m)
+void Export_pystes_ULightmappedSurfaceCollection(py::module &m)
 {
     py::class_< ULightmappedSurfaceCollection,  UObject   >(m, "ULightmappedSurfaceCollection")
         .def_readwrite("SourceModel", &ULightmappedSurfaceCollection::SourceModel)

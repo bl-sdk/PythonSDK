@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USwfMovie(py::object m)
+void Export_pystes_USwfMovie(py::module &m)
 {
     py::class_< USwfMovie,  UObject   >(m, "USwfMovie")
         .def_readwrite("PackTextureSize", &USwfMovie::PackTextureSize)

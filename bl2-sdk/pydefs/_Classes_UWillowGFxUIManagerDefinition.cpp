@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGFxUIManagerDefinition(py::object m)
+void Export_pystes_UWillowGFxUIManagerDefinition(py::module &m)
 {
     py::class_< UWillowGFxUIManagerDefinition,  UGBXDefinition   >(m, "UWillowGFxUIManagerDefinition")
         .def_readwrite("MeshRotation", &UWillowGFxUIManagerDefinition::MeshRotation)

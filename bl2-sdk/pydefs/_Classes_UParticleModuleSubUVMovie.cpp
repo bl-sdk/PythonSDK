@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleSubUVMovie(py::object m)
+void Export_pystes_UParticleModuleSubUVMovie(py::module &m)
 {
     py::class_< UParticleModuleSubUVMovie,  UParticleModule   >(m, "UParticleModuleSubUVMovie")
         .def_readwrite("FrameRate", &UParticleModuleSubUVMovie::FrameRate)

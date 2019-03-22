@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_SetFlight(py::object m)
+void Export_pystes_UAction_SetFlight(py::module &m)
 {
     py::class_< UAction_SetFlight,  UWillowActionSequencePawn   >(m, "UAction_SetFlight")
         .def_readwrite("Mode", &UAction_SetFlight::Mode)

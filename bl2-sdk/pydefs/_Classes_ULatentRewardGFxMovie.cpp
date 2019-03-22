@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULatentRewardGFxMovie(py::object m)
+void Export_pystes_ULatentRewardGFxMovie(py::module &m)
 {
     py::class_< ULatentRewardGFxMovie,  UWillowGFxMovie3D   >(m, "ULatentRewardGFxMovie")
         .def_readwrite("RewardObject", &ULatentRewardGFxMovie::RewardObject)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FVehicleCrewMappingStruct(py::object m)
+void Export_pystes_FVehicleCrewMappingStruct(py::module &m)
 {
     py::class_< FVehicleCrewMappingStruct >(m, "FVehicleCrewMappingStruct")
         .def_readwrite("VehicleArchetypeName", &FVehicleCrewMappingStruct::VehicleArchetypeName)

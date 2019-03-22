@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNodeBlendBySpeed(py::object m)
+void Export_pystes_UAnimNodeBlendBySpeed(py::module &m)
 {
     py::class_< UAnimNodeBlendBySpeed,  UAnimNodeBlendList   >(m, "UAnimNodeBlendBySpeed")
         .def_readwrite("Speed", &UAnimNodeBlendBySpeed::Speed)

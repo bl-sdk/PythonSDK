@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPawnRelevanceUtilityCaching(py::object m)
+void Export_pystes_UPawnRelevanceUtilityCaching(py::module &m)
 {
     py::class_< UPawnRelevanceUtilityCaching,  UPawnRelevanceUtility   >(m, "UPawnRelevanceUtilityCaching")
         .def_readwrite("MaxCacheTime", &UPawnRelevanceUtilityCaching::MaxCacheTime)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SetDemigodMode(py::object m)
+void Export_pystes_UBehavior_SetDemigodMode(py::module &m)
 {
     py::class_< UBehavior_SetDemigodMode,  UBehaviorBase   >(m, "UBehavior_SetDemigodMode")
         .def_readwrite("Status", &UBehavior_SetDemigodMode::Status)

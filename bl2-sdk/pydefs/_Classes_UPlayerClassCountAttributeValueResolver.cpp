@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerClassCountAttributeValueResolver(py::object m)
+void Export_pystes_UPlayerClassCountAttributeValueResolver(py::module &m)
 {
     py::class_< UPlayerClassCountAttributeValueResolver,  UAttributeValueResolver   >(m, "UPlayerClassCountAttributeValueResolver")
         .def_readwrite("PlayerClassId", &UPlayerClassCountAttributeValueResolver::PlayerClassId)

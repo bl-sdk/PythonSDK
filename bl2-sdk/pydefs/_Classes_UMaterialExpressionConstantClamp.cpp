@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionConstantClamp(py::object m)
+void Export_pystes_UMaterialExpressionConstantClamp(py::module &m)
 {
     py::class_< UMaterialExpressionConstantClamp,  UMaterialExpression   >(m, "UMaterialExpressionConstantClamp")
         .def_readwrite("Input", &UMaterialExpressionConstantClamp::Input)

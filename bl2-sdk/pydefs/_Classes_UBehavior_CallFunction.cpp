@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_CallFunction(py::object m)
+void Export_pystes_UBehavior_CallFunction(py::module &m)
 {
     py::class_< UBehavior_CallFunction,  UBehaviorBase   >(m, "UBehavior_CallFunction")
         .def_readwrite("FunctionName", &UBehavior_CallFunction::FunctionName)

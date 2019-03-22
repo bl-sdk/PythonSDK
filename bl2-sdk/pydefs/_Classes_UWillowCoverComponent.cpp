@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowCoverComponent(py::object m)
+void Export_pystes_UWillowCoverComponent(py::module &m)
 {
     py::class_< UWillowCoverComponent,  UActorComponent   >(m, "UWillowCoverComponent")
         .def_readwrite("AIPawn", &UWillowCoverComponent::AIPawn)

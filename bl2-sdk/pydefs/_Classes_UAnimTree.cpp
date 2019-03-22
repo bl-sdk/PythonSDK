@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimTree(py::object m)
+void Export_pystes_UAnimTree(py::module &m)
 {
     py::class_< UAnimTree,  UObject   >(m, "UAnimTree")
         .def_readwrite("AnimTreeTemplate", &UAnimTree::AnimTreeTemplate)

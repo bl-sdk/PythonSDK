@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_StreamInTextures(py::object m)
+void Export_pystes_USeqAct_StreamInTextures(py::module &m)
 {
     py::class_< USeqAct_StreamInTextures,  USeqAct_Latent   >(m, "USeqAct_StreamInTextures")
         .def_readwrite("Seconds", &USeqAct_StreamInTextures::Seconds)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPhysicalMaterial(py::object m)
+void Export_pystes_UPhysicalMaterial(py::module &m)
 {
     py::class_< UPhysicalMaterial,  UObject   >(m, "UPhysicalMaterial")
         .def_readwrite("MaterialIndex", &UPhysicalMaterial::MaterialIndex)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBoneAtom(py::object m)
+void Export_pystes_FBoneAtom(py::module &m)
 {
     py::class_< FBoneAtom >(m, "FBoneAtom")
         .def_readwrite("Rotation", &FBoneAtom::Rotation)

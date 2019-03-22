@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionMultiplyAndAdd(py::object m)
+void Export_pystes_UMaterialExpressionMultiplyAndAdd(py::module &m)
 {
     py::class_< UMaterialExpressionMultiplyAndAdd,  UMaterialExpression   >(m, "UMaterialExpressionMultiplyAndAdd")
         .def_readwrite("A", &UMaterialExpressionMultiplyAndAdd::A)

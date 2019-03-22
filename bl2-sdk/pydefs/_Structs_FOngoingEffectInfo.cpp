@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FOngoingEffectInfo(py::object m)
+void Export_pystes_FOngoingEffectInfo(py::module &m)
 {
     py::class_< FOngoingEffectInfo >(m, "FOngoingEffectInfo")
         .def_readwrite("TotalDamageDealtToHealth", &FOngoingEffectInfo::TotalDamageDealtToHealth)

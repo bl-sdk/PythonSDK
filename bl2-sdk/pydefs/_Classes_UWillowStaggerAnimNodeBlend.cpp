@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowStaggerAnimNodeBlend(py::object m)
+void Export_pystes_UWillowStaggerAnimNodeBlend(py::module &m)
 {
     py::class_< UWillowStaggerAnimNodeBlend,  UAnimNodeBlendBase   >(m, "UWillowStaggerAnimNodeBlend")
         .def_readwrite("StaggerNodeIndex", &UWillowStaggerAnimNodeBlend::StaggerNodeIndex)

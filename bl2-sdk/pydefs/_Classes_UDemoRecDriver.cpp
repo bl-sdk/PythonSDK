@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDemoRecDriver(py::object m)
+void Export_pystes_UDemoRecDriver(py::module &m)
 {
     py::class_< UDemoRecDriver,  UNetDriver   >(m, "UDemoRecDriver")
         .def_readwrite("DemoSpectatorClass", &UDemoRecDriver::DemoSpectatorClass)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowExplosionImpactDefinition(py::object m)
+void Export_pystes_UWillowExplosionImpactDefinition(py::module &m)
 {
     py::class_< UWillowExplosionImpactDefinition,  UWillowImpactDefinition   >(m, "UWillowExplosionImpactDefinition")
         .def("StaticClass", &UWillowExplosionImpactDefinition::StaticClass, py::return_value_policy::reference)

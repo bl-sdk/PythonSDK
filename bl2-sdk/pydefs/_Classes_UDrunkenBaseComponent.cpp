@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDrunkenBaseComponent(py::object m)
+void Export_pystes_UDrunkenBaseComponent(py::module &m)
 {
     py::class_< UDrunkenBaseComponent,  UMovementComponent   >(m, "UDrunkenBaseComponent")
         .def_readwrite("StartApproachDistance", &UDrunkenBaseComponent::StartApproachDistance)

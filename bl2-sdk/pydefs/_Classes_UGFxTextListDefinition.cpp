@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGFxTextListDefinition(py::object m)
+void Export_pystes_UGFxTextListDefinition(py::module &m)
 {
     py::class_< UGFxTextListDefinition,  UGBXDefinition   >(m, "UGFxTextListDefinition")
         .def_readwrite("ContainerName", &UGFxTextListDefinition::ContainerName)

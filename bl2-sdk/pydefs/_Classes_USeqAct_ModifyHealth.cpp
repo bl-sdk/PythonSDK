@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_ModifyHealth(py::object m)
+void Export_pystes_USeqAct_ModifyHealth(py::module &m)
 {
     py::class_< USeqAct_ModifyHealth,  USequenceAction   >(m, "USeqAct_ModifyHealth")
         .def_readwrite("DamageType", &USeqAct_ModifyHealth::DamageType)

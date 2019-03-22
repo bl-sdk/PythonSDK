@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FFilterLimit(py::object m)
+void Export_pystes_FFilterLimit(py::module &m)
 {
     py::class_< FFilterLimit >(m, "FFilterLimit")
         .def_readwrite("Base", &FFilterLimit::Base)

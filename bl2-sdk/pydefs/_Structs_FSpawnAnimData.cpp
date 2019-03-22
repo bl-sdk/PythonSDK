@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSpawnAnimData(py::object m)
+void Export_pystes_FSpawnAnimData(py::module &m)
 {
     py::class_< FSpawnAnimData >(m, "FSpawnAnimData")
         .def_readwrite("Key", &FSpawnAnimData::Key)

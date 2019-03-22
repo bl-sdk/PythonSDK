@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIAttributeSlotEffectProvider(py::object m)
+void Export_pystes_UIAttributeSlotEffectProvider(py::module &m)
 {
     py::class_< UIAttributeSlotEffectProvider,  UInterface   >(m, "UIAttributeSlotEffectProvider")
         .def("StaticClass", &UIAttributeSlotEffectProvider::StaticClass, py::return_value_policy::reference)

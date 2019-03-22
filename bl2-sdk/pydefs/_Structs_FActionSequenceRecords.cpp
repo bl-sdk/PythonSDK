@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FActionSequenceRecord(py::object m)
+void Export_pystes_FActionSequenceRecord(py::module &m)
 {
     py::class_< FActionSequenceRecord,  FTimeStampedRecord   >(m, "FActionSequenceRecord")
         .def_readwrite("TheObj", &FActionSequenceRecord::TheObj)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMissionObjectiveWaypointComponent(py::object m)
+void Export_pystes_UMissionObjectiveWaypointComponent(py::module &m)
 {
     py::class_< UMissionObjectiveWaypointComponent,  UWaypointComponent   >(m, "UMissionObjectiveWaypointComponent")
         .def_readwrite("WaypointInfo", &UMissionObjectiveWaypointComponent::WaypointInfo)

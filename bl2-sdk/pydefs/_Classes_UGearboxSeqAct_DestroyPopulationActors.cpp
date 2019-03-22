@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxSeqAct_DestroyPopulationActors(py::object m)
+void Export_pystes_UGearboxSeqAct_DestroyPopulationActors(py::module &m)
 {
     py::class_< UGearboxSeqAct_DestroyPopulationActors,  USeqAct_Latent   >(m, "UGearboxSeqAct_DestroyPopulationActors")
         .def_readwrite("Opportunities", &UGearboxSeqAct_DestroyPopulationActors::Opportunities)

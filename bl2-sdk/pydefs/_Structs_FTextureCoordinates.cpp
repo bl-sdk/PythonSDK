@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTextureCoordinates(py::object m)
+void Export_pystes_FTextureCoordinates(py::module &m)
 {
     py::class_< FTextureCoordinates >(m, "FTextureCoordinates")
         .def_readwrite("U", &FTextureCoordinates::U)

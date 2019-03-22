@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPlaylist(py::object m)
+void Export_pystes_FPlaylist(py::module &m)
 {
     py::class_< FPlaylist >(m, "FPlaylist")
         .def_readwrite("ConfiguredGames", &FPlaylist::ConfiguredGames)

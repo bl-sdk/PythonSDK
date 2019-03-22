@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGFxInteraction(py::object m)
+void Export_pystes_UGFxInteraction(py::module &m)
 {
     py::class_< UGFxInteraction,  UInteraction   >(m, "UGFxInteraction")
         .def_readwrite("VfTable_FCallbackEventDevice", &UGFxInteraction::VfTable_FCallbackEventDevice)

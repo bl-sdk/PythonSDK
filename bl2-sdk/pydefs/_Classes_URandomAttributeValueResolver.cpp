@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_URandomAttributeValueResolver(py::object m)
+void Export_pystes_URandomAttributeValueResolver(py::module &m)
 {
     py::class_< URandomAttributeValueResolver,  UAttributeValueResolver   >(m, "URandomAttributeValueResolver")
         .def_readwrite("LowerBound", &URandomAttributeValueResolver::LowerBound)

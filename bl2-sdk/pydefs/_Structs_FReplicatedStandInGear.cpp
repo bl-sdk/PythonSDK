@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FReplicatedStandInGear(py::object m)
+void Export_pystes_FReplicatedStandInGear(py::module &m)
 {
     py::class_< FReplicatedStandInGear >(m, "FReplicatedStandInGear")
         .def_readwrite("Weapon1Data", &FReplicatedStandInGear::Weapon1Data)

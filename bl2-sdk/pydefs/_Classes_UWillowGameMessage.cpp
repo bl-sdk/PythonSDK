@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGameMessage(py::object m)
+void Export_pystes_UWillowGameMessage(py::module &m)
 {
     py::class_< UWillowGameMessage,  ULocalMessage   >(m, "UWillowGameMessage")
         .def_readwrite("PlayerEnteredGame", &UWillowGameMessage::PlayerEnteredGame)

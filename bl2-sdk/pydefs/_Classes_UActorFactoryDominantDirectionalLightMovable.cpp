@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActorFactoryDominantDirectionalLightMovable(py::object m)
+void Export_pystes_UActorFactoryDominantDirectionalLightMovable(py::module &m)
 {
     py::class_< UActorFactoryDominantDirectionalLightMovable,  UObject   >(m, "UActorFactoryDominantDirectionalLightMovable")
         .def_readwrite("GameplayActorClass", &UActorFactory::GameplayActorClass)

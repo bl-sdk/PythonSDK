@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleLODLevel(py::object m)
+void Export_pystes_UParticleLODLevel(py::module &m)
 {
     py::class_< UParticleLODLevel,  UObject   >(m, "UParticleLODLevel")
         .def_readwrite("Level", &UParticleLODLevel::Level)

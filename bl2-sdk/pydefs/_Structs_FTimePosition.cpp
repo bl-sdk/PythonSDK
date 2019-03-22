@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTimePosition(py::object m)
+void Export_pystes_FTimePosition(py::module &m)
 {
     py::class_< FTimePosition >(m, "FTimePosition")
         .def_readwrite("Position", &FTimePosition::Position)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SetLookAtSpeed(py::object m)
+void Export_pystes_UBehavior_SetLookAtSpeed(py::module &m)
 {
     py::class_< UBehavior_SetLookAtSpeed,  UBehaviorBase   >(m, "UBehavior_SetLookAtSpeed")
         .def_readwrite("Action", &UBehavior_SetLookAtSpeed::Action)

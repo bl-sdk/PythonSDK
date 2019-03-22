@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxDialogAct_Trigger(py::object m)
+void Export_pystes_UGearboxDialogAct_Trigger(py::module &m)
 {
     py::class_< UGearboxDialogAct_Trigger,  UGearboxDialogAction   >(m, "UGearboxDialogAct_Trigger")
         .def_readwrite("DialogEvent", &UGearboxDialogAct_Trigger::DialogEvent)

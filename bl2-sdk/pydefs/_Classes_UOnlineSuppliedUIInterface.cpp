@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineSuppliedUIInterface(py::object m)
+void Export_pystes_UOnlineSuppliedUIInterface(py::module &m)
 {
     py::class_< UOnlineSuppliedUIInterface,  UInterface   >(m, "UOnlineSuppliedUIInterface")
         .def("StaticClass", &UOnlineSuppliedUIInterface::StaticClass, py::return_value_policy::reference)

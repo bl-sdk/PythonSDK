@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowVehicleSimTank(py::object m)
+void Export_pystes_UWillowVehicleSimTank(py::module &m)
 {
     py::class_< UWillowVehicleSimTank,  USVehicleSimTank   >(m, "UWillowVehicleSimTank")
         .def_readwrite("SteeringThresholdForStoppedTurns", &UWillowVehicleSimTank::SteeringThresholdForStoppedTurns)

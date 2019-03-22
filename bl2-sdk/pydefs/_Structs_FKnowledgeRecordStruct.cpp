@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FKnowledgeRecordStruct(py::object m)
+void Export_pystes_FKnowledgeRecordStruct(py::module &m)
 {
     py::class_< FKnowledgeRecordStruct >(m, "FKnowledgeRecordStruct")
         .def_readwrite("TheObj", &FKnowledgeRecordStruct::TheObj)

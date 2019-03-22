@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USkelControlTrail(py::object m)
+void Export_pystes_USkelControlTrail(py::module &m)
 {
     py::class_< USkelControlTrail,  USkelControlBase   >(m, "USkelControlTrail")
         .def_readwrite("ChainLength", &USkelControlTrail::ChainLength)

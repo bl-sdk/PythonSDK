@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FWorldFractureSettings(py::object m)
+void Export_pystes_FWorldFractureSettings(py::module &m)
 {
     py::class_< FWorldFractureSettings >(m, "FWorldFractureSettings")
         .def_readwrite("ChanceOfPhysicsChunkOverride", &FWorldFractureSettings::ChanceOfPhysicsChunkOverride)

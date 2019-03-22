@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqCond_SwitchBase(py::object m)
+void Export_pystes_USeqCond_SwitchBase(py::module &m)
 {
     py::class_< USeqCond_SwitchBase,  USequenceCondition   >(m, "USeqCond_SwitchBase")
         .def("StaticClass", &USeqCond_SwitchBase::StaticClass, py::return_value_policy::reference)

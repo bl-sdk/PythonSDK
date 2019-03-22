@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAmmoResourceUpgradeAttributeValueResolver(py::object m)
+void Export_pystes_UAmmoResourceUpgradeAttributeValueResolver(py::module &m)
 {
     py::class_< UAmmoResourceUpgradeAttributeValueResolver,  UAttributeValueResolver   >(m, "UAmmoResourceUpgradeAttributeValueResolver")
         .def_readwrite("AssociatedResource", &UAmmoResourceUpgradeAttributeValueResolver::AssociatedResource)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FWrappedStringElement(py::object m)
+void Export_pystes_FWrappedStringElement(py::module &m)
 {
     py::class_< FWrappedStringElement >(m, "FWrappedStringElement")
         .def_readwrite("Value", &FWrappedStringElement::Value)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTextureLinkedListMirror(py::object m)
+void Export_pystes_FTextureLinkedListMirror(py::module &m)
 {
     py::class_< FTextureLinkedListMirror >(m, "FTextureLinkedListMirror")
         .def_readwrite("Element", &FTextureLinkedListMirror::Element)

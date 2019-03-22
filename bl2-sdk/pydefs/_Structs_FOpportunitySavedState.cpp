@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FOpportunitySavedState(py::object m)
+void Export_pystes_FOpportunitySavedState(py::module &m)
 {
     py::class_< FOpportunitySavedState >(m, "FOpportunitySavedState")
         .def_readwrite("SelectedSpawnIdx", &FOpportunitySavedState::SelectedSpawnIdx)

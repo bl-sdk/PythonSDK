@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPreviewSocketStruct(py::object m)
+void Export_pystes_FPreviewSocketStruct(py::module &m)
 {
     py::class_< FPreviewSocketStruct >(m, "FPreviewSocketStruct")
         .def_readwrite("DisplayName", &FPreviewSocketStruct::DisplayName)

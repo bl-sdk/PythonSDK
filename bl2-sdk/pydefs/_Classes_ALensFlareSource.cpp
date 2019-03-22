@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ALensFlareSource(py::object m)
+void Export_pystes_ALensFlareSource(py::module &m)
 {
     py::class_< ALensFlareSource,  AActor   >(m, "ALensFlareSource")
         .def_readwrite("LensFlareComp", &ALensFlareSource::LensFlareComp)

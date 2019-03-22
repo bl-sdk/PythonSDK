@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FQueuedAvatarRequest(py::object m)
+void Export_pystes_FQueuedAvatarRequest(py::module &m)
 {
     py::class_< FQueuedAvatarRequest >(m, "FQueuedAvatarRequest")
         .def_readwrite("CheckTime", &FQueuedAvatarRequest::CheckTime)

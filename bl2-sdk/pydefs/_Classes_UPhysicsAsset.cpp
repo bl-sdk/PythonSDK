@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPhysicsAsset(py::object m)
+void Export_pystes_UPhysicsAsset(py::module &m)
 {
     py::class_< UPhysicsAsset,  UObject   >(m, "UPhysicsAsset")
         .def_readwrite("BodySetup", &UPhysicsAsset::BodySetup)

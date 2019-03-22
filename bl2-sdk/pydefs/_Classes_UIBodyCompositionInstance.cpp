@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIBodyCompositionInstance(py::object m)
+void Export_pystes_UIBodyCompositionInstance(py::module &m)
 {
     py::class_< UIBodyCompositionInstance,  UInterface   >(m, "UIBodyCompositionInstance")
         .def("StaticClass", &UIBodyCompositionInstance::StaticClass, py::return_value_policy::reference)

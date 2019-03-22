@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIFlagProvider(py::object m)
+void Export_pystes_UIFlagProvider(py::module &m)
 {
     py::class_< UIFlagProvider,  UInterface   >(m, "UIFlagProvider")
         .def("StaticClass", &UIFlagProvider::StaticClass, py::return_value_policy::reference)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGBXNavMeshPathModifier_SmoothTurns(py::object m)
+void Export_pystes_UGBXNavMeshPathModifier_SmoothTurns(py::module &m)
 {
     py::class_< UGBXNavMeshPathModifier_SmoothTurns,  UGBXNavMeshPathModifier   >(m, "UGBXNavMeshPathModifier_SmoothTurns")
         .def_readwrite("TooSharpThreshold", &UGBXNavMeshPathModifier_SmoothTurns::TooSharpThreshold)

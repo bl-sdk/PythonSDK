@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerInput(py::object m)
+void Export_pystes_UPlayerInput(py::module &m)
 {
     py::class_< UPlayerInput,  UObject   >(m, "UPlayerInput")
         .def_readwrite("LastAxisKeyName", &UPlayerInput::LastAxisKeyName)

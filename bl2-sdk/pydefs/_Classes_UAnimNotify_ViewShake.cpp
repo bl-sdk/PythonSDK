@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNotify_ViewShake(py::object m)
+void Export_pystes_UAnimNotify_ViewShake(py::module &m)
 {
     py::class_< UAnimNotify_ViewShake,  UAnimNotify_Scripted   >(m, "UAnimNotify_ViewShake")
         .def_readwrite("Duration", &UAnimNotify_ViewShake::Duration)

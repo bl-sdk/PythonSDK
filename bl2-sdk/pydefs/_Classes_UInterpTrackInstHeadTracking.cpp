@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackInstHeadTracking(py::object m)
+void Export_pystes_UInterpTrackInstHeadTracking(py::module &m)
 {
     py::class_< UInterpTrackInstHeadTracking,  UInterpTrackInst   >(m, "UInterpTrackInstHeadTracking")
         .def_readwrite("Action", &UInterpTrackInstHeadTracking::Action)

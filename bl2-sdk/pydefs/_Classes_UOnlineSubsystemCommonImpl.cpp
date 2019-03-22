@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineSubsystemCommonImpl(py::object m)
+void Export_pystes_UOnlineSubsystemCommonImpl(py::module &m)
 {
     py::class_< UOnlineSubsystemCommonImpl,  UOnlineSubsystem   >(m, "UOnlineSubsystemCommonImpl")
         .def_readwrite("VoiceEngine", &UOnlineSubsystemCommonImpl::VoiceEngine)

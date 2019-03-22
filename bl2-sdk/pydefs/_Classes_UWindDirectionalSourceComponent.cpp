@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWindDirectionalSourceComponent(py::object m)
+void Export_pystes_UWindDirectionalSourceComponent(py::module &m)
 {
     py::class_< UWindDirectionalSourceComponent,  UActorComponent   >(m, "UWindDirectionalSourceComponent")
         .def_readwrite("SceneProxy", &UWindDirectionalSourceComponent::SceneProxy)

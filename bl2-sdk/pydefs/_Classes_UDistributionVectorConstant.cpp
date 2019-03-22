@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDistributionVectorConstant(py::object m)
+void Export_pystes_UDistributionVectorConstant(py::module &m)
 {
     py::class_< UDistributionVectorConstant,  UDistributionVector   >(m, "UDistributionVectorConstant")
         .def_readwrite("Constant", &UDistributionVectorConstant::Constant)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowEmit_HitEffect(py::object m)
+void Export_pystes_AWillowEmit_HitEffect(py::module &m)
 {
     py::class_< AWillowEmit_HitEffect,  AWillowReplicatedEmitter   >(m, "AWillowEmit_HitEffect")
         .def_readwrite("BoneName", &AWillowEmit_HitEffect::BoneName)

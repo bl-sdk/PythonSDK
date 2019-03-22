@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRewardData(py::object m)
+void Export_pystes_FRewardData(py::module &m)
 {
     py::class_< FRewardData >(m, "FRewardData")
         .def_readwrite("ExperienceRewardPercentage", &FRewardData::ExperienceRewardPercentage)

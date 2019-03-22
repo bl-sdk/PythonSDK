@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAttachmentLocationData(py::object m)
+void Export_pystes_FAttachmentLocationData(py::module &m)
 {
     py::class_< FAttachmentLocationData >(m, "FAttachmentLocationData")
         .def_readwrite("Location", &FAttachmentLocationData::Location)

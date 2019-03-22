@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AAIDebugDummyBase(py::object m)
+void Export_pystes_AAIDebugDummyBase(py::module &m)
 {
     py::class_< AAIDebugDummyBase,  ASkeletalMeshActor   >(m, "AAIDebugDummyBase")
         .def_readwrite("MyMesh", &AAIDebugDummyBase::MyMesh)

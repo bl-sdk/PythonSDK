@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_PlaySound(py::object m)
+void Export_pystes_USeqAct_PlaySound(py::module &m)
 {
     py::class_< USeqAct_PlaySound,  USeqAct_Latent   >(m, "USeqAct_PlaySound")
         .def_readwrite("PlaySound", &USeqAct_PlaySound::PlaySound)

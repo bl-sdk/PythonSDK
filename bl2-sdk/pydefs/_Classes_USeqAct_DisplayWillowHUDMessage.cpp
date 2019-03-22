@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_DisplayWillowHUDMessage(py::object m)
+void Export_pystes_USeqAct_DisplayWillowHUDMessage(py::module &m)
 {
     py::class_< USeqAct_DisplayWillowHUDMessage,  USequenceAction   >(m, "USeqAct_DisplayWillowHUDMessage")
         .def_readwrite("MessageType", &USeqAct_DisplayWillowHUDMessage::MessageType)

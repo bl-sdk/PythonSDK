@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USVehicleSimTank(py::object m)
+void Export_pystes_USVehicleSimTank(py::module &m)
 {
     py::class_< USVehicleSimTank,  USVehicleSimCar   >(m, "USVehicleSimTank")
         .def_readwrite("LeftTrackVel", &USVehicleSimTank::LeftTrackVel)

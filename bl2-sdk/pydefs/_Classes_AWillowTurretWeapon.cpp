@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowTurretWeapon(py::object m)
+void Export_pystes_AWillowTurretWeapon(py::module &m)
 {
     py::class_< AWillowTurretWeapon,  AWillowWeapon   >(m, "AWillowTurretWeapon")
         .def_readwrite("FireTriggerTags", &AWillowTurretWeapon::FireTriggerTags)

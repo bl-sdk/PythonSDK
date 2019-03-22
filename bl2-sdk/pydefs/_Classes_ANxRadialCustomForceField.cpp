@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ANxRadialCustomForceField(py::object m)
+void Export_pystes_ANxRadialCustomForceField(py::module &m)
 {
     py::class_< ANxRadialCustomForceField,  ANxRadialForceField   >(m, "ANxRadialCustomForceField")
         .def_readwrite("SelfRotationStrength", &ANxRadialCustomForceField::SelfRotationStrength)

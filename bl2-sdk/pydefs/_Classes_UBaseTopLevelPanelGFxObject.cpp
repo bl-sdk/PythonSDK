@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBaseTopLevelPanelGFxObject(py::object m)
+void Export_pystes_UBaseTopLevelPanelGFxObject(py::module &m)
 {
     py::class_< UBaseTopLevelPanelGFxObject,  UGFxObject   >(m, "UBaseTopLevelPanelGFxObject")
         .def_readwrite("ParentMovie", &UBaseTopLevelPanelGFxObject::ParentMovie)

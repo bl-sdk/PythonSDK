@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowOnlineGameSettings(py::object m)
+void Export_pystes_UWillowOnlineGameSettings(py::module &m)
 {
     py::class_< UWillowOnlineGameSettings,  UOnlineGameSettings   >(m, "UWillowOnlineGameSettings")
         .def("StaticClass", &UWillowOnlineGameSettings::StaticClass, py::return_value_policy::reference)

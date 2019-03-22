@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FServerQueryToPingResponseMapping(py::object m)
+void Export_pystes_FServerQueryToPingResponseMapping(py::module &m)
 {
     py::class_< FServerQueryToPingResponseMapping >(m, "FServerQueryToPingResponseMapping")
         .def_readwrite("Query", &FServerQueryToPingResponseMapping::Query)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleCollision(py::object m)
+void Export_pystes_UParticleModuleCollision(py::module &m)
 {
     py::class_< UParticleModuleCollision,  UParticleModuleCollisionBase   >(m, "UParticleModuleCollision")
         .def_readwrite("DampingFactor", &UParticleModuleCollision::DampingFactor)

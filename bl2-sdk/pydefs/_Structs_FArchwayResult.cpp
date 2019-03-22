@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FArchwayResult(py::object m)
+void Export_pystes_FArchwayResult(py::module &m)
 {
     py::class_< FArchwayResult >(m, "FArchwayResult")
         .def_readwrite("RequestId", &FArchwayResult::RequestId)

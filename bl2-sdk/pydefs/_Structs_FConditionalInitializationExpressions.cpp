@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FConditionalInitializationExpressions(py::object m)
+void Export_pystes_FConditionalInitializationExpressions(py::module &m)
 {
     py::class_< FConditionalInitializationExpressions >(m, "FConditionalInitializationExpressions")
         .def_readwrite("ConditionalExpressionList", &FConditionalInitializationExpressions::ConditionalExpressionList)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPassengerCameraDefinition(py::object m)
+void Export_pystes_UPassengerCameraDefinition(py::module &m)
 {
     py::class_< UPassengerCameraDefinition,  UGBXDefinition   >(m, "UPassengerCameraDefinition")
         .def_readwrite("AfterburnerHandlingCamera", &UPassengerCameraDefinition::AfterburnerHandlingCamera)

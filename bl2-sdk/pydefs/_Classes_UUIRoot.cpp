@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIRoot(py::object m)
+void Export_pystes_UUIRoot(py::module &m)
 {
     py::class_< UUIRoot,  UObject   >(m, "UUIRoot")
         .def_readwrite("BadCapsLocContexts", &UUIRoot::BadCapsLocContexts)

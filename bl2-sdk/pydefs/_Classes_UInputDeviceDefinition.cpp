@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInputDeviceDefinition(py::object m)
+void Export_pystes_UInputDeviceDefinition(py::module &m)
 {
     py::class_< UInputDeviceDefinition,  UGBXDefinition   >(m, "UInputDeviceDefinition")
         .def_readwrite("Axes", &UInputDeviceDefinition::Axes)

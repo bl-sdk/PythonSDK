@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FOnlineStatusPropertyMapping(py::object m)
+void Export_pystes_FOnlineStatusPropertyMapping(py::module &m)
 {
     py::class_< FOnlineStatusPropertyMapping >(m, "FOnlineStatusPropertyMapping")
         .def_readwrite("KeyString", &FOnlineStatusPropertyMapping::KeyString)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ATcpLink(py::object m)
+void Export_pystes_ATcpLink(py::module &m)
 {
     py::class_< ATcpLink,  AInfo   >(m, "ATcpLink")
         .def_readwrite("LinkState", &ATcpLink::LinkState)

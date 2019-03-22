@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_CastToInt(py::object m)
+void Export_pystes_USeqAct_CastToInt(py::module &m)
 {
     py::class_< USeqAct_CastToInt,  USeqAct_SetSequenceVariable   >(m, "USeqAct_CastToInt")
         .def_readwrite("Value", &USeqAct_CastToInt::Value)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGeomSelection(py::object m)
+void Export_pystes_FGeomSelection(py::module &m)
 {
     py::class_< FGeomSelection >(m, "FGeomSelection")
         .def_readwrite("Type", &FGeomSelection::Type)

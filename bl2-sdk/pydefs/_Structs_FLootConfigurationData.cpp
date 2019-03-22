@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLootConfigurationData(py::object m)
+void Export_pystes_FLootConfigurationData(py::module &m)
 {
     py::class_< FLootConfigurationData >(m, "FLootConfigurationData")
         .def_readwrite("ConfigurationName", &FLootConfigurationData::ConfigurationName)

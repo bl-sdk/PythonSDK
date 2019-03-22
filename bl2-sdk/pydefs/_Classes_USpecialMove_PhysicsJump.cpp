@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpecialMove_PhysicsJump(py::object m)
+void Export_pystes_USpecialMove_PhysicsJump(py::module &m)
 {
     py::class_< USpecialMove_PhysicsJump,  UWillowAnimDefinition   >(m, "USpecialMove_PhysicsJump")
         .def_readwrite("AnimIdle", &USpecialMove_PhysicsJump::AnimIdle)

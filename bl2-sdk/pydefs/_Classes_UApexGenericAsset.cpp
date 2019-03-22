@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UApexGenericAsset(py::object m)
+void Export_pystes_UApexGenericAsset(py::module &m)
 {
     py::class_< UApexGenericAsset,  UApexAsset   >(m, "UApexGenericAsset")
         .def_readwrite("MApexAsset", &UApexGenericAsset::MApexAsset)

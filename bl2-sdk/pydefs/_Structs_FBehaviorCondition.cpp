@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBehaviorCondition(py::object m)
+void Export_pystes_FBehaviorCondition(py::module &m)
 {
     py::class_< FBehaviorCondition >(m, "FBehaviorCondition")
         .def_readwrite("ConditionId", &FBehaviorCondition::ConditionId)

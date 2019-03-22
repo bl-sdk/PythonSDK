@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_FlyAnimAttack(py::object m)
+void Export_pystes_UAction_FlyAnimAttack(py::module &m)
 {
     py::class_< UAction_FlyAnimAttack,  UAction_Burrow   >(m, "UAction_FlyAnimAttack")
         .def_readwrite("AimType", &UAction_FlyAnimAttack::AimType)

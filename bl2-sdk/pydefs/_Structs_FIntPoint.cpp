@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FIntPoint(py::object m)
+void Export_pystes_FIntPoint(py::module &m)
 {
     py::class_< FIntPoint >(m, "FIntPoint")
         .def_readwrite("X", &FIntPoint::X)

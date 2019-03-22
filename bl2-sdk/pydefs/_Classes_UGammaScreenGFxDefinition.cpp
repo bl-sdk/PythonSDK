@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGammaScreenGFxDefinition(py::object m)
+void Export_pystes_UGammaScreenGFxDefinition(py::module &m)
 {
     py::class_< UGammaScreenGFxDefinition,  UWillowGFxMovie3DDefinition   >(m, "UGammaScreenGFxDefinition")
         .def_readwrite("Parameters", &UGammaScreenGFxDefinition::Parameters)

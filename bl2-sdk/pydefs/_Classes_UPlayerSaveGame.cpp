@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerSaveGame(py::object m)
+void Export_pystes_UPlayerSaveGame(py::module &m)
 {
     py::class_< UPlayerSaveGame,  UObject   >(m, "UPlayerSaveGame")
         .def_readwrite("UIPreferences", &UPlayerSaveGame::UIPreferences)

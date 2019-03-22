@@ -3,9 +3,9 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIStatusEffectTarget(py::object m)
+void Export_pystes_UIStatusEffectTarget(py::module &m)
 {
-    py::class_< UIStatusEffectTarget,  UInterface   >(m, "UIStatusEffectTarget")
+    py::class_< UIStatusEffectTarget, UIHitRegionInfoProvider   >(m, "UIStatusEffectTarget")
         .def("StaticClass", &UIStatusEffectTarget::StaticClass, py::return_value_policy::reference)
         .def("CanReceiveStatusEffects", &UIStatusEffectTarget::CanReceiveStatusEffects)
         .def("ReactToPrimaryStatusEffect", &UIStatusEffectTarget::ReactToPrimaryStatusEffect)
@@ -17,6 +17,5 @@ void Export_pystes_UIStatusEffectTarget(py::object m)
         .def("GetDefaultStatusEffectsParticleSystemTemplate", &UIStatusEffectTarget::GetDefaultStatusEffectsParticleSystemTemplate, py::return_value_policy::reference)
         .def("GetDefaultStatusEffectSockets", &UIStatusEffectTarget::GetDefaultStatusEffectSockets)
         .def("GetStatusEffectsComponent", &UIStatusEffectTarget::GetStatusEffectsComponent, py::return_value_policy::reference)
-        .def("GetHitRegions", &UIHitRegionInfoProvider::GetHitRegions)
           ;
 }

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParameterBehaviorBase(py::object m)
+void Export_pystes_UParameterBehaviorBase(py::module &m)
 {
     py::class_< UParameterBehaviorBase,  UBehaviorBase   >(m, "UParameterBehaviorBase")
         .def_readwrite("ParameterName", &UParameterBehaviorBase::ParameterName)

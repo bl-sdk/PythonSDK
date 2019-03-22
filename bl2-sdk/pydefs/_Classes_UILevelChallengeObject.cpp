@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UILevelChallengeObject(py::object m)
+void Export_pystes_UILevelChallengeObject(py::module &m)
 {
     py::class_< UILevelChallengeObject,  UInterface   >(m, "UILevelChallengeObject")
         .def("StaticClass", &UILevelChallengeObject::StaticClass, py::return_value_policy::reference)

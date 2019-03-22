@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SetAnimSwitchNode(py::object m)
+void Export_pystes_UBehavior_SetAnimSwitchNode(py::module &m)
 {
     py::class_< UBehavior_SetAnimSwitchNode,  UBehaviorBase   >(m, "UBehavior_SetAnimSwitchNode")
         .def_readwrite("AnimNodeName", &UBehavior_SetAnimSwitchNode::AnimNodeName)

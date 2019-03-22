@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowHUDGFxMovie(py::object m)
+void Export_pystes_UWillowHUDGFxMovie(py::module &m)
 {
     py::class_< UWillowHUDGFxMovie,  UWillowGFxMovie   >(m, "UWillowHUDGFxMovie")
         .def_readwrite("SplitscreenMode", &UWillowHUDGFxMovie::SplitscreenMode)

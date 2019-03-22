@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNodeBlendByPhysics(py::object m)
+void Export_pystes_UAnimNodeBlendByPhysics(py::module &m)
 {
     py::class_< UAnimNodeBlendByPhysics,  UAnimNodeBlendList   >(m, "UAnimNodeBlendByPhysics")
         .def_readwrite("DelayBeforeStartingBlend", &UAnimNodeBlendByPhysics::DelayBeforeStartingBlend)

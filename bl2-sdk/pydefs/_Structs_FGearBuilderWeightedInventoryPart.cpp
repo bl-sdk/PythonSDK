@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGearBuilderWeightedInventoryPart(py::object m)
+void Export_pystes_FGearBuilderWeightedInventoryPart(py::module &m)
 {
     py::class_< FGearBuilderWeightedInventoryPart >(m, "FGearBuilderWeightedInventoryPart")
         .def_readwrite("Part", &FGearBuilderWeightedInventoryPart::Part)

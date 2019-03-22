@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ASplineLoftActor(py::object m)
+void Export_pystes_ASplineLoftActor(py::module &m)
 {
     py::class_< ASplineLoftActor,  ASplineActor   >(m, "ASplineLoftActor")
         .def_readwrite("ScaleX", &ASplineLoftActor::ScaleX)

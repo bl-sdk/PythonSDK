@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGuid(py::object m)
+void Export_pystes_FGuid(py::module &m)
 {
     py::class_< FGuid >(m, "FGuid")
         .def_readwrite("A", &FGuid::A)

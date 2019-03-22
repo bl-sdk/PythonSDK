@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_SubtractFloat(py::object m)
+void Export_pystes_USeqAct_SubtractFloat(py::module &m)
 {
     py::class_< USeqAct_SubtractFloat,  USeqAct_SetSequenceVariable   >(m, "USeqAct_SubtractFloat")
         .def_readwrite("ValueA", &USeqAct_SubtractFloat::ValueA)

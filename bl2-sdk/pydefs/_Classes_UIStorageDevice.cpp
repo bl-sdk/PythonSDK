@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIStorageDevice(py::object m)
+void Export_pystes_UIStorageDevice(py::module &m)
 {
     py::class_< UIStorageDevice,  UInterface   >(m, "UIStorageDevice")
         .def("StaticClass", &UIStorageDevice::StaticClass, py::return_value_policy::reference)

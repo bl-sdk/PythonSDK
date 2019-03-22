@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_PhaseLockHold(py::object m)
+void Export_pystes_UBehavior_PhaseLockHold(py::module &m)
 {
     py::class_< UBehavior_PhaseLockHold,  UBehaviorBase   >(m, "UBehavior_PhaseLockHold")
         .def_readwrite("Reason", &UBehavior_PhaseLockHold::Reason)

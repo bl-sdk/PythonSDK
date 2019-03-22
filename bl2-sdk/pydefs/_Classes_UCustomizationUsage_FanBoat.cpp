@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCustomizationUsage_FanBoat(py::object m)
+void Export_pystes_UCustomizationUsage_FanBoat(py::module &m)
 {
     py::class_< UCustomizationUsage_FanBoat,  UCustomizationUsage   >(m, "UCustomizationUsage_FanBoat")
         .def("StaticClass", &UCustomizationUsage_FanBoat::StaticClass, py::return_value_policy::reference)

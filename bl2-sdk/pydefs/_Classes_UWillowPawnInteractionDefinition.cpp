@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowPawnInteractionDefinition(py::object m)
+void Export_pystes_UWillowPawnInteractionDefinition(py::module &m)
 {
     py::class_< UWillowPawnInteractionDefinition,  UPawnInteractionDefinition   >(m, "UWillowPawnInteractionDefinition")
         .def_readwrite("HUDIcon", &UWillowPawnInteractionDefinition::HUDIcon)

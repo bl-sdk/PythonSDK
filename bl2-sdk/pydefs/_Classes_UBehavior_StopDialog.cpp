@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_StopDialog(py::object m)
+void Export_pystes_UBehavior_StopDialog(py::module &m)
 {
     py::class_< UBehavior_StopDialog,  UBehaviorBase   >(m, "UBehavior_StopDialog")
         .def_readwrite("EventTag", &UBehavior_StopDialog::EventTag)

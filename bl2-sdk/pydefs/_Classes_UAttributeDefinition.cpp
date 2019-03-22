@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAttributeDefinition(py::object m)
+void Export_pystes_UAttributeDefinition(py::module &m)
 {
     py::class_< UAttributeDefinition,  UAttributeDefinitionBase   >(m, "UAttributeDefinition")
         .def("StaticClass", &UAttributeDefinition::StaticClass, py::return_value_policy::reference)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowInventoryGFxMovie(py::object m)
+void Export_pystes_UWillowInventoryGFxMovie(py::module &m)
 {
     py::class_< UWillowInventoryGFxMovie,  UWillowGFxMovie3D   >(m, "UWillowInventoryGFxMovie")
         .def_readwrite("RTM", &UWillowInventoryGFxMovie::RTM)

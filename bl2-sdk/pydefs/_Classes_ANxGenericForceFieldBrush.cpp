@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ANxGenericForceFieldBrush(py::object m)
+void Export_pystes_ANxGenericForceFieldBrush(py::module &m)
 {
     py::class_< ANxGenericForceFieldBrush,  AVolume   >(m, "ANxGenericForceFieldBrush")
         .def_readwrite("ExcludeChannel", &ANxGenericForceFieldBrush::ExcludeChannel)

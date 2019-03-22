@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleMeshRotation(py::object m)
+void Export_pystes_UParticleModuleMeshRotation(py::module &m)
 {
     py::class_< UParticleModuleMeshRotation,  UParticleModuleRotationBase   >(m, "UParticleModuleMeshRotation")
         .def_readwrite("StartRotation", &UParticleModuleMeshRotation::StartRotation)

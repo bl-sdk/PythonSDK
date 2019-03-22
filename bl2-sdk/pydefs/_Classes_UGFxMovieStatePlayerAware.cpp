@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGFxMovieStatePlayerAware(py::object m)
+void Export_pystes_UGFxMovieStatePlayerAware(py::module &m)
 {
     py::class_< UGFxMovieStatePlayerAware,  UGFxMovieState   >(m, "UGFxMovieStatePlayerAware")
         .def_readwrite("LookAtThreshold", &UGFxMovieStatePlayerAware::LookAtThreshold)

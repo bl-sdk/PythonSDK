@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNavMeshPath_AlongLine(py::object m)
+void Export_pystes_UNavMeshPath_AlongLine(py::module &m)
 {
     py::class_< UNavMeshPath_AlongLine,  UNavMeshPathConstraint   >(m, "UNavMeshPath_AlongLine")
         .def_readwrite("Direction", &UNavMeshPath_AlongLine::Direction)

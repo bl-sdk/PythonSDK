@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNavMeshPath_MinDistBetweenSpecsOfType(py::object m)
+void Export_pystes_UNavMeshPath_MinDistBetweenSpecsOfType(py::module &m)
 {
     py::class_< UNavMeshPath_MinDistBetweenSpecsOfType,  UNavMeshPathConstraint   >(m, "UNavMeshPath_MinDistBetweenSpecsOfType")
         .def_readwrite("MinDistBetweenEdgeTypes", &UNavMeshPath_MinDistBetweenSpecsOfType::MinDistBetweenEdgeTypes)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_FinalBoss(py::object m)
+void Export_pystes_UAction_FinalBoss(py::module &m)
 {
     py::class_< UAction_FinalBoss,  UAction_FollowPath   >(m, "UAction_FinalBoss")
         .def("StaticClass", &UAction_FinalBoss::StaticClass, py::return_value_policy::reference)

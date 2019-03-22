@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowPlayerInput(py::object m)
+void Export_pystes_UWillowPlayerInput(py::module &m)
 {
     py::class_< UWillowPlayerInput,  UPlayerInput   >(m, "UWillowPlayerInput")
         .def_readwrite("DebugBindOverrideKeyName", &UWillowPlayerInput::DebugBindOverrideKeyName)

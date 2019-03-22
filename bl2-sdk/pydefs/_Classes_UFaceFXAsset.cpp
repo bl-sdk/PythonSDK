@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFaceFXAsset(py::object m)
+void Export_pystes_UFaceFXAsset(py::module &m)
 {
     py::class_< UFaceFXAsset,  UObject   >(m, "UFaceFXAsset")
         .def_readwrite("FaceFXActor", &UFaceFXAsset::FaceFXActor)

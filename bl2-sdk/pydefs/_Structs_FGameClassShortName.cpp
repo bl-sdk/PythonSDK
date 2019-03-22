@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGameClassShortName(py::object m)
+void Export_pystes_FGameClassShortName(py::module &m)
 {
     py::class_< FGameClassShortName >(m, "FGameClassShortName")
         .def_readwrite("ShortName", &FGameClassShortName::ShortName)

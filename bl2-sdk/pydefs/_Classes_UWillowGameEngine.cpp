@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGameEngine(py::object m)
+void Export_pystes_UWillowGameEngine(py::module &m)
 {
     py::class_< UWillowGameEngine,  UGearboxEngine   >(m, "UWillowGameEngine")
         .def_readwrite("VfTable_ISparkUpdateCallback", &UWillowGameEngine::VfTable_ISparkUpdateCallback)

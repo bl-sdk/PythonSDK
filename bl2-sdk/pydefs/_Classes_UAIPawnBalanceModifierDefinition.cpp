@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAIPawnBalanceModifierDefinition(py::object m)
+void Export_pystes_UAIPawnBalanceModifierDefinition(py::module &m)
 {
     py::class_< UAIPawnBalanceModifierDefinition,  UGBXDefinition   >(m, "UAIPawnBalanceModifierDefinition")
         .def_readwrite("AIPawnBalanceDefinitionPath", &UAIPawnBalanceModifierDefinition::AIPawnBalanceDefinitionPath)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_Fartifact_datum(py::object m)
+void Export_pystes_Fartifact_datum(py::module &m)
 {
     py::class_< Fartifact_datum >(m, "Fartifact_datum")
         .def_readwrite("SkillIndex", &Fartifact_datum::SkillIndex)

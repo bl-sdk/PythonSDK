@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIPlayerMaster(py::object m)
+void Export_pystes_UIPlayerMaster(py::module &m)
 {
     py::class_< UIPlayerMaster,  UInterface   >(m, "UIPlayerMaster")
         .def("StaticClass", &UIPlayerMaster::StaticClass, py::return_value_policy::reference)

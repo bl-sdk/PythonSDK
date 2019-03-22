@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBodyWeaponActionPostureData(py::object m)
+void Export_pystes_FBodyWeaponActionPostureData(py::module &m)
 {
     py::class_< FBodyWeaponActionPostureData >(m, "FBodyWeaponActionPostureData")
         .def_readwrite("Posture", &FBodyWeaponActionPostureData::Posture)

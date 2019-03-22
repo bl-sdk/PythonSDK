@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_PlayAnimation(py::object m)
+void Export_pystes_UBehavior_PlayAnimation(py::module &m)
 {
     py::class_< UBehavior_PlayAnimation,  UBehaviorBase   >(m, "UBehavior_PlayAnimation")
         .def_readwrite("AnimName", &UBehavior_PlayAnimation::AnimName)

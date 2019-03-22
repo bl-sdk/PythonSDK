@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AFogVolumeDensityInfo(py::object m)
+void Export_pystes_AFogVolumeDensityInfo(py::module &m)
 {
     py::class_< AFogVolumeDensityInfo,  AInfo   >(m, "AFogVolumeDensityInfo")
         .def_readwrite("DensityComponent", &AFogVolumeDensityInfo::DensityComponent)

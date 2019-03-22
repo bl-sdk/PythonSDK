@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxPlayerInput(py::object m)
+void Export_pystes_UGearboxPlayerInput(py::module &m)
 {
     py::class_< UGearboxPlayerInput,  UPlayerInput   >(m, "UGearboxPlayerInput")
         .def("StaticClass", &UGearboxPlayerInput::StaticClass, py::return_value_policy::reference)

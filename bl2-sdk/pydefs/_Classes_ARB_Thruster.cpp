@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ARB_Thruster(py::object m)
+void Export_pystes_ARB_Thruster(py::module &m)
 {
     py::class_< ARB_Thruster,  ARigidBodyBase   >(m, "ARB_Thruster")
         .def_readwrite("ThrustStrength", &ARB_Thruster::ThrustStrength)

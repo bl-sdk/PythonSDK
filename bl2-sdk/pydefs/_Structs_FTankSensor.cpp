@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTankSensor(py::object m)
+void Export_pystes_FTankSensor(py::module &m)
 {
     py::class_< FTankSensor >(m, "FTankSensor")
         .def_readwrite("Socket", &FTankSensor::Socket)

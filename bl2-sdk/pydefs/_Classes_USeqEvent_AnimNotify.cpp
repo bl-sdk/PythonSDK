@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqEvent_AnimNotify(py::object m)
+void Export_pystes_USeqEvent_AnimNotify(py::module &m)
 {
     py::class_< USeqEvent_AnimNotify,  USequenceEvent   >(m, "USeqEvent_AnimNotify")
         .def_readwrite("NotifyName", &USeqEvent_AnimNotify::NotifyName)

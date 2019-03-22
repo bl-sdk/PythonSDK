@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMovementComponent(py::object m)
+void Export_pystes_UMovementComponent(py::module &m)
 {
     py::class_< UMovementComponent,  UActorComponent   >(m, "UMovementComponent")
         .def("StaticClass", &UMovementComponent::StaticClass, py::return_value_policy::reference)

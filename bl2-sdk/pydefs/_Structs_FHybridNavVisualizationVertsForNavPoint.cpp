@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FHybridNavVisualizationVertsForNavPoint(py::object m)
+void Export_pystes_FHybridNavVisualizationVertsForNavPoint(py::module &m)
 {
     py::class_< FHybridNavVisualizationVertsForNavPoint >(m, "FHybridNavVisualizationVertsForNavPoint")
         .def_readwrite("Verts", &FHybridNavVisualizationVertsForNavPoint::Verts)

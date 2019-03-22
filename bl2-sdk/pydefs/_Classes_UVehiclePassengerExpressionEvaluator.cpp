@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UVehiclePassengerExpressionEvaluator(py::object m)
+void Export_pystes_UVehiclePassengerExpressionEvaluator(py::module &m)
 {
     py::class_< UVehiclePassengerExpressionEvaluator,  UExpressionEvaluator   >(m, "UVehiclePassengerExpressionEvaluator")
         .def("StaticClass", &UVehiclePassengerExpressionEvaluator::StaticClass, py::return_value_policy::reference)

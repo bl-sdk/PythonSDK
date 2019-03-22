@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowPersonalTeleporter(py::object m)
+void Export_pystes_AWillowPersonalTeleporter(py::module &m)
 {
     py::class_< AWillowPersonalTeleporter,  ATeleporterDestination   >(m, "AWillowPersonalTeleporter")
         .def_readwrite("TeleportedPlayers", &AWillowPersonalTeleporter::TeleportedPlayers)

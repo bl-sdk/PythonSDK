@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AColorScaleVolume(py::object m)
+void Export_pystes_AColorScaleVolume(py::module &m)
 {
     py::class_< AColorScaleVolume,  AVolume   >(m, "AColorScaleVolume")
         .def_readwrite("ColorScale", &AColorScaleVolume::ColorScale)

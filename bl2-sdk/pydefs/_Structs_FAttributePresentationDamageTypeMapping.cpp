@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAttributePresentationDamageTypeMapping(py::object m)
+void Export_pystes_FAttributePresentationDamageTypeMapping(py::module &m)
 {
     py::class_< FAttributePresentationDamageTypeMapping >(m, "FAttributePresentationDamageTypeMapping")
         .def_readwrite("Presentation", &FAttributePresentationDamageTypeMapping::Presentation)

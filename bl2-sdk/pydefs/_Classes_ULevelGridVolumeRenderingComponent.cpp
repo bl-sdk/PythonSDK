@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULevelGridVolumeRenderingComponent(py::object m)
+void Export_pystes_ULevelGridVolumeRenderingComponent(py::module &m)
 {
     py::class_< ULevelGridVolumeRenderingComponent,  UPrimitiveComponent   >(m, "ULevelGridVolumeRenderingComponent")
         .def("StaticClass", &ULevelGridVolumeRenderingComponent::StaticClass, py::return_value_policy::reference)

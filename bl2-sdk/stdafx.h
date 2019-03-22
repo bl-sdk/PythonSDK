@@ -18,6 +18,7 @@
 #include <lua.hpp>
 #include <luajit.h>
 
+
 namespace BL2SDK
 {
 	extern void* pGObjects;
@@ -91,4 +92,5 @@ namespace BL2SDK
 #include "AkAudio_classes.h"
 //#include "AkAudio_functions.h"
 
+#include "pydef.h"
 //#include "BL2-SDK.h"

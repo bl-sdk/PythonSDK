@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AStatusEffectProxyActor(py::object m)
+void Export_pystes_AStatusEffectProxyActor(py::module &m)
 {
     py::class_< AStatusEffectProxyActor,  AActor   >(m, "AStatusEffectProxyActor")
         .def_readwrite("VfTable_IIStatusEffectTarget", &AStatusEffectProxyActor::VfTable_IIStatusEffectTarget)

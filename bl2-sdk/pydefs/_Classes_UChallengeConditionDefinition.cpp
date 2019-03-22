@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UChallengeConditionDefinition(py::object m)
+void Export_pystes_UChallengeConditionDefinition(py::module &m)
 {
     py::class_< UChallengeConditionDefinition,  UGBXDefinition   >(m, "UChallengeConditionDefinition")
         .def_readwrite("Description", &UChallengeConditionDefinition::Description)

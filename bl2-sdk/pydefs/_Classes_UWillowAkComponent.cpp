@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAkComponent(py::object m)
+void Export_pystes_UWillowAkComponent(py::module &m)
 {
     py::class_< UWillowAkComponent,  UAkComponent   >(m, "UWillowAkComponent")
         .def_readwrite("DistanceRTPCRefCount", &UWillowAkComponent::DistanceRTPCRefCount)

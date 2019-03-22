@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ARB_HingeActor(py::object m)
+void Export_pystes_ARB_HingeActor(py::module &m)
 {
     py::class_< ARB_HingeActor,  ARigidBodyBase   >(m, "ARB_HingeActor")
         .def_readwrite("ConstraintActor1", &ARB_ConstraintActor::ConstraintActor1)

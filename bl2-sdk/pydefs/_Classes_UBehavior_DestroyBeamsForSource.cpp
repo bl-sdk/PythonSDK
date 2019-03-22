@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_DestroyBeamsForSource(py::object m)
+void Export_pystes_UBehavior_DestroyBeamsForSource(py::module &m)
 {
     py::class_< UBehavior_DestroyBeamsForSource,  UBehaviorBase   >(m, "UBehavior_DestroyBeamsForSource")
         .def_readwrite("SourceContext", &UBehavior_DestroyBeamsForSource::SourceContext)

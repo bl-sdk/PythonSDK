@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowClassMod(py::object m)
+void Export_pystes_AWillowClassMod(py::module &m)
 {
     py::class_< AWillowClassMod,  AWillowEquipAbleItem   >(m, "AWillowClassMod")
         .def_readwrite("ClassRequirementMetString", &AWillowClassMod::ClassRequirementMetString)

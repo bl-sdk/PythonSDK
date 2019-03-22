@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_StartDeathRagdoll(py::object m)
+void Export_pystes_UBehavior_StartDeathRagdoll(py::module &m)
 {
     py::class_< UBehavior_StartDeathRagdoll,  UBehaviorBase   >(m, "UBehavior_StartDeathRagdoll")
         .def("StaticClass", &UBehavior_StartDeathRagdoll::StaticClass, py::return_value_policy::reference)

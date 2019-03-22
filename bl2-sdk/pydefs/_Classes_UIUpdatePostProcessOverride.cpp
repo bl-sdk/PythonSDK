@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIUpdatePostProcessOverride(py::object m)
+void Export_pystes_UIUpdatePostProcessOverride(py::module &m)
 {
     py::class_< UIUpdatePostProcessOverride,  UInterface   >(m, "UIUpdatePostProcessOverride")
         .def("StaticClass", &UIUpdatePostProcessOverride::StaticClass, py::return_value_policy::reference)

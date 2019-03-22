@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FWheelSlipModifierData(py::object m)
+void Export_pystes_FWheelSlipModifierData(py::module &m)
 {
     py::class_< FWheelSlipModifierData >(m, "FWheelSlipModifierData")
         .def_readwrite("LongSlipFactor", &FWheelSlipModifierData::LongSlipFactor)

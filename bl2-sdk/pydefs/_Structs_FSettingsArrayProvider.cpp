@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSettingsArrayProvider(py::object m)
+void Export_pystes_FSettingsArrayProvider(py::module &m)
 {
     py::class_< FSettingsArrayProvider >(m, "FSettingsArrayProvider")
         .def_readwrite("SettingsId", &FSettingsArrayProvider::SettingsId)

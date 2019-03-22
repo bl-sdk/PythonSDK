@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAudioDevice(py::object m)
+void Export_pystes_UAudioDevice(py::module &m)
 {
     py::class_< UAudioDevice,  USubsystem   >(m, "UAudioDevice")
         .def_readwrite("MaxChannels", &UAudioDevice::MaxChannels)

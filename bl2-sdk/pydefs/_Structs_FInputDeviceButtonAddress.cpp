@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInputDeviceButtonAddress(py::object m)
+void Export_pystes_FInputDeviceButtonAddress(py::module &m)
 {
     py::class_< FInputDeviceButtonAddress >(m, "FInputDeviceButtonAddress")
         .def_readwrite("SourceDevice", &FInputDeviceButtonAddress::SourceDevice)

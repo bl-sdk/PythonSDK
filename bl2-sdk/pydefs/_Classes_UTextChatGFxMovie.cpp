@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTextChatGFxMovie(py::object m)
+void Export_pystes_UTextChatGFxMovie(py::module &m)
 {
     py::class_< UTextChatGFxMovie,  UWillowGFxMovie   >(m, "UTextChatGFxMovie")
         .def_readwrite("ChatObj", &UTextChatGFxMovie::ChatObj)

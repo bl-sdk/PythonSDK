@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FHostMigrationState(py::object m)
+void Export_pystes_FHostMigrationState(py::module &m)
 {
     py::class_< FHostMigrationState >(m, "FHostMigrationState")
         .def_readwrite("HostMigrationProgress", &FHostMigrationState::HostMigrationProgress)

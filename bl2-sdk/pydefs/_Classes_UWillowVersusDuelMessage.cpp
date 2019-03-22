@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowVersusDuelMessage(py::object m)
+void Export_pystes_UWillowVersusDuelMessage(py::module &m)
 {
     py::class_< UWillowVersusDuelMessage,  ULocalMessage   >(m, "UWillowVersusDuelMessage")
         .def_readwrite("DuelingDisabled", &UWillowVersusDuelMessage::DuelingDisabled)

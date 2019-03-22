@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AAIController(py::object m)
+void Export_pystes_AAIController(py::module &m)
 {
     py::class_< AAIController,  AController   >(m, "AAIController")
         .def_readwrite("Skill", &AAIController::Skill)

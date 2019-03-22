@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FHitActorData(py::object m)
+void Export_pystes_FHitActorData(py::module &m)
 {
     py::class_< FHitActorData >(m, "FHitActorData")
         .def_readwrite("HitActor", &FHitActorData::HitActor)

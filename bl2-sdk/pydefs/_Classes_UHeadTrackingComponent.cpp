@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHeadTrackingComponent(py::object m)
+void Export_pystes_UHeadTrackingComponent(py::module &m)
 {
     py::class_< UHeadTrackingComponent,  UActorComponent   >(m, "UHeadTrackingComponent")
         .def_readwrite("TrackControllerName", &UHeadTrackingComponent::TrackControllerName)

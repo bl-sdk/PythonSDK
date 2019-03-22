@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_Fs_actorList(py::object m)
+void Export_pystes_Fs_actorList(py::module &m)
 {
     py::class_< Fs_actorList >(m, "Fs_actorList")
         .def_readwrite("LevelName", &Fs_actorList::LevelName)

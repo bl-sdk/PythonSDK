@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAutoAimStrategyDefinition(py::object m)
+void Export_pystes_UWillowAutoAimStrategyDefinition(py::module &m)
 {
     py::class_< UWillowAutoAimStrategyDefinition,  UGBXDefinition   >(m, "UWillowAutoAimStrategyDefinition")
         .def_readwrite("MaxTargetDistance", &UWillowAutoAimStrategyDefinition::MaxTargetDistance)

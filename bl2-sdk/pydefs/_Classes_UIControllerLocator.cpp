@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIControllerLocator(py::object m)
+void Export_pystes_UIControllerLocator(py::module &m)
 {
     py::class_< UIControllerLocator,  UInterface   >(m, "UIControllerLocator")
         .def("StaticClass", &UIControllerLocator::StaticClass, py::return_value_policy::reference)

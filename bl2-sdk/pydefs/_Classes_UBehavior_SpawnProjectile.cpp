@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SpawnProjectile(py::object m)
+void Export_pystes_UBehavior_SpawnProjectile(py::module &m)
 {
     py::class_< UBehavior_SpawnProjectile,  UBehaviorBase   >(m, "UBehavior_SpawnProjectile")
         .def_readwrite("OwnerContext", &UBehavior_SpawnProjectile::OwnerContext)

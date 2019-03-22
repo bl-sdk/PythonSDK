@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USceneCaptureComponent(py::object m)
+void Export_pystes_USceneCaptureComponent(py::module &m)
 {
     py::class_< USceneCaptureComponent,  UActorComponent   >(m, "USceneCaptureComponent")
         .def_readwrite("ClearColor", &USceneCaptureComponent::ClearColor)

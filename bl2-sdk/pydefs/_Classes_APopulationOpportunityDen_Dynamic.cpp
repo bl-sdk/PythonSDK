@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APopulationOpportunityDen_Dynamic(py::object m)
+void Export_pystes_APopulationOpportunityDen_Dynamic(py::module &m)
 {
     py::class_< APopulationOpportunityDen_Dynamic,  APopulationOpportunityDen   >(m, "APopulationOpportunityDen_Dynamic")
         .def_readwrite("DynamicPointName", &APopulationOpportunityDen_Dynamic::DynamicPointName)

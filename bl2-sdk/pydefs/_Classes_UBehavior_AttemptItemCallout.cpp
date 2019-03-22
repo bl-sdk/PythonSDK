@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_AttemptItemCallout(py::object m)
+void Export_pystes_UBehavior_AttemptItemCallout(py::module &m)
 {
     py::class_< UBehavior_AttemptItemCallout,  UBehaviorBase   >(m, "UBehavior_AttemptItemCallout")
         .def_readwrite("DET_CallOut", &UBehavior_AttemptItemCallout::DET_CallOut)

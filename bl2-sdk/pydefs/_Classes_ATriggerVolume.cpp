@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ATriggerVolume(py::object m)
+void Export_pystes_ATriggerVolume(py::module &m)
 {
     py::class_< ATriggerVolume,  AVolume   >(m, "ATriggerVolume")
         .def("StaticClass", &ATriggerVolume::StaticClass, py::return_value_policy::reference)

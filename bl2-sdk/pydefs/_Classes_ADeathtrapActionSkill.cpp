@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ADeathtrapActionSkill(py::object m)
+void Export_pystes_ADeathtrapActionSkill(py::module &m)
 {
     py::class_< ADeathtrapActionSkill,  AActionSkill   >(m, "ADeathtrapActionSkill")
         .def_readwrite("DeathTrap", &ADeathtrapActionSkill::DeathTrap)

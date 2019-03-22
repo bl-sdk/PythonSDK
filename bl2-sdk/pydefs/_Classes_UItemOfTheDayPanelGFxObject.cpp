@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UItemOfTheDayPanelGFxObject(py::object m)
+void Export_pystes_UItemOfTheDayPanelGFxObject(py::module &m)
 {
     py::class_< UItemOfTheDayPanelGFxObject,  UGFxObject   >(m, "UItemOfTheDayPanelGFxObject")
         .def_readwrite("VendingMachineMovie", &UItemOfTheDayPanelGFxObject::VendingMachineMovie)

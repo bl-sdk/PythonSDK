@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIDataStore_Registry(py::object m)
+void Export_pystes_UUIDataStore_Registry(py::module &m)
 {
     py::class_< UUIDataStore_Registry,  UUIDataStore   >(m, "UUIDataStore_Registry")
         .def_readwrite("RegistryDataProvider", &UUIDataStore_Registry::RegistryDataProvider)

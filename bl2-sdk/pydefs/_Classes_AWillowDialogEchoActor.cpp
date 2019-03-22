@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowDialogEchoActor(py::object m)
+void Export_pystes_AWillowDialogEchoActor(py::module &m)
 {
     py::class_< AWillowDialogEchoActor,  AActor   >(m, "AWillowDialogEchoActor")
         .def_readwrite("VfTable_IGearboxDialogInterface", &AWillowDialogEchoActor::VfTable_IGearboxDialogInterface)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ADynamicBlockingVolume(py::object m)
+void Export_pystes_ADynamicBlockingVolume(py::module &m)
 {
     py::class_< ADynamicBlockingVolume,  ABlockingVolume   >(m, "ADynamicBlockingVolume")
         .def("StaticClass", &ADynamicBlockingVolume::StaticClass, py::return_value_policy::reference)

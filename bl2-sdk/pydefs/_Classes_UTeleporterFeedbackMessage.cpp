@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTeleporterFeedbackMessage(py::object m)
+void Export_pystes_UTeleporterFeedbackMessage(py::module &m)
 {
     py::class_< UTeleporterFeedbackMessage,  ULocalMessage   >(m, "UTeleporterFeedbackMessage")
         .def_readwrite("Teleporter_Disabled", &UTeleporterFeedbackMessage::Teleporter_Disabled)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMatchmakingLobbyResultsGFxObject(py::object m)
+void Export_pystes_UMatchmakingLobbyResultsGFxObject(py::module &m)
 {
     py::class_< UMatchmakingLobbyResultsGFxObject,  UGFxObject   >(m, "UMatchmakingLobbyResultsGFxObject")
         .def("StaticClass", &UMatchmakingLobbyResultsGFxObject::StaticClass, py::return_value_policy::reference)

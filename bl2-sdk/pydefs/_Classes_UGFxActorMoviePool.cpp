@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGFxActorMoviePool(py::object m)
+void Export_pystes_UGFxActorMoviePool(py::module &m)
 {
     py::class_< UGFxActorMoviePool,  UObject   >(m, "UGFxActorMoviePool")
         .def_readwrite("MovieDefinition", &UGFxActorMoviePool::MovieDefinition)

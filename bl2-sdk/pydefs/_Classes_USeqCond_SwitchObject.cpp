@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqCond_SwitchObject(py::object m)
+void Export_pystes_USeqCond_SwitchObject(py::module &m)
 {
     py::class_< USeqCond_SwitchObject,  USeqCond_SwitchBase   >(m, "USeqCond_SwitchObject")
         .def_readwrite("SupportedValues", &USeqCond_SwitchObject::SupportedValues)

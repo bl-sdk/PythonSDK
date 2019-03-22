@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackInstSlomo(py::object m)
+void Export_pystes_UInterpTrackInstSlomo(py::module &m)
 {
     py::class_< UInterpTrackInstSlomo,  UInterpTrackInst   >(m, "UInterpTrackInstSlomo")
         .def_readwrite("OldTimeDilation", &UInterpTrackInstSlomo::OldTimeDilation)

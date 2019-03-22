@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APlayerReplicationInfo(py::object m)
+void Export_pystes_APlayerReplicationInfo(py::module &m)
 {
     py::class_< APlayerReplicationInfo,  AInfo   >(m, "APlayerReplicationInfo")
         .def_readwrite("Score", &APlayerReplicationInfo::Score)

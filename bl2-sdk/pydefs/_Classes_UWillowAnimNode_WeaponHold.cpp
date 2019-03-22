@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAnimNode_WeaponHold(py::object m)
+void Export_pystes_UWillowAnimNode_WeaponHold(py::module &m)
 {
     py::class_< UWillowAnimNode_WeaponHold,  UAnimNodeBlendList   >(m, "UWillowAnimNode_WeaponHold")
         .def_readwrite("BlendTime", &UWillowAnimNode_WeaponHold::BlendTime)

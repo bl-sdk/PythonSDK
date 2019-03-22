@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_ShootTarget(py::object m)
+void Export_pystes_UAction_ShootTarget(py::module &m)
 {
     py::class_< UAction_ShootTarget,  UAction_GenericAttack   >(m, "UAction_ShootTarget")
         .def_readwrite("ChanceToCrouch", &UAction_ShootTarget::ChanceToCrouch)

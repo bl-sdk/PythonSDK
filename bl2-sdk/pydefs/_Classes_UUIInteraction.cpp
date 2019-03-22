@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIInteraction(py::object m)
+void Export_pystes_UUIInteraction(py::module &m)
 {
     py::class_< UUIInteraction,  UInteraction   >(m, "UUIInteraction")
         .def_readwrite("VfTable_FExec", &UUIInteraction::VfTable_FExec)

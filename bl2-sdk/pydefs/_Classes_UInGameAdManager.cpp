@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInGameAdManager(py::object m)
+void Export_pystes_UInGameAdManager(py::module &m)
 {
     py::class_< UInGameAdManager,  UObject   >(m, "UInGameAdManager")
         .def_readwrite("ClickedBannerDelegates", &UInGameAdManager::ClickedBannerDelegates)

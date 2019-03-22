@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSeqAct_MoveElevator(py::object m)
+void Export_pystes_UWillowSeqAct_MoveElevator(py::module &m)
 {
     py::class_< UWillowSeqAct_MoveElevator,  USequenceAction   >(m, "UWillowSeqAct_MoveElevator")
         .def_readwrite("Elevator", &UWillowSeqAct_MoveElevator::Elevator)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_ParticleEventGenerator(py::object m)
+void Export_pystes_USeqAct_ParticleEventGenerator(py::module &m)
 {
     py::class_< USeqAct_ParticleEventGenerator,  USequenceAction   >(m, "USeqAct_ParticleEventGenerator")
         .def_readwrite("Instigator", &USeqAct_ParticleEventGenerator::Instigator)

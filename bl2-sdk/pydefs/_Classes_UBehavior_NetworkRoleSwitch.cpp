@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_NetworkRoleSwitch(py::object m)
+void Export_pystes_UBehavior_NetworkRoleSwitch(py::module &m)
 {
     py::class_< UBehavior_NetworkRoleSwitch,  UBehaviorBase   >(m, "UBehavior_NetworkRoleSwitch")
         .def("StaticClass", &UBehavior_NetworkRoleSwitch::StaticClass, py::return_value_policy::reference)

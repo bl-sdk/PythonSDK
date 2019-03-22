@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_AIThrowProjectileAtTarget(py::object m)
+void Export_pystes_UBehavior_AIThrowProjectileAtTarget(py::module &m)
 {
     py::class_< UBehavior_AIThrowProjectileAtTarget,  UBehaviorBase   >(m, "UBehavior_AIThrowProjectileAtTarget")
         .def_readwrite("NumProjectiles", &UBehavior_AIThrowProjectileAtTarget::NumProjectiles)

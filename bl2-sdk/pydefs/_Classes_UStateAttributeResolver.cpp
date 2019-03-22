@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UStateAttributeResolver(py::object m)
+void Export_pystes_UStateAttributeResolver(py::module &m)
 {
     py::class_< UStateAttributeResolver,  UAttributeValueResolver   >(m, "UStateAttributeResolver")
         .def_readwrite("NameKey", &UStateAttributeResolver::NameKey)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FThirdPersonMenuView(py::object m)
+void Export_pystes_FThirdPersonMenuView(py::module &m)
 {
     py::class_< FThirdPersonMenuView >(m, "FThirdPersonMenuView")
         .def_readwrite("RelativeCameraLocation", &FThirdPersonMenuView::RelativeCameraLocation)

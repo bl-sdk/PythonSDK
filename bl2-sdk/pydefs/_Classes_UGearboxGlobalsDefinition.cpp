@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxGlobalsDefinition(py::object m)
+void Export_pystes_UGearboxGlobalsDefinition(py::module &m)
 {
     py::class_< UGearboxGlobalsDefinition,  UGBXDefinition   >(m, "UGearboxGlobalsDefinition")
         .def_readwrite("RespawnDelayInSeconds", &UGearboxGlobalsDefinition::RespawnDelayInSeconds)

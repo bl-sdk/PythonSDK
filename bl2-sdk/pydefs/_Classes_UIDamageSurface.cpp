@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIDamageSurface(py::object m)
+void Export_pystes_UIDamageSurface(py::module &m)
 {
     py::class_< UIDamageSurface,  UInterface   >(m, "UIDamageSurface")
         .def("StaticClass", &UIDamageSurface::StaticClass, py::return_value_policy::reference)

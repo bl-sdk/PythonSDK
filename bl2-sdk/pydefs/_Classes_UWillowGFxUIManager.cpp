@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGFxUIManager(py::object m)
+void Export_pystes_UWillowGFxUIManager(py::module &m)
 {
     py::class_< UWillowGFxUIManager,  UObject   >(m, "UWillowGFxUIManager")
         .def_readwrite("MyDefinition", &UWillowGFxUIManager::MyDefinition)

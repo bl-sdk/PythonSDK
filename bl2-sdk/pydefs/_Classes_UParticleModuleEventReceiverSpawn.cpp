@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleEventReceiverSpawn(py::object m)
+void Export_pystes_UParticleModuleEventReceiverSpawn(py::module &m)
 {
     py::class_< UParticleModuleEventReceiverSpawn,  UParticleModuleEventReceiverBase   >(m, "UParticleModuleEventReceiverSpawn")
         .def_readwrite("SpawnCount", &UParticleModuleEventReceiverSpawn::SpawnCount)

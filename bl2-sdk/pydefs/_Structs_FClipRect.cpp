@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FClipRect(py::object m)
+void Export_pystes_FClipRect(py::module &m)
 {
     py::class_< FClipRect >(m, "FClipRect")
         .def_readwrite("Top", &FClipRect::Top)

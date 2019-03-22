@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRarityLevelColor(py::object m)
+void Export_pystes_FRarityLevelColor(py::module &m)
 {
     py::class_< FRarityLevelColor >(m, "FRarityLevelColor")
         .def_readwrite("MinLevel", &FRarityLevelColor::MinLevel)

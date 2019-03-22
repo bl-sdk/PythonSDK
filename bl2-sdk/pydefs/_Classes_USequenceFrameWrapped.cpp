@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USequenceFrameWrapped(py::object m)
+void Export_pystes_USequenceFrameWrapped(py::module &m)
 {
     py::class_< USequenceFrameWrapped,  USequenceObject   >(m, "USequenceFrameWrapped")
         .def_readwrite("SizeX", &USequenceFrame::SizeX)

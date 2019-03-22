@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAnimNodeSequence(py::object m)
+void Export_pystes_UWillowAnimNodeSequence(py::module &m)
 {
     py::class_< UWillowAnimNodeSequence,  UAnimNodeSequence   >(m, "UWillowAnimNodeSequence")
         .def_readwrite("SeqStack", &UWillowAnimNodeSequence::SeqStack)

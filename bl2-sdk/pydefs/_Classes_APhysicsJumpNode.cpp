@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APhysicsJumpNode(py::object m)
+void Export_pystes_APhysicsJumpNode(py::module &m)
 {
     py::class_< APhysicsJumpNode,  APathNode   >(m, "APhysicsJumpNode")
         .def_readwrite("VfTable_IIGBXNavMeshSpecialMove", &APhysicsJumpNode::VfTable_IIGBXNavMeshSpecialMove)

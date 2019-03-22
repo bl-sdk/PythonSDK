@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerBehavior_SpawnCurrentProjectile(py::object m)
+void Export_pystes_UPlayerBehavior_SpawnCurrentProjectile(py::module &m)
 {
     py::class_< UPlayerBehavior_SpawnCurrentProjectile,  UPlayerBehaviorBase   >(m, "UPlayerBehavior_SpawnCurrentProjectile")
         .def_readwrite("ProjectileToSpawn", &UPlayerBehavior_SpawnCurrentProjectile::ProjectileToSpawn)

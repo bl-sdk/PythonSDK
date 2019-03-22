@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FConditionalSoundData(py::object m)
+void Export_pystes_FConditionalSoundData(py::module &m)
 {
     py::class_< FConditionalSoundData >(m, "FConditionalSoundData")
         .def_readwrite("Event", &FConditionalSoundData::Event)

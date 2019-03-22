@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleColor_Seeded(py::object m)
+void Export_pystes_UParticleModuleColor_Seeded(py::module &m)
 {
     py::class_< UParticleModuleColor_Seeded,  UParticleModuleColor   >(m, "UParticleModuleColor_Seeded")
         .def_readwrite("RandomSeedInfo", &UParticleModuleColor_Seeded::RandomSeedInfo)

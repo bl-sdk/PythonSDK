@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDeveloperPerksDefinition(py::object m)
+void Export_pystes_UDeveloperPerksDefinition(py::module &m)
 {
     py::class_< UDeveloperPerksDefinition,  UGBXDefinition   >(m, "UDeveloperPerksDefinition")
         .def_readwrite("DeveloperInfo", &UDeveloperPerksDefinition::DeveloperInfo)

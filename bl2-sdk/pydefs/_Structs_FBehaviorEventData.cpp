@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBehaviorEventData(py::object m)
+void Export_pystes_FBehaviorEventData(py::module &m)
 {
     py::class_< FBehaviorEventData >(m, "FBehaviorEventData")
         .def_readwrite("UserData", &FBehaviorEventData::UserData)

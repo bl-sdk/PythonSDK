@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBehaviorKernelArrayStats(py::object m)
+void Export_pystes_FBehaviorKernelArrayStats(py::module &m)
 {
     py::class_< FBehaviorKernelArrayStats >(m, "FBehaviorKernelArrayStats")
         .def_readwrite("UsedSlots", &FBehaviorKernelArrayStats::UsedSlots)

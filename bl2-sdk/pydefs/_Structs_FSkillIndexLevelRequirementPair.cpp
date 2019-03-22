@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSkillIndexLevelRequirementPair(py::object m)
+void Export_pystes_FSkillIndexLevelRequirementPair(py::module &m)
 {
     py::class_< FSkillIndexLevelRequirementPair >(m, "FSkillIndexLevelRequirementPair")
         .def_readwrite("SkillIndex", &FSkillIndexLevelRequirementPair::SkillIndex)

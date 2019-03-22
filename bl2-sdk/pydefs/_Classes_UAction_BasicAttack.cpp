@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_BasicAttack(py::object m)
+void Export_pystes_UAction_BasicAttack(py::module &m)
 {
     py::class_< UAction_BasicAttack,  UAction_Burrow   >(m, "UAction_BasicAttack")
         .def_readwrite("Angle", &UAction_BasicAttack::Angle)

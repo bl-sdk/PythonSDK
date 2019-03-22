@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_URuleEngine(py::object m)
+void Export_pystes_URuleEngine(py::module &m)
 {
     py::class_< URuleEngine,  UObject   >(m, "URuleEngine")
         .def_readwrite("VfTable_IIFlagProvider", &URuleEngine::VfTable_IIFlagProvider)

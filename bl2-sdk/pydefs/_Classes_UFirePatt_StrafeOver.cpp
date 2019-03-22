@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFirePatt_StrafeOver(py::object m)
+void Export_pystes_UFirePatt_StrafeOver(py::module &m)
 {
     py::class_< UFirePatt_StrafeOver,  UFiringPattern   >(m, "UFirePatt_StrafeOver")
         .def_readwrite("CurrentAimRotation", &UFirePatt_StrafeOver::CurrentAimRotation)

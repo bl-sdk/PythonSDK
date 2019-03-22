@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBalanceModifierDefinition(py::object m)
+void Export_pystes_UBalanceModifierDefinition(py::module &m)
 {
     py::class_< UBalanceModifierDefinition,  UGBXDefinition   >(m, "UBalanceModifierDefinition")
         .def_readwrite("PlaythroughToBalance", &UBalanceModifierDefinition::PlaythroughToBalance)

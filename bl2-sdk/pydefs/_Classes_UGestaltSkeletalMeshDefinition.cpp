@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGestaltSkeletalMeshDefinition(py::object m)
+void Export_pystes_UGestaltSkeletalMeshDefinition(py::module &m)
 {
     py::class_< UGestaltSkeletalMeshDefinition,  UGBXDefinition   >(m, "UGestaltSkeletalMeshDefinition")
         .def_readwrite("GestaltSkeletalMesh", &UGestaltSkeletalMeshDefinition::GestaltSkeletalMesh)

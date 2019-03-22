@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSkelControlHandPlacement(py::object m)
+void Export_pystes_UWillowSkelControlHandPlacement(py::module &m)
 {
     py::class_< UWillowSkelControlHandPlacement,  USkelControlLimb   >(m, "UWillowSkelControlHandPlacement")
         .def_readwrite("TargetRef", &UWillowSkelControlHandPlacement::TargetRef)

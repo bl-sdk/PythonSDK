@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGFxTrainingDialogBox(py::object m)
+void Export_pystes_UWillowGFxTrainingDialogBox(py::module &m)
 {
     py::class_< UWillowGFxTrainingDialogBox,  UWillowGFxDialogBox   >(m, "UWillowGFxTrainingDialogBox")
         .def_readwrite("DelayUntilShowOk", &UWillowGFxTrainingDialogBox::DelayUntilShowOk)

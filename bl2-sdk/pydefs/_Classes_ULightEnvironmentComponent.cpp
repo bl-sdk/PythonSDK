@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULightEnvironmentComponent(py::object m)
+void Export_pystes_ULightEnvironmentComponent(py::module &m)
 {
     py::class_< ULightEnvironmentComponent,  UActorComponent   >(m, "ULightEnvironmentComponent")
         .def_readwrite("DominantShadowFactor", &ULightEnvironmentComponent::DominantShadowFactor)

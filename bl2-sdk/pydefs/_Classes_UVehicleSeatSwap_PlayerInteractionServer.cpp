@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UVehicleSeatSwap_PlayerInteractionServer(py::object m)
+void Export_pystes_UVehicleSeatSwap_PlayerInteractionServer(py::module &m)
 {
     py::class_< UVehicleSeatSwap_PlayerInteractionServer,  UPlayerInteractionServer   >(m, "UVehicleSeatSwap_PlayerInteractionServer")
         .def_readwrite("PlayerVehicle", &UVehicleSeatSwap_PlayerInteractionServer::PlayerVehicle)

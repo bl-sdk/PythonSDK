@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AMutator(py::object m)
+void Export_pystes_AMutator(py::module &m)
 {
     py::class_< AMutator,  AInfo   >(m, "AMutator")
         .def_readwrite("NextMutator", &AMutator::NextMutator)

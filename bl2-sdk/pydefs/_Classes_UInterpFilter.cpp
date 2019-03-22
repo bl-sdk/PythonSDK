@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpFilter(py::object m)
+void Export_pystes_UInterpFilter(py::module &m)
 {
     py::class_< UInterpFilter,  UObject   >(m, "UInterpFilter")
         .def_readwrite("Caption", &UInterpFilter::Caption)

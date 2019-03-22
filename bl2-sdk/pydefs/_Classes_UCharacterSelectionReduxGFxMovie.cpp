@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCharacterSelectionReduxGFxMovie(py::object m)
+void Export_pystes_UCharacterSelectionReduxGFxMovie(py::module &m)
 {
     py::class_< UCharacterSelectionReduxGFxMovie,  UWillowGFxMovie3D   >(m, "UCharacterSelectionReduxGFxMovie")
         .def_readwrite("FadeInTimeInSeconds", &UCharacterSelectionReduxGFxMovie::FadeInTimeInSeconds)

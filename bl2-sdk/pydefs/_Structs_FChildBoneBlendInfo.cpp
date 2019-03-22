@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FChildBoneBlendInfo(py::object m)
+void Export_pystes_FChildBoneBlendInfo(py::module &m)
 {
     py::class_< FChildBoneBlendInfo >(m, "FChildBoneBlendInfo")
         .def_readwrite("TargetPerBoneWeight", &FChildBoneBlendInfo::TargetPerBoneWeight)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFastTravelStationGFxMovie(py::object m)
+void Export_pystes_UFastTravelStationGFxMovie(py::module &m)
 {
     py::class_< UFastTravelStationGFxMovie,  UWillowGFxThirdPersonMovie   >(m, "UFastTravelStationGFxMovie")
         .def_readwrite("LocationDisplayNames", &UFastTravelStationGFxMovie::LocationDisplayNames)

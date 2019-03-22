@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPackedNormal(py::object m)
+void Export_pystes_FPackedNormal(py::module &m)
 {
     py::class_< FPackedNormal >(m, "FPackedNormal")
         .def_readwrite("X", &FPackedNormal::X)

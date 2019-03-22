@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineTitleFileInterface(py::object m)
+void Export_pystes_UOnlineTitleFileInterface(py::module &m)
 {
     py::class_< UOnlineTitleFileInterface,  UInterface   >(m, "UOnlineTitleFileInterface")
         .def("StaticClass", &UOnlineTitleFileInterface::StaticClass, py::return_value_policy::reference)

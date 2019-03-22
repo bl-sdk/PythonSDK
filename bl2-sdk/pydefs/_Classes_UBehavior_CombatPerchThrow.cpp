@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_CombatPerchThrow(py::object m)
+void Export_pystes_UBehavior_CombatPerchThrow(py::module &m)
 {
     py::class_< UBehavior_CombatPerchThrow,  UBehaviorBase   >(m, "UBehavior_CombatPerchThrow")
         .def_readwrite("NumProjectiles", &UBehavior_AIThrowProjectileAtTarget::NumProjectiles)

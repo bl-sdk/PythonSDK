@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UComponentLifetimeManagerComponent(py::object m)
+void Export_pystes_UComponentLifetimeManagerComponent(py::module &m)
 {
     py::class_< UComponentLifetimeManagerComponent,  UActorComponent   >(m, "UComponentLifetimeManagerComponent")
         .def_readwrite("ManagedComponents", &UComponentLifetimeManagerComponent::ManagedComponents)

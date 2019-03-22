@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ADynamicCameraActor(py::object m)
+void Export_pystes_ADynamicCameraActor(py::module &m)
 {
     py::class_< ADynamicCameraActor,  AActor   >(m, "ADynamicCameraActor")
         .def_readwrite("AspectRatio", &ACameraActor::AspectRatio)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSettingsData(py::object m)
+void Export_pystes_FSettingsData(py::module &m)
 {
     py::class_< FSettingsData >(m, "FSettingsData")
         .def_readwrite("Type", &FSettingsData::Type)

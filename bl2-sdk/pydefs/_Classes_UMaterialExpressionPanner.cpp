@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionPanner(py::object m)
+void Export_pystes_UMaterialExpressionPanner(py::module &m)
 {
     py::class_< UMaterialExpressionPanner,  UMaterialExpression   >(m, "UMaterialExpressionPanner")
         .def_readwrite("Coordinate", &UMaterialExpressionPanner::Coordinate)

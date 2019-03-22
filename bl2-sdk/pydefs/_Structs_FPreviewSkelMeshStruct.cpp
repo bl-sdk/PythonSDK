@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPreviewSkelMeshStruct(py::object m)
+void Export_pystes_FPreviewSkelMeshStruct(py::module &m)
 {
     py::class_< FPreviewSkelMeshStruct >(m, "FPreviewSkelMeshStruct")
         .def_readwrite("DisplayName", &FPreviewSkelMeshStruct::DisplayName)

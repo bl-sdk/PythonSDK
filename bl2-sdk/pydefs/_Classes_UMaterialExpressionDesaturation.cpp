@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionDesaturation(py::object m)
+void Export_pystes_UMaterialExpressionDesaturation(py::module &m)
 {
     py::class_< UMaterialExpressionDesaturation,  UMaterialExpression   >(m, "UMaterialExpressionDesaturation")
         .def_readwrite("Input", &UMaterialExpressionDesaturation::Input)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPartyBeacon(py::object m)
+void Export_pystes_UPartyBeacon(py::module &m)
 {
     py::class_< UPartyBeacon,  UObject   >(m, "UPartyBeacon")
         .def_readwrite("VfTable_FTickableObject", &UPartyBeacon::VfTable_FTickableObject)

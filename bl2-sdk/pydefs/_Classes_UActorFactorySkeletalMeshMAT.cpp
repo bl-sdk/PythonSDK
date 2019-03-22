@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActorFactorySkeletalMeshMAT(py::object m)
+void Export_pystes_UActorFactorySkeletalMeshMAT(py::module &m)
 {
     py::class_< UActorFactorySkeletalMeshMAT,  UActorFactorySkeletalMesh   >(m, "UActorFactorySkeletalMeshMAT")
         .def("StaticClass", &UActorFactorySkeletalMeshMAT::StaticClass, py::return_value_policy::reference)

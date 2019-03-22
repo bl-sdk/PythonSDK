@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FUIKeyRepeatData(py::object m)
+void Export_pystes_FUIKeyRepeatData(py::module &m)
 {
     py::class_< FUIKeyRepeatData >(m, "FUIKeyRepeatData")
         .def_readwrite("CurrentRepeatKey", &FUIKeyRepeatData::CurrentRepeatKey)

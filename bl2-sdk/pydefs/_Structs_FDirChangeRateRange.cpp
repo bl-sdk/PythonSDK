@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDirChangeRateRange(py::object m)
+void Export_pystes_FDirChangeRateRange(py::module &m)
 {
     py::class_< FDirChangeRateRange >(m, "FDirChangeRateRange")
         .def_readwrite("DirDegreesPerSecond", &FDirChangeRateRange::DirDegreesPerSecond)

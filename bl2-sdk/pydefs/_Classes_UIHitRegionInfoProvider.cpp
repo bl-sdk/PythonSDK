@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIHitRegionInfoProvider(py::object m)
+void Export_pystes_UIHitRegionInfoProvider(py::module &m)
 {
     py::class_< UIHitRegionInfoProvider,  UInterface   >(m, "UIHitRegionInfoProvider")
         .def("StaticClass", &UIHitRegionInfoProvider::StaticClass, py::return_value_policy::reference)

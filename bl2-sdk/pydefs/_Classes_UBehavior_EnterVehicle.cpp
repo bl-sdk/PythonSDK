@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_EnterVehicle(py::object m)
+void Export_pystes_UBehavior_EnterVehicle(py::module &m)
 {
     py::class_< UBehavior_EnterVehicle,  UBehaviorBase   >(m, "UBehavior_EnterVehicle")
         .def_readwrite("SeatPos", &UBehavior_EnterVehicle::SeatPos)

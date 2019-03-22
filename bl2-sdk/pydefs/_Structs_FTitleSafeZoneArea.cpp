@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTitleSafeZoneArea(py::object m)
+void Export_pystes_FTitleSafeZoneArea(py::module &m)
 {
     py::class_< FTitleSafeZoneArea >(m, "FTitleSafeZoneArea")
         .def_readwrite("MaxPercentX", &FTitleSafeZoneArea::MaxPercentX)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFastTravelStationDiscoveryMessage(py::object m)
+void Export_pystes_UFastTravelStationDiscoveryMessage(py::module &m)
 {
     py::class_< UFastTravelStationDiscoveryMessage,  ULocalMessage   >(m, "UFastTravelStationDiscoveryMessage")
         .def_readwrite("StationDiscoveredSolo", &UFastTravelStationDiscoveryMessage::StationDiscoveredSolo)

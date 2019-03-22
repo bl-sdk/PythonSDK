@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPopulationFactoryGeneric(py::object m)
+void Export_pystes_UPopulationFactoryGeneric(py::module &m)
 {
     py::class_< UPopulationFactoryGeneric,  UPopulationFactory   >(m, "UPopulationFactoryGeneric")
         .def_readwrite("ActorArchetype", &UPopulationFactoryGeneric::ActorArchetype)

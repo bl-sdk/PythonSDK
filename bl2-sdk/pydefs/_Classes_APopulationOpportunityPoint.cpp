@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APopulationOpportunityPoint(py::object m)
+void Export_pystes_APopulationOpportunityPoint(py::module &m)
 {
     py::class_< APopulationOpportunityPoint,  APopulationOpportunity   >(m, "APopulationOpportunityPoint")
         .def_readwrite("VfTable_IIPopulationSpawnPoint", &APopulationOpportunityPoint::VfTable_IIPopulationSpawnPoint)

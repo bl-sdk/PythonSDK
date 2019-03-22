@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FEncounterLimitData(py::object m)
+void Export_pystes_FEncounterLimitData(py::module &m)
 {
     py::class_< FEncounterLimitData >(m, "FEncounterLimitData")
         .def_readwrite("ActorTags", &FEncounterLimitData::ActorTags)

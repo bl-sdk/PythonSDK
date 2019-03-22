@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerInteractionManager(py::object m)
+void Export_pystes_UPlayerInteractionManager(py::module &m)
 {
     py::class_< UPlayerInteractionManager,  UObject   >(m, "UPlayerInteractionManager")
         .def_readwrite("Interactions", &UPlayerInteractionManager::Interactions)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ADefaultPhysicsVolume(py::object m)
+void Export_pystes_ADefaultPhysicsVolume(py::module &m)
 {
     py::class_< ADefaultPhysicsVolume,  AVolume   >(m, "ADefaultPhysicsVolume")
         .def_readwrite("ZoneVelocity", &APhysicsVolume::ZoneVelocity)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPawnRelevanceUtilityFixedCost(py::object m)
+void Export_pystes_UPawnRelevanceUtilityFixedCost(py::module &m)
 {
     py::class_< UPawnRelevanceUtilityFixedCost,  UPawnRelevanceUtility   >(m, "UPawnRelevanceUtilityFixedCost")
         .def_readwrite("CloseDistanceSquared", &UPawnRelevanceUtilityFixedCost::CloseDistanceSquared)

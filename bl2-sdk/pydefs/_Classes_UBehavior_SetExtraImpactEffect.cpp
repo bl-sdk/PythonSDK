@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SetExtraImpactEffect(py::object m)
+void Export_pystes_UBehavior_SetExtraImpactEffect(py::module &m)
 {
     py::class_< UBehavior_SetExtraImpactEffect,  UBehaviorBase   >(m, "UBehavior_SetExtraImpactEffect")
         .def_readwrite("BulletFromClip", &UBehavior_SetExtraImpactEffect::BulletFromClip)

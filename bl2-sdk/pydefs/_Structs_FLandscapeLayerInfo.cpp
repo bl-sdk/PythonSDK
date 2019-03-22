@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLandscapeLayerInfo(py::object m)
+void Export_pystes_FLandscapeLayerInfo(py::module &m)
 {
     py::class_< FLandscapeLayerInfo >(m, "FLandscapeLayerInfo")
         .def_readwrite("LayerName", &FLandscapeLayerInfo::LayerName)

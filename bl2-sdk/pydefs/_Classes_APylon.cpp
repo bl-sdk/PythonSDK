@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APylon(py::object m)
+void Export_pystes_APylon(py::module &m)
 {
     py::class_< APylon,  ANavigationPoint   >(m, "APylon")
         .def_readwrite("VfTable_IEditorLinkSelectionInterface", &APylon::VfTable_IEditorLinkSelectionInterface)

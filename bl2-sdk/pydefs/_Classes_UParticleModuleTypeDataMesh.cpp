@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleTypeDataMesh(py::object m)
+void Export_pystes_UParticleModuleTypeDataMesh(py::module &m)
 {
     py::class_< UParticleModuleTypeDataMesh,  UParticleModuleTypeDataBase   >(m, "UParticleModuleTypeDataMesh")
         .def_readwrite("Mesh", &UParticleModuleTypeDataMesh::Mesh)

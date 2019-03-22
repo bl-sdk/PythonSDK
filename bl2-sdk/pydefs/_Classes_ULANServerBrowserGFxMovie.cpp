@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULANServerBrowserGFxMovie(py::object m)
+void Export_pystes_ULANServerBrowserGFxMovie(py::module &m)
 {
     py::class_< ULANServerBrowserGFxMovie,  UWillowGFxMovie3D   >(m, "ULANServerBrowserGFxMovie")
         .def_readwrite("ServerBrowserObj", &ULANServerBrowserGFxMovie::ServerBrowserObj)

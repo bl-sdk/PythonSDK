@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_Crane(py::object m)
+void Export_pystes_UBehavior_Crane(py::module &m)
 {
     py::class_< UBehavior_Crane,  UBehaviorBase   >(m, "UBehavior_Crane")
         .def_readwrite("Action", &UBehavior_Crane::Action)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWorldBody(py::object m)
+void Export_pystes_UWorldBody(py::module &m)
 {
     py::class_< UWorldBody,  UObject   >(m, "UWorldBody")
         .def_readwrite("VfTable_IIWorldBody", &UWorldBody::VfTable_IIWorldBody)

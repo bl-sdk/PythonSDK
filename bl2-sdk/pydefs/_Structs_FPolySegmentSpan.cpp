@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPolySegmentSpan(py::object m)
+void Export_pystes_FPolySegmentSpan(py::module &m)
 {
     py::class_< FPolySegmentSpan >(m, "FPolySegmentSpan")
         .def_readwrite("Poly", &FPolySegmentSpan::Poly)

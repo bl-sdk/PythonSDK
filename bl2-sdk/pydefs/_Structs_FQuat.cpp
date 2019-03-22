@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FQuat(py::object m)
+void Export_pystes_FQuat(py::module &m)
 {
     py::class_< FQuat >(m, "FQuat")
         .def_readwrite("X", &FQuat::X)

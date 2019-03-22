@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SpawnDecal(py::object m)
+void Export_pystes_UBehavior_SpawnDecal(py::module &m)
 {
     py::class_< UBehavior_SpawnDecal,  UBehaviorBase   >(m, "UBehavior_SpawnDecal")
         .def_readwrite("Material", &UBehavior_SpawnDecal::Material)

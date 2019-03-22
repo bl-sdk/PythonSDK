@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APopulationOpportunityArea(py::object m)
+void Export_pystes_APopulationOpportunityArea(py::module &m)
 {
     py::class_< APopulationOpportunityArea,  APopulationOpportunity   >(m, "APopulationOpportunityArea")
         .def_readwrite("SpawnOptions", &APopulationOpportunityArea::SpawnOptions)

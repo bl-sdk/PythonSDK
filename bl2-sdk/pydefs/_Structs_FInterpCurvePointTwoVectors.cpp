@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInterpCurvePointTwoVectors(py::object m)
+void Export_pystes_FInterpCurvePointTwoVectors(py::module &m)
 {
     py::class_< FInterpCurvePointTwoVectors >(m, "FInterpCurvePointTwoVectors")
         .def_readwrite("InVal", &FInterpCurvePointTwoVectors::InVal)

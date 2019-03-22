@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAttackLocation_ParentDistance(py::object m)
+void Export_pystes_UAttackLocation_ParentDistance(py::module &m)
 {
     py::class_< UAttackLocation_ParentDistance,  UAttackLocation   >(m, "UAttackLocation_ParentDistance")
         .def_readwrite("Restriction", &UAttackLocation_ParentDistance::Restriction)

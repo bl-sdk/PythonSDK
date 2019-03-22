@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBoneRotateData(py::object m)
+void Export_pystes_FBoneRotateData(py::module &m)
 {
     py::class_< FBoneRotateData >(m, "FBoneRotateData")
         .def_readwrite("Index", &FBoneRotateData::Index)

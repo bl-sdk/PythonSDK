@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UEndOfGameGFxMovie(py::object m)
+void Export_pystes_UEndOfGameGFxMovie(py::module &m)
 {
     py::class_< UEndOfGameGFxMovie,  UWillowGFxMovie   >(m, "UEndOfGameGFxMovie")
         .def_readwrite("ConsoleEvent", &UEndOfGameGFxMovie::ConsoleEvent)

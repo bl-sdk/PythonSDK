@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FItemCardInfo(py::object m)
+void Export_pystes_FItemCardInfo(py::module &m)
 {
     py::class_< FItemCardInfo >(m, "FItemCardInfo")
         .def_readwrite("CardName", &FItemCardInfo::CardName)

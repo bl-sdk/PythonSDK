@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGameStateObject(py::object m)
+void Export_pystes_UGameStateObject(py::module &m)
 {
     py::class_< UGameStateObject,  UGameplayEventsHandler   >(m, "UGameStateObject")
         .def_readwrite("TeamStates", &UGameStateObject::TeamStates)

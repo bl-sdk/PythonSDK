@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowRadarManager(py::object m)
+void Export_pystes_AWillowRadarManager(py::module &m)
 {
     py::class_< AWillowRadarManager,  AActor   >(m, "AWillowRadarManager")
         .def_readwrite("NumberOfDynamicIcons", &AWillowRadarManager::NumberOfDynamicIcons)

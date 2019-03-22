@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FVectorParameterValueOverTime(py::object m)
+void Export_pystes_FVectorParameterValueOverTime(py::module &m)
 {
     py::class_< FVectorParameterValueOverTime,  FParameterValueOverTime   >(m, "FVectorParameterValueOverTime")
         .def_readwrite("ParameterValue", &FVectorParameterValueOverTime::ParameterValue)

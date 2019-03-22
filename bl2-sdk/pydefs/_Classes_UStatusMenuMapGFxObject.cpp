@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UStatusMenuMapGFxObject(py::object m)
+void Export_pystes_UStatusMenuMapGFxObject(py::module &m)
 {
     py::class_< UStatusMenuMapGFxObject,  UGFxObject   >(m, "UStatusMenuMapGFxObject")
         .def_readwrite("ViewBorder", &UStatusMenuMapGFxObject::ViewBorder)

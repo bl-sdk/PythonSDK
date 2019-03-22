@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqEvent_TakeDamage(py::object m)
+void Export_pystes_USeqEvent_TakeDamage(py::module &m)
 {
     py::class_< USeqEvent_TakeDamage,  USequenceEvent   >(m, "USeqEvent_TakeDamage")
         .def_readwrite("MinDamageAmount", &USeqEvent_TakeDamage::MinDamageAmount)

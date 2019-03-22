@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqCond_CompareInt(py::object m)
+void Export_pystes_USeqCond_CompareInt(py::module &m)
 {
     py::class_< USeqCond_CompareInt,  USequenceCondition   >(m, "USeqCond_CompareInt")
         .def_readwrite("ValueA", &USeqCond_CompareInt::ValueA)

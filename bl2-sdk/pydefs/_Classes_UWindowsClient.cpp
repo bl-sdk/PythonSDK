@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWindowsClient(py::object m)
+void Export_pystes_UWindowsClient(py::module &m)
 {
     py::class_< UWindowsClient,  UClient   >(m, "UWindowsClient")
         .def_readwrite("AudioDeviceClass", &UWindowsClient::AudioDeviceClass)

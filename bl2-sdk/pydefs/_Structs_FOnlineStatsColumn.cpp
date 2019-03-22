@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FOnlineStatsColumn(py::object m)
+void Export_pystes_FOnlineStatsColumn(py::module &m)
 {
     py::class_< FOnlineStatsColumn >(m, "FOnlineStatsColumn")
         .def_readwrite("ColumnNo", &FOnlineStatsColumn::ColumnNo)

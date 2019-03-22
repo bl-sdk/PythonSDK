@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AFixedMarker(py::object m)
+void Export_pystes_AFixedMarker(py::module &m)
 {
     py::class_< AFixedMarker,  ATrigger   >(m, "AFixedMarker")
         .def_readwrite("MarkerTexture", &AFixedMarker::MarkerTexture)

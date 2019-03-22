@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_ReviveInjuredPlayer(py::object m)
+void Export_pystes_UBehavior_ReviveInjuredPlayer(py::module &m)
 {
     py::class_< UBehavior_ReviveInjuredPlayer,  UBehaviorBase   >(m, "UBehavior_ReviveInjuredPlayer")
         .def_readwrite("ReviverContext", &UBehavior_ReviveInjuredPlayer::ReviverContext)

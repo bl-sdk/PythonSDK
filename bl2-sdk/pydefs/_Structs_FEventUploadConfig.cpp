@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FEventUploadConfig(py::object m)
+void Export_pystes_FEventUploadConfig(py::module &m)
 {
     py::class_< FEventUploadConfig >(m, "FEventUploadConfig")
         .def_readwrite("UploadType", &FEventUploadConfig::UploadType)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGameStatGroup(py::object m)
+void Export_pystes_FGameStatGroup(py::module &m)
 {
     py::class_< FGameStatGroup >(m, "FGameStatGroup")
         .def_readwrite("Group", &FGameStatGroup::Group)

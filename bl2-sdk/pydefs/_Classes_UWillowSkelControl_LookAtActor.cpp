@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSkelControl_LookAtActor(py::object m)
+void Export_pystes_UWillowSkelControl_LookAtActor(py::module &m)
 {
     py::class_< UWillowSkelControl_LookAtActor,  USkelControlLookAt   >(m, "UWillowSkelControl_LookAtActor")
         .def_readwrite("AdditionalOffset", &UWillowSkelControl_LookAtActor::AdditionalOffset)

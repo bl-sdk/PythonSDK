@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLinkedBehaviorSequence(py::object m)
+void Export_pystes_FLinkedBehaviorSequence(py::module &m)
 {
     py::class_< FLinkedBehaviorSequence >(m, "FLinkedBehaviorSequence")
         .def_readwrite("ConsumerHandle", &FLinkedBehaviorSequence::ConsumerHandle)

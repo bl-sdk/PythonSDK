@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FWorldSpacePlayerInfo(py::object m)
+void Export_pystes_FWorldSpacePlayerInfo(py::module &m)
 {
     py::class_< FWorldSpacePlayerInfo >(m, "FWorldSpacePlayerInfo")
         .def_readwrite("WPRI", &FWorldSpacePlayerInfo::WPRI)

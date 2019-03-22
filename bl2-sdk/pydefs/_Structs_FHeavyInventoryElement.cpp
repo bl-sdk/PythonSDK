@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FHeavyInventoryElement(py::object m)
+void Export_pystes_FHeavyInventoryElement(py::module &m)
 {
     py::class_< FHeavyInventoryElement >(m, "FHeavyInventoryElement")
         .def_readwrite("Text", &FHeavyInventoryElement::Text)

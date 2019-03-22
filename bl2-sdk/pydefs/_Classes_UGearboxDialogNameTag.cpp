@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxDialogNameTag(py::object m)
+void Export_pystes_UGearboxDialogNameTag(py::module &m)
 {
     py::class_< UGearboxDialogNameTag,  UGBXDefinition   >(m, "UGearboxDialogNameTag")
         .def_readwrite("NameTag", &UGearboxDialogNameTag::NameTag)

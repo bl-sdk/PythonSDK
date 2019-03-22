@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FStoredFoliageInstance(py::object m)
+void Export_pystes_FStoredFoliageInstance(py::module &m)
 {
     py::class_< FStoredFoliageInstance >(m, "FStoredFoliageInstance")
         .def_readwrite("Location", &FFoliageInstanceBase::Location)

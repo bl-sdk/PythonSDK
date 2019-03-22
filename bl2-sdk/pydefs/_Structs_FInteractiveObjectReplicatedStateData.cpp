@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInteractiveObjectReplicatedStateData(py::object m)
+void Export_pystes_FInteractiveObjectReplicatedStateData(py::module &m)
 {
     py::class_< FInteractiveObjectReplicatedStateData >(m, "FInteractiveObjectReplicatedStateData")
         .def_readwrite("ReplicatedBehaviorConsumerState", &FInteractiveObjectReplicatedStateData::ReplicatedBehaviorConsumerState)

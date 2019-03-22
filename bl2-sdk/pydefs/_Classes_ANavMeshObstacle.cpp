@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ANavMeshObstacle(py::object m)
+void Export_pystes_ANavMeshObstacle(py::module &m)
 {
     py::class_< ANavMeshObstacle,  AActor   >(m, "ANavMeshObstacle")
         .def_readwrite("VfTable_IInterface_NavMeshPathObstacle", &ANavMeshObstacle::VfTable_IInterface_NavMeshPathObstacle)

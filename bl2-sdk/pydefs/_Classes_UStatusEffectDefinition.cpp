@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UStatusEffectDefinition(py::object m)
+void Export_pystes_UStatusEffectDefinition(py::module &m)
 {
     py::class_< UStatusEffectDefinition,  UGBXDefinition   >(m, "UStatusEffectDefinition")
         .def_readwrite("BaseDuration", &UStatusEffectDefinition::BaseDuration)

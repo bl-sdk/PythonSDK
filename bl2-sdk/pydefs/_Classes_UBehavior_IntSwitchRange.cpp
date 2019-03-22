@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_IntSwitchRange(py::object m)
+void Export_pystes_UBehavior_IntSwitchRange(py::module &m)
 {
     py::class_< UBehavior_IntSwitchRange,  UBehaviorBase   >(m, "UBehavior_IntSwitchRange")
         .def_readwrite("CheckValue", &UBehavior_IntSwitchRange::CheckValue)

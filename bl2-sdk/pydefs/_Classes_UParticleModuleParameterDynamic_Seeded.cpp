@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleParameterDynamic_Seeded(py::object m)
+void Export_pystes_UParticleModuleParameterDynamic_Seeded(py::module &m)
 {
     py::class_< UParticleModuleParameterDynamic_Seeded,  UParticleModule   >(m, "UParticleModuleParameterDynamic_Seeded")
         .def_readwrite("RandomSeedInfo", &UParticleModuleParameterDynamic_Seeded::RandomSeedInfo)

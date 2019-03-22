@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_ShowPullThePinNotification(py::object m)
+void Export_pystes_UBehavior_ShowPullThePinNotification(py::module &m)
 {
     py::class_< UBehavior_ShowPullThePinNotification,  UBehaviorBase   >(m, "UBehavior_ShowPullThePinNotification")
         .def_readwrite("ExternalClip", &UBehavior_ShowPullThePinNotification::ExternalClip)

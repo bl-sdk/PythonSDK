@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFirePatt_ShrinkingCone(py::object m)
+void Export_pystes_UFirePatt_ShrinkingCone(py::module &m)
 {
     py::class_< UFirePatt_ShrinkingCone,  UFiringPattern   >(m, "UFirePatt_ShrinkingCone")
         .def_readwrite("CurrentAccuracyConeDeg", &UFirePatt_ShrinkingCone::CurrentAccuracyConeDeg)

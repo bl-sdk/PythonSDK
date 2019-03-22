@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpecialMoveInterface(py::object m)
+void Export_pystes_USpecialMoveInterface(py::module &m)
 {
     py::class_< USpecialMoveInterface,  UInterface   >(m, "USpecialMoveInterface")
         .def("StaticClass", &USpecialMoveInterface::StaticClass, py::return_value_policy::reference)

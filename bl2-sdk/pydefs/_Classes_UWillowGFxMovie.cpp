@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGFxMovie(py::object m)
+void Export_pystes_UWillowGFxMovie(py::module &m)
 {
     py::class_< UWillowGFxMovie,  UGearboxGFxMovie   >(m, "UWillowGFxMovie")
         .def_readwrite("DefaultRTTSize_PC", &UWillowGFxMovie::DefaultRTTSize_PC)

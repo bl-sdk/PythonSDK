@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWwiseSoundVolume(py::object m)
+void Export_pystes_AWwiseSoundVolume(py::module &m)
 {
     py::class_< AWwiseSoundVolume,  AVolume   >(m, "AWwiseSoundVolume")
         .def_readwrite("VfTable_IIAkEnvironmentalEffectProvider", &AWwiseSoundVolume::VfTable_IIAkEnvironmentalEffectProvider)

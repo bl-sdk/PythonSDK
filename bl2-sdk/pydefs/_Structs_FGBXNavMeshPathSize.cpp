@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGBXNavMeshPathSize(py::object m)
+void Export_pystes_FGBXNavMeshPathSize(py::module &m)
 {
     py::class_< FGBXNavMeshPathSize >(m, "FGBXNavMeshPathSize")
         .def_readwrite("Radius", &FGBXNavMeshPathSize::Radius)

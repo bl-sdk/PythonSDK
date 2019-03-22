@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSMExpressionList(py::object m)
+void Export_pystes_FSMExpressionList(py::module &m)
 {
     py::class_< FSMExpressionList >(m, "FSMExpressionList")
         .def_readwrite("Expression", &FSMExpressionList::Expression)

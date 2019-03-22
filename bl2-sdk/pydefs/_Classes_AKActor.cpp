@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AKActor(py::object m)
+void Export_pystes_AKActor(py::module &m)
 {
     py::class_< AKActor,  ADynamicSMActor   >(m, "AKActor")
         .def_readwrite("ImpactEffectComponent", &AKActor::ImpactEffectComponent)

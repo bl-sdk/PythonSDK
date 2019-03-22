@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBalanceFormula(py::object m)
+void Export_pystes_FBalanceFormula(py::module &m)
 {
     py::class_< FBalanceFormula >(m, "FBalanceFormula")
         .def_readwrite("Multiplier", &FBalanceFormula::Multiplier)

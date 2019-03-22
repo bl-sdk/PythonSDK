@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehaviorProviderDefinition(py::object m)
+void Export_pystes_UBehaviorProviderDefinition(py::module &m)
 {
     py::class_< UBehaviorProviderDefinition,  UGBXDefinition   >(m, "UBehaviorProviderDefinition")
         .def_readwrite("CurrentVersion", &UBehaviorProviderDefinition::CurrentVersion)

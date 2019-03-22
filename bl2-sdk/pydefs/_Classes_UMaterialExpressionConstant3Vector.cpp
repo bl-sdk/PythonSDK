@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionConstant3Vector(py::object m)
+void Export_pystes_UMaterialExpressionConstant3Vector(py::module &m)
 {
     py::class_< UMaterialExpressionConstant3Vector,  UMaterialExpression   >(m, "UMaterialExpressionConstant3Vector")
         .def_readwrite("R", &UMaterialExpressionConstant3Vector::R)

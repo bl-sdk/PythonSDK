@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleLocationSkelVertSurface(py::object m)
+void Export_pystes_UParticleModuleLocationSkelVertSurface(py::module &m)
 {
     py::class_< UParticleModuleLocationSkelVertSurface,  UParticleModuleLocationBase   >(m, "UParticleModuleLocationSkelVertSurface")
         .def_readwrite("SourceType", &UParticleModuleLocationSkelVertSurface::SourceType)

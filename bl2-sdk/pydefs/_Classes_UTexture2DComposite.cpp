@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTexture2DComposite(py::object m)
+void Export_pystes_UTexture2DComposite(py::module &m)
 {
     py::class_< UTexture2DComposite,  UTexture   >(m, "UTexture2DComposite")
         .def_readwrite("SourceRegions", &UTexture2DComposite::SourceRegions)

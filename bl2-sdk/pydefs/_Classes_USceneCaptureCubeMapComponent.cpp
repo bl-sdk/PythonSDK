@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USceneCaptureCubeMapComponent(py::object m)
+void Export_pystes_USceneCaptureCubeMapComponent(py::module &m)
 {
     py::class_< USceneCaptureCubeMapComponent,  USceneCaptureComponent   >(m, "USceneCaptureCubeMapComponent")
         .def_readwrite("TextureTarget", &USceneCaptureCubeMapComponent::TextureTarget)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UILiftBehavior(py::object m)
+void Export_pystes_UILiftBehavior(py::module &m)
 {
     py::class_< UILiftBehavior,  UInterface   >(m, "UILiftBehavior")
         .def("StaticClass", &UILiftBehavior::StaticClass, py::return_value_policy::reference)

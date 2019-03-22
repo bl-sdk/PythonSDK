@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SpawnLootAroundPoint(py::object m)
+void Export_pystes_UBehavior_SpawnLootAroundPoint(py::module &m)
 {
     py::class_< UBehavior_SpawnLootAroundPoint,  UBehaviorBase   >(m, "UBehavior_SpawnLootAroundPoint")
         .def_readwrite("CustomLocation", &UBehavior_SpawnLootAroundPoint::CustomLocation)

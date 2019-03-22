@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackAudioMaster(py::object m)
+void Export_pystes_UInterpTrackAudioMaster(py::module &m)
 {
     py::class_< UInterpTrackAudioMaster,  UInterpTrack   >(m, "UInterpTrackAudioMaster")
         .def_readwrite("VectorTrack", &UInterpTrackVectorBase::VectorTrack)

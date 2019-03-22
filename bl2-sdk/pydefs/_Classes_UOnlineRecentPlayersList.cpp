@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineRecentPlayersList(py::object m)
+void Export_pystes_UOnlineRecentPlayersList(py::module &m)
 {
     py::class_< UOnlineRecentPlayersList,  UObject   >(m, "UOnlineRecentPlayersList")
         .def_readwrite("RecentPlayers", &UOnlineRecentPlayersList::RecentPlayers)

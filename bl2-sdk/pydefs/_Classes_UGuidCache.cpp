@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGuidCache(py::object m)
+void Export_pystes_UGuidCache(py::module &m)
 {
     py::class_< UGuidCache,  UObject   >(m, "UGuidCache")
         .def("StaticClass", &UGuidCache::StaticClass, py::return_value_policy::reference)

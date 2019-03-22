@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPostProcessSettings(py::object m)
+void Export_pystes_FPostProcessSettings(py::module &m)
 {
     py::class_< FPostProcessSettings >(m, "FPostProcessSettings")
         .def_readwrite("Bloom_Scale", &FPostProcessSettings::Bloom_Scale)

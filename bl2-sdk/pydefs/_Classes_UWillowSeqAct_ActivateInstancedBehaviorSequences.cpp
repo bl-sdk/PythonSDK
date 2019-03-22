@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSeqAct_ActivateInstancedBehaviorSequences(py::object m)
+void Export_pystes_UWillowSeqAct_ActivateInstancedBehaviorSequences(py::module &m)
 {
     py::class_< UWillowSeqAct_ActivateInstancedBehaviorSequences,  USequenceAction   >(m, "UWillowSeqAct_ActivateInstancedBehaviorSequences")
         .def_readwrite("Mission", &UWillowSeqAct_ActivateInstancedBehaviorSequences::Mission)

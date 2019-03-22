@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USkill(py::object m)
+void Export_pystes_USkill(py::module &m)
 {
     py::class_< USkill,  UObject   >(m, "USkill")
         .def_readwrite("VfTable_IIBehaviorConsumer", &USkill::VfTable_IIBehaviorConsumer)

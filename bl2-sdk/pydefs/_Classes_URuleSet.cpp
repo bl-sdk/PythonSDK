@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_URuleSet(py::object m)
+void Export_pystes_URuleSet(py::module &m)
 {
     py::class_< URuleSet,  UObject   >(m, "URuleSet")
         .def_readwrite("TheAIFactory", &URuleSet::TheAIFactory)

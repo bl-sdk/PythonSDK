@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMontageGFxObject(py::object m)
+void Export_pystes_UMontageGFxObject(py::module &m)
 {
     py::class_< UMontageGFxObject,  UGFxObject   >(m, "UMontageGFxObject")
         .def_readwrite("WPCOwner", &UMontageGFxObject::WPCOwner)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCoverDebugScoringData(py::object m)
+void Export_pystes_FCoverDebugScoringData(py::module &m)
 {
     py::class_< FCoverDebugScoringData >(m, "FCoverDebugScoringData")
         .def_readwrite("PriorityName", &FCoverDebugScoringData::PriorityName)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FKillMissionData(py::object m)
+void Export_pystes_FKillMissionData(py::module &m)
 {
     py::class_< FKillMissionData >(m, "FKillMissionData")
         .def_readwrite("DamageCauserType", &FKillMissionData::DamageCauserType)

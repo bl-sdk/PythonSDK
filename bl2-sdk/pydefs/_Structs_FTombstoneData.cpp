@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTombstoneData(py::object m)
+void Export_pystes_FTombstoneData(py::module &m)
 {
     py::class_< FTombstoneData >(m, "FTombstoneData")
         .def_readwrite("TotalTimePlayed", &FTombstoneData::TotalTimePlayed)

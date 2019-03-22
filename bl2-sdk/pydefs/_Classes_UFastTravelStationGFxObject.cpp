@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFastTravelStationGFxObject(py::object m)
+void Export_pystes_UFastTravelStationGFxObject(py::module &m)
 {
     py::class_< UFastTravelStationGFxObject,  UGFxObject   >(m, "UFastTravelStationGFxObject")
         .def("StaticClass", &UFastTravelStationGFxObject::StaticClass, py::return_value_policy::reference)

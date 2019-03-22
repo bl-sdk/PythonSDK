@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_GetLocationAndRotation(py::object m)
+void Export_pystes_USeqAct_GetLocationAndRotation(py::module &m)
 {
     py::class_< USeqAct_GetLocationAndRotation,  USequenceAction   >(m, "USeqAct_GetLocationAndRotation")
         .def_readwrite("Location", &USeqAct_GetLocationAndRotation::Location)

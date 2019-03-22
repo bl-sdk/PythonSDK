@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SpawnActor(py::object m)
+void Export_pystes_UBehavior_SpawnActor(py::module &m)
 {
     py::class_< UBehavior_SpawnActor,  UBehaviorBase   >(m, "UBehavior_SpawnActor")
         .def_readwrite("SavedReferenceName", &UBehavior_SpawnActor::SavedReferenceName)

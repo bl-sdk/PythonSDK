@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCharacterSelectionGFxObject(py::object m)
+void Export_pystes_UCharacterSelectionGFxObject(py::module &m)
 {
     py::class_< UCharacterSelectionGFxObject,  UGFxObject   >(m, "UCharacterSelectionGFxObject")
         .def("StaticClass", &UCharacterSelectionGFxObject::StaticClass, py::return_value_policy::reference)

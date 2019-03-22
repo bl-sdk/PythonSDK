@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowEffectCoordinator(py::object m)
+void Export_pystes_UWillowEffectCoordinator(py::module &m)
 {
     py::class_< UWillowEffectCoordinator,  UObject   >(m, "UWillowEffectCoordinator")
         .def_readwrite("SupportedEffects", &UWillowEffectCoordinator::SupportedEffects)

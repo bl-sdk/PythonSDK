@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTargetingDefinition(py::object m)
+void Export_pystes_UTargetingDefinition(py::module &m)
 {
     py::class_< UTargetingDefinition,  UGBXDefinition   >(m, "UTargetingDefinition")
         .def_readwrite("Knowledge", &UTargetingDefinition::Knowledge)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_F_ModifyHealthParams(py::object m)
+void Export_pystes_F_ModifyHealthParams(py::module &m)
 {
     py::class_< F_ModifyHealthParams >(m, "F_ModifyHealthParams")
         .def_readwrite("DamageAmount", &F_ModifyHealthParams::DamageAmount)

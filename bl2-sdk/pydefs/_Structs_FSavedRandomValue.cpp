@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSavedRandomValue(py::object m)
+void Export_pystes_FSavedRandomValue(py::module &m)
 {
     py::class_< FSavedRandomValue >(m, "FSavedRandomValue")
         .def_readwrite("ContextName", &FSavedRandomValue::ContextName)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ASkyLight(py::object m)
+void Export_pystes_ASkyLight(py::module &m)
 {
     py::class_< ASkyLight,  ALight   >(m, "ASkyLight")
         .def("StaticClass", &ASkyLight::StaticClass, py::return_value_policy::reference)

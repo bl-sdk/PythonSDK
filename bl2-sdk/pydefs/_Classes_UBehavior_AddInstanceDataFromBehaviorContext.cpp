@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_AddInstanceDataFromBehaviorContext(py::object m)
+void Export_pystes_UBehavior_AddInstanceDataFromBehaviorContext(py::module &m)
 {
     py::class_< UBehavior_AddInstanceDataFromBehaviorContext,  UBehaviorBase   >(m, "UBehavior_AddInstanceDataFromBehaviorContext")
         .def_readwrite("DatumName", &UBehavior_AddInstanceDataFromBehaviorContext::DatumName)

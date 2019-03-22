@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIResourcePoolProvider(py::object m)
+void Export_pystes_UIResourcePoolProvider(py::module &m)
 {
     py::class_< UIResourcePoolProvider,  UInterface   >(m, "UIResourcePoolProvider")
         .def("StaticClass", &UIResourcePoolProvider::StaticClass, py::return_value_policy::reference)

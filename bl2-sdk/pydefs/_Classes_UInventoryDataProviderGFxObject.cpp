@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInventoryDataProviderGFxObject(py::object m)
+void Export_pystes_UInventoryDataProviderGFxObject(py::module &m)
 {
     py::class_< UInventoryDataProviderGFxObject,  UGFxObject   >(m, "UInventoryDataProviderGFxObject")
         .def_readwrite("OwningMovie", &UInventoryDataProviderGFxObject::OwningMovie)

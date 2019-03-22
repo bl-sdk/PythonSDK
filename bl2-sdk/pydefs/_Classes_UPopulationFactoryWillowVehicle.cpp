@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPopulationFactoryWillowVehicle(py::object m)
+void Export_pystes_UPopulationFactoryWillowVehicle(py::module &m)
 {
     py::class_< UPopulationFactoryWillowVehicle,  UPopulationFactory   >(m, "UPopulationFactoryWillowVehicle")
         .def_readwrite("VehicleBalanceDefinition", &UPopulationFactoryWillowVehicle::VehicleBalanceDefinition)

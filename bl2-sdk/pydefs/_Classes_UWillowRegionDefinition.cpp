@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowRegionDefinition(py::object m)
+void Export_pystes_UWillowRegionDefinition(py::module &m)
 {
     py::class_< UWillowRegionDefinition,  URegionDefinition   >(m, "UWillowRegionDefinition")
         .def_readwrite("DlcExpansion", &UWillowRegionDefinition::DlcExpansion)

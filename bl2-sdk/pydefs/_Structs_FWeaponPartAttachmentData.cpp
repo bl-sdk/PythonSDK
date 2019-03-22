@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FWeaponPartAttachmentData(py::object m)
+void Export_pystes_FWeaponPartAttachmentData(py::module &m)
 {
     py::class_< FWeaponPartAttachmentData >(m, "FWeaponPartAttachmentData")
         .def_readwrite("FirstPersonAttachmentSocket", &FWeaponPartAttachmentData::FirstPersonAttachmentSocket)

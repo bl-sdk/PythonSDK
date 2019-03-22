@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDamageParameters(py::object m)
+void Export_pystes_FDamageParameters(py::module &m)
 {
     py::class_< FDamageParameters >(m, "FDamageParameters")
         .def_readwrite("OverrideMode", &FDamageParameters::OverrideMode)

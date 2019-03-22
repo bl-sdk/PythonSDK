@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APatrolDestination(py::object m)
+void Export_pystes_APatrolDestination(py::module &m)
 {
     py::class_< APatrolDestination,  AActor   >(m, "APatrolDestination")
         .def_readwrite("NextPatrolPoints", &APatrolDestination::NextPatrolPoints)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBehaviorEventState(py::object m)
+void Export_pystes_FBehaviorEventState(py::module &m)
 {
     py::class_< FBehaviorEventState >(m, "FBehaviorEventState")
         .def_readwrite("TriggerCount", &FBehaviorEventState::TriggerCount)

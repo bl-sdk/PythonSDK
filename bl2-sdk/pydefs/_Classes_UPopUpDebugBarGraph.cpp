@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPopUpDebugBarGraph(py::object m)
+void Export_pystes_UPopUpDebugBarGraph(py::module &m)
 {
     py::class_< UPopUpDebugBarGraph,  UObject   >(m, "UPopUpDebugBarGraph")
         .def_readwrite("Columns", &UPopUpDebugBarGraph::Columns)

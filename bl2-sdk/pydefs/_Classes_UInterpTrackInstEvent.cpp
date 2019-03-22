@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackInstEvent(py::object m)
+void Export_pystes_UInterpTrackInstEvent(py::module &m)
 {
     py::class_< UInterpTrackInstEvent,  UInterpTrackInst   >(m, "UInterpTrackInstEvent")
         .def_readwrite("LastUpdatePosition", &UInterpTrackInstEvent::LastUpdatePosition)

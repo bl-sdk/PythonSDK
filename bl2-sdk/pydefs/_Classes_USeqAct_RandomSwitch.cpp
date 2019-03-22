@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_RandomSwitch(py::object m)
+void Export_pystes_USeqAct_RandomSwitch(py::module &m)
 {
     py::class_< USeqAct_RandomSwitch,  USequenceAction   >(m, "USeqAct_RandomSwitch")
         .def_readwrite("AutoDisabledIndices", &USeqAct_RandomSwitch::AutoDisabledIndices)

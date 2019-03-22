@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UComponent(py::object m)
+void Export_pystes_UComponent(py::module &m)
 {
     py::class_< UComponent,  UObject   >(m, "UComponent")
         .def_readwrite("TemplateOwnerClass", &UComponent::TemplateOwnerClass)

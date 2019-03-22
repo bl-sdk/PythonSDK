@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FUnloadableDlcRegionGameStageData(py::object m)
+void Export_pystes_FUnloadableDlcRegionGameStageData(py::module &m)
 {
     py::class_< FUnloadableDlcRegionGameStageData >(m, "FUnloadableDlcRegionGameStageData")
         .def_readwrite("RegionDefName", &FUnloadableDlcRegionGameStageData::RegionDefName)

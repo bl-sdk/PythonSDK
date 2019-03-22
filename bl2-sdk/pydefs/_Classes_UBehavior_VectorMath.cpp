@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_VectorMath(py::object m)
+void Export_pystes_UBehavior_VectorMath(py::module &m)
 {
     py::class_< UBehavior_VectorMath,  UBehaviorBase   >(m, "UBehavior_VectorMath")
         .def_readwrite("A", &UBehavior_VectorMath::A)

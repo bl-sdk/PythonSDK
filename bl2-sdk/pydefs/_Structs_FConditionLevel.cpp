@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FConditionLevel(py::object m)
+void Export_pystes_FConditionLevel(py::module &m)
 {
     py::class_< FConditionLevel >(m, "FConditionLevel")
         .def_readwrite("ConditionDefinitions", &FConditionLevel::ConditionDefinitions)

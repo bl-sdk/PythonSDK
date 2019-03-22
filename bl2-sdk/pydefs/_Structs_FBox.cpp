@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBox(py::object m)
+void Export_pystes_FBox(py::module &m)
 {
     py::class_< FBox >(m, "FBox")
         .def_readwrite("Min", &FBox::Min)

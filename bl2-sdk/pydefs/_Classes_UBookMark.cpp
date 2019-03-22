@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBookMark(py::object m)
+void Export_pystes_UBookMark(py::module &m)
 {
     py::class_< UBookMark,  UObject   >(m, "UBookMark")
         .def_readwrite("Location", &UBookMark::Location)

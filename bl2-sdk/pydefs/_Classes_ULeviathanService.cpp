@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULeviathanService(py::object m)
+void Export_pystes_ULeviathanService(py::module &m)
 {
     py::class_< ULeviathanService,  UObject   >(m, "ULeviathanService")
         .def_readwrite("VfTable_ISparkUpdateCallback", &ULeviathanService::VfTable_ISparkUpdateCallback)

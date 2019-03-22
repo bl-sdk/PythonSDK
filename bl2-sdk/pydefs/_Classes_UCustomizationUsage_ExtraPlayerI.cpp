@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCustomizationUsage_ExtraPlayerI(py::object m)
+void Export_pystes_UCustomizationUsage_ExtraPlayerI(py::module &m)
 {
     py::class_< UCustomizationUsage_ExtraPlayerI,  UCustomizationUsage_Player   >(m, "UCustomizationUsage_ExtraPlayerI")
         .def("StaticClass", &UCustomizationUsage_ExtraPlayerI::StaticClass, py::return_value_policy::reference)

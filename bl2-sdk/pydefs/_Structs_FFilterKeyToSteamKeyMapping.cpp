@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FFilterKeyToSteamKeyMapping(py::object m)
+void Export_pystes_FFilterKeyToSteamKeyMapping(py::module &m)
 {
     py::class_< FFilterKeyToSteamKeyMapping >(m, "FFilterKeyToSteamKeyMapping")
         .def_readwrite("KeyId", &FFilterKeyToSteamKeyMapping::KeyId)

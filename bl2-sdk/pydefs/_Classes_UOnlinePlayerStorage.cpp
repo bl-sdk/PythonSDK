@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlinePlayerStorage(py::object m)
+void Export_pystes_UOnlinePlayerStorage(py::module &m)
 {
     py::class_< UOnlinePlayerStorage,  UObject   >(m, "UOnlinePlayerStorage")
         .def_readwrite("VersionNumber", &UOnlinePlayerStorage::VersionNumber)

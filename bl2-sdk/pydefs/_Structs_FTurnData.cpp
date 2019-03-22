@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTurnData(py::object m)
+void Export_pystes_FTurnData(py::module &m)
 {
     py::class_< FTurnData >(m, "FTurnData")
         .def_readwrite("MinRepeatTime", &FTurnData::MinRepeatTime)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_Explode(py::object m)
+void Export_pystes_UBehavior_Explode(py::module &m)
 {
     py::class_< UBehavior_Explode,  UBehaviorBase   >(m, "UBehavior_Explode")
         .def_readwrite("VfTable_IIDamageCauser", &UBehavior_Explode::VfTable_IIDamageCauser)

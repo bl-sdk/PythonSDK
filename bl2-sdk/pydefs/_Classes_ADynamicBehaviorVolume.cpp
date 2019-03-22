@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ADynamicBehaviorVolume(py::object m)
+void Export_pystes_ADynamicBehaviorVolume(py::module &m)
 {
     py::class_< ADynamicBehaviorVolume,  APhysicsVolume   >(m, "ADynamicBehaviorVolume")
         .def_readwrite("VfTable_IIBehaviorConsumer", &ABehaviorVolume::VfTable_IIBehaviorConsumer)

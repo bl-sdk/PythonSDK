@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqVar_Player(py::object m)
+void Export_pystes_USeqVar_Player(py::module &m)
 {
     py::class_< USeqVar_Player,  USequenceVariable   >(m, "USeqVar_Player")
         .def_readwrite("Players", &USeqVar_Player::Players)

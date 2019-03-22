@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHelloWeb(py::object m)
+void Export_pystes_UHelloWeb(py::module &m)
 {
     py::class_< UHelloWeb,  UWebApplication   >(m, "UHelloWeb")
         .def("StaticClass", &UHelloWeb::StaticClass, py::return_value_policy::reference)

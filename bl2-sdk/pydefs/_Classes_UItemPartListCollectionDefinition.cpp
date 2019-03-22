@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UItemPartListCollectionDefinition(py::object m)
+void Export_pystes_UItemPartListCollectionDefinition(py::module &m)
 {
     py::class_< UItemPartListCollectionDefinition,  UInventoryPartListCollectionDefinition   >(m, "UItemPartListCollectionDefinition")
         .def_readwrite("AssociatedItem", &UItemPartListCollectionDefinition::AssociatedItem)

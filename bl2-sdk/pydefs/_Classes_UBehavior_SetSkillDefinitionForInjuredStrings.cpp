@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SetSkillDefinitionForInjuredStrings(py::object m)
+void Export_pystes_UBehavior_SetSkillDefinitionForInjuredStrings(py::module &m)
 {
     py::class_< UBehavior_SetSkillDefinitionForInjuredStrings,  UBehaviorBase   >(m, "UBehavior_SetSkillDefinitionForInjuredStrings")
         .def_readwrite("SkillDef", &UBehavior_SetSkillDefinitionForInjuredStrings::SkillDef)

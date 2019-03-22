@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLightmassDebugOptions(py::object m)
+void Export_pystes_FLightmassDebugOptions(py::module &m)
 {
     py::class_< FLightmassDebugOptions >(m, "FLightmassDebugOptions")
         .def_readwrite("CoplanarTolerance", &FLightmassDebugOptions::CoplanarTolerance)

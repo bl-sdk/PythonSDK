@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowDamageArea(py::object m)
+void Export_pystes_AWillowDamageArea(py::module &m)
 {
     py::class_< AWillowDamageArea,  AActor   >(m, "AWillowDamageArea")
         .def_readwrite("CollisionPrimitiveType", &AWillowDamageArea::CollisionPrimitiveType)

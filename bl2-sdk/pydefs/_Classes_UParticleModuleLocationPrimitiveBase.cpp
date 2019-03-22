@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleLocationPrimitiveBase(py::object m)
+void Export_pystes_UParticleModuleLocationPrimitiveBase(py::module &m)
 {
     py::class_< UParticleModuleLocationPrimitiveBase,  UParticleModuleLocationBase   >(m, "UParticleModuleLocationPrimitiveBase")
         .def_readwrite("VelocityScale", &UParticleModuleLocationPrimitiveBase::VelocityScale)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UProjectileBehavior_TagPayloadType(py::object m)
+void Export_pystes_UProjectileBehavior_TagPayloadType(py::module &m)
 {
     py::class_< UProjectileBehavior_TagPayloadType,  UProjectileBehaviorBase   >(m, "UProjectileBehavior_TagPayloadType")
         .def_readwrite("PayloadType", &UProjectileBehavior_TagPayloadType::PayloadType)

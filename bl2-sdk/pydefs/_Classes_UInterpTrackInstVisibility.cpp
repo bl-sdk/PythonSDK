@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackInstVisibility(py::object m)
+void Export_pystes_UInterpTrackInstVisibility(py::module &m)
 {
     py::class_< UInterpTrackInstVisibility,  UInterpTrackInst   >(m, "UInterpTrackInstVisibility")
         .def_readwrite("Action", &UInterpTrackInstVisibility::Action)

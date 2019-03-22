@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTargetIteratorPrioritizeHumanTargets(py::object m)
+void Export_pystes_UTargetIteratorPrioritizeHumanTargets(py::module &m)
 {
     py::class_< UTargetIteratorPrioritizeHumanTargets,  UTI_Prioritize   >(m, "UTargetIteratorPrioritizeHumanTargets")
         .def("StaticClass", &UTargetIteratorPrioritizeHumanTargets::StaticClass, py::return_value_policy::reference)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_CameraLookAt(py::object m)
+void Export_pystes_USeqAct_CameraLookAt(py::module &m)
 {
     py::class_< USeqAct_CameraLookAt,  USequenceAction   >(m, "USeqAct_CameraLookAt")
         .def_readwrite("InterpSpeedRange", &USeqAct_CameraLookAt::InterpSpeedRange)

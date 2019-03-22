@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqEvent_Console(py::object m)
+void Export_pystes_USeqEvent_Console(py::module &m)
 {
     py::class_< USeqEvent_Console,  USequenceEvent   >(m, "USeqEvent_Console")
         .def_readwrite("ConsoleEventName", &USeqEvent_Console::ConsoleEventName)

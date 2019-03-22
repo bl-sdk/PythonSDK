@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FWaveformSample(py::object m)
+void Export_pystes_FWaveformSample(py::module &m)
 {
     py::class_< FWaveformSample >(m, "FWaveformSample")
         .def_readwrite("LeftAmplitude", &FWaveformSample::LeftAmplitude)

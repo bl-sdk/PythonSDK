@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAIResourceData(py::object m)
+void Export_pystes_FAIResourceData(py::module &m)
 {
     py::class_< FAIResourceData >(m, "FAIResourceData")
         .def_readwrite("Resource", &FAIResourceData::Resource)

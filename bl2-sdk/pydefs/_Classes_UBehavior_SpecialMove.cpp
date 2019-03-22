@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SpecialMove(py::object m)
+void Export_pystes_UBehavior_SpecialMove(py::module &m)
 {
     py::class_< UBehavior_SpecialMove,  UBehaviorBase   >(m, "UBehavior_SpecialMove")
         .def_readwrite("SpecialMove", &UBehavior_SpecialMove::SpecialMove)

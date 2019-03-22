@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowVehicle_Tank(py::object m)
+void Export_pystes_AWillowVehicle_Tank(py::module &m)
 {
     py::class_< AWillowVehicle_Tank,  AWillowVehicle   >(m, "AWillowVehicle_Tank")
         .def_readwrite("Sensors", &AWillowVehicle_Tank::Sensors)

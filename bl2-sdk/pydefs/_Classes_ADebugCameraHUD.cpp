@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ADebugCameraHUD(py::object m)
+void Export_pystes_ADebugCameraHUD(py::module &m)
 {
     py::class_< ADebugCameraHUD,  AHUD   >(m, "ADebugCameraHUD")
         .def("StaticClass", &ADebugCameraHUD::StaticClass, py::return_value_policy::reference)

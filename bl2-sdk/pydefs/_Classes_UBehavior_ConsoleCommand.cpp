@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_ConsoleCommand(py::object m)
+void Export_pystes_UBehavior_ConsoleCommand(py::module &m)
 {
     py::class_< UBehavior_ConsoleCommand,  UBehaviorBase   >(m, "UBehavior_ConsoleCommand")
         .def_readwrite("Command", &UBehavior_ConsoleCommand::Command)

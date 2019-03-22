@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULightFunction(py::object m)
+void Export_pystes_ULightFunction(py::module &m)
 {
     py::class_< ULightFunction,  UObject   >(m, "ULightFunction")
         .def_readwrite("SourceMaterial", &ULightFunction::SourceMaterial)

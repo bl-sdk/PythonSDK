@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLevelStreamingNameCombo(py::object m)
+void Export_pystes_FLevelStreamingNameCombo(py::module &m)
 {
     py::class_< FLevelStreamingNameCombo >(m, "FLevelStreamingNameCombo")
         .def_readwrite("Level", &FLevelStreamingNameCombo::Level)

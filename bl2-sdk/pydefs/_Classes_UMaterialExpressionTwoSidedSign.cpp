@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionTwoSidedSign(py::object m)
+void Export_pystes_UMaterialExpressionTwoSidedSign(py::module &m)
 {
     py::class_< UMaterialExpressionTwoSidedSign,  UMaterialExpression   >(m, "UMaterialExpressionTwoSidedSign")
         .def("StaticClass", &UMaterialExpressionTwoSidedSign::StaticClass, py::return_value_policy::reference)

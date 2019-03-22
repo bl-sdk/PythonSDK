@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAttributeInitializationDefinition(py::object m)
+void Export_pystes_UAttributeInitializationDefinition(py::module &m)
 {
     py::class_< UAttributeInitializationDefinition,  UGBXDefinition   >(m, "UAttributeInitializationDefinition")
         .def_readwrite("BaseValueMode", &UAttributeInitializationDefinition::BaseValueMode)

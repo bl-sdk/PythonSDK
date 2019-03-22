@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_MathFloat(py::object m)
+void Export_pystes_USeqAct_MathFloat(py::module &m)
 {
     py::class_< USeqAct_MathFloat,  USequenceAction   >(m, "USeqAct_MathFloat")
         .def_readwrite("ValueA", &USeqAct_MathFloat::ValueA)

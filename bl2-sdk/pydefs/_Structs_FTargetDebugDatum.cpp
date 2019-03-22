@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTargetDebugDatum(py::object m)
+void Export_pystes_FTargetDebugDatum(py::module &m)
 {
     py::class_< FTargetDebugDatum >(m, "FTargetDebugDatum")
         .def_readwrite("TargetName", &FTargetDebugDatum::TargetName)

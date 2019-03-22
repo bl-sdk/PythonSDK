@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AGameInfo(py::object m)
+void Export_pystes_AGameInfo(py::module &m)
 {
     py::class_< AGameInfo,  AInfo   >(m, "AGameInfo")
         .def_readwrite("CauseEventCommand", &AGameInfo::CauseEventCommand)

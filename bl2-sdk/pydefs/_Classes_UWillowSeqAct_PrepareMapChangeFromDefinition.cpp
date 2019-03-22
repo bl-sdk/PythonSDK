@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSeqAct_PrepareMapChangeFromDefinition(py::object m)
+void Export_pystes_UWillowSeqAct_PrepareMapChangeFromDefinition(py::module &m)
 {
     py::class_< UWillowSeqAct_PrepareMapChangeFromDefinition,  USeqAct_PrepareMapChange   >(m, "UWillowSeqAct_PrepareMapChangeFromDefinition")
         .def_readwrite("DefaultMap", &UWillowSeqAct_PrepareMapChangeFromDefinition::DefaultMap)

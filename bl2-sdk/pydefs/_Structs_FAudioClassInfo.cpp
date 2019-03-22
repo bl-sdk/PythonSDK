@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAudioClassInfo(py::object m)
+void Export_pystes_FAudioClassInfo(py::module &m)
 {
     py::class_< FAudioClassInfo >(m, "FAudioClassInfo")
         .def_readwrite("NumResident", &FAudioClassInfo::NumResident)

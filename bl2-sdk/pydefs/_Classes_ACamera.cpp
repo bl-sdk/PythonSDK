@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ACamera(py::object m)
+void Export_pystes_ACamera(py::module &m)
 {
     py::class_< ACamera,  AActor   >(m, "ACamera")
         .def_readwrite("PCOwner", &ACamera::PCOwner)
@@ -39,7 +39,6 @@ void Export_pystes_ACamera(py::object m)
         .def_readwrite("CameraLensEffects", &ACamera::CameraLensEffects)
         .def_readwrite("CameraShakeCamMod", &ACamera::CameraShakeCamMod)
         .def_readwrite("CameraShakeCamModClass", &ACamera::CameraShakeCamModClass)
-		.def_property_readonly("AnimInstPool", &ACamera::AnimInstPool)
         .def_readwrite("ActiveAnims", &ACamera::ActiveAnims)
         .def_readwrite("FreeAnims", &ACamera::FreeAnims)
         .def_readwrite("AnimCameraActor", &ACamera::AnimCameraActor)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULevelDependencyList(py::object m)
+void Export_pystes_ULevelDependencyList(py::module &m)
 {
     py::class_< ULevelDependencyList,  UGBXDefinition   >(m, "ULevelDependencyList")
         .def_readwrite("LoaderMap", &ULevelDependencyList::LoaderMap)

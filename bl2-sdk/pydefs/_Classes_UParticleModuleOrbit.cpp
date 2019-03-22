@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleOrbit(py::object m)
+void Export_pystes_UParticleModuleOrbit(py::module &m)
 {
     py::class_< UParticleModuleOrbit,  UParticleModule   >(m, "UParticleModuleOrbit")
         .def_readwrite("ChainMode", &UParticleModuleOrbit::ChainMode)

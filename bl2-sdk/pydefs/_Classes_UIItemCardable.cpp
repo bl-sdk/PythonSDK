@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIItemCardable(py::object m)
+void Export_pystes_UIItemCardable(py::module &m)
 {
     py::class_< UIItemCardable,  UInterface   >(m, "UIItemCardable")
         .def("StaticClass", &UIItemCardable::StaticClass, py::return_value_policy::reference)

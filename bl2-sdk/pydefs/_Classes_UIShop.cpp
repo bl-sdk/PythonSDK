@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIShop(py::object m)
+void Export_pystes_UIShop(py::module &m)
 {
     py::class_< UIShop,  UInterface   >(m, "UIShop")
         .def("StaticClass", &UIShop::StaticClass, py::return_value_policy::reference)

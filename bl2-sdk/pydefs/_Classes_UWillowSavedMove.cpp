@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSavedMove(py::object m)
+void Export_pystes_UWillowSavedMove(py::module &m)
 {
     py::class_< UWillowSavedMove,  USavedMove   >(m, "UWillowSavedMove")
         .def("StaticClass", &UWillowSavedMove::StaticClass, py::return_value_policy::reference)

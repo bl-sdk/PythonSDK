@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APickupableMeshActor(py::object m)
+void Export_pystes_APickupableMeshActor(py::module &m)
 {
     py::class_< APickupableMeshActor,  AActor   >(m, "APickupableMeshActor")
         .def_readwrite("MyTarget", &APickupableMeshActor::MyTarget)

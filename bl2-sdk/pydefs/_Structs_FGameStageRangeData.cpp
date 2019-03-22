@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGameStageRangeData(py::object m)
+void Export_pystes_FGameStageRangeData(py::module &m)
 {
     py::class_< FGameStageRangeData >(m, "FGameStageRangeData")
         .def_readwrite("MinGameStage", &FGameStageRangeData::MinGameStage)

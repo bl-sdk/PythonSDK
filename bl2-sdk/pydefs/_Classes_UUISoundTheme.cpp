@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUISoundTheme(py::object m)
+void Export_pystes_UUISoundTheme(py::module &m)
 {
     py::class_< UUISoundTheme,  UObject   >(m, "UUISoundTheme")
         .def_readwrite("SoundEventBindings", &UUISoundTheme::SoundEventBindings)

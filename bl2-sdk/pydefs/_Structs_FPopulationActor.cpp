@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPopulationActor(py::object m)
+void Export_pystes_FPopulationActor(py::module &m)
 {
     py::class_< FPopulationActor >(m, "FPopulationActor")
         .def_readwrite("SpawnFactory", &FPopulationActor::SpawnFactory)

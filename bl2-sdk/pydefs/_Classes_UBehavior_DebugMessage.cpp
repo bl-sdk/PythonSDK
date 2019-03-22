@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_DebugMessage(py::object m)
+void Export_pystes_UBehavior_DebugMessage(py::module &m)
 {
     py::class_< UBehavior_DebugMessage,  UBehaviorBase   >(m, "UBehavior_DebugMessage")
         .def_readwrite("DebugMessage", &UBehavior_DebugMessage::DebugMessage)

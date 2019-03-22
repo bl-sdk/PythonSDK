@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpotLightComponent(py::object m)
+void Export_pystes_USpotLightComponent(py::module &m)
 {
     py::class_< USpotLightComponent,  UPointLightComponent   >(m, "USpotLightComponent")
         .def_readwrite("InnerConeAngle", &USpotLightComponent::InnerConeAngle)

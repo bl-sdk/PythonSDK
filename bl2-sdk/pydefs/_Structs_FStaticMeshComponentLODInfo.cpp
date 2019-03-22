@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FStaticMeshComponentLODInfo(py::object m)
+void Export_pystes_FStaticMeshComponentLODInfo(py::module &m)
 {
     py::class_< FStaticMeshComponentLODInfo >(m, "FStaticMeshComponentLODInfo")
         .def_readwrite("ShadowMaps", &FStaticMeshComponentLODInfo::ShadowMaps)

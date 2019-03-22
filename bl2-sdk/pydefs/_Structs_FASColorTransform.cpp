@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FASColorTransform(py::object m)
+void Export_pystes_FASColorTransform(py::module &m)
 {
     py::class_< FASColorTransform >(m, "FASColorTransform")
         .def_readwrite("Multiply", &FASColorTransform::Multiply)

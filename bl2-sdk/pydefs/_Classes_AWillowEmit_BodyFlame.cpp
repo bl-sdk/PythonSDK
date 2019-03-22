@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowEmit_BodyFlame(py::object m)
+void Export_pystes_AWillowEmit_BodyFlame(py::module &m)
 {
     py::class_< AWillowEmit_BodyFlame,  AWillowReplicatedEmitter   >(m, "AWillowEmit_BodyFlame")
         .def_readwrite("BoneName", &AWillowEmit_HitEffect::BoneName)

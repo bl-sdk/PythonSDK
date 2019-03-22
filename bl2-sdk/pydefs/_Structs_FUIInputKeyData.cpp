@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FUIInputKeyData(py::object m)
+void Export_pystes_FUIInputKeyData(py::module &m)
 {
     py::class_< FUIInputKeyData >(m, "FUIInputKeyData")
         .def_readwrite("InputKeyData", &FUIInputKeyData::InputKeyData)

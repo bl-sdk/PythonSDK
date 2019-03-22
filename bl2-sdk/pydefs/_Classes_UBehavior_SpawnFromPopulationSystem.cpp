@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SpawnFromPopulationSystem(py::object m)
+void Export_pystes_UBehavior_SpawnFromPopulationSystem(py::module &m)
 {
     py::class_< UBehavior_SpawnFromPopulationSystem,  UBehaviorBase   >(m, "UBehavior_SpawnFromPopulationSystem")
         .def_readwrite("SpawnFactory", &UBehavior_SpawnFromPopulationSystem::SpawnFactory)

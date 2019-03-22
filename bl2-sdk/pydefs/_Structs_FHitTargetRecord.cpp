@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FHitTargetRecord(py::object m)
+void Export_pystes_FHitTargetRecord(py::module &m)
 {
     py::class_< FHitTargetRecord >(m, "FHitTargetRecord")
         .def_readwrite("vecHitLoc", &FHitTargetRecord::vecHitLoc)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTankVehicleHandlingDefinition(py::object m)
+void Export_pystes_UTankVehicleHandlingDefinition(py::module &m)
 {
     py::class_< UTankVehicleHandlingDefinition,  UCarVehicleHandlingDefinition   >(m, "UTankVehicleHandlingDefinition")
         .def_readwrite("MaxEngineTorque", &UTankVehicleHandlingDefinition::MaxEngineTorque)

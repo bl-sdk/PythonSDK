@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FStateAttributeData(py::object m)
+void Export_pystes_FStateAttributeData(py::module &m)
 {
     py::class_< FStateAttributeData >(m, "FStateAttributeData")
         .def_readwrite("Key", &FStateAttributeData::Key)

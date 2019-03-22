@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLoadCharacterData(py::object m)
+void Export_pystes_FLoadCharacterData(py::module &m)
 {
     py::class_< FLoadCharacterData >(m, "FLoadCharacterData")
         .def_readwrite("SaveDataId", &FLoadCharacterData::SaveDataId)

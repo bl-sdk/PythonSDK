@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSourceObjectData(py::object m)
+void Export_pystes_FSourceObjectData(py::module &m)
 {
     py::class_< FSourceObjectData >(m, "FSourceObjectData")
         .def_readwrite("UniqueId", &FSourceObjectData::UniqueId)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_BunkerBoss_Flight(py::object m)
+void Export_pystes_UAction_BunkerBoss_Flight(py::module &m)
 {
     py::class_< UAction_BunkerBoss_Flight,  UAction_FollowPath   >(m, "UAction_BunkerBoss_Flight")
         .def_readwrite("OffsetDistance", &UAction_BunkerBoss_Flight::OffsetDistance)

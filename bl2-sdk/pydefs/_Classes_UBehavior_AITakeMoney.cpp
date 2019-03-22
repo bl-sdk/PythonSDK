@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_AITakeMoney(py::object m)
+void Export_pystes_UBehavior_AITakeMoney(py::module &m)
 {
     py::class_< UBehavior_AITakeMoney,  UBehaviorBase   >(m, "UBehavior_AITakeMoney")
         .def_readwrite("TakePercent", &UBehavior_AITakeMoney::TakePercent)

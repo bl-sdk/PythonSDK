@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FOnlineGameSearchSortClause(py::object m)
+void Export_pystes_FOnlineGameSearchSortClause(py::module &m)
 {
     py::class_< FOnlineGameSearchSortClause >(m, "FOnlineGameSearchSortClause")
         .def_readwrite("EntryId", &FOnlineGameSearchSortClause::EntryId)

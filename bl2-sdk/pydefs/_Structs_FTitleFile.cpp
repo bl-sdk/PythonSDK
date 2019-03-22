@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTitleFile(py::object m)
+void Export_pystes_FTitleFile(py::module &m)
 {
     py::class_< FTitleFile >(m, "FTitleFile")
         .def_readwrite("Filename", &FTitleFile::Filename)

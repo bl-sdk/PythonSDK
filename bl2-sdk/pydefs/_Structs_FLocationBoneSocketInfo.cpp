@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLocationBoneSocketInfo(py::object m)
+void Export_pystes_FLocationBoneSocketInfo(py::module &m)
 {
     py::class_< FLocationBoneSocketInfo >(m, "FLocationBoneSocketInfo")
         .def_readwrite("BoneSocketName", &FLocationBoneSocketInfo::BoneSocketName)

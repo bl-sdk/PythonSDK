@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSeqAct_InterpMenu(py::object m)
+void Export_pystes_UWillowSeqAct_InterpMenu(py::module &m)
 {
     py::class_< UWillowSeqAct_InterpMenu,  USeqAct_Interp   >(m, "UWillowSeqAct_InterpMenu")
         .def_readwrite("IdleTime", &UWillowSeqAct_InterpMenu::IdleTime)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAnimNode_Audio(py::object m)
+void Export_pystes_UWillowAnimNode_Audio(py::module &m)
 {
     py::class_< UWillowAnimNode_Audio,  UAnimNodeBlendBase   >(m, "UWillowAnimNode_Audio")
         .def_readwrite("StartAkEvent", &UWillowAnimNode_Audio::StartAkEvent)

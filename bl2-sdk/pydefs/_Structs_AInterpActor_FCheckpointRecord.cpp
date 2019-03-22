@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AInterpActor_FCheckpointRecord(py::object m)
+void Export_pystes_AInterpActor_FCheckpointRecord(py::module &m)
 {
     py::class_< AInterpActor_FCheckpointRecord >(m, "AInterpActor_FCheckpointRecord")
         .def_readwrite("Location", &AInterpActor_FCheckpointRecord::Location)

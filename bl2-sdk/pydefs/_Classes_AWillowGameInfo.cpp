@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowGameInfo(py::object m)
+void Export_pystes_AWillowGameInfo(py::module &m)
 {
     py::class_< AWillowGameInfo,  AGearboxGameInfo   >(m, "AWillowGameInfo")
         .def_readwrite("VfTable_IIDesignerAttributeProvider", &AWillowGameInfo::VfTable_IIDesignerAttributeProvider)

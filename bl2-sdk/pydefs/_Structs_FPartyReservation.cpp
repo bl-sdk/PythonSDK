@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPartyReservation(py::object m)
+void Export_pystes_FPartyReservation(py::module &m)
 {
     py::class_< FPartyReservation >(m, "FPartyReservation")
         .def_readwrite("TeamNum", &FPartyReservation::TeamNum)

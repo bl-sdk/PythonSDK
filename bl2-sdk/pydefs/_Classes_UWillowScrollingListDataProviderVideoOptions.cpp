@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowScrollingListDataProviderVideoOptions(py::object m)
+void Export_pystes_UWillowScrollingListDataProviderVideoOptions(py::module &m)
 {
     py::class_< UWillowScrollingListDataProviderVideoOptions,  UWillowScrollingListDataProviderOptionsBase   >(m, "UWillowScrollingListDataProviderVideoOptions")
         .def_readwrite("ScaleGuide", &UWillowScrollingListDataProviderVideoOptions::ScaleGuide)

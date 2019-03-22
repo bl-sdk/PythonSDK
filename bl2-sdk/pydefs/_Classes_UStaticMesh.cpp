@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UStaticMesh(py::object m)
+void Export_pystes_UStaticMesh(py::module &m)
 {
     py::class_< UStaticMesh,  UObject   >(m, "UStaticMesh")
         .def_readwrite("LODInfo", &UStaticMesh::LODInfo)

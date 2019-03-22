@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDamageTypeExpModifier(py::object m)
+void Export_pystes_FDamageTypeExpModifier(py::module &m)
 {
     py::class_< FDamageTypeExpModifier >(m, "FDamageTypeExpModifier")
         .def_readwrite("DamageSource", &FDamageTypeExpModifier::DamageSource)

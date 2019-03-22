@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULineBatchComponent(py::object m)
+void Export_pystes_ULineBatchComponent(py::module &m)
 {
     py::class_< ULineBatchComponent,  UPrimitiveComponent   >(m, "ULineBatchComponent")
         .def_readwrite("FPrimitiveDrawInterfaceVfTable", &ULineBatchComponent::FPrimitiveDrawInterfaceVfTable)

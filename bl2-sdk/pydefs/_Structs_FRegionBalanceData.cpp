@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRegionBalanceData(py::object m)
+void Export_pystes_FRegionBalanceData(py::module &m)
 {
     py::class_< FRegionBalanceData >(m, "FRegionBalanceData")
         .def_readwrite("Region", &FRegionBalanceData::Region)

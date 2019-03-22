@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleEventReceiverBase(py::object m)
+void Export_pystes_UParticleModuleEventReceiverBase(py::module &m)
 {
     py::class_< UParticleModuleEventReceiverBase,  UParticleModuleEventBase   >(m, "UParticleModuleEventReceiverBase")
         .def_readwrite("EventGeneratorType", &UParticleModuleEventReceiverBase::EventGeneratorType)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCameraCutInfo(py::object m)
+void Export_pystes_FCameraCutInfo(py::module &m)
 {
     py::class_< FCameraCutInfo >(m, "FCameraCutInfo")
         .def_readwrite("Location", &FCameraCutInfo::Location)

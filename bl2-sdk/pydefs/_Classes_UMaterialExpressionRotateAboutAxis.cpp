@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionRotateAboutAxis(py::object m)
+void Export_pystes_UMaterialExpressionRotateAboutAxis(py::module &m)
 {
     py::class_< UMaterialExpressionRotateAboutAxis,  UMaterialExpression   >(m, "UMaterialExpressionRotateAboutAxis")
         .def_readwrite("NormalizedRotationAxisAndAngle", &UMaterialExpressionRotateAboutAxis::NormalizedRotationAxisAndAngle)

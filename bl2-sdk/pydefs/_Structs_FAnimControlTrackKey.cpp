@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAnimControlTrackKey(py::object m)
+void Export_pystes_FAnimControlTrackKey(py::module &m)
 {
     py::class_< FAnimControlTrackKey >(m, "FAnimControlTrackKey")
         .def_readwrite("StartTime", &FAnimControlTrackKey::StartTime)

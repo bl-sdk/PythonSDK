@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UEquipableItemDefinition(py::object m)
+void Export_pystes_UEquipableItemDefinition(py::module &m)
 {
     py::class_< UEquipableItemDefinition,  UItemDefinition   >(m, "UEquipableItemDefinition")
         .def_readwrite("DamageTypeIcon", &UEquipableItemDefinition::DamageTypeIcon)

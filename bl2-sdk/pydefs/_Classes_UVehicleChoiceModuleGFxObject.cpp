@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UVehicleChoiceModuleGFxObject(py::object m)
+void Export_pystes_UVehicleChoiceModuleGFxObject(py::module &m)
 {
     py::class_< UVehicleChoiceModuleGFxObject,  UGFxObject   >(m, "UVehicleChoiceModuleGFxObject")
         .def_readwrite("CachedVehicleState", &UVehicleChoiceModuleGFxObject::CachedVehicleState)

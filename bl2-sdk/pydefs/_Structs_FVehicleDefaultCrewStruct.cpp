@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FVehicleDefaultCrewStruct(py::object m)
+void Export_pystes_FVehicleDefaultCrewStruct(py::module &m)
 {
     py::class_< FVehicleDefaultCrewStruct >(m, "FVehicleDefaultCrewStruct")
         .def_readwrite("PopulationDefForRole", &FVehicleDefaultCrewStruct::PopulationDefForRole)

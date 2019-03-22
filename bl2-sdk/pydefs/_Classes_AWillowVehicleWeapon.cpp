@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowVehicleWeapon(py::object m)
+void Export_pystes_AWillowVehicleWeapon(py::module &m)
 {
     py::class_< AWillowVehicleWeapon,  AWillowWeapon   >(m, "AWillowVehicleWeapon")
         .def_readwrite("SeatIndex", &AWillowVehicleWeapon::SeatIndex)

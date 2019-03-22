@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SetMorphNodeWeight(py::object m)
+void Export_pystes_UBehavior_SetMorphNodeWeight(py::module &m)
 {
     py::class_< UBehavior_SetMorphNodeWeight,  UBehaviorBase   >(m, "UBehavior_SetMorphNodeWeight")
         .def_readwrite("MorphNodeName", &UBehavior_SetMorphNodeWeight::MorphNodeName)

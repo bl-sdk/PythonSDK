@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_AkPostEvent(py::object m)
+void Export_pystes_USeqAct_AkPostEvent(py::module &m)
 {
     py::class_< USeqAct_AkPostEvent,  USeqAct_Latent   >(m, "USeqAct_AkPostEvent")
         .def_readwrite("ActivePlayingIds", &USeqAct_AkPostEvent::ActivePlayingIds)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AReverbVolume(py::object m)
+void Export_pystes_AReverbVolume(py::module &m)
 {
     py::class_< AReverbVolume,  AVolume   >(m, "AReverbVolume")
         .def_readwrite("Priority", &AReverbVolume::Priority)

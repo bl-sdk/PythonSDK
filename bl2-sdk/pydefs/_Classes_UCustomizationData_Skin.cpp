@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCustomizationData_Skin(py::object m)
+void Export_pystes_UCustomizationData_Skin(py::module &m)
 {
     py::class_< UCustomizationData_Skin,  UCustomizationData   >(m, "UCustomizationData_Skin")
         .def_readwrite("BodyMaterial", &UCustomizationData_Skin::BodyMaterial)

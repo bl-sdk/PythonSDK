@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHashDisplayGFxDefinition(py::object m)
+void Export_pystes_UHashDisplayGFxDefinition(py::module &m)
 {
     py::class_< UHashDisplayGFxDefinition,  UGFxMovieDefinition   >(m, "UHashDisplayGFxDefinition")
         .def_readwrite("LeftSideDef", &UHashDisplayGFxDefinition::LeftSideDef)

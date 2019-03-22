@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWeapon(py::object m)
+void Export_pystes_AWeapon(py::module &m)
 {
     py::class_< AWeapon,  AWillowInventory   >(m, "AWeapon")
         .def_readwrite("CurrentFireMode", &AWeapon::CurrentFireMode)

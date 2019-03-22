@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULoadCharacterLobbyGFxObject(py::object m)
+void Export_pystes_ULoadCharacterLobbyGFxObject(py::module &m)
 {
     py::class_< ULoadCharacterLobbyGFxObject,  UGFxObject   >(m, "ULoadCharacterLobbyGFxObject")
         .def("StaticClass", &ULoadCharacterLobbyGFxObject::StaticClass, py::return_value_policy::reference)

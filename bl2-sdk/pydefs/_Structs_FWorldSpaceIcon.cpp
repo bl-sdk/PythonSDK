@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FWorldSpaceIcon(py::object m)
+void Export_pystes_FWorldSpaceIcon(py::module &m)
 {
     py::class_< FWorldSpaceIcon >(m, "FWorldSpaceIcon")
         .def_readwrite("IconClip", &FWorldSpaceIcon::IconClip)

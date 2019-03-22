@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWeaponPartListCollectionDefinition(py::object m)
+void Export_pystes_UWeaponPartListCollectionDefinition(py::module &m)
 {
     py::class_< UWeaponPartListCollectionDefinition,  UInventoryPartListCollectionDefinition   >(m, "UWeaponPartListCollectionDefinition")
         .def_readwrite("AssociatedWeaponType", &UWeaponPartListCollectionDefinition::AssociatedWeaponType)

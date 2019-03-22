@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGFxThirdPersonDefinition(py::object m)
+void Export_pystes_UWillowGFxThirdPersonDefinition(py::module &m)
 {
     py::class_< UWillowGFxThirdPersonDefinition,  UWillowGFxMovie3DDefinition   >(m, "UWillowGFxThirdPersonDefinition")
         .def_readwrite("CameraInterpSpeed", &UWillowGFxThirdPersonDefinition::CameraInterpSpeed)

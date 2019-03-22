@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNavMeshGoal_Random(py::object m)
+void Export_pystes_UNavMeshGoal_Random(py::module &m)
 {
     py::class_< UNavMeshGoal_Random,  UNavMeshPathGoalEvaluator   >(m, "UNavMeshGoal_Random")
         .def_readwrite("MinDist", &UNavMeshGoal_Random::MinDist)

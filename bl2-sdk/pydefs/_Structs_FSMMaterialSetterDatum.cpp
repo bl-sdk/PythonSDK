@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSMMaterialSetterDatum(py::object m)
+void Export_pystes_FSMMaterialSetterDatum(py::module &m)
 {
     py::class_< FSMMaterialSetterDatum >(m, "FSMMaterialSetterDatum")
         .def_readwrite("MaterialIndex", &FSMMaterialSetterDatum::MaterialIndex)

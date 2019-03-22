@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOptionsGFxMovie(py::object m)
+void Export_pystes_UOptionsGFxMovie(py::module &m)
 {
     py::class_< UOptionsGFxMovie,  UWillowGFxMovie3D   >(m, "UOptionsGFxMovie")
         .def_readwrite("OptionsObj", &UOptionsGFxMovie::OptionsObj)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBehaviorSequenceData(py::object m)
+void Export_pystes_FBehaviorSequenceData(py::module &m)
 {
     py::class_< FBehaviorSequenceData >(m, "FBehaviorSequenceData")
         .def_readwrite("BehaviorSequenceName", &FBehaviorSequenceData::BehaviorSequenceName)

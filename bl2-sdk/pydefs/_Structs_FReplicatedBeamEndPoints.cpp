@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FReplicatedBeamEndPoints(py::object m)
+void Export_pystes_FReplicatedBeamEndPoints(py::module &m)
 {
     py::class_< FReplicatedBeamEndPoints >(m, "FReplicatedBeamEndPoints")
         .def_readwrite("StartPoint", &FReplicatedBeamEndPoints::StartPoint)

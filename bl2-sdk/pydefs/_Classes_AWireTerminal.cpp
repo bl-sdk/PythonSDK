@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWireTerminal(py::object m)
+void Export_pystes_AWireTerminal(py::module &m)
 {
     py::class_< AWireTerminal,  AStaticMeshActor   >(m, "AWireTerminal")
         .def_readwrite("NextTerminal", &AWireTerminal::NextTerminal)

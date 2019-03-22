@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UProjectileBehavior_FindHomingTarget(py::object m)
+void Export_pystes_UProjectileBehavior_FindHomingTarget(py::module &m)
 {
     py::class_< UProjectileBehavior_FindHomingTarget,  UProjectileBehaviorBase   >(m, "UProjectileBehavior_FindHomingTarget")
         .def_readwrite("TargetType", &UProjectileBehavior_FindHomingTarget::TargetType)

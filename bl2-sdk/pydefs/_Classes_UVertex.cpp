@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UVertex(py::object m)
+void Export_pystes_UVertex(py::module &m)
 {
     py::class_< UVertex,  UObject   >(m, "UVertex")
         .def_readwrite("ParentLine", &UVertex::ParentLine)

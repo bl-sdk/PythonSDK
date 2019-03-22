@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehaviorKernel(py::object m)
+void Export_pystes_UBehaviorKernel(py::module &m)
 {
     py::class_< UBehaviorKernel,  UObject   >(m, "UBehaviorKernel")
         .def_readwrite("Processes", &UBehaviorKernel::Processes)

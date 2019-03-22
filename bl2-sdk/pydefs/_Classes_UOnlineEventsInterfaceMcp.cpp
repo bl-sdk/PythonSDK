@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineEventsInterfaceMcp(py::object m)
+void Export_pystes_UOnlineEventsInterfaceMcp(py::module &m)
 {
     py::class_< UOnlineEventsInterfaceMcp,  UMCPBase   >(m, "UOnlineEventsInterfaceMcp")
         .def_readwrite("EventUploadConfigs", &UOnlineEventsInterfaceMcp::EventUploadConfigs)

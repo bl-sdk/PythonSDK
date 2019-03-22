@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_StopAkAmbientSound(py::object m)
+void Export_pystes_UBehavior_StopAkAmbientSound(py::module &m)
 {
     py::class_< UBehavior_StopAkAmbientSound,  UBehaviorBase   >(m, "UBehavior_StopAkAmbientSound")
         .def_readwrite("AkEvent", &UBehavior_StopAkAmbientSound::AkEvent)

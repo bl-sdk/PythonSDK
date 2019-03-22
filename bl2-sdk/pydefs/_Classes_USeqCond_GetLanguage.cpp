@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqCond_GetLanguage(py::object m)
+void Export_pystes_USeqCond_GetLanguage(py::module &m)
 {
     py::class_< USeqCond_GetLanguage,  USequenceCondition   >(m, "USeqCond_GetLanguage")
         .def_readwrite("LangList", &USeqCond_GetLanguage::LangList)

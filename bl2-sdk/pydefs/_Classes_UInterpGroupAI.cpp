@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpGroupAI(py::object m)
+void Export_pystes_UInterpGroupAI(py::module &m)
 {
     py::class_< UInterpGroupAI,  UInterpGroup   >(m, "UInterpGroupAI")
         .def_readwrite("StageMarkGroup", &UInterpGroupAI::StageMarkGroup)

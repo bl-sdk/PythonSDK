@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDOFEffect(py::object m)
+void Export_pystes_UDOFEffect(py::module &m)
 {
     py::class_< UDOFEffect,  UPostProcessEffect   >(m, "UDOFEffect")
         .def_readwrite("FalloffExponent", &UDOFEffect::FalloffExponent)

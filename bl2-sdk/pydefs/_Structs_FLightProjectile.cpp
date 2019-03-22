@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLightProjectile(py::object m)
+void Export_pystes_FLightProjectile(py::module &m)
 {
     py::class_< FLightProjectile >(m, "FLightProjectile")
         .def_readwrite("Location", &FLightProjectile::Location)

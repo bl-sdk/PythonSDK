@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowCustomizationManager(py::object m)
+void Export_pystes_UWillowCustomizationManager(py::module &m)
 {
     py::class_< UWillowCustomizationManager,  UObject   >(m, "UWillowCustomizationManager")
         .def_readwrite("VfTable_FCallbackEventDevice", &UWillowCustomizationManager::VfTable_FCallbackEventDevice)

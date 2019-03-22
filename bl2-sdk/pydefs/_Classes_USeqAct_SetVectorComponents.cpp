@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_SetVectorComponents(py::object m)
+void Export_pystes_USeqAct_SetVectorComponents(py::module &m)
 {
     py::class_< USeqAct_SetVectorComponents,  USequenceAction   >(m, "USeqAct_SetVectorComponents")
         .def_readwrite("OutVector", &USeqAct_SetVectorComponents::OutVector)

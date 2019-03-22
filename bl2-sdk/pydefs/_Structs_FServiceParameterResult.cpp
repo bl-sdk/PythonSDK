@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FServiceParameterResult(py::object m)
+void Export_pystes_FServiceParameterResult(py::module &m)
 {
     py::class_< FServiceParameterResult >(m, "FServiceParameterResult")
         .def_readwrite("Key", &FServiceParameterResult::Key)

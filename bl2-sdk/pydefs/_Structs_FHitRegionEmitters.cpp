@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FHitRegionEmitters(py::object m)
+void Export_pystes_FHitRegionEmitters(py::module &m)
 {
     py::class_< FHitRegionEmitters >(m, "FHitRegionEmitters")
         .def_readwrite("Emitters", &FHitRegionEmitters::Emitters)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USkelControlSpline(py::object m)
+void Export_pystes_USkelControlSpline(py::module &m)
 {
     py::class_< USkelControlSpline,  USkelControlBase   >(m, "USkelControlSpline")
         .def_readwrite("SplineLength", &USkelControlSpline::SplineLength)

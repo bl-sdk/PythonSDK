@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_ClearObjective(py::object m)
+void Export_pystes_UBehavior_ClearObjective(py::module &m)
 {
     py::class_< UBehavior_ClearObjective,  UBehaviorBase   >(m, "UBehavior_ClearObjective")
         .def_readwrite("ObjectiveToClear", &UBehavior_ClearObjective::ObjectiveToClear)

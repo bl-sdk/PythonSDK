@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAppIdLicenseInfo(py::object m)
+void Export_pystes_FAppIdLicenseInfo(py::module &m)
 {
     py::class_< FAppIdLicenseInfo >(m, "FAppIdLicenseInfo")
         .def_readwrite("AppID", &FAppIdLicenseInfo::AppID)

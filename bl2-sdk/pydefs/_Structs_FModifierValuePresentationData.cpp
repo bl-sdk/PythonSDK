@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FModifierValuePresentationData(py::object m)
+void Export_pystes_FModifierValuePresentationData(py::module &m)
 {
     py::class_< FModifierValuePresentationData >(m, "FModifierValuePresentationData")
         .def_readwrite("AttributePresentation", &FModifierValuePresentationData::AttributePresentation)

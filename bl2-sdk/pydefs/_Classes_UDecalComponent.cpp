@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDecalComponent(py::object m)
+void Export_pystes_UDecalComponent(py::module &m)
 {
     py::class_< UDecalComponent,  UPrimitiveComponent   >(m, "UDecalComponent")
         .def_readwrite("DecalMaterial", &UDecalComponent::DecalMaterial)

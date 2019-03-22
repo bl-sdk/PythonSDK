@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UObject(py::object m)
+void Export_pystes_UObject(py::module &m)
 {
 	py::class_<UObject>(m, "UObject")
 		.def_readwrite("HashNext", &UObject::HashNext)

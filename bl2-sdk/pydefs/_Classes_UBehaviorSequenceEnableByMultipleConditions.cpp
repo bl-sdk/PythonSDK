@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehaviorSequenceEnableByMultipleConditions(py::object m)
+void Export_pystes_UBehaviorSequenceEnableByMultipleConditions(py::module &m)
 {
     py::class_< UBehaviorSequenceEnableByMultipleConditions,  UBehaviorSequenceCustomEnableCondition   >(m, "UBehaviorSequenceEnableByMultipleConditions")
         .def_readwrite("EnableConditions", &UBehaviorSequenceEnableByMultipleConditions::EnableConditions)

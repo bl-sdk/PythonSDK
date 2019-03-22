@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpecialMove_FirstAndThirdPersonAnimation(py::object m)
+void Export_pystes_USpecialMove_FirstAndThirdPersonAnimation(py::module &m)
 {
     py::class_< USpecialMove_FirstAndThirdPersonAnimation,  USpecialMove_WeaponAction   >(m, "USpecialMove_FirstAndThirdPersonAnimation")
         .def_readwrite("FirstPersonSM", &USpecialMove_FirstAndThirdPersonAnimation::FirstPersonSM)

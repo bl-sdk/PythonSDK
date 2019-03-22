@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFunction(py::object m)
+void Export_pystes_UFunction(py::module &m)
 {
     py::class_< UFunction,  UStruct   >(m, "UFunction")
         .def_readwrite("iNative", &UFunction::iNative)

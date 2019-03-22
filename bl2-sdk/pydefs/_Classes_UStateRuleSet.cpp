@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UStateRuleSet(py::object m)
+void Export_pystes_UStateRuleSet(py::module &m)
 {
     py::class_< UStateRuleSet,  URuleSet   >(m, "UStateRuleSet")
         .def_readwrite("StateRules", &UStateRuleSet::StateRules)

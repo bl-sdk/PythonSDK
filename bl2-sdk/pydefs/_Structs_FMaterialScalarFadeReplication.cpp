@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMaterialScalarFadeReplication(py::object m)
+void Export_pystes_FMaterialScalarFadeReplication(py::module &m)
 {
     py::class_< FMaterialScalarFadeReplication >(m, "FMaterialScalarFadeReplication")
         .def_readwrite("Name", &FMaterialScalarFadeReplication::Name)

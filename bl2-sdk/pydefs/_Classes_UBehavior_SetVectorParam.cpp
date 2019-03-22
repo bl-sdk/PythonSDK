@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SetVectorParam(py::object m)
+void Export_pystes_UBehavior_SetVectorParam(py::module &m)
 {
     py::class_< UBehavior_SetVectorParam,  UParameterBehaviorBase   >(m, "UBehavior_SetVectorParam")
         .def_readwrite("RValue", &UBehavior_SetVectorParam::RValue)

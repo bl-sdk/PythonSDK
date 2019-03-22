@@ -5033,6 +5033,7 @@
     <ClInclude Include="OnlineSubsystemSteamworks_f_structs.h" />
     <ClInclude Include="OnlineSubsystemSteamworks_structs.h" />
     <ClInclude Include="PackageFix.h" />
+    <ClInclude Include="pydef.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Settings.h" />
     <ClInclude Include="Signatures.h" />

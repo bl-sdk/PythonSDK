@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAIHoldData(py::object m)
+void Export_pystes_FAIHoldData(py::module &m)
 {
     py::class_< FAIHoldData >(m, "FAIHoldData")
         .def_readwrite("HoldName", &FAIHoldData::HoldName)

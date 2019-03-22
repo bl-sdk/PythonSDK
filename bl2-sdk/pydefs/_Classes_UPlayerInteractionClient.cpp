@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerInteractionClient(py::object m)
+void Export_pystes_UPlayerInteractionClient(py::module &m)
 {
     py::class_< UPlayerInteractionClient,  UObject   >(m, "UPlayerInteractionClient")
         .def("StaticClass", &UPlayerInteractionClient::StaticClass, py::return_value_policy::reference)

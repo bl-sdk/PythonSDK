@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWwiseSoundGroupRenderingComponent(py::object m)
+void Export_pystes_UWwiseSoundGroupRenderingComponent(py::module &m)
 {
     py::class_< UWwiseSoundGroupRenderingComponent,  UPrimitiveComponent   >(m, "UWwiseSoundGroupRenderingComponent")
         .def("StaticClass", &UWwiseSoundGroupRenderingComponent::StaticClass, py::return_value_policy::reference)

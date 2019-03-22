@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USkillPointsFeedbackMessage(py::object m)
+void Export_pystes_USkillPointsFeedbackMessage(py::module &m)
 {
     py::class_< USkillPointsFeedbackMessage,  UWillowLocalMessage   >(m, "USkillPointsFeedbackMessage")
         .def_readwrite("HasSkillPoints", &USkillPointsFeedbackMessage::HasSkillPoints)

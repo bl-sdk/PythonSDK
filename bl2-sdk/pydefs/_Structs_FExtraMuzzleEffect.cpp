@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FExtraMuzzleEffect(py::object m)
+void Export_pystes_FExtraMuzzleEffect(py::module &m)
 {
     py::class_< FExtraMuzzleEffect >(m, "FExtraMuzzleEffect")
         .def_readwrite("Particles", &FExtraMuzzleEffect::Particles)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APlayerStandIn(py::object m)
+void Export_pystes_APlayerStandIn(py::module &m)
 {
     py::class_< APlayerStandIn,  AActor   >(m, "APlayerStandIn")
         .def_readwrite("VfTable_IIGearLikenessConsumer", &APlayerStandIn::VfTable_IIGearLikenessConsumer)

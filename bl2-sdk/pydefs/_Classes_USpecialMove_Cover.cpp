@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpecialMove_Cover(py::object m)
+void Export_pystes_USpecialMove_Cover(py::module &m)
 {
     py::class_< USpecialMove_Cover,  UWillowAnimDefinition   >(m, "USpecialMove_Cover")
         .def("StaticClass", &USpecialMove_Cover::StaticClass, py::return_value_policy::reference)

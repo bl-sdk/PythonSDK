@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionDepthOfFieldFunction(py::object m)
+void Export_pystes_UMaterialExpressionDepthOfFieldFunction(py::module &m)
 {
     py::class_< UMaterialExpressionDepthOfFieldFunction,  UMaterialExpression   >(m, "UMaterialExpressionDepthOfFieldFunction")
         .def_readwrite("FunctionValue", &UMaterialExpressionDepthOfFieldFunction::FunctionValue)

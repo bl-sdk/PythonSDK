@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UVehicleSpawnStationGFxDefinition(py::object m)
+void Export_pystes_UVehicleSpawnStationGFxDefinition(py::module &m)
 {
     py::class_< UVehicleSpawnStationGFxDefinition,  UWillowGFxMovie3DDefinition   >(m, "UVehicleSpawnStationGFxDefinition")
         .def_readwrite("SupportedTags", &UVehicleSpawnStationGFxDefinition::SupportedTags)

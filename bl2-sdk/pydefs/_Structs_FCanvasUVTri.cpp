@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCanvasUVTri(py::object m)
+void Export_pystes_FCanvasUVTri(py::module &m)
 {
     py::class_< FCanvasUVTri >(m, "FCanvasUVTri")
         .def_readwrite("V0_Pos", &FCanvasUVTri::V0_Pos)

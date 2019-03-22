@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTexture2DMipMap(py::object m)
+void Export_pystes_FTexture2DMipMap(py::module &m)
 {
     py::class_< FTexture2DMipMap >(m, "FTexture2DMipMap")
         .def_readwrite("Data", &FTexture2DMipMap::Data)

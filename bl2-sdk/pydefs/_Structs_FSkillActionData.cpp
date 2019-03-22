@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSkillActionData(py::object m)
+void Export_pystes_FSkillActionData(py::module &m)
 {
     py::class_< FSkillActionData >(m, "FSkillActionData")
         .def_readwrite("ClientConsoleCommand", &FSkillActionData::ClientConsoleCommand)

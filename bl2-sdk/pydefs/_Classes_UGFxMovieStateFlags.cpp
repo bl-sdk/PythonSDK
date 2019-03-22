@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGFxMovieStateFlags(py::object m)
+void Export_pystes_UGFxMovieStateFlags(py::module &m)
 {
     py::class_< UGFxMovieStateFlags,  UGFxMovieState   >(m, "UGFxMovieStateFlags")
         .def_readwrite("CustomFlags", &UGFxMovieStateFlags::CustomFlags)

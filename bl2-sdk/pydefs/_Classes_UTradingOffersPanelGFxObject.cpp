@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTradingOffersPanelGFxObject(py::object m)
+void Export_pystes_UTradingOffersPanelGFxObject(py::module &m)
 {
     py::class_< UTradingOffersPanelGFxObject,  UBaseInventoryPanelGFxObject   >(m, "UTradingOffersPanelGFxObject")
         .def_readwrite("SelectedCellSuffix", &UTradingOffersPanelGFxObject::SelectedCellSuffix)

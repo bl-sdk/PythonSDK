@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_ChangeDenAllegiance(py::object m)
+void Export_pystes_UBehavior_ChangeDenAllegiance(py::module &m)
 {
     py::class_< UBehavior_ChangeDenAllegiance,  UBehaviorBase   >(m, "UBehavior_ChangeDenAllegiance")
         .def_readwrite("Allegiance", &UBehavior_ChangeDenAllegiance::Allegiance)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAITransformedName(py::object m)
+void Export_pystes_FAITransformedName(py::module &m)
 {
     py::class_< FAITransformedName >(m, "FAITransformedName")
         .def_readwrite("Type", &FAITransformedName::Type)

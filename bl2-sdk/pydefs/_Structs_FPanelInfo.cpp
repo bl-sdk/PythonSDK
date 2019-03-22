@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPanelInfo(py::object m)
+void Export_pystes_FPanelInfo(py::module &m)
 {
     py::class_< FPanelInfo >(m, "FPanelInfo")
         .def_readwrite("PanelName", &FPanelInfo::PanelName)

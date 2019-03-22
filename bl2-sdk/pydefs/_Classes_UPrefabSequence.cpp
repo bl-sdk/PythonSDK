@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPrefabSequence(py::object m)
+void Export_pystes_UPrefabSequence(py::module &m)
 {
     py::class_< UPrefabSequence,  USequence   >(m, "UPrefabSequence")
         .def_readwrite("OwnerPrefab", &UPrefabSequence::OwnerPrefab)

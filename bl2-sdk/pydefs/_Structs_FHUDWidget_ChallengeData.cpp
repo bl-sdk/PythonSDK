@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FHUDWidget_ChallengeData(py::object m)
+void Export_pystes_FHUDWidget_ChallengeData(py::module &m)
 {
     py::class_< FHUDWidget_ChallengeData >(m, "FHUDWidget_ChallengeData")
         .def_readwrite("Challenge", &FHUDWidget_ChallengeData::Challenge)

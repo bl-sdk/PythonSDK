@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCameraLerpKeyFrame(py::object m)
+void Export_pystes_FCameraLerpKeyFrame(py::module &m)
 {
     py::class_< FCameraLerpKeyFrame >(m, "FCameraLerpKeyFrame")
         .def_readwrite("Alpha", &FCameraLerpKeyFrame::Alpha)

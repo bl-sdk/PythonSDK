@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGameplayEventsHeader(py::object m)
+void Export_pystes_FGameplayEventsHeader(py::module &m)
 {
     py::class_< FGameplayEventsHeader >(m, "FGameplayEventsHeader")
         .def_readwrite("EngineVersion", &FGameplayEventsHeader::EngineVersion)

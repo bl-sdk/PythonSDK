@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWeaponAmmoResourceAttributeValueResolver(py::object m)
+void Export_pystes_UWeaponAmmoResourceAttributeValueResolver(py::module &m)
 {
     py::class_< UWeaponAmmoResourceAttributeValueResolver,  UAttributeValueResolver   >(m, "UWeaponAmmoResourceAttributeValueResolver")
         .def_readwrite("ValueIfNotMatched", &UWeaponAmmoResourceAttributeValueResolver::ValueIfNotMatched)

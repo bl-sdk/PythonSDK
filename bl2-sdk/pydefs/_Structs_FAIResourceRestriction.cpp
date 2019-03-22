@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAIResourceRestriction(py::object m)
+void Export_pystes_FAIResourceRestriction(py::module &m)
 {
     py::class_< FAIResourceRestriction >(m, "FAIResourceRestriction")
         .def_readwrite("MaxUsers", &FAIResourceRestriction::MaxUsers)

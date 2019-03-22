@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAnimNodeBlendSwitch(py::object m)
+void Export_pystes_UWillowAnimNodeBlendSwitch(py::module &m)
 {
     py::class_< UWillowAnimNodeBlendSwitch,  UAnimNodeBlendList   >(m, "UWillowAnimNodeBlendSwitch")
         .def_readwrite("BlendTime", &UWillowAnimNodeBlendSwitch::BlendTime)

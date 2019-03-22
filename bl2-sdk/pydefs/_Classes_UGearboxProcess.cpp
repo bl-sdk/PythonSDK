@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxProcess(py::object m)
+void Export_pystes_UGearboxProcess(py::module &m)
 {
     py::class_< UGearboxProcess,  UObject   >(m, "UGearboxProcess")
         .def_readwrite("FirstAttemptDelay", &UGearboxProcess::FirstAttemptDelay)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_AddMissionDirectives(py::object m)
+void Export_pystes_UBehavior_AddMissionDirectives(py::module &m)
 {
     py::class_< UBehavior_AddMissionDirectives,  UBehaviorBase   >(m, "UBehavior_AddMissionDirectives")
         .def_readwrite("MissionDirectives", &UBehavior_AddMissionDirectives::MissionDirectives)

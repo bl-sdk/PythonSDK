@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_ChargeTarget(py::object m)
+void Export_pystes_UAction_ChargeTarget(py::module &m)
 {
     py::class_< UAction_ChargeTarget,  UAction_BasicAttack   >(m, "UAction_ChargeTarget")
         .def_readwrite("MissDistance", &UAction_ChargeTarget::MissDistance)

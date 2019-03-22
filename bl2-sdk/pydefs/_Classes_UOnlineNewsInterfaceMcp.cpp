@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineNewsInterfaceMcp(py::object m)
+void Export_pystes_UOnlineNewsInterfaceMcp(py::module &m)
 {
     py::class_< UOnlineNewsInterfaceMcp,  UMCPBase   >(m, "UOnlineNewsInterfaceMcp")
         .def_readwrite("NewsItems", &UOnlineNewsInterfaceMcp::NewsItems)

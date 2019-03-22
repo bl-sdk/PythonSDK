@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimMetaData_SkelControl(py::object m)
+void Export_pystes_UAnimMetaData_SkelControl(py::module &m)
 {
     py::class_< UAnimMetaData_SkelControl,  UAnimMetaData   >(m, "UAnimMetaData_SkelControl")
         .def_readwrite("SkelControlNameList", &UAnimMetaData_SkelControl::SkelControlNameList)

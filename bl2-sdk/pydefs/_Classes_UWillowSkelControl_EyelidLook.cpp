@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSkelControl_EyelidLook(py::object m)
+void Export_pystes_UWillowSkelControl_EyelidLook(py::module &m)
 {
     py::class_< UWillowSkelControl_EyelidLook,  USkelControlSingleBone   >(m, "UWillowSkelControl_EyelidLook")
         .def_readwrite("OriginalHorizAngle", &UWillowSkelControl_EyelidLook::OriginalHorizAngle)

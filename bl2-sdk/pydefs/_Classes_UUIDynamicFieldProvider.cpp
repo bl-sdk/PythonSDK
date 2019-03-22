@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIDynamicFieldProvider(py::object m)
+void Export_pystes_UUIDynamicFieldProvider(py::module &m)
 {
     py::class_< UUIDynamicFieldProvider,  UUIDataProvider   >(m, "UUIDynamicFieldProvider")
         .def_readwrite("PersistentDataFields", &UUIDynamicFieldProvider::PersistentDataFields)

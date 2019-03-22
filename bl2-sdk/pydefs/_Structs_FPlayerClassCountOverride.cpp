@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPlayerClassCountOverride(py::object m)
+void Export_pystes_FPlayerClassCountOverride(py::module &m)
 {
     py::class_< FPlayerClassCountOverride >(m, "FPlayerClassCountOverride")
         .def_readwrite("Override", &FPlayerClassCountOverride::Override)

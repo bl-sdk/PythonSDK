@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMeshComponent(py::object m)
+void Export_pystes_UMeshComponent(py::module &m)
 {
     py::class_< UMeshComponent,  UPrimitiveComponent   >(m, "UMeshComponent")
         .def_readwrite("Materials", &UMeshComponent::Materials)

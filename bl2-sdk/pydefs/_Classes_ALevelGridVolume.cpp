@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ALevelGridVolume(py::object m)
+void Export_pystes_ALevelGridVolume(py::module &m)
 {
     py::class_< ALevelGridVolume,  AVolume   >(m, "ALevelGridVolume")
         .def_readwrite("LevelGridVolumeName", &ALevelGridVolume::LevelGridVolumeName)

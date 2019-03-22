@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FFlagDefinitionInitialization(py::object m)
+void Export_pystes_FFlagDefinitionInitialization(py::module &m)
 {
     py::class_< FFlagDefinitionInitialization >(m, "FFlagDefinitionInitialization")
         .def_readwrite("FlagToSet", &FFlagDefinitionInitialization::FlagToSet)

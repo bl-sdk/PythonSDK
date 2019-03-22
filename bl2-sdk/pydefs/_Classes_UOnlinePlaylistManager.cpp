@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlinePlaylistManager(py::object m)
+void Export_pystes_UOnlinePlaylistManager(py::module &m)
 {
     py::class_< UOnlinePlaylistManager,  UObject   >(m, "UOnlinePlaylistManager")
         .def_readwrite("VfTable_FTickableObject", &UOnlinePlaylistManager::VfTable_FTickableObject)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTerrainFoliageMesh(py::object m)
+void Export_pystes_FTerrainFoliageMesh(py::module &m)
 {
     py::class_< FTerrainFoliageMesh >(m, "FTerrainFoliageMesh")
         .def_readwrite("StaticMesh", &FTerrainFoliageMesh::StaticMesh)

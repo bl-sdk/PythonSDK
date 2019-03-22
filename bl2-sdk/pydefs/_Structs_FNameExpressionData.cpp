@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FNameExpressionData(py::object m)
+void Export_pystes_FNameExpressionData(py::module &m)
 {
     py::class_< FNameExpressionData >(m, "FNameExpressionData")
         .def_readwrite("Expressions", &FNameExpressionData::Expressions)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActorFactoryApexDestructible(py::object m)
+void Export_pystes_UActorFactoryApexDestructible(py::module &m)
 {
     py::class_< UActorFactoryApexDestructible,  UActorFactory   >(m, "UActorFactoryApexDestructible")
         .def_readwrite("RBChannel", &UActorFactoryApexDestructible::RBChannel)

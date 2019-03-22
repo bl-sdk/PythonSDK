@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_ClearStatusEffects(py::object m)
+void Export_pystes_UBehavior_ClearStatusEffects(py::module &m)
 {
     py::class_< UBehavior_ClearStatusEffects,  UBehaviorBase   >(m, "UBehavior_ClearStatusEffects")
         .def("StaticClass", &UBehavior_ClearStatusEffects::StaticClass, py::return_value_policy::reference)

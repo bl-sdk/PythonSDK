@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSpeechRecognizedWord(py::object m)
+void Export_pystes_FSpeechRecognizedWord(py::module &m)
 {
     py::class_< FSpeechRecognizedWord >(m, "FSpeechRecognizedWord")
         .def_readwrite("WordId", &FSpeechRecognizedWord::WordId)

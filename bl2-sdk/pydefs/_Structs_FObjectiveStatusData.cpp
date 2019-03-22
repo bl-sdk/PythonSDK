@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FObjectiveStatusData(py::object m)
+void Export_pystes_FObjectiveStatusData(py::module &m)
 {
     py::class_< FObjectiveStatusData >(m, "FObjectiveStatusData")
         .def_readwrite("Objectives", &FObjectiveStatusData::Objectives)

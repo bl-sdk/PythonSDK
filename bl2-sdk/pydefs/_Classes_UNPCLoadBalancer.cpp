@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNPCLoadBalancer(py::object m)
+void Export_pystes_UNPCLoadBalancer(py::module &m)
 {
     py::class_< UNPCLoadBalancer,  UObject   >(m, "UNPCLoadBalancer")
         .def_readwrite("TheList", &UNPCLoadBalancer::TheList)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_URB_RadialImpulseComponent(py::object m)
+void Export_pystes_URB_RadialImpulseComponent(py::module &m)
 {
     py::class_< URB_RadialImpulseComponent,  UPrimitiveComponent   >(m, "URB_RadialImpulseComponent")
         .def_readwrite("ImpulseFalloff", &URB_RadialImpulseComponent::ImpulseFalloff)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FWorldLightingOverride(py::object m)
+void Export_pystes_FWorldLightingOverride(py::module &m)
 {
     py::class_< FWorldLightingOverride >(m, "FWorldLightingOverride")
         .def_readwrite("DirectionOffset", &FWorldLightingOverride::DirectionOffset)

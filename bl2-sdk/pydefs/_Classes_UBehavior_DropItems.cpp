@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_DropItems(py::object m)
+void Export_pystes_UBehavior_DropItems(py::module &m)
 {
     py::class_< UBehavior_DropItems,  UBehaviorBase   >(m, "UBehavior_DropItems")
         .def_readwrite("ItemDropOffset", &UBehavior_DropItems::ItemDropOffset)

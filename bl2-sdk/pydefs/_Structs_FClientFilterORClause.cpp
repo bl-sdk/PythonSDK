@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FClientFilterORClause(py::object m)
+void Export_pystes_FClientFilterORClause(py::module &m)
 {
     py::class_< FClientFilterORClause >(m, "FClientFilterORClause")
         .def_readwrite("OrParams", &FClientFilterORClause::OrParams)

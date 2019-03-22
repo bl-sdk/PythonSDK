@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSkelControl_TurretConstrained(py::object m)
+void Export_pystes_UWillowSkelControl_TurretConstrained(py::module &m)
 {
     py::class_< UWillowSkelControl_TurretConstrained,  USkelControlSingleBone   >(m, "UWillowSkelControl_TurretConstrained")
         .def_readwrite("MaxAngle", &UWillowSkelControl_TurretConstrained::MaxAngle)

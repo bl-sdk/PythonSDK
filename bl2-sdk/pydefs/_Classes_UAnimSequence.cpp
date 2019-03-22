@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimSequence(py::object m)
+void Export_pystes_UAnimSequence(py::module &m)
 {
     py::class_< UAnimSequence,  UObject   >(m, "UAnimSequence")
         .def_readwrite("SequenceName", &UAnimSequence::SequenceName)

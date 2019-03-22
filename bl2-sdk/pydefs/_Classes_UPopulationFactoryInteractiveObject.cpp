@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPopulationFactoryInteractiveObject(py::object m)
+void Export_pystes_UPopulationFactoryInteractiveObject(py::module &m)
 {
     py::class_< UPopulationFactoryInteractiveObject,  UPopulationFactory   >(m, "UPopulationFactoryInteractiveObject")
         .def_readwrite("ObjectDefinition", &UPopulationFactoryInteractiveObject::ObjectDefinition)

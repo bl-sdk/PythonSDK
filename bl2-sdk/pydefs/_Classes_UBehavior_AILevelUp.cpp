@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_AILevelUp(py::object m)
+void Export_pystes_UBehavior_AILevelUp(py::module &m)
 {
     py::class_< UBehavior_AILevelUp,  UBehaviorBase   >(m, "UBehavior_AILevelUp")
         .def_readwrite("MaxLevelUps", &UBehavior_AILevelUp::MaxLevelUps)

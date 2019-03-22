@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCommandlet(py::object m)
+void Export_pystes_UCommandlet(py::module &m)
 {
     py::class_< UCommandlet,  UObject   >(m, "UCommandlet")
         .def_readwrite("HelpDescription", &UCommandlet::HelpDescription)

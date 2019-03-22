@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AFluidSurfaceActor(py::object m)
+void Export_pystes_AFluidSurfaceActor(py::module &m)
 {
     py::class_< AFluidSurfaceActor,  AActor   >(m, "AFluidSurfaceActor")
         .def_readwrite("FluidComponent", &AFluidSurfaceActor::FluidComponent)

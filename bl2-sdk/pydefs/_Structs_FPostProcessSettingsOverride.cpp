@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPostProcessSettingsOverride(py::object m)
+void Export_pystes_FPostProcessSettingsOverride(py::module &m)
 {
     py::class_< FPostProcessSettingsOverride >(m, "FPostProcessSettingsOverride")
         .def_readwrite("Settings", &FPostProcessSettingsOverride::Settings)

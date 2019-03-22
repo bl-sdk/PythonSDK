@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FWillowStatProperty(py::object m)
+void Export_pystes_FWillowStatProperty(py::module &m)
 {
     py::class_< FWillowStatProperty >(m, "FWillowStatProperty")
         .def_readwrite("Id", &FWillowStatProperty::Id)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_AttachAOEStatusEffect(py::object m)
+void Export_pystes_UBehavior_AttachAOEStatusEffect(py::module &m)
 {
     py::class_< UBehavior_AttachAOEStatusEffect,  UBehaviorBase   >(m, "UBehavior_AttachAOEStatusEffect")
         .def_readwrite("StatusEffectDamageType", &UBehavior_AttachAOEStatusEffect::StatusEffectDamageType)

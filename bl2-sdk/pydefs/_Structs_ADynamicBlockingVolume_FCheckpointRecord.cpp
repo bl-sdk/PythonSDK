@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ADynamicBlockingVolume_FCheckpointRecord(py::object m)
+void Export_pystes_ADynamicBlockingVolume_FCheckpointRecord(py::module &m)
 {
     py::class_< ADynamicBlockingVolume_FCheckpointRecord >(m, "ADynamicBlockingVolume_FCheckpointRecord")
         .def_readwrite("Location", &ADynamicBlockingVolume_FCheckpointRecord::Location)

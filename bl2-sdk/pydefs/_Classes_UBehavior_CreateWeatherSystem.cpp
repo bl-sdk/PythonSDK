@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_CreateWeatherSystem(py::object m)
+void Export_pystes_UBehavior_CreateWeatherSystem(py::module &m)
 {
     py::class_< UBehavior_CreateWeatherSystem,  UBehaviorBase   >(m, "UBehavior_CreateWeatherSystem")
         .def_readwrite("WeatherSystemTemplate", &UBehavior_CreateWeatherSystem::WeatherSystemTemplate)

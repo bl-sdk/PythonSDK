@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowScrollingList(py::object m)
+void Export_pystes_UWillowScrollingList(py::module &m)
 {
     py::class_< UWillowScrollingList,  UGFxClikWidget   >(m, "UWillowScrollingList")
         .def_readwrite("DataProviderStack", &UWillowScrollingList::DataProviderStack)

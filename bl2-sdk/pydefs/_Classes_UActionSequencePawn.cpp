@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActionSequencePawn(py::object m)
+void Export_pystes_UActionSequencePawn(py::module &m)
 {
     py::class_< UActionSequencePawn,  UActionSequence   >(m, "UActionSequencePawn")
         .def_readwrite("MyGearboxMind", &UActionSequencePawn::MyGearboxMind)

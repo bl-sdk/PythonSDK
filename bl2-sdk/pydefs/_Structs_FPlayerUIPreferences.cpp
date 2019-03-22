@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPlayerUIPreferences(py::object m)
+void Export_pystes_FPlayerUIPreferences(py::module &m)
 {
     py::class_< FPlayerUIPreferences >(m, "FPlayerUIPreferences")
         .def_readwrite("CharacterName", &FPlayerUIPreferences::CharacterName)

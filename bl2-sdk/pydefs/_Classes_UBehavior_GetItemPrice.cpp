@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_GetItemPrice(py::object m)
+void Export_pystes_UBehavior_GetItemPrice(py::module &m)
 {
     py::class_< UBehavior_GetItemPrice,  UBehaviorBase   >(m, "UBehavior_GetItemPrice")
         .def_readwrite("Item", &UBehavior_GetItemPrice::Item)

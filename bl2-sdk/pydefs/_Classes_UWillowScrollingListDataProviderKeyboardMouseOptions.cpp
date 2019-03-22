@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowScrollingListDataProviderKeyboardMouseOptions(py::object m)
+void Export_pystes_UWillowScrollingListDataProviderKeyboardMouseOptions(py::module &m)
 {
     py::class_< UWillowScrollingListDataProviderKeyboardMouseOptions,  UWillowScrollingListDataProviderOptionsBase   >(m, "UWillowScrollingListDataProviderKeyboardMouseOptions")
         .def_readwrite("WPCOwner", &UWillowScrollingListDataProviderKeyboardMouseOptions::WPCOwner)

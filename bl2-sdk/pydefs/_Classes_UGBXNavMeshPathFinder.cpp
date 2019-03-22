@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGBXNavMeshPathFinder(py::object m)
+void Export_pystes_UGBXNavMeshPathFinder(py::module &m)
 {
     py::class_< UGBXNavMeshPathFinder,  UObject   >(m, "UGBXNavMeshPathFinder")
         .def_readwrite("PathModifiers", &UGBXNavMeshPathFinder::PathModifiers)

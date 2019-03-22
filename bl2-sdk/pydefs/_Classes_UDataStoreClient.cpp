@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDataStoreClient(py::object m)
+void Export_pystes_UDataStoreClient(py::module &m)
 {
     py::class_< UDataStoreClient,  UUIRoot   >(m, "UDataStoreClient")
         .def_readwrite("GlobalDataStoreClasses", &UDataStoreClient::GlobalDataStoreClasses)

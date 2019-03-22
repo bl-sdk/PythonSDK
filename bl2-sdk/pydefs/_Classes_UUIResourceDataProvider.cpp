@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIResourceDataProvider(py::object m)
+void Export_pystes_UUIResourceDataProvider(py::module &m)
 {
     py::class_< UUIResourceDataProvider,  UUIPropertyDataProvider   >(m, "UUIResourceDataProvider")
         .def_readwrite("VfTable_IUIListElementProvider", &UUIResourceDataProvider::VfTable_IUIListElementProvider)

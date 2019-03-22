@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSeqAct_KillPawnBasedOnAllegiance(py::object m)
+void Export_pystes_UWillowSeqAct_KillPawnBasedOnAllegiance(py::module &m)
 {
     py::class_< UWillowSeqAct_KillPawnBasedOnAllegiance,  USequenceAction   >(m, "UWillowSeqAct_KillPawnBasedOnAllegiance")
         .def_readwrite("AllegianceToBaseKillsOn", &UWillowSeqAct_KillPawnBasedOnAllegiance::AllegianceToBaseKillsOn)

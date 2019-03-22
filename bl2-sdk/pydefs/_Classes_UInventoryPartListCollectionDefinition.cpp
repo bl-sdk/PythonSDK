@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInventoryPartListCollectionDefinition(py::object m)
+void Export_pystes_UInventoryPartListCollectionDefinition(py::module &m)
 {
     py::class_< UInventoryPartListCollectionDefinition,  UGBXDefinition   >(m, "UInventoryPartListCollectionDefinition")
         .def_readwrite("PartReplacementMode", &UInventoryPartListCollectionDefinition::PartReplacementMode)

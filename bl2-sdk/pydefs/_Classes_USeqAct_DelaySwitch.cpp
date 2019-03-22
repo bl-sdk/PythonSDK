@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_DelaySwitch(py::object m)
+void Export_pystes_USeqAct_DelaySwitch(py::module &m)
 {
     py::class_< USeqAct_DelaySwitch,  USeqAct_Latent   >(m, "USeqAct_DelaySwitch")
         .def_readwrite("LinkCount", &USeqAct_DelaySwitch::LinkCount)

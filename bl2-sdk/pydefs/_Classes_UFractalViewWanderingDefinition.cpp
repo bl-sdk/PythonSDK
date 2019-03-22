@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFractalViewWanderingDefinition(py::object m)
+void Export_pystes_UFractalViewWanderingDefinition(py::module &m)
 {
     py::class_< UFractalViewWanderingDefinition,  UGBXDefinition   >(m, "UFractalViewWanderingDefinition")
         .def_readwrite("PseudoRandomPoints", &UFractalViewWanderingDefinition::PseudoRandomPoints)

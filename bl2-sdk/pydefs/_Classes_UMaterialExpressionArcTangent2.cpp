@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionArcTangent2(py::object m)
+void Export_pystes_UMaterialExpressionArcTangent2(py::module &m)
 {
     py::class_< UMaterialExpressionArcTangent2,  UMaterialExpression   >(m, "UMaterialExpressionArcTangent2")
         .def_readwrite("InputX", &UMaterialExpressionArcTangent2::InputX)

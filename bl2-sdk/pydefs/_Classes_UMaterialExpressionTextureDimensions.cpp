@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionTextureDimensions(py::object m)
+void Export_pystes_UMaterialExpressionTextureDimensions(py::module &m)
 {
     py::class_< UMaterialExpressionTextureDimensions,  UMaterialExpression   >(m, "UMaterialExpressionTextureDimensions")
         .def_readwrite("Texture", &UMaterialExpressionTextureDimensions::Texture)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLensFlareElementCurvePair(py::object m)
+void Export_pystes_FLensFlareElementCurvePair(py::module &m)
 {
     py::class_< FLensFlareElementCurvePair >(m, "FLensFlareElementCurvePair")
         .def_readwrite("CurveName", &FLensFlareElementCurvePair::CurveName)

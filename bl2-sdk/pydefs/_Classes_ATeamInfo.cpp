@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ATeamInfo(py::object m)
+void Export_pystes_ATeamInfo(py::module &m)
 {
     py::class_< ATeamInfo,  AReplicationInfo   >(m, "ATeamInfo")
         .def_readwrite("TeamName", &ATeamInfo::TeamName)

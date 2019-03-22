@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_URB_BodyInstance(py::object m)
+void Export_pystes_URB_BodyInstance(py::module &m)
 {
     py::class_< URB_BodyInstance,  UObject   >(m, "URB_BodyInstance")
         .def_readwrite("OwnerComponent", &URB_BodyInstance::OwnerComponent)

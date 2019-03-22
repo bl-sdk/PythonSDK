@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDownloadableContentEnumerator(py::object m)
+void Export_pystes_UDownloadableContentEnumerator(py::module &m)
 {
     py::class_< UDownloadableContentEnumerator,  UObject   >(m, "UDownloadableContentEnumerator")
         .def_readwrite("DLCBundles", &UDownloadableContentEnumerator::DLCBundles)

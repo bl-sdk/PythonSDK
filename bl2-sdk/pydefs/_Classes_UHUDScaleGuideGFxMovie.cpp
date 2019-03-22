@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHUDScaleGuideGFxMovie(py::object m)
+void Export_pystes_UHUDScaleGuideGFxMovie(py::module &m)
 {
     py::class_< UHUDScaleGuideGFxMovie,  UWillowGFxMovie3D   >(m, "UHUDScaleGuideGFxMovie")
         .def_readwrite("Arrow_Up", &UHUDScaleGuideGFxMovie::Arrow_Up)

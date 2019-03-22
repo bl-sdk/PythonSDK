@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActionSequence(py::object m)
+void Export_pystes_UActionSequence(py::module &m)
 {
     py::class_< UActionSequence,  UObject   >(m, "UActionSequence")
         .def_readwrite("ResourcesUsed", &UActionSequence::ResourcesUsed)

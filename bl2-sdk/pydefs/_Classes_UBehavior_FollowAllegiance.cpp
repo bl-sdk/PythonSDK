@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_FollowAllegiance(py::object m)
+void Export_pystes_UBehavior_FollowAllegiance(py::module &m)
 {
     py::class_< UBehavior_FollowAllegiance,  UBehaviorBase   >(m, "UBehavior_FollowAllegiance")
         .def_readwrite("Action", &UBehavior_FollowAllegiance::Action)

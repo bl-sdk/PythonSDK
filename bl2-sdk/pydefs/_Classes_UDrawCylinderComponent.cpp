@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDrawCylinderComponent(py::object m)
+void Export_pystes_UDrawCylinderComponent(py::module &m)
 {
     py::class_< UDrawCylinderComponent,  UPrimitiveComponent   >(m, "UDrawCylinderComponent")
         .def_readwrite("CylinderColor", &UDrawCylinderComponent::CylinderColor)

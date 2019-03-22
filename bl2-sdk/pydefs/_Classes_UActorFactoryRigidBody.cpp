@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActorFactoryRigidBody(py::object m)
+void Export_pystes_UActorFactoryRigidBody(py::module &m)
 {
     py::class_< UActorFactoryRigidBody,  UActorFactoryDynamicSM   >(m, "UActorFactoryRigidBody")
         .def_readwrite("InitialVelocity", &UActorFactoryRigidBody::InitialVelocity)

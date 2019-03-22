@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPlayerStorageArrayProvider(py::object m)
+void Export_pystes_FPlayerStorageArrayProvider(py::module &m)
 {
     py::class_< FPlayerStorageArrayProvider >(m, "FPlayerStorageArrayProvider")
         .def_readwrite("PlayerStorageId", &FPlayerStorageArrayProvider::PlayerStorageId)

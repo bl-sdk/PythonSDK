@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGFxMovie_StateParent(py::object m)
+void Export_pystes_UGFxMovie_StateParent(py::module &m)
 {
     py::class_< UGFxMovie_StateParent,  UGearboxGFxMovie   >(m, "UGFxMovie_StateParent")
         .def_readwrite("StateClass", &UGFxMovie_StateParent::StateClass)

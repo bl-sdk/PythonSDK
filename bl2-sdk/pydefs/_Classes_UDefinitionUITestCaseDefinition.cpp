@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDefinitionUITestCaseDefinition(py::object m)
+void Export_pystes_UDefinitionUITestCaseDefinition(py::module &m)
 {
     py::class_< UDefinitionUITestCaseDefinition,  UGBXDefinition   >(m, "UDefinitionUITestCaseDefinition")
         .def_readwrite("ConstantFloat", &UDefinitionUITestCaseDefinition::ConstantFloat)

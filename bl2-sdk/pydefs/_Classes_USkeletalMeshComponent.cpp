@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USkeletalMeshComponent(py::object m)
+void Export_pystes_USkeletalMeshComponent(py::module &m)
 {
     py::class_< USkeletalMeshComponent,  UMeshComponent   >(m, "USkeletalMeshComponent")
         .def_readwrite("VfTable_IIAnimBehavior", &USkeletalMeshComponent::VfTable_IIAnimBehavior)

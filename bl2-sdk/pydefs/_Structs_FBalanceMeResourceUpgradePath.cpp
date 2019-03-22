@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBalanceMeResourceUpgradePath(py::object m)
+void Export_pystes_FBalanceMeResourceUpgradePath(py::module &m)
 {
     py::class_< FBalanceMeResourceUpgradePath >(m, "FBalanceMeResourceUpgradePath")
         .def_readwrite("ResourceName", &FBalanceMeResourceUpgradePath::ResourceName)

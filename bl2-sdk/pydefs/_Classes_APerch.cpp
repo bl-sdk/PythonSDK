@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APerch(py::object m)
+void Export_pystes_APerch(py::module &m)
 {
     py::class_< APerch,  AGearboxAIMoveNode   >(m, "APerch")
         .def_readwrite("VfTable_IIInstanceData", &APerch::VfTable_IIInstanceData)

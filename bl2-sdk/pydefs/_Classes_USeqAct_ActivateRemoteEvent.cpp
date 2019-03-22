@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_ActivateRemoteEvent(py::object m)
+void Export_pystes_USeqAct_ActivateRemoteEvent(py::module &m)
 {
     py::class_< USeqAct_ActivateRemoteEvent,  USequenceAction   >(m, "USeqAct_ActivateRemoteEvent")
         .def_readwrite("Instigator", &USeqAct_ActivateRemoteEvent::Instigator)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxRenderTextureManager(py::object m)
+void Export_pystes_UGearboxRenderTextureManager(py::module &m)
 {
     py::class_< UGearboxRenderTextureManager,  UObject   >(m, "UGearboxRenderTextureManager")
         .def_readwrite("FreeList2D", &UGearboxRenderTextureManager::FreeList2D)

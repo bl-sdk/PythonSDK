@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_AICloak(py::object m)
+void Export_pystes_UBehavior_AICloak(py::module &m)
 {
     py::class_< UBehavior_AICloak,  UBehaviorBase   >(m, "UBehavior_AICloak")
         .def_readwrite("NewCloakBehavior", &UBehavior_AICloak::NewCloakBehavior)

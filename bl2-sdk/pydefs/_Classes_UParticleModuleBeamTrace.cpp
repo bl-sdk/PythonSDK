@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleBeamTrace(py::object m)
+void Export_pystes_UParticleModuleBeamTrace(py::module &m)
 {
     py::class_< UParticleModuleBeamTrace,  UParticleModuleBeamTarget   >(m, "UParticleModuleBeamTrace")
         .def_readwrite("TraceExtent", &UParticleModuleBeamTrace::TraceExtent)

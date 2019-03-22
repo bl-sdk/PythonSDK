@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AKAsset(py::object m)
+void Export_pystes_AKAsset(py::module &m)
 {
     py::class_< AKAsset,  AActor   >(m, "AKAsset")
         .def_readwrite("SkeletalMeshComponent", &AKAsset::SkeletalMeshComponent)

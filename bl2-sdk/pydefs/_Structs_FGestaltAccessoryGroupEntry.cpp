@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGestaltAccessoryGroupEntry(py::object m)
+void Export_pystes_FGestaltAccessoryGroupEntry(py::module &m)
 {
     py::class_< FGestaltAccessoryGroupEntry >(m, "FGestaltAccessoryGroupEntry")
         .def_readwrite("GroupName", &FGestaltAccessoryGroupEntry::GroupName)

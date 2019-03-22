@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGFxMovieDrawStyleMesh(py::object m)
+void Export_pystes_UGFxMovieDrawStyleMesh(py::module &m)
 {
     py::class_< UGFxMovieDrawStyleMesh,  UGFxMovieDrawStyleComponent   >(m, "UGFxMovieDrawStyleMesh")
         .def_readwrite("MeshComponentArchetype", &UGFxMovieDrawStyleMesh::MeshComponentArchetype)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTerrainWeightMapTexture(py::object m)
+void Export_pystes_UTerrainWeightMapTexture(py::module &m)
 {
     py::class_< UTerrainWeightMapTexture,  UTexture2D   >(m, "UTerrainWeightMapTexture")
         .def("StaticClass", &UTerrainWeightMapTexture::StaticClass, py::return_value_policy::reference)

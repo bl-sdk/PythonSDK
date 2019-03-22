@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_GiveChallengeToPlayer(py::object m)
+void Export_pystes_UBehavior_GiveChallengeToPlayer(py::module &m)
 {
     py::class_< UBehavior_GiveChallengeToPlayer,  UBehaviorBase   >(m, "UBehavior_GiveChallengeToPlayer")
         .def_readwrite("Challenge", &UBehavior_GiveChallengeToPlayer::Challenge)

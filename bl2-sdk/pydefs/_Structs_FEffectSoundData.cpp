@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FEffectSoundData(py::object m)
+void Export_pystes_FEffectSoundData(py::module &m)
 {
     py::class_< FEffectSoundData >(m, "FEffectSoundData")
         .def_readwrite("Type", &FEffectSoundData::Type)

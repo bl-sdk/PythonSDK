@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxAccountGFxObject(py::object m)
+void Export_pystes_UGearboxAccountGFxObject(py::module &m)
 {
     py::class_< UGearboxAccountGFxObject,  UGFxObject   >(m, "UGearboxAccountGFxObject")
         .def("StaticClass", &UGearboxAccountGFxObject::StaticClass, py::return_value_policy::reference)

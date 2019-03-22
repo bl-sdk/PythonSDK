@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_HeadLookHold(py::object m)
+void Export_pystes_UBehavior_HeadLookHold(py::module &m)
 {
     py::class_< UBehavior_HeadLookHold,  UBehaviorBase   >(m, "UBehavior_HeadLookHold")
         .def_readwrite("Reason", &UBehavior_HeadLookHold::Reason)

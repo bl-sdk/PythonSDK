@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UModelComponent(py::object m)
+void Export_pystes_UModelComponent(py::module &m)
 {
     py::class_< UModelComponent,  UPrimitiveComponent   >(m, "UModelComponent")
         .def_readwrite("Model", &UModelComponent::Model)

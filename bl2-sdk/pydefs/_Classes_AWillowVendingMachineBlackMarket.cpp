@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowVendingMachineBlackMarket(py::object m)
+void Export_pystes_AWillowVendingMachineBlackMarket(py::module &m)
 {
     py::class_< AWillowVendingMachineBlackMarket,  AWillowVendingMachineBase   >(m, "AWillowVendingMachineBlackMarket")
         .def_readwrite("DefinitionData", &AWillowVendingMachineBlackMarket::DefinitionData)

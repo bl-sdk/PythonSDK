@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FStatColorMapEntry(py::object m)
+void Export_pystes_FStatColorMapEntry(py::module &m)
 {
     py::class_< FStatColorMapEntry >(m, "FStatColorMapEntry")
         .def_readwrite("In", &FStatColorMapEntry::In)

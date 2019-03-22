@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAttributePresentationListDefinition(py::object m)
+void Export_pystes_UAttributePresentationListDefinition(py::module &m)
 {
     py::class_< UAttributePresentationListDefinition,  UGBXDefinition   >(m, "UAttributePresentationListDefinition")
         .def_readwrite("Attributes", &UAttributePresentationListDefinition::Attributes)

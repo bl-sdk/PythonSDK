@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_AimAtThreat(py::object m)
+void Export_pystes_UAction_AimAtThreat(py::module &m)
 {
     py::class_< UAction_AimAtThreat,  UWillowActionSequencePawn   >(m, "UAction_AimAtThreat")
         .def("StaticClass", &UAction_AimAtThreat::StaticClass, py::return_value_policy::reference)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpecialMove_Spawned(py::object m)
+void Export_pystes_USpecialMove_Spawned(py::module &m)
 {
     py::class_< USpecialMove_Spawned,  UWillowAnimDefinition   >(m, "USpecialMove_Spawned")
         .def_readwrite("StretchyStartTime", &USpecialMove_Spawned::StretchyStartTime)

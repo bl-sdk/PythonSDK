@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_PrepareMapChange(py::object m)
+void Export_pystes_USeqAct_PrepareMapChange(py::module &m)
 {
     py::class_< USeqAct_PrepareMapChange,  USeqAct_Latent   >(m, "USeqAct_PrepareMapChange")
         .def_readwrite("MainLevelName", &USeqAct_PrepareMapChange::MainLevelName)

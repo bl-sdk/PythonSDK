@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ALiftActionSkill(py::object m)
+void Export_pystes_ALiftActionSkill(py::module &m)
 {
     py::class_< ALiftActionSkill,  AActionSkill   >(m, "ALiftActionSkill")
         .def_readwrite("CurrentState", &ALiftActionSkill::CurrentState)

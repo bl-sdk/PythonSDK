@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSpeedTravelData(py::object m)
+void Export_pystes_FSpeedTravelData(py::module &m)
 {
     py::class_< FSpeedTravelData >(m, "FSpeedTravelData")
         .def_readwrite("OriginLeaveTime", &FSpeedTravelData::OriginLeaveTime)

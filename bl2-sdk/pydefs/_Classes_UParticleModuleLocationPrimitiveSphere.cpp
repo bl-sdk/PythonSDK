@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleLocationPrimitiveSphere(py::object m)
+void Export_pystes_UParticleModuleLocationPrimitiveSphere(py::module &m)
 {
     py::class_< UParticleModuleLocationPrimitiveSphere,  UParticleModuleLocationBase   >(m, "UParticleModuleLocationPrimitiveSphere")
         .def_readwrite("StartRadius", &UParticleModuleLocationPrimitiveSphere::StartRadius)

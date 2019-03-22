@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSelectedTerrainVertex(py::object m)
+void Export_pystes_FSelectedTerrainVertex(py::module &m)
 {
     py::class_< FSelectedTerrainVertex >(m, "FSelectedTerrainVertex")
         .def_readwrite("X", &FSelectedTerrainVertex::X)

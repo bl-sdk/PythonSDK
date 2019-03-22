@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMarketPlaceFilter(py::object m)
+void Export_pystes_FMarketPlaceFilter(py::module &m)
 {
     py::class_< FMarketPlaceFilter >(m, "FMarketPlaceFilter")
         .def_readwrite("Tag", &FMarketPlaceFilter::Tag)

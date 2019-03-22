@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPlayerOwnedComponent(py::object m)
+void Export_pystes_FPlayerOwnedComponent(py::module &m)
 {
     py::class_< FPlayerOwnedComponent >(m, "FPlayerOwnedComponent")
         .def_readwrite("PlayerOwner", &FPlayerOwnedComponent::PlayerOwner)

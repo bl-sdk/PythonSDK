@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UILightProjectileManagerOwner(py::object m)
+void Export_pystes_UILightProjectileManagerOwner(py::module &m)
 {
     py::class_< UILightProjectileManagerOwner,  UInterface   >(m, "UILightProjectileManagerOwner")
         .def("StaticClass", &UILightProjectileManagerOwner::StaticClass, py::return_value_policy::reference)

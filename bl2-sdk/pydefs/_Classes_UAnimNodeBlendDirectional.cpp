@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNodeBlendDirectional(py::object m)
+void Export_pystes_UAnimNodeBlendDirectional(py::module &m)
 {
     py::class_< UAnimNodeBlendDirectional,  UAnimNodeBlendBase   >(m, "UAnimNodeBlendDirectional")
         .def_readwrite("DirDegreesPerSecond", &UAnimNodeBlendDirectional::DirDegreesPerSecond)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFrontEndPlayerListGFxObject(py::object m)
+void Export_pystes_UFrontEndPlayerListGFxObject(py::module &m)
 {
     py::class_< UFrontEndPlayerListGFxObject,  UGFxObject   >(m, "UFrontEndPlayerListGFxObject")
         .def_readwrite("OwningMovie", &UFrontEndPlayerListGFxObject::OwningMovie)

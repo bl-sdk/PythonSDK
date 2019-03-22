@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInputActionDefinition(py::object m)
+void Export_pystes_UInputActionDefinition(py::module &m)
 {
     py::class_< UInputActionDefinition,  UGBXDefinition   >(m, "UInputActionDefinition")
         .def_readwrite("OnBegin", &UInputActionDefinition::OnBegin)

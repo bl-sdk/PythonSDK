@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SetUsabilityCost(py::object m)
+void Export_pystes_UBehavior_SetUsabilityCost(py::module &m)
 {
     py::class_< UBehavior_SetUsabilityCost,  UBehaviorBase   >(m, "UBehavior_SetUsabilityCost")
         .def_readwrite("ChangeCost", &UBehavior_SetUsabilityCost::ChangeCost)

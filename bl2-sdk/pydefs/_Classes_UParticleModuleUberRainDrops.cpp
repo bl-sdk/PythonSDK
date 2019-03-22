@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleUberRainDrops(py::object m)
+void Export_pystes_UParticleModuleUberRainDrops(py::module &m)
 {
     py::class_< UParticleModuleUberRainDrops,  UParticleModule   >(m, "UParticleModuleUberRainDrops")
         .def_readwrite("LifetimeMin", &UParticleModuleUberRainDrops::LifetimeMin)

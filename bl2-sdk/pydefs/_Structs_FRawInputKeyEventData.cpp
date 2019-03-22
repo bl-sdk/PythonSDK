@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRawInputKeyEventData(py::object m)
+void Export_pystes_FRawInputKeyEventData(py::module &m)
 {
     py::class_< FRawInputKeyEventData >(m, "FRawInputKeyEventData")
         .def_readwrite("InputKeyName", &FRawInputKeyEventData::InputKeyName)

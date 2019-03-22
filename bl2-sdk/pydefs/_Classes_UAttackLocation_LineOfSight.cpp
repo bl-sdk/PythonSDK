@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAttackLocation_LineOfSight(py::object m)
+void Export_pystes_UAttackLocation_LineOfSight(py::module &m)
 {
     py::class_< UAttackLocation_LineOfSight,  UAttackLocation   >(m, "UAttackLocation_LineOfSight")
         .def_readwrite("LineOfSight", &UAttackLocation_LineOfSight::LineOfSight)

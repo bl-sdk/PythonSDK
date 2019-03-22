@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_AllPlayersInMesh(py::object m)
+void Export_pystes_USeqAct_AllPlayersInMesh(py::module &m)
 {
     py::class_< USeqAct_AllPlayersInMesh,  USequenceAction   >(m, "USeqAct_AllPlayersInMesh")
         .def_readwrite("Meshes", &USeqAct_AllPlayersInMesh::Meshes)

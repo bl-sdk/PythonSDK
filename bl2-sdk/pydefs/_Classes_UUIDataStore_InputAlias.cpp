@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIDataStore_InputAlias(py::object m)
+void Export_pystes_UUIDataStore_InputAlias(py::module &m)
 {
     py::class_< UUIDataStore_InputAlias,  UUIDataStore_StringBase   >(m, "UUIDataStore_InputAlias")
         .def_readwrite("InputAliases", &UUIDataStore_InputAlias::InputAliases)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTrailSocketSamplePoint(py::object m)
+void Export_pystes_FTrailSocketSamplePoint(py::module &m)
 {
     py::class_< FTrailSocketSamplePoint >(m, "FTrailSocketSamplePoint")
         .def_readwrite("Position", &FTrailSocketSamplePoint::Position)

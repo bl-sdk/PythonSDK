@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDesignerAttributeDefinition(py::object m)
+void Export_pystes_UDesignerAttributeDefinition(py::module &m)
 {
     py::class_< UDesignerAttributeDefinition,  UAttributeDefinition   >(m, "UDesignerAttributeDefinition")
         .def_readwrite("ValueName", &UDesignerAttributeDefinition::ValueName)

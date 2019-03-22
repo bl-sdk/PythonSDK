@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ADecalManager(py::object m)
+void Export_pystes_ADecalManager(py::module &m)
 {
     py::class_< ADecalManager,  AActor   >(m, "ADecalManager")
         .def_readwrite("DecalTemplate", &ADecalManager::DecalTemplate)

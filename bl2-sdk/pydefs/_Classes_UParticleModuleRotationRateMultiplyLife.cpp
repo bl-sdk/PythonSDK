@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleRotationRateMultiplyLife(py::object m)
+void Export_pystes_UParticleModuleRotationRateMultiplyLife(py::module &m)
 {
     py::class_< UParticleModuleRotationRateMultiplyLife,  UParticleModuleRotationRateBase   >(m, "UParticleModuleRotationRateMultiplyLife")
         .def_readwrite("LifeMultiplier", &UParticleModuleRotationRateMultiplyLife::LifeMultiplier)

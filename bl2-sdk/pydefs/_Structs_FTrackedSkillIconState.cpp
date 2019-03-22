@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTrackedSkillIconState(py::object m)
+void Export_pystes_FTrackedSkillIconState(py::module &m)
 {
     py::class_< FTrackedSkillIconState >(m, "FTrackedSkillIconState")
         .def_readwrite("Type", &FTrackedSkillIconState::Type)

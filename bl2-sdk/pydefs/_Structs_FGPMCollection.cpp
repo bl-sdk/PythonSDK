@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGPMCollection(py::object m)
+void Export_pystes_FGPMCollection(py::module &m)
 {
     py::class_< FGPMCollection >(m, "FGPMCollection")
         .def_readwrite("CollectionData", &FGPMCollection::CollectionData)

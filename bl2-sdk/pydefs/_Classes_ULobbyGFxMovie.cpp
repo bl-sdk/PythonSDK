@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULobbyGFxMovie(py::object m)
+void Export_pystes_ULobbyGFxMovie(py::module &m)
 {
     py::class_< ULobbyGFxMovie,  UFrontendGFxMovie   >(m, "ULobbyGFxMovie")
         .def_readwrite("PrimaryPlayerPRI", &ULobbyGFxMovie::PrimaryPlayerPRI)

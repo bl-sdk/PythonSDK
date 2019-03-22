@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRecentExplosion(py::object m)
+void Export_pystes_FRecentExplosion(py::module &m)
 {
     py::class_< FRecentExplosion >(m, "FRecentExplosion")
         .def_readwrite("ExplosionInstigatorName", &FRecentExplosion::ExplosionInstigatorName)

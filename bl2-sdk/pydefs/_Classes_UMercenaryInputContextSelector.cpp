@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMercenaryInputContextSelector(py::object m)
+void Export_pystes_UMercenaryInputContextSelector(py::module &m)
 {
     py::class_< UMercenaryInputContextSelector,  UDefaultInputContextSelector   >(m, "UMercenaryInputContextSelector")
         .def("StaticClass", &UMercenaryInputContextSelector::StaticClass, py::return_value_policy::reference)

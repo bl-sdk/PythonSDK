@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBrushComponent(py::object m)
+void Export_pystes_UBrushComponent(py::module &m)
 {
     py::class_< UBrushComponent,  UPrimitiveComponent   >(m, "UBrushComponent")
         .def_readwrite("Brush", &UBrushComponent::Brush)

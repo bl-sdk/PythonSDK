@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AProjectile(py::object m)
+void Export_pystes_AProjectile(py::module &m)
 {
     py::class_< AProjectile,  AActor   >(m, "AProjectile")
         .def_readwrite("Speed", &AProjectile::Speed)

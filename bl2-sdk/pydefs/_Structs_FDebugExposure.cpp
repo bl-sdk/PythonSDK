@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDebugExposure(py::object m)
+void Export_pystes_FDebugExposure(py::module &m)
 {
     py::class_< FDebugExposure >(m, "FDebugExposure")
         .def_readwrite("TargetExposure", &FDebugExposure::TargetExposure)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FResolution(py::object m)
+void Export_pystes_FResolution(py::module &m)
 {
     py::class_< FResolution >(m, "FResolution")
         .def_readwrite("Width", &FResolution::Width)

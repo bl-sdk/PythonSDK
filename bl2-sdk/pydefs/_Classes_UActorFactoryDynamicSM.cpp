@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActorFactoryDynamicSM(py::object m)
+void Export_pystes_UActorFactoryDynamicSM(py::module &m)
 {
     py::class_< UActorFactoryDynamicSM,  UActorFactory   >(m, "UActorFactoryDynamicSM")
         .def_readwrite("StaticMesh", &UActorFactoryDynamicSM::StaticMesh)

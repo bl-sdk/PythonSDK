@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHUDWidget_Crosshairs(py::object m)
+void Export_pystes_UHUDWidget_Crosshairs(py::module &m)
 {
     py::class_< UHUDWidget_Crosshairs,  UGFxObject   >(m, "UHUDWidget_Crosshairs")
         .def_readwrite("CrosshairSize", &UHUDWidget_Crosshairs::CrosshairSize)

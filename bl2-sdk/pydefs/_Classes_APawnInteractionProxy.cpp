@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APawnInteractionProxy(py::object m)
+void Export_pystes_APawnInteractionProxy(py::module &m)
 {
     py::class_< APawnInteractionProxy,  ATrigger   >(m, "APawnInteractionProxy")
         .def_readwrite("VfTable_IIUsable", &AInteractionProxy::VfTable_IIUsable)

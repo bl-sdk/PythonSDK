@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleVelocity_Seeded(py::object m)
+void Export_pystes_UParticleModuleVelocity_Seeded(py::module &m)
 {
     py::class_< UParticleModuleVelocity_Seeded,  UParticleModuleVelocityBase   >(m, "UParticleModuleVelocity_Seeded")
         .def_readwrite("RandomSeedInfo", &UParticleModuleVelocity_Seeded::RandomSeedInfo)

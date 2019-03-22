@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleEventGeneratorDecal(py::object m)
+void Export_pystes_UParticleModuleEventGeneratorDecal(py::module &m)
 {
     py::class_< UParticleModuleEventGeneratorDecal,  UParticleModuleEventGenerator   >(m, "UParticleModuleEventGeneratorDecal")
         .def_readwrite("DecalMaterials", &UParticleModuleEventGeneratorDecal::DecalMaterials)

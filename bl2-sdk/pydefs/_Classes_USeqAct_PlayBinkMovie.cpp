@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_PlayBinkMovie(py::object m)
+void Export_pystes_USeqAct_PlayBinkMovie(py::module &m)
 {
     py::class_< USeqAct_PlayBinkMovie,  USeqAct_Latent   >(m, "USeqAct_PlayBinkMovie")
         .def_readwrite("BinkMovieName", &USeqAct_PlayBinkMovie::BinkMovieName)

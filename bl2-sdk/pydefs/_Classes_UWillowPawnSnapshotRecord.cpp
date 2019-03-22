@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowPawnSnapshotRecord(py::object m)
+void Export_pystes_UWillowPawnSnapshotRecord(py::module &m)
 {
     py::class_< UWillowPawnSnapshotRecord,  UGearboxPawnSnapshotRecord   >(m, "UWillowPawnSnapshotRecord")
         .def_readwrite("MyWillowPawnName", &UWillowPawnSnapshotRecord::MyWillowPawnName)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FViewIdToLeaderboardName(py::object m)
+void Export_pystes_FViewIdToLeaderboardName(py::module &m)
 {
     py::class_< FViewIdToLeaderboardName >(m, "FViewIdToLeaderboardName")
         .def_readwrite("ViewId", &FViewIdToLeaderboardName::ViewId)

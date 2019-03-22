@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UChallengeCategoryDefinition(py::object m)
+void Export_pystes_UChallengeCategoryDefinition(py::module &m)
 {
     py::class_< UChallengeCategoryDefinition,  UGBXDefinition   >(m, "UChallengeCategoryDefinition")
         .def_readwrite("CategoryName", &UChallengeCategoryDefinition::CategoryName)

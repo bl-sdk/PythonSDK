@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UItemPickupGFxMovie(py::object m)
+void Export_pystes_UItemPickupGFxMovie(py::module &m)
 {
     py::class_< UItemPickupGFxMovie,  UGearboxGFxMovie   >(m, "UItemPickupGFxMovie")
         .def_readwrite("MatSrc", &UItemPickupGFxMovie::MatSrc)

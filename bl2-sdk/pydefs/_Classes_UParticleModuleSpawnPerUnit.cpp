@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleSpawnPerUnit(py::object m)
+void Export_pystes_UParticleModuleSpawnPerUnit(py::module &m)
 {
     py::class_< UParticleModuleSpawnPerUnit,  UParticleModuleSpawnBase   >(m, "UParticleModuleSpawnPerUnit")
         .def_readwrite("UnitScalar", &UParticleModuleSpawnPerUnit::UnitScalar)

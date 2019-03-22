@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ASkillEffectManager(py::object m)
+void Export_pystes_ASkillEffectManager(py::module &m)
 {
     py::class_< ASkillEffectManager,  AActor   >(m, "ASkillEffectManager")
         .def_readwrite("DeferredSkillActivationList", &ASkillEffectManager::DeferredSkillActivationList)

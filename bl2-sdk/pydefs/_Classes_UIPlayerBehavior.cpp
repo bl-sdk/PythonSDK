@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIPlayerBehavior(py::object m)
+void Export_pystes_UIPlayerBehavior(py::module &m)
 {
     py::class_< UIPlayerBehavior,  UInterface   >(m, "UIPlayerBehavior")
         .def("StaticClass", &UIPlayerBehavior::StaticClass, py::return_value_policy::reference)

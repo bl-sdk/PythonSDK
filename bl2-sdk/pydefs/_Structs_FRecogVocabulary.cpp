@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRecogVocabulary(py::object m)
+void Export_pystes_FRecogVocabulary(py::module &m)
 {
     py::class_< FRecogVocabulary >(m, "FRecogVocabulary")
         .def_readwrite("WhoDictionary", &FRecogVocabulary::WhoDictionary)

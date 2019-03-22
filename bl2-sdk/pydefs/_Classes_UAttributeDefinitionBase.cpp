@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAttributeDefinitionBase(py::object m)
+void Export_pystes_UAttributeDefinitionBase(py::module &m)
 {
     py::class_< UAttributeDefinitionBase,  UGBXDefinition   >(m, "UAttributeDefinitionBase")
         .def_readwrite("AttributeDataType", &UAttributeDefinitionBase::AttributeDataType)

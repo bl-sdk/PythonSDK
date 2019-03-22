@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBodyClassDeathDefinition(py::object m)
+void Export_pystes_UBodyClassDeathDefinition(py::module &m)
 {
     py::class_< UBodyClassDeathDefinition,  UGBXDefinition   >(m, "UBodyClassDeathDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UBodyClassDeathDefinition::VfTable_IIBehaviorProvider)

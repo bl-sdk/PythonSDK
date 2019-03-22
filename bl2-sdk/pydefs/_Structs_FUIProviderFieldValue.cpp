@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FUIProviderFieldValue(py::object m)
+void Export_pystes_FUIProviderFieldValue(py::module &m)
 {
     py::class_< FUIProviderFieldValue >(m, "FUIProviderFieldValue")
         .def_readwrite("CustomStringNode", &FUIProviderFieldValue::CustomStringNode)

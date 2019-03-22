@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AVantageNode(py::object m)
+void Export_pystes_AVantageNode(py::module &m)
 {
     py::class_< AVantageNode,  APathNode   >(m, "AVantageNode")
         .def_readwrite("VantageOnAreas", &AVantageNode::VantageOnAreas)

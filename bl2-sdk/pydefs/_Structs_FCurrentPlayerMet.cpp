@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCurrentPlayerMet(py::object m)
+void Export_pystes_FCurrentPlayerMet(py::module &m)
 {
     py::class_< FCurrentPlayerMet >(m, "FCurrentPlayerMet")
         .def_readwrite("TeamNum", &FCurrentPlayerMet::TeamNum)

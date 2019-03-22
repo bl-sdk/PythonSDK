@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCanvas(py::object m)
+void Export_pystes_UCanvas(py::module &m)
 {
     py::class_< UCanvas,  UObject   >(m, "UCanvas")
         .def_readwrite("Font", &UCanvas::Font)

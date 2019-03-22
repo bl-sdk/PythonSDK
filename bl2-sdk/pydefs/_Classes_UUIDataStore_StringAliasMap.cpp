@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIDataStore_StringAliasMap(py::object m)
+void Export_pystes_UUIDataStore_StringAliasMap(py::module &m)
 {
     py::class_< UUIDataStore_StringAliasMap,  UUIDataStore   >(m, "UUIDataStore_StringAliasMap")
         .def_readwrite("MenuInputMapArray", &UUIDataStore_StringAliasMap::MenuInputMapArray)

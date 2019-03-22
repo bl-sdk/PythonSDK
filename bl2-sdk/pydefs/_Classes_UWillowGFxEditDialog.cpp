@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGFxEditDialog(py::object m)
+void Export_pystes_UWillowGFxEditDialog(py::module &m)
 {
     py::class_< UWillowGFxEditDialog,  UWillowGFxMovie   >(m, "UWillowGFxEditDialog")
         .def_readwrite("Tools", &UWillowGFxEditDialog::Tools)

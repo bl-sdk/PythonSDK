@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleKillBox(py::object m)
+void Export_pystes_UParticleModuleKillBox(py::module &m)
 {
     py::class_< UParticleModuleKillBox,  UParticleModuleKillBase   >(m, "UParticleModuleKillBox")
         .def_readwrite("LowerLeftCorner", &UParticleModuleKillBox::LowerLeftCorner)

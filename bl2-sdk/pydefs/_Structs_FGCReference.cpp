@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGCReference(py::object m)
+void Export_pystes_FGCReference(py::module &m)
 {
     py::class_< FGCReference >(m, "FGCReference")
         .def_readwrite("m_object", &FGCReference::m_object)

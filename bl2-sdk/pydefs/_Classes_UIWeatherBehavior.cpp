@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIWeatherBehavior(py::object m)
+void Export_pystes_UIWeatherBehavior(py::module &m)
 {
     py::class_< UIWeatherBehavior,  UInterface   >(m, "UIWeatherBehavior")
         .def("StaticClass", &UIWeatherBehavior::StaticClass, py::return_value_policy::reference)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSkillConstraintData(py::object m)
+void Export_pystes_FSkillConstraintData(py::module &m)
 {
     py::class_< FSkillConstraintData >(m, "FSkillConstraintData")
         .def_readwrite("OnFailure", &FSkillConstraintData::OnFailure)

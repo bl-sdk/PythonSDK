@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWorldSoundManager(py::object m)
+void Export_pystes_AWorldSoundManager(py::module &m)
 {
     py::class_< AWorldSoundManager,  AInfo   >(m, "AWorldSoundManager")
         .def_readwrite("EventSources", &AWorldSoundManager::EventSources)

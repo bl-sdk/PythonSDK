@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionTime(py::object m)
+void Export_pystes_UMaterialExpressionTime(py::module &m)
 {
     py::class_< UMaterialExpressionTime,  UMaterialExpression   >(m, "UMaterialExpressionTime")
         .def("StaticClass", &UMaterialExpressionTime::StaticClass, py::return_value_policy::reference)

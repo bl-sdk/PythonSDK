@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USoundNode(py::object m)
+void Export_pystes_USoundNode(py::module &m)
 {
     py::class_< USoundNode,  UObject   >(m, "USoundNode")
         .def_readwrite("NodeUpdateHint", &USoundNode::NodeUpdateHint)

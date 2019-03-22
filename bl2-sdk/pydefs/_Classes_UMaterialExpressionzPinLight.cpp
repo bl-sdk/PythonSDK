@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionzPinLight(py::object m)
+void Export_pystes_UMaterialExpressionzPinLight(py::module &m)
 {
     py::class_< UMaterialExpressionzPinLight,  UMaterialExpressionBlendModeBase   >(m, "UMaterialExpressionzPinLight")
         .def("StaticClass", &UMaterialExpressionzPinLight::StaticClass, py::return_value_policy::reference)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHUDWidget_Minimap(py::object m)
+void Export_pystes_UHUDWidget_Minimap(py::module &m)
 {
     py::class_< UHUDWidget_Minimap,  UHUDWidget_Base   >(m, "UHUDWidget_Minimap")
         .def_readwrite("WorldRadius", &UHUDWidget_Minimap::WorldRadius)

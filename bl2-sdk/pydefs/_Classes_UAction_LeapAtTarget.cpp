@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_LeapAtTarget(py::object m)
+void Export_pystes_UAction_LeapAtTarget(py::module &m)
 {
     py::class_< UAction_LeapAtTarget,  UAction_BasicAttack   >(m, "UAction_LeapAtTarget")
         .def_readwrite("Options", &UAction_LeapAtTarget::Options)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPlayThroughData(py::object m)
+void Export_pystes_FPlayThroughData(py::module &m)
 {
     py::class_< FPlayThroughData >(m, "FPlayThroughData")
         .def_readwrite("PlayThroughNumber", &FPlayThroughData::PlayThroughNumber)

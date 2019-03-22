@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_URB_Spring(py::object m)
+void Export_pystes_URB_Spring(py::module &m)
 {
     py::class_< URB_Spring,  UActorComponent   >(m, "URB_Spring")
         .def_readwrite("Component1", &URB_Spring::Component1)

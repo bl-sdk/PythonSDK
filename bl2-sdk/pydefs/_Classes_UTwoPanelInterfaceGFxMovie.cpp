@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTwoPanelInterfaceGFxMovie(py::object m)
+void Export_pystes_UTwoPanelInterfaceGFxMovie(py::module &m)
 {
     py::class_< UTwoPanelInterfaceGFxMovie,  UWillowInventoryGFxMovie   >(m, "UTwoPanelInterfaceGFxMovie")
         .def_readwrite("TwoPanelInterface", &UTwoPanelInterfaceGFxMovie::TwoPanelInterface)

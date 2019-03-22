@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UProjectileBehavior_Attach(py::object m)
+void Export_pystes_UProjectileBehavior_Attach(py::module &m)
 {
     py::class_< UProjectileBehavior_Attach,  UProjectileBehaviorBase   >(m, "UProjectileBehavior_Attach")
         .def_readwrite("AttachAkEvent", &UProjectileBehavior_Attach::AttachAkEvent)

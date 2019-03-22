@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBoneAngleMorph(py::object m)
+void Export_pystes_FBoneAngleMorph(py::module &m)
 {
     py::class_< FBoneAngleMorph >(m, "FBoneAngleMorph")
         .def_readwrite("Angle", &FBoneAngleMorph::Angle)

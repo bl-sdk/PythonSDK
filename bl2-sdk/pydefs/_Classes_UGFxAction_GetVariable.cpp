@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGFxAction_GetVariable(py::object m)
+void Export_pystes_UGFxAction_GetVariable(py::module &m)
 {
     py::class_< UGFxAction_GetVariable,  USequenceAction   >(m, "UGFxAction_GetVariable")
         .def_readwrite("Movie", &UGFxAction_GetVariable::Movie)

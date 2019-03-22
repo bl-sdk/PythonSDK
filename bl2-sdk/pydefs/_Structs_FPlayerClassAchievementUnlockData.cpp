@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPlayerClassAchievementUnlockData(py::object m)
+void Export_pystes_FPlayerClassAchievementUnlockData(py::module &m)
 {
     py::class_< FPlayerClassAchievementUnlockData >(m, "FPlayerClassAchievementUnlockData")
         .def_readwrite("UnlockType", &FPlayerClassAchievementUnlockData::UnlockType)

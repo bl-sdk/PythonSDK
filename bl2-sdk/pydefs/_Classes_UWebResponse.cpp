@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWebResponse(py::object m)
+void Export_pystes_UWebResponse(py::module &m)
 {
     py::class_< UWebResponse,  UObject   >(m, "UWebResponse")
         .def_readwrite("headers", &UWebResponse::headers)

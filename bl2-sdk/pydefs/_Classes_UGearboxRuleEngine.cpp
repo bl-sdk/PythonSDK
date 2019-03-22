@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxRuleEngine(py::object m)
+void Export_pystes_UGearboxRuleEngine(py::module &m)
 {
     py::class_< UGearboxRuleEngine,  UObject   >(m, "UGearboxRuleEngine")
         .def_readwrite("MyGearboxPawn", &UGearboxRuleEngine::MyGearboxPawn)

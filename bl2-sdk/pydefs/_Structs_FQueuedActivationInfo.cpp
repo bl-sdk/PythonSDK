@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FQueuedActivationInfo(py::object m)
+void Export_pystes_FQueuedActivationInfo(py::module &m)
 {
     py::class_< FQueuedActivationInfo >(m, "FQueuedActivationInfo")
         .def_readwrite("ActivatedEvent", &FQueuedActivationInfo::ActivatedEvent)

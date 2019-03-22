@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialInstanceTimeVarying(py::object m)
+void Export_pystes_UMaterialInstanceTimeVarying(py::module &m)
 {
     py::class_< UMaterialInstanceTimeVarying,  UMaterialInstance   >(m, "UMaterialInstanceTimeVarying")
         .def_readwrite("Duration", &UMaterialInstanceTimeVarying::Duration)

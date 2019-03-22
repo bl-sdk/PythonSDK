@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpData(py::object m)
+void Export_pystes_UInterpData(py::module &m)
 {
     py::class_< UInterpData,  USequenceVariable   >(m, "UInterpData")
         .def_readwrite("InterpLength", &UInterpData::InterpLength)

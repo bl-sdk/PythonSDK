@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowScrollingListDataProviderMatchmaking(py::object m)
+void Export_pystes_UWillowScrollingListDataProviderMatchmaking(py::module &m)
 {
     py::class_< UWillowScrollingListDataProviderMatchmaking,  UWillowScrollingListDataProviderBase   >(m, "UWillowScrollingListDataProviderMatchmaking")
         .def("StaticClass", &UWillowScrollingListDataProviderMatchmaking::StaticClass, py::return_value_policy::reference)

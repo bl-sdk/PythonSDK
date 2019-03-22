@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULocalInventoryRefreshMessage(py::object m)
+void Export_pystes_ULocalInventoryRefreshMessage(py::module &m)
 {
     py::class_< ULocalInventoryRefreshMessage,  UWillowLocalMessage   >(m, "ULocalInventoryRefreshMessage")
         .def("StaticClass", &ULocalInventoryRefreshMessage::StaticClass, py::return_value_policy::reference)

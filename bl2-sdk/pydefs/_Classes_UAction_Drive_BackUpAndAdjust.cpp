@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_Drive_BackUpAndAdjust(py::object m)
+void Export_pystes_UAction_Drive_BackUpAndAdjust(py::module &m)
 {
     py::class_< UAction_Drive_BackUpAndAdjust,  UAction_Drive_AvoidWall   >(m, "UAction_Drive_BackUpAndAdjust")
         .def("StaticClass", &UAction_Drive_BackUpAndAdjust::StaticClass, py::return_value_policy::reference)

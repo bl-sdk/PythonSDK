@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FActionSequenceRandomData(py::object m)
+void Export_pystes_FActionSequenceRandomData(py::module &m)
 {
     py::class_< FActionSequenceRandomData >(m, "FActionSequenceRandomData")
         .def_readwrite("ProbabilityData", &FActionSequenceRandomData::ProbabilityData)

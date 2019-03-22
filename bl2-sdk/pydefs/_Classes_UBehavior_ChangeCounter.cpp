@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_ChangeCounter(py::object m)
+void Export_pystes_UBehavior_ChangeCounter(py::module &m)
 {
     py::class_< UBehavior_ChangeCounter,  UBehaviorBase   >(m, "UBehavior_ChangeCounter")
         .def_readwrite("CounterId", &UBehavior_ChangeCounter::CounterId)

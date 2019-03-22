@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpGroupInst(py::object m)
+void Export_pystes_UInterpGroupInst(py::module &m)
 {
     py::class_< UInterpGroupInst,  UObject   >(m, "UInterpGroupInst")
         .def_readwrite("Group", &UInterpGroupInst::Group)

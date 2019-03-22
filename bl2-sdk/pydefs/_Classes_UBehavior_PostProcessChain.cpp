@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_PostProcessChain(py::object m)
+void Export_pystes_UBehavior_PostProcessChain(py::module &m)
 {
     py::class_< UBehavior_PostProcessChain,  UBehaviorBase   >(m, "UBehavior_PostProcessChain")
         .def_readwrite("MaterialEffectModifiers", &UBehavior_PostProcessChain::MaterialEffectModifiers)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqEvent_ParticleEvent(py::object m)
+void Export_pystes_USeqEvent_ParticleEvent(py::module &m)
 {
     py::class_< USeqEvent_ParticleEvent,  USequenceEvent   >(m, "USeqEvent_ParticleEvent")
         .def_readwrite("EventType", &USeqEvent_ParticleEvent::EventType)

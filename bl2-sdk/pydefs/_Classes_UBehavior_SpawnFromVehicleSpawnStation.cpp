@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SpawnFromVehicleSpawnStation(py::object m)
+void Export_pystes_UBehavior_SpawnFromVehicleSpawnStation(py::module &m)
 {
     py::class_< UBehavior_SpawnFromVehicleSpawnStation,  UBehaviorBase   >(m, "UBehavior_SpawnFromVehicleSpawnStation")
         .def("StaticClass", &UBehavior_SpawnFromVehicleSpawnStation::StaticClass, py::return_value_policy::reference)

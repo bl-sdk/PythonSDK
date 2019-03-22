@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionFontSampleParameter(py::object m)
+void Export_pystes_UMaterialExpressionFontSampleParameter(py::module &m)
 {
     py::class_< UMaterialExpressionFontSampleParameter,  UMaterialExpression   >(m, "UMaterialExpressionFontSampleParameter")
         .def_readwrite("ParameterName", &UMaterialExpressionFontSampleParameter::ParameterName)

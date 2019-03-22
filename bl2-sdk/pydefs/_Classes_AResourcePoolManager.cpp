@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AResourcePoolManager(py::object m)
+void Export_pystes_AResourcePoolManager(py::module &m)
 {
     py::class_< AResourcePoolManager,  AReplicationInfo   >(m, "AResourcePoolManager")
         .def_readwrite("NextPoolGUID", &AResourcePoolManager::NextPoolGUID)

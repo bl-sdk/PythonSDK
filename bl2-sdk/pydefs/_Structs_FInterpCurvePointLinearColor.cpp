@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInterpCurvePointLinearColor(py::object m)
+void Export_pystes_FInterpCurvePointLinearColor(py::module &m)
 {
     py::class_< FInterpCurvePointLinearColor >(m, "FInterpCurvePointLinearColor")
         .def_readwrite("InVal", &FInterpCurvePointLinearColor::InVal)

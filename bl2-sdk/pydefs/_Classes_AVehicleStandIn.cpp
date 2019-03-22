@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AVehicleStandIn(py::object m)
+void Export_pystes_AVehicleStandIn(py::module &m)
 {
     py::class_< AVehicleStandIn,  AActor   >(m, "AVehicleStandIn")
         .def_readwrite("VfTable_IIBodyCompositionInstance", &AVehicleStandIn::VfTable_IIBodyCompositionInstance)

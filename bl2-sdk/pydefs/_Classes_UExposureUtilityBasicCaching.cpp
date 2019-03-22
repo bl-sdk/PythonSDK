@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UExposureUtilityBasicCaching(py::object m)
+void Export_pystes_UExposureUtilityBasicCaching(py::module &m)
 {
     py::class_< UExposureUtilityBasicCaching,  UExposureUtilityBase   >(m, "UExposureUtilityBasicCaching")
         .def_readwrite("MaxCacheTime", &UExposureUtilityBasicCaching::MaxCacheTime)

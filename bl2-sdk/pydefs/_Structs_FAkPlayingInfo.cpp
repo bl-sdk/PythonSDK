@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAkPlayingInfo(py::object m)
+void Export_pystes_FAkPlayingInfo(py::module &m)
 {
     py::class_< FAkPlayingInfo >(m, "FAkPlayingInfo")
         .def_readwrite("SourceComponent", &FAkPlayingInfo::SourceComponent)

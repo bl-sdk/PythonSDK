@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleSubUVDirect(py::object m)
+void Export_pystes_UParticleModuleSubUVDirect(py::module &m)
 {
     py::class_< UParticleModuleSubUVDirect,  UParticleModuleSubUVBase   >(m, "UParticleModuleSubUVDirect")
         .def_readwrite("SubUVPosition", &UParticleModuleSubUVDirect::SubUVPosition)

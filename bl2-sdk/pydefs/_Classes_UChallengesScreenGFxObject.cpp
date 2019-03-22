@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UChallengesScreenGFxObject(py::object m)
+void Export_pystes_UChallengesScreenGFxObject(py::module &m)
 {
     py::class_< UChallengesScreenGFxObject,  UBaseTopLevelPanelGFxObject   >(m, "UChallengesScreenGFxObject")
         .def_readwrite("CurrentPanel", &UChallengesScreenGFxObject::CurrentPanel)

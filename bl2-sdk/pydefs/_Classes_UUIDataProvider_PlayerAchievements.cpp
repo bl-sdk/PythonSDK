@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIDataProvider_PlayerAchievements(py::object m)
+void Export_pystes_UUIDataProvider_PlayerAchievements(py::module &m)
 {
     py::class_< UUIDataProvider_PlayerAchievements,  UUIDataProvider_OnlinePlayerDataBase   >(m, "UUIDataProvider_PlayerAchievements")
         .def_readwrite("VfTable_IUIListElementCellProvider", &UUIDataProvider_PlayerAchievements::VfTable_IUIListElementCellProvider)

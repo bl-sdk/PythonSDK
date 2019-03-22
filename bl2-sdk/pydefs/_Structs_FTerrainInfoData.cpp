@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTerrainInfoData(py::object m)
+void Export_pystes_FTerrainInfoData(py::module &m)
 {
     py::class_< FTerrainInfoData >(m, "FTerrainInfoData")
   ;

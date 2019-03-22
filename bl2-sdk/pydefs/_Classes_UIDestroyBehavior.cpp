@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIDestroyBehavior(py::object m)
+void Export_pystes_UIDestroyBehavior(py::module &m)
 {
     py::class_< UIDestroyBehavior,  UInterface   >(m, "UIDestroyBehavior")
         .def("StaticClass", &UIDestroyBehavior::StaticClass, py::return_value_policy::reference)

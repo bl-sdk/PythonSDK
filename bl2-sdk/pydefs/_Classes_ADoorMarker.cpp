@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ADoorMarker(py::object m)
+void Export_pystes_ADoorMarker(py::module &m)
 {
     py::class_< ADoorMarker,  ANavigationPoint   >(m, "ADoorMarker")
         .def_readwrite("MyDoor", &ADoorMarker::MyDoor)

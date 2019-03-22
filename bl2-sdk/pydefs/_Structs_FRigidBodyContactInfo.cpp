@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRigidBodyContactInfo(py::object m)
+void Export_pystes_FRigidBodyContactInfo(py::module &m)
 {
     py::class_< FRigidBodyContactInfo >(m, "FRigidBodyContactInfo")
         .def_readwrite("ContactPosition", &FRigidBodyContactInfo::ContactPosition)

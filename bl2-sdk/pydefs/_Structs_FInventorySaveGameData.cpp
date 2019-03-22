@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInventorySaveGameData(py::object m)
+void Export_pystes_FInventorySaveGameData(py::module &m)
 {
     py::class_< FInventorySaveGameData >(m, "FInventorySaveGameData")
         .def_readwrite("DefinitionData", &FInventorySaveGameData::DefinitionData)

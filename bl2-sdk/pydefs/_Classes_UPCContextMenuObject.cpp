@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPCContextMenuObject(py::object m)
+void Export_pystes_UPCContextMenuObject(py::module &m)
 {
     py::class_< UPCContextMenuObject,  UGFxMoviePlayer   >(m, "UPCContextMenuObject")
         .def_readwrite("MenuListObject", &UPCContextMenuObject::MenuListObject)

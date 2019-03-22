@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleSourceMovement(py::object m)
+void Export_pystes_UParticleModuleSourceMovement(py::module &m)
 {
     py::class_< UParticleModuleSourceMovement,  UParticleModuleLocationBase   >(m, "UParticleModuleSourceMovement")
         .def_readwrite("SourceMovementScale", &UParticleModuleSourceMovement::SourceMovementScale)

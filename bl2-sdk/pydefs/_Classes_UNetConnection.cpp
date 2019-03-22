@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNetConnection(py::object m)
+void Export_pystes_UNetConnection(py::module &m)
 {
     py::class_< UNetConnection,  UPlayer   >(m, "UNetConnection")
         .def_readwrite("Children", &UNetConnection::Children)

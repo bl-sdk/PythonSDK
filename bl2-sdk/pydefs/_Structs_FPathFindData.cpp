@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPathFindData(py::object m)
+void Export_pystes_FPathFindData(py::module &m)
 {
     py::class_< FPathFindData >(m, "FPathFindData")
         .def_readwrite("Path", &FPathFindData::Path)

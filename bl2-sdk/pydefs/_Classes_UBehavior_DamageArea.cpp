@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_DamageArea(py::object m)
+void Export_pystes_UBehavior_DamageArea(py::module &m)
 {
     py::class_< UBehavior_DamageArea,  UBehaviorBase   >(m, "UBehavior_DamageArea")
         .def_readwrite("Action", &UBehavior_DamageArea::Action)

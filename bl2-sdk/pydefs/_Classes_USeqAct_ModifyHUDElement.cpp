@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_ModifyHUDElement(py::object m)
+void Export_pystes_USeqAct_ModifyHUDElement(py::module &m)
 {
     py::class_< USeqAct_ModifyHUDElement,  USequenceAction   >(m, "USeqAct_ModifyHUDElement")
         .def_readwrite("HUDElement", &USeqAct_ModifyHUDElement::HUDElement)

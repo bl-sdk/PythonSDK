@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNodeSequenceBlendByAim(py::object m)
+void Export_pystes_UAnimNodeSequenceBlendByAim(py::module &m)
 {
     py::class_< UAnimNodeSequenceBlendByAim,  UAnimNodeSequenceBlendBase   >(m, "UAnimNodeSequenceBlendByAim")
         .def_readwrite("Aim", &UAnimNodeSequenceBlendByAim::Aim)

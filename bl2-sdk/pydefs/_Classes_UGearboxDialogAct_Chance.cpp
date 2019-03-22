@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxDialogAct_Chance(py::object m)
+void Export_pystes_UGearboxDialogAct_Chance(py::module &m)
 {
     py::class_< UGearboxDialogAct_Chance,  UGearboxDialogAction   >(m, "UGearboxDialogAct_Chance")
         .def_readwrite("Chance", &UGearboxDialogAct_Chance::Chance)

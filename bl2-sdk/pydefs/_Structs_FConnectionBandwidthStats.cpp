@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FConnectionBandwidthStats(py::object m)
+void Export_pystes_FConnectionBandwidthStats(py::module &m)
 {
     py::class_< FConnectionBandwidthStats >(m, "FConnectionBandwidthStats")
         .def_readwrite("UpstreamRate", &FConnectionBandwidthStats::UpstreamRate)

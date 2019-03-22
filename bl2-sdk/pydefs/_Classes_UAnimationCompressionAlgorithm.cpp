@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimationCompressionAlgorithm(py::object m)
+void Export_pystes_UAnimationCompressionAlgorithm(py::module &m)
 {
     py::class_< UAnimationCompressionAlgorithm,  UObject   >(m, "UAnimationCompressionAlgorithm")
         .def_readwrite("Description", &UAnimationCompressionAlgorithm::Description)

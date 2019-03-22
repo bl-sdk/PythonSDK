@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_SetCameraTarget(py::object m)
+void Export_pystes_USeqAct_SetCameraTarget(py::module &m)
 {
     py::class_< USeqAct_SetCameraTarget,  USequenceAction   >(m, "USeqAct_SetCameraTarget")
         .def_readwrite("CameraTarget", &USeqAct_SetCameraTarget::CameraTarget)

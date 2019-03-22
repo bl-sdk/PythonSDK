@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerInteractionServer(py::object m)
+void Export_pystes_UPlayerInteractionServer(py::module &m)
 {
     py::class_< UPlayerInteractionServer,  UObject   >(m, "UPlayerInteractionServer")
         .def_readwrite("TimeoutTime", &UPlayerInteractionServer::TimeoutTime)

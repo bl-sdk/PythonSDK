@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ASkeletalMeshActorMATWalkable(py::object m)
+void Export_pystes_ASkeletalMeshActorMATWalkable(py::module &m)
 {
     py::class_< ASkeletalMeshActorMATWalkable,  ASkeletalMeshActor   >(m, "ASkeletalMeshActorMATWalkable")
         .def_readwrite("SlotNodes", &ASkeletalMeshActorMAT::SlotNodes)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTextureMovie(py::object m)
+void Export_pystes_UTextureMovie(py::module &m)
 {
     py::class_< UTextureMovie,  UTexture   >(m, "UTextureMovie")
         .def_readwrite("SizeX", &UTextureMovie::SizeX)

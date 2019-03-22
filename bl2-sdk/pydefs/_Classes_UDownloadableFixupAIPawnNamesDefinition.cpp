@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDownloadableFixupAIPawnNamesDefinition(py::object m)
+void Export_pystes_UDownloadableFixupAIPawnNamesDefinition(py::module &m)
 {
     py::class_< UDownloadableFixupAIPawnNamesDefinition,  UGBXDefinition   >(m, "UDownloadableFixupAIPawnNamesDefinition")
         .def_readwrite("PlayThroughThree", &UDownloadableFixupAIPawnNamesDefinition::PlayThroughThree)

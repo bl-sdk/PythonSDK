@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_ScreenParticle(py::object m)
+void Export_pystes_UBehavior_ScreenParticle(py::module &m)
 {
     py::class_< UBehavior_ScreenParticle,  UBehaviorBase   >(m, "UBehavior_ScreenParticle")
         .def_readwrite("Parameters", &UBehavior_ScreenParticle::Parameters)

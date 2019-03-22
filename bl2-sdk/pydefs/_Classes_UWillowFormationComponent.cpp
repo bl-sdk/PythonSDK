@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowFormationComponent(py::object m)
+void Export_pystes_UWillowFormationComponent(py::module &m)
 {
     py::class_< UWillowFormationComponent,  UPrimitiveComponent   >(m, "UWillowFormationComponent")
         .def_readwrite("NameTag", &UWillowFormationComponent::NameTag)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AFluidSurfaceActorMovable(py::object m)
+void Export_pystes_AFluidSurfaceActorMovable(py::module &m)
 {
     py::class_< AFluidSurfaceActorMovable,  AFluidSurfaceActor   >(m, "AFluidSurfaceActorMovable")
         .def("StaticClass", &AFluidSurfaceActorMovable::StaticClass, py::return_value_policy::reference)

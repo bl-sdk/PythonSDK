@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionScalarParameter(py::object m)
+void Export_pystes_UMaterialExpressionScalarParameter(py::module &m)
 {
     py::class_< UMaterialExpressionScalarParameter,  UMaterialExpression   >(m, "UMaterialExpressionScalarParameter")
         .def_readwrite("DefaultValue", &UMaterialExpressionScalarParameter::DefaultValue)

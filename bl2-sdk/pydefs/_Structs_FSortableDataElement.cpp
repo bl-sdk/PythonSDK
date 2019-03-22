@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSortableDataElement(py::object m)
+void Export_pystes_FSortableDataElement(py::module &m)
 {
     py::class_< FSortableDataElement >(m, "FSortableDataElement")
         .def_readwrite("OneTimeIdx", &FSortableDataElement::OneTimeIdx)

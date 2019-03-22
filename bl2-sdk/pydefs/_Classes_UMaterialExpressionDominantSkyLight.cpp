@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionDominantSkyLight(py::object m)
+void Export_pystes_UMaterialExpressionDominantSkyLight(py::module &m)
 {
     py::class_< UMaterialExpressionDominantSkyLight,  UMaterialExpression   >(m, "UMaterialExpressionDominantSkyLight")
         .def_readwrite("TimeOfDayMax", &UMaterialExpressionDominantSkyLight::TimeOfDayMax)

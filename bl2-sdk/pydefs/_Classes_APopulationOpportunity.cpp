@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APopulationOpportunity(py::object m)
+void Export_pystes_APopulationOpportunity(py::module &m)
 {
     py::class_< APopulationOpportunity,  AInfo   >(m, "APopulationOpportunity")
         .def_readwrite("VfTable_IIBodyCompositionInstance", &APopulationOpportunity::VfTable_IIBodyCompositionInstance)

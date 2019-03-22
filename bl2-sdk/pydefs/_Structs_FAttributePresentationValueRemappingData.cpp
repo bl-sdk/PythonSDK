@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAttributePresentationValueRemappingData(py::object m)
+void Export_pystes_FAttributePresentationValueRemappingData(py::module &m)
 {
     py::class_< FAttributePresentationValueRemappingData >(m, "FAttributePresentationValueRemappingData")
         .def_readwrite("InputValueMn", &FAttributePresentationValueRemappingData::InputValueMn)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRuleEngineLoadBalanceStruct(py::object m)
+void Export_pystes_FRuleEngineLoadBalanceStruct(py::module &m)
 {
     py::class_< FRuleEngineLoadBalanceStruct >(m, "FRuleEngineLoadBalanceStruct")
         .def_readwrite("RuleEngine", &FRuleEngineLoadBalanceStruct::RuleEngine)

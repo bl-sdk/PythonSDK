@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBodyRegionProtectionDefinition(py::object m)
+void Export_pystes_UBodyRegionProtectionDefinition(py::module &m)
 {
     py::class_< UBodyRegionProtectionDefinition,  UGBXDefinition   >(m, "UBodyRegionProtectionDefinition")
         .def_readwrite("BodyHitRegion", &UBodyRegionProtectionDefinition::BodyHitRegion)

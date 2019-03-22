@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AInventory(py::object m)
+void Export_pystes_AInventory(py::module &m)
 {
     py::class_< AInventory,  AActor   >(m, "AInventory")
         .def_readwrite("Inventory", &AInventory::Inventory)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USequenceOp(py::object m)
+void Export_pystes_USequenceOp(py::module &m)
 {
     py::class_< USequenceOp,  UObject   >(m, "USequenceOp")
         .def_readwrite("InputLinks", &USequenceOp::InputLinks)

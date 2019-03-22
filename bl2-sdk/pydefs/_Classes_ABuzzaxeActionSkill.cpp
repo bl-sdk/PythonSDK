@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ABuzzaxeActionSkill(py::object m)
+void Export_pystes_ABuzzaxeActionSkill(py::module &m)
 {
     py::class_< ABuzzaxeActionSkill,  AActionSkill   >(m, "ABuzzaxeActionSkill")
         .def_readwrite("ActiveWeaponSlot", &ABuzzaxeActionSkill::ActiveWeaponSlot)

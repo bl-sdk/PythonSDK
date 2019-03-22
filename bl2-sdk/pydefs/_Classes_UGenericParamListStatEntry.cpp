@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGenericParamListStatEntry(py::object m)
+void Export_pystes_UGenericParamListStatEntry(py::module &m)
 {
     py::class_< UGenericParamListStatEntry,  UObject   >(m, "UGenericParamListStatEntry")
         .def_readwrite("StatEvent", &UGenericParamListStatEntry::StatEvent)

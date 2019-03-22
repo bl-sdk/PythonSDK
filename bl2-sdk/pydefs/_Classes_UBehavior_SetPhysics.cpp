@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SetPhysics(py::object m)
+void Export_pystes_UBehavior_SetPhysics(py::module &m)
 {
     py::class_< UBehavior_SetPhysics,  UBehaviorBase   >(m, "UBehavior_SetPhysics")
         .def_readwrite("Physics", &UBehavior_SetPhysics::Physics)

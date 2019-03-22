@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowTI_PrioritizeHealth(py::object m)
+void Export_pystes_UWillowTI_PrioritizeHealth(py::module &m)
 {
     py::class_< UWillowTI_PrioritizeHealth,  UTI_Prioritize   >(m, "UWillowTI_PrioritizeHealth")
         .def_readwrite("Priority", &UWillowTI_PrioritizeHealth::Priority)

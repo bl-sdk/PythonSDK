@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_CombatPerch(py::object m)
+void Export_pystes_UBehavior_CombatPerch(py::module &m)
 {
     py::class_< UBehavior_CombatPerch,  UBehaviorBase   >(m, "UBehavior_CombatPerch")
         .def_readwrite("AttachmentName", &UBehavior_CombatPerch::AttachmentName)

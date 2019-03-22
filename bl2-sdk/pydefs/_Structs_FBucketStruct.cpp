@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBucketStruct(py::object m)
+void Export_pystes_FBucketStruct(py::module &m)
 {
     py::class_< FBucketStruct >(m, "FBucketStruct")
         .def_readwrite("NdxToStartCheckFrom", &FBucketStruct::NdxToStartCheckFrom)

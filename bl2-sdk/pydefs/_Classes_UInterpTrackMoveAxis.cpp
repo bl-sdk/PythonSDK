@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackMoveAxis(py::object m)
+void Export_pystes_UInterpTrackMoveAxis(py::module &m)
 {
     py::class_< UInterpTrackMoveAxis,  UInterpTrackFloatBase   >(m, "UInterpTrackMoveAxis")
         .def_readwrite("MoveAxis", &UInterpTrackMoveAxis::MoveAxis)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowPawn(py::object m)
+void Export_pystes_AWillowPawn(py::module &m)
 {
     py::class_< AWillowPawn,  AGearboxPawn   >(m, "AWillowPawn")
         .def_readwrite("VfTable_IIInstanceData", &AWillowPawn::VfTable_IIInstanceData)

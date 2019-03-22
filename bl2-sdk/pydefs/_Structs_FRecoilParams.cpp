@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRecoilParams(py::object m)
+void Export_pystes_FRecoilParams(py::module &m)
 {
     py::class_< FRecoilParams >(m, "FRecoilParams")
         .def_readwrite("X", &FRecoilParams::X)

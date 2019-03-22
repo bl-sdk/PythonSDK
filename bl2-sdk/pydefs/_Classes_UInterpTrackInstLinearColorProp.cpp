@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackInstLinearColorProp(py::object m)
+void Export_pystes_UInterpTrackInstLinearColorProp(py::module &m)
 {
     py::class_< UInterpTrackInstLinearColorProp,  UInterpTrackInstProperty   >(m, "UInterpTrackInstLinearColorProp")
         .def_readwrite("ColorProp", &UInterpTrackInstLinearColorProp::ColorProp)

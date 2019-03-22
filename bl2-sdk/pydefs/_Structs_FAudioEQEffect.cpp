@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAudioEQEffect(py::object m)
+void Export_pystes_FAudioEQEffect(py::module &m)
 {
     py::class_< FAudioEQEffect >(m, "FAudioEQEffect")
         .def_readwrite("RootTime", &FAudioEQEffect::RootTime)

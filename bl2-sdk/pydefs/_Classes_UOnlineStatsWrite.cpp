@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineStatsWrite(py::object m)
+void Export_pystes_UOnlineStatsWrite(py::module &m)
 {
     py::class_< UOnlineStatsWrite,  UObject   >(m, "UOnlineStatsWrite")
         .def_readwrite("StatMappings", &UOnlineStatsWrite::StatMappings)

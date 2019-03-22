@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMovieStateStruct(py::object m)
+void Export_pystes_FMovieStateStruct(py::module &m)
 {
     py::class_< FMovieStateStruct >(m, "FMovieStateStruct")
         .def_readwrite("States", &FMovieStateStruct::States)

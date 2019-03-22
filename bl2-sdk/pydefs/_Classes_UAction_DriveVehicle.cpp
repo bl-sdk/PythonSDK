@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_DriveVehicle(py::object m)
+void Export_pystes_UAction_DriveVehicle(py::module &m)
 {
     py::class_< UAction_DriveVehicle,  UWillowActionSequencePawn   >(m, "UAction_DriveVehicle")
         .def_readwrite("MaxSpeedMultiplier", &UAction_DriveVehicle::MaxSpeedMultiplier)

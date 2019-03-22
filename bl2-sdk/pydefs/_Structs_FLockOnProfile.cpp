@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLockOnProfile(py::object m)
+void Export_pystes_FLockOnProfile(py::module &m)
 {
     py::class_< FLockOnProfile >(m, "FLockOnProfile")
         .def_readwrite("Target", &FLockOnProfile::Target)

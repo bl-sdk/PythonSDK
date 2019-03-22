@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USkelControlBase(py::object m)
+void Export_pystes_USkelControlBase(py::module &m)
 {
     py::class_< USkelControlBase,  UAnimObject   >(m, "USkelControlBase")
         .def_readwrite("ControlName", &USkelControlBase::ControlName)

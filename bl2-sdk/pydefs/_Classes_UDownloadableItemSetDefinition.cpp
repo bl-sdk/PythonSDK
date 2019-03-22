@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDownloadableItemSetDefinition(py::object m)
+void Export_pystes_UDownloadableItemSetDefinition(py::module &m)
 {
     py::class_< UDownloadableItemSetDefinition,  UDownloadableContentDefinition   >(m, "UDownloadableItemSetDefinition")
         .def_readwrite("DefaultAttributePresentation", &UDownloadableItemSetDefinition::DefaultAttributePresentation)

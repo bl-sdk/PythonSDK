@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ACullDistanceVolume(py::object m)
+void Export_pystes_ACullDistanceVolume(py::module &m)
 {
     py::class_< ACullDistanceVolume,  AVolume   >(m, "ACullDistanceVolume")
         .def_readwrite("CullDistances", &ACullDistanceVolume::CullDistances)

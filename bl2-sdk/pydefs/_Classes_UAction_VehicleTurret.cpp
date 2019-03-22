@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_VehicleTurret(py::object m)
+void Export_pystes_UAction_VehicleTurret(py::module &m)
 {
     py::class_< UAction_VehicleTurret,  UWillowActionSequencePawn   >(m, "UAction_VehicleTurret")
         .def("StaticClass", &UAction_VehicleTurret::StaticClass, py::return_value_policy::reference)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FClientBeaconConnection(py::object m)
+void Export_pystes_FClientBeaconConnection(py::module &m)
 {
     py::class_< FClientBeaconConnection >(m, "FClientBeaconConnection")
         .def_readwrite("PartyLeader", &FClientBeaconConnection::PartyLeader)

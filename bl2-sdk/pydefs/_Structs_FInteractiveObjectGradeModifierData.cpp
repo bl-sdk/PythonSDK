@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInteractiveObjectGradeModifierData(py::object m)
+void Export_pystes_FInteractiveObjectGradeModifierData(py::module &m)
 {
     py::class_< FInteractiveObjectGradeModifierData >(m, "FInteractiveObjectGradeModifierData")
         .def_readwrite("CustomInteractiveObject", &FInteractiveObjectGradeModifierData::CustomInteractiveObject)

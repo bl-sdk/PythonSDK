@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGFxMoviePressStart(py::object m)
+void Export_pystes_UWillowGFxMoviePressStart(py::module &m)
 {
     py::class_< UWillowGFxMoviePressStart,  UWillowGFxMovie   >(m, "UWillowGFxMoviePressStart")
         .def_readwrite("IdleTimeBeforeStartingAttractLoop", &UWillowGFxMoviePressStart::IdleTimeBeforeStartingAttractLoop)

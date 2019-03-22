@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRelevanceUpdateStruct(py::object m)
+void Export_pystes_FRelevanceUpdateStruct(py::module &m)
 {
     py::class_< FRelevanceUpdateStruct >(m, "FRelevanceUpdateStruct")
         .def_readwrite("FromRealViewer", &FRelevanceUpdateStruct::FromRealViewer)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInstanceDataHelper(py::object m)
+void Export_pystes_UInstanceDataHelper(py::module &m)
 {
     py::class_< UInstanceDataHelper,  UObject   >(m, "UInstanceDataHelper")
         .def("StaticClass", &UInstanceDataHelper::StaticClass, py::return_value_policy::reference)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBoneMirrorExport(py::object m)
+void Export_pystes_FBoneMirrorExport(py::module &m)
 {
     py::class_< FBoneMirrorExport >(m, "FBoneMirrorExport")
         .def_readwrite("BoneName", &FBoneMirrorExport::BoneName)

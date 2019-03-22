@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FValidNameRange(py::object m)
+void Export_pystes_FValidNameRange(py::module &m)
 {
     py::class_< FValidNameRange >(m, "FValidNameRange")
         .def_readwrite("Start", &FValidNameRange::Start)

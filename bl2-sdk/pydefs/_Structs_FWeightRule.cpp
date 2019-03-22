@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FWeightRule(py::object m)
+void Export_pystes_FWeightRule(py::module &m)
 {
     py::class_< FWeightRule >(m, "FWeightRule")
         .def_readwrite("FirstNode", &FWeightRule::FirstNode)

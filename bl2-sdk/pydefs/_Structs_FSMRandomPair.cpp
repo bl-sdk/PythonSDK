@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSMRandomPair(py::object m)
+void Export_pystes_FSMRandomPair(py::module &m)
 {
     py::class_< FSMRandomPair >(m, "FSMRandomPair")
         .def_readwrite("Weight", &FSMRandomPair::Weight)

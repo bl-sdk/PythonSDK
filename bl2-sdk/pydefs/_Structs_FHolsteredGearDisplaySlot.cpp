@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FHolsteredGearDisplaySlot(py::object m)
+void Export_pystes_FHolsteredGearDisplaySlot(py::module &m)
 {
     py::class_< FHolsteredGearDisplaySlot >(m, "FHolsteredGearDisplaySlot")
         .def_readwrite("State", &FHolsteredGearDisplaySlot::State)

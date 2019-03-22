@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMaterialEffectModifier(py::object m)
+void Export_pystes_FMaterialEffectModifier(py::module &m)
 {
     py::class_< FMaterialEffectModifier >(m, "FMaterialEffectModifier")
         .def_readwrite("EffectName", &FMaterialEffectModifier::EffectName)

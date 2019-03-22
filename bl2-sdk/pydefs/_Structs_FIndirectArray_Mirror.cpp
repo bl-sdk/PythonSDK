@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FIndirectArray_Mirror(py::object m)
+void Export_pystes_FIndirectArray_Mirror(py::module &m)
 {
     py::class_< FIndirectArray_Mirror >(m, "FIndirectArray_Mirror")
         .def_readwrite("Data", &FIndirectArray_Mirror::Data)

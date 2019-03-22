@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FColiseumStat(py::object m)
+void Export_pystes_FColiseumStat(py::module &m)
 {
     py::class_< FColiseumStat >(m, "FColiseumStat")
         .def_readwrite("StatType", &FColiseumStat::StatType)

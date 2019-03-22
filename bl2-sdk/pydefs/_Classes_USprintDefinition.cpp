@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USprintDefinition(py::object m)
+void Export_pystes_USprintDefinition(py::module &m)
 {
     py::class_< USprintDefinition,  UGBXDefinition   >(m, "USprintDefinition")
         .def_readwrite("FOVModifier", &USprintDefinition::FOVModifier)

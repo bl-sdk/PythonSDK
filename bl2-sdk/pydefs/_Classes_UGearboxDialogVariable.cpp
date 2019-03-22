@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxDialogVariable(py::object m)
+void Export_pystes_UGearboxDialogVariable(py::module &m)
 {
     py::class_< UGearboxDialogVariable,  UGearboxDialogNode   >(m, "UGearboxDialogVariable")
         .def("StaticClass", &UGearboxDialogVariable::StaticClass, py::return_value_policy::reference)

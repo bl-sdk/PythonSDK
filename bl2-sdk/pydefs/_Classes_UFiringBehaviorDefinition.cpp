@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFiringBehaviorDefinition(py::object m)
+void Export_pystes_UFiringBehaviorDefinition(py::module &m)
 {
     py::class_< UFiringBehaviorDefinition,  UGBXDefinition   >(m, "UFiringBehaviorDefinition")
         .def_readwrite("ConditionalPatterns", &UFiringBehaviorDefinition::ConditionalPatterns)

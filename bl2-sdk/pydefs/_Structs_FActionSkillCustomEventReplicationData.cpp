@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FActionSkillCustomEventReplicationData(py::object m)
+void Export_pystes_FActionSkillCustomEventReplicationData(py::module &m)
 {
     py::class_< FActionSkillCustomEventReplicationData >(m, "FActionSkillCustomEventReplicationData")
         .def_readwrite("EventCountForReplication", &FActionSkillCustomEventReplicationData::EventCountForReplication)

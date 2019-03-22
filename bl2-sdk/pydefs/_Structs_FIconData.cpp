@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FIconData(py::object m)
+void Export_pystes_FIconData(py::module &m)
 {
     py::class_< FIconData >(m, "FIconData")
         .def_readwrite("U", &FIconData::U)

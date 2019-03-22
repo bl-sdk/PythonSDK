@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialInterface(py::object m)
+void Export_pystes_UMaterialInterface(py::module &m)
 {
     py::class_< UMaterialInterface,  UObject   >(m, "UMaterialInterface")
         .def_readwrite("ParentRefFence", &UMaterialInterface::ParentRefFence)

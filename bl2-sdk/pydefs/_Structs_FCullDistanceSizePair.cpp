@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCullDistanceSizePair(py::object m)
+void Export_pystes_FCullDistanceSizePair(py::module &m)
 {
     py::class_< FCullDistanceSizePair >(m, "FCullDistanceSizePair")
         .def_readwrite("Size", &FCullDistanceSizePair::Size)

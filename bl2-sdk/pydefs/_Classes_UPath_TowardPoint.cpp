@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPath_TowardPoint(py::object m)
+void Export_pystes_UPath_TowardPoint(py::module &m)
 {
     py::class_< UPath_TowardPoint,  UPathConstraint   >(m, "UPath_TowardPoint")
         .def_readwrite("GoalPoint", &UPath_TowardPoint::GoalPoint)

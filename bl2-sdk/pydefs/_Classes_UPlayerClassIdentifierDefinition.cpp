@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerClassIdentifierDefinition(py::object m)
+void Export_pystes_UPlayerClassIdentifierDefinition(py::module &m)
 {
     py::class_< UPlayerClassIdentifierDefinition,  UGBXDefinition   >(m, "UPlayerClassIdentifierDefinition")
         .def_readwrite("VfTable_IIDlcLicensableObject", &UPlayerClassIdentifierDefinition::VfTable_IIDlcLicensableObject)

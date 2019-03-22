@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_SetInt(py::object m)
+void Export_pystes_USeqAct_SetInt(py::module &m)
 {
     py::class_< USeqAct_SetInt,  USeqAct_SetSequenceVariable   >(m, "USeqAct_SetInt")
         .def_readwrite("Target", &USeqAct_SetInt::Target)

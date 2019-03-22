@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFont(py::object m)
+void Export_pystes_UFont(py::module &m)
 {
     py::class_< UFont,  UObject   >(m, "UFont")
         .def_readwrite("Characters", &UFont::Characters)

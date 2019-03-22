@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAchievementProgressStat(py::object m)
+void Export_pystes_FAchievementProgressStat(py::module &m)
 {
     py::class_< FAchievementProgressStat >(m, "FAchievementProgressStat")
         .def_readwrite("AchievementId", &FAchievementProgressStat::AchievementId)

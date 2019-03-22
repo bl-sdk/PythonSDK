@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPainDialogLine(py::object m)
+void Export_pystes_FPainDialogLine(py::module &m)
 {
     py::class_< FPainDialogLine >(m, "FPainDialogLine")
         .def_readwrite("DET_Pain", &FPainDialogLine::DET_Pain)

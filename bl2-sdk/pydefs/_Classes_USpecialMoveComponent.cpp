@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpecialMoveComponent(py::object m)
+void Export_pystes_USpecialMoveComponent(py::module &m)
 {
     py::class_< USpecialMoveComponent,  UActorComponent   >(m, "USpecialMoveComponent")
         .def_readwrite("StartTime", &USpecialMoveComponent::StartTime)

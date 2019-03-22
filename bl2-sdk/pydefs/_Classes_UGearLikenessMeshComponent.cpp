@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearLikenessMeshComponent(py::object m)
+void Export_pystes_UGearLikenessMeshComponent(py::module &m)
 {
     py::class_< UGearLikenessMeshComponent,  USkeletalMeshComponent   >(m, "UGearLikenessMeshComponent")
         .def_readwrite("LikenessOf", &UGearLikenessMeshComponent::LikenessOf)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInterpEdSelKey(py::object m)
+void Export_pystes_FInterpEdSelKey(py::module &m)
 {
     py::class_< FInterpEdSelKey >(m, "FInterpEdSelKey")
         .def_readwrite("Group", &FInterpEdSelKey::Group)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowDamageSource(py::object m)
+void Export_pystes_UWillowDamageSource(py::module &m)
 {
     py::class_< UWillowDamageSource,  UDamageType   >(m, "UWillowDamageSource")
         .def_readwrite("GibPerterbation", &UWillowDamageType::GibPerterbation)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UISoundBehavior(py::object m)
+void Export_pystes_UISoundBehavior(py::module &m)
 {
     py::class_< UISoundBehavior,  UInterface   >(m, "UISoundBehavior")
         .def("StaticClass", &UISoundBehavior::StaticClass, py::return_value_policy::reference)

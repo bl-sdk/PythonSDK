@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDrawPylonRadiusComponent(py::object m)
+void Export_pystes_UDrawPylonRadiusComponent(py::module &m)
 {
     py::class_< UDrawPylonRadiusComponent,  UPrimitiveComponent   >(m, "UDrawPylonRadiusComponent")
         .def_readwrite("SphereColor", &UDrawSphereComponent::SphereColor)

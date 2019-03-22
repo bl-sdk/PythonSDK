@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAnimNode_Falling(py::object m)
+void Export_pystes_UWillowAnimNode_Falling(py::module &m)
 {
     py::class_< UWillowAnimNode_Falling,  UAnimNodeBlendList   >(m, "UWillowAnimNode_Falling")
         .def_readwrite("DelayBeforeStartFalling", &UWillowAnimNode_Falling::DelayBeforeStartFalling)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCoverCandidate(py::object m)
+void Export_pystes_FCoverCandidate(py::module &m)
 {
     py::class_< FCoverCandidate >(m, "FCoverCandidate")
         .def_readwrite("TheCoverActor", &FCoverCandidate::TheCoverActor)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDesignerAttributeContextResolver(py::object m)
+void Export_pystes_UDesignerAttributeContextResolver(py::module &m)
 {
     py::class_< UDesignerAttributeContextResolver,  UAttributeContextResolver   >(m, "UDesignerAttributeContextResolver")
         .def_readwrite("ValueName", &UDesignerAttributeContextResolver::ValueName)

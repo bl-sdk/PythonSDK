@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USkeletalMeshSocket(py::object m)
+void Export_pystes_USkeletalMeshSocket(py::module &m)
 {
     py::class_< USkeletalMeshSocket,  UObject   >(m, "USkeletalMeshSocket")
         .def_readwrite("SocketName", &USkeletalMeshSocket::SocketName)

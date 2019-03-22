@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDemoPlayPendingLevel(py::object m)
+void Export_pystes_UDemoPlayPendingLevel(py::module &m)
 {
     py::class_< UDemoPlayPendingLevel,  UPendingLevel   >(m, "UDemoPlayPendingLevel")
         .def("StaticClass", &UDemoPlayPendingLevel::StaticClass, py::return_value_policy::reference)

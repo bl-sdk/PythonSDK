@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAssetLibConfig(py::object m)
+void Export_pystes_FAssetLibConfig(py::module &m)
 {
     py::class_< FAssetLibConfig >(m, "FAssetLibConfig")
         .def_readwrite("SublibraryBits", &FAssetLibConfig::SublibraryBits)

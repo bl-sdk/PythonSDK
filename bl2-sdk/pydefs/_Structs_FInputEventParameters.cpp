@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInputEventParameters(py::object m)
+void Export_pystes_FInputEventParameters(py::module &m)
 {
     py::class_< FInputEventParameters >(m, "FInputEventParameters")
         .def_readwrite("PlayerIndex", &FInputEventParameters::PlayerIndex)

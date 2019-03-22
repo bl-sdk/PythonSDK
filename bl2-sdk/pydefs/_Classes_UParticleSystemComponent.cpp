@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleSystemComponent(py::object m)
+void Export_pystes_UParticleSystemComponent(py::module &m)
 {
     py::class_< UParticleSystemComponent,  UPrimitiveComponent   >(m, "UParticleSystemComponent")
         .def_readwrite("Template", &UParticleSystemComponent::Template)

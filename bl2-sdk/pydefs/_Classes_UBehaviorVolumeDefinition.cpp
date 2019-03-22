@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehaviorVolumeDefinition(py::object m)
+void Export_pystes_UBehaviorVolumeDefinition(py::module &m)
 {
     py::class_< UBehaviorVolumeDefinition,  UGBXDefinition   >(m, "UBehaviorVolumeDefinition")
         .def_readwrite("VfTable_IIConstructObject", &UBehaviorVolumeDefinition::VfTable_IIConstructObject)

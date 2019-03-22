@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTerrainLayerSetup(py::object m)
+void Export_pystes_UTerrainLayerSetup(py::module &m)
 {
     py::class_< UTerrainLayerSetup,  UObject   >(m, "UTerrainLayerSetup")
         .def_readwrite("Materials", &UTerrainLayerSetup::Materials)

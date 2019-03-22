@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSeqAct_AIScriptedAnim(py::object m)
+void Export_pystes_UWillowSeqAct_AIScriptedAnim(py::module &m)
 {
     py::class_< UWillowSeqAct_AIScriptedAnim,  USeqAct_Latent   >(m, "UWillowSeqAct_AIScriptedAnim")
         .def_readwrite("Anim", &UWillowSeqAct_AIScriptedAnim::Anim)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLevelGridCellCoordinate(py::object m)
+void Export_pystes_FLevelGridCellCoordinate(py::module &m)
 {
     py::class_< FLevelGridCellCoordinate >(m, "FLevelGridCellCoordinate")
         .def_readwrite("X", &FLevelGridCellCoordinate::X)

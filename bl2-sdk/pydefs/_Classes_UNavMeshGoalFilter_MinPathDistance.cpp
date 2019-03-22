@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNavMeshGoalFilter_MinPathDistance(py::object m)
+void Export_pystes_UNavMeshGoalFilter_MinPathDistance(py::module &m)
 {
     py::class_< UNavMeshGoalFilter_MinPathDistance,  UNavMeshGoal_Filter   >(m, "UNavMeshGoalFilter_MinPathDistance")
         .def_readwrite("MinDistancePathShouldBe", &UNavMeshGoalFilter_MinPathDistance::MinDistancePathShouldBe)

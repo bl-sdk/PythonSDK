@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHUDWidget_Challenges(py::object m)
+void Export_pystes_UHUDWidget_Challenges(py::module &m)
 {
     py::class_< UHUDWidget_Challenges,  UHUDWidget_Base   >(m, "UHUDWidget_Challenges")
         .def_readwrite("InnerClip", &UHUDWidget_Challenges::InnerClip)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBehaviorOutputLinkData(py::object m)
+void Export_pystes_FBehaviorOutputLinkData(py::module &m)
 {
     py::class_< FBehaviorOutputLinkData >(m, "FBehaviorOutputLinkData")
         .def_readwrite("LinkId", &FBehaviorOutputLinkData::LinkId)

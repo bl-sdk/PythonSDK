@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTimeValueResolver(py::object m)
+void Export_pystes_UTimeValueResolver(py::module &m)
 {
     py::class_< UTimeValueResolver,  UAttributeValueResolver   >(m, "UTimeValueResolver")
         .def_readwrite("TimeMode", &UTimeValueResolver::TimeMode)

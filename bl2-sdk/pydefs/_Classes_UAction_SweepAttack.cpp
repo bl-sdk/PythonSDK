@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_SweepAttack(py::object m)
+void Export_pystes_UAction_SweepAttack(py::module &m)
 {
     py::class_< UAction_SweepAttack,  UWillowActionSequencePawn   >(m, "UAction_SweepAttack")
         .def_readwrite("Angle", &UAction_SweepAttack::Angle)

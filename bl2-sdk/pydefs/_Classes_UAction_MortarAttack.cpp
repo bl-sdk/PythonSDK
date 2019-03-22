@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_MortarAttack(py::object m)
+void Export_pystes_UAction_MortarAttack(py::module &m)
 {
     py::class_< UAction_MortarAttack,  UAction_Burrow   >(m, "UAction_MortarAttack")
         .def_readwrite("ShotDelay", &UAction_MortarAttack::ShotDelay)

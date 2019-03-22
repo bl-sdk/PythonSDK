@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_Drive_GoBackToCombatArea(py::object m)
+void Export_pystes_UAction_Drive_GoBackToCombatArea(py::module &m)
 {
     py::class_< UAction_Drive_GoBackToCombatArea,  UWillowActionSequencePawn   >(m, "UAction_Drive_GoBackToCombatArea")
         .def_readwrite("MinSpeedMultiplier", &UAction_Drive_GoBackToCombatArea::MinSpeedMultiplier)

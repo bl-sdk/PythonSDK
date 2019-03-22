@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMorphNodeWeightByBoneAngle(py::object m)
+void Export_pystes_UMorphNodeWeightByBoneAngle(py::module &m)
 {
     py::class_< UMorphNodeWeightByBoneAngle,  UMorphNodeWeightBase   >(m, "UMorphNodeWeightByBoneAngle")
         .def_readwrite("Angle", &UMorphNodeWeightByBoneAngle::Angle)

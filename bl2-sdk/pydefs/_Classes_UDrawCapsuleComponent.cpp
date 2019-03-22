@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDrawCapsuleComponent(py::object m)
+void Export_pystes_UDrawCapsuleComponent(py::module &m)
 {
     py::class_< UDrawCapsuleComponent,  UPrimitiveComponent   >(m, "UDrawCapsuleComponent")
         .def_readwrite("CapsuleColor", &UDrawCapsuleComponent::CapsuleColor)

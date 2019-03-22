@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USavedMove(py::object m)
+void Export_pystes_USavedMove(py::module &m)
 {
     py::class_< USavedMove,  UObject   >(m, "USavedMove")
         .def_readwrite("NextMove", &USavedMove::NextMove)

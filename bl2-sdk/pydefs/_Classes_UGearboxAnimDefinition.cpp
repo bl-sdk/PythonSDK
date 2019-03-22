@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxAnimDefinition(py::object m)
+void Export_pystes_UGearboxAnimDefinition(py::module &m)
 {
     py::class_< UGearboxAnimDefinition,  USpecialMoveDefinition   >(m, "UGearboxAnimDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UGearboxAnimDefinition::VfTable_IIBehaviorProvider)

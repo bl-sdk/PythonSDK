@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SetAIFlag(py::object m)
+void Export_pystes_UBehavior_SetAIFlag(py::module &m)
 {
     py::class_< UBehavior_SetAIFlag,  UBehaviorBase   >(m, "UBehavior_SetAIFlag")
         .def_readwrite("FlagDef", &UBehavior_SetAIFlag::FlagDef)

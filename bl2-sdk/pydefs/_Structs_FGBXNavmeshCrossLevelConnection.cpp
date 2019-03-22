@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGBXNavmeshCrossLevelConnection(py::object m)
+void Export_pystes_FGBXNavmeshCrossLevelConnection(py::module &m)
 {
     py::class_< FGBXNavmeshCrossLevelConnection >(m, "FGBXNavmeshCrossLevelConnection")
   ;

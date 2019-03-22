@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSaveGameManager(py::object m)
+void Export_pystes_UWillowSaveGameManager(py::module &m)
 {
     py::class_< UWillowSaveGameManager,  UObject   >(m, "UWillowSaveGameManager")
         .def_readwrite("VfTable_FTickableObject", &UWillowSaveGameManager::VfTable_FTickableObject)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FFeaturedItemData(py::object m)
+void Export_pystes_FFeaturedItemData(py::module &m)
 {
     py::class_< FFeaturedItemData >(m, "FFeaturedItemData")
         .def_readwrite("CommerceMarkup", &FFeaturedItemData::CommerceMarkup)

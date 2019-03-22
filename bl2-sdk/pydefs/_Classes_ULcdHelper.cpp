@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULcdHelper(py::object m)
+void Export_pystes_ULcdHelper(py::module &m)
 {
     py::class_< ULcdHelper,  UObject   >(m, "ULcdHelper")
         .def_readwrite("VfTable_FTickableObject", &ULcdHelper::VfTable_FTickableObject)

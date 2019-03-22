@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLevelBasedDamageScale(py::object m)
+void Export_pystes_FLevelBasedDamageScale(py::module &m)
 {
     py::class_< FLevelBasedDamageScale >(m, "FLevelBasedDamageScale")
         .def_readwrite("LevelDifference", &FLevelBasedDamageScale::LevelDifference)

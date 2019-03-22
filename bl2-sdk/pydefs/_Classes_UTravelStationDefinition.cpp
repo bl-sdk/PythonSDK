@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTravelStationDefinition(py::object m)
+void Export_pystes_UTravelStationDefinition(py::module &m)
 {
     py::class_< UTravelStationDefinition,  UGBXDefinition   >(m, "UTravelStationDefinition")
         .def_readwrite("StationLevelName", &UTravelStationDefinition::StationLevelName)

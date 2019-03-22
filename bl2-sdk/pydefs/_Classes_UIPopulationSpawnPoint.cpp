@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIPopulationSpawnPoint(py::object m)
+void Export_pystes_UIPopulationSpawnPoint(py::module &m)
 {
     py::class_< UIPopulationSpawnPoint,  UInterface   >(m, "UIPopulationSpawnPoint")
         .def("StaticClass", &UIPopulationSpawnPoint::StaticClass, py::return_value_policy::reference)

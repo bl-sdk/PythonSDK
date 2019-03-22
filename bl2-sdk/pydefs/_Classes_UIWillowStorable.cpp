@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIWillowStorable(py::object m)
+void Export_pystes_UIWillowStorable(py::module &m)
 {
     py::class_< UIWillowStorable,  UInterface   >(m, "UIWillowStorable")
         .def("StaticClass", &UIWillowStorable::StaticClass, py::return_value_policy::reference)

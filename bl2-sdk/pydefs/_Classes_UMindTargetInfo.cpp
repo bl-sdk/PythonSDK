@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMindTargetInfo(py::object m)
+void Export_pystes_UMindTargetInfo(py::module &m)
 {
     py::class_< UMindTargetInfo,  UObject   >(m, "UMindTargetInfo")
         .def_readwrite("Target", &UMindTargetInfo::Target)

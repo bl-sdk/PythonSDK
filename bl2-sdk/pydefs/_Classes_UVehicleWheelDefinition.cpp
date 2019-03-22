@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UVehicleWheelDefinition(py::object m)
+void Export_pystes_UVehicleWheelDefinition(py::module &m)
 {
     py::class_< UVehicleWheelDefinition,  UGBXDefinition   >(m, "UVehicleWheelDefinition")
         .def_readwrite("BoneOffset", &UVehicleWheelDefinition::BoneOffset)

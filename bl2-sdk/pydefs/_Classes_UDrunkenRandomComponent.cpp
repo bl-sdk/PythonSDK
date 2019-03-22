@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDrunkenRandomComponent(py::object m)
+void Export_pystes_UDrunkenRandomComponent(py::module &m)
 {
     py::class_< UDrunkenRandomComponent,  UDrunkenBaseComponent   >(m, "UDrunkenRandomComponent")
         .def_readwrite("PathCorrectionInterval", &UDrunkenRandomComponent::PathCorrectionInterval)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCoordinatedParticleSystemDefinition(py::object m)
+void Export_pystes_FCoordinatedParticleSystemDefinition(py::module &m)
 {
     py::class_< FCoordinatedParticleSystemDefinition >(m, "FCoordinatedParticleSystemDefinition")
         .def_readwrite("ParticleSystem", &FCoordinatedParticleSystemDefinition::ParticleSystem)

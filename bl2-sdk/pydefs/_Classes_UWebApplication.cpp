@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWebApplication(py::object m)
+void Export_pystes_UWebApplication(py::module &m)
 {
     py::class_< UWebApplication,  UObject   >(m, "UWebApplication")
         .def_readwrite("WorldInfo", &UWebApplication::WorldInfo)

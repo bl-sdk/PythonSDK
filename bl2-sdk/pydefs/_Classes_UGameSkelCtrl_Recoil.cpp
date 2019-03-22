@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGameSkelCtrl_Recoil(py::object m)
+void Export_pystes_UGameSkelCtrl_Recoil(py::module &m)
 {
     py::class_< UGameSkelCtrl_Recoil,  USkelControlBase   >(m, "UGameSkelCtrl_Recoil")
         .def_readwrite("Recoil", &UGameSkelCtrl_Recoil::Recoil)

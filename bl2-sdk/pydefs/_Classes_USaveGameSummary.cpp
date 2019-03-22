@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USaveGameSummary(py::object m)
+void Export_pystes_USaveGameSummary(py::module &m)
 {
     py::class_< USaveGameSummary,  UObject   >(m, "USaveGameSummary")
         .def_readwrite("BaseLevel", &USaveGameSummary::BaseLevel)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_RemoteCustomEvent(py::object m)
+void Export_pystes_UBehavior_RemoteCustomEvent(py::module &m)
 {
     py::class_< UBehavior_RemoteCustomEvent,  UBehaviorBase   >(m, "UBehavior_RemoteCustomEvent")
         .def_readwrite("SequenceProvider", &UBehavior_RemoteCustomEvent::SequenceProvider)

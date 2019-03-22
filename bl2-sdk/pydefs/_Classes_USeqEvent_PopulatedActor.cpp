@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqEvent_PopulatedActor(py::object m)
+void Export_pystes_USeqEvent_PopulatedActor(py::module &m)
 {
     py::class_< USeqEvent_PopulatedActor,  USequenceEvent   >(m, "USeqEvent_PopulatedActor")
         .def_readwrite("DestPopulationOpportunity", &USeqEvent_PopulatedActor::DestPopulationOpportunity)

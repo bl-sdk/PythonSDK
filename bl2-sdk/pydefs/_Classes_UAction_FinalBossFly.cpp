@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_FinalBossFly(py::object m)
+void Export_pystes_UAction_FinalBossFly(py::module &m)
 {
     py::class_< UAction_FinalBossFly,  UAction_FollowPath   >(m, "UAction_FinalBossFly")
         .def_readwrite("LandPerchID", &UAction_FinalBossFly::LandPerchID)

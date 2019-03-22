@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowMissionPickupSpawner(py::object m)
+void Export_pystes_AWillowMissionPickupSpawner(py::module &m)
 {
     py::class_< AWillowMissionPickupSpawner,  AActor   >(m, "AWillowMissionPickupSpawner")
         .def_readwrite("VfTable_IIMission", &AWillowMissionPickupSpawner::VfTable_IIMission)

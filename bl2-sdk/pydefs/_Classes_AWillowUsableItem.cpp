@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowUsableItem(py::object m)
+void Export_pystes_AWillowUsableItem(py::module &m)
 {
     py::class_< AWillowUsableItem,  AWillowItem   >(m, "AWillowUsableItem")
         .def_readwrite("VfTable_IIMissionObjective", &AWillowUsableItem::VfTable_IIMissionObjective)

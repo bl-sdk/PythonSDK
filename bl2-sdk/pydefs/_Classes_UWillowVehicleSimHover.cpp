@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowVehicleSimHover(py::object m)
+void Export_pystes_UWillowVehicleSimHover(py::module &m)
 {
     py::class_< UWillowVehicleSimHover,  USVehicleSimCar   >(m, "UWillowVehicleSimHover")
         .def_readwrite("FlyingVehicle", &UWillowVehicleSimHover::FlyingVehicle)

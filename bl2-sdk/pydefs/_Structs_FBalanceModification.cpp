@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBalanceModification(py::object m)
+void Export_pystes_FBalanceModification(py::module &m)
 {
     py::class_< FBalanceModification >(m, "FBalanceModification")
         .def_readwrite("MinEffectiveLevel", &FBalanceModification::MinEffectiveLevel)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FUIMenuInputMap(py::object m)
+void Export_pystes_FUIMenuInputMap(py::module &m)
 {
     py::class_< FUIMenuInputMap >(m, "FUIMenuInputMap")
         .def_readwrite("FieldName", &FUIMenuInputMap::FieldName)

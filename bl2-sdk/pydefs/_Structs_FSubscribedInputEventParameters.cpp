@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSubscribedInputEventParameters(py::object m)
+void Export_pystes_FSubscribedInputEventParameters(py::module &m)
 {
     py::class_< FSubscribedInputEventParameters >(m, "FSubscribedInputEventParameters")
         .def_readwrite("InputAliasName", &FSubscribedInputEventParameters::InputAliasName)

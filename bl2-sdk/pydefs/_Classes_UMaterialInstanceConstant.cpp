@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialInstanceConstant(py::object m)
+void Export_pystes_UMaterialInstanceConstant(py::module &m)
 {
     py::class_< UMaterialInstanceConstant,  UMaterialInterface   >(m, "UMaterialInstanceConstant")
         .def_readwrite("FontParameterValues", &UMaterialInstanceConstant::FontParameterValues)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FOfferResult(py::object m)
+void Export_pystes_FOfferResult(py::module &m)
 {
     py::class_< FOfferResult >(m, "FOfferResult")
         .def_readwrite("TitleEfigs", &FOfferResult::TitleEfigs)

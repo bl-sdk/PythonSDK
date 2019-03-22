@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowLockWarningMessage(py::object m)
+void Export_pystes_UWillowLockWarningMessage(py::module &m)
 {
     py::class_< UWillowLockWarningMessage,  UWillowLocalMessage   >(m, "UWillowLockWarningMessage")
         .def_readwrite("MissileLockOnString", &UWillowLockWarningMessage::MissileLockOnString)

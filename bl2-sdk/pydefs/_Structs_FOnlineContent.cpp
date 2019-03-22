@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FOnlineContent(py::object m)
+void Export_pystes_FOnlineContent(py::module &m)
 {
     py::class_< FOnlineContent >(m, "FOnlineContent")
         .def_readwrite("ContentType", &FOnlineContent::ContentType)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCellContentData(py::object m)
+void Export_pystes_FCellContentData(py::module &m)
 {
     py::class_< FCellContentData >(m, "FCellContentData")
         .def_readwrite("Tex", &FCellContentData::Tex)

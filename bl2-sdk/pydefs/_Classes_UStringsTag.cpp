@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UStringsTag(py::object m)
+void Export_pystes_UStringsTag(py::module &m)
 {
     py::class_< UStringsTag,  UTranslatorTag   >(m, "UStringsTag")
         .def("StaticClass", &UStringsTag::StaticClass, py::return_value_policy::reference)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerBehavior_UnlockAchievementForAllPlayers(py::object m)
+void Export_pystes_UPlayerBehavior_UnlockAchievementForAllPlayers(py::module &m)
 {
     py::class_< UPlayerBehavior_UnlockAchievementForAllPlayers,  UPlayerBehaviorBase   >(m, "UPlayerBehavior_UnlockAchievementForAllPlayers")
         .def_readwrite("Achievement", &UPlayerBehavior_UnlockAchievementForAllPlayers::Achievement)

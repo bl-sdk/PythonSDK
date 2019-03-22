@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTerrainDecoLayer(py::object m)
+void Export_pystes_FTerrainDecoLayer(py::module &m)
 {
     py::class_< FTerrainDecoLayer >(m, "FTerrainDecoLayer")
         .def_readwrite("Name", &FTerrainDecoLayer::Name)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAnimNode_Prism(py::object m)
+void Export_pystes_UWillowAnimNode_Prism(py::module &m)
 {
     py::class_< UWillowAnimNode_Prism,  UAnimNodeBlendBase   >(m, "UWillowAnimNode_Prism")
         .def_readwrite("PrismData", &UWillowAnimNode_Prism::PrismData)

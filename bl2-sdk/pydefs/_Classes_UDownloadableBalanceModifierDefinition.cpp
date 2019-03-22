@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDownloadableBalanceModifierDefinition(py::object m)
+void Export_pystes_UDownloadableBalanceModifierDefinition(py::module &m)
 {
     py::class_< UDownloadableBalanceModifierDefinition,  UDownloadableContentDefinition   >(m, "UDownloadableBalanceModifierDefinition")
         .def_readwrite("BalanceModifier", &UDownloadableBalanceModifierDefinition::BalanceModifier)

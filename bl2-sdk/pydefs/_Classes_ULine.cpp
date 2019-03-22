@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULine(py::object m)
+void Export_pystes_ULine(py::module &m)
 {
     py::class_< ULine,  UObject   >(m, "ULine")
         .def_readwrite("Parent", &ULine::Parent)

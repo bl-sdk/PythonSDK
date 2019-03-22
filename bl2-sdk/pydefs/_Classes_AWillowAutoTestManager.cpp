@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowAutoTestManager(py::object m)
+void Export_pystes_AWillowAutoTestManager(py::module &m)
 {
     py::class_< AWillowAutoTestManager,  AAutoTestManager   >(m, "AWillowAutoTestManager")
         .def_readwrite("WillowSentinelPC", &AWillowAutoTestManager::WillowSentinelPC)

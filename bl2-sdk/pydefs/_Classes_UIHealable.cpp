@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIHealable(py::object m)
+void Export_pystes_UIHealable(py::module &m)
 {
     py::class_< UIHealable,  UInterface   >(m, "UIHealable")
         .def("StaticClass", &UIHealable::StaticClass, py::return_value_policy::reference)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGFxEngine(py::object m)
+void Export_pystes_UGFxEngine(py::module &m)
 {
     py::class_< UGFxEngine,  UObject   >(m, "UGFxEngine")
         .def_readwrite("GCReferences", &UGFxEngine::GCReferences)

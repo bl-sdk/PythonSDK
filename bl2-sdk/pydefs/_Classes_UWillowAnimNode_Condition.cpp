@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAnimNode_Condition(py::object m)
+void Export_pystes_UWillowAnimNode_Condition(py::module &m)
 {
     py::class_< UWillowAnimNode_Condition,  UAnimNodeBlend   >(m, "UWillowAnimNode_Condition")
         .def_readwrite("BlendTime", &UWillowAnimNode_Condition::BlendTime)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAreaTestSortedPoint(py::object m)
+void Export_pystes_FAreaTestSortedPoint(py::module &m)
 {
     py::class_< FAreaTestSortedPoint >(m, "FAreaTestSortedPoint")
         .def_readwrite("Nav", &FAreaTestSortedPoint::Nav)

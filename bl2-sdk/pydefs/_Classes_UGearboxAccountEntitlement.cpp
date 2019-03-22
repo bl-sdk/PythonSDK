@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxAccountEntitlement(py::object m)
+void Export_pystes_UGearboxAccountEntitlement(py::module &m)
 {
     py::class_< UGearboxAccountEntitlement,  UObject   >(m, "UGearboxAccountEntitlement")
         .def_readwrite("Identifier", &UGearboxAccountEntitlement::Identifier)

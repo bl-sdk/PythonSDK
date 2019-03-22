@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FVehicleEffect(py::object m)
+void Export_pystes_FVehicleEffect(py::module &m)
 {
     py::class_< FVehicleEffect >(m, "FVehicleEffect")
         .def_readwrite("EffectStartTag", &FVehicleEffect::EffectStartTag)

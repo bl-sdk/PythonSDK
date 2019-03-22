@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWeaponPartDefinition(py::object m)
+void Export_pystes_UWeaponPartDefinition(py::module &m)
 {
     py::class_< UWeaponPartDefinition,  UWillowInventoryPartDefinition   >(m, "UWeaponPartDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UWeaponPartDefinition::VfTable_IIBehaviorProvider)

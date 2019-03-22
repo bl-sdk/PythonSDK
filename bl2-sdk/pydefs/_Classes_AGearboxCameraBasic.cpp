@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AGearboxCameraBasic(py::object m)
+void Export_pystes_AGearboxCameraBasic(py::module &m)
 {
     py::class_< AGearboxCameraBasic,  ACamera   >(m, "AGearboxCameraBasic")
         .def_readwrite("VfTable_IInterfaceGearboxCamera", &AGearboxCameraBasic::VfTable_IInterfaceGearboxCamera)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ATemporalField(py::object m)
+void Export_pystes_ATemporalField(py::module &m)
 {
     py::class_< ATemporalField,  AActor   >(m, "ATemporalField")
         .def_readwrite("StaticMeshComponent", &ATemporalField::StaticMeshComponent)

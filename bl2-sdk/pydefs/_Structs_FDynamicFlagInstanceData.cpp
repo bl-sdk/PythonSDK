@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDynamicFlagInstanceData(py::object m)
+void Export_pystes_FDynamicFlagInstanceData(py::module &m)
 {
     py::class_< FDynamicFlagInstanceData >(m, "FDynamicFlagInstanceData")
         .def_readwrite("DynamicFlag", &FDynamicFlagInstanceData::DynamicFlag)

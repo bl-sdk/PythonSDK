@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionStaticSwitchParameter(py::object m)
+void Export_pystes_UMaterialExpressionStaticSwitchParameter(py::module &m)
 {
     py::class_< UMaterialExpressionStaticSwitchParameter,  UMaterialExpressionParameter   >(m, "UMaterialExpressionStaticSwitchParameter")
         .def_readwrite("A", &UMaterialExpressionStaticSwitchParameter::A)

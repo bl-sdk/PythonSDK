@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHUDScalingAnchorDefinition(py::object m)
+void Export_pystes_UHUDScalingAnchorDefinition(py::module &m)
 {
     py::class_< UHUDScalingAnchorDefinition,  UGBXDefinition   >(m, "UHUDScalingAnchorDefinition")
         .def_readwrite("AnchorPosition", &UHUDScalingAnchorDefinition::AnchorPosition)

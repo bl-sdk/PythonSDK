@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SetDualWieldBlendState(py::object m)
+void Export_pystes_UBehavior_SetDualWieldBlendState(py::module &m)
 {
     py::class_< UBehavior_SetDualWieldBlendState,  UBehaviorBase   >(m, "UBehavior_SetDualWieldBlendState")
         .def_readwrite("BlendTime", &UBehavior_SetDualWieldBlendState::BlendTime)

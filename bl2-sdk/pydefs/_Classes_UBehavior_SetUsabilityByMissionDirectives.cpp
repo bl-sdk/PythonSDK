@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SetUsabilityByMissionDirectives(py::object m)
+void Export_pystes_UBehavior_SetUsabilityByMissionDirectives(py::module &m)
 {
     py::class_< UBehavior_SetUsabilityByMissionDirectives,  UBehaviorBase   >(m, "UBehavior_SetUsabilityByMissionDirectives")
         .def_readwrite("ChangeUsability", &UBehavior_SetUsabilityByMissionDirectives::ChangeUsability)

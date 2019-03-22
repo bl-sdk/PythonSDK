@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWorldInfo(py::object m)
+void Export_pystes_AWorldInfo(py::module &m)
 {
     py::class_< AWorldInfo,  AActor   >(m, "AWorldInfo")
         .def_readwrite("DefaultPostProcessSettings", &AWorldInfo::DefaultPostProcessSettings)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGestaltPartMatrices(py::object m)
+void Export_pystes_UGestaltPartMatrices(py::module &m)
 {
     py::class_< UGestaltPartMatrices,  UObject   >(m, "UGestaltPartMatrices")
         .def_readwrite("GestaltAccessoryMeshList", &UGestaltPartMatrices::GestaltAccessoryMeshList)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULockoutDefinition(py::object m)
+void Export_pystes_ULockoutDefinition(py::module &m)
 {
     py::class_< ULockoutDefinition,  UGBXDefinition   >(m, "ULockoutDefinition")
         .def_readwrite("Style", &ULockoutDefinition::Style)

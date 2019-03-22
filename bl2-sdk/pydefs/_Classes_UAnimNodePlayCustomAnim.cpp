@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNodePlayCustomAnim(py::object m)
+void Export_pystes_UAnimNodePlayCustomAnim(py::module &m)
 {
     py::class_< UAnimNodePlayCustomAnim,  UAnimNodeBlend   >(m, "UAnimNodePlayCustomAnim")
         .def_readwrite("CustomPendingBlendOutTime", &UAnimNodePlayCustomAnim::CustomPendingBlendOutTime)

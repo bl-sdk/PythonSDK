@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowVehicleSimChopper(py::object m)
+void Export_pystes_UWillowVehicleSimChopper(py::module &m)
 {
     py::class_< UWillowVehicleSimChopper,  USVehicleSimBase   >(m, "UWillowVehicleSimChopper")
         .def_readwrite("MaxThrustForce", &UWillowVehicleSimChopper::MaxThrustForce)

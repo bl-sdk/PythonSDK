@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGameWaveForms(py::object m)
+void Export_pystes_UGameWaveForms(py::module &m)
 {
     py::class_< UGameWaveForms,  UObject   >(m, "UGameWaveForms")
         .def_readwrite("CameraShakeMediumShort", &UGameWaveForms::CameraShakeMediumShort)

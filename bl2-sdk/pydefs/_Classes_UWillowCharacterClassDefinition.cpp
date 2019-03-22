@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowCharacterClassDefinition(py::object m)
+void Export_pystes_UWillowCharacterClassDefinition(py::module &m)
 {
     py::class_< UWillowCharacterClassDefinition,  UCharacterClassDefinition   >(m, "UWillowCharacterClassDefinition")
         .def_readwrite("VfTable_IIBehaviorProvider", &UWillowCharacterClassDefinition::VfTable_IIBehaviorProvider)

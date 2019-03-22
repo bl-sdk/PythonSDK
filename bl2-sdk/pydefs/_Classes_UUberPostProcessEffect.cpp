@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUberPostProcessEffect(py::object m)
+void Export_pystes_UUberPostProcessEffect(py::module &m)
 {
     py::class_< UUberPostProcessEffect,  UPostProcessEffect   >(m, "UUberPostProcessEffect")
         .def_readwrite("SceneShadows", &UUberPostProcessEffect::SceneShadows)

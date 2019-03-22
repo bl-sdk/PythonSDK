@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGBXNavMeshPolyLookup(py::object m)
+void Export_pystes_FGBXNavMeshPolyLookup(py::module &m)
 {
     py::class_< FGBXNavMeshPolyLookup >(m, "FGBXNavMeshPolyLookup")
         .def_readwrite("XCells", &FGBXNavMeshPolyLookup::XCells)

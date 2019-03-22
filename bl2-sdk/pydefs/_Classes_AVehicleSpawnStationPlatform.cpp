@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AVehicleSpawnStationPlatform(py::object m)
+void Export_pystes_AVehicleSpawnStationPlatform(py::module &m)
 {
     py::class_< AVehicleSpawnStationPlatform,  AWillowInteractiveObject   >(m, "AVehicleSpawnStationPlatform")
         .def_readwrite("StationSlot", &AVehicleSpawnStationPlatform::StationSlot)

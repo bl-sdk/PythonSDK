@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SpawnParticleSystemAtWorldLocation(py::object m)
+void Export_pystes_UBehavior_SpawnParticleSystemAtWorldLocation(py::module &m)
 {
     py::class_< UBehavior_SpawnParticleSystemAtWorldLocation,  UBehaviorBase   >(m, "UBehavior_SpawnParticleSystemAtWorldLocation")
         .def_readwrite("InstanceDataContext", &UBehavior_SpawnParticleSystemAtWorldLocation::InstanceDataContext)

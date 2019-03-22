@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULandscapeComponent(py::object m)
+void Export_pystes_ULandscapeComponent(py::module &m)
 {
     py::class_< ULandscapeComponent,  UPrimitiveComponent   >(m, "ULandscapeComponent")
         .def_readwrite("SectionBaseX", &ULandscapeComponent::SectionBaseX)

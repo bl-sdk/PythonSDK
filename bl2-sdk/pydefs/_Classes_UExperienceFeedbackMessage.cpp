@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UExperienceFeedbackMessage(py::object m)
+void Export_pystes_UExperienceFeedbackMessage(py::module &m)
 {
     py::class_< UExperienceFeedbackMessage,  ULocalMessage   >(m, "UExperienceFeedbackMessage")
         .def_readwrite("IsNowLevel", &UExperienceFeedbackMessage::IsNowLevel)

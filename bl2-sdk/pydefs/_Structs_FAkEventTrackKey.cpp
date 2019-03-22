@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAkEventTrackKey(py::object m)
+void Export_pystes_FAkEventTrackKey(py::module &m)
 {
     py::class_< FAkEventTrackKey >(m, "FAkEventTrackKey")
         .def_readwrite("Time", &FAkEventTrackKey::Time)

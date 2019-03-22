@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHitRegionHelper(py::object m)
+void Export_pystes_UHitRegionHelper(py::module &m)
 {
     py::class_< UHitRegionHelper,  UObject   >(m, "UHitRegionHelper")
         .def_readwrite("HitRegionDamageList", &UHitRegionHelper::HitRegionDamageList)

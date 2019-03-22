@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleAttractorParticle(py::object m)
+void Export_pystes_UParticleModuleAttractorParticle(py::module &m)
 {
     py::class_< UParticleModuleAttractorParticle,  UParticleModule   >(m, "UParticleModuleAttractorParticle")
         .def_readwrite("EmitterName", &UParticleModuleAttractorParticle::EmitterName)

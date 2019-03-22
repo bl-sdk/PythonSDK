@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AEmitter(py::object m)
+void Export_pystes_AEmitter(py::module &m)
 {
     py::class_< AEmitter,  AActor   >(m, "AEmitter")
         .def_readwrite("ParticleSystemComponent", &AEmitter::ParticleSystemComponent)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowImpactDefinition(py::object m)
+void Export_pystes_UWillowImpactDefinition(py::module &m)
 {
     py::class_< UWillowImpactDefinition,  UImpactDefinition   >(m, "UWillowImpactDefinition")
         .def_readwrite("FallbackEffect", &UWillowImpactDefinition::FallbackEffect)

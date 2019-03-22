@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ARoute(py::object m)
+void Export_pystes_ARoute(py::module &m)
 {
     py::class_< ARoute,  AInfo   >(m, "ARoute")
         .def_readwrite("VfTable_IEditorLinkSelectionInterface", &ARoute::VfTable_IEditorLinkSelectionInterface)

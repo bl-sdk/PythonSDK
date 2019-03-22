@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTrailSample(py::object m)
+void Export_pystes_FTrailSample(py::module &m)
 {
     py::class_< FTrailSample >(m, "FTrailSample")
         .def_readwrite("RelativeTime", &FTrailSample::RelativeTime)

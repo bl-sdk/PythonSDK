@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGenericReviveMessageDefinition(py::object m)
+void Export_pystes_UGenericReviveMessageDefinition(py::module &m)
 {
     py::class_< UGenericReviveMessageDefinition,  UGBXDefinition   >(m, "UGenericReviveMessageDefinition")
         .def_readwrite("Message_Self", &UGenericReviveMessageDefinition::Message_Self)

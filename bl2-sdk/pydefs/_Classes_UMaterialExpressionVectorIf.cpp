@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionVectorIf(py::object m)
+void Export_pystes_UMaterialExpressionVectorIf(py::module &m)
 {
     py::class_< UMaterialExpressionVectorIf,  UMaterialExpression   >(m, "UMaterialExpressionVectorIf")
         .def_readwrite("A", &UMaterialExpressionVectorIf::A)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_GetVelocity(py::object m)
+void Export_pystes_USeqAct_GetVelocity(py::module &m)
 {
     py::class_< USeqAct_GetVelocity,  USequenceAction   >(m, "USeqAct_GetVelocity")
         .def_readwrite("VelocityMag", &USeqAct_GetVelocity::VelocityMag)

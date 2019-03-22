@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowLeviathanService(py::object m)
+void Export_pystes_UWillowLeviathanService(py::module &m)
 {
     py::class_< UWillowLeviathanService,  ULeviathanService   >(m, "UWillowLeviathanService")
         .def_readwrite("VfTable_FTickableObject", &UWillowLeviathanService::VfTable_FTickableObject)

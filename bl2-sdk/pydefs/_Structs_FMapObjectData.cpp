@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMapObjectData(py::object m)
+void Export_pystes_FMapObjectData(py::module &m)
 {
     py::class_< FMapObjectData >(m, "FMapObjectData")
         .def_readwrite("Player", &FMapObjectData::Player)

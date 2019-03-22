@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FOnlineProfileSetting(py::object m)
+void Export_pystes_FOnlineProfileSetting(py::module &m)
 {
     py::class_< FOnlineProfileSetting >(m, "FOnlineProfileSetting")
         .def_readwrite("Owner", &FOnlineProfileSetting::Owner)

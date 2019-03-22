@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SetUsableIcon(py::object m)
+void Export_pystes_UBehavior_SetUsableIcon(py::module &m)
 {
     py::class_< UBehavior_SetUsableIcon,  UBehaviorBase   >(m, "UBehavior_SetUsableIcon")
         .def_readwrite("Icon", &UBehavior_SetUsableIcon::Icon)

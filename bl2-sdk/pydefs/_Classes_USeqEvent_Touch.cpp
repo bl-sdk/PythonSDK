@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqEvent_Touch(py::object m)
+void Export_pystes_USeqEvent_Touch(py::module &m)
 {
     py::class_< USeqEvent_Touch,  USequenceEvent   >(m, "USeqEvent_Touch")
         .def_readwrite("ClassProximityTypes", &USeqEvent_Touch::ClassProximityTypes)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineGameInterface(py::object m)
+void Export_pystes_UOnlineGameInterface(py::module &m)
 {
     py::class_< UOnlineGameInterface,  UInterface   >(m, "UOnlineGameInterface")
         .def("StaticClass", &UOnlineGameInterface::StaticClass, py::return_value_policy::reference)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UProjectileBehavior_SetHomingTarget(py::object m)
+void Export_pystes_UProjectileBehavior_SetHomingTarget(py::module &m)
 {
     py::class_< UProjectileBehavior_SetHomingTarget,  UProjectileBehaviorBase   >(m, "UProjectileBehavior_SetHomingTarget")
         .def_readwrite("AssignedTarget", &UProjectileBehavior_SetHomingTarget::AssignedTarget)

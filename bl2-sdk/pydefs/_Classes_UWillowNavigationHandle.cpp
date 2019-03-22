@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowNavigationHandle(py::object m)
+void Export_pystes_UWillowNavigationHandle(py::module &m)
 {
     py::class_< UWillowNavigationHandle,  UGearboxNavigationHandle   >(m, "UWillowNavigationHandle")
         .def_readwrite("MyWillowMind", &UWillowNavigationHandle::MyWillowMind)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSplineAnimPathData(py::object m)
+void Export_pystes_FSplineAnimPathData(py::module &m)
 {
     py::class_< FSplineAnimPathData >(m, "FSplineAnimPathData")
         .def_readwrite("StartSpline", &FSplineAnimPathData::StartSpline)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USkelControlWheel(py::object m)
+void Export_pystes_USkelControlWheel(py::module &m)
 {
     py::class_< USkelControlWheel,  USkelControlBase   >(m, "USkelControlWheel")
         .def_readwrite("WheelDisplacement", &USkelControlWheel::WheelDisplacement)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_URES_AIOperation(py::object m)
+void Export_pystes_URES_AIOperation(py::module &m)
 {
     py::class_< URES_AIOperation,  UActionResource   >(m, "URES_AIOperation")
         .def("StaticClass", &URES_AIOperation::StaticClass, py::return_value_policy::reference)

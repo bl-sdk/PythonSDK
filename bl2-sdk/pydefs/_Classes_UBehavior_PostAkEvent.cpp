@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_PostAkEvent(py::object m)
+void Export_pystes_UBehavior_PostAkEvent(py::module &m)
 {
     py::class_< UBehavior_PostAkEvent,  UBehaviorBase   >(m, "UBehavior_PostAkEvent")
         .def_readwrite("Event", &UBehavior_PostAkEvent::Event)

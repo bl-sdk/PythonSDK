@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UClient(py::object m)
+void Export_pystes_UClient(py::module &m)
 {
     py::class_< UClient,  UObject   >(m, "UClient")
         .def_readwrite("MinDesiredFrameRate", &UClient::MinDesiredFrameRate)

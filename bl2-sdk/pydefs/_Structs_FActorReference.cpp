@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FActorReference(py::object m)
+void Export_pystes_FActorReference(py::module &m)
 {
     py::class_< FActorReference >(m, "FActorReference")
         .def_readwrite("Actor", &FActorReference::Actor)

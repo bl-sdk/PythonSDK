@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAttributeSlotEffectAttributeValueResolver(py::object m)
+void Export_pystes_UAttributeSlotEffectAttributeValueResolver(py::module &m)
 {
     py::class_< UAttributeSlotEffectAttributeValueResolver,  UAttributeValueResolver   >(m, "UAttributeSlotEffectAttributeValueResolver")
         .def_readwrite("SlotProperty", &UAttributeSlotEffectAttributeValueResolver::SlotProperty)

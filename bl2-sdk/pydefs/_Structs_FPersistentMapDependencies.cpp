@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPersistentMapDependencies(py::object m)
+void Export_pystes_FPersistentMapDependencies(py::module &m)
 {
     py::class_< FPersistentMapDependencies >(m, "FPersistentMapDependencies")
         .def_readwrite("PersistentMap", &FPersistentMapDependencies::PersistentMap)

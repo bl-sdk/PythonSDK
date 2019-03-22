@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FActiveMorph(py::object m)
+void Export_pystes_FActiveMorph(py::module &m)
 {
     py::class_< FActiveMorph >(m, "FActiveMorph")
         .def_readwrite("Target", &FActiveMorph::Target)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDebugLoadBalance(py::object m)
+void Export_pystes_FDebugLoadBalance(py::module &m)
 {
     py::class_< FDebugLoadBalance >(m, "FDebugLoadBalance")
         .def_readwrite("RuleEngine", &FDebugLoadBalance::RuleEngine)

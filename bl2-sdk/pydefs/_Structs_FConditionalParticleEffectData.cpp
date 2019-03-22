@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FConditionalParticleEffectData(py::object m)
+void Export_pystes_FConditionalParticleEffectData(py::module &m)
 {
     py::class_< FConditionalParticleEffectData >(m, "FConditionalParticleEffectData")
         .def_readwrite("Expression", &FConditionalParticleEffectData::Expression)

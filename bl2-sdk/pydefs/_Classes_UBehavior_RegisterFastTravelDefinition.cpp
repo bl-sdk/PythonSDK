@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_RegisterFastTravelDefinition(py::object m)
+void Export_pystes_UBehavior_RegisterFastTravelDefinition(py::module &m)
 {
     py::class_< UBehavior_RegisterFastTravelDefinition,  UBehaviorBase   >(m, "UBehavior_RegisterFastTravelDefinition")
         .def_readwrite("StationToRegister", &UBehavior_RegisterFastTravelDefinition::StationToRegister)

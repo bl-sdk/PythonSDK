@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNavMeshGoalFilter_OutSideOfDotProductWedge(py::object m)
+void Export_pystes_UNavMeshGoalFilter_OutSideOfDotProductWedge(py::module &m)
 {
     py::class_< UNavMeshGoalFilter_OutSideOfDotProductWedge,  UNavMeshGoal_Filter   >(m, "UNavMeshGoalFilter_OutSideOfDotProductWedge")
         .def_readwrite("Location", &UNavMeshGoalFilter_OutSideOfDotProductWedge::Location)

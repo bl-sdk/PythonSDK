@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSoundClassEditorData(py::object m)
+void Export_pystes_FSoundClassEditorData(py::module &m)
 {
     py::class_< FSoundClassEditorData >(m, "FSoundClassEditorData")
         .def_readwrite("NodePosX", &FSoundClassEditorData::NodePosX)

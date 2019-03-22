@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCustomizationGFxMovie(py::object m)
+void Export_pystes_UCustomizationGFxMovie(py::module &m)
 {
     py::class_< UCustomizationGFxMovie,  UWillowGFxThirdPersonMovie   >(m, "UCustomizationGFxMovie")
         .def_readwrite("CharacterCustomizationMenu", &UCustomizationGFxMovie::CharacterCustomizationMenu)

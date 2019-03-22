@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGbxMessage(py::object m)
+void Export_pystes_UGbxMessage(py::module &m)
 {
     py::class_< UGbxMessage,  UObject   >(m, "UGbxMessage")
         .def_readwrite("Definition", &UGbxMessage::Definition)

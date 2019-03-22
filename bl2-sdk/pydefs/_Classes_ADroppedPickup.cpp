@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ADroppedPickup(py::object m)
+void Export_pystes_ADroppedPickup(py::module &m)
 {
     py::class_< ADroppedPickup,  AActor   >(m, "ADroppedPickup")
         .def_readwrite("VfTable_IIPickupable", &ADroppedPickup::VfTable_IIPickupable)

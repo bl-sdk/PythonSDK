@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowVersusDuelGlobals(py::object m)
+void Export_pystes_UWillowVersusDuelGlobals(py::module &m)
 {
     py::class_< UWillowVersusDuelGlobals,  UGBXDefinition   >(m, "UWillowVersusDuelGlobals")
         .def_readwrite("ArenaMaterialIndex", &UWillowVersusDuelGlobals::ArenaMaterialIndex)

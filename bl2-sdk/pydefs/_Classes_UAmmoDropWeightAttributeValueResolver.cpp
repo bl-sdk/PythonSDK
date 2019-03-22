@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAmmoDropWeightAttributeValueResolver(py::object m)
+void Export_pystes_UAmmoDropWeightAttributeValueResolver(py::module &m)
 {
     py::class_< UAmmoDropWeightAttributeValueResolver,  UAttributeValueResolver   >(m, "UAmmoDropWeightAttributeValueResolver")
         .def_readwrite("Resource", &UAmmoDropWeightAttributeValueResolver::Resource)

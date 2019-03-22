@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ANxForceField(py::object m)
+void Export_pystes_ANxForceField(py::module &m)
 {
     py::class_< ANxForceField,  AActor   >(m, "ANxForceField")
         .def_readwrite("ExcludeChannel", &ANxForceField::ExcludeChannel)

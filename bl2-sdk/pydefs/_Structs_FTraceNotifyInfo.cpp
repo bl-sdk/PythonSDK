@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTraceNotifyInfo(py::object m)
+void Export_pystes_FTraceNotifyInfo(py::module &m)
 {
     py::class_< FTraceNotifyInfo >(m, "FTraceNotifyInfo")
         .def_readwrite("ActorToNotify", &FTraceNotifyInfo::ActorToNotify)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UChassisDefinition(py::object m)
+void Export_pystes_UChassisDefinition(py::module &m)
 {
     py::class_< UChassisDefinition,  UGBXDefinition   >(m, "UChassisDefinition")
         .def_readwrite("VfTable_IIHitRegionInfoProvider", &UChassisDefinition::VfTable_IIHitRegionInfoProvider)

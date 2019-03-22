@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APawn(py::object m)
+void Export_pystes_APawn(py::module &m)
 {
     py::class_< APawn,  AActor   >(m, "APawn")
         .def_readwrite("VfTable_IInterface_Speaker", &APawn::VfTable_IInterface_Speaker)

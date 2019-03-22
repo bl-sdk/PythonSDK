@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTextureFlipBook(py::object m)
+void Export_pystes_UTextureFlipBook(py::module &m)
 {
     py::class_< UTextureFlipBook,  UTexture2D   >(m, "UTextureFlipBook")
         .def_readwrite("VfTable_FTickableObject", &UTextureFlipBook::VfTable_FTickableObject)

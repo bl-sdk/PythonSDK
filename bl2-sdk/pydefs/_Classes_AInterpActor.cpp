@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AInterpActor(py::object m)
+void Export_pystes_AInterpActor(py::module &m)
 {
     py::class_< AInterpActor,  AActor   >(m, "AInterpActor")
         .def_readwrite("MyMarker", &AInterpActor::MyMarker)

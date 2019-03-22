@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FStatusEffectNameMapping(py::object m)
+void Export_pystes_FStatusEffectNameMapping(py::module &m)
 {
     py::class_< FStatusEffectNameMapping >(m, "FStatusEffectNameMapping")
         .def_readwrite("StatusEffectName", &FStatusEffectNameMapping::StatusEffectName)

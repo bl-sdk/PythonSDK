@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UVSSUIDefinition(py::object m)
+void Export_pystes_UVSSUIDefinition(py::module &m)
 {
     py::class_< UVSSUIDefinition,  UGBXDefinition   >(m, "UVSSUIDefinition")
         .def_readwrite("VfTable_IIDlcLicensableObject", &UVSSUIDefinition::VfTable_IIDlcLicensableObject)

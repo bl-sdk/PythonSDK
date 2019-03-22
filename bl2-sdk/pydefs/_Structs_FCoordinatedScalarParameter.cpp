@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCoordinatedScalarParameter(py::object m)
+void Export_pystes_FCoordinatedScalarParameter(py::module &m)
 {
     py::class_< FCoordinatedScalarParameter >(m, "FCoordinatedScalarParameter")
         .def_readwrite("ParamName", &FCoordinatedScalarParameter::ParamName)

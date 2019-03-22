@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInputDeviceAxisData(py::object m)
+void Export_pystes_FInputDeviceAxisData(py::module &m)
 {
     py::class_< FInputDeviceAxisData >(m, "FInputDeviceAxisData")
         .def_readwrite("AxisName", &FInputDeviceAxisData::AxisName)

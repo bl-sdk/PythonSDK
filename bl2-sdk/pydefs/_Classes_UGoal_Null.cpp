@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGoal_Null(py::object m)
+void Export_pystes_UGoal_Null(py::module &m)
 {
     py::class_< UGoal_Null,  UPathGoalEvaluator   >(m, "UGoal_Null")
         .def("StaticClass", &UGoal_Null::StaticClass, py::return_value_policy::reference)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_ChangeVisibility(py::object m)
+void Export_pystes_UBehavior_ChangeVisibility(py::module &m)
 {
     py::class_< UBehavior_ChangeVisibility,  UBehaviorBase   >(m, "UBehavior_ChangeVisibility")
         .def_readwrite("Status", &UBehavior_ChangeVisibility::Status)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTwoVectors(py::object m)
+void Export_pystes_FTwoVectors(py::module &m)
 {
     py::class_< FTwoVectors >(m, "FTwoVectors")
         .def_readwrite("v1", &FTwoVectors::v1)

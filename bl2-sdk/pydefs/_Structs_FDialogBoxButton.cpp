@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDialogBoxButton(py::object m)
+void Export_pystes_FDialogBoxButton(py::module &m)
 {
     py::class_< FDialogBoxButton >(m, "FDialogBoxButton")
         .def_readwrite("Caption", &FDialogBoxButton::Caption)

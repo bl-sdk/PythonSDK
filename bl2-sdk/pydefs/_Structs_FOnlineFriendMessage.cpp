@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FOnlineFriendMessage(py::object m)
+void Export_pystes_FOnlineFriendMessage(py::module &m)
 {
     py::class_< FOnlineFriendMessage >(m, "FOnlineFriendMessage")
         .def_readwrite("SendingPlayerId", &FOnlineFriendMessage::SendingPlayerId)

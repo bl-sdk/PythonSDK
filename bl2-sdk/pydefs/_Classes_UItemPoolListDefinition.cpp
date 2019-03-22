@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UItemPoolListDefinition(py::object m)
+void Export_pystes_UItemPoolListDefinition(py::module &m)
 {
     py::class_< UItemPoolListDefinition,  UGBXDefinition   >(m, "UItemPoolListDefinition")
         .def_readwrite("ItemPoolIncludedLists", &UItemPoolListDefinition::ItemPoolIncludedLists)

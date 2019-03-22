@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMarketplaceContent(py::object m)
+void Export_pystes_FMarketplaceContent(py::module &m)
 {
     py::class_< FMarketplaceContent >(m, "FMarketplaceContent")
         .def_readwrite("UserIndex", &FMarketplaceContent::UserIndex)

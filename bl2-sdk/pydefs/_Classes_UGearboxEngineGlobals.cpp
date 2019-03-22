@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxEngineGlobals(py::object m)
+void Export_pystes_UGearboxEngineGlobals(py::module &m)
 {
     py::class_< UGearboxEngineGlobals,  UObject   >(m, "UGearboxEngineGlobals")
         .def_readwrite("TheTargetableList", &UGearboxEngineGlobals::TheTargetableList)

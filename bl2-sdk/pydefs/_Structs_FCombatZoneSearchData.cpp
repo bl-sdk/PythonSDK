@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCombatZoneSearchData(py::object m)
+void Export_pystes_FCombatZoneSearchData(py::module &m)
 {
     py::class_< FCombatZoneSearchData >(m, "FCombatZoneSearchData")
         .def_readwrite("ZoneMoveDist", &FCombatZoneSearchData::ZoneMoveDist)

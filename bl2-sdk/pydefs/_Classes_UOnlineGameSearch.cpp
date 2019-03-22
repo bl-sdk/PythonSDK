@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineGameSearch(py::object m)
+void Export_pystes_UOnlineGameSearch(py::module &m)
 {
     py::class_< UOnlineGameSearch,  USettings   >(m, "UOnlineGameSearch")
         .def_readwrite("MaxSearchResults", &UOnlineGameSearch::MaxSearchResults)

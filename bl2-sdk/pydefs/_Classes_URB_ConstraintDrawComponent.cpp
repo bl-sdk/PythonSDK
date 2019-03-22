@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_URB_ConstraintDrawComponent(py::object m)
+void Export_pystes_URB_ConstraintDrawComponent(py::module &m)
 {
     py::class_< URB_ConstraintDrawComponent,  UPrimitiveComponent   >(m, "URB_ConstraintDrawComponent")
         .def_readwrite("LimitMaterial", &URB_ConstraintDrawComponent::LimitMaterial)

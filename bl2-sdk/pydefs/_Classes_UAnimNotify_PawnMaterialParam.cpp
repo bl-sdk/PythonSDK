@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNotify_PawnMaterialParam(py::object m)
+void Export_pystes_UAnimNotify_PawnMaterialParam(py::module &m)
 {
     py::class_< UAnimNotify_PawnMaterialParam,  UAnimNotify_Scripted   >(m, "UAnimNotify_PawnMaterialParam")
         .def_readwrite("ScalarParameterInterpArray", &UAnimNotify_PawnMaterialParam::ScalarParameterInterpArray)

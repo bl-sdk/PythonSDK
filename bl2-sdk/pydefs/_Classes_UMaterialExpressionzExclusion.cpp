@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionzExclusion(py::object m)
+void Export_pystes_UMaterialExpressionzExclusion(py::module &m)
 {
     py::class_< UMaterialExpressionzExclusion,  UMaterialExpressionBlendModeBase   >(m, "UMaterialExpressionzExclusion")
         .def("StaticClass", &UMaterialExpressionzExclusion::StaticClass, py::return_value_policy::reference)

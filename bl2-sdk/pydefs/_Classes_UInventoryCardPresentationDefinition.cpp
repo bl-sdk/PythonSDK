@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInventoryCardPresentationDefinition(py::object m)
+void Export_pystes_UInventoryCardPresentationDefinition(py::module &m)
 {
     py::class_< UInventoryCardPresentationDefinition,  UGBXDefinition   >(m, "UInventoryCardPresentationDefinition")
         .def_readwrite("ZippyFrame", &UInventoryCardPresentationDefinition::ZippyFrame)

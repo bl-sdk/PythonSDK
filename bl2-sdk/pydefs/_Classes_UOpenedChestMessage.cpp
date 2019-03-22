@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOpenedChestMessage(py::object m)
+void Export_pystes_UOpenedChestMessage(py::module &m)
 {
     py::class_< UOpenedChestMessage,  ULocalMessage   >(m, "UOpenedChestMessage")
         .def_readwrite("OpenedChest", &UOpenedChestMessage::OpenedChest)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInventorySerialNumber(py::object m)
+void Export_pystes_FInventorySerialNumber(py::module &m)
 {
     py::class_< FInventorySerialNumber >(m, "FInventorySerialNumber")
         .def_readwrite("State", &FInventorySerialNumber::State)

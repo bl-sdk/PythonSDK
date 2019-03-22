@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPopulationOpportunityPointRenderingComponent(py::object m)
+void Export_pystes_UPopulationOpportunityPointRenderingComponent(py::module &m)
 {
     py::class_< UPopulationOpportunityPointRenderingComponent,  UPrimitiveComponent   >(m, "UPopulationOpportunityPointRenderingComponent")
         .def("StaticClass", &UPopulationOpportunityPointRenderingComponent::StaticClass, py::return_value_policy::reference)

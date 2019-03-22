@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_CauseTinnitus(py::object m)
+void Export_pystes_UBehavior_CauseTinnitus(py::module &m)
 {
     py::class_< UBehavior_CauseTinnitus,  UBehaviorBase   >(m, "UBehavior_CauseTinnitus")
         .def_readwrite("Radius", &UBehavior_CauseTinnitus::Radius)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActorFactoryPhysicsAsset(py::object m)
+void Export_pystes_UActorFactoryPhysicsAsset(py::module &m)
 {
     py::class_< UActorFactoryPhysicsAsset,  UActorFactory   >(m, "UActorFactoryPhysicsAsset")
         .def_readwrite("PhysicsAsset", &UActorFactoryPhysicsAsset::PhysicsAsset)

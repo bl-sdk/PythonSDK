@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULinker(py::object m)
+void Export_pystes_ULinker(py::module &m)
 {
     py::class_< ULinker,  UObject   >(m, "ULinker")
         .def("StaticClass", &ULinker::StaticClass, py::return_value_policy::reference)

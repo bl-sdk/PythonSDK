@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNestedAttributeDefinition(py::object m)
+void Export_pystes_UNestedAttributeDefinition(py::module &m)
 {
     py::class_< UNestedAttributeDefinition,  UAttributeDefinition   >(m, "UNestedAttributeDefinition")
         .def_readwrite("OuterContextAttributeDefinition", &UNestedAttributeDefinition::OuterContextAttributeDefinition)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FVisiblePortalInfo(py::object m)
+void Export_pystes_FVisiblePortalInfo(py::module &m)
 {
     py::class_< FVisiblePortalInfo >(m, "FVisiblePortalInfo")
         .def_readwrite("Source", &FVisiblePortalInfo::Source)

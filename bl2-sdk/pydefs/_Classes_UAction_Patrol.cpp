@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_Patrol(py::object m)
+void Export_pystes_UAction_Patrol(py::module &m)
 {
     py::class_< UAction_Patrol,  UAction_FollowPath   >(m, "UAction_Patrol")
         .def_readwrite("TimeBetweenPatrolMovement", &UAction_Patrol::TimeBetweenPatrolMovement)

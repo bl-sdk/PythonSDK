@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCameraModifier_CameraShake(py::object m)
+void Export_pystes_UCameraModifier_CameraShake(py::module &m)
 {
     py::class_< UCameraModifier_CameraShake,  UCameraModifier   >(m, "UCameraModifier_CameraShake")
         .def_readwrite("ActiveShakes", &UCameraModifier_CameraShake::ActiveShakes)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowDamagePipeline(py::object m)
+void Export_pystes_UWillowDamagePipeline(py::module &m)
 {
     py::class_< UWillowDamagePipeline,  UDamagePipeline   >(m, "UWillowDamagePipeline")
         .def_readwrite("WillowDamageTypeDef", &UWillowDamagePipeline::WillowDamageTypeDef)

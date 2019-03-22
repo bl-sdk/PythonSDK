@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTranslatorTag(py::object m)
+void Export_pystes_UTranslatorTag(py::module &m)
 {
     py::class_< UTranslatorTag,  UObject   >(m, "UTranslatorTag")
         .def_readwrite("Tag", &UTranslatorTag::Tag)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleTrailSource(py::object m)
+void Export_pystes_UParticleModuleTrailSource(py::module &m)
 {
     py::class_< UParticleModuleTrailSource,  UParticleModuleTrailBase   >(m, "UParticleModuleTrailSource")
         .def_readwrite("SourceMethod", &UParticleModuleTrailSource::SourceMethod)

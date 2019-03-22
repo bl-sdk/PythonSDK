@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimMetaData_SkelControlKeyFrame(py::object m)
+void Export_pystes_UAnimMetaData_SkelControlKeyFrame(py::module &m)
 {
     py::class_< UAnimMetaData_SkelControlKeyFrame,  UAnimMetaData   >(m, "UAnimMetaData_SkelControlKeyFrame")
         .def_readwrite("KeyFrames", &UAnimMetaData_SkelControlKeyFrame::KeyFrames)

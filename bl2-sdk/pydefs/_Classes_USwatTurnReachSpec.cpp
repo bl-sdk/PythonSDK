@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USwatTurnReachSpec(py::object m)
+void Export_pystes_USwatTurnReachSpec(py::module &m)
 {
     py::class_< USwatTurnReachSpec,  UForcedReachSpec   >(m, "USwatTurnReachSpec")
         .def_readwrite("SpecDirection", &USwatTurnReachSpec::SpecDirection)

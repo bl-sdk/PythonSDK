@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAttachmentData(py::object m)
+void Export_pystes_FAttachmentData(py::module &m)
 {
     py::class_< FAttachmentData >(m, "FAttachmentData")
         .def_readwrite("AttachmentBase", &FAttachmentData::AttachmentBase)

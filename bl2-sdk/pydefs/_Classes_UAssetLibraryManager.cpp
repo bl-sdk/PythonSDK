@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAssetLibraryManager(py::object m)
+void Export_pystes_UAssetLibraryManager(py::module &m)
 {
     py::class_< UAssetLibraryManager,  UObject   >(m, "UAssetLibraryManager")
         .def_readwrite("EditorAssetLibraries", &UAssetLibraryManager::EditorAssetLibraries)

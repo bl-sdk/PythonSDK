@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AFileWriter(py::object m)
+void Export_pystes_AFileWriter(py::module &m)
 {
     py::class_< AFileWriter,  AInfo   >(m, "AFileWriter")
         .def_readwrite("ArchivePtr", &AFileWriter::ArchivePtr)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FUIDataStoreBinding(py::object m)
+void Export_pystes_FUIDataStoreBinding(py::module &m)
 {
     py::class_< FUIDataStoreBinding >(m, "FUIDataStoreBinding")
         .def_readwrite("Subscriber", &FUIDataStoreBinding::Subscriber)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSocketEmitter(py::object m)
+void Export_pystes_FSocketEmitter(py::module &m)
 {
     py::class_< FSocketEmitter >(m, "FSocketEmitter")
         .def_readwrite("Emitter", &FSocketEmitter::Emitter)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations(py::object m)
+void Export_pystes_UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations(py::module &m)
 {
     py::class_< UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations,  UNavMeshPathConstraint   >(m, "UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations")
         .def_readwrite("Location", &UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations::Location)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FConnectedPeerInfo(py::object m)
+void Export_pystes_FConnectedPeerInfo(py::module &m)
 {
     py::class_< FConnectedPeerInfo >(m, "FConnectedPeerInfo")
         .def_readwrite("PlayerID", &FConnectedPeerInfo::PlayerID)

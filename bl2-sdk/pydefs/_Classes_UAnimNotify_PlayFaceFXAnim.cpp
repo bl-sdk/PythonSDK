@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNotify_PlayFaceFXAnim(py::object m)
+void Export_pystes_UAnimNotify_PlayFaceFXAnim(py::module &m)
 {
     py::class_< UAnimNotify_PlayFaceFXAnim,  UAnimNotify_Scripted   >(m, "UAnimNotify_PlayFaceFXAnim")
         .def_readwrite("FaceFXAnimSetRef", &UAnimNotify_PlayFaceFXAnim::FaceFXAnimSetRef)

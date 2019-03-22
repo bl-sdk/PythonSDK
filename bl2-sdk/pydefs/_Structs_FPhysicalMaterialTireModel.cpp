@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPhysicalMaterialTireModel(py::object m)
+void Export_pystes_FPhysicalMaterialTireModel(py::module &m)
 {
     py::class_< FPhysicalMaterialTireModel >(m, "FPhysicalMaterialTireModel")
         .def_readwrite("PhysMaterial", &FPhysicalMaterialTireModel::PhysMaterial)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowServerSideProjectile(py::object m)
+void Export_pystes_AWillowServerSideProjectile(py::module &m)
 {
     py::class_< AWillowServerSideProjectile,  AWillowProjectile   >(m, "AWillowServerSideProjectile")
         .def_readwrite("ServerLocation", &AWillowServerSideProjectile::ServerLocation)

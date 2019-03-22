@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMeleeDefinition(py::object m)
+void Export_pystes_UMeleeDefinition(py::module &m)
 {
     py::class_< UMeleeDefinition,  UGBXDefinition   >(m, "UMeleeDefinition")
         .def_readwrite("VfTable_IIDamageCauser", &UMeleeDefinition::VfTable_IIDamageCauser)

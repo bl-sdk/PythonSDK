@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_Teleport(py::object m)
+void Export_pystes_USeqAct_Teleport(py::module &m)
 {
     py::class_< USeqAct_Teleport,  USequenceAction   >(m, "USeqAct_Teleport")
         .def_readwrite("TeleportDistance", &USeqAct_Teleport::TeleportDistance)

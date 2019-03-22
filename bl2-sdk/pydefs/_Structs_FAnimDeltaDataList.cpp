@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAnimDeltaDataList(py::object m)
+void Export_pystes_FAnimDeltaDataList(py::module &m)
 {
     py::class_< FAnimDeltaDataList >(m, "FAnimDeltaDataList")
         .def_readwrite("IndexList", &FAnimDeltaDataList::IndexList)

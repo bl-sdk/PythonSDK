@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPopulatedPickupMemento(py::object m)
+void Export_pystes_FPopulatedPickupMemento(py::module &m)
 {
     py::class_< FPopulatedPickupMemento >(m, "FPopulatedPickupMemento")
         .def_readwrite("SavedInventoryClass", &FPopulatedPickupMemento::SavedInventoryClass)

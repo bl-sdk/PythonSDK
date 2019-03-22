@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFractureMaterial(py::object m)
+void Export_pystes_UFractureMaterial(py::module &m)
 {
     py::class_< UFractureMaterial,  UObject   >(m, "UFractureMaterial")
         .def_readwrite("FractureEffect", &UFractureMaterial::FractureEffect)

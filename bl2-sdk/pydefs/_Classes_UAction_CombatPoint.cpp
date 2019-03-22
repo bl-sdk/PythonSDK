@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_CombatPoint(py::object m)
+void Export_pystes_UAction_CombatPoint(py::module &m)
 {
     py::class_< UAction_CombatPoint,  UWillowActionSequencePawn   >(m, "UAction_CombatPoint")
         .def_readwrite("Search", &UAction_CombatPoint::Search)

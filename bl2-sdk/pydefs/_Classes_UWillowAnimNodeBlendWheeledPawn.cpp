@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAnimNodeBlendWheeledPawn(py::object m)
+void Export_pystes_UWillowAnimNodeBlendWheeledPawn(py::module &m)
 {
     py::class_< UWillowAnimNodeBlendWheeledPawn,  UAnimNodeBlendBase   >(m, "UWillowAnimNodeBlendWheeledPawn")
         .def_readwrite("DirChangeRateMin", &UWillowAnimNodeBlendWheeledPawn::DirChangeRateMin)

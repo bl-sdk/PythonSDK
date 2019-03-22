@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRtpcParameterValue(py::object m)
+void Export_pystes_FRtpcParameterValue(py::module &m)
 {
     py::class_< FRtpcParameterValue >(m, "FRtpcParameterValue")
         .def_readwrite("AkRtpc", &FRtpcParameterValue::AkRtpc)

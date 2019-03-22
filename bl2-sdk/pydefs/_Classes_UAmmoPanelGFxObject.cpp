@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAmmoPanelGFxObject(py::object m)
+void Export_pystes_UAmmoPanelGFxObject(py::module &m)
 {
     py::class_< UAmmoPanelGFxObject,  UGFxObject   >(m, "UAmmoPanelGFxObject")
         .def_readwrite("AmmoTitle", &UAmmoPanelGFxObject::AmmoTitle)

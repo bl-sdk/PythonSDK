@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowVehicleCombatArea(py::object m)
+void Export_pystes_AWillowVehicleCombatArea(py::module &m)
 {
     py::class_< AWillowVehicleCombatArea,  AActor   >(m, "AWillowVehicleCombatArea")
         .def_readwrite("CombatRadius", &AWillowVehicleCombatArea::CombatRadius)

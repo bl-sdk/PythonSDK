@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNode_MultiBlendPerBone(py::object m)
+void Export_pystes_UAnimNode_MultiBlendPerBone(py::module &m)
 {
     py::class_< UAnimNode_MultiBlendPerBone,  UAnimNodeBlendBase   >(m, "UAnimNode_MultiBlendPerBone")
         .def_readwrite("PawnOwner", &UAnimNode_MultiBlendPerBone::PawnOwner)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UConstantAttributeValueResolver(py::object m)
+void Export_pystes_UConstantAttributeValueResolver(py::module &m)
 {
     py::class_< UConstantAttributeValueResolver,  UAttributeValueResolver   >(m, "UConstantAttributeValueResolver")
         .def_readwrite("ConstantValue", &UConstantAttributeValueResolver::ConstantValue)

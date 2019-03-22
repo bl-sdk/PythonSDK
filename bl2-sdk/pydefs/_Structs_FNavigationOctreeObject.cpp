@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FNavigationOctreeObject(py::object m)
+void Export_pystes_FNavigationOctreeObject(py::module &m)
 {
     py::class_< FNavigationOctreeObject >(m, "FNavigationOctreeObject")
         .def_readwrite("BoundingBox", &FNavigationOctreeObject::BoundingBox)

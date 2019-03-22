@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIConfigProvider(py::object m)
+void Export_pystes_UUIConfigProvider(py::module &m)
 {
     py::class_< UUIConfigProvider,  UUIDataProvider   >(m, "UUIConfigProvider")
         .def("StaticClass", &UUIConfigProvider::StaticClass, py::return_value_policy::reference)

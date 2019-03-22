@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAccelStateData(py::object m)
+void Export_pystes_FAccelStateData(py::module &m)
 {
     py::class_< FAccelStateData >(m, "FAccelStateData")
         .def_readwrite("Warmup", &FAccelStateData::Warmup)

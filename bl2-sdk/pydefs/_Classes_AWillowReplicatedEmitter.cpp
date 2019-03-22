@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowReplicatedEmitter(py::object m)
+void Export_pystes_AWillowReplicatedEmitter(py::module &m)
 {
     py::class_< AWillowReplicatedEmitter,  AWillowEmitter   >(m, "AWillowReplicatedEmitter")
         .def_readwrite("EmitterTemplate", &AWillowReplicatedEmitter::EmitterTemplate)

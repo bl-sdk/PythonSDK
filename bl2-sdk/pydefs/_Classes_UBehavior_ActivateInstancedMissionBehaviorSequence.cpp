@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_ActivateInstancedMissionBehaviorSequence(py::object m)
+void Export_pystes_UBehavior_ActivateInstancedMissionBehaviorSequence(py::module &m)
 {
     py::class_< UBehavior_ActivateInstancedMissionBehaviorSequence,  UBehaviorBase   >(m, "UBehavior_ActivateInstancedMissionBehaviorSequence")
         .def_readwrite("Mission", &UBehavior_ActivateInstancedMissionBehaviorSequence::Mission)

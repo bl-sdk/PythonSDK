@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIWillowScrollingListDataProvider(py::object m)
+void Export_pystes_UIWillowScrollingListDataProvider(py::module &m)
 {
     py::class_< UIWillowScrollingListDataProvider,  UInterface   >(m, "UIWillowScrollingListDataProvider")
         .def("StaticClass", &UIWillowScrollingListDataProvider::StaticClass, py::return_value_policy::reference)

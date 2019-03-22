@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UVehicleFamilySelectorGFxObject(py::object m)
+void Export_pystes_UVehicleFamilySelectorGFxObject(py::module &m)
 {
     py::class_< UVehicleFamilySelectorGFxObject,  UGFxObject   >(m, "UVehicleFamilySelectorGFxObject")
         .def("StaticClass", &UVehicleFamilySelectorGFxObject::StaticClass, py::return_value_policy::reference)

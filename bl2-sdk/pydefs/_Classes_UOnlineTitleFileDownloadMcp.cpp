@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineTitleFileDownloadMcp(py::object m)
+void Export_pystes_UOnlineTitleFileDownloadMcp(py::module &m)
 {
     py::class_< UOnlineTitleFileDownloadMcp,  UObject   >(m, "UOnlineTitleFileDownloadMcp")
         .def_readwrite("ReadTitleFileCompleteDelegates", &UOnlineTitleFileDownloadMcp::ReadTitleFileCompleteDelegates)

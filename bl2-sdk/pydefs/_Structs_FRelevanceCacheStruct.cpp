@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRelevanceCacheStruct(py::object m)
+void Export_pystes_FRelevanceCacheStruct(py::module &m)
 {
     py::class_< FRelevanceCacheStruct >(m, "FRelevanceCacheStruct")
         .def_readwrite("RealViewerName", &FRelevanceCacheStruct::RealViewerName)

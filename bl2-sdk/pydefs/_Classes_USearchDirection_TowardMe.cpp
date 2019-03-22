@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USearchDirection_TowardMe(py::object m)
+void Export_pystes_USearchDirection_TowardMe(py::module &m)
 {
     py::class_< USearchDirection_TowardMe,  USearchDirection   >(m, "USearchDirection_TowardMe")
         .def("StaticClass", &USearchDirection_TowardMe::StaticClass, py::return_value_policy::reference)

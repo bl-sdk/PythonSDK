@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInstancedStaticMeshInstanceData(py::object m)
+void Export_pystes_FInstancedStaticMeshInstanceData(py::module &m)
 {
     py::class_< FInstancedStaticMeshInstanceData >(m, "FInstancedStaticMeshInstanceData")
         .def_readwrite("Transform", &FInstancedStaticMeshInstanceData::Transform)

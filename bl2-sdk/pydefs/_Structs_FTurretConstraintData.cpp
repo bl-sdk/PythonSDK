@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTurretConstraintData(py::object m)
+void Export_pystes_FTurretConstraintData(py::module &m)
 {
     py::class_< FTurretConstraintData >(m, "FTurretConstraintData")
         .def_readwrite("PitchConstraint", &FTurretConstraintData::PitchConstraint)

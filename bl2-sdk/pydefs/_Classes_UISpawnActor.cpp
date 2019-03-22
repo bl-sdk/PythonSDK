@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UISpawnActor(py::object m)
+void Export_pystes_UISpawnActor(py::module &m)
 {
     py::class_< UISpawnActor,  UInterface   >(m, "UISpawnActor")
         .def("StaticClass", &UISpawnActor::StaticClass, py::return_value_policy::reference)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UExponentialHeightFogComponent(py::object m)
+void Export_pystes_UExponentialHeightFogComponent(py::module &m)
 {
     py::class_< UExponentialHeightFogComponent,  UActorComponent   >(m, "UExponentialHeightFogComponent")
         .def_readwrite("FogHeight", &UExponentialHeightFogComponent::FogHeight)

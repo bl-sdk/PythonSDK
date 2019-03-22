@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_URadialBlurComponent(py::object m)
+void Export_pystes_URadialBlurComponent(py::module &m)
 {
     py::class_< URadialBlurComponent,  UActorComponent   >(m, "URadialBlurComponent")
         .def_readwrite("Material", &URadialBlurComponent::Material)

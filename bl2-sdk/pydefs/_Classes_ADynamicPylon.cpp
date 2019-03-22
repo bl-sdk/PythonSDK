@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ADynamicPylon(py::object m)
+void Export_pystes_ADynamicPylon(py::module &m)
 {
     py::class_< ADynamicPylon,  APylon   >(m, "ADynamicPylon")
         .def("StaticClass", &ADynamicPylon::StaticClass, py::return_value_policy::reference)

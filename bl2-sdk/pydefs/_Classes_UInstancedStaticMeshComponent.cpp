@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInstancedStaticMeshComponent(py::object m)
+void Export_pystes_UInstancedStaticMeshComponent(py::module &m)
 {
     py::class_< UInstancedStaticMeshComponent,  UStaticMeshComponent   >(m, "UInstancedStaticMeshComponent")
         .def_readwrite("PerInstanceData", &UInstancedStaticMeshComponent::PerInstanceData)

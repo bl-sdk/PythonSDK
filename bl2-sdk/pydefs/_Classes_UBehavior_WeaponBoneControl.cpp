@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_WeaponBoneControl(py::object m)
+void Export_pystes_UBehavior_WeaponBoneControl(py::module &m)
 {
     py::class_< UBehavior_WeaponBoneControl,  UBehaviorBase   >(m, "UBehavior_WeaponBoneControl")
         .def_readwrite("BoneControlName", &UBehavior_WeaponBoneControl::BoneControlName)

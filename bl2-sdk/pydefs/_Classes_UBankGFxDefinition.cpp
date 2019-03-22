@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBankGFxDefinition(py::object m)
+void Export_pystes_UBankGFxDefinition(py::module &m)
 {
     py::class_< UBankGFxDefinition,  UWillowGFxMovie3DDefinition   >(m, "UBankGFxDefinition")
         .def_readwrite("LeftSideDef", &UBankGFxDefinition::LeftSideDef)

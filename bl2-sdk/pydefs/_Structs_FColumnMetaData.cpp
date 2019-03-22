@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FColumnMetaData(py::object m)
+void Export_pystes_FColumnMetaData(py::module &m)
 {
     py::class_< FColumnMetaData >(m, "FColumnMetaData")
         .def_readwrite("Id", &FColumnMetaData::Id)

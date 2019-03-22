@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FNamedSession(py::object m)
+void Export_pystes_FNamedSession(py::module &m)
 {
     py::class_< FNamedSession >(m, "FNamedSession")
         .def_readwrite("SessionName", &FNamedSession::SessionName)

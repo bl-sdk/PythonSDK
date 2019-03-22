@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAudioComponentParam(py::object m)
+void Export_pystes_FAudioComponentParam(py::module &m)
 {
     py::class_< FAudioComponentParam >(m, "FAudioComponentParam")
         .def_readwrite("ParamName", &FAudioComponentParam::ParamName)

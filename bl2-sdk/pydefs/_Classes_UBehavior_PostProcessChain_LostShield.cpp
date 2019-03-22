@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_PostProcessChain_LostShield(py::object m)
+void Export_pystes_UBehavior_PostProcessChain_LostShield(py::module &m)
 {
     py::class_< UBehavior_PostProcessChain_LostShield,  UBehavior_PostProcessChain   >(m, "UBehavior_PostProcessChain_LostShield")
         .def_readwrite("HealthParamName", &UBehavior_PostProcessChain_LostShield::HealthParamName)

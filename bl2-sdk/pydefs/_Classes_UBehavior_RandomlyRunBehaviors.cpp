@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_RandomlyRunBehaviors(py::object m)
+void Export_pystes_UBehavior_RandomlyRunBehaviors(py::module &m)
 {
     py::class_< UBehavior_RandomlyRunBehaviors,  UBehaviorBase   >(m, "UBehavior_RandomlyRunBehaviors")
         .def_readwrite("ProbabilityContext", &UBehavior_RandomlyRunBehaviors::ProbabilityContext)

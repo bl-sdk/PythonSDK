@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ABroadcastHandler(py::object m)
+void Export_pystes_ABroadcastHandler(py::module &m)
 {
     py::class_< ABroadcastHandler,  AInfo   >(m, "ABroadcastHandler")
         .def_readwrite("SentText", &ABroadcastHandler::SentText)

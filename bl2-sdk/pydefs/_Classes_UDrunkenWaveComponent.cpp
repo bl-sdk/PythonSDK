@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDrunkenWaveComponent(py::object m)
+void Export_pystes_UDrunkenWaveComponent(py::module &m)
 {
     py::class_< UDrunkenWaveComponent,  UMovementComponent   >(m, "UDrunkenWaveComponent")
         .def_readwrite("MaxRandomWaveOffsetTime", &UDrunkenWaveComponent::MaxRandomWaveOffsetTime)

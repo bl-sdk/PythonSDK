@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerBehavior_DropItems(py::object m)
+void Export_pystes_UPlayerBehavior_DropItems(py::module &m)
 {
     py::class_< UPlayerBehavior_DropItems,  UBehaviorBase   >(m, "UPlayerBehavior_DropItems")
         .def_readwrite("ConfigurationName", &UPlayerBehavior_DropItems::ConfigurationName)

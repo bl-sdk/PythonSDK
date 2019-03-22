@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIDialogBox(py::object m)
+void Export_pystes_UIDialogBox(py::module &m)
 {
     py::class_< UIDialogBox,  UInterface   >(m, "UIDialogBox")
         .def("StaticClass", &UIDialogBox::StaticClass, py::return_value_policy::reference)

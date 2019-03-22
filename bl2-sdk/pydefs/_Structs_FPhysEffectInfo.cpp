@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPhysEffectInfo(py::object m)
+void Export_pystes_FPhysEffectInfo(py::module &m)
 {
     py::class_< FPhysEffectInfo >(m, "FPhysEffectInfo")
         .def_readwrite("Threshold", &FPhysEffectInfo::Threshold)

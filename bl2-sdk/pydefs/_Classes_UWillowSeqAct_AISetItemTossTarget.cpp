@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSeqAct_AISetItemTossTarget(py::object m)
+void Export_pystes_UWillowSeqAct_AISetItemTossTarget(py::module &m)
 {
     py::class_< UWillowSeqAct_AISetItemTossTarget,  USequenceAction   >(m, "UWillowSeqAct_AISetItemTossTarget")
         .def_readwrite("TossTargets", &UWillowSeqAct_AISetItemTossTarget::TossTargets)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMapSpecificBalanceModificationList(py::object m)
+void Export_pystes_FMapSpecificBalanceModificationList(py::module &m)
 {
     py::class_< FMapSpecificBalanceModificationList >(m, "FMapSpecificBalanceModificationList")
         .def_readwrite("MapName", &FMapSpecificBalanceModificationList::MapName)

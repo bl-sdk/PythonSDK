@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBadassRewardDefinition(py::object m)
+void Export_pystes_UBadassRewardDefinition(py::module &m)
 {
     py::class_< UBadassRewardDefinition,  UGBXDefinition   >(m, "UBadassRewardDefinition")
         .def_readwrite("RewardName", &UBadassRewardDefinition::RewardName)

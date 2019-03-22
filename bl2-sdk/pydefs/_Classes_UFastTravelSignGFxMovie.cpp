@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFastTravelSignGFxMovie(py::object m)
+void Export_pystes_UFastTravelSignGFxMovie(py::module &m)
 {
     py::class_< UFastTravelSignGFxMovie,  UGFxMovieInteractiveObject   >(m, "UFastTravelSignGFxMovie")
         .def("StaticClass", &UFastTravelSignGFxMovie::StaticClass, py::return_value_policy::reference)

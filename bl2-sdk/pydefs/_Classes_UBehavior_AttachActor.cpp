@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_AttachActor(py::object m)
+void Export_pystes_UBehavior_AttachActor(py::module &m)
 {
     py::class_< UBehavior_AttachActor,  UBehaviorBase   >(m, "UBehavior_AttachActor")
         .def_readwrite("AttachmentPointName", &UBehavior_AttachActor::AttachmentPointName)

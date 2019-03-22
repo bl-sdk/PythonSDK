@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UReceivedCreditsMessage(py::object m)
+void Export_pystes_UReceivedCreditsMessage(py::module &m)
 {
     py::class_< UReceivedCreditsMessage,  UWillowLocalMessage   >(m, "UReceivedCreditsMessage")
         .def_readwrite("ReceivedCredits", &UReceivedCreditsMessage::ReceivedCredits)

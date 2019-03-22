@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPopulationDefinition(py::object m)
+void Export_pystes_UPopulationDefinition(py::module &m)
 {
     py::class_< UPopulationDefinition,  UGBXDefinition   >(m, "UPopulationDefinition")
         .def_readwrite("VfTable_IIConstructObject", &UPopulationDefinition::VfTable_IIConstructObject)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UChallengesPanelGFxObject(py::object m)
+void Export_pystes_UChallengesPanelGFxObject(py::module &m)
 {
     py::class_< UChallengesPanelGFxObject,  UBaseInventoryPanelGFxObject   >(m, "UChallengesPanelGFxObject")
         .def_readwrite("ChallengeLogTextList", &UChallengesPanelGFxObject::ChallengeLogTextList)

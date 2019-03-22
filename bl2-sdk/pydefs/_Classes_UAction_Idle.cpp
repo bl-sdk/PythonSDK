@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_Idle(py::object m)
+void Export_pystes_UAction_Idle(py::module &m)
 {
     py::class_< UAction_Idle,  UAction_Burrow   >(m, "UAction_Idle")
         .def_readwrite("IdleTime", &UAction_Idle::IdleTime)

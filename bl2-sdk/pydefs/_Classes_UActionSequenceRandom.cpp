@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActionSequenceRandom(py::object m)
+void Export_pystes_UActionSequenceRandom(py::module &m)
 {
     py::class_< UActionSequenceRandom,  UActionSequence   >(m, "UActionSequenceRandom")
         .def_readwrite("ActionList", &UActionSequenceRandom::ActionList)

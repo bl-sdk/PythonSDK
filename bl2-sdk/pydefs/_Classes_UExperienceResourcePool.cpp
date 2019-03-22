@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UExperienceResourcePool(py::object m)
+void Export_pystes_UExperienceResourcePool(py::module &m)
 {
     py::class_< UExperienceResourcePool,  UResourcePool   >(m, "UExperienceResourcePool")
         .def_readwrite("ExpCombatPointsScale", &UExperienceResourcePool::ExpCombatPointsScale)

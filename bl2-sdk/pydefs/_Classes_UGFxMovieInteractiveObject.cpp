@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGFxMovieInteractiveObject(py::object m)
+void Export_pystes_UGFxMovieInteractiveObject(py::module &m)
 {
     py::class_< UGFxMovieInteractiveObject,  UGearboxGFxMovie   >(m, "UGFxMovieInteractiveObject")
         .def("StaticClass", &UGFxMovieInteractiveObject::StaticClass, py::return_value_policy::reference)

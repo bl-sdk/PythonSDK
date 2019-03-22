@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_AIChangeInventory(py::object m)
+void Export_pystes_UBehavior_AIChangeInventory(py::module &m)
 {
     py::class_< UBehavior_AIChangeInventory,  UBehaviorBase   >(m, "UBehavior_AIChangeInventory")
         .def_readwrite("NewItemPoolList", &UBehavior_AIChangeInventory::NewItemPoolList)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInputContextData(py::object m)
+void Export_pystes_FInputContextData(py::module &m)
 {
     py::class_< FInputContextData >(m, "FInputContextData")
         .def_readwrite("ContextName", &FInputContextData::ContextName)

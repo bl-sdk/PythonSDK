@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SendGbxMessage(py::object m)
+void Export_pystes_UBehavior_SendGbxMessage(py::module &m)
 {
     py::class_< UBehavior_SendGbxMessage,  UBehaviorBase   >(m, "UBehavior_SendGbxMessage")
         .def_readwrite("MessageDefinition", &UBehavior_SendGbxMessage::MessageDefinition)

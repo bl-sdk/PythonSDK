@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FIpAddr(py::object m)
+void Export_pystes_FIpAddr(py::module &m)
 {
     py::class_< FIpAddr >(m, "FIpAddr")
         .def_readwrite("Addr", &FIpAddr::Addr)

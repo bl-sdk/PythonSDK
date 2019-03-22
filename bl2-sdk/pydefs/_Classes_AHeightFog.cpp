@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AHeightFog(py::object m)
+void Export_pystes_AHeightFog(py::module &m)
 {
     py::class_< AHeightFog,  AInfo   >(m, "AHeightFog")
         .def_readwrite("Component", &AHeightFog::Component)

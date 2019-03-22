@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FParticleEventData(py::object m)
+void Export_pystes_FParticleEventData(py::module &m)
 {
     py::class_< FParticleEventData >(m, "FParticleEventData")
         .def_readwrite("Type", &FParticleEventData::Type)

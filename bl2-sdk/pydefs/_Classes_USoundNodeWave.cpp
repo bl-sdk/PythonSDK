@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USoundNodeWave(py::object m)
+void Export_pystes_USoundNodeWave(py::module &m)
 {
     py::class_< USoundNodeWave,  USoundNode   >(m, "USoundNodeWave")
         .def_readwrite("CompressionQuality", &USoundNodeWave::CompressionQuality)

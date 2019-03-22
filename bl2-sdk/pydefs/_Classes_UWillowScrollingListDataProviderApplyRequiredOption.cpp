@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowScrollingListDataProviderApplyRequiredOption(py::object m)
+void Export_pystes_UWillowScrollingListDataProviderApplyRequiredOption(py::module &m)
 {
     py::class_< UWillowScrollingListDataProviderApplyRequiredOption,  UWillowScrollingListDataProviderOptionsBase   >(m, "UWillowScrollingListDataProviderApplyRequiredOption")
         .def_readwrite("CurrentSettingValue", &UWillowScrollingListDataProviderApplyRequiredOption::CurrentSettingValue)

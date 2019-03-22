@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_ToggleTelescopeOverlay(py::object m)
+void Export_pystes_UBehavior_ToggleTelescopeOverlay(py::module &m)
 {
     py::class_< UBehavior_ToggleTelescopeOverlay,  UBehaviorBase   >(m, "UBehavior_ToggleTelescopeOverlay")
         .def("StaticClass", &UBehavior_ToggleTelescopeOverlay::StaticClass, py::return_value_policy::reference)

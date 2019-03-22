@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackInstMove(py::object m)
+void Export_pystes_UInterpTrackInstMove(py::module &m)
 {
     py::class_< UInterpTrackInstMove,  UInterpTrackInst   >(m, "UInterpTrackInstMove")
         .def_readwrite("ResetLocation", &UInterpTrackInstMove::ResetLocation)

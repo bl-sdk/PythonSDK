@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FtMenuLayout(py::object m)
+void Export_pystes_FtMenuLayout(py::module &m)
 {
     py::class_< FtMenuLayout >(m, "FtMenuLayout")
         .def_readwrite("Background", &FtMenuLayout::Background)

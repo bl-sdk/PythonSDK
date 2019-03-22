@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAnimGroup(py::object m)
+void Export_pystes_FAnimGroup(py::module &m)
 {
     py::class_< FAnimGroup >(m, "FAnimGroup")
         .def_readwrite("SeqNodes", &FAnimGroup::SeqNodes)

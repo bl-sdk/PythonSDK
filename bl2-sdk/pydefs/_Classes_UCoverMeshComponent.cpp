@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCoverMeshComponent(py::object m)
+void Export_pystes_UCoverMeshComponent(py::module &m)
 {
     py::class_< UCoverMeshComponent,  UStaticMeshComponent   >(m, "UCoverMeshComponent")
         .def_readwrite("Meshes", &UCoverMeshComponent::Meshes)

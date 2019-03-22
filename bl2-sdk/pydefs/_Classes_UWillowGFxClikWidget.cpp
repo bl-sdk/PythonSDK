@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGFxClikWidget(py::object m)
+void Export_pystes_UWillowGFxClikWidget(py::module &m)
 {
     py::class_< UWillowGFxClikWidget,  UGFxClikWidget   >(m, "UWillowGFxClikWidget")
         .def("StaticClass", &UWillowGFxClikWidget::StaticClass, py::return_value_policy::reference)

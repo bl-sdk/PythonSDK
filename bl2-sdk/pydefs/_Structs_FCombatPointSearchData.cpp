@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCombatPointSearchData(py::object m)
+void Export_pystes_FCombatPointSearchData(py::module &m)
 {
     py::class_< FCombatPointSearchData >(m, "FCombatPointSearchData")
         .def_readwrite("PointRadius", &FCombatPointSearchData::PointRadius)

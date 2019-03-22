@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPerPlayerSplitscreenData(py::object m)
+void Export_pystes_FPerPlayerSplitscreenData(py::module &m)
 {
     py::class_< FPerPlayerSplitscreenData >(m, "FPerPlayerSplitscreenData")
         .def_readwrite("SizeX", &FPerPlayerSplitscreenData::SizeX)

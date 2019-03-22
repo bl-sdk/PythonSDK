@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBiasedGoalActor(py::object m)
+void Export_pystes_FBiasedGoalActor(py::module &m)
 {
     py::class_< FBiasedGoalActor >(m, "FBiasedGoalActor")
         .def_readwrite("Goal", &FBiasedGoalActor::Goal)

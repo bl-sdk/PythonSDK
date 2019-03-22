@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_PlayAIMissionContextDialog(py::object m)
+void Export_pystes_UBehavior_PlayAIMissionContextDialog(py::module &m)
 {
     py::class_< UBehavior_PlayAIMissionContextDialog,  UBehaviorBase   >(m, "UBehavior_PlayAIMissionContextDialog")
         .def_readwrite("PlayerWhoUsedMe", &UBehavior_PlayAIMissionContextDialog::PlayerWhoUsedMe)

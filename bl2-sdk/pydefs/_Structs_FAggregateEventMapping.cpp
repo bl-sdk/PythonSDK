@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAggregateEventMapping(py::object m)
+void Export_pystes_FAggregateEventMapping(py::module &m)
 {
     py::class_< FAggregateEventMapping >(m, "FAggregateEventMapping")
         .def_readwrite("EventID", &FAggregateEventMapping::EventID)

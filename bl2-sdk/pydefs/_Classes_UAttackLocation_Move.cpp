@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAttackLocation_Move(py::object m)
+void Export_pystes_UAttackLocation_Move(py::module &m)
 {
     py::class_< UAttackLocation_Move,  UAttackLocation   >(m, "UAttackLocation_Move")
         .def_readwrite("MaxTime", &UAttackLocation_Move::MaxTime)

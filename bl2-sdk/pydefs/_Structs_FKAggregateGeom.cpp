@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FKAggregateGeom(py::object m)
+void Export_pystes_FKAggregateGeom(py::module &m)
 {
     py::class_< FKAggregateGeom >(m, "FKAggregateGeom")
         .def_readwrite("SphereElems", &FKAggregateGeom::SphereElems)

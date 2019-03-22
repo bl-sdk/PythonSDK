@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGestaltLODModelFragment(py::object m)
+void Export_pystes_FGestaltLODModelFragment(py::module &m)
 {
     py::class_< FGestaltLODModelFragment >(m, "FGestaltLODModelFragment")
         .def_readwrite("MaterialIndex", &FGestaltLODModelFragment::MaterialIndex)

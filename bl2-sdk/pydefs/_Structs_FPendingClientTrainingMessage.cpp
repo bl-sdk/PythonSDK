@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPendingClientTrainingMessage(py::object m)
+void Export_pystes_FPendingClientTrainingMessage(py::module &m)
 {
     py::class_< FPendingClientTrainingMessage >(m, "FPendingClientTrainingMessage")
         .def_readwrite("Message", &FPendingClientTrainingMessage::Message)

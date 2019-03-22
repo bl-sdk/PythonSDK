@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UManufacturerDefinition(py::object m)
+void Export_pystes_UManufacturerDefinition(py::module &m)
 {
     py::class_< UManufacturerDefinition,  UGBXDefinition   >(m, "UManufacturerDefinition")
         .def_readwrite("Grades", &UManufacturerDefinition::Grades)

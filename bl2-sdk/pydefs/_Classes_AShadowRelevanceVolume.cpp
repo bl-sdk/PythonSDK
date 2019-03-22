@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AShadowRelevanceVolume(py::object m)
+void Export_pystes_AShadowRelevanceVolume(py::module &m)
 {
     py::class_< AShadowRelevanceVolume,  AVolume   >(m, "AShadowRelevanceVolume")
         .def_readwrite("ShadowRelevanceList", &AShadowRelevanceVolume::ShadowRelevanceList)

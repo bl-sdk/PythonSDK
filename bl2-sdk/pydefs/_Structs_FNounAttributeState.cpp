@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FNounAttributeState(py::object m)
+void Export_pystes_FNounAttributeState(py::module &m)
 {
     py::class_< FNounAttributeState >(m, "FNounAttributeState")
         .def_readwrite("NounName", &FNounAttributeState::NounName)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPatchScriptCommandlet(py::object m)
+void Export_pystes_UPatchScriptCommandlet(py::module &m)
 {
     py::class_< UPatchScriptCommandlet,  UCommandlet   >(m, "UPatchScriptCommandlet")
         .def("StaticClass", &UPatchScriptCommandlet::StaticClass, py::return_value_policy::reference)

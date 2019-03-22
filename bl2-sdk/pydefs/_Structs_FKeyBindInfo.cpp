@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FKeyBindInfo(py::object m)
+void Export_pystes_FKeyBindInfo(py::module &m)
 {
     py::class_< FKeyBindInfo >(m, "FKeyBindInfo")
         .def_readwrite("Tag", &FKeyBindInfo::Tag)

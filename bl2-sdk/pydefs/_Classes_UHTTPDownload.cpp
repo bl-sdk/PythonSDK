@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHTTPDownload(py::object m)
+void Export_pystes_UHTTPDownload(py::module &m)
 {
     py::class_< UHTTPDownload,  UDownload   >(m, "UHTTPDownload")
         .def_readwrite("ProxyServerHost", &UHTTPDownload::ProxyServerHost)

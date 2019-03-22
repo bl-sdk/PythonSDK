@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTAlphaBlend(py::object m)
+void Export_pystes_FTAlphaBlend(py::module &m)
 {
     py::class_< FTAlphaBlend >(m, "FTAlphaBlend")
         .def_readwrite("AlphaIn", &FTAlphaBlend::AlphaIn)

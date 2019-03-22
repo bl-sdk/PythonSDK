@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPhysicsJumpConnection(py::object m)
+void Export_pystes_UPhysicsJumpConnection(py::module &m)
 {
     py::class_< UPhysicsJumpConnection,  UObject   >(m, "UPhysicsJumpConnection")
         .def_readwrite("Source", &UPhysicsJumpConnection::Source)

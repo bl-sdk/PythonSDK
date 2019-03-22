@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHomingTargetComponent(py::object m)
+void Export_pystes_UHomingTargetComponent(py::module &m)
 {
     py::class_< UHomingTargetComponent,  UPrimitiveComponent   >(m, "UHomingTargetComponent")
         .def_readwrite("SocketName", &USocketComponent::SocketName)

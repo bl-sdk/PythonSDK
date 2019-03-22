@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTargetableList(py::object m)
+void Export_pystes_UTargetableList(py::module &m)
 {
     py::class_< UTargetableList,  UObject   >(m, "UTargetableList")
         .def_readwrite("TargetableAllegianceMap", &UTargetableList::TargetableAllegianceMap)

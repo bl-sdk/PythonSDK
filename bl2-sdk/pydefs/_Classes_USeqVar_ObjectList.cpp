@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqVar_ObjectList(py::object m)
+void Export_pystes_USeqVar_ObjectList(py::module &m)
 {
     py::class_< USeqVar_ObjectList,  USeqVar_Object   >(m, "USeqVar_ObjectList")
         .def_readwrite("ObjList", &USeqVar_ObjectList::ObjList)

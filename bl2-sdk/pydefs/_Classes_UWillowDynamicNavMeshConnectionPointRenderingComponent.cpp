@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowDynamicNavMeshConnectionPointRenderingComponent(py::object m)
+void Export_pystes_UWillowDynamicNavMeshConnectionPointRenderingComponent(py::module &m)
 {
     py::class_< UWillowDynamicNavMeshConnectionPointRenderingComponent,  UPrimitiveComponent   >(m, "UWillowDynamicNavMeshConnectionPointRenderingComponent")
         .def_readwrite("ConnectionValidColor", &UWillowDynamicNavMeshConnectionPointRenderingComponent::ConnectionValidColor)

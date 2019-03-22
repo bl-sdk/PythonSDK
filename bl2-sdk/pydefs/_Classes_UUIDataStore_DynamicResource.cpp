@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIDataStore_DynamicResource(py::object m)
+void Export_pystes_UUIDataStore_DynamicResource(py::module &m)
 {
     py::class_< UUIDataStore_DynamicResource,  UUIDataStore   >(m, "UUIDataStore_DynamicResource")
         .def_readwrite("VfTable_IUIListElementProvider", &UUIDataStore_DynamicResource::VfTable_IUIListElementProvider)

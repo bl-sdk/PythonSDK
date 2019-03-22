@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDamageTypeResistance(py::object m)
+void Export_pystes_FDamageTypeResistance(py::module &m)
 {
     py::class_< FDamageTypeResistance >(m, "FDamageTypeResistance")
         .def_readwrite("ResistanceToImpact", &FDamageTypeResistance::ResistanceToImpact)

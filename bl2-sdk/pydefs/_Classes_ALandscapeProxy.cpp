@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ALandscapeProxy(py::object m)
+void Export_pystes_ALandscapeProxy(py::module &m)
 {
     py::class_< ALandscapeProxy,  AInfo   >(m, "ALandscapeProxy")
         .def_readwrite("LandscapeComponents", &ALandscapeProxy::LandscapeComponents)

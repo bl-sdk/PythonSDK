@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPrismDataContainer(py::object m)
+void Export_pystes_FPrismDataContainer(py::module &m)
 {
     py::class_< FPrismDataContainer >(m, "FPrismDataContainer")
         .def_readwrite("RotateBoneTranslation", &FPrismDataContainer::RotateBoneTranslation)

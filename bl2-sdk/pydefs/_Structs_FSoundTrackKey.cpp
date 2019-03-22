@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSoundTrackKey(py::object m)
+void Export_pystes_FSoundTrackKey(py::module &m)
 {
     py::class_< FSoundTrackKey >(m, "FSoundTrackKey")
         .def_readwrite("Time", &FSoundTrackKey::Time)

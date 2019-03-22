@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USparkInterfaceImpl(py::object m)
+void Export_pystes_USparkInterfaceImpl(py::module &m)
 {
     py::class_< USparkInterfaceImpl,  UObject   >(m, "USparkInterfaceImpl")
         .def_readwrite("VfTable_ISparkInterface", &USparkInterfaceImpl::VfTable_ISparkInterface)

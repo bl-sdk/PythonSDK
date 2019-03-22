@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpGroup(py::object m)
+void Export_pystes_UInterpGroup(py::module &m)
 {
     py::class_< UInterpGroup,  UObject   >(m, "UInterpGroup")
         .def_readwrite("VfTable_FInterpEdInputInterface", &UInterpGroup::VfTable_FInterpEdInputInterface)

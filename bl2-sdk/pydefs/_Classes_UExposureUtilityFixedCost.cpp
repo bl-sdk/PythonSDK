@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UExposureUtilityFixedCost(py::object m)
+void Export_pystes_UExposureUtilityFixedCost(py::module &m)
 {
     py::class_< UExposureUtilityFixedCost,  UExposureUtilityBase   >(m, "UExposureUtilityFixedCost")
         .def_readwrite("CloseDistanceSquared", &UExposureUtilityFixedCost::CloseDistanceSquared)

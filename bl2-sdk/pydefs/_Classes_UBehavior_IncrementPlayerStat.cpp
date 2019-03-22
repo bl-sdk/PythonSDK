@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_IncrementPlayerStat(py::object m)
+void Export_pystes_UBehavior_IncrementPlayerStat(py::module &m)
 {
     py::class_< UBehavior_IncrementPlayerStat,  UBehaviorBase   >(m, "UBehavior_IncrementPlayerStat")
         .def_readwrite("StatId", &UBehavior_IncrementPlayerStat::StatId)

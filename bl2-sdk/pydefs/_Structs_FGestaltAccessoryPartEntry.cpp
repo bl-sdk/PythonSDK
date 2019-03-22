@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGestaltAccessoryPartEntry(py::object m)
+void Export_pystes_FGestaltAccessoryPartEntry(py::module &m)
 {
     py::class_< FGestaltAccessoryPartEntry >(m, "FGestaltAccessoryPartEntry")
         .def_readwrite("PartName", &FGestaltAccessoryPartEntry::PartName)

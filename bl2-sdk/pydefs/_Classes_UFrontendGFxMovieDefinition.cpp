@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFrontendGFxMovieDefinition(py::object m)
+void Export_pystes_UFrontendGFxMovieDefinition(py::module &m)
 {
     py::class_< UFrontendGFxMovieDefinition,  UWillowGFxMovie3DDefinition   >(m, "UFrontendGFxMovieDefinition")
         .def_readwrite("OnStart", &UFrontendGFxMovieDefinition::OnStart)

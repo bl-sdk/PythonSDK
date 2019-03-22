@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIDataStore_OnlinePlayerData(py::object m)
+void Export_pystes_UUIDataStore_OnlinePlayerData(py::module &m)
 {
     py::class_< UUIDataStore_OnlinePlayerData,  UUIDataStore   >(m, "UUIDataStore_OnlinePlayerData")
         .def_readwrite("VfTable_IUIListElementProvider", &UUIDataStore_OnlinePlayerData::VfTable_IUIListElementProvider)

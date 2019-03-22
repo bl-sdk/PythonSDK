@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FActiveAreaWaypointData(py::object m)
+void Export_pystes_FActiveAreaWaypointData(py::module &m)
 {
     py::class_< FActiveAreaWaypointData >(m, "FActiveAreaWaypointData")
         .def_readwrite("WaypointLocation", &FActiveAreaWaypointData::WaypointLocation)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAdvancedAxisDefinition(py::object m)
+void Export_pystes_UAdvancedAxisDefinition(py::module &m)
 {
     py::class_< UAdvancedAxisDefinition,  UGBXDefinition   >(m, "UAdvancedAxisDefinition")
         .def_readwrite("Speed", &UAdvancedAxisDefinition::Speed)

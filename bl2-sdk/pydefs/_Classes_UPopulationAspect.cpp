@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPopulationAspect(py::object m)
+void Export_pystes_UPopulationAspect(py::module &m)
 {
     py::class_< UPopulationAspect,  UObject   >(m, "UPopulationAspect")
         .def("StaticClass", &UPopulationAspect::StaticClass, py::return_value_policy::reference)

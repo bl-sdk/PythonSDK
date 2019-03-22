@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMeleeOverTimeState(py::object m)
+void Export_pystes_FMeleeOverTimeState(py::module &m)
 {
     py::class_< FMeleeOverTimeState >(m, "FMeleeOverTimeState")
         .def_readwrite("MeleeDefinition", &FMeleeOverTimeState::MeleeDefinition)

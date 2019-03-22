@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULevelStreaming(py::object m)
+void Export_pystes_ULevelStreaming(py::module &m)
 {
     py::class_< ULevelStreaming,  UObject   >(m, "ULevelStreaming")
         .def_readwrite("PackageName", &ULevelStreaming::PackageName)

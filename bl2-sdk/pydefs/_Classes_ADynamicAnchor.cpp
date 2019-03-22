@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ADynamicAnchor(py::object m)
+void Export_pystes_ADynamicAnchor(py::module &m)
 {
     py::class_< ADynamicAnchor,  ANavigationPoint   >(m, "ADynamicAnchor")
         .def_readwrite("CurrentUser", &ADynamicAnchor::CurrentUser)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_SetParticleSysParam(py::object m)
+void Export_pystes_USeqAct_SetParticleSysParam(py::module &m)
 {
     py::class_< USeqAct_SetParticleSysParam,  USequenceAction   >(m, "USeqAct_SetParticleSysParam")
         .def_readwrite("InstanceParameters", &USeqAct_SetParticleSysParam::InstanceParameters)

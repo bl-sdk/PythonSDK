@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGearboxCoverState(py::object m)
+void Export_pystes_FGearboxCoverState(py::module &m)
 {
     py::class_< FGearboxCoverState >(m, "FGearboxCoverState")
         .def_readwrite("TheCoverActor", &FGearboxCoverState::TheCoverActor)

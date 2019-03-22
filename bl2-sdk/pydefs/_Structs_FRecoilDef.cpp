@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRecoilDef(py::object m)
+void Export_pystes_FRecoilDef(py::module &m)
 {
     py::class_< FRecoilDef >(m, "FRecoilDef")
         .def_readwrite("TimeToGo", &FRecoilDef::TimeToGo)

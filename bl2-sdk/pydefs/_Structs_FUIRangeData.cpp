@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FUIRangeData(py::object m)
+void Export_pystes_FUIRangeData(py::module &m)
 {
     py::class_< FUIRangeData >(m, "FUIRangeData")
         .def_readwrite("CurrentValue", &FUIRangeData::CurrentValue)

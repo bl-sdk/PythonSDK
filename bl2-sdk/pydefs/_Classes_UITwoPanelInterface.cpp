@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UITwoPanelInterface(py::object m)
+void Export_pystes_UITwoPanelInterface(py::module &m)
 {
     py::class_< UITwoPanelInterface,  UInterface   >(m, "UITwoPanelInterface")
         .def("StaticClass", &UITwoPanelInterface::StaticClass, py::return_value_policy::reference)

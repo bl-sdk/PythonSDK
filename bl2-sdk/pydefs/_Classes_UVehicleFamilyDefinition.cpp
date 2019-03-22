@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UVehicleFamilyDefinition(py::object m)
+void Export_pystes_UVehicleFamilyDefinition(py::module &m)
 {
     py::class_< UVehicleFamilyDefinition,  UGBXDefinition   >(m, "UVehicleFamilyDefinition")
         .def_readwrite("VehicleUIDefinitions", &UVehicleFamilyDefinition::VehicleUIDefinitions)

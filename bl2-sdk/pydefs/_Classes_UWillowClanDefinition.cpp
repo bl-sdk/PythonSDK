@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowClanDefinition(py::object m)
+void Export_pystes_UWillowClanDefinition(py::module &m)
 {
     py::class_< UWillowClanDefinition,  UGBXDefinition   >(m, "UWillowClanDefinition")
         .def_readwrite("MaterialMap", &UWillowClanDefinition::MaterialMap)

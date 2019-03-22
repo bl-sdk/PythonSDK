@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_ControlMovieTexture(py::object m)
+void Export_pystes_USeqAct_ControlMovieTexture(py::module &m)
 {
     py::class_< USeqAct_ControlMovieTexture,  USequenceAction   >(m, "USeqAct_ControlMovieTexture")
         .def_readwrite("MovieTexture", &USeqAct_ControlMovieTexture::MovieTexture)

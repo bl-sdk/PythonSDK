@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNavMeshPath_WithinTraversalDist(py::object m)
+void Export_pystes_UNavMeshPath_WithinTraversalDist(py::module &m)
 {
     py::class_< UNavMeshPath_WithinTraversalDist,  UNavMeshPathConstraint   >(m, "UNavMeshPath_WithinTraversalDist")
         .def_readwrite("MaxTraversalDist", &UNavMeshPath_WithinTraversalDist::MaxTraversalDist)

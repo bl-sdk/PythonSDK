@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackInstToggle(py::object m)
+void Export_pystes_UInterpTrackInstToggle(py::module &m)
 {
     py::class_< UInterpTrackInstToggle,  UInterpTrackInst   >(m, "UInterpTrackInstToggle")
         .def_readwrite("Action", &UInterpTrackInstToggle::Action)

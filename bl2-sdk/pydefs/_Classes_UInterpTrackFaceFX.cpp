@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackFaceFX(py::object m)
+void Export_pystes_UInterpTrackFaceFX(py::module &m)
 {
     py::class_< UInterpTrackFaceFX,  UInterpTrack   >(m, "UInterpTrackFaceFX")
         .def_readwrite("FaceFXAnimSets", &UInterpTrackFaceFX::FaceFXAnimSets)

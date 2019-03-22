@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIScreenParticle(py::object m)
+void Export_pystes_UIScreenParticle(py::module &m)
 {
     py::class_< UIScreenParticle,  UInterface   >(m, "UIScreenParticle")
         .def("StaticClass", &UIScreenParticle::StaticClass, py::return_value_policy::reference)

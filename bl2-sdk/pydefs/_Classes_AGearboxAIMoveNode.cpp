@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AGearboxAIMoveNode(py::object m)
+void Export_pystes_AGearboxAIMoveNode(py::module &m)
 {
     py::class_< AGearboxAIMoveNode,  AActor   >(m, "AGearboxAIMoveNode")
         .def_readwrite("NextNodes", &AGearboxAIMoveNode::NextNodes)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FEmotePortraitInfo(py::object m)
+void Export_pystes_FEmotePortraitInfo(py::module &m)
 {
     py::class_< FEmotePortraitInfo >(m, "FEmotePortraitInfo")
         .def_readwrite("Emote", &FEmotePortraitInfo::Emote)

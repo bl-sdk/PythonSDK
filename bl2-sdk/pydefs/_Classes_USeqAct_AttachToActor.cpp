@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_AttachToActor(py::object m)
+void Export_pystes_USeqAct_AttachToActor(py::module &m)
 {
     py::class_< USeqAct_AttachToActor,  USequenceAction   >(m, "USeqAct_AttachToActor")
         .def_readwrite("BoneName", &USeqAct_AttachToActor::BoneName)

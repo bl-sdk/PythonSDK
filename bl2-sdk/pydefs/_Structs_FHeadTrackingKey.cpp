@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FHeadTrackingKey(py::object m)
+void Export_pystes_FHeadTrackingKey(py::module &m)
 {
     py::class_< FHeadTrackingKey >(m, "FHeadTrackingKey")
         .def_readwrite("Time", &FHeadTrackingKey::Time)

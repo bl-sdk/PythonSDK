@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ALadderVolume(py::object m)
+void Export_pystes_ALadderVolume(py::module &m)
 {
     py::class_< ALadderVolume,  APhysicsVolume   >(m, "ALadderVolume")
         .def_readwrite("WallDir", &ALadderVolume::WallDir)

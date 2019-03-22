@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSparkMicropatch(py::object m)
+void Export_pystes_FSparkMicropatch(py::module &m)
 {
     py::class_< FSparkMicropatch >(m, "FSparkMicropatch")
         .def_readwrite("ObjectPath", &FSparkMicropatch::ObjectPath)

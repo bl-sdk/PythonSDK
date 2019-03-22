@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIDamageCauser(py::object m)
+void Export_pystes_UIDamageCauser(py::module &m)
 {
     py::class_< UIDamageCauser,  UInterface   >(m, "UIDamageCauser")
         .def("StaticClass", &UIDamageCauser::StaticClass, py::return_value_policy::reference)

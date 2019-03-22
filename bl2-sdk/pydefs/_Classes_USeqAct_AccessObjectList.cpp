@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_AccessObjectList(py::object m)
+void Export_pystes_USeqAct_AccessObjectList(py::module &m)
 {
     py::class_< USeqAct_AccessObjectList,  USeqAct_SetSequenceVariable   >(m, "USeqAct_AccessObjectList")
         .def_readwrite("OutputObject", &USeqAct_AccessObjectList::OutputObject)

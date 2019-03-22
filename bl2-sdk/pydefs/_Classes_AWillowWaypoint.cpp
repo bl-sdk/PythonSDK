@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowWaypoint(py::object m)
+void Export_pystes_AWillowWaypoint(py::module &m)
 {
     py::class_< AWillowWaypoint,  ATrigger   >(m, "AWillowWaypoint")
         .def_readwrite("VfTable_IIMission", &AWillowWaypoint::VfTable_IIMission)

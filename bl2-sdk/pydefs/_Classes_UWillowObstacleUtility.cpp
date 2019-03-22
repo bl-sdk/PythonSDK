@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowObstacleUtility(py::object m)
+void Export_pystes_UWillowObstacleUtility(py::module &m)
 {
     py::class_< UWillowObstacleUtility,  UObject   >(m, "UWillowObstacleUtility")
         .def_readwrite("GridSize", &UWillowObstacleUtility::GridSize)

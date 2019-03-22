@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackVectorBase(py::object m)
+void Export_pystes_UInterpTrackVectorBase(py::module &m)
 {
     py::class_< UInterpTrackVectorBase,  UInterpTrack   >(m, "UInterpTrackVectorBase")
         .def_readwrite("VectorTrack", &UInterpTrackVectorBase::VectorTrack)

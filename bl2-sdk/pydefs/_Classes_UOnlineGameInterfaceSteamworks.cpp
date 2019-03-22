@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineGameInterfaceSteamworks(py::object m)
+void Export_pystes_UOnlineGameInterfaceSteamworks(py::module &m)
 {
     py::class_< UOnlineGameInterfaceSteamworks,  UOnlineGameInterfaceImpl   >(m, "UOnlineGameInterfaceSteamworks")
         .def_readwrite("QueryToRulesResponseMap", &UOnlineGameInterfaceSteamworks::QueryToRulesResponseMap)

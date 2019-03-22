@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPawnAllegiance(py::object m)
+void Export_pystes_UPawnAllegiance(py::module &m)
 {
     py::class_< UPawnAllegiance,  UObject   >(m, "UPawnAllegiance")
         .def_readwrite("DefaultOpinion", &UPawnAllegiance::DefaultOpinion)

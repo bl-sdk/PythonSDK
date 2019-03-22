@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDLCLegacyPlayerClassIdentifierDefinition(py::object m)
+void Export_pystes_UDLCLegacyPlayerClassIdentifierDefinition(py::module &m)
 {
     py::class_< UDLCLegacyPlayerClassIdentifierDefinition,  UGBXDefinition   >(m, "UDLCLegacyPlayerClassIdentifierDefinition")
         .def_readwrite("CharacterCustomizations", &UDLCLegacyPlayerClassIdentifierDefinition::CharacterCustomizations)

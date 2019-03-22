@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackVectorMaterialParam(py::object m)
+void Export_pystes_UInterpTrackVectorMaterialParam(py::module &m)
 {
     py::class_< UInterpTrackVectorMaterialParam,  UInterpTrackVectorBase   >(m, "UInterpTrackVectorMaterialParam")
         .def_readwrite("Materials", &UInterpTrackVectorMaterialParam::Materials)

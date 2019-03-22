@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_AddInventoryToStorage(py::object m)
+void Export_pystes_UBehavior_AddInventoryToStorage(py::module &m)
 {
     py::class_< UBehavior_AddInventoryToStorage,  UBehaviorBase   >(m, "UBehavior_AddInventoryToStorage")
         .def_readwrite("ItemDef", &UBehavior_AddInventoryToStorage::ItemDef)

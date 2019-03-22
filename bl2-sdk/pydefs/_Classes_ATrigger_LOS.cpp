@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ATrigger_LOS(py::object m)
+void Export_pystes_ATrigger_LOS(py::module &m)
 {
     py::class_< ATrigger_LOS,  ATrigger   >(m, "ATrigger_LOS")
         .def_readwrite("PCsWithLOS", &ATrigger_LOS::PCsWithLOS)

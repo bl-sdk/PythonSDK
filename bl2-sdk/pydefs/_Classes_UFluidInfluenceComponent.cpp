@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFluidInfluenceComponent(py::object m)
+void Export_pystes_UFluidInfluenceComponent(py::module &m)
 {
     py::class_< UFluidInfluenceComponent,  UPrimitiveComponent   >(m, "UFluidInfluenceComponent")
         .def_readwrite("FluidActor", &UFluidInfluenceComponent::FluidActor)

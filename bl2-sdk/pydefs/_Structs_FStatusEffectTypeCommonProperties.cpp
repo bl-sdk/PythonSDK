@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FStatusEffectTypeCommonProperties(py::object m)
+void Export_pystes_FStatusEffectTypeCommonProperties(py::module &m)
 {
     py::class_< FStatusEffectTypeCommonProperties >(m, "FStatusEffectTypeCommonProperties")
         .def_readwrite("StatusEffectType", &FStatusEffectTypeCommonProperties::StatusEffectType)

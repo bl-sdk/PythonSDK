@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAIResource(py::object m)
+void Export_pystes_UAIResource(py::module &m)
 {
     py::class_< UAIResource,  UGBXDefinition   >(m, "UAIResource")
         .def_readwrite("ResourceRestrictions", &UAIResource::ResourceRestrictions)

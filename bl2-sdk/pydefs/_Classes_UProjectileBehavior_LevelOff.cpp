@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UProjectileBehavior_LevelOff(py::object m)
+void Export_pystes_UProjectileBehavior_LevelOff(py::module &m)
 {
     py::class_< UProjectileBehavior_LevelOff,  UProjectileBehaviorBase   >(m, "UProjectileBehavior_LevelOff")
         .def_readwrite("DesiredWorldZToLevelOff", &UProjectileBehavior_LevelOff::DesiredWorldZToLevelOff)

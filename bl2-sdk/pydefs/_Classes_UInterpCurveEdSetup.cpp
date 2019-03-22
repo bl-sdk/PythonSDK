@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpCurveEdSetup(py::object m)
+void Export_pystes_UInterpCurveEdSetup(py::module &m)
 {
     py::class_< UInterpCurveEdSetup,  UObject   >(m, "UInterpCurveEdSetup")
         .def_readwrite("Tabs", &UInterpCurveEdSetup::Tabs)

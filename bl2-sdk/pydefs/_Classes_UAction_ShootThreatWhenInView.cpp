@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_ShootThreatWhenInView(py::object m)
+void Export_pystes_UAction_ShootThreatWhenInView(py::module &m)
 {
     py::class_< UAction_ShootThreatWhenInView,  UWillowActionSequencePawn   >(m, "UAction_ShootThreatWhenInView")
         .def("StaticClass", &UAction_ShootThreatWhenInView::StaticClass, py::return_value_policy::reference)

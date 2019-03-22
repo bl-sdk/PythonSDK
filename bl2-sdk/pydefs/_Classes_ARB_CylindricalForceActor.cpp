@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ARB_CylindricalForceActor(py::object m)
+void Export_pystes_ARB_CylindricalForceActor(py::module &m)
 {
     py::class_< ARB_CylindricalForceActor,  ARigidBodyBase   >(m, "ARB_CylindricalForceActor")
         .def_readwrite("RenderComponent", &ARB_CylindricalForceActor::RenderComponent)

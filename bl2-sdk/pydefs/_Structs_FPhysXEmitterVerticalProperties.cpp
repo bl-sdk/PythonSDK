@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPhysXEmitterVerticalProperties(py::object m)
+void Export_pystes_FPhysXEmitterVerticalProperties(py::module &m)
 {
     py::class_< FPhysXEmitterVerticalProperties >(m, "FPhysXEmitterVerticalProperties")
         .def_readwrite("ParticlesLodMin", &FPhysXEmitterVerticalProperties::ParticlesLodMin)

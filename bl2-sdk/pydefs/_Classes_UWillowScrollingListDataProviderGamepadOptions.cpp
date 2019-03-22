@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowScrollingListDataProviderGamepadOptions(py::object m)
+void Export_pystes_UWillowScrollingListDataProviderGamepadOptions(py::module &m)
 {
     py::class_< UWillowScrollingListDataProviderGamepadOptions,  UWillowScrollingListDataProviderOptionsBase   >(m, "UWillowScrollingListDataProviderGamepadOptions")
         .def_readwrite("KeyCaptionList", &UWillowScrollingListDataProviderGamepadOptions::KeyCaptionList)

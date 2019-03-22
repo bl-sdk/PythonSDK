@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNotify_PlayParticleEffect(py::object m)
+void Export_pystes_UAnimNotify_PlayParticleEffect(py::module &m)
 {
     py::class_< UAnimNotify_PlayParticleEffect,  UAnimNotify   >(m, "UAnimNotify_PlayParticleEffect")
         .def_readwrite("PSTemplate", &UAnimNotify_PlayParticleEffect::PSTemplate)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBehaviorTimerState(py::object m)
+void Export_pystes_FBehaviorTimerState(py::module &m)
 {
     py::class_< FBehaviorTimerState >(m, "FBehaviorTimerState")
         .def_readwrite("Delay", &FBehaviorTimerState::Delay)

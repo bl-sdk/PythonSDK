@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAsyncDataRequest(py::object m)
+void Export_pystes_FAsyncDataRequest(py::module &m)
 {
     py::class_< FAsyncDataRequest >(m, "FAsyncDataRequest")
         .def_readwrite("RequestType", &FAsyncDataRequest::RequestType)

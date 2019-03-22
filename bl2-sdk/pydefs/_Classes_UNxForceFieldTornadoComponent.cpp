@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNxForceFieldTornadoComponent(py::object m)
+void Export_pystes_UNxForceFieldTornadoComponent(py::module &m)
 {
     py::class_< UNxForceFieldTornadoComponent,  UNxForceFieldComponent   >(m, "UNxForceFieldTornadoComponent")
         .def_readwrite("RadialStrength", &UNxForceFieldTornadoComponent::RadialStrength)

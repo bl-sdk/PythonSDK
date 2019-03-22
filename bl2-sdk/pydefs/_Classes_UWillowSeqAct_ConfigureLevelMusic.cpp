@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSeqAct_ConfigureLevelMusic(py::object m)
+void Export_pystes_UWillowSeqAct_ConfigureLevelMusic(py::module &m)
 {
     py::class_< UWillowSeqAct_ConfigureLevelMusic,  USequenceAction   >(m, "UWillowSeqAct_ConfigureLevelMusic")
         .def_readwrite("MusicStartAkEvent", &UWillowSeqAct_ConfigureLevelMusic::MusicStartAkEvent)

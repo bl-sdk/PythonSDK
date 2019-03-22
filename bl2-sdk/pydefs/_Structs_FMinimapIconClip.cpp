@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FMinimapIconClip(py::object m)
+void Export_pystes_FMinimapIconClip(py::module &m)
 {
     py::class_< FMinimapIconClip >(m, "FMinimapIconClip")
         .def_readwrite("Object", &FMinimapIconClip::Object)

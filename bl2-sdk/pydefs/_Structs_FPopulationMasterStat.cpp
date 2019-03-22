@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPopulationMasterStat(py::object m)
+void Export_pystes_FPopulationMasterStat(py::module &m)
 {
     py::class_< FPopulationMasterStat >(m, "FPopulationMasterStat")
         .def_readwrite("StatName", &FPopulationMasterStat::StatName)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ALiftExit(py::object m)
+void Export_pystes_ALiftExit(py::module &m)
 {
     py::class_< ALiftExit,  ANavigationPoint   >(m, "ALiftExit")
         .def_readwrite("MyLiftCenter", &ALiftExit::MyLiftCenter)

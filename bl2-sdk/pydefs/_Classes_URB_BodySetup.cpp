@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_URB_BodySetup(py::object m)
+void Export_pystes_URB_BodySetup(py::module &m)
 {
     py::class_< URB_BodySetup,  UObject   >(m, "URB_BodySetup")
         .def_readwrite("SleepFamily", &URB_BodySetup::SleepFamily)

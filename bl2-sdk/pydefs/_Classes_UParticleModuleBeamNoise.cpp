@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleBeamNoise(py::object m)
+void Export_pystes_UParticleModuleBeamNoise(py::module &m)
 {
     py::class_< UParticleModuleBeamNoise,  UParticleModuleBeamBase   >(m, "UParticleModuleBeamNoise")
         .def_readwrite("Frequency", &UParticleModuleBeamNoise::Frequency)

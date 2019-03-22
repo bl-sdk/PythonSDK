@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USoundMode(py::object m)
+void Export_pystes_USoundMode(py::module &m)
 {
     py::class_< USoundMode,  UObject   >(m, "USoundMode")
         .def_readwrite("EQSettings", &USoundMode::EQSettings)

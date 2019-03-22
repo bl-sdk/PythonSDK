@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ACoverLink(py::object m)
+void Export_pystes_ACoverLink(py::module &m)
 {
     py::class_< ACoverLink,  ANavigationPoint   >(m, "ACoverLink")
         .def_readwrite("VfTable_IIGBXNavMeshSpecialMove", &ACoverLink::VfTable_IIGBXNavMeshSpecialMove)

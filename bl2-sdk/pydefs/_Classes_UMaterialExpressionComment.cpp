@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionComment(py::object m)
+void Export_pystes_UMaterialExpressionComment(py::module &m)
 {
     py::class_< UMaterialExpressionComment,  UMaterialExpression   >(m, "UMaterialExpressionComment")
         .def_readwrite("PosX", &UMaterialExpressionComment::PosX)

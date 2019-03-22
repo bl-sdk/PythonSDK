@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCoverReplicationInfo(py::object m)
+void Export_pystes_FCoverReplicationInfo(py::module &m)
 {
     py::class_< FCoverReplicationInfo >(m, "FCoverReplicationInfo")
         .def_readwrite("Link", &FCoverReplicationInfo::Link)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGFxColiseumOverlayDefinition(py::object m)
+void Export_pystes_UWillowGFxColiseumOverlayDefinition(py::module &m)
 {
     py::class_< UWillowGFxColiseumOverlayDefinition,  UGFxMovieDefinition   >(m, "UWillowGFxColiseumOverlayDefinition")
         .def_readwrite("CurrentRoundCounter", &UWillowGFxColiseumOverlayDefinition::CurrentRoundCounter)

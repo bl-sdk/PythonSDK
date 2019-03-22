@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_WaitForLevelsVisible(py::object m)
+void Export_pystes_USeqAct_WaitForLevelsVisible(py::module &m)
 {
     py::class_< USeqAct_WaitForLevelsVisible,  USeqAct_Latent   >(m, "USeqAct_WaitForLevelsVisible")
         .def_readwrite("LevelNames", &USeqAct_WaitForLevelsVisible::LevelNames)

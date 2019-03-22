@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMultipleFlagValueResolver(py::object m)
+void Export_pystes_UMultipleFlagValueResolver(py::module &m)
 {
     py::class_< UMultipleFlagValueResolver,  UFlagValueResolver   >(m, "UMultipleFlagValueResolver")
         .def_readwrite("FlagToLookUp", &UMultipleFlagValueResolver::FlagToLookUp)

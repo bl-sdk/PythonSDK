@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDynamicLinkInfo(py::object m)
+void Export_pystes_FDynamicLinkInfo(py::module &m)
 {
     py::class_< FDynamicLinkInfo >(m, "FDynamicLinkInfo")
         .def_readwrite("LastTargetLocation", &FDynamicLinkInfo::LastTargetLocation)

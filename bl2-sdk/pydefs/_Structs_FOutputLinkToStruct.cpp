@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FOutputLinkToStruct(py::object m)
+void Export_pystes_FOutputLinkToStruct(py::module &m)
 {
     py::class_< FOutputLinkToStruct >(m, "FOutputLinkToStruct")
         .def_readwrite("FromNodeID", &FOutputLinkToStruct::FromNodeID)

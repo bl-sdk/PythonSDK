@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FShadowRelevanceSizePair(py::object m)
+void Export_pystes_FShadowRelevanceSizePair(py::module &m)
 {
     py::class_< FShadowRelevanceSizePair >(m, "FShadowRelevanceSizePair")
         .def_readwrite("Size", &FShadowRelevanceSizePair::Size)

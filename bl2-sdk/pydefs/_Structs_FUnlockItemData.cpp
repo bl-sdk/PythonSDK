@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FUnlockItemData(py::object m)
+void Export_pystes_FUnlockItemData(py::module &m)
 {
     py::class_< FUnlockItemData >(m, "FUnlockItemData")
         .def_readwrite("GameStage", &FUnlockItemData::GameStage)

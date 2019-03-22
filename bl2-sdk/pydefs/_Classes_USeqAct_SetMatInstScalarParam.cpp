@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_SetMatInstScalarParam(py::object m)
+void Export_pystes_USeqAct_SetMatInstScalarParam(py::module &m)
 {
     py::class_< USeqAct_SetMatInstScalarParam,  USequenceAction   >(m, "USeqAct_SetMatInstScalarParam")
         .def_readwrite("MatInst", &USeqAct_SetMatInstScalarParam::MatInst)

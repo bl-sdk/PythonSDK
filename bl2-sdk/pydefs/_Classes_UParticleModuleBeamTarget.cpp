@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleBeamTarget(py::object m)
+void Export_pystes_UParticleModuleBeamTarget(py::module &m)
 {
     py::class_< UParticleModuleBeamTarget,  UParticleModuleBeamBase   >(m, "UParticleModuleBeamTarget")
         .def_readwrite("TargetMethod", &UParticleModuleBeamTarget::TargetMethod)

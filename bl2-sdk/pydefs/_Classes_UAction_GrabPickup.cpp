@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_GrabPickup(py::object m)
+void Export_pystes_UAction_GrabPickup(py::module &m)
 {
     py::class_< UAction_GrabPickup,  UWillowActionSequencePawn   >(m, "UAction_GrabPickup")
         .def_readwrite("CheckRadius", &UAction_GrabPickup::CheckRadius)

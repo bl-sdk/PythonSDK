@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FColiseumPlayerInfo(py::object m)
+void Export_pystes_FColiseumPlayerInfo(py::module &m)
 {
     py::class_< FColiseumPlayerInfo >(m, "FColiseumPlayerInfo")
         .def_readwrite("WPC", &FColiseumPlayerInfo::WPC)

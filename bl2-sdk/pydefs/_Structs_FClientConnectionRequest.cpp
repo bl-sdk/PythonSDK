@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FClientConnectionRequest(py::object m)
+void Export_pystes_FClientConnectionRequest(py::module &m)
 {
     py::class_< FClientConnectionRequest >(m, "FClientConnectionRequest")
         .def_readwrite("PlayerNetId", &FClientConnectionRequest::PlayerNetId)

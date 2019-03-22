@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_QueuePersonalEcho(py::object m)
+void Export_pystes_UBehavior_QueuePersonalEcho(py::module &m)
 {
     py::class_< UBehavior_QueuePersonalEcho,  UBehaviorBase   >(m, "UBehavior_QueuePersonalEcho")
         .def_readwrite("PersonalEchoTag", &UBehavior_QueuePersonalEcho::PersonalEchoTag)

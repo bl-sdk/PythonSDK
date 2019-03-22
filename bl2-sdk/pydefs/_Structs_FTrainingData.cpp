@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTrainingData(py::object m)
+void Export_pystes_FTrainingData(py::module &m)
 {
     py::class_< FTrainingData >(m, "FTrainingData")
         .def_readwrite("PCOwner", &FTrainingData::PCOwner)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ANxGenericForceFieldBox(py::object m)
+void Export_pystes_ANxGenericForceFieldBox(py::module &m)
 {
     py::class_< ANxGenericForceFieldBox,  ANxGenericForceField   >(m, "ANxGenericForceFieldBox")
         .def_readwrite("RenderComponent", &ANxGenericForceFieldBox::RenderComponent)

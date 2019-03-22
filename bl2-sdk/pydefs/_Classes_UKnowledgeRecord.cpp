@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UKnowledgeRecord(py::object m)
+void Export_pystes_UKnowledgeRecord(py::module &m)
 {
     py::class_< UKnowledgeRecord,  UObject   >(m, "UKnowledgeRecord")
         .def_readwrite("TheAIFactory", &UKnowledgeRecord::TheAIFactory)

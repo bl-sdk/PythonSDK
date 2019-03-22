@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLensFlareElementInstance(py::object m)
+void Export_pystes_FLensFlareElementInstance(py::module &m)
 {
     py::class_< FLensFlareElementInstance >(m, "FLensFlareElementInstance")
   ;

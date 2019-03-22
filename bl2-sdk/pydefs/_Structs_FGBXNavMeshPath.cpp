@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGBXNavMeshPath(py::object m)
+void Export_pystes_FGBXNavMeshPath(py::module &m)
 {
     py::class_< FGBXNavMeshPath >(m, "FGBXNavMeshPath")
         .def_readwrite("PathPoints", &FGBXNavMeshPath::PathPoints)

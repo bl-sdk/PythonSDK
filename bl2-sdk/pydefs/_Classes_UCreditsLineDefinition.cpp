@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCreditsLineDefinition(py::object m)
+void Export_pystes_UCreditsLineDefinition(py::module &m)
 {
     py::class_< UCreditsLineDefinition,  UGBXDefinition   >(m, "UCreditsLineDefinition")
         .def_readwrite("LinkageName", &UCreditsLineDefinition::LinkageName)

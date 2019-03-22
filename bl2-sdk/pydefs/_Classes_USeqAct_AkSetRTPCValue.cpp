@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_AkSetRTPCValue(py::object m)
+void Export_pystes_USeqAct_AkSetRTPCValue(py::module &m)
 {
     py::class_< USeqAct_AkSetRTPCValue,  USeqAct_Latent   >(m, "USeqAct_AkSetRTPCValue")
         .def_readwrite("AkRtpc", &USeqAct_AkSetRTPCValue::AkRtpc)

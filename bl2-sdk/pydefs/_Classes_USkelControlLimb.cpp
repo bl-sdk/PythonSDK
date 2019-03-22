@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USkelControlLimb(py::object m)
+void Export_pystes_USkelControlLimb(py::module &m)
 {
     py::class_< USkelControlLimb,  USkelControlBase   >(m, "USkelControlLimb")
         .def_readwrite("EffectorLocation", &USkelControlLimb::EffectorLocation)

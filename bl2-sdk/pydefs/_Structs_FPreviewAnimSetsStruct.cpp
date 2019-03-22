@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPreviewAnimSetsStruct(py::object m)
+void Export_pystes_FPreviewAnimSetsStruct(py::module &m)
 {
     py::class_< FPreviewAnimSetsStruct >(m, "FPreviewAnimSetsStruct")
         .def_readwrite("DisplayName", &FPreviewAnimSetsStruct::DisplayName)

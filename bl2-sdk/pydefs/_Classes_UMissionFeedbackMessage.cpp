@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMissionFeedbackMessage(py::object m)
+void Export_pystes_UMissionFeedbackMessage(py::module &m)
 {
     py::class_< UMissionFeedbackMessage,  UWillowLocalMessage   >(m, "UMissionFeedbackMessage")
         .def_readwrite("MissionAdded", &UMissionFeedbackMessage::MissionAdded)

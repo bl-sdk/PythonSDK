@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_NotifyThoughtLockStatus(py::object m)
+void Export_pystes_UBehavior_NotifyThoughtLockStatus(py::module &m)
 {
     py::class_< UBehavior_NotifyThoughtLockStatus,  UBehaviorBase   >(m, "UBehavior_NotifyThoughtLockStatus")
         .def_readwrite("InstigatingPlayer", &UBehavior_NotifyThoughtLockStatus::InstigatingPlayer)

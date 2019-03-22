@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FQWord(py::object m)
+void Export_pystes_FQWord(py::module &m)
 {
     py::class_< FQWord >(m, "FQWord")
         .def_readwrite("A", &FQWord::A)

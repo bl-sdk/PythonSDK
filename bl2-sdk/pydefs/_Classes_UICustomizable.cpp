@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UICustomizable(py::object m)
+void Export_pystes_UICustomizable(py::module &m)
 {
     py::class_< UICustomizable,  UInterface   >(m, "UICustomizable")
         .def("StaticClass", &UICustomizable::StaticClass, py::return_value_policy::reference)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FROscillator(py::object m)
+void Export_pystes_FROscillator(py::module &m)
 {
     py::class_< FROscillator >(m, "FROscillator")
         .def_readwrite("Pitch", &FROscillator::Pitch)

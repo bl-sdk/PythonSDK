@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSeqAct_ClientFlagGet(py::object m)
+void Export_pystes_UWillowSeqAct_ClientFlagGet(py::module &m)
 {
     py::class_< UWillowSeqAct_ClientFlagGet,  USequenceAction   >(m, "UWillowSeqAct_ClientFlagGet")
         .def_readwrite("ClientFlagName", &UWillowSeqAct_ClientFlagGet::ClientFlagName)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_ChangeLocalBehaviorSequenceState(py::object m)
+void Export_pystes_UBehavior_ChangeLocalBehaviorSequenceState(py::module &m)
 {
     py::class_< UBehavior_ChangeLocalBehaviorSequenceState,  UBehaviorBase   >(m, "UBehavior_ChangeLocalBehaviorSequenceState")
         .def_readwrite("Action", &UBehavior_ChangeLocalBehaviorSequenceState::Action)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLightmassPrimitiveSettings(py::object m)
+void Export_pystes_FLightmassPrimitiveSettings(py::module &m)
 {
     py::class_< FLightmassPrimitiveSettings >(m, "FLightmassPrimitiveSettings")
         .def_readwrite("EmissiveLightFalloffExponent", &FLightmassPrimitiveSettings::EmissiveLightFalloffExponent)

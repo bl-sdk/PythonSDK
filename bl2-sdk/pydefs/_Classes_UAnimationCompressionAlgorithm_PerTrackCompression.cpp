@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimationCompressionAlgorithm_PerTrackCompression(py::object m)
+void Export_pystes_UAnimationCompressionAlgorithm_PerTrackCompression(py::module &m)
 {
     py::class_< UAnimationCompressionAlgorithm_PerTrackCompression,  UObject   >(m, "UAnimationCompressionAlgorithm_PerTrackCompression")
         .def_readwrite("MaxZeroingThreshold", &UAnimationCompressionAlgorithm_PerTrackCompression::MaxZeroingThreshold)

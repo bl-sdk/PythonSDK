@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FWeaponMemento(py::object m)
+void Export_pystes_FWeaponMemento(py::module &m)
 {
     py::class_< FWeaponMemento >(m, "FWeaponMemento")
         .def_readwrite("SerialNumber", &FWeaponMemento::SerialNumber)

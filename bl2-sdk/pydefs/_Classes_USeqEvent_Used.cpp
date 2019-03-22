@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqEvent_Used(py::object m)
+void Export_pystes_USeqEvent_Used(py::module &m)
 {
     py::class_< USeqEvent_Used,  USequenceEvent   >(m, "USeqEvent_Used")
         .def_readwrite("InteractDistance", &USeqEvent_Used::InteractDistance)

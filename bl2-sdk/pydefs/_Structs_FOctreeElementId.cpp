@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FOctreeElementId(py::object m)
+void Export_pystes_FOctreeElementId(py::module &m)
 {
     py::class_< FOctreeElementId >(m, "FOctreeElementId")
         .def_readwrite("Node", &FOctreeElementId::Node)

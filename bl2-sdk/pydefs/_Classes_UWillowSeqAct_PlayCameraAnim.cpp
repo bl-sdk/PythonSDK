@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSeqAct_PlayCameraAnim(py::object m)
+void Export_pystes_UWillowSeqAct_PlayCameraAnim(py::module &m)
 {
     py::class_< UWillowSeqAct_PlayCameraAnim,  USequenceAction   >(m, "UWillowSeqAct_PlayCameraAnim")
         .def_readwrite("AnimToPlay", &UWillowSeqAct_PlayCameraAnim::AnimToPlay)

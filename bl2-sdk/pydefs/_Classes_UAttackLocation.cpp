@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAttackLocation(py::object m)
+void Export_pystes_UAttackLocation(py::module &m)
 {
     py::class_< UAttackLocation,  UObject   >(m, "UAttackLocation")
         .def("StaticClass", &UAttackLocation::StaticClass, py::return_value_policy::reference)

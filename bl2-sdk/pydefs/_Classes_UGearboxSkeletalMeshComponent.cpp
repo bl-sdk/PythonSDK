@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxSkeletalMeshComponent(py::object m)
+void Export_pystes_UGearboxSkeletalMeshComponent(py::module &m)
 {
     py::class_< UGearboxSkeletalMeshComponent,  USkeletalMeshComponent   >(m, "UGearboxSkeletalMeshComponent")
         .def_readwrite("FOV", &UGearboxSkeletalMeshComponent::FOV)

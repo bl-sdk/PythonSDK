@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGroupAnimationAndSoundIdentifier(py::object m)
+void Export_pystes_FGroupAnimationAndSoundIdentifier(py::module &m)
 {
     py::class_< FGroupAnimationAndSoundIdentifier >(m, "FGroupAnimationAndSoundIdentifier")
         .def_readwrite("SoundNodeWaveName", &FGroupAnimationAndSoundIdentifier::SoundNodeWaveName)

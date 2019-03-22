@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionTransform(py::object m)
+void Export_pystes_UMaterialExpressionTransform(py::module &m)
 {
     py::class_< UMaterialExpressionTransform,  UMaterialExpression   >(m, "UMaterialExpressionTransform")
         .def_readwrite("Input", &UMaterialExpressionTransform::Input)

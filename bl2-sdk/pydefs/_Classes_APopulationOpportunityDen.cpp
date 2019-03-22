@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APopulationOpportunityDen(py::object m)
+void Export_pystes_APopulationOpportunityDen(py::module &m)
 {
     py::class_< APopulationOpportunityDen,  APopulationOpportunity   >(m, "APopulationOpportunityDen")
         .def_readwrite("VfTable_IIAIInterface", &APopulationOpportunityDen::VfTable_IIAIInterface)

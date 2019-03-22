@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowTrigger(py::object m)
+void Export_pystes_AWillowTrigger(py::module &m)
 {
     py::class_< AWillowTrigger,  ATrigger   >(m, "AWillowTrigger")
         .def_readwrite("VfTable_IIUsable", &AWillowTrigger::VfTable_IIUsable)

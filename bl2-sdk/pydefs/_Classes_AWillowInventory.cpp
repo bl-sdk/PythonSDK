@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowInventory(py::object m)
+void Export_pystes_AWillowInventory(py::module &m)
 {
     py::class_< AWillowInventory,  AActor   >(m, "AWillowInventory")
         .def_readwrite("VfTable_IIBalancedActor", &AWillowInventory::VfTable_IIBalancedActor)

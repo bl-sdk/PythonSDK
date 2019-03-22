@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDropNoteInfo(py::object m)
+void Export_pystes_FDropNoteInfo(py::module &m)
 {
     py::class_< FDropNoteInfo >(m, "FDropNoteInfo")
         .def_readwrite("Location", &FDropNoteInfo::Location)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleVelocityInheritParent(py::object m)
+void Export_pystes_UParticleModuleVelocityInheritParent(py::module &m)
 {
     py::class_< UParticleModuleVelocityInheritParent,  UParticleModuleVelocityBase   >(m, "UParticleModuleVelocityInheritParent")
         .def_readwrite("Scale", &UParticleModuleVelocityInheritParent::Scale)

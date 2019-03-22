@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowGFxThirdPersonMovie(py::object m)
+void Export_pystes_UWillowGFxThirdPersonMovie(py::module &m)
 {
     py::class_< UWillowGFxThirdPersonMovie,  UWillowGFxMovie3D   >(m, "UWillowGFxThirdPersonMovie")
         .def_readwrite("MyThirdPersonDefinition", &UWillowGFxThirdPersonMovie::MyThirdPersonDefinition)

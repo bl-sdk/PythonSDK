@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDeathByWeaponDamageStatID(py::object m)
+void Export_pystes_FDeathByWeaponDamageStatID(py::module &m)
 {
     py::class_< FDeathByWeaponDamageStatID >(m, "FDeathByWeaponDamageStatID")
         .def_readwrite("DamageType", &FDeathByWeaponDamageStatID::DamageType)

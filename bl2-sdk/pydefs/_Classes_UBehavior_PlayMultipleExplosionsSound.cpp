@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_PlayMultipleExplosionsSound(py::object m)
+void Export_pystes_UBehavior_PlayMultipleExplosionsSound(py::module &m)
 {
     py::class_< UBehavior_PlayMultipleExplosionsSound,  UBehaviorBase   >(m, "UBehavior_PlayMultipleExplosionsSound")
         .def_readwrite("Definition", &UBehavior_PlayMultipleExplosionsSound::Definition)

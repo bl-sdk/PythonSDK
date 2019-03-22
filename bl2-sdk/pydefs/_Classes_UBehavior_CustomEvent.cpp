@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_CustomEvent(py::object m)
+void Export_pystes_UBehavior_CustomEvent(py::module &m)
 {
     py::class_< UBehavior_CustomEvent,  UBehaviorBase   >(m, "UBehavior_CustomEvent")
         .def_readwrite("CustomEventName", &UBehavior_CustomEvent::CustomEventName)

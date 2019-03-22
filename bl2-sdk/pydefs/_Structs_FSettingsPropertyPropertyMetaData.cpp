@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSettingsPropertyPropertyMetaData(py::object m)
+void Export_pystes_FSettingsPropertyPropertyMetaData(py::module &m)
 {
     py::class_< FSettingsPropertyPropertyMetaData >(m, "FSettingsPropertyPropertyMetaData")
         .def_readwrite("Id", &FSettingsPropertyPropertyMetaData::Id)

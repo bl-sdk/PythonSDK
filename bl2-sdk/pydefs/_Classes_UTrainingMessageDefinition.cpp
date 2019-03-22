@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UTrainingMessageDefinition(py::object m)
+void Export_pystes_UTrainingMessageDefinition(py::module &m)
 {
     py::class_< UTrainingMessageDefinition,  UGBXDefinition   >(m, "UTrainingMessageDefinition")
         .def_readwrite("StatId", &UTrainingMessageDefinition::StatId)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowItem(py::object m)
+void Export_pystes_AWillowItem(py::module &m)
 {
     py::class_< AWillowItem,  AWillowInventory   >(m, "AWillowItem")
         .def_readwrite("VfTable_IIInstanceData", &AWillowItem::VfTable_IIInstanceData)

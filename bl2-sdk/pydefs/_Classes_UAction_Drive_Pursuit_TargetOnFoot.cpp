@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_Drive_Pursuit_TargetOnFoot(py::object m)
+void Export_pystes_UAction_Drive_Pursuit_TargetOnFoot(py::module &m)
 {
     py::class_< UAction_Drive_Pursuit_TargetOnFoot,  UWillowActionSequencePawn   >(m, "UAction_Drive_Pursuit_TargetOnFoot")
         .def_readwrite("MaxSpeedMultiplier", &UAction_Drive_Pursuit_TargetOnFoot::MaxSpeedMultiplier)

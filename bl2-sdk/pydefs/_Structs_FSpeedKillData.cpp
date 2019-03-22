@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSpeedKillData(py::object m)
+void Export_pystes_FSpeedKillData(py::module &m)
 {
     py::class_< FSpeedKillData >(m, "FSpeedKillData")
         .def_readwrite("VictimName", &FSpeedKillData::VictimName)

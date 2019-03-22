@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_ChangeTimer(py::object m)
+void Export_pystes_UBehavior_ChangeTimer(py::module &m)
 {
     py::class_< UBehavior_ChangeTimer,  UBehaviorBase   >(m, "UBehavior_ChangeTimer")
         .def_readwrite("TimerId", &UBehavior_ChangeTimer::TimerId)

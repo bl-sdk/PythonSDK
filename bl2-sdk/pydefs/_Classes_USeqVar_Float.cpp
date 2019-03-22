@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqVar_Float(py::object m)
+void Export_pystes_USeqVar_Float(py::module &m)
 {
     py::class_< USeqVar_Float,  USequenceVariable   >(m, "USeqVar_Float")
         .def_readwrite("FloatValue", &USeqVar_Float::FloatValue)

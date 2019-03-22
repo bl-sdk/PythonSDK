@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGoldenKeyLicenseItem(py::object m)
+void Export_pystes_UGoldenKeyLicenseItem(py::module &m)
 {
     py::class_< UGoldenKeyLicenseItem,  UDownloadablePackageLicenseItem   >(m, "UGoldenKeyLicenseItem")
         .def_readwrite("SourceId", &UGoldenKeyLicenseItem::SourceId)

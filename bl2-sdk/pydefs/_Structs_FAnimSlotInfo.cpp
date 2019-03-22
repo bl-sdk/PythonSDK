@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAnimSlotInfo(py::object m)
+void Export_pystes_FAnimSlotInfo(py::module &m)
 {
     py::class_< FAnimSlotInfo >(m, "FAnimSlotInfo")
         .def_readwrite("SlotName", &FAnimSlotInfo::SlotName)

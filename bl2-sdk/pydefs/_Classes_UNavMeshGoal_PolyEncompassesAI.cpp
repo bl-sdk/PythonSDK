@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNavMeshGoal_PolyEncompassesAI(py::object m)
+void Export_pystes_UNavMeshGoal_PolyEncompassesAI(py::module &m)
 {
     py::class_< UNavMeshGoal_PolyEncompassesAI,  UNavMeshPathGoalEvaluator   >(m, "UNavMeshGoal_PolyEncompassesAI")
         .def_readwrite("OverrideExtentToCheck", &UNavMeshGoal_PolyEncompassesAI::OverrideExtentToCheck)

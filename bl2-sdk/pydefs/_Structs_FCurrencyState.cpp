@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCurrencyState(py::object m)
+void Export_pystes_FCurrencyState(py::module &m)
 {
     py::class_< FCurrencyState >(m, "FCurrencyState")
         .def_readwrite("FormOfCurrency", &FCurrencyState::FormOfCurrency)

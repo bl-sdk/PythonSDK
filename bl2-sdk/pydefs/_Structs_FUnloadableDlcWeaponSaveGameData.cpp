@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FUnloadableDlcWeaponSaveGameData(py::object m)
+void Export_pystes_FUnloadableDlcWeaponSaveGameData(py::module &m)
 {
     py::class_< FUnloadableDlcWeaponSaveGameData >(m, "FUnloadableDlcWeaponSaveGameData")
         .def_readwrite("SerialNumber", &FUnloadableDlcWeaponSaveGameData::SerialNumber)

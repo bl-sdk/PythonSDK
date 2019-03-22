@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCoordinatedVectorParameter(py::object m)
+void Export_pystes_FCoordinatedVectorParameter(py::module &m)
 {
     py::class_< FCoordinatedVectorParameter >(m, "FCoordinatedVectorParameter")
         .def_readwrite("ParamName", &FCoordinatedVectorParameter::ParamName)

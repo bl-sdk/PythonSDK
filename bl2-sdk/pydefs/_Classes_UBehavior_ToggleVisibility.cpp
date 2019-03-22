@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_ToggleVisibility(py::object m)
+void Export_pystes_UBehavior_ToggleVisibility(py::module &m)
 {
     py::class_< UBehavior_ToggleVisibility,  UBehaviorBase   >(m, "UBehavior_ToggleVisibility")
         .def("StaticClass", &UBehavior_ToggleVisibility::StaticClass, py::return_value_policy::reference)

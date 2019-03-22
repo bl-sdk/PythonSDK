@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWindPointSource(py::object m)
+void Export_pystes_AWindPointSource(py::module &m)
 {
     py::class_< AWindPointSource,  AInfo   >(m, "AWindPointSource")
         .def_readwrite("Component", &AWindPointSource::Component)

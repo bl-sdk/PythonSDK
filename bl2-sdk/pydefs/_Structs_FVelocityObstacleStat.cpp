@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FVelocityObstacleStat(py::object m)
+void Export_pystes_FVelocityObstacleStat(py::module &m)
 {
     py::class_< FVelocityObstacleStat >(m, "FVelocityObstacleStat")
         .def_readwrite("Position", &FVelocityObstacleStat::Position)

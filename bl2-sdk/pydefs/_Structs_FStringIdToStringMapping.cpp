@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FStringIdToStringMapping(py::object m)
+void Export_pystes_FStringIdToStringMapping(py::module &m)
 {
     py::class_< FStringIdToStringMapping >(m, "FStringIdToStringMapping")
         .def_readwrite("Id", &FStringIdToStringMapping::Id)

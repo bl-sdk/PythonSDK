@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_CompareObject(py::object m)
+void Export_pystes_UBehavior_CompareObject(py::module &m)
 {
     py::class_< UBehavior_CompareObject,  UBehaviorBase   >(m, "UBehavior_CompareObject")
         .def_readwrite("ObjectA", &UBehavior_CompareObject::ObjectA)

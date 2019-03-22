@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNodeSlot(py::object m)
+void Export_pystes_UAnimNodeSlot(py::module &m)
 {
     py::class_< UAnimNodeSlot,  UAnimNodeBlendBase   >(m, "UAnimNodeSlot")
         .def_readwrite("PendingBlendOutTime", &UAnimNodeSlot::PendingBlendOutTime)

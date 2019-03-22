@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UISeeTargetable(py::object m)
+void Export_pystes_UISeeTargetable(py::module &m)
 {
     py::class_< UISeeTargetable,  UInterface   >(m, "UISeeTargetable")
         .def("StaticClass", &UISeeTargetable::StaticClass, py::return_value_policy::reference)

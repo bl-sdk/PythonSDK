@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UVehicleSpawnStationGFxMovie(py::object m)
+void Export_pystes_UVehicleSpawnStationGFxMovie(py::module &m)
 {
     py::class_< UVehicleSpawnStationGFxMovie,  UWillowGFxMovie3D   >(m, "UVehicleSpawnStationGFxMovie")
         .def_readwrite("VfTable_IIStreamingDataEvent", &UVehicleSpawnStationGFxMovie::VfTable_IIStreamingDataEvent)

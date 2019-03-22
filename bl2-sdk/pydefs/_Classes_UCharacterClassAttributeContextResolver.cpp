@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCharacterClassAttributeContextResolver(py::object m)
+void Export_pystes_UCharacterClassAttributeContextResolver(py::module &m)
 {
     py::class_< UCharacterClassAttributeContextResolver,  UAttributeContextResolver   >(m, "UCharacterClassAttributeContextResolver")
         .def("StaticClass", &UCharacterClassAttributeContextResolver::StaticClass, py::return_value_policy::reference)

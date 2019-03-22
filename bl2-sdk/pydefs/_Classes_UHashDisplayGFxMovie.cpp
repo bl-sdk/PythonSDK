@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UHashDisplayGFxMovie(py::object m)
+void Export_pystes_UHashDisplayGFxMovie(py::module &m)
 {
     py::class_< UHashDisplayGFxMovie,  UWillowGFxMovie   >(m, "UHashDisplayGFxMovie")
         .def_readwrite("WInvMgr", &UHashDisplayGFxMovie::WInvMgr)

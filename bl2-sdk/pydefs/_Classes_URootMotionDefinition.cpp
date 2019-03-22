@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_URootMotionDefinition(py::object m)
+void Export_pystes_URootMotionDefinition(py::module &m)
 {
     py::class_< URootMotionDefinition,  UGBXDefinition   >(m, "URootMotionDefinition")
         .def_readwrite("RootMotionMode", &URootMotionDefinition::RootMotionMode)

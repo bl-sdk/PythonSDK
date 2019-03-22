@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAllegianceExpressionEvaluator(py::object m)
+void Export_pystes_UAllegianceExpressionEvaluator(py::module &m)
 {
     py::class_< UAllegianceExpressionEvaluator,  UExpressionEvaluator   >(m, "UAllegianceExpressionEvaluator")
         .def_readwrite("AllegianceCheck", &UAllegianceExpressionEvaluator::AllegianceCheck)

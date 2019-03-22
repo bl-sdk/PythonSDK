@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNavMeshGoal_Filter(py::object m)
+void Export_pystes_UNavMeshGoal_Filter(py::module &m)
 {
     py::class_< UNavMeshGoal_Filter,  UObject   >(m, "UNavMeshGoal_Filter")
         .def_readwrite("NumNodesThrownOut", &UNavMeshGoal_Filter::NumNodesThrownOut)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCounterEventReactionData(py::object m)
+void Export_pystes_FCounterEventReactionData(py::module &m)
 {
     py::class_< FCounterEventReactionData >(m, "FCounterEventReactionData")
         .def_readwrite("EventType", &FCounterEventReactionData::EventType)

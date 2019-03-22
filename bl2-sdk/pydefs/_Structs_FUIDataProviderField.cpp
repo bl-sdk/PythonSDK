@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FUIDataProviderField(py::object m)
+void Export_pystes_FUIDataProviderField(py::module &m)
 {
     py::class_< FUIDataProviderField >(m, "FUIDataProviderField")
         .def_readwrite("FieldTag", &FUIDataProviderField::FieldTag)

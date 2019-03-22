@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimNodeRandom(py::object m)
+void Export_pystes_UAnimNodeRandom(py::module &m)
 {
     py::class_< UAnimNodeRandom,  UAnimNodeBlendBase   >(m, "UAnimNodeRandom")
         .def_readwrite("RandomInfo", &UAnimNodeRandom::RandomInfo)

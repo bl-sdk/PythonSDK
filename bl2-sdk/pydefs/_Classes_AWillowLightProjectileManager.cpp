@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowLightProjectileManager(py::object m)
+void Export_pystes_AWillowLightProjectileManager(py::module &m)
 {
     py::class_< AWillowLightProjectileManager,  AActor   >(m, "AWillowLightProjectileManager")
         .def_readwrite("WeaponOwner", &AWillowLightProjectileManager::WeaponOwner)

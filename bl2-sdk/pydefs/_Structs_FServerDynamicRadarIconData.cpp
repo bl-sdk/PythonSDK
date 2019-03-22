@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FServerDynamicRadarIconData(py::object m)
+void Export_pystes_FServerDynamicRadarIconData(py::module &m)
 {
     py::class_< FServerDynamicRadarIconData >(m, "FServerDynamicRadarIconData")
         .def_readwrite("SourceObject", &FServerDynamicRadarIconData::SourceObject)

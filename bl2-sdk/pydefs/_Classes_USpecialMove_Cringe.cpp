@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpecialMove_Cringe(py::object m)
+void Export_pystes_USpecialMove_Cringe(py::module &m)
 {
     py::class_< USpecialMove_Cringe,  UWillowAnimDefinition   >(m, "USpecialMove_Cringe")
         .def_readwrite("CringeAnim", &USpecialMove_Cringe::CringeAnim)

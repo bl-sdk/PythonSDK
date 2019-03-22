@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSeqAct_MissionCustomEvent(py::object m)
+void Export_pystes_UWillowSeqAct_MissionCustomEvent(py::module &m)
 {
     py::class_< UWillowSeqAct_MissionCustomEvent,  USequenceAction   >(m, "UWillowSeqAct_MissionCustomEvent")
         .def_readwrite("AssociatedMission", &UWillowSeqAct_MissionCustomEvent::AssociatedMission)

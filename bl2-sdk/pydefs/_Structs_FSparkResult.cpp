@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSparkResult(py::object m)
+void Export_pystes_FSparkResult(py::module &m)
 {
     py::class_< FSparkResult >(m, "FSparkResult")
         .def_readwrite("ErrorCode", &FSparkResult::ErrorCode)

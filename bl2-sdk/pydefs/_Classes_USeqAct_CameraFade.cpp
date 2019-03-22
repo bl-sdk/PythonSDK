@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_CameraFade(py::object m)
+void Export_pystes_USeqAct_CameraFade(py::module &m)
 {
     py::class_< USeqAct_CameraFade,  USequenceAction   >(m, "USeqAct_CameraFade")
         .def_readwrite("FadeColor", &USeqAct_CameraFade::FadeColor)

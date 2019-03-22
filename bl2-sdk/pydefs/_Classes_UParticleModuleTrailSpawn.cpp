@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleTrailSpawn(py::object m)
+void Export_pystes_UParticleModuleTrailSpawn(py::module &m)
 {
     py::class_< UParticleModuleTrailSpawn,  UParticleModuleTrailBase   >(m, "UParticleModuleTrailSpawn")
         .def_readwrite("SpawnDistanceMap", &UParticleModuleTrailSpawn::SpawnDistanceMap)

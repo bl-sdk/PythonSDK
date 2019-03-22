@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FCompressedTrack(py::object m)
+void Export_pystes_FCompressedTrack(py::module &m)
 {
     py::class_< FCompressedTrack >(m, "FCompressedTrack")
         .def_readwrite("ByteStream", &FCompressedTrack::ByteStream)

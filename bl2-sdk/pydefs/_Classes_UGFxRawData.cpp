@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGFxRawData(py::object m)
+void Export_pystes_UGFxRawData(py::module &m)
 {
     py::class_< UGFxRawData,  UObject   >(m, "UGFxRawData")
         .def_readwrite("RawData", &UGFxRawData::RawData)

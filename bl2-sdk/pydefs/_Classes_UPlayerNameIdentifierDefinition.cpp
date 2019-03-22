@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerNameIdentifierDefinition(py::object m)
+void Export_pystes_UPlayerNameIdentifierDefinition(py::module &m)
 {
     py::class_< UPlayerNameIdentifierDefinition,  UGBXDefinition   >(m, "UPlayerNameIdentifierDefinition")
         .def_readwrite("CharacterName", &UPlayerNameIdentifierDefinition::CharacterName)

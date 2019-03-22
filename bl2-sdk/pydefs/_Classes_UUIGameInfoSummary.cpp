@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIGameInfoSummary(py::object m)
+void Export_pystes_UUIGameInfoSummary(py::module &m)
 {
     py::class_< UUIGameInfoSummary,  UUIResourceDataProvider   >(m, "UUIGameInfoSummary")
         .def_readwrite("ClassName", &UUIGameInfoSummary::ClassName)

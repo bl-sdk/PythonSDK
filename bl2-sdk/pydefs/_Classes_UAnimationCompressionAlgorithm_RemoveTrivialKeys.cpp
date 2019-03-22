@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAnimationCompressionAlgorithm_RemoveTrivialKeys(py::object m)
+void Export_pystes_UAnimationCompressionAlgorithm_RemoveTrivialKeys(py::module &m)
 {
     py::class_< UAnimationCompressionAlgorithm_RemoveTrivialKeys,  UAnimationCompressionAlgorithm   >(m, "UAnimationCompressionAlgorithm_RemoveTrivialKeys")
         .def_readwrite("MaxPosDiff", &UAnimationCompressionAlgorithm_RemoveTrivialKeys::MaxPosDiff)

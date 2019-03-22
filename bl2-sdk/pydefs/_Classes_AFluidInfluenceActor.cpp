@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AFluidInfluenceActor(py::object m)
+void Export_pystes_AFluidInfluenceActor(py::module &m)
 {
     py::class_< AFluidInfluenceActor,  AActor   >(m, "AFluidInfluenceActor")
         .def_readwrite("FlowDirection", &AFluidInfluenceActor::FlowDirection)

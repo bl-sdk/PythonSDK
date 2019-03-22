@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FSystemOption(py::object m)
+void Export_pystes_FSystemOption(py::module &m)
 {
     py::class_< FSystemOption >(m, "FSystemOption")
         .def_readwrite("Name", &FSystemOption::Name)

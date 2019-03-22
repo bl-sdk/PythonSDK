@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FEmitterDynamicParameter(py::object m)
+void Export_pystes_FEmitterDynamicParameter(py::module &m)
 {
     py::class_< FEmitterDynamicParameter >(m, "FEmitterDynamicParameter")
         .def_readwrite("ParamName", &FEmitterDynamicParameter::ParamName)

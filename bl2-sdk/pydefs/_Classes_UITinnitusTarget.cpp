@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UITinnitusTarget(py::object m)
+void Export_pystes_UITinnitusTarget(py::module &m)
 {
     py::class_< UITinnitusTarget,  UInterface   >(m, "UITinnitusTarget")
         .def("StaticClass", &UITinnitusTarget::StaticClass, py::return_value_policy::reference)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USubsystem(py::object m)
+void Export_pystes_USubsystem(py::module &m)
 {
     py::class_< USubsystem,  UObject   >(m, "USubsystem")
         .def_readwrite("VfTable_FExec", &USubsystem::VfTable_FExec)

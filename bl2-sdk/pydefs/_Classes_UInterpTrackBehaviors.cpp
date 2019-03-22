@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackBehaviors(py::object m)
+void Export_pystes_UInterpTrackBehaviors(py::module &m)
 {
     py::class_< UInterpTrackBehaviors,  UInterpTrack   >(m, "UInterpTrackBehaviors")
         .def_readwrite("VfTable_IIConstructObject", &UInterpTrackBehaviors::VfTable_IIConstructObject)

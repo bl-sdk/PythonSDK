@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowUIInteraction(py::object m)
+void Export_pystes_UWillowUIInteraction(py::module &m)
 {
     py::class_< UWillowUIInteraction,  UUIInteraction   >(m, "UWillowUIInteraction")
         .def_readwrite("VfTable_IIBalancedActor", &UWillowUIInteraction::VfTable_IIBalancedActor)

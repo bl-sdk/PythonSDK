@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionzLinearBurn(py::object m)
+void Export_pystes_UMaterialExpressionzLinearBurn(py::module &m)
 {
     py::class_< UMaterialExpressionzLinearBurn,  UMaterialExpression   >(m, "UMaterialExpressionzLinearBurn")
         .def_readwrite("Base", &UMaterialExpressionBlendModeBase::Base)

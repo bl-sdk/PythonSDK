@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FFontParameterValueOverTime(py::object m)
+void Export_pystes_FFontParameterValueOverTime(py::module &m)
 {
     py::class_< FFontParameterValueOverTime >(m, "FFontParameterValueOverTime")
         .def_readwrite("FontValue", &FFontParameterValueOverTime::FontValue)

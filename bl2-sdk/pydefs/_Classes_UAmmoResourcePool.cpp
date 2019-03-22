@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAmmoResourcePool(py::object m)
+void Export_pystes_UAmmoResourcePool(py::module &m)
 {
     py::class_< UAmmoResourcePool,  UResourcePool   >(m, "UAmmoResourcePool")
         .def("StaticClass", &UAmmoResourcePool::StaticClass, py::return_value_policy::reference)

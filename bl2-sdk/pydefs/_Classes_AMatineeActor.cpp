@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AMatineeActor(py::object m)
+void Export_pystes_AMatineeActor(py::module &m)
 {
     py::class_< AMatineeActor,  AActor   >(m, "AMatineeActor")
         .def_readwrite("InterpAction", &AMatineeActor::InterpAction)

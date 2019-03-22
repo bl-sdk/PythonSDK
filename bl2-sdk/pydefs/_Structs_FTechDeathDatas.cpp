@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTechDeathData(py::object m)
+void Export_pystes_FTechDeathData(py::module &m)
 {
     py::class_< FTechDeathData,  FSpecializedBehaviorEvent   >(m, "FTechDeathData")
         .def_readwrite("DamageTypeTriggers", &FTechDeathData::DamageTypeTriggers)

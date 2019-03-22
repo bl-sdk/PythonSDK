@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UForceFieldShapeBox(py::object m)
+void Export_pystes_UForceFieldShapeBox(py::module &m)
 {
     py::class_< UForceFieldShapeBox,  UForceFieldShape   >(m, "UForceFieldShapeBox")
         .def_readwrite("Shape", &UForceFieldShapeBox::Shape)

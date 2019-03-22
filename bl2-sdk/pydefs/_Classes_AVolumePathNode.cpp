@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AVolumePathNode(py::object m)
+void Export_pystes_AVolumePathNode(py::module &m)
 {
     py::class_< AVolumePathNode,  APathNode   >(m, "AVolumePathNode")
         .def_readwrite("StartingRadius", &AVolumePathNode::StartingRadius)

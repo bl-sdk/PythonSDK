@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPlayerLineInfo(py::object m)
+void Export_pystes_FPlayerLineInfo(py::module &m)
 {
     py::class_< FPlayerLineInfo >(m, "FPlayerLineInfo")
         .def_readwrite("Avatar", &FPlayerLineInfo::Avatar)

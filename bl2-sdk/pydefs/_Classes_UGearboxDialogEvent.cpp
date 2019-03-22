@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxDialogEvent(py::object m)
+void Export_pystes_UGearboxDialogEvent(py::module &m)
 {
     py::class_< UGearboxDialogEvent,  UObject   >(m, "UGearboxDialogEvent")
         .def_readwrite("Tag", &UGearboxDialogEvent::Tag)

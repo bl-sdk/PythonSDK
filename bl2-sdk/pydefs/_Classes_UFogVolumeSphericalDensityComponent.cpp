@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFogVolumeSphericalDensityComponent(py::object m)
+void Export_pystes_UFogVolumeSphericalDensityComponent(py::module &m)
 {
     py::class_< UFogVolumeSphericalDensityComponent,  UFogVolumeDensityComponent   >(m, "UFogVolumeSphericalDensityComponent")
         .def_readwrite("MaxDensity", &UFogVolumeSphericalDensityComponent::MaxDensity)

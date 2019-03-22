@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionSphereMask(py::object m)
+void Export_pystes_UMaterialExpressionSphereMask(py::module &m)
 {
     py::class_< UMaterialExpressionSphereMask,  UMaterialExpression   >(m, "UMaterialExpressionSphereMask")
         .def_readwrite("A", &UMaterialExpressionSphereMask::A)

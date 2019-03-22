@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAkComponent(py::object m)
+void Export_pystes_UAkComponent(py::module &m)
 {
     py::class_< UAkComponent,  UActorComponent   >(m, "UAkComponent")
         .def_readwrite("SocketName", &UAkComponent::SocketName)

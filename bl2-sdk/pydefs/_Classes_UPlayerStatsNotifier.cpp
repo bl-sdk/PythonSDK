@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayerStatsNotifier(py::object m)
+void Export_pystes_UPlayerStatsNotifier(py::module &m)
 {
     py::class_< UPlayerStatsNotifier,  UObject   >(m, "UPlayerStatsNotifier")
         .def_readwrite("StatIdListenerMap", &UPlayerStatsNotifier::StatIdListenerMap)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UColiseumRuleDefinition(py::object m)
+void Export_pystes_UColiseumRuleDefinition(py::module &m)
 {
     py::class_< UColiseumRuleDefinition,  UGBXDefinition   >(m, "UColiseumRuleDefinition")
         .def_readwrite("RuleTitle", &UColiseumRuleDefinition::RuleTitle)

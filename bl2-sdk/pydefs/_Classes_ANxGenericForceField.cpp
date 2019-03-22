@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ANxGenericForceField(py::object m)
+void Export_pystes_ANxGenericForceField(py::module &m)
 {
     py::class_< ANxGenericForceField,  ANxForceField   >(m, "ANxGenericForceField")
         .def_readwrite("Coordinates", &ANxGenericForceField::Coordinates)

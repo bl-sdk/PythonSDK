@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAction_FollowPath(py::object m)
+void Export_pystes_UAction_FollowPath(py::module &m)
 {
     py::class_< UAction_FollowPath,  UWillowActionSequencePawn   >(m, "UAction_FollowPath")
         .def_readwrite("PerchData", &UAction_FollowPath::PerchData)

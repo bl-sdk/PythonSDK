@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIRBCollisionListener(py::object m)
+void Export_pystes_UIRBCollisionListener(py::module &m)
 {
     py::class_< UIRBCollisionListener,  UInterface   >(m, "UIRBCollisionListener")
         .def("StaticClass", &UIRBCollisionListener::StaticClass, py::return_value_policy::reference)

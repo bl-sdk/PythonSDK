@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBalanceDefSpawnedActorState(py::object m)
+void Export_pystes_FBalanceDefSpawnedActorState(py::module &m)
 {
     py::class_< FBalanceDefSpawnedActorState >(m, "FBalanceDefSpawnedActorState")
         .def_readwrite("BalanceDefinition", &FBalanceDefSpawnedActorState::BalanceDefinition)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAimOffsetProfile(py::object m)
+void Export_pystes_FAimOffsetProfile(py::module &m)
 {
     py::class_< FAimOffsetProfile >(m, "FAimOffsetProfile")
         .def_readwrite("ProfileName", &FAimOffsetProfile::ProfileName)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLightmassDirectionalLightSettings(py::object m)
+void Export_pystes_FLightmassDirectionalLightSettings(py::module &m)
 {
     py::class_< FLightmassDirectionalLightSettings,  FLightmassLightSettings   >(m, "FLightmassDirectionalLightSettings")
         .def_readwrite("LightSourceAngle", &FLightmassDirectionalLightSettings::LightSourceAngle)

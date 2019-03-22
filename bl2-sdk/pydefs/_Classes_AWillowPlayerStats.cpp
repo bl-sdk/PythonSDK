@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowPlayerStats(py::object m)
+void Export_pystes_AWillowPlayerStats(py::module &m)
 {
     py::class_< AWillowPlayerStats,  AInfo   >(m, "AWillowPlayerStats")
         .def_readwrite("nNumConsecutiveSniperRifleKills", &AWillowPlayerStats::nNumConsecutiveSniperRifleKills)

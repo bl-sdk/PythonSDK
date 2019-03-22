@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPathConstraint(py::object m)
+void Export_pystes_UPathConstraint(py::module &m)
 {
     py::class_< UPathConstraint,  UObject   >(m, "UPathConstraint")
         .def_readwrite("CacheIdx", &UPathConstraint::CacheIdx)

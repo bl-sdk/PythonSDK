@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAnimNotifyEvent(py::object m)
+void Export_pystes_FAnimNotifyEvent(py::module &m)
 {
     py::class_< FAnimNotifyEvent >(m, "FAnimNotifyEvent")
         .def_readwrite("Time", &FAnimNotifyEvent::Time)

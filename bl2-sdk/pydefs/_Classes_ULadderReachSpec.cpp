@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULadderReachSpec(py::object m)
+void Export_pystes_ULadderReachSpec(py::module &m)
 {
     py::class_< ULadderReachSpec,  UReachSpec   >(m, "ULadderReachSpec")
         .def("StaticClass", &ULadderReachSpec::StaticClass, py::return_value_policy::reference)

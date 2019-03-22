@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxAccountData(py::object m)
+void Export_pystes_UGearboxAccountData(py::module &m)
 {
     py::class_< UGearboxAccountData,  UObject   >(m, "UGearboxAccountData")
         .def_readwrite("RequestId", &UGearboxAccountData::RequestId)

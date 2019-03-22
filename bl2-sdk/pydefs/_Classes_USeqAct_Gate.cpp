@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_Gate(py::object m)
+void Export_pystes_USeqAct_Gate(py::module &m)
 {
     py::class_< USeqAct_Gate,  USequenceAction   >(m, "USeqAct_Gate")
         .def_readwrite("AutoCloseCount", &USeqAct_Gate::AutoCloseCount)

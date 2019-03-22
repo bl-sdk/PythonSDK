@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowAnimDefinition(py::object m)
+void Export_pystes_UWillowAnimDefinition(py::module &m)
 {
     py::class_< UWillowAnimDefinition,  UGearboxAnimDefinition   >(m, "UWillowAnimDefinition")
         .def_readwrite("InstanceDataName", &UWillowAnimDefinition::InstanceDataName)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackBoolProp(py::object m)
+void Export_pystes_UInterpTrackBoolProp(py::module &m)
 {
     py::class_< UInterpTrackBoolProp,  UInterpTrack   >(m, "UInterpTrackBoolProp")
         .def_readwrite("BoolTrack", &UInterpTrackBoolProp::BoolTrack)

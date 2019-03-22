@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_ConvertToString(py::object m)
+void Export_pystes_USeqAct_ConvertToString(py::module &m)
 {
     py::class_< USeqAct_ConvertToString,  USequenceAction   >(m, "USeqAct_ConvertToString")
         .def_readwrite("VarSeparator", &USeqAct_ConvertToString::VarSeparator)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFiringModeDefinition(py::object m)
+void Export_pystes_UFiringModeDefinition(py::module &m)
 {
     py::class_< UFiringModeDefinition,  UGBXDefinition   >(m, "UFiringModeDefinition")
         .def_readwrite("FireType", &UFiringModeDefinition::FireType)

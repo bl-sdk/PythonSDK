@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_CustomAnimation(py::object m)
+void Export_pystes_UBehavior_CustomAnimation(py::module &m)
 {
     py::class_< UBehavior_CustomAnimation,  UBehaviorBase   >(m, "UBehavior_CustomAnimation")
         .def_readwrite("Reaction", &UBehavior_CustomAnimation::Reaction)

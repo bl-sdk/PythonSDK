@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FParticleSysParam(py::object m)
+void Export_pystes_FParticleSysParam(py::module &m)
 {
     py::class_< FParticleSysParam >(m, "FParticleSysParam")
         .def_readwrite("Name", &FParticleSysParam::Name)

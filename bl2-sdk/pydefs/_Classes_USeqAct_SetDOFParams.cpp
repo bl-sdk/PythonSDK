@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_SetDOFParams(py::object m)
+void Export_pystes_USeqAct_SetDOFParams(py::module &m)
 {
     py::class_< USeqAct_SetDOFParams,  USeqAct_Latent   >(m, "USeqAct_SetDOFParams")
         .def_readwrite("FalloffExponent", &USeqAct_SetDOFParams::FalloffExponent)

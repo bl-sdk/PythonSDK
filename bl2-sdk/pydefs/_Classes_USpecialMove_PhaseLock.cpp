@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpecialMove_PhaseLock(py::object m)
+void Export_pystes_USpecialMove_PhaseLock(py::module &m)
 {
     py::class_< USpecialMove_PhaseLock,  UWillowAnimDefinition   >(m, "USpecialMove_PhaseLock")
         .def("StaticClass", &USpecialMove_PhaseLock::StaticClass, py::return_value_policy::reference)

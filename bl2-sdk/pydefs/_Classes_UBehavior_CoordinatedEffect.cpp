@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_CoordinatedEffect(py::object m)
+void Export_pystes_UBehavior_CoordinatedEffect(py::module &m)
 {
     py::class_< UBehavior_CoordinatedEffect,  UBehaviorBase   >(m, "UBehavior_CoordinatedEffect")
         .def_readwrite("Status", &UBehavior_CoordinatedEffect::Status)

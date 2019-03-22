@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USparkTypes(py::object m)
+void Export_pystes_USparkTypes(py::module &m)
 {
     py::class_< USparkTypes,  UObject   >(m, "USparkTypes")
         .def("StaticClass", &USparkTypes::StaticClass, py::return_value_policy::reference)

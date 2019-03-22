@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCurrencyAttributeValueResolver(py::object m)
+void Export_pystes_UCurrencyAttributeValueResolver(py::module &m)
 {
     py::class_< UCurrencyAttributeValueResolver,  UAttributeValueResolver   >(m, "UCurrencyAttributeValueResolver")
         .def_readwrite("FormOfCurrency", &UCurrencyAttributeValueResolver::FormOfCurrency)

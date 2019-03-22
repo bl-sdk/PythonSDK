@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UForceFeedbackManager(py::object m)
+void Export_pystes_UForceFeedbackManager(py::module &m)
 {
     py::class_< UForceFeedbackManager,  UObject   >(m, "UForceFeedbackManager")
         .def_readwrite("FFWaveform", &UForceFeedbackManager::FFWaveform)

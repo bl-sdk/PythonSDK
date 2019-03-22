@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGameStageGradeWeightData(py::object m)
+void Export_pystes_FGameStageGradeWeightData(py::module &m)
 {
     py::class_< FGameStageGradeWeightData >(m, "FGameStageGradeWeightData")
         .def_readwrite("GameStageRequirement", &FGameStageGradeWeightData::GameStageRequirement)

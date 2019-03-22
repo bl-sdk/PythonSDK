@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionSubtract(py::object m)
+void Export_pystes_UMaterialExpressionSubtract(py::module &m)
 {
     py::class_< UMaterialExpressionSubtract,  UMaterialExpression   >(m, "UMaterialExpressionSubtract")
         .def_readwrite("A", &UMaterialExpressionSubtract::A)

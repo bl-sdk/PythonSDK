@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInterpTrackAnimControl(py::object m)
+void Export_pystes_UInterpTrackAnimControl(py::module &m)
 {
     py::class_< UInterpTrackAnimControl,  UInterpTrackFloatBase   >(m, "UInterpTrackAnimControl")
         .def_readwrite("AnimSets", &UInterpTrackAnimControl::AnimSets)

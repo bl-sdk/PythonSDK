@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxAccountGFxMovie(py::object m)
+void Export_pystes_UGearboxAccountGFxMovie(py::module &m)
 {
     py::class_< UGearboxAccountGFxMovie,  UWillowGFxMovie   >(m, "UGearboxAccountGFxMovie")
         .def_readwrite("GearboxAccountObj", &UGearboxAccountGFxMovie::GearboxAccountObj)

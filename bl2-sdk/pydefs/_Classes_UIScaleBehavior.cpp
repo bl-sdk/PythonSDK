@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIScaleBehavior(py::object m)
+void Export_pystes_UIScaleBehavior(py::module &m)
 {
     py::class_< UIScaleBehavior,  UInterface   >(m, "UIScaleBehavior")
         .def("StaticClass", &UIScaleBehavior::StaticClass, py::return_value_policy::reference)

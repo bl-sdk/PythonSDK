@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAttributeExpressionEvaluator(py::object m)
+void Export_pystes_UAttributeExpressionEvaluator(py::module &m)
 {
     py::class_< UAttributeExpressionEvaluator,  UExpressionEvaluator   >(m, "UAttributeExpressionEvaluator")
         .def_readwrite("Expression", &UAttributeExpressionEvaluator::Expression)

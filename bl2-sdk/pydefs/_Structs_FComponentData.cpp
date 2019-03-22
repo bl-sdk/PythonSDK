@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FComponentData(py::object m)
+void Export_pystes_FComponentData(py::module &m)
 {
     py::class_< FComponentData >(m, "FComponentData")
         .def_readwrite("Component", &FComponentData::Component)

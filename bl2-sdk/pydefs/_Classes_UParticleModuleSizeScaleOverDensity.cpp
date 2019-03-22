@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UParticleModuleSizeScaleOverDensity(py::object m)
+void Export_pystes_UParticleModuleSizeScaleOverDensity(py::module &m)
 {
     py::class_< UParticleModuleSizeScaleOverDensity,  UParticleModule   >(m, "UParticleModuleSizeScaleOverDensity")
         .def_readwrite("SizeScaleOverDensity", &UParticleModuleSizeScaleOverDensity::SizeScaleOverDensity)

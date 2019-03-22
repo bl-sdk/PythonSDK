@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FGameSessionInformation(py::object m)
+void Export_pystes_FGameSessionInformation(py::module &m)
 {
     py::class_< FGameSessionInformation >(m, "FGameSessionInformation")
         .def_readwrite("AppTitleID", &FGameSessionInformation::AppTitleID)

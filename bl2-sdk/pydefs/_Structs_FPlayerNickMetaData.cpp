@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPlayerNickMetaData(py::object m)
+void Export_pystes_FPlayerNickMetaData(py::module &m)
 {
     py::class_< FPlayerNickMetaData >(m, "FPlayerNickMetaData")
         .def_readwrite("PlayerNickName", &FPlayerNickMetaData::PlayerNickName)

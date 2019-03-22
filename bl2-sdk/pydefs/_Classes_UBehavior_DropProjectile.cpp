@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_DropProjectile(py::object m)
+void Export_pystes_UBehavior_DropProjectile(py::module &m)
 {
     py::class_< UBehavior_DropProjectile,  UBehaviorBase   >(m, "UBehavior_DropProjectile")
         .def_readwrite("InstanceDataName", &UBehavior_DropProjectile::InstanceDataName)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDominantSpotLightComponent(py::object m)
+void Export_pystes_UDominantSpotLightComponent(py::module &m)
 {
     py::class_< UDominantSpotLightComponent,  USpotLightComponent   >(m, "UDominantSpotLightComponent")
         .def_readwrite("DominantLightShadowInfo", &UDominantSpotLightComponent::DominantLightShadowInfo)

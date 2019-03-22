@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FVectorParticleSystemParameter(py::object m)
+void Export_pystes_FVectorParticleSystemParameter(py::module &m)
 {
     py::class_< FVectorParticleSystemParameter >(m, "FVectorParticleSystemParameter")
         .def_readwrite("Name", &FVectorParticleSystemParameter::Name)

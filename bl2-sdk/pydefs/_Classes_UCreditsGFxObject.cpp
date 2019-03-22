@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UCreditsGFxObject(py::object m)
+void Export_pystes_UCreditsGFxObject(py::module &m)
 {
     py::class_< UCreditsGFxObject,  UGFxObject   >(m, "UCreditsGFxObject")
         .def_readwrite("CreditsDef", &UCreditsGFxObject::CreditsDef)

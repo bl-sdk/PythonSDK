@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_DivideFloat(py::object m)
+void Export_pystes_USeqAct_DivideFloat(py::module &m)
 {
     py::class_< USeqAct_DivideFloat,  USeqAct_SetSequenceVariable   >(m, "USeqAct_DivideFloat")
         .def_readwrite("ValueA", &USeqAct_DivideFloat::ValueA)

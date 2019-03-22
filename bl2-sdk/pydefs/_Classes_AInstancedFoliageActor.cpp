@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AInstancedFoliageActor(py::object m)
+void Export_pystes_AInstancedFoliageActor(py::module &m)
 {
     py::class_< AInstancedFoliageActor,  AActor   >(m, "AInstancedFoliageActor")
         .def_readwrite("FoliageMeshes", &AInstancedFoliageActor::FoliageMeshes)

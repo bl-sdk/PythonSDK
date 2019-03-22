@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FExposureUpdateStruct(py::object m)
+void Export_pystes_FExposureUpdateStruct(py::module &m)
 {
     py::class_< FExposureUpdateStruct >(m, "FExposureUpdateStruct")
         .def_readwrite("FromPawn", &FExposureUpdateStruct::FromPawn)

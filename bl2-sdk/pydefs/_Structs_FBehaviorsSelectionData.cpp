@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FBehaviorsSelectionData(py::object m)
+void Export_pystes_FBehaviorsSelectionData(py::module &m)
 {
     py::class_< FBehaviorsSelectionData >(m, "FBehaviorsSelectionData")
         .def_readwrite("Weight", &FBehaviorsSelectionData::Weight)

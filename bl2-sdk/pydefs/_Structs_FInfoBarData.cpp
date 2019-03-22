@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FInfoBarData(py::object m)
+void Export_pystes_FInfoBarData(py::module &m)
 {
     py::class_< FInfoBarData >(m, "FInfoBarData")
         .def_readwrite("Type", &FInfoBarData::Type)

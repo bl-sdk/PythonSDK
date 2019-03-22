@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInstanceDataContextResolver(py::object m)
+void Export_pystes_UInstanceDataContextResolver(py::module &m)
 {
     py::class_< UInstanceDataContextResolver,  UAttributeContextResolver   >(m, "UInstanceDataContextResolver")
         .def_readwrite("InstanceDataName", &UInstanceDataContextResolver::InstanceDataName)

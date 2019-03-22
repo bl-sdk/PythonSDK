@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpecialMove_FirstPersonOffHand(py::object m)
+void Export_pystes_USpecialMove_FirstPersonOffHand(py::module &m)
 {
     py::class_< USpecialMove_FirstPersonOffHand,  USpecialMove_FirstPerson   >(m, "USpecialMove_FirstPersonOffHand")
         .def("StaticClass", &USpecialMove_FirstPersonOffHand::StaticClass, py::return_value_policy::reference)

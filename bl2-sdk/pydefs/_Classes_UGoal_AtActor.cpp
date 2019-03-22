@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGoal_AtActor(py::object m)
+void Export_pystes_UGoal_AtActor(py::module &m)
 {
     py::class_< UGoal_AtActor,  UPathGoalEvaluator   >(m, "UGoal_AtActor")
         .def_readwrite("GoalActor", &UGoal_AtActor::GoalActor)

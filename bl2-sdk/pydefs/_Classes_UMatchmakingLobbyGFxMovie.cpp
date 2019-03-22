@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMatchmakingLobbyGFxMovie(py::object m)
+void Export_pystes_UMatchmakingLobbyGFxMovie(py::module &m)
 {
     py::class_< UMatchmakingLobbyGFxMovie,  UWillowGFxMovie3D   >(m, "UMatchmakingLobbyGFxMovie")
         .def_readwrite("CharacterInfoGFxObj", &UMatchmakingLobbyGFxMovie::CharacterInfoGFxObj)

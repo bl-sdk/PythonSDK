@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionSPHFluidThickness(py::object m)
+void Export_pystes_UMaterialExpressionSPHFluidThickness(py::module &m)
 {
     py::class_< UMaterialExpressionSPHFluidThickness,  UMaterialExpression   >(m, "UMaterialExpressionSPHFluidThickness")
         .def_readwrite("DefaultTexture", &UMaterialExpressionSPHFluidThickness::DefaultTexture)

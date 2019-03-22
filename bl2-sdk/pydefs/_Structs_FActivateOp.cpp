@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FActivateOp(py::object m)
+void Export_pystes_FActivateOp(py::module &m)
 {
     py::class_< FActivateOp >(m, "FActivateOp")
         .def_readwrite("ActivatorOp", &FActivateOp::ActivatorOp)

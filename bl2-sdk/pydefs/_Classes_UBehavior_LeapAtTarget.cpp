@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_LeapAtTarget(py::object m)
+void Export_pystes_UBehavior_LeapAtTarget(py::module &m)
 {
     py::class_< UBehavior_LeapAtTarget,  UBehaviorBase   >(m, "UBehavior_LeapAtTarget")
         .def("StaticClass", &UBehavior_LeapAtTarget::StaticClass, py::return_value_policy::reference)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UServerCommandlet(py::object m)
+void Export_pystes_UServerCommandlet(py::module &m)
 {
     py::class_< UServerCommandlet,  UCommandlet   >(m, "UServerCommandlet")
         .def("StaticClass", &UServerCommandlet::StaticClass, py::return_value_policy::reference)

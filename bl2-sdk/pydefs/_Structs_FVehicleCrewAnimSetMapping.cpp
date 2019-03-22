@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FVehicleCrewAnimSetMapping(py::object m)
+void Export_pystes_FVehicleCrewAnimSetMapping(py::module &m)
 {
     py::class_< FVehicleCrewAnimSetMapping >(m, "FVehicleCrewAnimSetMapping")
         .def_readwrite("CharacterName", &FVehicleCrewAnimSetMapping::CharacterName)

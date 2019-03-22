@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FHomingRadiusThreshold(py::object m)
+void Export_pystes_FHomingRadiusThreshold(py::module &m)
 {
     py::class_< FHomingRadiusThreshold >(m, "FHomingRadiusThreshold")
         .def_readwrite("Radius", &FHomingRadiusThreshold::Radius)

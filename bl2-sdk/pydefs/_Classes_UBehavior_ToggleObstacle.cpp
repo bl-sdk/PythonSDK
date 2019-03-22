@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_ToggleObstacle(py::object m)
+void Export_pystes_UBehavior_ToggleObstacle(py::module &m)
 {
     py::class_< UBehavior_ToggleObstacle,  UBehaviorBase   >(m, "UBehavior_ToggleObstacle")
         .def_readwrite("Option", &UBehavior_ToggleObstacle::Option)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UActorComponent(py::object m)
+void Export_pystes_UActorComponent(py::module &m)
 {
     py::class_< UActorComponent,  UComponent   >(m, "UActorComponent")
         .def_readwrite("VfTable_IIWorldBody", &UActorComponent::VfTable_IIWorldBody)

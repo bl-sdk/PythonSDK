@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPackageAssetSublibrary(py::object m)
+void Export_pystes_UPackageAssetSublibrary(py::module &m)
 {
     py::class_< UPackageAssetSublibrary,  UGBXDefinition   >(m, "UPackageAssetSublibrary")
         .def_readwrite("LibraryType", &UPackageAssetSublibrary::LibraryType)

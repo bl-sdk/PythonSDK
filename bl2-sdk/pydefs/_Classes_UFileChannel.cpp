@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UFileChannel(py::object m)
+void Export_pystes_UFileChannel(py::module &m)
 {
     py::class_< UFileChannel,  UChannel   >(m, "UFileChannel")
         .def("StaticClass", &UFileChannel::StaticClass, py::return_value_policy::reference)

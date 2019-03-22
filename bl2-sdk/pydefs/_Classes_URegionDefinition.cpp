@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_URegionDefinition(py::object m)
+void Export_pystes_URegionDefinition(py::module &m)
 {
     py::class_< URegionDefinition,  UGBXDefinition   >(m, "URegionDefinition")
         .def("StaticClass", &URegionDefinition::StaticClass, py::return_value_policy::reference)

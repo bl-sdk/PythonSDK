@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USplineComponent(py::object m)
+void Export_pystes_USplineComponent(py::module &m)
 {
     py::class_< USplineComponent,  UPrimitiveComponent   >(m, "USplineComponent")
         .def_readwrite("SplineInfo", &USplineComponent::SplineInfo)

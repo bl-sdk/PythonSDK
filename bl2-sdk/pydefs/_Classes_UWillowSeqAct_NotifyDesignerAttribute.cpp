@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSeqAct_NotifyDesignerAttribute(py::object m)
+void Export_pystes_UWillowSeqAct_NotifyDesignerAttribute(py::module &m)
 {
     py::class_< UWillowSeqAct_NotifyDesignerAttribute,  USequenceAction   >(m, "UWillowSeqAct_NotifyDesignerAttribute")
         .def_readwrite("AttributeName", &UWillowSeqAct_NotifyDesignerAttribute::AttributeName)

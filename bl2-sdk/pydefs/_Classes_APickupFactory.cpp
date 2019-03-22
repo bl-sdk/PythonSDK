@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APickupFactory(py::object m)
+void Export_pystes_APickupFactory(py::module &m)
 {
     py::class_< APickupFactory,  ANavigationPoint   >(m, "APickupFactory")
         .def_readwrite("InventoryType", &APickupFactory::InventoryType)

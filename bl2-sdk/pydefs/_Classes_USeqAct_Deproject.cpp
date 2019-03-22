@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_Deproject(py::object m)
+void Export_pystes_USeqAct_Deproject(py::module &m)
 {
     py::class_< USeqAct_Deproject,  USequenceAction   >(m, "USeqAct_Deproject")
         .def_readwrite("ScreenX", &USeqAct_Deproject::ScreenX)

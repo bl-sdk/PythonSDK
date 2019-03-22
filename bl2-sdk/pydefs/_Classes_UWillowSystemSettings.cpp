@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowSystemSettings(py::object m)
+void Export_pystes_UWillowSystemSettings(py::module &m)
 {
     py::class_< UWillowSystemSettings,  UObject   >(m, "UWillowSystemSettings")
         .def_readwrite("SystemOptions", &UWillowSystemSettings::SystemOptions)

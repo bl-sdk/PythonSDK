@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_APortalVolume(py::object m)
+void Export_pystes_APortalVolume(py::module &m)
 {
     py::class_< APortalVolume,  AActor   >(m, "APortalVolume")
         .def_readwrite("Portals", &APortalVolume::Portals)

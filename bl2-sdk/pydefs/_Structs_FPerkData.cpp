@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPerkData(py::object m)
+void Export_pystes_FPerkData(py::module &m)
 {
     py::class_< FPerkData >(m, "FPerkData")
         .def_readwrite("ButtonChain", &FPerkData::ButtonChain)

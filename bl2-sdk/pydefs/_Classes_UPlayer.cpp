@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UPlayer(py::object m)
+void Export_pystes_UPlayer(py::module &m)
 {
     py::class_< UPlayer,  UObject   >(m, "UPlayer")
         .def_readwrite("VfTable_FExec", &UPlayer::VfTable_FExec)

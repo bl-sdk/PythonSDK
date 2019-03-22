@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FVirtualSeatStruct(py::object m)
+void Export_pystes_FVirtualSeatStruct(py::module &m)
 {
     py::class_< FVirtualSeatStruct >(m, "FVirtualSeatStruct")
         .def_readwrite("NameKey", &FVirtualSeatStruct::NameKey)

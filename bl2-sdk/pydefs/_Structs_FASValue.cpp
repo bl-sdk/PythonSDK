@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FASValue(py::object m)
+void Export_pystes_FASValue(py::module &m)
 {
     py::class_< FASValue >(m, "FASValue")
         .def_readwrite("Type", &FASValue::Type)

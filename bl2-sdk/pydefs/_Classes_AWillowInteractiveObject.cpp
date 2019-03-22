@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowInteractiveObject(py::object m)
+void Export_pystes_AWillowInteractiveObject(py::module &m)
 {
     py::class_< AWillowInteractiveObject,  AActor   >(m, "AWillowInteractiveObject")
         .def_readwrite("VfTable_IITimerBehavior", &AWillowInteractiveObject::VfTable_IITimerBehavior)

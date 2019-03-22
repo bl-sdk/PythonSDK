@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUBMGraveyardSaveData(py::object m)
+void Export_pystes_UUBMGraveyardSaveData(py::module &m)
 {
     py::class_< UUBMGraveyardSaveData,  UObject   >(m, "UUBMGraveyardSaveData")
         .def_readwrite("TombstoneList", &UUBMGraveyardSaveData::TombstoneList)

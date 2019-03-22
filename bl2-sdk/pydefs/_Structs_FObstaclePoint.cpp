@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FObstaclePoint(py::object m)
+void Export_pystes_FObstaclePoint(py::module &m)
 {
     py::class_< FObstaclePoint >(m, "FObstaclePoint")
         .def_readwrite("Value", &FObstaclePoint::Value)

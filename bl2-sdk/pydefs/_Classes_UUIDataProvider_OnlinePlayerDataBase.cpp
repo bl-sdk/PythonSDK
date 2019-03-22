@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUIDataProvider_OnlinePlayerDataBase(py::object m)
+void Export_pystes_UUIDataProvider_OnlinePlayerDataBase(py::module &m)
 {
     py::class_< UUIDataProvider_OnlinePlayerDataBase,  UUIDataProvider   >(m, "UUIDataProvider_OnlinePlayerDataBase")
         .def_readwrite("PlayerControllerId", &UUIDataProvider_OnlinePlayerDataBase::PlayerControllerId)

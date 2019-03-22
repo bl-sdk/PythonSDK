@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FAnimBlendChild(py::object m)
+void Export_pystes_FAnimBlendChild(py::module &m)
 {
     py::class_< FAnimBlendChild >(m, "FAnimBlendChild")
         .def_readwrite("Name", &FAnimBlendChild::Name)

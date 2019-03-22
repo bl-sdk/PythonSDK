@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_GetAttributeValue(py::object m)
+void Export_pystes_USeqAct_GetAttributeValue(py::module &m)
 {
     py::class_< USeqAct_GetAttributeValue,  USequenceAction   >(m, "USeqAct_GetAttributeValue")
         .def_readwrite("AttributeDef", &USeqAct_GetAttributeValue::AttributeDef)

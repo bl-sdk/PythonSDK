@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FLeaderboardEntry(py::object m)
+void Export_pystes_FLeaderboardEntry(py::module &m)
 {
     py::class_< FLeaderboardEntry >(m, "FLeaderboardEntry")
         .def_readwrite("PlayerUID", &FLeaderboardEntry::PlayerUID)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FPlayerSkillTreeTierData(py::object m)
+void Export_pystes_FPlayerSkillTreeTierData(py::module &m)
 {
     py::class_< FPlayerSkillTreeTierData >(m, "FPlayerSkillTreeTierData")
         .def_readwrite("SkillIndices", &FPlayerSkillTreeTierData::SkillIndices)

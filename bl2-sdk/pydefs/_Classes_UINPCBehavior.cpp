@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UINPCBehavior(py::object m)
+void Export_pystes_UINPCBehavior(py::module &m)
 {
     py::class_< UINPCBehavior,  UInterface   >(m, "UINPCBehavior")
         .def("StaticClass", &UINPCBehavior::StaticClass, py::return_value_policy::reference)

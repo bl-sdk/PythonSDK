@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UWillowHUDGFxMovieDefinition(py::object m)
+void Export_pystes_UWillowHUDGFxMovieDefinition(py::module &m)
 {
     py::class_< UWillowHUDGFxMovieDefinition,  UWillowGFxMovie3DDefinition   >(m, "UWillowHUDGFxMovieDefinition")
         .def_readwrite("MinimapRadius", &UWillowHUDGFxMovieDefinition::MinimapRadius)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UStatusEffectChanceModifierResolver(py::object m)
+void Export_pystes_UStatusEffectChanceModifierResolver(py::module &m)
 {
     py::class_< UStatusEffectChanceModifierResolver,  UAttributeContextResolver   >(m, "UStatusEffectChanceModifierResolver")
         .def("StaticClass", &UStatusEffectChanceModifierResolver::StaticClass, py::return_value_policy::reference)

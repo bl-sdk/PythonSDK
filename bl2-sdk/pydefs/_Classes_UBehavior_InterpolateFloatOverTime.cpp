@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_InterpolateFloatOverTime(py::object m)
+void Export_pystes_UBehavior_InterpolateFloatOverTime(py::module &m)
 {
     py::class_< UBehavior_InterpolateFloatOverTime,  UBehaviorBase   >(m, "UBehavior_InterpolateFloatOverTime")
         .def_readwrite("Duration", &UBehavior_InterpolateFloatOverTime::Duration)

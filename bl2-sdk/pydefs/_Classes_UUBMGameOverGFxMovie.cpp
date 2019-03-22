@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UUBMGameOverGFxMovie(py::object m)
+void Export_pystes_UUBMGameOverGFxMovie(py::module &m)
 {
     py::class_< UUBMGameOverGFxMovie,  UWillowGFxMovie   >(m, "UUBMGameOverGFxMovie")
         .def_readwrite("GameOverClip", &UUBMGameOverGFxMovie::GameOverClip)

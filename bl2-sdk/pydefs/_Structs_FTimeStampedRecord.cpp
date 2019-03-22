@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTimeStampedRecord(py::object m)
+void Export_pystes_FTimeStampedRecord(py::module &m)
 {
     py::class_< FTimeStampedRecord >(m, "FTimeStampedRecord")
         .def_readwrite("DeathTimeStamp", &FTimeStampedRecord::DeathTimeStamp)

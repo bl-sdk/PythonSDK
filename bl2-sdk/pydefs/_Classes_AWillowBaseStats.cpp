@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AWillowBaseStats(py::object m)
+void Export_pystes_AWillowBaseStats(py::module &m)
 {
     py::class_< AWillowBaseStats,  AInfo   >(m, "AWillowBaseStats")
         .def_readwrite("VfTable_ISparkUpdateCallback", &AWillowBaseStats::VfTable_ISparkUpdateCallback)

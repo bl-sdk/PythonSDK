@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UOnlineAuthInterfaceSteamworks(py::object m)
+void Export_pystes_UOnlineAuthInterfaceSteamworks(py::module &m)
 {
     py::class_< UOnlineAuthInterfaceSteamworks,  UOnlineAuthInterfaceImpl   >(m, "UOnlineAuthInterfaceSteamworks")
         .def_readwrite("AuthCallbackBridge", &UOnlineAuthInterfaceSteamworks::AuthCallbackBridge)

@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UVendingMachineExGFxDefinition(py::object m)
+void Export_pystes_UVendingMachineExGFxDefinition(py::module &m)
 {
     py::class_< UVendingMachineExGFxDefinition,  UWillowInventoryGFxDefinition   >(m, "UVendingMachineExGFxDefinition")
         .def_readwrite("CustomStoragePanelTint", &UVendingMachineExGFxDefinition::CustomStoragePanelTint)

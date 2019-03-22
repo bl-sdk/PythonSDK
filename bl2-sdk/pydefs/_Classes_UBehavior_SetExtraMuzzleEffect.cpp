@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SetExtraMuzzleEffect(py::object m)
+void Export_pystes_UBehavior_SetExtraMuzzleEffect(py::module &m)
 {
     py::class_< UBehavior_SetExtraMuzzleEffect,  UBehaviorBase   >(m, "UBehavior_SetExtraMuzzleEffect")
         .def_readwrite("BulletFromClip", &UBehavior_SetExtraMuzzleEffect::BulletFromClip)

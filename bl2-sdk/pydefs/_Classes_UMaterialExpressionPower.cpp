@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionPower(py::object m)
+void Export_pystes_UMaterialExpressionPower(py::module &m)
 {
     py::class_< UMaterialExpressionPower,  UMaterialExpression   >(m, "UMaterialExpressionPower")
         .def_readwrite("Base", &UMaterialExpressionPower::Base)

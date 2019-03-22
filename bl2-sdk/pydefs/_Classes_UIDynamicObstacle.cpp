@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UIDynamicObstacle(py::object m)
+void Export_pystes_UIDynamicObstacle(py::module &m)
 {
     py::class_< UIDynamicObstacle,  UInterface   >(m, "UIDynamicObstacle")
         .def("StaticClass", &UIDynamicObstacle::StaticClass, py::return_value_policy::reference)

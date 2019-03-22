@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UAttributeModifier(py::object m)
+void Export_pystes_UAttributeModifier(py::module &m)
 {
     py::class_< UAttributeModifier,  UObject   >(m, "UAttributeModifier")
         .def_readwrite("Type", &UAttributeModifier::Type)

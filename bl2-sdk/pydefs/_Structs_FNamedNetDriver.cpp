@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FNamedNetDriver(py::object m)
+void Export_pystes_FNamedNetDriver(py::module &m)
 {
     py::class_< FNamedNetDriver >(m, "FNamedNetDriver")
         .def_readwrite("NetDriverName", &FNamedNetDriver::NetDriverName)

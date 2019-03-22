@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_ConvertInstanceDataIntoPhysicsActor(py::object m)
+void Export_pystes_UBehavior_ConvertInstanceDataIntoPhysicsActor(py::module &m)
 {
     py::class_< UBehavior_ConvertInstanceDataIntoPhysicsActor,  UBehaviorBase   >(m, "UBehavior_ConvertInstanceDataIntoPhysicsActor")
         .def_readwrite("DetachImpulse", &UBehavior_ConvertInstanceDataIntoPhysicsActor::DetachImpulse)

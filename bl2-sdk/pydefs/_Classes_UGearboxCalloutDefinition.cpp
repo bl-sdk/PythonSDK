@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGearboxCalloutDefinition(py::object m)
+void Export_pystes_UGearboxCalloutDefinition(py::module &m)
 {
     py::class_< UGearboxCalloutDefinition,  UGBXDefinition   >(m, "UGearboxCalloutDefinition")
         .def_readwrite("MaxCallOutDistance", &UGearboxCalloutDefinition::MaxCallOutDistance)

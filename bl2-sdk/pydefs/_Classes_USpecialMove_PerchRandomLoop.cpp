@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpecialMove_PerchRandomLoop(py::object m)
+void Export_pystes_USpecialMove_PerchRandomLoop(py::module &m)
 {
     py::class_< USpecialMove_PerchRandomLoop,  USpecialMove_PerchLoop   >(m, "USpecialMove_PerchRandomLoop")
         .def_readwrite("RandomList", &USpecialMove_PerchRandomLoop::RandomList)

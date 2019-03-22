@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_Switch(py::object m)
+void Export_pystes_USeqAct_Switch(py::module &m)
 {
     py::class_< USeqAct_Switch,  USequenceAction   >(m, "USeqAct_Switch")
         .def_readwrite("LinkCount", &USeqAct_Switch::LinkCount)

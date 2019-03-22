@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FVectorParameterValue(py::object m)
+void Export_pystes_FVectorParameterValue(py::module &m)
 {
     py::class_< FVectorParameterValue >(m, "FVectorParameterValue")
         .def_readwrite("ParameterName", &FVectorParameterValue::ParameterName)

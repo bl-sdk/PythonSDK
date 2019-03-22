@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMaterialExpressionRotator(py::object m)
+void Export_pystes_UMaterialExpressionRotator(py::module &m)
 {
     py::class_< UMaterialExpressionRotator,  UMaterialExpression   >(m, "UMaterialExpressionRotator")
         .def_readwrite("Coordinate", &UMaterialExpressionRotator::Coordinate)

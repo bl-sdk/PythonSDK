@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_AEnvironmentVolume(py::object m)
+void Export_pystes_AEnvironmentVolume(py::module &m)
 {
     py::class_< AEnvironmentVolume,  AVolume   >(m, "AEnvironmentVolume")
         .def_readwrite("VfTable_IInterface_NavMeshPathObstacle", &AEnvironmentVolume::VfTable_IInterface_NavMeshPathObstacle)

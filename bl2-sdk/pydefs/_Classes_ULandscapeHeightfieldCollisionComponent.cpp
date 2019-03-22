@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ULandscapeHeightfieldCollisionComponent(py::object m)
+void Export_pystes_ULandscapeHeightfieldCollisionComponent(py::module &m)
 {
     py::class_< ULandscapeHeightfieldCollisionComponent,  UPrimitiveComponent   >(m, "ULandscapeHeightfieldCollisionComponent")
         .def_readwrite("CollisionHeightData", &ULandscapeHeightfieldCollisionComponent::CollisionHeightData)

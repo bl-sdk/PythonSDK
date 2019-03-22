@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USeqAct_Trace(py::object m)
+void Export_pystes_USeqAct_Trace(py::module &m)
 {
     py::class_< USeqAct_Trace,  USequenceAction   >(m, "USeqAct_Trace")
         .def_readwrite("TraceExtent", &USeqAct_Trace::TraceExtent)

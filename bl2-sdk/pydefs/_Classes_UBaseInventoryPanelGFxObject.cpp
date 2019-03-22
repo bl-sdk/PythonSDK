@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBaseInventoryPanelGFxObject(py::object m)
+void Export_pystes_UBaseInventoryPanelGFxObject(py::module &m)
 {
     py::class_< UBaseInventoryPanelGFxObject,  UGFxObject   >(m, "UBaseInventoryPanelGFxObject")
         .def_readwrite("HandleRollOverArgs", &UBaseInventoryPanelGFxObject::HandleRollOverArgs)

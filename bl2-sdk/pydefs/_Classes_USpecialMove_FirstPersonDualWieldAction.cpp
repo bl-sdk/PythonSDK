@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_USpecialMove_FirstPersonDualWieldAction(py::object m)
+void Export_pystes_USpecialMove_FirstPersonDualWieldAction(py::module &m)
 {
     py::class_< USpecialMove_FirstPersonDualWieldAction,  USpecialMove_FirstPerson   >(m, "USpecialMove_FirstPersonDualWieldAction")
         .def_readwrite("OffHandAnimNodeName", &USpecialMove_FirstPersonDualWieldAction::OffHandAnimNodeName)

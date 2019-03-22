@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UNetworkOptionsGFxMovie(py::object m)
+void Export_pystes_UNetworkOptionsGFxMovie(py::module &m)
 {
     py::class_< UNetworkOptionsGFxMovie,  UWillowGFxMovie   >(m, "UNetworkOptionsGFxMovie")
         .def_readwrite("NetworkOptionsObject", &UNetworkOptionsGFxMovie::NetworkOptionsObject)

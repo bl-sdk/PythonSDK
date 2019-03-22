@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTitleFileMcp(py::object m)
+void Export_pystes_FTitleFileMcp(py::module &m)
 {
     py::class_< FTitleFileMcp,  FTitleFile   >(m, "FTitleFileMcp")
         .def_readwrite("HttpDownloader", &FTitleFileMcp::HttpDownloader)

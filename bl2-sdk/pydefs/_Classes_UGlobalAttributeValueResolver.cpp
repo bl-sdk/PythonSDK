@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UGlobalAttributeValueResolver(py::object m)
+void Export_pystes_UGlobalAttributeValueResolver(py::module &m)
 {
     py::class_< UGlobalAttributeValueResolver,  UAttributeValueResolver   >(m, "UGlobalAttributeValueResolver")
         .def_readwrite("GlobalAttribute", &UGlobalAttributeValueResolver::GlobalAttribute)

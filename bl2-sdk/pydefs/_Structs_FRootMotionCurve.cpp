@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRootMotionCurve(py::object m)
+void Export_pystes_FRootMotionCurve(py::module &m)
 {
     py::class_< FRootMotionCurve >(m, "FRootMotionCurve")
         .def_readwrite("AnimName", &FRootMotionCurve::AnimName)

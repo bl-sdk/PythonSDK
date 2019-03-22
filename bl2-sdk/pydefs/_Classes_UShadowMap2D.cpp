@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UShadowMap2D(py::object m)
+void Export_pystes_UShadowMap2D(py::module &m)
 {
     py::class_< UShadowMap2D,  UObject   >(m, "UShadowMap2D")
         .def_readwrite("Texture", &UShadowMap2D::Texture)

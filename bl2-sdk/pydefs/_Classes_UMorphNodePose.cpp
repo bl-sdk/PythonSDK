@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UMorphNodePose(py::object m)
+void Export_pystes_UMorphNodePose(py::module &m)
 {
     py::class_< UMorphNodePose,  UMorphNodeBase   >(m, "UMorphNodePose")
         .def_readwrite("Target", &UMorphNodePose::Target)

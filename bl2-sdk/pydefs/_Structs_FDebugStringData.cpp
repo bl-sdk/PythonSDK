@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FDebugStringData(py::object m)
+void Export_pystes_FDebugStringData(py::module &m)
 {
     py::class_< FDebugStringData >(m, "FDebugStringData")
         .def_readwrite("DebugStr", &FDebugStringData::DebugStr)

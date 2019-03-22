@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UBehavior_SetAkRTPCValue(py::object m)
+void Export_pystes_UBehavior_SetAkRTPCValue(py::module &m)
 {
     py::class_< UBehavior_SetAkRTPCValue,  UBehaviorBase   >(m, "UBehavior_SetAkRTPCValue")
         .def_readwrite("RTPC", &UBehavior_SetAkRTPCValue::RTPC)

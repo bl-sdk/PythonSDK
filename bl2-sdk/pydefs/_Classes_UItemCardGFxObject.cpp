@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UItemCardGFxObject(py::object m)
+void Export_pystes_UItemCardGFxObject(py::module &m)
 {
     py::class_< UItemCardGFxObject,  UGFxObject   >(m, "UItemCardGFxObject")
         .def("StaticClass", &UItemCardGFxObject::StaticClass, py::return_value_policy::reference)

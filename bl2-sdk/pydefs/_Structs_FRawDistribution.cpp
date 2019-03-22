@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FRawDistribution(py::object m)
+void Export_pystes_FRawDistribution(py::module &m)
 {
     py::class_< FRawDistribution >(m, "FRawDistribution")
         .def_readwrite("Type", &FRawDistribution::Type)

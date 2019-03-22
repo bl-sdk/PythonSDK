@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FFiringBehaviorBurstInfo(py::object m)
+void Export_pystes_FFiringBehaviorBurstInfo(py::module &m)
 {
     py::class_< FFiringBehaviorBurstInfo >(m, "FFiringBehaviorBurstInfo")
         .def_readwrite("Instigator", &FFiringBehaviorBurstInfo::Instigator)

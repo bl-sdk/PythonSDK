@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UInputBindingsClipGFxObject(py::object m)
+void Export_pystes_UInputBindingsClipGFxObject(py::module &m)
 {
     py::class_< UInputBindingsClipGFxObject,  UGFxObject   >(m, "UInputBindingsClipGFxObject")
         .def("StaticClass", &UInputBindingsClipGFxObject::StaticClass, py::return_value_policy::reference)

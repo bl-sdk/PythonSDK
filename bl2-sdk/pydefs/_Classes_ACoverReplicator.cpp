@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_ACoverReplicator(py::object m)
+void Export_pystes_ACoverReplicator(py::module &m)
 {
     py::class_< ACoverReplicator,  AReplicationInfo   >(m, "ACoverReplicator")
         .def_readwrite("CoverReplicationData", &ACoverReplicator::CoverReplicationData)

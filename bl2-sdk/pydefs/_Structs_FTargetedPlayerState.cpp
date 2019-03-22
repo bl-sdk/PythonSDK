@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_FTargetedPlayerState(py::object m)
+void Export_pystes_FTargetedPlayerState(py::module &m)
 {
     py::class_< FTargetedPlayerState >(m, "FTargetedPlayerState")
         .def_readwrite("Enemy", &FTargetedPlayerState::Enemy)

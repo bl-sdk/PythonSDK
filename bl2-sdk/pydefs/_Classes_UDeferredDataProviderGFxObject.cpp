@@ -3,7 +3,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_UDeferredDataProviderGFxObject(py::object m)
+void Export_pystes_UDeferredDataProviderGFxObject(py::module &m)
 {
     py::class_< UDeferredDataProviderGFxObject,  UGFxObject   >(m, "UDeferredDataProviderGFxObject")
         .def_readwrite("BaseOwningMovie", &UDeferredDataProviderGFxObject::BaseOwningMovie)
