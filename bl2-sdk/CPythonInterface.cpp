@@ -1623,7 +1623,6 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	Export_pystes_UObjectReferencer(m);
 	Export_pystes_UMapInfo(m);
 	Export_pystes_AEmitterPool(m);
-	Export_pystes_ADecalManager(m);
 	Export_pystes_AParticleEventManager(m);
 	Export_pystes_UPhysicsLODVerticalEmitter(m);
 	Export_pystes_AHoldingAreaDestination(m);
@@ -3280,7 +3279,6 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	Export_pystes_UFiringModeDefinition(m);
 	Export_pystes_UProjectileDefinition(m);
 	Export_pystes_ATemporalField(m);
-	Export_pystes_UExplosionDefinition(m);
 	Export_pystes_UWillowExplosionImpactDefinition(m);
 	Export_pystes_UBulletListenerComponent(m);
 	Export_pystes_UExplosionCollectionDefinition(m);
@@ -3462,7 +3460,6 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	Export_pystes_UGenericReviveMessageDefinition(m);
 	Export_pystes_UWeaponScopeGFxMovie(m);
 	Export_pystes_UWeaponScopeGFxDefinition(m);
-	Export_pystes_UStatusMenuExGFxMovie(m);
 	Export_pystes_UWillowInventoryGFxMovie(m);
 	Export_pystes_UWillowGFxThirdPersonMovie(m);
 	Export_pystes_UWillowGFxThirdPersonDefinition(m);
@@ -3496,7 +3493,6 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	Export_pystes_UBadassPanelGFxObject(m);
 	Export_pystes_UChallengesPanelGFxObject(m);
 	Export_pystes_UPCContextMenuObject(m);
-	Export_pystes_UWillowGFxColiseumOverlayMovie(m);
 	Export_pystes_UWillowGFxColiseumOverlayDefinition(m);
 	Export_pystes_UColiseumRuleDefinition(m);
 	Export_pystes_UWillowUIInteraction(m);
@@ -3518,7 +3514,6 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	Export_pystes_UVehicleCrewAnimSetLookupTable(m);
 	Export_pystes_AWillowBoundaryTurret(m);
 	Export_pystes_UNPCLoadBalancer(m);
-	Export_pystes_UDamageOverTimeManager(m);
 	Export_pystes_AWillowSpectatorPoint(m);
 	Export_pystes_UAssetLibraryManager(m);
 	Export_pystes_UPackageAssetLibrary(m);
