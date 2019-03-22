@@ -10,6 +10,5 @@ void Export_pystes_UAnimNodeBlendDirectional(py::module &m)
         .def_readwrite("DirAngle", &UAnimNodeBlendDirectional::DirAngle)
         .def_readwrite("SingleAnimAtOrAboveLOD", &UAnimNodeBlendDirectional::SingleAnimAtOrAboveLOD)
         .def_readwrite("RotationOffset", &UAnimNodeBlendDirectional::RotationOffset)
-        .def("StaticClass", &UAnimNodeBlendDirectional::StaticClass, py::return_value_policy::reference)
           ;
 }

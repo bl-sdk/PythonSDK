@@ -7,6 +7,5 @@ void Export_pystes_UMaterialExpressionSceneDepth(py::module &m)
 {
     py::class_< UMaterialExpressionSceneDepth,  UMaterialExpression   >(m, "UMaterialExpressionSceneDepth")
         .def_readwrite("Coordinates", &UMaterialExpressionSceneDepth::Coordinates)
-        .def("StaticClass", &UMaterialExpressionSceneDepth::StaticClass, py::return_value_policy::reference)
           ;
 }

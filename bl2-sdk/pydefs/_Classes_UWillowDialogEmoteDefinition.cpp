@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UWillowDialogEmoteDefinition(py::module &m)
 {
     py::class_< UWillowDialogEmoteDefinition,  UGBXDefinition   >(m, "UWillowDialogEmoteDefinition")
-        .def("StaticClass", &UWillowDialogEmoteDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

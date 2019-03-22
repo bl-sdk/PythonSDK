@@ -9,6 +9,5 @@ void Export_pystes_UDistributionVectorUniform(py::module &m)
         .def_readwrite("Max", &UDistributionVectorUniform::Max)
         .def_readwrite("Min", &UDistributionVectorUniform::Min)
         .def_readwrite("LockedAxes", &UDistributionVectorUniform::LockedAxes)
-        .def("StaticClass", &UDistributionVectorUniform::StaticClass, py::return_value_policy::reference)
           ;
 }

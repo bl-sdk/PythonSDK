@@ -15,6 +15,5 @@ void Export_pystes_UParticleModuleCollision(py::module &m)
         .def_readwrite("VerticalFudgeFactor", &UParticleModuleCollision::VerticalFudgeFactor)
         .def_readwrite("DelayAmount", &UParticleModuleCollision::DelayAmount)
         .def_readwrite("MaxCollisionDistance", &UParticleModuleCollision::MaxCollisionDistance)
-        .def("StaticClass", &UParticleModuleCollision::StaticClass, py::return_value_policy::reference)
           ;
 }

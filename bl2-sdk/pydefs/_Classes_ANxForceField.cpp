@@ -15,7 +15,6 @@ void Export_pystes_ANxForceField(py::module &m)
         .def_readwrite("ExclusionShapePoses", &ANxForceField::ExclusionShapePoses)
         .def_readwrite("U2NRotation", &ANxForceField::U2NRotation)
         .def_readwrite("SceneIndex", &ANxForceField::SceneIndex)
-        .def("StaticClass", &ANxForceField::StaticClass, py::return_value_policy::reference)
         .def("OnToggle", &ANxForceField::OnToggle)
         .def("DoInitRBPhys", &ANxForceField::DoInitRBPhys)
           ;

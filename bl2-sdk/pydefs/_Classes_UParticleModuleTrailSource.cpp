@@ -12,6 +12,5 @@ void Export_pystes_UParticleModuleTrailSource(py::module &m)
         .def_readwrite("SourceStrength", &UParticleModuleTrailSource::SourceStrength)
         .def_readwrite("SourceOffsetCount", &UParticleModuleTrailSource::SourceOffsetCount)
         .def_readwrite("SourceOffsetDefaults", &UParticleModuleTrailSource::SourceOffsetDefaults)
-        .def("StaticClass", &UParticleModuleTrailSource::StaticClass, py::return_value_policy::reference)
           ;
 }

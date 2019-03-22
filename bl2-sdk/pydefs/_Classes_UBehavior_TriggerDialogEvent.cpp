@@ -12,7 +12,6 @@ void Export_pystes_UBehavior_TriggerDialogEvent(py::module &m)
         .def_readwrite("Other", &UBehavior_TriggerDialogEvent::Other)
         .def_readwrite("MyEventData", &UBehavior_TriggerDialogEvent::MyEventData)
         .def_readwrite("MyDataUseCount", &UBehavior_TriggerDialogEvent::MyDataUseCount)
-        .def("StaticClass", &UBehavior_TriggerDialogEvent::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_TriggerDialogEvent::ApplyBehaviorToContext)
         .def("TriggerDialogEvent", &UBehavior_TriggerDialogEvent::TriggerDialogEvent)
           ;

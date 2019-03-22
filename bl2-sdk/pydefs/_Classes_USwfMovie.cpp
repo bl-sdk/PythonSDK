@@ -17,7 +17,6 @@ void Export_pystes_USwfMovie(py::module &m)
         .def_readwrite("ReferencedSwfs", &UGFxRawData::ReferencedSwfs)
         .def_readwrite("References", &UGFxRawData::References)
         .def_readwrite("UserReferences", &UGFxRawData::UserReferences)
-        .def("StaticClass", &USwfMovie::StaticClass, py::return_value_policy::reference)
         .def("GetPathForLoadMovie", &USwfMovie::GetPathForLoadMovie)
           ;
 }

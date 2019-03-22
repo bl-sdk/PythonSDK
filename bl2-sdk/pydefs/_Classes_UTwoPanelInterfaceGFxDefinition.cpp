@@ -7,6 +7,5 @@ void Export_pystes_UTwoPanelInterfaceGFxDefinition(py::module &m)
 {
     py::class_< UTwoPanelInterfaceGFxDefinition,  UWillowInventoryGFxDefinition   >(m, "UTwoPanelInterfaceGFxDefinition")
         .def_readwrite("PathToBackgroundArtClip", &UTwoPanelInterfaceGFxDefinition::PathToBackgroundArtClip)
-        .def("StaticClass", &UTwoPanelInterfaceGFxDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

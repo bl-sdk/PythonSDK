@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UICustomEvent(py::module &m)
 {
     py::class_< UICustomEvent,  UInterface   >(m, "UICustomEvent")
-        .def("StaticClass", &UICustomEvent::StaticClass, py::return_value_policy::reference)
         .def("eventRunCustomEvent", &UICustomEvent::eventRunCustomEvent)
           ;
 }

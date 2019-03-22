@@ -10,6 +10,5 @@ void Export_pystes_UGameWaveForms(py::module &m)
         .def_readwrite("CameraShakeMediumLong", &UGameWaveForms::CameraShakeMediumLong)
         .def_readwrite("CameraShakeBigShort", &UGameWaveForms::CameraShakeBigShort)
         .def_readwrite("CameraShakeBigLong", &UGameWaveForms::CameraShakeBigLong)
-        .def("StaticClass", &UGameWaveForms::StaticClass, py::return_value_policy::reference)
           ;
 }

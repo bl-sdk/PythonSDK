@@ -11,6 +11,5 @@ void Export_pystes_ALevelGridVolume(py::module &m)
         .def_readwrite("LoadingDistance", &ALevelGridVolume::LoadingDistance)
         .def_readwrite("KeepLoadedRange", &ALevelGridVolume::KeepLoadedRange)
         .def_readwrite("CellConvexElem", &ALevelGridVolume::CellConvexElem)
-        .def("StaticClass", &ALevelGridVolume::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -12,6 +12,5 @@ void Export_pystes_UActorFactoryRigidBody(py::module &m)
         .def_readwrite("RBChannel", &UActorFactoryRigidBody::RBChannel)
         .def_readwrite("StayUprightTorqueFactor", &UActorFactoryRigidBody::StayUprightTorqueFactor)
         .def_readwrite("StayUprightMaxTorque", &UActorFactoryRigidBody::StayUprightMaxTorque)
-        .def("StaticClass", &UActorFactoryRigidBody::StaticClass, py::return_value_policy::reference)
           ;
 }

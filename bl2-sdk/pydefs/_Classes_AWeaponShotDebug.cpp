@@ -9,7 +9,6 @@ void Export_pystes_AWeaponShotDebug(py::module &m)
         .def_readwrite("AimArrow", &AWeaponShotDebug::AimArrow)
         .def_readwrite("ShotArrow", &AWeaponShotDebug::ShotArrow)
         .def_readwrite("SpreadShotArrow", &AWeaponShotDebug::SpreadShotArrow)
-        .def("StaticClass", &AWeaponShotDebug::StaticClass, py::return_value_policy::reference)
         .def("FinalizeComponentInitialization", &AWeaponShotDebug::FinalizeComponentInitialization)
           ;
 }

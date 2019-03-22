@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UWillowSeqAct_ToggleRestrictions(py::module &m)
 {
     py::class_< UWillowSeqAct_ToggleRestrictions,  USequenceAction   >(m, "UWillowSeqAct_ToggleRestrictions")
-        .def("StaticClass", &UWillowSeqAct_ToggleRestrictions::StaticClass, py::return_value_policy::reference)
           ;
 }

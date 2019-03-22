@@ -11,7 +11,6 @@ void Export_pystes_UMissionFeedbackMessage(py::module &m)
         .def_readwrite("MissionFailed", &UMissionFeedbackMessage::MissionFailed)
         .def_readwrite("MissionRequiredObjectivesComplete", &UMissionFeedbackMessage::MissionRequiredObjectivesComplete)
         .def_readwrite("MissionReadyToTurnIn", &UMissionFeedbackMessage::MissionReadyToTurnIn)
-        .def("StaticClass", &UMissionFeedbackMessage::StaticClass, py::return_value_policy::reference)
         .def("GetString", &UMissionFeedbackMessage::GetString)
           ;
 }

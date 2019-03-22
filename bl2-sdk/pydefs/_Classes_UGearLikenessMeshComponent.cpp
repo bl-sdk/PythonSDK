@@ -9,7 +9,6 @@ void Export_pystes_UGearLikenessMeshComponent(py::module &m)
         .def_readwrite("LikenessOf", &UGearLikenessMeshComponent::LikenessOf)
         .def_readwrite("GroupIndex", &UGearLikenessMeshComponent::GroupIndex)
         .def_readwrite("CachedLikenessID", &UGearLikenessMeshComponent::CachedLikenessID)
-        .def("StaticClass", &UGearLikenessMeshComponent::StaticClass, py::return_value_policy::reference)
         .def("RefreshGearLikenessComponents", &UGearLikenessMeshComponent::RefreshGearLikenessComponents)
           ;
 }

@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UMaterialExpressionCameraVector(py::module &m)
 {
     py::class_< UMaterialExpressionCameraVector,  UMaterialExpression   >(m, "UMaterialExpressionCameraVector")
-        .def("StaticClass", &UMaterialExpressionCameraVector::StaticClass, py::return_value_policy::reference)
           ;
 }

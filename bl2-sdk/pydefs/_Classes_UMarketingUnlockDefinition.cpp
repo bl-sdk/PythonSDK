@@ -9,6 +9,5 @@ void Export_pystes_UMarketingUnlockDefinition(py::module &m)
         .def_readwrite("UnlockCode", &UMarketingUnlockDefinition::UnlockCode)
         .def_readwrite("DialogLocFile", &UMarketingUnlockDefinition::DialogLocFile)
         .def_readwrite("DialogLocSection", &UMarketingUnlockDefinition::DialogLocSection)
-        .def("StaticClass", &UMarketingUnlockDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

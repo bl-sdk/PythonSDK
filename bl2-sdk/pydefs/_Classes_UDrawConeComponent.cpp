@@ -10,6 +10,5 @@ void Export_pystes_UDrawConeComponent(py::module &m)
         .def_readwrite("ConeRadius", &UDrawConeComponent::ConeRadius)
         .def_readwrite("ConeAngle", &UDrawConeComponent::ConeAngle)
         .def_readwrite("ConeSides", &UDrawConeComponent::ConeSides)
-        .def("StaticClass", &UDrawConeComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

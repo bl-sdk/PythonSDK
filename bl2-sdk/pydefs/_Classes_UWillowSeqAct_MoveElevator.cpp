@@ -9,6 +9,5 @@ void Export_pystes_UWillowSeqAct_MoveElevator(py::module &m)
         .def_readwrite("Elevator", &UWillowSeqAct_MoveElevator::Elevator)
         .def_readwrite("Usage", &UWillowSeqAct_MoveElevator::Usage)
         .def_readwrite("CallFloor", &UWillowSeqAct_MoveElevator::CallFloor)
-        .def("StaticClass", &UWillowSeqAct_MoveElevator::StaticClass, py::return_value_policy::reference)
           ;
 }

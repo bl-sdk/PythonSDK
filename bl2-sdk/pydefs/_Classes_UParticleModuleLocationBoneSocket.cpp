@@ -11,6 +11,5 @@ void Export_pystes_UParticleModuleLocationBoneSocket(py::module &m)
         .def_readwrite("UniversalOffset", &UParticleModuleLocationBoneSocket::UniversalOffset)
         .def_readwrite("SourceLocations", &UParticleModuleLocationBoneSocket::SourceLocations)
         .def_readwrite("SkelMeshActorParamName", &UParticleModuleLocationBoneSocket::SkelMeshActorParamName)
-        .def("StaticClass", &UParticleModuleLocationBoneSocket::StaticClass, py::return_value_policy::reference)
           ;
 }

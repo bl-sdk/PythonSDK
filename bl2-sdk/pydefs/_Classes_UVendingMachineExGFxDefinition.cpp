@@ -19,6 +19,5 @@ void Export_pystes_UVendingMachineExGFxDefinition(py::module &m)
         .def_readwrite("CustomIOTDVisitLabel", &UVendingMachineExGFxDefinition::CustomIOTDVisitLabel)
         .def_readwrite("bUseAdvancedCustomStoragePanelTint", &UVendingMachineExGFxDefinition::bUseAdvancedCustomStoragePanelTint)
         .def_readwrite("AdvancedCustomTint", &UVendingMachineExGFxDefinition::AdvancedCustomTint)
-        .def("StaticClass", &UVendingMachineExGFxDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

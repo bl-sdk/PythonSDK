@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UWallTransReachSpec(py::module &m)
 {
     py::class_< UWallTransReachSpec,  UReachSpec   >(m, "UWallTransReachSpec")
-        .def("StaticClass", &UWallTransReachSpec::StaticClass, py::return_value_policy::reference)
           ;
 }

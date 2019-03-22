@@ -11,7 +11,6 @@ void Export_pystes_UMissionObjectiveSetDefinition(py::module &m)
         .def_readwrite("StationOverride", &UMissionObjectiveSetDefinition::StationOverride)
         .def_readwrite("MissionSummaryOverride", &UMissionObjectiveSetDefinition::MissionSummaryOverride)
         .def_readwrite("MissionDescriptionOverride", &UMissionObjectiveSetDefinition::MissionDescriptionOverride)
-        .def("StaticClass", &UMissionObjectiveSetDefinition::StaticClass, py::return_value_policy::reference)
         .def("ContainsOptionalObjective", &UMissionObjectiveSetDefinition::ContainsOptionalObjective)
         .def("ContainsObjective", &UMissionObjectiveSetDefinition::ContainsObjective)
           ;

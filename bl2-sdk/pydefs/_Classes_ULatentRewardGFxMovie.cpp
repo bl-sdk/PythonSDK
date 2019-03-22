@@ -7,7 +7,6 @@ void Export_pystes_ULatentRewardGFxMovie(py::module &m)
 {
     py::class_< ULatentRewardGFxMovie,  UWillowGFxMovie3D   >(m, "ULatentRewardGFxMovie")
         .def_readwrite("RewardObject", &ULatentRewardGFxMovie::RewardObject)
-        .def("StaticClass", &ULatentRewardGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("OnClosedOnDeath", &ULatentRewardGFxMovie::OnClosedOnDeath)
         .def("HandleInputAxis", &ULatentRewardGFxMovie::HandleInputAxis)
         .def("HandleRewardInputKey", &ULatentRewardGFxMovie::HandleRewardInputKey)

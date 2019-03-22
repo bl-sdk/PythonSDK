@@ -9,7 +9,6 @@ void Export_pystes_UBehavior_SetSkelControlLookAtActor(py::module &m)
         .def_readwrite("SkelControlName", &UBehavior_SetSkelControlLookAtActor::SkelControlName)
         .def_readwrite("TargetContext", &UBehavior_SetSkelControlLookAtActor::TargetContext)
         .def_readwrite("Offset", &UBehavior_SetSkelControlLookAtActor::Offset)
-        .def("StaticClass", &UBehavior_SetSkelControlLookAtActor::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_SetSkelControlLookAtActor::ApplyBehaviorToContext)
           ;
 }

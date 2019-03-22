@@ -11,6 +11,5 @@ void Export_pystes_UAnimNotify_Sound(py::module &m)
         .def_readwrite("PercentToPlay", &UAnimNotify_Sound::PercentToPlay)
         .def_readwrite("VolumeMultiplier", &UAnimNotify_Sound::VolumeMultiplier)
         .def_readwrite("PitchMultiplier", &UAnimNotify_Sound::PitchMultiplier)
-        .def("StaticClass", &UAnimNotify_Sound::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -10,6 +10,5 @@ void Export_pystes_UResourceDefinition(py::module &m)
         .def_readwrite("DefaultResourcePoolClass", &UResourceDefinition::DefaultResourcePoolClass)
         .def_readwrite("DefaultResourcePoolDefinition", &UResourceDefinition::DefaultResourcePoolDefinition)
         .def_readwrite("ResourceContextResolver", &UResourceDefinition::ResourceContextResolver)
-        .def("StaticClass", &UResourceDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

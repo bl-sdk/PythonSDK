@@ -12,7 +12,6 @@ void Export_pystes_USeqEvent_ParticleEvent(py::module &m)
         .def_readwrite("EventVelocity", &USeqEvent_ParticleEvent::EventVelocity)
         .def_readwrite("EventParticleTime", &USeqEvent_ParticleEvent::EventParticleTime)
         .def_readwrite("EventNormal", &USeqEvent_ParticleEvent::EventNormal)
-        .def("StaticClass", &USeqEvent_ParticleEvent::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqEvent_ParticleEvent::eventGetObjClassVersion)
           ;
 }

@@ -7,7 +7,6 @@ void Export_pystes_AStatusEffectProxyActor(py::module &m)
 {
     py::class_< AStatusEffectProxyActor,  AActor   >(m, "AStatusEffectProxyActor")
         .def_readwrite("VfTable_IIStatusEffectTarget", &AStatusEffectProxyActor::VfTable_IIStatusEffectTarget)
-        .def("StaticClass", &AStatusEffectProxyActor::StaticClass, py::return_value_policy::reference)
         .def("ServerClearStatusEffects", &AStatusEffectProxyActor::ServerClearStatusEffects)
         .def("Behavior_ClearStatusEffects", &AStatusEffectProxyActor::Behavior_ClearStatusEffects)
         .def("CanReceiveStatusEffects", &AStatusEffectProxyActor::CanReceiveStatusEffects)

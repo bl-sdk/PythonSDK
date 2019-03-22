@@ -7,7 +7,6 @@ void Export_pystes_UPlayerInteractionServer(py::module &m)
 {
     py::class_< UPlayerInteractionServer,  UObject   >(m, "UPlayerInteractionServer")
         .def_readwrite("TimeoutTime", &UPlayerInteractionServer::TimeoutTime)
-        .def("StaticClass", &UPlayerInteractionServer::StaticClass, py::return_value_policy::reference)
         .def("IsValid", &UPlayerInteractionServer::IsValid)
         .def("CanReceiveMessages", &UPlayerInteractionServer::CanReceiveMessages)
         .def("MarkDone", &UPlayerInteractionServer::MarkDone)

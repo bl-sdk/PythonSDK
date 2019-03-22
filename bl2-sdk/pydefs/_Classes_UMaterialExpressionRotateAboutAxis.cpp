@@ -9,6 +9,5 @@ void Export_pystes_UMaterialExpressionRotateAboutAxis(py::module &m)
         .def_readwrite("NormalizedRotationAxisAndAngle", &UMaterialExpressionRotateAboutAxis::NormalizedRotationAxisAndAngle)
         .def_readwrite("PositionOnAxis", &UMaterialExpressionRotateAboutAxis::PositionOnAxis)
         .def_readwrite("Position", &UMaterialExpressionRotateAboutAxis::Position)
-        .def("StaticClass", &UMaterialExpressionRotateAboutAxis::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -21,6 +21,5 @@ void Export_pystes_USkelControlLimb(py::module &m)
         .def_readwrite("StretchLimits", &USkelControlLimb::StretchLimits)
         .def_readwrite("StretchRollBoneName", &USkelControlLimb::StretchRollBoneName)
         .def_readwrite("CachedTwistBoneIndex", &USkelControlLimb::CachedTwistBoneIndex)
-        .def("StaticClass", &USkelControlLimb::StaticClass, py::return_value_policy::reference)
           ;
 }

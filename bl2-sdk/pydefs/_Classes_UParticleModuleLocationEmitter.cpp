@@ -10,6 +10,5 @@ void Export_pystes_UParticleModuleLocationEmitter(py::module &m)
         .def_readwrite("SelectionMethod", &UParticleModuleLocationEmitter::SelectionMethod)
         .def_readwrite("InheritSourceVelocityScale", &UParticleModuleLocationEmitter::InheritSourceVelocityScale)
         .def_readwrite("InheritSourceRotationScale", &UParticleModuleLocationEmitter::InheritSourceRotationScale)
-        .def("StaticClass", &UParticleModuleLocationEmitter::StaticClass, py::return_value_policy::reference)
           ;
 }

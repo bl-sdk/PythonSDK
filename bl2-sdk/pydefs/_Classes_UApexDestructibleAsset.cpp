@@ -14,6 +14,5 @@ void Export_pystes_UApexDestructibleAsset(py::module &m)
         .def_readwrite("CrumbleEmitterName", &UApexDestructibleAsset::CrumbleEmitterName)
         .def_readwrite("DustEmitterName", &UApexDestructibleAsset::DustEmitterName)
         .def_readwrite("DestructibleParameters", &UApexDestructibleAsset::DestructibleParameters)
-        .def("StaticClass", &UApexDestructibleAsset::StaticClass, py::return_value_policy::reference)
           ;
 }

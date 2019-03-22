@@ -13,7 +13,6 @@ void Export_pystes_UTravelStationDefinition(py::module &m)
         .def_readwrite("StationDisplayImage", &UTravelStationDefinition::StationDisplayImage)
         .def_readwrite("StationDisplayName", &UTravelStationDefinition::StationDisplayName)
         .def_readwrite("MissionDependencies", &UTravelStationDefinition::MissionDependencies)
-        .def("StaticClass", &UTravelStationDefinition::StaticClass, py::return_value_policy::reference)
         .def("StaticGetAccessibleLevelName", &UTravelStationDefinition::StaticGetAccessibleLevelName)
         .def("GetStationLevelName", &UTravelStationDefinition::GetStationLevelName)
           ;

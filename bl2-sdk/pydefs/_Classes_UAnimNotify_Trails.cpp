@@ -19,7 +19,6 @@ void Export_pystes_UAnimNotify_Trails(py::module &m)
         .def_readwrite("CurrentTime", &UAnimNotify_Trails::CurrentTime)
         .def_readwrite("TimeStep", &UAnimNotify_Trails::TimeStep)
         .def_readwrite("AnimNodeSeq", &UAnimNotify_Trails::AnimNodeSeq)
-        .def("StaticClass", &UAnimNotify_Trails::StaticClass, py::return_value_policy::reference)
         .def("GetNumSteps", &UAnimNotify_Trails::GetNumSteps)
           ;
 }

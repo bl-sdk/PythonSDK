@@ -20,6 +20,5 @@ void Export_pystes_UCoverSearchCriteria(py::module &m)
         .def_readwrite("ScoreVantageOnAnyTarget", &UCoverSearchCriteria::ScoreVantageOnAnyTarget)
         .def_readwrite("ScoreUnoccupiedLink", &UCoverSearchCriteria::ScoreUnoccupiedLink)
         .def_readwrite("ScoreNonBlacklistedCover", &UCoverSearchCriteria::ScoreNonBlacklistedCover)
-        .def("StaticClass", &UCoverSearchCriteria::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -22,7 +22,6 @@ void Export_pystes_USoundCue(py::module &m)
         .def_readwrite("SoundGroup", &USoundCue::SoundGroup)
         .def_readwrite("Priority", &USoundCue::Priority)
         .def_readwrite("SpatializationPercent", &USoundCue::SpatializationPercent)
-        .def("StaticClass", &USoundCue::StaticClass, py::return_value_policy::reference)
         .def("GetCueDuration", &USoundCue::GetCueDuration)
         .def("IsSoundLooping", &USoundCue::IsSoundLooping)
           ;

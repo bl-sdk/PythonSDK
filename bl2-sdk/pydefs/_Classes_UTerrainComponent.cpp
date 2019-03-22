@@ -22,6 +22,5 @@ void Export_pystes_UTerrainComponent(py::module &m)
         .def_readwrite("GameBVTree", &UTerrainComponent::GameBVTree)
         .def_readwrite("EditorBVTree", &UTerrainComponent::EditorBVTree)
         .def_readwrite("RBHeightfield", &UTerrainComponent::RBHeightfield)
-        .def("StaticClass", &UTerrainComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

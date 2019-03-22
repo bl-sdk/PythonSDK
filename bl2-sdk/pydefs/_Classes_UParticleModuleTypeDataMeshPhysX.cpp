@@ -11,6 +11,5 @@ void Export_pystes_UParticleModuleTypeDataMeshPhysX(py::module &m)
         .def_readwrite("FluidRotationCoefficient", &UParticleModuleTypeDataMeshPhysX::FluidRotationCoefficient)
         .def_readwrite("VerticalLod", &UParticleModuleTypeDataMeshPhysX::VerticalLod)
         .def_readwrite("ZOffset", &UParticleModuleTypeDataMeshPhysX::ZOffset)
-        .def("StaticClass", &UParticleModuleTypeDataMeshPhysX::StaticClass, py::return_value_policy::reference)
           ;
 }

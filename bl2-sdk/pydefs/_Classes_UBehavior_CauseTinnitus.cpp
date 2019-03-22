@@ -9,7 +9,6 @@ void Export_pystes_UBehavior_CauseTinnitus(py::module &m)
         .def_readwrite("Radius", &UBehavior_CauseTinnitus::Radius)
         .def_readwrite("StrengthModifier", &UBehavior_CauseTinnitus::StrengthModifier)
         .def_readwrite("OverrideTinnitusAkEvent", &UBehavior_CauseTinnitus::OverrideTinnitusAkEvent)
-        .def("StaticClass", &UBehavior_CauseTinnitus::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_CauseTinnitus::ApplyBehaviorToContext)
           ;
 }

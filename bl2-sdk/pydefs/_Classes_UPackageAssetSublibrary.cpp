@@ -10,6 +10,5 @@ void Export_pystes_UPackageAssetSublibrary(py::module &m)
         .def_readwrite("Assets", &UPackageAssetSublibrary::Assets)
         .def_readwrite("AssetPaths", &UPackageAssetSublibrary::AssetPaths)
         .def_readwrite("CachedPackageName", &UPackageAssetSublibrary::CachedPackageName)
-        .def("StaticClass", &UPackageAssetSublibrary::StaticClass, py::return_value_policy::reference)
           ;
 }

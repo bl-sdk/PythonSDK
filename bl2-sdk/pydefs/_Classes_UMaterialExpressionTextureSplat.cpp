@@ -11,6 +11,5 @@ void Export_pystes_UMaterialExpressionTextureSplat(py::module &m)
         .def_readwrite("UVs", &UMaterialExpressionTextureSplat::UVs)
         .def_readwrite("Offset", &UMaterialExpressionTextureSplat::Offset)
         .def_readwrite("Scale", &UMaterialExpressionTextureSplat::Scale)
-        .def("StaticClass", &UMaterialExpressionTextureSplat::StaticClass, py::return_value_policy::reference)
           ;
 }

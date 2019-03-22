@@ -12,6 +12,5 @@ void Export_pystes_UWillowAutoAimProfileDefinition(py::module &m)
         .def_readwrite("MaxRotationV", &UWillowAutoAimProfileDefinition::MaxRotationV)
         .def_readwrite("LockStrengthH", &UWillowAutoAimProfileDefinition::LockStrengthH)
         .def_readwrite("LockStrengthV", &UWillowAutoAimProfileDefinition::LockStrengthV)
-        .def("StaticClass", &UWillowAutoAimProfileDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

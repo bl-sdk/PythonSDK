@@ -7,7 +7,6 @@ void Export_pystes_UExperienceFeedbackMessage(py::module &m)
 {
     py::class_< UExperienceFeedbackMessage,  ULocalMessage   >(m, "UExperienceFeedbackMessage")
         .def_readwrite("IsNowLevel", &UExperienceFeedbackMessage::IsNowLevel)
-        .def("StaticClass", &UExperienceFeedbackMessage::StaticClass, py::return_value_policy::reference)
         .def("GetMsgType", &UExperienceFeedbackMessage::GetMsgType)
         .def("GetString", &UExperienceFeedbackMessage::GetString)
           ;

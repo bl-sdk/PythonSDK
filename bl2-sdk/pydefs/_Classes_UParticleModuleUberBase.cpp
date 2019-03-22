@@ -7,6 +7,5 @@ void Export_pystes_UParticleModuleUberBase(py::module &m)
 {
     py::class_< UParticleModuleUberBase,  UParticleModule   >(m, "UParticleModuleUberBase")
         .def_readwrite("RequiredModules", &UParticleModuleUberBase::RequiredModules)
-        .def("StaticClass", &UParticleModuleUberBase::StaticClass, py::return_value_policy::reference)
           ;
 }

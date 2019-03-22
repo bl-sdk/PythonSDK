@@ -11,7 +11,6 @@ void Export_pystes_AAIDebugDummyBase(py::module &m)
         .def_readwrite("MatInstHead", &AAIDebugDummyBase::MatInstHead)
         .def_readwrite("MatInstHelmet", &AAIDebugDummyBase::MatInstHelmet)
         .def_readwrite("DummyColor", &AAIDebugDummyBase::DummyColor)
-        .def("StaticClass", &AAIDebugDummyBase::StaticClass, py::return_value_policy::reference)
         .def("eventSetSkeletalMesh", &AAIDebugDummyBase::eventSetSkeletalMesh)
         .def("PostBeginPlay", &AAIDebugDummyBase::PostBeginPlay)
           ;

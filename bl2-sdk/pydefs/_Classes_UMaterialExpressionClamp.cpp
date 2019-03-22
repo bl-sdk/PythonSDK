@@ -9,6 +9,5 @@ void Export_pystes_UMaterialExpressionClamp(py::module &m)
         .def_readwrite("Input", &UMaterialExpressionClamp::Input)
         .def_readwrite("Min", &UMaterialExpressionClamp::Min)
         .def_readwrite("Max", &UMaterialExpressionClamp::Max)
-        .def("StaticClass", &UMaterialExpressionClamp::StaticClass, py::return_value_policy::reference)
           ;
 }

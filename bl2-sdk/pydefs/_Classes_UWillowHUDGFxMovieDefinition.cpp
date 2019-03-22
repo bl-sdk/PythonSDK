@@ -27,6 +27,5 @@ void Export_pystes_UWillowHUDGFxMovieDefinition(py::module &m)
         .def_readwrite("RecordingMaps", &UWillowHUDGFxMovieDefinition::RecordingMaps)
         .def_readwrite("ScaledElements", &UWillowHUDGFxMovieDefinition::ScaledElements)
         .def_readwrite("InjuredStringReplacements", &UWillowHUDGFxMovieDefinition::InjuredStringReplacements)
-        .def("StaticClass", &UWillowHUDGFxMovieDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -10,7 +10,6 @@ void Export_pystes_UBehavior_SetUsabilityCost(py::module &m)
         .def_readwrite("CostCurrencyType", &UBehavior_SetUsabilityCost::CostCurrencyType)
         .def_readwrite("UsabilityType", &UBehavior_SetUsabilityCost::UsabilityType)
         .def_readwrite("CostAmount", &UBehavior_SetUsabilityCost::CostAmount)
-        .def("StaticClass", &UBehavior_SetUsabilityCost::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_SetUsabilityCost::ApplyBehaviorToContext)
           ;
 }

@@ -12,7 +12,6 @@ void Export_pystes_URuleEngineLoadBalanceManager(py::module &m)
         .def_readwrite("DebugEngines", &URuleEngineLoadBalanceManager::DebugEngines)
         .def_readwrite("ManagerStats", &URuleEngineLoadBalanceManager::ManagerStats)
         .def_readwrite("MSPosition", &URuleEngineLoadBalanceManager::MSPosition)
-        .def("StaticClass", &URuleEngineLoadBalanceManager::StaticClass, py::return_value_policy::reference)
         .def("SetAsDebugging", &URuleEngineLoadBalanceManager::SetAsDebugging)
           ;
 }

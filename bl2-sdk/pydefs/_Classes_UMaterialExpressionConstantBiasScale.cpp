@@ -9,6 +9,5 @@ void Export_pystes_UMaterialExpressionConstantBiasScale(py::module &m)
         .def_readwrite("Input", &UMaterialExpressionConstantBiasScale::Input)
         .def_readwrite("Bias", &UMaterialExpressionConstantBiasScale::Bias)
         .def_readwrite("Scale", &UMaterialExpressionConstantBiasScale::Scale)
-        .def("StaticClass", &UMaterialExpressionConstantBiasScale::StaticClass, py::return_value_policy::reference)
           ;
 }

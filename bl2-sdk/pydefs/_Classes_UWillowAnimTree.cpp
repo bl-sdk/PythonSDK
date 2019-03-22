@@ -9,6 +9,5 @@ void Export_pystes_UWillowAnimTree(py::module &m)
         .def_readwrite("SimpleAnimNames", &UWillowAnimTree::SimpleAnimNames)
         .def_readwrite("PreviewWeapon", &UWillowAnimTree::PreviewWeapon)
         .def_readwrite("LeftHandAnimation", &UWillowAnimTree::LeftHandAnimation)
-        .def("StaticClass", &UWillowAnimTree::StaticClass, py::return_value_policy::reference)
           ;
 }

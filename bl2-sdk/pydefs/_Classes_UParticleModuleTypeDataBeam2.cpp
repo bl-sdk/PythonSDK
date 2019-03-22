@@ -19,6 +19,5 @@ void Export_pystes_UParticleModuleTypeDataBeam2(py::module &m)
         .def_readwrite("Distance", &UParticleModuleTypeDataBeam2::Distance)
         .def_readwrite("TaperFactor", &UParticleModuleTypeDataBeam2::TaperFactor)
         .def_readwrite("TaperScale", &UParticleModuleTypeDataBeam2::TaperScale)
-        .def("StaticClass", &UParticleModuleTypeDataBeam2::StaticClass, py::return_value_policy::reference)
           ;
 }

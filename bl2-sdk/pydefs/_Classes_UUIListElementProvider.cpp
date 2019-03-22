@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UUIListElementProvider(py::module &m)
 {
     py::class_< UUIListElementProvider,  UInterface   >(m, "UUIListElementProvider")
-        .def("StaticClass", &UUIListElementProvider::StaticClass, py::return_value_policy::reference)
           ;
 }

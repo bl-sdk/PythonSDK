@@ -10,6 +10,5 @@ void Export_pystes_UDLCLegacyPlayerClassIdentifierDefinition(py::module &m)
         .def_readwrite("AssociatedPlayerClassIdentifierPath", &UDLCLegacyPlayerClassIdentifierDefinition::AssociatedPlayerClassIdentifierPath)
         .def_readwrite("AsterClassMods", &UDLCLegacyPlayerClassIdentifierDefinition::AsterClassMods)
         .def_readwrite("LobeliaClassMods", &UDLCLegacyPlayerClassIdentifierDefinition::LobeliaClassMods)
-        .def("StaticClass", &UDLCLegacyPlayerClassIdentifierDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

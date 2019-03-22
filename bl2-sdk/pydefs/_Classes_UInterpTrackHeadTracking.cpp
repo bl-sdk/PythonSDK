@@ -14,6 +14,5 @@ void Export_pystes_UInterpTrackHeadTracking(py::module &m)
         .def_readwrite("MaxInterestTime", &UInterpTrackHeadTracking::MaxInterestTime)
         .def_readwrite("ActorClassesToLookAt", &UInterpTrackHeadTracking::ActorClassesToLookAt)
         .def_readwrite("TargetBoneNames", &UInterpTrackHeadTracking::TargetBoneNames)
-        .def("StaticClass", &UInterpTrackHeadTracking::StaticClass, py::return_value_policy::reference)
           ;
 }

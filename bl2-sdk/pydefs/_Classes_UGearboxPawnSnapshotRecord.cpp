@@ -71,6 +71,5 @@ void Export_pystes_UGearboxPawnSnapshotRecord(py::module &m)
         .def_readwrite("MovementHolds", &UGearboxPawnSnapshotRecord::MovementHolds)
         .def_readwrite("DemigodHolds", &UGearboxPawnSnapshotRecord::DemigodHolds)
         .def_readwrite("GodHolds", &UGearboxPawnSnapshotRecord::GodHolds)
-        .def("StaticClass", &UGearboxPawnSnapshotRecord::StaticClass, py::return_value_policy::reference)
           ;
 }

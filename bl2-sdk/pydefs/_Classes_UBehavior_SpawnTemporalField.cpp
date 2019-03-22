@@ -12,7 +12,6 @@ void Export_pystes_UBehavior_SpawnTemporalField(py::module &m)
         .def_readwrite("AttachmentPointName", &UBehavior_SpawnTemporalField::AttachmentPointName)
         .def_readwrite("RelativeLocation", &UBehavior_SpawnTemporalField::RelativeLocation)
         .def_readwrite("RelativeRotation", &UBehavior_SpawnTemporalField::RelativeRotation)
-        .def("StaticClass", &UBehavior_SpawnTemporalField::StaticClass, py::return_value_policy::reference)
         .def("GetAttachmentLocation", &UBehavior_SpawnTemporalField::GetAttachmentLocation)
         .def("ApplyBehaviorToContext", &UBehavior_SpawnTemporalField::ApplyBehaviorToContext)
           ;

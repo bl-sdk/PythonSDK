@@ -10,6 +10,5 @@ void Export_pystes_UApexComponentBase(py::module &m)
         .def_readwrite("ReleaseResourcesFence", &UApexComponentBase::ReleaseResourcesFence)
         .def_readwrite("Asset", &UApexComponentBase::Asset)
         .def_readwrite("WireframeColor", &UApexComponentBase::WireframeColor)
-        .def("StaticClass", &UApexComponentBase::StaticClass, py::return_value_policy::reference)
           ;
 }

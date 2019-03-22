@@ -7,6 +7,5 @@ void Export_pystes_UWillowPlayerSnapshotRecord(py::module &m)
 {
     py::class_< UWillowPlayerSnapshotRecord,  USnapshotRecord   >(m, "UWillowPlayerSnapshotRecord")
         .def_readwrite("MyWillowPawnName", &UWillowPlayerSnapshotRecord::MyWillowPawnName)
-        .def("StaticClass", &UWillowPlayerSnapshotRecord::StaticClass, py::return_value_policy::reference)
           ;
 }

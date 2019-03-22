@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UPlayerDetailsGFxObject(py::module &m)
 {
     py::class_< UPlayerDetailsGFxObject,  UGFxObject   >(m, "UPlayerDetailsGFxObject")
-        .def("StaticClass", &UPlayerDetailsGFxObject::StaticClass, py::return_value_policy::reference)
         .def("SetClickHandler", &UPlayerDetailsGFxObject::SetClickHandler)
         .def("NavigateDown", &UPlayerDetailsGFxObject::NavigateDown)
         .def("NavigateUp", &UPlayerDetailsGFxObject::NavigateUp)

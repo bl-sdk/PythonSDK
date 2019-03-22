@@ -11,7 +11,6 @@ void Export_pystes_UManufacturerDefinition(py::module &m)
         .def_readwrite("IconX", &UManufacturerDefinition::IconX)
         .def_readwrite("IconY", &UManufacturerDefinition::IconY)
         .def_readwrite("StatId", &UManufacturerDefinition::StatId)
-        .def("StaticClass", &UManufacturerDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetManufacturerGradeDisplayName", &UManufacturerDefinition::GetManufacturerGradeDisplayName)
           ;
 }

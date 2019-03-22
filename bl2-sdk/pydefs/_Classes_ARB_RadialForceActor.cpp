@@ -14,7 +14,6 @@ void Export_pystes_ARB_RadialForceActor(py::module &m)
         .def_readwrite("ForceFalloff", &ARB_RadialForceActor::ForceFalloff)
         .def_readwrite("RadialForceMode", &ARB_RadialForceActor::RadialForceMode)
         .def_readwrite("CollideWithChannels", &ARB_RadialForceActor::CollideWithChannels)
-        .def("StaticClass", &ARB_RadialForceActor::StaticClass, py::return_value_policy::reference)
         .def("OnToggle", &ARB_RadialForceActor::OnToggle)
           ;
 }

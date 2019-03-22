@@ -10,7 +10,6 @@ void Export_pystes_UBehavior_PostProcessChain(py::module &m)
         .def_readwrite("Action", &UBehavior_PostProcessChain::Action)
         .def_readwrite("Chain", &UBehavior_PostProcessChain::Chain)
         .def_readwrite("DOFEffectModifier", &UBehavior_PostProcessChain::DOFEffectModifier)
-        .def("StaticClass", &UBehavior_PostProcessChain::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_PostProcessChain::ApplyBehaviorToContext)
           ;
 }

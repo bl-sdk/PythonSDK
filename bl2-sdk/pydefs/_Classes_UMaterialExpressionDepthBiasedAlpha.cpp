@@ -9,6 +9,5 @@ void Export_pystes_UMaterialExpressionDepthBiasedAlpha(py::module &m)
         .def_readwrite("BiasScale", &UMaterialExpressionDepthBiasedAlpha::BiasScale)
         .def_readwrite("Alpha", &UMaterialExpressionDepthBiasedAlpha::Alpha)
         .def_readwrite("Bias", &UMaterialExpressionDepthBiasedAlpha::Bias)
-        .def("StaticClass", &UMaterialExpressionDepthBiasedAlpha::StaticClass, py::return_value_policy::reference)
           ;
 }

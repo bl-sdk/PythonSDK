@@ -9,6 +9,5 @@ void Export_pystes_UMaterialExpressionSteepParallaxOffset(py::module &m)
         .def_readwrite("ParallaxTexture", &UMaterialExpressionSteepParallaxOffset::ParallaxTexture)
         .def_readwrite("NumSteps", &UMaterialExpressionSteepParallaxOffset::NumSteps)
         .def_readwrite("HeightScaleInput", &UMaterialExpressionSteepParallaxOffset::HeightScaleInput)
-        .def("StaticClass", &UMaterialExpressionSteepParallaxOffset::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -10,6 +10,5 @@ void Export_pystes_UFiringZoneDefinition(py::module &m)
         .def_readwrite("OuterRimDistance", &UFiringZoneDefinition::OuterRimDistance)
         .def_readwrite("ZoneColor", &UFiringZoneDefinition::ZoneColor)
         .def_readwrite("FiringBehavior", &UFiringZoneDefinition::FiringBehavior)
-        .def("StaticClass", &UFiringZoneDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

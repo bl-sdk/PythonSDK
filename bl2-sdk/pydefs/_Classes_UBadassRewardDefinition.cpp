@@ -12,7 +12,6 @@ void Export_pystes_UBadassRewardDefinition(py::module &m)
         .def_readwrite("AttrInitDef", &UBadassRewardDefinition::AttrInitDef)
         .def_readwrite("Presentation", &UBadassRewardDefinition::Presentation)
         .def_readwrite("CachedRewardIndex", &UBadassRewardDefinition::CachedRewardIndex)
-        .def("StaticClass", &UBadassRewardDefinition::StaticClass, py::return_value_policy::reference)
         .def("UpdateCachedRewardIndex", &UBadassRewardDefinition::UpdateCachedRewardIndex)
           ;
 }

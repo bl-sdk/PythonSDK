@@ -10,6 +10,5 @@ void Export_pystes_UInputDeviceCollectionDefinition(py::module &m)
         .def_readwrite("PS3InputDevices", &UInputDeviceCollectionDefinition::PS3InputDevices)
         .def_readwrite("PCInputDevices", &UInputDeviceCollectionDefinition::PCInputDevices)
         .def_readwrite("PCKeyBindGroups", &UInputDeviceCollectionDefinition::PCKeyBindGroups)
-        .def("StaticClass", &UInputDeviceCollectionDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

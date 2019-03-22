@@ -9,6 +9,5 @@ void Export_pystes_UParticleModuleTypeDataTrail(py::module &m)
         .def_readwrite("TessellationFactor", &UParticleModuleTypeDataTrail::TessellationFactor)
         .def_readwrite("Tension", &UParticleModuleTypeDataTrail::Tension)
         .def_readwrite("SpawnDistance", &UParticleModuleTypeDataTrail::SpawnDistance)
-        .def("StaticClass", &UParticleModuleTypeDataTrail::StaticClass, py::return_value_policy::reference)
           ;
 }

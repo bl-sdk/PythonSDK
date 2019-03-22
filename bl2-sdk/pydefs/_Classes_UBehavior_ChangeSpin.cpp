@@ -9,7 +9,6 @@ void Export_pystes_UBehavior_ChangeSpin(py::module &m)
         .def_readwrite("YawRate", &UBehavior_ChangeSpin::YawRate)
         .def_readwrite("PitchRate", &UBehavior_ChangeSpin::PitchRate)
         .def_readwrite("RollRate", &UBehavior_ChangeSpin::RollRate)
-        .def("StaticClass", &UBehavior_ChangeSpin::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_ChangeSpin::ApplyBehaviorToContext)
           ;
 }

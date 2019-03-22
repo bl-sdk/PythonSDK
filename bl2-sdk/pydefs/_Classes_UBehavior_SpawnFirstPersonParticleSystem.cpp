@@ -13,7 +13,6 @@ void Export_pystes_UBehavior_SpawnFirstPersonParticleSystem(py::module &m)
         .def_readwrite("RelativeLocation", &UBehavior_SpawnFirstPersonParticleSystem::RelativeLocation)
         .def_readwrite("RelativeRotation", &UBehavior_SpawnFirstPersonParticleSystem::RelativeRotation)
         .def_readwrite("DrawScale", &UBehavior_SpawnFirstPersonParticleSystem::DrawScale)
-        .def("StaticClass", &UBehavior_SpawnFirstPersonParticleSystem::StaticClass, py::return_value_policy::reference)
         .def("PublishBehaviorOutput", &UBehavior_SpawnFirstPersonParticleSystem::PublishBehaviorOutput)
         .def("ApplyBehaviorToContext", &UBehavior_SpawnFirstPersonParticleSystem::ApplyBehaviorToContext)
           ;

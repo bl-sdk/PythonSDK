@@ -9,7 +9,6 @@ void Export_pystes_UBehavior_IsSequenceEnabled(py::module &m)
         .def_readwrite("SequenceName", &UBehavior_IsSequenceEnabled::SequenceName)
         .def_readwrite("SequenceProvider", &UBehavior_IsSequenceEnabled::SequenceProvider)
         .def_readwrite("ProviderDefinitionPathName", &UBehavior_IsSequenceEnabled::ProviderDefinitionPathName)
-        .def("StaticClass", &UBehavior_IsSequenceEnabled::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_IsSequenceEnabled::ApplyBehaviorToContext)
           ;
 }

@@ -12,7 +12,6 @@ void Export_pystes_ADynamicCameraActor(py::module &m)
         .def_readwrite("CamOverridePostProcess", &ACameraActor::CamOverridePostProcess)
         .def_readwrite("DrawFrustum", &ACameraActor::DrawFrustum)
         .def_readwrite("MeshComp", &ACameraActor::MeshComp)
-        .def("StaticClass", &ADynamicCameraActor::StaticClass, py::return_value_policy::reference)
         .def("GetCameraView", &ACameraActor::GetCameraView)
           ;
 }

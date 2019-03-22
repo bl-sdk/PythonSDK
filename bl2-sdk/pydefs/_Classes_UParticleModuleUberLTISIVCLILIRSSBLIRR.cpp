@@ -16,6 +16,5 @@ void Export_pystes_UParticleModuleUberLTISIVCLILIRSSBLIRR(py::module &m)
         .def_readwrite("StartRotation", &UParticleModuleUberLTISIVCLILIRSSBLIRR::StartRotation)
         .def_readwrite("SizeLifeMultiplier", &UParticleModuleUberLTISIVCLILIRSSBLIRR::SizeLifeMultiplier)
         .def_readwrite("StartRotationRate", &UParticleModuleUberLTISIVCLILIRSSBLIRR::StartRotationRate)
-        .def("StaticClass", &UParticleModuleUberLTISIVCLILIRSSBLIRR::StaticClass, py::return_value_policy::reference)
           ;
 }

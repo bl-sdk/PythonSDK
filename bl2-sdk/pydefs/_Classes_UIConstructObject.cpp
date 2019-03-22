@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UIConstructObject(py::module &m)
 {
     py::class_< UIConstructObject,  UInterface   >(m, "UIConstructObject")
-        .def("StaticClass", &UIConstructObject::StaticClass, py::return_value_policy::reference)
           ;
 }

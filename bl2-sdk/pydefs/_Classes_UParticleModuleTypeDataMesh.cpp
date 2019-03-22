@@ -14,6 +14,5 @@ void Export_pystes_UParticleModuleTypeDataMesh(py::module &m)
         .def_readwrite("Pitch", &UParticleModuleTypeDataMesh::Pitch)
         .def_readwrite("Roll", &UParticleModuleTypeDataMesh::Roll)
         .def_readwrite("Yaw", &UParticleModuleTypeDataMesh::Yaw)
-        .def("StaticClass", &UParticleModuleTypeDataMesh::StaticClass, py::return_value_policy::reference)
           ;
 }

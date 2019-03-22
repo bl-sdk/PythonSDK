@@ -8,6 +8,5 @@ void Export_pystes_APrecomputedVisibilityOverrideVolume(py::module &m)
     py::class_< APrecomputedVisibilityOverrideVolume,  AVolume   >(m, "APrecomputedVisibilityOverrideVolume")
         .def_readwrite("OverrideVisibleActors", &APrecomputedVisibilityOverrideVolume::OverrideVisibleActors)
         .def_readwrite("OverrideInvisibleActors", &APrecomputedVisibilityOverrideVolume::OverrideInvisibleActors)
-        .def("StaticClass", &APrecomputedVisibilityOverrideVolume::StaticClass, py::return_value_policy::reference)
           ;
 }

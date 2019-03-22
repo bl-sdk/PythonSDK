@@ -13,6 +13,5 @@ void Export_pystes_UDrawCylinderComponent(py::module &m)
         .def_readwrite("CylinderHeight", &UDrawCylinderComponent::CylinderHeight)
         .def_readwrite("CylinderHeightOffset", &UDrawCylinderComponent::CylinderHeightOffset)
         .def_readwrite("CylinderSides", &UDrawCylinderComponent::CylinderSides)
-        .def("StaticClass", &UDrawCylinderComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

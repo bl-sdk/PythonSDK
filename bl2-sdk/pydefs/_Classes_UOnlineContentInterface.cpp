@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UOnlineContentInterface(py::module &m)
 {
     py::class_< UOnlineContentInterface,  UInterface   >(m, "UOnlineContentInterface")
-        .def("StaticClass", &UOnlineContentInterface::StaticClass, py::return_value_policy::reference)
         .def("ClearCheckDownloadableContentListDelegate", &UOnlineContentInterface::ClearCheckDownloadableContentListDelegate)
         .def("AddCheckDownloadableContentListDelegate", &UOnlineContentInterface::AddCheckDownloadableContentListDelegate)
         .def("CheckDownloadableContentList", &UOnlineContentInterface::CheckDownloadableContentList)

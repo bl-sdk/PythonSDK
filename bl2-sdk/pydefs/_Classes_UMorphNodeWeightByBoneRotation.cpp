@@ -14,6 +14,5 @@ void Export_pystes_UMorphNodeWeightByBoneRotation(py::module &m)
         .def_readwrite("MaterialSlotId", &UMorphNodeWeightByBoneRotation::MaterialSlotId)
         .def_readwrite("ScalarParameterName", &UMorphNodeWeightByBoneRotation::ScalarParameterName)
         .def_readwrite("MaterialInstanceConstant", &UMorphNodeWeightByBoneRotation::MaterialInstanceConstant)
-        .def("StaticClass", &UMorphNodeWeightByBoneRotation::StaticClass, py::return_value_policy::reference)
           ;
 }

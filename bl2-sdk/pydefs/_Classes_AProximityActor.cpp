@@ -9,7 +9,6 @@ void Export_pystes_AProximityActor(py::module &m)
         .def_readwrite("ProximityRadius", &AProximityActor::ProximityRadius)
         .def_readwrite("ProximityHeight", &AProximityActor::ProximityHeight)
         .def_readwrite("ProximityCylinder", &AProximityActor::ProximityCylinder)
-        .def("StaticClass", &AProximityActor::StaticClass, py::return_value_policy::reference)
         .def("eventTouch", &AProximityActor::eventTouch)
         .def("SetProximitySize", &AProximityActor::SetProximitySize)
           ;

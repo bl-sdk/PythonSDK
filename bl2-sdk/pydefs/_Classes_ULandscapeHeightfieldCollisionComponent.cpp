@@ -15,6 +15,5 @@ void Export_pystes_ULandscapeHeightfieldCollisionComponent(py::module &m)
         .def_readwrite("PhysicalMaterials", &ULandscapeHeightfieldCollisionComponent::PhysicalMaterials)
         .def_readwrite("RBHeightfield", &ULandscapeHeightfieldCollisionComponent::RBHeightfield)
         .def_readwrite("CachedBoxSphereBounds", &ULandscapeHeightfieldCollisionComponent::CachedBoxSphereBounds)
-        .def("StaticClass", &ULandscapeHeightfieldCollisionComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

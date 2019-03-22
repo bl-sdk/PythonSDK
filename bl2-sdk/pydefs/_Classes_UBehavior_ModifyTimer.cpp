@@ -9,7 +9,6 @@ void Export_pystes_UBehavior_ModifyTimer(py::module &m)
         .def_readwrite("TimerId", &UBehavior_ModifyTimer::TimerId)
         .def_readwrite("Operation", &UBehavior_ModifyTimer::Operation)
         .def_readwrite("NewTimerDelay", &UBehavior_ModifyTimer::NewTimerDelay)
-        .def("StaticClass", &UBehavior_ModifyTimer::StaticClass, py::return_value_policy::reference)
         .def("PublishBehaviorOutput", &UBehavior_ModifyTimer::PublishBehaviorOutput)
         .def("ApplyBehaviorToContext", &UBehavior_ModifyTimer::ApplyBehaviorToContext)
           ;

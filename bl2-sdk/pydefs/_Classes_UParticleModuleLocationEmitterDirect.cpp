@@ -7,6 +7,5 @@ void Export_pystes_UParticleModuleLocationEmitterDirect(py::module &m)
 {
     py::class_< UParticleModuleLocationEmitterDirect,  UParticleModuleLocationBase   >(m, "UParticleModuleLocationEmitterDirect")
         .def_readwrite("EmitterName", &UParticleModuleLocationEmitterDirect::EmitterName)
-        .def("StaticClass", &UParticleModuleLocationEmitterDirect::StaticClass, py::return_value_policy::reference)
           ;
 }

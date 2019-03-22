@@ -15,6 +15,5 @@ void Export_pystes_UTexture(py::module &m)
         .def_readwrite("NumCinematicMipLevels", &UTexture::NumCinematicMipLevels)
         .def_readwrite("Resource", &UTexture::Resource)
         .def_readwrite("InternalFormatLODBias", &UTexture::InternalFormatLODBias)
-        .def("StaticClass", &UTexture::StaticClass, py::return_value_policy::reference)
           ;
 }

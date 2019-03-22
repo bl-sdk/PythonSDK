@@ -11,6 +11,5 @@ void Export_pystes_UFastTravelStationDefinition(py::module &m)
         .def_readwrite("InaccessibleObjective", &UFastTravelStationDefinition::InaccessibleObjective)
         .def_readwrite("AccessibleObjective", &UFastTravelStationDefinition::AccessibleObjective)
         .def_readwrite("AccessibilityTime", &UFastTravelStationDefinition::AccessibilityTime)
-        .def("StaticClass", &UFastTravelStationDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -13,6 +13,5 @@ void Export_pystes_UUIDataProvider_OnlinePlayerStorageArray(py::module &m)
         .def_readwrite("PlayerStorageName", &UUIDataProvider_OnlinePlayerStorageArray::PlayerStorageName)
         .def_readwrite("ColumnHeaderText", &UUIDataProvider_OnlinePlayerStorageArray::ColumnHeaderText)
         .def_readwrite("Values", &UUIDataProvider_OnlinePlayerStorageArray::Values)
-        .def("StaticClass", &UUIDataProvider_OnlinePlayerStorageArray::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_USurface(py::module &m)
 {
     py::class_< USurface,  UObject   >(m, "USurface")
-        .def("StaticClass", &USurface::StaticClass, py::return_value_policy::reference)
         .def("GetSurfaceHeight", &USurface::GetSurfaceHeight)
         .def("GetSurfaceWidth", &USurface::GetSurfaceWidth)
           ;

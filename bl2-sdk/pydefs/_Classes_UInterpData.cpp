@@ -14,6 +14,5 @@ void Export_pystes_UInterpData(py::module &m)
         .def_readwrite("EdSectionEnd", &UInterpData::EdSectionEnd)
         .def_readwrite("BakeAndPruneStatus", &UInterpData::BakeAndPruneStatus)
         .def_readwrite("CachedDirectorGroup", &UInterpData::CachedDirectorGroup)
-        .def("StaticClass", &UInterpData::StaticClass, py::return_value_policy::reference)
           ;
 }

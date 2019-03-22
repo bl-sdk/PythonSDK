@@ -18,6 +18,5 @@ void Export_pystes_UApexClothingAsset(py::module &m)
         .def_readwrite("LodWeightsBenefitsBias", &UApexClothingAsset::LodWeightsBenefitsBias)
         .def_readwrite("OriginalApexName", &UApexAsset::OriginalApexName)
         .def_readwrite("ApexComponents", &UApexAsset::ApexComponents)
-        .def("StaticClass", &UApexClothingAsset::StaticClass, py::return_value_policy::reference)
           ;
 }

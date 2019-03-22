@@ -9,6 +9,5 @@ void Export_pystes_UInputDeviceDefinition(py::module &m)
         .def_readwrite("Axes", &UInputDeviceDefinition::Axes)
         .def_readwrite("LookAxisDefinitions", &UInputDeviceDefinition::LookAxisDefinitions)
         .def_readwrite("Buttons", &UInputDeviceDefinition::Buttons)
-        .def("StaticClass", &UInputDeviceDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

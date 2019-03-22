@@ -12,7 +12,6 @@ void Export_pystes_UBehavior_SetPawnThrottleData(py::module &m)
         .def_readwrite("MaxThrottleDistance", &UBehavior_SetPawnThrottleData::MaxThrottleDistance)
         .def_readwrite("MinThrottleTime", &UBehavior_SetPawnThrottleData::MinThrottleTime)
         .def_readwrite("MaxThrottleTime", &UBehavior_SetPawnThrottleData::MaxThrottleTime)
-        .def("StaticClass", &UBehavior_SetPawnThrottleData::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_SetPawnThrottleData::ApplyBehaviorToContext)
           ;
 }

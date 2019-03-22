@@ -9,6 +9,5 @@ void Export_pystes_USeqAct_MathInteger(py::module &m)
         .def_readwrite("ValueA", &USeqAct_MathInteger::ValueA)
         .def_readwrite("ValueB", &USeqAct_MathInteger::ValueB)
         .def_readwrite("Result", &USeqAct_MathInteger::Result)
-        .def("StaticClass", &USeqAct_MathInteger::StaticClass, py::return_value_policy::reference)
           ;
 }

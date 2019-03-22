@@ -9,7 +9,6 @@ void Export_pystes_USeqAct_Log(py::module &m)
         .def_readwrite("TargetDuration", &USeqAct_Log::TargetDuration)
         .def_readwrite("TargetOffset", &USeqAct_Log::TargetOffset)
         .def_readwrite("LogMessage", &USeqAct_Log::LogMessage)
-        .def("StaticClass", &USeqAct_Log::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqAct_Log::eventGetObjClassVersion)
           ;
 }

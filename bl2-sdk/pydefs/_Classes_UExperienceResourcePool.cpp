@@ -15,7 +15,6 @@ void Export_pystes_UExperienceResourcePool(py::module &m)
         .def_readwrite("ExpAllPointsScale", &UExperienceResourcePool::ExpAllPointsScale)
         .def_readwrite("ExpAllPointsScaleBaseValue", &UExperienceResourcePool::ExpAllPointsScaleBaseValue)
         .def_readwrite("ExpAllPointsScaleModifierStack", &UExperienceResourcePool::ExpAllPointsScaleModifierStack)
-        .def("StaticClass", &UExperienceResourcePool::StaticClass, py::return_value_policy::reference)
         .def("ApplyExpPointsToExpLevel", &UExperienceResourcePool::ApplyExpPointsToExpLevel)
           ;
 }

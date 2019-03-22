@@ -16,6 +16,5 @@ void Export_pystes_ULine(py::module &m)
         .def_readwrite("CombatZoneID", &ULine::CombatZoneID)
         .def_readwrite("CombatZoneName", &ULine::CombatZoneName)
         .def_readwrite("RegionData", &ULine::RegionData)
-        .def("StaticClass", &ULine::StaticClass, py::return_value_policy::reference)
           ;
 }

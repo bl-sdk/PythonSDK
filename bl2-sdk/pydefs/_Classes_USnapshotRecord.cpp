@@ -33,6 +33,5 @@ void Export_pystes_USnapshotRecord(py::module &m)
         .def_readwrite("DisabledRulesColor", &USnapshotRecord::DisabledRulesColor)
         .def_readwrite("FlagsColor", &USnapshotRecord::FlagsColor)
         .def_readwrite("ResourcesColor", &USnapshotRecord::ResourcesColor)
-        .def("StaticClass", &USnapshotRecord::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -13,7 +13,6 @@ void Export_pystes_UBehavior_SpawnActor(py::module &m)
         .def_readwrite("RelativeLocation", &UBehavior_SpawnActor::RelativeLocation)
         .def_readwrite("RelativeRotation", &UBehavior_SpawnActor::RelativeRotation)
         .def_readwrite("SpawnDirection", &UBehavior_SpawnActor::SpawnDirection)
-        .def("StaticClass", &UBehavior_SpawnActor::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_SpawnActor::ApplyBehaviorToContext)
           ;
 }

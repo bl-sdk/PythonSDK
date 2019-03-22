@@ -13,7 +13,6 @@ void Export_pystes_UBehavior_SpawnDecal(py::module &m)
         .def_readwrite("SpawnRotation", &UBehavior_SpawnDecal::SpawnRotation)
         .def_readwrite("SpawnLocation", &UBehavior_SpawnDecal::SpawnLocation)
         .def_readwrite("Thickness", &UBehavior_SpawnDecal::Thickness)
-        .def("StaticClass", &UBehavior_SpawnDecal::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_SpawnDecal::ApplyBehaviorToContext)
           ;
 }

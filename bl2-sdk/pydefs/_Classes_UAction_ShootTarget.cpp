@@ -12,6 +12,5 @@ void Export_pystes_UAction_ShootTarget(py::module &m)
         .def_readwrite("Range", &UAction_ShootTarget::Range)
         .def_readwrite("RangeType", &UAction_ShootTarget::RangeType)
         .def_readwrite("ZoneSearch", &UAction_ShootTarget::ZoneSearch)
-        .def("StaticClass", &UAction_ShootTarget::StaticClass, py::return_value_policy::reference)
           ;
 }

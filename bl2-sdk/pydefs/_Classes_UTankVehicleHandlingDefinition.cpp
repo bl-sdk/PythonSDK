@@ -15,6 +15,5 @@ void Export_pystes_UTankVehicleHandlingDefinition(py::module &m)
         .def_readwrite("TurnGripScaleRate", &UTankVehicleHandlingDefinition::TurnGripScaleRate)
         .def_readwrite("SteeringThresholdForStoppedTurns", &UTankVehicleHandlingDefinition::SteeringThresholdForStoppedTurns)
         .def_readwrite("EngineDampingOnStoppedTurns", &UTankVehicleHandlingDefinition::EngineDampingOnStoppedTurns)
-        .def("StaticClass", &UTankVehicleHandlingDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

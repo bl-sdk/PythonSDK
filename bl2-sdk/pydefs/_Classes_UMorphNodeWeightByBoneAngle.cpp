@@ -16,6 +16,5 @@ void Export_pystes_UMorphNodeWeightByBoneAngle(py::module &m)
         .def_readwrite("ScalarParameterName", &UMorphNodeWeightByBoneAngle::ScalarParameterName)
         .def_readwrite("MaterialInstanceConstant", &UMorphNodeWeightByBoneAngle::MaterialInstanceConstant)
         .def_readwrite("WeightArray", &UMorphNodeWeightByBoneAngle::WeightArray)
-        .def("StaticClass", &UMorphNodeWeightByBoneAngle::StaticClass, py::return_value_policy::reference)
           ;
 }

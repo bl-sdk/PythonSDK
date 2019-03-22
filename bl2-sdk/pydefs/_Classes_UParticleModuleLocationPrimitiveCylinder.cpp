@@ -9,6 +9,5 @@ void Export_pystes_UParticleModuleLocationPrimitiveCylinder(py::module &m)
         .def_readwrite("StartRadius", &UParticleModuleLocationPrimitiveCylinder::StartRadius)
         .def_readwrite("StartHeight", &UParticleModuleLocationPrimitiveCylinder::StartHeight)
         .def_readwrite("HeightAxis", &UParticleModuleLocationPrimitiveCylinder::HeightAxis)
-        .def("StaticClass", &UParticleModuleLocationPrimitiveCylinder::StaticClass, py::return_value_policy::reference)
           ;
 }

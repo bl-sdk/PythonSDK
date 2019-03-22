@@ -9,6 +9,5 @@ void Export_pystes_UParticleModuleSubUVMovie(py::module &m)
         .def_readwrite("FrameRate", &UParticleModuleSubUVMovie::FrameRate)
         .def_readwrite("StartingFrame", &UParticleModuleSubUVMovie::StartingFrame)
         .def_readwrite("SubImageIndex", &UParticleModuleSubUV::SubImageIndex)
-        .def("StaticClass", &UParticleModuleSubUVMovie::StaticClass, py::return_value_policy::reference)
           ;
 }

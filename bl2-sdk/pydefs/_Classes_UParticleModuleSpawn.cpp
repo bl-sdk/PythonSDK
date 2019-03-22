@@ -10,6 +10,5 @@ void Export_pystes_UParticleModuleSpawn(py::module &m)
         .def_readwrite("RateScale", &UParticleModuleSpawn::RateScale)
         .def_readwrite("ParticleBurstMethod", &UParticleModuleSpawn::ParticleBurstMethod)
         .def_readwrite("BurstList", &UParticleModuleSpawn::BurstList)
-        .def("StaticClass", &UParticleModuleSpawn::StaticClass, py::return_value_policy::reference)
           ;
 }

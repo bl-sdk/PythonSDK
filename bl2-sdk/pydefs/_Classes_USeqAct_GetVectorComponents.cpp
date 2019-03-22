@@ -10,6 +10,5 @@ void Export_pystes_USeqAct_GetVectorComponents(py::module &m)
         .def_readwrite("X", &USeqAct_GetVectorComponents::X)
         .def_readwrite("Y", &USeqAct_GetVectorComponents::Y)
         .def_readwrite("Z", &USeqAct_GetVectorComponents::Z)
-        .def("StaticClass", &USeqAct_GetVectorComponents::StaticClass, py::return_value_policy::reference)
           ;
 }

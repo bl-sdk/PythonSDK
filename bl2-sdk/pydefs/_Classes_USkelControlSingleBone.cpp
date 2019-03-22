@@ -12,6 +12,5 @@ void Export_pystes_USkelControlSingleBone(py::module &m)
         .def_readwrite("TranslationSpaceBoneName", &USkelControlSingleBone::TranslationSpaceBoneName)
         .def_readwrite("BoneRotation", &USkelControlSingleBone::BoneRotation)
         .def_readwrite("RotationSpaceBoneName", &USkelControlSingleBone::RotationSpaceBoneName)
-        .def("StaticClass", &USkelControlSingleBone::StaticClass, py::return_value_policy::reference)
           ;
 }

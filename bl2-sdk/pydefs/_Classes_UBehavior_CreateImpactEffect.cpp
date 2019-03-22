@@ -11,7 +11,6 @@ void Export_pystes_UBehavior_CreateImpactEffect(py::module &m)
         .def_readwrite("ImpactDirection", &UBehavior_CreateImpactEffect::ImpactDirection)
         .def_readwrite("ImpactTraceLength", &UBehavior_CreateImpactEffect::ImpactTraceLength)
         .def_readwrite("ImpactTraceStartBackupLength", &UBehavior_CreateImpactEffect::ImpactTraceStartBackupLength)
-        .def("StaticClass", &UBehavior_CreateImpactEffect::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_CreateImpactEffect::ApplyBehaviorToContext)
           ;
 }

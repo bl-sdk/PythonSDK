@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UOnlineSuppliedUIInterface(py::module &m)
 {
     py::class_< UOnlineSuppliedUIInterface,  UInterface   >(m, "UOnlineSuppliedUIInterface")
-        .def("StaticClass", &UOnlineSuppliedUIInterface::StaticClass, py::return_value_policy::reference)
         .def("ShowMatchmakingUI", &UOnlineSuppliedUIInterface::ShowMatchmakingUI)
         .def("ClearShowOnlineStatsUICompleteDelegate", &UOnlineSuppliedUIInterface::ClearShowOnlineStatsUICompleteDelegate)
         .def("AddShowOnlineStatsUICompleteDelegate", &UOnlineSuppliedUIInterface::AddShowOnlineStatsUICompleteDelegate)

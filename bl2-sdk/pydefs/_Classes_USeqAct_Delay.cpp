@@ -10,7 +10,6 @@ void Export_pystes_USeqAct_Delay(py::module &m)
         .def_readwrite("Duration", &USeqAct_Delay::Duration)
         .def_readwrite("LastUpdateTime", &USeqAct_Delay::LastUpdateTime)
         .def_readwrite("RemainingTime", &USeqAct_Delay::RemainingTime)
-        .def("StaticClass", &USeqAct_Delay::StaticClass, py::return_value_policy::reference)
         .def("ResetDelayActive", &USeqAct_Delay::ResetDelayActive)
         .def("Reset", &USeqAct_Delay::Reset)
           ;

@@ -20,7 +20,6 @@ void Export_pystes_UAnimNodeSequenceBlendByAim(py::module &m)
         .def_readwrite("AnimName_RU", &UAnimNodeSequenceBlendByAim::AnimName_RU)
         .def_readwrite("AnimName_RC", &UAnimNodeSequenceBlendByAim::AnimName_RC)
         .def_readwrite("AnimName_RD", &UAnimNodeSequenceBlendByAim::AnimName_RD)
-        .def("StaticClass", &UAnimNodeSequenceBlendByAim::StaticClass, py::return_value_policy::reference)
         .def("CheckAnimsUpToDate", &UAnimNodeSequenceBlendByAim::CheckAnimsUpToDate)
           ;
 }

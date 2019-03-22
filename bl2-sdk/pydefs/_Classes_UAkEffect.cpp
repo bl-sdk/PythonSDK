@@ -7,6 +7,5 @@ void Export_pystes_UAkEffect(py::module &m)
 {
     py::class_< UAkEffect,  UAkObject   >(m, "UAkEffect")
         .def_readwrite("EffectName", &UAkEffect::EffectName)
-        .def("StaticClass", &UAkEffect::StaticClass, py::return_value_policy::reference)
           ;
 }

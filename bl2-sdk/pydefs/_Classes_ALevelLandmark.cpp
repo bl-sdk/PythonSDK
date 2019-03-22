@@ -9,6 +9,5 @@ void Export_pystes_ALevelLandmark(py::module &m)
         .def_readwrite("LandmarkName", &ALevelLandmark::LandmarkName)
         .def_readwrite("LandmarkType", &ALevelLandmark::LandmarkType)
         .def_readwrite("AssociatedStationDefinitionName", &ALevelLandmark::AssociatedStationDefinitionName)
-        .def("StaticClass", &ALevelLandmark::StaticClass, py::return_value_policy::reference)
           ;
 }

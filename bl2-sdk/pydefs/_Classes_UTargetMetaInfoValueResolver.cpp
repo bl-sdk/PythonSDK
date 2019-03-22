@@ -7,6 +7,5 @@ void Export_pystes_UTargetMetaInfoValueResolver(py::module &m)
 {
     py::class_< UTargetMetaInfoValueResolver,  UAttributeValueResolver   >(m, "UTargetMetaInfoValueResolver")
         .def_readwrite("PropertyName", &UTargetMetaInfoValueResolver::PropertyName)
-        .def("StaticClass", &UTargetMetaInfoValueResolver::StaticClass, py::return_value_policy::reference)
           ;
 }

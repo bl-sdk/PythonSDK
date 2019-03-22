@@ -14,6 +14,5 @@ void Export_pystes_UEdgeDetectionPostProcessEffect(py::module &m)
         .def_readwrite("NearDist", &UEdgeDetectionPostProcessEffect::NearDist)
         .def_readwrite("SobelPower", &UEdgeDetectionPostProcessEffect::SobelPower)
         .def_readwrite("TexelOffset", &UEdgeDetectionPostProcessEffect::TexelOffset)
-        .def("StaticClass", &UEdgeDetectionPostProcessEffect::StaticClass, py::return_value_policy::reference)
           ;
 }

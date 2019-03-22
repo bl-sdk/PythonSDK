@@ -10,6 +10,5 @@ void Export_pystes_UParticleModuleAttractorLine(py::module &m)
         .def_readwrite("EndPoint1", &UParticleModuleAttractorLine::EndPoint1)
         .def_readwrite("Range", &UParticleModuleAttractorLine::Range)
         .def_readwrite("Strength", &UParticleModuleAttractorLine::Strength)
-        .def("StaticClass", &UParticleModuleAttractorLine::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -12,6 +12,5 @@ void Export_pystes_ALevelLandmarkAnchor(py::module &m)
         .def_readwrite("TextureSizeY", &ALevelLandmarkAnchor::TextureSizeY)
         .def_readwrite("MapFrame", &ALevelLandmarkAnchor::MapFrame)
         .def_readwrite("DLCMap", &ALevelLandmarkAnchor::DLCMap)
-        .def("StaticClass", &ALevelLandmarkAnchor::StaticClass, py::return_value_policy::reference)
           ;
 }

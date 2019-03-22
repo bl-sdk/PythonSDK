@@ -22,6 +22,5 @@ void Export_pystes_UStatusEffectDefinition(py::module &m)
         .def_readwrite("DamageTypeDefinition", &UStatusEffectDefinition::DamageTypeDefinition)
         .def_readwrite("AppliedEffectStatId", &UStatusEffectDefinition::AppliedEffectStatId)
         .def_readwrite("ScreenParticleInit", &UStatusEffectDefinition::ScreenParticleInit)
-        .def("StaticClass", &UStatusEffectDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

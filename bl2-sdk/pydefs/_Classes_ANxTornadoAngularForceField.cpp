@@ -17,6 +17,5 @@ void Export_pystes_ANxTornadoAngularForceField(py::module &m)
         .def_readwrite("HeightOffset", &ANxTornadoAngularForceField::HeightOffset)
         .def_readwrite("SelfRotationStrength", &ANxTornadoAngularForceField::SelfRotationStrength)
         .def_readwrite("Kernel", &ANxTornadoAngularForceField::Kernel)
-        .def("StaticClass", &ANxTornadoAngularForceField::StaticClass, py::return_value_policy::reference)
           ;
 }

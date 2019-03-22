@@ -13,6 +13,5 @@ void Export_pystes_UParticleModuleBeamModifier(py::module &m)
         .def_readwrite("Tangent", &UParticleModuleBeamModifier::Tangent)
         .def_readwrite("StrengthOptions", &UParticleModuleBeamModifier::StrengthOptions)
         .def_readwrite("Strength", &UParticleModuleBeamModifier::Strength)
-        .def("StaticClass", &UParticleModuleBeamModifier::StaticClass, py::return_value_policy::reference)
           ;
 }

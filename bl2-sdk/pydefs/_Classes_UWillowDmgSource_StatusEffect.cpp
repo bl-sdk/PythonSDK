@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UWillowDmgSource_StatusEffect(py::module &m)
 {
     py::class_< UWillowDmgSource_StatusEffect,  UWillowDamageSource   >(m, "UWillowDmgSource_StatusEffect")
-        .def("StaticClass", &UWillowDmgSource_StatusEffect::StaticClass, py::return_value_policy::reference)
           ;
 }

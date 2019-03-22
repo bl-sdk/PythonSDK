@@ -9,7 +9,6 @@ void Export_pystes_UBehavior_UpgradeSkill(py::module &m)
         .def_readwrite("SkillToUpgrade", &UBehavior_UpgradeSkill::SkillToUpgrade)
         .def_readwrite("NumberOfLevelsToRaise", &UBehavior_UpgradeSkill::NumberOfLevelsToRaise)
         .def_readwrite("MaximumLevelToRaiseSkill", &UBehavior_UpgradeSkill::MaximumLevelToRaiseSkill)
-        .def("StaticClass", &UBehavior_UpgradeSkill::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_UpgradeSkill::ApplyBehaviorToContext)
           ;
 }

@@ -16,7 +16,6 @@ void Export_pystes_ASplineLoftActor(py::module &m)
         .def_readwrite("Offset", &ASplineLoftActor::Offset)
         .def_readwrite("MeshLightEnvironment", &ASplineLoftActor::MeshLightEnvironment)
         .def_readwrite("MeshMaxDrawDistance", &ASplineLoftActor::MeshMaxDrawDistance)
-        .def("StaticClass", &ASplineLoftActor::StaticClass, py::return_value_policy::reference)
         .def("UpdateSplineParams", &ASplineLoftActor::UpdateSplineParams)
         .def("ClearLoftMesh", &ASplineLoftActor::ClearLoftMesh)
           ;

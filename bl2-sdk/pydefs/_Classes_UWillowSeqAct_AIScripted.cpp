@@ -10,6 +10,5 @@ void Export_pystes_UWillowSeqAct_AIScripted(py::module &m)
         .def_readwrite("Destination", &UWillowSeqAct_AIScripted::Destination)
         .def_readwrite("Stance", &UWillowSeqAct_AIScripted::Stance)
         .def_readwrite("FocusStyle", &UWillowSeqAct_AIScripted::FocusStyle)
-        .def("StaticClass", &UWillowSeqAct_AIScripted::StaticClass, py::return_value_policy::reference)
           ;
 }

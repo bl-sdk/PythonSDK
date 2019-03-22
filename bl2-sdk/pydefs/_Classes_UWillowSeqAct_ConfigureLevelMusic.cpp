@@ -10,6 +10,5 @@ void Export_pystes_UWillowSeqAct_ConfigureLevelMusic(py::module &m)
         .def_readwrite("MusicStopAkEvent", &UWillowSeqAct_ConfigureLevelMusic::MusicStopAkEvent)
         .def_readwrite("AmbientAkState", &UWillowSeqAct_ConfigureLevelMusic::AmbientAkState)
         .def_readwrite("CombatAkState", &UWillowSeqAct_ConfigureLevelMusic::CombatAkState)
-        .def("StaticClass", &UWillowSeqAct_ConfigureLevelMusic::StaticClass, py::return_value_policy::reference)
           ;
 }

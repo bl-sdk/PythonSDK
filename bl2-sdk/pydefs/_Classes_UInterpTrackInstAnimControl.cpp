@@ -9,6 +9,5 @@ void Export_pystes_UInterpTrackInstAnimControl(py::module &m)
         .def_readwrite("LastUpdatePosition", &UInterpTrackInstAnimControl::LastUpdatePosition)
         .def_readwrite("ResetLocation", &UInterpTrackInstAnimControl::ResetLocation)
         .def_readwrite("ResetRotation", &UInterpTrackInstAnimControl::ResetRotation)
-        .def("StaticClass", &UInterpTrackInstAnimControl::StaticClass, py::return_value_policy::reference)
           ;
 }

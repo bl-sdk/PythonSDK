@@ -7,6 +7,5 @@ void Export_pystes_UBadassAttributeValueResolver(py::module &m)
 {
     py::class_< UBadassAttributeValueResolver,  UAttributeValueResolver   >(m, "UBadassAttributeValueResolver")
         .def_readwrite("AssociatedBadassReward", &UBadassAttributeValueResolver::AssociatedBadassReward)
-        .def("StaticClass", &UBadassAttributeValueResolver::StaticClass, py::return_value_policy::reference)
           ;
 }

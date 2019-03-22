@@ -12,6 +12,5 @@ void Export_pystes_ULookAxisDefinition(py::module &m)
         .def_readwrite("AccelRate", &ULookAxisDefinition::AccelRate)
         .def_readwrite("AccelSpeed", &ULookAxisDefinition::AccelSpeed)
         .def_readwrite("AccelWarmup", &ULookAxisDefinition::AccelWarmup)
-        .def("StaticClass", &ULookAxisDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

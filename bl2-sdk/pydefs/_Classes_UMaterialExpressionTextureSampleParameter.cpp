@@ -10,6 +10,5 @@ void Export_pystes_UMaterialExpressionTextureSampleParameter(py::module &m)
         .def_readwrite("ExpressionGUID", &UMaterialExpressionTextureSampleParameter::ExpressionGUID)
         .def_readwrite("Texture", &UMaterialExpressionTextureSample::Texture)
         .def_readwrite("Coordinates", &UMaterialExpressionTextureSample::Coordinates)
-        .def("StaticClass", &UMaterialExpressionTextureSampleParameter::StaticClass, py::return_value_policy::reference)
           ;
 }

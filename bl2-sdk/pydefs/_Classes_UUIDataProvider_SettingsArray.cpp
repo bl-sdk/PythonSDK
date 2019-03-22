@@ -13,6 +13,5 @@ void Export_pystes_UUIDataProvider_SettingsArray(py::module &m)
         .def_readwrite("SettingsName", &UUIDataProvider_SettingsArray::SettingsName)
         .def_readwrite("ColumnHeaderText", &UUIDataProvider_SettingsArray::ColumnHeaderText)
         .def_readwrite("Values", &UUIDataProvider_SettingsArray::Values)
-        .def("StaticClass", &UUIDataProvider_SettingsArray::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UFrontendMenuGFxObject(py::module &m)
 {
     py::class_< UFrontendMenuGFxObject,  UGFxObject   >(m, "UFrontendMenuGFxObject")
-        .def("StaticClass", &UFrontendMenuGFxObject::StaticClass, py::return_value_policy::reference)
         .def("FadeLobbyDeco", &UFrontendMenuGFxObject::FadeLobbyDeco)
         .def("SetDecoVisible", &UFrontendMenuGFxObject::SetDecoVisible)
         .def("ApplyPriorityVisibilityEffect", &UFrontendMenuGFxObject::ApplyPriorityVisibilityEffect)

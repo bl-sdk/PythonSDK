@@ -7,7 +7,6 @@ void Export_pystes_AResourcePoolManager(py::module &m)
 {
     py::class_< AResourcePoolManager,  AReplicationInfo   >(m, "AResourcePoolManager")
         .def_readwrite("NextPoolGUID", &AResourcePoolManager::NextPoolGUID)
-        .def("StaticClass", &AResourcePoolManager::StaticClass, py::return_value_policy::reference)
         .def("CreateResourcePoolManagerIfNecessary", [](AResourcePoolManager &self , class AActor* ActorOwner) { class AResourcePoolManager** pyMgr = 0 ;   self.CreateResourcePoolManagerIfNecessary(ActorOwner, pyMgr); return py::make_tuple(*pyMgr); })
         .def("DeletePoolAtIndex", &AResourcePoolManager::DeletePoolAtIndex)
         .def("InternalCreatePoolAtIndex", &AResourcePoolManager::InternalCreatePoolAtIndex, py::return_value_policy::reference)

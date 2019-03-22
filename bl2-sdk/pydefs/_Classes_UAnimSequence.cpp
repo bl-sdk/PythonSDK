@@ -30,7 +30,6 @@ void Export_pystes_UAnimSequence(py::module &m)
         .def_readwrite("EncodingPkgVersion", &UAnimSequence::EncodingPkgVersion)
         .def_readwrite("UseScore", &UAnimSequence::UseScore)
         .def_readwrite("DeltaTrackCache", &UAnimSequence::DeltaTrackCache)
-        .def("StaticClass", &UAnimSequence::StaticClass, py::return_value_policy::reference)
         .def("GetNotifyTimeByClass", [](UAnimSequence &self , class UClass* NotifyClass, float PlayRate, float StartPosition) { class UAnimNotify** pyout_Notify = 0 ; float* pyout_Duration = (float*)malloc(sizeof(float)) ;  float ret =  self.GetNotifyTimeByClass(NotifyClass, PlayRate, StartPosition, pyout_Notify, pyout_Duration); return py::make_tuple(ret, *pyout_Notify, *pyout_Duration); })
           ;
 }

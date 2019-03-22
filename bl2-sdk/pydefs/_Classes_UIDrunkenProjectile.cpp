@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UIDrunkenProjectile(py::module &m)
 {
     py::class_< UIDrunkenProjectile,  UInterface   >(m, "UIDrunkenProjectile")
-        .def("StaticClass", &UIDrunkenProjectile::StaticClass, py::return_value_policy::reference)
         .def("SetDrunkenRandomNumberSeed", &UIDrunkenProjectile::SetDrunkenRandomNumberSeed)
           ;
 }

@@ -9,6 +9,5 @@ void Export_pystes_UInterpGroupInst(py::module &m)
         .def_readwrite("Group", &UInterpGroupInst::Group)
         .def_readwrite("GroupActor", &UInterpGroupInst::GroupActor)
         .def_readwrite("TrackInst", &UInterpGroupInst::TrackInst)
-        .def("StaticClass", &UInterpGroupInst::StaticClass, py::return_value_policy::reference)
           ;
 }

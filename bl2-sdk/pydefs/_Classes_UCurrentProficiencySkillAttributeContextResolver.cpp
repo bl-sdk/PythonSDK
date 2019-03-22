@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UCurrentProficiencySkillAttributeContextResolver(py::module &m)
 {
     py::class_< UCurrentProficiencySkillAttributeContextResolver,  UAttributeContextResolver   >(m, "UCurrentProficiencySkillAttributeContextResolver")
-        .def("StaticClass", &UCurrentProficiencySkillAttributeContextResolver::StaticClass, py::return_value_policy::reference)
         .def("GetAttributeContext", &UCurrentProficiencySkillAttributeContextResolver::GetAttributeContext, py::return_value_policy::reference)
           ;
 }

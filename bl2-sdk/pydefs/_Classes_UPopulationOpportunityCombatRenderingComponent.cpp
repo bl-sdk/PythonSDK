@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UPopulationOpportunityCombatRenderingComponent(py::module &m)
 {
     py::class_< UPopulationOpportunityCombatRenderingComponent,  UPrimitiveComponent   >(m, "UPopulationOpportunityCombatRenderingComponent")
-        .def("StaticClass", &UPopulationOpportunityCombatRenderingComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

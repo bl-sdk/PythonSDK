@@ -9,6 +9,5 @@ void Export_pystes_UActorFactoryApexClothing(py::module &m)
         .def_readwrite("ClothingAssets", &UActorFactoryApexClothing::ClothingAssets)
         .def_readwrite("ClothingRBChannel", &UActorFactoryApexClothing::ClothingRBChannel)
         .def_readwrite("ClothingRBCollideWithChannels", &UActorFactoryApexClothing::ClothingRBCollideWithChannels)
-        .def("StaticClass", &UActorFactoryApexClothing::StaticClass, py::return_value_policy::reference)
           ;
 }

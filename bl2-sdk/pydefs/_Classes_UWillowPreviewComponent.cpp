@@ -7,6 +7,5 @@ void Export_pystes_UWillowPreviewComponent(py::module &m)
 {
     py::class_< UWillowPreviewComponent,  USkeletalMeshComponent   >(m, "UWillowPreviewComponent")
         .def_readwrite("CurrentPawn", &UWillowPreviewComponent::CurrentPawn)
-        .def("StaticClass", &UWillowPreviewComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

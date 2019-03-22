@@ -10,6 +10,5 @@ void Export_pystes_UDrawCapsuleComponent(py::module &m)
         .def_readwrite("CapsuleMaterial", &UDrawCapsuleComponent::CapsuleMaterial)
         .def_readwrite("CapsuleHeight", &UDrawCapsuleComponent::CapsuleHeight)
         .def_readwrite("CapsuleRadius", &UDrawCapsuleComponent::CapsuleRadius)
-        .def("StaticClass", &UDrawCapsuleComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

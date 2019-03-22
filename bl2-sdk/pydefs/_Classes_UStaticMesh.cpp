@@ -14,6 +14,5 @@ void Export_pystes_UStaticMesh(py::module &m)
         .def_readwrite("BodySetup", &UStaticMesh::BodySetup)
         .def_readwrite("DynamicShadowCastRelevance", &UStaticMesh::DynamicShadowCastRelevance)
         .def_readwrite("StreamingDistanceMultiplier", &UStaticMesh::StreamingDistanceMultiplier)
-        .def("StaticClass", &UStaticMesh::StaticClass, py::return_value_policy::reference)
           ;
 }

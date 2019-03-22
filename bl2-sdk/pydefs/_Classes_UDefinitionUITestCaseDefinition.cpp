@@ -14,6 +14,5 @@ void Export_pystes_UDefinitionUITestCaseDefinition(py::module &m)
         .def_readwrite("EditConstArrayOfReferences", &UDefinitionUITestCaseDefinition::EditConstArrayOfReferences)
         .def_readwrite("ReferencedDefinition", &UDefinitionUITestCaseDefinition::ReferencedDefinition)
         .def_readwrite("ArrayOfReferences", &UDefinitionUITestCaseDefinition::ArrayOfReferences)
-        .def("StaticClass", &UDefinitionUITestCaseDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

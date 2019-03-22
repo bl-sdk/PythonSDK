@@ -9,6 +9,5 @@ void Export_pystes_USeqAct_DisplayWillowHUDMessage(py::module &m)
         .def_readwrite("MessageType", &USeqAct_DisplayWillowHUDMessage::MessageType)
         .def_readwrite("MarkupString", &USeqAct_DisplayWillowHUDMessage::MarkupString)
         .def_readwrite("Duration", &USeqAct_DisplayWillowHUDMessage::Duration)
-        .def("StaticClass", &USeqAct_DisplayWillowHUDMessage::StaticClass, py::return_value_policy::reference)
           ;
 }

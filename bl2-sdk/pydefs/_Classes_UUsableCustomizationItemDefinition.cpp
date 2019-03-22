@@ -12,7 +12,6 @@ void Export_pystes_UUsableCustomizationItemDefinition(py::module &m)
         .def_readwrite("SecondaryColor", &UUsableCustomizationItemDefinition::SecondaryColor)
         .def_readwrite("TertiaryColor", &UUsableCustomizationItemDefinition::TertiaryColor)
         .def_readwrite("ItemCardTopStatString", &UUsableCustomizationItemDefinition::ItemCardTopStatString)
-        .def("StaticClass", &UUsableCustomizationItemDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetCustomizationDefinitionToUnlock", &UUsableCustomizationItemDefinition::GetCustomizationDefinitionToUnlock, py::return_value_policy::reference)
           ;
 }

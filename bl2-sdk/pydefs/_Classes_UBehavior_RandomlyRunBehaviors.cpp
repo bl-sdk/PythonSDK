@@ -10,7 +10,6 @@ void Export_pystes_UBehavior_RandomlyRunBehaviors(py::module &m)
         .def_readwrite("ProbabilityLowerBound", &UBehavior_RandomlyRunBehaviors::ProbabilityLowerBound)
         .def_readwrite("ProbabilityUpperBound", &UBehavior_RandomlyRunBehaviors::ProbabilityUpperBound)
         .def_readwrite("Possibilities", &UBehavior_RandomlyRunBehaviors::Possibilities)
-        .def("StaticClass", &UBehavior_RandomlyRunBehaviors::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehavior", &UBehavior_RandomlyRunBehaviors::ApplyBehavior)
           ;
 }

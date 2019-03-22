@@ -37,6 +37,5 @@ void Export_pystes_UVendingMachineGFxDefinition(py::module &m)
         .def_readwrite("Card1TextureLinkage", &UVendingMachineGFxDefinition::Card1TextureLinkage)
         .def_readwrite("Card2TextureLinkage", &UVendingMachineGFxDefinition::Card2TextureLinkage)
         .def_readwrite("RefreshInterval", &UVendingMachineGFxDefinition::RefreshInterval)
-        .def("StaticClass", &UVendingMachineGFxDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

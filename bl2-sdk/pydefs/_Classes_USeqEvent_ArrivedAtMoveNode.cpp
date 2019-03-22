@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_USeqEvent_ArrivedAtMoveNode(py::module &m)
 {
     py::class_< USeqEvent_ArrivedAtMoveNode,  USequenceEvent   >(m, "USeqEvent_ArrivedAtMoveNode")
-        .def("StaticClass", &USeqEvent_ArrivedAtMoveNode::StaticClass, py::return_value_policy::reference)
           ;
 }

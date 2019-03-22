@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UOnlineGameInterface(py::module &m)
 {
     py::class_< UOnlineGameInterface,  UInterface   >(m, "UOnlineGameInterface")
-        .def("StaticClass", &UOnlineGameInterface::StaticClass, py::return_value_policy::reference)
         .def("HasPendingBootInvite", &UOnlineGameInterface::HasPendingBootInvite)
         .def("CancelNATNegotiation", &UOnlineGameInterface::CancelNATNegotiation)
         .def("ClearJoinMigratedOnlineGameCompleteDelegate", &UOnlineGameInterface::ClearJoinMigratedOnlineGameCompleteDelegate)

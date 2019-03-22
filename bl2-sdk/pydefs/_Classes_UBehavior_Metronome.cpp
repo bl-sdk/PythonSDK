@@ -10,7 +10,6 @@ void Export_pystes_UBehavior_Metronome(py::module &m)
         .def_readwrite("CurrentTickCount", &UBehavior_Metronome::CurrentTickCount)
         .def_readwrite("Duration", &UBehavior_Metronome::Duration)
         .def_readwrite("TickInterval", &UBehavior_Metronome::TickInterval)
-        .def("StaticClass", &UBehavior_Metronome::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_Metronome::ApplyBehaviorToContext)
           ;
 }

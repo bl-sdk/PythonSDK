@@ -23,6 +23,5 @@ void Export_pystes_ULensFlare(py::module &m)
         .def_readwrite("ThumbnailAngle", &ULensFlare::ThumbnailAngle)
         .def_readwrite("ThumbnailDistance", &ULensFlare::ThumbnailDistance)
         .def_readwrite("ThumbnailImage", &ULensFlare::ThumbnailImage)
-        .def("StaticClass", &ULensFlare::StaticClass, py::return_value_policy::reference)
           ;
 }

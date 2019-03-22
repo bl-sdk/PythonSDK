@@ -9,7 +9,6 @@ void Export_pystes_UBehavior_PostProcessChain_LostShield(py::module &m)
         .def_readwrite("HealthParamName", &UBehavior_PostProcessChain_LostShield::HealthParamName)
         .def_readwrite("MaterialEffectName", &UBehavior_PostProcessChain_LostShield::MaterialEffectName)
         .def_readwrite("UpdateRate", &UBehavior_PostProcessChain_LostShield::UpdateRate)
-        .def("StaticClass", &UBehavior_PostProcessChain_LostShield::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_PostProcessChain_LostShield::ApplyBehaviorToContext)
           ;
 }

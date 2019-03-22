@@ -7,6 +7,5 @@ void Export_pystes_UResourcePoolAttributeDefinition(py::module &m)
 {
     py::class_< UResourcePoolAttributeDefinition,  UAttributeDefinition   >(m, "UResourcePoolAttributeDefinition")
         .def_readwrite("Resource", &UResourcePoolAttributeDefinition::Resource)
-        .def("StaticClass", &UResourcePoolAttributeDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

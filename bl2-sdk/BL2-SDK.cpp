@@ -314,8 +314,9 @@ namespace BL2SDK
 			const char* name = realParms->Key.GetName();
 			if (strcmp(name, "F11") == 0)
 			{
-				delete Python;
-				InitializePython();
+				/*delete Python;
+				InitializePython();*/
+				Python->DoFile("include\\init.py");
 				return false;
 			}
 			/*

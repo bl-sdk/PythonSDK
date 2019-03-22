@@ -22,7 +22,6 @@ void Export_pystes_UMindTargetInfo(py::module &m)
         .def_readwrite("IHaveSeenOrKnownThisTargetBefore", &UMindTargetInfo::IHaveSeenOrKnownThisTargetBefore)
         .def_readwrite("LastVisibleOrAudibleLocation", &UMindTargetInfo::LastVisibleOrAudibleLocation)
         .def_readwrite("BonusPriority", &UMindTargetInfo::BonusPriority)
-        .def("StaticClass", &UMindTargetInfo::StaticClass, py::return_value_policy::reference)
         .def("GetAverageHitTime", &UMindTargetInfo::GetAverageHitTime)
         .def("AddHitTargetRecord", &UMindTargetInfo::AddHitTargetRecord)
           ;

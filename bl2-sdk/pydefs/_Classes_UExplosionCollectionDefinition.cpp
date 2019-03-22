@@ -7,7 +7,6 @@ void Export_pystes_UExplosionCollectionDefinition(py::module &m)
 {
     py::class_< UExplosionCollectionDefinition,  UGBXDefinition   >(m, "UExplosionCollectionDefinition")
         .def_readwrite("Explosions", &UExplosionCollectionDefinition::Explosions)
-        .def("StaticClass", &UExplosionCollectionDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetExplosion", &UExplosionCollectionDefinition::GetExplosion, py::return_value_policy::reference)
           ;
 }

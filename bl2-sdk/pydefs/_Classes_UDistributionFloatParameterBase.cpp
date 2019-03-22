@@ -13,6 +13,5 @@ void Export_pystes_UDistributionFloatParameterBase(py::module &m)
         .def_readwrite("MaxOutput", &UDistributionFloatParameterBase::MaxOutput)
         .def_readwrite("ParamMode", &UDistributionFloatParameterBase::ParamMode)
         .def_readwrite("Constant", &UDistributionFloatConstant::Constant)
-        .def("StaticClass", &UDistributionFloatParameterBase::StaticClass, py::return_value_policy::reference)
           ;
 }

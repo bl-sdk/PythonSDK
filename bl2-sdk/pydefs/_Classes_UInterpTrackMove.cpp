@@ -14,6 +14,5 @@ void Export_pystes_UInterpTrackMove(py::module &m)
         .def_readwrite("AngCurveTension", &UInterpTrackMove::AngCurveTension)
         .def_readwrite("MoveFrame", &UInterpTrackMove::MoveFrame)
         .def_readwrite("RotMode", &UInterpTrackMove::RotMode)
-        .def("StaticClass", &UInterpTrackMove::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -14,6 +14,5 @@ void Export_pystes_UMaterialExpressionGradient(py::module &m)
         .def_readwrite("BackgroundColor", &UMaterialExpressionGradient::BackgroundColor)
         .def_readwrite("ForegroundOffset", &UMaterialExpressionGradient::ForegroundOffset)
         .def_readwrite("BackgroundOffset", &UMaterialExpressionGradient::BackgroundOffset)
-        .def("StaticClass", &UMaterialExpressionGradient::StaticClass, py::return_value_policy::reference)
           ;
 }

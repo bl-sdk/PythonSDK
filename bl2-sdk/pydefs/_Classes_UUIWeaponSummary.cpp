@@ -9,7 +9,6 @@ void Export_pystes_UUIWeaponSummary(py::module &m)
         .def_readwrite("ClassPathName", &UUIWeaponSummary::ClassPathName)
         .def_readwrite("FriendlyName", &UUIWeaponSummary::FriendlyName)
         .def_readwrite("WeaponDescription", &UUIWeaponSummary::WeaponDescription)
-        .def("StaticClass", &UUIWeaponSummary::StaticClass, py::return_value_policy::reference)
         .def("eventIsProviderDisabled", &UUIWeaponSummary::eventIsProviderDisabled)
           ;
 }

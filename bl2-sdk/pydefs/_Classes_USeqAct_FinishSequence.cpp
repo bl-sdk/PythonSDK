@@ -7,6 +7,5 @@ void Export_pystes_USeqAct_FinishSequence(py::module &m)
 {
     py::class_< USeqAct_FinishSequence,  USequenceAction   >(m, "USeqAct_FinishSequence")
         .def_readwrite("OutputLabel", &USeqAct_FinishSequence::OutputLabel)
-        .def("StaticClass", &USeqAct_FinishSequence::StaticClass, py::return_value_policy::reference)
           ;
 }

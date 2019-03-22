@@ -13,6 +13,5 @@ void Export_pystes_UParticleModuleBeamTarget(py::module &m)
         .def_readwrite("TargetTangent", &UParticleModuleBeamTarget::TargetTangent)
         .def_readwrite("TargetStrength", &UParticleModuleBeamTarget::TargetStrength)
         .def_readwrite("LockRadius", &UParticleModuleBeamTarget::LockRadius)
-        .def("StaticClass", &UParticleModuleBeamTarget::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -10,7 +10,6 @@ void Export_pystes_UBehavior_ChangeRemoteBehaviorSequenceState(py::module &m)
         .def_readwrite("SequenceName", &UBehavior_ChangeRemoteBehaviorSequenceState::SequenceName)
         .def_readwrite("SequenceProvider", &UBehavior_ChangeRemoteBehaviorSequenceState::SequenceProvider)
         .def_readwrite("ProviderDefinitionPathName", &UBehavior_ChangeRemoteBehaviorSequenceState::ProviderDefinitionPathName)
-        .def("StaticClass", &UBehavior_ChangeRemoteBehaviorSequenceState::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_ChangeRemoteBehaviorSequenceState::ApplyBehaviorToContext)
           ;
 }

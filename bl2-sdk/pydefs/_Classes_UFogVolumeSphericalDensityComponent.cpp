@@ -10,6 +10,5 @@ void Export_pystes_UFogVolumeSphericalDensityComponent(py::module &m)
         .def_readwrite("SphereCenter", &UFogVolumeSphericalDensityComponent::SphereCenter)
         .def_readwrite("SphereRadius", &UFogVolumeSphericalDensityComponent::SphereRadius)
         .def_readwrite("PreviewSphereRadius", &UFogVolumeSphericalDensityComponent::PreviewSphereRadius)
-        .def("StaticClass", &UFogVolumeSphericalDensityComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

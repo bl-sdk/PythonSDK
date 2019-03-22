@@ -7,7 +7,6 @@ void Export_pystes_UGearboxSkeletalMeshComponent(py::module &m)
 {
     py::class_< UGearboxSkeletalMeshComponent,  USkeletalMeshComponent   >(m, "UGearboxSkeletalMeshComponent")
         .def_readwrite("FOV", &UGearboxSkeletalMeshComponent::FOV)
-        .def("StaticClass", &UGearboxSkeletalMeshComponent::StaticClass, py::return_value_policy::reference)
         .def("SetFOV", &UGearboxSkeletalMeshComponent::SetFOV)
           ;
 }

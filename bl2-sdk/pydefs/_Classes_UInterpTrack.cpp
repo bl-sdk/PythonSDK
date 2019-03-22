@@ -13,6 +13,5 @@ void Export_pystes_UInterpTrack(py::module &m)
         .def_readwrite("ActiveCondition", &UInterpTrack::ActiveCondition)
         .def_readwrite("TrackPlayDirection", &UInterpTrack::TrackPlayDirection)
         .def_readwrite("TrackTitle", &UInterpTrack::TrackTitle)
-        .def("StaticClass", &UInterpTrack::StaticClass, py::return_value_policy::reference)
           ;
 }

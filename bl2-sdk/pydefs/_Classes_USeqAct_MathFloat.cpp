@@ -10,6 +10,5 @@ void Export_pystes_USeqAct_MathFloat(py::module &m)
         .def_readwrite("ValueB", &USeqAct_MathFloat::ValueB)
         .def_readwrite("Result", &USeqAct_MathFloat::Result)
         .def_readwrite("Operation", &USeqAct_MathBase::Operation)
-        .def("StaticClass", &USeqAct_MathFloat::StaticClass, py::return_value_policy::reference)
           ;
 }

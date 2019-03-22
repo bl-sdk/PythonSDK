@@ -10,6 +10,5 @@ void Export_pystes_UPrefab(py::module &m)
         .def_readwrite("PrefabArchetypes", &UPrefab::PrefabArchetypes)
         .def_readwrite("RemovedArchetypes", &UPrefab::RemovedArchetypes)
         .def_readwrite("PrefabSequence", &UPrefab::PrefabSequence)
-        .def("StaticClass", &UPrefab::StaticClass, py::return_value_policy::reference)
           ;
 }

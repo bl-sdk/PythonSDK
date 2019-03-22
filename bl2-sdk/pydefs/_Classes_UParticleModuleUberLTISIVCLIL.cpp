@@ -13,6 +13,5 @@ void Export_pystes_UParticleModuleUberLTISIVCLIL(py::module &m)
         .def_readwrite("ColorOverLife", &UParticleModuleUberLTISIVCLIL::ColorOverLife)
         .def_readwrite("AlphaOverLife", &UParticleModuleUberLTISIVCLIL::AlphaOverLife)
         .def_readwrite("StartLocation", &UParticleModuleUberLTISIVCLIL::StartLocation)
-        .def("StaticClass", &UParticleModuleUberLTISIVCLIL::StaticClass, py::return_value_policy::reference)
           ;
 }

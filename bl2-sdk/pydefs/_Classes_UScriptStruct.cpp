@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UScriptStruct(py::module &m)
 {
     py::class_< UScriptStruct,  UStruct   >(m, "UScriptStruct")
-        .def("StaticClass", &UScriptStruct::StaticClass, py::return_value_policy::reference)
           ;
 }

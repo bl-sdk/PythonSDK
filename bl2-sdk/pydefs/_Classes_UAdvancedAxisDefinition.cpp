@@ -13,6 +13,5 @@ void Export_pystes_UAdvancedAxisDefinition(py::module &m)
         .def_readwrite("AccelRate", &UAdvancedAxisDefinition::AccelRate)
         .def_readwrite("AccelSpeed", &UAdvancedAxisDefinition::AccelSpeed)
         .def_readwrite("AccelWarmup", &UAdvancedAxisDefinition::AccelWarmup)
-        .def("StaticClass", &UAdvancedAxisDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

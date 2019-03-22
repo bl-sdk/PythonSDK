@@ -7,7 +7,6 @@ void Export_pystes_UGBXActorList(py::module &m)
 {
     py::class_< UGBXActorList,  UObject   >(m, "UGBXActorList")
         .def_readwrite("ActorList", &UGBXActorList::ActorList)
-        .def("StaticClass", &UGBXActorList::StaticClass, py::return_value_policy::reference)
         .def("RemoveAndDeleteActorsOfClassFromLevel", &UGBXActorList::RemoveAndDeleteActorsOfClassFromLevel)
         .def("RemoveActorsOfClassFromLevel", &UGBXActorList::RemoveActorsOfClassFromLevel)
         .def("RemoveAndDeleteActorsFromLevel", &UGBXActorList::RemoveAndDeleteActorsFromLevel)

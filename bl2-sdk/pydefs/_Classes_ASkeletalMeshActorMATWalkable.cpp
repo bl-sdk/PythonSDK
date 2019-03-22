@@ -7,7 +7,6 @@ void Export_pystes_ASkeletalMeshActorMATWalkable(py::module &m)
 {
     py::class_< ASkeletalMeshActorMATWalkable,  ASkeletalMeshActor   >(m, "ASkeletalMeshActorMATWalkable")
         .def_readwrite("SlotNodes", &ASkeletalMeshActorMAT::SlotNodes)
-        .def("StaticClass", &ASkeletalMeshActorMATWalkable::StaticClass, py::return_value_policy::reference)
         .def("eventSetSkelControlScale", &ASkeletalMeshActorMAT::eventSetSkelControlScale)
         .def("eventSetMorphWeight", &ASkeletalMeshActorMAT::eventSetMorphWeight)
         .def("eventFinishAnimControl", &ASkeletalMeshActorMAT::eventFinishAnimControl)

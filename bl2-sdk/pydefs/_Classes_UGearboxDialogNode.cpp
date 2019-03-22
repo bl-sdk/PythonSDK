@@ -12,7 +12,6 @@ void Export_pystes_UGearboxDialogNode(py::module &m)
         .def_readwrite("InputLinks", &UGearboxEditorNode::InputLinks)
         .def_readwrite("VariableLinks", &UGearboxEditorNode::VariableLinks)
         .def_readwrite("SliderPosition", &UGearboxEditorNode::SliderPosition)
-        .def("StaticClass", &UGearboxDialogNode::StaticClass, py::return_value_policy::reference)
         .def("ActivateOutput", &UGearboxDialogNode::ActivateOutput)
         .def("IsChild", &UGearboxEditorNode::IsChild)
           ;

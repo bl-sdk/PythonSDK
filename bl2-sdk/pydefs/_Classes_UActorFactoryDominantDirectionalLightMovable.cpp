@@ -15,7 +15,6 @@ void Export_pystes_UActorFactoryDominantDirectionalLightMovable(py::module &m)
         .def_readwrite("CustomPropertyEditorDelegateClassName", &UActorFactory::CustomPropertyEditorDelegateClassName)
         .def_readwrite("CustomPropertyEditorDelegateInstance", &UActorFactory::CustomPropertyEditorDelegateInstance)
         .def_readwrite("CustomPropertyEditorDelegateTargetClass", &UActorFactory::CustomPropertyEditorDelegateTargetClass)
-        .def("StaticClass", &UActorFactoryDominantDirectionalLightMovable::StaticClass, py::return_value_policy::reference)
         .def("eventPostCreateActor", &UActorFactory::eventPostCreateActor)
           ;
 }

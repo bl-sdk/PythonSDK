@@ -15,7 +15,6 @@ void Export_pystes_UWillowGFxColiseumOverlayDefinition(py::module &m)
         .def_readwrite("WaveLabels", &UWillowGFxColiseumOverlayDefinition::WaveLabels)
         .def_readwrite("RefreshInterval", &UWillowGFxColiseumOverlayDefinition::RefreshInterval)
         .def_readwrite("AllRulesDefinition", &UWillowGFxColiseumOverlayDefinition::AllRulesDefinition)
-        .def("StaticClass", &UWillowGFxColiseumOverlayDefinition::StaticClass, py::return_value_policy::reference)
         .def("EvaluateBalanceFormula", &UWillowGFxColiseumOverlayDefinition::EvaluateBalanceFormula)
           ;
 }

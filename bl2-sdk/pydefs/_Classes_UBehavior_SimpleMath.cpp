@@ -9,7 +9,6 @@ void Export_pystes_UBehavior_SimpleMath(py::module &m)
         .def_readwrite("A", &UBehavior_SimpleMath::A)
         .def_readwrite("B", &UBehavior_SimpleMath::B)
         .def_readwrite("Operation", &UBehavior_SimpleMath::Operation)
-        .def("StaticClass", &UBehavior_SimpleMath::StaticClass, py::return_value_policy::reference)
         .def("eventPublishBehaviorOutput", &UBehavior_SimpleMath::eventPublishBehaviorOutput)
         .def("ApplyBehaviorToContext", &UBehavior_SimpleMath::ApplyBehaviorToContext)
           ;

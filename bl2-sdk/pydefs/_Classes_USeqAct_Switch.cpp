@@ -9,6 +9,5 @@ void Export_pystes_USeqAct_Switch(py::module &m)
         .def_readwrite("LinkCount", &USeqAct_Switch::LinkCount)
         .def_readwrite("IncrementAmount", &USeqAct_Switch::IncrementAmount)
         .def_readwrite("Indices", &USeqAct_Switch::Indices)
-        .def("StaticClass", &USeqAct_Switch::StaticClass, py::return_value_policy::reference)
           ;
 }

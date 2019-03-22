@@ -7,7 +7,6 @@ void Export_pystes_UWillowUIDataStore_StringAliasMap(py::module &m)
 {
     py::class_< UWillowUIDataStore_StringAliasMap,  UUIDataStore_StringAliasMap   >(m, "UWillowUIDataStore_StringAliasMap")
         .def_readwrite("FakePlatform", &UWillowUIDataStore_StringAliasMap::FakePlatform)
-        .def("StaticClass", &UWillowUIDataStore_StringAliasMap::StaticClass, py::return_value_policy::reference)
         .def("GetStringWithFieldName", &UWillowUIDataStore_StringAliasMap::GetStringWithFieldName)
           ;
 }

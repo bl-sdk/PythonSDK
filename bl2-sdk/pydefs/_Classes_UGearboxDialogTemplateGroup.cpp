@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UGearboxDialogTemplateGroup(py::module &m)
 {
     py::class_< UGearboxDialogTemplateGroup,  UGearboxDialogGroup   >(m, "UGearboxDialogTemplateGroup")
-        .def("StaticClass", &UGearboxDialogTemplateGroup::StaticClass, py::return_value_policy::reference)
           ;
 }

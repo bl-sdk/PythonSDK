@@ -17,6 +17,5 @@ void Export_pystes_URB_BodySetup(py::module &m)
         .def_readwrite("PreCachedPhysDataVersion", &URB_BodySetup::PreCachedPhysDataVersion)
         .def_readwrite("COMNudge", &UKMeshProps::COMNudge)
         .def_readwrite("AggGeom", &UKMeshProps::AggGeom)
-        .def("StaticClass", &URB_BodySetup::StaticClass, py::return_value_policy::reference)
           ;
 }

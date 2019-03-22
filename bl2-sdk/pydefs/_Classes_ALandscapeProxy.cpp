@@ -10,6 +10,5 @@ void Export_pystes_ALandscapeProxy(py::module &m)
         .def_readwrite("CollisionComponents", &ALandscapeProxy::CollisionComponents)
         .def_readwrite("StaticLightingResolution", &ALandscapeProxy::StaticLightingResolution)
         .def_readwrite("LandscapeActor", &ALandscapeProxy::LandscapeActor)
-        .def("StaticClass", &ALandscapeProxy::StaticClass, py::return_value_policy::reference)
           ;
 }

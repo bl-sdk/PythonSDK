@@ -10,6 +10,5 @@ void Export_pystes_UMaterialExpressionRotate3D(py::module &m)
         .def_readwrite("MatrixForward", &UMaterialExpressionRotate3D::MatrixForward)
         .def_readwrite("MatrixRight", &UMaterialExpressionRotate3D::MatrixRight)
         .def_readwrite("MatrixUp", &UMaterialExpressionRotate3D::MatrixUp)
-        .def("StaticClass", &UMaterialExpressionRotate3D::StaticClass, py::return_value_policy::reference)
           ;
 }

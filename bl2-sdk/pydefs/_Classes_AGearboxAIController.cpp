@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_AGearboxAIController(py::module &m)
 {
     py::class_< AGearboxAIController,  AAIController   >(m, "AGearboxAIController")
-        .def("StaticClass", &AGearboxAIController::StaticClass, py::return_value_policy::reference)
         .def("ForceMoveToActor", &AGearboxAIController::ForceMoveToActor)
           ;
 }

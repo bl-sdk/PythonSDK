@@ -11,7 +11,6 @@ void Export_pystes_AWillowReplicatedAmbientSound(py::module &m)
         .def_readwrite("StopAkEvent", &AWillowReplicatedAmbientSound::StopAkEvent)
         .def_readwrite("SeamlessPlayingInfo", &AWillowReplicatedAmbientSound::SeamlessPlayingInfo)
         .def_readwrite("Group", &AWillowReplicatedAmbientSound::Group)
-        .def("StaticClass", &AWillowReplicatedAmbientSound::StaticClass, py::return_value_policy::reference)
         .def("OnToggle", &AWillowReplicatedAmbientSound::OnToggle)
           ;
 }

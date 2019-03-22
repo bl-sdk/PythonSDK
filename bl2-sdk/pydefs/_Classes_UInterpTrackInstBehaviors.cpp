@@ -9,7 +9,6 @@ void Export_pystes_UInterpTrackInstBehaviors(py::module &m)
         .def_readwrite("VfTable_IIBehaviorConsumer", &UInterpTrackInstBehaviors::VfTable_IIBehaviorConsumer)
         .def_readwrite("LastUpdatePosition", &UInterpTrackInstBehaviors::LastUpdatePosition)
         .def_readwrite("ConsumerHandle", &UInterpTrackInstBehaviors::ConsumerHandle)
-        .def("StaticClass", &UInterpTrackInstBehaviors::StaticClass, py::return_value_policy::reference)
         .def("GetBehaviorConsumerHandle", &UInterpTrackInstBehaviors::GetBehaviorConsumerHandle)
           ;
 }

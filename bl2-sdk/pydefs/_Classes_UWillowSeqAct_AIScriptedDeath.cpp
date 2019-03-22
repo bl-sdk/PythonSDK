@@ -11,6 +11,5 @@ void Export_pystes_UWillowSeqAct_AIScriptedDeath(py::module &m)
         .def_readwrite("Anim", &UWillowSeqAct_AIScriptedDeath::Anim)
         .def_readwrite("EditInlineAnim", &UWillowSeqAct_AIScriptedDeath::EditInlineAnim)
         .def_readwrite("Killer", &UWillowSeqAct_AIScriptedDeath::Killer)
-        .def("StaticClass", &UWillowSeqAct_AIScriptedDeath::StaticClass, py::return_value_policy::reference)
           ;
 }

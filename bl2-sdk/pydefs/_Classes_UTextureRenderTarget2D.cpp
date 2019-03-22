@@ -13,7 +13,6 @@ void Export_pystes_UTextureRenderTarget2D(py::module &m)
         .def_readwrite("AddressY", &UTextureRenderTarget2D::AddressY)
         .def_readwrite("ClearColor", &UTextureRenderTarget2D::ClearColor)
         .def_readwrite("TargetGamma", &UTextureRenderTarget::TargetGamma)
-        .def("StaticClass", &UTextureRenderTarget2D::StaticClass, py::return_value_policy::reference)
         .def("Create", &UTextureRenderTarget2D::Create, py::return_value_policy::reference)
           ;
 }

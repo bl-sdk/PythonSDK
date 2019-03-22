@@ -10,6 +10,5 @@ void Export_pystes_USimpleMathValueResolver(py::module &m)
         .def_readwrite("Operand", &USimpleMathValueResolver::Operand)
         .def_readwrite("Arg1Attribute", &USimpleMathValueResolver::Arg1Attribute)
         .def_readwrite("Argument", &USimpleMathValueResolver::Argument)
-        .def("StaticClass", &USimpleMathValueResolver::StaticClass, py::return_value_policy::reference)
           ;
 }

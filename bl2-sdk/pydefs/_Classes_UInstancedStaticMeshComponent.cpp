@@ -12,6 +12,5 @@ void Export_pystes_UInstancedStaticMeshComponent(py::module &m)
         .def_readwrite("ComponentJoinKey", &UInstancedStaticMeshComponent::ComponentJoinKey)
         .def_readwrite("CachedMappings", &UInstancedStaticMeshComponent::CachedMappings)
         .def_readwrite("InstancingRandomSeed", &UInstancedStaticMeshComponent::InstancingRandomSeed)
-        .def("StaticClass", &UInstancedStaticMeshComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

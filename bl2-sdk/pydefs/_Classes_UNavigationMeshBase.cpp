@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UNavigationMeshBase(py::module &m)
 {
     py::class_< UNavigationMeshBase,  UObject   >(m, "UNavigationMeshBase")
-        .def("StaticClass", &UNavigationMeshBase::StaticClass, py::return_value_policy::reference)
           ;
 }

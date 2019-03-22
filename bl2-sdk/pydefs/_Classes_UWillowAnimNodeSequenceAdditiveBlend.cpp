@@ -9,7 +9,6 @@ void Export_pystes_UWillowAnimNodeSequenceAdditiveBlend(py::module &m)
         .def_readwrite("AddAnimSeqName", &UWillowAnimNodeSequenceAdditiveBlend::AddAnimSeqName)
         .def_readwrite("AddAnimSeq", &UWillowAnimNodeSequenceAdditiveBlend::AddAnimSeq)
         .def_readwrite("AddAnimLinkupIndex", &UWillowAnimNodeSequenceAdditiveBlend::AddAnimLinkupIndex)
-        .def("StaticClass", &UWillowAnimNodeSequenceAdditiveBlend::StaticClass, py::return_value_policy::reference)
         .def("SetAddAnim", &UWillowAnimNodeSequenceAdditiveBlend::SetAddAnim)
         .def("SetAnim", &UWillowAnimNodeSequenceAdditiveBlend::SetAnim)
           ;

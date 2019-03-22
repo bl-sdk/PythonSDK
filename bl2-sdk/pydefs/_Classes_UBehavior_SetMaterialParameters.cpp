@@ -11,7 +11,6 @@ void Export_pystes_UBehavior_SetMaterialParameters(py::module &m)
         .def_readwrite("ScalarParameterValues", &UBehavior_SetMaterialParameters::ScalarParameterValues)
         .def_readwrite("VectorParameterValues", &UBehavior_SetMaterialParameters::VectorParameterValues)
         .def_readwrite("TextureParameterValues", &UBehavior_SetMaterialParameters::TextureParameterValues)
-        .def("StaticClass", &UBehavior_SetMaterialParameters::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_SetMaterialParameters::ApplyBehaviorToContext)
           ;
 }

@@ -18,6 +18,5 @@ void Export_pystes_UParticleModuleBeamNoise(py::module &m)
         .def_readwrite("NoiseTessellation", &UParticleModuleBeamNoise::NoiseTessellation)
         .def_readwrite("FrequencyDistance", &UParticleModuleBeamNoise::FrequencyDistance)
         .def_readwrite("NoiseScale", &UParticleModuleBeamNoise::NoiseScale)
-        .def("StaticClass", &UParticleModuleBeamNoise::StaticClass, py::return_value_policy::reference)
           ;
 }

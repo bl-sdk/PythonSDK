@@ -9,6 +9,5 @@ void Export_pystes_UWeaponPartListDefinition(py::module &m)
         .def_readwrite("VfTable_IIConstructObject", &UWeaponPartListDefinition::VfTable_IIConstructObject)
         .def_readwrite("WeightedParts", &UWeaponPartListDefinition::WeightedParts)
         .def_readwrite("ConsolidatedAttributeInitData", &UWeaponPartListDefinition::ConsolidatedAttributeInitData)
-        .def("StaticClass", &UWeaponPartListDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

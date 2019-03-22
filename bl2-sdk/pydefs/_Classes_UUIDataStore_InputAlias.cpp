@@ -7,7 +7,6 @@ void Export_pystes_UUIDataStore_InputAlias(py::module &m)
 {
     py::class_< UUIDataStore_InputAlias,  UUIDataStore_StringBase   >(m, "UUIDataStore_InputAlias")
         .def_readwrite("InputAliases", &UUIDataStore_InputAlias::InputAliases)
-        .def("StaticClass", &UUIDataStore_InputAlias::StaticClass, py::return_value_policy::reference)
         .def("HasAliasMappingForPlatform", &UUIDataStore_InputAlias::HasAliasMappingForPlatform)
         .def("FindInputAliasIndex", &UUIDataStore_InputAlias::FindInputAliasIndex)
         .def("GetAliasInputKeyDataByIndex", &UUIDataStore_InputAlias::GetAliasInputKeyDataByIndex)

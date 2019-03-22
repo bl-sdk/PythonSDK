@@ -11,6 +11,5 @@ void Export_pystes_UGearboxSeqAct_TriggerDialog(py::module &m)
         .def_readwrite("NameTag", &UGearboxSeqAct_TriggerDialog::NameTag)
         .def_readwrite("EventData", &UGearboxSeqAct_TriggerDialog::EventData)
         .def_readwrite("MyDataUseCount", &UGearboxSeqAct_TriggerDialog::MyDataUseCount)
-        .def("StaticClass", &UGearboxSeqAct_TriggerDialog::StaticClass, py::return_value_policy::reference)
           ;
 }

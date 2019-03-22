@@ -9,7 +9,6 @@ void Export_pystes_UBehavior_SetMorphNodeWeight(py::module &m)
         .def_readwrite("MorphNodeName", &UBehavior_SetMorphNodeWeight::MorphNodeName)
         .def_readwrite("WeightTarget", &UBehavior_SetMorphNodeWeight::WeightTarget)
         .def_readwrite("WeightBlendTime", &UBehavior_SetMorphNodeWeight::WeightBlendTime)
-        .def("StaticClass", &UBehavior_SetMorphNodeWeight::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_SetMorphNodeWeight::ApplyBehaviorToContext)
           ;
 }

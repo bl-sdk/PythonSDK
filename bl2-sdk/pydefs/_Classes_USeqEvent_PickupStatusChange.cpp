@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_USeqEvent_PickupStatusChange(py::module &m)
 {
     py::class_< USeqEvent_PickupStatusChange,  USequenceEvent   >(m, "USeqEvent_PickupStatusChange")
-        .def("StaticClass", &USeqEvent_PickupStatusChange::StaticClass, py::return_value_policy::reference)
           ;
 }

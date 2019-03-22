@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_WeaponsRestriction(py::module &m)
 {
     py::class_< UBehavior_WeaponsRestriction,  UBehaviorBase   >(m, "UBehavior_WeaponsRestriction")
-        .def("StaticClass", &UBehavior_WeaponsRestriction::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_WeaponsRestriction::ApplyBehaviorToContext)
           ;
 }

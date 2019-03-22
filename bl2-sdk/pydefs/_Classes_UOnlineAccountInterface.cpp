@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UOnlineAccountInterface(py::module &m)
 {
     py::class_< UOnlineAccountInterface,  UInterface   >(m, "UOnlineAccountInterface")
-        .def("StaticClass", &UOnlineAccountInterface::StaticClass, py::return_value_policy::reference)
         .def("GetLocalAccountNames", &UOnlineAccountInterface::GetLocalAccountNames)
         .def("DeleteLocalAccount", &UOnlineAccountInterface::DeleteLocalAccount)
         .def("RenameLocalAccount", &UOnlineAccountInterface::RenameLocalAccount)

@@ -14,6 +14,5 @@ void Export_pystes_UWillowAnimNodeBlendByStance(py::module &m)
         .def_readwrite("DiagScale", &UWillowAnimNodeBlendByStance::DiagScale)
         .def_readwrite("CurrentStanceType", &UWillowAnimNodeBlendByStance::CurrentStanceType)
         .def_readwrite("CachedSkelControls", &UWillowAnimNodeBlendByStance::CachedSkelControls)
-        .def("StaticClass", &UWillowAnimNodeBlendByStance::StaticClass, py::return_value_policy::reference)
           ;
 }

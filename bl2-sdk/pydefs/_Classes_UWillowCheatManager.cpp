@@ -27,6 +27,5 @@ void Export_pystes_UWillowCheatManager(py::module &m)
         .def_readwrite("SpawnItemPool_LastUpdateTime", &UWillowCheatManager::SpawnItemPool_LastUpdateTime)
         .def_readwrite("SpawnItemPool_AccruedTime", &UWillowCheatManager::SpawnItemPool_AccruedTime)
         .def_readwrite("SpawnItemPool_FuncName", &UWillowCheatManager::SpawnItemPool_FuncName)
-        .def("StaticClass", &UWillowCheatManager::StaticClass, py::return_value_policy::reference)
           ;
 }

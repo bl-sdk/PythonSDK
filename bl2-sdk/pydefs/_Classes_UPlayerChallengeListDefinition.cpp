@@ -7,6 +7,5 @@ void Export_pystes_UPlayerChallengeListDefinition(py::module &m)
 {
     py::class_< UPlayerChallengeListDefinition,  UGBXDefinition   >(m, "UPlayerChallengeListDefinition")
         .def_readwrite("PlayerChallenges", &UPlayerChallengeListDefinition::PlayerChallenges)
-        .def("StaticClass", &UPlayerChallengeListDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

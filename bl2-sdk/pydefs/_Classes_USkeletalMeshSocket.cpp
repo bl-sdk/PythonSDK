@@ -11,6 +11,5 @@ void Export_pystes_USkeletalMeshSocket(py::module &m)
         .def_readwrite("RelativeLocation", &USkeletalMeshSocket::RelativeLocation)
         .def_readwrite("RelativeRotation", &USkeletalMeshSocket::RelativeRotation)
         .def_readwrite("RelativeScale", &USkeletalMeshSocket::RelativeScale)
-        .def("StaticClass", &USkeletalMeshSocket::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -7,6 +7,5 @@ void Export_pystes_USkelControl_Multiply(py::module &m)
 {
     py::class_< USkelControl_Multiply,  USkelControlBase   >(m, "USkelControl_Multiply")
         .def_readwrite("Multiplier", &USkelControl_Multiply::Multiplier)
-        .def("StaticClass", &USkelControl_Multiply::StaticClass, py::return_value_policy::reference)
           ;
 }

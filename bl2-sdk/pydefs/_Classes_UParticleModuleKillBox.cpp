@@ -8,6 +8,5 @@ void Export_pystes_UParticleModuleKillBox(py::module &m)
     py::class_< UParticleModuleKillBox,  UParticleModuleKillBase   >(m, "UParticleModuleKillBox")
         .def_readwrite("LowerLeftCorner", &UParticleModuleKillBox::LowerLeftCorner)
         .def_readwrite("UpperRightCorner", &UParticleModuleKillBox::UpperRightCorner)
-        .def("StaticClass", &UParticleModuleKillBox::StaticClass, py::return_value_policy::reference)
           ;
 }

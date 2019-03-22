@@ -7,6 +7,5 @@ void Export_pystes_UHybridNavigationAreaDebugRenderingComponent(py::module &m)
 {
     py::class_< UHybridNavigationAreaDebugRenderingComponent,  UPrimitiveComponent   >(m, "UHybridNavigationAreaDebugRenderingComponent")
         .def_readwrite("DebugSphereRadius", &UHybridNavigationAreaDebugRenderingComponent::DebugSphereRadius)
-        .def("StaticClass", &UHybridNavigationAreaDebugRenderingComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

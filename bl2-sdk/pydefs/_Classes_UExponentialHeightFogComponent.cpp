@@ -16,7 +16,6 @@ void Export_pystes_UExponentialHeightFogComponent(py::module &m)
         .def_readwrite("OppositeLightColor", &UExponentialHeightFogComponent::OppositeLightColor)
         .def_readwrite("LightInscatteringBrightness", &UExponentialHeightFogComponent::LightInscatteringBrightness)
         .def_readwrite("LightInscatteringColor", &UExponentialHeightFogComponent::LightInscatteringColor)
-        .def("StaticClass", &UExponentialHeightFogComponent::StaticClass, py::return_value_policy::reference)
         .def("SetEnabled", &UExponentialHeightFogComponent::SetEnabled)
           ;
 }

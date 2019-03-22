@@ -10,7 +10,6 @@ void Export_pystes_APickupableMeshActor(py::module &m)
         .def_readwrite("MoveSpeed", &APickupableMeshActor::MoveSpeed)
         .def_readwrite("RotateSpeed", &APickupableMeshActor::RotateSpeed)
         .def_readwrite("PawnEyeHeightAdjustment", &APickupableMeshActor::PawnEyeHeightAdjustment)
-        .def("StaticClass", &APickupableMeshActor::StaticClass, py::return_value_policy::reference)
         .def("SetTarget", &APickupableMeshActor::SetTarget)
           ;
 }

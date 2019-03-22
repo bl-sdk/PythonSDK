@@ -11,6 +11,5 @@ void Export_pystes_UWillowSeqAct_PlayCameraAnim(py::module &m)
         .def_readwrite("BlendOutTime", &UWillowSeqAct_PlayCameraAnim::BlendOutTime)
         .def_readwrite("Rate", &UWillowSeqAct_PlayCameraAnim::Rate)
         .def_readwrite("IntensityScale", &UWillowSeqAct_PlayCameraAnim::IntensityScale)
-        .def("StaticClass", &UWillowSeqAct_PlayCameraAnim::StaticClass, py::return_value_policy::reference)
           ;
 }

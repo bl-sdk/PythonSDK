@@ -9,6 +9,5 @@ void Export_pystes_UMissionWeaponBalanceDefinition(py::module &m)
         .def_readwrite("MissionObjective", &UMissionWeaponBalanceDefinition::MissionObjective)
         .def_readwrite("WeaponPartListCollection", &UWeaponBalanceDefinition::WeaponPartListCollection)
         .def_readwrite("RuntimePartListCollection", &UWeaponBalanceDefinition::RuntimePartListCollection)
-        .def("StaticClass", &UMissionWeaponBalanceDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

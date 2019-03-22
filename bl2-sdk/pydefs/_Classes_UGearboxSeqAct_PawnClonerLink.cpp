@@ -9,6 +9,5 @@ void Export_pystes_UGearboxSeqAct_PawnClonerLink(py::module &m)
         .def_readwrite("ClonePoints", &UGearboxSeqAct_PawnClonerLink::ClonePoints)
         .def_readwrite("SpawnedCount", &UGearboxSeqAct_PawnClonerLink::SpawnedCount)
         .def_readwrite("RemainingDelay", &UGearboxSeqAct_PawnClonerLink::RemainingDelay)
-        .def("StaticClass", &UGearboxSeqAct_PawnClonerLink::StaticClass, py::return_value_policy::reference)
           ;
 }

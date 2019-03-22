@@ -10,6 +10,5 @@ void Export_pystes_UMaterialExpressionFontSampleParameter(py::module &m)
         .def_readwrite("ExpressionGUID", &UMaterialExpressionFontSampleParameter::ExpressionGUID)
         .def_readwrite("Font", &UMaterialExpressionFontSample::Font)
         .def_readwrite("FontTexturePage", &UMaterialExpressionFontSample::FontTexturePage)
-        .def("StaticClass", &UMaterialExpressionFontSampleParameter::StaticClass, py::return_value_policy::reference)
           ;
 }

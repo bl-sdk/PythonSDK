@@ -16,6 +16,5 @@ void Export_pystes_UGFxTextListDefinition(py::module &m)
         .def_readwrite("TextNormalColor", &UGFxTextListDefinition::TextNormalColor)
         .def_readwrite("TextHighlightColor", &UGFxTextListDefinition::TextHighlightColor)
         .def_readwrite("InitialEntryCount", &UGFxTextListDefinition::InitialEntryCount)
-        .def("StaticClass", &UGFxTextListDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

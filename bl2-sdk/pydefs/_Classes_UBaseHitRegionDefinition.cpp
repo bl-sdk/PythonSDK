@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UBaseHitRegionDefinition(py::module &m)
 {
     py::class_< UBaseHitRegionDefinition,  UGBXDefinition   >(m, "UBaseHitRegionDefinition")
-        .def("StaticClass", &UBaseHitRegionDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

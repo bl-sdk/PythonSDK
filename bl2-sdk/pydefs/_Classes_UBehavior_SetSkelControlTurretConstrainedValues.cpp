@@ -12,7 +12,6 @@ void Export_pystes_UBehavior_SetSkelControlTurretConstrainedValues(py::module &m
         .def_readwrite("LagDegreesPerSecondYaw", &UBehavior_SetSkelControlTurretConstrainedValues::LagDegreesPerSecondYaw)
         .def_readwrite("LagDegreesPerSecondPitch", &UBehavior_SetSkelControlTurretConstrainedValues::LagDegreesPerSecondPitch)
         .def_readwrite("LagDegreesPerSecondRoll", &UBehavior_SetSkelControlTurretConstrainedValues::LagDegreesPerSecondRoll)
-        .def("StaticClass", &UBehavior_SetSkelControlTurretConstrainedValues::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_SetSkelControlTurretConstrainedValues::ApplyBehaviorToContext)
           ;
 }

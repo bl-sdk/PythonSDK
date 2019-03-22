@@ -12,6 +12,5 @@ void Export_pystes_UPawnInteractionDefinition(py::module &m)
         .def_readwrite("OnTouch", &UPawnInteractionDefinition::OnTouch)
         .def_readwrite("OnUnTouch", &UPawnInteractionDefinition::OnUnTouch)
         .def_readwrite("OnUse", &UPawnInteractionDefinition::OnUse)
-        .def("StaticClass", &UPawnInteractionDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

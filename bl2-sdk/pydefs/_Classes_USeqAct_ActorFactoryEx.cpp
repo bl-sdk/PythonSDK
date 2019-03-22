@@ -16,7 +16,6 @@ void Export_pystes_USeqAct_ActorFactoryEx(py::module &m)
         .def_readwrite("LastSpawnIdx", &USeqAct_ActorFactory::LastSpawnIdx)
         .def_readwrite("SpawnedCount", &USeqAct_ActorFactory::SpawnedCount)
         .def_readwrite("RemainingDelay", &USeqAct_ActorFactory::RemainingDelay)
-        .def("StaticClass", &USeqAct_ActorFactoryEx::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqAct_ActorFactory::eventGetObjClassVersion)
           ;
 }

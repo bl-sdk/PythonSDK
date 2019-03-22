@@ -8,6 +8,5 @@ void Export_pystes_UWillowDynamicNavMeshConnectionPointRenderingComponent(py::mo
     py::class_< UWillowDynamicNavMeshConnectionPointRenderingComponent,  UPrimitiveComponent   >(m, "UWillowDynamicNavMeshConnectionPointRenderingComponent")
         .def_readwrite("ConnectionValidColor", &UWillowDynamicNavMeshConnectionPointRenderingComponent::ConnectionValidColor)
         .def_readwrite("ConnectionInvalidColor", &UWillowDynamicNavMeshConnectionPointRenderingComponent::ConnectionInvalidColor)
-        .def("StaticClass", &UWillowDynamicNavMeshConnectionPointRenderingComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

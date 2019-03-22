@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UDwTriovizImplEffect(py::module &m)
 {
     py::class_< UDwTriovizImplEffect,  UPostProcessEffect   >(m, "UDwTriovizImplEffect")
-        .def("StaticClass", &UDwTriovizImplEffect::StaticClass, py::return_value_policy::reference)
           ;
 }

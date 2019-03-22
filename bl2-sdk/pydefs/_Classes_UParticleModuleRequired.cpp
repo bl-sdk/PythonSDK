@@ -28,6 +28,5 @@ void Export_pystes_UParticleModuleRequired(py::module &m)
         .def_readwrite("NormalsSphereCenter", &UParticleModuleRequired::NormalsSphereCenter)
         .def_readwrite("NormalsCylinderDirection", &UParticleModuleRequired::NormalsCylinderDirection)
         .def_readwrite("LODValidity", &UParticleModule::LODValidity)
-        .def("StaticClass", &UParticleModuleRequired::StaticClass, py::return_value_policy::reference)
           ;
 }

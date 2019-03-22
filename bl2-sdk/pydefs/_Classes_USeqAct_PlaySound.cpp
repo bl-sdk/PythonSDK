@@ -13,7 +13,6 @@ void Export_pystes_USeqAct_PlaySound(py::module &m)
         .def_readwrite("FadeOutTime", &USeqAct_PlaySound::FadeOutTime)
         .def_readwrite("VolumeMultiplier", &USeqAct_PlaySound::VolumeMultiplier)
         .def_readwrite("PitchMultiplier", &USeqAct_PlaySound::PitchMultiplier)
-        .def("StaticClass", &USeqAct_PlaySound::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqAct_PlaySound::eventGetObjClassVersion)
           ;
 }

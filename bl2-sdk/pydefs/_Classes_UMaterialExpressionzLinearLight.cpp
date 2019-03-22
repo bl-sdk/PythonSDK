@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UMaterialExpressionzLinearLight(py::module &m)
 {
     py::class_< UMaterialExpressionzLinearLight,  UMaterialExpressionBlendModeBase   >(m, "UMaterialExpressionzLinearLight")
-        .def("StaticClass", &UMaterialExpressionzLinearLight::StaticClass, py::return_value_policy::reference)
           ;
 }

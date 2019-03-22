@@ -12,6 +12,5 @@ void Export_pystes_USkelControlFootPlacement(py::module &m)
         .def_readwrite("MaxUpAdjustment", &USkelControlFootPlacement::MaxUpAdjustment)
         .def_readwrite("MaxDownAdjustment", &USkelControlFootPlacement::MaxDownAdjustment)
         .def_readwrite("MaxFootOrientAdjust", &USkelControlFootPlacement::MaxFootOrientAdjust)
-        .def("StaticClass", &USkelControlFootPlacement::StaticClass, py::return_value_policy::reference)
           ;
 }

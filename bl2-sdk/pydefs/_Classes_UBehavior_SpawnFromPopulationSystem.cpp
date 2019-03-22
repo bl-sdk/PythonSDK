@@ -16,7 +16,6 @@ void Export_pystes_UBehavior_SpawnFromPopulationSystem(py::module &m)
         .def_readwrite("InstanceDataContext", &UBehavior_SpawnFromPopulationSystem::InstanceDataContext)
         .def_readwrite("SavedReferenceName", &UBehavior_SpawnFromPopulationSystem::SavedReferenceName)
         .def_readwrite("FloorTestZDist", &UBehavior_SpawnFromPopulationSystem::FloorTestZDist)
-        .def("StaticClass", &UBehavior_SpawnFromPopulationSystem::StaticClass, py::return_value_policy::reference)
         .def("PublishBehaviorOutput", &UBehavior_SpawnFromPopulationSystem::PublishBehaviorOutput)
         .def("ApplyBehaviorToContext", &UBehavior_SpawnFromPopulationSystem::ApplyBehaviorToContext)
           ;

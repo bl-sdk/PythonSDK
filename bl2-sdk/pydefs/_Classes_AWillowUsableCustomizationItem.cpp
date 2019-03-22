@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_AWillowUsableCustomizationItem(py::module &m)
 {
     py::class_< AWillowUsableCustomizationItem,  AWillowUsableItem   >(m, "AWillowUsableCustomizationItem")
-        .def("StaticClass", &AWillowUsableCustomizationItem::StaticClass, py::return_value_policy::reference)
         .def("IsUsefulToThisPlayer", &AWillowUsableCustomizationItem::IsUsefulToThisPlayer)
         .def("GetItemCardTopSectionString", &AWillowUsableCustomizationItem::GetItemCardTopSectionString)
         .def("InitMeshes", &AWillowUsableCustomizationItem::InitMeshes)

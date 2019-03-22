@@ -13,7 +13,6 @@ void Export_pystes_ANxForceFieldRadial(py::module &m)
         .def_readwrite("SelfRotationStrength", &ANxForceFieldRadial::SelfRotationStrength)
         .def_readwrite("ForceFalloff", &ANxForceFieldRadial::ForceFalloff)
         .def_readwrite("Kernel", &ANxForceFieldRadial::Kernel)
-        .def("StaticClass", &ANxForceFieldRadial::StaticClass, py::return_value_policy::reference)
         .def("DoInitRBPhys", &ANxForceFieldRadial::DoInitRBPhys)
           ;
 }

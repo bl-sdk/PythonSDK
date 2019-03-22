@@ -9,6 +9,5 @@ void Export_pystes_USeqAct_LoadingMovie(py::module &m)
         .def_readwrite("MovieName", &USeqAct_LoadingMovie::MovieName)
         .def_readwrite("PauseDuration", &USeqAct_LoadingMovie::PauseDuration)
         .def_readwrite("KeepPlayingDuration", &USeqAct_LoadingMovie::KeepPlayingDuration)
-        .def("StaticClass", &USeqAct_LoadingMovie::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -10,6 +10,5 @@ void Export_pystes_UWillowSeqAct_MissionSmokeTest(py::module &m)
         .def_readwrite("CurrentSavegame", &UWillowSeqAct_MissionSmokeTest::CurrentSavegame)
         .def_readwrite("TestStatus", &UWillowSeqAct_MissionSmokeTest::TestStatus)
         .def_readwrite("LatentFloat", &UWillowSeqAct_MissionSmokeTest::LatentFloat)
-        .def("StaticClass", &UWillowSeqAct_MissionSmokeTest::StaticClass, py::return_value_policy::reference)
           ;
 }

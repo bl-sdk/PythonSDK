@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_USavingSequenceFrame(py::module &m)
 {
     py::class_< USavingSequenceFrame,  USequenceFrame   >(m, "USavingSequenceFrame")
-        .def("StaticClass", &USavingSequenceFrame::StaticClass, py::return_value_policy::reference)
           ;
 }

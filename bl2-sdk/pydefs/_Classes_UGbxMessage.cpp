@@ -27,7 +27,6 @@ void Export_pystes_UGbxMessage(py::module &m)
         .def_readwrite("MaxDurationToSend", &UGbxMessage::MaxDurationToSend)
         .def_readwrite("TimeBetweenSends", &UGbxMessage::TimeBetweenSends)
         .def_readwrite("DupeCriteria", &UGbxMessage::DupeCriteria)
-        .def("StaticClass", &UGbxMessage::StaticClass, py::return_value_policy::reference)
         .def("InitializeFromDefinition", &UGbxMessage::InitializeFromDefinition)
           ;
 }

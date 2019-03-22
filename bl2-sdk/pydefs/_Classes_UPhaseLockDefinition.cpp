@@ -13,6 +13,5 @@ void Export_pystes_UPhaseLockDefinition(py::module &m)
         .def_readwrite("LoopAnim", &UPhaseLockDefinition::LoopAnim)
         .def_readwrite("DropAnim", &UPhaseLockDefinition::DropAnim)
         .def_readwrite("LandAnim", &UPhaseLockDefinition::LandAnim)
-        .def("StaticClass", &UPhaseLockDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -7,6 +7,5 @@ void Export_pystes_UWillowCalloutDefinition(py::module &m)
 {
     py::class_< UWillowCalloutDefinition,  UGearboxCalloutDefinition   >(m, "UWillowCalloutDefinition")
         .def_readwrite("DialogEvent", &UWillowCalloutDefinition::DialogEvent)
-        .def("StaticClass", &UWillowCalloutDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

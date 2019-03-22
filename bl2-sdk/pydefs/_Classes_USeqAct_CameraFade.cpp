@@ -12,7 +12,6 @@ void Export_pystes_USeqAct_CameraFade(py::module &m)
         .def_readwrite("FadeTime", &USeqAct_CameraFade::FadeTime)
         .def_readwrite("FadeTimeRemaining", &USeqAct_CameraFade::FadeTimeRemaining)
         .def_readwrite("CachedPCs", &USeqAct_CameraFade::CachedPCs)
-        .def("StaticClass", &USeqAct_CameraFade::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqAct_CameraFade::eventGetObjClassVersion)
           ;
 }

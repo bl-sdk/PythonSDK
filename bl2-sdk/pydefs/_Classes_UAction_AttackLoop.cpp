@@ -13,7 +13,6 @@ void Export_pystes_UAction_AttackLoop(py::module &m)
         .def_readwrite("LoopCondition", &UAction_AttackLoop::LoopCondition)
         .def_readwrite("NumLoops", &UAction_AttackLoop::NumLoops)
         .def_readwrite("MaxLoops", &UAction_AttackLoop::MaxLoops)
-        .def("StaticClass", &UAction_AttackLoop::StaticClass, py::return_value_policy::reference)
         .def("PlayAnim", &UAction_AttackLoop::PlayAnim)
           ;
 }

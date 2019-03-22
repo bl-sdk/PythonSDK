@@ -11,6 +11,5 @@ void Export_pystes_USkelControlSpline(py::module &m)
         .def_readwrite("BoneRotMode", &USkelControlSpline::BoneRotMode)
         .def_readwrite("EndSplineTension", &USkelControlSpline::EndSplineTension)
         .def_readwrite("StartSplineTension", &USkelControlSpline::StartSplineTension)
-        .def("StaticClass", &USkelControlSpline::StaticClass, py::return_value_policy::reference)
           ;
 }

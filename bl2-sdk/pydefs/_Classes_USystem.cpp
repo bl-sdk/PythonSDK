@@ -32,6 +32,5 @@ void Export_pystes_USystem(py::module &m)
         .def_readwrite("MissingRedirectObjectName", &USystem::MissingRedirectObjectName)
         .def_readwrite("Unsuppress", &USystem::Unsuppress)
         .def_readwrite("VfTable_FExec", &USubsystem::VfTable_FExec)
-        .def("StaticClass", &USystem::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -16,6 +16,5 @@ void Export_pystes_ULineData(py::module &m)
         .def_readwrite("LineSegmentScaleFactor", &ULineData::LineSegmentScaleFactor)
         .def_readwrite("EditorMode", &ULineData::EditorMode)
         .def_readwrite("Lines", &ULineData::Lines)
-        .def("StaticClass", &ULineData::StaticClass, py::return_value_policy::reference)
           ;
 }

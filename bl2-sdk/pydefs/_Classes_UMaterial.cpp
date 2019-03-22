@@ -40,6 +40,5 @@ void Export_pystes_UMaterial(py::module &m)
         .def_readwrite("EditorYaw", &UMaterial::EditorYaw)
         .def_readwrite("Expressions", &UMaterial::Expressions)
         .def_readwrite("ReferencedTextures", &UMaterial::ReferencedTextures)
-        .def("StaticClass", &UMaterial::StaticClass, py::return_value_policy::reference)
           ;
 }

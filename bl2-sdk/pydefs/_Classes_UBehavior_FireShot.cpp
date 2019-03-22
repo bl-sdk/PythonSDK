@@ -24,7 +24,6 @@ void Export_pystes_UBehavior_FireShot(py::module &m)
         .def_readwrite("BeamLocationOffset", &UBehavior_FireShot::BeamLocationOffset)
         .def_readwrite("FireLocationSocketsRemaining", &UBehavior_FireShot::FireLocationSocketsRemaining)
         .def_readwrite("NumShotsFired", &UBehavior_FireShot::NumShotsFired)
-        .def("StaticClass", &UBehavior_FireShot::StaticClass, py::return_value_policy::reference)
         .def("FireNextShot", &UBehavior_FireShot::FireNextShot)
         .def("ApplyBehaviorToContext", &UBehavior_FireShot::ApplyBehaviorToContext)
           ;

@@ -12,7 +12,6 @@ void Export_pystes_UAttackLocation_LineOfSight(py::module &m)
         .def_readwrite("ArcSpeed", &UAttackLocation_LineOfSight::ArcSpeed)
         .def_readwrite("ArcStartOffset", &UAttackLocation_LineOfSight::ArcStartOffset)
         .def_readwrite("ArcEndOffset", &UAttackLocation_LineOfSight::ArcEndOffset)
-        .def("StaticClass", &UAttackLocation_LineOfSight::StaticClass, py::return_value_policy::reference)
         .def("ValidLocation", &UAttackLocation_LineOfSight::ValidLocation)
           ;
 }

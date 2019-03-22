@@ -17,6 +17,5 @@ void Export_pystes_USVehicleSimTank(py::module &m)
         .def_readwrite("TurnInPlaceThrottle", &USVehicleSimTank::TurnInPlaceThrottle)
         .def_readwrite("TurnMaxGripReduction", &USVehicleSimTank::TurnMaxGripReduction)
         .def_readwrite("TurnGripScaleRate", &USVehicleSimTank::TurnGripScaleRate)
-        .def("StaticClass", &USVehicleSimTank::StaticClass, py::return_value_policy::reference)
           ;
 }

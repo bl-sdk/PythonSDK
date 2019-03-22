@@ -7,6 +7,5 @@ void Export_pystes_ATargetPoint(py::module &m)
 {
     py::class_< ATargetPoint,  AKeypoint   >(m, "ATargetPoint")
         .def_readwrite("SpawnRefCount", &ATargetPoint::SpawnRefCount)
-        .def("StaticClass", &ATargetPoint::StaticClass, py::return_value_policy::reference)
           ;
 }

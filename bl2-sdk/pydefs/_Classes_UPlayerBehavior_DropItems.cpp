@@ -15,7 +15,6 @@ void Export_pystes_UPlayerBehavior_DropItems(py::module &m)
         .def_readwrite("CustomDirection", &UBehavior_DropItems::CustomDirection)
         .def_readwrite("CustomVelocity", &UBehavior_DropItems::CustomVelocity)
         .def_readwrite("Torque", &UBehavior_DropItems::Torque)
-        .def("StaticClass", &UPlayerBehavior_DropItems::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UPlayerBehavior_DropItems::ApplyBehaviorToContext)
         .def("DropItems", &UBehavior_DropItems::DropItems)
           ;

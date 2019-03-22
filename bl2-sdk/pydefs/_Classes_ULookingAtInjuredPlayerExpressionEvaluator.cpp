@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_ULookingAtInjuredPlayerExpressionEvaluator(py::module &m)
 {
     py::class_< ULookingAtInjuredPlayerExpressionEvaluator,  UExpressionEvaluator   >(m, "ULookingAtInjuredPlayerExpressionEvaluator")
-        .def("StaticClass", &ULookingAtInjuredPlayerExpressionEvaluator::StaticClass, py::return_value_policy::reference)
         .def("Evaluate", &ULookingAtInjuredPlayerExpressionEvaluator::Evaluate)
           ;
 }

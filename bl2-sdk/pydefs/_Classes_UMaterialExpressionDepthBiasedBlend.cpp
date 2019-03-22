@@ -10,6 +10,5 @@ void Export_pystes_UMaterialExpressionDepthBiasedBlend(py::module &m)
         .def_readwrite("RGB", &UMaterialExpressionDepthBiasedBlend::RGB)
         .def_readwrite("Alpha", &UMaterialExpressionDepthBiasedBlend::Alpha)
         .def_readwrite("Bias", &UMaterialExpressionDepthBiasedBlend::Bias)
-        .def("StaticClass", &UMaterialExpressionDepthBiasedBlend::StaticClass, py::return_value_policy::reference)
           ;
 }

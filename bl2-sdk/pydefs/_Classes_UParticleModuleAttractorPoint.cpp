@@ -9,6 +9,5 @@ void Export_pystes_UParticleModuleAttractorPoint(py::module &m)
         .def_readwrite("Position", &UParticleModuleAttractorPoint::Position)
         .def_readwrite("Range", &UParticleModuleAttractorPoint::Range)
         .def_readwrite("Strength", &UParticleModuleAttractorPoint::Strength)
-        .def("StaticClass", &UParticleModuleAttractorPoint::StaticClass, py::return_value_policy::reference)
           ;
 }

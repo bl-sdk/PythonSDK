@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_AWillowWaterSMActor(py::module &m)
 {
     py::class_< AWillowWaterSMActor,  AStaticMeshActor   >(m, "AWillowWaterSMActor")
-        .def("StaticClass", &AWillowWaterSMActor::StaticClass, py::return_value_policy::reference)
           ;
 }

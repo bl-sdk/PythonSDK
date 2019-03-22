@@ -7,7 +7,6 @@ void Export_pystes_ALensFlareSource(py::module &m)
 {
     py::class_< ALensFlareSource,  AActor   >(m, "ALensFlareSource")
         .def_readwrite("LensFlareComp", &ALensFlareSource::LensFlareComp)
-        .def("StaticClass", &ALensFlareSource::StaticClass, py::return_value_policy::reference)
         .def("SetActorParameter", &ALensFlareSource::SetActorParameter)
         .def("SetExtColorParameter", &ALensFlareSource::SetExtColorParameter)
         .def("SetColorParameter", &ALensFlareSource::SetColorParameter)

@@ -9,6 +9,5 @@ void Export_pystes_UGearboxCalloutDefinition(py::module &m)
         .def_readwrite("MaxCallOutDistance", &UGearboxCalloutDefinition::MaxCallOutDistance)
         .def_readwrite("MinCallOutDistance", &UGearboxCalloutDefinition::MinCallOutDistance)
         .def_readwrite("MinRarityCallOutLevel", &UGearboxCalloutDefinition::MinRarityCallOutLevel)
-        .def("StaticClass", &UGearboxCalloutDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

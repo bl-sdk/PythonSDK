@@ -7,7 +7,6 @@ void Export_pystes_UMeshComponent(py::module &m)
 {
     py::class_< UMeshComponent,  UPrimitiveComponent   >(m, "UMeshComponent")
         .def_readwrite("Materials", &UMeshComponent::Materials)
-        .def("StaticClass", &UMeshComponent::StaticClass, py::return_value_policy::reference)
         .def("GetInstancedMaterialInstanceConstant", &UMeshComponent::GetInstancedMaterialInstanceConstant, py::return_value_policy::reference)
         .def("CreateAndSetMaterialInstanceConstant", &UMeshComponent::CreateAndSetMaterialInstanceConstant, py::return_value_policy::reference)
         .def("Behavior_SetObjectParameterValue", [](UMeshComponent &self , struct FName* ParameterName) { int* pySectionIndex = (int*)malloc(sizeof(int)) ; class UObject** pyValue = 0 ;   self.Behavior_SetObjectParameterValue(pySectionIndex, ParameterName, pyValue); return py::make_tuple(*pySectionIndex, *pyValue); })

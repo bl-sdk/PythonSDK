@@ -7,7 +7,6 @@ void Export_pystes_UGameplayEventsWriter(py::module &m)
 {
     py::class_< UGameplayEventsWriter,  UGameplayEvents   >(m, "UGameplayEventsWriter")
         .def_readwrite("Game", &UGameplayEventsWriter::Game)
-        .def("StaticClass", &UGameplayEventsWriter::StaticClass, py::return_value_policy::reference)
         .def("RecordCoverLinkFireLinks", &UGameplayEventsWriter::RecordCoverLinkFireLinks)
         .def("RecordAIPathFail", &UGameplayEventsWriter::RecordAIPathFail)
         .def("GetGenericParamListEntry", &UGameplayEventsWriter::GetGenericParamListEntry, py::return_value_policy::reference)

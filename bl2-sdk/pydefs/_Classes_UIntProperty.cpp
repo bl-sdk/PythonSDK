@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UIntProperty(py::module &m)
 {
     py::class_< UIntProperty,  UProperty   >(m, "UIntProperty")
-        .def("StaticClass", &UIntProperty::StaticClass, py::return_value_policy::reference)
           ;
 }

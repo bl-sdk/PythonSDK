@@ -10,6 +10,5 @@ void Export_pystes_UParticleLightEnvironmentComponent(py::module &m)
         .def_readwrite("NumPooledReuses", &UParticleLightEnvironmentComponent::NumPooledReuses)
         .def_readwrite("SharedInstigator", &UParticleLightEnvironmentComponent::SharedInstigator)
         .def_readwrite("SharedParticleSystem", &UParticleLightEnvironmentComponent::SharedParticleSystem)
-        .def("StaticClass", &UParticleLightEnvironmentComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

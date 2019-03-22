@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UActorFactoryLight(py::module &m)
 {
     py::class_< UActorFactoryLight,  UActorFactory   >(m, "UActorFactoryLight")
-        .def("StaticClass", &UActorFactoryLight::StaticClass, py::return_value_policy::reference)
           ;
 }

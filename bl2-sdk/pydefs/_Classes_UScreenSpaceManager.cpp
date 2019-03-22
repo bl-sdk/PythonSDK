@@ -10,6 +10,5 @@ void Export_pystes_UScreenSpaceManager(py::module &m)
         .def_readwrite("ViewWidth", &UScreenSpaceManager::ViewWidth)
         .def_readwrite("ViewHeight", &UScreenSpaceManager::ViewHeight)
         .def_readwrite("ViewProjectionMatrix", &UScreenSpaceManager::ViewProjectionMatrix)
-        .def("StaticClass", &UScreenSpaceManager::StaticClass, py::return_value_policy::reference)
           ;
 }

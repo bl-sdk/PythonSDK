@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UGearboxDialogInterface(py::module &m)
 {
     py::class_< UGearboxDialogInterface,  UInterface   >(m, "UGearboxDialogInterface")
-        .def("StaticClass", &UGearboxDialogInterface::StaticClass, py::return_value_policy::reference)
         .def("eventServerDialog_TriggerEvent", &UGearboxDialogInterface::eventServerDialog_TriggerEvent)
         .def("SetDialogNameTag", &UGearboxDialogInterface::SetDialogNameTag)
         .def("GetReplicatedDialogData", &UGearboxDialogInterface::GetReplicatedDialogData)

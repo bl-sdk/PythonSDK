@@ -17,7 +17,6 @@ void Export_pystes_UBodyWeaponHoldDefinition(py::module &m)
         .def_readwrite("LeftHandIKHandLocation", &UBodyWeaponHoldDefinition::LeftHandIKHandLocation)
         .def_readwrite("LeftHandIKHandRotation", &UBodyWeaponHoldDefinition::LeftHandIKHandRotation)
         .def_readwrite("ParentDefinition", &UBodyWeaponHoldDefinition::ParentDefinition)
-        .def("StaticClass", &UBodyWeaponHoldDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetAnimSets", &UBodyWeaponHoldDefinition::GetAnimSets)
         .def("GetWeaponSMD", &UBodyWeaponHoldDefinition::GetWeaponSMD, py::return_value_policy::reference)
           ;

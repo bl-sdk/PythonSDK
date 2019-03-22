@@ -10,7 +10,6 @@ void Export_pystes_UBehavior_AddInventoryToStorage(py::module &m)
         .def_readwrite("WeaponDef", &UBehavior_AddInventoryToStorage::WeaponDef)
         .def_readwrite("InvType", &UBehavior_AddInventoryToStorage::InvType)
         .def_readwrite("Destination", &UBehavior_AddInventoryToStorage::Destination)
-        .def("StaticClass", &UBehavior_AddInventoryToStorage::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_AddInventoryToStorage::ApplyBehaviorToContext)
           ;
 }

@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_USeqEvent_WorldDiscoveryArea(py::module &m)
 {
     py::class_< USeqEvent_WorldDiscoveryArea,  USequenceEvent   >(m, "USeqEvent_WorldDiscoveryArea")
-        .def("StaticClass", &USeqEvent_WorldDiscoveryArea::StaticClass, py::return_value_policy::reference)
           ;
 }

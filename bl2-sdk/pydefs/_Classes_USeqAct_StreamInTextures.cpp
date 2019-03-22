@@ -14,7 +14,6 @@ void Export_pystes_USeqAct_StreamInTextures(py::module &m)
         .def_readwrite("ForceMaterials", &USeqAct_StreamInTextures::ForceMaterials)
         .def_readwrite("CinematicTextureGroups", &USeqAct_StreamInTextures::CinematicTextureGroups)
         .def_readwrite("SelectedCinematicTextureGroups", &USeqAct_StreamInTextures::SelectedCinematicTextureGroups)
-        .def("StaticClass", &USeqAct_StreamInTextures::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqAct_StreamInTextures::eventGetObjClassVersion)
           ;
 }

@@ -32,6 +32,5 @@ void Export_pystes_UChopperVehicleHandlingDefinition(py::module &m)
         .def_readwrite("MaxVelocityWhenAdjustingHover", &UChopperVehicleHandlingDefinition::MaxVelocityWhenAdjustingHover)
         .def_readwrite("HoverDeadZone", &UChopperVehicleHandlingDefinition::HoverDeadZone)
         .def_readwrite("RiseAdjustmentInterval", &UChopperVehicleHandlingDefinition::RiseAdjustmentInterval)
-        .def("StaticClass", &UChopperVehicleHandlingDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

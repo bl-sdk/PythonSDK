@@ -11,6 +11,5 @@ void Export_pystes_USeqEvent_Used(py::module &m)
         .def_readwrite("InteractIcon", &USeqEvent_Used::InteractIcon)
         .def_readwrite("ClassProximityTypes", &USeqEvent_Used::ClassProximityTypes)
         .def_readwrite("IgnoredClassProximityTypes", &USeqEvent_Used::IgnoredClassProximityTypes)
-        .def("StaticClass", &USeqEvent_Used::StaticClass, py::return_value_policy::reference)
           ;
 }

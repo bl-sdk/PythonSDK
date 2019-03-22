@@ -9,7 +9,6 @@ void Export_pystes_UAnimNode_MultiBlendPerBone(py::module &m)
         .def_readwrite("PawnOwner", &UAnimNode_MultiBlendPerBone::PawnOwner)
         .def_readwrite("MaskList", &UAnimNode_MultiBlendPerBone::MaskList)
         .def_readwrite("RotationBlendType", &UAnimNode_MultiBlendPerBone::RotationBlendType)
-        .def("StaticClass", &UAnimNode_MultiBlendPerBone::StaticClass, py::return_value_policy::reference)
         .def("SetMaskWeight", &UAnimNode_MultiBlendPerBone::SetMaskWeight)
           ;
 }

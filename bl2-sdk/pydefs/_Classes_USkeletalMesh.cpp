@@ -98,6 +98,5 @@ void Export_pystes_USkeletalMesh(py::module &m)
         .def_readwrite("SkelMeshRUID", &USkeletalMesh::SkelMeshRUID)
         .def_readwrite("CachedRefBoneAtoms", &USkeletalMesh::CachedRefBoneAtoms)
         .def_readwrite("CachedAnimSetLinkupName", &USkeletalMesh::CachedAnimSetLinkupName)
-        .def("StaticClass", &USkeletalMesh::StaticClass, py::return_value_policy::reference)
           ;
 }

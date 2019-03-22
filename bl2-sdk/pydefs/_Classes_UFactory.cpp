@@ -12,6 +12,5 @@ void Export_pystes_UFactory(py::module &m)
         .def_readwrite("Formats", &UFactory::Formats)
         .def_readwrite("AutoPriority", &UFactory::AutoPriority)
         .def_readwrite("ValidGameNames", &UFactory::ValidGameNames)
-        .def("StaticClass", &UFactory::StaticClass, py::return_value_policy::reference)
           ;
 }

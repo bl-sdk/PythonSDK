@@ -11,7 +11,6 @@ void Export_pystes_UPhysicsAsset(py::module &m)
         .def_readwrite("BoundsBodies", &UPhysicsAsset::BoundsBodies)
         .def_readwrite("ConstraintSetup", &UPhysicsAsset::ConstraintSetup)
         .def_readwrite("DefaultInstance", &UPhysicsAsset::DefaultInstance)
-        .def("StaticClass", &UPhysicsAsset::StaticClass, py::return_value_policy::reference)
         .def("FindBodyIndex", &UPhysicsAsset::FindBodyIndex)
           ;
 }

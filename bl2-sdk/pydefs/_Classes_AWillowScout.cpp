@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_AWillowScout(py::module &m)
 {
     py::class_< AWillowScout,  AScout   >(m, "AWillowScout")
-        .def("StaticClass", &AWillowScout::StaticClass, py::return_value_policy::reference)
           ;
 }

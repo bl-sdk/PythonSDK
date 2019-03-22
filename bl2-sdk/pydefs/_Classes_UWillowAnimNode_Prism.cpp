@@ -14,7 +14,6 @@ void Export_pystes_UWillowAnimNode_Prism(py::module &m)
         .def_readwrite("CurrentGroup", &UWillowAnimNode_Prism::CurrentGroup)
         .def_readwrite("CurrentBlendValue", &UWillowAnimNode_Prism::CurrentBlendValue)
         .def_readwrite("EditorSliderValue", &UWillowAnimNode_Prism::EditorSliderValue)
-        .def("StaticClass", &UWillowAnimNode_Prism::StaticClass, py::return_value_policy::reference)
         .def("NodeIsActive", &UWillowAnimNode_Prism::NodeIsActive)
           ;
 }

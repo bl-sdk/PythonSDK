@@ -12,7 +12,6 @@ void Export_pystes_UBehavior_ScreenParticle(py::module &m)
         .def_readwrite("MaterialInterface", &UBehavior_ScreenParticle::MaterialInterface)
         .def_readwrite("MatParamName", &UBehavior_ScreenParticle::MatParamName)
         .def_readwrite("ParticleSystem", &UBehavior_ScreenParticle::ParticleSystem)
-        .def("StaticClass", &UBehavior_ScreenParticle::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_ScreenParticle::ApplyBehaviorToContext)
           ;
 }

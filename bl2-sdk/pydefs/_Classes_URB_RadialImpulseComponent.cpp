@@ -10,7 +10,6 @@ void Export_pystes_URB_RadialImpulseComponent(py::module &m)
         .def_readwrite("ImpulseStrength", &URB_RadialImpulseComponent::ImpulseStrength)
         .def_readwrite("ImpulseRadius", &URB_RadialImpulseComponent::ImpulseRadius)
         .def_readwrite("PreviewSphere", &URB_RadialImpulseComponent::PreviewSphere)
-        .def("StaticClass", &URB_RadialImpulseComponent::StaticClass, py::return_value_policy::reference)
         .def("FireImpulse", &URB_RadialImpulseComponent::FireImpulse)
           ;
 }

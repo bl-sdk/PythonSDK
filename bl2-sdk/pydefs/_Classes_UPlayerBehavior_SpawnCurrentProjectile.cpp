@@ -9,7 +9,6 @@ void Export_pystes_UPlayerBehavior_SpawnCurrentProjectile(py::module &m)
         .def_readwrite("ProjectileToSpawn", &UPlayerBehavior_SpawnCurrentProjectile::ProjectileToSpawn)
         .def_readwrite("InstanceDataContext", &UPlayerBehavior_SpawnCurrentProjectile::InstanceDataContext)
         .def_readwrite("SavedReferenceName", &UPlayerBehavior_SpawnCurrentProjectile::SavedReferenceName)
-        .def("StaticClass", &UPlayerBehavior_SpawnCurrentProjectile::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UPlayerBehavior_SpawnCurrentProjectile::ApplyBehaviorToContext)
           ;
 }

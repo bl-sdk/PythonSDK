@@ -21,6 +21,5 @@ void Export_pystes_ANxGenericForceField(py::module &m)
         .def_readwrite("FalloffQuadratic", &ANxGenericForceField::FalloffQuadratic)
         .def_readwrite("TorusRadius", &ANxGenericForceField::TorusRadius)
         .def_readwrite("LinearKernel", &ANxGenericForceField::LinearKernel)
-        .def("StaticClass", &ANxGenericForceField::StaticClass, py::return_value_policy::reference)
           ;
 }

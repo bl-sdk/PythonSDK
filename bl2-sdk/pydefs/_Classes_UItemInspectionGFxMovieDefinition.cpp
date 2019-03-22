@@ -17,6 +17,5 @@ void Export_pystes_UItemInspectionGFxMovieDefinition(py::module &m)
         .def_readwrite("IntroRotationRandomness", &UItemInspectionGFxMovieDefinition::IntroRotationRandomness)
         .def_readwrite("IntroRotationAlphaPowerRandomness", &UItemInspectionGFxMovieDefinition::IntroRotationAlphaPowerRandomness)
         .def_readwrite("HeightThreshold", &UItemInspectionGFxMovieDefinition::HeightThreshold)
-        .def("StaticClass", &UItemInspectionGFxMovieDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

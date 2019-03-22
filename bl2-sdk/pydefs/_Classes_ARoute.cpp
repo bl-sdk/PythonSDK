@@ -11,7 +11,6 @@ void Export_pystes_ARoute(py::module &m)
         .def_readwrite("RouteList", &ARoute::RouteList)
         .def_readwrite("FudgeFactor", &ARoute::FudgeFactor)
         .def_readwrite("RouteIndexOffset", &ARoute::RouteIndexOffset)
-        .def("StaticClass", &ARoute::StaticClass, py::return_value_policy::reference)
         .def("MoveOntoRoutePath", &ARoute::MoveOntoRoutePath)
         .def("ResolveRouteIndex", &ARoute::ResolveRouteIndex)
           ;

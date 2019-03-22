@@ -16,7 +16,6 @@ void Export_pystes_UFiringBehaviorManager(py::module &m)
         .def_readwrite("CurrentConditionalPattern", &UFiringBehaviorManager::CurrentConditionalPattern)
         .def_readwrite("DefaultFiringBehaviorDefinition", &UFiringBehaviorManager::DefaultFiringBehaviorDefinition)
         .def_readwrite("DefaultFiringPatternTemplate", &UFiringBehaviorManager::DefaultFiringPatternTemplate)
-        .def("StaticClass", &UFiringBehaviorManager::StaticClass, py::return_value_policy::reference)
         .def("eventGetTemplateClass", &UFiringBehaviorManager::eventGetTemplateClass, py::return_value_policy::reference)
           ;
 }

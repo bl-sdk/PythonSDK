@@ -10,6 +10,5 @@ void Export_pystes_UFaceFXAnimSet(py::module &m)
         .def_readwrite("RawFaceFXAnimSetBytes", &UFaceFXAnimSet::RawFaceFXAnimSetBytes)
         .def_readwrite("RawFaceFXMiniSessionBytes", &UFaceFXAnimSet::RawFaceFXMiniSessionBytes)
         .def_readwrite("NumLoadErrors", &UFaceFXAnimSet::NumLoadErrors)
-        .def("StaticClass", &UFaceFXAnimSet::StaticClass, py::return_value_policy::reference)
           ;
 }

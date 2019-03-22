@@ -16,6 +16,5 @@ void Export_pystes_UItemPartListCollectionDefinition(py::module &m)
         .def_readwrite("EtaPartData", &UItemPartListCollectionDefinition::EtaPartData)
         .def_readwrite("ThetaPartData", &UItemPartListCollectionDefinition::ThetaPartData)
         .def_readwrite("MaterialPartData", &UItemPartListCollectionDefinition::MaterialPartData)
-        .def("StaticClass", &UItemPartListCollectionDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -18,6 +18,5 @@ void Export_pystes_UNetDriver(py::module &m)
         .def_readwrite("MaxDownloadSize", &UNetDriver::MaxDownloadSize)
         .def_readwrite("DownloadManagers", &UNetDriver::DownloadManagers)
         .def_readwrite("NetConnectionClassName", &UNetDriver::NetConnectionClassName)
-        .def("StaticClass", &UNetDriver::StaticClass, py::return_value_policy::reference)
           ;
 }

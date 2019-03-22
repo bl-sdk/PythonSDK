@@ -15,7 +15,6 @@ void Export_pystes_UPlayer(py::module &m)
         .def_readwrite("PP_HighlightsMultiplier", &UPlayer::PP_HighlightsMultiplier)
         .def_readwrite("PP_MidTonesMultiplier", &UPlayer::PP_MidTonesMultiplier)
         .def_readwrite("PP_ShadowsMultiplier", &UPlayer::PP_ShadowsMultiplier)
-        .def("StaticClass", &UPlayer::StaticClass, py::return_value_policy::reference)
         .def("SwitchController", &UPlayer::SwitchController)
           ;
 }

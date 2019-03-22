@@ -19,6 +19,5 @@ void Export_pystes_UStaggerDefinition(py::module &m)
         .def_readwrite("StaggeredRecoveryRotation", &UStaggerDefinition::StaggeredRecoveryRotation)
         .def_readwrite("HardFlinchAnimation", &UStaggerDefinition::HardFlinchAnimation)
         .def_readwrite("UnstaggerGiveUpTime", &UStaggerDefinition::UnstaggerGiveUpTime)
-        .def("StaticClass", &UStaggerDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

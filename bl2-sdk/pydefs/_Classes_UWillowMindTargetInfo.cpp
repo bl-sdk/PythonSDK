@@ -24,7 +24,6 @@ void Export_pystes_UWillowMindTargetInfo(py::module &m)
         .def_readwrite("LastAttackTime", &UWillowMindTargetInfo::LastAttackTime)
         .def_readwrite("TotalDamagePct", &UWillowMindTargetInfo::TotalDamagePct)
         .def_readwrite("MovingAI", &UWillowMindTargetInfo::MovingAI)
-        .def("StaticClass", &UWillowMindTargetInfo::StaticClass, py::return_value_policy::reference)
         .def("GetTargetLocation", &UWillowMindTargetInfo::GetTargetLocation)
           ;
 }

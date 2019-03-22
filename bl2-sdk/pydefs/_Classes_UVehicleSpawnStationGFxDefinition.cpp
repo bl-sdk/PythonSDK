@@ -13,6 +13,5 @@ void Export_pystes_UVehicleSpawnStationGFxDefinition(py::module &m)
         .def_readwrite("PreviewMeshScale", &UVehicleSpawnStationGFxDefinition::PreviewMeshScale)
         .def_readwrite("IntroTime", &UVehicleSpawnStationGFxDefinition::IntroTime)
         .def_readwrite("HeaderTextOverrideKey", &UVehicleSpawnStationGFxDefinition::HeaderTextOverrideKey)
-        .def("StaticClass", &UVehicleSpawnStationGFxDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

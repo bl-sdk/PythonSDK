@@ -7,6 +7,5 @@ void Export_pystes_UParticleModuleKillHeight(py::module &m)
 {
     py::class_< UParticleModuleKillHeight,  UParticleModule   >(m, "UParticleModuleKillHeight")
         .def_readwrite("Height", &UParticleModuleKillHeight::Height)
-        .def("StaticClass", &UParticleModuleKillHeight::StaticClass, py::return_value_policy::reference)
           ;
 }

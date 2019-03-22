@@ -14,6 +14,5 @@ void Export_pystes_UWillowGFxMovie3DDefinition(py::module &m)
         .def_readwrite("SplitscreenSizeScalar", &UWillowGFxMovie3DDefinition::SplitscreenSizeScalar)
         .def_readwrite("VerticalSplitscreenPanning", &UWillowGFxMovie3DDefinition::VerticalSplitscreenPanning)
         .def_readwrite("VerticalSplitscreenPanning_Spread", &UWillowGFxMovie3DDefinition::VerticalSplitscreenPanning_Spread)
-        .def("StaticClass", &UWillowGFxMovie3DDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

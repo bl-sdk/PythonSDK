@@ -7,6 +7,5 @@ void Export_pystes_UInterpTrackVisibility(py::module &m)
 {
     py::class_< UInterpTrackVisibility,  UInterpTrack   >(m, "UInterpTrackVisibility")
         .def_readwrite("VisibilityTrack", &UInterpTrackVisibility::VisibilityTrack)
-        .def("StaticClass", &UInterpTrackVisibility::StaticClass, py::return_value_policy::reference)
           ;
 }

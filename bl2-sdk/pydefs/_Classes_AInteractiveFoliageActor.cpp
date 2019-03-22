@@ -21,7 +21,6 @@ void Export_pystes_AInteractiveFoliageActor(py::module &m)
         .def_readwrite("MaxForce", &AInteractiveFoliageActor::MaxForce)
         .def_readwrite("Mass", &AInteractiveFoliageActor::Mass)
         .def_readwrite("StaticMeshComponent", &AStaticMeshActor::StaticMeshComponent)
-        .def("StaticClass", &AInteractiveFoliageActor::StaticClass, py::return_value_policy::reference)
         .def("eventTouch", &AInteractiveFoliageActor::eventTouch)
         .def("eventTakeDamage", &AInteractiveFoliageActor::eventTakeDamage)
           ;

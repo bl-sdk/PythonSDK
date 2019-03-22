@@ -11,6 +11,5 @@ void Export_pystes_UBrushComponent(py::module &m)
         .def_readwrite("BrushPhysDesc", &UBrushComponent::BrushPhysDesc)
         .def_readwrite("CachedPhysBrushData", &UBrushComponent::CachedPhysBrushData)
         .def_readwrite("CachedPhysBrushDataVersion", &UBrushComponent::CachedPhysBrushDataVersion)
-        .def("StaticClass", &UBrushComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

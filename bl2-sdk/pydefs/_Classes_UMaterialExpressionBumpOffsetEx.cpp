@@ -10,6 +10,5 @@ void Export_pystes_UMaterialExpressionBumpOffsetEx(py::module &m)
         .def_readwrite("Height", &UMaterialExpressionBumpOffsetEx::Height)
         .def_readwrite("HeightRatio", &UMaterialExpressionBumpOffsetEx::HeightRatio)
         .def_readwrite("ReferencePlane", &UMaterialExpressionBumpOffsetEx::ReferencePlane)
-        .def("StaticClass", &UMaterialExpressionBumpOffsetEx::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -22,7 +22,6 @@ void Export_pystes_UChassisDefinition(py::module &m)
         .def_readwrite("DeSpawnCoordinatedEffect", &UChassisDefinition::DeSpawnCoordinatedEffect)
         .def_readwrite("StatusEffectSockets", &UChassisDefinition::StatusEffectSockets)
         .def_readwrite("StatusEffectParticleSystemTemplate", &UChassisDefinition::StatusEffectParticleSystemTemplate)
-        .def("StaticClass", &UChassisDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetHitRegions", [](UChassisDefinition &self , TArray< class UBodyHitRegionDefinition* >* Regions) { class UBodyHitRegionDefinition** pyDefaultRegion = 0 ;   self.GetHitRegions(Regions, pyDefaultRegion); return py::make_tuple(*pyDefaultRegion); })
           ;
 }

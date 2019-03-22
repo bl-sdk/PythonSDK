@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_USaveGameChannel(py::module &m)
 {
     py::class_< USaveGameChannel,  UChannel   >(m, "USaveGameChannel")
-        .def("StaticClass", &USaveGameChannel::StaticClass, py::return_value_policy::reference)
           ;
 }

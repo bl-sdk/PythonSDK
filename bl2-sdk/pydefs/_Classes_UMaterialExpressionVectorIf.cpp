@@ -11,6 +11,5 @@ void Export_pystes_UMaterialExpressionVectorIf(py::module &m)
         .def_readwrite("IfTrue", &UMaterialExpressionVectorIf::IfTrue)
         .def_readwrite("IfFalse", &UMaterialExpressionVectorIf::IfFalse)
         .def_readwrite("CompareFunc", &UMaterialExpressionVectorIf::CompareFunc)
-        .def("StaticClass", &UMaterialExpressionVectorIf::StaticClass, py::return_value_policy::reference)
           ;
 }

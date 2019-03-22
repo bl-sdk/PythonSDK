@@ -11,6 +11,5 @@ void Export_pystes_UItemPoolDefinition(py::module &m)
         .def_readwrite("Quantity", &UItemPoolDefinition::Quantity)
         .def_readwrite("MinGameStageRequirement", &UItemPoolDefinition::MinGameStageRequirement)
         .def_readwrite("MaxGameStageRequirement", &UItemPoolDefinition::MaxGameStageRequirement)
-        .def("StaticClass", &UItemPoolDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

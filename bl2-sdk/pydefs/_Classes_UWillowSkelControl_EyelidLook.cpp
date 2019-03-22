@@ -17,6 +17,5 @@ void Export_pystes_UWillowSkelControl_EyelidLook(py::module &m)
         .def_readwrite("maxOpenValue", &UWillowSkelControl_EyelidLook::maxOpenValue)
         .def_readwrite("minOpenValue", &UWillowSkelControl_EyelidLook::minOpenValue)
         .def_readwrite("ClosedValue", &UWillowSkelControl_EyelidLook::ClosedValue)
-        .def("StaticClass", &UWillowSkelControl_EyelidLook::StaticClass, py::return_value_policy::reference)
           ;
 }

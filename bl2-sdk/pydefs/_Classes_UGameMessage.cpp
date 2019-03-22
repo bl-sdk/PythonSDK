@@ -29,7 +29,6 @@ void Export_pystes_UGameMessage(py::module &m)
         .def_readwrite("KickWarning", &UGameMessage::KickWarning)
         .def_readwrite("NewSpecMessage", &UGameMessage::NewSpecMessage)
         .def_readwrite("SpecEnteredMessage", &UGameMessage::SpecEnteredMessage)
-        .def("StaticClass", &UGameMessage::StaticClass, py::return_value_policy::reference)
         .def("GetString", &UGameMessage::GetString)
           ;
 }

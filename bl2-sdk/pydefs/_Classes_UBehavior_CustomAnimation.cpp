@@ -13,7 +13,6 @@ void Export_pystes_UBehavior_CustomAnimation(py::module &m)
         .def_readwrite("BlendInTime", &UBehavior_CustomAnimation::BlendInTime)
         .def_readwrite("BlendOutTime", &UBehavior_CustomAnimation::BlendOutTime)
         .def_readwrite("AnimRate", &UBehavior_CustomAnimation::AnimRate)
-        .def("StaticClass", &UBehavior_CustomAnimation::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_CustomAnimation::ApplyBehaviorToContext)
           ;
 }

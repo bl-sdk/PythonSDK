@@ -11,6 +11,5 @@ void Export_pystes_UBodyRegionProtectionDefinition(py::module &m)
         .def_readwrite("DamageImpactEffects", &UBodyRegionProtectionDefinition::DamageImpactEffects)
         .def_readwrite("PercentOfMaxHealthLimit", &UBodyRegionProtectionDefinition::PercentOfMaxHealthLimit)
         .def_readwrite("PhysicalMaterial", &UBodyRegionProtectionDefinition::PhysicalMaterial)
-        .def("StaticClass", &UBodyRegionProtectionDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

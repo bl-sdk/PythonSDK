@@ -10,6 +10,5 @@ void Export_pystes_AReverbVolume(py::module &m)
         .def_readwrite("Settings", &AReverbVolume::Settings)
         .def_readwrite("AmbientZoneSettings", &AReverbVolume::AmbientZoneSettings)
         .def_readwrite("NextLowerPriorityVolume", &AReverbVolume::NextLowerPriorityVolume)
-        .def("StaticClass", &AReverbVolume::StaticClass, py::return_value_policy::reference)
           ;
 }

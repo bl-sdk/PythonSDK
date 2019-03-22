@@ -11,7 +11,6 @@ void Export_pystes_UCommandlet(py::module &m)
         .def_readwrite("HelpWebLink", &UCommandlet::HelpWebLink)
         .def_readwrite("HelpParamNames", &UCommandlet::HelpParamNames)
         .def_readwrite("HelpParamDescriptions", &UCommandlet::HelpParamDescriptions)
-        .def("StaticClass", &UCommandlet::StaticClass, py::return_value_policy::reference)
         .def("eventMain", &UCommandlet::eventMain)
           ;
 }

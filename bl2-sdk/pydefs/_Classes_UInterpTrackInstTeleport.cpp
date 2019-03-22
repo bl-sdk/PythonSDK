@@ -9,6 +9,5 @@ void Export_pystes_UInterpTrackInstTeleport(py::module &m)
         .def_readwrite("ResetLocation", &UInterpTrackInstTeleport::ResetLocation)
         .def_readwrite("ResetRotation", &UInterpTrackInstTeleport::ResetRotation)
         .def_readwrite("LastUpdatePosition", &UInterpTrackInstTeleport::LastUpdatePosition)
-        .def("StaticClass", &UInterpTrackInstTeleport::StaticClass, py::return_value_policy::reference)
           ;
 }

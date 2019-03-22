@@ -10,6 +10,5 @@ void Export_pystes_UParticleModuleLocationPrimitiveSphere_Seeded(py::module &m)
         .def_readwrite("StartRadius", &UParticleModuleLocationPrimitiveSphere::StartRadius)
         .def_readwrite("VelocityScale", &UParticleModuleLocationPrimitiveBase::VelocityScale)
         .def_readwrite("StartLocation", &UParticleModuleLocationPrimitiveBase::StartLocation)
-        .def("StaticClass", &UParticleModuleLocationPrimitiveSphere_Seeded::StaticClass, py::return_value_policy::reference)
           ;
 }

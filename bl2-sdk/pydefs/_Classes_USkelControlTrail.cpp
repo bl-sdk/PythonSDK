@@ -14,6 +14,5 @@ void Export_pystes_USkelControlTrail(py::module &m)
         .def_readwrite("ThisTimstep", &USkelControlTrail::ThisTimstep)
         .def_readwrite("TrailBoneLocations", &USkelControlTrail::TrailBoneLocations)
         .def_readwrite("OldLocalToWorld", &USkelControlTrail::OldLocalToWorld)
-        .def("StaticClass", &USkelControlTrail::StaticClass, py::return_value_policy::reference)
           ;
 }

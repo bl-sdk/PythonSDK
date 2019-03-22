@@ -20,7 +20,6 @@ void Export_pystes_URB_Spring(py::module &m)
         .def_readwrite("SpringMaxForceTimeScale", &URB_Spring::SpringMaxForceTimeScale)
         .def_readwrite("DampSaturateVel", &URB_Spring::DampSaturateVel)
         .def_readwrite("DampMaxForce", &URB_Spring::DampMaxForce)
-        .def("StaticClass", &URB_Spring::StaticClass, py::return_value_policy::reference)
         .def("Clear", &URB_Spring::Clear)
         .def("SetComponents", &URB_Spring::SetComponents)
           ;

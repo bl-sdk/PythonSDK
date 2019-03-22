@@ -18,6 +18,5 @@ void Export_pystes_UParticleLODLevel(py::module &m)
         .def_readwrite("OrbitModules", &UParticleLODLevel::OrbitModules)
         .def_readwrite("EventReceiverModules", &UParticleLODLevel::EventReceiverModules)
         .def_readwrite("PeakActiveParticles", &UParticleLODLevel::PeakActiveParticles)
-        .def("StaticClass", &UParticleLODLevel::StaticClass, py::return_value_policy::reference)
           ;
 }

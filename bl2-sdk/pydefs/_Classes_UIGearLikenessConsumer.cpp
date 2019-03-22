@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UIGearLikenessConsumer(py::module &m)
 {
     py::class_< UIGearLikenessConsumer,  UInterface   >(m, "UIGearLikenessConsumer")
-        .def("StaticClass", &UIGearLikenessConsumer::StaticClass, py::return_value_policy::reference)
         .def("ShouldRefreshLikenessOf", &UIGearLikenessConsumer::ShouldRefreshLikenessOf)
         .def("AssumeLikenessOf", &UIGearLikenessConsumer::AssumeLikenessOf)
           ;

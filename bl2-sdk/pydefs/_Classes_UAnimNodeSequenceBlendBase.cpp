@@ -7,6 +7,5 @@ void Export_pystes_UAnimNodeSequenceBlendBase(py::module &m)
 {
     py::class_< UAnimNodeSequenceBlendBase,  UAnimNodeSequence   >(m, "UAnimNodeSequenceBlendBase")
         .def_readwrite("Anims", &UAnimNodeSequenceBlendBase::Anims)
-        .def("StaticClass", &UAnimNodeSequenceBlendBase::StaticClass, py::return_value_policy::reference)
           ;
 }

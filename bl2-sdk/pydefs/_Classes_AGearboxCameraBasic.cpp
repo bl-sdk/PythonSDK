@@ -7,7 +7,6 @@ void Export_pystes_AGearboxCameraBasic(py::module &m)
 {
     py::class_< AGearboxCameraBasic,  ACamera   >(m, "AGearboxCameraBasic")
         .def_readwrite("VfTable_IInterfaceGearboxCamera", &AGearboxCameraBasic::VfTable_IInterfaceGearboxCamera)
-        .def("StaticClass", &AGearboxCameraBasic::StaticClass, py::return_value_policy::reference)
         .def("eventFinishCameraLookAt", &AGearboxCameraBasic::eventFinishCameraLookAt)
         .def("eventEnableThirdPersonLookAt", &AGearboxCameraBasic::eventEnableThirdPersonLookAt)
         .def("BeginCameraLookAt", &AGearboxCameraBasic::BeginCameraLookAt)

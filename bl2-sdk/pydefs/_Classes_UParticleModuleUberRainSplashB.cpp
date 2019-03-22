@@ -12,6 +12,5 @@ void Export_pystes_UParticleModuleUberRainSplashB(py::module &m)
         .def_readwrite("AlphaOverLife", &UParticleModuleUberRainSplashB::AlphaOverLife)
         .def_readwrite("LifeMultiplier", &UParticleModuleUberRainSplashB::LifeMultiplier)
         .def_readwrite("StartRotationRate", &UParticleModuleUberRainSplashB::StartRotationRate)
-        .def("StaticClass", &UParticleModuleUberRainSplashB::StaticClass, py::return_value_policy::reference)
           ;
 }

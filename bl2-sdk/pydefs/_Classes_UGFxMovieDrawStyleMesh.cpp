@@ -16,7 +16,6 @@ void Export_pystes_UGFxMovieDrawStyleMesh(py::module &m)
         .def_readwrite("Component", &UGFxMovieDrawStyleMesh::Component)
         .def_readwrite("Mati", &UGFxMovieDrawStyleMesh::Mati)
         .def_readwrite("OriginalMaterial", &UGFxMovieDrawStyleMesh::OriginalMaterial)
-        .def("StaticClass", &UGFxMovieDrawStyleMesh::StaticClass, py::return_value_policy::reference)
         .def("GetStyleDebugString", &UGFxMovieDrawStyleMesh::GetStyleDebugString)
         .def("eventRequiresClientInstance", &UGFxMovieDrawStyleMesh::eventRequiresClientInstance)
           ;

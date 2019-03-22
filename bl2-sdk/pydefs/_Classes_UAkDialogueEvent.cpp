@@ -9,6 +9,5 @@ void Export_pystes_UAkDialogueEvent(py::module &m)
         .def_readwrite("RequiredBank", &UAkDialogueEvent::RequiredBank)
         .def_readwrite("Arguments", &UAkDialogueEvent::Arguments)
         .def_readwrite("FaceFXAnimSet", &UAkDialogueEvent::FaceFXAnimSet)
-        .def("StaticClass", &UAkDialogueEvent::StaticClass, py::return_value_policy::reference)
           ;
 }

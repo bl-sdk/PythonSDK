@@ -16,6 +16,5 @@ void Export_pystes_ALandscape(py::module &m)
         .def_readwrite("SubsectionSizeQuads", &ALandscape::SubsectionSizeQuads)
         .def_readwrite("NumSubsections", &ALandscape::NumSubsections)
         .def_readwrite("Proxies", &ALandscape::Proxies)
-        .def("StaticClass", &ALandscape::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UDebugCameraInput(py::module &m)
 {
     py::class_< UDebugCameraInput,  UPlayerInput   >(m, "UDebugCameraInput")
-        .def("StaticClass", &UDebugCameraInput::StaticClass, py::return_value_policy::reference)
         .def("InputKey", &UDebugCameraInput::InputKey)
           ;
 }

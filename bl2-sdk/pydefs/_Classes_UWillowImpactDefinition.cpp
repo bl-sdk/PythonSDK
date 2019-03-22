@@ -12,7 +12,6 @@ void Export_pystes_UWillowImpactDefinition(py::module &m)
         .def_readwrite("AlternateImpactDefinition", &UWillowImpactDefinition::AlternateImpactDefinition)
         .def_readwrite("UnconditionalResponse", &UWillowImpactDefinition::UnconditionalResponse)
         .def_readwrite("ImpactAkEvent", &UWillowImpactDefinition::ImpactAkEvent)
-        .def("StaticClass", &UWillowImpactDefinition::StaticClass, py::return_value_policy::reference)
         .def("HandleRigidBodyImpact", &UWillowImpactDefinition::HandleRigidBodyImpact)
           ;
 }

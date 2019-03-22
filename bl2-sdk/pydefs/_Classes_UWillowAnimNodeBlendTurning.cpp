@@ -13,6 +13,5 @@ void Export_pystes_UWillowAnimNodeBlendTurning(py::module &m)
         .def_readwrite("PrevDeltaAngle", &UWillowAnimNodeBlendTurning::PrevDeltaAngle)
         .def_readwrite("DeltaAngle", &UWillowAnimNodeBlendTurning::DeltaAngle)
         .def_readwrite("CurrentTurnTransitionDelay", &UWillowAnimNodeBlendTurning::CurrentTurnTransitionDelay)
-        .def("StaticClass", &UWillowAnimNodeBlendTurning::StaticClass, py::return_value_policy::reference)
           ;
 }

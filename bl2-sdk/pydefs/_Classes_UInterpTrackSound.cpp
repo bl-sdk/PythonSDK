@@ -7,6 +7,5 @@ void Export_pystes_UInterpTrackSound(py::module &m)
 {
     py::class_< UInterpTrackSound,  UInterpTrackVectorBase   >(m, "UInterpTrackSound")
         .def_readwrite("Sounds", &UInterpTrackSound::Sounds)
-        .def("StaticClass", &UInterpTrackSound::StaticClass, py::return_value_policy::reference)
           ;
 }

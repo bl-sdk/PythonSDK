@@ -7,7 +7,6 @@ void Export_pystes_UAnimNodeSynch(py::module &m)
 {
     py::class_< UAnimNodeSynch,  UAnimNodeBlendBase   >(m, "UAnimNodeSynch")
         .def_readwrite("Groups", &UAnimNodeSynch::Groups)
-        .def("StaticClass", &UAnimNodeSynch::StaticClass, py::return_value_policy::reference)
         .def("SetGroupRateScale", &UAnimNodeSynch::SetGroupRateScale)
         .def("GetRelativePosition", &UAnimNodeSynch::GetRelativePosition)
         .def("ForceRelativePosition", &UAnimNodeSynch::ForceRelativePosition)

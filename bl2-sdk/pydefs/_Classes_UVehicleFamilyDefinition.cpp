@@ -12,7 +12,6 @@ void Export_pystes_UVehicleFamilyDefinition(py::module &m)
         .def_readwrite("RequiredMissionCompletionToUnlock", &UVehicleFamilyDefinition::RequiredMissionCompletionToUnlock)
         .def_readwrite("SupportedTags", &UVehicleFamilyDefinition::SupportedTags)
         .def_readwrite("RequiredTags", &UVehicleFamilyDefinition::RequiredTags)
-        .def("StaticClass", &UVehicleFamilyDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetVehiclePreviewMoviePath", &UVehicleFamilyDefinition::GetVehiclePreviewMoviePath)
           ;
 }

@@ -19,7 +19,6 @@ void Export_pystes_UWillowPopulationPointDefinition(py::module &m)
         .def_readwrite("AmbientShadowColor", &UWillowPopulationPointDefinition::AmbientShadowColor)
         .def_readwrite("DominantShadowTransitionStartDistance", &UWillowPopulationPointDefinition::DominantShadowTransitionStartDistance)
         .def_readwrite("DominantShadowTransitionEndDistance", &UWillowPopulationPointDefinition::DominantShadowTransitionEndDistance)
-        .def("StaticClass", &UWillowPopulationPointDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetAnims", &UWillowPopulationPointDefinition::GetAnims)
         .def("GetPointAnim", &UWillowPopulationPointDefinition::GetPointAnim, py::return_value_policy::reference)
           ;

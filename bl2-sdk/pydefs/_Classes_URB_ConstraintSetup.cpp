@@ -32,6 +32,5 @@ void Export_pystes_URB_ConstraintSetup(py::module &m)
         .def_readwrite("TwistLimitDamping", &URB_ConstraintSetup::TwistLimitDamping)
         .def_readwrite("AngularBreakThreshold", &URB_ConstraintSetup::AngularBreakThreshold)
         .def_readwrite("PulleyRatio", &URB_ConstraintSetup::PulleyRatio)
-        .def("StaticClass", &URB_ConstraintSetup::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UCharacterCustomizationMenuGFxObject(py::module &m)
 {
     py::class_< UCharacterCustomizationMenuGFxObject,  UGFxObject   >(m, "UCharacterCustomizationMenuGFxObject")
-        .def("StaticClass", &UCharacterCustomizationMenuGFxObject::StaticClass, py::return_value_policy::reference)
         .def("GetEntryLabel", &UCharacterCustomizationMenuGFxObject::GetEntryLabel)
         .def("SetSelectedEntry", &UCharacterCustomizationMenuGFxObject::SetSelectedEntry)
         .def("GetSelectedEntry", &UCharacterCustomizationMenuGFxObject::GetSelectedEntry)

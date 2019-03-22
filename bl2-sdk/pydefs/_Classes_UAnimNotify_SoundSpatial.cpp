@@ -9,6 +9,5 @@ void Export_pystes_UAnimNotify_SoundSpatial(py::module &m)
         .def_readwrite("SoundCueFirstPerson", &UAnimNotify_SoundSpatial::SoundCueFirstPerson)
         .def_readwrite("SoundCueThirdPerson", &UAnimNotify_SoundSpatial::SoundCueThirdPerson)
         .def_readwrite("BoneName", &UAnimNotify_SoundSpatial::BoneName)
-        .def("StaticClass", &UAnimNotify_SoundSpatial::StaticClass, py::return_value_policy::reference)
           ;
 }

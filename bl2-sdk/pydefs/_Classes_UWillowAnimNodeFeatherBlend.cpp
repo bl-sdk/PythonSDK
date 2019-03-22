@@ -9,7 +9,6 @@ void Export_pystes_UWillowAnimNodeFeatherBlend(py::module &m)
         .def_readwrite("BoneBlendTargets", &UWillowAnimNodeFeatherBlend::BoneBlendTargets)
         .def_readwrite("Child2PerBoneWeight", &UWillowAnimNodeFeatherBlend::Child2PerBoneWeight)
         .def_readwrite("LocalToCompReqBones", &UWillowAnimNodeFeatherBlend::LocalToCompReqBones)
-        .def("StaticClass", &UWillowAnimNodeFeatherBlend::StaticClass, py::return_value_policy::reference)
         .def("SetBlendTarget", &UWillowAnimNodeFeatherBlend::SetBlendTarget)
           ;
 }

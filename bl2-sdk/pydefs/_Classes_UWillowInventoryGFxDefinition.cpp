@@ -14,6 +14,5 @@ void Export_pystes_UWillowInventoryGFxDefinition(py::module &m)
         .def_readwrite("Cards", &UWillowInventoryGFxDefinition::Cards)
         .def_readwrite("ExternalTextureMap", &UWillowInventoryGFxDefinition::ExternalTextureMap)
         .def_readwrite("CardExternalTextureMap", &UWillowInventoryGFxDefinition::CardExternalTextureMap)
-        .def("StaticClass", &UWillowInventoryGFxDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

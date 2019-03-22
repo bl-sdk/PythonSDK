@@ -10,7 +10,6 @@ void Export_pystes_UBehavior_RefillResourcePool(py::module &m)
         .def_readwrite("Percentage", &UBehavior_RefillResourcePool::Percentage)
         .def_readwrite("MaxPercentage", &UBehavior_RefillResourcePool::MaxPercentage)
         .def_readwrite("PercentageContext", &UBehavior_RefillResourcePool::PercentageContext)
-        .def("StaticClass", &UBehavior_RefillResourcePool::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_RefillResourcePool::ApplyBehaviorToContext)
           ;
 }

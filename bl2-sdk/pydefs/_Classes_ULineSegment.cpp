@@ -20,6 +20,5 @@ void Export_pystes_ULineSegment(py::module &m)
         .def_readwrite("SIColor", &ULineSegment::SIColor)
         .def_readwrite("RetreatColor", &ULineSegment::RetreatColor)
         .def_readwrite("StealthColor", &ULineSegment::StealthColor)
-        .def("StaticClass", &ULineSegment::StaticClass, py::return_value_policy::reference)
           ;
 }

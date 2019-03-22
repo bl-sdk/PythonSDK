@@ -13,7 +13,6 @@ void Export_pystes_USeqAct_PlayCameraAnim(py::module &m)
         .def_readwrite("IntensityScale", &USeqAct_PlayCameraAnim::IntensityScale)
         .def_readwrite("PlaySpace", &USeqAct_PlayCameraAnim::PlaySpace)
         .def_readwrite("UserDefinedSpaceActor", &USeqAct_PlayCameraAnim::UserDefinedSpaceActor)
-        .def("StaticClass", &USeqAct_PlayCameraAnim::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqAct_PlayCameraAnim::eventGetObjClassVersion)
           ;
 }

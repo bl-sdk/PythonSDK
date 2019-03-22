@@ -11,7 +11,6 @@ void Export_pystes_UGearboxEditorNode(py::module &m)
         .def_readwrite("InputLinks", &UGearboxEditorNode::InputLinks)
         .def_readwrite("VariableLinks", &UGearboxEditorNode::VariableLinks)
         .def_readwrite("SliderPosition", &UGearboxEditorNode::SliderPosition)
-        .def("StaticClass", &UGearboxEditorNode::StaticClass, py::return_value_policy::reference)
         .def("IsChild", &UGearboxEditorNode::IsChild)
           ;
 }

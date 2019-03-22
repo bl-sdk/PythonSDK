@@ -10,6 +10,5 @@ void Export_pystes_USprintDefinition(py::module &m)
         .def_readwrite("EyeHeightModifier", &USprintDefinition::EyeHeightModifier)
         .def_readwrite("BobScalar", &USprintDefinition::BobScalar)
         .def_readwrite("AttributeEffects", &USprintDefinition::AttributeEffects)
-        .def("StaticClass", &USprintDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

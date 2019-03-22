@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UInterpTrackSlomo(py::module &m)
 {
     py::class_< UInterpTrackSlomo,  UInterpTrackFloatBase   >(m, "UInterpTrackSlomo")
-        .def("StaticClass", &UInterpTrackSlomo::StaticClass, py::return_value_policy::reference)
           ;
 }

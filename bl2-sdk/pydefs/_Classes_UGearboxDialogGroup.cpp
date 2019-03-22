@@ -16,7 +16,6 @@ void Export_pystes_UGearboxDialogGroup(py::module &m)
         .def_readwrite("OutputLinksToStructs", &UGearboxDialogGroup::OutputLinksToStructs)
         .def_readwrite("DialogEvents", &UGearboxDialogGroup::DialogEvents)
         .def_readwrite("TalkActs", &UGearboxDialogGroup::TalkActs)
-        .def("StaticClass", &UGearboxDialogGroup::StaticClass, py::return_value_policy::reference)
         .def("SimpleEvent", &UGearboxDialogGroup::SimpleEvent)
           ;
 }

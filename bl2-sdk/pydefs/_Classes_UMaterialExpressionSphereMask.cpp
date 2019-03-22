@@ -12,6 +12,5 @@ void Export_pystes_UMaterialExpressionSphereMask(py::module &m)
         .def_readwrite("Hardness", &UMaterialExpressionSphereMask::Hardness)
         .def_readwrite("AttenuationRadius", &UMaterialExpressionSphereMask::AttenuationRadius)
         .def_readwrite("HardnessPercent", &UMaterialExpressionSphereMask::HardnessPercent)
-        .def("StaticClass", &UMaterialExpressionSphereMask::StaticClass, py::return_value_policy::reference)
           ;
 }

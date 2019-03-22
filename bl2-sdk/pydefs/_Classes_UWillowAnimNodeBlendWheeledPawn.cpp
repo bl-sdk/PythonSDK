@@ -16,6 +16,5 @@ void Export_pystes_UWillowAnimNodeBlendWheeledPawn(py::module &m)
         .def_readwrite("IdleBlendTime", &UWillowAnimNodeBlendWheeledPawn::IdleBlendTime)
         .def_readwrite("DirAngle", &UWillowAnimNodeBlendWheeledPawn::DirAngle)
         .def_readwrite("CurSpeed", &UWillowAnimNodeBlendWheeledPawn::CurSpeed)
-        .def("StaticClass", &UWillowAnimNodeBlendWheeledPawn::StaticClass, py::return_value_policy::reference)
           ;
 }

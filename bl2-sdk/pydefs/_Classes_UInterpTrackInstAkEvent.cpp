@@ -7,6 +7,5 @@ void Export_pystes_UInterpTrackInstAkEvent(py::module &m)
 {
     py::class_< UInterpTrackInstAkEvent,  UInterpTrackInst   >(m, "UInterpTrackInstAkEvent")
         .def_readwrite("LastUpdatePosition", &UInterpTrackInstAkEvent::LastUpdatePosition)
-        .def("StaticClass", &UInterpTrackInstAkEvent::StaticClass, py::return_value_policy::reference)
           ;
 }

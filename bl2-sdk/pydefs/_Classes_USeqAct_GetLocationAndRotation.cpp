@@ -10,7 +10,6 @@ void Export_pystes_USeqAct_GetLocationAndRotation(py::module &m)
         .def_readwrite("RotationVector", &USeqAct_GetLocationAndRotation::RotationVector)
         .def_readwrite("Rotation", &USeqAct_GetLocationAndRotation::Rotation)
         .def_readwrite("SocketOrBoneName", &USeqAct_GetLocationAndRotation::SocketOrBoneName)
-        .def("StaticClass", &USeqAct_GetLocationAndRotation::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqAct_GetLocationAndRotation::eventGetObjClassVersion)
           ;
 }

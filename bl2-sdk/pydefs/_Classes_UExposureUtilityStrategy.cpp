@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UExposureUtilityStrategy(py::module &m)
 {
     py::class_< UExposureUtilityStrategy,  UObject   >(m, "UExposureUtilityStrategy")
-        .def("StaticClass", &UExposureUtilityStrategy::StaticClass, py::return_value_policy::reference)
           ;
 }

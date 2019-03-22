@@ -16,7 +16,6 @@ void Export_pystes_UGFxAction_OpenMovie(py::module &m)
         .def_readwrite("RenderTexture", &UGFxAction_OpenMovie::RenderTexture)
         .def_readwrite("CaptureKeys", &UGFxAction_OpenMovie::CaptureKeys)
         .def_readwrite("FocusIgnoreKeys", &UGFxAction_OpenMovie::FocusIgnoreKeys)
-        .def("StaticClass", &UGFxAction_OpenMovie::StaticClass, py::return_value_policy::reference)
         .def("eventIsValidLevelSequenceObject", &UGFxAction_OpenMovie::eventIsValidLevelSequenceObject)
           ;
 }

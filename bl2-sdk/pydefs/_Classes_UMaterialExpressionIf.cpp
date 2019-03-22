@@ -11,6 +11,5 @@ void Export_pystes_UMaterialExpressionIf(py::module &m)
         .def_readwrite("AGreaterThanB", &UMaterialExpressionIf::AGreaterThanB)
         .def_readwrite("AEqualsB", &UMaterialExpressionIf::AEqualsB)
         .def_readwrite("ALessThanB", &UMaterialExpressionIf::ALessThanB)
-        .def("StaticClass", &UMaterialExpressionIf::StaticClass, py::return_value_policy::reference)
           ;
 }

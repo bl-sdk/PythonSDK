@@ -10,7 +10,6 @@ void Export_pystes_UWillowPointLight(py::module &m)
         .def_readwrite("Lifetime", &UWillowPointLight::Lifetime)
         .def_readwrite("TimeShiftIndex", &UWillowPointLight::TimeShiftIndex)
         .def_readwrite("TimeShift", &UWillowPointLight::TimeShift)
-        .def("StaticClass", &UWillowPointLight::StaticClass, py::return_value_policy::reference)
         .def("ResetLight", &UWillowPointLight::ResetLight)
           ;
 }

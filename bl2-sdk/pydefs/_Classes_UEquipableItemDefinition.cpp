@@ -9,7 +9,6 @@ void Export_pystes_UEquipableItemDefinition(py::module &m)
         .def_readwrite("DamageTypeIcon", &UEquipableItemDefinition::DamageTypeIcon)
         .def_readwrite("EquipSounds", &UEquipableItemDefinition::EquipSounds)
         .def_readwrite("UnequipSounds", &UEquipableItemDefinition::UnequipSounds)
-        .def("StaticClass", &UEquipableItemDefinition::StaticClass, py::return_value_policy::reference)
         .def("OnUnequipped", &UEquipableItemDefinition::OnUnequipped)
         .def("OnEquipped", &UEquipableItemDefinition::OnEquipped)
           ;

@@ -7,6 +7,5 @@ void Export_pystes_UParticleModuleMeshRotationRate(py::module &m)
 {
     py::class_< UParticleModuleMeshRotationRate,  UParticleModuleRotationRateBase   >(m, "UParticleModuleMeshRotationRate")
         .def_readwrite("StartRotationRate", &UParticleModuleMeshRotationRate::StartRotationRate)
-        .def("StaticClass", &UParticleModuleMeshRotationRate::StaticClass, py::return_value_policy::reference)
           ;
 }

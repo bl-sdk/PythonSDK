@@ -7,7 +7,6 @@ void Export_pystes_UAttributeDefinitionMultiContext(py::module &m)
 {
     py::class_< UAttributeDefinitionMultiContext,  UAttributeDefinitionBase   >(m, "UAttributeDefinitionMultiContext")
         .def_readwrite("MultiContextResolver", &UAttributeDefinitionMultiContext::MultiContextResolver)
-        .def("StaticClass", &UAttributeDefinitionMultiContext::StaticClass, py::return_value_policy::reference)
         .def("GetDescriptors", &UAttributeDefinitionMultiContext::GetDescriptors)
         .def("GetBaseValues", &UAttributeDefinitionMultiContext::GetBaseValues)
         .def("GetValues", &UAttributeDefinitionMultiContext::GetValues)

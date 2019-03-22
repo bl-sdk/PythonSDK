@@ -11,7 +11,6 @@ void Export_pystes_UBehavior_AIFollow(py::module &m)
         .def_readwrite("Stance", &UBehavior_AIFollow::Stance)
         .def_readwrite("CatchupDistance", &UBehavior_AIFollow::CatchupDistance)
         .def_readwrite("HoldStillDistance", &UBehavior_AIFollow::HoldStillDistance)
-        .def("StaticClass", &UBehavior_AIFollow::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_AIFollow::ApplyBehaviorToContext)
           ;
 }

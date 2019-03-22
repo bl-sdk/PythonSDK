@@ -16,6 +16,5 @@ void Export_pystes_UQuestAcceptGFxDefinition(py::module &m)
         .def_readwrite("Pres_Ineligible", &UQuestAcceptGFxDefinition::Pres_Ineligible)
         .def_readwrite("Pres_Failed", &UQuestAcceptGFxDefinition::Pres_Failed)
         .def_readwrite("PostProcessInterpolationTime", &UQuestAcceptGFxDefinition::PostProcessInterpolationTime)
-        .def("StaticClass", &UQuestAcceptGFxDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -9,6 +9,5 @@ void Export_pystes_UParticleModuleVelocity_Seeded(py::module &m)
         .def_readwrite("RandomSeedInfo", &UParticleModuleVelocity_Seeded::RandomSeedInfo)
         .def_readwrite("StartVelocity", &UParticleModuleVelocity::StartVelocity)
         .def_readwrite("StartVelocityRadial", &UParticleModuleVelocity::StartVelocityRadial)
-        .def("StaticClass", &UParticleModuleVelocity_Seeded::StaticClass, py::return_value_policy::reference)
           ;
 }

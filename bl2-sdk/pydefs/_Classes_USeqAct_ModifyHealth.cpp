@@ -13,7 +13,6 @@ void Export_pystes_USeqAct_ModifyHealth(py::module &m)
         .def_readwrite("Amount", &USeqAct_ModifyHealth::Amount)
         .def_readwrite("Radius", &USeqAct_ModifyHealth::Radius)
         .def_readwrite("Instigator", &USeqAct_ModifyHealth::Instigator)
-        .def("StaticClass", &USeqAct_ModifyHealth::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqAct_ModifyHealth::eventGetObjClassVersion)
           ;
 }

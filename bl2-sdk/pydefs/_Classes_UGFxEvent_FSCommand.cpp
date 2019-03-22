@@ -9,6 +9,5 @@ void Export_pystes_UGFxEvent_FSCommand(py::module &m)
         .def_readwrite("Movie", &UGFxEvent_FSCommand::Movie)
         .def_readwrite("FSCommand", &UGFxEvent_FSCommand::FSCommand)
         .def_readwrite("Handler", &UGFxEvent_FSCommand::Handler)
-        .def("StaticClass", &UGFxEvent_FSCommand::StaticClass, py::return_value_policy::reference)
           ;
 }

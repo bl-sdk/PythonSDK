@@ -9,6 +9,5 @@ void Export_pystes_UParticleModuleParameterDynamic_Seeded(py::module &m)
         .def_readwrite("RandomSeedInfo", &UParticleModuleParameterDynamic_Seeded::RandomSeedInfo)
         .def_readwrite("DynamicParams", &UParticleModuleParameterDynamic::DynamicParams)
         .def_readwrite("UpdateFlags", &UParticleModuleParameterDynamic::UpdateFlags)
-        .def("StaticClass", &UParticleModuleParameterDynamic_Seeded::StaticClass, py::return_value_policy::reference)
           ;
 }

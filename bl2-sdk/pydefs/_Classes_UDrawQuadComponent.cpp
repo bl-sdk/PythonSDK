@@ -9,6 +9,5 @@ void Export_pystes_UDrawQuadComponent(py::module &m)
         .def_readwrite("Texture", &UDrawQuadComponent::Texture)
         .def_readwrite("Width", &UDrawQuadComponent::Width)
         .def_readwrite("Height", &UDrawQuadComponent::Height)
-        .def("StaticClass", &UDrawQuadComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

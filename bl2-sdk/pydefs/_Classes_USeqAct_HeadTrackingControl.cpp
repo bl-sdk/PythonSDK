@@ -14,7 +14,6 @@ void Export_pystes_USeqAct_HeadTrackingControl(py::module &m)
         .def_readwrite("ActorClassesToLookAt", &USeqAct_HeadTrackingControl::ActorClassesToLookAt)
         .def_readwrite("TargetBoneNames", &USeqAct_HeadTrackingControl::TargetBoneNames)
         .def_readwrite("LookAtTargets", &USeqAct_HeadTrackingControl::LookAtTargets)
-        .def("StaticClass", &USeqAct_HeadTrackingControl::StaticClass, py::return_value_policy::reference)
         .def("eventActivated", &USeqAct_HeadTrackingControl::eventActivated)
         .def("eventGetObjClassVersion", &USeqAct_HeadTrackingControl::eventGetObjClassVersion)
           ;

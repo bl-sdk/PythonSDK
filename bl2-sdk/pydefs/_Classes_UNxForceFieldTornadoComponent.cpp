@@ -17,6 +17,5 @@ void Export_pystes_UNxForceFieldTornadoComponent(py::module &m)
         .def_readwrite("HeightOffset", &UNxForceFieldTornadoComponent::HeightOffset)
         .def_readwrite("SelfRotationStrength", &UNxForceFieldTornadoComponent::SelfRotationStrength)
         .def_readwrite("Kernel", &UNxForceFieldTornadoComponent::Kernel)
-        .def("StaticClass", &UNxForceFieldTornadoComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

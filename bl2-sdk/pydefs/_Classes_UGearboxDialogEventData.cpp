@@ -18,7 +18,6 @@ void Export_pystes_UGearboxDialogEventData(py::module &m)
         .def_readwrite("PlayingInfo", &UGearboxDialogEventData::PlayingInfo)
         .def_readwrite("TalkFinishTime", &UGearboxDialogEventData::TalkFinishTime)
         .def_readwrite("UseCount", &UGearboxDialogEventData::UseCount)
-        .def("StaticClass", &UGearboxDialogEventData::StaticClass, py::return_value_policy::reference)
         .def("IsActive", &UGearboxDialogEventData::IsActive)
           ;
 }

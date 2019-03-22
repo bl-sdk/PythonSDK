@@ -12,6 +12,5 @@ void Export_pystes_UParticleModuleBeamSource(py::module &m)
         .def_readwrite("Source", &UParticleModuleBeamSource::Source)
         .def_readwrite("SourceTangent", &UParticleModuleBeamSource::SourceTangent)
         .def_readwrite("SourceStrength", &UParticleModuleBeamSource::SourceStrength)
-        .def("StaticClass", &UParticleModuleBeamSource::StaticClass, py::return_value_policy::reference)
           ;
 }

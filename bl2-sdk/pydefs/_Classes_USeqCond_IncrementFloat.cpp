@@ -9,6 +9,5 @@ void Export_pystes_USeqCond_IncrementFloat(py::module &m)
         .def_readwrite("IncrementAmount", &USeqCond_IncrementFloat::IncrementAmount)
         .def_readwrite("ValueA", &USeqCond_IncrementFloat::ValueA)
         .def_readwrite("ValueB", &USeqCond_IncrementFloat::ValueB)
-        .def("StaticClass", &USeqCond_IncrementFloat::StaticClass, py::return_value_policy::reference)
           ;
 }

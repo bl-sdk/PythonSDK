@@ -11,6 +11,5 @@ void Export_pystes_UCoverMeshComponent(py::module &m)
         .def_readwrite("AutoAdjustOn", &UCoverMeshComponent::AutoAdjustOn)
         .def_readwrite("AutoAdjustOff", &UCoverMeshComponent::AutoAdjustOff)
         .def_readwrite("Disabled", &UCoverMeshComponent::Disabled)
-        .def("StaticClass", &UCoverMeshComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

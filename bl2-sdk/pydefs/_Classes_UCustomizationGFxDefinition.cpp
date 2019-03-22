@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UCustomizationGFxDefinition(py::module &m)
 {
     py::class_< UCustomizationGFxDefinition,  UWillowGFxThirdPersonDefinition   >(m, "UCustomizationGFxDefinition")
-        .def("StaticClass", &UCustomizationGFxDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

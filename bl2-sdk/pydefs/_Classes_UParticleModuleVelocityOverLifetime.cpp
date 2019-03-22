@@ -7,6 +7,5 @@ void Export_pystes_UParticleModuleVelocityOverLifetime(py::module &m)
 {
     py::class_< UParticleModuleVelocityOverLifetime,  UParticleModule   >(m, "UParticleModuleVelocityOverLifetime")
         .def_readwrite("VelOverLife", &UParticleModuleVelocityOverLifetime::VelOverLife)
-        .def("StaticClass", &UParticleModuleVelocityOverLifetime::StaticClass, py::return_value_policy::reference)
           ;
 }

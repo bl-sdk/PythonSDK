@@ -11,6 +11,5 @@ void Export_pystes_UInterpGroup(py::module &m)
         .def_readwrite("GroupName", &UInterpGroup::GroupName)
         .def_readwrite("GroupColor", &UInterpGroup::GroupColor)
         .def_readwrite("GroupAnimSets", &UInterpGroup::GroupAnimSets)
-        .def("StaticClass", &UInterpGroup::StaticClass, py::return_value_policy::reference)
           ;
 }

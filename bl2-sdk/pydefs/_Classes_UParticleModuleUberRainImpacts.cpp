@@ -17,6 +17,5 @@ void Export_pystes_UParticleModuleUberRainImpacts(py::module &m)
         .def_readwrite("PC_HeightAxis", &UParticleModuleUberRainImpacts::PC_HeightAxis)
         .def_readwrite("ColorOverLife", &UParticleModuleUberRainImpacts::ColorOverLife)
         .def_readwrite("AlphaOverLife", &UParticleModuleUberRainImpacts::AlphaOverLife)
-        .def("StaticClass", &UParticleModuleUberRainImpacts::StaticClass, py::return_value_policy::reference)
           ;
 }

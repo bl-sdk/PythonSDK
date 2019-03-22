@@ -13,7 +13,6 @@ void Export_pystes_UWillowSeqAct_InterpMenu(py::module &m)
         .def_readwrite("ManualPlayRate", &UWillowSeqAct_InterpMenu::ManualPlayRate)
         .def_readwrite("InputDelta", &UWillowSeqAct_InterpMenu::InputDelta)
         .def_readwrite("InputTime", &UWillowSeqAct_InterpMenu::InputTime)
-        .def("StaticClass", &UWillowSeqAct_InterpMenu::StaticClass, py::return_value_policy::reference)
         .def("InputAxis", &UWillowSeqAct_InterpMenu::InputAxis)
           ;
 }

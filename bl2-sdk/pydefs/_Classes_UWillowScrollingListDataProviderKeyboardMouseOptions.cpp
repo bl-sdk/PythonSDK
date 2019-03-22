@@ -11,7 +11,6 @@ void Export_pystes_UWillowScrollingListDataProviderKeyboardMouseOptions(py::modu
         .def_readwrite("DeviceCollection", &UWillowScrollingListDataProviderKeyboardMouseOptions::DeviceCollection)
         .def_readwrite("KeyBinds", &UWillowScrollingListDataProviderKeyboardMouseOptions::KeyBinds)
         .def_readwrite("CurrentKeyBindSelection", &UWillowScrollingListDataProviderKeyboardMouseOptions::CurrentKeyBindSelection)
-        .def("StaticClass", &UWillowScrollingListDataProviderKeyboardMouseOptions::StaticClass, py::return_value_policy::reference)
         .def("ShowControllerMapping", &UWillowScrollingListDataProviderKeyboardMouseOptions::ShowControllerMapping)
         .def("OnPop", &UWillowScrollingListDataProviderKeyboardMouseOptions::OnPop)
         .def("Cleanup", &UWillowScrollingListDataProviderKeyboardMouseOptions::Cleanup)

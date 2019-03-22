@@ -15,7 +15,6 @@ void Export_pystes_UKnowledgeRecord(py::module &m)
         .def_readwrite("Frequency", &UKnowledgeRecord::Frequency)
         .def_readwrite("NextUpdateTime", &UKnowledgeRecord::NextUpdateTime)
         .def_readwrite("FlagIndex", &UKnowledgeRecord::FlagIndex)
-        .def("StaticClass", &UKnowledgeRecord::StaticClass, py::return_value_policy::reference)
         .def("eventRecordEvalCallback", &UKnowledgeRecord::eventRecordEvalCallback)
           ;
 }

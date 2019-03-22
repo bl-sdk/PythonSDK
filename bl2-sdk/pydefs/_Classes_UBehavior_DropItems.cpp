@@ -12,7 +12,6 @@ void Export_pystes_UBehavior_DropItems(py::module &m)
         .def_readwrite("CustomDirection", &UBehavior_DropItems::CustomDirection)
         .def_readwrite("CustomVelocity", &UBehavior_DropItems::CustomVelocity)
         .def_readwrite("Torque", &UBehavior_DropItems::Torque)
-        .def("StaticClass", &UBehavior_DropItems::StaticClass, py::return_value_policy::reference)
         .def("DropItems", &UBehavior_DropItems::DropItems)
         .def("ApplyBehaviorToContext", &UBehavior_DropItems::ApplyBehaviorToContext)
           ;

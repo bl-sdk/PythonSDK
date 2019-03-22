@@ -7,7 +7,6 @@ void Export_pystes_AWillowVendingMachineBlackMarket(py::module &m)
 {
     py::class_< AWillowVendingMachineBlackMarket,  AWillowVendingMachineBase   >(m, "AWillowVendingMachineBlackMarket")
         .def_readwrite("DefinitionData", &AWillowVendingMachineBlackMarket::DefinitionData)
-        .def("StaticClass", &AWillowVendingMachineBlackMarket::StaticClass, py::return_value_policy::reference)
         .def("PlayerBuyItem", &AWillowVendingMachineBlackMarket::PlayerBuyItem)
         .def("GetRarityLevelForUpgradeLevel", &AWillowVendingMachineBlackMarket::GetRarityLevelForUpgradeLevel)
         .def("BuildUpgradeItemForPlayer", &AWillowVendingMachineBlackMarket::BuildUpgradeItemForPlayer, py::return_value_policy::reference)

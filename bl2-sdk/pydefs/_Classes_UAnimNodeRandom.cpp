@@ -13,7 +13,6 @@ void Export_pystes_UAnimNodeRandom(py::module &m)
         .def_readwrite("BlendTimeToGo", &UAnimNodeBlendList::BlendTimeToGo)
         .def_readwrite("ActiveChildIndex", &UAnimNodeBlendList::ActiveChildIndex)
         .def_readwrite("SliderPosition", &UAnimNodeBlendList::SliderPosition)
-        .def("StaticClass", &UAnimNodeRandom::StaticClass, py::return_value_policy::reference)
         .def("SetActiveChild", &UAnimNodeBlendList::SetActiveChild)
           ;
 }

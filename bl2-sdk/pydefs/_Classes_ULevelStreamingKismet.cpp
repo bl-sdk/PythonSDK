@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_ULevelStreamingKismet(py::module &m)
 {
     py::class_< ULevelStreamingKismet,  ULevelStreaming   >(m, "ULevelStreamingKismet")
-        .def("StaticClass", &ULevelStreamingKismet::StaticClass, py::return_value_policy::reference)
           ;
 }

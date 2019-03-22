@@ -14,6 +14,5 @@ void Export_pystes_URuleSet(py::module &m)
         .def_readwrite("FlagsOnEntry", &URuleSet::FlagsOnEntry)
         .def_readwrite("FlagsOnExit", &URuleSet::FlagsOnExit)
         .def_readwrite("HACK_RuleSetsAllowedToFollow", &URuleSet::HACK_RuleSetsAllowedToFollow)
-        .def("StaticClass", &URuleSet::StaticClass, py::return_value_policy::reference)
           ;
 }

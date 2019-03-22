@@ -26,6 +26,5 @@ void Export_pystes_UDOFEffect(py::module &m)
         .def_readwrite("FocusDistanceOverride", &UDOFEffect::FocusDistanceOverride)
         .def_readwrite("TunnelVisionScaleOverride", &UDOFEffect::TunnelVisionScaleOverride)
         .def_readwrite("TunnelVisionYOffsetOverride", &UDOFEffect::TunnelVisionYOffsetOverride)
-        .def("StaticClass", &UDOFEffect::StaticClass, py::return_value_policy::reference)
           ;
 }

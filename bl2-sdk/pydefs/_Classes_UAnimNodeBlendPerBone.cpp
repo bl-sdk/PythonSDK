@@ -9,7 +9,6 @@ void Export_pystes_UAnimNodeBlendPerBone(py::module &m)
         .def_readwrite("BranchStartBoneName", &UAnimNodeBlendPerBone::BranchStartBoneName)
         .def_readwrite("Child2PerBoneWeight", &UAnimNodeBlendPerBone::Child2PerBoneWeight)
         .def_readwrite("LocalToCompReqBones", &UAnimNodeBlendPerBone::LocalToCompReqBones)
-        .def("StaticClass", &UAnimNodeBlendPerBone::StaticClass, py::return_value_policy::reference)
         .def("SetBlendTarget", &UAnimNodeBlendPerBone::SetBlendTarget)
           ;
 }

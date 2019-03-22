@@ -9,6 +9,5 @@ void Export_pystes_UWillowSeqAct_RunCustomEvent(py::module &m)
         .def_readwrite("CustomEventName", &UWillowSeqAct_RunCustomEvent::CustomEventName)
         .def_readwrite("EventInstigator", &UWillowSeqAct_RunCustomEvent::EventInstigator)
         .def_readwrite("OtherEventParticipant", &UWillowSeqAct_RunCustomEvent::OtherEventParticipant)
-        .def("StaticClass", &UWillowSeqAct_RunCustomEvent::StaticClass, py::return_value_policy::reference)
           ;
 }

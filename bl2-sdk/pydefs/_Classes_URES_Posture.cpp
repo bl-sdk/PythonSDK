@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_URES_Posture(py::module &m)
 {
     py::class_< URES_Posture,  UActionResource   >(m, "URES_Posture")
-        .def("StaticClass", &URES_Posture::StaticClass, py::return_value_policy::reference)
           ;
 }

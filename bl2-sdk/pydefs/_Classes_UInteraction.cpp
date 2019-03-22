@@ -7,7 +7,6 @@ void Export_pystes_UInteraction(py::module &m)
 {
     py::class_< UInteraction,  UObject   >(m, "UInteraction")
         .def_readwrite("BadCapsLocContexts", &UUIRoot::BadCapsLocContexts)
-        .def("StaticClass", &UInteraction::StaticClass, py::return_value_policy::reference)
         .def("NotifyPlayerRemoved", &UInteraction::NotifyPlayerRemoved)
         .def("NotifyPlayerAdded", &UInteraction::NotifyPlayerAdded)
         .def("NotifyGameSessionEnded", &UInteraction::NotifyGameSessionEnded)

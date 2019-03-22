@@ -7,7 +7,6 @@ void Export_pystes_UMultiFont(py::module &m)
 {
     py::class_< UMultiFont,  UFont   >(m, "UMultiFont")
         .def_readwrite("ResolutionTestTable", &UMultiFont::ResolutionTestTable)
-        .def("StaticClass", &UMultiFont::StaticClass, py::return_value_policy::reference)
         .def("GetResolutionTestTableIndex", &UMultiFont::GetResolutionTestTableIndex)
           ;
 }

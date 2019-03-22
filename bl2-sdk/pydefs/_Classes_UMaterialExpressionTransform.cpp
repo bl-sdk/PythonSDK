@@ -9,6 +9,5 @@ void Export_pystes_UMaterialExpressionTransform(py::module &m)
         .def_readwrite("Input", &UMaterialExpressionTransform::Input)
         .def_readwrite("TransformSourceType", &UMaterialExpressionTransform::TransformSourceType)
         .def_readwrite("TransformType", &UMaterialExpressionTransform::TransformType)
-        .def("StaticClass", &UMaterialExpressionTransform::StaticClass, py::return_value_policy::reference)
           ;
 }

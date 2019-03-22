@@ -10,6 +10,5 @@ void Export_pystes_USeqAct_SubtractInt(py::module &m)
         .def_readwrite("ValueB", &USeqAct_SubtractInt::ValueB)
         .def_readwrite("FloatResult", &USeqAct_SubtractInt::FloatResult)
         .def_readwrite("IntResult", &USeqAct_SubtractInt::IntResult)
-        .def("StaticClass", &USeqAct_SubtractInt::StaticClass, py::return_value_policy::reference)
           ;
 }

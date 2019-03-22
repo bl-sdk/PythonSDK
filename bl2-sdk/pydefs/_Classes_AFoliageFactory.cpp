@@ -14,6 +14,5 @@ void Export_pystes_AFoliageFactory(py::module &m)
         .def_readwrite("SurfaceDensitySideFacing", &AFoliageFactory::SurfaceDensitySideFacing)
         .def_readwrite("FacingFalloffExponent", &AFoliageFactory::FacingFalloffExponent)
         .def_readwrite("MaxInstanceCount", &AFoliageFactory::MaxInstanceCount)
-        .def("StaticClass", &AFoliageFactory::StaticClass, py::return_value_policy::reference)
           ;
 }

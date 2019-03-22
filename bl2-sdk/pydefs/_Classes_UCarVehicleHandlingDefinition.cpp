@@ -21,6 +21,5 @@ void Export_pystes_UCarVehicleHandlingDefinition(py::module &m)
         .def_readwrite("FrontalCollisionGripFactor", &UCarVehicleHandlingDefinition::FrontalCollisionGripFactor)
         .def_readwrite("InAirUprightTorqueFactor", &UCarVehicleHandlingDefinition::InAirUprightTorqueFactor)
         .def_readwrite("InAirUprightMaxTorque", &UCarVehicleHandlingDefinition::InAirUprightMaxTorque)
-        .def("StaticClass", &UCarVehicleHandlingDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

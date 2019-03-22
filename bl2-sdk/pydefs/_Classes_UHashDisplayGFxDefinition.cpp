@@ -13,6 +13,5 @@ void Export_pystes_UHashDisplayGFxDefinition(py::module &m)
         .def_readwrite("CardTextureWidth", &UHashDisplayGFxDefinition::CardTextureWidth)
         .def_readwrite("CardTextureHeight", &UHashDisplayGFxDefinition::CardTextureHeight)
         .def_readwrite("Card1ExternalTextureMap", &UHashDisplayGFxDefinition::Card1ExternalTextureMap)
-        .def("StaticClass", &UHashDisplayGFxDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

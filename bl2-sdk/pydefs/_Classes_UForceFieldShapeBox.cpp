@@ -7,7 +7,6 @@ void Export_pystes_UForceFieldShapeBox(py::module &m)
 {
     py::class_< UForceFieldShapeBox,  UForceFieldShape   >(m, "UForceFieldShapeBox")
         .def_readwrite("Shape", &UForceFieldShapeBox::Shape)
-        .def("StaticClass", &UForceFieldShapeBox::StaticClass, py::return_value_policy::reference)
         .def("eventGetDrawComponent", &UForceFieldShapeBox::eventGetDrawComponent, py::return_value_policy::reference)
         .def("eventFillByCylinder", &UForceFieldShapeBox::eventFillByCylinder)
         .def("eventFillByCapsule", &UForceFieldShapeBox::eventFillByCapsule)

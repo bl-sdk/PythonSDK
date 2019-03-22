@@ -7,6 +7,5 @@ void Export_pystes_UField(py::module &m)
 {
     py::class_< UField,  UObject   >(m, "UField")
         .def_readwrite("Next", &UField::Next)
-        .def("StaticClass", &UField::StaticClass, py::return_value_policy::reference)
           ;
 }

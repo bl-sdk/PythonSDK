@@ -11,6 +11,5 @@ void Export_pystes_UParticleModuleTypeDataAnimTrail(py::module &m)
         .def_readwrite("TilingDistance", &UParticleModuleTypeDataAnimTrail::TilingDistance)
         .def_readwrite("DistanceTessellationStepSize", &UParticleModuleTypeDataAnimTrail::DistanceTessellationStepSize)
         .def_readwrite("TangentTessellationScalar", &UParticleModuleTypeDataAnimTrail::TangentTessellationScalar)
-        .def("StaticClass", &UParticleModuleTypeDataAnimTrail::StaticClass, py::return_value_policy::reference)
           ;
 }

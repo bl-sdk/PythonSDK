@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UMaterialExpressionLensFlareRadialDistance(py::module &m)
 {
     py::class_< UMaterialExpressionLensFlareRadialDistance,  UMaterialExpression   >(m, "UMaterialExpressionLensFlareRadialDistance")
-        .def("StaticClass", &UMaterialExpressionLensFlareRadialDistance::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -10,6 +10,5 @@ void Export_pystes_UActorFactoryPhysicsAsset(py::module &m)
         .def_readwrite("SkeletalMesh", &UActorFactoryPhysicsAsset::SkeletalMesh)
         .def_readwrite("InitialVelocity", &UActorFactoryPhysicsAsset::InitialVelocity)
         .def_readwrite("DrawScale3D", &UActorFactoryPhysicsAsset::DrawScale3D)
-        .def("StaticClass", &UActorFactoryPhysicsAsset::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -13,7 +13,6 @@ void Export_pystes_UWillowDialogAct_RandomBranch(py::module &m)
         .def_readwrite("AvoidRepeatingLastNPlayed", &UWillowDialogAct_RandomBranch::AvoidRepeatingLastNPlayed)
         .def_readwrite("NextFireTime", &UWillowDialogAct_RandomBranch::NextFireTime)
         .def_readwrite("DisableIndices", &UWillowDialogAct_RandomBranch::DisableIndices)
-        .def("StaticClass", &UWillowDialogAct_RandomBranch::StaticClass, py::return_value_policy::reference)
         .def("eventActivate", &UWillowDialogAct_RandomBranch::eventActivate)
           ;
 }

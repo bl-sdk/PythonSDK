@@ -11,7 +11,6 @@ void Export_pystes_ULockoutDefinition(py::module &m)
         .def_readwrite("Hours", &ULockoutDefinition::Hours)
         .def_readwrite("Minutes", &ULockoutDefinition::Minutes)
         .def_readwrite("DlcExpansion", &ULockoutDefinition::DlcExpansion)
-        .def("StaticClass", &ULockoutDefinition::StaticClass, py::return_value_policy::reference)
         .def("ComputePackedSystemTime", &ULockoutDefinition::ComputePackedSystemTime)
           ;
 }

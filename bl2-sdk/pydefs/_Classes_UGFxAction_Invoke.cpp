@@ -9,7 +9,6 @@ void Export_pystes_UGFxAction_Invoke(py::module &m)
         .def_readwrite("Movie", &UGFxAction_Invoke::Movie)
         .def_readwrite("MethodName", &UGFxAction_Invoke::MethodName)
         .def_readwrite("Arguments", &UGFxAction_Invoke::Arguments)
-        .def("StaticClass", &UGFxAction_Invoke::StaticClass, py::return_value_policy::reference)
         .def("eventIsValidLevelSequenceObject", &UGFxAction_Invoke::eventIsValidLevelSequenceObject)
           ;
 }

@@ -9,6 +9,5 @@ void Export_pystes_UAnimNotify_Script(py::module &m)
         .def_readwrite("NotifyName", &UAnimNotify_Script::NotifyName)
         .def_readwrite("NotifyTickName", &UAnimNotify_Script::NotifyTickName)
         .def_readwrite("NotifyEndName", &UAnimNotify_Script::NotifyEndName)
-        .def("StaticClass", &UAnimNotify_Script::StaticClass, py::return_value_policy::reference)
           ;
 }

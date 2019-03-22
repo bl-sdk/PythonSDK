@@ -9,7 +9,6 @@ void Export_pystes_AWireTerminal(py::module &m)
         .def_readwrite("NextTerminal", &AWireTerminal::NextTerminal)
         .def_readwrite("Linkages", &AWireTerminal::Linkages)
         .def_readwrite("WireMaterial", &AWireTerminal::WireMaterial)
-        .def("StaticClass", &AWireTerminal::StaticClass, py::return_value_policy::reference)
         .def("eventDestroyed", &AWireTerminal::eventDestroyed)
         .def("NotifyModifiedTerminal", &AWireTerminal::NotifyModifiedTerminal)
           ;

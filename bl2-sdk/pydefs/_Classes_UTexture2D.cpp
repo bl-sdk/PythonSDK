@@ -26,7 +26,6 @@ void Export_pystes_UTexture2D(py::module &m)
         .def_readwrite("ResourceMem", &UTexture2D::ResourceMem)
         .def_readwrite("FirstResourceMemMip", &UTexture2D::FirstResourceMemMip)
         .def_readwrite("Timer", &UTexture2D::Timer)
-        .def("StaticClass", &UTexture2D::StaticClass, py::return_value_policy::reference)
         .def("Create", &UTexture2D::Create, py::return_value_policy::reference)
         .def("SetForceMipLevelsToBeResident", &UTexture2D::SetForceMipLevelsToBeResident)
           ;

@@ -17,6 +17,5 @@ void Export_pystes_UAnimNodeBlendByProperty(py::module &m)
         .def_readwrite("FloatPropMax", &UAnimNodeBlendByProperty::FloatPropMax)
         .def_readwrite("BlendToChild1Time", &UAnimNodeBlendByProperty::BlendToChild1Time)
         .def_readwrite("BlendToChild2Time", &UAnimNodeBlendByProperty::BlendToChild2Time)
-        .def("StaticClass", &UAnimNodeBlendByProperty::StaticClass, py::return_value_policy::reference)
           ;
 }

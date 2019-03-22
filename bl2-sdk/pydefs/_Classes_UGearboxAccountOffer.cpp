@@ -10,6 +10,5 @@ void Export_pystes_UGearboxAccountOffer(py::module &m)
         .def_readwrite("DescriptionEfigs", &UGearboxAccountOffer::DescriptionEfigs)
         .def_readwrite("Id", &UGearboxAccountOffer::Id)
         .def_readwrite("DateUnlocked", &UGearboxAccountOffer::DateUnlocked)
-        .def("StaticClass", &UGearboxAccountOffer::StaticClass, py::return_value_policy::reference)
           ;
 }

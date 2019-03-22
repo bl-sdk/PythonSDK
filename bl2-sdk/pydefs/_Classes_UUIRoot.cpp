@@ -7,7 +7,6 @@ void Export_pystes_UUIRoot(py::module &m)
 {
     py::class_< UUIRoot,  UObject   >(m, "UUIRoot")
         .def_readwrite("BadCapsLocContexts", &UUIRoot::BadCapsLocContexts)
-        .def("StaticClass", &UUIRoot::StaticClass, py::return_value_policy::reference)
         .def("SafeCaps", &UUIRoot::SafeCaps)
         .def("GetOnlinePlayerInterfaceEx", &UUIRoot::GetOnlinePlayerInterfaceEx, py::return_value_policy::reference)
         .def("GetOnlinePlayerInterface", &UUIRoot::GetOnlinePlayerInterface, py::return_value_policy::reference)

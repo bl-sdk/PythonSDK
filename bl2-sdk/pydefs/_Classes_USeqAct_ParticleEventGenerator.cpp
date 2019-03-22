@@ -13,7 +13,6 @@ void Export_pystes_USeqAct_ParticleEventGenerator(py::module &m)
         .def_readwrite("EventDirection", &USeqAct_ParticleEventGenerator::EventDirection)
         .def_readwrite("EventVelocity", &USeqAct_ParticleEventGenerator::EventVelocity)
         .def_readwrite("EventNormal", &USeqAct_ParticleEventGenerator::EventNormal)
-        .def("StaticClass", &USeqAct_ParticleEventGenerator::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqAct_ParticleEventGenerator::eventGetObjClassVersion)
           ;
 }

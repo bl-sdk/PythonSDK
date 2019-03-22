@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UIStatusEffectTarget(py::module &m)
 {
     py::class_< UIStatusEffectTarget, UIHitRegionInfoProvider   >(m, "UIStatusEffectTarget")
-        .def("StaticClass", &UIStatusEffectTarget::StaticClass, py::return_value_policy::reference)
         .def("CanReceiveStatusEffects", &UIStatusEffectTarget::CanReceiveStatusEffects)
         .def("ReactToPrimaryStatusEffect", &UIStatusEffectTarget::ReactToPrimaryStatusEffect)
         .def("Behavior_ClearStatusEffects", &UIStatusEffectTarget::Behavior_ClearStatusEffects)

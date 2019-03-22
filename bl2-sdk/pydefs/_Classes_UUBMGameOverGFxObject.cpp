@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UUBMGameOverGFxObject(py::module &m)
 {
     py::class_< UUBMGameOverGFxObject,  UGFxObject   >(m, "UUBMGameOverGFxObject")
-        .def("StaticClass", &UUBMGameOverGFxObject::StaticClass, py::return_value_policy::reference)
         .def("SetPlayerInfo", &UUBMGameOverGFxObject::SetPlayerInfo)
           ;
 }

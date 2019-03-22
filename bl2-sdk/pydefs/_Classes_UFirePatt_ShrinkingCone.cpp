@@ -11,6 +11,5 @@ void Export_pystes_UFirePatt_ShrinkingCone(py::module &m)
         .def_readwrite("MaxAccuracyConeDeg", &UFirePatt_ShrinkingCone::MaxAccuracyConeDeg)
         .def_readwrite("ConeMultiplierPerShot", &UFirePatt_ShrinkingCone::ConeMultiplierPerShot)
         .def_readwrite("ShotSpreadType", &UFirePatt_ShrinkingCone::ShotSpreadType)
-        .def("StaticClass", &UFirePatt_ShrinkingCone::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -11,6 +11,5 @@ void Export_pystes_UAnimNotify_PlayParticleEffect(py::module &m)
         .def_readwrite("SocketName", &UAnimNotify_PlayParticleEffect::SocketName)
         .def_readwrite("BoneName", &UAnimNotify_PlayParticleEffect::BoneName)
         .def_readwrite("BoneSocketModuleActorName", &UAnimNotify_PlayParticleEffect::BoneSocketModuleActorName)
-        .def("StaticClass", &UAnimNotify_PlayParticleEffect::StaticClass, py::return_value_policy::reference)
           ;
 }

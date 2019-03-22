@@ -15,7 +15,6 @@ void Export_pystes_UAnimNodeAimOffset(py::module &m)
         .def_readwrite("TemplateNode", &UAnimNodeAimOffset::TemplateNode)
         .def_readwrite("Profiles", &UAnimNodeAimOffset::Profiles)
         .def_readwrite("CurrentProfileIndex", &UAnimNodeAimOffset::CurrentProfileIndex)
-        .def("StaticClass", &UAnimNodeAimOffset::StaticClass, py::return_value_policy::reference)
         .def("SetActiveProfileByIndex", &UAnimNodeAimOffset::SetActiveProfileByIndex)
         .def("SetActiveProfileByName", &UAnimNodeAimOffset::SetActiveProfileByName)
           ;

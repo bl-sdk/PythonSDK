@@ -8,6 +8,5 @@ void Export_pystes_USeqAct_ModifyCover(py::module &m)
     py::class_< USeqAct_ModifyCover,  USequenceAction   >(m, "USeqAct_ModifyCover")
         .def_readwrite("Slots", &USeqAct_ModifyCover::Slots)
         .def_readwrite("ManualCoverType", &USeqAct_ModifyCover::ManualCoverType)
-        .def("StaticClass", &USeqAct_ModifyCover::StaticClass, py::return_value_policy::reference)
           ;
 }

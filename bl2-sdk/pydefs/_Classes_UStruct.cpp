@@ -10,6 +10,5 @@ void Export_pystes_UStruct(py::module &m)
         .def_readwrite("Children", &UStruct::Children)
         .def_readwrite("PropertySize", &UStruct::PropertySize)
         .def_readwrite("Next", &UField::Next)
-        .def("StaticClass", &UStruct::StaticClass, py::return_value_policy::reference)
           ;
 }

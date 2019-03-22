@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UBehaviorHelpers(py::module &m)
 {
     py::class_< UBehaviorHelpers,  UObject   >(m, "UBehaviorHelpers")
-        .def("StaticClass", &UBehaviorHelpers::StaticClass, py::return_value_policy::reference)
         .def("RunAllBehaviorsForEvent", &UBehaviorHelpers::RunAllBehaviorsForEvent)
         .def("BehaviorStrategy", &UBehaviorHelpers::BehaviorStrategy)
         .def("BehaviorSetStrategy", &UBehaviorHelpers::BehaviorSetStrategy)

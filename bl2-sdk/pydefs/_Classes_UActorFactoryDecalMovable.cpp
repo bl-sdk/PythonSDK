@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UActorFactoryDecalMovable(py::module &m)
 {
     py::class_< UActorFactoryDecalMovable,  UActorFactoryDecal   >(m, "UActorFactoryDecalMovable")
-        .def("StaticClass", &UActorFactoryDecalMovable::StaticClass, py::return_value_policy::reference)
           ;
 }

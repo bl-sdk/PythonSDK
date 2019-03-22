@@ -46,6 +46,5 @@ void Export_pystes_UWillowVehicleSimChopper(py::module &m)
         .def_readwrite("DesiredHoverHeight", &UWillowVehicleSimChopper::DesiredHoverHeight)
         .def_readwrite("PreviousZVel", &UWillowVehicleSimChopper::PreviousZVel)
         .def_readwrite("AdjustedRise", &UWillowVehicleSimChopper::AdjustedRise)
-        .def("StaticClass", &UWillowVehicleSimChopper::StaticClass, py::return_value_policy::reference)
           ;
 }

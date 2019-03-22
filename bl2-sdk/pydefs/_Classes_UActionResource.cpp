@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UActionResource(py::module &m)
 {
     py::class_< UActionResource,  UObject   >(m, "UActionResource")
-        .def("StaticClass", &UActionResource::StaticClass, py::return_value_policy::reference)
           ;
 }

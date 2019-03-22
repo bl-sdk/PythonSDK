@@ -7,6 +7,5 @@ void Export_pystes_UFogVolumeConstantDensityComponent(py::module &m)
 {
     py::class_< UFogVolumeConstantDensityComponent,  UFogVolumeDensityComponent   >(m, "UFogVolumeConstantDensityComponent")
         .def_readwrite("Density", &UFogVolumeConstantDensityComponent::Density)
-        .def("StaticClass", &UFogVolumeConstantDensityComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

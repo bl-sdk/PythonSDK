@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UIpNetDriverSteamworks(py::module &m)
 {
     py::class_< UIpNetDriverSteamworks,  UTcpNetDriver   >(m, "UIpNetDriverSteamworks")
-        .def("StaticClass", &UIpNetDriverSteamworks::StaticClass, py::return_value_policy::reference)
           ;
 }

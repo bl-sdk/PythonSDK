@@ -24,6 +24,5 @@ void Export_pystes_USeqAct_SetDOFParams(py::module &m)
         .def_readwrite("OldFocusInnerRadius", &USeqAct_SetDOFParams::OldFocusInnerRadius)
         .def_readwrite("OldFocusDistance", &USeqAct_SetDOFParams::OldFocusDistance)
         .def_readwrite("OldFocusPosition", &USeqAct_SetDOFParams::OldFocusPosition)
-        .def("StaticClass", &USeqAct_SetDOFParams::StaticClass, py::return_value_policy::reference)
           ;
 }

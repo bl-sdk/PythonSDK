@@ -7,7 +7,6 @@ void Export_pystes_UHitRegionHelper(py::module &m)
 {
     py::class_< UHitRegionHelper,  UObject   >(m, "UHitRegionHelper")
         .def_readwrite("HitRegionDamageList", &UHitRegionHelper::HitRegionDamageList)
-        .def("StaticClass", &UHitRegionHelper::StaticClass, py::return_value_policy::reference)
         .def("PlayHit", &UHitRegionHelper::PlayHit)
         .def("ResetHitRegionHealth", &UHitRegionHelper::ResetHitRegionHealth)
         .def("HealDamageOnHitRegion", &UHitRegionHelper::HealDamageOnHitRegion)

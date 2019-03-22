@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UMaterialExpressionTextureSampleParameterMeshSubUV(py::module &m)
 {
     py::class_< UMaterialExpressionTextureSampleParameterMeshSubUV,  UMaterialExpressionTextureSampleParameter   >(m, "UMaterialExpressionTextureSampleParameterMeshSubUV")
-        .def("StaticClass", &UMaterialExpressionTextureSampleParameterMeshSubUV::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -10,6 +10,5 @@ void Export_pystes_UDrawPylonRadiusComponent(py::module &m)
         .def_readwrite("SphereMaterial", &UDrawSphereComponent::SphereMaterial)
         .def_readwrite("SphereRadius", &UDrawSphereComponent::SphereRadius)
         .def_readwrite("SphereSides", &UDrawSphereComponent::SphereSides)
-        .def("StaticClass", &UDrawPylonRadiusComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

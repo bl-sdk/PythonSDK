@@ -17,6 +17,5 @@ void Export_pystes_UHeadTrackingComponent(py::module &m)
         .def_readwrite("TrackControls", &UHeadTrackingComponent::TrackControls)
         .def_readwrite("RootMeshLocation", &UHeadTrackingComponent::RootMeshLocation)
         .def_readwrite("RootMeshRotation", &UHeadTrackingComponent::RootMeshRotation)
-        .def("StaticClass", &UHeadTrackingComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

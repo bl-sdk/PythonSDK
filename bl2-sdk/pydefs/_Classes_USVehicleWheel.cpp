@@ -46,6 +46,5 @@ void Export_pystes_USVehicleWheel(py::module &m)
         .def_readwrite("WheelPSCClass", &USVehicleWheel::WheelPSCClass)
         .def_readwrite("WheelParticleComp", &USVehicleWheel::WheelParticleComp)
         .def_readwrite("SlipParticleParamName", &USVehicleWheel::SlipParticleParamName)
-        .def("StaticClass", &USVehicleWheel::StaticClass, py::return_value_policy::reference)
           ;
 }

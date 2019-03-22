@@ -11,6 +11,5 @@ void Export_pystes_UPhysicsJumpConnection(py::module &m)
         .def_readwrite("Speed", &UPhysicsJumpConnection::Speed)
         .def_readwrite("Angle", &UPhysicsJumpConnection::Angle)
         .def_readwrite("Velocity", &UPhysicsJumpConnection::Velocity)
-        .def("StaticClass", &UPhysicsJumpConnection::StaticClass, py::return_value_policy::reference)
           ;
 }

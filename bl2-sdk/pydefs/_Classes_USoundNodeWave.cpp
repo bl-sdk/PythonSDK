@@ -27,7 +27,6 @@ void Export_pystes_USoundNodeWave(py::module &m)
         .def_readwrite("ResourceData", &USoundNodeWave::ResourceData)
         .def_readwrite("Subtitles", &USoundNodeWave::Subtitles)
         .def_readwrite("LocalizedSubtitles", &USoundNodeWave::LocalizedSubtitles)
-        .def("StaticClass", &USoundNodeWave::StaticClass, py::return_value_policy::reference)
         .def("eventGeneratePCMData", &USoundNodeWave::eventGeneratePCMData)
           ;
 }

@@ -15,6 +15,5 @@ void Export_pystes_UWillowGFxThirdPersonDefinition(py::module &m)
         .def_readwrite("CameraPitchMax", &UWillowGFxThirdPersonDefinition::CameraPitchMax)
         .def_readwrite("MenuRotationSpeed", &UWillowGFxThirdPersonDefinition::MenuRotationSpeed)
         .def_readwrite("MenuRotationSmoothingSpeed", &UWillowGFxThirdPersonDefinition::MenuRotationSmoothingSpeed)
-        .def("StaticClass", &UWillowGFxThirdPersonDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

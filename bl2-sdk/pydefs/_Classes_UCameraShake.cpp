@@ -18,7 +18,6 @@ void Export_pystes_UCameraShake(py::module &m)
         .def_readwrite("AnimBlendInTime", &UCameraShake::AnimBlendInTime)
         .def_readwrite("AnimBlendOutTime", &UCameraShake::AnimBlendOutTime)
         .def_readwrite("RandomAnimSegmentDuration", &UCameraShake::RandomAnimSegmentDuration)
-        .def("StaticClass", &UCameraShake::StaticClass, py::return_value_policy::reference)
         .def("GetLocOscillationMagnitude", &UCameraShake::GetLocOscillationMagnitude)
         .def("GetRotOscillationMagnitude", &UCameraShake::GetRotOscillationMagnitude)
           ;

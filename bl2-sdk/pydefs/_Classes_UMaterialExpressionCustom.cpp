@@ -10,6 +10,5 @@ void Export_pystes_UMaterialExpressionCustom(py::module &m)
         .def_readwrite("OutputType", &UMaterialExpressionCustom::OutputType)
         .def_readwrite("Description", &UMaterialExpressionCustom::Description)
         .def_readwrite("Inputs", &UMaterialExpressionCustom::Inputs)
-        .def("StaticClass", &UMaterialExpressionCustom::StaticClass, py::return_value_policy::reference)
           ;
 }

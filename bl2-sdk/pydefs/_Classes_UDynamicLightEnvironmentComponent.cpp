@@ -28,7 +28,6 @@ void Export_pystes_UDynamicLightEnvironmentComponent(py::module &m)
         .def_readwrite("OverriddenBounds", &UDynamicLightEnvironmentComponent::OverriddenBounds)
         .def_readwrite("OverriddenLightingChannels", &UDynamicLightEnvironmentComponent::OverriddenLightingChannels)
         .def_readwrite("OverriddenLightComponents", &UDynamicLightEnvironmentComponent::OverriddenLightComponents)
-        .def("StaticClass", &UDynamicLightEnvironmentComponent::StaticClass, py::return_value_policy::reference)
         .def("ResetEnvironment", &UDynamicLightEnvironmentComponent::ResetEnvironment)
           ;
 }

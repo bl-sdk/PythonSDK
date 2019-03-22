@@ -11,6 +11,5 @@ void Export_pystes_UMaterialExpressionRotator(py::module &m)
         .def_readwrite("CenterX", &UMaterialExpressionRotator::CenterX)
         .def_readwrite("CenterY", &UMaterialExpressionRotator::CenterY)
         .def_readwrite("Speed", &UMaterialExpressionRotator::Speed)
-        .def("StaticClass", &UMaterialExpressionRotator::StaticClass, py::return_value_policy::reference)
           ;
 }

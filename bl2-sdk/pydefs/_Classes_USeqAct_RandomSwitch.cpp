@@ -10,7 +10,6 @@ void Export_pystes_USeqAct_RandomSwitch(py::module &m)
         .def_readwrite("LinkCount", &USeqAct_Switch::LinkCount)
         .def_readwrite("IncrementAmount", &USeqAct_Switch::IncrementAmount)
         .def_readwrite("Indices", &USeqAct_Switch::Indices)
-        .def("StaticClass", &USeqAct_RandomSwitch::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqAct_RandomSwitch::eventGetObjClassVersion)
           ;
 }

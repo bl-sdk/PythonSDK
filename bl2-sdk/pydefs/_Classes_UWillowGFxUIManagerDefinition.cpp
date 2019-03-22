@@ -16,7 +16,6 @@ void Export_pystes_UWillowGFxUIManagerDefinition(py::module &m)
         .def_readwrite("TrainingDialogBoxDefinition_NoPause", &UWillowGFxUIManagerDefinition::TrainingDialogBoxDefinition_NoPause)
         .def_readwrite("EditDialogBoxDefinition", &UWillowGFxUIManagerDefinition::EditDialogBoxDefinition)
         .def_readwrite("RenderTextureSize", &UWillowGFxUIManagerDefinition::RenderTextureSize)
-        .def("StaticClass", &UWillowGFxUIManagerDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetTranslation", &UWillowGFxUIManagerDefinition::GetTranslation)
           ;
 }

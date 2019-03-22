@@ -7,7 +7,6 @@ void Export_pystes_AGamePlayerController(py::module &m)
 {
     py::class_< AGamePlayerController,  APlayerController   >(m, "AGamePlayerController")
         .def_readwrite("CurrentSoundMode", &AGamePlayerController::CurrentSoundMode)
-        .def("StaticClass", &AGamePlayerController::StaticClass, py::return_value_policy::reference)
         .def("ClientColorFade", &AGamePlayerController::ClientColorFade)
         .def("CallMemLeakCheck", &AGamePlayerController::CallMemLeakCheck)
         .def("StopMemLeakChecking", &AGamePlayerController::StopMemLeakChecking)

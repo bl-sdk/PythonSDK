@@ -9,7 +9,6 @@ void Export_pystes_UBehavior_ChangeSkillBehaviorSequenceState(py::module &m)
         .def_readwrite("Action", &UBehavior_ChangeSkillBehaviorSequenceState::Action)
         .def_readwrite("SequenceName", &UBehavior_ChangeSkillBehaviorSequenceState::SequenceName)
         .def_readwrite("SkillDef", &UBehavior_ChangeSkillBehaviorSequenceState::SkillDef)
-        .def("StaticClass", &UBehavior_ChangeSkillBehaviorSequenceState::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_ChangeSkillBehaviorSequenceState::ApplyBehaviorToContext)
           ;
 }

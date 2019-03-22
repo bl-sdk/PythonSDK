@@ -28,7 +28,6 @@ void Export_pystes_ANxGenericForceFieldBrush(py::module &m)
         .def_readwrite("ExclusionShapes", &ANxGenericForceFieldBrush::ExclusionShapes)
         .def_readwrite("ExclusionShapePoses", &ANxGenericForceFieldBrush::ExclusionShapePoses)
         .def_readwrite("LinearKernel", &ANxGenericForceFieldBrush::LinearKernel)
-        .def("StaticClass", &ANxGenericForceFieldBrush::StaticClass, py::return_value_policy::reference)
         .def("StopsProjectile", &ANxGenericForceFieldBrush::StopsProjectile)
         .def("eventPostBeginPlay", &ANxGenericForceFieldBrush::eventPostBeginPlay)
           ;

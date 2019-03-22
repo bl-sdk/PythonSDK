@@ -12,7 +12,6 @@ void Export_pystes_UAttributeInitializationDefinition(py::module &m)
         .def_readwrite("ConditionalInitialization", &UAttributeInitializationDefinition::ConditionalInitialization)
         .def_readwrite("RandomVariance", &UAttributeInitializationDefinition::RandomVariance)
         .def_readwrite("RangeRestriction", &UAttributeInitializationDefinition::RangeRestriction)
-        .def("StaticClass", &UAttributeInitializationDefinition::StaticClass, py::return_value_policy::reference)
         .def("SetBaseValue", &UAttributeInitializationDefinition::SetBaseValue)
         .def("EvaluateInitializationData", &UAttributeInitializationDefinition::EvaluateInitializationData)
           ;

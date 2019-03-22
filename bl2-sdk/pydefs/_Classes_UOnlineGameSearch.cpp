@@ -18,7 +18,6 @@ void Export_pystes_UOnlineGameSearch(py::module &m)
         .def_readwrite("NumPingProbes", &UOnlineGameSearch::NumPingProbes)
         .def_readwrite("MaxPingBytes", &UOnlineGameSearch::MaxPingBytes)
         .def_readwrite("NumSearchUsers", &UOnlineGameSearch::NumSearchUsers)
-        .def("StaticClass", &UOnlineGameSearch::StaticClass, py::return_value_policy::reference)
         .def("eventSortSearchResults", &UOnlineGameSearch::eventSortSearchResults)
         .def("SetSkillOverride", &UOnlineGameSearch::SetSkillOverride)
           ;

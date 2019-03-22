@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UItemCardGFxObject(py::module &m)
 {
     py::class_< UItemCardGFxObject,  UGFxObject   >(m, "UItemCardGFxObject")
-        .def("StaticClass", &UItemCardGFxObject::StaticClass, py::return_value_policy::reference)
         .def("SetVisible_", &UItemCardGFxObject::SetVisible_)
         .def("SetBackgroundStyle", &UItemCardGFxObject::SetBackgroundStyle)
         .def("SetCardUIStats", &UItemCardGFxObject::SetCardUIStats)

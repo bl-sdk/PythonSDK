@@ -17,6 +17,5 @@ void Export_pystes_UAwarenessZoneDefinition(py::module &m)
         .def_readwrite("TargetSelectionPriority", &UAwarenessZoneDefinition::TargetSelectionPriority)
         .def_readwrite("ZoneColor", &UAwarenessZoneDefinition::ZoneColor)
         .def_readwrite("TimeFiringAtLastKnownLocation", &UAwarenessZoneDefinition::TimeFiringAtLastKnownLocation)
-        .def("StaticClass", &UAwarenessZoneDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

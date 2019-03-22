@@ -9,7 +9,6 @@ void Export_pystes_UBehavior_VectorMath(py::module &m)
         .def_readwrite("A", &UBehavior_VectorMath::A)
         .def_readwrite("B", &UBehavior_VectorMath::B)
         .def_readwrite("Operation", &UBehavior_VectorMath::Operation)
-        .def("StaticClass", &UBehavior_VectorMath::StaticClass, py::return_value_policy::reference)
         .def("eventPublishBehaviorOutput", &UBehavior_VectorMath::eventPublishBehaviorOutput)
         .def("ApplyBehaviorToContext", &UBehavior_VectorMath::ApplyBehaviorToContext)
           ;

@@ -12,7 +12,6 @@ void Export_pystes_UAnimNotify_PlayFaceFXAnim(py::module &m)
         .def_readwrite("SoundCueToPlay", &UAnimNotify_PlayFaceFXAnim::SoundCueToPlay)
         .def_readwrite("AkEventToPlay", &UAnimNotify_PlayFaceFXAnim::AkEventToPlay)
         .def_readwrite("PlayFrequency", &UAnimNotify_PlayFaceFXAnim::PlayFrequency)
-        .def("StaticClass", &UAnimNotify_PlayFaceFXAnim::StaticClass, py::return_value_policy::reference)
         .def("eventNotify", &UAnimNotify_PlayFaceFXAnim::eventNotify)
           ;
 }

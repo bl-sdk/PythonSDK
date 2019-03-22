@@ -16,6 +16,5 @@ void Export_pystes_UCoordinatedEffectDefinition(py::module &m)
         .def_readwrite("ParticleSpeedMultiplier", &UCoordinatedEffectDefinition::ParticleSpeedMultiplier)
         .def_readwrite("NextEffect", &UCoordinatedEffectDefinition::NextEffect)
         .def_readwrite("MutexName", &UCoordinatedEffectDefinition::MutexName)
-        .def("StaticClass", &UCoordinatedEffectDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

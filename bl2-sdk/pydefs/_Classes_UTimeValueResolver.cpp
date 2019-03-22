@@ -9,6 +9,5 @@ void Export_pystes_UTimeValueResolver(py::module &m)
         .def_readwrite("TimeMode", &UTimeValueResolver::TimeMode)
         .def_readwrite("StartTime", &UTimeValueResolver::StartTime)
         .def_readwrite("TotalTime", &UTimeValueResolver::TotalTime)
-        .def("StaticClass", &UTimeValueResolver::StaticClass, py::return_value_policy::reference)
           ;
 }

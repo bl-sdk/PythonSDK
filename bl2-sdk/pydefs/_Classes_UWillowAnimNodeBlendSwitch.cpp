@@ -11,7 +11,6 @@ void Export_pystes_UWillowAnimNodeBlendSwitch(py::module &m)
         .def_readwrite("CurrentSwitch", &UWillowAnimNodeBlendSwitch::CurrentSwitch)
         .def_readwrite("DesiredSwitch", &UWillowAnimNodeBlendSwitch::DesiredSwitch)
         .def_readwrite("DefaultSwitch", &UWillowAnimNodeBlendSwitch::DefaultSwitch)
-        .def("StaticClass", &UWillowAnimNodeBlendSwitch::StaticClass, py::return_value_policy::reference)
         .def("SetCurrentSwitch", &UWillowAnimNodeBlendSwitch::SetCurrentSwitch)
           ;
 }

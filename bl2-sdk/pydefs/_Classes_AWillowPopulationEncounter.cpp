@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_AWillowPopulationEncounter(py::module &m)
 {
     py::class_< AWillowPopulationEncounter,  APopulationEncounter   >(m, "AWillowPopulationEncounter")
-        .def("StaticClass", &AWillowPopulationEncounter::StaticClass, py::return_value_policy::reference)
         .def("OnAIAbortMoveToActor", &AWillowPopulationEncounter::OnAIAbortMoveToActor)
         .def("OnAICombatVolume", &AWillowPopulationEncounter::OnAICombatVolume)
         .def("OnAIScripted", &AWillowPopulationEncounter::OnAIScripted)

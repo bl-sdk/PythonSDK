@@ -36,6 +36,5 @@ void Export_pystes_UHUDDefinition(py::module &m)
         .def_readwrite("PlayerNameHeightOffset", &UHUDDefinition::PlayerNameHeightOffset)
         .def_readwrite("HealthAnimationTime", &UHUDDefinition::HealthAnimationTime)
         .def_readwrite("AutosaveAkEvent", &UHUDDefinition::AutosaveAkEvent)
-        .def("StaticClass", &UHUDDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -45,7 +45,6 @@ void Export_pystes_UAudioDevice(py::module &m)
         .def_readwrite("DebugState", &UAudioDevice::DebugState)
         .def_readwrite("TransientMasterVolume", &UAudioDevice::TransientMasterVolume)
         .def_readwrite("LastUpdateTime", &UAudioDevice::LastUpdateTime)
-        .def("StaticClass", &UAudioDevice::StaticClass, py::return_value_policy::reference)
         .def("FindSoundClass", &UAudioDevice::FindSoundClass, py::return_value_policy::reference)
         .def("SetSoundMode", &UAudioDevice::SetSoundMode)
           ;

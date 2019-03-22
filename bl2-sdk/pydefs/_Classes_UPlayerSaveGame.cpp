@@ -55,6 +55,5 @@ void Export_pystes_UPlayerSaveGame(py::module &m)
         .def_readwrite("NumOverpowerLevelsUnlocked", &UPlayerSaveGame::NumOverpowerLevelsUnlocked)
         .def_readwrite("LastOverpowerChoice", &UPlayerSaveGame::LastOverpowerChoice)
         .def_readwrite("ChosenVehicleCustomizations", &UPlayerSaveGame::ChosenVehicleCustomizations)
-        .def("StaticClass", &UPlayerSaveGame::StaticClass, py::return_value_policy::reference)
           ;
 }

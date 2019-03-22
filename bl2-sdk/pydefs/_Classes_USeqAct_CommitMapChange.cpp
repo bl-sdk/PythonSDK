@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_USeqAct_CommitMapChange(py::module &m)
 {
     py::class_< USeqAct_CommitMapChange,  USequenceAction   >(m, "USeqAct_CommitMapChange")
-        .def("StaticClass", &USeqAct_CommitMapChange::StaticClass, py::return_value_policy::reference)
           ;
 }

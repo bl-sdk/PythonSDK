@@ -9,6 +9,5 @@ void Export_pystes_UWillowPawnInteractionDefinition(py::module &m)
         .def_readwrite("HUDIcon", &UWillowPawnInteractionDefinition::HUDIcon)
         .def_readwrite("HUDIconDef", &UWillowPawnInteractionDefinition::HUDIconDef)
         .def_readwrite("HUDIconDefSecondary", &UWillowPawnInteractionDefinition::HUDIconDefSecondary)
-        .def("StaticClass", &UWillowPawnInteractionDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -14,6 +14,5 @@ void Export_pystes_UFirePatt_StrafeOver(py::module &m)
         .def_readwrite("LineOfShotsEndZ", &UFirePatt_StrafeOver::LineOfShotsEndZ)
         .def_readwrite("YawDeltaRatio", &UFirePatt_StrafeOver::YawDeltaRatio)
         .def_readwrite("TargetPosition", &UFirePatt_StrafeOver::TargetPosition)
-        .def("StaticClass", &UFirePatt_StrafeOver::StaticClass, py::return_value_policy::reference)
           ;
 }

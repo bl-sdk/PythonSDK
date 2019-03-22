@@ -9,6 +9,5 @@ void Export_pystes_UMaterialExpressionMultiplyAndAdd(py::module &m)
         .def_readwrite("A", &UMaterialExpressionMultiplyAndAdd::A)
         .def_readwrite("B", &UMaterialExpressionMultiplyAndAdd::B)
         .def_readwrite("WeightB", &UMaterialExpressionMultiplyAndAdd::WeightB)
-        .def("StaticClass", &UMaterialExpressionMultiplyAndAdd::StaticClass, py::return_value_policy::reference)
           ;
 }

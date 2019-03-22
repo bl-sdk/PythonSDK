@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_USpecialMove_FirstPerson(py::module &m)
 {
     py::class_< USpecialMove_FirstPerson,  UGearboxAnimDefinition   >(m, "USpecialMove_FirstPerson")
-        .def("StaticClass", &USpecialMove_FirstPerson::StaticClass, py::return_value_policy::reference)
         .def("GetSMNode", &USpecialMove_FirstPerson::GetSMNode, py::return_value_policy::reference)
         .def("PlayAnim", &USpecialMove_FirstPerson::PlayAnim)
         .def("StopWeaponRecoilAnimImp", &USpecialMove_FirstPerson::StopWeaponRecoilAnimImp)

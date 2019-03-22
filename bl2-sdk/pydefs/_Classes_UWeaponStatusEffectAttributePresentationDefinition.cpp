@@ -7,6 +7,5 @@ void Export_pystes_UWeaponStatusEffectAttributePresentationDefinition(py::module
 {
     py::class_< UWeaponStatusEffectAttributePresentationDefinition,  UAttributePresentationDefinition   >(m, "UWeaponStatusEffectAttributePresentationDefinition")
         .def_readwrite("MappingData", &UWeaponStatusEffectAttributePresentationDefinition::MappingData)
-        .def("StaticClass", &UWeaponStatusEffectAttributePresentationDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

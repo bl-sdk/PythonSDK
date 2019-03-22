@@ -11,6 +11,5 @@ void Export_pystes_ABlockingMeshActor(py::module &m)
         .def_readwrite("BlockingMeshMaterial", &ABlockingMeshActor::BlockingMeshMaterial)
         .def_readwrite("MatInstantConstant", &ABlockingMeshActor::MatInstantConstant)
         .def_readwrite("MatInstantConstantNew", &ABlockingMeshActor::MatInstantConstantNew)
-        .def("StaticClass", &ABlockingMeshActor::StaticClass, py::return_value_policy::reference)
           ;
 }

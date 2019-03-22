@@ -24,6 +24,5 @@ void Export_pystes_UNxForceFieldGenericComponent(py::module &m)
         .def_readwrite("FalloffQuadratic", &UNxForceFieldGenericComponent::FalloffQuadratic)
         .def_readwrite("TorusRadius", &UNxForceFieldGenericComponent::TorusRadius)
         .def_readwrite("Kernel", &UNxForceFieldGenericComponent::Kernel)
-        .def("StaticClass", &UNxForceFieldGenericComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

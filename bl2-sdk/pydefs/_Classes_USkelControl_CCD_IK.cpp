@@ -16,6 +16,5 @@ void Export_pystes_USkelControl_CCD_IK(py::module &m)
         .def_readwrite("Precision", &USkelControl_CCD_IK::Precision)
         .def_readwrite("AngleConstraint", &USkelControl_CCD_IK::AngleConstraint)
         .def_readwrite("MaxAngleSteps", &USkelControl_CCD_IK::MaxAngleSteps)
-        .def("StaticClass", &USkelControl_CCD_IK::StaticClass, py::return_value_policy::reference)
           ;
 }

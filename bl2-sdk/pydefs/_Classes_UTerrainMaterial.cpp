@@ -16,6 +16,5 @@ void Export_pystes_UTerrainMaterial(py::module &m)
         .def_readwrite("DisplacementMap", &UTerrainMaterial::DisplacementMap)
         .def_readwrite("DisplacementScale", &UTerrainMaterial::DisplacementScale)
         .def_readwrite("FoliageMeshes", &UTerrainMaterial::FoliageMeshes)
-        .def("StaticClass", &UTerrainMaterial::StaticClass, py::return_value_policy::reference)
           ;
 }

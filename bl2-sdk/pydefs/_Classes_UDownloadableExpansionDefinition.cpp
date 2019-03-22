@@ -18,7 +18,6 @@ void Export_pystes_UDownloadableExpansionDefinition(py::module &m)
         .def_readwrite("MissionNumberBase", &UDownloadableExpansionDefinition::MissionNumberBase)
         .def_readwrite("SeasonalMissionList", &UDownloadableExpansionDefinition::SeasonalMissionList)
         .def_readwrite("TrainingMessageListDef", &UDownloadableExpansionDefinition::TrainingMessageListDef)
-        .def("StaticClass", &UDownloadableExpansionDefinition::StaticClass, py::return_value_policy::reference)
         .def("IsLevelTravelAccessible", &UDownloadableExpansionDefinition::IsLevelTravelAccessible)
         .def("CanTravelTo", &UDownloadableExpansionDefinition::CanTravelTo)
           ;

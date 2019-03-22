@@ -9,6 +9,5 @@ void Export_pystes_UActorFactoryDynamicSM(py::module &m)
         .def_readwrite("StaticMesh", &UActorFactoryDynamicSM::StaticMesh)
         .def_readwrite("DrawScale3D", &UActorFactoryDynamicSM::DrawScale3D)
         .def_readwrite("CollisionType", &UActorFactoryDynamicSM::CollisionType)
-        .def("StaticClass", &UActorFactoryDynamicSM::StaticClass, py::return_value_policy::reference)
           ;
 }

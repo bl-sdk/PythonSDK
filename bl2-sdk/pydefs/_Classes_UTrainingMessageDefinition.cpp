@@ -16,6 +16,5 @@ void Export_pystes_UTrainingMessageDefinition(py::module &m)
         .def_readwrite("ExceptIfGreaterThan", &UTrainingMessageDefinition::ExceptIfGreaterThan)
         .def_readwrite("StatusMenuTab", &UTrainingMessageDefinition::StatusMenuTab)
         .def_readwrite("DialogPriority", &UTrainingMessageDefinition::DialogPriority)
-        .def("StaticClass", &UTrainingMessageDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

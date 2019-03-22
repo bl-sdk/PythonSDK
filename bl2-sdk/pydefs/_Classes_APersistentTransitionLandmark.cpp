@@ -9,6 +9,5 @@ void Export_pystes_APersistentTransitionLandmark(py::module &m)
         .def_readwrite("FromMapName", &APersistentTransitionLandmark::FromMapName)
         .def_readwrite("ToMapName", &APersistentTransitionLandmark::ToMapName)
         .def_readwrite("RequiredSublevelNames", &APersistentTransitionLandmark::RequiredSublevelNames)
-        .def("StaticClass", &APersistentTransitionLandmark::StaticClass, py::return_value_policy::reference)
           ;
 }

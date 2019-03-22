@@ -16,7 +16,6 @@ void Export_pystes_UBehavior_PawnLeap(py::module &m)
         .def_readwrite("TargetObject", &UBehavior_PawnLeap::TargetObject)
         .def_readwrite("RandomYawOnTarget", &UBehavior_PawnLeap::RandomYawOnTarget)
         .def_readwrite("LeapAnimDef", &UBehavior_PawnLeap::LeapAnimDef)
-        .def("StaticClass", &UBehavior_PawnLeap::StaticClass, py::return_value_policy::reference)
         .def("FindLandingLocation", &UBehavior_PawnLeap::FindLandingLocation)
         .def("ApplyBehaviorToContext", &UBehavior_PawnLeap::ApplyBehaviorToContext)
           ;

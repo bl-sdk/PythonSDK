@@ -32,6 +32,5 @@ void Export_pystes_UPhysXParticleSystem(py::module &m)
         .def_readwrite("CollisionResponseCoefficient", &UPhysXParticleSystem::CollisionResponseCoefficient)
         .def_readwrite("CascadeScene", &UPhysXParticleSystem::CascadeScene)
         .def_readwrite("PSys", &UPhysXParticleSystem::PSys)
-        .def("StaticClass", &UPhysXParticleSystem::StaticClass, py::return_value_policy::reference)
           ;
 }

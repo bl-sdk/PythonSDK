@@ -16,6 +16,5 @@ void Export_pystes_APrefabInstance(py::module &m)
         .def_readwrite("PI_CompleteObjects", &APrefabInstance::PI_CompleteObjects)
         .def_readwrite("PI_ReferencedObjects", &APrefabInstance::PI_ReferencedObjects)
         .def_readwrite("PI_SavedNames", &APrefabInstance::PI_SavedNames)
-        .def("StaticClass", &APrefabInstance::StaticClass, py::return_value_policy::reference)
           ;
 }

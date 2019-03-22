@@ -7,6 +7,5 @@ void Export_pystes_UInterpTrackVectorProp(py::module &m)
 {
     py::class_< UInterpTrackVectorProp,  UInterpTrackVectorBase   >(m, "UInterpTrackVectorProp")
         .def_readwrite("PropertyName", &UInterpTrackVectorProp::PropertyName)
-        .def("StaticClass", &UInterpTrackVectorProp::StaticClass, py::return_value_policy::reference)
           ;
 }

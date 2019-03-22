@@ -10,6 +10,5 @@ void Export_pystes_UWillowAnimNodeBlendDirectional(py::module &m)
         .def_readwrite("SingleAnimAtOrAboveLOD", &UWillowAnimNodeBlendDirectional::SingleAnimAtOrAboveLOD)
         .def_readwrite("BlendTime", &UWillowAnimNodeBlendDirectional::BlendTime)
         .def_readwrite("DirAngle", &UWillowAnimNodeBlendDirectional::DirAngle)
-        .def("StaticClass", &UWillowAnimNodeBlendDirectional::StaticClass, py::return_value_policy::reference)
           ;
 }

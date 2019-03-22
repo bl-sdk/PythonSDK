@@ -10,6 +10,5 @@ void Export_pystes_USkelControlHandlebars(py::module &m)
         .def_readwrite("HandlebarRotateAxis", &USkelControlHandlebars::HandlebarRotateAxis)
         .def_readwrite("WheelBoneName", &USkelControlHandlebars::WheelBoneName)
         .def_readwrite("SteerWheelBoneIndex", &USkelControlHandlebars::SteerWheelBoneIndex)
-        .def("StaticClass", &USkelControlHandlebars::StaticClass, py::return_value_policy::reference)
           ;
 }

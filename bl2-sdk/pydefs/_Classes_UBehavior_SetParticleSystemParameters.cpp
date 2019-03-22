@@ -12,7 +12,6 @@ void Export_pystes_UBehavior_SetParticleSystemParameters(py::module &m)
         .def_readwrite("ColorParameterValues", &UBehavior_SetParticleSystemParameters::ColorParameterValues)
         .def_readwrite("MaterialParameterValues", &UBehavior_SetParticleSystemParameters::MaterialParameterValues)
         .def_readwrite("ActorParameterValues", &UBehavior_SetParticleSystemParameters::ActorParameterValues)
-        .def("StaticClass", &UBehavior_SetParticleSystemParameters::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_SetParticleSystemParameters::ApplyBehaviorToContext)
           ;
 }

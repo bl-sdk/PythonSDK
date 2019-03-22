@@ -7,6 +7,5 @@ void Export_pystes_UDistributionFloatUniformCurve(py::module &m)
 {
     py::class_< UDistributionFloatUniformCurve,  UDistributionFloat   >(m, "UDistributionFloatUniformCurve")
         .def_readwrite("ConstantCurve", &UDistributionFloatUniformCurve::ConstantCurve)
-        .def("StaticClass", &UDistributionFloatUniformCurve::StaticClass, py::return_value_policy::reference)
           ;
 }

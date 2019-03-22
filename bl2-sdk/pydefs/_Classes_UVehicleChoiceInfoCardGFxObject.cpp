@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UVehicleChoiceInfoCardGFxObject(py::module &m)
 {
     py::class_< UVehicleChoiceInfoCardGFxObject,  UGFxObject   >(m, "UVehicleChoiceInfoCardGFxObject")
-        .def("StaticClass", &UVehicleChoiceInfoCardGFxObject::StaticClass, py::return_value_policy::reference)
         .def("TryScrollDown", &UVehicleChoiceInfoCardGFxObject::TryScrollDown)
         .def("TryScrollUp", &UVehicleChoiceInfoCardGFxObject::TryScrollUp)
         .def("TryScrollRight", &UVehicleChoiceInfoCardGFxObject::TryScrollRight)

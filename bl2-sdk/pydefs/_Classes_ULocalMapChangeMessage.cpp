@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_ULocalMapChangeMessage(py::module &m)
 {
     py::class_< ULocalMapChangeMessage,  UWillowLocalMessage   >(m, "ULocalMapChangeMessage")
-        .def("StaticClass", &ULocalMapChangeMessage::StaticClass, py::return_value_policy::reference)
         .def("ClientReceive", &ULocalMapChangeMessage::ClientReceive)
         .def("GetString", &ULocalMapChangeMessage::GetString)
           ;

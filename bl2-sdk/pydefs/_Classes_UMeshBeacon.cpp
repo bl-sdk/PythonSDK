@@ -19,7 +19,6 @@ void Export_pystes_UMeshBeacon(py::module &m)
         .def_readwrite("MaxBandwidthTestSendTime", &UMeshBeacon::MaxBandwidthTestSendTime)
         .def_readwrite("MaxBandwidthTestReceiveTime", &UMeshBeacon::MaxBandwidthTestReceiveTime)
         .def_readwrite("MaxBandwidthHistoryEntries", &UMeshBeacon::MaxBandwidthHistoryEntries)
-        .def("StaticClass", &UMeshBeacon::StaticClass, py::return_value_policy::reference)
         .def("eventDestroyBeacon", &UMeshBeacon::eventDestroyBeacon)
           ;
 }

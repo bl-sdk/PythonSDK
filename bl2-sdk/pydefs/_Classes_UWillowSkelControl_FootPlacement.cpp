@@ -11,6 +11,5 @@ void Export_pystes_UWillowSkelControl_FootPlacement(py::module &m)
         .def_readwrite("CachedPawn", &UWillowSkelControl_FootPlacement::CachedPawn)
         .def_readwrite("InterpSpeed", &UWillowSkelControl_FootPlacement::InterpSpeed)
         .def_readwrite("ExpensiveDistanceFactor", &UWillowSkelControl_FootPlacement::ExpensiveDistanceFactor)
-        .def("StaticClass", &UWillowSkelControl_FootPlacement::StaticClass, py::return_value_policy::reference)
           ;
 }

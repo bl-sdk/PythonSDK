@@ -10,6 +10,5 @@ void Export_pystes_UAnimNotify_ClothingMaxDistanceScale(py::module &m)
         .def_readwrite("EndScale", &UAnimNotify_ClothingMaxDistanceScale::EndScale)
         .def_readwrite("ScaleMode", &UAnimNotify_ClothingMaxDistanceScale::ScaleMode)
         .def_readwrite("Duration", &UAnimNotify_ClothingMaxDistanceScale::Duration)
-        .def("StaticClass", &UAnimNotify_ClothingMaxDistanceScale::StaticClass, py::return_value_policy::reference)
           ;
 }

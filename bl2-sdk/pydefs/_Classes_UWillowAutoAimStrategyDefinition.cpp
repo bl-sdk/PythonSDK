@@ -16,7 +16,6 @@ void Export_pystes_UWillowAutoAimStrategyDefinition(py::module &m)
         .def_readwrite("DistanceOffset", &UWillowAutoAimStrategyDefinition::DistanceOffset)
         .def_readwrite("Profiles", &UWillowAutoAimStrategyDefinition::Profiles)
         .def_readwrite("DefaultProfile", &UWillowAutoAimStrategyDefinition::DefaultProfile)
-        .def("StaticClass", &UWillowAutoAimStrategyDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetProfileDefinition", &UWillowAutoAimStrategyDefinition::GetProfileDefinition, py::return_value_policy::reference)
           ;
 }

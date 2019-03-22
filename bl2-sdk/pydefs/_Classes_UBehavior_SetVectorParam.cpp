@@ -10,7 +10,6 @@ void Export_pystes_UBehavior_SetVectorParam(py::module &m)
         .def_readwrite("GValue", &UBehavior_SetVectorParam::GValue)
         .def_readwrite("bValue", &UBehavior_SetVectorParam::bValue)
         .def_readwrite("AValue", &UBehavior_SetVectorParam::AValue)
-        .def("StaticClass", &UBehavior_SetVectorParam::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_SetVectorParam::ApplyBehaviorToContext)
           ;
 }

@@ -73,6 +73,5 @@ void Export_pystes_USkillTreeGFxDefinition(py::module &m)
         .def_readwrite("OverviewAlpha", &USkillTreeGFxDefinition::OverviewAlpha)
         .def_readwrite("SelectedSkillZOffset", &USkillTreeGFxDefinition::SelectedSkillZOffset)
         .def_readwrite("SelectedSkillZTweenTime", &USkillTreeGFxDefinition::SelectedSkillZTweenTime)
-        .def("StaticClass", &USkillTreeGFxDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

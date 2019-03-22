@@ -9,6 +9,5 @@ void Export_pystes_UDrawBoxComponent(py::module &m)
         .def_readwrite("BoxColor", &UDrawBoxComponent::BoxColor)
         .def_readwrite("BoxMaterial", &UDrawBoxComponent::BoxMaterial)
         .def_readwrite("BoxExtent", &UDrawBoxComponent::BoxExtent)
-        .def("StaticClass", &UDrawBoxComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

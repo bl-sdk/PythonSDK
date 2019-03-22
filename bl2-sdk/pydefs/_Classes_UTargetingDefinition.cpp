@@ -12,6 +12,5 @@ void Export_pystes_UTargetingDefinition(py::module &m)
         .def_readwrite("StopTargetingIf", &UTargetingDefinition::StopTargetingIf)
         .def_readwrite("CanTargetFriendliesIf", &UTargetingDefinition::CanTargetFriendliesIf)
         .def_readwrite("SearchRadius", &UTargetingDefinition::SearchRadius)
-        .def("StaticClass", &UTargetingDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

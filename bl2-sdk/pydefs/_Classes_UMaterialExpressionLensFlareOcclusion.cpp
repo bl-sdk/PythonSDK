@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UMaterialExpressionLensFlareOcclusion(py::module &m)
 {
     py::class_< UMaterialExpressionLensFlareOcclusion,  UMaterialExpression   >(m, "UMaterialExpressionLensFlareOcclusion")
-        .def("StaticClass", &UMaterialExpressionLensFlareOcclusion::StaticClass, py::return_value_policy::reference)
           ;
 }

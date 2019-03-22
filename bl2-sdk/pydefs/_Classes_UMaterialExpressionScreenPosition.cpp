@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UMaterialExpressionScreenPosition(py::module &m)
 {
     py::class_< UMaterialExpressionScreenPosition,  UMaterialExpression   >(m, "UMaterialExpressionScreenPosition")
-        .def("StaticClass", &UMaterialExpressionScreenPosition::StaticClass, py::return_value_policy::reference)
           ;
 }

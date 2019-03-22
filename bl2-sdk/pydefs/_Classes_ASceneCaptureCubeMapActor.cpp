@@ -8,6 +8,5 @@ void Export_pystes_ASceneCaptureCubeMapActor(py::module &m)
     py::class_< ASceneCaptureCubeMapActor,  ASceneCaptureActor   >(m, "ASceneCaptureCubeMapActor")
         .def_readwrite("StaticMesh", &ASceneCaptureCubeMapActor::StaticMesh)
         .def_readwrite("CubeMaterialInst", &ASceneCaptureCubeMapActor::CubeMaterialInst)
-        .def("StaticClass", &ASceneCaptureCubeMapActor::StaticClass, py::return_value_policy::reference)
           ;
 }

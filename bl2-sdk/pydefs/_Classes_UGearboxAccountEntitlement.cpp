@@ -12,6 +12,5 @@ void Export_pystes_UGearboxAccountEntitlement(py::module &m)
         .def_readwrite("Consumed", &UGearboxAccountEntitlement::Consumed)
         .def_readwrite("Payload", &UGearboxAccountEntitlement::Payload)
         .def_readwrite("LocallyConsumed", &UGearboxAccountEntitlement::LocallyConsumed)
-        .def("StaticClass", &UGearboxAccountEntitlement::StaticClass, py::return_value_policy::reference)
           ;
 }

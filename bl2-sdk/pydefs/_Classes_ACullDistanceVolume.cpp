@@ -7,6 +7,5 @@ void Export_pystes_ACullDistanceVolume(py::module &m)
 {
     py::class_< ACullDistanceVolume,  AVolume   >(m, "ACullDistanceVolume")
         .def_readwrite("CullDistances", &ACullDistanceVolume::CullDistances)
-        .def("StaticClass", &ACullDistanceVolume::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -11,6 +11,5 @@ void Export_pystes_UMaterialExpressionTerrainLayerCoords(py::module &m)
         .def_readwrite("MappingRotation", &UMaterialExpressionTerrainLayerCoords::MappingRotation)
         .def_readwrite("MappingPanU", &UMaterialExpressionTerrainLayerCoords::MappingPanU)
         .def_readwrite("MappingPanV", &UMaterialExpressionTerrainLayerCoords::MappingPanV)
-        .def("StaticClass", &UMaterialExpressionTerrainLayerCoords::StaticClass, py::return_value_policy::reference)
           ;
 }

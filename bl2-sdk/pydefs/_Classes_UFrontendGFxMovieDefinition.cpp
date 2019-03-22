@@ -24,6 +24,5 @@ void Export_pystes_UFrontendGFxMovieDefinition(py::module &m)
         .def_readwrite("MatchmakingMovieDef", &UFrontendGFxMovieDefinition::MatchmakingMovieDef)
         .def_readwrite("ConfirmCharacterMovieDef", &UFrontendGFxMovieDefinition::ConfirmCharacterMovieDef)
         .def_readwrite("InitialScrollingListProviderClass", &UFrontendGFxMovieDefinition::InitialScrollingListProviderClass)
-        .def("StaticClass", &UFrontendGFxMovieDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

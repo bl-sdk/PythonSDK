@@ -57,6 +57,5 @@ void Export_pystes_UInjuredDefinition(py::module &m)
         .def_readwrite("InjuredPreDeathRecoveryTime", &UInjuredDefinition::InjuredPreDeathRecoveryTime)
         .def_readwrite("InjuredPreDeathRecoveryExponent", &UInjuredDefinition::InjuredPreDeathRecoveryExponent)
         .def_readwrite("InjuredPreDeathRecoveryAnim", &UInjuredDefinition::InjuredPreDeathRecoveryAnim)
-        .def("StaticClass", &UInjuredDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

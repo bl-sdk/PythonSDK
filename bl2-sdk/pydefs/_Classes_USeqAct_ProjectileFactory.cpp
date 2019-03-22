@@ -9,7 +9,6 @@ void Export_pystes_USeqAct_ProjectileFactory(py::module &m)
         .def_readwrite("PSTemplate", &USeqAct_ProjectileFactory::PSTemplate)
         .def_readwrite("SocketName", &USeqAct_ProjectileFactory::SocketName)
         .def_readwrite("BoneName", &USeqAct_ProjectileFactory::BoneName)
-        .def("StaticClass", &USeqAct_ProjectileFactory::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqAct_ProjectileFactory::eventGetObjClassVersion)
           ;
 }

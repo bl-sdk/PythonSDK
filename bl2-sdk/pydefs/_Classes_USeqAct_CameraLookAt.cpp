@@ -13,7 +13,6 @@ void Export_pystes_USeqAct_CameraLookAt(py::module &m)
         .def_readwrite("TotalTime", &USeqAct_CameraLookAt::TotalTime)
         .def_readwrite("CameraFOV", &USeqAct_CameraLookAt::CameraFOV)
         .def_readwrite("RemainingTime", &USeqAct_CameraLookAt::RemainingTime)
-        .def("StaticClass", &USeqAct_CameraLookAt::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqAct_CameraLookAt::eventGetObjClassVersion)
           ;
 }

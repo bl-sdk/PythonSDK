@@ -11,7 +11,6 @@ void Export_pystes_ULevelDependencyList(py::module &m)
         .def_readwrite("LevelWorldDiscoveryStatID", &ULevelDependencyList::LevelWorldDiscoveryStatID)
         .def_readwrite("TotalNumWorldDiscoveryAreas", &ULevelDependencyList::TotalNumWorldDiscoveryAreas)
         .def_readwrite("AllAreasDiscoveredAchievement", &ULevelDependencyList::AllAreasDiscoveredAchievement)
-        .def("StaticClass", &ULevelDependencyList::StaticClass, py::return_value_policy::reference)
         .def("GetFriendlyLevelNameFromMapName", &ULevelDependencyList::GetFriendlyLevelNameFromMapName)
           ;
 }

@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_AAdmin(py::module &m)
 {
     py::class_< AAdmin,  APlayerController   >(m, "AAdmin")
-        .def("StaticClass", &AAdmin::StaticClass, py::return_value_policy::reference)
         .def("ServerSwitch", &AAdmin::ServerSwitch)
         .def("Switch", &AAdmin::Switch)
         .def("ServerRestartMap", &AAdmin::ServerRestartMap)

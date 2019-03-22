@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_AWillowNavDebug(py::module &m)
 {
     py::class_< AWillowNavDebug,  AActor   >(m, "AWillowNavDebug")
-        .def("StaticClass", &AWillowNavDebug::StaticClass, py::return_value_policy::reference)
           ;
 }

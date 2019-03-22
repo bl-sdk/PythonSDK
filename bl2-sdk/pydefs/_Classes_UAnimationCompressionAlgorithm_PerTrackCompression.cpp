@@ -30,6 +30,5 @@ void Export_pystes_UAnimationCompressionAlgorithm_PerTrackCompression(py::module
         .def_readwrite("Description", &UAnimationCompressionAlgorithm::Description)
         .def_readwrite("TranslationCompressionChoice", &UAnimationCompressionAlgorithm::TranslationCompressionChoice)
         .def_readwrite("RotationCompressionChoice", &UAnimationCompressionAlgorithm::RotationCompressionChoice)
-        .def("StaticClass", &UAnimationCompressionAlgorithm_PerTrackCompression::StaticClass, py::return_value_policy::reference)
           ;
 }

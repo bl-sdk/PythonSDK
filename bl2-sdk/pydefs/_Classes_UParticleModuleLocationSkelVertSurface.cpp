@@ -14,6 +14,5 @@ void Export_pystes_UParticleModuleLocationSkelVertSurface(py::module &m)
         .def_readwrite("NormalCheckToleranceDegrees", &UParticleModuleLocationSkelVertSurface::NormalCheckToleranceDegrees)
         .def_readwrite("NormalCheckTolerance", &UParticleModuleLocationSkelVertSurface::NormalCheckTolerance)
         .def_readwrite("ValidMaterialIndices", &UParticleModuleLocationSkelVertSurface::ValidMaterialIndices)
-        .def("StaticClass", &UParticleModuleLocationSkelVertSurface::StaticClass, py::return_value_policy::reference)
           ;
 }

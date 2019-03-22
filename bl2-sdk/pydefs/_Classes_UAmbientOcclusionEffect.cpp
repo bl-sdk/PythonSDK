@@ -25,6 +25,5 @@ void Export_pystes_UAmbientOcclusionEffect(py::module &m)
         .def_readwrite("FilterSize", &UAmbientOcclusionEffect::FilterSize)
         .def_readwrite("HistoryConvergenceTime", &UAmbientOcclusionEffect::HistoryConvergenceTime)
         .def_readwrite("HistoryWeightConvergenceTime", &UAmbientOcclusionEffect::HistoryWeightConvergenceTime)
-        .def("StaticClass", &UAmbientOcclusionEffect::StaticClass, py::return_value_policy::reference)
           ;
 }

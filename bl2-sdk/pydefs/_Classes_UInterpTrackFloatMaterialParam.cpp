@@ -11,6 +11,5 @@ void Export_pystes_UInterpTrackFloatMaterialParam(py::module &m)
         .def_readwrite("ParamName", &UInterpTrackFloatMaterialParam::ParamName)
         .def_readwrite("FloatTrack", &UInterpTrackFloatBase::FloatTrack)
         .def_readwrite("CurveTension", &UInterpTrackFloatBase::CurveTension)
-        .def("StaticClass", &UInterpTrackFloatMaterialParam::StaticClass, py::return_value_policy::reference)
           ;
 }

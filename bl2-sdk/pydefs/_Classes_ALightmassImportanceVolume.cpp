@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_ALightmassImportanceVolume(py::module &m)
 {
     py::class_< ALightmassImportanceVolume,  AVolume   >(m, "ALightmassImportanceVolume")
-        .def("StaticClass", &ALightmassImportanceVolume::StaticClass, py::return_value_policy::reference)
           ;
 }

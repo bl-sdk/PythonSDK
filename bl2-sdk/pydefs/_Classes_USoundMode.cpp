@@ -12,6 +12,5 @@ void Export_pystes_USoundMode(py::module &m)
         .def_readwrite("FadeInTime", &USoundMode::FadeInTime)
         .def_readwrite("Duration", &USoundMode::Duration)
         .def_readwrite("FadeOutTime", &USoundMode::FadeOutTime)
-        .def("StaticClass", &USoundMode::StaticClass, py::return_value_policy::reference)
           ;
 }

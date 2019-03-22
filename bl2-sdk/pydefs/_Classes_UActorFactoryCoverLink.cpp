@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UActorFactoryCoverLink(py::module &m)
 {
     py::class_< UActorFactoryCoverLink,  UActorFactory   >(m, "UActorFactoryCoverLink")
-        .def("StaticClass", &UActorFactoryCoverLink::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -24,7 +24,6 @@ void Export_pystes_UWillowVehicleSimCar(py::module &m)
         .def_readwrite("PhysicalMaterialTireModels", &UWillowVehicleSimCar::PhysicalMaterialTireModels)
         .def_readwrite("CachedMaxTorqueCurveSpeed", &UWillowVehicleSimCar::CachedMaxTorqueCurveSpeed)
         .def_readwrite("CachedSpeedCapMultiplier", &UWillowVehicleSimCar::CachedSpeedCapMultiplier)
-        .def("StaticClass", &UWillowVehicleSimCar::StaticClass, py::return_value_policy::reference)
         .def("ResetTorqueCurve", &UWillowVehicleSimCar::ResetTorqueCurve)
         .def("StretchTorqueCurve", &UWillowVehicleSimCar::StretchTorqueCurve)
           ;

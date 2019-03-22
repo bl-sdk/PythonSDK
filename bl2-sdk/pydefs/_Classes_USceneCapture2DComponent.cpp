@@ -12,7 +12,6 @@ void Export_pystes_USceneCapture2DComponent(py::module &m)
         .def_readwrite("FarPlane", &USceneCapture2DComponent::FarPlane)
         .def_readwrite("ViewMatrix", &USceneCapture2DComponent::ViewMatrix)
         .def_readwrite("ProjMatrix", &USceneCapture2DComponent::ProjMatrix)
-        .def("StaticClass", &USceneCapture2DComponent::StaticClass, py::return_value_policy::reference)
         .def("SetView", &USceneCapture2DComponent::SetView)
         .def("SetCaptureParameters", &USceneCapture2DComponent::SetCaptureParameters)
           ;

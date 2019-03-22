@@ -7,6 +7,5 @@ void Export_pystes_UMaterialExpressionSPHFluidVertexColor(py::module &m)
 {
     py::class_< UMaterialExpressionSPHFluidVertexColor,  UMaterialExpression   >(m, "UMaterialExpressionSPHFluidVertexColor")
         .def_readwrite("DefaultTexture", &UMaterialExpressionSPHFluidVertexColor::DefaultTexture)
-        .def("StaticClass", &UMaterialExpressionSPHFluidVertexColor::StaticClass, py::return_value_policy::reference)
           ;
 }

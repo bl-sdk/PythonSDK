@@ -9,7 +9,6 @@ void Export_pystes_UUICharacterSummary(py::module &m)
         .def_readwrite("ClassPathName", &UUICharacterSummary::ClassPathName)
         .def_readwrite("CharacterName", &UUICharacterSummary::CharacterName)
         .def_readwrite("CharacterBio", &UUICharacterSummary::CharacterBio)
-        .def("StaticClass", &UUICharacterSummary::StaticClass, py::return_value_policy::reference)
         .def("eventIsProviderDisabled", &UUICharacterSummary::eventIsProviderDisabled)
           ;
 }

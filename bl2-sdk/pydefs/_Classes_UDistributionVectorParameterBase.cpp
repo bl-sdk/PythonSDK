@@ -11,6 +11,5 @@ void Export_pystes_UDistributionVectorParameterBase(py::module &m)
         .def_readwrite("MaxInput", &UDistributionVectorParameterBase::MaxInput)
         .def_readwrite("MinOutput", &UDistributionVectorParameterBase::MinOutput)
         .def_readwrite("MaxOutput", &UDistributionVectorParameterBase::MaxOutput)
-        .def("StaticClass", &UDistributionVectorParameterBase::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -10,6 +10,5 @@ void Export_pystes_USeqAct_SetMotionBlurParams(py::module &m)
         .def_readwrite("InterpolateSeconds", &USeqAct_SetMotionBlurParams::InterpolateSeconds)
         .def_readwrite("InterpolateElapsed", &USeqAct_SetMotionBlurParams::InterpolateElapsed)
         .def_readwrite("OldMotionBlurAmount", &USeqAct_SetMotionBlurParams::OldMotionBlurAmount)
-        .def("StaticClass", &USeqAct_SetMotionBlurParams::StaticClass, py::return_value_policy::reference)
           ;
 }

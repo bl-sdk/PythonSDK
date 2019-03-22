@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UUIDataStore_StringBase(py::module &m)
 {
     py::class_< UUIDataStore_StringBase,  UUIDataStore   >(m, "UUIDataStore_StringBase")
-        .def("StaticClass", &UUIDataStore_StringBase::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -16,6 +16,5 @@ void Export_pystes_UTextureCube(py::module &m)
         .def_readwrite("FaceNegY", &UTextureCube::FaceNegY)
         .def_readwrite("FacePosZ", &UTextureCube::FacePosZ)
         .def_readwrite("FaceNegZ", &UTextureCube::FaceNegZ)
-        .def("StaticClass", &UTextureCube::StaticClass, py::return_value_policy::reference)
           ;
 }

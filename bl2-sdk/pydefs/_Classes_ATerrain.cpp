@@ -36,7 +36,6 @@ void Export_pystes_ATerrain(py::module &m)
         .def_readwrite("LightingChannels", &ATerrain::LightingChannels)
         .def_readwrite("ReleaseResourcesFence", &ATerrain::ReleaseResourcesFence)
         .def_readwrite("SelectedVertices", &ATerrain::SelectedVertices)
-        .def("StaticClass", &ATerrain::StaticClass, py::return_value_policy::reference)
         .def("eventPostBeginPlay", &ATerrain::eventPostBeginPlay)
           ;
 }

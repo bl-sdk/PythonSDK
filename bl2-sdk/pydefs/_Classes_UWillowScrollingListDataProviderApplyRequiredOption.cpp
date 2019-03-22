@@ -11,7 +11,6 @@ void Export_pystes_UWillowScrollingListDataProviderApplyRequiredOption(py::modul
         .def_readwrite("SettingName", &UWillowScrollingListDataProviderApplyRequiredOption::SettingName)
         .def_readwrite("LocalizedSettingCaptionString", &UWillowScrollingListDataProviderApplyRequiredOption::LocalizedSettingCaptionString)
         .def_readwrite("LocalizedSettingDescriptionString", &UWillowScrollingListDataProviderApplyRequiredOption::LocalizedSettingDescriptionString)
-        .def("StaticClass", &UWillowScrollingListDataProviderApplyRequiredOption::StaticClass, py::return_value_policy::reference)
         .def("HandleSpinnerChange", &UWillowScrollingListDataProviderApplyRequiredOption::HandleSpinnerChange)
         .def("Populate", &UWillowScrollingListDataProviderApplyRequiredOption::Populate)
         .def("HandleClick", &UWillowScrollingListDataProviderApplyRequiredOption::HandleClick)

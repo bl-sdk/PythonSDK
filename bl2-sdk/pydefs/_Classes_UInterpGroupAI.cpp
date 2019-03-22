@@ -9,6 +9,5 @@ void Export_pystes_UInterpGroupAI(py::module &m)
         .def_readwrite("StageMarkGroup", &UInterpGroupAI::StageMarkGroup)
         .def_readwrite("Alignment", &UInterpGroupAI::Alignment)
         .def_readwrite("AlignmentLerpTime", &UInterpGroupAI::AlignmentLerpTime)
-        .def("StaticClass", &UInterpGroupAI::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -9,7 +9,6 @@ void Export_pystes_UBehavior_RemoteCustomEvent(py::module &m)
         .def_readwrite("SequenceProvider", &UBehavior_RemoteCustomEvent::SequenceProvider)
         .def_readwrite("ProviderDefinitionPathName", &UBehavior_RemoteCustomEvent::ProviderDefinitionPathName)
         .def_readwrite("CustomEventName", &UBehavior_RemoteCustomEvent::CustomEventName)
-        .def("StaticClass", &UBehavior_RemoteCustomEvent::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_RemoteCustomEvent::ApplyBehaviorToContext)
           ;
 }

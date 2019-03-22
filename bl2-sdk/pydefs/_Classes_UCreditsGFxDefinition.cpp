@@ -19,6 +19,5 @@ void Export_pystes_UCreditsGFxDefinition(py::module &m)
         .def_readwrite("MiddlewareTexturePath", &UCreditsGFxDefinition::MiddlewareTexturePath)
         .def_readwrite("SplatPackageName", &UCreditsGFxDefinition::SplatPackageName)
         .def_readwrite("SplatTexturePath", &UCreditsGFxDefinition::SplatTexturePath)
-        .def("StaticClass", &UCreditsGFxDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

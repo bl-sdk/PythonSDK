@@ -23,6 +23,5 @@ void Export_pystes_UWillowVersusDuelGlobals(py::module &m)
         .def_readwrite("DuelChallengeTimeout", &UWillowVersusDuelGlobals::DuelChallengeTimeout)
         .def_readwrite("DuelLength", &UWillowVersusDuelGlobals::DuelLength)
         .def_readwrite("DuelTeams", &UWillowVersusDuelGlobals::DuelTeams)
-        .def("StaticClass", &UWillowVersusDuelGlobals::StaticClass, py::return_value_policy::reference)
           ;
 }

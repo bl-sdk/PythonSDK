@@ -10,7 +10,6 @@ void Export_pystes_UProjectileBehavior_Bounce(py::module &m)
         .def_readwrite("ElasticityScaleFormula", &UProjectileBehavior_Bounce::ElasticityScaleFormula)
         .def_readwrite("HitNormal", &UProjectileBehavior_Bounce::HitNormal)
         .def_readwrite("ElasticityScale", &UProjectileBehavior_Bounce::ElasticityScale)
-        .def("StaticClass", &UProjectileBehavior_Bounce::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UProjectileBehavior_Bounce::ApplyBehaviorToContext)
           ;
 }

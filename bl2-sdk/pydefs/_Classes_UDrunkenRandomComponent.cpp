@@ -15,6 +15,5 @@ void Export_pystes_UDrunkenRandomComponent(py::module &m)
         .def_readwrite("LastDepartureAngle", &UDrunkenRandomComponent::LastDepartureAngle)
         .def_readwrite("LastRotationOffset", &UDrunkenRandomComponent::LastRotationOffset)
         .def_readwrite("TargetRotationOffset", &UDrunkenRandomComponent::TargetRotationOffset)
-        .def("StaticClass", &UDrunkenRandomComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

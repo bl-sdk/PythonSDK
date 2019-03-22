@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UTargetIteratorPrioritizeTargetNotBeingShotAt(py::module &m)
 {
     py::class_< UTargetIteratorPrioritizeTargetNotBeingShotAt,  UTI_Prioritize   >(m, "UTargetIteratorPrioritizeTargetNotBeingShotAt")
-        .def("StaticClass", &UTargetIteratorPrioritizeTargetNotBeingShotAt::StaticClass, py::return_value_policy::reference)
           ;
 }

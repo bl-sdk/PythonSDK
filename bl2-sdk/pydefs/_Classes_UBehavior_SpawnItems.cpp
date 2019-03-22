@@ -16,7 +16,6 @@ void Export_pystes_UBehavior_SpawnItems(py::module &m)
         .def_readwrite("AttachmentPointNames", &UBehavior_SpawnItems::AttachmentPointNames)
         .def_readwrite("Torque", &UBehavior_SpawnItems::Torque)
         .def_readwrite("ItemSpawnSocket", &UBehavior_SpawnItems::ItemSpawnSocket)
-        .def("StaticClass", &UBehavior_SpawnItems::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_SpawnItems::ApplyBehaviorToContext)
           ;
 }

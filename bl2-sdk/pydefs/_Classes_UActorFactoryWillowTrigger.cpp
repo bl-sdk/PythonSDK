@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UActorFactoryWillowTrigger(py::module &m)
 {
     py::class_< UActorFactoryWillowTrigger,  UActorFactory   >(m, "UActorFactoryWillowTrigger")
-        .def("StaticClass", &UActorFactoryWillowTrigger::StaticClass, py::return_value_policy::reference)
           ;
 }

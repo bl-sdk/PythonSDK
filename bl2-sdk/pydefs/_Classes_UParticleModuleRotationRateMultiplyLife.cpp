@@ -7,6 +7,5 @@ void Export_pystes_UParticleModuleRotationRateMultiplyLife(py::module &m)
 {
     py::class_< UParticleModuleRotationRateMultiplyLife,  UParticleModuleRotationRateBase   >(m, "UParticleModuleRotationRateMultiplyLife")
         .def_readwrite("LifeMultiplier", &UParticleModuleRotationRateMultiplyLife::LifeMultiplier)
-        .def("StaticClass", &UParticleModuleRotationRateMultiplyLife::StaticClass, py::return_value_policy::reference)
           ;
 }

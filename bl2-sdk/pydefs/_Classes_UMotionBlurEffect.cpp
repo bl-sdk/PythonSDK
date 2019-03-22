@@ -10,6 +10,5 @@ void Export_pystes_UMotionBlurEffect(py::module &m)
         .def_readwrite("MotionBlurAmount", &UMotionBlurEffect::MotionBlurAmount)
         .def_readwrite("CameraRotationThreshold", &UMotionBlurEffect::CameraRotationThreshold)
         .def_readwrite("CameraTranslationThreshold", &UMotionBlurEffect::CameraTranslationThreshold)
-        .def("StaticClass", &UMotionBlurEffect::StaticClass, py::return_value_policy::reference)
           ;
 }

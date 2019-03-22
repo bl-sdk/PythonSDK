@@ -11,7 +11,6 @@ void Export_pystes_UProjectileBehavior_Attach(py::module &m)
         .def_readwrite("HitNormal", &UProjectileBehavior_Attach::HitNormal)
         .def_readwrite("HitLocation", &UProjectileBehavior_Attach::HitLocation)
         .def_readwrite("BoneIndex", &UProjectileBehavior_Attach::BoneIndex)
-        .def("StaticClass", &UProjectileBehavior_Attach::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UProjectileBehavior_Attach::ApplyBehaviorToContext)
           ;
 }

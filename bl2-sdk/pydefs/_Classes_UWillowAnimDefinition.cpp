@@ -7,7 +7,6 @@ void Export_pystes_UWillowAnimDefinition(py::module &m)
 {
     py::class_< UWillowAnimDefinition,  UGearboxAnimDefinition   >(m, "UWillowAnimDefinition")
         .def_readwrite("InstanceDataName", &UWillowAnimDefinition::InstanceDataName)
-        .def("StaticClass", &UWillowAnimDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetSMNode", &UWillowAnimDefinition::GetSMNode, py::return_value_policy::reference)
         .def("eventClientFinished", &UWillowAnimDefinition::eventClientFinished)
         .def("eventClientStarted", &UWillowAnimDefinition::eventClientStarted)

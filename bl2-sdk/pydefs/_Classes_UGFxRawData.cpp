@@ -10,6 +10,5 @@ void Export_pystes_UGFxRawData(py::module &m)
         .def_readwrite("ReferencedSwfs", &UGFxRawData::ReferencedSwfs)
         .def_readwrite("References", &UGFxRawData::References)
         .def_readwrite("UserReferences", &UGFxRawData::UserReferences)
-        .def("StaticClass", &UGFxRawData::StaticClass, py::return_value_policy::reference)
           ;
 }

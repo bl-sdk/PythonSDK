@@ -16,6 +16,5 @@ void Export_pystes_UFiringModeSoundDefinition(py::module &m)
         .def_readwrite("BeamSoundEvent", &UFiringModeSoundDefinition::BeamSoundEvent)
         .def_readwrite("BeamStopSoundEvent", &UFiringModeSoundDefinition::BeamStopSoundEvent)
         .def_readwrite("BeamImpactSoundEvent", &UFiringModeSoundDefinition::BeamImpactSoundEvent)
-        .def("StaticClass", &UFiringModeSoundDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

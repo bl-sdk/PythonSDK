@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UGFxClikWidget(py::module &m)
 {
     py::class_< UGFxClikWidget,  UGFxObject   >(m, "UGFxClikWidget")
-        .def("StaticClass", &UGFxClikWidget::StaticClass, py::return_value_policy::reference)
         .def("ASRemoveAllEventListeners", &UGFxClikWidget::ASRemoveAllEventListeners)
         .def("ASAddEventListener", &UGFxClikWidget::ASAddEventListener)
         .def("SetListener", &UGFxClikWidget::SetListener)

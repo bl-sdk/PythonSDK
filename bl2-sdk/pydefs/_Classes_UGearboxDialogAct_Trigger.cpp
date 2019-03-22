@@ -7,7 +7,6 @@ void Export_pystes_UGearboxDialogAct_Trigger(py::module &m)
 {
     py::class_< UGearboxDialogAct_Trigger,  UGearboxDialogAction   >(m, "UGearboxDialogAct_Trigger")
         .def_readwrite("DialogEvent", &UGearboxDialogAct_Trigger::DialogEvent)
-        .def("StaticClass", &UGearboxDialogAct_Trigger::StaticClass, py::return_value_policy::reference)
         .def("ActivateOutput", &UGearboxDialogAct_Trigger::ActivateOutput)
         .def("eventActivate", &UGearboxDialogAct_Trigger::eventActivate)
           ;

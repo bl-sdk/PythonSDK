@@ -12,6 +12,5 @@ void Export_pystes_UFogVolumeConeDensityComponent(py::module &m)
         .def_readwrite("ConeAxis", &UFogVolumeConeDensityComponent::ConeAxis)
         .def_readwrite("ConeMaxAngle", &UFogVolumeConeDensityComponent::ConeMaxAngle)
         .def_readwrite("PreviewCone", &UFogVolumeConeDensityComponent::PreviewCone)
-        .def("StaticClass", &UFogVolumeConeDensityComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

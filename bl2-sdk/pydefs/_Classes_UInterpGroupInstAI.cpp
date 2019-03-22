@@ -9,6 +9,5 @@ void Export_pystes_UInterpGroupInstAI(py::module &m)
         .def_readwrite("AIGroup", &UInterpGroupInstAI::AIGroup)
         .def_readwrite("SavedPhysics", &UInterpGroupInstAI::SavedPhysics)
         .def_readwrite("StageMarkActor", &UInterpGroupInstAI::StageMarkActor)
-        .def("StaticClass", &UInterpGroupInstAI::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UCustomPropertyItemHandler(py::module &m)
 {
     py::class_< UCustomPropertyItemHandler,  UInterface   >(m, "UCustomPropertyItemHandler")
-        .def("StaticClass", &UCustomPropertyItemHandler::StaticClass, py::return_value_policy::reference)
           ;
 }

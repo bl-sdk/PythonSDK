@@ -17,7 +17,6 @@ void Export_pystes_USceneCaptureComponent(py::module &m)
         .def_readwrite("CaptureInfo", &USceneCaptureComponent::CaptureInfo)
         .def_readwrite("ViewState", &USceneCaptureComponent::ViewState)
         .def_readwrite("PostProcessProxies", &USceneCaptureComponent::PostProcessProxies)
-        .def("StaticClass", &USceneCaptureComponent::StaticClass, py::return_value_policy::reference)
         .def("SetEnabled", &USceneCaptureComponent::SetEnabled)
         .def("SetFrameRate", &USceneCaptureComponent::SetFrameRate)
           ;

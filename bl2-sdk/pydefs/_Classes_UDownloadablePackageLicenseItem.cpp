@@ -7,6 +7,5 @@ void Export_pystes_UDownloadablePackageLicenseItem(py::module &m)
 {
     py::class_< UDownloadablePackageLicenseItem,  UObject   >(m, "UDownloadablePackageLicenseItem")
         .def_readwrite("LicenseMask", &UDownloadablePackageLicenseItem::LicenseMask)
-        .def("StaticClass", &UDownloadablePackageLicenseItem::StaticClass, py::return_value_policy::reference)
           ;
 }

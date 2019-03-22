@@ -7,7 +7,6 @@ void Export_pystes_UBehavior_GetPlayerStat(py::module &m)
 {
     py::class_< UBehavior_GetPlayerStat,  UBehaviorBase   >(m, "UBehavior_GetPlayerStat")
         .def_readwrite("StatId", &UBehavior_GetPlayerStat::StatId)
-        .def("StaticClass", &UBehavior_GetPlayerStat::StaticClass, py::return_value_policy::reference)
         .def("PublishBehaviorOutput", &UBehavior_GetPlayerStat::PublishBehaviorOutput)
         .def("ApplyBehaviorToContext", &UBehavior_GetPlayerStat::ApplyBehaviorToContext)
           ;

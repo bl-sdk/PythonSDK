@@ -15,6 +15,5 @@ void Export_pystes_USVehicleSimCar(py::module &m)
         .def_readwrite("StopThreshold", &USVehicleSimCar::StopThreshold)
         .def_readwrite("ActualSteering", &USVehicleSimCar::ActualSteering)
         .def_readwrite("TimeSinceThrottle", &USVehicleSimCar::TimeSinceThrottle)
-        .def("StaticClass", &USVehicleSimCar::StaticClass, py::return_value_policy::reference)
           ;
 }

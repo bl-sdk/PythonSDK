@@ -13,7 +13,6 @@ void Export_pystes_UParticleEmitter(py::module &m)
         .def_readwrite("PeakActiveParticles", &UParticleEmitter::PeakActiveParticles)
         .def_readwrite("InitialAllocationCount", &UParticleEmitter::InitialAllocationCount)
         .def_readwrite("MediumDetailSpawnRateScale", &UParticleEmitter::MediumDetailSpawnRateScale)
-        .def("StaticClass", &UParticleEmitter::StaticClass, py::return_value_policy::reference)
         .def("GetMaxLifespan", &UParticleEmitter::GetMaxLifespan)
           ;
 }

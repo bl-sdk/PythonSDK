@@ -15,6 +15,5 @@ void Export_pystes_UParticleModuleTypeDataBeam(py::module &m)
         .def_readwrite("TargetStrength", &UParticleModuleTypeDataBeam::TargetStrength)
         .def_readwrite("EndPointDirection", &UParticleModuleTypeDataBeam::EndPointDirection)
         .def_readwrite("TextureTile", &UParticleModuleTypeDataBeam::TextureTile)
-        .def("StaticClass", &UParticleModuleTypeDataBeam::StaticClass, py::return_value_policy::reference)
           ;
 }

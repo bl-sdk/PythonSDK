@@ -16,6 +16,5 @@ void Export_pystes_UVehicleWheelDefinition(py::module &m)
         .def_readwrite("HandbrakeLatSlipFactor", &UVehicleWheelDefinition::HandbrakeLatSlipFactor)
         .def_readwrite("ParkedSlipFactorLat", &UVehicleWheelDefinition::ParkedSlipFactorLat)
         .def_readwrite("ParkedSlipFactorLong", &UVehicleWheelDefinition::ParkedSlipFactorLong)
-        .def("StaticClass", &UVehicleWheelDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

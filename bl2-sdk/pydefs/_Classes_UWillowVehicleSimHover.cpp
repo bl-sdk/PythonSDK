@@ -13,6 +13,5 @@ void Export_pystes_UWillowVehicleSimHover(py::module &m)
         .def_readwrite("TorqueScalar", &UWillowVehicleSimHover::TorqueScalar)
         .def_readwrite("TiltScalar", &UWillowVehicleSimHover::TiltScalar)
         .def_readwrite("MoveTiltAmount", &UWillowVehicleSimHover::MoveTiltAmount)
-        .def("StaticClass", &UWillowVehicleSimHover::StaticClass, py::return_value_policy::reference)
           ;
 }

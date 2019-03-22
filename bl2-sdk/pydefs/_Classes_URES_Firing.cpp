@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_URES_Firing(py::module &m)
 {
     py::class_< URES_Firing,  UActionResource   >(m, "URES_Firing")
-        .def("StaticClass", &URES_Firing::StaticClass, py::return_value_policy::reference)
           ;
 }

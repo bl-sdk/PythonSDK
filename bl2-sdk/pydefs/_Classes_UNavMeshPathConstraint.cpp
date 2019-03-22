@@ -11,7 +11,6 @@ void Export_pystes_UNavMeshPathConstraint(py::module &m)
         .def_readwrite("NumThrownOutNodes", &UNavMeshPathConstraint::NumThrownOutNodes)
         .def_readwrite("AddedDirectCost", &UNavMeshPathConstraint::AddedDirectCost)
         .def_readwrite("AddedHeuristicCost", &UNavMeshPathConstraint::AddedHeuristicCost)
-        .def("StaticClass", &UNavMeshPathConstraint::StaticClass, py::return_value_policy::reference)
         .def("eventGetDumpString", &UNavMeshPathConstraint::eventGetDumpString)
         .def("eventRecycle", &UNavMeshPathConstraint::eventRecycle)
           ;

@@ -11,6 +11,5 @@ void Export_pystes_UAnimNodeBlendByBase(py::module &m)
         .def_readwrite("ActorClass", &UAnimNodeBlendByBase::ActorClass)
         .def_readwrite("BlendTime", &UAnimNodeBlendByBase::BlendTime)
         .def_readwrite("CachedBase", &UAnimNodeBlendByBase::CachedBase)
-        .def("StaticClass", &UAnimNodeBlendByBase::StaticClass, py::return_value_policy::reference)
           ;
 }

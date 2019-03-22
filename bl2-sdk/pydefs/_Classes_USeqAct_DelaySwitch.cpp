@@ -10,6 +10,5 @@ void Export_pystes_USeqAct_DelaySwitch(py::module &m)
         .def_readwrite("CurrentIdx", &USeqAct_DelaySwitch::CurrentIdx)
         .def_readwrite("SwitchDelay", &USeqAct_DelaySwitch::SwitchDelay)
         .def_readwrite("NextLinkTime", &USeqAct_DelaySwitch::NextLinkTime)
-        .def("StaticClass", &USeqAct_DelaySwitch::StaticClass, py::return_value_policy::reference)
           ;
 }

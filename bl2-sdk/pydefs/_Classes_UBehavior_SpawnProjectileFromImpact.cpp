@@ -12,7 +12,6 @@ void Export_pystes_UBehavior_SpawnProjectileFromImpact(py::module &m)
         .def_readwrite("ProjectileDefinition", &UBehavior_SpawnProjectileFromImpact::ProjectileDefinition)
         .def_readwrite("SetProjectileSequenceState", &UBehavior_SpawnProjectileFromImpact::SetProjectileSequenceState)
         .def_readwrite("GearLikenessContext", &UBehavior_SpawnProjectileFromImpact::GearLikenessContext)
-        .def("StaticClass", &UBehavior_SpawnProjectileFromImpact::StaticClass, py::return_value_policy::reference)
         .def("AttachProjectileToBase", &UBehavior_SpawnProjectileFromImpact::AttachProjectileToBase)
         .def("ApplyBehaviorToContext", &UBehavior_SpawnProjectileFromImpact::ApplyBehaviorToContext)
           ;

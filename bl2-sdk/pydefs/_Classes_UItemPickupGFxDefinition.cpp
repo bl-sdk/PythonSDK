@@ -11,6 +11,5 @@ void Export_pystes_UItemPickupGFxDefinition(py::module &m)
         .def_readwrite("ParticleMatParamName", &UItemPickupGFxDefinition::ParticleMatParamName)
         .def_readwrite("MatTexParamName", &UItemPickupGFxDefinition::MatTexParamName)
         .def_readwrite("TallItemZOffsetPercentage", &UItemPickupGFxDefinition::TallItemZOffsetPercentage)
-        .def("StaticClass", &UItemPickupGFxDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

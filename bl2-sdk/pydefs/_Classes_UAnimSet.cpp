@@ -15,6 +15,5 @@ void Export_pystes_UAnimSet(py::module &m)
         .def_readwrite("ForceMeshTranslationBoneNames", &UAnimSet::ForceMeshTranslationBoneNames)
         .def_readwrite("PreviewSkelMeshName", &UAnimSet::PreviewSkelMeshName)
         .def_readwrite("BestRatioSkelMeshName", &UAnimSet::BestRatioSkelMeshName)
-        .def("StaticClass", &UAnimSet::StaticClass, py::return_value_policy::reference)
           ;
 }

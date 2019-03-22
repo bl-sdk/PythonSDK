@@ -12,7 +12,6 @@ void Export_pystes_UUIGameInfoSummary(py::module &m)
         .def_readwrite("GameSettingsClassName", &UUIGameInfoSummary::GameSettingsClassName)
         .def_readwrite("GameName", &UUIGameInfoSummary::GameName)
         .def_readwrite("Description", &UUIGameInfoSummary::Description)
-        .def("StaticClass", &UUIGameInfoSummary::StaticClass, py::return_value_policy::reference)
         .def("eventIsProviderDisabled", &UUIGameInfoSummary::eventIsProviderDisabled)
           ;
 }

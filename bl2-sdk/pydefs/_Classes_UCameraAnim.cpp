@@ -12,6 +12,5 @@ void Export_pystes_UCameraAnim(py::module &m)
         .def_readwrite("BasePPSettings", &UCameraAnim::BasePPSettings)
         .def_readwrite("BasePPSettingsAlpha", &UCameraAnim::BasePPSettingsAlpha)
         .def_readwrite("BaseFOV", &UCameraAnim::BaseFOV)
-        .def("StaticClass", &UCameraAnim::StaticClass, py::return_value_policy::reference)
           ;
 }

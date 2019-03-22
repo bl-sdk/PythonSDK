@@ -12,6 +12,5 @@ void Export_pystes_UAmmoDropWeightAttributeValueResolver(py::module &m)
         .def_readwrite("NoPoolWeight", &UAmmoDropWeightAttributeValueResolver::NoPoolWeight)
         .def_readwrite("MinBelowThresholdWeight", &UAmmoDropWeightAttributeValueResolver::MinBelowThresholdWeight)
         .def_readwrite("MaxBelowThresholdWeight", &UAmmoDropWeightAttributeValueResolver::MaxBelowThresholdWeight)
-        .def("StaticClass", &UAmmoDropWeightAttributeValueResolver::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -17,6 +17,5 @@ void Export_pystes_UFoliageComponent(py::module &m)
         .def_readwrite("MinScale", &UFoliageComponent::MinScale)
         .def_readwrite("MaxScale", &UFoliageComponent::MaxScale)
         .def_readwrite("SwayScale", &UFoliageComponent::SwayScale)
-        .def("StaticClass", &UFoliageComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

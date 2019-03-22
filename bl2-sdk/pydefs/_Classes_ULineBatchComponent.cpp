@@ -11,6 +11,5 @@ void Export_pystes_ULineBatchComponent(py::module &m)
         .def_readwrite("BatchedLines", &ULineBatchComponent::BatchedLines)
         .def_readwrite("BatchedPoints", &ULineBatchComponent::BatchedPoints)
         .def_readwrite("DefaultLifeTime", &ULineBatchComponent::DefaultLifeTime)
-        .def("StaticClass", &ULineBatchComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -37,6 +37,5 @@ void Export_pystes_UCombatMusicParameters(py::module &m)
         .def_readwrite("TimeBetweenShieldDownThreats", &UCombatMusicParameters::TimeBetweenShieldDownThreats)
         .def_readwrite("StateChangeDelay", &UCombatMusicParameters::StateChangeDelay)
         .def_readwrite("EnemyNotTargetingPlayerTimeout", &UCombatMusicParameters::EnemyNotTargetingPlayerTimeout)
-        .def("StaticClass", &UCombatMusicParameters::StaticClass, py::return_value_policy::reference)
           ;
 }

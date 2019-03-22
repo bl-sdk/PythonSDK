@@ -7,7 +7,6 @@ void Export_pystes_ACoverReplicator(py::module &m)
 {
     py::class_< ACoverReplicator,  AReplicationInfo   >(m, "ACoverReplicator")
         .def_readwrite("CoverReplicationData", &ACoverReplicator::CoverReplicationData)
-        .def("StaticClass", &ACoverReplicator::StaticClass, py::return_value_policy::reference)
         .def("ClientReceiveLinkDisabledState", &ACoverReplicator::ClientReceiveLinkDisabledState)
         .def("ServerSendLinkDisabledState", &ACoverReplicator::ServerSendLinkDisabledState)
         .def("NotifyLinkDisabledStateChange", &ACoverReplicator::NotifyLinkDisabledStateChange)

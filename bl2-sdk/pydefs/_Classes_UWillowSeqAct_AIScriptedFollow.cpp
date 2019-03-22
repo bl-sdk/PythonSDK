@@ -11,6 +11,5 @@ void Export_pystes_UWillowSeqAct_AIScriptedFollow(py::module &m)
         .def_readwrite("Stance", &UWillowSeqAct_AIScriptedFollow::Stance)
         .def_readwrite("CatchupDistance", &UWillowSeqAct_AIScriptedFollow::CatchupDistance)
         .def_readwrite("HoldStillDistance", &UWillowSeqAct_AIScriptedFollow::HoldStillDistance)
-        .def("StaticClass", &UWillowSeqAct_AIScriptedFollow::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -29,6 +29,5 @@ void Export_pystes_UFluidInfluenceComponent(py::module &m)
         .def_readwrite("CurrentAngle", &UFluidInfluenceComponent::CurrentAngle)
         .def_readwrite("CurrentTimer", &UFluidInfluenceComponent::CurrentTimer)
         .def_readwrite("CurrentFluidActor", &UFluidInfluenceComponent::CurrentFluidActor)
-        .def("StaticClass", &UFluidInfluenceComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

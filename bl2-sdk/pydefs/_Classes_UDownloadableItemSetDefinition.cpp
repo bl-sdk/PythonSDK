@@ -13,7 +13,6 @@ void Export_pystes_UDownloadableItemSetDefinition(py::module &m)
         .def_readwrite("GrenadeModAttributePresentationOverride", &UDownloadableItemSetDefinition::GrenadeModAttributePresentationOverride)
         .def_readwrite("ShieldAttributePresentationOverride", &UDownloadableItemSetDefinition::ShieldAttributePresentationOverride)
         .def_readwrite("WeaponAttributePresentationOverride", &UDownloadableItemSetDefinition::WeaponAttributePresentationOverride)
-        .def("StaticClass", &UDownloadableItemSetDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetDLCRestrictedMessage", &UDownloadableItemSetDefinition::GetDLCRestrictedMessage)
         .def("CanUse", &UDownloadableItemSetDefinition::CanUse)
           ;

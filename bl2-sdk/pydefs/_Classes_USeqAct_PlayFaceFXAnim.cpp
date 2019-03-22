@@ -11,6 +11,5 @@ void Export_pystes_USeqAct_PlayFaceFXAnim(py::module &m)
         .def_readwrite("FaceFXAnimName", &USeqAct_PlayFaceFXAnim::FaceFXAnimName)
         .def_readwrite("SoundCueToPlay", &USeqAct_PlayFaceFXAnim::SoundCueToPlay)
         .def_readwrite("AkEventToPlay", &USeqAct_PlayFaceFXAnim::AkEventToPlay)
-        .def("StaticClass", &USeqAct_PlayFaceFXAnim::StaticClass, py::return_value_policy::reference)
           ;
 }

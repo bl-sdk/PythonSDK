@@ -13,6 +13,5 @@ void Export_pystes_UWillowCoverStanceDefinition(py::module &m)
         .def_readwrite("FireEnter", &UWillowCoverStanceDefinition::FireEnter)
         .def_readwrite("FireExit", &UWillowCoverStanceDefinition::FireExit)
         .def_readwrite("FireIdle", &UWillowCoverStanceDefinition::FireIdle)
-        .def("StaticClass", &UWillowCoverStanceDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

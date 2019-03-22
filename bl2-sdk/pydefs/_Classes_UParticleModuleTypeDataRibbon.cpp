@@ -15,6 +15,5 @@ void Export_pystes_UParticleModuleTypeDataRibbon(py::module &m)
         .def_readwrite("TilingDistance", &UParticleModuleTypeDataRibbon::TilingDistance)
         .def_readwrite("DistanceTessellationStepSize", &UParticleModuleTypeDataRibbon::DistanceTessellationStepSize)
         .def_readwrite("TangentTessellationScalar", &UParticleModuleTypeDataRibbon::TangentTessellationScalar)
-        .def("StaticClass", &UParticleModuleTypeDataRibbon::StaticClass, py::return_value_policy::reference)
           ;
 }

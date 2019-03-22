@@ -7,6 +7,5 @@ void Export_pystes_UConstraintAttributeValueResolver(py::module &m)
 {
     py::class_< UConstraintAttributeValueResolver,  UAttributeValueResolver   >(m, "UConstraintAttributeValueResolver")
         .def_readwrite("Constraints", &UConstraintAttributeValueResolver::Constraints)
-        .def("StaticClass", &UConstraintAttributeValueResolver::StaticClass, py::return_value_policy::reference)
           ;
 }

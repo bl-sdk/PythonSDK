@@ -33,6 +33,5 @@ void Export_pystes_UExposureUtilityFixedCost(py::module &m)
         .def_readwrite("HasMovedDistThreshold", &UExposureUtilityBasicCaching::HasMovedDistThreshold)
         .def_readwrite("HasMovedDistThresholdPlayer", &UExposureUtilityBasicCaching::HasMovedDistThresholdPlayer)
         .def_readwrite("CachedExposures", &UExposureUtilityBasicCaching::CachedExposures)
-        .def("StaticClass", &UExposureUtilityFixedCost::StaticClass, py::return_value_policy::reference)
           ;
 }

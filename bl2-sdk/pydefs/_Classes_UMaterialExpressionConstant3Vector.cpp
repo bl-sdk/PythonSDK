@@ -9,6 +9,5 @@ void Export_pystes_UMaterialExpressionConstant3Vector(py::module &m)
         .def_readwrite("R", &UMaterialExpressionConstant3Vector::R)
         .def_readwrite("G", &UMaterialExpressionConstant3Vector::G)
         .def_readwrite("B", &UMaterialExpressionConstant3Vector::B)
-        .def("StaticClass", &UMaterialExpressionConstant3Vector::StaticClass, py::return_value_policy::reference)
           ;
 }

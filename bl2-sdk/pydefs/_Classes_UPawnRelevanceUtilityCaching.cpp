@@ -19,6 +19,5 @@ void Export_pystes_UPawnRelevanceUtilityCaching(py::module &m)
         .def_readwrite("HasMovedDistThreshold", &UPawnRelevanceUtilityCaching::HasMovedDistThreshold)
         .def_readwrite("HasMovedDistThresholdRelevant", &UPawnRelevanceUtilityCaching::HasMovedDistThresholdRelevant)
         .def_readwrite("CachedRelevance", &UPawnRelevanceUtilityCaching::CachedRelevance)
-        .def("StaticClass", &UPawnRelevanceUtilityCaching::StaticClass, py::return_value_policy::reference)
           ;
 }

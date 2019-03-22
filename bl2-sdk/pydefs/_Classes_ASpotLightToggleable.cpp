@@ -7,7 +7,6 @@ void Export_pystes_ASpotLightToggleable(py::module &m)
 {
     py::class_< ASpotLightToggleable,  AActor   >(m, "ASpotLightToggleable")
         .def_readwrite("LightComponent", &ALight::LightComponent)
-        .def("StaticClass", &ASpotLightToggleable::StaticClass, py::return_value_policy::reference)
         .def("ApplyCheckpointRecord", &ASpotLightToggleable::ApplyCheckpointRecord)
         .def("CreateCheckpointRecord", &ASpotLightToggleable::CreateCheckpointRecord)
         .def("ShouldSaveForCheckpoint", &ASpotLightToggleable::ShouldSaveForCheckpoint)

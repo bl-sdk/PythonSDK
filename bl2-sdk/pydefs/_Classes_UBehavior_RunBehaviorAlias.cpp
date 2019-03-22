@@ -10,6 +10,5 @@ void Export_pystes_UBehavior_RunBehaviorAlias(py::module &m)
         .def_readwrite("AliasSelfContext", &UBehavior_RunBehaviorAlias::AliasSelfContext)
         .def_readwrite("AliasMyInstigatorContext", &UBehavior_RunBehaviorAlias::AliasMyInstigatorContext)
         .def_readwrite("AliasOtherEventParticipantContext", &UBehavior_RunBehaviorAlias::AliasOtherEventParticipantContext)
-        .def("StaticClass", &UBehavior_RunBehaviorAlias::StaticClass, py::return_value_policy::reference)
           ;
 }

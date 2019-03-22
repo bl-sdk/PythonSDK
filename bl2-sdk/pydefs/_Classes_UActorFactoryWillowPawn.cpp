@@ -7,6 +7,5 @@ void Export_pystes_UActorFactoryWillowPawn(py::module &m)
 {
     py::class_< UActorFactoryWillowPawn,  UActorFactory   >(m, "UActorFactoryWillowPawn")
         .def_readwrite("PawnArchetype", &UActorFactoryWillowPawn::PawnArchetype)
-        .def("StaticClass", &UActorFactoryWillowPawn::StaticClass, py::return_value_policy::reference)
           ;
 }

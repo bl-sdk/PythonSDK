@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UWillowDmgSource_Sniper(py::module &m)
 {
     py::class_< UWillowDmgSource_Sniper,  UWillowDmgSource_Bullet   >(m, "UWillowDmgSource_Sniper")
-        .def("StaticClass", &UWillowDmgSource_Sniper::StaticClass, py::return_value_policy::reference)
           ;
 }

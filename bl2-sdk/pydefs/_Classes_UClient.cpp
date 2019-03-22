@@ -10,6 +10,5 @@ void Export_pystes_UClient(py::module &m)
         .def_readwrite("DisplayGamma", &UClient::DisplayGamma)
         .def_readwrite("InitialButtonRepeatDelay", &UClient::InitialButtonRepeatDelay)
         .def_readwrite("ButtonRepeatDelay", &UClient::ButtonRepeatDelay)
-        .def("StaticClass", &UClient::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -9,6 +9,5 @@ void Export_pystes_UAnimNotify_Rumble(py::module &m)
         .def_readwrite("PredefinedWaveForm", &UAnimNotify_Rumble::PredefinedWaveForm)
         .def_readwrite("WaveForm", &UAnimNotify_Rumble::WaveForm)
         .def_readwrite("EffectRadius", &UAnimNotify_Rumble::EffectRadius)
-        .def("StaticClass", &UAnimNotify_Rumble::StaticClass, py::return_value_policy::reference)
           ;
 }

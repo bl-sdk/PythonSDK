@@ -12,7 +12,6 @@ void Export_pystes_USeqAct_Trace(py::module &m)
         .def_readwrite("HitObject", &USeqAct_Trace::HitObject)
         .def_readwrite("Distance", &USeqAct_Trace::Distance)
         .def_readwrite("HitLocation", &USeqAct_Trace::HitLocation)
-        .def("StaticClass", &USeqAct_Trace::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqAct_Trace::eventGetObjClassVersion)
           ;
 }

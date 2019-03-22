@@ -33,7 +33,6 @@ void Export_pystes_UWillowCharacterClassDefinition(py::module &m)
         .def_readwrite("BehaviorProviderDefinition", &UWillowCharacterClassDefinition::BehaviorProviderDefinition)
         .def_readwrite("RevivalHealthMultiplier", &UWillowCharacterClassDefinition::RevivalHealthMultiplier)
         .def_readwrite("CharacterInjuredDefinition", &UWillowCharacterClassDefinition::CharacterInjuredDefinition)
-        .def("StaticClass", &UWillowCharacterClassDefinition::StaticClass, py::return_value_policy::reference)
         .def("SetBehaviorProviderDefinition", &UWillowCharacterClassDefinition::SetBehaviorProviderDefinition)
         .def("GetBehaviorProviderDefinition", &UWillowCharacterClassDefinition::GetBehaviorProviderDefinition, py::return_value_policy::reference)
           ;

@@ -7,7 +7,6 @@ void Export_pystes_UOnlineAuthInterfaceSteamworks(py::module &m)
 {
     py::class_< UOnlineAuthInterfaceSteamworks,  UOnlineAuthInterfaceImpl   >(m, "UOnlineAuthInterfaceSteamworks")
         .def_readwrite("AuthCallbackBridge", &UOnlineAuthInterfaceSteamworks::AuthCallbackBridge)
-        .def("StaticClass", &UOnlineAuthInterfaceSteamworks::StaticClass, py::return_value_policy::reference)
         .def("GetServerAddr", &UOnlineAuthInterfaceSteamworks::GetServerAddr)
         .def("GetServerUniqueId", &UOnlineAuthInterfaceSteamworks::GetServerUniqueId)
         .def("EndRemoteServerAuthSession", &UOnlineAuthInterfaceSteamworks::EndRemoteServerAuthSession)

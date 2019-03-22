@@ -7,7 +7,6 @@ void Export_pystes_UBehaviorBase(py::module &m)
 {
     py::class_< UBehaviorBase,  UObject   >(m, "UBehaviorBase")
         .def_readwrite("Context", &UBehaviorBase::Context)
-        .def("StaticClass", &UBehaviorBase::StaticClass, py::return_value_policy::reference)
         .def("IsBehaviorDebugEnabled", &UBehaviorBase::IsBehaviorDebugEnabled)
         .def("ToggleBehaviorDebug", &UBehaviorBase::ToggleBehaviorDebug)
         .def("GetParameterIndex", &UBehaviorBase::GetParameterIndex)

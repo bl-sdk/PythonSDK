@@ -58,6 +58,5 @@ void Export_pystes_UStatusMenuGFxDefinition(py::module &m)
         .def_readwrite("InventoryPanelPath", &UStatusMenuGFxDefinition::InventoryPanelPath)
         .def_readwrite("ChallengesPanelDef", &UStatusMenuGFxDefinition::ChallengesPanelDef)
         .def_readwrite("LatentRewardDef", &UStatusMenuGFxDefinition::LatentRewardDef)
-        .def("StaticClass", &UStatusMenuGFxDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

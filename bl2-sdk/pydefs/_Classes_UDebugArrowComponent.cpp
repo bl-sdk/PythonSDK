@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UDebugArrowComponent(py::module &m)
 {
     py::class_< UDebugArrowComponent,  UArrowComponent   >(m, "UDebugArrowComponent")
-        .def("StaticClass", &UDebugArrowComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

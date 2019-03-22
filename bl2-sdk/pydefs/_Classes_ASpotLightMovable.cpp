@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_ASpotLightMovable(py::module &m)
 {
     py::class_< ASpotLightMovable,  ASpotLight   >(m, "ASpotLightMovable")
-        .def("StaticClass", &ASpotLightMovable::StaticClass, py::return_value_policy::reference)
           ;
 }

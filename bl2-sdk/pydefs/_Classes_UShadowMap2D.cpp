@@ -12,6 +12,5 @@ void Export_pystes_UShadowMap2D(py::module &m)
         .def_readwrite("LightGuid", &UShadowMap2D::LightGuid)
         .def_readwrite("Component", &UShadowMap2D::Component)
         .def_readwrite("InstanceIndex", &UShadowMap2D::InstanceIndex)
-        .def("StaticClass", &UShadowMap2D::StaticClass, py::return_value_policy::reference)
           ;
 }

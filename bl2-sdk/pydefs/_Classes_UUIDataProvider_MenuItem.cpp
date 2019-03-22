@@ -18,7 +18,6 @@ void Export_pystes_UUIDataProvider_MenuItem(py::module &m)
         .def_readwrite("RangeData", &UUIDataProvider_MenuItem::RangeData)
         .def_readwrite("SchemaCellFields", &UUIDataProvider_MenuItem::SchemaCellFields)
         .def_readwrite("IniName", &UUIDataProvider_MenuItem::IniName)
-        .def("StaticClass", &UUIDataProvider_MenuItem::StaticClass, py::return_value_policy::reference)
         .def("IsFiltered", &UUIDataProvider_MenuItem::IsFiltered)
           ;
 }

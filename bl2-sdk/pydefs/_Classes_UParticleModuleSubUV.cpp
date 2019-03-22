@@ -7,6 +7,5 @@ void Export_pystes_UParticleModuleSubUV(py::module &m)
 {
     py::class_< UParticleModuleSubUV,  UParticleModule   >(m, "UParticleModuleSubUV")
         .def_readwrite("SubImageIndex", &UParticleModuleSubUV::SubImageIndex)
-        .def("StaticClass", &UParticleModuleSubUV::StaticClass, py::return_value_policy::reference)
           ;
 }

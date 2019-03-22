@@ -16,7 +16,6 @@ void Export_pystes_UAnimNotify_ViewShake(py::module &m)
         .def_readwrite("ShakeRadius", &UAnimNotify_ViewShake::ShakeRadius)
         .def_readwrite("BoneName", &UAnimNotify_ViewShake::BoneName)
         .def_readwrite("ShakeParams", &UAnimNotify_ViewShake::ShakeParams)
-        .def("StaticClass", &UAnimNotify_ViewShake::StaticClass, py::return_value_policy::reference)
         .def("eventNotify", &UAnimNotify_ViewShake::eventNotify)
           ;
 }

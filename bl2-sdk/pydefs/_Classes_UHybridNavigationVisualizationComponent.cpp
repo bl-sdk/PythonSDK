@@ -12,6 +12,5 @@ void Export_pystes_UHybridNavigationVisualizationComponent(py::module &m)
         .def_readwrite("VisualizationVertsByNavPoint", &UHybridNavigationVisualizationComponent::VisualizationVertsByNavPoint)
         .def_readwrite("VisualizationColor", &UHybridNavigationVisualizationComponent::VisualizationColor)
         .def_readwrite("VisualizationStats", &UHybridNavigationVisualizationComponent::VisualizationStats)
-        .def("StaticClass", &UHybridNavigationVisualizationComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

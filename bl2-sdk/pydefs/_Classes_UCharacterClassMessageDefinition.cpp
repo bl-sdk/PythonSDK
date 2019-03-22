@@ -7,6 +7,5 @@ void Export_pystes_UCharacterClassMessageDefinition(py::module &m)
 {
     py::class_< UCharacterClassMessageDefinition,  UGBXDefinition   >(m, "UCharacterClassMessageDefinition")
         .def_readwrite("BehaviorTriggers", &UCharacterClassMessageDefinition::BehaviorTriggers)
-        .def("StaticClass", &UCharacterClassMessageDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

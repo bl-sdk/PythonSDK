@@ -8,6 +8,5 @@ void Export_pystes_UObjectFunctionFlagValueResolver(py::module &m)
     py::class_< UObjectFunctionFlagValueResolver,  UFlagValueResolver   >(m, "UObjectFunctionFlagValueResolver")
         .def_readwrite("CheckRate", &UObjectFunctionFlagValueResolver::CheckRate)
         .def_readwrite("FunctionCall", &UObjectFunctionFlagValueResolver::FunctionCall)
-        .def("StaticClass", &UObjectFunctionFlagValueResolver::StaticClass, py::return_value_policy::reference)
           ;
 }

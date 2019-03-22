@@ -12,6 +12,5 @@ void Export_pystes_ABrush(py::module &m)
         .def_readwrite("Brush", &ABrush::Brush)
         .def_readwrite("BrushComponent", &ABrush::BrushComponent)
         .def_readwrite("SavedSelections", &ABrush::SavedSelections)
-        .def("StaticClass", &ABrush::StaticClass, py::return_value_policy::reference)
           ;
 }

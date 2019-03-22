@@ -27,6 +27,5 @@ void Export_pystes_ULandscapeComponent(py::module &m)
         .def_readwrite("CollisionMipLevel", &ULandscapeComponent::CollisionMipLevel)
         .def_readwrite("PlatformData", &ULandscapeComponent::PlatformData)
         .def_readwrite("PlatformDataSize", &ULandscapeComponent::PlatformDataSize)
-        .def("StaticClass", &ULandscapeComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

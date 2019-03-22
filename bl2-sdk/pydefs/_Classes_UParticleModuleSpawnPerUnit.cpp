@@ -10,6 +10,5 @@ void Export_pystes_UParticleModuleSpawnPerUnit(py::module &m)
         .def_readwrite("SpawnPerUnit", &UParticleModuleSpawnPerUnit::SpawnPerUnit)
         .def_readwrite("MovementTolerance", &UParticleModuleSpawnPerUnit::MovementTolerance)
         .def_readwrite("MaxFrameDistance", &UParticleModuleSpawnPerUnit::MaxFrameDistance)
-        .def("StaticClass", &UParticleModuleSpawnPerUnit::StaticClass, py::return_value_policy::reference)
           ;
 }

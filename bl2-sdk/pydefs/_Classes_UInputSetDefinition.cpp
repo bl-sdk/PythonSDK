@@ -7,6 +7,5 @@ void Export_pystes_UInputSetDefinition(py::module &m)
 {
     py::class_< UInputSetDefinition,  UGBXDefinition   >(m, "UInputSetDefinition")
         .def_readwrite("InputActions", &UInputSetDefinition::InputActions)
-        .def("StaticClass", &UInputSetDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

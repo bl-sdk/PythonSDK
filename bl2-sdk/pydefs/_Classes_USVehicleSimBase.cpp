@@ -19,6 +19,5 @@ void Export_pystes_USVehicleSimBase(py::module &m)
         .def_readwrite("WheelLatAsymptoteValue", &USVehicleSimBase::WheelLatAsymptoteValue)
         .def_readwrite("WheelInertia", &USVehicleSimBase::WheelInertia)
         .def_readwrite("AutoDriveSteer", &USVehicleSimBase::AutoDriveSteer)
-        .def("StaticClass", &USVehicleSimBase::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -15,7 +15,6 @@ void Export_pystes_UWillowAnimNode_MovementTransition(py::module &m)
         .def_readwrite("LaunchDelayTime", &UWillowAnimNode_MovementTransition::LaunchDelayTime)
         .def_readwrite("MoveState", &UWillowAnimNode_MovementTransition::MoveState)
         .def_readwrite("CurrentLaunchDelayTime", &UWillowAnimNode_MovementTransition::CurrentLaunchDelayTime)
-        .def("StaticClass", &UWillowAnimNode_MovementTransition::StaticClass, py::return_value_policy::reference)
         .def("NodeIsIdle", &UWillowAnimNode_MovementTransition::NodeIsIdle)
           ;
 }

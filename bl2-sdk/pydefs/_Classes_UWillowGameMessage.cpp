@@ -10,7 +10,6 @@ void Export_pystes_UWillowGameMessage(py::module &m)
         .def_readwrite("PlayerLeftGame", &UWillowGameMessage::PlayerLeftGame)
         .def_readwrite("CreaturesGrowStronger", &UWillowGameMessage::CreaturesGrowStronger)
         .def_readwrite("CreaturesWeaken", &UWillowGameMessage::CreaturesWeaken)
-        .def("StaticClass", &UWillowGameMessage::StaticClass, py::return_value_policy::reference)
         .def("GetString", &UWillowGameMessage::GetString)
         .def("ClientReceive", &UWillowGameMessage::ClientReceive)
           ;

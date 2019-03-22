@@ -7,6 +7,5 @@ void Export_pystes_UObjectFunctionAttributeValueResolver(py::module &m)
 {
     py::class_< UObjectFunctionAttributeValueResolver,  UAttributeValueResolver   >(m, "UObjectFunctionAttributeValueResolver")
         .def_readwrite("FunctionCall", &UObjectFunctionAttributeValueResolver::FunctionCall)
-        .def("StaticClass", &UObjectFunctionAttributeValueResolver::StaticClass, py::return_value_policy::reference)
           ;
 }

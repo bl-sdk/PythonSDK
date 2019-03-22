@@ -12,6 +12,5 @@ void Export_pystes_UWillowAnimNode_Falling(py::module &m)
         .def_readwrite("StartFallingTime", &UWillowAnimNode_Falling::StartFallingTime)
         .def_readwrite("StuckFallingTimer", &UWillowAnimNode_Falling::StuckFallingTimer)
         .def_readwrite("ChildBlendInTime", &UWillowAnimNodeBlendList::ChildBlendInTime)
-        .def("StaticClass", &UWillowAnimNode_Falling::StaticClass, py::return_value_policy::reference)
           ;
 }

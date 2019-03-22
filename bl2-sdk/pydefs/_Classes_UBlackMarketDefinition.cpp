@@ -11,7 +11,6 @@ void Export_pystes_UBlackMarketDefinition(py::module &m)
         .def_readwrite("GeneralStock", &UBlackMarketDefinition::GeneralStock)
         .def_readwrite("MaxUpgradeLevel", &UBlackMarketDefinition::MaxUpgradeLevel)
         .def_readwrite("MaxUpgradeLevelOverrides", &UBlackMarketDefinition::MaxUpgradeLevelOverrides)
-        .def("StaticClass", &UBlackMarketDefinition::StaticClass, py::return_value_policy::reference)
         .def("CurrentLevelIsBelowMaxForPlayer", &UBlackMarketDefinition::CurrentLevelIsBelowMaxForPlayer)
         .def("CurrentLevelIsBelowMaxLevel", &UBlackMarketDefinition::CurrentLevelIsBelowMaxLevel)
           ;

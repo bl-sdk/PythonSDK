@@ -11,6 +11,5 @@ void Export_pystes_UAkEvent(py::module &m)
         .def_readwrite("EnvironmentalEffectUpdateFrequency", &UAkEvent::EnvironmentalEffectUpdateFrequency)
         .def_readwrite("MaxAttenuationRadius", &UAkEvent::MaxAttenuationRadius)
         .def_readwrite("ShortId", &UAkObject::ShortId)
-        .def("StaticClass", &UAkEvent::StaticClass, py::return_value_policy::reference)
           ;
 }

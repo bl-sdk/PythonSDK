@@ -12,6 +12,5 @@ void Export_pystes_UVehicleSpawnStationVehicleDefinition(py::module &m)
         .def_readwrite("PostSpawnCoordinatedEffect", &UVehicleSpawnStationVehicleDefinition::PostSpawnCoordinatedEffect)
         .def_readwrite("MyUIDefinition", &UVehicleSpawnStationVehicleDefinition::MyUIDefinition)
         .def_readwrite("LinkedOnDemandPackage", &UVehicleSpawnStationVehicleDefinition::LinkedOnDemandPackage)
-        .def("StaticClass", &UVehicleSpawnStationVehicleDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

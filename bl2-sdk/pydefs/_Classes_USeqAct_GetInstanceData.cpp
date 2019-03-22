@@ -9,7 +9,6 @@ void Export_pystes_USeqAct_GetInstanceData(py::module &m)
         .def_readwrite("InstanceDataName", &USeqAct_GetInstanceData::InstanceDataName)
         .def_readwrite("InObject", &USeqAct_GetInstanceData::InObject)
         .def_readwrite("OutObject", &USeqAct_GetInstanceData::OutObject)
-        .def("StaticClass", &USeqAct_GetInstanceData::StaticClass, py::return_value_policy::reference)
         .def("eventActivated", &USeqAct_GetInstanceData::eventActivated)
           ;
 }

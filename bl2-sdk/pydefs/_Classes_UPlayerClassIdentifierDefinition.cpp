@@ -22,7 +22,6 @@ void Export_pystes_UPlayerClassIdentifierDefinition(py::module &m)
         .def_readwrite("AsterClassMods", &UPlayerClassIdentifierDefinition::AsterClassMods)
         .def_readwrite("LobeliaClassMods", &UPlayerClassIdentifierDefinition::LobeliaClassMods)
         .def_readwrite("CharacterCustomizations", &UPlayerClassIdentifierDefinition::CharacterCustomizations)
-        .def("StaticClass", &UPlayerClassIdentifierDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetDownloadableContentDefinition", &UPlayerClassIdentifierDefinition::GetDownloadableContentDefinition, py::return_value_policy::reference)
           ;
 }

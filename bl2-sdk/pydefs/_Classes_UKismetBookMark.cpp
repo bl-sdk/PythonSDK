@@ -7,6 +7,5 @@ void Export_pystes_UKismetBookMark(py::module &m)
 {
     py::class_< UKismetBookMark,  UBookMark2D   >(m, "UKismetBookMark")
         .def_readwrite("BookMarkSequencePathName", &UKismetBookMark::BookMarkSequencePathName)
-        .def("StaticClass", &UKismetBookMark::StaticClass, py::return_value_policy::reference)
           ;
 }

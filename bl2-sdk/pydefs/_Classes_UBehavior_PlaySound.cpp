@@ -7,7 +7,6 @@ void Export_pystes_UBehavior_PlaySound(py::module &m)
 {
     py::class_< UBehavior_PlaySound,  UBehaviorBase   >(m, "UBehavior_PlaySound")
         .def_readwrite("Sound", &UBehavior_PlaySound::Sound)
-        .def("StaticClass", &UBehavior_PlaySound::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_PlaySound::ApplyBehaviorToContext)
           ;
 }

@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UDistributionFloatSoundParameter(py::module &m)
 {
     py::class_< UDistributionFloatSoundParameter,  UDistributionFloatParameterBase   >(m, "UDistributionFloatSoundParameter")
-        .def("StaticClass", &UDistributionFloatSoundParameter::StaticClass, py::return_value_policy::reference)
           ;
 }

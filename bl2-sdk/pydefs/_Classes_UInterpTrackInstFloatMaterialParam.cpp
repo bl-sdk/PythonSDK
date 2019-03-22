@@ -8,6 +8,5 @@ void Export_pystes_UInterpTrackInstFloatMaterialParam(py::module &m)
     py::class_< UInterpTrackInstFloatMaterialParam,  UInterpTrackInst   >(m, "UInterpTrackInstFloatMaterialParam")
         .def_readwrite("MICInfos", &UInterpTrackInstFloatMaterialParam::MICInfos)
         .def_readwrite("InstancedTrack", &UInterpTrackInstFloatMaterialParam::InstancedTrack)
-        .def("StaticClass", &UInterpTrackInstFloatMaterialParam::StaticClass, py::return_value_policy::reference)
           ;
 }

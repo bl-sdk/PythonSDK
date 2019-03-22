@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UActorFactoryWillowVehicleFactory(py::module &m)
 {
     py::class_< UActorFactoryWillowVehicleFactory,  UActorFactoryWillowVehicle   >(m, "UActorFactoryWillowVehicleFactory")
-        .def("StaticClass", &UActorFactoryWillowVehicleFactory::StaticClass, py::return_value_policy::reference)
           ;
 }

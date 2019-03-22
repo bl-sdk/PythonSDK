@@ -13,6 +13,5 @@ void Export_pystes_UParticleModuleBeamTrace(py::module &m)
         .def_readwrite("MaxTraceEvents", &UParticleModuleBeamTrace::MaxTraceEvents)
         .def_readwrite("LastDistance", &UParticleModuleBeamTrace::LastDistance)
         .def_readwrite("LastUpdateTime", &UParticleModuleBeamTrace::LastUpdateTime)
-        .def("StaticClass", &UParticleModuleBeamTrace::StaticClass, py::return_value_policy::reference)
           ;
 }

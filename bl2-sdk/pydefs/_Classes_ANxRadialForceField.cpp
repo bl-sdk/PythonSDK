@@ -11,6 +11,5 @@ void Export_pystes_ANxRadialForceField(py::module &m)
         .def_readwrite("ForceRadius", &ANxRadialForceField::ForceRadius)
         .def_readwrite("ForceFalloff", &ANxRadialForceField::ForceFalloff)
         .def_readwrite("LinearKernel", &ANxRadialForceField::LinearKernel)
-        .def("StaticClass", &ANxRadialForceField::StaticClass, py::return_value_policy::reference)
           ;
 }

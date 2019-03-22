@@ -10,6 +10,5 @@ void Export_pystes_UInputRemappingDefinition(py::module &m)
         .def_readwrite("PresetCaption", &UInputRemappingDefinition::PresetCaption)
         .def_readwrite("RemappedAxes", &UInputRemappingDefinition::RemappedAxes)
         .def_readwrite("RemappedButtons", &UInputRemappingDefinition::RemappedButtons)
-        .def("StaticClass", &UInputRemappingDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

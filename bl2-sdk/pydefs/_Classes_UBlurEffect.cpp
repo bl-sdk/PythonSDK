@@ -7,6 +7,5 @@ void Export_pystes_UBlurEffect(py::module &m)
 {
     py::class_< UBlurEffect,  UPostProcessEffect   >(m, "UBlurEffect")
         .def_readwrite("BlurKernelSize", &UBlurEffect::BlurKernelSize)
-        .def("StaticClass", &UBlurEffect::StaticClass, py::return_value_policy::reference)
           ;
 }

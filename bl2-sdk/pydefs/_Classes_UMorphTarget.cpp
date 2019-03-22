@@ -9,6 +9,5 @@ void Export_pystes_UMorphTarget(py::module &m)
         .def_readwrite("MorphLODModels", &UMorphTarget::MorphLODModels)
         .def_readwrite("MaterialSlotId", &UMorphTarget::MaterialSlotId)
         .def_readwrite("ScalarParameterName", &UMorphTarget::ScalarParameterName)
-        .def("StaticClass", &UMorphTarget::StaticClass, py::return_value_policy::reference)
           ;
 }

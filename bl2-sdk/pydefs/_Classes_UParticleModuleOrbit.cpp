@@ -13,6 +13,5 @@ void Export_pystes_UParticleModuleOrbit(py::module &m)
         .def_readwrite("RotationOptions", &UParticleModuleOrbit::RotationOptions)
         .def_readwrite("RotationRateAmount", &UParticleModuleOrbit::RotationRateAmount)
         .def_readwrite("RotationRateOptions", &UParticleModuleOrbit::RotationRateOptions)
-        .def("StaticClass", &UParticleModuleOrbit::StaticClass, py::return_value_policy::reference)
           ;
 }

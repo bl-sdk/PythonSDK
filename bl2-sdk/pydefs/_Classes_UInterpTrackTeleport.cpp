@@ -7,6 +7,5 @@ void Export_pystes_UInterpTrackTeleport(py::module &m)
 {
     py::class_< UInterpTrackTeleport,  UInterpTrack   >(m, "UInterpTrackTeleport")
         .def_readwrite("TeleportKeys", &UInterpTrackTeleport::TeleportKeys)
-        .def("StaticClass", &UInterpTrackTeleport::StaticClass, py::return_value_policy::reference)
           ;
 }

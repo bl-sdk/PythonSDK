@@ -10,6 +10,5 @@ void Export_pystes_UMaterialExpressionConstant4Vector(py::module &m)
         .def_readwrite("G", &UMaterialExpressionConstant4Vector::G)
         .def_readwrite("B", &UMaterialExpressionConstant4Vector::B)
         .def_readwrite("A", &UMaterialExpressionConstant4Vector::A)
-        .def("StaticClass", &UMaterialExpressionConstant4Vector::StaticClass, py::return_value_policy::reference)
           ;
 }

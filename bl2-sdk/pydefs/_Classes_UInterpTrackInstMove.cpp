@@ -10,6 +10,5 @@ void Export_pystes_UInterpTrackInstMove(py::module &m)
         .def_readwrite("ResetRotation", &UInterpTrackInstMove::ResetRotation)
         .def_readwrite("InitialTM", &UInterpTrackInstMove::InitialTM)
         .def_readwrite("InitialQuat", &UInterpTrackInstMove::InitialQuat)
-        .def("StaticClass", &UInterpTrackInstMove::StaticClass, py::return_value_policy::reference)
           ;
 }

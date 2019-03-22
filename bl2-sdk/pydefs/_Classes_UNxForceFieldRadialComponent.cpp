@@ -11,6 +11,5 @@ void Export_pystes_UNxForceFieldRadialComponent(py::module &m)
         .def_readwrite("SelfRotationStrength", &UNxForceFieldRadialComponent::SelfRotationStrength)
         .def_readwrite("ForceFalloff", &UNxForceFieldRadialComponent::ForceFalloff)
         .def_readwrite("Kernel", &UNxForceFieldRadialComponent::Kernel)
-        .def("StaticClass", &UNxForceFieldRadialComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

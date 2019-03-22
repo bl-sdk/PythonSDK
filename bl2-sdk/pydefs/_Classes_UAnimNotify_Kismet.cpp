@@ -7,6 +7,5 @@ void Export_pystes_UAnimNotify_Kismet(py::module &m)
 {
     py::class_< UAnimNotify_Kismet,  UAnimNotify   >(m, "UAnimNotify_Kismet")
         .def_readwrite("NotifyName", &UAnimNotify_Kismet::NotifyName)
-        .def("StaticClass", &UAnimNotify_Kismet::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UInstanceDataHelper(py::module &m)
 {
     py::class_< UInstanceDataHelper,  UObject   >(m, "UInstanceDataHelper")
-        .def("StaticClass", &UInstanceDataHelper::StaticClass, py::return_value_policy::reference)
         .def("DestroyOwnedInstanceData", &UInstanceDataHelper::DestroyOwnedInstanceData)
         .def("ForceDetachDelegate", &UInstanceDataHelper::ForceDetachDelegate)
         .def("TickInstanceDataAttachment", &UInstanceDataHelper::TickInstanceDataAttachment)

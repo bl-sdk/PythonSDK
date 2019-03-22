@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UCoverGroupRenderingComponent(py::module &m)
 {
     py::class_< UCoverGroupRenderingComponent,  UPrimitiveComponent   >(m, "UCoverGroupRenderingComponent")
-        .def("StaticClass", &UCoverGroupRenderingComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

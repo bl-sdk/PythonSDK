@@ -26,6 +26,5 @@ void Export_pystes_UPassengerCameraDefinition(py::module &m)
         .def_readwrite("RotationRateYaw", &UPassengerCameraDefinition::RotationRateYaw)
         .def_readwrite("RotationRatePitch", &UPassengerCameraDefinition::RotationRatePitch)
         .def_readwrite("LookForwardDist", &UPassengerCameraDefinition::LookForwardDist)
-        .def("StaticClass", &UPassengerCameraDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

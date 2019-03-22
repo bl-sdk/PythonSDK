@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_UActorFactoryWillowWaypoint(py::module &m)
 {
     py::class_< UActorFactoryWillowWaypoint,  UActorFactory   >(m, "UActorFactoryWillowWaypoint")
-        .def("StaticClass", &UActorFactoryWillowWaypoint::StaticClass, py::return_value_policy::reference)
           ;
 }

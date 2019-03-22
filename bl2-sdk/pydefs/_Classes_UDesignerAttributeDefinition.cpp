@@ -11,6 +11,5 @@ void Export_pystes_UDesignerAttributeDefinition(py::module &m)
         .def_readwrite("Scope", &UDesignerAttributeDefinition::Scope)
         .def_readwrite("GlobalScopeResolverClass", &UDesignerAttributeDefinition::GlobalScopeResolverClass)
         .def_readwrite("DesignerAttributeResolverClass", &UDesignerAttributeDefinition::DesignerAttributeResolverClass)
-        .def("StaticClass", &UDesignerAttributeDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

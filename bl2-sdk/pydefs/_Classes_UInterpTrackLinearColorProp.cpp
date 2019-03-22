@@ -9,6 +9,5 @@ void Export_pystes_UInterpTrackLinearColorProp(py::module &m)
         .def_readwrite("PropertyName", &UInterpTrackLinearColorProp::PropertyName)
         .def_readwrite("LinearColorTrack", &UInterpTrackLinearColorBase::LinearColorTrack)
         .def_readwrite("CurveTension", &UInterpTrackLinearColorBase::CurveTension)
-        .def("StaticClass", &UInterpTrackLinearColorProp::StaticClass, py::return_value_policy::reference)
           ;
 }

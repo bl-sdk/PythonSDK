@@ -16,6 +16,5 @@ void Export_pystes_UNxForceFieldCylindricalComponent(py::module &m)
         .def_readwrite("ForceHeight", &UNxForceFieldCylindricalComponent::ForceHeight)
         .def_readwrite("HeightOffset", &UNxForceFieldCylindricalComponent::HeightOffset)
         .def_readwrite("Kernel", &UNxForceFieldCylindricalComponent::Kernel)
-        .def("StaticClass", &UNxForceFieldCylindricalComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

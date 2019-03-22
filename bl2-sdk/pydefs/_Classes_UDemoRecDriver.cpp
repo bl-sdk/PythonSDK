@@ -10,6 +10,5 @@ void Export_pystes_UDemoRecDriver(py::module &m)
         .def_readwrite("MaxRewindPoints", &UDemoRecDriver::MaxRewindPoints)
         .def_readwrite("RewindPointInterval", &UDemoRecDriver::RewindPointInterval)
         .def_readwrite("NumRecentRewindPoints", &UDemoRecDriver::NumRecentRewindPoints)
-        .def("StaticClass", &UDemoRecDriver::StaticClass, py::return_value_policy::reference)
           ;
 }

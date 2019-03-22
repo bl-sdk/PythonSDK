@@ -7,7 +7,6 @@ void Export_pystes_AWillowCoopGameInfo(py::module &m)
 {
     py::class_< AWillowCoopGameInfo,  AWillowGameInfo   >(m, "AWillowCoopGameInfo")
         .def_readwrite("Teams", &AWillowCoopGameInfo::Teams)
-        .def("StaticClass", &AWillowCoopGameInfo::StaticClass, py::return_value_policy::reference)
         .def("InitializeTeams", &AWillowCoopGameInfo::InitializeTeams)
         .def("eventHandleSeamlessTravelPlayer", [](AWillowCoopGameInfo &self ) { class AController** pyC = 0 ;   self.eventHandleSeamlessTravelPlayer(pyC); return py::make_tuple(*pyC); })
         .def("eventGetSeamlessTravelActorList", &AWillowCoopGameInfo::eventGetSeamlessTravelActorList)

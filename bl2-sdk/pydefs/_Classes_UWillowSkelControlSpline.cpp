@@ -13,6 +13,5 @@ void Export_pystes_UWillowSkelControlSpline(py::module &m)
         .def_readwrite("StartSplineLocationSpace", &UWillowSkelControlSpline::StartSplineLocationSpace)
         .def_readwrite("EndSplineOffset", &UWillowSkelControlSpline::EndSplineOffset)
         .def_readwrite("StartSplineOffset", &UWillowSkelControlSpline::StartSplineOffset)
-        .def("StaticClass", &UWillowSkelControlSpline::StaticClass, py::return_value_policy::reference)
           ;
 }

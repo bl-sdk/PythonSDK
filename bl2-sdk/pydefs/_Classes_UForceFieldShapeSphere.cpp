@@ -7,7 +7,6 @@ void Export_pystes_UForceFieldShapeSphere(py::module &m)
 {
     py::class_< UForceFieldShapeSphere,  UForceFieldShape   >(m, "UForceFieldShapeSphere")
         .def_readwrite("Shape", &UForceFieldShapeSphere::Shape)
-        .def("StaticClass", &UForceFieldShapeSphere::StaticClass, py::return_value_policy::reference)
         .def("eventGetDrawComponent", &UForceFieldShapeSphere::eventGetDrawComponent, py::return_value_policy::reference)
         .def("eventFillByCylinder", &UForceFieldShapeSphere::eventFillByCylinder)
         .def("eventFillByCapsule", &UForceFieldShapeSphere::eventFillByCapsule)

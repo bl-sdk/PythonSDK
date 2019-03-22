@@ -10,7 +10,6 @@ void Export_pystes_AWillowAIMoveNode(py::module &m)
         .def_readwrite("PawnArrivalRadius", &AWillowAIMoveNode::PawnArrivalRadius)
         .def_readwrite("AISpeedPercentageHere", &AWillowAIMoveNode::AISpeedPercentageHere)
         .def_readwrite("VehicleNodeType", &AWillowAIMoveNode::VehicleNodeType)
-        .def("StaticClass", &AWillowAIMoveNode::StaticClass, py::return_value_policy::reference)
         .def("eventNotifyPathChanged", &AWillowAIMoveNode::eventNotifyPathChanged)
           ;
 }

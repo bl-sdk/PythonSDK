@@ -7,6 +7,5 @@ void Export_pystes_UTransformedFlagValueResolver(py::module &m)
 {
     py::class_< UTransformedFlagValueResolver,  UFlagValueResolver   >(m, "UTransformedFlagValueResolver")
         .def_readwrite("Transform", &UTransformedFlagValueResolver::Transform)
-        .def("StaticClass", &UTransformedFlagValueResolver::StaticClass, py::return_value_policy::reference)
           ;
 }

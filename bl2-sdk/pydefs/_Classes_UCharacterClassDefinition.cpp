@@ -26,6 +26,5 @@ void Export_pystes_UCharacterClassDefinition(py::module &m)
         .def_readwrite("BaseCorrosiveDamageModifiers", &UCharacterClassDefinition::BaseCorrosiveDamageModifiers)
         .def_readwrite("BaseIncendiaryDamageModifiers", &UCharacterClassDefinition::BaseIncendiaryDamageModifiers)
         .def_readwrite("BaseAmpDamageModifiers", &UCharacterClassDefinition::BaseAmpDamageModifiers)
-        .def("StaticClass", &UCharacterClassDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

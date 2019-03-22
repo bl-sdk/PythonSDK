@@ -12,7 +12,6 @@ void Export_pystes_UPartyBeacon(py::module &m)
         .def_readwrite("HeartbeatTimeout", &UPartyBeacon::HeartbeatTimeout)
         .def_readwrite("ElapsedHeartbeatTime", &UPartyBeacon::ElapsedHeartbeatTime)
         .def_readwrite("BeaconName", &UPartyBeacon::BeaconName)
-        .def("StaticClass", &UPartyBeacon::StaticClass, py::return_value_policy::reference)
         .def("OnDestroyComplete", &UPartyBeacon::OnDestroyComplete)
         .def("eventDestroyBeacon", &UPartyBeacon::eventDestroyBeacon)
           ;

@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UITwoPanelInterface(py::module &m)
 {
     py::class_< UITwoPanelInterface,  UInterface   >(m, "UITwoPanelInterface")
-        .def("StaticClass", &UITwoPanelInterface::StaticClass, py::return_value_policy::reference)
         .def("OnCellPressed", &UITwoPanelInterface::OnCellPressed)
         .def("OnLeftPanelInit", &UITwoPanelInterface::OnLeftPanelInit)
         .def("SetItemLocation", &UITwoPanelInterface::SetItemLocation)

@@ -7,6 +7,5 @@ void Export_pystes_UParticleModuleSizeScaleOverDensity(py::module &m)
 {
     py::class_< UParticleModuleSizeScaleOverDensity,  UParticleModule   >(m, "UParticleModuleSizeScaleOverDensity")
         .def_readwrite("SizeScaleOverDensity", &UParticleModuleSizeScaleOverDensity::SizeScaleOverDensity)
-        .def("StaticClass", &UParticleModuleSizeScaleOverDensity::StaticClass, py::return_value_policy::reference)
           ;
 }

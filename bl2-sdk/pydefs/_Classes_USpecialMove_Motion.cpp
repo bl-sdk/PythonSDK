@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_USpecialMove_Motion(py::module &m)
 {
     py::class_< USpecialMove_Motion,  UWillowAnimDefinition   >(m, "USpecialMove_Motion")
-        .def("StaticClass", &USpecialMove_Motion::StaticClass, py::return_value_policy::reference)
           ;
 }

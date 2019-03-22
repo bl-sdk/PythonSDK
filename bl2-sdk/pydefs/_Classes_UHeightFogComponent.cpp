@@ -12,7 +12,6 @@ void Export_pystes_UHeightFogComponent(py::module &m)
         .def_readwrite("LightColor", &UHeightFogComponent::LightColor)
         .def_readwrite("ExtinctionDistance", &UHeightFogComponent::ExtinctionDistance)
         .def_readwrite("StartDistance", &UHeightFogComponent::StartDistance)
-        .def("StaticClass", &UHeightFogComponent::StaticClass, py::return_value_policy::reference)
         .def("SetEnabled", &UHeightFogComponent::SetEnabled)
           ;
 }

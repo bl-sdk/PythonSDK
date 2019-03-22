@@ -11,6 +11,5 @@ void Export_pystes_USequenceFrameWrapped(py::module &m)
         .def_readwrite("BorderWidth", &USequenceFrame::BorderWidth)
         .def_readwrite("BorderColor", &USequenceFrame::BorderColor)
         .def_readwrite("FillColor", &USequenceFrame::FillColor)
-        .def("StaticClass", &USequenceFrameWrapped::StaticClass, py::return_value_policy::reference)
           ;
 }

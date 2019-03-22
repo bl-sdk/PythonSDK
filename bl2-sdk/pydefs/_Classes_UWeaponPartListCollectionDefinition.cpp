@@ -16,6 +16,5 @@ void Export_pystes_UWeaponPartListCollectionDefinition(py::module &m)
         .def_readwrite("Accessory1PartData", &UWeaponPartListCollectionDefinition::Accessory1PartData)
         .def_readwrite("Accessory2PartData", &UWeaponPartListCollectionDefinition::Accessory2PartData)
         .def_readwrite("MaterialPartData", &UWeaponPartListCollectionDefinition::MaterialPartData)
-        .def("StaticClass", &UWeaponPartListCollectionDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -15,6 +15,5 @@ void Export_pystes_UAnimNodeBlendBySpeed(py::module &m)
         .def_readwrite("BlendUpDelay", &UAnimNodeBlendBySpeed::BlendUpDelay)
         .def_readwrite("BlendDownDelay", &UAnimNodeBlendBySpeed::BlendDownDelay)
         .def_readwrite("BlendDelayRemaining", &UAnimNodeBlendBySpeed::BlendDelayRemaining)
-        .def("StaticClass", &UAnimNodeBlendBySpeed::StaticClass, py::return_value_policy::reference)
           ;
 }

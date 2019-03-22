@@ -11,6 +11,5 @@ void Export_pystes_UParticleModuleAttractorParticle(py::module &m)
         .def_readwrite("Strength", &UParticleModuleAttractorParticle::Strength)
         .def_readwrite("SelectionMethod", &UParticleModuleAttractorParticle::SelectionMethod)
         .def_readwrite("LastSelIndex", &UParticleModuleAttractorParticle::LastSelIndex)
-        .def("StaticClass", &UParticleModuleAttractorParticle::StaticClass, py::return_value_policy::reference)
           ;
 }

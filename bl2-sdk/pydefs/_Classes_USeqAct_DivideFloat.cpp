@@ -10,6 +10,5 @@ void Export_pystes_USeqAct_DivideFloat(py::module &m)
         .def_readwrite("ValueB", &USeqAct_DivideFloat::ValueB)
         .def_readwrite("FloatResult", &USeqAct_DivideFloat::FloatResult)
         .def_readwrite("IntResult", &USeqAct_DivideFloat::IntResult)
-        .def("StaticClass", &USeqAct_DivideFloat::StaticClass, py::return_value_policy::reference)
           ;
 }

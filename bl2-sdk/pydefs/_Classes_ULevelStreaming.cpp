@@ -16,6 +16,5 @@ void Export_pystes_ULevelStreaming(py::module &m)
         .def_readwrite("LastVolumeUnloadRequestTime", &ULevelStreaming::LastVolumeUnloadRequestTime)
         .def_readwrite("Keywords", &ULevelStreaming::Keywords)
         .def_readwrite("EditorGridVolume", &ULevelStreaming::EditorGridVolume)
-        .def("StaticClass", &ULevelStreaming::StaticClass, py::return_value_policy::reference)
           ;
 }

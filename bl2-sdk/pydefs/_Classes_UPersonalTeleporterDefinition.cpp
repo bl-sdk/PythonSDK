@@ -17,6 +17,5 @@ void Export_pystes_UPersonalTeleporterDefinition(py::module &m)
         .def_readwrite("CollisionRadius", &UPersonalTeleporterDefinition::CollisionRadius)
         .def_readwrite("CollisionHeight", &UPersonalTeleporterDefinition::CollisionHeight)
         .def_readwrite("ExitPointDistance", &UPersonalTeleporterDefinition::ExitPointDistance)
-        .def("StaticClass", &UPersonalTeleporterDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

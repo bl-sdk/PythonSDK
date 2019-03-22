@@ -11,7 +11,6 @@ void Export_pystes_UGestaltSkeletalMeshDefinition(py::module &m)
         .def_readwrite("GestaltAccessoryNames", &UGestaltSkeletalMeshDefinition::GestaltAccessoryNames)
         .def_readwrite("GestaltSocketMappings", &UGestaltSkeletalMeshDefinition::GestaltSocketMappings)
         .def_readwrite("GestaltPartBounds", &UGestaltSkeletalMeshDefinition::GestaltPartBounds)
-        .def("StaticClass", &UGestaltSkeletalMeshDefinition::StaticClass, py::return_value_policy::reference)
         .def("InitGestaltAccessoryMeshDataFromParts", &UGestaltSkeletalMeshDefinition::InitGestaltAccessoryMeshDataFromParts)
         .def("InitGestaltMeshDataFromParts", &UGestaltSkeletalMeshDefinition::InitGestaltMeshDataFromParts)
           ;

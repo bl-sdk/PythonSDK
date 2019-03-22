@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UOnlineStatsInterface(py::module &m)
 {
     py::class_< UOnlineStatsInterface,  UInterface   >(m, "UOnlineStatsInterface")
-        .def("StaticClass", &UOnlineStatsInterface::StaticClass, py::return_value_policy::reference)
         .def("CalcAggregateSkill", &UOnlineStatsInterface::CalcAggregateSkill)
         .def("RegisterStatGuid", &UOnlineStatsInterface::RegisterStatGuid)
         .def("GetClientStatGuid", &UOnlineStatsInterface::GetClientStatGuid)

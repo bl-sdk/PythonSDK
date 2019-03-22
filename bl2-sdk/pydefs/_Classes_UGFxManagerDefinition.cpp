@@ -9,6 +9,5 @@ void Export_pystes_UGFxManagerDefinition(py::module &m)
         .def_readwrite("ManagerClass", &UGFxManagerDefinition::ManagerClass)
         .def_readwrite("GFxDialogBox", &UGFxManagerDefinition::GFxDialogBox)
         .def_readwrite("InteractionSounds", &UGFxManagerDefinition::InteractionSounds)
-        .def("StaticClass", &UGFxManagerDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

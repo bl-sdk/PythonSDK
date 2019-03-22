@@ -17,7 +17,6 @@ void Export_pystes_ARB_CylindricalForceActor(py::module &m)
         .def_readwrite("ForceHeight", &ARB_CylindricalForceActor::ForceHeight)
         .def_readwrite("HeightOffset", &ARB_CylindricalForceActor::HeightOffset)
         .def_readwrite("CollideWithChannels", &ARB_CylindricalForceActor::CollideWithChannels)
-        .def("StaticClass", &ARB_CylindricalForceActor::StaticClass, py::return_value_policy::reference)
         .def("OnToggle", &ARB_CylindricalForceActor::OnToggle)
           ;
 }

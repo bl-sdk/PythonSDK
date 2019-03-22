@@ -15,6 +15,5 @@ void Export_pystes_UAnimationCompressionAlgorithm_RemoveLinearKeys(py::module &m
         .def_readwrite("Description", &UAnimationCompressionAlgorithm::Description)
         .def_readwrite("TranslationCompressionChoice", &UAnimationCompressionAlgorithm::TranslationCompressionChoice)
         .def_readwrite("RotationCompressionChoice", &UAnimationCompressionAlgorithm::RotationCompressionChoice)
-        .def("StaticClass", &UAnimationCompressionAlgorithm_RemoveLinearKeys::StaticClass, py::return_value_policy::reference)
           ;
 }

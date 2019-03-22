@@ -10,7 +10,6 @@ void Export_pystes_UBehavior_AITakeMoney(py::module &m)
         .def_readwrite("GiveTo", &UBehavior_AITakeMoney::GiveTo)
         .def_readwrite("CashItemPool", &UBehavior_AITakeMoney::CashItemPool)
         .def_readwrite("HUDSpecialRemovalFrame", &UBehavior_AITakeMoney::HUDSpecialRemovalFrame)
-        .def("StaticClass", &UBehavior_AITakeMoney::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_AITakeMoney::ApplyBehaviorToContext)
           ;
 }

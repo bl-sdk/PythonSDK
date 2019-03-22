@@ -14,6 +14,5 @@ void Export_pystes_UPostProcessEffect(py::module &m)
         .def_readwrite("OutDrawY", &UPostProcessEffect::OutDrawY)
         .def_readwrite("InDrawY", &UPostProcessEffect::InDrawY)
         .def_readwrite("SceneDPG", &UPostProcessEffect::SceneDPG)
-        .def("StaticClass", &UPostProcessEffect::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -24,6 +24,5 @@ void Export_pystes_UParticleModuleUberRainDrops(py::module &m)
         .def_readwrite("StartLocationMin", &UParticleModuleUberRainDrops::StartLocationMin)
         .def_readwrite("StartLocationMax", &UParticleModuleUberRainDrops::StartLocationMax)
         .def_readwrite("RequiredModules", &UParticleModuleUberBase::RequiredModules)
-        .def("StaticClass", &UParticleModuleUberRainDrops::StaticClass, py::return_value_policy::reference)
           ;
 }

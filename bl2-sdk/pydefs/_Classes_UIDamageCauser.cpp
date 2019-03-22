@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UIDamageCauser(py::module &m)
 {
     py::class_< UIDamageCauser,  UInterface   >(m, "UIDamageCauser")
-        .def("StaticClass", &UIDamageCauser::StaticClass, py::return_value_policy::reference)
         .def("GetControllerResponsibleForDamage", &UIDamageCauser::GetControllerResponsibleForDamage, py::return_value_policy::reference)
         .def("GetInstigator", &UIDamageCauser::GetInstigator, py::return_value_policy::reference)
         .def("GetInstigatorSelfDamageScale", &UIDamageCauser::GetInstigatorSelfDamageScale)

@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UIProjectileBehavior(py::module &m)
 {
     py::class_< UIProjectileBehavior,  UInterface   >(m, "UIProjectileBehavior")
-        .def("StaticClass", &UIProjectileBehavior::StaticClass, py::return_value_policy::reference)
         .def("Behavior_TagPayloadType", &UIProjectileBehavior::Behavior_TagPayloadType)
         .def("Behavior_LevelOffTrajectory", &UIProjectileBehavior::Behavior_LevelOffTrajectory)
         .def("Behavior_SetExplosionDefinition", &UIProjectileBehavior::Behavior_SetExplosionDefinition)

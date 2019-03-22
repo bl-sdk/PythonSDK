@@ -19,7 +19,6 @@ void Export_pystes_UBehavior_FireBeam(py::module &m)
         .def_readwrite("DamageSource", &UBehavior_FireBeam::DamageSource)
         .def_readwrite("DamageTypeDefinition", &UBehavior_FireBeam::DamageTypeDefinition)
         .def_readwrite("ImpactDefinition", &UBehavior_FireBeam::ImpactDefinition)
-        .def("StaticClass", &UBehavior_FireBeam::StaticClass, py::return_value_policy::reference)
         .def("FillData", &UBehavior_FireBeam::FillData)
         .def("ApplyBehaviorToContext", &UBehavior_FireBeam::ApplyBehaviorToContext)
           ;

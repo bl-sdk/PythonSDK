@@ -16,7 +16,6 @@ void Export_pystes_UWillowSkelControl_TurretConstrained(py::module &m)
         .def_readwrite("DefaultRotation", &UWillowSkelControl_TurretConstrained::DefaultRotation)
         .def_readwrite("VirtualSeatKey", &UWillowSkelControl_TurretConstrained::VirtualSeatKey)
         .def_readwrite("ConstrainedBoneRotation", &UWillowSkelControl_TurretConstrained::ConstrainedBoneRotation)
-        .def("StaticClass", &UWillowSkelControl_TurretConstrained::StaticClass, py::return_value_policy::reference)
         .def("OnTurretStatusChange", &UWillowSkelControl_TurretConstrained::OnTurretStatusChange)
           ;
 }

@@ -6,6 +6,5 @@ namespace py = pybind11;
 void Export_pystes_USeqAct_ForceGarbageCollection(py::module &m)
 {
     py::class_< USeqAct_ForceGarbageCollection,  USeqAct_Latent   >(m, "USeqAct_ForceGarbageCollection")
-        .def("StaticClass", &USeqAct_ForceGarbageCollection::StaticClass, py::return_value_policy::reference)
           ;
 }

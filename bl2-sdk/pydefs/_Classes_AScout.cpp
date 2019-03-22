@@ -37,7 +37,6 @@ void Export_pystes_AScout(py::module &m)
         .def_readwrite("MinMantleLateralDist", &AScout::MinMantleLateralDist)
         .def_readwrite("MaxMantleLateralDist", &AScout::MaxMantleLateralDist)
         .def_readwrite("MaxMantleFallTime", &AScout::MaxMantleFallTime)
-        .def("StaticClass", &AScout::StaticClass, py::return_value_policy::reference)
         .def("eventPreBeginPlay", &AScout::eventPreBeginPlay)
           ;
 }

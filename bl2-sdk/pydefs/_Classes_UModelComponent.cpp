@@ -11,6 +11,5 @@ void Export_pystes_UModelComponent(py::module &m)
         .def_readwrite("ComponentIndex", &UModelComponent::ComponentIndex)
         .def_readwrite("Nodes", &UModelComponent::Nodes)
         .def_readwrite("Elements", &UModelComponent::Elements)
-        .def("StaticClass", &UModelComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

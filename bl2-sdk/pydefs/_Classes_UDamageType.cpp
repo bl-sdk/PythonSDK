@@ -15,7 +15,6 @@ void Export_pystes_UDamageType(py::module &m)
         .def_readwrite("DamagedFFWaveform", &UDamageType::DamagedFFWaveform)
         .def_readwrite("KilledFFWaveform", &UDamageType::KilledFFWaveform)
         .def_readwrite("FracturedMeshDamage", &UDamageType::FracturedMeshDamage)
-        .def("StaticClass", &UDamageType::StaticClass, py::return_value_policy::reference)
         .def("VehicleDamageScalingFor", &UDamageType::VehicleDamageScalingFor)
           ;
 }

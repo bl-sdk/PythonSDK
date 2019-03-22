@@ -13,6 +13,5 @@ void Export_pystes_UParticleModuleTypeDataTrail2(py::module &m)
         .def_readwrite("Sheets", &UParticleModuleTypeDataTrail2::Sheets)
         .def_readwrite("MaxTrailCount", &UParticleModuleTypeDataTrail2::MaxTrailCount)
         .def_readwrite("MaxParticleInTrailCount", &UParticleModuleTypeDataTrail2::MaxParticleInTrailCount)
-        .def("StaticClass", &UParticleModuleTypeDataTrail2::StaticClass, py::return_value_policy::reference)
           ;
 }

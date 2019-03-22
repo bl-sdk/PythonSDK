@@ -9,6 +9,5 @@ void Export_pystes_AZoneInfo(py::module &m)
         .def_readwrite("KillZ", &AZoneInfo::KillZ)
         .def_readwrite("SoftKill", &AZoneInfo::SoftKill)
         .def_readwrite("KillZDamageType", &AZoneInfo::KillZDamageType)
-        .def("StaticClass", &AZoneInfo::StaticClass, py::return_value_policy::reference)
           ;
 }

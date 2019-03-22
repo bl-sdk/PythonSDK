@@ -19,7 +19,6 @@ void Export_pystes_UNxForceFieldComponent(py::module &m)
         .def_readwrite("ElapsedTime", &UNxForceFieldComponent::ElapsedTime)
         .def_readwrite("RenderComponent", &UNxForceFieldComponent::RenderComponent)
         .def_readwrite("RBPhysScene", &UNxForceFieldComponent::RBPhysScene)
-        .def("StaticClass", &UNxForceFieldComponent::StaticClass, py::return_value_policy::reference)
         .def("DoInitRBPhys", &UNxForceFieldComponent::DoInitRBPhys)
           ;
 }

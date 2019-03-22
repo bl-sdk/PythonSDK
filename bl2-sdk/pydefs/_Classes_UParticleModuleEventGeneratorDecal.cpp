@@ -14,7 +14,6 @@ void Export_pystes_UParticleModuleEventGeneratorDecal(py::module &m)
         .def_readwrite("DecalLifeSpan", &UParticleModuleEventGeneratorDecal::DecalLifeSpan)
         .def_readwrite("DecalDepthBias", &UParticleModuleEventGeneratorDecal::DecalDepthBias)
         .def_readwrite("DecalBlendRange", &UParticleModuleEventGeneratorDecal::DecalBlendRange)
-        .def("StaticClass", &UParticleModuleEventGeneratorDecal::StaticClass, py::return_value_policy::reference)
         .def("eventSpawnDecal", &UParticleModuleEventGeneratorDecal::eventSpawnDecal)
           ;
 }

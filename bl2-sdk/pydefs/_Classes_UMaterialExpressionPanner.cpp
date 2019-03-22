@@ -10,6 +10,5 @@ void Export_pystes_UMaterialExpressionPanner(py::module &m)
         .def_readwrite("Time", &UMaterialExpressionPanner::Time)
         .def_readwrite("SpeedX", &UMaterialExpressionPanner::SpeedX)
         .def_readwrite("SpeedY", &UMaterialExpressionPanner::SpeedY)
-        .def("StaticClass", &UMaterialExpressionPanner::StaticClass, py::return_value_policy::reference)
           ;
 }

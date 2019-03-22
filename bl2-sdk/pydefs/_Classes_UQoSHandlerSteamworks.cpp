@@ -16,6 +16,5 @@ void Export_pystes_UQoSHandlerSteamworks(py::module &m)
         .def_readwrite("ListenEntries", &UQoSHandlerSteamworks::ListenEntries)
         .def_readwrite("RequestEntries", &UQoSHandlerSteamworks::RequestEntries)
         .def_readwrite("PendingRequests", &UQoSHandlerSteamworks::PendingRequests)
-        .def("StaticClass", &UQoSHandlerSteamworks::StaticClass, py::return_value_policy::reference)
           ;
 }

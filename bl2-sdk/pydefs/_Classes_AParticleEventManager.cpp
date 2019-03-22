@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_AParticleEventManager(py::module &m)
 {
     py::class_< AParticleEventManager,  AActor   >(m, "AParticleEventManager")
-        .def("StaticClass", &AParticleEventManager::StaticClass, py::return_value_policy::reference)
         .def("eventHandleParticleModuleEventSendToGame", &AParticleEventManager::eventHandleParticleModuleEventSendToGame)
           ;
 }

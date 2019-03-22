@@ -9,6 +9,5 @@ void Export_pystes_UActorFactoryApexDestructible(py::module &m)
         .def_readwrite("RBChannel", &UActorFactoryApexDestructible::RBChannel)
         .def_readwrite("CollideWithChannels", &UActorFactoryApexDestructible::CollideWithChannels)
         .def_readwrite("DestructibleAsset", &UActorFactoryApexDestructible::DestructibleAsset)
-        .def("StaticClass", &UActorFactoryApexDestructible::StaticClass, py::return_value_policy::reference)
           ;
 }

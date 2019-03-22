@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UWillowPickupMessage(py::module &m)
 {
     py::class_< UWillowPickupMessage,  UWillowLocalMessage   >(m, "UWillowPickupMessage")
-        .def("StaticClass", &UWillowPickupMessage::StaticClass, py::return_value_policy::reference)
         .def("GetString", &UWillowPickupMessage::GetString)
         .def("ClientReceive", &UWillowPickupMessage::ClientReceive)
           ;

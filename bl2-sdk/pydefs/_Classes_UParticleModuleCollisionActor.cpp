@@ -7,6 +7,5 @@ void Export_pystes_UParticleModuleCollisionActor(py::module &m)
 {
     py::class_< UParticleModuleCollisionActor,  UParticleModuleCollision   >(m, "UParticleModuleCollisionActor")
         .def_readwrite("ActorsToCollideWith", &UParticleModuleCollisionActor::ActorsToCollideWith)
-        .def("StaticClass", &UParticleModuleCollisionActor::StaticClass, py::return_value_policy::reference)
           ;
 }

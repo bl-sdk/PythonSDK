@@ -12,7 +12,6 @@ void Export_pystes_USpotLightComponent(py::module &m)
         .def_readwrite("PreviewInnerCone", &USpotLightComponent::PreviewInnerCone)
         .def_readwrite("PreviewOuterCone", &USpotLightComponent::PreviewOuterCone)
         .def_readwrite("Rotation", &USpotLightComponent::Rotation)
-        .def("StaticClass", &USpotLightComponent::StaticClass, py::return_value_policy::reference)
         .def("SetRotation", &USpotLightComponent::SetRotation)
           ;
 }

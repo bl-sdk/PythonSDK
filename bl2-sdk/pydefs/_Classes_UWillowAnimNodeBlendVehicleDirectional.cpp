@@ -9,6 +9,5 @@ void Export_pystes_UWillowAnimNodeBlendVehicleDirectional(py::module &m)
         .def_readwrite("DirDegreesPerSecond", &UWillowAnimNodeBlendVehicleDirectional::DirDegreesPerSecond)
         .def_readwrite("BlendTime", &UWillowAnimNodeBlendVehicleDirectional::BlendTime)
         .def_readwrite("DirAngle", &UWillowAnimNodeBlendVehicleDirectional::DirAngle)
-        .def("StaticClass", &UWillowAnimNodeBlendVehicleDirectional::StaticClass, py::return_value_policy::reference)
           ;
 }

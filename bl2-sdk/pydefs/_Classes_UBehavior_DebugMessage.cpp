@@ -12,7 +12,6 @@ void Export_pystes_UBehavior_DebugMessage(py::module &m)
         .def_readwrite("DebugInt", &UBehavior_DebugMessage::DebugInt)
         .def_readwrite("DebugObject", &UBehavior_DebugMessage::DebugObject)
         .def_readwrite("DebugVector", &UBehavior_DebugMessage::DebugVector)
-        .def("StaticClass", &UBehavior_DebugMessage::StaticClass, py::return_value_policy::reference)
         .def("ApplyBehaviorToContext", &UBehavior_DebugMessage::ApplyBehaviorToContext)
           ;
 }

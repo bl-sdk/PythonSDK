@@ -17,8 +17,9 @@ public:
 	PythonStatus		InitializeModules();
 	int				RunString(const char* string);
 	void			CallShutdownFuncs();
+	int				DoFile(const char *filename);
 
-	PyObject *GetPythonModule();
+	pybind11::object GetPythonNamespace();
 
 private:
 	void			InitializeState();
@@ -26,10 +27,8 @@ private:
 	void			CleanupState();
 	void			SetSDKValues();
 	void			SetPaths();
-	int				DoFile(const std::string& filename);
-	int				DoFileAbsolute(const std::string& path);
+	int				DoFileAbsolute(const char *path);
 
-	PyObject*		m_pModule;
 	pybind11::object m_mainNamespace;
 	std::string		m_PythonPath;
 	std::string		m_StdoutBuffer;

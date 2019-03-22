@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_ASimpleVolume(py::module &m)
 {
     py::class_< ASimpleVolume,  AVolume   >(m, "ASimpleVolume")
-        .def("StaticClass", &ASimpleVolume::StaticClass, py::return_value_policy::reference)
         .def("StopsProjectile", &ASimpleVolume::StopsProjectile)
           ;
 }

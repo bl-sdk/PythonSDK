@@ -7,7 +7,6 @@ void Export_pystes_ANavMeshObstacle(py::module &m)
 {
     py::class_< ANavMeshObstacle,  AActor   >(m, "ANavMeshObstacle")
         .def_readwrite("VfTable_IInterface_NavMeshPathObstacle", &ANavMeshObstacle::VfTable_IInterface_NavMeshPathObstacle)
-        .def("StaticClass", &ANavMeshObstacle::StaticClass, py::return_value_policy::reference)
         .def("ApplyCheckpointRecord", &ANavMeshObstacle::ApplyCheckpointRecord)
         .def("CreateCheckpointRecord", &ANavMeshObstacle::CreateCheckpointRecord)
         .def("SetEnabled", &ANavMeshObstacle::SetEnabled)

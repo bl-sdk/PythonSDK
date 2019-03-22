@@ -32,6 +32,5 @@ void Export_pystes_UWillowPawnSnapshotRecord(py::module &m)
         .def_readwrite("TargetVehiclePursuitPoints", &UWillowPawnSnapshotRecord::TargetVehiclePursuitPoints)
         .def_readwrite("TargetVehicleSelectedPursuitPointNdx", &UWillowPawnSnapshotRecord::TargetVehicleSelectedPursuitPointNdx)
         .def_readwrite("ExtraDebugItems", &UWillowPawnSnapshotRecord::ExtraDebugItems)
-        .def("StaticClass", &UWillowPawnSnapshotRecord::StaticClass, py::return_value_policy::reference)
           ;
 }

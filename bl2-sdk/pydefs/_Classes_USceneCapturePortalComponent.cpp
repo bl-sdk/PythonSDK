@@ -9,7 +9,6 @@ void Export_pystes_USceneCapturePortalComponent(py::module &m)
         .def_readwrite("TextureTarget", &USceneCapturePortalComponent::TextureTarget)
         .def_readwrite("ScaleFOV", &USceneCapturePortalComponent::ScaleFOV)
         .def_readwrite("ViewDestination", &USceneCapturePortalComponent::ViewDestination)
-        .def("StaticClass", &USceneCapturePortalComponent::StaticClass, py::return_value_policy::reference)
         .def("SetCaptureParameters", &USceneCapturePortalComponent::SetCaptureParameters)
           ;
 }

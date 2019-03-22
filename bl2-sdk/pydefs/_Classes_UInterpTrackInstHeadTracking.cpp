@@ -10,6 +10,5 @@ void Export_pystes_UInterpTrackInstHeadTracking(py::module &m)
         .def_readwrite("Mesh", &UInterpTrackInstHeadTracking::Mesh)
         .def_readwrite("TrackControls", &UInterpTrackInstHeadTracking::TrackControls)
         .def_readwrite("LastUpdatePosition", &UInterpTrackInstHeadTracking::LastUpdatePosition)
-        .def("StaticClass", &UInterpTrackInstHeadTracking::StaticClass, py::return_value_policy::reference)
           ;
 }

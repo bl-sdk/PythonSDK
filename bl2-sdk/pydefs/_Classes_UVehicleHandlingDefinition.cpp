@@ -29,7 +29,6 @@ void Export_pystes_UVehicleHandlingDefinition(py::module &m)
         .def_readwrite("HandbrakeFishtailForces", &UVehicleHandlingDefinition::HandbrakeFishtailForces)
         .def_readwrite("FishtailCameraShake", &UVehicleHandlingDefinition::FishtailCameraShake)
         .def_readwrite("FishtailCameraShakeMinVehicleSpeed", &UVehicleHandlingDefinition::FishtailCameraShakeMinVehicleSpeed)
-        .def("StaticClass", &UVehicleHandlingDefinition::StaticClass, py::return_value_policy::reference)
         .def("ApplyDefinitionToVehicle", &UVehicleHandlingDefinition::ApplyDefinitionToVehicle)
           ;
 }

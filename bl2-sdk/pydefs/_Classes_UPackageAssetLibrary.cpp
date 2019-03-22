@@ -9,6 +9,5 @@ void Export_pystes_UPackageAssetLibrary(py::module &m)
         .def_readwrite("LibraryType", &UPackageAssetLibrary::LibraryType)
         .def_readwrite("Sublibraries", &UPackageAssetLibrary::Sublibraries)
         .def_readwrite("SublibraryLinks", &UPackageAssetLibrary::SublibraryLinks)
-        .def("StaticClass", &UPackageAssetLibrary::StaticClass, py::return_value_policy::reference)
           ;
 }

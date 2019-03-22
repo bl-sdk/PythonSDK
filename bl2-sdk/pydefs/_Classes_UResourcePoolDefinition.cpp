@@ -27,6 +27,5 @@ void Export_pystes_UResourcePoolDefinition(py::module &m)
         .def_readwrite("UpgradeLevelAttribute", &UResourcePoolDefinition::UpgradeLevelAttribute)
         .def_readwrite("TotalUpgradeCount", &UResourcePoolDefinition::TotalUpgradeCount)
         .def_readwrite("MaxValueUpgrade", &UResourcePoolDefinition::MaxValueUpgrade)
-        .def("StaticClass", &UResourcePoolDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

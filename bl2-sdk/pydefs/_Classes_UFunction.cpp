@@ -12,6 +12,5 @@ void Export_pystes_UFunction(py::module &m)
         .def_readwrite("NumParms", &UFunction::NumParms)
         .def_readwrite("ParmsSize", &UFunction::ParmsSize)
         .def_readwrite("Func", &UFunction::Func)
-        .def("StaticClass", &UFunction::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -7,7 +7,6 @@ void Export_pystes_UTextChatGFxMovie(py::module &m)
 {
     py::class_< UTextChatGFxMovie,  UWillowGFxMovie   >(m, "UTextChatGFxMovie")
         .def_readwrite("ChatObj", &UTextChatGFxMovie::ChatObj)
-        .def("StaticClass", &UTextChatGFxMovie::StaticClass, py::return_value_policy::reference)
         .def("extTextChatOnLoad", &UTextChatGFxMovie::extTextChatOnLoad)
         .def("AddChatMessageInternal", &UTextChatGFxMovie::AddChatMessageInternal)
         .def("HandleTextChatInput", &UTextChatGFxMovie::HandleTextChatInput)

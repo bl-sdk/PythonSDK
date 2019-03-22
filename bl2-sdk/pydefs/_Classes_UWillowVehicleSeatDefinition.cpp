@@ -53,6 +53,5 @@ void Export_pystes_UWillowVehicleSeatDefinition(py::module &m)
         .def_readwrite("EjectRandMin", &UWillowVehicleSeatDefinition::EjectRandMin)
         .def_readwrite("EjectRandMax", &UWillowVehicleSeatDefinition::EjectRandMax)
         .def_readwrite("ControllerRumbleWhenRotating", &UWillowVehicleSeatDefinition::ControllerRumbleWhenRotating)
-        .def("StaticClass", &UWillowVehicleSeatDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

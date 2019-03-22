@@ -12,6 +12,5 @@ void Export_pystes_USeqAct_Deproject(py::module &m)
         .def_readwrite("HitObject", &USeqAct_Deproject::HitObject)
         .def_readwrite("HitLocation", &USeqAct_Deproject::HitLocation)
         .def_readwrite("HitNormal", &USeqAct_Deproject::HitNormal)
-        .def("StaticClass", &USeqAct_Deproject::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -10,6 +10,5 @@ void Export_pystes_UInterpTrackFaceFX(py::module &m)
         .def_readwrite("FaceFXSeqs", &UInterpTrackFaceFX::FaceFXSeqs)
         .def_readwrite("CachedActorFXAsset", &UInterpTrackFaceFX::CachedActorFXAsset)
         .def_readwrite("FaceFXSoundCueKeys", &UInterpTrackFaceFX::FaceFXSoundCueKeys)
-        .def("StaticClass", &UInterpTrackFaceFX::StaticClass, py::return_value_policy::reference)
           ;
 }
