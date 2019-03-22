@@ -32,7 +32,7 @@ void Export_pystes_UPhysicalMaterial(py::object m)
         .def_readwrite("PhysicalMaterialProperty", &UPhysicalMaterial::PhysicalMaterialProperty)
         .def("StaticClass", &UPhysicalMaterial::StaticClass, py::return_value_policy::reference)
         .def("GetPhysicalMaterialProperty", &UPhysicalMaterial::GetPhysicalMaterialProperty, py::return_value_policy::reference)
-        .def("FindFractureSounds", &UPhysicalMaterial::FindFractureSounds)
+        .def("FindFractureSounds", [](UPhysicalMaterial &self ) { class USoundCue** pyOutSoundExplosion = 0 ; class USoundCue** pyOutSoundSingle = 0 ;   self.FindFractureSounds(pyOutSoundExplosion, pyOutSoundSingle); return py::make_tuple(*pyOutSoundExplosion, *pyOutSoundSingle); })
         .def("FindPhysEffectInfo", &UPhysicalMaterial::FindPhysEffectInfo)
           ;
 }

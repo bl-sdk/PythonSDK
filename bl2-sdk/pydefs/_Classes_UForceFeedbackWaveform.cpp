@@ -12,6 +12,6 @@ void Export_pystes_UForceFeedbackWaveform(py::object m)
         .def_readwrite("MaxWaveformDistance", &UForceFeedbackWaveform::MaxWaveformDistance)
         .def_readwrite("WaveformRef", &UForceFeedbackWaveform::WaveformRef)
         .def("StaticClass", &UForceFeedbackWaveform::StaticClass, py::return_value_policy::reference)
-        .def("CopyDataTo", &UForceFeedbackWaveform::CopyDataTo)
+        .def("CopyDataTo", [](UForceFeedbackWaveform &self ) { class UForceFeedbackWaveform** pydst = 0 ;   self.CopyDataTo(pydst); return py::make_tuple(*pydst); })
           ;
 }

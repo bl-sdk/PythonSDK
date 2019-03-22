@@ -13,7 +13,7 @@ void Export_pystes_UFaceFXAsset(py::object m)
         .def_readwrite("NumLoadErrors", &UFaceFXAsset::NumLoadErrors)
         .def_readwrite("SoundNodeWaveToGroupAndAnimNameArray", &UFaceFXAsset::SoundNodeWaveToGroupAndAnimNameArray)
         .def("StaticClass", &UFaceFXAsset::StaticClass, py::return_value_policy::reference)
-        .def("PlayFaceFxAnimFromSoundNodeOnActor", &UFaceFXAsset::PlayFaceFxAnimFromSoundNodeOnActor)
+        .def("PlayFaceFxAnimFromSoundNodeOnActor", [](UFaceFXAsset &self , struct FString SoundToPlay, class USoundCue* SoundCueToPlay) { class UIFaceFXActor** pyTargetActor = 0 ;  bool ret =  self.PlayFaceFxAnimFromSoundNodeOnActor(SoundToPlay, SoundCueToPlay, pyTargetActor); return py::make_tuple(ret, *pyTargetActor); })
         .def("UnmountFaceFXAnimSet", &UFaceFXAsset::UnmountFaceFXAnimSet)
         .def("MountFaceFXAnimSet", &UFaceFXAsset::MountFaceFXAnimSet)
           ;

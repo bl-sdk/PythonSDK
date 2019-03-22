@@ -142,7 +142,7 @@ void Export_pystes_ALiftActionSkill(py::object m)
         .def("StartActionSkillActiveAbility", &ALiftActionSkill::StartActionSkillActiveAbility)
         .def("OnActionSkillEnded", &ALiftActionSkill::OnActionSkillEnded)
         .def("OnActionSkillStarted", &ALiftActionSkill::OnActionSkillStarted)
-        .def("UpdateTargetPawn", &ALiftActionSkill::UpdateTargetPawn)
+        .def("UpdateTargetPawn", [](ALiftActionSkill &self ) { class AWillowPawn** pyTheTargetPawn = 0 ;   self.UpdateTargetPawn(pyTheTargetPawn); return py::make_tuple(*pyTheTargetPawn); })
         .def("eventReplicatedEvent", &ALiftActionSkill::eventReplicatedEvent)
           ;
 }
