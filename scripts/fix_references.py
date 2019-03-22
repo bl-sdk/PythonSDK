@@ -1,12 +1,91 @@
 import os
 import re
 
-classes = ['Core_classes.h']
+files = ['Core_classes.h',
+'Engine_classes.h',
+'GameFramework_classes.h',
+'GFxUI_classes.h',
+'GearboxFramework_classes.h',
+'WillowGame_classes.h',
+'AkAudio_classes.h',
+'IpDrv_classes.h',
+'WinDrv_classes.h',
+'XAudio2_classes.h',
+'OnlineSubsystemSteamworks_classes.h']
+
+classes = ["AActor",
+"ACamera",
+"AController",
+"ADualWieldActionSkill",
+"AGameInfo",
+"AGearboxMind",
+"AInventoryManager",
+"ALiftActionSkill",
+"AMissionTracker",
+"APawn",
+"APlayerController",
+"AResourcePoolManager",
+"AStatusEffectProxyActor",
+"AVehicle",
+"AWillowCoopGameInfo",
+"AWillowEquipAbleItem",
+"AWillowInteractiveObject",
+"AWillowInventory",
+"AWillowInventoryManager",
+"AWillowItem",
+"AWillowPawn",
+"AWillowPlayerController",
+"AWillowPlayerPawn",
+"AWillowReplicatedEmitter",
+"AWillowShield",
+"AWillowTurretWeapon",
+"AWillowVehicle",
+"AWillowVehicleBase",
+"AWillowVehicleWeapon",
+"AWillowVendingMachineBlackMarket",
+"AWillowWeapon",
+"AWillowWeaponPawn",
+"AWorldInfo",
+"UActionSequence",
+"UAIFactoryBase",
+"UAnimSequence",
+"UAssetLibraryManager",
+"UAttributeDefinition",
+"UBehaviorBase",
+"UBehaviorKernel",
+"UBodyClassDefinition",
+"UCameraModifierLookAt",
+"UChassisDefinition",
+"UCustomizationGFxMovie",
+"UCylinderComponent",
+"UFaceFXAsset",
+"UForceFeedbackWaveform",
+"UGearboxAIFactory",
+"UGearboxCoverStateManager",
+"UGearboxDialogComponent",
+"UIHitRegionInfoProvider",
+"UInteractiveObjectDefinition",
+"UIParameterBehavior",
+"UIStatusEffectTarget",
+"UMaterialInstanceConstant",
+"UMaterialInterface",
+"UMeshComponent",
+"UNavigationHandle",
+"UParticleSystemComponent",
+"UPhysicalMaterial",
+"UPlayerSkillTree",
+"UPrimitiveComponent",
+"USeqAct_Toggle",
+"USequenceAction",
+"USequenceOp",
+"USkeletalMeshComponent",
+"UStaticMeshComponent",
+"UUIDataStore_OnlinePlaylists",
+"UUIResourceCombinationProvider",
+"UVehicleSpawnStationGFxMovie",
+"UWillowGlobals"]
 
 dir_path_python = 'C:/Users/abahb/source/repos/BL2-SDK/bl2-sdk/'
-function_definition = re.compile(r'	(([a-z]\w+ *)+) (\w+)\((.*\));')
-object_reference = re.compile(r'(struct|class) (\w+)\*\* (\w+)')
-native_reference = re.compile(r'(\(|, )(([a-z]\w+ *)+)\* (\w+)')
 
 class Function_def():
 	def __init__(self, return_type, name, params, pointers):
@@ -22,27 +101,31 @@ class Pointer():
 		self.name = name
 
 funcs = {}
-for clas in classes:
+for clas in files:
+	print(clas)
 	with open(dir_path_python + clas) as f:
 		class_name = None
 		for line in f.readlines():
 			if line.startswith("class "):
 				class_name = line.split(" ")[1].strip()
 				funcs[class_name] = {}
+			if class_name not in classes:
+				continue
 			if ');' in line and '*' in line:
-				fd_match = re.match(function_definition, line)
-				if fd_match:
-					_, return_type, function_name, function_params = fd_match.groups()
-					params = line.split('(')[-1].split(')')[0]
-					pointers = []
-					for o_match in re.finditer(object_reference, line):
-						class_or_struct, obj_type, param_name =  o_match.groups()
-						pointers.append(Pointer(class_or_struct, obj_type, param_name))
-					for n_match in re.finditer(native_reference, line):
-						opener, param_type, _, param_name = n_match.groups()
-						pointers.append(Pointer(None, param_type, param_name))
-					if pointers:
-						funcs[class_name][function_name] = Function_def(return_type, function_name, params, pointers)
+				start, end = line.split('(')
+				function_name = start.split(' ')[-1]
+				return_type = start.split(' ')[:-1]
+				params = line.split('(')[-1].split(')')[0]
+				pointers = []
+				for param in params.split(', '):
+					if param.startswith('struct ') or param.startswith('class ') and '**' in param:
+						s = param.split(' ')
+						pointers.append(Pointer(s[0], s[1], s[2]))
+					elif not (param.startswith('struct ') or param.startswith('class ')) and '*' in param:
+						s = param.split(' ')
+						pointers.append(Pointer(None, ' '.join(s[:-1]), s[-1]))
+				if pointers:
+					funcs[class_name][function_name] = Function_def(return_type, function_name, params, pointers)
 
 def generate_lambda(fun):
 	py_args = fun.params
@@ -56,7 +139,7 @@ def generate_lambda(fun):
 			if pointer.type == 'char':
 				init += pointer_arg + " = malloc(sizeof(char) * 0xFF) ; "
 			else:
-				init += pointer_arg + " = malloc(sizeof({})) ; ".format(pointer.type)
+				init += pointer_arg + " = ({0} *)malloc(sizeof({0})) ; ".format(pointer.type)
 		py_args = py_args.replace(pointer_arg, "")
 	py_args = py_args.strip()
 	py_args = py_args.replace(', ,', ',')
@@ -79,6 +162,8 @@ template = '[]({class_name} &self {py_args}) {{ {init} self.{function_name}({new
 init_template = '{class_name}* {variable_name} = 0;'
 pydefs = 'C:/Users/abahb/source/repos/BL2-SDK/bl2-sdk/pydefs/'
 
+print(funcs)
+
 for clas in funcs.keys():
 	if not funcs[clas]:
 		continue
@@ -91,6 +176,8 @@ for clas in funcs.keys():
 				if function_name in funcs[clas].keys():
 					lines += line.split(',')[0] + ', ' + generate_lambda(funcs[clas][function_name])
 					continue
+			if '.staticmethod' in line:
+				continue
 			lines += line
 	with open(pydefs + '_Classes_{}.cpp'.format(clas), 'w') as f:
 		for line in lines:
