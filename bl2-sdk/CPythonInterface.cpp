@@ -17,6 +17,8 @@ namespace py = pybind11;
 PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 {
 	Export_pystes_UObject(m);
+	Export_pystes_UClass(m);
+	m.def("Log", [](std::string in) { Logging::Log(in.c_str(), in.length()); });
 }
 
 bool PythonGCTick(UObject* caller, UFunction* function, void* parms, void* result)
@@ -46,18 +48,22 @@ CPythonInterface::~CPythonInterface()
 
 void CPythonInterface::InitializeState()
 {
-	Logging::Log("[Python] 1\n");
-	py::initialize_interpreter();
-	Logging::Log("[Python] 2\n");
-	py::module::import("bl2sdk");
-	Logging::Log("[Python] 3\n");
-	m_mainNamespace = py::module::import("__main__");
-	//InitLogging();
+	try
+	{
+		Logging::Log("[Python] 1\n");
+		py::initialize_interpreter();
+		Logging::Log("[Python] 2\n");
+		py::module::import("bl2sdk");
+		Logging::Log("[Python] 3\n");
+		m_mainNamespace = py::module::import("__main__");
+		//SetSDKValues();
+		SetPaths();
+	}
+	catch (std::exception e) {
+		Logging::LogF("%s", e.what());
+	}
 
-	//SetSDKValues();
-	SetPaths();
 }
-
 void CPythonInterface::CleanupState()
 {
 	py::finalize_interpreter();
@@ -114,19 +120,16 @@ void CPythonInterface::SetPaths()
 
 int CPythonInterface::DoFile(const char *filename)
 {
-	Logging::Log("[Python] 4\n");
 	return DoFileAbsolute(Util::Format("%s\\%s", m_PythonPath.c_str(), filename).c_str());
 }
 
 int CPythonInterface::DoFileAbsolute(const char *path)
 {
 	try {
-		Logging::LogF("[Python] path = %s", path);
 		py::eval_file(path);
-		Logging::Log("[Python] 5\n");
 	}
 	catch (std::exception e) {
-		Logging::LogF("[Python] Exception: %s", e.what());
+		Logging::LogF("%s", e.what());
 	}
 	return 0;
 }

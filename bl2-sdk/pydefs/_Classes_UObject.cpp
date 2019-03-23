@@ -5,7 +5,7 @@ namespace py = pybind11;
 // Module ======================================================================
 void Export_pystes_UObject(py::module &m)
 {
-	py::class_<UObject>(m, "UObject")
+	py::class_<UObject, std::shared_ptr<UObject>>(m, "UObject")
 		.def_readwrite("HashNext", &UObject::HashNext)
 		.def_readwrite("ObjectFlags", &UObject::ObjectFlags)
 		.def_readwrite("HashOuterNext", &UObject::HashOuterNext)
@@ -352,4 +352,11 @@ void Export_pystes_UObject(py::module &m)
         .def("EqualEqual_BoolBool", &UObject::EqualEqual_BoolBool)
         .def("Not_PreBool", &UObject::Not_PreBool)
           ;
+
+		py::class_< TArray<UObject *> >(m, "TArray<UObject *>")
+			.def_readwrite("Count", &TArray<UObject *>::Count)
+			.def_readwrite("Max", &TArray<UObject *>::Max)
+			.def("Num", &TArray<UObject *>::Num)
+			.def("__call__", [](TArray<UObject *> &self, int i) { return self.Data[i]; });
+			;
 }
