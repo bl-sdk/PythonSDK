@@ -3,7 +3,6 @@
 #define BL2SDK_H
 
 #include <string>
-#include "CLuaInterface.h"
 #include "CPythonInterface.h"
 
 class UObject;
@@ -36,7 +35,6 @@ namespace BL2SDK
 	extern tLoadPackage pLoadPackage;
 	extern tByteOrderSerialize pByteOrderSerialize;
 
-	extern CLuaInterface * Lua;
 	extern CPythonInterface * Python;
 
 	extern int EngineVersion;

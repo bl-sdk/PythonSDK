@@ -138,7 +138,7 @@ UClass* UObject::FindClass(char* ClassFullName)
 	return NULL;
 }
 
-bool UObject::IsA(UClass* pClass)
+bool UObject::IsA(UClass* pClass) const
 {
 	for (UClass* SuperClass = this->Class; SuperClass; SuperClass = (UClass*)SuperClass->SuperField)
 	{

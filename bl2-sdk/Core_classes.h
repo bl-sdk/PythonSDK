@@ -237,7 +237,7 @@ public:
 
 	static UClass* FindClass(char* ClassFullName);
 
-	bool IsA(UClass* pClass);
+	bool IsA(UClass* pClass) const;
 
 	static UClass* StaticClass()
 	{

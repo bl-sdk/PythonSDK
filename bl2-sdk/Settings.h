@@ -22,7 +22,6 @@ namespace Settings
 	std::wstring GetLogFilePath();
 	std::wstring GetBinFile(const std::wstring& filename);
 	std::wstring GetTextureFile(const std::wstring& filename);
-	std::wstring GetLuaFile(const std::wstring& filename);
 	std::wstring GetPythonFile(const std::wstring& filename);
 	bool DeveloperModeEnabled();
 	bool DisableAntiDebug();

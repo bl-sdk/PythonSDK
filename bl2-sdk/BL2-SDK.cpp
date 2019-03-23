@@ -37,7 +37,6 @@ namespace BL2SDK
 	tLoadPackage pLoadPackage;
 	tByteOrderSerialize pByteOrderSerialize;
 
-	CLuaInterface *Lua;
 	CPythonInterface *Python;
 
 	int EngineVersion = -1;
@@ -263,27 +262,6 @@ namespace BL2SDK
 		detCallFunction.Attach();
 	}
 
-	void InitializeLua()
-	{
-		Lua = new CLuaInterface();
-		LuaStatus status = Lua->InitializeModules();
-		if (status == LUA_MODULE_ERROR && !Settings::DeveloperModeEnabled())
-		{
-			Util::Popup(L"Lua Module Error",
-				L"A core Lua module failed to load correctly, and the SDK cannot continue to run.\n\nThis may indicate that BL2 has been patched and the SDK needs updating.");
-			//Util::CloseGame();
-		}
-		else if (status == LUA_MODULE_ERROR && Settings::DeveloperModeEnabled())
-		{
-			Util::Popup(L"Lua Module Error",
-				L"An error occurred while loading the Lua modules.\n\nPlease check your console for the exact error. Once you've fixed the error, press F11 to reload the Lua state.");
-		}
-		else if (status == LUA_OK)
-		{
-			Logging::LogF("[Internal] Lua initialized successfully.\n");
-		}
-	}
-
 	void InitializePython()
 	{
 		Python = new CPythonInterface();
@@ -335,10 +313,8 @@ namespace BL2SDK
 	}
 
 	// This function is used to get the dimensions of the game window for Gwen's renderer
-	// It will also initialize Lua and the command system, so the SDK is essentially fully operational at this point
 	bool getCanvasPostRender(UObject* caller, UFunction* function, void* parms, void* result)
 	{
-		InitializeLua();
 		InitializePython();
 
 		if (Settings::DeveloperModeEnabled())
@@ -412,42 +388,6 @@ namespace BL2SDK
 	{
 		Logging::Cleanup();
 		GameHooks::Cleanup();
-		delete Lua;
 		Util::CloseGame();
-	}
-
-	FFI_EXPORT void LUAFUNC_LogAllProcessEventCalls(bool enabled)
-	{
-		LogAllProcessEventCalls(enabled);
-	}
-
-	FFI_EXPORT void LUAFUNC_LogAllUnrealScriptCalls(bool enabled)
-	{
-		LogAllUnrealScriptCalls(enabled);
-	}
-
-	FFI_EXPORT std::string* LUAFUNC_UObjectGetFullName(UObject* obj)
-	{
-		// Move name from stack to heap
-		return new std::string(obj->GetFullName());
-	}
-
-	FFI_EXPORT void LUAFUNC_DeleteString(std::string* str)
-	{
-		delete str;
-	}
-
-	FFI_EXPORT UObject* LUAFUNC_StaticConstructObject(UClass* inClass, UObject* outer, FName name, unsigned int flags)
-	{
-		return pStaticConstructObject(inClass, outer, name, flags, nullptr, nullptr, nullptr, nullptr);
-	}
-
-	FFI_EXPORT UPackage* LUAFUNC_LoadPackage(UPackage* outer, const char* filename, DWORD flags)
-	{
-		std::wstring wideFilename = Util::Widen(filename);
-		SetIsLoadingUDKPackage(true);
-		UPackage* result = pLoadPackage(outer, wideFilename.c_str(), flags);
-		SetIsLoadingUDKPackage(false);
-		return result;
 	}
 }

@@ -18,6 +18,7 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 {
 	Export_pystes_UObject(m);
 	Export_pystes_UClass(m);
+	Export_pystes_UInterface(m);
 	m.def("Log", [](std::string in) { Logging::Log(in.c_str(), in.length()); });
 }
 

@@ -20,7 +20,6 @@ namespace Util
 
 	void Initialize();
 	const char *ServerPath();
-	const char *MainLuaPath();
 	const char *LogPath();
 	const char *LayoutPath();
 	HWND getToplevelWindows();
