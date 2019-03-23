@@ -193,7 +193,6 @@
     <ClCompile Include="AntiDebug.cpp" />
     <ClCompile Include="BL2-SDK.cpp" />
     <ClCompile Include="CHookManager.cpp" />
-    <ClCompile Include="CLuaInterface.cpp" />
     <ClCompile Include="Core_functions.cpp" />
     <ClCompile Include="CPythonInterface.cpp" />
     <ClCompile Include="CSigScan.cpp" />
@@ -207,7 +206,6 @@
     <ClCompile Include="GFxUI_functions.cpp" />
     <ClCompile Include="IpDrv_functions.cpp" />
     <ClCompile Include="Logging.cpp" />
-    <ClCompile Include="LuaFileLib.cpp" />
     <ClCompile Include="MemoryDebug.cpp" />
     <ClCompile Include="modules.cpp" />
     <ClCompile Include="NamedPipe.cpp" />
@@ -4973,7 +4971,6 @@
     <ClInclude Include="AntiDebug.h" />
     <ClInclude Include="BL2-SDK.h" />
     <ClInclude Include="CHookManager.h" />
-    <ClInclude Include="CLuaInterface.h" />
     <ClInclude Include="Core_classes.h" />
     <ClInclude Include="Core_f_structs.h" />
     <ClInclude Include="Core_structs.h" />
@@ -5025,7 +5022,6 @@
     <ClInclude Include="IpDrv_classes.h" />
     <ClInclude Include="IpDrv_f_structs.h" />
     <ClInclude Include="IpDrv_structs.h" />
-    <ClInclude Include="LuaFileLib.h" />
     <ClInclude Include="MemoryDebug.h" />
     <ClInclude Include="MemorySignature.h" />
     <ClInclude Include="NamedPipe.h" />
