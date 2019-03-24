@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowProjectile(py::module &m)
 {
     py::class_< AWillowProjectile,  AProjectile   >(m, "AWillowProjectile")
+		.def_static("StaticClass", &AWillowProjectile::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IICounterBehavior", &AWillowProjectile::VfTable_IICounterBehavior)
         .def_readwrite("VfTable_IITimerBehavior", &AWillowProjectile::VfTable_IITimerBehavior)
         .def_readwrite("VfTable_IIKilledBehavior", &AWillowProjectile::VfTable_IIKilledBehavior)

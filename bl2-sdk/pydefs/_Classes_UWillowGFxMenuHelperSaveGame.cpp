@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowGFxMenuHelperSaveGame(py::module &m)
 {
     py::class_< UWillowGFxMenuHelperSaveGame,  UObject   >(m, "UWillowGFxMenuHelperSaveGame")
+		.def_static("StaticClass", &UWillowGFxMenuHelperSaveGame::StaticClass, py::return_value_policy::reference)
         .def_readwrite("LoadingListDlg", &UWillowGFxMenuHelperSaveGame::LoadingListDlg)
         .def_readwrite("DeletingDlg", &UWillowGFxMenuHelperSaveGame::DeletingDlg)
         .def_readwrite("ValidatingDlg", &UWillowGFxMenuHelperSaveGame::ValidatingDlg)

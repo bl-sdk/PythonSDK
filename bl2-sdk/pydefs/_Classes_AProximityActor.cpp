@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AProximityActor(py::module &m)
 {
     py::class_< AProximityActor,  AActor   >(m, "AProximityActor")
+		.def_static("StaticClass", &AProximityActor::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ProximityRadius", &AProximityActor::ProximityRadius)
         .def_readwrite("ProximityHeight", &AProximityActor::ProximityHeight)
         .def_readwrite("ProximityCylinder", &AProximityActor::ProximityCylinder)

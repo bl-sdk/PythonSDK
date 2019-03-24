@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USkelControlSingleBone(py::module &m)
 {
     py::class_< USkelControlSingleBone,  USkelControlBase   >(m, "USkelControlSingleBone")
+		.def_static("StaticClass", &USkelControlSingleBone::StaticClass, py::return_value_policy::reference)
         .def_readwrite("BoneTranslation", &USkelControlSingleBone::BoneTranslation)
         .def_readwrite("BoneTranslationSpace", &USkelControlSingleBone::BoneTranslationSpace)
         .def_readwrite("BoneRotationSpace", &USkelControlSingleBone::BoneRotationSpace)

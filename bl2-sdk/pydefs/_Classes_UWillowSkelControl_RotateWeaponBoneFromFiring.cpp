@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowSkelControl_RotateWeaponBoneFromFiring(py::module &m)
 {
     py::class_< UWillowSkelControl_RotateWeaponBoneFromFiring,  USkelControlSingleBone   >(m, "UWillowSkelControl_RotateWeaponBoneFromFiring")
+		.def_static("StaticClass", &UWillowSkelControl_RotateWeaponBoneFromFiring::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIWeaponBoneController", &UWillowSkelControl_RotateWeaponBoneFromFiring::VfTable_IIWeaponBoneController)
         .def_readwrite("NumberOfShotsPerRotation", &UWillowSkelControl_RotateWeaponBoneFromFiring::NumberOfShotsPerRotation)
         .def_readwrite("MaxRotationsPerSecond", &UWillowSkelControl_RotateWeaponBoneFromFiring::MaxRotationsPerSecond)

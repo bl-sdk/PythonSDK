@@ -6,5 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UWillowVehicleCombatAreaRenderingComponent(py::module &m)
 {
     py::class_< UWillowVehicleCombatAreaRenderingComponent,  UPrimitiveComponent   >(m, "UWillowVehicleCombatAreaRenderingComponent")
+		.def_static("StaticClass", &UWillowVehicleCombatAreaRenderingComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

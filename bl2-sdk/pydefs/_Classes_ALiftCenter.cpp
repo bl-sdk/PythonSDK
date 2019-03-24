@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ALiftCenter(py::module &m)
 {
     py::class_< ALiftCenter,  ANavigationPoint   >(m, "ALiftCenter")
+		.def_static("StaticClass", &ALiftCenter::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MyLift", &ALiftCenter::MyLift)
         .def_readwrite("MaxDist2D", &ALiftCenter::MaxDist2D)
         .def_readwrite("LiftOffset", &ALiftCenter::LiftOffset)

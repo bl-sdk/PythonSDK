@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UDownloadablePackageDefinition(py::module &m)
 {
     py::class_< UDownloadablePackageDefinition,  UGBXDefinition   >(m, "UDownloadablePackageDefinition")
+		.def_static("StaticClass", &UDownloadablePackageDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIDlcLicenseObject", &UDownloadablePackageDefinition::VfTable_IIDlcLicenseObject)
         .def_readwrite("PackageId", &UDownloadablePackageDefinition::PackageId)
         .def_readwrite("PackageMask", &UDownloadablePackageDefinition::PackageMask)

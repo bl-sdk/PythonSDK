@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UMaterialInstanceConstant(py::module &m)
 {
     py::class_< UMaterialInstanceConstant,  UMaterialInterface   >(m, "UMaterialInstanceConstant")
+		.def_static("StaticClass", &UMaterialInstanceConstant::StaticClass, py::return_value_policy::reference)
         .def_readwrite("FontParameterValues", &UMaterialInstanceConstant::FontParameterValues)
         .def_readwrite("ScalarParameterValues", &UMaterialInstanceConstant::ScalarParameterValues)
         .def_readwrite("TextureParameterValues", &UMaterialInstanceConstant::TextureParameterValues)

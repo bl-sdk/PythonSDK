@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UDOFAndBloomEffect(py::module &m)
 {
     py::class_< UDOFAndBloomEffect,  UPostProcessEffect   >(m, "UDOFAndBloomEffect")
+		.def_static("StaticClass", &UDOFAndBloomEffect::StaticClass, py::return_value_policy::reference)
         .def_readwrite("BloomScale", &UDOFAndBloomEffect::BloomScale)
         .def_readwrite("BloomThreshold", &UDOFAndBloomEffect::BloomThreshold)
         .def_readwrite("BloomTint", &UDOFAndBloomEffect::BloomTint)

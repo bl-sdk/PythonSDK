@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UItemNamePartDefinition(py::module &m)
 {
     py::class_< UItemNamePartDefinition,  UWillowInventoryPartDefinition   >(m, "UItemNamePartDefinition")
+		.def_static("StaticClass", &UItemNamePartDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PartName", &UItemNamePartDefinition::PartName)
         .def_readwrite("Expressions", &UItemNamePartDefinition::Expressions)
         .def_readwrite("MinExpLevelRequirement", &UItemNamePartDefinition::MinExpLevelRequirement)

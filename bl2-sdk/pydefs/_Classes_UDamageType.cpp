@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UDamageType(py::module &m)
 {
     py::class_< UDamageType,  UObject   >(m, "UDamageType")
+		.def_static("StaticClass", &UDamageType::StaticClass, py::return_value_policy::reference)
         .def_readwrite("KDamageImpulse", &UDamageType::KDamageImpulse)
         .def_readwrite("KDeathVel", &UDamageType::KDeathVel)
         .def_readwrite("KDeathUpKick", &UDamageType::KDeathUpKick)

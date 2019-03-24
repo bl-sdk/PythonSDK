@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowGFxLobbyLoadCharacter(py::module &m)
 {
     py::class_< UWillowGFxLobbyLoadCharacter,  UWillowGFxMovie   >(m, "UWillowGFxLobbyLoadCharacter")
+		.def_static("StaticClass", &UWillowGFxLobbyLoadCharacter::StaticClass, py::return_value_policy::reference)
         .def_readwrite("LoadCharacterLobby", &UWillowGFxLobbyLoadCharacter::LoadCharacterLobby)
         .def_readwrite("DisplayedCharacterDataList", &UWillowGFxLobbyLoadCharacter::DisplayedCharacterDataList)
         .def_readwrite("SaveGameHelper", &UWillowGFxLobbyLoadCharacter::SaveGameHelper)

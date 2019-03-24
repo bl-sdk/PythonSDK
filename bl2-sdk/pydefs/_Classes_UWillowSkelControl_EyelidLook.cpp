@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowSkelControl_EyelidLook(py::module &m)
 {
     py::class_< UWillowSkelControl_EyelidLook,  USkelControlSingleBone   >(m, "UWillowSkelControl_EyelidLook")
+		.def_static("StaticClass", &UWillowSkelControl_EyelidLook::StaticClass, py::return_value_policy::reference)
         .def_readwrite("OriginalHorizAngle", &UWillowSkelControl_EyelidLook::OriginalHorizAngle)
         .def_readwrite("OriginalVertAngle", &UWillowSkelControl_EyelidLook::OriginalVertAngle)
         .def_readwrite("EyeBoneName", &UWillowSkelControl_EyelidLook::EyeBoneName)

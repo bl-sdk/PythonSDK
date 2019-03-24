@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UMaterialExpressionTerrainLayerCoords(py::module &m)
 {
     py::class_< UMaterialExpressionTerrainLayerCoords,  UMaterialExpression   >(m, "UMaterialExpressionTerrainLayerCoords")
+		.def_static("StaticClass", &UMaterialExpressionTerrainLayerCoords::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MappingType", &UMaterialExpressionTerrainLayerCoords::MappingType)
         .def_readwrite("MappingScale", &UMaterialExpressionTerrainLayerCoords::MappingScale)
         .def_readwrite("MappingRotation", &UMaterialExpressionTerrainLayerCoords::MappingRotation)

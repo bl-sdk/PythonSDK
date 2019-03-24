@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ARB_ConstraintActor(py::module &m)
 {
     py::class_< ARB_ConstraintActor,  ARigidBodyBase   >(m, "ARB_ConstraintActor")
+		.def_static("StaticClass", &ARB_ConstraintActor::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ConstraintActor1", &ARB_ConstraintActor::ConstraintActor1)
         .def_readwrite("ConstraintActor2", &ARB_ConstraintActor::ConstraintActor2)
         .def_readwrite("ConstraintSetup", &ARB_ConstraintActor::ConstraintSetup)

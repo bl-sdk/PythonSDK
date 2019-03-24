@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ABehaviorVolume(py::module &m)
 {
     py::class_< ABehaviorVolume,  APhysicsVolume   >(m, "ABehaviorVolume")
+		.def_static("StaticClass", &ABehaviorVolume::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIBehaviorConsumer", &ABehaviorVolume::VfTable_IIBehaviorConsumer)
         .def_readwrite("VfTable_IIInstanceData", &ABehaviorVolume::VfTable_IIInstanceData)
         .def_readwrite("VfTable_IIBalancedActor", &ABehaviorVolume::VfTable_IIBalancedActor)

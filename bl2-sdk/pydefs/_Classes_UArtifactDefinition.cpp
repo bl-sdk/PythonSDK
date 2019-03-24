@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UArtifactDefinition(py::module &m)
 {
     py::class_< UArtifactDefinition,  UEquipableItemDefinition   >(m, "UArtifactDefinition")
+		.def_static("StaticClass", &UArtifactDefinition::StaticClass, py::return_value_policy::reference)
         .def("GetEquipmentLocation", &UArtifactDefinition::GetEquipmentLocation)
           ;
 }

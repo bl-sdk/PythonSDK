@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UDistributionFloatParameterBase(py::module &m)
 {
     py::class_< UDistributionFloatParameterBase,  UDistributionFloat   >(m, "UDistributionFloatParameterBase")
+		.def_static("StaticClass", &UDistributionFloatParameterBase::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ParameterName", &UDistributionFloatParameterBase::ParameterName)
         .def_readwrite("MinInput", &UDistributionFloatParameterBase::MinInput)
         .def_readwrite("MaxInput", &UDistributionFloatParameterBase::MaxInput)

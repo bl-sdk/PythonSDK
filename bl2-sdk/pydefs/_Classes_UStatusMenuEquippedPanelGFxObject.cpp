@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UStatusMenuEquippedPanelGFxObject(py::module &m)
 {
     py::class_< UStatusMenuEquippedPanelGFxObject,  UBaseInventoryPanelGFxObject   >(m, "UStatusMenuEquippedPanelGFxObject")
+		.def_static("StaticClass", &UStatusMenuEquippedPanelGFxObject::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SelectedCellSuffix", &UStatusMenuEquippedPanelGFxObject::SelectedCellSuffix)
         .def_readwrite("PreferredDownCellSuffix", &UStatusMenuEquippedPanelGFxObject::PreferredDownCellSuffix)
         .def_readwrite("EquippedTypeCellSuffix", &UStatusMenuEquippedPanelGFxObject::EquippedTypeCellSuffix)

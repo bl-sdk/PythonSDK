@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UHashDisplayGFxMovie(py::module &m)
 {
     py::class_< UHashDisplayGFxMovie,  UWillowGFxMovie   >(m, "UHashDisplayGFxMovie")
+		.def_static("StaticClass", &UHashDisplayGFxMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("WInvMgr", &UHashDisplayGFxMovie::WInvMgr)
         .def_readwrite("HashDisplayDef", &UHashDisplayGFxMovie::HashDisplayDef)
         .def_readwrite("LeftSideTextList", &UHashDisplayGFxMovie::LeftSideTextList)

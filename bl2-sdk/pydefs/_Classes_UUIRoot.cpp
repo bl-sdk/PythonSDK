@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UUIRoot(py::module &m)
 {
     py::class_< UUIRoot,  UObject   >(m, "UUIRoot")
+		.def_static("StaticClass", &UUIRoot::StaticClass, py::return_value_policy::reference)
         .def_readwrite("BadCapsLocContexts", &UUIRoot::BadCapsLocContexts)
         .def("SafeCaps", &UUIRoot::SafeCaps)
         .def("GetOnlinePlayerInterfaceEx", &UUIRoot::GetOnlinePlayerInterfaceEx, py::return_value_policy::reference)

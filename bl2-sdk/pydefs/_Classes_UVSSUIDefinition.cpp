@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UVSSUIDefinition(py::module &m)
 {
     py::class_< UVSSUIDefinition,  UGBXDefinition   >(m, "UVSSUIDefinition")
+		.def_static("StaticClass", &UVSSUIDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIDlcLicensableObject", &UVSSUIDefinition::VfTable_IIDlcLicensableObject)
         .def_readwrite("VehicleFamily", &UVSSUIDefinition::VehicleFamily)
         .def_readwrite("VehicleName", &UVSSUIDefinition::VehicleName)

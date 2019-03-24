@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowLightProjectileManager(py::module &m)
 {
     py::class_< AWillowLightProjectileManager,  AActor   >(m, "AWillowLightProjectileManager")
+		.def_static("StaticClass", &AWillowLightProjectileManager::StaticClass, py::return_value_policy::reference)
         .def_readwrite("WeaponOwner", &AWillowLightProjectileManager::WeaponOwner)
         .def_readwrite("PawnOwner", &AWillowLightProjectileManager::PawnOwner)
         .def_readwrite("MyProjs", &AWillowLightProjectileManager::MyProjs)

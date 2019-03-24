@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAIComponent(py::module &m)
 {
     py::class_< UAIComponent,  UActorComponent   >(m, "UAIComponent")
+		.def_static("StaticClass", &UAIComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("UpdateRate", &UAIComponent::UpdateRate)
         .def_readwrite("AI", &UAIComponent::AI)
         .def_readwrite("AIDef", &UAIComponent::AIDef)

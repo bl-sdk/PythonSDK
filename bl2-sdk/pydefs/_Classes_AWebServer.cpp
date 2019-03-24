@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWebServer(py::module &m)
 {
     py::class_< AWebServer,  ATcpLink   >(m, "AWebServer")
+		.def_static("StaticClass", &AWebServer::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ServerName", &AWebServer::ServerName)
         .def_readwrite("ListenPort", &AWebServer::ListenPort)
         .def_readwrite("MaxConnections", &AWebServer::MaxConnections)

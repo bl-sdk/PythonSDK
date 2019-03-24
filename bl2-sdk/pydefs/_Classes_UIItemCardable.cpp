@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UIItemCardable(py::module &m)
 {
     py::class_< UIItemCardable,  UInterface   >(m, "UIItemCardable")
+		.def_static("StaticClass", &UIItemCardable::StaticClass, py::return_value_policy::reference)
         .def("IsUsefulToThisPlayer", &UIItemCardable::IsUsefulToThisPlayer)
         .def("IsReadied", &UIItemCardable::IsReadied)
         .def("GetDLCRestrictedMessage", &UIItemCardable::GetDLCRestrictedMessage)

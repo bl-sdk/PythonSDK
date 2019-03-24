@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USequence(py::module &m)
 {
     py::class_< USequence,  USequenceOp   >(m, "USequence")
+		.def_static("StaticClass", &USequence::StaticClass, py::return_value_policy::reference)
         .def_readwrite("LogFile", &USequence::LogFile)
         .def_readwrite("SequenceObjects", &USequence::SequenceObjects)
         .def_readwrite("ActiveSequenceOps", &USequence::ActiveSequenceOps)

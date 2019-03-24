@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGearboxEngineGlobals(py::module &m)
 {
     py::class_< UGearboxEngineGlobals,  UObject   >(m, "UGearboxEngineGlobals")
+		.def_static("StaticClass", &UGearboxEngineGlobals::StaticClass, py::return_value_policy::reference)
         .def_readwrite("TheTargetableList", &UGearboxEngineGlobals::TheTargetableList)
         .def_readwrite("AnimDebugTrack", &UGearboxEngineGlobals::AnimDebugTrack)
         .def_readwrite("AnimDebugCarat", &UGearboxEngineGlobals::AnimDebugCarat)

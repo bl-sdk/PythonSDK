@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAnimTree(py::module &m)
 {
     py::class_< UAnimTree,  UObject   >(m, "UAnimTree")
+		.def_static("StaticClass", &UAnimTree::StaticClass, py::return_value_policy::reference)
         .def_readwrite("AnimTreeTemplate", &UAnimTree::AnimTreeTemplate)
         .def_readwrite("AnimGroups", &UAnimTree::AnimGroups)
         .def_readwrite("PrioritizedSkelBranches", &UAnimTree::PrioritizedSkelBranches)

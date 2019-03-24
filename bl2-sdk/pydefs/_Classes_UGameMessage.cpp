@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGameMessage(py::module &m)
 {
     py::class_< UGameMessage,  ULocalMessage   >(m, "UGameMessage")
+		.def_static("StaticClass", &UGameMessage::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SwitchLevelMessage", &UGameMessage::SwitchLevelMessage)
         .def_readwrite("LeftMessage", &UGameMessage::LeftMessage)
         .def_readwrite("FailedTeamMessage", &UGameMessage::FailedTeamMessage)

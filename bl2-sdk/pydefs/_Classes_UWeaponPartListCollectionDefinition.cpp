@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWeaponPartListCollectionDefinition(py::module &m)
 {
     py::class_< UWeaponPartListCollectionDefinition,  UInventoryPartListCollectionDefinition   >(m, "UWeaponPartListCollectionDefinition")
+		.def_static("StaticClass", &UWeaponPartListCollectionDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("AssociatedWeaponType", &UWeaponPartListCollectionDefinition::AssociatedWeaponType)
         .def_readwrite("BodyPartData", &UWeaponPartListCollectionDefinition::BodyPartData)
         .def_readwrite("GripPartData", &UWeaponPartListCollectionDefinition::GripPartData)

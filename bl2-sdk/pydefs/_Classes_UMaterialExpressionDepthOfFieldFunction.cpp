@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UMaterialExpressionDepthOfFieldFunction(py::module &m)
 {
     py::class_< UMaterialExpressionDepthOfFieldFunction,  UMaterialExpression   >(m, "UMaterialExpressionDepthOfFieldFunction")
+		.def_static("StaticClass", &UMaterialExpressionDepthOfFieldFunction::StaticClass, py::return_value_policy::reference)
         .def_readwrite("FunctionValue", &UMaterialExpressionDepthOfFieldFunction::FunctionValue)
         .def_readwrite("Depth", &UMaterialExpressionDepthOfFieldFunction::Depth)
           ;

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UVehicleSpawnStationGFxDefinition(py::module &m)
 {
     py::class_< UVehicleSpawnStationGFxDefinition,  UWillowGFxMovie3DDefinition   >(m, "UVehicleSpawnStationGFxDefinition")
+		.def_static("StaticClass", &UVehicleSpawnStationGFxDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SupportedTags", &UVehicleSpawnStationGFxDefinition::SupportedTags)
         .def_readwrite("RequiredTags", &UVehicleSpawnStationGFxDefinition::RequiredTags)
         .def_readwrite("PostProcessInterpolationTime", &UVehicleSpawnStationGFxDefinition::PostProcessInterpolationTime)

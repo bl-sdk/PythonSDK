@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowSeqAct_AIScriptedHold(py::module &m)
 {
     py::class_< UWillowSeqAct_AIScriptedHold,  USequenceAction   >(m, "UWillowSeqAct_AIScriptedHold")
+		.def_static("StaticClass", &UWillowSeqAct_AIScriptedHold::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Option", &UWillowSeqAct_AIScriptedHold::Option)
           ;
 }

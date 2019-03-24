@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowWeaponPawn(py::module &m)
 {
     py::class_< AWillowWeaponPawn,  AWillowVehicleBase   >(m, "AWillowWeaponPawn")
+		.def_static("StaticClass", &AWillowWeaponPawn::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MyVehicleWeapon", &AWillowWeaponPawn::MyVehicleWeapon)
         .def_readwrite("MyVehicle", &AWillowWeaponPawn::MyVehicle)
         .def_readwrite("MySeatIndex", &AWillowWeaponPawn::MySeatIndex)

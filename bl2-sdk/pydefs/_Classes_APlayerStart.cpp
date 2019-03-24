@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_APlayerStart(py::module &m)
 {
     py::class_< APlayerStart,  ANavigationPoint   >(m, "APlayerStart")
+		.def_static("StaticClass", &APlayerStart::StaticClass, py::return_value_policy::reference)
         .def_readwrite("TeamIndex", &APlayerStart::TeamIndex)
         .def_readwrite("Score", &APlayerStart::Score)
         .def_readwrite("SelectionIndex", &APlayerStart::SelectionIndex)

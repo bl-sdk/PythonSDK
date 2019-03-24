@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBlackMarketUpgradeDefinition(py::module &m)
 {
     py::class_< UBlackMarketUpgradeDefinition,  UGBXDefinition   >(m, "UBlackMarketUpgradeDefinition")
+		.def_static("StaticClass", &UBlackMarketUpgradeDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIBehaviorProvider", &UBlackMarketUpgradeDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("UpgradeName", &UBlackMarketUpgradeDefinition::UpgradeName)
         .def_readwrite("BalanceDefinition", &UBlackMarketUpgradeDefinition::BalanceDefinition)

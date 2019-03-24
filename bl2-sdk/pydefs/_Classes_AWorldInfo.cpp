@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWorldInfo(py::module &m)
 {
     py::class_< AWorldInfo,  AActor   >(m, "AWorldInfo")
+		.def_static("StaticClass", &AWorldInfo::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DefaultPostProcessSettings", &AWorldInfo::DefaultPostProcessSettings)
         .def_readwrite("WorldPostProcessChain", &AWorldInfo::WorldPostProcessChain)
         .def_readwrite("SquintModeKernelSize", &AWorldInfo::SquintModeKernelSize)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UItemOfTheDayPanelGFxObject(py::module &m)
 {
     py::class_< UItemOfTheDayPanelGFxObject,  UGFxObject   >(m, "UItemOfTheDayPanelGFxObject")
+		.def_static("StaticClass", &UItemOfTheDayPanelGFxObject::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VendingMachineMovie", &UItemOfTheDayPanelGFxObject::VendingMachineMovie)
         .def_readwrite("CellThumbnail", &UItemOfTheDayPanelGFxObject::CellThumbnail)
         .def_readwrite("CustomMovieClip", &UItemOfTheDayPanelGFxObject::CustomMovieClip)

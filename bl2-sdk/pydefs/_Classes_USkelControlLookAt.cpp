@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USkelControlLookAt(py::module &m)
 {
     py::class_< USkelControlLookAt,  USkelControlBase   >(m, "USkelControlLookAt")
+		.def_static("StaticClass", &USkelControlLookAt::StaticClass, py::return_value_policy::reference)
         .def_readwrite("TargetLocation", &USkelControlLookAt::TargetLocation)
         .def_readwrite("TargetLocationSpace", &USkelControlLookAt::TargetLocationSpace)
         .def_readwrite("LookAtAxis", &USkelControlLookAt::LookAtAxis)

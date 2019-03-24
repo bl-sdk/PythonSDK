@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USeqAct_Trace(py::module &m)
 {
     py::class_< USeqAct_Trace,  USequenceAction   >(m, "USeqAct_Trace")
+		.def_static("StaticClass", &USeqAct_Trace::StaticClass, py::return_value_policy::reference)
         .def_readwrite("TraceExtent", &USeqAct_Trace::TraceExtent)
         .def_readwrite("StartOffset", &USeqAct_Trace::StartOffset)
         .def_readwrite("EndOffset", &USeqAct_Trace::EndOffset)

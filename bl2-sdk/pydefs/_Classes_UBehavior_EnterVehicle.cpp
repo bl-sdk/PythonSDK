@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_EnterVehicle(py::module &m)
 {
     py::class_< UBehavior_EnterVehicle,  UBehaviorBase   >(m, "UBehavior_EnterVehicle")
+		.def_static("StaticClass", &UBehavior_EnterVehicle::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SeatPos", &UBehavior_EnterVehicle::SeatPos)
         .def_readwrite("VehicleContext", &UBehavior_EnterVehicle::VehicleContext)
         .def("ApplyBehaviorToContext", &UBehavior_EnterVehicle::ApplyBehaviorToContext)

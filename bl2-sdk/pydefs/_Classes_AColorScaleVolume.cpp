@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AColorScaleVolume(py::module &m)
 {
     py::class_< AColorScaleVolume,  AVolume   >(m, "AColorScaleVolume")
+		.def_static("StaticClass", &AColorScaleVolume::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ColorScale", &AColorScaleVolume::ColorScale)
         .def_readwrite("InterpTime", &AColorScaleVolume::InterpTime)
         .def("eventUnTouch", &AColorScaleVolume::eventUnTouch)

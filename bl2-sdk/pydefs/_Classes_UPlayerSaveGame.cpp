@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPlayerSaveGame(py::module &m)
 {
     py::class_< UPlayerSaveGame,  UObject   >(m, "UPlayerSaveGame")
+		.def_static("StaticClass", &UPlayerSaveGame::StaticClass, py::return_value_policy::reference)
         .def_readwrite("UIPreferences", &UPlayerSaveGame::UIPreferences)
         .def_readwrite("PlayerClassDefinition", &UPlayerSaveGame::PlayerClassDefinition)
         .def_readwrite("ExpLevel", &UPlayerSaveGame::ExpLevel)

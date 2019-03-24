@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGearboxAccountGFxObject(py::module &m)
 {
     py::class_< UGearboxAccountGFxObject,  UGFxObject   >(m, "UGearboxAccountGFxObject")
+		.def_static("StaticClass", &UGearboxAccountGFxObject::StaticClass, py::return_value_policy::reference)
         .def("SelectIsEnabled", &UGearboxAccountGFxObject::SelectIsEnabled)
         .def("ClearKeyCode", &UGearboxAccountGFxObject::ClearKeyCode)
         .def("TrySetKeyCode", &UGearboxAccountGFxObject::TrySetKeyCode)

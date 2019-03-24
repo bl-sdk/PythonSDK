@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPopulationFactoryWillowProjectile(py::module &m)
 {
     py::class_< UPopulationFactoryWillowProjectile,  UPopulationFactory   >(m, "UPopulationFactoryWillowProjectile")
+		.def_static("StaticClass", &UPopulationFactoryWillowProjectile::StaticClass, py::return_value_policy::reference)
         .def_readwrite("AttachmentPointName", &UPopulationFactoryWillowProjectile::AttachmentPointName)
         .def_readwrite("SpawnDirection", &UPopulationFactoryWillowProjectile::SpawnDirection)
         .def_readwrite("ProjectileDefinition", &UPopulationFactoryWillowProjectile::ProjectileDefinition)

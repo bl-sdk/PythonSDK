@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_APawn(py::module &m)
 {
     py::class_< APawn,  AActor   >(m, "APawn")
+		.def_static("StaticClass", &APawn::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IInterface_Speaker", &APawn::VfTable_IInterface_Speaker)
         .def_readwrite("VfTable_IIKilledBehavior", &APawn::VfTable_IIKilledBehavior)
         .def_readwrite("VfTable_IITargetable", &APawn::VfTable_IITargetable)

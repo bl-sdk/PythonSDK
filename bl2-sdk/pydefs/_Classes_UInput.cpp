@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UInput(py::module &m)
 {
     py::class_< UInput,  UObject   >(m, "UInput")
+		.def_static("StaticClass", &UInput::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Bindings", &UInput::Bindings)
         .def_readwrite("PressedKeys", &UInput::PressedKeys)
         .def_readwrite("CurrentEvent", &UInput::CurrentEvent)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UStanceTypeDefinition(py::module &m)
 {
     py::class_< UStanceTypeDefinition,  UGBXDefinition   >(m, "UStanceTypeDefinition")
+		.def_static("StaticClass", &UStanceTypeDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIBehaviorProvider", &UStanceTypeDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("MovementStyle", &UStanceTypeDefinition::MovementStyle)
         .def_readwrite("SpeedScale", &UStanceTypeDefinition::SpeedScale)

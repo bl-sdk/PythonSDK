@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USoundCue(py::module &m)
 {
     py::class_< USoundCue,  UObject   >(m, "USoundCue")
+		.def_static("StaticClass", &USoundCue::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SoundClass", &USoundCue::SoundClass)
         .def_readwrite("SoundClassName", &USoundCue::SoundClassName)
         .def_readwrite("FirstNode", &USoundCue::FirstNode)

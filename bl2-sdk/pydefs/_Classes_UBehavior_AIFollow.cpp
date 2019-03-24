@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_AIFollow(py::module &m)
 {
     py::class_< UBehavior_AIFollow,  UBehaviorBase   >(m, "UBehavior_AIFollow")
+		.def_static("StaticClass", &UBehavior_AIFollow::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ToFollow", &UBehavior_AIFollow::ToFollow)
         .def_readwrite("Action", &UBehavior_AIFollow::Action)
         .def_readwrite("Stance", &UBehavior_AIFollow::Stance)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_SendGbxMessage(py::module &m)
 {
     py::class_< UBehavior_SendGbxMessage,  UBehaviorBase   >(m, "UBehavior_SendGbxMessage")
+		.def_static("StaticClass", &UBehavior_SendGbxMessage::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MessageDefinition", &UBehavior_SendGbxMessage::MessageDefinition)
         .def_readwrite("AssignSenderTo", &UBehavior_SendGbxMessage::AssignSenderTo)
         .def_readwrite("AssignSubjectTo", &UBehavior_SendGbxMessage::AssignSubjectTo)

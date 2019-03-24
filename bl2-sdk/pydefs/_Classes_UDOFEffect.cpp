@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UDOFEffect(py::module &m)
 {
     py::class_< UDOFEffect,  UPostProcessEffect   >(m, "UDOFEffect")
+		.def_static("StaticClass", &UDOFEffect::StaticClass, py::return_value_policy::reference)
         .def_readwrite("FalloffExponent", &UDOFEffect::FalloffExponent)
         .def_readwrite("BlurKernelSize", &UDOFEffect::BlurKernelSize)
         .def_readwrite("MaxNearBlurAmount", &UDOFEffect::MaxNearBlurAmount)

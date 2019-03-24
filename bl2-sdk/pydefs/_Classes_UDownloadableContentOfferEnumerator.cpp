@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UDownloadableContentOfferEnumerator(py::module &m)
 {
     py::class_< UDownloadableContentOfferEnumerator,  UObject   >(m, "UDownloadableContentOfferEnumerator")
+		.def_static("StaticClass", &UDownloadableContentOfferEnumerator::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CurrentEnumerationState", &UDownloadableContentOfferEnumerator::CurrentEnumerationState)
         .def_readwrite("MarketplaceOffers", &UDownloadableContentOfferEnumerator::MarketplaceOffers)
         .def_readwrite("FindDlcOfferDelegates", &UDownloadableContentOfferEnumerator::FindDlcOfferDelegates)

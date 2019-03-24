@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AGearboxMind(py::module &m)
 {
     py::class_< AGearboxMind,  AAIController   >(m, "AGearboxMind")
+		.def_static("StaticClass", &AGearboxMind::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIRuleEngineOwner", &AGearboxMind::VfTable_IIRuleEngineOwner)
         .def_readwrite("VfTable_IINounAttributeProvider", &AGearboxMind::VfTable_IINounAttributeProvider)
         .def_readwrite("VfTable_IIFlagProvider", &AGearboxMind::VfTable_IIFlagProvider)

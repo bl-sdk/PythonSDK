@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AMatineeActor(py::module &m)
 {
     py::class_< AMatineeActor,  AActor   >(m, "AMatineeActor")
+		.def_static("StaticClass", &AMatineeActor::StaticClass, py::return_value_policy::reference)
         .def_readwrite("InterpAction", &AMatineeActor::InterpAction)
         .def_readwrite("PlayRate", &AMatineeActor::PlayRate)
         .def_readwrite("Position", &AMatineeActor::Position)

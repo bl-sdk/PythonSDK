@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowAIDefinition(py::module &m)
 {
     py::class_< UWillowAIDefinition,  UAIDefinition   >(m, "UWillowAIDefinition")
+		.def_static("StaticClass", &UWillowAIDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PatrolAction", &UWillowAIDefinition::PatrolAction)
         .def_readwrite("ScriptedAction", &UWillowAIDefinition::ScriptedAction)
         .def_readwrite("WantsFormation", &UWillowAIDefinition::WantsFormation)

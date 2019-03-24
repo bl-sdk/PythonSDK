@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAnimNotify_ViewShake(py::module &m)
 {
     py::class_< UAnimNotify_ViewShake,  UAnimNotify_Scripted   >(m, "UAnimNotify_ViewShake")
+		.def_static("StaticClass", &UAnimNotify_ViewShake::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Duration", &UAnimNotify_ViewShake::Duration)
         .def_readwrite("RotAmplitude", &UAnimNotify_ViewShake::RotAmplitude)
         .def_readwrite("RotFrequency", &UAnimNotify_ViewShake::RotFrequency)

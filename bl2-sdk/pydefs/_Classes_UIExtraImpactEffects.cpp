@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UIExtraImpactEffects(py::module &m)
 {
     py::class_< UIExtraImpactEffects,  UInterface   >(m, "UIExtraImpactEffects")
+		.def_static("StaticClass", &UIExtraImpactEffects::StaticClass, py::return_value_policy::reference)
         .def("PlayExtraImpactEffects", &UIExtraImpactEffects::PlayExtraImpactEffects)
         .def("SetExtraImpactEffect", &UIExtraImpactEffects::SetExtraImpactEffect)
           ;

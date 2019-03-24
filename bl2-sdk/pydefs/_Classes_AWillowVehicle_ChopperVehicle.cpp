@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowVehicle_ChopperVehicle(py::module &m)
 {
     py::class_< AWillowVehicle_ChopperVehicle,  AWillowVehicle   >(m, "AWillowVehicle_ChopperVehicle")
+		.def_static("StaticClass", &AWillowVehicle_ChopperVehicle::StaticClass, py::return_value_policy::reference)
         .def_readwrite("GroundEffectIndices", &AWillowVehicle_ChopperVehicle::GroundEffectIndices)
         .def_readwrite("MaxGroundEffectDist", &AWillowVehicle_ChopperVehicle::MaxGroundEffectDist)
         .def_readwrite("GroundEffectDistParameterName", &AWillowVehicle_ChopperVehicle::GroundEffectDistParameterName)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAction_Drive_AlongsideTarget(py::module &m)
 {
     py::class_< UAction_Drive_AlongsideTarget,  UWillowActionSequencePawn   >(m, "UAction_Drive_AlongsideTarget")
+		.def_static("StaticClass", &UAction_Drive_AlongsideTarget::StaticClass, py::return_value_policy::reference)
         .def_readwrite("IdealDistanceFromTarget", &UAction_Drive_AlongsideTarget::IdealDistanceFromTarget)
         .def_readwrite("IdealDistanceAheadOfTarget", &UAction_Drive_AlongsideTarget::IdealDistanceAheadOfTarget)
         .def_readwrite("MinSpeedMultiplierWhenAheadOfTarget", &UAction_Drive_AlongsideTarget::MinSpeedMultiplierWhenAheadOfTarget)

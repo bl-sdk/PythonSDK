@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UKnowledgeRecord(py::module &m)
 {
     py::class_< UKnowledgeRecord,  UObject   >(m, "UKnowledgeRecord")
+		.def_static("StaticClass", &UKnowledgeRecord::StaticClass, py::return_value_policy::reference)
         .def_readwrite("TheAIFactory", &UKnowledgeRecord::TheAIFactory)
         .def_readwrite("TheName", &UKnowledgeRecord::TheName)
         .def_readwrite("KCategory", &UKnowledgeRecord::KCategory)

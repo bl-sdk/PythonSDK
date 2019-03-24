@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UIProjectileReflector(py::module &m)
 {
     py::class_< UIProjectileReflector,  UInterface   >(m, "UIProjectileReflector")
+		.def_static("StaticClass", &UIProjectileReflector::StaticClass, py::return_value_policy::reference)
         .def("GetBulletReflectedOffSelfDamageScale", &UIProjectileReflector::GetBulletReflectedOffSelfDamageScale)
         .def("GetBulletReflectedOffEnemyDamageScale", &UIProjectileReflector::GetBulletReflectedOffEnemyDamageScale)
         .def("GetBulletReflectedOffSelfDamageTakenScale", &UIProjectileReflector::GetBulletReflectedOffSelfDamageTakenScale)

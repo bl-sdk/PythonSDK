@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UOnlineAuthInterfaceImpl(py::module &m)
 {
     py::class_< UOnlineAuthInterfaceImpl,  UOnlineAuthInterfaceBaseImpl   >(m, "UOnlineAuthInterfaceImpl")
+		.def_static("StaticClass", &UOnlineAuthInterfaceImpl::StaticClass, py::return_value_policy::reference)
         .def_readwrite("OwningSubsystem", &UOnlineAuthInterfaceImpl::OwningSubsystem)
         .def_readwrite("AuthReadyDelegates", &UOnlineAuthInterfaceImpl::AuthReadyDelegates)
         .def_readwrite("AuthRequestClientDelegates", &UOnlineAuthInterfaceImpl::AuthRequestClientDelegates)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPawnMoveLocationRequest(py::module &m)
 {
     py::class_< UPawnMoveLocationRequest,  UObject   >(m, "UPawnMoveLocationRequest")
+		.def_static("StaticClass", &UPawnMoveLocationRequest::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CoverSearchFilter", &UPawnMoveLocationRequest::CoverSearchFilter)
         .def_readwrite("RepathOption", &UPawnMoveLocationRequest::RepathOption)
         .def_readwrite("CoverFailureResponse", &UPawnMoveLocationRequest::CoverFailureResponse)

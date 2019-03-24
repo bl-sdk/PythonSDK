@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UItemPartDefinition(py::module &m)
 {
     py::class_< UItemPartDefinition,  UWillowInventoryPartDefinition   >(m, "UItemPartDefinition")
+		.def_static("StaticClass", &UItemPartDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIBehaviorProvider", &UItemPartDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("PartType", &UItemPartDefinition::PartType)
         .def_readwrite("TitleList", &UItemPartDefinition::TitleList)

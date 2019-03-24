@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USeqAct_SetString(py::module &m)
 {
     py::class_< USeqAct_SetString,  USeqAct_SetSequenceVariable   >(m, "USeqAct_SetString")
+		.def_static("StaticClass", &USeqAct_SetString::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Target", &USeqAct_SetString::Target)
         .def_readwrite("Value", &USeqAct_SetString::Value)
         .def("eventGetObjClassVersion", &USeqAct_SetString::eventGetObjClassVersion)

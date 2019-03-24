@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGearboxDialogAct_Talk(py::module &m)
 {
     py::class_< UGearboxDialogAct_Talk,  UGearboxDialogNode   >(m, "UGearboxDialogAct_Talk")
+		.def_static("StaticClass", &UGearboxDialogAct_Talk::StaticClass, py::return_value_policy::reference)
         .def_readwrite("OutputDelay", &UGearboxDialogAct_Talk::OutputDelay)
         .def_readwrite("TalkData", &UGearboxDialogAct_Talk::TalkData)
         .def("eventActivate", &UGearboxDialogAct_Talk::eventActivate)

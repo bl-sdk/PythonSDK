@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UForceFeedbackWaveform(py::module &m)
 {
     py::class_< UForceFeedbackWaveform,  UObject   >(m, "UForceFeedbackWaveform")
+		.def_static("StaticClass", &UForceFeedbackWaveform::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Samples", &UForceFeedbackWaveform::Samples)
         .def_readwrite("Scale", &UForceFeedbackWaveform::Scale)
         .def_readwrite("WaveformFalloffStartDistance", &UForceFeedbackWaveform::WaveformFalloffStartDistance)

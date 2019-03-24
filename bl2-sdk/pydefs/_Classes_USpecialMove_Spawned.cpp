@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USpecialMove_Spawned(py::module &m)
 {
     py::class_< USpecialMove_Spawned,  UWillowAnimDefinition   >(m, "USpecialMove_Spawned")
+		.def_static("StaticClass", &USpecialMove_Spawned::StaticClass, py::return_value_policy::reference)
         .def_readwrite("StretchyStartTime", &USpecialMove_Spawned::StretchyStartTime)
         .def_readwrite("StretchyEndTime", &USpecialMove_Spawned::StretchyEndTime)
         .def("eventClientFinished", &USpecialMove_Spawned::eventClientFinished)

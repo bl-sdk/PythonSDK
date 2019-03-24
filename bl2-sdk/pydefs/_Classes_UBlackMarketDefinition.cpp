@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBlackMarketDefinition(py::module &m)
 {
     py::class_< UBlackMarketDefinition,  UGBXDefinition   >(m, "UBlackMarketDefinition")
+		.def_static("StaticClass", &UBlackMarketDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("BlackMarketName", &UBlackMarketDefinition::BlackMarketName)
         .def_readwrite("ItemOfTheDay", &UBlackMarketDefinition::ItemOfTheDay)
         .def_readwrite("GeneralStock", &UBlackMarketDefinition::GeneralStock)

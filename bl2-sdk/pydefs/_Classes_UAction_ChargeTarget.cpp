@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAction_ChargeTarget(py::module &m)
 {
     py::class_< UAction_ChargeTarget,  UAction_BasicAttack   >(m, "UAction_ChargeTarget")
+		.def_static("StaticClass", &UAction_ChargeTarget::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MissDistance", &UAction_ChargeTarget::MissDistance)
         .def_readwrite("StrikeDistance", &UAction_ChargeTarget::StrikeDistance)
         .def_readwrite("ChargeStart", &UAction_ChargeTarget::ChargeStart)

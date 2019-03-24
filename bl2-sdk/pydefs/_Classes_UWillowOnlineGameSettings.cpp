@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowOnlineGameSettings(py::module &m)
 {
     py::class_< UWillowOnlineGameSettings,  UOnlineGameSettings   >(m, "UWillowOnlineGameSettings")
+		.def_static("StaticClass", &UWillowOnlineGameSettings::StaticClass, py::return_value_policy::reference)
         .def("GetConnectionQualityUIString", &UWillowOnlineGameSettings::GetConnectionQualityUIString)
         .def("UpdateActivePlotMission", &UWillowOnlineGameSettings::UpdateActivePlotMission)
         .def("GetActivePlotMission", &UWillowOnlineGameSettings::GetActivePlotMission)

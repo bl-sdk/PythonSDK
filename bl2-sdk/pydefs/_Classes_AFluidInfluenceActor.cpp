@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AFluidInfluenceActor(py::module &m)
 {
     py::class_< AFluidInfluenceActor,  AActor   >(m, "AFluidInfluenceActor")
+		.def_static("StaticClass", &AFluidInfluenceActor::StaticClass, py::return_value_policy::reference)
         .def_readwrite("FlowDirection", &AFluidInfluenceActor::FlowDirection)
         .def_readwrite("Sprite", &AFluidInfluenceActor::Sprite)
         .def_readwrite("InfluenceComponent", &AFluidInfluenceActor::InfluenceComponent)

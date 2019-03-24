@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UChopperVehicleHandlingDefinition(py::module &m)
 {
     py::class_< UChopperVehicleHandlingDefinition,  UVehicleHandlingDefinition   >(m, "UChopperVehicleHandlingDefinition")
+		.def_static("StaticClass", &UChopperVehicleHandlingDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MaxThrustForce", &UChopperVehicleHandlingDefinition::MaxThrustForce)
         .def_readwrite("MaxReverseForce", &UChopperVehicleHandlingDefinition::MaxReverseForce)
         .def_readwrite("LongDamping", &UChopperVehicleHandlingDefinition::LongDamping)

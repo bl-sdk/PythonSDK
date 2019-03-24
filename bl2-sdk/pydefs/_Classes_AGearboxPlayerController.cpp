@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AGearboxPlayerController(py::module &m)
 {
     py::class_< AGearboxPlayerController,  AGamePlayerController   >(m, "AGearboxPlayerController")
+		.def_static("StaticClass", &AGearboxPlayerController::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CurrentViewShake", &AGearboxPlayerController::CurrentViewShake)
         .def_readwrite("BaseDamageShake", &AGearboxPlayerController::BaseDamageShake)
         .def_readwrite("ShakeOffset", &AGearboxPlayerController::ShakeOffset)

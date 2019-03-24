@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowBoundaryTurret(py::module &m)
 {
     py::class_< AWillowBoundaryTurret,  AActor   >(m, "AWillowBoundaryTurret")
+		.def_static("StaticClass", &AWillowBoundaryTurret::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ShotTime", &AWillowBoundaryTurret::ShotTime)
         .def_readwrite("SeekTime", &AWillowBoundaryTurret::SeekTime)
         .def_readwrite("FiringModeDef", &AWillowBoundaryTurret::FiringModeDef)

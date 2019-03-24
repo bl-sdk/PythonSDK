@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAIClassDefinition(py::module &m)
 {
     py::class_< UAIClassDefinition,  UWillowCharacterClassDefinition   >(m, "UAIClassDefinition")
+		.def_static("StaticClass", &UAIClassDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("AIDef", &UAIClassDefinition::AIDef)
         .def_readwrite("DefaultDisplayName", &UAIClassDefinition::DefaultDisplayName)
         .def_readwrite("UBMKilledByMessageString", &UAIClassDefinition::UBMKilledByMessageString)

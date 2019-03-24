@@ -6,5 +6,6 @@ namespace py = pybind11;
 void Export_pystes_ACharacterSelectCameraActor(py::module &m)
 {
     py::class_< ACharacterSelectCameraActor,  ACameraActor   >(m, "ACharacterSelectCameraActor")
+		.def_static("StaticClass", &ACharacterSelectCameraActor::StaticClass, py::return_value_policy::reference)
           ;
 }

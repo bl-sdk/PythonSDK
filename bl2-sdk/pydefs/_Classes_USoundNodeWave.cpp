@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USoundNodeWave(py::module &m)
 {
     py::class_< USoundNodeWave,  USoundNode   >(m, "USoundNodeWave")
+		.def_static("StaticClass", &USoundNodeWave::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CompressionQuality", &USoundNodeWave::CompressionQuality)
         .def_readwrite("TTSSpeaker", &USoundNodeWave::TTSSpeaker)
         .def_readwrite("DecompressionType", &USoundNodeWave::DecompressionType)

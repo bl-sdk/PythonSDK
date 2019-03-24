@@ -6,5 +6,6 @@ namespace py = pybind11;
 void Export_pystes_AInterpActor_ForCinematic(py::module &m)
 {
     py::class_< AInterpActor_ForCinematic,  AInterpActor   >(m, "AInterpActor_ForCinematic")
+		.def_static("StaticClass", &AInterpActor_ForCinematic::StaticClass, py::return_value_policy::reference)
           ;
 }

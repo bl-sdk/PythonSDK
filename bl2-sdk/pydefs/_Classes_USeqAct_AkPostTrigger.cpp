@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USeqAct_AkPostTrigger(py::module &m)
 {
     py::class_< USeqAct_AkPostTrigger,  USequenceAction   >(m, "USeqAct_AkPostTrigger")
+		.def_static("StaticClass", &USeqAct_AkPostTrigger::StaticClass, py::return_value_policy::reference)
         .def_readwrite("AkTrigger", &USeqAct_AkPostTrigger::AkTrigger)
           ;
 }

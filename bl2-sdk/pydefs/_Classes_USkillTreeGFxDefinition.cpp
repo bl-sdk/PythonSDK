@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USkillTreeGFxDefinition(py::module &m)
 {
     py::class_< USkillTreeGFxDefinition,  UGBXDefinition   >(m, "USkillTreeGFxDefinition")
+		.def_static("StaticClass", &USkillTreeGFxDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SkillMovieClip", &USkillTreeGFxDefinition::SkillMovieClip)
         .def_readwrite("ArtifactDialogMovieClip", &USkillTreeGFxDefinition::ArtifactDialogMovieClip)
         .def_readwrite("IconOnName", &USkillTreeGFxDefinition::IconOnName)

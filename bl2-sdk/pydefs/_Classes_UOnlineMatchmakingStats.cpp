@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UOnlineMatchmakingStats(py::module &m)
 {
     py::class_< UOnlineMatchmakingStats,  UObject   >(m, "UOnlineMatchmakingStats")
+		.def_static("StaticClass", &UOnlineMatchmakingStats::StaticClass, py::return_value_policy::reference)
         .def("StopTimer", &UOnlineMatchmakingStats::StopTimer)
         .def("StartTimer", &UOnlineMatchmakingStats::StartTimer)
           ;

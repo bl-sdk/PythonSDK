@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBaseTopLevelPanelGFxObject(py::module &m)
 {
     py::class_< UBaseTopLevelPanelGFxObject,  UGFxObject   >(m, "UBaseTopLevelPanelGFxObject")
+		.def_static("StaticClass", &UBaseTopLevelPanelGFxObject::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ParentMovie", &UBaseTopLevelPanelGFxObject::ParentMovie)
         .def_readwrite("ParentMovieDef", &UBaseTopLevelPanelGFxObject::ParentMovieDef)
         .def_readwrite("ItemCards", &UBaseTopLevelPanelGFxObject::ItemCards)

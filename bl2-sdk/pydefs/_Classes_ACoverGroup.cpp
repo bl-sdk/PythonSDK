@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ACoverGroup(py::module &m)
 {
     py::class_< ACoverGroup,  AInfo   >(m, "ACoverGroup")
+		.def_static("StaticClass", &ACoverGroup::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CoverLinkRefs", &ACoverGroup::CoverLinkRefs)
         .def_readwrite("AutoSelectRadius", &ACoverGroup::AutoSelectRadius)
         .def_readwrite("AutoSelectHeight", &ACoverGroup::AutoSelectHeight)

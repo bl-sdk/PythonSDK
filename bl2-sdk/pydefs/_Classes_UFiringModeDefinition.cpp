@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UFiringModeDefinition(py::module &m)
 {
     py::class_< UFiringModeDefinition,  UGBXDefinition   >(m, "UFiringModeDefinition")
+		.def_static("StaticClass", &UFiringModeDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("FireType", &UFiringModeDefinition::FireType)
         .def_readwrite("BeamLockBehavior", &UFiringModeDefinition::BeamLockBehavior)
         .def_readwrite("DamageTypeDefinition", &UFiringModeDefinition::DamageTypeDefinition)

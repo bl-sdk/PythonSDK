@@ -6,5 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UMapProperty(py::module &m)
 {
     py::class_< UMapProperty,  UProperty   >(m, "UMapProperty")
+		.def_static("StaticClass", &UMapProperty::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowSkelControl_TurretConstrained(py::module &m)
 {
     py::class_< UWillowSkelControl_TurretConstrained,  USkelControlSingleBone   >(m, "UWillowSkelControl_TurretConstrained")
+		.def_static("StaticClass", &UWillowSkelControl_TurretConstrained::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MaxAngle", &UWillowSkelControl_TurretConstrained::MaxAngle)
         .def_readwrite("MinAngle", &UWillowSkelControl_TurretConstrained::MinAngle)
         .def_readwrite("LagDegreesPerSecondYaw", &UWillowSkelControl_TurretConstrained::LagDegreesPerSecondYaw)

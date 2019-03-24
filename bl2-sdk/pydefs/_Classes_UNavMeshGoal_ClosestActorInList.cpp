@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UNavMeshGoal_ClosestActorInList(py::module &m)
 {
     py::class_< UNavMeshGoal_ClosestActorInList,  UNavMeshPathGoalEvaluator   >(m, "UNavMeshGoal_ClosestActorInList")
+		.def_static("StaticClass", &UNavMeshGoal_ClosestActorInList::StaticClass, py::return_value_policy::reference)
         .def_readwrite("GoalList", &UNavMeshGoal_ClosestActorInList::GoalList)
         .def_readwrite("PolyToGoalActorMap", &UNavMeshGoal_ClosestActorInList::PolyToGoalActorMap)
         .def_readwrite("CachedAnchorPoly", &UNavMeshGoal_ClosestActorInList::CachedAnchorPoly)

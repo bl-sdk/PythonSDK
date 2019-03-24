@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UUIDataProvider_OnlineProfileSettings(py::module &m)
 {
     py::class_< UUIDataProvider_OnlineProfileSettings,  UUIDataProvider_OnlinePlayerDataBase   >(m, "UUIDataProvider_OnlineProfileSettings")
+		.def_static("StaticClass", &UUIDataProvider_OnlineProfileSettings::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Profile", &UUIDataProvider_OnlinePlayerStorage::Profile)
         .def_readwrite("ProviderName", &UUIDataProvider_OnlinePlayerStorage::ProviderName)
         .def_readwrite("PlayerStorageArrayProviders", &UUIDataProvider_OnlinePlayerStorage::PlayerStorageArrayProviders)

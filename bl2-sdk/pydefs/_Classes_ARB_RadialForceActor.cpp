@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ARB_RadialForceActor(py::module &m)
 {
     py::class_< ARB_RadialForceActor,  AActor   >(m, "ARB_RadialForceActor")
+		.def_static("StaticClass", &ARB_RadialForceActor::StaticClass, py::return_value_policy::reference)
         .def_readwrite("RenderComponent", &ARB_RadialForceActor::RenderComponent)
         .def_readwrite("ForceStrength", &ARB_RadialForceActor::ForceStrength)
         .def_readwrite("ForceRadius", &ARB_RadialForceActor::ForceRadius)

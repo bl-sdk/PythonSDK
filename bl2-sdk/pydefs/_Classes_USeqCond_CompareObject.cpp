@@ -6,5 +6,6 @@ namespace py = pybind11;
 void Export_pystes_USeqCond_CompareObject(py::module &m)
 {
     py::class_< USeqCond_CompareObject,  USequenceCondition   >(m, "USeqCond_CompareObject")
+		.def_static("StaticClass", &USeqCond_CompareObject::StaticClass, py::return_value_policy::reference)
           ;
 }

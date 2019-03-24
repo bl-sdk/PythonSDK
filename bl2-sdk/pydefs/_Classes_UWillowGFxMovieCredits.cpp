@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowGFxMovieCredits(py::module &m)
 {
     py::class_< UWillowGFxMovieCredits,  UWillowGFxMovie3D   >(m, "UWillowGFxMovieCredits")
+		.def_static("StaticClass", &UWillowGFxMovieCredits::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ceStarted", &UWillowGFxMovieCredits::ceStarted)
         .def_readwrite("ceFinished", &UWillowGFxMovieCredits::ceFinished)
         .def_readwrite("Credits", &UWillowGFxMovieCredits::Credits)

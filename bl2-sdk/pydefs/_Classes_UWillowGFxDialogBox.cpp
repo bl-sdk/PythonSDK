@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowGFxDialogBox(py::module &m)
 {
     py::class_< UWillowGFxDialogBox,  UWillowGFxMovie   >(m, "UWillowGFxDialogBox")
+		.def_static("StaticClass", &UWillowGFxDialogBox::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Layouts", &UWillowGFxDialogBox::Layouts)
         .def_readwrite("Buttons", &UWillowGFxDialogBox::Buttons)
         .def_readwrite("DlgCaptionMarkup", &UWillowGFxDialogBox::DlgCaptionMarkup)

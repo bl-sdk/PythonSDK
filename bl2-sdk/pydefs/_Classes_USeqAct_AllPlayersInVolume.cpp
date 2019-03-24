@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USeqAct_AllPlayersInVolume(py::module &m)
 {
     py::class_< USeqAct_AllPlayersInVolume,  USequenceAction   >(m, "USeqAct_AllPlayersInVolume")
+		.def_static("StaticClass", &USeqAct_AllPlayersInVolume::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Volumes", &USeqAct_AllPlayersInVolume::Volumes)
         .def("AllPlayersInVolumes", &USeqAct_AllPlayersInVolume::AllPlayersInVolumes)
         .def("PlayerIsInAVolume", &USeqAct_AllPlayersInVolume::PlayerIsInAVolume)

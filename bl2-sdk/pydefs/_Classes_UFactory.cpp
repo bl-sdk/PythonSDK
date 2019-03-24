@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UFactory(py::module &m)
 {
     py::class_< UFactory,  UObject   >(m, "UFactory")
+		.def_static("StaticClass", &UFactory::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SupportedClass", &UFactory::SupportedClass)
         .def_readwrite("ContextClass", &UFactory::ContextClass)
         .def_readwrite("Description", &UFactory::Description)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UIMissionDirector(py::module &m)
 {
     py::class_< UIMissionDirector,  UInterface   >(m, "UIMissionDirector")
+		.def_static("StaticClass", &UIMissionDirector::StaticClass, py::return_value_policy::reference)
         .def("OnPlayerClosedMissionUI", &UIMissionDirector::OnPlayerClosedMissionUI)
         .def("OnPlayerOpenedMissionUI", &UIMissionDirector::OnPlayerOpenedMissionUI)
         .def("HasAnyMissionsForPlayer", &UIMissionDirector::HasAnyMissionsForPlayer)

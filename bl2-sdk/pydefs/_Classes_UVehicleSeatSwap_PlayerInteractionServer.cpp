@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UVehicleSeatSwap_PlayerInteractionServer(py::module &m)
 {
     py::class_< UVehicleSeatSwap_PlayerInteractionServer,  UPlayerInteractionServer   >(m, "UVehicleSeatSwap_PlayerInteractionServer")
+		.def_static("StaticClass", &UVehicleSeatSwap_PlayerInteractionServer::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PlayerVehicle", &UVehicleSeatSwap_PlayerInteractionServer::PlayerVehicle)
         .def_readwrite("RequestedSeat", &UVehicleSeatSwap_PlayerInteractionServer::RequestedSeat)
         .def("IsValid", &UVehicleSeatSwap_PlayerInteractionServer::IsValid)

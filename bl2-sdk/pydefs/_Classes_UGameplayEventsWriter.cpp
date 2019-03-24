@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGameplayEventsWriter(py::module &m)
 {
     py::class_< UGameplayEventsWriter,  UGameplayEvents   >(m, "UGameplayEventsWriter")
+		.def_static("StaticClass", &UGameplayEventsWriter::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Game", &UGameplayEventsWriter::Game)
         .def("RecordCoverLinkFireLinks", &UGameplayEventsWriter::RecordCoverLinkFireLinks)
         .def("RecordAIPathFail", &UGameplayEventsWriter::RecordAIPathFail)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UHUDWidget_WorldSpace(py::module &m)
 {
     py::class_< UHUDWidget_WorldSpace,  UHUDWidget_Base   >(m, "UHUDWidget_WorldSpace")
+		.def_static("StaticClass", &UHUDWidget_WorldSpace::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ObjectiveIcons", &UHUDWidget_WorldSpace::ObjectiveIcons)
         .def_readwrite("PlayerIcons", &UHUDWidget_WorldSpace::PlayerIcons)
         .def_readwrite("NPCAllyIcons", &UHUDWidget_WorldSpace::NPCAllyIcons)

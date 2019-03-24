@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AKActor(py::module &m)
 {
     py::class_< AKActor,  ADynamicSMActor   >(m, "AKActor")
+		.def_static("StaticClass", &AKActor::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ImpactEffectComponent", &AKActor::ImpactEffectComponent)
         .def_readwrite("ImpactSoundComponent", &AKActor::ImpactSoundComponent)
         .def_readwrite("ImpactSoundComponent2", &AKActor::ImpactSoundComponent2)

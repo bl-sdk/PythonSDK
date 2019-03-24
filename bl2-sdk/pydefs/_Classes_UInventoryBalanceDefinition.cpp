@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UInventoryBalanceDefinition(py::module &m)
 {
     py::class_< UInventoryBalanceDefinition,  UBaseBalanceDefinition   >(m, "UInventoryBalanceDefinition")
+		.def_static("StaticClass", &UInventoryBalanceDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIDlcLicensableObject", &UInventoryBalanceDefinition::VfTable_IIDlcLicensableObject)
         .def_readwrite("InventoryDefinition", &UInventoryBalanceDefinition::InventoryDefinition)
         .def_readwrite("BaseDefinition", &UInventoryBalanceDefinition::BaseDefinition)

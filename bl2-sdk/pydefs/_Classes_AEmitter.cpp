@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AEmitter(py::module &m)
 {
     py::class_< AEmitter,  AActor   >(m, "AEmitter")
+		.def_static("StaticClass", &AEmitter::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ParticleSystemComponent", &AEmitter::ParticleSystemComponent)
         .def_readwrite("LightEnvironment", &AEmitter::LightEnvironment)
         .def("Behavior_Destroy", &AEmitter::Behavior_Destroy)

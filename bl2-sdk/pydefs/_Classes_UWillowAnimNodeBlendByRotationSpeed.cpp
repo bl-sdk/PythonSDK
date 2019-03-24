@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowAnimNodeBlendByRotationSpeed(py::module &m)
 {
     py::class_< UWillowAnimNodeBlendByRotationSpeed,  UAnimNodeBlendList   >(m, "UWillowAnimNodeBlendByRotationSpeed")
+		.def_static("StaticClass", &UWillowAnimNodeBlendByRotationSpeed::StaticClass, py::return_value_policy::reference)
         .def_readwrite("BlendTime", &UWillowAnimNodeBlendByRotationSpeed::BlendTime)
         .def_readwrite("ThresholdRate", &UWillowAnimNodeBlendByRotationSpeed::ThresholdRate)
         .def_readwrite("ReferenceSpeed", &UWillowAnimNodeBlendByRotationSpeed::ReferenceSpeed)

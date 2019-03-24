@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UCameraModifierCrossfade(py::module &m)
 {
     py::class_< UCameraModifierCrossfade,  UGearboxCameraModifier   >(m, "UCameraModifierCrossfade")
+		.def_static("StaticClass", &UCameraModifierCrossfade::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ModifierA", &UCameraModifierCrossfade::ModifierA)
         .def_readwrite("ModifierB", &UCameraModifierCrossfade::ModifierB)
         .def_readwrite("CurModifierNdx", &UCameraModifierCrossfade::CurModifierNdx)

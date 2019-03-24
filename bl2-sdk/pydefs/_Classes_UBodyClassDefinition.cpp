@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBodyClassDefinition(py::module &m)
 {
     py::class_< UBodyClassDefinition,  UGBXDefinition   >(m, "UBodyClassDefinition")
+		.def_static("StaticClass", &UBodyClassDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIHitRegionInfoProvider", &UBodyClassDefinition::VfTable_IIHitRegionInfoProvider)
         .def_readwrite("HeadLookAtName", &UBodyClassDefinition::HeadLookAtName)
         .def_readwrite("BodyTag", &UBodyClassDefinition::BodyTag)

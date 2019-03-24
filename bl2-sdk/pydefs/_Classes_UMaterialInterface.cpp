@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UMaterialInterface(py::module &m)
 {
     py::class_< UMaterialInterface,  UObject   >(m, "UMaterialInterface")
+		.def_static("StaticClass", &UMaterialInterface::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ParentRefFence", &UMaterialInterface::ParentRefFence)
         .def_readwrite("LightmassSettings", &UMaterialInterface::LightmassSettings)
         .def_readwrite("CustomSkinType", &UMaterialInterface::CustomSkinType)

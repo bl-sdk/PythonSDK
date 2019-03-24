@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_CoordinatedEffect(py::module &m)
 {
     py::class_< UBehavior_CoordinatedEffect,  UBehaviorBase   >(m, "UBehavior_CoordinatedEffect")
+		.def_static("StaticClass", &UBehavior_CoordinatedEffect::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Status", &UBehavior_CoordinatedEffect::Status)
         .def_readwrite("Effect", &UBehavior_CoordinatedEffect::Effect)
         .def("ApplyBehaviorToContext", &UBehavior_CoordinatedEffect::ApplyBehaviorToContext)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWebRequest(py::module &m)
 {
     py::class_< UWebRequest,  UObject   >(m, "UWebRequest")
+		.def_static("StaticClass", &UWebRequest::StaticClass, py::return_value_policy::reference)
         .def_readwrite("RemoteAddr", &UWebRequest::RemoteAddr)
         .def_readwrite("URI", &UWebRequest::URI)
         .def_readwrite("UserName", &UWebRequest::UserName)

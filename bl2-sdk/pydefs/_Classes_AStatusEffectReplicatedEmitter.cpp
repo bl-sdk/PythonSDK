@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AStatusEffectReplicatedEmitter(py::module &m)
 {
     py::class_< AStatusEffectReplicatedEmitter,  AEmitter   >(m, "AStatusEffectReplicatedEmitter")
+		.def_static("StaticClass", &AStatusEffectReplicatedEmitter::StaticClass, py::return_value_policy::reference)
         .def_readwrite("EmitterTemplate", &AStatusEffectReplicatedEmitter::EmitterTemplate)
         .def_readwrite("ServerLifeSpan", &AStatusEffectReplicatedEmitter::ServerLifeSpan)
         .def_readwrite("RandomTTL", &AStatusEffectReplicatedEmitter::RandomTTL)

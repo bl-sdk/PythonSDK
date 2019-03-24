@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPrefabSequence(py::module &m)
 {
     py::class_< UPrefabSequence,  USequence   >(m, "UPrefabSequence")
+		.def_static("StaticClass", &UPrefabSequence::StaticClass, py::return_value_policy::reference)
         .def_readwrite("OwnerPrefab", &UPrefabSequence::OwnerPrefab)
         .def("GetOwnerPrefab", &UPrefabSequence::GetOwnerPrefab, py::return_value_policy::reference)
         .def("SetOwnerPrefab", &UPrefabSequence::SetOwnerPrefab)

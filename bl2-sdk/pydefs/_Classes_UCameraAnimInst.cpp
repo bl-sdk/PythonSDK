@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UCameraAnimInst(py::module &m)
 {
     py::class_< UCameraAnimInst,  UObject   >(m, "UCameraAnimInst")
+		.def_static("StaticClass", &UCameraAnimInst::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CamAnim", &UCameraAnimInst::CamAnim)
         .def_readwrite("InterpGroupInst", &UCameraAnimInst::InterpGroupInst)
         .def_readwrite("CurTime", &UCameraAnimInst::CurTime)

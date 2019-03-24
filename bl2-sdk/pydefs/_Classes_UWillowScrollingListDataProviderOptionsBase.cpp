@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowScrollingListDataProviderOptionsBase(py::module &m)
 {
     py::class_< UWillowScrollingListDataProviderOptionsBase,  UObject   >(m, "UWillowScrollingListDataProviderOptionsBase")
+		.def_static("StaticClass", &UWillowScrollingListDataProviderOptionsBase::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MyOptionsMovie", &UWillowScrollingListDataProviderOptionsBase::MyOptionsMovie)
         .def_readwrite("RestartSettingInitialValues", &UWillowScrollingListDataProviderOptionsBase::RestartSettingInitialValues)
         .def_readwrite("Descriptions", &UWillowScrollingListDataProviderOptionsBase::Descriptions)

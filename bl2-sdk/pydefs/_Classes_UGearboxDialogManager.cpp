@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGearboxDialogManager(py::module &m)
 {
     py::class_< UGearboxDialogManager,  UObject   >(m, "UGearboxDialogManager")
+		.def_static("StaticClass", &UGearboxDialogManager::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Talkers", &UGearboxDialogManager::Talkers)
         .def_readwrite("DisabledTalkers", &UGearboxDialogManager::DisabledTalkers)
         .def_readwrite("Groups", &UGearboxDialogManager::Groups)

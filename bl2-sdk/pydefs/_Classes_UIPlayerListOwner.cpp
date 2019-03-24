@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UIPlayerListOwner(py::module &m)
 {
     py::class_< UIPlayerListOwner,  UInterface   >(m, "UIPlayerListOwner")
+		.def_static("StaticClass", &UIPlayerListOwner::StaticClass, py::return_value_policy::reference)
         .def("eventPlayUISound", &UIPlayerListOwner::eventPlayUISound)
         .def("GetPlayerDetailsMovieDef", &UIPlayerListOwner::GetPlayerDetailsMovieDef, py::return_value_policy::reference)
         .def("GetFriend", &UIPlayerListOwner::GetFriend)

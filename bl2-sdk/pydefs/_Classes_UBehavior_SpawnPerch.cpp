@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_SpawnPerch(py::module &m)
 {
     py::class_< UBehavior_SpawnPerch,  UBehaviorBase   >(m, "UBehavior_SpawnPerch")
+		.def_static("StaticClass", &UBehavior_SpawnPerch::StaticClass, py::return_value_policy::reference)
         .def_readwrite("AttachPoint", &UBehavior_SpawnPerch::AttachPoint)
         .def_readwrite("PerchDef", &UBehavior_SpawnPerch::PerchDef)
         .def_readwrite("PerchLifetime", &UBehavior_SpawnPerch::PerchLifetime)

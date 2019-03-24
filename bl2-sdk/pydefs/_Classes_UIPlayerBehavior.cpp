@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UIPlayerBehavior(py::module &m)
 {
     py::class_< UIPlayerBehavior,  UInterface   >(m, "UIPlayerBehavior")
+		.def_static("StaticClass", &UIPlayerBehavior::StaticClass, py::return_value_policy::reference)
         .def("Behavior_StopRevive", &UIPlayerBehavior::Behavior_StopRevive)
         .def("Behavior_StartRevive", &UIPlayerBehavior::Behavior_StartRevive)
         .def("GetPlayerLoot", &UIPlayerBehavior::GetPlayerLoot)

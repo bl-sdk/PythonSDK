@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UExposureUtilityFixedCost(py::module &m)
 {
     py::class_< UExposureUtilityFixedCost,  UExposureUtilityBase   >(m, "UExposureUtilityFixedCost")
+		.def_static("StaticClass", &UExposureUtilityFixedCost::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CloseDistanceSquared", &UExposureUtilityFixedCost::CloseDistanceSquared)
         .def_readwrite("MedDistanceSquared", &UExposureUtilityFixedCost::MedDistanceSquared)
         .def_readwrite("MaxLineChecksPerFrame", &UExposureUtilityFixedCost::MaxLineChecksPerFrame)

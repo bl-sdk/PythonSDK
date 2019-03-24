@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowUIInteraction(py::module &m)
 {
     py::class_< UWillowUIInteraction,  UUIInteraction   >(m, "UWillowUIInteraction")
+		.def_static("StaticClass", &UWillowUIInteraction::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIBalancedActor", &UWillowUIInteraction::VfTable_IIBalancedActor)
         .def_readwrite("ExpandedMissions", &UWillowUIInteraction::ExpandedMissions)
         .def_readwrite("BlankEntry", &UWillowUIInteraction::BlankEntry)

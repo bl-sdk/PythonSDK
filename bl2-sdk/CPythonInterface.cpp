@@ -4753,6 +4753,7 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	Export_pystes_UBehavior_SpawnProjectileFromImpact_FProjectileBehaviorSequenceStateData(m);
 	Export_pystes_UBehavior_SpawnProjectile_FProjectileBehaviorSequenceStateData(m);
 	Export_pystes_UTerrainWeightMapTexture_FTerrainWeightedMaterial(m);
+	Export_pystes_gamedefines(m);
 	m.def("Log", [](std::string in) { Logging::Log(in.c_str(), in.length()); });
 }
 

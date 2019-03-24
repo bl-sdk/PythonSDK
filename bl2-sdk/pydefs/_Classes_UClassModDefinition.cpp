@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UClassModDefinition(py::module &m)
 {
     py::class_< UClassModDefinition,  UEquipableItemDefinition   >(m, "UClassModDefinition")
+		.def_static("StaticClass", &UClassModDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ManufacturerOverride", &UClassModDefinition::ManufacturerOverride)
         .def_readwrite("DisplayClassModAtBeginningOfName", &UClassModDefinition::DisplayClassModAtBeginningOfName)
         .def("DisplayTitleAtEnd", &UClassModDefinition::DisplayTitleAtEnd)

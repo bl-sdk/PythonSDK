@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AFogVolumeConstantDensityInfo(py::module &m)
 {
     py::class_< AFogVolumeConstantDensityInfo,  AInfo   >(m, "AFogVolumeConstantDensityInfo")
+		.def_static("StaticClass", &AFogVolumeConstantDensityInfo::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DensityComponent", &AFogVolumeDensityInfo::DensityComponent)
         .def_readwrite("AutomaticMeshComponent", &AFogVolumeDensityInfo::AutomaticMeshComponent)
         .def("ApplyCheckpointRecord", &AFogVolumeDensityInfo::ApplyCheckpointRecord)

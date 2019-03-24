@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ULoadCharacterLobbyGFxObject(py::module &m)
 {
     py::class_< ULoadCharacterLobbyGFxObject,  UGFxObject   >(m, "ULoadCharacterLobbyGFxObject")
+		.def_static("StaticClass", &ULoadCharacterLobbyGFxObject::StaticClass, py::return_value_policy::reference)
         .def("SetQuadrant", &ULoadCharacterLobbyGFxObject::SetQuadrant)
         .def("SetTooltips", &ULoadCharacterLobbyGFxObject::SetTooltips)
         .def("SetSlotData", &ULoadCharacterLobbyGFxObject::SetSlotData)

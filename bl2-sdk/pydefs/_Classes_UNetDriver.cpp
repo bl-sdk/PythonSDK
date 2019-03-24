@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UNetDriver(py::module &m)
 {
     py::class_< UNetDriver,  USubsystem   >(m, "UNetDriver")
+		.def_static("StaticClass", &UNetDriver::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ConnectionTimeout", &UNetDriver::ConnectionTimeout)
         .def_readwrite("InitialConnectTimeout", &UNetDriver::InitialConnectTimeout)
         .def_readwrite("KeepAliveTime", &UNetDriver::KeepAliveTime)

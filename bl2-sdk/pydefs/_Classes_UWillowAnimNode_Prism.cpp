@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowAnimNode_Prism(py::module &m)
 {
     py::class_< UWillowAnimNode_Prism,  UAnimNodeBlendBase   >(m, "UWillowAnimNode_Prism")
+		.def_static("StaticClass", &UWillowAnimNode_Prism::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PrismData", &UWillowAnimNode_Prism::PrismData)
         .def_readwrite("BlendTime", &UWillowAnimNode_Prism::BlendTime)
         .def_readwrite("MeshOffsetTurnThreshold", &UWillowAnimNode_Prism::MeshOffsetTurnThreshold)

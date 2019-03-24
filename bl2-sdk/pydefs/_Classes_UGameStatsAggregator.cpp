@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGameStatsAggregator(py::module &m)
 {
     py::class_< UGameStatsAggregator,  UGameplayEventsHandler   >(m, "UGameStatsAggregator")
+		.def_static("StaticClass", &UGameStatsAggregator::StaticClass, py::return_value_policy::reference)
         .def_readwrite("GameState", &UGameStatsAggregator::GameState)
         .def_readwrite("AggregatesList", &UGameStatsAggregator::AggregatesList)
         .def_readwrite("AggregateEventsMapping", &UGameStatsAggregator::AggregateEventsMapping)

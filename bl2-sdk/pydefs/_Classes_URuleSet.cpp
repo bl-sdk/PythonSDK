@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_URuleSet(py::module &m)
 {
     py::class_< URuleSet,  UObject   >(m, "URuleSet")
+		.def_static("StaticClass", &URuleSet::StaticClass, py::return_value_policy::reference)
         .def_readwrite("TheAIFactory", &URuleSet::TheAIFactory)
         .def_readwrite("RuleTemplateRefs", &URuleSet::RuleTemplateRefs)
         .def_readwrite("Rules", &URuleSet::Rules)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UNetworkOptionsGFxMovie(py::module &m)
 {
     py::class_< UNetworkOptionsGFxMovie,  UWillowGFxMovie   >(m, "UNetworkOptionsGFxMovie")
+		.def_static("StaticClass", &UNetworkOptionsGFxMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("NetworkOptionsObject", &UNetworkOptionsGFxMovie::NetworkOptionsObject)
         .def_readwrite("OwningMovie", &UNetworkOptionsGFxMovie::OwningMovie)
         .def("ResolveNetworkTypeString", &UNetworkOptionsGFxMovie::ResolveNetworkTypeString)

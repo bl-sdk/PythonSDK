@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ACameraActor(py::module &m)
 {
     py::class_< ACameraActor,  AActor   >(m, "ACameraActor")
+		.def_static("StaticClass", &ACameraActor::StaticClass, py::return_value_policy::reference)
         .def_readwrite("AspectRatio", &ACameraActor::AspectRatio)
         .def_readwrite("FOVAngle", &ACameraActor::FOVAngle)
         .def_readwrite("CamOverridePostProcessAlpha", &ACameraActor::CamOverridePostProcessAlpha)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UReachSpec(py::module &m)
 {
     py::class_< UReachSpec,  UObject   >(m, "UReachSpec")
+		.def_static("StaticClass", &UReachSpec::StaticClass, py::return_value_policy::reference)
         .def_readwrite("NavOctreeObject", &UReachSpec::NavOctreeObject)
         .def_readwrite("Direction", &UReachSpec::Direction)
         .def_readwrite("BlockedBy", &UReachSpec::BlockedBy)

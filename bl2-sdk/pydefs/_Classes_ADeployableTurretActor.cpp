@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ADeployableTurretActor(py::module &m)
 {
     py::class_< ADeployableTurretActor,  AWillowAIPawn   >(m, "ADeployableTurretActor")
+		.def_static("StaticClass", &ADeployableTurretActor::StaticClass, py::return_value_policy::reference)
         .def_readwrite("BounceImpact", &ADeployableTurretActor::BounceImpact)
         .def_readwrite("AtRestSpeedThreshold", &ADeployableTurretActor::AtRestSpeedThreshold)
         .def_readwrite("TurretEffects", &ADeployableTurretActor::TurretEffects)

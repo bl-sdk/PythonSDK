@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAnimNodeSpecialMoveBlend(py::module &m)
 {
     py::class_< UAnimNodeSpecialMoveBlend,  UAnimNodeSlot   >(m, "UAnimNodeSpecialMoveBlend")
+		.def_static("StaticClass", &UAnimNodeSpecialMoveBlend::StaticClass, py::return_value_policy::reference)
         .def_readwrite("AnimState", &UAnimNodeSpecialMoveBlend::AnimState)
         .def_readwrite("SavedBlendOutTime", &UAnimNodeSpecialMoveBlend::SavedBlendOutTime)
         .def_readwrite("SMI", &UAnimNodeSpecialMoveBlend::SMI)

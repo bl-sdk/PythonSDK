@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowPlayerStats(py::module &m)
 {
     py::class_< AWillowPlayerStats,  AInfo   >(m, "AWillowPlayerStats")
+		.def_static("StaticClass", &AWillowPlayerStats::StaticClass, py::return_value_policy::reference)
         .def_readwrite("nNumConsecutiveSniperRifleKills", &AWillowPlayerStats::nNumConsecutiveSniperRifleKills)
         .def_readwrite("VfTable_ISparkUpdateCallback", &AWillowBaseStats::VfTable_ISparkUpdateCallback)
         .def_readwrite("SaveVersion", &AWillowBaseStats::SaveVersion)

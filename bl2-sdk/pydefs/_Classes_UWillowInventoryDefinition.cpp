@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowInventoryDefinition(py::module &m)
 {
     py::class_< UWillowInventoryDefinition,  UGBXDefinition   >(m, "UWillowInventoryDefinition")
+		.def_static("StaticClass", &UWillowInventoryDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("InventoryClass", &UWillowInventoryDefinition::InventoryClass)
         .def_readwrite("PlayerDroppability", &UWillowInventoryDefinition::PlayerDroppability)
         .def_readwrite("FormOfCurrency", &UWillowInventoryDefinition::FormOfCurrency)

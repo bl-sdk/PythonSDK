@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGearboxNavigationHandle(py::module &m)
 {
     py::class_< UGearboxNavigationHandle,  UNavigationHandle   >(m, "UGearboxNavigationHandle")
+		.def_static("StaticClass", &UGearboxNavigationHandle::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DesiredMovementSpeed", &UGearboxNavigationHandle::DesiredMovementSpeed)
         .def_readwrite("ActiveSpecialNavMeshMove", &UGearboxNavigationHandle::ActiveSpecialNavMeshMove)
         .def_readwrite("CurrentGoal", &UGearboxNavigationHandle::CurrentGoal)

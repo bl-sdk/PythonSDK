@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UReceivedCreditsMessage(py::module &m)
 {
     py::class_< UReceivedCreditsMessage,  UWillowLocalMessage   >(m, "UReceivedCreditsMessage")
+		.def_static("StaticClass", &UReceivedCreditsMessage::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ReceivedCredits", &UReceivedCreditsMessage::ReceivedCredits)
         .def_readwrite("SelfReceivedCredits", &UReceivedCreditsMessage::SelfReceivedCredits)
         .def_readwrite("NumberOfCredits", &UReceivedCreditsMessage::NumberOfCredits)

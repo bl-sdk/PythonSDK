@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USeqAct_HeadTrackingControl(py::module &m)
 {
     py::class_< USeqAct_HeadTrackingControl,  USequenceAction   >(m, "USeqAct_HeadTrackingControl")
+		.def_static("StaticClass", &USeqAct_HeadTrackingControl::StaticClass, py::return_value_policy::reference)
         .def_readwrite("TrackControllerName", &USeqAct_HeadTrackingControl::TrackControllerName)
         .def_readwrite("LookAtActorRadius", &USeqAct_HeadTrackingControl::LookAtActorRadius)
         .def_readwrite("MaxLookAtTime", &USeqAct_HeadTrackingControl::MaxLookAtTime)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ULevelStreaming(py::module &m)
 {
     py::class_< ULevelStreaming,  UObject   >(m, "ULevelStreaming")
+		.def_static("StaticClass", &ULevelStreaming::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PackageName", &ULevelStreaming::PackageName)
         .def_readwrite("LoadedLevel", &ULevelStreaming::LoadedLevel)
         .def_readwrite("Offset", &ULevelStreaming::Offset)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBodyWeaponHoldDefinition(py::module &m)
 {
     py::class_< UBodyWeaponHoldDefinition,  UGBXDefinition   >(m, "UBodyWeaponHoldDefinition")
+		.def_static("StaticClass", &UBodyWeaponHoldDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("HoldName", &UBodyWeaponHoldDefinition::HoldName)
         .def_readwrite("EnvironmentTag", &UBodyWeaponHoldDefinition::EnvironmentTag)
         .def_readwrite("AimOffsetProfileName", &UBodyWeaponHoldDefinition::AimOffsetProfileName)

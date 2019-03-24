@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGearboxPawnSnapshotRecord(py::module &m)
 {
     py::class_< UGearboxPawnSnapshotRecord,  USnapshotRecord   >(m, "UGearboxPawnSnapshotRecord")
+		.def_static("StaticClass", &UGearboxPawnSnapshotRecord::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PawnIconZOffset", &UGearboxPawnSnapshotRecord::PawnIconZOffset)
         .def_readwrite("PawnExposureZOffset", &UGearboxPawnSnapshotRecord::PawnExposureZOffset)
         .def_readwrite("CollectionNameOffset", &UGearboxPawnSnapshotRecord::CollectionNameOffset)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UCameraModifierLookAt(py::module &m)
 {
     py::class_< UCameraModifierLookAt,  UCameraModifier   >(m, "UCameraModifierLookAt")
+		.def_static("StaticClass", &UCameraModifierLookAt::StaticClass, py::return_value_policy::reference)
         .def_readwrite("LookAtMode", &UCameraModifierLookAt::LookAtMode)
         .def_readwrite("Duration", &UCameraModifierLookAt::Duration)
         .def_readwrite("TimeElapsed", &UCameraModifierLookAt::TimeElapsed)

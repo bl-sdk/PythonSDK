@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UParticleModuleRequired(py::module &m)
 {
     py::class_< UParticleModuleRequired,  UObject   >(m, "UParticleModuleRequired")
+		.def_static("StaticClass", &UParticleModuleRequired::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Material", &UParticleModuleRequired::Material)
         .def_readwrite("ScreenAlignment", &UParticleModuleRequired::ScreenAlignment)
         .def_readwrite("SortMode", &UParticleModuleRequired::SortMode)

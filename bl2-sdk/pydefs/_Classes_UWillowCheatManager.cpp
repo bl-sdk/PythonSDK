@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowCheatManager(py::module &m)
 {
     py::class_< UWillowCheatManager,  UCheatManager   >(m, "UWillowCheatManager")
+		.def_static("StaticClass", &UWillowCheatManager::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ClassModPoolDefinitionName", &UWillowCheatManager::ClassModPoolDefinitionName)
         .def_readwrite("CurrencyBalanceFormulaMultiplier", &UWillowCheatManager::CurrencyBalanceFormulaMultiplier)
         .def_readwrite("CurrencyBalanceFormulaLevel", &UWillowCheatManager::CurrencyBalanceFormulaLevel)

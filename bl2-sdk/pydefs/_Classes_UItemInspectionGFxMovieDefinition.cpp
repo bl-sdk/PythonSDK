@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UItemInspectionGFxMovieDefinition(py::module &m)
 {
     py::class_< UItemInspectionGFxMovieDefinition,  UWillowGFxMovie3DDefinition   >(m, "UItemInspectionGFxMovieDefinition")
+		.def_static("StaticClass", &UItemInspectionGFxMovieDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ItemFOV", &UItemInspectionGFxMovieDefinition::ItemFOV)
         .def_readwrite("ItemScale", &UItemInspectionGFxMovieDefinition::ItemScale)
         .def_readwrite("RotationSpeed", &UItemInspectionGFxMovieDefinition::RotationSpeed)

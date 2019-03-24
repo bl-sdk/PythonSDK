@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowEmit_HitEffect(py::module &m)
 {
     py::class_< AWillowEmit_HitEffect,  AWillowReplicatedEmitter   >(m, "AWillowEmit_HitEffect")
+		.def_static("StaticClass", &AWillowEmit_HitEffect::StaticClass, py::return_value_policy::reference)
         .def_readwrite("BoneName", &AWillowEmit_HitEffect::BoneName)
         .def("AttachTo", &AWillowEmit_HitEffect::AttachTo)
         .def("eventReplicatedEvent", &AWillowEmit_HitEffect::eventReplicatedEvent)

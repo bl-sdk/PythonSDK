@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USeqVar_Named(py::module &m)
 {
     py::class_< USeqVar_Named,  USequenceVariable   >(m, "USeqVar_Named")
+		.def_static("StaticClass", &USeqVar_Named::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ExpectedType", &USeqVar_Named::ExpectedType)
         .def_readwrite("FindVarName", &USeqVar_Named::FindVarName)
           ;

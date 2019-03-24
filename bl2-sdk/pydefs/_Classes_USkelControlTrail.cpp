@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USkelControlTrail(py::module &m)
 {
     py::class_< USkelControlTrail,  USkelControlBase   >(m, "USkelControlTrail")
+		.def_static("StaticClass", &USkelControlTrail::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ChainLength", &USkelControlTrail::ChainLength)
         .def_readwrite("ChainBoneAxis", &USkelControlTrail::ChainBoneAxis)
         .def_readwrite("TrailRelaxation", &USkelControlTrail::TrailRelaxation)

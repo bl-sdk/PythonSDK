@@ -6,5 +6,6 @@ namespace py = pybind11;
 void Export_pystes_URB_BSJointSetup(py::module &m)
 {
     py::class_< URB_BSJointSetup,  URB_ConstraintSetup   >(m, "URB_BSJointSetup")
+		.def_static("StaticClass", &URB_BSJointSetup::StaticClass, py::return_value_policy::reference)
           ;
 }

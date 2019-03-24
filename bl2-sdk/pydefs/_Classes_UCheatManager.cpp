@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UCheatManager(py::module &m)
 {
     py::class_< UCheatManager,  UObject   >(m, "UCheatManager")
+		.def_static("StaticClass", &UCheatManager::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DebugCameraControllerRef", &UCheatManager::DebugCameraControllerRef)
         .def_readwrite("DebugCameraControllerClass", &UCheatManager::DebugCameraControllerClass)
         .def_readwrite("ViewingFrom", &UCheatManager::ViewingFrom)

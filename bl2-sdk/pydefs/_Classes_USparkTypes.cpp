@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USparkTypes(py::module &m)
 {
     py::class_< USparkTypes,  UObject   >(m, "USparkTypes")
+		.def_static("StaticClass", &USparkTypes::StaticClass, py::return_value_policy::reference)
         .def("UTF8toString", &USparkTypes::UTF8toString)
         .def("OnEntitlementsUpdated", &USparkTypes::OnEntitlementsUpdated)
         .def("OnSparkEmergencyMessageUpdated", &USparkTypes::OnSparkEmergencyMessageUpdated)

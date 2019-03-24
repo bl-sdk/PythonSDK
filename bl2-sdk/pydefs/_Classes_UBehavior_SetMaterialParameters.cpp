@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_SetMaterialParameters(py::module &m)
 {
     py::class_< UBehavior_SetMaterialParameters,  UBehaviorBase   >(m, "UBehavior_SetMaterialParameters")
+		.def_static("StaticClass", &UBehavior_SetMaterialParameters::StaticClass, py::return_value_policy::reference)
         .def_readwrite("AttributeContext", &UBehavior_SetMaterialParameters::AttributeContext)
         .def_readwrite("MeshSection", &UBehavior_SetMaterialParameters::MeshSection)
         .def_readwrite("ScalarParameterValues", &UBehavior_SetMaterialParameters::ScalarParameterValues)

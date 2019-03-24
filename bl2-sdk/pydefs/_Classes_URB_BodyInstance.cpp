@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_URB_BodyInstance(py::module &m)
 {
     py::class_< URB_BodyInstance,  UObject   >(m, "URB_BodyInstance")
+		.def_static("StaticClass", &URB_BodyInstance::StaticClass, py::return_value_policy::reference)
         .def_readwrite("OwnerComponent", &URB_BodyInstance::OwnerComponent)
         .def_readwrite("BodyIndex", &URB_BodyInstance::BodyIndex)
         .def_readwrite("Velocity", &URB_BodyInstance::Velocity)

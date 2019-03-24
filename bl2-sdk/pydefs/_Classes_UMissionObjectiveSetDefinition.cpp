@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UMissionObjectiveSetDefinition(py::module &m)
 {
     py::class_< UMissionObjectiveSetDefinition,  UGBXDefinition   >(m, "UMissionObjectiveSetDefinition")
+		.def_static("StaticClass", &UMissionObjectiveSetDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ObjectiveDefinitions", &UMissionObjectiveSetDefinition::ObjectiveDefinitions)
         .def_readwrite("NextSet", &UMissionObjectiveSetDefinition::NextSet)
         .def_readwrite("StationOverride", &UMissionObjectiveSetDefinition::StationOverride)

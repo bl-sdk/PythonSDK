@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGBXDefinition(py::module &m)
 {
     py::class_< UGBXDefinition,  UObject   >(m, "UGBXDefinition")
+		.def_static("StaticClass", &UGBXDefinition::StaticClass, py::return_value_policy::reference)
         .def("InitializeDefinitionActor", &UGBXDefinition::InitializeDefinitionActor)
         .def("GetDefinitionActorClass", &UGBXDefinition::GetDefinitionActorClass, py::return_value_policy::reference)
         .def("StaticGetFullNameForDefinition", &UGBXDefinition::StaticGetFullNameForDefinition)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UStatusEffectDefinition(py::module &m)
 {
     py::class_< UStatusEffectDefinition,  UGBXDefinition   >(m, "UStatusEffectDefinition")
+		.def_static("StaticClass", &UStatusEffectDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("BaseDuration", &UStatusEffectDefinition::BaseDuration)
         .def_readwrite("BaseSpreadTimeInterval", &UStatusEffectDefinition::BaseSpreadTimeInterval)
         .def_readwrite("BaseSpreadDistanceFromSource", &UStatusEffectDefinition::BaseSpreadDistanceFromSource)

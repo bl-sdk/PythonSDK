@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UMeshBeaconClient(py::module &m)
 {
     py::class_< UMeshBeaconClient,  UMeshBeacon   >(m, "UMeshBeaconClient")
+		.def_static("StaticClass", &UMeshBeaconClient::StaticClass, py::return_value_policy::reference)
         .def_readwrite("HostPendingRequest", &UMeshBeaconClient::HostPendingRequest)
         .def_readwrite("ClientPendingRequest", &UMeshBeaconClient::ClientPendingRequest)
         .def_readwrite("CurrentBandwidthTest", &UMeshBeaconClient::CurrentBandwidthTest)

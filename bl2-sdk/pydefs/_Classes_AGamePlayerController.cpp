@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AGamePlayerController(py::module &m)
 {
     py::class_< AGamePlayerController,  APlayerController   >(m, "AGamePlayerController")
+		.def_static("StaticClass", &AGamePlayerController::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CurrentSoundMode", &AGamePlayerController::CurrentSoundMode)
         .def("ClientColorFade", &AGamePlayerController::ClientColorFade)
         .def("CallMemLeakCheck", &AGamePlayerController::CallMemLeakCheck)

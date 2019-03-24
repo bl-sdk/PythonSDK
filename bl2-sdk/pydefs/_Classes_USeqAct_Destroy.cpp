@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USeqAct_Destroy(py::module &m)
 {
     py::class_< USeqAct_Destroy,  USequenceAction   >(m, "USeqAct_Destroy")
+		.def_static("StaticClass", &USeqAct_Destroy::StaticClass, py::return_value_policy::reference)
         .def_readwrite("IgnoreBasedClasses", &USeqAct_Destroy::IgnoreBasedClasses)
           ;
 }

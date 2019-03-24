@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAction_Burrow(py::module &m)
 {
     py::class_< UAction_Burrow,  UWillowActionSequencePawn   >(m, "UAction_Burrow")
+		.def_static("StaticClass", &UAction_Burrow::StaticClass, py::return_value_policy::reference)
         .def_readwrite("BurrowEnter", &UAction_Burrow::BurrowEnter)
         .def_readwrite("BurrowExit", &UAction_Burrow::BurrowExit)
         .def("CheckCloaked", &UAction_Burrow::CheckCloaked)

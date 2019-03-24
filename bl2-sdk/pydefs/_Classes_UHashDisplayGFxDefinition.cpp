@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UHashDisplayGFxDefinition(py::module &m)
 {
     py::class_< UHashDisplayGFxDefinition,  UGFxMovieDefinition   >(m, "UHashDisplayGFxDefinition")
+		.def_static("StaticClass", &UHashDisplayGFxDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("LeftSideDef", &UHashDisplayGFxDefinition::LeftSideDef)
         .def_readwrite("EmptySlotColor", &UHashDisplayGFxDefinition::EmptySlotColor)
         .def_readwrite("CardCellWidth", &UHashDisplayGFxDefinition::CardCellWidth)

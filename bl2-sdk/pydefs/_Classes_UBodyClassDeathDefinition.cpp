@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBodyClassDeathDefinition(py::module &m)
 {
     py::class_< UBodyClassDeathDefinition,  UGBXDefinition   >(m, "UBodyClassDeathDefinition")
+		.def_static("StaticClass", &UBodyClassDeathDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIBehaviorProvider", &UBodyClassDeathDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("TechDeaths", &UBodyClassDeathDefinition::TechDeaths)
         .def_readwrite("NonRagdollDeathSpecialMove", &UBodyClassDeathDefinition::NonRagdollDeathSpecialMove)

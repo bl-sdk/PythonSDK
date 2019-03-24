@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UMultitypeScrollingListGFxObject(py::module &m)
 {
     py::class_< UMultitypeScrollingListGFxObject,  UGFxObject   >(m, "UMultitypeScrollingListGFxObject")
+		.def_static("StaticClass", &UMultitypeScrollingListGFxObject::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ParentPanel", &UMultitypeScrollingListGFxObject::ParentPanel)
         .def("ContinueInitialInit", &UMultitypeScrollingListGFxObject::ContinueInitialInit)
         .def("extGameScroll", &UMultitypeScrollingListGFxObject::extGameScroll)

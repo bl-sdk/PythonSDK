@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UUIDataProvider(py::module &m)
 {
     py::class_< UUIDataProvider,  UUIRoot   >(m, "UUIDataProvider")
+		.def_static("StaticClass", &UUIDataProvider::StaticClass, py::return_value_policy::reference)
         .def_readwrite("WriteAccessType", &UUIDataProvider::WriteAccessType)
         .def_readwrite("ProviderChangedNotifies", &UUIDataProvider::ProviderChangedNotifies)
         .def("ParseTagArrayDelimiter", &UUIDataProvider::ParseTagArrayDelimiter)

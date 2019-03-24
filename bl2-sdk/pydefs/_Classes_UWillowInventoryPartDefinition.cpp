@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowInventoryPartDefinition(py::module &m)
 {
     py::class_< UWillowInventoryPartDefinition,  UGBXDefinition   >(m, "UWillowInventoryPartDefinition")
+		.def_static("StaticClass", &UWillowInventoryPartDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Material", &UWillowInventoryPartDefinition::Material)
         .def_readwrite("GestaltModeSkeletalMeshName", &UWillowInventoryPartDefinition::GestaltModeSkeletalMeshName)
         .def_readwrite("NongestaltSkeletalMesh", &UWillowInventoryPartDefinition::NongestaltSkeletalMesh)

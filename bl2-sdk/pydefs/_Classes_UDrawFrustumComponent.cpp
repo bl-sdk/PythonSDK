@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UDrawFrustumComponent(py::module &m)
 {
     py::class_< UDrawFrustumComponent,  UPrimitiveComponent   >(m, "UDrawFrustumComponent")
+		.def_static("StaticClass", &UDrawFrustumComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("FrustumColor", &UDrawFrustumComponent::FrustumColor)
         .def_readwrite("FrustumAngle", &UDrawFrustumComponent::FrustumAngle)
         .def_readwrite("FrustumAspectRatio", &UDrawFrustumComponent::FrustumAspectRatio)

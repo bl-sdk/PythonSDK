@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USeqAct_ParticleEventGenerator(py::module &m)
 {
     py::class_< USeqAct_ParticleEventGenerator,  USequenceAction   >(m, "USeqAct_ParticleEventGenerator")
+		.def_static("StaticClass", &USeqAct_ParticleEventGenerator::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Instigator", &USeqAct_ParticleEventGenerator::Instigator)
         .def_readwrite("EventNames", &USeqAct_ParticleEventGenerator::EventNames)
         .def_readwrite("EventTime", &USeqAct_ParticleEventGenerator::EventTime)

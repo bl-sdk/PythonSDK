@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowAnimNodeBlendWheeledPawn(py::module &m)
 {
     py::class_< UWillowAnimNodeBlendWheeledPawn,  UAnimNodeBlendBase   >(m, "UWillowAnimNodeBlendWheeledPawn")
+		.def_static("StaticClass", &UWillowAnimNodeBlendWheeledPawn::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DirChangeRateMin", &UWillowAnimNodeBlendWheeledPawn::DirChangeRateMin)
         .def_readwrite("DirChangeRateMax", &UWillowAnimNodeBlendWheeledPawn::DirChangeRateMax)
         .def_readwrite("BlendTime", &UWillowAnimNodeBlendWheeledPawn::BlendTime)

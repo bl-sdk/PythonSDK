@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowSystemSettings(py::module &m)
 {
     py::class_< UWillowSystemSettings,  UObject   >(m, "UWillowSystemSettings")
+		.def_static("StaticClass", &UWillowSystemSettings::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SystemOptions", &UWillowSystemSettings::SystemOptions)
         .def_readwrite("SupportedResolutions", &UWillowSystemSettings::SupportedResolutions)
         .def_readwrite("QueuedResolution", &UWillowSystemSettings::QueuedResolution)

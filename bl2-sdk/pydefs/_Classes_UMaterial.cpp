@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UMaterial(py::module &m)
 {
     py::class_< UMaterial,  UMaterialInterface   >(m, "UMaterial")
+		.def_static("StaticClass", &UMaterial::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PhysMaterial", &UMaterial::PhysMaterial)
         .def_readwrite("PhysicalMaterial", &UMaterial::PhysicalMaterial)
         .def_readwrite("PhysMaterialMask", &UMaterial::PhysMaterialMask)

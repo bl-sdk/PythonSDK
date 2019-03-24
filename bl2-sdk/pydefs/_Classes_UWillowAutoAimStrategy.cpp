@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowAutoAimStrategy(py::module &m)
 {
     py::class_< UWillowAutoAimStrategy,  UObject   >(m, "UWillowAutoAimStrategy")
+		.def_static("StaticClass", &UWillowAutoAimStrategy::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DataDefinition", &UWillowAutoAimStrategy::DataDefinition)
         .def_readwrite("CurrentFrame", &UWillowAutoAimStrategy::CurrentFrame)
         .def_readwrite("LastFrame", &UWillowAutoAimStrategy::LastFrame)

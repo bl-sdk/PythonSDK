@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGFxMovieDrawStyleRTT(py::module &m)
 {
     py::class_< UGFxMovieDrawStyleRTT,  UGFxMovieDrawStyle   >(m, "UGFxMovieDrawStyleRTT")
+		.def_static("StaticClass", &UGFxMovieDrawStyleRTT::StaticClass, py::return_value_policy::reference)
         .def_readwrite("TextureSize", &UGFxMovieDrawStyleRTT::TextureSize)
         .def_readwrite("RenderTextureMode", &UGFxMovieDrawStyleRTT::RenderTextureMode)
           ;

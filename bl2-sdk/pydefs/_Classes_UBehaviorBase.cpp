@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehaviorBase(py::module &m)
 {
     py::class_< UBehaviorBase,  UObject   >(m, "UBehaviorBase")
+		.def_static("StaticClass", &UBehaviorBase::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Context", &UBehaviorBase::Context)
         .def("IsBehaviorDebugEnabled", &UBehaviorBase::IsBehaviorDebugEnabled)
         .def("ToggleBehaviorDebug", &UBehaviorBase::ToggleBehaviorDebug)

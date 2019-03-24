@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAction_Drive_Pursuit(py::module &m)
 {
     py::class_< UAction_Drive_Pursuit,  UWillowActionSequencePawn   >(m, "UAction_Drive_Pursuit")
+		.def_static("StaticClass", &UAction_Drive_Pursuit::StaticClass, py::return_value_policy::reference)
         .def_readwrite("TargetForwardVelocityStartAction", &UAction_Drive_Pursuit::TargetForwardVelocityStartAction)
         .def_readwrite("TargetForwardVelocityStopAction", &UAction_Drive_Pursuit::TargetForwardVelocityStopAction)
         .def_readwrite("TimeBeforeExitingActionIfTargetSlowsDown", &UAction_Drive_Pursuit::TimeBeforeExitingActionIfTargetSlowsDown)

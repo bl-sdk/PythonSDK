@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UExposureUtilityBasicCaching(py::module &m)
 {
     py::class_< UExposureUtilityBasicCaching,  UExposureUtilityBase   >(m, "UExposureUtilityBasicCaching")
+		.def_static("StaticClass", &UExposureUtilityBasicCaching::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MaxCacheTime", &UExposureUtilityBasicCaching::MaxCacheTime)
         .def_readwrite("DistanceClose", &UExposureUtilityBasicCaching::DistanceClose)
         .def_readwrite("DistanceMed", &UExposureUtilityBasicCaching::DistanceMed)

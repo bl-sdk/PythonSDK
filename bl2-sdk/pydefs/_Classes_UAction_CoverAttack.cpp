@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAction_CoverAttack(py::module &m)
 {
     py::class_< UAction_CoverAttack,  UWillowActionSequencePawn   >(m, "UAction_CoverAttack")
+		.def_static("StaticClass", &UAction_CoverAttack::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Limits", &UAction_CoverAttack::Limits)
         .def_readwrite("LineOfSightTime", &UAction_CoverAttack::LineOfSightTime)
         .def_readwrite("MyCover", &UAction_CoverAttack::MyCover)

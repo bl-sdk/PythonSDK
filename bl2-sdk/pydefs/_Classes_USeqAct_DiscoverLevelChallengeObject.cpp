@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USeqAct_DiscoverLevelChallengeObject(py::module &m)
 {
     py::class_< USeqAct_DiscoverLevelChallengeObject,  USequenceAction   >(m, "USeqAct_DiscoverLevelChallengeObject")
+		.def_static("StaticClass", &USeqAct_DiscoverLevelChallengeObject::StaticClass, py::return_value_policy::reference)
         .def_readwrite("LevelChallengeObject", &USeqAct_DiscoverLevelChallengeObject::LevelChallengeObject)
           ;
 }

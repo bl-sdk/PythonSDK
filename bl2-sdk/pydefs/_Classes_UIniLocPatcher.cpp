@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UIniLocPatcher(py::module &m)
 {
     py::class_< UIniLocPatcher,  UObject   >(m, "UIniLocPatcher")
+		.def_static("StaticClass", &UIniLocPatcher::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Files", &UIniLocPatcher::Files)
         .def_readwrite("TitleFileInterface", &UIniLocPatcher::TitleFileInterface)
         .def("UpdateLocFileName", &UIniLocPatcher::UpdateLocFileName)

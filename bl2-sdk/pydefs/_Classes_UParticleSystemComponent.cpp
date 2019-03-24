@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UParticleSystemComponent(py::module &m)
 {
     py::class_< UParticleSystemComponent,  UPrimitiveComponent   >(m, "UParticleSystemComponent")
+		.def_static("StaticClass", &UParticleSystemComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Template", &UParticleSystemComponent::Template)
         .def_readwrite("LightEnvironmentClass", &UParticleSystemComponent::LightEnvironmentClass)
         .def_readwrite("LightEnvironmentSharedInstigator", &UParticleSystemComponent::LightEnvironmentSharedInstigator)

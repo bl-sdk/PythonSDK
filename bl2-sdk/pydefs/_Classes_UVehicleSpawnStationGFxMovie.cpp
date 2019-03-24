@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UVehicleSpawnStationGFxMovie(py::module &m)
 {
     py::class_< UVehicleSpawnStationGFxMovie,  UWillowGFxMovie3D   >(m, "UVehicleSpawnStationGFxMovie")
+		.def_static("StaticClass", &UVehicleSpawnStationGFxMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIStreamingDataEvent", &UVehicleSpawnStationGFxMovie::VfTable_IIStreamingDataEvent)
         .def_readwrite("VSSWrapperObj", &UVehicleSpawnStationGFxMovie::VSSWrapperObj)
         .def_readwrite("VehicleFamilySelector", &UVehicleSpawnStationGFxMovie::VehicleFamilySelector)

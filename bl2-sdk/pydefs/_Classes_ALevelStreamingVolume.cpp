@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ALevelStreamingVolume(py::module &m)
 {
     py::class_< ALevelStreamingVolume,  AVolume   >(m, "ALevelStreamingVolume")
+		.def_static("StaticClass", &ALevelStreamingVolume::StaticClass, py::return_value_policy::reference)
         .def_readwrite("StreamingLevels", &ALevelStreamingVolume::StreamingLevels)
         .def_readwrite("StreamingUsage", &ALevelStreamingVolume::StreamingUsage)
         .def_readwrite("Usage", &ALevelStreamingVolume::Usage)

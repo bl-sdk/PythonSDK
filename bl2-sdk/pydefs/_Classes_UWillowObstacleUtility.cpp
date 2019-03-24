@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowObstacleUtility(py::module &m)
 {
     py::class_< UWillowObstacleUtility,  UObject   >(m, "UWillowObstacleUtility")
+		.def_static("StaticClass", &UWillowObstacleUtility::StaticClass, py::return_value_policy::reference)
         .def_readwrite("GridSize", &UWillowObstacleUtility::GridSize)
         .def_readwrite("MaxTime", &UWillowObstacleUtility::MaxTime)
         .def_readwrite("MaxDist", &UWillowObstacleUtility::MaxDist)

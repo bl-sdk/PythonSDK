@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowCharacterClassDefinition(py::module &m)
 {
     py::class_< UWillowCharacterClassDefinition,  UCharacterClassDefinition   >(m, "UWillowCharacterClassDefinition")
+		.def_static("StaticClass", &UWillowCharacterClassDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIBehaviorProvider", &UWillowCharacterClassDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("AttributeParentClass", &UWillowCharacterClassDefinition::AttributeParentClass)
         .def_readwrite("AttributeStartingValues", &UWillowCharacterClassDefinition::AttributeStartingValues)

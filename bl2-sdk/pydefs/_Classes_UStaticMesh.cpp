@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UStaticMesh(py::module &m)
 {
     py::class_< UStaticMesh,  UObject   >(m, "UStaticMesh")
+		.def_static("StaticClass", &UStaticMesh::StaticClass, py::return_value_policy::reference)
         .def_readwrite("LODInfo", &UStaticMesh::LODInfo)
         .def_readwrite("LODDistanceRatio", &UStaticMesh::LODDistanceRatio)
         .def_readwrite("LODMaxRange", &UStaticMesh::LODMaxRange)

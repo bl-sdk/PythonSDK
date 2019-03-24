@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UHybridNavigationVisualizationComponent(py::module &m)
 {
     py::class_< UHybridNavigationVisualizationComponent,  UPrimitiveComponent   >(m, "UHybridNavigationVisualizationComponent")
+		.def_static("StaticClass", &UHybridNavigationVisualizationComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("AllNavPoints", &UHybridNavigationVisualizationComponent::AllNavPoints)
         .def_readwrite("NavPointsToRepresent", &UHybridNavigationVisualizationComponent::NavPointsToRepresent)
         .def_readwrite("NextNavPointToProcess", &UHybridNavigationVisualizationComponent::NextNavPointToProcess)

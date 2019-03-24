@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UParameterBehaviorBase(py::module &m)
 {
     py::class_< UParameterBehaviorBase,  UBehaviorBase   >(m, "UParameterBehaviorBase")
+		.def_static("StaticClass", &UParameterBehaviorBase::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ParameterName", &UParameterBehaviorBase::ParameterName)
         .def_readwrite("SectionIndex", &UParameterBehaviorBase::SectionIndex)
           ;

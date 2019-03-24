@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWeaponNamePartDefinition(py::module &m)
 {
     py::class_< UWeaponNamePartDefinition,  UWillowInventoryPartDefinition   >(m, "UWeaponNamePartDefinition")
+		.def_static("StaticClass", &UWeaponNamePartDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PartName", &UWeaponNamePartDefinition::PartName)
         .def_readwrite("Expressions", &UWeaponNamePartDefinition::Expressions)
         .def_readwrite("MinExpLevelRequirement", &UWeaponNamePartDefinition::MinExpLevelRequirement)

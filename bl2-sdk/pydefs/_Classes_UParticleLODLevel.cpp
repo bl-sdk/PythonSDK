@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UParticleLODLevel(py::module &m)
 {
     py::class_< UParticleLODLevel,  UObject   >(m, "UParticleLODLevel")
+		.def_static("StaticClass", &UParticleLODLevel::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Level", &UParticleLODLevel::Level)
         .def_readwrite("RequiredModule", &UParticleLODLevel::RequiredModule)
         .def_readwrite("Modules", &UParticleLODLevel::Modules)

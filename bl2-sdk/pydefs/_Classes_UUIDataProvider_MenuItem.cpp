@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UUIDataProvider_MenuItem(py::module &m)
 {
     py::class_< UUIDataProvider_MenuItem,  UUIResourceDataProvider   >(m, "UUIDataProvider_MenuItem")
+		.def_static("StaticClass", &UUIDataProvider_MenuItem::StaticClass, py::return_value_policy::reference)
         .def_readwrite("OptionType", &UUIDataProvider_MenuItem::OptionType)
         .def_readwrite("OptionSet", &UUIDataProvider_MenuItem::OptionSet)
         .def_readwrite("DataStoreMarkup", &UUIDataProvider_MenuItem::DataStoreMarkup)

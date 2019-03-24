@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGFxTextListContainer(py::module &m)
 {
     py::class_< UGFxTextListContainer,  UObject   >(m, "UGFxTextListContainer")
+		.def_static("StaticClass", &UGFxTextListContainer::StaticClass, py::return_value_policy::reference)
         .def_readwrite("OneTimeArray", &UGFxTextListContainer::OneTimeArray)
         .def_readwrite("CategoryLabelsArray", &UGFxTextListContainer::CategoryLabelsArray)
         .def_readwrite("SortableArray", &UGFxTextListContainer::SortableArray)

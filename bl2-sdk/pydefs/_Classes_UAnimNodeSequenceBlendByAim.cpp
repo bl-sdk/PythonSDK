@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAnimNodeSequenceBlendByAim(py::module &m)
 {
     py::class_< UAnimNodeSequenceBlendByAim,  UAnimNodeSequenceBlendBase   >(m, "UAnimNodeSequenceBlendByAim")
+		.def_static("StaticClass", &UAnimNodeSequenceBlendByAim::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Aim", &UAnimNodeSequenceBlendByAim::Aim)
         .def_readwrite("PreviousAim", &UAnimNodeSequenceBlendByAim::PreviousAim)
         .def_readwrite("HorizontalRange", &UAnimNodeSequenceBlendByAim::HorizontalRange)

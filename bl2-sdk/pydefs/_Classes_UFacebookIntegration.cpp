@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UFacebookIntegration(py::module &m)
 {
     py::class_< UFacebookIntegration,  UObject   >(m, "UFacebookIntegration")
+		.def_static("StaticClass", &UFacebookIntegration::StaticClass, py::return_value_policy::reference)
         .def_readwrite("AppID", &UFacebookIntegration::AppID)
         .def_readwrite("UserName", &UFacebookIntegration::UserName)
         .def_readwrite("UserId", &UFacebookIntegration::UserId)

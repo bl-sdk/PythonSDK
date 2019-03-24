@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USequenceObject(py::module &m)
 {
     py::class_< USequenceObject,  UObject   >(m, "USequenceObject")
+		.def_static("StaticClass", &USequenceObject::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ObjInstanceVersion", &USequenceObject::ObjInstanceVersion)
         .def_readwrite("ParentSequence", &USequenceObject::ParentSequence)
         .def("eventGetObjClassVersion", &USequenceObject::eventGetObjClassVersion)

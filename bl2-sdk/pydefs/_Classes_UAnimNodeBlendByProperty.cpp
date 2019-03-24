@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAnimNodeBlendByProperty(py::module &m)
 {
     py::class_< UAnimNodeBlendByProperty,  UAnimNodeBlendList   >(m, "UAnimNodeBlendByProperty")
+		.def_static("StaticClass", &UAnimNodeBlendByProperty::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PropertyName", &UAnimNodeBlendByProperty::PropertyName)
         .def_readwrite("CachedPropertyName", &UAnimNodeBlendByProperty::CachedPropertyName)
         .def_readwrite("CachedFloatProperty", &UAnimNodeBlendByProperty::CachedFloatProperty)

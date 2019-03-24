@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPopulationMaster(py::module &m)
 {
     py::class_< UPopulationMaster,  UObject   >(m, "UPopulationMaster")
+		.def_static("StaticClass", &UPopulationMaster::StaticClass, py::return_value_policy::reference)
         .def_readwrite("OpportunityList", &UPopulationMaster::OpportunityList)
         .def_readwrite("ActiveActorCost", &UPopulationMaster::ActiveActorCost)
         .def_readwrite("MaxActorCost", &UPopulationMaster::MaxActorCost)

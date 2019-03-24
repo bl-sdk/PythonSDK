@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USwfMovie(py::module &m)
 {
     py::class_< USwfMovie,  UObject   >(m, "USwfMovie")
+		.def_static("StaticClass", &USwfMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PackTextureSize", &USwfMovie::PackTextureSize)
         .def_readwrite("TextureRescale", &USwfMovie::TextureRescale)
         .def_readwrite("DesiredMemArena", &USwfMovie::DesiredMemArena)

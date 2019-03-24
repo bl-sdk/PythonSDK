@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAnimNotify_PlayFaceFXAnim(py::module &m)
 {
     py::class_< UAnimNotify_PlayFaceFXAnim,  UAnimNotify_Scripted   >(m, "UAnimNotify_PlayFaceFXAnim")
+		.def_static("StaticClass", &UAnimNotify_PlayFaceFXAnim::StaticClass, py::return_value_policy::reference)
         .def_readwrite("FaceFXAnimSetRef", &UAnimNotify_PlayFaceFXAnim::FaceFXAnimSetRef)
         .def_readwrite("GroupName", &UAnimNotify_PlayFaceFXAnim::GroupName)
         .def_readwrite("AnimName", &UAnimNotify_PlayFaceFXAnim::AnimName)

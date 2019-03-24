@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UStatusEffectsComponent(py::module &m)
 {
     py::class_< UStatusEffectsComponent,  UActorComponent   >(m, "UStatusEffectsComponent")
+		.def_static("StaticClass", &UStatusEffectsComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("OwnerTarget", &UStatusEffectsComponent::OwnerTarget)
         .def_readwrite("BodyConsumptionPercent", &UStatusEffectsComponent::BodyConsumptionPercent)
         .def_readwrite("ActiveStatusEffects", &UStatusEffectsComponent::ActiveStatusEffects)

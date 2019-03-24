@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ULightShaftComponent(py::module &m)
 {
     py::class_< ULightShaftComponent,  ULightComponent   >(m, "ULightShaftComponent")
+		.def_static("StaticClass", &ULightShaftComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("TraceDistance", &ULightShaftComponent::TraceDistance)
         .def_readwrite("LightShaftType", &ULightShaftComponent::LightShaftType)
         .def_readwrite("Radius", &ULightShaftComponent::Radius)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UFiringModeSoundDefinition(py::module &m)
 {
     py::class_< UFiringModeSoundDefinition,  UGBXDefinition   >(m, "UFiringModeSoundDefinition")
+		.def_static("StaticClass", &UFiringModeSoundDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("FireSounds", &UFiringModeSoundDefinition::FireSounds)
         .def_readwrite("FireTailSounds", &UFiringModeSoundDefinition::FireTailSounds)
         .def_readwrite("ShellCasingImpact", &UFiringModeSoundDefinition::ShellCasingImpact)

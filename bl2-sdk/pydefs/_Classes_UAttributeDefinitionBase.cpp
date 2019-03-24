@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAttributeDefinitionBase(py::module &m)
 {
     py::class_< UAttributeDefinitionBase,  UGBXDefinition   >(m, "UAttributeDefinitionBase")
+		.def_static("StaticClass", &UAttributeDefinitionBase::StaticClass, py::return_value_policy::reference)
         .def_readwrite("AttributeDataType", &UAttributeDefinitionBase::AttributeDataType)
         .def_readwrite("ContextResolverChain", &UAttributeDefinitionBase::ContextResolverChain)
         .def_readwrite("ValueResolverChain", &UAttributeDefinitionBase::ValueResolverChain)

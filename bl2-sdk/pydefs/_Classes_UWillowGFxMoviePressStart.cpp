@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowGFxMoviePressStart(py::module &m)
 {
     py::class_< UWillowGFxMoviePressStart,  UWillowGFxMovie   >(m, "UWillowGFxMoviePressStart")
+		.def_static("StaticClass", &UWillowGFxMoviePressStart::StaticClass, py::return_value_policy::reference)
         .def_readwrite("IdleTimeBeforeStartingAttractLoop", &UWillowGFxMoviePressStart::IdleTimeBeforeStartingAttractLoop)
         .def_readwrite("CurrIdleTime", &UWillowGFxMoviePressStart::CurrIdleTime)
         .def_readwrite("AttractModeMovieName", &UWillowGFxMoviePressStart::AttractModeMovieName)

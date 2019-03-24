@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehaviorKernel(py::module &m)
 {
     py::class_< UBehaviorKernel,  UObject   >(m, "UBehaviorKernel")
+		.def_static("StaticClass", &UBehaviorKernel::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Processes", &UBehaviorKernel::Processes)
         .def_readwrite("ProcessDeathList", &UBehaviorKernel::ProcessDeathList)
         .def_readwrite("WaitingThreads", &UBehaviorKernel::WaitingThreads)

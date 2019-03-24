@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USeqAct_ModifyHealth(py::module &m)
 {
     py::class_< USeqAct_ModifyHealth,  USequenceAction   >(m, "USeqAct_ModifyHealth")
+		.def_static("StaticClass", &USeqAct_ModifyHealth::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DamageType", &USeqAct_ModifyHealth::DamageType)
         .def_readwrite("DamageTypeDefinition", &USeqAct_ModifyHealth::DamageTypeDefinition)
         .def_readwrite("ImpactDefinition", &USeqAct_ModifyHealth::ImpactDefinition)

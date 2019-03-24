@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowDamageTypeDefinition(py::module &m)
 {
     py::class_< UWillowDamageTypeDefinition,  UDamageTypeDefinition   >(m, "UWillowDamageTypeDefinition")
+		.def_static("StaticClass", &UWillowDamageTypeDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("FleshDamageModifier", &UWillowDamageTypeDefinition::FleshDamageModifier)
         .def_readwrite("ArmorDamageModifier", &UWillowDamageTypeDefinition::ArmorDamageModifier)
         .def_readwrite("ShieldDamageModifier", &UWillowDamageTypeDefinition::ShieldDamageModifier)

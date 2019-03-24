@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UNavMeshGoal_At(py::module &m)
 {
     py::class_< UNavMeshGoal_At,  UNavMeshPathGoalEvaluator   >(m, "UNavMeshGoal_At")
+		.def_static("StaticClass", &UNavMeshGoal_At::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Goal", &UNavMeshGoal_At::Goal)
         .def_readwrite("GoalDist", &UNavMeshGoal_At::GoalDist)
         .def_readwrite("PartialDistSq", &UNavMeshGoal_At::PartialDistSq)

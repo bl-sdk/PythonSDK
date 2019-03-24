@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ULocalPlayer(py::module &m)
 {
     py::class_< ULocalPlayer,  UObject   >(m, "ULocalPlayer")
+		.def_static("StaticClass", &ULocalPlayer::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_FObserverInterface", &ULocalPlayer::VfTable_FObserverInterface)
         .def_readwrite("ControllerId", &ULocalPlayer::ControllerId)
         .def_readwrite("ViewportClient", &ULocalPlayer::ViewportClient)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ANxGenericForceField(py::module &m)
 {
     py::class_< ANxGenericForceField,  ANxForceField   >(m, "ANxGenericForceField")
+		.def_static("StaticClass", &ANxGenericForceField::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Coordinates", &ANxGenericForceField::Coordinates)
         .def_readwrite("Constant", &ANxGenericForceField::Constant)
         .def_readwrite("PositionMultiplierX", &ANxGenericForceField::PositionMultiplierX)

@@ -6,5 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UMaterialExpressionMeshEmitterVertexColor(py::module &m)
 {
     py::class_< UMaterialExpressionMeshEmitterVertexColor,  UMaterialExpression   >(m, "UMaterialExpressionMeshEmitterVertexColor")
+		.def_static("StaticClass", &UMaterialExpressionMeshEmitterVertexColor::StaticClass, py::return_value_policy::reference)
           ;
 }

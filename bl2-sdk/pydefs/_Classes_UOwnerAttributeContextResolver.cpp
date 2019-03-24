@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UOwnerAttributeContextResolver(py::module &m)
 {
     py::class_< UOwnerAttributeContextResolver,  UAttributeContextResolver   >(m, "UOwnerAttributeContextResolver")
+		.def_static("StaticClass", &UOwnerAttributeContextResolver::StaticClass, py::return_value_policy::reference)
         .def("GetAttributeContext", &UOwnerAttributeContextResolver::GetAttributeContext, py::return_value_policy::reference)
           ;
 }

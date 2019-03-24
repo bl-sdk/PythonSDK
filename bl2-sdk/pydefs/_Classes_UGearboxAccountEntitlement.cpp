@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGearboxAccountEntitlement(py::module &m)
 {
     py::class_< UGearboxAccountEntitlement,  UObject   >(m, "UGearboxAccountEntitlement")
+		.def_static("StaticClass", &UGearboxAccountEntitlement::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Identifier", &UGearboxAccountEntitlement::Identifier)
         .def_readwrite("Id", &UGearboxAccountEntitlement::Id)
         .def_readwrite("ConsumableAmount", &UGearboxAccountEntitlement::ConsumableAmount)

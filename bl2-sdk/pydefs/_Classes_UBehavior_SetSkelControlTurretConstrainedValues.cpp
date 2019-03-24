@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_SetSkelControlTurretConstrainedValues(py::module &m)
 {
     py::class_< UBehavior_SetSkelControlTurretConstrainedValues,  UBehaviorBase   >(m, "UBehavior_SetSkelControlTurretConstrainedValues")
+		.def_static("StaticClass", &UBehavior_SetSkelControlTurretConstrainedValues::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SkelControlName", &UBehavior_SetSkelControlTurretConstrainedValues::SkelControlName)
         .def_readwrite("MaxAngle", &UBehavior_SetSkelControlTurretConstrainedValues::MaxAngle)
         .def_readwrite("MinAngle", &UBehavior_SetSkelControlTurretConstrainedValues::MinAngle)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowInteractiveSwitch(py::module &m)
 {
     py::class_< AWillowInteractiveSwitch,  AWillowInteractiveObject   >(m, "AWillowInteractiveSwitch")
+		.def_static("StaticClass", &AWillowInteractiveSwitch::StaticClass, py::return_value_policy::reference)
         .def_readwrite("OnBehaviorSetName", &AWillowInteractiveSwitch::OnBehaviorSetName)
         .def_readwrite("NotAllPlayersNearBehaviorSetName", &AWillowInteractiveSwitch::NotAllPlayersNearBehaviorSetName)
         .def_readwrite("OffBehaviorSetName", &AWillowInteractiveSwitch::OffBehaviorSetName)

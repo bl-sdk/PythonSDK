@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ALadderVolume(py::module &m)
 {
     py::class_< ALadderVolume,  APhysicsVolume   >(m, "ALadderVolume")
+		.def_static("StaticClass", &ALadderVolume::StaticClass, py::return_value_policy::reference)
         .def_readwrite("WallDir", &ALadderVolume::WallDir)
         .def_readwrite("LookDir", &ALadderVolume::LookDir)
         .def_readwrite("ClimbDir", &ALadderVolume::ClimbDir)

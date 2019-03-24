@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AHUD(py::module &m)
 {
     py::class_< AHUD,  AActor   >(m, "AHUD")
+		.def_static("StaticClass", &AHUD::StaticClass, py::return_value_policy::reference)
         .def_readwrite("WhiteColor", &AHUD::WhiteColor)
         .def_readwrite("GreenColor", &AHUD::GreenColor)
         .def_readwrite("RedColor", &AHUD::RedColor)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USparkInitializationProcess(py::module &m)
 {
     py::class_< USparkInitializationProcess,  UObject   >(m, "USparkInitializationProcess")
+		.def_static("StaticClass", &USparkInitializationProcess::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Data", &USparkInitializationProcess::Data)
         .def_readwrite("PlayerIndex", &USparkInitializationProcess::PlayerIndex)
         .def_readwrite("SparkInitializedDelegates", &USparkInitializationProcess::SparkInitializedDelegates)

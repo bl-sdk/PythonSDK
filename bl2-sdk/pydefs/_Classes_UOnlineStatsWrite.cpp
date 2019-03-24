@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UOnlineStatsWrite(py::module &m)
 {
     py::class_< UOnlineStatsWrite,  UObject   >(m, "UOnlineStatsWrite")
+		.def_static("StaticClass", &UOnlineStatsWrite::StaticClass, py::return_value_policy::reference)
         .def_readwrite("StatMappings", &UOnlineStatsWrite::StatMappings)
         .def_readwrite("Properties", &UOnlineStatsWrite::Properties)
         .def_readwrite("ViewIds", &UOnlineStatsWrite::ViewIds)

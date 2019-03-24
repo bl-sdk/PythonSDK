@@ -6,5 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UAkAudioDevice(py::module &m)
 {
     py::class_< UAkAudioDevice,  USubsystem   >(m, "UAkAudioDevice")
+		.def_static("StaticClass", &UAkAudioDevice::StaticClass, py::return_value_policy::reference)
           ;
 }

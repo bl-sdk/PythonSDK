@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AExecuteBlockingVolume(py::module &m)
 {
     py::class_< AExecuteBlockingVolume,  ABlockingVolume   >(m, "AExecuteBlockingVolume")
+		.def_static("StaticClass", &AExecuteBlockingVolume::StaticClass, py::return_value_policy::reference)
         .def("StopsProjectile", &AExecuteBlockingVolume::StopsProjectile)
           ;
 }

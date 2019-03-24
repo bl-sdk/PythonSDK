@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UUberPostProcessEffect(py::module &m)
 {
     py::class_< UUberPostProcessEffect,  UPostProcessEffect   >(m, "UUberPostProcessEffect")
+		.def_static("StaticClass", &UUberPostProcessEffect::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SceneShadows", &UUberPostProcessEffect::SceneShadows)
         .def_readwrite("SceneHighLights", &UUberPostProcessEffect::SceneHighLights)
         .def_readwrite("SceneMidTones", &UUberPostProcessEffect::SceneMidTones)

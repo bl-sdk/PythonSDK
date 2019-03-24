@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPath_AvoidInEscapableNodes(py::module &m)
 {
     py::class_< UPath_AvoidInEscapableNodes,  UPathConstraint   >(m, "UPath_AvoidInEscapableNodes")
+		.def_static("StaticClass", &UPath_AvoidInEscapableNodes::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Radius", &UPath_AvoidInEscapableNodes::Radius)
         .def_readwrite("Height", &UPath_AvoidInEscapableNodes::Height)
         .def_readwrite("MaxFallSpeed", &UPath_AvoidInEscapableNodes::MaxFallSpeed)

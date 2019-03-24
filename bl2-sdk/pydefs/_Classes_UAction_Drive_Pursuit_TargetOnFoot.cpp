@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAction_Drive_Pursuit_TargetOnFoot(py::module &m)
 {
     py::class_< UAction_Drive_Pursuit_TargetOnFoot,  UWillowActionSequencePawn   >(m, "UAction_Drive_Pursuit_TargetOnFoot")
+		.def_static("StaticClass", &UAction_Drive_Pursuit_TargetOnFoot::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MaxSpeedMultiplier", &UAction_Drive_Pursuit_TargetOnFoot::MaxSpeedMultiplier)
         .def_readwrite("SpeedMultiplierDuringSharpTurns", &UAction_Drive_Pursuit_TargetOnFoot::SpeedMultiplierDuringSharpTurns)
         .def_readwrite("DistanceToTargetStartAction", &UAction_Drive_Pursuit_TargetOnFoot::DistanceToTargetStartAction)

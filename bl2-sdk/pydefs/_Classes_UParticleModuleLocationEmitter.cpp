@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UParticleModuleLocationEmitter(py::module &m)
 {
     py::class_< UParticleModuleLocationEmitter,  UParticleModuleLocationBase   >(m, "UParticleModuleLocationEmitter")
+		.def_static("StaticClass", &UParticleModuleLocationEmitter::StaticClass, py::return_value_policy::reference)
         .def_readwrite("EmitterName", &UParticleModuleLocationEmitter::EmitterName)
         .def_readwrite("SelectionMethod", &UParticleModuleLocationEmitter::SelectionMethod)
         .def_readwrite("InheritSourceVelocityScale", &UParticleModuleLocationEmitter::InheritSourceVelocityScale)

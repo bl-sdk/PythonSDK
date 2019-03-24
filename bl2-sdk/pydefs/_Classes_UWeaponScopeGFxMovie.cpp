@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWeaponScopeGFxMovie(py::module &m)
 {
     py::class_< UWeaponScopeGFxMovie,  UWillowGFxMovie3D   >(m, "UWeaponScopeGFxMovie")
+		.def_static("StaticClass", &UWeaponScopeGFxMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MyScopeDefinition", &UWeaponScopeGFxMovie::MyScopeDefinition)
         .def_readwrite("CrosshairWidget", &UWeaponScopeGFxMovie::CrosshairWidget)
         .def_readwrite("CachedFLN_Housing", &UWeaponScopeGFxMovie::CachedFLN_Housing)

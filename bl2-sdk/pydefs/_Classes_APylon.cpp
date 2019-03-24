@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_APylon(py::module &m)
 {
     py::class_< APylon,  ANavigationPoint   >(m, "APylon")
+		.def_static("StaticClass", &APylon::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IEditorLinkSelectionInterface", &APylon::VfTable_IEditorLinkSelectionInterface)
         .def_readwrite("NavMeshPtr", &APylon::NavMeshPtr)
         .def_readwrite("ObstacleMesh", &APylon::ObstacleMesh)

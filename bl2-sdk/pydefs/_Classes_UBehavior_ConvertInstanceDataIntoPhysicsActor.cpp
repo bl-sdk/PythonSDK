@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_ConvertInstanceDataIntoPhysicsActor(py::module &m)
 {
     py::class_< UBehavior_ConvertInstanceDataIntoPhysicsActor,  UBehaviorBase   >(m, "UBehavior_ConvertInstanceDataIntoPhysicsActor")
+		.def_static("StaticClass", &UBehavior_ConvertInstanceDataIntoPhysicsActor::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DetachImpulse", &UBehavior_ConvertInstanceDataIntoPhysicsActor::DetachImpulse)
         .def_readwrite("ImpulseSourceLocation", &UBehavior_ConvertInstanceDataIntoPhysicsActor::ImpulseSourceLocation)
         .def_readwrite("PhysicsActorLifeTime", &UBehavior_ConvertInstanceDataIntoPhysicsActor::PhysicsActorLifeTime)

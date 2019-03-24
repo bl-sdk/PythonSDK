@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AScout(py::module &m)
 {
     py::class_< AScout,  APawn   >(m, "AScout")
+		.def_static("StaticClass", &AScout::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PathSizes", &AScout::PathSizes)
         .def_readwrite("TestJumpZ", &AScout::TestJumpZ)
         .def_readwrite("TestGroundSpeed", &AScout::TestGroundSpeed)

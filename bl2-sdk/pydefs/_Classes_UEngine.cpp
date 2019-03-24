@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UEngine(py::module &m)
 {
     py::class_< UEngine,  USubsystem   >(m, "UEngine")
+		.def_static("StaticClass", &UEngine::StaticClass, py::return_value_policy::reference)
         .def_readwrite("TinyFont", &UEngine::TinyFont)
         .def_readwrite("TinyFontName", &UEngine::TinyFontName)
         .def_readwrite("SmallFont", &UEngine::SmallFont)

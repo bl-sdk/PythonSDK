@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPopulationFactoryInteractiveObject(py::module &m)
 {
     py::class_< UPopulationFactoryInteractiveObject,  UPopulationFactory   >(m, "UPopulationFactoryInteractiveObject")
+		.def_static("StaticClass", &UPopulationFactoryInteractiveObject::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ObjectDefinition", &UPopulationFactoryInteractiveObject::ObjectDefinition)
         .def_readwrite("ObjectBalanceDefinition", &UPopulationFactoryInteractiveObject::ObjectBalanceDefinition)
         .def_readwrite("EnabledBehaviorSets", &UPopulationFactoryInteractiveObject::EnabledBehaviorSets)

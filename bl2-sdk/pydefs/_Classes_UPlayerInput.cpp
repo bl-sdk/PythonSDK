@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPlayerInput(py::module &m)
 {
     py::class_< UPlayerInput,  UObject   >(m, "UPlayerInput")
+		.def_static("StaticClass", &UPlayerInput::StaticClass, py::return_value_policy::reference)
         .def_readwrite("LastAxisKeyName", &UPlayerInput::LastAxisKeyName)
         .def_readwrite("DoubleClickTimer", &UPlayerInput::DoubleClickTimer)
         .def_readwrite("DoubleClickTime", &UPlayerInput::DoubleClickTime)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_APopulationOpportunity(py::module &m)
 {
     py::class_< APopulationOpportunity,  AInfo   >(m, "APopulationOpportunity")
+		.def_static("StaticClass", &APopulationOpportunity::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIBodyCompositionInstance", &APopulationOpportunity::VfTable_IIBodyCompositionInstance)
         .def_readwrite("CleanupParams", &APopulationOpportunity::CleanupParams)
         .def_readwrite("SpawnPoints", &APopulationOpportunity::SpawnPoints)

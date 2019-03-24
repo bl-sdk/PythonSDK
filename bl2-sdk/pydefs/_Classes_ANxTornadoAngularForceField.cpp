@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ANxTornadoAngularForceField(py::module &m)
 {
     py::class_< ANxTornadoAngularForceField,  ANxForceField   >(m, "ANxTornadoAngularForceField")
+		.def_static("StaticClass", &ANxTornadoAngularForceField::StaticClass, py::return_value_policy::reference)
         .def_readwrite("RadialStrength", &ANxTornadoAngularForceField::RadialStrength)
         .def_readwrite("RotationalStrength", &ANxTornadoAngularForceField::RotationalStrength)
         .def_readwrite("LiftStrength", &ANxTornadoAngularForceField::LiftStrength)

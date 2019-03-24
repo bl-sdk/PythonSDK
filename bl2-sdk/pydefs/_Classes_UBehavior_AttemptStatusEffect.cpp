@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_AttemptStatusEffect(py::module &m)
 {
     py::class_< UBehavior_AttemptStatusEffect,  UBehaviorBase   >(m, "UBehavior_AttemptStatusEffect")
+		.def_static("StaticClass", &UBehavior_AttemptStatusEffect::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIDamageCauser", &UBehavior_AttemptStatusEffect::VfTable_IIDamageCauser)
         .def_readwrite("StatusEffect", &UBehavior_AttemptStatusEffect::StatusEffect)
         .def_readwrite("TargetContext", &UBehavior_AttemptStatusEffect::TargetContext)

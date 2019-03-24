@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowPlayerController(py::module &m)
 {
     py::class_< AWillowPlayerController,  AGearboxPlayerController   >(m, "AWillowPlayerController")
+		.def_static("StaticClass", &AWillowPlayerController::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIUpdatePostProcessOverride", &AWillowPlayerController::VfTable_IIUpdatePostProcessOverride)
         .def_readwrite("VfTable_IIControllerLocator", &AWillowPlayerController::VfTable_IIControllerLocator)
         .def_readwrite("VfTable_IIPlayerBehavior", &AWillowPlayerController::VfTable_IIPlayerBehavior)

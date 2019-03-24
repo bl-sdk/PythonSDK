@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowDialogEchoActor(py::module &m)
 {
     py::class_< AWillowDialogEchoActor,  AActor   >(m, "AWillowDialogEchoActor")
+		.def_static("StaticClass", &AWillowDialogEchoActor::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IGearboxDialogInterface", &AWillowDialogEchoActor::VfTable_IGearboxDialogInterface)
         .def_readwrite("NameTag", &AWillowDialogEchoActor::NameTag)
         .def_readwrite("DialogComponent", &AWillowDialogEchoActor::DialogComponent)

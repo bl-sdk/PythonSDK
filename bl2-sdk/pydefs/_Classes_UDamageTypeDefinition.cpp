@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UDamageTypeDefinition(py::module &m)
 {
     py::class_< UDamageTypeDefinition,  UGBXDefinition   >(m, "UDamageTypeDefinition")
+		.def_static("StaticClass", &UDamageTypeDefinition::StaticClass, py::return_value_policy::reference)
         .def("CalcRadiusDamageScale", &UDamageTypeDefinition::CalcRadiusDamageScale)
         .def("GetMinDamagePercent", &UDamageTypeDefinition::GetMinDamagePercent)
         .def("GetMinDamageRadius", &UDamageTypeDefinition::GetMinDamageRadius)

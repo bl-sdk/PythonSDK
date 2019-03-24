@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAction_MoveToVehicle(py::module &m)
 {
     py::class_< UAction_MoveToVehicle,  UAction_Burrow   >(m, "UAction_MoveToVehicle")
+		.def_static("StaticClass", &UAction_MoveToVehicle::StaticClass, py::return_value_policy::reference)
         .def_readwrite("EnterDistance", &UAction_MoveToVehicle::EnterDistance)
         .def_readwrite("MyVehicle", &UAction_MoveToVehicle::MyVehicle)
         .def_readwrite("CheckRate", &UAction_MoveToVehicle::CheckRate)

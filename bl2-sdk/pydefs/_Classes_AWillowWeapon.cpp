@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowWeapon(py::module &m)
 {
     py::class_< AWillowWeapon,  AWeapon   >(m, "AWillowWeapon")
+		.def_static("StaticClass", &AWillowWeapon::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIInstanceData", &AWillowWeapon::VfTable_IIInstanceData)
         .def_readwrite("VfTable_IIMissionInventory", &AWillowWeapon::VfTable_IIMissionInventory)
         .def_readwrite("VfTable_IIBehaviorConsumer", &AWillowWeapon::VfTable_IIBehaviorConsumer)

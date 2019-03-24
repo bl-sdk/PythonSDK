@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAction_BasicAttack(py::module &m)
 {
     py::class_< UAction_BasicAttack,  UAction_Burrow   >(m, "UAction_BasicAttack")
+		.def_static("StaticClass", &UAction_BasicAttack::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Angle", &UAction_BasicAttack::Angle)
         .def_readwrite("VerticalDistMax", &UAction_BasicAttack::VerticalDistMax)
         .def_readwrite("Range", &UAction_BasicAttack::Range)

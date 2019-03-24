@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UInstancedStaticMeshComponent(py::module &m)
 {
     py::class_< UInstancedStaticMeshComponent,  UStaticMeshComponent   >(m, "UInstancedStaticMeshComponent")
+		.def_static("StaticClass", &UInstancedStaticMeshComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PerInstanceData", &UInstancedStaticMeshComponent::PerInstanceData)
         .def_readwrite("PerInstanceSMData", &UInstancedStaticMeshComponent::PerInstanceSMData)
         .def_readwrite("NumPendingLightmaps", &UInstancedStaticMeshComponent::NumPendingLightmaps)

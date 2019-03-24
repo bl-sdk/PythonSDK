@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UMaterialExpressionSphereMask(py::module &m)
 {
     py::class_< UMaterialExpressionSphereMask,  UMaterialExpression   >(m, "UMaterialExpressionSphereMask")
+		.def_static("StaticClass", &UMaterialExpressionSphereMask::StaticClass, py::return_value_policy::reference)
         .def_readwrite("A", &UMaterialExpressionSphereMask::A)
         .def_readwrite("B", &UMaterialExpressionSphereMask::B)
         .def_readwrite("Radius", &UMaterialExpressionSphereMask::Radius)

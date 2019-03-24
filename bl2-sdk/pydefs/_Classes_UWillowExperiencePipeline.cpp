@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowExperiencePipeline(py::module &m)
 {
     py::class_< UWillowExperiencePipeline,  UObject   >(m, "UWillowExperiencePipeline")
+		.def_static("StaticClass", &UWillowExperiencePipeline::StaticClass, py::return_value_policy::reference)
         .def("AwardCombatExperienceToParty", &UWillowExperiencePipeline::AwardCombatExperienceToParty)
         .def("CalculateExperiencePointsForKill", &UWillowExperiencePipeline::CalculateExperiencePointsForKill)
           ;

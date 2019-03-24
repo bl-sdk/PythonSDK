@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UParticleModuleLocationBoneSocket(py::module &m)
 {
     py::class_< UParticleModuleLocationBoneSocket,  UParticleModuleLocationBase   >(m, "UParticleModuleLocationBoneSocket")
+		.def_static("StaticClass", &UParticleModuleLocationBoneSocket::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SourceType", &UParticleModuleLocationBoneSocket::SourceType)
         .def_readwrite("SelectionMethod", &UParticleModuleLocationBoneSocket::SelectionMethod)
         .def_readwrite("UniversalOffset", &UParticleModuleLocationBoneSocket::UniversalOffset)

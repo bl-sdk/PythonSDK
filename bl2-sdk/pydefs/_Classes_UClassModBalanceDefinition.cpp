@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UClassModBalanceDefinition(py::module &m)
 {
     py::class_< UClassModBalanceDefinition,  UItemBalanceDefinition   >(m, "UClassModBalanceDefinition")
+		.def_static("StaticClass", &UClassModBalanceDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ClassModDefinitions", &UClassModBalanceDefinition::ClassModDefinitions)
         .def("GetClassModDefSpawnedByBalanceDef", &UClassModBalanceDefinition::GetClassModDefSpawnedByBalanceDef)
         .def("GetInventoryDefinitionForManufacturerGrade", &UClassModBalanceDefinition::GetInventoryDefinitionForManufacturerGrade, py::return_value_policy::reference)

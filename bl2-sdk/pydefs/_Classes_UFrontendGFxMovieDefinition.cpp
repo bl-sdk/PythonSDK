@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UFrontendGFxMovieDefinition(py::module &m)
 {
     py::class_< UFrontendGFxMovieDefinition,  UWillowGFxMovie3DDefinition   >(m, "UFrontendGFxMovieDefinition")
+		.def_static("StaticClass", &UFrontendGFxMovieDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("OnStart", &UFrontendGFxMovieDefinition::OnStart)
         .def_readwrite("WalkableMapList", &UFrontendGFxMovieDefinition::WalkableMapList)
         .def_readwrite("BlockoutMapList", &UFrontendGFxMovieDefinition::BlockoutMapList)

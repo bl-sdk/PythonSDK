@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ATcpLink(py::module &m)
 {
     py::class_< ATcpLink,  AInfo   >(m, "ATcpLink")
+		.def_static("StaticClass", &ATcpLink::StaticClass, py::return_value_policy::reference)
         .def_readwrite("LinkState", &ATcpLink::LinkState)
         .def_readwrite("RemoteAddr", &ATcpLink::RemoteAddr)
         .def_readwrite("AcceptClass", &ATcpLink::AcceptClass)

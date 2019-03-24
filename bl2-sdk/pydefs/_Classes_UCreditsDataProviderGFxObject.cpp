@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UCreditsDataProviderGFxObject(py::module &m)
 {
     py::class_< UCreditsDataProviderGFxObject,  UGFxObject   >(m, "UCreditsDataProviderGFxObject")
+		.def_static("StaticClass", &UCreditsDataProviderGFxObject::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CreditsDef", &UCreditsDataProviderGFxObject::CreditsDef)
         .def_readwrite("bShouldAvoidAccentedLetters", &UCreditsDataProviderGFxObject::bShouldAvoidAccentedLetters)
         .def("extGetLengthOfData", &UCreditsDataProviderGFxObject::extGetLengthOfData)

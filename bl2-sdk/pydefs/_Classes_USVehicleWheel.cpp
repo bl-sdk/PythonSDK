@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USVehicleWheel(py::module &m)
 {
     py::class_< USVehicleWheel,  UComponent   >(m, "USVehicleWheel")
+		.def_static("StaticClass", &USVehicleWheel::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Steer", &USVehicleWheel::Steer)
         .def_readwrite("MotorTorque", &USVehicleWheel::MotorTorque)
         .def_readwrite("BrakeTorque", &USVehicleWheel::BrakeTorque)

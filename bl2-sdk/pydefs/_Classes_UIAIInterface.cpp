@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UIAIInterface(py::module &m)
 {
     py::class_< UIAIInterface,  UInterface   >(m, "UIAIInterface")
+		.def_static("StaticClass", &UIAIInterface::StaticClass, py::return_value_policy::reference)
         .def("InitSequence", &UIAIInterface::InitSequence)
         .def("GetAllegiance", &UIAIInterface::GetAllegiance, py::return_value_policy::reference)
         .def("GetAIDefinition", &UIAIInterface::GetAIDefinition, py::return_value_policy::reference)

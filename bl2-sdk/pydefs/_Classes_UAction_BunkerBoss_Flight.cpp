@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAction_BunkerBoss_Flight(py::module &m)
 {
     py::class_< UAction_BunkerBoss_Flight,  UAction_FollowPath   >(m, "UAction_BunkerBoss_Flight")
+		.def_static("StaticClass", &UAction_BunkerBoss_Flight::StaticClass, py::return_value_policy::reference)
         .def_readwrite("OffsetDistance", &UAction_BunkerBoss_Flight::OffsetDistance)
         .def_readwrite("TimeBetweenAttacks", &UAction_BunkerBoss_Flight::TimeBetweenAttacks)
         .def_readwrite("CircleFlightDistance", &UAction_BunkerBoss_Flight::CircleFlightDistance)

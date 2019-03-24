@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_Explode(py::module &m)
 {
     py::class_< UBehavior_Explode,  UBehaviorBase   >(m, "UBehavior_Explode")
+		.def_static("StaticClass", &UBehavior_Explode::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIDamageCauser", &UBehavior_Explode::VfTable_IIDamageCauser)
         .def_readwrite("DamageSource", &UBehavior_Explode::DamageSource)
         .def_readwrite("DamageRadiusFormula", &UBehavior_Explode::DamageRadiusFormula)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UForceFieldShapeCapsule(py::module &m)
 {
     py::class_< UForceFieldShapeCapsule,  UForceFieldShape   >(m, "UForceFieldShapeCapsule")
+		.def_static("StaticClass", &UForceFieldShapeCapsule::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Shape", &UForceFieldShapeCapsule::Shape)
         .def("eventGetDrawComponent", &UForceFieldShapeCapsule::eventGetDrawComponent, py::return_value_policy::reference)
         .def("eventFillByCylinder", &UForceFieldShapeCapsule::eventFillByCylinder)

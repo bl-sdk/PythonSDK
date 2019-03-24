@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ATravelStation(py::module &m)
 {
     py::class_< ATravelStation,  AWillowInteractiveObject   >(m, "ATravelStation")
+		.def_static("StaticClass", &ATravelStation::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIMission", &ATravelStation::VfTable_IIMission)
         .def_readwrite("StationAntennaLight", &ATravelStation::StationAntennaLight)
         .def_readwrite("TeleportDest", &ATravelStation::TeleportDest)

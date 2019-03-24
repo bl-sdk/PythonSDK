@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UTexture2D(py::module &m)
 {
     py::class_< UTexture2D,  UTexture   >(m, "UTexture2D")
+		.def_static("StaticClass", &UTexture2D::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Mips", &UTexture2D::Mips)
         .def_readwrite("SizeX", &UTexture2D::SizeX)
         .def_readwrite("SizeY", &UTexture2D::SizeY)

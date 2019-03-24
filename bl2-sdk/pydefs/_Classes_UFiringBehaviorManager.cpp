@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UFiringBehaviorManager(py::module &m)
 {
     py::class_< UFiringBehaviorManager,  UObject   >(m, "UFiringBehaviorManager")
+		.def_static("StaticClass", &UFiringBehaviorManager::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CurrentFiringPattern", &UFiringBehaviorManager::CurrentFiringPattern)
         .def_readwrite("CurrentTargetExposure", &UFiringBehaviorManager::CurrentTargetExposure)
         .def_readwrite("NumShotsThisBurst", &UFiringBehaviorManager::NumShotsThisBurst)

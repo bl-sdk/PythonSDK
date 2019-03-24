@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ADecalManager(py::module &m)
 {
     py::class_< ADecalManager,  AActor   >(m, "ADecalManager")
+		.def_static("StaticClass", &ADecalManager::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DecalTemplate", &ADecalManager::DecalTemplate)
         .def_readwrite("PoolDecals", &ADecalManager::PoolDecals)
         .def_readwrite("MaxActiveDecals", &ADecalManager::MaxActiveDecals)

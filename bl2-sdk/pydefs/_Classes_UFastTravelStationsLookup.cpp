@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UFastTravelStationsLookup(py::module &m)
 {
     py::class_< UFastTravelStationsLookup,  UObject   >(m, "UFastTravelStationsLookup")
+		.def_static("StaticClass", &UFastTravelStationsLookup::StaticClass, py::return_value_policy::reference)
         .def_readwrite("FastTravelStationLookupList", &UFastTravelStationsLookup::FastTravelStationLookupList)
         .def_readwrite("LevelTravelStationLookupList", &UFastTravelStationsLookup::LevelTravelStationLookupList)
         .def("AddStationToNameListInOrder", &UFastTravelStationsLookup::AddStationToNameListInOrder)

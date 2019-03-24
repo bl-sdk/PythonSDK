@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UDamagePipeline(py::module &m)
 {
     py::class_< UDamagePipeline,  UObject   >(m, "UDamagePipeline")
+		.def_static("StaticClass", &UDamagePipeline::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DamageTypeDef", &UDamagePipeline::DamageTypeDef)
         .def_readwrite("ImpactDefinition", &UDamagePipeline::ImpactDefinition)
         .def_readwrite("DirectHitObject", &UDamagePipeline::DirectHitObject)

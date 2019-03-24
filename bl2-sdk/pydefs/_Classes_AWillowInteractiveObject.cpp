@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowInteractiveObject(py::module &m)
 {
     py::class_< AWillowInteractiveObject,  AActor   >(m, "AWillowInteractiveObject")
+		.def_static("StaticClass", &AWillowInteractiveObject::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IITimerBehavior", &AWillowInteractiveObject::VfTable_IITimerBehavior)
         .def_readwrite("VfTable_IICustomEvent", &AWillowInteractiveObject::VfTable_IICustomEvent)
         .def_readwrite("VfTable_IIKilledBehavior", &AWillowInteractiveObject::VfTable_IIKilledBehavior)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UReceivedWeaponMessage(py::module &m)
 {
     py::class_< UReceivedWeaponMessage,  UWillowLocalMessage   >(m, "UReceivedWeaponMessage")
+		.def_static("StaticClass", &UReceivedWeaponMessage::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ReceivedWeapon", &UReceivedWeaponMessage::ReceivedWeapon)
         .def_readwrite("SelfReceivedItem", &UReceivedWeaponMessage::SelfReceivedItem)
         .def("GetWeaponString", &UReceivedWeaponMessage::GetWeaponString)

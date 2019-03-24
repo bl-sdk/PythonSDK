@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UDynamicLightEnvironmentComponent(py::module &m)
 {
     py::class_< UDynamicLightEnvironmentComponent,  ULightEnvironmentComponent   >(m, "UDynamicLightEnvironmentComponent")
+		.def_static("StaticClass", &UDynamicLightEnvironmentComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("State", &UDynamicLightEnvironmentComponent::State)
         .def_readwrite("InvisibleUpdateTime", &UDynamicLightEnvironmentComponent::InvisibleUpdateTime)
         .def_readwrite("MinTimeBetweenFullUpdates", &UDynamicLightEnvironmentComponent::MinTimeBetweenFullUpdates)

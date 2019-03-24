@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowRegionDefinition(py::module &m)
 {
     py::class_< UWillowRegionDefinition,  URegionDefinition   >(m, "UWillowRegionDefinition")
+		.def_static("StaticClass", &UWillowRegionDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DlcExpansion", &UWillowRegionDefinition::DlcExpansion)
         .def("SetAwesomeLevelOverride", &UWillowRegionDefinition::SetAwesomeLevelOverride)
         .def("SetGameStageOverride", &UWillowRegionDefinition::SetGameStageOverride)

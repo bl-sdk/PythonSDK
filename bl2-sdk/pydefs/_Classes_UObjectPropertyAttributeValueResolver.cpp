@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UObjectPropertyAttributeValueResolver(py::module &m)
 {
     py::class_< UObjectPropertyAttributeValueResolver,  UAttributeValueResolver   >(m, "UObjectPropertyAttributeValueResolver")
+		.def_static("StaticClass", &UObjectPropertyAttributeValueResolver::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PropertyName", &UObjectPropertyAttributeValueResolver::PropertyName)
         .def_readwrite("CachedProperty", &UObjectPropertyAttributeValueResolver::CachedProperty)
           ;

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UInterpTrackInstToggle(py::module &m)
 {
     py::class_< UInterpTrackInstToggle,  UInterpTrackInst   >(m, "UInterpTrackInstToggle")
+		.def_static("StaticClass", &UInterpTrackInstToggle::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Action", &UInterpTrackInstToggle::Action)
         .def_readwrite("LastUpdatePosition", &UInterpTrackInstToggle::LastUpdatePosition)
           ;

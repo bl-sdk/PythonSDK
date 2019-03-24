@@ -4,6 +4,7 @@
 
 namespace py = pybind11;
 
+void Export_pystes_gamedefines(py::module &);
 void Export_pystes_FPointer(py::module &);
 void Export_pystes_FQWord(py::module &);
 void Export_pystes_FVector(py::module &);

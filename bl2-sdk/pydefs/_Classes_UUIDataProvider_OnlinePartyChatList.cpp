@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UUIDataProvider_OnlinePartyChatList(py::module &m)
 {
     py::class_< UUIDataProvider_OnlinePartyChatList,  UUIDataProvider_OnlinePlayerDataBase   >(m, "UUIDataProvider_OnlinePartyChatList")
+		.def_static("StaticClass", &UUIDataProvider_OnlinePartyChatList::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IUIListElementCellProvider", &UUIDataProvider_OnlinePartyChatList::VfTable_IUIListElementCellProvider)
         .def_readwrite("PartyMembersList", &UUIDataProvider_OnlinePartyChatList::PartyMembersList)
         .def_readwrite("NatTypes", &UUIDataProvider_OnlinePartyChatList::NatTypes)

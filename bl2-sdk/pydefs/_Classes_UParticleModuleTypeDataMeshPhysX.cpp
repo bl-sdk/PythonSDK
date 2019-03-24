@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UParticleModuleTypeDataMeshPhysX(py::module &m)
 {
     py::class_< UParticleModuleTypeDataMeshPhysX,  UParticleModuleTypeDataMesh   >(m, "UParticleModuleTypeDataMeshPhysX")
+		.def_static("StaticClass", &UParticleModuleTypeDataMeshPhysX::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PhysXParSys", &UParticleModuleTypeDataMeshPhysX::PhysXParSys)
         .def_readwrite("PhysXRotationMethod", &UParticleModuleTypeDataMeshPhysX::PhysXRotationMethod)
         .def_readwrite("FluidRotationCoefficient", &UParticleModuleTypeDataMeshPhysX::FluidRotationCoefficient)

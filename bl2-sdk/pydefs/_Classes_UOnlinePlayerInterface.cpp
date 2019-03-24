@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UOnlinePlayerInterface(py::module &m)
 {
     py::class_< UOnlinePlayerInterface,  UInterface   >(m, "UOnlinePlayerInterface")
+		.def_static("StaticClass", &UOnlinePlayerInterface::StaticClass, py::return_value_policy::reference)
         .def("GetAchievements", &UOnlinePlayerInterface::GetAchievements)
         .def("ClearReadAchievementsCompleteDelegate", &UOnlinePlayerInterface::ClearReadAchievementsCompleteDelegate)
         .def("AddReadAchievementsCompleteDelegate", &UOnlinePlayerInterface::AddReadAchievementsCompleteDelegate)

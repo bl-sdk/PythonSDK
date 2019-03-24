@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_SetPawnThrottleData(py::module &m)
 {
     py::class_< UBehavior_SetPawnThrottleData,  UBehaviorBase   >(m, "UBehavior_SetPawnThrottleData")
+		.def_static("StaticClass", &UBehavior_SetPawnThrottleData::StaticClass, py::return_value_policy::reference)
         .def_readwrite("FullThrottleDistance", &UBehavior_SetPawnThrottleData::FullThrottleDistance)
         .def_readwrite("FullThrottleTime", &UBehavior_SetPawnThrottleData::FullThrottleTime)
         .def_readwrite("MinThrottleDistance", &UBehavior_SetPawnThrottleData::MinThrottleDistance)

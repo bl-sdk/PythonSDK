@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UParticleModuleUberLTISIVCLIL(py::module &m)
 {
     py::class_< UParticleModuleUberLTISIVCLIL,  UParticleModuleUberBase   >(m, "UParticleModuleUberLTISIVCLIL")
+		.def_static("StaticClass", &UParticleModuleUberLTISIVCLIL::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Lifetime", &UParticleModuleUberLTISIVCLIL::Lifetime)
         .def_readwrite("StartSize", &UParticleModuleUberLTISIVCLIL::StartSize)
         .def_readwrite("StartVelocity", &UParticleModuleUberLTISIVCLIL::StartVelocity)

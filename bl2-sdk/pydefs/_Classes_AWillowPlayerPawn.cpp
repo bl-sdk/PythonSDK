@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowPlayerPawn(py::module &m)
 {
     py::class_< AWillowPlayerPawn,  AWillowPawn   >(m, "AWillowPlayerPawn")
+		.def_static("StaticClass", &AWillowPlayerPawn::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIProtectionTimer", &AWillowPlayerPawn::VfTable_IIProtectionTimer)
         .def_readwrite("VfTable_IIWeatherBehavior", &AWillowPlayerPawn::VfTable_IIWeatherBehavior)
         .def_readwrite("VfTable_IIGFxActorMovie", &AWillowPlayerPawn::VfTable_IIGFxActorMovie)

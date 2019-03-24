@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USkelControlWheel(py::module &m)
 {
     py::class_< USkelControlWheel,  USkelControlBase   >(m, "USkelControlWheel")
+		.def_static("StaticClass", &USkelControlWheel::StaticClass, py::return_value_policy::reference)
         .def_readwrite("WheelDisplacement", &USkelControlWheel::WheelDisplacement)
         .def_readwrite("WheelMaxRenderDisplacement", &USkelControlWheel::WheelMaxRenderDisplacement)
         .def_readwrite("WheelRoll", &USkelControlWheel::WheelRoll)

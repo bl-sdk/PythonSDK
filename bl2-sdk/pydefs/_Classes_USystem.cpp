@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USystem(py::module &m)
 {
     py::class_< USystem,  UObject   >(m, "USystem")
+		.def_static("StaticClass", &USystem::StaticClass, py::return_value_policy::reference)
         .def_readwrite("StaleCacheDays", &USystem::StaleCacheDays)
         .def_readwrite("MaxStaleCacheSize", &USystem::MaxStaleCacheSize)
         .def_readwrite("MaxOverallCacheSize", &USystem::MaxOverallCacheSize)

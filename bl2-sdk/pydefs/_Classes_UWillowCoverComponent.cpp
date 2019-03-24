@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowCoverComponent(py::module &m)
 {
     py::class_< UWillowCoverComponent,  UActorComponent   >(m, "UWillowCoverComponent")
+		.def_static("StaticClass", &UWillowCoverComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("AIPawn", &UWillowCoverComponent::AIPawn)
         .def_readwrite("LastAction", &UWillowCoverComponent::LastAction)
         .def("IdleTimer", &UWillowCoverComponent::IdleTimer)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ULevelDependencyList(py::module &m)
 {
     py::class_< ULevelDependencyList,  UGBXDefinition   >(m, "ULevelDependencyList")
+		.def_static("StaticClass", &ULevelDependencyList::StaticClass, py::return_value_policy::reference)
         .def_readwrite("LoaderMap", &ULevelDependencyList::LoaderMap)
         .def_readwrite("LevelList", &ULevelDependencyList::LevelList)
         .def_readwrite("LevelWorldDiscoveryStatID", &ULevelDependencyList::LevelWorldDiscoveryStatID)

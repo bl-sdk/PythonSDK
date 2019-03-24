@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowTradeManager(py::module &m)
 {
     py::class_< AWillowTradeManager,  AActor   >(m, "AWillowTradeManager")
+		.def_static("StaticClass", &AWillowTradeManager::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Status", &AWillowTradeManager::Status)
         .def_readwrite("Stance", &AWillowTradeManager::Stance)
         .def_readwrite("PartnerStance", &AWillowTradeManager::PartnerStance)

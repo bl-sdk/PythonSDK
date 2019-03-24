@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UInteraction(py::module &m)
 {
     py::class_< UInteraction,  UObject   >(m, "UInteraction")
+		.def_static("StaticClass", &UInteraction::StaticClass, py::return_value_policy::reference)
         .def_readwrite("BadCapsLocContexts", &UUIRoot::BadCapsLocContexts)
         .def("NotifyPlayerRemoved", &UInteraction::NotifyPlayerRemoved)
         .def("NotifyPlayerAdded", &UInteraction::NotifyPlayerAdded)

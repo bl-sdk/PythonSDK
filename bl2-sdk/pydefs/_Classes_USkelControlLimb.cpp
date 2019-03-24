@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USkelControlLimb(py::module &m)
 {
     py::class_< USkelControlLimb,  USkelControlBase   >(m, "USkelControlLimb")
+		.def_static("StaticClass", &USkelControlLimb::StaticClass, py::return_value_policy::reference)
         .def_readwrite("EffectorLocation", &USkelControlLimb::EffectorLocation)
         .def_readwrite("EffectorRotation", &USkelControlLimb::EffectorRotation)
         .def_readwrite("EffectorLocationSpace", &USkelControlLimb::EffectorLocationSpace)

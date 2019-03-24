@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_APrefabInstance(py::module &m)
 {
     py::class_< APrefabInstance,  AActor   >(m, "APrefabInstance")
+		.def_static("StaticClass", &APrefabInstance::StaticClass, py::return_value_policy::reference)
         .def_readwrite("TemplatePrefab", &APrefabInstance::TemplatePrefab)
         .def_readwrite("TemplateVersion", &APrefabInstance::TemplateVersion)
         .def_readwrite("SequenceInstance", &APrefabInstance::SequenceInstance)

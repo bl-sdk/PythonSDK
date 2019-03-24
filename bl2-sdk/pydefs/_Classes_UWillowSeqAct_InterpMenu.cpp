@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowSeqAct_InterpMenu(py::module &m)
 {
     py::class_< UWillowSeqAct_InterpMenu,  USeqAct_Interp   >(m, "UWillowSeqAct_InterpMenu")
+		.def_static("StaticClass", &UWillowSeqAct_InterpMenu::StaticClass, py::return_value_policy::reference)
         .def_readwrite("IdleTime", &UWillowSeqAct_InterpMenu::IdleTime)
         .def_readwrite("ControllerSensitivityScale", &UWillowSeqAct_InterpMenu::ControllerSensitivityScale)
         .def_readwrite("MouseSensitivityScale", &UWillowSeqAct_InterpMenu::MouseSensitivityScale)

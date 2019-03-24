@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGearboxGlobals(py::module &m)
 {
     py::class_< UGearboxGlobals,  UGearboxEngineGlobals   >(m, "UGearboxGlobals")
+		.def_static("StaticClass", &UGearboxGlobals::StaticClass, py::return_value_policy::reference)
         .def_readwrite("TheGlobalsDefinition", &UGearboxGlobals::TheGlobalsDefinition)
         .def_readwrite("ExposureUtilityClass", &UGearboxGlobals::ExposureUtilityClass)
         .def_readwrite("ExposureUtilityStrategyClass", &UGearboxGlobals::ExposureUtilityStrategyClass)

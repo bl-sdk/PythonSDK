@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UShadowMap2D(py::module &m)
 {
     py::class_< UShadowMap2D,  UObject   >(m, "UShadowMap2D")
+		.def_static("StaticClass", &UShadowMap2D::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Texture", &UShadowMap2D::Texture)
         .def_readwrite("CoordinateScale", &UShadowMap2D::CoordinateScale)
         .def_readwrite("CoordinateBias", &UShadowMap2D::CoordinateBias)

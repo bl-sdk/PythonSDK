@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_AddInventoryToStorage(py::module &m)
 {
     py::class_< UBehavior_AddInventoryToStorage,  UBehaviorBase   >(m, "UBehavior_AddInventoryToStorage")
+		.def_static("StaticClass", &UBehavior_AddInventoryToStorage::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ItemDef", &UBehavior_AddInventoryToStorage::ItemDef)
         .def_readwrite("WeaponDef", &UBehavior_AddInventoryToStorage::WeaponDef)
         .def_readwrite("InvType", &UBehavior_AddInventoryToStorage::InvType)

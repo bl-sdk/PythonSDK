@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UItemDefinition(py::module &m)
 {
     py::class_< UItemDefinition,  UWillowInventoryDefinition   >(m, "UItemDefinition")
+		.def_static("StaticClass", &UItemDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIBehaviorProvider", &UItemDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("VfTable_IIConstructObject", &UItemDefinition::VfTable_IIConstructObject)
         .def_readwrite("DroppedImpact", &UItemDefinition::DroppedImpact)

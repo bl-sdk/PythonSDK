@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UUIDataStore_OnlinePlayerData(py::module &m)
 {
     py::class_< UUIDataStore_OnlinePlayerData,  UUIDataStore   >(m, "UUIDataStore_OnlinePlayerData")
+		.def_static("StaticClass", &UUIDataStore_OnlinePlayerData::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IUIListElementProvider", &UUIDataStore_OnlinePlayerData::VfTable_IUIListElementProvider)
         .def_readwrite("FriendsProvider", &UUIDataStore_OnlinePlayerData::FriendsProvider)
         .def_readwrite("PlayerControllerId", &UUIDataStore_OnlinePlayerData::PlayerControllerId)

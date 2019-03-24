@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UChassisDefinition(py::module &m)
 {
     py::class_< UChassisDefinition,  UGBXDefinition   >(m, "UChassisDefinition")
+		.def_static("StaticClass", &UChassisDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIHitRegionInfoProvider", &UChassisDefinition::VfTable_IIHitRegionInfoProvider)
         .def_readwrite("BodyComposition", &UChassisDefinition::BodyComposition)
         .def_readwrite("DefaultHitRegion", &UChassisDefinition::DefaultHitRegion)

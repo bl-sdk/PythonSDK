@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ULightComponent(py::module &m)
 {
     py::class_< ULightComponent,  UActorComponent   >(m, "ULightComponent")
+		.def_static("StaticClass", &ULightComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SceneInfo", &ULightComponent::SceneInfo)
         .def_readwrite("WorldToLight", &ULightComponent::WorldToLight)
         .def_readwrite("LightToWorld", &ULightComponent::LightToWorld)

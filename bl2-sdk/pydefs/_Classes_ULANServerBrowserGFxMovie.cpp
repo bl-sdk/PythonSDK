@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ULANServerBrowserGFxMovie(py::module &m)
 {
     py::class_< ULANServerBrowserGFxMovie,  UWillowGFxMovie3D   >(m, "ULANServerBrowserGFxMovie")
+		.def_static("StaticClass", &ULANServerBrowserGFxMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ServerBrowserObj", &ULANServerBrowserGFxMovie::ServerBrowserObj)
         .def_readwrite("HeaderTextPath", &ULANServerBrowserGFxMovie::HeaderTextPath)
         .def_readwrite("TooltipTextPath", &ULANServerBrowserGFxMovie::TooltipTextPath)

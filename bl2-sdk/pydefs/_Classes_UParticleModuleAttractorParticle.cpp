@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UParticleModuleAttractorParticle(py::module &m)
 {
     py::class_< UParticleModuleAttractorParticle,  UParticleModule   >(m, "UParticleModuleAttractorParticle")
+		.def_static("StaticClass", &UParticleModuleAttractorParticle::StaticClass, py::return_value_policy::reference)
         .def_readwrite("EmitterName", &UParticleModuleAttractorParticle::EmitterName)
         .def_readwrite("Range", &UParticleModuleAttractorParticle::Range)
         .def_readwrite("Strength", &UParticleModuleAttractorParticle::Strength)

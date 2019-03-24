@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAnimNodeBlendByPhysics(py::module &m)
 {
     py::class_< UAnimNodeBlendByPhysics,  UAnimNodeBlendList   >(m, "UAnimNodeBlendByPhysics")
+		.def_static("StaticClass", &UAnimNodeBlendByPhysics::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DelayBeforeStartingBlend", &UAnimNodeBlendByPhysics::DelayBeforeStartingBlend)
         .def_readwrite("WaitingToDoBlend", &UAnimNodeBlendByPhysics::WaitingToDoBlend)
           ;

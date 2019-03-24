@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UChallengeDefinition(py::module &m)
 {
     py::class_< UChallengeDefinition,  UGBXDefinition   >(m, "UChallengeDefinition")
+		.def_static("StaticClass", &UChallengeDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIBehaviorProvider", &UChallengeDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("VfTable_IIDlcLicensableObject", &UChallengeDefinition::VfTable_IIDlcLicensableObject)
         .def_readwrite("ChallengeName", &UChallengeDefinition::ChallengeName)

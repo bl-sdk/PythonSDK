@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USceneCapture2DComponent(py::module &m)
 {
     py::class_< USceneCapture2DComponent,  USceneCaptureComponent   >(m, "USceneCapture2DComponent")
+		.def_static("StaticClass", &USceneCapture2DComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("TextureTarget", &USceneCapture2DComponent::TextureTarget)
         .def_readwrite("FieldOfView", &USceneCapture2DComponent::FieldOfView)
         .def_readwrite("NearPlane", &USceneCapture2DComponent::NearPlane)

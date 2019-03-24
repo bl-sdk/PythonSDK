@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UChallengesPanelGFxObject(py::module &m)
 {
     py::class_< UChallengesPanelGFxObject,  UBaseInventoryPanelGFxObject   >(m, "UChallengesPanelGFxObject")
+		.def_static("StaticClass", &UChallengesPanelGFxObject::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ChallengeLogTextList", &UChallengesPanelGFxObject::ChallengeLogTextList)
         .def_readwrite("StatusMenuDef", &UChallengesPanelGFxObject::StatusMenuDef)
         .def_readwrite("MyWPC", &UChallengesPanelGFxObject::MyWPC)

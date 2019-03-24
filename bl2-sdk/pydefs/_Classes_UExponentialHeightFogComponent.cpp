@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UExponentialHeightFogComponent(py::module &m)
 {
     py::class_< UExponentialHeightFogComponent,  UActorComponent   >(m, "UExponentialHeightFogComponent")
+		.def_static("StaticClass", &UExponentialHeightFogComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("FogHeight", &UExponentialHeightFogComponent::FogHeight)
         .def_readwrite("FogDensity", &UExponentialHeightFogComponent::FogDensity)
         .def_readwrite("FogHeightFalloff", &UExponentialHeightFogComponent::FogHeightFalloff)

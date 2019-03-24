@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UVendingMachineGFxDefinition(py::module &m)
 {
     py::class_< UVendingMachineGFxDefinition,  UWillowGFxMovie3DDefinition   >(m, "UVendingMachineGFxDefinition")
+		.def_static("StaticClass", &UVendingMachineGFxDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("StrictGiveUpDistance", &UVendingMachineGFxDefinition::StrictGiveUpDistance)
         .def_readwrite("LooseGiveUpDistance", &UVendingMachineGFxDefinition::LooseGiveUpDistance)
         .def_readwrite("StrictTolerance", &UVendingMachineGFxDefinition::StrictTolerance)

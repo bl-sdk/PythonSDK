@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AGearboxDialogActor(py::module &m)
 {
     py::class_< AGearboxDialogActor,  AActor   >(m, "AGearboxDialogActor")
+		.def_static("StaticClass", &AGearboxDialogActor::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IGearboxDialogInterface", &AGearboxDialogActor::VfTable_IGearboxDialogInterface)
         .def_readwrite("DialogGroups", &AGearboxDialogActor::DialogGroups)
         .def_readwrite("NameTag", &AGearboxDialogActor::NameTag)

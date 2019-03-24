@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBalanceModifierDefinition(py::module &m)
 {
     py::class_< UBalanceModifierDefinition,  UGBXDefinition   >(m, "UBalanceModifierDefinition")
+		.def_static("StaticClass", &UBalanceModifierDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PlaythroughToBalance", &UBalanceModifierDefinition::PlaythroughToBalance)
         .def_readwrite("BalanceModifiers", &UBalanceModifierDefinition::BalanceModifiers)
         .def_readwrite("AdditionalAmmoSDUUpgrades", &UBalanceModifierDefinition::AdditionalAmmoSDUUpgrades)

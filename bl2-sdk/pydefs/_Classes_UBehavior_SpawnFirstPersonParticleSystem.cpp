@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_SpawnFirstPersonParticleSystem(py::module &m)
 {
     py::class_< UBehavior_SpawnFirstPersonParticleSystem,  UBehaviorBase   >(m, "UBehavior_SpawnFirstPersonParticleSystem")
+		.def_static("StaticClass", &UBehavior_SpawnFirstPersonParticleSystem::StaticClass, py::return_value_policy::reference)
         .def_readwrite("InstanceDataContext", &UBehavior_SpawnFirstPersonParticleSystem::InstanceDataContext)
         .def_readwrite("SavedReferenceName", &UBehavior_SpawnFirstPersonParticleSystem::SavedReferenceName)
         .def_readwrite("ParticleEffect", &UBehavior_SpawnFirstPersonParticleSystem::ParticleEffect)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UFont(py::module &m)
 {
     py::class_< UFont,  UObject   >(m, "UFont")
+		.def_static("StaticClass", &UFont::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Characters", &UFont::Characters)
         .def_readwrite("Textures", &UFont::Textures)
         .def_readwrite("IsRemapped", &UFont::IsRemapped)

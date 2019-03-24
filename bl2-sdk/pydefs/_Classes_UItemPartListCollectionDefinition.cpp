@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UItemPartListCollectionDefinition(py::module &m)
 {
     py::class_< UItemPartListCollectionDefinition,  UInventoryPartListCollectionDefinition   >(m, "UItemPartListCollectionDefinition")
+		.def_static("StaticClass", &UItemPartListCollectionDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("AssociatedItem", &UItemPartListCollectionDefinition::AssociatedItem)
         .def_readwrite("AlphaPartData", &UItemPartListCollectionDefinition::AlphaPartData)
         .def_readwrite("BetaPartData", &UItemPartListCollectionDefinition::BetaPartData)

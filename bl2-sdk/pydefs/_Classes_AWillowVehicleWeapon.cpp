@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowVehicleWeapon(py::module &m)
 {
     py::class_< AWillowVehicleWeapon,  AWillowWeapon   >(m, "AWillowVehicleWeapon")
+		.def_static("StaticClass", &AWillowVehicleWeapon::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SeatIndex", &AWillowVehicleWeapon::SeatIndex)
         .def_readwrite("MyVehicle", &AWillowVehicleWeapon::MyVehicle)
         .def_readwrite("FireTriggerTags", &AWillowVehicleWeapon::FireTriggerTags)

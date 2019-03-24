@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowDialogGlobalsDefinition(py::module &m)
 {
     py::class_< UWillowDialogGlobalsDefinition,  UGearboxDialogGlobalsDefinition   >(m, "UWillowDialogGlobalsDefinition")
+		.def_static("StaticClass", &UWillowDialogGlobalsDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DefaultTemplateGroup", &UWillowDialogGlobalsDefinition::DefaultTemplateGroup)
         .def_readwrite("DET_Jump", &UWillowDialogGlobalsDefinition::DET_Jump)
         .def_readwrite("DET_JumpLand", &UWillowDialogGlobalsDefinition::DET_JumpLand)

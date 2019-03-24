@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAnimNodeSequence(py::module &m)
 {
     py::class_< UAnimNodeSequence,  UAnimNode   >(m, "UAnimNodeSequence")
+		.def_static("StaticClass", &UAnimNodeSequence::StaticClass, py::return_value_policy::reference)
         .def_readwrite("AnimSeqName", &UAnimNodeSequence::AnimSeqName)
         .def_readwrite("Rate", &UAnimNodeSequence::Rate)
         .def_readwrite("CurrentTime", &UAnimNodeSequence::CurrentTime)

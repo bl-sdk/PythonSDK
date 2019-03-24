@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPrimitiveComponent(py::module &m)
 {
     py::class_< UPrimitiveComponent,  UActorComponent   >(m, "UPrimitiveComponent")
+		.def_static("StaticClass", &UPrimitiveComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Tag", &UPrimitiveComponent::Tag)
         .def_readwrite("Bounds", &UPrimitiveComponent::Bounds)
         .def_readwrite("SceneInfo", &UPrimitiveComponent::SceneInfo)

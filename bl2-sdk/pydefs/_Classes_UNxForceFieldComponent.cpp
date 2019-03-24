@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UNxForceFieldComponent(py::module &m)
 {
     py::class_< UNxForceFieldComponent,  UPrimitiveComponent   >(m, "UNxForceFieldComponent")
+		.def_static("StaticClass", &UNxForceFieldComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Shape", &UNxForceFieldComponent::Shape)
         .def_readwrite("DrawComponent", &UNxForceFieldComponent::DrawComponent)
         .def_readwrite("ExcludeChannel", &UNxForceFieldComponent::ExcludeChannel)

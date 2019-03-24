@@ -6,5 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UWillowSeqCond_MultiplePlayersInGame(py::module &m)
 {
     py::class_< UWillowSeqCond_MultiplePlayersInGame,  USequenceCondition   >(m, "UWillowSeqCond_MultiplePlayersInGame")
+		.def_static("StaticClass", &UWillowSeqCond_MultiplePlayersInGame::StaticClass, py::return_value_policy::reference)
           ;
 }

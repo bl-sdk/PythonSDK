@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UStaggerDefinition(py::module &m)
 {
     py::class_< UStaggerDefinition,  UGBXDefinition   >(m, "UStaggerDefinition")
+		.def_static("StaticClass", &UStaggerDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("StaggeredPhysicalMaterial", &UStaggerDefinition::StaggeredPhysicalMaterial)
         .def_readwrite("StaggeredGravity", &UStaggerDefinition::StaggeredGravity)
         .def_readwrite("StaggeredRestVelocity", &UStaggerDefinition::StaggeredRestVelocity)

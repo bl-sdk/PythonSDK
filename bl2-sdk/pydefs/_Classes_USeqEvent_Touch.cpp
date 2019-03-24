@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USeqEvent_Touch(py::module &m)
 {
     py::class_< USeqEvent_Touch,  USequenceEvent   >(m, "USeqEvent_Touch")
+		.def_static("StaticClass", &USeqEvent_Touch::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ClassProximityTypes", &USeqEvent_Touch::ClassProximityTypes)
         .def_readwrite("ArchetypeFilter", &USeqEvent_Touch::ArchetypeFilter)
         .def_readwrite("IgnoredClassProximityTypes", &USeqEvent_Touch::IgnoredClassProximityTypes)

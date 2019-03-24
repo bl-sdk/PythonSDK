@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowScrollingListDataProviderGamepadOptions(py::module &m)
 {
     py::class_< UWillowScrollingListDataProviderGamepadOptions,  UWillowScrollingListDataProviderOptionsBase   >(m, "UWillowScrollingListDataProviderGamepadOptions")
+		.def_static("StaticClass", &UWillowScrollingListDataProviderGamepadOptions::StaticClass, py::return_value_policy::reference)
         .def_readwrite("KeyCaptionList", &UWillowScrollingListDataProviderGamepadOptions::KeyCaptionList)
         .def_readwrite("ControllerPresetTags", &UWillowScrollingListDataProviderGamepadOptions::ControllerPresetTags)
         .def_readwrite("ControllerPresetNames", &UWillowScrollingListDataProviderGamepadOptions::ControllerPresetNames)

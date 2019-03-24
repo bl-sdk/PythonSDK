@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ARB_LineImpulseActor(py::module &m)
 {
     py::class_< ARB_LineImpulseActor,  ARigidBodyBase   >(m, "ARB_LineImpulseActor")
+		.def_static("StaticClass", &ARB_LineImpulseActor::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ImpulseStrength", &ARB_LineImpulseActor::ImpulseStrength)
         .def_readwrite("ImpulseRange", &ARB_LineImpulseActor::ImpulseRange)
         .def_readwrite("Arrow", &ARB_LineImpulseActor::Arrow)

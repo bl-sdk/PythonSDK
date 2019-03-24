@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowGFxColiseumOverlayDefinition(py::module &m)
 {
     py::class_< UWillowGFxColiseumOverlayDefinition,  UGFxMovieDefinition   >(m, "UWillowGFxColiseumOverlayDefinition")
+		.def_static("StaticClass", &UWillowGFxColiseumOverlayDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CurrentRoundCounter", &UWillowGFxColiseumOverlayDefinition::CurrentRoundCounter)
         .def_readwrite("CurrentWaveCounter", &UWillowGFxColiseumOverlayDefinition::CurrentWaveCounter)
         .def_readwrite("MaxRoundCounter", &UWillowGFxColiseumOverlayDefinition::MaxRoundCounter)

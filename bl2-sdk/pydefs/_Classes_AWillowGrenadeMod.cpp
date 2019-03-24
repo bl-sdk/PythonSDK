@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowGrenadeMod(py::module &m)
 {
     py::class_< AWillowGrenadeMod,  AWillowEquipAbleItem   >(m, "AWillowGrenadeMod")
+		.def_static("StaticClass", &AWillowGrenadeMod::StaticClass, py::return_value_policy::reference)
         .def_readwrite("GrenadeDamage", &AWillowGrenadeMod::GrenadeDamage)
         .def_readwrite("GrenadeDamageBaseValue", &AWillowGrenadeMod::GrenadeDamageBaseValue)
         .def_readwrite("GrenadeDamageModifierStack", &AWillowGrenadeMod::GrenadeDamageModifierStack)

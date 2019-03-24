@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UTerrainComponent(py::module &m)
 {
     py::class_< UTerrainComponent,  UPrimitiveComponent   >(m, "UTerrainComponent")
+		.def_static("StaticClass", &UTerrainComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ShadowMaps", &UTerrainComponent::ShadowMaps)
         .def_readwrite("IrrelevantLights", &UTerrainComponent::IrrelevantLights)
         .def_readwrite("TerrainObject", &UTerrainComponent::TerrainObject)

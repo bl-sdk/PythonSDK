@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USeqEvent_TakeDamage(py::module &m)
 {
     py::class_< USeqEvent_TakeDamage,  USequenceEvent   >(m, "USeqEvent_TakeDamage")
+		.def_static("StaticClass", &USeqEvent_TakeDamage::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MinDamageAmount", &USeqEvent_TakeDamage::MinDamageAmount)
         .def_readwrite("DamageThreshold", &USeqEvent_TakeDamage::DamageThreshold)
         .def_readwrite("DamageTypes", &USeqEvent_TakeDamage::DamageTypes)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowVehicleSimCar(py::module &m)
 {
     py::class_< UWillowVehicleSimCar,  USVehicleSimCar   >(m, "UWillowVehicleSimCar")
+		.def_static("StaticClass", &UWillowVehicleSimCar::StaticClass, py::return_value_policy::reference)
         .def_readwrite("TorqueVSpeedCurve", &UWillowVehicleSimCar::TorqueVSpeedCurve)
         .def_readwrite("DefaultTorqueVSpeedCurve", &UWillowVehicleSimCar::DefaultTorqueVSpeedCurve)
         .def_readwrite("TotalSpinVel", &UWillowVehicleSimCar::TotalSpinVel)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UTurnDefinition(py::module &m)
 {
     py::class_< UTurnDefinition,  UGBXDefinition   >(m, "UTurnDefinition")
+		.def_static("StaticClass", &UTurnDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Idle", &UTurnDefinition::Idle)
         .def_readwrite("Moving", &UTurnDefinition::Moving)
         .def_readwrite("TurnCancelTime", &UTurnDefinition::TurnCancelTime)

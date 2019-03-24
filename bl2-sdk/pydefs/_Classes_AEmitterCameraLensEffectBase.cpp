@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AEmitterCameraLensEffectBase(py::module &m)
 {
     py::class_< AEmitterCameraLensEffectBase,  AActor   >(m, "AEmitterCameraLensEffectBase")
+		.def_static("StaticClass", &AEmitterCameraLensEffectBase::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PS_CameraEffect", &AEmitterCameraLensEffectBase::PS_CameraEffect)
         .def_readwrite("PS_CameraEffectNonExtremeContent", &AEmitterCameraLensEffectBase::PS_CameraEffectNonExtremeContent)
         .def_readwrite("BaseFOV", &AEmitterCameraLensEffectBase::BaseFOV)

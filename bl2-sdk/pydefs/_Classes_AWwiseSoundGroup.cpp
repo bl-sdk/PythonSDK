@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWwiseSoundGroup(py::module &m)
 {
     py::class_< AWwiseSoundGroup,  AKeypoint   >(m, "AWwiseSoundGroup")
+		.def_static("StaticClass", &AWwiseSoundGroup::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IISpecialOcclusionProvider", &AWwiseSoundGroup::VfTable_IISpecialOcclusionProvider)
         .def_readwrite("VfTable_IISpecialOcclusionAccumulator", &AWwiseSoundGroup::VfTable_IISpecialOcclusionAccumulator)
         .def_readwrite("Members", &AWwiseSoundGroup::Members)

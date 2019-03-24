@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UParticleEmitter(py::module &m)
 {
     py::class_< UParticleEmitter,  UObject   >(m, "UParticleEmitter")
+		.def_static("StaticClass", &UParticleEmitter::StaticClass, py::return_value_policy::reference)
         .def_readwrite("EmitterName", &UParticleEmitter::EmitterName)
         .def_readwrite("SubUVDataOffset", &UParticleEmitter::SubUVDataOffset)
         .def_readwrite("EmitterRenderMode", &UParticleEmitter::EmitterRenderMode)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UOnlinePlayerStorage(py::module &m)
 {
     py::class_< UOnlinePlayerStorage,  UObject   >(m, "UOnlinePlayerStorage")
+		.def_static("StaticClass", &UOnlinePlayerStorage::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VersionNumber", &UOnlinePlayerStorage::VersionNumber)
         .def_readwrite("VersionSettingsId", &UOnlinePlayerStorage::VersionSettingsId)
         .def_readwrite("SaveCountSettingId", &UOnlinePlayerStorage::SaveCountSettingId)

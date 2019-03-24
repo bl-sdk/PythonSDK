@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UDownloadableItemSetDefinition(py::module &m)
 {
     py::class_< UDownloadableItemSetDefinition,  UDownloadableContentDefinition   >(m, "UDownloadableItemSetDefinition")
+		.def_static("StaticClass", &UDownloadableItemSetDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DefaultAttributePresentation", &UDownloadableItemSetDefinition::DefaultAttributePresentation)
         .def_readwrite("ItemAttributePresentationOverride", &UDownloadableItemSetDefinition::ItemAttributePresentationOverride)
         .def_readwrite("ArtifactAttributePresentationOverride", &UDownloadableItemSetDefinition::ArtifactAttributePresentationOverride)

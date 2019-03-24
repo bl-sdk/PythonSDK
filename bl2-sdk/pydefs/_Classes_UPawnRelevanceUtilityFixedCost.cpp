@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPawnRelevanceUtilityFixedCost(py::module &m)
 {
     py::class_< UPawnRelevanceUtilityFixedCost,  UPawnRelevanceUtility   >(m, "UPawnRelevanceUtilityFixedCost")
+		.def_static("StaticClass", &UPawnRelevanceUtilityFixedCost::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CloseDistanceSquared", &UPawnRelevanceUtilityFixedCost::CloseDistanceSquared)
         .def_readwrite("MedDistanceSquared", &UPawnRelevanceUtilityFixedCost::MedDistanceSquared)
         .def_readwrite("MaxLineChecksPerFrame", &UPawnRelevanceUtilityFixedCost::MaxLineChecksPerFrame)

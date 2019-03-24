@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UCustomizationGFxMovie(py::module &m)
 {
     py::class_< UCustomizationGFxMovie,  UWillowGFxThirdPersonMovie   >(m, "UCustomizationGFxMovie")
+		.def_static("StaticClass", &UCustomizationGFxMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CharacterCustomizationMenu", &UCustomizationGFxMovie::CharacterCustomizationMenu)
         .def_readwrite("CharacterCustomizationInfoCard", &UCustomizationGFxMovie::CharacterCustomizationInfoCard)
         .def_readwrite("HeadCustomizations", &UCustomizationGFxMovie::HeadCustomizations)

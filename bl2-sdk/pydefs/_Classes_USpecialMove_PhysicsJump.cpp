@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USpecialMove_PhysicsJump(py::module &m)
 {
     py::class_< USpecialMove_PhysicsJump,  UWillowAnimDefinition   >(m, "USpecialMove_PhysicsJump")
+		.def_static("StaticClass", &USpecialMove_PhysicsJump::StaticClass, py::return_value_policy::reference)
         .def_readwrite("AnimIdle", &USpecialMove_PhysicsJump::AnimIdle)
         .def_readwrite("AnimLand", &USpecialMove_PhysicsJump::AnimLand)
         .def_readwrite("BodyTag", &USpecialMove_PhysicsJump::BodyTag)

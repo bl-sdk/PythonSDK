@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowWaypoint(py::module &m)
 {
     py::class_< AWillowWaypoint,  ATrigger   >(m, "AWillowWaypoint")
+		.def_static("StaticClass", &AWillowWaypoint::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIMission", &AWillowWaypoint::VfTable_IIMission)
         .def_readwrite("WaypointInfo", &AWillowWaypoint::WaypointInfo)
         .def_readwrite("AreaRadius", &AWillowWaypoint::AreaRadius)

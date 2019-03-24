@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowSeqAct_AIScriptedDeath(py::module &m)
 {
     py::class_< UWillowSeqAct_AIScriptedDeath,  USequenceAction   >(m, "UWillowSeqAct_AIScriptedDeath")
+		.def_static("StaticClass", &UWillowSeqAct_AIScriptedDeath::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DamageType", &UWillowSeqAct_AIScriptedDeath::DamageType)
         .def_readwrite("DeathType", &UWillowSeqAct_AIScriptedDeath::DeathType)
         .def_readwrite("Anim", &UWillowSeqAct_AIScriptedDeath::Anim)

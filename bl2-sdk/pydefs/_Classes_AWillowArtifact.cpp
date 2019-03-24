@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowArtifact(py::module &m)
 {
     py::class_< AWillowArtifact,  AWillowEquipAbleItem   >(m, "AWillowArtifact")
+		.def_static("StaticClass", &AWillowArtifact::StaticClass, py::return_value_policy::reference)
         .def("GetItemCardTopSectionString", &AWillowArtifact::GetItemCardTopSectionString)
         .def("GetAttributePresentationOverride", &AWillowArtifact::GetAttributePresentationOverride, py::return_value_policy::reference)
         .def("SetElementalFrame", &AWillowArtifact::SetElementalFrame)

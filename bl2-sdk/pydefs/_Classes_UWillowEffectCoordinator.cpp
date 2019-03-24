@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowEffectCoordinator(py::module &m)
 {
     py::class_< UWillowEffectCoordinator,  UObject   >(m, "UWillowEffectCoordinator")
+		.def_static("StaticClass", &UWillowEffectCoordinator::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SupportedEffects", &UWillowEffectCoordinator::SupportedEffects)
         .def_readwrite("ManagedParticlesReserveLength", &UWillowEffectCoordinator::ManagedParticlesReserveLength)
         .def_readwrite("ManagedAudioReserveLength", &UWillowEffectCoordinator::ManagedAudioReserveLength)

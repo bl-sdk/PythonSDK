@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWaterVolume(py::module &m)
 {
     py::class_< AWaterVolume,  APhysicsVolume   >(m, "AWaterVolume")
+		.def_static("StaticClass", &AWaterVolume::StaticClass, py::return_value_policy::reference)
         .def_readwrite("EntrySound", &AWaterVolume::EntrySound)
         .def_readwrite("EntryActor", &AWaterVolume::EntryActor)
         .def_readwrite("ExitSound", &AWaterVolume::ExitSound)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowCoverStanceDefinition(py::module &m)
 {
     py::class_< UWillowCoverStanceDefinition,  UGBXDefinition   >(m, "UWillowCoverStanceDefinition")
+		.def_static("StaticClass", &UWillowCoverStanceDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("AimProfile", &UWillowCoverStanceDefinition::AimProfile)
         .def_readwrite("Enter", &UWillowCoverStanceDefinition::Enter)
         .def_readwrite("Exit", &UWillowCoverStanceDefinition::Exit)

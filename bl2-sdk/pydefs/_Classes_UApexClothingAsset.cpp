@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UApexClothingAsset(py::module &m)
 {
     py::class_< UApexClothingAsset,  UObject   >(m, "UApexClothingAsset")
+		.def_static("StaticClass", &UApexClothingAsset::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MApexAsset", &UApexClothingAsset::MApexAsset)
         .def_readwrite("ApexClothingLibrary", &UApexClothingAsset::ApexClothingLibrary)
         .def_readwrite("UVChannelForTangentUpdate", &UApexClothingAsset::UVChannelForTangentUpdate)

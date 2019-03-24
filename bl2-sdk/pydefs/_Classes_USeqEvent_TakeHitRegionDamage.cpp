@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USeqEvent_TakeHitRegionDamage(py::module &m)
 {
     py::class_< USeqEvent_TakeHitRegionDamage,  USequenceEvent   >(m, "USeqEvent_TakeHitRegionDamage")
+		.def_static("StaticClass", &USeqEvent_TakeHitRegionDamage::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MinDamageAmount", &USeqEvent_TakeHitRegionDamage::MinDamageAmount)
         .def_readwrite("DamageThreshold", &USeqEvent_TakeHitRegionDamage::DamageThreshold)
         .def_readwrite("DamageTypes", &USeqEvent_TakeHitRegionDamage::DamageTypes)

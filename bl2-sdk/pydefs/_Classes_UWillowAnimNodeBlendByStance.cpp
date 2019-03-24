@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowAnimNodeBlendByStance(py::module &m)
 {
     py::class_< UWillowAnimNodeBlendByStance,  UAnimNodeBlendList   >(m, "UWillowAnimNodeBlendByStance")
+		.def_static("StaticClass", &UWillowAnimNodeBlendByStance::StaticClass, py::return_value_policy::reference)
         .def_readwrite("BlendTime", &UWillowAnimNodeBlendByStance::BlendTime)
         .def_readwrite("ReferencesSpeeds", &UWillowAnimNodeBlendByStance::ReferencesSpeeds)
         .def_readwrite("DefaultStances", &UWillowAnimNodeBlendByStance::DefaultStances)

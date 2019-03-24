@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UEdgeDetectionPostProcessEffect(py::module &m)
 {
     py::class_< UEdgeDetectionPostProcessEffect,  UPostProcessEffect   >(m, "UEdgeDetectionPostProcessEffect")
+		.def_static("StaticClass", &UEdgeDetectionPostProcessEffect::StaticClass, py::return_value_policy::reference)
         .def_readwrite("HFilterAxisCoeff", &UEdgeDetectionPostProcessEffect::HFilterAxisCoeff)
         .def_readwrite("HFilterDiagCoeff", &UEdgeDetectionPostProcessEffect::HFilterDiagCoeff)
         .def_readwrite("VFilterAxisCoeff", &UEdgeDetectionPostProcessEffect::VFilterAxisCoeff)

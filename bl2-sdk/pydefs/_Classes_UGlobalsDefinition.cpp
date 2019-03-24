@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGlobalsDefinition(py::module &m)
 {
     py::class_< UGlobalsDefinition,  UGearboxGlobalsDefinition   >(m, "UGlobalsDefinition")
+		.def_static("StaticClass", &UGlobalsDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("BulletReflectionRadius", &UGlobalsDefinition::BulletReflectionRadius)
         .def_readwrite("BulletReflectionSpeedAdjustment", &UGlobalsDefinition::BulletReflectionSpeedAdjustment)
         .def_readwrite("BulletReflectionParticle", &UGlobalsDefinition::BulletReflectionParticle)

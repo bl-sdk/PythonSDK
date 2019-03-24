@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UCanvas(py::module &m)
 {
     py::class_< UCanvas,  UObject   >(m, "UCanvas")
+		.def_static("StaticClass", &UCanvas::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Font", &UCanvas::Font)
         .def_readwrite("OrgX", &UCanvas::OrgX)
         .def_readwrite("OrgY", &UCanvas::OrgY)

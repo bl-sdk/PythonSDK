@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UCameraModifier(py::module &m)
 {
     py::class_< UCameraModifier,  UObject   >(m, "UCameraModifier")
+		.def_static("StaticClass", &UCameraModifier::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CameraOwner", &UCameraModifier::CameraOwner)
         .def_readwrite("Priority", &UCameraModifier::Priority)
         .def_readwrite("AlphaInTime", &UCameraModifier::AlphaInTime)

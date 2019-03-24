@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_APopulationEncounter(py::module &m)
 {
     py::class_< APopulationEncounter,  AInfo   >(m, "APopulationEncounter")
+		.def_static("StaticClass", &APopulationEncounter::StaticClass, py::return_value_policy::reference)
         .def_readwrite("EncounterPopulationDef", &APopulationEncounter::EncounterPopulationDef)
         .def_readwrite("MemberOutposts", &APopulationEncounter::MemberOutposts)
         .def_readwrite("MemberOpportunities", &APopulationEncounter::MemberOpportunities)

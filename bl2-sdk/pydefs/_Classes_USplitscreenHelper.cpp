@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USplitscreenHelper(py::module &m)
 {
     py::class_< USplitscreenHelper,  UObject   >(m, "USplitscreenHelper")
+		.def_static("StaticClass", &USplitscreenHelper::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PS3UserSelectTicker", &USplitscreenHelper::PS3UserSelectTicker)
         .def_readwrite("PS3SplitScreenControllerId", &USplitscreenHelper::PS3SplitScreenControllerId)
         .def_readwrite("PrimaryPC", &USplitscreenHelper::PrimaryPC)

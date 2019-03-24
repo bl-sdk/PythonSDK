@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USceneCapture2DHitMaskComponent(py::module &m)
 {
     py::class_< USceneCapture2DHitMaskComponent,  USceneCaptureComponent   >(m, "USceneCapture2DHitMaskComponent")
+		.def_static("StaticClass", &USceneCapture2DHitMaskComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("TextureTarget", &USceneCapture2DHitMaskComponent::TextureTarget)
         .def_readwrite("SkeletalMeshComp", &USceneCapture2DHitMaskComponent::SkeletalMeshComp)
         .def_readwrite("MaterialIndex", &USceneCapture2DHitMaskComponent::MaterialIndex)

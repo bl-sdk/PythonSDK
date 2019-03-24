@@ -26,6 +26,7 @@ UClass* UActorFactoryAkAmbientSound::pClassPointer = NULL;
 UClass* AAkAmbientSound::pClassPointer = NULL;
 UClass* UAkAmbientSoundRenderingComponent::pClassPointer = NULL;
 UClass* UIAkEnvironmentalEffectProvider::pClassPointer = NULL;
+UClass* UInterpTrackAkEvent::pClassPointer = NULL;
 UClass* UInterpTrackAkRTPC::pClassPointer = NULL;
 UClass* UInterpTrackInstAkEvent::pClassPointer = NULL;
 UClass* UInterpTrackInstAkRTPC::pClassPointer = NULL;

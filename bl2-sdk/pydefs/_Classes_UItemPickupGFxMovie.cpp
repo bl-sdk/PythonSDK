@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UItemPickupGFxMovie(py::module &m)
 {
     py::class_< UItemPickupGFxMovie,  UGearboxGFxMovie   >(m, "UItemPickupGFxMovie")
+		.def_static("StaticClass", &UItemPickupGFxMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MatSrc", &UItemPickupGFxMovie::MatSrc)
         .def_readwrite("Particle", &UItemPickupGFxMovie::Particle)
         .def_readwrite("ParticleMatParamName", &UItemPickupGFxMovie::ParticleMatParamName)

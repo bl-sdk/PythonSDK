@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ADoorMarker(py::module &m)
 {
     py::class_< ADoorMarker,  ANavigationPoint   >(m, "ADoorMarker")
+		.def_static("StaticClass", &ADoorMarker::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MyDoor", &ADoorMarker::MyDoor)
         .def_readwrite("DoorType", &ADoorMarker::DoorType)
         .def_readwrite("DoorTrigger", &ADoorMarker::DoorTrigger)

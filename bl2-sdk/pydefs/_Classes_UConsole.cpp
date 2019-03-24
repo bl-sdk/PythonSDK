@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UConsole(py::module &m)
 {
     py::class_< UConsole,  UInteraction   >(m, "UConsole")
+		.def_static("StaticClass", &UConsole::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ConsoleTargetPlayer", &UConsole::ConsoleTargetPlayer)
         .def_readwrite("DefaultTexture_Black", &UConsole::DefaultTexture_Black)
         .def_readwrite("DefaultTexture_White", &UConsole::DefaultTexture_White)

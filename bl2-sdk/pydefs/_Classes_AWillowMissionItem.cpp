@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowMissionItem(py::module &m)
 {
     py::class_< AWillowMissionItem,  AWillowItem   >(m, "AWillowMissionItem")
+		.def_static("StaticClass", &AWillowMissionItem::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PickupFailsafe", &AWillowMissionItem::PickupFailsafe)
         .def_readwrite("MissionItemString", &AWillowMissionItem::MissionItemString)
         .def_readwrite("VfTable_IIMissionObjective", &AWillowUsableItem::VfTable_IIMissionObjective)

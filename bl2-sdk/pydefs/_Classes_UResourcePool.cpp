@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UResourcePool(py::module &m)
 {
     py::class_< UResourcePool,  UObject   >(m, "UResourcePool")
+		.def_static("StaticClass", &UResourcePool::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Definition", &UResourcePool::Definition)
         .def_readwrite("PoolGUID", &UResourcePool::PoolGUID)
         .def_readwrite("MinValue", &UResourcePool::MinValue)

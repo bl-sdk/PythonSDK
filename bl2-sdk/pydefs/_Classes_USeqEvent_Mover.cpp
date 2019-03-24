@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USeqEvent_Mover(py::module &m)
 {
     py::class_< USeqEvent_Mover,  USequenceEvent   >(m, "USeqEvent_Mover")
+		.def_static("StaticClass", &USeqEvent_Mover::StaticClass, py::return_value_policy::reference)
         .def_readwrite("StayOpenTime", &USeqEvent_Mover::StayOpenTime)
         .def("NotifyFinishedOpen", &USeqEvent_Mover::NotifyFinishedOpen)
         .def("NotifyDetached", &USeqEvent_Mover::NotifyDetached)

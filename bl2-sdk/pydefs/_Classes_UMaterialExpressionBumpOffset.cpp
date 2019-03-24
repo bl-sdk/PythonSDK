@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UMaterialExpressionBumpOffset(py::module &m)
 {
     py::class_< UMaterialExpressionBumpOffset,  UMaterialExpression   >(m, "UMaterialExpressionBumpOffset")
+		.def_static("StaticClass", &UMaterialExpressionBumpOffset::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Coordinate", &UMaterialExpressionBumpOffset::Coordinate)
         .def_readwrite("Height", &UMaterialExpressionBumpOffset::Height)
         .def_readwrite("HeightRatio", &UMaterialExpressionBumpOffset::HeightRatio)

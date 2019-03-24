@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ULocalMessage(py::module &m)
 {
     py::class_< ULocalMessage,  UObject   >(m, "ULocalMessage")
+		.def_static("StaticClass", &ULocalMessage::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Lifetime", &ULocalMessage::Lifetime)
         .def_readwrite("DrawColor", &ULocalMessage::DrawColor)
         .def_readwrite("MsgType", &ULocalMessage::MsgType)

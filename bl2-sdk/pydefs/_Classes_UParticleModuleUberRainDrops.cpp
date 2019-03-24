@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UParticleModuleUberRainDrops(py::module &m)
 {
     py::class_< UParticleModuleUberRainDrops,  UParticleModule   >(m, "UParticleModuleUberRainDrops")
+		.def_static("StaticClass", &UParticleModuleUberRainDrops::StaticClass, py::return_value_policy::reference)
         .def_readwrite("LifetimeMin", &UParticleModuleUberRainDrops::LifetimeMin)
         .def_readwrite("LifetimeMax", &UParticleModuleUberRainDrops::LifetimeMax)
         .def_readwrite("StartSizeMin", &UParticleModuleUberRainDrops::StartSizeMin)

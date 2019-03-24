@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UStatusMenuInventoryPanelGFxObject(py::module &m)
 {
     py::class_< UStatusMenuInventoryPanelGFxObject,  UBaseTopLevelPanelGFxObject   >(m, "UStatusMenuInventoryPanelGFxObject")
+		.def_static("StaticClass", &UStatusMenuInventoryPanelGFxObject::StaticClass, py::return_value_policy::reference)
         .def_readwrite("EquippedPanel", &UStatusMenuInventoryPanelGFxObject::EquippedPanel)
         .def_readwrite("BackpackPanel", &UStatusMenuInventoryPanelGFxObject::BackpackPanel)
         .def_readwrite("AmmoPanel", &UStatusMenuInventoryPanelGFxObject::AmmoPanel)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ARoute(py::module &m)
 {
     py::class_< ARoute,  AInfo   >(m, "ARoute")
+		.def_static("StaticClass", &ARoute::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IEditorLinkSelectionInterface", &ARoute::VfTable_IEditorLinkSelectionInterface)
         .def_readwrite("RouteType", &ARoute::RouteType)
         .def_readwrite("RouteList", &ARoute::RouteList)

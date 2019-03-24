@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UParticleModuleTrailSource(py::module &m)
 {
     py::class_< UParticleModuleTrailSource,  UParticleModuleTrailBase   >(m, "UParticleModuleTrailSource")
+		.def_static("StaticClass", &UParticleModuleTrailSource::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SourceMethod", &UParticleModuleTrailSource::SourceMethod)
         .def_readwrite("SelectionMethod", &UParticleModuleTrailSource::SelectionMethod)
         .def_readwrite("SourceName", &UParticleModuleTrailSource::SourceName)

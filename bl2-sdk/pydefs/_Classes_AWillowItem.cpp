@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowItem(py::module &m)
 {
     py::class_< AWillowItem,  AWillowInventory   >(m, "AWillowItem")
+		.def_static("StaticClass", &AWillowItem::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIInstanceData", &AWillowItem::VfTable_IIInstanceData)
         .def_readwrite("VfTable_IIMissionInventory", &AWillowItem::VfTable_IIMissionInventory)
         .def_readwrite("VfTable_IIBehaviorConsumer", &AWillowItem::VfTable_IIBehaviorConsumer)

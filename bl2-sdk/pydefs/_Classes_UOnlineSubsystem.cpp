@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UOnlineSubsystem(py::module &m)
 {
     py::class_< UOnlineSubsystem,  UObject   >(m, "UOnlineSubsystem")
+		.def_static("StaticClass", &UOnlineSubsystem::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_FTickableObject", &UOnlineSubsystem::VfTable_FTickableObject)
         .def_readwrite("AccountInterface", &UOnlineSubsystem::AccountInterface)
         .def_readwrite("PlayerInterface", &UOnlineSubsystem::PlayerInterface)

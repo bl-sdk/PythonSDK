@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UIParameterBehavior(py::module &m)
 {
     py::class_< UIParameterBehavior,  UInterface   >(m, "UIParameterBehavior")
+		.def_static("StaticClass", &UIParameterBehavior::StaticClass, py::return_value_policy::reference)
         .def("Behavior_SetColorParameterValue", [](UIParameterBehavior &self , struct FName* ParameterName, struct FLinearColor* Value) { int* pySectionIndex = (int*)malloc(sizeof(int)) ;   self.Behavior_SetColorParameterValue(pySectionIndex, ParameterName, Value); return py::make_tuple(*pySectionIndex); })
         .def("Behavior_SetFloatParameterValue", [](UIParameterBehavior &self , struct FName* ParameterName) { int* pySectionIndex = (int*)malloc(sizeof(int)) ; float* pyValue = (float*)malloc(sizeof(float)) ;   self.Behavior_SetFloatParameterValue(pySectionIndex, ParameterName, pyValue); return py::make_tuple(*pySectionIndex, *pyValue); })
         .def("Behavior_SetObjectParameterValue", [](UIParameterBehavior &self , struct FName* ParameterName) { int* pySectionIndex = (int*)malloc(sizeof(int)) ; class UObject** pyValue = 0 ;   self.Behavior_SetObjectParameterValue(pySectionIndex, ParameterName, pyValue); return py::make_tuple(*pySectionIndex, *pyValue); })

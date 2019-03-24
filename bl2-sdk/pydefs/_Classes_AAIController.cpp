@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AAIController(py::module &m)
 {
     py::class_< AAIController,  AController   >(m, "AAIController")
+		.def_static("StaticClass", &AAIController::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Skill", &AAIController::Skill)
         .def_readwrite("ScriptedMoveTarget", &AAIController::ScriptedMoveTarget)
         .def_readwrite("ScriptedRoute", &AAIController::ScriptedRoute)

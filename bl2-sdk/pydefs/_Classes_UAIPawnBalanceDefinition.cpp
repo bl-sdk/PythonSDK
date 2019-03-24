@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAIPawnBalanceDefinition(py::module &m)
 {
     py::class_< UAIPawnBalanceDefinition,  UBaseBalanceDefinition   >(m, "UAIPawnBalanceDefinition")
+		.def_static("StaticClass", &UAIPawnBalanceDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIConstructObject", &UAIPawnBalanceDefinition::VfTable_IIConstructObject)
         .def_readwrite("CanSpawnIf", &UAIPawnBalanceDefinition::CanSpawnIf)
         .def_readwrite("PlayThroughs", &UAIPawnBalanceDefinition::PlayThroughs)

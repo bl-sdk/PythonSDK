@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_SetParticleSystemParameters(py::module &m)
 {
     py::class_< UBehavior_SetParticleSystemParameters,  UBehaviorBase   >(m, "UBehavior_SetParticleSystemParameters")
+		.def_static("StaticClass", &UBehavior_SetParticleSystemParameters::StaticClass, py::return_value_policy::reference)
         .def_readwrite("AttributeContext", &UBehavior_SetParticleSystemParameters::AttributeContext)
         .def_readwrite("ScalarParameterValues", &UBehavior_SetParticleSystemParameters::ScalarParameterValues)
         .def_readwrite("VectorParameterValues", &UBehavior_SetParticleSystemParameters::VectorParameterValues)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGearboxDialogEvent(py::module &m)
 {
     py::class_< UGearboxDialogEvent,  UObject   >(m, "UGearboxDialogEvent")
+		.def_static("StaticClass", &UGearboxDialogEvent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Tag", &UGearboxDialogEvent::Tag)
         .def_readwrite("NodeID", &UGearboxDialogNode::NodeID)
         .def_readwrite("Type", &UGearboxEditorNode::Type)

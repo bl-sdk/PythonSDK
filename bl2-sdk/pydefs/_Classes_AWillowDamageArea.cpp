@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowDamageArea(py::module &m)
 {
     py::class_< AWillowDamageArea,  AActor   >(m, "AWillowDamageArea")
+		.def_static("StaticClass", &AWillowDamageArea::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CollisionPrimitiveType", &AWillowDamageArea::CollisionPrimitiveType)
         .def_readwrite("DamagePerSecond", &AWillowDamageArea::DamagePerSecond)
         .def_readwrite("StatusEffectDamage", &AWillowDamageArea::StatusEffectDamage)

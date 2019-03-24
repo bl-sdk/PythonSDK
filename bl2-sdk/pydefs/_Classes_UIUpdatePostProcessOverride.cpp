@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UIUpdatePostProcessOverride(py::module &m)
 {
     py::class_< UIUpdatePostProcessOverride,  UInterface   >(m, "UIUpdatePostProcessOverride")
+		.def_static("StaticClass", &UIUpdatePostProcessOverride::StaticClass, py::return_value_policy::reference)
         .def("EndLostShield", &UIUpdatePostProcessOverride::EndLostShield)
         .def("BeginLostShield", &UIUpdatePostProcessOverride::BeginLostShield)
         .def("PopPostProcessChain", &UIUpdatePostProcessOverride::PopPostProcessChain)

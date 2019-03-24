@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowSkelControlSpline(py::module &m)
 {
     py::class_< UWillowSkelControlSpline,  USkelControlBase   >(m, "UWillowSkelControlSpline")
+		.def_static("StaticClass", &UWillowSkelControlSpline::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SplineLength", &UWillowSkelControlSpline::SplineLength)
         .def_readwrite("SplineBoneAxis", &UWillowSkelControlSpline::SplineBoneAxis)
         .def_readwrite("BoneRotMode", &UWillowSkelControlSpline::BoneRotMode)

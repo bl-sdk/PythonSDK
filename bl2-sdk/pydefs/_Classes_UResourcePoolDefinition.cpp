@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UResourcePoolDefinition(py::module &m)
 {
     py::class_< UResourcePoolDefinition,  UGBXDefinition   >(m, "UResourcePoolDefinition")
+		.def_static("StaticClass", &UResourcePoolDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Resource", &UResourcePoolDefinition::Resource)
         .def_readwrite("NetRelevancy", &UResourcePoolDefinition::NetRelevancy)
         .def_readwrite("RegenerationResource", &UResourcePoolDefinition::RegenerationResource)

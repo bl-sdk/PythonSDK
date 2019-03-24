@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ARB_CylindricalForceActor(py::module &m)
 {
     py::class_< ARB_CylindricalForceActor,  ARigidBodyBase   >(m, "ARB_CylindricalForceActor")
+		.def_static("StaticClass", &ARB_CylindricalForceActor::StaticClass, py::return_value_policy::reference)
         .def_readwrite("RenderComponent", &ARB_CylindricalForceActor::RenderComponent)
         .def_readwrite("RadialStrength", &ARB_CylindricalForceActor::RadialStrength)
         .def_readwrite("RotationalStrength", &ARB_CylindricalForceActor::RotationalStrength)

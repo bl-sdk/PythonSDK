@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ATemporalField(py::module &m)
 {
     py::class_< ATemporalField,  AActor   >(m, "ATemporalField")
+		.def_static("StaticClass", &ATemporalField::StaticClass, py::return_value_policy::reference)
         .def_readwrite("StaticMeshComponent", &ATemporalField::StaticMeshComponent)
         .def_readwrite("SkillEffect", &ATemporalField::SkillEffect)
         .def_readwrite("MyTickMultiplier", &ATemporalField::MyTickMultiplier)

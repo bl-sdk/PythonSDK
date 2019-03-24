@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowAutoTestManager(py::module &m)
 {
     py::class_< AWillowAutoTestManager,  AAutoTestManager   >(m, "AWillowAutoTestManager")
+		.def_static("StaticClass", &AWillowAutoTestManager::StaticClass, py::return_value_policy::reference)
         .def_readwrite("WillowSentinelPC", &AWillowAutoTestManager::WillowSentinelPC)
         .def_readwrite("TotalLevelLoads", &AWillowAutoTestManager::TotalLevelLoads)
         .def("Tick", &AWillowAutoTestManager::Tick)

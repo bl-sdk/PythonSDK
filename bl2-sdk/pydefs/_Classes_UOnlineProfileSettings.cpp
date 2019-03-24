@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UOnlineProfileSettings(py::module &m)
 {
     py::class_< UOnlineProfileSettings,  UOnlinePlayerStorage   >(m, "UOnlineProfileSettings")
+		.def_static("StaticClass", &UOnlineProfileSettings::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ProfileSettingIds", &UOnlineProfileSettings::ProfileSettingIds)
         .def_readwrite("DefaultSettings", &UOnlineProfileSettings::DefaultSettings)
         .def_readwrite("DefaultConsoleSettings", &UOnlineProfileSettings::DefaultConsoleSettings)

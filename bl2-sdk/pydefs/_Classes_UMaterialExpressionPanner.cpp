@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UMaterialExpressionPanner(py::module &m)
 {
     py::class_< UMaterialExpressionPanner,  UMaterialExpression   >(m, "UMaterialExpressionPanner")
+		.def_static("StaticClass", &UMaterialExpressionPanner::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Coordinate", &UMaterialExpressionPanner::Coordinate)
         .def_readwrite("Time", &UMaterialExpressionPanner::Time)
         .def_readwrite("SpeedX", &UMaterialExpressionPanner::SpeedX)

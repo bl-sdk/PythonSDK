@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAction_PawnMovementBase(py::module &m)
 {
     py::class_< UAction_PawnMovementBase,  UActionSequencePawn   >(m, "UAction_PawnMovementBase")
+		.def_static("StaticClass", &UAction_PawnMovementBase::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CachedSearchOrigin", &UAction_PawnMovementBase::CachedSearchOrigin)
         .def_readwrite("CoverCheckThrottle", &UAction_PawnMovementBase::CoverCheckThrottle)
         .def_readwrite("CoverCheckThrottleInterval", &UAction_PawnMovementBase::CoverCheckThrottleInterval)

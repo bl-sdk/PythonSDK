@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowGFxMovie(py::module &m)
 {
     py::class_< UWillowGFxMovie,  UGearboxGFxMovie   >(m, "UWillowGFxMovie")
+		.def_static("StaticClass", &UWillowGFxMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DefaultRTTSize_PC", &UWillowGFxMovie::DefaultRTTSize_PC)
         .def_readwrite("DefaultRTTSize_Console", &UWillowGFxMovie::DefaultRTTSize_Console)
         .def_readwrite("WPCOwner", &UWillowGFxMovie::WPCOwner)

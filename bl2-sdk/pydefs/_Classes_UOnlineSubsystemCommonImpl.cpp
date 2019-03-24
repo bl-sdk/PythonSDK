@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UOnlineSubsystemCommonImpl(py::module &m)
 {
     py::class_< UOnlineSubsystemCommonImpl,  UOnlineSubsystem   >(m, "UOnlineSubsystemCommonImpl")
+		.def_static("StaticClass", &UOnlineSubsystemCommonImpl::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VoiceEngine", &UOnlineSubsystemCommonImpl::VoiceEngine)
         .def_readwrite("MaxLocalTalkers", &UOnlineSubsystemCommonImpl::MaxLocalTalkers)
         .def_readwrite("MaxRemoteTalkers", &UOnlineSubsystemCommonImpl::MaxRemoteTalkers)

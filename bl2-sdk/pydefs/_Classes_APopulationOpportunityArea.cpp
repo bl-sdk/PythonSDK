@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_APopulationOpportunityArea(py::module &m)
 {
     py::class_< APopulationOpportunityArea,  APopulationOpportunity   >(m, "APopulationOpportunityArea")
+		.def_static("StaticClass", &APopulationOpportunityArea::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SpawnOptions", &APopulationOpportunityArea::SpawnOptions)
         .def_readwrite("DetectionVolumes", &APopulationOpportunityArea::DetectionVolumes)
         .def_readwrite("DetectionRadius", &APopulationOpportunityArea::DetectionRadius)

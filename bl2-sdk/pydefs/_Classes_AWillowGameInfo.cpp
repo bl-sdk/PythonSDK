@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowGameInfo(py::module &m)
 {
     py::class_< AWillowGameInfo,  AGearboxGameInfo   >(m, "AWillowGameInfo")
+		.def_static("StaticClass", &AWillowGameInfo::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIDesignerAttributeProvider", &AWillowGameInfo::VfTable_IIDesignerAttributeProvider)
         .def_readwrite("VfTable_IIAIInterface", &AWillowGameInfo::VfTable_IIAIInterface)
         .def_readwrite("AdjustedDifficulty", &AWillowGameInfo::AdjustedDifficulty)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ASkillEffectManager(py::module &m)
 {
     py::class_< ASkillEffectManager,  AActor   >(m, "ASkillEffectManager")
+		.def_static("StaticClass", &ASkillEffectManager::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DeferredSkillActivationList", &ASkillEffectManager::DeferredSkillActivationList)
         .def_readwrite("ActiveSkills", &ASkillEffectManager::ActiveSkills)
         .def("TriggerTakeHitEvents", &ASkillEffectManager::TriggerTakeHitEvents)

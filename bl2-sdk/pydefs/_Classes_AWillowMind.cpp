@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowMind(py::module &m)
 {
     py::class_< AWillowMind,  AGearboxMind   >(m, "AWillowMind")
+		.def_static("StaticClass", &AWillowMind::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IISeeTargetable", &AWillowMind::VfTable_IISeeTargetable)
         .def_readwrite("VfTable_IIControllerLocator", &AWillowMind::VfTable_IIControllerLocator)
         .def_readwrite("VfTable_IIConstructObject", &AWillowMind::VfTable_IIConstructObject)

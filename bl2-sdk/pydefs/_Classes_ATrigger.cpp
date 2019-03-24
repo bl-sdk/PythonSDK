@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ATrigger(py::module &m)
 {
     py::class_< ATrigger,  AActor   >(m, "ATrigger")
+		.def_static("StaticClass", &ATrigger::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CylinderComponent", &ATrigger::CylinderComponent)
         .def_readwrite("AITriggerDelay", &ATrigger::AITriggerDelay)
         .def("ApplyCheckpointRecord", &ATrigger::ApplyCheckpointRecord)

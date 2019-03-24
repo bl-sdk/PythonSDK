@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_URuleEngineLoadBalanceManager(py::module &m)
 {
     py::class_< URuleEngineLoadBalanceManager,  UObject   >(m, "URuleEngineLoadBalanceManager")
+		.def_static("StaticClass", &URuleEngineLoadBalanceManager::StaticClass, py::return_value_policy::reference)
         .def_readwrite("NumTimeSpentThisFrame", &URuleEngineLoadBalanceManager::NumTimeSpentThisFrame)
         .def_readwrite("LastTimeFullUpdate", &URuleEngineLoadBalanceManager::LastTimeFullUpdate)
         .def_readwrite("WaitingEngines", &URuleEngineLoadBalanceManager::WaitingEngines)

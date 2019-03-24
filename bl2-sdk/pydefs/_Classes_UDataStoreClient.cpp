@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UDataStoreClient(py::module &m)
 {
     py::class_< UDataStoreClient,  UUIRoot   >(m, "UDataStoreClient")
+		.def_static("StaticClass", &UDataStoreClient::StaticClass, py::return_value_policy::reference)
         .def_readwrite("GlobalDataStoreClasses", &UDataStoreClient::GlobalDataStoreClasses)
         .def_readwrite("GlobalDataStores", &UDataStoreClient::GlobalDataStores)
         .def_readwrite("PlayerDataStoreClassNames", &UDataStoreClient::PlayerDataStoreClassNames)

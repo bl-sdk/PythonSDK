@@ -6,5 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UPopulationOpportunityPointRenderingComponent(py::module &m)
 {
     py::class_< UPopulationOpportunityPointRenderingComponent,  UPrimitiveComponent   >(m, "UPopulationOpportunityPointRenderingComponent")
+		.def_static("StaticClass", &UPopulationOpportunityPointRenderingComponent::StaticClass, py::return_value_policy::reference)
           ;
 }

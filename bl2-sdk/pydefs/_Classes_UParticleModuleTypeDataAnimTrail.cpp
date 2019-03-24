@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UParticleModuleTypeDataAnimTrail(py::module &m)
 {
     py::class_< UParticleModuleTypeDataAnimTrail,  UParticleModuleTypeDataBase   >(m, "UParticleModuleTypeDataAnimTrail")
+		.def_static("StaticClass", &UParticleModuleTypeDataAnimTrail::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ControlEdgeName", &UParticleModuleTypeDataAnimTrail::ControlEdgeName)
         .def_readwrite("SheetsPerTrail", &UParticleModuleTypeDataAnimTrail::SheetsPerTrail)
         .def_readwrite("TilingDistance", &UParticleModuleTypeDataAnimTrail::TilingDistance)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowInventoryGFxMovie(py::module &m)
 {
     py::class_< UWillowInventoryGFxMovie,  UWillowGFxMovie3D   >(m, "UWillowInventoryGFxMovie")
+		.def_static("StaticClass", &UWillowInventoryGFxMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("RTM", &UWillowInventoryGFxMovie::RTM)
         .def_readwrite("CardContents", &UWillowInventoryGFxMovie::CardContents)
         .def_readwrite("FrozenThing", &UWillowInventoryGFxMovie::FrozenThing)

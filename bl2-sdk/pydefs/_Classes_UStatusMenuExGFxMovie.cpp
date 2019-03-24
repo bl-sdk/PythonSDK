@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UStatusMenuExGFxMovie(py::module &m)
 {
     py::class_< UStatusMenuExGFxMovie,  UWillowGFxMovie3D   >(m, "UStatusMenuExGFxMovie")
+		.def_static("StaticClass", &UStatusMenuExGFxMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("StatusDef", &UStatusMenuExGFxMovie::StatusDef)
         .def_readwrite("SkillDef", &UStatusMenuExGFxMovie::SkillDef)
         .def_readwrite("InventoryTabString", &UStatusMenuExGFxMovie::InventoryTabString)

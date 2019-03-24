@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UTargetingDefinition(py::module &m)
 {
     py::class_< UTargetingDefinition,  UGBXDefinition   >(m, "UTargetingDefinition")
+		.def_static("StaticClass", &UTargetingDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Knowledge", &UTargetingDefinition::Knowledge)
         .def_readwrite("Prioritization", &UTargetingDefinition::Prioritization)
         .def_readwrite("CanTargetIf", &UTargetingDefinition::CanTargetIf)

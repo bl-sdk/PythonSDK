@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGearboxLocationRequest(py::module &m)
 {
     py::class_< UGearboxLocationRequest,  UObject   >(m, "UGearboxLocationRequest")
+		.def_static("StaticClass", &UGearboxLocationRequest::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SearchOrigin", &UGearboxLocationRequest::SearchOrigin)
         .def_readwrite("DirectionFromOrigin", &UGearboxLocationRequest::DirectionFromOrigin)
         .def_readwrite("LocationFilterTest", &UGearboxLocationRequest::LocationFilterTest)

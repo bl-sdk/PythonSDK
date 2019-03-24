@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UParticleModuleEventSendToGame(py::module &m)
 {
     py::class_< UParticleModuleEventSendToGame,  UObject   >(m, "UParticleModuleEventSendToGame")
+		.def_static("StaticClass", &UParticleModuleEventSendToGame::StaticClass, py::return_value_policy::reference)
         .def("DoEvent", &UParticleModuleEventSendToGame::DoEvent)
           ;
 }

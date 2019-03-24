@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UIWorldBody(py::module &m)
 {
     py::class_< UIWorldBody,  UInterface   >(m, "UIWorldBody")
+		.def_static("StaticClass", &UIWorldBody::StaticClass, py::return_value_policy::reference)
         .def("WorldBodyAttachComponent", &UIWorldBody::WorldBodyAttachComponent)
         .def("WorldBodyAttachActor", &UIWorldBody::WorldBodyAttachActor)
         .def("WorldBodyAttachTo", &UIWorldBody::WorldBodyAttachTo)

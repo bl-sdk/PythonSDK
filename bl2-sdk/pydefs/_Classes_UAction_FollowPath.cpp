@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAction_FollowPath(py::module &m)
 {
     py::class_< UAction_FollowPath,  UWillowActionSequencePawn   >(m, "UAction_FollowPath")
+		.def_static("StaticClass", &UAction_FollowPath::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PerchData", &UAction_FollowPath::PerchData)
         .def_readwrite("MoveNode", &UAction_FollowPath::MoveNode)
         .def_readwrite("NextNode", &UAction_FollowPath::NextNode)

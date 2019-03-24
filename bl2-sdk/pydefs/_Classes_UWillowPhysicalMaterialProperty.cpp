@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowPhysicalMaterialProperty(py::module &m)
 {
     py::class_< UWillowPhysicalMaterialProperty,  UPhysicalMaterialPropertyBase   >(m, "UWillowPhysicalMaterialProperty")
+		.def_static("StaticClass", &UWillowPhysicalMaterialProperty::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MaterialAkSwitch", &UWillowPhysicalMaterialProperty::MaterialAkSwitch)
         .def_readwrite("DamageSurfaceType", &UWillowPhysicalMaterialProperty::DamageSurfaceType)
         .def_readwrite("ImpactResponses", &UWillowPhysicalMaterialProperty::ImpactResponses)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UOnlineGameInterfaceSteamworks(py::module &m)
 {
     py::class_< UOnlineGameInterfaceSteamworks,  UOnlineGameInterfaceImpl   >(m, "UOnlineGameInterfaceSteamworks")
+		.def_static("StaticClass", &UOnlineGameInterfaceSteamworks::StaticClass, py::return_value_policy::reference)
         .def_readwrite("QueryToRulesResponseMap", &UOnlineGameInterfaceSteamworks::QueryToRulesResponseMap)
         .def_readwrite("QueryToPingResponseMap", &UOnlineGameInterfaceSteamworks::QueryToPingResponseMap)
         .def_readwrite("ServerListResponse", &UOnlineGameInterfaceSteamworks::ServerListResponse)

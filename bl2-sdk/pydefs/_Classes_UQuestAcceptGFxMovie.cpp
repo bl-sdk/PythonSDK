@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UQuestAcceptGFxMovie(py::module &m)
 {
     py::class_< UQuestAcceptGFxMovie,  UWillowGFxMovie3D   >(m, "UQuestAcceptGFxMovie")
+		.def_static("StaticClass", &UQuestAcceptGFxMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MissionUIDef", &UQuestAcceptGFxMovie::MissionUIDef)
         .def_readwrite("MissionTextList", &UQuestAcceptGFxMovie::MissionTextList)
         .def_readwrite("MissionCategories", &UQuestAcceptGFxMovie::MissionCategories)

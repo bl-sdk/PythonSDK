@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ULensFlareComponent(py::module &m)
 {
     py::class_< ULensFlareComponent,  UPrimitiveComponent   >(m, "ULensFlareComponent")
+		.def_static("StaticClass", &ULensFlareComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Template", &ULensFlareComponent::Template)
         .def_readwrite("PreviewInnerCone", &ULensFlareComponent::PreviewInnerCone)
         .def_readwrite("PreviewOuterCone", &ULensFlareComponent::PreviewOuterCone)

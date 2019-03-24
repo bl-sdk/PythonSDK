@@ -6,5 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UTargetIteratorPrioritizeExposedTargets(py::module &m)
 {
     py::class_< UTargetIteratorPrioritizeExposedTargets,  UTI_Prioritize   >(m, "UTargetIteratorPrioritizeExposedTargets")
+		.def_static("StaticClass", &UTargetIteratorPrioritizeExposedTargets::StaticClass, py::return_value_policy::reference)
           ;
 }

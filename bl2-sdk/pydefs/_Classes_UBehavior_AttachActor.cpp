@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_AttachActor(py::module &m)
 {
     py::class_< UBehavior_AttachActor,  UBehaviorBase   >(m, "UBehavior_AttachActor")
+		.def_static("StaticClass", &UBehavior_AttachActor::StaticClass, py::return_value_policy::reference)
         .def_readwrite("AttachmentPointName", &UBehavior_AttachActor::AttachmentPointName)
         .def_readwrite("ToAttach", &UBehavior_AttachActor::ToAttach)
         .def_readwrite("AttachTime", &UBehavior_AttachActor::AttachTime)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehaviorProviderDefinition(py::module &m)
 {
     py::class_< UBehaviorProviderDefinition,  UGBXDefinition   >(m, "UBehaviorProviderDefinition")
+		.def_static("StaticClass", &UBehaviorProviderDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CurrentVersion", &UBehaviorProviderDefinition::CurrentVersion)
         .def_readwrite("BehaviorSequences", &UBehaviorProviderDefinition::BehaviorSequences)
         .def("SetObjectBehaviorVariable", &UBehaviorProviderDefinition::SetObjectBehaviorVariable)

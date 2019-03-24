@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowSaveGameManager(py::module &m)
 {
     py::class_< UWillowSaveGameManager,  UObject   >(m, "UWillowSaveGameManager")
+		.def_static("StaticClass", &UWillowSaveGameManager::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_FTickableObject", &UWillowSaveGameManager::VfTable_FTickableObject)
         .def_readwrite("PendingLoadInfo", &UWillowSaveGameManager::PendingLoadInfo)
         .def_readwrite("CrossTitleLoadInfo", &UWillowSaveGameManager::CrossTitleLoadInfo)

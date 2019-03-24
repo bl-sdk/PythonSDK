@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AMutator(py::module &m)
 {
     py::class_< AMutator,  AInfo   >(m, "AMutator")
+		.def_static("StaticClass", &AMutator::StaticClass, py::return_value_policy::reference)
         .def_readwrite("NextMutator", &AMutator::NextMutator)
         .def_readwrite("GroupNames", &AMutator::GroupNames)
         .def("NetDamage", &AMutator::NetDamage)

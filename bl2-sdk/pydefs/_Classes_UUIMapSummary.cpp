@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UUIMapSummary(py::module &m)
 {
     py::class_< UUIMapSummary,  UUIResourceDataProvider   >(m, "UUIMapSummary")
+		.def_static("StaticClass", &UUIMapSummary::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MapName", &UUIMapSummary::MapName)
         .def_readwrite("ScreenshotPathName", &UUIMapSummary::ScreenshotPathName)
         .def_readwrite("DisplayName", &UUIMapSummary::DisplayName)

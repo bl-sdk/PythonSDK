@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UOnlinePartyChatInterface(py::module &m)
 {
     py::class_< UOnlinePartyChatInterface,  UInterface   >(m, "UOnlinePartyChatInterface")
+		.def_static("StaticClass", &UOnlinePartyChatInterface::StaticClass, py::return_value_policy::reference)
         .def("IsInPartyChat", &UOnlinePartyChatInterface::IsInPartyChat)
         .def("ShowCommunitySessionsUI", &UOnlinePartyChatInterface::ShowCommunitySessionsUI)
         .def("ShowVoiceChannelUI", &UOnlinePartyChatInterface::ShowVoiceChannelUI)

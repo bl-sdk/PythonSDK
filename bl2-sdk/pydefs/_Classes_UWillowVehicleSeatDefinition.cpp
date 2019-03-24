@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowVehicleSeatDefinition(py::module &m)
 {
     py::class_< UWillowVehicleSeatDefinition,  UGBXDefinition   >(m, "UWillowVehicleSeatDefinition")
+		.def_static("StaticClass", &UWillowVehicleSeatDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VirtualSeatKey", &UWillowVehicleSeatDefinition::VirtualSeatKey)
         .def_readwrite("InteractIcon", &UWillowVehicleSeatDefinition::InteractIcon)
         .def_readwrite("SeatInteractTextDefinition", &UWillowVehicleSeatDefinition::SeatInteractTextDefinition)

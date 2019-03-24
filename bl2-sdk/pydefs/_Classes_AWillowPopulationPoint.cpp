@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowPopulationPoint(py::module &m)
 {
     py::class_< AWillowPopulationPoint,  APopulationPoint   >(m, "AWillowPopulationPoint")
+		.def_static("StaticClass", &AWillowPopulationPoint::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_ISpecialMoveInterface", &AWillowPopulationPoint::VfTable_ISpecialMoveInterface)
         .def_readwrite("VfTable_IIInstanceData", &AWillowPopulationPoint::VfTable_IIInstanceData)
         .def_readwrite("VfTable_IIBodyCompositionInstance", &AWillowPopulationPoint::VfTable_IIBodyCompositionInstance)

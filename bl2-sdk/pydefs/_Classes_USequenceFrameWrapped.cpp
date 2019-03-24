@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USequenceFrameWrapped(py::module &m)
 {
     py::class_< USequenceFrameWrapped,  USequenceObject   >(m, "USequenceFrameWrapped")
+		.def_static("StaticClass", &USequenceFrameWrapped::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SizeX", &USequenceFrame::SizeX)
         .def_readwrite("SizeY", &USequenceFrame::SizeY)
         .def_readwrite("BorderWidth", &USequenceFrame::BorderWidth)

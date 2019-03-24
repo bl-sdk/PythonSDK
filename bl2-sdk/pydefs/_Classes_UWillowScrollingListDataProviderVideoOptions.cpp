@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowScrollingListDataProviderVideoOptions(py::module &m)
 {
     py::class_< UWillowScrollingListDataProviderVideoOptions,  UWillowScrollingListDataProviderOptionsBase   >(m, "UWillowScrollingListDataProviderVideoOptions")
+		.def_static("StaticClass", &UWillowScrollingListDataProviderVideoOptions::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ScaleGuide", &UWillowScrollingListDataProviderVideoOptions::ScaleGuide)
         .def("GetSubmenuForEvent", &UWillowScrollingListDataProviderVideoOptions::GetSubmenuForEvent, py::return_value_policy::reference)
         .def("HideGuide", &UWillowScrollingListDataProviderVideoOptions::HideGuide)

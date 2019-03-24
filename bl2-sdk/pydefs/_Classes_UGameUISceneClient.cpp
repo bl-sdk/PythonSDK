@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGameUISceneClient(py::module &m)
 {
     py::class_< UGameUISceneClient,  UUIRoot   >(m, "UGameUISceneClient")
+		.def_static("StaticClass", &UGameUISceneClient::StaticClass, py::return_value_policy::reference)
         .def_readwrite("LatestDeltaTime", &UGameUISceneClient::LatestDeltaTime)
         .def_readwrite("DoubleClickStartTime", &UGameUISceneClient::DoubleClickStartTime)
         .def_readwrite("DoubleClickStartPosition", &UGameUISceneClient::DoubleClickStartPosition)

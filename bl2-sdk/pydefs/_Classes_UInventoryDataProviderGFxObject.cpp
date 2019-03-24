@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UInventoryDataProviderGFxObject(py::module &m)
 {
     py::class_< UInventoryDataProviderGFxObject,  UGFxObject   >(m, "UInventoryDataProviderGFxObject")
+		.def_static("StaticClass", &UInventoryDataProviderGFxObject::StaticClass, py::return_value_policy::reference)
         .def_readwrite("OwningMovie", &UInventoryDataProviderGFxObject::OwningMovie)
         .def_readwrite("OwningPanel", &UInventoryDataProviderGFxObject::OwningPanel)
         .def_readwrite("HeavyweightArray", &UInventoryDataProviderGFxObject::HeavyweightArray)

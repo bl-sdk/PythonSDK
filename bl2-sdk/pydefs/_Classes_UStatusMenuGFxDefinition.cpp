@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UStatusMenuGFxDefinition(py::module &m)
 {
     py::class_< UStatusMenuGFxDefinition,  UWillowInventoryGFxDefinition   >(m, "UStatusMenuGFxDefinition")
+		.def_static("StaticClass", &UStatusMenuGFxDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Directions", &UStatusMenuGFxDefinition::Directions)
         .def_readwrite("NumEntriesOnMissionLog", &UStatusMenuGFxDefinition::NumEntriesOnMissionLog)
         .def_readwrite("MissionLogTextDefinition", &UStatusMenuGFxDefinition::MissionLogTextDefinition)

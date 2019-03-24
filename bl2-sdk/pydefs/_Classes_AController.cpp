@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AController(py::module &m)
 {
     py::class_< AController, AActor   >(m, "AController")
+		.def_static("StaticClass", &AController::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIResourcePoolProvider", &AController::VfTable_IIResourcePoolProvider)
         .def_readwrite("VfTable_IInterface_NavigationHandle", &AController::VfTable_IInterface_NavigationHandle)
         .def_readwrite("Pawn", &AController::Pawn)

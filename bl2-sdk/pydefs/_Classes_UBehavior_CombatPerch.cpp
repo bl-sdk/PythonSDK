@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_CombatPerch(py::module &m)
 {
     py::class_< UBehavior_CombatPerch,  UBehaviorBase   >(m, "UBehavior_CombatPerch")
+		.def_static("StaticClass", &UBehavior_CombatPerch::StaticClass, py::return_value_policy::reference)
         .def_readwrite("AttachmentName", &UBehavior_CombatPerch::AttachmentName)
         .def_readwrite("Action", &UBehavior_CombatPerch::Action)
         .def("ApplyBehaviorToContext", &UBehavior_CombatPerch::ApplyBehaviorToContext)

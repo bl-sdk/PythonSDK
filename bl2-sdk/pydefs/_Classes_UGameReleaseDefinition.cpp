@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGameReleaseDefinition(py::module &m)
 {
     py::class_< UGameReleaseDefinition,  UGBXDefinition   >(m, "UGameReleaseDefinition")
+		.def_static("StaticClass", &UGameReleaseDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("WorldDiscoveryStatID", &UGameReleaseDefinition::WorldDiscoveryStatID)
         .def_readwrite("NumWorldDiscoveryAreas", &UGameReleaseDefinition::NumWorldDiscoveryAreas)
           ;

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USeqAct_Interp(py::module &m)
 {
     py::class_< USeqAct_Interp,  USeqAct_Latent   >(m, "USeqAct_Interp")
+		.def_static("StaticClass", &USeqAct_Interp::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PlayRate", &USeqAct_Interp::PlayRate)
         .def_readwrite("Position", &USeqAct_Interp::Position)
         .def_readwrite("ForceStartPosition", &USeqAct_Interp::ForceStartPosition)

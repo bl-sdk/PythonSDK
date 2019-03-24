@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowPickup(py::module &m)
 {
     py::class_< AWillowPickup,  ADroppedPickup   >(m, "AWillowPickup")
+		.def_static("StaticClass", &AWillowPickup::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIMission", &AWillowPickup::VfTable_IIMission)
         .def_readwrite("VfTable_IIMissionDirector", &AWillowPickup::VfTable_IIMissionDirector)
         .def_readwrite("VfTable_IIFocusable", &AWillowPickup::VfTable_IIFocusable)

@@ -6,5 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UEnum(py::module &m)
 {
     py::class_< UEnum,  UField   >(m, "UEnum")
+		.def_static("StaticClass", &UEnum::StaticClass, py::return_value_policy::reference)
           ;
 }

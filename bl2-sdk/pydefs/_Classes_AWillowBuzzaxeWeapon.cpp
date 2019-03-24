@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowBuzzaxeWeapon(py::module &m)
 {
     py::class_< AWillowBuzzaxeWeapon,  AWillowWeapon   >(m, "AWillowBuzzaxeWeapon")
+		.def_static("StaticClass", &AWillowBuzzaxeWeapon::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIWeaponThrow", &AWillowBuzzaxeWeapon::VfTable_IIWeaponThrow)
         .def_readwrite("BodyWeaponHoldNameOverride", &AWillowBuzzaxeWeapon::BodyWeaponHoldNameOverride)
         .def_readwrite("PreviousActiveWeaponSlot", &AWillowBuzzaxeWeapon::PreviousActiveWeaponSlot)

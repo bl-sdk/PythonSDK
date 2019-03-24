@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_APerch(py::module &m)
 {
     py::class_< APerch,  AGearboxAIMoveNode   >(m, "APerch")
+		.def_static("StaticClass", &APerch::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIInstanceData", &APerch::VfTable_IIInstanceData)
         .def_readwrite("VfTable_IIBodyCompositionInstance", &APerch::VfTable_IIBodyCompositionInstance)
         .def_readwrite("VfTable_IIBehaviorConsumer", &APerch::VfTable_IIBehaviorConsumer)

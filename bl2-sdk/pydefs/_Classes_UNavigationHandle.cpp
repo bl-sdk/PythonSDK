@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UNavigationHandle(py::module &m)
 {
     py::class_< UNavigationHandle,  UObject   >(m, "UNavigationHandle")
+		.def_static("StaticClass", &UNavigationHandle::StaticClass, py::return_value_policy::reference)
         .def_readwrite("AnchorPylon", &UNavigationHandle::AnchorPylon)
         .def_readwrite("AnchorPoly", &UNavigationHandle::AnchorPoly)
         .def_readwrite("PathCache", &UNavigationHandle::PathCache)

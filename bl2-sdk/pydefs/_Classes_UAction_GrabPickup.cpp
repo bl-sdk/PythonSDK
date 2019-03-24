@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAction_GrabPickup(py::module &m)
 {
     py::class_< UAction_GrabPickup,  UWillowActionSequencePawn   >(m, "UAction_GrabPickup")
+		.def_static("StaticClass", &UAction_GrabPickup::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CheckRadius", &UAction_GrabPickup::CheckRadius)
         .def_readwrite("PickupAnim", &UAction_GrabPickup::PickupAnim)
         .def_readwrite("GrabTimer", &UAction_GrabPickup::GrabTimer)

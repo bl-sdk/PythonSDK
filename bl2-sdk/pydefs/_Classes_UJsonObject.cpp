@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UJsonObject(py::module &m)
 {
     py::class_< UJsonObject,  UObject   >(m, "UJsonObject")
+		.def_static("StaticClass", &UJsonObject::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ValueMap", &UJsonObject::ValueMap)
         .def_readwrite("ObjectMap", &UJsonObject::ObjectMap)
         .def_readwrite("ValueArray", &UJsonObject::ValueArray)

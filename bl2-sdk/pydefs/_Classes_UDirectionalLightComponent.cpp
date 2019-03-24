@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UDirectionalLightComponent(py::module &m)
 {
     py::class_< UDirectionalLightComponent,  ULightComponent   >(m, "UDirectionalLightComponent")
+		.def_static("StaticClass", &UDirectionalLightComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("TraceDistance", &UDirectionalLightComponent::TraceDistance)
         .def_readwrite("WholeSceneDynamicShadowRadius", &UDirectionalLightComponent::WholeSceneDynamicShadowRadius)
         .def_readwrite("NumWholeSceneDynamicShadowCascades", &UDirectionalLightComponent::NumWholeSceneDynamicShadowCascades)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowPawn(py::module &m)
 {
     py::class_< AWillowPawn,  AGearboxPawn   >(m, "AWillowPawn")
+		.def_static("StaticClass", &AWillowPawn::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIInstanceData", &AWillowPawn::VfTable_IIInstanceData)
         .def_readwrite("VfTable_IIDesignerAttributeProvider", &AWillowPawn::VfTable_IIDesignerAttributeProvider)
         .def_readwrite("VfTable_IIDamageSurface", &AWillowPawn::VfTable_IIDamageSurface)

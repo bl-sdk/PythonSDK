@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ALevelLandmarkAnchor(py::module &m)
 {
     py::class_< ALevelLandmarkAnchor,  ALevelLandmark   >(m, "ALevelLandmarkAnchor")
+		.def_static("StaticClass", &ALevelLandmarkAnchor::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Texture", &ALevelLandmarkAnchor::Texture)
         .def_readwrite("Opacity", &ALevelLandmarkAnchor::Opacity)
         .def_readwrite("TextureSizeX", &ALevelLandmarkAnchor::TextureSizeX)

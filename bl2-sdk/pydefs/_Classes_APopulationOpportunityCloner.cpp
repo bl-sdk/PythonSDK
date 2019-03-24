@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_APopulationOpportunityCloner(py::module &m)
 {
     py::class_< APopulationOpportunityCloner,  APopulationOpportunity   >(m, "APopulationOpportunityCloner")
+		.def_static("StaticClass", &APopulationOpportunityCloner::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Conditions", &APopulationOpportunityCloner::Conditions)
         .def_readwrite("SpawnFactory", &APopulationOpportunityCloner::SpawnFactory)
         .def_readwrite("MaxTotalActors", &APopulationOpportunityCloner::MaxTotalActors)

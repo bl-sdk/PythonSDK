@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AActionSkill(py::module &m)
 {
     py::class_< AActionSkill,  AActor   >(m, "AActionSkill")
+		.def_static("StaticClass", &AActionSkill::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIInstanceData", &AActionSkill::VfTable_IIInstanceData)
         .def_readwrite("VfTable_IITimerBehavior", &AActionSkill::VfTable_IITimerBehavior)
         .def_readwrite("VfTable_IICustomEvent", &AActionSkill::VfTable_IICustomEvent)

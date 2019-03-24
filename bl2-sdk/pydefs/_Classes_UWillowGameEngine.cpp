@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowGameEngine(py::module &m)
 {
     py::class_< UWillowGameEngine,  UGearboxEngine   >(m, "UWillowGameEngine")
+		.def_static("StaticClass", &UWillowGameEngine::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_ISparkUpdateCallback", &UWillowGameEngine::VfTable_ISparkUpdateCallback)
         .def_readwrite("SourceMapName", &UWillowGameEngine::SourceMapName)
         .def_readwrite("DestMapName", &UWillowGameEngine::DestMapName)

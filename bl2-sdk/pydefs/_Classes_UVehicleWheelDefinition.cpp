@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UVehicleWheelDefinition(py::module &m)
 {
     py::class_< UVehicleWheelDefinition,  UGBXDefinition   >(m, "UVehicleWheelDefinition")
+		.def_static("StaticClass", &UVehicleWheelDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("BoneOffset", &UVehicleWheelDefinition::BoneOffset)
         .def_readwrite("WheelRadius", &UVehicleWheelDefinition::WheelRadius)
         .def_readwrite("SuspensionTravel", &UVehicleWheelDefinition::SuspensionTravel)

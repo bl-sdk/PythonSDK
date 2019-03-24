@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UUIInteraction(py::module &m)
 {
     py::class_< UUIInteraction,  UInteraction   >(m, "UUIInteraction")
+		.def_static("StaticClass", &UUIInteraction::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_FExec", &UUIInteraction::VfTable_FExec)
         .def_readwrite("VfTable_FGlobalDataStoreClientManager", &UUIInteraction::VfTable_FGlobalDataStoreClientManager)
         .def_readwrite("VfTable_FCallbackEventDevice", &UUIInteraction::VfTable_FCallbackEventDevice)

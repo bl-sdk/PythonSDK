@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowInventoryGFxDefinition(py::module &m)
 {
     py::class_< UWillowInventoryGFxDefinition,  UWillowGFxThirdPersonDefinition   >(m, "UWillowInventoryGFxDefinition")
+		.def_static("StaticClass", &UWillowInventoryGFxDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("TF_Standard", &UWillowInventoryGFxDefinition::TF_Standard)
         .def_readwrite("TF_Trash", &UWillowInventoryGFxDefinition::TF_Trash)
         .def_readwrite("TF_Favorite", &UWillowInventoryGFxDefinition::TF_Favorite)

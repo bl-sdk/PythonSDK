@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_APickupFactory(py::module &m)
 {
     py::class_< APickupFactory,  ANavigationPoint   >(m, "APickupFactory")
+		.def_static("StaticClass", &APickupFactory::StaticClass, py::return_value_policy::reference)
         .def_readwrite("InventoryType", &APickupFactory::InventoryType)
         .def_readwrite("RespawnEffectTime", &APickupFactory::RespawnEffectTime)
         .def_readwrite("MaxDesireability", &APickupFactory::MaxDesireability)

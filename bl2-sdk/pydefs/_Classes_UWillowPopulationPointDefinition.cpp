@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowPopulationPointDefinition(py::module &m)
 {
     py::class_< UWillowPopulationPointDefinition,  UGBXDefinition   >(m, "UWillowPopulationPointDefinition")
+		.def_static("StaticClass", &UWillowPopulationPointDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIBodyInfoProvider", &UWillowPopulationPointDefinition::VfTable_IIBodyInfoProvider)
         .def_readwrite("VfTable_IIAnimProvider", &UWillowPopulationPointDefinition::VfTable_IIAnimProvider)
         .def_readwrite("AnimMap", &UWillowPopulationPointDefinition::AnimMap)

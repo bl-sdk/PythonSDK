@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_APostProcessVolume(py::module &m)
 {
     py::class_< APostProcessVolume,  AVolume   >(m, "APostProcessVolume")
+		.def_static("StaticClass", &APostProcessVolume::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Priority", &APostProcessVolume::Priority)
         .def_readwrite("Settings", &APostProcessVolume::Settings)
         .def_readwrite("NextLowerPriorityVolume", &APostProcessVolume::NextLowerPriorityVolume)

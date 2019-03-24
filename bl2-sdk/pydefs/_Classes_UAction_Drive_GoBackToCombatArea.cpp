@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAction_Drive_GoBackToCombatArea(py::module &m)
 {
     py::class_< UAction_Drive_GoBackToCombatArea,  UWillowActionSequencePawn   >(m, "UAction_Drive_GoBackToCombatArea")
+		.def_static("StaticClass", &UAction_Drive_GoBackToCombatArea::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MinSpeedMultiplier", &UAction_Drive_GoBackToCombatArea::MinSpeedMultiplier)
         .def_readwrite("MaxSpeedMultiplier", &UAction_Drive_GoBackToCombatArea::MaxSpeedMultiplier)
         .def_readwrite("MyVehicle", &UAction_Drive_GoBackToCombatArea::MyVehicle)

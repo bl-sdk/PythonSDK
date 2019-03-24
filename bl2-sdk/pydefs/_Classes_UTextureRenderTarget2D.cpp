@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UTextureRenderTarget2D(py::module &m)
 {
     py::class_< UTextureRenderTarget2D,  UTexture   >(m, "UTextureRenderTarget2D")
+		.def_static("StaticClass", &UTextureRenderTarget2D::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SizeX", &UTextureRenderTarget2D::SizeX)
         .def_readwrite("SizeY", &UTextureRenderTarget2D::SizeY)
         .def_readwrite("Format", &UTextureRenderTarget2D::Format)

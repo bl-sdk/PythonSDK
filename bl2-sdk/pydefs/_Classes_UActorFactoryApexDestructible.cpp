@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UActorFactoryApexDestructible(py::module &m)
 {
     py::class_< UActorFactoryApexDestructible,  UActorFactory   >(m, "UActorFactoryApexDestructible")
+		.def_static("StaticClass", &UActorFactoryApexDestructible::StaticClass, py::return_value_policy::reference)
         .def_readwrite("RBChannel", &UActorFactoryApexDestructible::RBChannel)
         .def_readwrite("CollideWithChannels", &UActorFactoryApexDestructible::CollideWithChannels)
         .def_readwrite("DestructibleAsset", &UActorFactoryApexDestructible::DestructibleAsset)

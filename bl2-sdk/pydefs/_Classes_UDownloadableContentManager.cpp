@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UDownloadableContentManager(py::module &m)
 {
     py::class_< UDownloadableContentManager,  UObject   >(m, "UDownloadableContentManager")
+		.def_static("StaticClass", &UDownloadableContentManager::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DLCConfigCacheChanges", &UDownloadableContentManager::DLCConfigCacheChanges)
         .def_readwrite("DlcOffers", &UDownloadableContentManager::DlcOffers)
         .def_readwrite("InstalledContent", &UDownloadableContentManager::InstalledContent)

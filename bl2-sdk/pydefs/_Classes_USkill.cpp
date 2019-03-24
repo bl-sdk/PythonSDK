@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USkill(py::module &m)
 {
     py::class_< USkill,  UObject   >(m, "USkill")
+		.def_static("StaticClass", &USkill::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIBehaviorConsumer", &USkill::VfTable_IIBehaviorConsumer)
         .def_readwrite("Definition", &USkill::Definition)
         .def_readwrite("SkillEffects", &USkill::SkillEffects)

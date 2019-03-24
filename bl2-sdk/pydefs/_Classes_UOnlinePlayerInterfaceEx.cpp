@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UOnlinePlayerInterfaceEx(py::module &m)
 {
     py::class_< UOnlinePlayerInterfaceEx,  UInterface   >(m, "UOnlinePlayerInterfaceEx")
+		.def_static("StaticClass", &UOnlinePlayerInterfaceEx::StaticClass, py::return_value_policy::reference)
         .def("ShowRedeemCodeUI", &UOnlinePlayerInterfaceEx::ShowRedeemCodeUI)
         .def("ClearUnlockAvatarAwardCompleteDelegate", &UOnlinePlayerInterfaceEx::ClearUnlockAvatarAwardCompleteDelegate)
         .def("AddUnlockAvatarAwardCompleteDelegate", &UOnlinePlayerInterfaceEx::AddUnlockAvatarAwardCompleteDelegate)

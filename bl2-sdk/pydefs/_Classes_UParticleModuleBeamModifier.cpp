@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UParticleModuleBeamModifier(py::module &m)
 {
     py::class_< UParticleModuleBeamModifier,  UParticleModuleBeamBase   >(m, "UParticleModuleBeamModifier")
+		.def_static("StaticClass", &UParticleModuleBeamModifier::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ModifierType", &UParticleModuleBeamModifier::ModifierType)
         .def_readwrite("PositionOptions", &UParticleModuleBeamModifier::PositionOptions)
         .def_readwrite("Position", &UParticleModuleBeamModifier::Position)

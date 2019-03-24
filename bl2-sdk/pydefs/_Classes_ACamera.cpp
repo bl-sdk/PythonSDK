@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ACamera(py::module &m)
 {
     py::class_< ACamera,  AActor   >(m, "ACamera")
+		.def_static("StaticClass", &ACamera::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PCOwner", &ACamera::PCOwner)
         .def_readwrite("CameraStyle", &ACamera::CameraStyle)
         .def_readwrite("DefaultFOV", &ACamera::DefaultFOV)

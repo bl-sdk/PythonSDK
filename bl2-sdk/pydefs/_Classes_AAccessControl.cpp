@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AAccessControl(py::module &m)
 {
     py::class_< AAccessControl,  AInfo   >(m, "AAccessControl")
+		.def_static("StaticClass", &AAccessControl::StaticClass, py::return_value_policy::reference)
         .def_readwrite("IPPolicies", &AAccessControl::IPPolicies)
         .def_readwrite("BannedIDs", &AAccessControl::BannedIDs)
         .def_readwrite("IPBanned", &AAccessControl::IPBanned)

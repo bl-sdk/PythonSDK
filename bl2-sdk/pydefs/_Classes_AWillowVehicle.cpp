@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowVehicle(py::module &m)
 {
     py::class_< AWillowVehicle,  ASVehicle   >(m, "AWillowVehicle")
+		.def_static("StaticClass", &AWillowVehicle::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIInstanceData", &AWillowVehicle::VfTable_IIInstanceData)
         .def_readwrite("VfTable_IIDamageSurface", &AWillowVehicle::VfTable_IIDamageSurface)
         .def_readwrite("VfTable_IIUsable", &AWillowVehicle::VfTable_IIUsable)

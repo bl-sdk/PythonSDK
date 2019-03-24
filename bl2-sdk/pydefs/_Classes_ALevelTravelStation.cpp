@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ALevelTravelStation(py::module &m)
 {
     py::class_< ALevelTravelStation,  AWillowInteractiveObject   >(m, "ALevelTravelStation")
+		.def_static("StaticClass", &ALevelTravelStation::StaticClass, py::return_value_policy::reference)
         .def_readwrite("TravelDefinition", &ALevelTravelStation::TravelDefinition)
         .def_readwrite("WaypointExceptions", &ALevelTravelStation::WaypointExceptions)
         .def_readwrite("LevelTravelMapDisplayName", &ALevelTravelStation::LevelTravelMapDisplayName)

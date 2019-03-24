@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UShieldDefinition(py::module &m)
 {
     py::class_< UShieldDefinition,  UItemDefinition   >(m, "UShieldDefinition")
+		.def_static("StaticClass", &UShieldDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ShieldType", &UShieldDefinition::ShieldType)
         .def_readwrite("ShieldPrimeMechanism", &UShieldDefinition::ShieldPrimeMechanism)
         .def_readwrite("ShieldTypeFlashFrameName", &UShieldDefinition::ShieldTypeFlashFrameName)

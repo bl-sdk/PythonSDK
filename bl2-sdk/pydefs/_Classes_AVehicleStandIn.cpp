@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AVehicleStandIn(py::module &m)
 {
     py::class_< AVehicleStandIn,  AActor   >(m, "AVehicleStandIn")
+		.def_static("StaticClass", &AVehicleStandIn::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIBodyCompositionInstance", &AVehicleStandIn::VfTable_IIBodyCompositionInstance)
         .def_readwrite("VfTable_IICustomizable", &AVehicleStandIn::VfTable_IICustomizable)
         .def_readwrite("PreviewMesh", &AVehicleStandIn::PreviewMesh)

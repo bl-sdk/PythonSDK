@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_IncrementPlayerStat(py::module &m)
 {
     py::class_< UBehavior_IncrementPlayerStat,  UBehaviorBase   >(m, "UBehavior_IncrementPlayerStat")
+		.def_static("StaticClass", &UBehavior_IncrementPlayerStat::StaticClass, py::return_value_policy::reference)
         .def_readwrite("StatId", &UBehavior_IncrementPlayerStat::StatId)
         .def_readwrite("IncAmount", &UBehavior_IncrementPlayerStat::IncAmount)
         .def("ResolveController", &UBehavior_IncrementPlayerStat::ResolveController, py::return_value_policy::reference)

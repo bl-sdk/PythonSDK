@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_APortalTeleporter(py::module &m)
 {
     py::class_< APortalTeleporter,  AActor   >(m, "APortalTeleporter")
+		.def_static("StaticClass", &APortalTeleporter::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SisterPortal", &APortalTeleporter::SisterPortal)
         .def_readwrite("TextureResolutionX", &APortalTeleporter::TextureResolutionX)
         .def_readwrite("TextureResolutionY", &APortalTeleporter::TextureResolutionY)

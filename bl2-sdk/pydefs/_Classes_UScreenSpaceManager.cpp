@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UScreenSpaceManager(py::module &m)
 {
     py::class_< UScreenSpaceManager,  UObject   >(m, "UScreenSpaceManager")
+		.def_static("StaticClass", &UScreenSpaceManager::StaticClass, py::return_value_policy::reference)
         .def_readwrite("pLocalPlayer", &UScreenSpaceManager::pLocalPlayer)
         .def_readwrite("ViewWidth", &UScreenSpaceManager::ViewWidth)
         .def_readwrite("ViewHeight", &UScreenSpaceManager::ViewHeight)

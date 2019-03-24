@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UParticleModuleLocationPrimitiveSphere(py::module &m)
 {
     py::class_< UParticleModuleLocationPrimitiveSphere,  UParticleModuleLocationBase   >(m, "UParticleModuleLocationPrimitiveSphere")
+		.def_static("StaticClass", &UParticleModuleLocationPrimitiveSphere::StaticClass, py::return_value_policy::reference)
         .def_readwrite("StartRadius", &UParticleModuleLocationPrimitiveSphere::StartRadius)
         .def_readwrite("VelocityScale", &UParticleModuleLocationPrimitiveBase::VelocityScale)
         .def_readwrite("StartLocation", &UParticleModuleLocationPrimitiveBase::StartLocation)

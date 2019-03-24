@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AStaticMeshActorBasedOnExtremeContent(py::module &m)
 {
     py::class_< AStaticMeshActorBasedOnExtremeContent,  AActor   >(m, "AStaticMeshActorBasedOnExtremeContent")
+		.def_static("StaticClass", &AStaticMeshActorBasedOnExtremeContent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("StaticMeshComponent", &AStaticMeshActorBasedOnExtremeContent::StaticMeshComponent)
         .def_readwrite("ExtremeContent", &AStaticMeshActorBasedOnExtremeContent::ExtremeContent)
         .def_readwrite("NonExtremeContent", &AStaticMeshActorBasedOnExtremeContent::NonExtremeContent)

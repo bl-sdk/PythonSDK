@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UNavMeshPath_WithinDistanceEnvelope(py::module &m)
 {
     py::class_< UNavMeshPath_WithinDistanceEnvelope,  UNavMeshPathConstraint   >(m, "UNavMeshPath_WithinDistanceEnvelope")
+		.def_static("StaticClass", &UNavMeshPath_WithinDistanceEnvelope::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MaxDistance", &UNavMeshPath_WithinDistanceEnvelope::MaxDistance)
         .def_readwrite("MinDistance", &UNavMeshPath_WithinDistanceEnvelope::MinDistance)
         .def_readwrite("SoftStartPenalty", &UNavMeshPath_WithinDistanceEnvelope::SoftStartPenalty)

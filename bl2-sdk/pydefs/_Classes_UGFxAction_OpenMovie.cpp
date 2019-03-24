@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGFxAction_OpenMovie(py::module &m)
 {
     py::class_< UGFxAction_OpenMovie,  USequenceAction   >(m, "UGFxAction_OpenMovie")
+		.def_static("StaticClass", &UGFxAction_OpenMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Movie", &UGFxAction_OpenMovie::Movie)
         .def_readwrite("MoviePlayerClass", &UGFxAction_OpenMovie::MoviePlayerClass)
         .def_readwrite("MoviePlayer", &UGFxAction_OpenMovie::MoviePlayer)

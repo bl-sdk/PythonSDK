@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UTextureFlipBook(py::module &m)
 {
     py::class_< UTextureFlipBook,  UTexture2D   >(m, "UTextureFlipBook")
+		.def_static("StaticClass", &UTextureFlipBook::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_FTickableObject", &UTextureFlipBook::VfTable_FTickableObject)
         .def_readwrite("TimeIntoMovie", &UTextureFlipBook::TimeIntoMovie)
         .def_readwrite("TimeSinceLastFrame", &UTextureFlipBook::TimeSinceLastFrame)

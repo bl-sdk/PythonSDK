@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGameplayEvents(py::module &m)
 {
     py::class_< UGameplayEvents,  UObject   >(m, "UGameplayEvents")
+		.def_static("StaticClass", &UGameplayEvents::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Archive", &UGameplayEvents::Archive)
         .def_readwrite("StatsFileName", &UGameplayEvents::StatsFileName)
         .def_readwrite("Header", &UGameplayEvents::Header)

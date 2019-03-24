@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UUIDataStore_OnlineGameSearch(py::module &m)
 {
     py::class_< UUIDataStore_OnlineGameSearch,  UUIDataStore_Remote   >(m, "UUIDataStore_OnlineGameSearch")
+		.def_static("StaticClass", &UUIDataStore_OnlineGameSearch::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IUIListElementProvider", &UUIDataStore_OnlineGameSearch::VfTable_IUIListElementProvider)
         .def_readwrite("VfTable_IUIListElementCellProvider", &UUIDataStore_OnlineGameSearch::VfTable_IUIListElementCellProvider)
         .def_readwrite("SearchResultsName", &UUIDataStore_OnlineGameSearch::SearchResultsName)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBankGFxDefinition(py::module &m)
 {
     py::class_< UBankGFxDefinition,  UWillowGFxMovie3DDefinition   >(m, "UBankGFxDefinition")
+		.def_static("StaticClass", &UBankGFxDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("LeftSideDef", &UBankGFxDefinition::LeftSideDef)
         .def_readwrite("RightSideDef", &UBankGFxDefinition::RightSideDef)
         .def_readwrite("EmptySlotColor", &UBankGFxDefinition::EmptySlotColor)

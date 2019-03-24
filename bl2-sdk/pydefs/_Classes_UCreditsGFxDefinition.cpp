@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UCreditsGFxDefinition(py::module &m)
 {
     py::class_< UCreditsGFxDefinition,  UWillowGFxMovie3DDefinition   >(m, "UCreditsGFxDefinition")
+		.def_static("StaticClass", &UCreditsGFxDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CreditData", &UCreditsGFxDefinition::CreditData)
         .def_readwrite("DefaultSpeed", &UCreditsGFxDefinition::DefaultSpeed)
         .def_readwrite("MaxFastForwardSpeed", &UCreditsGFxDefinition::MaxFastForwardSpeed)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowImpactDefinition(py::module &m)
 {
     py::class_< UWillowImpactDefinition,  UImpactDefinition   >(m, "UWillowImpactDefinition")
+		.def_static("StaticClass", &UWillowImpactDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("FallbackEffect", &UWillowImpactDefinition::FallbackEffect)
         .def_readwrite("Usage", &UWillowImpactDefinition::Usage)
         .def_readwrite("Parent", &UWillowImpactDefinition::Parent)

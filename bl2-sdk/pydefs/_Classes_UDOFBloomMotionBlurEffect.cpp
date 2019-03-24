@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UDOFBloomMotionBlurEffect(py::module &m)
 {
     py::class_< UDOFBloomMotionBlurEffect,  UPostProcessEffect   >(m, "UDOFBloomMotionBlurEffect")
+		.def_static("StaticClass", &UDOFBloomMotionBlurEffect::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MaxVelocity", &UDOFBloomMotionBlurEffect::MaxVelocity)
         .def_readwrite("MotionBlurAmount", &UDOFBloomMotionBlurEffect::MotionBlurAmount)
         .def_readwrite("CameraRotationThreshold", &UDOFBloomMotionBlurEffect::CameraRotationThreshold)

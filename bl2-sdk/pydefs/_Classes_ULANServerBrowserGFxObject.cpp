@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ULANServerBrowserGFxObject(py::module &m)
 {
     py::class_< ULANServerBrowserGFxObject,  UGFxObject   >(m, "ULANServerBrowserGFxObject")
+		.def_static("StaticClass", &ULANServerBrowserGFxObject::StaticClass, py::return_value_policy::reference)
         .def("SetSortDirectionButtonLabel", &ULANServerBrowserGFxObject::SetSortDirectionButtonLabel)
         .def("SetSortTypeButtonLabel", &ULANServerBrowserGFxObject::SetSortTypeButtonLabel)
         .def("GetSelectedServerIndex", &ULANServerBrowserGFxObject::GetSelectedServerIndex)

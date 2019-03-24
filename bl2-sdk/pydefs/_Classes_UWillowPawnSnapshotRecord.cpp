@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowPawnSnapshotRecord(py::module &m)
 {
     py::class_< UWillowPawnSnapshotRecord,  UGearboxPawnSnapshotRecord   >(m, "UWillowPawnSnapshotRecord")
+		.def_static("StaticClass", &UWillowPawnSnapshotRecord::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MyWillowPawnName", &UWillowPawnSnapshotRecord::MyWillowPawnName)
         .def_readwrite("MyWeaponName", &UWillowPawnSnapshotRecord::MyWeaponName)
         .def_readwrite("MyDrivenVehicleName", &UWillowPawnSnapshotRecord::MyDrivenVehicleName)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowPersonalTeleporter(py::module &m)
 {
     py::class_< AWillowPersonalTeleporter,  ATeleporterDestination   >(m, "AWillowPersonalTeleporter")
+		.def_static("StaticClass", &AWillowPersonalTeleporter::StaticClass, py::return_value_policy::reference)
         .def_readwrite("TeleportedPlayers", &AWillowPersonalTeleporter::TeleportedPlayers)
         .def_readwrite("Definition", &AWillowPersonalTeleporter::Definition)
         .def_readwrite("CylinderComponent", &AWillowPersonalTeleporter::CylinderComponent)

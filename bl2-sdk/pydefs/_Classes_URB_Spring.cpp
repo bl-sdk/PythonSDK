@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_URB_Spring(py::module &m)
 {
     py::class_< URB_Spring,  UActorComponent   >(m, "URB_Spring")
+		.def_static("StaticClass", &URB_Spring::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Component1", &URB_Spring::Component1)
         .def_readwrite("BoneName1", &URB_Spring::BoneName1)
         .def_readwrite("Component2", &URB_Spring::Component2)

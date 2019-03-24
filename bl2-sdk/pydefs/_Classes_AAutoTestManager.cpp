@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AAutoTestManager(py::module &m)
 {
     py::class_< AAutoTestManager,  AInfo   >(m, "AAutoTestManager")
+		.def_static("StaticClass", &AAutoTestManager::StaticClass, py::return_value_policy::reference)
         .def_readwrite("AutomatedPerfRemainingTime", &AAutoTestManager::AutomatedPerfRemainingTime)
         .def_readwrite("AutomatedTestingMapIndex", &AAutoTestManager::AutomatedTestingMapIndex)
         .def_readwrite("AutomatedMapTestingList", &AAutoTestManager::AutomatedMapTestingList)

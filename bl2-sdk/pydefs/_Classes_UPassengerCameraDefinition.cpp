@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPassengerCameraDefinition(py::module &m)
 {
     py::class_< UPassengerCameraDefinition,  UGBXDefinition   >(m, "UPassengerCameraDefinition")
+		.def_static("StaticClass", &UPassengerCameraDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("AfterburnerHandlingCamera", &UPassengerCameraDefinition::AfterburnerHandlingCamera)
         .def_readwrite("CameraModifierSpeed", &UPassengerCameraDefinition::CameraModifierSpeed)
         .def_readwrite("CameraRollSmoothingSpeed", &UPassengerCameraDefinition::CameraRollSmoothingSpeed)

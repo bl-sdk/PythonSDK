@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_SpawnLootAroundPoint(py::module &m)
 {
     py::class_< UBehavior_SpawnLootAroundPoint,  UBehaviorBase   >(m, "UBehavior_SpawnLootAroundPoint")
+		.def_static("StaticClass", &UBehavior_SpawnLootAroundPoint::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CustomLocation", &UBehavior_SpawnLootAroundPoint::CustomLocation)
         .def_readwrite("CircularScatterRadius", &UBehavior_SpawnLootAroundPoint::CircularScatterRadius)
         .def_readwrite("SpawnVelocity", &UBehavior_SpawnLootAroundPoint::SpawnVelocity)

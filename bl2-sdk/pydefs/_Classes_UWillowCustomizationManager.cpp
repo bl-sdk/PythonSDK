@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowCustomizationManager(py::module &m)
 {
     py::class_< UWillowCustomizationManager,  UObject   >(m, "UWillowCustomizationManager")
+		.def_static("StaticClass", &UWillowCustomizationManager::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_FCallbackEventDevice", &UWillowCustomizationManager::VfTable_FCallbackEventDevice)
         .def_readwrite("PendingCustomizations", &UWillowCustomizationManager::PendingCustomizations)
         .def_readwrite("NumHeadsLoadedSinceLastGC", &UWillowCustomizationManager::NumHeadsLoadedSinceLastGC)

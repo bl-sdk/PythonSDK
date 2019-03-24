@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowGFxColiseumOverlayMovie(py::module &m)
 {
     py::class_< UWillowGFxColiseumOverlayMovie,  UWillowGFxMovie   >(m, "UWillowGFxColiseumOverlayMovie")
+		.def_static("StaticClass", &UWillowGFxColiseumOverlayMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("OverlayDef", &UWillowGFxColiseumOverlayMovie::OverlayDef)
         .def_readwrite("RoundPrefix", &UWillowGFxColiseumOverlayMovie::RoundPrefix)
         .def_readwrite("WavePrefix", &UWillowGFxColiseumOverlayMovie::WavePrefix)

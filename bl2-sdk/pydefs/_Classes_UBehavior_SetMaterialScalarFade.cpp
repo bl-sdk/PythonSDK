@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_SetMaterialScalarFade(py::module &m)
 {
     py::class_< UBehavior_SetMaterialScalarFade,  UBehaviorBase   >(m, "UBehavior_SetMaterialScalarFade")
+		.def_static("StaticClass", &UBehavior_SetMaterialScalarFade::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ScalarName", &UBehavior_SetMaterialScalarFade::ScalarName)
         .def_readwrite("StartValue", &UBehavior_SetMaterialScalarFade::StartValue)
         .def_readwrite("EndValue", &UBehavior_SetMaterialScalarFade::EndValue)

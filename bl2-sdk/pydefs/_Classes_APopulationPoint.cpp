@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_APopulationPoint(py::module &m)
 {
     py::class_< APopulationPoint,  AActor   >(m, "APopulationPoint")
+		.def_static("StaticClass", &APopulationPoint::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIPopulationSpawnPoint", &APopulationPoint::VfTable_IIPopulationSpawnPoint)
         .def_readwrite("Flags", &APopulationPoint::Flags)
         .def_readwrite("AISpawnStyle", &APopulationPoint::AISpawnStyle)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_APopulationOpportunityPoint(py::module &m)
 {
     py::class_< APopulationOpportunityPoint,  APopulationOpportunity   >(m, "APopulationOpportunityPoint")
+		.def_static("StaticClass", &APopulationOpportunityPoint::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIPopulationSpawnPoint", &APopulationOpportunityPoint::VfTable_IIPopulationSpawnPoint)
         .def_readwrite("PopulationDef", &APopulationOpportunityPoint::PopulationDef)
         .def_readwrite("SpawnAndCullRadius", &APopulationOpportunityPoint::SpawnAndCullRadius)

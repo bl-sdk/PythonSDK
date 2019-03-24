@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowTurretWeapon(py::module &m)
 {
     py::class_< AWillowTurretWeapon,  AWillowWeapon   >(m, "AWillowTurretWeapon")
+		.def_static("StaticClass", &AWillowTurretWeapon::StaticClass, py::return_value_policy::reference)
         .def_readwrite("FireTriggerTags", &AWillowTurretWeapon::FireTriggerTags)
         .def_readwrite("AltFireTriggerTags", &AWillowTurretWeapon::AltFireTriggerTags)
         .def_readwrite("AimTraceRange", &AWillowTurretWeapon::AimTraceRange)

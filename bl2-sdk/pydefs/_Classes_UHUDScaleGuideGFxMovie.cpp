@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UHUDScaleGuideGFxMovie(py::module &m)
 {
     py::class_< UHUDScaleGuideGFxMovie,  UWillowGFxMovie3D   >(m, "UHUDScaleGuideGFxMovie")
+		.def_static("StaticClass", &UHUDScaleGuideGFxMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Arrow_Up", &UHUDScaleGuideGFxMovie::Arrow_Up)
         .def_readwrite("Arrow_Down", &UHUDScaleGuideGFxMovie::Arrow_Down)
         .def_readwrite("Arrow_Left", &UHUDScaleGuideGFxMovie::Arrow_Left)

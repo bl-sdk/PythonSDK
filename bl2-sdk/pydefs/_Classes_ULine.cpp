@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ULine(py::module &m)
 {
     py::class_< ULine,  UObject   >(m, "ULine")
+		.def_static("StaticClass", &ULine::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Parent", &ULine::Parent)
         .def_readwrite("LineSegments", &ULine::LineSegments)
         .def_readwrite("Verts", &ULine::Verts)

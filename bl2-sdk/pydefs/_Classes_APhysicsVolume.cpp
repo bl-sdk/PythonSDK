@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_APhysicsVolume(py::module &m)
 {
     py::class_< APhysicsVolume,  AVolume   >(m, "APhysicsVolume")
+		.def_static("StaticClass", &APhysicsVolume::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ZoneVelocity", &APhysicsVolume::ZoneVelocity)
         .def_readwrite("GroundFriction", &APhysicsVolume::GroundFriction)
         .def_readwrite("TerminalVelocity", &APhysicsVolume::TerminalVelocity)

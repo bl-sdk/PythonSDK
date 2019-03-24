@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowGFxUIManager(py::module &m)
 {
     py::class_< UWillowGFxUIManager,  UObject   >(m, "UWillowGFxUIManager")
+		.def_static("StaticClass", &UWillowGFxUIManager::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MyDefinition", &UWillowGFxUIManager::MyDefinition)
         .def_readwrite("PlayerOwner", &UWillowGFxUIManager::PlayerOwner)
         .def_readwrite("PlayerViewOffset", &UWillowGFxUIManager::PlayerViewOffset)

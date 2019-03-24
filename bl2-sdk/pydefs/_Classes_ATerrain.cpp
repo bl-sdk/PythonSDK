@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ATerrain(py::module &m)
 {
     py::class_< ATerrain,  AInfo   >(m, "ATerrain")
+		.def_static("StaticClass", &ATerrain::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Heights", &ATerrain::Heights)
         .def_readwrite("InfoData", &ATerrain::InfoData)
         .def_readwrite("Layers", &ATerrain::Layers)

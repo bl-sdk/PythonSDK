@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UParticleSystem(py::module &m)
 {
     py::class_< UParticleSystem,  UObject   >(m, "UParticleSystem")
+		.def_static("StaticClass", &UParticleSystem::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SystemUpdateMode", &UParticleSystem::SystemUpdateMode)
         .def_readwrite("LODMethod", &UParticleSystem::LODMethod)
         .def_readwrite("OcclusionBoundsMethod", &UParticleSystem::OcclusionBoundsMethod)

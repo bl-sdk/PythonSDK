@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AResourcePoolManager(py::module &m)
 {
     py::class_< AResourcePoolManager,  AReplicationInfo   >(m, "AResourcePoolManager")
+		.def_static("StaticClass", &AResourcePoolManager::StaticClass, py::return_value_policy::reference)
         .def_readwrite("NextPoolGUID", &AResourcePoolManager::NextPoolGUID)
         .def("CreateResourcePoolManagerIfNecessary", [](AResourcePoolManager &self , class AActor* ActorOwner) { class AResourcePoolManager** pyMgr = 0 ;   self.CreateResourcePoolManagerIfNecessary(ActorOwner, pyMgr); return py::make_tuple(*pyMgr); })
         .def("DeletePoolAtIndex", &AResourcePoolManager::DeletePoolAtIndex)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UDrunkenBaseComponent(py::module &m)
 {
     py::class_< UDrunkenBaseComponent,  UMovementComponent   >(m, "UDrunkenBaseComponent")
+		.def_static("StaticClass", &UDrunkenBaseComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("StartApproachDistance", &UDrunkenBaseComponent::StartApproachDistance)
         .def_readwrite("StartDelayTime", &UDrunkenBaseComponent::StartDelayTime)
         .def_readwrite("EaseInTime", &UDrunkenBaseComponent::EaseInTime)

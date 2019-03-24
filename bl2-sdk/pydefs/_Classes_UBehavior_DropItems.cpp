@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_DropItems(py::module &m)
 {
     py::class_< UBehavior_DropItems,  UBehaviorBase   >(m, "UBehavior_DropItems")
+		.def_static("StaticClass", &UBehavior_DropItems::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ItemDropOffset", &UBehavior_DropItems::ItemDropOffset)
         .def_readwrite("ItemDropVelocity", &UBehavior_DropItems::ItemDropVelocity)
         .def_readwrite("ItemScatterOffset", &UBehavior_DropItems::ItemScatterOffset)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UProjectileDefinition(py::module &m)
 {
     py::class_< UProjectileDefinition,  UGBXDefinition   >(m, "UProjectileDefinition")
+		.def_static("StaticClass", &UProjectileDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIConstructObject", &UProjectileDefinition::VfTable_IIConstructObject)
         .def_readwrite("VfTable_IIBodyInfoProvider", &UProjectileDefinition::VfTable_IIBodyInfoProvider)
         .def_readwrite("VfTable_IIBehaviorProvider", &UProjectileDefinition::VfTable_IIBehaviorProvider)

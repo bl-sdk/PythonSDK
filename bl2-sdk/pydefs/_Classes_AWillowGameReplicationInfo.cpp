@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowGameReplicationInfo(py::module &m)
 {
     py::class_< AWillowGameReplicationInfo,  AGameReplicationInfo   >(m, "AWillowGameReplicationInfo")
+		.def_static("StaticClass", &AWillowGameReplicationInfo::StaticClass, py::return_value_policy::reference)
         .def_readwrite("RadarMgr", &AWillowGameReplicationInfo::RadarMgr)
         .def_readwrite("ActiveRespawnCheckpointTeleportActor", &AWillowGameReplicationInfo::ActiveRespawnCheckpointTeleportActor)
         .def_readwrite("CachedBossHasShield", &AWillowGameReplicationInfo::CachedBossHasShield)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGFxRawData(py::module &m)
 {
     py::class_< UGFxRawData,  UObject   >(m, "UGFxRawData")
+		.def_static("StaticClass", &UGFxRawData::StaticClass, py::return_value_policy::reference)
         .def_readwrite("RawData", &UGFxRawData::RawData)
         .def_readwrite("ReferencedSwfs", &UGFxRawData::ReferencedSwfs)
         .def_readwrite("References", &UGFxRawData::References)

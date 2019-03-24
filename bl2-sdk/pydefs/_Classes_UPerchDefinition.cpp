@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPerchDefinition(py::module &m)
 {
     py::class_< UPerchDefinition,  UGBXDefinition   >(m, "UPerchDefinition")
+		.def_static("StaticClass", &UPerchDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIBodyInfoProvider", &UPerchDefinition::VfTable_IIBodyInfoProvider)
         .def_readwrite("VfTable_IIBehaviorProvider", &UPerchDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("VfTable_IIAnimProvider", &UPerchDefinition::VfTable_IIAnimProvider)

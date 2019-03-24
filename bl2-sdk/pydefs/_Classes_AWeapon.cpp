@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWeapon(py::module &m)
 {
     py::class_< AWeapon,  AWillowInventory   >(m, "AWeapon")
+		.def_static("StaticClass", &AWeapon::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CurrentFireMode", &AWeapon::CurrentFireMode)
         .def_readwrite("bOffHand", &AWeapon::bOffHand)
         .def_readwrite("FiringStatesArray", &AWeapon::FiringStatesArray)

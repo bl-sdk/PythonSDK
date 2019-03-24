@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USparkServiceConfiguration(py::module &m)
 {
     py::class_< USparkServiceConfiguration,  UObject   >(m, "USparkServiceConfiguration")
+		.def_static("StaticClass", &USparkServiceConfiguration::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ServiceName", &USparkServiceConfiguration::ServiceName)
         .def_readwrite("ConfigurationGroup", &USparkServiceConfiguration::ConfigurationGroup)
         .def_readwrite("Keys", &USparkServiceConfiguration::Keys)

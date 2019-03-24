@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UUIGameInfoSummary(py::module &m)
 {
     py::class_< UUIGameInfoSummary,  UUIResourceDataProvider   >(m, "UUIGameInfoSummary")
+		.def_static("StaticClass", &UUIGameInfoSummary::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ClassName", &UUIGameInfoSummary::ClassName)
         .def_readwrite("GameAcronym", &UUIGameInfoSummary::GameAcronym)
         .def_readwrite("MapPrefix", &UUIGameInfoSummary::MapPrefix)

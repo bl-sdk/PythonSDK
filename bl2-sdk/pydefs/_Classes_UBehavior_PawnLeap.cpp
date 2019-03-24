@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_PawnLeap(py::module &m)
 {
     py::class_< UBehavior_PawnLeap,  UBehaviorBase   >(m, "UBehavior_PawnLeap")
+		.def_static("StaticClass", &UBehavior_PawnLeap::StaticClass, py::return_value_policy::reference)
         .def_readwrite("LeapSpeed", &UBehavior_PawnLeap::LeapSpeed)
         .def_readwrite("LeapAngle", &UBehavior_PawnLeap::LeapAngle)
         .def_readwrite("OffsetLocation", &UBehavior_PawnLeap::OffsetLocation)

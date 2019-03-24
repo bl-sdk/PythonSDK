@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAction_AttackLoop(py::module &m)
 {
     py::class_< UAction_AttackLoop,  UAction_BasicAttack   >(m, "UAction_AttackLoop")
+		.def_static("StaticClass", &UAction_AttackLoop::StaticClass, py::return_value_policy::reference)
         .def_readwrite("LoopCount", &UAction_AttackLoop::LoopCount)
         .def_readwrite("StartSMD", &UAction_AttackLoop::StartSMD)
         .def_readwrite("StopSMD", &UAction_AttackLoop::StopSMD)

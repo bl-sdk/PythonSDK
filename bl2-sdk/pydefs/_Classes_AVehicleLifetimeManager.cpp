@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AVehicleLifetimeManager(py::module &m)
 {
     py::class_< AVehicleLifetimeManager,  AInfo   >(m, "AVehicleLifetimeManager")
+		.def_static("StaticClass", &AVehicleLifetimeManager::StaticClass, py::return_value_policy::reference)
         .def_readwrite("NextTickUpdateTime", &AVehicleLifetimeManager::NextTickUpdateTime)
         .def_readwrite("NextCheckUsersTime", &AVehicleLifetimeManager::NextCheckUsersTime)
         .def_readwrite("CurrentVehicleFamily", &AVehicleLifetimeManager::CurrentVehicleFamily)

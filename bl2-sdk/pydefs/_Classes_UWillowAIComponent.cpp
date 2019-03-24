@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowAIComponent(py::module &m)
 {
     py::class_< UWillowAIComponent,  UAIComponent   >(m, "UWillowAIComponent")
+		.def_static("StaticClass", &UWillowAIComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MyWillowMind", &UWillowAIComponent::MyWillowMind)
         .def_readwrite("MyDen", &UWillowAIComponent::MyDen)
         .def_readwrite("MyBlackboard", &UWillowAIComponent::MyBlackboard)

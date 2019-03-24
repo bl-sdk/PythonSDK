@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UDrunkenWaveComponent(py::module &m)
 {
     py::class_< UDrunkenWaveComponent,  UMovementComponent   >(m, "UDrunkenWaveComponent")
+		.def_static("StaticClass", &UDrunkenWaveComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MaxRandomWaveOffsetTime", &UDrunkenWaveComponent::MaxRandomWaveOffsetTime)
         .def_readwrite("Waves", &UDrunkenWaveComponent::Waves)
         .def_readwrite("GlobalWaveScale", &UDrunkenWaveComponent::GlobalWaveScale)

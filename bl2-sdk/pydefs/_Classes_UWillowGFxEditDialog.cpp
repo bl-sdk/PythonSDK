@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowGFxEditDialog(py::module &m)
 {
     py::class_< UWillowGFxEditDialog,  UWillowGFxMovie   >(m, "UWillowGFxEditDialog")
+		.def_static("StaticClass", &UWillowGFxEditDialog::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Tools", &UWillowGFxEditDialog::Tools)
         .def_readwrite("MenuItemCallbacks", &UWillowGFxEditDialog::MenuItemCallbacks)
         .def("GetDefaultEditBoxValue", &UWillowGFxEditDialog::GetDefaultEditBoxValue)

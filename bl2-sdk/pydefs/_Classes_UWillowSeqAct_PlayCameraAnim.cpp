@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowSeqAct_PlayCameraAnim(py::module &m)
 {
     py::class_< UWillowSeqAct_PlayCameraAnim,  USequenceAction   >(m, "UWillowSeqAct_PlayCameraAnim")
+		.def_static("StaticClass", &UWillowSeqAct_PlayCameraAnim::StaticClass, py::return_value_policy::reference)
         .def_readwrite("AnimToPlay", &UWillowSeqAct_PlayCameraAnim::AnimToPlay)
         .def_readwrite("BlendInTime", &UWillowSeqAct_PlayCameraAnim::BlendInTime)
         .def_readwrite("BlendOutTime", &UWillowSeqAct_PlayCameraAnim::BlendOutTime)

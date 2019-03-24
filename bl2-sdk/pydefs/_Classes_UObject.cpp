@@ -20,8 +20,6 @@ void Export_pystes_UObject(py::module &m)
 		.def_readwrite("ObjectArchetype", &UObject::ObjectArchetype)
         .def_static("GObjObjects", &UObject::GObjObjects, py::return_value_policy::reference)
 		.def_static("StaticClass", &UObject::StaticClass, py::return_value_policy::reference)
-		.def_static("FindObject", &UObject::FindObject, py::return_value_policy::reference)
-		.def("As", &UObject::As, py::return_value_policy::reference)
         .def("GetName", &UObject::GetName)
         .def("GetNameCPP", &UObject::GetNameCPP)
         .def("GetFullName", &UObject::GetFullName)
@@ -353,11 +351,4 @@ void Export_pystes_UObject(py::module &m)
         .def("EqualEqual_BoolBool", &UObject::EqualEqual_BoolBool)
         .def("Not_PreBool", &UObject::Not_PreBool)
           ;
-
-		py::class_< TArray<UObject *> >(m, "TArray<UObject *>")
-			.def_readwrite("Count", &TArray<UObject *>::Count)
-			.def_readwrite("Max", &TArray<UObject *>::Max)
-			.def("Num", &TArray<UObject *>::Num)
-			.def("__call__", (UObject*& (TArray<UObject *>::*)(int))&TArray<UObject *>::operator (), py::return_value_policy::reference)
-			;
 }

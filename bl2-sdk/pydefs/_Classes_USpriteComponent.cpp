@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USpriteComponent(py::module &m)
 {
     py::class_< USpriteComponent,  UPrimitiveComponent   >(m, "USpriteComponent")
+		.def_static("StaticClass", &USpriteComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Sprite", &USpriteComponent::Sprite)
         .def_readwrite("ScreenSize", &USpriteComponent::ScreenSize)
         .def_readwrite("U", &USpriteComponent::U)

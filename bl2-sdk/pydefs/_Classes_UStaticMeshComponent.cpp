@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UStaticMeshComponent(py::module &m)
 {
     py::class_< UStaticMeshComponent, UMeshComponent   >(m, "UStaticMeshComponent")
+		.def_static("StaticClass", &UStaticMeshComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("StaticMesh", &UStaticMeshComponent::StaticMesh)
         .def_readwrite("OverriddenLODMaxRange", &UStaticMeshComponent::OverriddenLODMaxRange)
         .def_readwrite("StreamingDistanceMultiplier", &UStaticMeshComponent::StreamingDistanceMultiplier)

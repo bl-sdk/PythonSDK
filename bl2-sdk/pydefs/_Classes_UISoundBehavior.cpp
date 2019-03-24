@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UISoundBehavior(py::module &m)
 {
     py::class_< UISoundBehavior,  UInterface   >(m, "UISoundBehavior")
+		.def_static("StaticClass", &UISoundBehavior::StaticClass, py::return_value_policy::reference)
         .def("Behavior_PostAkEvent", &UISoundBehavior::Behavior_PostAkEvent)
         .def("Behavior_PlaySoundForListener", &UISoundBehavior::Behavior_PlaySoundForListener)
         .def("Behavior_StopSound", &UISoundBehavior::Behavior_StopSound)

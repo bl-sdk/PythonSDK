@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_SpawnProjectileFromImpact(py::module &m)
 {
     py::class_< UBehavior_SpawnProjectileFromImpact,  UBehaviorBase   >(m, "UBehavior_SpawnProjectileFromImpact")
+		.def_static("StaticClass", &UBehavior_SpawnProjectileFromImpact::StaticClass, py::return_value_policy::reference)
         .def_readwrite("OwnerContext", &UBehavior_SpawnProjectileFromImpact::OwnerContext)
         .def_readwrite("InstanceDataContext", &UBehavior_SpawnProjectileFromImpact::InstanceDataContext)
         .def_readwrite("SavedReferenceName", &UBehavior_SpawnProjectileFromImpact::SavedReferenceName)

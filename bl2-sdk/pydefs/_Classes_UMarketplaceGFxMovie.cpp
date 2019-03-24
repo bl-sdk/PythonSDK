@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UMarketplaceGFxMovie(py::module &m)
 {
     py::class_< UMarketplaceGFxMovie,  UWillowGFxMovie3D   >(m, "UMarketplaceGFxMovie")
+		.def_static("StaticClass", &UMarketplaceGFxMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("BasicFilters", &UMarketplaceGFxMovie::BasicFilters)
         .def_readwrite("MarketPlacePanelObject", &UMarketplaceGFxMovie::MarketPlacePanelObject)
         .def_readwrite("MarketplaceDef", &UMarketplaceGFxMovie::MarketplaceDef)

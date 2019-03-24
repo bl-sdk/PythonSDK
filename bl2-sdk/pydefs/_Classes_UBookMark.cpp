@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBookMark(py::module &m)
 {
     py::class_< UBookMark,  UObject   >(m, "UBookMark")
+		.def_static("StaticClass", &UBookMark::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Location", &UBookMark::Location)
         .def_readwrite("Rotation", &UBookMark::Rotation)
         .def_readwrite("HiddenLevels", &UBookMark::HiddenLevels)

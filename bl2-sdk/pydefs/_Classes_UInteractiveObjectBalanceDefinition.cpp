@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UInteractiveObjectBalanceDefinition(py::module &m)
 {
     py::class_< UInteractiveObjectBalanceDefinition,  UBaseBalanceDefinition   >(m, "UInteractiveObjectBalanceDefinition")
+		.def_static("StaticClass", &UInteractiveObjectBalanceDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIConstructObject", &UInteractiveObjectBalanceDefinition::VfTable_IIConstructObject)
         .def_readwrite("DefaultInteractiveObject", &UInteractiveObjectBalanceDefinition::DefaultInteractiveObject)
         .def_readwrite("DefaultExpLevel", &UInteractiveObjectBalanceDefinition::DefaultExpLevel)

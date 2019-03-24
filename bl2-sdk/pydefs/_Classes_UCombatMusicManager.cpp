@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UCombatMusicManager(py::module &m)
 {
     py::class_< UCombatMusicManager,  UObject   >(m, "UCombatMusicManager")
+		.def_static("StaticClass", &UCombatMusicManager::StaticClass, py::return_value_policy::reference)
         .def_readwrite("TargetedPlayerStates", &UCombatMusicManager::TargetedPlayerStates)
         .def_readwrite("TimeSinceLastUpdate", &UCombatMusicManager::TimeSinceLastUpdate)
         .def_readwrite("TimeOfNewCombatAction", &UCombatMusicManager::TimeOfNewCombatAction)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGearboxRuleEngine(py::module &m)
 {
     py::class_< UGearboxRuleEngine,  UObject   >(m, "UGearboxRuleEngine")
+		.def_static("StaticClass", &UGearboxRuleEngine::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MyGearboxPawn", &UGearboxRuleEngine::MyGearboxPawn)
         .def_readwrite("MyGearboxMind", &UGearboxRuleEngine::MyGearboxMind)
         .def_readwrite("VfTable_IIFlagProvider", &URuleEngine::VfTable_IIFlagProvider)

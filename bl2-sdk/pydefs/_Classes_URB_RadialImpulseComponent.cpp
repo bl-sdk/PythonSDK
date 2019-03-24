@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_URB_RadialImpulseComponent(py::module &m)
 {
     py::class_< URB_RadialImpulseComponent,  UPrimitiveComponent   >(m, "URB_RadialImpulseComponent")
+		.def_static("StaticClass", &URB_RadialImpulseComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ImpulseFalloff", &URB_RadialImpulseComponent::ImpulseFalloff)
         .def_readwrite("ImpulseStrength", &URB_RadialImpulseComponent::ImpulseStrength)
         .def_readwrite("ImpulseRadius", &URB_RadialImpulseComponent::ImpulseRadius)

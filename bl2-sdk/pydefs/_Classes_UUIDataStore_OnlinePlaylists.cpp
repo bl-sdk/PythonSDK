@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UUIDataStore_OnlinePlaylists(py::module &m)
 {
     py::class_< UUIDataStore_OnlinePlaylists,  UUIDataStore   >(m, "UUIDataStore_OnlinePlaylists")
+		.def_static("StaticClass", &UUIDataStore_OnlinePlaylists::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IUIListElementProvider", &UUIDataStore_OnlinePlaylists::VfTable_IUIListElementProvider)
         .def_readwrite("ProviderClassName", &UUIDataStore_OnlinePlaylists::ProviderClassName)
         .def_readwrite("ProviderClass", &UUIDataStore_OnlinePlaylists::ProviderClass)

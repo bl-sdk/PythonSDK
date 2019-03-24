@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UFluidInfluenceComponent(py::module &m)
 {
     py::class_< UFluidInfluenceComponent,  UPrimitiveComponent   >(m, "UFluidInfluenceComponent")
+		.def_static("StaticClass", &UFluidInfluenceComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("FluidActor", &UFluidInfluenceComponent::FluidActor)
         .def_readwrite("InfluenceType", &UFluidInfluenceComponent::InfluenceType)
         .def_readwrite("MaxDistance", &UFluidInfluenceComponent::MaxDistance)

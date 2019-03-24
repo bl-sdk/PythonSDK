@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_AISpawn(py::module &m)
 {
     py::class_< UBehavior_AISpawn,  UBehaviorBase   >(m, "UBehavior_AISpawn")
+		.def_static("StaticClass", &UBehavior_AISpawn::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SpawnPointName", &UBehavior_AISpawn::SpawnPointName)
         .def_readwrite("PopDef", &UBehavior_AISpawn::PopDef)
         .def_readwrite("SpawnContext", &UBehavior_AISpawn::SpawnContext)

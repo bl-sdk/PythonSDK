@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UUIDataProvider_Settings(py::module &m)
 {
     py::class_< UUIDataProvider_Settings,  UUIDataProvider   >(m, "UUIDataProvider_Settings")
+		.def_static("StaticClass", &UUIDataProvider_Settings::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Settings", &UUIDataProvider_Settings::Settings)
         .def_readwrite("SettingsArrayProviders", &UUIDataProvider_Settings::SettingsArrayProviders)
         .def_readwrite("VfTable_IUIListElementCellProvider", &UUIDynamicDataProvider::VfTable_IUIListElementCellProvider)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPlayerBehavior_DropItems(py::module &m)
 {
     py::class_< UPlayerBehavior_DropItems,  UBehaviorBase   >(m, "UPlayerBehavior_DropItems")
+		.def_static("StaticClass", &UPlayerBehavior_DropItems::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ConfigurationName", &UPlayerBehavior_DropItems::ConfigurationName)
         .def_readwrite("TargetContext", &UPlayerBehavior_DropItems::TargetContext)
         .def_readwrite("LocationContext", &UPlayerBehavior_DropItems::LocationContext)

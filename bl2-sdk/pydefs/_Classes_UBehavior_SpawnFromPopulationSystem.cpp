@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_SpawnFromPopulationSystem(py::module &m)
 {
     py::class_< UBehavior_SpawnFromPopulationSystem,  UBehaviorBase   >(m, "UBehavior_SpawnFromPopulationSystem")
+		.def_static("StaticClass", &UBehavior_SpawnFromPopulationSystem::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SpawnFactory", &UBehavior_SpawnFromPopulationSystem::SpawnFactory)
         .def_readwrite("GameStageContext", &UBehavior_SpawnFromPopulationSystem::GameStageContext)
         .def_readwrite("SpawnLocOffset", &UBehavior_SpawnFromPopulationSystem::SpawnLocOffset)

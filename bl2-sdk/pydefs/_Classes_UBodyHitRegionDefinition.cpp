@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBodyHitRegionDefinition(py::module &m)
 {
     py::class_< UBodyHitRegionDefinition,  UBaseHitRegionDefinition   >(m, "UBodyHitRegionDefinition")
+		.def_static("StaticClass", &UBodyHitRegionDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIBehaviorProvider", &UBodyHitRegionDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("VfTable_IIConstructObject", &UBodyHitRegionDefinition::VfTable_IIConstructObject)
         .def_readwrite("HitRegionName", &UBodyHitRegionDefinition::HitRegionName)

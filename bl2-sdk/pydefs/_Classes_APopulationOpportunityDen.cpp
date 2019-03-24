@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_APopulationOpportunityDen(py::module &m)
 {
     py::class_< APopulationOpportunityDen,  APopulationOpportunity   >(m, "APopulationOpportunityDen")
+		.def_static("StaticClass", &APopulationOpportunityDen::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIAIInterface", &APopulationOpportunityDen::VfTable_IIAIInterface)
         .def_readwrite("MaxActiveActorsIsNormal", &APopulationOpportunityDen::MaxActiveActorsIsNormal)
         .def_readwrite("MaxActiveActorsThreatened", &APopulationOpportunityDen::MaxActiveActorsThreatened)

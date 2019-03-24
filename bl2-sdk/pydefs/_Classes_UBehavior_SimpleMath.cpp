@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_SimpleMath(py::module &m)
 {
     py::class_< UBehavior_SimpleMath,  UBehaviorBase   >(m, "UBehavior_SimpleMath")
+		.def_static("StaticClass", &UBehavior_SimpleMath::StaticClass, py::return_value_policy::reference)
         .def_readwrite("A", &UBehavior_SimpleMath::A)
         .def_readwrite("B", &UBehavior_SimpleMath::B)
         .def_readwrite("Operation", &UBehavior_SimpleMath::Operation)

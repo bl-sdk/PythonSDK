@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPlayerNameIdentifierDefinition(py::module &m)
 {
     py::class_< UPlayerNameIdentifierDefinition,  UGBXDefinition   >(m, "UPlayerNameIdentifierDefinition")
+		.def_static("StaticClass", &UPlayerNameIdentifierDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CharacterName", &UPlayerNameIdentifierDefinition::CharacterName)
         .def_readwrite("LocalizedCharacterName", &UPlayerNameIdentifierDefinition::LocalizedCharacterName)
         .def_readwrite("LocalizedCharacterDescription", &UPlayerNameIdentifierDefinition::LocalizedCharacterDescription)

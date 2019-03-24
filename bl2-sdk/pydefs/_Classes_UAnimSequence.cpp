@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAnimSequence(py::module &m)
 {
     py::class_< UAnimSequence,  UObject   >(m, "UAnimSequence")
+		.def_static("StaticClass", &UAnimSequence::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SequenceName", &UAnimSequence::SequenceName)
         .def_readwrite("Notifies", &UAnimSequence::Notifies)
         .def_readwrite("MetaData", &UAnimSequence::MetaData)

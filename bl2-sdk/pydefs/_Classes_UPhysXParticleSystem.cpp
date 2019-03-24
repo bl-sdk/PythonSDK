@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPhysXParticleSystem(py::module &m)
 {
     py::class_< UPhysXParticleSystem,  UObject   >(m, "UPhysXParticleSystem")
+		.def_static("StaticClass", &UPhysXParticleSystem::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MaxParticles1", &UPhysXParticleSystem::MaxParticles1)
         .def_readwrite("MaxParticles2", &UPhysXParticleSystem::MaxParticles2)
         .def_readwrite("MaxParticles", &UPhysXParticleSystem::MaxParticles)

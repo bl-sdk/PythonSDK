@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowActionSequencePawn(py::module &m)
 {
     py::class_< UWillowActionSequencePawn,  UActionSequencePawn   >(m, "UWillowActionSequencePawn")
+		.def_static("StaticClass", &UWillowActionSequencePawn::StaticClass, py::return_value_policy::reference)
         .def_readwrite("WillowAI", &UWillowActionSequencePawn::WillowAI)
         .def_readwrite("MyNavHandle", &UWillowActionSequencePawn::MyNavHandle)
         .def_readwrite("MyWillowMind", &UWillowActionSequencePawn::MyWillowMind)

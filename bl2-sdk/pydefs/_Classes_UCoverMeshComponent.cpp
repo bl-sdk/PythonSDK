@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UCoverMeshComponent(py::module &m)
 {
     py::class_< UCoverMeshComponent,  UStaticMeshComponent   >(m, "UCoverMeshComponent")
+		.def_static("StaticClass", &UCoverMeshComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Meshes", &UCoverMeshComponent::Meshes)
         .def_readwrite("LocationOffset", &UCoverMeshComponent::LocationOffset)
         .def_readwrite("AutoAdjustOn", &UCoverMeshComponent::AutoAdjustOn)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UActorFactoryDominantDirectionalLightMovable(py::module &m)
 {
     py::class_< UActorFactoryDominantDirectionalLightMovable,  UObject   >(m, "UActorFactoryDominantDirectionalLightMovable")
+		.def_static("StaticClass", &UActorFactoryDominantDirectionalLightMovable::StaticClass, py::return_value_policy::reference)
         .def_readwrite("GameplayActorClass", &UActorFactory::GameplayActorClass)
         .def_readwrite("MenuName", &UActorFactory::MenuName)
         .def_readwrite("MenuPriority", &UActorFactory::MenuPriority)

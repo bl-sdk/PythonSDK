@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UCharacterSelectionReduxGFxMovie(py::module &m)
 {
     py::class_< UCharacterSelectionReduxGFxMovie,  UWillowGFxMovie3D   >(m, "UCharacterSelectionReduxGFxMovie")
+		.def_static("StaticClass", &UCharacterSelectionReduxGFxMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("FadeInTimeInSeconds", &UCharacterSelectionReduxGFxMovie::FadeInTimeInSeconds)
         .def_readwrite("FadeOutTimeInSeconds", &UCharacterSelectionReduxGFxMovie::FadeOutTimeInSeconds)
         .def_readwrite("CharacterSelectClip", &UCharacterSelectionReduxGFxMovie::CharacterSelectClip)

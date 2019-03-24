@@ -6,5 +6,6 @@ namespace py = pybind11;
 void Export_pystes_USeqEvent_AllSpawned(py::module &m)
 {
     py::class_< USeqEvent_AllSpawned,  USequenceEvent   >(m, "USeqEvent_AllSpawned")
+		.def_static("StaticClass", &USeqEvent_AllSpawned::StaticClass, py::return_value_policy::reference)
           ;
 }

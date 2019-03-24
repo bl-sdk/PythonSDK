@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ALiftActionSkill(py::module &m)
 {
     py::class_< ALiftActionSkill,  AActionSkill   >(m, "ALiftActionSkill")
+		.def_static("StaticClass", &ALiftActionSkill::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CurrentState", &ALiftActionSkill::CurrentState)
         .def_readwrite("LiftedPawn", &ALiftActionSkill::LiftedPawn)
         .def_readwrite("StateStartTime", &ALiftActionSkill::StateStartTime)

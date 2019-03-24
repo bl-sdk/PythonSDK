@@ -83,8 +83,7 @@
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LinkIncremental>
-    </LinkIncremental>
+    <LinkIncremental>true</LinkIncremental>
     <TargetName>binkw32</TargetName>
     <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
     <IncludePath>$(PYTHONPATH)\include;$(IncludePath)</IncludePath>
@@ -106,15 +105,22 @@
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>false</GenerateDebugInformation>
-      <AdditionalDependencies>lua51.lib;luajit.lib;minilua.lib;buildvm.lib;lfs.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(ProjectDir)bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AssemblyDebug>false</AssemblyDebug>
       <GenerateMapFile>false</GenerateMapFile>
       <MapExports>false</MapExports>
+      <LinkStatus>true</LinkStatus>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
     </Link>
     <PreBuildEvent>
       <Command>
@@ -139,7 +145,7 @@
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <Optimization>MaxSpeed</Optimization>
+      <Optimization>Disabled</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>false</SDLCheck>
@@ -152,18 +158,21 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <MinimalRebuild>
       </MinimalRebuild>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>false</GenerateDebugInformation>
-      <AdditionalDependencies>lua51.lib;luajit.lib;minilua.lib;buildvm.lib;lfs.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(ProjectDir)bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AssemblyDebug>false</AssemblyDebug>
       <GenerateMapFile>false</GenerateMapFile>
       <MapExports>false</MapExports>
-      <LinkTimeCodeGeneration>UseFastLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <LinkStatus>true</LinkStatus>
     </Link>
     <PreBuildEvent>
       <Command>
@@ -211,6 +220,7 @@
     <ClCompile Include="NamedPipe.cpp" />
     <ClCompile Include="OnlineSubsystemSteamworks_functions.cpp" />
     <ClCompile Include="PackageFix.cpp" />
+    <ClCompile Include="pydefs\gamedefines.cpp" />
     <ClCompile Include="pydefs\_Classes_AAccessControl.cpp" />
     <ClCompile Include="pydefs\_Classes_AActionSkill.cpp" />
     <ClCompile Include="pydefs\_Classes_AActor.cpp" />
@@ -4949,6 +4959,7 @@
     <ClCompile Include="pydefs\_Structs_UBehavior_SpawnProjectile_FProjectileBehaviorSequenceStateData.cpp" />
     <ClCompile Include="pydefs\_Structs_UTerrainWeightMapTexture_FTerrainWeightedMaterial.cpp" />
     <ClCompile Include="Settings.cpp" />
+    <ClInclude Include="TypeMap.h" />
     <ClCompile Include="Util.cpp" />
     <ClCompile Include="WillowGame_functions.cpp" />
     <ClCompile Include="WinDrv_functions.cpp" />

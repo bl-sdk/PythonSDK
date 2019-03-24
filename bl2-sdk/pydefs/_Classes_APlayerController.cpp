@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_APlayerController(py::module &m)
 {
     py::class_< APlayerController, AController   >(m, "APlayerController")
+		.def_static("StaticClass", &APlayerController::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Player", &APlayerController::Player)
         .def_readwrite("PlayerCamera", &APlayerController::PlayerCamera)
         .def_readwrite("CameraClass", &APlayerController::CameraClass)

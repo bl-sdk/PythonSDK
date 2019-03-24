@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowVehicle_FlyingVehicle(py::module &m)
 {
     py::class_< AWillowVehicle_FlyingVehicle,  AWillowVehicle   >(m, "AWillowVehicle_FlyingVehicle")
+		.def_static("StaticClass", &AWillowVehicle_FlyingVehicle::StaticClass, py::return_value_policy::reference)
         .def_readwrite("FlyingSpeed", &AWillowVehicle_FlyingVehicle::FlyingSpeed)
         .def_readwrite("AirTransFriction", &AWillowVehicle_FlyingVehicle::AirTransFriction)
         .def_readwrite("AirRotFriction", &AWillowVehicle_FlyingVehicle::AirRotFriction)

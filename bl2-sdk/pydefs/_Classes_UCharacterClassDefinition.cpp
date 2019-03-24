@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UCharacterClassDefinition(py::module &m)
 {
     py::class_< UCharacterClassDefinition,  UGBXDefinition   >(m, "UCharacterClassDefinition")
+		.def_static("StaticClass", &UCharacterClassDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("GroundSpeed", &UCharacterClassDefinition::GroundSpeed)
         .def_readwrite("AirSpeed", &UCharacterClassDefinition::AirSpeed)
         .def_readwrite("WalkingPct", &UCharacterClassDefinition::WalkingPct)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPersonalTeleporterDefinition(py::module &m)
 {
     py::class_< UPersonalTeleporterDefinition,  UGBXDefinition   >(m, "UPersonalTeleporterDefinition")
+		.def_static("StaticClass", &UPersonalTeleporterDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ParticleEffect", &UPersonalTeleporterDefinition::ParticleEffect)
         .def_readwrite("PlayerTeleportedEffect", &UPersonalTeleporterDefinition::PlayerTeleportedEffect)
         .def_readwrite("PlayerTeleportedEffectLifespan", &UPersonalTeleporterDefinition::PlayerTeleportedEffectLifespan)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowInventoryManager(py::module &m)
 {
     py::class_< AWillowInventoryManager,  AInventoryManager   >(m, "AWillowInventoryManager")
+		.def_static("StaticClass", &AWillowInventoryManager::StaticClass, py::return_value_policy::reference)
         .def_readwrite("InventorySlotMax_Misc", &AWillowInventoryManager::InventorySlotMax_Misc)
         .def_readwrite("WeaponReadyMax", &AWillowInventoryManager::WeaponReadyMax)
         .def_readwrite("WeaponReadyMaxBaseValue", &AWillowInventoryManager::WeaponReadyMaxBaseValue)

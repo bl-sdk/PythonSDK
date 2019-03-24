@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ADynamicPylon(py::module &m)
 {
     py::class_< ADynamicPylon,  APylon   >(m, "ADynamicPylon")
+		.def_static("StaticClass", &ADynamicPylon::StaticClass, py::return_value_policy::reference)
         .def("eventStoppedMoving", &ADynamicPylon::eventStoppedMoving)
         .def("eventStartedMoving", &ADynamicPylon::eventStartedMoving)
         .def("FlushDynamicEdges", &ADynamicPylon::FlushDynamicEdges)

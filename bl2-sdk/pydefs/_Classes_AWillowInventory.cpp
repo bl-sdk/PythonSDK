@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowInventory(py::module &m)
 {
     py::class_< AWillowInventory,  AActor   >(m, "AWillowInventory")
+		.def_static("StaticClass", &AWillowInventory::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIBalancedActor", &AWillowInventory::VfTable_IIBalancedActor)
         .def_readwrite("VfTable_IIAttributeSlotEffectProvider", &AWillowInventory::VfTable_IIAttributeSlotEffectProvider)
         .def_readwrite("MonetaryValue", &AWillowInventory::MonetaryValue)

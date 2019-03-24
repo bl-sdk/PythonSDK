@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AExecuteActionSkill(py::module &m)
 {
     py::class_< AExecuteActionSkill,  AActionSkill   >(m, "AExecuteActionSkill")
+		.def_static("StaticClass", &AExecuteActionSkill::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ExecuteDurationFormula", &AExecuteActionSkill::ExecuteDurationFormula)
         .def_readwrite("RestoreControlAfterMeleeSwingDelay", &AExecuteActionSkill::RestoreControlAfterMeleeSwingDelay)
         .def_readwrite("AutoSwingAngleInDegrees", &AExecuteActionSkill::AutoSwingAngleInDegrees)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USpecialMoveInterface(py::module &m)
 {
     py::class_< USpecialMoveInterface,  UInterface   >(m, "USpecialMoveInterface")
+		.def_static("StaticClass", &USpecialMoveInterface::StaticClass, py::return_value_policy::reference)
         .def("SetReplicatedSMData", &USpecialMoveInterface::SetReplicatedSMData)
         .def("eventServerSpecialMove_StopAny", &USpecialMoveInterface::eventServerSpecialMove_StopAny)
         .def("eventServerSpecialMove_Stop", &USpecialMoveInterface::eventServerSpecialMove_Stop)

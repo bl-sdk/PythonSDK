@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AKActorFromStatic(py::module &m)
 {
     py::class_< AKActorFromStatic,  AKActor   >(m, "AKActorFromStatic")
+		.def_static("StaticClass", &AKActorFromStatic::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MyStaticMeshActor", &AKActorFromStatic::MyStaticMeshActor)
         .def_readwrite("MaxImpulseSpeed", &AKActorFromStatic::MaxImpulseSpeed)
         .def("TakeRadiusDamage", &AKActorFromStatic::TakeRadiusDamage)

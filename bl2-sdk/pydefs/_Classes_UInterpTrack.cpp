@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UInterpTrack(py::module &m)
 {
     py::class_< UInterpTrack,  UObject   >(m, "UInterpTrack")
+		.def_static("StaticClass", &UInterpTrack::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_FInterpEdInputInterface", &UInterpTrack::VfTable_FInterpEdInputInterface)
         .def_readwrite("CurveEdVTable", &UInterpTrack::CurveEdVTable)
         .def_readwrite("SubTracks", &UInterpTrack::SubTracks)

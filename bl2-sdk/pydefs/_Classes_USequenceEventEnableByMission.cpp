@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USequenceEventEnableByMission(py::module &m)
 {
     py::class_< USequenceEventEnableByMission,  USequenceEventCustomEnableCondition   >(m, "USequenceEventEnableByMission")
+		.def_static("StaticClass", &USequenceEventEnableByMission::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIMission", &USequenceEventEnableByMission::VfTable_IIMission)
         .def_readwrite("LinkedMission", &USequenceEventEnableByMission::LinkedMission)
         .def_readwrite("MissionStatesToLinkTo", &USequenceEventEnableByMission::MissionStatesToLinkTo)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USeqVar_Player(py::module &m)
 {
     py::class_< USeqVar_Player,  USequenceVariable   >(m, "USeqVar_Player")
+		.def_static("StaticClass", &USeqVar_Player::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Players", &USeqVar_Player::Players)
         .def_readwrite("PlayerIdx", &USeqVar_Player::PlayerIdx)
         .def_readwrite("ObjValue", &USeqVar_Object::ObjValue)

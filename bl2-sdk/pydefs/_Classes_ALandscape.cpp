@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ALandscape(py::module &m)
 {
     py::class_< ALandscape,  ALandscapeProxy   >(m, "ALandscape")
+		.def_static("StaticClass", &ALandscape::StaticClass, py::return_value_policy::reference)
         .def_readwrite("LandscapeMaterial", &ALandscape::LandscapeMaterial)
         .def_readwrite("MaxLODLevel", &ALandscape::MaxLODLevel)
         .def_readwrite("LayerNames", &ALandscape::LayerNames)

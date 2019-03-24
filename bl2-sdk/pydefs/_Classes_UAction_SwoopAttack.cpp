@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAction_SwoopAttack(py::module &m)
 {
     py::class_< UAction_SwoopAttack,  UWillowActionSequencePawn   >(m, "UAction_SwoopAttack")
+		.def_static("StaticClass", &UAction_SwoopAttack::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SwoopFarDistance", &UAction_SwoopAttack::SwoopFarDistance)
         .def_readwrite("SwoopFarHeight", &UAction_SwoopAttack::SwoopFarHeight)
         .def_readwrite("SwoopCloseDistance", &UAction_SwoopAttack::SwoopCloseDistance)

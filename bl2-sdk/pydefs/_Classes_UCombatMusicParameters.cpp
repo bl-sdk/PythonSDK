@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UCombatMusicParameters(py::module &m)
 {
     py::class_< UCombatMusicParameters,  UGBXDefinition   >(m, "UCombatMusicParameters")
+		.def_static("StaticClass", &UCombatMusicParameters::StaticClass, py::return_value_policy::reference)
         .def_readwrite("FullThreatThreshholdValue", &UCombatMusicParameters::FullThreatThreshholdValue)
         .def_readwrite("MediumThreatThreshholdValue", &UCombatMusicParameters::MediumThreatThreshholdValue)
         .def_readwrite("NoThreatThressholdValue", &UCombatMusicParameters::NoThreatThressholdValue)

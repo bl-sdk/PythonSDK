@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPhysicsAssetInstance(py::module &m)
 {
     py::class_< UPhysicsAssetInstance,  UObject   >(m, "UPhysicsAssetInstance")
+		.def_static("StaticClass", &UPhysicsAssetInstance::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Owner", &UPhysicsAssetInstance::Owner)
         .def_readwrite("RootBodyIndex", &UPhysicsAssetInstance::RootBodyIndex)
         .def_readwrite("Bodies", &UPhysicsAssetInstance::Bodies)

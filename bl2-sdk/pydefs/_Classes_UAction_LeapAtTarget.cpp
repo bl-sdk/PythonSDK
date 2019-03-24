@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAction_LeapAtTarget(py::module &m)
 {
     py::class_< UAction_LeapAtTarget,  UAction_BasicAttack   >(m, "UAction_LeapAtTarget")
+		.def_static("StaticClass", &UAction_LeapAtTarget::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Options", &UAction_LeapAtTarget::Options)
         .def_readwrite("LaunchAnimation", &UAction_LeapAtTarget::LaunchAnimation)
         .def_readwrite("LandAnimation", &UAction_LeapAtTarget::LandAnimation)

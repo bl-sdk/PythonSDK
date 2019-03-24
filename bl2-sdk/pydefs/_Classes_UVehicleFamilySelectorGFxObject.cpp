@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UVehicleFamilySelectorGFxObject(py::module &m)
 {
     py::class_< UVehicleFamilySelectorGFxObject,  UGFxObject   >(m, "UVehicleFamilySelectorGFxObject")
+		.def_static("StaticClass", &UVehicleFamilySelectorGFxObject::StaticClass, py::return_value_policy::reference)
         .def("TryScrollDown", &UVehicleFamilySelectorGFxObject::TryScrollDown)
         .def("TryScrollUp", &UVehicleFamilySelectorGFxObject::TryScrollUp)
         .def("SetSelectedVehicleFamilyIndex", &UVehicleFamilySelectorGFxObject::SetSelectedVehicleFamilyIndex)

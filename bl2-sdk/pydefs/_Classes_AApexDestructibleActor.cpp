@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AApexDestructibleActor(py::module &m)
 {
     py::class_< AApexDestructibleActor,  AActor   >(m, "AApexDestructibleActor")
+		.def_static("StaticClass", &AApexDestructibleActor::StaticClass, py::return_value_policy::reference)
         .def_readwrite("LightEnvironment", &AApexDestructibleActor::LightEnvironment)
         .def_readwrite("FractureMaterials", &AApexDestructibleActor::FractureMaterials)
         .def_readwrite("StaticDestructibleComponent", &AApexDestructibleActor::StaticDestructibleComponent)

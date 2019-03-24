@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ANxForceField(py::module &m)
 {
     py::class_< ANxForceField,  AActor   >(m, "ANxForceField")
+		.def_static("StaticClass", &ANxForceField::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ExcludeChannel", &ANxForceField::ExcludeChannel)
         .def_readwrite("CollideWithChannels", &ANxForceField::CollideWithChannels)
         .def_readwrite("RBChannel", &ANxForceField::RBChannel)

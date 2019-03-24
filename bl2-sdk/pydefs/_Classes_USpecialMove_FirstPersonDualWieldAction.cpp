@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USpecialMove_FirstPersonDualWieldAction(py::module &m)
 {
     py::class_< USpecialMove_FirstPersonDualWieldAction,  USpecialMove_FirstPerson   >(m, "USpecialMove_FirstPersonDualWieldAction")
+		.def_static("StaticClass", &USpecialMove_FirstPersonDualWieldAction::StaticClass, py::return_value_policy::reference)
         .def_readwrite("OffHandAnimNodeName", &USpecialMove_FirstPersonDualWieldAction::OffHandAnimNodeName)
         .def_readwrite("HolsterAnimName", &USpecialMove_FirstPersonDualWieldAction::HolsterAnimName)
         .def_readwrite("HolsterDuration", &USpecialMove_FirstPersonDualWieldAction::HolsterDuration)

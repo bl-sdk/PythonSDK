@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowAIPawn(py::module &m)
 {
     py::class_< AWillowAIPawn,  AWillowPawn   >(m, "AWillowAIPawn")
+		.def_static("StaticClass", &AWillowAIPawn::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIMissionDirector", &AWillowAIPawn::VfTable_IIMissionDirector)
         .def_readwrite("VfTable_IIFocusable", &AWillowAIPawn::VfTable_IIFocusable)
         .def_readwrite("VfTable_IITimerBehavior", &AWillowAIPawn::VfTable_IITimerBehavior)

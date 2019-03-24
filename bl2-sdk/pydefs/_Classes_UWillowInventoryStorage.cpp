@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowInventoryStorage(py::module &m)
 {
     py::class_< UWillowInventoryStorage,  UObject   >(m, "UWillowInventoryStorage")
+		.def_static("StaticClass", &UWillowInventoryStorage::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MaxSlots", &UWillowInventoryStorage::MaxSlots)
         .def_readwrite("ChestSlots", &UWillowInventoryStorage::ChestSlots)
         .def_readwrite("TheChest", &UWillowInventoryStorage::TheChest)

@@ -6,5 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UShieldResourcePool(py::module &m)
 {
     py::class_< UShieldResourcePool,  UResourcePool   >(m, "UShieldResourcePool")
+		.def_static("StaticClass", &UShieldResourcePool::StaticClass, py::return_value_policy::reference)
           ;
 }

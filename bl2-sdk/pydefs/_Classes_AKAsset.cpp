@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AKAsset(py::module &m)
 {
     py::class_< AKAsset,  AActor   >(m, "AKAsset")
+		.def_static("StaticClass", &AKAsset::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SkeletalMeshComponent", &AKAsset::SkeletalMeshComponent)
         .def_readwrite("ReplicatedMesh", &AKAsset::ReplicatedMesh)
         .def_readwrite("ReplicatedPhysAsset", &AKAsset::ReplicatedPhysAsset)

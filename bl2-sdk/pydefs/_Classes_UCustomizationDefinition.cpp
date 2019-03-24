@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UCustomizationDefinition(py::module &m)
 {
     py::class_< UCustomizationDefinition,  UGBXDefinition   >(m, "UCustomizationDefinition")
+		.def_static("StaticClass", &UCustomizationDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIDlcLicensableObject", &UCustomizationDefinition::VfTable_IIDlcLicensableObject)
         .def_readwrite("CustomizationName", &UCustomizationDefinition::CustomizationName)
         .def_readwrite("CustomizationType", &UCustomizationDefinition::CustomizationType)

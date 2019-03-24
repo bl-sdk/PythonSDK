@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAction_Drive_AvoidWall(py::module &m)
 {
     py::class_< UAction_Drive_AvoidWall,  UWillowActionSequencePawn   >(m, "UAction_Drive_AvoidWall")
+		.def_static("StaticClass", &UAction_Drive_AvoidWall::StaticClass, py::return_value_policy::reference)
         .def_readwrite("LineCheckDistance", &UAction_Drive_AvoidWall::LineCheckDistance)
         .def_readwrite("NumLineChecks", &UAction_Drive_AvoidWall::NumLineChecks)
         .def_readwrite("HitNormalDotZThreshold", &UAction_Drive_AvoidWall::HitNormalDotZThreshold)

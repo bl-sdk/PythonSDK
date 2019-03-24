@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UActionSequence(py::module &m)
 {
     py::class_< UActionSequence,  UObject   >(m, "UActionSequence")
+		.def_static("StaticClass", &UActionSequence::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ResourcesUsed", &UActionSequence::ResourcesUsed)
         .def_readwrite("MyRuleEngine", &UActionSequence::MyRuleEngine)
         .def_readwrite("AttachedRule", &UActionSequence::AttachedRule)

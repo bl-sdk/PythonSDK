@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowVendingMachineBase(py::module &m)
 {
     py::class_< AWillowVendingMachineBase,  AWillowInteractiveObject   >(m, "AWillowVendingMachineBase")
+		.def_static("StaticClass", &AWillowVendingMachineBase::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIShop", &AWillowVendingMachineBase::VfTable_IIShop)
         .def_readwrite("ShopType", &AWillowVendingMachineBase::ShopType)
         .def_readwrite("FormOfCurrency", &AWillowVendingMachineBase::FormOfCurrency)

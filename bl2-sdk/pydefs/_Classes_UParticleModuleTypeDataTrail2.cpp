@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UParticleModuleTypeDataTrail2(py::module &m)
 {
     py::class_< UParticleModuleTypeDataTrail2,  UParticleModuleTypeDataBase   >(m, "UParticleModuleTypeDataTrail2")
+		.def_static("StaticClass", &UParticleModuleTypeDataTrail2::StaticClass, py::return_value_policy::reference)
         .def_readwrite("TessellationFactor", &UParticleModuleTypeDataTrail2::TessellationFactor)
         .def_readwrite("TessellationFactorDistance", &UParticleModuleTypeDataTrail2::TessellationFactorDistance)
         .def_readwrite("TessellationStrength", &UParticleModuleTypeDataTrail2::TessellationStrength)

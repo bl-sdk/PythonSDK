@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UTradingGFxMovie(py::module &m)
 {
     py::class_< UTradingGFxMovie,  UWillowInventoryGFxMovie   >(m, "UTradingGFxMovie")
+		.def_static("StaticClass", &UTradingGFxMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("OfferingString", &UTradingGFxMovie::OfferingString)
         .def_readwrite("ReceivingString", &UTradingGFxMovie::ReceivingString)
         .def_readwrite("TooltipString", &UTradingGFxMovie::TooltipString)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ULensFlare(py::module &m)
 {
     py::class_< ULensFlare,  UObject   >(m, "ULensFlare")
+		.def_static("StaticClass", &ULensFlare::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SourceElement", &ULensFlare::SourceElement)
         .def_readwrite("SourceMesh", &ULensFlare::SourceMesh)
         .def_readwrite("SourceDPG", &ULensFlare::SourceDPG)

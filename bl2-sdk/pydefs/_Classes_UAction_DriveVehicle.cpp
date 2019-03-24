@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAction_DriveVehicle(py::module &m)
 {
     py::class_< UAction_DriveVehicle,  UWillowActionSequencePawn   >(m, "UAction_DriveVehicle")
+		.def_static("StaticClass", &UAction_DriveVehicle::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MaxSpeedMultiplier", &UAction_DriveVehicle::MaxSpeedMultiplier)
         .def_readwrite("ReachedNodeWeighting", &UAction_DriveVehicle::ReachedNodeWeighting)
         .def_readwrite("MyVehicle", &UAction_DriveVehicle::MyVehicle)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWorldDiscoveryArea(py::module &m)
 {
     py::class_< AWorldDiscoveryArea,  AActor   >(m, "AWorldDiscoveryArea")
+		.def_static("StaticClass", &AWorldDiscoveryArea::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIBalancedActor", &AWorldDiscoveryArea::VfTable_IIBalancedActor)
         .def_readwrite("DefaultWorldAreaShortName", &AWorldDiscoveryArea::DefaultWorldAreaShortName)
         .def_readwrite("CustomName", &AWorldDiscoveryArea::CustomName)

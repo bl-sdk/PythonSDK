@@ -6,5 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UPlayerControllerAttributeContextResolver(py::module &m)
 {
     py::class_< UPlayerControllerAttributeContextResolver,  UAttributeContextResolver   >(m, "UPlayerControllerAttributeContextResolver")
+		.def_static("StaticClass", &UPlayerControllerAttributeContextResolver::StaticClass, py::return_value_policy::reference)
           ;
 }

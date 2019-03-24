@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGearboxAccountActions(py::module &m)
 {
     py::class_< UGearboxAccountActions,  UObject   >(m, "UGearboxAccountActions")
+		.def_static("StaticClass", &UGearboxAccountActions::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CurrentConsumeCount", &UGearboxAccountActions::CurrentConsumeCount)
         .def_readwrite("CurrentControllerId", &UGearboxAccountActions::CurrentControllerId)
         .def_readwrite("CurrentEntitlement", &UGearboxAccountActions::CurrentEntitlement)

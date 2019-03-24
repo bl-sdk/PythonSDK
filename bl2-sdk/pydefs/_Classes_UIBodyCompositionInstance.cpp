@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UIBodyCompositionInstance(py::module &m)
 {
     py::class_< UIBodyCompositionInstance,  UInterface   >(m, "UIBodyCompositionInstance")
+		.def_static("StaticClass", &UIBodyCompositionInstance::StaticClass, py::return_value_policy::reference)
         .def("ClearBodyCompositionInstance", &UIBodyCompositionInstance::ClearBodyCompositionInstance)
         .def("ApplyPreviewBodyComposition", &UIBodyCompositionInstance::ApplyPreviewBodyComposition)
         .def("GetBodyInfoProvider", &UIBodyCompositionInstance::GetBodyInfoProvider, py::return_value_policy::reference)

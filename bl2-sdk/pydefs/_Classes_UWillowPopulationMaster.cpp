@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowPopulationMaster(py::module &m)
 {
     py::class_< UWillowPopulationMaster,  UPopulationMaster   >(m, "UWillowPopulationMaster")
+		.def_static("StaticClass", &UWillowPopulationMaster::StaticClass, py::return_value_policy::reference)
         .def("UpdateGRI", &UWillowPopulationMaster::UpdateGRI)
         .def("RemoveSpawnedActor", &UWillowPopulationMaster::RemoveSpawnedActor)
         .def("GetVehicleDefinitionFromVehicleSpawnStation", &UWillowPopulationMaster::GetVehicleDefinitionFromVehicleSpawnStation, py::return_value_policy::reference)

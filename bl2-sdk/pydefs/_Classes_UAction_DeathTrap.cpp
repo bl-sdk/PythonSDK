@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAction_DeathTrap(py::module &m)
 {
     py::class_< UAction_DeathTrap,  UWillowActionSequencePawn   >(m, "UAction_DeathTrap")
+		.def_static("StaticClass", &UAction_DeathTrap::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MoveRange", &UAction_DeathTrap::MoveRange)
         .def_readwrite("RandomHOffset", &UAction_DeathTrap::RandomHOffset)
         .def_readwrite("RandomVOffset", &UAction_DeathTrap::RandomVOffset)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UCoordinatedEffectDefinition(py::module &m)
 {
     py::class_< UCoordinatedEffectDefinition,  UGBXDefinition   >(m, "UCoordinatedEffectDefinition")
+		.def_static("StaticClass", &UCoordinatedEffectDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("OverrideMaterial", &UCoordinatedEffectDefinition::OverrideMaterial)
         .def_readwrite("CriticialHitParticle", &UCoordinatedEffectDefinition::CriticialHitParticle)
         .def_readwrite("ParticleEffects", &UCoordinatedEffectDefinition::ParticleEffects)

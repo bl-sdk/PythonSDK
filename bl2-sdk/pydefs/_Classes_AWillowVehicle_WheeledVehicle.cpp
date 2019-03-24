@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowVehicle_WheeledVehicle(py::module &m)
 {
     py::class_< AWillowVehicle_WheeledVehicle,  AWillowVehicle   >(m, "AWillowVehicle_WheeledVehicle")
+		.def_static("StaticClass", &AWillowVehicle_WheeledVehicle::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DriftingTimeStamp", &AWillowVehicle_WheeledVehicle::DriftingTimeStamp)
         .def_readwrite("BeamTemplate", &AWillowVehicle_WheeledVehicle::BeamTemplate)
         .def_readwrite("TemplateFF", &AWillowVehicle_WheeledVehicle::TemplateFF)

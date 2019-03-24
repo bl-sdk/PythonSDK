@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_FireBeam(py::module &m)
 {
     py::class_< UBehavior_FireBeam,  UBehaviorBase   >(m, "UBehavior_FireBeam")
+		.def_static("StaticClass", &UBehavior_FireBeam::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SourceSocket", &UBehavior_FireBeam::SourceSocket)
         .def_readwrite("SourceOffset", &UBehavior_FireBeam::SourceOffset)
         .def_readwrite("TargetSocket", &UBehavior_FireBeam::TargetSocket)

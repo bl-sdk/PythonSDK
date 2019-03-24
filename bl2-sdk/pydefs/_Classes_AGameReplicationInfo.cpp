@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AGameReplicationInfo(py::module &m)
 {
     py::class_< AGameReplicationInfo,  AReplicationInfo   >(m, "AGameReplicationInfo")
+		.def_static("StaticClass", &AGameReplicationInfo::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIResourcePoolProvider", &AGameReplicationInfo::VfTable_IIResourcePoolProvider)
         .def_readwrite("GameClass", &AGameReplicationInfo::GameClass)
         .def_readwrite("RemainingTime", &AGameReplicationInfo::RemainingTime)

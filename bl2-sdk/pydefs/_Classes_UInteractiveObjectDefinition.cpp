@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UInteractiveObjectDefinition(py::module &m)
 {
     py::class_< UInteractiveObjectDefinition,  UGBXDefinition   >(m, "UInteractiveObjectDefinition")
+		.def_static("StaticClass", &UInteractiveObjectDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIConstructObject", &UInteractiveObjectDefinition::VfTable_IIConstructObject)
         .def_readwrite("VfTable_IIBodyInfoProvider", &UInteractiveObjectDefinition::VfTable_IIBodyInfoProvider)
         .def_readwrite("VfTable_IIBehaviorProvider", &UInteractiveObjectDefinition::VfTable_IIBehaviorProvider)

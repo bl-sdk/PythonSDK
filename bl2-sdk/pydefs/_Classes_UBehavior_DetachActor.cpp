@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_DetachActor(py::module &m)
 {
     py::class_< UBehavior_DetachActor,  UBehaviorBase   >(m, "UBehavior_DetachActor")
+		.def_static("StaticClass", &UBehavior_DetachActor::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DetachDirection", &UBehavior_DetachActor::DetachDirection)
         .def_readwrite("DetachSpeed", &UBehavior_DetachActor::DetachSpeed)
         .def("ApplyDetachVelocity", &UBehavior_DetachActor::ApplyDetachVelocity)

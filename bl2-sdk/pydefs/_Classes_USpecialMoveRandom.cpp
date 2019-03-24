@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USpecialMoveRandom(py::module &m)
 {
     py::class_< USpecialMoveRandom,  USpecialMoveDefinition   >(m, "USpecialMoveRandom")
+		.def_static("StaticClass", &USpecialMoveRandom::StaticClass, py::return_value_policy::reference)
         .def_readwrite("RandomList", &USpecialMoveRandom::RandomList)
         .def("Contains", &USpecialMoveRandom::Contains)
         .def("GetSMDToPlay", &USpecialMoveRandom::GetSMDToPlay, py::return_value_policy::reference)

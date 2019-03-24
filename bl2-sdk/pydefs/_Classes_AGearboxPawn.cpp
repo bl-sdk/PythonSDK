@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AGearboxPawn(py::module &m)
 {
     py::class_< AGearboxPawn,  AGamePawn   >(m, "AGearboxPawn")
+		.def_static("StaticClass", &AGearboxPawn::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_ISpecialMoveInterface", &AGearboxPawn::VfTable_ISpecialMoveInterface)
         .def_readwrite("VfTable_IGearboxDialogInterface", &AGearboxPawn::VfTable_IGearboxDialogInterface)
         .def_readwrite("NPCSightBone", &AGearboxPawn::NPCSightBone)

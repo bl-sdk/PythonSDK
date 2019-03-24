@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowSeqEvent_CounterAtTarget(py::module &m)
 {
     py::class_< UWillowSeqEvent_CounterAtTarget,  USequenceEvent   >(m, "UWillowSeqEvent_CounterAtTarget")
+		.def_static("StaticClass", &UWillowSeqEvent_CounterAtTarget::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Event", &UWillowSeqEvent_CounterAtTarget::Event)
           ;
 }

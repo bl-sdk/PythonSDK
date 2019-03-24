@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USkelControl_CCD_IK(py::module &m)
 {
     py::class_< USkelControl_CCD_IK,  USkelControlBase   >(m, "USkelControl_CCD_IK")
+		.def_static("StaticClass", &USkelControl_CCD_IK::StaticClass, py::return_value_policy::reference)
         .def_readwrite("EffectorLocation", &USkelControl_CCD_IK::EffectorLocation)
         .def_readwrite("EffectorLocationSpace", &USkelControl_CCD_IK::EffectorLocationSpace)
         .def_readwrite("EffectorSpaceBoneName", &USkelControl_CCD_IK::EffectorSpaceBoneName)

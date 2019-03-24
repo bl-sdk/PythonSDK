@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USeqCond_IsBenchmarking(py::module &m)
 {
     py::class_< USeqCond_IsBenchmarking,  USequenceCondition   >(m, "USeqCond_IsBenchmarking")
+		.def_static("StaticClass", &USeqCond_IsBenchmarking::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqCond_IsBenchmarking::eventGetObjClassVersion)
           ;
 }

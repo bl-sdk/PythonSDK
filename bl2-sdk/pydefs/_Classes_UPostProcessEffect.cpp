@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPostProcessEffect(py::module &m)
 {
     py::class_< UPostProcessEffect,  UObject   >(m, "UPostProcessEffect")
+		.def_static("StaticClass", &UPostProcessEffect::StaticClass, py::return_value_policy::reference)
         .def_readwrite("EffectName", &UPostProcessEffect::EffectName)
         .def_readwrite("NodePosY", &UPostProcessEffect::NodePosY)
         .def_readwrite("NodePosX", &UPostProcessEffect::NodePosX)

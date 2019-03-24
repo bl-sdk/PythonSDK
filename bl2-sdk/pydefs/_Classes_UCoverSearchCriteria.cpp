@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UCoverSearchCriteria(py::module &m)
 {
     py::class_< UCoverSearchCriteria,  UGBXDefinition   >(m, "UCoverSearchCriteria")
+		.def_static("StaticClass", &UCoverSearchCriteria::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DistanceToOriginCandidateTestMax", &UCoverSearchCriteria::DistanceToOriginCandidateTestMax)
         .def_readwrite("DistanceToThreatCandidateTest", &UCoverSearchCriteria::DistanceToThreatCandidateTest)
         .def_readwrite("MinDistanceToOrigin", &UCoverSearchCriteria::MinDistanceToOrigin)

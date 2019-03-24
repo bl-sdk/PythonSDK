@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UNavMeshGoal_Random(py::module &m)
 {
     py::class_< UNavMeshGoal_Random,  UNavMeshPathGoalEvaluator   >(m, "UNavMeshGoal_Random")
+		.def_static("StaticClass", &UNavMeshGoal_Random::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MinDist", &UNavMeshGoal_Random::MinDist)
         .def_readwrite("BestRating", &UNavMeshGoal_Random::BestRating)
         .def_readwrite("PartialGoal", &UNavMeshGoal_Random::PartialGoal)

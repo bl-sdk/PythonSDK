@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UVehicleSpawnStationVehicleDefinition(py::module &m)
 {
     py::class_< UVehicleSpawnStationVehicleDefinition,  UGBXDefinition   >(m, "UVehicleSpawnStationVehicleDefinition")
+		.def_static("StaticClass", &UVehicleSpawnStationVehicleDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VehicleFactory", &UVehicleSpawnStationVehicleDefinition::VehicleFactory)
         .def_readwrite("VehicleMesh", &UVehicleSpawnStationVehicleDefinition::VehicleMesh)
         .def_readwrite("HeightAbovePlatformToSpawn", &UVehicleSpawnStationVehicleDefinition::HeightAbovePlatformToSpawn)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowHUDGFxMovieDefinition(py::module &m)
 {
     py::class_< UWillowHUDGFxMovieDefinition,  UWillowGFxMovie3DDefinition   >(m, "UWillowHUDGFxMovieDefinition")
+		.def_static("StaticClass", &UWillowHUDGFxMovieDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MinimapRadius", &UWillowHUDGFxMovieDefinition::MinimapRadius)
         .def_readwrite("MinimapRadiusInVehicle", &UWillowHUDGFxMovieDefinition::MinimapRadiusInVehicle)
         .def_readwrite("MinimapRadiusLerpTime", &UWillowHUDGFxMovieDefinition::MinimapRadiusLerpTime)

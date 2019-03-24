@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAnimNodeRandom(py::module &m)
 {
     py::class_< UAnimNodeRandom,  UAnimNodeBlendBase   >(m, "UAnimNodeRandom")
+		.def_static("StaticClass", &UAnimNodeRandom::StaticClass, py::return_value_policy::reference)
         .def_readwrite("RandomInfo", &UAnimNodeRandom::RandomInfo)
         .def_readwrite("PlayingSeqNode", &UAnimNodeRandom::PlayingSeqNode)
         .def_readwrite("PendingChildIndex", &UAnimNodeRandom::PendingChildIndex)

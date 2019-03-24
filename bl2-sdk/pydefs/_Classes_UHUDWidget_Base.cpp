@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UHUDWidget_Base(py::module &m)
 {
     py::class_< UHUDWidget_Base,  UGFxObject   >(m, "UHUDWidget_Base")
+		.def_static("StaticClass", &UHUDWidget_Base::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MyHUDMovie", &UHUDWidget_Base::MyHUDMovie)
         .def("Update", &UHUDWidget_Base::Update)
         .def("Deinit", &UHUDWidget_Base::Deinit)

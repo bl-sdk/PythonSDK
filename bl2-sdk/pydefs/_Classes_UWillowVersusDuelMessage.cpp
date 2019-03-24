@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowVersusDuelMessage(py::module &m)
 {
     py::class_< UWillowVersusDuelMessage,  ULocalMessage   >(m, "UWillowVersusDuelMessage")
+		.def_static("StaticClass", &UWillowVersusDuelMessage::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DuelingDisabled", &UWillowVersusDuelMessage::DuelingDisabled)
         .def_readwrite("AlreadyDueling", &UWillowVersusDuelMessage::AlreadyDueling)
         .def_readwrite("AlreadyChallenged", &UWillowVersusDuelMessage::AlreadyChallenged)

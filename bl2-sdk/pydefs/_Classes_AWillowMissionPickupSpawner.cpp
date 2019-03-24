@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowMissionPickupSpawner(py::module &m)
 {
     py::class_< AWillowMissionPickupSpawner,  AActor   >(m, "AWillowMissionPickupSpawner")
+		.def_static("StaticClass", &AWillowMissionPickupSpawner::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIMission", &AWillowMissionPickupSpawner::VfTable_IIMission)
         .def_readwrite("MissionItemDef", &AWillowMissionPickupSpawner::MissionItemDef)
         .def_readwrite("LinkedAreaWaypoint", &AWillowMissionPickupSpawner::LinkedAreaWaypoint)

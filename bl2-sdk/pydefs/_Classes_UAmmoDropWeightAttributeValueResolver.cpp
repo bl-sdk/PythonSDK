@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAmmoDropWeightAttributeValueResolver(py::module &m)
 {
     py::class_< UAmmoDropWeightAttributeValueResolver,  UAttributeValueResolver   >(m, "UAmmoDropWeightAttributeValueResolver")
+		.def_static("StaticClass", &UAmmoDropWeightAttributeValueResolver::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Resource", &UAmmoDropWeightAttributeValueResolver::Resource)
         .def_readwrite("ResourceThreshold", &UAmmoDropWeightAttributeValueResolver::ResourceThreshold)
         .def_readwrite("AboveThresholdWeight", &UAmmoDropWeightAttributeValueResolver::AboveThresholdWeight)

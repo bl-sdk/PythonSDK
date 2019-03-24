@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_URandomAttributeValueResolver(py::module &m)
 {
     py::class_< URandomAttributeValueResolver,  UAttributeValueResolver   >(m, "URandomAttributeValueResolver")
+		.def_static("StaticClass", &URandomAttributeValueResolver::StaticClass, py::return_value_policy::reference)
         .def_readwrite("LowerBound", &URandomAttributeValueResolver::LowerBound)
         .def_readwrite("UpperBound", &URandomAttributeValueResolver::UpperBound)
         .def_readwrite("ValueLifetime", &URandomAttributeValueResolver::ValueLifetime)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPopulationFactoryVendingMachine(py::module &m)
 {
     py::class_< UPopulationFactoryVendingMachine,  UPopulationFactory   >(m, "UPopulationFactoryVendingMachine")
+		.def_static("StaticClass", &UPopulationFactoryVendingMachine::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ShopType", &UPopulationFactoryVendingMachine::ShopType)
         .def_readwrite("FormOfCurrency", &UPopulationFactoryVendingMachine::FormOfCurrency)
         .def_readwrite("CommerceMarkup", &UPopulationFactoryVendingMachine::CommerceMarkup)

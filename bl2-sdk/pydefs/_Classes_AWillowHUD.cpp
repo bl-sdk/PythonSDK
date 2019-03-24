@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowHUD(py::module &m)
 {
     py::class_< AWillowHUD,  AHUD   >(m, "AWillowHUD")
+		.def_static("StaticClass", &AWillowHUD::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DlcVersionErrorDisplayDuration", &AWillowHUD::DlcVersionErrorDisplayDuration)
         .def_readwrite("DlcVersionErrorDisplayStartTime", &AWillowHUD::DlcVersionErrorDisplayStartTime)
         .def_readwrite("PlayerInfoHeight", &AWillowHUD::PlayerInfoHeight)

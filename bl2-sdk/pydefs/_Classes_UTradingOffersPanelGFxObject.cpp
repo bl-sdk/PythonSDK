@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UTradingOffersPanelGFxObject(py::module &m)
 {
     py::class_< UTradingOffersPanelGFxObject,  UBaseInventoryPanelGFxObject   >(m, "UTradingOffersPanelGFxObject")
+		.def_static("StaticClass", &UTradingOffersPanelGFxObject::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SelectedCellSuffix", &UTradingOffersPanelGFxObject::SelectedCellSuffix)
         .def_readwrite("NonCellButtonFocused", &UTradingOffersPanelGFxObject::NonCellButtonFocused)
         .def_readwrite("OfferingThing", &UTradingOffersPanelGFxObject::OfferingThing)

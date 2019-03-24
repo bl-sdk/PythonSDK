@@ -6,5 +6,6 @@ namespace py = pybind11;
 void Export_pystes_ULevelTransitionGFxMovie(py::module &m)
 {
     py::class_< ULevelTransitionGFxMovie,  UWillowGFxMovie   >(m, "ULevelTransitionGFxMovie")
+		.def_static("StaticClass", &ULevelTransitionGFxMovie::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowVendingMachineBlackMarket(py::module &m)
 {
     py::class_< AWillowVendingMachineBlackMarket,  AWillowVendingMachineBase   >(m, "AWillowVendingMachineBlackMarket")
+		.def_static("StaticClass", &AWillowVendingMachineBlackMarket::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DefinitionData", &AWillowVendingMachineBlackMarket::DefinitionData)
         .def("PlayerBuyItem", &AWillowVendingMachineBlackMarket::PlayerBuyItem)
         .def("GetRarityLevelForUpgradeLevel", &AWillowVendingMachineBlackMarket::GetRarityLevelForUpgradeLevel)

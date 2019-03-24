@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowUsableItem(py::module &m)
 {
     py::class_< AWillowUsableItem,  AWillowItem   >(m, "AWillowUsableItem")
+		.def_static("StaticClass", &AWillowUsableItem::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIMissionObjective", &AWillowUsableItem::VfTable_IIMissionObjective)
         .def_readwrite("ObjectiveBit", &AWillowUsableItem::ObjectiveBit)
         .def("GetAttributePresentationOverride", &AWillowUsableItem::GetAttributePresentationOverride, py::return_value_policy::reference)

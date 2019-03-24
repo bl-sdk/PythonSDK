@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UConfirmCharacterLobbyGFxMovie(py::module &m)
 {
     py::class_< UConfirmCharacterLobbyGFxMovie,  UWillowGFxMovie   >(m, "UConfirmCharacterLobbyGFxMovie")
+		.def_static("StaticClass", &UConfirmCharacterLobbyGFxMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ConfirmCharacterLobbyObj", &UConfirmCharacterLobbyGFxMovie::ConfirmCharacterLobbyObj)
         .def("SetHeader", &UConfirmCharacterLobbyGFxMovie::SetHeader)
         .def("SetCharacterInfo", &UConfirmCharacterLobbyGFxMovie::SetCharacterInfo)

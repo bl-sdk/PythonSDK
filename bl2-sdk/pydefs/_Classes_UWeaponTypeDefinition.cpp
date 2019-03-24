@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWeaponTypeDefinition(py::module &m)
 {
     py::class_< UWeaponTypeDefinition,  UWillowInventoryDefinition   >(m, "UWeaponTypeDefinition")
+		.def_static("StaticClass", &UWeaponTypeDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIBehaviorProvider", &UWeaponTypeDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("VfTable_IIConstructObject", &UWeaponTypeDefinition::VfTable_IIConstructObject)
         .def_readwrite("WeaponType", &UWeaponTypeDefinition::WeaponType)

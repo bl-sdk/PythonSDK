@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UMissionPopulationAspect(py::module &m)
 {
     py::class_< UMissionPopulationAspect,  UPopulationAspect   >(m, "UMissionPopulationAspect")
+		.def_static("StaticClass", &UMissionPopulationAspect::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIMission", &UMissionPopulationAspect::VfTable_IIMission)
         .def_readwrite("MissionObjective", &UMissionPopulationAspect::MissionObjective)
         .def_readwrite("Activation", &UMissionPopulationAspect::Activation)

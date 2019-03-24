@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UInstanceDataContextResolver(py::module &m)
 {
     py::class_< UInstanceDataContextResolver,  UAttributeContextResolver   >(m, "UInstanceDataContextResolver")
+		.def_static("StaticClass", &UInstanceDataContextResolver::StaticClass, py::return_value_policy::reference)
         .def_readwrite("InstanceDataName", &UInstanceDataContextResolver::InstanceDataName)
         .def("GetAttributeContext", &UInstanceDataContextResolver::GetAttributeContext, py::return_value_policy::reference)
           ;

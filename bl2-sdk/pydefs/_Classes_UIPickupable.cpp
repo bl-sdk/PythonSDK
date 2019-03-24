@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UIPickupable(py::module &m)
 {
     py::class_< UIPickupable,  UInterface   >(m, "UIPickupable")
+		.def_static("StaticClass", &UIPickupable::StaticClass, py::return_value_policy::reference)
         .def("SetInteractionIcon", &UIPickupable::SetInteractionIcon)
         .def("MarkAsDiscovered", &UIPickupable::MarkAsDiscovered)
         .def("IsDiscovered", &UIPickupable::IsDiscovered)

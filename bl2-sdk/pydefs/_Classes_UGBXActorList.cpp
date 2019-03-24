@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGBXActorList(py::module &m)
 {
     py::class_< UGBXActorList,  UObject   >(m, "UGBXActorList")
+		.def_static("StaticClass", &UGBXActorList::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ActorList", &UGBXActorList::ActorList)
         .def("RemoveAndDeleteActorsOfClassFromLevel", &UGBXActorList::RemoveAndDeleteActorsOfClassFromLevel)
         .def("RemoveActorsOfClassFromLevel", &UGBXActorList::RemoveActorsOfClassFromLevel)

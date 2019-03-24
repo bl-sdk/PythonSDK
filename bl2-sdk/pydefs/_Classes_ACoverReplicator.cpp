@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ACoverReplicator(py::module &m)
 {
     py::class_< ACoverReplicator,  AReplicationInfo   >(m, "ACoverReplicator")
+		.def_static("StaticClass", &ACoverReplicator::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CoverReplicationData", &ACoverReplicator::CoverReplicationData)
         .def("ClientReceiveLinkDisabledState", &ACoverReplicator::ClientReceiveLinkDisabledState)
         .def("ServerSendLinkDisabledState", &ACoverReplicator::ServerSendLinkDisabledState)

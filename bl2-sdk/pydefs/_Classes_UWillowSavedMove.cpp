@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowSavedMove(py::module &m)
 {
     py::class_< UWillowSavedMove,  USavedMove   >(m, "UWillowSavedMove")
+		.def_static("StaticClass", &UWillowSavedMove::StaticClass, py::return_value_policy::reference)
         .def("SetFlags", &UWillowSavedMove::SetFlags)
         .def("CompressedFlags", &UWillowSavedMove::CompressedFlags)
         .def("SetMoveFor", &UWillowSavedMove::SetMoveFor)

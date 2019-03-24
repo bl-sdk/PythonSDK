@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UMaterialExpressionBumpOffsetSloped(py::module &m)
 {
     py::class_< UMaterialExpressionBumpOffsetSloped,  UMaterialExpression   >(m, "UMaterialExpressionBumpOffsetSloped")
+		.def_static("StaticClass", &UMaterialExpressionBumpOffsetSloped::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Coordinate", &UMaterialExpressionBumpOffsetSloped::Coordinate)
         .def_readwrite("NormalTexture", &UMaterialExpressionBumpOffsetSloped::NormalTexture)
         .def_readwrite("HeightTexture", &UMaterialExpressionBumpOffsetSloped::HeightTexture)

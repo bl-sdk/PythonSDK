@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ULandscapeHeightfieldCollisionComponent(py::module &m)
 {
     py::class_< ULandscapeHeightfieldCollisionComponent,  UPrimitiveComponent   >(m, "ULandscapeHeightfieldCollisionComponent")
+		.def_static("StaticClass", &ULandscapeHeightfieldCollisionComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CollisionHeightData", &ULandscapeHeightfieldCollisionComponent::CollisionHeightData)
         .def_readwrite("SectionBaseX", &ULandscapeHeightfieldCollisionComponent::SectionBaseX)
         .def_readwrite("SectionBaseY", &ULandscapeHeightfieldCollisionComponent::SectionBaseY)

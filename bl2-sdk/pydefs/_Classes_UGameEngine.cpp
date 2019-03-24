@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGameEngine(py::module &m)
 {
     py::class_< UGameEngine,  USubsystem   >(m, "UGameEngine")
+		.def_static("StaticClass", &UGameEngine::StaticClass, py::return_value_policy::reference)
         .def_readwrite("GPendingLevel", &UGameEngine::GPendingLevel)
         .def_readwrite("PendingLevelPlayerControllerClassName", &UGameEngine::PendingLevelPlayerControllerClassName)
         .def_readwrite("LastURL", &UGameEngine::LastURL)

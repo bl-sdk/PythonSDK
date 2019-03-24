@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ATeleporter(py::module &m)
 {
     py::class_< ATeleporter,  ANavigationPoint   >(m, "ATeleporter")
+		.def_static("StaticClass", &ATeleporter::StaticClass, py::return_value_policy::reference)
         .def_readwrite("URL", &ATeleporter::URL)
         .def_readwrite("ProductRequired", &ATeleporter::ProductRequired)
         .def_readwrite("TargetVelocity", &ATeleporter::TargetVelocity)

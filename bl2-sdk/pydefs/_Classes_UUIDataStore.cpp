@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UUIDataStore(py::module &m)
 {
     py::class_< UUIDataStore,  UUIRoot   >(m, "UUIDataStore")
+		.def_static("StaticClass", &UUIDataStore::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Tag", &UUIDataStore::Tag)
         .def_readwrite("RefreshSubscriberNotifies", &UUIDataStore::RefreshSubscriberNotifies)
         .def_readwrite("WriteAccessType", &UUIDataProvider::WriteAccessType)

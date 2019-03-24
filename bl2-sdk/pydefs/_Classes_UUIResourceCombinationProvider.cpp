@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UUIResourceCombinationProvider(py::module &m)
 {
     py::class_< UUIResourceCombinationProvider,  UUIDataProvider   >(m, "UUIResourceCombinationProvider")
+		.def_static("StaticClass", &UUIResourceCombinationProvider::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IUIListElementProvider", &UUIResourceCombinationProvider::VfTable_IUIListElementProvider)
         .def_readwrite("VfTable_IUIListElementCellProvider", &UUIResourceCombinationProvider::VfTable_IUIListElementCellProvider)
         .def_readwrite("StaticDataProvider", &UUIResourceCombinationProvider::StaticDataProvider)

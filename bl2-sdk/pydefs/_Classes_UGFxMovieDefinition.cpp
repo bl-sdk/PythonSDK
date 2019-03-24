@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGFxMovieDefinition(py::module &m)
 {
     py::class_< UGFxMovieDefinition,  UGBXDefinition   >(m, "UGFxMovieDefinition")
+		.def_static("StaticClass", &UGFxMovieDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SwfMovie", &UGFxMovieDefinition::SwfMovie)
         .def_readwrite("SwfMovieClass", &UGFxMovieDefinition::SwfMovieClass)
         .def_readwrite("Movie", &UGFxMovieDefinition::Movie)

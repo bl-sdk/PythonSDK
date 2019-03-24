@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UIShop(py::module &m)
 {
     py::class_< UIShop,  UInterface   >(m, "UIShop")
+		.def_static("StaticClass", &UIShop::StaticClass, py::return_value_policy::reference)
         .def("GetSellingPriceForInventory", &UIShop::GetSellingPriceForInventory)
         .def("GetCurrencyTypeInventoryIsSoldIn", &UIShop::GetCurrencyTypeInventoryIsSoldIn)
         .def("PlayerBuyBackItem", &UIShop::PlayerBuyBackItem)

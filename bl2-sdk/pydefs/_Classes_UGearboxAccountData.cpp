@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGearboxAccountData(py::module &m)
 {
     py::class_< UGearboxAccountData,  UObject   >(m, "UGearboxAccountData")
+		.def_static("StaticClass", &UGearboxAccountData::StaticClass, py::return_value_policy::reference)
         .def_readwrite("RequestId", &UGearboxAccountData::RequestId)
         .def_readwrite("PlatformLoginName", &UGearboxAccountData::PlatformLoginName)
         .def_readwrite("NextEntitlementUpdateTime", &UGearboxAccountData::NextEntitlementUpdateTime)

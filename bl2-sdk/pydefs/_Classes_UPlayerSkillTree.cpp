@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPlayerSkillTree(py::module &m)
 {
     py::class_< UPlayerSkillTree,  UObject   >(m, "UPlayerSkillTree")
+		.def_static("StaticClass", &UPlayerSkillTree::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SkillTreeRootIndex", &UPlayerSkillTree::SkillTreeRootIndex)
         .def_readwrite("Branches", &UPlayerSkillTree::Branches)
         .def_readwrite("Tiers", &UPlayerSkillTree::Tiers)

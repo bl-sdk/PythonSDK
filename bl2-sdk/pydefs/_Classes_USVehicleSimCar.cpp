@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USVehicleSimCar(py::module &m)
 {
     py::class_< USVehicleSimCar,  USVehicleSimBase   >(m, "USVehicleSimCar")
+		.def_static("StaticClass", &USVehicleSimCar::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ChassisTorqueScale", &USVehicleSimCar::ChassisTorqueScale)
         .def_readwrite("MaxSteerAngleCurve", &USVehicleSimCar::MaxSteerAngleCurve)
         .def_readwrite("SteerSpeed", &USVehicleSimCar::SteerSpeed)

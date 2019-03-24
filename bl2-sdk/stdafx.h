@@ -11,6 +11,7 @@
 #include <iostream>
 #include <ShlObj.h>
 #include <string>
+#include <map>
 
 #include <Shlwapi.h>
 #pragma comment (lib, "Shlwapi.lib")
@@ -88,13 +89,16 @@ namespace BL2SDK
 #include "AkAudio_classes.h"
 //#include "AkAudio_functions.h"
 
+#include "TypeMap.h"
+
 namespace pybind11 {
 	template <typename itype> struct polymorphic_type_hook<itype, detail::enable_if_t<std::is_polymorphic<itype>::value>>
 	{
 		static const void *get(const itype *src, const std::type_info*& type) {
 			if (src && std::is_base_of<UObject, itype>::value) {
-				type = &typeid(itype);
-				return static_cast<const itype*>(src);
+				std::string type_name = ((UObject *)src)->GetNameCPP();
+				type = uobject_type_map[type_name];
+				return src;
 			}
 			type = src ? &typeid(*src) : nullptr;
 			return dynamic_cast<const void*>(src);

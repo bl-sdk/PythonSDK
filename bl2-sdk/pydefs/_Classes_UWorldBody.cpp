@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWorldBody(py::module &m)
 {
     py::class_< UWorldBody,  UObject   >(m, "UWorldBody")
+		.def_static("StaticClass", &UWorldBody::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIWorldBody", &UWorldBody::VfTable_IIWorldBody)
         .def_readwrite("Instigator", &UWorldBody::Instigator)
         .def_readwrite("Location", &UWorldBody::Location)

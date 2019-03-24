@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowPointLight(py::module &m)
 {
     py::class_< UWillowPointLight,  UPointLightComponent   >(m, "UWillowPointLight")
+		.def_static("StaticClass", &UWillowPointLight::StaticClass, py::return_value_policy::reference)
         .def_readwrite("HighDetailFrameTime", &UWillowPointLight::HighDetailFrameTime)
         .def_readwrite("Lifetime", &UWillowPointLight::Lifetime)
         .def_readwrite("TimeShiftIndex", &UWillowPointLight::TimeShiftIndex)

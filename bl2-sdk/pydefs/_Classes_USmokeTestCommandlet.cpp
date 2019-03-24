@@ -6,5 +6,6 @@ namespace py = pybind11;
 void Export_pystes_USmokeTestCommandlet(py::module &m)
 {
     py::class_< USmokeTestCommandlet,  UCommandlet   >(m, "USmokeTestCommandlet")
+		.def_static("StaticClass", &USmokeTestCommandlet::StaticClass, py::return_value_policy::reference)
           ;
 }

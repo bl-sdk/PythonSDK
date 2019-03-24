@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowShield(py::module &m)
 {
     py::class_< AWillowShield,  AWillowEquipAbleItem   >(m, "AWillowShield")
+		.def_static("StaticClass", &AWillowShield::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PercentChanceToAbsorbAmmo", &AWillowShield::PercentChanceToAbsorbAmmo)
         .def_readwrite("PercentChanceToAbsorbAmmoBaseValue", &AWillowShield::PercentChanceToAbsorbAmmoBaseValue)
         .def_readwrite("PercentChanceToAbsorbAmmoModifierStack", &AWillowShield::PercentChanceToAbsorbAmmoModifierStack)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGFxAction_Invoke(py::module &m)
 {
     py::class_< UGFxAction_Invoke,  USequenceAction   >(m, "UGFxAction_Invoke")
+		.def_static("StaticClass", &UGFxAction_Invoke::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Movie", &UGFxAction_Invoke::Movie)
         .def_readwrite("MethodName", &UGFxAction_Invoke::MethodName)
         .def_readwrite("Arguments", &UGFxAction_Invoke::Arguments)

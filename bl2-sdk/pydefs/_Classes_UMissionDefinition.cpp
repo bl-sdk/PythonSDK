@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UMissionDefinition(py::module &m)
 {
     py::class_< UMissionDefinition,  UGBXDefinition   >(m, "UMissionDefinition")
+		.def_static("StaticClass", &UMissionDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIBalancedActor", &UMissionDefinition::VfTable_IIBalancedActor)
         .def_readwrite("VfTable_IIBehaviorProvider", &UMissionDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("VfTable_IIDlcLicensableObject", &UMissionDefinition::VfTable_IIDlcLicensableObject)

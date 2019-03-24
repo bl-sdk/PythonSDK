@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AInventory(py::module &m)
 {
     py::class_< AInventory,  AActor   >(m, "AInventory")
+		.def_static("StaticClass", &AInventory::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Inventory", &AInventory::Inventory)
         .def_readwrite("InvManager", &AInventory::InvManager)
         .def_readwrite("ItemName", &AInventory::ItemName)

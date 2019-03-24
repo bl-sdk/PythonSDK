@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowLeviathanService(py::module &m)
 {
     py::class_< UWillowLeviathanService,  ULeviathanService   >(m, "UWillowLeviathanService")
+		.def_static("StaticClass", &UWillowLeviathanService::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_FTickableObject", &UWillowLeviathanService::VfTable_FTickableObject)
         .def("RecordDiagnosticEventForPlayer", &UWillowLeviathanService::RecordDiagnosticEventForPlayer)
         .def("RecordCustomizeCharacterEventForPlayer", &UWillowLeviathanService::RecordCustomizeCharacterEventForPlayer)

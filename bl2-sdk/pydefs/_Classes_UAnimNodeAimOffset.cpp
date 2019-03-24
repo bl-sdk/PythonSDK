@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAnimNodeAimOffset(py::module &m)
 {
     py::class_< UAnimNodeAimOffset,  UAnimNodeBlendBase   >(m, "UAnimNodeAimOffset")
+		.def_static("StaticClass", &UAnimNodeAimOffset::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Aim", &UAnimNodeAimOffset::Aim)
         .def_readwrite("AngleOffset", &UAnimNodeAimOffset::AngleOffset)
         .def_readwrite("PassThroughAtOrAboveLOD", &UAnimNodeAimOffset::PassThroughAtOrAboveLOD)

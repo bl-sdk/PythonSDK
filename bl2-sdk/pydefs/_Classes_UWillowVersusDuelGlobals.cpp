@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowVersusDuelGlobals(py::module &m)
 {
     py::class_< UWillowVersusDuelGlobals,  UGBXDefinition   >(m, "UWillowVersusDuelGlobals")
+		.def_static("StaticClass", &UWillowVersusDuelGlobals::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ArenaMaterialIndex", &UWillowVersusDuelGlobals::ArenaMaterialIndex)
         .def_readwrite("ArenaMaterialParamName", &UWillowVersusDuelGlobals::ArenaMaterialParamName)
         .def_readwrite("ArenaMesh", &UWillowVersusDuelGlobals::ArenaMesh)

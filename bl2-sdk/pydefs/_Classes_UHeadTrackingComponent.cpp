@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UHeadTrackingComponent(py::module &m)
 {
     py::class_< UHeadTrackingComponent,  UActorComponent   >(m, "UHeadTrackingComponent")
+		.def_static("StaticClass", &UHeadTrackingComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("TrackControllerName", &UHeadTrackingComponent::TrackControllerName)
         .def_readwrite("LookAtActorRadius", &UHeadTrackingComponent::LookAtActorRadius)
         .def_readwrite("MaxLookAtTime", &UHeadTrackingComponent::MaxLookAtTime)

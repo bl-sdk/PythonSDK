@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGameViewportClient(py::module &m)
 {
     py::class_< UGameViewportClient,  UObject   >(m, "UGameViewportClient")
+		.def_static("StaticClass", &UGameViewportClient::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_FViewportClient", &UGameViewportClient::VfTable_FViewportClient)
         .def_readwrite("VfTable_FExec", &UGameViewportClient::VfTable_FExec)
         .def_readwrite("Viewport", &UGameViewportClient::Viewport)

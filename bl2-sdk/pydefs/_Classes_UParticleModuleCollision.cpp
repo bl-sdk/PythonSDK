@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UParticleModuleCollision(py::module &m)
 {
     py::class_< UParticleModuleCollision,  UParticleModuleCollisionBase   >(m, "UParticleModuleCollision")
+		.def_static("StaticClass", &UParticleModuleCollision::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DampingFactor", &UParticleModuleCollision::DampingFactor)
         .def_readwrite("DampingFactorRotation", &UParticleModuleCollision::DampingFactorRotation)
         .def_readwrite("MaxCollisions", &UParticleModuleCollision::MaxCollisions)

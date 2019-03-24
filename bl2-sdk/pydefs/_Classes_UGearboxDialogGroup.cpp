@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGearboxDialogGroup(py::module &m)
 {
     py::class_< UGearboxDialogGroup,  UObject   >(m, "UGearboxDialogGroup")
+		.def_static("StaticClass", &UGearboxDialogGroup::StaticClass, py::return_value_policy::reference)
         .def_readwrite("EventTagPackages", &UGearboxDialogGroup::EventTagPackages)
         .def_readwrite("NameTags", &UGearboxDialogGroup::NameTags)
         .def_readwrite("EventTags", &UGearboxDialogGroup::EventTags)

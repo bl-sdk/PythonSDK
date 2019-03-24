@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowReplicatedEmitter(py::module &m)
 {
     py::class_< AWillowReplicatedEmitter,  AWillowEmitter   >(m, "AWillowReplicatedEmitter")
+		.def_static("StaticClass", &AWillowReplicatedEmitter::StaticClass, py::return_value_policy::reference)
         .def_readwrite("EmitterTemplate", &AWillowReplicatedEmitter::EmitterTemplate)
         .def_readwrite("ServerLifeSpan", &AWillowReplicatedEmitter::ServerLifeSpan)
         .def_readwrite("NumFloatParameters", &AWillowReplicatedEmitter::NumFloatParameters)

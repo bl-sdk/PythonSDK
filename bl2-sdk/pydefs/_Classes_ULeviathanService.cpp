@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ULeviathanService(py::module &m)
 {
     py::class_< ULeviathanService,  UObject   >(m, "ULeviathanService")
+		.def_static("StaticClass", &ULeviathanService::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_ISparkUpdateCallback", &ULeviathanService::VfTable_ISparkUpdateCallback)
         .def_readwrite("EventBufferSize", &ULeviathanService::EventBufferSize)
         .def_readwrite("StatBufferSize", &ULeviathanService::StatBufferSize)

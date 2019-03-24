@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowDownloadableContentManager(py::module &m)
 {
     py::class_< UWillowDownloadableContentManager,  UDownloadableContentManager   >(m, "UWillowDownloadableContentManager")
+		.def_static("StaticClass", &UWillowDownloadableContentManager::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ContentPackages", &UWillowDownloadableContentManager::ContentPackages)
         .def_readwrite("AllContent", &UWillowDownloadableContentManager::AllContent)
         .def_readwrite("Expansions", &UWillowDownloadableContentManager::Expansions)

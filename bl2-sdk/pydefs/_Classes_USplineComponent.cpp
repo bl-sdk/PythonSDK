@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USplineComponent(py::module &m)
 {
     py::class_< USplineComponent,  UPrimitiveComponent   >(m, "USplineComponent")
+		.def_static("StaticClass", &USplineComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SplineInfo", &USplineComponent::SplineInfo)
         .def_readwrite("SplineCurviness", &USplineComponent::SplineCurviness)
         .def_readwrite("SplineColor", &USplineComponent::SplineColor)

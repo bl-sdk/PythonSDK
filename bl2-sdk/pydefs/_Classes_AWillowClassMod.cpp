@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowClassMod(py::module &m)
 {
     py::class_< AWillowClassMod,  AWillowEquipAbleItem   >(m, "AWillowClassMod")
+		.def_static("StaticClass", &AWillowClassMod::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ClassRequirementMetString", &AWillowClassMod::ClassRequirementMetString)
         .def_readwrite("ClassRequirementNotMetString", &AWillowClassMod::ClassRequirementNotMetString)
         .def("GetItemCardTopSectionString", &AWillowClassMod::GetItemCardTopSectionString)

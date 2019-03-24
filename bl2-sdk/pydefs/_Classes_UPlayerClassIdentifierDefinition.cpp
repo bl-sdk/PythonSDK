@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPlayerClassIdentifierDefinition(py::module &m)
 {
     py::class_< UPlayerClassIdentifierDefinition,  UGBXDefinition   >(m, "UPlayerClassIdentifierDefinition")
+		.def_static("StaticClass", &UPlayerClassIdentifierDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIDlcLicensableObject", &UPlayerClassIdentifierDefinition::VfTable_IIDlcLicensableObject)
         .def_readwrite("ClassName", &UPlayerClassIdentifierDefinition::ClassName)
         .def_readwrite("LocalizedClassName", &UPlayerClassIdentifierDefinition::LocalizedClassName)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAmbientOcclusionEffect(py::module &m)
 {
     py::class_< UAmbientOcclusionEffect,  UPostProcessEffect   >(m, "UAmbientOcclusionEffect")
+		.def_static("StaticClass", &UAmbientOcclusionEffect::StaticClass, py::return_value_policy::reference)
         .def_readwrite("OcclusionColor", &UAmbientOcclusionEffect::OcclusionColor)
         .def_readwrite("OcclusionPower", &UAmbientOcclusionEffect::OcclusionPower)
         .def_readwrite("OcclusionScale", &UAmbientOcclusionEffect::OcclusionScale)

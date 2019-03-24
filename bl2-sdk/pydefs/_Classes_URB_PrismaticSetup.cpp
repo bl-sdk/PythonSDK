@@ -6,5 +6,6 @@ namespace py = pybind11;
 void Export_pystes_URB_PrismaticSetup(py::module &m)
 {
     py::class_< URB_PrismaticSetup,  URB_ConstraintSetup   >(m, "URB_PrismaticSetup")
+		.def_static("StaticClass", &URB_PrismaticSetup::StaticClass, py::return_value_policy::reference)
           ;
 }

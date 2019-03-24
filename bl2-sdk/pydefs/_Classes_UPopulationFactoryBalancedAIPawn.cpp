@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPopulationFactoryBalancedAIPawn(py::module &m)
 {
     py::class_< UPopulationFactoryBalancedAIPawn,  UPopulationFactory   >(m, "UPopulationFactoryBalancedAIPawn")
+		.def_static("StaticClass", &UPopulationFactoryBalancedAIPawn::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PawnBalanceDefinition", &UPopulationFactoryBalancedAIPawn::PawnBalanceDefinition)
         .def_readwrite("WillowAIPawnArchetype", &UPopulationFactoryWillowAIPawn::WillowAIPawnArchetype)
         .def_readwrite("PawnExpLevel", &UPopulationFactoryWillowAIPawn::PawnExpLevel)

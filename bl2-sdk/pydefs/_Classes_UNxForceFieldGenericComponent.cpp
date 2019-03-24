@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UNxForceFieldGenericComponent(py::module &m)
 {
     py::class_< UNxForceFieldGenericComponent,  UNxForceFieldComponent   >(m, "UNxForceFieldGenericComponent")
+		.def_static("StaticClass", &UNxForceFieldGenericComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("RoughExtentX", &UNxForceFieldGenericComponent::RoughExtentX)
         .def_readwrite("RoughExtentY", &UNxForceFieldGenericComponent::RoughExtentY)
         .def_readwrite("RoughExtentZ", &UNxForceFieldGenericComponent::RoughExtentZ)

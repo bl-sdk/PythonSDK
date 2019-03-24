@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UTexture(py::module &m)
 {
     py::class_< UTexture,  USurface   >(m, "UTexture")
+		.def_static("StaticClass", &UTexture::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CompressionSettings", &UTexture::CompressionSettings)
         .def_readwrite("Filter", &UTexture::Filter)
         .def_readwrite("LODGroup", &UTexture::LODGroup)

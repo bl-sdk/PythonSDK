@@ -6,6 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UInterface(py::module &m)
 {
     py::class_< UInterface,  UObject   >(m, "UInterface")
-		.def_static("StaticClass", &UObject::StaticClass, py::return_value_policy::reference)
+		.def_static("StaticClass", &UInterface::StaticClass, py::return_value_policy::reference)
           ;
 }

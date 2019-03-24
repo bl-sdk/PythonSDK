@@ -6,5 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UMaterialExpressionCameraWorldPosition(py::module &m)
 {
     py::class_< UMaterialExpressionCameraWorldPosition,  UMaterialExpression   >(m, "UMaterialExpressionCameraWorldPosition")
+		.def_static("StaticClass", &UMaterialExpressionCameraWorldPosition::StaticClass, py::return_value_policy::reference)
           ;
 }

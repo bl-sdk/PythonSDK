@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWindDirectionalSourceComponent(py::module &m)
 {
     py::class_< UWindDirectionalSourceComponent,  UActorComponent   >(m, "UWindDirectionalSourceComponent")
+		.def_static("StaticClass", &UWindDirectionalSourceComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SceneProxy", &UWindDirectionalSourceComponent::SceneProxy)
         .def_readwrite("Strength", &UWindDirectionalSourceComponent::Strength)
         .def_readwrite("Phase", &UWindDirectionalSourceComponent::Phase)

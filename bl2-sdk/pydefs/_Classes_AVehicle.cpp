@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AVehicle(py::module &m)
 {
     py::class_< AVehicle,  APawn   >(m, "AVehicle")
+		.def_static("StaticClass", &AVehicle::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Driver", &AVehicle::Driver)
         .def_readwrite("ExitPositions", &AVehicle::ExitPositions)
         .def_readwrite("ExitRadius", &AVehicle::ExitRadius)

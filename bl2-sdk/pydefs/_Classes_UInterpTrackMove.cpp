@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UInterpTrackMove(py::module &m)
 {
     py::class_< UInterpTrackMove,  UInterpTrack   >(m, "UInterpTrackMove")
+		.def_static("StaticClass", &UInterpTrackMove::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PosTrack", &UInterpTrackMove::PosTrack)
         .def_readwrite("EulerTrack", &UInterpTrackMove::EulerTrack)
         .def_readwrite("LookupTrack", &UInterpTrackMove::LookupTrack)

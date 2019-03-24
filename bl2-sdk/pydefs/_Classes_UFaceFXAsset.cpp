@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UFaceFXAsset(py::module &m)
 {
     py::class_< UFaceFXAsset,  UObject   >(m, "UFaceFXAsset")
+		.def_static("StaticClass", &UFaceFXAsset::StaticClass, py::return_value_policy::reference)
         .def_readwrite("FaceFXActor", &UFaceFXAsset::FaceFXActor)
         .def_readwrite("RawFaceFXActorBytes", &UFaceFXAsset::RawFaceFXActorBytes)
         .def_readwrite("RawFaceFXSessionBytes", &UFaceFXAsset::RawFaceFXSessionBytes)

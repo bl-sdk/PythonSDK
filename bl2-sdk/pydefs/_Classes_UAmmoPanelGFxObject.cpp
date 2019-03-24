@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAmmoPanelGFxObject(py::module &m)
 {
     py::class_< UAmmoPanelGFxObject,  UGFxObject   >(m, "UAmmoPanelGFxObject")
+		.def_static("StaticClass", &UAmmoPanelGFxObject::StaticClass, py::return_value_policy::reference)
         .def_readwrite("AmmoTitle", &UAmmoPanelGFxObject::AmmoTitle)
         .def_readwrite("CachedRepeater", &UAmmoPanelGFxObject::CachedRepeater)
         .def_readwrite("CachedSMG", &UAmmoPanelGFxObject::CachedSMG)

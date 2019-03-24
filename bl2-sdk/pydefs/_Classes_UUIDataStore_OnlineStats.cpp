@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UUIDataStore_OnlineStats(py::module &m)
 {
     py::class_< UUIDataStore_OnlineStats,  UUIDataStore_Remote   >(m, "UUIDataStore_OnlineStats")
+		.def_static("StaticClass", &UUIDataStore_OnlineStats::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IUIListElementProvider", &UUIDataStore_OnlineStats::VfTable_IUIListElementProvider)
         .def_readwrite("VfTable_IUIListElementCellProvider", &UUIDataStore_OnlineStats::VfTable_IUIListElementCellProvider)
         .def_readwrite("StatsReadClasses", &UUIDataStore_OnlineStats::StatsReadClasses)

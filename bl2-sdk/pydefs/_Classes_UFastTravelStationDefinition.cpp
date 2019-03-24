@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UFastTravelStationDefinition(py::module &m)
 {
     py::class_< UFastTravelStationDefinition,  UTravelStationDefinition   >(m, "UFastTravelStationDefinition")
+		.def_static("StaticClass", &UFastTravelStationDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("StationDescription", &UFastTravelStationDefinition::StationDescription)
         .def_readwrite("StationSign", &UFastTravelStationDefinition::StationSign)
         .def_readwrite("InaccessibleObjective", &UFastTravelStationDefinition::InaccessibleObjective)

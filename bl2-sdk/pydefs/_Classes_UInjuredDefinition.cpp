@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UInjuredDefinition(py::module &m)
 {
     py::class_< UInjuredDefinition,  UGBXDefinition   >(m, "UInjuredDefinition")
+		.def_static("StaticClass", &UInjuredDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("InjuredInteractionDefinition", &UInjuredDefinition::InjuredInteractionDefinition)
         .def_readwrite("InjuredAttributeModifiers", &UInjuredDefinition::InjuredAttributeModifiers)
         .def_readwrite("InjuredBonusDamageScale", &UInjuredDefinition::InjuredBonusDamageScale)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UInputBindingsClipGFxObject(py::module &m)
 {
     py::class_< UInputBindingsClipGFxObject,  UGFxObject   >(m, "UInputBindingsClipGFxObject")
+		.def_static("StaticClass", &UInputBindingsClipGFxObject::StaticClass, py::return_value_policy::reference)
         .def("SetCustomizeTip", &UInputBindingsClipGFxObject::SetCustomizeTip)
         .def("AddKeyData", &UInputBindingsClipGFxObject::AddKeyData, py::return_value_policy::reference)
         .def("EmptyKeyData", &UInputBindingsClipGFxObject::EmptyKeyData)

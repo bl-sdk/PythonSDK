@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowCoopGameInfo(py::module &m)
 {
     py::class_< AWillowCoopGameInfo,  AWillowGameInfo   >(m, "AWillowCoopGameInfo")
+		.def_static("StaticClass", &AWillowCoopGameInfo::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Teams", &AWillowCoopGameInfo::Teams)
         .def("InitializeTeams", &AWillowCoopGameInfo::InitializeTeams)
         .def("eventHandleSeamlessTravelPlayer", [](AWillowCoopGameInfo &self ) { class AController** pyC = 0 ;   self.eventHandleSeamlessTravelPlayer(pyC); return py::make_tuple(*pyC); })

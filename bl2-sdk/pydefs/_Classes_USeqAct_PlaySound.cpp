@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USeqAct_PlaySound(py::module &m)
 {
     py::class_< USeqAct_PlaySound,  USeqAct_Latent   >(m, "USeqAct_PlaySound")
+		.def_static("StaticClass", &USeqAct_PlaySound::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PlaySound", &USeqAct_PlaySound::PlaySound)
         .def_readwrite("ExtraDelay", &USeqAct_PlaySound::ExtraDelay)
         .def_readwrite("SoundDuration", &USeqAct_PlaySound::SoundDuration)

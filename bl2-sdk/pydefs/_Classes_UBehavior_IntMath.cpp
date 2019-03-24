@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_IntMath(py::module &m)
 {
     py::class_< UBehavior_IntMath,  UBehaviorBase   >(m, "UBehavior_IntMath")
+		.def_static("StaticClass", &UBehavior_IntMath::StaticClass, py::return_value_policy::reference)
         .def_readwrite("A", &UBehavior_IntMath::A)
         .def_readwrite("B", &UBehavior_IntMath::B)
         .def_readwrite("Operation", &UBehavior_IntMath::Operation)

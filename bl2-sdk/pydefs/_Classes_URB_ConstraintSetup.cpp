@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_URB_ConstraintSetup(py::module &m)
 {
     py::class_< URB_ConstraintSetup,  UObject   >(m, "URB_ConstraintSetup")
+		.def_static("StaticClass", &URB_ConstraintSetup::StaticClass, py::return_value_policy::reference)
         .def_readwrite("JointName", &URB_ConstraintSetup::JointName)
         .def_readwrite("ConstraintBone1", &URB_ConstraintSetup::ConstraintBone1)
         .def_readwrite("ConstraintBone2", &URB_ConstraintSetup::ConstraintBone2)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWorldSoundManager(py::module &m)
 {
     py::class_< AWorldSoundManager,  AInfo   >(m, "AWorldSoundManager")
+		.def_static("StaticClass", &AWorldSoundManager::StaticClass, py::return_value_policy::reference)
         .def_readwrite("EventSources", &AWorldSoundManager::EventSources)
         .def_readwrite("UIAkComponent", &AWorldSoundManager::UIAkComponent)
         .def("GetWorldSoundCount", &AWorldSoundManager::GetWorldSoundCount)

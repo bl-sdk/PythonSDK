@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ACoverLink(py::module &m)
 {
     py::class_< ACoverLink,  ANavigationPoint   >(m, "ACoverLink")
+		.def_static("StaticClass", &ACoverLink::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIGBXNavMeshSpecialMove", &ACoverLink::VfTable_IIGBXNavMeshSpecialMove)
         .def_readwrite("LeanTraceDist", &ACoverLink::LeanTraceDist)
         .def_readwrite("Slots", &ACoverLink::Slots)

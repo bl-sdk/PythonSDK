@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAudioComponent(py::module &m)
 {
     py::class_< UAudioComponent,  UActorComponent   >(m, "UAudioComponent")
+		.def_static("StaticClass", &UAudioComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SoundCue", &UAudioComponent::SoundCue)
         .def_readwrite("CueFirstNode", &UAudioComponent::CueFirstNode)
         .def_readwrite("InstanceParameters", &UAudioComponent::InstanceParameters)

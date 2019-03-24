@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowScrollingListDataProviderAudioOptions(py::module &m)
 {
     py::class_< UWillowScrollingListDataProviderAudioOptions,  UWillowScrollingListDataProviderOptionsBase   >(m, "UWillowScrollingListDataProviderAudioOptions")
+		.def_static("StaticClass", &UWillowScrollingListDataProviderAudioOptions::StaticClass, py::return_value_policy::reference)
         .def("UpdateRealtimeSetting", &UWillowScrollingListDataProviderAudioOptions::UpdateRealtimeSetting)
         .def("StopAllVolumeSounds", &UWillowScrollingListDataProviderAudioOptions::StopAllVolumeSounds)
         .def("CheckStopVolumeSound", &UWillowScrollingListDataProviderAudioOptions::CheckStopVolumeSound)

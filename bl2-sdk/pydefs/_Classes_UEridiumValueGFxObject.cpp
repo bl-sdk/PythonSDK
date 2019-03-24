@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UEridiumValueGFxObject(py::module &m)
 {
     py::class_< UEridiumValueGFxObject,  UValueGFxObject   >(m, "UEridiumValueGFxObject")
+		.def_static("StaticClass", &UEridiumValueGFxObject::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CurrencyFrames", &UEridiumValueGFxObject::CurrencyFrames)
         .def("SetCurrencyClip", &UEridiumValueGFxObject::SetCurrencyClip)
         .def("SetCurrencyFrame", &UEridiumValueGFxObject::SetCurrencyFrame)

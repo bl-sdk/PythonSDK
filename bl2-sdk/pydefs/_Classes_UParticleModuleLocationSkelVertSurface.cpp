@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UParticleModuleLocationSkelVertSurface(py::module &m)
 {
     py::class_< UParticleModuleLocationSkelVertSurface,  UParticleModuleLocationBase   >(m, "UParticleModuleLocationSkelVertSurface")
+		.def_static("StaticClass", &UParticleModuleLocationSkelVertSurface::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SourceType", &UParticleModuleLocationSkelVertSurface::SourceType)
         .def_readwrite("UniversalOffset", &UParticleModuleLocationSkelVertSurface::UniversalOffset)
         .def_readwrite("SkelMeshActorParamName", &UParticleModuleLocationSkelVertSurface::SkelMeshActorParamName)

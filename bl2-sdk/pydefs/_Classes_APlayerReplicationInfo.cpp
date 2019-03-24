@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_APlayerReplicationInfo(py::module &m)
 {
     py::class_< APlayerReplicationInfo,  AInfo   >(m, "APlayerReplicationInfo")
+		.def_static("StaticClass", &APlayerReplicationInfo::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Score", &APlayerReplicationInfo::Score)
         .def_readwrite("Deaths", &APlayerReplicationInfo::Deaths)
         .def_readwrite("Ping", &APlayerReplicationInfo::Ping)

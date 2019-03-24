@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UDeferredDataProviderGFxObject(py::module &m)
 {
     py::class_< UDeferredDataProviderGFxObject,  UGFxObject   >(m, "UDeferredDataProviderGFxObject")
+		.def_static("StaticClass", &UDeferredDataProviderGFxObject::StaticClass, py::return_value_policy::reference)
         .def_readwrite("BaseOwningMovie", &UDeferredDataProviderGFxObject::BaseOwningMovie)
         .def_readwrite("CachedObjects", &UDeferredDataProviderGFxObject::CachedObjects)
         .def("GetLength", &UDeferredDataProviderGFxObject::GetLength)

@@ -155,7 +155,7 @@ public:
 	};
 };
 
-UClass* UInterpTrackAkEvent::pClassPointer = NULL;
+// UClass* UInterpTrackAkEvent::pClassPointer = NULL;
 
 // Class AkAudio.InterpTrackAkRTPC
 // 0x0004 (0x0080 - 0x007C)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UCharacterSelectionGFxObject(py::module &m)
 {
     py::class_< UCharacterSelectionGFxObject,  UGFxObject   >(m, "UCharacterSelectionGFxObject")
+		.def_static("StaticClass", &UCharacterSelectionGFxObject::StaticClass, py::return_value_policy::reference)
         .def("FadeIn", &UCharacterSelectionGFxObject::FadeIn)
         .def("BeginClose", &UCharacterSelectionGFxObject::BeginClose)
         .def("ConfigureForPause", &UCharacterSelectionGFxObject::ConfigureForPause)

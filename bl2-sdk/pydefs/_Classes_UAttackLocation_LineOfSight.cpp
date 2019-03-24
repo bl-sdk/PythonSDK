@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAttackLocation_LineOfSight(py::module &m)
 {
     py::class_< UAttackLocation_LineOfSight,  UAttackLocation   >(m, "UAttackLocation_LineOfSight")
+		.def_static("StaticClass", &UAttackLocation_LineOfSight::StaticClass, py::return_value_policy::reference)
         .def_readwrite("LineOfSight", &UAttackLocation_LineOfSight::LineOfSight)
         .def_readwrite("ValidTime", &UAttackLocation_LineOfSight::ValidTime)
         .def_readwrite("ArcAnglePct", &UAttackLocation_LineOfSight::ArcAnglePct)

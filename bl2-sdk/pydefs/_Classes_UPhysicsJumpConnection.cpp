@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPhysicsJumpConnection(py::module &m)
 {
     py::class_< UPhysicsJumpConnection,  UObject   >(m, "UPhysicsJumpConnection")
+		.def_static("StaticClass", &UPhysicsJumpConnection::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Source", &UPhysicsJumpConnection::Source)
         .def_readwrite("Destination", &UPhysicsJumpConnection::Destination)
         .def_readwrite("Speed", &UPhysicsJumpConnection::Speed)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowVersusDuelInfo(py::module &m)
 {
     py::class_< AWillowVersusDuelInfo,  AReplicationInfo   >(m, "AWillowVersusDuelInfo")
+		.def_static("StaticClass", &AWillowVersusDuelInfo::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DuelGlobals", &AWillowVersusDuelInfo::DuelGlobals)
         .def_readwrite("Challenger", &AWillowVersusDuelInfo::Challenger)
         .def_readwrite("Competitor", &AWillowVersusDuelInfo::Competitor)

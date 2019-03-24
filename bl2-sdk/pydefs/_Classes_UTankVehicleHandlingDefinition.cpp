@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UTankVehicleHandlingDefinition(py::module &m)
 {
     py::class_< UTankVehicleHandlingDefinition,  UCarVehicleHandlingDefinition   >(m, "UTankVehicleHandlingDefinition")
+		.def_static("StaticClass", &UTankVehicleHandlingDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MaxEngineTorque", &UTankVehicleHandlingDefinition::MaxEngineTorque)
         .def_readwrite("EngineDamping", &UTankVehicleHandlingDefinition::EngineDamping)
         .def_readwrite("InsideTrackTorqueFactor", &UTankVehicleHandlingDefinition::InsideTrackTorqueFactor)

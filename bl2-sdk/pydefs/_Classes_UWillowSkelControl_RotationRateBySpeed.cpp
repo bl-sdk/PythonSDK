@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowSkelControl_RotationRateBySpeed(py::module &m)
 {
     py::class_< UWillowSkelControl_RotationRateBySpeed,  UWillowSkelControl_RotationRate   >(m, "UWillowSkelControl_RotationRateBySpeed")
+		.def_static("StaticClass", &UWillowSkelControl_RotationRateBySpeed::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SpeedComponent", &UWillowSkelControl_RotationRateBySpeed::SpeedComponent)
         .def_readwrite("MinSpeed", &UWillowSkelControl_RotationRateBySpeed::MinSpeed)
         .def_readwrite("MaxSpeed", &UWillowSkelControl_RotationRateBySpeed::MaxSpeed)

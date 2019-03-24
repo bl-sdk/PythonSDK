@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UInstancedDesignerAttribute(py::module &m)
 {
     py::class_< UInstancedDesignerAttribute,  UObject   >(m, "UInstancedDesignerAttribute")
+		.def_static("StaticClass", &UInstancedDesignerAttribute::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Definition", &UInstancedDesignerAttribute::Definition)
         .def_readwrite("AttributeName", &UInstancedDesignerAttribute::AttributeName)
         .def_readwrite("AttributeDataType", &UInstancedDesignerAttribute::AttributeDataType)

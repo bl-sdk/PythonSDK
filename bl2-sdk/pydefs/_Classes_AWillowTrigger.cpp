@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowTrigger(py::module &m)
 {
     py::class_< AWillowTrigger,  ATrigger   >(m, "AWillowTrigger")
+		.def_static("StaticClass", &AWillowTrigger::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIUsable", &AWillowTrigger::VfTable_IIUsable)
         .def_readwrite("HUDIcon", &AWillowTrigger::HUDIcon)
         .def_readwrite("CostsToUseType", &AWillowTrigger::CostsToUseType)

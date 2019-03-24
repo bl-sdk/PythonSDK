@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USeqAct_CameraLookAt(py::module &m)
 {
     py::class_< USeqAct_CameraLookAt,  USequenceAction   >(m, "USeqAct_CameraLookAt")
+		.def_static("StaticClass", &USeqAct_CameraLookAt::StaticClass, py::return_value_policy::reference)
         .def_readwrite("InterpSpeedRange", &USeqAct_CameraLookAt::InterpSpeedRange)
         .def_readwrite("InFocusFOV", &USeqAct_CameraLookAt::InFocusFOV)
         .def_readwrite("FocusBoneName", &USeqAct_CameraLookAt::FocusBoneName)

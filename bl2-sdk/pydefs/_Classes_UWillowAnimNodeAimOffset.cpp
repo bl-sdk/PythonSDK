@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowAnimNodeAimOffset(py::module &m)
 {
     py::class_< UWillowAnimNodeAimOffset,  UAnimNodeAimOffset   >(m, "UWillowAnimNodeAimOffset")
+		.def_static("StaticClass", &UWillowAnimNodeAimOffset::StaticClass, py::return_value_policy::reference)
         .def_readwrite("AimSpeed", &UWillowAnimNodeAimOffset::AimSpeed)
         .def_readwrite("PivotOverrideSocket", &UWillowAnimNodeAimOffset::PivotOverrideSocket)
         .def_readwrite("YawRange", &UWillowAnimNodeAimOffset::YawRange)

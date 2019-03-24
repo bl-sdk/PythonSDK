@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USkillTreeGFxObject(py::module &m)
 {
     py::class_< USkillTreeGFxObject,  UGFxObject   >(m, "USkillTreeGFxObject")
+		.def_static("StaticClass", &USkillTreeGFxObject::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Artifacts", &USkillTreeGFxObject::Artifacts)
         .def_readwrite("NoArtifactsDescription", &USkillTreeGFxObject::NoArtifactsDescription)
         .def_readwrite("ArtifactsDescription", &USkillTreeGFxObject::ArtifactsDescription)

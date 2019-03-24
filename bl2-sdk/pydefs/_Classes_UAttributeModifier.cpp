@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAttributeModifier(py::module &m)
 {
     py::class_< UAttributeModifier,  UObject   >(m, "UAttributeModifier")
+		.def_static("StaticClass", &UAttributeModifier::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Type", &UAttributeModifier::Type)
         .def_readwrite("Value", &UAttributeModifier::Value)
           ;

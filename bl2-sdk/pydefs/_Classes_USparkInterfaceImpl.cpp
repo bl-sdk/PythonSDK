@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USparkInterfaceImpl(py::module &m)
 {
     py::class_< USparkInterfaceImpl,  UObject   >(m, "USparkInterfaceImpl")
+		.def_static("StaticClass", &USparkInterfaceImpl::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_ISparkInterface", &USparkInterfaceImpl::VfTable_ISparkInterface)
         .def_readwrite("VfTable_FTickableObject", &USparkInterfaceImpl::VfTable_FTickableObject)
         .def_readwrite("SparkInitialization", &USparkInterfaceImpl::SparkInitialization)

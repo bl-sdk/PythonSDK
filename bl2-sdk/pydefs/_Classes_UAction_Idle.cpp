@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAction_Idle(py::module &m)
 {
     py::class_< UAction_Idle,  UAction_Burrow   >(m, "UAction_Idle")
+		.def_static("StaticClass", &UAction_Idle::StaticClass, py::return_value_policy::reference)
         .def_readwrite("IdleTime", &UAction_Idle::IdleTime)
         .def_readwrite("CloakBehavior", &UAction_Idle::CloakBehavior)
         .def_readwrite("FollowType", &UAction_Idle::FollowType)

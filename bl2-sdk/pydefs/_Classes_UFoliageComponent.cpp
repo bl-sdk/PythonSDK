@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UFoliageComponent(py::module &m)
 {
     py::class_< UFoliageComponent,  UPrimitiveComponent   >(m, "UFoliageComponent")
+		.def_static("StaticClass", &UFoliageComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("LitInstances", &UFoliageComponent::LitInstances)
         .def_readwrite("StaticallyRelevantLights", &UFoliageComponent::StaticallyRelevantLights)
         .def_readwrite("StaticallyIrrelevantLights", &UFoliageComponent::StaticallyIrrelevantLights)

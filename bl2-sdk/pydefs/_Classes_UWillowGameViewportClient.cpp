@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowGameViewportClient(py::module &m)
 {
     py::class_< UWillowGameViewportClient,  UGameViewportClient   >(m, "UWillowGameViewportClient")
+		.def_static("StaticClass", &UWillowGameViewportClient::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ViewportUI", &UWillowGameViewportClient::ViewportUI)
         .def_readwrite("LoadBackground", &UWillowGameViewportClient::LoadBackground)
         .def_readwrite("LoadingImage", &UWillowGameViewportClient::LoadingImage)

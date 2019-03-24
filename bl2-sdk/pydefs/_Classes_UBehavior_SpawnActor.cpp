@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_SpawnActor(py::module &m)
 {
     py::class_< UBehavior_SpawnActor,  UBehaviorBase   >(m, "UBehavior_SpawnActor")
+		.def_static("StaticClass", &UBehavior_SpawnActor::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SavedReferenceName", &UBehavior_SpawnActor::SavedReferenceName)
         .def_readwrite("InstanceDataContext", &UBehavior_SpawnActor::InstanceDataContext)
         .def_readwrite("ActorTemplate", &UBehavior_SpawnActor::ActorTemplate)

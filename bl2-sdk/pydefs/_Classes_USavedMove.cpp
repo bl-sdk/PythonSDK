@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USavedMove(py::module &m)
 {
     py::class_< USavedMove,  UObject   >(m, "USavedMove")
+		.def_static("StaticClass", &USavedMove::StaticClass, py::return_value_policy::reference)
         .def_readwrite("NextMove", &USavedMove::NextMove)
         .def_readwrite("TimeStamp", &USavedMove::TimeStamp)
         .def_readwrite("Delta", &USavedMove::Delta)

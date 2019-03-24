@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UUIDataStore_OnlineGameSettings(py::module &m)
 {
     py::class_< UUIDataStore_OnlineGameSettings,  UUIDataStore   >(m, "UUIDataStore_OnlineGameSettings")
+		.def_static("StaticClass", &UUIDataStore_OnlineGameSettings::StaticClass, py::return_value_policy::reference)
         .def_readwrite("GameSettingsCfgList", &UUIDataStore_OnlineGameSettings::GameSettingsCfgList)
         .def_readwrite("SettingsProviderClass", &UUIDataStore_OnlineGameSettings::SettingsProviderClass)
         .def_readwrite("SelectedIndex", &UUIDataStore_OnlineGameSettings::SelectedIndex)

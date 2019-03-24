@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAnimNodeBlendBase(py::module &m)
 {
     py::class_< UAnimNodeBlendBase,  UObject   >(m, "UAnimNodeBlendBase")
+		.def_static("StaticClass", &UAnimNodeBlendBase::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Children", &UAnimNodeBlendBase::Children)
         .def_readwrite("BlendType", &UAnimNodeBlendBase::BlendType)
         .def_readwrite("NodeTickTag", &UAnimNode::NodeTickTag)

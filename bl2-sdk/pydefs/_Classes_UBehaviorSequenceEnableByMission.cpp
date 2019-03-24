@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehaviorSequenceEnableByMission(py::module &m)
 {
     py::class_< UBehaviorSequenceEnableByMission,  UBehaviorSequenceCustomEnableCondition   >(m, "UBehaviorSequenceEnableByMission")
+		.def_static("StaticClass", &UBehaviorSequenceEnableByMission::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIMission", &UBehaviorSequenceEnableByMission::VfTable_IIMission)
         .def_readwrite("LinkedMission", &UBehaviorSequenceEnableByMission::LinkedMission)
         .def_readwrite("MissionStatesToLinkTo", &UBehaviorSequenceEnableByMission::MissionStatesToLinkTo)

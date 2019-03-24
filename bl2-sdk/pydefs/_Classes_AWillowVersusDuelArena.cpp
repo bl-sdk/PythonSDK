@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowVersusDuelArena(py::module &m)
 {
     py::class_< AWillowVersusDuelArena,  AActor   >(m, "AWillowVersusDuelArena")
+		.def_static("StaticClass", &AWillowVersusDuelArena::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DuelInfo", &AWillowVersusDuelArena::DuelInfo)
         .def_readwrite("ArenaIndex", &AWillowVersusDuelArena::ArenaIndex)
         .def_readwrite("Challenger", &AWillowVersusDuelArena::Challenger)

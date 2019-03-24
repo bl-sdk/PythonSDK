@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAnimNode(py::module &m)
 {
     py::class_< UAnimNode,  UObject   >(m, "UAnimNode")
+		.def_static("StaticClass", &UAnimNode::StaticClass, py::return_value_policy::reference)
         .def_readwrite("NodeTickTag", &UAnimNode::NodeTickTag)
         .def_readwrite("NodeInitTag", &UAnimNode::NodeInitTag)
         .def_readwrite("TickArrayIndex", &UAnimNode::TickArrayIndex)

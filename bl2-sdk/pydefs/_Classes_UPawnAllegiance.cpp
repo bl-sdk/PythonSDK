@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPawnAllegiance(py::module &m)
 {
     py::class_< UPawnAllegiance,  UObject   >(m, "UPawnAllegiance")
+		.def_static("StaticClass", &UPawnAllegiance::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DefaultOpinion", &UPawnAllegiance::DefaultOpinion)
         .def_readwrite("SelfOpinion", &UPawnAllegiance::SelfOpinion)
         .def_readwrite("ForcedOtherOpinion", &UPawnAllegiance::ForcedOtherOpinion)

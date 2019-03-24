@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USpecialMoveDefinition(py::module &m)
 {
     py::class_< USpecialMoveDefinition,  UGBXDefinition   >(m, "USpecialMoveDefinition")
+		.def_static("StaticClass", &USpecialMoveDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("NextSpecialMove", &USpecialMoveDefinition::NextSpecialMove)
         .def_readwrite("StopExpression", &USpecialMoveDefinition::StopExpression)
         .def("eventIsPlayingLocally", &USpecialMoveDefinition::eventIsPlayingLocally)

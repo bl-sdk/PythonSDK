@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UUIDynamicFieldProvider(py::module &m)
 {
     py::class_< UUIDynamicFieldProvider,  UUIDataProvider   >(m, "UUIDynamicFieldProvider")
+		.def_static("StaticClass", &UUIDynamicFieldProvider::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PersistentDataFields", &UUIDynamicFieldProvider::PersistentDataFields)
         .def_readwrite("RuntimeDataFields", &UUIDynamicFieldProvider::RuntimeDataFields)
         .def_readwrite("PersistentCollectionData", &UUIDynamicFieldProvider::PersistentCollectionData)

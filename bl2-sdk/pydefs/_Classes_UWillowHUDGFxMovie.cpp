@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowHUDGFxMovie(py::module &m)
 {
     py::class_< UWillowHUDGFxMovie,  UWillowGFxMovie   >(m, "UWillowHUDGFxMovie")
+		.def_static("StaticClass", &UWillowHUDGFxMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SplitscreenMode", &UWillowHUDGFxMovie::SplitscreenMode)
         .def_readwrite("bIsInVehicle", &UWillowHUDGFxMovie::bIsInVehicle)
         .def_readwrite("bNeedsWidgetsRenewed", &UWillowHUDGFxMovie::bNeedsWidgetsRenewed)

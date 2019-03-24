@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UMindTargetInfo(py::module &m)
 {
     py::class_< UMindTargetInfo,  UObject   >(m, "UMindTargetInfo")
+		.def_static("StaticClass", &UMindTargetInfo::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Target", &UMindTargetInfo::Target)
         .def_readwrite("Distance", &UMindTargetInfo::Distance)
         .def_readwrite("bCanFireAt", &UMindTargetInfo::bCanFireAt)

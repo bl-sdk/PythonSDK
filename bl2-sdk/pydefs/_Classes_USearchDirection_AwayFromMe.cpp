@@ -6,5 +6,6 @@ namespace py = pybind11;
 void Export_pystes_USearchDirection_AwayFromMe(py::module &m)
 {
     py::class_< USearchDirection_AwayFromMe,  USearchDirection   >(m, "USearchDirection_AwayFromMe")
+		.def_static("StaticClass", &USearchDirection_AwayFromMe::StaticClass, py::return_value_policy::reference)
           ;
 }

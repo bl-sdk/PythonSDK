@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UMontageGFxObject(py::module &m)
 {
     py::class_< UMontageGFxObject,  UGFxObject   >(m, "UMontageGFxObject")
+		.def_static("StaticClass", &UMontageGFxObject::StaticClass, py::return_value_policy::reference)
         .def_readwrite("WPCOwner", &UMontageGFxObject::WPCOwner)
         .def_readwrite("CreditsDef", &UMontageGFxObject::CreditsDef)
         .def_readwrite("LinkageName", &UMontageGFxObject::LinkageName)

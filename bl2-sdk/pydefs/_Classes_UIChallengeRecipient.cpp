@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UIChallengeRecipient(py::module &m)
 {
     py::class_< UIChallengeRecipient,  UInterface   >(m, "UIChallengeRecipient")
+		.def_static("StaticClass", &UIChallengeRecipient::StaticClass, py::return_value_policy::reference)
         .def("ReceiveChallenge", &UIChallengeRecipient::ReceiveChallenge)
           ;
 }

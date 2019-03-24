@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UFrontEndPlayerListGFxObject(py::module &m)
 {
     py::class_< UFrontEndPlayerListGFxObject,  UGFxObject   >(m, "UFrontEndPlayerListGFxObject")
+		.def_static("StaticClass", &UFrontEndPlayerListGFxObject::StaticClass, py::return_value_policy::reference)
         .def_readwrite("OwningMovie", &UFrontEndPlayerListGFxObject::OwningMovie)
         .def_readwrite("PlayerListIds", &UFrontEndPlayerListGFxObject::PlayerListIds)
         .def_readwrite("SelectedPlayerIndex", &UFrontEndPlayerListGFxObject::SelectedPlayerIndex)

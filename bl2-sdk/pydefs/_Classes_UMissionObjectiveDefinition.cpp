@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UMissionObjectiveDefinition(py::module &m)
 {
     py::class_< UMissionObjectiveDefinition,  UGBXDefinition   >(m, "UMissionObjectiveDefinition")
+		.def_static("StaticClass", &UMissionObjectiveDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("StatId", &UMissionObjectiveDefinition::StatId)
         .def_readwrite("ObjectiveCount", &UMissionObjectiveDefinition::ObjectiveCount)
         .def_readwrite("OptionalCurrencyRewardType", &UMissionObjectiveDefinition::OptionalCurrencyRewardType)

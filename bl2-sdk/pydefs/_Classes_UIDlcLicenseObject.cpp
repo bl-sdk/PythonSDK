@@ -6,5 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UIDlcLicenseObject(py::module &m)
 {
     py::class_< UIDlcLicenseObject,  UInterface   >(m, "UIDlcLicenseObject")
+		.def_static("StaticClass", &UIDlcLicenseObject::StaticClass, py::return_value_policy::reference)
           ;
 }

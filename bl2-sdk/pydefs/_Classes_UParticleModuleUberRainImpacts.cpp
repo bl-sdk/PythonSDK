@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UParticleModuleUberRainImpacts(py::module &m)
 {
     py::class_< UParticleModuleUberRainImpacts,  UParticleModuleUberBase   >(m, "UParticleModuleUberRainImpacts")
+		.def_static("StaticClass", &UParticleModuleUberRainImpacts::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Lifetime", &UParticleModuleUberRainImpacts::Lifetime)
         .def_readwrite("StartSize", &UParticleModuleUberRainImpacts::StartSize)
         .def_readwrite("StartRotation", &UParticleModuleUberRainImpacts::StartRotation)

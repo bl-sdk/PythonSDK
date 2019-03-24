@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UIPlayerObserver(py::module &m)
 {
     py::class_< UIPlayerObserver,  UInterface   >(m, "UIPlayerObserver")
+		.def_static("StaticClass", &UIPlayerObserver::StaticClass, py::return_value_policy::reference)
         .def("PlayerLeftGame", &UIPlayerObserver::PlayerLeftGame)
         .def("PlayerEnteredGame", &UIPlayerObserver::PlayerEnteredGame)
           ;

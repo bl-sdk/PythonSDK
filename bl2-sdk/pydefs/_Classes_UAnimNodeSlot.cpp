@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAnimNodeSlot(py::module &m)
 {
     py::class_< UAnimNodeSlot,  UAnimNodeBlendBase   >(m, "UAnimNodeSlot")
+		.def_static("StaticClass", &UAnimNodeSlot::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PendingBlendOutTime", &UAnimNodeSlot::PendingBlendOutTime)
         .def_readwrite("CustomChildIndex", &UAnimNodeSlot::CustomChildIndex)
         .def_readwrite("TargetChildIndex", &UAnimNodeSlot::TargetChildIndex)

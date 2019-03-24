@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAdvancedAxisDefinition(py::module &m)
 {
     py::class_< UAdvancedAxisDefinition,  UGBXDefinition   >(m, "UAdvancedAxisDefinition")
+		.def_static("StaticClass", &UAdvancedAxisDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Speed", &UAdvancedAxisDefinition::Speed)
         .def_readwrite("ZoomSpeed", &UAdvancedAxisDefinition::ZoomSpeed)
         .def_readwrite("DeadZone", &UAdvancedAxisDefinition::DeadZone)

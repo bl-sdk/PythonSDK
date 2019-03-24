@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowVehicleFactory(py::module &m)
 {
     py::class_< AWillowVehicleFactory,  ANavigationPoint   >(m, "AWillowVehicleFactory")
+		.def_static("StaticClass", &AWillowVehicleFactory::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VehicleClass", &AWillowVehicleFactory::VehicleClass)
         .def_readwrite("VehicleArchetype", &AWillowVehicleFactory::VehicleArchetype)
         .def_readwrite("ChildVehicle", &AWillowVehicleFactory::ChildVehicle)

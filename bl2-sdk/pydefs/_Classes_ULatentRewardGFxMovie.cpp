@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ULatentRewardGFxMovie(py::module &m)
 {
     py::class_< ULatentRewardGFxMovie,  UWillowGFxMovie3D   >(m, "ULatentRewardGFxMovie")
+		.def_static("StaticClass", &ULatentRewardGFxMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("RewardObject", &ULatentRewardGFxMovie::RewardObject)
         .def("OnClosedOnDeath", &ULatentRewardGFxMovie::OnClosedOnDeath)
         .def("HandleInputAxis", &ULatentRewardGFxMovie::HandleInputAxis)

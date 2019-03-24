@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UUIDataProvider_OnlineFriendMessages(py::module &m)
 {
     py::class_< UUIDataProvider_OnlineFriendMessages,  UUIDataProvider_OnlinePlayerDataBase   >(m, "UUIDataProvider_OnlineFriendMessages")
+		.def_static("StaticClass", &UUIDataProvider_OnlineFriendMessages::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IUIListElementCellProvider", &UUIDataProvider_OnlineFriendMessages::VfTable_IUIListElementCellProvider)
         .def_readwrite("Messages", &UUIDataProvider_OnlineFriendMessages::Messages)
         .def_readwrite("SendingPlayerNameCol", &UUIDataProvider_OnlineFriendMessages::SendingPlayerNameCol)

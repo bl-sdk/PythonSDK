@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USeqAct_CameraFade(py::module &m)
 {
     py::class_< USeqAct_CameraFade,  USequenceAction   >(m, "USeqAct_CameraFade")
+		.def_static("StaticClass", &USeqAct_CameraFade::StaticClass, py::return_value_policy::reference)
         .def_readwrite("FadeColor", &USeqAct_CameraFade::FadeColor)
         .def_readwrite("FadeAlpha", &USeqAct_CameraFade::FadeAlpha)
         .def_readwrite("FadeOpacity", &USeqAct_CameraFade::FadeOpacity)

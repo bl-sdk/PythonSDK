@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UFastTravelStationGFxMovie(py::module &m)
 {
     py::class_< UFastTravelStationGFxMovie,  UWillowGFxThirdPersonMovie   >(m, "UFastTravelStationGFxMovie")
+		.def_static("StaticClass", &UFastTravelStationGFxMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("LocationDisplayNames", &UFastTravelStationGFxMovie::LocationDisplayNames)
         .def_readwrite("LocationStationStrings", &UFastTravelStationGFxMovie::LocationStationStrings)
         .def_readwrite("LocationStationDefinitions", &UFastTravelStationGFxMovie::LocationStationDefinitions)

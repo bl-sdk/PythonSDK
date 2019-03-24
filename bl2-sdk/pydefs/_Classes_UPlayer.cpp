@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPlayer(py::module &m)
 {
     py::class_< UPlayer,  UObject   >(m, "UPlayer")
+		.def_static("StaticClass", &UPlayer::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_FExec", &UPlayer::VfTable_FExec)
         .def_readwrite("Actor", &UPlayer::Actor)
         .def_readwrite("CurrentNetSpeed", &UPlayer::CurrentNetSpeed)

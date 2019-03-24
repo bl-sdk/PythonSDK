@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWebConnection(py::module &m)
 {
     py::class_< AWebConnection,  AInfo   >(m, "AWebConnection")
+		.def_static("StaticClass", &AWebConnection::StaticClass, py::return_value_policy::reference)
         .def_readwrite("WebServer", &AWebConnection::WebServer)
         .def_readwrite("ReceivedData", &AWebConnection::ReceivedData)
         .def_readwrite("Request", &AWebConnection::Request)

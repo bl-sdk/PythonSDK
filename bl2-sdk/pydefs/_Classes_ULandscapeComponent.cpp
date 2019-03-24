@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ULandscapeComponent(py::module &m)
 {
     py::class_< ULandscapeComponent,  UPrimitiveComponent   >(m, "ULandscapeComponent")
+		.def_static("StaticClass", &ULandscapeComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SectionBaseX", &ULandscapeComponent::SectionBaseX)
         .def_readwrite("SectionBaseY", &ULandscapeComponent::SectionBaseY)
         .def_readwrite("ComponentSizeQuads", &ULandscapeComponent::ComponentSizeQuads)

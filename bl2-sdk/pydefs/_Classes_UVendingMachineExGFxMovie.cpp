@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UVendingMachineExGFxMovie(py::module &m)
 {
     py::class_< UVendingMachineExGFxMovie,  UWillowInventoryGFxMovie   >(m, "UVendingMachineExGFxMovie")
+		.def_static("StaticClass", &UVendingMachineExGFxMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VM", &UVendingMachineExGFxMovie::VM)
         .def_readwrite("VMGFxDef", &UVendingMachineExGFxMovie::VMGFxDef)
         .def_readwrite("OwnerInventoryPawn", &UVendingMachineExGFxMovie::OwnerInventoryPawn)

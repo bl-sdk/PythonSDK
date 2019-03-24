@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AActor(py::module &m)
 {
     py::class_< AActor,  UObject   >(m, "AActor")
+		.def_static("StaticClass", &AActor::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIWorldBody", &AActor::VfTable_IIWorldBody)
         .def_readwrite("VfTable_IISpawnActor", &AActor::VfTable_IISpawnActor)
         .def_readwrite("VfTable_IIDamageCauser", &AActor::VfTable_IIDamageCauser)

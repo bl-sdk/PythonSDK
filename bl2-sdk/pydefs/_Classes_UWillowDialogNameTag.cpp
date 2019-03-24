@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowDialogNameTag(py::module &m)
 {
     py::class_< UWillowDialogNameTag,  UGearboxDialogNameTag   >(m, "UWillowDialogNameTag")
+		.def_static("StaticClass", &UWillowDialogNameTag::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CallerName", &UWillowDialogNameTag::CallerName)
         .def_readwrite("DefaultEchoPortrait", &UWillowDialogNameTag::DefaultEchoPortrait)
         .def_readwrite("EmotePortraits", &UWillowDialogNameTag::EmotePortraits)

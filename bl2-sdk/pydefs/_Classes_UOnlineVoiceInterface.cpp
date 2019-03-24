@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UOnlineVoiceInterface(py::module &m)
 {
     py::class_< UOnlineVoiceInterface,  UInterface   >(m, "UOnlineVoiceInterface")
+		.def_static("StaticClass", &UOnlineVoiceInterface::StaticClass, py::return_value_policy::reference)
         .def("SetVoiceVolume", &UOnlineVoiceInterface::SetVoiceVolume)
         .def("UnmuteAll", &UOnlineVoiceInterface::UnmuteAll)
         .def("MuteAll", &UOnlineVoiceInterface::MuteAll)

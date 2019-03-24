@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_URule(py::module &m)
 {
     py::class_< URule,  UObject   >(m, "URule")
+		.def_static("StaticClass", &URule::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MyRuleEngine", &URule::MyRuleEngine)
         .def_readwrite("Priority", &URule::Priority)
         .def_readwrite("BasePriority", &URule::BasePriority)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_APortalVolume(py::module &m)
 {
     py::class_< APortalVolume,  AActor   >(m, "APortalVolume")
+		.def_static("StaticClass", &APortalVolume::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Portals", &APortalVolume::Portals)
         .def_readwrite("AssociatedActors", &AVolume::AssociatedActors)
         .def_readwrite("CsgOper", &ABrush::CsgOper)

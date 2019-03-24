@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UITargetable(py::module &m)
 {
     py::class_< UITargetable,  UInterface   >(m, "UITargetable")
+		.def_static("StaticClass", &UITargetable::StaticClass, py::return_value_policy::reference)
         .def("SetPatsy", &UITargetable::SetPatsy)
         .def("GetPatsy", &UITargetable::GetPatsy, py::return_value_policy::reference)
         .def("IsBeingHealed", &UITargetable::IsBeingHealed)

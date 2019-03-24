@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowPlayerReplicationInfo(py::module &m)
 {
     py::class_< AWillowPlayerReplicationInfo,  APlayerReplicationInfo   >(m, "AWillowPlayerReplicationInfo")
+		.def_static("StaticClass", &AWillowPlayerReplicationInfo::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IINounAttributeProvider", &AWillowPlayerReplicationInfo::VfTable_IINounAttributeProvider)
         .def_readwrite("ExpLevel", &AWillowPlayerReplicationInfo::ExpLevel)
         .def_readwrite("ExpPointsNextLevelAt", &AWillowPlayerReplicationInfo::ExpPointsNextLevelAt)

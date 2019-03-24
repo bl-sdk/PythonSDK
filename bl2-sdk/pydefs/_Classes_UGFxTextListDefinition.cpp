@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGFxTextListDefinition(py::module &m)
 {
     py::class_< UGFxTextListDefinition,  UGBXDefinition   >(m, "UGFxTextListDefinition")
+		.def_static("StaticClass", &UGFxTextListDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ContainerName", &UGFxTextListDefinition::ContainerName)
         .def_readwrite("FunctionPath", &UGFxTextListDefinition::FunctionPath)
         .def_readwrite("MoreUpName", &UGFxTextListDefinition::MoreUpName)

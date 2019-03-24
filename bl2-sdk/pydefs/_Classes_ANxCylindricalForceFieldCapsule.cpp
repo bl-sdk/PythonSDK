@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ANxCylindricalForceFieldCapsule(py::module &m)
 {
     py::class_< ANxCylindricalForceFieldCapsule,  ANxForceField   >(m, "ANxCylindricalForceFieldCapsule")
+		.def_static("StaticClass", &ANxCylindricalForceFieldCapsule::StaticClass, py::return_value_policy::reference)
         .def_readwrite("RenderComponent", &ANxCylindricalForceFieldCapsule::RenderComponent)
         .def_readwrite("RadialStrength", &ANxCylindricalForceField::RadialStrength)
         .def_readwrite("RotationalStrength", &ANxCylindricalForceField::RotationalStrength)

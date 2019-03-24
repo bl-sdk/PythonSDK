@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UMeleeDefinition(py::module &m)
 {
     py::class_< UMeleeDefinition,  UGBXDefinition   >(m, "UMeleeDefinition")
+		.def_static("StaticClass", &UMeleeDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIDamageCauser", &UMeleeDefinition::VfTable_IIDamageCauser)
         .def_readwrite("Damage", &UMeleeDefinition::Damage)
         .def_readwrite("DamageSource", &UMeleeDefinition::DamageSource)

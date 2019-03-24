@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ATeleporterDestination(py::module &m)
 {
     py::class_< ATeleporterDestination,  AActor   >(m, "ATeleporterDestination")
+		.def_static("StaticClass", &ATeleporterDestination::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ExitPoints", &ATeleporterDestination::ExitPoints)
         .def_readwrite("ExitPointsCounter", &ATeleporterDestination::ExitPointsCounter)
         .def("GetNextExitPoint", &ATeleporterDestination::GetNextExitPoint, py::return_value_policy::reference)

@@ -6,5 +6,6 @@ namespace py = pybind11;
 void Export_pystes_UChallengesPanelDefinition(py::module &m)
 {
     py::class_< UChallengesPanelDefinition,  UGBXDefinition   >(m, "UChallengesPanelDefinition")
+		.def_static("StaticClass", &UChallengesPanelDefinition::StaticClass, py::return_value_policy::reference)
           ;
 }

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ADeathtrapActionSkill(py::module &m)
 {
     py::class_< ADeathtrapActionSkill,  AActionSkill   >(m, "ADeathtrapActionSkill")
+		.def_static("StaticClass", &ADeathtrapActionSkill::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DeathTrap", &ADeathtrapActionSkill::DeathTrap)
         .def_readwrite("ShareShieldsSkill", &ADeathtrapActionSkill::ShareShieldsSkill)
         .def_readwrite("MedicBeamTarget", &ADeathtrapActionSkill::MedicBeamTarget)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UIDialogBox(py::module &m)
 {
     py::class_< UIDialogBox,  UInterface   >(m, "UIDialogBox")
+		.def_static("StaticClass", &UIDialogBox::StaticClass, py::return_value_policy::reference)
         .def("eventDisplayYesNoBox", &UIDialogBox::eventDisplayYesNoBox)
         .def("eventDisplayOkBox", &UIDialogBox::eventDisplayOkBox)
         .def("eventApplyContentChanges", &UIDialogBox::eventApplyContentChanges)

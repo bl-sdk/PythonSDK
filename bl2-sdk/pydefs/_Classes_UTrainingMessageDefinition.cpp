@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UTrainingMessageDefinition(py::module &m)
 {
     py::class_< UTrainingMessageDefinition,  UGBXDefinition   >(m, "UTrainingMessageDefinition")
+		.def_static("StaticClass", &UTrainingMessageDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("StatId", &UTrainingMessageDefinition::StatId)
         .def_readwrite("StatTargetValue", &UTrainingMessageDefinition::StatTargetValue)
         .def_readwrite("Key", &UTrainingMessageDefinition::Key)

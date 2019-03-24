@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBadassPanelGFxObject(py::module &m)
 {
     py::class_< UBadassPanelGFxObject,  UBaseInventoryPanelGFxObject   >(m, "UBadassPanelGFxObject")
+		.def_static("StaticClass", &UBadassPanelGFxObject::StaticClass, py::return_value_policy::reference)
         .def_readwrite("BA_RankString", &UBadassPanelGFxObject::BA_RankString)
         .def_readwrite("BA_TokensString", &UBadassPanelGFxObject::BA_TokensString)
         .def_readwrite("BA_RedeemTokenButtonString", &UBadassPanelGFxObject::BA_RedeemTokenButtonString)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UTwoPanelInterfaceGFxObject(py::module &m)
 {
     py::class_< UTwoPanelInterfaceGFxObject,  UBaseTopLevelPanelGFxObject   >(m, "UTwoPanelInterfaceGFxObject")
+		.def_static("StaticClass", &UTwoPanelInterfaceGFxObject::StaticClass, py::return_value_policy::reference)
         .def_readwrite("TwoPanelInterface", &UTwoPanelInterfaceGFxObject::TwoPanelInterface)
         .def_readwrite("StoragePanel", &UTwoPanelInterfaceGFxObject::StoragePanel)
         .def_readwrite("PlayerPanel", &UTwoPanelInterfaceGFxObject::PlayerPanel)

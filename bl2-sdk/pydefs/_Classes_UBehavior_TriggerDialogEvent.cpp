@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_TriggerDialogEvent(py::module &m)
 {
     py::class_< UBehavior_TriggerDialogEvent,  UBehaviorBase   >(m, "UBehavior_TriggerDialogEvent")
+		.def_static("StaticClass", &UBehavior_TriggerDialogEvent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("EventTag", &UBehavior_TriggerDialogEvent::EventTag)
         .def_readwrite("Group", &UBehavior_TriggerDialogEvent::Group)
         .def_readwrite("NameTag", &UBehavior_TriggerDialogEvent::NameTag)

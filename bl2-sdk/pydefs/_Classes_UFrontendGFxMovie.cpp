@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UFrontendGFxMovie(py::module &m)
 {
     py::class_< UFrontendGFxMovie,  UWillowGFxMovie3D   >(m, "UFrontendGFxMovie")
+		.def_static("StaticClass", &UFrontendGFxMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MyFrontendDefinition", &UFrontendGFxMovie::MyFrontendDefinition)
         .def_readwrite("FrontendMenu", &UFrontendGFxMovie::FrontendMenu)
         .def_readwrite("TheList", &UFrontendGFxMovie::TheList)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USeqAct_SetVectorComponents(py::module &m)
 {
     py::class_< USeqAct_SetVectorComponents,  USequenceAction   >(m, "USeqAct_SetVectorComponents")
+		.def_static("StaticClass", &USeqAct_SetVectorComponents::StaticClass, py::return_value_policy::reference)
         .def_readwrite("OutVector", &USeqAct_SetVectorComponents::OutVector)
         .def_readwrite("X", &USeqAct_SetVectorComponents::X)
         .def_readwrite("Y", &USeqAct_SetVectorComponents::Y)

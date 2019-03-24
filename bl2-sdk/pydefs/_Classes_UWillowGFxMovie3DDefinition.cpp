@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowGFxMovie3DDefinition(py::module &m)
 {
     py::class_< UWillowGFxMovie3DDefinition,  UGFxMovieDefinition   >(m, "UWillowGFxMovie3DDefinition")
+		.def_static("StaticClass", &UWillowGFxMovie3DDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("View3DFOV", &UWillowGFxMovie3DDefinition::View3DFOV)
         .def_readwrite("View3DScale", &UWillowGFxMovie3DDefinition::View3DScale)
         .def_readwrite("View3DTrans", &UWillowGFxMovie3DDefinition::View3DTrans)

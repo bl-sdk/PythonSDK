@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowSeqAct_NotifyDesignerAttribute(py::module &m)
 {
     py::class_< UWillowSeqAct_NotifyDesignerAttribute,  USequenceAction   >(m, "UWillowSeqAct_NotifyDesignerAttribute")
+		.def_static("StaticClass", &UWillowSeqAct_NotifyDesignerAttribute::StaticClass, py::return_value_policy::reference)
         .def_readwrite("AttributeName", &UWillowSeqAct_NotifyDesignerAttribute::AttributeName)
         .def_readwrite("OptionalAttributeDefinition", &UWillowSeqAct_NotifyDesignerAttribute::OptionalAttributeDefinition)
         .def("eventActivated", &UWillowSeqAct_NotifyDesignerAttribute::eventActivated)

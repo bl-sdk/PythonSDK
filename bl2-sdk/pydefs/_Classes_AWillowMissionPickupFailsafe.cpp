@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowMissionPickupFailsafe(py::module &m)
 {
     py::class_< AWillowMissionPickupFailsafe,  AActor   >(m, "AWillowMissionPickupFailsafe")
+		.def_static("StaticClass", &AWillowMissionPickupFailsafe::StaticClass, py::return_value_policy::reference)
         .def_readwrite("LinkedAspect", &AWillowMissionPickupFailsafe::LinkedAspect)
         .def_readwrite("CompletedObjective", &AWillowMissionPickupFailsafe::CompletedObjective)
         .def_readwrite("ObjectiveSet", &AWillowMissionPickupFailsafe::ObjectiveSet)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AGameInfo(py::module &m)
 {
     py::class_< AGameInfo,  AInfo   >(m, "AGameInfo")
+		.def_static("StaticClass", &AGameInfo::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CauseEventCommand", &AGameInfo::CauseEventCommand)
         .def_readwrite("BugLocString", &AGameInfo::BugLocString)
         .def_readwrite("BugRotString", &AGameInfo::BugRotString)

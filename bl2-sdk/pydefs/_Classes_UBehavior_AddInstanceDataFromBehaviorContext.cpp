@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_AddInstanceDataFromBehaviorContext(py::module &m)
 {
     py::class_< UBehavior_AddInstanceDataFromBehaviorContext,  UBehaviorBase   >(m, "UBehavior_AddInstanceDataFromBehaviorContext")
+		.def_static("StaticClass", &UBehavior_AddInstanceDataFromBehaviorContext::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DatumName", &UBehavior_AddInstanceDataFromBehaviorContext::DatumName)
         .def_readwrite("ObjectContext", &UBehavior_AddInstanceDataFromBehaviorContext::ObjectContext)
         .def("ApplyBehaviorToContext", &UBehavior_AddInstanceDataFromBehaviorContext::ApplyBehaviorToContext)

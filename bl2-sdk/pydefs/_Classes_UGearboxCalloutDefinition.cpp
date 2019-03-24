@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGearboxCalloutDefinition(py::module &m)
 {
     py::class_< UGearboxCalloutDefinition,  UGBXDefinition   >(m, "UGearboxCalloutDefinition")
+		.def_static("StaticClass", &UGearboxCalloutDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MaxCallOutDistance", &UGearboxCalloutDefinition::MaxCallOutDistance)
         .def_readwrite("MinCallOutDistance", &UGearboxCalloutDefinition::MinCallOutDistance)
         .def_readwrite("MinRarityCallOutLevel", &UGearboxCalloutDefinition::MinRarityCallOutLevel)

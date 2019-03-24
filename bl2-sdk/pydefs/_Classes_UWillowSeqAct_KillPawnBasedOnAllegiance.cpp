@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowSeqAct_KillPawnBasedOnAllegiance(py::module &m)
 {
     py::class_< UWillowSeqAct_KillPawnBasedOnAllegiance,  USequenceAction   >(m, "UWillowSeqAct_KillPawnBasedOnAllegiance")
+		.def_static("StaticClass", &UWillowSeqAct_KillPawnBasedOnAllegiance::StaticClass, py::return_value_policy::reference)
         .def_readwrite("AllegianceToBaseKillsOn", &UWillowSeqAct_KillPawnBasedOnAllegiance::AllegianceToBaseKillsOn)
         .def_readwrite("AllegianceKillRelationship", &UWillowSeqAct_KillPawnBasedOnAllegiance::AllegianceKillRelationship)
         .def_readwrite("DamageSource", &UWillowSeqAct_KillPawnBasedOnAllegiance::DamageSource)

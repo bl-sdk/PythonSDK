@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UVehicleChoiceModuleGFxObject(py::module &m)
 {
     py::class_< UVehicleChoiceModuleGFxObject,  UGFxObject   >(m, "UVehicleChoiceModuleGFxObject")
+		.def_static("StaticClass", &UVehicleChoiceModuleGFxObject::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CachedVehicleState", &UVehicleChoiceModuleGFxObject::CachedVehicleState)
         .def_readwrite("SelectedVehicleUIDefinition", &UVehicleChoiceModuleGFxObject::SelectedVehicleUIDefinition)
         .def_readwrite("EquippedVehicleCustomizationDefinition", &UVehicleChoiceModuleGFxObject::EquippedVehicleCustomizationDefinition)

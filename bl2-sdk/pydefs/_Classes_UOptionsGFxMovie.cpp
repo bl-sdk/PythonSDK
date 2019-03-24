@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UOptionsGFxMovie(py::module &m)
 {
     py::class_< UOptionsGFxMovie,  UWillowGFxMovie3D   >(m, "UOptionsGFxMovie")
+		.def_static("StaticClass", &UOptionsGFxMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("OptionsObj", &UOptionsGFxMovie::OptionsObj)
         .def_readwrite("TheList", &UOptionsGFxMovie::TheList)
         .def_readwrite("TooltipSpacing", &UOptionsGFxMovie::TooltipSpacing)

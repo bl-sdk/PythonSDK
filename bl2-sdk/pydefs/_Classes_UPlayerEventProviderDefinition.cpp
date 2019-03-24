@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPlayerEventProviderDefinition(py::module &m)
 {
     py::class_< UPlayerEventProviderDefinition,  UGBXDefinition   >(m, "UPlayerEventProviderDefinition")
+		.def_static("StaticClass", &UPlayerEventProviderDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIBehaviorProvider", &UPlayerEventProviderDefinition::VfTable_IIBehaviorProvider)
         .def_readwrite("VfTable_IIConstructObject", &UPlayerEventProviderDefinition::VfTable_IIConstructObject)
         .def_readwrite("BehaviorProviderDefinition", &UPlayerEventProviderDefinition::BehaviorProviderDefinition)

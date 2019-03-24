@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UOnlineGameInterfaceImpl(py::module &m)
 {
     py::class_< UOnlineGameInterfaceImpl,  UObject   >(m, "UOnlineGameInterfaceImpl")
+		.def_static("StaticClass", &UOnlineGameInterfaceImpl::StaticClass, py::return_value_policy::reference)
         .def_readwrite("OwningSubsystem", &UOnlineGameInterfaceImpl::OwningSubsystem)
         .def_readwrite("GameSettings", &UOnlineGameInterfaceImpl::GameSettings)
         .def_readwrite("GameSearch", &UOnlineGameInterfaceImpl::GameSearch)

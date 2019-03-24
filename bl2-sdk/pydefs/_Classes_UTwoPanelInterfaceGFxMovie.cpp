@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UTwoPanelInterfaceGFxMovie(py::module &m)
 {
     py::class_< UTwoPanelInterfaceGFxMovie,  UWillowInventoryGFxMovie   >(m, "UTwoPanelInterfaceGFxMovie")
+		.def_static("StaticClass", &UTwoPanelInterfaceGFxMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("TwoPanelInterface", &UTwoPanelInterfaceGFxMovie::TwoPanelInterface)
         .def_readwrite("GenericSortConfigurations", &UTwoPanelInterfaceGFxMovie::GenericSortConfigurations)
         .def_readwrite("GenericSortConfigIndex_Storage", &UTwoPanelInterfaceGFxMovie::GenericSortConfigIndex_Storage)

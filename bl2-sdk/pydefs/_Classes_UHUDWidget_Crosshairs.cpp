@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UHUDWidget_Crosshairs(py::module &m)
 {
     py::class_< UHUDWidget_Crosshairs,  UGFxObject   >(m, "UHUDWidget_Crosshairs")
+		.def_static("StaticClass", &UHUDWidget_Crosshairs::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CrosshairSize", &UHUDWidget_Crosshairs::CrosshairSize)
         .def_readwrite("CrosshairFrame", &UHUDWidget_Crosshairs::CrosshairFrame)
         .def_readwrite("CrosshairVisibility", &UHUDWidget_Crosshairs::CrosshairVisibility)

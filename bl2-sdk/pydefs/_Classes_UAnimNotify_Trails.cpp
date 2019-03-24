@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAnimNotify_Trails(py::module &m)
 {
     py::class_< UAnimNotify_Trails,  UAnimNotify   >(m, "UAnimNotify_Trails")
+		.def_static("StaticClass", &UAnimNotify_Trails::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PSTemplate", &UAnimNotify_Trails::PSTemplate)
         .def_readwrite("FirstEdgeSocketName", &UAnimNotify_Trails::FirstEdgeSocketName)
         .def_readwrite("ControlPointSocketName", &UAnimNotify_Trails::ControlPointSocketName)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UInventoryCardGFx(py::module &m)
 {
     py::class_< UInventoryCardGFx,  UObject   >(m, "UInventoryCardGFx")
+		.def_static("StaticClass", &UInventoryCardGFx::StaticClass, py::return_value_policy::reference)
         .def("UpdateCardPanel", &UInventoryCardGFx::UpdateCardPanel)
         .def("SetMissionItemCard", &UInventoryCardGFx::SetMissionItemCard)
         .def("SetItemCard", &UInventoryCardGFx::SetItemCard)

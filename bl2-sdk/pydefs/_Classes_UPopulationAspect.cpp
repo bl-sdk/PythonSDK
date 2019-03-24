@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPopulationAspect(py::module &m)
 {
     py::class_< UPopulationAspect,  UObject   >(m, "UPopulationAspect")
+		.def_static("StaticClass", &UPopulationAspect::StaticClass, py::return_value_policy::reference)
         .def("eventDenStatRemoved", &UPopulationAspect::eventDenStatRemoved)
         .def("eventDenStatAdded", &UPopulationAspect::eventDenStatAdded)
         .def("eventEnabledStatusChanged", &UPopulationAspect::eventEnabledStatusChanged)

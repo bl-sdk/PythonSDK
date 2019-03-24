@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USeqAct_UpdatePhysBonesFromAnim(py::module &m)
 {
     py::class_< USeqAct_UpdatePhysBonesFromAnim,  USequenceAction   >(m, "USeqAct_UpdatePhysBonesFromAnim")
+		.def_static("StaticClass", &USeqAct_UpdatePhysBonesFromAnim::StaticClass, py::return_value_policy::reference)
         .def("eventGetObjClassVersion", &USeqAct_UpdatePhysBonesFromAnim::eventGetObjClassVersion)
           ;
 }

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AInteractiveFoliageActor(py::module &m)
 {
     py::class_< AInteractiveFoliageActor,  AActor   >(m, "AInteractiveFoliageActor")
+		.def_static("StaticClass", &AInteractiveFoliageActor::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CylinderComponent", &AInteractiveFoliageActor::CylinderComponent)
         .def_readwrite("TouchingActorEntryPosition", &AInteractiveFoliageActor::TouchingActorEntryPosition)
         .def_readwrite("FoliageVelocity", &AInteractiveFoliageActor::FoliageVelocity)

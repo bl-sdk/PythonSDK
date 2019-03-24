@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGearboxCoverStateManager(py::module &m)
 {
     py::class_< UGearboxCoverStateManager,  UObject   >(m, "UGearboxCoverStateManager")
+		.def_static("StaticClass", &UGearboxCoverStateManager::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MyGearboxPawn", &UGearboxCoverStateManager::MyGearboxPawn)
         .def_readwrite("DesiredCoverState", &UGearboxCoverStateManager::DesiredCoverState)
         .def_readwrite("CurrentCoverState", &UGearboxCoverStateManager::CurrentCoverState)

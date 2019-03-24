@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UOnlineTitleFileInterface(py::module &m)
 {
     py::class_< UOnlineTitleFileInterface,  UInterface   >(m, "UOnlineTitleFileInterface")
+		.def_static("StaticClass", &UOnlineTitleFileInterface::StaticClass, py::return_value_policy::reference)
         .def("ClearShareTitleFileCompleteDelegate", &UOnlineTitleFileInterface::ClearShareTitleFileCompleteDelegate)
         .def("AddShareTitleFileCompleteDelegate", &UOnlineTitleFileInterface::AddShareTitleFileCompleteDelegate)
         .def("ShareTitleFile", &UOnlineTitleFileInterface::ShareTitleFile)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWwiseSoundVolume(py::module &m)
 {
     py::class_< AWwiseSoundVolume,  AVolume   >(m, "AWwiseSoundVolume")
+		.def_static("StaticClass", &AWwiseSoundVolume::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIAkEnvironmentalEffectProvider", &AWwiseSoundVolume::VfTable_IIAkEnvironmentalEffectProvider)
         .def_readwrite("VfTable_IISpecialOcclusionProvider", &AWwiseSoundVolume::VfTable_IISpecialOcclusionProvider)
         .def_readwrite("VfTable_IISpecialOcclusionAccumulator", &AWwiseSoundVolume::VfTable_IISpecialOcclusionAccumulator)

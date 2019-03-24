@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UUIDataStore_MenuItems(py::module &m)
 {
     py::class_< UUIDataStore_MenuItems,  UUIDataStore_GameResource   >(m, "UUIDataStore_MenuItems")
+		.def_static("StaticClass", &UUIDataStore_MenuItems::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CurrentGameSettingsTag", &UUIDataStore_MenuItems::CurrentGameSettingsTag)
         .def_readwrite("OptionProviders", &UUIDataStore_MenuItems::OptionProviders)
         .def_readwrite("DynamicProviders", &UUIDataStore_MenuItems::DynamicProviders)

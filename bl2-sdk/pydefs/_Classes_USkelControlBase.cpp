@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USkelControlBase(py::module &m)
 {
     py::class_< USkelControlBase,  UAnimObject   >(m, "USkelControlBase")
+		.def_static("StaticClass", &USkelControlBase::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ControlName", &USkelControlBase::ControlName)
         .def_readwrite("ControlStrength", &USkelControlBase::ControlStrength)
         .def_readwrite("BlendInTime", &USkelControlBase::BlendInTime)

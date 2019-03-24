@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UExperienceResourcePool(py::module &m)
 {
     py::class_< UExperienceResourcePool,  UResourcePool   >(m, "UExperienceResourcePool")
+		.def_static("StaticClass", &UExperienceResourcePool::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ExpCombatPointsScale", &UExperienceResourcePool::ExpCombatPointsScale)
         .def_readwrite("ExpCombatPointsScaleBaseValue", &UExperienceResourcePool::ExpCombatPointsScaleBaseValue)
         .def_readwrite("ExpCombatPointsScaleModifierStack", &UExperienceResourcePool::ExpCombatPointsScaleModifierStack)

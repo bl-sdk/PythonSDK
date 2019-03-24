@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UMeshBeacon(py::module &m)
 {
     py::class_< UMeshBeacon,  UObject   >(m, "UMeshBeacon")
+		.def_static("StaticClass", &UMeshBeacon::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_FTickableObject", &UMeshBeacon::VfTable_FTickableObject)
         .def_readwrite("MeshBeaconPort", &UMeshBeacon::MeshBeaconPort)
         .def_readwrite("Socket", &UMeshBeacon::Socket)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowAutoAimProfileDefinition(py::module &m)
 {
     py::class_< UWillowAutoAimProfileDefinition,  UGBXDefinition   >(m, "UWillowAutoAimProfileDefinition")
+		.def_static("StaticClass", &UWillowAutoAimProfileDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MagnetismMin", &UWillowAutoAimProfileDefinition::MagnetismMin)
         .def_readwrite("MagnetismMax", &UWillowAutoAimProfileDefinition::MagnetismMax)
         .def_readwrite("MaxRotationH", &UWillowAutoAimProfileDefinition::MaxRotationH)

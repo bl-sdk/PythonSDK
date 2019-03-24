@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPopulationFactory(py::module &m)
 {
     py::class_< UPopulationFactory,  UObject   >(m, "UPopulationFactory")
+		.def_static("StaticClass", &UPopulationFactory::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIConstructObject", &UPopulationFactory::VfTable_IIConstructObject)
         .def_readwrite("OnActorSpawn", &UPopulationFactory::OnActorSpawn)
         .def_readwrite("DestructionParams", &UPopulationFactory::DestructionParams)

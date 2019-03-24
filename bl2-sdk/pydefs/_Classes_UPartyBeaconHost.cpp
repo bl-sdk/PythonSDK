@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPartyBeaconHost(py::module &m)
 {
     py::class_< UPartyBeaconHost,  UObject   >(m, "UPartyBeaconHost")
+		.def_static("StaticClass", &UPartyBeaconHost::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Clients", &UPartyBeaconHost::Clients)
         .def_readwrite("NumTeams", &UPartyBeaconHost::NumTeams)
         .def_readwrite("NumPlayersPerTeam", &UPartyBeaconHost::NumPlayersPerTeam)

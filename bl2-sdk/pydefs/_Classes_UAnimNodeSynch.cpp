@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAnimNodeSynch(py::module &m)
 {
     py::class_< UAnimNodeSynch,  UAnimNodeBlendBase   >(m, "UAnimNodeSynch")
+		.def_static("StaticClass", &UAnimNodeSynch::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Groups", &UAnimNodeSynch::Groups)
         .def("SetGroupRateScale", &UAnimNodeSynch::SetGroupRateScale)
         .def("GetRelativePosition", &UAnimNodeSynch::GetRelativePosition)

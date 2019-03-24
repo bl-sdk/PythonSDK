@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USettings(py::module &m)
 {
     py::class_< USettings,  UObject   >(m, "USettings")
+		.def_static("StaticClass", &USettings::StaticClass, py::return_value_policy::reference)
         .def_readwrite("LocalizedSettings", &USettings::LocalizedSettings)
         .def_readwrite("Properties", &USettings::Properties)
         .def_readwrite("LocalizedSettingsMappings", &USettings::LocalizedSettingsMappings)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBehavior_SetUsabilityCost(py::module &m)
 {
     py::class_< UBehavior_SetUsabilityCost,  UBehaviorBase   >(m, "UBehavior_SetUsabilityCost")
+		.def_static("StaticClass", &UBehavior_SetUsabilityCost::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ChangeCost", &UBehavior_SetUsabilityCost::ChangeCost)
         .def_readwrite("CostCurrencyType", &UBehavior_SetUsabilityCost::CostCurrencyType)
         .def_readwrite("UsabilityType", &UBehavior_SetUsabilityCost::UsabilityType)

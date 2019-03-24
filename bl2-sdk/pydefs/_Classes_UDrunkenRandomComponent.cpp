@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UDrunkenRandomComponent(py::module &m)
 {
     py::class_< UDrunkenRandomComponent,  UDrunkenBaseComponent   >(m, "UDrunkenRandomComponent")
+		.def_static("StaticClass", &UDrunkenRandomComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PathCorrectionInterval", &UDrunkenRandomComponent::PathCorrectionInterval)
         .def_readwrite("TurnSpeed", &UDrunkenRandomComponent::TurnSpeed)
         .def_readwrite("ApproachTurnSpeed", &UDrunkenRandomComponent::ApproachTurnSpeed)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPlayerDetailsGFxMovie(py::module &m)
 {
     py::class_< UPlayerDetailsGFxMovie,  UWillowGFxMovie   >(m, "UPlayerDetailsGFxMovie")
+		.def_static("StaticClass", &UPlayerDetailsGFxMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PlayerDetailsObject", &UPlayerDetailsGFxMovie::PlayerDetailsObject)
         .def_readwrite("OwningMovie", &UPlayerDetailsGFxMovie::OwningMovie)
         .def("HandleInputKey", &UPlayerDetailsGFxMovie::HandleInputKey)

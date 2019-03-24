@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAction_MortarAttack(py::module &m)
 {
     py::class_< UAction_MortarAttack,  UAction_Burrow   >(m, "UAction_MortarAttack")
+		.def_static("StaticClass", &UAction_MortarAttack::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ShotDelay", &UAction_MortarAttack::ShotDelay)
         .def_readwrite("MortarSocket", &UAction_MortarAttack::MortarSocket)
         .def_readwrite("Options", &UAction_MortarAttack::Options)

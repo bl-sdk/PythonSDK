@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowVehicleSimChopper(py::module &m)
 {
     py::class_< UWillowVehicleSimChopper,  USVehicleSimBase   >(m, "UWillowVehicleSimChopper")
+		.def_static("StaticClass", &UWillowVehicleSimChopper::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MaxThrustForce", &UWillowVehicleSimChopper::MaxThrustForce)
         .def_readwrite("MaxReverseForce", &UWillowVehicleSimChopper::MaxReverseForce)
         .def_readwrite("LongDamping", &UWillowVehicleSimChopper::LongDamping)

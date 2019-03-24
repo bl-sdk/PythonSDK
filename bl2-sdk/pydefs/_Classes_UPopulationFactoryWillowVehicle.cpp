@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPopulationFactoryWillowVehicle(py::module &m)
 {
     py::class_< UPopulationFactoryWillowVehicle,  UPopulationFactory   >(m, "UPopulationFactoryWillowVehicle")
+		.def_static("StaticClass", &UPopulationFactoryWillowVehicle::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VehicleBalanceDefinition", &UPopulationFactoryWillowVehicle::VehicleBalanceDefinition)
         .def_readwrite("VehicleArchetype", &UPopulationFactoryWillowVehicle::VehicleArchetype)
         .def_readwrite("SpawnAllegiance", &UPopulationFactoryWillowVehicle::SpawnAllegiance)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowBaseStats(py::module &m)
 {
     py::class_< AWillowBaseStats,  AInfo   >(m, "AWillowBaseStats")
+		.def_static("StaticClass", &AWillowBaseStats::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_ISparkUpdateCallback", &AWillowBaseStats::VfTable_ISparkUpdateCallback)
         .def_readwrite("SaveVersion", &AWillowBaseStats::SaveVersion)
         .def_readwrite("ReadVersion", &AWillowBaseStats::ReadVersion)

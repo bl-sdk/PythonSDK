@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UHUDDefinition(py::module &m)
 {
     py::class_< UHUDDefinition,  UGBXDefinition   >(m, "UHUDDefinition")
+		.def_static("StaticClass", &UHUDDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MaxDamageIndicators", &UHUDDefinition::MaxDamageIndicators)
         .def_readwrite("DamageIndicatorLifetime", &UHUDDefinition::DamageIndicatorLifetime)
         .def_readwrite("ItemCardAwarenessRange", &UHUDDefinition::ItemCardAwarenessRange)

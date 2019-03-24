@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGenericParamListStatEntry(py::module &m)
 {
     py::class_< UGenericParamListStatEntry,  UObject   >(m, "UGenericParamListStatEntry")
+		.def_static("StaticClass", &UGenericParamListStatEntry::StaticClass, py::return_value_policy::reference)
         .def_readwrite("StatEvent", &UGenericParamListStatEntry::StatEvent)
         .def_readwrite("Writer", &UGenericParamListStatEntry::Writer)
         .def("CommitToDisk", &UGenericParamListStatEntry::CommitToDisk)

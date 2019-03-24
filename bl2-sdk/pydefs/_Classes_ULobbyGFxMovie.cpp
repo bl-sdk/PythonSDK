@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ULobbyGFxMovie(py::module &m)
 {
     py::class_< ULobbyGFxMovie,  UFrontendGFxMovie   >(m, "ULobbyGFxMovie")
+		.def_static("StaticClass", &ULobbyGFxMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PrimaryPlayerPRI", &ULobbyGFxMovie::PrimaryPlayerPRI)
         .def_readwrite("SplitPlayerPRI", &ULobbyGFxMovie::SplitPlayerPRI)
         .def("FadeLobbyDeco", &ULobbyGFxMovie::FadeLobbyDeco)

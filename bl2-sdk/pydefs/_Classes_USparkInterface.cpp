@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USparkInterface(py::module &m)
 {
     py::class_< USparkInterface,  UInterface   >(m, "USparkInterface")
+		.def_static("StaticClass", &USparkInterface::StaticClass, py::return_value_policy::reference)
         .def("GetNewsService", &USparkInterface::GetNewsService, py::return_value_policy::reference)
         .def("GetTitleStorageServiceConfiguration", &USparkInterface::GetTitleStorageServiceConfiguration, py::return_value_policy::reference)
         .def("GetTitleStorageUrl", &USparkInterface::GetTitleStorageUrl)

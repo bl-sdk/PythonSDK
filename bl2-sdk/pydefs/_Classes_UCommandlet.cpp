@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UCommandlet(py::module &m)
 {
     py::class_< UCommandlet,  UObject   >(m, "UCommandlet")
+		.def_static("StaticClass", &UCommandlet::StaticClass, py::return_value_policy::reference)
         .def_readwrite("HelpDescription", &UCommandlet::HelpDescription)
         .def_readwrite("HelpUsage", &UCommandlet::HelpUsage)
         .def_readwrite("HelpWebLink", &UCommandlet::HelpWebLink)

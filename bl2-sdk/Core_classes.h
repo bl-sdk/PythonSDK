@@ -235,10 +235,6 @@ public:
 		return nullptr;
 	}
 
-	template <class T> T* As() {
-		return (T *)this;
-	}
-
 	static UClass* FindClass(char* ClassFullName);
 
 	bool IsA(UClass* pClass) const;

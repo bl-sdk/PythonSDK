@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGrenadeModDefinition(py::module &m)
 {
     py::class_< UGrenadeModDefinition,  UEquipableItemDefinition   >(m, "UGrenadeModDefinition")
+		.def_static("StaticClass", &UGrenadeModDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DefaultProjectileDefinition", &UGrenadeModDefinition::DefaultProjectileDefinition)
         .def_readwrite("ProjectileBaseValues", &UGrenadeModDefinition::ProjectileBaseValues)
         .def_readwrite("SetProjectileSequenceState", &UGrenadeModDefinition::SetProjectileSequenceState)

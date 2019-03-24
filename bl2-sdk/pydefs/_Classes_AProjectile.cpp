@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AProjectile(py::module &m)
 {
     py::class_< AProjectile,  AActor   >(m, "AProjectile")
+		.def_static("StaticClass", &AProjectile::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Speed", &AProjectile::Speed)
         .def_readwrite("MaxSpeed", &AProjectile::MaxSpeed)
         .def_readwrite("ZeroCollider", &AProjectile::ZeroCollider)

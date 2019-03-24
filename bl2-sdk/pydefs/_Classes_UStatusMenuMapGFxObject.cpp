@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UStatusMenuMapGFxObject(py::module &m)
 {
     py::class_< UStatusMenuMapGFxObject,  UGFxObject   >(m, "UStatusMenuMapGFxObject")
+		.def_static("StaticClass", &UStatusMenuMapGFxObject::StaticClass, py::return_value_policy::reference)
         .def_readwrite("ViewBorder", &UStatusMenuMapGFxObject::ViewBorder)
         .def_readwrite("PanRate", &UStatusMenuMapGFxObject::PanRate)
         .def_readwrite("PlayerOwner", &UStatusMenuMapGFxObject::PlayerOwner)

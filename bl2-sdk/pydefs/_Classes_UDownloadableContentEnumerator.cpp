@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UDownloadableContentEnumerator(py::module &m)
 {
     py::class_< UDownloadableContentEnumerator,  UObject   >(m, "UDownloadableContentEnumerator")
+		.def_static("StaticClass", &UDownloadableContentEnumerator::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DLCBundles", &UDownloadableContentEnumerator::DLCBundles)
         .def_readwrite("NamedDLCBundles", &UDownloadableContentEnumerator::NamedDLCBundles)
         .def_readwrite("NamedDLCCompatibilityBundles", &UDownloadableContentEnumerator::NamedDLCCompatibilityBundles)

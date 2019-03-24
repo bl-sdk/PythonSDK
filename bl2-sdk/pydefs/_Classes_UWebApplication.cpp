@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWebApplication(py::module &m)
 {
     py::class_< UWebApplication,  UObject   >(m, "UWebApplication")
+		.def_static("StaticClass", &UWebApplication::StaticClass, py::return_value_policy::reference)
         .def_readwrite("WorldInfo", &UWebApplication::WorldInfo)
         .def_readwrite("WebServer", &UWebApplication::WebServer)
         .def_readwrite("Path", &UWebApplication::Path)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_URuleEngine(py::module &m)
 {
     py::class_< URuleEngine,  UObject   >(m, "URuleEngine")
+		.def_static("StaticClass", &URuleEngine::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIFlagProvider", &URuleEngine::VfTable_IIFlagProvider)
         .def_readwrite("TheAIFactory", &URuleEngine::TheAIFactory)
         .def_readwrite("ActorProxy", &URuleEngine::ActorProxy)

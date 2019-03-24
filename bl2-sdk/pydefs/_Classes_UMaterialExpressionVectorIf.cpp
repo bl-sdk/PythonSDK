@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UMaterialExpressionVectorIf(py::module &m)
 {
     py::class_< UMaterialExpressionVectorIf,  UMaterialExpression   >(m, "UMaterialExpressionVectorIf")
+		.def_static("StaticClass", &UMaterialExpressionVectorIf::StaticClass, py::return_value_policy::reference)
         .def_readwrite("A", &UMaterialExpressionVectorIf::A)
         .def_readwrite("B", &UMaterialExpressionVectorIf::B)
         .def_readwrite("IfTrue", &UMaterialExpressionVectorIf::IfTrue)

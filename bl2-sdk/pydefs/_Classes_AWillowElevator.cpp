@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowElevator(py::module &m)
 {
     py::class_< AWillowElevator,  AInterpActor   >(m, "AWillowElevator")
+		.def_static("StaticClass", &AWillowElevator::StaticClass, py::return_value_policy::reference)
         .def_readwrite("FloorIndex", &AWillowElevator::FloorIndex)
         .def_readwrite("DestFloorIndex", &AWillowElevator::DestFloorIndex)
         .def_readwrite("InitialFloorIndex", &AWillowElevator::InitialFloorIndex)

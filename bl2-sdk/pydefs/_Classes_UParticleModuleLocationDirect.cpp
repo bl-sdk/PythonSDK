@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UParticleModuleLocationDirect(py::module &m)
 {
     py::class_< UParticleModuleLocationDirect,  UParticleModuleLocationBase   >(m, "UParticleModuleLocationDirect")
+		.def_static("StaticClass", &UParticleModuleLocationDirect::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Location", &UParticleModuleLocationDirect::Location)
         .def_readwrite("LocationOffset", &UParticleModuleLocationDirect::LocationOffset)
         .def_readwrite("ScaleFactor", &UParticleModuleLocationDirect::ScaleFactor)

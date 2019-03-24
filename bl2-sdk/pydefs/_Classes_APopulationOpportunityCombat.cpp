@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_APopulationOpportunityCombat(py::module &m)
 {
     py::class_< APopulationOpportunityCombat,  APopulationOpportunity   >(m, "APopulationOpportunityCombat")
+		.def_static("StaticClass", &APopulationOpportunityCombat::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIGbxMessageListener", &APopulationOpportunityCombat::VfTable_IIGbxMessageListener)
         .def_readwrite("ParentEncounter", &APopulationOpportunityCombat::ParentEncounter)
         .def_readwrite("ParentEncounterWave", &APopulationOpportunityCombat::ParentEncounterWave)

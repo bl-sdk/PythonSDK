@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ANxForceFieldGeneric(py::module &m)
 {
     py::class_< ANxForceFieldGeneric,  AActor   >(m, "ANxForceFieldGeneric")
+		.def_static("StaticClass", &ANxForceFieldGeneric::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Shape", &ANxForceFieldGeneric::Shape)
         .def_readwrite("DrawComponent", &ANxForceFieldGeneric::DrawComponent)
         .def_readwrite("RoughExtentX", &ANxForceFieldGeneric::RoughExtentX)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UGearboxRenderTextureManager(py::module &m)
 {
     py::class_< UGearboxRenderTextureManager,  UObject   >(m, "UGearboxRenderTextureManager")
+		.def_static("StaticClass", &UGearboxRenderTextureManager::StaticClass, py::return_value_policy::reference)
         .def_readwrite("FreeList2D", &UGearboxRenderTextureManager::FreeList2D)
         .def_readwrite("FreeList", &UGearboxRenderTextureManager::FreeList)
         .def_readwrite("HoldDuration", &UGearboxRenderTextureManager::HoldDuration)

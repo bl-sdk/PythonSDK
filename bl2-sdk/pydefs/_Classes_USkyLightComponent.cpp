@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USkyLightComponent(py::module &m)
 {
     py::class_< USkyLightComponent,  ULightComponent   >(m, "USkyLightComponent")
+		.def_static("StaticClass", &USkyLightComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("LowerBrightness", &USkyLightComponent::LowerBrightness)
         .def_readwrite("LowerColor", &USkyLightComponent::LowerColor)
         .def("OnUpdatePropertyLowerBrightness", &USkyLightComponent::OnUpdatePropertyLowerBrightness)

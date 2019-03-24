@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UUIDataProvider_PlayerAchievements(py::module &m)
 {
     py::class_< UUIDataProvider_PlayerAchievements,  UUIDataProvider_OnlinePlayerDataBase   >(m, "UUIDataProvider_PlayerAchievements")
+		.def_static("StaticClass", &UUIDataProvider_PlayerAchievements::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IUIListElementCellProvider", &UUIDataProvider_PlayerAchievements::VfTable_IUIListElementCellProvider)
         .def_readwrite("Achievements", &UUIDataProvider_PlayerAchievements::Achievements)
         .def("UpdateAchievements", &UUIDataProvider_PlayerAchievements::UpdateAchievements)

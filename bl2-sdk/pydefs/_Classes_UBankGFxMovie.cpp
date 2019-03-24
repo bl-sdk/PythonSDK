@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UBankGFxMovie(py::module &m)
 {
     py::class_< UBankGFxMovie,  UTwoPanelInterfaceGFxMovie   >(m, "UBankGFxMovie")
+		.def_static("StaticClass", &UBankGFxMovie::StaticClass, py::return_value_policy::reference)
         .def_readwrite("BankTitle", &UBankGFxMovie::BankTitle)
         .def_readwrite("BankAddTip", &UBankGFxMovie::BankAddTip)
         .def_readwrite("BankStorage", &UBankGFxMovie::BankStorage)

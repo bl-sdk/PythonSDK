@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UCellsNavigator(py::module &m)
 {
     py::class_< UCellsNavigator,  UObject   >(m, "UCellsNavigator")
+		.def_static("StaticClass", &UCellsNavigator::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Cells", &UCellsNavigator::Cells)
         .def_readwrite("UnnavigableIndices", &UCellsNavigator::UnnavigableIndices)
         .def_readwrite("CurrentSelectedCellIndex", &UCellsNavigator::CurrentSelectedCellIndex)

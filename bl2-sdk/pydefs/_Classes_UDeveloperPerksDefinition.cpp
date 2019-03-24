@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UDeveloperPerksDefinition(py::module &m)
 {
     py::class_< UDeveloperPerksDefinition,  UGBXDefinition   >(m, "UDeveloperPerksDefinition")
+		.def_static("StaticClass", &UDeveloperPerksDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DeveloperInfo", &UDeveloperPerksDefinition::DeveloperInfo)
         .def_readwrite("PerkInfo", &UDeveloperPerksDefinition::PerkInfo)
         .def_readwrite("DeveloperCustomizationUnlocks", &UDeveloperPerksDefinition::DeveloperCustomizationUnlocks)

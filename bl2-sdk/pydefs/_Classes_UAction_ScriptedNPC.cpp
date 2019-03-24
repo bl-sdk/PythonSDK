@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAction_ScriptedNPC(py::module &m)
 {
     py::class_< UAction_ScriptedNPC,  UWillowActionSequencePawn   >(m, "UAction_ScriptedNPC")
+		.def_static("StaticClass", &UAction_ScriptedNPC::StaticClass, py::return_value_policy::reference)
         .def_readwrite("FindLookAtTargetTime", &UAction_GoToScriptedDestination::FindLookAtTargetTime)
         .def_readwrite("PerchData", &UAction_FollowPath::PerchData)
         .def_readwrite("MoveNode", &UAction_FollowPath::MoveNode)

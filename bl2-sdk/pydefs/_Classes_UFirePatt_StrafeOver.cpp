@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UFirePatt_StrafeOver(py::module &m)
 {
     py::class_< UFirePatt_StrafeOver,  UFiringPattern   >(m, "UFirePatt_StrafeOver")
+		.def_static("StaticClass", &UFirePatt_StrafeOver::StaticClass, py::return_value_policy::reference)
         .def_readwrite("CurrentAimRotation", &UFirePatt_StrafeOver::CurrentAimRotation)
         .def_readwrite("PitchDeltaPerShot", &UFirePatt_StrafeOver::PitchDeltaPerShot)
         .def_readwrite("MaxYawDeltaPerShot", &UFirePatt_StrafeOver::MaxYawDeltaPerShot)

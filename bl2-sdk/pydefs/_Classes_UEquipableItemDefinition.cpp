@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UEquipableItemDefinition(py::module &m)
 {
     py::class_< UEquipableItemDefinition,  UItemDefinition   >(m, "UEquipableItemDefinition")
+		.def_static("StaticClass", &UEquipableItemDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("DamageTypeIcon", &UEquipableItemDefinition::DamageTypeIcon)
         .def_readwrite("EquipSounds", &UEquipableItemDefinition::EquipSounds)
         .def_readwrite("UnequipSounds", &UEquipableItemDefinition::UnequipSounds)

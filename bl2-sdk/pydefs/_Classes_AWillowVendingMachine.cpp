@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowVendingMachine(py::module &m)
 {
     py::class_< AWillowVendingMachine,  AWillowVendingMachineBase   >(m, "AWillowVendingMachine")
+		.def_static("StaticClass", &AWillowVendingMachine::StaticClass, py::return_value_policy::reference)
         .def_readwrite("FeaturedItem", &AWillowVendingMachine::FeaturedItem)
         .def_readwrite("FeaturedItemPickup", &AWillowVendingMachine::FeaturedItemPickup)
         .def_readwrite("FeaturedItemPickupAttachmentPoint", &AWillowVendingMachine::FeaturedItemPickupAttachmentPoint)

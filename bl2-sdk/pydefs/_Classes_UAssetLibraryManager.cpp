@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAssetLibraryManager(py::module &m)
 {
     py::class_< UAssetLibraryManager,  UObject   >(m, "UAssetLibraryManager")
+		.def_static("StaticClass", &UAssetLibraryManager::StaticClass, py::return_value_policy::reference)
         .def_readwrite("EditorAssetLibraries", &UAssetLibraryManager::EditorAssetLibraries)
         .def_readwrite("RuntimeAssetLibraries", &UAssetLibraryManager::RuntimeAssetLibraries)
         .def("DetermineObjLibraryType", &UAssetLibraryManager::DetermineObjLibraryType)

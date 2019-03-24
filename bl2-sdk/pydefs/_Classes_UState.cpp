@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UState(py::module &m)
 {
     py::class_< UState,  UObject   >(m, "UState")
+		.def_static("StaticClass", &UState::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SuperField", &UStruct::SuperField)
         .def_readwrite("Children", &UStruct::Children)
         .def_readwrite("PropertySize", &UStruct::PropertySize)

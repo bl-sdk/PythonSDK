@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAction_GenericAttack(py::module &m)
 {
     py::class_< UAction_GenericAttack,  UAction_Burrow   >(m, "UAction_GenericAttack")
+		.def_static("StaticClass", &UAction_GenericAttack::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Limits", &UAction_GenericAttack::Limits)
         .def_readwrite("CrouchIdleChance", &UAction_GenericAttack::CrouchIdleChance)
         .def_readwrite("CrouchMoveChance", &UAction_GenericAttack::CrouchMoveChance)

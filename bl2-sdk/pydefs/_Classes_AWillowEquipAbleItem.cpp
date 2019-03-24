@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AWillowEquipAbleItem(py::module &m)
 {
     py::class_< AWillowEquipAbleItem, AWillowItem   >(m, "AWillowEquipAbleItem")
+		.def_static("StaticClass", &AWillowEquipAbleItem::StaticClass, py::return_value_policy::reference)
         .def("CanBeUsedBy", &AWillowEquipAbleItem::CanBeUsedBy)
         .def("ItemEquipped", &AWillowEquipAbleItem::ItemEquipped)
         .def("ItemUnequipped", &AWillowEquipAbleItem::ItemUnequipped)

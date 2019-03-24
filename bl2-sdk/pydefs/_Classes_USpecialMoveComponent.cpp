@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USpecialMoveComponent(py::module &m)
 {
     py::class_< USpecialMoveComponent,  UActorComponent   >(m, "USpecialMoveComponent")
+		.def_static("StaticClass", &USpecialMoveComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("StartTime", &USpecialMoveComponent::StartTime)
         .def_readwrite("SMI", &USpecialMoveComponent::SMI)
         .def_readwrite("CurrentSMData", &USpecialMoveComponent::CurrentSMData)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UTextureCube(py::module &m)
 {
     py::class_< UTextureCube,  UTexture   >(m, "UTextureCube")
+		.def_static("StaticClass", &UTextureCube::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SizeX", &UTextureCube::SizeX)
         .def_readwrite("SizeY", &UTextureCube::SizeY)
         .def_readwrite("Format", &UTextureCube::Format)

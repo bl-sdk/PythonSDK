@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UApexDestructibleAsset(py::module &m)
 {
     py::class_< UApexDestructibleAsset,  UApexAsset   >(m, "UApexDestructibleAsset")
+		.def_static("StaticClass", &UApexDestructibleAsset::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MApexAsset", &UApexDestructibleAsset::MApexAsset)
         .def_readwrite("Materials", &UApexDestructibleAsset::Materials)
         .def_readwrite("FractureMaterials", &UApexDestructibleAsset::FractureMaterials)

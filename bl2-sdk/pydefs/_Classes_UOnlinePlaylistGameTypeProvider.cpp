@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UOnlinePlaylistGameTypeProvider(py::module &m)
 {
     py::class_< UOnlinePlaylistGameTypeProvider,  UUIResourceDataProvider   >(m, "UOnlinePlaylistGameTypeProvider")
+		.def_static("StaticClass", &UOnlinePlaylistGameTypeProvider::StaticClass, py::return_value_policy::reference)
         .def_readwrite("PlaylistGameTypeName", &UOnlinePlaylistGameTypeProvider::PlaylistGameTypeName)
         .def_readwrite("DisplayName", &UOnlinePlaylistGameTypeProvider::DisplayName)
         .def_readwrite("Description", &UOnlinePlaylistGameTypeProvider::Description)

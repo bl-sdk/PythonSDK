@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_AReverbVolume(py::module &m)
 {
     py::class_< AReverbVolume,  AVolume   >(m, "AReverbVolume")
+		.def_static("StaticClass", &AReverbVolume::StaticClass, py::return_value_policy::reference)
         .def_readwrite("Priority", &AReverbVolume::Priority)
         .def_readwrite("Settings", &AReverbVolume::Settings)
         .def_readwrite("AmbientZoneSettings", &AReverbVolume::AmbientZoneSettings)

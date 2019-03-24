@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ADroppedPickup(py::module &m)
 {
     py::class_< ADroppedPickup,  AActor   >(m, "ADroppedPickup")
+		.def_static("StaticClass", &ADroppedPickup::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIPickupable", &ADroppedPickup::VfTable_IIPickupable)
         .def_readwrite("Inventory", &ADroppedPickup::Inventory)
         .def_readwrite("PickupCache", &ADroppedPickup::PickupCache)

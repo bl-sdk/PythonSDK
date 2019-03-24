@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USeqAct_SetDOFParams(py::module &m)
 {
     py::class_< USeqAct_SetDOFParams,  USeqAct_Latent   >(m, "USeqAct_SetDOFParams")
+		.def_static("StaticClass", &USeqAct_SetDOFParams::StaticClass, py::return_value_policy::reference)
         .def_readwrite("FalloffExponent", &USeqAct_SetDOFParams::FalloffExponent)
         .def_readwrite("BlurKernelSize", &USeqAct_SetDOFParams::BlurKernelSize)
         .def_readwrite("MaxNearBlurAmount", &USeqAct_SetDOFParams::MaxNearBlurAmount)

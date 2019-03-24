@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UAkComponent(py::module &m)
 {
     py::class_< UAkComponent,  UActorComponent   >(m, "UAkComponent")
+		.def_static("StaticClass", &UAkComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("SocketName", &UAkComponent::SocketName)
         .def_readwrite("CustomLocations", &UAkComponent::CustomLocations)
         .def_readwrite("CustomRotations", &UAkComponent::CustomRotations)

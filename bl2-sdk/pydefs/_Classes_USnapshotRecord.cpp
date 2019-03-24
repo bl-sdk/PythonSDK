@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_USnapshotRecord(py::module &m)
 {
     py::class_< USnapshotRecord,  USnapshotInterface   >(m, "USnapshotRecord")
+		.def_static("StaticClass", &USnapshotRecord::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MyName", &USnapshotRecord::MyName)
         .def_readwrite("RuleSet", &USnapshotRecord::RuleSet)
         .def_readwrite("CurrentRules", &USnapshotRecord::CurrentRules)

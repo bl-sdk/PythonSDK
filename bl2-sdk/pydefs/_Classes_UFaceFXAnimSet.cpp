@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UFaceFXAnimSet(py::module &m)
 {
     py::class_< UFaceFXAnimSet,  UObject   >(m, "UFaceFXAnimSet")
+		.def_static("StaticClass", &UFaceFXAnimSet::StaticClass, py::return_value_policy::reference)
         .def_readwrite("InternalFaceFXAnimSet", &UFaceFXAnimSet::InternalFaceFXAnimSet)
         .def_readwrite("RawFaceFXAnimSetBytes", &UFaceFXAnimSet::RawFaceFXAnimSetBytes)
         .def_readwrite("RawFaceFXMiniSessionBytes", &UFaceFXAnimSet::RawFaceFXMiniSessionBytes)

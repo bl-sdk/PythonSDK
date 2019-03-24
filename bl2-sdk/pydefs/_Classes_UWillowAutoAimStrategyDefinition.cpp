@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UWillowAutoAimStrategyDefinition(py::module &m)
 {
     py::class_< UWillowAutoAimStrategyDefinition,  UGBXDefinition   >(m, "UWillowAutoAimStrategyDefinition")
+		.def_static("StaticClass", &UWillowAutoAimStrategyDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MaxTargetDistance", &UWillowAutoAimStrategyDefinition::MaxTargetDistance)
         .def_readwrite("MinTargetDistance", &UWillowAutoAimStrategyDefinition::MinTargetDistance)
         .def_readwrite("RadiusMultiplier", &UWillowAutoAimStrategyDefinition::RadiusMultiplier)

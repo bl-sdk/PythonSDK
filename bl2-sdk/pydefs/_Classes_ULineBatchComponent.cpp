@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ULineBatchComponent(py::module &m)
 {
     py::class_< ULineBatchComponent,  UPrimitiveComponent   >(m, "ULineBatchComponent")
+		.def_static("StaticClass", &ULineBatchComponent::StaticClass, py::return_value_policy::reference)
         .def_readwrite("FPrimitiveDrawInterfaceVfTable", &ULineBatchComponent::FPrimitiveDrawInterfaceVfTable)
         .def_readwrite("FPrimitiveDrawInterfaceView", &ULineBatchComponent::FPrimitiveDrawInterfaceView)
         .def_readwrite("BatchedLines", &ULineBatchComponent::BatchedLines)

@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UUIDataStore_DynamicResource(py::module &m)
 {
     py::class_< UUIDataStore_DynamicResource,  UUIDataStore   >(m, "UUIDataStore_DynamicResource")
+		.def_static("StaticClass", &UUIDataStore_DynamicResource::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IUIListElementProvider", &UUIDataStore_DynamicResource::VfTable_IUIListElementProvider)
         .def_readwrite("ProfileProvider", &UUIDataStore_DynamicResource::ProfileProvider)
         .def_readwrite("GameResourceDataStore", &UUIDataStore_DynamicResource::GameResourceDataStore)

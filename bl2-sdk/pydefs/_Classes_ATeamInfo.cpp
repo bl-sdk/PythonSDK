@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_ATeamInfo(py::module &m)
 {
     py::class_< ATeamInfo,  AReplicationInfo   >(m, "ATeamInfo")
+		.def_static("StaticClass", &ATeamInfo::StaticClass, py::return_value_policy::reference)
         .def_readwrite("TeamName", &ATeamInfo::TeamName)
         .def_readwrite("Size", &ATeamInfo::Size)
         .def_readwrite("Score", &ATeamInfo::Score)

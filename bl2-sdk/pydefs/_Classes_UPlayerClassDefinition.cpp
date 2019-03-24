@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPlayerClassDefinition(py::module &m)
 {
     py::class_< UPlayerClassDefinition,  UCharacterClassDefinition   >(m, "UPlayerClassDefinition")
+		.def_static("StaticClass", &UPlayerClassDefinition::StaticClass, py::return_value_policy::reference)
         .def_readwrite("VfTable_IIConstructObject", &UPlayerClassDefinition::VfTable_IIConstructObject)
         .def_readwrite("PawnArchetypePath", &UPlayerClassDefinition::PawnArchetypePath)
         .def_readwrite("SkillTreePath", &UPlayerClassDefinition::SkillTreePath)

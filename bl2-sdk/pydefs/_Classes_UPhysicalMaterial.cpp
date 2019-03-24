@@ -6,6 +6,7 @@ namespace py = pybind11;
 void Export_pystes_UPhysicalMaterial(py::module &m)
 {
     py::class_< UPhysicalMaterial,  UObject   >(m, "UPhysicalMaterial")
+		.def_static("StaticClass", &UPhysicalMaterial::StaticClass, py::return_value_policy::reference)
         .def_readwrite("MaterialIndex", &UPhysicalMaterial::MaterialIndex)
         .def_readwrite("Friction", &UPhysicalMaterial::Friction)
         .def_readwrite("Restitution", &UPhysicalMaterial::Restitution)
