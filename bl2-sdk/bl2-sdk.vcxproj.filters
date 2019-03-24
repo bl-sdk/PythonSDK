@@ -14331,7 +14331,22 @@
     <ClCompile Include="pydefs\_Structs_UTerrainWeightMapTexture_FTerrainWeightedMaterial.cpp">
       <Filter>Source Files\pydef</Filter>
     </ClCompile>
-    <ClCompile Include="pydefs\gamedefines.cpp">
+    <ClCompile Include="pydefs\_FArchive.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_FArchiveAsync.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_FScriptDelegate.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_FName.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_FNameEntry.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_FString.cpp">
       <Filter>Source Files\pydef</Filter>
     </ClCompile>
   </ItemGroup>

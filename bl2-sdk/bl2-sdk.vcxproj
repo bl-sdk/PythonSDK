@@ -83,7 +83,8 @@
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LinkIncremental>true</LinkIncremental>
+    <LinkIncremental>
+    </LinkIncremental>
     <TargetName>binkw32</TargetName>
     <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
     <IncludePath>$(PYTHONPATH)\include;$(IncludePath)</IncludePath>
@@ -145,7 +146,7 @@
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
+      <Optimization>Custom</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>false</SDLCheck>
@@ -156,10 +157,12 @@
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <MinimalRebuild>
-      </MinimalRebuild>
-      <WholeProgramOptimization>false</WholeProgramOptimization>
-      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <EnableFiberSafeOptimizations />
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -220,7 +223,6 @@
     <ClCompile Include="NamedPipe.cpp" />
     <ClCompile Include="OnlineSubsystemSteamworks_functions.cpp" />
     <ClCompile Include="PackageFix.cpp" />
-    <ClCompile Include="pydefs\gamedefines.cpp" />
     <ClCompile Include="pydefs\_Classes_AAccessControl.cpp" />
     <ClCompile Include="pydefs\_Classes_AActionSkill.cpp" />
     <ClCompile Include="pydefs\_Classes_AActor.cpp" />
@@ -3620,6 +3622,12 @@
     <ClCompile Include="pydefs\_Classes_UWwiseSoundGroupRenderingComponent.cpp" />
     <ClCompile Include="pydefs\_Classes_UXAudio2Device.cpp" />
     <ClCompile Include="pydefs\_Classes_UXnaForceFeedbackManager.cpp" />
+    <ClCompile Include="pydefs\_FArchive.cpp" />
+    <ClCompile Include="pydefs\_FArchiveAsync.cpp" />
+    <ClCompile Include="pydefs\_FName.cpp" />
+    <ClCompile Include="pydefs\_FNameEntry.cpp" />
+    <ClCompile Include="pydefs\_FScriptDelegate.cpp" />
+    <ClCompile Include="pydefs\_FString.cpp" />
     <ClCompile Include="pydefs\_Structs_ADynamicBlockingVolume_FCheckpointRecord.cpp" />
     <ClCompile Include="pydefs\_Structs_AEmitter_FCheckpointRecord.cpp" />
     <ClCompile Include="pydefs\_Structs_AFogVolumeDensityInfo_FCheckpointRecord.cpp" />

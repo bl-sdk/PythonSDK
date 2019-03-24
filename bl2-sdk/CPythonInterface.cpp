@@ -3575,7 +3575,6 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	Export_pystes_FBehaviorVariableValue(m);
 	Export_pystes_FBehaviorVariableValueUnion_Mirror(m);
 	Export_pystes_FBiasedGoalActor(m);
-	Export_pystes_FBitArray_Mirror(m);
 	Export_pystes_FBlackMarketPostLaunchUpgradeData(m);
 	Export_pystes_FBlackMarketUpgradeLevelData(m);
 	Export_pystes_FBlockedMissionData(m);
@@ -3945,7 +3944,6 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	Export_pystes_FImpulseData(m);
 	Export_pystes_FIndependentSelectionData(m);
 	Export_pystes_FIndexPair(m);
-	Export_pystes_FIndirectArray_Mirror(m);
 	Export_pystes_FInfoBarData(m);
 	Export_pystes_FIniLocFileEntry(m);
 	Export_pystes_FInjuredLoopOverride(m);
@@ -4753,7 +4751,12 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	Export_pystes_UBehavior_SpawnProjectileFromImpact_FProjectileBehaviorSequenceStateData(m);
 	Export_pystes_UBehavior_SpawnProjectile_FProjectileBehaviorSequenceStateData(m);
 	Export_pystes_UTerrainWeightMapTexture_FTerrainWeightedMaterial(m);
-	Export_pystes_gamedefines(m);
+	Export_pystes_FName(m);
+	Export_pystes_FNameEntry(m);
+	Export_pystes_FString(m);
+	Export_pystes_FScriptDelegate(m);
+	Export_pystes_FArchiveAsync(m);
+	Export_pystes_FArchive(m);
 	m.def("Log", [](std::string in) { Logging::Log(in.c_str(), in.length()); });
 }
 

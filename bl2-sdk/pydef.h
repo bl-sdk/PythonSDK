@@ -4,7 +4,6 @@
 
 namespace py = pybind11;
 
-void Export_pystes_gamedefines(py::module &);
 void Export_pystes_FPointer(py::module &);
 void Export_pystes_FQWord(py::module &);
 void Export_pystes_FVector(py::module &);
@@ -29,7 +28,6 @@ void Export_pystes_FRenderCommandFence(py::module &);
 void Export_pystes_FBox(py::module &);
 void Export_pystes_FBoxSphereBounds(py::module &);
 void Export_pystes_FRenderCommandFence_Mirror(py::module &);
-void Export_pystes_FIndirectArray_Mirror(py::module &);
 void Export_pystes_FThreadSafeCounter(py::module &);
 void Export_pystes_FRawDistributionFloat(py::module &);
 void Export_pystes_FRawDistribution(py::module &);
@@ -38,7 +36,6 @@ void Export_pystes_FBoneAtom(py::module &);
 void Export_pystes_FMap_Mirror(py::module &);
 void Export_pystes_FSet_Mirror(py::module &);
 void Export_pystes_FSparseArray_Mirror(py::module &);
-void Export_pystes_FBitArray_Mirror(py::module &);
 void Export_pystes_FArray_Mirror(py::module &);
 void Export_pystes_FUntypedBulkData_Mirror(py::module &);
 void Export_pystes_FMultiMap_Mirror(py::module &);
@@ -4742,3 +4739,10 @@ void Export_pystes_USparkInterfaceSteamworks(py::module &);
 void Export_pystes_UOnlineLobbyInterfaceSteamworks(py::module &);
 void Export_pystes_UIpNetConnectionSteamworks(py::module &);
 void Export_pystes_UIpNetDriverSteamworks(py::module &);
+void Export_pystes_FName(py::module &m);
+void Export_pystes_FNameEntry(py::module &m);
+void Export_pystes_FString(py::module &m);
+void Export_pystes_FScriptDelegate(py::module &m);
+void Export_pystes_FArchiveAsync(py::module &m);
+void Export_pystes_FArchive(py::module &m);
+void Export_pystes_TArray_FTankSensor(py::module &m);

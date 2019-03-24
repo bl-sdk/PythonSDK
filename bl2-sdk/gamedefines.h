@@ -21,7 +21,7 @@ template<class T> struct TArray
 {
 public:
 	T * Data;
-	int Count;
+	unsigned int Count;
 	int Max;
 
 	TArray()
