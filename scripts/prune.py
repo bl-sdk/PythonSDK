@@ -20,11 +20,12 @@ for filename in listdir(sdk_dir):
 						if parent_name not in relationships.keys():
 							relationships[parent_name] = []
 					relationships[parent_name].append(class_name)
-				if ';' in line:
-					if count > 2:
+				if class_name and ';' in line:
+					if count <= 2:
 						empty.append(class_name)
-				if line.strip():
+				if class_name and line.strip():
 					count = count + 1
 
 for e in empty:
-	print(e)
+	if e not in relationships.keys():
+		print(e)
