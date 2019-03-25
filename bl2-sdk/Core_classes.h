@@ -235,6 +235,43 @@ public:
 		return nullptr;
 	}
 
+	static UObject* FindObjectByFullName(const std::string& ObjectFullName)
+	{
+		while (!UObject::GObjObjects())
+			Sleep(100);
+
+		while (!FName::Names())
+			Sleep(100);
+
+		for (int i = 0; i < UObject::GObjObjects()->Count; ++i)
+		{
+			UObject* Object = UObject::GObjObjects()->Data[i];
+			if (Object && Object->GetFullName() == ObjectFullName)
+				return Object;
+		}
+		return nullptr;
+	}
+
+
+	static std::vector<UObject*> FindObjectsRegex(const std::string& regexString)
+	{
+		std::regex re = std::regex(regexString);
+		std::vector<UObject *> ret;
+		while (!UObject::GObjObjects())
+			Sleep(100);
+
+		while (!FName::Names())
+			Sleep(100);
+
+		for (int i = 0; i < UObject::GObjObjects()->Count; ++i)
+		{
+			UObject* Object = UObject::GObjObjects()->Data[i];
+			if (Object && std::regex_match(Object->GetFullName(), re))
+				ret.push_back(Object);
+		}
+		return ret;
+	}
+
 	static UClass* FindClass(char* ClassFullName);
 
 	bool IsA(UClass* pClass) const;
@@ -245,6 +282,16 @@ public:
 			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2];
 
 		return pClassPointer;
+	};
+
+	class UPackage* GetPackageObject() {
+		UObject *pkg;
+		UObject *outer = this->Outer;
+		while (outer) {
+			pkg = outer;
+			outer = pkg->Outer;
+		}
+		return (UPackage*)pkg;
 	};
 
 	bool IsRelevantForDebugging(class UObject* Source);

@@ -116,7 +116,7 @@ std::string UObject::GetNameCPP()
 	}
 	else
 	{
-		strcpy_s(cOutBuffer, "F");
+		strcpy_s(cOutBuffer, "U");
 	}
 
 	strcat_s(cOutBuffer, this->GetName().c_str());

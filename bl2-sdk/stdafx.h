@@ -5,6 +5,7 @@
 
 #include <pybind11/pybind11.h>
 #include <pybind11/embed.h>
+#include <pybind11/stl.h>
 
 #include <windows.h>
 #include <stdio.h>
@@ -12,6 +13,7 @@
 #include <ShlObj.h>
 #include <string>
 #include <map>
+#include <regex>
 
 #include <Shlwapi.h>
 #pragma comment (lib, "Shlwapi.lib")
@@ -96,8 +98,15 @@ namespace pybind11 {
 	{
 		static const void *get(const itype *src, const std::type_info*& type) {
 			if (src && std::is_base_of<UObject, itype>::value) {
-				std::string type_name = ((UObject *)src)->GetNameCPP();
-				type = uobject_type_map[type_name];
+				if (((UObject *)src)->Class) {
+					std::string type_name = ((UObject *)src)->Class->GetNameCPP();
+					if (uobject_type_map.count(type_name))
+						type = uobject_type_map[type_name];
+					else
+						type = &typeid(UObject);
+				}
+				else 
+					type = &typeid(UObject);
 				return src;
 			}
 			type = src ? &typeid(*src) : nullptr;
@@ -110,15 +119,6 @@ namespace pybind11
 {
 	namespace detail
 	{
-		template <typename T, typename U>
-		using forwarded_type = conditional_t<
-			std::is_lvalue_reference<T>::value, remove_reference_t<U> &, remove_reference_t<U> &&>;
-
-		template <typename T, typename U>
-		forwarded_type<T, U> forward_like(U &&u) {
-			return std::forward<detail::forwarded_type<T, U>>(std::forward<U>(u));
-		}
-
 		template <typename Type, typename Value> struct tarray_caster {
 			using value_conv = make_caster<Value>;
 
@@ -156,8 +156,10 @@ namespace pybind11
 					auto value = src.Data[index];
 					auto value_ = reinterpret_steal<object>(value_conv::cast(forward_like<T>(value), policy, parent));
 					if (!value_)
-						return handle();
-					PyList_SET_ITEM(l.ptr(), (ssize_t)index++, value_.release().ptr()); // steals a reference
+						continue;
+					auto obj = value_.release().ptr();
+					Py_INCREF(obj);
+					PyList_SET_ITEM(l.ptr(), (ssize_t)index, obj); // steals a reference
 				}
 				return l.release();
 			}

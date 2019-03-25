@@ -390,4 +390,18 @@ namespace BL2SDK
 		GameHooks::Cleanup();
 		Util::CloseGame();
 	}
+
+	void  LoadPackage(const char* filename, DWORD flags, bool force)
+	{
+		std::wstring wideFilename = Util::Widen(filename);
+		UPackage* result = BL2SDK::pLoadPackage(0, wideFilename.c_str(), flags);
+		if (force) {
+			for (int i = 0; i < UObject::GObjObjects()->Count; ++i)
+			{
+				UObject* Object = UObject::GObjObjects()->Data[i];
+				if (Object->GetPackageObject() == result)
+					Object->ObjectFlags.A = Object->ObjectFlags.A | 0x4000;
+			}
+		}
+	};
 }

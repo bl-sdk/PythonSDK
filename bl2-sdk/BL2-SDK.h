@@ -46,6 +46,7 @@ namespace BL2SDK
 	void doInjectedCallNext();
 	void initialize(wchar_t * exeBaseFolder/*LauncherStruct* args*/);
 	void cleanup();
+	void LoadPackage(const char* filename, DWORD flags = 0, bool force = false);
 }
 
 #endif
