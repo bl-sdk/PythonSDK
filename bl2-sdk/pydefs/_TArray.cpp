@@ -10,7 +10,7 @@ void Export_pystes_TArray(py::module &m)
 //		.def_readwrite("Max", &TArray<UObject *>::Max)
 //		.def("Num", &TArray<UObject *>::Num)
 //		.def("__getitem__", [](TArray<UObject *> &self, int key) { return self.Data[key]; }, py::return_value_policy::reference)
-//		.def("__setitem__", [](TArray<UObject *> &self, int key, UObject *value) { self.Data[key] = value; }, py::return_value_policy::reference)
+//		.def("__setitem__", [](TArray<UObject *> &self, int  key, UObject *value) { self.Data[key] = value; }, py::return_value_policy::reference)
 //		.def("__len__", [](TArray<UObject *> &self) { return self.Count; }, py::return_value_policy::reference)
 //		;
 //	py::class_< TArray<FTier> >(m, "TArray<FTier>")

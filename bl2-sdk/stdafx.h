@@ -116,6 +116,9 @@ namespace pybind11 {
 		}
 	};
 }
+
+
+
 //
 //typedef struct {
 //	PyObject_HEAD
@@ -216,8 +219,18 @@ namespace pybind11
 			using value_conv = make_caster<Value>;
 
 			bool load(handle src, bool convert) {
-				Logging::LogF("Unimplemented: Assigning value to custom TArray\n");
-				return false;
+				if (!isinstance<sequence>(src))
+					return false;
+				auto s = reinterpret_borrow<sequence>(src);
+				value.Data = (Value *)calloc(s.size(), sizeof(Value));
+				size_t i = 0;
+				for (auto it : s) {
+					value_conv conv;
+					if (!conv.load(it, convert))
+						return false;
+					value.Data[i++] = cast_op<Value &&>(std::move(conv));
+				}
+				return true;
 			}
 
 		private:
@@ -231,12 +244,13 @@ namespace pybind11
             static handle cast(T &&src, return_value_policy policy, handle parent) {
                 if (!std::is_lvalue_reference<T>::value)
                     policy = return_value_policy_override<Value>::policy(policy);
-                list l(src.Count);
-                size_t index = 0;
-                for (size_t index = 0; index < src.Count; index++) {
-                    auto value = src.Data[index];
-                    Logging::LogF("Casted %#010x\n", value);
-                    auto value_ = reinterpret_steal<object>(value_conv::cast(forward_like<T>(value), policy, parent));
+                list l(src.Max);
+                for (int index = 0; index < src.Max; index++) {
+					auto value_ = none();
+					if (index < src.Count) {
+						auto value = src.Data[index];
+						value_ = reinterpret_steal<object>(value_conv::cast(forward_like<Value>(value), policy, parent));
+					}
                     if (!value_)
                     {
                         Logging::LogF("Value is null\n");

@@ -163,7 +163,7 @@ UClass* UObject::FindClass(char* ClassFullName)
 	while (!FName::Names())
 		Sleep(100);
 
-	for (int i = 0; i < UObject::GObjObjects()->Count; ++i)
+	for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
 	{
 		UObject* Object = UObject::GObjObjects()->Data[i];
 

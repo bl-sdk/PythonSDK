@@ -76,7 +76,7 @@ public:
 	{
 		Number = 0;
 
-		for (int i = 0; i < this->Names()->Count; i++)
+		for (size_t i = 0; i < this->Names()->Count; i++)
 		{
 			if (this->Names()->Data[i])
 			{

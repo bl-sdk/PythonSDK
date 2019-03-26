@@ -396,7 +396,7 @@ namespace BL2SDK
 		std::wstring wideFilename = Util::Widen(filename);
 		UPackage* result = BL2SDK::pLoadPackage(0, wideFilename.c_str(), flags);
 		if (force) {
-			for (int i = 0; i < UObject::GObjObjects()->Count; ++i)
+			for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
 			{
 				UObject* Object = UObject::GObjObjects()->Data[i];
 				if (Object->GetPackageObject() == result)

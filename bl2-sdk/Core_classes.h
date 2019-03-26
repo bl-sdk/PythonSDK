@@ -215,7 +215,7 @@ public:
 		while (!FName::Names())
 			Sleep(100);
 
-		for (int i = 0; i < UObject::GObjObjects()->Count; ++i)
+		for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
 		{
 			UObject* Object = UObject::GObjObjects()->Data[i];
 
@@ -243,7 +243,7 @@ public:
 		while (!FName::Names())
 			Sleep(100);
 
-		for (int i = 0; i < UObject::GObjObjects()->Count; ++i)
+		for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
 		{
 			UObject* Object = UObject::GObjObjects()->Data[i];
 			if (Object && Object->GetFullName() == ObjectFullName)
@@ -263,7 +263,7 @@ public:
 		while (!FName::Names())
 			Sleep(100);
 
-		for (int i = 0; i < UObject::GObjObjects()->Count; ++i)
+		for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
 		{
 			UObject* Object = UObject::GObjObjects()->Data[i];
 			if (Object && std::regex_match(Object->GetFullName(), re))
