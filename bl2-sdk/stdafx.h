@@ -6,6 +6,7 @@
 #include <pybind11/pybind11.h>
 #include <pybind11/embed.h>
 #include <pybind11/stl.h>
+#include <Python.h>
 
 #include <windows.h>
 #include <stdio.h>
@@ -14,6 +15,7 @@
 #include <string>
 #include <map>
 #include <regex>
+#include <typeinfo>
 
 #include <Shlwapi.h>
 #pragma comment (lib, "Shlwapi.lib")
@@ -114,29 +116,108 @@ namespace pybind11 {
 		}
 	};
 }
+//
+//typedef struct {
+//	PyObject_HEAD
+//} PyTArrayObject;
+//
+//static PyTypeObject PyTArrayType = {
+//	PyVarObject_HEAD_INIT(NULL, 0)
+//	"bl2sdk.TArray",                            /*tp_name*/
+//	sizeof(PyTArrayObject),                     /*tp_basicsize*/
+//	0,                                          /*tp_itemsize*/
+//	0,                                          /*tp_dealloc*/
+//	0,                                          /*tp_print*/
+//	0,                                          /*tp_getattr*/
+//	0,                                          /*tp_setattr*/
+//	0,                                          /*tp_compare*/
+//	0,                                          /*tp_repr*/
+//	0,                                          /*tp_as_number*/
+//	0,                                          /*tp_as_sequence*/
+//	0,                                          /*tp_as_mapping*/
+//	0,                                          /*tp_hash */
+//	0,                                          /*tp_call*/
+//	0,                                          /*tp_str*/
+//	0,                                          /*tp_getattro*/
+//	0,                                          /*tp_setattro*/
+//	0,                                          /*tp_as_buffer*/
+//	Py_TPFLAGS_DEFAULT,                         /*tp_flags*/
+//	0,                                          /*tp_doc*/
+//	0,										    /*tp_traverse*/
+//	0,                                          /*tp_clear*/
+//	0,                                          /*tp_richcompare*/
+//	0,                                          /*tp_weaklistoffset*/
+//	0,                                          /*tp_iter*/
+//	0,                                          /*tp_iternext*/
+//	0,                                          /*tp_methods*/
+//	0,                                          /*tp_members*/
+//	0,                                          /*tp_getsets*/
+//	0,                                          /*tp_base*/
+//	0,                                          /*tp_dict*/
+//	0,                                          /*tp_descr_get*/
+//	0,                                          /*tp_descr_set*/
+//	0,                                          /*tp_dictoffset*/
+//	0,                                          /*tp_init*/
+//	0,                                          /*tp_alloc*/
+//	PyType_GenericNew,                          /*tp_new*/
+//};
+//
+//static pybind11::object help_cast(PyTArray *tarray) {
+//	return pybind11::cast(tarray);
+//}
+//
+//namespace pybind11
+//{
+//	namespace detail
+//	{
+//		template <typename Type, typename Value> struct tarray_pointer_caster {
+//			using value_conv = make_caster<Value>;
+//
+//			bool load(handle src, bool convert) {
+//				Logging::LogF("Unimplemented: Assigning value to custom TArray\n");
+//				return false;
+//			}
+//
+//		private:
+//			template <typename T = Type,
+//				enable_if_t<std::is_same<decltype(std::declval<T>().reserve(0)), void>::value, int> = 0>
+//				void reserve_maybe(sequence s, Type *) { value.reserve(s.size()); }
+//			void reserve_maybe(sequence, void *) { }
+//
+//		public:
+//			template <typename T>
+//			static handle cast(T &&src, return_value_policy policy, handle parent) {
+//				PyMethodDef getitem = {"__getitem__", [&src, &policy, &parent](PyObject* self, PyObject* args) {
+//					int data;
+//					PyArg_ParseTuple(args, "i", &data);
+//					return value_conv::cast(forward_like<T>(src.Data[data]), policy, parent).ptr();
+//				} , METH_VARARGS, "bl2sdk.TArray.__getitem__"};
+//				PyObject* name = PyString_FromString(getitem.ml_name);
+//				PyObject* getitem_func = PyCFunction_NewEx(&getitem, NULL, name);
+//				PyTArray *tmp = new PyTArray();
+//				object o = help_cast(tmp);
+//				PyObject_SetAttr(o.ptr(), name, getitem_func);
+//				Py_DECREF(name);
+//				return o.release();
+//			}
+//
+//			PYBIND11_TYPE_CASTER(Type, _("TArray<UObject *>"));
+//		};
+//		template <typename Type> struct type_caster<TArray<Type>> : tarray_pointer_caster<TArray<Type>, Type> { };
+//	}
+//}
+
 
 namespace pybind11
 {
 	namespace detail
 	{
-		template <typename Type, typename Value> struct tarray_caster {
+		template <typename Type, typename Value> struct tarray_pointer_caster {
 			using value_conv = make_caster<Value>;
 
 			bool load(handle src, bool convert) {
-				if (!isinstance<sequence>(src))
-					return false;
-				auto s = reinterpret_borrow<sequence>(src);
-				value.Count = s.size();
-				value.Max = s.size();
-				reserve_maybe(s, &value);
-				int x = 0;
-				for (auto it : s) {
-					value_conv conv;
-					if (!conv.load(it, convert))
-						return false;
-					value.Data[x++] = cast_op<Value &&>(std::move(conv));
-				}
-				return true;
+				Logging::LogF("Unimplemented: Assigning value to custom TArray\n");
+				return false;
 			}
 
 		private:
@@ -145,30 +226,38 @@ namespace pybind11
 				void reserve_maybe(sequence s, Type *) { value.reserve(s.size()); }
 			void reserve_maybe(sequence, void *) { }
 
-		public:
-			template <typename T>
-			static handle cast(T &&src, return_value_policy policy, handle parent) {
-				if (!std::is_lvalue_reference<T>::value)
-					policy = return_value_policy_override<Value>::policy(policy);
-				list l(src.Count);
-				size_t index = 0;
-				for (size_t index = 0; index < src.Count; index++) {
-					auto value = src.Data[index];
-					auto value_ = reinterpret_steal<object>(value_conv::cast(forward_like<T>(value), policy, parent));
-					if (!value_)
-						continue;
-					auto obj = value_.release().ptr();
-					Py_INCREF(obj);
-					PyList_SET_ITEM(l.ptr(), (ssize_t)index, obj); // steals a reference
-				}
-				return l.release();
-			}
+        public:
+            template <typename T>
+            static handle cast(T &&src, return_value_policy policy, handle parent) {
+                if (!std::is_lvalue_reference<T>::value)
+                    policy = return_value_policy_override<Value>::policy(policy);
+                list l(src.Count);
+                size_t index = 0;
+                for (size_t index = 0; index < src.Count; index++) {
+                    auto value = src.Data[index];
+                    Logging::LogF("Casted %#010x\n", value);
+                    auto value_ = reinterpret_steal<object>(value_conv::cast(forward_like<T>(value), policy, parent));
+                    if (!value_)
+                    {
+                        Logging::LogF("Value is null\n");
+                        continue;
+                    }
+                    auto obj = value_.release().ptr();
+                    Py_INCREF(obj);
+                    PyList_SET_ITEM(l.ptr(), (ssize_t)index, obj); // steals a reference
+                }
+                return l.release();
+            }
 
-			PYBIND11_TYPE_CASTER(Type, _("TArray[") + value_conv::name + _("]"));
+            PYBIND11_TYPE_CASTER(Type, _("TArray[") + value_conv::name + _("]"));
 		};
-		template <typename Type> struct type_caster<TArray<Type>> : tarray_caster<TArray<Type>, Type> { };
+		template <typename Type> struct type_caster<TArray<Type>> : tarray_pointer_caster<TArray<Type>, Type> { };
 	}
 }
 
+
+
+
+//PYBIND11_MAKE_OPAQUE(TArray<UObject *>);
 #include "pydef.h"
 //#include "BL2-SDK.h"

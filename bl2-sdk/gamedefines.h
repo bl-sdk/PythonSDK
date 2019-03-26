@@ -17,6 +17,11 @@
 # ========================================================================================= #
 */
 
+class PyTArray {
+public:
+	PyTArray() {}
+};
+
 template<class T> struct TArray
 {
 public:

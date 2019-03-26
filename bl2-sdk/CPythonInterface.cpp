@@ -4767,6 +4767,7 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	Export_pystes_USkillTreeBranchLayoutDefinition(m);
 	Export_pystes_USkillDefinition(m);
 	Export_pystes_FTier(m);
+	Export_pystes_TArray(m);
 	m.def("Log", [](std::string in) { Logging::Log(in.c_str(), in.length()); });
 	m.def("LoadPackage", &BL2SDK::LoadPackage);
 }

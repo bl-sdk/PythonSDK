@@ -234,6 +234,7 @@
     <ClCompile Include="pydefs\_Classes_UWillowConsole.cpp" />
     <ClCompile Include="pydefs\_FString.cpp" />
     <ClCompile Include="pydefs\_Structs_FTier.cpp" />
+    <ClCompile Include="pydefs\_TArray.cpp" />
     <ClCompile Include="Settings.cpp" />
     <ClInclude Include="TypeMap.h" />
     <ClCompile Include="Util.cpp" />

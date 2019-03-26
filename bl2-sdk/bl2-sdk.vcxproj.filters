@@ -153,6 +153,9 @@
     <ClCompile Include="pydefs\_Structs_FTier.cpp">
       <Filter>Source Files\pydef</Filter>
     </ClCompile>
+    <ClCompile Include="pydefs\_TArray.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Logging.h">

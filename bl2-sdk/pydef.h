@@ -4757,3 +4757,4 @@ void Export_pystes_USkillTreeBranchDefinition(py::module &m);
 void Export_pystes_USkillTreeBranchLayoutDefinition(py::module &m);
 void Export_pystes_USkillDefinition(py::module &m);
 void Export_pystes_FTier(py::module &m);
+void Export_pystes_TArray(py::module &m);
