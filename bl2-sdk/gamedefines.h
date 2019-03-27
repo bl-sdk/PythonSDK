@@ -98,7 +98,7 @@ public:
 		if (Index < 0 || Index > this->Names()->Num())
 			return (char*)"UnknownName";
 		else
-		return this->Names()->Data[Index]->Name;
+			return this->Names()->Data[Index]->Name;
 	};
 
 	void AppendString(std::string& out)

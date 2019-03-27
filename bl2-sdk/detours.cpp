@@ -1211,7 +1211,7 @@ static PDETOUR_TRAMPOLINE detour_alloc_trampoline(PBYTE pbTarget)
 		pbTry = detour_alloc_region_from_lo(pbTarget + 0x40000000, (PBYTE)pHi);
 	}
 	// Try looking 1GB below or higher.
-	if (pbTry == NULL && pbTarget >(PBYTE)0x40000000) {
+	if (pbTry == NULL && pbTarget > (PBYTE)0x40000000) {
 		pbTry = detour_alloc_region_from_lo(pbTarget - 0x40000000, pbTarget);
 	}
 	// Try looking 1GB above or lower.

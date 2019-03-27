@@ -21,7 +21,7 @@ struct FArchive;
 namespace BL2SDK
 {
 	typedef void(__thiscall *tProcessEvent) (UObject*, UFunction*, void*, void*);
-	typedef int (tUnrealEH) (unsigned int, struct _EXCEPTION_POINTERS*);
+	typedef int (tUnrealEH)(unsigned int, struct _EXCEPTION_POINTERS*);
 	typedef void(__thiscall *tCallFunction) (UObject*, FFrame&, void* const, UFunction*);
 	typedef void(__thiscall *tFrameStep) (FFrame*, UObject*, void* const);
 	typedef UObject* (*tStaticConstructObject) (UClass* inClass, UObject* outer, FName name, unsigned int flags, UObject* inTemplate, FOutputDevice* error, UObject* root, void* unk);

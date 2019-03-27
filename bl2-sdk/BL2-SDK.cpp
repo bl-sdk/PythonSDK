@@ -130,7 +130,7 @@ namespace BL2SDK
 				DebugBreak();
 			}
 		}
-		
+
 
 		// Don't ever pass it back into the engine
 		Util::CloseGame();
@@ -250,12 +250,12 @@ namespace BL2SDK
 		//SETUP_SIMPLE_DETOUR(detProcessEvent, pProcessEvent, hkProcessEvent);
 		CSimpleDetour detProcessEvent(&(PVOID&)pProcessEvent, hkProcessEvent);
 		detProcessEvent.Attach();
-		
+
 		//// Detour Unreal exception handler
 		////SETUP_SIMPLE_DETOUR(detUnrealEH, addrUnrealEH, unrealExceptionHandler);
 		//CSimpleDetour detUnrealEH(&(PVOID&)addrUnrealEH, unrealExceptionHandler);
 		//detUnrealEH.Attach();
-		
+
 		// Detour UObject::CallFunction()
 		//SETUP_SIMPLE_DETOUR(detCallFunction, pCallFunction, hkCallFunction);
 		CSimpleDetour detCallFunction(&(PVOID&)pCallFunction, hkCallFunction);

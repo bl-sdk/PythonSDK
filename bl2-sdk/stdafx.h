@@ -107,7 +107,7 @@ namespace pybind11 {
 					else
 						type = &typeid(UObject);
 				}
-				else 
+				else
 					type = &typeid(UObject);
 				return src;
 			}
@@ -118,7 +118,7 @@ namespace pybind11 {
 }
 typedef struct {
 	PyObject_VAR_HEAD
-	PyObject **ob_item;
+		PyObject **ob_item;
 	Py_ssize_t allocated;
 	PyObject *dict;
 } PyTArrayObject;

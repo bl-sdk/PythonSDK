@@ -3,7 +3,7 @@
 #include "stdafx.h"
 #include <map>
 
-static std::map<std::string, const std::type_info *> uobject_type_map {
+static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"UTextBuffer", &typeid(UTextBuffer)},
 	{"UObject", &typeid(UObject)},
 	{"USystem", &typeid(USystem)},
