@@ -1,0 +1,47 @@
+#include "stdafx.h"
+// Using =======================================================================
+namespace py = pybind11;
+
+// Module ======================================================================
+void Export_pystes_UHUDWidget_Minimap(py::module &m)
+{
+    py::class_< UHUDWidget_Minimap,  UHUDWidget_Base   >(m, "UHUDWidget_Minimap")
+		.def_static("StaticClass", &UHUDWidget_Minimap::StaticClass, py::return_value_policy::reference)
+        .def_readwrite("WorldRadius", &UHUDWidget_Minimap::WorldRadius)
+        .def_readwrite("UnrealUnitsPerPixel", &UHUDWidget_Minimap::UnrealUnitsPerPixel)
+        .def_readwrite("TargetWorldRadius", &UHUDWidget_Minimap::TargetWorldRadius)
+        .def_readwrite("OuterRadius", &UHUDWidget_Minimap::OuterRadius)
+        .def_readwrite("RadiusLerpPerSecond", &UHUDWidget_Minimap::RadiusLerpPerSecond)
+        .def_readwrite("MapClip", &UHUDWidget_Minimap::MapClip)
+        .def_readwrite("DirArrowClip", &UHUDWidget_Minimap::DirArrowClip)
+        .def_readwrite("NorthMarkerClip", &UHUDWidget_Minimap::NorthMarkerClip)
+        .def_readwrite("NorthMarkerOffset", &UHUDWidget_Minimap::NorthMarkerOffset)
+        .def_readwrite("CachedPlayerYaw", &UHUDWidget_Minimap::CachedPlayerYaw)
+        .def_readwrite("MapYawOffset", &UHUDWidget_Minimap::MapYawOffset)
+        .def_readwrite("Icons_Objective", &UHUDWidget_Minimap::Icons_Objective)
+        .def_readwrite("Icons_AreaObjective", &UHUDWidget_Minimap::Icons_AreaObjective)
+        .def_readwrite("Icons_AreaObjectiveSticky", &UHUDWidget_Minimap::Icons_AreaObjectiveSticky)
+        .def_readwrite("Icons_CustomObjective", &UHUDWidget_Minimap::Icons_CustomObjective)
+        .def_readwrite("Icons_Threats", &UHUDWidget_Minimap::Icons_Threats)
+        .def_readwrite("Icons_Allies", &UHUDWidget_Minimap::Icons_Allies)
+        .def_readwrite("Icons_Vehicles", &UHUDWidget_Minimap::Icons_Vehicles)
+        .def_readwrite("Icons_Shops", &UHUDWidget_Minimap::Icons_Shops)
+        .def_readwrite("Icons_VSS", &UHUDWidget_Minimap::Icons_VSS)
+        .def_readwrite("Icons_HealthStations", &UHUDWidget_Minimap::Icons_HealthStations)
+        .def_readwrite("Icons_FastTravelStations", &UHUDWidget_Minimap::Icons_FastTravelStations)
+        .def_readwrite("Icons_LevelTravelStations", &UHUDWidget_Minimap::Icons_LevelTravelStations)
+        .def_readwrite("Icons_CustomizationStations", &UHUDWidget_Minimap::Icons_CustomizationStations)
+        .def_readwrite("Icons_MissionEligible", &UHUDWidget_Minimap::Icons_MissionEligible)
+        .def_readwrite("Icons_MissionRedeemable", &UHUDWidget_Minimap::Icons_MissionRedeemable)
+        .def_readwrite("TacticalMapVolume", &UHUDWidget_Minimap::TacticalMapVolume)
+        .def_readwrite("HUDMovieDef", &UHUDWidget_Minimap::HUDMovieDef)
+        .def("eventToggleFogOfWarBlob", &UHUDWidget_Minimap::eventToggleFogOfWarBlob)
+        .def("eventInitFogOfWarBlobs", &UHUDWidget_Minimap::eventInitFogOfWarBlobs)
+        .def("UpdateTargetRadius", &UHUDWidget_Minimap::UpdateTargetRadius)
+        .def("SetMapMovie", &UHUDWidget_Minimap::SetMapMovie)
+        .def("Update", &UHUDWidget_Minimap::Update)
+        .def("Deinit", &UHUDWidget_Minimap::Deinit)
+        .def("InitOverheadMapVolume", &UHUDWidget_Minimap::InitOverheadMapVolume)
+        .def("Init", &UHUDWidget_Minimap::Init)
+          ;
+}

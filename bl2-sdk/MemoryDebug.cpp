@@ -48,9 +48,4 @@ namespace BL2SDK
 	{
 		allocationWatches[ptr] = true;
 	}
-
-	FFI_EXPORT void LUAFUNC_AddAllocationWatch(void* ptr)
-	{
-		AddAllocationWatch(ptr);
-	}
 }

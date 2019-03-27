@@ -75,14 +75,21 @@
     <LinkIncremental>true</LinkIncremental>
     <TargetName>binkw32</TargetName>
     <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
+    <IncludePath>$(PYTHONPATH)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(PYTHONPATH)\libs;$(LibraryPath)</LibraryPath>
+    <OutDir>C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\Binaries\Win32\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LinkIncremental>false</LinkIncremental>
+    <LinkIncremental>
+    </LinkIncremental>
     <TargetName>binkw32</TargetName>
     <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
+    <IncludePath>$(PYTHONPATH)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(PYTHONPATH)\libs;$(LibraryPath)</LibraryPath>
+    <OutDir>C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\Binaries\Win32\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -92,18 +99,29 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;BL2SDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>lua51.lib;luajit.lib;minilua.lib;buildvm.lib;lfs.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(ProjectDir)bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AssemblyDebug>false</AssemblyDebug>
+      <GenerateMapFile>false</GenerateMapFile>
+      <MapExports>false</MapExports>
+      <LinkStatus>true</LinkStatus>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
     </Link>
     <PreBuildEvent>
       <Command>
@@ -128,23 +146,36 @@
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <Optimization>MaxSpeed</Optimization>
+      <Optimization>Custom</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;BL2SDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MinimalRebuild>false</MinimalRebuild>
+      <WholeProgramOptimization>true</WholeProgramOptimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <EnableFiberSafeOptimizations />
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>lua51.lib;luajit.lib;minilua.lib;buildvm.lib;lfs.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(ProjectDir)bin;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AssemblyDebug>false</AssemblyDebug>
+      <GenerateMapFile>false</GenerateMapFile>
+      <MapExports>false</MapExports>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <LinkStatus>true</LinkStatus>
     </Link>
     <PreBuildEvent>
       <Command>
@@ -174,8 +205,8 @@
     <ClCompile Include="AntiDebug.cpp" />
     <ClCompile Include="BL2-SDK.cpp" />
     <ClCompile Include="CHookManager.cpp" />
-    <ClCompile Include="CLuaInterface.cpp" />
     <ClCompile Include="Core_functions.cpp" />
+    <ClCompile Include="CPythonInterface.cpp" />
     <ClCompile Include="CSigScan.cpp" />
     <ClCompile Include="CSimpleDetour.cpp" />
     <ClCompile Include="detours.cpp" />
@@ -187,13 +218,25 @@
     <ClCompile Include="GFxUI_functions.cpp" />
     <ClCompile Include="IpDrv_functions.cpp" />
     <ClCompile Include="Logging.cpp" />
-    <ClCompile Include="LuaFileLib.cpp" />
     <ClCompile Include="MemoryDebug.cpp" />
     <ClCompile Include="modules.cpp" />
     <ClCompile Include="NamedPipe.cpp" />
     <ClCompile Include="OnlineSubsystemSteamworks_functions.cpp" />
     <ClCompile Include="PackageFix.cpp" />
+    <ClCompile Include="pydefs\_Classes_UConsole.cpp" />
+    <ClCompile Include="pydefs\_Classes_UGBXDefinition.cpp" />
+    <ClCompile Include="pydefs\_Classes_UInteraction.cpp" />
+    <ClCompile Include="pydefs\_Classes_UObject.cpp" />
+    <ClCompile Include="pydefs\_Classes_UPackage.cpp" />
+    <ClCompile Include="pydefs\_Classes_USkillDefinition.cpp" />
+    <ClCompile Include="pydefs\_Classes_USkillTreeBranchDefinition.cpp" />
+    <ClCompile Include="pydefs\_Classes_USkillTreeBranchLayoutDefinition.cpp" />
+    <ClCompile Include="pydefs\_Classes_UWillowConsole.cpp" />
+    <ClCompile Include="pydefs\_FString.cpp" />
+    <ClCompile Include="pydefs\_Structs_FTier.cpp" />
+    <ClCompile Include="pydefs\_TArray.cpp" />
     <ClCompile Include="Settings.cpp" />
+    <ClInclude Include="TypeMap.h" />
     <ClCompile Include="Util.cpp" />
     <ClCompile Include="WillowGame_functions.cpp" />
     <ClCompile Include="WinDrv_functions.cpp" />
@@ -216,10 +259,10 @@
     <ClInclude Include="AntiDebug.h" />
     <ClInclude Include="BL2-SDK.h" />
     <ClInclude Include="CHookManager.h" />
-    <ClInclude Include="CLuaInterface.h" />
     <ClInclude Include="Core_classes.h" />
     <ClInclude Include="Core_f_structs.h" />
     <ClInclude Include="Core_structs.h" />
+    <ClInclude Include="CPythonInterface.h" />
     <ClInclude Include="CSigScan.h" />
     <ClInclude Include="CSimpleDetour.h" />
     <ClInclude Include="detours.h" />
@@ -240,10 +283,33 @@
     <ClInclude Include="GFxUI_classes.h" />
     <ClInclude Include="GFxUI_f_structs.h" />
     <ClInclude Include="GFxUI_structs.h" />
+    <ClInclude Include="include\pybind11\attr.h" />
+    <ClInclude Include="include\pybind11\buffer_info.h" />
+    <ClInclude Include="include\pybind11\cast.h" />
+    <ClInclude Include="include\pybind11\chrono.h" />
+    <ClInclude Include="include\pybind11\common.h" />
+    <ClInclude Include="include\pybind11\complex.h" />
+    <ClInclude Include="include\pybind11\detail\class.h" />
+    <ClInclude Include="include\pybind11\detail\common.h" />
+    <ClInclude Include="include\pybind11\detail\descr.h" />
+    <ClInclude Include="include\pybind11\detail\init.h" />
+    <ClInclude Include="include\pybind11\detail\internals.h" />
+    <ClInclude Include="include\pybind11\detail\typeid.h" />
+    <ClInclude Include="include\pybind11\eigen.h" />
+    <ClInclude Include="include\pybind11\embed.h" />
+    <ClInclude Include="include\pybind11\eval.h" />
+    <ClInclude Include="include\pybind11\functional.h" />
+    <ClInclude Include="include\pybind11\iostream.h" />
+    <ClInclude Include="include\pybind11\numpy.h" />
+    <ClInclude Include="include\pybind11\operators.h" />
+    <ClInclude Include="include\pybind11\options.h" />
+    <ClInclude Include="include\pybind11\pybind11.h" />
+    <ClInclude Include="include\pybind11\pytypes.h" />
+    <ClInclude Include="include\pybind11\stl.h" />
+    <ClInclude Include="include\pybind11\stl_bind.h" />
     <ClInclude Include="IpDrv_classes.h" />
     <ClInclude Include="IpDrv_f_structs.h" />
     <ClInclude Include="IpDrv_structs.h" />
-    <ClInclude Include="LuaFileLib.h" />
     <ClInclude Include="MemoryDebug.h" />
     <ClInclude Include="MemorySignature.h" />
     <ClInclude Include="NamedPipe.h" />
@@ -251,6 +317,7 @@
     <ClInclude Include="OnlineSubsystemSteamworks_f_structs.h" />
     <ClInclude Include="OnlineSubsystemSteamworks_structs.h" />
     <ClInclude Include="PackageFix.h" />
+    <ClInclude Include="pydef.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Settings.h" />
     <ClInclude Include="Signatures.h" />

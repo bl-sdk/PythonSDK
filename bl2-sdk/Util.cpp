@@ -17,7 +17,6 @@ namespace Util
 	static NamedPipe *pipe = NULL;
 	static const char pipeName[] = "\\\\.\\pipe\\bl2monitorpipeutils";
 	static char serverPath[MAX_PATH] = { 0 };
-	static char mainLuaPath[MAX_PATH] = { 0 };
 	static char logPath[MAX_PATH] = { 0 };
 	static char layoutPath[MAX_PATH] = { 0 };
 
@@ -85,16 +84,6 @@ namespace Util
 		unsigned l = sizeof(serverPath);
 		SendRequest(req, sizeof(req) - 1, serverPath, &l);
 		return serverPath;
-	}
-
-	const char *MainLuaPath()
-	{
-		const char req[] = "LUAMAIN\n";
-		if (*mainLuaPath)
-			return mainLuaPath;
-		unsigned l = sizeof(mainLuaPath);
-		SendRequest(req, sizeof(req) - 1, mainLuaPath, &l);
-		return mainLuaPath;
 	}
 
 	const char *LogPath()

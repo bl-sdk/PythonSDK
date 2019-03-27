@@ -1,0 +1,48 @@
+#include "stdafx.h"
+// Using =======================================================================
+namespace py = pybind11;
+
+// Module ======================================================================
+void Export_pystes_UAttributePresentationDefinition(py::module &m)
+{
+    py::class_< UAttributePresentationDefinition,  UGBXDefinition   >(m, "UAttributePresentationDefinition")
+		.def_static("StaticClass", &UAttributePresentationDefinition::StaticClass, py::return_value_policy::reference)
+        .def_readwrite("BasePriority", &UAttributePresentationDefinition::BasePriority)
+        .def_readwrite("Attribute", &UAttributePresentationDefinition::Attribute)
+        .def_readwrite("Description", &UAttributePresentationDefinition::Description)
+        .def_readwrite("NoConstraintText", &UAttributePresentationDefinition::NoConstraintText)
+        .def_readwrite("Suffix", &UAttributePresentationDefinition::Suffix)
+        .def_readwrite("Prefix", &UAttributePresentationDefinition::Prefix)
+        .def_readwrite("RoundingMode", &UAttributePresentationDefinition::RoundingMode)
+        .def_readwrite("SignStyle", &UAttributePresentationDefinition::SignStyle)
+        .def_readwrite("TextColor", &UAttributePresentationDefinition::TextColor)
+        .def_readwrite("FloatPrecision", &UAttributePresentationDefinition::FloatPrecision)
+        .def_readwrite("Icon", &UAttributePresentationDefinition::Icon)
+        .def_readwrite("RemappingData", &UAttributePresentationDefinition::RemappingData)
+        .def("IncludePrefixInTranslation", &UAttributePresentationDefinition::IncludePrefixInTranslation)
+        .def("IncludeSuffixInTranslation", &UAttributePresentationDefinition::IncludeSuffixInTranslation)
+        .def("IsTextColorEnabled", &UAttributePresentationDefinition::IsTextColorEnabled)
+        .def("GetTextColor", &UAttributePresentationDefinition::GetTextColor)
+        .def("GetSignStyle", &UAttributePresentationDefinition::GetSignStyle)
+        .def("GetEffectiveRoundingMode", &UAttributePresentationDefinition::GetEffectiveRoundingMode)
+        .def("GetRoundingMode", &UAttributePresentationDefinition::GetRoundingMode)
+        .def("ShouldUseCustomNumberPlacement", &UAttributePresentationDefinition::ShouldUseCustomNumberPlacement)
+        .def("ShouldDisplayPlusSign", &UAttributePresentationDefinition::ShouldDisplayPlusSign)
+        .def("ShouldDisplayNumberInTranslation", &UAttributePresentationDefinition::ShouldDisplayNumberInTranslation)
+        .def("ShouldDisplayAsInverse", &UAttributePresentationDefinition::ShouldDisplayAsInverse)
+        .def("ShouldDisplayAsPercentage", &UAttributePresentationDefinition::ShouldDisplayAsPercentage)
+        .def("IsBiggerBetter", &UAttributePresentationDefinition::IsBiggerBetter)
+        .def("GetIconFramename", &UAttributePresentationDefinition::GetIconFramename)
+        .def("GetPrefix", &UAttributePresentationDefinition::GetPrefix)
+        .def("GetSuffix", &UAttributePresentationDefinition::GetSuffix)
+        .def("GetNoConstraintText", &UAttributePresentationDefinition::GetNoConstraintText)
+        .def("GetDescription", &UAttributePresentationDefinition::GetDescription)
+        .def("GetBasePriority", &UAttributePresentationDefinition::GetBasePriority)
+        .def("RemapValue", &UAttributePresentationDefinition::RemapValue)
+        .def("RoundValue", &UAttributePresentationDefinition::RoundValue)
+        .def("ApplyPresentationRulesToValue", &UAttributePresentationDefinition::ApplyPresentationRulesToValue)
+        .def("ValueToString", &UAttributePresentationDefinition::ValueToString)
+        .def("TranslateValue", &UAttributePresentationDefinition::TranslateValue)
+        .def("TranslateStatData", &UAttributePresentationDefinition::TranslateStatData)
+          ;
+}

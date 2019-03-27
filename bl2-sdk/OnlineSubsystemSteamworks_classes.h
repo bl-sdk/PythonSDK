@@ -135,7 +135,7 @@ public:
 	bool SendAuthRequestClient(class UPlayer* ClientConnection, struct FUniqueNetId ClientUID);
 };
 
-UClass* UOnlineAuthInterfaceSteamworks::pClassPointer = NULL;
+// UClass* UOnlineAuthInterfaceSteamworks::pClassPointer = NULL;
 
 // Class OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks
 // 0x0094 (0x0258 - 0x01C4)
@@ -192,7 +192,7 @@ public:
 	bool UpdateOnlineGame(struct FName SessionName, class UOnlineGameSettings* UpdatedGameSettings, unsigned long bShouldRefreshOnlineData);
 };
 
-UClass* UOnlineGameInterfaceSteamworks::pClassPointer = NULL;
+// UClass* UOnlineGameInterfaceSteamworks::pClassPointer = NULL;
 
 // Class OnlineSubsystemSteamworks.OnlineLobbyInterfaceSteamworks
 // 0x0000 (0x003C - 0x003C)
@@ -213,7 +213,7 @@ public:
 	};
 };
 
-UClass* UOnlineLobbyInterfaceSteamworks::pClassPointer = NULL;
+// UClass* UOnlineLobbyInterfaceSteamworks::pClassPointer = NULL;
 
 // Class OnlineSubsystemSteamworks.OnlineSubsystemSteamworks
 // 0x0668 (0x0760 - 0x00F8)
@@ -713,7 +713,7 @@ public:
 	bool eventInit();
 };
 
-UClass* UOnlineSubsystemSteamworks::pClassPointer = NULL;
+// UClass* UOnlineSubsystemSteamworks::pClassPointer = NULL;
 
 // Class OnlineSubsystemSteamworks.QoSHandlerSteamworks
 // 0x00A4 (0x00E0 - 0x003C)
@@ -745,7 +745,7 @@ public:
 	};
 };
 
-UClass* UQoSHandlerSteamworks::pClassPointer = NULL;
+// UClass* UQoSHandlerSteamworks::pClassPointer = NULL;
 
 // Class OnlineSubsystemSteamworks.SparkInterfaceSteamworks
 // 0x0000 (0x00DC - 0x00DC)
@@ -766,7 +766,7 @@ public:
 	};
 };
 
-UClass* USparkInterfaceSteamworks::pClassPointer = NULL;
+// UClass* USparkInterfaceSteamworks::pClassPointer = NULL;
 
 // Class OnlineSubsystemSteamworks.IpNetDriverSteamworks
 // 0x0000 (0x01EC - 0x01EC)
@@ -787,7 +787,7 @@ public:
 	};
 };
 
-UClass* UIpNetDriverSteamworks::pClassPointer = NULL;
+// UClass* UIpNetDriverSteamworks::pClassPointer = NULL;
 
 // Class OnlineSubsystemSteamworks.IpNetConnectionSteamworks
 // 0x0000 (0x5078 - 0x5078)
@@ -808,7 +808,7 @@ public:
 	};
 };
 
-UClass* UIpNetConnectionSteamworks::pClassPointer = NULL;
+// UClass* UIpNetConnectionSteamworks::pClassPointer = NULL;
 
 #ifdef _MSC_VER
 #pragma pack ( pop )

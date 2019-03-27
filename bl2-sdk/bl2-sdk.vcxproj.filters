@@ -22,6 +22,15 @@
     <Filter Include="Detours">
       <UniqueIdentifier>{46460847-50a4-46b3-8142-af59c66b2220}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\pydef">
+      <UniqueIdentifier>{d54e03d9-e547-4b9b-a86f-6759615c02aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pydef11">
+      <UniqueIdentifier>{226439f2-1bfe-4923-bbd8-79b12c2a5d1a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pydef11\detail">
+      <UniqueIdentifier>{a3d55180-e04d-440a-9f1c-dc59addb0933}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -99,12 +108,6 @@
     <ClCompile Include="GameHooks.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CLuaInterface.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="LuaFileLib.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="MemoryDebug.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -113,6 +116,45 @@
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPythonInterface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_Classes_UObject.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_Classes_UInteraction.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_Classes_UConsole.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_Classes_UWillowConsole.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_FString.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_Classes_UPackage.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_Classes_USkillTreeBranchDefinition.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_Classes_USkillTreeBranchLayoutDefinition.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_Classes_USkillDefinition.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_Classes_UGBXDefinition.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_Structs_FTier.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_TArray.cpp">
+      <Filter>Source Files\pydef</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -272,12 +314,6 @@
     <ClInclude Include="stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CLuaInterface.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="LuaFileLib.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="MemoryDebug.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -285,6 +321,87 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AntiDebug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CPythonInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pybind11\attr.h">
+      <Filter>Header Files\pydef11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pybind11\buffer_info.h">
+      <Filter>Header Files\pydef11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pybind11\cast.h">
+      <Filter>Header Files\pydef11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pybind11\chrono.h">
+      <Filter>Header Files\pydef11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pybind11\common.h">
+      <Filter>Header Files\pydef11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pybind11\complex.h">
+      <Filter>Header Files\pydef11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pybind11\eigen.h">
+      <Filter>Header Files\pydef11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pybind11\embed.h">
+      <Filter>Header Files\pydef11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pybind11\eval.h">
+      <Filter>Header Files\pydef11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pybind11\functional.h">
+      <Filter>Header Files\pydef11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pybind11\iostream.h">
+      <Filter>Header Files\pydef11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pybind11\numpy.h">
+      <Filter>Header Files\pydef11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pybind11\operators.h">
+      <Filter>Header Files\pydef11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pybind11\options.h">
+      <Filter>Header Files\pydef11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pybind11\pybind11.h">
+      <Filter>Header Files\pydef11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pybind11\pytypes.h">
+      <Filter>Header Files\pydef11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pybind11\stl.h">
+      <Filter>Header Files\pydef11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pybind11\stl_bind.h">
+      <Filter>Header Files\pydef11</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pybind11\detail\class.h">
+      <Filter>Header Files\pydef11\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pybind11\detail\common.h">
+      <Filter>Header Files\pydef11\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pybind11\detail\descr.h">
+      <Filter>Header Files\pydef11\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pybind11\detail\init.h">
+      <Filter>Header Files\pydef11\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pybind11\detail\internals.h">
+      <Filter>Header Files\pydef11\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pybind11\detail\typeid.h">
+      <Filter>Header Files\pydef11\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="pydef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TypeMap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

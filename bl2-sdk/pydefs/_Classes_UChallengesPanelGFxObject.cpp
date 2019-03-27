@@ -1,0 +1,48 @@
+#include "stdafx.h"
+// Using =======================================================================
+namespace py = pybind11;
+
+// Module ======================================================================
+void Export_pystes_UChallengesPanelGFxObject(py::module &m)
+{
+    py::class_< UChallengesPanelGFxObject,  UBaseInventoryPanelGFxObject   >(m, "UChallengesPanelGFxObject")
+		.def_static("StaticClass", &UChallengesPanelGFxObject::StaticClass, py::return_value_policy::reference)
+        .def_readwrite("ChallengeLogTextList", &UChallengesPanelGFxObject::ChallengeLogTextList)
+        .def_readwrite("StatusMenuDef", &UChallengesPanelGFxObject::StatusMenuDef)
+        .def_readwrite("MyWPC", &UChallengesPanelGFxObject::MyWPC)
+        .def_readwrite("TooltipsText_Cancel", &UChallengesPanelGFxObject::TooltipsText_Cancel)
+        .def_readwrite("TooltipsText_Track", &UChallengesPanelGFxObject::TooltipsText_Track)
+        .def_readwrite("TooltipsText_Untrack", &UChallengesPanelGFxObject::TooltipsText_Untrack)
+        .def_readwrite("TooltipsText_Reset", &UChallengesPanelGFxObject::TooltipsText_Reset)
+        .def_readwrite("UnspecifiedCategoryHeader", &UChallengesPanelGFxObject::UnspecifiedCategoryHeader)
+        .def_readwrite("TrackedCategoryHeader", &UChallengesPanelGFxObject::TrackedCategoryHeader)
+        .def_readwrite("ChallengeCategories", &UChallengesPanelGFxObject::ChallengeCategories)
+        .def_readwrite("CurrentSortMode", &UChallengesPanelGFxObject::CurrentSortMode)
+        .def_readwrite("ChallengeSortTooltip", &UChallengesPanelGFxObject::ChallengeSortTooltip)
+        .def_readwrite("ChallengeRewardHeader", &UChallengesPanelGFxObject::ChallengeRewardHeader)
+        .def("UpdatePrestigeIndicator", &UChallengesPanelGFxObject::UpdatePrestigeIndicator)
+        .def("GetSortString", &UChallengesPanelGFxObject::GetSortString)
+        .def("SortModeChanged", &UChallengesPanelGFxObject::SortModeChanged)
+        .def("UpdateTooltips", &UChallengesPanelGFxObject::UpdateTooltips)
+        .def("RefreshChallengesOnReset", &UChallengesPanelGFxObject::RefreshChallengesOnReset)
+        .def("SetListHeader", &UChallengesPanelGFxObject::SetListHeader)
+        .def("SetChallengeDescription", &UChallengesPanelGFxObject::SetChallengeDescription)
+        .def("UpdateChallengeDescription", &UChallengesPanelGFxObject::UpdateChallengeDescription)
+        .def("UpdateListOfChallenges", &UChallengesPanelGFxObject::UpdateListOfChallenges)
+        .def("extOnSetActive", &UChallengesPanelGFxObject::extOnSetActive)
+        .def("ScrollLog", &UChallengesPanelGFxObject::ScrollLog)
+        .def("Tick", &UChallengesPanelGFxObject::Tick)
+        .def("TrackHighlightedObject", &UChallengesPanelGFxObject::TrackHighlightedObject)
+        .def("ChangeSort", &UChallengesPanelGFxObject::ChangeSort)
+        .def("PanelOnInputKey", &UChallengesPanelGFxObject::PanelOnInputKey)
+        .def("BlockInput", &UChallengesPanelGFxObject::BlockInput)
+        .def("DeferInput", &UChallengesPanelGFxObject::DeferInput)
+        .def("Deinit", &UChallengesPanelGFxObject::Deinit)
+        .def("Init", &UChallengesPanelGFxObject::Init)
+        .def("SetLastSortMode", &UChallengesPanelGFxObject::SetLastSortMode)
+        .def("GetLastSortMode", &UChallengesPanelGFxObject::GetLastSortMode)
+        .def("SetLastHighlightedEntry", &UChallengesPanelGFxObject::SetLastHighlightedEntry)
+        .def("GetLastHighlightedEntry", &UChallengesPanelGFxObject::GetLastHighlightedEntry)
+        .def("UpdateChallengeTextList", &UChallengesPanelGFxObject::UpdateChallengeTextList)
+          ;
+}

@@ -60,6 +60,11 @@ namespace Logging
 		}
 	}
 
+	void LogPy(const char* formatted)
+	{
+		Log(formatted, 0);
+	}
+
 	void LogF(const char* fmt, ...)
 	{
 		va_list args;

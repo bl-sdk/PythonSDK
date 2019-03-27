@@ -24,13 +24,52 @@
 */
 
 UClass* UObject::pClassPointer = NULL;
+UClass* UTextBuffer::pClassPointer = NULL;
+UClass* USubsystem::pClassPointer = NULL;
+UClass* USystem::pClassPointer = NULL;
+UClass* UPackageMap::pClassPointer = NULL;
+UClass* UObjectSerializer::pClassPointer = NULL;
+UClass* UObjectRedirector::pClassPointer = NULL;
+UClass* UMetaData::pClassPointer = NULL;
+UClass* ULinker::pClassPointer = NULL;
+UClass* ULinkerSave::pClassPointer = NULL;
+UClass* UInterface::pClassPointer = NULL;
 UClass* UField::pClassPointer = NULL;
 UClass* UStruct::pClassPointer = NULL;
+UClass* UScriptStruct::pClassPointer = NULL;
 UClass* UFunction::pClassPointer = NULL;
+UClass* UProperty::pClassPointer = NULL;
+UClass* UStructProperty::pClassPointer = NULL;
+UClass* UStrProperty::pClassPointer = NULL;
+UClass* UObjectProperty::pClassPointer = NULL;
+UClass* UComponentProperty::pClassPointer = NULL;
+UClass* UClassProperty::pClassPointer = NULL;
+UClass* UNameProperty::pClassPointer = NULL;
+UClass* UMapProperty::pClassPointer = NULL;
+UClass* UIntProperty::pClassPointer = NULL;
+UClass* UIntAttributeProperty::pClassPointer = NULL;
+UClass* UInterfaceProperty::pClassPointer = NULL;
+UClass* UFloatProperty::pClassPointer = NULL;
+UClass* UFloatAttributeProperty::pClassPointer = NULL;
+UClass* UDelegateProperty::pClassPointer = NULL;
+UClass* UByteProperty::pClassPointer = NULL;
+UClass* UByteAttributeProperty::pClassPointer = NULL;
+UClass* UBoolProperty::pClassPointer = NULL;
+UClass* UArrayProperty::pClassPointer = NULL;
+UClass* UEnum::pClassPointer = NULL;
+UClass* UConst::pClassPointer = NULL;
+UClass* UFactory::pClassPointer = NULL;
+UClass* UTextBufferFactory::pClassPointer = NULL;
+UClass* UExporter::pClassPointer = NULL;
+UClass* UComponent::pClassPointer = NULL;
+UClass* UDistributionVector::pClassPointer = NULL;
+UClass* UDistributionFloat::pClassPointer = NULL;
+UClass* UCommandlet::pClassPointer = NULL;
+UClass* UHelpCommandlet::pClassPointer = NULL;
+UClass* UAttributeModifier::pClassPointer = NULL;
 UClass* UState::pClassPointer = NULL;
-UClass* UClass::pClassPointer = NULL;
 UClass* UPackage::pClassPointer = NULL;
-
+UClass* UClass::pClassPointer = NULL;
 /*
 # ========================================================================================= #
 # Basic Functions
@@ -43,7 +82,7 @@ TArray< UObject* >* UObject::GObjObjects()
 	return ObjectArray;
 }
 
-char* UObject::GetName()
+std::string UObject::GetName()
 {
 	static char cOutBuffer[256];
 
@@ -52,7 +91,7 @@ char* UObject::GetName()
 	return cOutBuffer;
 }
 
-char* UObject::GetNameCPP()
+std::string UObject::GetNameCPP()
 {
 	static char cOutBuffer[256];
 
@@ -61,12 +100,12 @@ char* UObject::GetNameCPP()
 		UClass* pClass = (UClass*)this;
 		while (pClass)
 		{
-			if (!strcmp(pClass->GetName(), "Actor"))
+			if (!strcmp(pClass->GetName().c_str(), "Actor"))
 			{
 				strcpy_s(cOutBuffer, "A");
 				break;
 			}
-			else if (!strcmp(pClass->GetName(), "Object"))
+			else if (!strcmp(pClass->GetName().c_str(), "Object"))
 			{
 				strcpy_s(cOutBuffer, "U");
 				break;
@@ -77,15 +116,15 @@ char* UObject::GetNameCPP()
 	}
 	else
 	{
-		strcpy_s(cOutBuffer, "F");
+		strcpy_s(cOutBuffer, "U");
 	}
 
-	strcat_s(cOutBuffer, this->GetName());
+	strcat_s(cOutBuffer, this->GetName().c_str());
 
 	return cOutBuffer;
 }
 
-char* UObject::GetFullName()
+std::string UObject::GetFullName()
 {
 	if (this->Class && this->Outer)
 	{
@@ -93,21 +132,21 @@ char* UObject::GetFullName()
 
 		if (this->Outer->Outer)
 		{
-			strcpy_s(cOutBuffer, this->Class->GetName());
+			strcpy_s(cOutBuffer, this->Class->GetName().c_str());
 			strcat_s(cOutBuffer, " ");
-			strcat_s(cOutBuffer, this->Outer->Outer->GetName());
+			strcat_s(cOutBuffer, this->Outer->Outer->GetName().c_str());
 			strcat_s(cOutBuffer, ".");
-			strcat_s(cOutBuffer, this->Outer->GetName());
+			strcat_s(cOutBuffer, this->Outer->GetName().c_str());
 			strcat_s(cOutBuffer, ".");
-			strcat_s(cOutBuffer, this->GetName());
+			strcat_s(cOutBuffer, this->GetName().c_str());
 		}
 		else
 		{
-			strcpy_s(cOutBuffer, this->Class->GetName());
+			strcpy_s(cOutBuffer, this->Class->GetName().c_str());
 			strcat_s(cOutBuffer, " ");
-			strcat_s(cOutBuffer, this->Outer->GetName());
+			strcat_s(cOutBuffer, this->Outer->GetName().c_str());
 			strcat_s(cOutBuffer, ".");
-			strcat_s(cOutBuffer, this->GetName());
+			strcat_s(cOutBuffer, this->GetName().c_str());
 		}
 
 		return cOutBuffer;
@@ -124,21 +163,21 @@ UClass* UObject::FindClass(char* ClassFullName)
 	while (!FName::Names())
 		Sleep(100);
 
-	for (int i = 0; i < UObject::GObjObjects()->Count; ++i)
+	for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
 	{
 		UObject* Object = UObject::GObjObjects()->Data[i];
 
 		if (!Object)
 			continue;
 
-		if (!_stricmp(Object->GetFullName(), ClassFullName))
+		if (!_stricmp(Object->GetFullName().c_str(), ClassFullName))
 			return (UClass*)Object;
 	}
 
 	return NULL;
 }
 
-bool UObject::IsA(UClass* pClass)
+bool UObject::IsA(UClass* pClass) const
 {
 	for (UClass* SuperClass = this->Class; SuperClass; SuperClass = (UClass*)SuperClass->SuperField)
 	{

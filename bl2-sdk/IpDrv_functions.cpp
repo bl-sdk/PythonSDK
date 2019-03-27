@@ -16,6 +16,37 @@
 #pragma pack ( push, 0x4 )
 #endif
 
+
+UClass* UClientBeaconAddressResolver::pClassPointer = NULL;
+UClass* UHTTPDownload::pClassPointer = NULL;
+UClass* AInternetLink::pClassPointer = NULL;
+UClass* ATcpLink::pClassPointer = NULL;
+UClass* UMCPBase::pClassPointer = NULL;
+UClass* UOnlineEventsInterfaceMcp::pClassPointer = NULL;
+UClass* UOnlineNewsInterfaceMcp::pClassPointer = NULL;
+UClass* UOnlineTitleFileDownloadMcp::pClassPointer = NULL;
+UClass* UMeshBeacon::pClassPointer = NULL;
+UClass* UMeshBeaconClient::pClassPointer = NULL;
+UClass* UMeshBeaconHost::pClassPointer = NULL;
+UClass* UOnlineSubsystemCommonImpl::pClassPointer = NULL;
+UClass* UOnlineAuthInterfaceImpl::pClassPointer = NULL;
+UClass* UOnlineGameInterfaceImpl::pClassPointer = NULL;
+UClass* UOnlinePlaylistManager::pClassPointer = NULL;
+UClass* UPartyBeacon::pClassPointer = NULL;
+UClass* UPartyBeaconClient::pClassPointer = NULL;
+UClass* UPartyBeaconHost::pClassPointer = NULL;
+UClass* UTcpipConnection::pClassPointer = NULL;
+UClass* UTcpNetDriver::pClassPointer = NULL;
+UClass* UWebRequest::pClassPointer = NULL;
+UClass* UWebResponse::pClassPointer = NULL;
+UClass* UOnlinePlaylistProvider::pClassPointer = NULL;
+UClass* UUIDataStore_OnlinePlaylists::pClassPointer = NULL;
+UClass* UWebApplication::pClassPointer = NULL;
+UClass* AWebServer::pClassPointer = NULL;
+UClass* UHelloWeb::pClassPointer = NULL;
+UClass* UImageServer::pClassPointer = NULL;
+UClass* AWebConnection::pClassPointer = NULL;
+
 /*
 # ========================================================================================= #
 # Functions

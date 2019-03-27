@@ -17,12 +17,17 @@
 # ========================================================================================= #
 */
 
+class PyTArray {
+public:
+	PyTArray() {}
+};
+
 template<class T> struct TArray
 {
 public:
 	T * Data;
-	int Count;
-	int Max;
+	unsigned int Count;
+	unsigned int Max;
 
 	TArray()
 	{
@@ -71,7 +76,7 @@ public:
 	{
 		Number = 0;
 
-		for (int i = 0; i < this->Names()->Count; i++)
+		for (size_t i = 0; i < this->Names()->Count; i++)
 		{
 			if (this->Names()->Data[i])
 			{
@@ -93,7 +98,7 @@ public:
 		if (Index < 0 || Index > this->Names()->Num())
 			return (char*)"UnknownName";
 		else
-		return this->Names()->Data[Index]->Name;
+			return this->Names()->Data[Index]->Name;
 	};
 
 	void AppendString(std::string& out)

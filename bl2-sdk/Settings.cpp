@@ -49,13 +49,10 @@ namespace Settings
 		return newPath;
 	}
 
-	std::wstring GetLuaFile(const std::wstring& filename)
+	std::wstring GetPythonFile(const std::wstring& filename)
 	{
 		std::wstring newPath;
-		//wchar_t temppath[MAX_PATH + 1] = { 0 };
-		newPath = binPath + L"..\\plugins\\" + filename;
-		//PathCombine((LPWSTR)newPath.c_str(), temppath, nullptr);
-		//return (std::wstring)temppath;
+		newPath = binPath + L"..\\plugins\\python\\" + filename;
 		return newPath;
 	}
 

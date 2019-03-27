@@ -1,0 +1,12 @@
+#include "stdafx.h"
+// Using =======================================================================
+namespace py = pybind11;
+
+// Module ======================================================================
+void Export_pystes_UInRangeOfInjuredPlayerExpressionEvaluator(py::module &m)
+{
+    py::class_< UInRangeOfInjuredPlayerExpressionEvaluator,  UExpressionEvaluator   >(m, "UInRangeOfInjuredPlayerExpressionEvaluator")
+		.def_static("StaticClass", &UInRangeOfInjuredPlayerExpressionEvaluator::StaticClass, py::return_value_policy::reference)
+        .def("Evaluate", &UInRangeOfInjuredPlayerExpressionEvaluator::Evaluate)
+          ;
+}

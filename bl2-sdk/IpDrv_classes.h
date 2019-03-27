@@ -254,7 +254,7 @@ public:
 	};
 };
 
-UClass* UClientBeaconAddressResolver::pClassPointer = NULL;
+// UClass* UClientBeaconAddressResolver::pClassPointer = NULL;
 
 // Class IpDrv.HTTPDownload
 // 0x0104 (0x0B74 - 0x0A70)
@@ -280,7 +280,7 @@ public:
 	};
 };
 
-UClass* UHTTPDownload::pClassPointer = NULL;
+// UClass* UHTTPDownload::pClassPointer = NULL;
 
 // Class IpDrv.InternetLink
 // 0x0018 (0x01A0 - 0x0188)
@@ -320,7 +320,7 @@ public:
 	bool IsDataPending();
 };
 
-UClass* AInternetLink::pClassPointer = NULL;
+// UClass* AInternetLink::pClassPointer = NULL;
 
 // Class IpDrv.TcpLink
 // 0x0028 (0x01C8 - 0x01A0)
@@ -362,7 +362,7 @@ public:
 	int BindPort(int PortNum, unsigned long bUseNextAvailable);
 };
 
-UClass* ATcpLink::pClassPointer = NULL;
+// UClass* ATcpLink::pClassPointer = NULL;
 
 // Class IpDrv.MCPBase
 // 0x0004 (0x0040 - 0x003C)
@@ -384,7 +384,7 @@ public:
 	};
 };
 
-UClass* UMCPBase::pClassPointer = NULL;
+// UClass* UMCPBase::pClassPointer = NULL;
 
 // Class IpDrv.OnlineEventsInterfaceMcp
 // 0x0028 (0x0068 - 0x0040)
@@ -414,7 +414,7 @@ public:
 	bool UploadPlayerData(struct FUniqueNetId UniqueId, struct FString PlayerNick, class UOnlineProfileSettings* ProfileSettings, class UOnlinePlayerStorage* PlayerStorage);
 };
 
-UClass* UOnlineEventsInterfaceMcp::pClassPointer = NULL;
+// UClass* UOnlineEventsInterfaceMcp::pClassPointer = NULL;
 
 // Class IpDrv.OnlineNewsInterfaceMcp
 // 0x0028 (0x0068 - 0x0040)
@@ -445,7 +445,7 @@ public:
 	bool ReadNews(unsigned char LocalUserNum, unsigned char NewsType);
 };
 
-UClass* UOnlineNewsInterfaceMcp::pClassPointer = NULL;
+// UClass* UOnlineNewsInterfaceMcp::pClassPointer = NULL;
 
 // Class IpDrv.OnlineTitleFileDownloadMcp
 // 0x0050 (0x0090 - 0x0040)
@@ -487,7 +487,7 @@ public:
 	void OnReadTitleFileComplete(unsigned long bWasSuccessful, struct FString Filename);
 };
 
-UClass* UOnlineTitleFileDownloadMcp::pClassPointer = NULL;
+// UClass* UOnlineTitleFileDownloadMcp::pClassPointer = NULL;
 
 // Class IpDrv.MeshBeacon
 // 0x003C (0x0078 - 0x003C)
@@ -526,7 +526,7 @@ public:
 	void eventDestroyBeacon();
 };
 
-UClass* UMeshBeacon::pClassPointer = NULL;
+// UClass* UMeshBeacon::pClassPointer = NULL;
 
 // Class IpDrv.MeshBeaconClient
 // 0x00B0 (0x0128 - 0x0078)
@@ -573,7 +573,7 @@ public:
 	void eventDestroyBeacon();
 };
 
-UClass* UMeshBeaconClient::pClassPointer = NULL;
+// UClass* UMeshBeaconClient::pClassPointer = NULL;
 
 // Class IpDrv.MeshBeaconHost
 // 0x0074 (0x00EC - 0x0078)
@@ -623,7 +623,7 @@ public:
 	bool InitHostBeacon(struct FUniqueNetId InOwningPlayerId);
 };
 
-UClass* UMeshBeaconHost::pClassPointer = NULL;
+// UClass* UMeshBeaconHost::pClassPointer = NULL;
 
 // Class IpDrv.OnlineSubsystemCommonImpl
 // 0x0018 (0x00F8 - 0x00E0)
@@ -654,7 +654,7 @@ public:
 	struct FString eventGetPlayerNicknameFromIndex(int UserIndex);
 };
 
-UClass* UOnlineSubsystemCommonImpl::pClassPointer = NULL;
+// UClass* UOnlineSubsystemCommonImpl::pClassPointer = NULL;
 
 // Class IpDrv.OnlineAuthInterfaceImpl
 // 0x0088 (0x0194 - 0x010C)
@@ -718,7 +718,7 @@ public:
 	void AddAuthReadyDelegate(struct FScriptDelegate AuthReadyDelegate);
 };
 
-UClass* UOnlineAuthInterfaceImpl::pClassPointer = NULL;
+// UClass* UOnlineAuthInterfaceImpl::pClassPointer = NULL;
 
 // Class IpDrv.OnlineGameInterfaceImpl
 // 0x0188 (0x01C4 - 0x003C)
@@ -861,7 +861,7 @@ public:
 	void OnFindOnlineGamesComplete(unsigned long bWasSuccessful);
 };
 
-UClass* UOnlineGameInterfaceImpl::pClassPointer = NULL;
+// UClass* UOnlineGameInterfaceImpl::pClassPointer = NULL;
 
 // Class IpDrv.OnlinePlaylistManager
 // 0x00A4 (0x00E0 - 0x003C)
@@ -934,7 +934,7 @@ public:
 	void OnReadPlaylistComplete(unsigned long bWasSuccessful);
 };
 
-UClass* UOnlinePlaylistManager::pClassPointer = NULL;
+// UClass* UOnlinePlaylistManager::pClassPointer = NULL;
 
 // Class IpDrv.PartyBeacon
 // 0x002C (0x0068 - 0x003C)
@@ -968,7 +968,7 @@ public:
 	void eventDestroyBeacon();
 };
 
-UClass* UPartyBeacon::pClassPointer = NULL;
+// UClass* UPartyBeacon::pClassPointer = NULL;
 
 // Class IpDrv.PartyBeaconClient
 // 0x008C (0x00F4 - 0x0068)
@@ -1013,7 +1013,7 @@ public:
 	void OnReservationRequestComplete(unsigned char ReservationResult);
 };
 
-UClass* UPartyBeaconClient::pClassPointer = NULL;
+// UClass* UPartyBeaconClient::pClassPointer = NULL;
 
 // Class IpDrv.PartyBeaconHost
 // 0x0068 (0x00D0 - 0x0068)
@@ -1071,7 +1071,7 @@ public:
 	void PauseReservationRequests(unsigned long bPause);
 };
 
-UClass* UPartyBeaconHost::pClassPointer = NULL;
+// UClass* UPartyBeaconHost::pClassPointer = NULL;
 
 // Class IpDrv.TcpipConnection
 // 0x0020 (0x5078 - 0x5058)
@@ -1093,7 +1093,7 @@ public:
 	};
 };
 
-UClass* UTcpipConnection::pClassPointer = NULL;
+// UClass* UTcpipConnection::pClassPointer = NULL;
 
 // Class IpDrv.TcpNetDriver
 // 0x0020 (0x01EC - 0x01CC)
@@ -1117,7 +1117,7 @@ public:
 	};
 };
 
-UClass* UTcpNetDriver::pClassPointer = NULL;
+// UClass* UTcpNetDriver::pClassPointer = NULL;
 
 // Class IpDrv.WebRequest
 // 0x00BC (0x00F8 - 0x003C)
@@ -1162,7 +1162,7 @@ public:
 	struct FString DecodeBase64(struct FString Encoded);
 };
 
-UClass* UWebRequest::pClassPointer = NULL;
+// UClass* UWebRequest::pClassPointer = NULL;
 
 // Class IpDrv.WebResponse
 // 0x0068 (0x00A4 - 0x003C)
@@ -1212,7 +1212,7 @@ public:
 	bool FileExists(struct FString Filename);
 };
 
-UClass* UWebResponse::pClassPointer = NULL;
+// UClass* UWebResponse::pClassPointer = NULL;
 
 // Class IpDrv.OnlinePlaylistProvider
 // 0x0020 (0x00A8 - 0x0088)
@@ -1237,7 +1237,7 @@ public:
 	};
 };
 
-UClass* UOnlinePlaylistProvider::pClassPointer = NULL;
+// UClass* UOnlinePlaylistProvider::pClassPointer = NULL;
 
 // Class IpDrv.UIDataStore_OnlinePlaylists
 // 0x0048 (0x00CC - 0x0084)
@@ -1276,7 +1276,7 @@ public:
 	void eventInit();
 };
 
-UClass* UUIDataStore_OnlinePlaylists::pClassPointer = NULL;
+// UClass* UUIDataStore_OnlinePlaylists::pClassPointer = NULL;
 
 // Class IpDrv.WebApplication
 // 0x0014 (0x0050 - 0x003C)
@@ -1307,7 +1307,7 @@ public:
 	void Init();
 };
 
-UClass* UWebApplication::pClassPointer = NULL;
+// UClass* UWebApplication::pClassPointer = NULL;
 
 // Class IpDrv.WebServer
 // 0x014C (0x0314 - 0x01C8)
@@ -1346,7 +1346,7 @@ public:
 	void PostBeginPlay();
 };
 
-UClass* AWebServer::pClassPointer = NULL;
+// UClass* AWebServer::pClassPointer = NULL;
 
 // Class IpDrv.HelloWeb
 // 0x0000 (0x0050 - 0x0050)
@@ -1370,7 +1370,7 @@ public:
 	void Init();
 };
 
-UClass* UHelloWeb::pClassPointer = NULL;
+// UClass* UHelloWeb::pClassPointer = NULL;
 
 // Class IpDrv.ImageServer
 // 0x0000 (0x0050 - 0x0050)
@@ -1393,7 +1393,7 @@ public:
 	void eventQuery(class UWebRequest* Request, class UWebResponse* Response);
 };
 
-UClass* UImageServer::pClassPointer = NULL;
+// UClass* UImageServer::pClassPointer = NULL;
 
 // Class IpDrv.WebConnection
 // 0x0030 (0x01F8 - 0x01C8)
@@ -1438,7 +1438,7 @@ public:
 	void eventAccepted();
 };
 
-UClass* AWebConnection::pClassPointer = NULL;
+// UClass* AWebConnection::pClassPointer = NULL;
 
 #ifdef _MSC_VER
 #pragma pack ( pop )

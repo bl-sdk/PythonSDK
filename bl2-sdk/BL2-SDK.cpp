@@ -37,7 +37,7 @@ namespace BL2SDK
 	tLoadPackage pLoadPackage;
 	tByteOrderSerialize pByteOrderSerialize;
 
-	CLuaInterface * Lua;
+	CPythonInterface *Python;
 
 	int EngineVersion = -1;
 	int ChangelistNumber = -1;
@@ -130,7 +130,7 @@ namespace BL2SDK
 				DebugBreak();
 			}
 		}
-		
+
 
 		// Don't ever pass it back into the engine
 		Util::CloseGame();
@@ -250,36 +250,35 @@ namespace BL2SDK
 		//SETUP_SIMPLE_DETOUR(detProcessEvent, pProcessEvent, hkProcessEvent);
 		CSimpleDetour detProcessEvent(&(PVOID&)pProcessEvent, hkProcessEvent);
 		detProcessEvent.Attach();
-		
-		// Detour Unreal exception handler
-		//SETUP_SIMPLE_DETOUR(detUnrealEH, addrUnrealEH, unrealExceptionHandler);
-		CSimpleDetour detUnrealEH(&(PVOID&)addrUnrealEH, unrealExceptionHandler);
-		detUnrealEH.Attach();
-		
+
+		//// Detour Unreal exception handler
+		////SETUP_SIMPLE_DETOUR(detUnrealEH, addrUnrealEH, unrealExceptionHandler);
+		//CSimpleDetour detUnrealEH(&(PVOID&)addrUnrealEH, unrealExceptionHandler);
+		//detUnrealEH.Attach();
+
 		// Detour UObject::CallFunction()
 		//SETUP_SIMPLE_DETOUR(detCallFunction, pCallFunction, hkCallFunction);
 		CSimpleDetour detCallFunction(&(PVOID&)pCallFunction, hkCallFunction);
 		detCallFunction.Attach();
 	}
 
-	void InitializeLua()
+	void InitializePython()
 	{
-		Lua = new CLuaInterface();
-		LuaStatus status = Lua->InitializeModules();
-		if (status == LUA_MODULE_ERROR && !Settings::DeveloperModeEnabled())
+		Python = new CPythonInterface();
+		PythonStatus status = Python->InitializeModules();
+		if (status == PYTHON_MODULE_ERROR && !Settings::DeveloperModeEnabled())
 		{
-			Util::Popup(L"Lua Module Error",
-				L"A core Lua module failed to load correctly, and the SDK cannot continue to run.\n\nThis may indicate that BL2 has been patched and the SDK needs updating.");
-			//Util::CloseGame();
+			Util::Popup(L"Python Module Error",
+				L"A core Python module failed to load correctly, and the SDK cannot continue to run.\n\nThis may indicate that BL2 has been patched and the SDK needs updating.");
 		}
-		else if (status == LUA_MODULE_ERROR && Settings::DeveloperModeEnabled())
+		else if (status == PYTHON_MODULE_ERROR && Settings::DeveloperModeEnabled())
 		{
-			Util::Popup(L"Lua Module Error",
-				L"An error occurred while loading the Lua modules.\n\nPlease check your console for the exact error. Once you've fixed the error, press F11 to reload the Lua state.");
+			Util::Popup(L"Python Module Error",
+				L"An error occurred while loading the Python modules.\n\nPlease check your console for the exact error. Once you've fixed the error, press F11 to reload the Python state.");
 		}
-		else if (status == LUA_OK)
+		else if (status == PYTHON_OK)
 		{
-			Logging::LogF("[Internal] Lua initialized successfully.\n");
+			Logging::LogF("[Internal] Python initialized successfully.\n");
 		}
 	}
 
@@ -293,9 +292,9 @@ namespace BL2SDK
 			const char* name = realParms->Key.GetName();
 			if (strcmp(name, "F11") == 0)
 			{
-				// Reset the lua state
-				delete Lua;
-				InitializeLua();
+				/*delete Python;
+				InitializePython();*/
+				Python->DoFile("include\\init.py");
 				return false;
 			}
 			/*
@@ -314,10 +313,9 @@ namespace BL2SDK
 	}
 
 	// This function is used to get the dimensions of the game window for Gwen's renderer
-	// It will also initialize Lua and the command system, so the SDK is essentially fully operational at this point
 	bool getCanvasPostRender(UObject* caller, UFunction* function, void* parms, void* result)
 	{
-		InitializeLua();
+		InitializePython();
 
 		if (Settings::DeveloperModeEnabled())
 		{
@@ -372,7 +370,7 @@ namespace BL2SDK
 
 	void initialize(wchar_t * exeBaseFolder)
 	{
-		//HookAntiDebug();
+		HookAntiDebug();
 		GameHooks::Initialize();
 		hookGame();
 		//InitializePackageFix();
@@ -390,42 +388,20 @@ namespace BL2SDK
 	{
 		Logging::Cleanup();
 		GameHooks::Cleanup();
-		delete Lua;
 		Util::CloseGame();
 	}
 
-	FFI_EXPORT void LUAFUNC_LogAllProcessEventCalls(bool enabled)
-	{
-		LogAllProcessEventCalls(enabled);
-	}
-
-	FFI_EXPORT void LUAFUNC_LogAllUnrealScriptCalls(bool enabled)
-	{
-		LogAllUnrealScriptCalls(enabled);
-	}
-
-	FFI_EXPORT std::string* LUAFUNC_UObjectGetFullName(UObject* obj)
-	{
-		// Move name from stack to heap
-		return new std::string(obj->GetFullName());
-	}
-
-	FFI_EXPORT void LUAFUNC_DeleteString(std::string* str)
-	{
-		delete str;
-	}
-
-	FFI_EXPORT UObject* LUAFUNC_StaticConstructObject(UClass* inClass, UObject* outer, FName name, unsigned int flags)
-	{
-		return pStaticConstructObject(inClass, outer, name, flags, nullptr, nullptr, nullptr, nullptr);
-	}
-
-	FFI_EXPORT UPackage* LUAFUNC_LoadPackage(UPackage* outer, const char* filename, DWORD flags)
+	void  LoadPackage(const char* filename, DWORD flags, bool force)
 	{
 		std::wstring wideFilename = Util::Widen(filename);
-		SetIsLoadingUDKPackage(true);
-		UPackage* result = pLoadPackage(outer, wideFilename.c_str(), flags);
-		SetIsLoadingUDKPackage(false);
-		return result;
-	}
+		UPackage* result = BL2SDK::pLoadPackage(0, wideFilename.c_str(), flags);
+		if (force) {
+			for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
+			{
+				UObject* Object = UObject::GObjObjects()->Data[i];
+				if (Object->GetPackageObject() == result)
+					Object->ObjectFlags.A = Object->ObjectFlags.A | 0x4000;
+			}
+		}
+	};
 }
