@@ -272,6 +272,24 @@ public:
 		return ret;
 	}
 
+	static std::vector<UObject*> FindObjectsContaining(const std::string& stringLookup)
+	{
+		std::vector<UObject *> ret;
+		while (!UObject::GObjObjects())
+			Sleep(100);
+
+		while (!FName::Names())
+			Sleep(100);
+
+		for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
+		{
+			UObject* Object = UObject::GObjObjects()->Data[i];
+			if (Object && Object->GetFullName().find(stringLookup) != std::string::npos)
+				ret.push_back(Object);
+		}
+		return ret;
+	}
+
 	static UClass* FindClass(char* ClassFullName);
 
 	bool IsA(UClass* pClass) const;

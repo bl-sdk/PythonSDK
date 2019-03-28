@@ -220,7 +220,6 @@
     <ClCompile Include="Logging.cpp" />
     <ClCompile Include="MemoryDebug.cpp" />
     <ClCompile Include="modules.cpp" />
-    <ClCompile Include="NamedPipe.cpp" />
     <ClCompile Include="OnlineSubsystemSteamworks_functions.cpp" />
     <ClCompile Include="PackageFix.cpp" />
     <ClCompile Include="pydefs\_Classes_UConsole.cpp" />
@@ -312,7 +311,6 @@
     <ClInclude Include="IpDrv_structs.h" />
     <ClInclude Include="MemoryDebug.h" />
     <ClInclude Include="MemorySignature.h" />
-    <ClInclude Include="NamedPipe.h" />
     <ClInclude Include="OnlineSubsystemSteamworks_classes.h" />
     <ClInclude Include="OnlineSubsystemSteamworks_f_structs.h" />
     <ClInclude Include="OnlineSubsystemSteamworks_structs.h" />

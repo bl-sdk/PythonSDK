@@ -18,6 +18,7 @@ public:
 	int				RunString(const char* string);
 	void			CallShutdownFuncs();
 	int				DoFile(const char *filename);
+	int				DoString(const char *command);
 
 	pybind11::object GetPythonNamespace();
 

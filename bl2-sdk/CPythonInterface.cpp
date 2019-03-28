@@ -4777,12 +4777,33 @@ bool PythonGCTick(UObject* caller, UFunction* function, void* parms, void* resul
 	return true;
 }
 
+bool CheckPythonCommand(UObject* caller, FFrame& stack, void* const result, UFunction* function)
+{
+	FString *command = &FString();
+	unsigned char *code = stack.Code;
+	BL2SDK::pFrameStep(&stack, stack.Object, command);
+	char *input = command->AsString();
+	if (strncmp("py ", input, 3) == 0) {
+		BL2SDK::Python->DoString(input + 3);
+		stack.SkipFunction();
+		return true;
+	}
+	else if (strncmp("pyexec ", input, 7) == 0) {
+		BL2SDK::Python->DoFile(input + 7);
+		stack.SkipFunction();
+		return true;
+	}
+	stack.Code = code;
+	return true;
+}
+
 CPythonInterface::CPythonInterface()
 {
 	m_modulesInitialized = false;
 	InitializeState();
 
 	GameHooks::EngineHookManager->Register("Function WillowGame.WillowGameViewportClient:Tick", "PythonGCTick", &PythonGCTick);
+	GameHooks::UnrealScriptHookManager->Register("Function Engine.Console.ShippingConsoleCommand", "CheckPythonCommand", &CheckPythonCommand);
 }
 
 CPythonInterface::~CPythonInterface()
@@ -4804,7 +4825,6 @@ void CPythonInterface::InitializeState()
 		py::initialize_interpreter();
 		py::module::import("bl2sdk");
 		m_mainNamespace = py::module::import("__main__");
-		//SetSDKValues();
 		SetPaths();
 	}
 	catch (std::exception e) {
@@ -4821,54 +4841,35 @@ PythonStatus CPythonInterface::InitializeModules()
 {
 	m_modulesInitialized = false;
 
-	if (DoFile("include\\init.py") != 0) // Means it failed, TODO: More obvious warning for this
+	if (DoFile("init.py") != 0)
 	{
 		Logging::Log("[Python] Failed to initialize Python modules\n");
 		return PYTHON_MODULE_ERROR;
 	}
-	/*PyObject *reset = PyObject_GetAttrString(m_pModule, "RESET_FLAG");
-	if (reset != NULL && PyObject_IsTrue(reset))
-	{
-		CleanupState();
-		InitializeState();
-		return InitializeModules();
-	}*/
 	Logging::Log("[Python] Python initialized (" PYTHON_ABI_STRING ")\n");
 	m_modulesInitialized = true;
 	return PYTHON_OK;
 }
 
-void CPythonInterface::SetSDKValues()
-{
-	//PyModule_AddObject(m_pModule, "GNames", Py_BuildValue("i", BL2SDK::pGNames));
-	//PyModule_AddObject(m_pModule, "GObjects", Py_BuildValue("i", BL2SDK::pGObjects));
-	//PyModule_AddObject(m_pModule, "ProcessEvent", Py_BuildValue("i", BL2SDK::pProcessEvent));
-	//PyModule_AddObject(m_pModule, "GObjHash", Py_BuildValue("i", BL2SDK::pGObjHash));
-	//PyModule_AddObject(m_pModule, "GCRCTable", Py_BuildValue("i", BL2SDK::pGCRCTable));
-	//PyModule_AddObject(m_pModule, "NameHash", Py_BuildValue("i", BL2SDK::pNameHash));
-	//PyModule_AddObject(m_pModule, "FrameStep", Py_BuildValue("i", BL2SDK::pFrameStep));
-	//PyModule_AddObject(m_pModule, "CallFunction", Py_BuildValue("i", BL2SDK::pCallFunction));
-	//PyModule_AddObject(m_pModule, "GMalloc", Py_BuildValue("i", BL2SDK::pGMalloc));
-
-
-	//PyModule_AddObject(m_pModule, "EngineVersion", Py_BuildValue("i", BL2SDK::EngineVersion));
-	//PyModule_AddObject(m_pModule, "ChangeListNumber", Py_BuildValue("i", BL2SDK::ChangelistNumber));
-	////PyModule_AddObject(m_pModule, "SDKVersion", Py_BuildValue("s", BL2SDK::Version.c_str()));
-
-	//PyModule_AddObject(m_pModule, "EnableMemoryDebugging", Py_BuildValue("i", Settings::MemoryDebugEnabled()));
-}
-
 void CPythonInterface::SetPaths()
 {
 	m_PythonPath = Util::Narrow(Settings::GetPythonFile(L""));
-	//Logging::LogF(m_PythonPath.c_str());
-	//const char *pythonString = Util::Format("import sys;sys.path.append(r'%s'.replace('\\\\', '/'))", m_PythonPath.c_str()).c_str();
-	//py::exec(pythonString, py::globals());
 }
 
 int CPythonInterface::DoFile(const char *filename)
 {
 	return DoFileAbsolute(Util::Format("%s\\%s", m_PythonPath.c_str(), filename).c_str());
+}
+
+int CPythonInterface::DoString(const char *command)
+{
+	try {
+		py::exec(command);
+	}
+	catch (std::exception e) {
+		Logging::LogF("%s", e.what());
+	}
+	return 0;
 }
 
 int CPythonInterface::DoFileAbsolute(const char *path)
@@ -4884,7 +4885,6 @@ int CPythonInterface::DoFileAbsolute(const char *path)
 
 void CPythonInterface::CallShutdownFuncs()
 {
-	//PyObject_CallMethod(m_pModule, "OnShutdown", NULL);
 }
 
 py::object CPythonInterface::GetPythonNamespace()

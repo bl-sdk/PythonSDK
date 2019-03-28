@@ -144,6 +144,12 @@ struct FString : public TArray<wchar_t>
 
 		return *this;
 	};
+
+	char *AsString() {
+		char *output = (char *)calloc(this->Count + 1, sizeof(char));
+		wcstombs(output, this->Data, this->Count);
+		return output;
+	}
 };
 
 struct FScriptDelegate
@@ -168,6 +174,10 @@ struct FFrame : public FOutputDevice
 
 	struct FFrame* PreviousFrame;
 	struct FOutParmRec* OutParms;
+	void SkipFunction() {
+		while (this->Code[0] != 0x16)
+			this->Code = this->Code + 1;
+	}
 };
 
 struct FWindowsViewport;

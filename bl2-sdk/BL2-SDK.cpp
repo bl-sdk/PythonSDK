@@ -294,7 +294,7 @@ namespace BL2SDK
 			{
 				/*delete Python;
 				InitializePython();*/
-				Python->DoFile("include\\init.py");
+				Python->DoFile("init.py");
 				return false;
 			}
 			/*
@@ -370,7 +370,7 @@ namespace BL2SDK
 
 	void initialize(wchar_t * exeBaseFolder)
 	{
-		HookAntiDebug();
+		//HookAntiDebug();
 		GameHooks::Initialize();
 		hookGame();
 		//InitializePackageFix();
@@ -394,6 +394,7 @@ namespace BL2SDK
 	void  LoadPackage(const char* filename, DWORD flags, bool force)
 	{
 		std::wstring wideFilename = Util::Widen(filename);
+		SetIsLoadingUDKPackage(true);
 		UPackage* result = BL2SDK::pLoadPackage(0, wideFilename.c_str(), flags);
 		if (force) {
 			for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
@@ -403,5 +404,6 @@ namespace BL2SDK
 					Object->ObjectFlags.A = Object->ObjectFlags.A | 0x4000;
 			}
 		}
+		SetIsLoadingUDKPackage(false);
 	};
 }

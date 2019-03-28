@@ -37,7 +37,7 @@ void CHookManager::AddStaticHook(UFunction* function, const tFuncNameHookPair& h
 		StaticHooks.emplace(function, newMap);
 	}
 
-	//Logging::LogF("[CHookManager] (%s) Hook \"%s\" added as static hook for \"%s\"\n", this->DebugName.c_str(), hookPair.first.c_str(), function->GetFullName().c_str());
+	Logging::LogF("[CHookManager] (%s) Hook \"%s\" added as static hook for \"%s\"\n", this->DebugName.c_str(), hookPair.first.c_str(), function->GetFullName().c_str());
 }
 
 bool CHookManager::RemoveFromTable(tHookMap& hookTable, const std::string& funcName, const std::string& hookName)

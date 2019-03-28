@@ -52,7 +52,7 @@ namespace Settings
 	std::wstring GetPythonFile(const std::wstring& filename)
 	{
 		std::wstring newPath;
-		newPath = binPath + L"..\\plugins\\python\\" + filename;
+		newPath = binPath + L"Plugins\\Python\\" + filename;
 		return newPath;
 	}
 
