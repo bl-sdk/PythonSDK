@@ -1,3 +1,4 @@
+import bl2sdk
 import sys
 import random
 
@@ -14,7 +15,6 @@ base_skills = ['5Shotsor6',
 'Backstab',
 'BeLikeWater',
 'BlightPhoenix',
-'BloodSoakedShields',
 'BurnBabyBurn',
 'CounterStrike',
 'CloseEnough',
@@ -22,7 +22,6 @@ base_skills = ['5Shotsor6',
 'CookingUpTrouble',
 'CrisisManagement',
 'CriticalAscention',
-'DeathFromAbove',
 'DeathMark',
 'DelusionalDamage',
 'DoOrDie',
@@ -124,7 +123,7 @@ base_skills = ['5Shotsor6',
 'BloodfilledGuns']
 
 krieg_skills = ['BloodTrance',
-'BuzzAxeBombardier',
+'BuzzAxeBombadier',
 'FuelTheRampage',
 'HellfireHalitosis',
 'LightTheFuse',
@@ -179,7 +178,7 @@ maya_skills = ['ChainReaction',
 salvador_skills = ['AintGotTimeToBleed',
 'BusThatCantSlowDown',
 'ComeAtMeBro',
-'DivergentLikeness',
+'DivergentLikness',
 'DoubleYourFun',
 'DownNotOut',
 'FistfulOfHurt',
@@ -195,7 +194,9 @@ anarchy_skills = ['PreshrunkCyberpunk',
 'Discord',
 'TypecastIconoclast',
 'RationalAnarchist',
-'WithClaws']
+'WithClaws',
+'BloodSoakedShields',
+'DeathFromAbove',]
 
 bloodlust_skills = ['BloodOverdrive',
 'BloodyRevival',
@@ -206,18 +207,13 @@ bloodlust_skills = ['BloodOverdrive',
 'Bloodsplosion']
 
 hunters = {
-    'axton': axton_skills,
-    'salvador': salvador_skills,
-    'zero': zer0_skills,
-    'maya': maya_skills,
-    'krieg': krieg_skills,
-    'gaige': gaige_skills
+    'axton': ('Soldier', axton_skills),
+    'salvador': ('Mercenary', salvador_skills),
+    'zero': ('Assassin', zer0_skills),
+    'maya': ('Siren', maya_skills),
+    'krieg': ('Lilac', krieg_skills),
+    'gaige': ('Tulip', gaige_skills)
 }
-
-def test_console():
-    console = bl2sdk.UObject.FindObjectByFullName("WillowConsole WillowGameEngine.WillowGameViewportClient.WillowConsole")
-    s = bl2sdk.FString("This is a test")
-    console.eventOutputText(s)
 
 if 'loadedPackages' not in vars() and 'loadedPackages' not in globals():
     loadedPackages = False
@@ -229,10 +225,31 @@ def randomize_branches(rng, branches, valid_skills, skill_map):
                 skill = tier.Skills[x]
                 if skill:
                     pos = rng.randint(0, len(valid_skills) - 1)
-                    tier.Skills.__setitem__(x, skill_map[valid_skills[pos]])
+                    tier.Skills.Set(x, skill_map[valid_skills[pos]])
+                    skill_name = valid_skills[pos]
                     del valid_skills[pos]
+                    if skill_name == 'Anarchy':
+                        valid_skills += anarchy_skills
+                    if skill_name == 'BloodyTwitch' or 'BloodfilledGuns':
+                        valid_skills = list(set(valid_skills + bloodlust_skills))
 
-def rando(seed = None):
+def randomize_hunter(package_name, hunter_skills, skill_mapping, rng):
+    branches = bl2sdk.UObject.FindObjectsContaining("SkillTreeBranchDefinition GD_{}".format(package_name))
+
+    skill_branches = []
+    for branch in branches:
+        full_name = branch.GetFullName()
+        if 'Default__' not in full_name and "ActionSkill" not in full_name:
+            skill_branches.append(branch)
+
+    randomize_branches(rng, skill_branches, base_skills + hunter_skills, skill_mapping)
+
+
+def randomize(who, seed = None):
+    if who.lower().replace('0', 'o') not in hunters.keys() and who != 'all':
+        print("Unable to randomize, expected vault hunter name or 'all'")
+        return
+
     global loadedPackages
     if not seed:
         seed = random.randrange(sys.maxsize)
@@ -259,12 +276,9 @@ def rando(seed = None):
             skill_mapping[skill.GetFullName().split('.')[-1]] = skill
             skill.ObjectFlags.A |= 0x4000
 
-    branches = bl2sdk.UObject.FindObjectsContaining("SkillTreeBranchDefinition GD_Siren")
-
-    skill_branches = []
-    for branch in branches:
-        full_name = branch.GetFullName()
-        if 'Default__' not in full_name and "ActionSkill" not in full_name:
-            skill_branches.append(branch)
-
-    randomize_branches(rng, skill_branches, base_skills + maya_skills, skill_mapping)
+    if who != 'all':
+        package_name, hunter_skills = hunters[who.lower().replace('0', 'o')]
+        randomize_hunter(package_name, hunter_skills, skill_mapping, rng)
+    else:
+        for package_name, hunter_skills in hunters.values():
+            randomize_hunter(package_name, hunter_skills, skill_mapping, rng)

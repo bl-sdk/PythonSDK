@@ -27,7 +27,7 @@ namespace Settings
 
 	std::wstring GetLogFilePath()
 	{
-		return GetBinFile(L"robeth-sdk.log");
+		return GetBinFile(L"python-sdk.log");
 	}
 
 	std::wstring GetConfigFile()

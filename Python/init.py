@@ -1,5 +1,4 @@
 import bl2sdk
-import random
 
 def log(s):
     s = str(s)
