@@ -202,7 +202,7 @@ static PyObject *tarray_setitem(PyObject* self, PyObject* args, PyObject* kwds) 
 }
 
 static PyMethodDef tarray_methods[] = {
-	{"__setitem__", (PyCFunction)tarray_setitem, METH_VARARGS | METH_KEYWORDS | METH_COEXIST, "x.Set(index, value)"},
+	{"Set", (PyCFunction)tarray_setitem, METH_VARARGS | METH_KEYWORDS | METH_COEXIST, "x.Set(index, value)"},
 	{NULL,              NULL}           /* sentinel */
 };
 
@@ -284,7 +284,7 @@ namespace pybind11
 				o->ob_item = (PyObject **)PyMem_Calloc(src.Count, sizeof(PyObject *));
 				Py_SIZE(o) = src.Count;
 				o->allocated = src.Count;
-				for (size_t index = 0; index < src.Max; index++) {
+				for (size_t index = 0; index < src.Count; index++) {
 					auto value_ = none();
 					if (index < src.Count) {
 						auto value = src.Data[index];
@@ -299,9 +299,8 @@ namespace pybind11
 					PyList_SET_ITEM(o, (ssize_t)index, obj);
 				}
 				PyObject *is_ptr = Py_False;
-				if (std::is_pointer<Value>::value) {
+				if (std::is_pointer<Value>::value)
 					is_ptr = Py_True;
-				}
 				PyObject_GenericSetAttr((PyObject *)o, PyUnicode_FromString("__tarray_data_addr__"), PyLong_FromUnsignedLong((unsigned long)src.Data));
 				PyObject_GenericSetAttr((PyObject *)o, PyUnicode_FromString("__tarray_obj_size__"), PyLong_FromUnsignedLong((unsigned long)sizeof(Value)));
 				PyObject_GenericSetAttr((PyObject *)o, PyUnicode_FromString("__tarray_count__"), PyLong_FromUnsignedLong((unsigned long)src.Count));
@@ -317,68 +316,4 @@ namespace pybind11
 	}
 }
 
-//
-//namespace pybind11
-//{
-//	namespace detail
-//	{
-//		template <typename Type, typename Value> struct tarray_pointer_caster {
-//			using value_conv = make_caster<Value>;
-//
-//			bool load(handle src, bool convert) {
-//				if (!isinstance<sequence>(src))
-//					return false;
-//				auto s = reinterpret_borrow<sequence>(src);
-//				value.Data = (Value *)calloc(s.size(), sizeof(Value));
-//				size_t i = 0;
-//				for (auto it : s) {
-//					value_conv conv;
-//					if (!conv.load(it, convert))
-//						return false;
-//					value.Data[i++] = cast_op<Value &&>(std::move(conv));
-//				}
-//				return true;
-//			}
-//
-//		private:
-//			template <typename T = Type,
-//				enable_if_t<std::is_same<decltype(std::declval<T>().reserve(0)), void>::value, int> = 0>
-//				void reserve_maybe(sequence s, Type *) { value.reserve(s.size()); }
-//			void reserve_maybe(sequence, void *) { }
-//
-//        public:
-//            template <typename T>
-//            static handle cast(T &&src, return_value_policy policy, handle parent) {
-//                if (!std::is_lvalue_reference<T>::value)
-//                    policy = return_value_policy_override<Value>::policy(policy);
-//                list l(src.Max);
-//                for (size_t index = 0; index < src.Max; index++) {
-//					auto value_ = none();
-//					if (index < src.Count) {
-//						auto value = src.Data[index];
-//						value_ = reinterpret_steal<object>(value_conv::cast(forward_like<Value>(value), policy, parent));
-//					}
-//                    if (!value_)
-//                    {
-//                        Logging::LogF("Value is null\n");
-//                        continue;
-//                    }
-//                    auto obj = value_.release().ptr();
-//                    Py_INCREF(obj);
-//                    PyList_SET_ITEM(l.ptr(), (ssize_t)index, obj); // steals a reference
-//                }
-//                return l.release();
-//            }
-//
-//            PYBIND11_TYPE_CASTER(Type, _("TArray[") + value_conv::name + _("]"));
-//		};
-//		template <typename Type> struct type_caster<TArray<Type>> : tarray_pointer_caster<TArray<Type>, Type> { };
-//	}
-//}
-
-
-
-
-//PYBIND11_MAKE_OPAQUE(TArray<UObject *>);
 #include "pydef.h"
-//#include "BL2-SDK.h"

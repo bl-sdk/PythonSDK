@@ -153,6 +153,51 @@
     <ClCompile Include="pydefs\_TArray.cpp">
       <Filter>Source Files\pydef</Filter>
     </ClCompile>
+    <ClCompile Include="pydefs\_Classes_UWillowGameEngine.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_Classes_UGameEngine.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_Classes_UGearboxEngine.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_Classes_UEngine.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_Classes_USubsystem.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_Classes_ULocalPlayer.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_Classes_UPlayer.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_Classes_APlayerController.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_Classes_AGearboxPlayerController.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_Classes_AWillowPlayerController.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_Classes_AGamePlayerController.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_Classes_AController.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_Classes_AActor.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_Classes_UClass.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_Structs_FQWord.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Logging.h">
