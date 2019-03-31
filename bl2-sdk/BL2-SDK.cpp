@@ -340,7 +340,7 @@ namespace BL2SDK
 	}
 
 	// This function is used to ensure that everything gets called in the game thread once the game itself has loaded
-	bool GameReady(UObject* caller, UFunction* function, void* parms, void* result)
+	bool GameReady(UObject* caller, FFrame& stack, void* const result, UFunction* function)
 	{
 		Logging::LogF("[GameReady] Thread: %i\n", GetCurrentThreadId());
 
@@ -362,7 +362,7 @@ namespace BL2SDK
 		*/
 
 		GameHooks::UnrealScriptHookManager->RemoveStaticHook(function, "StartupSDK");
-		GameHooks::EngineHookManager->Register("Function WillowGame.WillowGameViewportClient.PostRender", "GetCanvas", &getCanvasPostRender);
+		GameHooks::EngineHookManager->Register("Function WillowGame.WillowGameViewportClient.PostRender", "GetCanvas", getCanvasPostRender);
 		//GameHooks::UnrealScriptHookManager->Register("Function GearboxFramework.LeviathanService.OnSparkInitialized", "CheckSpark", &SparkReady);
 
 		return true;
@@ -378,7 +378,7 @@ namespace BL2SDK
 		LogAllProcessEventCalls(false);
 		LogAllUnrealScriptCalls(false);
 
-		GameHooks::UnrealScriptHookManager->Register("Function Engine.Console.Initialized", "StartupSDK", &GameReady);
+		GameHooks::UnrealScriptHookManager->Register("Function Engine.Console.Initialized", "StartupSDK", GameReady);
 		//GameHooks::UnrealScriptHookManager->Register("Function Engine.Interaction.NotifyGameSessionEnded", "ExitGame", &cleanup);
 	}
 

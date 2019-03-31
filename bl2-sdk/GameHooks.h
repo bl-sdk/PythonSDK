@@ -2,15 +2,16 @@
 #ifndef GAMEHOOKS_H
 #define GAMEHOOKS_H
 
-#include "CHookManager.h"
+#include "CScriptHookManager.h"
+#include "CEngineHookManager.h"
 
 typedef bool (tProcessEventHook)(UObject*, UFunction*, void*, void*);
 typedef bool (tCallFunctionHook)(UObject*, FFrame&, void* const, UFunction*);
 
 namespace GameHooks
 {
-	extern CHookManager* EngineHookManager;
-	extern CHookManager* UnrealScriptHookManager;
+	extern CEngineHookManager* EngineHookManager;
+	extern CScriptHookManager* UnrealScriptHookManager;
 
 	void Initialize();
 	void Cleanup();

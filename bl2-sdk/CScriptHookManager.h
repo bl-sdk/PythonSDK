@@ -1,15 +1,16 @@
 #pragma once
-#ifndef CHOOKMANAGER_H
-#define CHOOKMANAGER_H
+#ifndef CSCRIPTHOOKMANAGER_H
+#define CSCRIPTHOOKMANAGER_H
 
 #include <string>
 #include <map>
+#include <functional>
 
-class CHookManager
+class CScriptHookManager
 {
 public:
-	typedef std::map<std::string, void*> tHookMap;
-	typedef std::pair<std::string, void*> tFuncNameHookPair;
+	typedef std::map<std::string, std::function<bool(UObject*, FFrame&, void* const, UFunction*)>> tHookMap;
+	typedef std::pair<std::string, std::function<bool(UObject*, FFrame&, void* const, UFunction*)>> tFuncNameHookPair;
 	typedef tHookMap::iterator tiHookMap;
 	typedef std::map<std::string, tHookMap>::iterator tiVirtualHooks;
 	typedef std::map<UFunction*, tHookMap>::iterator tiStaticHooks;
@@ -22,10 +23,10 @@ public:
 	std::map<UFunction*, tHookMap> StaticHooks;
 	std::string DebugName;
 
-	CHookManager() : DebugName("Unknown") {}
-	CHookManager(std::string debugName) : DebugName(debugName) {}
+	CScriptHookManager() : DebugName("Unknown") {}
+	CScriptHookManager(std::string debugName) : DebugName(debugName) {}
 
-	void Register(const std::string& funcName, const std::string& hookName, void* funcHook);
+	void Register(const std::string& funcName, const std::string& hookName, std::function<bool(UObject*, FFrame&, void* const, UFunction*)> funcHook);
 	bool Remove(const std::string& funcName, const std::string& hookName);
 	void AddVirtualHook(const std::string& funcName, const tFuncNameHookPair& hookPair);
 	void AddStaticHook(UFunction* function, const tFuncNameHookPair& hookPair);

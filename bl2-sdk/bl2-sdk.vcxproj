@@ -204,9 +204,10 @@
     <ClCompile Include="AkAudio_functions.cpp" />
     <ClCompile Include="AntiDebug.cpp" />
     <ClCompile Include="BL2-SDK.cpp" />
-    <ClCompile Include="CHookManager.cpp" />
+    <ClCompile Include="CEngineHookManager.cpp" />
     <ClCompile Include="Core_functions.cpp" />
     <ClCompile Include="CPythonInterface.cpp" />
+    <ClCompile Include="CScriptHookManager.cpp" />
     <ClCompile Include="CSigScan.cpp" />
     <ClCompile Include="CSimpleDetour.cpp" />
     <ClCompile Include="detours.cpp" />
@@ -222,6 +223,7 @@
     <ClCompile Include="modules.cpp" />
     <ClCompile Include="OnlineSubsystemSteamworks_functions.cpp" />
     <ClCompile Include="PackageFix.cpp" />
+    <ClCompile Include="pydefs\gamedefines.cpp" />
     <ClCompile Include="pydefs\_Classes_AActor.cpp" />
     <ClCompile Include="pydefs\_Classes_AController.cpp" />
     <ClCompile Include="pydefs\_Classes_AGamePlayerController.cpp" />
@@ -231,6 +233,7 @@
     <ClCompile Include="pydefs\_Classes_UClass.cpp" />
     <ClCompile Include="pydefs\_Classes_UConsole.cpp" />
     <ClCompile Include="pydefs\_Classes_UEngine.cpp" />
+    <ClCompile Include="pydefs\_Classes_UFunction.cpp" />
     <ClCompile Include="pydefs\_Classes_UGameEngine.cpp" />
     <ClCompile Include="pydefs\_Classes_UGBXDefinition.cpp" />
     <ClCompile Include="pydefs\_Classes_UGearboxEngine.cpp" />
@@ -242,6 +245,7 @@
     <ClCompile Include="pydefs\_Classes_USkillDefinition.cpp" />
     <ClCompile Include="pydefs\_Classes_USkillTreeBranchDefinition.cpp" />
     <ClCompile Include="pydefs\_Classes_USkillTreeBranchLayoutDefinition.cpp" />
+    <ClCompile Include="pydefs\_Classes_UStruct.cpp" />
     <ClCompile Include="pydefs\_Classes_USubsystem.cpp" />
     <ClCompile Include="pydefs\_Classes_UWillowConsole.cpp" />
     <ClCompile Include="pydefs\_Classes_UWillowGameEngine.cpp" />
@@ -250,6 +254,7 @@
     <ClCompile Include="pydefs\_Structs_FTier.cpp" />
     <ClCompile Include="pydefs\_TArray.cpp" />
     <ClCompile Include="Settings.cpp" />
+    <ClInclude Include="CScriptHookManager.h" />
     <ClInclude Include="TypeMap.h" />
     <ClCompile Include="Util.cpp" />
     <ClCompile Include="WillowGame_functions.cpp" />
@@ -272,7 +277,7 @@
     <ClInclude Include="AkAudio_structs.h" />
     <ClInclude Include="AntiDebug.h" />
     <ClInclude Include="BL2-SDK.h" />
-    <ClInclude Include="CHookManager.h" />
+    <ClInclude Include="CEngineHookManager.h" />
     <ClInclude Include="Core_classes.h" />
     <ClInclude Include="Core_f_structs.h" />
     <ClInclude Include="Core_structs.h" />
@@ -346,9 +351,6 @@
     <ClInclude Include="XAudio2_structs.h" />
     <ClInclude Include="Logging.h" />
     <ClInclude Include="stdafx.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="Plugin Loader.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

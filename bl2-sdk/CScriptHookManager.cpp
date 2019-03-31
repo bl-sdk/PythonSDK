@@ -1,8 +1,8 @@
 #pragma once
 #include "stdafx.h"
-#include "CHookManager.h"
+#include "CScriptHookManager.h"
 
-void CHookManager::AddVirtualHook(const std::string& funcName, const tFuncNameHookPair& hookPair)
+void CScriptHookManager::AddVirtualHook(const std::string& funcName, const tFuncNameHookPair& hookPair)
 {
 	tiVirtualHooks iHooks = VirtualHooks.find(funcName);
 	if (iHooks != VirtualHooks.end())
@@ -18,10 +18,10 @@ void CHookManager::AddVirtualHook(const std::string& funcName, const tFuncNameHo
 		VirtualHooks.emplace(funcName, newMap);
 	}
 
-	Logging::LogF("[CHookManager] (%s) Hook \"%s\" added as virtual hook for \"%s\"\n", this->DebugName.c_str(), hookPair.first.c_str(), funcName.c_str());
+	Logging::LogF("[CScriptHookManager] (%s) Hook \"%s\" added as virtual hook for \"%s\"\n", this->DebugName.c_str(), hookPair.first.c_str(), funcName.c_str());
 }
 
-void CHookManager::AddStaticHook(UFunction* function, const tFuncNameHookPair& hookPair)
+void CScriptHookManager::AddStaticHook(UFunction* function, const tFuncNameHookPair& hookPair)
 {
 	tiStaticHooks iHooks = StaticHooks.find(function);
 	if (iHooks != StaticHooks.end())
@@ -37,27 +37,27 @@ void CHookManager::AddStaticHook(UFunction* function, const tFuncNameHookPair& h
 		StaticHooks.emplace(function, newMap);
 	}
 
-	Logging::LogF("[CHookManager] (%s) Hook \"%s\" added as static hook for \"%s\"\n", this->DebugName.c_str(), hookPair.first.c_str(), function->GetFullName().c_str());
+	Logging::LogF("[CScriptHookManager] (%s) Hook \"%s\" added as static hook for \"%s\"\n", this->DebugName.c_str(), hookPair.first.c_str(), function->GetFullName().c_str());
 }
 
-bool CHookManager::RemoveFromTable(tHookMap& hookTable, const std::string& funcName, const std::string& hookName)
+bool CScriptHookManager::RemoveFromTable(tHookMap& hookTable, const std::string& funcName, const std::string& hookName)
 {
 	// Remove it and ensure that it actually got removed
 	int removed = hookTable.erase(hookName);
 
 	if (removed == 0)
 	{
-		Logging::LogF("[CHookManager] (%s) Failed to remove hook \"%s\" for function \"%s\"\n", this->DebugName.c_str(), hookName.c_str(), funcName.c_str());
+		Logging::LogF("[CScriptHookManager] (%s) Failed to remove hook \"%s\" for function \"%s\"\n", this->DebugName.c_str(), hookName.c_str(), funcName.c_str());
 		return false;
 	}
 	else
 	{
-		Logging::LogF("[CHookManager] (%s) Hook \"%s\" removed for function \"%s\" successfully\n", this->DebugName.c_str(), hookName.c_str(), funcName.c_str());
+		Logging::LogF("[CScriptHookManager] (%s) Hook \"%s\" removed for function \"%s\" successfully\n", this->DebugName.c_str(), hookName.c_str(), funcName.c_str());
 		return true;
 	}
 }
 
-void CHookManager::Register(const std::string& funcName, const std::string& hookName, void* funcHook)
+void CScriptHookManager::Register(const std::string& funcName, const std::string& hookName, std::function<bool(UObject*, FFrame&, void* const, UFunction*)> funcHook)
 {
 	char funcNameChar[255];
 	strcpy(funcNameChar, funcName.c_str());
@@ -79,7 +79,7 @@ void CHookManager::Register(const std::string& funcName, const std::string& hook
 	}
 }
 
-bool CHookManager::Remove(const std::string& funcName, const std::string& hookName)
+bool CScriptHookManager::Remove(const std::string& funcName, const std::string& hookName)
 {
 	char funcNameChar[255];
 	strcpy(funcNameChar, funcName.c_str());
@@ -101,32 +101,32 @@ bool CHookManager::Remove(const std::string& funcName, const std::string& hookNa
 	}
 }
 
-bool CHookManager::RemoveVirtualHook(const std::string& funcName, const std::string& hookName)
+bool CScriptHookManager::RemoveVirtualHook(const std::string& funcName, const std::string& hookName)
 {
 	tiVirtualHooks iHooks = VirtualHooks.find(funcName);
 	if (iHooks == VirtualHooks.end())
 	{
-		Logging::LogF("[CHookManager] (%s) ERROR: Failed to remove virtual hook \"%s\" for \"%s\"\n", this->DebugName.c_str(), hookName.c_str(), funcName);
+		Logging::LogF("[CScriptHookManager] (%s) ERROR: Failed to remove virtual hook \"%s\" for \"%s\"\n", this->DebugName.c_str(), hookName.c_str(), funcName);
 		return false;
 	}
 
 	return RemoveFromTable(iHooks->second, funcName, hookName);
 }
 
-bool CHookManager::RemoveStaticHook(UFunction* function, const std::string& hookName)
+bool CScriptHookManager::RemoveStaticHook(UFunction* function, const std::string& hookName)
 {
 	// Since we are getting a UFunction pointer, we don't need to check virtual hooks
 	tiStaticHooks iHooks = StaticHooks.find(function);
 	if (iHooks == StaticHooks.end())
 	{
-		//Logging::LogF("[CHookManager] (%s) ERROR: Failed to remove static hook \"%s\" for \"%s\"\n", this->DebugName.c_str(), hookName.c_str(), function->GetFullName().c_str());
+		//Logging::LogF("[CScriptHookManager] (%s) ERROR: Failed to remove static hook \"%s\" for \"%s\"\n", this->DebugName.c_str(), hookName.c_str(), function->GetFullName().c_str());
 		return false;
 	}
 
 	return RemoveFromTable(iHooks->second, function->GetFullName(), hookName);
 }
 
-void CHookManager::ResolveVirtualHooks(UFunction* function)
+void CScriptHookManager::ResolveVirtualHooks(UFunction* function)
 {
 	// Resolve any virtual hooks into static hooks
 	if (VirtualHooks.size() > 0)
@@ -141,7 +141,7 @@ void CHookManager::ResolveVirtualHooks(UFunction* function)
 			int size = iVHooks->second.size();
 			StaticHooks.emplace(function, iVHooks->second);
 			VirtualHooks.erase(iVHooks);
-			Logging::LogF("[CHookManager] (%s) Function pointer found for \"%s\", added map with %i elements to static hooks map\n", this->DebugName.c_str(), funcName.c_str(), size);
+			Logging::LogF("[CScriptHookManager] (%s) Function pointer found for \"%s\", added map with %i elements to static hooks map\n", this->DebugName.c_str(), funcName.c_str(), size);
 		}
 	}
 }

@@ -9,10 +9,6 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Source Files\BL2SDK">
       <UniqueIdentifier>{d020b289-e3ae-45e4-924a-550bfee750e2}</UniqueIdentifier>
     </Filter>
@@ -88,9 +84,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CSimpleDetour.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CHookManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BL2-SDK.cpp">
@@ -196,6 +189,21 @@
       <Filter>Source Files\pydef</Filter>
     </ClCompile>
     <ClCompile Include="pydefs\_Structs_FQWord.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="CEngineHookManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CScriptHookManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\gamedefines.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_Classes_UFunction.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\_Classes_UStruct.cpp">
       <Filter>Source Files\pydef</Filter>
     </ClCompile>
   </ItemGroup>
@@ -344,9 +352,6 @@
     <ClInclude Include="BL2-SDK.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CHookManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Exports.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -443,10 +448,11 @@
     <ClInclude Include="TypeMap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="Plugin Loader.rc">
-      <Filter>Resource Files</Filter>
-    </ResourceCompile>
+    <ClInclude Include="CEngineHookManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CScriptHookManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

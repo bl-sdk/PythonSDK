@@ -12,6 +12,40 @@
 #include <string>
 #include <cstdlib>
 
+void RegisterEngineHook(const std::string& funcName, const std::string& hookName, py::object funcHook) {
+	GameHooks::EngineHookManager->Register(funcName, hookName, [funcHook](UObject* caller, UFunction* function, void* parms, void* result) {
+		try {
+			py::object py_caller = py::cast(caller, py::return_value_policy::reference);
+			py::object py_function = py::cast(function, py::return_value_policy::reference);
+			py::object py_parms = py::cast(FStruct(parms), py::return_value_policy::reference);
+			py::object py_result = py::cast(FStruct(result), py::return_value_policy::reference);
+			funcHook(py_caller, py_function, py_parms, py_result);
+		} catch (std::exception e) {
+			Logging::LogF(e.what());
+		}
+		return true;
+		}
+	);
+}
+
+
+void RegisterScriptHook(const std::string& funcName, const std::string& hookName, py::object funcHook) {
+	GameHooks::UnrealScriptHookManager->Register(funcName, hookName, [funcHook](UObject* caller, FFrame& stack, void* const result, UFunction* function) {
+		try {
+			py::object py_caller = py::cast(caller, py::return_value_policy::reference);
+			py::object py_stack = py::cast(stack, py::return_value_policy::reference);
+			py::object py_result = py::cast(FStruct(result), py::return_value_policy::reference);
+			py::object py_function = py::cast(function, py::return_value_policy::reference);
+			funcHook(py_caller, py_stack, py_result, py_function);
+		} catch (std::exception e) {
+			Logging::LogF(e.what());
+		}
+		return true;
+		}
+	);
+}
+
+
 namespace py = pybind11;
 
 PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
@@ -42,8 +76,13 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	Export_pystes_AGearboxPlayerController(m);
 	Export_pystes_AWillowPlayerController(m);
 	Export_pystes_FQWord(m);
+	Export_pystes_gamedefines(m);
+	Export_pystes_UStruct(m);
+	Export_pystes_UFunction(m);
 	m.def("Log", [](std::string in) { Logging::Log(in.c_str(), in.length()); });
 	m.def("LoadPackage", &BL2SDK::LoadPackage);
+	m.def("RegisterEngineHook", &RegisterEngineHook);
+	m.def("RegisterScriptHook", &RegisterScriptHook);
 }
 
 bool PythonGCTick(UObject* caller, UFunction* function, void* parms, void* result)

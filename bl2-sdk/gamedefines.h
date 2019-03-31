@@ -1,15 +1,14 @@
 #ifndef GAMEDEFINES_H
 #define GAMEDEFINES_H
 
+#pragma once
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
 #include <stdlib.h>
 #include <stdio.h>
 #include <string>
 #include "Util.h"
-#pragma once
 #include "stdafx.h"
-//#include "UHook.h"
 
 /*
 # ========================================================================================= #
@@ -219,6 +218,50 @@ struct ULinkerLoad : FArchive
 struct FMalloc
 {
 	void** VfTable;
+};
+
+struct FStruct
+{
+	void* base;
+public:
+	FStruct(void *base) {
+		this->base = base;
+	};
+	UObject *popObject() {
+		class UObject *object = ((UObject **)(this->base))[0];
+		this->base = (void*)((UObject **)this->base + 1);
+		return object;
+	};
+	struct FName *popFName() {
+		struct FName *object = (FName *)(this->base);
+		this->base = (void *)((FName *)this->base + 1);
+		return object;
+	};
+	struct FVector *popFVector() {
+		struct FVector *object = (FVector *)(this->base);
+		this->base = (void *)((int)this->base + 0xC);
+		return object;
+	};
+	float *popFloat() {
+		float *object = (float *)(this->base);
+		this->base = (void *)((float *)this->base + 1);
+		return object;
+	};
+	bool popBool() {
+		unsigned long object = ((unsigned long *)(this->base))[0];
+		this->base = (void *)((unsigned long *)this->base + 1);
+		return object;
+	};
+	unsigned char popByte() {
+		unsigned char object = ((char *)(this->base))[0];
+		this->base = (void *)((char *)this->base + 1);
+		return object;
+	};
+	int popInt() {
+		int object = ((int *)(this->base))[0];
+		this->base = (void *)((int *)this->base + 1);
+		return object;
+	};
 };
 
 #endif

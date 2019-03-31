@@ -5,13 +5,13 @@
 
 namespace GameHooks
 {
-	CHookManager* EngineHookManager;
-	CHookManager* UnrealScriptHookManager;
+	CEngineHookManager* EngineHookManager;
+	CScriptHookManager* UnrealScriptHookManager;
 
 	void Initialize()
 	{
-		EngineHookManager = new CHookManager("EngineHooks");
-		UnrealScriptHookManager = new CHookManager("UnrealScriptHooks");
+		EngineHookManager = new CEngineHookManager("EngineHooks");
+		UnrealScriptHookManager = new CScriptHookManager("UnrealScriptHooks");
 	}
 
 	void Cleanup()
@@ -29,15 +29,15 @@ namespace GameHooks
 		EngineHookManager->ResolveVirtualHooks(function);
 
 		// Call any static hooks that may exist
-		CHookManager::tiStaticHooks iHooks = EngineHookManager->StaticHooks.find(function);
+		CEngineHookManager::tiStaticHooks iHooks = EngineHookManager->StaticHooks.find(function);
 		if (iHooks != EngineHookManager->StaticHooks.end())
 		{
-			CHookManager::tHookMap hooks = iHooks->second;
+			CEngineHookManager::tHookMap hooks = iHooks->second;
 
-			for (CHookManager::tiHookMap iterator = hooks.begin(); iterator != hooks.end(); iterator++)
+			for (CEngineHookManager::tiHookMap iterator = hooks.begin(); iterator != hooks.end(); iterator++)
 			{
 				// maps to std::string, void*, but we want to call a tProcessEventHook* instead
-				if (!((tProcessEventHook*)iterator->second)(caller, function, parms, result))
+				if (!iterator->second(caller, function, parms, result))
 				{
 					// As soon as one hook doesn't want it to fall through, we'll stop
 					return false;
@@ -55,15 +55,15 @@ namespace GameHooks
 		UnrealScriptHookManager->ResolveVirtualHooks(function);
 
 		// Call any static hooks that may exist
-		CHookManager::tiStaticHooks iHooks = UnrealScriptHookManager->StaticHooks.find(function);
+		CScriptHookManager::tiStaticHooks iHooks = UnrealScriptHookManager->StaticHooks.find(function);
 		if (iHooks != UnrealScriptHookManager->StaticHooks.end())
 		{
-			CHookManager::tHookMap hooks = iHooks->second;
+			CScriptHookManager::tHookMap hooks = iHooks->second;
 
-			for (CHookManager::tiHookMap iterator = hooks.begin(); iterator != hooks.end(); iterator++)
+			for (CScriptHookManager::tiHookMap iterator = hooks.begin(); iterator != hooks.end(); iterator++)
 			{
 				// maps to std::string, void*, but we want to call a tCallFunctionHook* instead
-				if (!((tCallFunctionHook*)iterator->second)(caller, stack, result, function))
+				if (!iterator->second(caller, stack, result, function))
 				{
 					return false;
 				}
