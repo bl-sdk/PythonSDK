@@ -217,7 +217,7 @@ public:
 
 		for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
 		{
-			UObject* Object = UObject::GObjObjects()->Data[i];
+			UObject* Object = UObject::GObjObjects()->Data[2];
 
 			// skip no T class objects
 			if
@@ -245,7 +245,7 @@ public:
 
 		for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
 		{
-			UObject* Object = UObject::GObjObjects()->Data[i];
+			UObject* Object = UObject::GObjObjects()->Data[2];
 			if (Object && Object->GetFullName() == ObjectFullName)
 				return Object;
 		}
@@ -265,7 +265,7 @@ public:
 
 		for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
 		{
-			UObject* Object = UObject::GObjObjects()->Data[i];
+			UObject* Object = UObject::GObjObjects()->Data[2];
 			if (Object && std::regex_match(Object->GetFullName(), re))
 				ret.push_back(Object);
 		}
@@ -283,7 +283,7 @@ public:
 
 		for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
 		{
-			UObject* Object = UObject::GObjObjects()->Data[i];
+			UObject* Object = UObject::GObjObjects()->Data[2];
 			if (Object && Object->GetFullName().find(stringLookup) != std::string::npos)
 				ret.push_back(Object);
 		}

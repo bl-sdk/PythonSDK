@@ -14,22 +14,21 @@ with open('C:\\SDK_GEN\\BL2\\ObjectsDump.txt') as f:
                     functions[module] = {}
                 functions[module][clas] = id
 
-sdk_regex = re.compile(r'table.insert\(g_loadedClasses, { "(\w+)", (\w+), "\w+" }\)')
 
-sdk_dir = 'C:\\Users\\abahb\\source\\repos\\BL2-SDK\\lua\\include\\sdk\\classes\\'
+sdk_dir = 'C:\\Users\\abahb\\source\\repos\\BL2-SDK\\bl2-sdk\\'
 for module in functions.keys():
     lines = []
-    with open(sdk_dir + module + '.lua') as f:
-            for line in f.readlines():
-                if 'table.insert' in line:
-                    matches = sdk_regex.match(line)
-                    if matches:
-                        func, index = matches.groups()
-                        if func not in functions[module].keys():
-                            func = func[1:]
-                        if index != int(functions[module][func]):
-                            line = line.replace(index, str(int(functions[module][func])))
-                lines += [line]
-    with open(sdk_dir + module + '.lua', 'w') as f:
+    with open(sdk_dir + module + '_classes.h') as f:
+        new_id = None
+        for line in f.readlines():
+            if line.startswith('class '):
+                clas = line.split(' ')[1][1:].strip()
+                if clas in functions[module].keys():
+                    new_id = functions[module][clas]
+            if 'UObject::GObjObjects()->Data' in line:
+                old_id = line.split('[')[1].split(']')[0]
+                line = line.replace(old_id, str(int(new_id)))
+            lines.append(line)
+    with open(sdk_dir + module + '_classes.h', 'w') as f:
         for line in lines:
             f.write(line)

@@ -205,7 +205,7 @@ bool UObject::IsRelevantForDebugging(class UObject* Source)
 	static UFunction* pFnIsRelevantForDebugging = NULL;
 
 	if (!pFnIsRelevantForDebugging)
-		pFnIsRelevantForDebugging = (UFunction*)UObject::GObjObjects()->Data[5375];
+		pFnIsRelevantForDebugging = (UFunction*)UObject::GObjObjects()->Data[5387];
 
 	UObject_execIsRelevantForDebugging_Parms IsRelevantForDebugging_Parms;
 	IsRelevantForDebugging_Parms.Source = Source;
@@ -229,7 +229,7 @@ class UObject* UObject::GetGlobalDebugTarget()
 	static UFunction* pFnGetGlobalDebugTarget = NULL;
 
 	if (!pFnGetGlobalDebugTarget)
-		pFnGetGlobalDebugTarget = (UFunction*)UObject::GObjObjects()->Data[5376];
+		pFnGetGlobalDebugTarget = (UFunction*)UObject::GObjObjects()->Data[5388];
 
 	UObject_execGetGlobalDebugTarget_Parms GetGlobalDebugTarget_Parms;
 
@@ -252,7 +252,7 @@ void UObject::SetGlobalDebugTarget(class UObject* Target)
 	static UFunction* pFnSetGlobalDebugTarget = NULL;
 
 	if (!pFnSetGlobalDebugTarget)
-		pFnSetGlobalDebugTarget = (UFunction*)UObject::GObjObjects()->Data[5379];
+		pFnSetGlobalDebugTarget = (UFunction*)UObject::GObjObjects()->Data[5391];
 
 	UObject_execSetGlobalDebugTarget_Parms SetGlobalDebugTarget_Parms;
 	SetGlobalDebugTarget_Parms.Target = Target;
@@ -274,7 +274,7 @@ void UObject::LogContentDebug(struct FString Message)
 	static UFunction* pFnLogContentDebug = NULL;
 
 	if (!pFnLogContentDebug)
-		pFnLogContentDebug = (UFunction*)UObject::GObjObjects()->Data[5381];
+		pFnLogContentDebug = (UFunction*)UObject::GObjObjects()->Data[5393];
 
 	UObject_execLogContentDebug_Parms LogContentDebug_Parms;
 	memcpy(&LogContentDebug_Parms.Message, &Message, 0xC);
@@ -296,7 +296,7 @@ struct FString UObject::GetLanguage()
 	static UFunction* pFnGetLanguage = NULL;
 
 	if (!pFnGetLanguage)
-		pFnGetLanguage = (UFunction*)UObject::GObjObjects()->Data[5383];
+		pFnGetLanguage = (UFunction*)UObject::GObjObjects()->Data[5395];
 
 	UObject_execGetLanguage_Parms GetLanguage_Parms;
 
@@ -320,7 +320,7 @@ int UObject::GetRandomOptionSumFrequency(TArray< float >* FreqList)
 	static UFunction* pFnGetRandomOptionSumFrequency = NULL;
 
 	if (!pFnGetRandomOptionSumFrequency)
-		pFnGetRandomOptionSumFrequency = (UFunction*)UObject::GObjObjects()->Data[5385];
+		pFnGetRandomOptionSumFrequency = (UFunction*)UObject::GObjObjects()->Data[5397];
 
 	UObject_execGetRandomOptionSumFrequency_Parms GetRandomOptionSumFrequency_Parms;
 
@@ -342,7 +342,7 @@ int UObject::GetBuildChangelistNumber()
 	static UFunction* pFnGetBuildChangelistNumber = NULL;
 
 	if (!pFnGetBuildChangelistNumber)
-		pFnGetBuildChangelistNumber = (UFunction*)UObject::GObjObjects()->Data[5387];
+		pFnGetBuildChangelistNumber = (UFunction*)UObject::GObjObjects()->Data[5399];
 
 	UObject_execGetBuildChangelistNumber_Parms GetBuildChangelistNumber_Parms;
 
@@ -365,7 +365,7 @@ int UObject::GetEngineVersion()
 	static UFunction* pFnGetEngineVersion = NULL;
 
 	if (!pFnGetEngineVersion)
-		pFnGetEngineVersion = (UFunction*)UObject::GObjObjects()->Data[5391];
+		pFnGetEngineVersion = (UFunction*)UObject::GObjObjects()->Data[5403];
 
 	UObject_execGetEngineVersion_Parms GetEngineVersion_Parms;
 
@@ -395,7 +395,7 @@ void UObject::GetSystemTime(int* Year, int* Month, int* DayOfWeek, int* Day, int
 	static UFunction* pFnGetSystemTime = NULL;
 
 	if (!pFnGetSystemTime)
-		pFnGetSystemTime = (UFunction*)UObject::GObjObjects()->Data[5393];
+		pFnGetSystemTime = (UFunction*)UObject::GObjObjects()->Data[5405];
 
 	UObject_execGetSystemTime_Parms GetSystemTime_Parms;
 
@@ -440,7 +440,7 @@ struct FString UObject::TimeStamp()
 	static UFunction* pFnTimeStamp = NULL;
 
 	if (!pFnTimeStamp)
-		pFnTimeStamp = (UFunction*)UObject::GObjObjects()->Data[5395];
+		pFnTimeStamp = (UFunction*)UObject::GObjObjects()->Data[5407];
 
 	UObject_execTimeStamp_Parms TimeStamp_Parms;
 
@@ -466,7 +466,7 @@ struct FVector UObject::TransformVectorByRotation(struct FRotator SourceRotation
 	static UFunction* pFnTransformVectorByRotation = NULL;
 
 	if (!pFnTransformVectorByRotation)
-		pFnTransformVectorByRotation = (UFunction*)UObject::GObjObjects()->Data[5404];
+		pFnTransformVectorByRotation = (UFunction*)UObject::GObjObjects()->Data[5416];
 
 	UObject_execTransformVectorByRotation_Parms TransformVectorByRotation_Parms;
 	memcpy(&TransformVectorByRotation_Parms.SourceRotation, &SourceRotation, 0xC);
@@ -492,7 +492,7 @@ struct FName UObject::GetPackageName()
 	static UFunction* pFnGetPackageName = NULL;
 
 	if (!pFnGetPackageName)
-		pFnGetPackageName = (UFunction*)UObject::GObjObjects()->Data[5406];
+		pFnGetPackageName = (UFunction*)UObject::GObjObjects()->Data[5418];
 
 	UObject_execGetPackageName_Parms GetPackageName_Parms;
 
@@ -515,7 +515,7 @@ bool UObject::IsPendingKill()
 	static UFunction* pFnIsPendingKill = NULL;
 
 	if (!pFnIsPendingKill)
-		pFnIsPendingKill = (UFunction*)UObject::GObjObjects()->Data[5422];
+		pFnIsPendingKill = (UFunction*)UObject::GObjObjects()->Data[5434];
 
 	UObject_execIsPendingKill_Parms IsPendingKill_Parms;
 
@@ -540,7 +540,7 @@ float UObject::ByteToFloat(unsigned char inputByte, unsigned long bSigned)
 	static UFunction* pFnByteToFloat = NULL;
 
 	if (!pFnByteToFloat)
-		pFnByteToFloat = (UFunction*)UObject::GObjObjects()->Data[5424];
+		pFnByteToFloat = (UFunction*)UObject::GObjObjects()->Data[5436];
 
 	UObject_execByteToFloat_Parms ByteToFloat_Parms;
 	ByteToFloat_Parms.inputByte = inputByte;
@@ -563,7 +563,7 @@ unsigned char UObject::FloatToByte(float inputFloat, unsigned long bSigned)
 	static UFunction* pFnFloatToByte = NULL;
 
 	if (!pFnFloatToByte)
-		pFnFloatToByte = (UFunction*)UObject::GObjObjects()->Data[5426];
+		pFnFloatToByte = (UFunction*)UObject::GObjObjects()->Data[5438];
 
 	UObject_execFloatToByte_Parms FloatToByte_Parms;
 	FloatToByte_Parms.inputFloat = inputFloat;
@@ -585,7 +585,7 @@ float UObject::UnwindHeading(float A)
 	static UFunction* pFnUnwindHeading = NULL;
 
 	if (!pFnUnwindHeading)
-		pFnUnwindHeading = (UFunction*)UObject::GObjObjects()->Data[5430];
+		pFnUnwindHeading = (UFunction*)UObject::GObjObjects()->Data[5442];
 
 	UObject_execUnwindHeading_Parms UnwindHeading_Parms;
 	UnwindHeading_Parms.A = A;
@@ -607,7 +607,7 @@ float UObject::FindDeltaAngle(float A1, float A2)
 	static UFunction* pFnFindDeltaAngle = NULL;
 
 	if (!pFnFindDeltaAngle)
-		pFnFindDeltaAngle = (UFunction*)UObject::GObjObjects()->Data[5434];
+		pFnFindDeltaAngle = (UFunction*)UObject::GObjObjects()->Data[5446];
 
 	UObject_execFindDeltaAngle_Parms FindDeltaAngle_Parms;
 	FindDeltaAngle_Parms.A1 = A1;
@@ -629,7 +629,7 @@ float UObject::GetHeadingAngle(struct FVector Dir)
 	static UFunction* pFnGetHeadingAngle = NULL;
 
 	if (!pFnGetHeadingAngle)
-		pFnGetHeadingAngle = (UFunction*)UObject::GObjObjects()->Data[5437];
+		pFnGetHeadingAngle = (UFunction*)UObject::GObjObjects()->Data[5449];
 
 	UObject_execGetHeadingAngle_Parms GetHeadingAngle_Parms;
 	memcpy(&GetHeadingAngle_Parms.Dir, &Dir, 0xC);
@@ -649,7 +649,7 @@ void UObject::GetAngularDegreesFromRadians(struct FVector2D* OutFOV)
 	static UFunction* pFnGetAngularDegreesFromRadians = NULL;
 
 	if (!pFnGetAngularDegreesFromRadians)
-		pFnGetAngularDegreesFromRadians = (UFunction*)UObject::GObjObjects()->Data[5441];
+		pFnGetAngularDegreesFromRadians = (UFunction*)UObject::GObjObjects()->Data[5453];
 
 	UObject_execGetAngularDegreesFromRadians_Parms GetAngularDegreesFromRadians_Parms;
 
@@ -670,7 +670,7 @@ void UObject::GetAngularFromDotDist(struct FVector2D DotDist, struct FVector2D* 
 	static UFunction* pFnGetAngularFromDotDist = NULL;
 
 	if (!pFnGetAngularFromDotDist)
-		pFnGetAngularFromDotDist = (UFunction*)UObject::GObjObjects()->Data[5445];
+		pFnGetAngularFromDotDist = (UFunction*)UObject::GObjObjects()->Data[5457];
 
 	UObject_execGetAngularFromDotDist_Parms GetAngularFromDotDist_Parms;
 	memcpy(&GetAngularFromDotDist_Parms.DotDist, &DotDist, 0x8);
@@ -700,7 +700,7 @@ bool UObject::GetAngularDistance(struct FVector Direction, struct FVector AxisX,
 	static UFunction* pFnGetAngularDistance = NULL;
 
 	if (!pFnGetAngularDistance)
-		pFnGetAngularDistance = (UFunction*)UObject::GObjObjects()->Data[5450];
+		pFnGetAngularDistance = (UFunction*)UObject::GObjObjects()->Data[5462];
 
 	UObject_execGetAngularDistance_Parms GetAngularDistance_Parms;
 	memcpy(&GetAngularDistance_Parms.Direction, &Direction, 0xC);
@@ -735,7 +735,7 @@ bool UObject::GetDotDistance(struct FVector Direction, struct FVector AxisX, str
 	static UFunction* pFnGetDotDistance = NULL;
 
 	if (!pFnGetDotDistance)
-		pFnGetDotDistance = (UFunction*)UObject::GObjObjects()->Data[5453];
+		pFnGetDotDistance = (UFunction*)UObject::GObjObjects()->Data[5465];
 
 	UObject_execGetDotDistance_Parms GetDotDistance_Parms;
 	memcpy(&GetDotDistance_Parms.Direction, &Direction, 0xC);
@@ -769,7 +769,7 @@ struct FVector UObject::PointProjectToPlane(struct FVector Point, struct FVector
 	static UFunction* pFnPointProjectToPlane = NULL;
 
 	if (!pFnPointProjectToPlane)
-		pFnPointProjectToPlane = (UFunction*)UObject::GObjObjects()->Data[5460];
+		pFnPointProjectToPlane = (UFunction*)UObject::GObjObjects()->Data[5472];
 
 	UObject_execPointProjectToPlane_Parms PointProjectToPlane_Parms;
 	memcpy(&PointProjectToPlane_Parms.Point, &Point, 0xC);
@@ -800,7 +800,7 @@ float UObject::PointDistToPlane(struct FVector Point, struct FRotator Orientatio
 	static UFunction* pFnPointDistToPlane = NULL;
 
 	if (!pFnPointDistToPlane)
-		pFnPointDistToPlane = (UFunction*)UObject::GObjObjects()->Data[5467];
+		pFnPointDistToPlane = (UFunction*)UObject::GObjObjects()->Data[5479];
 
 	UObject_execPointDistToPlane_Parms PointDistToPlane_Parms;
 	memcpy(&PointDistToPlane_Parms.Point, &Point, 0xC);
@@ -829,7 +829,7 @@ float UObject::PointDistToSegment(struct FVector Point, struct FVector StartPoin
 	static UFunction* pFnPointDistToSegment = NULL;
 
 	if (!pFnPointDistToSegment)
-		pFnPointDistToSegment = (UFunction*)UObject::GObjObjects()->Data[5473];
+		pFnPointDistToSegment = (UFunction*)UObject::GObjObjects()->Data[5485];
 
 	UObject_execPointDistToSegment_Parms PointDistToSegment_Parms;
 	memcpy(&PointDistToSegment_Parms.Point, &Point, 0xC);
@@ -862,7 +862,7 @@ float UObject::PointDistToLine(struct FVector Point, struct FVector Line, struct
 	static UFunction* pFnPointDistToLine = NULL;
 
 	if (!pFnPointDistToLine)
-		pFnPointDistToLine = (UFunction*)UObject::GObjObjects()->Data[5484];
+		pFnPointDistToLine = (UFunction*)UObject::GObjObjects()->Data[5496];
 
 	UObject_execPointDistToLine_Parms PointDistToLine_Parms;
 	memcpy(&PointDistToLine_Parms.Point, &Point, 0xC);
@@ -895,7 +895,7 @@ bool UObject::GetPerObjectConfigSections(class UClass* SearchClass, class UObjec
 	static UFunction* pFnGetPerObjectConfigSections = NULL;
 
 	if (!pFnGetPerObjectConfigSections)
-		pFnGetPerObjectConfigSections = (UFunction*)UObject::GObjObjects()->Data[5490];
+		pFnGetPerObjectConfigSections = (UFunction*)UObject::GObjObjects()->Data[5502];
 
 	UObject_execGetPerObjectConfigSections_Parms GetPerObjectConfigSections_Parms;
 	GetPerObjectConfigSections_Parms.SearchClass = SearchClass;
@@ -923,7 +923,7 @@ void UObject::StaticSaveConfig()
 	static UFunction* pFnStaticSaveConfig = NULL;
 
 	if (!pFnStaticSaveConfig)
-		pFnStaticSaveConfig = (UFunction*)UObject::GObjObjects()->Data[5496];
+		pFnStaticSaveConfig = (UFunction*)UObject::GObjObjects()->Data[5508];
 
 	UObject_execStaticSaveConfig_Parms StaticSaveConfig_Parms;
 
@@ -943,7 +943,7 @@ void UObject::SaveConfig()
 	static UFunction* pFnSaveConfig = NULL;
 
 	if (!pFnSaveConfig)
-		pFnSaveConfig = (UFunction*)UObject::GObjObjects()->Data[5503];
+		pFnSaveConfig = (UFunction*)UObject::GObjObjects()->Data[5515];
 
 	UObject_execSaveConfig_Parms SaveConfig_Parms;
 
@@ -970,7 +970,7 @@ struct FString UObject::GetAttributeModiferDescriptor(struct FName AttributeName
 	static UFunction* pFnGetAttributeModiferDescriptor = NULL;
 
 	if (!pFnGetAttributeModiferDescriptor)
-		pFnGetAttributeModiferDescriptor = (UFunction*)UObject::GObjObjects()->Data[5504];
+		pFnGetAttributeModiferDescriptor = (UFunction*)UObject::GObjObjects()->Data[5516];
 
 	UObject_execGetAttributeModiferDescriptor_Parms GetAttributeModiferDescriptor_Parms;
 	memcpy(&GetAttributeModiferDescriptor_Parms.AttributeName, &AttributeName, 0x8);
@@ -995,7 +995,7 @@ float UObject::GetAttributeValueByName(struct FName AttributeName)
 	static UFunction* pFnGetAttributeValueByName = NULL;
 
 	if (!pFnGetAttributeValueByName)
-		pFnGetAttributeValueByName = (UFunction*)UObject::GObjObjects()->Data[5505];
+		pFnGetAttributeValueByName = (UFunction*)UObject::GObjObjects()->Data[5517];
 
 	UObject_execGetAttributeValueByName_Parms GetAttributeValueByName_Parms;
 	memcpy(&GetAttributeValueByName_Parms.AttributeName, &AttributeName, 0x8);
@@ -1022,7 +1022,7 @@ bool UObject::RemoveModifier(class UAttributeModifier* mod, struct FName Attribu
 	static UFunction* pFnRemoveModifier = NULL;
 
 	if (!pFnRemoveModifier)
-		pFnRemoveModifier = (UFunction*)UObject::GObjObjects()->Data[5508];
+		pFnRemoveModifier = (UFunction*)UObject::GObjObjects()->Data[5520];
 
 	UObject_execRemoveModifier_Parms RemoveModifier_Parms;
 	RemoveModifier_Parms.mod = mod;
@@ -1051,7 +1051,7 @@ bool UObject::AddModifier(class UAttributeModifier* mod, struct FName AttributeN
 	static UFunction* pFnAddModifier = NULL;
 
 	if (!pFnAddModifier)
-		pFnAddModifier = (UFunction*)UObject::GObjObjects()->Data[5511];
+		pFnAddModifier = (UFunction*)UObject::GObjObjects()->Data[5523];
 
 	UObject_execAddModifier_Parms AddModifier_Parms;
 	AddModifier_Parms.mod = mod;
@@ -1079,7 +1079,7 @@ class UObject* UObject::FindObject(struct FString ObjectName, class UClass* Obje
 	static UFunction* pFnFindObject = NULL;
 
 	if (!pFnFindObject)
-		pFnFindObject = (UFunction*)UObject::GObjObjects()->Data[5516];
+		pFnFindObject = (UFunction*)UObject::GObjObjects()->Data[5528];
 
 	UObject_execFindObject_Parms FindObject_Parms;
 	memcpy(&FindObject_Parms.ObjectName, &ObjectName, 0xC);
@@ -1107,7 +1107,7 @@ class UObject* UObject::DynamicLoadObject(struct FString ObjectName, class UClas
 	static UFunction* pFnDynamicLoadObject = NULL;
 
 	if (!pFnDynamicLoadObject)
-		pFnDynamicLoadObject = (UFunction*)UObject::GObjObjects()->Data[5521];
+		pFnDynamicLoadObject = (UFunction*)UObject::GObjObjects()->Data[5533];
 
 	UObject_execDynamicLoadObject_Parms DynamicLoadObject_Parms;
 	memcpy(&DynamicLoadObject_Parms.ObjectName, &ObjectName, 0xC);
@@ -1135,7 +1135,7 @@ struct FName UObject::GetEnum(class UObject* E, int I)
 	static UFunction* pFnGetEnum = NULL;
 
 	if (!pFnGetEnum)
-		pFnGetEnum = (UFunction*)UObject::GObjObjects()->Data[5525];
+		pFnGetEnum = (UFunction*)UObject::GObjObjects()->Data[5537];
 
 	UObject_execGetEnum_Parms GetEnum_Parms;
 	GetEnum_Parms.E = E;
@@ -1160,7 +1160,7 @@ void UObject::Disable(struct FName ProbeFunc)
 	static UFunction* pFnDisable = NULL;
 
 	if (!pFnDisable)
-		pFnDisable = (UFunction*)UObject::GObjObjects()->Data[5530];
+		pFnDisable = (UFunction*)UObject::GObjObjects()->Data[5542];
 
 	UObject_execDisable_Parms Disable_Parms;
 	memcpy(&Disable_Parms.ProbeFunc, &ProbeFunc, 0x8);
@@ -1187,7 +1187,7 @@ void UObject::Enable(struct FName ProbeFunc)
 	static UFunction* pFnEnable = NULL;
 
 	if (!pFnEnable)
-		pFnEnable = (UFunction*)UObject::GObjObjects()->Data[5534];
+		pFnEnable = (UFunction*)UObject::GObjObjects()->Data[5546];
 
 	UObject_execEnable_Parms Enable_Parms;
 	memcpy(&Enable_Parms.ProbeFunc, &ProbeFunc, 0x8);
@@ -1213,7 +1213,7 @@ void UObject::eventContinuedState()
 	static UFunction* pFnContinuedState = NULL;
 
 	if (!pFnContinuedState)
-		pFnContinuedState = (UFunction*)UObject::GObjObjects()->Data[5536];
+		pFnContinuedState = (UFunction*)UObject::GObjObjects()->Data[5548];
 
 	UObject_eventContinuedState_Parms ContinuedState_Parms;
 
@@ -1229,7 +1229,7 @@ void UObject::eventPausedState()
 	static UFunction* pFnPausedState = NULL;
 
 	if (!pFnPausedState)
-		pFnPausedState = (UFunction*)UObject::GObjObjects()->Data[5538];
+		pFnPausedState = (UFunction*)UObject::GObjObjects()->Data[5550];
 
 	UObject_eventPausedState_Parms PausedState_Parms;
 
@@ -1245,7 +1245,7 @@ void UObject::eventPoppedState()
 	static UFunction* pFnPoppedState = NULL;
 
 	if (!pFnPoppedState)
-		pFnPoppedState = (UFunction*)UObject::GObjObjects()->Data[5539];
+		pFnPoppedState = (UFunction*)UObject::GObjObjects()->Data[5551];
 
 	UObject_eventPoppedState_Parms PoppedState_Parms;
 
@@ -1261,7 +1261,7 @@ void UObject::eventPushedState()
 	static UFunction* pFnPushedState = NULL;
 
 	if (!pFnPushedState)
-		pFnPushedState = (UFunction*)UObject::GObjObjects()->Data[5540];
+		pFnPushedState = (UFunction*)UObject::GObjObjects()->Data[5552];
 
 	UObject_eventPushedState_Parms PushedState_Parms;
 
@@ -1278,7 +1278,7 @@ void UObject::eventEndState(struct FName NextStateName)
 	static UFunction* pFnEndState = NULL;
 
 	if (!pFnEndState)
-		pFnEndState = (UFunction*)UObject::GObjObjects()->Data[5541];
+		pFnEndState = (UFunction*)UObject::GObjObjects()->Data[5553];
 
 	UObject_eventEndState_Parms EndState_Parms;
 	memcpy(&EndState_Parms.NextStateName, &NextStateName, 0x8);
@@ -1296,7 +1296,7 @@ void UObject::eventBeginState(struct FName PreviousStateName)
 	static UFunction* pFnBeginState = NULL;
 
 	if (!pFnBeginState)
-		pFnBeginState = (UFunction*)UObject::GObjObjects()->Data[5542];
+		pFnBeginState = (UFunction*)UObject::GObjObjects()->Data[5554];
 
 	UObject_eventBeginState_Parms BeginState_Parms;
 	memcpy(&BeginState_Parms.PreviousStateName, &PreviousStateName, 0x8);
@@ -1314,7 +1314,7 @@ void UObject::BreakPoint(class UObject* SomeObject)
 	static UFunction* pFnBreakPoint = NULL;
 
 	if (!pFnBreakPoint)
-		pFnBreakPoint = (UFunction*)UObject::GObjObjects()->Data[5544];
+		pFnBreakPoint = (UFunction*)UObject::GObjObjects()->Data[5556];
 
 	UObject_execBreakPoint_Parms BreakPoint_Parms;
 	BreakPoint_Parms.SomeObject = SomeObject;
@@ -1335,7 +1335,7 @@ void UObject::PrintScriptStack()
 	static UFunction* pFnPrintScriptStack = NULL;
 
 	if (!pFnPrintScriptStack)
-		pFnPrintScriptStack = (UFunction*)UObject::GObjObjects()->Data[5546];
+		pFnPrintScriptStack = (UFunction*)UObject::GObjObjects()->Data[5558];
 
 	UObject_execPrintScriptStack_Parms PrintScriptStack_Parms;
 
@@ -1355,7 +1355,7 @@ void UObject::DumpStateStack()
 	static UFunction* pFnDumpStateStack = NULL;
 
 	if (!pFnDumpStateStack)
-		pFnDumpStateStack = (UFunction*)UObject::GObjObjects()->Data[5548];
+		pFnDumpStateStack = (UFunction*)UObject::GObjObjects()->Data[5560];
 
 	UObject_execDumpStateStack_Parms DumpStateStack_Parms;
 
@@ -1376,7 +1376,7 @@ void UObject::PopState(unsigned long bPopAll)
 	static UFunction* pFnPopState = NULL;
 
 	if (!pFnPopState)
-		pFnPopState = (UFunction*)UObject::GObjObjects()->Data[5549];
+		pFnPopState = (UFunction*)UObject::GObjObjects()->Data[5561];
 
 	UObject_execPopState_Parms PopState_Parms;
 	PopState_Parms.bPopAll = bPopAll;
@@ -1399,7 +1399,7 @@ void UObject::PushState(struct FName NewState, struct FName NewLabel)
 	static UFunction* pFnPushState = NULL;
 
 	if (!pFnPushState)
-		pFnPushState = (UFunction*)UObject::GObjObjects()->Data[5550];
+		pFnPushState = (UFunction*)UObject::GObjObjects()->Data[5562];
 
 	UObject_execPushState_Parms PushState_Parms;
 	memcpy(&PushState_Parms.NewState, &NewState, 0x8);
@@ -1422,7 +1422,7 @@ struct FName UObject::GetStateName()
 	static UFunction* pFnGetStateName = NULL;
 
 	if (!pFnGetStateName)
-		pFnGetStateName = (UFunction*)UObject::GObjObjects()->Data[5552];
+		pFnGetStateName = (UFunction*)UObject::GObjObjects()->Data[5564];
 
 	UObject_execGetStateName_Parms GetStateName_Parms;
 
@@ -1452,7 +1452,7 @@ bool UObject::IsChildState(struct FName TestState, struct FName TestParentState)
 	static UFunction* pFnIsChildState = NULL;
 
 	if (!pFnIsChildState)
-		pFnIsChildState = (UFunction*)UObject::GObjObjects()->Data[5555];
+		pFnIsChildState = (UFunction*)UObject::GObjObjects()->Data[5567];
 
 	UObject_execIsChildState_Parms IsChildState_Parms;
 	memcpy(&IsChildState_Parms.TestState, &TestState, 0x8);
@@ -1479,7 +1479,7 @@ bool UObject::IsInState(struct FName TestState, unsigned long bTestStateStack)
 	static UFunction* pFnIsInState = NULL;
 
 	if (!pFnIsInState)
-		pFnIsInState = (UFunction*)UObject::GObjObjects()->Data[5557];
+		pFnIsInState = (UFunction*)UObject::GObjObjects()->Data[5569];
 
 	UObject_execIsInState_Parms IsInState_Parms;
 	memcpy(&IsInState_Parms.TestState, &TestState, 0x8);
@@ -1512,7 +1512,7 @@ void UObject::GotoState(struct FName NewState, struct FName Label, unsigned long
 	static UFunction* pFnGotoState = NULL;
 
 	if (!pFnGotoState)
-		pFnGotoState = (UFunction*)UObject::GObjObjects()->Data[5561];
+		pFnGotoState = (UFunction*)UObject::GObjObjects()->Data[5573];
 
 	UObject_execGotoState_Parms GotoState_Parms;
 	memcpy(&GotoState_Parms.NewState, &NewState, 0x8);
@@ -1542,7 +1542,7 @@ bool UObject::IsUTracing()
 	static UFunction* pFnIsUTracing = NULL;
 
 	if (!pFnIsUTracing)
-		pFnIsUTracing = (UFunction*)UObject::GObjObjects()->Data[5565];
+		pFnIsUTracing = (UFunction*)UObject::GObjObjects()->Data[5577];
 
 	UObject_execIsUTracing_Parms IsUTracing_Parms;
 
@@ -1565,7 +1565,7 @@ void UObject::SetUTracing(unsigned long bShouldUTrace)
 	static UFunction* pFnSetUTracing = NULL;
 
 	if (!pFnSetUTracing)
-		pFnSetUTracing = (UFunction*)UObject::GObjObjects()->Data[5570];
+		pFnSetUTracing = (UFunction*)UObject::GObjObjects()->Data[5582];
 
 	UObject_execSetUTracing_Parms SetUTracing_Parms;
 	SetUTracing_Parms.bShouldUTrace = bShouldUTrace;
@@ -1587,7 +1587,7 @@ struct FName UObject::GetFuncName()
 	static UFunction* pFnGetFuncName = NULL;
 
 	if (!pFnGetFuncName)
-		pFnGetFuncName = (UFunction*)UObject::GObjObjects()->Data[5572];
+		pFnGetFuncName = (UFunction*)UObject::GObjObjects()->Data[5584];
 
 	UObject_execGetFuncName_Parms GetFuncName_Parms;
 
@@ -1611,7 +1611,7 @@ void UObject::DebugBreak(int UserFlags, unsigned char DebuggerType)
 	static UFunction* pFnDebugBreak = NULL;
 
 	if (!pFnDebugBreak)
-		pFnDebugBreak = (UFunction*)UObject::GObjObjects()->Data[5574];
+		pFnDebugBreak = (UFunction*)UObject::GObjObjects()->Data[5586];
 
 	UObject_execDebugBreak_Parms DebugBreak_Parms;
 	DebugBreak_Parms.UserFlags = UserFlags;
@@ -1634,7 +1634,7 @@ struct FString UObject::GetScriptTrace()
 	static UFunction* pFnGetScriptTrace = NULL;
 
 	if (!pFnGetScriptTrace)
-		pFnGetScriptTrace = (UFunction*)UObject::GObjObjects()->Data[5576];
+		pFnGetScriptTrace = (UFunction*)UObject::GObjObjects()->Data[5588];
 
 	UObject_execGetScriptTrace_Parms GetScriptTrace_Parms;
 
@@ -1656,7 +1656,7 @@ void UObject::ScriptTrace()
 	static UFunction* pFnScriptTrace = NULL;
 
 	if (!pFnScriptTrace)
-		pFnScriptTrace = (UFunction*)UObject::GObjObjects()->Data[5581];
+		pFnScriptTrace = (UFunction*)UObject::GObjObjects()->Data[5593];
 
 	UObject_execScriptTrace_Parms ScriptTrace_Parms;
 
@@ -1678,7 +1678,7 @@ struct FString UObject::ParseLocalizedPropertyPath(struct FString PathName)
 	static UFunction* pFnParseLocalizedPropertyPath = NULL;
 
 	if (!pFnParseLocalizedPropertyPath)
-		pFnParseLocalizedPropertyPath = (UFunction*)UObject::GObjObjects()->Data[5583];
+		pFnParseLocalizedPropertyPath = (UFunction*)UObject::GObjObjects()->Data[5595];
 
 	UObject_execParseLocalizedPropertyPath_Parms ParseLocalizedPropertyPath_Parms;
 	memcpy(&ParseLocalizedPropertyPath_Parms.PathName, &PathName, 0xC);
@@ -1701,7 +1701,7 @@ struct FString UObject::Localize(struct FString SectionName, struct FString KeyN
 	static UFunction* pFnLocalize = NULL;
 
 	if (!pFnLocalize)
-		pFnLocalize = (UFunction*)UObject::GObjObjects()->Data[5584];
+		pFnLocalize = (UFunction*)UObject::GObjObjects()->Data[5596];
 
 	UObject_execLocalize_Parms Localize_Parms;
 	memcpy(&Localize_Parms.SectionName, &SectionName, 0xC);
@@ -1729,7 +1729,7 @@ void UObject::LogIndentedInternal(struct FString S, struct FName LogTag, int Ind
 	static UFunction* pFnLogIndentedInternal = NULL;
 
 	if (!pFnLogIndentedInternal)
-		pFnLogIndentedInternal = (UFunction*)UObject::GObjObjects()->Data[5590];
+		pFnLogIndentedInternal = (UFunction*)UObject::GObjObjects()->Data[5602];
 
 	UObject_execLogIndentedInternal_Parms LogIndentedInternal_Parms;
 	memcpy(&LogIndentedInternal_Parms.S, &S, 0xC);
@@ -1753,7 +1753,7 @@ void UObject::WarnInternal(struct FString S)
 	static UFunction* pFnWarnInternal = NULL;
 
 	if (!pFnWarnInternal)
-		pFnWarnInternal = (UFunction*)UObject::GObjObjects()->Data[5595];
+		pFnWarnInternal = (UFunction*)UObject::GObjObjects()->Data[5607];
 
 	UObject_execWarnInternal_Parms WarnInternal_Parms;
 	memcpy(&WarnInternal_Parms.S, &S, 0xC);
@@ -1781,7 +1781,7 @@ void UObject::LogInternal(struct FString S, struct FName Tag)
 	static UFunction* pFnLogInternal = NULL;
 
 	if (!pFnLogInternal)
-		pFnLogInternal = (UFunction*)UObject::GObjObjects()->Data[5599];
+		pFnLogInternal = (UFunction*)UObject::GObjObjects()->Data[5611];
 
 	UObject_execLogInternal_Parms LogInternal_Parms;
 	memcpy(&LogInternal_Parms.S, &S, 0xC);
@@ -1810,7 +1810,7 @@ struct FString UObject::GetStringForNameBasedObjectPath(struct FNameBasedObjectP
 	static UFunction* pFnGetStringForNameBasedObjectPath = NULL;
 
 	if (!pFnGetStringForNameBasedObjectPath)
-		pFnGetStringForNameBasedObjectPath = (UFunction*)UObject::GObjObjects()->Data[5601];
+		pFnGetStringForNameBasedObjectPath = (UFunction*)UObject::GObjObjects()->Data[5613];
 
 	UObject_execGetStringForNameBasedObjectPath_Parms GetStringForNameBasedObjectPath_Parms;
 	memcpy(&GetStringForNameBasedObjectPath_Parms.ObjectPath, &ObjectPath, 0x34);
@@ -1835,7 +1835,7 @@ void UObject::SetNameBasedObjectPath(class UObject* Object, struct FNameBasedObj
 	static UFunction* pFnSetNameBasedObjectPath = NULL;
 
 	if (!pFnSetNameBasedObjectPath)
-		pFnSetNameBasedObjectPath = (UFunction*)UObject::GObjObjects()->Data[5604];
+		pFnSetNameBasedObjectPath = (UFunction*)UObject::GObjObjects()->Data[5616];
 
 	UObject_execSetNameBasedObjectPath_Parms SetNameBasedObjectPath_Parms;
 	SetNameBasedObjectPath_Parms.Object = Object;
@@ -1862,7 +1862,7 @@ bool UObject::FlagHasBeenTrueFor(float TimeSeconds, struct FFlag* theFlag)
 	static UFunction* pFnFlagHasBeenTrueFor = NULL;
 
 	if (!pFnFlagHasBeenTrueFor)
-		pFnFlagHasBeenTrueFor = (UFunction*)UObject::GObjObjects()->Data[5611];
+		pFnFlagHasBeenTrueFor = (UFunction*)UObject::GObjObjects()->Data[5623];
 
 	UObject_execFlagHasBeenTrueFor_Parms FlagHasBeenTrueFor_Parms;
 	FlagHasBeenTrueFor_Parms.TimeSeconds = TimeSeconds;
@@ -1890,7 +1890,7 @@ float UObject::FlagTimeRemaining(struct FFlag* theFlag)
 	static UFunction* pFnFlagTimeRemaining = NULL;
 
 	if (!pFnFlagTimeRemaining)
-		pFnFlagTimeRemaining = (UFunction*)UObject::GObjObjects()->Data[5614];
+		pFnFlagTimeRemaining = (UFunction*)UObject::GObjObjects()->Data[5626];
 
 	UObject_execFlagTimeRemaining_Parms FlagTimeRemaining_Parms;
 
@@ -1917,7 +1917,7 @@ float UObject::FlagTimeSinceRaised(struct FFlag* theFlag)
 	static UFunction* pFnFlagTimeSinceRaised = NULL;
 
 	if (!pFnFlagTimeSinceRaised)
-		pFnFlagTimeSinceRaised = (UFunction*)UObject::GObjObjects()->Data[5627];
+		pFnFlagTimeSinceRaised = (UFunction*)UObject::GObjObjects()->Data[5639];
 
 	UObject_execFlagTimeSinceRaised_Parms FlagTimeSinceRaised_Parms;
 
@@ -1945,7 +1945,7 @@ void UObject::FlagSetValue(unsigned long bNewValue, unsigned long bForceTimeStam
 	static UFunction* pFnFlagSetValue = NULL;
 
 	if (!pFnFlagSetValue)
-		pFnFlagSetValue = (UFunction*)UObject::GObjObjects()->Data[5630];
+		pFnFlagSetValue = (UFunction*)UObject::GObjObjects()->Data[5642];
 
 	UObject_execFlagSetValue_Parms FlagSetValue_Parms;
 	FlagSetValue_Parms.bNewValue = bNewValue;
@@ -1972,7 +1972,7 @@ bool UObject::FlagIsLowered(struct FFlag* theFlag)
 	static UFunction* pFnFlagIsLowered = NULL;
 
 	if (!pFnFlagIsLowered)
-		pFnFlagIsLowered = (UFunction*)UObject::GObjObjects()->Data[5633];
+		pFnFlagIsLowered = (UFunction*)UObject::GObjObjects()->Data[5645];
 
 	UObject_execFlagIsLowered_Parms FlagIsLowered_Parms;
 
@@ -1999,7 +1999,7 @@ bool UObject::FlagIsRaised(struct FFlag* theFlag)
 	static UFunction* pFnFlagIsRaised = NULL;
 
 	if (!pFnFlagIsRaised)
-		pFnFlagIsRaised = (UFunction*)UObject::GObjObjects()->Data[5637];
+		pFnFlagIsRaised = (UFunction*)UObject::GObjObjects()->Data[5649];
 
 	UObject_execFlagIsRaised_Parms FlagIsRaised_Parms;
 
@@ -2026,7 +2026,7 @@ bool UObject::FlagIsFalse(struct FFlag* theFlag)
 	static UFunction* pFnFlagIsFalse = NULL;
 
 	if (!pFnFlagIsFalse)
-		pFnFlagIsFalse = (UFunction*)UObject::GObjObjects()->Data[5640];
+		pFnFlagIsFalse = (UFunction*)UObject::GObjObjects()->Data[5652];
 
 	UObject_execFlagIsFalse_Parms FlagIsFalse_Parms;
 
@@ -2053,7 +2053,7 @@ bool UObject::FlagIsTrue(struct FFlag* theFlag)
 	static UFunction* pFnFlagIsTrue = NULL;
 
 	if (!pFnFlagIsTrue)
-		pFnFlagIsTrue = (UFunction*)UObject::GObjObjects()->Data[5643];
+		pFnFlagIsTrue = (UFunction*)UObject::GObjObjects()->Data[5655];
 
 	UObject_execFlagIsTrue_Parms FlagIsTrue_Parms;
 
@@ -2080,7 +2080,7 @@ void UObject::FlagSetTrueTimed(float Duration, struct FFlag* theFlag)
 	static UFunction* pFnFlagSetTrueTimed = NULL;
 
 	if (!pFnFlagSetTrueTimed)
-		pFnFlagSetTrueTimed = (UFunction*)UObject::GObjObjects()->Data[5646];
+		pFnFlagSetTrueTimed = (UFunction*)UObject::GObjObjects()->Data[5658];
 
 	UObject_execFlagSetTrueTimed_Parms FlagSetTrueTimed_Parms;
 	FlagSetTrueTimed_Parms.Duration = Duration;
@@ -2106,7 +2106,7 @@ float UObject::SmartVectTimeRemaining(struct FSmartVector* theSV)
 	static UFunction* pFnSmartVectTimeRemaining = NULL;
 
 	if (!pFnSmartVectTimeRemaining)
-		pFnSmartVectTimeRemaining = (UFunction*)UObject::GObjObjects()->Data[5649];
+		pFnSmartVectTimeRemaining = (UFunction*)UObject::GObjObjects()->Data[5661];
 
 	UObject_execSmartVectTimeRemaining_Parms SmartVectTimeRemaining_Parms;
 
@@ -2133,7 +2133,7 @@ float UObject::SmartVectTimeSinceSet(struct FSmartVector* theSV)
 	static UFunction* pFnSmartVectTimeSinceSet = NULL;
 
 	if (!pFnSmartVectTimeSinceSet)
-		pFnSmartVectTimeSinceSet = (UFunction*)UObject::GObjObjects()->Data[5652];
+		pFnSmartVectTimeSinceSet = (UFunction*)UObject::GObjObjects()->Data[5664];
 
 	UObject_execSmartVectTimeSinceSet_Parms SmartVectTimeSinceSet_Parms;
 
@@ -2161,7 +2161,7 @@ bool UObject::SmartVectGetVector(struct FSmartVector* theSV, struct FVector* Out
 	static UFunction* pFnSmartVectGetVector = NULL;
 
 	if (!pFnSmartVectGetVector)
-		pFnSmartVectGetVector = (UFunction*)UObject::GObjObjects()->Data[5658];
+		pFnSmartVectGetVector = (UFunction*)UObject::GObjObjects()->Data[5670];
 
 	UObject_execSmartVectGetVector_Parms SmartVectGetVector_Parms;
 
@@ -2191,7 +2191,7 @@ bool UObject::SmartVectIsSet(struct FSmartVector* theSV)
 	static UFunction* pFnSmartVectIsSet = NULL;
 
 	if (!pFnSmartVectIsSet)
-		pFnSmartVectIsSet = (UFunction*)UObject::GObjObjects()->Data[5661];
+		pFnSmartVectIsSet = (UFunction*)UObject::GObjObjects()->Data[5673];
 
 	UObject_execSmartVectIsSet_Parms SmartVectIsSet_Parms;
 
@@ -2219,7 +2219,7 @@ void UObject::SmartVectSetVectorTimed(struct FVector InVector, float Duration, s
 	static UFunction* pFnSmartVectSetVectorTimed = NULL;
 
 	if (!pFnSmartVectSetVectorTimed)
-		pFnSmartVectSetVectorTimed = (UFunction*)UObject::GObjObjects()->Data[5665];
+		pFnSmartVectSetVectorTimed = (UFunction*)UObject::GObjObjects()->Data[5677];
 
 	UObject_execSmartVectSetVectorTimed_Parms SmartVectSetVectorTimed_Parms;
 	memcpy(&SmartVectSetVectorTimed_Parms.InVector, &InVector, 0xC);
@@ -2246,7 +2246,7 @@ struct FVector UObject::SmartVectValue(struct FSmartVector* theSV)
 	static UFunction* pFnSmartVectValue = NULL;
 
 	if (!pFnSmartVectValue)
-		pFnSmartVectValue = (UFunction*)UObject::GObjObjects()->Data[5668];
+		pFnSmartVectValue = (UFunction*)UObject::GObjObjects()->Data[5680];
 
 	UObject_execSmartVectValue_Parms SmartVectValue_Parms;
 
@@ -2272,7 +2272,7 @@ void UObject::SmartVectReset(struct FSmartVector* theSV)
 	static UFunction* pFnSmartVectReset = NULL;
 
 	if (!pFnSmartVectReset)
-		pFnSmartVectReset = (UFunction*)UObject::GObjObjects()->Data[5672];
+		pFnSmartVectReset = (UFunction*)UObject::GObjObjects()->Data[5684];
 
 	UObject_execSmartVectReset_Parms SmartVectReset_Parms;
 
@@ -2298,7 +2298,7 @@ void UObject::SmartVectSetVector(struct FVector InVector, unsigned long bUpdateT
 	static UFunction* pFnSmartVectSetVector = NULL;
 
 	if (!pFnSmartVectSetVector)
-		pFnSmartVectSetVector = (UFunction*)UObject::GObjObjects()->Data[5675];
+		pFnSmartVectSetVector = (UFunction*)UObject::GObjObjects()->Data[5687];
 
 	UObject_execSmartVectSetVector_Parms SmartVectSetVector_Parms;
 	memcpy(&SmartVectSetVector_Parms.InVector, &InVector, 0xC);
@@ -2326,7 +2326,7 @@ struct FLinearColor UObject::Subtract_LinearColorLinearColor(struct FLinearColor
 	static UFunction* pFnSubtract_LinearColorLinearColor = NULL;
 
 	if (!pFnSubtract_LinearColorLinearColor)
-		pFnSubtract_LinearColorLinearColor = (UFunction*)UObject::GObjObjects()->Data[5677];
+		pFnSubtract_LinearColorLinearColor = (UFunction*)UObject::GObjObjects()->Data[5689];
 
 	UObject_execSubtract_LinearColorLinearColor_Parms Subtract_LinearColorLinearColor_Parms;
 	memcpy(&Subtract_LinearColorLinearColor_Parms.A, &A, 0x10);
@@ -2349,7 +2349,7 @@ struct FLinearColor UObject::Multiply_LinearColorFloat(struct FLinearColor LC, f
 	static UFunction* pFnMultiply_LinearColorFloat = NULL;
 
 	if (!pFnMultiply_LinearColorFloat)
-		pFnMultiply_LinearColorFloat = (UFunction*)UObject::GObjObjects()->Data[5681];
+		pFnMultiply_LinearColorFloat = (UFunction*)UObject::GObjObjects()->Data[5693];
 
 	UObject_execMultiply_LinearColorFloat_Parms Multiply_LinearColorFloat_Parms;
 	memcpy(&Multiply_LinearColorFloat_Parms.LC, &LC, 0x10);
@@ -2371,7 +2371,7 @@ struct FLinearColor UObject::ColorToLinearColor(struct FColor OldColor)
 	static UFunction* pFnColorToLinearColor = NULL;
 
 	if (!pFnColorToLinearColor)
-		pFnColorToLinearColor = (UFunction*)UObject::GObjObjects()->Data[5691];
+		pFnColorToLinearColor = (UFunction*)UObject::GObjObjects()->Data[5703];
 
 	UObject_execColorToLinearColor_Parms ColorToLinearColor_Parms;
 	memcpy(&ColorToLinearColor_Parms.OldColor, &OldColor, 0x4);
@@ -2395,7 +2395,7 @@ struct FLinearColor UObject::MakeLinearColor(float R, float G, float B, float A)
 	static UFunction* pFnMakeLinearColor = NULL;
 
 	if (!pFnMakeLinearColor)
-		pFnMakeLinearColor = (UFunction*)UObject::GObjObjects()->Data[5695];
+		pFnMakeLinearColor = (UFunction*)UObject::GObjObjects()->Data[5707];
 
 	UObject_execMakeLinearColor_Parms MakeLinearColor_Parms;
 	MakeLinearColor_Parms.R = R;
@@ -2419,7 +2419,7 @@ struct FString UObject::GetHTMLColor(struct FColor* C)
 	static UFunction* pFnGetHTMLColor = NULL;
 
 	if (!pFnGetHTMLColor)
-		pFnGetHTMLColor = (UFunction*)UObject::GObjObjects()->Data[5703];
+		pFnGetHTMLColor = (UFunction*)UObject::GObjObjects()->Data[5715];
 
 	UObject_execGetHTMLColor_Parms GetHTMLColor_Parms;
 
@@ -2448,7 +2448,7 @@ struct FColor UObject::LerpColor(struct FColor A, struct FColor B, float Alpha)
 	static UFunction* pFnLerpColor = NULL;
 
 	if (!pFnLerpColor)
-		pFnLerpColor = (UFunction*)UObject::GObjObjects()->Data[5710];
+		pFnLerpColor = (UFunction*)UObject::GObjObjects()->Data[5722];
 
 	UObject_execLerpColor_Parms LerpColor_Parms;
 	memcpy(&LerpColor_Parms.A, &A, 0x4);
@@ -2474,7 +2474,7 @@ struct FColor UObject::MakeColor(unsigned char R, unsigned char G, unsigned char
 	static UFunction* pFnMakeColor = NULL;
 
 	if (!pFnMakeColor)
-		pFnMakeColor = (UFunction*)UObject::GObjObjects()->Data[5713];
+		pFnMakeColor = (UFunction*)UObject::GObjObjects()->Data[5725];
 
 	UObject_execMakeColor_Parms MakeColor_Parms;
 	MakeColor_Parms.R = R;
@@ -2499,7 +2499,7 @@ struct FColor UObject::Add_ColorColor(struct FColor A, struct FColor B)
 	static UFunction* pFnAdd_ColorColor = NULL;
 
 	if (!pFnAdd_ColorColor)
-		pFnAdd_ColorColor = (UFunction*)UObject::GObjObjects()->Data[5722];
+		pFnAdd_ColorColor = (UFunction*)UObject::GObjObjects()->Data[5734];
 
 	UObject_execAdd_ColorColor_Parms Add_ColorColor_Parms;
 	memcpy(&Add_ColorColor_Parms.A, &A, 0x4);
@@ -2522,7 +2522,7 @@ struct FColor UObject::Multiply_ColorFloat(struct FColor A, float B)
 	static UFunction* pFnMultiply_ColorFloat = NULL;
 
 	if (!pFnMultiply_ColorFloat)
-		pFnMultiply_ColorFloat = (UFunction*)UObject::GObjObjects()->Data[5729];
+		pFnMultiply_ColorFloat = (UFunction*)UObject::GObjObjects()->Data[5741];
 
 	UObject_execMultiply_ColorFloat_Parms Multiply_ColorFloat_Parms;
 	memcpy(&Multiply_ColorFloat_Parms.A, &A, 0x4);
@@ -2545,7 +2545,7 @@ struct FColor UObject::Multiply_FloatColor(float A, struct FColor B)
 	static UFunction* pFnMultiply_FloatColor = NULL;
 
 	if (!pFnMultiply_FloatColor)
-		pFnMultiply_FloatColor = (UFunction*)UObject::GObjObjects()->Data[5733];
+		pFnMultiply_FloatColor = (UFunction*)UObject::GObjObjects()->Data[5745];
 
 	UObject_execMultiply_FloatColor_Parms Multiply_FloatColor_Parms;
 	Multiply_FloatColor_Parms.A = A;
@@ -2568,7 +2568,7 @@ struct FColor UObject::Subtract_ColorColor(struct FColor A, struct FColor B)
 	static UFunction* pFnSubtract_ColorColor = NULL;
 
 	if (!pFnSubtract_ColorColor)
-		pFnSubtract_ColorColor = (UFunction*)UObject::GObjObjects()->Data[5737];
+		pFnSubtract_ColorColor = (UFunction*)UObject::GObjObjects()->Data[5749];
 
 	UObject_execSubtract_ColorColor_Parms Subtract_ColorColor_Parms;
 	memcpy(&Subtract_ColorColor_Parms.A, &A, 0x4);
@@ -2591,7 +2591,7 @@ struct FVector2D UObject::EvalInterpCurveVector2D(struct FInterpCurveVector2D Ve
 	static UFunction* pFnEvalInterpCurveVector2D = NULL;
 
 	if (!pFnEvalInterpCurveVector2D)
-		pFnEvalInterpCurveVector2D = (UFunction*)UObject::GObjObjects()->Data[5741];
+		pFnEvalInterpCurveVector2D = (UFunction*)UObject::GObjObjects()->Data[5753];
 
 	UObject_execEvalInterpCurveVector2D_Parms EvalInterpCurveVector2D_Parms;
 	memcpy(&EvalInterpCurveVector2D_Parms.Vector2DCurve, &Vector2DCurve, 0x10);
@@ -2618,7 +2618,7 @@ struct FVector UObject::EvalInterpCurveVector(struct FInterpCurveVector VectorCu
 	static UFunction* pFnEvalInterpCurveVector = NULL;
 
 	if (!pFnEvalInterpCurveVector)
-		pFnEvalInterpCurveVector = (UFunction*)UObject::GObjObjects()->Data[5745];
+		pFnEvalInterpCurveVector = (UFunction*)UObject::GObjObjects()->Data[5757];
 
 	UObject_execEvalInterpCurveVector_Parms EvalInterpCurveVector_Parms;
 	memcpy(&EvalInterpCurveVector_Parms.VectorCurve, &VectorCurve, 0x10);
@@ -2645,7 +2645,7 @@ float UObject::EvalInterpCurveFloat(struct FInterpCurveFloat FloatCurve, float I
 	static UFunction* pFnEvalInterpCurveFloat = NULL;
 
 	if (!pFnEvalInterpCurveFloat)
-		pFnEvalInterpCurveFloat = (UFunction*)UObject::GObjObjects()->Data[5763];
+		pFnEvalInterpCurveFloat = (UFunction*)UObject::GObjObjects()->Data[5775];
 
 	UObject_execEvalInterpCurveFloat_Parms EvalInterpCurveFloat_Parms;
 	memcpy(&EvalInterpCurveFloat_Parms.FloatCurve, &FloatCurve, 0x10);
@@ -2672,7 +2672,7 @@ struct FVector2D UObject::vect2d(float InX, float InY)
 	static UFunction* pFnvect2d = NULL;
 
 	if (!pFnvect2d)
-		pFnvect2d = (UFunction*)UObject::GObjObjects()->Data[5777];
+		pFnvect2d = (UFunction*)UObject::GObjObjects()->Data[5789];
 
 	UObject_execvect2d_Parms vect2d_Parms;
 	vect2d_Parms.InX = InX;
@@ -2696,7 +2696,7 @@ float UObject::GetMappedRangeValue(struct FVector2D InputRange, struct FVector2D
 	static UFunction* pFnGetMappedRangeValue = NULL;
 
 	if (!pFnGetMappedRangeValue)
-		pFnGetMappedRangeValue = (UFunction*)UObject::GObjObjects()->Data[5790];
+		pFnGetMappedRangeValue = (UFunction*)UObject::GObjObjects()->Data[5802];
 
 	UObject_execGetMappedRangeValue_Parms GetMappedRangeValue_Parms;
 	memcpy(&GetMappedRangeValue_Parms.InputRange, &InputRange, 0x8);
@@ -2724,7 +2724,7 @@ float UObject::GetRangePctByValue(struct FVector2D Range, float Value)
 	static UFunction* pFnGetRangePctByValue = NULL;
 
 	if (!pFnGetRangePctByValue)
-		pFnGetRangePctByValue = (UFunction*)UObject::GObjObjects()->Data[5795];
+		pFnGetRangePctByValue = (UFunction*)UObject::GObjObjects()->Data[5807];
 
 	UObject_execGetRangePctByValue_Parms GetRangePctByValue_Parms;
 	memcpy(&GetRangePctByValue_Parms.Range, &Range, 0x8);
@@ -2747,7 +2747,7 @@ float UObject::GetRangeValueByPct(struct FVector2D Range, float Pct)
 	static UFunction* pFnGetRangeValueByPct = NULL;
 
 	if (!pFnGetRangeValueByPct)
-		pFnGetRangeValueByPct = (UFunction*)UObject::GObjObjects()->Data[5800];
+		pFnGetRangeValueByPct = (UFunction*)UObject::GObjObjects()->Data[5812];
 
 	UObject_execGetRangeValueByPct_Parms GetRangeValueByPct_Parms;
 	memcpy(&GetRangeValueByPct_Parms.Range, &Range, 0x8);
@@ -2770,7 +2770,7 @@ struct FVector2D UObject::SubtractEqual_Vector2DVector2D(struct FVector2D B, str
 	static UFunction* pFnSubtractEqual_Vector2DVector2D = NULL;
 
 	if (!pFnSubtractEqual_Vector2DVector2D)
-		pFnSubtractEqual_Vector2DVector2D = (UFunction*)UObject::GObjObjects()->Data[5804];
+		pFnSubtractEqual_Vector2DVector2D = (UFunction*)UObject::GObjObjects()->Data[5816];
 
 	UObject_execSubtractEqual_Vector2DVector2D_Parms SubtractEqual_Vector2DVector2D_Parms;
 	memcpy(&SubtractEqual_Vector2DVector2D_Parms.B, &B, 0x8);
@@ -2799,7 +2799,7 @@ struct FVector2D UObject::AddEqual_Vector2DVector2D(struct FVector2D B, struct F
 	static UFunction* pFnAddEqual_Vector2DVector2D = NULL;
 
 	if (!pFnAddEqual_Vector2DVector2D)
-		pFnAddEqual_Vector2DVector2D = (UFunction*)UObject::GObjObjects()->Data[5808];
+		pFnAddEqual_Vector2DVector2D = (UFunction*)UObject::GObjObjects()->Data[5820];
 
 	UObject_execAddEqual_Vector2DVector2D_Parms AddEqual_Vector2DVector2D_Parms;
 	memcpy(&AddEqual_Vector2DVector2D_Parms.B, &B, 0x8);
@@ -2828,7 +2828,7 @@ struct FVector2D UObject::DivideEqual_Vector2DFloat(float B, struct FVector2D* A
 	static UFunction* pFnDivideEqual_Vector2DFloat = NULL;
 
 	if (!pFnDivideEqual_Vector2DFloat)
-		pFnDivideEqual_Vector2DFloat = (UFunction*)UObject::GObjObjects()->Data[5812];
+		pFnDivideEqual_Vector2DFloat = (UFunction*)UObject::GObjObjects()->Data[5824];
 
 	UObject_execDivideEqual_Vector2DFloat_Parms DivideEqual_Vector2DFloat_Parms;
 	DivideEqual_Vector2DFloat_Parms.B = B;
@@ -2857,7 +2857,7 @@ struct FVector2D UObject::MultiplyEqual_Vector2DFloat(float B, struct FVector2D*
 	static UFunction* pFnMultiplyEqual_Vector2DFloat = NULL;
 
 	if (!pFnMultiplyEqual_Vector2DFloat)
-		pFnMultiplyEqual_Vector2DFloat = (UFunction*)UObject::GObjObjects()->Data[5816];
+		pFnMultiplyEqual_Vector2DFloat = (UFunction*)UObject::GObjObjects()->Data[5828];
 
 	UObject_execMultiplyEqual_Vector2DFloat_Parms MultiplyEqual_Vector2DFloat_Parms;
 	MultiplyEqual_Vector2DFloat_Parms.B = B;
@@ -2886,7 +2886,7 @@ struct FVector2D UObject::Divide_Vector2DFloat(struct FVector2D A, float B)
 	static UFunction* pFnDivide_Vector2DFloat = NULL;
 
 	if (!pFnDivide_Vector2DFloat)
-		pFnDivide_Vector2DFloat = (UFunction*)UObject::GObjObjects()->Data[5820];
+		pFnDivide_Vector2DFloat = (UFunction*)UObject::GObjObjects()->Data[5832];
 
 	UObject_execDivide_Vector2DFloat_Parms Divide_Vector2DFloat_Parms;
 	memcpy(&Divide_Vector2DFloat_Parms.A, &A, 0x8);
@@ -2913,7 +2913,7 @@ struct FVector2D UObject::Multiply_Vector2DFloat(struct FVector2D A, float B)
 	static UFunction* pFnMultiply_Vector2DFloat = NULL;
 
 	if (!pFnMultiply_Vector2DFloat)
-		pFnMultiply_Vector2DFloat = (UFunction*)UObject::GObjObjects()->Data[5824];
+		pFnMultiply_Vector2DFloat = (UFunction*)UObject::GObjObjects()->Data[5836];
 
 	UObject_execMultiply_Vector2DFloat_Parms Multiply_Vector2DFloat_Parms;
 	memcpy(&Multiply_Vector2DFloat_Parms.A, &A, 0x8);
@@ -2940,7 +2940,7 @@ struct FVector2D UObject::Subtract_Vector2DVector2D(struct FVector2D A, struct F
 	static UFunction* pFnSubtract_Vector2DVector2D = NULL;
 
 	if (!pFnSubtract_Vector2DVector2D)
-		pFnSubtract_Vector2DVector2D = (UFunction*)UObject::GObjObjects()->Data[5828];
+		pFnSubtract_Vector2DVector2D = (UFunction*)UObject::GObjObjects()->Data[5840];
 
 	UObject_execSubtract_Vector2DVector2D_Parms Subtract_Vector2DVector2D_Parms;
 	memcpy(&Subtract_Vector2DVector2D_Parms.A, &A, 0x8);
@@ -2967,7 +2967,7 @@ struct FVector2D UObject::Add_Vector2DVector2D(struct FVector2D A, struct FVecto
 	static UFunction* pFnAdd_Vector2DVector2D = NULL;
 
 	if (!pFnAdd_Vector2DVector2D)
-		pFnAdd_Vector2DVector2D = (UFunction*)UObject::GObjObjects()->Data[5832];
+		pFnAdd_Vector2DVector2D = (UFunction*)UObject::GObjObjects()->Data[5844];
 
 	UObject_execAdd_Vector2DVector2D_Parms Add_Vector2DVector2D_Parms;
 	memcpy(&Add_Vector2DVector2D_Parms.A, &A, 0x8);
@@ -2994,7 +2994,7 @@ struct FQuat UObject::Subtract_QuatQuat(struct FQuat A, struct FQuat B)
 	static UFunction* pFnSubtract_QuatQuat = NULL;
 
 	if (!pFnSubtract_QuatQuat)
-		pFnSubtract_QuatQuat = (UFunction*)UObject::GObjObjects()->Data[5836];
+		pFnSubtract_QuatQuat = (UFunction*)UObject::GObjObjects()->Data[5848];
 
 	UObject_execSubtract_QuatQuat_Parms Subtract_QuatQuat_Parms;
 	memcpy(&Subtract_QuatQuat_Parms.A, &A, 0x10);
@@ -3026,7 +3026,7 @@ struct FQuat UObject::Add_QuatQuat(struct FQuat A, struct FQuat B)
 	static UFunction* pFnAdd_QuatQuat = NULL;
 
 	if (!pFnAdd_QuatQuat)
-		pFnAdd_QuatQuat = (UFunction*)UObject::GObjObjects()->Data[5840];
+		pFnAdd_QuatQuat = (UFunction*)UObject::GObjObjects()->Data[5852];
 
 	UObject_execAdd_QuatQuat_Parms Add_QuatQuat_Parms;
 	memcpy(&Add_QuatQuat_Parms.A, &A, 0x10);
@@ -3060,7 +3060,7 @@ struct FQuat UObject::QuatSlerp(struct FQuat A, struct FQuat B, float Alpha, uns
 	static UFunction* pFnQuatSlerp = NULL;
 
 	if (!pFnQuatSlerp)
-		pFnQuatSlerp = (UFunction*)UObject::GObjObjects()->Data[5849];
+		pFnQuatSlerp = (UFunction*)UObject::GObjObjects()->Data[5861];
 
 	UObject_execQuatSlerp_Parms QuatSlerp_Parms;
 	memcpy(&QuatSlerp_Parms.A, &A, 0x10);
@@ -3088,7 +3088,7 @@ struct FRotator UObject::QuatToRotator(struct FQuat A)
 	static UFunction* pFnQuatToRotator = NULL;
 
 	if (!pFnQuatToRotator)
-		pFnQuatToRotator = (UFunction*)UObject::GObjObjects()->Data[5853];
+		pFnQuatToRotator = (UFunction*)UObject::GObjObjects()->Data[5865];
 
 	UObject_execQuatToRotator_Parms QuatToRotator_Parms;
 	memcpy(&QuatToRotator_Parms.A, &A, 0x10);
@@ -3113,7 +3113,7 @@ struct FQuat UObject::QuatFromRotator(struct FRotator A)
 	static UFunction* pFnQuatFromRotator = NULL;
 
 	if (!pFnQuatFromRotator)
-		pFnQuatFromRotator = (UFunction*)UObject::GObjObjects()->Data[5859];
+		pFnQuatFromRotator = (UFunction*)UObject::GObjObjects()->Data[5871];
 
 	UObject_execQuatFromRotator_Parms QuatFromRotator_Parms;
 	memcpy(&QuatFromRotator_Parms.A, &A, 0xC);
@@ -3139,7 +3139,7 @@ struct FQuat UObject::QuatFromAxisAndAngle(struct FVector Axis, float Angle)
 	static UFunction* pFnQuatFromAxisAndAngle = NULL;
 
 	if (!pFnQuatFromAxisAndAngle)
-		pFnQuatFromAxisAndAngle = (UFunction*)UObject::GObjObjects()->Data[5862];
+		pFnQuatFromAxisAndAngle = (UFunction*)UObject::GObjObjects()->Data[5874];
 
 	UObject_execQuatFromAxisAndAngle_Parms QuatFromAxisAndAngle_Parms;
 	memcpy(&QuatFromAxisAndAngle_Parms.Axis, &Axis, 0xC);
@@ -3166,7 +3166,7 @@ struct FQuat UObject::QuatFindBetween(struct FVector A, struct FVector B)
 	static UFunction* pFnQuatFindBetween = NULL;
 
 	if (!pFnQuatFindBetween)
-		pFnQuatFindBetween = (UFunction*)UObject::GObjObjects()->Data[5865];
+		pFnQuatFindBetween = (UFunction*)UObject::GObjObjects()->Data[5877];
 
 	UObject_execQuatFindBetween_Parms QuatFindBetween_Parms;
 	memcpy(&QuatFindBetween_Parms.A, &A, 0xC);
@@ -3193,7 +3193,7 @@ struct FVector UObject::QuatRotateVector(struct FQuat A, struct FVector B)
 	static UFunction* pFnQuatRotateVector = NULL;
 
 	if (!pFnQuatRotateVector)
-		pFnQuatRotateVector = (UFunction*)UObject::GObjObjects()->Data[5869];
+		pFnQuatRotateVector = (UFunction*)UObject::GObjObjects()->Data[5881];
 
 	UObject_execQuatRotateVector_Parms QuatRotateVector_Parms;
 	memcpy(&QuatRotateVector_Parms.A, &A, 0x10);
@@ -3219,7 +3219,7 @@ struct FQuat UObject::QuatInvert(struct FQuat A)
 	static UFunction* pFnQuatInvert = NULL;
 
 	if (!pFnQuatInvert)
-		pFnQuatInvert = (UFunction*)UObject::GObjObjects()->Data[5873];
+		pFnQuatInvert = (UFunction*)UObject::GObjObjects()->Data[5885];
 
 	UObject_execQuatInvert_Parms QuatInvert_Parms;
 	memcpy(&QuatInvert_Parms.A, &A, 0x10);
@@ -3245,7 +3245,7 @@ float UObject::QuatDot(struct FQuat A, struct FQuat B)
 	static UFunction* pFnQuatDot = NULL;
 
 	if (!pFnQuatDot)
-		pFnQuatDot = (UFunction*)UObject::GObjObjects()->Data[5877];
+		pFnQuatDot = (UFunction*)UObject::GObjObjects()->Data[5889];
 
 	UObject_execQuatDot_Parms QuatDot_Parms;
 	memcpy(&QuatDot_Parms.A, &A, 0x10);
@@ -3272,7 +3272,7 @@ struct FQuat UObject::QuatProduct(struct FQuat A, struct FQuat B)
 	static UFunction* pFnQuatProduct = NULL;
 
 	if (!pFnQuatProduct)
-		pFnQuatProduct = (UFunction*)UObject::GObjObjects()->Data[5880];
+		pFnQuatProduct = (UFunction*)UObject::GObjObjects()->Data[5892];
 
 	UObject_execQuatProduct_Parms QuatProduct_Parms;
 	memcpy(&QuatProduct_Parms.A, &A, 0x10);
@@ -3299,7 +3299,7 @@ struct FVector UObject::MatrixGetAxis(struct FMatrix TM, unsigned char Axis)
 	static UFunction* pFnMatrixGetAxis = NULL;
 
 	if (!pFnMatrixGetAxis)
-		pFnMatrixGetAxis = (UFunction*)UObject::GObjObjects()->Data[5884];
+		pFnMatrixGetAxis = (UFunction*)UObject::GObjObjects()->Data[5896];
 
 	UObject_execMatrixGetAxis_Parms MatrixGetAxis_Parms;
 	memcpy(&MatrixGetAxis_Parms.TM, &TM, 0x40);
@@ -3325,7 +3325,7 @@ struct FVector UObject::MatrixGetOrigin(struct FMatrix TM)
 	static UFunction* pFnMatrixGetOrigin = NULL;
 
 	if (!pFnMatrixGetOrigin)
-		pFnMatrixGetOrigin = (UFunction*)UObject::GObjObjects()->Data[5888];
+		pFnMatrixGetOrigin = (UFunction*)UObject::GObjObjects()->Data[5900];
 
 	UObject_execMatrixGetOrigin_Parms MatrixGetOrigin_Parms;
 	memcpy(&MatrixGetOrigin_Parms.TM, &TM, 0x40);
@@ -3350,7 +3350,7 @@ struct FRotator UObject::MatrixGetRotator(struct FMatrix TM)
 	static UFunction* pFnMatrixGetRotator = NULL;
 
 	if (!pFnMatrixGetRotator)
-		pFnMatrixGetRotator = (UFunction*)UObject::GObjObjects()->Data[5903];
+		pFnMatrixGetRotator = (UFunction*)UObject::GObjObjects()->Data[5915];
 
 	UObject_execMatrixGetRotator_Parms MatrixGetRotator_Parms;
 	memcpy(&MatrixGetRotator_Parms.TM, &TM, 0x40);
@@ -3375,7 +3375,7 @@ struct FMatrix UObject::MakeRotationMatrix(struct FRotator Rotation)
 	static UFunction* pFnMakeRotationMatrix = NULL;
 
 	if (!pFnMakeRotationMatrix)
-		pFnMakeRotationMatrix = (UFunction*)UObject::GObjObjects()->Data[5906];
+		pFnMakeRotationMatrix = (UFunction*)UObject::GObjObjects()->Data[5918];
 
 	UObject_execMakeRotationMatrix_Parms MakeRotationMatrix_Parms;
 	memcpy(&MakeRotationMatrix_Parms.Rotation, &Rotation, 0xC);
@@ -3401,7 +3401,7 @@ struct FMatrix UObject::MakeRotationTranslationMatrix(struct FVector Translation
 	static UFunction* pFnMakeRotationTranslationMatrix = NULL;
 
 	if (!pFnMakeRotationTranslationMatrix)
-		pFnMakeRotationTranslationMatrix = (UFunction*)UObject::GObjObjects()->Data[5909];
+		pFnMakeRotationTranslationMatrix = (UFunction*)UObject::GObjObjects()->Data[5921];
 
 	UObject_execMakeRotationTranslationMatrix_Parms MakeRotationTranslationMatrix_Parms;
 	memcpy(&MakeRotationTranslationMatrix_Parms.Translation, &Translation, 0xC);
@@ -3428,7 +3428,7 @@ struct FVector UObject::InverseTransformNormal(struct FMatrix TM, struct FVector
 	static UFunction* pFnInverseTransformNormal = NULL;
 
 	if (!pFnInverseTransformNormal)
-		pFnInverseTransformNormal = (UFunction*)UObject::GObjObjects()->Data[5912];
+		pFnInverseTransformNormal = (UFunction*)UObject::GObjObjects()->Data[5924];
 
 	UObject_execInverseTransformNormal_Parms InverseTransformNormal_Parms;
 	memcpy(&InverseTransformNormal_Parms.TM, &TM, 0x40);
@@ -3455,7 +3455,7 @@ struct FVector UObject::TransformNormal(struct FMatrix TM, struct FVector A)
 	static UFunction* pFnTransformNormal = NULL;
 
 	if (!pFnTransformNormal)
-		pFnTransformNormal = (UFunction*)UObject::GObjObjects()->Data[5916];
+		pFnTransformNormal = (UFunction*)UObject::GObjObjects()->Data[5928];
 
 	UObject_execTransformNormal_Parms TransformNormal_Parms;
 	memcpy(&TransformNormal_Parms.TM, &TM, 0x40);
@@ -3482,7 +3482,7 @@ struct FVector UObject::InverseTransformVector(struct FMatrix TM, struct FVector
 	static UFunction* pFnInverseTransformVector = NULL;
 
 	if (!pFnInverseTransformVector)
-		pFnInverseTransformVector = (UFunction*)UObject::GObjObjects()->Data[5920];
+		pFnInverseTransformVector = (UFunction*)UObject::GObjObjects()->Data[5932];
 
 	UObject_execInverseTransformVector_Parms InverseTransformVector_Parms;
 	memcpy(&InverseTransformVector_Parms.TM, &TM, 0x40);
@@ -3509,7 +3509,7 @@ struct FVector UObject::TransformVector(struct FMatrix TM, struct FVector A)
 	static UFunction* pFnTransformVector = NULL;
 
 	if (!pFnTransformVector)
-		pFnTransformVector = (UFunction*)UObject::GObjObjects()->Data[5924];
+		pFnTransformVector = (UFunction*)UObject::GObjObjects()->Data[5936];
 
 	UObject_execTransformVector_Parms TransformVector_Parms;
 	memcpy(&TransformVector_Parms.TM, &TM, 0x40);
@@ -3536,7 +3536,7 @@ struct FMatrix UObject::Multiply_MatrixMatrix(struct FMatrix A, struct FMatrix B
 	static UFunction* pFnMultiply_MatrixMatrix = NULL;
 
 	if (!pFnMultiply_MatrixMatrix)
-		pFnMultiply_MatrixMatrix = (UFunction*)UObject::GObjObjects()->Data[5928];
+		pFnMultiply_MatrixMatrix = (UFunction*)UObject::GObjObjects()->Data[5940];
 
 	UObject_execMultiply_MatrixMatrix_Parms Multiply_MatrixMatrix_Parms;
 	memcpy(&Multiply_MatrixMatrix_Parms.A, &A, 0x40);
@@ -3563,7 +3563,7 @@ bool UObject::NotEqual_NameName(struct FName A, struct FName B)
 	static UFunction* pFnNotEqual_NameName = NULL;
 
 	if (!pFnNotEqual_NameName)
-		pFnNotEqual_NameName = (UFunction*)UObject::GObjObjects()->Data[5932];
+		pFnNotEqual_NameName = (UFunction*)UObject::GObjObjects()->Data[5944];
 
 	UObject_execNotEqual_NameName_Parms NotEqual_NameName_Parms;
 	memcpy(&NotEqual_NameName_Parms.A, &A, 0x8);
@@ -3595,7 +3595,7 @@ bool UObject::EqualEqual_NameName(struct FName A, struct FName B)
 	static UFunction* pFnEqualEqual_NameName = NULL;
 
 	if (!pFnEqualEqual_NameName)
-		pFnEqualEqual_NameName = (UFunction*)UObject::GObjObjects()->Data[5936];
+		pFnEqualEqual_NameName = (UFunction*)UObject::GObjObjects()->Data[5948];
 
 	UObject_execEqualEqual_NameName_Parms EqualEqual_NameName_Parms;
 	memcpy(&EqualEqual_NameName_Parms.A, &A, 0x8);
@@ -3626,7 +3626,7 @@ class UInterface* UObject::QueryInterface(class UClass* InterfaceClass)
 	static UFunction* pFnQueryInterface = NULL;
 
 	if (!pFnQueryInterface)
-		pFnQueryInterface = (UFunction*)UObject::GObjObjects()->Data[5940];
+		pFnQueryInterface = (UFunction*)UObject::GObjObjects()->Data[5952];
 
 	UObject_execQueryInterface_Parms QueryInterface_Parms;
 	QueryInterface_Parms.InterfaceClass = InterfaceClass;
@@ -3651,7 +3651,7 @@ bool UObject::IsA(struct FName ClassName)
 	static UFunction* pFnIsA = NULL;
 
 	if (!pFnIsA)
-		pFnIsA = (UFunction*)UObject::GObjObjects()->Data[5944];
+		pFnIsA = (UFunction*)UObject::GObjObjects()->Data[5956];
 
 	UObject_execIsA_Parms IsA_Parms;
 	memcpy(&IsA_Parms.ClassName, &ClassName, 0x8);
@@ -3682,7 +3682,7 @@ bool UObject::ClassIsChildOf(class UClass* TestClass, class UClass* ParentClass)
 	static UFunction* pFnClassIsChildOf = NULL;
 
 	if (!pFnClassIsChildOf)
-		pFnClassIsChildOf = (UFunction*)UObject::GObjObjects()->Data[5947];
+		pFnClassIsChildOf = (UFunction*)UObject::GObjObjects()->Data[5959];
 
 	UObject_execClassIsChildOf_Parms ClassIsChildOf_Parms;
 	ClassIsChildOf_Parms.TestClass = TestClass;
@@ -3714,7 +3714,7 @@ bool UObject::NotEqual_InterfaceInterface(class UInterface* A, class UInterface*
 	static UFunction* pFnNotEqual_InterfaceInterface = NULL;
 
 	if (!pFnNotEqual_InterfaceInterface)
-		pFnNotEqual_InterfaceInterface = (UFunction*)UObject::GObjObjects()->Data[5950];
+		pFnNotEqual_InterfaceInterface = (UFunction*)UObject::GObjObjects()->Data[5962];
 
 	UObject_execNotEqual_InterfaceInterface_Parms NotEqual_InterfaceInterface_Parms;
 	NotEqual_InterfaceInterface_Parms.A = A;
@@ -3741,7 +3741,7 @@ bool UObject::EqualEqual_InterfaceInterface(class UInterface* A, class UInterfac
 	static UFunction* pFnEqualEqual_InterfaceInterface = NULL;
 
 	if (!pFnEqualEqual_InterfaceInterface)
-		pFnEqualEqual_InterfaceInterface = (UFunction*)UObject::GObjObjects()->Data[5954];
+		pFnEqualEqual_InterfaceInterface = (UFunction*)UObject::GObjObjects()->Data[5966];
 
 	UObject_execEqualEqual_InterfaceInterface_Parms EqualEqual_InterfaceInterface_Parms;
 	EqualEqual_InterfaceInterface_Parms.A = A;
@@ -3768,7 +3768,7 @@ bool UObject::NotEqual_ObjectObject(class UObject* A, class UObject* B)
 	static UFunction* pFnNotEqual_ObjectObject = NULL;
 
 	if (!pFnNotEqual_ObjectObject)
-		pFnNotEqual_ObjectObject = (UFunction*)UObject::GObjObjects()->Data[5958];
+		pFnNotEqual_ObjectObject = (UFunction*)UObject::GObjObjects()->Data[5970];
 
 	UObject_execNotEqual_ObjectObject_Parms NotEqual_ObjectObject_Parms;
 	NotEqual_ObjectObject_Parms.A = A;
@@ -3800,7 +3800,7 @@ bool UObject::EqualEqual_ObjectObject(class UObject* A, class UObject* B)
 	static UFunction* pFnEqualEqual_ObjectObject = NULL;
 
 	if (!pFnEqualEqual_ObjectObject)
-		pFnEqualEqual_ObjectObject = (UFunction*)UObject::GObjObjects()->Data[5962];
+		pFnEqualEqual_ObjectObject = (UFunction*)UObject::GObjObjects()->Data[5974];
 
 	UObject_execEqualEqual_ObjectObject_Parms EqualEqual_ObjectObject_Parms;
 	EqualEqual_ObjectObject_Parms.A = A;
@@ -3831,7 +3831,7 @@ struct FString UObject::GuidToString(struct FGuid* G)
 	static UFunction* pFnGuidToString = NULL;
 
 	if (!pFnGuidToString)
-		pFnGuidToString = (UFunction*)UObject::GObjObjects()->Data[5966];
+		pFnGuidToString = (UFunction*)UObject::GObjObjects()->Data[5978];
 
 	UObject_execGuidToString_Parms GuidToString_Parms;
 
@@ -3858,7 +3858,7 @@ struct FString UObject::PathName(class UObject* CheckObject)
 	static UFunction* pFnPathName = NULL;
 
 	if (!pFnPathName)
-		pFnPathName = (UFunction*)UObject::GObjObjects()->Data[5970];
+		pFnPathName = (UFunction*)UObject::GObjObjects()->Data[5982];
 
 	UObject_execPathName_Parms PathName_Parms;
 	PathName_Parms.CheckObject = CheckObject;
@@ -3885,7 +3885,7 @@ TArray< struct FString > UObject::SplitString(struct FString Source, struct FStr
 	static UFunction* pFnSplitString = NULL;
 
 	if (!pFnSplitString)
-		pFnSplitString = (UFunction*)UObject::GObjObjects()->Data[5978];
+		pFnSplitString = (UFunction*)UObject::GObjObjects()->Data[5990];
 
 	UObject_execSplitString_Parms SplitString_Parms;
 	memcpy(&SplitString_Parms.Source, &Source, 0xC);
@@ -3910,7 +3910,7 @@ void UObject::ParseStringIntoArray(struct FString BaseString, struct FString del
 	static UFunction* pFnParseStringIntoArray = NULL;
 
 	if (!pFnParseStringIntoArray)
-		pFnParseStringIntoArray = (UFunction*)UObject::GObjObjects()->Data[5586];
+		pFnParseStringIntoArray = (UFunction*)UObject::GObjObjects()->Data[5598];
 
 	UObject_execParseStringIntoArray_Parms ParseStringIntoArray_Parms;
 	memcpy(&ParseStringIntoArray_Parms.BaseString, &BaseString, 0xC);
@@ -3940,7 +3940,7 @@ void UObject::JoinArray(TArray< struct FString > StringArray, struct FString del
 	static UFunction* pFnJoinArray = NULL;
 
 	if (!pFnJoinArray)
-		pFnJoinArray = (UFunction*)UObject::GObjObjects()->Data[5988];
+		pFnJoinArray = (UFunction*)UObject::GObjObjects()->Data[6000];
 
 	UObject_execJoinArray_Parms JoinArray_Parms;
 	memcpy(&JoinArray_Parms.StringArray, &StringArray, 0xC);
@@ -3964,7 +3964,7 @@ struct FString UObject::GetRightMost(struct FString Text)
 	static UFunction* pFnGetRightMost = NULL;
 
 	if (!pFnGetRightMost)
-		pFnGetRightMost = (UFunction*)UObject::GObjObjects()->Data[5994];
+		pFnGetRightMost = (UFunction*)UObject::GObjObjects()->Data[6006];
 
 	UObject_execGetRightMost_Parms GetRightMost_Parms;
 	memcpy(&GetRightMost_Parms.Text, &Text, 0xC);
@@ -3987,7 +3987,7 @@ struct FString UObject::Split(struct FString Text, struct FString SplitStr, unsi
 	static UFunction* pFnSplit = NULL;
 
 	if (!pFnSplit)
-		pFnSplit = (UFunction*)UObject::GObjObjects()->Data[6002];
+		pFnSplit = (UFunction*)UObject::GObjObjects()->Data[6014];
 
 	UObject_execSplit_Parms Split_Parms;
 	memcpy(&Split_Parms.Text, &Text, 0xC);
@@ -4010,7 +4010,7 @@ int UObject::StringHash(struct FString S)
 	static UFunction* pFnStringHash = NULL;
 
 	if (!pFnStringHash)
-		pFnStringHash = (UFunction*)UObject::GObjObjects()->Data[6005];
+		pFnStringHash = (UFunction*)UObject::GObjObjects()->Data[6017];
 
 	UObject_execStringHash_Parms StringHash_Parms;
 	memcpy(&StringHash_Parms.S, &S, 0xC);
@@ -4038,7 +4038,7 @@ struct FString UObject::Repl(struct FString Src, struct FString Match, struct FS
 	static UFunction* pFnRepl = NULL;
 
 	if (!pFnRepl)
-		pFnRepl = (UFunction*)UObject::GObjObjects()->Data[6010];
+		pFnRepl = (UFunction*)UObject::GObjObjects()->Data[6022];
 
 	UObject_execRepl_Parms Repl_Parms;
 	memcpy(&Repl_Parms.Src, &Src, 0xC);
@@ -4071,7 +4071,7 @@ int UObject::Asc(struct FString S)
 	static UFunction* pFnAsc = NULL;
 
 	if (!pFnAsc)
-		pFnAsc = (UFunction*)UObject::GObjObjects()->Data[6013];
+		pFnAsc = (UFunction*)UObject::GObjObjects()->Data[6025];
 
 	UObject_execAsc_Parms Asc_Parms;
 	memcpy(&Asc_Parms.S, &S, 0xC);
@@ -4101,7 +4101,7 @@ struct FString UObject::Chr(int I)
 	static UFunction* pFnChr = NULL;
 
 	if (!pFnChr)
-		pFnChr = (UFunction*)UObject::GObjObjects()->Data[6019];
+		pFnChr = (UFunction*)UObject::GObjObjects()->Data[6031];
 
 	UObject_execChr_Parms Chr_Parms;
 	Chr_Parms.I = I;
@@ -4131,7 +4131,7 @@ struct FString UObject::Locs(struct FString S)
 	static UFunction* pFnLocs = NULL;
 
 	if (!pFnLocs)
-		pFnLocs = (UFunction*)UObject::GObjObjects()->Data[6022];
+		pFnLocs = (UFunction*)UObject::GObjObjects()->Data[6034];
 
 	UObject_execLocs_Parms Locs_Parms;
 	memcpy(&Locs_Parms.S, &S, 0xC);
@@ -4161,7 +4161,7 @@ struct FString UObject::Caps(struct FString S)
 	static UFunction* pFnCaps = NULL;
 
 	if (!pFnCaps)
-		pFnCaps = (UFunction*)UObject::GObjObjects()->Data[6025];
+		pFnCaps = (UFunction*)UObject::GObjObjects()->Data[6037];
 
 	UObject_execCaps_Parms Caps_Parms;
 	memcpy(&Caps_Parms.S, &S, 0xC);
@@ -4192,7 +4192,7 @@ struct FString UObject::Right(struct FString S, int I)
 	static UFunction* pFnRight = NULL;
 
 	if (!pFnRight)
-		pFnRight = (UFunction*)UObject::GObjObjects()->Data[6028];
+		pFnRight = (UFunction*)UObject::GObjObjects()->Data[6040];
 
 	UObject_execRight_Parms Right_Parms;
 	memcpy(&Right_Parms.S, &S, 0xC);
@@ -4224,7 +4224,7 @@ struct FString UObject::Left(struct FString S, int I)
 	static UFunction* pFnLeft = NULL;
 
 	if (!pFnLeft)
-		pFnLeft = (UFunction*)UObject::GObjObjects()->Data[6031];
+		pFnLeft = (UFunction*)UObject::GObjObjects()->Data[6043];
 
 	UObject_execLeft_Parms Left_Parms;
 	memcpy(&Left_Parms.S, &S, 0xC);
@@ -4257,7 +4257,7 @@ struct FString UObject::Mid(struct FString S, int I, int J)
 	static UFunction* pFnMid = NULL;
 
 	if (!pFnMid)
-		pFnMid = (UFunction*)UObject::GObjObjects()->Data[6035];
+		pFnMid = (UFunction*)UObject::GObjObjects()->Data[6047];
 
 	UObject_execMid_Parms Mid_Parms;
 	memcpy(&Mid_Parms.S, &S, 0xC);
@@ -4293,7 +4293,7 @@ int UObject::InStr(struct FString S, struct FString T, unsigned long bSearchFrom
 	static UFunction* pFnInStr = NULL;
 
 	if (!pFnInStr)
-		pFnInStr = (UFunction*)UObject::GObjObjects()->Data[6039];
+		pFnInStr = (UFunction*)UObject::GObjObjects()->Data[6051];
 
 	UObject_execInStr_Parms InStr_Parms;
 	memcpy(&InStr_Parms.S, &S, 0xC);
@@ -4327,7 +4327,7 @@ int UObject::Len(struct FString S)
 	static UFunction* pFnLen = NULL;
 
 	if (!pFnLen)
-		pFnLen = (UFunction*)UObject::GObjObjects()->Data[6044];
+		pFnLen = (UFunction*)UObject::GObjObjects()->Data[6056];
 
 	UObject_execLen_Parms Len_Parms;
 	memcpy(&Len_Parms.S, &S, 0xC);
@@ -4358,7 +4358,7 @@ struct FString UObject::SubtractEqual_StrStr(struct FString B, struct FString* A
 	static UFunction* pFnSubtractEqual_StrStr = NULL;
 
 	if (!pFnSubtractEqual_StrStr)
-		pFnSubtractEqual_StrStr = (UFunction*)UObject::GObjObjects()->Data[6051];
+		pFnSubtractEqual_StrStr = (UFunction*)UObject::GObjObjects()->Data[6063];
 
 	UObject_execSubtractEqual_StrStr_Parms SubtractEqual_StrStr_Parms;
 	memcpy(&SubtractEqual_StrStr_Parms.B, &B, 0xC);
@@ -4392,7 +4392,7 @@ struct FString UObject::AtEqual_StrStr(struct FString B, struct FString* A)
 	static UFunction* pFnAtEqual_StrStr = NULL;
 
 	if (!pFnAtEqual_StrStr)
-		pFnAtEqual_StrStr = (UFunction*)UObject::GObjObjects()->Data[6054];
+		pFnAtEqual_StrStr = (UFunction*)UObject::GObjObjects()->Data[6066];
 
 	UObject_execAtEqual_StrStr_Parms AtEqual_StrStr_Parms;
 	memcpy(&AtEqual_StrStr_Parms.B, &B, 0xC);
@@ -4426,7 +4426,7 @@ struct FString UObject::ConcatEqual_StrStr(struct FString B, struct FString* A)
 	static UFunction* pFnConcatEqual_StrStr = NULL;
 
 	if (!pFnConcatEqual_StrStr)
-		pFnConcatEqual_StrStr = (UFunction*)UObject::GObjObjects()->Data[5998];
+		pFnConcatEqual_StrStr = (UFunction*)UObject::GObjObjects()->Data[6010];
 
 	UObject_execConcatEqual_StrStr_Parms ConcatEqual_StrStr_Parms;
 	memcpy(&ConcatEqual_StrStr_Parms.B, &B, 0xC);
@@ -4460,7 +4460,7 @@ bool UObject::ComplementEqual_StrStr(struct FString A, struct FString B)
 	static UFunction* pFnComplementEqual_StrStr = NULL;
 
 	if (!pFnComplementEqual_StrStr)
-		pFnComplementEqual_StrStr = (UFunction*)UObject::GObjObjects()->Data[6061];
+		pFnComplementEqual_StrStr = (UFunction*)UObject::GObjObjects()->Data[6073];
 
 	UObject_execComplementEqual_StrStr_Parms ComplementEqual_StrStr_Parms;
 	memcpy(&ComplementEqual_StrStr_Parms.A, &A, 0xC);
@@ -4492,7 +4492,7 @@ bool UObject::NotEqual_StrStr(struct FString A, struct FString B)
 	static UFunction* pFnNotEqual_StrStr = NULL;
 
 	if (!pFnNotEqual_StrStr)
-		pFnNotEqual_StrStr = (UFunction*)UObject::GObjObjects()->Data[6064];
+		pFnNotEqual_StrStr = (UFunction*)UObject::GObjObjects()->Data[6076];
 
 	UObject_execNotEqual_StrStr_Parms NotEqual_StrStr_Parms;
 	memcpy(&NotEqual_StrStr_Parms.A, &A, 0xC);
@@ -4524,7 +4524,7 @@ bool UObject::EqualEqual_StrStr(struct FString A, struct FString B)
 	static UFunction* pFnEqualEqual_StrStr = NULL;
 
 	if (!pFnEqualEqual_StrStr)
-		pFnEqualEqual_StrStr = (UFunction*)UObject::GObjObjects()->Data[6068];
+		pFnEqualEqual_StrStr = (UFunction*)UObject::GObjObjects()->Data[6080];
 
 	UObject_execEqualEqual_StrStr_Parms EqualEqual_StrStr_Parms;
 	memcpy(&EqualEqual_StrStr_Parms.A, &A, 0xC);
@@ -4556,7 +4556,7 @@ bool UObject::GreaterEqual_StrStr(struct FString A, struct FString B)
 	static UFunction* pFnGreaterEqual_StrStr = NULL;
 
 	if (!pFnGreaterEqual_StrStr)
-		pFnGreaterEqual_StrStr = (UFunction*)UObject::GObjObjects()->Data[6072];
+		pFnGreaterEqual_StrStr = (UFunction*)UObject::GObjObjects()->Data[6084];
 
 	UObject_execGreaterEqual_StrStr_Parms GreaterEqual_StrStr_Parms;
 	memcpy(&GreaterEqual_StrStr_Parms.A, &A, 0xC);
@@ -4588,7 +4588,7 @@ bool UObject::LessEqual_StrStr(struct FString A, struct FString B)
 	static UFunction* pFnLessEqual_StrStr = NULL;
 
 	if (!pFnLessEqual_StrStr)
-		pFnLessEqual_StrStr = (UFunction*)UObject::GObjObjects()->Data[6076];
+		pFnLessEqual_StrStr = (UFunction*)UObject::GObjObjects()->Data[6088];
 
 	UObject_execLessEqual_StrStr_Parms LessEqual_StrStr_Parms;
 	memcpy(&LessEqual_StrStr_Parms.A, &A, 0xC);
@@ -4620,7 +4620,7 @@ bool UObject::Greater_StrStr(struct FString A, struct FString B)
 	static UFunction* pFnGreater_StrStr = NULL;
 
 	if (!pFnGreater_StrStr)
-		pFnGreater_StrStr = (UFunction*)UObject::GObjObjects()->Data[6080];
+		pFnGreater_StrStr = (UFunction*)UObject::GObjObjects()->Data[6092];
 
 	UObject_execGreater_StrStr_Parms Greater_StrStr_Parms;
 	memcpy(&Greater_StrStr_Parms.A, &A, 0xC);
@@ -4652,7 +4652,7 @@ bool UObject::Less_StrStr(struct FString A, struct FString B)
 	static UFunction* pFnLess_StrStr = NULL;
 
 	if (!pFnLess_StrStr)
-		pFnLess_StrStr = (UFunction*)UObject::GObjObjects()->Data[6084];
+		pFnLess_StrStr = (UFunction*)UObject::GObjObjects()->Data[6096];
 
 	UObject_execLess_StrStr_Parms Less_StrStr_Parms;
 	memcpy(&Less_StrStr_Parms.A, &A, 0xC);
@@ -4684,7 +4684,7 @@ struct FString UObject::At_StrStr(struct FString A, struct FString B)
 	static UFunction* pFnAt_StrStr = NULL;
 
 	if (!pFnAt_StrStr)
-		pFnAt_StrStr = (UFunction*)UObject::GObjObjects()->Data[6088];
+		pFnAt_StrStr = (UFunction*)UObject::GObjObjects()->Data[6100];
 
 	UObject_execAt_StrStr_Parms At_StrStr_Parms;
 	memcpy(&At_StrStr_Parms.A, &A, 0xC);
@@ -4716,7 +4716,7 @@ struct FString UObject::Concat_StrStr(struct FString A, struct FString B)
 	static UFunction* pFnConcat_StrStr = NULL;
 
 	if (!pFnConcat_StrStr)
-		pFnConcat_StrStr = (UFunction*)UObject::GObjObjects()->Data[6092];
+		pFnConcat_StrStr = (UFunction*)UObject::GObjObjects()->Data[6104];
 
 	UObject_execConcat_StrStr_Parms Concat_StrStr_Parms;
 	memcpy(&Concat_StrStr_Parms.A, &A, 0xC);
@@ -4749,7 +4749,7 @@ struct FRotator UObject::MakeRotator(int Pitch, int Yaw, int Roll)
 	static UFunction* pFnMakeRotator = NULL;
 
 	if (!pFnMakeRotator)
-		pFnMakeRotator = (UFunction*)UObject::GObjObjects()->Data[6096];
+		pFnMakeRotator = (UFunction*)UObject::GObjObjects()->Data[6108];
 
 	UObject_execMakeRotator_Parms MakeRotator_Parms;
 	MakeRotator_Parms.Pitch = Pitch;
@@ -4777,7 +4777,7 @@ bool UObject::SClampRotAxis(float DeltaTime, int ViewAxis, int MaxLimit, int Min
 	static UFunction* pFnSClampRotAxis = NULL;
 
 	if (!pFnSClampRotAxis)
-		pFnSClampRotAxis = (UFunction*)UObject::GObjObjects()->Data[6100];
+		pFnSClampRotAxis = (UFunction*)UObject::GObjObjects()->Data[6112];
 
 	UObject_execSClampRotAxis_Parms SClampRotAxis_Parms;
 	SClampRotAxis_Parms.DeltaTime = DeltaTime;
@@ -4807,7 +4807,7 @@ int UObject::ClampRotAxisFromRange(int Current, int Min, int Max)
 	static UFunction* pFnClampRotAxisFromRange = NULL;
 
 	if (!pFnClampRotAxisFromRange)
-		pFnClampRotAxisFromRange = (UFunction*)UObject::GObjObjects()->Data[6106];
+		pFnClampRotAxisFromRange = (UFunction*)UObject::GObjObjects()->Data[6118];
 
 	UObject_execClampRotAxisFromRange_Parms ClampRotAxisFromRange_Parms;
 	ClampRotAxisFromRange_Parms.Current = Current;
@@ -4832,7 +4832,7 @@ int UObject::ClampRotAxisFromBase(int Current, int Center, int MaxDelta)
 	static UFunction* pFnClampRotAxisFromBase = NULL;
 
 	if (!pFnClampRotAxisFromBase)
-		pFnClampRotAxisFromBase = (UFunction*)UObject::GObjObjects()->Data[6116];
+		pFnClampRotAxisFromBase = (UFunction*)UObject::GObjObjects()->Data[6128];
 
 	UObject_execClampRotAxisFromBase_Parms ClampRotAxisFromBase_Parms;
 	ClampRotAxisFromBase_Parms.Current = Current;
@@ -4857,7 +4857,7 @@ void UObject::ClampRotAxis(int ViewAxis, int MaxLimit, int MinLimit, int* out_De
 	static UFunction* pFnClampRotAxis = NULL;
 
 	if (!pFnClampRotAxis)
-		pFnClampRotAxis = (UFunction*)UObject::GObjObjects()->Data[6121];
+		pFnClampRotAxis = (UFunction*)UObject::GObjObjects()->Data[6133];
 
 	UObject_execClampRotAxis_Parms ClampRotAxis_Parms;
 	ClampRotAxis_Parms.ViewAxis = ViewAxis;
@@ -4881,7 +4881,7 @@ float UObject::RSize(struct FRotator R)
 	static UFunction* pFnRSize = NULL;
 
 	if (!pFnRSize)
-		pFnRSize = (UFunction*)UObject::GObjObjects()->Data[6126];
+		pFnRSize = (UFunction*)UObject::GObjObjects()->Data[6138];
 
 	UObject_execRSize_Parms RSize_Parms;
 	memcpy(&RSize_Parms.R, &R, 0xC);
@@ -4907,7 +4907,7 @@ float UObject::RDiff(struct FRotator A, struct FRotator B)
 	static UFunction* pFnRDiff = NULL;
 
 	if (!pFnRDiff)
-		pFnRDiff = (UFunction*)UObject::GObjObjects()->Data[6131];
+		pFnRDiff = (UFunction*)UObject::GObjObjects()->Data[6143];
 
 	UObject_execRDiff_Parms RDiff_Parms;
 	memcpy(&RDiff_Parms.A, &A, 0xC);
@@ -4933,7 +4933,7 @@ int UObject::NormalizeRotAxis(int Angle)
 	static UFunction* pFnNormalizeRotAxis = NULL;
 
 	if (!pFnNormalizeRotAxis)
-		pFnNormalizeRotAxis = (UFunction*)UObject::GObjObjects()->Data[6109];
+		pFnNormalizeRotAxis = (UFunction*)UObject::GObjObjects()->Data[6121];
 
 	UObject_execNormalizeRotAxis_Parms NormalizeRotAxis_Parms;
 	NormalizeRotAxis_Parms.Angle = Angle;
@@ -4962,7 +4962,7 @@ struct FRotator UObject::RInterpTo(struct FRotator Current, struct FRotator Targ
 	static UFunction* pFnRInterpTo = NULL;
 
 	if (!pFnRInterpTo)
-		pFnRInterpTo = (UFunction*)UObject::GObjObjects()->Data[6137];
+		pFnRInterpTo = (UFunction*)UObject::GObjObjects()->Data[6149];
 
 	UObject_execRInterpTo_Parms RInterpTo_Parms;
 	memcpy(&RInterpTo_Parms.Current, &Current, 0xC);
@@ -4992,7 +4992,7 @@ struct FRotator UObject::RTransform(struct FRotator R, struct FRotator RBasis)
 	static UFunction* pFnRTransform = NULL;
 
 	if (!pFnRTransform)
-		pFnRTransform = (UFunction*)UObject::GObjObjects()->Data[6140];
+		pFnRTransform = (UFunction*)UObject::GObjObjects()->Data[6152];
 
 	UObject_execRTransform_Parms RTransform_Parms;
 	memcpy(&RTransform_Parms.R, &R, 0xC);
@@ -5021,7 +5021,7 @@ struct FRotator UObject::RLerp(struct FRotator A, struct FRotator B, float Alpha
 	static UFunction* pFnRLerp = NULL;
 
 	if (!pFnRLerp)
-		pFnRLerp = (UFunction*)UObject::GObjObjects()->Data[6147];
+		pFnRLerp = (UFunction*)UObject::GObjObjects()->Data[6159];
 
 	UObject_execRLerp_Parms RLerp_Parms;
 	memcpy(&RLerp_Parms.A, &A, 0xC);
@@ -5049,7 +5049,7 @@ struct FRotator UObject::Normalize(struct FRotator Rot)
 	static UFunction* pFnNormalize = NULL;
 
 	if (!pFnNormalize)
-		pFnNormalize = (UFunction*)UObject::GObjObjects()->Data[6151];
+		pFnNormalize = (UFunction*)UObject::GObjObjects()->Data[6163];
 
 	UObject_execNormalize_Parms Normalize_Parms;
 	memcpy(&Normalize_Parms.Rot, &Rot, 0xC);
@@ -5076,7 +5076,7 @@ struct FRotator UObject::OrthoRotation(struct FVector X, struct FVector Y, struc
 	static UFunction* pFnOrthoRotation = NULL;
 
 	if (!pFnOrthoRotation)
-		pFnOrthoRotation = (UFunction*)UObject::GObjObjects()->Data[6157];
+		pFnOrthoRotation = (UFunction*)UObject::GObjObjects()->Data[6169];
 
 	UObject_execOrthoRotation_Parms OrthoRotation_Parms;
 	memcpy(&OrthoRotation_Parms.X, &X, 0xC);
@@ -5103,7 +5103,7 @@ struct FRotator UObject::RotRand(unsigned long bRoll)
 	static UFunction* pFnRotRand = NULL;
 
 	if (!pFnRotRand)
-		pFnRotRand = (UFunction*)UObject::GObjObjects()->Data[6160];
+		pFnRotRand = (UFunction*)UObject::GObjObjects()->Data[6172];
 
 	UObject_execRotRand_Parms RotRand_Parms;
 	RotRand_Parms.bRoll = bRoll;
@@ -5134,7 +5134,7 @@ struct FVector UObject::GetRotatorAxis(struct FRotator A, int Axis)
 	static UFunction* pFnGetRotatorAxis = NULL;
 
 	if (!pFnGetRotatorAxis)
-		pFnGetRotatorAxis = (UFunction*)UObject::GObjObjects()->Data[6165];
+		pFnGetRotatorAxis = (UFunction*)UObject::GObjObjects()->Data[6177];
 
 	UObject_execGetRotatorAxis_Parms GetRotatorAxis_Parms;
 	memcpy(&GetRotatorAxis_Parms.A, &A, 0xC);
@@ -5162,7 +5162,7 @@ void UObject::GetUnAxes(struct FRotator A, struct FVector* X, struct FVector* Y,
 	static UFunction* pFnGetUnAxes = NULL;
 
 	if (!pFnGetUnAxes)
-		pFnGetUnAxes = (UFunction*)UObject::GObjObjects()->Data[6168];
+		pFnGetUnAxes = (UFunction*)UObject::GObjObjects()->Data[6180];
 
 	UObject_execGetUnAxes_Parms GetUnAxes_Parms;
 	memcpy(&GetUnAxes_Parms.A, &A, 0xC);
@@ -5201,7 +5201,7 @@ void UObject::GetAxes(struct FRotator A, struct FVector* X, struct FVector* Y, s
 	static UFunction* pFnGetAxes = NULL;
 
 	if (!pFnGetAxes)
-		pFnGetAxes = (UFunction*)UObject::GObjObjects()->Data[6172];
+		pFnGetAxes = (UFunction*)UObject::GObjObjects()->Data[6184];
 
 	UObject_execGetAxes_Parms GetAxes_Parms;
 	memcpy(&GetAxes_Parms.A, &A, 0xC);
@@ -5239,7 +5239,7 @@ bool UObject::ClockwiseFrom_IntInt(int A, int B)
 	static UFunction* pFnClockwiseFrom_IntInt = NULL;
 
 	if (!pFnClockwiseFrom_IntInt)
-		pFnClockwiseFrom_IntInt = (UFunction*)UObject::GObjObjects()->Data[6177];
+		pFnClockwiseFrom_IntInt = (UFunction*)UObject::GObjObjects()->Data[6189];
 
 	UObject_execClockwiseFrom_IntInt_Parms ClockwiseFrom_IntInt_Parms;
 	ClockwiseFrom_IntInt_Parms.A = A;
@@ -5266,7 +5266,7 @@ struct FRotator UObject::SubtractEqual_RotatorRotator(struct FRotator B, struct 
 	static UFunction* pFnSubtractEqual_RotatorRotator = NULL;
 
 	if (!pFnSubtractEqual_RotatorRotator)
-		pFnSubtractEqual_RotatorRotator = (UFunction*)UObject::GObjObjects()->Data[6182];
+		pFnSubtractEqual_RotatorRotator = (UFunction*)UObject::GObjObjects()->Data[6194];
 
 	UObject_execSubtractEqual_RotatorRotator_Parms SubtractEqual_RotatorRotator_Parms;
 	memcpy(&SubtractEqual_RotatorRotator_Parms.B, &B, 0xC);
@@ -5300,7 +5300,7 @@ struct FRotator UObject::AddEqual_RotatorRotator(struct FRotator B, struct FRota
 	static UFunction* pFnAddEqual_RotatorRotator = NULL;
 
 	if (!pFnAddEqual_RotatorRotator)
-		pFnAddEqual_RotatorRotator = (UFunction*)UObject::GObjObjects()->Data[6186];
+		pFnAddEqual_RotatorRotator = (UFunction*)UObject::GObjObjects()->Data[6198];
 
 	UObject_execAddEqual_RotatorRotator_Parms AddEqual_RotatorRotator_Parms;
 	memcpy(&AddEqual_RotatorRotator_Parms.B, &B, 0xC);
@@ -5334,7 +5334,7 @@ struct FRotator UObject::Subtract_RotatorRotator(struct FRotator A, struct FRota
 	static UFunction* pFnSubtract_RotatorRotator = NULL;
 
 	if (!pFnSubtract_RotatorRotator)
-		pFnSubtract_RotatorRotator = (UFunction*)UObject::GObjObjects()->Data[6190];
+		pFnSubtract_RotatorRotator = (UFunction*)UObject::GObjObjects()->Data[6202];
 
 	UObject_execSubtract_RotatorRotator_Parms Subtract_RotatorRotator_Parms;
 	memcpy(&Subtract_RotatorRotator_Parms.A, &A, 0xC);
@@ -5366,7 +5366,7 @@ struct FRotator UObject::Add_RotatorRotator(struct FRotator A, struct FRotator B
 	static UFunction* pFnAdd_RotatorRotator = NULL;
 
 	if (!pFnAdd_RotatorRotator)
-		pFnAdd_RotatorRotator = (UFunction*)UObject::GObjObjects()->Data[6194];
+		pFnAdd_RotatorRotator = (UFunction*)UObject::GObjObjects()->Data[6206];
 
 	UObject_execAdd_RotatorRotator_Parms Add_RotatorRotator_Parms;
 	memcpy(&Add_RotatorRotator_Parms.A, &A, 0xC);
@@ -5398,7 +5398,7 @@ struct FRotator UObject::DivideEqual_RotatorFloat(float B, struct FRotator* A)
 	static UFunction* pFnDivideEqual_RotatorFloat = NULL;
 
 	if (!pFnDivideEqual_RotatorFloat)
-		pFnDivideEqual_RotatorFloat = (UFunction*)UObject::GObjObjects()->Data[6198];
+		pFnDivideEqual_RotatorFloat = (UFunction*)UObject::GObjObjects()->Data[6210];
 
 	UObject_execDivideEqual_RotatorFloat_Parms DivideEqual_RotatorFloat_Parms;
 	DivideEqual_RotatorFloat_Parms.B = B;
@@ -5432,7 +5432,7 @@ struct FRotator UObject::MultiplyEqual_RotatorFloat(float B, struct FRotator* A)
 	static UFunction* pFnMultiplyEqual_RotatorFloat = NULL;
 
 	if (!pFnMultiplyEqual_RotatorFloat)
-		pFnMultiplyEqual_RotatorFloat = (UFunction*)UObject::GObjObjects()->Data[6202];
+		pFnMultiplyEqual_RotatorFloat = (UFunction*)UObject::GObjObjects()->Data[6214];
 
 	UObject_execMultiplyEqual_RotatorFloat_Parms MultiplyEqual_RotatorFloat_Parms;
 	MultiplyEqual_RotatorFloat_Parms.B = B;
@@ -5466,7 +5466,7 @@ struct FRotator UObject::Divide_RotatorFloat(struct FRotator A, float B)
 	static UFunction* pFnDivide_RotatorFloat = NULL;
 
 	if (!pFnDivide_RotatorFloat)
-		pFnDivide_RotatorFloat = (UFunction*)UObject::GObjObjects()->Data[6206];
+		pFnDivide_RotatorFloat = (UFunction*)UObject::GObjObjects()->Data[6218];
 
 	UObject_execDivide_RotatorFloat_Parms Divide_RotatorFloat_Parms;
 	memcpy(&Divide_RotatorFloat_Parms.A, &A, 0xC);
@@ -5498,7 +5498,7 @@ struct FRotator UObject::Multiply_FloatRotator(float A, struct FRotator B)
 	static UFunction* pFnMultiply_FloatRotator = NULL;
 
 	if (!pFnMultiply_FloatRotator)
-		pFnMultiply_FloatRotator = (UFunction*)UObject::GObjObjects()->Data[6210];
+		pFnMultiply_FloatRotator = (UFunction*)UObject::GObjObjects()->Data[6222];
 
 	UObject_execMultiply_FloatRotator_Parms Multiply_FloatRotator_Parms;
 	Multiply_FloatRotator_Parms.A = A;
@@ -5530,7 +5530,7 @@ struct FRotator UObject::Multiply_RotatorFloat(struct FRotator A, float B)
 	static UFunction* pFnMultiply_RotatorFloat = NULL;
 
 	if (!pFnMultiply_RotatorFloat)
-		pFnMultiply_RotatorFloat = (UFunction*)UObject::GObjObjects()->Data[6214];
+		pFnMultiply_RotatorFloat = (UFunction*)UObject::GObjObjects()->Data[6226];
 
 	UObject_execMultiply_RotatorFloat_Parms Multiply_RotatorFloat_Parms;
 	memcpy(&Multiply_RotatorFloat_Parms.A, &A, 0xC);
@@ -5562,7 +5562,7 @@ bool UObject::NotEqual_RotatorRotator(struct FRotator A, struct FRotator B)
 	static UFunction* pFnNotEqual_RotatorRotator = NULL;
 
 	if (!pFnNotEqual_RotatorRotator)
-		pFnNotEqual_RotatorRotator = (UFunction*)UObject::GObjObjects()->Data[6218];
+		pFnNotEqual_RotatorRotator = (UFunction*)UObject::GObjObjects()->Data[6230];
 
 	UObject_execNotEqual_RotatorRotator_Parms NotEqual_RotatorRotator_Parms;
 	memcpy(&NotEqual_RotatorRotator_Parms.A, &A, 0xC);
@@ -5594,7 +5594,7 @@ bool UObject::EqualEqual_RotatorRotator(struct FRotator A, struct FRotator B)
 	static UFunction* pFnEqualEqual_RotatorRotator = NULL;
 
 	if (!pFnEqualEqual_RotatorRotator)
-		pFnEqualEqual_RotatorRotator = (UFunction*)UObject::GObjObjects()->Data[6222];
+		pFnEqualEqual_RotatorRotator = (UFunction*)UObject::GObjObjects()->Data[6234];
 
 	UObject_execEqualEqual_RotatorRotator_Parms EqualEqual_RotatorRotator_Parms;
 	memcpy(&EqualEqual_RotatorRotator_Parms.A, &A, 0xC);
@@ -5629,7 +5629,7 @@ bool UObject::InCylinder(struct FVector Origin, struct FRotator Dir, float Width
 	static UFunction* pFnInCylinder = NULL;
 
 	if (!pFnInCylinder)
-		pFnInCylinder = (UFunction*)UObject::GObjObjects()->Data[6226];
+		pFnInCylinder = (UFunction*)UObject::GObjObjects()->Data[6238];
 
 	UObject_execInCylinder_Parms InCylinder_Parms;
 	memcpy(&InCylinder_Parms.Origin, &Origin, 0xC);
@@ -5655,7 +5655,7 @@ float UObject::NoZDot(struct FVector A, struct FVector B)
 	static UFunction* pFnNoZDot = NULL;
 
 	if (!pFnNoZDot)
-		pFnNoZDot = (UFunction*)UObject::GObjObjects()->Data[6230];
+		pFnNoZDot = (UFunction*)UObject::GObjObjects()->Data[6242];
 
 	UObject_execNoZDot_Parms NoZDot_Parms;
 	memcpy(&NoZDot_Parms.A, &A, 0xC);
@@ -5682,7 +5682,7 @@ struct FVector UObject::ClampLength(struct FVector V, float MaxLength)
 	static UFunction* pFnClampLength = NULL;
 
 	if (!pFnClampLength)
-		pFnClampLength = (UFunction*)UObject::GObjObjects()->Data[6239];
+		pFnClampLength = (UFunction*)UObject::GObjObjects()->Data[6251];
 
 	UObject_execClampLength_Parms ClampLength_Parms;
 	memcpy(&ClampLength_Parms.V, &V, 0xC);
@@ -5711,7 +5711,7 @@ struct FVector UObject::VInterpTo(struct FVector Current, struct FVector Target,
 	static UFunction* pFnVInterpTo = NULL;
 
 	if (!pFnVInterpTo)
-		pFnVInterpTo = (UFunction*)UObject::GObjObjects()->Data[6243];
+		pFnVInterpTo = (UFunction*)UObject::GObjObjects()->Data[6255];
 
 	UObject_execVInterpTo_Parms VInterpTo_Parms;
 	memcpy(&VInterpTo_Parms.Current, &Current, 0xC);
@@ -5739,7 +5739,7 @@ bool UObject::IsZero(struct FVector A)
 	static UFunction* pFnIsZero = NULL;
 
 	if (!pFnIsZero)
-		pFnIsZero = (UFunction*)UObject::GObjObjects()->Data[6247];
+		pFnIsZero = (UFunction*)UObject::GObjObjects()->Data[6259];
 
 	UObject_execIsZero_Parms IsZero_Parms;
 	memcpy(&IsZero_Parms.A, &A, 0xC);
@@ -5770,7 +5770,7 @@ struct FVector UObject::ProjectOnTo(struct FVector X, struct FVector Y)
 	static UFunction* pFnProjectOnTo = NULL;
 
 	if (!pFnProjectOnTo)
-		pFnProjectOnTo = (UFunction*)UObject::GObjObjects()->Data[6253];
+		pFnProjectOnTo = (UFunction*)UObject::GObjObjects()->Data[6265];
 
 	UObject_execProjectOnTo_Parms ProjectOnTo_Parms;
 	memcpy(&ProjectOnTo_Parms.X, &X, 0xC);
@@ -5802,7 +5802,7 @@ struct FVector UObject::MirrorVectorByNormal(struct FVector InVect, struct FVect
 	static UFunction* pFnMirrorVectorByNormal = NULL;
 
 	if (!pFnMirrorVectorByNormal)
-		pFnMirrorVectorByNormal = (UFunction*)UObject::GObjObjects()->Data[6256];
+		pFnMirrorVectorByNormal = (UFunction*)UObject::GObjObjects()->Data[6268];
 
 	UObject_execMirrorVectorByNormal_Parms MirrorVectorByNormal_Parms;
 	memcpy(&MirrorVectorByNormal_Parms.InVect, &InVect, 0xC);
@@ -5835,7 +5835,7 @@ struct FVector UObject::VRandCone2(struct FVector Dir, float HorizontalConeHalfA
 	static UFunction* pFnVRandCone2 = NULL;
 
 	if (!pFnVRandCone2)
-		pFnVRandCone2 = (UFunction*)UObject::GObjObjects()->Data[6260];
+		pFnVRandCone2 = (UFunction*)UObject::GObjObjects()->Data[6272];
 
 	UObject_execVRandCone2_Parms VRandCone2_Parms;
 	memcpy(&VRandCone2_Parms.Dir, &Dir, 0xC);
@@ -5863,7 +5863,7 @@ struct FVector UObject::VRandCone(struct FVector Dir, float ConeHalfAngleRadians
 	static UFunction* pFnVRandCone = NULL;
 
 	if (!pFnVRandCone)
-		pFnVRandCone = (UFunction*)UObject::GObjObjects()->Data[6264];
+		pFnVRandCone = (UFunction*)UObject::GObjObjects()->Data[6276];
 
 	UObject_execVRandCone_Parms VRandCone_Parms;
 	memcpy(&VRandCone_Parms.Dir, &Dir, 0xC);
@@ -5888,7 +5888,7 @@ struct FVector UObject::VRand()
 	static UFunction* pFnVRand = NULL;
 
 	if (!pFnVRand)
-		pFnVRand = (UFunction*)UObject::GObjObjects()->Data[6269];
+		pFnVRand = (UFunction*)UObject::GObjObjects()->Data[6281];
 
 	UObject_execVRand_Parms VRand_Parms;
 
@@ -5919,7 +5919,7 @@ struct FVector UObject::VLerp(struct FVector A, struct FVector B, float Alpha)
 	static UFunction* pFnVLerp = NULL;
 
 	if (!pFnVLerp)
-		pFnVLerp = (UFunction*)UObject::GObjObjects()->Data[6273];
+		pFnVLerp = (UFunction*)UObject::GObjObjects()->Data[6285];
 
 	UObject_execVLerp_Parms VLerp_Parms;
 	memcpy(&VLerp_Parms.A, &A, 0xC);
@@ -5946,7 +5946,7 @@ struct FVector UObject::Normal(struct FVector A)
 	static UFunction* pFnNormal = NULL;
 
 	if (!pFnNormal)
-		pFnNormal = (UFunction*)UObject::GObjObjects()->Data[6275];
+		pFnNormal = (UFunction*)UObject::GObjObjects()->Data[6287];
 
 	UObject_execNormal_Parms Normal_Parms;
 	memcpy(&Normal_Parms.A, &A, 0xC);
@@ -5976,7 +5976,7 @@ float UObject::VSizeSq2D(struct FVector A)
 	static UFunction* pFnVSizeSq2D = NULL;
 
 	if (!pFnVSizeSq2D)
-		pFnVSizeSq2D = (UFunction*)UObject::GObjObjects()->Data[6280];
+		pFnVSizeSq2D = (UFunction*)UObject::GObjObjects()->Data[6292];
 
 	UObject_execVSizeSq2D_Parms VSizeSq2D_Parms;
 	memcpy(&VSizeSq2D_Parms.A, &A, 0xC);
@@ -6001,7 +6001,7 @@ float UObject::VSizeSq(struct FVector A)
 	static UFunction* pFnVSizeSq = NULL;
 
 	if (!pFnVSizeSq)
-		pFnVSizeSq = (UFunction*)UObject::GObjObjects()->Data[6283];
+		pFnVSizeSq = (UFunction*)UObject::GObjObjects()->Data[6295];
 
 	UObject_execVSizeSq_Parms VSizeSq_Parms;
 	memcpy(&VSizeSq_Parms.A, &A, 0xC);
@@ -6031,7 +6031,7 @@ float UObject::VSize2D(struct FVector A)
 	static UFunction* pFnVSize2D = NULL;
 
 	if (!pFnVSize2D)
-		pFnVSize2D = (UFunction*)UObject::GObjObjects()->Data[6286];
+		pFnVSize2D = (UFunction*)UObject::GObjObjects()->Data[6298];
 
 	UObject_execVSize2D_Parms VSize2D_Parms;
 	memcpy(&VSize2D_Parms.A, &A, 0xC);
@@ -6056,7 +6056,7 @@ float UObject::VSize(struct FVector A)
 	static UFunction* pFnVSize = NULL;
 
 	if (!pFnVSize)
-		pFnVSize = (UFunction*)UObject::GObjObjects()->Data[6289];
+		pFnVSize = (UFunction*)UObject::GObjObjects()->Data[6301];
 
 	UObject_execVSize_Parms VSize_Parms;
 	memcpy(&VSize_Parms.A, &A, 0xC);
@@ -6087,7 +6087,7 @@ struct FVector UObject::SubtractEqual_VectorVector(struct FVector B, struct FVec
 	static UFunction* pFnSubtractEqual_VectorVector = NULL;
 
 	if (!pFnSubtractEqual_VectorVector)
-		pFnSubtractEqual_VectorVector = (UFunction*)UObject::GObjObjects()->Data[6292];
+		pFnSubtractEqual_VectorVector = (UFunction*)UObject::GObjObjects()->Data[6304];
 
 	UObject_execSubtractEqual_VectorVector_Parms SubtractEqual_VectorVector_Parms;
 	memcpy(&SubtractEqual_VectorVector_Parms.B, &B, 0xC);
@@ -6121,7 +6121,7 @@ struct FVector UObject::AddEqual_VectorVector(struct FVector B, struct FVector* 
 	static UFunction* pFnAddEqual_VectorVector = NULL;
 
 	if (!pFnAddEqual_VectorVector)
-		pFnAddEqual_VectorVector = (UFunction*)UObject::GObjObjects()->Data[6295];
+		pFnAddEqual_VectorVector = (UFunction*)UObject::GObjObjects()->Data[6307];
 
 	UObject_execAddEqual_VectorVector_Parms AddEqual_VectorVector_Parms;
 	memcpy(&AddEqual_VectorVector_Parms.B, &B, 0xC);
@@ -6155,7 +6155,7 @@ struct FVector UObject::DivideEqual_VectorFloat(float B, struct FVector* A)
 	static UFunction* pFnDivideEqual_VectorFloat = NULL;
 
 	if (!pFnDivideEqual_VectorFloat)
-		pFnDivideEqual_VectorFloat = (UFunction*)UObject::GObjObjects()->Data[6299];
+		pFnDivideEqual_VectorFloat = (UFunction*)UObject::GObjObjects()->Data[6311];
 
 	UObject_execDivideEqual_VectorFloat_Parms DivideEqual_VectorFloat_Parms;
 	DivideEqual_VectorFloat_Parms.B = B;
@@ -6189,7 +6189,7 @@ struct FVector UObject::MultiplyEqual_VectorVector(struct FVector B, struct FVec
 	static UFunction* pFnMultiplyEqual_VectorVector = NULL;
 
 	if (!pFnMultiplyEqual_VectorVector)
-		pFnMultiplyEqual_VectorVector = (UFunction*)UObject::GObjObjects()->Data[6303];
+		pFnMultiplyEqual_VectorVector = (UFunction*)UObject::GObjObjects()->Data[6315];
 
 	UObject_execMultiplyEqual_VectorVector_Parms MultiplyEqual_VectorVector_Parms;
 	memcpy(&MultiplyEqual_VectorVector_Parms.B, &B, 0xC);
@@ -6223,7 +6223,7 @@ struct FVector UObject::MultiplyEqual_VectorFloat(float B, struct FVector* A)
 	static UFunction* pFnMultiplyEqual_VectorFloat = NULL;
 
 	if (!pFnMultiplyEqual_VectorFloat)
-		pFnMultiplyEqual_VectorFloat = (UFunction*)UObject::GObjObjects()->Data[6307];
+		pFnMultiplyEqual_VectorFloat = (UFunction*)UObject::GObjObjects()->Data[6319];
 
 	UObject_execMultiplyEqual_VectorFloat_Parms MultiplyEqual_VectorFloat_Parms;
 	MultiplyEqual_VectorFloat_Parms.B = B;
@@ -6257,7 +6257,7 @@ struct FVector UObject::Cross_VectorVector(struct FVector A, struct FVector B)
 	static UFunction* pFnCross_VectorVector = NULL;
 
 	if (!pFnCross_VectorVector)
-		pFnCross_VectorVector = (UFunction*)UObject::GObjObjects()->Data[6311];
+		pFnCross_VectorVector = (UFunction*)UObject::GObjObjects()->Data[6323];
 
 	UObject_execCross_VectorVector_Parms Cross_VectorVector_Parms;
 	memcpy(&Cross_VectorVector_Parms.A, &A, 0xC);
@@ -6289,7 +6289,7 @@ float UObject::Dot_VectorVector(struct FVector A, struct FVector B)
 	static UFunction* pFnDot_VectorVector = NULL;
 
 	if (!pFnDot_VectorVector)
-		pFnDot_VectorVector = (UFunction*)UObject::GObjObjects()->Data[6315];
+		pFnDot_VectorVector = (UFunction*)UObject::GObjObjects()->Data[6327];
 
 	UObject_execDot_VectorVector_Parms Dot_VectorVector_Parms;
 	memcpy(&Dot_VectorVector_Parms.A, &A, 0xC);
@@ -6321,7 +6321,7 @@ bool UObject::NotEqual_VectorVector(struct FVector A, struct FVector B)
 	static UFunction* pFnNotEqual_VectorVector = NULL;
 
 	if (!pFnNotEqual_VectorVector)
-		pFnNotEqual_VectorVector = (UFunction*)UObject::GObjObjects()->Data[6319];
+		pFnNotEqual_VectorVector = (UFunction*)UObject::GObjObjects()->Data[6331];
 
 	UObject_execNotEqual_VectorVector_Parms NotEqual_VectorVector_Parms;
 	memcpy(&NotEqual_VectorVector_Parms.A, &A, 0xC);
@@ -6353,7 +6353,7 @@ bool UObject::EqualEqual_VectorVector(struct FVector A, struct FVector B)
 	static UFunction* pFnEqualEqual_VectorVector = NULL;
 
 	if (!pFnEqualEqual_VectorVector)
-		pFnEqualEqual_VectorVector = (UFunction*)UObject::GObjObjects()->Data[6323];
+		pFnEqualEqual_VectorVector = (UFunction*)UObject::GObjObjects()->Data[6335];
 
 	UObject_execEqualEqual_VectorVector_Parms EqualEqual_VectorVector_Parms;
 	memcpy(&EqualEqual_VectorVector_Parms.A, &A, 0xC);
@@ -6385,7 +6385,7 @@ struct FVector UObject::GreaterGreater_VectorRotator(struct FVector A, struct FR
 	static UFunction* pFnGreaterGreater_VectorRotator = NULL;
 
 	if (!pFnGreaterGreater_VectorRotator)
-		pFnGreaterGreater_VectorRotator = (UFunction*)UObject::GObjObjects()->Data[6327];
+		pFnGreaterGreater_VectorRotator = (UFunction*)UObject::GObjObjects()->Data[6339];
 
 	UObject_execGreaterGreater_VectorRotator_Parms GreaterGreater_VectorRotator_Parms;
 	memcpy(&GreaterGreater_VectorRotator_Parms.A, &A, 0xC);
@@ -6417,7 +6417,7 @@ struct FVector UObject::LessLess_VectorRotator(struct FVector A, struct FRotator
 	static UFunction* pFnLessLess_VectorRotator = NULL;
 
 	if (!pFnLessLess_VectorRotator)
-		pFnLessLess_VectorRotator = (UFunction*)UObject::GObjObjects()->Data[6331];
+		pFnLessLess_VectorRotator = (UFunction*)UObject::GObjObjects()->Data[6343];
 
 	UObject_execLessLess_VectorRotator_Parms LessLess_VectorRotator_Parms;
 	memcpy(&LessLess_VectorRotator_Parms.A, &A, 0xC);
@@ -6449,7 +6449,7 @@ struct FVector UObject::Subtract_VectorVector(struct FVector A, struct FVector B
 	static UFunction* pFnSubtract_VectorVector = NULL;
 
 	if (!pFnSubtract_VectorVector)
-		pFnSubtract_VectorVector = (UFunction*)UObject::GObjObjects()->Data[6335];
+		pFnSubtract_VectorVector = (UFunction*)UObject::GObjObjects()->Data[6347];
 
 	UObject_execSubtract_VectorVector_Parms Subtract_VectorVector_Parms;
 	memcpy(&Subtract_VectorVector_Parms.A, &A, 0xC);
@@ -6481,7 +6481,7 @@ struct FVector UObject::Add_VectorVector(struct FVector A, struct FVector B)
 	static UFunction* pFnAdd_VectorVector = NULL;
 
 	if (!pFnAdd_VectorVector)
-		pFnAdd_VectorVector = (UFunction*)UObject::GObjObjects()->Data[6339];
+		pFnAdd_VectorVector = (UFunction*)UObject::GObjObjects()->Data[6351];
 
 	UObject_execAdd_VectorVector_Parms Add_VectorVector_Parms;
 	memcpy(&Add_VectorVector_Parms.A, &A, 0xC);
@@ -6513,7 +6513,7 @@ struct FVector UObject::Divide_VectorFloat(struct FVector A, float B)
 	static UFunction* pFnDivide_VectorFloat = NULL;
 
 	if (!pFnDivide_VectorFloat)
-		pFnDivide_VectorFloat = (UFunction*)UObject::GObjObjects()->Data[6343];
+		pFnDivide_VectorFloat = (UFunction*)UObject::GObjObjects()->Data[6355];
 
 	UObject_execDivide_VectorFloat_Parms Divide_VectorFloat_Parms;
 	memcpy(&Divide_VectorFloat_Parms.A, &A, 0xC);
@@ -6545,7 +6545,7 @@ struct FVector UObject::Multiply_VectorVector(struct FVector A, struct FVector B
 	static UFunction* pFnMultiply_VectorVector = NULL;
 
 	if (!pFnMultiply_VectorVector)
-		pFnMultiply_VectorVector = (UFunction*)UObject::GObjObjects()->Data[6347];
+		pFnMultiply_VectorVector = (UFunction*)UObject::GObjObjects()->Data[6359];
 
 	UObject_execMultiply_VectorVector_Parms Multiply_VectorVector_Parms;
 	memcpy(&Multiply_VectorVector_Parms.A, &A, 0xC);
@@ -6577,7 +6577,7 @@ struct FVector UObject::Multiply_FloatVector(float A, struct FVector B)
 	static UFunction* pFnMultiply_FloatVector = NULL;
 
 	if (!pFnMultiply_FloatVector)
-		pFnMultiply_FloatVector = (UFunction*)UObject::GObjObjects()->Data[6351];
+		pFnMultiply_FloatVector = (UFunction*)UObject::GObjObjects()->Data[6363];
 
 	UObject_execMultiply_FloatVector_Parms Multiply_FloatVector_Parms;
 	Multiply_FloatVector_Parms.A = A;
@@ -6609,7 +6609,7 @@ struct FVector UObject::Multiply_VectorFloat(struct FVector A, float B)
 	static UFunction* pFnMultiply_VectorFloat = NULL;
 
 	if (!pFnMultiply_VectorFloat)
-		pFnMultiply_VectorFloat = (UFunction*)UObject::GObjObjects()->Data[6355];
+		pFnMultiply_VectorFloat = (UFunction*)UObject::GObjObjects()->Data[6367];
 
 	UObject_execMultiply_VectorFloat_Parms Multiply_VectorFloat_Parms;
 	memcpy(&Multiply_VectorFloat_Parms.A, &A, 0xC);
@@ -6640,7 +6640,7 @@ struct FVector UObject::Subtract_PreVector(struct FVector A)
 	static UFunction* pFnSubtract_PreVector = NULL;
 
 	if (!pFnSubtract_PreVector)
-		pFnSubtract_PreVector = (UFunction*)UObject::GObjObjects()->Data[6359];
+		pFnSubtract_PreVector = (UFunction*)UObject::GObjObjects()->Data[6371];
 
 	UObject_execSubtract_PreVector_Parms Subtract_PreVector_Parms;
 	memcpy(&Subtract_PreVector_Parms.A, &A, 0xC);
@@ -6673,7 +6673,7 @@ float UObject::SmoothInterp(float DeltaTime, float InterpSpeed, float deltaDist,
 	static UFunction* pFnSmoothInterp = NULL;
 
 	if (!pFnSmoothInterp)
-		pFnSmoothInterp = (UFunction*)UObject::GObjObjects()->Data[6363];
+		pFnSmoothInterp = (UFunction*)UObject::GObjObjects()->Data[6375];
 
 	UObject_execSmoothInterp_Parms SmoothInterp_Parms;
 	SmoothInterp_Parms.DeltaTime = DeltaTime;
@@ -6704,7 +6704,7 @@ float UObject::FInterpConstantTo(float Current, float Target, float DeltaTime, f
 	static UFunction* pFnFInterpConstantTo = NULL;
 
 	if (!pFnFInterpConstantTo)
-		pFnFInterpConstantTo = (UFunction*)UObject::GObjObjects()->Data[6366];
+		pFnFInterpConstantTo = (UFunction*)UObject::GObjObjects()->Data[6378];
 
 	UObject_execFInterpConstantTo_Parms FInterpConstantTo_Parms;
 	FInterpConstantTo_Parms.Current = Current;
@@ -6735,7 +6735,7 @@ float UObject::FInterpTo(float Current, float Target, float DeltaTime, float Int
 	static UFunction* pFnFInterpTo = NULL;
 
 	if (!pFnFInterpTo)
-		pFnFInterpTo = (UFunction*)UObject::GObjObjects()->Data[6112];
+		pFnFInterpTo = (UFunction*)UObject::GObjObjects()->Data[6124];
 
 	UObject_execFInterpTo_Parms FInterpTo_Parms;
 	FInterpTo_Parms.Current = Current;
@@ -6765,7 +6765,7 @@ float UObject::FPctByRange(float Value, float InMin, float InMax)
 	static UFunction* pFnFPctByRange = NULL;
 
 	if (!pFnFPctByRange)
-		pFnFPctByRange = (UFunction*)UObject::GObjObjects()->Data[6377];
+		pFnFPctByRange = (UFunction*)UObject::GObjObjects()->Data[6389];
 
 	UObject_execFPctByRange_Parms FPctByRange_Parms;
 	FPctByRange_Parms.Value = Value;
@@ -6789,7 +6789,7 @@ float UObject::RandRange(float InMin, float InMax)
 	static UFunction* pFnRandRange = NULL;
 
 	if (!pFnRandRange)
-		pFnRandRange = (UFunction*)UObject::GObjObjects()->Data[6383];
+		pFnRandRange = (UFunction*)UObject::GObjObjects()->Data[6395];
 
 	UObject_execRandRange_Parms RandRange_Parms;
 	RandRange_Parms.InMin = InMin;
@@ -6814,7 +6814,7 @@ float UObject::FInterpEaseInOut(float A, float B, float Alpha, float Exp)
 	static UFunction* pFnFInterpEaseInOut = NULL;
 
 	if (!pFnFInterpEaseInOut)
-		pFnFInterpEaseInOut = (UFunction*)UObject::GObjObjects()->Data[6388];
+		pFnFInterpEaseInOut = (UFunction*)UObject::GObjObjects()->Data[6400];
 
 	UObject_execFInterpEaseInOut_Parms FInterpEaseInOut_Parms;
 	FInterpEaseInOut_Parms.A = A;
@@ -6845,7 +6845,7 @@ float UObject::FInterpEaseOut(float A, float B, float Alpha, float Exp)
 	static UFunction* pFnFInterpEaseOut = NULL;
 
 	if (!pFnFInterpEaseOut)
-		pFnFInterpEaseOut = (UFunction*)UObject::GObjObjects()->Data[6392];
+		pFnFInterpEaseOut = (UFunction*)UObject::GObjObjects()->Data[6404];
 
 	UObject_execFInterpEaseOut_Parms FInterpEaseOut_Parms;
 	FInterpEaseOut_Parms.A = A;
@@ -6872,7 +6872,7 @@ float UObject::FInterpEaseIn(float A, float B, float Alpha, float Exp)
 	static UFunction* pFnFInterpEaseIn = NULL;
 
 	if (!pFnFInterpEaseIn)
-		pFnFInterpEaseIn = (UFunction*)UObject::GObjObjects()->Data[6398];
+		pFnFInterpEaseIn = (UFunction*)UObject::GObjObjects()->Data[6410];
 
 	UObject_execFInterpEaseIn_Parms FInterpEaseIn_Parms;
 	FInterpEaseIn_Parms.A = A;
@@ -6900,7 +6900,7 @@ float UObject::FCubicInterp(float P0, float T0, float P1, float T1, float A)
 	static UFunction* pFnFCubicInterp = NULL;
 
 	if (!pFnFCubicInterp)
-		pFnFCubicInterp = (UFunction*)UObject::GObjObjects()->Data[6404];
+		pFnFCubicInterp = (UFunction*)UObject::GObjObjects()->Data[6416];
 
 	UObject_execFCubicInterp_Parms FCubicInterp_Parms;
 	FCubicInterp_Parms.P0 = P0;
@@ -6929,7 +6929,7 @@ int UObject::FCeil(float A)
 	static UFunction* pFnFCeil = NULL;
 
 	if (!pFnFCeil)
-		pFnFCeil = (UFunction*)UObject::GObjObjects()->Data[6410];
+		pFnFCeil = (UFunction*)UObject::GObjObjects()->Data[6422];
 
 	UObject_execFCeil_Parms FCeil_Parms;
 	FCeil_Parms.A = A;
@@ -6954,7 +6954,7 @@ int UObject::FFloor(float A)
 	static UFunction* pFnFFloor = NULL;
 
 	if (!pFnFFloor)
-		pFnFFloor = (UFunction*)UObject::GObjObjects()->Data[6417];
+		pFnFFloor = (UFunction*)UObject::GObjObjects()->Data[6429];
 
 	UObject_execFFloor_Parms FFloor_Parms;
 	FFloor_Parms.A = A;
@@ -6979,7 +6979,7 @@ int UObject::Round(float A)
 	static UFunction* pFnRound = NULL;
 
 	if (!pFnRound)
-		pFnRound = (UFunction*)UObject::GObjObjects()->Data[6420];
+		pFnRound = (UFunction*)UObject::GObjObjects()->Data[6432];
 
 	UObject_execRound_Parms Round_Parms;
 	Round_Parms.A = A;
@@ -7011,7 +7011,7 @@ float UObject::Lerp(float A, float B, float Alpha)
 	static UFunction* pFnLerp = NULL;
 
 	if (!pFnLerp)
-		pFnLerp = (UFunction*)UObject::GObjObjects()->Data[6423];
+		pFnLerp = (UFunction*)UObject::GObjObjects()->Data[6435];
 
 	UObject_execLerp_Parms Lerp_Parms;
 	Lerp_Parms.A = A;
@@ -7045,7 +7045,7 @@ float UObject::FClamp(float V, float A, float B)
 	static UFunction* pFnFClamp = NULL;
 
 	if (!pFnFClamp)
-		pFnFClamp = (UFunction*)UObject::GObjObjects()->Data[6426];
+		pFnFClamp = (UFunction*)UObject::GObjObjects()->Data[6438];
 
 	UObject_execFClamp_Parms FClamp_Parms;
 	FClamp_Parms.V = V;
@@ -7078,7 +7078,7 @@ float UObject::FMax(float A, float B)
 	static UFunction* pFnFMax = NULL;
 
 	if (!pFnFMax)
-		pFnFMax = (UFunction*)UObject::GObjObjects()->Data[6431];
+		pFnFMax = (UFunction*)UObject::GObjObjects()->Data[6443];
 
 	UObject_execFMax_Parms FMax_Parms;
 	FMax_Parms.A = A;
@@ -7110,7 +7110,7 @@ float UObject::FMin(float A, float B)
 	static UFunction* pFnFMin = NULL;
 
 	if (!pFnFMin)
-		pFnFMin = (UFunction*)UObject::GObjObjects()->Data[6436];
+		pFnFMin = (UFunction*)UObject::GObjObjects()->Data[6448];
 
 	UObject_execFMin_Parms FMin_Parms;
 	FMin_Parms.A = A;
@@ -7140,7 +7140,7 @@ float UObject::FRand()
 	static UFunction* pFnFRand = NULL;
 
 	if (!pFnFRand)
-		pFnFRand = (UFunction*)UObject::GObjObjects()->Data[6440];
+		pFnFRand = (UFunction*)UObject::GObjObjects()->Data[6452];
 
 	UObject_execFRand_Parms FRand_Parms;
 
@@ -7169,7 +7169,7 @@ float UObject::Square(float A)
 	static UFunction* pFnSquare = NULL;
 
 	if (!pFnSquare)
-		pFnSquare = (UFunction*)UObject::GObjObjects()->Data[6444];
+		pFnSquare = (UFunction*)UObject::GObjObjects()->Data[6456];
 
 	UObject_execSquare_Parms Square_Parms;
 	Square_Parms.A = A;
@@ -7199,7 +7199,7 @@ float UObject::Sqrt(float A)
 	static UFunction* pFnSqrt = NULL;
 
 	if (!pFnSqrt)
-		pFnSqrt = (UFunction*)UObject::GObjObjects()->Data[6446];
+		pFnSqrt = (UFunction*)UObject::GObjObjects()->Data[6458];
 
 	UObject_execSqrt_Parms Sqrt_Parms;
 	Sqrt_Parms.A = A;
@@ -7229,7 +7229,7 @@ float UObject::Loge(float A)
 	static UFunction* pFnLoge = NULL;
 
 	if (!pFnLoge)
-		pFnLoge = (UFunction*)UObject::GObjObjects()->Data[6449];
+		pFnLoge = (UFunction*)UObject::GObjObjects()->Data[6461];
 
 	UObject_execLoge_Parms Loge_Parms;
 	Loge_Parms.A = A;
@@ -7259,7 +7259,7 @@ float UObject::Exp(float A)
 	static UFunction* pFnExp = NULL;
 
 	if (!pFnExp)
-		pFnExp = (UFunction*)UObject::GObjObjects()->Data[6452];
+		pFnExp = (UFunction*)UObject::GObjObjects()->Data[6464];
 
 	UObject_execExp_Parms Exp_Parms;
 	Exp_Parms.A = A;
@@ -7290,7 +7290,7 @@ float UObject::Atan2(float A, float B)
 	static UFunction* pFnAtan2 = NULL;
 
 	if (!pFnAtan2)
-		pFnAtan2 = (UFunction*)UObject::GObjObjects()->Data[6455];
+		pFnAtan2 = (UFunction*)UObject::GObjObjects()->Data[6467];
 
 	UObject_execAtan2_Parms Atan2_Parms;
 	Atan2_Parms.A = A;
@@ -7316,7 +7316,7 @@ float UObject::Atan(float A)
 	static UFunction* pFnAtan = NULL;
 
 	if (!pFnAtan)
-		pFnAtan = (UFunction*)UObject::GObjObjects()->Data[6458];
+		pFnAtan = (UFunction*)UObject::GObjObjects()->Data[6470];
 
 	UObject_execAtan_Parms Atan_Parms;
 	Atan_Parms.A = A;
@@ -7346,7 +7346,7 @@ float UObject::Tan(float A)
 	static UFunction* pFnTan = NULL;
 
 	if (!pFnTan)
-		pFnTan = (UFunction*)UObject::GObjObjects()->Data[6462];
+		pFnTan = (UFunction*)UObject::GObjObjects()->Data[6474];
 
 	UObject_execTan_Parms Tan_Parms;
 	Tan_Parms.A = A;
@@ -7376,7 +7376,7 @@ float UObject::Acos(float A)
 	static UFunction* pFnAcos = NULL;
 
 	if (!pFnAcos)
-		pFnAcos = (UFunction*)UObject::GObjObjects()->Data[5443];
+		pFnAcos = (UFunction*)UObject::GObjObjects()->Data[5455];
 
 	UObject_execAcos_Parms Acos_Parms;
 	Acos_Parms.A = A;
@@ -7401,7 +7401,7 @@ float UObject::Cos(float A)
 	static UFunction* pFnCos = NULL;
 
 	if (!pFnCos)
-		pFnCos = (UFunction*)UObject::GObjObjects()->Data[6467];
+		pFnCos = (UFunction*)UObject::GObjObjects()->Data[6479];
 
 	UObject_execCos_Parms Cos_Parms;
 	Cos_Parms.A = A;
@@ -7431,7 +7431,7 @@ float UObject::Asin(float A)
 	static UFunction* pFnAsin = NULL;
 
 	if (!pFnAsin)
-		pFnAsin = (UFunction*)UObject::GObjObjects()->Data[6470];
+		pFnAsin = (UFunction*)UObject::GObjObjects()->Data[6482];
 
 	UObject_execAsin_Parms Asin_Parms;
 	Asin_Parms.A = A;
@@ -7456,7 +7456,7 @@ float UObject::Sin(float A)
 	static UFunction* pFnSin = NULL;
 
 	if (!pFnSin)
-		pFnSin = (UFunction*)UObject::GObjObjects()->Data[6473];
+		pFnSin = (UFunction*)UObject::GObjObjects()->Data[6485];
 
 	UObject_execSin_Parms Sin_Parms;
 	Sin_Parms.A = A;
@@ -7486,7 +7486,7 @@ float UObject::Abs(float A)
 	static UFunction* pFnAbs = NULL;
 
 	if (!pFnAbs)
-		pFnAbs = (UFunction*)UObject::GObjObjects()->Data[6476];
+		pFnAbs = (UFunction*)UObject::GObjObjects()->Data[6488];
 
 	UObject_execAbs_Parms Abs_Parms;
 	Abs_Parms.A = A;
@@ -7517,7 +7517,7 @@ float UObject::SubtractEqual_FloatFloat(float B, float* A)
 	static UFunction* pFnSubtractEqual_FloatFloat = NULL;
 
 	if (!pFnSubtractEqual_FloatFloat)
-		pFnSubtractEqual_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6479];
+		pFnSubtractEqual_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6491];
 
 	UObject_execSubtractEqual_FloatFloat_Parms SubtractEqual_FloatFloat_Parms;
 	SubtractEqual_FloatFloat_Parms.B = B;
@@ -7551,7 +7551,7 @@ float UObject::AddEqual_FloatFloat(float B, float* A)
 	static UFunction* pFnAddEqual_FloatFloat = NULL;
 
 	if (!pFnAddEqual_FloatFloat)
-		pFnAddEqual_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6482];
+		pFnAddEqual_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6494];
 
 	UObject_execAddEqual_FloatFloat_Parms AddEqual_FloatFloat_Parms;
 	AddEqual_FloatFloat_Parms.B = B;
@@ -7585,7 +7585,7 @@ float UObject::DivideEqual_FloatFloat(float B, float* A)
 	static UFunction* pFnDivideEqual_FloatFloat = NULL;
 
 	if (!pFnDivideEqual_FloatFloat)
-		pFnDivideEqual_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6486];
+		pFnDivideEqual_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6498];
 
 	UObject_execDivideEqual_FloatFloat_Parms DivideEqual_FloatFloat_Parms;
 	DivideEqual_FloatFloat_Parms.B = B;
@@ -7619,7 +7619,7 @@ float UObject::MultiplyEqual_FloatFloat(float B, float* A)
 	static UFunction* pFnMultiplyEqual_FloatFloat = NULL;
 
 	if (!pFnMultiplyEqual_FloatFloat)
-		pFnMultiplyEqual_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6490];
+		pFnMultiplyEqual_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6502];
 
 	UObject_execMultiplyEqual_FloatFloat_Parms MultiplyEqual_FloatFloat_Parms;
 	MultiplyEqual_FloatFloat_Parms.B = B;
@@ -7653,7 +7653,7 @@ bool UObject::NotEqual_FloatFloat(float A, float B)
 	static UFunction* pFnNotEqual_FloatFloat = NULL;
 
 	if (!pFnNotEqual_FloatFloat)
-		pFnNotEqual_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6494];
+		pFnNotEqual_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6506];
 
 	UObject_execNotEqual_FloatFloat_Parms NotEqual_FloatFloat_Parms;
 	NotEqual_FloatFloat_Parms.A = A;
@@ -7685,7 +7685,7 @@ bool UObject::ComplementEqual_FloatFloat(float A, float B)
 	static UFunction* pFnComplementEqual_FloatFloat = NULL;
 
 	if (!pFnComplementEqual_FloatFloat)
-		pFnComplementEqual_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6498];
+		pFnComplementEqual_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6510];
 
 	UObject_execComplementEqual_FloatFloat_Parms ComplementEqual_FloatFloat_Parms;
 	ComplementEqual_FloatFloat_Parms.A = A;
@@ -7717,7 +7717,7 @@ bool UObject::EqualEqual_FloatFloat(float A, float B)
 	static UFunction* pFnEqualEqual_FloatFloat = NULL;
 
 	if (!pFnEqualEqual_FloatFloat)
-		pFnEqualEqual_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6502];
+		pFnEqualEqual_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6514];
 
 	UObject_execEqualEqual_FloatFloat_Parms EqualEqual_FloatFloat_Parms;
 	EqualEqual_FloatFloat_Parms.A = A;
@@ -7749,7 +7749,7 @@ bool UObject::GreaterEqual_FloatFloat(float A, float B)
 	static UFunction* pFnGreaterEqual_FloatFloat = NULL;
 
 	if (!pFnGreaterEqual_FloatFloat)
-		pFnGreaterEqual_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6506];
+		pFnGreaterEqual_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6518];
 
 	UObject_execGreaterEqual_FloatFloat_Parms GreaterEqual_FloatFloat_Parms;
 	GreaterEqual_FloatFloat_Parms.A = A;
@@ -7781,7 +7781,7 @@ bool UObject::LessEqual_FloatFloat(float A, float B)
 	static UFunction* pFnLessEqual_FloatFloat = NULL;
 
 	if (!pFnLessEqual_FloatFloat)
-		pFnLessEqual_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6510];
+		pFnLessEqual_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6522];
 
 	UObject_execLessEqual_FloatFloat_Parms LessEqual_FloatFloat_Parms;
 	LessEqual_FloatFloat_Parms.A = A;
@@ -7813,7 +7813,7 @@ bool UObject::Greater_FloatFloat(float A, float B)
 	static UFunction* pFnGreater_FloatFloat = NULL;
 
 	if (!pFnGreater_FloatFloat)
-		pFnGreater_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6514];
+		pFnGreater_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6526];
 
 	UObject_execGreater_FloatFloat_Parms Greater_FloatFloat_Parms;
 	Greater_FloatFloat_Parms.A = A;
@@ -7845,7 +7845,7 @@ bool UObject::Less_FloatFloat(float A, float B)
 	static UFunction* pFnLess_FloatFloat = NULL;
 
 	if (!pFnLess_FloatFloat)
-		pFnLess_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6518];
+		pFnLess_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6530];
 
 	UObject_execLess_FloatFloat_Parms Less_FloatFloat_Parms;
 	Less_FloatFloat_Parms.A = A;
@@ -7877,7 +7877,7 @@ float UObject::Subtract_FloatFloat(float A, float B)
 	static UFunction* pFnSubtract_FloatFloat = NULL;
 
 	if (!pFnSubtract_FloatFloat)
-		pFnSubtract_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6522];
+		pFnSubtract_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6534];
 
 	UObject_execSubtract_FloatFloat_Parms Subtract_FloatFloat_Parms;
 	Subtract_FloatFloat_Parms.A = A;
@@ -7909,7 +7909,7 @@ float UObject::Add_FloatFloat(float A, float B)
 	static UFunction* pFnAdd_FloatFloat = NULL;
 
 	if (!pFnAdd_FloatFloat)
-		pFnAdd_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6526];
+		pFnAdd_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6538];
 
 	UObject_execAdd_FloatFloat_Parms Add_FloatFloat_Parms;
 	Add_FloatFloat_Parms.A = A;
@@ -7941,7 +7941,7 @@ float UObject::Percent_FloatFloat(float A, float B)
 	static UFunction* pFnPercent_FloatFloat = NULL;
 
 	if (!pFnPercent_FloatFloat)
-		pFnPercent_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6530];
+		pFnPercent_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6542];
 
 	UObject_execPercent_FloatFloat_Parms Percent_FloatFloat_Parms;
 	Percent_FloatFloat_Parms.A = A;
@@ -7973,7 +7973,7 @@ float UObject::Divide_FloatFloat(float A, float B)
 	static UFunction* pFnDivide_FloatFloat = NULL;
 
 	if (!pFnDivide_FloatFloat)
-		pFnDivide_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6534];
+		pFnDivide_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6546];
 
 	UObject_execDivide_FloatFloat_Parms Divide_FloatFloat_Parms;
 	Divide_FloatFloat_Parms.A = A;
@@ -8005,7 +8005,7 @@ float UObject::Multiply_FloatFloat(float A, float B)
 	static UFunction* pFnMultiply_FloatFloat = NULL;
 
 	if (!pFnMultiply_FloatFloat)
-		pFnMultiply_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6538];
+		pFnMultiply_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6550];
 
 	UObject_execMultiply_FloatFloat_Parms Multiply_FloatFloat_Parms;
 	Multiply_FloatFloat_Parms.A = A;
@@ -8037,7 +8037,7 @@ float UObject::MultiplyMultiply_FloatFloat(float Base, float Exp)
 	static UFunction* pFnMultiplyMultiply_FloatFloat = NULL;
 
 	if (!pFnMultiplyMultiply_FloatFloat)
-		pFnMultiplyMultiply_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6542];
+		pFnMultiplyMultiply_FloatFloat = (UFunction*)UObject::GObjObjects()->Data[6554];
 
 	UObject_execMultiplyMultiply_FloatFloat_Parms MultiplyMultiply_FloatFloat_Parms;
 	MultiplyMultiply_FloatFloat_Parms.Base = Base;
@@ -8068,7 +8068,7 @@ float UObject::Subtract_PreFloat(float A)
 	static UFunction* pFnSubtract_PreFloat = NULL;
 
 	if (!pFnSubtract_PreFloat)
-		pFnSubtract_PreFloat = (UFunction*)UObject::GObjObjects()->Data[6546];
+		pFnSubtract_PreFloat = (UFunction*)UObject::GObjObjects()->Data[6558];
 
 	UObject_execSubtract_PreFloat_Parms Subtract_PreFloat_Parms;
 	Subtract_PreFloat_Parms.A = A;
@@ -8098,7 +8098,7 @@ struct FString UObject::ToHex(int A)
 	static UFunction* pFnToHex = NULL;
 
 	if (!pFnToHex)
-		pFnToHex = (UFunction*)UObject::GObjObjects()->Data[6550];
+		pFnToHex = (UFunction*)UObject::GObjObjects()->Data[6562];
 
 	UObject_execToHex_Parms ToHex_Parms;
 	ToHex_Parms.A = A;
@@ -8125,7 +8125,7 @@ int UObject::Clamp(int V, int A, int B)
 	static UFunction* pFnClamp = NULL;
 
 	if (!pFnClamp)
-		pFnClamp = (UFunction*)UObject::GObjObjects()->Data[6553];
+		pFnClamp = (UFunction*)UObject::GObjObjects()->Data[6565];
 
 	UObject_execClamp_Parms Clamp_Parms;
 	Clamp_Parms.V = V;
@@ -8158,7 +8158,7 @@ int UObject::Max(int A, int B)
 	static UFunction* pFnMax = NULL;
 
 	if (!pFnMax)
-		pFnMax = (UFunction*)UObject::GObjObjects()->Data[6556];
+		pFnMax = (UFunction*)UObject::GObjObjects()->Data[6568];
 
 	UObject_execMax_Parms Max_Parms;
 	Max_Parms.A = A;
@@ -8190,7 +8190,7 @@ int UObject::Min(int A, int B)
 	static UFunction* pFnMin = NULL;
 
 	if (!pFnMin)
-		pFnMin = (UFunction*)UObject::GObjObjects()->Data[6561];
+		pFnMin = (UFunction*)UObject::GObjObjects()->Data[6573];
 
 	UObject_execMin_Parms Min_Parms;
 	Min_Parms.A = A;
@@ -8221,7 +8221,7 @@ int UObject::Rand(int Max)
 	static UFunction* pFnRand = NULL;
 
 	if (!pFnRand)
-		pFnRand = (UFunction*)UObject::GObjObjects()->Data[6565];
+		pFnRand = (UFunction*)UObject::GObjObjects()->Data[6577];
 
 	UObject_execRand_Parms Rand_Parms;
 	Rand_Parms.Max = Max;
@@ -8251,7 +8251,7 @@ int UObject::SubtractSubtract_Int(int* A)
 	static UFunction* pFnSubtractSubtract_Int = NULL;
 
 	if (!pFnSubtractSubtract_Int)
-		pFnSubtractSubtract_Int = (UFunction*)UObject::GObjObjects()->Data[6569];
+		pFnSubtractSubtract_Int = (UFunction*)UObject::GObjObjects()->Data[6581];
 
 	UObject_execSubtractSubtract_Int_Parms SubtractSubtract_Int_Parms;
 
@@ -8283,7 +8283,7 @@ int UObject::AddAdd_Int(int* A)
 	static UFunction* pFnAddAdd_Int = NULL;
 
 	if (!pFnAddAdd_Int)
-		pFnAddAdd_Int = (UFunction*)UObject::GObjObjects()->Data[6572];
+		pFnAddAdd_Int = (UFunction*)UObject::GObjObjects()->Data[6584];
 
 	UObject_execAddAdd_Int_Parms AddAdd_Int_Parms;
 
@@ -8315,7 +8315,7 @@ int UObject::SubtractSubtract_PreInt(int* A)
 	static UFunction* pFnSubtractSubtract_PreInt = NULL;
 
 	if (!pFnSubtractSubtract_PreInt)
-		pFnSubtractSubtract_PreInt = (UFunction*)UObject::GObjObjects()->Data[6575];
+		pFnSubtractSubtract_PreInt = (UFunction*)UObject::GObjObjects()->Data[6587];
 
 	UObject_execSubtractSubtract_PreInt_Parms SubtractSubtract_PreInt_Parms;
 
@@ -8347,7 +8347,7 @@ int UObject::AddAdd_PreInt(int* A)
 	static UFunction* pFnAddAdd_PreInt = NULL;
 
 	if (!pFnAddAdd_PreInt)
-		pFnAddAdd_PreInt = (UFunction*)UObject::GObjObjects()->Data[6578];
+		pFnAddAdd_PreInt = (UFunction*)UObject::GObjObjects()->Data[6590];
 
 	UObject_execAddAdd_PreInt_Parms AddAdd_PreInt_Parms;
 
@@ -8380,7 +8380,7 @@ int UObject::SubtractEqual_IntInt(int B, int* A)
 	static UFunction* pFnSubtractEqual_IntInt = NULL;
 
 	if (!pFnSubtractEqual_IntInt)
-		pFnSubtractEqual_IntInt = (UFunction*)UObject::GObjObjects()->Data[6581];
+		pFnSubtractEqual_IntInt = (UFunction*)UObject::GObjObjects()->Data[6593];
 
 	UObject_execSubtractEqual_IntInt_Parms SubtractEqual_IntInt_Parms;
 	SubtractEqual_IntInt_Parms.B = B;
@@ -8414,7 +8414,7 @@ int UObject::AddEqual_IntInt(int B, int* A)
 	static UFunction* pFnAddEqual_IntInt = NULL;
 
 	if (!pFnAddEqual_IntInt)
-		pFnAddEqual_IntInt = (UFunction*)UObject::GObjObjects()->Data[6584];
+		pFnAddEqual_IntInt = (UFunction*)UObject::GObjObjects()->Data[6596];
 
 	UObject_execAddEqual_IntInt_Parms AddEqual_IntInt_Parms;
 	AddEqual_IntInt_Parms.B = B;
@@ -8448,7 +8448,7 @@ int UObject::DivideEqual_IntFloat(float B, int* A)
 	static UFunction* pFnDivideEqual_IntFloat = NULL;
 
 	if (!pFnDivideEqual_IntFloat)
-		pFnDivideEqual_IntFloat = (UFunction*)UObject::GObjObjects()->Data[6588];
+		pFnDivideEqual_IntFloat = (UFunction*)UObject::GObjObjects()->Data[6600];
 
 	UObject_execDivideEqual_IntFloat_Parms DivideEqual_IntFloat_Parms;
 	DivideEqual_IntFloat_Parms.B = B;
@@ -8482,7 +8482,7 @@ int UObject::MultiplyEqual_IntFloat(float B, int* A)
 	static UFunction* pFnMultiplyEqual_IntFloat = NULL;
 
 	if (!pFnMultiplyEqual_IntFloat)
-		pFnMultiplyEqual_IntFloat = (UFunction*)UObject::GObjObjects()->Data[6592];
+		pFnMultiplyEqual_IntFloat = (UFunction*)UObject::GObjObjects()->Data[6604];
 
 	UObject_execMultiplyEqual_IntFloat_Parms MultiplyEqual_IntFloat_Parms;
 	MultiplyEqual_IntFloat_Parms.B = B;
@@ -8516,7 +8516,7 @@ int UObject::Or_IntInt(int A, int B)
 	static UFunction* pFnOr_IntInt = NULL;
 
 	if (!pFnOr_IntInt)
-		pFnOr_IntInt = (UFunction*)UObject::GObjObjects()->Data[6596];
+		pFnOr_IntInt = (UFunction*)UObject::GObjObjects()->Data[6608];
 
 	UObject_execOr_IntInt_Parms Or_IntInt_Parms;
 	Or_IntInt_Parms.A = A;
@@ -8548,7 +8548,7 @@ int UObject::Xor_IntInt(int A, int B)
 	static UFunction* pFnXor_IntInt = NULL;
 
 	if (!pFnXor_IntInt)
-		pFnXor_IntInt = (UFunction*)UObject::GObjObjects()->Data[6600];
+		pFnXor_IntInt = (UFunction*)UObject::GObjObjects()->Data[6612];
 
 	UObject_execXor_IntInt_Parms Xor_IntInt_Parms;
 	Xor_IntInt_Parms.A = A;
@@ -8580,7 +8580,7 @@ int UObject::And_IntInt(int A, int B)
 	static UFunction* pFnAnd_IntInt = NULL;
 
 	if (!pFnAnd_IntInt)
-		pFnAnd_IntInt = (UFunction*)UObject::GObjObjects()->Data[6604];
+		pFnAnd_IntInt = (UFunction*)UObject::GObjObjects()->Data[6616];
 
 	UObject_execAnd_IntInt_Parms And_IntInt_Parms;
 	And_IntInt_Parms.A = A;
@@ -8612,7 +8612,7 @@ bool UObject::NotEqual_IntInt(int A, int B)
 	static UFunction* pFnNotEqual_IntInt = NULL;
 
 	if (!pFnNotEqual_IntInt)
-		pFnNotEqual_IntInt = (UFunction*)UObject::GObjObjects()->Data[6608];
+		pFnNotEqual_IntInt = (UFunction*)UObject::GObjObjects()->Data[6620];
 
 	UObject_execNotEqual_IntInt_Parms NotEqual_IntInt_Parms;
 	NotEqual_IntInt_Parms.A = A;
@@ -8644,7 +8644,7 @@ bool UObject::EqualEqual_IntInt(int A, int B)
 	static UFunction* pFnEqualEqual_IntInt = NULL;
 
 	if (!pFnEqualEqual_IntInt)
-		pFnEqualEqual_IntInt = (UFunction*)UObject::GObjObjects()->Data[6612];
+		pFnEqualEqual_IntInt = (UFunction*)UObject::GObjObjects()->Data[6624];
 
 	UObject_execEqualEqual_IntInt_Parms EqualEqual_IntInt_Parms;
 	EqualEqual_IntInt_Parms.A = A;
@@ -8676,7 +8676,7 @@ bool UObject::GreaterEqual_IntInt(int A, int B)
 	static UFunction* pFnGreaterEqual_IntInt = NULL;
 
 	if (!pFnGreaterEqual_IntInt)
-		pFnGreaterEqual_IntInt = (UFunction*)UObject::GObjObjects()->Data[6616];
+		pFnGreaterEqual_IntInt = (UFunction*)UObject::GObjObjects()->Data[6628];
 
 	UObject_execGreaterEqual_IntInt_Parms GreaterEqual_IntInt_Parms;
 	GreaterEqual_IntInt_Parms.A = A;
@@ -8708,7 +8708,7 @@ bool UObject::LessEqual_IntInt(int A, int B)
 	static UFunction* pFnLessEqual_IntInt = NULL;
 
 	if (!pFnLessEqual_IntInt)
-		pFnLessEqual_IntInt = (UFunction*)UObject::GObjObjects()->Data[6620];
+		pFnLessEqual_IntInt = (UFunction*)UObject::GObjObjects()->Data[6632];
 
 	UObject_execLessEqual_IntInt_Parms LessEqual_IntInt_Parms;
 	LessEqual_IntInt_Parms.A = A;
@@ -8740,7 +8740,7 @@ bool UObject::Greater_IntInt(int A, int B)
 	static UFunction* pFnGreater_IntInt = NULL;
 
 	if (!pFnGreater_IntInt)
-		pFnGreater_IntInt = (UFunction*)UObject::GObjObjects()->Data[6624];
+		pFnGreater_IntInt = (UFunction*)UObject::GObjObjects()->Data[6636];
 
 	UObject_execGreater_IntInt_Parms Greater_IntInt_Parms;
 	Greater_IntInt_Parms.A = A;
@@ -8772,7 +8772,7 @@ bool UObject::Less_IntInt(int A, int B)
 	static UFunction* pFnLess_IntInt = NULL;
 
 	if (!pFnLess_IntInt)
-		pFnLess_IntInt = (UFunction*)UObject::GObjObjects()->Data[6628];
+		pFnLess_IntInt = (UFunction*)UObject::GObjObjects()->Data[6640];
 
 	UObject_execLess_IntInt_Parms Less_IntInt_Parms;
 	Less_IntInt_Parms.A = A;
@@ -8804,7 +8804,7 @@ int UObject::GreaterGreaterGreater_IntInt(int A, int B)
 	static UFunction* pFnGreaterGreaterGreater_IntInt = NULL;
 
 	if (!pFnGreaterGreaterGreater_IntInt)
-		pFnGreaterGreaterGreater_IntInt = (UFunction*)UObject::GObjObjects()->Data[6632];
+		pFnGreaterGreaterGreater_IntInt = (UFunction*)UObject::GObjObjects()->Data[6644];
 
 	UObject_execGreaterGreaterGreater_IntInt_Parms GreaterGreaterGreater_IntInt_Parms;
 	GreaterGreaterGreater_IntInt_Parms.A = A;
@@ -8836,7 +8836,7 @@ int UObject::GreaterGreater_IntInt(int A, int B)
 	static UFunction* pFnGreaterGreater_IntInt = NULL;
 
 	if (!pFnGreaterGreater_IntInt)
-		pFnGreaterGreater_IntInt = (UFunction*)UObject::GObjObjects()->Data[6636];
+		pFnGreaterGreater_IntInt = (UFunction*)UObject::GObjObjects()->Data[6648];
 
 	UObject_execGreaterGreater_IntInt_Parms GreaterGreater_IntInt_Parms;
 	GreaterGreater_IntInt_Parms.A = A;
@@ -8868,7 +8868,7 @@ int UObject::LessLess_IntInt(int A, int B)
 	static UFunction* pFnLessLess_IntInt = NULL;
 
 	if (!pFnLessLess_IntInt)
-		pFnLessLess_IntInt = (UFunction*)UObject::GObjObjects()->Data[6640];
+		pFnLessLess_IntInt = (UFunction*)UObject::GObjObjects()->Data[6652];
 
 	UObject_execLessLess_IntInt_Parms LessLess_IntInt_Parms;
 	LessLess_IntInt_Parms.A = A;
@@ -8900,7 +8900,7 @@ int UObject::Subtract_IntInt(int A, int B)
 	static UFunction* pFnSubtract_IntInt = NULL;
 
 	if (!pFnSubtract_IntInt)
-		pFnSubtract_IntInt = (UFunction*)UObject::GObjObjects()->Data[6644];
+		pFnSubtract_IntInt = (UFunction*)UObject::GObjObjects()->Data[6656];
 
 	UObject_execSubtract_IntInt_Parms Subtract_IntInt_Parms;
 	Subtract_IntInt_Parms.A = A;
@@ -8932,7 +8932,7 @@ int UObject::Add_IntInt(int A, int B)
 	static UFunction* pFnAdd_IntInt = NULL;
 
 	if (!pFnAdd_IntInt)
-		pFnAdd_IntInt = (UFunction*)UObject::GObjObjects()->Data[6648];
+		pFnAdd_IntInt = (UFunction*)UObject::GObjObjects()->Data[6660];
 
 	UObject_execAdd_IntInt_Parms Add_IntInt_Parms;
 	Add_IntInt_Parms.A = A;
@@ -8964,7 +8964,7 @@ int UObject::Percent_IntInt(int A, int B)
 	static UFunction* pFnPercent_IntInt = NULL;
 
 	if (!pFnPercent_IntInt)
-		pFnPercent_IntInt = (UFunction*)UObject::GObjObjects()->Data[6652];
+		pFnPercent_IntInt = (UFunction*)UObject::GObjObjects()->Data[6664];
 
 	UObject_execPercent_IntInt_Parms Percent_IntInt_Parms;
 	Percent_IntInt_Parms.A = A;
@@ -8996,7 +8996,7 @@ int UObject::Divide_IntInt(int A, int B)
 	static UFunction* pFnDivide_IntInt = NULL;
 
 	if (!pFnDivide_IntInt)
-		pFnDivide_IntInt = (UFunction*)UObject::GObjObjects()->Data[6656];
+		pFnDivide_IntInt = (UFunction*)UObject::GObjObjects()->Data[6668];
 
 	UObject_execDivide_IntInt_Parms Divide_IntInt_Parms;
 	Divide_IntInt_Parms.A = A;
@@ -9028,7 +9028,7 @@ int UObject::Multiply_IntInt(int A, int B)
 	static UFunction* pFnMultiply_IntInt = NULL;
 
 	if (!pFnMultiply_IntInt)
-		pFnMultiply_IntInt = (UFunction*)UObject::GObjObjects()->Data[6660];
+		pFnMultiply_IntInt = (UFunction*)UObject::GObjObjects()->Data[6672];
 
 	UObject_execMultiply_IntInt_Parms Multiply_IntInt_Parms;
 	Multiply_IntInt_Parms.A = A;
@@ -9059,7 +9059,7 @@ int UObject::Subtract_PreInt(int A)
 	static UFunction* pFnSubtract_PreInt = NULL;
 
 	if (!pFnSubtract_PreInt)
-		pFnSubtract_PreInt = (UFunction*)UObject::GObjObjects()->Data[6664];
+		pFnSubtract_PreInt = (UFunction*)UObject::GObjObjects()->Data[6676];
 
 	UObject_execSubtract_PreInt_Parms Subtract_PreInt_Parms;
 	Subtract_PreInt_Parms.A = A;
@@ -9089,7 +9089,7 @@ int UObject::Complement_PreInt(int A)
 	static UFunction* pFnComplement_PreInt = NULL;
 
 	if (!pFnComplement_PreInt)
-		pFnComplement_PreInt = (UFunction*)UObject::GObjObjects()->Data[6668];
+		pFnComplement_PreInt = (UFunction*)UObject::GObjObjects()->Data[6680];
 
 	UObject_execComplement_PreInt_Parms Complement_PreInt_Parms;
 	Complement_PreInt_Parms.A = A;
@@ -9119,7 +9119,7 @@ unsigned char UObject::SubtractSubtract_Byte(unsigned char* A)
 	static UFunction* pFnSubtractSubtract_Byte = NULL;
 
 	if (!pFnSubtractSubtract_Byte)
-		pFnSubtractSubtract_Byte = (UFunction*)UObject::GObjObjects()->Data[6671];
+		pFnSubtractSubtract_Byte = (UFunction*)UObject::GObjObjects()->Data[6683];
 
 	UObject_execSubtractSubtract_Byte_Parms SubtractSubtract_Byte_Parms;
 
@@ -9151,7 +9151,7 @@ unsigned char UObject::AddAdd_Byte(unsigned char* A)
 	static UFunction* pFnAddAdd_Byte = NULL;
 
 	if (!pFnAddAdd_Byte)
-		pFnAddAdd_Byte = (UFunction*)UObject::GObjObjects()->Data[6674];
+		pFnAddAdd_Byte = (UFunction*)UObject::GObjObjects()->Data[6686];
 
 	UObject_execAddAdd_Byte_Parms AddAdd_Byte_Parms;
 
@@ -9183,7 +9183,7 @@ unsigned char UObject::SubtractSubtract_PreByte(unsigned char* A)
 	static UFunction* pFnSubtractSubtract_PreByte = NULL;
 
 	if (!pFnSubtractSubtract_PreByte)
-		pFnSubtractSubtract_PreByte = (UFunction*)UObject::GObjObjects()->Data[6677];
+		pFnSubtractSubtract_PreByte = (UFunction*)UObject::GObjObjects()->Data[6689];
 
 	UObject_execSubtractSubtract_PreByte_Parms SubtractSubtract_PreByte_Parms;
 
@@ -9215,7 +9215,7 @@ unsigned char UObject::AddAdd_PreByte(unsigned char* A)
 	static UFunction* pFnAddAdd_PreByte = NULL;
 
 	if (!pFnAddAdd_PreByte)
-		pFnAddAdd_PreByte = (UFunction*)UObject::GObjObjects()->Data[6680];
+		pFnAddAdd_PreByte = (UFunction*)UObject::GObjObjects()->Data[6692];
 
 	UObject_execAddAdd_PreByte_Parms AddAdd_PreByte_Parms;
 
@@ -9248,7 +9248,7 @@ unsigned char UObject::SubtractEqual_ByteByte(unsigned char B, unsigned char* A)
 	static UFunction* pFnSubtractEqual_ByteByte = NULL;
 
 	if (!pFnSubtractEqual_ByteByte)
-		pFnSubtractEqual_ByteByte = (UFunction*)UObject::GObjObjects()->Data[6683];
+		pFnSubtractEqual_ByteByte = (UFunction*)UObject::GObjObjects()->Data[6695];
 
 	UObject_execSubtractEqual_ByteByte_Parms SubtractEqual_ByteByte_Parms;
 	SubtractEqual_ByteByte_Parms.B = B;
@@ -9282,7 +9282,7 @@ unsigned char UObject::AddEqual_ByteByte(unsigned char B, unsigned char* A)
 	static UFunction* pFnAddEqual_ByteByte = NULL;
 
 	if (!pFnAddEqual_ByteByte)
-		pFnAddEqual_ByteByte = (UFunction*)UObject::GObjObjects()->Data[6686];
+		pFnAddEqual_ByteByte = (UFunction*)UObject::GObjObjects()->Data[6698];
 
 	UObject_execAddEqual_ByteByte_Parms AddEqual_ByteByte_Parms;
 	AddEqual_ByteByte_Parms.B = B;
@@ -9316,7 +9316,7 @@ unsigned char UObject::DivideEqual_ByteByte(unsigned char B, unsigned char* A)
 	static UFunction* pFnDivideEqual_ByteByte = NULL;
 
 	if (!pFnDivideEqual_ByteByte)
-		pFnDivideEqual_ByteByte = (UFunction*)UObject::GObjObjects()->Data[6690];
+		pFnDivideEqual_ByteByte = (UFunction*)UObject::GObjObjects()->Data[6702];
 
 	UObject_execDivideEqual_ByteByte_Parms DivideEqual_ByteByte_Parms;
 	DivideEqual_ByteByte_Parms.B = B;
@@ -9350,7 +9350,7 @@ unsigned char UObject::MultiplyEqual_ByteFloat(float B, unsigned char* A)
 	static UFunction* pFnMultiplyEqual_ByteFloat = NULL;
 
 	if (!pFnMultiplyEqual_ByteFloat)
-		pFnMultiplyEqual_ByteFloat = (UFunction*)UObject::GObjObjects()->Data[6694];
+		pFnMultiplyEqual_ByteFloat = (UFunction*)UObject::GObjObjects()->Data[6706];
 
 	UObject_execMultiplyEqual_ByteFloat_Parms MultiplyEqual_ByteFloat_Parms;
 	MultiplyEqual_ByteFloat_Parms.B = B;
@@ -9384,7 +9384,7 @@ unsigned char UObject::MultiplyEqual_ByteByte(unsigned char B, unsigned char* A)
 	static UFunction* pFnMultiplyEqual_ByteByte = NULL;
 
 	if (!pFnMultiplyEqual_ByteByte)
-		pFnMultiplyEqual_ByteByte = (UFunction*)UObject::GObjObjects()->Data[6698];
+		pFnMultiplyEqual_ByteByte = (UFunction*)UObject::GObjObjects()->Data[6710];
 
 	UObject_execMultiplyEqual_ByteByte_Parms MultiplyEqual_ByteByte_Parms;
 	MultiplyEqual_ByteByte_Parms.B = B;
@@ -9418,7 +9418,7 @@ bool UObject::OrOr_BoolBool(unsigned long A, unsigned long B)
 	static UFunction* pFnOrOr_BoolBool = NULL;
 
 	if (!pFnOrOr_BoolBool)
-		pFnOrOr_BoolBool = (UFunction*)UObject::GObjObjects()->Data[6702];
+		pFnOrOr_BoolBool = (UFunction*)UObject::GObjObjects()->Data[6714];
 
 	UObject_execOrOr_BoolBool_Parms OrOr_BoolBool_Parms;
 	OrOr_BoolBool_Parms.A = A;
@@ -9450,7 +9450,7 @@ bool UObject::XorXor_BoolBool(unsigned long A, unsigned long B)
 	static UFunction* pFnXorXor_BoolBool = NULL;
 
 	if (!pFnXorXor_BoolBool)
-		pFnXorXor_BoolBool = (UFunction*)UObject::GObjObjects()->Data[6706];
+		pFnXorXor_BoolBool = (UFunction*)UObject::GObjObjects()->Data[6718];
 
 	UObject_execXorXor_BoolBool_Parms XorXor_BoolBool_Parms;
 	XorXor_BoolBool_Parms.A = A;
@@ -9482,7 +9482,7 @@ bool UObject::AndAnd_BoolBool(unsigned long A, unsigned long B)
 	static UFunction* pFnAndAnd_BoolBool = NULL;
 
 	if (!pFnAndAnd_BoolBool)
-		pFnAndAnd_BoolBool = (UFunction*)UObject::GObjObjects()->Data[6710];
+		pFnAndAnd_BoolBool = (UFunction*)UObject::GObjObjects()->Data[6722];
 
 	UObject_execAndAnd_BoolBool_Parms AndAnd_BoolBool_Parms;
 	AndAnd_BoolBool_Parms.A = A;
@@ -9514,7 +9514,7 @@ bool UObject::NotEqual_BoolBool(unsigned long A, unsigned long B)
 	static UFunction* pFnNotEqual_BoolBool = NULL;
 
 	if (!pFnNotEqual_BoolBool)
-		pFnNotEqual_BoolBool = (UFunction*)UObject::GObjObjects()->Data[6714];
+		pFnNotEqual_BoolBool = (UFunction*)UObject::GObjObjects()->Data[6726];
 
 	UObject_execNotEqual_BoolBool_Parms NotEqual_BoolBool_Parms;
 	NotEqual_BoolBool_Parms.A = A;
@@ -9546,7 +9546,7 @@ bool UObject::EqualEqual_BoolBool(unsigned long A, unsigned long B)
 	static UFunction* pFnEqualEqual_BoolBool = NULL;
 
 	if (!pFnEqualEqual_BoolBool)
-		pFnEqualEqual_BoolBool = (UFunction*)UObject::GObjObjects()->Data[6718];
+		pFnEqualEqual_BoolBool = (UFunction*)UObject::GObjObjects()->Data[6730];
 
 	UObject_execEqualEqual_BoolBool_Parms EqualEqual_BoolBool_Parms;
 	EqualEqual_BoolBool_Parms.A = A;
@@ -9577,7 +9577,7 @@ bool UObject::Not_PreBool(unsigned long A)
 	static UFunction* pFnNot_PreBool = NULL;
 
 	if (!pFnNot_PreBool)
-		pFnNot_PreBool = (UFunction*)UObject::GObjObjects()->Data[6722];
+		pFnNot_PreBool = (UFunction*)UObject::GObjObjects()->Data[6734];
 
 	UObject_execNot_PreBool_Parms Not_PreBool_Parms;
 	Not_PreBool_Parms.A = A;
@@ -9608,7 +9608,7 @@ struct FVector UDistributionVector::GetVectorValue(float F, int LastExtreme)
 	static UFunction* pFnGetVectorValue = NULL;
 
 	if (!pFnGetVectorValue)
-		pFnGetVectorValue = (UFunction*)UObject::GObjObjects()->Data[6957];
+		pFnGetVectorValue = (UFunction*)UObject::GObjObjects()->Data[6969];
 
 	UDistributionVector_execGetVectorValue_Parms GetVectorValue_Parms;
 	GetVectorValue_Parms.F = F;
@@ -9634,7 +9634,7 @@ float UDistributionFloat::GetFloatValue(float F)
 	static UFunction* pFnGetFloatValue = NULL;
 
 	if (!pFnGetFloatValue)
-		pFnGetFloatValue = (UFunction*)UObject::GObjObjects()->Data[6947];
+		pFnGetFloatValue = (UFunction*)UObject::GObjObjects()->Data[6959];
 
 	UDistributionFloat_execGetFloatValue_Parms GetFloatValue_Parms;
 	GetFloatValue_Parms.F = F;
@@ -9659,7 +9659,7 @@ int UHelpCommandlet::eventMain(struct FString Params)
 	static UFunction* pFnMain = NULL;
 
 	if (!pFnMain)
-		pFnMain = (UFunction*)UObject::GObjObjects()->Data[6973];
+		pFnMain = (UFunction*)UObject::GObjObjects()->Data[6985];
 
 	UHelpCommandlet_eventMain_Parms Main_Parms;
 	memcpy(&Main_Parms.Params, &Params, 0xC);
@@ -9680,7 +9680,7 @@ int UCommandlet::eventMain(struct FString Params)
 	static UFunction* pFnMain = NULL;
 
 	if (!pFnMain)
-		pFnMain = (UFunction*)UObject::GObjObjects()->Data[6939];
+		pFnMain = (UFunction*)UObject::GObjObjects()->Data[6951];
 
 	UCommandlet_eventMain_Parms Main_Parms;
 	memcpy(&Main_Parms.Params, &Params, 0xC);
