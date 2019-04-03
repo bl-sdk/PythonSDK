@@ -53,7 +53,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3564];
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3568];
 
 		return pClassPointer;
 	};
@@ -74,7 +74,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3568];
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3572];
 
 		return pClassPointer;
 	};
@@ -96,7 +96,7 @@ public:
 	static UClass* StaticClass()
 	{
 		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3570];
+			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3574];
 
 		return pClassPointer;
 	};
