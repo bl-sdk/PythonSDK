@@ -6,6 +6,8 @@ namespace py = pybind11;
 void Export_pystes_gamedefines(py::module &m)
 {
 	py::class_< FName >(m, "FName")
+		.def(py::init<>())
+		.def(py::init<const std::string&>())
 		.def_readwrite("Index", &FName::Index)
 		.def_readwrite("Number", &FName::Number)
 		.def("GetName", &FName::GetName, py::return_value_policy::reference)
@@ -36,5 +38,10 @@ void Export_pystes_gamedefines(py::module &m)
 		.def_readwrite("Locals", &FFrame::Locals, py::return_value_policy::reference)
 		.def_readwrite("PreviousFrame", &FFrame::PreviousFrame, py::return_value_policy::reference)
 		.def("SkipFunction", &FFrame::SkipFunction, py::return_value_policy::reference)
+		;
+
+	py::class_< FString >(m, "FString")
+		.def(py::init<wchar_t*>())
+		.def("AsString", &FString::AsString, py::return_value_policy::reference)
 		;
 }

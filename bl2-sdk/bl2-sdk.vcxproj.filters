@@ -110,100 +110,82 @@
     <ClCompile Include="CPythonInterface.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="pydefs\_Classes_UObject.cpp">
-      <Filter>Source Files\pydef</Filter>
-    </ClCompile>
-    <ClCompile Include="pydefs\_Classes_UInteraction.cpp">
-      <Filter>Source Files\pydef</Filter>
-    </ClCompile>
-    <ClCompile Include="pydefs\_Classes_UConsole.cpp">
-      <Filter>Source Files\pydef</Filter>
-    </ClCompile>
-    <ClCompile Include="pydefs\_Classes_UWillowConsole.cpp">
-      <Filter>Source Files\pydef</Filter>
-    </ClCompile>
-    <ClCompile Include="pydefs\_FString.cpp">
-      <Filter>Source Files\pydef</Filter>
-    </ClCompile>
-    <ClCompile Include="pydefs\_Classes_UPackage.cpp">
-      <Filter>Source Files\pydef</Filter>
-    </ClCompile>
-    <ClCompile Include="pydefs\_Classes_USkillTreeBranchDefinition.cpp">
-      <Filter>Source Files\pydef</Filter>
-    </ClCompile>
-    <ClCompile Include="pydefs\_Classes_USkillTreeBranchLayoutDefinition.cpp">
-      <Filter>Source Files\pydef</Filter>
-    </ClCompile>
-    <ClCompile Include="pydefs\_Classes_USkillDefinition.cpp">
-      <Filter>Source Files\pydef</Filter>
-    </ClCompile>
-    <ClCompile Include="pydefs\_Classes_UGBXDefinition.cpp">
-      <Filter>Source Files\pydef</Filter>
-    </ClCompile>
-    <ClCompile Include="pydefs\_Structs_FTier.cpp">
-      <Filter>Source Files\pydef</Filter>
-    </ClCompile>
-    <ClCompile Include="pydefs\_TArray.cpp">
-      <Filter>Source Files\pydef</Filter>
-    </ClCompile>
-    <ClCompile Include="pydefs\_Classes_UWillowGameEngine.cpp">
-      <Filter>Source Files\pydef</Filter>
-    </ClCompile>
-    <ClCompile Include="pydefs\_Classes_UGameEngine.cpp">
-      <Filter>Source Files\pydef</Filter>
-    </ClCompile>
-    <ClCompile Include="pydefs\_Classes_UGearboxEngine.cpp">
-      <Filter>Source Files\pydef</Filter>
-    </ClCompile>
-    <ClCompile Include="pydefs\_Classes_UEngine.cpp">
-      <Filter>Source Files\pydef</Filter>
-    </ClCompile>
-    <ClCompile Include="pydefs\_Classes_USubsystem.cpp">
-      <Filter>Source Files\pydef</Filter>
-    </ClCompile>
-    <ClCompile Include="pydefs\_Classes_ULocalPlayer.cpp">
-      <Filter>Source Files\pydef</Filter>
-    </ClCompile>
-    <ClCompile Include="pydefs\_Classes_UPlayer.cpp">
-      <Filter>Source Files\pydef</Filter>
-    </ClCompile>
-    <ClCompile Include="pydefs\_Classes_APlayerController.cpp">
-      <Filter>Source Files\pydef</Filter>
-    </ClCompile>
-    <ClCompile Include="pydefs\_Classes_AGearboxPlayerController.cpp">
-      <Filter>Source Files\pydef</Filter>
-    </ClCompile>
-    <ClCompile Include="pydefs\_Classes_AWillowPlayerController.cpp">
-      <Filter>Source Files\pydef</Filter>
-    </ClCompile>
-    <ClCompile Include="pydefs\_Classes_AGamePlayerController.cpp">
-      <Filter>Source Files\pydef</Filter>
-    </ClCompile>
-    <ClCompile Include="pydefs\_Classes_AController.cpp">
-      <Filter>Source Files\pydef</Filter>
-    </ClCompile>
-    <ClCompile Include="pydefs\_Classes_AActor.cpp">
-      <Filter>Source Files\pydef</Filter>
-    </ClCompile>
-    <ClCompile Include="pydefs\_Classes_UClass.cpp">
-      <Filter>Source Files\pydef</Filter>
-    </ClCompile>
-    <ClCompile Include="pydefs\_Structs_FQWord.cpp">
-      <Filter>Source Files\pydef</Filter>
-    </ClCompile>
     <ClCompile Include="CEngineHookManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CScriptHookManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="pydefs\_TArray.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
     <ClCompile Include="pydefs\gamedefines.cpp">
       <Filter>Source Files\pydef</Filter>
     </ClCompile>
-    <ClCompile Include="pydefs\_Classes_UFunction.cpp">
+    <ClCompile Include="pydefs\IpDrv_structs.cpp">
       <Filter>Source Files\pydef</Filter>
     </ClCompile>
-    <ClCompile Include="pydefs\_Classes_UStruct.cpp">
+    <ClCompile Include="pydefs\OnlineSubsystemSteamworks_classes.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\OnlineSubsystemSteamworks_structs.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\WillowGame_classes.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\WillowGame_structs.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\WinDrv_classes.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\WinDrv_structs.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\XAudio2_classes.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\XAudio2_structs.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\GameFramework_classes.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\GameFramework_structs.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\GearboxFramework_classes.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\GearboxFramework_structs.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\GFxUI_classes.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\GFxUI_structs.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\IpDrv_classes.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\Core_classes.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\Core_structs.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\Engine_classes.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\Engine_structs.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\AkAudio_classes.cpp">
+      <Filter>Source Files\pydef</Filter>
+    </ClCompile>
+    <ClCompile Include="pydefs\AkAudio_structs.cpp">
       <Filter>Source Files\pydef</Filter>
     </ClCompile>
   </ItemGroup>

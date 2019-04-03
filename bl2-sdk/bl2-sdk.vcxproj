@@ -23,7 +23,7 @@
     <ProjectGuid>{32794345-2BB2-45E0-A461-914D13B0279F}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>bl2sdk</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
     <ProjectName>Borderlands 2 SDK</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -36,7 +36,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -49,7 +49,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -146,9 +146,10 @@
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <Optimization>Custom</Optimization>
+      <Optimization>MinSpace</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <IntrinsicFunctions>
+      </IntrinsicFunctions>
       <SDLCheck>false</SDLCheck>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;BL2SDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
@@ -156,13 +157,16 @@
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
-      <MinimalRebuild>false</MinimalRebuild>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <MinimalRebuild>
+      </MinimalRebuild>
       <WholeProgramOptimization>true</WholeProgramOptimization>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
       <OmitFramePointers>true</OmitFramePointers>
       <EnableFiberSafeOptimizations />
+      <BufferSecurityCheck />
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -174,8 +178,9 @@
       <AssemblyDebug>false</AssemblyDebug>
       <GenerateMapFile>false</GenerateMapFile>
       <MapExports>false</MapExports>
-      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
-      <LinkStatus>true</LinkStatus>
+      <LinkTimeCodeGeneration>UseFastLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <LinkStatus>
+      </LinkStatus>
     </Link>
     <PreBuildEvent>
       <Command>
@@ -223,35 +228,29 @@
     <ClCompile Include="modules.cpp" />
     <ClCompile Include="OnlineSubsystemSteamworks_functions.cpp" />
     <ClCompile Include="PackageFix.cpp" />
+    <ClCompile Include="pydefs\AkAudio_classes.cpp" />
+    <ClCompile Include="pydefs\AkAudio_structs.cpp" />
+    <ClCompile Include="pydefs\Core_classes.cpp" />
+    <ClCompile Include="pydefs\Core_structs.cpp" />
+    <ClCompile Include="pydefs\Engine_classes.cpp" />
+    <ClCompile Include="pydefs\Engine_structs.cpp" />
     <ClCompile Include="pydefs\gamedefines.cpp" />
-    <ClCompile Include="pydefs\_Classes_AActor.cpp" />
-    <ClCompile Include="pydefs\_Classes_AController.cpp" />
-    <ClCompile Include="pydefs\_Classes_AGamePlayerController.cpp" />
-    <ClCompile Include="pydefs\_Classes_AGearboxPlayerController.cpp" />
-    <ClCompile Include="pydefs\_Classes_APlayerController.cpp" />
-    <ClCompile Include="pydefs\_Classes_AWillowPlayerController.cpp" />
-    <ClCompile Include="pydefs\_Classes_UClass.cpp" />
-    <ClCompile Include="pydefs\_Classes_UConsole.cpp" />
-    <ClCompile Include="pydefs\_Classes_UEngine.cpp" />
-    <ClCompile Include="pydefs\_Classes_UFunction.cpp" />
-    <ClCompile Include="pydefs\_Classes_UGameEngine.cpp" />
-    <ClCompile Include="pydefs\_Classes_UGBXDefinition.cpp" />
-    <ClCompile Include="pydefs\_Classes_UGearboxEngine.cpp" />
-    <ClCompile Include="pydefs\_Classes_UInteraction.cpp" />
-    <ClCompile Include="pydefs\_Classes_ULocalPlayer.cpp" />
-    <ClCompile Include="pydefs\_Classes_UObject.cpp" />
-    <ClCompile Include="pydefs\_Classes_UPackage.cpp" />
-    <ClCompile Include="pydefs\_Classes_UPlayer.cpp" />
-    <ClCompile Include="pydefs\_Classes_USkillDefinition.cpp" />
-    <ClCompile Include="pydefs\_Classes_USkillTreeBranchDefinition.cpp" />
-    <ClCompile Include="pydefs\_Classes_USkillTreeBranchLayoutDefinition.cpp" />
-    <ClCompile Include="pydefs\_Classes_UStruct.cpp" />
-    <ClCompile Include="pydefs\_Classes_USubsystem.cpp" />
-    <ClCompile Include="pydefs\_Classes_UWillowConsole.cpp" />
-    <ClCompile Include="pydefs\_Classes_UWillowGameEngine.cpp" />
-    <ClCompile Include="pydefs\_FString.cpp" />
-    <ClCompile Include="pydefs\_Structs_FQWord.cpp" />
-    <ClCompile Include="pydefs\_Structs_FTier.cpp" />
+    <ClCompile Include="pydefs\GameFramework_classes.cpp" />
+    <ClCompile Include="pydefs\GameFramework_structs.cpp" />
+    <ClCompile Include="pydefs\GearboxFramework_classes.cpp" />
+    <ClCompile Include="pydefs\GearboxFramework_structs.cpp" />
+    <ClCompile Include="pydefs\GFxUI_classes.cpp" />
+    <ClCompile Include="pydefs\GFxUI_structs.cpp" />
+    <ClCompile Include="pydefs\IpDrv_classes.cpp" />
+    <ClCompile Include="pydefs\IpDrv_structs.cpp" />
+    <ClCompile Include="pydefs\OnlineSubsystemSteamworks_classes.cpp" />
+    <ClCompile Include="pydefs\OnlineSubsystemSteamworks_structs.cpp" />
+    <ClCompile Include="pydefs\WillowGame_classes.cpp" />
+    <ClCompile Include="pydefs\WillowGame_structs.cpp" />
+    <ClCompile Include="pydefs\WinDrv_classes.cpp" />
+    <ClCompile Include="pydefs\WinDrv_structs.cpp" />
+    <ClCompile Include="pydefs\XAudio2_classes.cpp" />
+    <ClCompile Include="pydefs\XAudio2_structs.cpp" />
     <ClCompile Include="pydefs\_TArray.cpp" />
     <ClCompile Include="Settings.cpp" />
     <ClInclude Include="CScriptHookManager.h" />

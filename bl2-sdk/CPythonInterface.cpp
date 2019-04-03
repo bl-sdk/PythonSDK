@@ -50,39 +50,37 @@ namespace py = pybind11;
 
 PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 {
-	Export_pystes_UObject(m);
-	Export_pystes_UClass(m);
-	Export_pystes_UInteraction(m);
-	Export_pystes_UConsole(m);
-	Export_pystes_UWillowConsole(m);
-	Export_pystes_FString(m);
-	Export_pystes_UGBXDefinition(m);
-	Export_pystes_USkillTreeBranchDefinition(m);
-	Export_pystes_USkillTreeBranchLayoutDefinition(m);
-	Export_pystes_USkillDefinition(m);
-	Export_pystes_FTier(m);
-	Export_pystes_TArray(m);
-	Export_pystes_UPlayer(m);
-	Export_pystes_ULocalPlayer(m);
-	Export_pystes_USubsystem(m);
-	Export_pystes_UEngine(m);
-	Export_pystes_UGameEngine(m);
-	Export_pystes_UGearboxEngine(m);
-	Export_pystes_UWillowGameEngine(m);
-	Export_pystes_AActor(m);
-	Export_pystes_AController(m);
-	Export_pystes_APlayerController(m);
-	Export_pystes_AGamePlayerController(m);
-	Export_pystes_AGearboxPlayerController(m);
-	Export_pystes_AWillowPlayerController(m);
-	Export_pystes_FQWord(m);
 	Export_pystes_gamedefines(m);
-	Export_pystes_UStruct(m);
-	Export_pystes_UFunction(m);
+	Export_pystes_Core_structs(m);
+	Export_pystes_Core_classes(m);
+	Export_pystes_Engine_structs(m);
+	Export_pystes_Engine_classes(m);
+	Export_pystes_GameFramework_structs(m);
+	Export_pystes_GameFramework_classes(m);
+	Export_pystes_GFxUI_structs(m);
+	Export_pystes_GFxUI_classes(m);
+	Export_pystes_GearboxFramework_structs(m);
+	Export_pystes_GearboxFramework_classes(m);
+	Export_pystes_WillowGame_structs(m);
+	Export_pystes_WillowGame_classes(m);
+	Export_pystes_AkAudio_structs(m);
+	Export_pystes_AkAudio_classes(m);
+	Export_pystes_IpDrv_structs(m);
+	Export_pystes_IpDrv_classes(m);
+	Export_pystes_WinDrv_structs(m);
+	Export_pystes_WinDrv_classes(m);
+	Export_pystes_XAudio2_structs(m);
+	Export_pystes_XAudio2_classes(m);
+	Export_pystes_OnlineSubsystemSteamworks_structs(m);
+	Export_pystes_OnlineSubsystemSteamworks_classes(m);
+	Export_pystes_TArray(m);
 	m.def("Log", [](std::string in) { Logging::Log(in.c_str(), in.length()); });
 	m.def("LoadPackage", &BL2SDK::LoadPackage);
 	m.def("RegisterEngineHook", &RegisterEngineHook);
 	m.def("RegisterScriptHook", &RegisterScriptHook);
+	m.def("RemoveEngineHook", [](const std::string& funcName, const std::string& hookName) {GameHooks::EngineHookManager->Remove(funcName, hookName); });
+	m.def("RemoveScriptHook", [](const std::string& funcName, const std::string& hookName) {GameHooks::UnrealScriptHookManager->Remove(funcName, hookName); });
+	m.def("DoInjectedCallNext", &BL2SDK::doInjectedCallNext);
 }
 
 bool PythonGCTick(UObject* caller, UFunction* function, void* parms, void* result)
