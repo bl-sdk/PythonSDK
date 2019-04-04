@@ -217,8 +217,7 @@ public:
 
 		for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
 		{
-			UObject* Object = UObject::GObjObjects()->Data[2];
-
+			UObject* Object = UObject::GObjObjects()->Data[i];
 			// skip no T class objects
 			if
 				(
