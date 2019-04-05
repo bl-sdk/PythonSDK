@@ -75,10 +75,10 @@ for module in classes.keys():
         f.write(top.format(module))
         objs = classes[module]
         for ck in objs.keys():
-            c = f[ck]
+            c = objs[ck]
             name = ck
             if 'parent' in c.keys():
-                name = '{}, {}'.format(name, c[parent])
+                name = '{}, {}'.format(name, parent)
             f.write(class_def.format(class_with_parent=name, class_name=ck))
             if 'static' in c.keys():
                 f.write(staticclass_def.format(class_name=ck))
@@ -88,12 +88,12 @@ for module in classes.keys():
             if c['variables']:
                 for variable in c['variables']:
                     policy = policy_def if variable[1] else ''
-                    f.write(bitfield_def.format(class_name=ck, var_name=variable[0], policy=policy))
+                    f.write(variable_def.format(class_name=ck, var_name=variable[0], policy=policy))
             if c['functions']:
                 for function in c['functions']:
                     policy = policy_def if function[1] else ''
-                    f.write(bitfield_def.format(class_name=ck, func_name=function[0], policy=policy))
-            f.write(';\n')
+                    f.write(function_def.format(class_name=ck, func_name=function[0], policy=policy))
+            f.write('\t\t;\n')
         f.write(bottom)
 
 # for s in classes.keys():
