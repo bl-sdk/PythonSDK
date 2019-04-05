@@ -230,27 +230,27 @@ void Export_pystes_GearboxFramework_structs(py::module &m)
 	py::class_< FTimeStampedRecord >(m, "FTimeStampedRecord")
 		.def_readwrite("DeathTimeStamp", &FTimeStampedRecord::DeathTimeStamp)
 		;
-	py::class_< FKnowledgeRecordStruct, UAudioDevice >(m, "FKnowledgeRecordStruct")
+	py::class_< FKnowledgeRecordStruct, FTimeStampedRecord >(m, "FKnowledgeRecordStruct")
 		.def_readwrite("TheObj", &FKnowledgeRecordStruct::TheObj, py::return_value_policy::reference)
 		.def_readwrite("InUse", &FKnowledgeRecordStruct::InUse)
 		;
-	py::class_< FRuleSetRecord, UAudioDevice >(m, "FRuleSetRecord")
+	py::class_< FRuleSetRecord, FTimeStampedRecord >(m, "FRuleSetRecord")
 		.def_readwrite("TheObj", &FRuleSetRecord::TheObj, py::return_value_policy::reference)
 		.def_readwrite("InUse", &FRuleSetRecord::InUse)
 		;
-	py::class_< FRuleRecord, UAudioDevice >(m, "FRuleRecord")
+	py::class_< FRuleRecord, FTimeStampedRecord >(m, "FRuleRecord")
 		.def_readwrite("TheObj", &FRuleRecord::TheObj, py::return_value_policy::reference)
 		.def_readwrite("InUse", &FRuleRecord::InUse)
 		;
-	py::class_< FActionSequenceRecord, UAudioDevice >(m, "FActionSequenceRecord")
+	py::class_< FActionSequenceRecord, FTimeStampedRecord >(m, "FActionSequenceRecord")
 		.def_readwrite("TheObj", &FActionSequenceRecord::TheObj, py::return_value_policy::reference)
 		.def_readwrite("InUse", &FActionSequenceRecord::InUse)
 		;
-	py::class_< FTargetInfoRecord, UAudioDevice >(m, "FTargetInfoRecord")
+	py::class_< FTargetInfoRecord, FTimeStampedRecord >(m, "FTargetInfoRecord")
 		.def_readwrite("TheObj", &FTargetInfoRecord::TheObj, py::return_value_policy::reference)
 		.def_readwrite("InUse", &FTargetInfoRecord::InUse)
 		;
-	py::class_< FAIDefinitionRecord, UAudioDevice >(m, "FAIDefinitionRecord")
+	py::class_< FAIDefinitionRecord, FTimeStampedRecord >(m, "FAIDefinitionRecord")
 		.def_readwrite("TheObj", &FAIDefinitionRecord::TheObj, py::return_value_policy::reference)
 		.def_readwrite("InUse", &FAIDefinitionRecord::InUse)
 		;
@@ -289,7 +289,7 @@ void Export_pystes_GearboxFramework_structs(py::module &m)
 		.def_readwrite("Delay", &FBehaviorTimerState::Delay)
 		.def_readwrite("EventTime", &FBehaviorTimerState::EventTime)
 		;
-	py::class_< FTimerEventReactionDataSpecialized, UAudioDevice >(m, "FTimerEventReactionDataSpecialized")
+	py::class_< FTimerEventReactionDataSpecialized, FSpecializedBehaviorEvent >(m, "FTimerEventReactionDataSpecialized")
 		;
 	py::class_< FTimerBehaviorUserState >(m, "FTimerBehaviorUserState")
 		;
@@ -537,10 +537,10 @@ void Export_pystes_GearboxFramework_structs(py::module &m)
 		.def_property("PlayLocal", [](FSMBehavior &self){return self.PlayLocal;}, [](FSMBehavior &self, bool value){self.PlayLocal = value ? 1 : 0;})
 		.def_readwrite("Behaviors", &FSMBehavior::Behaviors, py::return_value_policy::reference)
 		;
-	py::class_< FSMNotify, UAudioDevice >(m, "FSMNotify")
+	py::class_< FSMNotify, FSMBehavior >(m, "FSMNotify")
 		.def_readwrite("Time", &FSMNotify::Time)
 		;
-	py::class_< FTimedAnimBehaviorEvent, UAudioDevice >(m, "FTimedAnimBehaviorEvent")
+	py::class_< FTimedAnimBehaviorEvent, FSpecializedBehaviorEvent >(m, "FTimedAnimBehaviorEvent")
 		.def_property("bServerOnly", [](FTimedAnimBehaviorEvent &self){return self.bServerOnly;}, [](FTimedAnimBehaviorEvent &self, bool value){self.bServerOnly = value ? 1 : 0;})
 		.def_readwrite("Time", &FTimedAnimBehaviorEvent::Time)
 		;
@@ -805,7 +805,7 @@ void Export_pystes_GearboxFramework_structs(py::module &m)
 		.def_readwrite("OtherObject", &FGearboxGFxPlayParameters::OtherObject, py::return_value_policy::reference)
 		.def_readwrite("PlayerOwner", &FGearboxGFxPlayParameters::PlayerOwner, py::return_value_policy::reference)
 		;
-	py::class_< FMovieRangeStateData, UAudioDevice >(m, "FMovieRangeStateData")
+	py::class_< FMovieRangeStateData, FMovieStateData >(m, "FMovieRangeStateData")
 		.def_readwrite("Distance", &FMovieRangeStateData::Distance)
 		;
 	py::class_< FAttributeValuePair >(m, "FAttributeValuePair")
@@ -821,7 +821,7 @@ void Export_pystes_GearboxFramework_structs(py::module &m)
 		.def_readwrite("EventName", &FCustomEventReactionData::EventName, py::return_value_policy::reference)
 		.def_readwrite("Behaviors", &FCustomEventReactionData::Behaviors, py::return_value_policy::reference)
 		;
-	py::class_< FCustomEventReactionDataSpecialized, UAudioDevice >(m, "FCustomEventReactionDataSpecialized")
+	py::class_< FCustomEventReactionDataSpecialized, FSpecializedBehaviorEvent >(m, "FCustomEventReactionDataSpecialized")
 		.def_property("bReplicateEvent", [](FCustomEventReactionDataSpecialized &self){return self.bReplicateEvent;}, [](FCustomEventReactionDataSpecialized &self, bool value){self.bReplicateEvent = value ? 1 : 0;})
 		;
 	py::class_< FHitTargetRecord >(m, "FHitTargetRecord")

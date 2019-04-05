@@ -94,8 +94,7 @@ for filename in os.listdir(dir_path_h):
 					c = line.split(' ')[1].strip()
 					objs[c] = {}
 					if ':' in line:
-						parent = line.split(' ')[-1].strip()
-						objs[c]['parent'] = parent
+						objs[c]['parent'] = line.split(' ')[-1].strip()
 				if '[' in line.split('//')[0]:
 					continue
 				if ' : 1;' in line:
@@ -157,7 +156,7 @@ for module in classes.keys():
 			c = objs[ck]
 			name = ck
 			if 'parent' in c.keys():
-				name = '{}, {}'.format(name, parent)
+				name = '{}, {}'.format(name, c['parent'])
 			f.write(class_def.format(class_with_parent=name, class_name=ck))
 			if 'static' in c.keys():
 				f.write(staticclass_def.format(class_name=ck))

@@ -102,7 +102,7 @@ void Export_pystes_IpDrv_structs(py::module &m)
 		.def_readwrite("WorldwideTotal", &FPlaylistPopulation::WorldwideTotal)
 		.def_readwrite("RegionTotal", &FPlaylistPopulation::RegionTotal)
 		;
-	py::class_< FTitleFileMcp, UAudioDevice >(m, "FTitleFileMcp")
+	py::class_< FTitleFileMcp, FTitleFile >(m, "FTitleFileMcp")
 		.def_readwrite("HttpDownloader", &FTitleFileMcp::HttpDownloader, py::return_value_policy::reference)
 		;
 	py::class_< FFileNameToURLMapping >(m, "FFileNameToURLMapping")

@@ -195,7 +195,7 @@ void Export_pystes_Engine_structs(py::module &m)
 	py::class_< FOnlineRegistrant >(m, "FOnlineRegistrant")
 		.def_readwrite("PlayerNetId", &FOnlineRegistrant::PlayerNetId, py::return_value_policy::reference)
 		;
-	py::class_< FOnlineArbitrationRegistrant, UAudioDevice >(m, "FOnlineArbitrationRegistrant")
+	py::class_< FOnlineArbitrationRegistrant, FOnlineRegistrant >(m, "FOnlineArbitrationRegistrant")
 		.def_readwrite("MachineId", &FOnlineArbitrationRegistrant::MachineId, py::return_value_policy::reference)
 		.def_readwrite("Trustworthiness", &FOnlineArbitrationRegistrant::Trustworthiness)
 		;
@@ -351,7 +351,7 @@ void Export_pystes_Engine_structs(py::module &m)
 		.def_readwrite("EngineVersion", &FOnlineContentNameInfo::EngineVersion)
 		.def_readwrite("CookedVersionID", &FOnlineContentNameInfo::CookedVersionID, py::return_value_policy::reference)
 		;
-	py::class_< FNamedOnlineContent, UAudioDevice >(m, "FNamedOnlineContent")
+	py::class_< FNamedOnlineContent, FOnlineContent >(m, "FNamedOnlineContent")
 		.def_readwrite("NameInfo", &FNamedOnlineContent::NameInfo, py::return_value_policy::reference)
 		.def_readwrite("NamedContentType", &FNamedOnlineContent::NamedContentType)
 		;
@@ -377,7 +377,7 @@ void Export_pystes_Engine_structs(py::module &m)
 		.def_readwrite("PresenceInfo", &FOnlineFriend::PresenceInfo, py::return_value_policy::reference)
 		.def_readwrite("FriendState", &FOnlineFriend::FriendState)
 		;
-	py::class_< FOnlineCrossTitleContent, UAudioDevice >(m, "FOnlineCrossTitleContent")
+	py::class_< FOnlineCrossTitleContent, FOnlineContent >(m, "FOnlineCrossTitleContent")
 		.def_readwrite("TitleId", &FOnlineCrossTitleContent::TitleId)
 		;
 	py::class_< FFriendsQuery >(m, "FFriendsQuery")
@@ -389,10 +389,10 @@ void Export_pystes_Engine_structs(py::module &m)
 		.def_readwrite("EndPointPort", &FBaseAuthSession::EndPointPort)
 		.def_readwrite("EndPointUID", &FBaseAuthSession::EndPointUID, py::return_value_policy::reference)
 		;
-	py::class_< FLocalAuthSession, UAudioDevice >(m, "FLocalAuthSession")
+	py::class_< FLocalAuthSession, FBaseAuthSession >(m, "FLocalAuthSession")
 		.def_readwrite("SessionUID", &FLocalAuthSession::SessionUID)
 		;
-	py::class_< FAuthSession, UAudioDevice >(m, "FAuthSession")
+	py::class_< FAuthSession, FBaseAuthSession >(m, "FAuthSession")
 		.def_readwrite("AuthStatus", &FAuthSession::AuthStatus)
 		.def_readwrite("AuthBlobUID", &FAuthSession::AuthBlobUID)
 		;
@@ -1107,10 +1107,10 @@ void Export_pystes_Engine_structs(py::module &m)
 		.def_readwrite("InterpTime", &FScalarParameterInterpStruct::InterpTime)
 		.def_readwrite("WarmupTime", &FScalarParameterInterpStruct::WarmupTime)
 		;
-	py::class_< FLightmassPointLightSettings, UAudioDevice >(m, "FLightmassPointLightSettings")
+	py::class_< FLightmassPointLightSettings, FLightmassLightSettings >(m, "FLightmassPointLightSettings")
 		.def_readwrite("LightSourceRadius", &FLightmassPointLightSettings::LightSourceRadius)
 		;
-	py::class_< FLightmassDirectionalLightSettings, UAudioDevice >(m, "FLightmassDirectionalLightSettings")
+	py::class_< FLightmassDirectionalLightSettings, FLightmassLightSettings >(m, "FLightmassDirectionalLightSettings")
 		.def_readwrite("LightSourceAngle", &FLightmassDirectionalLightSettings::LightSourceAngle)
 		;
 	py::class_< FLightmassPrimitiveSettings >(m, "FLightmassPrimitiveSettings")
@@ -1589,7 +1589,7 @@ void Export_pystes_Engine_structs(py::module &m)
 		.def_readwrite("NetIdValue", &FUIProviderScriptFieldValue::NetIdValue, py::return_value_policy::reference)
 		.def_readwrite("AtlasCoordinates", &FUIProviderScriptFieldValue::AtlasCoordinates, py::return_value_policy::reference)
 		;
-	py::class_< FUIProviderFieldValue, UAudioDevice >(m, "FUIProviderFieldValue")
+	py::class_< FUIProviderFieldValue, FUIProviderScriptFieldValue >(m, "FUIProviderFieldValue")
 		.def_readwrite("CustomStringNode", &FUIProviderFieldValue::CustomStringNode, py::return_value_policy::reference)
 		;
 	py::class_< FInputKeyAction >(m, "FInputKeyAction")
@@ -1618,7 +1618,7 @@ void Export_pystes_Engine_structs(py::module &m)
 		.def_readwrite("InputDelta", &FInputEventParameters::InputDelta)
 		.def_readwrite("DeltaTime", &FInputEventParameters::DeltaTime)
 		;
-	py::class_< FSubscribedInputEventParameters, UAudioDevice >(m, "FSubscribedInputEventParameters")
+	py::class_< FSubscribedInputEventParameters, FInputEventParameters >(m, "FSubscribedInputEventParameters")
 		.def_readwrite("InputAliasName", &FSubscribedInputEventParameters::InputAliasName, py::return_value_policy::reference)
 		;
 	py::class_< FUIAxisEmulationDefinition >(m, "FUIAxisEmulationDefinition")
@@ -1664,7 +1664,7 @@ void Export_pystes_Engine_structs(py::module &m)
 		.def_readwrite("LastTargetLocation", &FDynamicLinkInfo::LastTargetLocation, py::return_value_policy::reference)
 		.def_readwrite("LastSrcLocation", &FDynamicLinkInfo::LastSrcLocation, py::return_value_policy::reference)
 		;
-	py::class_< FCoverReference, UAudioDevice >(m, "FCoverReference")
+	py::class_< FCoverReference, FActorReference >(m, "FCoverReference")
 		.def_readwrite("SlotIdx", &FCoverReference::SlotIdx)
 		;
 	py::class_< FExposedLink >(m, "FExposedLink")
@@ -1843,19 +1843,19 @@ void Export_pystes_Engine_structs(py::module &m)
 		.def_readwrite("MaskA", &FMaterialInput::MaskA)
 		.def_readwrite("GCC64_Padding", &FMaterialInput::GCC64_Padding)
 		;
-	py::class_< FColorMaterialInput, UAudioDevice >(m, "FColorMaterialInput")
+	py::class_< FColorMaterialInput, FMaterialInput >(m, "FColorMaterialInput")
 		.def_property("UseConstant", [](FColorMaterialInput &self){return self.UseConstant;}, [](FColorMaterialInput &self, bool value){self.UseConstant = value ? 1 : 0;})
 		.def_readwrite("Constant", &FColorMaterialInput::Constant, py::return_value_policy::reference)
 		;
-	py::class_< FScalarMaterialInput, UAudioDevice >(m, "FScalarMaterialInput")
+	py::class_< FScalarMaterialInput, FMaterialInput >(m, "FScalarMaterialInput")
 		.def_property("UseConstant", [](FScalarMaterialInput &self){return self.UseConstant;}, [](FScalarMaterialInput &self, bool value){self.UseConstant = value ? 1 : 0;})
 		.def_readwrite("Constant", &FScalarMaterialInput::Constant)
 		;
-	py::class_< FVectorMaterialInput, UAudioDevice >(m, "FVectorMaterialInput")
+	py::class_< FVectorMaterialInput, FMaterialInput >(m, "FVectorMaterialInput")
 		.def_property("UseConstant", [](FVectorMaterialInput &self){return self.UseConstant;}, [](FVectorMaterialInput &self, bool value){self.UseConstant = value ? 1 : 0;})
 		.def_readwrite("Constant", &FVectorMaterialInput::Constant, py::return_value_policy::reference)
 		;
-	py::class_< FVector2MaterialInput, UAudioDevice >(m, "FVector2MaterialInput")
+	py::class_< FVector2MaterialInput, FMaterialInput >(m, "FVector2MaterialInput")
 		.def_property("UseConstant", [](FVector2MaterialInput &self){return self.UseConstant;}, [](FVector2MaterialInput &self, bool value){self.UseConstant = value ? 1 : 0;})
 		.def_readwrite("ConstantX", &FVector2MaterialInput::ConstantX)
 		.def_readwrite("ConstantY", &FVector2MaterialInput::ConstantY)
@@ -1887,7 +1887,7 @@ void Export_pystes_Engine_structs(py::module &m)
 		.def_property("bIsDownloaded", [](FMarketplaceOfferDownloadState &self){return self.bIsDownloaded;}, [](FMarketplaceOfferDownloadState &self, bool value){self.bIsDownloaded = value ? 1 : 0;})
 		.def_property("bIsInstalled", [](FMarketplaceOfferDownloadState &self){return self.bIsInstalled;}, [](FMarketplaceOfferDownloadState &self, bool value){self.bIsInstalled = value ? 1 : 0;})
 		;
-	py::class_< FRejectedContentInfo, UAudioDevice >(m, "FRejectedContentInfo")
+	py::class_< FRejectedContentInfo, FInstalledContentInfo >(m, "FRejectedContentInfo")
 		.def_readwrite("Result", &FRejectedContentInfo::Result)
 		;
 	py::class_< FDlcContentId >(m, "FDlcContentId")
@@ -1905,7 +1905,7 @@ void Export_pystes_Engine_structs(py::module &m)
 		.def_readwrite("C", &FDlcCompatibilityData::C)
 		.def_readwrite("D", &FDlcCompatibilityData::D)
 		;
-	py::class_< FDlcCompatibilityDataEx, UAudioDevice >(m, "FDlcCompatibilityDataEx")
+	py::class_< FDlcCompatibilityDataEx, FDlcCompatibilityData >(m, "FDlcCompatibilityDataEx")
 		;
 	py::class_< ADynamicBlockingVolume_FCheckpointRecord >(m, "ADynamicBlockingVolume_FCheckpointRecord")
 		.def_property("bCollideActors", [](ADynamicBlockingVolume_FCheckpointRecord &self){return self.bCollideActors;}, [](ADynamicBlockingVolume_FCheckpointRecord &self, bool value){self.bCollideActors = value ? 1 : 0;})
@@ -1937,22 +1937,22 @@ void Export_pystes_Engine_structs(py::module &m)
 		.def_readwrite("Direction", &FParticleEventData::Direction, py::return_value_policy::reference)
 		.def_readwrite("Velocity", &FParticleEventData::Velocity, py::return_value_policy::reference)
 		;
-	py::class_< FParticleEventSpawnData, UAudioDevice >(m, "FParticleEventSpawnData")
+	py::class_< FParticleEventSpawnData, FParticleEventData >(m, "FParticleEventSpawnData")
 		;
-	py::class_< FParticleEventDeathData, UAudioDevice >(m, "FParticleEventDeathData")
+	py::class_< FParticleEventDeathData, FParticleEventData >(m, "FParticleEventDeathData")
 		.def_readwrite("ParticleTime", &FParticleEventDeathData::ParticleTime)
 		;
-	py::class_< FParticleEventCollideData, UAudioDevice >(m, "FParticleEventCollideData")
+	py::class_< FParticleEventCollideData, FParticleEventData >(m, "FParticleEventCollideData")
 		.def_readwrite("ParticleTime", &FParticleEventCollideData::ParticleTime)
 		.def_readwrite("Normal", &FParticleEventCollideData::Normal, py::return_value_policy::reference)
 		.def_readwrite("Time", &FParticleEventCollideData::Time)
 		.def_readwrite("Item", &FParticleEventCollideData::Item)
 		.def_readwrite("BoneName", &FParticleEventCollideData::BoneName, py::return_value_policy::reference)
 		;
-	py::class_< FParticleEventTraceData, UAudioDevice >(m, "FParticleEventTraceData")
+	py::class_< FParticleEventTraceData, FParticleEventData >(m, "FParticleEventTraceData")
 		.def_readwrite("ParticleTime", &FParticleEventTraceData::ParticleTime)
 		;
-	py::class_< FParticleEventKismetData, UAudioDevice >(m, "FParticleEventKismetData")
+	py::class_< FParticleEventKismetData, FParticleEventData >(m, "FParticleEventKismetData")
 		.def_property("UsePSysCompLocation", [](FParticleEventKismetData &self){return self.UsePSysCompLocation;}, [](FParticleEventKismetData &self, bool value){self.UsePSysCompLocation = value ? 1 : 0;})
 		.def_readwrite("Normal", &FParticleEventKismetData::Normal, py::return_value_policy::reference)
 		;
@@ -2021,7 +2021,7 @@ void Export_pystes_Engine_structs(py::module &m)
 		.def_readwrite("ZAxis", &FFoliageInstanceBase::ZAxis, py::return_value_policy::reference)
 		.def_readwrite("DistanceFactorSquared", &FFoliageInstanceBase::DistanceFactorSquared)
 		;
-	py::class_< FStoredFoliageInstance, UAudioDevice >(m, "FStoredFoliageInstance")
+	py::class_< FStoredFoliageInstance, FFoliageInstanceBase >(m, "FStoredFoliageInstance")
 		;
 	py::class_< FFoliageMesh >(m, "FFoliageMesh")
 		.def_property("bCreateInstancesOnBSP", [](FFoliageMesh &self){return self.bCreateInstancesOnBSP;}, [](FFoliageMesh &self, bool value){self.bCreateInstancesOnBSP = value ? 1 : 0;})
@@ -2329,7 +2329,7 @@ void Export_pystes_Engine_structs(py::module &m)
 		.def_readwrite("Mesh", &FGBXConnectedNavMesh::Mesh, py::return_value_policy::reference)
 		.def_readwrite("MeshID", &FGBXConnectedNavMesh::MeshID)
 		;
-	py::class_< FGBXNavMeshVertex, UAudioDevice >(m, "FGBXNavMeshVertex")
+	py::class_< FGBXNavMeshVertex, FVector >(m, "FGBXNavMeshVertex")
 		;
 	py::class_< FGBXNavMeshPoly >(m, "FGBXNavMeshPoly")
 		;
@@ -2783,18 +2783,18 @@ void Export_pystes_Engine_structs(py::module &m)
 		.def_readwrite("CycleTime", &FParameterValueOverTime::CycleTime)
 		.def_readwrite("OffsetTime", &FParameterValueOverTime::OffsetTime)
 		;
-	py::class_< FFontParameterValueOverTime, UAudioDevice >(m, "FFontParameterValueOverTime")
+	py::class_< FFontParameterValueOverTime, FParameterValueOverTime >(m, "FFontParameterValueOverTime")
 		.def_readwrite("FontValue", &FFontParameterValueOverTime::FontValue, py::return_value_policy::reference)
 		.def_readwrite("FontPage", &FFontParameterValueOverTime::FontPage)
 		;
-	py::class_< FScalarParameterValueOverTime, UAudioDevice >(m, "FScalarParameterValueOverTime")
+	py::class_< FScalarParameterValueOverTime, FParameterValueOverTime >(m, "FScalarParameterValueOverTime")
 		.def_readwrite("ParameterValue", &FScalarParameterValueOverTime::ParameterValue)
 		.def_readwrite("ParameterValueCurve", &FScalarParameterValueOverTime::ParameterValueCurve, py::return_value_policy::reference)
 		;
-	py::class_< FTextureParameterValueOverTime, UAudioDevice >(m, "FTextureParameterValueOverTime")
+	py::class_< FTextureParameterValueOverTime, FParameterValueOverTime >(m, "FTextureParameterValueOverTime")
 		.def_readwrite("ParameterValue", &FTextureParameterValueOverTime::ParameterValue, py::return_value_policy::reference)
 		;
-	py::class_< FVectorParameterValueOverTime, UAudioDevice >(m, "FVectorParameterValueOverTime")
+	py::class_< FVectorParameterValueOverTime, FParameterValueOverTime >(m, "FVectorParameterValueOverTime")
 		.def_readwrite("ParameterValue", &FVectorParameterValueOverTime::ParameterValue, py::return_value_policy::reference)
 		.def_readwrite("ParameterValueCurve", &FVectorParameterValueOverTime::ParameterValueCurve, py::return_value_policy::reference)
 		;
@@ -2925,10 +2925,10 @@ void Export_pystes_Engine_structs(py::module &m)
 	py::class_< FPersistentData >(m, "FPersistentData")
 		.def_readwrite("VfTable", &FPersistentData::VfTable, py::return_value_policy::reference)
 		;
-	py::class_< FPersistentSequenceEventData, UAudioDevice >(m, "FPersistentSequenceEventData")
+	py::class_< FPersistentSequenceEventData, FPersistentData >(m, "FPersistentSequenceEventData")
 		.def_readwrite("TriggerCount", &FPersistentSequenceEventData::TriggerCount)
 		;
-	py::class_< FPersistentSeqAct_InterpData, UAudioDevice >(m, "FPersistentSeqAct_InterpData")
+	py::class_< FPersistentSeqAct_InterpData, FPersistentData >(m, "FPersistentSeqAct_InterpData")
 		.def_readwrite("Position", &FPersistentSeqAct_InterpData::Position)
 		;
 	py::class_< APointLightToggleable_FCheckpointRecord >(m, "APointLightToggleable_FCheckpointRecord")
@@ -3318,7 +3318,7 @@ void Export_pystes_Engine_structs(py::module &m)
 		.def_readwrite("CurrentRepeatKey", &FUIKeyRepeatData::CurrentRepeatKey, py::return_value_policy::reference)
 		.def_readwrite("NextRepeatTime", &FUIKeyRepeatData::NextRepeatTime, py::return_value_policy::reference)
 		;
-	py::class_< FUIAxisEmulationData, UAudioDevice >(m, "FUIAxisEmulationData")
+	py::class_< FUIAxisEmulationData, FUIKeyRepeatData >(m, "FUIAxisEmulationData")
 		.def_property("bEnabled", [](FUIAxisEmulationData &self){return self.bEnabled;}, [](FUIAxisEmulationData &self, bool value){self.bEnabled = value ? 1 : 0;})
 		;
 	py::class_< FSoundEventMapping >(m, "FSoundEventMapping")

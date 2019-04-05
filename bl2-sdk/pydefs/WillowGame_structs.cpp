@@ -99,7 +99,7 @@ void Export_pystes_WillowGame_structs(py::module &m)
 		.def_readwrite("LineOfSight", &FCombatZoneSearchData::LineOfSight)
 		.def_readwrite("LineOfSightTimeLimit", &FCombatZoneSearchData::LineOfSightTimeLimit, py::return_value_policy::reference)
 		;
-	py::class_< FCombatPointSearchData, UAudioDevice >(m, "FCombatPointSearchData")
+	py::class_< FCombatPointSearchData, FCombatZoneSearchData >(m, "FCombatPointSearchData")
 		.def_property("bUseCover", [](FCombatPointSearchData &self){return self.bUseCover;}, [](FCombatPointSearchData &self, bool value){self.bUseCover = value ? 1 : 0;})
 		.def_readwrite("PointRadius", &FCombatPointSearchData::PointRadius)
 		;
@@ -332,7 +332,7 @@ void Export_pystes_WillowGame_structs(py::module &m)
 		.def_readwrite("CustomItemPoolList", &FAIPawnGradeModifierData::CustomItemPoolList, py::return_value_policy::reference)
 		.def_readwrite("TransformedNames", &FAIPawnGradeModifierData::TransformedNames, py::return_value_policy::reference)
 		;
-	py::class_< FAIPawnGameStageGradeWeightData, UAudioDevice >(m, "FAIPawnGameStageGradeWeightData")
+	py::class_< FAIPawnGameStageGradeWeightData, FGameStageGradeWeightData >(m, "FAIPawnGameStageGradeWeightData")
 		.def_readwrite("GradeModifiers", &FAIPawnGameStageGradeWeightData::GradeModifiers, py::return_value_policy::reference)
 		;
 	py::class_< FCellInfo >(m, "FCellInfo")
@@ -864,7 +864,7 @@ void Export_pystes_WillowGame_structs(py::module &m)
 		.def_readwrite("DamageSourceTrigger", &FGoreTriggerData::DamageSourceTrigger, py::return_value_policy::reference)
 		.def_readwrite("HealthPctDamageThreshold", &FGoreTriggerData::HealthPctDamageThreshold)
 		;
-	py::class_< FDamageReactionData, UAudioDevice >(m, "FDamageReactionData")
+	py::class_< FDamageReactionData, FSpecializedBehaviorEvent >(m, "FDamageReactionData")
 		.def_property("bDamageThreshold", [](FDamageReactionData &self){return self.bDamageThreshold;}, [](FDamageReactionData &self, bool value){self.bDamageThreshold = value ? 1 : 0;})
 		.def_property("bRepeatableEvent", [](FDamageReactionData &self){return self.bRepeatableEvent;}, [](FDamageReactionData &self, bool value){self.bRepeatableEvent = value ? 1 : 0;})
 		.def_property("bCensored", [](FDamageReactionData &self){return self.bCensored;}, [](FDamageReactionData &self, bool value){self.bCensored = value ? 1 : 0;})
@@ -913,11 +913,11 @@ void Export_pystes_WillowGame_structs(py::module &m)
 		.def_readwrite("DamageTypeConstraint", &FSkillDamagedEventConstraintData::DamageTypeConstraint, py::return_value_policy::reference)
 		.def_readwrite("DamageSourceConstraint", &FSkillDamagedEventConstraintData::DamageSourceConstraint, py::return_value_policy::reference)
 		;
-	py::class_< FSkillKillEventData, UAudioDevice >(m, "FSkillKillEventData")
+	py::class_< FSkillKillEventData, FSpecializedBehaviorEvent >(m, "FSkillKillEventData")
 		.def_readwrite("EventType", &FSkillKillEventData::EventType)
 		.def_readwrite("EventConstraints", &FSkillKillEventData::EventConstraints, py::return_value_policy::reference)
 		;
-	py::class_< FSkillDamageEventData, UAudioDevice >(m, "FSkillDamageEventData")
+	py::class_< FSkillDamageEventData, FSpecializedBehaviorEvent >(m, "FSkillDamageEventData")
 		.def_readwrite("EventType", &FSkillDamageEventData::EventType)
 		.def_readwrite("EventConstraints", &FSkillDamageEventData::EventConstraints, py::return_value_policy::reference)
 		;
@@ -1474,7 +1474,7 @@ void Export_pystes_WillowGame_structs(py::module &m)
 		.def_readwrite("UpgradeDefinition", &FBlackMarketUpgradeLevelData::UpgradeDefinition, py::return_value_policy::reference)
 		.def_readwrite("MaxUpgradeLevel", &FBlackMarketUpgradeLevelData::MaxUpgradeLevel)
 		;
-	py::class_< FTechDeathData, UAudioDevice >(m, "FTechDeathData")
+	py::class_< FTechDeathData, FSpecializedBehaviorEvent >(m, "FTechDeathData")
 		.def_readwrite("DamageTypeTriggers", &FTechDeathData::DamageTypeTriggers, py::return_value_policy::reference)
 		.def_readwrite("DeathAnimation", &FTechDeathData::DeathAnimation, py::return_value_policy::reference)
 		;
@@ -1495,7 +1495,7 @@ void Export_pystes_WillowGame_structs(py::module &m)
 		.def_readwrite("ExpLevel", &FInventoryGradeModifierData::ExpLevel)
 		.def_readwrite("CustomInventoryDefinition", &FInventoryGradeModifierData::CustomInventoryDefinition, py::return_value_policy::reference)
 		;
-	py::class_< FInventoryGameStageGradeWeightData, UAudioDevice >(m, "FInventoryGameStageGradeWeightData")
+	py::class_< FInventoryGameStageGradeWeightData, FGameStageGradeWeightData >(m, "FInventoryGameStageGradeWeightData")
 		.def_readwrite("GradeModifiers", &FInventoryGameStageGradeWeightData::GradeModifiers, py::return_value_policy::reference)
 		;
 	py::class_< FInventoryManufacturerBalanceData >(m, "FInventoryManufacturerBalanceData")
@@ -1739,7 +1739,7 @@ void Export_pystes_WillowGame_structs(py::module &m)
 		.def_readwrite("IncludedCustomLootLists", &FInteractiveObjectGradeModifierData::IncludedCustomLootLists, py::return_value_policy::reference)
 		.def_readwrite("CustomLoot", &FInteractiveObjectGradeModifierData::CustomLoot, py::return_value_policy::reference)
 		;
-	py::class_< FInteractiveObjectGameStageGradeWeightData, UAudioDevice >(m, "FInteractiveObjectGameStageGradeWeightData")
+	py::class_< FInteractiveObjectGameStageGradeWeightData, FGameStageGradeWeightData >(m, "FInteractiveObjectGameStageGradeWeightData")
 		.def_readwrite("GradeModifiers", &FInteractiveObjectGameStageGradeWeightData::GradeModifiers, py::return_value_policy::reference)
 		;
 	py::class_< FBulletImpactEventData >(m, "FBulletImpactEventData")
@@ -1869,7 +1869,7 @@ void Export_pystes_WillowGame_structs(py::module &m)
 		.def_readwrite("Object", &FMinimapIconClip::Object, py::return_value_policy::reference)
 		.def_readwrite("MapPos", &FMinimapIconClip::MapPos, py::return_value_policy::reference)
 		;
-	py::class_< FMinimapObjectiveIconClip, UAudioDevice >(m, "FMinimapObjectiveIconClip")
+	py::class_< FMinimapObjectiveIconClip, FMinimapIconClip >(m, "FMinimapObjectiveIconClip")
 		.def_readwrite("OptionalClip", &FMinimapObjectiveIconClip::OptionalClip, py::return_value_policy::reference)
 		.def_readwrite("AboveClip", &FMinimapObjectiveIconClip::AboveClip, py::return_value_policy::reference)
 		.def_readwrite("BelowClip", &FMinimapObjectiveIconClip::BelowClip, py::return_value_policy::reference)
@@ -1898,7 +1898,7 @@ void Export_pystes_WillowGame_structs(py::module &m)
 		.def_readwrite("CachedTextboxWidth", &FWorldSpaceIcon::CachedTextboxWidth)
 		.def_readwrite("CachedTextboxHeight", &FWorldSpaceIcon::CachedTextboxHeight)
 		;
-	py::class_< FObjectiveIcon, UAudioDevice >(m, "FObjectiveIcon")
+	py::class_< FObjectiveIcon, FWorldSpaceIcon >(m, "FObjectiveIcon")
 		.def_property("bInWorldSpace", [](FObjectiveIcon &self){return self.bInWorldSpace;}, [](FObjectiveIcon &self, bool value){self.bInWorldSpace = value ? 1 : 0;})
 		.def_readwrite("TransitionStartTime", &FObjectiveIcon::TransitionStartTime)
 		.def_readwrite("LastLocation", &FObjectiveIcon::LastLocation, py::return_value_policy::reference)
@@ -1909,7 +1909,7 @@ void Export_pystes_WillowGame_structs(py::module &m)
 		.def_readwrite("BelowClip", &FObjectiveIcon::BelowClip, py::return_value_policy::reference)
 		.def_readwrite("OptionalClip", &FObjectiveIcon::OptionalClip, py::return_value_policy::reference)
 		;
-	py::class_< FPlayerIcon, UAudioDevice >(m, "FPlayerIcon")
+	py::class_< FPlayerIcon, FWorldSpaceIcon >(m, "FPlayerIcon")
 		.def_readwrite("TextClip", &FPlayerIcon::TextClip, py::return_value_policy::reference)
 		.def_readwrite("StateClip", &FPlayerIcon::StateClip, py::return_value_policy::reference)
 		;
@@ -1967,7 +1967,7 @@ void Export_pystes_WillowGame_structs(py::module &m)
 		.def_readwrite("RemappedHoldActions", &FInputRemappingButtonData::RemappedHoldActions, py::return_value_policy::reference)
 		.def_readwrite("Caption", &FInputRemappingButtonData::Caption, py::return_value_policy::reference)
 		;
-	py::class_< FBehaviorKeyFrameEventData, UAudioDevice >(m, "FBehaviorKeyFrameEventData")
+	py::class_< FBehaviorKeyFrameEventData, FSpecializedBehaviorEvent >(m, "FBehaviorKeyFrameEventData")
 		.def_readwrite("KeyTime", &FBehaviorKeyFrameEventData::KeyTime)
 		;
 	py::class_< FSimpleAnimStateData >(m, "FSimpleAnimStateData")
@@ -2225,7 +2225,7 @@ void Export_pystes_WillowGame_structs(py::module &m)
 		.def_readwrite("ExpLevel", &FVehicleGradeModifierData::ExpLevel)
 		.def_readwrite("OnSpawnCustomizations", &FVehicleGradeModifierData::OnSpawnCustomizations, py::return_value_policy::reference)
 		;
-	py::class_< FVehicleGameStageGradeWeightData, UAudioDevice >(m, "FVehicleGameStageGradeWeightData")
+	py::class_< FVehicleGameStageGradeWeightData, FGameStageGradeWeightData >(m, "FVehicleGameStageGradeWeightData")
 		.def_readwrite("GradeModifiers", &FVehicleGameStageGradeWeightData::GradeModifiers, py::return_value_policy::reference)
 		;
 	py::class_< FPopulationOptionDenSpawnData >(m, "FPopulationOptionDenSpawnData")

@@ -14,7 +14,7 @@ void Export_pystes_Core_structs(py::module &m)
 		.def_readwrite("X", &FVector2D::X)
 		.def_readwrite("Y", &FVector2D::Y)
 		;
-	py::class_< FPlane2D, UAudioDevice >(m, "FPlane2D")
+	py::class_< FPlane2D, FVector2D >(m, "FPlane2D")
 		.def_readwrite("W", &FPlane2D::W)
 		;
 	py::class_< FVector >(m, "FVector")
@@ -110,7 +110,7 @@ void Export_pystes_Core_structs(py::module &m)
 		.def_readwrite("Points", &FInterpCurveVector::Points, py::return_value_policy::reference)
 		.def_readwrite("InterpMethod", &FInterpCurveVector::InterpMethod)
 		;
-	py::class_< FPlane, UAudioDevice >(m, "FPlane")
+	py::class_< FPlane, FVector >(m, "FPlane")
 		.def_readwrite("W", &FPlane::W)
 		;
 	py::class_< FMatrix >(m, "FMatrix")
@@ -303,10 +303,10 @@ void Export_pystes_Core_structs(py::module &m)
 		.def_readwrite("int												A", &FQWord::int												A)
 		.def_readwrite("int												B", &FQWord::int												B)
 		;
-	py::class_< FRawDistributionFloat, UAudioDevice >(m, "FRawDistributionFloat")
+	py::class_< FRawDistributionFloat, FRawDistribution >(m, "FRawDistributionFloat")
 		.def_readwrite("Distribution", &FRawDistributionFloat::Distribution, py::return_value_policy::reference)
 		;
-	py::class_< FRawDistributionVector, UAudioDevice >(m, "FRawDistributionVector")
+	py::class_< FRawDistributionVector, FRawDistribution >(m, "FRawDistributionVector")
 		.def_readwrite("Distribution", &FRawDistributionVector::Distribution, py::return_value_policy::reference)
 		;
 

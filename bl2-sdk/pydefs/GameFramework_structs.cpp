@@ -47,13 +47,13 @@ void Export_pystes_GameFramework_structs(py::module &m)
 		.def_readwrite("TotalEvents", &FEventsBase::TotalEvents, py::return_value_policy::reference)
 		.def_readwrite("EventsByClass", &FEventsBase::EventsByClass, py::return_value_policy::reference)
 		;
-	py::class_< FWeaponEvents, UAudioDevice >(m, "FWeaponEvents")
+	py::class_< FWeaponEvents, FEventsBase >(m, "FWeaponEvents")
 		;
-	py::class_< FDamageEvents, UAudioDevice >(m, "FDamageEvents")
+	py::class_< FDamageEvents, FEventsBase >(m, "FDamageEvents")
 		;
-	py::class_< FProjectileEvents, UAudioDevice >(m, "FProjectileEvents")
+	py::class_< FProjectileEvents, FEventsBase >(m, "FProjectileEvents")
 		;
-	py::class_< FPawnEvents, UAudioDevice >(m, "FPawnEvents")
+	py::class_< FPawnEvents, FEventsBase >(m, "FPawnEvents")
 		;
 	py::class_< FTeamEvents >(m, "FTeamEvents")
 		.def_readwrite("TotalEvents", &FTeamEvents::TotalEvents, py::return_value_policy::reference)
