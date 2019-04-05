@@ -100,7 +100,7 @@ namespace pybind11 {
 	{
 		static const void *get(const UObject *src, const std::type_info*& type) {
 			if (src && ((UObject *)src)->Class) {
-				std::string type_name = ((UObject *)src)->Class->GetNameCPP();
+				std::string type_name = ((UObject *)src)->Class->GetName();
 				if (uobject_type_map.count(type_name))
 					type = uobject_type_map[type_name];
 				else
