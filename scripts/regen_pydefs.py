@@ -66,7 +66,6 @@ for filename in os.listdir(dir_path_h):
 					variables = []
 					functions = []
 		classes[filename.split('.')[0]] = objs
-		break
 
 
   # print('void Export_pystes{}(py::module &m);'.format(filename))
