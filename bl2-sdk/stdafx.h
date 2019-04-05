@@ -96,21 +96,23 @@ namespace BL2SDK
 #include "TypeMap.h"
 
 namespace pybind11 {
-	template <> struct polymorphic_type_hook<UObject>
+	template <typename itype> struct polymorphic_type_hook<itype, detail::enable_if_t<std::is_base_of<UObject, itype>::value>>
 	{
-		static const void *get(const UObject *src, const std::type_info*& type) {
-			if (src && ((UObject *)src)->Class) {
-				std::string type_name = ((UObject *)src)->Class->GetName();
-				if (uobject_type_map.count(type_name))
-					type = uobject_type_map[type_name];
+		static const void *get(const itype *src, const std::type_info*& type) {
+			if (src) {
+				if (((UObject *)src)->Class) {
+					std::string type_name = ((UObject *)src)->Class->GetName();
+					if (uobject_type_map.count(type_name))
+						type = uobject_type_map[type_name];
+					else
+						type = &typeid(UObject);
+				}
 				else
 					type = &typeid(UObject);
+				return src;
 			}
-			else {
-				type = src ? &typeid(*src) : nullptr;
-				return dynamic_cast<const void*>(src);
-			}
-			return src;
+			type = nullptr;
+			return dynamic_cast<const void*>(src);
 		}
 	};
 }

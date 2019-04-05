@@ -9484,7 +9484,7 @@ void Export_pystes_WillowGame_classes(py::module &m)
 		.def("LoadBuildInfo", &AWillowHUD::LoadBuildInfo)
 		.def("eventShowInspectedStatusEffectTarget", [](AWillowHUD &self , class UIStatusEffectTarget* Target, struct FVector PlayerCameraPosition, struct FVector PlayerCameraDirection) { float* pyYPos = (float*)malloc(sizeof(float)) ;   self.eventShowInspectedStatusEffectTarget(Target, PlayerCameraPosition, PlayerCameraDirection, pyYPos); return py::make_tuple(*pyYPos); })
 		.def("eventShowInspectedAI", [](AWillowHUD &self , class AWillowAIPawn* AIPawnToInspect, struct FVector PlayerCameraPosition, struct FVector PlayerCameraDirection) { float* pyYPos = (float*)malloc(sizeof(float)) ;   self.eventShowInspectedAI(AIPawnToInspect, PlayerCameraPosition, PlayerCameraDirection, pyYPos); return py::make_tuple(*pyYPos); })
-		.def("GetItemHoverBounds", [](AWillowHUD &self , class AActor* Pickup, L, L) { float* pyX = (float*)malloc(sizeof(float)) ; float* pyY = (float*)malloc(sizeof(float)) ; float* pyXL = (float*)malloc(sizeof(float)) ; float* pyYL = (float*)malloc(sizeof(float)) ;   self.GetItemHoverBounds(Pickup, pyX, pyY, pyXL, pyYL); return py::make_tuple(*pyX, *pyY, *pyXL, *pyYL); })
+		.def("GetItemHoverBounds", [](AWillowHUD &self , class AActor* Pickup) { float* pyX = (float*)malloc(sizeof(float)) ; float* pyY = (float*)malloc(sizeof(float)) ; float* pyXL = (float*)malloc(sizeof(float)) ; float* pyYL = (float*)malloc(sizeof(float)) ;   self.GetItemHoverBounds(Pickup, pyX, pyY, pyXL, pyYL); return py::make_tuple(*pyX, *pyY, *pyXL, *pyYL); })
 		;
 	py::class_< UWillowImpactDefinition, UImpactDefinition >(m, "UWillowImpactDefinition")
 		.def_static("StaticClass", &UWillowImpactDefinition::StaticClass, py::return_value_policy::reference)
