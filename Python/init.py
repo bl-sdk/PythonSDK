@@ -8,3 +8,4 @@ def log(s):
 print = log
 
 import commander_wannabe
+import rando

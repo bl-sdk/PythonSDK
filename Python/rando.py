@@ -282,3 +282,6 @@ def randomize(who, seed = None):
     else:
         for package_name, hunter_skills in hunters.values():
             randomize_hunter(package_name, hunter_skills, skill_mapping, rng)
+
+print("[Randomizer] Initialized. Run `py randomize('<vault hunter>', <seed>)` to randomize. Leave seed blank for a random seed.")
+print("[Randomizer] Warning: Running `randomize` at any time other than your first time on the main menu may cause instability.")
