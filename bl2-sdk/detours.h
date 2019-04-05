@@ -11,7 +11,7 @@
 #ifndef _DETOURS_H_
 #define _DETOURS_H_
 
-#define DETOURS_VERSION     0x4c0c1   // 0xMAJORcMINORcPATCH
+#define DETOURS_VERSION	 0x4c0c1   // 0xMAJORcMINORcPATCH
 
 //////////////////////////////////////////////////////////////////////////////
 //
@@ -61,7 +61,7 @@
 //#define DETOURS_OPTION_BITS 32
 #endif
 
-#define VER_DETOURS_BITS    DETOUR_STRINGIFY(DETOURS_BITS)
+#define VER_DETOURS_BITS	DETOUR_STRINGIFY(DETOURS_BITS)
 
 //////////////////////////////////////////////////////////////////////////////
 //
@@ -272,28 +272,28 @@ typedef struct  _GUID
 
 #ifdef INITGUID
 #define DEFINE_GUID(name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8) \
-        const GUID name \
-                = { l, w1, w2, { b1, b2,  b3,  b4,  b5,  b6,  b7,  b8 } }
+		const GUID name \
+				= { l, w1, w2, { b1, b2,  b3,  b4,  b5,  b6,  b7,  b8 } }
 #else
 #define DEFINE_GUID(name, l, w1, w2, b1, b2, b3, b4, b5, b6, b7, b8) \
-    const GUID name
+	const GUID name
 #endif // INITGUID
 #endif // !GUID_DEFINED
 
 #if defined(__cplusplus)
 #ifndef _REFGUID_DEFINED
 #define _REFGUID_DEFINED
-#define REFGUID             const GUID &
+#define REFGUID			 const GUID &
 #endif // !_REFGUID_DEFINED
 #else // !__cplusplus
 #ifndef _REFGUID_DEFINED
 #define _REFGUID_DEFINED
-#define REFGUID             const GUID * const
+#define REFGUID			 const GUID * const
 #endif // !_REFGUID_DEFINED
 #endif // !__cplusplus
 
 #ifndef ARRAYSIZE
-#define ARRAYSIZE(x)    (sizeof(x)/sizeof(x[0]))
+#define ARRAYSIZE(x)	(sizeof(x)/sizeof(x[0]))
 #endif
 
 //
@@ -305,14 +305,14 @@ extern "C" {
 
 	/////////////////////////////////////////////////// Instruction Target Macros.
 	//
-#define DETOUR_INSTRUCTION_TARGET_NONE          ((PVOID)0)
-#define DETOUR_INSTRUCTION_TARGET_DYNAMIC       ((PVOID)(LONG_PTR)-1)
-#define DETOUR_SECTION_HEADER_SIGNATURE         0x00727444   // "Dtr\0"
+#define DETOUR_INSTRUCTION_TARGET_NONE		  ((PVOID)0)
+#define DETOUR_INSTRUCTION_TARGET_DYNAMIC	   ((PVOID)(LONG_PTR)-1)
+#define DETOUR_SECTION_HEADER_SIGNATURE		 0x00727444   // "Dtr\0"
 
 	extern const GUID DETOUR_EXE_RESTORE_GUID;
 	extern const GUID DETOUR_EXE_HELPER_GUID;
 
-#define DETOUR_TRAMPOLINE_SIGNATURE             0x21727444  // Dtr!
+#define DETOUR_TRAMPOLINE_SIGNATURE			 0x21727444  // Dtr!
 	typedef struct _DETOUR_TRAMPOLINE DETOUR_TRAMPOLINE, *PDETOUR_TRAMPOLINE;
 
 	/////////////////////////////////////////////////////////// Binary Structures.
@@ -320,67 +320,67 @@ extern "C" {
 #pragma pack(push, 8)
 	typedef struct _DETOUR_SECTION_HEADER
 	{
-		DWORD       cbHeaderSize;
-		DWORD       nSignature;
-		DWORD       nDataOffset;
-		DWORD       cbDataSize;
+		DWORD	   cbHeaderSize;
+		DWORD	   nSignature;
+		DWORD	   nDataOffset;
+		DWORD	   cbDataSize;
 
-		DWORD       nOriginalImportVirtualAddress;
-		DWORD       nOriginalImportSize;
-		DWORD       nOriginalBoundImportVirtualAddress;
-		DWORD       nOriginalBoundImportSize;
+		DWORD	   nOriginalImportVirtualAddress;
+		DWORD	   nOriginalImportSize;
+		DWORD	   nOriginalBoundImportVirtualAddress;
+		DWORD	   nOriginalBoundImportSize;
 
-		DWORD       nOriginalIatVirtualAddress;
-		DWORD       nOriginalIatSize;
-		DWORD       nOriginalSizeOfImage;
-		DWORD       cbPrePE;
+		DWORD	   nOriginalIatVirtualAddress;
+		DWORD	   nOriginalIatSize;
+		DWORD	   nOriginalSizeOfImage;
+		DWORD	   cbPrePE;
 
-		DWORD       nOriginalClrFlags;
-		DWORD       reserved1;
-		DWORD       reserved2;
-		DWORD       reserved3;
+		DWORD	   nOriginalClrFlags;
+		DWORD	   reserved1;
+		DWORD	   reserved2;
+		DWORD	   reserved3;
 
 		// Followed by cbPrePE bytes of data.
 	} DETOUR_SECTION_HEADER, *PDETOUR_SECTION_HEADER;
 
 	typedef struct _DETOUR_SECTION_RECORD
 	{
-		DWORD       cbBytes;
-		DWORD       nReserved;
-		GUID        guid;
+		DWORD	   cbBytes;
+		DWORD	   nReserved;
+		GUID		guid;
 	} DETOUR_SECTION_RECORD, *PDETOUR_SECTION_RECORD;
 
 	typedef struct _DETOUR_CLR_HEADER
 	{
 		// Header versioning
-		ULONG                   cb;
-		USHORT                  MajorRuntimeVersion;
-		USHORT                  MinorRuntimeVersion;
+		ULONG				   cb;
+		USHORT				  MajorRuntimeVersion;
+		USHORT				  MinorRuntimeVersion;
 
 		// Symbol table and startup information
-		IMAGE_DATA_DIRECTORY    MetaData;
-		ULONG                   Flags;
+		IMAGE_DATA_DIRECTORY	MetaData;
+		ULONG				   Flags;
 
 		// Followed by the rest of the IMAGE_COR20_HEADER
 	} DETOUR_CLR_HEADER, *PDETOUR_CLR_HEADER;
 
 	typedef struct _DETOUR_EXE_RESTORE
 	{
-		DWORD               cb;
-		DWORD               cbidh;
-		DWORD               cbinh;
-		DWORD               cbclr;
+		DWORD			   cb;
+		DWORD			   cbidh;
+		DWORD			   cbinh;
+		DWORD			   cbclr;
 
-		PBYTE               pidh;
-		PBYTE               pinh;
-		PBYTE               pclr;
+		PBYTE			   pidh;
+		PBYTE			   pinh;
+		PBYTE			   pclr;
 
-		IMAGE_DOS_HEADER    idh;
+		IMAGE_DOS_HEADER	idh;
 		union {
-			IMAGE_NT_HEADERS    inh;
+			IMAGE_NT_HEADERS	inh;
 			IMAGE_NT_HEADERS32  inh32;
 			IMAGE_NT_HEADERS64  inh64;
-			BYTE                raw[sizeof(IMAGE_NT_HEADERS64) +
+			BYTE				raw[sizeof(IMAGE_NT_HEADERS64) +
 				sizeof(IMAGE_SECTION_HEADER) * 32];
 		};
 		DETOUR_CLR_HEADER   clr;
@@ -389,36 +389,36 @@ extern "C" {
 
 	typedef struct _DETOUR_EXE_HELPER
 	{
-		DWORD               cb;
-		DWORD               pid;
-		DWORD               nDlls;
-		CHAR                rDlls[4];
+		DWORD			   cb;
+		DWORD			   pid;
+		DWORD			   nDlls;
+		CHAR				rDlls[4];
 	} DETOUR_EXE_HELPER, *PDETOUR_EXE_HELPER;
 
 #pragma pack(pop)
 
 #define DETOUR_SECTION_HEADER_DECLARE(cbSectionSize) \
 { \
-      sizeof(DETOUR_SECTION_HEADER),\
-      DETOUR_SECTION_HEADER_SIGNATURE,\
-      sizeof(DETOUR_SECTION_HEADER),\
-      (cbSectionSize),\
-      \
-      0,\
-      0,\
-      0,\
-      0,\
-      \
-      0,\
-      0,\
-      0,\
-      0,\
+	  sizeof(DETOUR_SECTION_HEADER),\
+	  DETOUR_SECTION_HEADER_SIGNATURE,\
+	  sizeof(DETOUR_SECTION_HEADER),\
+	  (cbSectionSize),\
+	  \
+	  0,\
+	  0,\
+	  0,\
+	  0,\
+	  \
+	  0,\
+	  0,\
+	  0,\
+	  0,\
 }
 
 	/////////////////////////////////////////////////////////////// Helper Macros.
 	//
-#define DETOURS_STRINGIFY(x)    DETOURS_STRINGIFY_(x)
-#define DETOURS_STRINGIFY_(x)    #x
+#define DETOURS_STRINGIFY(x)	DETOURS_STRINGIFY_(x)
+#define DETOURS_STRINGIFY_(x)	#x
 
 	///////////////////////////////////////////////////////////// Binary Typedefs.
 	//
@@ -631,10 +631,10 @@ extern "C" {
 		_In_opt_ PDETOUR_CREATE_PROCESS_ROUTINEW pfCreateProcessW);
 
 #ifdef UNICODE
-#define DetourCreateProcessWithDll      DetourCreateProcessWithDllW
+#define DetourCreateProcessWithDll	  DetourCreateProcessWithDllW
 #define PDETOUR_CREATE_PROCESS_ROUTINE  PDETOUR_CREATE_PROCESS_ROUTINEW
 #else
-#define DetourCreateProcessWithDll      DetourCreateProcessWithDllA
+#define DetourCreateProcessWithDll	  DetourCreateProcessWithDllA
 #define PDETOUR_CREATE_PROCESS_ROUTINE  PDETOUR_CREATE_PROCESS_ROUTINEA
 #endif // !UNICODE
 
@@ -665,9 +665,9 @@ extern "C" {
 		_In_opt_ PDETOUR_CREATE_PROCESS_ROUTINEW pfCreateProcessW);
 
 #ifdef UNICODE
-#define DetourCreateProcessWithDllEx    DetourCreateProcessWithDllExW
+#define DetourCreateProcessWithDllEx	DetourCreateProcessWithDllExW
 #else
-#define DetourCreateProcessWithDllEx    DetourCreateProcessWithDllExA
+#define DetourCreateProcessWithDllEx	DetourCreateProcessWithDllExA
 #endif // !UNICODE
 
 	BOOL WINAPI DetourCreateProcessWithDllsA(_In_opt_ LPCSTR lpApplicationName,
@@ -699,9 +699,9 @@ extern "C" {
 		_In_opt_ PDETOUR_CREATE_PROCESS_ROUTINEW pfCreateProcessW);
 
 #ifdef UNICODE
-#define DetourCreateProcessWithDlls     DetourCreateProcessWithDllsW
+#define DetourCreateProcessWithDlls	 DetourCreateProcessWithDllsW
 #else
-#define DetourCreateProcessWithDlls     DetourCreateProcessWithDllsA
+#define DetourCreateProcessWithDlls	 DetourCreateProcessWithDllsA
 #endif // !UNICODE
 
 	BOOL WINAPI DetourProcessViaHelperA(_In_ DWORD dwTargetPid,
@@ -713,9 +713,9 @@ extern "C" {
 		_In_ PDETOUR_CREATE_PROCESS_ROUTINEW pfCreateProcessW);
 
 #ifdef UNICODE
-#define DetourProcessViaHelper          DetourProcessViaHelperW
+#define DetourProcessViaHelper		  DetourProcessViaHelperW
 #else
-#define DetourProcessViaHelper          DetourProcessViaHelperA
+#define DetourProcessViaHelper		  DetourProcessViaHelperA
 #endif // !UNICODE
 
 	BOOL WINAPI DetourProcessViaHelperDllsA(_In_ DWORD dwTargetPid,
@@ -729,9 +729,9 @@ extern "C" {
 		_In_ PDETOUR_CREATE_PROCESS_ROUTINEW pfCreateProcessW);
 
 #ifdef UNICODE
-#define DetourProcessViaHelperDlls      DetourProcessViaHelperDllsW
+#define DetourProcessViaHelperDlls	  DetourProcessViaHelperDllsW
 #else
-#define DetourProcessViaHelperDlls      DetourProcessViaHelperDllsA
+#define DetourProcessViaHelperDlls	  DetourProcessViaHelperDllsA
 #endif // !UNICODE
 
 	BOOL WINAPI DetourUpdateProcessWithDll(_In_ HANDLE hProcess,
@@ -815,15 +815,15 @@ typedef BOOL(NTAPI *PF_SymFromName)(_In_ HANDLE hProcess,
 
 typedef struct _DETOUR_SYM_INFO
 {
-	HANDLE                  hProcess;
-	HMODULE                 hDbgHelp;
+	HANDLE				  hProcess;
+	HMODULE				 hDbgHelp;
 	PF_ImagehlpApiVersionEx pfImagehlpApiVersionEx;
-	PF_SymInitialize        pfSymInitialize;
-	PF_SymSetOptions        pfSymSetOptions;
-	PF_SymGetOptions        pfSymGetOptions;
-	PF_SymLoadModule64      pfSymLoadModule64;
+	PF_SymInitialize		pfSymInitialize;
+	PF_SymSetOptions		pfSymSetOptions;
+	PF_SymGetOptions		pfSymGetOptions;
+	PF_SymLoadModule64	  pfSymLoadModule64;
 	PF_SymGetModuleInfo64   pfSymGetModuleInfo64;
-	PF_SymFromName          pfSymFromName;
+	PF_SymFromName		  pfSymFromName;
 } DETOUR_SYM_INFO, *PDETOUR_SYM_INFO;
 
 PDETOUR_SYM_INFO DetourLoadImageHlp(VOID);
@@ -870,7 +870,7 @@ __declspec(align(16)) struct DETOUR_IA64_BUNDLE
 public:
 	union
 	{
-		BYTE    data[16];
+		BYTE	data[16];
 		UINT64  wide[2];
 	};
 
@@ -885,10 +885,10 @@ public:
 	};
 	struct DETOUR_IA64_METADATA
 	{
-		ULONG       nTemplate : 8;    // Instruction template.
-		ULONG       nUnit0 : 4;    // Unit for slot 0
-		ULONG       nUnit1 : 4;    // Unit for slot 1
-		ULONG       nUnit2 : 4;    // Unit for slot 2
+		ULONG	   nTemplate : 8;	// Instruction template.
+		ULONG	   nUnit0 : 4;	// Unit for slot 0
+		ULONG	   nUnit1 : 4;	// Unit for slot 1
+		ULONG	   nUnit2 : 4;	// Unit for slot 2
 	};
 
 protected:
@@ -903,7 +903,7 @@ protected:
 	// 120 112 104 96 88 80 72 64 56 48 40 32 24 16  8  0
 	//  f.  e.  d. c. b. a. 9. 8. 7. 6. 5. 4. 3. 2. 1. 0.
 
-	//                                      00
+	//									  00
 	// f.e. d.c. b.a. 9.8. 7.6. 5.4. 3.2. 1.0.
 	// 0000 0000 0000 0000 0000 0000 0000 001f : Template [4..0]
 	// 0000 0000 0000 0000 0000 03ff ffff ffe0 : Zero [ 41..  5]
@@ -912,15 +912,15 @@ protected:
 	// 0000 0000 0078 0000 0000 0000 0000 0000 : One  [ 86.. 83]
 	// 0fff ffff ff80 0000 0000 0000 0000 0000 : Two  [123.. 87]
 	// f000 0000 0000 0000 0000 0000 0000 0000 : Two  [127..124]
-	BYTE    GetTemplate() const;
+	BYTE	GetTemplate() const;
 	// Get 4 bit opcodes.
-	BYTE    GetInst0() const;
-	BYTE    GetInst1() const;
-	BYTE    GetInst2() const;
-	BYTE    GetUnit(BYTE slot) const;
-	BYTE    GetUnit0() const;
-	BYTE    GetUnit1() const;
-	BYTE    GetUnit2() const;
+	BYTE	GetInst0() const;
+	BYTE	GetInst1() const;
+	BYTE	GetInst2() const;
+	BYTE	GetUnit(BYTE slot) const;
+	BYTE	GetUnit0() const;
+	BYTE	GetUnit1() const;
+	BYTE	GetUnit2() const;
 	// Get 37 bit data.
 	UINT64  GetData0() const;
 	UINT64  GetData1() const;
@@ -931,10 +931,10 @@ protected:
 	UINT64  GetInstruction0() const;
 	UINT64  GetInstruction1() const;
 	UINT64  GetInstruction2() const;
-	void    SetInstruction(BYTE slot, UINT64 instruction);
-	void    SetInstruction0(UINT64 instruction);
-	void    SetInstruction1(UINT64 instruction);
-	void    SetInstruction2(UINT64 instruction);
+	void	SetInstruction(BYTE slot, UINT64 instruction);
+	void	SetInstruction0(UINT64 instruction);
+	void	SetInstruction1(UINT64 instruction);
+	void	SetInstruction2(UINT64 instruction);
 
 	// Get/set bitfields.
 	static UINT64 GetBits(UINT64 Value, UINT64 Offset, UINT64 Count);
@@ -960,36 +960,36 @@ protected:
 
 	static UINT64 SignExtend(UINT64 Value, UINT64 Offset);
 
-	BOOL    IsMovlGp() const;
+	BOOL	IsMovlGp() const;
 
-	VOID    SetInst(BYTE Slot, BYTE nInst);
-	VOID    SetInst0(BYTE nInst);
-	VOID    SetInst1(BYTE nInst);
-	VOID    SetInst2(BYTE nInst);
-	VOID    SetData(BYTE Slot, UINT64 nData);
-	VOID    SetData0(UINT64 nData);
-	VOID    SetData1(UINT64 nData);
-	VOID    SetData2(UINT64 nData);
-	BOOL    SetNop(BYTE Slot);
-	BOOL    SetNop0();
-	BOOL    SetNop1();
-	BOOL    SetNop2();
+	VOID	SetInst(BYTE Slot, BYTE nInst);
+	VOID	SetInst0(BYTE nInst);
+	VOID	SetInst1(BYTE nInst);
+	VOID	SetInst2(BYTE nInst);
+	VOID	SetData(BYTE Slot, UINT64 nData);
+	VOID	SetData0(UINT64 nData);
+	VOID	SetData1(UINT64 nData);
+	VOID	SetData2(UINT64 nData);
+	BOOL	SetNop(BYTE Slot);
+	BOOL	SetNop0();
+	BOOL	SetNop1();
+	BOOL	SetNop2();
 
 public:
-	BOOL    IsBrl() const;
-	VOID    SetBrl();
-	VOID    SetBrl(UINT64 target);
+	BOOL	IsBrl() const;
+	VOID	SetBrl();
+	VOID	SetBrl(UINT64 target);
 	UINT64  GetBrlTarget() const;
-	VOID    SetBrlTarget(UINT64 target);
-	VOID    SetBrlImm(UINT64 imm);
+	VOID	SetBrlTarget(UINT64 target);
+	VOID	SetBrlImm(UINT64 imm);
 	UINT64  GetBrlImm() const;
 
 	UINT64  GetMovlGp() const;
-	VOID    SetMovlGp(UINT64 gp);
+	VOID	SetMovlGp(UINT64 gp);
 
-	VOID    SetStop();
+	VOID	SetStop();
 
-	UINT    Copy(_Out_ DETOUR_IA64_BUNDLE *pDst, _Inout_opt_ DETOUR_IA64_BUNDLE* pBundleExtra = NULL) const;
+	UINT	Copy(_Out_ DETOUR_IA64_BUNDLE *pDst, _Inout_opt_ DETOUR_IA64_BUNDLE* pBundleExtra = NULL) const;
 };
 #endif // DETOURS_IA64
 
@@ -1006,15 +1006,15 @@ public:
 extern "C" {
 #endif // __cplusplus
 
-#define DETOUR_OFFLINE_LIBRARY(x)                                       \
-PVOID WINAPI DetourCopyInstruction##x(_In_opt_ PVOID pDst,              \
-                                      _Inout_opt_ PVOID *ppDstPool,     \
-                                      _In_ PVOID pSrc,                  \
-                                      _Out_opt_ PVOID *ppTarget,        \
-                                      _Out_opt_ LONG *plExtra);         \
-                                                                        \
-BOOL WINAPI DetourSetCodeModule##x(_In_ HMODULE hModule,                \
-                                   _In_ BOOL fLimitReferencesToModule); \
+#define DETOUR_OFFLINE_LIBRARY(x)									   \
+PVOID WINAPI DetourCopyInstruction##x(_In_opt_ PVOID pDst,			  \
+									  _Inout_opt_ PVOID *ppDstPool,	 \
+									  _In_ PVOID pSrc,				  \
+									  _Out_opt_ PVOID *ppTarget,		\
+									  _Out_opt_ LONG *plExtra);		 \
+																		\
+BOOL WINAPI DetourSetCodeModule##x(_In_ HMODULE hModule,				\
+								   _In_ BOOL fLimitReferencesToModule); \
 
 	DETOUR_OFFLINE_LIBRARY(X86)
 		DETOUR_OFFLINE_LIBRARY(X64)

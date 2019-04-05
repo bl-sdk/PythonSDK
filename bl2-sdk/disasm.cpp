@@ -56,8 +56,8 @@
 #if defined(DETOURS_X86_OFFLINE_LIBRARY)
 
 #define DetourCopyInstruction   DetourCopyInstructionX86
-#define DetourSetCodeModule     DetourSetCodeModuleX86
-#define CDetourDis              CDetourDisX86
+#define DetourSetCodeModule	 DetourSetCodeModuleX86
+#define CDetourDis			  CDetourDisX86
 #define DETOURS_X86
 
 #elif defined(DETOURS_X64_OFFLINE_LIBRARY)
@@ -68,28 +68,28 @@
 #endif
 
 #define DetourCopyInstruction   DetourCopyInstructionX64
-#define DetourSetCodeModule     DetourSetCodeModuleX64
-#define CDetourDis              CDetourDisX64
+#define DetourSetCodeModule	 DetourSetCodeModuleX64
+#define CDetourDis			  CDetourDisX64
 #define DETOURS_X64
 
 #elif defined(DETOURS_ARM_OFFLINE_LIBRARY)
 
 #define DetourCopyInstruction   DetourCopyInstructionARM
-#define DetourSetCodeModule     DetourSetCodeModuleARM
-#define CDetourDis              CDetourDisARM
+#define DetourSetCodeModule	 DetourSetCodeModuleARM
+#define CDetourDis			  CDetourDisARM
 #define DETOURS_ARM
 
 #elif defined(DETOURS_ARM64_OFFLINE_LIBRARY)
 
 #define DetourCopyInstruction   DetourCopyInstructionARM64
-#define DetourSetCodeModule     DetourSetCodeModuleARM64
-#define CDetourDis              CDetourDisARM64
+#define DetourSetCodeModule	 DetourSetCodeModuleARM64
+#define CDetourDis			  CDetourDisARM64
 #define DETOURS_ARM64
 
 #elif defined(DETOURS_IA64_OFFLINE_LIBRARY)
 
 #define DetourCopyInstruction   DetourCopyInstructionIA64
-#define DetourSetCodeModule     DetourSetCodeModuleIA64
+#define DetourSetCodeModule	 DetourSetCodeModuleIA64
 #define DETOURS_IA64
 
 #else
@@ -102,61 +102,61 @@
 //////////////////////////////////////////////////////////////////////////////
 //
 //  Function:
-//      DetourCopyInstruction(PVOID pDst,
-//                            PVOID *ppDstPool
-//                            PVOID pSrc,
-//                            PVOID *ppTarget,
-//                            LONG *plExtra)
+//	  DetourCopyInstruction(PVOID pDst,
+//							PVOID *ppDstPool
+//							PVOID pSrc,
+//							PVOID *ppTarget,
+//							LONG *plExtra)
 //  Purpose:
-//      Copy a single instruction from pSrc to pDst.
+//	  Copy a single instruction from pSrc to pDst.
 //
 //  Arguments:
-//      pDst:
-//          Destination address for the instruction.  May be NULL in which
-//          case DetourCopyInstruction is used to measure an instruction.
-//          If not NULL then the source instruction is copied to the
-//          destination instruction and any relative arguments are adjusted.
-//      ppDstPool:
-//          Destination address for the end of the constant pool.  The
-//          constant pool works backwards toward pDst.  All memory between
-//          pDst and *ppDstPool must be available for use by this function.
-//          ppDstPool may be NULL if pDst is NULL.
-//      pSrc:
-//          Source address of the instruction.
-//      ppTarget:
-//          Out parameter for any target instruction address pointed to by
-//          the instruction.  For example, a branch or a jump insruction has
-//          a target, but a load or store instruction doesn't.  A target is
-//          another instruction that may be executed as a result of this
-//          instruction.  ppTarget may be NULL.
-//      plExtra:
-//          Out parameter for the number of extra bytes needed by the
-//          instruction to reach the target.  For example, lExtra = 3 if the
-//          instruction had an 8-bit relative offset, but needs a 32-bit
-//          relative offset.
+//	  pDst:
+//		  Destination address for the instruction.  May be NULL in which
+//		  case DetourCopyInstruction is used to measure an instruction.
+//		  If not NULL then the source instruction is copied to the
+//		  destination instruction and any relative arguments are adjusted.
+//	  ppDstPool:
+//		  Destination address for the end of the constant pool.  The
+//		  constant pool works backwards toward pDst.  All memory between
+//		  pDst and *ppDstPool must be available for use by this function.
+//		  ppDstPool may be NULL if pDst is NULL.
+//	  pSrc:
+//		  Source address of the instruction.
+//	  ppTarget:
+//		  Out parameter for any target instruction address pointed to by
+//		  the instruction.  For example, a branch or a jump insruction has
+//		  a target, but a load or store instruction doesn't.  A target is
+//		  another instruction that may be executed as a result of this
+//		  instruction.  ppTarget may be NULL.
+//	  plExtra:
+//		  Out parameter for the number of extra bytes needed by the
+//		  instruction to reach the target.  For example, lExtra = 3 if the
+//		  instruction had an 8-bit relative offset, but needs a 32-bit
+//		  relative offset.
 //
 //  Returns:
-//      Returns the address of the next instruction (following in the source)
-//      instruction.  By subtracting pSrc from the return value, the caller
-//      can determinte the size of the instruction copied.
+//	  Returns the address of the next instruction (following in the source)
+//	  instruction.  By subtracting pSrc from the return value, the caller
+//	  can determinte the size of the instruction copied.
 //
 //  Comments:
-//      By following the pTarget, the caller can follow alternate
-//      instruction streams.  However, it is not always possible to determine
-//      the target based on static analysis.  For example, the destination of
-//      a jump relative to a register cannot be determined from just the
-//      instruction stream.  The output value, pTarget, can have any of the
-//      following outputs:
-//          DETOUR_INSTRUCTION_TARGET_NONE:
-//              The instruction has no targets.
-//          DETOUR_INSTRUCTION_TARGET_DYNAMIC:
-//              The instruction has a non-deterministic (dynamic) target.
-//              (i.e. the jump is to an address held in a register.)
-//          Address:   The instruction has the specified target.
+//	  By following the pTarget, the caller can follow alternate
+//	  instruction streams.  However, it is not always possible to determine
+//	  the target based on static analysis.  For example, the destination of
+//	  a jump relative to a register cannot be determined from just the
+//	  instruction stream.  The output value, pTarget, can have any of the
+//	  following outputs:
+//		  DETOUR_INSTRUCTION_TARGET_NONE:
+//			  The instruction has no targets.
+//		  DETOUR_INSTRUCTION_TARGET_DYNAMIC:
+//			  The instruction has a non-deterministic (dynamic) target.
+//			  (i.e. the jump is to an address held in a register.)
+//		  Address:   The instruction has the specified target.
 //
-//      When copying instructions, DetourCopyInstruction insures that any
-//      targets remain constant.  It does so by adjusting any IP relative
-//      offsets.
+//	  When copying instructions, DetourCopyInstruction insures that any
+//	  targets remain constant.  It does so by adjusting any IP relative
+//	  offsets.
 //
 
 #pragma data_seg(".detourd")
@@ -202,69 +202,69 @@ public:
 	struct COPYENTRY
 	{
 		// Many of these fields are often ignored. See ENTRY_DataIgnored.
-		ULONG       nOpcode : 8;    // Opcode (ignored)
-		ULONG       nFixedSize : 4;    // Fixed size of opcode
-		ULONG       nFixedSize16 : 4;    // Fixed size when 16 bit operand
-		ULONG       nModOffset : 4;    // Offset to mod/rm byte (0=none)
-		ULONG       nRelOffset : 4;    // Offset to relative target.
-		ULONG       nTargetBack : 4;    // Offset back to absolute or rip target
-		ULONG       nFlagBits : 4;    // Flags for DYNAMIC, etc.
-		COPYFUNC    pfCopy;                 // Function pointer.
+		ULONG	   nOpcode : 8;	// Opcode (ignored)
+		ULONG	   nFixedSize : 4;	// Fixed size of opcode
+		ULONG	   nFixedSize16 : 4;	// Fixed size when 16 bit operand
+		ULONG	   nModOffset : 4;	// Offset to mod/rm byte (0=none)
+		ULONG	   nRelOffset : 4;	// Offset to relative target.
+		ULONG	   nTargetBack : 4;	// Offset back to absolute or rip target
+		ULONG	   nFlagBits : 4;	// Flags for DYNAMIC, etc.
+		COPYFUNC	pfCopy;				 // Function pointer.
 	};
 
 protected:
 	// These macros define common uses of nFixedSize..pfCopy.
-#define ENTRY_DataIgnored           0, 0, 0, 0, 0, 0,
-#define ENTRY_CopyBytes1            1, 1, 0, 0, 0, 0, &CDetourDis::CopyBytes
+#define ENTRY_DataIgnored		   0, 0, 0, 0, 0, 0,
+#define ENTRY_CopyBytes1			1, 1, 0, 0, 0, 0, &CDetourDis::CopyBytes
 #ifdef DETOURS_X64
-#define ENTRY_CopyBytes1Address     9, 5, 0, 0, 0, ADDRESS, &CDetourDis::CopyBytes
+#define ENTRY_CopyBytes1Address	 9, 5, 0, 0, 0, ADDRESS, &CDetourDis::CopyBytes
 #else
-#define ENTRY_CopyBytes1Address     5, 3, 0, 0, 0, ADDRESS, &CDetourDis::CopyBytes
+#define ENTRY_CopyBytes1Address	 5, 3, 0, 0, 0, ADDRESS, &CDetourDis::CopyBytes
 #endif
-#define ENTRY_CopyBytes1Dynamic     1, 1, 0, 0, 0, DYNAMIC, &CDetourDis::CopyBytes
-#define ENTRY_CopyBytes2            2, 2, 0, 0, 0, 0, &CDetourDis::CopyBytes
-#define ENTRY_CopyBytes2Jump        ENTRY_DataIgnored &CDetourDis::CopyBytesJump
-#define ENTRY_CopyBytes2CantJump    2, 2, 0, 1, 0, NOENLARGE, &CDetourDis::CopyBytes
-#define ENTRY_CopyBytes2Dynamic     2, 2, 0, 0, 0, DYNAMIC, &CDetourDis::CopyBytes
-#define ENTRY_CopyBytes3            3, 3, 0, 0, 0, 0, &CDetourDis::CopyBytes
-#define ENTRY_CopyBytes3Dynamic     3, 3, 0, 0, 0, DYNAMIC, &CDetourDis::CopyBytes
-#define ENTRY_CopyBytes3Or5         5, 3, 0, 0, 0, 0, &CDetourDis::CopyBytes
+#define ENTRY_CopyBytes1Dynamic	 1, 1, 0, 0, 0, DYNAMIC, &CDetourDis::CopyBytes
+#define ENTRY_CopyBytes2			2, 2, 0, 0, 0, 0, &CDetourDis::CopyBytes
+#define ENTRY_CopyBytes2Jump		ENTRY_DataIgnored &CDetourDis::CopyBytesJump
+#define ENTRY_CopyBytes2CantJump	2, 2, 0, 1, 0, NOENLARGE, &CDetourDis::CopyBytes
+#define ENTRY_CopyBytes2Dynamic	 2, 2, 0, 0, 0, DYNAMIC, &CDetourDis::CopyBytes
+#define ENTRY_CopyBytes3			3, 3, 0, 0, 0, 0, &CDetourDis::CopyBytes
+#define ENTRY_CopyBytes3Dynamic	 3, 3, 0, 0, 0, DYNAMIC, &CDetourDis::CopyBytes
+#define ENTRY_CopyBytes3Or5		 5, 3, 0, 0, 0, 0, &CDetourDis::CopyBytes
 #define ENTRY_CopyBytes3Or5Dynamic  5, 3, 0, 0, 0, DYNAMIC, &CDetourDis::CopyBytes // x86 only
 #ifdef DETOURS_X64
-#define ENTRY_CopyBytes3Or5Rax      5, 3, 0, 0, 0, RAX, &CDetourDis::CopyBytes
+#define ENTRY_CopyBytes3Or5Rax	  5, 3, 0, 0, 0, RAX, &CDetourDis::CopyBytes
 #define ENTRY_CopyBytes3Or5Target   5, 5, 0, 1, 0, 0, &CDetourDis::CopyBytes
 #else
-#define ENTRY_CopyBytes3Or5Rax      5, 3, 0, 0, 0, 0, &CDetourDis::CopyBytes
+#define ENTRY_CopyBytes3Or5Rax	  5, 3, 0, 0, 0, 0, &CDetourDis::CopyBytes
 #define ENTRY_CopyBytes3Or5Target   5, 3, 0, 1, 0, 0, &CDetourDis::CopyBytes
 #endif
-#define ENTRY_CopyBytes4            4, 4, 0, 0, 0, 0, &CDetourDis::CopyBytes
-#define ENTRY_CopyBytes5            5, 5, 0, 0, 0, 0, &CDetourDis::CopyBytes
+#define ENTRY_CopyBytes4			4, 4, 0, 0, 0, 0, &CDetourDis::CopyBytes
+#define ENTRY_CopyBytes5			5, 5, 0, 0, 0, 0, &CDetourDis::CopyBytes
 #define ENTRY_CopyBytes5Or7Dynamic  7, 5, 0, 0, 0, DYNAMIC, &CDetourDis::CopyBytes
-#define ENTRY_CopyBytes7            7, 7, 0, 0, 0, 0, &CDetourDis::CopyBytes
-#define ENTRY_CopyBytes2Mod         2, 2, 1, 0, 0, 0, &CDetourDis::CopyBytes
+#define ENTRY_CopyBytes7			7, 7, 0, 0, 0, 0, &CDetourDis::CopyBytes
+#define ENTRY_CopyBytes2Mod		 2, 2, 1, 0, 0, 0, &CDetourDis::CopyBytes
 #define ENTRY_CopyBytes2ModDynamic  2, 2, 1, 0, 0, DYNAMIC, &CDetourDis::CopyBytes
-#define ENTRY_CopyBytes2Mod1        3, 3, 1, 0, 1, 0, &CDetourDis::CopyBytes
+#define ENTRY_CopyBytes2Mod1		3, 3, 1, 0, 1, 0, &CDetourDis::CopyBytes
 #define ENTRY_CopyBytes2ModOperand  6, 4, 1, 0, 4, 0, &CDetourDis::CopyBytes
-#define ENTRY_CopyBytes3Mod         3, 3, 2, 0, 0, 0, &CDetourDis::CopyBytes // SSE3 0F 38 opcode modrm
-#define ENTRY_CopyBytes3Mod1        4, 4, 2, 0, 1, 0, &CDetourDis::CopyBytes // SSE3 0F 3A opcode modrm .. imm8
-#define ENTRY_CopyBytesPrefix       ENTRY_DataIgnored &CDetourDis::CopyBytesPrefix
-#define ENTRY_CopyBytesSegment      ENTRY_DataIgnored &CDetourDis::CopyBytesSegment
-#define ENTRY_CopyBytesRax          ENTRY_DataIgnored &CDetourDis::CopyBytesRax
-#define ENTRY_CopyF2                ENTRY_DataIgnored &CDetourDis::CopyF2
-#define ENTRY_CopyF3                ENTRY_DataIgnored &CDetourDis::CopyF3   // 32bit x86 only
-#define ENTRY_Copy0F                ENTRY_DataIgnored &CDetourDis::Copy0F
-#define ENTRY_Copy0F78              ENTRY_DataIgnored &CDetourDis::Copy0F78
-#define ENTRY_Copy0F00              ENTRY_DataIgnored &CDetourDis::Copy0F00 // 32bit x86 only
-#define ENTRY_Copy0FB8              ENTRY_DataIgnored &CDetourDis::Copy0FB8 // 32bit x86 only
-#define ENTRY_Copy66                ENTRY_DataIgnored &CDetourDis::Copy66
-#define ENTRY_Copy67                ENTRY_DataIgnored &CDetourDis::Copy67
-#define ENTRY_CopyF6                ENTRY_DataIgnored &CDetourDis::CopyF6
-#define ENTRY_CopyF7                ENTRY_DataIgnored &CDetourDis::CopyF7
-#define ENTRY_CopyFF                ENTRY_DataIgnored &CDetourDis::CopyFF
-#define ENTRY_CopyVex2              ENTRY_DataIgnored &CDetourDis::CopyVex2
-#define ENTRY_CopyVex3              ENTRY_DataIgnored &CDetourDis::CopyVex3
-#define ENTRY_Invalid               ENTRY_DataIgnored &CDetourDis::Invalid
-#define ENTRY_End                   ENTRY_DataIgnored NULL
+#define ENTRY_CopyBytes3Mod		 3, 3, 2, 0, 0, 0, &CDetourDis::CopyBytes // SSE3 0F 38 opcode modrm
+#define ENTRY_CopyBytes3Mod1		4, 4, 2, 0, 1, 0, &CDetourDis::CopyBytes // SSE3 0F 3A opcode modrm .. imm8
+#define ENTRY_CopyBytesPrefix	   ENTRY_DataIgnored &CDetourDis::CopyBytesPrefix
+#define ENTRY_CopyBytesSegment	  ENTRY_DataIgnored &CDetourDis::CopyBytesSegment
+#define ENTRY_CopyBytesRax		  ENTRY_DataIgnored &CDetourDis::CopyBytesRax
+#define ENTRY_CopyF2				ENTRY_DataIgnored &CDetourDis::CopyF2
+#define ENTRY_CopyF3				ENTRY_DataIgnored &CDetourDis::CopyF3   // 32bit x86 only
+#define ENTRY_Copy0F				ENTRY_DataIgnored &CDetourDis::Copy0F
+#define ENTRY_Copy0F78			  ENTRY_DataIgnored &CDetourDis::Copy0F78
+#define ENTRY_Copy0F00			  ENTRY_DataIgnored &CDetourDis::Copy0F00 // 32bit x86 only
+#define ENTRY_Copy0FB8			  ENTRY_DataIgnored &CDetourDis::Copy0FB8 // 32bit x86 only
+#define ENTRY_Copy66				ENTRY_DataIgnored &CDetourDis::Copy66
+#define ENTRY_Copy67				ENTRY_DataIgnored &CDetourDis::Copy67
+#define ENTRY_CopyF6				ENTRY_DataIgnored &CDetourDis::CopyF6
+#define ENTRY_CopyF7				ENTRY_DataIgnored &CDetourDis::CopyF7
+#define ENTRY_CopyFF				ENTRY_DataIgnored &CDetourDis::CopyFF
+#define ENTRY_CopyVex2			  ENTRY_DataIgnored &CDetourDis::CopyVex2
+#define ENTRY_CopyVex3			  ENTRY_DataIgnored &CDetourDis::CopyVex3
+#define ENTRY_Invalid			   ENTRY_DataIgnored &CDetourDis::Invalid
+#define ENTRY_End				   ENTRY_DataIgnored NULL
 
 	PBYTE CopyBytes(REFCOPYENTRY pEntry, PBYTE pbDst, PBYTE pbSrc);
 	PBYTE CopyBytesPrefix(REFCOPYENTRY pEntry, PBYTE pbDst, PBYTE pbSrc);
@@ -296,26 +296,26 @@ protected:
 protected:
 	static const COPYENTRY  s_rceCopyTable[257];
 	static const COPYENTRY  s_rceCopyTable0F[257];
-	static const BYTE       s_rbModRm[256];
-	static PBYTE            s_pbModuleBeg;
-	static PBYTE            s_pbModuleEnd;
-	static BOOL             s_fLimitReferencesToModule;
+	static const BYTE	   s_rbModRm[256];
+	static PBYTE			s_pbModuleBeg;
+	static PBYTE			s_pbModuleEnd;
+	static BOOL			 s_fLimitReferencesToModule;
 
 protected:
-	BOOL                m_bOperandOverride;
-	BOOL                m_bAddressOverride;
-	BOOL                m_bRaxOverride; // AMD64 only
-	BOOL                m_bVex;
-	BOOL                m_bF2;
-	BOOL                m_bF3; // x86 only
-	BYTE                m_nSegmentOverride;
+	BOOL				m_bOperandOverride;
+	BOOL				m_bAddressOverride;
+	BOOL				m_bRaxOverride; // AMD64 only
+	BOOL				m_bVex;
+	BOOL				m_bF2;
+	BOOL				m_bF3; // x86 only
+	BYTE				m_nSegmentOverride;
 
-	PBYTE *             m_ppbTarget;
-	LONG *              m_plExtra;
+	PBYTE *			 m_ppbTarget;
+	LONG *			  m_plExtra;
 
-	LONG                m_lScratchExtra;
-	PBYTE               m_pbScratchTarget;
-	BYTE                m_rbScratchDst[64];
+	LONG				m_lScratchExtra;
+	PBYTE			   m_pbScratchTarget;
+	BYTE				m_rbScratchDst[64];
 };
 
 PVOID WINAPI DetourCopyInstruction(_In_opt_ PVOID pDst,
@@ -673,7 +673,7 @@ PBYTE CDetourDis::CopyF6(REFCOPYENTRY pEntry, PBYTE pbDst, PBYTE pbSrc)
 	(void)pEntry;
 
 	// TEST BYTE /0
-	if (0x00 == (0x38 & pbSrc[1])) {    // reg(bits 543) of ModR/M == 0
+	if (0x00 == (0x38 & pbSrc[1])) {	// reg(bits 543) of ModR/M == 0
 		static const COPYENTRY ce = { 0xf6, ENTRY_CopyBytes2Mod1 };
 		return (this->*ce.pfCopy)(&ce, pbDst, pbSrc);
 	}
@@ -693,7 +693,7 @@ PBYTE CDetourDis::CopyF7(REFCOPYENTRY pEntry, PBYTE pbDst, PBYTE pbSrc)
 	(void)pEntry;
 
 	// TEST WORD /0
-	if (0x00 == (0x38 & pbSrc[1])) {    // reg(bits 543) of ModR/M == 0
+	if (0x00 == (0x38 & pbSrc[1])) {	// reg(bits 543) of ModR/M == 0
 		static const COPYENTRY ce = { 0xf7, ENTRY_CopyBytes2ModOperand };
 		return (this->*ce.pfCopy)(&ce, pbDst, pbSrc);
 	}
@@ -724,7 +724,7 @@ PBYTE CDetourDis::CopyFF(REFCOPYENTRY pEntry, PBYTE pbDst, PBYTE pbSrc)
 
 	BYTE const b1 = pbSrc[1];
 
-	if (0x15 == b1 || 0x25 == b1) {         // CALL [], JMP []
+	if (0x15 == b1 || 0x25 == b1) {		 // CALL [], JMP []
 #ifdef DETOURS_X64
 		// All segments but FS and GS are equivalent.
 		if (m_nSegmentOverride != 0x64 && m_nSegmentOverride != 0x65)
@@ -872,558 +872,558 @@ const BYTE CDetourDis::s_rbModRm[256] = {
 	0,0,0,0, SIB | 1,RIP | 4,0,0, 0,0,0,0, SIB | 1,RIP | 4,0,0, // 1x
 	0,0,0,0, SIB | 1,RIP | 4,0,0, 0,0,0,0, SIB | 1,RIP | 4,0,0, // 2x
 	0,0,0,0, SIB | 1,RIP | 4,0,0, 0,0,0,0, SIB | 1,RIP | 4,0,0, // 3x
-	1,1,1,1, 2,1,1,1, 1,1,1,1, 2,1,1,1,                 // 4x
-	1,1,1,1, 2,1,1,1, 1,1,1,1, 2,1,1,1,                 // 5x
-	1,1,1,1, 2,1,1,1, 1,1,1,1, 2,1,1,1,                 // 6x
-	1,1,1,1, 2,1,1,1, 1,1,1,1, 2,1,1,1,                 // 7x
-	4,4,4,4, 5,4,4,4, 4,4,4,4, 5,4,4,4,                 // 8x
-	4,4,4,4, 5,4,4,4, 4,4,4,4, 5,4,4,4,                 // 9x
-	4,4,4,4, 5,4,4,4, 4,4,4,4, 5,4,4,4,                 // Ax
-	4,4,4,4, 5,4,4,4, 4,4,4,4, 5,4,4,4,                 // Bx
-	0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0,                 // Cx
-	0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0,                 // Dx
-	0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0,                 // Ex
-	0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0                  // Fx
+	1,1,1,1, 2,1,1,1, 1,1,1,1, 2,1,1,1,				 // 4x
+	1,1,1,1, 2,1,1,1, 1,1,1,1, 2,1,1,1,				 // 5x
+	1,1,1,1, 2,1,1,1, 1,1,1,1, 2,1,1,1,				 // 6x
+	1,1,1,1, 2,1,1,1, 1,1,1,1, 2,1,1,1,				 // 7x
+	4,4,4,4, 5,4,4,4, 4,4,4,4, 5,4,4,4,				 // 8x
+	4,4,4,4, 5,4,4,4, 4,4,4,4, 5,4,4,4,				 // 9x
+	4,4,4,4, 5,4,4,4, 4,4,4,4, 5,4,4,4,				 // Ax
+	4,4,4,4, 5,4,4,4, 4,4,4,4, 5,4,4,4,				 // Bx
+	0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0,				 // Cx
+	0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0,				 // Dx
+	0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0,				 // Ex
+	0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0				  // Fx
 };
 
 const CDetourDis::COPYENTRY CDetourDis::s_rceCopyTable[257] =
 {
-	{ 0x00, ENTRY_CopyBytes2Mod },                      // ADD /r
-	{ 0x01, ENTRY_CopyBytes2Mod },                      // ADD /r
-	{ 0x02, ENTRY_CopyBytes2Mod },                      // ADD /r
-	{ 0x03, ENTRY_CopyBytes2Mod },                      // ADD /r
-	{ 0x04, ENTRY_CopyBytes2 },                         // ADD ib
-	{ 0x05, ENTRY_CopyBytes3Or5 },                      // ADD iw
+	{ 0x00, ENTRY_CopyBytes2Mod },					  // ADD /r
+	{ 0x01, ENTRY_CopyBytes2Mod },					  // ADD /r
+	{ 0x02, ENTRY_CopyBytes2Mod },					  // ADD /r
+	{ 0x03, ENTRY_CopyBytes2Mod },					  // ADD /r
+	{ 0x04, ENTRY_CopyBytes2 },						 // ADD ib
+	{ 0x05, ENTRY_CopyBytes3Or5 },					  // ADD iw
 #ifdef DETOURS_X64
-	{ 0x06, ENTRY_Invalid },                            // Invalid
-	{ 0x07, ENTRY_Invalid },                            // Invalid
+	{ 0x06, ENTRY_Invalid },							// Invalid
+	{ 0x07, ENTRY_Invalid },							// Invalid
 #else
-	{ 0x06, ENTRY_CopyBytes1 },                         // PUSH
-	{ 0x07, ENTRY_CopyBytes1 },                         // POP
+	{ 0x06, ENTRY_CopyBytes1 },						 // PUSH
+	{ 0x07, ENTRY_CopyBytes1 },						 // POP
 #endif
-	{ 0x08, ENTRY_CopyBytes2Mod },                      // OR /r
-	{ 0x09, ENTRY_CopyBytes2Mod },                      // OR /r
-	{ 0x0A, ENTRY_CopyBytes2Mod },                      // OR /r
-	{ 0x0B, ENTRY_CopyBytes2Mod },                      // OR /r
-	{ 0x0C, ENTRY_CopyBytes2 },                         // OR ib
-	{ 0x0D, ENTRY_CopyBytes3Or5 },                      // OR iw
+	{ 0x08, ENTRY_CopyBytes2Mod },					  // OR /r
+	{ 0x09, ENTRY_CopyBytes2Mod },					  // OR /r
+	{ 0x0A, ENTRY_CopyBytes2Mod },					  // OR /r
+	{ 0x0B, ENTRY_CopyBytes2Mod },					  // OR /r
+	{ 0x0C, ENTRY_CopyBytes2 },						 // OR ib
+	{ 0x0D, ENTRY_CopyBytes3Or5 },					  // OR iw
 #ifdef DETOURS_X64
-	{ 0x0E, ENTRY_Invalid },                            // Invalid
+	{ 0x0E, ENTRY_Invalid },							// Invalid
 #else
-	{ 0x0E, ENTRY_CopyBytes1 },                         // PUSH
+	{ 0x0E, ENTRY_CopyBytes1 },						 // PUSH
 #endif
-	{ 0x0F, ENTRY_Copy0F },                             // Extension Ops
-	{ 0x10, ENTRY_CopyBytes2Mod },                      // ADC /r
-	{ 0x11, ENTRY_CopyBytes2Mod },                      // ADC /r
-	{ 0x12, ENTRY_CopyBytes2Mod },                      // ADC /r
-	{ 0x13, ENTRY_CopyBytes2Mod },                      // ADC /r
-	{ 0x14, ENTRY_CopyBytes2 },                         // ADC ib
-	{ 0x15, ENTRY_CopyBytes3Or5 },                      // ADC id
+	{ 0x0F, ENTRY_Copy0F },							 // Extension Ops
+	{ 0x10, ENTRY_CopyBytes2Mod },					  // ADC /r
+	{ 0x11, ENTRY_CopyBytes2Mod },					  // ADC /r
+	{ 0x12, ENTRY_CopyBytes2Mod },					  // ADC /r
+	{ 0x13, ENTRY_CopyBytes2Mod },					  // ADC /r
+	{ 0x14, ENTRY_CopyBytes2 },						 // ADC ib
+	{ 0x15, ENTRY_CopyBytes3Or5 },					  // ADC id
 #ifdef DETOURS_X64
-	{ 0x16, ENTRY_Invalid },                            // Invalid
-	{ 0x17, ENTRY_Invalid },                            // Invalid
+	{ 0x16, ENTRY_Invalid },							// Invalid
+	{ 0x17, ENTRY_Invalid },							// Invalid
 #else
-	{ 0x16, ENTRY_CopyBytes1 },                         // PUSH
-	{ 0x17, ENTRY_CopyBytes1 },                         // POP
+	{ 0x16, ENTRY_CopyBytes1 },						 // PUSH
+	{ 0x17, ENTRY_CopyBytes1 },						 // POP
 #endif
-	{ 0x18, ENTRY_CopyBytes2Mod },                      // SBB /r
-	{ 0x19, ENTRY_CopyBytes2Mod },                      // SBB /r
-	{ 0x1A, ENTRY_CopyBytes2Mod },                      // SBB /r
-	{ 0x1B, ENTRY_CopyBytes2Mod },                      // SBB /r
-	{ 0x1C, ENTRY_CopyBytes2 },                         // SBB ib
-	{ 0x1D, ENTRY_CopyBytes3Or5 },                      // SBB id
+	{ 0x18, ENTRY_CopyBytes2Mod },					  // SBB /r
+	{ 0x19, ENTRY_CopyBytes2Mod },					  // SBB /r
+	{ 0x1A, ENTRY_CopyBytes2Mod },					  // SBB /r
+	{ 0x1B, ENTRY_CopyBytes2Mod },					  // SBB /r
+	{ 0x1C, ENTRY_CopyBytes2 },						 // SBB ib
+	{ 0x1D, ENTRY_CopyBytes3Or5 },					  // SBB id
 #ifdef DETOURS_X64
-	{ 0x1E, ENTRY_Invalid },                            // Invalid
-	{ 0x1F, ENTRY_Invalid },                            // Invalid
+	{ 0x1E, ENTRY_Invalid },							// Invalid
+	{ 0x1F, ENTRY_Invalid },							// Invalid
 #else
-	{ 0x1E, ENTRY_CopyBytes1 },                         // PUSH
-	{ 0x1F, ENTRY_CopyBytes1 },                         // POP
+	{ 0x1E, ENTRY_CopyBytes1 },						 // PUSH
+	{ 0x1F, ENTRY_CopyBytes1 },						 // POP
 #endif
-	{ 0x20, ENTRY_CopyBytes2Mod },                      // AND /r
-	{ 0x21, ENTRY_CopyBytes2Mod },                      // AND /r
-	{ 0x22, ENTRY_CopyBytes2Mod },                      // AND /r
-	{ 0x23, ENTRY_CopyBytes2Mod },                      // AND /r
-	{ 0x24, ENTRY_CopyBytes2 },                         // AND ib
-	{ 0x25, ENTRY_CopyBytes3Or5 },                      // AND id
-	{ 0x26, ENTRY_CopyBytesSegment },                   // ES prefix
+	{ 0x20, ENTRY_CopyBytes2Mod },					  // AND /r
+	{ 0x21, ENTRY_CopyBytes2Mod },					  // AND /r
+	{ 0x22, ENTRY_CopyBytes2Mod },					  // AND /r
+	{ 0x23, ENTRY_CopyBytes2Mod },					  // AND /r
+	{ 0x24, ENTRY_CopyBytes2 },						 // AND ib
+	{ 0x25, ENTRY_CopyBytes3Or5 },					  // AND id
+	{ 0x26, ENTRY_CopyBytesSegment },				   // ES prefix
 #ifdef DETOURS_X64
-	{ 0x27, ENTRY_Invalid },                            // Invalid
+	{ 0x27, ENTRY_Invalid },							// Invalid
 #else
-	{ 0x27, ENTRY_CopyBytes1 },                         // DAA
+	{ 0x27, ENTRY_CopyBytes1 },						 // DAA
 #endif
-	{ 0x28, ENTRY_CopyBytes2Mod },                      // SUB /r
-	{ 0x29, ENTRY_CopyBytes2Mod },                      // SUB /r
-	{ 0x2A, ENTRY_CopyBytes2Mod },                      // SUB /r
-	{ 0x2B, ENTRY_CopyBytes2Mod },                      // SUB /r
-	{ 0x2C, ENTRY_CopyBytes2 },                         // SUB ib
-	{ 0x2D, ENTRY_CopyBytes3Or5 },                      // SUB id
-	{ 0x2E, ENTRY_CopyBytesSegment },                   // CS prefix
+	{ 0x28, ENTRY_CopyBytes2Mod },					  // SUB /r
+	{ 0x29, ENTRY_CopyBytes2Mod },					  // SUB /r
+	{ 0x2A, ENTRY_CopyBytes2Mod },					  // SUB /r
+	{ 0x2B, ENTRY_CopyBytes2Mod },					  // SUB /r
+	{ 0x2C, ENTRY_CopyBytes2 },						 // SUB ib
+	{ 0x2D, ENTRY_CopyBytes3Or5 },					  // SUB id
+	{ 0x2E, ENTRY_CopyBytesSegment },				   // CS prefix
 #ifdef DETOURS_X64
-	{ 0x2F, ENTRY_Invalid },                            // Invalid
+	{ 0x2F, ENTRY_Invalid },							// Invalid
 #else
-	{ 0x2F, ENTRY_CopyBytes1 },                         // DAS
+	{ 0x2F, ENTRY_CopyBytes1 },						 // DAS
 #endif
-	{ 0x30, ENTRY_CopyBytes2Mod },                      // XOR /r
-	{ 0x31, ENTRY_CopyBytes2Mod },                      // XOR /r
-	{ 0x32, ENTRY_CopyBytes2Mod },                      // XOR /r
-	{ 0x33, ENTRY_CopyBytes2Mod },                      // XOR /r
-	{ 0x34, ENTRY_CopyBytes2 },                         // XOR ib
-	{ 0x35, ENTRY_CopyBytes3Or5 },                      // XOR id
-	{ 0x36, ENTRY_CopyBytesSegment },                   // SS prefix
+	{ 0x30, ENTRY_CopyBytes2Mod },					  // XOR /r
+	{ 0x31, ENTRY_CopyBytes2Mod },					  // XOR /r
+	{ 0x32, ENTRY_CopyBytes2Mod },					  // XOR /r
+	{ 0x33, ENTRY_CopyBytes2Mod },					  // XOR /r
+	{ 0x34, ENTRY_CopyBytes2 },						 // XOR ib
+	{ 0x35, ENTRY_CopyBytes3Or5 },					  // XOR id
+	{ 0x36, ENTRY_CopyBytesSegment },				   // SS prefix
 #ifdef DETOURS_X64
-	{ 0x37, ENTRY_Invalid },                            // Invalid
+	{ 0x37, ENTRY_Invalid },							// Invalid
 #else
-	{ 0x37, ENTRY_CopyBytes1 },                         // AAA
+	{ 0x37, ENTRY_CopyBytes1 },						 // AAA
 #endif
-	{ 0x38, ENTRY_CopyBytes2Mod },                      // CMP /r
-	{ 0x39, ENTRY_CopyBytes2Mod },                      // CMP /r
-	{ 0x3A, ENTRY_CopyBytes2Mod },                      // CMP /r
-	{ 0x3B, ENTRY_CopyBytes2Mod },                      // CMP /r
-	{ 0x3C, ENTRY_CopyBytes2 },                         // CMP ib
-	{ 0x3D, ENTRY_CopyBytes3Or5 },                      // CMP id
-	{ 0x3E, ENTRY_CopyBytesSegment },                   // DS prefix
+	{ 0x38, ENTRY_CopyBytes2Mod },					  // CMP /r
+	{ 0x39, ENTRY_CopyBytes2Mod },					  // CMP /r
+	{ 0x3A, ENTRY_CopyBytes2Mod },					  // CMP /r
+	{ 0x3B, ENTRY_CopyBytes2Mod },					  // CMP /r
+	{ 0x3C, ENTRY_CopyBytes2 },						 // CMP ib
+	{ 0x3D, ENTRY_CopyBytes3Or5 },					  // CMP id
+	{ 0x3E, ENTRY_CopyBytesSegment },				   // DS prefix
 #ifdef DETOURS_X64
-	{ 0x3F, ENTRY_Invalid },                            // Invalid
+	{ 0x3F, ENTRY_Invalid },							// Invalid
 #else
-	{ 0x3F, ENTRY_CopyBytes1 },                         // AAS
+	{ 0x3F, ENTRY_CopyBytes1 },						 // AAS
 #endif
 #ifdef DETOURS_X64 // For Rax Prefix
-	{ 0x40, ENTRY_CopyBytesRax },                       // Rax
-	{ 0x41, ENTRY_CopyBytesRax },                       // Rax
-	{ 0x42, ENTRY_CopyBytesRax },                       // Rax
-	{ 0x43, ENTRY_CopyBytesRax },                       // Rax
-	{ 0x44, ENTRY_CopyBytesRax },                       // Rax
-	{ 0x45, ENTRY_CopyBytesRax },                       // Rax
-	{ 0x46, ENTRY_CopyBytesRax },                       // Rax
-	{ 0x47, ENTRY_CopyBytesRax },                       // Rax
-	{ 0x48, ENTRY_CopyBytesRax },                       // Rax
-	{ 0x49, ENTRY_CopyBytesRax },                       // Rax
-	{ 0x4A, ENTRY_CopyBytesRax },                       // Rax
-	{ 0x4B, ENTRY_CopyBytesRax },                       // Rax
-	{ 0x4C, ENTRY_CopyBytesRax },                       // Rax
-	{ 0x4D, ENTRY_CopyBytesRax },                       // Rax
-	{ 0x4E, ENTRY_CopyBytesRax },                       // Rax
-	{ 0x4F, ENTRY_CopyBytesRax },                       // Rax
+	{ 0x40, ENTRY_CopyBytesRax },					   // Rax
+	{ 0x41, ENTRY_CopyBytesRax },					   // Rax
+	{ 0x42, ENTRY_CopyBytesRax },					   // Rax
+	{ 0x43, ENTRY_CopyBytesRax },					   // Rax
+	{ 0x44, ENTRY_CopyBytesRax },					   // Rax
+	{ 0x45, ENTRY_CopyBytesRax },					   // Rax
+	{ 0x46, ENTRY_CopyBytesRax },					   // Rax
+	{ 0x47, ENTRY_CopyBytesRax },					   // Rax
+	{ 0x48, ENTRY_CopyBytesRax },					   // Rax
+	{ 0x49, ENTRY_CopyBytesRax },					   // Rax
+	{ 0x4A, ENTRY_CopyBytesRax },					   // Rax
+	{ 0x4B, ENTRY_CopyBytesRax },					   // Rax
+	{ 0x4C, ENTRY_CopyBytesRax },					   // Rax
+	{ 0x4D, ENTRY_CopyBytesRax },					   // Rax
+	{ 0x4E, ENTRY_CopyBytesRax },					   // Rax
+	{ 0x4F, ENTRY_CopyBytesRax },					   // Rax
 #else
-	{ 0x40, ENTRY_CopyBytes1 },                         // INC
-	{ 0x41, ENTRY_CopyBytes1 },                         // INC
-	{ 0x42, ENTRY_CopyBytes1 },                         // INC
-	{ 0x43, ENTRY_CopyBytes1 },                         // INC
-	{ 0x44, ENTRY_CopyBytes1 },                         // INC
-	{ 0x45, ENTRY_CopyBytes1 },                         // INC
-	{ 0x46, ENTRY_CopyBytes1 },                         // INC
-	{ 0x47, ENTRY_CopyBytes1 },                         // INC
-	{ 0x48, ENTRY_CopyBytes1 },                         // DEC
-	{ 0x49, ENTRY_CopyBytes1 },                         // DEC
-	{ 0x4A, ENTRY_CopyBytes1 },                         // DEC
-	{ 0x4B, ENTRY_CopyBytes1 },                         // DEC
-	{ 0x4C, ENTRY_CopyBytes1 },                         // DEC
-	{ 0x4D, ENTRY_CopyBytes1 },                         // DEC
-	{ 0x4E, ENTRY_CopyBytes1 },                         // DEC
-	{ 0x4F, ENTRY_CopyBytes1 },                         // DEC
+	{ 0x40, ENTRY_CopyBytes1 },						 // INC
+	{ 0x41, ENTRY_CopyBytes1 },						 // INC
+	{ 0x42, ENTRY_CopyBytes1 },						 // INC
+	{ 0x43, ENTRY_CopyBytes1 },						 // INC
+	{ 0x44, ENTRY_CopyBytes1 },						 // INC
+	{ 0x45, ENTRY_CopyBytes1 },						 // INC
+	{ 0x46, ENTRY_CopyBytes1 },						 // INC
+	{ 0x47, ENTRY_CopyBytes1 },						 // INC
+	{ 0x48, ENTRY_CopyBytes1 },						 // DEC
+	{ 0x49, ENTRY_CopyBytes1 },						 // DEC
+	{ 0x4A, ENTRY_CopyBytes1 },						 // DEC
+	{ 0x4B, ENTRY_CopyBytes1 },						 // DEC
+	{ 0x4C, ENTRY_CopyBytes1 },						 // DEC
+	{ 0x4D, ENTRY_CopyBytes1 },						 // DEC
+	{ 0x4E, ENTRY_CopyBytes1 },						 // DEC
+	{ 0x4F, ENTRY_CopyBytes1 },						 // DEC
 #endif
-	{ 0x50, ENTRY_CopyBytes1 },                         // PUSH
-	{ 0x51, ENTRY_CopyBytes1 },                         // PUSH
-	{ 0x52, ENTRY_CopyBytes1 },                         // PUSH
-	{ 0x53, ENTRY_CopyBytes1 },                         // PUSH
-	{ 0x54, ENTRY_CopyBytes1 },                         // PUSH
-	{ 0x55, ENTRY_CopyBytes1 },                         // PUSH
-	{ 0x56, ENTRY_CopyBytes1 },                         // PUSH
-	{ 0x57, ENTRY_CopyBytes1 },                         // PUSH
-	{ 0x58, ENTRY_CopyBytes1 },                         // POP
-	{ 0x59, ENTRY_CopyBytes1 },                         // POP
-	{ 0x5A, ENTRY_CopyBytes1 },                         // POP
-	{ 0x5B, ENTRY_CopyBytes1 },                         // POP
-	{ 0x5C, ENTRY_CopyBytes1 },                         // POP
-	{ 0x5D, ENTRY_CopyBytes1 },                         // POP
-	{ 0x5E, ENTRY_CopyBytes1 },                         // POP
-	{ 0x5F, ENTRY_CopyBytes1 },                         // POP
+	{ 0x50, ENTRY_CopyBytes1 },						 // PUSH
+	{ 0x51, ENTRY_CopyBytes1 },						 // PUSH
+	{ 0x52, ENTRY_CopyBytes1 },						 // PUSH
+	{ 0x53, ENTRY_CopyBytes1 },						 // PUSH
+	{ 0x54, ENTRY_CopyBytes1 },						 // PUSH
+	{ 0x55, ENTRY_CopyBytes1 },						 // PUSH
+	{ 0x56, ENTRY_CopyBytes1 },						 // PUSH
+	{ 0x57, ENTRY_CopyBytes1 },						 // PUSH
+	{ 0x58, ENTRY_CopyBytes1 },						 // POP
+	{ 0x59, ENTRY_CopyBytes1 },						 // POP
+	{ 0x5A, ENTRY_CopyBytes1 },						 // POP
+	{ 0x5B, ENTRY_CopyBytes1 },						 // POP
+	{ 0x5C, ENTRY_CopyBytes1 },						 // POP
+	{ 0x5D, ENTRY_CopyBytes1 },						 // POP
+	{ 0x5E, ENTRY_CopyBytes1 },						 // POP
+	{ 0x5F, ENTRY_CopyBytes1 },						 // POP
 #ifdef DETOURS_X64
-	{ 0x60, ENTRY_Invalid },                            // Invalid
-	{ 0x61, ENTRY_Invalid },                            // Invalid
-	{ 0x62, ENTRY_Invalid },                            // Invalid (not yet implemented Intel EVEX support)
+	{ 0x60, ENTRY_Invalid },							// Invalid
+	{ 0x61, ENTRY_Invalid },							// Invalid
+	{ 0x62, ENTRY_Invalid },							// Invalid (not yet implemented Intel EVEX support)
 #else
-	{ 0x60, ENTRY_CopyBytes1 },                         // PUSHAD
-	{ 0x61, ENTRY_CopyBytes1 },                         // POPAD
-	{ 0x62, ENTRY_CopyBytes2Mod },                      // BOUND /r
+	{ 0x60, ENTRY_CopyBytes1 },						 // PUSHAD
+	{ 0x61, ENTRY_CopyBytes1 },						 // POPAD
+	{ 0x62, ENTRY_CopyBytes2Mod },					  // BOUND /r
 #endif
-	{ 0x63, ENTRY_CopyBytes2Mod },                      // 32bit ARPL /r, 64bit MOVSXD
-	{ 0x64, ENTRY_CopyBytesSegment },                   // FS prefix
-	{ 0x65, ENTRY_CopyBytesSegment },                   // GS prefix
-	{ 0x66, ENTRY_Copy66 },                             // Operand Prefix
-	{ 0x67, ENTRY_Copy67 },                             // Address Prefix
-	{ 0x68, ENTRY_CopyBytes3Or5 },                      // PUSH
-	{ 0x69, ENTRY_CopyBytes2ModOperand },               // IMUL /r iz
-	{ 0x6A, ENTRY_CopyBytes2 },                         // PUSH
-	{ 0x6B, ENTRY_CopyBytes2Mod1 },                     // IMUL /r ib
-	{ 0x6C, ENTRY_CopyBytes1 },                         // INS
-	{ 0x6D, ENTRY_CopyBytes1 },                         // INS
-	{ 0x6E, ENTRY_CopyBytes1 },                         // OUTS/OUTSB
-	{ 0x6F, ENTRY_CopyBytes1 },                         // OUTS/OUTSW
-	{ 0x70, ENTRY_CopyBytes2Jump },                     // JO           // 0f80
-	{ 0x71, ENTRY_CopyBytes2Jump },                     // JNO          // 0f81
-	{ 0x72, ENTRY_CopyBytes2Jump },                     // JB/JC/JNAE   // 0f82
-	{ 0x73, ENTRY_CopyBytes2Jump },                     // JAE/JNB/JNC  // 0f83
-	{ 0x74, ENTRY_CopyBytes2Jump },                     // JE/JZ        // 0f84
-	{ 0x75, ENTRY_CopyBytes2Jump },                     // JNE/JNZ      // 0f85
-	{ 0x76, ENTRY_CopyBytes2Jump },                     // JBE/JNA      // 0f86
-	{ 0x77, ENTRY_CopyBytes2Jump },                     // JA/JNBE      // 0f87
-	{ 0x78, ENTRY_CopyBytes2Jump },                     // JS           // 0f88
-	{ 0x79, ENTRY_CopyBytes2Jump },                     // JNS          // 0f89
-	{ 0x7A, ENTRY_CopyBytes2Jump },                     // JP/JPE       // 0f8a
-	{ 0x7B, ENTRY_CopyBytes2Jump },                     // JNP/JPO      // 0f8b
-	{ 0x7C, ENTRY_CopyBytes2Jump },                     // JL/JNGE      // 0f8c
-	{ 0x7D, ENTRY_CopyBytes2Jump },                     // JGE/JNL      // 0f8d
-	{ 0x7E, ENTRY_CopyBytes2Jump },                     // JLE/JNG      // 0f8e
-	{ 0x7F, ENTRY_CopyBytes2Jump },                     // JG/JNLE      // 0f8f
-	{ 0x80, ENTRY_CopyBytes2Mod1 },                     // ADD/0 OR/1 ADC/2 SBB/3 AND/4 SUB/5 XOR/6 CMP/7 byte reg, immediate byte
-	{ 0x81, ENTRY_CopyBytes2ModOperand },               // ADD/0 OR/1 ADC/2 SBB/3 AND/4 SUB/5 XOR/6 CMP/7 byte reg, immediate word or dword
+	{ 0x63, ENTRY_CopyBytes2Mod },					  // 32bit ARPL /r, 64bit MOVSXD
+	{ 0x64, ENTRY_CopyBytesSegment },				   // FS prefix
+	{ 0x65, ENTRY_CopyBytesSegment },				   // GS prefix
+	{ 0x66, ENTRY_Copy66 },							 // Operand Prefix
+	{ 0x67, ENTRY_Copy67 },							 // Address Prefix
+	{ 0x68, ENTRY_CopyBytes3Or5 },					  // PUSH
+	{ 0x69, ENTRY_CopyBytes2ModOperand },			   // IMUL /r iz
+	{ 0x6A, ENTRY_CopyBytes2 },						 // PUSH
+	{ 0x6B, ENTRY_CopyBytes2Mod1 },					 // IMUL /r ib
+	{ 0x6C, ENTRY_CopyBytes1 },						 // INS
+	{ 0x6D, ENTRY_CopyBytes1 },						 // INS
+	{ 0x6E, ENTRY_CopyBytes1 },						 // OUTS/OUTSB
+	{ 0x6F, ENTRY_CopyBytes1 },						 // OUTS/OUTSW
+	{ 0x70, ENTRY_CopyBytes2Jump },					 // JO		   // 0f80
+	{ 0x71, ENTRY_CopyBytes2Jump },					 // JNO		  // 0f81
+	{ 0x72, ENTRY_CopyBytes2Jump },					 // JB/JC/JNAE   // 0f82
+	{ 0x73, ENTRY_CopyBytes2Jump },					 // JAE/JNB/JNC  // 0f83
+	{ 0x74, ENTRY_CopyBytes2Jump },					 // JE/JZ		// 0f84
+	{ 0x75, ENTRY_CopyBytes2Jump },					 // JNE/JNZ	  // 0f85
+	{ 0x76, ENTRY_CopyBytes2Jump },					 // JBE/JNA	  // 0f86
+	{ 0x77, ENTRY_CopyBytes2Jump },					 // JA/JNBE	  // 0f87
+	{ 0x78, ENTRY_CopyBytes2Jump },					 // JS		   // 0f88
+	{ 0x79, ENTRY_CopyBytes2Jump },					 // JNS		  // 0f89
+	{ 0x7A, ENTRY_CopyBytes2Jump },					 // JP/JPE	   // 0f8a
+	{ 0x7B, ENTRY_CopyBytes2Jump },					 // JNP/JPO	  // 0f8b
+	{ 0x7C, ENTRY_CopyBytes2Jump },					 // JL/JNGE	  // 0f8c
+	{ 0x7D, ENTRY_CopyBytes2Jump },					 // JGE/JNL	  // 0f8d
+	{ 0x7E, ENTRY_CopyBytes2Jump },					 // JLE/JNG	  // 0f8e
+	{ 0x7F, ENTRY_CopyBytes2Jump },					 // JG/JNLE	  // 0f8f
+	{ 0x80, ENTRY_CopyBytes2Mod1 },					 // ADD/0 OR/1 ADC/2 SBB/3 AND/4 SUB/5 XOR/6 CMP/7 byte reg, immediate byte
+	{ 0x81, ENTRY_CopyBytes2ModOperand },			   // ADD/0 OR/1 ADC/2 SBB/3 AND/4 SUB/5 XOR/6 CMP/7 byte reg, immediate word or dword
 #ifdef DETOURS_X64
-	{ 0x82, ENTRY_Invalid },                            // Invalid
+	{ 0x82, ENTRY_Invalid },							// Invalid
 #else
-	{ 0x82, ENTRY_CopyBytes2Mod1 },                     // MOV al,x
+	{ 0x82, ENTRY_CopyBytes2Mod1 },					 // MOV al,x
 #endif
-	{ 0x83, ENTRY_CopyBytes2Mod1 },                     // ADD/0 OR/1 ADC/2 SBB/3 AND/4 SUB/5 XOR/6 CMP/7 reg, immediate byte
-	{ 0x84, ENTRY_CopyBytes2Mod },                      // TEST /r
-	{ 0x85, ENTRY_CopyBytes2Mod },                      // TEST /r
-	{ 0x86, ENTRY_CopyBytes2Mod },                      // XCHG /r @todo
-	{ 0x87, ENTRY_CopyBytes2Mod },                      // XCHG /r @todo
-	{ 0x88, ENTRY_CopyBytes2Mod },                      // MOV /r
-	{ 0x89, ENTRY_CopyBytes2Mod },                      // MOV /r
-	{ 0x8A, ENTRY_CopyBytes2Mod },                      // MOV /r
-	{ 0x8B, ENTRY_CopyBytes2Mod },                      // MOV /r
-	{ 0x8C, ENTRY_CopyBytes2Mod },                      // MOV /r
-	{ 0x8D, ENTRY_CopyBytes2Mod },                      // LEA /r
-	{ 0x8E, ENTRY_CopyBytes2Mod },                      // MOV /r
-	{ 0x8F, ENTRY_CopyBytes2Mod },                      // POP /0
-	{ 0x90, ENTRY_CopyBytes1 },                         // NOP
-	{ 0x91, ENTRY_CopyBytes1 },                         // XCHG
-	{ 0x92, ENTRY_CopyBytes1 },                         // XCHG
-	{ 0x93, ENTRY_CopyBytes1 },                         // XCHG
-	{ 0x94, ENTRY_CopyBytes1 },                         // XCHG
-	{ 0x95, ENTRY_CopyBytes1 },                         // XCHG
-	{ 0x96, ENTRY_CopyBytes1 },                         // XCHG
-	{ 0x97, ENTRY_CopyBytes1 },                         // XCHG
-	{ 0x98, ENTRY_CopyBytes1 },                         // CWDE
-	{ 0x99, ENTRY_CopyBytes1 },                         // CDQ
+	{ 0x83, ENTRY_CopyBytes2Mod1 },					 // ADD/0 OR/1 ADC/2 SBB/3 AND/4 SUB/5 XOR/6 CMP/7 reg, immediate byte
+	{ 0x84, ENTRY_CopyBytes2Mod },					  // TEST /r
+	{ 0x85, ENTRY_CopyBytes2Mod },					  // TEST /r
+	{ 0x86, ENTRY_CopyBytes2Mod },					  // XCHG /r @todo
+	{ 0x87, ENTRY_CopyBytes2Mod },					  // XCHG /r @todo
+	{ 0x88, ENTRY_CopyBytes2Mod },					  // MOV /r
+	{ 0x89, ENTRY_CopyBytes2Mod },					  // MOV /r
+	{ 0x8A, ENTRY_CopyBytes2Mod },					  // MOV /r
+	{ 0x8B, ENTRY_CopyBytes2Mod },					  // MOV /r
+	{ 0x8C, ENTRY_CopyBytes2Mod },					  // MOV /r
+	{ 0x8D, ENTRY_CopyBytes2Mod },					  // LEA /r
+	{ 0x8E, ENTRY_CopyBytes2Mod },					  // MOV /r
+	{ 0x8F, ENTRY_CopyBytes2Mod },					  // POP /0
+	{ 0x90, ENTRY_CopyBytes1 },						 // NOP
+	{ 0x91, ENTRY_CopyBytes1 },						 // XCHG
+	{ 0x92, ENTRY_CopyBytes1 },						 // XCHG
+	{ 0x93, ENTRY_CopyBytes1 },						 // XCHG
+	{ 0x94, ENTRY_CopyBytes1 },						 // XCHG
+	{ 0x95, ENTRY_CopyBytes1 },						 // XCHG
+	{ 0x96, ENTRY_CopyBytes1 },						 // XCHG
+	{ 0x97, ENTRY_CopyBytes1 },						 // XCHG
+	{ 0x98, ENTRY_CopyBytes1 },						 // CWDE
+	{ 0x99, ENTRY_CopyBytes1 },						 // CDQ
 #ifdef DETOURS_X64
-	{ 0x9A, ENTRY_Invalid },                            // Invalid
+	{ 0x9A, ENTRY_Invalid },							// Invalid
 #else
-	{ 0x9A, ENTRY_CopyBytes5Or7Dynamic },               // CALL cp
+	{ 0x9A, ENTRY_CopyBytes5Or7Dynamic },			   // CALL cp
 #endif
-	{ 0x9B, ENTRY_CopyBytes1 },                         // WAIT/FWAIT
-	{ 0x9C, ENTRY_CopyBytes1 },                         // PUSHFD
-	{ 0x9D, ENTRY_CopyBytes1 },                         // POPFD
-	{ 0x9E, ENTRY_CopyBytes1 },                         // SAHF
-	{ 0x9F, ENTRY_CopyBytes1 },                         // LAHF
-	{ 0xA0, ENTRY_CopyBytes1Address },                  // MOV
-	{ 0xA1, ENTRY_CopyBytes1Address },                  // MOV
-	{ 0xA2, ENTRY_CopyBytes1Address },                  // MOV
-	{ 0xA3, ENTRY_CopyBytes1Address },                  // MOV
-	{ 0xA4, ENTRY_CopyBytes1 },                         // MOVS
-	{ 0xA5, ENTRY_CopyBytes1 },                         // MOVS/MOVSD
-	{ 0xA6, ENTRY_CopyBytes1 },                         // CMPS/CMPSB
-	{ 0xA7, ENTRY_CopyBytes1 },                         // CMPS/CMPSW
-	{ 0xA8, ENTRY_CopyBytes2 },                         // TEST
-	{ 0xA9, ENTRY_CopyBytes3Or5 },                      // TEST
-	{ 0xAA, ENTRY_CopyBytes1 },                         // STOS/STOSB
-	{ 0xAB, ENTRY_CopyBytes1 },                         // STOS/STOSW
-	{ 0xAC, ENTRY_CopyBytes1 },                         // LODS/LODSB
-	{ 0xAD, ENTRY_CopyBytes1 },                         // LODS/LODSW
-	{ 0xAE, ENTRY_CopyBytes1 },                         // SCAS/SCASB
-	{ 0xAF, ENTRY_CopyBytes1 },                         // SCAS/SCASD
-	{ 0xB0, ENTRY_CopyBytes2 },                         // MOV B0+rb
-	{ 0xB1, ENTRY_CopyBytes2 },                         // MOV B0+rb
-	{ 0xB2, ENTRY_CopyBytes2 },                         // MOV B0+rb
-	{ 0xB3, ENTRY_CopyBytes2 },                         // MOV B0+rb
-	{ 0xB4, ENTRY_CopyBytes2 },                         // MOV B0+rb
-	{ 0xB5, ENTRY_CopyBytes2 },                         // MOV B0+rb
-	{ 0xB6, ENTRY_CopyBytes2 },                         // MOV B0+rb
-	{ 0xB7, ENTRY_CopyBytes2 },                         // MOV B0+rb
-	{ 0xB8, ENTRY_CopyBytes3Or5Rax },                   // MOV B8+rb
-	{ 0xB9, ENTRY_CopyBytes3Or5Rax },                   // MOV B8+rb
-	{ 0xBA, ENTRY_CopyBytes3Or5Rax },                   // MOV B8+rb
-	{ 0xBB, ENTRY_CopyBytes3Or5Rax },                   // MOV B8+rb
-	{ 0xBC, ENTRY_CopyBytes3Or5Rax },                   // MOV B8+rb
-	{ 0xBD, ENTRY_CopyBytes3Or5Rax },                   // MOV B8+rb
-	{ 0xBE, ENTRY_CopyBytes3Or5Rax },                   // MOV B8+rb
-	{ 0xBF, ENTRY_CopyBytes3Or5Rax },                   // MOV B8+rb
-	{ 0xC0, ENTRY_CopyBytes2Mod1 },                     // RCL/2 ib, etc.
-	{ 0xC1, ENTRY_CopyBytes2Mod1 },                     // RCL/2 ib, etc.
-	{ 0xC2, ENTRY_CopyBytes3 },                         // RET
-	{ 0xC3, ENTRY_CopyBytes1 },                         // RET
-	{ 0xC4, ENTRY_CopyVex3 },                           // LES, VEX 3-byte opcodes.
-	{ 0xC5, ENTRY_CopyVex2 },                           // LDS, VEX 2-byte opcodes.
-	{ 0xC6, ENTRY_CopyBytes2Mod1 },                     // MOV
-	{ 0xC7, ENTRY_CopyBytes2ModOperand },               // MOV/0 XBEGIN/7
-	{ 0xC8, ENTRY_CopyBytes4 },                         // ENTER
-	{ 0xC9, ENTRY_CopyBytes1 },                         // LEAVE
-	{ 0xCA, ENTRY_CopyBytes3Dynamic },                  // RET
-	{ 0xCB, ENTRY_CopyBytes1Dynamic },                  // RET
-	{ 0xCC, ENTRY_CopyBytes1Dynamic },                  // INT 3
-	{ 0xCD, ENTRY_CopyBytes2Dynamic },                  // INT ib
+	{ 0x9B, ENTRY_CopyBytes1 },						 // WAIT/FWAIT
+	{ 0x9C, ENTRY_CopyBytes1 },						 // PUSHFD
+	{ 0x9D, ENTRY_CopyBytes1 },						 // POPFD
+	{ 0x9E, ENTRY_CopyBytes1 },						 // SAHF
+	{ 0x9F, ENTRY_CopyBytes1 },						 // LAHF
+	{ 0xA0, ENTRY_CopyBytes1Address },				  // MOV
+	{ 0xA1, ENTRY_CopyBytes1Address },				  // MOV
+	{ 0xA2, ENTRY_CopyBytes1Address },				  // MOV
+	{ 0xA3, ENTRY_CopyBytes1Address },				  // MOV
+	{ 0xA4, ENTRY_CopyBytes1 },						 // MOVS
+	{ 0xA5, ENTRY_CopyBytes1 },						 // MOVS/MOVSD
+	{ 0xA6, ENTRY_CopyBytes1 },						 // CMPS/CMPSB
+	{ 0xA7, ENTRY_CopyBytes1 },						 // CMPS/CMPSW
+	{ 0xA8, ENTRY_CopyBytes2 },						 // TEST
+	{ 0xA9, ENTRY_CopyBytes3Or5 },					  // TEST
+	{ 0xAA, ENTRY_CopyBytes1 },						 // STOS/STOSB
+	{ 0xAB, ENTRY_CopyBytes1 },						 // STOS/STOSW
+	{ 0xAC, ENTRY_CopyBytes1 },						 // LODS/LODSB
+	{ 0xAD, ENTRY_CopyBytes1 },						 // LODS/LODSW
+	{ 0xAE, ENTRY_CopyBytes1 },						 // SCAS/SCASB
+	{ 0xAF, ENTRY_CopyBytes1 },						 // SCAS/SCASD
+	{ 0xB0, ENTRY_CopyBytes2 },						 // MOV B0+rb
+	{ 0xB1, ENTRY_CopyBytes2 },						 // MOV B0+rb
+	{ 0xB2, ENTRY_CopyBytes2 },						 // MOV B0+rb
+	{ 0xB3, ENTRY_CopyBytes2 },						 // MOV B0+rb
+	{ 0xB4, ENTRY_CopyBytes2 },						 // MOV B0+rb
+	{ 0xB5, ENTRY_CopyBytes2 },						 // MOV B0+rb
+	{ 0xB6, ENTRY_CopyBytes2 },						 // MOV B0+rb
+	{ 0xB7, ENTRY_CopyBytes2 },						 // MOV B0+rb
+	{ 0xB8, ENTRY_CopyBytes3Or5Rax },				   // MOV B8+rb
+	{ 0xB9, ENTRY_CopyBytes3Or5Rax },				   // MOV B8+rb
+	{ 0xBA, ENTRY_CopyBytes3Or5Rax },				   // MOV B8+rb
+	{ 0xBB, ENTRY_CopyBytes3Or5Rax },				   // MOV B8+rb
+	{ 0xBC, ENTRY_CopyBytes3Or5Rax },				   // MOV B8+rb
+	{ 0xBD, ENTRY_CopyBytes3Or5Rax },				   // MOV B8+rb
+	{ 0xBE, ENTRY_CopyBytes3Or5Rax },				   // MOV B8+rb
+	{ 0xBF, ENTRY_CopyBytes3Or5Rax },				   // MOV B8+rb
+	{ 0xC0, ENTRY_CopyBytes2Mod1 },					 // RCL/2 ib, etc.
+	{ 0xC1, ENTRY_CopyBytes2Mod1 },					 // RCL/2 ib, etc.
+	{ 0xC2, ENTRY_CopyBytes3 },						 // RET
+	{ 0xC3, ENTRY_CopyBytes1 },						 // RET
+	{ 0xC4, ENTRY_CopyVex3 },						   // LES, VEX 3-byte opcodes.
+	{ 0xC5, ENTRY_CopyVex2 },						   // LDS, VEX 2-byte opcodes.
+	{ 0xC6, ENTRY_CopyBytes2Mod1 },					 // MOV
+	{ 0xC7, ENTRY_CopyBytes2ModOperand },			   // MOV/0 XBEGIN/7
+	{ 0xC8, ENTRY_CopyBytes4 },						 // ENTER
+	{ 0xC9, ENTRY_CopyBytes1 },						 // LEAVE
+	{ 0xCA, ENTRY_CopyBytes3Dynamic },				  // RET
+	{ 0xCB, ENTRY_CopyBytes1Dynamic },				  // RET
+	{ 0xCC, ENTRY_CopyBytes1Dynamic },				  // INT 3
+	{ 0xCD, ENTRY_CopyBytes2Dynamic },				  // INT ib
 #ifdef DETOURS_X64
-	{ 0xCE, ENTRY_Invalid },                            // Invalid
+	{ 0xCE, ENTRY_Invalid },							// Invalid
 #else
-	{ 0xCE, ENTRY_CopyBytes1Dynamic },                  // INTO
+	{ 0xCE, ENTRY_CopyBytes1Dynamic },				  // INTO
 #endif
-	{ 0xCF, ENTRY_CopyBytes1Dynamic },                  // IRET
-	{ 0xD0, ENTRY_CopyBytes2Mod },                      // RCL/2, etc.
-	{ 0xD1, ENTRY_CopyBytes2Mod },                      // RCL/2, etc.
-	{ 0xD2, ENTRY_CopyBytes2Mod },                      // RCL/2, etc.
-	{ 0xD3, ENTRY_CopyBytes2Mod },                      // RCL/2, etc.
+	{ 0xCF, ENTRY_CopyBytes1Dynamic },				  // IRET
+	{ 0xD0, ENTRY_CopyBytes2Mod },					  // RCL/2, etc.
+	{ 0xD1, ENTRY_CopyBytes2Mod },					  // RCL/2, etc.
+	{ 0xD2, ENTRY_CopyBytes2Mod },					  // RCL/2, etc.
+	{ 0xD3, ENTRY_CopyBytes2Mod },					  // RCL/2, etc.
 #ifdef DETOURS_X64
-	{ 0xD4, ENTRY_Invalid },                            // Invalid
-	{ 0xD5, ENTRY_Invalid },                            // Invalid
+	{ 0xD4, ENTRY_Invalid },							// Invalid
+	{ 0xD5, ENTRY_Invalid },							// Invalid
 #else
-	{ 0xD4, ENTRY_CopyBytes2 },                         // AAM
-	{ 0xD5, ENTRY_CopyBytes2 },                         // AAD
+	{ 0xD4, ENTRY_CopyBytes2 },						 // AAM
+	{ 0xD5, ENTRY_CopyBytes2 },						 // AAD
 #endif
-	{ 0xD6, ENTRY_Invalid },                            // Invalid
-	{ 0xD7, ENTRY_CopyBytes1 },                         // XLAT/XLATB
-	{ 0xD8, ENTRY_CopyBytes2Mod },                      // FADD, etc.
-	{ 0xD9, ENTRY_CopyBytes2Mod },                      // F2XM1, etc.
-	{ 0xDA, ENTRY_CopyBytes2Mod },                      // FLADD, etc.
-	{ 0xDB, ENTRY_CopyBytes2Mod },                      // FCLEX, etc.
-	{ 0xDC, ENTRY_CopyBytes2Mod },                      // FADD/0, etc.
-	{ 0xDD, ENTRY_CopyBytes2Mod },                      // FFREE, etc.
-	{ 0xDE, ENTRY_CopyBytes2Mod },                      // FADDP, etc.
-	{ 0xDF, ENTRY_CopyBytes2Mod },                      // FBLD/4, etc.
-	{ 0xE0, ENTRY_CopyBytes2CantJump },                 // LOOPNE cb
-	{ 0xE1, ENTRY_CopyBytes2CantJump },                 // LOOPE cb
-	{ 0xE2, ENTRY_CopyBytes2CantJump },                 // LOOP cb
-	{ 0xE3, ENTRY_CopyBytes2CantJump },                 // JCXZ/JECXZ
-	{ 0xE4, ENTRY_CopyBytes2 },                         // IN ib
-	{ 0xE5, ENTRY_CopyBytes2 },                         // IN id
-	{ 0xE6, ENTRY_CopyBytes2 },                         // OUT ib
-	{ 0xE7, ENTRY_CopyBytes2 },                         // OUT ib
-	{ 0xE8, ENTRY_CopyBytes3Or5Target },                // CALL cd
-	{ 0xE9, ENTRY_CopyBytes3Or5Target },                // JMP cd
+	{ 0xD6, ENTRY_Invalid },							// Invalid
+	{ 0xD7, ENTRY_CopyBytes1 },						 // XLAT/XLATB
+	{ 0xD8, ENTRY_CopyBytes2Mod },					  // FADD, etc.
+	{ 0xD9, ENTRY_CopyBytes2Mod },					  // F2XM1, etc.
+	{ 0xDA, ENTRY_CopyBytes2Mod },					  // FLADD, etc.
+	{ 0xDB, ENTRY_CopyBytes2Mod },					  // FCLEX, etc.
+	{ 0xDC, ENTRY_CopyBytes2Mod },					  // FADD/0, etc.
+	{ 0xDD, ENTRY_CopyBytes2Mod },					  // FFREE, etc.
+	{ 0xDE, ENTRY_CopyBytes2Mod },					  // FADDP, etc.
+	{ 0xDF, ENTRY_CopyBytes2Mod },					  // FBLD/4, etc.
+	{ 0xE0, ENTRY_CopyBytes2CantJump },				 // LOOPNE cb
+	{ 0xE1, ENTRY_CopyBytes2CantJump },				 // LOOPE cb
+	{ 0xE2, ENTRY_CopyBytes2CantJump },				 // LOOP cb
+	{ 0xE3, ENTRY_CopyBytes2CantJump },				 // JCXZ/JECXZ
+	{ 0xE4, ENTRY_CopyBytes2 },						 // IN ib
+	{ 0xE5, ENTRY_CopyBytes2 },						 // IN id
+	{ 0xE6, ENTRY_CopyBytes2 },						 // OUT ib
+	{ 0xE7, ENTRY_CopyBytes2 },						 // OUT ib
+	{ 0xE8, ENTRY_CopyBytes3Or5Target },				// CALL cd
+	{ 0xE9, ENTRY_CopyBytes3Or5Target },				// JMP cd
 #ifdef DETOURS_X64
-	{ 0xEA, ENTRY_Invalid },                            // Invalid
+	{ 0xEA, ENTRY_Invalid },							// Invalid
 #else
-	{ 0xEA, ENTRY_CopyBytes5Or7Dynamic },               // JMP cp
+	{ 0xEA, ENTRY_CopyBytes5Or7Dynamic },			   // JMP cp
 #endif
-	{ 0xEB, ENTRY_CopyBytes2Jump },                     // JMP cb
-	{ 0xEC, ENTRY_CopyBytes1 },                         // IN ib
-	{ 0xED, ENTRY_CopyBytes1 },                         // IN id
-	{ 0xEE, ENTRY_CopyBytes1 },                         // OUT
-	{ 0xEF, ENTRY_CopyBytes1 },                         // OUT
-	{ 0xF0, ENTRY_CopyBytesPrefix },                    // LOCK prefix
-	{ 0xF1, ENTRY_CopyBytes1Dynamic },                  // INT1 / ICEBP somewhat documented by AMD, not by Intel
-	{ 0xF2, ENTRY_CopyF2 },                             // REPNE prefix
+	{ 0xEB, ENTRY_CopyBytes2Jump },					 // JMP cb
+	{ 0xEC, ENTRY_CopyBytes1 },						 // IN ib
+	{ 0xED, ENTRY_CopyBytes1 },						 // IN id
+	{ 0xEE, ENTRY_CopyBytes1 },						 // OUT
+	{ 0xEF, ENTRY_CopyBytes1 },						 // OUT
+	{ 0xF0, ENTRY_CopyBytesPrefix },					// LOCK prefix
+	{ 0xF1, ENTRY_CopyBytes1Dynamic },				  // INT1 / ICEBP somewhat documented by AMD, not by Intel
+	{ 0xF2, ENTRY_CopyF2 },							 // REPNE prefix
 //#ifdef DETOURS_X86
-	{ 0xF3, ENTRY_CopyF3 },                             // REPE prefix
+	{ 0xF3, ENTRY_CopyF3 },							 // REPE prefix
 //#else
 // This does presently suffice for AMD64 but it requires tracing
 // through a bunch of code to verify and seems not worth maintaining.
-//  { 0xF3, ENTRY_CopyBytesPrefix },                    // REPE prefix
+//  { 0xF3, ENTRY_CopyBytesPrefix },					// REPE prefix
 //#endif
-	{ 0xF4, ENTRY_CopyBytes1 },                         // HLT
-	{ 0xF5, ENTRY_CopyBytes1 },                         // CMC
-	{ 0xF6, ENTRY_CopyF6 },                             // TEST/0, DIV/6
-	{ 0xF7, ENTRY_CopyF7 },                             // TEST/0, DIV/6
-	{ 0xF8, ENTRY_CopyBytes1 },                         // CLC
-	{ 0xF9, ENTRY_CopyBytes1 },                         // STC
-	{ 0xFA, ENTRY_CopyBytes1 },                         // CLI
-	{ 0xFB, ENTRY_CopyBytes1 },                         // STI
-	{ 0xFC, ENTRY_CopyBytes1 },                         // CLD
-	{ 0xFD, ENTRY_CopyBytes1 },                         // STD
-	{ 0xFE, ENTRY_CopyBytes2Mod },                      // DEC/1,INC/0
-	{ 0xFF, ENTRY_CopyFF },                             // CALL/2
+	{ 0xF4, ENTRY_CopyBytes1 },						 // HLT
+	{ 0xF5, ENTRY_CopyBytes1 },						 // CMC
+	{ 0xF6, ENTRY_CopyF6 },							 // TEST/0, DIV/6
+	{ 0xF7, ENTRY_CopyF7 },							 // TEST/0, DIV/6
+	{ 0xF8, ENTRY_CopyBytes1 },						 // CLC
+	{ 0xF9, ENTRY_CopyBytes1 },						 // STC
+	{ 0xFA, ENTRY_CopyBytes1 },						 // CLI
+	{ 0xFB, ENTRY_CopyBytes1 },						 // STI
+	{ 0xFC, ENTRY_CopyBytes1 },						 // CLD
+	{ 0xFD, ENTRY_CopyBytes1 },						 // STD
+	{ 0xFE, ENTRY_CopyBytes2Mod },					  // DEC/1,INC/0
+	{ 0xFF, ENTRY_CopyFF },							 // CALL/2
 	{ 0, ENTRY_End },
 };
 
 const CDetourDis::COPYENTRY CDetourDis::s_rceCopyTable0F[257] =
 {
 #ifdef DETOURS_X86
-	{ 0x00, ENTRY_Copy0F00 },                           // sldt/0 str/1 lldt/2 ltr/3 err/4 verw/5 jmpe/6/dynamic invalid/7
+	{ 0x00, ENTRY_Copy0F00 },						   // sldt/0 str/1 lldt/2 ltr/3 err/4 verw/5 jmpe/6/dynamic invalid/7
 #else
-	{ 0x00, ENTRY_CopyBytes2Mod },                      // sldt/0 str/1 lldt/2 ltr/3 err/4 verw/5 jmpe/6/dynamic invalid/7
+	{ 0x00, ENTRY_CopyBytes2Mod },					  // sldt/0 str/1 lldt/2 ltr/3 err/4 verw/5 jmpe/6/dynamic invalid/7
 #endif
-	{ 0x01, ENTRY_CopyBytes2Mod },                      // INVLPG/7, etc.
-	{ 0x02, ENTRY_CopyBytes2Mod },                      // LAR/r
-	{ 0x03, ENTRY_CopyBytes2Mod },                      // LSL/r
-	{ 0x04, ENTRY_Invalid },                            // _04
-	{ 0x05, ENTRY_CopyBytes1 },                         // SYSCALL
-	{ 0x06, ENTRY_CopyBytes1 },                         // CLTS
-	{ 0x07, ENTRY_CopyBytes1 },                         // SYSRET
-	{ 0x08, ENTRY_CopyBytes1 },                         // INVD
-	{ 0x09, ENTRY_CopyBytes1 },                         // WBINVD
-	{ 0x0A, ENTRY_Invalid },                            // _0A
-	{ 0x0B, ENTRY_CopyBytes1 },                         // UD2
-	{ 0x0C, ENTRY_Invalid },                            // _0C
-	{ 0x0D, ENTRY_CopyBytes2Mod },                      // PREFETCH
-	{ 0x0E, ENTRY_CopyBytes1 },                         // FEMMS (3DNow -- not in Intel documentation)
-	{ 0x0F, ENTRY_CopyBytes2Mod1 },                     // 3DNow Opcodes
-	{ 0x10, ENTRY_CopyBytes2Mod },                      // MOVSS MOVUPD MOVSD
-	{ 0x11, ENTRY_CopyBytes2Mod },                      // MOVSS MOVUPD MOVSD
-	{ 0x12, ENTRY_CopyBytes2Mod },                      // MOVLPD
-	{ 0x13, ENTRY_CopyBytes2Mod },                      // MOVLPD
-	{ 0x14, ENTRY_CopyBytes2Mod },                      // UNPCKLPD
-	{ 0x15, ENTRY_CopyBytes2Mod },                      // UNPCKHPD
-	{ 0x16, ENTRY_CopyBytes2Mod },                      // MOVHPD
-	{ 0x17, ENTRY_CopyBytes2Mod },                      // MOVHPD
-	{ 0x18, ENTRY_CopyBytes2Mod },                      // PREFETCHINTA...
-	{ 0x19, ENTRY_CopyBytes2Mod },                      // NOP/r multi byte nop, not documented by Intel, documented by AMD
-	{ 0x1A, ENTRY_CopyBytes2Mod },                      // NOP/r multi byte nop, not documented by Intel, documented by AMD
-	{ 0x1B, ENTRY_CopyBytes2Mod },                      // NOP/r multi byte nop, not documented by Intel, documented by AMD
-	{ 0x1C, ENTRY_CopyBytes2Mod },                      // NOP/r multi byte nop, not documented by Intel, documented by AMD
-	{ 0x1D, ENTRY_CopyBytes2Mod },                      // NOP/r multi byte nop, not documented by Intel, documented by AMD
-	{ 0x1E, ENTRY_CopyBytes2Mod },                      // NOP/r multi byte nop, not documented by Intel, documented by AMD
-	{ 0x1F, ENTRY_CopyBytes2Mod },                      // NOP/r multi byte nop
-	{ 0x20, ENTRY_CopyBytes2Mod },                      // MOV/r
-	{ 0x21, ENTRY_CopyBytes2Mod },                      // MOV/r
-	{ 0x22, ENTRY_CopyBytes2Mod },                      // MOV/r
-	{ 0x23, ENTRY_CopyBytes2Mod },                      // MOV/r
+	{ 0x01, ENTRY_CopyBytes2Mod },					  // INVLPG/7, etc.
+	{ 0x02, ENTRY_CopyBytes2Mod },					  // LAR/r
+	{ 0x03, ENTRY_CopyBytes2Mod },					  // LSL/r
+	{ 0x04, ENTRY_Invalid },							// _04
+	{ 0x05, ENTRY_CopyBytes1 },						 // SYSCALL
+	{ 0x06, ENTRY_CopyBytes1 },						 // CLTS
+	{ 0x07, ENTRY_CopyBytes1 },						 // SYSRET
+	{ 0x08, ENTRY_CopyBytes1 },						 // INVD
+	{ 0x09, ENTRY_CopyBytes1 },						 // WBINVD
+	{ 0x0A, ENTRY_Invalid },							// _0A
+	{ 0x0B, ENTRY_CopyBytes1 },						 // UD2
+	{ 0x0C, ENTRY_Invalid },							// _0C
+	{ 0x0D, ENTRY_CopyBytes2Mod },					  // PREFETCH
+	{ 0x0E, ENTRY_CopyBytes1 },						 // FEMMS (3DNow -- not in Intel documentation)
+	{ 0x0F, ENTRY_CopyBytes2Mod1 },					 // 3DNow Opcodes
+	{ 0x10, ENTRY_CopyBytes2Mod },					  // MOVSS MOVUPD MOVSD
+	{ 0x11, ENTRY_CopyBytes2Mod },					  // MOVSS MOVUPD MOVSD
+	{ 0x12, ENTRY_CopyBytes2Mod },					  // MOVLPD
+	{ 0x13, ENTRY_CopyBytes2Mod },					  // MOVLPD
+	{ 0x14, ENTRY_CopyBytes2Mod },					  // UNPCKLPD
+	{ 0x15, ENTRY_CopyBytes2Mod },					  // UNPCKHPD
+	{ 0x16, ENTRY_CopyBytes2Mod },					  // MOVHPD
+	{ 0x17, ENTRY_CopyBytes2Mod },					  // MOVHPD
+	{ 0x18, ENTRY_CopyBytes2Mod },					  // PREFETCHINTA...
+	{ 0x19, ENTRY_CopyBytes2Mod },					  // NOP/r multi byte nop, not documented by Intel, documented by AMD
+	{ 0x1A, ENTRY_CopyBytes2Mod },					  // NOP/r multi byte nop, not documented by Intel, documented by AMD
+	{ 0x1B, ENTRY_CopyBytes2Mod },					  // NOP/r multi byte nop, not documented by Intel, documented by AMD
+	{ 0x1C, ENTRY_CopyBytes2Mod },					  // NOP/r multi byte nop, not documented by Intel, documented by AMD
+	{ 0x1D, ENTRY_CopyBytes2Mod },					  // NOP/r multi byte nop, not documented by Intel, documented by AMD
+	{ 0x1E, ENTRY_CopyBytes2Mod },					  // NOP/r multi byte nop, not documented by Intel, documented by AMD
+	{ 0x1F, ENTRY_CopyBytes2Mod },					  // NOP/r multi byte nop
+	{ 0x20, ENTRY_CopyBytes2Mod },					  // MOV/r
+	{ 0x21, ENTRY_CopyBytes2Mod },					  // MOV/r
+	{ 0x22, ENTRY_CopyBytes2Mod },					  // MOV/r
+	{ 0x23, ENTRY_CopyBytes2Mod },					  // MOV/r
 #ifdef DETOURS_X64
-	{ 0x24, ENTRY_Invalid },                            // _24
+	{ 0x24, ENTRY_Invalid },							// _24
 #else
-	{ 0x24, ENTRY_CopyBytes2Mod },                      // MOV/r,TR TR is test register on 80386 and 80486, removed in Pentium
+	{ 0x24, ENTRY_CopyBytes2Mod },					  // MOV/r,TR TR is test register on 80386 and 80486, removed in Pentium
 #endif
-	{ 0x25, ENTRY_Invalid },                            // _25
+	{ 0x25, ENTRY_Invalid },							// _25
 #ifdef DETOURS_X64
-	{ 0x26, ENTRY_Invalid },                            // _26
+	{ 0x26, ENTRY_Invalid },							// _26
 #else
-	{ 0x26, ENTRY_CopyBytes2Mod },                      // MOV TR/r TR is test register on 80386 and 80486, removed in Pentium
+	{ 0x26, ENTRY_CopyBytes2Mod },					  // MOV TR/r TR is test register on 80386 and 80486, removed in Pentium
 #endif
-	{ 0x27, ENTRY_Invalid },                            // _27
-	{ 0x28, ENTRY_CopyBytes2Mod },                      // MOVAPS MOVAPD
-	{ 0x29, ENTRY_CopyBytes2Mod },                      // MOVAPS MOVAPD
-	{ 0x2A, ENTRY_CopyBytes2Mod },                      // CVPI2PS &
-	{ 0x2B, ENTRY_CopyBytes2Mod },                      // MOVNTPS MOVNTPD
-	{ 0x2C, ENTRY_CopyBytes2Mod },                      // CVTTPS2PI &
-	{ 0x2D, ENTRY_CopyBytes2Mod },                      // CVTPS2PI &
-	{ 0x2E, ENTRY_CopyBytes2Mod },                      // UCOMISS UCOMISD
-	{ 0x2F, ENTRY_CopyBytes2Mod },                      // COMISS COMISD
-	{ 0x30, ENTRY_CopyBytes1 },                         // WRMSR
-	{ 0x31, ENTRY_CopyBytes1 },                         // RDTSC
-	{ 0x32, ENTRY_CopyBytes1 },                         // RDMSR
-	{ 0x33, ENTRY_CopyBytes1 },                         // RDPMC
-	{ 0x34, ENTRY_CopyBytes1 },                         // SYSENTER
-	{ 0x35, ENTRY_CopyBytes1 },                         // SYSEXIT
-	{ 0x36, ENTRY_Invalid },                            // _36
-	{ 0x37, ENTRY_CopyBytes1 },                         // GETSEC
-	{ 0x38, ENTRY_CopyBytes3Mod },                      // SSE3 Opcodes
-	{ 0x39, ENTRY_Invalid },                            // _39
-	{ 0x3A, ENTRY_CopyBytes3Mod1 },                      // SSE3 Opcodes
-	{ 0x3B, ENTRY_Invalid },                            // _3B
-	{ 0x3C, ENTRY_Invalid },                            // _3C
-	{ 0x3D, ENTRY_Invalid },                            // _3D
-	{ 0x3E, ENTRY_Invalid },                            // _3E
-	{ 0x3F, ENTRY_Invalid },                            // _3F
-	{ 0x40, ENTRY_CopyBytes2Mod },                      // CMOVO (0F 40)
-	{ 0x41, ENTRY_CopyBytes2Mod },                      // CMOVNO (0F 41)
-	{ 0x42, ENTRY_CopyBytes2Mod },                      // CMOVB & CMOVNE (0F 42)
-	{ 0x43, ENTRY_CopyBytes2Mod },                      // CMOVAE & CMOVNB (0F 43)
-	{ 0x44, ENTRY_CopyBytes2Mod },                      // CMOVE & CMOVZ (0F 44)
-	{ 0x45, ENTRY_CopyBytes2Mod },                      // CMOVNE & CMOVNZ (0F 45)
-	{ 0x46, ENTRY_CopyBytes2Mod },                      // CMOVBE & CMOVNA (0F 46)
-	{ 0x47, ENTRY_CopyBytes2Mod },                      // CMOVA & CMOVNBE (0F 47)
-	{ 0x48, ENTRY_CopyBytes2Mod },                      // CMOVS (0F 48)
-	{ 0x49, ENTRY_CopyBytes2Mod },                      // CMOVNS (0F 49)
-	{ 0x4A, ENTRY_CopyBytes2Mod },                      // CMOVP & CMOVPE (0F 4A)
-	{ 0x4B, ENTRY_CopyBytes2Mod },                      // CMOVNP & CMOVPO (0F 4B)
-	{ 0x4C, ENTRY_CopyBytes2Mod },                      // CMOVL & CMOVNGE (0F 4C)
-	{ 0x4D, ENTRY_CopyBytes2Mod },                      // CMOVGE & CMOVNL (0F 4D)
-	{ 0x4E, ENTRY_CopyBytes2Mod },                      // CMOVLE & CMOVNG (0F 4E)
-	{ 0x4F, ENTRY_CopyBytes2Mod },                      // CMOVG & CMOVNLE (0F 4F)
-	{ 0x50, ENTRY_CopyBytes2Mod },                      // MOVMSKPD MOVMSKPD
-	{ 0x51, ENTRY_CopyBytes2Mod },                      // SQRTPS &
-	{ 0x52, ENTRY_CopyBytes2Mod },                      // RSQRTTS RSQRTPS
-	{ 0x53, ENTRY_CopyBytes2Mod },                      // RCPPS RCPSS
-	{ 0x54, ENTRY_CopyBytes2Mod },                      // ANDPS ANDPD
-	{ 0x55, ENTRY_CopyBytes2Mod },                      // ANDNPS ANDNPD
-	{ 0x56, ENTRY_CopyBytes2Mod },                      // ORPS ORPD
-	{ 0x57, ENTRY_CopyBytes2Mod },                      // XORPS XORPD
-	{ 0x58, ENTRY_CopyBytes2Mod },                      // ADDPS &
-	{ 0x59, ENTRY_CopyBytes2Mod },                      // MULPS &
-	{ 0x5A, ENTRY_CopyBytes2Mod },                      // CVTPS2PD &
-	{ 0x5B, ENTRY_CopyBytes2Mod },                      // CVTDQ2PS &
-	{ 0x5C, ENTRY_CopyBytes2Mod },                      // SUBPS &
-	{ 0x5D, ENTRY_CopyBytes2Mod },                      // MINPS &
-	{ 0x5E, ENTRY_CopyBytes2Mod },                      // DIVPS &
-	{ 0x5F, ENTRY_CopyBytes2Mod },                      // MASPS &
-	{ 0x60, ENTRY_CopyBytes2Mod },                      // PUNPCKLBW/r
-	{ 0x61, ENTRY_CopyBytes2Mod },                      // PUNPCKLWD/r
-	{ 0x62, ENTRY_CopyBytes2Mod },                      // PUNPCKLWD/r
-	{ 0x63, ENTRY_CopyBytes2Mod },                      // PACKSSWB/r
-	{ 0x64, ENTRY_CopyBytes2Mod },                      // PCMPGTB/r
-	{ 0x65, ENTRY_CopyBytes2Mod },                      // PCMPGTW/r
-	{ 0x66, ENTRY_CopyBytes2Mod },                      // PCMPGTD/r
-	{ 0x67, ENTRY_CopyBytes2Mod },                      // PACKUSWB/r
-	{ 0x68, ENTRY_CopyBytes2Mod },                      // PUNPCKHBW/r
-	{ 0x69, ENTRY_CopyBytes2Mod },                      // PUNPCKHWD/r
-	{ 0x6A, ENTRY_CopyBytes2Mod },                      // PUNPCKHDQ/r
-	{ 0x6B, ENTRY_CopyBytes2Mod },                      // PACKSSDW/r
-	{ 0x6C, ENTRY_CopyBytes2Mod },                      // PUNPCKLQDQ
-	{ 0x6D, ENTRY_CopyBytes2Mod },                      // PUNPCKHQDQ
-	{ 0x6E, ENTRY_CopyBytes2Mod },                      // MOVD/r
-	{ 0x6F, ENTRY_CopyBytes2Mod },                      // MOV/r
-	{ 0x70, ENTRY_CopyBytes2Mod1 },                     // PSHUFW/r ib
-	{ 0x71, ENTRY_CopyBytes2Mod1 },                     // PSLLW/6 ib,PSRAW/4 ib,PSRLW/2 ib
-	{ 0x72, ENTRY_CopyBytes2Mod1 },                     // PSLLD/6 ib,PSRAD/4 ib,PSRLD/2 ib
-	{ 0x73, ENTRY_CopyBytes2Mod1 },                     // PSLLQ/6 ib,PSRLQ/2 ib
-	{ 0x74, ENTRY_CopyBytes2Mod },                      // PCMPEQB/r
-	{ 0x75, ENTRY_CopyBytes2Mod },                      // PCMPEQW/r
-	{ 0x76, ENTRY_CopyBytes2Mod },                      // PCMPEQD/r
-	{ 0x77, ENTRY_CopyBytes1 },                         // EMMS
+	{ 0x27, ENTRY_Invalid },							// _27
+	{ 0x28, ENTRY_CopyBytes2Mod },					  // MOVAPS MOVAPD
+	{ 0x29, ENTRY_CopyBytes2Mod },					  // MOVAPS MOVAPD
+	{ 0x2A, ENTRY_CopyBytes2Mod },					  // CVPI2PS &
+	{ 0x2B, ENTRY_CopyBytes2Mod },					  // MOVNTPS MOVNTPD
+	{ 0x2C, ENTRY_CopyBytes2Mod },					  // CVTTPS2PI &
+	{ 0x2D, ENTRY_CopyBytes2Mod },					  // CVTPS2PI &
+	{ 0x2E, ENTRY_CopyBytes2Mod },					  // UCOMISS UCOMISD
+	{ 0x2F, ENTRY_CopyBytes2Mod },					  // COMISS COMISD
+	{ 0x30, ENTRY_CopyBytes1 },						 // WRMSR
+	{ 0x31, ENTRY_CopyBytes1 },						 // RDTSC
+	{ 0x32, ENTRY_CopyBytes1 },						 // RDMSR
+	{ 0x33, ENTRY_CopyBytes1 },						 // RDPMC
+	{ 0x34, ENTRY_CopyBytes1 },						 // SYSENTER
+	{ 0x35, ENTRY_CopyBytes1 },						 // SYSEXIT
+	{ 0x36, ENTRY_Invalid },							// _36
+	{ 0x37, ENTRY_CopyBytes1 },						 // GETSEC
+	{ 0x38, ENTRY_CopyBytes3Mod },					  // SSE3 Opcodes
+	{ 0x39, ENTRY_Invalid },							// _39
+	{ 0x3A, ENTRY_CopyBytes3Mod1 },					  // SSE3 Opcodes
+	{ 0x3B, ENTRY_Invalid },							// _3B
+	{ 0x3C, ENTRY_Invalid },							// _3C
+	{ 0x3D, ENTRY_Invalid },							// _3D
+	{ 0x3E, ENTRY_Invalid },							// _3E
+	{ 0x3F, ENTRY_Invalid },							// _3F
+	{ 0x40, ENTRY_CopyBytes2Mod },					  // CMOVO (0F 40)
+	{ 0x41, ENTRY_CopyBytes2Mod },					  // CMOVNO (0F 41)
+	{ 0x42, ENTRY_CopyBytes2Mod },					  // CMOVB & CMOVNE (0F 42)
+	{ 0x43, ENTRY_CopyBytes2Mod },					  // CMOVAE & CMOVNB (0F 43)
+	{ 0x44, ENTRY_CopyBytes2Mod },					  // CMOVE & CMOVZ (0F 44)
+	{ 0x45, ENTRY_CopyBytes2Mod },					  // CMOVNE & CMOVNZ (0F 45)
+	{ 0x46, ENTRY_CopyBytes2Mod },					  // CMOVBE & CMOVNA (0F 46)
+	{ 0x47, ENTRY_CopyBytes2Mod },					  // CMOVA & CMOVNBE (0F 47)
+	{ 0x48, ENTRY_CopyBytes2Mod },					  // CMOVS (0F 48)
+	{ 0x49, ENTRY_CopyBytes2Mod },					  // CMOVNS (0F 49)
+	{ 0x4A, ENTRY_CopyBytes2Mod },					  // CMOVP & CMOVPE (0F 4A)
+	{ 0x4B, ENTRY_CopyBytes2Mod },					  // CMOVNP & CMOVPO (0F 4B)
+	{ 0x4C, ENTRY_CopyBytes2Mod },					  // CMOVL & CMOVNGE (0F 4C)
+	{ 0x4D, ENTRY_CopyBytes2Mod },					  // CMOVGE & CMOVNL (0F 4D)
+	{ 0x4E, ENTRY_CopyBytes2Mod },					  // CMOVLE & CMOVNG (0F 4E)
+	{ 0x4F, ENTRY_CopyBytes2Mod },					  // CMOVG & CMOVNLE (0F 4F)
+	{ 0x50, ENTRY_CopyBytes2Mod },					  // MOVMSKPD MOVMSKPD
+	{ 0x51, ENTRY_CopyBytes2Mod },					  // SQRTPS &
+	{ 0x52, ENTRY_CopyBytes2Mod },					  // RSQRTTS RSQRTPS
+	{ 0x53, ENTRY_CopyBytes2Mod },					  // RCPPS RCPSS
+	{ 0x54, ENTRY_CopyBytes2Mod },					  // ANDPS ANDPD
+	{ 0x55, ENTRY_CopyBytes2Mod },					  // ANDNPS ANDNPD
+	{ 0x56, ENTRY_CopyBytes2Mod },					  // ORPS ORPD
+	{ 0x57, ENTRY_CopyBytes2Mod },					  // XORPS XORPD
+	{ 0x58, ENTRY_CopyBytes2Mod },					  // ADDPS &
+	{ 0x59, ENTRY_CopyBytes2Mod },					  // MULPS &
+	{ 0x5A, ENTRY_CopyBytes2Mod },					  // CVTPS2PD &
+	{ 0x5B, ENTRY_CopyBytes2Mod },					  // CVTDQ2PS &
+	{ 0x5C, ENTRY_CopyBytes2Mod },					  // SUBPS &
+	{ 0x5D, ENTRY_CopyBytes2Mod },					  // MINPS &
+	{ 0x5E, ENTRY_CopyBytes2Mod },					  // DIVPS &
+	{ 0x5F, ENTRY_CopyBytes2Mod },					  // MASPS &
+	{ 0x60, ENTRY_CopyBytes2Mod },					  // PUNPCKLBW/r
+	{ 0x61, ENTRY_CopyBytes2Mod },					  // PUNPCKLWD/r
+	{ 0x62, ENTRY_CopyBytes2Mod },					  // PUNPCKLWD/r
+	{ 0x63, ENTRY_CopyBytes2Mod },					  // PACKSSWB/r
+	{ 0x64, ENTRY_CopyBytes2Mod },					  // PCMPGTB/r
+	{ 0x65, ENTRY_CopyBytes2Mod },					  // PCMPGTW/r
+	{ 0x66, ENTRY_CopyBytes2Mod },					  // PCMPGTD/r
+	{ 0x67, ENTRY_CopyBytes2Mod },					  // PACKUSWB/r
+	{ 0x68, ENTRY_CopyBytes2Mod },					  // PUNPCKHBW/r
+	{ 0x69, ENTRY_CopyBytes2Mod },					  // PUNPCKHWD/r
+	{ 0x6A, ENTRY_CopyBytes2Mod },					  // PUNPCKHDQ/r
+	{ 0x6B, ENTRY_CopyBytes2Mod },					  // PACKSSDW/r
+	{ 0x6C, ENTRY_CopyBytes2Mod },					  // PUNPCKLQDQ
+	{ 0x6D, ENTRY_CopyBytes2Mod },					  // PUNPCKHQDQ
+	{ 0x6E, ENTRY_CopyBytes2Mod },					  // MOVD/r
+	{ 0x6F, ENTRY_CopyBytes2Mod },					  // MOV/r
+	{ 0x70, ENTRY_CopyBytes2Mod1 },					 // PSHUFW/r ib
+	{ 0x71, ENTRY_CopyBytes2Mod1 },					 // PSLLW/6 ib,PSRAW/4 ib,PSRLW/2 ib
+	{ 0x72, ENTRY_CopyBytes2Mod1 },					 // PSLLD/6 ib,PSRAD/4 ib,PSRLD/2 ib
+	{ 0x73, ENTRY_CopyBytes2Mod1 },					 // PSLLQ/6 ib,PSRLQ/2 ib
+	{ 0x74, ENTRY_CopyBytes2Mod },					  // PCMPEQB/r
+	{ 0x75, ENTRY_CopyBytes2Mod },					  // PCMPEQW/r
+	{ 0x76, ENTRY_CopyBytes2Mod },					  // PCMPEQD/r
+	{ 0x77, ENTRY_CopyBytes1 },						 // EMMS
 	// extrq/insertq require mode=3 and are followed by two immediate bytes
-	{ 0x78, ENTRY_Copy0F78 },                           // VMREAD/r, 66/EXTRQ/r/ib/ib, F2/INSERTQ/r/ib/ib
+	{ 0x78, ENTRY_Copy0F78 },						   // VMREAD/r, 66/EXTRQ/r/ib/ib, F2/INSERTQ/r/ib/ib
 	// extrq/insertq require mod=3, therefore ENTRY_CopyBytes2, but it ends up the same
-	{ 0x79, ENTRY_CopyBytes2Mod },                      // VMWRITE/r, 66/EXTRQ/r, F2/INSERTQ/r
-	{ 0x7A, ENTRY_Invalid },                            // _7A
-	{ 0x7B, ENTRY_Invalid },                            // _7B
-	{ 0x7C, ENTRY_CopyBytes2Mod },                      // HADDPS
-	{ 0x7D, ENTRY_CopyBytes2Mod },                      // HSUBPS
-	{ 0x7E, ENTRY_CopyBytes2Mod },                      // MOVD/r
-	{ 0x7F, ENTRY_CopyBytes2Mod },                      // MOV/r
-	{ 0x80, ENTRY_CopyBytes3Or5Target },                // JO
-	{ 0x81, ENTRY_CopyBytes3Or5Target },                // JNO
-	{ 0x82, ENTRY_CopyBytes3Or5Target },                // JB,JC,JNAE
-	{ 0x83, ENTRY_CopyBytes3Or5Target },                // JAE,JNB,JNC
-	{ 0x84, ENTRY_CopyBytes3Or5Target },                // JE,JZ,JZ
-	{ 0x85, ENTRY_CopyBytes3Or5Target },                // JNE,JNZ
-	{ 0x86, ENTRY_CopyBytes3Or5Target },                // JBE,JNA
-	{ 0x87, ENTRY_CopyBytes3Or5Target },                // JA,JNBE
-	{ 0x88, ENTRY_CopyBytes3Or5Target },                // JS
-	{ 0x89, ENTRY_CopyBytes3Or5Target },                // JNS
-	{ 0x8A, ENTRY_CopyBytes3Or5Target },                // JP,JPE
-	{ 0x8B, ENTRY_CopyBytes3Or5Target },                // JNP,JPO
-	{ 0x8C, ENTRY_CopyBytes3Or5Target },                // JL,NGE
-	{ 0x8D, ENTRY_CopyBytes3Or5Target },                // JGE,JNL
-	{ 0x8E, ENTRY_CopyBytes3Or5Target },                // JLE,JNG
-	{ 0x8F, ENTRY_CopyBytes3Or5Target },                // JG,JNLE
-	{ 0x90, ENTRY_CopyBytes2Mod },                      // CMOVO (0F 40)
-	{ 0x91, ENTRY_CopyBytes2Mod },                      // CMOVNO (0F 41)
-	{ 0x92, ENTRY_CopyBytes2Mod },                      // CMOVB & CMOVC & CMOVNAE (0F 42)
-	{ 0x93, ENTRY_CopyBytes2Mod },                      // CMOVAE & CMOVNB & CMOVNC (0F 43)
-	{ 0x94, ENTRY_CopyBytes2Mod },                      // CMOVE & CMOVZ (0F 44)
-	{ 0x95, ENTRY_CopyBytes2Mod },                      // CMOVNE & CMOVNZ (0F 45)
-	{ 0x96, ENTRY_CopyBytes2Mod },                      // CMOVBE & CMOVNA (0F 46)
-	{ 0x97, ENTRY_CopyBytes2Mod },                      // CMOVA & CMOVNBE (0F 47)
-	{ 0x98, ENTRY_CopyBytes2Mod },                      // CMOVS (0F 48)
-	{ 0x99, ENTRY_CopyBytes2Mod },                      // CMOVNS (0F 49)
-	{ 0x9A, ENTRY_CopyBytes2Mod },                      // CMOVP & CMOVPE (0F 4A)
-	{ 0x9B, ENTRY_CopyBytes2Mod },                      // CMOVNP & CMOVPO (0F 4B)
-	{ 0x9C, ENTRY_CopyBytes2Mod },                      // CMOVL & CMOVNGE (0F 4C)
-	{ 0x9D, ENTRY_CopyBytes2Mod },                      // CMOVGE & CMOVNL (0F 4D)
-	{ 0x9E, ENTRY_CopyBytes2Mod },                      // CMOVLE & CMOVNG (0F 4E)
-	{ 0x9F, ENTRY_CopyBytes2Mod },                      // CMOVG & CMOVNLE (0F 4F)
-	{ 0xA0, ENTRY_CopyBytes1 },                         // PUSH
-	{ 0xA1, ENTRY_CopyBytes1 },                         // POP
-	{ 0xA2, ENTRY_CopyBytes1 },                         // CPUID
-	{ 0xA3, ENTRY_CopyBytes2Mod },                      // BT  (0F A3)
-	{ 0xA4, ENTRY_CopyBytes2Mod1 },                     // SHLD
-	{ 0xA5, ENTRY_CopyBytes2Mod },                      // SHLD
-	{ 0xA6, ENTRY_CopyBytes2Mod },                      // XBTS
-	{ 0xA7, ENTRY_CopyBytes2Mod },                      // IBTS
-	{ 0xA8, ENTRY_CopyBytes1 },                         // PUSH
-	{ 0xA9, ENTRY_CopyBytes1 },                         // POP
-	{ 0xAA, ENTRY_CopyBytes1 },                         // RSM
-	{ 0xAB, ENTRY_CopyBytes2Mod },                      // BTS (0F AB)
-	{ 0xAC, ENTRY_CopyBytes2Mod1 },                     // SHRD
-	{ 0xAD, ENTRY_CopyBytes2Mod },                      // SHRD
+	{ 0x79, ENTRY_CopyBytes2Mod },					  // VMWRITE/r, 66/EXTRQ/r, F2/INSERTQ/r
+	{ 0x7A, ENTRY_Invalid },							// _7A
+	{ 0x7B, ENTRY_Invalid },							// _7B
+	{ 0x7C, ENTRY_CopyBytes2Mod },					  // HADDPS
+	{ 0x7D, ENTRY_CopyBytes2Mod },					  // HSUBPS
+	{ 0x7E, ENTRY_CopyBytes2Mod },					  // MOVD/r
+	{ 0x7F, ENTRY_CopyBytes2Mod },					  // MOV/r
+	{ 0x80, ENTRY_CopyBytes3Or5Target },				// JO
+	{ 0x81, ENTRY_CopyBytes3Or5Target },				// JNO
+	{ 0x82, ENTRY_CopyBytes3Or5Target },				// JB,JC,JNAE
+	{ 0x83, ENTRY_CopyBytes3Or5Target },				// JAE,JNB,JNC
+	{ 0x84, ENTRY_CopyBytes3Or5Target },				// JE,JZ,JZ
+	{ 0x85, ENTRY_CopyBytes3Or5Target },				// JNE,JNZ
+	{ 0x86, ENTRY_CopyBytes3Or5Target },				// JBE,JNA
+	{ 0x87, ENTRY_CopyBytes3Or5Target },				// JA,JNBE
+	{ 0x88, ENTRY_CopyBytes3Or5Target },				// JS
+	{ 0x89, ENTRY_CopyBytes3Or5Target },				// JNS
+	{ 0x8A, ENTRY_CopyBytes3Or5Target },				// JP,JPE
+	{ 0x8B, ENTRY_CopyBytes3Or5Target },				// JNP,JPO
+	{ 0x8C, ENTRY_CopyBytes3Or5Target },				// JL,NGE
+	{ 0x8D, ENTRY_CopyBytes3Or5Target },				// JGE,JNL
+	{ 0x8E, ENTRY_CopyBytes3Or5Target },				// JLE,JNG
+	{ 0x8F, ENTRY_CopyBytes3Or5Target },				// JG,JNLE
+	{ 0x90, ENTRY_CopyBytes2Mod },					  // CMOVO (0F 40)
+	{ 0x91, ENTRY_CopyBytes2Mod },					  // CMOVNO (0F 41)
+	{ 0x92, ENTRY_CopyBytes2Mod },					  // CMOVB & CMOVC & CMOVNAE (0F 42)
+	{ 0x93, ENTRY_CopyBytes2Mod },					  // CMOVAE & CMOVNB & CMOVNC (0F 43)
+	{ 0x94, ENTRY_CopyBytes2Mod },					  // CMOVE & CMOVZ (0F 44)
+	{ 0x95, ENTRY_CopyBytes2Mod },					  // CMOVNE & CMOVNZ (0F 45)
+	{ 0x96, ENTRY_CopyBytes2Mod },					  // CMOVBE & CMOVNA (0F 46)
+	{ 0x97, ENTRY_CopyBytes2Mod },					  // CMOVA & CMOVNBE (0F 47)
+	{ 0x98, ENTRY_CopyBytes2Mod },					  // CMOVS (0F 48)
+	{ 0x99, ENTRY_CopyBytes2Mod },					  // CMOVNS (0F 49)
+	{ 0x9A, ENTRY_CopyBytes2Mod },					  // CMOVP & CMOVPE (0F 4A)
+	{ 0x9B, ENTRY_CopyBytes2Mod },					  // CMOVNP & CMOVPO (0F 4B)
+	{ 0x9C, ENTRY_CopyBytes2Mod },					  // CMOVL & CMOVNGE (0F 4C)
+	{ 0x9D, ENTRY_CopyBytes2Mod },					  // CMOVGE & CMOVNL (0F 4D)
+	{ 0x9E, ENTRY_CopyBytes2Mod },					  // CMOVLE & CMOVNG (0F 4E)
+	{ 0x9F, ENTRY_CopyBytes2Mod },					  // CMOVG & CMOVNLE (0F 4F)
+	{ 0xA0, ENTRY_CopyBytes1 },						 // PUSH
+	{ 0xA1, ENTRY_CopyBytes1 },						 // POP
+	{ 0xA2, ENTRY_CopyBytes1 },						 // CPUID
+	{ 0xA3, ENTRY_CopyBytes2Mod },					  // BT  (0F A3)
+	{ 0xA4, ENTRY_CopyBytes2Mod1 },					 // SHLD
+	{ 0xA5, ENTRY_CopyBytes2Mod },					  // SHLD
+	{ 0xA6, ENTRY_CopyBytes2Mod },					  // XBTS
+	{ 0xA7, ENTRY_CopyBytes2Mod },					  // IBTS
+	{ 0xA8, ENTRY_CopyBytes1 },						 // PUSH
+	{ 0xA9, ENTRY_CopyBytes1 },						 // POP
+	{ 0xAA, ENTRY_CopyBytes1 },						 // RSM
+	{ 0xAB, ENTRY_CopyBytes2Mod },					  // BTS (0F AB)
+	{ 0xAC, ENTRY_CopyBytes2Mod1 },					 // SHRD
+	{ 0xAD, ENTRY_CopyBytes2Mod },					  // SHRD
 
 	// 0F AE mod76=mem mod543=0 fxsave
 	// 0F AE mod76=mem mod543=1 fxrstor
@@ -1440,92 +1440,92 @@ const CDetourDis::COPYENTRY CDetourDis::s_rceCopyTable0F[257] =
 	// F3 0F AE mod76=11b mod543=1 rdgsbase
 	// F3 0F AE mod76=11b mod543=2 wrfsbase
 	// F3 0F AE mod76=11b mod543=3 wrgsbase
-	{ 0xAE, ENTRY_CopyBytes2Mod },                      // fxsave fxrstor ldmxcsr stmxcsr xsave xrstor saveopt clflush lfence mfence sfence rdfsbase rdgsbase wrfsbase wrgsbase
-	{ 0xAF, ENTRY_CopyBytes2Mod },                      // IMUL (0F AF)
-	{ 0xB0, ENTRY_CopyBytes2Mod },                      // CMPXCHG (0F B0)
-	{ 0xB1, ENTRY_CopyBytes2Mod },                      // CMPXCHG (0F B1)
-	{ 0xB2, ENTRY_CopyBytes2Mod },                      // LSS/r
-	{ 0xB3, ENTRY_CopyBytes2Mod },                      // BTR (0F B3)
-	{ 0xB4, ENTRY_CopyBytes2Mod },                      // LFS/r
-	{ 0xB5, ENTRY_CopyBytes2Mod },                      // LGS/r
-	{ 0xB6, ENTRY_CopyBytes2Mod },                      // MOVZX/r
-	{ 0xB7, ENTRY_CopyBytes2Mod },                      // MOVZX/r
+	{ 0xAE, ENTRY_CopyBytes2Mod },					  // fxsave fxrstor ldmxcsr stmxcsr xsave xrstor saveopt clflush lfence mfence sfence rdfsbase rdgsbase wrfsbase wrgsbase
+	{ 0xAF, ENTRY_CopyBytes2Mod },					  // IMUL (0F AF)
+	{ 0xB0, ENTRY_CopyBytes2Mod },					  // CMPXCHG (0F B0)
+	{ 0xB1, ENTRY_CopyBytes2Mod },					  // CMPXCHG (0F B1)
+	{ 0xB2, ENTRY_CopyBytes2Mod },					  // LSS/r
+	{ 0xB3, ENTRY_CopyBytes2Mod },					  // BTR (0F B3)
+	{ 0xB4, ENTRY_CopyBytes2Mod },					  // LFS/r
+	{ 0xB5, ENTRY_CopyBytes2Mod },					  // LGS/r
+	{ 0xB6, ENTRY_CopyBytes2Mod },					  // MOVZX/r
+	{ 0xB7, ENTRY_CopyBytes2Mod },					  // MOVZX/r
 #ifdef DETOURS_X86
-	{ 0xB8, ENTRY_Copy0FB8 },                           // jmpe f3/popcnt
+	{ 0xB8, ENTRY_Copy0FB8 },						   // jmpe f3/popcnt
 #else
-	{ 0xB8, ENTRY_CopyBytes2Mod },                      // f3/popcnt
+	{ 0xB8, ENTRY_CopyBytes2Mod },					  // f3/popcnt
 #endif
-	{ 0xB9, ENTRY_Invalid },                            // _B9
-	{ 0xBA, ENTRY_CopyBytes2Mod1 },                     // BT & BTC & BTR & BTS (0F BA)
-	{ 0xBB, ENTRY_CopyBytes2Mod },                      // BTC (0F BB)
-	{ 0xBC, ENTRY_CopyBytes2Mod },                      // BSF (0F BC)
-	{ 0xBD, ENTRY_CopyBytes2Mod },                      // BSR (0F BD)
-	{ 0xBE, ENTRY_CopyBytes2Mod },                      // MOVSX/r
-	{ 0xBF, ENTRY_CopyBytes2Mod },                      // MOVSX/r
-	{ 0xC0, ENTRY_CopyBytes2Mod },                      // XADD/r
-	{ 0xC1, ENTRY_CopyBytes2Mod },                      // XADD/r
-	{ 0xC2, ENTRY_CopyBytes2Mod1 },                     // CMPPS &
-	{ 0xC3, ENTRY_CopyBytes2Mod },                      // MOVNTI
-	{ 0xC4, ENTRY_CopyBytes2Mod1 },                     // PINSRW /r ib
-	{ 0xC5, ENTRY_CopyBytes2Mod1 },                     // PEXTRW /r ib
-	{ 0xC6, ENTRY_CopyBytes2Mod1 },                     // SHUFPS & SHUFPD
-	{ 0xC7, ENTRY_CopyBytes2Mod },                      // CMPXCHG8B (0F C7)
-	{ 0xC8, ENTRY_CopyBytes1 },                         // BSWAP 0F C8 + rd
-	{ 0xC9, ENTRY_CopyBytes1 },                         // BSWAP 0F C8 + rd
-	{ 0xCA, ENTRY_CopyBytes1 },                         // BSWAP 0F C8 + rd
-	{ 0xCB, ENTRY_CopyBytes1 },                         // CVTPD2PI BSWAP 0F C8 + rd
-	{ 0xCC, ENTRY_CopyBytes1 },                         // BSWAP 0F C8 + rd
-	{ 0xCD, ENTRY_CopyBytes1 },                         // BSWAP 0F C8 + rd
-	{ 0xCE, ENTRY_CopyBytes1 },                         // BSWAP 0F C8 + rd
-	{ 0xCF, ENTRY_CopyBytes1 },                         // BSWAP 0F C8 + rd
-	{ 0xD0, ENTRY_CopyBytes2Mod },                      // ADDSUBPS (untestd)
-	{ 0xD1, ENTRY_CopyBytes2Mod },                      // PSRLW/r
-	{ 0xD2, ENTRY_CopyBytes2Mod },                      // PSRLD/r
-	{ 0xD3, ENTRY_CopyBytes2Mod },                      // PSRLQ/r
-	{ 0xD4, ENTRY_CopyBytes2Mod },                      // PADDQ
-	{ 0xD5, ENTRY_CopyBytes2Mod },                      // PMULLW/r
-	{ 0xD6, ENTRY_CopyBytes2Mod },                      // MOVDQ2Q / MOVQ2DQ
-	{ 0xD7, ENTRY_CopyBytes2Mod },                      // PMOVMSKB/r
-	{ 0xD8, ENTRY_CopyBytes2Mod },                      // PSUBUSB/r
-	{ 0xD9, ENTRY_CopyBytes2Mod },                      // PSUBUSW/r
-	{ 0xDA, ENTRY_CopyBytes2Mod },                      // PMINUB/r
-	{ 0xDB, ENTRY_CopyBytes2Mod },                      // PAND/r
-	{ 0xDC, ENTRY_CopyBytes2Mod },                      // PADDUSB/r
-	{ 0xDD, ENTRY_CopyBytes2Mod },                      // PADDUSW/r
-	{ 0xDE, ENTRY_CopyBytes2Mod },                      // PMAXUB/r
-	{ 0xDF, ENTRY_CopyBytes2Mod },                      // PANDN/r
-	{ 0xE0, ENTRY_CopyBytes2Mod  },                     // PAVGB
-	{ 0xE1, ENTRY_CopyBytes2Mod },                      // PSRAW/r
-	{ 0xE2, ENTRY_CopyBytes2Mod },                      // PSRAD/r
-	{ 0xE3, ENTRY_CopyBytes2Mod },                      // PAVGW
-	{ 0xE4, ENTRY_CopyBytes2Mod },                      // PMULHUW/r
-	{ 0xE5, ENTRY_CopyBytes2Mod },                      // PMULHW/r
-	{ 0xE6, ENTRY_CopyBytes2Mod },                      // CTDQ2PD &
-	{ 0xE7, ENTRY_CopyBytes2Mod },                      // MOVNTQ
-	{ 0xE8, ENTRY_CopyBytes2Mod },                      // PSUBB/r
-	{ 0xE9, ENTRY_CopyBytes2Mod },                      // PSUBW/r
-	{ 0xEA, ENTRY_CopyBytes2Mod },                      // PMINSW/r
-	{ 0xEB, ENTRY_CopyBytes2Mod },                      // POR/r
-	{ 0xEC, ENTRY_CopyBytes2Mod },                      // PADDSB/r
-	{ 0xED, ENTRY_CopyBytes2Mod },                      // PADDSW/r
-	{ 0xEE, ENTRY_CopyBytes2Mod },                      // PMAXSW /r
-	{ 0xEF, ENTRY_CopyBytes2Mod },                      // PXOR/r
-	{ 0xF0, ENTRY_CopyBytes2Mod },                      // LDDQU
-	{ 0xF1, ENTRY_CopyBytes2Mod },                      // PSLLW/r
-	{ 0xF2, ENTRY_CopyBytes2Mod },                      // PSLLD/r
-	{ 0xF3, ENTRY_CopyBytes2Mod },                      // PSLLQ/r
-	{ 0xF4, ENTRY_CopyBytes2Mod },                      // PMULUDQ/r
-	{ 0xF5, ENTRY_CopyBytes2Mod },                      // PMADDWD/r
-	{ 0xF6, ENTRY_CopyBytes2Mod },                      // PSADBW/r
-	{ 0xF7, ENTRY_CopyBytes2Mod },                      // MASKMOVQ
-	{ 0xF8, ENTRY_CopyBytes2Mod },                      // PSUBB/r
-	{ 0xF9, ENTRY_CopyBytes2Mod },                      // PSUBW/r
-	{ 0xFA, ENTRY_CopyBytes2Mod },                      // PSUBD/r
-	{ 0xFB, ENTRY_CopyBytes2Mod },                      // FSUBQ/r
-	{ 0xFC, ENTRY_CopyBytes2Mod },                      // PADDB/r
-	{ 0xFD, ENTRY_CopyBytes2Mod },                      // PADDW/r
-	{ 0xFE, ENTRY_CopyBytes2Mod },                      // PADDD/r
-	{ 0xFF, ENTRY_Invalid },                            // _FF
+	{ 0xB9, ENTRY_Invalid },							// _B9
+	{ 0xBA, ENTRY_CopyBytes2Mod1 },					 // BT & BTC & BTR & BTS (0F BA)
+	{ 0xBB, ENTRY_CopyBytes2Mod },					  // BTC (0F BB)
+	{ 0xBC, ENTRY_CopyBytes2Mod },					  // BSF (0F BC)
+	{ 0xBD, ENTRY_CopyBytes2Mod },					  // BSR (0F BD)
+	{ 0xBE, ENTRY_CopyBytes2Mod },					  // MOVSX/r
+	{ 0xBF, ENTRY_CopyBytes2Mod },					  // MOVSX/r
+	{ 0xC0, ENTRY_CopyBytes2Mod },					  // XADD/r
+	{ 0xC1, ENTRY_CopyBytes2Mod },					  // XADD/r
+	{ 0xC2, ENTRY_CopyBytes2Mod1 },					 // CMPPS &
+	{ 0xC3, ENTRY_CopyBytes2Mod },					  // MOVNTI
+	{ 0xC4, ENTRY_CopyBytes2Mod1 },					 // PINSRW /r ib
+	{ 0xC5, ENTRY_CopyBytes2Mod1 },					 // PEXTRW /r ib
+	{ 0xC6, ENTRY_CopyBytes2Mod1 },					 // SHUFPS & SHUFPD
+	{ 0xC7, ENTRY_CopyBytes2Mod },					  // CMPXCHG8B (0F C7)
+	{ 0xC8, ENTRY_CopyBytes1 },						 // BSWAP 0F C8 + rd
+	{ 0xC9, ENTRY_CopyBytes1 },						 // BSWAP 0F C8 + rd
+	{ 0xCA, ENTRY_CopyBytes1 },						 // BSWAP 0F C8 + rd
+	{ 0xCB, ENTRY_CopyBytes1 },						 // CVTPD2PI BSWAP 0F C8 + rd
+	{ 0xCC, ENTRY_CopyBytes1 },						 // BSWAP 0F C8 + rd
+	{ 0xCD, ENTRY_CopyBytes1 },						 // BSWAP 0F C8 + rd
+	{ 0xCE, ENTRY_CopyBytes1 },						 // BSWAP 0F C8 + rd
+	{ 0xCF, ENTRY_CopyBytes1 },						 // BSWAP 0F C8 + rd
+	{ 0xD0, ENTRY_CopyBytes2Mod },					  // ADDSUBPS (untestd)
+	{ 0xD1, ENTRY_CopyBytes2Mod },					  // PSRLW/r
+	{ 0xD2, ENTRY_CopyBytes2Mod },					  // PSRLD/r
+	{ 0xD3, ENTRY_CopyBytes2Mod },					  // PSRLQ/r
+	{ 0xD4, ENTRY_CopyBytes2Mod },					  // PADDQ
+	{ 0xD5, ENTRY_CopyBytes2Mod },					  // PMULLW/r
+	{ 0xD6, ENTRY_CopyBytes2Mod },					  // MOVDQ2Q / MOVQ2DQ
+	{ 0xD7, ENTRY_CopyBytes2Mod },					  // PMOVMSKB/r
+	{ 0xD8, ENTRY_CopyBytes2Mod },					  // PSUBUSB/r
+	{ 0xD9, ENTRY_CopyBytes2Mod },					  // PSUBUSW/r
+	{ 0xDA, ENTRY_CopyBytes2Mod },					  // PMINUB/r
+	{ 0xDB, ENTRY_CopyBytes2Mod },					  // PAND/r
+	{ 0xDC, ENTRY_CopyBytes2Mod },					  // PADDUSB/r
+	{ 0xDD, ENTRY_CopyBytes2Mod },					  // PADDUSW/r
+	{ 0xDE, ENTRY_CopyBytes2Mod },					  // PMAXUB/r
+	{ 0xDF, ENTRY_CopyBytes2Mod },					  // PANDN/r
+	{ 0xE0, ENTRY_CopyBytes2Mod  },					 // PAVGB
+	{ 0xE1, ENTRY_CopyBytes2Mod },					  // PSRAW/r
+	{ 0xE2, ENTRY_CopyBytes2Mod },					  // PSRAD/r
+	{ 0xE3, ENTRY_CopyBytes2Mod },					  // PAVGW
+	{ 0xE4, ENTRY_CopyBytes2Mod },					  // PMULHUW/r
+	{ 0xE5, ENTRY_CopyBytes2Mod },					  // PMULHW/r
+	{ 0xE6, ENTRY_CopyBytes2Mod },					  // CTDQ2PD &
+	{ 0xE7, ENTRY_CopyBytes2Mod },					  // MOVNTQ
+	{ 0xE8, ENTRY_CopyBytes2Mod },					  // PSUBB/r
+	{ 0xE9, ENTRY_CopyBytes2Mod },					  // PSUBW/r
+	{ 0xEA, ENTRY_CopyBytes2Mod },					  // PMINSW/r
+	{ 0xEB, ENTRY_CopyBytes2Mod },					  // POR/r
+	{ 0xEC, ENTRY_CopyBytes2Mod },					  // PADDSB/r
+	{ 0xED, ENTRY_CopyBytes2Mod },					  // PADDSW/r
+	{ 0xEE, ENTRY_CopyBytes2Mod },					  // PMAXSW /r
+	{ 0xEF, ENTRY_CopyBytes2Mod },					  // PXOR/r
+	{ 0xF0, ENTRY_CopyBytes2Mod },					  // LDDQU
+	{ 0xF1, ENTRY_CopyBytes2Mod },					  // PSLLW/r
+	{ 0xF2, ENTRY_CopyBytes2Mod },					  // PSLLD/r
+	{ 0xF3, ENTRY_CopyBytes2Mod },					  // PSLLQ/r
+	{ 0xF4, ENTRY_CopyBytes2Mod },					  // PMULUDQ/r
+	{ 0xF5, ENTRY_CopyBytes2Mod },					  // PMADDWD/r
+	{ 0xF6, ENTRY_CopyBytes2Mod },					  // PSADBW/r
+	{ 0xF7, ENTRY_CopyBytes2Mod },					  // MASKMOVQ
+	{ 0xF8, ENTRY_CopyBytes2Mod },					  // PSUBB/r
+	{ 0xF9, ENTRY_CopyBytes2Mod },					  // PSUBW/r
+	{ 0xFA, ENTRY_CopyBytes2Mod },					  // PSUBD/r
+	{ 0xFB, ENTRY_CopyBytes2Mod },					  // FSUBQ/r
+	{ 0xFC, ENTRY_CopyBytes2Mod },					  // PADDB/r
+	{ 0xFD, ENTRY_CopyBytes2Mod },					  // PADDW/r
+	{ 0xFE, ENTRY_CopyBytes2Mod },					  // PADDD/r
+	{ 0xFF, ENTRY_Invalid },							// _FF
 	{ 0, ENTRY_End },
 };
 
@@ -1570,45 +1570,45 @@ BOOL CDetourDis::SanityCheckSystem()
 // Compile DETOUR_IA64_BUNDLE for native IA64 or cross, but not both -- we get duplicates otherwise.
 const DETOUR_IA64_BUNDLE::DETOUR_IA64_METADATA DETOUR_IA64_BUNDLE::s_rceCopyTable[33] =
 {
-	{ 0x00, M_UNIT,      I_UNIT,      I_UNIT,   },
-	{ 0x01, M_UNIT,      I_UNIT,      I_UNIT,   },
-	{ 0x02, M_UNIT,      I_UNIT,      I_UNIT,   },
-	{ 0x03, M_UNIT,      I_UNIT,      I_UNIT,   },
-	{ 0x04, M_UNIT,      L_UNIT,      X_UNIT,   },
-	{ 0x05, M_UNIT,      L_UNIT,      X_UNIT,   },
-	{ 0x06, 0,           0,           0,        },
-	{ 0x07, 0,           0,           0,        },
-	{ 0x08, M_UNIT,      M_UNIT,      I_UNIT,   },
-	{ 0x09, M_UNIT,      M_UNIT,      I_UNIT,   },
-	{ 0x0a, M_UNIT,      M_UNIT,      I_UNIT,   },
-	{ 0x0b, M_UNIT,      M_UNIT,      I_UNIT,   },
-	{ 0x0c, M_UNIT,      F_UNIT,      I_UNIT,   },
-	{ 0x0d, M_UNIT,      F_UNIT,      I_UNIT,   },
-	{ 0x0e, M_UNIT,      M_UNIT,      F_UNIT,   },
-	{ 0x0f, M_UNIT,      M_UNIT,      F_UNIT,   },
-	{ 0x10, M_UNIT,      I_UNIT,      B_UNIT,   },
-	{ 0x11, M_UNIT,      I_UNIT,      B_UNIT,   },
-	{ 0x12, M_UNIT,      B_UNIT,      B_UNIT,   },
-	{ 0x13, M_UNIT,      B_UNIT,      B_UNIT,   },
-	{ 0x14, 0,           0,           0,        },
-	{ 0x15, 0,           0,           0,        },
-	{ 0x16, B_UNIT,      B_UNIT,      B_UNIT,   },
-	{ 0x17, B_UNIT,      B_UNIT,      B_UNIT,   },
-	{ 0x18, M_UNIT,      M_UNIT,      B_UNIT,   },
-	{ 0x19, M_UNIT,      M_UNIT,      B_UNIT,   },
-	{ 0x1a, 0,           0,           0,        },
-	{ 0x1b, 0,           0,           0,        },
-	{ 0x1c, M_UNIT,      F_UNIT,      B_UNIT,   },
-	{ 0x1d, M_UNIT,      F_UNIT,      B_UNIT,   },
-	{ 0x1e, 0,           0,           0,        },
-	{ 0x1f, 0,           0,           0,        },
-	{ 0x00, 0,           0,           0,        },
+	{ 0x00, M_UNIT,	  I_UNIT,	  I_UNIT,   },
+	{ 0x01, M_UNIT,	  I_UNIT,	  I_UNIT,   },
+	{ 0x02, M_UNIT,	  I_UNIT,	  I_UNIT,   },
+	{ 0x03, M_UNIT,	  I_UNIT,	  I_UNIT,   },
+	{ 0x04, M_UNIT,	  L_UNIT,	  X_UNIT,   },
+	{ 0x05, M_UNIT,	  L_UNIT,	  X_UNIT,   },
+	{ 0x06, 0,		   0,		   0,		},
+	{ 0x07, 0,		   0,		   0,		},
+	{ 0x08, M_UNIT,	  M_UNIT,	  I_UNIT,   },
+	{ 0x09, M_UNIT,	  M_UNIT,	  I_UNIT,   },
+	{ 0x0a, M_UNIT,	  M_UNIT,	  I_UNIT,   },
+	{ 0x0b, M_UNIT,	  M_UNIT,	  I_UNIT,   },
+	{ 0x0c, M_UNIT,	  F_UNIT,	  I_UNIT,   },
+	{ 0x0d, M_UNIT,	  F_UNIT,	  I_UNIT,   },
+	{ 0x0e, M_UNIT,	  M_UNIT,	  F_UNIT,   },
+	{ 0x0f, M_UNIT,	  M_UNIT,	  F_UNIT,   },
+	{ 0x10, M_UNIT,	  I_UNIT,	  B_UNIT,   },
+	{ 0x11, M_UNIT,	  I_UNIT,	  B_UNIT,   },
+	{ 0x12, M_UNIT,	  B_UNIT,	  B_UNIT,   },
+	{ 0x13, M_UNIT,	  B_UNIT,	  B_UNIT,   },
+	{ 0x14, 0,		   0,		   0,		},
+	{ 0x15, 0,		   0,		   0,		},
+	{ 0x16, B_UNIT,	  B_UNIT,	  B_UNIT,   },
+	{ 0x17, B_UNIT,	  B_UNIT,	  B_UNIT,   },
+	{ 0x18, M_UNIT,	  M_UNIT,	  B_UNIT,   },
+	{ 0x19, M_UNIT,	  M_UNIT,	  B_UNIT,   },
+	{ 0x1a, 0,		   0,		   0,		},
+	{ 0x1b, 0,		   0,		   0,		},
+	{ 0x1c, M_UNIT,	  F_UNIT,	  B_UNIT,   },
+	{ 0x1d, M_UNIT,	  F_UNIT,	  B_UNIT,   },
+	{ 0x1e, 0,		   0,		   0,		},
+	{ 0x1f, 0,		   0,		   0,		},
+	{ 0x00, 0,		   0,		   0,		},
 };
 
 // 120 112 104 96 88 80 72 64 56 48 40 32 24 16  8  0
 //  f.  e.  d. c. b. a. 9. 8. 7. 6. 5. 4. 3. 2. 1. 0.
 
-//                                      00
+//									  00
 // f.e. d.c. b.a. 9.8. 7.6. 5.4. 3.2. 1.0.
 // 0000 0000 0000 0000 0000 0000 0000 001f : Template [4..0]
 // 0000 0000 0000 0000 0000 03ff ffff ffe0 : Zero [ 41..  5]
@@ -2044,30 +2044,30 @@ VOID DETOUR_IA64_BUNDLE::SetBrl()
 UINT64 DETOUR_IA64_BUNDLE::GetBrlImm() const
 {
 	return (
-		//          0x0000000000fffff0
-		((wide[1] & 0x00fffff000000000) >> 32) |    // all 20 bits of imm20b.
-		//          0x000000ffff000000
-		((wide[0] & 0xffff000000000000) >> 24) |    // bottom 16 bits of imm39.
-		//          0x7fffff0000000000
-		((wide[1] & 0x00000000007fffff) << 40) |    // top 23 bits of imm39.
-		//          0x8000000000000000
-		((wide[1] & 0x0800000000000000) << 4)      // single bit of i.
+		//		  0x0000000000fffff0
+		((wide[1] & 0x00fffff000000000) >> 32) |	// all 20 bits of imm20b.
+		//		  0x000000ffff000000
+		((wide[0] & 0xffff000000000000) >> 24) |	// bottom 16 bits of imm39.
+		//		  0x7fffff0000000000
+		((wide[1] & 0x00000000007fffff) << 40) |	// top 23 bits of imm39.
+		//		  0x8000000000000000
+		((wide[1] & 0x0800000000000000) << 4)	  // single bit of i.
 		);
 }
 
 VOID DETOUR_IA64_BUNDLE::SetBrlImm(UINT64 imm)
 {
 	wide[0] = ((wide[0] & ~0xffff000000000000) |
-		//      0xffff000000000000
-		((imm & 0x000000ffff000000) << 24)       // bottom 16 bits of imm39.
+		//	  0xffff000000000000
+		((imm & 0x000000ffff000000) << 24)	   // bottom 16 bits of imm39.
 		);
 	wide[1] = ((wide[1] & ~0x08fffff0007fffff) |
-		//      0x00fffff000000000
-		((imm & 0x0000000000fffff0) << 32) |     // all 20 bits of imm20b.
-		//      0x00000000007fffff
-		((imm & 0x7fffff0000000000) >> 40) |     // top 23 bits of imm39.
-		//      0x0800000000000000
-		((imm & 0x8000000000000000) >> 4)       // single bit of i.
+		//	  0x00fffff000000000
+		((imm & 0x0000000000fffff0) << 32) |	 // all 20 bits of imm20b.
+		//	  0x00000000007fffff
+		((imm & 0x7fffff0000000000) >> 40) |	 // top 23 bits of imm39.
+		//	  0x0800000000000000
+		((imm & 0x8000000000000000) >> 4)	   // single bit of i.
 		);
 }
 
@@ -2101,19 +2101,19 @@ BOOL DETOUR_IA64_BUNDLE::IsMovlGp() const
 UINT64 DETOUR_IA64_BUNDLE::GetMovlGp() const
 {
 	UINT64 raw = (
-		//          0x0000000000000070
+		//		  0x0000000000000070
 		((wide[1] & 0x000007f000000000) >> 36) |
-		//          0x000000000000ff80
+		//		  0x000000000000ff80
 		((wide[1] & 0x07fc000000000000) >> 43) |
-		//          0x00000000001f0000
+		//		  0x00000000001f0000
 		((wide[1] & 0x0003e00000000000) >> 29) |
-		//          0x0000000000200000
+		//		  0x0000000000200000
 		((wide[1] & 0x0000100000000000) >> 23) |
-		//          0x000000ffffc00000
+		//		  0x000000ffffc00000
 		((wide[0] & 0xffffc00000000000) >> 24) |
-		//          0x7fffff0000000000
+		//		  0x7fffff0000000000
 		((wide[1] & 0x00000000007fffff) << 40) |
-		//          0x8000000000000000
+		//		  0x8000000000000000
 		((wide[1] & 0x0800000000000000) << 4)
 		);
 
@@ -2125,22 +2125,22 @@ VOID DETOUR_IA64_BUNDLE::SetMovlGp(UINT64 gp)
 	UINT64 raw = (UINT64)gp;
 
 	wide[0] = (0x0000000100000005 |
-		//      0xffffc00000000000
+		//	  0xffffc00000000000
 		((raw & 0x000000ffffc00000) << 24)
 		);
 	wide[1] = (
 		0x6000000020000000 |
-		//      0x0000070000000000
+		//	  0x0000070000000000
 		((raw & 0x0000000000000070) << 36) |
-		//      0x07fc000000000000
+		//	  0x07fc000000000000
 		((raw & 0x000000000000ff80) << 43) |
-		//      0x0003e00000000000
+		//	  0x0003e00000000000
 		((raw & 0x00000000001f0000) << 29) |
-		//      0x0000100000000000
+		//	  0x0000100000000000
 		((raw & 0x0000000000200000) << 23) |
-		//      0x00000000007fffff
+		//	  0x00000000007fffff
 		((raw & 0x7fffff0000000000) >> 40) |
-		//      0x0800000000000000
+		//	  0x0800000000000000
 		((raw & 0x8000000000000000) >> 4)
 		);
 }
@@ -2238,12 +2238,12 @@ PVOID WINAPI DetourCopyInstruction(_In_opt_ PVOID pDst,
 #define DETOURS_PFUNC_TO_PBYTE(p)  ((PBYTE)(((ULONG_PTR)(p)) & ~(ULONG_PTR)1))
 #define DETOURS_PBYTE_TO_PFUNC(p)  ((PBYTE)(((ULONG_PTR)(p)) | (ULONG_PTR)1))
 
-#define c_PCAdjust  4       // The PC value of an instruction is the PC address plus 4.
-#define c_PC        15      // The register number for the Program Counter
-#define c_LR        14      // The register number for the Link Register
-#define c_SP        13      // The register number for the Stack Pointer
-#define c_NOP       0xbf00  // A nop instruction
-#define c_BREAK     0xdefe  // A nop instruction
+#define c_PCAdjust  4	   // The PC value of an instruction is the PC address plus 4.
+#define c_PC		15	  // The register number for the Program Counter
+#define c_LR		14	  // The register number for the Link Register
+#define c_SP		13	  // The register number for the Stack Pointer
+#define c_NOP	   0xbf00  // A nop instruction
+#define c_BREAK	 0xdefe  // A nop instruction
 
 class CDetourDis
 {
@@ -2260,8 +2260,8 @@ public:
 	typedef BYTE(CDetourDis::* COPYFUNC)(PBYTE pbDst, PBYTE pbSrc);
 
 	struct COPYENTRY {
-		USHORT      nOpcode;
-		COPYFUNC    pfCopy;
+		USHORT	  nOpcode;
+		COPYFUNC	pfCopy;
 	};
 
 	typedef const COPYENTRY * REFCOPYENTRY;
@@ -2451,40 +2451,40 @@ public:
 	};
 
 protected:
-	BYTE    PureCopy16(BYTE* pSource, BYTE* pDest);
-	BYTE    PureCopy32(BYTE* pSource, BYTE* pDest);
-	BYTE    CopyMiscellaneous16(BYTE* pSource, BYTE* pDest);
-	BYTE    CopyConditionalBranchOrOther16(BYTE* pSource, BYTE* pDest);
-	BYTE    CopyUnConditionalBranch16(BYTE* pSource, BYTE* pDest);
-	BYTE    CopyLiteralLoad16(BYTE* pSource, BYTE* pDest);
-	BYTE    CopyBranchExchangeOrDataProcessing16(BYTE* pSource, BYTE* pDest);
-	BYTE    CopyBranch24(BYTE* pSource, BYTE* pDest);
-	BYTE    CopyBranchOrMiscellaneous32(BYTE* pSource, BYTE* pDest);
-	BYTE    CopyLiteralLoad32(BYTE* pSource, BYTE* pDest);
-	BYTE    CopyLoadAndStoreSingle(BYTE* pSource, BYTE* pDest);
-	BYTE    CopyLoadAndStoreMultipleAndSRS(BYTE* pSource, BYTE* pDest);
-	BYTE    CopyTableBranch(BYTE* pSource, BYTE* pDest);
-	BYTE    BeginCopy32(BYTE* pSource, BYTE* pDest);
+	BYTE	PureCopy16(BYTE* pSource, BYTE* pDest);
+	BYTE	PureCopy32(BYTE* pSource, BYTE* pDest);
+	BYTE	CopyMiscellaneous16(BYTE* pSource, BYTE* pDest);
+	BYTE	CopyConditionalBranchOrOther16(BYTE* pSource, BYTE* pDest);
+	BYTE	CopyUnConditionalBranch16(BYTE* pSource, BYTE* pDest);
+	BYTE	CopyLiteralLoad16(BYTE* pSource, BYTE* pDest);
+	BYTE	CopyBranchExchangeOrDataProcessing16(BYTE* pSource, BYTE* pDest);
+	BYTE	CopyBranch24(BYTE* pSource, BYTE* pDest);
+	BYTE	CopyBranchOrMiscellaneous32(BYTE* pSource, BYTE* pDest);
+	BYTE	CopyLiteralLoad32(BYTE* pSource, BYTE* pDest);
+	BYTE	CopyLoadAndStoreSingle(BYTE* pSource, BYTE* pDest);
+	BYTE	CopyLoadAndStoreMultipleAndSRS(BYTE* pSource, BYTE* pDest);
+	BYTE	CopyTableBranch(BYTE* pSource, BYTE* pDest);
+	BYTE	BeginCopy32(BYTE* pSource, BYTE* pDest);
 
-	LONG    DecodeBranch5(ULONG opcode);
+	LONG	DecodeBranch5(ULONG opcode);
 	USHORT  EncodeBranch5(ULONG originalOpCode, LONG delta);
-	LONG    DecodeBranch8(ULONG opcode);
+	LONG	DecodeBranch8(ULONG opcode);
 	USHORT  EncodeBranch8(ULONG originalOpCode, LONG delta);
-	LONG    DecodeBranch11(ULONG opcode);
+	LONG	DecodeBranch11(ULONG opcode);
 	USHORT  EncodeBranch11(ULONG originalOpCode, LONG delta);
-	BYTE    EmitBranch11(PUSHORT& pDest, LONG relativeAddress);
-	LONG    DecodeBranch20(ULONG opcode);
+	BYTE	EmitBranch11(PUSHORT& pDest, LONG relativeAddress);
+	LONG	DecodeBranch20(ULONG opcode);
 	ULONG   EncodeBranch20(ULONG originalOpCode, LONG delta);
-	LONG    DecodeBranch24(ULONG opcode, BOOL& fLink);
+	LONG	DecodeBranch24(ULONG opcode, BOOL& fLink);
 	ULONG   EncodeBranch24(ULONG originalOpCode, LONG delta, BOOL fLink);
-	LONG    DecodeLiteralLoad8(ULONG instruction);
-	LONG    DecodeLiteralLoad12(ULONG instruction);
-	BYTE    EmitLiteralLoad8(PUSHORT& pDest, BYTE targetRegister, PBYTE pLiteral);
-	BYTE    EmitLiteralLoad12(PUSHORT& pDest, BYTE targetRegister, PBYTE pLiteral);
-	BYTE    EmitImmediateRegisterLoad32(PUSHORT& pDest, BYTE reg);
-	BYTE    EmitImmediateRegisterLoad16(PUSHORT& pDest, BYTE reg);
-	BYTE    EmitLongLiteralLoad(PUSHORT& pDest, BYTE reg, PVOID pTarget);
-	BYTE    EmitLongBranch(PUSHORT& pDest, PVOID pTarget);
+	LONG	DecodeLiteralLoad8(ULONG instruction);
+	LONG	DecodeLiteralLoad12(ULONG instruction);
+	BYTE	EmitLiteralLoad8(PUSHORT& pDest, BYTE targetRegister, PBYTE pLiteral);
+	BYTE	EmitLiteralLoad12(PUSHORT& pDest, BYTE targetRegister, PBYTE pLiteral);
+	BYTE	EmitImmediateRegisterLoad32(PUSHORT& pDest, BYTE reg);
+	BYTE	EmitImmediateRegisterLoad16(PUSHORT& pDest, BYTE reg);
+	BYTE	EmitLongLiteralLoad(PUSHORT& pDest, BYTE reg, PVOID pTarget);
+	BYTE	EmitLongBranch(PUSHORT& pDest, PVOID pTarget);
 	USHORT  CalculateExtra(BYTE sourceLength, BYTE* pDestStart, BYTE* pDestEnd);
 
 protected:
@@ -2521,7 +2521,7 @@ protected:
 		return (LONG)(pTarget - (pDest + c_PCAdjust));
 	}
 
-	BYTE    EmitAdd32(PUSHORT& pDstInst, BYTE op1Reg, BYTE op2Reg, BYTE dstReg, BYTE shiftAmount)
+	BYTE	EmitAdd32(PUSHORT& pDstInst, BYTE op1Reg, BYTE op2Reg, BYTE dstReg, BYTE shiftAmount)
 	{
 		Shift& shift = (Shift&)(shiftAmount);
 		const BYTE shiftType = 0x00; // LSL
@@ -2530,7 +2530,7 @@ protected:
 		return EmitLongInstruction(pDstInst, (ULONG&)add);
 	}
 
-	BYTE    EmitLogicalShiftLeft32(PUSHORT& pDstInst, BYTE srcReg, BYTE dstReg, BYTE shiftAmount)
+	BYTE	EmitLogicalShiftLeft32(PUSHORT& pDstInst, BYTE srcReg, BYTE dstReg, BYTE shiftAmount)
 	{
 		Shift& shift = (Shift&)(shiftAmount);
 		LogicalShiftLeft32 shiftLeft = { srcReg, 0x00, shift.Imm2, dstReg, shift.Imm3, 0x1E,
@@ -2538,7 +2538,7 @@ protected:
 		return EmitLongInstruction(pDstInst, (ULONG&)shiftLeft);
 	}
 
-	BYTE    EmitStoreImmediate12(PUSHORT& pDstInst, BYTE srcReg, BYTE baseReg, USHORT offset)
+	BYTE	EmitStoreImmediate12(PUSHORT& pDstInst, BYTE srcReg, BYTE baseReg, USHORT offset)
 	{
 		StoreImmediate12 store = { offset, srcReg, baseReg, 0xF8C };
 		return EmitLongInstruction(pDstInst, (ULONG&)store);
@@ -2547,9 +2547,9 @@ protected:
 protected:
 	PBYTE   m_pbTarget;
 	PBYTE   m_pbPool;
-	LONG    m_lExtra;
+	LONG	m_lExtra;
 
-	BYTE    m_rbScratchDst[64];
+	BYTE	m_rbScratchDst[64];
 
 	static const COPYENTRY s_rceCopyTable[33];
 };
@@ -2740,7 +2740,7 @@ LONG CDetourDis::DecodeLiteralLoad8(ULONG instruction)
 BYTE CDetourDis::EmitLiteralLoad8(PUSHORT& pDest, BYTE targetRegister, PBYTE pLiteral)
 {
 	// Note: We add 2 (which gets rounded down) because literals must be 32-bit
-	//       aligned, but the ldr can be 16-bit aligned.
+	//	   aligned, but the ldr can be 16-bit aligned.
 	LONG newDelta = CalculateNewDelta((PBYTE)pLiteral + 2, (PBYTE)pDest);
 	LONG relative = ((newDelta > 0 ? newDelta : -newDelta) & 0x3FF);
 
@@ -2764,7 +2764,7 @@ LONG CDetourDis::DecodeLiteralLoad12(ULONG instruction)
 BYTE CDetourDis::EmitLiteralLoad12(PUSHORT& pDest, BYTE targetRegister, PBYTE pLiteral)
 {
 	// Note: We add 2 (which gets rounded down) because literals must be 32-bit
-	//       aligned, but the ldr can be 16-bit aligned.
+	//	   aligned, but the ldr can be 16-bit aligned.
 	LONG newDelta = CalculateNewDelta((PBYTE)pLiteral + 2, (PBYTE)pDest);
 	LONG relative = ((newDelta > 0 ? newDelta : -newDelta) & 0xFFF);
 
@@ -2856,12 +2856,12 @@ BYTE CDetourDis::CopyMiscellaneous16(BYTE* pSource, BYTE* pDest)
 		// If that fails, re-encode with 'conditional branch' logic, without using the condition flags
 		// For example, cbz r2,+0x56 (0x90432) becomes:
 		//
-		//  001df73a b92a     cbnz        r2,001df748
-		//  001df73c e002     b           001df744
-		//  001df73e bf00     nop
-		//  001df740 0432     dc.h        0432
-		//  001df742 0009     dc.h        0009
-		//  001df744 f85ff008 ldr         pc,=0x90432
+		//  001df73a b92a	 cbnz		r2,001df748
+		//  001df73c e002	 b		   001df744
+		//  001df73e bf00	 nop
+		//  001df740 0432	 dc.h		0432
+		//  001df742 0009	 dc.h		0009
+		//  001df744 f85ff008 ldr		 pc,=0x90432
 		//
 
 		// Store where we will be writing our conditional branch, and move past it so we can emit a long branch
@@ -2917,13 +2917,13 @@ BYTE CDetourDis::CopyConditionalBranchOrOther16(BYTE* pSource, BYTE* pDest)
 		// If that fails, re-encode as a sequence of branches
 		// For example, bne +0x6E (0x90452) becomes:
 		//
-		// 001df758 d100     bne         001df75c
-		// 001df75a e005     b           001df768
-		// 001df75c e002     b           001df764
-		// 001df75e bf00     nop
-		// 001df760 0452     dc.h        0452
-		// 001df762 0009     dc.h        0009
-		// 001df764 f85ff008 ldr         pc,=0x90452
+		// 001df758 d100	 bne		 001df75c
+		// 001df75a e005	 b		   001df768
+		// 001df75c e002	 b		   001df764
+		// 001df75e bf00	 nop
+		// 001df760 0452	 dc.h		0452
+		// 001df762 0009	 dc.h		0009
+		// 001df764 f85ff008 ldr		 pc,=0x90452
 		//
 
 		// First, reuse the existing conditional branch to, if successful, branch down to a 'long branch' that we will emit below
@@ -2983,10 +2983,10 @@ BYTE CDetourDis::CopyUnConditionalBranch16(BYTE* pSource, BYTE* pDest)
 	// If that fails, emit as a 'long branch'
 	if (!instruction) {
 		// For example, b +0x7FE (00090be6) becomes:
-		// 003f6d02 e001     b           003f6d08
-		// 003f6d04 0be6     dc.h        0be6
-		// 003f6d06 0009     dc.h        0009
-		// 003f6d08 f85ff008 ldr         pc,=0x90BE6
+		// 003f6d02 e001	 b		   003f6d08
+		// 003f6d04 0be6	 dc.h		0be6
+		// 003f6d06 0009	 dc.h		0009
+		// 003f6d08 f85ff008 ldr		 pc,=0x90BE6
 		EmitLongBranch(pDstInst, pTarget);
 
 		// Compute the extra space needed for the branch sequence
@@ -3008,8 +3008,8 @@ BYTE CDetourDis::CopyLiteralLoad16(BYTE* pSource, BYTE* pDest)
 	// Re-encode as a 'long literal load'
 	// For example, ldr r0, [PC + 1E0] (0x905B4) becomes:
 	//
-	// 001df72c f85f0008 ldr         r0,=0x905B4
-	// 001df730 f8d00000 ldr.w       r0,[r0]
+	// 001df72c f85f0008 ldr		 r0,=0x905B4
+	// 001df730 f8d00000 ldr.w	   r0,[r0]
 	LiteralLoad8& load8 = (LiteralLoad8&)(instruction);
 	EmitLongLiteralLoad((PUSHORT&)pDest, load8.Register, pTarget);
 
@@ -3078,8 +3078,8 @@ const CDetourDis::COPYENTRY CDetourDis::s_rceCopyTable[33] =
 	// Add to SP or PC
 	/* 0b10100 */ { 0x14, &CDetourDis::PureCopy16 },
 	//   ToDo: Is ADR (T1) blitt-able?
-	//     It adds a value to PC and stores the result in a register.
-	//     Does this count as a 'target' for detours?
+	//	 It adds a value to PC and stores the result in a register.
+	//	 Does this count as a 'target' for detours?
 	/* 0b10101 */ { 0x15, &CDetourDis::PureCopy16 },
 
 	// Miscellaneous
@@ -3090,8 +3090,8 @@ const CDetourDis::COPYENTRY CDetourDis::s_rceCopyTable[33] =
 	/* 0b11000 */ { 0x18, &CDetourDis::PureCopy16 },
 	/* 0b11001 */ { 0x19, &CDetourDis::PureCopy16 },
 	//   ToDo: Are we sure these are all safe?
-	//     LDMIA, for example, can include an 'embedded' branch.
-	//     Does this count as a 'target' for detours?
+	//	 LDMIA, for example, can include an 'embedded' branch.
+	//	 Does this count as a 'target' for detours?
 
 	// Conditional branch
 	/* 0b11010 */ { 0x1a, &CDetourDis::CopyConditionalBranchOrOther16 },
@@ -3158,12 +3158,12 @@ BYTE CDetourDis::CopyBranchOrMiscellaneous32(BYTE* pSource, BYTE* pDest)
 		// If that fails, re-encode as a sequence of branches
 		// For example, bls.w +0x86 (00090480)| becomes:
 		//
-		// 001df788 f2408001 bls.w       001df78e
-		// 001df78c e004     b           001df798
-		// 001df78e e001     b           001df794
-		// 001df790 0480     dc.h        0480
-		// 001df792 0009     dc.h        0009
-		// 001df794 f85ff008 ldr         pc,=0x90480
+		// 001df788 f2408001 bls.w	   001df78e
+		// 001df78c e004	 b		   001df798
+		// 001df78e e001	 b		   001df794
+		// 001df790 0480	 dc.h		0480
+		// 001df792 0009	 dc.h		0009
+		// 001df794 f85ff008 ldr		 pc,=0x90480
 		//
 
 		// First, reuse the existing conditional branch to, if successful,
@@ -3316,20 +3316,20 @@ BYTE CDetourDis::CopyTableBranch(BYTE* pSource, BYTE* pDest)
 	// If the base register is PC, we need to manually perform the table lookup
 	// For example, this:
 	//
-	//        7ef40000 e8dff002 tbb         [pc,r2]
+	//		7ef40000 e8dff002 tbb		 [pc,r2]
 	//
 	// becomes this:
 	//
-	//        7ef40404 b401     push        {r0}            ; pushed as a placeholder for the target address
-	//        7ef40406 e92d0005 push.w      {r0,r2}         ; scratch register and another register are pushed; there's a minimum of two registers in the list for push.w
-	//        7ef40410 4820     ldr         r0,=0x7EF40004  ; load the table address from the literal pool
-	//        7ef40414 eb000042 add         r0,r0,r2,lsl #1 ; add the index value to the address of the table to get the table entry; lsl only used if it's a TBH instruction
-	//        7ef40418 f8d00000 ldr.w       r0,[r0]         ; dereference the table entry to get the value of the target
-	//        7ef4041c ea4f0040 lsl         r0,r0,#1        ; multiply the offset by 2 (per the spec)
-	//        7ef40420 eb00000f add.w       r0,r0,pc        ; Add the offset to pc to get the target address
-	//        7ef40424 f8cd000c str.w       r0,[sp,#0xC]    ; store the target address on the stack (into the first push)
-	//        7ef40428 e8bd0005 pop.w       {r0,r2}         ; scratch register and another register are popped; there's a minimum of two registers in the list for pop.w
-	//        7ef4042c bd00     pop         {pc}            ; pop the address into pc
+	//		7ef40404 b401	 push		{r0}			; pushed as a placeholder for the target address
+	//		7ef40406 e92d0005 push.w	  {r0,r2}		 ; scratch register and another register are pushed; there's a minimum of two registers in the list for push.w
+	//		7ef40410 4820	 ldr		 r0,=0x7EF40004  ; load the table address from the literal pool
+	//		7ef40414 eb000042 add		 r0,r0,r2,lsl #1 ; add the index value to the address of the table to get the table entry; lsl only used if it's a TBH instruction
+	//		7ef40418 f8d00000 ldr.w	   r0,[r0]		 ; dereference the table entry to get the value of the target
+	//		7ef4041c ea4f0040 lsl		 r0,r0,#1		; multiply the offset by 2 (per the spec)
+	//		7ef40420 eb00000f add.w	   r0,r0,pc		; Add the offset to pc to get the target address
+	//		7ef40424 f8cd000c str.w	   r0,[sp,#0xC]	; store the target address on the stack (into the first push)
+	//		7ef40428 e8bd0005 pop.w	   {r0,r2}		 ; scratch register and another register are popped; there's a minimum of two registers in the list for pop.w
+	//		7ef4042c bd00	 pop		 {pc}			; pop the address into pc
 	//
 
 	// Push r0 to make room for our jump address on the stack
@@ -3548,36 +3548,36 @@ PVOID WINAPI DetourCopyInstruction(_In_opt_ PVOID pDst,
 
 #ifdef DETOURS_ARM64
 
-#define c_LR        30          // The register number for the Link Register
-#define c_SP        31          // The register number for the Stack Pointer
-#define c_NOP       0xd503201f  // A nop instruction
-#define c_BREAK     (0xd4200000 | (0xf000 << 5)) // A break instruction
+#define c_LR		30		  // The register number for the Link Register
+#define c_SP		31		  // The register number for the Stack Pointer
+#define c_NOP	   0xd503201f  // A nop instruction
+#define c_BREAK	 (0xd4200000 | (0xf000 << 5)) // A break instruction
 
 //
 // Problematic instructions:
 //
-// ADR     0ll10000 hhhhhhhh hhhhhhhh hhhddddd  & 0x9f000000 == 0x10000000  (l = low, h = high, d = Rd)
-// ADRP    1ll10000 hhhhhhhh hhhhhhhh hhhddddd  & 0x9f000000 == 0x90000000  (l = low, h = high, d = Rd)
+// ADR	 0ll10000 hhhhhhhh hhhhhhhh hhhddddd  & 0x9f000000 == 0x10000000  (l = low, h = high, d = Rd)
+// ADRP	1ll10000 hhhhhhhh hhhhhhhh hhhddddd  & 0x9f000000 == 0x90000000  (l = low, h = high, d = Rd)
 //
 // B.cond  01010100 iiiiiiii iiiiiiii iii0cccc  & 0xff000010 == 0x54000000  (i = delta = SignExtend(imm19:00, 64), c = cond)
 //
-// B       000101ii iiiiiiii iiiiiiii iiiiiiii  & 0xfc000000 == 0x14000000  (i = delta = SignExtend(imm26:00, 64))
-// BL      100101ii iiiiiiii iiiiiiii iiiiiiii  & 0xfc000000 == 0x94000000  (i = delta = SignExtend(imm26:00, 64))
+// B	   000101ii iiiiiiii iiiiiiii iiiiiiii  & 0xfc000000 == 0x14000000  (i = delta = SignExtend(imm26:00, 64))
+// BL	  100101ii iiiiiiii iiiiiiii iiiiiiii  & 0xfc000000 == 0x94000000  (i = delta = SignExtend(imm26:00, 64))
 //
-// CBNZ    z0110101 iiiiiiii iiiiiiii iiittttt  & 0x7f000000 == 0x35000000  (z = size, i = delta = SignExtend(imm19:00, 64), t = Rt)
-// CBZ     z0110100 iiiiiiii iiiiiiii iiittttt  & 0x7f000000 == 0x34000000  (z = size, i = delta = SignExtend(imm19:00, 64), t = Rt)
+// CBNZ	z0110101 iiiiiiii iiiiiiii iiittttt  & 0x7f000000 == 0x35000000  (z = size, i = delta = SignExtend(imm19:00, 64), t = Rt)
+// CBZ	 z0110100 iiiiiiii iiiiiiii iiittttt  & 0x7f000000 == 0x34000000  (z = size, i = delta = SignExtend(imm19:00, 64), t = Rt)
 //
 // LDR Wt  00011000 iiiiiiii iiiiiiii iiittttt  & 0xff000000 == 0x18000000  (i = SignExtend(imm19:00, 64), t = Rt)
 // LDR Xt  01011000 iiiiiiii iiiiiiii iiittttt  & 0xff000000 == 0x58000000  (i = SignExtend(imm19:00, 64), t = Rt)
 // LDRSW   10011000 iiiiiiii iiiiiiii iiittttt  & 0xff000000 == 0x98000000  (i = SignExtend(imm19:00, 64), t = Rt)
-// PRFM    11011000 iiiiiiii iiiiiiii iiittttt  & 0xff000000 == 0xd8000000  (i = SignExtend(imm19:00, 64), t = Rt)
+// PRFM	11011000 iiiiiiii iiiiiiii iiittttt  & 0xff000000 == 0xd8000000  (i = SignExtend(imm19:00, 64), t = Rt)
 // LDR St  00011100 iiiiiiii iiiiiiii iiittttt  & 0xff000000 == 0x1c000000  (i = SignExtend(imm19:00, 64), t = Rt)
 // LDR Dt  01011100 iiiiiiii iiiiiiii iiittttt  & 0xff000000 == 0x5c000000  (i = SignExtend(imm19:00, 64), t = Rt)
 // LDR Qt  10011100 iiiiiiii iiiiiiii iiittttt  & 0xff000000 == 0x9c000000  (i = SignExtend(imm19:00, 64), t = Rt)
 // LDR inv 11011100 iiiiiiii iiiiiiii iiittttt  & 0xff000000 == 0xdc000000  (i = SignExtend(imm19:00, 64), t = Rt)
 //
-// TBNZ    z0110111 bbbbbiii iiiiiiii iiittttt  & 0x7f000000 == 0x37000000  (z = size, b = bitnum, i = SignExtend(imm14:00, 64), t = Rt)
-// TBZ     z0110110 bbbbbiii iiiiiiii iiittttt  & 0x7f000000 == 0x36000000  (z = size, b = bitnum, i = SignExtend(imm14:00, 64), t = Rt)
+// TBNZ	z0110111 bbbbbiii iiiiiiii iiittttt  & 0x7f000000 == 0x37000000  (z = size, b = bitnum, i = SignExtend(imm14:00, 64), t = Rt)
+// TBZ	 z0110110 bbbbbiii iiiiiiii iiittttt  & 0x7f000000 == 0x36000000  (z = size, b = bitnum, i = SignExtend(imm14:00, 64), t = Rt)
 //
 
 class CDetourDis
@@ -3598,12 +3598,12 @@ public:
 		DWORD Assembled;
 		struct
 		{
-			DWORD Rd : 5;           // Destination register
-			DWORD Rn : 5;           // Source register
-			DWORD Imm12 : 12;       // 12-bit immediate
-			DWORD Shift : 2;        // shift (must be 0 or 1)
-			DWORD Opcode1 : 7;      // Must be 0010001 == 0x11
-			DWORD Size : 1;         // 0 = 32-bit, 1 = 64-bit
+			DWORD Rd : 5;		   // Destination register
+			DWORD Rn : 5;		   // Source register
+			DWORD Imm12 : 12;	   // 12-bit immediate
+			DWORD Shift : 2;		// shift (must be 0 or 1)
+			DWORD Opcode1 : 7;	  // Must be 0010001 == 0x11
+			DWORD Size : 1;		 // 0 = 32-bit, 1 = 64-bit
 		} s;
 		static DWORD Assemble(DWORD size, DWORD rd, DWORD rn, ULONG imm, DWORD shift)
 		{
@@ -3625,11 +3625,11 @@ public:
 		DWORD Assembled;
 		struct
 		{
-			DWORD Rd : 5;           // Destination register
-			DWORD Imm19 : 19;       // 19-bit upper immediate
-			DWORD Opcode1 : 5;      // Must be 10000 == 0x10
-			DWORD Imm2 : 2;         // 2-bit lower immediate
-			DWORD Type : 1;         // 0 = ADR, 1 = ADRP
+			DWORD Rd : 5;		   // Destination register
+			DWORD Imm19 : 19;	   // 19-bit upper immediate
+			DWORD Opcode1 : 5;	  // Must be 10000 == 0x10
+			DWORD Imm2 : 2;		 // 2-bit lower immediate
+			DWORD Type : 1;		 // 0 = ADR, 1 = ADRP
 		} s;
 		inline LONG Imm() const { DWORD Imm = (s.Imm19 << 2) | s.Imm2; return (LONG)(Imm << 11) >> 11; }
 		static DWORD Assemble(DWORD type, DWORD rd, LONG delta)
@@ -3651,10 +3651,10 @@ public:
 		DWORD Assembled;
 		struct
 		{
-			DWORD Condition : 4;    // Condition
-			DWORD Opcode1 : 1;      // Must be 0
-			DWORD Imm19 : 19;       // 19-bit immediate
-			DWORD Opcode2 : 8;      // Must be 01010100 == 0x54
+			DWORD Condition : 4;	// Condition
+			DWORD Opcode1 : 1;	  // Must be 0
+			DWORD Imm19 : 19;	   // 19-bit immediate
+			DWORD Opcode2 : 8;	  // Must be 01010100 == 0x54
 		} s;
 		inline LONG Imm() const { return (LONG)(s.Imm19 << 13) >> 11; }
 		static DWORD AssembleBcc(DWORD condition, LONG delta)
@@ -3673,9 +3673,9 @@ public:
 		DWORD Assembled;
 		struct
 		{
-			DWORD Imm26 : 26;       // 26-bit immediate
-			DWORD Opcode1 : 5;      // Must be 00101 == 0x5
-			DWORD Link : 1;         // 0 = B, 1 = BL
+			DWORD Imm26 : 26;	   // 26-bit immediate
+			DWORD Opcode1 : 5;	  // Must be 00101 == 0x5
+			DWORD Link : 1;		 // 0 = B, 1 = BL
 		} s;
 		inline LONG Imm() const { return (LONG)(s.Imm26 << 6) >> 4; }
 		static DWORD Assemble(DWORD link, LONG delta)
@@ -3695,9 +3695,9 @@ public:
 		DWORD Assembled;
 		struct
 		{
-			DWORD Opcode1 : 5;      // Must be 00000 == 0
-			DWORD Rn : 5;           // Register number
-			DWORD Opcode2 : 22;     // Must be 1101011000011111000000 == 0x3587c0
+			DWORD Opcode1 : 5;	  // Must be 00000 == 0
+			DWORD Rn : 5;		   // Register number
+			DWORD Opcode2 : 22;	 // Must be 1101011000011111000000 == 0x3587c0
 		} s;
 		static DWORD AssembleBr(DWORD rn)
 		{
@@ -3714,11 +3714,11 @@ public:
 		DWORD Assembled;
 		struct
 		{
-			DWORD Rt : 5;           // Register to test
-			DWORD Imm19 : 19;       // 19-bit immediate
-			DWORD Nz : 1;           // 0 = CBZ, 1 = CBNZ
-			DWORD Opcode1 : 6;      // Must be 011010 == 0x1a
-			DWORD Size : 1;         // 0 = 32-bit, 1 = 64-bit
+			DWORD Rt : 5;		   // Register to test
+			DWORD Imm19 : 19;	   // 19-bit immediate
+			DWORD Nz : 1;		   // 0 = CBZ, 1 = CBNZ
+			DWORD Opcode1 : 6;	  // Must be 011010 == 0x1a
+			DWORD Size : 1;		 // 0 = 32-bit, 1 = 64-bit
 		} s;
 		inline LONG Imm() const { return (LONG)(s.Imm19 << 13) >> 11; }
 		static DWORD Assemble(DWORD size, DWORD nz, DWORD rt, LONG delta)
@@ -3738,12 +3738,12 @@ public:
 		DWORD Assembled;
 		struct
 		{
-			DWORD Rt : 5;           // Destination register
-			DWORD Imm19 : 19;       // 19-bit immediate
-			DWORD Opcode1 : 2;      // Must be 0
-			DWORD FpNeon : 1;       // 0 = LDR Wt/LDR Xt/LDRSW/PRFM, 1 = LDR St/LDR Dt/LDR Qt
-			DWORD Opcode2 : 3;      // Must be 011 = 3
-			DWORD Size : 2;         // 00 = LDR Wt/LDR St, 01 = LDR Xt/LDR Dt, 10 = LDRSW/LDR Qt, 11 = PRFM/invalid
+			DWORD Rt : 5;		   // Destination register
+			DWORD Imm19 : 19;	   // 19-bit immediate
+			DWORD Opcode1 : 2;	  // Must be 0
+			DWORD FpNeon : 1;	   // 0 = LDR Wt/LDR Xt/LDRSW/PRFM, 1 = LDR St/LDR Dt/LDR Qt
+			DWORD Opcode2 : 3;	  // Must be 011 = 3
+			DWORD Size : 2;		 // 00 = LDR Wt/LDR St, 01 = LDR Xt/LDR Dt, 10 = LDRSW/LDR Qt, 11 = PRFM/invalid
 		} s;
 		inline LONG Imm() const { return (LONG)(s.Imm19 << 13) >> 11; }
 		static DWORD Assemble(DWORD size, DWORD fpneon, DWORD rt, LONG delta)
@@ -3764,13 +3764,13 @@ public:
 		DWORD Assembled;
 		struct
 		{
-			DWORD Rt : 5;           // Destination register
-			DWORD Rn : 5;           // Base register
-			DWORD Imm12 : 12;       // 12-bit immediate
-			DWORD Opcode1 : 1;      // Must be 1 == 1
-			DWORD Opc : 1;          // Part of size
-			DWORD Opcode2 : 6;      // Must be 111101 == 0x3d
-			DWORD Size : 2;         // Size (0=8-bit, 1=16-bit, 2=32-bit, 3=64-bit, 4=128-bit)
+			DWORD Rt : 5;		   // Destination register
+			DWORD Rn : 5;		   // Base register
+			DWORD Imm12 : 12;	   // 12-bit immediate
+			DWORD Opcode1 : 1;	  // Must be 1 == 1
+			DWORD Opc : 1;		  // Part of size
+			DWORD Opcode2 : 6;	  // Must be 111101 == 0x3d
+			DWORD Size : 2;		 // Size (0=8-bit, 1=16-bit, 2=32-bit, 3=64-bit, 4=128-bit)
 		} s;
 		static DWORD Assemble(DWORD size, DWORD rt, DWORD rn, ULONG imm)
 		{
@@ -3791,12 +3791,12 @@ public:
 		DWORD Assembled;
 		struct
 		{
-			DWORD Rd : 5;           // Destination register
-			DWORD Imm16 : 16;       // Immediate
-			DWORD Shift : 2;        // Shift amount (0=0, 1=16, 2=32, 3=48)
-			DWORD Opcode : 6;       // Must be 100101 == 0x25
-			DWORD Type : 2;         // 0 = MOVN, 1 = reserved, 2 = MOVZ, 3 = MOVK
-			DWORD Size : 1;         // 0 = 32-bit, 1 = 64-bit
+			DWORD Rd : 5;		   // Destination register
+			DWORD Imm16 : 16;	   // Immediate
+			DWORD Shift : 2;		// Shift amount (0=0, 1=16, 2=32, 3=48)
+			DWORD Opcode : 6;	   // Must be 100101 == 0x25
+			DWORD Type : 2;		 // 0 = MOVN, 1 = reserved, 2 = MOVZ, 3 = MOVK
+			DWORD Size : 1;		 // 0 = 32-bit, 1 = 64-bit
 		} s;
 		static DWORD Assemble(DWORD size, DWORD type, DWORD rd, DWORD imm, DWORD shift)
 		{
@@ -3822,12 +3822,12 @@ public:
 		DWORD Assembled;
 		struct
 		{
-			DWORD Rt : 5;           // Register to test
-			DWORD Imm14 : 14;       // 14-bit immediate
-			DWORD Bit : 5;          // 5-bit index
-			DWORD Nz : 1;           // 0 = TBZ, 1 = TBNZ
-			DWORD Opcode1 : 6;      // Must be 011011 == 0x1b
-			DWORD Size : 1;         // 0 = 32-bit, 1 = 64-bit
+			DWORD Rt : 5;		   // Register to test
+			DWORD Imm14 : 14;	   // 14-bit immediate
+			DWORD Bit : 5;		  // 5-bit index
+			DWORD Nz : 1;		   // 0 = TBZ, 1 = TBNZ
+			DWORD Opcode1 : 6;	  // Must be 011011 == 0x1b
+			DWORD Size : 1;		 // 0 = 32-bit, 1 = 64-bit
 		} s;
 		inline LONG Imm() const { return (LONG)(s.Imm14 << 18) >> 16; }
 		static DWORD Assemble(DWORD size, DWORD nz, DWORD rt, DWORD bit, LONG delta)
@@ -3845,14 +3845,14 @@ public:
 
 
 protected:
-	BYTE    PureCopy32(BYTE* pSource, BYTE* pDest);
-	BYTE    EmitMovImmediate(PULONG& pDstInst, BYTE rd, UINT64 immediate);
-	BYTE    CopyAdr(BYTE* pSource, BYTE* pDest, ULONG instruction);
-	BYTE    CopyBcc(BYTE* pSource, BYTE* pDest, ULONG instruction);
-	BYTE    CopyB(BYTE* pSource, BYTE* pDest, ULONG instruction);
-	BYTE    CopyCbz(BYTE* pSource, BYTE* pDest, ULONG instruction);
-	BYTE    CopyTbz(BYTE* pSource, BYTE* pDest, ULONG instruction);
-	BYTE    CopyLdrLiteral(BYTE* pSource, BYTE* pDest, ULONG instruction);
+	BYTE	PureCopy32(BYTE* pSource, BYTE* pDest);
+	BYTE	EmitMovImmediate(PULONG& pDstInst, BYTE rd, UINT64 immediate);
+	BYTE	CopyAdr(BYTE* pSource, BYTE* pDest, ULONG instruction);
+	BYTE	CopyBcc(BYTE* pSource, BYTE* pDest, ULONG instruction);
+	BYTE	CopyB(BYTE* pSource, BYTE* pDest, ULONG instruction);
+	BYTE	CopyCbz(BYTE* pSource, BYTE* pDest, ULONG instruction);
+	BYTE	CopyTbz(BYTE* pSource, BYTE* pDest, ULONG instruction);
+	BYTE	CopyLdrLiteral(BYTE* pSource, BYTE* pDest, ULONG instruction);
 
 protected:
 	ULONG GetInstruction(BYTE* pSource)
@@ -3868,7 +3868,7 @@ protected:
 
 protected:
 	PBYTE   m_pbTarget;
-	BYTE    m_rbScratchDst[64];
+	BYTE	m_rbScratchDst[64];
 };
 
 BYTE CDetourDis::PureCopy32(BYTE* pSource, BYTE* pDest)
@@ -4181,9 +4181,9 @@ BYTE CDetourDis::CopyLdrLiteral(BYTE* pSource, BYTE* pDest, ULONG instruction)
 		UINT64 value = 0;
 		switch (decoded.s.Size)
 		{
-		case 0: value = *(ULONG*)pTarget;       break;
+		case 0: value = *(ULONG*)pTarget;	   break;
 		case 1: value = *(UINT64*)pTarget;   break;
-		case 2: value = *(LONG*)pTarget;        break;
+		case 2: value = *(LONG*)pTarget;		break;
 		}
 		EmitMovImmediate(pDstInst, decoded.s.Rt, value);
 	}
