@@ -36,6 +36,7 @@ namespace BL2SDK
 	tStaticConstructObject pStaticConstructObject;
 	tLoadPackage pLoadPackage;
 	tByteOrderSerialize pByteOrderSerialize;
+	UObject *engine = nullptr;
 
 	CPythonInterface *Python;
 
@@ -406,4 +407,11 @@ namespace BL2SDK
 		}
 		SetIsLoadingUDKPackage(false);
 	};
+
+	UObject *GetEngine()
+	{
+		if (!engine)
+			engine = UObject::FindObjectByFullName("WillowGameEngine Transient.WillowGameEngine");
+		return engine;
+	}
 }

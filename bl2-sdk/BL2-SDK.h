@@ -40,6 +40,8 @@ namespace BL2SDK
 	extern int EngineVersion;
 	extern int ChangelistNumber;
 
+	extern class UObject *engine;
+
 	void LogAllProcessEventCalls(bool enabled);
 	void LogAllUnrealScriptCalls(bool enabled);
 	//bool getGameVersion(std::wstring& appVersion);
@@ -47,6 +49,7 @@ namespace BL2SDK
 	void initialize(wchar_t * exeBaseFolder/*LauncherStruct* args*/);
 	void cleanup();
 	void LoadPackage(const char* filename, DWORD flags = 0, bool force = false);
+	UObject			*GetEngine();
 }
 
 #endif

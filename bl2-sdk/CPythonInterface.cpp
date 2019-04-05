@@ -77,6 +77,7 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	m.def("Log", [](std::string in) { Logging::Log(in.c_str(), in.length()); });
 	m.def("LoadPackage", &BL2SDK::LoadPackage);
 	m.def("RegisterEngineHook", &RegisterEngineHook);
+	m.def("GetEngine", &BL2SDK::GetEngine, py::return_value_policy::reference);
 	m.def("RegisterScriptHook", &RegisterScriptHook);
 	m.def("RemoveEngineHook", [](const std::string& funcName, const std::string& hookName) {GameHooks::EngineHookManager->Remove(funcName, hookName); });
 	m.def("RemoveScriptHook", [](const std::string& funcName, const std::string& hookName) {GameHooks::UnrealScriptHookManager->Remove(funcName, hookName); });
@@ -165,6 +166,8 @@ PythonStatus CPythonInterface::InitializeModules()
 void CPythonInterface::SetPaths()
 {
 	m_PythonPath = Util::Narrow(Settings::GetPythonFile(L""));
+	const char *pythonString = Util::Format("import sys;sys.path.append(r'%s\\')", m_PythonPath.c_str()).c_str();
+	DoString(pythonString);
 }
 
 int CPythonInterface::DoFile(const char *filename)

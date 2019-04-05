@@ -434,6 +434,7 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"UDistributionFloatParticleParameter", &typeid(UDistributionFloatParameterBase)},
 	{"UDistributionVectorParticleParameter", &typeid(UDistributionVectorParameterBase)},
 	{"UPhysXParticleSystem", &typeid(UPhysXParticleSystem)},
+	{"UParticleSystem", &typeid(UParticleSystem)},
 	{"AKActor", &typeid(AKActor)},
 	{"AKActorFromStatic", &typeid(AKActorFromStatic)},
 	{"AKActorSpawnable", &typeid(AKActorSpawnable)},

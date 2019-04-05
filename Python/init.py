@@ -6,3 +6,5 @@ def log(s):
         s += '\n'
     bl2sdk.Log(s)
 print = log
+
+import commander_wannabe
