@@ -109,7 +109,7 @@ for filename in os.listdir(dir_path_h):
 					elif line.endswith(');') and not line.startswith('static') and not line.startswith('virtual') and not line.startswith('template'):
 						if not '*' in line:
 							needs_reference = line.startswith('TArray') or line.startswith('class') or line.startswith('struct')
-							name = line.split('(')[0].split(' ')[-1]
+							name = line.split('(')[0].split(' ')[-1].split('\t')[-1]
 							functions.append((name, needs_reference))
 						else:
 							start, end = line.split('(')
@@ -130,7 +130,7 @@ for filename in os.listdir(dir_path_h):
 								reference_functions[function_name] = Function_def(return_type, function_name, params, pointers)
 							else:
 								needs_reference = line.startswith('TArray') or line.startswith('class') or line.startswith('struct')
-								name = line.split('(')[0].split(' ')[-1]
+								name = line.split('(')[0].split(' ')[-1].split('\t')[-1]
 								functions.append((name, needs_reference))
 					elif line.startswith('static') and 'StaticClass' in line:
 						objs[c]['static'] = True
@@ -153,6 +153,7 @@ for module in classes.keys():
 		f.write(top.format(module))
 		objs = classes[module]
 		for ck in objs.keys():
+			print('\t{{"{0}", &typeid({0})}},'.format(ck[1:]))
 			c = objs[ck]
 			name = ck
 			if 'parent' in c.keys():
