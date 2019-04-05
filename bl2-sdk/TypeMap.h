@@ -4743,7 +4743,7 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"WwiseSoundGroup", &typeid(AWwiseSoundGroup)},
 	{"WwiseSoundGroupRenderingComponent", &typeid(UWwiseSoundGroupRenderingComponent)},
 	{"WwiseSoundVolume", &typeid(AWwiseSoundVolume)},
-	{"XAudio2Device", &typeid(UXAudio2Device)}
+	{"XAudio2Device", &typeid(UXAudio2Device)},
 	{"XnaForceFeedbackManager", &typeid(UXnaForceFeedbackManager)},
-	{"ZoneInfo", &typeid(AZoneInfo)},
+	{"ZoneInfo", &typeid(AZoneInfo)}
 };
