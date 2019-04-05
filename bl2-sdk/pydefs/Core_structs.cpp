@@ -35,7 +35,6 @@ void Export_pystes_Core_structs(py::module &m)
 		.def_readwrite("W", &FVector4::W)
 		;
 	py::class_< FNameBasedObjectPath >(m, "FNameBasedObjectPath")
-		.def_readwrite("PathComponentNames[0x6]", &FNameBasedObjectPath::PathComponentNames[0x6], py::return_value_policy::reference)
 		.def_readwrite("IsSubobjectMask", &FNameBasedObjectPath::IsSubobjectMask)
 		;
 	py::class_< FFlag >(m, "FFlag")
@@ -181,7 +180,6 @@ void Export_pystes_Core_structs(py::module &m)
 		;
 	py::class_< FInterpCurvePointQuat >(m, "FInterpCurvePointQuat")
 		.def_readwrite("InVal", &FInterpCurvePointQuat::InVal)
-		.def_readwrite("UnknownData00[0xC]", &FInterpCurvePointQuat::UnknownData00[0xC])
 		.def_readwrite("OutVal", &FInterpCurvePointQuat::OutVal, py::return_value_policy::reference)
 		.def_readwrite("ArriveTangent", &FInterpCurvePointQuat::ArriveTangent, py::return_value_policy::reference)
 		.def_readwrite("LeaveTangent", &FInterpCurvePointQuat::LeaveTangent, py::return_value_policy::reference)
@@ -213,8 +211,6 @@ void Export_pystes_Core_structs(py::module &m)
 		.def_readwrite("FOV", &FTPOV::FOV)
 		;
 	py::class_< FSHVector >(m, "FSHVector")
-		.def_readwrite("V[0x9]", &FSHVector::V[0x9])
-		.def_readwrite("Padding[0x3]", &FSHVector::Padding[0x3])
 		;
 	py::class_< FSHVectorRGB >(m, "FSHVectorRGB")
 		.def_readwrite("R", &FSHVectorRGB::R, py::return_value_policy::reference)
@@ -275,7 +271,6 @@ void Export_pystes_Core_structs(py::module &m)
 		;
 	py::class_< FBitArray_Mirror >(m, "FBitArray_Mirror")
 		.def_readwrite("FPointer									IndirectData", &FBitArray_Mirror::FPointer									IndirectData, py::return_value_policy::reference)
-		.def_readwrite("int												InlineData[0x4]", &FBitArray_Mirror::int												InlineData[0x4])
 		.def_readwrite("int												NumBits", &FBitArray_Mirror::int												NumBits)
 		.def_readwrite("int												MaxBits", &FBitArray_Mirror::int												MaxBits)
 		;

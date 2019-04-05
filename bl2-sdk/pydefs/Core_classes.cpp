@@ -608,7 +608,6 @@ void Export_pystes_Core_classes(py::module &m)
 		;
 	py::class_< UTextBuffer, UAudioDevice >(m, "UTextBuffer")
 		.def_static("StaticClass", &UTextBuffer::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0x24]", &UTextBuffer::UnknownData00[0x24])
 		;
 	py::class_< USubsystem, UAudioDevice >(m, "USubsystem")
 		.def_static("StaticClass", &USubsystem::StaticClass, py::return_value_policy::reference)
@@ -644,31 +643,24 @@ void Export_pystes_Core_classes(py::module &m)
 		;
 	py::class_< UPackageMap, UAudioDevice >(m, "UPackageMap")
 		.def_static("StaticClass", &UPackageMap::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0x84]", &UPackageMap::UnknownData00[0x84])
 		;
 	py::class_< UObjectSerializer, UAudioDevice >(m, "UObjectSerializer")
 		.def_static("StaticClass", &UObjectSerializer::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0xC]", &UObjectSerializer::UnknownData00[0xC])
 		;
 	py::class_< UObjectRedirector, UAudioDevice >(m, "UObjectRedirector")
 		.def_static("StaticClass", &UObjectRedirector::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0x4]", &UObjectRedirector::UnknownData00[0x4])
 		;
 	py::class_< UMetaData, UAudioDevice >(m, "UMetaData")
 		.def_static("StaticClass", &UMetaData::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0x3C]", &UMetaData::UnknownData00[0x3C])
 		;
 	py::class_< ULinker, UAudioDevice >(m, "ULinker")
 		.def_static("StaticClass", &ULinker::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0x534]", &ULinker::UnknownData00[0x534])
 		;
 	py::class_< ULinkerSave, UAudioDevice >(m, "ULinkerSave")
 		.def_static("StaticClass", &ULinkerSave::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0xA8]", &ULinkerSave::UnknownData00[0xA8])
 		;
 	py::class_< ULinkerLoad, UAudioDevice >(m, "ULinkerLoad")
 		.def_static("StaticClass", &ULinkerLoad::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0x5C4]", &ULinkerLoad::UnknownData00[0x5C4])
 		;
 	py::class_< UInterface, UAudioDevice >(m, "UInterface")
 		.def_static("StaticClass", &UInterface::StaticClass, py::return_value_policy::reference)
@@ -679,15 +671,12 @@ void Export_pystes_Core_classes(py::module &m)
 		;
 	py::class_< UStruct, UAudioDevice >(m, "UStruct")
 		.def_static("StaticClass", &UStruct::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("char			UnknownData00[0x8]", &UStruct::char			UnknownData00[0x8])
 		.def_readwrite("UField*			SuperField", &UStruct::UField*			SuperField, py::return_value_policy::reference)
 		.def_readwrite("UField*			Children", &UStruct::UField*			Children, py::return_value_policy::reference)
 		.def_readwrite("short			PropertySize", &UStruct::short			PropertySize)
-		.def_readwrite("char			UnknownData01[0x3A]", &UStruct::char			UnknownData01[0x3A])
 		;
 	py::class_< UScriptStruct, UAudioDevice >(m, "UScriptStruct")
 		.def_static("StaticClass", &UScriptStruct::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0x1C]", &UScriptStruct::UnknownData00[0x1C])
 		;
 	py::class_< UFunction, UAudioDevice >(m, "UFunction")
 		.def_static("StaticClass", &UFunction::StaticClass, py::return_value_policy::reference)
@@ -698,83 +687,67 @@ void Export_pystes_Core_classes(py::module &m)
 		.def_readwrite("short		NumParms", &UFunction::short		NumParms)
 		.def_readwrite("short		ParmsSize", &UFunction::short		ParmsSize)
 		.def_readwrite("long		ReturnValueOffset", &UFunction::long		ReturnValueOffset)
-		.def_readwrite("char		UnknownData00[0x4]", &UFunction::char		UnknownData00[0x4])
 		.def_readwrite("void*				Func", &UFunction::void*				Func, py::return_value_policy::reference)
 		;
 	py::class_< UProperty, UAudioDevice >(m, "UProperty")
 		.def_static("StaticClass", &UProperty::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0x40]", &UProperty::UnknownData00[0x40])
 		;
 	py::class_< UStructProperty, UAudioDevice >(m, "UStructProperty")
 		.def_static("StaticClass", &UStructProperty::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0x4]", &UStructProperty::UnknownData00[0x4])
 		;
 	py::class_< UStrProperty, UAudioDevice >(m, "UStrProperty")
 		.def_static("StaticClass", &UStrProperty::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UObjectProperty, UAudioDevice >(m, "UObjectProperty")
 		.def_static("StaticClass", &UObjectProperty::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0x4]", &UObjectProperty::UnknownData00[0x4])
 		;
 	py::class_< UComponentProperty, UAudioDevice >(m, "UComponentProperty")
 		.def_static("StaticClass", &UComponentProperty::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UClassProperty, UAudioDevice >(m, "UClassProperty")
 		.def_static("StaticClass", &UClassProperty::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0x4]", &UClassProperty::UnknownData00[0x4])
 		;
 	py::class_< UNameProperty, UAudioDevice >(m, "UNameProperty")
 		.def_static("StaticClass", &UNameProperty::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UMapProperty, UAudioDevice >(m, "UMapProperty")
 		.def_static("StaticClass", &UMapProperty::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0x8]", &UMapProperty::UnknownData00[0x8])
 		;
 	py::class_< UIntProperty, UAudioDevice >(m, "UIntProperty")
 		.def_static("StaticClass", &UIntProperty::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UIntAttributeProperty, UAudioDevice >(m, "UIntAttributeProperty")
 		.def_static("StaticClass", &UIntAttributeProperty::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0x8]", &UIntAttributeProperty::UnknownData00[0x8])
 		;
 	py::class_< UInterfaceProperty, UAudioDevice >(m, "UInterfaceProperty")
 		.def_static("StaticClass", &UInterfaceProperty::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0x4]", &UInterfaceProperty::UnknownData00[0x4])
 		;
 	py::class_< UFloatProperty, UAudioDevice >(m, "UFloatProperty")
 		.def_static("StaticClass", &UFloatProperty::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UFloatAttributeProperty, UAudioDevice >(m, "UFloatAttributeProperty")
 		.def_static("StaticClass", &UFloatAttributeProperty::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0x8]", &UFloatAttributeProperty::UnknownData00[0x8])
 		;
 	py::class_< UDelegateProperty, UAudioDevice >(m, "UDelegateProperty")
 		.def_static("StaticClass", &UDelegateProperty::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0x8]", &UDelegateProperty::UnknownData00[0x8])
 		;
 	py::class_< UByteProperty, UAudioDevice >(m, "UByteProperty")
 		.def_static("StaticClass", &UByteProperty::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0x4]", &UByteProperty::UnknownData00[0x4])
 		;
 	py::class_< UByteAttributeProperty, UAudioDevice >(m, "UByteAttributeProperty")
 		.def_static("StaticClass", &UByteAttributeProperty::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0x8]", &UByteAttributeProperty::UnknownData00[0x8])
 		;
 	py::class_< UBoolProperty, UAudioDevice >(m, "UBoolProperty")
 		.def_static("StaticClass", &UBoolProperty::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0x4]", &UBoolProperty::UnknownData00[0x4])
 		;
 	py::class_< UArrayProperty, UAudioDevice >(m, "UArrayProperty")
 		.def_static("StaticClass", &UArrayProperty::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0x4]", &UArrayProperty::UnknownData00[0x4])
 		;
 	py::class_< UEnum, UAudioDevice >(m, "UEnum")
 		.def_static("StaticClass", &UEnum::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0xC]", &UEnum::UnknownData00[0xC])
 		;
 	py::class_< UConst, UAudioDevice >(m, "UConst")
 		.def_static("StaticClass", &UConst::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0xC]", &UConst::UnknownData00[0xC])
 		;
 	py::class_< UFactory, UAudioDevice >(m, "UFactory")
 		.def_static("StaticClass", &UFactory::StaticClass, py::return_value_policy::reference)
@@ -794,10 +767,8 @@ void Export_pystes_Core_classes(py::module &m)
 		;
 	py::class_< UExporter, UAudioDevice >(m, "UExporter")
 		.def_static("StaticClass", &UExporter::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0x4]", &UExporter::UnknownData00[0x4])
 		.def_readwrite("FormatExtension", &UExporter::FormatExtension, py::return_value_policy::reference)
 		.def_readwrite("FormatDescription", &UExporter::FormatDescription, py::return_value_policy::reference)
-		.def_readwrite("UnknownData01[0xC]", &UExporter::UnknownData01[0xC])
 		;
 	py::class_< UComponent, UAudioDevice >(m, "UComponent")
 		.def_static("StaticClass", &UComponent::StaticClass, py::return_value_policy::reference)
@@ -843,15 +814,12 @@ void Export_pystes_Core_classes(py::module &m)
 		;
 	py::class_< UState, UAudioDevice >(m, "UState")
 		.def_static("StaticClass", &UState::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0x44]", &UState::UnknownData00[0x44])
 		;
 	py::class_< UPackage, UAudioDevice >(m, "UPackage")
 		.def_static("StaticClass", &UPackage::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0xA8]", &UPackage::UnknownData00[0xA8])
 		;
 	py::class_< UClass, UAudioDevice >(m, "UClass")
 		.def_static("StaticClass", &UClass::StaticClass, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0x100]", &UClass::UnknownData00[0x100])
 		;
 
 }

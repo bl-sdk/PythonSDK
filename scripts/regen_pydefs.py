@@ -96,6 +96,8 @@ for filename in os.listdir(dir_path_h):
 					if ':' in line:
 						parent = line.split(' ')[-1].strip()
 						objs[c]['parent'] = parent
+				if '[' in line.split('//')[0]:
+					continue
 				if ' : 1;' in line:
 					field = line.split(' : 1;')[0].split(' ')[-1]
 					fields.append(field)

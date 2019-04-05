@@ -33,7 +33,6 @@ void Export_pystes_AkAudio_structs(py::module &m)
 		.def_property("bExternalFade", [](FOccludedVolume &self){return self.bExternalFade;}, [](FOccludedVolume &self, bool value){self.bExternalFade = value ? 1 : 0;})
 		.def_readwrite("SoundVolume", &FOccludedVolume::SoundVolume, py::return_value_policy::reference)
 		.def_readwrite("Target", &FOccludedVolume::Target, py::return_value_policy::reference)
-		.def_readwrite("UnknownData00[0x4]", &FOccludedVolume::UnknownData00[0x4])
 		.def_readwrite("MaxOcclusion", &FOccludedVolume::MaxOcclusion)
 		.def_readwrite("FadeDistance", &FOccludedVolume::FadeDistance)
 		;
