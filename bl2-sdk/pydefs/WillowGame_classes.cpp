@@ -5,6 +5,7 @@ namespace py = pybind11;
 // Module ======================================================================
 void Export_pystes_WillowGame_classes(py::module &m)
 {
+#ifndef _DEBUG
 	py::class_< UAchievementUtility, UObject >(m, "UAchievementUtility")
 		.def_static("StaticClass", &UAchievementUtility::StaticClass, py::return_value_policy::reference)
 		.def("ShouldUnlockAchievementFromUnlockType", &UAchievementUtility::ShouldUnlockAchievementFromUnlockType, py::return_value_policy::reference)
@@ -26288,5 +26289,5 @@ void Export_pystes_WillowGame_classes(py::module &m)
 		.def_static("StaticClass", &UPsychoInputContextSelector::StaticClass, py::return_value_policy::reference)
 		.def("SelectContext", &UPsychoInputContextSelector::SelectContext, py::return_value_policy::reference)
 		;
-
+#endif
 }

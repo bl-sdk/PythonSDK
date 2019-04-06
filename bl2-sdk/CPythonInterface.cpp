@@ -59,12 +59,15 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	Export_pystes_Engine_classes(m);
 	Export_pystes_GameFramework_structs(m);
 	Export_pystes_GameFramework_classes(m);
+#ifndef _DEBUG
 	Export_pystes_GFxUI_structs(m);
 	Export_pystes_GFxUI_classes(m);
+#endif
 	Export_pystes_GearboxFramework_structs(m);
 	Export_pystes_GearboxFramework_classes(m);
 	Export_pystes_WillowGame_structs(m);
 	Export_pystes_WillowGame_classes(m);
+#ifndef _DEBUG
 	Export_pystes_AkAudio_structs(m);
 	Export_pystes_AkAudio_classes(m);
 	Export_pystes_IpDrv_structs(m);
@@ -75,6 +78,7 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	Export_pystes_XAudio2_classes(m);
 	Export_pystes_OnlineSubsystemSteamworks_structs(m);
 	Export_pystes_OnlineSubsystemSteamworks_classes(m);
+#endif
 	Export_pystes_TArray(m);
 	m.def("Log", [](std::string in) { Logging::Log(in.c_str(), in.length()); });
 	m.def("LoadPackage", &BL2SDK::LoadPackage);
@@ -98,14 +102,16 @@ bool CheckPythonCommand(UObject* caller, FFrame& stack, void* const result, UFun
 	BL2SDK::pFrameStep(&stack, stack.Object, command);
 	char *input = command->AsString();
 	if (strncmp("py ", input, 3) == 0) {
+		Logging::LogF("\n>>> %s <<<\n", input);
 		BL2SDK::Python->DoString(input + 3);
 		stack.SkipFunction();
-		return true;
+		return false;
 	}
 	else if (strncmp("pyexec ", input, 7) == 0) {
+		Logging::LogF("\n>>> %s <<<\n", input);
 		BL2SDK::Python->DoFile(input + 7);
 		stack.SkipFunction();
-		return true;
+		return false;
 	}
 	stack.Code = code;
 	return true;

@@ -27,6 +27,7 @@ void Export_pystes_GameFramework_classes(py::module &m)
 		.def("DoForceFeedbackForScreenShake", &AGamePlayerController::DoForceFeedbackForScreenShake)
 		.def("GetUIPlayerIndex", &AGamePlayerController::GetUIPlayerIndex)
 		;
+#ifndef _DEBUG
 	py::class_< UGameTypes, UObject >(m, "UGameTypes")
 		.def_static("StaticClass", &UGameTypes::StaticClass, py::return_value_policy::reference)
 		;
@@ -125,5 +126,5 @@ void Export_pystes_GameFramework_classes(py::module &m)
 		.def_static("StaticClass", &UPMESTG_LeaveADecalBase::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("PhysicalMaterialPropertyClass", &UPMESTG_LeaveADecalBase::PhysicalMaterialPropertyClass, py::return_value_policy::reference)
 		;
-
+#endif
 }

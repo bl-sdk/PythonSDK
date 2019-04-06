@@ -272,8 +272,8 @@ struct FFrame : public FOutputDevice
 	struct FFrame* PreviousFrame;
 	struct FOutParmRec* OutParms;
 	void SkipFunction() {
-		while (this->Code[0] != 0x16)
-			this->Code = this->Code + 1;
+		while ((this->Code++)[0] != 0x16)
+			;
 	}
 	UObject *popObject() {
 		UObject *obj = nullptr;
@@ -281,12 +281,12 @@ struct FFrame : public FOutputDevice
 		return obj;
 	};
 	struct FName *popFName() {
-		FName *obj = &FName();
+		FName *obj = new FName();
 		BL2SDK::pFrameStep(this, this->Object, obj);
 		return obj;
 	};
 	struct FString *popFString() {
-		FString *obj = &FString();
+		FString *obj = new FString();
 		BL2SDK::pFrameStep(this, this->Object, obj);
 		return obj;
 	};
@@ -311,7 +311,7 @@ struct FFrame : public FOutputDevice
 		return obj;
 	};
 	TArray<UObject *> *popTArrayObjects() {
-		TArray<UObject *> *obj = &TArray<UObject *>();
+		TArray<UObject *> *obj = new TArray<UObject *>();
 		BL2SDK::pFrameStep(this, this->Object, obj);
 		return obj;
 	};

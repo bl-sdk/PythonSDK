@@ -5,6 +5,7 @@ namespace py = pybind11;
 // Module ======================================================================
 void Export_pystes_WillowGame_structs(py::module &m)
 {
+#ifndef _DEBUG
 	py::class_< FAchievementUnlockData >(m, "FAchievementUnlockData")
 		.def_readwrite("UnlockType", &FAchievementUnlockData::UnlockType)
 		.def_readwrite("Achievement", &FAchievementUnlockData::Achievement)
@@ -3096,5 +3097,5 @@ void Export_pystes_WillowGame_structs(py::module &m)
 		.def_readwrite("DirDegreesPerSecond", &FDirChangeRateRange::DirDegreesPerSecond)
 		.def_readwrite("SpeedRange", &FDirChangeRateRange::SpeedRange)
 		;
-
+#endif
 }

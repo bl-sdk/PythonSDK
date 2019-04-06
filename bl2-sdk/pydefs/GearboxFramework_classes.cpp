@@ -5,6 +5,7 @@ namespace py = pybind11;
 // Module ======================================================================
 void Export_pystes_GearboxFramework_classes(py::module &m)
 {
+#ifndef _DEBUG
 	py::class_< UActorFactoryClone, UActorFactory >(m, "UActorFactoryClone")
 		.def_static("StaticClass", &UActorFactoryClone::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("CloneArchetype", &UActorFactoryClone::CloneArchetype, py::return_value_policy::reference)
@@ -3594,5 +3595,5 @@ void Export_pystes_GearboxFramework_classes(py::module &m)
 	py::class_< ASkeletalMeshActorGBXMatinee, ASkeletalMeshActor >(m, "ASkeletalMeshActorGBXMatinee")
 		.def_static("StaticClass", &ASkeletalMeshActorGBXMatinee::StaticClass, py::return_value_policy::reference)
 		;
-
+#endif
 }

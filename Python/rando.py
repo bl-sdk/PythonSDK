@@ -236,7 +236,7 @@ def randomize_branches(rng, branches, valid_skills, skill_map):
                         valid_skills += anarchy_skills
                     if skill_name == 'BloodyTwitch' or skill_name == 'BloodfilledGuns':
                         if not added_bl:
-                            valid_skills = list(set(valid_skills + bloodlust_skills))
+                            valid_skills = list(valid_skills + bloodlust_skills)
                             added_bl = True
                         has_bloodlust = True
                     if 'Hellborn' in skill_map[valid_skills[pos]].GetFullName():

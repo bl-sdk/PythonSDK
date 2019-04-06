@@ -5,6 +5,7 @@ namespace py = pybind11;
 // Module ======================================================================
 void Export_pystes_Engine_structs(py::module &m)
 {
+#ifndef _DEBUG
 	py::class_< FStaticMeshLODElement >(m, "FStaticMeshLODElement")
 		.def_property("bEnableShadowCasting", [](FStaticMeshLODElement &self){return self.bEnableShadowCasting;}, [](FStaticMeshLODElement &self, bool value){self.bEnableShadowCasting = value ? 1 : 0;})
 		.def_property("bEnableCollision", [](FStaticMeshLODElement &self){return self.bEnableCollision;}, [](FStaticMeshLODElement &self, bool value){self.bEnableCollision = value ? 1 : 0;})
@@ -3390,5 +3391,5 @@ void Export_pystes_Engine_structs(py::module &m)
 		.def_readwrite("Sources", &FWorldEventSource::Sources, py::return_value_policy::reference)
 		.def_readwrite("LastUpdateTime", &FWorldEventSource::LastUpdateTime)
 		;
-
+#endif
 }

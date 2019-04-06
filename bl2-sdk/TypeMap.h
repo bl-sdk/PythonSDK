@@ -4,6 +4,7 @@
 #include <map>
 
 static std::map<std::string, const std::type_info *> uobject_type_map{
+#ifndef _DEBUG
 	{"_ModifyHealthParams", &typeid(F_ModifyHealthParams)},
 	{"AccelStateData", &typeid(FAccelStateData)},
 	{"AccessControl", &typeid(AAccessControl)},
@@ -4746,4 +4747,5 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"XAudio2Device", &typeid(UXAudio2Device)},
 	{"XnaForceFeedbackManager", &typeid(UXnaForceFeedbackManager)},
 	{"ZoneInfo", &typeid(AZoneInfo)}
+#endif
 };

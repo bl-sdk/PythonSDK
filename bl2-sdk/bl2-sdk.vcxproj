@@ -30,8 +30,9 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
@@ -73,11 +74,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <TargetName>binkw32</TargetName>
+    <TargetName>PythonSDK</TargetName>
     <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
     <IncludePath>$(PYTHONPATH)\include;$(IncludePath)</IncludePath>
     <LibraryPath>$(PYTHONPATH)\libs;$(LibraryPath)</LibraryPath>
-    <OutDir>C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\Binaries\Win32\</OutDir>
+    <OutDir>C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\Binaries\Win32\Plugins\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -98,7 +99,7 @@
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <Optimization>Disabled</Optimization>
+      <Optimization>MinSpace</Optimization>
       <SDLCheck>false</SDLCheck>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;BL2SDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
@@ -109,6 +110,10 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <WholeProgramOptimization>false</WholeProgramOptimization>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <MinimalRebuild />
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

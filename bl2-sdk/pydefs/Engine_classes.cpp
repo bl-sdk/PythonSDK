@@ -1179,6 +1179,7 @@ void Export_pystes_Engine_classes(py::module &m)
 	py::class_< ABrushShape, ABrush >(m, "ABrushShape")
 		.def_static("StaticClass", &ABrushShape::StaticClass, py::return_value_policy::reference)
 		;
+#ifndef _DEBUG
 	py::class_< AVolume, ABrush >(m, "AVolume")
 		.def_static("StaticClass", &AVolume::StaticClass, py::return_value_policy::reference)
 		.def_property("bForcePawnWalk", [](AVolume &self){return self.bForcePawnWalk;}, [](AVolume &self, bool value){self.bForcePawnWalk = value ? 1 : 0;})
@@ -3442,6 +3443,7 @@ void Export_pystes_Engine_classes(py::module &m)
 	py::class_< UVoiceChannel, UChannel >(m, "UVoiceChannel")
 		.def_static("StaticClass", &UVoiceChannel::StaticClass, py::return_value_policy::reference)
 		;
+#endif
 	py::class_< AController, AActor >(m, "AController")
 		.def_static("StaticClass", &AController::StaticClass, py::return_value_policy::reference)
 		.def_property("bIsPlayer", [](AController &self){return self.bIsPlayer;}, [](AController &self, bool value){self.bIsPlayer = value ? 1 : 0;})
@@ -4357,6 +4359,7 @@ void Export_pystes_Engine_classes(py::module &m)
 		.def("TellPeerToTravelToSession", [](APlayerController &self , struct FUniqueNetId ToPeerNetId, struct FName SessionName, class UClass* SearchClass, int PlatformSpecificInfoSize) { unsigned char* pyPlatformSpecificInfo = (unsigned char*)malloc(sizeof(unsigned char)) ;   self.TellPeerToTravelToSession(ToPeerNetId, SessionName, SearchClass, pyPlatformSpecificInfo, PlatformSpecificInfoSize); return py::make_tuple(*pyPlatformSpecificInfo); })
 		.def("EnableActorHeadTracking", [](APlayerController &self , class AActor* TargetActor, struct FName* TrackControllerName, unsigned long bLookAtPawns, float MinLookAtTime, float MaxLookAtTime, float MaxInterestTime, float LookAtActorRadius, struct FName* TargetBoneNames) { class UClass** pyActorClassesToLookAt = 0 ;   self.EnableActorHeadTracking(TargetActor, TrackControllerName, pyActorClassesToLookAt, bLookAtPawns, MinLookAtTime, MaxLookAtTime, MaxInterestTime, LookAtActorRadius, TargetBoneNames); return py::make_tuple(*pyActorClassesToLookAt); })
 		;
+#ifndef _DEBUG
 	py::class_< UCheatManager, UObject >(m, "UCheatManager")
 		.def_static("StaticClass", &UCheatManager::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("DebugCameraControllerRef", &UCheatManager::DebugCameraControllerRef, py::return_value_policy::reference)
@@ -10713,6 +10716,7 @@ void Export_pystes_Engine_classes(py::module &m)
 		.def("SetMeshAndPhysAsset", &AKAsset::SetMeshAndPhysAsset)
 		.def("eventPostBeginPlay", &AKAsset::eventPostBeginPlay)
 		;
+#endif
 	py::class_< APawn, AActor >(m, "APawn")
 		.def_static("StaticClass", &APawn::StaticClass, py::return_value_policy::reference)
 		.def_property("bScriptTickSpecial", [](APawn &self){return self.bScriptTickSpecial;}, [](APawn &self, bool value){self.bScriptTickSpecial = value ? 1 : 0;})
@@ -11309,6 +11313,7 @@ void Export_pystes_Engine_classes(py::module &m)
 		.def("GetBestAnchor", [](APawn &self , class AActor* TestActor, struct FVector TestLocation, unsigned long bStartPoint, unsigned long bOnlyCheckVisible) { float* pyout_Dist = (float*)malloc(sizeof(float)) ;  class ANavigationPoint* ret =  self.GetBestAnchor(TestActor, TestLocation, bStartPoint, bOnlyCheckVisible, pyout_Dist); return py::make_tuple(ret, *pyout_Dist); })
 		.def("GetExpInfo", [](APawn &self ) { int* pyExpLevelValue = (int*)malloc(sizeof(int)) ;   self.GetExpInfo(pyExpLevelValue); return py::make_tuple(*pyExpLevelValue); })
 		;
+#ifndef _DEBUG
 	py::class_< AVehicle, APawn >(m, "AVehicle")
 		.def_static("StaticClass", &AVehicle::StaticClass, py::return_value_policy::reference)
 		.def_property("bDriving", [](AVehicle &self){return self.bDriving;}, [](AVehicle &self, bool value){self.bDriving = value ? 1 : 0;})
@@ -18390,5 +18395,5 @@ void Export_pystes_Engine_classes(py::module &m)
 		.def_static("StaticClass", &AWindDirectionalSource::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("Component", &AWindDirectionalSource::Component, py::return_value_policy::reference)
 		;
-
+#endif
 }
