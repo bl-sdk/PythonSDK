@@ -15,6 +15,7 @@
 # Structs
 # ========================================================================================= #
 */
+namespace py = pybind11;
 
 class PyTArray {
 public:
@@ -165,21 +166,6 @@ struct FOutputDevice
 	unsigned long bAutoEmitLineTerminator;
 };
 
-struct FFrame : public FOutputDevice
-{
-	class UStruct* Node;
-	class UObject* Object;
-	unsigned char* Code;
-	unsigned char* Locals;
-
-	struct FFrame* PreviousFrame;
-	struct FOutParmRec* OutParms;
-	void SkipFunction() {
-		while (this->Code[0] != 0x16)
-			this->Code = this->Code + 1;
-	}
-};
-
 struct FWindowsViewport;
 
 struct FDeferredMessage
@@ -238,6 +224,11 @@ public:
 		this->base = (void *)((FName *)this->base + 1);
 		return object;
 	};
+	struct FString *popFString() {
+		struct FString *object = (FString *)(this->base);
+		this->base = (void *)((FString *)this->base + 1);
+		return object;
+	};
 	struct FVector *popFVector() {
 		struct FVector *object = (FVector *)(this->base);
 		this->base = (void *)((int)this->base + 0xC);
@@ -263,6 +254,73 @@ public:
 		this->base = (void *)((int *)this->base + 1);
 		return object;
 	};
+	unsigned long popULong() {
+		unsigned long object = ((unsigned long *)(this->base))[0];
+		this->base = (void *)((unsigned long *)this->base + 1);
+		return object;
+	};
 };
+
+
+struct FFrame : public FOutputDevice
+{
+	class UStruct* Node;
+	class UObject* Object;
+	unsigned char* Code;
+	unsigned char* Locals;
+
+	struct FFrame* PreviousFrame;
+	struct FOutParmRec* OutParms;
+	void SkipFunction() {
+		while (this->Code[0] != 0x16)
+			this->Code = this->Code + 1;
+	}
+	UObject *popObject() {
+		UObject *obj = nullptr;
+		BL2SDK::pFrameStep(this, this->Object, &obj);
+		return obj;
+	};
+	struct FName *popFName() {
+		FName *obj = &FName();
+		BL2SDK::pFrameStep(this, this->Object, obj);
+		return obj;
+	};
+	struct FString *popFString() {
+		FString *obj = &FString();
+		BL2SDK::pFrameStep(this, this->Object, obj);
+		return obj;
+	};
+	float popFloat() {
+		float obj = 0;
+		BL2SDK::pFrameStep(this, this->Object, &obj);
+		return obj;
+	};
+	unsigned char popByte() {
+		unsigned char obj = 0;
+		BL2SDK::pFrameStep(this, this->Object, &obj);
+		return obj;
+	};
+	int popInt() {
+		int obj = 0;
+		BL2SDK::pFrameStep(this, this->Object, &obj);
+		return obj;
+	};
+	unsigned long popULong() {
+		unsigned long obj = 0;
+		BL2SDK::pFrameStep(this, this->Object, &obj);
+		return obj;
+	};
+	TArray<UObject *> *popTArrayObjects() {
+		TArray<UObject *> *obj = &TArray<UObject *>();
+		BL2SDK::pFrameStep(this, this->Object, obj);
+		return obj;
+	};
+	py::tuple popRawTArray() {
+		TArray<void *> *obj = &TArray<void *>();
+		BL2SDK::pFrameStep(this, this->Object, obj);
+		return py::make_tuple(FStruct((void *)obj->Data), obj->Count);
+	};
+};
+
 
 #endif

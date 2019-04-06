@@ -219,19 +219,44 @@ if 'loadedPackages' not in vars() and 'loadedPackages' not in globals():
     loadedPackages = False
 
 def randomize_branches(rng, branches, valid_skills, skill_map):
+    added_bl = False
     for branch in branches:
+        has_bloodlust = False
+        has_hellborn = False
         for tier in branch.Tiers:
             for x in range(len(tier.Skills)):
                 skill = tier.Skills[x]
                 if skill:
+                    if skill.GetName() == '_Bloodlust' or skill.GetName() == 'FireStatusDetector' or skill.GetName() == 'AppliedStatusEffectListener':
+                        continue
                     pos = rng.randint(0, len(valid_skills) - 1)
                     tier.Skills.Set(x, skill_map[valid_skills[pos]])
                     skill_name = valid_skills[pos]
-                    del valid_skills[pos]
                     if skill_name == 'Anarchy':
                         valid_skills += anarchy_skills
-                    if skill_name == 'BloodyTwitch' or 'BloodfilledGuns':
-                        valid_skills = list(set(valid_skills + bloodlust_skills))
+                    if skill_name == 'BloodyTwitch' or skill_name == 'BloodfilledGuns':
+                        if not added_bl:
+                            valid_skills = list(set(valid_skills + bloodlust_skills))
+                            added_bl = True
+                        has_bloodlust = True
+                    if 'Hellborn' in skill_map[valid_skills[pos]].GetFullName():
+                        has_hellborn = True
+                    del valid_skills[pos]
+        if has_bloodlust or has_hellborn:
+            new_skills = [skill.GetFullName().split(' ')[-1] for skill in branch.Tiers[-1].Skills if skill]
+            if has_bloodlust:
+                new_skills.append('GD_Lilac_Skills_Bloodlust.Skills._Bloodlust')
+            if has_hellborn:
+                new_skills.append('GD_Lilac_Skills_Hellborn.Skills.FireStatusDetector')
+                new_skills.append('GD_Lilac_Skills_Hellborn.Skills.AppliedStatusEffectListener')
+            tiers = []
+            for tier in branch.Tiers[:-1]:
+                skills_string = ','.join(["SkillDefinition'{}'".format(s.GetFullName().split(' ')[-1]) for s in tier.Skills if s])
+                tiers.append("(Skills=({}),PointsToUnlockNextTier={})".format(skills_string, tier.PointsToUnlockNextTier))
+            tiers.append("(Skills=({}),PointsToUnlockNextTier={})".format(','.join(["SkillDefinition'{}'".format(s) for s in new_skills]), 1))
+            setCommand = 'set {} Tiers ({})'.format(branch.GetFullName().split(' ')[-1], ','.join(tiers))
+            playerController = bl2sdk.GetEngine().GamePlayers[0].Actor
+            playerController.ConsoleCommand(bl2sdk.FString(setCommand), 0)
 
 def randomize_hunter(package_name, hunter_skills, skill_mapping, rng):
     branches = bl2sdk.UObject.FindObjectsContaining("SkillTreeBranchDefinition GD_{}".format(package_name))

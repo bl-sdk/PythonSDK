@@ -29,6 +29,7 @@ namespace BL2SDK
 	extern void* pNameHash;
 }
 
+#include "BL2-SDK.h"
 #include "gamedefines.h"
 #include "logging.h"
 

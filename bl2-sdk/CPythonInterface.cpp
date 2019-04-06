@@ -19,7 +19,8 @@ void RegisterEngineHook(const std::string& funcName, const std::string& hookName
 			py::object py_function = py::cast(function, py::return_value_policy::reference);
 			py::object py_parms = py::cast(FStruct(parms), py::return_value_policy::reference);
 			py::object py_result = py::cast(FStruct(result), py::return_value_policy::reference);
-			funcHook(py_caller, py_function, py_parms, py_result);
+			py::object ret = funcHook(py_caller, py_function, py_parms, py_result);
+			return ret.cast<bool>();
 		} catch (std::exception e) {
 			Logging::LogF(e.what());
 		}
@@ -36,7 +37,8 @@ void RegisterScriptHook(const std::string& funcName, const std::string& hookName
 			py::object py_stack = py::cast(stack, py::return_value_policy::reference);
 			py::object py_result = py::cast(FStruct(result), py::return_value_policy::reference);
 			py::object py_function = py::cast(function, py::return_value_policy::reference);
-			funcHook(py_caller, py_stack, py_result, py_function);
+			py::object ret = funcHook(py_caller, py_stack, py_result, py_function);
+			return ret.cast<bool>();
 		} catch (std::exception e) {
 			Logging::LogF(e.what());
 		}
