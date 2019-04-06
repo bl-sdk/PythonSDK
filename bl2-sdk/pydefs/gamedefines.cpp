@@ -13,6 +13,7 @@ void Export_pystes_gamedefines(py::module &m)
 		.def("GetName", &FName::GetName, py::return_value_policy::reference)
 		;
 	py::class_< FNameEntry >(m, "FNameEntry")
+		.def(py::init<>())
 		.def_readonly("Name", &FNameEntry::Name)
 		.def("AppendNameToString", &FNameEntry::AppendNameToString)
 		;
@@ -28,6 +29,7 @@ void Export_pystes_gamedefines(py::module &m)
 		.def("popULong", &FStruct::popULong, py::return_value_policy::reference)
 		;
 	py::class_< FOutputDevice >(m, "FOutputDevice")
+		.def(py::init<>())
 		.def_readwrite("VfTable", &FOutputDevice::VfTable, py::return_value_policy::reference)
 		.def_readwrite("bAllowSuppression", &FOutputDevice::bAllowSuppression, py::return_value_policy::reference)
 		.def_readwrite("bSuppressEventTag", &FOutputDevice::bSuppressEventTag, py::return_value_policy::reference)
