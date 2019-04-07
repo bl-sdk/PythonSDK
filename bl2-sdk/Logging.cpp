@@ -60,6 +60,13 @@ namespace Logging
 		}
 	}
 
+	void LogW(wchar_t *formatted, signed int length)
+	{
+		char *output = (char *)calloc(length + 1, sizeof(char));
+		wcstombs(output, formatted, length);
+		Log(output, 0);
+	}
+
 	void LogPy(const char* formatted)
 	{
 		Log(formatted, 0);

@@ -562,7 +562,9 @@ void Export_pystes_Core_classes(py::module &m)
 		.def_static("StaticClass", &UPackage::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UClass, UState >(m, "UClass")
+		.def_property("bCooked", [](UClass &self) {return self.bCooked; }, [](UClass &self, bool value) {self.bCooked = value ? 1 : 0; })
 		.def_static("StaticClass", &UClass::StaticClass, py::return_value_policy::reference)
+		.def_readwrite("ClassFlags", &UClass::ClassFlags)
 		;
 
 }

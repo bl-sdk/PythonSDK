@@ -1981,7 +1981,14 @@ public:
 class UClass : public UState
 {
 public:
-	unsigned char                                      UnknownData00[0x100];                           		// 0x00D0 (0x0100) MISSED OFFSET
+	unsigned long		bCooked : 1;
+	FPointer			ClassAddReferencedObjects;
+	unsigned long		ClassCastFlags;
+	FName				ClassConfigName;
+	FPointer			ClassConstructor;
+	UObject				*ClassDefaultObject;
+	unsigned int		ClassFlags;
+	unsigned char       UnknownData00[0xD8];                           		// 0x00D0 (0x0100) MISSED OFFSET
 
 private:
 	static UClass* pClassPointer;

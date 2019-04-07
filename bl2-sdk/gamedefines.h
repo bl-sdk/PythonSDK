@@ -69,7 +69,10 @@ struct FName
 	int Number;
 
 public:
-	FName() {};
+	FName() {
+		Index = 0;
+		Number = 0;
+	};
 
 public:
 	FName(const std::string& FindName)

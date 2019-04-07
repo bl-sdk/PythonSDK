@@ -873,7 +873,9 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"ChunkedList_Mirror", &typeid(FChunkedList_Mirror)},
 	{"ClanMaterialData", &typeid(FClanMaterialData)},
 	{"ClanSwitchData", &typeid(FClanSwitchData)},
+#endif
 	{"Class", &typeid(UClass)},
+#ifndef _DEBUG
 	{"ClassDropWeightValueResolver", &typeid(UClassDropWeightValueResolver)},
 	{"ClassModBalanceDefinition", &typeid(UClassModBalanceDefinition)},
 	{"ClassModDefinition", &typeid(UClassModDefinition)},

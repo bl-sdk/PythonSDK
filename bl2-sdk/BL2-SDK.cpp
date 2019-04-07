@@ -371,7 +371,7 @@ namespace BL2SDK
 
 	void initialize(wchar_t * exeBaseFolder)
 	{
-		//HookAntiDebug();
+		HookAntiDebug();
 		GameHooks::Initialize();
 		hookGame();
 		//InitializePackageFix();
@@ -406,6 +406,16 @@ namespace BL2SDK
 			}
 		}
 		SetIsLoadingUDKPackage(false);
+	};
+
+	UObject *ConstructObject(UClass* Class, UObject* InOuter, FName Name, unsigned int SetFlags, unsigned int InternalSetFlags, UObject* inTemplate, FOutputDevice *Error, void* InstanceGraph, int bAssumeTemplateIsArchetype)
+	{
+		if (!Error) {
+			Error = new FOutputDevice();
+			Error->VfTable = (void *)calloc(2, sizeof(void *));
+			((void **)Error->VfTable)[1] = (void *)&Logging::LogW;
+		}
+		return BL2SDK::pStaticConstructObject(Class, InOuter, Name, SetFlags, InternalSetFlags, inTemplate, Error, InstanceGraph, bAssumeTemplateIsArchetype);
 	};
 
 	UObject *GetEngine()
