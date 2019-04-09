@@ -1440,6 +1440,7 @@ void Export_pystes_WillowGame_structs(py::module &m)
 		.def_property("bDisableRigidBodyPhysics", [](FSpawnedDroppedLootData &self){return self.bDisableRigidBodyPhysics;}, [](FSpawnedDroppedLootData &self, bool value){self.bDisableRigidBodyPhysics = value ? 1 : 0;})
 		.def_readwrite("Inv", &FSpawnedDroppedLootData::Inv, py::return_value_policy::reference)
 		;
+#endif
 	py::class_< FPlayerSkillTreeBranchData >(m, "FPlayerSkillTreeBranchData")
 		.def(py::init<>())
 		.def_readwrite("Definition", &FPlayerSkillTreeBranchData::Definition, py::return_value_policy::reference)
@@ -1452,6 +1453,7 @@ void Export_pystes_WillowGame_structs(py::module &m)
 		.def_readwrite("TierIndices", &FPlayerSkillTreeBranchData::TierIndices, py::return_value_policy::reference)
 		.def_readwrite("Owner", &FPlayerSkillTreeBranchData::Owner, py::return_value_policy::reference)
 		;
+#ifndef _DEBUG
 	py::class_< FPlayerSkillTreeTierData >(m, "FPlayerSkillTreeTierData")
 		.def(py::init<>())
 		.def_property("bUnlocked", [](FPlayerSkillTreeTierData &self){return self.bUnlocked;}, [](FPlayerSkillTreeTierData &self, bool value){self.bUnlocked = value ? 1 : 0;})
@@ -2603,11 +2605,13 @@ void Export_pystes_WillowGame_structs(py::module &m)
 		.def_readwrite("SkillGrade", &FDeferredSkillActivationData::SkillGrade)
 		.def_readwrite("StateChangeDelegate", &FDeferredSkillActivationData::StateChangeDelegate, py::return_value_policy::reference)
 		;
+#endif
 	py::class_< FTier >(m, "FTier")
 		.def(py::init<>())
 		.def_readwrite("Skills", &FTier::Skills, py::return_value_policy::reference)
 		.def_readwrite("PointsToUnlockNextTier", &FTier::PointsToUnlockNextTier)
 		;
+#ifndef _DEBUG
 	py::class_< FTierLayout >(m, "FTierLayout")
 		.def(py::init<>())
 		.def_readwrite("bCellIsOccupied", &FTierLayout::bCellIsOccupied, py::return_value_policy::reference)

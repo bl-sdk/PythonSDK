@@ -4828,6 +4828,7 @@ void Export_pystes_Engine_classes(py::module &m)
 		.def_static("StaticClass", &UGBXCrossLevelReferenceContainer::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("CrossLevelObjectRef", &UGBXCrossLevelReferenceContainer::CrossLevelObjectRef, py::return_value_policy::reference)
 		;
+#endif
 	py::class_< UGBXDefinition, UObject >(m, "UGBXDefinition")
 		.def_static("StaticClass", &UGBXDefinition::StaticClass, py::return_value_policy::reference)
 		.def("InitializeDefinitionActor", &UGBXDefinition::InitializeDefinitionActor)
@@ -4836,6 +4837,7 @@ void Export_pystes_Engine_classes(py::module &m)
 		.def("GetFullDefinitionName", &UGBXDefinition::GetFullDefinitionName, py::return_value_policy::reference)
 		.def("GetDefinition", &UGBXDefinition::GetDefinition, py::return_value_policy::reference)
 		;
+#ifndef _DEBUG
 	py::class_< UBaseHitRegionDefinition, UGBXDefinition >(m, "UBaseHitRegionDefinition")
 		.def_static("StaticClass", &UBaseHitRegionDefinition::StaticClass, py::return_value_policy::reference)
 		;
@@ -5715,6 +5717,7 @@ void Export_pystes_Engine_classes(py::module &m)
 	py::class_< UPatchScriptCommandlet, UCommandlet >(m, "UPatchScriptCommandlet")
 		.def_static("StaticClass", &UPatchScriptCommandlet::StaticClass, py::return_value_policy::reference)
 		;
+#endif
 	py::class_< UPlayer, UObject >(m, "UPlayer")
 		.def_static("StaticClass", &UPlayer::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("VfTable_FExec", &UPlayer::VfTable_FExec, py::return_value_policy::reference)
@@ -5792,6 +5795,7 @@ void Export_pystes_Engine_classes(py::module &m)
 		.def("SendSplitJoin", &ULocalPlayer::SendSplitJoin)
 		.def("SpawnPlayActor", &ULocalPlayer::SpawnPlayActor)
 		;
+#ifndef _DEBUG
 	py::class_< UNetConnection, UPlayer >(m, "UNetConnection")
 		.def_static("StaticClass", &UNetConnection::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("Children", &UNetConnection::Children, py::return_value_policy::reference)

@@ -12,7 +12,6 @@ struct LauncherStruct
 	bool LogAllUnrealScriptCalls;
 	bool DisableCrashRpt;
 	bool DeveloperMode;
-	bool EnableMemoryDebug;
 	const LPWSTR BinPath;
 };
 
@@ -25,7 +24,6 @@ namespace Settings
 	std::wstring GetPythonFile(const std::wstring& filename);
 	bool DeveloperModeEnabled();
 	bool DisableAntiDebug();
-	bool MemoryDebugEnabled();
 }
 
 #endif

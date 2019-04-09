@@ -516,6 +516,7 @@ void Export_pystes_GearboxFramework_classes(py::module &m)
 		.def("NotifyShotAtBy", &AGearboxPawn::NotifyShotAtBy)
 		.def("HaveIBeenShotAtRecently", &AGearboxPawn::HaveIBeenShotAtRecently)
 		;
+#endif
 	py::class_< AGearboxPlayerController, AGamePlayerController >(m, "AGearboxPlayerController")
 		.def_static("StaticClass", &AGearboxPlayerController::StaticClass, py::return_value_policy::reference)
 		.def_property("bWantsToShowStorageMenu", [](AGearboxPlayerController &self){return self.bWantsToShowStorageMenu;}, [](AGearboxPlayerController &self, bool value){self.bWantsToShowStorageMenu = value ? 1 : 0;})
@@ -619,6 +620,7 @@ void Export_pystes_GearboxFramework_classes(py::module &m)
 		.def("UpdateShakeRotComponent", [](AGearboxPlayerController &self , float Time, float DeltaTime) { float* pyMax = (float*)malloc(sizeof(float)) ; int* pyCurrent = (int*)malloc(sizeof(int)) ; float* pyRate = (float*)malloc(sizeof(float)) ;   self.UpdateShakeRotComponent(Time, DeltaTime, pyMax, pyCurrent, pyRate); return py::make_tuple(*pyMax, *pyCurrent, *pyRate); })
 		.def("CheckShake", [](AGearboxPlayerController &self , float Time) { float* pyMaxOffset = (float*)malloc(sizeof(float)) ; float* pyOffset = (float*)malloc(sizeof(float)) ; float* pyRate = (float*)malloc(sizeof(float)) ;   self.CheckShake(Time, pyMaxOffset, pyOffset, pyRate); return py::make_tuple(*pyMaxOffset, *pyOffset, *pyRate); })
 		;
+#ifndef _DEBUG
 	py::class_< UGearboxPlayerInput, UPlayerInput >(m, "UGearboxPlayerInput")
 		.def_static("StaticClass", &UGearboxPlayerInput::StaticClass, py::return_value_policy::reference)
 		.def("eventPlayerInput", &UGearboxPlayerInput::eventPlayerInput)

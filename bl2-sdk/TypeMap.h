@@ -2194,7 +2194,9 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"LocalizedSubtitle", &typeid(FLocalizedSubtitle)},
 	{"LocalMapChangeMessage", &typeid(ULocalMapChangeMessage)},
 	{"LocalMessage", &typeid(ULocalMessage)},
+#endif
 	{"LocalPlayer", &typeid(ULocalPlayer)},
+#ifndef _DEBUG
 	{"LocalTalker", &typeid(FLocalTalker)},
 	{"LocalTrainingDefinitionMessage", &typeid(ULocalTrainingDefinitionMessage)},
 	{"LocalTrainingMessage", &typeid(ULocalTrainingMessage)},
@@ -3012,7 +3014,9 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"PlayerSaveData", &typeid(FPlayerSaveData)},
 	{"PlayerSaveGame", &typeid(UPlayerSaveGame)},
 	{"PlayerSkillAttributeValueResolver", &typeid(UPlayerSkillAttributeValueResolver)},
+#endif
 	{"PlayerSkillTree", &typeid(UPlayerSkillTree)},
+#ifndef _DEBUG
 	{"PlayerSkillTreeBranchData", &typeid(FPlayerSkillTreeBranchData)},
 	{"PlayerSkillTreeSkillData", &typeid(FPlayerSkillTreeSkillData)},
 	{"PlayerSkillTreeTierData", &typeid(FPlayerSkillTreeTierData)},
@@ -3713,10 +3717,12 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"SkillKillEventData", &typeid(FSkillKillEventData)},
 	{"SkillPointsFeedbackMessage", &typeid(USkillPointsFeedbackMessage)},
 	{"SkillSaveGameData", &typeid(FSkillSaveGameData)},
+#endif
 	{"SkillTreeBranchDefinition", &typeid(USkillTreeBranchDefinition)},
 	{"SkillTreeBranchLayoutDefinition", &typeid(USkillTreeBranchLayoutDefinition)},
 	{"SkillTreeBranchStateData", &typeid(FSkillTreeBranchStateData)},
 	{"SkillTreeDefinition", &typeid(USkillTreeDefinition)},
+#ifndef _DEBUG
 	{"SkillTreeGFxDefinition", &typeid(USkillTreeGFxDefinition)},
 	{"SkillTreeGFxObject", &typeid(USkillTreeGFxObject)},
 	{"SkillTreeSkillStateData", &typeid(FSkillTreeSkillStateData)},
@@ -4043,7 +4049,9 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"TrailSamplePoint", &typeid(FTrailSamplePoint)},
 	{"TrailSocketSamplePoint", &typeid(FTrailSocketSamplePoint)},
 	{"TrainingData", &typeid(FTrainingData)},
+#endif
 	{"TrainingMessageDefinition", &typeid(UTrainingMessageDefinition)},
+#ifndef _DEBUG
 	{"TrajectoryData", &typeid(FTrajectoryData)},
 	{"TransformedFlagValueResolver", &typeid(UTransformedFlagValueResolver)},
 	{"TranslationContext", &typeid(UTranslationContext)},
@@ -4412,7 +4420,9 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"WillowExposureUtilityStrategy", &typeid(UWillowExposureUtilityStrategy)},
 	{"WillowForcedReachSpec", &typeid(UWillowForcedReachSpec)},
 	{"WillowFormationComponent", &typeid(UWillowFormationComponent)},
+#endif
 	{"WillowGameEngine", &typeid(UWillowGameEngine)},
+#ifndef _DEBUG
 	{"WillowGameInfo", &typeid(AWillowGameInfo)},
 	{"WillowGameMessage", &typeid(UWillowGameMessage)},
 	{"WillowGameReplicationInfo", &typeid(AWillowGameReplicationInfo)},
@@ -4497,7 +4507,9 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"WillowPickup", &typeid(AWillowPickup)},
 	{"WillowPickupMessage", &typeid(UWillowPickupMessage)},
 	{"WillowPlayerCamera", &typeid(AWillowPlayerCamera)},
+#endif
 	{"WillowPlayerController", &typeid(AWillowPlayerController)},
+#ifndef _DEBUG
 	{"WillowPlayerInput", &typeid(UWillowPlayerInput)},
 	{"WillowPlayerPawn", &typeid(AWillowPlayerPawn)},
 	{"WillowPlayerPawnDataManager", &typeid(UWillowPlayerPawnDataManager)},

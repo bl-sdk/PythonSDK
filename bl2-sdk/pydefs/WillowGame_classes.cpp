@@ -4315,6 +4315,7 @@ void Export_pystes_WillowGame_classes(py::module &m)
 		.def_static("StaticClass", &UPlayerSkillAttributeValueResolver::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("AssociatedSkill", &UPlayerSkillAttributeValueResolver::AssociatedSkill, py::return_value_policy::reference)
 		;
+#endif
 	py::class_< AWillowPlayerController, AGearboxPlayerController >(m, "AWillowPlayerController")
 		.def_static("StaticClass", &AWillowPlayerController::StaticClass, py::return_value_policy::reference)
 		.def_property("bCenteredWeaponFire", [](AWillowPlayerController &self){return self.bCenteredWeaponFire;}, [](AWillowPlayerController &self, bool value){self.bCenteredWeaponFire = value ? 1 : 0;})
@@ -6526,6 +6527,7 @@ void Export_pystes_WillowGame_classes(py::module &m)
 		.def("AllSkills", [](UPlayerSkillTree &self ) { class USkillDefinition** pySkillDef = 0 ;   self.AllSkills(pySkillDef); return py::make_tuple(*pySkillDef); })
 		.def("AllSkillsOfType", [](UPlayerSkillTree &self , unsigned char SkillType) { class USkillDefinition** pySkillDef = 0 ;   self.AllSkillsOfType(SkillType, pySkillDef); return py::make_tuple(*pySkillDef); })
 		;
+#ifndef _DEBUG
 	py::class_< APlayerStandIn, AActor >(m, "APlayerStandIn")
 		.def_static("StaticClass", &APlayerStandIn::StaticClass, py::return_value_policy::reference)
 		.def_property("bIsPrimary", [](APlayerStandIn &self){return self.bIsPrimary;}, [](APlayerStandIn &self, bool value){self.bIsPrimary = value ? 1 : 0;})
@@ -6993,6 +6995,7 @@ void Export_pystes_WillowGame_classes(py::module &m)
 	py::class_< UShopTimerRateValueResolver, UAttributeValueResolver >(m, "UShopTimerRateValueResolver")
 		.def_static("StaticClass", &UShopTimerRateValueResolver::StaticClass, py::return_value_policy::reference)
 		;
+#endif
 	py::class_< USkill, UObject >(m, "USkill")
 		.def_static("StaticClass", &USkill::StaticClass, py::return_value_policy::reference)
 		.def_property("bForceRefreshModifiersNextTick", [](USkill &self){return self.bForceRefreshModifiersNextTick;}, [](USkill &self, bool value){self.bForceRefreshModifiersNextTick = value ? 1 : 0;})
@@ -7132,10 +7135,12 @@ void Export_pystes_WillowGame_classes(py::module &m)
 		.def("OnDeactivated", &USkillDefinition::OnDeactivated)
 		.def("OnActivated", &USkillDefinition::OnActivated)
 		;
+#ifndef _DEBUG
 	py::class_< USkillExpressionEvaluatorDefinition, UGBXDefinition >(m, "USkillExpressionEvaluatorDefinition")
 		.def_static("StaticClass", &USkillExpressionEvaluatorDefinition::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("Evaluator", &USkillExpressionEvaluatorDefinition::Evaluator, py::return_value_policy::reference)
 		;
+#endif
 	py::class_< USkillTreeBranchDefinition, UGBXDefinition >(m, "USkillTreeBranchDefinition")
 		.def_static("StaticClass", &USkillTreeBranchDefinition::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("VfTable_IIConstructObject", &USkillTreeBranchDefinition::VfTable_IIConstructObject, py::return_value_policy::reference)
@@ -7153,6 +7158,7 @@ void Export_pystes_WillowGame_classes(py::module &m)
 		.def_readwrite("VfTable_IIConstructObject", &USkillTreeDefinition::VfTable_IIConstructObject, py::return_value_policy::reference)
 		.def_readwrite("Root", &USkillTreeDefinition::Root, py::return_value_policy::reference)
 		;
+#ifndef _DEBUG
 	py::class_< USpecialMove_FirstPerson, UGearboxAnimDefinition >(m, "USpecialMove_FirstPerson")
 		.def_static("StaticClass", &USpecialMove_FirstPerson::StaticClass, py::return_value_policy::reference)
 		.def_property("bStopWeaponRecoilAnim", [](USpecialMove_FirstPerson &self){return self.bStopWeaponRecoilAnim;}, [](USpecialMove_FirstPerson &self, bool value){self.bStopWeaponRecoilAnim = value ? 1 : 0;})
@@ -7432,6 +7438,7 @@ void Export_pystes_WillowGame_classes(py::module &m)
 		.def_readwrite("Dictionary", &UTextMarkupDictionary::Dictionary, py::return_value_policy::reference)
 		.def("ResolveCustomMarkupString", &UTextMarkupDictionary::ResolveCustomMarkupString, py::return_value_policy::reference)
 		;
+#endif
 	py::class_< UTrainingMessageDefinition, UGBXDefinition >(m, "UTrainingMessageDefinition")
 		.def_static("StaticClass", &UTrainingMessageDefinition::StaticClass, py::return_value_policy::reference)
 		.def_property("PausesGame", [](UTrainingMessageDefinition &self){return self.PausesGame;}, [](UTrainingMessageDefinition &self, bool value){self.PausesGame = value ? 1 : 0;})
@@ -7447,6 +7454,7 @@ void Export_pystes_WillowGame_classes(py::module &m)
 		.def_readwrite("StatusMenuTab", &UTrainingMessageDefinition::StatusMenuTab)
 		.def_readwrite("DialogPriority", &UTrainingMessageDefinition::DialogPriority, py::return_value_policy::reference)
 		;
+#ifndef _DEBUG
 	py::class_< UTravelStationDefinition, UGBXDefinition >(m, "UTravelStationDefinition")
 		.def_static("StaticClass", &UTravelStationDefinition::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("StationLevelName", &UTravelStationDefinition::StationLevelName, py::return_value_policy::reference)

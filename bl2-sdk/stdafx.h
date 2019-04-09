@@ -96,6 +96,10 @@ namespace BL2SDK
 
 #include "TypeMap.h"
 
+typedef void *(__thiscall *tMalloc) (struct FMalloc*, unsigned long, unsigned long);
+typedef void(__thiscall *tFree) (struct FMalloc*, void*);
+
+
 namespace pybind11 {
 	template <typename itype> struct polymorphic_type_hook<itype, detail::enable_if_t<std::is_base_of<UObject, itype>::value>>
 	{
@@ -105,11 +109,7 @@ namespace pybind11 {
 					std::string type_name = ((UObject *)src)->Class->GetName();
 					if (uobject_type_map.count(type_name))
 						type = uobject_type_map[type_name];
-					else
-						type = &typeid(UObject);
 				}
-				else
-					type = &typeid(UObject);
 				return src;
 			}
 			type = nullptr;
@@ -267,15 +267,30 @@ namespace pybind11
 			using value_conv = make_caster<Value>;
 
 			bool load(handle src, bool convert) {
-				Logging::LogF("Unimplemented: Assigning value to custom TArray\n");
-				return false;
+				Logging::LogF("A\n");
+				if (!isinstance<sequence>(src))
+					return false;
+				Logging::LogF("B\n");
+				auto s = reinterpret_borrow<sequence>(src);
+				Logging::LogF("C\n");
+				Logging::LogF("%p, %d, %d\n", value.Data, value.Count, value.Max);
+				//if (value.Data)
+				//	((tFree)BL2SDK::pGMalloc[0]->VfTable[3])(BL2SDK::pGMalloc[0], value.Data);
+				value.Data = (Value *)((tMalloc)BL2SDK::pGMalloc[0]->VfTable[1])(BL2SDK::pGMalloc[0], sizeof(Value) * s.size(), 8);
+				value.Count = s.size();
+				value.Max = s.size();
+				int x = 0;
+				for (auto it : s) {
+					value_conv conv;
+					if (!conv.load(it, convert))
+						return false;
+					value.Data[x] = cast_op<Value &&>(std::move(conv));
+					x++;
+				}
+				return true;
 			}
 
 		private:
-			template <typename T = Type,
-				enable_if_t<std::is_same<decltype(std::declval<T>().reserve(0)), void>::value, int> = 0>
-				void reserve_maybe(sequence s, Type *) { value.reserve(s.size()); }
-			void reserve_maybe(sequence, void *) { }
 
 		public:
 			template <typename T>
@@ -292,10 +307,7 @@ namespace pybind11
 						value_ = reinterpret_steal<object>(value_conv::cast(forward_like<Value>(value), policy, parent));
 					}
 					if (!value_)
-					{
-						Logging::LogF("Value is null\n");
 						continue;
-					}
 					auto obj = value_.release().ptr();
 					PyList_SET_ITEM(o, (ssize_t)index, obj);
 				}
