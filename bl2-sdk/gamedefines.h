@@ -158,7 +158,8 @@ struct FString : public TArray<wchar_t>
 
 struct FScriptDelegate
 {
-	unsigned char UnknownData00[0xC];
+	struct FName FunctionName;
+	class UObject *Object;
 };
 
 struct FOutputDevice
