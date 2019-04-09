@@ -19,9 +19,9 @@ For PythonSDK to be able to interact with the game, you must add a few things to
 
 5. In the `Win32` folder, create a folder called `Plugins`. ![Plugins folder](https://i.imgur.com/CDdoKDs.png)
 
-6. Open the `PythonSDK.zip` file to view its contents.
+6. Open the `PythonSDK.zip` file to view its contents. ![PythonSDK.dll](https://i.imgur.com/NVYad7L.png)
 
-7. Extract all of the files to the `Plugins` folder you created.
+7. Extract all of the files to the `Plugins` folder you created. ![Plugins Folder 2](https://i.imgur.com/LWwJk9z.png)
 
 ## Usage
 
