@@ -27,3 +27,11 @@ For PythonSDK to be able to interact with the game, you must add a few things to
 
 `py <python code>` runs arbitrary python code.  
 `pyexec <python file>` runs arbitrary python files from `binaries/Win32/Plugins/Python/`.
+
+## Ingame Mod Manager
+
+On the main menu, `Downloadable Content` is replace with `Mods`  
+![Mods](https://i.imgur.com/HOHcwYh.jpg)  
+
+Mods can be enabled and disabled by selecting them and pressing `Enter`  
+![ModManager](https://i.imgur.com/8ZaUsDP.png)
