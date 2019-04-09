@@ -64,3 +64,26 @@ def process_hook(caller, function, parms, result):
 
 bl2sdk.RemoveEngineHook("Function WillowGame.MarketplaceGFxMovie.ShopInputKey", "a")
 bl2sdk.RegisterEngineHook("Function WillowGame.MarketplaceGFxMovie.ShopInputKey", "a", process_hook)
+
+
+def ReplaceDLCWithMods(caller, stack, result, function):
+	EventID = stack.popInt()
+	Caption = stack.popFString()
+	bDisabled = stack.popULong()
+	bNew = stack.popULong()
+	if Caption.AsString() == "$WillowMenu.WillowScrollingListDataProviderFrontEnd.DLC":
+		Caption = bl2sdk.FString("MODS")
+	caller.AddListItem(EventID, Caption, bDisabled, bNew)
+	stack.SkipFunction()
+	return False
+
+
+def HookMainMenuPopulateForMods(caller, stack, result, function):
+	bl2sdk.RegisterScriptHook("Function WillowGame.WillowScrollingList.AddListItem", "ReplaceDLCWithMods", ReplaceDLCWithMods)
+	caller.Populate(stack.popObject())
+	bl2sdk.RemoveScriptHook("Function WillowGame.WillowScrollingList.AddListItem", "ReplaceDLCWithMods")
+	stack.SkipFunction()
+	return False
+
+bl2sdk.RemoveScriptHook("Function WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods")
+bl2sdk.RegisterScriptHook("Function WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods", HookMainMenuPopulateForMods)
