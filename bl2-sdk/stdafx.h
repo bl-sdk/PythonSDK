@@ -267,15 +267,9 @@ namespace pybind11
 			using value_conv = make_caster<Value>;
 
 			bool load(handle src, bool convert) {
-				Logging::LogF("A\n");
 				if (!isinstance<sequence>(src))
 					return false;
-				Logging::LogF("B\n");
 				auto s = reinterpret_borrow<sequence>(src);
-				Logging::LogF("C\n");
-				Logging::LogF("%p, %d, %d\n", value.Data, value.Count, value.Max);
-				//if (value.Data)
-				//	((tFree)BL2SDK::pGMalloc[0]->VfTable[3])(BL2SDK::pGMalloc[0], value.Data);
 				value.Data = (Value *)((tMalloc)BL2SDK::pGMalloc[0]->VfTable[1])(BL2SDK::pGMalloc[0], sizeof(Value) * s.size(), 8);
 				value.Count = s.size();
 				value.Max = s.size();
@@ -335,6 +329,8 @@ namespace pybind11 {
 		public:
 			PYBIND11_TYPE_CASTER(FString, _("FString"));
 			bool load(handle src, bool) {
+				if (!isinstance<sequence>(src))
+					return false;
 				PyObject *source = src.ptr();
 				char *tmp = PyUnicode_AsUTF8AndSize(source, nullptr);
 				if (!tmp)
@@ -344,6 +340,29 @@ namespace pybind11 {
 			}
 			static handle cast(FString src, return_value_policy /* policy */, handle /* parent */) {
 				return PyUnicode_FromWideChar(src.Data, src.Count);
+			}
+		};
+	}
+}
+
+namespace pybind11 {
+	namespace detail {
+		template <> struct type_caster<UClass *> {
+		using value_conv = make_caster<UObject *>;
+		public:
+			PYBIND11_TYPE_CASTER(UClass *, _("UClass *"));
+			bool load(handle src, bool) {
+				if (!isinstance<sequence>(src))
+					return false;
+				PyObject *source = src.ptr();
+				char *tmp = PyUnicode_AsUTF8AndSize(source, nullptr);
+				if (!tmp)
+					return false;
+				value = UObject::FindClass(tmp);
+				return value != nullptr;
+			}
+			static handle cast(UClass *src, return_value_policy policy, handle parent) {
+				return value_conv::cast(forward_like<UObject *>(src), policy, parent);
 			}
 		};
 	}
