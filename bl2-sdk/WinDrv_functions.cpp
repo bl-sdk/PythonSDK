@@ -22,11 +22,6 @@
 # ========================================================================================= #
 */
 
-UClass* UWindowsClient::pClassPointer = NULL;
-UClass* UXnaForceFeedbackManager::pClassPointer = NULL;
-UClass* UFacebookWindows::pClassPointer = NULL;
-
-
 /*
 # ========================================================================================= #
 # Functions

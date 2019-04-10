@@ -43,6 +43,8 @@ namespace BL2SDK
 	int EngineVersion = -1;
 	int ChangelistNumber = -1;
 
+	std::map<char *, UClass *> ClassMap = std::map<char *, UClass *>{};
+
 	void __stdcall hkProcessEvent(UFunction* function, void* parms, void* result)
 	{
 		// Get "this"
@@ -131,7 +133,6 @@ namespace BL2SDK
 				DebugBreak();
 			}
 		}
-
 
 		// Don't ever pass it back into the engine
 		Util::CloseGame();
@@ -330,7 +331,7 @@ namespace BL2SDK
 
 	void initializeGameVersions()
 	{
-		UObject* obj = UObject::StaticClass(); // Any UObject* will do
+		UObject* obj = BL2SDK::ClassMap["Object"];
 		EngineVersion = obj->GetEngineVersion();
 		ChangelistNumber = obj->GetBuildChangelistNumber();
 
@@ -344,6 +345,19 @@ namespace BL2SDK
 	bool GameReady(UObject* caller, FFrame& stack, void* const result, UFunction* function)
 	{
 		Logging::LogF("[GameReady] Thread: %i\n", GetCurrentThreadId());
+
+		for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
+		{
+			UObject* Object = UObject::GObjObjects()->Data[i];
+
+			if (!Object || !Object->Class)
+				continue;
+
+			const char *classname = Object->Class->GetName().c_str();
+			Logging::LogF("%s\n", classname);
+			if (!strcmp(classname, "Class"))
+				BL2SDK::ClassMap[(char *)Object->GetName().c_str()] = (UClass *)Object;
+		}
 
 #ifdef _DEBUG
 		Logging::InitializeExtern();

@@ -108,7 +108,7 @@ namespace Logging
 	void InitializeGameConsole()
 	{
 		// There should only be 1 instance so we should be right to just use it in this way
-		UConsole* console = UObject::FindObject<UConsole>("WillowConsole WillowGameEngine.WillowGameViewportClient.WillowConsole");
+		UConsole* console = (UConsole *)UObject::FindObjectByFullName("WillowConsole WillowGameEngine.WillowGameViewportClient.WillowConsole");
 
 		if (console != nullptr)
 		{

@@ -412,9 +412,6 @@ class_<Vector, holder_type> bind_vector(handle scope, std::string const &name, A
 
 	cl.def("__len__", &Vector::size);
 
-
-
-
 #if 0
 	// C++ style functions deprecated, leaving it here as an example
 	cl.def(init<size_type>());
@@ -457,8 +454,6 @@ class_<Vector, holder_type> bind_vector(handle scope, std::string const &name, A
 
 	return cl;
 }
-
-
 
 //
 // std::map, std::unordered_map
@@ -507,7 +502,6 @@ void map_assignment(enable_if_t<
 	);
 }
 
-
 template <typename Map, typename Class_> auto map_if_insertion_operator(Class_ &cl, std::string const &name)
 -> decltype(std::declval<std::ostream&>() << std::declval<typename Map::key_type>() << std::declval<typename Map::mapped_type>(), void()) {
 
@@ -528,7 +522,6 @@ template <typename Map, typename Class_> auto map_if_insertion_operator(Class_ &
 		"Return the canonical string representation of this map."
 			);
 }
-
 
 NAMESPACE_END(detail)
 

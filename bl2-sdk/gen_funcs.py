@@ -22,7 +22,6 @@ for root, dirs, files in os.walk(dir_path):
                         clas, fun = found.groups()
                         funcs[module].append((clas, fun))
 
-
 classFunc_regex = re.compile(r'.*g_classFuncs\["(\w+)"\] = {')
 
 lua_sdk_path = "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Borderlands 2\\Binaries\\plugins\\include\\sdk\\funcs\\"

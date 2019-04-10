@@ -44,29 +44,13 @@
 # ========================================================================================= #
 */
 
-// Class AkAudio.ActorFactoryAkAmbientSound
 // 0x0004 (0x0080 - 0x007C)
 class UActorFactoryAkAmbientSound : public UActorFactory
 {
 public:
 	class UAkEvent*                                    AmbientEvent;                                     		// 0x007C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3527];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UActorFactoryAkAmbientSound::pClassPointer = NULL;
-
-// Class AkAudio.AkAmbientSound
 // 0x000C (0x0198 - 0x018C)
 class AAkAmbientSound : public AKeypoint
 {
@@ -74,221 +58,62 @@ public:
 	class UAkEvent*                                    PlayEvent;                                        		// 0x018C (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	class AWwiseSoundGroup*                            Group;                                            		// 0x0190 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	unsigned long                                      bIsRegistered : 1;                                		// 0x0194 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3529];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* AAkAmbientSound::pClassPointer = NULL;
-
-// Class AkAudio.AkAmbientSoundRenderingComponent
 // 0x0004 (0x0214 - 0x0210)
 class UAkAmbientSoundRenderingComponent : public UPrimitiveComponent
 {
 public:
 	unsigned long                                      bShowOnlyIfSelected : 1;                          		// 0x0210 (0x0004) [0x0000000000044000] [0x00000001] ( CPF_Config | CPF_GlobalConfig )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3531];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UAkAmbientSoundRenderingComponent::pClassPointer = NULL;
-
-// Class AkAudio.IAkEnvironmentalEffectProvider
 // 0x0000 (0x003C - 0x003C)
 class UIAkEnvironmentalEffectProvider : public UInterface
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3533];
-
-		return pClassPointer;
-	};
-
 	TArray< struct FEnvironmentalEffectInfo > GetEnvironmentalEffectsForLocation(class UAkComponent* GameObjComponent, struct FVector ListenerLocation, struct FVector ObjectLocation);
 };
 
-//UClass* UIAkEnvironmentalEffectProvider::pClassPointer = NULL;
-
-// Class AkAudio.InterpTrackAkEvent
 // 0x000C (0x0074 - 0x0068)
 class UInterpTrackAkEvent : public UInterpTrack
 {
 public:
 	TArray< struct FAkEventTrackKey >                  AkEvents;                                         		// 0x0068 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3535];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UInterpTrackAkEvent::pClassPointer = NULL;
 
-// Class AkAudio.InterpTrackAkRTPC
 // 0x0004 (0x0080 - 0x007C)
 class UInterpTrackAkRTPC : public UInterpTrackFloatBase
 {
 public:
 	class UAkRtpc*                                     AkRtpc;                                           		// 0x007C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3537];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UInterpTrackAkRTPC::pClassPointer = NULL;
-
-// Class AkAudio.InterpTrackInstAkEvent
 // 0x0004 (0x0040 - 0x003C)
 class UInterpTrackInstAkEvent : public UInterpTrackInst
 {
 public:
 	float                                              LastUpdatePosition;                               		// 0x003C (0x0004) [0x0000000000000000]
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3539];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UInterpTrackInstAkEvent::pClassPointer = NULL;
-
-// Class AkAudio.InterpTrackInstAkRTPC
 // 0x0000 (0x003C - 0x003C)
-class UInterpTrackInstAkRTPC : public UInterpTrackInst
-{
-public:
+class UInterpTrackInstAkRTPC : public UInterpTrackInst {};
 
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3541];
-
-		return pClassPointer;
-	};
-};
-
-//UClass* UInterpTrackInstAkRTPC::pClassPointer = NULL;
-
-// Class AkAudio.ISpecialOcclusionAccumulator
 // 0x0000 (0x003C - 0x003C)
 class UISpecialOcclusionAccumulator : public UInterface
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3543];
-
-		return pClassPointer;
-	};
-
 	void RemoveOcclusionProvider(class AActor* Source);
 	void SetOcclusionForProvider(class AActor* Source, float Amount);
 };
 
-//UClass* UISpecialOcclusionAccumulator::pClassPointer = NULL;
-
-// Class AkAudio.SeqAct_AkClearBanks
 // 0x0000 (0x00A4 - 0x00A4)
-class USeqAct_AkClearBanks : public USequenceAction
-{
-public:
+class USeqAct_AkClearBanks : public USequenceAction {};
 
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3545];
-
-		return pClassPointer;
-	};
-};
-
-//UClass* USeqAct_AkClearBanks::pClassPointer = NULL;
-
-// Class AkAudio.SeqAct_AkLoadBank
 // 0x0000 (0x00B4 - 0x00B4)
-class USeqAct_AkLoadBank : public USeqAct_Latent
-{
-public:
+class USeqAct_AkLoadBank : public USeqAct_Latent {};
 
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3547];
-
-		return pClassPointer;
-	};
-};
-
-//UClass* USeqAct_AkLoadBank::pClassPointer = NULL;
-
-// Class AkAudio.SeqAct_AkPostEvent
 // 0x0014 (0x00C8 - 0x00B4)
 class USeqAct_AkPostEvent : public USeqAct_Latent
 {
@@ -297,45 +122,15 @@ public:
 	class UAkEvent*                                    Event;                                            		// 0x00C0 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	unsigned long                                      bPlayOneInstanceFromAllLocations : 1;             		// 0x00C4 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
 	unsigned long                                      bTreatAllLocationsAsOneSource : 1;                		// 0x00C4 (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3549];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* USeqAct_AkPostEvent::pClassPointer = NULL;
-
-// Class AkAudio.SeqAct_AkPostTrigger
 // 0x0004 (0x00A8 - 0x00A4)
 class USeqAct_AkPostTrigger : public USequenceAction
 {
 public:
 	class UAkTrigger*                                  AkTrigger;                                        		// 0x00A4 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3551];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* USeqAct_AkPostTrigger::pClassPointer = NULL;
-
-// Class AkAudio.SeqAct_AkSetRTPCValue
 // 0x000C (0x00C0 - 0x00B4)
 class USeqAct_AkSetRTPCValue : public USeqAct_Latent
 {
@@ -343,88 +138,25 @@ public:
 	class UAkRtpc*                                     AkRtpc;                                           		// 0x00B4 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	float                                              Value;                                            		// 0x00B8 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	unsigned long                                      Running : 1;                                      		// 0x00BC (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3553];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* USeqAct_AkSetRTPCValue::pClassPointer = NULL;
-
-// Class AkAudio.SeqAct_AkSetState
 // 0x0004 (0x00A8 - 0x00A4)
 class USeqAct_AkSetState : public USequenceAction
 {
 public:
 	class UAkState*                                    State;                                            		// 0x00A4 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3555];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* USeqAct_AkSetState::pClassPointer = NULL;
-
-// Class AkAudio.SeqAct_AkSetSwitch
 // 0x0004 (0x00A8 - 0x00A4)
 class USeqAct_AkSetSwitch : public USequenceAction
 {
 public:
 	class UAkSwitch*                                   AkSwitch;                                         		// 0x00A4 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3557];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* USeqAct_AkSetSwitch::pClassPointer = NULL;
-
-// Class AkAudio.SeqAct_AkStopAll
 // 0x0000 (0x00A4 - 0x00A4)
-class USeqAct_AkStopAll : public USequenceAction
-{
-public:
+class USeqAct_AkStopAll : public USequenceAction {};
 
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3559];
-
-		return pClassPointer;
-	};
-};
-
-//UClass* USeqAct_AkStopAll::pClassPointer = NULL;
-
-// Class AkAudio.WwiseSoundGroup
 // 0x0050 (0x01DC - 0x018C)
 class AWwiseSoundGroup : public AKeypoint
 {
@@ -434,18 +166,7 @@ public:
 	TArray< class AActor* >                            Members;                                          		// 0x0194 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 	struct FMap_Mirror                                 ActiveOccluders;                                  		// 0x01A0 (0x003C) [0x0000000000003002]              ( CPF_Const | CPF_Native | CPF_Transient )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3561];
-
-		return pClassPointer;
-	};
-
 	void RemoveOcclusionProvider(class AActor* Source);
 	void SetOcclusionForProvider(class AActor* Source, float Amount);
 	float GetOcclusionAmount();
@@ -453,30 +174,9 @@ public:
 	void SetRTPCObjectValue(class UAkRtpc* InRtpc, float TargetValue);
 };
 
-//UClass* AWwiseSoundGroup::pClassPointer = NULL;
-
-// Class AkAudio.WwiseSoundGroupRenderingComponent
 // 0x0000 (0x0210 - 0x0210)
-class UWwiseSoundGroupRenderingComponent : public UPrimitiveComponent
-{
-public:
+class UWwiseSoundGroupRenderingComponent : public UPrimitiveComponent {};
 
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3563];
-
-		return pClassPointer;
-	};
-};
-
-//UClass* UWwiseSoundGroupRenderingComponent::pClassPointer = NULL;
-
-// Class AkAudio.WwiseSoundVolume
 // 0x0130 (0x02EC - 0x01BC)
 class AWwiseSoundVolume : public AVolume
 {
@@ -515,18 +215,7 @@ public:
 	class UAkBank*                                     EffectSoundBank;                                  		// 0x02E4 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	float                                              EffectSoundBankLoadDistance;                      		// 0x02E8 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3565];
-
-		return pClassPointer;
-	};
-
 	void RemoveOcclusionProvider(class AActor* Source);
 	void SetOcclusionForProvider(class AActor* Source, float Amount);
 	float GetOcclusionAmount();
@@ -534,8 +223,6 @@ public:
 	TArray< struct FEnvironmentalEffectInfo > GetEnvironmentalEffectsForLocation(class UAkComponent* GameObjComponent, struct FVector ListenerLocation, struct FVector ObjectLocation);
 	void CalculateFacePlanes();
 };
-
-//UClass* AWwiseSoundVolume::pClassPointer = NULL;
 
 #ifdef _MSC_VER
 #pragma pack ( pop )

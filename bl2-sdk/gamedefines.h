@@ -274,7 +274,6 @@ public:
 	};
 };
 
-
 struct FFrame : public FOutputDevice
 {
 	class UStruct* Node;
@@ -334,6 +333,5 @@ struct FFrame : public FOutputDevice
 		return py::make_tuple(FStruct((void *)obj->Data), obj->Count);
 	};
 };
-
 
 #endif

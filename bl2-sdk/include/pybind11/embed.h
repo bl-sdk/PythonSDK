@@ -63,7 +63,6 @@
                                PYBIND11_CONCAT(pybind11_init_impl_, name));   \
     void PYBIND11_CONCAT(pybind11_init_, name)(pybind11::module &variable)
 
-
 NAMESPACE_BEGIN(PYBIND11_NAMESPACE)
 NAMESPACE_BEGIN(detail)
 

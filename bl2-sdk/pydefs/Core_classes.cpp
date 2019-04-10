@@ -9,7 +9,6 @@ void Export_pystes_Core_classes(py::module &m)
 		.def_readwrite("ObjectArchetype", &UObject::ObjectArchetype)
 		.def_static("GObjObjects", &UObject::GObjObjects, py::return_value_policy::reference)
 		.def_static("FindObjectByFullName", &UObject::FindObjectByFullName, py::return_value_policy::reference)
-		.def_static("StaticClass", &UObject::StaticClass, py::return_value_policy::reference)
 		.def_static("FindClass", &UObject::FindClass, py::return_value_policy::reference)
 		.def_static("FindObjectsRegex", &UObject::FindObjectsRegex, py::return_value_policy::reference)
 		.def_static("FindObjectsContaining", &UObject::FindObjectsContaining, py::return_value_policy::reference)
@@ -356,14 +355,11 @@ void Export_pystes_Core_classes(py::module &m)
 		.def("MultiplyEqual_ByteByte", [](UObject &self , unsigned char B) { unsigned char* pyA = (unsigned char*)malloc(sizeof(unsigned char)) ;  unsigned char ret =  self.MultiplyEqual_ByteByte(B, pyA); return py::make_tuple(ret, *pyA); })
 		;
 	py::class_< UTextBuffer, UObject >(m, "UTextBuffer")
-		.def_static("StaticClass", &UTextBuffer::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< USubsystem, UObject >(m, "USubsystem")
-		.def_static("StaticClass", &USubsystem::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("VfTable_FExec", &USubsystem::VfTable_FExec, py::return_value_policy::reference)
 		;
 	py::class_< USystem, USubsystem >(m, "USystem")
-		.def_static("StaticClass", &USystem::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("StaleCacheDays", &USystem::StaleCacheDays)
 		.def_readwrite("MaxStaleCacheSize", &USystem::MaxStaleCacheSize)
 		.def_readwrite("MaxOverallCacheSize", &USystem::MaxOverallCacheSize)
@@ -391,42 +387,31 @@ void Export_pystes_Core_classes(py::module &m)
 		.def_readwrite("Unsuppress", &USystem::Unsuppress, py::return_value_policy::reference)
 		;
 	py::class_< UPackageMap, UObject >(m, "UPackageMap")
-		.def_static("StaticClass", &UPackageMap::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UObjectSerializer, UObject >(m, "UObjectSerializer")
-		.def_static("StaticClass", &UObjectSerializer::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UObjectRedirector, UObject >(m, "UObjectRedirector")
-		.def_static("StaticClass", &UObjectRedirector::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UMetaData, UObject >(m, "UMetaData")
-		.def_static("StaticClass", &UMetaData::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< ULinker, UObject >(m, "ULinker")
-		.def_static("StaticClass", &ULinker::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< ULinkerSave, ULinker >(m, "ULinkerSave")
-		.def_static("StaticClass", &ULinkerSave::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UInterface, UObject >(m, "UInterface")
-		.def_static("StaticClass", &UInterface::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UField, UObject >(m, "UField")
-		.def_static("StaticClass", &UField::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("Next", &UField::Next, py::return_value_policy::reference)
 		;
 	py::class_< UStruct, UField   >(m, "UStruct")
-		.def_static("StaticClass", &UStruct::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("SuperField", &UStruct::SuperField)
 		.def_readwrite("Children", &UStruct::Children)
 		.def_readwrite("PropertySize", &UStruct::PropertySize)
 		.def_readwrite("Next", &UField::Next)
 		;
 	py::class_< UScriptStruct, UStruct >(m, "UScriptStruct")
-		.def_static("StaticClass", &UScriptStruct::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UFunction, UStruct   >(m, "UFunction")
-		.def_static("StaticClass", &UFunction::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("iNative", &UFunction::iNative)
 		.def_readwrite("RepOffset", &UFunction::RepOffset)
 		.def_readwrite("FriendlyName", &UFunction::FriendlyName)
@@ -435,67 +420,46 @@ void Export_pystes_Core_classes(py::module &m)
 		.def_readwrite("Func", &UFunction::Func)
 		;
 	py::class_< UProperty, UField >(m, "UProperty")
-		.def_static("StaticClass", &UProperty::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UStructProperty, UProperty >(m, "UStructProperty")
-		.def_static("StaticClass", &UStructProperty::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UStrProperty, UProperty >(m, "UStrProperty")
-		.def_static("StaticClass", &UStrProperty::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UObjectProperty, UProperty >(m, "UObjectProperty")
-		.def_static("StaticClass", &UObjectProperty::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UComponentProperty, UObjectProperty >(m, "UComponentProperty")
-		.def_static("StaticClass", &UComponentProperty::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UClassProperty, UObjectProperty >(m, "UClassProperty")
-		.def_static("StaticClass", &UClassProperty::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UNameProperty, UProperty >(m, "UNameProperty")
-		.def_static("StaticClass", &UNameProperty::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UMapProperty, UProperty >(m, "UMapProperty")
-		.def_static("StaticClass", &UMapProperty::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UIntProperty, UProperty >(m, "UIntProperty")
-		.def_static("StaticClass", &UIntProperty::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UIntAttributeProperty, UIntProperty >(m, "UIntAttributeProperty")
-		.def_static("StaticClass", &UIntAttributeProperty::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UInterfaceProperty, UProperty >(m, "UInterfaceProperty")
-		.def_static("StaticClass", &UInterfaceProperty::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UFloatProperty, UProperty >(m, "UFloatProperty")
-		.def_static("StaticClass", &UFloatProperty::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UFloatAttributeProperty, UFloatProperty >(m, "UFloatAttributeProperty")
-		.def_static("StaticClass", &UFloatAttributeProperty::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UDelegateProperty, UProperty >(m, "UDelegateProperty")
-		.def_static("StaticClass", &UDelegateProperty::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UByteProperty, UProperty >(m, "UByteProperty")
-		.def_static("StaticClass", &UByteProperty::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UByteAttributeProperty, UByteProperty >(m, "UByteAttributeProperty")
-		.def_static("StaticClass", &UByteAttributeProperty::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UBoolProperty, UProperty >(m, "UBoolProperty")
-		.def_static("StaticClass", &UBoolProperty::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UArrayProperty, UProperty >(m, "UArrayProperty")
-		.def_static("StaticClass", &UArrayProperty::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UEnum, UField >(m, "UEnum")
-		.def_static("StaticClass", &UEnum::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UConst, UField >(m, "UConst")
-		.def_static("StaticClass", &UConst::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UFactory, UObject >(m, "UFactory")
-		.def_static("StaticClass", &UFactory::StaticClass, py::return_value_policy::reference)
 		.def_property("bCreateNew", [](UFactory &self){return self.bCreateNew;}, [](UFactory &self, bool value){self.bCreateNew = value ? 1 : 0;})
 		.def_property("bEditAfterNew", [](UFactory &self){return self.bEditAfterNew;}, [](UFactory &self, bool value){self.bEditAfterNew = value ? 1 : 0;})
 		.def_property("bEditorImport", [](UFactory &self){return self.bEditorImport;}, [](UFactory &self, bool value){self.bEditorImport = value ? 1 : 0;})
@@ -508,34 +472,28 @@ void Export_pystes_Core_classes(py::module &m)
 		.def_readwrite("ValidGameNames", &UFactory::ValidGameNames, py::return_value_policy::reference)
 		;
 	py::class_< UTextBufferFactory, UFactory >(m, "UTextBufferFactory")
-		.def_static("StaticClass", &UTextBufferFactory::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UExporter, UObject >(m, "UExporter")
-		.def_static("StaticClass", &UExporter::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("FormatExtension", &UExporter::FormatExtension, py::return_value_policy::reference)
 		.def_readwrite("FormatDescription", &UExporter::FormatDescription, py::return_value_policy::reference)
 		;
 	py::class_< UComponent, UObject >(m, "UComponent")
-		.def_static("StaticClass", &UComponent::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("TemplateOwnerClass", &UComponent::TemplateOwnerClass, py::return_value_policy::reference)
 		.def_readwrite("TemplateName", &UComponent::TemplateName, py::return_value_policy::reference)
 		;
 	py::class_< UDistributionVector, UComponent >(m, "UDistributionVector")
-		.def_static("StaticClass", &UDistributionVector::StaticClass, py::return_value_policy::reference)
 		.def_property("bCanBeBaked", [](UDistributionVector &self){return self.bCanBeBaked;}, [](UDistributionVector &self, bool value){self.bCanBeBaked = value ? 1 : 0;})
 		.def_property("bIsDirty", [](UDistributionVector &self){return self.bIsDirty;}, [](UDistributionVector &self, bool value){self.bIsDirty = value ? 1 : 0;})
 		.def_readwrite("VfTable_FCurveEdInterface", &UDistributionVector::VfTable_FCurveEdInterface, py::return_value_policy::reference)
 		.def("GetVectorValue", &UDistributionVector::GetVectorValue, py::return_value_policy::reference)
 		;
 	py::class_< UDistributionFloat, UComponent >(m, "UDistributionFloat")
-		.def_static("StaticClass", &UDistributionFloat::StaticClass, py::return_value_policy::reference)
 		.def_property("bCanBeBaked", [](UDistributionFloat &self){return self.bCanBeBaked;}, [](UDistributionFloat &self, bool value){self.bCanBeBaked = value ? 1 : 0;})
 		.def_property("bIsDirty", [](UDistributionFloat &self){return self.bIsDirty;}, [](UDistributionFloat &self, bool value){self.bIsDirty = value ? 1 : 0;})
 		.def_readwrite("VfTable_FCurveEdInterface", &UDistributionFloat::VfTable_FCurveEdInterface, py::return_value_policy::reference)
 		.def("GetFloatValue", &UDistributionFloat::GetFloatValue)
 		;
 	py::class_< UCommandlet, UObject >(m, "UCommandlet")
-		.def_static("StaticClass", &UCommandlet::StaticClass, py::return_value_policy::reference)
 		.def_property("IsServer", [](UCommandlet &self){return self.IsServer;}, [](UCommandlet &self, bool value){self.IsServer = value ? 1 : 0;})
 		.def_property("IsClient", [](UCommandlet &self){return self.IsClient;}, [](UCommandlet &self, bool value){self.IsClient = value ? 1 : 0;})
 		.def_property("IsEditor", [](UCommandlet &self){return self.IsEditor;}, [](UCommandlet &self, bool value){self.IsEditor = value ? 1 : 0;})
@@ -549,23 +507,18 @@ void Export_pystes_Core_classes(py::module &m)
 		.def("eventMain", &UCommandlet::eventMain)
 		;
 	py::class_< UHelpCommandlet, UCommandlet >(m, "UHelpCommandlet")
-		.def_static("StaticClass", &UHelpCommandlet::StaticClass, py::return_value_policy::reference)
 		.def("eventMain", &UHelpCommandlet::eventMain)
 		;
 	py::class_< UAttributeModifier, UObject >(m, "UAttributeModifier")
-		.def_static("StaticClass", &UAttributeModifier::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("Type", &UAttributeModifier::Type)
 		.def_readwrite("Value", &UAttributeModifier::Value)
 		;
 	py::class_< UState, UStruct >(m, "UState")
-		.def_static("StaticClass", &UState::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UPackage, UObject >(m, "UPackage")
-		.def_static("StaticClass", &UPackage::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UClass, UState >(m, "UClass")
 		.def_property("bCooked", [](UClass &self) {return self.bCooked; }, [](UClass &self, bool value) {self.bCooked = value ? 1 : 0; })
-		.def_static("StaticClass", &UClass::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("ClassFlags", &UClass::ClassFlags)
 		;
 

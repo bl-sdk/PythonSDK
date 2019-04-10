@@ -16,15 +16,6 @@
 #pragma pack ( push, 0x4 )
 #endif
 
-UClass* UOnlineAuthInterfaceSteamworks::pClassPointer = NULL;
-UClass* UOnlineGameInterfaceSteamworks::pClassPointer = NULL;
-UClass* UOnlineLobbyInterfaceSteamworks::pClassPointer = NULL;
-UClass* UOnlineSubsystemSteamworks::pClassPointer = NULL;
-UClass* UQoSHandlerSteamworks::pClassPointer = NULL;
-UClass* USparkInterfaceSteamworks::pClassPointer = NULL;
-UClass* UIpNetDriverSteamworks::pClassPointer = NULL;
-UClass* UIpNetConnectionSteamworks::pClassPointer = NULL;
-
 /*
 # ========================================================================================= #
 # Functions

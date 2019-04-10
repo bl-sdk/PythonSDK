@@ -22,29 +22,29 @@
 # ========================================================================================= #
 */
 
-UClass* UGFxEngine::pClassPointer = NULL;
-UClass* UGFxFSCmdHandler::pClassPointer = NULL;
-UClass* UGFxInteraction::pClassPointer = NULL;
-UClass* UGFxManager::pClassPointer = NULL;
-UClass* UGFxManagerDefinition::pClassPointer = NULL;
-UClass* UGFxMoviePlayer::pClassPointer = NULL;
-UClass* UGFxMovie::pClassPointer = NULL;
-UClass* UGFxObject::pClassPointer = NULL;
-UClass* UGFxClikWidget::pClassPointer = NULL;
-UClass* UGFxRawData::pClassPointer = NULL;
-UClass* USwfMovie::pClassPointer = NULL;
-UClass* UFlashMovie::pClassPointer = NULL;
-UClass* UGFxMovieInfo::pClassPointer = NULL;
-UClass* UGFxValue::pClassPointer = NULL;
-UClass* UGFxAction_CloseMovie::pClassPointer = NULL;
-UClass* UGFxAction_GetVariable::pClassPointer = NULL;
-UClass* UGFxAction_Invoke::pClassPointer = NULL;
-UClass* UGFxAction_OpenMovie::pClassPointer = NULL;
-UClass* UGFxAction_SetCaptureKeys::pClassPointer = NULL;
-UClass* UGFxAction_SetVariable::pClassPointer = NULL;
-UClass* UGFxEvent_FSCommand::pClassPointer = NULL;
-UClass* UGFxFSCmdHandler_Kismet::pClassPointer = NULL;
-UClass* UGFxDataStoreSubscriber::pClassPointer = NULL;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 # ========================================================================================= #

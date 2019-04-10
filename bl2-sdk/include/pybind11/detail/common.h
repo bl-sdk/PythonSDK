@@ -292,7 +292,6 @@ extern "C" {
     }                                                                          \
     void PYBIND11_CONCAT(pybind11_init_, name)(pybind11::module &variable)
 
-
 NAMESPACE_BEGIN(PYBIND11_NAMESPACE)
 
 using ssize_t = Py_ssize_t;
@@ -807,7 +806,5 @@ template <size_t... IPrev, size_t I, bool B, bool... Bs> struct select_indices_i
 	};
 
 	NAMESPACE_END(detail)
-
-
 
 		NAMESPACE_END(PYBIND11_NAMESPACE)

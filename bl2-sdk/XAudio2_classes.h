@@ -35,24 +35,11 @@
 # ========================================================================================= #
 */
 
-// Class XAudio2.XAudio2Device
 // 0x009C (0x0360 - 0x02C4)
 class UXAudio2Device : public UAudioDevice
 {
 public:
 	unsigned char                                      UnknownData00[0x9C];                            		// 0x02C4 (0x009C) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3524];
-
-		return pClassPointer;
-	};
 };
 
 #ifdef _MSC_VER

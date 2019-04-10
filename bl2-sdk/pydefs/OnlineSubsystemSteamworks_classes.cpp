@@ -6,7 +6,6 @@ namespace py = pybind11;
 void Export_pystes_OnlineSubsystemSteamworks_classes(py::module &m)
 {
 	py::class_< UOnlineAuthInterfaceSteamworks, UOnlineAuthInterfaceImpl >(m, "UOnlineAuthInterfaceSteamworks")
-		.def_static("StaticClass", &UOnlineAuthInterfaceSteamworks::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("AuthCallbackBridge", &UOnlineAuthInterfaceSteamworks::AuthCallbackBridge, py::return_value_policy::reference)
 		.def("GetServerUniqueId", &UOnlineAuthInterfaceSteamworks::GetServerUniqueId)
 		.def("EndRemoteServerAuthSession", &UOnlineAuthInterfaceSteamworks::EndRemoteServerAuthSession)
@@ -22,7 +21,6 @@ void Export_pystes_OnlineSubsystemSteamworks_classes(py::module &m)
 		.def("CreateClientAuthSession", [](UOnlineAuthInterfaceSteamworks &self , struct FUniqueNetId ServerUID, int ServerIP, int ServerPort, unsigned long bSecure) { int* pyOutAuthBlobUID = (int*)malloc(sizeof(int)) ;  bool ret =  self.CreateClientAuthSession(ServerUID, ServerIP, ServerPort, bSecure, pyOutAuthBlobUID); return py::make_tuple(ret, *pyOutAuthBlobUID); })
 		;
 	py::class_< UOnlineGameInterfaceSteamworks, UOnlineGameInterfaceImpl >(m, "UOnlineGameInterfaceSteamworks")
-		.def_static("StaticClass", &UOnlineGameInterfaceSteamworks::StaticClass, py::return_value_policy::reference)
 		.def_property("bFilterEngineBuild", [](UOnlineGameInterfaceSteamworks &self){return self.bFilterEngineBuild;}, [](UOnlineGameInterfaceSteamworks &self, bool value){self.bFilterEngineBuild = value ? 1 : 0;})
 		.def_readwrite("QueryToRulesResponseMap", &UOnlineGameInterfaceSteamworks::QueryToRulesResponseMap, py::return_value_policy::reference)
 		.def_readwrite("QueryToPingResponseMap", &UOnlineGameInterfaceSteamworks::QueryToPingResponseMap, py::return_value_policy::reference)
@@ -60,10 +58,8 @@ void Export_pystes_OnlineSubsystemSteamworks_classes(py::module &m)
 		.def("ReadPlatformSpecificSessionInfo", [](UOnlineGameInterfaceSteamworks &self , struct FOnlineGameSearchResult* DesiredGame) { unsigned char* pyPlatformSpecificInfo = (unsigned char*)malloc(sizeof(unsigned char)) ;  bool ret =  self.ReadPlatformSpecificSessionInfo(DesiredGame, pyPlatformSpecificInfo); return py::make_tuple(ret, *pyPlatformSpecificInfo); })
 		;
 	py::class_< UOnlineLobbyInterfaceSteamworks, UObject >(m, "UOnlineLobbyInterfaceSteamworks")
-		.def_static("StaticClass", &UOnlineLobbyInterfaceSteamworks::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UOnlineSubsystemSteamworks, UOnlineSubsystemCommonImpl >(m, "UOnlineSubsystemSteamworks")
-		.def_static("StaticClass", &UOnlineSubsystemSteamworks::StaticClass, py::return_value_policy::reference)
 		.def_property("bStoringAchievement", [](UOnlineSubsystemSteamworks &self){return self.bStoringAchievement;}, [](UOnlineSubsystemSteamworks &self, bool value){self.bStoringAchievement = value ? 1 : 0;})
 		.def_property("bGSStatsStoresSuccess", [](UOnlineSubsystemSteamworks &self){return self.bGSStatsStoresSuccess;}, [](UOnlineSubsystemSteamworks &self, bool value){self.bGSStatsStoresSuccess = value ? 1 : 0;})
 		.def_property("bNeedsKeyboardTicking", [](UOnlineSubsystemSteamworks &self){return self.bNeedsKeyboardTicking;}, [](UOnlineSubsystemSteamworks &self, bool value){self.bNeedsKeyboardTicking = value ? 1 : 0;})
@@ -543,7 +539,6 @@ void Export_pystes_OnlineSubsystemSteamworks_classes(py::module &m)
 		.def("GetKeyboardInputResults", [](UOnlineSubsystemSteamworks &self ) { unsigned char* pybWasCanceled = (unsigned char*)malloc(sizeof(unsigned char)) ;  struct FString ret =  self.GetKeyboardInputResults(pybWasCanceled); return py::make_tuple(ret, *pybWasCanceled); })
 		;
 	py::class_< UQoSHandlerSteamworks, UObject >(m, "UQoSHandlerSteamworks")
-		.def_static("StaticClass", &UQoSHandlerSteamworks::StaticClass, py::return_value_policy::reference)
 		.def_property("bEnabled", [](UQoSHandlerSteamworks &self){return self.bEnabled;}, [](UQoSHandlerSteamworks &self, bool value){self.bEnabled = value ? 1 : 0;})
 		.def_readwrite("MaxQoSRequest", &UQoSHandlerSteamworks::MaxQoSRequest)
 		.def_readwrite("MaxQoSListen", &UQoSHandlerSteamworks::MaxQoSListen)
@@ -557,13 +552,10 @@ void Export_pystes_OnlineSubsystemSteamworks_classes(py::module &m)
 		.def_readwrite("PendingRequests", &UQoSHandlerSteamworks::PendingRequests, py::return_value_policy::reference)
 		;
 	py::class_< USparkInterfaceSteamworks, USparkInterfaceImpl >(m, "USparkInterfaceSteamworks")
-		.def_static("StaticClass", &USparkInterfaceSteamworks::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UIpNetDriverSteamworks, UTcpNetDriver >(m, "UIpNetDriverSteamworks")
-		.def_static("StaticClass", &UIpNetDriverSteamworks::StaticClass, py::return_value_policy::reference)
 		;
 	py::class_< UIpNetConnectionSteamworks, UTcpipConnection >(m, "UIpNetConnectionSteamworks")
-		.def_static("StaticClass", &UIpNetConnectionSteamworks::StaticClass, py::return_value_policy::reference)
 		;
 
 }

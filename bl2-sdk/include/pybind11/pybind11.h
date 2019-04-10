@@ -1593,7 +1593,6 @@ template <typename T> struct has_operator_delete<T, void_t<decltype(static_cast<
 
 		NAMESPACE_BEGIN(detail)
 
-
 			inline void keep_alive_impl(handle nurse, handle patient) {
 			if (!nurse || !patient)
 				pybind11_fail("Could not activate keep_alive!");

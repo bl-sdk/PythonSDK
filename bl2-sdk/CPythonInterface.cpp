@@ -29,7 +29,6 @@ void RegisterEngineHook(const std::string& funcName, const std::string& hookName
 	);
 }
 
-
 void RegisterScriptHook(const std::string& funcName, const std::string& hookName, py::object funcHook) {
 	GameHooks::UnrealScriptHookManager->Register(funcName, hookName, [funcHook](UObject* caller, FFrame& stack, void* const result, UFunction* function) {
 		try {
@@ -46,7 +45,6 @@ void RegisterScriptHook(const std::string& funcName, const std::string& hookName
 		}
 	);
 }
-
 
 namespace py = pybind11;
 

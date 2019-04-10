@@ -23,53 +23,6 @@
 # ========================================================================================= #
 */
 
-UClass* UObject::pClassPointer = NULL;
-UClass* UTextBuffer::pClassPointer = NULL;
-UClass* USubsystem::pClassPointer = NULL;
-UClass* USystem::pClassPointer = NULL;
-UClass* UPackageMap::pClassPointer = NULL;
-UClass* UObjectSerializer::pClassPointer = NULL;
-UClass* UObjectRedirector::pClassPointer = NULL;
-UClass* UMetaData::pClassPointer = NULL;
-UClass* ULinker::pClassPointer = NULL;
-UClass* ULinkerSave::pClassPointer = NULL;
-UClass* UInterface::pClassPointer = NULL;
-UClass* UField::pClassPointer = NULL;
-UClass* UStruct::pClassPointer = NULL;
-UClass* UScriptStruct::pClassPointer = NULL;
-UClass* UFunction::pClassPointer = NULL;
-UClass* UProperty::pClassPointer = NULL;
-UClass* UStructProperty::pClassPointer = NULL;
-UClass* UStrProperty::pClassPointer = NULL;
-UClass* UObjectProperty::pClassPointer = NULL;
-UClass* UComponentProperty::pClassPointer = NULL;
-UClass* UClassProperty::pClassPointer = NULL;
-UClass* UNameProperty::pClassPointer = NULL;
-UClass* UMapProperty::pClassPointer = NULL;
-UClass* UIntProperty::pClassPointer = NULL;
-UClass* UIntAttributeProperty::pClassPointer = NULL;
-UClass* UInterfaceProperty::pClassPointer = NULL;
-UClass* UFloatProperty::pClassPointer = NULL;
-UClass* UFloatAttributeProperty::pClassPointer = NULL;
-UClass* UDelegateProperty::pClassPointer = NULL;
-UClass* UByteProperty::pClassPointer = NULL;
-UClass* UByteAttributeProperty::pClassPointer = NULL;
-UClass* UBoolProperty::pClassPointer = NULL;
-UClass* UArrayProperty::pClassPointer = NULL;
-UClass* UEnum::pClassPointer = NULL;
-UClass* UConst::pClassPointer = NULL;
-UClass* UFactory::pClassPointer = NULL;
-UClass* UTextBufferFactory::pClassPointer = NULL;
-UClass* UExporter::pClassPointer = NULL;
-UClass* UComponent::pClassPointer = NULL;
-UClass* UDistributionVector::pClassPointer = NULL;
-UClass* UDistributionFloat::pClassPointer = NULL;
-UClass* UCommandlet::pClassPointer = NULL;
-UClass* UHelpCommandlet::pClassPointer = NULL;
-UClass* UAttributeModifier::pClassPointer = NULL;
-UClass* UState::pClassPointer = NULL;
-UClass* UPackage::pClassPointer = NULL;
-UClass* UClass::pClassPointer = NULL;
 /*
 # ========================================================================================= #
 # Basic Functions
@@ -95,7 +48,7 @@ std::string UObject::GetNameCPP()
 {
 	static char cOutBuffer[256];
 
-	if (this->IsA(UClass::StaticClass()))
+	if (this->Class && !strcmp(this->Class->GetName().c_str(), "Class"))
 	{
 		UClass* pClass = (UClass*)this;
 		while (pClass)
@@ -155,26 +108,29 @@ std::string UObject::GetFullName()
 	return (char*)"(null)";
 }
 
-UClass* UObject::FindClass(char* ClassFullName)
+UClass* UObject::FindClass(char* ClassName, bool lookup)
 {
-	while (!UObject::GObjObjects())
-		Sleep(100);
+	if (BL2SDK::ClassMap.count(ClassName))
+		return BL2SDK::ClassMap[ClassName];
 
-	while (!FName::Names())
-		Sleep(100);
+	if (!lookup)
+		return nullptr;
 
 	for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
 	{
 		UObject* Object = UObject::GObjObjects()->Data[i];
 
-		if (!Object)
+		if (!Object || !Object->Class)
 			continue;
 
-		if (!_stricmp(Object->GetFullName().c_str(), ClassFullName))
-			return (UClass*)Object;
+		// Might as well lookup all objects since we're going to be iterating over most objects regardless
+		const char *c = Object->Class->GetName().c_str();
+		if (!strcmp(c, "Class"))
+			BL2SDK::ClassMap[(char *)Object->GetName().c_str()] = (UClass *)Object;
 	}
-
-	return NULL;
+	if (BL2SDK::ClassMap.count(ClassName))
+		return BL2SDK::ClassMap[ClassName];
+	return nullptr;
 }
 
 bool UObject::IsA(UClass* pClass) const

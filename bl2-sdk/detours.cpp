@@ -688,7 +688,6 @@ inline PBYTE detour_skip_jmp(PBYTE pPointer, PVOID *ppGlobals)
 	return pbCode;
 }
 
-
 inline void detour_find_jmp_bounds(PBYTE pbCode,
 	PDETOUR_TRAMPOLINE *ppLower,
 	PDETOUR_TRAMPOLINE *ppUpper)
@@ -840,7 +839,6 @@ inline void detour_find_jmp_bounds(PBYTE pbCode,
 	*ppLower = (PDETOUR_TRAMPOLINE)lo;
 	*ppUpper = (PDETOUR_TRAMPOLINE)hi;
 }
-
 
 inline BOOL detour_does_code_end_function(PBYTE pbCode)
 {
@@ -2179,7 +2177,6 @@ LONG WINAPI DetourDetach(_Inout_ PVOID *ppPointer,
 		return error;
 	}
 
-
 #ifdef DETOURS_IA64
 	PPLABEL_DESCRIPTOR ppldTrampo = (PPLABEL_DESCRIPTOR)*ppPointer;
 	PPLABEL_DESCRIPTOR ppldDetour = (PPLABEL_DESCRIPTOR)pDetour;
@@ -2193,7 +2190,6 @@ LONG WINAPI DetourDetach(_Inout_ PVOID *ppPointer,
 		ppldDetour, pDetour, pDetourGlobals));
 	DETOUR_TRACE(("  ppldTrampo=%p, code=%p [gp=%p]\n",
 		ppldTrampo, pTrampoline, pTrampoGlobals));
-
 
 	DETOUR_TRACE(("\n"));
 	DETOUR_TRACE(("detours:  &pldTrampoline  =%p\n",

@@ -22,27 +22,6 @@
 # ========================================================================================= #
 */
 
-UClass* UActorFactoryAkAmbientSound::pClassPointer = NULL;
-UClass* AAkAmbientSound::pClassPointer = NULL;
-UClass* UAkAmbientSoundRenderingComponent::pClassPointer = NULL;
-UClass* UIAkEnvironmentalEffectProvider::pClassPointer = NULL;
-UClass* UInterpTrackAkEvent::pClassPointer = NULL;
-UClass* UInterpTrackAkRTPC::pClassPointer = NULL;
-UClass* UInterpTrackInstAkEvent::pClassPointer = NULL;
-UClass* UInterpTrackInstAkRTPC::pClassPointer = NULL;
-UClass* UISpecialOcclusionAccumulator::pClassPointer = NULL;
-UClass* USeqAct_AkClearBanks::pClassPointer = NULL;
-UClass* USeqAct_AkLoadBank::pClassPointer = NULL;
-UClass* USeqAct_AkPostEvent::pClassPointer = NULL;
-UClass* USeqAct_AkPostTrigger::pClassPointer = NULL;
-UClass* USeqAct_AkSetRTPCValue::pClassPointer = NULL;
-UClass* USeqAct_AkSetState::pClassPointer = NULL;
-UClass* USeqAct_AkSetSwitch::pClassPointer = NULL;
-UClass* USeqAct_AkStopAll::pClassPointer = NULL;
-UClass* AWwiseSoundGroup::pClassPointer = NULL;
-UClass* UWwiseSoundGroupRenderingComponent::pClassPointer = NULL;
-UClass* AWwiseSoundVolume::pClassPointer = NULL;
-
 /*
 # ========================================================================================= #
 # Functions

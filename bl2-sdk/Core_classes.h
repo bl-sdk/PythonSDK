@@ -178,7 +178,6 @@
 # ========================================================================================= #
 */
 
-// Class Core.Object
 // 0x003C
 class UObject
 {
@@ -197,51 +196,24 @@ public:
 	class UClass*                                      Class;                                            		// 0x0034 (0x0004) [0x0000000000021002]              ( CPF_Const | CPF_Native | CPF_EditConst )
 	class UObject*                                     ObjectArchetype;                                  		// 0x0038 (0x0004) [0x0000000000021003]              ( CPF_Edit | CPF_Const | CPF_Native | CPF_EditConst )
 
-private:
-	static UClass* pClassPointer;
-
 public:
 	static TArray< UObject* >* GObjObjects();
-
 	std::string GetName();
 	std::string GetNameCPP();
 	std::string GetFullName();
-
 	template< class T > static T* FindObject(const std::string& ObjectFullName)
 	{
-		while (!UObject::GObjObjects())
-			Sleep(100);
-
-		while (!FName::Names())
-			Sleep(100);
-
-		for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
-		{
-			UObject* Object = UObject::GObjObjects()->Data[i];
-			// skip no T class objects
-			if
-				(
-					!Object
-					|| !Object->IsA(T::StaticClass())
-					)
-				continue;
-
-			// check
-			if (Object->GetFullName() == ObjectFullName)
-				return (T*)Object;
-		}
-
+		UClass *classToLoad = FindClass((char *)typeid(T).name() + 7);
+		if (classToLoad)
+			return (T *)BL2SDK::GetEngine()->Outer->DynamicLoadObject(FString((char *)ObjectFullName.c_str()), classToLoad, true);
 		return nullptr;
 	}
-
 	static UObject* FindObjectByFullName(const std::string& ObjectFullName)
 	{
 		while (!UObject::GObjObjects())
 			Sleep(100);
-
 		while (!FName::Names())
 			Sleep(100);
-
 		for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
 		{
 			UObject* Object = UObject::GObjObjects()->Data[i];
@@ -251,17 +223,14 @@ public:
 		return nullptr;
 	}
 
-
 	static std::vector<UObject*> FindObjectsRegex(const std::string& regexString)
 	{
 		std::regex re = std::regex(regexString);
 		std::vector<UObject *> ret;
 		while (!UObject::GObjObjects())
 			Sleep(100);
-
 		while (!FName::Names())
 			Sleep(100);
-
 		for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
 		{
 			UObject* Object = UObject::GObjObjects()->Data[i];
@@ -270,16 +239,13 @@ public:
 		}
 		return ret;
 	}
-
 	static std::vector<UObject*> FindObjectsContaining(const std::string& stringLookup)
 	{
 		std::vector<UObject *> ret;
 		while (!UObject::GObjObjects())
 			Sleep(100);
-
 		while (!FName::Names())
 			Sleep(100);
-
 		for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
 		{
 			UObject* Object = UObject::GObjObjects()->Data[i];
@@ -288,18 +254,8 @@ public:
 		}
 		return ret;
 	}
-
-	static UClass* FindClass(char* ClassFullName);
-
+	static UClass* FindClass(char* ClassName, bool lookup = false);
 	bool IsA(UClass* pClass) const;
-
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2];
-
-		return pClassPointer;
-	};
 
 	class UPackage* GetPackageObject() {
 		UObject *pkg;
@@ -310,7 +266,6 @@ public:
 		}
 		return (UPackage*)pkg;
 	};
-
 	bool IsRelevantForDebugging(class UObject* Source);
 	class UObject* GetGlobalDebugTarget();
 	void SetGlobalDebugTarget(class UObject* Target);
@@ -637,7 +592,6 @@ public:
 	bool NotEqual_BoolBool(unsigned long A, unsigned long B);
 	bool EqualEqual_BoolBool(unsigned long A, unsigned long B);
 	bool Not_PreBool(unsigned long A);
-
 	// Virtual Functions
 	virtual void VirtualFunction00() {};																			// 0x005838A0 (0x00)
 	virtual void VirtualFunction01() {};																			// 0x005FC030 (0x04)
@@ -897,53 +851,20 @@ public:
 	virtual void VirtualFunction255() {};																			// 0x01074DF0 (0x3FC)
 };
 
-//UClass* UObject::pClassPointer = NULL;
-
-// Class Core.TextBuffer
 // 0x0024 (0x0060 - 0x003C)
 class UTextBuffer : public UObject
 {
 public:
 	unsigned char                                      UnknownData00[0x24];                            		// 0x003C (0x0024) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[1];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UTextBuffer::pClassPointer = NULL;
-
-// Class Core.Subsystem
 // 0x0004 (0x0040 - 0x003C)
 class USubsystem : public UObject
 {
 public:
 	struct FPointer                                    VfTable_FExec;                                    		// 0x003C (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[6];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* USubsystem::pClassPointer = NULL;
-
-// Class Core.System
 // 0x0104 (0x0144 - 0x0040)
 class USystem : public USubsystem
 {
@@ -973,222 +894,69 @@ public:
 	TArray< struct FString >                           MissingRedirectClassName;                         		// 0x0120 (0x000C) [0x0000000000404000]              ( CPF_Config | CPF_NeedCtorLink )
 	TArray< struct FString >                           MissingRedirectObjectName;                        		// 0x012C (0x000C) [0x0000000000404000]              ( CPF_Config | CPF_NeedCtorLink )
 	TArray< struct FName >                             Unsuppress;                                       		// 0x0138 (0x000C) [0x0000000000404000]              ( CPF_Config | CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[5];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* USystem::pClassPointer = NULL;
-
-// Class Core.PackageMap
 // 0x0084 (0x00C0 - 0x003C)
 class UPackageMap : public UObject
 {
 public:
 	unsigned char                                      UnknownData00[0x84];                            		// 0x003C (0x0084) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[48];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UPackageMap::pClassPointer = NULL;
-
-// Class Core.ObjectSerializer
 // 0x000C (0x0048 - 0x003C)
 class UObjectSerializer : public UObject
 {
 public:
 	unsigned char                                      UnknownData00[0xC];                             		// 0x003C (0x000C) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[50];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UObjectSerializer::pClassPointer = NULL;
-
-// Class Core.ObjectRedirector
 // 0x0004 (0x0040 - 0x003C)
 class UObjectRedirector : public UObject
 {
 public:
 	unsigned char                                      UnknownData00[0x4];                             		// 0x003C (0x0004) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[52];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UObjectRedirector::pClassPointer = NULL;
-
-// Class Core.MetaData
 // 0x003C (0x0078 - 0x003C)
 class UMetaData : public UObject
 {
 public:
 	unsigned char                                      UnknownData00[0x3C];                            		// 0x003C (0x003C) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[54];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UMetaData::pClassPointer = NULL;
-
-// Class Core.Linker
 // 0x0534 (0x0570 - 0x003C)
 class ULinker : public UObject
 {
 public:
 	unsigned char                                      UnknownData00[0x534];                           		// 0x003C (0x0534) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[57];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* ULinker::pClassPointer = NULL;
-
-// Class Core.LinkerSave
 // 0x00A8 (0x0618 - 0x0570)
 class ULinkerSave : public ULinker
 {
 public:
 	unsigned char                                      UnknownData00[0xA8];                            		// 0x0570 (0x00A8) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[56];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* ULinkerSave::pClassPointer = NULL;
-
-// Class Core.LinkerLoad
 // 0x05C4 (0x0B34 - 0x0570)
 /*
 class ULinkerLoad : public ULinker
 {
 public:
 	unsigned char                                      UnknownData00[0x5C4];                           		// 0x0570 (0x05C4) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[60];
-
-		return pClassPointer;
-	};
 };
 */
 
-//UClass* ULinkerLoad::pClassPointer = NULL;
-
-// Class Core.Interface
 // 0x0000 (0x003C - 0x003C)
-class UInterface : public UObject
-{
-public:
+class UInterface : public UObject {};
 
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[62];
-
-		return pClassPointer;
-	};
-};
-
-//UClass* UInterface::pClassPointer = NULL;
-
-// Class Core.Field
 // 0x0004 (0x0040 - 0x003C)
 class UField : public UObject
 {
 public:
 	class UField*                                      Next;                                             		// NOT AUTO-GENERATED PROPERTY
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[66];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UField::pClassPointer = NULL;
-
-// Class Core.Struct
 // 0x004C (0x008C - 0x0040)
 class UStruct : public UField
 {
@@ -1198,45 +966,15 @@ public:
 	class UField*			Children;								// NOT AUTO-GENERATED PROPERTY
 	unsigned short			PropertySize;							// NOT AUTO-GENERATED PROPERTY
 	unsigned char			UnknownData01[0x3A];					// NOT AUTO-GENERATED PROPERTY
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[65];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UStruct::pClassPointer = NULL;
-
-// Class Core.ScriptStruct
 // 0x001C (0x00A8 - 0x008C)
 class UScriptStruct : public UStruct
 {
 public:
 	unsigned char                                      UnknownData00[0x1C];                            		// 0x008C (0x001C) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[64];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UScriptStruct::pClassPointer = NULL;
-
-// Class Core.Function
 // 0x0024 (0x00B0 - 0x008C)
 class UFunction : public UStruct
 {
@@ -1250,458 +988,128 @@ public:
 	unsigned long		ReturnValueOffset;							// NOT AUTO-GENERATED PROPERTY
 	unsigned char		UnknownData00[0x4];						// NOT AUTO-GENERATED PROPERTY
 	void*				Func;										// NOT AUTO-GENERATED PROPERTY
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[70];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UFunction::pClassPointer = NULL;
-
-// Class Core.Property
 // 0x0040 (0x0080 - 0x0040)
 class UProperty : public UField
 {
 public:
 	unsigned char                                      UnknownData00[0x40];                            		// 0x0040 (0x0040) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[73];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UProperty::pClassPointer = NULL;
-
-// Class Core.StructProperty
 // 0x0004 (0x0084 - 0x0080)
 class UStructProperty : public UProperty
 {
 public:
 	unsigned char                                      UnknownData00[0x4];                             		// 0x0080 (0x0004) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[72];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UStructProperty::pClassPointer = NULL;
-
-// Class Core.StrProperty
 // 0x0000 (0x0080 - 0x0080)
-class UStrProperty : public UProperty
-{
-public:
+class UStrProperty : public UProperty {};
 
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[76];
-
-		return pClassPointer;
-	};
-};
-
-//UClass* UStrProperty::pClassPointer = NULL;
-
-// Class Core.ObjectProperty
 // 0x0004 (0x0084 - 0x0080)
 class UObjectProperty : public UProperty
 {
 public:
 	unsigned char                                      UnknownData00[0x4];                             		// 0x0080 (0x0004) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[79];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UObjectProperty::pClassPointer = NULL;
-
-// Class Core.ComponentProperty
 // 0x0000 (0x0084 - 0x0084)
-class UComponentProperty : public UObjectProperty
-{
-public:
+class UComponentProperty : public UObjectProperty {};
 
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[78];
-
-		return pClassPointer;
-	};
-};
-
-//UClass* UComponentProperty::pClassPointer = NULL;
-
-// Class Core.ClassProperty
 // 0x0004 (0x0088 - 0x0084)
 class UClassProperty : public UObjectProperty
 {
 public:
 	unsigned char                                      UnknownData00[0x4];                             		// 0x0084 (0x0004) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[82];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UClassProperty::pClassPointer = NULL;
-
-// Class Core.NameProperty
 // 0x0000 (0x0080 - 0x0080)
-class UNameProperty : public UProperty
-{
-public:
+class UNameProperty : public UProperty {};
 
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[84];
-
-		return pClassPointer;
-	};
-};
-
-//UClass* UNameProperty::pClassPointer = NULL;
-
-// Class Core.MapProperty
 // 0x0008 (0x0088 - 0x0080)
 class UMapProperty : public UProperty
 {
 public:
 	unsigned char                                      UnknownData00[0x8];                             		// 0x0080 (0x0008) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[86];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UMapProperty::pClassPointer = NULL;
-
-// Class Core.IntProperty
 // 0x0000 (0x0080 - 0x0080)
-class UIntProperty : public UProperty
-{
-public:
+class UIntProperty : public UProperty {};
 
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[89];
-
-		return pClassPointer;
-	};
-};
-
-//UClass* UIntProperty::pClassPointer = NULL;
-
-// Class Core.IntAttributeProperty
 // 0x0008 (0x0088 - 0x0080)
 class UIntAttributeProperty : public UIntProperty
 {
 public:
 	unsigned char                                      UnknownData00[0x8];                             		// 0x0080 (0x0008) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[88];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UIntAttributeProperty::pClassPointer = NULL;
-
-// Class Core.InterfaceProperty
 // 0x0004 (0x0084 - 0x0080)
 class UInterfaceProperty : public UProperty
 {
 public:
 	unsigned char                                      UnknownData00[0x4];                             		// 0x0080 (0x0004) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[92];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UInterfaceProperty::pClassPointer = NULL;
-
-// Class Core.FloatProperty
 // 0x0000 (0x0080 - 0x0080)
-class UFloatProperty : public UProperty
-{
-public:
+class UFloatProperty : public UProperty {};
 
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[95];
-
-		return pClassPointer;
-	};
-};
-
-//UClass* UFloatProperty::pClassPointer = NULL;
-
-// Class Core.FloatAttributeProperty
 // 0x0008 (0x0088 - 0x0080)
 class UFloatAttributeProperty : public UFloatProperty
 {
 public:
 	unsigned char                                      UnknownData00[0x8];                             		// 0x0080 (0x0008) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[94];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UFloatAttributeProperty::pClassPointer = NULL;
-
-// Class Core.DelegateProperty
 // 0x0008 (0x0088 - 0x0080)
 class UDelegateProperty : public UProperty
 {
 public:
 	unsigned char                                      UnknownData00[0x8];                             		// 0x0080 (0x0008) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[98];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UDelegateProperty::pClassPointer = NULL;
-
-// Class Core.ByteProperty
 // 0x0004 (0x0084 - 0x0080)
 class UByteProperty : public UProperty
 {
 public:
 	unsigned char                                      UnknownData00[0x4];                             		// 0x0080 (0x0004) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[101];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UByteProperty::pClassPointer = NULL;
-
-// Class Core.ByteAttributeProperty
 // 0x0008 (0x008C - 0x0084)
 class UByteAttributeProperty : public UByteProperty
 {
 public:
 	unsigned char                                      UnknownData00[0x8];                             		// 0x0084 (0x0008) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[100];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UByteAttributeProperty::pClassPointer = NULL;
-
-// Class Core.BoolProperty
 // 0x0004 (0x0084 - 0x0080)
 class UBoolProperty : public UProperty
 {
 public:
 	unsigned char                                      UnknownData00[0x4];                             		// 0x0080 (0x0004) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[104];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UBoolProperty::pClassPointer = NULL;
-
-// Class Core.ArrayProperty
 // 0x0004 (0x0084 - 0x0080)
 class UArrayProperty : public UProperty
 {
 public:
 	unsigned char                                      UnknownData00[0x4];                             		// 0x0080 (0x0004) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[106];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UArrayProperty::pClassPointer = NULL;
-
-// Class Core.Enum
 // 0x000C (0x004C - 0x0040)
 class UEnum : public UField
 {
 public:
 	unsigned char                                      UnknownData00[0xC];                             		// 0x0040 (0x000C) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[108];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UEnum::pClassPointer = NULL;
-
-// Class Core.Const
 // 0x000C (0x004C - 0x0040)
 class UConst : public UField
 {
 public:
 	unsigned char                                      UnknownData00[0xC];                             		// 0x0040 (0x000C) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[110];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UConst::pClassPointer = NULL;
-
-// Class Core.Factory
 // 0x0034 (0x0070 - 0x003C)
 class UFactory : public UObject
 {
@@ -1716,44 +1124,11 @@ public:
 	unsigned long                                      bText : 1;                                        		// 0x005C (0x0004) [0x0000000000000000] [0x00000008]
 	int                                                AutoPriority;                                     		// 0x0060 (0x0004) [0x0000000000000000]
 	TArray< struct FString >                           ValidGameNames;                                   		// 0x0064 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[113];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UFactory::pClassPointer = NULL;
-
-// Class Core.TextBufferFactory
 // 0x0000 (0x0070 - 0x0070)
-class UTextBufferFactory : public UFactory
-{
-public:
+class UTextBufferFactory : public UFactory {};
 
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[112];
-
-		return pClassPointer;
-	};
-};
-
-//UClass* UTextBufferFactory::pClassPointer = NULL;
-
-// Class Core.Exporter
 // 0x0028 (0x0064 - 0x003C)
 class UExporter : public UObject
 {
@@ -1762,46 +1137,16 @@ public:
 	TArray< struct FString >                           FormatExtension;                                  		// 0x0040 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< struct FString >                           FormatDescription;                                		// 0x004C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	unsigned char                                      UnknownData01[0xC];                             		// 0x0058 (0x000C) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[116];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UExporter::pClassPointer = NULL;
-
-// Class Core.Component
 // 0x000C (0x0048 - 0x003C)
 class UComponent : public UObject
 {
 public:
 	class UClass*                                      TemplateOwnerClass;                               		// 0x003C (0x0004) [0x0000000000001002]              ( CPF_Const | CPF_Native )
 	struct FName                                       TemplateName;                                     		// 0x0040 (0x0008) [0x0000000000001002]              ( CPF_Const | CPF_Native )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[123];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UComponent::pClassPointer = NULL;
-
-// Class Core.DistributionVector
 // 0x0008 (0x0050 - 0x0048)
 class UDistributionVector : public UComponent
 {
@@ -1810,24 +1155,10 @@ public:
 	unsigned long                                      bCanBeBaked : 1;                                  		// 0x004C (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
 	unsigned long                                      bIsDirty : 1;                                     		// 0x004C (0x0004) [0x0000000000000000] [0x00000002]
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[122];
-
-		return pClassPointer;
-	};
-
 	struct FVector GetVectorValue(float F, int LastExtreme);
 };
 
-//UClass* UDistributionVector::pClassPointer = NULL;
-
-// Class Core.DistributionFloat
 // 0x0008 (0x0050 - 0x0048)
 class UDistributionFloat : public UComponent
 {
@@ -1836,24 +1167,10 @@ public:
 	unsigned long                                      bCanBeBaked : 1;                                  		// 0x004C (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
 	unsigned long                                      bIsDirty : 1;                                     		// 0x004C (0x0004) [0x0000000000000000] [0x00000002]
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[126];
-
-		return pClassPointer;
-	};
-
 	float GetFloatValue(float F);
 };
 
-//UClass* UDistributionFloat::pClassPointer = NULL;
-
-// Class Core.Commandlet
 // 0x0040 (0x007C - 0x003C)
 class UCommandlet : public UObject
 {
@@ -1869,114 +1186,39 @@ public:
 	unsigned long                                      LogToConsole : 1;                                 		// 0x0078 (0x0004) [0x0000000000000000] [0x00000008]
 	unsigned long                                      ShowErrorCount : 1;                               		// 0x0078 (0x0004) [0x0000000000000000] [0x00000010]
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[129];
-
-		return pClassPointer;
-	};
-
 	int eventMain(struct FString Params);
 };
 
-//UClass* UCommandlet::pClassPointer = NULL;
-
-// Class Core.HelpCommandlet
 // 0x0000 (0x007C - 0x007C)
 class UHelpCommandlet : public UCommandlet
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[128];
-
-		return pClassPointer;
-	};
-
 	int eventMain(struct FString Params);
 };
 
-//UClass* UHelpCommandlet::pClassPointer = NULL;
-
-// Class Core.AttributeModifier
 // 0x0008 (0x0044 - 0x003C)
 class UAttributeModifier : public UObject
 {
 public:
 	unsigned char                                      Type;                                             		// 0x003C (0x0001) [0x0000000000000000]
 	float                                              Value;                                            		// 0x0040 (0x0004) [0x0000000000000000]
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[132];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UAttributeModifier::pClassPointer = NULL;
-
-// Class Core.State
 // 0x0044 (0x00D0 - 0x008C)
 class UState : public UStruct
 {
 public:
 	unsigned char                                      UnknownData00[0x44];                            		// 0x008C (0x0044) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[134];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UState::pClassPointer = NULL;
-
-// Class Core.Package
 // 0x00A8 (0x00E4 - 0x003C)
 class UPackage : public UObject
 {
 public:
 	unsigned char                                      UnknownData00[0xA8];                            		// 0x003C (0x00A8) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[136];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UPackage::pClassPointer = NULL;
-
-// Class Core.Class
 // 0x0100 (0x01D0 - 0x00D0)
 class UClass : public UState
 {
@@ -1989,21 +1231,7 @@ public:
 	UObject				*ClassDefaultObject;
 	unsigned int		ClassFlags;
 	unsigned char       UnknownData00[0xD8];                           		// 0x00D0 (0x0100) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[138];
-
-		return pClassPointer;
-	};
 };
-
-//UClass* UClass::pClassPointer = NULL;
 
 #ifdef _MSC_VER
 #pragma pack ( pop )

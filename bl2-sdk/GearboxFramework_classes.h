@@ -1153,51 +1153,17 @@
 # ========================================================================================= #
 */
 
-// Class GearboxFramework.ActorFactoryClone
 // 0x0014 (0x0090 - 0x007C)
 class UActorFactoryClone : public UActorFactory
 {
 public:
 	TArray< class AGearboxPawn* >                      CloneArchetype;                                   		// 0x007C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 	struct FName                                       NewCloneTag;                                      		// 0x0088 (0x0008) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2912];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UActorFactoryClone::pClassPointer = NULL;
-
-// Class GearboxFramework.ActorFactoryWireTerminal
 // 0x0000 (0x007C - 0x007C)
-class UActorFactoryWireTerminal : public UActorFactory
-{
-public:
+class UActorFactoryWireTerminal : public UActorFactory {};
 
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2914];
-
-		return pClassPointer;
-	};
-};
-
-//UClass* UActorFactoryWireTerminal::pClassPointer = NULL;
-
-// Class GearboxFramework.AIDebugCamera
 // 0x0050 (0x008C - 0x003C)
 class UAIDebugCamera : public UObject
 {
@@ -1230,18 +1196,7 @@ public:
 	float                                              Column2LastY;                                     		// 0x0084 (0x0004) [0x0000000000000000]
 	int                                                LastColumnDrawnTo;                                		// 0x0088 (0x0004) [0x0000000000000000]
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2916];
-
-		return pClassPointer;
-	};
-
 	void ToggleAITree();
 	void ToggleTargetViewCones();
 	void ToggleAwarenessZones();
@@ -1268,9 +1223,6 @@ public:
 	void Display(class AHUD* HUD);
 };
 
-//UClass* UAIDebugCamera::pClassPointer = NULL;
-
-// Class GearboxFramework.AITracker
 // 0x00D4 (0x0110 - 0x003C)
 class UAITracker : public UObject
 {
@@ -1279,23 +1231,8 @@ public:
 	int                                                SnapshotSize;                                     		// 0x0104 (0x0004) [0x0000000000000000]
 	int                                                SnapshotIndex;                                    		// 0x0108 (0x0004) [0x0000000000000000]
 	class AActor*                                      DebugOwner;                                       		// 0x010C (0x0004) [0x0000000000002000]              ( CPF_Transient )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2918];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UAITracker::pClassPointer = NULL;
-
-// Class GearboxFramework.AnimNodeSpecialMoveBlend
 // 0x0020 (0x010C - 0x00EC)
 class UAnimNodeSpecialMoveBlend : public UAnimNodeSlot
 {
@@ -1308,18 +1245,7 @@ public:
 	unsigned long                                      bForceLocalSpaceBlend : 1;                        		// 0x0108 (0x0004) [0x0000000000000003] [0x00000001] ( CPF_Edit | CPF_Const )
 	unsigned long                                      IssueNotifiesWhenZeroWeight : 1;                  		// 0x0108 (0x0004) [0x0000000000000003] [0x00000002] ( CPF_Edit | CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2920];
-
-		return pClassPointer;
-	};
-
 	bool IsPlaying(class UGearboxAnimDefinition* AnimSMD);
 	void SetRootMotion(class URootMotionDefinition* RMDef);
 	class UGearboxAnimDefinition* GetCurrentAnimDef();
@@ -1330,58 +1256,27 @@ public:
 	float Play(class UGearboxAnimDefinition* CustomAnimSMD, struct FName AnimNameOverride, float PlayRateScale, float BlendInOverride, float BlendOutOverride);
 };
 
-//UClass* UAnimNodeSpecialMoveBlend::pClassPointer = NULL;
-
-// Class GearboxFramework.AttributeExpressionEvaluator
 // 0x0010 (0x004C - 0x003C)
 class UAttributeExpressionEvaluator : public UExpressionEvaluator
 {
 public:
 	struct FAttributeExpressionData                    Expression;                                       		// 0x003C (0x0010) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2922];
-
-		return pClassPointer;
-	};
-
 	bool Evaluate(class UObject* ContextSource);
 };
 
-//UClass* UAttributeExpressionEvaluator::pClassPointer = NULL;
-
-// Class GearboxFramework.Behavior_CallFunction
 // 0x0008 (0x0054 - 0x004C)
 class UBehavior_CallFunction : public UBehaviorBase
 {
 public:
 	struct FName                                       FunctionName;                                     		// 0x004C (0x0008) [0x0000000000000001]              ( CPF_Edit )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2924];
-
-		return pClassPointer;
-	};
-
 	void CallFunction(class AActor* inActor, struct FName InFunctionName);
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-//UClass* UBehavior_CallFunction::pClassPointer = NULL;
-
-// Class GearboxFramework.Behavior_ChangeRemoteBehaviorSequenceState
 // 0x0044 (0x0090 - 0x004C)
 class UBehavior_ChangeRemoteBehaviorSequenceState : public UBehaviorBase
 {
@@ -1391,24 +1286,10 @@ public:
 	class UObject*                                     SequenceProvider;                                 		// 0x0058 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	struct FNameBasedObjectPath                        ProviderDefinitionPathName;                       		// 0x005C (0x0034) [0x0000000000000002]              ( CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2926];
-
-		return pClassPointer;
-	};
-
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-//UClass* UBehavior_ChangeRemoteBehaviorSequenceState::pClassPointer = NULL;
-
-// Class GearboxFramework.Behavior_ChangeTimer
 // 0x001C (0x0068 - 0x004C)
 class UBehavior_ChangeTimer : public UBehaviorBase
 {
@@ -1419,24 +1300,10 @@ public:
 	struct FAttributeInitializationData                NewTimerDelayFormula;                             		// 0x0054 (0x0010) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	float                                              NewTimerDelay;                                    		// 0x0064 (0x0004) [0x0000000020000002]              ( CPF_Const | CPF_Deprecated )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2928];
-
-		return pClassPointer;
-	};
-
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-//UClass* UBehavior_ChangeTimer::pClassPointer = NULL;
-
-// Class GearboxFramework.Behavior_IsSequenceEnabled
 // 0x0040 (0x008C - 0x004C)
 class UBehavior_IsSequenceEnabled : public UBehaviorBase
 {
@@ -1445,24 +1312,10 @@ public:
 	class UObject*                                     SequenceProvider;                                 		// 0x0054 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	struct FNameBasedObjectPath                        ProviderDefinitionPathName;                       		// 0x0058 (0x0034) [0x0000000000000002]              ( CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2930];
-
-		return pClassPointer;
-	};
-
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-//UClass* UBehavior_IsSequenceEnabled::pClassPointer = NULL;
-
-// Class GearboxFramework.Behavior_PostAkEvent
 // 0x0010 (0x005C - 0x004C)
 class UBehavior_PostAkEvent : public UBehaviorBase
 {
@@ -1475,24 +1328,10 @@ public:
 	unsigned long                                      bLatentWhenNoConnections : 1;                     		// 0x0050 (0x0004) [0x0000000000000000] [0x00000010]
 	struct FAkPlayingInfo                              PlayingInfo;                                      		// 0x0054 (0x0008) [0x0000000000082000]              ( CPF_Transient | CPF_Component )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2932];
-
-		return pClassPointer;
-	};
-
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-//UClass* UBehavior_PostAkEvent::pClassPointer = NULL;
-
-// Class GearboxFramework.BehaviorHelpers
 // 0x0018 (0x0054 - 0x003C)
 class UBehaviorHelpers : public UObject
 {
@@ -1500,18 +1339,7 @@ public:
 	struct FScriptDelegate                             __BehaviorSetStrategy__Delegate;                  		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FScriptDelegate                             __BehaviorStrategy__Delegate;                     		// 0x0048 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2934];
-
-		return pClassPointer;
-	};
-
 	void RunAllBehaviorsForEvent(struct FName EventName, struct FScriptDelegate SetStrategy, struct FScriptDelegate Strategy, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, unsigned char EnumValue);
 	void BehaviorStrategy(struct FPointer BehaviorSet, struct FName EventName, unsigned char EnumValue, TArray< class UBehaviorBase* >* BehaviorList);
 	void BehaviorSetStrategy(TArray< struct FPointer >* BehaviorSetList);
@@ -1523,9 +1351,6 @@ public:
 	struct FVector GetRelativeDirection(struct FRelativeDirectionData DesiredDirection, class UIWorldBody* Source, struct FVector DefaultDirection, struct FName SpawnSocketName);
 };
 
-//UClass* UBehaviorHelpers::pClassPointer = NULL;
-
-// Class GearboxFramework.CompoundExpressionEvaluator
 // 0x000C (0x0048 - 0x003C)
 class UCompoundExpressionEvaluator : public UExpressionEvaluator
 {
@@ -1534,130 +1359,45 @@ public:
 	unsigned char                                      Operator;                                         		// 0x0040 (0x0001) [0x0000000000000001]              ( CPF_Edit )
 	class UExpressionEvaluator*                        Expression2;                                      		// 0x0044 (0x0004) [0x0000000004000001]              ( CPF_Edit | CPF_EditInline )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2936];
-
-		return pClassPointer;
-	};
-
 	bool Evaluate(class UObject* ContextSource);
 };
 
-//UClass* UCompoundExpressionEvaluator::pClassPointer = NULL;
-
-// Class GearboxFramework.ConditionalAttributeValueResolver
 // 0x0020 (0x005C - 0x003C)
 class UConditionalAttributeValueResolver : public UAttributeValueResolver
 {
 public:
 	struct FConditionalInitializationExpressions       ValueExpressions;                                 		// 0x003C (0x0020) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2938];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UConditionalAttributeValueResolver::pClassPointer = NULL;
-
-// Class GearboxFramework.ConstantAttributeValueResolver
 // 0x0004 (0x0040 - 0x003C)
 class UConstantAttributeValueResolver : public UAttributeValueResolver
 {
 public:
 	float                                              ConstantValue;                                    		// 0x003C (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2940];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UConstantAttributeValueResolver::pClassPointer = NULL;
-
-// Class GearboxFramework.ConstraintAttributeValueResolver
 // 0x0028 (0x0064 - 0x003C)
 class UConstraintAttributeValueResolver : public UAttributeValueResolver
 {
 public:
 	struct FRange                                      Constraints;                                      		// 0x003C (0x0028) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2942];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UConstraintAttributeValueResolver::pClassPointer = NULL;
-
-// Class GearboxFramework.FeatherBoneBlendDefinition
 // 0x000C (0x0048 - 0x003C)
 class UFeatherBoneBlendDefinition : public UGBXDefinition
 {
 public:
 	TArray< struct FFeatherBoneBlendData >             BoneBlends;                                       		// 0x003C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2944];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UFeatherBoneBlendDefinition::pClassPointer = NULL;
-
-// Class GearboxFramework.GBXActorList
 // 0x000C (0x0048 - 0x003C)
 class UGBXActorList : public UObject
 {
 public:
 	TArray< struct Fs_actorList >                      ActorList;                                        		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2946];
-
-		return pClassPointer;
-	};
-
 	void RemoveAndDeleteActorsOfClassFromLevel(class UClass* TheClass, class ULevel* Level);
 	void RemoveActorsOfClassFromLevel(class UClass* TheClass, class ULevel* Level);
 	void RemoveAndDeleteActorsFromLevel(class ULevel* Level);
@@ -1670,27 +1410,13 @@ public:
 	void AddActor(class AActor* Actor, class ULevel* Level);
 };
 
-//UClass* UGBXActorList::pClassPointer = NULL;
-
-// Class GearboxFramework.GBXObjectList
 // 0x000C (0x0048 - 0x003C)
 class UGBXObjectList : public UObject
 {
 public:
 	TArray< class UObject* >                           ObjectList;                                       		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2948];
-
-		return pClassPointer;
-	};
-
 	void RemoveObjectsOfClass(class UClass* TheClass);
 	class UObject* FindNextObjectByClass(class UClass* TheClass, int* Index);
 	class UObject* FindFirstObjectByClass(class UClass* TheClass, int* Index);
@@ -1698,32 +1424,13 @@ public:
 	void AddObject(class UObject* TheObject);
 };
 
-//UClass* UGBXObjectList::pClassPointer = NULL;
-
-// Class GearboxFramework.GearboxAIController
 // 0x0000 (0x0684 - 0x0684)
 class AGearboxAIController : public AAIController
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2950];
-
-		return pClassPointer;
-	};
-
 	void ForceMoveToActor(class AActor* destActor);
 };
 
-//UClass* AGearboxAIController::pClassPointer = NULL;
-
-// Class GearboxFramework.GearboxAIMoveNode
 // 0x003C (0x01C4 - 0x0188)
 class AGearboxAIMoveNode : public AActor
 {
@@ -1737,18 +1444,7 @@ public:
 	TArray< class USpecialMoveDefinition* >            SpecialMoves;                                     		// 0x01B4 (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
 	class USpriteComponent*                            Sprite;                                           		// 0x01C0 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2952];
-
-		return pClassPointer;
-	};
-
 	bool DoesPatrolPathExistToPoint(class AGearboxAIMoveNode* PatrolPoint);
 	void GetAllLinkedNodes(TArray< class AGearboxAIMoveNode* >* OutNodes);
 	class AGearboxAIMoveNode* GetNextMoveNodeClosestToPoint(struct FVector TestPoint);
@@ -1761,25 +1457,13 @@ public:
 
 // UClass* AGearboxAIMoveNode::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxCameraBasic
 // 0x0004 (0x0400 - 0x03FC)
 class AGearboxCameraBasic : public ACamera
 {
 public:
 	struct FPointer                                    VfTable_IInterfaceGearboxCamera;                  		// 0x03FC (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2954];
-
-		return pClassPointer;
-	};
-
 	void eventFinishCameraLookAt();
 	void eventEnableThirdPersonLookAt(float LookAtXOffset, float LookAtYOffset, float LookAtZOffset, unsigned char LookAtMode);
 	void BeginCameraLookAt(class AActor* LookAtTarget, struct FName LookAtBone, struct FVector TargetLocation, float Zoom, struct FVector2D FOV, float Duration, float TransitionTimeIn, float TransitionTimeOut);
@@ -1790,7 +1474,6 @@ public:
 
 // UClass* AGearboxCameraBasic::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxCameraModifier
 // 0x0031 (0x0089 - 0x0058)
 class UGearboxCameraModifier : public UCameraModifier
 {
@@ -1806,18 +1489,7 @@ public:
 	unsigned long                                      AdjustForTimeDilation : 1;                        		// 0x0084 (0x0004) [0x0000000000000002] [0x00000008] ( CPF_Const )
 	unsigned char                                      FadeMode;                                         		// 0x0088 (0x0001) [0x0000000000000000]
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2956];
-
-		return pClassPointer;
-	};
-
 	float LerpFOV(float Src, float Dest, float T);
 	struct FRotator LerpRotation(struct FRotator Src, struct FRotator Dest, float T);
 	struct FVector LerpLocation(struct FVector Src, struct FVector Dest, float T);
@@ -1835,45 +1507,15 @@ public:
 
 // UClass* UGearboxCameraModifier::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxCheatManager
 // 0x0000 (0x005C - 0x005C)
-class UGearboxCheatManager : public UCheatManager
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2958];
-
-		return pClassPointer;
-	};
-};
+class UGearboxCheatManager : public UCheatManager {};
 
 // UClass* UGearboxCheatManager::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxDialogInterface
 // 0x0000 (0x003C - 0x003C)
 class UGearboxDialogInterface : public UInterface
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2960];
-
-		return pClassPointer;
-	};
-
 	void eventServerDialog_TriggerEvent(class UGearboxDialogEventTag* EventTag, class AActor* Other, class UObject* ObjectParameter);
 	void SetDialogNameTag(class UGearboxDialogNameTag* NewName);
 	struct FGearboxDialogReplicatedData GetReplicatedDialogData();
@@ -1887,7 +1529,6 @@ public:
 
 // UClass* UGearboxDialogInterface::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxEditorNode
 // 0x0030 (0x006C - 0x003C)
 class UGearboxEditorNode : public UObject
 {
@@ -1905,24 +1546,12 @@ public:
 	unsigned long                                      bAllowMultipleVariables : 1;                      		// 0x0064 (0x0004) [0x0000000000000000] [0x00000040]
 	float                                              SliderPosition;                                   		// 0x0068 (0x0004) [0x0000000000000000]
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2962];
-
-		return pClassPointer;
-	};
-
 	bool IsChild(class UGearboxEditorNode* TestNode);
 };
 
 // UClass* UGearboxEditorNode::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxEngine
 // 0x0020 (0x07CC - 0x07AC)
 class UGearboxEngine : public UGameEngine
 {
@@ -1934,18 +1563,7 @@ public:
 	class USparkInterface*                             SparkInterface;                                   		// 0x07C4 (0x0008) [0x0000000000002002]              ( CPF_Const | CPF_Transient )
 	unsigned char                                      UnknownData00[0x4];                             		// 0x07C8 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2964];
-
-		return pClassPointer;
-	};
-
 	class USparkInterface* GetSparkInterface();
 	bool eventIsCurrentDeviceValid(int SizeNeeded);
 	bool HasStorageDeviceBeenRemoved();
@@ -1955,30 +1573,15 @@ public:
 
 // UClass* UGearboxEngine::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxGameInfo
 // 0x0000 (0x0330 - 0x0330)
 class AGearboxGameInfo : public AGameInfo
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2966];
-
-		return pClassPointer;
-	};
-
 	void eventPostLogin(class APlayerController* NewPlayer);
 };
 
 // UClass* AGearboxGameInfo::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxGFxMovie
 // 0x008C (0x0254 - 0x01C8)
 class UGearboxGFxMovie : public UGFxMovie
 {
@@ -2006,18 +1609,7 @@ public:
 	struct FScriptDelegate                             __OnInputAxis__Delegate;                          		// 0x023C (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 	struct FScriptDelegate                             __OnClosed__Delegate;                             		// 0x0248 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2968];
-
-		return pClassPointer;
-	};
-
 	void extSetLanguageExt(struct FString ClipPath);
 	void OnClosedOnDeath();
 	bool IsShowingFlashMouse();
@@ -2070,32 +1662,19 @@ public:
 
 // UClass* UGearboxGFxMovie::pClassPointer = NULL;
 
-// Class GearboxFramework.GFxMovie_StateParent
 // 0x0004 (0x0258 - 0x0254)
 class UGFxMovie_StateParent : public UGearboxGFxMovie
 {
 public:
 	class UClass*                                      StateClass;                                       		// 0x0254 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2970];
-
-		return pClassPointer;
-	};
-
 	void MovieState_OnChanged(unsigned long bStateWasChanged);
 	bool eventStart(unsigned long StartPaused);
 };
 
 // UClass* UGFxMovie_StateParent::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxGlobals
 // 0x0070 (0x00F4 - 0x0084)
 class UGearboxGlobals : public UGearboxEngineGlobals
 {
@@ -2123,18 +1702,7 @@ public:
 	class UAkComponent*                                UIAudioComponent;                                 		// 0x00EC (0x0004) [0x0000000004082008]              ( CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline )
 	class UGearboxDialogManager*                       TheDialogManager;                                 		// 0x00F0 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2972];
-
-		return pClassPointer;
-	};
-
 	class UBehaviorKernel* GetBehaviorKernel();
 	class UGearboxDialogManager* GetDialogManager();
 	float GetPopulationRespawnDelay();
@@ -2166,30 +1734,16 @@ public:
 
 // UClass* UGearboxGlobals::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxGlobalsDefinition
 // 0x0008 (0x0044 - 0x003C)
 class UGearboxGlobalsDefinition : public UGBXDefinition
 {
 public:
 	float                                              RespawnDelayInSeconds;                            		// 0x003C (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	class UGearboxDialogGlobalsDefinition*             Dialog;                                           		// 0x0040 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2974];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UGearboxGlobalsDefinition::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxLocationRequest
 // 0x004C (0x0088 - 0x003C)
 class UGearboxLocationRequest : public UObject
 {
@@ -2204,18 +1758,7 @@ public:
 	struct FVector                                     SearchOriginResult;                               		// 0x0070 (0x000C) [0x0000000000000000]
 	struct FVector                                     SearchDirectionResult;                            		// 0x007C (0x000C) [0x0000000000000000]
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2976];
-
-		return pClassPointer;
-	};
-
 	struct FVector GetLastDirection();
 	struct FVector GetLastOrigin();
 	bool GetDirection(class AActor* ContextActor, struct FVector* OutDirection);
@@ -2225,7 +1768,6 @@ public:
 
 // UClass* UGearboxLocationRequest::pClassPointer = NULL;
 
-// Class GearboxFramework.PawnMoveLocationRequest
 // 0x002C (0x00B4 - 0x0088)
 class UPawnMoveLocationRequest : public UGearboxLocationRequest
 {
@@ -2239,24 +1781,12 @@ public:
 	class URuleEventDef*                               FailureEvent;                                     		// 0x00A0 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	struct FAttributeInitializationData                OverrideDistanceForCover;                         		// 0x00A4 (0x0010) [0x0000000000000001]              ( CPF_Edit )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2978];
-
-		return pClassPointer;
-	};
-
 	bool Get(class AActor* ContextActor, struct FVector* OutLocation);
 };
 
 // UClass* UPawnMoveLocationRequest::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxPawn
 // 0x006C (0x06FC - 0x0690)
 class AGearboxPawn : public AGamePawn
 {
@@ -2274,18 +1804,7 @@ public:
 	struct FGearboxDialogReplicatedData                DialogReplicatedData;                             		// 0x06E0 (0x0014) [0x0000000000000020]              ( CPF_Net )
 	struct FAkPlayingInfo                              DyingScream;                                      		// 0x06F4 (0x0008) [0x0000000000082000]              ( CPF_Transient | CPF_Component )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2980];
-
-		return pClassPointer;
-	};
-
 	struct FVector GetAimDirection();
 	void SetDialogNameTag(class UGearboxDialogNameTag* NewName);
 	void eventServerDialog_TriggerEvent(class UGearboxDialogEventTag* EventTag, class AActor* Other, class UObject* ObjectParameter);
@@ -2322,7 +1841,6 @@ public:
 
 // UClass* AGearboxPawn::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxPlayerController
 // 0x00F8 (0x09F4 - 0x08FC)
 class AGearboxPlayerController : public AGamePlayerController
 {
@@ -2348,18 +1866,7 @@ public:
 	int                                                SessionBundleNumber;                              		// 0x09EC (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	class UGearboxProfileSettings*                     CachedProfileSettings;                            		// 0x09F0 (0x0004) [0x0000000000000000]
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2982];
-
-		return pClassPointer;
-	};
-
 	int RequestTitleStorageFile(struct FString Filename, struct FScriptDelegate TitleStorageRequestCompleteDelegate, unsigned char AcceptsType, struct FString CustomAcceptsType);
 	void ShowSparkID();
 	bool ShouldCheckRemoteControlCheckbox(unsigned char CheckBoxName, class AHUD* HUD);
@@ -2444,74 +1951,30 @@ public:
 
 // UClass* AGearboxPlayerController::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxPlayerInput
 // 0x0000 (0x017C - 0x017C)
 class UGearboxPlayerInput : public UPlayerInput
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2984];
-
-		return pClassPointer;
-	};
-
 	void eventPlayerInput(float DeltaTime);
 };
 
 // UClass* UGearboxPlayerInput::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxPlayerReplicationInfo
 // 0x0008 (0x025C - 0x0254)
 class AGearboxPlayerReplicationInfo : public APlayerReplicationInfo
 {
 public:
 	unsigned char                                      Difficulty;                                       		// 0x0254 (0x0001) [0x0000000000000020]              ( CPF_Net )
 	int                                                Dummy;                                            		// 0x0258 (0x0004) [0x0000000000000000]
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2986];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* AGearboxPlayerReplicationInfo::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxProfileSettings
 // 0x0000 (0x0098 - 0x0098)
-class UGearboxProfileSettings : public UOnlineProfileSettings
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2988];
-
-		return pClassPointer;
-	};
-};
+class UGearboxProfileSettings : public UOnlineProfileSettings {};
 
 // UClass* UGearboxProfileSettings::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxRenderTextureManager
 // 0x003C (0x0078 - 0x003C)
 class UGearboxRenderTextureManager : public UObject
 {
@@ -2524,18 +1987,7 @@ public:
 	TArray< struct FThumbnailLightData >               DefaultLights;                                    		// 0x0068 (0x000C) [0x0000000000480000]              ( CPF_Component | CPF_NeedCtorLink )
 	float                                              ThumbnailTextureArea;                             		// 0x0074 (0x0004) [0x0000000000000002]              ( CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2990];
-
-		return pClassPointer;
-	};
-
 	void SetThumbnailMesh(class UTexture* Texture, class UMeshComponent* Mesh);
 	void FreeContext(struct FName Context);
 	void FreeThumbnail(class UTexture* Texture);
@@ -2548,7 +2000,6 @@ public:
 
 // UClass* UGearboxRenderTextureManager::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxSeqAct_DestroyPopulationActors
 // 0x001C (0x00D0 - 0x00B4)
 class UGearboxSeqAct_DestroyPopulationActors : public USeqAct_Latent
 {
@@ -2558,90 +2009,36 @@ public:
 	unsigned long                                      bActorsDestroyed : 1;                             		// 0x00B4 (0x0004) [0x0000000000000000] [0x00000004]
 	TArray< class APopulationOpportunity* >            Opportunities;                                    		// 0x00B8 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 	TArray< class APopulationEncounter* >              Encounters;                                       		// 0x00C4 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2992];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UGearboxSeqAct_DestroyPopulationActors::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxSeqAct_ResetPopulationCount
 // 0x0000 (0x00A4 - 0x00A4)
-class UGearboxSeqAct_ResetPopulationCount : public USequenceAction
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2994];
-
-		return pClassPointer;
-	};
-};
+class UGearboxSeqAct_ResetPopulationCount : public USequenceAction {};
 
 // UClass* UGearboxSeqAct_ResetPopulationCount::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxSkeletalMeshComponent
 // 0x0004 (0x06B0 - 0x06AC)
 class UGearboxSkeletalMeshComponent : public USkeletalMeshComponent
 {
 public:
 	float                                              FOV;                                              		// 0x06AC (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2996];
-
-		return pClassPointer;
-	};
-
 	void SetFOV(float NewFOV);
 };
 
 // UClass* UGearboxSkeletalMeshComponent::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxStaticMeshComponent
 // 0x0004 (0x024C - 0x0248)
 class UGearboxStaticMeshComponent : public UStaticMeshComponent
 {
 public:
 	float                                              FOV;                                              		// 0x0248 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2998];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UGearboxStaticMeshComponent::pClassPointer = NULL;
 
-// Class GearboxFramework.GestaltSkeletalMeshDefinition
 // 0x0038 (0x0074 - 0x003C)
 class UGestaltSkeletalMeshDefinition : public UGBXDefinition
 {
@@ -2653,25 +2050,13 @@ public:
 	TArray< struct FGestaltSocketRemapEntry >          GestaltSocketMappings;                            		// 0x005C (0x000C) [0x0000000000420001]              ( CPF_Edit | CPF_EditConst | CPF_NeedCtorLink )
 	TArray< struct FGestaltPartBoundsEntry >           GestaltPartBounds;                                		// 0x0068 (0x000C) [0x0000000000420001]              ( CPF_Edit | CPF_EditConst | CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3000];
-
-		return pClassPointer;
-	};
-
 	void InitGestaltAccessoryMeshDataFromParts(class USkeletalMesh* MeshToBorrowBonesFrom, class UGestaltPartMatrices* AccessoryMatrices, class USkeletalMeshComponent* TargetComponent, TArray< struct FGestaltPartPermutation >* PermutationConfiguration);
 	void InitGestaltMeshDataFromParts(class USkeletalMeshComponent* TargetComponent, TArray< struct FName >* PartMeshNames);
 };
 
 // UClass* UGestaltSkeletalMeshDefinition::pClassPointer = NULL;
 
-// Class GearboxFramework.GFxActorMoviePool
 // 0x001C (0x0058 - 0x003C)
 class UGFxActorMoviePool : public UObject
 {
@@ -2680,18 +2065,7 @@ public:
 	TArray< struct FMovieInstanceArray >               Pools;                                            		// 0x0040 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< class UIGFxActorMovie* >                   MovieTargets;                                     		// 0x004C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3002];
-
-		return pClassPointer;
-	};
-
 	void DisplayDebug(class AHUD* HUD, float X, float* out_YL, float* out_YPos);
 	struct FString GetPoolName(int Index);
 	struct FString PoolStyleString(unsigned char Pooling);
@@ -2700,7 +2074,6 @@ public:
 
 // UClass* UGFxActorMoviePool::pClassPointer = NULL;
 
-// Class GearboxFramework.GFxMovieDefinition
 // 0x0080 (0x00BC - 0x003C)
 class UGFxMovieDefinition : public UGBXDefinition
 {
@@ -2734,18 +2107,7 @@ public:
 	TArray< struct FAkEventResolver >                  InteractionOverrideSounds;                        		// 0x00A4 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 	TArray< class UGFxMovieState* >                    BaseMovieStates;                                  		// 0x00B0 (0x000C) [0x0000000004400001]              ( CPF_Edit | CPF_NeedCtorLink | CPF_EditInline )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3004];
-
-		return pClassPointer;
-	};
-
 	class UGFxMovieDefinition* FindMovieLink(struct FName MovieName);
 	void PostMovieStart(class UGearboxGFxMovie* StartedMovie);
 	class UGearboxGFxMovie* SpawnPlayerMovie(class AGearboxPlayerController* Owner, class UIGFxActorMovie* TargetActor, class UObject* ContextObject);
@@ -2755,7 +2117,6 @@ public:
 
 // UClass* UGFxMovieDefinition::pClassPointer = NULL;
 
-// Class GearboxFramework.GFxMovieDrawStyle
 // 0x000C (0x0048 - 0x003C)
 class UGFxMovieDrawStyle : public UObject
 {
@@ -2764,24 +2125,12 @@ public:
 	class UIGFxActorMovie*                             TargetActor;                                      		// 0x0040 (0x0008) [0x0000000000002000]              ( CPF_Transient )
 	unsigned char                                      UnknownData00[0x4];                             		// 0x0044 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3008];
-
-		return pClassPointer;
-	};
-
 	struct FString GetStyleDebugString();
 };
 
 // UClass* UGFxMovieDrawStyle::pClassPointer = NULL;
 
-// Class GearboxFramework.GFxMovieDrawStyleHUD
 // 0x0040 (0x0088 - 0x0048)
 class UGFxMovieDrawStyleHUD : public UGFxMovieDrawStyle
 {
@@ -2791,68 +2140,27 @@ public:
 	unsigned long                                      bCacheValid : 1;                                  		// 0x0074 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
 	float                                              MovieScreenPos[0x4];                            		// 0x0078 (0x0010) [0x0000000000002000]              ( CPF_Transient )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3010];
-
-		return pClassPointer;
-	};
-
 	bool eventRequiresClientInstance();
 };
 
 // UClass* UGFxMovieDrawStyleHUD::pClassPointer = NULL;
 
-// Class GearboxFramework.GFxMovieDrawStyleRTT
 // 0x0005 (0x004D - 0x0048)
 class UGFxMovieDrawStyleRTT : public UGFxMovieDrawStyle
 {
 public:
 	int                                                TextureSize;                                      		// 0x0048 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	unsigned char                                      RenderTextureMode;                                		// 0x004C (0x0001) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3012];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UGFxMovieDrawStyleRTT::pClassPointer = NULL;
 
-// Class GearboxFramework.GFxMovieDrawStyleComponent
 // 0x0003 (0x0050 - 0x004D)
-class UGFxMovieDrawStyleComponent : public UGFxMovieDrawStyleRTT
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3014];
-
-		return pClassPointer;
-	};
-};
+class UGFxMovieDrawStyleComponent : public UGFxMovieDrawStyleRTT {};
 
 // UClass* UGFxMovieDrawStyleComponent::pClassPointer = NULL;
 
-// Class GearboxFramework.GFxMovieDrawStyleMesh
 // 0x0030 (0x0080 - 0x0050)
 class UGFxMovieDrawStyleMesh : public UGFxMovieDrawStyleComponent
 {
@@ -2868,71 +2176,32 @@ public:
 	class UMaterialInstanceConstant*                   Mati;                                             		// 0x0078 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	class UMaterialInterface*                          OriginalMaterial;                                 		// 0x007C (0x0004) [0x0000000000002000]              ( CPF_Transient )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3016];
-
-		return pClassPointer;
-	};
-
 	struct FString GetStyleDebugString();
 	bool eventRequiresClientInstance();
 };
 
 // UClass* UGFxMovieDrawStyleMesh::pClassPointer = NULL;
 
-// Class GearboxFramework.GFxMovieDrawStyleSprite
 // 0x0008 (0x0058 - 0x0050)
 class UGFxMovieDrawStyleSprite : public UGFxMovieDrawStyleComponent
 {
 public:
 	int                                                SpriteSize;                                       		// 0x0050 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	class USpriteRTTComponent*                         TheSprite;                                        		// 0x0054 (0x0004) [0x0000000004082008]              ( CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3018];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UGFxMovieDrawStyleSprite::pClassPointer = NULL;
 
-// Class GearboxFramework.GFxMovieDrawStyleSplitscreen
 // 0x0000 (0x0048 - 0x0048)
 class UGFxMovieDrawStyleSplitscreen : public UGFxMovieDrawStyle
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3020];
-
-		return pClassPointer;
-	};
-
 	bool eventRequiresClientInstance();
 };
 
 // UClass* UGFxMovieDrawStyleSplitscreen::pClassPointer = NULL;
 
-// Class GearboxFramework.GFxMovieManager
 // 0x0018 (0x0054 - 0x003C)
 class UGFxMovieManager : public UObject
 {
@@ -2940,18 +2209,7 @@ public:
 	TArray< class AGearboxPlayerController* >          Subscribers;                                      		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< class UGFxActorMoviePool* >                MoviePools;                                       		// 0x0048 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3022];
-
-		return pClassPointer;
-	};
-
 	void ChangeMovieState(class UIGFxActorMovie* TargetActor, struct FName State, unsigned char Change, class AGearboxPlayerController* PC);
 	void Unsubscribe(class AGearboxPlayerController* PC);
 	void Subscribe(class AGearboxPlayerController* PC);
@@ -2963,7 +2221,6 @@ public:
 
 // UClass* UGFxMovieManager::pClassPointer = NULL;
 
-// Class GearboxFramework.GFxMovieState
 // 0x0020 (0x005C - 0x003C)
 class UGFxMovieState : public UObject
 {
@@ -2973,18 +2230,7 @@ public:
 	unsigned char                                      StateType;                                        		// 0x004C (0x0001) [0x0000000000000001]              ( CPF_Edit )
 	TArray< struct FMovieStateData >                   AllStates;                                        		// 0x0050 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3024];
-
-		return pClassPointer;
-	};
-
 	struct FString GetDebugString(class UGearboxGFxMovie* Movie, unsigned long bIncludeFlags);
 	void ApplyMovieState(class UGearboxGFxMovie* Movie, class UClass* HandlerClass);
 	int FindMovieState(struct FName TheState);
@@ -2995,51 +2241,24 @@ public:
 
 // UClass* UGFxMovieState::pClassPointer = NULL;
 
-// Class GearboxFramework.GFxMovieStateCustom
 // 0x000C (0x0068 - 0x005C)
 class UGFxMovieStateCustom : public UGFxMovieState
 {
 public:
 	TArray< struct FMovieStateData >                   CustomStates;                                     		// 0x005C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3026];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UGFxMovieStateCustom::pClassPointer = NULL;
 
-// Class GearboxFramework.GFxMovieStateFlags
 // 0x000C (0x0068 - 0x005C)
 class UGFxMovieStateFlags : public UGFxMovieState
 {
 public:
 	TArray< struct FName >                             CustomFlags;                                      		// 0x005C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3028];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UGFxMovieStateFlags::pClassPointer = NULL;
 
-// Class GearboxFramework.GFxMovieStatePlayerAware
 // 0x001C (0x0078 - 0x005C)
 class UGFxMovieStatePlayerAware : public UGFxMovieState
 {
@@ -3048,41 +2267,16 @@ public:
 	TArray< struct FMovieStateData >                   LookStates;                                       		// 0x0060 (0x000C) [0x0000000000400041]              ( CPF_Edit | CPF_EditConstArray | CPF_NeedCtorLink )
 	TArray< struct FMovieRangeStateData >              RangeStates;                                      		// 0x006C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3030];
-
-		return pClassPointer;
-	};
-
 	int EnableState(struct FName TheState, unsigned long bEnable, struct FMovieStateStruct* MovieState);
 };
 
 // UClass* UGFxMovieStatePlayerAware::pClassPointer = NULL;
 
-// Class GearboxFramework.IAIInterface
 // 0x0000 (0x003C - 0x003C)
 class UIAIInterface : public UInterface
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3032];
-
-		return pClassPointer;
-	};
-
 	void InitSequence(class UActionSequence* NewSequence);
 	class UPawnAllegiance* GetAllegiance();
 	class UAIDefinition* GetAIDefinition();
@@ -3095,45 +2289,15 @@ public:
 
 // UClass* UIAIInterface::pClassPointer = NULL;
 
-// Class GearboxFramework.IConstructObject
 // 0x0000 (0x003C - 0x003C)
-class UIConstructObject : public UInterface
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3034];
-
-		return pClassPointer;
-	};
-};
+class UIConstructObject : public UInterface {};
 
 // UClass* UIConstructObject::pClassPointer = NULL;
 
-// Class GearboxFramework.IGFxActorMovie
 // 0x0000 (0x003C - 0x003C)
 class UIGFxActorMovie : public UInterface
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3036];
-
-		return pClassPointer;
-	};
-
 	void GFx_NotifyMovieDestroy(class UGearboxGFxMovie* Movie);
 	void GFx_NotifyMovieCreate(class UGearboxGFxMovie* Movie);
 	class AActor* GFx_GetMovieActor();
@@ -3141,45 +2305,15 @@ public:
 
 // UClass* UIGFxActorMovie::pClassPointer = NULL;
 
-// Class GearboxFramework.INounAttributeProvider
 // 0x0000 (0x003C - 0x003C)
-class UINounAttributeProvider : public UInterface
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3038];
-
-		return pClassPointer;
-	};
-};
+class UINounAttributeProvider : public UInterface {};
 
 // UClass* UINounAttributeProvider::pClassPointer = NULL;
 
-// Class GearboxFramework.InterfaceGearboxCamera
 // 0x0000 (0x003C - 0x003C)
 class UInterfaceGearboxCamera : public UInterface
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3040];
-
-		return pClassPointer;
-	};
-
 	void eventFinishCameraLookAt();
 	void EnableThirdPersonLookAt(float LookAtXOffset, float LookAtYOffset, float LookAtZOffset, unsigned char LookAtMode);
 	void BeginCameraLookAt(class AActor* LookAtTarget, struct FName LookAtBone, struct FVector TargetLocation, float Zoom, struct FVector2D FOV, float Duration, float TransitionTimeIn, float TransitionTimeOut);
@@ -3187,140 +2321,57 @@ public:
 
 // UClass* UInterfaceGearboxCamera::pClassPointer = NULL;
 
-// Class GearboxFramework.IStreamingDataEvent
 // 0x0000 (0x003C - 0x003C)
 class UIStreamingDataEvent : public UInterface
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3042];
-
-		return pClassPointer;
-	};
-
 	void eventRunStreamingDataEvent(struct FName EventName, class UObject* EventInstigator, class UObject* OtherEventParticipantObject, int IntParam, float FloatParam);
 };
 
 // UClass* UIStreamingDataEvent::pClassPointer = NULL;
 
-// Class GearboxFramework.LeviathanChannel
 // 0x0010 (0x0078 - 0x0068)
 class ULeviathanChannel : public UChannel
 {
 public:
 	unsigned char                                      UnknownData00[0x10];                            		// 0x0068 (0x0010) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3044];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* ULeviathanChannel::pClassPointer = NULL;
 
-// Class GearboxFramework.NoContextNeededAttributeContextResolver
 // 0x0000 (0x003C - 0x003C)
-class UNoContextNeededAttributeContextResolver : public UAttributeContextResolver
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3046];
-
-		return pClassPointer;
-	};
-};
+class UNoContextNeededAttributeContextResolver : public UAttributeContextResolver {};
 
 // UClass* UNoContextNeededAttributeContextResolver::pClassPointer = NULL;
 
-// Class GearboxFramework.NounAttributeValueResolver
 // 0x0014 (0x0050 - 0x003C)
 class UNounAttributeValueResolver : public UAttributeValueResolver
 {
 public:
 	unsigned char                                      ReplicationStrategy;                              		// 0x003C (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	struct FAttributeInitializationData                DefaultValue;                                     		// 0x0040 (0x0010) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3048];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UNounAttributeValueResolver::pClassPointer = NULL;
 
-// Class GearboxFramework.ObjectFunctionAttributeValueResolver
 // 0x000C (0x0048 - 0x003C)
 class UObjectFunctionAttributeValueResolver : public UAttributeValueResolver
 {
 public:
 	struct FString                                     FunctionCall;                                     		// 0x003C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3050];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UObjectFunctionAttributeValueResolver::pClassPointer = NULL;
 
-// Class GearboxFramework.ObjectPropertyContextResolver
 // 0x0008 (0x0044 - 0x003C)
 class UObjectPropertyContextResolver : public UAttributeContextResolver
 {
 public:
 	struct FName                                       PropertyName;                                     		// 0x003C (0x0008) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3052];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UObjectPropertyContextResolver::pClassPointer = NULL;
 
-// Class GearboxFramework.PhysicsStateExpressionEvaluator
 // 0x0008 (0x0044 - 0x003C)
 class UPhysicsStateExpressionEvaluator : public UExpressionEvaluator
 {
@@ -3328,41 +2379,16 @@ public:
 	unsigned char                                      PhysicsState;                                     		// 0x003C (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	unsigned long                                      bIsInState : 1;                                   		// 0x0040 (0x0004) [0x0000000000000003] [0x00000001] ( CPF_Edit | CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3054];
-
-		return pClassPointer;
-	};
-
 	bool Evaluate(class UObject* ContextSource);
 };
 
 // UClass* UPhysicsStateExpressionEvaluator::pClassPointer = NULL;
 
-// Class GearboxFramework.PopulationAspect
 // 0x0000 (0x003C - 0x003C)
 class UPopulationAspect : public UObject
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3056];
-
-		return pClassPointer;
-	};
-
 	void eventDenStatRemoved(class APawn* DenPawn);
 	void eventDenStatAdded(class APawn* DenPawn);
 	void eventEnabledStatusChanged(unsigned long bIsEnabled, unsigned long bHasActiveActors);
@@ -3374,28 +2400,11 @@ public:
 
 // UClass* UPopulationAspect::pClassPointer = NULL;
 
-// Class GearboxFramework.PopulationBodyTag
 // 0x0000 (0x003C - 0x003C)
-class UPopulationBodyTag : public UGBXDefinition
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3058];
-
-		return pClassPointer;
-	};
-};
+class UPopulationBodyTag : public UGBXDefinition {};
 
 // UClass* UPopulationBodyTag::pClassPointer = NULL;
 
-// Class GearboxFramework.PopulationEncounter
 // 0x0044 (0x01CC - 0x0188)
 class APopulationEncounter : public AInfo
 {
@@ -3413,18 +2422,7 @@ public:
 	float                                              TimeToStartNextWave;                              		// 0x01C4 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	float                                              RespawnDelayStartTime;                            		// 0x01C8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3060];
-
-		return pClassPointer;
-	};
-
 	void eventTriggerKismetAllSpawnedEvent();
 	void eventTriggerKismetDeathEvent();
 	void OnToggle(class USeqAct_Toggle* Action);
@@ -3434,70 +2432,21 @@ public:
 
 // UClass* APopulationEncounter::pClassPointer = NULL;
 
-// Class GearboxFramework.PopulationEncounterRenderingComponent
 // 0x0000 (0x0210 - 0x0210)
-class UPopulationEncounterRenderingComponent : public UPrimitiveComponent
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3062];
-
-		return pClassPointer;
-	};
-};
+class UPopulationEncounterRenderingComponent : public UPrimitiveComponent {};
 
 // UClass* UPopulationEncounterRenderingComponent::pClassPointer = NULL;
 
-// Class GearboxFramework.PopulationOpportunityCombatRenderingComponent
 // 0x0000 (0x0210 - 0x0210)
-class UPopulationOpportunityCombatRenderingComponent : public UPrimitiveComponent
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3064];
-
-		return pClassPointer;
-	};
-};
+class UPopulationOpportunityCombatRenderingComponent : public UPrimitiveComponent {};
 
 // UClass* UPopulationOpportunityCombatRenderingComponent::pClassPointer = NULL;
 
-// Class GearboxFramework.PopulationSpawnedActorTagDefinition
 // 0x0000 (0x003C - 0x003C)
-class UPopulationSpawnedActorTagDefinition : public UGBXDefinition
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3066];
-
-		return pClassPointer;
-	};
-};
+class UPopulationSpawnedActorTagDefinition : public UGBXDefinition {};
 
 // UClass* UPopulationSpawnedActorTagDefinition::pClassPointer = NULL;
 
-// Class GearboxFramework.PopUpDebugBarGraph
 // 0x0040 (0x007C - 0x003C)
 class UPopUpDebugBarGraph : public UObject
 {
@@ -3515,18 +2464,7 @@ public:
 	float                                              TitleTextPaddingY;                                		// 0x0074 (0x0004) [0x0000000000000002]              ( CPF_Const )
 	float                                              ColumnValueTextOffsetY;                           		// 0x0078 (0x0004) [0x0000000000000002]              ( CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3068];
-
-		return pClassPointer;
-	};
-
 	void Display(float DeltaSeconds, class UCanvas* Canvas);
 	float GetValue(int ColumnNdx);
 	void SetValue(int ColumnNdx, float NewValue);
@@ -3536,7 +2474,6 @@ public:
 
 // UClass* UPopUpDebugBarGraph::pClassPointer = NULL;
 
-// Class GearboxFramework.RandomAttributeValueResolver
 // 0x0040 (0x007C - 0x003C)
 class URandomAttributeValueResolver : public UAttributeValueResolver
 {
@@ -3546,40 +2483,14 @@ public:
 	struct FAttributeInitializationData                UpperBound;                                       		// 0x0050 (0x0010) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	struct FAttributeInitializationData                ValueLifetime;                                    		// 0x0060 (0x0010) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	TArray< struct FSavedRandomValue >                 SavedRandomValues;                                		// 0x0070 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3070];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* URandomAttributeValueResolver::pClassPointer = NULL;
 
-// Class GearboxFramework.RegionDefinition
 // 0x0000 (0x003C - 0x003C)
 class URegionDefinition : public UGBXDefinition
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3072];
-
-		return pClassPointer;
-	};
-
 	bool GetDefaultRegionGameStage(int* MinGameStage, int* MaxGameStage, int* AwesomeLevel, int* GameStageIncreaseOverPlayerLevel);
 	bool TestRegionGameStage(unsigned long bDefaultGameStage, int* GameStage, int* AwesomeLevel);
 	bool GetRegionGameStage(unsigned long bDefaultGameStage, int* GameStage, int* AwesomeLevel);
@@ -3587,7 +2498,6 @@ public:
 
 // UClass* URegionDefinition::pClassPointer = NULL;
 
-// Class GearboxFramework.RootMotionDefinition
 // 0x0008 (0x0044 - 0x003C)
 class URootMotionDefinition : public UGBXDefinition
 {
@@ -3596,23 +2506,10 @@ public:
 	unsigned char                                      RootBoneOption[0x3];                            		// 0x003D (0x0003) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	unsigned char                                      RootRotationMode;                                 		// 0x0040 (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	unsigned char                                      RootRotationOption[0x3];                        		// 0x0041 (0x0003) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3074];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* URootMotionDefinition::pClassPointer = NULL;
 
-// Class GearboxFramework.RuleEngineLoadBalanceManager
 // 0x0034 (0x0070 - 0x003C)
 class URuleEngineLoadBalanceManager : public UObject
 {
@@ -3625,24 +2522,12 @@ public:
 	unsigned long                                      bIsDebugging : 1;                                 		// 0x0068 (0x0004) [0x0000000000000000] [0x00000001]
 	int                                                MSPosition;                                       		// 0x006C (0x0004) [0x0000000000000000]
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3076];
-
-		return pClassPointer;
-	};
-
 	void SetAsDebugging(unsigned long bSetDebugging);
 };
 
 // UClass* URuleEngineLoadBalanceManager::pClassPointer = NULL;
 
-// Class GearboxFramework.ScreenSpaceManager
 // 0x0058 (0x0094 - 0x003C)
 class UScreenSpaceManager : public UObject
 {
@@ -3653,23 +2538,10 @@ public:
 	unsigned char                                      UnknownData00[0x8];                             		// 0x0048 (0x0008) MISSED OFFSET
 	struct FMatrix                                     ViewProjectionMatrix;                             		// 0x0050 (0x0040) [0x0000000000000000]
 	unsigned long                                      bMatricesUpToDate : 1;                            		// 0x0090 (0x0004) [0x0000000000000000] [0x00000001]
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3078];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UScreenSpaceManager::pClassPointer = NULL;
 
-// Class GearboxFramework.SeqAct_AllPlayersInVolume
 // 0x0010 (0x00B4 - 0x00A4)
 class USeqAct_AllPlayersInVolume : public USequenceAction
 {
@@ -3678,91 +2550,40 @@ public:
 	unsigned long                                      bAllActorsInVolumes : 1;                          		// 0x00B0 (0x0004) [0x0000000000000000] [0x00000001]
 	unsigned long                                      bCheckForAllPlayers : 1;                          		// 0x00B0 (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3080];
-
-		return pClassPointer;
-	};
-
 	bool AllPlayersInVolumes();
 	bool PlayerIsInAVolume(class APlayerController* PC);
 };
 
 // UClass* USeqAct_AllPlayersInVolume::pClassPointer = NULL;
 
-// Class GearboxFramework.SeqCond_CompareLocation
 // 0x0004 (0x0090 - 0x008C)
 class USeqCond_CompareLocation : public USequenceCondition
 {
 public:
 	float                                              CheckRadius;                                      		// 0x008C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3082];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* USeqCond_CompareLocation::pClassPointer = NULL;
 
-// Class GearboxFramework.SeqCond_CompareString
 // 0x0004 (0x0090 - 0x008C)
 class USeqCond_CompareString : public USequenceCondition
 {
 public:
 	unsigned long                                      bCaseSensitive : 1;                               		// 0x008C (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3084];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* USeqCond_CompareString::pClassPointer = NULL;
 
-// Class GearboxFramework.SeqCond_GetLanguage
 // 0x000C (0x0098 - 0x008C)
 class USeqCond_GetLanguage : public USequenceCondition
 {
 public:
 	TArray< struct FString >                           LangList;                                         		// 0x008C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3086];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* USeqCond_GetLanguage::pClassPointer = NULL;
 
-// Class GearboxFramework.SimpleMathValueResolver
 // 0x0024 (0x0060 - 0x003C)
 class USimpleMathValueResolver : public UAttributeValueResolver
 {
@@ -3771,23 +2592,10 @@ public:
 	unsigned char                                      Operand;                                          		// 0x003D (0x0001) [0x0000000000000001]              ( CPF_Edit )
 	struct FAttributeInitializationData                Arg1Attribute;                                    		// 0x0040 (0x0010) [0x0000000000000001]              ( CPF_Edit )
 	struct FAttributeInitializationData                Argument;                                         		// 0x0050 (0x0010) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3088];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* USimpleMathValueResolver::pClassPointer = NULL;
 
-// Class GearboxFramework.SpecialMoveComponent
 // 0x003F (0x0098 - 0x0059)
 class USpecialMoveComponent : public UActorComponent
 {
@@ -3800,18 +2608,7 @@ public:
 	TArray< struct FSpecialMoveData >                  SMDQueue;                                         		// 0x0088 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 	class UAnimNodeSpecialMoveBlend*                   SMBlendNode;                                      		// 0x0094 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3090];
-
-		return pClassPointer;
-	};
-
 	bool IsOwnerAlwaysNetRelevant();
 	bool CanPlayBehaviorData(struct FSMBehavior* Data);
 	void RunBehaviors(TArray< struct FSMBehavior >* SMBehaviors);
@@ -3841,7 +2638,6 @@ public:
 
 // UClass* USpecialMoveComponent::pClassPointer = NULL;
 
-// Class GearboxFramework.SpecialMoveDefinition
 // 0x000C (0x0048 - 0x003C)
 class USpecialMoveDefinition : public UGBXDefinition
 {
@@ -3851,18 +2647,7 @@ public:
 	unsigned long                                      bOwnerAlwaysRelevant : 1;                         		// 0x0044 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
 	unsigned long                                      bClientHasAuthority : 1;                          		// 0x0044 (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3092];
-
-		return pClassPointer;
-	};
-
 	bool eventIsPlayingLocally(class USpecialMoveInterface* SMI);
 	class USpecialMoveDefinition* GetSMDToPlay(class USpecialMoveInterface* SMI);
 	bool Contains(class USpecialMoveDefinition* SMD, class USpecialMoveInterface* SMI);
@@ -3876,74 +2661,36 @@ public:
 
 // UClass* USpecialMoveDefinition::pClassPointer = NULL;
 
-// Class GearboxFramework.SpecialMoveExpressionList
 // 0x000C (0x0054 - 0x0048)
 class USpecialMoveExpressionList : public USpecialMoveDefinition
 {
 public:
 	TArray< struct FSMExpressionList >                 SpecialMoveList;                                  		// 0x0048 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3094];
-
-		return pClassPointer;
-	};
-
 	bool Contains(class USpecialMoveDefinition* SMD, class USpecialMoveInterface* SMI);
 	class USpecialMoveDefinition* GetSMDToPlay(class USpecialMoveInterface* SMI);
 };
 
 // UClass* USpecialMoveExpressionList::pClassPointer = NULL;
 
-// Class GearboxFramework.SpecialMoveRandom
 // 0x000C (0x0054 - 0x0048)
 class USpecialMoveRandom : public USpecialMoveDefinition
 {
 public:
 	TArray< struct FSMRandomPair >                     RandomList;                                       		// 0x0048 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3096];
-
-		return pClassPointer;
-	};
-
 	bool Contains(class USpecialMoveDefinition* SMD, class USpecialMoveInterface* SMI);
 	class USpecialMoveDefinition* GetSMDToPlay(class USpecialMoveInterface* SMI);
 };
 
 // UClass* USpecialMoveRandom::pClassPointer = NULL;
 
-// Class GearboxFramework.SpecialMoveInterface
 // 0x0000 (0x003C - 0x003C)
 class USpecialMoveInterface : public UInterface
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3098];
-
-		return pClassPointer;
-	};
-
 	void SetReplicatedSMData(struct FSpecialMoveData* NewSMData);
 	void eventServerSpecialMove_StopAny();
 	void eventServerSpecialMove_Stop(class USpecialMoveDefinition* OldSMD);
@@ -3958,29 +2705,15 @@ public:
 
 // UClass* USpecialMoveInterface::pClassPointer = NULL;
 
-// Class GearboxFramework.StateAttributeResolver
 // 0x0008 (0x0044 - 0x003C)
 class UStateAttributeResolver : public UAttributeValueResolver
 {
 public:
 	struct FName                                       NameKey;                                          		// 0x003C (0x0008) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3100];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UStateAttributeResolver::pClassPointer = NULL;
 
-// Class GearboxFramework.TimeValueResolver
 // 0x0028 (0x0064 - 0x003C)
 class UTimeValueResolver : public UAttributeValueResolver
 {
@@ -3989,45 +2722,19 @@ public:
 	unsigned long                                      bNormalizeTime : 1;                               		// 0x0040 (0x0004) [0x0000000000000003] [0x00000001] ( CPF_Edit | CPF_Const )
 	struct FAttributeInitializationData                StartTime;                                        		// 0x0044 (0x0010) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	struct FAttributeInitializationData                TotalTime;                                        		// 0x0054 (0x0010) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3102];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UTimeValueResolver::pClassPointer = NULL;
 
-// Class GearboxFramework.WireManager
 // 0x0004 (0x018C - 0x0188)
 class AWireManager : public AActor
 {
 public:
 	class UMaterialInterface*                          DefaultMaterial;                                  		// 0x0188 (0x0004) [0x0000000000000002]              ( CPF_Const )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3104];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* AWireManager::pClassPointer = NULL;
 
-// Class GearboxFramework.WireTerminal
 // 0x0018 (0x01A8 - 0x0190)
 class AWireTerminal : public AStaticMeshActor
 {
@@ -4037,89 +2744,32 @@ public:
 	class UMaterialInterface*                          WireMaterial;                                     		// 0x01A0 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	unsigned long                                      bTerminalDirty : 1;                               		// 0x01A4 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3106];
-
-		return pClassPointer;
-	};
-
 	void eventDestroyed();
 	void NotifyModifiedTerminal();
 };
 
 // UClass* AWireTerminal::pClassPointer = NULL;
 
-// Class GearboxFramework.WiringActor
 // 0x0000 (0x0190 - 0x0190)
-class AWiringActor : public AStaticMeshActor
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3108];
-
-		return pClassPointer;
-	};
-};
+class AWiringActor : public AStaticMeshActor {};
 
 // UClass* AWiringActor::pClassPointer = NULL;
 
-// Class GearboxFramework.WiringMesh
 // 0x0240 (0x0370 - 0x0130)
 class UWiringMesh : public UStaticMesh
 {
 public:
 	unsigned char                                      UnknownData00[0x240];                           		// 0x0130 (0x0240) MISSED OFFSET
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3110];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UWiringMesh::pClassPointer = NULL;
 
-// Class GearboxFramework.ActionResource
 // 0x0000 (0x003C - 0x003C)
-class UActionResource : public UObject
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3112];
-
-		return pClassPointer;
-	};
-};
+class UActionResource : public UObject {};
 
 // UClass* UActionResource::pClassPointer = NULL;
 
-// Class GearboxFramework.ActionSequence
 // 0x006C (0x00A8 - 0x003C)
 class UActionSequence : public UObject
 {
@@ -4144,18 +2794,7 @@ public:
 	TArray< struct FName >                             BehaviorOutputs;                                  		// 0x0094 (0x000C) [0x0000000000400002]              ( CPF_Const | CPF_NeedCtorLink )
 	struct FName                                       BehaviorName;                                     		// 0x00A0 (0x0008) [0x0000000000020002]              ( CPF_Const | CPF_EditConst )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3114];
-
-		return pClassPointer;
-	};
-
 	void TriggerBehavior(struct FName OutputName);
 	float GetRangeValue(struct FAIRange* Range);
 	bool RangeIsValid(struct FAIRange* Range);
@@ -4190,54 +2829,28 @@ public:
 
 // UClass* UActionSequence::pClassPointer = NULL;
 
-// Class GearboxFramework.ActionSequenceList
 // 0x0004 (0x00AC - 0x00A8)
 class UActionSequenceList : public UActionSequence
 {
 public:
 	int                                                CurrentIndex;                                     		// 0x00A8 (0x0004) [0x0000000000000000]
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3116];
-
-		return pClassPointer;
-	};
-
 	bool IsActionReadyToFinish();
 };
 
 // UClass* UActionSequenceList::pClassPointer = NULL;
 
-// Class GearboxFramework.ActionSequencePawn
 // 0x0008 (0x00B0 - 0x00A8)
 class UActionSequencePawn : public UActionSequence
 {
 public:
 	class AGearboxMind*                                MyGearboxMind;                                    		// 0x00A8 (0x0004) [0x0000000000000000]
 	class AGearboxPawn*                                MyGearboxPawn;                                    		// 0x00AC (0x0004) [0x0000000000000000]
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3118];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UActionSequencePawn::pClassPointer = NULL;
 
-// Class GearboxFramework.Action_PawnMovementBase
 // 0x00A0 (0x0150 - 0x00B0)
 class UAction_PawnMovementBase : public UActionSequencePawn
 {
@@ -4268,18 +2881,7 @@ public:
 	struct FAttributeInitializationData                RepathDistanceThresh;                             		// 0x013C (0x0010) [0x0000000000000001]              ( CPF_Edit )
 	class URuleEventDef*                               FailureEvent;                                     		// 0x014C (0x0004) [0x0000000000000001]              ( CPF_Edit )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3120];
-
-		return pClassPointer;
-	};
-
 	void eventPostMovement();
 	void eventPreMovement();
 	void eventPrePathFind();
@@ -4294,25 +2896,13 @@ public:
 
 // UClass* UAction_PawnMovementBase::pClassPointer = NULL;
 
-// Class GearboxFramework.ActionSequenceRandom
 // 0x000C (0x00B4 - 0x00A8)
 class UActionSequenceRandom : public UActionSequence
 {
 public:
 	TArray< struct FActionSequenceRandomData >         ActionList;                                       		// 0x00A8 (0x000C) [0x0000000004400001]              ( CPF_Edit | CPF_NeedCtorLink | CPF_EditInline )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3122];
-
-		return pClassPointer;
-	};
-
 	void EvaluateActionList();
 	void OverrideNextSequenceToRun(class UActionSequence* NewSequence);
 	class UActionSequence* GetRandomAction();
@@ -4320,7 +2910,6 @@ public:
 
 // UClass* UActionSequenceRandom::pClassPointer = NULL;
 
-// Class GearboxFramework.AIComponent
 // 0x0093 (0x00EC - 0x0059)
 class UAIComponent : public UActorComponent
 {
@@ -4346,18 +2935,7 @@ public:
 	TArray< struct FAIHoldData >                       GodHolds;                                         		// 0x00D4 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 	TArray< struct FAIHoldData >                       DialogHolds;                                      		// 0x00E0 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3124];
-
-		return pClassPointer;
-	};
-
 	float GetAIRangeTime(struct FAIRange InRange);
 	void DrawAITree(class UCanvas* Canvas);
 	void LogDemigodHolds();
@@ -4411,7 +2989,6 @@ public:
 
 // UClass* UAIComponent::pClassPointer = NULL;
 
-// Class GearboxFramework.AICostExpressionEvaluator
 // 0x0008 (0x0044 - 0x003C)
 class UAICostExpressionEvaluator : public UExpressionEvaluator
 {
@@ -4419,24 +2996,12 @@ public:
 	int                                                Multiplier;                                       		// 0x003C (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	class UPopulationDefinition*                       PopDef;                                           		// 0x0040 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3126];
-
-		return pClassPointer;
-	};
-
 	bool Evaluate(class UObject* ContextSource);
 };
 
 // UClass* UAICostExpressionEvaluator::pClassPointer = NULL;
 
-// Class GearboxFramework.AIFactoryBase
 // 0x004C (0x0088 - 0x003C)
 class UAIFactoryBase : public UObject
 {
@@ -4449,18 +3014,7 @@ public:
 	TArray< struct FAIDefinitionRecord >               AIDefinitionRecords;                              		// 0x0078 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	float                                              TimeStampedRecordLifetime;                        		// 0x0084 (0x0004) [0x0000000000000002]              ( CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3128];
-
-		return pClassPointer;
-	};
-
 	void FlushPools();
 	void ReturnAIDef(class UAIDefinition** InAIDef);
 	bool GetAIDef(class UAIDefinition* AIDefTemplate, class UAIDefinition** OutAIDef);
@@ -4482,31 +3036,16 @@ public:
 
 // UClass* UAIFactoryBase::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxAIFactory
 // 0x0000 (0x0088 - 0x0088)
 class UGearboxAIFactory : public UAIFactoryBase
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3130];
-
-		return pClassPointer;
-	};
-
 	void FreeRuleEngine(class URuleEngine* InRuleEngine);
 	bool GetRuleEngineFromTemplate(class URuleEngine* RuleEngineTemplate, class URuleEngine** OutRuleEngine);
 };
 
 // UClass* UGearboxAIFactory::pClassPointer = NULL;
 
-// Class GearboxFramework.AIResource
 // 0x0014 (0x0050 - 0x003C)
 class UAIResource : public UGBXDefinition
 {
@@ -4514,23 +3053,10 @@ public:
 	TArray< struct FAIResourceRestriction >            ResourceRestrictions;                             		// 0x003C (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
 	int                                                MaxUsers;                                         		// 0x0048 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	int                                                MinUsers;                                         		// 0x004C (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3132];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UAIResource::pClassPointer = NULL;
 
-// Class GearboxFramework.AIResourceExpressionEvaluator
 // 0x0008 (0x0044 - 0x003C)
 class UAIResourceExpressionEvaluator : public UExpressionEvaluator
 {
@@ -4538,24 +3064,12 @@ public:
 	unsigned char                                      Option;                                           		// 0x003C (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	class UAIResource*                                 Resource;                                         		// 0x0040 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3134];
-
-		return pClassPointer;
-	};
-
 	bool Evaluate(class UObject* ContextSource);
 };
 
 // UClass* UAIResourceExpressionEvaluator::pClassPointer = NULL;
 
-// Class GearboxFramework.AllegianceExpressionEvaluator
 // 0x0008 (0x0044 - 0x003C)
 class UAllegianceExpressionEvaluator : public UExpressionEvaluator
 {
@@ -4563,47 +3077,22 @@ public:
 	unsigned char                                      AllegianceCheck;                                  		// 0x003C (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	class UPawnAllegiance*                             Allegiance;                                       		// 0x0040 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3136];
-
-		return pClassPointer;
-	};
-
 	bool Evaluate(class UObject* ContextSource);
 };
 
 // UClass* UAllegianceExpressionEvaluator::pClassPointer = NULL;
 
-// Class GearboxFramework.AwarenessZoneCollectionDefinition
 // 0x0014 (0x0050 - 0x003C)
 class UAwarenessZoneCollectionDefinition : public UGBXDefinition
 {
 public:
 	TArray< class UAwarenessZoneDefinition* >          DefaultAwarenessZones;                            		// 0x003C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 	struct FName                                       CollectionName;                                   		// 0x0048 (0x0008) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3138];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UAwarenessZoneCollectionDefinition::pClassPointer = NULL;
 
-// Class GearboxFramework.AwarenessZoneDefinition
 // 0x0030 (0x006C - 0x003C)
 class UAwarenessZoneDefinition : public UGBXDefinition
 {
@@ -4622,23 +3111,10 @@ public:
 	float                                              TargetSelectionPriority;                          		// 0x0060 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	struct FColor                                      ZoneColor;                                        		// 0x0064 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	float                                              TimeFiringAtLastKnownLocation;                    		// 0x0068 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3140];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UAwarenessZoneDefinition::pClassPointer = NULL;
 
-// Class GearboxFramework.Behavior_SendGbxMessage
 // 0x0024 (0x0070 - 0x004C)
 class UBehavior_SendGbxMessage : public UBehaviorBase
 {
@@ -4649,18 +3125,7 @@ public:
 	unsigned char                                      TakeLocationFrom;                                 		// 0x0052 (0x0001) [0x0000000000000001]              ( CPF_Edit )
 	struct FGbxMessageSimpleMetaData                   MetaData;                                         		// 0x0054 (0x001C) [0x0000000000000001]              ( CPF_Edit )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3142];
-
-		return pClassPointer;
-	};
-
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 	struct FVector GetLocation(unsigned char SelectionParam, class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject);
 	class UObject* GetMessageParameter(unsigned char SelectionParam, class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject);
@@ -4668,75 +3133,36 @@ public:
 
 // UClass* UBehavior_SendGbxMessage::pClassPointer = NULL;
 
-// Class GearboxFramework.Behavior_SetFlag
 // 0x000C (0x0058 - 0x004C)
 class UBehavior_SetFlag : public UBehaviorBase
 {
 public:
 	TArray< struct FFlagDefinitionInitialization >     FlagsToSet;                                       		// 0x004C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3144];
-
-		return pClassPointer;
-	};
-
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 // UClass* UBehavior_SetFlag::pClassPointer = NULL;
 
-// Class GearboxFramework.BestTargetAttributeContextResolver
 // 0x0004 (0x0040 - 0x003C)
 class UBestTargetAttributeContextResolver : public UAttributeContextResolver
 {
 public:
 	unsigned long                                      bGetTargetInfo : 1;                               		// 0x003C (0x0004) [0x0000000000000003] [0x00000001] ( CPF_Edit | CPF_Const )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3146];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UBestTargetAttributeContextResolver::pClassPointer = NULL;
 
-// Class GearboxFramework.CharacterClassMessageDefinition
 // 0x000C (0x0048 - 0x003C)
 class UCharacterClassMessageDefinition : public UGBXDefinition
 {
 public:
 	TArray< struct FBehaviorTriggerMessageStruct >     BehaviorTriggers;                                 		// 0x003C (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3148];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UCharacterClassMessageDefinition::pClassPointer = NULL;
 
-// Class GearboxFramework.CoverSearchCriteria
 // 0x003C (0x0078 - 0x003C)
 class UCoverSearchCriteria : public UGBXDefinition
 {
@@ -4769,23 +3195,10 @@ public:
 	float                                              ScoreVantageOnAnyTarget;                          		// 0x006C (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	float                                              ScoreUnoccupiedLink;                              		// 0x0070 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	float                                              ScoreNonBlacklistedCover;                         		// 0x0074 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3150];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UCoverSearchCriteria::pClassPointer = NULL;
 
-// Class GearboxFramework.ExposureUtilityBase
 // 0x0008 (0x0044 - 0x003C)
 class UExposureUtilityBase : public UObject
 {
@@ -4793,25 +3206,13 @@ public:
 	unsigned long                                      ExposureEnabled : 1;                              		// 0x003C (0x0004) [0x0000000000000002] [0x00000001] ( CPF_Const )
 	class UExposureUtilityStrategy*                    ExposureStrategy;                                 		// 0x0040 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3152];
-
-		return pClassPointer;
-	};
-
 	float CalculateVantageToPoint(class AActor* pLooker, struct FVector* TargetPoint);
 	float CalculateTargetExposure(class AGearboxPawn* pLooker, class AActor* pTarget);
 };
 
 // UClass* UExposureUtilityBase::pClassPointer = NULL;
 
-// Class GearboxFramework.ExposureUtilityBasicCaching
 // 0x0040 (0x0084 - 0x0044)
 class UExposureUtilityBasicCaching : public UExposureUtilityBase
 {
@@ -4830,23 +3231,10 @@ public:
 	float                                              HasMovedDistThreshold;                            		// 0x0070 (0x0004) [0x0000000000000002]              ( CPF_Const )
 	float                                              HasMovedDistThresholdPlayer;                      		// 0x0074 (0x0004) [0x0000000000000002]              ( CPF_Const )
 	TArray< struct FExposureCacheStruct >              CachedExposures;                                  		// 0x0078 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3154];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UExposureUtilityBasicCaching::pClassPointer = NULL;
 
-// Class GearboxFramework.ExposureUtilityFixedCost
 // 0x0048 (0x00CC - 0x0084)
 class UExposureUtilityFixedCost : public UExposureUtilityBasicCaching
 {
@@ -4865,66 +3253,24 @@ public:
 	float                                              PointStaleTime;                                   		// 0x00B8 (0x0004) [0x0000000000000000]
 	float                                              PointMaxErrorSq;                                  		// 0x00BC (0x0004) [0x0000000000000000]
 	TArray< struct FPointExposureData >                PointData;                                        		// 0x00C0 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3156];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UExposureUtilityFixedCost::pClassPointer = NULL;
 
-// Class GearboxFramework.ExposureUtilityStrategy
 // 0x0000 (0x003C - 0x003C)
-class UExposureUtilityStrategy : public UObject
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3158];
-
-		return pClassPointer;
-	};
-};
+class UExposureUtilityStrategy : public UObject {};
 
 // UClass* UExposureUtilityStrategy::pClassPointer = NULL;
 
-// Class GearboxFramework.FiringBehaviorDefinition
 // 0x000C (0x0048 - 0x003C)
 class UFiringBehaviorDefinition : public UGBXDefinition
 {
 public:
 	TArray< struct FConditionalPattern >               ConditionalPatterns;                              		// 0x003C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3160];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UFiringBehaviorDefinition::pClassPointer = NULL;
 
-// Class GearboxFramework.FiringBehaviorManager
 // 0x0034 (0x0070 - 0x003C)
 class UFiringBehaviorManager : public UObject
 {
@@ -4942,112 +3288,42 @@ public:
 	class UFiringBehaviorDefinition*                   DefaultFiringBehaviorDefinition;                  		// 0x0068 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	class UFiringPattern*                              DefaultFiringPatternTemplate;                     		// 0x006C (0x0004) [0x0000000000000001]              ( CPF_Edit )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3162];
-
-		return pClassPointer;
-	};
-
 	class UClass* eventGetTemplateClass(class UObject* TemplateObject);
 };
 
 // UClass* UFiringBehaviorManager::pClassPointer = NULL;
 
-// Class GearboxFramework.FiringCondition
 // 0x0000 (0x003C - 0x003C)
-class UFiringCondition : public UObject
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3164];
-
-		return pClassPointer;
-	};
-};
+class UFiringCondition : public UObject {};
 
 // UClass* UFiringCondition::pClassPointer = NULL;
 
-// Class GearboxFramework.FireCond_IsPlayerTarget
 // 0x0000 (0x003C - 0x003C)
-class UFireCond_IsPlayerTarget : public UFiringCondition
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3166];
-
-		return pClassPointer;
-	};
-};
+class UFireCond_IsPlayerTarget : public UFiringCondition {};
 
 // UClass* UFireCond_IsPlayerTarget::pClassPointer = NULL;
 
-// Class GearboxFramework.FiringPattern
 // 0x0004 (0x0040 - 0x003C)
 class UFiringPattern : public UObject
 {
 public:
 	unsigned long                                      bIsHarmlessToPawns : 1;                           		// 0x003C (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
 	unsigned long                                      bAllowFakeShots : 1;                              		// 0x003C (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3168];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UFiringPattern::pClassPointer = NULL;
 
-// Class GearboxFramework.FirePatt_Cone
 // 0x0005 (0x0045 - 0x0040)
 class UFirePatt_Cone : public UFiringPattern
 {
 public:
 	float                                              ConeDegrees;                                      		// 0x0040 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	unsigned char                                      ShotSpreadType;                                   		// 0x0044 (0x0001) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3170];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UFirePatt_Cone::pClassPointer = NULL;
 
-// Class GearboxFramework.FirePatt_ShrinkingCone
 // 0x0019 (0x0059 - 0x0040)
 class UFirePatt_ShrinkingCone : public UFiringPattern
 {
@@ -5057,23 +3333,10 @@ public:
 	float                                              MaxAccuracyConeDeg;                               		// 0x0050 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	float                                              ConeMultiplierPerShot;                            		// 0x0054 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	unsigned char                                      ShotSpreadType;                                   		// 0x0058 (0x0001) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3172];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UFirePatt_ShrinkingCone::pClassPointer = NULL;
 
-// Class GearboxFramework.FirePatt_StrafeOver
 // 0x0028 (0x0068 - 0x0040)
 class UFirePatt_StrafeOver : public UFiringPattern
 {
@@ -5086,47 +3349,22 @@ public:
 	float                                              LineOfShotsEndZ;                                  		// 0x005C (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	float                                              YawDeltaRatio;                                    		// 0x0060 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	float                                              TargetPosition;                                   		// 0x0064 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3174];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UFirePatt_StrafeOver::pClassPointer = NULL;
 
-// Class GearboxFramework.FiringZoneCollectionDefinition
 // 0x000C (0x0048 - 0x003C)
 class UFiringZoneCollectionDefinition : public UGBXDefinition
 {
 public:
 	TArray< class UFiringZoneDefinition* >             Zones;                                            		// 0x003C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3176];
-
-		return pClassPointer;
-	};
-
 	class UFiringZoneDefinition* eventGetZoneForDistance(float Distance);
 };
 
 // UClass* UFiringZoneCollectionDefinition::pClassPointer = NULL;
 
-// Class GearboxFramework.FiringZoneDefinition
 // 0x001C (0x0058 - 0x003C)
 class UFiringZoneDefinition : public UGBXDefinition
 {
@@ -5136,23 +3374,10 @@ public:
 	float                                              OuterRimDistance;                                 		// 0x004C (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	struct FColor                                      ZoneColor;                                        		// 0x0050 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	class UFiringBehaviorDefinition*                   FiringBehavior;                                   		// 0x0054 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3178];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UFiringZoneDefinition::pClassPointer = NULL;
 
-// Class GearboxFramework.FlagDefinition
 // 0x0014 (0x0050 - 0x003C)
 class UFlagDefinition : public UGBXDefinition
 {
@@ -5161,18 +3386,7 @@ public:
 	TArray< class UAttributeContextResolver* >         ContextResolverChain;                             		// 0x0040 (0x000C) [0x0000000004400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink | CPF_EditInline )
 	class UFlagValueResolver*                          ValueResolver;                                    		// 0x004C (0x0004) [0x0000000004000003]              ( CPF_Edit | CPF_Const | CPF_EditInline )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3180];
-
-		return pClassPointer;
-	};
-
 	void ApplyFlagInitializationData(class UObject* ContextSource, TArray< struct FFlagDefinitionInitialization >* FlagsToSet);
 	class UObject* ResolveContext(class UObject* ContextSource);
 	bool SetTrueTimed(class UObject* ContextSource, float TimeSeconds);
@@ -5181,7 +3395,6 @@ public:
 
 // UClass* UFlagDefinition::pClassPointer = NULL;
 
-// Class GearboxFramework.FlagExpressionEvaluator
 // 0x000D (0x0049 - 0x003C)
 class UFlagExpressionEvaluator : public UExpressionEvaluator
 {
@@ -5189,134 +3402,51 @@ public:
 	TArray< struct FFlagEvalConditional >              FlagChain;                                        		// 0x003C (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
 	unsigned char                                      FlagChainOperator;                                		// 0x0048 (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3182];
-
-		return pClassPointer;
-	};
-
 	bool Evaluate(class UObject* ContextSource);
 };
 
 // UClass* UFlagExpressionEvaluator::pClassPointer = NULL;
 
-// Class GearboxFramework.FlagValueResolver
 // 0x0000 (0x003C - 0x003C)
-class UFlagValueResolver : public UObject
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3184];
-
-		return pClassPointer;
-	};
-};
+class UFlagValueResolver : public UObject {};
 
 // UClass* UFlagValueResolver::pClassPointer = NULL;
 
-// Class GearboxFramework.MultipleFlagValueResolver
 // 0x0005 (0x0041 - 0x003C)
 class UMultipleFlagValueResolver : public UFlagValueResolver
 {
 public:
 	class UFlagDefinition*                             FlagToLookUp;                                     		// 0x003C (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	unsigned char                                      AggregationType;                                  		// 0x0040 (0x0001) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3186];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UMultipleFlagValueResolver::pClassPointer = NULL;
 
-// Class GearboxFramework.ObjectFunctionFlagValueResolver
 // 0x0010 (0x004C - 0x003C)
 class UObjectFunctionFlagValueResolver : public UFlagValueResolver
 {
 public:
 	float                                              CheckRate;                                        		// 0x003C (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	struct FString                                     FunctionCall;                                     		// 0x0040 (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3188];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UObjectFunctionFlagValueResolver::pClassPointer = NULL;
 
-// Class GearboxFramework.ObjectPropertyFlagValueResolver
 // 0x0008 (0x0044 - 0x003C)
 class UObjectPropertyFlagValueResolver : public UFlagValueResolver
 {
 public:
 	struct FName                                       PropertyName;                                     		// 0x003C (0x0008) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3190];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UObjectPropertyFlagValueResolver::pClassPointer = NULL;
 
-// Class GearboxFramework.RuleEngineFlagValueResolver
 // 0x0000 (0x003C - 0x003C)
-class URuleEngineFlagValueResolver : public UFlagValueResolver
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3192];
-
-		return pClassPointer;
-	};
-};
+class URuleEngineFlagValueResolver : public UFlagValueResolver {};
 
 // UClass* URuleEngineFlagValueResolver::pClassPointer = NULL;
 
-// Class GearboxFramework.GbxMessage
 // 0x00D8 (0x0114 - 0x003C)
 class UGbxMessage : public UObject
 {
@@ -5348,24 +3478,12 @@ public:
 	float                                              TimeBetweenSends;                                 		// 0x0104 (0x0004) [0x0000000000000000]
 	TArray< unsigned char >                            DupeCriteria;                                     		// 0x0108 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3194];
-
-		return pClassPointer;
-	};
-
 	void InitializeFromDefinition(class UGbxMessageDefinition* InDefinition, class UObject* RadiusContextSource, class UObject* InSender, class UObject* InSubject, class UPawnAllegiance* ManualSenderAllegiance);
 };
 
 // UClass* UGbxMessage::pClassPointer = NULL;
 
-// Class GearboxFramework.GbxMessageDefinition
 // 0x0034 (0x0070 - 0x003C)
 class UGbxMessageDefinition : public UGBXDefinition
 {
@@ -5383,23 +3501,10 @@ public:
 	float                                              MaxTimeToKeepSending;                             		// 0x005C (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	TArray< unsigned char >                            DupeCriteria;                                     		// 0x0060 (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
 	int                                                MaxRecipients;                                    		// 0x006C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3196];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UGbxMessageDefinition::pClassPointer = NULL;
 
-// Class GearboxFramework.GbxMessageManager
 // 0x0030 (0x006C - 0x003C)
 class UGbxMessageManager : public UObject
 {
@@ -5410,18 +3515,7 @@ public:
 	float                                              DistributionInterval;                             		// 0x0064 (0x0004) [0x0000000000000002]              ( CPF_Const )
 	int                                                MaxMessagesPerDistribution;                       		// 0x0068 (0x0004) [0x0000000000000002]              ( CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3198];
-
-		return pClassPointer;
-	};
-
 	void RemoveListener(class UIGbxMessageListener* InListener);
 	void AddListener(class UIGbxMessageListener* InListener);
 	void PostMessage(class UGbxMessage* Message);
@@ -5430,7 +3524,6 @@ public:
 
 // UClass* UGbxMessageManager::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxMind
 // 0x00E4 (0x0768 - 0x0684)
 class AGearboxMind : public AGearboxAIController
 {
@@ -5469,18 +3562,7 @@ public:
 	unsigned char                                      UnknownData00[0x3C];                            		// 0x0728 (0x003C) UNKNOWN PROPERTY: MapProperty GearboxFramework.GearboxMind.DynamicFlagDefLookup
 	class UAIComponent*                                AIComponent;                                      		// 0x0764 (0x0004) [0x0000000004082008]              ( CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3200];
-
-		return pClassPointer;
-	};
-
 	void InitSequence(class UActionSequence* NewSequence);
 	class UPawnAllegiance* GetAllegiance();
 	class UAIDefinition* GetAIDefinition();
@@ -5527,28 +3609,11 @@ public:
 
 // UClass* AGearboxMind::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxAIMoveNodeRenderComponent
 // 0x0000 (0x0210 - 0x0210)
-class UGearboxAIMoveNodeRenderComponent : public UPrimitiveComponent
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3202];
-
-		return pClassPointer;
-	};
-};
+class UGearboxAIMoveNodeRenderComponent : public UPrimitiveComponent {};
 
 // UClass* UGearboxAIMoveNodeRenderComponent::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxCoverStateManager
 // 0x00B8 (0x00F4 - 0x003C)
 class UGearboxCoverStateManager : public UObject
 {
@@ -5572,18 +3637,7 @@ public:
 	float                                              HorizontalCoverAngleDegrees;                      		// 0x00EC (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	float                                              VerticalCoverAngleDegrees;                        		// 0x00F0 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3204];
-
-		return pClassPointer;
-	};
-
 	bool IsChangingDirection();
 	bool IsMantlingOverCoverInProgress();
 	bool IsReturnFromPeekInProgress();
@@ -5637,28 +3691,11 @@ public:
 
 // UClass* UGearboxCoverStateManager::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxMindAttributeContextResolver
 // 0x0000 (0x003C - 0x003C)
-class UGearboxMindAttributeContextResolver : public UAttributeContextResolver
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3206];
-
-		return pClassPointer;
-	};
-};
+class UGearboxMindAttributeContextResolver : public UAttributeContextResolver {};
 
 // UClass* UGearboxMindAttributeContextResolver::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxNavigationHandle
 // 0x0120 (0x02A0 - 0x0180)
 class UGearboxNavigationHandle : public UNavigationHandle
 {
@@ -5685,18 +3722,7 @@ public:
 	float                                              NearPathCheckDistMax;                             		// 0x0298 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	float                                              NearPathCheckDistRate;                            		// 0x029C (0x0004) [0x0000000000002000]              ( CPF_Transient )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3208];
-
-		return pClassPointer;
-	};
-
 	void SetDesiredMovementSpeed(unsigned char Speed);
 	void ClearAnchor();
 	bool GetNearestPositionOnNavMesh(float Radius, struct FVector TestLoc, unsigned long bAnyHeight, struct FBasedPosition* NearestPos, struct FNavMeshPathParams* PolyUsableCheckParams, struct FGBXNavMeshPolyRef* NearestPoly);
@@ -5718,66 +3744,20 @@ public:
 
 // UClass* UGearboxNavigationHandle::pClassPointer = NULL;
 
-// Class GearboxFramework.IFlagProvider
 // 0x0000 (0x003C - 0x003C)
-class UIFlagProvider : public UInterface
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3210];
-
-		return pClassPointer;
-	};
-};
+class UIFlagProvider : public UInterface {};
 
 // UClass* UIFlagProvider::pClassPointer = NULL;
 
-// Class GearboxFramework.IFlagProviderGroup
 // 0x0000 (0x003C - 0x003C)
-class UIFlagProviderGroup : public UInterface
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3212];
-
-		return pClassPointer;
-	};
-};
+class UIFlagProviderGroup : public UInterface {};
 
 // UClass* UIFlagProviderGroup::pClassPointer = NULL;
 
-// Class GearboxFramework.IGbxMessageListener
 // 0x0000 (0x003C - 0x003C)
 class UIGbxMessageListener : public UInterface
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3214];
-
-		return pClassPointer;
-	};
-
 	bool WantsToStopListening();
 	class AActor* GetActor();
 	struct FVector GetListenerLocation();
@@ -5788,30 +3768,15 @@ public:
 
 // UClass* UIGbxMessageListener::pClassPointer = NULL;
 
-// Class GearboxFramework.IRuleEngineOwner
 // 0x0000 (0x003C - 0x003C)
 class UIRuleEngineOwner : public UInterface
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3216];
-
-		return pClassPointer;
-	};
-
 	class URuleEngine* GetRuleEngine();
 };
 
 // UClass* UIRuleEngineOwner::pClassPointer = NULL;
 
-// Class GearboxFramework.KnowledgeRecord
 // 0x001C (0x0058 - 0x003C)
 class UKnowledgeRecord : public UObject
 {
@@ -5826,87 +3791,27 @@ public:
 	float                                              NextUpdateTime;                                   		// 0x0050 (0x0004) [0x0000000000000000]
 	int                                                FlagIndex;                                        		// 0x0054 (0x0004) [0x0000000000000000]
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3218];
-
-		return pClassPointer;
-	};
-
 	void eventRecordEvalCallback(class URuleEngine* EvalRuleEngine);
 };
 
 // UClass* UKnowledgeRecord::pClassPointer = NULL;
 
-// Class GearboxFramework.LocationFilter
 // 0x0000 (0x003C - 0x003C)
-class ULocationFilter : public UObject
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3220];
-
-		return pClassPointer;
-	};
-};
+class ULocationFilter : public UObject {};
 
 // UClass* ULocationFilter::pClassPointer = NULL;
 
-// Class GearboxFramework.LocationFilter_MustHaveLOS
 // 0x0000 (0x003C - 0x003C)
-class ULocationFilter_MustHaveLOS : public ULocationFilter
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3222];
-
-		return pClassPointer;
-	};
-};
+class ULocationFilter_MustHaveLOS : public ULocationFilter {};
 
 // UClass* ULocationFilter_MustHaveLOS::pClassPointer = NULL;
 
-// Class GearboxFramework.LocationFilter_MustNotHaveLOS
 // 0x0000 (0x003C - 0x003C)
-class ULocationFilter_MustNotHaveLOS : public ULocationFilter
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3224];
-
-		return pClassPointer;
-	};
-};
+class ULocationFilter_MustNotHaveLOS : public ULocationFilter {};
 
 // UClass* ULocationFilter_MustNotHaveLOS::pClassPointer = NULL;
 
-// Class GearboxFramework.MindTargetInfo
 // 0x009C (0x00D8 - 0x003C)
 class UMindTargetInfo : public UObject
 {
@@ -5930,25 +3835,13 @@ public:
 	struct FSmartVector                                LastVisibleOrAudibleLocation;                     		// 0x00B8 (0x001C) [0x0000000000000000]
 	float                                              BonusPriority;                                    		// 0x00D4 (0x0004) [0x0000000000000000]
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3226];
-
-		return pClassPointer;
-	};
-
 	float GetAverageHitTime();
 	void AddHitTargetRecord(struct FVector vecNewHitLoc, float flNewDamage);
 };
 
 // UClass* UMindTargetInfo::pClassPointer = NULL;
 
-// Class GearboxFramework.Rule
 // 0x00C0 (0x00FC - 0x003C)
 class URule : public UObject
 {
@@ -5988,18 +3881,7 @@ public:
 	struct FString                                     RuleEventDefPath;                                 		// 0x00EC (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 	float                                              StartExecutionTimeStamp;                          		// 0x00F8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3228];
-
-		return pClassPointer;
-	};
-
 	struct FString GetRuleName();
 	struct FName GetRuleFName();
 	class UObject* GetOtherEventParticipant();
@@ -6007,7 +3889,6 @@ public:
 
 // UClass* URule::pClassPointer = NULL;
 
-// Class GearboxFramework.RuleContainer
 // 0x000C (0x0108 - 0x00FC)
 class URuleContainer : public URule
 {
@@ -6015,44 +3896,15 @@ public:
 	class URuleSet*                                    RuleSetTemplate;                                  		// 0x00FC (0x0004) [0x0000000004000003]              ( CPF_Edit | CPF_Const | CPF_EditInline )
 	class URuleSet*                                    CurRuleSet;                                       		// 0x0100 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	unsigned long                                      AllowAllEventsThrough : 1;                        		// 0x0104 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3230];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* URuleContainer::pClassPointer = NULL;
 
-// Class GearboxFramework.RulePlaceholder
 // 0x0000 (0x00FC - 0x00FC)
-class URulePlaceholder : public URule
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3232];
-
-		return pClassPointer;
-	};
-};
+class URulePlaceholder : public URule {};
 
 // UClass* URulePlaceholder::pClassPointer = NULL;
 
-// Class GearboxFramework.RuleEngine
 // 0x00FC (0x0138 - 0x003C)
 class URuleEngine : public UObject
 {
@@ -6095,18 +3947,7 @@ public:
 	float                                              ActivateTime;                                     		// 0x0128 (0x0004) [0x0000000000000000]
 	TArray< struct FRuleSetReference >                 RuleSetReferences;                                		// 0x012C (0x000C) [0x0000000004400001]              ( CPF_Edit | CPF_NeedCtorLink | CPF_EditInline )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3234];
-
-		return pClassPointer;
-	};
-
 	void ApplyFlagInitializationData(TArray< struct FFlagDefinitionInitialization >* FlagsToSet);
 	bool IsResourceInUse(class UClass* TestResourceClass);
 	class UObject* GetContextSource();
@@ -6129,7 +3970,6 @@ public:
 
 // UClass* URuleEngine::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxRuleEngine
 // 0x0008 (0x0140 - 0x0138)
 class UGearboxRuleEngine : public URuleEngine
 {
@@ -6137,48 +3977,23 @@ public:
 	class AGearboxPawn*                                MyGearboxPawn;                                    		// 0x0138 (0x0004) [0x0000000000000000]
 	class AGearboxMind*                                MyGearboxMind;                                    		// 0x013C (0x0004) [0x0000000000000000]
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3236];
-
-		return pClassPointer;
-	};
-
 	void Initialize(class AGearboxPawn* NewGearboxPawn, class AGearboxMind* NewMind, class UGearboxAIFactory* NewAIFactory);
 	class UObject* GetContextSource();
 };
 
 // UClass* UGearboxRuleEngine::pClassPointer = NULL;
 
-// Class GearboxFramework.RuleEventDef
 // 0x0030 (0x006C - 0x003C)
 class URuleEventDef : public UGBXDefinition
 {
 public:
 	struct FName                                       EventDefName;                                     		// 0x003C (0x0008) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	struct FFlagDefinitionInitialization               FlagActionOnEventTrigger;                         		// 0x0044 (0x0028) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3238];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* URuleEventDef::pClassPointer = NULL;
 
-// Class GearboxFramework.RuleSet
 // 0x0058 (0x0094 - 0x003C)
 class URuleSet : public UObject
 {
@@ -6193,23 +4008,10 @@ public:
 	TArray< struct FFlagDefinitionInitialization >     FlagsOnEntry;                                     		// 0x0070 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 	TArray< struct FFlagDefinitionInitialization >     FlagsOnExit;                                      		// 0x007C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 	TArray< class URuleSet* >                          HACK_RuleSetsAllowedToFollow;                     		// 0x0088 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3240];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* URuleSet::pClassPointer = NULL;
 
-// Class GearboxFramework.StateRuleSet
 // 0x001C (0x00B0 - 0x0094)
 class UStateRuleSet : public URuleSet
 {
@@ -6217,380 +4019,95 @@ public:
 	TArray< class URule* >                             StateRules;                                       		// 0x0094 (0x000C) [0x0000000004400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink | CPF_EditInline )
 	unsigned long                                      bShowPawnInRadarWhenActive : 1;                   		// 0x00A0 (0x0004) [0x0000000000000003] [0x00000001] ( CPF_Edit | CPF_Const )
 	TArray< struct FStateAttributeData >               StateAttributeMap;                                		// 0x00A4 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3242];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UStateRuleSet::pClassPointer = NULL;
 
-// Class GearboxFramework.SearchDirection
 // 0x0000 (0x003C - 0x003C)
-class USearchDirection : public UObject
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3244];
-
-		return pClassPointer;
-	};
-};
+class USearchDirection : public UObject {};
 
 // UClass* USearchDirection::pClassPointer = NULL;
 
-// Class GearboxFramework.SearchDirection_Any
 // 0x0000 (0x003C - 0x003C)
-class USearchDirection_Any : public USearchDirection
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3246];
-
-		return pClassPointer;
-	};
-};
+class USearchDirection_Any : public USearchDirection {};
 
 // UClass* USearchDirection_Any::pClassPointer = NULL;
 
-// Class GearboxFramework.SearchDirection_AwayFromMe
 // 0x0000 (0x003C - 0x003C)
-class USearchDirection_AwayFromMe : public USearchDirection
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3248];
-
-		return pClassPointer;
-	};
-};
+class USearchDirection_AwayFromMe : public USearchDirection {};
 
 // UClass* USearchDirection_AwayFromMe::pClassPointer = NULL;
 
-// Class GearboxFramework.SearchDirection_AwayFromTarget
 // 0x0000 (0x003C - 0x003C)
-class USearchDirection_AwayFromTarget : public USearchDirection
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3250];
-
-		return pClassPointer;
-	};
-};
+class USearchDirection_AwayFromTarget : public USearchDirection {};
 
 // UClass* USearchDirection_AwayFromTarget::pClassPointer = NULL;
 
-// Class GearboxFramework.SearchDirection_MyFacingDirection
 // 0x0000 (0x003C - 0x003C)
-class USearchDirection_MyFacingDirection : public USearchDirection
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3252];
-
-		return pClassPointer;
-	};
-};
+class USearchDirection_MyFacingDirection : public USearchDirection {};
 
 // UClass* USearchDirection_MyFacingDirection::pClassPointer = NULL;
 
-// Class GearboxFramework.SearchDirection_OppositeMyFacingDirection
 // 0x0000 (0x003C - 0x003C)
-class USearchDirection_OppositeMyFacingDirection : public USearchDirection
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3254];
-
-		return pClassPointer;
-	};
-};
+class USearchDirection_OppositeMyFacingDirection : public USearchDirection {};
 
 // UClass* USearchDirection_OppositeMyFacingDirection::pClassPointer = NULL;
 
-// Class GearboxFramework.SearchDirection_OppositeTargetsFacingDirection
 // 0x0000 (0x003C - 0x003C)
-class USearchDirection_OppositeTargetsFacingDirection : public USearchDirection
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3256];
-
-		return pClassPointer;
-	};
-};
+class USearchDirection_OppositeTargetsFacingDirection : public USearchDirection {};
 
 // UClass* USearchDirection_OppositeTargetsFacingDirection::pClassPointer = NULL;
 
-// Class GearboxFramework.SearchDirection_RandomLeftOrRight
 // 0x0000 (0x003C - 0x003C)
-class USearchDirection_RandomLeftOrRight : public USearchDirection
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3258];
-
-		return pClassPointer;
-	};
-};
+class USearchDirection_RandomLeftOrRight : public USearchDirection {};
 
 // UClass* USearchDirection_RandomLeftOrRight::pClassPointer = NULL;
 
-// Class GearboxFramework.SearchDirection_TargetsFacingDirection
 // 0x0000 (0x003C - 0x003C)
-class USearchDirection_TargetsFacingDirection : public USearchDirection
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3260];
-
-		return pClassPointer;
-	};
-};
+class USearchDirection_TargetsFacingDirection : public USearchDirection {};
 
 // UClass* USearchDirection_TargetsFacingDirection::pClassPointer = NULL;
 
-// Class GearboxFramework.SearchDirection_ToMyLeft
 // 0x0000 (0x003C - 0x003C)
-class USearchDirection_ToMyLeft : public USearchDirection
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3262];
-
-		return pClassPointer;
-	};
-};
+class USearchDirection_ToMyLeft : public USearchDirection {};
 
 // UClass* USearchDirection_ToMyLeft::pClassPointer = NULL;
 
-// Class GearboxFramework.SearchDirection_ToMyRight
 // 0x0000 (0x003C - 0x003C)
-class USearchDirection_ToMyRight : public USearchDirection
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3264];
-
-		return pClassPointer;
-	};
-};
+class USearchDirection_ToMyRight : public USearchDirection {};
 
 // UClass* USearchDirection_ToMyRight::pClassPointer = NULL;
 
-// Class GearboxFramework.SearchDirection_TowardMe
 // 0x0000 (0x003C - 0x003C)
-class USearchDirection_TowardMe : public USearchDirection
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3266];
-
-		return pClassPointer;
-	};
-};
+class USearchDirection_TowardMe : public USearchDirection {};
 
 // UClass* USearchDirection_TowardMe::pClassPointer = NULL;
 
-// Class GearboxFramework.SearchDirection_TowardTarget
 // 0x0000 (0x003C - 0x003C)
-class USearchDirection_TowardTarget : public USearchDirection
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3268];
-
-		return pClassPointer;
-	};
-};
+class USearchDirection_TowardTarget : public USearchDirection {};
 
 // UClass* USearchDirection_TowardTarget::pClassPointer = NULL;
 
-// Class GearboxFramework.SearchOrigin
 // 0x0000 (0x003C - 0x003C)
-class USearchOrigin : public UObject
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3270];
-
-		return pClassPointer;
-	};
-};
+class USearchOrigin : public UObject {};
 
 // UClass* USearchOrigin::pClassPointer = NULL;
 
-// Class GearboxFramework.SearchOrigin_CurrentLocation
 // 0x0000 (0x003C - 0x003C)
-class USearchOrigin_CurrentLocation : public USearchOrigin
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3272];
-
-		return pClassPointer;
-	};
-};
+class USearchOrigin_CurrentLocation : public USearchOrigin {};
 
 // UClass* USearchOrigin_CurrentLocation::pClassPointer = NULL;
 
-// Class GearboxFramework.SearchOrigin_ScriptedMoveTarget
 // 0x0000 (0x003C - 0x003C)
-class USearchOrigin_ScriptedMoveTarget : public USearchOrigin
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3274];
-
-		return pClassPointer;
-	};
-};
+class USearchOrigin_ScriptedMoveTarget : public USearchOrigin {};
 
 // UClass* USearchOrigin_ScriptedMoveTarget::pClassPointer = NULL;
 
-// Class GearboxFramework.SearchOrigin_TargetLocation
 // 0x0000 (0x003C - 0x003C)
-class USearchOrigin_TargetLocation : public USearchOrigin
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3276];
-
-		return pClassPointer;
-	};
-};
+class USearchOrigin_TargetLocation : public USearchOrigin {};
 
 // UClass* USearchOrigin_TargetLocation::pClassPointer = NULL;
 
-// Class GearboxFramework.SnapshotRecord
 // 0x0CC0 (0x0D00 - 0x0040)
 class USnapshotRecord : public USnapshotInterface
 {
@@ -6623,23 +4140,10 @@ public:
 	struct FColor                                      DisabledRulesColor;                               		// 0x0CF4 (0x0004) [0x0000000000000002]              ( CPF_Const )
 	struct FColor                                      FlagsColor;                                       		// 0x0CF8 (0x0004) [0x0000000000000002]              ( CPF_Const )
 	struct FColor                                      ResourcesColor;                                   		// 0x0CFC (0x0004) [0x0000000000000002]              ( CPF_Const )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3278];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* USnapshotRecord::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxPawnSnapshotRecord
 // 0x02CC (0x0FCC - 0x0D00)
 class UGearboxPawnSnapshotRecord : public USnapshotRecord
 {
@@ -6710,23 +4214,10 @@ public:
 	TArray< struct FAIHoldDebugData >                  MovementHolds;                                    		// 0x0FA8 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< struct FAIHoldDebugData >                  DemigodHolds;                                     		// 0x0FB4 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< struct FAIHoldDebugData >                  GodHolds;                                         		// 0x0FC0 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3280];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UGearboxPawnSnapshotRecord::pClassPointer = NULL;
 
-// Class GearboxFramework.TargetingDefinition
 // 0x002C (0x0068 - 0x003C)
 class UTargetingDefinition : public UGBXDefinition
 {
@@ -6739,23 +4230,10 @@ public:
 	unsigned long                                      bOverrideSearchRadius : 1;                        		// 0x005C (0x0004) [0x0000000000000003] [0x00000002] ( CPF_Edit | CPF_Const )
 	class UExpressionEvaluator*                        CanTargetFriendliesIf;                            		// 0x0060 (0x0004) [0x0000000004000003]              ( CPF_Edit | CPF_Const | CPF_EditInline )
 	float                                              SearchRadius;                                     		// 0x0064 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3282];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UTargetingDefinition::pClassPointer = NULL;
 
-// Class GearboxFramework.TargetIterator
 // 0x0010 (0x004C - 0x003C)
 class UTargetIterator : public UObject
 {
@@ -6763,402 +4241,117 @@ public:
 	unsigned char                                      IteratorType;                                     		// 0x003C (0x0001) [0x0000000000000002]              ( CPF_Const )
 	struct FString                                     BarGraphShortName;                                		// 0x0040 (0x000C) [0x0000000000400002]              ( CPF_Const | CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3284];
-
-		return pClassPointer;
-	};
-
 	void eventRecordEvalCallback(class URuleEngine* EvalRuleEngine);
 };
 
 // UClass* UTargetIterator::pClassPointer = NULL;
 
-// Class GearboxFramework.TargetIteratorCalculateDistance
 // 0x0000 (0x004C - 0x004C)
-class UTargetIteratorCalculateDistance : public UTargetIterator
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3286];
-
-		return pClassPointer;
-	};
-};
+class UTargetIteratorCalculateDistance : public UTargetIterator {};
 
 // UClass* UTargetIteratorCalculateDistance::pClassPointer = NULL;
 
-// Class GearboxFramework.TargetIteratorCalculateExposure
 // 0x0000 (0x004C - 0x004C)
-class UTargetIteratorCalculateExposure : public UTargetIterator
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3288];
-
-		return pClassPointer;
-	};
-};
+class UTargetIteratorCalculateExposure : public UTargetIterator {};
 
 // UClass* UTargetIteratorCalculateExposure::pClassPointer = NULL;
 
-// Class GearboxFramework.TargetIteratorCheckAwareness
 // 0x0000 (0x004C - 0x004C)
-class UTargetIteratorCheckAwareness : public UTargetIterator
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3290];
-
-		return pClassPointer;
-	};
-};
+class UTargetIteratorCheckAwareness : public UTargetIterator {};
 
 // UClass* UTargetIteratorCheckAwareness::pClassPointer = NULL;
 
-// Class GearboxFramework.TargetIteratorCheckRemoveTarget
 // 0x0000 (0x004C - 0x004C)
-class UTargetIteratorCheckRemoveTarget : public UTargetIterator
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3292];
-
-		return pClassPointer;
-	};
-};
+class UTargetIteratorCheckRemoveTarget : public UTargetIterator {};
 
 // UClass* UTargetIteratorCheckRemoveTarget::pClassPointer = NULL;
 
-// Class GearboxFramework.TargetIteratorForgetAboutTarget
 // 0x0000 (0x004C - 0x004C)
-class UTargetIteratorForgetAboutTarget : public UTargetIterator
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3294];
-
-		return pClassPointer;
-	};
-};
+class UTargetIteratorForgetAboutTarget : public UTargetIterator {};
 
 // UClass* UTargetIteratorForgetAboutTarget::pClassPointer = NULL;
 
-// Class GearboxFramework.TargetIteratorPrioritizeTargetsIAmExposedTo
 // 0x0000 (0x004C - 0x004C)
-class UTargetIteratorPrioritizeTargetsIAmExposedTo : public UTargetIterator
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3296];
-
-		return pClassPointer;
-	};
-};
+class UTargetIteratorPrioritizeTargetsIAmExposedTo : public UTargetIterator {};
 
 // UClass* UTargetIteratorPrioritizeTargetsIAmExposedTo::pClassPointer = NULL;
 
-// Class GearboxFramework.TI_Calc
 // 0x0000 (0x004C - 0x004C)
-class UTI_Calc : public UTargetIterator
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3298];
-
-		return pClassPointer;
-	};
-};
+class UTI_Calc : public UTargetIterator {};
 
 // UClass* UTI_Calc::pClassPointer = NULL;
 
-// Class GearboxFramework.TI_Prioritize
 // 0x0004 (0x0050 - 0x004C)
 class UTI_Prioritize : public UTargetIterator
 {
 public:
 	float                                              Weight;                                           		// 0x004C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3300];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UTI_Prioritize::pClassPointer = NULL;
 
-// Class GearboxFramework.TargetIteratorPrioritizeExposedTargets
 // 0x0000 (0x0050 - 0x0050)
-class UTargetIteratorPrioritizeExposedTargets : public UTI_Prioritize
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3302];
-
-		return pClassPointer;
-	};
-};
+class UTargetIteratorPrioritizeExposedTargets : public UTI_Prioritize {};
 
 // UClass* UTargetIteratorPrioritizeExposedTargets::pClassPointer = NULL;
 
-// Class GearboxFramework.TargetIteratorPrioritizeHumanTargets
 // 0x0000 (0x0050 - 0x0050)
-class UTargetIteratorPrioritizeHumanTargets : public UTI_Prioritize
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3304];
-
-		return pClassPointer;
-	};
-};
+class UTargetIteratorPrioritizeHumanTargets : public UTI_Prioritize {};
 
 // UClass* UTargetIteratorPrioritizeHumanTargets::pClassPointer = NULL;
 
-// Class GearboxFramework.TargetIteratorPrioritizeNearbyTarget
 // 0x0004 (0x0054 - 0x0050)
 class UTargetIteratorPrioritizeNearbyTarget : public UTI_Prioritize
 {
 public:
 	float                                              MaxDistance;                                      		// 0x0050 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3306];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UTargetIteratorPrioritizeNearbyTarget::pClassPointer = NULL;
 
-// Class GearboxFramework.TargetIteratorPrioritizePreviousTarget
 // 0x0000 (0x0050 - 0x0050)
-class UTargetIteratorPrioritizePreviousTarget : public UTI_Prioritize
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3308];
-
-		return pClassPointer;
-	};
-};
+class UTargetIteratorPrioritizePreviousTarget : public UTI_Prioritize {};
 
 // UClass* UTargetIteratorPrioritizePreviousTarget::pClassPointer = NULL;
 
-// Class GearboxFramework.TargetIteratorPrioritizeTargetNotBeingShotAt
 // 0x0000 (0x0050 - 0x0050)
-class UTargetIteratorPrioritizeTargetNotBeingShotAt : public UTI_Prioritize
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3310];
-
-		return pClassPointer;
-	};
-};
+class UTargetIteratorPrioritizeTargetNotBeingShotAt : public UTI_Prioritize {};
 
 // UClass* UTargetIteratorPrioritizeTargetNotBeingShotAt::pClassPointer = NULL;
 
-// Class GearboxFramework.TargetIteratorPrioritizeTargetWhoShootsAtMe
 // 0x0000 (0x0050 - 0x0050)
-class UTargetIteratorPrioritizeTargetWhoShootsAtMe : public UTI_Prioritize
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3312];
-
-		return pClassPointer;
-	};
-};
+class UTargetIteratorPrioritizeTargetWhoShootsAtMe : public UTI_Prioritize {};
 
 // UClass* UTargetIteratorPrioritizeTargetWhoShootsAtMe::pClassPointer = NULL;
 
-// Class GearboxFramework.TI_PrioritizeBonus
 // 0x0000 (0x0050 - 0x0050)
-class UTI_PrioritizeBonus : public UTI_Prioritize
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3314];
-
-		return pClassPointer;
-	};
-};
+class UTI_PrioritizeBonus : public UTI_Prioritize {};
 
 // UClass* UTI_PrioritizeBonus::pClassPointer = NULL;
 
-// Class GearboxFramework.TI_PrioritizeConditional
 // 0x0004 (0x0054 - 0x0050)
 class UTI_PrioritizeConditional : public UTI_Prioritize
 {
 public:
 	class UExpressionEvaluator*                        Condition;                                        		// 0x0050 (0x0004) [0x0000000004000003]              ( CPF_Edit | CPF_Const | CPF_EditInline )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3316];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UTI_PrioritizeConditional::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxSeqAct_PopulationOpportunityLink
 // 0x000C (0x00C0 - 0x00B4)
 class UGearboxSeqAct_PopulationOpportunityLink : public USeqAct_Latent
 {
 public:
 	TArray< class APopulationOpportunity* >            CloneOpportunities;                               		// 0x00B4 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3318];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UGearboxSeqAct_PopulationOpportunityLink::pClassPointer = NULL;
 
-// Class GearboxFramework.IPopulationSpawnPoint
 // 0x0000 (0x003C - 0x003C)
 class UIPopulationSpawnPoint : public UInterface
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3320];
-
-		return pClassPointer;
-	};
-
 	float GetInitialMovementHoldTime();
 	class AActor* GetInitialDestination();
 	unsigned char GetInitialActionType();
@@ -7167,7 +4360,6 @@ public:
 
 // UClass* UIPopulationSpawnPoint::pClassPointer = NULL;
 
-// Class GearboxFramework.PopulationDefinition
 // 0x0018 (0x0054 - 0x003C)
 class UPopulationDefinition : public UGBXDefinition
 {
@@ -7177,18 +4369,7 @@ public:
 	unsigned char                                      RespawnStyle;                                     		// 0x004C (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	unsigned long                                      bTotalResetOnLevelLoad : 1;                       		// 0x0050 (0x0004) [0x0000000000000003] [0x00000001] ( CPF_Edit | CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3322];
-
-		return pClassPointer;
-	};
-
 	bool IsAllSpawnTypesDebugEnabled();
 	void ToggleAllSpawnTypesDebug();
 	class UPopulationFactory* GetRandomFactory(class APopulationOpportunity* SpawningOpportunity, int GameStage, int Rarity);
@@ -7196,7 +4377,6 @@ public:
 
 // UClass* UPopulationDefinition::pClassPointer = NULL;
 
-// Class GearboxFramework.PopulationFactory
 // 0x001C (0x0058 - 0x003C)
 class UPopulationFactory : public UObject
 {
@@ -7209,18 +4389,7 @@ public:
 	unsigned long                                      UseCostOverride : 1;                              		// 0x0050 (0x0004) [0x0000000000000003] [0x00000004] ( CPF_Edit | CPF_Const )
 	int                                                SpawnCostOverride;                                		// 0x0054 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3324];
-
-		return pClassPointer;
-	};
-
 	struct FString eventGetDescriptionOfFactoryOutput();
 	bool eventShouldSavePopulationActor(class UPopulationMaster* Master, class AActor* ActorToSave);
 	bool eventDestroyPopulationActor(class UPopulationMaster* Master, int nOpportunityIdx, class AActor* ActorToDestroy, class UPopulationFactory* SpawnFactory, int CreationFlags, unsigned long bDontSaveActor);
@@ -7238,50 +4407,26 @@ public:
 
 // UClass* UPopulationFactory::pClassPointer = NULL;
 
-// Class GearboxFramework.PopulationFactoryGeneric
 // 0x0004 (0x005C - 0x0058)
 class UPopulationFactoryGeneric : public UPopulationFactory
 {
 public:
 	class AActor*                                      ActorArchetype;                                   		// 0x0058 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3326];
-
-		return pClassPointer;
-	};
-
 	class AActor* eventCreatePopulationActor(class UPopulationMaster* Master, class APopulationOpportunity* Opportunity, class UObject* SpawnLocationContextObject, struct FVector SpawnLocation, struct FRotator SpawnRotation, int GameStage, int Rarity);
 	struct FBoxSphereBounds eventGetSpawnVisibilityBounds(int GameStage, int Rarity);
 };
 
 // UClass* UPopulationFactoryGeneric::pClassPointer = NULL;
 
-// Class GearboxFramework.PopulationFactoryPopulationDefinition
 // 0x0004 (0x005C - 0x0058)
 class UPopulationFactoryPopulationDefinition : public UPopulationFactory
 {
 public:
 	class UPopulationDefinition*                       PopulationDef;                                    		// 0x0058 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3328];
-
-		return pClassPointer;
-	};
-
 	class UPopulationFactory* GetSpawnFactory(class APopulationOpportunity* SpawningOpportunity, int GameStage, int Rarity);
 	class UPawnAllegiance* GetActorAllegiance(int GameStage, int AwesomeLevel);
 	bool IsFactoryWithin(class UPopulationFactory* TestFactory);
@@ -7289,7 +4434,6 @@ public:
 
 // UClass* UPopulationFactoryPopulationDefinition::pClassPointer = NULL;
 
-// Class GearboxFramework.PopulationMaster
 // 0x004C (0x0088 - 0x003C)
 class UPopulationMaster : public UObject
 {
@@ -7309,18 +4453,7 @@ public:
 	unsigned long                                      bHasActorsReadyToDeleteIfSpaceIsNeeded : 1;       		// 0x0084 (0x0004) [0x0000000000000000] [0x00000001]
 	unsigned long                                      bShutdownAIWhenIrrelevant : 1;                    		// 0x0084 (0x0004) [0x0000000000000000] [0x00000002]
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3330];
-
-		return pClassPointer;
-	};
-
 	class AActor* GetActorSpawnedFromOpportunity(class APopulationOpportunity* Opportunity, int ActorIndex);
 	void GetSavedActorDebugInfoForOpportunity(int OpportunityIndex, TArray< struct FString >* SavedActorsDebugInfo);
 	int GetNumberOfSavedActorsForOpportunity(int OpportunityIndex);
@@ -7352,7 +4485,6 @@ public:
 
 // UClass* UPopulationMaster::pClassPointer = NULL;
 
-// Class GearboxFramework.PopulationOpportunity
 // 0x005C (0x01E4 - 0x0188)
 class APopulationOpportunity : public AInfo
 {
@@ -7377,18 +4509,7 @@ public:
 	int                                                InclusiveSpawnIndex;                              		// 0x01D4 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	TArray< int >                                      InclusiveSpawnList;                               		// 0x01D8 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3332];
-
-		return pClassPointer;
-	};
-
 	void ClearBodyCompositionInstance();
 	void ApplyPreviewBodyComposition();
 	class UIBodyInfoProvider* GetBodyInfoProvider();
@@ -7415,7 +4536,6 @@ public:
 
 // UClass* APopulationOpportunity::pClassPointer = NULL;
 
-// Class GearboxFramework.PopulationOpportunityArea
 // 0x0040 (0x0224 - 0x01E4)
 class APopulationOpportunityArea : public APopulationOpportunity
 {
@@ -7433,18 +4553,7 @@ public:
 	TArray< class APlayerController* >                 PlayersDetected;                                  		// 0x0214 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 	int                                                NumPlayersDetected;                               		// 0x0220 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3334];
-
-		return pClassPointer;
-	};
-
 	void ApplyPreviewBodyComposition();
 	class UIBodyInfoProvider* GetBodyInfoProvider();
 	void RespawnKilledActors(float PercentageOfKilledActorsToRespawn);
@@ -7453,7 +4562,6 @@ public:
 
 // UClass* APopulationOpportunityArea::pClassPointer = NULL;
 
-// Class GearboxFramework.PopulationOpportunityCloner
 // 0x0028 (0x020C - 0x01E4)
 class APopulationOpportunityCloner : public APopulationOpportunity
 {
@@ -7470,18 +4578,7 @@ public:
 	int                                                NumTotalActors;                                   		// 0x0204 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	int                                                NumActiveActors;                                  		// 0x0208 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3336];
-
-		return pClassPointer;
-	};
-
 	void ApplyPreviewBodyComposition();
 	class UIBodyInfoProvider* GetBodyInfoProvider();
 	void CloneTimer();
@@ -7491,7 +4588,6 @@ public:
 
 // UClass* APopulationOpportunityCloner::pClassPointer = NULL;
 
-// Class GearboxFramework.PopulationOpportunityCombat
 // 0x009C (0x0280 - 0x01E4)
 class APopulationOpportunityCombat : public APopulationOpportunity
 {
@@ -7522,18 +4618,7 @@ public:
 	TArray< class APlayerController* >                 PlayersDetected;                                  		// 0x0270 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 	int                                                NumPlayersDetected;                               		// 0x027C (0x0004) [0x0000000000002000]              ( CPF_Transient )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3338];
-
-		return pClassPointer;
-	};
-
 	void ApplyPreviewBodyComposition();
 	class UIBodyInfoProvider* GetBodyInfoProvider();
 	void eventTriggerKismetSingleDeathEvent();
@@ -7555,7 +4640,6 @@ public:
 
 // UClass* APopulationOpportunityCombat::pClassPointer = NULL;
 
-// Class GearboxFramework.PopulationOpportunityPoint
 // 0x002C (0x0210 - 0x01E4)
 class APopulationOpportunityPoint : public APopulationOpportunity
 {
@@ -7572,18 +4656,7 @@ public:
 	unsigned char                                      InitialAction;                                    		// 0x0201 (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	TArray< class AActor* >                            InitialActionDestinations;                        		// 0x0204 (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3340];
-
-		return pClassPointer;
-	};
-
 	void ClearBodyCompositionInstance();
 	void ApplyPreviewBodyComposition();
 	class UIBodyInfoProvider* GetBodyInfoProvider();
@@ -7600,70 +4673,21 @@ public:
 
 // UClass* APopulationOpportunityPoint::pClassPointer = NULL;
 
-// Class GearboxFramework.PopulationOpportunityAreaRenderingComponent
 // 0x0000 (0x0210 - 0x0210)
-class UPopulationOpportunityAreaRenderingComponent : public UPrimitiveComponent
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3342];
-
-		return pClassPointer;
-	};
-};
+class UPopulationOpportunityAreaRenderingComponent : public UPrimitiveComponent {};
 
 // UClass* UPopulationOpportunityAreaRenderingComponent::pClassPointer = NULL;
 
-// Class GearboxFramework.PopulationOpportunityAttributeContextResolver
 // 0x0000 (0x003C - 0x003C)
-class UPopulationOpportunityAttributeContextResolver : public UAttributeContextResolver
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3344];
-
-		return pClassPointer;
-	};
-};
+class UPopulationOpportunityAttributeContextResolver : public UAttributeContextResolver {};
 
 // UClass* UPopulationOpportunityAttributeContextResolver::pClassPointer = NULL;
 
-// Class GearboxFramework.PopulationOpportunityPointRenderingComponent
 // 0x0000 (0x0210 - 0x0210)
-class UPopulationOpportunityPointRenderingComponent : public UPrimitiveComponent
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3346];
-
-		return pClassPointer;
-	};
-};
+class UPopulationOpportunityPointRenderingComponent : public UPrimitiveComponent {};
 
 // UClass* UPopulationOpportunityPointRenderingComponent::pClassPointer = NULL;
 
-// Class GearboxFramework.PopulationPoint
 // 0x0040 (0x01C8 - 0x0188)
 class APopulationPoint : public AActor
 {
@@ -7685,18 +4709,7 @@ public:
 	TArray< class UBehaviorBase* >                     OnSpawnCustomizations;                            		// 0x01B8 (0x000C) [0x0000000004400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink | CPF_EditInline )
 	float                                              MinSpawnDistance;                                 		// 0x01C4 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3348];
-
-		return pClassPointer;
-	};
-
 	bool CanSpawnFromFactory(class UPopulationFactory* Factory, int GameStage, int AwesomeLevel);
 	struct FRotator GetSpawnRotation();
 	struct FVector GetSpawnLocation();
@@ -7711,75 +4724,33 @@ public:
 
 // UClass* APopulationPoint::pClassPointer = NULL;
 
-// Class GearboxFramework.PopulationPoint_Dynamic
 // 0x000C (0x01D4 - 0x01C8)
 class APopulationPoint_Dynamic : public APopulationPoint
 {
 public:
 	struct FName                                       DynamicPointName;                                 		// 0x01C8 (0x0008) [0x0000000000000001]              ( CPF_Edit )
 	unsigned long                                      bSaveAsInstanceDataOnBase : 1;                    		// 0x01D0 (0x0004) [0x0000000000000003] [0x00000001] ( CPF_Edit | CPF_Const )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3350];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* APopulationPoint_Dynamic::pClassPointer = NULL;
 
-// Class GearboxFramework.PopulationPointRenderingComponent
 // 0x0000 (0x0210 - 0x0210)
-class UPopulationPointRenderingComponent : public UPrimitiveComponent
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3352];
-
-		return pClassPointer;
-	};
-};
+class UPopulationPointRenderingComponent : public UPrimitiveComponent {};
 
 // UClass* UPopulationPointRenderingComponent::pClassPointer = NULL;
 
-// Class GearboxFramework.SeqEvent_EncounterWaveComplete
 // 0x0004 (0x00C8 - 0x00C4)
 class USeqEvent_EncounterWaveComplete : public USequenceEvent
 {
 public:
 	int                                                CurrentWave;                                      		// 0x00C4 (0x0004) [0x0000000000000000]
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3354];
-
-		return pClassPointer;
-	};
-
 	void NotifyWaveComplete(int nWave);
 };
 
 // UClass* USeqEvent_EncounterWaveComplete::pClassPointer = NULL;
 
-// Class GearboxFramework.SeqEvent_PopulatedActor
 // 0x0008 (0x00CC - 0x00C4)
 class USeqEvent_PopulatedActor : public USequenceEvent
 {
@@ -7787,24 +4758,12 @@ public:
 	class APopulationOpportunity*                      DestPopulationOpportunity;                        		// 0x00C4 (0x0004) [0x0000000000000000]
 	class AActor*                                      SpawnPoint;                                       		// 0x00C8 (0x0004) [0x0000000000000000]
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3356];
-
-		return pClassPointer;
-	};
-
 	void eventNotifyPopulatedActor(class AActor* PopulatedActor, class APopulationOpportunity* InDestPopulationOpportunity, class AActor* InSpawnPoint, class AWorldInfo* InOriginator);
 };
 
 // UClass* USeqEvent_PopulatedActor::pClassPointer = NULL;
 
-// Class GearboxFramework.SeqEvent_PopulatedPoint
 // 0x0008 (0x00CC - 0x00C4)
 class USeqEvent_PopulatedPoint : public USequenceEvent
 {
@@ -7812,45 +4771,17 @@ public:
 	class APopulationOpportunity*                      DestPopulationOpportunity;                        		// 0x00C4 (0x0004) [0x0000000000000000]
 	class AActor*                                      SpawnPoint;                                       		// 0x00C8 (0x0004) [0x0000000000000000]
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3358];
-
-		return pClassPointer;
-	};
-
 	void eventNotifyPopulatedActor(class AActor* PopulatedActor, class APopulationOpportunity* InDestPopulationOpportunity, class AActor* InSpawnPoint, class AWorldInfo* InOriginator);
 };
 
 // UClass* USeqEvent_PopulatedPoint::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxHUD
 // 0x0000 (0x0224 - 0x0224)
-class AGearboxHUD : public AHUD
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3360];
-
-		return pClassPointer;
-	};
-};
+class AGearboxHUD : public AHUD {};
 
 // UClass* AGearboxHUD::pClassPointer = NULL;
 
-// Class GearboxFramework.AIDefinition
 // 0x0024 (0x0060 - 0x003C)
 class UAIDefinition : public UObject
 {
@@ -7863,18 +4794,7 @@ public:
 	float                                              TargetSearchRadius;                               		// 0x0058 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	class UTargetingDefinition*                        TargetingDef;                                     		// 0x005C (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3362];
-
-		return pClassPointer;
-	};
-
 	void OnReset(struct FBehaviorConsumerHandle* ConsumerHandle);
 	void OnHitByVehicle(class AVehicle* Vehicle, struct FBehaviorConsumerHandle* ConsumerHandle);
 	void OnRanOver(class AVehicle* Vehicle, struct FBehaviorConsumerHandle* ConsumerHandle);
@@ -7900,29 +4820,15 @@ public:
 
 // UClass* UAIDefinition::pClassPointer = NULL;
 
-// Class GearboxFramework.BehaviorEventFilterBase
 // 0x0004 (0x0040 - 0x003C)
 class UBehaviorEventFilterBase : public UObject
 {
 public:
 	unsigned long                                      ShouldBeInstanced : 1;                            		// 0x003C (0x0004) [0x0000000000000000] [0x00000001]
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3364];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UBehaviorEventFilterBase::pClassPointer = NULL;
 
-// Class GearboxFramework.BehaviorKernel
 // 0x0088 (0x00C4 - 0x003C)
 class UBehaviorKernel : public UObject
 {
@@ -7946,18 +4852,7 @@ public:
 	TArray< struct FString >                           DebugPages;                                       		// 0x00AC (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 	TArray< class UObject* >                           EventFilterObjects;                               		// 0x00B8 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3366];
-
-		return pClassPointer;
-	};
-
 	void RecentlyRunBehaviorsForSequence(int PID, int ProvidersIndex, int SequencesIndex, struct FBehaviorExecutionRecord* ExecutionRecord);
 	void AllEventStateForSequence(int PID, int ProvidersIndex, int SequencesDataIndex, struct FBehaviorEventState* EventState);
 	void AllWaitingThreadsForSequence(int PID, int ProvidersIndex, int SequencesDataIndex, struct FBehaviorThread* Thread);
@@ -7990,7 +4885,6 @@ public:
 
 // UClass* UBehaviorKernel::pClassPointer = NULL;
 
-// Class GearboxFramework.BehaviorProviderDefinition
 // 0x0010 (0x004C - 0x003C)
 class UBehaviorProviderDefinition : public UGBXDefinition
 {
@@ -7998,18 +4892,7 @@ public:
 	int                                                CurrentVersion;                                   		// 0x003C (0x0004) [0x0000000000000000]
 	TArray< struct FBehaviorSequenceData >             BehaviorSequences;                                		// 0x0040 (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3368];
-
-		return pClassPointer;
-	};
-
 	void SetObjectBehaviorVariable(class UObject* Value, struct FBehaviorVariableValue* BehaviorVariable);
 	void SetVectorBehaviorVariable(struct FBehaviorVariableValue* BehaviorVariable, struct FVector* Value);
 	void SetFloatBehaviorVariable(float Value, struct FBehaviorVariableValue* BehaviorVariable);
@@ -8019,161 +4902,63 @@ public:
 
 // UClass* UBehaviorProviderDefinition::pClassPointer = NULL;
 
-// Class GearboxFramework.AIBehaviorProviderDefinition
 // 0x0000 (0x004C - 0x004C)
-class UAIBehaviorProviderDefinition : public UBehaviorProviderDefinition
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3370];
-
-		return pClassPointer;
-	};
-};
+class UAIBehaviorProviderDefinition : public UBehaviorProviderDefinition {};
 
 // UClass* UAIBehaviorProviderDefinition::pClassPointer = NULL;
 
-// Class GearboxFramework.BehaviorSequenceCustomEnableCondition
 // 0x0005 (0x0041 - 0x003C)
 class UBehaviorSequenceCustomEnableCondition : public UObject
 {
 public:
 	struct FChunkedList_Mirror                         LinkedBehaviorSequences;                          		// 0x003C (0x0004) [0x0000000000003000]              ( CPF_Native | CPF_Transient )
 	unsigned char                                      BehaviorKernelInstanceTagForTransientState;       		// 0x0040 (0x0001) [0x0000000000002000]              ( CPF_Transient )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3372];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UBehaviorSequenceCustomEnableCondition::pClassPointer = NULL;
 
-// Class GearboxFramework.BehaviorSequenceEnableByMultipleConditions
 // 0x0010 (0x0051 - 0x0041)
 class UBehaviorSequenceEnableByMultipleConditions : public UBehaviorSequenceCustomEnableCondition
 {
 public:
 	TArray< class UBehaviorSequenceCustomEnableCondition* > EnableConditions;                                 		// 0x0044 (0x000C) [0x0000000004400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink | CPF_EditInline )
 	unsigned char                                      Operator;                                         		// 0x0050 (0x0001) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3374];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UBehaviorSequenceEnableByMultipleConditions::pClassPointer = NULL;
 
-// Class GearboxFramework.IBehaviorConsumer
 // 0x0000 (0x003C - 0x003C)
 class UIBehaviorConsumer : public UInterface
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3376];
-
-		return pClassPointer;
-	};
-
 	struct FBehaviorConsumerHandle GetBehaviorConsumerHandle();
 };
 
 // UClass* UIBehaviorConsumer::pClassPointer = NULL;
 
-// Class GearboxFramework.IBehaviorProvider
 // 0x0000 (0x003C - 0x003C)
 class UIBehaviorProvider : public UInterface
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3378];
-
-		return pClassPointer;
-	};
-
 	void SetBehaviorProviderDefinition(class UBehaviorProviderDefinition* NewBehaviorProviderDefinition);
 	class UBehaviorProviderDefinition* GetBehaviorProviderDefinition();
 };
 
 // UClass* UIBehaviorProvider::pClassPointer = NULL;
 
-// Class GearboxFramework.ICustomEvent
 // 0x0000 (0x003C - 0x003C)
 class UICustomEvent : public UInterface
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3380];
-
-		return pClassPointer;
-	};
-
 	void eventRunCustomEvent(struct FName EventName, class UObject* EventInstigator, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData);
 };
 
 // UClass* UICustomEvent::pClassPointer = NULL;
 
-// Class GearboxFramework.ITimerBehavior
 // 0x0000 (0x003C - 0x003C)
 class UITimerBehavior : public UInterface
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3382];
-
-		return pClassPointer;
-	};
-
 	bool SetTimerState(unsigned char TimerId, struct FBehaviorTimerState TimerState);
 	bool GetTimerState(unsigned char TimerId, struct FBehaviorTimerState* TimerState);
 	float GetTimeSeconds();
@@ -8181,7 +4966,6 @@ public:
 
 // UClass* UITimerBehavior::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxAnimDefinition
 // 0x0074 (0x00BC - 0x0048)
 class UGearboxAnimDefinition : public USpecialMoveDefinition
 {
@@ -8208,18 +4992,7 @@ public:
 	TArray< struct FTimedAnimBehaviorEvent >           TimedBehaviorEvents;                              		// 0x00AC (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
 	class UBehaviorProviderDefinition*                 BehaviorProviderDefinition;                       		// 0x00B8 (0x0004) [0x0000000000020001]              ( CPF_Edit | CPF_EditConst )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3384];
-
-		return pClassPointer;
-	};
-
 	float GetAnimLength(class USkeletalMeshComponent* SMC);
 	bool eventIsPlayingLocally(class USpecialMoveInterface* SMI);
 	class UAnimNodeSpecialMoveBlend* GetSMNode(class USpecialMoveInterface* SMI);
@@ -8243,7 +5016,6 @@ public:
 
 // UClass* UGearboxAnimDefinition::pClassPointer = NULL;
 
-// Class GearboxFramework.Behavior_TriggerDialogEvent
 // 0x001C (0x0068 - 0x004C)
 class UBehavior_TriggerDialogEvent : public UBehaviorBase
 {
@@ -8258,25 +5030,13 @@ public:
 	class UGearboxDialogEventData*                     MyEventData;                                      		// 0x0060 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	int                                                MyDataUseCount;                                   		// 0x0064 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3386];
-
-		return pClassPointer;
-	};
-
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 	void TriggerDialogEvent(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters* EventData);
 };
 
 // UClass* UBehavior_TriggerDialogEvent::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxDialogActor
 // 0x0034 (0x01BC - 0x0188)
 class AGearboxDialogActor : public AActor
 {
@@ -8289,18 +5049,7 @@ public:
 	struct FGearboxDialogReplicatedData                DialogReplicatedData;                             		// 0x01A4 (0x0014) [0x0000000000000020]              ( CPF_Net )
 	class UGearboxDialogNameTag*                       CurrentNameTag;                                   		// 0x01B8 (0x0004) [0x0000000000002020]              ( CPF_Net | CPF_Transient )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3388];
-
-		return pClassPointer;
-	};
-
 	void SetDialogNameTag(class UGearboxDialogNameTag* NewName);
 	struct FGearboxDialogReplicatedData GetReplicatedDialogData();
 	void SetReplicatedDialogData(class UGearboxDialogAct_Talk* TalkAct, struct FGearboxDialogData* Data);
@@ -8315,7 +5064,6 @@ public:
 
 // UClass* AGearboxDialogActor::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxDialogComponent
 // 0x0013 (0x006C - 0x0059)
 class UGearboxDialogComponent : public UActorComponent
 {
@@ -8324,18 +5072,7 @@ public:
 	struct FAkPlayingInfo                              ClientPlayingInfo;                                		// 0x0060 (0x0008) [0x0000000000082000]              ( CPF_Transient | CPF_Component )
 	unsigned long                                      bIsReattaching : 1;                               		// 0x0068 (0x0004) [0x0000000000000000] [0x00000001]
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3390];
-
-		return pClassPointer;
-	};
-
 	bool IsTalking();
 	void StopTalking(class UGearboxDialogEventTag* EventTag, unsigned long bForceStop);
 	void TalkReplicated(struct FGearboxDialogReplicatedData NewDialogData);
@@ -8347,7 +5084,6 @@ public:
 
 // UClass* UGearboxDialogComponent::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxDialogEventData
 // 0x003C (0x0078 - 0x003C)
 class UGearboxDialogEventData : public UObject
 {
@@ -8365,24 +5101,12 @@ public:
 	float                                              TalkFinishTime;                                   		// 0x0070 (0x0004) [0x0000000000000000]
 	int                                                UseCount;                                         		// 0x0074 (0x0004) [0x0000000000000000]
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3392];
-
-		return pClassPointer;
-	};
-
 	bool IsActive();
 };
 
 // UClass* UGearboxDialogEventData::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxDialogEventTag
 // 0x0008 (0x0044 - 0x003C)
 class UGearboxDialogEventTag : public UGBXDefinition
 {
@@ -8391,46 +5115,20 @@ public:
 	unsigned long                                      bSoundEffect : 1;                                 		// 0x003C (0x0004) [0x0000000000000003] [0x00000002] ( CPF_Edit | CPF_Const )
 	unsigned long                                      bIsDeathScream : 1;                               		// 0x003C (0x0004) [0x0000000000000003] [0x00000004] ( CPF_Edit | CPF_Const )
 	class UGearboxDialogPriority*                      Priority;                                         		// 0x0040 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3394];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UGearboxDialogEventTag::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxDialogGlobalsDefinition
 // 0x0010 (0x004C - 0x003C)
 class UGearboxDialogGlobalsDefinition : public UGBXDefinition
 {
 public:
 	class UAkRtpc*                                     PitchRTPC;                                        		// 0x003C (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	TArray< class UGearboxDialogPriority* >            Priorities;                                       		// 0x0040 (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3396];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UGearboxDialogGlobalsDefinition::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxDialogGroup
 // 0x0060 (0x009C - 0x003C)
 class UGearboxDialogGroup : public UObject
 {
@@ -8446,45 +5144,17 @@ public:
 	TArray< struct FDialogEventData >                  DialogEvents;                                     		// 0x0084 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< struct FTalkActData >                      TalkActs;                                         		// 0x0090 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3398];
-
-		return pClassPointer;
-	};
-
 	void SimpleEvent(class AActor* Owner, class UGearboxDialogNameTag* NameTag, class UGearboxDialogEventTag* EventTag);
 };
 
 // UClass* UGearboxDialogGroup::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxDialogTemplateGroup
 // 0x0000 (0x009C - 0x009C)
-class UGearboxDialogTemplateGroup : public UGearboxDialogGroup
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3400];
-
-		return pClassPointer;
-	};
-};
+class UGearboxDialogTemplateGroup : public UGearboxDialogGroup {};
 
 // UClass* UGearboxDialogTemplateGroup::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxDialogManager
 // 0x0084 (0x00C0 - 0x003C)
 class UGearboxDialogManager : public UObject
 {
@@ -8500,18 +5170,7 @@ public:
 	struct FString                                     EventDataClassPath;                               		// 0x00B0 (0x000C) [0x0000000000444000]              ( CPF_Config | CPF_GlobalConfig | CPF_NeedCtorLink )
 	class UClass*                                      EventDataClass;                                   		// 0x00BC (0x0004) [0x0000000000002000]              ( CPF_Transient )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3402];
-
-		return pClassPointer;
-	};
-
 	void DrawDialogDebug(class AHUD* HUD, float StartY);
 	void CheckpointRemoveReferencesBeforeDestroy();
 	class UGearboxDialogEventTag* GetEventTagForEventInfo(struct FDialogEventInfo EventInfo);
@@ -8530,98 +5189,42 @@ public:
 
 // UClass* UGearboxDialogManager::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxDialogNameTag
 // 0x000C (0x0048 - 0x003C)
 class UGearboxDialogNameTag : public UGBXDefinition
 {
 public:
 	struct FName                                       NameTag;                                          		// 0x003C (0x0008) [0x0000000000000001]              ( CPF_Edit )
 	class UGearboxDialogNameTag*                       ParentTag;                                        		// 0x0044 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3404];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UGearboxDialogNameTag::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxDialogPriority
 // 0x0000 (0x003C - 0x003C)
-class UGearboxDialogPriority : public UGBXDefinition
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3406];
-
-		return pClassPointer;
-	};
-};
+class UGearboxDialogPriority : public UGBXDefinition {};
 
 // UClass* UGearboxDialogPriority::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxDialogNode
 // 0x0004 (0x0070 - 0x006C)
 class UGearboxDialogNode : public UGearboxEditorNode
 {
 public:
 	int                                                NodeID;                                           		// 0x006C (0x0004) [0x0000000000000000]
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3408];
-
-		return pClassPointer;
-	};
-
 	void ActivateOutput(int Link);
 };
 
 // UClass* UGearboxDialogNode::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxDialogAction
 // 0x0000 (0x0070 - 0x0070)
 class UGearboxDialogAction : public UGearboxDialogNode
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3410];
-
-		return pClassPointer;
-	};
-
 	void eventActivate();
 };
 
 // UClass* UGearboxDialogAction::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxDialogAct_Chance
 // 0x0010 (0x0080 - 0x0070)
 class UGearboxDialogAct_Chance : public UGearboxDialogAction
 {
@@ -8631,92 +5234,38 @@ public:
 	float                                              QuietTimeMax;                                     		// 0x0078 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	float                                              NextFireTime;                                     		// 0x007C (0x0004) [0x0000000000002000]              ( CPF_Transient )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3412];
-
-		return pClassPointer;
-	};
-
 	void eventActivate();
 };
 
 // UClass* UGearboxDialogAct_Chance::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxDialogAct_Compare
 // 0x0000 (0x0070 - 0x0070)
 class UGearboxDialogAct_Compare : public UGearboxDialogAction
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3414];
-
-		return pClassPointer;
-	};
-
 	void eventActivate();
 };
 
 // UClass* UGearboxDialogAct_Compare::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxDialogAct_ObjectParameterSwitch
 // 0x000C (0x007C - 0x0070)
 class UGearboxDialogAct_ObjectParameterSwitch : public UGearboxDialogAction
 {
 public:
 	TArray< class UObject* >                           Outputs;                                          		// 0x0070 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3416];
-
-		return pClassPointer;
-	};
-
 	void eventActivate();
 };
 
 // UClass* UGearboxDialogAct_ObjectParameterSwitch::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxDialogNonTemplateAction
 // 0x0000 (0x0070 - 0x0070)
-class UGearboxDialogNonTemplateAction : public UGearboxDialogAction
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3418];
-
-		return pClassPointer;
-	};
-};
+class UGearboxDialogNonTemplateAction : public UGearboxDialogAction {};
 
 // UClass* UGearboxDialogNonTemplateAction::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxDialogAct_Talk
 // 0x0014 (0x0084 - 0x0070)
 class UGearboxDialogAct_Talk : public UGearboxDialogNonTemplateAction
 {
@@ -8727,18 +5276,7 @@ public:
 	unsigned long                                      bInstigatorTalker : 1;                            		// 0x0074 (0x0004) [0x0000000000000000] [0x00000004]
 	TArray< struct FGearboxDialogData >                TalkData;                                         		// 0x0078 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3420];
-
-		return pClassPointer;
-	};
-
 	void eventActivate();
 	void eventTalkFinished(class AActor* InTalker);
 	void eventTalkStarted(class AActor* InTalker);
@@ -8746,28 +5284,11 @@ public:
 
 // UClass* UGearboxDialogAct_Talk::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxDialogTemplateAction
 // 0x0000 (0x0070 - 0x0070)
-class UGearboxDialogTemplateAction : public UGearboxDialogAction
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3422];
-
-		return pClassPointer;
-	};
-};
+class UGearboxDialogTemplateAction : public UGearboxDialogAction {};
 
 // UClass* UGearboxDialogTemplateAction::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxDialogAct_Trigger
 // 0x0008 (0x0078 - 0x0070)
 class UGearboxDialogAct_Trigger : public UGearboxDialogTemplateAction
 {
@@ -8775,178 +5296,62 @@ public:
 	class UGearboxDialogEventTag*                      DialogEvent;                                      		// 0x0070 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	unsigned long                                      bPreviewing : 1;                                  		// 0x0074 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3424];
-
-		return pClassPointer;
-	};
-
 	void ActivateOutput(int Link);
 	void eventActivate();
 };
 
 // UClass* UGearboxDialogAct_Trigger::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxDialogEvent
 // 0x0008 (0x0078 - 0x0070)
 class UGearboxDialogEvent : public UGearboxDialogNode
 {
 public:
 	unsigned long                                      bDisabled : 1;                                    		// 0x0070 (0x0004) [0x0000000000000002] [0x00000001] ( CPF_Const )
 	class UGearboxDialogEventTag*                      Tag;                                              		// 0x0074 (0x0004) [0x0000000000000000]
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3426];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UGearboxDialogEvent::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxDialogTemplateEvent
 // 0x0000 (0x0078 - 0x0078)
-class UGearboxDialogTemplateEvent : public UGearboxDialogEvent
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3428];
-
-		return pClassPointer;
-	};
-};
+class UGearboxDialogTemplateEvent : public UGearboxDialogEvent {};
 
 // UClass* UGearboxDialogTemplateEvent::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxDialogVariable
 // 0x0000 (0x0070 - 0x0070)
 class UGearboxDialogVariable : public UGearboxDialogNode
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3430];
-
-		return pClassPointer;
-	};
-
 	void ResolveToArgumentValue(struct FString* Out_ArgumentValue);
 	void GetTalkers(TArray< class AActor* >* Talkers);
 };
 
 // UClass* UGearboxDialogVariable::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxDialogVar_Instigator
 // 0x0000 (0x0070 - 0x0070)
-class UGearboxDialogVar_Instigator : public UGearboxDialogVariable
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3432];
-
-		return pClassPointer;
-	};
-};
+class UGearboxDialogVar_Instigator : public UGearboxDialogVariable {};
 
 // UClass* UGearboxDialogVar_Instigator::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxDialogVar_LastTalker
 // 0x0000 (0x0070 - 0x0070)
-class UGearboxDialogVar_LastTalker : public UGearboxDialogVariable
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3434];
-
-		return pClassPointer;
-	};
-};
+class UGearboxDialogVar_LastTalker : public UGearboxDialogVariable {};
 
 // UClass* UGearboxDialogVar_LastTalker::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxDialogVar_NameTag
 // 0x0004 (0x0074 - 0x0070)
 class UGearboxDialogVar_NameTag : public UGearboxDialogVariable
 {
 public:
 	class UGearboxDialogNameTag*                       NameTag;                                          		// 0x0070 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3436];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UGearboxDialogVar_NameTag::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxDialogVar_Other
 // 0x0000 (0x0070 - 0x0070)
-class UGearboxDialogVar_Other : public UGearboxDialogVariable
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3438];
-
-		return pClassPointer;
-	};
-};
+class UGearboxDialogVar_Other : public UGearboxDialogVariable {};
 
 // UClass* UGearboxDialogVar_Other::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxDialogVar_Random
 // 0x0018 (0x0088 - 0x0070)
 class UGearboxDialogVar_Random : public UGearboxDialogVariable
 {
@@ -8956,45 +5361,19 @@ public:
 	unsigned long                                      bNotLastTalker : 1;                               		// 0x0070 (0x0004) [0x0000000000000001] [0x00000004] ( CPF_Edit )
 	class UPawnAllegiance*                             Allegiance;                                       		// 0x0074 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	struct FAttributeInitializationData                DistanceLimit;                                    		// 0x0078 (0x0010) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3440];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UGearboxDialogVar_Random::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxSeqAct_ToggleDialog
 // 0x0004 (0x00A8 - 0x00A4)
 class UGearboxSeqAct_ToggleDialog : public USequenceAction
 {
 public:
 	unsigned long                                      bDialogEnabled : 1;                               		// 0x00A4 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3442];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UGearboxSeqAct_ToggleDialog::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxSeqAct_TriggerDialog
 // 0x0018 (0x00CC - 0x00B4)
 class UGearboxSeqAct_TriggerDialog : public USeqAct_Latent
 {
@@ -9006,45 +5385,19 @@ public:
 	int                                                MyDataUseCount;                                   		// 0x00C4 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	unsigned long                                      bCheckCanPreview : 1;                             		// 0x00C8 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
 	unsigned long                                      bCanPreview : 1;                                  		// 0x00C8 (0x0004) [0x0000000000002000] [0x00000002] ( CPF_Transient )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3444];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UGearboxSeqAct_TriggerDialog::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxSeqAct_TriggerDialogName
 // 0x0004 (0x00D0 - 0x00CC)
 class UGearboxSeqAct_TriggerDialogName : public UGearboxSeqAct_TriggerDialog
 {
 public:
 	class UGearboxDialogGroup*                         Group;                                            		// 0x00CC (0x0004) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3446];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UGearboxSeqAct_TriggerDialogName::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxAccountActions
 // 0x006C (0x00A8 - 0x003C)
 class UGearboxAccountActions : public UObject
 {
@@ -9061,18 +5414,7 @@ public:
 	struct FScriptDelegate                             __OnCodeRedeemed__Delegate;                       		// 0x0090 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FScriptDelegate                             __OnEntitlementConsumed__Delegate;                		// 0x009C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3448];
-
-		return pClassPointer;
-	};
-
 	void HandleOffersNotifiedResponse(struct FSparkResult* Result);
 	void HandleBulkEntitlementsConsumedResponse(struct FSparkResult* Result);
 	void HandleEntitlementConsumedResponse(struct FSparkResult* Result);
@@ -9099,7 +5441,6 @@ public:
 
 // UClass* UGearboxAccountActions::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxAccountData
 // 0x0054 (0x0090 - 0x003C)
 class UGearboxAccountData : public UObject
 {
@@ -9114,18 +5455,7 @@ public:
 	TArray< struct FScriptDelegate >                   EntitlementsUpdatedDelegates;                     		// 0x0078 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	TArray< class USparkServiceConfiguration* >        Services;                                         		// 0x0084 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3450];
-
-		return pClassPointer;
-	};
-
 	int CountEntitlement(struct FName EntitlementName, unsigned long bIgnoreLocallyConsumed);
 	int GetTotalGoldenKeyCount();
 	int GetGoldenKeyCount(unsigned long bIgnoreLocallyConsumed);
@@ -9155,7 +5485,6 @@ public:
 
 // UClass* UGearboxAccountData::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxProcess
 // 0x002C (0x0068 - 0x003C)
 class UGearboxProcess : public UObject
 {
@@ -9172,18 +5501,7 @@ public:
 	int                                                CurrentStep;                                      		// 0x0060 (0x0004) [0x0000000000000000]
 	int                                                FailureStep;                                      		// 0x0064 (0x0004) [0x0000000000000000]
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3452];
-
-		return pClassPointer;
-	};
-
 	struct FStepConfiguration GetStepConfiguration();
 	void GotoStep(int Step);
 	void GotoNextStep();
@@ -9197,7 +5515,6 @@ public:
 
 // UClass* UGearboxProcess::pClassPointer = NULL;
 
-// Class GearboxFramework.SparkInitializationProcess
 // 0x0024 (0x008C - 0x0068)
 class USparkInitializationProcess : public UGearboxProcess
 {
@@ -9209,18 +5526,7 @@ public:
 	unsigned long                                      ValidAccount : 1;                                 		// 0x007C (0x0004) [0x0000000000000000] [0x00000002]
 	struct FString                                     AsyncTicket;                                      		// 0x0080 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3454];
-
-		return pClassPointer;
-	};
-
 	void eventTriggerSparkInitializedDelegates(unsigned char InitializeResult);
 	void ClearSparkInitializedDelegate(struct FScriptDelegate SparkInitializedDelegate);
 	void AddSparkInitializedDelegate(struct FScriptDelegate SparkInitializedDelegate);
@@ -9245,7 +5551,6 @@ public:
 
 // UClass* USparkInitializationProcess::pClassPointer = NULL;
 
-// Class GearboxFramework.LeviathanService
 // 0x0010 (0x004C - 0x003C)
 class ULeviathanService : public UObject
 {
@@ -9255,18 +5560,7 @@ public:
 	int                                                StatBufferSize;                                   		// 0x0044 (0x0004) [0x0000000000000000]
 	int                                                AtomTableBufferSize;                              		// 0x0048 (0x0004) [0x0000000000000000]
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3456];
-
-		return pClassPointer;
-	};
-
 	class USparkServiceConfiguration* eventGetLeviathanServiceConfiguration(int ControllerNumber);
 	void OnSparkInitialized(unsigned char InitializedResult);
 	void LoadServiceConfigurationForPlayer(int SplitscreenIndex);
@@ -9275,24 +5569,10 @@ public:
 
 // UClass* ULeviathanService::pClassPointer = NULL;
 
-// Class GearboxFramework.SparkInterface
 // 0x0000 (0x003C - 0x003C)
 class USparkInterface : public UInterface
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3458];
-
-		return pClassPointer;
-	};
-
 	class USparkNews* GetNewsService();
 	class USparkServiceConfiguration* GetTitleStorageServiceConfiguration();
 	struct FString GetTitleStorageUrl();
@@ -9334,7 +5614,6 @@ public:
 
 // UClass* USparkInterface::pClassPointer = NULL;
 
-// Class GearboxFramework.SparkInterfaceImpl
 // 0x00A0 (0x00DC - 0x003C)
 class USparkInterfaceImpl : public UObject
 {
@@ -9365,18 +5644,7 @@ public:
 	struct FScriptDelegate                             __OnSparkConfigReceived__Delegate;                		// 0x00C4 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FScriptDelegate                             __OnSparkEmergencyMessageUpdated__Delegate;       		// 0x00D0 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3460];
-
-		return pClassPointer;
-	};
-
 	class USparkNews* GetNewsService();
 	class USparkServiceConfiguration* GetTitleStorageServiceConfiguration();
 	struct FString GetTitleStorageUrl();
@@ -9431,7 +5699,6 @@ public:
 
 // UClass* USparkInterfaceImpl::pClassPointer = NULL;
 
-// Class GearboxFramework.SparkServiceConfiguration
 // 0x0034 (0x0070 - 0x003C)
 class USparkServiceConfiguration : public UObject
 {
@@ -9442,18 +5709,7 @@ public:
 	TArray< struct FString >                           Values;                                           		// 0x0058 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
 	struct FString                                     OverrideUrl;                                      		// 0x0064 (0x000C) [0x0000000000404000]              ( CPF_Config | CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3462];
-
-		return pClassPointer;
-	};
-
 	float GetFloatParameter(struct FString KeyName, float DefaultValue, float MinimumValue, float MaximumValue);
 	int GetIntParameter(struct FString KeyName, int DefaultValue, int MinimumValue, int MaximumValue);
 	struct FString GetStringParameter(struct FString KeyName, struct FString Default);
@@ -9464,7 +5720,6 @@ public:
 
 // UClass* USparkServiceConfiguration::pClassPointer = NULL;
 
-// Class GearboxFramework.SparkTypes
 // 0x003C (0x0078 - 0x003C)
 class USparkTypes : public UObject
 {
@@ -9475,18 +5730,7 @@ public:
 	struct FScriptDelegate                             __OnSparkEmergencyMessageUpdated__Delegate;       		// 0x0060 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FScriptDelegate                             __OnEntitlementsUpdated__Delegate;                		// 0x006C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3464];
-
-		return pClassPointer;
-	};
-
 	struct FString UTF8toString(TArray< unsigned char > inputBytes);
 	void OnEntitlementsUpdated(class UGearboxAccountData* GbxAccount);
 	void OnSparkEmergencyMessageUpdated();
@@ -9497,351 +5741,106 @@ public:
 
 // UClass* USparkTypes::pClassPointer = NULL;
 
-// Class GearboxFramework.Action_ChangeRuleSet
 // 0x0004 (0x00AC - 0x00A8)
 class UAction_ChangeRuleSet : public UActionSequence
 {
 public:
 	class URuleSet*                                    NewRuleSet;                                       		// 0x00A8 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[38928];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UAction_ChangeRuleSet::pClassPointer = NULL;
 
-// Class GearboxFramework.RES_RuleSetChange
 // 0x0000 (0x003C - 0x003C)
-class URES_RuleSetChange : public UActionResource
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[38932];
-
-		return pClassPointer;
-	};
-};
+class URES_RuleSetChange : public UActionResource {};
 
 // UClass* URES_RuleSetChange::pClassPointer = NULL;
 
-// Class GearboxFramework.Action_FaceThreat
 // 0x0000 (0x00B0 - 0x00B0)
 class UAction_FaceThreat : public UActionSequencePawn
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[38935];
-
-		return pClassPointer;
-	};
-
 	void eventStopSequence();
 };
 
 // UClass* UAction_FaceThreat::pClassPointer = NULL;
 
-// Class GearboxFramework.RES_FacingPolicy
 // 0x0000 (0x003C - 0x003C)
-class URES_FacingPolicy : public UActionResource
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[38942];
-
-		return pClassPointer;
-	};
-};
+class URES_FacingPolicy : public UActionResource {};
 
 // UClass* URES_FacingPolicy::pClassPointer = NULL;
 
-// Class GearboxFramework.Action_MoveRandom
 // 0x0000 (0x00B0 - 0x00B0)
-class UAction_MoveRandom : public UActionSequencePawn
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[38943];
-
-		return pClassPointer;
-	};
-};
+class UAction_MoveRandom : public UActionSequencePawn {};
 
 // UClass* UAction_MoveRandom::pClassPointer = NULL;
 
-// Class GearboxFramework.Action_MoveTo
 // 0x0000 (0x00B0 - 0x00B0)
-class UAction_MoveTo : public UActionSequencePawn
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[38945];
-
-		return pClassPointer;
-	};
-};
+class UAction_MoveTo : public UActionSequencePawn {};
 
 // UClass* UAction_MoveTo::pClassPointer = NULL;
 
-// Class GearboxFramework.RES_Movement
 // 0x0000 (0x003C - 0x003C)
-class URES_Movement : public UActionResource
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39173];
-
-		return pClassPointer;
-	};
-};
+class URES_Movement : public UActionResource {};
 
 // UClass* URES_Movement::pClassPointer = NULL;
 
-// Class GearboxFramework.Action_PopRuleSet
 // 0x0000 (0x00B0 - 0x00B0)
-class UAction_PopRuleSet : public UActionSequencePawn
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39174];
-
-		return pClassPointer;
-	};
-};
+class UAction_PopRuleSet : public UActionSequencePawn {};
 
 // UClass* UAction_PopRuleSet::pClassPointer = NULL;
 
-// Class GearboxFramework.Action_PushRuleSet
 // 0x0004 (0x00B4 - 0x00B0)
 class UAction_PushRuleSet : public UActionSequencePawn
 {
 public:
 	class URuleSet*                                    NewRuleSet;                                       		// 0x00B0 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39177];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UAction_PushRuleSet::pClassPointer = NULL;
 
-// Class GearboxFramework.ActorAttributeContextResolver
 // 0x0000 (0x003C - 0x003C)
 class UActorAttributeContextResolver : public UAttributeContextResolver
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39195];
-
-		return pClassPointer;
-	};
-
 	class UObject* GetAttributeContext(class UAttributeDefinitionBase* Attribute, class UObject* AttributeContextSource);
 };
 
 // UClass* UActorAttributeContextResolver::pClassPointer = NULL;
 
-// Class GearboxFramework.AIComponentAttributeContextResolver
 // 0x0000 (0x003C - 0x003C)
 class UAIComponentAttributeContextResolver : public UAttributeContextResolver
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39311];
-
-		return pClassPointer;
-	};
-
 	class UObject* GetAttributeContext(class UAttributeDefinitionBase* Attribute, class UObject* AttributeContextSource);
 };
 
 // UClass* UAIComponentAttributeContextResolver::pClassPointer = NULL;
 
-// Class GearboxFramework.AIStateBase
 // 0x0000 (0x006C - 0x006C)
-class UAIStateBase : public UGearboxEditorNode
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39630];
-
-		return pClassPointer;
-	};
-};
+class UAIStateBase : public UGearboxEditorNode {};
 
 // UClass* UAIStateBase::pClassPointer = NULL;
 
-// Class GearboxFramework.AIState
 // 0x0000 (0x006C - 0x006C)
-class UAIState : public UAIStateBase
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39632];
-
-		return pClassPointer;
-	};
-};
+class UAIState : public UAIStateBase {};
 
 // UClass* UAIState::pClassPointer = NULL;
 
-// Class GearboxFramework.AIState_Priority
 // 0x0000 (0x006C - 0x006C)
-class UAIState_Priority : public UAIStateBase
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39634];
-
-		return pClassPointer;
-	};
-};
+class UAIState_Priority : public UAIStateBase {};
 
 // UClass* UAIState_Priority::pClassPointer = NULL;
 
-// Class GearboxFramework.AIState_Random
 // 0x0000 (0x006C - 0x006C)
-class UAIState_Random : public UAIStateBase
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39636];
-
-		return pClassPointer;
-	};
-};
+class UAIState_Random : public UAIStateBase {};
 
 // UClass* UAIState_Random::pClassPointer = NULL;
 
-// Class GearboxFramework.AIState_Sequential
 // 0x0000 (0x006C - 0x006C)
-class UAIState_Sequential : public UAIStateBase
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39638];
-
-		return pClassPointer;
-	};
-};
+class UAIState_Sequential : public UAIStateBase {};
 
 // UClass* UAIState_Sequential::pClassPointer = NULL;
 
-// Class GearboxFramework.Behavior_AIHold
 // 0x000A (0x0056 - 0x004C)
 class UBehavior_AIHold : public UBehaviorBase
 {
@@ -9850,24 +5849,12 @@ public:
 	unsigned char                                      Action;                                           		// 0x0054 (0x0001) [0x0000000000000001]              ( CPF_Edit )
 	unsigned char                                      Type;                                             		// 0x0055 (0x0001) [0x0000000000000001]              ( CPF_Edit )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39727];
-
-		return pClassPointer;
-	};
-
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 // UClass* UBehavior_AIHold::pClassPointer = NULL;
 
-// Class GearboxFramework.Behavior_AIPriority
 // 0x0014 (0x0060 - 0x004C)
 class UBehavior_AIPriority : public UBehaviorBase
 {
@@ -9875,48 +5862,24 @@ public:
 	float                                              PriorityModifier;                                 		// 0x004C (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	struct FBehaviorContextData                        Target;                                           		// 0x0050 (0x0010) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39742];
-
-		return pClassPointer;
-	};
-
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 // UClass* UBehavior_AIPriority::pClassPointer = NULL;
 
-// Class GearboxFramework.Behavior_AITargeting
 // 0x0004 (0x0050 - 0x004C)
 class UBehavior_AITargeting : public UBehaviorBase
 {
 public:
 	class UTargetingDefinition*                        NewTargetingDefinition;                           		// 0x004C (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39756];
-
-		return pClassPointer;
-	};
-
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 // UClass* UBehavior_AITargeting::pClassPointer = NULL;
 
-// Class GearboxFramework.Behavior_ChangeAnyBehaviorSequenceState
 // 0x000C (0x0058 - 0x004C)
 class UBehavior_ChangeAnyBehaviorSequenceState : public UBehaviorBase
 {
@@ -9924,24 +5887,12 @@ public:
 	unsigned char                                      Action;                                           		// 0x004C (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	struct FName                                       SequenceName;                                     		// 0x0050 (0x0008) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39779];
-
-		return pClassPointer;
-	};
-
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 // UClass* UBehavior_ChangeAnyBehaviorSequenceState::pClassPointer = NULL;
 
-// Class GearboxFramework.Behavior_ChangeLocalBehaviorSequenceState
 // 0x000C (0x0058 - 0x004C)
 class UBehavior_ChangeLocalBehaviorSequenceState : public UBehaviorBase
 {
@@ -9949,48 +5900,24 @@ public:
 	unsigned char                                      Action;                                           		// 0x004C (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	struct FName                                       SequenceName;                                     		// 0x0050 (0x0008) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39795];
-
-		return pClassPointer;
-	};
-
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 // UClass* UBehavior_ChangeLocalBehaviorSequenceState::pClassPointer = NULL;
 
-// Class GearboxFramework.Behavior_CompareBool
 // 0x0004 (0x0050 - 0x004C)
 class UBehavior_CompareBool : public UBehaviorBase
 {
 public:
 	unsigned long                                      BoolValue : 1;                                    		// 0x004C (0x0004) [0x0000000000000000] [0x00000001]
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39863];
-
-		return pClassPointer;
-	};
-
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 // UClass* UBehavior_CompareBool::pClassPointer = NULL;
 
-// Class GearboxFramework.Behavior_CompareValues
 // 0x0030 (0x007C - 0x004C)
 class UBehavior_CompareValues : public UBehaviorBase
 {
@@ -9999,72 +5926,36 @@ public:
 	struct FBehaviorContextData                        ContextB;                                         		// 0x005C (0x0010) [0x0000000000000001]              ( CPF_Edit )
 	struct FAttributeInitializationData                ValueB;                                           		// 0x006C (0x0010) [0x0000000000000001]              ( CPF_Edit )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39875];
-
-		return pClassPointer;
-	};
-
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 // UClass* UBehavior_CompareValues::pClassPointer = NULL;
 
-// Class GearboxFramework.Behavior_CustomEvent
 // 0x0008 (0x0054 - 0x004C)
 class UBehavior_CustomEvent : public UBehaviorBase
 {
 public:
 	struct FName                                       CustomEventName;                                  		// 0x004C (0x0008) [0x0000000000000001]              ( CPF_Edit )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39888];
-
-		return pClassPointer;
-	};
-
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 // UClass* UBehavior_CustomEvent::pClassPointer = NULL;
 
-// Class GearboxFramework.Behavior_Delay
 // 0x0004 (0x0050 - 0x004C)
 class UBehavior_Delay : public UBehaviorBase
 {
 public:
 	float                                              Delay;                                            		// 0x004C (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39902];
-
-		return pClassPointer;
-	};
-
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 // UClass* UBehavior_Delay::pClassPointer = NULL;
 
-// Class GearboxFramework.Behavior_Gate
 // 0x0008 (0x0054 - 0x004C)
 class UBehavior_Gate : public UBehaviorBase
 {
@@ -10072,97 +5963,45 @@ public:
 	int                                                GateCount;                                        		// 0x004C (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	int                                                ActivationCount;                                  		// 0x0050 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39912];
-
-		return pClassPointer;
-	};
-
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 // UClass* UBehavior_Gate::pClassPointer = NULL;
 
-// Class GearboxFramework.Behavior_GetFloatParam
 // 0x0000 (0x0058 - 0x0058)
 class UBehavior_GetFloatParam : public UParameterBehaviorBase
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39924];
-
-		return pClassPointer;
-	};
-
 	void PublishBehaviorOutput(float Value, struct FBehaviorKernelInfo* KernelInfo);
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 // UClass* UBehavior_GetFloatParam::pClassPointer = NULL;
 
-// Class GearboxFramework.Behavior_GetObjectParam
 // 0x0000 (0x0058 - 0x0058)
 class UBehavior_GetObjectParam : public UParameterBehaviorBase
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39938];
-
-		return pClassPointer;
-	};
-
 	void PublishBehaviorOutput(class UObject* Value, struct FBehaviorKernelInfo* KernelInfo);
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 // UClass* UBehavior_GetObjectParam::pClassPointer = NULL;
 
-// Class GearboxFramework.Behavior_GetVectorParam
 // 0x0004 (0x005C - 0x0058)
 class UBehavior_GetVectorParam : public UParameterBehaviorBase
 {
 public:
 	unsigned long                                      bTreatAsVector : 1;                               		// 0x0058 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39952];
-
-		return pClassPointer;
-	};
-
 	void PublishBehaviorOutput(float R, float G, float B, float A, struct FBehaviorKernelInfo* KernelInfo);
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 // UClass* UBehavior_GetVectorParam::pClassPointer = NULL;
 
-// Class GearboxFramework.Behavior_InterpolateFloatOverTime
 // 0x0010 (0x005C - 0x004C)
 class UBehavior_InterpolateFloatOverTime : public UBehaviorBase
 {
@@ -10172,25 +6011,13 @@ public:
 	float                                              EndingValue;                                      		// 0x0054 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	float                                              BeginningValue;                                   		// 0x0058 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[39971];
-
-		return pClassPointer;
-	};
-
 	void PublishBehaviorOutput(float Result, struct FBehaviorKernelInfo* KernelInfo);
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 // UClass* UBehavior_InterpolateFloatOverTime::pClassPointer = NULL;
 
-// Class GearboxFramework.Behavior_Metronome
 // 0x0014 (0x0060 - 0x004C)
 class UBehavior_Metronome : public UBehaviorBase
 {
@@ -10202,24 +6029,12 @@ public:
 	float                                              Duration;                                         		// 0x0058 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	float                                              TickInterval;                                     		// 0x005C (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[40002];
-
-		return pClassPointer;
-	};
-
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 // UClass* UBehavior_Metronome::pClassPointer = NULL;
 
-// Class GearboxFramework.Behavior_ModifyTimer
 // 0x0014 (0x0060 - 0x004C)
 class UBehavior_ModifyTimer : public UBehaviorBase
 {
@@ -10228,73 +6043,37 @@ public:
 	unsigned char                                      Operation;                                        		// 0x004D (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 	struct FAttributeInitializationData                NewTimerDelay;                                    		// 0x0050 (0x0010) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[40017];
-
-		return pClassPointer;
-	};
-
 	void PublishBehaviorOutput(float TimeRemaining, struct FBehaviorKernelInfo* KernelInfo);
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 // UClass* UBehavior_ModifyTimer::pClassPointer = NULL;
 
-// Class GearboxFramework.Behavior_SetFloatParam
 // 0x0004 (0x005C - 0x0058)
 class UBehavior_SetFloatParam : public UParameterBehaviorBase
 {
 public:
 	float                                              Value;                                            		// 0x0058 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[40143];
-
-		return pClassPointer;
-	};
-
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 // UClass* UBehavior_SetFloatParam::pClassPointer = NULL;
 
-// Class GearboxFramework.Behavior_SetObjectParam
 // 0x0004 (0x005C - 0x0058)
 class UBehavior_SetObjectParam : public UParameterBehaviorBase
 {
 public:
 	class UObject*                                     Value;                                            		// 0x0058 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[40154];
-
-		return pClassPointer;
-	};
-
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 // UClass* UBehavior_SetObjectParam::pClassPointer = NULL;
 
-// Class GearboxFramework.Behavior_SetVectorParam
 // 0x0014 (0x006C - 0x0058)
 class UBehavior_SetVectorParam : public UParameterBehaviorBase
 {
@@ -10309,24 +6088,12 @@ public:
 	unsigned long                                      bKeepA : 1;                                       		// 0x0068 (0x0004) [0x0000000000000001] [0x00000008] ( CPF_Edit )
 	unsigned long                                      bTreatAsVector : 1;                               		// 0x0068 (0x0004) [0x0000000000000001] [0x00000010] ( CPF_Edit )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[40165];
-
-		return pClassPointer;
-	};
-
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 // UClass* UBehavior_SetVectorParam::pClassPointer = NULL;
 
-// Class GearboxFramework.Behavior_SpecialMove
 // 0x000C (0x0058 - 0x004C)
 class UBehavior_SpecialMove : public UBehaviorBase
 {
@@ -10337,18 +6104,7 @@ public:
 	unsigned long                                      bLocal : 1;                                       		// 0x0050 (0x0004) [0x0000000000000001] [0x00000004] ( CPF_Edit )
 	float                                              Duration;                                         		// 0x0054 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[40186];
-
-		return pClassPointer;
-	};
-
 	void PlaySpecialMove(class USpecialMoveComponent* SMC);
 	void TriggerOutput(struct FBehaviorKernelInfo* KernelInfo);
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
@@ -10356,31 +6112,18 @@ public:
 
 // UClass* UBehavior_SpecialMove::pClassPointer = NULL;
 
-// Class GearboxFramework.Behavior_SpecialMoveStop
 // 0x0004 (0x0050 - 0x004C)
 class UBehavior_SpecialMoveStop : public UBehaviorBase
 {
 public:
 	class USpecialMoveDefinition*                      SpecificMove;                                     		// 0x004C (0x0004) [0x0000000000000001]              ( CPF_Edit )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[40220];
-
-		return pClassPointer;
-	};
-
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 // UClass* UBehavior_SpecialMoveStop::pClassPointer = NULL;
 
-// Class GearboxFramework.Behavior_StartAkAmbientSound
 // 0x0008 (0x0054 - 0x004C)
 class UBehavior_StartAkAmbientSound : public UBehaviorBase
 {
@@ -10388,24 +6131,12 @@ public:
 	class UAkEvent*                                    AkEvent;                                          		// 0x004C (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	class AWwiseSoundGroup*                            SoundGroup;                                       		// 0x0050 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[40234];
-
-		return pClassPointer;
-	};
-
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 // UClass* UBehavior_StartAkAmbientSound::pClassPointer = NULL;
 
-// Class GearboxFramework.Behavior_StopAkAmbientSound
 // 0x0008 (0x0054 - 0x004C)
 class UBehavior_StopAkAmbientSound : public UBehaviorBase
 {
@@ -10413,72 +6144,36 @@ public:
 	class UAkEvent*                                    AkEvent;                                          		// 0x004C (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	class AWwiseSoundGroup*                            SoundGroup;                                       		// 0x0050 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[40248];
-
-		return pClassPointer;
-	};
-
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 // UClass* UBehavior_StopAkAmbientSound::pClassPointer = NULL;
 
-// Class GearboxFramework.Behavior_StopDialog
 // 0x0004 (0x0050 - 0x004C)
 class UBehavior_StopDialog : public UBehaviorBase
 {
 public:
 	class UGearboxDialogEventTag*                      EventTag;                                         		// 0x004C (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[40262];
-
-		return pClassPointer;
-	};
-
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 // UClass* UBehavior_StopDialog::pClassPointer = NULL;
 
-// Class GearboxFramework.Behavior_ToggleDialog
 // 0x0001 (0x004D - 0x004C)
 class UBehavior_ToggleDialog : public UBehaviorBase
 {
 public:
 	unsigned char                                      Option;                                           		// 0x004C (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[40276];
-
-		return pClassPointer;
-	};
-
 	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
 // UClass* UBehavior_ToggleDialog::pClassPointer = NULL;
 
-// Class GearboxFramework.CameraModifierCrossfade
 // 0x001C (0x00A5 - 0x0089)
 class UCameraModifierCrossfade : public UGearboxCameraModifier
 {
@@ -10491,18 +6186,7 @@ public:
 	int                                                DebugInset;                                       		// 0x00A0 (0x0004) [0x0000000000000002]              ( CPF_Const )
 	unsigned char                                      LerpMode;                                         		// 0x00A4 (0x0001) [0x0000000000000002]              ( CPF_Const )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[40635];
-
-		return pClassPointer;
-	};
-
 	void DoCrossfade();
 	void UpdateAllLerps(float DeltaTime, struct FTPOV* OutPOV);
 	bool ModifyCamera(class ACamera* Camera, float DeltaTime, struct FTPOV* OutPOV);
@@ -10513,7 +6197,6 @@ public:
 
 // UClass* UCameraModifierCrossfade::pClassPointer = NULL;
 
-// Class GearboxFramework.CameraModifierLookAt
 // 0x0037 (0x00C0 - 0x0089)
 class UCameraModifierLookAt : public UGearboxCameraModifier
 {
@@ -10531,18 +6214,7 @@ public:
 	class AActor*                                      LookAtTarget;                                     		// 0x00B4 (0x0004) [0x0000000000000000]
 	struct FName                                       LookAtBone;                                       		// 0x00B8 (0x0008) [0x0000000000000000]
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[40677];
-
-		return pClassPointer;
-	};
-
 	void ExecuteFadeIfNeeded(class AGearboxPlayerController** PC);
 	struct FVector GetDesiredLocation(struct FTPOV* OutPOV, class AGearboxPlayerController** PC);
 	bool ModifyCamera(class ACamera* Camera, float DeltaTime, struct FTPOV* OutPOV);
@@ -10561,7 +6233,6 @@ public:
 
 // UClass* UCameraModifierLookAt::pClassPointer = NULL;
 
-// Class GearboxFramework.DefinitionUITestCaseDefinition
 // 0x0040 (0x007C - 0x003C)
 class UDefinitionUITestCaseDefinition : public UGBXDefinition
 {
@@ -10574,23 +6245,10 @@ public:
 	TArray< class UGBXDefinition* >                    EditConstArrayOfReferences;                       		// 0x0060 (0x000C) [0x0000000000420001]              ( CPF_Edit | CPF_EditConst | CPF_NeedCtorLink )
 	class UGBXDefinition*                              ReferencedDefinition;                             		// 0x006C (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	TArray< class UGBXDefinition* >                    ArrayOfReferences;                                		// 0x0070 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[40791];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UDefinitionUITestCaseDefinition::pClassPointer = NULL;
 
-// Class GearboxFramework.SparkNews
 // 0x0018 (0x0054 - 0x003C)
 class USparkNews : public UObject
 {
@@ -10598,18 +6256,7 @@ public:
 	TArray< struct FNewsArticle >                      Articles;                                         		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FScriptDelegate                             __OnNewsRetrieved__Delegate;                      		// 0x0048 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[41124];
-
-		return pClassPointer;
-	};
-
 	class USparkServiceConfiguration* Internal_GetService(unsigned char ControllerId, class USparkInterface* Spark);
 	void CallAndClearRetrievedDelegate(unsigned char RetrievealResult);
 	void ParseArticles(class UJsonObject* NewsArticlesJSONObject);
@@ -10622,7 +6269,6 @@ public:
 
 // UClass* USparkNews::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxAccountEntitlement
 // 0x0028 (0x0064 - 0x003C)
 class UGearboxAccountEntitlement : public UObject
 {
@@ -10634,23 +6280,10 @@ public:
 	int                                                Consumed;                                         		// 0x0050 (0x0004) [0x0000000000000000]
 	struct FString                                     Payload;                                          		// 0x0054 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	int                                                LocallyConsumed;                                  		// 0x0060 (0x0004) [0x0000000000000000]
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[41300];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UGearboxAccountEntitlement::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxAccountOffer
 // 0x002C (0x0068 - 0x003C)
 class UGearboxAccountOffer : public UObject
 {
@@ -10660,90 +6293,38 @@ public:
 	int                                                Id;                                               		// 0x0054 (0x0004) [0x0000000000000000]
 	unsigned long                                      Notified : 1;                                     		// 0x0058 (0x0004) [0x0000000000000000] [0x00000001]
 	struct FString                                     DateUnlocked;                                     		// 0x005C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[41331];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UGearboxAccountOffer::pClassPointer = NULL;
 
-// Class GearboxFramework.PatrolDestination
 // 0x000C (0x0194 - 0x0188)
 class APatrolDestination : public AActor
 {
 public:
 	TArray< class APatrolDestination* >                NextPatrolPoints;                                 		// 0x0188 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[41594];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* APatrolDestination::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxSeqAct_TargetPriority
 // 0x0010 (0x00B4 - 0x00A4)
 class UGearboxSeqAct_TargetPriority : public USequenceAction
 {
 public:
 	TArray< class AActor* >                            AITargets;                                        		// 0x00A4 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 	float                                              PriorityModifier;                                 		// 0x00B0 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[42739];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UGearboxSeqAct_TargetPriority::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxSeqAct_CameraShake
 // 0x0044 (0x00E8 - 0x00A4)
 class UGearboxSeqAct_CameraShake : public USequenceAction
 {
 public:
 	struct FGearboxViewShakeInfo                       CameraShake;                                      		// 0x00A4 (0x0044) [0x0000000000000001]              ( CPF_Edit )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[43255];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UGearboxSeqAct_CameraShake::pClassPointer = NULL;
 
-// Class GearboxFramework.GearboxSeqAct_PawnClonerLink
 // 0x0018 (0x00CC - 0x00B4)
 class UGearboxSeqAct_PawnClonerLink : public USeqAct_Latent
 {
@@ -10753,23 +6334,10 @@ public:
 	TArray< class AActor* >                            ClonePoints;                                      		// 0x00B8 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 	int                                                SpawnedCount;                                     		// 0x00C4 (0x0004) [0x0000000000000000]
 	float                                              RemainingDelay;                                   		// 0x00C8 (0x0004) [0x0000000000000000]
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[43568];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UGearboxSeqAct_PawnClonerLink::pClassPointer = NULL;
 
-// Class GearboxFramework.GFxMovieDrawStyleInstanceData
 // 0x002F (0x007C - 0x004D)
 class UGFxMovieDrawStyleInstanceData : public UGFxMovieDrawStyleRTT
 {
@@ -10783,211 +6351,58 @@ public:
 	int                                                MaterialIndex;                                    		// 0x0074 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 	class UMaterialInstanceConstant*                   Mati;                                             		// 0x0078 (0x0004) [0x0000000000002000]              ( CPF_Transient )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[43667];
-
-		return pClassPointer;
-	};
-
 	bool eventRequiresClientInstance();
 };
 
 // UClass* UGFxMovieDrawStyleInstanceData::pClassPointer = NULL;
 
-// Class GearboxFramework.SeqEvent_AllSpawned
 // 0x0000 (0x00C4 - 0x00C4)
-class USeqEvent_AllSpawned : public USequenceEvent
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[43971];
-
-		return pClassPointer;
-	};
-};
+class USeqEvent_AllSpawned : public USequenceEvent {};
 
 // UClass* USeqEvent_AllSpawned::pClassPointer = NULL;
 
-// Class GearboxFramework.PopulationMasterAttributeContextResolver
 // 0x0000 (0x003C - 0x003C)
 class UPopulationMasterAttributeContextResolver : public UAttributeContextResolver
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[44282];
-
-		return pClassPointer;
-	};
-
 	class UObject* GetAttributeContext(class UAttributeDefinitionBase* Attribute, class UObject* AttributeContextSource);
 };
 
 // UClass* UPopulationMasterAttributeContextResolver::pClassPointer = NULL;
 
-// Class GearboxFramework.SeqEvent_SinglePopulationDeath
 // 0x0000 (0x00C4 - 0x00C4)
-class USeqEvent_SinglePopulationDeath : public USequenceEvent
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[44460];
-
-		return pClassPointer;
-	};
-};
+class USeqEvent_SinglePopulationDeath : public USequenceEvent {};
 
 // UClass* USeqEvent_SinglePopulationDeath::pClassPointer = NULL;
 
-// Class GearboxFramework.RES_Rotation
 // 0x0000 (0x003C - 0x003C)
-class URES_Rotation : public UActionResource
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[44613];
-
-		return pClassPointer;
-	};
-};
+class URES_Rotation : public UActionResource {};
 
 // UClass* URES_Rotation::pClassPointer = NULL;
 
-// Class GearboxFramework.RES_SpecialMove
 // 0x0000 (0x003C - 0x003C)
-class URES_SpecialMove : public UActionResource
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[44616];
-
-		return pClassPointer;
-	};
-};
+class URES_SpecialMove : public UActionResource {};
 
 // UClass* URES_SpecialMove::pClassPointer = NULL;
 
-// Class GearboxFramework.SeqEvent_ArrivedAtMoveNode
 // 0x0000 (0x00C4 - 0x00C4)
-class USeqEvent_ArrivedAtMoveNode : public USequenceEvent
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[44694];
-
-		return pClassPointer;
-	};
-};
+class USeqEvent_ArrivedAtMoveNode : public USequenceEvent {};
 
 // UClass* USeqEvent_ArrivedAtMoveNode::pClassPointer = NULL;
 
-// Class GearboxFramework.SeqEvent_LeavingMoveNode
 // 0x0000 (0x00C4 - 0x00C4)
-class USeqEvent_LeavingMoveNode : public USequenceEvent
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[44699];
-
-		return pClassPointer;
-	};
-};
+class USeqEvent_LeavingMoveNode : public USequenceEvent {};
 
 // UClass* USeqEvent_LeavingMoveNode::pClassPointer = NULL;
 
-// Class GearboxFramework.ShowDebugHelpers
 // 0x0000 (0x003C - 0x003C)
-class UShowDebugHelpers : public UObject
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[44716];
-
-		return pClassPointer;
-	};
-};
+class UShowDebugHelpers : public UObject {};
 
 // UClass* UShowDebugHelpers::pClassPointer = NULL;
 
-// Class GearboxFramework.SkeletalMeshActorGBXMatinee
 // 0x0000 (0x01CC - 0x01CC)
-class ASkeletalMeshActorGBXMatinee : public ASkeletalMeshActor
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[44730];
-
-		return pClassPointer;
-	};
-};
+class ASkeletalMeshActorGBXMatinee : public ASkeletalMeshActor {};
 
 // UClass* ASkeletalMeshActorGBXMatinee::pClassPointer = NULL;
 
