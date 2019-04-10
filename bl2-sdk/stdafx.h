@@ -329,4 +329,24 @@ namespace pybind11
 	}
 }
 
+namespace pybind11 {
+	namespace detail {
+		template <> struct type_caster<struct FString> {
+		public:
+			PYBIND11_TYPE_CASTER(FString, _("FString"));
+			bool load(handle src, bool) {
+				PyObject *source = src.ptr();
+				char *tmp = PyUnicode_AsUTF8AndSize(source, nullptr);
+				if (!tmp)
+					return false;
+				value = FString(tmp);
+				return true;
+			}
+			static handle cast(FString src, return_value_policy /* policy */, handle /* parent */) {
+				return PyUnicode_FromWideChar(src.Data, src.Count);
+			}
+		};
+	}
+}
+
 #include "pydef.h"

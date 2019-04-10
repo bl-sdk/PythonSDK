@@ -134,6 +134,15 @@ struct FString : public TArray<wchar_t>
 			wcscpy(this->Data, Other);
 	};
 
+	FString(char* Other)
+	{
+		this->Max = this->Count = Other ? (strlen(Other) + 1) : 0;
+		this->Data = (wchar_t *)calloc(this->Count, sizeof(wchar_t));
+
+		if (this->Count)
+			mbstowcs(this->Data, Other, this->Count);
+	};
+
 	~FString() {};
 
 	FString operator = (wchar_t* Other)
