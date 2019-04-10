@@ -97,13 +97,16 @@ bool PythonGCTick(UObject* caller, UFunction* function, void* parms, void* resul
 }
 
 void AddToConsoleLog(UConsole *console, FString input) {
-	for (int x = 0; x < 16; x++)
-		if (!strcmp(console->History[x].AsString(), input.AsString()))
-			return;
-	console->History[console->HistoryTop] = input;
-	console->HistoryTop = (console->HistoryTop + 1) % 16;
-	console->HistoryBot = (console->HistoryBot + 1) % 16;
+	int prev = (console->HistoryTop - 1) % 16;
+	if (!console->History[prev].Data || strcmp(input.AsString(), console->History[prev].AsString())) {
+		console->PurgeCommandFromHistory(input);
+		console->History[console->HistoryTop] = input;
+		console->HistoryTop = (console->HistoryTop + 1) % 16;
+		if ((console->HistoryBot == -1) || console->HistoryBot == console->HistoryTop)
+			console->HistoryBot = (console->HistoryBot + 1) % 16;
+	}
 	console->HistoryCur = console->HistoryTop;
+	console->SaveConfig();
 }
 
 bool CheckPythonCommand(UObject* caller, FFrame& stack, void* const result, UFunction* function)
@@ -113,16 +116,16 @@ bool CheckPythonCommand(UObject* caller, FFrame& stack, void* const result, UFun
 	BL2SDK::pFrameStep(&stack, stack.Object, command);
 	char *input = command->AsString();
 	if (strncmp("py ", input, 3) == 0) {
+		AddToConsoleLog((UConsole *)caller, *command);
 		Logging::LogF("\n>>> %s <<<\n", input);
 		BL2SDK::Python->DoString(input + 3);
-		AddToConsoleLog((UConsole *)caller, *command);
 		stack.SkipFunction();
 		return false;
 	}
 	else if (strncmp("pyexec ", input, 7) == 0) {
+		AddToConsoleLog((UConsole *)caller, *command);
 		Logging::LogF("\n>>> %s <<<\n", input);
 		BL2SDK::Python->DoFile(input + 7);
-		AddToConsoleLog((UConsole *)caller, *command);
 		stack.SkipFunction();
 		return false;
 	}
