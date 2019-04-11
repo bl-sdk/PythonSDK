@@ -77,6 +77,8 @@ public:
 public:
 	FName(const std::string& FindName)
 	{
+		void *a1 = BL2SDK::pPreFName((char *)FindName.c_str(), 0, 0, 1);
+		BL2SDK::pCreateFName(a1);
 		Number = 0;
 
 		for (size_t i = 0; i < this->Names()->Count; i++)
@@ -274,6 +276,7 @@ public:
 	};
 };
 
+
 struct FFrame : public FOutputDevice
 {
 	class UStruct* Node;
@@ -333,5 +336,6 @@ struct FFrame : public FOutputDevice
 		return py::make_tuple(FStruct((void *)obj->Data), obj->Count);
 	};
 };
+
 
 #endif

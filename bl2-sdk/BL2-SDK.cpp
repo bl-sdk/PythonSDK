@@ -248,6 +248,12 @@ namespace BL2SDK
 		pGMalloc = *(FMalloc***)sigscan.Scan(Signatures::GMalloc);
 		Logging::LogF("[Internal] GMalloc = 0x%p\n", pGMalloc);
 
+		pPreFName = reinterpret_cast<tPreFName>(sigscan.Scan(Signatures::PreFName));
+		Logging::LogF("[Internal] PreFName = 0x%p\n", pPreFName);
+
+		pCreateFName = reinterpret_cast<tCreateFName>(sigscan.Scan(Signatures::CreateFName));
+		Logging::LogF("[Internal] CreateFName = 0x%p\n", pCreateFName);
+
 		// Detour UObject::ProcessEvent()
 		//SETUP_SIMPLE_DETOUR(detProcessEvent, pProcessEvent, hkProcessEvent);
 		CSimpleDetour detProcessEvent(&(PVOID&)pProcessEvent, hkProcessEvent);
@@ -367,7 +373,7 @@ namespace BL2SDK
 		Logging::PrintLogHeader();
 
 		// Set console key to Tilde if not already set
-		gameConsole = (UConsole *)UObject::Find("WillowConsole", "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0");
+		gameConsole = (UConsole *)UObject::FindStr("WillowConsole", "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0");
 		if (gameConsole && (gameConsole->ConsoleKey == FName("None") || gameConsole->ConsoleKey == FName("Undefine")))
 			gameConsole->ConsoleKey = FName("Tilde");
 
@@ -430,7 +436,7 @@ namespace BL2SDK
 	UObject *GetEngine()
 	{
 		if (!engine)
-			engine = UObject::Find("WillowGameEngine", "Transient.WillowGameEngine");
+			engine = UObject::FindStr("WillowGameEngine", "Transient.WillowGameEngine");
 		return engine;
 	}
 }

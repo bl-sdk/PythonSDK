@@ -108,7 +108,7 @@ namespace Logging
 	void InitializeGameConsole()
 	{
 		// There should only be 1 instance so we should be right to just use it in this way
-		UConsole* console = (UConsole *)UObject::Find("WillowConsole", "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0");
+		UConsole* console = (UConsole *)UObject::FindStr("WillowConsole", "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0");
 
 		if (console != nullptr)
 		{
