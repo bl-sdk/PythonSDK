@@ -108,12 +108,12 @@ std::string UObject::GetFullName()
 	return (char*)"(null)";
 }
 
-UClass* UObject::FindClass(char* ClassName, bool lookup)
+UClass* UObject::FindClass(char* ClassName, bool Lookup)
 {
 	if (BL2SDK::ClassMap.count(ClassName))
 		return BL2SDK::ClassMap[ClassName];
 
-	if (!lookup)
+	if (!Lookup)
 		return nullptr;
 
 	for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
@@ -126,7 +126,7 @@ UClass* UObject::FindClass(char* ClassName, bool lookup)
 		// Might as well lookup all objects since we're going to be iterating over most objects regardless
 		const char *c = Object->Class->GetName().c_str();
 		if (!strcmp(c, "Class"))
-			BL2SDK::ClassMap[(char *)Object->GetName().c_str()] = (UClass *)Object;
+			BL2SDK::ClassMap[Object->GetName()] = (UClass *)Object;
 	}
 	if (BL2SDK::ClassMap.count(ClassName))
 		return BL2SDK::ClassMap[ClassName];

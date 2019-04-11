@@ -337,7 +337,7 @@ namespace pybind11 {
 				return true;
 			}
 			static handle cast(FString src, return_value_policy /* policy */, handle /* parent */) {
-				return PyUnicode_FromWideChar(src.Data, src.Count);
+				return PyUnicode_FromWideChar(src.Data, src.Count - 1);
 			}
 		};
 	}

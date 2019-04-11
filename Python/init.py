@@ -21,8 +21,8 @@ class BL2MOD():
 bl2sdk.BL2MOD = BL2MOD
 bl2sdk.Mods = []
 
-import commander_wannabe
-import rando
+# import commander_wannabe
+# import rando
 
 def LoadModList(caller, function, parms, result):
 	caller.SetStoreHeader("Mods", 0, "By Abahbob", "Mod Manager")
@@ -62,8 +62,8 @@ def process_hook(caller, function, parms, result):
 		return False
 	return True
 
-bl2sdk.RemoveEngineHook("Function WillowGame.MarketplaceGFxMovie.ShopInputKey", "a")
-bl2sdk.RegisterEngineHook("Function WillowGame.MarketplaceGFxMovie.ShopInputKey", "a", process_hook)
+bl2sdk.RemoveEngineHook("Function WillowGame.MarketplaceGFxMovie.ShopInputKey", "OpenModMenu")
+bl2sdk.RegisterEngineHook("Function WillowGame.MarketplaceGFxMovie.ShopInputKey", "OpenModMenu", process_hook)
 
 
 def ReplaceDLCWithMods(caller, stack, result, function):
@@ -73,6 +73,7 @@ def ReplaceDLCWithMods(caller, stack, result, function):
 	bNew = stack.popULong()
 	if Caption == "$WillowMenu.WillowScrollingListDataProviderFrontEnd.DLC":
 		Caption = "MODS"
+	print(Caption)
 	caller.AddListItem(EventID, Caption, bDisabled, bNew)
 	stack.SkipFunction()
 	return False
@@ -85,5 +86,5 @@ def HookMainMenuPopulateForMods(caller, stack, result, function):
 	stack.SkipFunction()
 	return False
 
-bl2sdk.RemoveScriptHook("Function WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods")
+bl2sdk.RemoveEngineHook("Function WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods")
 bl2sdk.RegisterScriptHook("Function WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods", HookMainMenuPopulateForMods)

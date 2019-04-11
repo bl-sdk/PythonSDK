@@ -201,25 +201,11 @@ public:
 	std::string GetName();
 	std::string GetNameCPP();
 	std::string GetFullName();
-	template< class T > static T* FindObject(const std::string& ObjectFullName)
+	static UObject* Find(const std::string& ClassName, const std::string& ObjectFullName)
 	{
-		UClass *classToLoad = FindClass((char *)typeid(T).name() + 7);
+		UClass *classToLoad = FindClass((char *)ClassName.c_str());
 		if (classToLoad)
-			return (T *)BL2SDK::GetEngine()->Outer->DynamicLoadObject(FString((char *)ObjectFullName.c_str()), classToLoad, true);
-		return nullptr;
-	}
-	static UObject* FindObjectByFullName(const std::string& ObjectFullName)
-	{
-		while (!UObject::GObjObjects())
-			Sleep(100);
-		while (!FName::Names())
-			Sleep(100);
-		for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
-		{
-			UObject* Object = UObject::GObjObjects()->Data[i];
-			if (Object && Object->GetFullName() == ObjectFullName)
-				return Object;
-		}
+			return BL2SDK::GetEngine()->Outer->DynamicLoadObject(FString((char *)ObjectFullName.c_str()), classToLoad, true);
 		return nullptr;
 	}
 
@@ -254,7 +240,7 @@ public:
 		}
 		return ret;
 	}
-	static UClass* FindClass(char* ClassName, bool lookup = false);
+	static UClass* FindClass(char* ClassName, bool Lookup = false);
 	bool IsA(UClass* pClass) const;
 
 	class UPackage* GetPackageObject() {

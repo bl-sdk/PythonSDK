@@ -160,7 +160,6 @@ void CPythonInterface::InitializeState()
 		py::initialize_interpreter();
 		py::module::import("bl2sdk");
 		m_mainNamespace = py::module::import("__main__");
-		SetPaths();
 	}
 	catch (std::exception e) {
 		Logging::LogF("%s", e.what());
@@ -175,7 +174,7 @@ void CPythonInterface::CleanupState()
 PythonStatus CPythonInterface::InitializeModules()
 {
 	m_modulesInitialized = false;
-
+	SetPaths();
 	if (DoFile("init.py") != 0)
 	{
 		Logging::Log("[Python] Failed to initialize Python modules\n");
@@ -189,8 +188,12 @@ PythonStatus CPythonInterface::InitializeModules()
 void CPythonInterface::SetPaths()
 {
 	m_PythonPath = Util::Narrow(Settings::GetPythonFile(L""));
+	const char *fmt = "import sys;sys.path.append(r'%s\\')";
 	const char *pythonString = Util::Format("import sys;sys.path.append(r'%s\\')", m_PythonPath.c_str()).c_str();
-	DoString(pythonString);
+	size_t needed = strlen(fmt) + strlen(m_PythonPath.c_str()) - 1;
+	char *buffer = (char *)malloc(needed);
+	sprintf(buffer, fmt, m_PythonPath.c_str());
+	DoString(buffer);
 }
 
 int CPythonInterface::DoFile(const char *filename)

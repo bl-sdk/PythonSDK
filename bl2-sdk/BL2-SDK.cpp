@@ -43,7 +43,7 @@ namespace BL2SDK
 	int EngineVersion = -1;
 	int ChangelistNumber = -1;
 
-	std::map<char *, UClass *> ClassMap = std::map<char *, UClass *>{};
+	std::map<std::string, UClass *> ClassMap = std::map<std::string, UClass *>{};
 
 	void __stdcall hkProcessEvent(UFunction* function, void* parms, void* result)
 	{
@@ -335,9 +335,6 @@ namespace BL2SDK
 		EngineVersion = obj->GetEngineVersion();
 		ChangelistNumber = obj->GetBuildChangelistNumber();
 
-		//CrashRptHelper::AddProperty(L"EngineVersion", Util::Format(L"%d", EngineVersion));
-		//CrashRptHelper::AddProperty(L"ChangelistNumber", Util::Format(L"%d", ChangelistNumber));
-
 		Logging::LogF("[Internal] Engine Version = %d, Build Changelist = %d\n", EngineVersion, ChangelistNumber);
 	}
 
@@ -353,28 +350,26 @@ namespace BL2SDK
 			if (!Object || !Object->Class)
 				continue;
 
-			const char *classname = Object->Class->GetName().c_str();
-			Logging::LogF("%s\n", classname);
-			if (!strcmp(classname, "Class"))
-				BL2SDK::ClassMap[(char *)Object->GetName().c_str()] = (UClass *)Object;
+			if (!strcmp(Object->Class->GetName().c_str(), "Class"))
+				BL2SDK::ClassMap[Object->GetName()] = (UClass *)Object;
+
+			if (!strcmp(Object->GetFullName().c_str(), "WillowGameEngine Transient.WillowGameEngine"))
+				engine = Object;
 		}
 
 #ifdef _DEBUG
 		Logging::InitializeExtern();
 #endif
 		Logging::InitializeGameConsole();
-		//Logging::PrintLogHeader();
 
-		//initializeGameVersions();
+		initializeGameVersions();
 
-		/*
+		Logging::PrintLogHeader();
+
 		// Set console key to Tilde if not already set
-		gameConsole = UObject::FindObject<UConsole>("WillowConsole Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0");
+		gameConsole = (UConsole *)UObject::Find("WillowConsole", "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0");
 		if (gameConsole && (gameConsole->ConsoleKey == FName("None") || gameConsole->ConsoleKey == FName("Undefine")))
-		{
 			gameConsole->ConsoleKey = FName("Tilde");
-		}
-		*/
 
 		GameHooks::UnrealScriptHookManager->RemoveStaticHook(function, "StartupSDK");
 		GameHooks::EngineHookManager->Register("Function WillowGame.WillowGameViewportClient.PostRender", "GetCanvas", getCanvasPostRender);
@@ -435,7 +430,7 @@ namespace BL2SDK
 	UObject *GetEngine()
 	{
 		if (!engine)
-			engine = UObject::FindObjectByFullName("WillowGameEngine Transient.WillowGameEngine");
+			engine = UObject::Find("WillowGameEngine", "Transient.WillowGameEngine");
 		return engine;
 	}
 }
