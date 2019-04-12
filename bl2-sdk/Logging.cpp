@@ -108,7 +108,7 @@ namespace Logging
 	void InitializeGameConsole()
 	{
 		// There should only be 1 instance so we should be right to just use it in this way
-		UConsole* console = UObject::FindObject<UConsole>("WillowConsole WillowGameEngine.WillowGameViewportClient.WillowConsole");
+		UConsole* console = (UConsole *)UObject::Find("WillowConsole", "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0");
 
 		if (console != nullptr)
 		{
@@ -123,7 +123,7 @@ namespace Logging
 
 	void PrintLogHeader()
 	{
-		//LogF("======== BL2 Mod SDK Loaded (Version %s) ========\n", BL2SDK::EngineVersion.c_str());
+		LogF("======== BL2 PythonSDK Loaded (Version %d) ========\n", BL2SDK::EngineVersion);
 	}
 
 	void Cleanup()

@@ -21,18 +21,18 @@ class BL2MOD():
 bl2sdk.BL2MOD = BL2MOD
 bl2sdk.Mods = []
 
-import commander_wannabe
-import rando
+# import commander_wannabe
+# import rando
 
 def LoadModList(caller, function, parms, result):
-	caller.SetStoreHeader(bl2sdk.FString("Mods"), 0, bl2sdk.FString("By Abahbob"), bl2sdk.FString("Mod Manager"))
+	caller.SetStoreHeader("Mods", 0, "By Abahbob", "Mod Manager")
 	pc = bl2sdk.GetEngine().GamePlayers[0]
 	for idx, mod in enumerate(bl2sdk.Mods):
 		obj = caller.CreateMarketplaceItem(bl2sdk.FMarketplaceContent())
-		obj.SetString(caller.Prop_contentTitleText, bl2sdk.FString(mod.Name), pc.GetTranslationContext())
-		obj.SetString(caller.Prop_descriptionText, bl2sdk.FString(mod.Description), pc.GetTranslationContext())
-		obj.SetString(caller.Prop_offeringId, bl2sdk.FString(str(idx)), pc.GetTranslationContext())
-		obj.SetString(caller.Prop_messageText, bl2sdk.FString( "Enabled" if mod._Enabled else "Disabled"), pc.GetTranslationContext())
+		obj.SetString(caller.Prop_contentTitleText, mod.Name, pc.GetTranslationContext())
+		obj.SetString(caller.Prop_descriptionText, mod.Description, pc.GetTranslationContext())
+		obj.SetString(caller.Prop_offeringId, str(idx), pc.GetTranslationContext())
+		obj.SetString(caller.Prop_messageText, "Enabled" if mod._Enabled else "Disabled", pc.GetTranslationContext())
 		caller.AddContentData(obj)
 	caller.PostContentLoaded(True)
 	return False
@@ -49,21 +49,21 @@ def process_hook(caller, function, parms, result):
 		if event == 0:
 			selected_object = caller.GetSelectedObject()
 			mod = selected_object.GetString(caller.Prop_offeringId)
-			idx = int(mod.AsString())
+			idx = int(mod)
 			mod = bl2sdk.Mods[idx]
 			if mod._Enabled:
 				mod.Disable()
-				selected_object.SetString(caller.Prop_messageText, bl2sdk.FString("Disabled"), pc.GetTranslationContext())
+				selected_object.SetString(caller.Prop_messageText, "Disabled", pc.GetTranslationContext())
 			else:
 				mod.Enable()
-				selected_object.SetString(caller.Prop_messageText, bl2sdk.FString("Enabled"), pc.GetTranslationContext())
+				selected_object.SetString(caller.Prop_messageText, "Enabled", pc.GetTranslationContext())
 			mod._Enabled = not mod._Enabled
 			caller.RefreshDLC()
 		return False
 	return True
 
-bl2sdk.RemoveEngineHook("Function WillowGame.MarketplaceGFxMovie.ShopInputKey", "a")
-bl2sdk.RegisterEngineHook("Function WillowGame.MarketplaceGFxMovie.ShopInputKey", "a", process_hook)
+bl2sdk.RemoveEngineHook("Function WillowGame.MarketplaceGFxMovie.ShopInputKey", "OpenModMenu")
+bl2sdk.RegisterEngineHook("Function WillowGame.MarketplaceGFxMovie.ShopInputKey", "OpenModMenu", process_hook)
 
 
 def ReplaceDLCWithMods(caller, stack, result, function):
@@ -71,8 +71,9 @@ def ReplaceDLCWithMods(caller, stack, result, function):
 	Caption = stack.popFString()
 	bDisabled = stack.popULong()
 	bNew = stack.popULong()
-	if Caption.AsString() == "$WillowMenu.WillowScrollingListDataProviderFrontEnd.DLC":
-		Caption = bl2sdk.FString("MODS")
+	if Caption == "$WillowMenu.WillowScrollingListDataProviderFrontEnd.DLC":
+		Caption = "MODS"
+	print(Caption)
 	caller.AddListItem(EventID, Caption, bDisabled, bNew)
 	stack.SkipFunction()
 	return False
@@ -85,5 +86,5 @@ def HookMainMenuPopulateForMods(caller, stack, result, function):
 	stack.SkipFunction()
 	return False
 
-bl2sdk.RemoveScriptHook("Function WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods")
+bl2sdk.RemoveEngineHook("Function WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods")
 bl2sdk.RegisterScriptHook("Function WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods", HookMainMenuPopulateForMods)

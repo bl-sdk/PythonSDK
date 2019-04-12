@@ -102,25 +102,13 @@
 # ========================================================================================= #
 */
 
-// Class OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks
 // 0x0004 (0x0198 - 0x0194)
 class UOnlineAuthInterfaceSteamworks : public UOnlineAuthInterfaceImpl
 {
 public:
 	struct FPointer                                    AuthCallbackBridge;                               		// 0x0194 (0x0004) [0x0000000000001000]              ( CPF_Native )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3577];
-
-		return pClassPointer;
-	};
-
 	bool GetServerAddr(int* OutServerIP, int* OutServerPort);
 	bool GetServerUniqueId(struct FUniqueNetId* OutServerUID);
 	void EndRemoteServerAuthSession(struct FUniqueNetId ServerUID, int ServerIP);
@@ -137,7 +125,6 @@ public:
 
 // UClass* UOnlineAuthInterfaceSteamworks::pClassPointer = NULL;
 
-// Class OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks
 // 0x0094 (0x0258 - 0x01C4)
 class UOnlineGameInterfaceSteamworks : public UOnlineGameInterfaceImpl
 {
@@ -159,18 +146,7 @@ public:
 	struct FScriptDelegate                             __OnRegisterPlayerComplete__Delegate;             		// 0x0240 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FScriptDelegate                             __OnUnregisterPlayerComplete__Delegate;           		// 0x024C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3579];
-
-		return pClassPointer;
-	};
-
 	class UOnlineGameSettings* GetGameSettings(struct FName SessionName);
 	bool GetResolvedConnectString(struct FName SessionName, struct FString* ConnectInfo);
 	bool BindPlatformSpecificSessionToSearch(unsigned char SearchingPlayerNum, class UOnlineGameSearch* SearchSettings, unsigned char* PlatformSpecificInfo);
@@ -194,28 +170,11 @@ public:
 
 // UClass* UOnlineGameInterfaceSteamworks::pClassPointer = NULL;
 
-// Class OnlineSubsystemSteamworks.OnlineLobbyInterfaceSteamworks
 // 0x0000 (0x003C - 0x003C)
-class UOnlineLobbyInterfaceSteamworks : public UObject
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3581];
-
-		return pClassPointer;
-	};
-};
+class UOnlineLobbyInterfaceSteamworks : public UObject {};
 
 // UClass* UOnlineLobbyInterfaceSteamworks::pClassPointer = NULL;
 
-// Class OnlineSubsystemSteamworks.OnlineSubsystemSteamworks
 // 0x0668 (0x0760 - 0x00F8)
 class UOnlineSubsystemSteamworks : public UOnlineSubsystemCommonImpl
 {
@@ -370,18 +329,7 @@ public:
 	struct FScriptDelegate                             __OnReadCriticalDownloadableContentListComplete__Delegate;		// 0x0748 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FScriptDelegate                             __OnCheckDownloadableContentList__Delegate;       		// 0x0754 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3583];
-
-		return pClassPointer;
-	};
-
 	void ClearCheckDownloadableContentListDelegate(unsigned char LocalUserNum, struct FScriptDelegate CheckDownloadableContentListDelegate);
 	void AddCheckDownloadableContentListDelegate(unsigned char LocalUserNum, struct FScriptDelegate CheckDownloadableContentListDelegate);
 	bool CheckDownloadableContentList(unsigned char LocalUserNum);
@@ -715,7 +663,6 @@ public:
 
 // UClass* UOnlineSubsystemSteamworks::pClassPointer = NULL;
 
-// Class OnlineSubsystemSteamworks.QoSHandlerSteamworks
 // 0x00A4 (0x00E0 - 0x003C)
 class UQoSHandlerSteamworks : public UObject
 {
@@ -731,82 +678,22 @@ public:
 	struct FMap_Mirror                                 ListenEntries;                                    		// 0x005C (0x003C) [0x0000000000003000]              ( CPF_Native | CPF_Transient )
 	struct FMap_Mirror                                 RequestEntries;                                   		// 0x0098 (0x003C) [0x0000000000003000]              ( CPF_Native | CPF_Transient )
 	TArray< struct FPendingEntry >                     PendingRequests;                                  		// 0x00D4 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3585];
-
-		return pClassPointer;
-	};
 };
 
 // UClass* UQoSHandlerSteamworks::pClassPointer = NULL;
 
-// Class OnlineSubsystemSteamworks.SparkInterfaceSteamworks
 // 0x0000 (0x00DC - 0x00DC)
-class USparkInterfaceSteamworks : public USparkInterfaceImpl
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3587];
-
-		return pClassPointer;
-	};
-};
+class USparkInterfaceSteamworks : public USparkInterfaceImpl {};
 
 // UClass* USparkInterfaceSteamworks::pClassPointer = NULL;
 
-// Class OnlineSubsystemSteamworks.IpNetDriverSteamworks
 // 0x0000 (0x01EC - 0x01EC)
-class UIpNetDriverSteamworks : public UTcpNetDriver
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3589];
-
-		return pClassPointer;
-	};
-};
+class UIpNetDriverSteamworks : public UTcpNetDriver {};
 
 // UClass* UIpNetDriverSteamworks::pClassPointer = NULL;
 
-// Class OnlineSubsystemSteamworks.IpNetConnectionSteamworks
 // 0x0000 (0x5078 - 0x5078)
-class UIpNetConnectionSteamworks : public UTcpipConnection
-{
-public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[3591];
-
-		return pClassPointer;
-	};
-};
+class UIpNetConnectionSteamworks : public UTcpipConnection {};
 
 // UClass* UIpNetConnectionSteamworks::pClassPointer = NULL;
 

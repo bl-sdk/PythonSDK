@@ -99,7 +99,6 @@ namespace BL2SDK
 typedef void *(__thiscall *tMalloc) (struct FMalloc*, unsigned long, unsigned long);
 typedef void(__thiscall *tFree) (struct FMalloc*, void*);
 
-
 namespace pybind11 {
 	template <typename itype> struct polymorphic_type_hook<itype, detail::enable_if_t<std::is_base_of<UObject, itype>::value>>
 	{
@@ -206,7 +205,6 @@ static PyMethodDef tarray_methods[] = {
 	{"Set", (PyCFunction)tarray_setitem, METH_VARARGS | METH_KEYWORDS | METH_COEXIST, "x.Set(index, value)"},
 	{NULL,              NULL}           /* sentinel */
 };
-
 
 static PyTypeObject PyTArrayType = {
 	PyVarObject_HEAD_INIT(NULL, 0)
@@ -339,7 +337,7 @@ namespace pybind11 {
 				return true;
 			}
 			static handle cast(FString src, return_value_policy /* policy */, handle /* parent */) {
-				return PyUnicode_FromWideChar(src.Data, src.Count);
+				return PyUnicode_FromWideChar(src.Data, src.Count - 1);
 			}
 		};
 	}
@@ -358,7 +356,7 @@ namespace pybind11 {
 				char *tmp = PyUnicode_AsUTF8AndSize(source, nullptr);
 				if (!tmp)
 					return false;
-				value = UObject::FindClass(tmp);
+				value = UObject::FindClass(tmp, false);
 				return value != nullptr;
 			}
 			static handle cast(UClass *src, return_value_policy policy, handle parent) {

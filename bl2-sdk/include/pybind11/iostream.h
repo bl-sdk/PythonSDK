@@ -65,7 +65,6 @@ public:
 
 NAMESPACE_END(detail)
 
-
 /** \rst
 	This a move-only guard that redirects output.
 
@@ -114,7 +113,6 @@ NAMESPACE_END(detail)
 		scoped_ostream_redirect &operator=(scoped_ostream_redirect &&) = delete;
 };
 
-
 /** \rst
 	Like `scoped_ostream_redirect`, but redirects cerr by default. This class
 	is provided primary to make ``py::call_guard`` easier to make.
@@ -133,7 +131,6 @@ public:
 		object pyostream = module::import("sys").attr("stderr"))
 		: scoped_ostream_redirect(costream, pyostream) {}
 };
-
 
 NAMESPACE_BEGIN(detail)
 

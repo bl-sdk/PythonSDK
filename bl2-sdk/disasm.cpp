@@ -40,7 +40,6 @@
 //  offline processing.
 //
 
-
 #if defined(DETOURS_X86_OFFLINE_LIBRARY) \
  || defined(DETOURS_X64_OFFLINE_LIBRARY) \
  || defined(DETOURS_ARM_OFFLINE_LIBRARY) \
@@ -3529,7 +3528,6 @@ PBYTE CDetourDis::CopyInstruction(PBYTE pDst,
 	return pSrc;
 }
 
-
 PVOID WINAPI DetourCopyInstruction(_In_opt_ PVOID pDst,
 	_Inout_opt_ PVOID *ppDstPool,
 	_In_ PVOID pSrc,
@@ -3842,7 +3840,6 @@ public:
 			return temp.Assembled;
 		}
 	};
-
 
 protected:
 	BYTE	PureCopy32(BYTE* pSource, BYTE* pDest);
@@ -4197,7 +4194,6 @@ BYTE CDetourDis::CopyLdrLiteral(BYTE* pSource, BYTE* pDest, ULONG instruction)
 
 	return (BYTE)((BYTE*)pDstInst - pDest);
 }
-
 
 PVOID WINAPI DetourCopyInstruction(_In_opt_ PVOID pDst,
 	_Inout_opt_ PVOID *ppDstPool,

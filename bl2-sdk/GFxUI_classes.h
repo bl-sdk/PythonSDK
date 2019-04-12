@@ -121,71 +121,28 @@
 # ========================================================================================= #
 */
 
-// Class GFxUI.GFxEngine
 // 0x0010 (0x004C - 0x003C)
 class UGFxEngine : public UObject
 {
 public:
 	TArray< struct FGCReference >                      GCReferences;                                     		// 0x003C (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 	int                                                RefCount;                                         		// 0x0048 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2865];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UGFxEngine::pClassPointer = NULL;
-
-// Class GFxUI.GFxFSCmdHandler
 // 0x0000 (0x003C - 0x003C)
 class UGFxFSCmdHandler : public UObject
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2867];
-
-		return pClassPointer;
-	};
-
 	bool eventFSCommand(class UGFxMoviePlayer* Movie, class UGFxEvent_FSCommand* Event, struct FString Cmd, struct FString Arg);
 };
 
-//UClass* UGFxFSCmdHandler::pClassPointer = NULL;
-
-// Class GFxUI.GFxInteraction
 // 0x0004 (0x007C - 0x0078)
 class UGFxInteraction : public UInteraction
 {
 public:
 	struct FPointer                                    VfTable_FCallbackEventDevice;                     		// 0x0078 (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2869];
-
-		return pClassPointer;
-	};
-
 	void CloseAllMoviePlayers();
 	void NotifySplitscreenLayoutChanged();
 	void NotifyPlayerRemoved(int PlayerIndex, class ULocalPlayer* RemovedPlayer);
@@ -194,36 +151,19 @@ public:
 	class UGFxMoviePlayer* GetFocusMovie(int ControllerId);
 };
 
-//UClass* UGFxInteraction::pClassPointer = NULL;
-
-// Class GFxUI.GFxManager
 // 0x0004 (0x0040 - 0x003C)
 class UGFxManager : public UObject
 {
 public:
 	class UGFxManagerDefinition*                       MyDefinition;                                     		// 0x003C (0x0004) [0x0000000000000000]
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2871];
-
-		return pClassPointer;
-	};
-
 	class UGFxMoviePlayer* GetFocusMovie(int ControllerId);
 	class UAkEvent* eventLookupSound(struct FName UIEvent);
 	class UIDialogBox* eventShowDialog(class APlayerController* PC);
 	void eventInit(class UGFxManagerDefinition* Def);
 };
 
-//UClass* UGFxManager::pClassPointer = NULL;
-
-// Class GFxUI.GFxManagerDefinition
 // 0x0018 (0x0054 - 0x003C)
 class UGFxManagerDefinition : public UGBXDefinition
 {
@@ -232,23 +172,8 @@ public:
 	class UIDialogBox*                                 GFxDialogBox;                                     		// 0x0040 (0x0008) [0x0000000000000001]              ( CPF_Edit )
 	unsigned char                                      UnknownData00[0x4];                             		// 0x0044 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
 	TArray< struct FAkEventResolver >                  InteractionSounds;                                		// 0x0048 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2873];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UGFxManagerDefinition::pClassPointer = NULL;
-
-// Class GFxUI.GFxMoviePlayer
 // 0x018C (0x01C8 - 0x003C)
 class UGFxMoviePlayer : public UObject
 {
@@ -309,18 +234,7 @@ public:
 	struct FScriptDelegate                             __OnPostAdvance__Delegate;                        		// 0x01B0 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 	struct FScriptDelegate                             __OnInputKey__Delegate;                           		// 0x01BC (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2875];
-
-		return pClassPointer;
-	};
-
 	void UnregisterGFxObject(class UGFxObject* anObject);
 	void RegisterGFxObject(class UGFxObject* anObject);
 	void SendMousePos();
@@ -413,30 +327,9 @@ public:
 	bool eventStart(unsigned long StartPaused);
 };
 
-//UClass* UGFxMoviePlayer::pClassPointer = NULL;
-
-// Class GFxUI.GFxMovie
 // 0x0000 (0x01C8 - 0x01C8)
-class UGFxMovie : public UGFxMoviePlayer
-{
-public:
+class UGFxMovie : public UGFxMoviePlayer {};
 
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2877];
-
-		return pClassPointer;
-	};
-};
-
-//UClass* UGFxMovie::pClassPointer = NULL;
-
-// Class GFxUI.GFxObject
 // 0x003C (0x0078 - 0x003C)
 class UGFxObject : public UObject
 {
@@ -444,18 +337,7 @@ public:
 	int                                                Value[0xC];                                     		// 0x003C (0x0030) [0x0000000000001002]              ( CPF_Const | CPF_Native )
 	TArray< struct FGFxWidgetBinding >                 SubWidgetBindings;                                		// 0x006C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2879];
-
-		return pClassPointer;
-	};
-
 	bool eventWidgetUnloaded(struct FName WidgetName, struct FName WidgetPath, class UGFxObject* Widget);
 	bool eventWidgetInitialized(struct FName WidgetName, struct FName WidgetPath, class UGFxObject* Widget);
 	bool MouseHitTest();
@@ -531,27 +413,13 @@ public:
 	struct FASValue Get(struct FString Member);
 };
 
-//UClass* UGFxObject::pClassPointer = NULL;
-
-// Class GFxUI.GFxClikWidget
 // 0x000C (0x0084 - 0x0078)
 class UGFxClikWidget : public UGFxObject
 {
 public:
 	struct FScriptDelegate                             __EventListener__Delegate;                        		// 0x0078 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2881];
-
-		return pClassPointer;
-	};
-
 	void ASRemoveAllEventListeners(struct FString Event);
 	void ASAddEventListener(struct FString Type, class UGFxObject* O, struct FString func);
 	void SetListener(class UGFxObject* O, struct FString Member, struct FScriptDelegate Listener);
@@ -561,9 +429,6 @@ public:
 	void EventListener(struct FEventData Data);
 };
 
-//UClass* UGFxClikWidget::pClassPointer = NULL;
-
-// Class GFxUI.GFxRawData
 // 0x0030 (0x006C - 0x003C)
 class UGFxRawData : public UObject
 {
@@ -572,23 +437,8 @@ public:
 	TArray< struct FString >                           ReferencedSwfs;                                   		// 0x0048 (0x000C) [0x0000000000420001]              ( CPF_Edit | CPF_EditConst | CPF_NeedCtorLink )
 	TArray< class UObject* >                           References;                                       		// 0x0054 (0x000C) [0x0000000000420001]              ( CPF_Edit | CPF_EditConst | CPF_NeedCtorLink )
 	TArray< class UObject* >                           UserReferences;                                   		// 0x0060 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2883];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UGFxRawData::pClassPointer = NULL;
-
-// Class GFxUI.SwfMovie
 // 0x0048 (0x00B4 - 0x006C)
 class USwfMovie : public UGFxRawData
 {
@@ -607,88 +457,23 @@ public:
 	int                                                MovieInfo[0x9];                                 		// 0x008C (0x0024) [0x0000000000003002]              ( CPF_Const | CPF_Native | CPF_Transient )
 	struct FPointer                                    pMovieDef;                                        		// 0x00B0 (0x0004) [0x0000000000003002]              ( CPF_Const | CPF_Native | CPF_Transient )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2885];
-
-		return pClassPointer;
-	};
-
 	struct FString GetPathForLoadMovie();
 };
 
-//UClass* USwfMovie::pClassPointer = NULL;
-
-// Class GFxUI.FlashMovie
 // 0x0000 (0x00B4 - 0x00B4)
-class UFlashMovie : public USwfMovie
-{
-public:
+class UFlashMovie : public USwfMovie {};
 
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2887];
-
-		return pClassPointer;
-	};
-};
-
-//UClass* UFlashMovie::pClassPointer = NULL;
-
-// Class GFxUI.GFxMovieInfo
 // 0x0000 (0x00B4 - 0x00B4)
-class UGFxMovieInfo : public USwfMovie
-{
-public:
+class UGFxMovieInfo : public USwfMovie {};
 
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2889];
-
-		return pClassPointer;
-	};
-};
-
-//UClass* UGFxMovieInfo::pClassPointer = NULL;
-
-// Class GFxUI.GFxValue
 // 0x0030 (0x006C - 0x003C)
 class UGFxValue : public UObject
 {
 public:
 	int                                                Value[0xC];                                     		// 0x003C (0x0030) [0x0000000000001002]              ( CPF_Const | CPF_Native )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2891];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UGFxValue::pClassPointer = NULL;
-
-// Class GFxUI.GFxAction_CloseMovie
 // 0x0008 (0x00AC - 0x00A4)
 class UGFxAction_CloseMovie : public USequenceAction
 {
@@ -696,24 +481,10 @@ public:
 	class UGFxMoviePlayer*                             Movie;                                            		// 0x00A4 (0x0004) [0x0000000000000000]
 	unsigned long                                      bUnload : 1;                                      		// 0x00A8 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2893];
-
-		return pClassPointer;
-	};
-
 	bool eventIsValidLevelSequenceObject();
 };
 
-//UClass* UGFxAction_CloseMovie::pClassPointer = NULL;
-
-// Class GFxUI.GFxAction_GetVariable
 // 0x0010 (0x00B4 - 0x00A4)
 class UGFxAction_GetVariable : public USequenceAction
 {
@@ -721,24 +492,10 @@ public:
 	class UGFxMoviePlayer*                             Movie;                                            		// 0x00A4 (0x0004) [0x0000000000000000]
 	struct FString                                     Variable;                                         		// 0x00A8 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2895];
-
-		return pClassPointer;
-	};
-
 	bool eventIsValidLevelSequenceObject();
 };
 
-//UClass* UGFxAction_GetVariable::pClassPointer = NULL;
-
-// Class GFxUI.GFxAction_Invoke
 // 0x001C (0x00C0 - 0x00A4)
 class UGFxAction_Invoke : public USequenceAction
 {
@@ -747,24 +504,10 @@ public:
 	struct FString                                     MethodName;                                       		// 0x00A8 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 	TArray< struct FASValue >                          Arguments;                                        		// 0x00B4 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2897];
-
-		return pClassPointer;
-	};
-
 	bool eventIsValidLevelSequenceObject();
 };
 
-//UClass* UGFxAction_Invoke::pClassPointer = NULL;
-
-// Class GFxUI.GFxAction_OpenMovie
 // 0x0034 (0x00D8 - 0x00A4)
 class UGFxAction_OpenMovie : public USequenceAction
 {
@@ -785,47 +528,18 @@ public:
 	TArray< struct FName >                             CaptureKeys;                                      		// 0x00C0 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 	TArray< struct FName >                             FocusIgnoreKeys;                                  		// 0x00CC (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2899];
-
-		return pClassPointer;
-	};
-
 	bool eventIsValidLevelSequenceObject();
 };
 
-//UClass* UGFxAction_OpenMovie::pClassPointer = NULL;
-
-// Class GFxUI.GFxAction_SetCaptureKeys
 // 0x0010 (0x00B4 - 0x00A4)
 class UGFxAction_SetCaptureKeys : public USequenceAction
 {
 public:
 	class UGFxMoviePlayer*                             Movie;                                            		// 0x00A4 (0x0004) [0x0000000000000000]
 	TArray< struct FName >                             CaptureKeys;                                      		// 0x00A8 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2901];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UGFxAction_SetCaptureKeys::pClassPointer = NULL;
-
-// Class GFxUI.GFxAction_SetVariable
 // 0x0010 (0x00B4 - 0x00A4)
 class UGFxAction_SetVariable : public USequenceAction
 {
@@ -833,24 +547,10 @@ public:
 	class UGFxMoviePlayer*                             Movie;                                            		// 0x00A4 (0x0004) [0x0000000000000000]
 	struct FString                                     Variable;                                         		// 0x00A8 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2903];
-
-		return pClassPointer;
-	};
-
 	bool eventIsValidLevelSequenceObject();
 };
 
-//UClass* UGFxAction_SetVariable::pClassPointer = NULL;
-
-// Class GFxUI.GFxEvent_FSCommand
 // 0x0014 (0x00D8 - 0x00C4)
 class UGFxEvent_FSCommand : public USequenceEvent
 {
@@ -858,46 +558,15 @@ public:
 	class USwfMovie*                                   Movie;                                            		// 0x00C4 (0x0004) [0x0000000000000001]              ( CPF_Edit )
 	struct FString                                     FSCommand;                                        		// 0x00C8 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
 	class UGFxFSCmdHandler_Kismet*                     Handler;                                          		// 0x00D4 (0x0004) [0x0000000000000000]
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2905];
-
-		return pClassPointer;
-	};
 };
 
-//UClass* UGFxEvent_FSCommand::pClassPointer = NULL;
-
-// Class GFxUI.GFxFSCmdHandler_Kismet
 // 0x0000 (0x003C - 0x003C)
 class UGFxFSCmdHandler_Kismet : public UGFxFSCmdHandler
 {
 public:
-
-private:
-	static UClass* pClassPointer;
-
-public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2907];
-
-		return pClassPointer;
-	};
-
 	bool eventFSCommand(class UGFxMoviePlayer* Movie, class UGFxEvent_FSCommand* Event, struct FString Cmd, struct FString Arg);
 };
 
-//UClass* UGFxFSCmdHandler_Kismet::pClassPointer = NULL;
-
-// Class GFxUI.GFxDataStoreSubscriber
 // 0x0008 (0x0044 - 0x003C)
 class UGFxDataStoreSubscriber : public UObject
 {
@@ -905,18 +574,7 @@ public:
 	struct FPointer                                    VfTable_IUIDataStorePublisher;                    		// 0x003C (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
 	class UGFxMoviePlayer*                             Movie;                                            		// 0x0040 (0x0004) [0x0000000000000000]
 
-private:
-	static UClass* pClassPointer;
-
 public:
-	static UClass* StaticClass()
-	{
-		if (!pClassPointer)
-			pClassPointer = (UClass*)UObject::GObjObjects()->Data[2909];
-
-		return pClassPointer;
-	};
-
 	bool SaveSubscriberValue(int BindingIndex, TArray< class UUIDataStore* >* out_BoundDataStores);
 	void ClearBoundDataStores();
 	void GetBoundDataStores(TArray< class UUIDataStore* >* out_BoundDataStores);
@@ -926,8 +584,6 @@ public:
 	void SetDataStoreBinding(struct FString MarkupText, int BindingIndex);
 	void PublishValues();
 };
-
-//UClass* UGFxDataStoreSubscriber::pClassPointer = NULL;
 
 #ifdef _MSC_VER
 #pragma pack ( pop )

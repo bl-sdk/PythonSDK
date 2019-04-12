@@ -23,21 +23,6 @@
 # ========================================================================================= #
 */
 
-UClass* AGamePawn::pClassPointer = NULL;
-UClass* AGamePlayerController::pClassPointer = NULL;
-UClass* UGameTypes::pClassPointer = NULL;
-UClass* UNavMeshGoal_OutOfViewFrom::pClassPointer = NULL;
-UClass* UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations::pClassPointer = NULL;
-UClass* USeqAct_ControlGameMovie::pClassPointer = NULL;
-UClass* USeqAct_Deproject::pClassPointer = NULL;
-UClass* USeqAct_ModifyProperty::pClassPointer = NULL;
-UClass* UGameSkelCtrl_Recoil::pClassPointer = NULL;
-UClass* UGameStateObject::pClassPointer = NULL;
-UClass* UGameStatsAggregator::pClassPointer = NULL;
-UClass* UGameWaveForms::pClassPointer = NULL;
-UClass* APlayerCollectorGame::pClassPointer = NULL;
-UClass* UPMESTG_LeaveADecalBase::pClassPointer = NULL;
-
 /*
 # ========================================================================================= #
 # Functions

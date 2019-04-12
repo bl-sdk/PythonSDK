@@ -718,7 +718,6 @@ public:
 		return try_load_foreign_module_local(src);
 	}
 
-
 	// Called to do type lookup and wrap the pointer and type in a pair when a dynamic_cast
 	// isn't needed or can't be used.  If the type is unknown, sets the error and returns a pair
 	// with .second = nullptr.  (p.first = nullptr is not an error: it becomes None).
@@ -951,7 +950,6 @@ template <typename T1, typename T2> struct is_copy_constructible<std::pair<T1, T
         operator type&() { return value; } \
         operator type&&() && { return std::move(value); } \
         template <typename T_> using cast_op_type = pybind11::detail::movable_cast_op_type<T_>
-
 
 		template <typename CharT> using is_std_char_type = any_of<
 			std::is_same<CharT, char>, /* std::string */
@@ -1502,7 +1500,6 @@ template <typename T1, typename T2> struct is_copy_constructible<std::pair<T1, T
 
 					static bool try_direct_conversions(handle) { return false; }
 
-
 					holder_type holder;
 				};
 
@@ -1879,7 +1876,6 @@ template <typename T1, typename T2> struct is_copy_constructible<std::pair<T1, T
 					/// If this is a call to an initializer, this argument contains `self`
 					handle init_self;
 				};
-
 
 				/// Helper class which loads arguments for C++ functions called from Python
 				template <typename... Args>

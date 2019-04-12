@@ -93,8 +93,7 @@ namespace Util
 		if (buffSize <= 1)
 			return str;
 
-		char *szBuff = new char[buffSize];
-		memset(szBuff, 0, buffSize);
+		char *szBuff = (char *)calloc(buffSize, sizeof(char));
 
 		vsprintf_s(szBuff, buffSize, fmt, args);
 
@@ -125,8 +124,7 @@ namespace Util
 		if (buffSize <= 1)
 			return str;
 
-		wchar_t* szBuff = new wchar_t[buffSize];
-		memset(szBuff, 0, buffSize);
+		wchar_t *szBuff = (wchar_t *)calloc(buffSize, sizeof(wchar_t));
 
 		vswprintf_s(szBuff, buffSize, fmt, args);
 
