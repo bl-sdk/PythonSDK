@@ -77,20 +77,7 @@ public:
 public:
 	FName(const std::string& FindName)
 	{
-		void *a1 = BL2SDK::pPreFName((char *)FindName.c_str(), 0, 0, 1);
-		BL2SDK::pCreateFName(a1);
-		Number = 0;
-
-		for (size_t i = 0; i < this->Names()->Count; i++)
-		{
-			if (this->Names()->Data[i])
-			{
-				if (this->Names()->Data[i]->Name == FindName)
-				{
-					Index = i;
-				}
-			}
-		}
+		BL2SDK::pFNameInit(this, (wchar_t *)Util::Widen(FindName).c_str(), 0, 1, 1);
 	}
 
 	static TArray<FNameEntry*>* Names()
