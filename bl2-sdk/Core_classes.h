@@ -201,11 +201,16 @@ public:
 	std::string GetName();
 	std::string GetNameCPP();
 	std::string GetFullName();
-	static UObject* Find(const std::string& ClassName, const std::string& ObjectFullName)
+	static UObject* Find(UClass *ClassToLoad, const std::string& ObjectFullName)
+	{
+		return BL2SDK::GetEngine()->Outer->DynamicLoadObject(FString((char *)ObjectFullName.c_str()), ClassToLoad, true);
+	}
+
+	static UObject* FindStr(const std::string& ClassName, const std::string& ObjectFullName)
 	{
 		UClass *classToLoad = FindClass((char *)ClassName.c_str());
 		if (classToLoad)
-			return BL2SDK::GetEngine()->Outer->DynamicLoadObject(FString((char *)ObjectFullName.c_str()), classToLoad, true);
+			return Find(classToLoad, ObjectFullName);
 		return nullptr;
 	}
 

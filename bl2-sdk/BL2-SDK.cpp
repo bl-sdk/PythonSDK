@@ -33,6 +33,7 @@ namespace BL2SDK
 	tProcessEvent pProcessEvent;
 	tCallFunction pCallFunction;
 	tFrameStep pFrameStep;
+	tFNameInit pFNameInit;
 	tStaticConstructObject pStaticConstructObject;
 	tLoadPackage pLoadPackage;
 	tByteOrderSerialize pByteOrderSerialize;
@@ -248,6 +249,9 @@ namespace BL2SDK
 		pGMalloc = *(FMalloc***)sigscan.Scan(Signatures::GMalloc);
 		Logging::LogF("[Internal] GMalloc = 0x%p\n", pGMalloc);
 
+		pFNameInit = reinterpret_cast<tFNameInit>(sigscan.Scan(Signatures::FNameInit));
+		Logging::LogF("[Internal] FindOrCreateFName = 0x%p\n", pFNameInit);
+
 		// Detour UObject::ProcessEvent()
 		//SETUP_SIMPLE_DETOUR(detProcessEvent, pProcessEvent, hkProcessEvent);
 		CSimpleDetour detProcessEvent(&(PVOID&)pProcessEvent, hkProcessEvent);
@@ -366,10 +370,10 @@ namespace BL2SDK
 
 		Logging::PrintLogHeader();
 
-		// Set console key to Tilde if not already set
-		gameConsole = (UConsole *)UObject::Find("WillowConsole", "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0");
-		if (gameConsole && (gameConsole->ConsoleKey == FName("None") || gameConsole->ConsoleKey == FName("Undefine")))
-			gameConsole->ConsoleKey = FName("Tilde");
+		//// Set console key to Tilde if not already set
+		//gameConsole = (UConsole *)UObject::FindStr("WillowConsole", "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0");
+		//if (gameConsole && (gameConsole->ConsoleKey == FName("None") || gameConsole->ConsoleKey == FName("Undefined")))
+		//	gameConsole->ConsoleKey = FName("Tilde");
 
 		GameHooks::UnrealScriptHookManager->RemoveStaticHook(function, "StartupSDK");
 		GameHooks::EngineHookManager->Register("Function WillowGame.WillowGameViewportClient.PostRender", "GetCanvas", getCanvasPostRender);
@@ -430,7 +434,7 @@ namespace BL2SDK
 	UObject *GetEngine()
 	{
 		if (!engine)
-			engine = UObject::Find("WillowGameEngine", "Transient.WillowGameEngine");
+			engine = UObject::FindStr("WillowGameEngine", "Transient.WillowGameEngine");
 		return engine;
 	}
 }

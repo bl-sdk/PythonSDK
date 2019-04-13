@@ -92,6 +92,12 @@ namespace BL2SDK
 			"????xxxxxxxx",
 			12
 		};
+
+		MemorySignature FNameInit = {
+			"\x55\x8B\xEC\x6A\xFF\x68\x5B\xB5\x00\x01\x64\xA1\x00\x00\x00\x00",
+			"xxxxxxxx?xxxxxxx",
+			16
+		};
 	}
 }
 

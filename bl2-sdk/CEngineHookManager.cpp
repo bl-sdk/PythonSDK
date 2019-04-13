@@ -66,7 +66,7 @@ void CEngineHookManager::Register(const std::string& funcName, const std::string
 	tFuncNameHookPair hookPair = std::make_pair(hookName, funcHook);
 
 	// Find func
-	UFunction* function = (UFunction *)UObject::Find("Function", funcNameChar);
+	UFunction* function = (UFunction *)UObject::FindStr("Function", funcNameChar);
 	if (function == nullptr)
 	{
 		// The function was not found, so we need to create a virtual hook for it
@@ -84,7 +84,7 @@ bool CEngineHookManager::Remove(const std::string& funcName, const std::string& 
 	char funcNameChar[255];
 	strcpy(funcNameChar, funcName.c_str());
 
-	UFunction* function = (UFunction *)UObject::Find("Function", funcNameChar);
+	UFunction* function = (UFunction *)UObject::FindStr("Function", funcNameChar);
 	if (function == nullptr)
 	{
 		// Function wasn't found, so virtual hook removal time!
