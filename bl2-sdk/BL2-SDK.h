@@ -29,9 +29,9 @@ namespace BL2SDK
 	typedef UPackage* (*tLoadPackage) (UPackage* outer, const wchar_t* filename, DWORD flags);
 	typedef FArchive& (__thiscall *tByteOrderSerialize) (FArchive* Ar, void* V, int Length);
 
-	typedef void (__thiscall *tFindOrCreateFName) (FName *out, wchar_t *Src, int InNumber, int FindType, int bSplitName);
+	typedef void (__thiscall *tFNameInit) (FName *out, wchar_t *Src, int InNumber, int FindType, int bSplitName);
 
-	extern tFindOrCreateFName pFindOrCreateFName;
+	extern tFNameInit pFNameInit;
 	extern tProcessEvent pProcessEvent;
 	extern tCallFunction pCallFunction;
 	extern tFrameStep pFrameStep;

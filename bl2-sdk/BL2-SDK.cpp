@@ -421,14 +421,16 @@ namespace BL2SDK
 		SetIsLoadingUDKPackage(false);
 	};
 
-	UObject *ConstructObject(UClass* Class, UObject* InOuter, FName Name, unsigned int SetFlags, unsigned int InternalSetFlags, UObject* inTemplate, FOutputDevice *Error, void* InstanceGraph, int bAssumeTemplateIsArchetype)
+	UObject *ConstructObject(UClass* Class, UObject* Outer, FName Name, unsigned int SetFlags, unsigned int InternalSetFlags, UObject* Template, FOutputDevice *Error, void* InstanceGraph, int bAssumeTemplateIsArchetype)
 	{
 		if (!Error) {
 			Error = new FOutputDevice();
 			Error->VfTable = (void *)calloc(2, sizeof(void *));
 			((void **)Error->VfTable)[1] = (void *)&Logging::LogW;
 		}
-		return BL2SDK::pStaticConstructObject(Class, InOuter, Name, SetFlags, InternalSetFlags, inTemplate, Error, InstanceGraph, bAssumeTemplateIsArchetype);
+		if (!Class)
+			return nullptr;
+		return BL2SDK::pStaticConstructObject(Class, Outer, Name, SetFlags, InternalSetFlags, Template, Error, InstanceGraph, bAssumeTemplateIsArchetype);
 	};
 
 	UObject *GetEngine()

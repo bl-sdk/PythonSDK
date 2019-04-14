@@ -108,7 +108,7 @@ std::string UObject::GetFullName()
 	return (char*)"(null)";
 }
 
-UClass* UObject::FindClass(char* ClassName, bool Lookup)
+UClass* UObject::FindClass(const char* ClassName, bool Lookup)
 {
 	if (BL2SDK::ClassMap.count(ClassName))
 		return BL2SDK::ClassMap[ClassName];
