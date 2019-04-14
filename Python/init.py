@@ -37,8 +37,8 @@ def LoadModList(caller, function, parms, result):
 	caller.PostContentLoaded(True)
 	return False
 
-bl2sdk.RemoveEngineHook("Function WillowGame.MarketplaceGFxMovie.OnDownloadableContentListRead", "InjectMods")
-bl2sdk.RegisterEngineHook("Function WillowGame.MarketplaceGFxMovie.OnDownloadableContentListRead", "InjectMods", LoadModList)
+# bl2sdk.RemoveEngineHook("Function WillowGame.MarketplaceGFxMovie.OnDownloadableContentListRead", "InjectMods")
+# bl2sdk.RegisterEngineHook("Function WillowGame.MarketplaceGFxMovie.OnDownloadableContentListRead", "InjectMods", LoadModList)
 
 def process_hook(caller, function, parms, result):
 	pc = bl2sdk.GetEngine().GamePlayers[0]
@@ -62,8 +62,8 @@ def process_hook(caller, function, parms, result):
 		return False
 	return True
 
-bl2sdk.RemoveEngineHook("Function WillowGame.MarketplaceGFxMovie.ShopInputKey", "OpenModMenu")
-bl2sdk.RegisterEngineHook("Function WillowGame.MarketplaceGFxMovie.ShopInputKey", "OpenModMenu", process_hook)
+# bl2sdk.RemoveEngineHook("Function WillowGame.MarketplaceGFxMovie.ShopInputKey", "OpenModMenu")
+# bl2sdk.RegisterEngineHook("Function WillowGame.MarketplaceGFxMovie.ShopInputKey", "OpenModMenu", process_hook)
 
 
 def ReplaceDLCWithMods(caller, stack, result, function):
@@ -86,5 +86,5 @@ def HookMainMenuPopulateForMods(caller, stack, result, function):
 	stack.SkipFunction()
 	return False
 
-bl2sdk.RemoveEngineHook("Function WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods")
-bl2sdk.RegisterScriptHook("Function WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods", HookMainMenuPopulateForMods)
+# bl2sdk.RemoveEngineHook("Function WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods")
+# bl2sdk.RegisterScriptHook("Function WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods", HookMainMenuPopulateForMods)

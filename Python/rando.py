@@ -276,18 +276,16 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
 
         self.randomize_branches(rng, skill_branches, self.base_skills + hunter_skills, skill_mapping)
 
-    def rando_load_packages(self):
-        if not self.loadedPackages:
-            self.loadedPackages = True
-            packages = ["GD_Assassin_Streaming_SF",
-            "GD_Mercenary_Streaming_SF",
-            "GD_Siren_Streaming_SF",
-            "GD_Lilac_Psycho_Streaming_SF",
-            "GD_Tulip_Mechro_Streaming_SF",
-            "GD_Soldier_Streaming_SF"]
+    def load_packages(self):
+        packages = ["GD_Assassin_Streaming_SF",
+        "GD_Mercenary_Streaming_SF",
+        "GD_Siren_Streaming_SF",
+        "GD_Lilac_Psycho_Streaming_SF",
+        "GD_Tulip_Mechro_Streaming_SF",
+        "GD_Soldier_Streaming_SF"]
 
-            for package in packages:
-                bl2sdk.LoadPackage(package, 0, True)
+        for package in packages:
+            bl2sdk.LoadPackage(package, 0, False)
 
     def randomize(self, who, seed = None):
         if who.lower().replace('0', 'o') not in self.hunters.keys() and who != 'all':
@@ -299,7 +297,7 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
         bl2sdk.Log("Randomizing with seed '{}'".format(seed))
         rng = random.Random(seed)
 
-        self.rando_load_packages()
+        load_packages()
 
         skills = bl2sdk.UObject.FindObjectsContaining("SkillDefinition ")
 
