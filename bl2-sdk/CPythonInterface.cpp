@@ -80,12 +80,14 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	Export_pystes_TArray(m);
 	m.def("Log", [](std::string in) { Logging::Log(in.c_str(), in.length()); });
 	m.def("LoadPackage", &BL2SDK::LoadPackage, py::arg("filename"), py::arg("flags") = 0, py::arg("force") = false);
-	m.def("FindObject", UObject::Find, py::return_value_policy::reference);
-	m.def("FindObject", UObject::FindStr, py::return_value_policy::reference);
-	m.def("ConstructObject", &BL2SDK::ConstructObject, "Construct Objects", py::arg("Class"), py::arg("Outer") = BL2SDK::GetEngine()->Outer, py::arg("Name") = FName(), py::arg("SetFlags") = 0x201, py::arg("InternalSetFlags") = 0x00, py::arg("Template") = (UObject*)nullptr, py::arg("Error") = (FOutputDevice *)nullptr, py::arg("InstanceGraph") = (void*)nullptr, py::arg("bAssumeTemplateIsArchetype") = (int)0, py::return_value_policy::reference);
+	m.def("FindObject", [](char *ClassName, char *ObjectFullName) { return UObject::Find(ClassName, ObjectFullName); }, py::return_value_policy::reference);
+	m.def("FindObject", [](UClass *Class, char *ObjectFullName) { return UObject::Find(Class, ObjectFullName); }, py::return_value_policy::reference);
+	m.def("LoadObject", [](char *ClassName, char *ObjectFullName) { return UObject::Load(ClassName, ObjectFullName); }, py::return_value_policy::reference);
+	m.def("LoadObject", [](UClass *Class, char *ObjectFullName) { return UObject::Load(Class, ObjectFullName); }, py::return_value_policy::reference);
+	m.def("ConstructObject", &BL2SDK::ConstructObject, "Construct Objects", py::arg("Class"), py::arg("Outer") = BL2SDK::GetEngine()->Outer, py::arg("Name") = FName(), py::arg("SetFlags") = 0x1, py::arg("InternalSetFlags") = 0x00, py::arg("Template") = (UObject*)nullptr, py::arg("Error") = (FOutputDevice *)nullptr, py::arg("InstanceGraph") = (void*)nullptr, py::arg("bAssumeTemplateIsArchetype") = (int)0, py::return_value_policy::reference);
 	m.def("ConstructObject", [](char *ClassName, UObject* Outer, FName Name, unsigned int SetFlags, unsigned int InternalSetFlags, UObject* Template, FOutputDevice *Error, void* InstanceGraph, int bAssumeTemplateIsArchetype) {
 		return BL2SDK::ConstructObject(UObject::FindClass(ClassName), Outer, Name, SetFlags, InternalSetFlags, Template, Error, InstanceGraph, bAssumeTemplateIsArchetype);
-		}, "Construct Objects", py::arg("Class"), py::arg("Outer") = BL2SDK::GetEngine()->Outer, py::arg("Name") = FName(), py::arg("SetFlags") = 0x201, py::arg("InternalSetFlags") = 0x00, py::arg("Template") = (UObject*)nullptr, py::arg("Error") = (FOutputDevice *)nullptr, py::arg("InstanceGraph") = (void*)nullptr, py::arg("bAssumeTemplateIsArchetype") = (int)0, py::return_value_policy::reference);
+		}, "Construct Objects", py::arg("Class"), py::arg("Outer") = BL2SDK::GetEngine()->Outer, py::arg("Name") = FName(), py::arg("SetFlags") = 0x1, py::arg("InternalSetFlags") = 0x00, py::arg("Template") = (UObject*)nullptr, py::arg("Error") = (FOutputDevice *)nullptr, py::arg("InstanceGraph") = (void*)nullptr, py::arg("bAssumeTemplateIsArchetype") = (int)0, py::return_value_policy::reference);
 	m.def("RegisterEngineHook", &RegisterEngineHook);
 	m.def("GetEngine", &BL2SDK::GetEngine, py::return_value_policy::reference);
 	m.def("RegisterScriptHook", &RegisterScriptHook);
@@ -141,8 +143,8 @@ CPythonInterface::CPythonInterface()
 	m_modulesInitialized = false;
 	InitializeState();
 
-	GameHooks::EngineHookManager->Register("Function WillowGame.WillowGameViewportClient:Tick", "PythonGCTick", &PythonGCTick);
-	GameHooks::UnrealScriptHookManager->Register("Function Engine.Console.ShippingConsoleCommand", "CheckPythonCommand", &CheckPythonCommand);
+	GameHooks::EngineHookManager->Register("WillowGame.WillowGameViewportClient:Tick", "PythonGCTick", &PythonGCTick);
+	GameHooks::UnrealScriptHookManager->Register("Engine.Console.ShippingConsoleCommand", "CheckPythonCommand", &CheckPythonCommand);
 }
 
 CPythonInterface::~CPythonInterface()
@@ -154,7 +156,7 @@ CPythonInterface::~CPythonInterface()
 
 	CleanupState();
 
-	GameHooks::EngineHookManager->Remove("Function WillowGame.WillowGameViewportClient:Tick", "PythonGCTick");
+	GameHooks::EngineHookManager->Remove("WillowGame.WillowGameViewportClient:Tick", "PythonGCTick");
 }
 
 void CPythonInterface::InitializeState()
