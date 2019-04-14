@@ -18,7 +18,7 @@ void CEngineHookManager::AddVirtualHook(const std::string& funcName, const tFunc
 		VirtualHooks.emplace(funcName, newMap);
 	}
 
-	//Logging::LogF("[CEngineHookManager] (%s) Hook \"%s\" added as virtual hook for \"%s\"\n", this->DebugName.c_str(), hookPair.first.c_str(), funcName.c_str());
+	Logging::LogF("[CEngineHookManager] (%s) Hook \"%s\" added as virtual hook for \"%s\"\n", this->DebugName.c_str(), hookPair.first.c_str(), funcName.c_str());
 }
 
 void CEngineHookManager::AddStaticHook(UFunction* function, const tFuncNameHookPair& hookPair)
@@ -37,7 +37,7 @@ void CEngineHookManager::AddStaticHook(UFunction* function, const tFuncNameHookP
 		StaticHooks.emplace(function, newMap);
 	}
 
-	//Logging::LogF("[CEngineHookManager] (%s) Hook \"%s\" added as static hook for \"%s\"\n", this->DebugName.c_str(), hookPair.first.c_str(), function->GetFullName().c_str());
+	Logging::LogF("[CEngineHookManager] (%s) Hook \"%s\" added as static hook for \"%s\"\n", this->DebugName.c_str(), hookPair.first.c_str(), function->GetFullName().c_str());
 }
 
 bool CEngineHookManager::RemoveFromTable(tHookMap& hookTable, const std::string& funcName, const std::string& hookName)
@@ -66,7 +66,7 @@ void CEngineHookManager::Register(const std::string& funcName, const std::string
 	tFuncNameHookPair hookPair = std::make_pair(hookName, funcHook);
 
 	// Find func
-	UFunction* function = (UFunction *)UObject::FindStr("Function", funcNameChar);
+	UFunction* function = (UFunction *)UObject::UObject::Find("Function", funcNameChar);
 	if (function == nullptr)
 	{
 		// The function was not found, so we need to create a virtual hook for it
@@ -84,7 +84,7 @@ bool CEngineHookManager::Remove(const std::string& funcName, const std::string& 
 	char funcNameChar[255];
 	strcpy(funcNameChar, funcName.c_str());
 
-	UFunction* function = (UFunction *)UObject::FindStr("Function", funcNameChar);
+	UFunction* function = (UFunction *)UObject::UObject::Find("Function", funcNameChar);
 	if (function == nullptr)
 	{
 		// Function wasn't found, so virtual hook removal time!
@@ -123,7 +123,7 @@ bool CEngineHookManager::RemoveStaticHook(UFunction* function, const std::string
 		return false;
 	}
 
-	return RemoveFromTable(iHooks->second, function->GetFullName(), hookName);
+	return RemoveFromTable(iHooks->second, function->GetObjectName(), hookName);
 }
 
 void CEngineHookManager::ResolveVirtualHooks(UFunction* function)
@@ -132,7 +132,7 @@ void CEngineHookManager::ResolveVirtualHooks(UFunction* function)
 	if (VirtualHooks.size() > 0)
 	{
 		//std::string funcName = GetFuncName(pFunction); TODO: Use this instead of the ugly other thing
-		std::string funcName = function->GetFullName();
+		std::string funcName = function->GetObjectName();
 
 		tiVirtualHooks iVHooks = VirtualHooks.find(funcName);
 		if (iVHooks != VirtualHooks.end())

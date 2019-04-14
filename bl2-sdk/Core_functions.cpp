@@ -77,6 +77,34 @@ std::string UObject::GetNameCPP()
 	return cOutBuffer;
 }
 
+
+std::string UObject::GetObjectName()
+{
+	if (this->Class && this->Outer)
+	{
+		char cOutBuffer[256] = { NULL };
+
+		if (this->Outer->Outer)
+		{
+			strcat_s(cOutBuffer, this->Outer->Outer->GetName().c_str());
+			strcat_s(cOutBuffer, ".");
+			strcat_s(cOutBuffer, this->Outer->GetName().c_str());
+			strcat_s(cOutBuffer, ".");
+			strcat_s(cOutBuffer, this->GetName().c_str());
+		}
+		else
+		{
+			strcat_s(cOutBuffer, this->Outer->GetName().c_str());
+			strcat_s(cOutBuffer, ".");
+			strcat_s(cOutBuffer, this->GetName().c_str());
+		}
+
+		return cOutBuffer;
+	}
+
+	return (char*)"(null)";
+}
+
 std::string UObject::GetFullName()
 {
 	if (this->Class && this->Outer)

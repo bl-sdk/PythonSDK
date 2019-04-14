@@ -201,16 +201,30 @@ public:
 	std::string GetName();
 	std::string GetNameCPP();
 	std::string GetFullName();
-	static UObject* Find(UClass *ClassToLoad, const std::string& ObjectFullName)
+	std::string GetObjectName();
+	static UObject* Load(UClass *ClassToLoad, const std::string& ObjectFullName)
 	{
-		return BL2SDK::GetEngine()->Outer->DynamicLoadObject(FString((char *)ObjectFullName.c_str()), ClassToLoad, true);
+		return GObjObjects()->Data[0]->DynamicLoadObject(FString((char *)ObjectFullName.c_str()), ClassToLoad, true);
 	}
 
-	static UObject* FindStr(const std::string& ClassName, const std::string& ObjectFullName)
+	static UObject* Load(const std::string& ClassName, const std::string& ObjectFullName)
 	{
 		UClass *classToLoad = FindClass((char *)ClassName.c_str());
 		if (classToLoad)
-			return Find(classToLoad, ObjectFullName);
+			return Load(classToLoad, ObjectFullName);
+		return nullptr;
+	}
+
+	static UObject* Find(UClass *Class, const std::string& ObjectFullName)
+	{
+		return GObjObjects()->Data[0]->FindObject(FString((char *)ObjectFullName.c_str()), Class);
+	}
+
+	static UObject* Find(const std::string& ClassName, const std::string& ObjectFullName)
+	{
+		UClass *classToFind = FindClass((char *)ClassName.c_str(), true);
+		if (classToFind)
+			return Find(classToFind, ObjectFullName);
 		return nullptr;
 	}
 

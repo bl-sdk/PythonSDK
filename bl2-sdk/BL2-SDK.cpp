@@ -16,8 +16,6 @@
 namespace BL2SDK
 {
 	static UConsole * gameConsole = nullptr;
-	static UWillowGameEngine * willowGameEngine = nullptr;
-	static UEngine * gameEngine = nullptr;
 
 	bool injectedCallNext = false;
 	bool logAllProcessEvent = true;
@@ -325,7 +323,7 @@ namespace BL2SDK
 
 		if (Settings::DeveloperModeEnabled())
 		{
-			GameHooks::EngineHookManager->Register("Function WillowGame.WillowGameViewportClient.InputKey", "DevInputKeyHook", &devInputKeyHook);
+			GameHooks::EngineHookManager->Register("WillowGame.WillowGameViewportClient.InputKey", "DevInputKeyHook", &devInputKeyHook);
 			Logging::LogF("[Internal] Developer mode key hook enabled\n");
 		}
 
@@ -376,7 +374,7 @@ namespace BL2SDK
 		//	gameConsole->ConsoleKey = FName("Tilde");
 
 		GameHooks::UnrealScriptHookManager->RemoveStaticHook(function, "StartupSDK");
-		GameHooks::EngineHookManager->Register("Function WillowGame.WillowGameViewportClient.PostRender", "GetCanvas", getCanvasPostRender);
+		GameHooks::EngineHookManager->Register("WillowGame.WillowGameViewportClient.PostRender", "GetCanvas", getCanvasPostRender);
 		//GameHooks::UnrealScriptHookManager->Register("Function GearboxFramework.LeviathanService.OnSparkInitialized", "CheckSpark", &SparkReady);
 
 		return true;
@@ -392,7 +390,7 @@ namespace BL2SDK
 		LogAllProcessEventCalls(false);
 		LogAllUnrealScriptCalls(false);
 
-		GameHooks::UnrealScriptHookManager->Register("Function Engine.Console.Initialized", "StartupSDK", GameReady);
+		GameHooks::UnrealScriptHookManager->Register("Engine.Console.Initialized", "StartupSDK", GameReady);
 		//GameHooks::UnrealScriptHookManager->Register("Function Engine.Interaction.NotifyGameSessionEnded", "ExitGame", &cleanup);
 	}
 
@@ -430,13 +428,13 @@ namespace BL2SDK
 		}
 		if (!Class)
 			return nullptr;
-		return BL2SDK::pStaticConstructObject(Class, Outer, Name, SetFlags, InternalSetFlags, Template, Error, InstanceGraph, bAssumeTemplateIsArchetype);
+		return BL2SDK::pStaticConstructObject(Class, Outer, Name, SetFlags | 0b1, InternalSetFlags, Template, Error, InstanceGraph, bAssumeTemplateIsArchetype);
 	};
 
 	UObject *GetEngine()
 	{
 		if (!engine)
-			engine = UObject::FindStr("WillowGameEngine", "Transient.WillowGameEngine");
+			engine = UObject::Find("WillowGameEngine", "Transient.WillowGameEngine");
 		return engine;
 	}
 }
