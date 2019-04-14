@@ -245,7 +245,7 @@ public:
 		}
 		return ret;
 	}
-	static UClass* FindClass(char* ClassName, bool Lookup = false);
+	static UClass* FindClass(const char* ClassName, bool Lookup = false);
 	bool IsA(UClass* pClass) const;
 
 	class UPackage* GetPackageObject() {

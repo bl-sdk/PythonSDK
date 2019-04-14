@@ -348,7 +348,7 @@ namespace pybind11 {
 		template <> struct type_caster<UClass *> {
 		using value_conv = make_caster<UObject *>;
 		public:
-			PYBIND11_TYPE_CASTER(UClass *, _("UClass *"));
+			PYBIND11_TYPE_CASTER(UClass *, _("UClass"));
 			bool load(handle src, bool) {
 				if (!isinstance<sequence>(src))
 					return false;
@@ -361,6 +361,29 @@ namespace pybind11 {
 			}
 			static handle cast(UClass *src, return_value_policy policy, handle parent) {
 				return value_conv::cast(forward_like<UObject *>(src), policy, parent);
+			}
+		};
+	}
+}
+
+
+namespace pybind11 {
+	namespace detail {
+		template <> struct type_caster<struct FName> {
+		public:
+			PYBIND11_TYPE_CASTER(FName, _("FName"));
+			bool load(handle src, bool) {
+				if (!isinstance<sequence>(src))
+					return false;
+				PyObject *source = src.ptr();
+				char *tmp = PyUnicode_AsUTF8AndSize(source, nullptr);
+				if (!tmp)
+					return false;
+				value = FName(tmp);
+				return true;
+			}
+			static handle cast(FName src, return_value_policy /* policy */, handle /* parent */) {
+				return PyUnicode_FromString(src.GetName());
 			}
 		};
 	}
