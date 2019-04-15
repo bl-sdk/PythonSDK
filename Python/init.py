@@ -25,8 +25,7 @@ class BL2MOD():
 bl2sdk.BL2MOD = BL2MOD
 bl2sdk.Mods = []
 
-# import commander_wannabe
-import randov2
+import randomizer
 
 def LoadModList(caller, function, parms, result):
 	caller.SetStoreHeader("Mods", 0, "By Abahbob", "Mod Manager")
