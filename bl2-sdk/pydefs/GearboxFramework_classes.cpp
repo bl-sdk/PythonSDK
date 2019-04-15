@@ -261,6 +261,7 @@ void Export_pystes_GearboxFramework_classes(py::module &m)
 		.def_readwrite("SliderPosition", &UGearboxEditorNode::SliderPosition)
 		.def("IsChild", &UGearboxEditorNode::IsChild)
 		;
+#endif
 	py::class_< UGearboxEngine, UGameEngine >(m, "UGearboxEngine")
 		.def_property("bHasSelectedValidStorageDevice", [](UGearboxEngine &self){return self.bHasSelectedValidStorageDevice;}, [](UGearboxEngine &self, bool value){self.bHasSelectedValidStorageDevice = value ? 1 : 0;})
 		.def_readwrite("CurrentUserID", &UGearboxEngine::CurrentUserID)
@@ -273,6 +274,7 @@ void Export_pystes_GearboxFramework_classes(py::module &m)
 		.def("GetCurrentDeviceID", &UGearboxEngine::GetCurrentDeviceID)
 		.def("SetCurrentDeviceID", &UGearboxEngine::SetCurrentDeviceID)
 		;
+#ifndef _DEBUG
 	py::class_< AGearboxGameInfo, AGameInfo >(m, "AGearboxGameInfo")
 		.def("eventPostLogin", &AGearboxGameInfo::eventPostLogin)
 		;
