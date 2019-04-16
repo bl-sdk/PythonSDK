@@ -369,13 +369,12 @@ namespace BL2SDK
 		Logging::PrintLogHeader();
 
 		//// Set console key to Tilde if not already set
-		//gameConsole = (UConsole *)UObject::FindStr("WillowConsole", "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0");
-		//if (gameConsole && (gameConsole->ConsoleKey == FName("None") || gameConsole->ConsoleKey == FName("Undefined")))
-		//	gameConsole->ConsoleKey = FName("Tilde");
+		gameConsole = (UConsole *)UObject::Find("WillowConsole", "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0");
+		if (gameConsole && (gameConsole->ConsoleKey == FName("None") || gameConsole->ConsoleKey == FName("Undefined")))
+			gameConsole->ConsoleKey = FName("Tilde");
 
 		GameHooks::UnrealScriptHookManager->RemoveStaticHook(function, "StartupSDK");
 		GameHooks::EngineHookManager->Register("WillowGame.WillowGameViewportClient.PostRender", "GetCanvas", getCanvasPostRender);
-		//GameHooks::UnrealScriptHookManager->Register("Function GearboxFramework.LeviathanService.OnSparkInitialized", "CheckSpark", &SparkReady);
 
 		return true;
 	}
