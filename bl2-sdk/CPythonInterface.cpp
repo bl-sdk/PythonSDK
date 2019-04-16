@@ -12,8 +12,44 @@
 #include <string>
 #include <cstdlib>
 
+bool VerifyPythonFunction(py::object funcHook, const char** expectedKeys) {
+	PyObject *obj = funcHook.ptr();
+	if (!obj) {
+		Logging::LogF("[Error] Object passed to hook is null\n");
+		return false;
+	}
+	if (!PyFunction_Check(obj)) {
+		Logging::LogF("[Error] Object passed to hook is not a function\n");
+		return false;
+	}
+	PyObject *Annotations = PyFunction_GetAnnotations(obj);
+	if (!Annotations || !PyDict_Check(Annotations)) {
+		Logging::LogF("[Error] Function passed to hook does not contain annotations\n");
+		return false;
+	}
+	// Python dicts aren't ordered, but we need to assume this dict is to verify the function args
+	PyObject *Keys = PyDict_Keys(Annotations);
+	PyObject *Values = PyDict_Values(Annotations);
+	if (!PyList_Check(Keys) || !PyList_Check(Values)) {
+		Logging::LogF("[Error] Function passed to hook does not contain annotations\n");
+		return false;
+	}
+	for (int x = 0; x < PyList_GET_SIZE(Keys) - 1; x++) {
+		PyObject *Key = PyList_GET_ITEM(Keys, x);
+		char *KeyString = PyUnicode_AsUTF8AndSize(Key, 0);
+		if (strcmp(KeyString, expectedKeys[x]))
+		{
+			Logging::LogF("[Error] Got unexpected argument '%s'. Expected '%s'.\n", KeyString, expectedKeys[x]);
+			return false;
+		}
+	}
+	return true;
+}
+
 void RegisterEngineHook(const std::string& funcName, const std::string& hookName, py::object funcHook) {
-	GameHooks::EngineHookManager->Register(funcName, hookName, [funcHook](UObject* caller, UFunction* function, void* parms, void* result) {
+	static const char *params[] = { "caller", "function", "parms", "result", "return" };
+	if (VerifyPythonFunction(funcHook, params))
+		GameHooks::EngineHookManager->Register(funcName, hookName, [funcHook](UObject* caller, UFunction* function, void* parms, void* result) {
 		try {
 			py::object py_caller = py::cast(caller, py::return_value_policy::reference);
 			py::object py_function = py::cast(function, py::return_value_policy::reference);
@@ -21,16 +57,19 @@ void RegisterEngineHook(const std::string& funcName, const std::string& hookName
 			py::object py_result = py::cast(FStruct(result), py::return_value_policy::reference);
 			py::object ret = funcHook(py_caller, py_function, py_parms, py_result);
 			return ret.cast<bool>();
-		} catch (std::exception e) {
+		}
+		catch (std::exception e) {
 			Logging::LogF(e.what());
 		}
 		return true;
-		}
+			}
 	);
 }
 
 void RegisterScriptHook(const std::string& funcName, const std::string& hookName, py::object funcHook) {
-	GameHooks::UnrealScriptHookManager->Register(funcName, hookName, [funcHook](UObject* caller, FFrame& stack, void* const result, UFunction* function) {
+	static const char *params[] = { "caller", "stack", "result", "function", "return"};
+	if (VerifyPythonFunction(funcHook, params))
+		GameHooks::UnrealScriptHookManager->Register(funcName, hookName, [funcHook](UObject* caller, FFrame& stack, void* const result, UFunction* function) {
 		try {
 			py::object py_caller = py::cast(caller, py::return_value_policy::reference);
 			py::object py_stack = py::cast(stack, py::return_value_policy::reference);
@@ -38,11 +77,12 @@ void RegisterScriptHook(const std::string& funcName, const std::string& hookName
 			py::object py_function = py::cast(function, py::return_value_policy::reference);
 			py::object ret = funcHook(py_caller, py_stack, py_result, py_function);
 			return ret.cast<bool>();
-		} catch (std::exception e) {
+		}
+		catch (std::exception e) {
 			Logging::LogF(e.what());
 		}
 		return true;
-		}
+			}
 	);
 }
 
@@ -134,8 +174,9 @@ bool CheckPythonCommand(UObject* caller, FFrame& stack, void* const result, UFun
 		stack.SkipFunction();
 		return false;
 	}
-	stack.Code = code;
-	return true;
+	((UConsole *)caller)->eventConsoleCommand(*command);
+	stack.SkipFunction();
+	return false;
 }
 
 CPythonInterface::CPythonInterface()

@@ -1,4 +1,7 @@
 import bl2sdk
+from bl2sdk import *
+import os
+import mypy
 
 def log(s):
     s = str(s)
@@ -6,6 +9,9 @@ def log(s):
         s += '\n'
     bl2sdk.Log(s)
 print = log
+
+if os.getcwd().split('\\')[-1] == 'Win32':
+	os.chdir(os.getcwd() + '\\Plugins\\Python')
 
 class BL2MOD():
 	_Enabled = False
@@ -21,14 +27,13 @@ class BL2MOD():
 bl2sdk.BL2MOD = BL2MOD
 bl2sdk.Mods = []
 
-# import commander_wannabe
-# import rando
+# import randomizer
 
-def LoadModList(caller, function, parms, result):
+def LoadModList(caller: UObject, function: UFunction, parms: FStruct, result: FStruct) -> bool:
 	caller.SetStoreHeader("Mods", 0, "By Abahbob", "Mod Manager")
-	pc = bl2sdk.GetEngine().GamePlayers[0]
+	pc = GetEngine().GamePlayers[0]
 	for idx, mod in enumerate(bl2sdk.Mods):
-		obj = caller.CreateMarketplaceItem(bl2sdk.FMarketplaceContent())
+		obj = caller.CreateMarketplaceItem(FMarketplaceContent())
 		obj.SetString(caller.Prop_contentTitleText, mod.Name, pc.GetTranslationContext())
 		obj.SetString(caller.Prop_descriptionText, mod.Description, pc.GetTranslationContext())
 		obj.SetString(caller.Prop_offeringId, str(idx), pc.GetTranslationContext())
@@ -37,15 +42,15 @@ def LoadModList(caller, function, parms, result):
 	caller.PostContentLoaded(True)
 	return False
 
-# bl2sdk.RemoveEngineHook("Function WillowGame.MarketplaceGFxMovie.OnDownloadableContentListRead", "InjectMods")
-# bl2sdk.RegisterEngineHook("Function WillowGame.MarketplaceGFxMovie.OnDownloadableContentListRead", "InjectMods", LoadModList)
+RemoveEngineHook("WillowGame.MarketplaceGFxMovie.OnDownloadableContentListRead", "InjectMods")
+RegisterEngineHook("WillowGame.MarketplaceGFxMovie.OnDownloadableContentListRead", "InjectMods", LoadModList)
 
-def process_hook(caller, function, parms, result):
-	pc = bl2sdk.GetEngine().GamePlayers[0]
+def process_hook(caller: UObject, function: UFunction, parms: FStruct, result: FStruct) -> bool:
+	pc = GetEngine().GamePlayers[0]
 	ControllerId = parms.popInt()
 	ukey = parms.popFName()
 	event = parms.popByte()
-	if ukey.GetName() == 'Enter':
+	if ukey == 'Enter':
 		if event == 0:
 			selected_object = caller.GetSelectedObject()
 			mod = selected_object.GetString(caller.Prop_offeringId)
@@ -62,29 +67,28 @@ def process_hook(caller, function, parms, result):
 		return False
 	return True
 
-# bl2sdk.RemoveEngineHook("Function WillowGame.MarketplaceGFxMovie.ShopInputKey", "OpenModMenu")
-# bl2sdk.RegisterEngineHook("Function WillowGame.MarketplaceGFxMovie.ShopInputKey", "OpenModMenu", process_hook)
+RemoveEngineHook("WillowGame.MarketplaceGFxMovie.ShopInputKey", "OpenModMenu")
+RegisterEngineHook("WillowGame.MarketplaceGFxMovie.ShopInputKey", "OpenModMenu", process_hook)
 
 
-def ReplaceDLCWithMods(caller, stack, result, function):
+def ReplaceDLCWithMods(caller: UObject, stack: FFrame, result: FStruct, function: UFunction) -> bool:
 	EventID = stack.popInt()
 	Caption = stack.popFString()
 	bDisabled = stack.popULong()
 	bNew = stack.popULong()
 	if Caption == "$WillowMenu.WillowScrollingListDataProviderFrontEnd.DLC":
 		Caption = "MODS"
-	print(Caption)
 	caller.AddListItem(EventID, Caption, bDisabled, bNew)
 	stack.SkipFunction()
 	return False
 
 
-def HookMainMenuPopulateForMods(caller, stack, result, function):
-	bl2sdk.RegisterScriptHook("Function WillowGame.WillowScrollingList.AddListItem", "ReplaceDLCWithMods", ReplaceDLCWithMods)
+def HookMainMenuPopulateForMods(caller: UObject, stack: FFrame, result: FStruct, function: UFunction) -> bool:
+	RegisterScriptHook("WillowGame.WillowScrollingList.AddListItem", "ReplaceDLCWithMods", ReplaceDLCWithMods)
 	caller.Populate(stack.popObject())
-	bl2sdk.RemoveScriptHook("Function WillowGame.WillowScrollingList.AddListItem", "ReplaceDLCWithMods")
+	RemoveScriptHook("WillowGame.WillowScrollingList.AddListItem", "ReplaceDLCWithMods")
 	stack.SkipFunction()
 	return False
 
-# bl2sdk.RemoveEngineHook("Function WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods")
-# bl2sdk.RegisterScriptHook("Function WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods", HookMainMenuPopulateForMods)
+RemoveEngineHook("WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods")
+RegisterScriptHook("WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods", HookMainMenuPopulateForMods)
