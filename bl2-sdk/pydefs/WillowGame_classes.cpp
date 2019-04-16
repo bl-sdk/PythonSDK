@@ -8527,6 +8527,7 @@ void Export_pystes_WillowGame_classes(py::module &m)
 	py::class_< UWillowForcedReachSpec, UForcedReachSpec >(m, "UWillowForcedReachSpec")
 		.def("eventDoSpecialMove", &UWillowForcedReachSpec::eventDoSpecialMove)
 		;
+#endif
 	py::class_< UWillowGameEngine, UGearboxEngine >(m, "UWillowGameEngine")
 		.def_property("bPauseLostFocusWindowed", [](UWillowGameEngine &self){return self.bPauseLostFocusWindowed;}, [](UWillowGameEngine &self, bool value){self.bPauseLostFocusWindowed = value ? 1 : 0;})
 		.def_property("bWasPaused", [](UWillowGameEngine &self){return self.bWasPaused;}, [](UWillowGameEngine &self, bool value){self.bWasPaused = value ? 1 : 0;})
@@ -8549,6 +8550,7 @@ void Export_pystes_WillowGame_classes(py::module &m)
 		.def("eventPauseForLevelLoad", &UWillowGameEngine::eventPauseForLevelLoad)
 		.def("CanUnpause", &UWillowGameEngine::CanUnpause)
 		;
+#ifndef _DEBUG
 	py::class_< AWillowCoopGameInfo, AWillowGameInfo >(m, "AWillowCoopGameInfo")
 		.def_property("bSomeoneJustJoined", [](AWillowCoopGameInfo &self){return self.bSomeoneJustJoined;}, [](AWillowCoopGameInfo &self, bool value){self.bSomeoneJustJoined = value ? 1 : 0;})
 		.def_readwrite("Teams", &AWillowCoopGameInfo::Teams, py::return_value_policy::reference)

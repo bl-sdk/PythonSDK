@@ -49,8 +49,53 @@ import bl2sdk
 # for x in bl2sdk.UObject.FindObjectsContaining("Class "):
 # 	if not (x.bCooked):
 # 		print(x.GetFullName())
-bl2sdk.LoadPackage("GD_Assassin_Streaming_SF", 0, False)
-print(bl2sdk.FindObject("SkillDefinition", "GD_Assassin_Skills.Sniping.AtOneWithTheGun"))
+
+# bl2sdk.LoadPackage("GD_Assassin_Streaming_SF")
+# AtOneWithTheGun = bl2sdk.FindObject("SkillDefinition", "GD_Assassin_Skills.Sniping.AtOneWithTheGun")
+# Branch = bl2sdk.FindObject("SkillTreeBranchDefinition", "GD_Assassin_Skills.SkillTree.Branch_Sniping")
+# NewSkill = bl2sdk.ConstructObject(Class="SkillDefinition", Name="MyBrandNewSkill", Template=AtOneWithTheGun, Outer=AtOneWithTheGun.Outer, SetFlags=0x1)
+# Branch.Tiers[3].Skills.Set(0, NewSkill)
+
+# def InjectSkills(caller, stack, result, function):
+# 	code = stack.Code
+# 	SkillTreeDef = stack.popObject()
+# 	stack.Code = code
+# 	Branch = SkillTreeDef.Root.Children[1]
+# 	SomeSkill = Branch.Tiers[0].Skills[0]
+# 	NewSkill = bl2sdk.ConstructObject(Class="SkillDefinition", Name="MyBrandNewSkill", Template=SomeSkill, Outer=SomeSkill.Outer)
+# 	Branch.Tiers[0].Skills.Set(1, NewSkill)
+# 	return True
+packages = [
+    "GD_Assassin_Streaming_SF",
+    "GD_Mercenary_Streaming_SF",
+    "GD_Siren_Streaming_SF",
+    "GD_Lilac_Psycho_Streaming_SF",
+    "GD_Tulip_Mechro_Streaming_SF",
+    "GD_Soldier_Streaming_SF",
+]
+
+for package in packages:
+    bl2sdk.LoadPackage(package)
+skills = ['PreshrunkCyberpunk',
+    'Discord',
+    'TypecastIconoclast',
+    'RationalAnarchist',
+    'WithClaws',
+    'BloodSoakedShields',
+    'DeathFromAbove','BloodOverdrive',
+    'BloodyRevival',
+    'BloodBath',
+    'FuelTheBlood',
+    'BoilingBlood',
+    'NervousBlood',
+    'Bloodsplosion']
+
+skilldefs = bl2sdk.UObject.FindObjectsContaining("SkillDefinition ")
+
+for skill in skills:
+	for skilldef in skilldefs:
+		if skilldef.GetFullName().endswith(skill):
+			print(skilldef.GetFullName().split(' ')[-1])
 
 # x = bl2sdk.ConstructObject(bl2sdk.UObject.StaticClass())
 # print(x)

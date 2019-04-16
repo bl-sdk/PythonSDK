@@ -27,7 +27,7 @@ class BL2MOD():
 bl2sdk.BL2MOD = BL2MOD
 bl2sdk.Mods = []
 
-# import randomizer
+import randomizer
 
 def LoadModList(caller: UObject, function: UFunction, parms: FStruct, result: FStruct) -> bool:
 	caller.SetStoreHeader("Mods", 0, "By Abahbob", "Mod Manager")
