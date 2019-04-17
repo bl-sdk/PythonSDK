@@ -39,8 +39,6 @@ namespace BL2SDK
 	extern tLoadPackage pLoadPackage;
 	extern tByteOrderSerialize pByteOrderSerialize;
 
-	extern std::map<std::string, UClass *> ClassMap;
-
 	extern CPythonInterface * Python;
 
 	extern int EngineVersion;

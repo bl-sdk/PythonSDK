@@ -222,7 +222,7 @@ public:
 
 	static UObject* Find(const std::string& ClassName, const std::string& ObjectFullName)
 	{
-		UClass *classToFind = FindClass((char *)ClassName.c_str(), true);
+		UClass *classToFind = FindClass((char *)ClassName.c_str());
 		if (classToFind)
 			return Find(classToFind, ObjectFullName);
 		return nullptr;
@@ -259,7 +259,10 @@ public:
 		}
 		return ret;
 	}
-	static UClass* FindClass(const char* ClassName, bool Lookup = false);
+	static UClass* FindClass(const char* ClassName) {
+		return (UClass *)GObjObjects()->Data[0]->FindObject(FString((char *)ClassName), (UClass *)GObjObjects()->Data[2]);
+	}
+
 	bool IsA(UClass* pClass) const;
 
 	class UPackage* GetPackageObject() {
