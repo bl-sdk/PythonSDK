@@ -29,7 +29,8 @@ namespace BL2SDK
 	typedef UPackage* (*tLoadPackage) (UPackage* outer, const wchar_t* filename, DWORD flags);
 	typedef FArchive& (__thiscall *tByteOrderSerialize) (FArchive* Ar, void* V, int Length);
 
-	typedef void (__thiscall *tFNameInit) (FName *out, wchar_t *Src, int InNumber, int FindType, int bSplitName);
+	typedef void(__thiscall *tFNameInit) (FName *out, wchar_t *Src, int InNumber, int FindType, int bSplitName);
+	typedef UObject *(__thiscall *tGetDefaultObject)(UClass *, unsigned int);
 
 	extern tFNameInit pFNameInit;
 	extern tProcessEvent pProcessEvent;
@@ -38,6 +39,7 @@ namespace BL2SDK
 	extern tStaticConstructObject pStaticConstructObject;
 	extern tLoadPackage pLoadPackage;
 	extern tByteOrderSerialize pByteOrderSerialize;
+	extern tGetDefaultObject pGetDefaultObject;
 
 	extern CPythonInterface * Python;
 
