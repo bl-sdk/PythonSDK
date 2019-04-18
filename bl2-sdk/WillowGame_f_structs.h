@@ -41962,8 +41962,8 @@ struct AWillowVehicle_TriggerVehicleEffect_Params
 	struct FName                                       EventTag;                                                 // (Parm)
 };
 
-// Function WillowGame.WillowVehicle.SetVehicleEffectParms
-struct AWillowVehicle_SetVehicleEffectParms_Params
+// Function WillowGame.WillowVehicle.SetVehicleEffectparams
+struct AWillowVehicle_SetVehicleEffectparams_Params
 {
 	struct FName                                       TriggerName;                                              // (Parm)
 	class UParticleSystemComponent*                    PSC;                                                      // (Parm, EditInline)

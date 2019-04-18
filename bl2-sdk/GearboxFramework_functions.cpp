@@ -21,7 +21,7 @@ void UAIDebugCamera::ToggleAITree()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -38,7 +38,7 @@ void UAIDebugCamera::ToggleTargetViewCones()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -55,7 +55,7 @@ void UAIDebugCamera::ToggleAwarenessZones()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -72,7 +72,7 @@ void UAIDebugCamera::ToggleRuleEngineLoadBalance()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -89,7 +89,7 @@ void UAIDebugCamera::ToggleCombat()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -106,7 +106,7 @@ void UAIDebugCamera::ToggleShowTimers()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -123,7 +123,7 @@ void UAIDebugCamera::ToggleResources()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -140,7 +140,7 @@ void UAIDebugCamera::ToggleInactiveRules()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -157,7 +157,7 @@ void UAIDebugCamera::ToggleRules()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -174,7 +174,7 @@ void UAIDebugCamera::ToggleFlags()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -194,7 +194,7 @@ class UAITracker* UAIDebugCamera::GetTracker()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -217,7 +217,7 @@ void UAIDebugCamera::SetMind(class AGearboxMind* NewMind)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -238,7 +238,7 @@ void UAIDebugCamera::InitDummies(int NewNumDummies)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -258,7 +258,7 @@ bool UAIDebugCamera::WantsToDoCameraInspection()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -281,7 +281,7 @@ void UAIDebugCamera::SetCurrentInspectedTarget(const struct FName& NewName)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -304,7 +304,7 @@ void UAIDebugCamera::CompareRuleSetAndAdjustRuleIdx(class USnapshotRecord* OldSn
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -325,7 +325,7 @@ void UAIDebugCamera::SetRuleEngine(class URuleEngine* NewRuleEngine)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -343,7 +343,7 @@ void UAIDebugCamera::SetPrevSnapshotRule()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -361,7 +361,7 @@ void UAIDebugCamera::SetNextSnapshotRule()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -379,7 +379,7 @@ void UAIDebugCamera::SetPrevSnapshot()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -397,7 +397,7 @@ void UAIDebugCamera::SetNextSnapshot()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -415,7 +415,7 @@ void UAIDebugCamera::NotifyGameUnPaused()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -433,7 +433,7 @@ void UAIDebugCamera::NotifyGamePaused()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -454,14 +454,14 @@ void UAIDebugCamera::Display(class AHUD* HUD)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.SpecialMoveInterface.SetReplicatedSMData
-// (Simulated, Native, Public, HasOutParms)
+// (Simulated, Native, Public, HasOutparams)
 // Parameters:
 // struct FSpecialMoveData        NewSMData                      (Parm, OutParm)
 
@@ -474,7 +474,7 @@ void USpecialMoveInterface::SetReplicatedSMData(struct FSpecialMoveData* NewSMDa
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -494,7 +494,7 @@ void USpecialMoveInterface::ServerSpecialMove_StopAny()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -514,14 +514,14 @@ void USpecialMoveInterface::ServerSpecialMove_Stop(class USpecialMoveDefinition*
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.SpecialMoveInterface.ServerSpecialMove_Queue
-// (Net, NetReliable, Event, HasOptionalParms, Public, NetServer)
+// (Net, NetReliable, Event, HasOptionalparams, Public, NetServer)
 // Parameters:
 // class USpecialMoveDefinition*  NewSMD                         (Parm)
 // float                          PlayRateScale                  (OptionalParm, Parm)
@@ -544,14 +544,14 @@ void USpecialMoveInterface::ServerSpecialMove_Queue(class USpecialMoveDefinition
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.SpecialMoveInterface.ServerSpecialMove_Play
-// (Net, NetReliable, Event, HasOptionalParms, Public, NetServer)
+// (Net, NetReliable, Event, HasOptionalparams, Public, NetServer)
 // Parameters:
 // class USpecialMoveDefinition*  NewSMD                         (Parm)
 // float                          PlayRateScale                  (OptionalParm, Parm)
@@ -574,7 +574,7 @@ void USpecialMoveInterface::ServerSpecialMove_Play(class USpecialMoveDefinition*
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -594,7 +594,7 @@ unsigned char USpecialMoveInterface::GetDefaultRootMotionRotationMode()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -616,7 +616,7 @@ unsigned char USpecialMoveInterface::GetDefaultRootMotionMode()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -638,7 +638,7 @@ class USkeletalMeshComponent* USpecialMoveInterface::GetSkelMesh()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -660,7 +660,7 @@ class USpecialMoveComponent* USpecialMoveInterface::GetSMComponent()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -682,7 +682,7 @@ class AActor* USpecialMoveInterface::GetActor()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -706,7 +706,7 @@ bool UAnimNodeSpecialMoveBlend::IsPlaying(class UGearboxAnimDefinition* AnimSMD)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -729,7 +729,7 @@ void UAnimNodeSpecialMoveBlend::SetRootMotion(class URootMotionDefinition* RMDef
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -749,7 +749,7 @@ class UGearboxAnimDefinition* UAnimNodeSpecialMoveBlend::GetCurrentAnimDef()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -771,7 +771,7 @@ struct FName UAnimNodeSpecialMoveBlend::GetCurrentAnimName()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -794,7 +794,7 @@ void UAnimNodeSpecialMoveBlend::Finish(bool bInterrupted)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -815,14 +815,14 @@ void UAnimNodeSpecialMoveBlend::Stop(bool bInterrupted)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.AnimNodeSpecialMoveBlend.PlayData
-// (Native, HasOptionalParms, Public, HasOutParms)
+// (Native, HasOptionalparams, Public, HasOutparams)
 // Parameters:
 // struct FSpecialMoveData        SMData                         (Parm, OutParm)
 // struct FName                   AnimNameOverride               (OptionalParm, Parm)
@@ -844,7 +844,7 @@ float UAnimNodeSpecialMoveBlend::PlayData(const struct FName& AnimNameOverride, 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -856,7 +856,7 @@ float UAnimNodeSpecialMoveBlend::PlayData(const struct FName& AnimNameOverride, 
 
 
 // Function GearboxFramework.AnimNodeSpecialMoveBlend.Play
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // class UGearboxAnimDefinition*  CustomAnimSMD                  (Parm)
 // struct FName                   AnimNameOverride               (OptionalParm, Parm)
@@ -879,7 +879,7 @@ float UAnimNodeSpecialMoveBlend::Play(class UGearboxAnimDefinition* CustomAnimSM
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -903,7 +903,7 @@ bool UAttributeExpressionEvaluator::Evaluate(class UObject* ContextSource)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -928,14 +928,14 @@ void UBehavior_CallFunction::CallFunction(class AActor* inActor, const struct FN
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.Behavior_CallFunction.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms)
+// (Defined, Protected, HasOutparams)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -957,7 +957,7 @@ void UBehavior_CallFunction::ApplyBehaviorToContext(class UObject* ContextObject
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -980,7 +980,7 @@ struct FBehaviorConsumerHandle UIBehaviorConsumer::GetBehaviorConsumerHandle()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -989,7 +989,7 @@ struct FBehaviorConsumerHandle UIBehaviorConsumer::GetBehaviorConsumerHandle()
 
 
 // Function GearboxFramework.Behavior_ChangeRemoteBehaviorSequenceState.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms, HasDefaults)
+// (Defined, Protected, HasOutparams, HasDefaults)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -1011,7 +1011,7 @@ void UBehavior_ChangeRemoteBehaviorSequenceState::ApplyBehaviorToContext(class U
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1037,7 +1037,7 @@ bool UITimerBehavior::SetTimerState(unsigned char TimerId, const struct FBehavio
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1046,7 +1046,7 @@ bool UITimerBehavior::SetTimerState(unsigned char TimerId, const struct FBehavio
 
 
 // Function GearboxFramework.ITimerBehavior.GetTimerState
-// (Public, HasOutParms)
+// (Public, HasOutparams)
 // Parameters:
 // unsigned char                  TimerId                        (Parm)
 // struct FBehaviorTimerState     TimerState                     (Parm, OutParm)
@@ -1061,7 +1061,7 @@ bool UITimerBehavior::GetTimerState(unsigned char TimerId, struct FBehaviorTimer
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1085,7 +1085,7 @@ float UITimerBehavior::GetTimeSeconds()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1094,7 +1094,7 @@ float UITimerBehavior::GetTimeSeconds()
 
 
 // Function GearboxFramework.Behavior_ChangeTimer.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms, HasDefaults)
+// (Defined, Protected, HasOutparams, HasDefaults)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -1116,7 +1116,7 @@ void UBehavior_ChangeTimer::ApplyBehaviorToContext(class UObject* ContextObject,
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1126,7 +1126,7 @@ void UBehavior_ChangeTimer::ApplyBehaviorToContext(class UObject* ContextObject,
 
 
 // Function GearboxFramework.Behavior_IsSequenceEnabled.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms, HasDefaults)
+// (Defined, Protected, HasOutparams, HasDefaults)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -1148,7 +1148,7 @@ void UBehavior_IsSequenceEnabled::ApplyBehaviorToContext(class UObject* ContextO
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1158,7 +1158,7 @@ void UBehavior_IsSequenceEnabled::ApplyBehaviorToContext(class UObject* ContextO
 
 
 // Function GearboxFramework.Behavior_PostAkEvent.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms)
+// (Defined, Protected, HasOutparams)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -1180,7 +1180,7 @@ void UBehavior_PostAkEvent::ApplyBehaviorToContext(class UObject* ContextObject,
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1190,7 +1190,7 @@ void UBehavior_PostAkEvent::ApplyBehaviorToContext(class UObject* ContextObject,
 
 
 // Function GearboxFramework.BehaviorHelpers.RunAllBehaviorsForEvent
-// (Final, Simulated, Native, Static, HasOptionalParms, Public)
+// (Final, Simulated, Native, Static, HasOptionalparams, Public)
 // Parameters:
 // struct FName                   EventName                      (Parm)
 // struct FScriptDelegate         SetStrategy                    (Parm, NeedCtorLink)
@@ -1226,7 +1226,7 @@ void UBehaviorHelpers::RunAllBehaviorsForEvent(const struct FName& EventName, co
 
 
 // Function GearboxFramework.BehaviorHelpers.BehaviorStrategy
-// (HasOptionalParms, Public, Delegate, HasOutParms)
+// (HasOptionalparams, Public, Delegate, HasOutparams)
 // Parameters:
 // struct FPointer                BehaviorSet                    (Parm)
 // struct FName                   EventName                      (Parm)
@@ -1244,7 +1244,7 @@ void UBehaviorHelpers::BehaviorStrategy(const struct FPointer& BehaviorSet, cons
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1254,7 +1254,7 @@ void UBehaviorHelpers::BehaviorStrategy(const struct FPointer& BehaviorSet, cons
 
 
 // Function GearboxFramework.BehaviorHelpers.BehaviorSetStrategy
-// (Public, Delegate, HasOutParms)
+// (Public, Delegate, HasOutparams)
 // Parameters:
 // TArray<struct FPointer>        BehaviorSetList                (Parm, OutParm, NeedCtorLink)
 
@@ -1266,7 +1266,7 @@ void UBehaviorHelpers::BehaviorSetStrategy(TArray<struct FPointer>* BehaviorSetL
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1276,7 +1276,7 @@ void UBehaviorHelpers::BehaviorSetStrategy(TArray<struct FPointer>* BehaviorSetL
 
 
 // Function GearboxFramework.BehaviorHelpers.ResolveBehaviorProviderDefinitionReference
-// (Native, Static, Public, HasOutParms)
+// (Native, Static, Public, HasOutparams)
 // Parameters:
 // class UBehaviorBase*           SourceBehavior                 (Const, Parm)
 // class UObject*                 ProviderReference              (Const, Parm)
@@ -1307,7 +1307,7 @@ class UBehaviorProviderDefinition* UBehaviorHelpers::ResolveBehaviorProviderDefi
 
 
 // Function GearboxFramework.BehaviorHelpers.IsBehaviorsV2
-// (Native, Static, Public, HasOutParms)
+// (Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
 // bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -1334,7 +1334,7 @@ bool UBehaviorHelpers::IsBehaviorsV2(struct FBehaviorKernelInfo* KernelInfo)
 
 
 // Function GearboxFramework.BehaviorHelpers.ShouldContinueExecution
-// (Defined, Static, Public, HasOutParms)
+// (Defined, Static, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
 // float                          TimeBetweenSteps               (Parm)
@@ -1367,7 +1367,7 @@ bool UBehaviorHelpers::ShouldContinueExecution(float TimeBetweenSteps, int MaxSt
 
 
 // Function GearboxFramework.BehaviorHelpers.GetNextFireLocationSocket
-// (Defined, Static, Public, HasOutParms)
+// (Defined, Static, Public, HasOutparams)
 // Parameters:
 // unsigned char                  FireSocketSelection            (Parm)
 // TArray<struct FName>           FireLocationSocketNames        (Parm, NeedCtorLink)
@@ -1397,7 +1397,7 @@ struct FName UBehaviorHelpers::GetNextFireLocationSocket(unsigned char FireSocke
 
 
 // Function GearboxFramework.BehaviorHelpers.GetRotationFromAttachmentLocationData
-// (Native, Static, Public, HasOutParms)
+// (Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FAttachmentLocationData AttachmentLocation             (Const, Parm)
 // struct FRotator                AttachmentLocationRotation     (Parm, OutParm)
@@ -1426,7 +1426,7 @@ bool UBehaviorHelpers::GetRotationFromAttachmentLocationData(const struct FAttac
 
 
 // Function GearboxFramework.BehaviorHelpers.GetRelativeDirection
-// (Native, Static, HasOptionalParms, Public)
+// (Native, Static, HasOptionalparams, Public)
 // Parameters:
 // struct FRelativeDirectionData  DesiredDirection               (Parm)
 // FScriptInterface               Source                         (Parm)
@@ -1472,7 +1472,7 @@ bool UCompoundExpressionEvaluator::Evaluate(class UObject* ContextSource)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1497,7 +1497,7 @@ void UGBXActorList::RemoveAndDeleteActorsOfClassFromLevel(class UClass* TheClass
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -1520,7 +1520,7 @@ void UGBXActorList::RemoveActorsOfClassFromLevel(class UClass* TheClass, class U
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -1541,7 +1541,7 @@ void UGBXActorList::RemoveAndDeleteActorsFromLevel(class ULevel* Level)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -1562,14 +1562,14 @@ void UGBXActorList::RemoveActorsFromLevel(class ULevel* Level)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GBXActorList.FindNextActorByLevel
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // class ULevel*                  Level                          (Parm)
 // int                            Index                          (Parm, OutParm)
@@ -1585,7 +1585,7 @@ class AActor* UGBXActorList::FindNextActorByLevel(class ULevel* Level, int* Inde
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1597,7 +1597,7 @@ class AActor* UGBXActorList::FindNextActorByLevel(class ULevel* Level, int* Inde
 
 
 // Function GearboxFramework.GBXActorList.FindFirstActorByLevel
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // class ULevel*                  Level                          (Parm)
 // int                            Index                          (Parm, OutParm)
@@ -1613,7 +1613,7 @@ class AActor* UGBXActorList::FindFirstActorByLevel(class ULevel* Level, int* Ind
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1625,7 +1625,7 @@ class AActor* UGBXActorList::FindFirstActorByLevel(class ULevel* Level, int* Ind
 
 
 // Function GearboxFramework.GBXActorList.FindNextActorByClass
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // class UClass*                  TheClass                       (Const, Parm)
 // int                            Index                          (Parm, OutParm)
@@ -1641,7 +1641,7 @@ class AActor* UGBXActorList::FindNextActorByClass(class UClass* TheClass, int* I
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1653,7 +1653,7 @@ class AActor* UGBXActorList::FindNextActorByClass(class UClass* TheClass, int* I
 
 
 // Function GearboxFramework.GBXActorList.FindFirstActorByClass
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // class UClass*                  TheClass                       (Const, Parm)
 // int                            Index                          (Parm, OutParm)
@@ -1669,7 +1669,7 @@ class AActor* UGBXActorList::FindFirstActorByClass(class UClass* TheClass, int* 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1695,7 +1695,7 @@ void UGBXActorList::RemoveActor(class AActor* Actor)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -1718,7 +1718,7 @@ void UGBXActorList::AddActor(class AActor* Actor, class ULevel* Level)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -1739,14 +1739,14 @@ void UGBXObjectList::RemoveObjectsOfClass(class UClass* TheClass)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GBXObjectList.FindNextObjectByClass
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // class UClass*                  TheClass                       (Const, Parm)
 // int                            Index                          (Parm, OutParm)
@@ -1762,7 +1762,7 @@ class UObject* UGBXObjectList::FindNextObjectByClass(class UClass* TheClass, int
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1774,7 +1774,7 @@ class UObject* UGBXObjectList::FindNextObjectByClass(class UClass* TheClass, int
 
 
 // Function GearboxFramework.GBXObjectList.FindFirstObjectByClass
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // class UClass*                  TheClass                       (Const, Parm)
 // int                            Index                          (Parm, OutParm)
@@ -1790,7 +1790,7 @@ class UObject* UGBXObjectList::FindFirstObjectByClass(class UClass* TheClass, in
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1816,7 +1816,7 @@ void UGBXObjectList::RemoveObject(class UObject* TheObject)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -1837,7 +1837,7 @@ void UGBXObjectList::AddObject(class UObject* TheObject)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -1857,7 +1857,7 @@ void AGearboxAIController::ForceMoveToActor(class AActor* destActor)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -1879,7 +1879,7 @@ bool AGearboxAIMoveNode::DoesPatrolPathExistToPoint(class AGearboxAIMoveNode* Pa
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1888,7 +1888,7 @@ bool AGearboxAIMoveNode::DoesPatrolPathExistToPoint(class AGearboxAIMoveNode* Pa
 
 
 // Function GearboxFramework.GearboxAIMoveNode.GetAllLinkedNodes
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // TArray<class AGearboxAIMoveNode*> OutNodes                       (Parm, OutParm, NeedCtorLink)
 
@@ -1901,7 +1901,7 @@ void AGearboxAIMoveNode::GetAllLinkedNodes(TArray<class AGearboxAIMoveNode*>* Ou
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1926,7 +1926,7 @@ class AGearboxAIMoveNode* AGearboxAIMoveNode::GetNextMoveNodeClosestToPoint(cons
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1948,7 +1948,7 @@ class AGearboxAIMoveNode* AGearboxAIMoveNode::GetNextMoveNode()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1972,7 +1972,7 @@ int AGearboxAIMoveNode::RemoveNode(class AGearboxAIMoveNode* OldNode)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1995,7 +1995,7 @@ void AGearboxAIMoveNode::AddNode(class AGearboxAIMoveNode* NewNode)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2013,7 +2013,7 @@ void AGearboxAIMoveNode::ClearLinks()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2033,7 +2033,7 @@ void AGearboxAIMoveNode::OnToggle(class USeqAct_Toggle* Action)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2050,7 +2050,7 @@ void AGearboxCameraBasic::FinishCameraLookAt()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2076,7 +2076,7 @@ void AGearboxCameraBasic::EnableThirdPersonLookAt(float LookAtXOffset, float Loo
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2110,14 +2110,14 @@ void AGearboxCameraBasic::BeginCameraLookAt(class AActor* LookAtTarget, const st
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxCameraBasic.CalcSimpleThirdPersonView
-// (Defined, Simulated, Public, HasOutParms, HasDefaults)
+// (Defined, Simulated, Public, HasOutparams, HasDefaults)
 // Parameters:
 // struct FTViewTarget            OutVT                          (Parm, OutParm)
 // float                          DeltaTime                      (Parm)
@@ -2131,7 +2131,7 @@ void AGearboxCameraBasic::CalcSimpleThirdPersonView(float DeltaTime, struct FTVi
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2141,7 +2141,7 @@ void AGearboxCameraBasic::CalcSimpleThirdPersonView(float DeltaTime, struct FTVi
 
 
 // Function GearboxFramework.GearboxCameraBasic.CalcBaseView
-// (Defined, Simulated, Public, HasOutParms)
+// (Defined, Simulated, Public, HasOutparams)
 // Parameters:
 // struct FTViewTarget            OutVT                          (Parm, OutParm)
 // float                          DeltaTime                      (Parm)
@@ -2155,7 +2155,7 @@ void AGearboxCameraBasic::CalcBaseView(float DeltaTime, struct FTViewTarget* Out
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2165,7 +2165,7 @@ void AGearboxCameraBasic::CalcBaseView(float DeltaTime, struct FTViewTarget* Out
 
 
 // Function GearboxFramework.GearboxCameraBasic.UpdateViewTarget
-// (Defined, Simulated, Public, HasOutParms, HasDefaults)
+// (Defined, Simulated, Public, HasOutparams, HasDefaults)
 // Parameters:
 // struct FTViewTarget            OutVT                          (Parm, OutParm)
 // float                          DeltaTime                      (Parm)
@@ -2179,7 +2179,7 @@ void AGearboxCameraBasic::UpdateViewTarget(float DeltaTime, struct FTViewTarget*
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2207,7 +2207,7 @@ float UGearboxCameraModifier::LerpFOV(float Src, float Dest, float T)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2234,7 +2234,7 @@ struct FRotator UGearboxCameraModifier::LerpRotation(const struct FRotator& Src,
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2261,7 +2261,7 @@ struct FVector UGearboxCameraModifier::LerpLocation(const struct FVector& Src, c
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2270,7 +2270,7 @@ struct FVector UGearboxCameraModifier::LerpLocation(const struct FVector& Src, c
 
 
 // Function GearboxFramework.GearboxCameraModifier.UpdateAllLerps
-// (Defined, Protected, HasOutParms, HasDefaults)
+// (Defined, Protected, HasOutparams, HasDefaults)
 // Parameters:
 // float                          DeltaTime                      (Parm)
 // struct FTPOV                   OutPOV                         (Parm, OutParm)
@@ -2284,7 +2284,7 @@ void UGearboxCameraModifier::UpdateAllLerps(float DeltaTime, struct FTPOV* OutPO
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2307,7 +2307,7 @@ void UGearboxCameraModifier::UpdateMasterFadePercentage(float AdjustedDeltaTime)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2326,7 +2326,7 @@ bool UGearboxCameraModifier::IsFadingDownwards()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2347,7 +2347,7 @@ bool UGearboxCameraModifier::IsFadingUpwards()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2368,7 +2368,7 @@ bool UGearboxCameraModifier::IsFadeInProgress()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2377,7 +2377,7 @@ bool UGearboxCameraModifier::IsFadeInProgress()
 
 
 // Function GearboxFramework.GearboxCameraModifier.StartFadeOut
-// (Defined, HasOptionalParms, Protected)
+// (Defined, HasOptionalparams, Protected)
 // Parameters:
 // float                          NewTimeSpan                    (Parm)
 // bool                           NewDisableWhenFadedOut         (OptionalParm, Parm)
@@ -2394,14 +2394,14 @@ void UGearboxCameraModifier::StartFadeOut(float NewTimeSpan, bool NewDisableWhen
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxCameraModifier.StartFadeIn
-// (Defined, HasOptionalParms, Protected)
+// (Defined, HasOptionalparams, Protected)
 // Parameters:
 // float                          NewTimeSpan                    (Parm)
 // unsigned char                  NewFadeMode                    (OptionalParm, Parm)
@@ -2416,7 +2416,7 @@ void UGearboxCameraModifier::StartFadeIn(float NewTimeSpan, unsigned char NewFad
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2440,7 +2440,7 @@ void UGearboxCameraModifier::SetDesiredCamera(const struct FVector& DesiredLoc, 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2460,7 +2460,7 @@ void UGearboxCameraModifier::SetGBXCameraOwner(class AGearboxCameraBasic* InCame
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2481,7 +2481,7 @@ bool UGearboxCameraModifier::AddCameraModifier(class ACamera* Camera)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2490,7 +2490,7 @@ bool UGearboxCameraModifier::AddCameraModifier(class ACamera* Camera)
 
 
 // Function GearboxFramework.GearboxDialogInterface.ServerDialog_TriggerEvent
-// (Net, Event, HasOptionalParms, Public, NetServer)
+// (Net, Event, HasOptionalparams, Public, NetServer)
 // Parameters:
 // class UGearboxDialogEventTag*  EventTag                       (Parm)
 // class AActor*                  Other                          (OptionalParm, Parm)
@@ -2507,7 +2507,7 @@ void UGearboxDialogInterface::ServerDialog_TriggerEvent(class UGearboxDialogEven
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2528,7 +2528,7 @@ void UGearboxDialogInterface::SetDialogNameTag(class UGearboxDialogNameTag* NewN
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2548,7 +2548,7 @@ struct FGearboxDialogReplicatedData UGearboxDialogInterface::GetReplicatedDialog
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2557,7 +2557,7 @@ struct FGearboxDialogReplicatedData UGearboxDialogInterface::GetReplicatedDialog
 
 
 // Function GearboxFramework.GearboxDialogInterface.SetReplicatedDialogData
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // class UGearboxDialogAct_Talk*  TalkAct                        (Parm)
 // struct FGearboxDialogData      Data                           (Parm, OutParm)
@@ -2572,7 +2572,7 @@ void UGearboxDialogInterface::SetReplicatedDialogData(class UGearboxDialogAct_Ta
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2582,7 +2582,7 @@ void UGearboxDialogInterface::SetReplicatedDialogData(class UGearboxDialogAct_Ta
 
 
 // Function GearboxFramework.GearboxDialogInterface.GetDialogGroups
-// (Simulated, Native, Public, HasOutParms)
+// (Simulated, Native, Public, HasOutparams)
 // Parameters:
 // TArray<class UGearboxDialogGroup*> Groups                         (Parm, OutParm, NeedCtorLink)
 
@@ -2595,7 +2595,7 @@ void UGearboxDialogInterface::GetDialogGroups(TArray<class UGearboxDialogGroup*>
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2618,7 +2618,7 @@ class UGearboxDialogComponent* UGearboxDialogInterface::GetDialogComponent()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2640,7 +2640,7 @@ class UGearboxDialogNameTag* UGearboxDialogInterface::GetDialogNameTag()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2662,7 +2662,7 @@ class AActor* UGearboxDialogInterface::GetActor()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2684,7 +2684,7 @@ bool UGearboxDialogInterface::CanTalk()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2708,7 +2708,7 @@ bool UGearboxEditorNode::IsChild(class UGearboxEditorNode* TestNode)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2740,7 +2740,7 @@ FScriptInterface UGearboxEngine::GetSparkInterface()
 
 
 // Function GearboxFramework.GearboxEngine.IsCurrentDeviceValid
-// (Defined, Event, HasOptionalParms, Public)
+// (Defined, Event, HasOptionalparams, Public)
 // Parameters:
 // int                            SizeNeeded                     (OptionalParm, Parm)
 // bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -2754,7 +2754,7 @@ bool UGearboxEngine::IsCurrentDeviceValid(int SizeNeeded)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2776,7 +2776,7 @@ bool UGearboxEngine::HasStorageDeviceBeenRemoved()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2798,7 +2798,7 @@ int UGearboxEngine::GetCurrentDeviceID()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2807,7 +2807,7 @@ int UGearboxEngine::GetCurrentDeviceID()
 
 
 // Function GearboxFramework.GearboxEngine.SetCurrentDeviceID
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // int                            NewDeviceID                    (Parm)
 // bool                           bProfileSignedOut              (OptionalParm, Parm)
@@ -2823,7 +2823,7 @@ void UGearboxEngine::SetCurrentDeviceID(int NewDeviceID, bool bProfileSignedOut)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2843,14 +2843,14 @@ void AGearboxGameInfo::PostLogin(class APlayerController* NewPlayer)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GFxMovieState.GetDebugString
-// (Defined, HasOptionalParms, Public)
+// (Defined, HasOptionalparams, Public)
 // Parameters:
 // class UGearboxGFxMovie*        Movie                          (Parm)
 // bool                           bIncludeFlags                  (OptionalParm, Parm)
@@ -2866,7 +2866,7 @@ struct FString UGFxMovieState::GetDebugString(class UGearboxGFxMovie* Movie, boo
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2890,7 +2890,7 @@ void UGFxMovieState::ApplyMovieState(class UGearboxGFxMovie* Movie, class UClass
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2912,7 +2912,7 @@ int UGFxMovieState::FindMovieState(const struct FName& TheState)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2921,7 +2921,7 @@ int UGFxMovieState::FindMovieState(const struct FName& TheState)
 
 
 // Function GearboxFramework.GFxMovieState.TestState
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // struct FName                   TheState                       (Parm)
 // struct FMovieStateStruct       MovieState                     (Parm, OutParm, NeedCtorLink)
@@ -2937,7 +2937,7 @@ bool UGFxMovieState::TestState(const struct FName& TheState, struct FMovieStateS
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2949,7 +2949,7 @@ bool UGFxMovieState::TestState(const struct FName& TheState, struct FMovieStateS
 
 
 // Function GearboxFramework.GFxMovieState.ToggleState
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // struct FName                   TheState                       (Parm)
 // struct FMovieStateStruct       MovieState                     (Parm, OutParm, NeedCtorLink)
@@ -2965,7 +2965,7 @@ int UGFxMovieState::ToggleState(const struct FName& TheState, struct FMovieState
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2977,7 +2977,7 @@ int UGFxMovieState::ToggleState(const struct FName& TheState, struct FMovieState
 
 
 // Function GearboxFramework.GFxMovieState.EnableState
-// (Native, HasOptionalParms, Public, HasOutParms)
+// (Native, HasOptionalparams, Public, HasOutparams)
 // Parameters:
 // struct FName                   TheState                       (Parm)
 // struct FMovieStateStruct       MovieState                     (Parm, OutParm, NeedCtorLink)
@@ -2995,7 +2995,7 @@ int UGFxMovieState::EnableState(const struct FName& TheState, bool bEnable, stru
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3020,7 +3020,7 @@ void UGearboxGFxMovie::extSetLanguageExt(const struct FString& ClipPath)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3037,7 +3037,7 @@ void UGearboxGFxMovie::OnClosedOnDeath()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3057,7 +3057,7 @@ bool UGearboxGFxMovie::IsShowingFlashMouse()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3078,7 +3078,7 @@ int UGearboxGFxMovie::extIsMouseablePlatform()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3098,7 +3098,7 @@ void UGearboxGFxMovie::SetMouseableFlag()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3117,7 +3117,7 @@ struct FString UGearboxGFxMovie::GetStyleDebugString()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3126,7 +3126,7 @@ struct FString UGearboxGFxMovie::GetStyleDebugString()
 
 
 // Function GearboxFramework.GearboxGFxMovie.GetStateDebugString
-// (Defined, HasOptionalParms, Public)
+// (Defined, HasOptionalparams, Public)
 // Parameters:
 // bool                           bIncludeFlags                  (OptionalParm, Parm)
 // struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
@@ -3140,7 +3140,7 @@ struct FString UGearboxGFxMovie::GetStateDebugString(bool bIncludeFlags)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3163,7 +3163,7 @@ void UGearboxGFxMovie::InitializeFrom(class UGearboxGFxMovie* SrcMovie)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3187,7 +3187,7 @@ bool UGearboxGFxMovie::RemoveStylesDrawnTo(class UPrimitiveComponent* PrimComp, 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3211,7 +3211,7 @@ bool UGearboxGFxMovie::RemoveStyles(const FScriptInterface& Target)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3234,7 +3234,7 @@ void UGearboxGFxMovie::RemoveStyle(class UGFxMovieDrawStyle* Style)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3255,7 +3255,7 @@ void UGearboxGFxMovie::AddStyle(class UGFxMovieDrawStyle* Style)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3273,7 +3273,7 @@ void UGearboxGFxMovie::ShutdownMoviePlayback()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3291,7 +3291,7 @@ void UGearboxGFxMovie::InitMoviePlayback()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3311,7 +3311,7 @@ class UTextureRenderTarget2D* UGearboxGFxMovie::GetRenderTexture()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3333,7 +3333,7 @@ void UGearboxGFxMovie::MovieState_OnChanged(bool bStateWasChanged)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3354,7 +3354,7 @@ bool UGearboxGFxMovie::MovieState_SetFromMovie(class UGearboxGFxMovie* Movie)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3363,7 +3363,7 @@ bool UGearboxGFxMovie::MovieState_SetFromMovie(class UGearboxGFxMovie* Movie)
 
 
 // Function GearboxFramework.GearboxGFxMovie.MovieState_Copy
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FMovieStateStruct       StateDst                       (Parm, OutParm, NeedCtorLink)
 // struct FMovieStateStruct       StateSrc                       (Parm, OutParm, NeedCtorLink)
@@ -3378,7 +3378,7 @@ bool UGearboxGFxMovie::MovieState_Copy(struct FMovieStateStruct* StateDst, struc
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3392,7 +3392,7 @@ bool UGearboxGFxMovie::MovieState_Copy(struct FMovieStateStruct* StateDst, struc
 
 
 // Function GearboxFramework.GearboxGFxMovie.MovieState_Compare
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FMovieStateStruct       S1                             (Parm, OutParm, NeedCtorLink)
 // struct FMovieStateStruct       S2                             (Parm, OutParm, NeedCtorLink)
@@ -3407,7 +3407,7 @@ bool UGearboxGFxMovie::MovieState_Compare(struct FMovieStateStruct* S1, struct F
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3435,14 +3435,14 @@ void UGearboxGFxMovie::MovieState_Toggle(const struct FName& TheState)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxGFxMovie.MovieState_Enable
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // struct FName                   TheState                       (Parm)
 // bool                           bEnable                        (OptionalParm, Parm)
@@ -3459,7 +3459,7 @@ bool UGearboxGFxMovie::MovieState_Enable(const struct FName& TheState, bool bEna
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3483,7 +3483,7 @@ bool UGearboxGFxMovie::MovieState_IsEnabled(const struct FName& TheState)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3507,7 +3507,7 @@ bool UGearboxGFxMovie::MovieState_SupportsState(const struct FName& TheState)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3527,7 +3527,7 @@ void UGearboxGFxMovie::MovieState_Init()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3545,7 +3545,7 @@ void UGearboxGFxMovie::InitFromDefinition()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3613,7 +3613,7 @@ void UGearboxGFxMovie::ApplyState(const struct FString& StateName, const struct 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3633,7 +3633,7 @@ void UGearboxGFxMovie::SetRenderingEnabled(bool bEnabled)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3653,7 +3653,7 @@ void UGearboxGFxMovie::GotoAndStop(const struct FString& FrameLabel)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3673,7 +3673,7 @@ void UGearboxGFxMovie::GotoAndPlay(const struct FString& FrameLabel)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3693,7 +3693,7 @@ void UGearboxGFxMovie::PlaySpecialUISound(const struct FString& SoundString)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3714,7 +3714,7 @@ void UGearboxGFxMovie::PlayUISound(const struct FName& UIEvent)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3734,7 +3734,7 @@ void UGearboxGFxMovie::SetOtherObject(class UObject* Obj)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3754,7 +3754,7 @@ class UObject* UGearboxGFxMovie::GetInstanceContextObject()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3773,7 +3773,7 @@ void UGearboxGFxMovie::OnTick()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3790,14 +3790,14 @@ void UGearboxGFxMovie::OnClose()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxGFxMovie.Start
-// (Defined, Event, HasOptionalParms, Public)
+// (Defined, Event, HasOptionalparams, Public)
 // Parameters:
 // bool                           StartPaused                    (OptionalParm, Parm)
 // bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -3811,7 +3811,7 @@ bool UGearboxGFxMovie::Start(bool StartPaused)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3820,7 +3820,7 @@ bool UGearboxGFxMovie::Start(bool StartPaused)
 
 
 // Function GearboxFramework.GearboxGFxMovie.ColorizeTooltipText
-// (Final, Defined, HasOptionalParms, Public)
+// (Final, Defined, HasOptionalparams, Public)
 // Parameters:
 // struct FString                 S                              (Const, Parm, NeedCtorLink)
 // bool                           bDisabled                      (OptionalParm, Parm)
@@ -3836,7 +3836,7 @@ struct FString UGearboxGFxMovie::ColorizeTooltipText(const struct FString& S, bo
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3845,7 +3845,7 @@ struct FString UGearboxGFxMovie::ColorizeTooltipText(const struct FString& S, bo
 
 
 // Function GearboxFramework.GearboxGFxMovie.GFxColoredText
-// (Native, Static, HasOptionalParms, Public, HasOutParms)
+// (Native, Static, HasOptionalparams, Public, HasOutparams)
 // Parameters:
 // struct FColor                  C                              (Const, Parm, OutParm)
 // struct FString                 S                              (Const, Parm, OutParm, NeedCtorLink)
@@ -3893,7 +3893,7 @@ void UGearboxGFxMovie::SingleArgInvokeB(const struct FString& Command, bool Arg)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3916,7 +3916,7 @@ void UGearboxGFxMovie::SingleArgInvokeS(const struct FString& Command, const str
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3939,7 +3939,7 @@ void UGearboxGFxMovie::SingleArgInvokeF(const struct FString& Command, float Arg
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3959,7 +3959,7 @@ class ULocalPlayer* UGearboxGFxMovie::GetLocalPlayer()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3981,7 +3981,7 @@ void UGearboxGFxMovie::OnClosed(class UGearboxGFxMovie* Movie)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -4003,7 +4003,7 @@ bool UGearboxGFxMovie::WantsControllerInput(int ControllerId)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4029,7 +4029,7 @@ bool UGearboxGFxMovie::SetExternalTexture(const struct FString& Resource, class 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4058,7 +4058,7 @@ bool UGearboxGFxMovie::OnInputAxis(int ControllerId, const struct FName& ukey, f
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4080,14 +4080,14 @@ void UGFxMovie_StateParent::MovieState_OnChanged(bool bStateWasChanged)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GFxMovie_StateParent.Start
-// (Defined, Event, HasOptionalParms, Public)
+// (Defined, Event, HasOptionalparams, Public)
 // Parameters:
 // bool                           StartPaused                    (OptionalParm, Parm)
 // bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -4101,7 +4101,7 @@ bool UGFxMovie_StateParent::Start(bool StartPaused)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4146,7 +4146,7 @@ class UGearboxDialogManager* UGearboxGlobals::GetDialogManager()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4168,7 +4168,7 @@ float UGearboxGlobals::GetPopulationRespawnDelay()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4191,7 +4191,7 @@ FScriptInterface UGearboxGlobals::ShowDialog(class APlayerController* PC)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4216,7 +4216,7 @@ void UGearboxGlobals::NotifyActorDied(class AActor* TheActor, bool bKeepBody)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -4242,7 +4242,7 @@ bool UGearboxGlobals::DoesLOSIntersectSpecialOccluder(const struct FVector& From
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4297,7 +4297,7 @@ unsigned char UGearboxGlobals::GetPlatform()
 
 
 // Function GearboxFramework.GearboxGlobals.ValidatePlayerName
-// (Native, HasOptionalParms, Public, HasOutParms)
+// (Native, HasOptionalparams, Public, HasOutparams)
 // Parameters:
 // struct FString                 InName                         (Parm, OutParm, NeedCtorLink)
 // bool                           bReplaceCharacters             (OptionalParm, Parm)
@@ -4313,7 +4313,7 @@ bool UGearboxGlobals::ValidatePlayerName(bool bReplaceCharacters, struct FString
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4344,7 +4344,7 @@ bool UGearboxGlobals::RegisterStateKey(const struct FName& LevelName, const stru
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4372,7 +4372,7 @@ bool UGearboxGlobals::DoesStateKeyExist(const struct FName& LevelName, const str
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4396,7 +4396,7 @@ bool UGearboxGlobals::FreeTexture2D(class UTexture2D* Texture)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4418,7 +4418,7 @@ class UTexture2D* UGearboxGlobals::GetTexture2D()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4440,7 +4440,7 @@ class UGearboxRenderTextureManager* UGearboxGlobals::GetRenderTextureManager()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4462,7 +4462,7 @@ class UGFxMovieManager* UGearboxGlobals::GetGFxManager()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4484,7 +4484,7 @@ class UScreenSpaceManager* UGearboxGlobals::GetScreenSpaceManager()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4506,7 +4506,7 @@ class UGbxMessageManager* UGearboxGlobals::GetMessageManager()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4515,7 +4515,7 @@ class UGbxMessageManager* UGearboxGlobals::GetMessageManager()
 
 
 // Function GearboxFramework.GearboxGlobals.RegDynamicTextureStreaming
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // class AActor*                  A                              (Parm)
 // bool                           bRegister                      (OptionalParm, Parm)
@@ -4531,7 +4531,7 @@ void UGearboxGlobals::RegDynamicTextureStreaming(class AActor* A, bool bRegister
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -4551,7 +4551,7 @@ class UGBXActorList* UGearboxGlobals::GetDynamicTextureActorList()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4573,7 +4573,7 @@ class UPopulationMaster* UGearboxGlobals::GetPopulationMaster()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4595,7 +4595,7 @@ class AWireManager* UGearboxGlobals::GetWireManager()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4617,7 +4617,7 @@ class UGBXObjectList* UGearboxGlobals::GetGBXObjectList()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4639,7 +4639,7 @@ class UGBXActorList* UGearboxGlobals::GetGBXActorList()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4661,7 +4661,7 @@ class URuleEngineLoadBalanceManager* UGearboxGlobals::GetRuleEngineLoadBalanceMa
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4683,7 +4683,7 @@ class UGearboxAIFactory* UGearboxGlobals::GetGearboxAIFactory()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4705,7 +4705,7 @@ class UExposureUtilityBase* UGearboxGlobals::GetExposureUtility()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4750,7 +4750,7 @@ struct FVector UGearboxLocationRequest::GetLastDirection()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4772,7 +4772,7 @@ struct FVector UGearboxLocationRequest::GetLastOrigin()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4781,7 +4781,7 @@ struct FVector UGearboxLocationRequest::GetLastOrigin()
 
 
 // Function GearboxFramework.GearboxLocationRequest.GetDirection
-// (Simulated, Native, Public, HasOutParms)
+// (Simulated, Native, Public, HasOutparams)
 // Parameters:
 // class AActor*                  ContextActor                   (Parm)
 // struct FVector                 OutDirection                   (Parm, OutParm)
@@ -4797,7 +4797,7 @@ bool UGearboxLocationRequest::GetDirection(class AActor* ContextActor, struct FV
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4809,7 +4809,7 @@ bool UGearboxLocationRequest::GetDirection(class AActor* ContextActor, struct FV
 
 
 // Function GearboxFramework.GearboxLocationRequest.GetOrigin
-// (Simulated, Native, Public, HasOutParms)
+// (Simulated, Native, Public, HasOutparams)
 // Parameters:
 // class AActor*                  ContextActor                   (Parm)
 // struct FVector                 OutOrigin                      (Parm, OutParm)
@@ -4825,7 +4825,7 @@ bool UGearboxLocationRequest::GetOrigin(class AActor* ContextActor, struct FVect
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4837,7 +4837,7 @@ bool UGearboxLocationRequest::GetOrigin(class AActor* ContextActor, struct FVect
 
 
 // Function GearboxFramework.GearboxLocationRequest.Get
-// (Simulated, Native, Public, HasOutParms)
+// (Simulated, Native, Public, HasOutparams)
 // Parameters:
 // class AActor*                  ContextActor                   (Parm)
 // struct FVector                 OutLocation                    (Parm, OutParm)
@@ -4853,7 +4853,7 @@ bool UGearboxLocationRequest::Get(class AActor* ContextActor, struct FVector* Ou
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4865,7 +4865,7 @@ bool UGearboxLocationRequest::Get(class AActor* ContextActor, struct FVector* Ou
 
 
 // Function GearboxFramework.PawnMoveLocationRequest.Get
-// (Simulated, Native, Public, HasOutParms)
+// (Simulated, Native, Public, HasOutparams)
 // Parameters:
 // class AActor*                  ContextActor                   (Parm)
 // struct FVector                 OutLocation                    (Parm, OutParm)
@@ -4881,7 +4881,7 @@ bool UPawnMoveLocationRequest::Get(class AActor* ContextActor, struct FVector* O
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4906,7 +4906,7 @@ struct FVector AGearboxPawn::GetAimDirection()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4929,14 +4929,14 @@ void AGearboxPawn::SetDialogNameTag(class UGearboxDialogNameTag* NewName)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxPawn.ServerDialog_TriggerEvent
-// (Singular, Net, Native, Event, HasOptionalParms, Public, NetServer)
+// (Singular, Net, Native, Event, HasOptionalparams, Public, NetServer)
 // Parameters:
 // class UGearboxDialogEventTag*  EventTag                       (Parm)
 // class AActor*                  Other                          (OptionalParm, Parm)
@@ -4954,7 +4954,7 @@ void AGearboxPawn::ServerDialog_TriggerEvent(class UGearboxDialogEventTag* Event
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -4974,7 +4974,7 @@ struct FGearboxDialogReplicatedData AGearboxPawn::GetReplicatedDialogData()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4983,7 +4983,7 @@ struct FGearboxDialogReplicatedData AGearboxPawn::GetReplicatedDialogData()
 
 
 // Function GearboxFramework.GearboxPawn.SetReplicatedDialogData
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // class UGearboxDialogAct_Talk*  TalkAct                        (Parm)
 // struct FGearboxDialogData      Data                           (Parm, OutParm)
@@ -4998,7 +4998,7 @@ void AGearboxPawn::SetReplicatedDialogData(class UGearboxDialogAct_Talk* TalkAct
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5008,7 +5008,7 @@ void AGearboxPawn::SetReplicatedDialogData(class UGearboxDialogAct_Talk* TalkAct
 
 
 // Function GearboxFramework.GearboxPawn.GetDialogGroups
-// (Simulated, Native, Public, HasOutParms)
+// (Simulated, Native, Public, HasOutparams)
 // Parameters:
 // TArray<class UGearboxDialogGroup*> Groups                         (Parm, OutParm, NeedCtorLink)
 
@@ -5021,7 +5021,7 @@ void AGearboxPawn::GetDialogGroups(TArray<class UGearboxDialogGroup*>* Groups)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5044,7 +5044,7 @@ class UGearboxDialogComponent* AGearboxPawn::GetDialogComponent()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5066,7 +5066,7 @@ class UGearboxDialogNameTag* AGearboxPawn::GetDialogNameTag()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5088,7 +5088,7 @@ bool AGearboxPawn::CanTalk()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5107,7 +5107,7 @@ void AGearboxPawn::OnCoverStateChanged()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5127,7 +5127,7 @@ void AGearboxPawn::ServerSetCoverState(const struct FGearboxCoverState& NewCover
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5147,7 +5147,7 @@ void AGearboxPawn::SetCoverState(const struct FGearboxCoverState& NewCoverState)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5173,7 +5173,7 @@ float AGearboxPawn::GetMountAnimDistanceForSpeed(unsigned char TheSpeed, unsigne
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5194,7 +5194,7 @@ struct FVector AGearboxPawn::GetSpotOthersShouldLookAt()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5203,7 +5203,7 @@ struct FVector AGearboxPawn::GetSpotOthersShouldLookAt()
 
 
 // Function GearboxFramework.GearboxPawn.SetReplicatedSMData
-// (Simulated, Native, Public, HasOutParms)
+// (Simulated, Native, Public, HasOutparams)
 // Parameters:
 // struct FSpecialMoveData        NewSMData                      (Parm, OutParm)
 
@@ -5216,7 +5216,7 @@ void AGearboxPawn::SetReplicatedSMData(struct FSpecialMoveData* NewSMData)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5236,7 +5236,7 @@ void AGearboxPawn::ServerSpecialMove_StopAny()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5256,14 +5256,14 @@ void AGearboxPawn::ServerSpecialMove_Stop(class USpecialMoveDefinition* OldSMD)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxPawn.ServerSpecialMove_Queue
-// (Defined, Net, NetReliable, Event, HasOptionalParms, Public, NetServer)
+// (Defined, Net, NetReliable, Event, HasOptionalparams, Public, NetServer)
 // Parameters:
 // class USpecialMoveDefinition*  NewSMD                         (Parm)
 // float                          PlayRateScale                  (OptionalParm, Parm)
@@ -5286,14 +5286,14 @@ void AGearboxPawn::ServerSpecialMove_Queue(class USpecialMoveDefinition* NewSMD,
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxPawn.ServerSpecialMove_Play
-// (Defined, Net, NetReliable, Event, HasOptionalParms, Public, NetServer)
+// (Defined, Net, NetReliable, Event, HasOptionalparams, Public, NetServer)
 // Parameters:
 // class USpecialMoveDefinition*  NewSMD                         (Parm)
 // float                          PlayRateScale                  (OptionalParm, Parm)
@@ -5316,7 +5316,7 @@ void AGearboxPawn::ServerSpecialMove_Play(class USpecialMoveDefinition* NewSMD, 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5336,7 +5336,7 @@ unsigned char AGearboxPawn::GetDefaultRootMotionRotationMode()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5358,7 +5358,7 @@ unsigned char AGearboxPawn::GetDefaultRootMotionMode()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5380,7 +5380,7 @@ class USkeletalMeshComponent* AGearboxPawn::GetSkelMesh()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5402,7 +5402,7 @@ class USpecialMoveComponent* AGearboxPawn::GetSMComponent()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5424,7 +5424,7 @@ class AActor* AGearboxPawn::GetActor()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5446,7 +5446,7 @@ class UGearboxNavigationHandle* AGearboxPawn::GetNavigationHandle()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5455,7 +5455,7 @@ class UGearboxNavigationHandle* AGearboxPawn::GetNavigationHandle()
 
 
 // Function GearboxFramework.GearboxPawn.PlayHit
-// (Defined, HasOptionalParms, Public)
+// (Defined, HasOptionalparams, Public)
 // Parameters:
 // class APawn*                   SomePawn                       (Parm)
 // struct FVector                 HitLocation                    (Parm)
@@ -5478,7 +5478,7 @@ void AGearboxPawn::PlayHit(class APawn* SomePawn, const struct FVector& HitLocat
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5498,14 +5498,14 @@ void AGearboxPawn::ReplicatedEvent(const struct FName& VarName)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxPawn.Died
-// (Defined, HasOptionalParms, Public)
+// (Defined, HasOptionalparams, Public)
 // Parameters:
 // class AController*             Killer                         (Parm)
 // class UClass*                  DamageType                     (Parm)
@@ -5525,7 +5525,7 @@ bool AGearboxPawn::Died(class AController* Killer, class UClass* DamageType, con
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5544,7 +5544,7 @@ void AGearboxPawn::SetMovementPhysics()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5561,7 +5561,7 @@ void AGearboxPawn::PostBeginPlay()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5582,7 +5582,7 @@ void AGearboxPawn::NotifyShotAtBy(class AGearboxPawn* ShootingPawn)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5602,7 +5602,7 @@ bool AGearboxPawn::HaveIBeenShotAtRecently()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5649,7 +5649,7 @@ void USparkTypes::OnEntitlementsUpdated(class UGearboxAccountData* GbxAccount)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5666,7 +5666,7 @@ void USparkTypes::OnSparkEmergencyMessageUpdated()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5686,7 +5686,7 @@ void USparkTypes::OnSparkInitialized(unsigned char InitializedResult)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5706,14 +5706,14 @@ void USparkTypes::OnSparkConfigReceived(TArray<unsigned char> ConfigArray)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.SparkTypes.OnSparkRequestComplete
-// (Public, Delegate, HasOutParms)
+// (Public, Delegate, HasOutparams)
 // Parameters:
 // struct FSparkResult            Result                         (Const, Parm, OutParm, NeedCtorLink)
 
@@ -5725,7 +5725,7 @@ void USparkTypes::OnSparkRequestComplete(struct FSparkResult* Result)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5749,7 +5749,7 @@ void USparkInterface::RemoveScriptCallback(int HttpRequestId)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5768,7 +5768,7 @@ class USparkNews* USparkInterface::GetNewsService()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5790,7 +5790,7 @@ class USparkServiceConfiguration* USparkInterface::GetTitleStorageServiceConfigu
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5812,7 +5812,7 @@ struct FString USparkInterface::GetTitleStorageUrl()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5834,7 +5834,7 @@ void USparkInterface::ClearGearboxAccountData(bool IncludePrimaryPlayer)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5854,7 +5854,7 @@ void USparkInterface::SignOutGearboxAccount(unsigned char ControllerId)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5874,7 +5874,7 @@ void USparkInterface::SignInGearboxAccount(unsigned char ControllerId)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5895,7 +5895,7 @@ class UGearboxAccountData* USparkInterface::GetGearboxAccountData(unsigned char 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5918,7 +5918,7 @@ bool USparkInterface::IsGearboxAccountAuthenticated(unsigned char ControllerId)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5941,7 +5941,7 @@ bool USparkInterface::IsGearboxAccountSignedIn(unsigned char ControllerId)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5964,7 +5964,7 @@ struct FString USparkInterface::ConvertUtcTimeToLocalTime(const struct FString& 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5985,7 +5985,7 @@ bool USparkInterface::ShouldUpdateEmergencyMessage()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6006,7 +6006,7 @@ struct FString USparkInterface::GetEmergencyMessage()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6028,7 +6028,7 @@ void USparkInterface::SetEmergencyMessage(const struct FString& Message)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -6049,7 +6049,7 @@ struct FString USparkInterface::GetPlatformLoginNameFromSplitscreenIndex(int Spl
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6072,7 +6072,7 @@ struct FString USparkInterface::GetPlatformLoginNameFromController(unsigned char
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6091,7 +6091,7 @@ void USparkInterface::IncreaseInteractionTries()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -6110,7 +6110,7 @@ int USparkInterface::GetInteractionTries()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6131,7 +6131,7 @@ int USparkInterface::GetInteractionGraceTries()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6152,7 +6152,7 @@ int USparkInterface::GetInteractionPunishmentMinWaitSeconds()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6173,7 +6173,7 @@ int USparkInterface::GetInteractionMinWaitSeconds()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6195,7 +6195,7 @@ bool USparkInterface::IsTmsComplete()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6214,7 +6214,7 @@ void USparkInterface::SetTmsComplete()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -6233,7 +6233,7 @@ class USparkInitializationProcess* USparkInterface::GetSparkInitialization()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6255,7 +6255,7 @@ void USparkInterface::RestartSparkInitialization(bool bPrimary)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -6279,7 +6279,7 @@ void USparkInterface::RestartSparkInitializationFromScript(bool bPrimary, const 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -6305,7 +6305,7 @@ void USparkInterface::StartSparkInitialization(unsigned char ControllerId, const
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -6329,7 +6329,7 @@ void USparkInterface::StartSecondaryInitialization(unsigned char ControllerId, c
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -6349,7 +6349,7 @@ struct FString USparkInterface::GetGameName()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6371,7 +6371,7 @@ struct FString USparkInterface::GetHardwareName()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6393,7 +6393,7 @@ struct FString USparkInterface::GetPlatformName()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6419,7 +6419,7 @@ struct FString USparkInterface::GetPlatformTicket(int ControllerId, bool bPrimar
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6441,7 +6441,7 @@ void USparkInterface::ClearSparkConfigReceivedDelegate(const struct FScriptDeleg
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -6461,7 +6461,7 @@ void USparkInterface::AddSparkConfigReceivedDelegate(const struct FScriptDelegat
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -6478,7 +6478,7 @@ void USparkInterface::ResetInitializationStatus()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -6497,7 +6497,7 @@ bool USparkInterface::IsSparkEnabled()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6506,7 +6506,7 @@ bool USparkInterface::IsSparkEnabled()
 
 
 // Function GearboxFramework.SparkInterface.IssueSparkStringRequest
-// (Public, HasOutParms)
+// (Public, HasOutparams)
 // Parameters:
 // struct FHttpParameters         HttpRequestParameters          (Const, Parm, OutParm, NeedCtorLink)
 // struct FString                 URL                            (Parm, NeedCtorLink)
@@ -6525,7 +6525,7 @@ int USparkInterface::IssueSparkStringRequest(const struct FString& URL, const st
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6537,7 +6537,7 @@ int USparkInterface::IssueSparkStringRequest(const struct FString& URL, const st
 
 
 // Function GearboxFramework.SparkInterface.IssueSparkRequest
-// (Public, HasOutParms)
+// (Public, HasOutparams)
 // Parameters:
 // struct FHttpParameters         HttpRequestParameters          (Const, Parm, OutParm, NeedCtorLink)
 // struct FString                 URL                            (Parm, NeedCtorLink)
@@ -6555,7 +6555,7 @@ int USparkInterface::IssueSparkRequest(const struct FString& URL, const struct F
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6582,7 +6582,7 @@ bool UGearboxAccountData::HasSignedAllEulas()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6591,7 +6591,7 @@ bool UGearboxAccountData::HasSignedAllEulas()
 
 
 // Function GearboxFramework.GearboxAccountData.CountEntitlement
-// (Defined, HasOptionalParms, Public)
+// (Defined, HasOptionalparams, Public)
 // Parameters:
 // struct FName                   EntitlementName                (Parm)
 // bool                           bIgnoreLocallyConsumed         (OptionalParm, Parm)
@@ -6607,7 +6607,7 @@ int UGearboxAccountData::CountEntitlement(const struct FName& EntitlementName, b
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6628,7 +6628,7 @@ int UGearboxAccountData::GetTotalGoldenKeyCount()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6637,7 +6637,7 @@ int UGearboxAccountData::GetTotalGoldenKeyCount()
 
 
 // Function GearboxFramework.GearboxAccountData.GetGoldenKeyCount
-// (Defined, HasOptionalParms, Public)
+// (Defined, HasOptionalparams, Public)
 // Parameters:
 // bool                           bIgnoreLocallyConsumed         (OptionalParm, Parm)
 // int                            ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -6651,7 +6651,7 @@ int UGearboxAccountData::GetGoldenKeyCount(bool bIgnoreLocallyConsumed)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6660,7 +6660,7 @@ int UGearboxAccountData::GetGoldenKeyCount(bool bIgnoreLocallyConsumed)
 
 
 // Function GearboxFramework.GearboxAccountData.HasGoldenKey
-// (Defined, HasOptionalParms, Public)
+// (Defined, HasOptionalparams, Public)
 // Parameters:
 // bool                           bIgnoreLocallyConsumed         (OptionalParm, Parm)
 // bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -6674,7 +6674,7 @@ bool UGearboxAccountData::HasGoldenKey(bool bIgnoreLocallyConsumed)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6695,7 +6695,7 @@ bool UGearboxAccountData::HasDeveloperSkin()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6716,7 +6716,7 @@ bool UGearboxAccountData::IsDeveloper()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6735,7 +6735,7 @@ void UGearboxAccountData::MarkOffersNotified()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -6754,7 +6754,7 @@ TArray<class UGearboxAccountOffer*> UGearboxAccountData::GetUnnotifiedOffers()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6777,7 +6777,7 @@ class UGearboxAccountEntitlement* UGearboxAccountData::GetEntitlementWithName(co
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6800,7 +6800,7 @@ class UGearboxAccountEntitlement* UGearboxAccountData::GetEntitlementWithId(int 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6809,7 +6809,7 @@ class UGearboxAccountEntitlement* UGearboxAccountData::GetEntitlementWithId(int 
 
 
 // Function GearboxFramework.GearboxAccountData.HasEntitlement
-// (Defined, HasOptionalParms, Public)
+// (Defined, HasOptionalparams, Public)
 // Parameters:
 // struct FName                   EntitlementName                (Parm)
 // bool                           bIgnoreLocallyConsumed         (OptionalParm, Parm)
@@ -6825,7 +6825,7 @@ bool UGearboxAccountData::HasEntitlement(const struct FName& EntitlementName, bo
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6847,14 +6847,14 @@ void UGearboxAccountData::RemoveEntitlement(class UGearboxAccountEntitlement* En
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxAccountData.ReplaceEntitlements
-// (Defined, Public, HasOutParms, HasDefaults)
+// (Defined, Public, HasOutparams, HasDefaults)
 // Parameters:
 // TArray<struct FEntitlementResult> NewEntitlements                (Const, Parm, OutParm, NeedCtorLink)
 // TArray<struct FOfferResult>    NewOffers                      (Const, Parm, OutParm, NeedCtorLink)
@@ -6867,7 +6867,7 @@ void UGearboxAccountData::ReplaceEntitlements(TArray<struct FEntitlementResult>*
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6879,7 +6879,7 @@ void UGearboxAccountData::ReplaceEntitlements(TArray<struct FEntitlementResult>*
 
 
 // Function GearboxFramework.GearboxAccountData.ReplaceServices
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // TArray<struct FServiceResult>  NewServices                    (Const, Parm, OutParm, NeedCtorLink)
 
@@ -6892,7 +6892,7 @@ void UGearboxAccountData::ReplaceServices(TArray<struct FServiceResult>* NewServ
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6902,7 +6902,7 @@ void UGearboxAccountData::ReplaceServices(TArray<struct FServiceResult>* NewServ
 
 
 // Function GearboxFramework.GearboxAccountData.HandleReloadEntitlementsResponse
-// (Defined, Public, HasOutParms, HasDefaults)
+// (Defined, Public, HasOutparams, HasDefaults)
 // Parameters:
 // struct FSparkResult            Result                         (Const, Parm, OutParm, NeedCtorLink)
 
@@ -6914,7 +6914,7 @@ void UGearboxAccountData::HandleReloadEntitlementsResponse(struct FSparkResult* 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6936,7 +6936,7 @@ bool UGearboxAccountData::ReloadEntitlements()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6956,7 +6956,7 @@ void UGearboxAccountData::ResetEntitlementUpdateTimer()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -6976,7 +6976,7 @@ bool UGearboxAccountData::CanReloadEntitlements()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6995,7 +6995,7 @@ void UGearboxAccountData::TriggerEntitlementsUpdatedDelegates()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7015,7 +7015,7 @@ void UGearboxAccountData::ClearEntitlementsUpdatedDelegate(const struct FScriptD
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7035,7 +7035,7 @@ void UGearboxAccountData::AddEntitlementsUpdatedDelegate(const struct FScriptDel
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7056,7 +7056,7 @@ class USparkServiceConfiguration* UGearboxAccountData::GetService(const struct F
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7075,14 +7075,14 @@ void UGearboxAccountData::Clear()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxAccountData.ExtractArchwayResultJson
-// (Defined, Static, Public, HasOutParms)
+// (Defined, Static, Public, HasOutparams)
 // Parameters:
 // TArray<unsigned char>          Data                           (Const, Parm, OutParm, NeedCtorLink)
 // struct FArchwayResult          ArchwayData                    (Parm, OutParm, NeedCtorLink)
@@ -7111,7 +7111,7 @@ bool UGearboxAccountData::ExtractArchwayResultJson(TArray<unsigned char>* Data, 
 
 
 // Function GearboxFramework.GearboxAccountData.ExtractArchwayResult
-// (Native, Static, Public, HasOutParms)
+// (Native, Static, Public, HasOutparams)
 // Parameters:
 // TArray<unsigned char>          Data                           (Const, Parm, OutParm, NeedCtorLink)
 // struct FArchwayResult          ArchwayData                    (Parm, OutParm, NeedCtorLink)
@@ -7141,7 +7141,7 @@ bool UGearboxAccountData::ExtractArchwayResult(TArray<unsigned char>* Data, stru
 
 
 // Function GearboxFramework.GearboxAccountActions.HandleEULAInteractionCompleteResponse
-// (Defined, Public, HasOutParms, HasDefaults)
+// (Defined, Public, HasOutparams, HasDefaults)
 // Parameters:
 // struct FSparkResult            Result                         (Const, Parm, OutParm, NeedCtorLink)
 
@@ -7153,7 +7153,7 @@ void UGearboxAccountActions::HandleEULAInteractionCompleteResponse(struct FSpark
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7163,7 +7163,7 @@ void UGearboxAccountActions::HandleEULAInteractionCompleteResponse(struct FSpark
 
 
 // Function GearboxFramework.GearboxAccountActions.HandleEULAInteractionComplete
-// (Defined, Public, HasOutParms, HasDefaults)
+// (Defined, Public, HasOutparams, HasDefaults)
 // Parameters:
 // unsigned char                  ControllerId                   (Parm)
 // TArray<struct FEULAData>       EULAState                      (Const, Parm, OutParm, NeedCtorLink)
@@ -7177,7 +7177,7 @@ void UGearboxAccountActions::HandleEULAInteractionComplete(unsigned char Control
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7187,7 +7187,7 @@ void UGearboxAccountActions::HandleEULAInteractionComplete(unsigned char Control
 
 
 // Function GearboxFramework.GearboxAccountActions.HandleEULAChainResponse
-// (Defined, Public, HasOutParms, HasDefaults)
+// (Defined, Public, HasOutparams, HasDefaults)
 // Parameters:
 // struct FSparkResult            Result                         (Const, Parm, OutParm, NeedCtorLink)
 
@@ -7199,7 +7199,7 @@ void UGearboxAccountActions::HandleEULAChainResponse(struct FSparkResult* Result
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7209,7 +7209,7 @@ void UGearboxAccountActions::HandleEULAChainResponse(struct FSparkResult* Result
 
 
 // Function GearboxFramework.GearboxAccountActions.ReadEULAChain
-// (Defined, HasOptionalParms, Public, HasDefaults)
+// (Defined, HasOptionalparams, Public, HasDefaults)
 // Parameters:
 // unsigned char                  ControllerId                   (Parm)
 // bool                           bAllowRetries                  (OptionalParm, Parm)
@@ -7225,7 +7225,7 @@ int UGearboxAccountActions::ReadEULAChain(unsigned char ControllerId, bool bAllo
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7234,7 +7234,7 @@ int UGearboxAccountActions::ReadEULAChain(unsigned char ControllerId, bool bAllo
 
 
 // Function GearboxFramework.GearboxAccountActions.HandleOffersNotifiedResponse
-// (Defined, Public, HasOutParms, HasDefaults)
+// (Defined, Public, HasOutparams, HasDefaults)
 // Parameters:
 // struct FSparkResult            Result                         (Const, Parm, OutParm, NeedCtorLink)
 
@@ -7246,7 +7246,7 @@ void UGearboxAccountActions::HandleOffersNotifiedResponse(struct FSparkResult* R
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7256,7 +7256,7 @@ void UGearboxAccountActions::HandleOffersNotifiedResponse(struct FSparkResult* R
 
 
 // Function GearboxFramework.GearboxAccountActions.HandleBulkEntitlementsConsumedResponse
-// (Defined, Public, HasOutParms, HasDefaults)
+// (Defined, Public, HasOutparams, HasDefaults)
 // Parameters:
 // struct FSparkResult            Result                         (Const, Parm, OutParm, NeedCtorLink)
 
@@ -7268,7 +7268,7 @@ void UGearboxAccountActions::HandleBulkEntitlementsConsumedResponse(struct FSpar
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7278,7 +7278,7 @@ void UGearboxAccountActions::HandleBulkEntitlementsConsumedResponse(struct FSpar
 
 
 // Function GearboxFramework.GearboxAccountActions.HandleEntitlementConsumedResponse
-// (Defined, Public, HasOutParms, HasDefaults)
+// (Defined, Public, HasOutparams, HasDefaults)
 // Parameters:
 // struct FSparkResult            Result                         (Const, Parm, OutParm, NeedCtorLink)
 
@@ -7290,7 +7290,7 @@ void UGearboxAccountActions::HandleEntitlementConsumedResponse(struct FSparkResu
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7300,7 +7300,7 @@ void UGearboxAccountActions::HandleEntitlementConsumedResponse(struct FSparkResu
 
 
 // Function GearboxFramework.GearboxAccountActions.HandleCodeRedeemedResponse
-// (Defined, Public, HasOutParms, HasDefaults)
+// (Defined, Public, HasOutparams, HasDefaults)
 // Parameters:
 // struct FSparkResult            Result                         (Const, Parm, OutParm, NeedCtorLink)
 
@@ -7312,7 +7312,7 @@ void UGearboxAccountActions::HandleCodeRedeemedResponse(struct FSparkResult* Res
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7322,7 +7322,7 @@ void UGearboxAccountActions::HandleCodeRedeemedResponse(struct FSparkResult* Res
 
 
 // Function GearboxFramework.GearboxAccountActions.HandleResetPasswordResponse
-// (Defined, Public, HasOutParms, HasDefaults)
+// (Defined, Public, HasOutparams, HasDefaults)
 // Parameters:
 // struct FSparkResult            Result                         (Const, Parm, OutParm, NeedCtorLink)
 
@@ -7334,7 +7334,7 @@ void UGearboxAccountActions::HandleResetPasswordResponse(struct FSparkResult* Re
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7344,7 +7344,7 @@ void UGearboxAccountActions::HandleResetPasswordResponse(struct FSparkResult* Re
 
 
 // Function GearboxFramework.GearboxAccountActions.HandleSignUpResponse
-// (Defined, Public, HasOutParms, HasDefaults)
+// (Defined, Public, HasOutparams, HasDefaults)
 // Parameters:
 // struct FSparkResult            Result                         (Const, Parm, OutParm, NeedCtorLink)
 
@@ -7356,7 +7356,7 @@ void UGearboxAccountActions::HandleSignUpResponse(struct FSparkResult* Result)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7366,7 +7366,7 @@ void UGearboxAccountActions::HandleSignUpResponse(struct FSparkResult* Result)
 
 
 // Function GearboxFramework.GearboxAccountActions.HandleSignInResponse
-// (Defined, Public, HasOutParms, HasDefaults)
+// (Defined, Public, HasOutparams, HasDefaults)
 // Parameters:
 // struct FSparkResult            Result                         (Const, Parm, OutParm, NeedCtorLink)
 
@@ -7378,7 +7378,7 @@ void UGearboxAccountActions::HandleSignInResponse(struct FSparkResult* Result)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7403,7 +7403,7 @@ struct FArchwayResult UGearboxAccountActions::ExtractArchwayResult(TArray<unsign
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7425,7 +7425,7 @@ void UGearboxAccountActions::MarkOffersNotified(unsigned char ControllerId)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7450,7 +7450,7 @@ bool UGearboxAccountActions::LocallyConsumeEntitlementWithCount(const struct FNa
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7478,7 +7478,7 @@ void UGearboxAccountActions::ConsumeEntitlementsWithCounts(TArray<class UGearbox
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7504,7 +7504,7 @@ void UGearboxAccountActions::ConsumeEntitlementWithCount(const struct FName& Ent
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7528,7 +7528,7 @@ void UGearboxAccountActions::RedeemCode(const struct FString& Code, unsigned cha
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7552,7 +7552,7 @@ void UGearboxAccountActions::ResetPasswordGearboxAccount(const struct FString& E
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7573,7 +7573,7 @@ struct FString UGearboxAccountActions::EscapeJson(const struct FString& Input)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7605,7 +7605,7 @@ void UGearboxAccountActions::SignUpGearboxAccount(const struct FString& Email, c
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7631,7 +7631,7 @@ void UGearboxAccountActions::SignInGearboxAccount(const struct FString& Email, c
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7651,14 +7651,14 @@ void UGearboxAccountActions::OnEntitlementConsumed(unsigned char ConsumeResult)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxAccountActions.OnCodeRedeemed
-// (HasOptionalParms, Public, Delegate)
+// (HasOptionalparams, Public, Delegate)
 // Parameters:
 // unsigned char                  RedeemResult                   (Parm)
 // struct FString                 CustomTitle                    (OptionalParm, Parm, NeedCtorLink)
@@ -7675,7 +7675,7 @@ void UGearboxAccountActions::OnCodeRedeemed(unsigned char RedeemResult, const st
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7695,7 +7695,7 @@ void UGearboxAccountActions::OnResetPasswordGearboxAccount(unsigned char ResetRe
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7715,7 +7715,7 @@ void UGearboxAccountActions::OnSignUpGearboxAccount(unsigned char SignUpResult)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7735,7 +7735,7 @@ void UGearboxAccountActions::OnSignInGearboxAccount(unsigned char SignInResult)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7754,7 +7754,7 @@ bool AGearboxPlayerController::CanPlayOnline()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7773,14 +7773,14 @@ void AGearboxPlayerController::DisplayShiftCommunicationFailedDialog()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxPlayerController.ShowEULAScreen
-// (Public, HasOutParms)
+// (Public, HasOutparams)
 // Parameters:
 // TArray<struct FEULAData>       EulaChain                      (Const, Parm, OutParm, NeedCtorLink)
 
@@ -7792,7 +7792,7 @@ void AGearboxPlayerController::ShowEULAScreen(TArray<struct FEULAData>* EulaChai
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7802,7 +7802,7 @@ void AGearboxPlayerController::ShowEULAScreen(TArray<struct FEULAData>* EulaChai
 
 
 // Function GearboxFramework.GearboxPlayerController.RequestTitleStorageFile
-// (Defined, HasOptionalParms, Public, HasDefaults)
+// (Defined, HasOptionalparams, Public, HasDefaults)
 // Parameters:
 // struct FString                 Filename                       (Parm, NeedCtorLink)
 // struct FScriptDelegate         TitleStorageRequestCompleteDelegate (Parm, NeedCtorLink)
@@ -7822,7 +7822,7 @@ int AGearboxPlayerController::RequestTitleStorageFile(const struct FString& File
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7841,14 +7841,14 @@ void AGearboxPlayerController::ShowSparkID()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxPlayerController.ShouldCheckRemoteControlCheckbox
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // unsigned char                  CheckBoxName                   (Parm)
 // class AHUD*                    HUD                            (OptionalParm, Parm)
@@ -7865,7 +7865,7 @@ bool AGearboxPlayerController::ShouldCheckRemoteControlCheckbox(unsigned char Ch
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7874,7 +7874,7 @@ bool AGearboxPlayerController::ShouldCheckRemoteControlCheckbox(unsigned char Ch
 
 
 // Function GearboxFramework.GearboxPlayerController.DisplayDebugSpark
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // class AHUD*                    HUD                            (Parm)
 // float                          out_YL                         (Parm, OutParm)
@@ -7890,7 +7890,7 @@ void AGearboxPlayerController::DisplayDebugSpark(class AHUD* HUD, float* out_YL,
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7912,7 +7912,7 @@ void AGearboxPlayerController::AITree()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7929,7 +7929,7 @@ void AGearboxPlayerController::AIToggleTargetViewCones()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7946,7 +7946,7 @@ void AGearboxPlayerController::AIToggleAwarenessZones()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7963,7 +7963,7 @@ void AGearboxPlayerController::AIToggleCombat()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7980,7 +7980,7 @@ void AGearboxPlayerController::AIToggleResources()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7997,7 +7997,7 @@ void AGearboxPlayerController::AIToggleInactiveRules()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8014,7 +8014,7 @@ void AGearboxPlayerController::AIToggleRules()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8031,7 +8031,7 @@ void AGearboxPlayerController::AIToggleFlags()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8048,7 +8048,7 @@ void AGearboxPlayerController::AIDebugNextSnapshot()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8065,7 +8065,7 @@ void AGearboxPlayerController::AIDebugPrevSnapshot()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8082,7 +8082,7 @@ void AGearboxPlayerController::ainext()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8099,14 +8099,14 @@ void AGearboxPlayerController::aiprev()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxPlayerController.AINextRule
-// (Defined, Exec, HasOptionalParms, Public)
+// (Defined, Exec, HasOptionalparams, Public)
 // Parameters:
 // bool                           bSkipContainers                (OptionalParm, Parm)
 
@@ -8119,14 +8119,14 @@ void AGearboxPlayerController::AINextRule(bool bSkipContainers)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxPlayerController.AIPrevRule
-// (Defined, Exec, HasOptionalParms, Public)
+// (Defined, Exec, HasOptionalparams, Public)
 // Parameters:
 // bool                           bSkipContainers                (OptionalParm, Parm)
 
@@ -8139,7 +8139,7 @@ void AGearboxPlayerController::AIPrevRule(bool bSkipContainers)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8159,7 +8159,7 @@ void AGearboxPlayerController::AIDebugSetPawn(class AGearboxPawn* NewPawn)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8179,7 +8179,7 @@ void AGearboxPlayerController::AIDebugSetPawnByName(const struct FName& NewPawnN
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8196,7 +8196,7 @@ void AGearboxPlayerController::debugpawn()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8216,7 +8216,7 @@ void AGearboxPlayerController::aisetp(const struct FName& NewPawnName)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8233,7 +8233,7 @@ void AGearboxPlayerController::NotifyGameUnPaused()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8250,7 +8250,7 @@ void AGearboxPlayerController::NotifyGamePaused()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8267,7 +8267,7 @@ void AGearboxPlayerController::SetSettingsFromProfile()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8287,7 +8287,7 @@ int AGearboxPlayerController::GetStorageDeviceID()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -8310,7 +8310,7 @@ void AGearboxPlayerController::SetStorageDeviceID(int DeviceID)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8330,7 +8330,7 @@ void AGearboxPlayerController::NotifyDeviceSelectComplete(bool bWasSuccessful)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8347,7 +8347,7 @@ void AGearboxPlayerController::DisplayStorageRemovedMenu()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8364,7 +8364,7 @@ void AGearboxPlayerController::DisplayProfileRemovedMenu()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8386,7 +8386,7 @@ void AGearboxPlayerController::NotifyProfileWriteFromStorageChangeComplete(unsig
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8405,7 +8405,7 @@ bool AGearboxPlayerController::IsCurrentStorageDeviceValid()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -8424,7 +8424,7 @@ void AGearboxPlayerController::NotifyStorageDeviceChange()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8441,14 +8441,14 @@ void AGearboxPlayerController::DestroyOnlineGame()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxPlayerController.ReturnToTitleScreen
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // bool                           bSkipSave                      (OptionalParm, Parm)
 // bool                           bRemoveSplitPlayer             (OptionalParm, Parm)
@@ -8464,7 +8464,7 @@ void AGearboxPlayerController::ReturnToTitleScreen(bool bSkipSave, bool bRemoveS
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8484,7 +8484,7 @@ struct FString AGearboxPlayerController::GetConnectionFailureNoticeMsg()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -8506,7 +8506,7 @@ struct FString AGearboxPlayerController::GetMainMenuMapName()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -8528,7 +8528,7 @@ void AGearboxPlayerController::NotifyLinkStatusChange(bool bIsConnected)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8550,7 +8550,7 @@ void AGearboxPlayerController::NotifyLoginStatusChange(unsigned char NewStatus, 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8570,7 +8570,7 @@ void AGearboxPlayerController::NotifyLoginChange(unsigned char LocalUserNum)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8592,7 +8592,7 @@ void AGearboxPlayerController::OnReadProfileSettingsComplete(unsigned char Local
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8610,7 +8610,7 @@ void AGearboxPlayerController::OnReceivedNewProfile()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8627,7 +8627,7 @@ void AGearboxPlayerController::ClearOnlineDelegates()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8644,7 +8644,7 @@ void AGearboxPlayerController::RegisterOnlineDelegates()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8666,7 +8666,7 @@ void AGearboxPlayerController::OnProfileWriteComplete(unsigned char LocalUserNum
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8683,7 +8683,7 @@ void AGearboxPlayerController::HidePS3WritingProfileDialog()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8700,14 +8700,14 @@ void AGearboxPlayerController::ShowPS3WritingProfileDialog()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxPlayerController.WriteProfile
-// (Defined, Event, HasOptionalParms, Public)
+// (Defined, Event, HasOptionalparams, Public)
 // Parameters:
 // bool                           bShouldShowProfileDialog       (OptionalParm, Parm)
 // bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -8721,7 +8721,7 @@ bool AGearboxPlayerController::WriteProfile(bool bShouldShowProfileDialog)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -8742,7 +8742,7 @@ class UGearboxProfileSettings* AGearboxPlayerController::GetProfileSettings()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -8764,7 +8764,7 @@ unsigned char AGearboxPlayerController::GetMyControllerId()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -8783,7 +8783,7 @@ void AGearboxPlayerController::ReadProfile()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8800,7 +8800,7 @@ void AGearboxPlayerController::UnregisterPlayerDataStores()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8817,7 +8817,7 @@ void AGearboxPlayerController::RegisterCustomPlayerDataStores()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8840,7 +8840,7 @@ void AGearboxPlayerController::SetDataStoreStringValue(const struct FString& Mar
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8862,7 +8862,7 @@ struct FString AGearboxPlayerController::GetDataStoreStringValue(const struct FS
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -8881,7 +8881,7 @@ void AGearboxPlayerController::ClientKeepPlayingLoadingMovie()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8898,7 +8898,7 @@ void AGearboxPlayerController::ClientResetCamera()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8915,7 +8915,7 @@ void AGearboxPlayerController::SpawnPlayerCamera()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8932,7 +8932,7 @@ void AGearboxPlayerController::InitInputSystem()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8949,7 +8949,7 @@ void AGearboxPlayerController::NoTargetAll()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8966,7 +8966,7 @@ void AGearboxPlayerController::NoTarget()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -9033,7 +9033,7 @@ void AGearboxPlayerController::Possess(class APawn* aPawn, bool bVehicleTransiti
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -9053,7 +9053,7 @@ void AGearboxPlayerController::DontTarget(bool bModeFlag)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -9073,7 +9073,7 @@ void AGearboxPlayerController::ClientConsoleCommand(const struct FString& Comman
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -9092,7 +9092,7 @@ bool AGearboxPlayerController::IsPlayerAllowingActiveMoment()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -9113,7 +9113,7 @@ bool AGearboxPlayerController::IsActiveMomentRunning()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -9135,14 +9135,14 @@ void AGearboxPlayerController::ViewShake(float DeltaTime)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxPlayerController.UpdateShakeRotComponent
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // float                          Max                            (Parm, OutParm)
 // int                            Current                        (Parm, OutParm)
@@ -9161,7 +9161,7 @@ void AGearboxPlayerController::UpdateShakeRotComponent(float Time, float DeltaTi
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -9175,7 +9175,7 @@ void AGearboxPlayerController::UpdateShakeRotComponent(float Time, float DeltaTi
 
 
 // Function GearboxFramework.GearboxPlayerController.CheckShake
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // float                          MaxOffset                      (Parm, OutParm)
 // float                          Offset                         (Parm, OutParm)
@@ -9192,7 +9192,7 @@ void AGearboxPlayerController::CheckShake(float Time, float* MaxOffset, float* O
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -9216,7 +9216,7 @@ void AGearboxPlayerController::StopViewShaking()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -9236,7 +9236,7 @@ void AGearboxPlayerController::OnCameraShake(class UGearboxSeqAct_CameraShake* S
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -9257,7 +9257,7 @@ void AGearboxPlayerController::ShakeView(const struct FGearboxViewShakeInfo& New
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -9277,14 +9277,14 @@ void AGearboxPlayerController::ClientDamageShake(int Damage)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxPlayerController.ConsoleEcho
-// (HasOptionalParms, Public)
+// (HasOptionalparams, Public)
 // Parameters:
 // struct FString                 Text                           (Parm, NeedCtorLink)
 // bool                           bLogOutput                     (OptionalParm, Parm)
@@ -9299,7 +9299,7 @@ void AGearboxPlayerController::ConsoleEcho(const struct FString& Text, bool bLog
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -9316,7 +9316,7 @@ void AGearboxPlayerController::Initialize()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -9333,7 +9333,7 @@ void AGearboxPlayerController::PostBeginPlay()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -9354,7 +9354,7 @@ void AGearboxPlayerController::TryAndSpawnLeviathanChannel(class UNetConnection*
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -9372,7 +9372,7 @@ void AGearboxPlayerController::GenerateNewSessionGuid()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -9392,7 +9392,7 @@ void UGearboxPlayerInput::PlayerInput(float DeltaTime)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -9415,7 +9415,7 @@ void UGearboxRenderTextureManager::SetThumbnailMesh(class UTexture* Texture, cla
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -9436,7 +9436,7 @@ void UGearboxRenderTextureManager::FreeContext(const struct FName& Context)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -9457,14 +9457,14 @@ void UGearboxRenderTextureManager::FreeThumbnail(class UTexture* Texture)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxRenderTextureManager.GetThumbnail
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // struct FName                   Context                        (Parm)
 // int                            TextureSizeX                   (Parm)
@@ -9489,7 +9489,7 @@ class UTexture* UGearboxRenderTextureManager::GetThumbnail(const struct FName& C
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -9513,7 +9513,7 @@ bool UGearboxRenderTextureManager::FreeTexture2D(class UTexture2D* Texture)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -9535,7 +9535,7 @@ class UTexture2D* UGearboxRenderTextureManager::GetTexture2D()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -9559,7 +9559,7 @@ bool UGearboxRenderTextureManager::FreeRenderTexture(class UTextureRenderTarget2
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -9568,7 +9568,7 @@ bool UGearboxRenderTextureManager::FreeRenderTexture(class UTextureRenderTarget2
 
 
 // Function GearboxFramework.GearboxRenderTextureManager.GetRenderTexture
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // int                            InSizeX                        (Parm)
 // int                            InSizeY                        (Parm)
@@ -9587,7 +9587,7 @@ class UTextureRenderTarget2D* UGearboxRenderTextureManager::GetRenderTexture(int
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -9610,14 +9610,14 @@ void UGearboxSkeletalMeshComponent::SetFOV(float NewFOV)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GestaltSkeletalMeshDefinition.InitGestaltAccessoryMeshDataFromParts
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // class USkeletalMesh*           MeshToBorrowBonesFrom          (Parm)
 // class UGestaltPartMatrices*    AccessoryMatrices              (Parm)
@@ -9636,7 +9636,7 @@ void UGestaltSkeletalMeshDefinition::InitGestaltAccessoryMeshDataFromParts(class
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -9646,7 +9646,7 @@ void UGestaltSkeletalMeshDefinition::InitGestaltAccessoryMeshDataFromParts(class
 
 
 // Function GearboxFramework.GestaltSkeletalMeshDefinition.InitGestaltMeshDataFromParts
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // class USkeletalMeshComponent*  TargetComponent                (Parm, EditInline)
 // TArray<struct FName>           PartMeshNames                  (Const, Parm, OutParm, NeedCtorLink)
@@ -9661,7 +9661,7 @@ void UGestaltSkeletalMeshDefinition::InitGestaltMeshDataFromParts(class USkeleta
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -9671,7 +9671,7 @@ void UGestaltSkeletalMeshDefinition::InitGestaltMeshDataFromParts(class USkeleta
 
 
 // Function GearboxFramework.GFxActorMoviePool.DisplayDebug
-// (Defined, Public, HasOutParms)
+// (Defined, Public, HasOutparams)
 // Parameters:
 // class AHUD*                    HUD                            (Parm)
 // float                          X                              (Parm)
@@ -9688,7 +9688,7 @@ void UGFxActorMoviePool::DisplayDebug(class AHUD* HUD, float X, float* out_YL, f
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -9714,7 +9714,7 @@ struct FString UGFxActorMoviePool::GetPoolName(int Index)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -9737,7 +9737,7 @@ struct FString UGFxActorMoviePool::PoolStyleString(unsigned char Pooling)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -9760,7 +9760,7 @@ void UGFxActorMoviePool::MovieStateChanged(class UGearboxGFxMovie* Movie)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -9781,7 +9781,7 @@ class UGFxMovieDefinition* UGFxMovieDefinition::FindMovieLink(const struct FName
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -9803,14 +9803,14 @@ void UGFxMovieDefinition::PostMovieStart(class UGearboxGFxMovie* StartedMovie)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GFxMovieDefinition.SpawnPlayerMovie
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // class AGearboxPlayerController* Owner                          (Parm)
 // FScriptInterface               TargetActor                    (Parm)
@@ -9829,7 +9829,7 @@ class UGearboxGFxMovie* UGFxMovieDefinition::SpawnPlayerMovie(class AGearboxPlay
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -9851,7 +9851,7 @@ bool UGFxMovieDefinition::SupportsStatePooling()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -9873,7 +9873,7 @@ unsigned char UGFxMovieDefinition::GetPoolStyle()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -9894,7 +9894,7 @@ struct FString UGFxMovieDrawStyle::GetStyleDebugString()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -9915,7 +9915,7 @@ bool UGFxMovieDrawStyleHUD::RequiresClientInstance()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -9936,7 +9936,7 @@ struct FString UGFxMovieDrawStyleMesh::GetStyleDebugString()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -9957,7 +9957,7 @@ bool UGFxMovieDrawStyleMesh::RequiresClientInstance()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -9978,7 +9978,7 @@ bool UGFxMovieDrawStyleSplitscreen::RequiresClientInstance()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -9987,7 +9987,7 @@ bool UGFxMovieDrawStyleSplitscreen::RequiresClientInstance()
 
 
 // Function GearboxFramework.GFxMovieManager.ChangeMovieState
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // FScriptInterface               TargetActor                    (Parm)
 // struct FName                   State                          (Parm)
@@ -10007,7 +10007,7 @@ void UGFxMovieManager::ChangeMovieState(const FScriptInterface& TargetActor, con
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -10028,7 +10028,7 @@ void UGFxMovieManager::Unsubscribe(class AGearboxPlayerController* PC)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -10049,7 +10049,7 @@ void UGFxMovieManager::Subscribe(class AGearboxPlayerController* PC)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -10072,7 +10072,7 @@ void UGFxMovieManager::UnregisterMoviesDrawnTo(class UPrimitiveComponent* PrimCo
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -10093,7 +10093,7 @@ void UGFxMovieManager::UnregisterTarget(const FScriptInterface& TargetActor)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -10116,7 +10116,7 @@ void UGFxMovieManager::UnregisterMovie(class UGFxMovieDefinition* Definition, co
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -10139,14 +10139,14 @@ void UGFxMovieManager::RegisterMovie(class UGFxMovieDefinition* Definition, cons
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GFxMovieStatePlayerAware.EnableState
-// (Native, HasOptionalParms, Public, HasOutParms)
+// (Native, HasOptionalparams, Public, HasOutparams)
 // Parameters:
 // struct FName                   TheState                       (Parm)
 // struct FMovieStateStruct       MovieState                     (Parm, OutParm, NeedCtorLink)
@@ -10164,7 +10164,7 @@ int UGFxMovieStatePlayerAware::EnableState(const struct FName& TheState, bool bE
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -10190,7 +10190,7 @@ void UIAIInterface::InitSequence(class UActionSequence* NewSequence)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -10210,7 +10210,7 @@ class UPawnAllegiance* UIAIInterface::GetAllegiance()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -10232,7 +10232,7 @@ class UAIDefinition* UIAIInterface::GetAIDefinition()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -10254,7 +10254,7 @@ class UAIComponent* UIAIInterface::GetAIComponent()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -10276,7 +10276,7 @@ FScriptInterface UIAIInterface::GetAIParent()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -10298,7 +10298,7 @@ struct FVector UIAIInterface::GetAILocation()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -10320,7 +10320,7 @@ class AActor* UIAIInterface::GetAIActor()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -10342,7 +10342,7 @@ bool UIAIInterface::CanTickAI()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -10365,7 +10365,7 @@ void UIGFxActorMovie::GFx_NotifyMovieDestroy(class UGearboxGFxMovie* Movie)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -10386,7 +10386,7 @@ void UIGFxActorMovie::GFx_NotifyMovieCreate(class UGearboxGFxMovie* Movie)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -10406,7 +10406,7 @@ class AActor* UIGFxActorMovie::GFx_GetMovieActor()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -10425,7 +10425,7 @@ void UInterfaceGearboxCamera::FinishCameraLookAt()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -10451,7 +10451,7 @@ void UInterfaceGearboxCamera::EnableThirdPersonLookAt(float LookAtXOffset, float
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -10485,14 +10485,14 @@ void UInterfaceGearboxCamera::BeginCameraLookAt(class AActor* LookAtTarget, cons
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.IStreamingDataEvent.RunStreamingDataEvent
-// (Event, HasOptionalParms, Public)
+// (Event, HasOptionalparams, Public)
 // Parameters:
 // struct FName                   EventName                      (Parm)
 // class UObject*                 EventInstigator                (OptionalParm, Parm)
@@ -10513,7 +10513,7 @@ void UIStreamingDataEvent::RunStreamingDataEvent(const struct FName& EventName, 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -10535,7 +10535,7 @@ bool UPhysicsStateExpressionEvaluator::Evaluate(class UObject* ContextSource)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -10557,7 +10557,7 @@ void UPopulationAspect::DenStatRemoved(class APawn* DenPawn)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -10577,7 +10577,7 @@ void UPopulationAspect::DenStatAdded(class APawn* DenPawn)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -10599,7 +10599,7 @@ void UPopulationAspect::EnabledStatusChanged(bool bIsEnabled, bool bHasActiveAct
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -10619,7 +10619,7 @@ void UPopulationAspect::AllActorsRemoved(bool bFinishedSpawning)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -10639,7 +10639,7 @@ void UPopulationAspect::OnActorDeath(class AActor* DeadActor)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -10659,7 +10659,7 @@ void UPopulationAspect::OnSpawnActor(class AActor* SpawnedActor)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -10676,7 +10676,7 @@ void UPopulationAspect::Initialize()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -10693,7 +10693,7 @@ void APopulationEncounter::TriggerKismetAllSpawnedEvent()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -10710,7 +10710,7 @@ void APopulationEncounter::TriggerKismetDeathEvent()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -10730,7 +10730,7 @@ void APopulationEncounter::OnToggle(class USeqAct_Toggle* Action)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -10753,7 +10753,7 @@ void APopulationEncounter::UpdateOpportunityEnabledStates(int nWave, bool bUpdat
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -10771,7 +10771,7 @@ void APopulationEncounter::UpdateKismetNotifications()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -10794,7 +10794,7 @@ void UPopUpDebugBarGraph::Display(float DeltaSeconds, class UCanvas* Canvas)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -10816,7 +10816,7 @@ float UPopUpDebugBarGraph::GetValue(int ColumnNdx)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -10841,14 +10841,14 @@ void UPopUpDebugBarGraph::SetValue(int ColumnNdx, float NewValue)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.PopUpDebugBarGraph.AddNewColumn
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // struct FColor                  ColumnColor                    (Parm)
 // struct FString                 HeaderText                     (Parm, NeedCtorLink)
@@ -10867,7 +10867,7 @@ int UPopUpDebugBarGraph::AddNewColumn(const struct FColor& ColumnColor, const st
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -10890,14 +10890,14 @@ void UPopUpDebugBarGraph::AddTitleText(const struct FString& NewTitleText)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.RegionDefinition.GetDefaultRegionGameStage
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // int                            MinGameStage                   (Parm, OutParm)
 // int                            MaxGameStage                   (Parm, OutParm)
@@ -10914,7 +10914,7 @@ bool URegionDefinition::GetDefaultRegionGameStage(int* MinGameStage, int* MaxGam
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -10932,7 +10932,7 @@ bool URegionDefinition::GetDefaultRegionGameStage(int* MinGameStage, int* MaxGam
 
 
 // Function GearboxFramework.RegionDefinition.TestRegionGameStage
-// (Native, HasOptionalParms, Public, HasOutParms)
+// (Native, HasOptionalparams, Public, HasOutparams)
 // Parameters:
 // int                            GameStage                      (Parm, OutParm)
 // int                            AwesomeLevel                   (Parm, OutParm)
@@ -10949,7 +10949,7 @@ bool URegionDefinition::TestRegionGameStage(bool bDefaultGameStage, int* GameSta
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -10963,7 +10963,7 @@ bool URegionDefinition::TestRegionGameStage(bool bDefaultGameStage, int* GameSta
 
 
 // Function GearboxFramework.RegionDefinition.GetRegionGameStage
-// (Native, HasOptionalParms, Public, HasOutParms)
+// (Native, HasOptionalparams, Public, HasOutparams)
 // Parameters:
 // int                            GameStage                      (Parm, OutParm)
 // int                            AwesomeLevel                   (Parm, OutParm)
@@ -10980,7 +10980,7 @@ bool URegionDefinition::GetRegionGameStage(bool bDefaultGameStage, int* GameStag
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11008,7 +11008,7 @@ void URuleEngineLoadBalanceManager::SetAsDebugging(bool bSetDebugging)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -11028,7 +11028,7 @@ bool USeqAct_AllPlayersInVolume::AllPlayersInVolumes()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11052,7 +11052,7 @@ bool USeqAct_AllPlayersInVolume::PlayerIsInAVolume(class APlayerController* PC)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11075,7 +11075,7 @@ bool USpecialMoveDefinition::IsPlayingLocally(const FScriptInterface& SMI)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11099,7 +11099,7 @@ class USpecialMoveDefinition* USpecialMoveDefinition::GetSMDToPlay(const FScript
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11125,7 +11125,7 @@ bool USpecialMoveDefinition::Contains(class USpecialMoveDefinition* SMD, const F
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11149,7 +11149,7 @@ void USpecialMoveDefinition::ClientFinished(const FScriptInterface& SMI, bool bI
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -11171,14 +11171,14 @@ void USpecialMoveDefinition::ServerFinished(const FScriptInterface& SMI, bool bI
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.SpecialMoveDefinition.ClientStarted
-// (Event, Public, HasOutParms)
+// (Event, Public, HasOutparams)
 // Parameters:
 // FScriptInterface               SMI                            (Parm)
 // struct FSpecialMoveData        SMData                         (Parm, OutParm)
@@ -11193,7 +11193,7 @@ float USpecialMoveDefinition::ClientStarted(const FScriptInterface& SMI, struct 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11218,7 +11218,7 @@ void USpecialMoveDefinition::ServerStarted(const FScriptInterface& SMI)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -11240,7 +11240,7 @@ bool USpecialMoveDefinition::IsLocalAuthority(const FScriptInterface& SMI)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11263,7 +11263,7 @@ bool USpecialMoveDefinition::AuthorityCanPlay(const FScriptInterface& SMI)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11285,7 +11285,7 @@ bool USpecialMoveComponent::IsOwnerAlwaysNetRelevant()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11294,7 +11294,7 @@ bool USpecialMoveComponent::IsOwnerAlwaysNetRelevant()
 
 
 // Function GearboxFramework.SpecialMoveComponent.CanPlayBehaviorData
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FSMBehavior             Data                           (Const, Parm, OutParm, NeedCtorLink)
 // bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -11308,7 +11308,7 @@ bool USpecialMoveComponent::CanPlayBehaviorData(struct FSMBehavior* Data)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11320,7 +11320,7 @@ bool USpecialMoveComponent::CanPlayBehaviorData(struct FSMBehavior* Data)
 
 
 // Function GearboxFramework.SpecialMoveComponent.RunBehaviors
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // TArray<struct FSMBehavior>     SMBehaviors                    (Parm, OutParm, NeedCtorLink)
 
@@ -11333,7 +11333,7 @@ void USpecialMoveComponent::RunBehaviors(TArray<struct FSMBehavior>* SMBehaviors
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11356,7 +11356,7 @@ class USpecialMoveDefinition* USpecialMoveComponent::GetCurrent()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11378,7 +11378,7 @@ float USpecialMoveComponent::GetPlayRateScale()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11400,7 +11400,7 @@ float USpecialMoveComponent::GetDuration()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11422,7 +11422,7 @@ class UObject* USpecialMoveComponent::GetData()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11431,7 +11431,7 @@ class UObject* USpecialMoveComponent::GetData()
 
 
 // Function GearboxFramework.SpecialMoveComponent.LocalAnimFinished
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // class USpecialMoveDefinition*  SMD                            (Parm)
 // struct FSpecialMoveData        SMData                         (Parm, OutParm)
@@ -11448,7 +11448,7 @@ void USpecialMoveComponent::LocalAnimFinished(class USpecialMoveDefinition* SMD,
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11469,14 +11469,14 @@ void USpecialMoveComponent::ClearQueue()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.SpecialMoveComponent.StopAnyLocal
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // struct FName                   SMNodeName                     (OptionalParm, Parm)
 // bool                           bInterrupted                   (OptionalParm, Parm)
@@ -11494,14 +11494,14 @@ void USpecialMoveComponent::StopAnyLocal(const struct FName& SMNodeName, bool bI
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.SpecialMoveComponent.StopLocal
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // class USpecialMoveDefinition*  OldSMD                         (Parm)
 // bool                           bInterrupted                   (OptionalParm, Parm)
@@ -11517,14 +11517,14 @@ void USpecialMoveComponent::StopLocal(class USpecialMoveDefinition* OldSMD, bool
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.SpecialMoveComponent.StopAny
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // bool                           bClearQueue                    (OptionalParm, Parm)
 // bool                           bInterrupted                   (OptionalParm, Parm)
@@ -11540,14 +11540,14 @@ void USpecialMoveComponent::StopAny(bool bClearQueue, bool bInterrupted)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.SpecialMoveComponent.Stop
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // class USpecialMoveDefinition*  OldSMD                         (Parm)
 // bool                           bClearQueue                    (OptionalParm, Parm)
@@ -11565,14 +11565,14 @@ void USpecialMoveComponent::Stop(class USpecialMoveDefinition* OldSMD, bool bCle
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.SpecialMoveComponent.PlayLocal
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // class USpecialMoveDefinition*  NewSMD                         (Parm)
 // float                          PlayRateScale                  (OptionalParm, Parm)
@@ -11597,7 +11597,7 @@ float USpecialMoveComponent::PlayLocal(class USpecialMoveDefinition* NewSMD, flo
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11606,7 +11606,7 @@ float USpecialMoveComponent::PlayLocal(class USpecialMoveDefinition* NewSMD, flo
 
 
 // Function GearboxFramework.SpecialMoveComponent.Queue
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // class USpecialMoveDefinition*  NewSMD                         (Parm)
 // float                          PlayRateScale                  (OptionalParm, Parm)
@@ -11630,14 +11630,14 @@ void USpecialMoveComponent::Queue(class USpecialMoveDefinition* NewSMD, float Pl
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.SpecialMoveComponent.Play
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // class USpecialMoveDefinition*  NewSMD                         (Parm)
 // float                          PlayRateScale                  (OptionalParm, Parm)
@@ -11662,7 +11662,7 @@ float USpecialMoveComponent::Play(class USpecialMoveDefinition* NewSMD, float Pl
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11685,7 +11685,7 @@ void USpecialMoveComponent::RemoveFromQueue(class USpecialMoveDefinition* SMD)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -11707,7 +11707,7 @@ bool USpecialMoveComponent::IsQueued(class USpecialMoveDefinition* SMD)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11731,7 +11731,7 @@ bool USpecialMoveComponent::IsPlayingClass(class UClass* SMClass)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11753,7 +11753,7 @@ bool USpecialMoveComponent::IsPlayingAny()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11777,7 +11777,7 @@ bool USpecialMoveComponent::IsPlaying(class USpecialMoveDefinition* SMD)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11801,7 +11801,7 @@ struct FVector USpecialMoveComponent::GetAnimDelta(class UGearboxAnimDefinition*
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11823,7 +11823,7 @@ class UAnimNodeSpecialMoveBlend* USpecialMoveComponent::GetSMNode()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11846,14 +11846,14 @@ void USpecialMoveComponent::PlayReplicated(const struct FReplicatedSpecialMoveDa
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.SpecialMoveComponent.GetAnimLength
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // class UGearboxAnimDefinition*  CustomAnimSMD                  (Parm)
 // bool                           bIncludeNextSMD                (OptionalParm, Parm)
@@ -11872,7 +11872,7 @@ float USpecialMoveComponent::GetAnimLength(class UGearboxAnimDefinition* CustomA
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11898,7 +11898,7 @@ bool USpecialMoveExpressionList::Contains(class USpecialMoveDefinition* SMD, con
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11922,7 +11922,7 @@ class USpecialMoveDefinition* USpecialMoveExpressionList::GetSMDToPlay(const FSc
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11948,7 +11948,7 @@ bool USpecialMoveRandom::Contains(class USpecialMoveDefinition* SMD, const FScri
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11972,7 +11972,7 @@ class USpecialMoveDefinition* USpecialMoveRandom::GetSMDToPlay(const FScriptInte
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -11991,7 +11991,7 @@ void AWireTerminal::Destroyed()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12009,7 +12009,7 @@ void AWireTerminal::NotifyModifiedTerminal()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12055,7 +12055,7 @@ void UAIComponent::DrawAITree(class UCanvas* Canvas)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12072,7 +12072,7 @@ void UAIComponent::LogDemigodHolds()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12095,7 +12095,7 @@ void UAIComponent::ReleaseDialog(const struct FName& HoldName, class UObject* Ta
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12118,7 +12118,7 @@ void UAIComponent::HoldDialog(const struct FName& HoldName, class UObject* Tag)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12138,7 +12138,7 @@ bool UAIComponent::DialogOnHold()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -12163,7 +12163,7 @@ void UAIComponent::ReleaseGod(const struct FName& HoldName, class UObject* Tag)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12186,7 +12186,7 @@ void UAIComponent::HoldGod(const struct FName& HoldName, class UObject* Tag)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12206,7 +12206,7 @@ bool UAIComponent::GodOnHold()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -12231,7 +12231,7 @@ void UAIComponent::ReleaseDemigod(const struct FName& HoldName, class UObject* T
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12254,7 +12254,7 @@ void UAIComponent::HoldDemigod(const struct FName& HoldName, class UObject* Tag)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12274,7 +12274,7 @@ bool UAIComponent::DemigodOnHold()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -12299,7 +12299,7 @@ void UAIComponent::ReleaseMovement(const struct FName& HoldName, class UObject* 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12322,7 +12322,7 @@ void UAIComponent::HoldMovement(const struct FName& HoldName, class UObject* Tag
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12342,7 +12342,7 @@ bool UAIComponent::MovementOnHold()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -12367,7 +12367,7 @@ void UAIComponent::ReleaseTarget(const struct FName& HoldName, class UObject* Ta
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12390,7 +12390,7 @@ void UAIComponent::HoldTarget(const struct FName& HoldName, class UObject* Tag)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12410,7 +12410,7 @@ bool UAIComponent::TargetOnHold()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -12435,7 +12435,7 @@ void UAIComponent::Release(const struct FName& HoldName, class UObject* Tag)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12458,7 +12458,7 @@ void UAIComponent::Hold(const struct FName& HoldName, class UObject* Tag)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12478,7 +12478,7 @@ bool UAIComponent::OnHold()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -12498,7 +12498,7 @@ void UAIComponent::ForceUpdateTargets()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12521,7 +12521,7 @@ void UAIComponent::TargetChanged(class AActor* OldTarget, class AActor* NewTarge
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12542,7 +12542,7 @@ void UAIComponent::SetTarget(class AActor* NewTarget)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12563,14 +12563,14 @@ void UAIComponent::SetScriptedTarget(class AActor* NewScriptedTarget)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.AIComponent.GetTargetRecordFor
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // class AActor*                  Target                         (Parm)
 // bool                           bTryParent                     (OptionalParm, Parm)
@@ -12587,7 +12587,7 @@ class UMindTargetInfo* UAIComponent::GetTargetRecordFor(class AActor* Target, bo
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -12596,7 +12596,7 @@ class UMindTargetInfo* UAIComponent::GetTargetRecordFor(class AActor* Target, bo
 
 
 // Function GearboxFramework.AIComponent.GetTargetRecord
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // bool                           bTryParent                     (OptionalParm, Parm)
 // class UMindTargetInfo*         ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -12611,7 +12611,7 @@ class UMindTargetInfo* UAIComponent::GetTargetRecord(bool bTryParent)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -12635,7 +12635,7 @@ bool UAIComponent::IsTarget(class AActor* TestTarget)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -12657,7 +12657,7 @@ class AActor* UAIComponent::GetTarget()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -12679,7 +12679,7 @@ bool UAIComponent::HasTarget()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -12703,7 +12703,7 @@ bool UAIComponent::ShouldRemoveTarget(class UMindTargetInfo* TargetRec)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -12726,7 +12726,7 @@ void UAIComponent::TargetRemoved(class UMindTargetInfo* TargetRec)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12747,7 +12747,7 @@ void UAIComponent::ForceRemoveTarget(class AActor* Target)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12769,7 +12769,7 @@ bool UAIComponent::ValidCurrentTarget(class UMindTargetInfo* TargetRec)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -12793,7 +12793,7 @@ bool UAIComponent::ValidTarget(class AActor* Target)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -12816,7 +12816,7 @@ void UAIComponent::PrioritizeTarget(class UMindTargetInfo* TargetRec)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12837,7 +12837,7 @@ void UAIComponent::CalcTargetInfo(class UMindTargetInfo* TargetRec)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12855,7 +12855,7 @@ void UAIComponent::ChooseBestTarget()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12876,7 +12876,7 @@ void UAIComponent::InheritTargets(class UAIComponent* Parent)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12894,7 +12894,7 @@ void UAIComponent::RemoveTargets()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12912,7 +12912,7 @@ void UAIComponent::FindTargets()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12930,7 +12930,7 @@ void UAIComponent::GetTargets()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12951,7 +12951,7 @@ void UAIComponent::InitializeTargetRecord(class UMindTargetInfo* TargetRec)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12972,7 +12972,7 @@ void UAIComponent::NotifyAttackedBy(class AActor* Attacker)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -12994,7 +12994,7 @@ class UMindTargetInfo* UAIComponent::AddTarget(class AActor* NewTarget)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -13016,7 +13016,7 @@ class UAIComponent* UAIComponent::GetParentComponent()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -13038,7 +13038,7 @@ class UPawnAllegiance* UAIComponent::GetAllegiance()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -13058,7 +13058,7 @@ void UAIComponent::ClearState()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -13080,7 +13080,7 @@ bool UAIComponent::ActivateEvent(const struct FName& EventName)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -13089,7 +13089,7 @@ bool UAIComponent::ActivateEvent(const struct FName& EventName)
 
 
 // Function GearboxFramework.FlagDefinition.ApplyFlagInitializationData
-// (Native, Static, Public, HasOutParms)
+// (Native, Static, Public, HasOutparams)
 // Parameters:
 // TArray<struct FFlagDefinitionInitialization> FlagsToSet                     (Const, Parm, OutParm, NeedCtorLink)
 // class UObject*                 ContextSource                  (Parm)
@@ -13130,7 +13130,7 @@ class UObject* UFlagDefinition::ResolveContext(class UObject* ContextSource)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -13156,7 +13156,7 @@ bool UFlagDefinition::SetTrueTimed(class UObject* ContextSource, float TimeSecon
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -13182,7 +13182,7 @@ bool UFlagDefinition::SetValue(class UObject* ContextSource, bool Value)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -13205,14 +13205,14 @@ void UActionSequence::TriggerBehavior(const struct FName& OutputName)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.ActionSequence.GetRangeValue
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FAIRange                Range                          (Const, Parm, OutParm)
 // float                          ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -13226,7 +13226,7 @@ float UActionSequence::GetRangeValue(struct FAIRange* Range)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -13238,7 +13238,7 @@ float UActionSequence::GetRangeValue(struct FAIRange* Range)
 
 
 // Function GearboxFramework.ActionSequence.RangeIsValid
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FAIRange                Range                          (Const, Parm, OutParm)
 // bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -13252,7 +13252,7 @@ bool UActionSequence::RangeIsValid(struct FAIRange* Range)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -13264,7 +13264,7 @@ bool UActionSequence::RangeIsValid(struct FAIRange* Range)
 
 
 // Function GearboxFramework.ActionSequence.Finish
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // bool                           bFailed                        (OptionalParm, Parm)
 
@@ -13278,7 +13278,7 @@ void UActionSequence::Finish(bool bFailed)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -13298,7 +13298,7 @@ bool UActionSequence::IsRunning()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -13317,7 +13317,7 @@ void UActionSequence::ScriptCleanUp()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -13336,7 +13336,7 @@ struct FName UActionSequence::CanRun()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -13358,7 +13358,7 @@ void UActionSequence::ActivateEvent(const struct FName& EventName)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -13375,7 +13375,7 @@ void UActionSequence::Update()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -13392,7 +13392,7 @@ void UActionSequence::Init()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -13409,7 +13409,7 @@ void UActionSequence::Stop()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -13426,7 +13426,7 @@ void UActionSequence::Start()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -13446,7 +13446,7 @@ void UActionSequence::InterruptSequence(class UActionSequence* InterruptingSeque
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -13463,7 +13463,7 @@ void UActionSequence::StopSequence()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -13480,7 +13480,7 @@ void UActionSequence::StartSequence()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -13501,7 +13501,7 @@ void UActionSequence::ExecuteSequence(class UActionSequence* SequenceTemplate)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -13522,7 +13522,7 @@ void UActionSequence::Sleep(float Seconds)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -13543,7 +13543,7 @@ void UActionSequence::RunSubSequence(class UActionSequence* SubSequence)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -13561,7 +13561,7 @@ void UActionSequence::InterruptLatentAction()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -13579,7 +13579,7 @@ void UActionSequence::DoRuleSetPop()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -13601,7 +13601,7 @@ bool UActionSequence::DoRuleSetPush(class URuleSet* NewRuleSet)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -13624,7 +13624,7 @@ void UActionSequence::DoRuleSetSwitch(class URuleSet* NewRuleSet)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -13642,7 +13642,7 @@ void UActionSequence::PreventNewRulesFromStarting()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -13662,7 +13662,7 @@ class URule* UActionSequence::GetRuleNative()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -13671,7 +13671,7 @@ class URule* UActionSequence::GetRuleNative()
 
 
 // Function GearboxFramework.ActionSequence.GetActionSequence
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // class UActionSequence*         Template                       (Parm)
 // class UActionSequence*         OutSequence                    (Parm, OutParm)
@@ -13686,7 +13686,7 @@ void UActionSequence::GetActionSequence(class UActionSequence* Template, class U
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -13711,7 +13711,7 @@ bool UActionSequence::IsInLabel(const struct FName& TestLabel)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -13733,7 +13733,7 @@ bool UActionSequence::IsAtomic()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -13753,7 +13753,7 @@ void UActionSequence::StopAtomic()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -13771,7 +13771,7 @@ void UActionSequence::StartAtomic()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -13791,7 +13791,7 @@ bool UActionSequence::IsActionReadyToFinish()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -13813,7 +13813,7 @@ bool UActionSequenceList::IsActionReadyToFinish()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -13832,7 +13832,7 @@ void UAction_PawnMovementBase::PostMovement()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -13849,7 +13849,7 @@ void UAction_PawnMovementBase::PreMovement()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -13866,7 +13866,7 @@ void UAction_PawnMovementBase::PrePathFind()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -13886,7 +13886,7 @@ void UAction_PawnMovementBase::InterruptSequence(class UActionSequence* Interrup
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -13903,7 +13903,7 @@ void UAction_PawnMovementBase::StopSequence()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -13920,7 +13920,7 @@ void UAction_PawnMovementBase::StartSequence()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -13943,7 +13943,7 @@ void UAction_PawnMovementBase::MovePawnToDestinationLocation(const struct FVecto
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -13964,7 +13964,7 @@ void UAction_PawnMovementBase::TakeDebugSnapshotMoveFailure(unsigned char Cause)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -13985,7 +13985,7 @@ void UAction_PawnMovementBase::SetMaxMovementSpeed(unsigned char NewMaxSpeed)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -14003,7 +14003,7 @@ void UAction_PawnMovementBase::EndMovePawnToDestinationLocation()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -14020,7 +14020,7 @@ void UActionSequenceRandom::EvaluateActionList()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -14041,7 +14041,7 @@ void UActionSequenceRandom::OverrideNextSequenceToRun(class UActionSequence* New
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -14061,7 +14061,7 @@ class UActionSequence* UActionSequenceRandom::GetRandomAction()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14085,7 +14085,7 @@ bool UAICostExpressionEvaluator::Evaluate(class UObject* ContextSource)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14105,14 +14105,14 @@ void UAIFactoryBase::FlushPools()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.AIFactoryBase.ReturnAIDef
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // class UAIDefinition*           InAIDef                        (Parm, OutParm)
 
@@ -14125,7 +14125,7 @@ void UAIFactoryBase::ReturnAIDef(class UAIDefinition** InAIDef)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14135,7 +14135,7 @@ void UAIFactoryBase::ReturnAIDef(class UAIDefinition** InAIDef)
 
 
 // Function GearboxFramework.AIFactoryBase.GetAIDef
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // class UAIDefinition*           AIDefTemplate                  (Parm)
 // class UAIDefinition*           OutAIDef                       (Parm, OutParm)
@@ -14151,7 +14151,7 @@ bool UAIFactoryBase::GetAIDef(class UAIDefinition* AIDefTemplate, class UAIDefin
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14163,7 +14163,7 @@ bool UAIFactoryBase::GetAIDef(class UAIDefinition* AIDefTemplate, class UAIDefin
 
 
 // Function GearboxFramework.AIFactoryBase.ReturnTargetRecord
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // class UMindTargetInfo*         InTargetRecord                 (Parm, OutParm)
 
@@ -14176,7 +14176,7 @@ void UAIFactoryBase::ReturnTargetRecord(class UMindTargetInfo** InTargetRecord)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14186,7 +14186,7 @@ void UAIFactoryBase::ReturnTargetRecord(class UMindTargetInfo** InTargetRecord)
 
 
 // Function GearboxFramework.AIFactoryBase.GetTargetRecord
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // class UClass*                  InfoClass                      (Parm)
 // class UMindTargetInfo*         OutTargetRecord                (Parm, OutParm)
@@ -14202,7 +14202,7 @@ bool UAIFactoryBase::GetTargetRecord(class UClass* InfoClass, class UMindTargetI
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14214,7 +14214,7 @@ bool UAIFactoryBase::GetTargetRecord(class UClass* InfoClass, class UMindTargetI
 
 
 // Function GearboxFramework.AIFactoryBase.ReturnActionSequence
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // class UActionSequence*         InSequence                     (Parm, OutParm)
 
@@ -14227,7 +14227,7 @@ void UAIFactoryBase::ReturnActionSequence(class UActionSequence** InSequence)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14237,7 +14237,7 @@ void UAIFactoryBase::ReturnActionSequence(class UActionSequence** InSequence)
 
 
 // Function GearboxFramework.AIFactoryBase.GetActionSequence
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // class UActionSequence*         SequenceTemplate               (Parm)
 // class UActionSequence*         OutSequence                    (Parm, OutParm)
@@ -14253,7 +14253,7 @@ bool UAIFactoryBase::GetActionSequence(class UActionSequence* SequenceTemplate, 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14265,7 +14265,7 @@ bool UAIFactoryBase::GetActionSequence(class UActionSequence* SequenceTemplate, 
 
 
 // Function GearboxFramework.AIFactoryBase.ReturnRuleSet
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // class URuleSet*                InRuleSet                      (Parm, OutParm)
 
@@ -14278,7 +14278,7 @@ void UAIFactoryBase::ReturnRuleSet(class URuleSet** InRuleSet)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14288,7 +14288,7 @@ void UAIFactoryBase::ReturnRuleSet(class URuleSet** InRuleSet)
 
 
 // Function GearboxFramework.AIFactoryBase.GetRuleSetFromArchetype
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // class URuleSet*                RuleSetArchetype               (Parm)
 // class URuleSet*                OutRuleSet                     (Parm, OutParm)
@@ -14305,7 +14305,7 @@ bool UAIFactoryBase::GetRuleSetFromArchetype(class URuleSet* RuleSetArchetype, c
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14319,7 +14319,7 @@ bool UAIFactoryBase::GetRuleSetFromArchetype(class URuleSet* RuleSetArchetype, c
 
 
 // Function GearboxFramework.AIFactoryBase.ReturnKnowledgeRecord
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // class UKnowledgeRecord*        InKR                           (Parm, OutParm)
 
@@ -14332,7 +14332,7 @@ void UAIFactoryBase::ReturnKnowledgeRecord(class UKnowledgeRecord** InKR)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14342,7 +14342,7 @@ void UAIFactoryBase::ReturnKnowledgeRecord(class UKnowledgeRecord** InKR)
 
 
 // Function GearboxFramework.AIFactoryBase.GetKnowledgeRecordListFromArchetypes
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // TArray<class UKnowledgeRecord*> KnowledgeRecordTemplates       (Parm, NeedCtorLink)
 // TArray<class UKnowledgeRecord*> KnowledgeRecords               (Parm, OutParm, NeedCtorLink)
@@ -14358,7 +14358,7 @@ bool UAIFactoryBase::GetKnowledgeRecordListFromArchetypes(TArray<class UKnowledg
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14370,7 +14370,7 @@ bool UAIFactoryBase::GetKnowledgeRecordListFromArchetypes(TArray<class UKnowledg
 
 
 // Function GearboxFramework.AIFactoryBase.GetKnowledgeRecordFromArchetype
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // class UKnowledgeRecord*        InKR                           (Parm)
 // class UKnowledgeRecord*        OutKR                          (Parm, OutParm)
@@ -14386,7 +14386,7 @@ bool UAIFactoryBase::GetKnowledgeRecordFromArchetype(class UKnowledgeRecord* InK
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14398,7 +14398,7 @@ bool UAIFactoryBase::GetKnowledgeRecordFromArchetype(class UKnowledgeRecord* InK
 
 
 // Function GearboxFramework.AIFactoryBase.GetKnowledgeRecord
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // class UClass*                  KnowledgeRecordClass           (Parm)
 // class UKnowledgeRecord*        OutKR                          (Parm, OutParm)
@@ -14414,7 +14414,7 @@ bool UAIFactoryBase::GetKnowledgeRecord(class UClass* KnowledgeRecordClass, clas
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14426,7 +14426,7 @@ bool UAIFactoryBase::GetKnowledgeRecord(class UClass* KnowledgeRecordClass, clas
 
 
 // Function GearboxFramework.AIFactoryBase.ReturnRule
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // class URule*                   InRule                         (Parm, OutParm)
 
@@ -14439,7 +14439,7 @@ void UAIFactoryBase::ReturnRule(class URule** InRule)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14449,7 +14449,7 @@ void UAIFactoryBase::ReturnRule(class URule** InRule)
 
 
 // Function GearboxFramework.AIFactoryBase.GetRuleFromArchetype
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // class URule*                   InRule                         (Parm)
 // class URule*                   OutRule                        (Parm, OutParm)
@@ -14465,7 +14465,7 @@ bool UAIFactoryBase::GetRuleFromArchetype(class URule* InRule, class URule** Out
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14477,7 +14477,7 @@ bool UAIFactoryBase::GetRuleFromArchetype(class URule* InRule, class URule** Out
 
 
 // Function GearboxFramework.AIFactoryBase.GetRule
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // class UClass*                  RuleClass                      (Parm)
 // class URule*                   OutRule                        (Parm, OutParm)
@@ -14493,7 +14493,7 @@ bool UAIFactoryBase::GetRule(class UClass* RuleClass, class URule** OutRule)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14519,7 +14519,7 @@ void UAIFactoryBase::ReturnRuleEngine(class URuleEngine* InRuleEngine)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -14540,14 +14540,14 @@ void UGearboxAIFactory::FreeRuleEngine(class URuleEngine* InRuleEngine)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxAIFactory.GetRuleEngineFromTemplate
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // class URuleEngine*             OutRuleEngine                  (Parm, OutParm)
 // class URuleEngine*             RuleEngineTemplate             (Parm)
@@ -14563,7 +14563,7 @@ bool UGearboxAIFactory::GetRuleEngineFromTemplate(class URuleEngine* RuleEngineT
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14590,7 +14590,7 @@ bool UAIResourceExpressionEvaluator::Evaluate(class UObject* ContextSource)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14614,7 +14614,7 @@ bool UAllegianceExpressionEvaluator::Evaluate(class UObject* ContextSource)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14623,7 +14623,7 @@ bool UAllegianceExpressionEvaluator::Evaluate(class UObject* ContextSource)
 
 
 // Function GearboxFramework.GbxMessage.InitializeFromDefinition
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // class UGbxMessageDefinition*   InDefinition                   (Parm)
 // class UObject*                 RadiusContextSource            (Parm)
@@ -14645,14 +14645,14 @@ void UGbxMessage::InitializeFromDefinition(class UGbxMessageDefinition* InDefini
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.Behavior_SendGbxMessage.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms, HasDefaults)
+// (Defined, Protected, HasOutparams, HasDefaults)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -14674,7 +14674,7 @@ void UBehavior_SendGbxMessage::ApplyBehaviorToContext(class UObject* ContextObje
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14706,7 +14706,7 @@ struct FVector UBehavior_SendGbxMessage::GetLocation(unsigned char SelectionPara
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14737,7 +14737,7 @@ class UObject* UBehavior_SendGbxMessage::GetMessageParameter(unsigned char Selec
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14746,7 +14746,7 @@ class UObject* UBehavior_SendGbxMessage::GetMessageParameter(unsigned char Selec
 
 
 // Function GearboxFramework.Behavior_SetFlag.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms)
+// (Defined, Protected, HasOutparams)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -14768,7 +14768,7 @@ void UBehavior_SetFlag::ApplyBehaviorToContext(class UObject* ContextObject, cla
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14778,7 +14778,7 @@ void UBehavior_SetFlag::ApplyBehaviorToContext(class UObject* ContextObject, cla
 
 
 // Function GearboxFramework.ExposureUtilityBase.CalculateVantageToPoint
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // class AActor*                  pLooker                        (Parm)
 // struct FVector                 TargetPoint                    (Const, Parm, OutParm)
@@ -14794,7 +14794,7 @@ float UExposureUtilityBase::CalculateVantageToPoint(class AActor* pLooker, struc
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14823,7 +14823,7 @@ float UExposureUtilityBase::CalculateTargetExposure(class AGearboxPawn* pLooker,
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14870,7 +14870,7 @@ class UFiringZoneDefinition* UFiringZoneCollectionDefinition::GetZoneForDistance
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14892,7 +14892,7 @@ struct FString URule::GetRuleName()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14914,7 +14914,7 @@ struct FName URule::GetRuleFName()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14935,7 +14935,7 @@ class UObject* URule::GetOtherEventParticipant()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14959,7 +14959,7 @@ bool UFlagExpressionEvaluator::Evaluate(class UObject* ContextSource)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -14982,7 +14982,7 @@ void UGbxMessageManager::RemoveListener(const FScriptInterface& InListener)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -15003,7 +15003,7 @@ void UGbxMessageManager::AddListener(const FScriptInterface& InListener)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -15024,7 +15024,7 @@ void UGbxMessageManager::PostMessage(class UGbxMessage* Message)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -15044,7 +15044,7 @@ class UGbxMessage* UGbxMessageManager::AllocateMessage()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -15053,7 +15053,7 @@ class UGbxMessage* UGbxMessageManager::AllocateMessage()
 
 
 // Function GearboxFramework.RuleEngine.ApplyFlagInitializationData
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // TArray<struct FFlagDefinitionInitialization> FlagsToSet                     (Const, Parm, OutParm, NeedCtorLink)
 
@@ -15066,7 +15066,7 @@ void URuleEngine::ApplyFlagInitializationData(TArray<struct FFlagDefinitionIniti
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -15090,7 +15090,7 @@ bool URuleEngine::IsResourceInUse(class UClass* TestResourceClass)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -15112,7 +15112,7 @@ class UObject* URuleEngine::GetContextSource()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -15134,7 +15134,7 @@ bool URuleEngine::IsRunningRuleWhichBlocksRuleSetChange()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -15158,7 +15158,7 @@ bool URuleEngine::GetDynamicFlagValue(class UFlagDefinition* FlagDefinition)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -15183,7 +15183,7 @@ void URuleEngine::SetDynamicFlagDefTrueTimed(class UFlagDefinition* FlagDefiniti
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -15206,7 +15206,7 @@ void URuleEngine::SetDynamicFlagDefValue(class UFlagDefinition* FlagDefinition, 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -15228,7 +15228,7 @@ class URuleSet* URuleEngine::GetRuleSetFromReference(const struct FName& Referen
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -15248,7 +15248,7 @@ void URuleEngine::ClearRuleSetStack()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -15266,7 +15266,7 @@ void URuleEngine::PopRuleSetSwitch()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -15288,7 +15288,7 @@ bool URuleEngine::PushRuleSetSwitch(class URuleSet* NewRuleSetTemplate)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -15311,7 +15311,7 @@ void URuleEngine::SetRuleSet(class URuleSet* NewRuleSetTemplate)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -15332,7 +15332,7 @@ void URuleEngine::SwitchActiveRuleSet(class URuleSet* NewRuleSetTemplate)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -15353,14 +15353,14 @@ void URuleEngine::UpdateKnowledge(class UClass* pKnowledgeRecordType)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.RuleEngine.ActivateEventRuleEx
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // struct FName                   EventDefName                   (Parm)
 // TArray<class AGearboxPawn*>    Participants                   (OptionalParm, Parm, NeedCtorLink)
@@ -15381,7 +15381,7 @@ int URuleEngine::ActivateEventRuleEx(const struct FName& EventDefName, TArray<cl
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -15401,14 +15401,14 @@ void URuleEngine::CleanUpRuleEngineData()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.RuleEngine.ActivateEventRule
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // struct FName                   EventDefName                   (Parm)
 // class AGearboxPawn*            Instigator                     (OptionalParm, Parm)
@@ -15429,7 +15429,7 @@ int URuleEngine::ActivateEventRule(const struct FName& EventDefName, class AGear
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -15438,7 +15438,7 @@ int URuleEngine::ActivateEventRule(const struct FName& EventDefName, class AGear
 
 
 // Function GearboxFramework.RuleEngine.ActivateEventRuleByDefinition
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // class URuleEventDef*           EventDefinition                (Parm)
 // class UObject*                 OtherEventParticipantObject    (OptionalParm, Parm)
@@ -15455,7 +15455,7 @@ int URuleEngine::ActivateEventRuleByDefinition(class URuleEventDef* EventDefinit
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -15478,7 +15478,7 @@ void AGearboxMind::InitSequence(class UActionSequence* NewSequence)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -15498,7 +15498,7 @@ class UPawnAllegiance* AGearboxMind::GetAllegiance()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -15520,7 +15520,7 @@ class UAIDefinition* AGearboxMind::GetAIDefinition()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -15542,7 +15542,7 @@ class UAIComponent* AGearboxMind::GetAIComponent()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -15564,7 +15564,7 @@ FScriptInterface AGearboxMind::GetAIParent()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -15586,7 +15586,7 @@ struct FVector AGearboxMind::GetAILocation()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -15608,7 +15608,7 @@ class AActor* AGearboxMind::GetAIActor()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -15630,7 +15630,7 @@ bool AGearboxMind::CanTickAI()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -15652,7 +15652,7 @@ bool AGearboxMind::InGodMode()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -15674,7 +15674,7 @@ void AGearboxMind::PawnDied(class APawn* inPawn)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -15694,7 +15694,7 @@ void AGearboxMind::OnTargetPriority(class UGearboxSeqAct_TargetPriority* inActio
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -15714,7 +15714,7 @@ void AGearboxMind::Behavior_SetCanTarget(unsigned char ChangeStatus)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -15776,7 +15776,7 @@ void AGearboxMind::ClearScriptedMoveTarget()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -15795,7 +15795,7 @@ bool AGearboxMind::IsCloseEnoughToScriptedMoveTarget()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -15816,7 +15816,7 @@ struct FVector AGearboxMind::GetWeaponFireLocation()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -15840,7 +15840,7 @@ int AGearboxMind::ActivateEventRule(const struct FName& RuleEventName)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -15866,7 +15866,7 @@ void AGearboxMind::AddHitTargetRecord(class AGearboxPawn* HitByPawn, const struc
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -15883,7 +15883,7 @@ void AGearboxMind::StopMovement()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -15905,7 +15905,7 @@ void AGearboxMind::Possess(class APawn* inPawn, bool bVehicleTransition)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -15924,7 +15924,7 @@ class UGearboxRuleEngine* AGearboxMind::GetGearboxRuleEngine()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -15946,7 +15946,7 @@ class URuleEngine* AGearboxMind::GetRuleEngine()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -15969,14 +15969,14 @@ void AGearboxMind::NotifyShotAtBy(class AGearboxPawn* ShootingPawn)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxMind.FindCoverAndClaim
-// (Native, HasOptionalParms, Public, HasOutParms)
+// (Native, HasOptionalparams, Public, HasOutparams)
 // Parameters:
 // struct FVector                 CoverSearchOrigin              (Parm)
 // class UPawnMoveLocationRequest* LocationRequest                (Parm)
@@ -16000,7 +16000,7 @@ bool AGearboxMind::FindCoverAndClaim(const struct FVector& CoverSearchOrigin, cl
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16026,14 +16026,14 @@ void AGearboxMind::UpdateRuleEngineKnowledge(class UClass* aKDBClass)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxMind.GetCurrentTargetInfo
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // class UMindTargetInfo*         OutTargetRec                   (Parm, OutParm)
 // bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -16047,7 +16047,7 @@ bool AGearboxMind::GetCurrentTargetInfo(class UMindTargetInfo** OutTargetRec)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16074,7 +16074,7 @@ bool AGearboxMind::IsSameAllegianceMind(class AGearboxMind* aMind)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16098,7 +16098,7 @@ bool AGearboxMind::IsSameAllegiance(class UObject* anObject)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16122,7 +16122,7 @@ bool AGearboxMind::IsNeutralMind(class AGearboxMind* aMind)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16146,7 +16146,7 @@ bool AGearboxMind::IsNeutral(class UObject* anObject)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16170,7 +16170,7 @@ bool AGearboxMind::IsFriendlyMind(class AGearboxMind* aMind)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16194,7 +16194,7 @@ bool AGearboxMind::IsFriendly(class UObject* anObject)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16218,7 +16218,7 @@ bool AGearboxMind::IsEnemyMind(class AGearboxMind* aMind)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16242,7 +16242,7 @@ bool AGearboxMind::IsEnemy(class UObject* anObject)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16264,7 +16264,7 @@ bool AGearboxMind::WantsToWalk()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16287,7 +16287,7 @@ void AGearboxMind::SetWantsToWalk(bool bInWantsToWalk)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -16307,7 +16307,7 @@ unsigned char AGearboxMind::GetFacingPolicy()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16316,7 +16316,7 @@ unsigned char AGearboxMind::GetFacingPolicy()
 
 
 // Function GearboxFramework.GearboxMind.SetFacingPolicy
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // unsigned char                  NewFacingPolicy                (Parm)
 // class AActor*                  NewFacingActor                 (OptionalParm, Parm)
@@ -16334,7 +16334,7 @@ void AGearboxMind::SetFacingPolicy(unsigned char NewFacingPolicy, class AActor* 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -16354,7 +16354,7 @@ class AActor* AGearboxMind::GetCurrentTarget()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16377,7 +16377,7 @@ void AGearboxMind::RemoveEnemyFromQueue(class AActor* Target)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -16397,7 +16397,7 @@ class UGearboxNavigationHandle* AGearboxMind::GetNavigationHandle()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16419,7 +16419,7 @@ bool UGearboxCoverStateManager::IsChangingDirection()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16441,7 +16441,7 @@ bool UGearboxCoverStateManager::IsMantlingOverCoverInProgress()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16463,7 +16463,7 @@ bool UGearboxCoverStateManager::IsReturnFromPeekInProgress()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16485,7 +16485,7 @@ bool UGearboxCoverStateManager::IsPeekTransitionInProgress()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16494,7 +16494,7 @@ bool UGearboxCoverStateManager::IsPeekTransitionInProgress()
 
 
 // Function GearboxFramework.GearboxCoverStateManager.IsPeekedUp
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // bool                           bTransitionCounts              (OptionalParm, Parm)
 // bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -16509,7 +16509,7 @@ bool UGearboxCoverStateManager::IsPeekedUp(bool bTransitionCounts)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16531,7 +16531,7 @@ bool UGearboxCoverStateManager::IsReturnFromLeanOutInProgress()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16553,7 +16553,7 @@ bool UGearboxCoverStateManager::IsLeanOutTransitionInProgress()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16562,7 +16562,7 @@ bool UGearboxCoverStateManager::IsLeanOutTransitionInProgress()
 
 
 // Function GearboxFramework.GearboxCoverStateManager.IsLeanedOut
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // bool                           bTransitionCounts              (OptionalParm, Parm)
 // bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -16577,7 +16577,7 @@ bool UGearboxCoverStateManager::IsLeanedOut(bool bTransitionCounts)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16599,7 +16599,7 @@ bool UGearboxCoverStateManager::IsReturnFromPopUpInProgress()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16621,7 +16621,7 @@ bool UGearboxCoverStateManager::IsPopUpTransitionInProgress()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16630,7 +16630,7 @@ bool UGearboxCoverStateManager::IsPopUpTransitionInProgress()
 
 
 // Function GearboxFramework.GearboxCoverStateManager.IsPoppedUp
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // bool                           bTransitionCounts              (OptionalParm, Parm)
 // bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -16645,7 +16645,7 @@ bool UGearboxCoverStateManager::IsPoppedUp(bool bTransitionCounts)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16667,7 +16667,7 @@ bool UGearboxCoverStateManager::IsExecutingAnyTransition()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16689,7 +16689,7 @@ unsigned char UGearboxCoverStateManager::GetDesiredState()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16711,7 +16711,7 @@ unsigned char UGearboxCoverStateManager::GetCurrentTransition()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16731,7 +16731,7 @@ void UGearboxCoverStateManager::OnMantleOverCoverAnimEnd()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -16749,7 +16749,7 @@ void UGearboxCoverStateManager::OnTransitionAnimEndEx()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -16770,7 +16770,7 @@ void UGearboxCoverStateManager::OnTransitionAnimEnd(unsigned char Transition)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -16788,7 +16788,7 @@ void UGearboxCoverStateManager::OnDismountAnimEnd()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -16806,14 +16806,14 @@ void UGearboxCoverStateManager::OnMountAnimEnd()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxCoverStateManager.MantleOverCover
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // class AActor*                  CoverActor                     (OptionalParm, Parm)
 // int                            CoverSlotNdx                   (OptionalParm, Parm)
@@ -16830,7 +16830,7 @@ bool UGearboxCoverStateManager::MantleOverCover(class AActor* CoverActor, int Co
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16852,7 +16852,7 @@ bool UGearboxCoverStateManager::ReturnToCover()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16861,7 +16861,7 @@ bool UGearboxCoverStateManager::ReturnToCover()
 
 
 // Function GearboxFramework.GearboxCoverStateManager.LeanOutForFiring
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // bool                           BlindFire                      (OptionalParm, Parm)
 // bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -16876,7 +16876,7 @@ bool UGearboxCoverStateManager::LeanOutForFiring(bool BlindFire)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16885,7 +16885,7 @@ bool UGearboxCoverStateManager::LeanOutForFiring(bool BlindFire)
 
 
 // Function GearboxFramework.GearboxCoverStateManager.PopUpForFiring
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // bool                           BlindFire                      (OptionalParm, Parm)
 // bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -16900,7 +16900,7 @@ bool UGearboxCoverStateManager::PopUpForFiring(bool BlindFire)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16922,7 +16922,7 @@ bool UGearboxCoverStateManager::Peek()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16944,7 +16944,7 @@ bool UGearboxCoverStateManager::DetachFromCover()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16953,7 +16953,7 @@ bool UGearboxCoverStateManager::DetachFromCover()
 
 
 // Function GearboxFramework.GearboxCoverStateManager.DismountCover
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // unsigned char                  DismountType                   (OptionalParm, Parm)
 // bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -16968,7 +16968,7 @@ bool UGearboxCoverStateManager::DismountCover(unsigned char DismountType)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -16994,7 +16994,7 @@ bool UGearboxCoverStateManager::ClaimAndMountCover(class ACoverLink* TheCoverLin
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17016,7 +17016,7 @@ bool UGearboxCoverStateManager::MountDesiredCover()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17036,14 +17036,14 @@ void UGearboxCoverStateManager::ClearDesiredCover()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxCoverStateManager.GetCurrentCoverLocationAndRotation
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FVector                 CoverLoc                       (Parm, OutParm)
 // struct FRotator                CoverRot                       (Parm, OutParm)
@@ -17057,7 +17057,7 @@ void UGearboxCoverStateManager::GetCurrentCoverLocationAndRotation(struct FVecto
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17069,7 +17069,7 @@ void UGearboxCoverStateManager::GetCurrentCoverLocationAndRotation(struct FVecto
 
 
 // Function GearboxFramework.GearboxCoverStateManager.GetDesiredCoverLocationAndRotation
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FVector                 CoverLoc                       (Parm, OutParm)
 // struct FRotator                CoverRot                       (Parm, OutParm)
@@ -17083,7 +17083,7 @@ void UGearboxCoverStateManager::GetDesiredCoverLocationAndRotation(struct FVecto
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17108,7 +17108,7 @@ bool UGearboxCoverStateManager::HasDesiredCover()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17130,7 +17130,7 @@ unsigned char UGearboxCoverStateManager::GetLastCoverHeight()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17152,7 +17152,7 @@ unsigned char UGearboxCoverStateManager::GetCurrentCoverHeight()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17174,7 +17174,7 @@ unsigned char UGearboxCoverStateManager::GetDesiredCoverHeight()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17198,7 +17198,7 @@ bool UGearboxCoverStateManager::WasCoveredFrom(const struct FVector& ThreatLocat
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17222,7 +17222,7 @@ bool UGearboxCoverStateManager::WillBeCoveredFrom(const struct FVector& ThreatLo
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17246,7 +17246,7 @@ bool UGearboxCoverStateManager::IsCoveredFrom(const struct FVector& ThreatLocati
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17268,7 +17268,7 @@ bool UGearboxCoverStateManager::IsDismountInProgress()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17290,7 +17290,7 @@ bool UGearboxCoverStateManager::IsMountInProgress()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17312,7 +17312,7 @@ bool UGearboxCoverStateManager::WasMountedOnCover()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17334,7 +17334,7 @@ bool UGearboxCoverStateManager::IsMountedOnCover()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17356,7 +17356,7 @@ bool UGearboxCoverStateManager::IsUsingCover()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17376,14 +17376,14 @@ void UGearboxCoverStateManager::OnCoverStateChanged()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxCoverStateManager.GetLastCover
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // class AActor*                  OutCoverActor                  (Parm, OutParm)
 // int                            OutSlotNdx                     (Parm, OutParm)
@@ -17397,7 +17397,7 @@ void UGearboxCoverStateManager::GetLastCover(class AActor** OutCoverActor, int* 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17409,7 +17409,7 @@ void UGearboxCoverStateManager::GetLastCover(class AActor** OutCoverActor, int* 
 
 
 // Function GearboxFramework.GearboxCoverStateManager.GetCurrentCover
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // class AActor*                  OutCoverActor                  (Parm, OutParm)
 // int                            OutSlotNdx                     (Parm, OutParm)
@@ -17423,7 +17423,7 @@ void UGearboxCoverStateManager::GetCurrentCover(class AActor** OutCoverActor, in
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17435,7 +17435,7 @@ void UGearboxCoverStateManager::GetCurrentCover(class AActor** OutCoverActor, in
 
 
 // Function GearboxFramework.GearboxCoverStateManager.GetDesiredCover
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // class AActor*                  OutCoverActor                  (Parm, OutParm)
 // int                            OutSlotNdx                     (Parm, OutParm)
@@ -17449,7 +17449,7 @@ void UGearboxCoverStateManager::GetDesiredCover(class AActor** OutCoverActor, in
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17461,7 +17461,7 @@ void UGearboxCoverStateManager::GetDesiredCover(class AActor** OutCoverActor, in
 
 
 // Function GearboxFramework.GearboxCoverStateManager.FindCoverAndClaim
-// (Final, Native, HasOptionalParms, Public, HasOutParms)
+// (Final, Native, HasOptionalparams, Public, HasOutparams)
 // Parameters:
 // class AGearboxMind*            TheMind                        (Parm)
 // struct FVector                 CoverSearchOrigin              (Parm)
@@ -17487,7 +17487,7 @@ bool UGearboxCoverStateManager::FindCoverAndClaim(class AGearboxMind* TheMind, c
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17512,7 +17512,7 @@ void UGearboxCoverStateManager::Initialize(class AGearboxPawn* P)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -17533,7 +17533,7 @@ void UGearboxNavigationHandle::SetDesiredMovementSpeed(unsigned char Speed)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -17551,14 +17551,14 @@ void UGearboxNavigationHandle::ClearAnchor()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxNavigationHandle.GetNearestPositionOnNavMesh
-// (Native, Static, HasOptionalParms, Public, HasOutParms)
+// (Native, Static, HasOptionalparams, Public, HasOutparams)
 // Parameters:
 // float                          Radius                         (Parm)
 // struct FVector                 TestLoc                        (Parm)
@@ -17597,7 +17597,7 @@ bool UGearboxNavigationHandle::GetNearestPositionOnNavMesh(float Radius, const s
 
 
 // Function GearboxFramework.GearboxNavigationHandle.GetNavMeshPolyForPoint
-// (Native, Static, HasOptionalParms, Public, HasOutParms)
+// (Native, Static, HasOptionalparams, Public, HasOutparams)
 // Parameters:
 // struct FVector                 Point                          (Parm)
 // struct FGBXNavMeshPolyRef      FoundPoly                      (Parm, OutParm)
@@ -17642,7 +17642,7 @@ bool UGearboxNavigationHandle::IsDoingSpecialMove()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17666,7 +17666,7 @@ bool UGearboxNavigationHandle::InFinalPoly(const struct FVector& TestLoc)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17688,7 +17688,7 @@ bool UGearboxNavigationHandle::NeedsRegularWalkingPhysics()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17710,7 +17710,7 @@ bool UGearboxNavigationHandle::PopulatePathfindingParamCache()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17719,7 +17719,7 @@ bool UGearboxNavigationHandle::PopulatePathfindingParamCache()
 
 
 // Function GearboxFramework.GearboxNavigationHandle.TrySpecialMove
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // struct FBasedPosition          MoveTarget                     (Parm, OutParm)
 // bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -17733,7 +17733,7 @@ bool UGearboxNavigationHandle::TrySpecialMove(struct FBasedPosition* MoveTarget)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17756,7 +17756,7 @@ void UGearboxNavigationHandle::Finished()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -17776,7 +17776,7 @@ bool UGearboxNavigationHandle::IsGoalValid()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17796,14 +17796,14 @@ void UGearboxNavigationHandle::MovePawnToGoal()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxNavigationHandle.PathIsValid
-// (Native, HasOptionalParms, Public, HasOutParms)
+// (Native, HasOptionalparams, Public, HasOutparams)
 // Parameters:
 // struct FPathFindData           Data                           (Const, Parm, OutParm, NeedCtorLink)
 // bool                           bCheckAnchor                   (OptionalParm, Parm)
@@ -17819,7 +17819,7 @@ bool UGearboxNavigationHandle::PathIsValid(bool bCheckAnchor, struct FPathFindDa
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17844,7 +17844,7 @@ bool UGearboxNavigationHandle::IsFollowingPath()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17853,7 +17853,7 @@ bool UGearboxNavigationHandle::IsFollowingPath()
 
 
 // Function GearboxFramework.GearboxNavigationHandle.ClearPath
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // bool                           bStopMovement                  (OptionalParm, Parm)
 // bool                           bAllowDelayedClear             (OptionalParm, Parm)
@@ -17870,7 +17870,7 @@ bool UGearboxNavigationHandle::ClearPath(bool bStopMovement, bool bAllowDelayedC
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17879,7 +17879,7 @@ bool UGearboxNavigationHandle::ClearPath(bool bStopMovement, bool bAllowDelayedC
 
 
 // Function GearboxFramework.GearboxNavigationHandle.FollowPath
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // struct FPathFindData           Data                           (Parm, OutParm, NeedCtorLink)
 // bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -17893,7 +17893,7 @@ bool UGearboxNavigationHandle::FollowPath(struct FPathFindData* Data)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17905,7 +17905,7 @@ bool UGearboxNavigationHandle::FollowPath(struct FPathFindData* Data)
 
 
 // Function GearboxFramework.GearboxNavigationHandle.CreatePathToLocation
-// (Native, HasOptionalParms, Public, HasOutParms)
+// (Native, HasOptionalparams, Public, HasOutparams)
 // Parameters:
 // struct FPathFindData           PathData                       (Parm, OutParm, NeedCtorLink)
 // struct FVector                 DestLocation                   (Parm)
@@ -17925,7 +17925,7 @@ bool UGearboxNavigationHandle::CreatePathToLocation(const struct FVector& DestLo
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17950,7 +17950,7 @@ bool UIGbxMessageListener::WantsToStopListening()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17972,7 +17972,7 @@ class AActor* UIGbxMessageListener::GetActor()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -17994,7 +17994,7 @@ struct FVector UIGbxMessageListener::GetListenerLocation()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -18016,7 +18016,7 @@ class UPawnAllegiance* UIGbxMessageListener::GetAllegiance()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -18040,7 +18040,7 @@ bool UIGbxMessageListener::ReceiveMessage(class UGbxMessage* Message)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -18064,7 +18064,7 @@ bool UIGbxMessageListener::CaresAboutMessage(class UGbxMessage* Message)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -18086,7 +18086,7 @@ class URuleEngine* UIRuleEngineOwner::GetRuleEngine()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -18108,7 +18108,7 @@ void UKnowledgeRecord::RecordEvalCallback(class URuleEngine* EvalRuleEngine)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -18128,7 +18128,7 @@ float UMindTargetInfo::GetAverageHitTime()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -18153,7 +18153,7 @@ void UMindTargetInfo::AddHitTargetRecord(const struct FVector& vecNewHitLoc, flo
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -18178,7 +18178,7 @@ void UGearboxRuleEngine::Initialize(class AGearboxPawn* NewGearboxPawn, class AG
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -18198,7 +18198,7 @@ class UObject* UGearboxRuleEngine::GetContextSource()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -18240,7 +18240,7 @@ float UIPopulationSpawnPoint::GetInitialMovementHoldTime()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -18261,7 +18261,7 @@ class AActor* UIPopulationSpawnPoint::GetInitialDestination()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -18282,7 +18282,7 @@ unsigned char UIPopulationSpawnPoint::GetInitialActionType()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -18303,7 +18303,7 @@ unsigned char UIPopulationSpawnPoint::GetSpawnStyleType()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -18373,7 +18373,7 @@ class UPopulationFactory* UPopulationDefinition::GetRandomFactory(class APopulat
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -18394,7 +18394,7 @@ struct FString UPopulationFactory::GetDescriptionOfFactoryOutput()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -18429,7 +18429,7 @@ bool UPopulationFactory::ShouldSavePopulationActor(class UPopulationMaster* Mast
 
 
 // Function GearboxFramework.PopulationFactory.DestroyPopulationActor
-// (Defined, Event, Static, HasOptionalParms, Public)
+// (Defined, Event, Static, HasOptionalparams, Public)
 // Parameters:
 // class UPopulationMaster*       Master                         (Parm)
 // int                            nOpportunityIdx                (Parm)
@@ -18489,7 +18489,7 @@ class AActor* UPopulationFactory::CreatePopulationActor(class UPopulationMaster*
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -18514,7 +18514,7 @@ struct FBoxSphereBounds UPopulationFactory::GetSpawnVisibilityBounds(int GameSta
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -18540,7 +18540,7 @@ class UPawnAllegiance* UPopulationFactory::GetActorAllegiance(int GameStage, int
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -18567,7 +18567,7 @@ int UPopulationFactory::GetActorSpawnCost(int GameStage, int Rarity, bool bCanSp
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -18589,7 +18589,7 @@ void UPopulationFactory::OnSpawnActor(class AActor* aNewActor)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -18636,7 +18636,7 @@ class UPopulationFactory* UPopulationFactory::GetSpawnFactory(class APopulationO
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -18662,7 +18662,7 @@ float UPopulationFactory::GetSpawnProbabilityAtThisGameStage(int GameStage, int 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -18686,7 +18686,7 @@ bool UPopulationFactory::IsFactoryWithin(class UPopulationFactory* TestFactory)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -18710,7 +18710,7 @@ bool UPopulationFactory::CanSpawn(class APopulationOpportunity* SpawningOpportun
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -18745,7 +18745,7 @@ class AActor* UPopulationFactoryGeneric::CreatePopulationActor(class UPopulation
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -18770,7 +18770,7 @@ struct FBoxSphereBounds UPopulationFactoryGeneric::GetSpawnVisibilityBounds(int 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -18798,7 +18798,7 @@ class UPopulationFactory* UPopulationFactoryPopulationDefinition::GetSpawnFactor
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -18824,7 +18824,7 @@ class UPawnAllegiance* UPopulationFactoryPopulationDefinition::GetActorAllegianc
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -18848,7 +18848,7 @@ bool UPopulationFactoryPopulationDefinition::IsFactoryWithin(class UPopulationFa
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -18868,7 +18868,7 @@ void APopulationOpportunity::ClearBodyCompositionInstance()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -18886,7 +18886,7 @@ void APopulationOpportunity::ApplyPreviewBodyComposition()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -18906,7 +18906,7 @@ FScriptInterface APopulationOpportunity::GetBodyInfoProvider()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -18931,7 +18931,7 @@ void APopulationOpportunity::ChangeInstanceDataSwitch(const struct FName& Switch
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -18958,7 +18958,7 @@ void APopulationOpportunity::PostInitBodyComposition(const struct FName& Identif
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -18983,7 +18983,7 @@ void APopulationOpportunity::PreRemoveBodyComposition(const struct FName& Identi
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -19002,7 +19002,7 @@ float APopulationOpportunity::GetNumSpawned()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -19023,7 +19023,7 @@ float APopulationOpportunity::GetNumAlive()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -19044,7 +19044,7 @@ float APopulationOpportunity::GetNumDied()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -19063,7 +19063,7 @@ void APopulationOpportunity::Destroyed()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -19083,7 +19083,7 @@ int APopulationOpportunity::GetRarity()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -19105,7 +19105,7 @@ int APopulationOpportunity::GetGameStage()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -19114,7 +19114,7 @@ int APopulationOpportunity::GetGameStage()
 
 
 // Function GearboxFramework.PopulationOpportunity.GetOpportunityGameStage
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // int                            GameStage                      (Parm, OutParm)
 // int                            Rarity                         (Parm, OutParm)
@@ -19129,7 +19129,7 @@ bool APopulationOpportunity::GetOpportunityGameStage(int* GameStage, int* Rarity
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -19153,7 +19153,7 @@ void APopulationOpportunity::TriggerKismetAllSpawnedEvent()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -19170,7 +19170,7 @@ void APopulationOpportunity::ClearSequenceActionLink()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -19190,7 +19190,7 @@ void APopulationOpportunity::SetSequenceActionLink(class UGearboxSeqAct_Populati
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -19211,7 +19211,7 @@ void APopulationOpportunity::SetEnabledStatus(bool bEnable)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -19231,14 +19231,14 @@ void APopulationOpportunity::OnToggle(class USeqAct_Toggle* Action)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.PopulationOpportunity.GetNumLeftToSpawnAndStillAlive
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // int                            NumLeftToSpawn                 (Parm, OutParm)
 // int                            NumStillAlive                  (Parm, OutParm)
@@ -19252,7 +19252,7 @@ void APopulationOpportunity::GetNumLeftToSpawnAndStillAlive(int* NumLeftToSpawn,
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -19277,7 +19277,7 @@ float APopulationOpportunity::GetNextSpawnTime()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -19300,7 +19300,7 @@ void APopulationOpportunity::RespawnKilledActors(float PercentageOfKilledActorsT
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -19321,14 +19321,14 @@ void APopulationOpportunity::DoSpawning(class UPopulationMaster* PopMaster)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.PopulationMaster.GetActorSpawnedFromOpportunity
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // class APopulationOpportunity*  Opportunity                    (Parm)
 // int                            ActorIndex                     (OptionalParm, Parm)
@@ -19345,7 +19345,7 @@ class AActor* UPopulationMaster::GetActorSpawnedFromOpportunity(class APopulatio
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -19354,7 +19354,7 @@ class AActor* UPopulationMaster::GetActorSpawnedFromOpportunity(class APopulatio
 
 
 // Function GearboxFramework.PopulationMaster.GetSavedActorDebugInfoForOpportunity
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // int                            OpportunityIndex               (Parm)
 // TArray<struct FString>         SavedActorsDebugInfo           (Parm, OutParm, NeedCtorLink)
@@ -19369,7 +19369,7 @@ void UPopulationMaster::GetSavedActorDebugInfoForOpportunity(int OpportunityInde
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -19394,7 +19394,7 @@ int UPopulationMaster::GetNumberOfSavedActorsForOpportunity(int OpportunityIndex
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -19418,7 +19418,7 @@ bool UPopulationMaster::WillActorsOpportunityBeResetOnLevelLoad(class AActor* Te
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -19438,7 +19438,7 @@ void UPopulationMaster::ResetRespawn()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -19470,7 +19470,7 @@ class ULevelStreaming* UPopulationMaster::GetStreamingLevelForActor(class AActor
 
 
 // Function GearboxFramework.PopulationMaster.HasCapacityToSpawnFromFactories
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // TArray<class UPopulationFactory*> TheFactories                   (Parm, OutParm, NeedCtorLink)
 // int                            GameStage                      (Parm)
@@ -19488,7 +19488,7 @@ bool UPopulationMaster::HasCapacityToSpawnFromFactories(int GameStage, int Rarit
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -19519,7 +19519,7 @@ bool UPopulationMaster::HasCapacityToSpawnFromFactory(class UPopulationFactory* 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -19541,7 +19541,7 @@ bool UPopulationMaster::IsPopulationSystemAtCapacity()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -19564,7 +19564,7 @@ void UPopulationMaster::StatProfileStop(int nStat)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -19585,7 +19585,7 @@ void UPopulationMaster::StatProfileStart(int nStat)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -19607,7 +19607,7 @@ float UPopulationMaster::GetStatProfileTime(int nStat)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -19636,7 +19636,7 @@ void UPopulationMaster::AddSavedActor(int OpportunityIdx, class AActor* TheActor
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -19657,7 +19657,7 @@ void UPopulationMaster::DisconnectEncounter(class APopulationEncounter* Encounte
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -19678,7 +19678,7 @@ void UPopulationMaster::ConnectEncounter(class APopulationEncounter* Encounter)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -19702,7 +19702,7 @@ bool UPopulationMaster::DisconnectOpportunity(class APopulationOpportunity* Deac
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -19726,7 +19726,7 @@ bool UPopulationMaster::ConnectOpportunity(class APopulationOpportunity* Activat
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -19748,7 +19748,7 @@ class AWorldInfo* UPopulationMaster::GetWorldInfo()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -19757,7 +19757,7 @@ class AWorldInfo* UPopulationMaster::GetWorldInfo()
 
 
 // Function GearboxFramework.PopulationMaster.DestroySpawnedActors
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // class APopulationOpportunity*  Opportunity                    (Parm)
 // bool                           bDontSaveActors                (OptionalParm, Parm)
@@ -19773,14 +19773,14 @@ void UPopulationMaster::DestroySpawnedActors(class APopulationOpportunity* Oppor
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.PopulationMaster.RemoveSpawnedActor
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // class AActor*                  TheActor                       (Parm)
 // bool                           bKeepBody                      (Parm)
@@ -19798,7 +19798,7 @@ void UPopulationMaster::RemoveSpawnedActor(class AActor* TheActor, bool bKeepBod
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -19821,7 +19821,7 @@ void UPopulationMaster::SetSpawnedActorsReuse(class AActor* TheActor, bool bReus
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -19844,14 +19844,14 @@ void UPopulationMaster::AddExternalActor(class AActor* SpawnedActor, class UClas
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.PopulationMaster.SpawnActorFromOpportunity
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // class UPopulationFactory*      TheFactory                     (Parm)
 // class UObject*                 SpawnLocationContextObject     (Parm)
@@ -19884,7 +19884,7 @@ class AActor* UPopulationMaster::SpawnActorFromOpportunity(class UPopulationFact
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -19918,7 +19918,7 @@ class AActor* UPopulationMaster::SpawnActor(class UPopulationFactory* TheFactory
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -19942,7 +19942,7 @@ int UPopulationMaster::GetPopulationOpportunityIndex(class APopulationOpportunit
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -19966,7 +19966,7 @@ class APopulationOpportunity* UPopulationMaster::GetActorsOpportunity(class AAct
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -19975,7 +19975,7 @@ class APopulationOpportunity* UPopulationMaster::GetActorsOpportunity(class AAct
 
 
 // Function GearboxFramework.PopulationMaster.SpawnPopulationControlledActor
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // class UClass*                  SpawnClass                     (Parm)
 // class AActor*                  SpawnOwner                     (OptionalParm, Parm)
@@ -20004,7 +20004,7 @@ class AActor* UPopulationMaster::SpawnPopulationControlledActor(class UClass* Sp
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -20024,7 +20024,7 @@ void APopulationOpportunityArea::ApplyPreviewBodyComposition()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -20044,7 +20044,7 @@ FScriptInterface APopulationOpportunityArea::GetBodyInfoProvider()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -20067,7 +20067,7 @@ void APopulationOpportunityArea::RespawnKilledActors(float PercentageOfKilledAct
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -20088,7 +20088,7 @@ void APopulationOpportunityArea::DoSpawning(class UPopulationMaster* PopMaster)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -20106,7 +20106,7 @@ void APopulationOpportunityCloner::ApplyPreviewBodyComposition()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -20126,7 +20126,7 @@ FScriptInterface APopulationOpportunityCloner::GetBodyInfoProvider()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -20145,7 +20145,7 @@ void APopulationOpportunityCloner::CloneTimer()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -20166,7 +20166,7 @@ void APopulationOpportunityCloner::RespawnKilledActors(float PercentageOfKilledA
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -20187,7 +20187,7 @@ void APopulationOpportunityCloner::DoSpawning(class UPopulationMaster* PopMaster
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -20205,7 +20205,7 @@ void APopulationOpportunityCombat::ApplyPreviewBodyComposition()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -20225,7 +20225,7 @@ FScriptInterface APopulationOpportunityCombat::GetBodyInfoProvider()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -20244,7 +20244,7 @@ void APopulationOpportunityCombat::TriggerKismetSingleDeathEvent()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -20261,7 +20261,7 @@ void APopulationOpportunityCombat::TriggerKismetDeathEvent()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -20280,7 +20280,7 @@ float APopulationOpportunityCombat::GetNumSpawned()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -20301,7 +20301,7 @@ float APopulationOpportunityCombat::GetNumAlive()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -20322,7 +20322,7 @@ float APopulationOpportunityCombat::GetNumDied()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -20344,7 +20344,7 @@ bool APopulationOpportunityCombat::WantsToStopListening()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -20366,7 +20366,7 @@ class AActor* APopulationOpportunityCombat::GetActor()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -20388,7 +20388,7 @@ struct FVector APopulationOpportunityCombat::GetListenerLocation()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -20410,7 +20410,7 @@ class UPawnAllegiance* APopulationOpportunityCombat::GetAllegiance()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -20434,7 +20434,7 @@ bool APopulationOpportunityCombat::ReceiveMessage(class UGbxMessage* Message)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -20458,7 +20458,7 @@ bool APopulationOpportunityCombat::CaresAboutMessage(class UGbxMessage* Message)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -20477,7 +20477,7 @@ void APopulationOpportunityCombat::PostBeginPlay()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -20498,7 +20498,7 @@ void APopulationOpportunityCombat::EnableDebugging(bool bEnabled)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -20519,7 +20519,7 @@ void APopulationOpportunityCombat::RespawnKilledActors(float PercentageOfKilledA
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -20540,7 +20540,7 @@ void APopulationOpportunityCombat::DoSpawning(class UPopulationMaster* PopMaster
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -20558,7 +20558,7 @@ void APopulationOpportunityPoint::ClearBodyCompositionInstance()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -20576,7 +20576,7 @@ void APopulationOpportunityPoint::ApplyPreviewBodyComposition()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -20596,7 +20596,7 @@ FScriptInterface APopulationOpportunityPoint::GetBodyInfoProvider()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -20621,7 +20621,7 @@ void APopulationOpportunityPoint::ChangeInstanceDataSwitch(const struct FName& S
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -20648,7 +20648,7 @@ void APopulationOpportunityPoint::PostInitBodyComposition(const struct FName& Id
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -20673,7 +20673,7 @@ void APopulationOpportunityPoint::PreRemoveBodyComposition(const struct FName& I
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -20692,7 +20692,7 @@ float APopulationOpportunityPoint::GetInitialMovementHoldTime()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -20713,7 +20713,7 @@ class AActor* APopulationOpportunityPoint::GetInitialDestination()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -20734,7 +20734,7 @@ unsigned char APopulationOpportunityPoint::GetInitialActionType()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -20755,7 +20755,7 @@ unsigned char APopulationOpportunityPoint::GetSpawnStyleType()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -20778,7 +20778,7 @@ void APopulationOpportunityPoint::RespawnKilledActors(float PercentageOfKilledAc
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -20799,7 +20799,7 @@ void APopulationOpportunityPoint::DoSpawning(class UPopulationMaster* PopMaster)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -20825,7 +20825,7 @@ bool APopulationPoint::CanSpawnFromFactory(class UPopulationFactory* Factory, in
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -20847,7 +20847,7 @@ struct FRotator APopulationPoint::GetSpawnRotation()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -20869,7 +20869,7 @@ struct FVector APopulationPoint::GetSpawnLocation()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -20892,7 +20892,7 @@ void APopulationPoint::ActorSpawned(class AActor* SpawnedActor)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -20911,7 +20911,7 @@ float APopulationPoint::GetInitialMovementHoldTime()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -20932,7 +20932,7 @@ class AActor* APopulationPoint::GetInitialDestination()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -20951,7 +20951,7 @@ void APopulationPoint::RandomizeInitialDestinations()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -20970,7 +20970,7 @@ unsigned char APopulationPoint::GetInitialActionType()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -20991,7 +20991,7 @@ unsigned char APopulationPoint::GetSpawnStyleType()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -21013,7 +21013,7 @@ void APopulationPoint::OnToggle(class USeqAct_Toggle* Action)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -21034,7 +21034,7 @@ void USeqEvent_EncounterWaveComplete::NotifyWaveComplete(int nWave)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -21060,7 +21060,7 @@ void USeqEvent_PopulatedActor::NotifyPopulatedActor(class AActor* PopulatedActor
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -21086,14 +21086,14 @@ void USeqEvent_PopulatedPoint::NotifyPopulatedActor(class AActor* PopulatedActor
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.AIDefinition.OnReset
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 
@@ -21106,7 +21106,7 @@ void UAIDefinition::OnReset(struct FBehaviorConsumerHandle* ConsumerHandle)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -21116,7 +21116,7 @@ void UAIDefinition::OnReset(struct FBehaviorConsumerHandle* ConsumerHandle)
 
 
 // Function GearboxFramework.AIDefinition.OnHitByVehicle
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 // class AVehicle*                Vehicle                        (Parm)
@@ -21131,7 +21131,7 @@ void UAIDefinition::OnHitByVehicle(class AVehicle* Vehicle, struct FBehaviorCons
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -21141,7 +21141,7 @@ void UAIDefinition::OnHitByVehicle(class AVehicle* Vehicle, struct FBehaviorCons
 
 
 // Function GearboxFramework.AIDefinition.OnRanOver
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 // class AVehicle*                Vehicle                        (Parm)
@@ -21156,7 +21156,7 @@ void UAIDefinition::OnRanOver(class AVehicle* Vehicle, struct FBehaviorConsumerH
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -21166,7 +21166,7 @@ void UAIDefinition::OnRanOver(class AVehicle* Vehicle, struct FBehaviorConsumerH
 
 
 // Function GearboxFramework.AIDefinition.OnTimerEvent
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 // struct FName                   SpecializedEventName           (Parm)
@@ -21181,7 +21181,7 @@ void UAIDefinition::OnTimerEvent(const struct FName& SpecializedEventName, struc
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -21191,7 +21191,7 @@ void UAIDefinition::OnTimerEvent(const struct FName& SpecializedEventName, struc
 
 
 // Function GearboxFramework.AIDefinition.OnKilledPawn
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 // class UObject*                 Killed                         (Parm)
@@ -21206,7 +21206,7 @@ void UAIDefinition::OnKilledPawn(class UObject* Killed, struct FBehaviorConsumer
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -21216,7 +21216,7 @@ void UAIDefinition::OnKilledPawn(class UObject* Killed, struct FBehaviorConsumer
 
 
 // Function GearboxFramework.AIDefinition.OnLanded
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 
@@ -21229,7 +21229,7 @@ void UAIDefinition::OnLanded(struct FBehaviorConsumerHandle* ConsumerHandle)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -21239,7 +21239,7 @@ void UAIDefinition::OnLanded(struct FBehaviorConsumerHandle* ConsumerHandle)
 
 
 // Function GearboxFramework.AIDefinition.OnStopFiringWeapon
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 
@@ -21252,7 +21252,7 @@ void UAIDefinition::OnStopFiringWeapon(struct FBehaviorConsumerHandle* ConsumerH
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -21262,7 +21262,7 @@ void UAIDefinition::OnStopFiringWeapon(struct FBehaviorConsumerHandle* ConsumerH
 
 
 // Function GearboxFramework.AIDefinition.OnStartFiringWeapon
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 
@@ -21275,7 +21275,7 @@ void UAIDefinition::OnStartFiringWeapon(struct FBehaviorConsumerHandle* Consumer
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -21285,7 +21285,7 @@ void UAIDefinition::OnStartFiringWeapon(struct FBehaviorConsumerHandle* Consumer
 
 
 // Function GearboxFramework.AIDefinition.OnTargetLost
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 // class UObject*                 OldTarget                      (Parm)
@@ -21300,7 +21300,7 @@ void UAIDefinition::OnTargetLost(class UObject* OldTarget, struct FBehaviorConsu
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -21310,7 +21310,7 @@ void UAIDefinition::OnTargetLost(class UObject* OldTarget, struct FBehaviorConsu
 
 
 // Function GearboxFramework.AIDefinition.OnTargetChanged
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 // class UObject*                 OldTarget                      (Parm)
@@ -21327,7 +21327,7 @@ void UAIDefinition::OnTargetChanged(class UObject* OldTarget, class UObject* New
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -21337,7 +21337,7 @@ void UAIDefinition::OnTargetChanged(class UObject* OldTarget, class UObject* New
 
 
 // Function GearboxFramework.AIDefinition.OnTargetAcquired
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 // class UObject*                 NewTarget                      (Parm)
@@ -21352,7 +21352,7 @@ void UAIDefinition::OnTargetAcquired(class UObject* NewTarget, struct FBehaviorC
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -21362,7 +21362,7 @@ void UAIDefinition::OnTargetAcquired(class UObject* NewTarget, struct FBehaviorC
 
 
 // Function GearboxFramework.AIDefinition.OnSpawned
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 
@@ -21375,7 +21375,7 @@ void UAIDefinition::OnSpawned(struct FBehaviorConsumerHandle* ConsumerHandle)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -21385,7 +21385,7 @@ void UAIDefinition::OnSpawned(struct FBehaviorConsumerHandle* ConsumerHandle)
 
 
 // Function GearboxFramework.AIDefinition.OnTakeHeal
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 // class UObject*                 Instigator                     (Parm)
@@ -21408,7 +21408,7 @@ void UAIDefinition::OnTakeHeal(class UObject* Instigator, float Damage, float Sh
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -21418,7 +21418,7 @@ void UAIDefinition::OnTakeHeal(class UObject* Instigator, float Damage, float Sh
 
 
 // Function GearboxFramework.AIDefinition.OnVehicleTakeDamage
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 // class UObject*                 Instigator                     (Parm)
@@ -21443,7 +21443,7 @@ void UAIDefinition::OnVehicleTakeDamage(class UObject* Instigator, class UObject
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -21453,7 +21453,7 @@ void UAIDefinition::OnVehicleTakeDamage(class UObject* Instigator, class UObject
 
 
 // Function GearboxFramework.AIDefinition.OnTakeDamage
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 // class UObject*                 Instigator                     (Parm)
@@ -21476,7 +21476,7 @@ void UAIDefinition::OnTakeDamage(class UObject* Instigator, float Damage, float 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -21486,7 +21486,7 @@ void UAIDefinition::OnTakeDamage(class UObject* Instigator, float Damage, float 
 
 
 // Function GearboxFramework.AIDefinition.OnUserCouldNotAffordSecondary
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 // unsigned char                  EventOutput                    (Parm)
@@ -21505,7 +21505,7 @@ void UAIDefinition::OnUserCouldNotAffordSecondary(unsigned char EventOutput, cla
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -21515,7 +21515,7 @@ void UAIDefinition::OnUserCouldNotAffordSecondary(unsigned char EventOutput, cla
 
 
 // Function GearboxFramework.AIDefinition.OnUserCouldNotAfford
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 // unsigned char                  EventOutput                    (Parm)
@@ -21534,7 +21534,7 @@ void UAIDefinition::OnUserCouldNotAfford(unsigned char EventOutput, class UObjec
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -21544,7 +21544,7 @@ void UAIDefinition::OnUserCouldNotAfford(unsigned char EventOutput, class UObjec
 
 
 // Function GearboxFramework.AIDefinition.OnSecondaryUsed
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 // unsigned char                  EventOutput                    (Parm)
@@ -21563,7 +21563,7 @@ void UAIDefinition::OnSecondaryUsed(unsigned char EventOutput, class UObject* In
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -21573,7 +21573,7 @@ void UAIDefinition::OnSecondaryUsed(unsigned char EventOutput, class UObject* In
 
 
 // Function GearboxFramework.AIDefinition.OnUsed
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 // unsigned char                  EventOutput                    (Parm)
@@ -21592,7 +21592,7 @@ void UAIDefinition::OnUsed(unsigned char EventOutput, class UObject* Instigator,
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -21616,7 +21616,7 @@ void UAIDefinition::SetBehaviorProviderDefinition(class UBehaviorProviderDefinit
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -21636,7 +21636,7 @@ class UBehaviorProviderDefinition* UAIDefinition::GetBehaviorProviderDefinition(
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -21645,7 +21645,7 @@ class UBehaviorProviderDefinition* UAIDefinition::GetBehaviorProviderDefinition(
 
 
 // Function GearboxFramework.BehaviorProviderDefinition.SetObjectBehaviorVariable
-// (Native, Static, Public, HasOutParms)
+// (Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorVariableValue  BehaviorVariable               (Parm, OutParm)
 // class UObject*                 Value                          (Parm)
@@ -21671,7 +21671,7 @@ void UBehaviorProviderDefinition::SetObjectBehaviorVariable(class UObject* Value
 
 
 // Function GearboxFramework.BehaviorProviderDefinition.SetVectorBehaviorVariable
-// (Native, Static, Public, HasOutParms)
+// (Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorVariableValue  BehaviorVariable               (Parm, OutParm)
 // struct FVector                 Value                          (Const, Parm, OutParm)
@@ -21698,7 +21698,7 @@ void UBehaviorProviderDefinition::SetVectorBehaviorVariable(struct FBehaviorVari
 
 
 // Function GearboxFramework.BehaviorProviderDefinition.SetFloatBehaviorVariable
-// (Native, Static, Public, HasOutParms)
+// (Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorVariableValue  BehaviorVariable               (Parm, OutParm)
 // float                          Value                          (Parm)
@@ -21724,7 +21724,7 @@ void UBehaviorProviderDefinition::SetFloatBehaviorVariable(float Value, struct F
 
 
 // Function GearboxFramework.BehaviorProviderDefinition.SetIntBehaviorVariable
-// (Native, Static, Public, HasOutParms)
+// (Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorVariableValue  BehaviorVariable               (Parm, OutParm)
 // int                            Value                          (Parm)
@@ -21750,7 +21750,7 @@ void UBehaviorProviderDefinition::SetIntBehaviorVariable(int Value, struct FBeha
 
 
 // Function GearboxFramework.BehaviorProviderDefinition.SetBoolBehaviorVariable
-// (Native, Static, Public, HasOutParms)
+// (Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorVariableValue  BehaviorVariable               (Parm, OutParm)
 // bool                           Value                          (Parm)
@@ -21776,7 +21776,7 @@ void UBehaviorProviderDefinition::SetBoolBehaviorVariable(bool Value, struct FBe
 
 
 // Function GearboxFramework.BehaviorKernel.RecentlyRunBehaviorsForSequence
-// (Final, Iterator, Native, Private, HasOutParms)
+// (Final, Iterator, Native, Private, HasOutparams)
 // Parameters:
 // int                            PID                            (Parm)
 // int                            ProvidersIndex                 (Parm)
@@ -21795,7 +21795,7 @@ void UBehaviorKernel::RecentlyRunBehaviorsForSequence(int PID, int ProvidersInde
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -21805,7 +21805,7 @@ void UBehaviorKernel::RecentlyRunBehaviorsForSequence(int PID, int ProvidersInde
 
 
 // Function GearboxFramework.BehaviorKernel.AllEventStateForSequence
-// (Final, Iterator, Native, Private, HasOutParms)
+// (Final, Iterator, Native, Private, HasOutparams)
 // Parameters:
 // int                            PID                            (Parm)
 // int                            ProvidersIndex                 (Parm)
@@ -21824,7 +21824,7 @@ void UBehaviorKernel::AllEventStateForSequence(int PID, int ProvidersIndex, int 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -21834,7 +21834,7 @@ void UBehaviorKernel::AllEventStateForSequence(int PID, int ProvidersIndex, int 
 
 
 // Function GearboxFramework.BehaviorKernel.AllWaitingThreadsForSequence
-// (Final, Iterator, Native, Private, HasOutParms)
+// (Final, Iterator, Native, Private, HasOutparams)
 // Parameters:
 // int                            PID                            (Parm)
 // int                            ProvidersIndex                 (Parm)
@@ -21853,7 +21853,7 @@ void UBehaviorKernel::AllWaitingThreadsForSequence(int PID, int ProvidersIndex, 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -21863,7 +21863,7 @@ void UBehaviorKernel::AllWaitingThreadsForSequence(int PID, int ProvidersIndex, 
 
 
 // Function GearboxFramework.BehaviorKernel.AllSequencesForProvider
-// (Final, Iterator, Native, Private, HasOutParms)
+// (Final, Iterator, Native, Private, HasOutparams)
 // Parameters:
 // int                            PID                            (Parm)
 // int                            ProvidersIndex                 (Parm)
@@ -21880,7 +21880,7 @@ void UBehaviorKernel::AllSequencesForProvider(int PID, int ProvidersIndex, struc
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -21890,7 +21890,7 @@ void UBehaviorKernel::AllSequencesForProvider(int PID, int ProvidersIndex, struc
 
 
 // Function GearboxFramework.BehaviorKernel.AllProvidersForProcess
-// (Final, Iterator, Native, HasOptionalParms, Private, HasOutParms)
+// (Final, Iterator, Native, HasOptionalparams, Private, HasOutparams)
 // Parameters:
 // int                            PID                            (Parm)
 // class UBehaviorProviderDefinition* ProviderDefinition             (Parm, OutParm)
@@ -21906,7 +21906,7 @@ void UBehaviorKernel::AllProvidersForProcess(int PID, class UBehaviorProviderDef
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -21918,7 +21918,7 @@ void UBehaviorKernel::AllProvidersForProcess(int PID, class UBehaviorProviderDef
 
 
 // Function GearboxFramework.BehaviorKernel.AllProcesses
-// (Final, Iterator, Native, Private, HasOutParms)
+// (Final, Iterator, Native, Private, HasOutparams)
 // Parameters:
 // struct FBehaviorProcess        Process                        (Parm, OutParm)
 
@@ -21931,7 +21931,7 @@ void UBehaviorKernel::AllProcesses(struct FBehaviorProcess* Process)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -21941,7 +21941,7 @@ void UBehaviorKernel::AllProcesses(struct FBehaviorProcess* Process)
 
 
 // Function GearboxFramework.BehaviorKernel.GetVariableStateSummaryForSequence
-// (Final, Native, Private, HasOutParms)
+// (Final, Native, Private, HasOutparams)
 // Parameters:
 // int                            PID                            (Parm)
 // int                            SequencesDataIndex             (Parm)
@@ -21958,7 +21958,7 @@ void UBehaviorKernel::GetVariableStateSummaryForSequence(int PID, int SequencesD
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -21968,7 +21968,7 @@ void UBehaviorKernel::GetVariableStateSummaryForSequence(int PID, int SequencesD
 
 
 // Function GearboxFramework.BehaviorKernel.GetChunkedListSummaries
-// (Final, Native, Private, HasOutParms)
+// (Final, Native, Private, HasOutparams)
 // Parameters:
 // TArray<struct FString>         DebugInfo                      (Parm, OutParm, NeedCtorLink)
 
@@ -21981,7 +21981,7 @@ void UBehaviorKernel::GetChunkedListSummaries(TArray<struct FString>* DebugInfo)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -22004,7 +22004,7 @@ struct FBehaviorKernelStats UBehaviorKernel::GetBehaviorKernelStats()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -22038,7 +22038,7 @@ bool UBehaviorKernel::IsBehaviorKernelWatchingConsumer(const struct FBehaviorCon
 
 
 // Function GearboxFramework.BehaviorKernel.IsBehaviorSequenceEnabled
-// (Final, Native, Static, Public, HasOutParms)
+// (Final, Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 // class UBehaviorProviderDefinition* ProviderDefinition             (Parm)
@@ -22069,7 +22069,7 @@ bool UBehaviorKernel::IsBehaviorSequenceEnabled(class UBehaviorProviderDefinitio
 
 
 // Function GearboxFramework.BehaviorKernel.ActivateBehaviorOutputLink
-// (Final, Native, Static, Public, HasOutParms)
+// (Final, Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorKernelInfo     KernelInfo                     (Const, Parm, OutParm)
 // int                            OutputLinkId                   (Parm)
@@ -22095,7 +22095,7 @@ void UBehaviorKernel::ActivateBehaviorOutputLink(int OutputLinkId, struct FBehav
 
 
 // Function GearboxFramework.BehaviorKernel.PublishBoolOutputVariable
-// (Final, Native, Static, Public, HasOutParms)
+// (Final, Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorKernelInfo     KernelInfo                     (Const, Parm, OutParm)
 // bool                           Output                         (Parm)
@@ -22121,7 +22121,7 @@ void UBehaviorKernel::PublishBoolOutputVariable(bool Output, struct FBehaviorKer
 
 
 // Function GearboxFramework.BehaviorKernel.PublishObjectOutputVariable
-// (Final, Native, Static, Public, HasOutParms)
+// (Final, Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorKernelInfo     KernelInfo                     (Const, Parm, OutParm)
 // class UObject*                 Output                         (Parm)
@@ -22147,7 +22147,7 @@ void UBehaviorKernel::PublishObjectOutputVariable(class UObject* Output, struct 
 
 
 // Function GearboxFramework.BehaviorKernel.PublishVectorOutputVariable
-// (Final, Native, Static, Public, HasOutParms)
+// (Final, Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorKernelInfo     KernelInfo                     (Const, Parm, OutParm)
 // struct FVector                 Output                         (Const, Parm, OutParm)
@@ -22174,7 +22174,7 @@ void UBehaviorKernel::PublishVectorOutputVariable(struct FBehaviorKernelInfo* Ke
 
 
 // Function GearboxFramework.BehaviorKernel.PublishFloatOutputVariable
-// (Final, Native, Static, Public, HasOutParms)
+// (Final, Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorKernelInfo     KernelInfo                     (Const, Parm, OutParm)
 // float                          Output                         (Parm)
@@ -22200,7 +22200,7 @@ void UBehaviorKernel::PublishFloatOutputVariable(float Output, struct FBehaviorK
 
 
 // Function GearboxFramework.BehaviorKernel.PublishIntOutputVariable
-// (Final, Native, Static, Public, HasOutParms)
+// (Final, Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorKernelInfo     KernelInfo                     (Const, Parm, OutParm)
 // int                            Output                         (Parm)
@@ -22226,7 +22226,7 @@ void UBehaviorKernel::PublishIntOutputVariable(int Output, struct FBehaviorKerne
 
 
 // Function GearboxFramework.BehaviorKernel.BeginNondeterministicProviderRegistration
-// (Final, Native, Static, Public, HasOutParms)
+// (Final, Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 
@@ -22250,7 +22250,7 @@ void UBehaviorKernel::BeginNondeterministicProviderRegistration(struct FBehavior
 
 
 // Function GearboxFramework.BehaviorKernel.ProcessReplicatedBehaviorEvent
-// (Final, Native, Static, Public, HasOutParms)
+// (Final, Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 // struct FReplicatedBehaviorEvent EventData                      (Const, Parm, OutParm)
@@ -22277,7 +22277,7 @@ void UBehaviorKernel::ProcessReplicatedBehaviorEvent(struct FBehaviorConsumerHan
 
 
 // Function GearboxFramework.BehaviorKernel.ProcessReplicatedBehaviorConsumerState
-// (Final, Native, Static, Public, HasOutParms)
+// (Final, Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 // struct FReplicatedBehaviorConsumerState ReplicatedConsumerState        (Const, Parm, OutParm)
@@ -22307,7 +22307,7 @@ bool UBehaviorKernel::ProcessReplicatedBehaviorConsumerState(struct FBehaviorCon
 
 
 // Function GearboxFramework.BehaviorKernel.ChangeBehaviorSequenceActivationStatus
-// (Final, Native, Static, Public, HasOutParms)
+// (Final, Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 // class UBehaviorProviderDefinition* ProviderDefinition             (Parm)
@@ -22337,7 +22337,7 @@ void UBehaviorKernel::ChangeBehaviorSequenceActivationStatus(class UBehaviorProv
 
 
 // Function GearboxFramework.BehaviorKernel.ChangeBehaviorConsumerSuspensionStatus
-// (Final, Native, Static, Public, HasOutParms)
+// (Final, Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 // unsigned char                  SuspensionStatusChanage        (Parm)
@@ -22363,7 +22363,7 @@ void UBehaviorKernel::ChangeBehaviorConsumerSuspensionStatus(unsigned char Suspe
 
 
 // Function GearboxFramework.BehaviorKernel.BroadcastBehaviorEventFromScript
-// (Final, Native, Static, HasOptionalParms, Public, HasOutParms)
+// (Final, Native, Static, HasOptionalparams, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 // struct FName                   EventName                      (Parm)
@@ -22397,7 +22397,7 @@ void UBehaviorKernel::BroadcastBehaviorEventFromScript(const struct FName& Event
 
 
 // Function GearboxFramework.BehaviorKernel.ActivateBehaviorEventFromScript
-// (Final, Native, Static, HasOptionalParms, Public, HasOutParms)
+// (Final, Native, Static, HasOptionalparams, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 // class UBehaviorProviderDefinition* ProviderDefinition             (Parm)
@@ -22430,7 +22430,7 @@ void UBehaviorKernel::ActivateBehaviorEventFromScript(class UBehaviorProviderDef
 
 
 // Function GearboxFramework.BehaviorKernel.RemoveBehaviorProviderFromConsumer
-// (Final, Native, Static, Public, HasOutParms)
+// (Final, Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 // class UBehaviorProviderDefinition* ProviderDefinition             (Parm)
@@ -22456,7 +22456,7 @@ void UBehaviorKernel::RemoveBehaviorProviderFromConsumer(class UBehaviorProvider
 
 
 // Function GearboxFramework.BehaviorKernel.IntializeBehaviorProviderForConsumer
-// (Final, Native, Static, Public, HasOutParms)
+// (Final, Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 // class UBehaviorProviderDefinition* ProviderDefinition             (Parm)
@@ -22482,7 +22482,7 @@ void UBehaviorKernel::IntializeBehaviorProviderForConsumer(class UBehaviorProvid
 
 
 // Function GearboxFramework.BehaviorKernel.ForceUnregisterBehaviorConsumer
-// (Final, Native, Static, Public, HasOutParms)
+// (Final, Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Parm, OutParm)
 
@@ -22545,7 +22545,7 @@ void UIBehaviorProvider::SetBehaviorProviderDefinition(class UBehaviorProviderDe
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -22565,7 +22565,7 @@ class UBehaviorProviderDefinition* UIBehaviorProvider::GetBehaviorProviderDefini
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -22574,7 +22574,7 @@ class UBehaviorProviderDefinition* UIBehaviorProvider::GetBehaviorProviderDefini
 
 
 // Function GearboxFramework.ICustomEvent.RunCustomEvent
-// (Event, HasOptionalParms, Public)
+// (Event, HasOptionalparams, Public)
 // Parameters:
 // struct FName                   EventName                      (Parm)
 // class UObject*                 EventInstigator                (OptionalParm, Parm)
@@ -22593,7 +22593,7 @@ void UICustomEvent::RunCustomEvent(const struct FName& EventName, class UObject*
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -22615,7 +22615,7 @@ float UGearboxAnimDefinition::GetAnimLength(class USkeletalMeshComponent* SMC)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -22638,7 +22638,7 @@ bool UGearboxAnimDefinition::IsPlayingLocally(const FScriptInterface& SMI)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -22661,7 +22661,7 @@ class UAnimNodeSpecialMoveBlend* UGearboxAnimDefinition::GetSMNode(const FScript
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -22670,7 +22670,7 @@ class UAnimNodeSpecialMoveBlend* UGearboxAnimDefinition::GetSMNode(const FScript
 
 
 // Function GearboxFramework.GearboxAnimDefinition.PlayAnim
-// (Defined, Public, HasOutParms)
+// (Defined, Public, HasOutparams)
 // Parameters:
 // FScriptInterface               SMI                            (Parm)
 // struct FSpecialMoveData        SMData                         (Parm, OutParm)
@@ -22685,7 +22685,7 @@ float UGearboxAnimDefinition::PlayAnim(const FScriptInterface& SMI, struct FSpec
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -22697,7 +22697,7 @@ float UGearboxAnimDefinition::PlayAnim(const FScriptInterface& SMI, struct FSpec
 
 
 // Function GearboxFramework.GearboxAnimDefinition.AnimFinished
-// (Defined, Event, Public, HasOutParms)
+// (Defined, Event, Public, HasOutparams)
 // Parameters:
 // FScriptInterface               SMI                            (Parm)
 // class UAnimNodeSpecialMoveBlend* BlendNode                      (Parm)
@@ -22715,7 +22715,7 @@ void UGearboxAnimDefinition::AnimFinished(const FScriptInterface& SMI, class UAn
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -22740,14 +22740,14 @@ void UGearboxAnimDefinition::ClientFinished(const FScriptInterface& SMI, bool bI
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxAnimDefinition.ClientStarted
-// (Defined, Event, Public, HasOutParms, HasDefaults)
+// (Defined, Event, Public, HasOutparams, HasDefaults)
 // Parameters:
 // FScriptInterface               SMI                            (Parm)
 // struct FSpecialMoveData        SMData                         (Parm, OutParm)
@@ -22762,7 +22762,7 @@ float UGearboxAnimDefinition::ClientStarted(const FScriptInterface& SMI, struct 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -22789,7 +22789,7 @@ void UGearboxAnimDefinition::ServerFinished(const FScriptInterface& SMI, bool bI
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -22809,7 +22809,7 @@ void UGearboxAnimDefinition::ServerStarted(const FScriptInterface& SMI)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -22829,7 +22829,7 @@ void UGearboxAnimDefinition::AddAnimSet(const FScriptInterface& SMI)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -22850,7 +22850,7 @@ class USkeletalMeshComponent* UGearboxAnimDefinition::GetSkeletalMesh(const FScr
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -22873,7 +22873,7 @@ bool UGearboxAnimDefinition::AuthorityCanPlay(const FScriptInterface& SMI)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -22882,7 +22882,7 @@ bool UGearboxAnimDefinition::AuthorityCanPlay(const FScriptInterface& SMI)
 
 
 // Function GearboxFramework.GearboxAnimDefinition.OnTimedEvent
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 // struct FName                   SpecializedEventName           (Parm)
@@ -22897,7 +22897,7 @@ void UGearboxAnimDefinition::OnTimedEvent(const struct FName& SpecializedEventNa
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -22907,7 +22907,7 @@ void UGearboxAnimDefinition::OnTimedEvent(const struct FName& SpecializedEventNa
 
 
 // Function GearboxFramework.GearboxAnimDefinition.OnServerStop
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 
@@ -22920,7 +22920,7 @@ void UGearboxAnimDefinition::OnServerStop(struct FBehaviorConsumerHandle* Consum
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -22930,7 +22930,7 @@ void UGearboxAnimDefinition::OnServerStop(struct FBehaviorConsumerHandle* Consum
 
 
 // Function GearboxFramework.GearboxAnimDefinition.OnServerStart
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 
@@ -22943,7 +22943,7 @@ void UGearboxAnimDefinition::OnServerStart(struct FBehaviorConsumerHandle* Consu
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -22953,7 +22953,7 @@ void UGearboxAnimDefinition::OnServerStart(struct FBehaviorConsumerHandle* Consu
 
 
 // Function GearboxFramework.GearboxAnimDefinition.OnStop
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 
@@ -22966,7 +22966,7 @@ void UGearboxAnimDefinition::OnStop(struct FBehaviorConsumerHandle* ConsumerHand
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -22976,7 +22976,7 @@ void UGearboxAnimDefinition::OnStop(struct FBehaviorConsumerHandle* ConsumerHand
 
 
 // Function GearboxFramework.GearboxAnimDefinition.OnStart
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorConsumerHandle ConsumerHandle                 (Const, Parm, OutParm)
 
@@ -22989,7 +22989,7 @@ void UGearboxAnimDefinition::OnStart(struct FBehaviorConsumerHandle* ConsumerHan
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -23013,7 +23013,7 @@ void UGearboxAnimDefinition::SetBehaviorProviderDefinition(class UBehaviorProvid
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -23033,7 +23033,7 @@ class UBehaviorProviderDefinition* UGearboxAnimDefinition::GetBehaviorProviderDe
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -23042,7 +23042,7 @@ class UBehaviorProviderDefinition* UGearboxAnimDefinition::GetBehaviorProviderDe
 
 
 // Function GearboxFramework.Behavior_TriggerDialogEvent.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms)
+// (Defined, Protected, HasOutparams)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -23064,7 +23064,7 @@ void UBehavior_TriggerDialogEvent::ApplyBehaviorToContext(class UObject* Context
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -23074,7 +23074,7 @@ void UBehavior_TriggerDialogEvent::ApplyBehaviorToContext(class UObject* Context
 
 
 // Function GearboxFramework.Behavior_TriggerDialogEvent.TriggerDialogEvent
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // class UObject*                 SelfObject                     (Parm)
@@ -23095,7 +23095,7 @@ void UBehavior_TriggerDialogEvent::TriggerDialogEvent(class UObject* ContextObje
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -23119,7 +23119,7 @@ void AGearboxDialogActor::SetDialogNameTag(class UGearboxDialogNameTag* NewName)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -23139,7 +23139,7 @@ struct FGearboxDialogReplicatedData AGearboxDialogActor::GetReplicatedDialogData
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -23148,7 +23148,7 @@ struct FGearboxDialogReplicatedData AGearboxDialogActor::GetReplicatedDialogData
 
 
 // Function GearboxFramework.GearboxDialogActor.SetReplicatedDialogData
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // class UGearboxDialogAct_Talk*  TalkAct                        (Parm)
 // struct FGearboxDialogData      Data                           (Parm, OutParm)
@@ -23163,7 +23163,7 @@ void AGearboxDialogActor::SetReplicatedDialogData(class UGearboxDialogAct_Talk* 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -23173,7 +23173,7 @@ void AGearboxDialogActor::SetReplicatedDialogData(class UGearboxDialogAct_Talk* 
 
 
 // Function GearboxFramework.GearboxDialogActor.GetDialogGroups
-// (Simulated, Native, Public, HasOutParms)
+// (Simulated, Native, Public, HasOutparams)
 // Parameters:
 // TArray<class UGearboxDialogGroup*> Groups                         (Parm, OutParm, NeedCtorLink)
 
@@ -23186,7 +23186,7 @@ void AGearboxDialogActor::GetDialogGroups(TArray<class UGearboxDialogGroup*>* Gr
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -23209,7 +23209,7 @@ class UGearboxDialogComponent* AGearboxDialogActor::GetDialogComponent()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -23231,7 +23231,7 @@ class UGearboxDialogNameTag* AGearboxDialogActor::GetDialogNameTag()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -23253,7 +23253,7 @@ class AActor* AGearboxDialogActor::GetActor()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -23275,7 +23275,7 @@ bool AGearboxDialogActor::CanTalk()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -23284,7 +23284,7 @@ bool AGearboxDialogActor::CanTalk()
 
 
 // Function GearboxFramework.GearboxDialogActor.ServerDialog_TriggerEvent
-// (Singular, Net, Native, Event, HasOptionalParms, Public, NetServer)
+// (Singular, Net, Native, Event, HasOptionalparams, Public, NetServer)
 // Parameters:
 // class UGearboxDialogEventTag*  EventTag                       (Parm)
 // class AActor*                  Other                          (OptionalParm, Parm)
@@ -23302,7 +23302,7 @@ void AGearboxDialogActor::ServerDialog_TriggerEvent(class UGearboxDialogEventTag
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -23322,7 +23322,7 @@ void AGearboxDialogActor::ReplicatedEvent(const struct FName& VarName)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -23342,7 +23342,7 @@ bool UGearboxDialogComponent::IsTalking()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -23351,7 +23351,7 @@ bool UGearboxDialogComponent::IsTalking()
 
 
 // Function GearboxFramework.GearboxDialogComponent.StopTalking
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // class UGearboxDialogEventTag*  EventTag                       (OptionalParm, Parm)
 // bool                           bForceStop                     (OptionalParm, Parm)
@@ -23367,7 +23367,7 @@ void UGearboxDialogComponent::StopTalking(class UGearboxDialogEventTag* EventTag
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -23388,7 +23388,7 @@ void UGearboxDialogComponent::TalkReplicated(const struct FGearboxDialogReplicat
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -23409,14 +23409,14 @@ void UGearboxDialogComponent::Talk(class UGearboxDialogAct_Talk* TalkAction)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxDialogComponent.GetMatchingEvent
-// (Native, HasOptionalParms, Public, HasOutParms)
+// (Native, HasOptionalparams, Public, HasOutparams)
 // Parameters:
 // class UGearboxDialogEventTag*  InEventTag                     (Parm)
 // class UGearboxDialogEvent*     OutEvent                       (Parm, OutParm)
@@ -23438,7 +23438,7 @@ void UGearboxDialogComponent::GetMatchingEvent(class UGearboxDialogEventTag* InE
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -23450,7 +23450,7 @@ void UGearboxDialogComponent::GetMatchingEvent(class UGearboxDialogEventTag* InE
 
 
 // Function GearboxFramework.GearboxDialogComponent.TriggerEvent
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // class UGearboxDialogEventTag*  EventTag                       (Parm)
 // class AActor*                  Other                          (OptionalParm, Parm)
@@ -23471,7 +23471,7 @@ class UGearboxDialogEventData* UGearboxDialogComponent::TriggerEvent(class UGear
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -23493,7 +23493,7 @@ FScriptInterface UGearboxDialogComponent::GetDialogInterface()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -23520,7 +23520,7 @@ void UGearboxDialogGroup::SimpleEvent(class AActor* Owner, class UGearboxDialogN
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -23540,7 +23540,7 @@ bool UGearboxDialogEventData::IsActive()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -23549,7 +23549,7 @@ bool UGearboxDialogEventData::IsActive()
 
 
 // Function GearboxFramework.GearboxDialogManager.DrawDialogDebug
-// (Defined, HasOptionalParms, Public)
+// (Defined, HasOptionalparams, Public)
 // Parameters:
 // class AHUD*                    HUD                            (Parm)
 // float                          StartY                         (OptionalParm, Parm)
@@ -23564,7 +23564,7 @@ void UGearboxDialogManager::DrawDialogDebug(class AHUD* HUD, float StartY)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -23581,7 +23581,7 @@ void UGearboxDialogManager::CheckpointRemoveReferencesBeforeDestroy()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -23603,7 +23603,7 @@ class UGearboxDialogEventTag* UGearboxDialogManager::GetEventTagForEventInfo(con
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -23612,7 +23612,7 @@ class UGearboxDialogEventTag* UGearboxDialogManager::GetEventTagForEventInfo(con
 
 
 // Function GearboxFramework.GearboxDialogManager.TriggerGroupEvent
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // class UGearboxDialogGroup*     Group                          (Parm)
 // class UGearboxDialogEventTag*  EventTag                       (Parm)
@@ -23637,7 +23637,7 @@ class UGearboxDialogEventData* UGearboxDialogManager::TriggerGroupEvent(class UG
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -23657,7 +23657,7 @@ void UGearboxDialogManager::Cleanup()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -23680,7 +23680,7 @@ void UGearboxDialogManager::SetGroupEventTag(class UGearboxDialogGroup* Group, c
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -23702,7 +23702,7 @@ class UGearboxDialogEventTag* UGearboxDialogManager::GetGroupEventTag(class UGea
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -23725,7 +23725,7 @@ void UGearboxDialogManager::SilenceGroup(class UGearboxDialogGroup* Group)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -23746,7 +23746,7 @@ void UGearboxDialogManager::AddGroup(class UGearboxDialogGroup* Group)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -23767,7 +23767,7 @@ void UGearboxDialogManager::UnregisterTalker(class AActor* Talker)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -23788,7 +23788,7 @@ void UGearboxDialogManager::RegisterTalker(class AActor* Talker)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -23809,7 +23809,7 @@ void UGearboxDialogManager::DisableTalker(class AActor* Talker)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -23830,7 +23830,7 @@ void UGearboxDialogManager::EnableTalker(class AActor* Talker)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -23852,7 +23852,7 @@ int UGearboxDialogManager::GetPriority(class UGearboxDialogPriority* InPriority)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -23875,7 +23875,7 @@ void UGearboxDialogNode::ActivateOutput(int Link)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -23892,7 +23892,7 @@ void UGearboxDialogAction::Activate()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -23910,7 +23910,7 @@ void UGearboxDialogAct_Chance::Activate()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -23928,7 +23928,7 @@ void UGearboxDialogAct_Compare::Activate()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -23946,7 +23946,7 @@ void UGearboxDialogAct_ObjectParameterSwitch::Activate()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -23964,7 +23964,7 @@ void UGearboxDialogAct_Talk::Activate()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -23984,7 +23984,7 @@ void UGearboxDialogAct_Talk::TalkFinished(class AActor* InTalker)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -24004,7 +24004,7 @@ void UGearboxDialogAct_Talk::TalkStarted(class AActor* InTalker)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -24025,7 +24025,7 @@ void UGearboxDialogAct_Trigger::ActivateOutput(int Link)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -24043,14 +24043,14 @@ void UGearboxDialogAct_Trigger::Activate()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxDialogVariable.ResolveToArgumentValue
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // struct FString                 Out_ArgumentValue              (Parm, OutParm, NeedCtorLink)
 
@@ -24063,7 +24063,7 @@ void UGearboxDialogVariable::ResolveToArgumentValue(struct FString* Out_Argument
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -24073,7 +24073,7 @@ void UGearboxDialogVariable::ResolveToArgumentValue(struct FString* Out_Argument
 
 
 // Function GearboxFramework.GearboxDialogVariable.GetTalkers
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // TArray<class AActor*>          Talkers                        (Parm, OutParm, NeedCtorLink)
 
@@ -24086,7 +24086,7 @@ void UGearboxDialogVariable::GetTalkers(TArray<class AActor*>* Talkers)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -24109,7 +24109,7 @@ struct FStepConfiguration UGearboxProcess::GetStepConfiguration()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -24132,7 +24132,7 @@ void UGearboxProcess::GotoStep(int Step)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -24150,7 +24150,7 @@ void UGearboxProcess::GotoNextStep()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -24168,7 +24168,7 @@ void UGearboxProcess::GotoFirstStep()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -24187,7 +24187,7 @@ unsigned char UGearboxProcess::PerformStep()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -24207,7 +24207,7 @@ void UGearboxProcess::PauseLoop()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -24225,7 +24225,7 @@ void UGearboxProcess::Init()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -24243,7 +24243,7 @@ void UGearboxProcess::ContinueLoop()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -24261,7 +24261,7 @@ void UGearboxProcess::StopLoop()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -24281,7 +24281,7 @@ void USparkInitializationProcess::TriggerSparkInitializedDelegates(unsigned char
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -24301,7 +24301,7 @@ void USparkInitializationProcess::ClearSparkInitializedDelegate(const struct FSc
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -24321,7 +24321,7 @@ void USparkInitializationProcess::AddSparkInitializedDelegate(const struct FScri
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -24341,7 +24341,7 @@ struct FString USparkInitializationProcess::GetStepName()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -24363,7 +24363,7 @@ struct FStepConfiguration USparkInitializationProcess::GetStepConfiguration()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -24384,7 +24384,7 @@ bool USparkInitializationProcess::IsInitialized()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -24405,7 +24405,7 @@ bool USparkInitializationProcess::IsDisabled()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -24426,7 +24426,7 @@ bool USparkInitializationProcess::IsInitializing()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -24458,7 +24458,7 @@ void USparkInitializationProcess::UpdateAgreementsSigning(class UGearboxAccountD
 
 
 // Function GearboxFramework.SparkInitializationProcess.HandleVerificationReceived
-// (Defined, Public, HasOutParms, HasDefaults)
+// (Defined, Public, HasOutparams, HasDefaults)
 // Parameters:
 // struct FSparkResult            Result                         (Const, Parm, OutParm, NeedCtorLink)
 
@@ -24470,7 +24470,7 @@ void USparkInitializationProcess::HandleVerificationReceived(struct FSparkResult
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -24492,7 +24492,7 @@ unsigned char USparkInitializationProcess::VerifyAuthentication()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -24517,7 +24517,7 @@ unsigned char USparkInitializationProcess::AuthenticateTicketStringWithDelegate(
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -24526,7 +24526,7 @@ unsigned char USparkInitializationProcess::AuthenticateTicketStringWithDelegate(
 
 
 // Function GearboxFramework.SparkInitializationProcess.HandleAuthenticationReceived
-// (Defined, Public, HasOutParms, HasDefaults)
+// (Defined, Public, HasOutparams, HasDefaults)
 // Parameters:
 // struct FSparkResult            Result                         (Const, Parm, OutParm, NeedCtorLink)
 
@@ -24538,7 +24538,7 @@ void USparkInitializationProcess::HandleAuthenticationReceived(struct FSparkResu
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -24560,7 +24560,7 @@ unsigned char USparkInitializationProcess::AuthenticateAccount()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -24582,7 +24582,7 @@ struct FString USparkInitializationProcess::GetConfigQuery()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -24604,7 +24604,7 @@ unsigned char USparkInitializationProcess::CompleteInitialization()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -24626,7 +24626,7 @@ unsigned char USparkInitializationProcess::HttpInit()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -24648,7 +24648,7 @@ unsigned char USparkInitializationProcess::CheckForTMS()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -24670,7 +24670,7 @@ unsigned char USparkInitializationProcess::PerformStep()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -24692,7 +24692,7 @@ bool USparkInitializationProcess::StartProcess()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -24718,7 +24718,7 @@ void USparkInitializationProcess::InitWithController(unsigned char ControllerId,
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -24739,7 +24739,7 @@ class USparkServiceConfiguration* ULeviathanService::GetLeviathanServiceConfigur
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -24762,7 +24762,7 @@ void ULeviathanService::OnSparkInitialized(unsigned char InitializedResult)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -24783,7 +24783,7 @@ void ULeviathanService::LoadServiceConfigurationForPlayer(int SplitscreenIndex)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -24827,7 +24827,7 @@ void USparkInterfaceImpl::RemoveScriptCallback(int HttpRequestId)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -24846,7 +24846,7 @@ class USparkNews* USparkInterfaceImpl::GetNewsService()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -24868,7 +24868,7 @@ class USparkServiceConfiguration* USparkInterfaceImpl::GetTitleStorageServiceCon
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -24890,7 +24890,7 @@ struct FString USparkInterfaceImpl::GetTitleStorageUrl()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -24912,7 +24912,7 @@ void USparkInterfaceImpl::OnSparkInitialized(unsigned char InitializedResult)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -24929,7 +24929,7 @@ void USparkInterfaceImpl::IncreaseInteractionTries()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -24948,7 +24948,7 @@ int USparkInterfaceImpl::GetInteractionTries()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -24969,7 +24969,7 @@ int USparkInterfaceImpl::GetInteractionGraceTries()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -24990,7 +24990,7 @@ int USparkInterfaceImpl::GetInteractionPunishmentMinWaitSeconds()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -25011,7 +25011,7 @@ int USparkInterfaceImpl::GetInteractionMinWaitSeconds()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -25035,7 +25035,7 @@ struct FString USparkInterfaceImpl::ConvertUtcTimeToLocalTime(const struct FStri
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -25056,7 +25056,7 @@ bool USparkInterfaceImpl::ShouldUpdateEmergencyMessage()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -25077,7 +25077,7 @@ struct FString USparkInterfaceImpl::GetEmergencyMessage()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -25099,7 +25099,7 @@ void USparkInterfaceImpl::SetEmergencyMessage(const struct FString& NewMessage)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -25119,7 +25119,7 @@ bool USparkInterfaceImpl::IsTmsComplete()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -25138,7 +25138,7 @@ void USparkInterfaceImpl::SetTmsComplete()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -25162,7 +25162,7 @@ void USparkInterfaceImpl::RestartSparkInitializationFromScript(bool bPrimary, co
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -25182,7 +25182,7 @@ void USparkInterfaceImpl::RestartSparkInitialization(bool bPrimary)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -25208,7 +25208,7 @@ void USparkInterfaceImpl::StartSparkInitialization(unsigned char ControllerId, c
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -25225,7 +25225,7 @@ void USparkInterfaceImpl::ResetInitializationStatus()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -25242,7 +25242,7 @@ void USparkInterfaceImpl::ResetSecondaryInitializationStatus()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -25266,7 +25266,7 @@ void USparkInterfaceImpl::StartSecondaryInitialization(unsigned char ControllerI
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -25285,7 +25285,7 @@ class USparkInitializationProcess* USparkInterfaceImpl::GetSparkInitialization()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -25307,7 +25307,7 @@ void USparkInterfaceImpl::SignInGearboxAccount(unsigned char ControllerId)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -25328,7 +25328,7 @@ class UGearboxAccountData* USparkInterfaceImpl::GetGearboxAccountData(unsigned c
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -25350,7 +25350,7 @@ void USparkInterfaceImpl::SignOutGearboxAccount(unsigned char ControllerId)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -25371,7 +25371,7 @@ bool USparkInterfaceImpl::ValidPlayerIndex(int PlayerIndex)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -25394,7 +25394,7 @@ int USparkInterfaceImpl::GetPlayerIndex(int ControllerId)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -25416,7 +25416,7 @@ void USparkInterfaceImpl::ClearGearboxAccountData(bool IncludePrimaryPlayer)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -25437,7 +25437,7 @@ bool USparkInterfaceImpl::IsGearboxAccountSignedIn(unsigned char ControllerId)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -25460,7 +25460,7 @@ bool USparkInterfaceImpl::IsGearboxAccountAuthenticated(unsigned char Controller
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -25482,7 +25482,7 @@ struct FString USparkInterfaceImpl::GetGameName()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -25504,7 +25504,7 @@ struct FString USparkInterfaceImpl::GetHardwareName()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -25526,7 +25526,7 @@ struct FString USparkInterfaceImpl::GetPlatformName()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -25552,7 +25552,7 @@ struct FString USparkInterfaceImpl::GetPlatformTicket(int ControllerId, bool bPr
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -25574,7 +25574,7 @@ void USparkInterfaceImpl::ClearSparkConfigReceivedDelegate(const struct FScriptD
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -25594,7 +25594,7 @@ void USparkInterfaceImpl::AddSparkConfigReceivedDelegate(const struct FScriptDel
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -25615,7 +25615,7 @@ struct FString USparkInterfaceImpl::GetPlatformLoginNameFromController(unsigned 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -25638,7 +25638,7 @@ struct FString USparkInterfaceImpl::GetPlatformLoginNameFromSplitscreenIndex(int
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -25659,7 +25659,7 @@ struct FString USparkInterfaceImpl::GetPlatformLoginName()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -25680,7 +25680,7 @@ unsigned char USparkInterfaceImpl::GetLoginStatus()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -25701,7 +25701,7 @@ bool USparkInterfaceImpl::IsShiftEnabled()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -25722,7 +25722,7 @@ bool USparkInterfaceImpl::IsSparkEnabled()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -25777,7 +25777,7 @@ bool USparkInterfaceImpl::WithSpark()
 
 
 // Function GearboxFramework.SparkInterfaceImpl.IssueSparkStringRequest
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // struct FHttpParameters         HttpRequestParameters          (Const, Parm, OutParm, NeedCtorLink)
 // struct FString                 URL                            (Parm, NeedCtorLink)
@@ -25797,7 +25797,7 @@ int USparkInterfaceImpl::IssueSparkStringRequest(const struct FString& URL, cons
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -25809,7 +25809,7 @@ int USparkInterfaceImpl::IssueSparkStringRequest(const struct FString& URL, cons
 
 
 // Function GearboxFramework.SparkInterfaceImpl.IssueSparkRequest
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // struct FHttpParameters         HttpParameters                 (Const, Parm, OutParm, NeedCtorLink)
 // struct FString                 URL                            (Parm, NeedCtorLink)
@@ -25828,7 +25828,7 @@ int USparkInterfaceImpl::IssueSparkRequest(const struct FString& URL, const stru
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -25842,7 +25842,7 @@ int USparkInterfaceImpl::IssueSparkRequest(const struct FString& URL, const stru
 
 
 // Function GearboxFramework.SparkInterfaceImpl.AlternativeXboxlivePlatformId
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // struct FUniqueNetId            NetId                          (Const, Parm, OutParm)
 // struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
@@ -25856,7 +25856,7 @@ struct FString USparkInterfaceImpl::AlternativeXboxlivePlatformId(struct FUnique
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -25878,7 +25878,7 @@ void USparkInterfaceImpl::OnSparkEmergencyMessageUpdated()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -25898,14 +25898,14 @@ void USparkInterfaceImpl::OnSparkConfigReceived(TArray<unsigned char> ConfigArra
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.SparkInterfaceImpl.OnSparkRequestComplete
-// (Public, Delegate, HasOutParms)
+// (Public, Delegate, HasOutparams)
 // Parameters:
 // struct FSparkResult            Result                         (Const, Parm, OutParm, NeedCtorLink)
 
@@ -25917,7 +25917,7 @@ void USparkInterfaceImpl::OnSparkRequestComplete(struct FSparkResult* Result)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -25944,7 +25944,7 @@ bool USparkServiceConfiguration::GetBoolParameter(const struct FString& KeyName,
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -25974,7 +25974,7 @@ float USparkServiceConfiguration::GetFloatParameter(const struct FString& KeyNam
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26004,7 +26004,7 @@ int USparkServiceConfiguration::GetIntParameter(const struct FString& KeyName, i
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26030,7 +26030,7 @@ struct FString USparkServiceConfiguration::GetStringParameter(const struct FStri
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26054,7 +26054,7 @@ struct FString USparkServiceConfiguration::GetParameter(const struct FString& Ke
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26063,7 +26063,7 @@ struct FString USparkServiceConfiguration::GetParameter(const struct FString& Ke
 
 
 // Function GearboxFramework.SparkServiceConfiguration.LoadService
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // struct FServiceResult          Service                        (Const, Parm, OutParm, NeedCtorLink)
 
@@ -26076,7 +26076,7 @@ void USparkServiceConfiguration::LoadService(struct FServiceResult* Service)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26097,7 +26097,7 @@ void USparkServiceConfiguration::LoadOverrides()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -26114,7 +26114,7 @@ void UAction_FaceThreat::StopSequence()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -26137,7 +26137,7 @@ class UObject* UActorAttributeContextResolver::GetAttributeContext(class UAttrib
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26162,7 +26162,7 @@ class UObject* UAIComponentAttributeContextResolver::GetAttributeContext(class U
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26171,7 +26171,7 @@ class UObject* UAIComponentAttributeContextResolver::GetAttributeContext(class U
 
 
 // Function GearboxFramework.Behavior_AIHold.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms)
+// (Defined, Protected, HasOutparams)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -26193,7 +26193,7 @@ void UBehavior_AIHold::ApplyBehaviorToContext(class UObject* ContextObject, clas
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26203,7 +26203,7 @@ void UBehavior_AIHold::ApplyBehaviorToContext(class UObject* ContextObject, clas
 
 
 // Function GearboxFramework.Behavior_AIPriority.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms)
+// (Defined, Protected, HasOutparams)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -26225,7 +26225,7 @@ void UBehavior_AIPriority::ApplyBehaviorToContext(class UObject* ContextObject, 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26235,7 +26235,7 @@ void UBehavior_AIPriority::ApplyBehaviorToContext(class UObject* ContextObject, 
 
 
 // Function GearboxFramework.Behavior_AITargeting.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms)
+// (Defined, Protected, HasOutparams)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -26257,7 +26257,7 @@ void UBehavior_AITargeting::ApplyBehaviorToContext(class UObject* ContextObject,
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26267,7 +26267,7 @@ void UBehavior_AITargeting::ApplyBehaviorToContext(class UObject* ContextObject,
 
 
 // Function GearboxFramework.Behavior_ChangeAnyBehaviorSequenceState.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms, HasDefaults)
+// (Defined, Protected, HasOutparams, HasDefaults)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -26289,7 +26289,7 @@ void UBehavior_ChangeAnyBehaviorSequenceState::ApplyBehaviorToContext(class UObj
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26299,7 +26299,7 @@ void UBehavior_ChangeAnyBehaviorSequenceState::ApplyBehaviorToContext(class UObj
 
 
 // Function GearboxFramework.Behavior_ChangeLocalBehaviorSequenceState.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms, HasDefaults)
+// (Defined, Protected, HasOutparams, HasDefaults)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -26321,7 +26321,7 @@ void UBehavior_ChangeLocalBehaviorSequenceState::ApplyBehaviorToContext(class UO
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26331,7 +26331,7 @@ void UBehavior_ChangeLocalBehaviorSequenceState::ApplyBehaviorToContext(class UO
 
 
 // Function GearboxFramework.Behavior_CompareBool.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms)
+// (Defined, Protected, HasOutparams)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -26353,7 +26353,7 @@ void UBehavior_CompareBool::ApplyBehaviorToContext(class UObject* ContextObject,
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26363,7 +26363,7 @@ void UBehavior_CompareBool::ApplyBehaviorToContext(class UObject* ContextObject,
 
 
 // Function GearboxFramework.Behavior_CompareValues.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms)
+// (Defined, Protected, HasOutparams)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -26385,7 +26385,7 @@ void UBehavior_CompareValues::ApplyBehaviorToContext(class UObject* ContextObjec
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26395,7 +26395,7 @@ void UBehavior_CompareValues::ApplyBehaviorToContext(class UObject* ContextObjec
 
 
 // Function GearboxFramework.Behavior_CustomEvent.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms, HasDefaults)
+// (Defined, Protected, HasOutparams, HasDefaults)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -26417,7 +26417,7 @@ void UBehavior_CustomEvent::ApplyBehaviorToContext(class UObject* ContextObject,
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26427,7 +26427,7 @@ void UBehavior_CustomEvent::ApplyBehaviorToContext(class UObject* ContextObject,
 
 
 // Function GearboxFramework.Behavior_Delay.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms)
+// (Defined, Protected, HasOutparams)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -26449,7 +26449,7 @@ void UBehavior_Delay::ApplyBehaviorToContext(class UObject* ContextObject, class
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26459,7 +26459,7 @@ void UBehavior_Delay::ApplyBehaviorToContext(class UObject* ContextObject, class
 
 
 // Function GearboxFramework.Behavior_Gate.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms)
+// (Defined, Protected, HasOutparams)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -26481,7 +26481,7 @@ void UBehavior_Gate::ApplyBehaviorToContext(class UObject* ContextObject, class 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26491,7 +26491,7 @@ void UBehavior_Gate::ApplyBehaviorToContext(class UObject* ContextObject, class 
 
 
 // Function GearboxFramework.Behavior_GetFloatParam.PublishBehaviorOutput
-// (Defined, Protected, HasOutParms)
+// (Defined, Protected, HasOutparams)
 // Parameters:
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
 // float                          Value                          (Parm)
@@ -26505,7 +26505,7 @@ void UBehavior_GetFloatParam::PublishBehaviorOutput(float Value, struct FBehavio
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26515,7 +26515,7 @@ void UBehavior_GetFloatParam::PublishBehaviorOutput(float Value, struct FBehavio
 
 
 // Function GearboxFramework.Behavior_GetFloatParam.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms)
+// (Defined, Protected, HasOutparams)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -26537,7 +26537,7 @@ void UBehavior_GetFloatParam::ApplyBehaviorToContext(class UObject* ContextObjec
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26547,7 +26547,7 @@ void UBehavior_GetFloatParam::ApplyBehaviorToContext(class UObject* ContextObjec
 
 
 // Function GearboxFramework.Behavior_GetObjectParam.PublishBehaviorOutput
-// (Defined, Protected, HasOutParms)
+// (Defined, Protected, HasOutparams)
 // Parameters:
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
 // class UObject*                 Value                          (Parm)
@@ -26561,7 +26561,7 @@ void UBehavior_GetObjectParam::PublishBehaviorOutput(class UObject* Value, struc
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26571,7 +26571,7 @@ void UBehavior_GetObjectParam::PublishBehaviorOutput(class UObject* Value, struc
 
 
 // Function GearboxFramework.Behavior_GetObjectParam.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms)
+// (Defined, Protected, HasOutparams)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -26593,7 +26593,7 @@ void UBehavior_GetObjectParam::ApplyBehaviorToContext(class UObject* ContextObje
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26603,7 +26603,7 @@ void UBehavior_GetObjectParam::ApplyBehaviorToContext(class UObject* ContextObje
 
 
 // Function GearboxFramework.Behavior_GetVectorParam.PublishBehaviorOutput
-// (Defined, Protected, HasOutParms)
+// (Defined, Protected, HasOutparams)
 // Parameters:
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
 // float                          R                              (Parm)
@@ -26623,7 +26623,7 @@ void UBehavior_GetVectorParam::PublishBehaviorOutput(float R, float G, float B, 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26633,7 +26633,7 @@ void UBehavior_GetVectorParam::PublishBehaviorOutput(float R, float G, float B, 
 
 
 // Function GearboxFramework.Behavior_GetVectorParam.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms, HasDefaults)
+// (Defined, Protected, HasOutparams, HasDefaults)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -26655,7 +26655,7 @@ void UBehavior_GetVectorParam::ApplyBehaviorToContext(class UObject* ContextObje
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26665,7 +26665,7 @@ void UBehavior_GetVectorParam::ApplyBehaviorToContext(class UObject* ContextObje
 
 
 // Function GearboxFramework.Behavior_InterpolateFloatOverTime.PublishBehaviorOutput
-// (Defined, Public, HasOutParms)
+// (Defined, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
 // float                          Result                         (Parm)
@@ -26679,7 +26679,7 @@ void UBehavior_InterpolateFloatOverTime::PublishBehaviorOutput(float Result, str
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26689,7 +26689,7 @@ void UBehavior_InterpolateFloatOverTime::PublishBehaviorOutput(float Result, str
 
 
 // Function GearboxFramework.Behavior_InterpolateFloatOverTime.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms)
+// (Defined, Protected, HasOutparams)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -26711,7 +26711,7 @@ void UBehavior_InterpolateFloatOverTime::ApplyBehaviorToContext(class UObject* C
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26721,7 +26721,7 @@ void UBehavior_InterpolateFloatOverTime::ApplyBehaviorToContext(class UObject* C
 
 
 // Function GearboxFramework.Behavior_Metronome.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms)
+// (Defined, Protected, HasOutparams)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -26743,7 +26743,7 @@ void UBehavior_Metronome::ApplyBehaviorToContext(class UObject* ContextObject, c
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26753,7 +26753,7 @@ void UBehavior_Metronome::ApplyBehaviorToContext(class UObject* ContextObject, c
 
 
 // Function GearboxFramework.Behavior_ModifyTimer.PublishBehaviorOutput
-// (Defined, Public, HasOutParms)
+// (Defined, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
 // float                          TimeRemaining                  (Parm)
@@ -26767,7 +26767,7 @@ void UBehavior_ModifyTimer::PublishBehaviorOutput(float TimeRemaining, struct FB
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26777,7 +26777,7 @@ void UBehavior_ModifyTimer::PublishBehaviorOutput(float TimeRemaining, struct FB
 
 
 // Function GearboxFramework.Behavior_ModifyTimer.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms, HasDefaults)
+// (Defined, Protected, HasOutparams, HasDefaults)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -26799,7 +26799,7 @@ void UBehavior_ModifyTimer::ApplyBehaviorToContext(class UObject* ContextObject,
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26809,7 +26809,7 @@ void UBehavior_ModifyTimer::ApplyBehaviorToContext(class UObject* ContextObject,
 
 
 // Function GearboxFramework.Behavior_SetFloatParam.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms)
+// (Defined, Protected, HasOutparams)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -26831,7 +26831,7 @@ void UBehavior_SetFloatParam::ApplyBehaviorToContext(class UObject* ContextObjec
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26841,7 +26841,7 @@ void UBehavior_SetFloatParam::ApplyBehaviorToContext(class UObject* ContextObjec
 
 
 // Function GearboxFramework.Behavior_SetObjectParam.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms)
+// (Defined, Protected, HasOutparams)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -26863,7 +26863,7 @@ void UBehavior_SetObjectParam::ApplyBehaviorToContext(class UObject* ContextObje
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26873,7 +26873,7 @@ void UBehavior_SetObjectParam::ApplyBehaviorToContext(class UObject* ContextObje
 
 
 // Function GearboxFramework.Behavior_SetVectorParam.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms, HasDefaults)
+// (Defined, Protected, HasOutparams, HasDefaults)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -26895,7 +26895,7 @@ void UBehavior_SetVectorParam::ApplyBehaviorToContext(class UObject* ContextObje
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26918,14 +26918,14 @@ void UBehavior_SpecialMove::PlaySpecialMove(class USpecialMoveComponent* SMC)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.Behavior_SpecialMove.TriggerOutput
-// (Defined, Public, HasOutParms)
+// (Defined, Public, HasOutparams)
 // Parameters:
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
 
@@ -26937,7 +26937,7 @@ void UBehavior_SpecialMove::TriggerOutput(struct FBehaviorKernelInfo* KernelInfo
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26947,7 +26947,7 @@ void UBehavior_SpecialMove::TriggerOutput(struct FBehaviorKernelInfo* KernelInfo
 
 
 // Function GearboxFramework.Behavior_SpecialMove.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms)
+// (Defined, Protected, HasOutparams)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -26969,7 +26969,7 @@ void UBehavior_SpecialMove::ApplyBehaviorToContext(class UObject* ContextObject,
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -26979,7 +26979,7 @@ void UBehavior_SpecialMove::ApplyBehaviorToContext(class UObject* ContextObject,
 
 
 // Function GearboxFramework.Behavior_SpecialMoveStop.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms)
+// (Defined, Protected, HasOutparams)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -27001,7 +27001,7 @@ void UBehavior_SpecialMoveStop::ApplyBehaviorToContext(class UObject* ContextObj
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -27011,7 +27011,7 @@ void UBehavior_SpecialMoveStop::ApplyBehaviorToContext(class UObject* ContextObj
 
 
 // Function GearboxFramework.Behavior_StartAkAmbientSound.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms)
+// (Defined, Protected, HasOutparams)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -27033,7 +27033,7 @@ void UBehavior_StartAkAmbientSound::ApplyBehaviorToContext(class UObject* Contex
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -27043,7 +27043,7 @@ void UBehavior_StartAkAmbientSound::ApplyBehaviorToContext(class UObject* Contex
 
 
 // Function GearboxFramework.Behavior_StopAkAmbientSound.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms)
+// (Defined, Protected, HasOutparams)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -27065,7 +27065,7 @@ void UBehavior_StopAkAmbientSound::ApplyBehaviorToContext(class UObject* Context
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -27075,7 +27075,7 @@ void UBehavior_StopAkAmbientSound::ApplyBehaviorToContext(class UObject* Context
 
 
 // Function GearboxFramework.Behavior_StopDialog.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms)
+// (Defined, Protected, HasOutparams)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -27097,7 +27097,7 @@ void UBehavior_StopDialog::ApplyBehaviorToContext(class UObject* ContextObject, 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -27107,7 +27107,7 @@ void UBehavior_StopDialog::ApplyBehaviorToContext(class UObject* ContextObject, 
 
 
 // Function GearboxFramework.Behavior_ToggleDialog.ApplyBehaviorToContext
-// (Defined, Protected, HasOutParms)
+// (Defined, Protected, HasOutparams)
 // Parameters:
 // class UObject*                 ContextObject                  (Parm)
 // struct FBehaviorKernelInfo     KernelInfo                     (Parm, OutParm)
@@ -27129,7 +27129,7 @@ void UBehavior_ToggleDialog::ApplyBehaviorToContext(class UObject* ContextObject
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -27149,14 +27149,14 @@ void UCameraModifierCrossfade::DoCrossfade()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.CameraModifierCrossfade.UpdateAllLerps
-// (Defined, Protected, HasOutParms)
+// (Defined, Protected, HasOutparams)
 // Parameters:
 // float                          DeltaTime                      (Parm)
 // struct FTPOV                   OutPOV                         (Parm, OutParm)
@@ -27170,7 +27170,7 @@ void UCameraModifierCrossfade::UpdateAllLerps(float DeltaTime, struct FTPOV* Out
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -27180,7 +27180,7 @@ void UCameraModifierCrossfade::UpdateAllLerps(float DeltaTime, struct FTPOV* Out
 
 
 // Function GearboxFramework.CameraModifierCrossfade.ModifyCamera
-// (Defined, Public, HasOutParms, HasDefaults)
+// (Defined, Public, HasOutparams, HasDefaults)
 // Parameters:
 // class ACamera*                 Camera                         (Parm)
 // float                          DeltaTime                      (Parm)
@@ -27197,7 +27197,7 @@ bool UCameraModifierCrossfade::ModifyCamera(class ACamera* Camera, float DeltaTi
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -27209,7 +27209,7 @@ bool UCameraModifierCrossfade::ModifyCamera(class ACamera* Camera, float DeltaTi
 
 
 // Function GearboxFramework.CameraModifierCrossfade.ProcessCameraBlend
-// (Final, Defined, Private, HasOutParms, HasDefaults)
+// (Final, Defined, Private, HasOutparams, HasDefaults)
 // Parameters:
 // class ACamera*                 Camera                         (Parm)
 // float                          AdjustedDeltaTime              (Parm)
@@ -27225,7 +27225,7 @@ void UCameraModifierCrossfade::ProcessCameraBlend(class ACamera* Camera, float A
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -27245,7 +27245,7 @@ void UCameraModifierCrossfade::InitializeSubModifiers()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -27262,14 +27262,14 @@ void UCameraModifierCrossfade::EnableModifier()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.CameraModifierLookAt.ExecuteFadeIfNeeded
-// (Defined, Public, HasOutParms)
+// (Defined, Public, HasOutparams)
 // Parameters:
 // class AGearboxPlayerController* PC                             (Const, Parm, OutParm)
 
@@ -27281,7 +27281,7 @@ void UCameraModifierLookAt::ExecuteFadeIfNeeded(class AGearboxPlayerController**
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -27291,7 +27291,7 @@ void UCameraModifierLookAt::ExecuteFadeIfNeeded(class AGearboxPlayerController**
 
 
 // Function GearboxFramework.CameraModifierLookAt.GetDesiredLocation
-// (Defined, Public, HasOutParms, HasDefaults)
+// (Defined, Public, HasOutparams, HasDefaults)
 // Parameters:
 // struct FTPOV                   OutPOV                         (Const, Parm, OutParm)
 // class AGearboxPlayerController* PC                             (Const, Parm, OutParm)
@@ -27305,7 +27305,7 @@ struct FVector UCameraModifierLookAt::GetDesiredLocation(struct FTPOV* OutPOV, c
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -27319,7 +27319,7 @@ struct FVector UCameraModifierLookAt::GetDesiredLocation(struct FTPOV* OutPOV, c
 
 
 // Function GearboxFramework.CameraModifierLookAt.ModifyCamera
-// (Defined, Public, HasOutParms, HasDefaults)
+// (Defined, Public, HasOutparams, HasDefaults)
 // Parameters:
 // class ACamera*                 Camera                         (Parm)
 // float                          DeltaTime                      (Parm)
@@ -27336,7 +27336,7 @@ bool UCameraModifierLookAt::ModifyCamera(class ACamera* Camera, float DeltaTime,
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -27348,7 +27348,7 @@ bool UCameraModifierLookAt::ModifyCamera(class ACamera* Camera, float DeltaTime,
 
 
 // Function GearboxFramework.CameraModifierLookAt.GetBoneLocation
-// (Final, Defined, HasOptionalParms, Private, HasOutParms)
+// (Final, Defined, HasOptionalparams, Private, HasOutparams)
 // Parameters:
 // class AActor*                  Target                         (Parm)
 // struct FName                   BoneName                       (Parm)
@@ -27365,7 +27365,7 @@ bool UCameraModifierLookAt::GetBoneLocation(class AActor* Target, const struct F
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -27390,7 +27390,7 @@ void UCameraModifierLookAt::SetLookAtBone(const struct FName& NewBone)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -27410,7 +27410,7 @@ void UCameraModifierLookAt::SetLookAtTarget(class AActor* newLookAtTarget)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -27434,7 +27434,7 @@ void UCameraModifierLookAt::SetTargetLocation(const struct FVector& NewTargetLoc
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -27454,7 +27454,7 @@ void UCameraModifierLookAt::SetDuration(float NewDuration)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -27476,7 +27476,7 @@ void UCameraModifierLookAt::SetTransitionTimes(float NewInTime, float NewOutTime
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -27496,7 +27496,7 @@ void UCameraModifierLookAt::SetZoomFOV(float newZoom)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -27520,7 +27520,7 @@ void UCameraModifierLookAt::SetThirdPersonDistances(float NewX, float NewY, floa
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -27540,14 +27540,14 @@ void UCameraModifierLookAt::SetLookAtMode(unsigned char NewMode)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.CameraModifierLookAt.DisableModifier
-// (Defined, HasOptionalParms, Public)
+// (Defined, HasOptionalparams, Public)
 // Parameters:
 // bool                           bImmediate                     (OptionalParm, Parm)
 
@@ -27560,7 +27560,7 @@ void UCameraModifierLookAt::DisableModifier(bool bImmediate)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -27577,7 +27577,7 @@ void UCameraModifierLookAt::EnableModifier()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -27600,7 +27600,7 @@ class USparkServiceConfiguration* USparkNews::Internal_GetService(unsigned char 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -27622,7 +27622,7 @@ void USparkNews::CallAndClearRetrievedDelegate(unsigned char RetrievealResult)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -27642,14 +27642,14 @@ void USparkNews::ParseArticles(class UJsonObject* NewsArticlesJSONObject)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.SparkNews.HandleNewsRetrievalResponse
-// (Final, Defined, Private, HasOutParms)
+// (Final, Defined, Private, HasOutparams)
 // Parameters:
 // struct FSparkResult            Result                         (Const, Parm, OutParm, NeedCtorLink)
 
@@ -27661,7 +27661,7 @@ void USparkNews::HandleNewsRetrievalResponse(struct FSparkResult* Result)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -27671,7 +27671,7 @@ void USparkNews::HandleNewsRetrievalResponse(struct FSparkResult* Result)
 
 
 // Function GearboxFramework.SparkNews.GetArticle
-// (Defined, Public, HasOutParms)
+// (Defined, Public, HasOutparams)
 // Parameters:
 // int                            Idx                            (Parm)
 // struct FString                 Header                         (Parm, OutParm, NeedCtorLink)
@@ -27687,7 +27687,7 @@ bool USparkNews::GetArticle(int Idx, struct FString* Header, struct FString* Bod
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -27713,7 +27713,7 @@ int USparkNews::GetArticleCount()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -27737,7 +27737,7 @@ void USparkNews::RetrieveNews(unsigned char ControllerId, const struct FScriptDe
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -27759,7 +27759,7 @@ void USparkNews::OnNewsRetrieved(unsigned char RetrievealResult, class USparkNew
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -27784,7 +27784,7 @@ bool UGearboxEULAGFxMovie::HandleInputKey(int ControllerId, const struct FName& 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -27803,7 +27803,7 @@ void UGearboxEULAGFxMovie::ShowEULA()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -27820,7 +27820,7 @@ void UGearboxEULAGFxMovie::OnDeclineButtonClick()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -27837,7 +27837,7 @@ void UGearboxEULAGFxMovie::OnAcceptButtonClick()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -27854,7 +27854,7 @@ void UGearboxEULAGFxMovie::FireCompleteDelegate()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -27871,7 +27871,7 @@ void UGearboxEULAGFxMovie::extClosed()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -27888,7 +27888,7 @@ void UGearboxEULAGFxMovie::extOnDeclineButtonClick()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -27905,7 +27905,7 @@ void UGearboxEULAGFxMovie::extOnAcceptButtonClick()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -27925,7 +27925,7 @@ void UGearboxEULAGFxMovie::extOnLoad(const struct FString& Path)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -27942,14 +27942,14 @@ void UGearboxEULAGFxMovie::OnClose()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GearboxFramework.GearboxEULAGFxMovie.Start
-// (Defined, Event, HasOptionalParms, Public)
+// (Defined, Event, HasOptionalparams, Public)
 // Parameters:
 // bool                           StartPaused                    (OptionalParm, Parm)
 // bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -27963,7 +27963,7 @@ bool UGearboxEULAGFxMovie::Start(bool StartPaused)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -27972,7 +27972,7 @@ bool UGearboxEULAGFxMovie::Start(bool StartPaused)
 
 
 // Function GearboxFramework.GearboxEULAGFxMovie.OnEULAInteractionComplete
-// (Public, Delegate, HasOutParms)
+// (Public, Delegate, HasOutparams)
 // Parameters:
 // TArray<struct FEULAData>       EULAState                      (Const, Parm, OutParm, NeedCtorLink)
 
@@ -27984,7 +27984,7 @@ void UGearboxEULAGFxMovie::OnEULAInteractionComplete(TArray<struct FEULAData>* E
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -28004,7 +28004,7 @@ void UGearboxEULAGFxObject::NavigateDown()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -28021,7 +28021,7 @@ void UGearboxEULAGFxObject::NavigateUp()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -28043,7 +28043,7 @@ void UGearboxEULAGFxObject::SetTooltipText(const struct FString& AcceptText, con
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -28065,7 +28065,7 @@ void UGearboxEULAGFxObject::SetEULAText(const struct FString& Title, const struc
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -28082,7 +28082,7 @@ void UGearboxEULAGFxObject::Init()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -28101,7 +28101,7 @@ bool UGFxMovieDrawStyleInstanceData::RequiresClientInstance()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -28126,7 +28126,7 @@ class UObject* UPopulationMasterAttributeContextResolver::GetAttributeContext(cl
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 

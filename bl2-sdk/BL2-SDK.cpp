@@ -42,7 +42,7 @@ namespace BL2SDK
 	int EngineVersion = -1;
 	int ChangelistNumber = -1;
 
-	void __stdcall hkProcessEvent(UFunction* function, void* parms, void* result)
+	void __stdcall hkProcessEvent(UFunction* function, void* params, void* result)
 	{
 		// Get "this"
 		UObject* caller;
@@ -51,7 +51,7 @@ namespace BL2SDK
 		if (injectedCallNext)
 		{
 			injectedCallNext = false;
-			pProcessEvent(caller, function, parms, result);
+			pProcessEvent(caller, function, params, result);
 			return;
 		}
 
@@ -63,13 +63,13 @@ namespace BL2SDK
 			Logging::LogF("===== ProcessEvent called =====\npCaller Name = %s\npFunction Name = %s\n", callerName.c_str(), functionName.c_str());
 		}
 
-		if (!GameHooks::ProcessEngineHooks(caller, function, parms, result))
+		if (!GameHooks::ProcessEngineHooks(caller, function, params, result))
 		{
 			// The engine hook manager told us not to pass this function to the engine
 			return;
 		}
 
-		pProcessEvent(caller, function, parms, result);
+		pProcessEvent(caller, function, params, result);
 	}
 
 	void __stdcall hkCallFunction(FFrame& stack, void* const result, UFunction* function)
@@ -288,46 +288,10 @@ namespace BL2SDK
 		}
 	}
 
-	bool devInputKeyHook(UObject* caller, UFunction* function, void* parms, void* result)
-	{
-		UWillowGameViewportClient_execInputKey_Parms* realParms = reinterpret_cast<UWillowGameViewportClient_execInputKey_Parms*>(parms);
-
-		// If F11 is pressed
-		if (realParms->EventType == 0)
-		{
-			const char* name = realParms->Key.GetName();
-			if (strcmp(name, "F11") == 0)
-			{
-				/*delete Python;
-				InitializePython();*/
-				Python->DoFile("init.py");
-				return false;
-			}
-			/*
-			else if (strcmp(name, "F10") == 0)
-			{
-				LogAllProcessEventCalls(!logAllProcessEvent);
-			}
-			else if (strcmp(name, "F9") == 0)
-			{
-				LogAllUnrealScriptCalls(!logAllUnrealScriptCalls);
-			}
-			*/
-		}
-
-		return true;
-	}
-
 	// This function is used to get the dimensions of the game window for Gwen's renderer
-	bool getCanvasPostRender(UObject* caller, UFunction* function, void* parms, void* result)
+	bool getCanvasPostRender(UObject* caller, UFunction* function, void* params, void* result)
 	{
 		InitializePython();
-
-		if (Settings::DeveloperModeEnabled())
-		{
-			GameHooks::EngineHookManager->Register("WillowGame.WillowGameViewportClient.InputKey", "DevInputKeyHook", &devInputKeyHook);
-			Logging::LogF("[Internal] Developer mode key hook enabled\n");
-		}
 
 		GameHooks::EngineHookManager->RemoveStaticHook(function, "GetCanvas");
 		return true;

@@ -11,7 +11,7 @@
 //---------------------------------------------------------------------------
 
 // Function OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.GetServerAddr
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // int                            OutServerIP                    (Parm, OutParm)
 // int                            OutServerPort                  (Parm, OutParm)
@@ -26,7 +26,7 @@ bool UOnlineAuthInterfaceSteamworks::GetServerAddr(int* OutServerIP, int* OutSer
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -40,7 +40,7 @@ bool UOnlineAuthInterfaceSteamworks::GetServerAddr(int* OutServerIP, int* OutSer
 
 
 // Function OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.GetServerUniqueId
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // struct FUniqueNetId            OutServerUID                   (Parm, OutParm)
 // bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -54,7 +54,7 @@ bool UOnlineAuthInterfaceSteamworks::GetServerUniqueId(struct FUniqueNetId* OutS
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -82,7 +82,7 @@ void UOnlineAuthInterfaceSteamworks::EndRemoteServerAuthSession(const struct FUn
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -105,7 +105,7 @@ void UOnlineAuthInterfaceSteamworks::EndLocalServerAuthSession(const struct FUni
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -131,7 +131,7 @@ bool UOnlineAuthInterfaceSteamworks::VerifyServerAuthSession(const struct FUniqu
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -140,7 +140,7 @@ bool UOnlineAuthInterfaceSteamworks::VerifyServerAuthSession(const struct FUniqu
 
 
 // Function OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.CreateServerAuthSession
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // struct FUniqueNetId            ClientUID                      (Parm)
 // int                            ClientIP                       (Parm)
@@ -160,7 +160,7 @@ bool UOnlineAuthInterfaceSteamworks::CreateServerAuthSession(const struct FUniqu
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -188,7 +188,7 @@ void UOnlineAuthInterfaceSteamworks::EndRemoteClientAuthSession(const struct FUn
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -213,7 +213,7 @@ void UOnlineAuthInterfaceSteamworks::EndLocalClientAuthSession(const struct FUni
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -241,7 +241,7 @@ bool UOnlineAuthInterfaceSteamworks::VerifyClientAuthSession(const struct FUniqu
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -250,7 +250,7 @@ bool UOnlineAuthInterfaceSteamworks::VerifyClientAuthSession(const struct FUniqu
 
 
 // Function OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.CreateClientAuthSession
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // struct FUniqueNetId            ServerUID                      (Parm)
 // int                            ServerIP                       (Parm)
@@ -272,7 +272,7 @@ bool UOnlineAuthInterfaceSteamworks::CreateClientAuthSession(const struct FUniqu
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -299,7 +299,7 @@ bool UOnlineAuthInterfaceSteamworks::SendAuthRequestServer(const struct FUniqueN
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -325,7 +325,7 @@ bool UOnlineAuthInterfaceSteamworks::SendAuthRequestClient(class UPlayer* Client
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -349,7 +349,7 @@ class UOnlineGameSettings* UOnlineGameInterfaceSteamworks::GetGameSettings(const
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -358,7 +358,7 @@ class UOnlineGameSettings* UOnlineGameInterfaceSteamworks::GetGameSettings(const
 
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.GetResolvedConnectString
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // struct FName                   SessionName                    (Parm)
 // struct FString                 ConnectInfo                    (Parm, OutParm, NeedCtorLink)
@@ -374,7 +374,7 @@ bool UOnlineGameInterfaceSteamworks::GetResolvedConnectString(const struct FName
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -405,7 +405,7 @@ bool UOnlineGameInterfaceSteamworks::BindPlatformSpecificSessionToSearch(unsigne
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -414,7 +414,7 @@ bool UOnlineGameInterfaceSteamworks::BindPlatformSpecificSessionToSearch(unsigne
 
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.ReadPlatformSpecificSessionInfoBySessionName
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // struct FName                   SessionName                    (Parm)
 // unsigned char                  PlatformSpecificInfo           (Parm, OutParm)
@@ -430,7 +430,7 @@ bool UOnlineGameInterfaceSteamworks::ReadPlatformSpecificSessionInfoBySessionNam
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -442,7 +442,7 @@ bool UOnlineGameInterfaceSteamworks::ReadPlatformSpecificSessionInfoBySessionNam
 
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.ReadPlatformSpecificSessionInfo
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // struct FOnlineGameSearchResult DesiredGame                    (Const, Parm, OutParm)
 // unsigned char                  PlatformSpecificInfo           (Parm, OutParm)
@@ -457,7 +457,7 @@ bool UOnlineGameInterfaceSteamworks::ReadPlatformSpecificSessionInfo(struct FOnl
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -487,7 +487,7 @@ bool UOnlineGameInterfaceSteamworks::QueryNonAdvertisedData(int StartAt, int Num
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -509,7 +509,7 @@ void UOnlineGameInterfaceSteamworks::ClearUnregisterPlayerCompleteDelegate(const
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -529,7 +529,7 @@ void UOnlineGameInterfaceSteamworks::AddUnregisterPlayerCompleteDelegate(const s
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -553,7 +553,7 @@ void UOnlineGameInterfaceSteamworks::OnUnregisterPlayerComplete(const struct FNa
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -577,7 +577,7 @@ bool UOnlineGameInterfaceSteamworks::UnregisterPlayer(const struct FName& Sessio
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -599,7 +599,7 @@ void UOnlineGameInterfaceSteamworks::ClearRegisterPlayerCompleteDelegate(const s
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -619,7 +619,7 @@ void UOnlineGameInterfaceSteamworks::AddRegisterPlayerCompleteDelegate(const str
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -643,7 +643,7 @@ void UOnlineGameInterfaceSteamworks::OnRegisterPlayerComplete(const struct FName
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -669,7 +669,7 @@ bool UOnlineGameInterfaceSteamworks::RegisterPlayer(const struct FName& SessionN
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -695,7 +695,7 @@ bool UOnlineGameInterfaceSteamworks::AcceptGameInvite(unsigned char LocalUserNum
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -704,7 +704,7 @@ bool UOnlineGameInterfaceSteamworks::AcceptGameInvite(unsigned char LocalUserNum
 
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.OnGameInviteAccepted
-// (Public, Delegate, HasOutParms)
+// (Public, Delegate, HasOutparams)
 // Parameters:
 // struct FOnlineGameSearchResult InviteResult                   (Const, Parm, OutParm)
 
@@ -716,7 +716,7 @@ void UOnlineGameInterfaceSteamworks::OnGameInviteAccepted(struct FOnlineGameSear
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -741,7 +741,7 @@ void UOnlineGameInterfaceSteamworks::ClearGameInviteAcceptedDelegate(unsigned ch
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -763,14 +763,14 @@ void UOnlineGameInterfaceSteamworks::AddGameInviteAcceptedDelegate(unsigned char
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.UpdateOnlineGame
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // struct FName                   SessionName                    (Parm)
 // class UOnlineGameSettings*     UpdatedGameSettings            (Parm)
@@ -789,7 +789,7 @@ bool UOnlineGameInterfaceSteamworks::UpdateOnlineGame(const struct FName& Sessio
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -811,7 +811,7 @@ struct FString UOnlineSubsystemSteamworks::GetCountryString()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -835,7 +835,7 @@ void UOnlineSubsystemSteamworks::ClearCheckDownloadableContentListDelegate(unsig
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -857,7 +857,7 @@ void UOnlineSubsystemSteamworks::AddCheckDownloadableContentListDelegate(unsigne
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -878,7 +878,7 @@ bool UOnlineSubsystemSteamworks::CheckDownloadableContentList(unsigned char Loca
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -902,14 +902,14 @@ void UOnlineSubsystemSteamworks::OnCheckDownloadableContentList(unsigned char Lo
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetCriticalDownloadableContentList
-// (Public, HasOutParms)
+// (Public, HasOutparams)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // TArray<struct FMarketplaceContent> DLCList                        (Parm, OutParm, NeedCtorLink)
@@ -924,7 +924,7 @@ unsigned char UOnlineSubsystemSteamworks::GetCriticalDownloadableContentList(uns
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -936,7 +936,7 @@ unsigned char UOnlineSubsystemSteamworks::GetCriticalDownloadableContentList(uns
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadCriticalDownloadableContentList
-// (HasOptionalParms, Public)
+// (HasOptionalparams, Public)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // int                            CategoryMask                   (OptionalParm, Parm)
@@ -952,7 +952,7 @@ bool UOnlineSubsystemSteamworks::ReadCriticalDownloadableContentList(unsigned ch
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -976,7 +976,7 @@ void UOnlineSubsystemSteamworks::ClearReadCriticalDownloadableContentListComplet
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -998,7 +998,7 @@ void UOnlineSubsystemSteamworks::AddReadCriticalDownloadableContentListComplete(
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -1018,14 +1018,14 @@ void UOnlineSubsystemSteamworks::OnReadCriticalDownloadableContentListComplete(b
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetHiddenDownloadableContentList
-// (Public, HasOutParms)
+// (Public, HasOutparams)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // TArray<struct FMarketplaceContent> DLCList                        (Parm, OutParm, NeedCtorLink)
@@ -1040,7 +1040,7 @@ unsigned char UOnlineSubsystemSteamworks::GetHiddenDownloadableContentList(unsig
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1068,7 +1068,7 @@ bool UOnlineSubsystemSteamworks::ReadHiddenDownloadableContentList(unsigned char
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1092,7 +1092,7 @@ void UOnlineSubsystemSteamworks::ClearReadHiddenDownloadableContentListComplete(
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -1114,7 +1114,7 @@ void UOnlineSubsystemSteamworks::AddReadHiddenDownloadableContentListComplete(un
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -1134,14 +1134,14 @@ void UOnlineSubsystemSteamworks::OnReadHiddenDownloadableContentListComplete(boo
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetDownloadableContentList
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // TArray<struct FMarketplaceContent> DLCList                        (Parm, OutParm, NeedCtorLink)
@@ -1157,7 +1157,7 @@ unsigned char UOnlineSubsystemSteamworks::GetDownloadableContentList(unsigned ch
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1169,7 +1169,7 @@ unsigned char UOnlineSubsystemSteamworks::GetDownloadableContentList(unsigned ch
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadDownloadableContentList
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // int                            CategoryMask                   (OptionalParm, Parm)
@@ -1186,7 +1186,7 @@ bool UOnlineSubsystemSteamworks::ReadDownloadableContentList(unsigned char Local
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1210,7 +1210,7 @@ void UOnlineSubsystemSteamworks::ClearReadDownloadableContentListComplete(unsign
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -1232,7 +1232,7 @@ void UOnlineSubsystemSteamworks::AddReadDownloadableContentListComplete(unsigned
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -1252,14 +1252,14 @@ void UOnlineSubsystemSteamworks::OnReadDownloadableContentListComplete(bool bWas
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetSaveGamesList
-// (Public, HasOutParms)
+// (Public, HasOutparams)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // TArray<struct FOnlineContent>  SaveGamesList                  (Parm, OutParm, NeedCtorLink)
@@ -1274,7 +1274,7 @@ unsigned char UOnlineSubsystemSteamworks::GetSaveGamesList(unsigned char LocalUs
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1286,7 +1286,7 @@ unsigned char UOnlineSubsystemSteamworks::GetSaveGamesList(unsigned char LocalUs
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadSaveGamesList
-// (HasOptionalParms, Public)
+// (HasOptionalparams, Public)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // int                            DeviceID                       (OptionalParm, Parm)
@@ -1304,7 +1304,7 @@ bool UOnlineSubsystemSteamworks::ReadSaveGamesList(unsigned char LocalUserNum, i
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1328,7 +1328,7 @@ void UOnlineSubsystemSteamworks::ClearReadSaveGamesComplete(unsigned char LocalU
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -1350,7 +1350,7 @@ void UOnlineSubsystemSteamworks::AddReadSaveGamesComplete(unsigned char LocalUse
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -1370,7 +1370,7 @@ void UOnlineSubsystemSteamworks::OnReadSaveGamesComplete(bool bWasSuccessful)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -1391,7 +1391,7 @@ bool UOnlineSubsystemSteamworks::ClearSaveGames(unsigned char LocalUserNum)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1420,7 +1420,7 @@ bool UOnlineSubsystemSteamworks::DeleteSaveGame(unsigned char LocalUserNum, int 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1444,7 +1444,7 @@ void UOnlineSubsystemSteamworks::ClearWriteSaveGameDataComplete(unsigned char Lo
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -1466,7 +1466,7 @@ void UOnlineSubsystemSteamworks::AddWriteSaveGameDataComplete(unsigned char Loca
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -1496,14 +1496,14 @@ void UOnlineSubsystemSteamworks::OnWriteSaveGameDataComplete(bool bWasSuccessful
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteSaveGameData
-// (Public, HasOutParms)
+// (Public, HasOutparams)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // int                            DeviceID                       (Parm)
@@ -1526,7 +1526,7 @@ bool UOnlineSubsystemSteamworks::WriteSaveGameData(unsigned char LocalUserNum, i
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1553,7 +1553,7 @@ void UOnlineSubsystemSteamworks::ClearReadSaveGameDataComplete(unsigned char Loc
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -1575,7 +1575,7 @@ void UOnlineSubsystemSteamworks::AddReadSaveGameDataComplete(unsigned char Local
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -1605,14 +1605,14 @@ void UOnlineSubsystemSteamworks::OnReadSaveGameDataComplete(bool bWasSuccessful,
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetSaveGameData
-// (Public, HasOutParms)
+// (Public, HasOutparams)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // int                            DeviceID                       (Parm)
@@ -1636,7 +1636,7 @@ bool UOnlineSubsystemSteamworks::GetSaveGameData(unsigned char LocalUserNum, int
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1672,7 +1672,7 @@ bool UOnlineSubsystemSteamworks::ReadSaveGameData(unsigned char LocalUserNum, in
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1681,7 +1681,7 @@ bool UOnlineSubsystemSteamworks::ReadSaveGameData(unsigned char LocalUserNum, in
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetAvailableDownloadCounts
-// (Public, HasOutParms)
+// (Public, HasOutparams)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // int                            NewDownloads                   (Parm, OutParm)
@@ -1696,7 +1696,7 @@ void UOnlineSubsystemSteamworks::GetAvailableDownloadCounts(unsigned char LocalU
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1723,7 +1723,7 @@ void UOnlineSubsystemSteamworks::ClearQueryAvailableDownloadsComplete(unsigned c
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -1745,7 +1745,7 @@ void UOnlineSubsystemSteamworks::AddQueryAvailableDownloadsComplete(unsigned cha
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -1765,14 +1765,14 @@ void UOnlineSubsystemSteamworks::OnQueryAvailableDownloadsComplete(bool bWasSucc
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.QueryAvailableDownloads
-// (HasOptionalParms, Public)
+// (HasOptionalparams, Public)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // int                            CategoryMask                   (OptionalParm, Parm)
@@ -1788,7 +1788,7 @@ bool UOnlineSubsystemSteamworks::QueryAvailableDownloads(unsigned char LocalUser
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1811,7 +1811,7 @@ bool UOnlineSubsystemSteamworks::ClearCrossTitleSaveGames(unsigned char LocalUse
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1835,7 +1835,7 @@ void UOnlineSubsystemSteamworks::ClearReadCrossTitleSaveGameDataComplete(unsigne
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -1857,7 +1857,7 @@ void UOnlineSubsystemSteamworks::AddReadCrossTitleSaveGameDataComplete(unsigned 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -1889,14 +1889,14 @@ void UOnlineSubsystemSteamworks::OnReadCrossTitleSaveGameDataComplete(bool bWasS
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetCrossTitleSaveGameData
-// (Public, HasOutParms)
+// (Public, HasOutparams)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // int                            DeviceID                       (Parm)
@@ -1922,7 +1922,7 @@ bool UOnlineSubsystemSteamworks::GetCrossTitleSaveGameData(unsigned char LocalUs
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1960,7 +1960,7 @@ bool UOnlineSubsystemSteamworks::ReadCrossTitleSaveGameData(unsigned char LocalU
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -1986,7 +1986,7 @@ void UOnlineSubsystemSteamworks::ClearReadCrossTitleContentCompleteDelegate(unsi
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2010,7 +2010,7 @@ void UOnlineSubsystemSteamworks::AddReadCrossTitleContentCompleteDelegate(unsign
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2030,14 +2030,14 @@ void UOnlineSubsystemSteamworks::OnReadCrossTitleContentComplete(bool bWasSucces
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetCrossTitleContentList
-// (Public, HasOutParms)
+// (Public, HasOutparams)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // unsigned char                  ContentType                    (Parm)
@@ -2054,7 +2054,7 @@ unsigned char UOnlineSubsystemSteamworks::GetCrossTitleContentList(unsigned char
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2081,14 +2081,14 @@ void UOnlineSubsystemSteamworks::ClearCrossTitleContentList(unsigned char LocalU
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadCrossTitleContentList
-// (HasOptionalParms, Public)
+// (HasOptionalparams, Public)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // unsigned char                  ContentType                    (Parm)
@@ -2108,7 +2108,7 @@ bool UOnlineSubsystemSteamworks::ReadCrossTitleContentList(unsigned char LocalUs
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2117,7 +2117,7 @@ bool UOnlineSubsystemSteamworks::ReadCrossTitleContentList(unsigned char LocalUs
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetContentList
-// (Public, HasOutParms)
+// (Public, HasOutparams)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // unsigned char                  ContentType                    (Parm)
@@ -2134,7 +2134,7 @@ unsigned char UOnlineSubsystemSteamworks::GetContentList(unsigned char LocalUser
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2161,14 +2161,14 @@ void UOnlineSubsystemSteamworks::ClearContentList(unsigned char LocalUserNum, un
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadContentList
-// (HasOptionalParms, Public)
+// (HasOptionalparams, Public)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // unsigned char                  ContentType                    (Parm)
@@ -2186,7 +2186,7 @@ bool UOnlineSubsystemSteamworks::ReadContentList(unsigned char LocalUserNum, uns
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2212,7 +2212,7 @@ void UOnlineSubsystemSteamworks::ClearReadContentComplete(unsigned char LocalUse
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2236,7 +2236,7 @@ void UOnlineSubsystemSteamworks::AddReadContentComplete(unsigned char LocalUserN
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2256,14 +2256,14 @@ void UOnlineSubsystemSteamworks::OnReadContentComplete(bool bWasSuccessful)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearContentChangeDelegate
-// (HasOptionalParms, Public)
+// (HasOptionalparams, Public)
 // Parameters:
 // struct FScriptDelegate         ContentDelegate                (Parm, NeedCtorLink)
 // unsigned char                  LocalUserNum                   (OptionalParm, Parm)
@@ -2278,14 +2278,14 @@ void UOnlineSubsystemSteamworks::ClearContentChangeDelegate(const struct FScript
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddContentChangeDelegate
-// (HasOptionalParms, Public)
+// (HasOptionalparams, Public)
 // Parameters:
 // struct FScriptDelegate         ContentDelegate                (Parm, NeedCtorLink)
 // unsigned char                  LocalUserNum                   (OptionalParm, Parm)
@@ -2300,7 +2300,7 @@ void UOnlineSubsystemSteamworks::AddContentChangeDelegate(const struct FScriptDe
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2320,7 +2320,7 @@ void UOnlineSubsystemSteamworks::ClearContentChangeDelegateEx(const struct FScri
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2340,7 +2340,7 @@ void UOnlineSubsystemSteamworks::AddContentChangeDelegateEx(const struct FScript
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2357,7 +2357,7 @@ void UOnlineSubsystemSteamworks::OnContentChange()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2378,7 +2378,7 @@ bool UOnlineSubsystemSteamworks::ShowRedeemCodeUI(unsigned char LocalUserNum)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2398,7 +2398,7 @@ void UOnlineSubsystemSteamworks::DumpSteamworksSessionState()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2415,7 +2415,7 @@ void UOnlineSubsystemSteamworks::DumpSessionState()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2439,7 +2439,7 @@ bool UOnlineSubsystemSteamworks::SetVoiceVolume(unsigned char VolType, float Vol
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2463,7 +2463,7 @@ void UOnlineSubsystemSteamworks::ClearUnlockAvatarAwardCompleteDelegate(unsigned
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2485,7 +2485,7 @@ void UOnlineSubsystemSteamworks::AddUnlockAvatarAwardCompleteDelegate(unsigned c
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2505,14 +2505,14 @@ void UOnlineSubsystemSteamworks::OnUnlockAvatarAwardComplete(bool bWasSuccessful
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetFriendJoinURL
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // struct FUniqueNetId            FriendUID                      (Parm)
 // struct FString                 ServerURL                      (Parm, OutParm, NeedCtorLink)
@@ -2529,7 +2529,7 @@ bool UOnlineSubsystemSteamworks::GetFriendJoinURL(const struct FUniqueNetId& Fri
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2543,7 +2543,7 @@ bool UOnlineSubsystemSteamworks::GetFriendJoinURL(const struct FUniqueNetId& Fri
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetCommandlineJoinURL
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // bool                           bMarkAsJoined                  (Parm)
 // struct FString                 ServerURL                      (Parm, OutParm, NeedCtorLink)
@@ -2560,7 +2560,7 @@ bool UOnlineSubsystemSteamworks::GetCommandlineJoinURL(bool bMarkAsJoined, struc
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2574,7 +2574,7 @@ bool UOnlineSubsystemSteamworks::GetCommandlineJoinURL(bool bMarkAsJoined, struc
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.Int64ToUniqueNetId
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // struct FString                 UIDString                      (Parm, NeedCtorLink)
 // struct FUniqueNetId            OutUID                         (Parm, OutParm)
@@ -2590,7 +2590,7 @@ bool UOnlineSubsystemSteamworks::Int64ToUniqueNetId(const struct FString& UIDStr
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2602,7 +2602,7 @@ bool UOnlineSubsystemSteamworks::Int64ToUniqueNetId(const struct FString& UIDStr
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UniqueNetIdToInt64
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // struct FUniqueNetId            Uid                            (Const, Parm, OutParm)
 // struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
@@ -2616,7 +2616,7 @@ struct FString UOnlineSubsystemSteamworks::UniqueNetIdToInt64(struct FUniqueNetI
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2642,7 +2642,7 @@ void UOnlineSubsystemSteamworks::NotifyVOIPPlaybackFinished(class UAudioComponen
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2662,14 +2662,14 @@ void UOnlineSubsystemSteamworks::OnVOIPPlaybackFinished(class UAudioComponent* A
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowProfileUI
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // struct FString                 SubURL                         (OptionalParm, Parm, NeedCtorLink)
@@ -2688,7 +2688,7 @@ bool UOnlineSubsystemSteamworks::ShowProfileUI(unsigned char LocalUserNum, const
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2697,7 +2697,7 @@ bool UOnlineSubsystemSteamworks::ShowProfileUI(unsigned char LocalUserNum, const
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UniqueNetIdToPlayerName
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // struct FUniqueNetId            Uid                            (Const, Parm, OutParm)
 // struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
@@ -2711,7 +2711,7 @@ struct FString UOnlineSubsystemSteamworks::UniqueNetIdToPlayerName(struct FUniqu
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2742,7 +2742,7 @@ bool UOnlineSubsystemSteamworks::DisplayAchievementProgress(int AchievementId, i
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2770,7 +2770,7 @@ bool UOnlineSubsystemSteamworks::CreateLeaderboard(const struct FString& Leaderb
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2794,7 +2794,7 @@ bool UOnlineSubsystemSteamworks::ResetStats(bool bResetAchievements)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2803,7 +2803,7 @@ bool UOnlineSubsystemSteamworks::ResetStats(bool bResetAchievements)
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowCustomMessageUI
-// (HasOptionalParms, Public, HasOutParms)
+// (HasOptionalparams, Public, HasOutparams)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // TArray<struct FUniqueNetId>    Recipients                     (Const, Parm, OutParm, NeedCtorLink)
@@ -2824,7 +2824,7 @@ bool UOnlineSubsystemSteamworks::ShowCustomMessageUI(unsigned char LocalUserNum,
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2851,7 +2851,7 @@ void UOnlineSubsystemSteamworks::ClearCrossTitleProfileSettings(unsigned char Lo
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2874,7 +2874,7 @@ class UOnlineProfileSettings* UOnlineSubsystemSteamworks::GetCrossTitleProfileSe
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2898,7 +2898,7 @@ void UOnlineSubsystemSteamworks::ClearReadCrossTitleProfileSettingsCompleteDeleg
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2920,7 +2920,7 @@ void UOnlineSubsystemSteamworks::AddReadCrossTitleProfileSettingsCompleteDelegat
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2944,7 +2944,7 @@ void UOnlineSubsystemSteamworks::OnReadCrossTitleProfileSettingsComplete(unsigne
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -2969,7 +2969,7 @@ bool UOnlineSubsystemSteamworks::ReadCrossTitleProfileSettings(unsigned char Loc
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -2994,7 +2994,7 @@ bool UOnlineSubsystemSteamworks::UnlockAvatarAward(unsigned char LocalUserNum, i
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3016,7 +3016,7 @@ TArray<struct FString> UOnlineSubsystemSteamworks::EnumerateFilesOnRemoteStorage
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3040,7 +3040,7 @@ bool UOnlineSubsystemSteamworks::DeleteFileFromRemoteStorage(const struct FStrin
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3049,7 +3049,7 @@ bool UOnlineSubsystemSteamworks::DeleteFileFromRemoteStorage(const struct FStrin
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadBytesFromRemoteStorage
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // struct FString                 Filename                       (Parm, NeedCtorLink)
 // TArray<unsigned char>          Data                           (Parm, OutParm, NeedCtorLink)
@@ -3065,7 +3065,7 @@ bool UOnlineSubsystemSteamworks::ReadBytesFromRemoteStorage(const struct FString
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3077,7 +3077,7 @@ bool UOnlineSubsystemSteamworks::ReadBytesFromRemoteStorage(const struct FString
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadStringFromRemoteStorage
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // struct FString                 Filename                       (Parm, NeedCtorLink)
 // struct FString                 Data                           (Parm, OutParm, NeedCtorLink)
@@ -3093,7 +3093,7 @@ bool UOnlineSubsystemSteamworks::ReadStringFromRemoteStorage(const struct FStrin
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3122,7 +3122,7 @@ bool UOnlineSubsystemSteamworks::WriteBytesToRemoteStorage(const struct FString&
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3148,7 +3148,7 @@ bool UOnlineSubsystemSteamworks::WriteStringToRemoteStorage(const struct FString
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3157,7 +3157,7 @@ bool UOnlineSubsystemSteamworks::WriteStringToRemoteStorage(const struct FString
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetSteamClanData
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // TArray<struct FSteamPlayerClanData> Results                        (Parm, OutParm, NeedCtorLink)
 
@@ -3170,7 +3170,7 @@ void UOnlineSubsystemSteamworks::GetSteamClanData(TArray<struct FSteamPlayerClan
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3193,7 +3193,7 @@ void UOnlineSubsystemSteamworks::ClearGetNumberOfCurrentPlayersCompleteDelegate(
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3213,7 +3213,7 @@ void UOnlineSubsystemSteamworks::AddGetNumberOfCurrentPlayersCompleteDelegate(co
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3233,7 +3233,7 @@ void UOnlineSubsystemSteamworks::OnGetNumberOfCurrentPlayersComplete(int TotalPl
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3253,7 +3253,7 @@ bool UOnlineSubsystemSteamworks::GetNumberOfCurrentPlayers()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3280,7 +3280,7 @@ void UOnlineSubsystemSteamworks::ReadOnlineAvatar(const struct FUniqueNetId& Pla
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3302,14 +3302,14 @@ void UOnlineSubsystemSteamworks::OnReadOnlineAvatarComplete(const struct FUnique
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowCustomPlayersUI
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // TArray<struct FUniqueNetId>    Players                        (Const, Parm, OutParm, NeedCtorLink)
@@ -3329,7 +3329,7 @@ bool UOnlineSubsystemSteamworks::ShowCustomPlayersUI(unsigned char LocalUserNum,
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3341,7 +3341,7 @@ bool UOnlineSubsystemSteamworks::ShowCustomPlayersUI(unsigned char LocalUserNum,
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetAchievements
-// (Native, HasOptionalParms, Public, HasOutParms)
+// (Native, HasOptionalparams, Public, HasOutparams)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // TArray<struct FAchievementDetails> Achievements                   (Parm, OutParm, NeedCtorLink)
@@ -3359,7 +3359,7 @@ unsigned char UOnlineSubsystemSteamworks::GetAchievements(unsigned char LocalUse
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3386,7 +3386,7 @@ void UOnlineSubsystemSteamworks::ClearReadAchievementsCompleteDelegate(unsigned 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3408,7 +3408,7 @@ void UOnlineSubsystemSteamworks::AddReadAchievementsCompleteDelegate(unsigned ch
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3428,14 +3428,14 @@ void UOnlineSubsystemSteamworks::OnReadAchievementsComplete(int TitleId)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadAchievements
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // int                            TitleId                        (OptionalParm, Parm)
@@ -3456,7 +3456,7 @@ bool UOnlineSubsystemSteamworks::ReadAchievements(unsigned char LocalUserNum, in
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3480,7 +3480,7 @@ bool UOnlineSubsystemSteamworks::ShowPlayersUI(unsigned char LocalUserNum)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3506,7 +3506,7 @@ bool UOnlineSubsystemSteamworks::ShowFriendsInviteUI(unsigned char LocalUserNum,
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3530,7 +3530,7 @@ bool UOnlineSubsystemSteamworks::ShowFriendsUI(unsigned char LocalUserNum)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3554,7 +3554,7 @@ void UOnlineSubsystemSteamworks::ClearProfileDataChangedDelegate(unsigned char L
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3576,7 +3576,7 @@ void UOnlineSubsystemSteamworks::AddProfileDataChangedDelegate(unsigned char Loc
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3593,7 +3593,7 @@ void UOnlineSubsystemSteamworks::OnProfileDataChanged()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3617,7 +3617,7 @@ bool UOnlineSubsystemSteamworks::UnlockGamerPicture(unsigned char LocalUserNum, 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3641,7 +3641,7 @@ void UOnlineSubsystemSteamworks::ClearUnlockAchievementCompleteDelegate(unsigned
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3663,7 +3663,7 @@ void UOnlineSubsystemSteamworks::AddUnlockAchievementCompleteDelegate(unsigned c
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3683,7 +3683,7 @@ void UOnlineSubsystemSteamworks::OnUnlockAchievementComplete(bool bWasSuccessful
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3707,7 +3707,7 @@ bool UOnlineSubsystemSteamworks::UnlockAchievement(unsigned char LocalUserNum, i
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3716,7 +3716,7 @@ bool UOnlineSubsystemSteamworks::UnlockAchievement(unsigned char LocalUserNum, i
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsDeviceValid
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // int                            DeviceID                       (Parm)
 // int                            SizeNeeded                     (OptionalParm, Parm)
@@ -3733,7 +3733,7 @@ bool UOnlineSubsystemSteamworks::IsDeviceValid(int DeviceID, int SizeNeeded)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3742,7 +3742,7 @@ bool UOnlineSubsystemSteamworks::IsDeviceValid(int DeviceID, int SizeNeeded)
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetDeviceSelectionResults
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // struct FString                 DeviceName                     (Parm, OutParm, NeedCtorLink)
@@ -3758,7 +3758,7 @@ int UOnlineSubsystemSteamworks::GetDeviceSelectionResults(unsigned char LocalUse
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3785,7 +3785,7 @@ void UOnlineSubsystemSteamworks::ClearDeviceSelectionDoneDelegate(unsigned char 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3807,7 +3807,7 @@ void UOnlineSubsystemSteamworks::AddDeviceSelectionDoneDelegate(unsigned char Lo
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -3827,14 +3827,14 @@ void UOnlineSubsystemSteamworks::OnDeviceSelectionComplete(bool bWasSuccessful)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowDeviceSelectionUI
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // int                            SizeNeeded                     (Parm)
@@ -3855,7 +3855,7 @@ bool UOnlineSubsystemSteamworks::ShowDeviceSelectionUI(unsigned char LocalUserNu
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3879,7 +3879,7 @@ bool UOnlineSubsystemSteamworks::ShowMembershipMarketplaceUI(unsigned char Local
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3905,7 +3905,7 @@ bool UOnlineSubsystemSteamworks::ShowContentPurchaseWebPage(unsigned char LocalU
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3914,7 +3914,7 @@ bool UOnlineSubsystemSteamworks::ShowContentPurchaseWebPage(unsigned char LocalU
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowContentPurchaseUI
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // struct FString                 Offer                          (Parm, NeedCtorLink)
@@ -3935,7 +3935,7 @@ bool UOnlineSubsystemSteamworks::ShowContentPurchaseUI(unsigned char LocalUserNu
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3944,7 +3944,7 @@ bool UOnlineSubsystemSteamworks::ShowContentPurchaseUI(unsigned char LocalUserNu
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowContentMarketplaceUI
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // int                            CategoryMask                   (OptionalParm, Parm)
@@ -3963,7 +3963,7 @@ bool UOnlineSubsystemSteamworks::ShowContentMarketplaceUI(unsigned char LocalUse
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -3972,7 +3972,7 @@ bool UOnlineSubsystemSteamworks::ShowContentMarketplaceUI(unsigned char LocalUse
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowInviteUI
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // struct FString                 InviteText                     (OptionalParm, Parm, NeedCtorLink)
@@ -3989,7 +3989,7 @@ bool UOnlineSubsystemSteamworks::ShowInviteUI(unsigned char LocalUserNum, const 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4013,7 +4013,7 @@ bool UOnlineSubsystemSteamworks::ShowAchievementsUI(unsigned char LocalUserNum)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4037,7 +4037,7 @@ bool UOnlineSubsystemSteamworks::ShowMessagesUI(unsigned char LocalUserNum)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4063,7 +4063,7 @@ bool UOnlineSubsystemSteamworks::ShowGamerCardUI(unsigned char LocalUserNum, con
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4089,7 +4089,7 @@ bool UOnlineSubsystemSteamworks::ShowFeedbackUI(unsigned char LocalUserNum, cons
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4114,7 +4114,7 @@ bool UOnlineSubsystemSteamworks::DeleteMessage(unsigned char LocalUserNum, int M
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4137,7 +4137,7 @@ bool UOnlineSubsystemSteamworks::UnmuteAll(unsigned char LocalUserNum)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4162,7 +4162,7 @@ bool UOnlineSubsystemSteamworks::MuteAll(unsigned char LocalUserNum, bool bAllow
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4171,7 +4171,7 @@ bool UOnlineSubsystemSteamworks::MuteAll(unsigned char LocalUserNum, bool bAllow
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CalcAggregateSkill
-// (Public, HasOutParms)
+// (Public, HasOutparams)
 // Parameters:
 // TArray<struct FDouble>         Mus                            (Parm, NeedCtorLink)
 // TArray<struct FDouble>         Sigmas                         (Parm, NeedCtorLink)
@@ -4188,7 +4188,7 @@ void UOnlineSubsystemSteamworks::CalcAggregateSkill(TArray<struct FDouble> Mus, 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4200,7 +4200,7 @@ void UOnlineSubsystemSteamworks::CalcAggregateSkill(TArray<struct FDouble> Mus, 
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RegisterStatGuid
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // struct FUniqueNetId            PlayerID                       (Parm)
 // struct FString                 ClientStatGuid                 (Const, Parm, OutParm, NeedCtorLink)
@@ -4216,7 +4216,7 @@ bool UOnlineSubsystemSteamworks::RegisterStatGuid(const struct FUniqueNetId& Pla
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4241,7 +4241,7 @@ struct FString UOnlineSubsystemSteamworks::GetClientStatGuid()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4263,7 +4263,7 @@ void UOnlineSubsystemSteamworks::ClearRegisterHostStatGuidCompleteDelegateDelega
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -4283,7 +4283,7 @@ void UOnlineSubsystemSteamworks::AddRegisterHostStatGuidCompleteDelegate(const s
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -4303,14 +4303,14 @@ void UOnlineSubsystemSteamworks::OnRegisterHostStatGuidComplete(bool bWasSuccess
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RegisterHostStatGuid
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // struct FString                 HostStatGuid                   (Const, Parm, OutParm, NeedCtorLink)
 // bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -4324,7 +4324,7 @@ bool UOnlineSubsystemSteamworks::RegisterHostStatGuid(struct FString* HostStatGu
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4349,7 +4349,7 @@ struct FString UOnlineSubsystemSteamworks::GetHostStatGuid()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4373,7 +4373,7 @@ void UOnlineSubsystemSteamworks::ClearFriendMessageReceivedDelegate(unsigned cha
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -4395,7 +4395,7 @@ void UOnlineSubsystemSteamworks::AddFriendMessageReceivedDelegate(unsigned char 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -4421,14 +4421,14 @@ void UOnlineSubsystemSteamworks::OnFriendMessageReceived(unsigned char LocalUser
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetFriendMessages
-// (Public, HasOutParms)
+// (Public, HasOutparams)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // TArray<struct FOnlineFriendMessage> FriendMessages                 (Parm, OutParm, NeedCtorLink)
@@ -4442,7 +4442,7 @@ void UOnlineSubsystemSteamworks::GetFriendMessages(unsigned char LocalUserNum, T
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4465,7 +4465,7 @@ void UOnlineSubsystemSteamworks::ClearJoinFriendGameCompleteDelegate(const struc
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -4485,7 +4485,7 @@ void UOnlineSubsystemSteamworks::AddJoinFriendGameCompleteDelegate(const struct 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -4505,7 +4505,7 @@ void UOnlineSubsystemSteamworks::OnJoinFriendGameComplete(bool bWasSuccessful)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -4529,7 +4529,7 @@ bool UOnlineSubsystemSteamworks::JoinFriendGame(unsigned char LocalUserNum, cons
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4553,7 +4553,7 @@ void UOnlineSubsystemSteamworks::ClearReceivedGameInviteDelegate(unsigned char L
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -4575,7 +4575,7 @@ void UOnlineSubsystemSteamworks::AddReceivedGameInviteDelegate(unsigned char Loc
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -4597,7 +4597,7 @@ void UOnlineSubsystemSteamworks::OnReceivedGameInvite(unsigned char LocalUserNum
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -4619,7 +4619,7 @@ void UOnlineSubsystemSteamworks::ClearSentGameInviteDelegate(unsigned char Local
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -4641,7 +4641,7 @@ void UOnlineSubsystemSteamworks::AddSentGameInviteDelegate(unsigned char LocalUs
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -4663,14 +4663,14 @@ void UOnlineSubsystemSteamworks::OnSentGameInvite(unsigned char LocalUserNum, bo
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SendGameInviteToFriends
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // TArray<struct FUniqueNetId>    Friends                        (Parm, NeedCtorLink)
@@ -4689,7 +4689,7 @@ bool UOnlineSubsystemSteamworks::SendGameInviteToFriends(unsigned char LocalUser
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4698,7 +4698,7 @@ bool UOnlineSubsystemSteamworks::SendGameInviteToFriends(unsigned char LocalUser
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SendGameInviteToFriend
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // struct FUniqueNetId            Friend                         (Parm)
@@ -4717,7 +4717,7 @@ bool UOnlineSubsystemSteamworks::SendGameInviteToFriend(unsigned char LocalUserN
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4745,7 +4745,7 @@ bool UOnlineSubsystemSteamworks::SendMessageToFriend(unsigned char LocalUserNum,
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4769,7 +4769,7 @@ void UOnlineSubsystemSteamworks::ClearFriendInviteReceivedDelegate(unsigned char
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -4791,7 +4791,7 @@ void UOnlineSubsystemSteamworks::AddFriendInviteReceivedDelegate(unsigned char L
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -4817,7 +4817,7 @@ void UOnlineSubsystemSteamworks::OnFriendInviteReceived(unsigned char LocalUserN
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -4841,7 +4841,7 @@ bool UOnlineSubsystemSteamworks::DenyFriendInvite(unsigned char LocalUserNum, co
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4867,7 +4867,7 @@ bool UOnlineSubsystemSteamworks::AcceptFriendInvite(unsigned char LocalUserNum, 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4893,7 +4893,7 @@ bool UOnlineSubsystemSteamworks::RemoveFriend(unsigned char LocalUserNum, const 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4917,7 +4917,7 @@ void UOnlineSubsystemSteamworks::ClearAddFriendByNameCompleteDelegate(unsigned c
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -4939,7 +4939,7 @@ void UOnlineSubsystemSteamworks::AddAddFriendByNameCompleteDelegate(unsigned cha
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -4959,14 +4959,14 @@ void UOnlineSubsystemSteamworks::OnAddFriendByNameComplete(bool bWasSuccessful)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFriendByName
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // struct FString                 FriendName                     (Parm, NeedCtorLink)
@@ -4985,7 +4985,7 @@ bool UOnlineSubsystemSteamworks::AddFriendByName(unsigned char LocalUserNum, con
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -4994,7 +4994,7 @@ bool UOnlineSubsystemSteamworks::AddFriendByName(unsigned char LocalUserNum, con
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFriend
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // struct FUniqueNetId            NewFriend                      (Parm)
@@ -5013,7 +5013,7 @@ bool UOnlineSubsystemSteamworks::AddFriend(unsigned char LocalUserNum, const str
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5022,7 +5022,7 @@ bool UOnlineSubsystemSteamworks::AddFriend(unsigned char LocalUserNum, const str
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetKeyboardInputResults
-// (Defined, Public, HasOutParms)
+// (Defined, Public, HasOutparams)
 // Parameters:
 // unsigned char                  bWasCanceled                   (Parm, OutParm)
 // struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
@@ -5035,7 +5035,7 @@ struct FString UOnlineSubsystemSteamworks::GetKeyboardInputResults(unsigned char
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5060,7 +5060,7 @@ void UOnlineSubsystemSteamworks::ClearKeyboardInputDoneDelegate(const struct FSc
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5080,7 +5080,7 @@ void UOnlineSubsystemSteamworks::AddKeyboardInputDoneDelegate(const struct FScri
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5100,14 +5100,14 @@ void UOnlineSubsystemSteamworks::OnKeyboardInputComplete(bool bWasSuccessful)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowKeyboardUI
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // struct FString                 TitleText                      (Parm, NeedCtorLink)
@@ -5134,7 +5134,7 @@ bool UOnlineSubsystemSteamworks::ShowKeyboardUI(unsigned char LocalUserNum, cons
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5143,7 +5143,7 @@ bool UOnlineSubsystemSteamworks::ShowKeyboardUI(unsigned char LocalUserNum, cons
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SetOnlineStatus
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // int                            StatusId                       (Parm)
@@ -5161,7 +5161,7 @@ void UOnlineSubsystemSteamworks::SetOnlineStatus(unsigned char LocalUserNum, int
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5173,7 +5173,7 @@ void UOnlineSubsystemSteamworks::SetOnlineStatus(unsigned char LocalUserNum, int
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetLocalAccountNames
-// (Public, HasOutParms)
+// (Public, HasOutparams)
 // Parameters:
 // TArray<struct FString>         Accounts                       (Parm, OutParm, NeedCtorLink)
 // bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -5186,7 +5186,7 @@ bool UOnlineSubsystemSteamworks::GetLocalAccountNames(TArray<struct FString>* Ac
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5198,7 +5198,7 @@ bool UOnlineSubsystemSteamworks::GetLocalAccountNames(TArray<struct FString>* Ac
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DeleteLocalAccount
-// (HasOptionalParms, Public)
+// (HasOptionalparams, Public)
 // Parameters:
 // struct FString                 UserName                       (Parm, NeedCtorLink)
 // struct FString                 Password                       (OptionalParm, Parm, NeedCtorLink)
@@ -5214,7 +5214,7 @@ bool UOnlineSubsystemSteamworks::DeleteLocalAccount(const struct FString& UserNa
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5223,7 +5223,7 @@ bool UOnlineSubsystemSteamworks::DeleteLocalAccount(const struct FString& UserNa
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RenameLocalAccount
-// (HasOptionalParms, Public)
+// (HasOptionalparams, Public)
 // Parameters:
 // struct FString                 NewUserName                    (Parm, NeedCtorLink)
 // struct FString                 OldUserName                    (Parm, NeedCtorLink)
@@ -5241,7 +5241,7 @@ bool UOnlineSubsystemSteamworks::RenameLocalAccount(const struct FString& NewUse
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5250,7 +5250,7 @@ bool UOnlineSubsystemSteamworks::RenameLocalAccount(const struct FString& NewUse
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CreateLocalAccount
-// (HasOptionalParms, Public)
+// (HasOptionalparams, Public)
 // Parameters:
 // struct FString                 UserName                       (Parm, NeedCtorLink)
 // struct FString                 Password                       (OptionalParm, Parm, NeedCtorLink)
@@ -5266,7 +5266,7 @@ bool UOnlineSubsystemSteamworks::CreateLocalAccount(const struct FString& UserNa
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5288,7 +5288,7 @@ void UOnlineSubsystemSteamworks::ClearCreateOnlineAccountCompletedDelegate(const
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5308,7 +5308,7 @@ void UOnlineSubsystemSteamworks::AddCreateOnlineAccountCompletedDelegate(const s
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5328,14 +5328,14 @@ void UOnlineSubsystemSteamworks::OnCreateOnlineAccountCompleted(unsigned char Er
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CreateOnlineAccount
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // struct FString                 UserName                       (Parm, NeedCtorLink)
 // struct FString                 Password                       (Parm, NeedCtorLink)
@@ -5356,7 +5356,7 @@ bool UOnlineSubsystemSteamworks::CreateOnlineAccount(const struct FString& UserN
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5380,7 +5380,7 @@ bool UOnlineSubsystemSteamworks::ClearDownloadedFile(const struct FString& Filen
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5402,7 +5402,7 @@ bool UOnlineSubsystemSteamworks::ClearDownloadedFiles()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5425,7 +5425,7 @@ unsigned char UOnlineSubsystemSteamworks::GetTitleFileState(const struct FString
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5434,7 +5434,7 @@ unsigned char UOnlineSubsystemSteamworks::GetTitleFileState(const struct FString
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetTitleFileContents
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // struct FString                 Filename                       (Parm, NeedCtorLink)
 // TArray<unsigned char>          FileContents                   (Parm, OutParm, NeedCtorLink)
@@ -5450,7 +5450,7 @@ bool UOnlineSubsystemSteamworks::GetTitleFileContents(const struct FString& File
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5475,7 +5475,7 @@ void UOnlineSubsystemSteamworks::ClearReadTitleFileCompleteDelegate(const struct
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5495,7 +5495,7 @@ void UOnlineSubsystemSteamworks::AddReadTitleFileCompleteDelegate(const struct F
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5519,7 +5519,7 @@ bool UOnlineSubsystemSteamworks::ReadTitleFile(unsigned char LocalUserNum, const
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5543,7 +5543,7 @@ void UOnlineSubsystemSteamworks::OnReadTitleFileComplete(bool bWasSuccessful, co
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5563,7 +5563,7 @@ void UOnlineSubsystemSteamworks::ClearShareTitleFileCompleteDelegate(const struc
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5583,7 +5583,7 @@ void UOnlineSubsystemSteamworks::AddShareTitleFileCompleteDelegate(const struct 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5605,7 +5605,7 @@ bool UOnlineSubsystemSteamworks::ShareTitleFile(const struct FString& FileToShar
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5631,7 +5631,7 @@ void UOnlineSubsystemSteamworks::OnShareTitleFileComplete(bool bWasSuccessful, c
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5651,7 +5651,7 @@ void UOnlineSubsystemSteamworks::ClearStorageDeviceChangeDelegate(const struct F
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5671,7 +5671,7 @@ void UOnlineSubsystemSteamworks::AddStorageDeviceChangeDelegate(const struct FSc
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5688,7 +5688,7 @@ void UOnlineSubsystemSteamworks::OnStorageDeviceChange()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5707,7 +5707,7 @@ int UOnlineSubsystemSteamworks::GetLocale()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5729,7 +5729,7 @@ unsigned char UOnlineSubsystemSteamworks::GetNATType()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5751,7 +5751,7 @@ void UOnlineSubsystemSteamworks::ClearConnectionStatusChangeDelegate(const struc
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5771,7 +5771,7 @@ void UOnlineSubsystemSteamworks::AddConnectionStatusChangeDelegate(const struct 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5791,7 +5791,7 @@ void UOnlineSubsystemSteamworks::OnConnectionStatusChange(unsigned char Connecti
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5813,7 +5813,7 @@ bool UOnlineSubsystemSteamworks::IsControllerConnected(int ControllerId)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5835,7 +5835,7 @@ void UOnlineSubsystemSteamworks::ClearControllerChangeDelegate(const struct FScr
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5855,7 +5855,7 @@ void UOnlineSubsystemSteamworks::AddControllerChangeDelegate(const struct FScrip
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5877,7 +5877,7 @@ void UOnlineSubsystemSteamworks::OnControllerChange(int ControllerId, bool bIsCo
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5898,7 +5898,7 @@ void UOnlineSubsystemSteamworks::SetNetworkNotificationPosition(unsigned char Ne
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5917,7 +5917,7 @@ unsigned char UOnlineSubsystemSteamworks::GetNetworkNotificationPosition()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -5939,7 +5939,7 @@ void UOnlineSubsystemSteamworks::ClearExternalUIChangeDelegate(const struct FScr
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5959,7 +5959,7 @@ void UOnlineSubsystemSteamworks::AddExternalUIChangeDelegate(const struct FScrip
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5979,7 +5979,7 @@ void UOnlineSubsystemSteamworks::OnExternalUIChange(bool bIsOpening)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -5999,7 +5999,7 @@ void UOnlineSubsystemSteamworks::ClearLinkStatusChangeDelegate(const struct FScr
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -6019,7 +6019,7 @@ void UOnlineSubsystemSteamworks::AddLinkStatusChangeDelegate(const struct FScrip
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -6039,7 +6039,7 @@ void UOnlineSubsystemSteamworks::OnLinkStatusChange(bool bIsConnected)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -6059,7 +6059,7 @@ bool UOnlineSubsystemSteamworks::HasLinkConnection()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6082,7 +6082,7 @@ struct FUniqueNetId UOnlineSubsystemSteamworks::GetPlayerUniqueNetIdFromIndex(in
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6105,7 +6105,7 @@ struct FString UOnlineSubsystemSteamworks::GetPlayerNicknameFromIndex(int UserIn
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6114,7 +6114,7 @@ struct FString UOnlineSubsystemSteamworks::GetPlayerNicknameFromIndex(int UserIn
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteOnlinePlayerScores
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // struct FName                   SessionName                    (Parm)
 // int                            LeaderboardId                  (Parm)
@@ -6132,7 +6132,7 @@ bool UOnlineSubsystemSteamworks::WriteOnlinePlayerScores(const struct FName& Ses
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6157,7 +6157,7 @@ void UOnlineSubsystemSteamworks::ClearFlushOnlineStatsCompleteDelegate(const str
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -6177,7 +6177,7 @@ void UOnlineSubsystemSteamworks::AddFlushOnlineStatsCompleteDelegate(const struc
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -6199,7 +6199,7 @@ void UOnlineSubsystemSteamworks::OnFlushOnlineStatsComplete(const struct FName& 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -6221,7 +6221,7 @@ bool UOnlineSubsystemSteamworks::FlushOnlineStats(const struct FName& SessionNam
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6249,7 +6249,7 @@ bool UOnlineSubsystemSteamworks::WriteOnlineStats(const struct FName& SessionNam
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6272,7 +6272,7 @@ void UOnlineSubsystemSteamworks::FreeStats(class UOnlineStatsRead* StatsRead)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -6292,7 +6292,7 @@ void UOnlineSubsystemSteamworks::ClearReadOnlineStatsCompleteDelegate(const stru
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -6312,7 +6312,7 @@ void UOnlineSubsystemSteamworks::AddReadOnlineStatsCompleteDelegate(const struct
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -6332,14 +6332,14 @@ void UOnlineSubsystemSteamworks::OnReadOnlineStatsComplete(bool bWasSuccessful)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadOnlineStatsByRankAroundPlayer
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // class UOnlineStatsRead*        StatsRead                      (Parm)
@@ -6358,7 +6358,7 @@ bool UOnlineSubsystemSteamworks::ReadOnlineStatsByRankAroundPlayer(unsigned char
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6367,7 +6367,7 @@ bool UOnlineSubsystemSteamworks::ReadOnlineStatsByRankAroundPlayer(unsigned char
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadOnlineStatsByRank
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // class UOnlineStatsRead*        StatsRead                      (Parm)
 // int                            StartIndex                     (OptionalParm, Parm)
@@ -6386,7 +6386,7 @@ bool UOnlineSubsystemSteamworks::ReadOnlineStatsByRank(class UOnlineStatsRead* S
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6412,7 +6412,7 @@ bool UOnlineSubsystemSteamworks::ReadOnlineStatsForFriends(unsigned char LocalUs
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6421,7 +6421,7 @@ bool UOnlineSubsystemSteamworks::ReadOnlineStatsForFriends(unsigned char LocalUs
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadOnlineStats
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // TArray<struct FUniqueNetId>    Players                        (Const, Parm, OutParm, NeedCtorLink)
 // class UOnlineStatsRead*        StatsRead                      (Parm)
@@ -6437,7 +6437,7 @@ bool UOnlineSubsystemSteamworks::ReadOnlineStats(class UOnlineStatsRead* StatsRe
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6466,7 +6466,7 @@ bool UOnlineSubsystemSteamworks::SetSpeechRecognitionObject(unsigned char LocalU
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6492,7 +6492,7 @@ bool UOnlineSubsystemSteamworks::SelectVocabulary(unsigned char LocalUserNum, in
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6516,7 +6516,7 @@ void UOnlineSubsystemSteamworks::ClearRecognitionCompleteDelegate(unsigned char 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -6538,7 +6538,7 @@ void UOnlineSubsystemSteamworks::AddRecognitionCompleteDelegate(unsigned char Lo
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -6555,14 +6555,14 @@ void UOnlineSubsystemSteamworks::OnRecognitionComplete()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetRecognitionResults
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // TArray<struct FSpeechRecognizedWord> Words                          (Parm, OutParm, NeedCtorLink)
@@ -6578,7 +6578,7 @@ bool UOnlineSubsystemSteamworks::GetRecognitionResults(unsigned char LocalUserNu
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6605,7 +6605,7 @@ bool UOnlineSubsystemSteamworks::StopSpeechRecognition(unsigned char LocalUserNu
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6629,7 +6629,7 @@ bool UOnlineSubsystemSteamworks::StartSpeechRecognition(unsigned char LocalUserN
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6652,7 +6652,7 @@ void UOnlineSubsystemSteamworks::StopNetworkedVoice(unsigned char LocalUserNum)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -6673,7 +6673,7 @@ void UOnlineSubsystemSteamworks::StartNetworkedVoice(unsigned char LocalUserNum)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -6693,7 +6693,7 @@ void UOnlineSubsystemSteamworks::ClearPlayerTalkingDelegate(const struct FScript
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -6713,7 +6713,7 @@ void UOnlineSubsystemSteamworks::AddPlayerTalkingDelegate(const struct FScriptDe
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -6735,14 +6735,14 @@ void UOnlineSubsystemSteamworks::OnPlayerTalkingStateChange(const struct FUnique
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnmuteRemoteTalker
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // struct FUniqueNetId            PlayerID                       (Parm)
@@ -6761,7 +6761,7 @@ bool UOnlineSubsystemSteamworks::UnmuteRemoteTalker(unsigned char LocalUserNum, 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6770,7 +6770,7 @@ bool UOnlineSubsystemSteamworks::UnmuteRemoteTalker(unsigned char LocalUserNum, 
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.MuteRemoteTalker
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // struct FUniqueNetId            PlayerID                       (Parm)
@@ -6789,7 +6789,7 @@ bool UOnlineSubsystemSteamworks::MuteRemoteTalker(unsigned char LocalUserNum, co
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6817,7 +6817,7 @@ bool UOnlineSubsystemSteamworks::SetRemoteTalkerPriority(unsigned char LocalUser
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6841,7 +6841,7 @@ bool UOnlineSubsystemSteamworks::IsHeadsetPresent(unsigned char LocalUserNum)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6865,7 +6865,7 @@ bool UOnlineSubsystemSteamworks::IsRemotePlayerTalking(const struct FUniqueNetId
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6889,7 +6889,7 @@ bool UOnlineSubsystemSteamworks::IsLocalPlayerTalking(unsigned char LocalUserNum
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6913,7 +6913,7 @@ bool UOnlineSubsystemSteamworks::UnregisterRemoteTalker(const struct FUniqueNetI
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6937,7 +6937,7 @@ bool UOnlineSubsystemSteamworks::RegisterRemoteTalker(const struct FUniqueNetId&
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6961,7 +6961,7 @@ bool UOnlineSubsystemSteamworks::UnregisterLocalTalker(unsigned char LocalUserNu
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6985,7 +6985,7 @@ bool UOnlineSubsystemSteamworks::RegisterLocalTalker(unsigned char LocalUserNum)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -6994,7 +6994,7 @@ bool UOnlineSubsystemSteamworks::RegisterLocalTalker(unsigned char LocalUserNum)
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetFriendsList
-// (Native, HasOptionalParms, Public, HasOutParms)
+// (Native, HasOptionalparams, Public, HasOutparams)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // TArray<struct FOnlineFriend>   Friends                        (Parm, OutParm, NeedCtorLink)
@@ -7014,7 +7014,7 @@ unsigned char UOnlineSubsystemSteamworks::GetFriendsList(unsigned char LocalUser
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7041,7 +7041,7 @@ void UOnlineSubsystemSteamworks::ClearReadFriendsCompleteDelegate(unsigned char 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7063,7 +7063,7 @@ void UOnlineSubsystemSteamworks::AddReadFriendsCompleteDelegate(unsigned char Lo
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7083,14 +7083,14 @@ void UOnlineSubsystemSteamworks::OnReadFriendsComplete(bool bWasSuccessful)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadFriendsList
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // int                            Count                          (OptionalParm, Parm)
@@ -7109,7 +7109,7 @@ bool UOnlineSubsystemSteamworks::ReadFriendsList(unsigned char LocalUserNum, int
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7133,7 +7133,7 @@ void UOnlineSubsystemSteamworks::ClearWritePlayerStorageCompleteDelegate(unsigne
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7155,7 +7155,7 @@ void UOnlineSubsystemSteamworks::AddWritePlayerStorageCompleteDelegate(unsigned 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7177,14 +7177,14 @@ void UOnlineSubsystemSteamworks::OnWritePlayerStorageComplete(unsigned char Loca
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WritePlayerStorage
-// (HasOptionalParms, Public)
+// (HasOptionalparams, Public)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // class UOnlinePlayerStorage*    PlayerStorage                  (Parm)
@@ -7202,7 +7202,7 @@ bool UOnlineSubsystemSteamworks::WritePlayerStorage(unsigned char LocalUserNum, 
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7225,7 +7225,7 @@ class UOnlinePlayerStorage* UOnlineSubsystemSteamworks::GetPlayerStorage(unsigne
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7249,7 +7249,7 @@ void UOnlineSubsystemSteamworks::ClearReadPlayerStorageForNetIdCompleteDelegate(
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7271,7 +7271,7 @@ void UOnlineSubsystemSteamworks::AddReadPlayerStorageForNetIdCompleteDelegate(co
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7293,7 +7293,7 @@ void UOnlineSubsystemSteamworks::OnReadPlayerStorageForNetIdComplete(const struc
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7318,7 +7318,7 @@ bool UOnlineSubsystemSteamworks::ReadPlayerStorageForNetId(unsigned char LocalUs
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7342,7 +7342,7 @@ void UOnlineSubsystemSteamworks::ClearReadPlayerStorageCompleteDelegate(unsigned
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7364,7 +7364,7 @@ void UOnlineSubsystemSteamworks::AddReadPlayerStorageCompleteDelegate(unsigned c
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7386,14 +7386,14 @@ void UOnlineSubsystemSteamworks::OnReadPlayerStorageComplete(unsigned char Local
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadPlayerStorage
-// (HasOptionalParms, Public)
+// (HasOptionalparams, Public)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // class UOnlinePlayerStorage*    PlayerStorage                  (Parm)
@@ -7411,7 +7411,7 @@ bool UOnlineSubsystemSteamworks::ReadPlayerStorage(unsigned char LocalUserNum, c
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7435,7 +7435,7 @@ void UOnlineSubsystemSteamworks::ClearWriteProfileSettingsCompleteDelegate(unsig
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7457,7 +7457,7 @@ void UOnlineSubsystemSteamworks::AddWriteProfileSettingsCompleteDelegate(unsigne
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7479,7 +7479,7 @@ void UOnlineSubsystemSteamworks::OnWriteProfileSettingsComplete(unsigned char Lo
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7503,7 +7503,7 @@ bool UOnlineSubsystemSteamworks::WriteProfileSettings(unsigned char LocalUserNum
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7526,7 +7526,7 @@ class UOnlineProfileSettings* UOnlineSubsystemSteamworks::GetProfileSettings(uns
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7550,7 +7550,7 @@ void UOnlineSubsystemSteamworks::ClearReadProfileSettingsCompleteDelegate(unsign
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7572,7 +7572,7 @@ void UOnlineSubsystemSteamworks::AddReadProfileSettingsCompleteDelegate(unsigned
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7594,7 +7594,7 @@ void UOnlineSubsystemSteamworks::OnReadProfileSettingsComplete(unsigned char Loc
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7618,7 +7618,7 @@ bool UOnlineSubsystemSteamworks::ReadProfileSettings(unsigned char LocalUserNum,
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7642,7 +7642,7 @@ void UOnlineSubsystemSteamworks::ClearFriendsChangeDelegate(unsigned char LocalU
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7664,7 +7664,7 @@ void UOnlineSubsystemSteamworks::AddFriendsChangeDelegate(unsigned char LocalUse
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7684,7 +7684,7 @@ void UOnlineSubsystemSteamworks::ClearMutingChangeDelegate(const struct FScriptD
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7704,7 +7704,7 @@ void UOnlineSubsystemSteamworks::AddMutingChangeDelegate(const struct FScriptDel
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7724,7 +7724,7 @@ void UOnlineSubsystemSteamworks::ClearLoginCancelledDelegate(const struct FScrip
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7744,7 +7744,7 @@ void UOnlineSubsystemSteamworks::AddLoginCancelledDelegate(const struct FScriptD
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7766,7 +7766,7 @@ void UOnlineSubsystemSteamworks::ClearLoginStatusChangeDelegate(const struct FSc
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7788,7 +7788,7 @@ void UOnlineSubsystemSteamworks::AddLoginStatusChangeDelegate(const struct FScri
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7810,7 +7810,7 @@ void UOnlineSubsystemSteamworks::OnLoginStatusChange(unsigned char NewStatus, co
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7830,7 +7830,7 @@ void UOnlineSubsystemSteamworks::ClearLoginChangeDelegate(const struct FScriptDe
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7850,7 +7850,7 @@ void UOnlineSubsystemSteamworks::AddLoginChangeDelegate(const struct FScriptDele
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -7874,7 +7874,7 @@ bool UOnlineSubsystemSteamworks::IsMuted(unsigned char LocalUserNum, const struc
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7883,7 +7883,7 @@ bool UOnlineSubsystemSteamworks::IsMuted(unsigned char LocalUserNum, const struc
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AreAnyFriends
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // TArray<struct FFriendsQuery>   Query                          (Parm, OutParm, NeedCtorLink)
@@ -7899,7 +7899,7 @@ bool UOnlineSubsystemSteamworks::AreAnyFriends(unsigned char LocalUserNum, TArra
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7928,7 +7928,7 @@ bool UOnlineSubsystemSteamworks::IsFriend(unsigned char LocalUserNum, const stru
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7951,7 +7951,7 @@ unsigned char UOnlineSubsystemSteamworks::CanShowPresenceInformation(unsigned ch
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7974,7 +7974,7 @@ unsigned char UOnlineSubsystemSteamworks::CanViewPlayerProfiles(unsigned char Lo
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -7997,7 +7997,7 @@ unsigned char UOnlineSubsystemSteamworks::CanPurchaseContent(unsigned char Local
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -8020,7 +8020,7 @@ unsigned char UOnlineSubsystemSteamworks::CanDownloadUserContent(unsigned char L
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -8044,7 +8044,7 @@ unsigned char UOnlineSubsystemSteamworks::CanCommunicate(unsigned char LocalUser
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -8068,7 +8068,7 @@ unsigned char UOnlineSubsystemSteamworks::CanPlayOnline(unsigned char LocalUserN
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -8092,7 +8092,7 @@ void UOnlineSubsystemSteamworks::ClearGetUserAgeGroupDelegate(unsigned char Loca
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8114,7 +8114,7 @@ void UOnlineSubsystemSteamworks::AddGetUserAgeGroupDelegate(unsigned char LocalU
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8135,7 +8135,7 @@ bool UOnlineSubsystemSteamworks::GetUserAgeGroup(unsigned char LocalUserNum)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -8159,7 +8159,7 @@ void UOnlineSubsystemSteamworks::OnGetUserAgeGroup(unsigned char LocalUserNum, u
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8180,7 +8180,7 @@ struct FString UOnlineSubsystemSteamworks::GetPlayerNickname(unsigned char Local
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -8189,7 +8189,7 @@ struct FString UOnlineSubsystemSteamworks::GetPlayerNickname(unsigned char Local
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetUniquePlayerId
-// (Defined, Public, HasOutParms)
+// (Defined, Public, HasOutparams)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // struct FUniqueNetId            PlayerID                       (Parm, OutParm)
@@ -8204,7 +8204,7 @@ bool UOnlineSubsystemSteamworks::GetUniquePlayerId(unsigned char LocalUserNum, s
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -8230,7 +8230,7 @@ bool UOnlineSubsystemSteamworks::IsLocalLogin(unsigned char LocalUserNum)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -8253,7 +8253,7 @@ bool UOnlineSubsystemSteamworks::IsGuestLogin(unsigned char LocalUserNum)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -8277,7 +8277,7 @@ unsigned char UOnlineSubsystemSteamworks::GetLoginStatus(unsigned char LocalUser
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -8301,7 +8301,7 @@ void UOnlineSubsystemSteamworks::ClearLogoutCompletedDelegate(unsigned char Loca
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8323,7 +8323,7 @@ void UOnlineSubsystemSteamworks::AddLogoutCompletedDelegate(unsigned char LocalU
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8343,7 +8343,7 @@ void UOnlineSubsystemSteamworks::OnLogoutCompleted(bool bWasSuccessful)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8365,7 +8365,7 @@ bool UOnlineSubsystemSteamworks::Logout(unsigned char LocalUserNum)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -8389,7 +8389,7 @@ void UOnlineSubsystemSteamworks::ClearLoginFailedDelegate(unsigned char LocalUse
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8411,7 +8411,7 @@ void UOnlineSubsystemSteamworks::AddLoginFailedDelegate(unsigned char LocalUserN
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8433,7 +8433,7 @@ void UOnlineSubsystemSteamworks::OnLoginFailed(unsigned char LocalUserNum, unsig
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8453,7 +8453,7 @@ bool UOnlineSubsystemSteamworks::AutoLogin()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -8462,7 +8462,7 @@ bool UOnlineSubsystemSteamworks::AutoLogin()
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.Login
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // unsigned char                  LocalUserNum                   (Parm)
 // struct FString                 LoginName                      (Parm, NeedCtorLink)
@@ -8483,7 +8483,7 @@ bool UOnlineSubsystemSteamworks::Login(unsigned char LocalUserNum, const struct 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -8492,7 +8492,7 @@ bool UOnlineSubsystemSteamworks::Login(unsigned char LocalUserNum, const struct 
 
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowLoginUI
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // bool                           bShowOnlineOnly                (OptionalParm, Parm)
 // int                            NumLoginOverride               (OptionalParm, Parm)
@@ -8511,7 +8511,7 @@ bool UOnlineSubsystemSteamworks::ShowLoginUI(bool bShowOnlineOnly, int NumLoginO
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -8530,7 +8530,7 @@ void UOnlineSubsystemSteamworks::OnFriendsChange()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8547,7 +8547,7 @@ void UOnlineSubsystemSteamworks::OnMutingChange()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8564,7 +8564,7 @@ void UOnlineSubsystemSteamworks::OnLoginCancelled()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8584,7 +8584,7 @@ void UOnlineSubsystemSteamworks::OnLoginChange(unsigned char LocalUserNum)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8602,7 +8602,7 @@ void UOnlineSubsystemSteamworks::Exit()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -8622,7 +8622,7 @@ bool UOnlineSubsystemSteamworks::Init()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 

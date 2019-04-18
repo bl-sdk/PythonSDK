@@ -675,7 +675,7 @@ public:
 	virtual void VirtualFunction64() {};																			// 0x0028AA90 (0x100)
 	virtual void VirtualFunction65() {};																			// 0x00EE7430 (0x104)
 	virtual void VirtualFunction66() {};																			// 0x00592990 (0x108)
-	virtual void ProcessEvent(class UFunction* pFunction, void* pParms, void* pResult = NULL) {};																			// 0x00F757C0 (0x10C)
+	virtual void ProcessEvent(class UFunction* pFunction, void* params, void* pResult = NULL) {};																			// 0x00F757C0 (0x10C)
 	virtual void VirtualFunction68() {};																			// 0x001E10C0 (0x110)
 	virtual void VirtualFunction69() {};																			// 0x01218070 (0x114)
 	virtual void VirtualFunction70() {};																			// 0x00782B80 (0x118)
@@ -963,7 +963,9 @@ public:
 */
 
 // 0x0000 (0x003C - 0x003C)
-class UInterface : public UObject {};
+class UInterface : public UObject {
+
+};
 
 // 0x0004 (0x0040 - 0x003C)
 class UField : public UObject
@@ -998,8 +1000,8 @@ public:
 	unsigned short		iNative;									// NOT AUTO-GENERATED PROPERTY
 	unsigned short		RepOffset;									// NOT AUTO-GENERATED PROPERTY
 	struct FName		FriendlyName;								// NOT AUTO-GENERATED PROPERTY
-	unsigned short		NumParms;									// NOT AUTO-GENERATED PROPERTY
-	unsigned short		ParmsSize;									// NOT AUTO-GENERATED PROPERTY
+	unsigned short		Numparams;									// NOT AUTO-GENERATED PROPERTY
+	unsigned short		paramsSize;									// NOT AUTO-GENERATED PROPERTY
 	unsigned long		ReturnValueOffset;							// NOT AUTO-GENERATED PROPERTY
 	unsigned char		UnknownData00[0x4];						// NOT AUTO-GENERATED PROPERTY
 	void*				Func;										// NOT AUTO-GENERATED PROPERTY
@@ -1246,12 +1248,6 @@ public:
 	UObject				*ClassDefaultObject;
 	unsigned int		ClassFlags;
 	unsigned char       UnknownData00[0xD8];                           		// 0x00D0 (0x0100) MISSED OFFSET
-
-	template<typename T>
-	inline T* CreateDefaultObject()
-	{
-		return static_cast<T*>(CreateDefaultObject());
-	}
 
 	UObject* CreateDefaultObject()
 	{

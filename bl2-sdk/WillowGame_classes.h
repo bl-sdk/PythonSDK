@@ -21700,7 +21700,7 @@ public:
 	void VehicleEvent(const struct FName& EventTag);
 	void UpdateVehicleEffect(const struct FName& EventTag);
 	void TriggerVehicleEffect(const struct FName& EventTag);
-	void SetVehicleEffectParms(const struct FName& TriggerName, class UParticleSystemComponent* PSC);
+	void SetVehicleEffectparams(const struct FName& TriggerName, class UParticleSystemComponent* PSC);
 	void InitializeEffects();
 	bool FastVehicle();
 	void JumpOutCheck();

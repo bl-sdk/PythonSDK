@@ -265,7 +265,7 @@ struct FString UObject::GetLanguage()
 
 
 // Function Core.Object.GetRandomOptionSumFrequency
-// (Final, Defined, Public, HasOutParms)
+// (Final, Defined, Public, HasOutparams)
 // Parameters:
 // TArray<float>                  FreqList                       (Const, Parm, OutParm, NeedCtorLink)
 // int                            ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -290,7 +290,7 @@ int UObject::GetRandomOptionSumFrequency(TArray<float>* FreqList)
 
 
 // Function Core.Object.GetBuildChangelistNumber
-// (Final, Defined, Iterator, Latent, PreOperator, Singular, Net, NetReliable, Simulated, Exec, Native, Event, Operator, Static, HasOptionalParms, Const, Public, Private, Protected, Delegate, NetServer, HasOutParms, HasDefaults, NetClient, DLLImport, K2Call, K2Override, K2Pure)
+// (Final, Defined, Iterator, Latent, PreOperator, Singular, Net, NetReliable, Simulated, Exec, Native, Event, Operator, Static, HasOptionalparams, Const, Public, Private, Protected, Delegate, NetServer, HasOutparams, HasDefaults, NetClient, DLLImport, K2Call, K2Override, K2Pure)
 // Parameters:
 // int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
@@ -313,7 +313,7 @@ int UObject::GetBuildChangelistNumber()
 
 
 // Function Core.Object.GetEngineVersion
-// (Final, Defined, Iterator, Latent, PreOperator, Singular, Net, NetReliable, Simulated, Exec, Native, Event, Operator, Static, HasOptionalParms, Const, Public, Private, Protected, Delegate, NetServer, HasOutParms, HasDefaults, NetClient, DLLImport, K2Call, K2Override, K2Pure)
+// (Final, Defined, Iterator, Latent, PreOperator, Singular, Net, NetReliable, Simulated, Exec, Native, Event, Operator, Static, HasOptionalparams, Const, Public, Private, Protected, Delegate, NetServer, HasOutparams, HasDefaults, NetClient, DLLImport, K2Call, K2Override, K2Pure)
 // Parameters:
 // int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
@@ -336,7 +336,7 @@ int UObject::GetEngineVersion()
 
 
 // Function Core.Object.GetSystemTime
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // int                            Year                           (Parm, OutParm)
 // int                            Month                          (Parm, OutParm)
@@ -402,7 +402,7 @@ struct FString UObject::TimeStamp()
 
 
 // Function Core.Object.TransformVectorByRotation
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // struct FRotator                SourceRotation                 (Parm)
 // struct FVector                 SourceVector                   (Parm)
@@ -474,7 +474,7 @@ bool UObject::IsPendingKill()
 
 
 // Function Core.Object.ByteToFloat
-// (Final, Defined, Simulated, HasOptionalParms, Public)
+// (Final, Defined, Simulated, HasOptionalparams, Public)
 // Parameters:
 // unsigned char                  inputByte                      (Parm)
 // bool                           bSigned                        (OptionalParm, Parm)
@@ -499,7 +499,7 @@ float UObject::ByteToFloat(unsigned char inputByte, bool bSigned)
 
 
 // Function Core.Object.FloatToByte
-// (Final, Defined, Simulated, HasOptionalParms, Public)
+// (Final, Defined, Simulated, HasOptionalparams, Public)
 // Parameters:
 // float                          inputFloat                     (Parm)
 // bool                           bSigned                        (OptionalParm, Parm)
@@ -598,7 +598,7 @@ float UObject::GetHeadingAngle(const struct FVector& Dir)
 
 
 // Function Core.Object.GetAngularDegreesFromRadians
-// (Final, Defined, Simulated, Static, Public, HasOutParms)
+// (Final, Defined, Simulated, Static, Public, HasOutparams)
 // Parameters:
 // struct FVector2D               OutFOV                         (Parm, OutParm)
 
@@ -621,7 +621,7 @@ void UObject::GetAngularDegreesFromRadians(struct FVector2D* OutFOV)
 
 
 // Function Core.Object.GetAngularFromDotDist
-// (Final, Native, Static, Public, HasOutParms)
+// (Final, Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FVector2D               OutAngDist                     (Parm, OutParm)
 // struct FVector2D               DotDist                        (Parm)
@@ -647,7 +647,7 @@ void UObject::GetAngularFromDotDist(const struct FVector2D& DotDist, struct FVec
 
 
 // Function Core.Object.GetAngularDistance
-// (Final, Native, Static, Public, HasOutParms)
+// (Final, Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FVector2D               OutAngularDist                 (Parm, OutParm)
 // struct FVector                 Direction                      (Parm)
@@ -682,7 +682,7 @@ bool UObject::GetAngularDistance(const struct FVector& Direction, const struct F
 
 
 // Function Core.Object.GetDotDistance
-// (Final, Native, Static, Public, HasOutParms)
+// (Final, Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FVector2D               OutDotDist                     (Parm, OutParm)
 // struct FVector                 Direction                      (Parm)
@@ -748,7 +748,7 @@ struct FVector UObject::PointProjectToPlane(const struct FVector& Point, const s
 
 
 // Function Core.Object.PointDistToPlane
-// (Final, Defined, Simulated, HasOptionalParms, Public, HasOutParms, HasDefaults)
+// (Final, Defined, Simulated, HasOptionalparams, Public, HasOutparams, HasDefaults)
 // Parameters:
 // struct FVector                 Point                          (Parm)
 // struct FRotator                Orientation                    (Parm)
@@ -779,7 +779,7 @@ float UObject::PointDistToPlane(const struct FVector& Point, const struct FRotat
 
 
 // Function Core.Object.PointDistToSegment
-// (Final, Native, HasOptionalParms, Public, HasOutParms)
+// (Final, Native, HasOptionalparams, Public, HasOutparams)
 // Parameters:
 // struct FVector                 Point                          (Parm)
 // struct FVector                 StartPoint                     (Parm)
@@ -811,7 +811,7 @@ float UObject::PointDistToSegment(const struct FVector& Point, const struct FVec
 
 
 // Function Core.Object.PointDistToLine
-// (Final, Native, HasOptionalParms, Public, HasOutParms)
+// (Final, Native, HasOptionalparams, Public, HasOutparams)
 // Parameters:
 // struct FVector                 Point                          (Parm)
 // struct FVector                 Line                           (Parm)
@@ -843,7 +843,7 @@ float UObject::PointDistToLine(const struct FVector& Point, const struct FVector
 
 
 // Function Core.Object.GetPerObjectConfigSections
-// (Final, Native, Static, HasOptionalParms, Public, HasOutParms)
+// (Final, Native, Static, HasOptionalparams, Public, HasOutparams)
 // Parameters:
 // class UClass*                  SearchClass                    (Parm)
 // TArray<struct FString>         out_SectionNames               (Parm, OutParm, NeedCtorLink)
@@ -961,7 +961,7 @@ float UObject::GetAttributeValueByName(const struct FName& AttributeName)
 
 
 // Function Core.Object.RemoveModifier
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // class UAttributeModifier*      mod                            (Parm)
 // struct FName                   AttributeName                  (Parm)
@@ -989,7 +989,7 @@ bool UObject::RemoveModifier(class UAttributeModifier* mod, const struct FName& 
 
 
 // Function Core.Object.AddModifier
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // class UAttributeModifier*      mod                            (Parm)
 // struct FName                   AttributeName                  (Parm)
@@ -1017,7 +1017,7 @@ bool UObject::AddModifier(class UAttributeModifier* mod, const struct FName& Att
 
 
 // Function Core.Object.FindObject
-// (Final, Defined, Iterator, Latent, PreOperator, Singular, Net, NetReliable, Simulated, Exec, Native, Event, Operator, Static, HasOptionalParms, Const, Public, Private, Protected, Delegate, NetServer, HasOutParms, HasDefaults, NetClient, DLLImport, K2Call, K2Override, K2Pure)
+// (Final, Defined, Iterator, Latent, PreOperator, Singular, Net, NetReliable, Simulated, Exec, Native, Event, Operator, Static, HasOptionalparams, Const, Public, Private, Protected, Delegate, NetServer, HasOutparams, HasDefaults, NetClient, DLLImport, K2Call, K2Override, K2Pure)
 // Parameters:
 // struct FString                 ObjectName                     (Parm, NeedCtorLink)
 // class UClass*                  ObjectClass                    (Parm)
@@ -1044,7 +1044,7 @@ class UObject* UObject::FindObject(const struct FString& ObjectName, class UClas
 
 
 // Function Core.Object.DynamicLoadObject
-// (Final, Native, Static, HasOptionalParms, Public)
+// (Final, Native, Static, HasOptionalparams, Public)
 // Parameters:
 // struct FString                 ObjectName                     (Parm, NeedCtorLink)
 // class UClass*                  ObjectClass                    (Parm)
@@ -1250,7 +1250,7 @@ void UObject::BeginState(const struct FName& PreviousStateName)
 
 
 // Function Core.Object.BreakPoint
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // class UObject*                 SomeObject                     (OptionalParm, Parm)
 
@@ -1307,7 +1307,7 @@ void UObject::DumpStateStack()
 
 
 // Function Core.Object.PopState
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // bool                           bPopAll                        (OptionalParm, Parm)
 
@@ -1328,7 +1328,7 @@ void UObject::PopState(bool bPopAll)
 
 
 // Function Core.Object.PushState
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // struct FName                   NewState                       (Parm)
 // struct FName                   NewLabel                       (OptionalParm, Parm)
@@ -1399,7 +1399,7 @@ bool UObject::IsChildState(const struct FName& TestState, const struct FName& Te
 
 
 // Function Core.Object.IsInState
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // struct FName                   TestState                      (Parm)
 // bool                           bTestStateStack                (OptionalParm, Parm)
@@ -1425,7 +1425,7 @@ bool UObject::IsInState(const struct FName& TestState, bool bTestStateStack)
 
 
 // Function Core.Object.GotoState
-// (Final, Native, HasOptionalParms, Public)
+// (Final, Native, HasOptionalparams, Public)
 // Parameters:
 // struct FName                   NewState                       (OptionalParm, Parm)
 // struct FName                   Label                          (OptionalParm, Parm)
@@ -1520,7 +1520,7 @@ struct FName UObject::GetFuncName()
 
 
 // Function Core.Object.DebugBreak
-// (Final, Native, Static, HasOptionalParms, Public)
+// (Final, Native, Static, HasOptionalparams, Public)
 // Parameters:
 // int                            UserFlags                      (OptionalParm, Parm)
 // unsigned char                  DebuggerType                   (OptionalParm, Parm)
@@ -1639,7 +1639,7 @@ struct FString UObject::Localize(const struct FString& SectionName, const struct
 
 
 // Function Core.Object.LogIndentedInternal
-// (Final, Native, Static, HasOptionalParms, Private)
+// (Final, Native, Static, HasOptionalparams, Private)
 // Parameters:
 // struct FString                 S                              (Parm, CoerceParm, NeedCtorLink)
 // struct FName                   LogTag                         (Parm)
@@ -1687,7 +1687,7 @@ void UObject::WarnInternal(const struct FString& S)
 
 
 // Function Core.Object.LogInternal
-// (Final, Native, Static, HasOptionalParms, Private)
+// (Final, Native, Static, HasOptionalparams, Private)
 // Parameters:
 // struct FString                 S                              (Parm, CoerceParm, NeedCtorLink)
 // struct FName                   Tag                            (OptionalParm, Parm)
@@ -1736,7 +1736,7 @@ struct FString UObject::GetStringForNameBasedObjectPath(const struct FNameBasedO
 
 
 // Function Core.Object.SetNameBasedObjectPath
-// (Final, Native, Static, Public, HasOutParms)
+// (Final, Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FNameBasedObjectPath    ObjectPath                     (Parm, OutParm)
 // class UObject*                 Object                         (Const, Parm)
@@ -1762,7 +1762,7 @@ void UObject::SetNameBasedObjectPath(class UObject* Object, struct FNameBasedObj
 
 
 // Function Core.Object.FlagHasBeenTrueFor
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FFlag                   theFlag                        (Parm, OutParm)
 // float                          TimeSeconds                    (Parm)
@@ -1790,7 +1790,7 @@ bool UObject::FlagHasBeenTrueFor(float TimeSeconds, struct FFlag* theFlag)
 
 
 // Function Core.Object.FlagTimeRemaining
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FFlag                   theFlag                        (Parm, OutParm)
 // float                          ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -1816,7 +1816,7 @@ float UObject::FlagTimeRemaining(struct FFlag* theFlag)
 
 
 // Function Core.Object.FlagTimeSinceRaised
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FFlag                   theFlag                        (Parm, OutParm)
 // float                          ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -1842,7 +1842,7 @@ float UObject::FlagTimeSinceRaised(struct FFlag* theFlag)
 
 
 // Function Core.Object.FlagSetValue
-// (Final, Native, HasOptionalParms, Public, HasOutParms)
+// (Final, Native, HasOptionalparams, Public, HasOutparams)
 // Parameters:
 // struct FFlag                   theFlag                        (Parm, OutParm)
 // bool                           bNewValue                      (Parm)
@@ -1869,7 +1869,7 @@ void UObject::FlagSetValue(bool bNewValue, bool bForceTimeStamp, struct FFlag* t
 
 
 // Function Core.Object.FlagIsLowered
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FFlag                   theFlag                        (Parm, OutParm)
 // bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -1895,7 +1895,7 @@ bool UObject::FlagIsLowered(struct FFlag* theFlag)
 
 
 // Function Core.Object.FlagIsRaised
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FFlag                   theFlag                        (Parm, OutParm)
 // bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -1921,7 +1921,7 @@ bool UObject::FlagIsRaised(struct FFlag* theFlag)
 
 
 // Function Core.Object.FlagIsFalse
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FFlag                   theFlag                        (Parm, OutParm)
 // bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -1947,7 +1947,7 @@ bool UObject::FlagIsFalse(struct FFlag* theFlag)
 
 
 // Function Core.Object.FlagIsTrue
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FFlag                   theFlag                        (Parm, OutParm)
 // bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -1973,7 +1973,7 @@ bool UObject::FlagIsTrue(struct FFlag* theFlag)
 
 
 // Function Core.Object.FlagSetTrueTimed
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FFlag                   theFlag                        (Parm, OutParm)
 // float                          Duration                       (Parm)
@@ -1998,7 +1998,7 @@ void UObject::FlagSetTrueTimed(float Duration, struct FFlag* theFlag)
 
 
 // Function Core.Object.SmartVectTimeRemaining
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FSmartVector            theSV                          (Parm, OutParm)
 // float                          ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -2024,7 +2024,7 @@ float UObject::SmartVectTimeRemaining(struct FSmartVector* theSV)
 
 
 // Function Core.Object.SmartVectTimeSinceSet
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FSmartVector            theSV                          (Parm, OutParm)
 // float                          ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -2050,7 +2050,7 @@ float UObject::SmartVectTimeSinceSet(struct FSmartVector* theSV)
 
 
 // Function Core.Object.SmartVectGetVector
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FSmartVector            theSV                          (Parm, OutParm)
 // struct FVector                 OutVector                      (Parm, OutParm)
@@ -2079,7 +2079,7 @@ bool UObject::SmartVectGetVector(struct FSmartVector* theSV, struct FVector* Out
 
 
 // Function Core.Object.SmartVectIsSet
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FSmartVector            theSV                          (Parm, OutParm)
 // bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -2105,7 +2105,7 @@ bool UObject::SmartVectIsSet(struct FSmartVector* theSV)
 
 
 // Function Core.Object.SmartVectSetVectorTimed
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FSmartVector            theSV                          (Parm, OutParm)
 // struct FVector                 InVector                       (Parm)
@@ -2132,7 +2132,7 @@ void UObject::SmartVectSetVectorTimed(const struct FVector& InVector, float Dura
 
 
 // Function Core.Object.SmartVectValue
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FSmartVector            theSV                          (Parm, OutParm)
 // struct FVector                 ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -2158,7 +2158,7 @@ struct FVector UObject::SmartVectValue(struct FSmartVector* theSV)
 
 
 // Function Core.Object.SmartVectReset
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FSmartVector            theSV                          (Parm, OutParm)
 
@@ -2181,7 +2181,7 @@ void UObject::SmartVectReset(struct FSmartVector* theSV)
 
 
 // Function Core.Object.SmartVectSetVector
-// (Final, Native, HasOptionalParms, Public, HasOutParms)
+// (Final, Native, HasOptionalparams, Public, HasOutparams)
 // Parameters:
 // struct FSmartVector            theSV                          (Parm, OutParm)
 // struct FVector                 InVector                       (Parm)
@@ -2314,7 +2314,7 @@ struct FLinearColor UObject::MakeLinearColor(float R, float G, float B, float A)
 
 
 // Function Core.Object.GetHTMLColor
-// (Final, Native, Static, Public, HasOutParms)
+// (Final, Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FColor                  C                              (Const, Parm, OutParm)
 // struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
@@ -2369,7 +2369,7 @@ struct FColor UObject::LerpColor(const struct FColor& A, const struct FColor& B,
 
 
 // Function Core.Object.MakeColor
-// (Final, Defined, Static, HasOptionalParms, Public, HasDefaults)
+// (Final, Defined, Static, HasOptionalparams, Public, HasDefaults)
 // Parameters:
 // unsigned char                  R                              (Parm)
 // unsigned char                  G                              (Parm)
@@ -2688,7 +2688,7 @@ float UObject::GetRangeValueByPct(const struct FVector2D& Range, float Pct)
 
 
 // Function Core.Object.SubtractEqual_Vector2DVector2D
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // struct FVector2D               A                              (Parm, OutParm)
 // struct FVector2D               B                              (Parm)
@@ -2717,7 +2717,7 @@ struct FVector2D UObject::SubtractEqual_Vector2DVector2D(const struct FVector2D&
 
 
 // Function Core.Object.AddEqual_Vector2DVector2D
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // struct FVector2D               A                              (Parm, OutParm)
 // struct FVector2D               B                              (Parm)
@@ -2746,7 +2746,7 @@ struct FVector2D UObject::AddEqual_Vector2DVector2D(const struct FVector2D& B, s
 
 
 // Function Core.Object.DivideEqual_Vector2DFloat
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // struct FVector2D               A                              (Parm, OutParm)
 // float                          B                              (Parm)
@@ -2775,7 +2775,7 @@ struct FVector2D UObject::DivideEqual_Vector2DFloat(float B, struct FVector2D* A
 
 
 // Function Core.Object.MultiplyEqual_Vector2DFloat
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // struct FVector2D               A                              (Parm, OutParm)
 // float                          B                              (Parm)
@@ -2966,7 +2966,7 @@ struct FQuat UObject::Add_QuatQuat(const struct FQuat& A, const struct FQuat& B)
 
 
 // Function Core.Object.QuatSlerp
-// (Final, Native, Static, HasOptionalParms, Public)
+// (Final, Native, Static, HasOptionalparams, Public)
 // Parameters:
 // struct FQuat                   A                              (Parm)
 // struct FQuat                   B                              (Parm)
@@ -3708,7 +3708,7 @@ bool UObject::EqualEqual_ObjectObject(class UObject* A, class UObject* B)
 
 
 // Function Core.Object.GuidToString
-// (Final, Native, Static, Public, HasOutParms)
+// (Final, Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FGuid                   G                              (Const, Parm, OutParm)
 // struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
@@ -3760,7 +3760,7 @@ struct FString UObject::PathName(class UObject* CheckObject)
 
 
 // Function Core.Object.SplitString
-// (Final, Defined, Static, HasOptionalParms, Public)
+// (Final, Defined, Static, HasOptionalparams, Public)
 // Parameters:
 // struct FString                 Source                         (Parm, NeedCtorLink)
 // struct FString                 Delimiter                      (OptionalParm, Parm, NeedCtorLink)
@@ -3788,7 +3788,7 @@ TArray<struct FString> UObject::SplitString(const struct FString& Source, const 
 
 
 // Function Core.Object.ParseStringIntoArray
-// (Final, Native, Static, Public, HasOutParms)
+// (Final, Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FString                 BaseString                     (Parm, NeedCtorLink)
 // TArray<struct FString>         Pieces                         (Parm, OutParm, NeedCtorLink)
@@ -3818,7 +3818,7 @@ void UObject::ParseStringIntoArray(const struct FString& BaseString, const struc
 
 
 // Function Core.Object.JoinArray
-// (Final, Defined, Static, HasOptionalParms, Public, HasOutParms)
+// (Final, Defined, Static, HasOptionalparams, Public, HasOutparams)
 // Parameters:
 // TArray<struct FString>         StringArray                    (Parm, NeedCtorLink)
 // struct FString                 out_Result                     (Parm, OutParm, NeedCtorLink)
@@ -3871,7 +3871,7 @@ struct FString UObject::GetRightMost(const struct FString& Text)
 
 
 // Function Core.Object.Split
-// (Final, Defined, Static, HasOptionalParms, Public)
+// (Final, Defined, Static, HasOptionalparams, Public)
 // Parameters:
 // struct FString                 Text                           (Parm, CoerceParm, NeedCtorLink)
 // struct FString                 SplitStr                       (Parm, CoerceParm, NeedCtorLink)
@@ -3924,7 +3924,7 @@ int UObject::StringHash(const struct FString& S)
 
 
 // Function Core.Object.Repl
-// (Final, Native, Static, HasOptionalParms, Public)
+// (Final, Native, Static, HasOptionalparams, Public)
 // Parameters:
 // struct FString                 Src                            (Parm, CoerceParm, NeedCtorLink)
 // struct FString                 Match                          (Parm, CoerceParm, NeedCtorLink)
@@ -4109,7 +4109,7 @@ struct FString UObject::Left(const struct FString& S, int I)
 
 
 // Function Core.Object.Mid
-// (Final, Native, Static, HasOptionalParms, Public)
+// (Final, Native, Static, HasOptionalparams, Public)
 // Parameters:
 // struct FString                 S                              (Parm, CoerceParm, NeedCtorLink)
 // int                            I                              (Parm)
@@ -4138,7 +4138,7 @@ struct FString UObject::Mid(const struct FString& S, int I, int J)
 
 
 // Function Core.Object.InStr
-// (Final, Native, Static, HasOptionalParms, Public)
+// (Final, Native, Static, HasOptionalparams, Public)
 // Parameters:
 // struct FString                 S                              (Parm, CoerceParm, NeedCtorLink)
 // struct FString                 T                              (Parm, CoerceParm, NeedCtorLink)
@@ -4196,7 +4196,7 @@ int UObject::Len(const struct FString& S)
 
 
 // Function Core.Object.SubtractEqual_StrStr
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // struct FString                 A                              (Parm, OutParm, NeedCtorLink)
 // struct FString                 B                              (Parm, CoerceParm, NeedCtorLink)
@@ -4225,7 +4225,7 @@ struct FString UObject::SubtractEqual_StrStr(const struct FString& B, struct FSt
 
 
 // Function Core.Object.AtEqual_StrStr
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // struct FString                 A                              (Parm, OutParm, NeedCtorLink)
 // struct FString                 B                              (Parm, CoerceParm, NeedCtorLink)
@@ -4254,7 +4254,7 @@ struct FString UObject::AtEqual_StrStr(const struct FString& B, struct FString* 
 
 
 // Function Core.Object.ConcatEqual_StrStr
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // struct FString                 A                              (Parm, OutParm, NeedCtorLink)
 // struct FString                 B                              (Parm, CoerceParm, NeedCtorLink)
@@ -4554,7 +4554,7 @@ struct FRotator UObject::MakeRotator(int Pitch, int Yaw, int Roll)
 
 
 // Function Core.Object.SClampRotAxis
-// (Final, Defined, Simulated, Static, Public, HasOutParms)
+// (Final, Defined, Simulated, Static, Public, HasOutparams)
 // Parameters:
 // float                          DeltaTime                      (Parm)
 // int                            ViewAxis                       (Parm)
@@ -4646,7 +4646,7 @@ int UObject::ClampRotAxisFromBase(int Current, int Center, int MaxDelta)
 
 
 // Function Core.Object.ClampRotAxis
-// (Final, Defined, Simulated, Static, Public, HasOutParms)
+// (Final, Defined, Simulated, Static, Public, HasOutparams)
 // Parameters:
 // int                            ViewAxis                       (Parm)
 // int                            out_DeltaViewAxis              (Parm, OutParm)
@@ -4752,7 +4752,7 @@ int UObject::NormalizeRotAxis(int Angle)
 
 
 // Function Core.Object.RInterpTo
-// (Final, Native, Static, HasOptionalParms, Public)
+// (Final, Native, Static, HasOptionalparams, Public)
 // Parameters:
 // struct FRotator                Current                        (Parm)
 // struct FRotator                Target                         (Parm)
@@ -4812,7 +4812,7 @@ struct FRotator UObject::RTransform(const struct FRotator& R, const struct FRota
 
 
 // Function Core.Object.RLerp
-// (Final, Native, Static, HasOptionalParms, Public)
+// (Final, Native, Static, HasOptionalparams, Public)
 // Parameters:
 // struct FRotator                A                              (Parm)
 // struct FRotator                B                              (Parm)
@@ -4897,7 +4897,7 @@ struct FRotator UObject::OrthoRotation(const struct FVector& X, const struct FVe
 
 
 // Function Core.Object.RotRand
-// (Final, Native, Static, HasOptionalParms, Public)
+// (Final, Native, Static, HasOptionalparams, Public)
 // Parameters:
 // bool                           bRoll                          (OptionalParm, Parm)
 // struct FRotator                ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -4949,7 +4949,7 @@ struct FVector UObject::GetRotatorAxis(const struct FRotator& A, int Axis)
 
 
 // Function Core.Object.GetUnAxes
-// (Final, Native, Static, Public, HasOutParms)
+// (Final, Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FRotator                A                              (Parm)
 // struct FVector                 X                              (Parm, OutParm)
@@ -4981,7 +4981,7 @@ void UObject::GetUnAxes(const struct FRotator& A, struct FVector* X, struct FVec
 
 
 // Function Core.Object.GetAxes
-// (Final, Native, Static, Public, HasOutParms)
+// (Final, Native, Static, Public, HasOutparams)
 // Parameters:
 // struct FRotator                A                              (Parm)
 // struct FVector                 X                              (Parm, OutParm)
@@ -5040,7 +5040,7 @@ bool UObject::ClockwiseFrom_IntInt(int A, int B)
 
 
 // Function Core.Object.SubtractEqual_RotatorRotator
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // struct FRotator                A                              (Parm, OutParm)
 // struct FRotator                B                              (Parm)
@@ -5069,7 +5069,7 @@ struct FRotator UObject::SubtractEqual_RotatorRotator(const struct FRotator& B, 
 
 
 // Function Core.Object.AddEqual_RotatorRotator
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // struct FRotator                A                              (Parm, OutParm)
 // struct FRotator                B                              (Parm)
@@ -5152,7 +5152,7 @@ struct FRotator UObject::Add_RotatorRotator(const struct FRotator& A, const stru
 
 
 // Function Core.Object.DivideEqual_RotatorFloat
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // struct FRotator                A                              (Parm, OutParm)
 // float                          B                              (Parm)
@@ -5181,7 +5181,7 @@ struct FRotator UObject::DivideEqual_RotatorFloat(float B, struct FRotator* A)
 
 
 // Function Core.Object.MultiplyEqual_RotatorFloat
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // struct FRotator                A                              (Parm, OutParm)
 // float                          B                              (Parm)
@@ -5345,7 +5345,7 @@ bool UObject::EqualEqual_RotatorRotator(const struct FRotator& A, const struct F
 
 
 // Function Core.Object.InCylinder
-// (Final, Defined, Simulated, HasOptionalParms, Public, HasDefaults)
+// (Final, Defined, Simulated, HasOptionalparams, Public, HasDefaults)
 // Parameters:
 // struct FVector                 Origin                         (Parm)
 // struct FRotator                Dir                            (Parm)
@@ -5773,7 +5773,7 @@ float UObject::VSize(const struct FVector& A)
 
 
 // Function Core.Object.SubtractEqual_VectorVector
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // struct FVector                 A                              (Parm, OutParm)
 // struct FVector                 B                              (Parm)
@@ -5802,7 +5802,7 @@ struct FVector UObject::SubtractEqual_VectorVector(const struct FVector& B, stru
 
 
 // Function Core.Object.AddEqual_VectorVector
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // struct FVector                 A                              (Parm, OutParm)
 // struct FVector                 B                              (Parm)
@@ -5831,7 +5831,7 @@ struct FVector UObject::AddEqual_VectorVector(const struct FVector& B, struct FV
 
 
 // Function Core.Object.DivideEqual_VectorFloat
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // struct FVector                 A                              (Parm, OutParm)
 // float                          B                              (Parm)
@@ -5860,7 +5860,7 @@ struct FVector UObject::DivideEqual_VectorFloat(float B, struct FVector* A)
 
 
 // Function Core.Object.MultiplyEqual_VectorVector
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // struct FVector                 A                              (Parm, OutParm)
 // struct FVector                 B                              (Parm)
@@ -5889,7 +5889,7 @@ struct FVector UObject::MultiplyEqual_VectorVector(const struct FVector& B, stru
 
 
 // Function Core.Object.MultiplyEqual_VectorFloat
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // struct FVector                 A                              (Parm, OutParm)
 // float                          B                              (Parm)
@@ -7050,7 +7050,7 @@ float UObject::Abs(float A)
 
 
 // Function Core.Object.SubtractEqual_FloatFloat
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // float                          A                              (Parm, OutParm)
 // float                          B                              (Parm)
@@ -7079,7 +7079,7 @@ float UObject::SubtractEqual_FloatFloat(float B, float* A)
 
 
 // Function Core.Object.AddEqual_FloatFloat
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // float                          A                              (Parm, OutParm)
 // float                          B                              (Parm)
@@ -7108,7 +7108,7 @@ float UObject::AddEqual_FloatFloat(float B, float* A)
 
 
 // Function Core.Object.DivideEqual_FloatFloat
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // float                          A                              (Parm, OutParm)
 // float                          B                              (Parm)
@@ -7137,7 +7137,7 @@ float UObject::DivideEqual_FloatFloat(float B, float* A)
 
 
 // Function Core.Object.MultiplyEqual_FloatFloat
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // float                          A                              (Parm, OutParm)
 // float                          B                              (Parm)
@@ -7675,7 +7675,7 @@ int UObject::Rand(int Max)
 
 
 // Function Core.Object.SubtractSubtract_Int
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // int                            A                              (Parm, OutParm)
 // int                            ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -7702,7 +7702,7 @@ int UObject::SubtractSubtract_Int(int* A)
 
 
 // Function Core.Object.AddAdd_Int
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // int                            A                              (Parm, OutParm)
 // int                            ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -7729,7 +7729,7 @@ int UObject::AddAdd_Int(int* A)
 
 
 // Function Core.Object.SubtractSubtract_PreInt
-// (Final, PreOperator, Native, Operator, Static, Public, HasOutParms)
+// (Final, PreOperator, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // int                            A                              (Parm, OutParm)
 // int                            ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -7756,7 +7756,7 @@ int UObject::SubtractSubtract_PreInt(int* A)
 
 
 // Function Core.Object.AddAdd_PreInt
-// (Final, PreOperator, Native, Operator, Static, Public, HasOutParms)
+// (Final, PreOperator, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // int                            A                              (Parm, OutParm)
 // int                            ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -7783,7 +7783,7 @@ int UObject::AddAdd_PreInt(int* A)
 
 
 // Function Core.Object.SubtractEqual_IntInt
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // int                            A                              (Parm, OutParm)
 // int                            B                              (Parm)
@@ -7812,7 +7812,7 @@ int UObject::SubtractEqual_IntInt(int B, int* A)
 
 
 // Function Core.Object.AddEqual_IntInt
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // int                            A                              (Parm, OutParm)
 // int                            B                              (Parm)
@@ -7841,7 +7841,7 @@ int UObject::AddEqual_IntInt(int B, int* A)
 
 
 // Function Core.Object.DivideEqual_IntFloat
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // int                            A                              (Parm, OutParm)
 // float                          B                              (Parm)
@@ -7870,7 +7870,7 @@ int UObject::DivideEqual_IntFloat(float B, int* A)
 
 
 // Function Core.Object.MultiplyEqual_IntFloat
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // int                            A                              (Parm, OutParm)
 // float                          B                              (Parm)
@@ -8408,7 +8408,7 @@ int UObject::Complement_PreInt(int A)
 
 
 // Function Core.Object.SubtractSubtract_Byte
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // unsigned char                  A                              (Parm, OutParm)
 // unsigned char                  ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -8435,7 +8435,7 @@ unsigned char UObject::SubtractSubtract_Byte(unsigned char* A)
 
 
 // Function Core.Object.AddAdd_Byte
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // unsigned char                  A                              (Parm, OutParm)
 // unsigned char                  ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -8462,7 +8462,7 @@ unsigned char UObject::AddAdd_Byte(unsigned char* A)
 
 
 // Function Core.Object.SubtractSubtract_PreByte
-// (Final, PreOperator, Native, Operator, Static, Public, HasOutParms)
+// (Final, PreOperator, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // unsigned char                  A                              (Parm, OutParm)
 // unsigned char                  ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -8489,7 +8489,7 @@ unsigned char UObject::SubtractSubtract_PreByte(unsigned char* A)
 
 
 // Function Core.Object.AddAdd_PreByte
-// (Final, PreOperator, Native, Operator, Static, Public, HasOutParms)
+// (Final, PreOperator, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // unsigned char                  A                              (Parm, OutParm)
 // unsigned char                  ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -8516,7 +8516,7 @@ unsigned char UObject::AddAdd_PreByte(unsigned char* A)
 
 
 // Function Core.Object.SubtractEqual_ByteByte
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // unsigned char                  A                              (Parm, OutParm)
 // unsigned char                  B                              (Parm)
@@ -8545,7 +8545,7 @@ unsigned char UObject::SubtractEqual_ByteByte(unsigned char B, unsigned char* A)
 
 
 // Function Core.Object.AddEqual_ByteByte
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // unsigned char                  A                              (Parm, OutParm)
 // unsigned char                  B                              (Parm)
@@ -8574,7 +8574,7 @@ unsigned char UObject::AddEqual_ByteByte(unsigned char B, unsigned char* A)
 
 
 // Function Core.Object.DivideEqual_ByteByte
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // unsigned char                  A                              (Parm, OutParm)
 // unsigned char                  B                              (Parm)
@@ -8603,7 +8603,7 @@ unsigned char UObject::DivideEqual_ByteByte(unsigned char B, unsigned char* A)
 
 
 // Function Core.Object.MultiplyEqual_ByteFloat
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // unsigned char                  A                              (Parm, OutParm)
 // float                          B                              (Parm)
@@ -8632,7 +8632,7 @@ unsigned char UObject::MultiplyEqual_ByteFloat(float B, unsigned char* A)
 
 
 // Function Core.Object.MultiplyEqual_ByteByte
-// (Final, Native, Operator, Static, Public, HasOutParms)
+// (Final, Native, Operator, Static, Public, HasOutparams)
 // Parameters:
 // unsigned char                  A                              (Parm, OutParm)
 // unsigned char                  B                              (Parm)
@@ -8821,7 +8821,7 @@ bool UObject::Not_PreBool(bool A)
 
 
 // Function Core.DistributionVector.GetVectorValue
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // float                          F                              (OptionalParm, Parm)
 // int                            LastExtreme                    (OptionalParm, Parm)
@@ -8847,7 +8847,7 @@ struct FVector UDistributionVector::GetVectorValue(float F, int LastExtreme)
 
 
 // Function Core.DistributionFloat.GetFloatValue
-// (Native, HasOptionalParms, Public)
+// (Native, HasOptionalparams, Public)
 // Parameters:
 // float                          F                              (OptionalParm, Parm)
 // float                          ReturnValue                    (Parm, OutParm, ReturnParm)
@@ -8876,7 +8876,7 @@ float UDistributionFloat::GetFloatValue(float F)
 // struct FString                 Params                         (Parm, NeedCtorLink)
 // int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
-int UCommandlet::Main(const struct FString& Params)
+int UCommandlet::Main(const struct FString Params)
 {
 	static auto fn = (UFunction *)UObject::Find("Function", "Core.Commandlet.Main");
 
@@ -8899,7 +8899,7 @@ int UCommandlet::Main(const struct FString& Params)
 // struct FString                 Params                         (Parm, NeedCtorLink)
 // int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
-int UHelpCommandlet::Main(const struct FString& Params)
+int UHelpCommandlet::Main(const struct FString Params)
 {
 	static auto fn = (UFunction *)UObject::Find("Function", "Core.HelpCommandlet.Main");
 

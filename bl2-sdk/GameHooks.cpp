@@ -23,7 +23,7 @@ namespace GameHooks
 		UnrealScriptHookManager = nullptr;
 	}
 
-	bool ProcessEngineHooks(UObject* caller, UFunction* function, void* parms, void* result)
+	bool ProcessEngineHooks(UObject* caller, UFunction* function, void* params, void* result)
 	{
 		// Resolve any virtual hooks into static hooks
 		EngineHookManager->ResolveVirtualHooks(function);
@@ -37,7 +37,7 @@ namespace GameHooks
 			for (CEngineHookManager::tiHookMap iterator = hooks.begin(); iterator != hooks.end(); iterator++)
 			{
 				// maps to std::string, void*, but we want to call a tProcessEventHook* instead
-				if (!iterator->second(caller, function, parms, result))
+				if (!iterator->second(caller, function, params, result))
 				{
 					// As soon as one hook doesn't want it to fall through, we'll stop
 					return false;

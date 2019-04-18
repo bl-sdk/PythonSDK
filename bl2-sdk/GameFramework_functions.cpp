@@ -30,7 +30,7 @@ void AGamePlayerController::ClientColorFade(const struct FColor& FadeColor, unsi
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -47,7 +47,7 @@ void AGamePlayerController::CallMemLeakCheck()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -64,7 +64,7 @@ void AGamePlayerController::StopMemLeakChecking()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -84,7 +84,7 @@ void AGamePlayerController::DoMemLeakChecking(float InTimeBetweenMemLeakChecks)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -104,7 +104,7 @@ void AGamePlayerController::WarmupPause(bool bDesiredPauseState)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -123,7 +123,7 @@ bool AGamePlayerController::CanUnpauseWarmup()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -132,7 +132,7 @@ bool AGamePlayerController::CanUnpauseWarmup()
 
 
 // Function GameFramework.GamePlayerController.GetCurrentMovie
-// (Final, Native, Public, HasOutParms)
+// (Final, Native, Public, HasOutparams)
 // Parameters:
 // struct FString                 MovieName                      (Parm, OutParm, NeedCtorLink)
 
@@ -145,7 +145,7 @@ void AGamePlayerController::GetCurrentMovie(struct FString* MovieName)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -175,7 +175,7 @@ void AGamePlayerController::ClientStopMovie(float DelayInSeconds, bool bAllowMov
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -206,7 +206,7 @@ void AGamePlayerController::ClientPlayMovie(const struct FString& MovieName, int
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -232,7 +232,7 @@ void AGamePlayerController::KeepPlayingLoadingMovie()
 
 
 // Function GameFramework.GamePlayerController.ShowLoadingMovie
-// (Final, Native, Static, HasOptionalParms, Public)
+// (Final, Native, Static, HasOptionalparams, Public)
 // Parameters:
 // bool                           bShowMovie                     (Parm)
 // bool                           bPauseAfterHide                (OptionalParm, Parm)
@@ -275,7 +275,7 @@ void AGamePlayerController::SetSoundMode(const struct FName& InSoundModeName)
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -297,7 +297,7 @@ void AGamePlayerController::DoForceFeedbackForScreenShake(class UCameraShake* Sh
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -317,7 +317,7 @@ int AGamePlayerController::GetUIPlayerIndex()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -336,7 +336,7 @@ void UNavMeshGoal_OutOfViewFrom::Recycle()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -380,7 +380,7 @@ void UNavMeshGoal_OutOfViewFrom::RecycleNative()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -397,7 +397,7 @@ void UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations::Recycle()
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -447,7 +447,7 @@ void UGameStateObject::Reset()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -465,14 +465,14 @@ void UGameStateObject::PreProcessStream()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GameFramework.GameStatsAggregator.GetAggregateMappingIDs
-// (Native, Public, HasOutParms)
+// (Native, Public, HasOutparams)
 // Parameters:
 // int                            EventID                        (Parm)
 // int                            AggregateID                    (Parm, OutParm)
@@ -489,7 +489,7 @@ bool UGameStatsAggregator::GetAggregateMappingIDs(int EventID, int* AggregateID,
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -514,7 +514,7 @@ void UGameStatsAggregator::Reset()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -532,7 +532,7 @@ void UGameStatsAggregator::PostProcessStream()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
@@ -550,14 +550,14 @@ void UGameStatsAggregator::PreProcessStream()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 }
 
 
 // Function GameFramework.PlayerCollectorGame.GetSeamlessTravelActorList
-// (Event, Public, HasOutParms)
+// (Event, Public, HasOutparams)
 // Parameters:
 // bool                           bToEntry                       (Parm)
 // TArray<class AActor*>          ActorList                      (Parm, OutParm, NeedCtorLink)
@@ -571,7 +571,7 @@ void APlayerCollectorGame::GetSeamlessTravelActorList(bool bToEntry, TArray<clas
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 
@@ -581,7 +581,7 @@ void APlayerCollectorGame::GetSeamlessTravelActorList(bool bToEntry, TArray<clas
 
 
 // Function GameFramework.PlayerCollectorGame.Login
-// (Defined, Event, Public, HasOutParms)
+// (Defined, Event, Public, HasOutparams)
 // Parameters:
 // struct FString                 Portal                         (Parm, NeedCtorLink)
 // struct FString                 Options                        (Parm, NeedCtorLink)
@@ -600,7 +600,7 @@ class APlayerController* APlayerCollectorGame::Login(const struct FString& Porta
 
 	auto flags = fn->FunctionFlags;
 
-	UObject::ProcessEvent(fn, &params);
+	this->ProcessEvent(fn, &params);
 
 	fn->FunctionFlags = flags;
 

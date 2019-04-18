@@ -15,7 +15,7 @@ namespace GameHooks
 
 	void Initialize();
 	void Cleanup();
-	bool ProcessEngineHooks(UObject* pCaller, UFunction* pFunction, void* pParms, void* pResult);
+	bool ProcessEngineHooks(UObject* pCaller, UFunction* pFunction, void* pparams, void* pResult);
 	bool ProcessUnrealScriptHooks(UObject* pCaller, FFrame& Stack, void* const Result, UFunction* Function);
 }
 

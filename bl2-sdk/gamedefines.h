@@ -277,7 +277,7 @@ struct FFrame : public FOutputDevice
 	unsigned char* Locals;
 
 	struct FFrame* PreviousFrame;
-	struct FOutParmRec* OutParms;
+	struct FOutParmRec* Outparams;
 	void SkipFunction() {
 		while ((this->Code++)[0] != 0x16)
 			;

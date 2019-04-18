@@ -54,7 +54,7 @@ namespace Logging
 				{
 					std::wstring wfmt = Util::Widen(formatted);
 					BL2SDK::doInjectedCallNext();
-					gameConsole->eventOutputText(FString((wchar_t*)wfmt.c_str()));
+					gameConsole->OutputText(FString((wchar_t*)wfmt.c_str()));
 				}
 			}
 		}
