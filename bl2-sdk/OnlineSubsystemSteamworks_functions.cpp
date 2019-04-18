@@ -1,8252 +1,8635 @@
-#include "stdafx.h"
-/*
-#############################################################################################
-# Borderlands 2 (1.7) SDK
-# Generated with TheFeckless UE3 SDK Generator v1.4_Beta-Rev.51
-# ========================================================================================= #
-# File: OnlineSubsystemSteamworks_functions.h
-# ========================================================================================= #
-# Credits: uNrEaL, Tamimego, SystemFiles, R00T88, _silencer, the1domo, K@N@VEL
-# Thanks: HOOAH07, lowHertz
-# Forums: www.uc-forum.com, www.gamedeception.net
-#############################################################################################
-*/
+// Borderlands 2 (1.8.5) SDK
 
 #ifdef _MSC_VER
-#pragma pack ( push, 0x4 )
+	#pragma pack(push, 0x4)
 #endif
 
-/*
-# ========================================================================================= #
-# Functions
-# ========================================================================================= #
-*/
+#include "stdafx.h"
+
+//---------------------------------------------------------------------------
+//Functions
+//---------------------------------------------------------------------------
 
 // Function OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.GetServerAddr
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            OutServerIP                    ( CPF_Parm | CPF_OutParm )
-// int                            OutServerPort                  ( CPF_Parm | CPF_OutParm )
+// (Native, Public, HasOutParms)
+// Parameters:
+// int                            OutServerIP                    (Parm, OutParm)
+// int                            OutServerPort                  (Parm, OutParm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineAuthInterfaceSteamworks::GetServerAddr(int* OutServerIP, int* OutServerPort)
 {
-	static UFunction* pFnGetServerAddr = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.GetServerAddr");
 
-	if (!pFnGetServerAddr)
-		pFnGetServerAddr = (UFunction*)UObject::GObjects()->Data[46537];
+	UOnlineAuthInterfaceSteamworks_GetServerAddr_Params params;
 
-	UOnlineAuthInterfaceSteamworks_execGetServerAddr_Parms GetServerAddr_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetServerAddr->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetServerAddr, &GetServerAddr_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetServerAddr->FunctionFlags |= 0x400;
+	if (OutServerIP != nullptr)
+		*OutServerIP = params.OutServerIP;
+	if (OutServerPort != nullptr)
+		*OutServerPort = params.OutServerPort;
 
-	if (OutServerIP)
-		*OutServerIP = GetServerAddr_Parms.OutServerIP;
+	return params.ReturnValue;
+}
 
-	if (OutServerPort)
-		*OutServerPort = GetServerAddr_Parms.OutServerPort;
-
-	return GetServerAddr_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.GetServerUniqueId
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FUniqueNetId            OutServerUID                   ( CPF_Parm | CPF_OutParm )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FUniqueNetId            OutServerUID                   (Parm, OutParm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineAuthInterfaceSteamworks::GetServerUniqueId(struct FUniqueNetId* OutServerUID)
 {
-	static UFunction* pFnGetServerUniqueId = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.GetServerUniqueId");
 
-	if (!pFnGetServerUniqueId)
-		pFnGetServerUniqueId = (UFunction*)UObject::GObjects()->Data[46534];
+	UOnlineAuthInterfaceSteamworks_GetServerUniqueId_Params params;
 
-	UOnlineAuthInterfaceSteamworks_execGetServerUniqueId_Parms GetServerUniqueId_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetServerUniqueId->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetServerUniqueId, &GetServerUniqueId_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetServerUniqueId->FunctionFlags |= 0x400;
+	if (OutServerUID != nullptr)
+		*OutServerUID = params.OutServerUID;
 
-	if (OutServerUID)
-		memcpy(OutServerUID, &GetServerUniqueId_Parms.OutServerUID, 0x18);
+	return params.ReturnValue;
+}
 
-	return GetServerUniqueId_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.EndRemoteServerAuthSession
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// struct FUniqueNetId            ServerUID                      ( CPF_Parm )
-// int                            ServerIP                       ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FUniqueNetId            ServerUID                      (Parm)
+// int                            ServerIP                       (Parm)
 
-void UOnlineAuthInterfaceSteamworks::EndRemoteServerAuthSession(struct FUniqueNetId ServerUID, int ServerIP)
+void UOnlineAuthInterfaceSteamworks::EndRemoteServerAuthSession(const struct FUniqueNetId& ServerUID, int ServerIP)
 {
-	static UFunction* pFnEndRemoteServerAuthSession = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.EndRemoteServerAuthSession");
 
-	if (!pFnEndRemoteServerAuthSession)
-		pFnEndRemoteServerAuthSession = (UFunction*)UObject::GObjects()->Data[46531];
+	UOnlineAuthInterfaceSteamworks_EndRemoteServerAuthSession_Params params;
+	params.ServerUID = ServerUID;
+	params.ServerIP = ServerIP;
 
-	UOnlineAuthInterfaceSteamworks_execEndRemoteServerAuthSession_Parms EndRemoteServerAuthSession_Parms;
-	memcpy(&EndRemoteServerAuthSession_Parms.ServerUID, &ServerUID, 0x18);
-	EndRemoteServerAuthSession_Parms.ServerIP = ServerIP;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnEndRemoteServerAuthSession->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnEndRemoteServerAuthSession, &EndRemoteServerAuthSession_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnEndRemoteServerAuthSession->FunctionFlags |= 0x400;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.EndLocalServerAuthSession
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// struct FUniqueNetId            ClientUID                      ( CPF_Parm )
-// int                            ClientIP                       ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FUniqueNetId            ClientUID                      (Parm)
+// int                            ClientIP                       (Parm)
 
-void UOnlineAuthInterfaceSteamworks::EndLocalServerAuthSession(struct FUniqueNetId ClientUID, int ClientIP)
+void UOnlineAuthInterfaceSteamworks::EndLocalServerAuthSession(const struct FUniqueNetId& ClientUID, int ClientIP)
 {
-	static UFunction* pFnEndLocalServerAuthSession = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.EndLocalServerAuthSession");
 
-	if (!pFnEndLocalServerAuthSession)
-		pFnEndLocalServerAuthSession = (UFunction*)UObject::GObjects()->Data[46528];
+	UOnlineAuthInterfaceSteamworks_EndLocalServerAuthSession_Params params;
+	params.ClientUID = ClientUID;
+	params.ClientIP = ClientIP;
 
-	UOnlineAuthInterfaceSteamworks_execEndLocalServerAuthSession_Parms EndLocalServerAuthSession_Parms;
-	memcpy(&EndLocalServerAuthSession_Parms.ClientUID, &ClientUID, 0x18);
-	EndLocalServerAuthSession_Parms.ClientIP = ClientIP;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnEndLocalServerAuthSession->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnEndLocalServerAuthSession, &EndLocalServerAuthSession_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnEndLocalServerAuthSession->FunctionFlags |= 0x400;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.VerifyServerAuthSession
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FUniqueNetId            ServerUID                      ( CPF_Parm )
-// int                            ServerIP                       ( CPF_Parm )
-// int                            AuthBlobUID                    ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FUniqueNetId            ServerUID                      (Parm)
+// int                            ServerIP                       (Parm)
+// int                            AuthBlobUID                    (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineAuthInterfaceSteamworks::VerifyServerAuthSession(struct FUniqueNetId ServerUID, int ServerIP, int AuthBlobUID)
+bool UOnlineAuthInterfaceSteamworks::VerifyServerAuthSession(const struct FUniqueNetId& ServerUID, int ServerIP, int AuthBlobUID)
 {
-	static UFunction* pFnVerifyServerAuthSession = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.VerifyServerAuthSession");
 
-	if (!pFnVerifyServerAuthSession)
-		pFnVerifyServerAuthSession = (UFunction*)UObject::GObjects()->Data[46523];
+	UOnlineAuthInterfaceSteamworks_VerifyServerAuthSession_Params params;
+	params.ServerUID = ServerUID;
+	params.ServerIP = ServerIP;
+	params.AuthBlobUID = AuthBlobUID;
 
-	UOnlineAuthInterfaceSteamworks_execVerifyServerAuthSession_Parms VerifyServerAuthSession_Parms;
-	memcpy(&VerifyServerAuthSession_Parms.ServerUID, &ServerUID, 0x18);
-	VerifyServerAuthSession_Parms.ServerIP = ServerIP;
-	VerifyServerAuthSession_Parms.AuthBlobUID = AuthBlobUID;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnVerifyServerAuthSession->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnVerifyServerAuthSession, &VerifyServerAuthSession_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnVerifyServerAuthSession->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return VerifyServerAuthSession_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.CreateServerAuthSession
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FUniqueNetId            ClientUID                      ( CPF_Parm )
-// int                            ClientIP                       ( CPF_Parm )
-// int                            ClientPort                     ( CPF_Parm )
-// int                            OutAuthBlobUID                 ( CPF_Parm | CPF_OutParm )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FUniqueNetId            ClientUID                      (Parm)
+// int                            ClientIP                       (Parm)
+// int                            ClientPort                     (Parm)
+// int                            OutAuthBlobUID                 (Parm, OutParm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineAuthInterfaceSteamworks::CreateServerAuthSession(struct FUniqueNetId ClientUID, int ClientIP, int ClientPort, int* OutAuthBlobUID)
+bool UOnlineAuthInterfaceSteamworks::CreateServerAuthSession(const struct FUniqueNetId& ClientUID, int ClientIP, int ClientPort, int* OutAuthBlobUID)
 {
-	static UFunction* pFnCreateServerAuthSession = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.CreateServerAuthSession");
 
-	if (!pFnCreateServerAuthSession)
-		pFnCreateServerAuthSession = (UFunction*)UObject::GObjects()->Data[46517];
+	UOnlineAuthInterfaceSteamworks_CreateServerAuthSession_Params params;
+	params.ClientUID = ClientUID;
+	params.ClientIP = ClientIP;
+	params.ClientPort = ClientPort;
 
-	UOnlineAuthInterfaceSteamworks_execCreateServerAuthSession_Parms CreateServerAuthSession_Parms;
-	memcpy(&CreateServerAuthSession_Parms.ClientUID, &ClientUID, 0x18);
-	CreateServerAuthSession_Parms.ClientIP = ClientIP;
-	CreateServerAuthSession_Parms.ClientPort = ClientPort;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnCreateServerAuthSession->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnCreateServerAuthSession, &CreateServerAuthSession_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnCreateServerAuthSession->FunctionFlags |= 0x400;
+	if (OutAuthBlobUID != nullptr)
+		*OutAuthBlobUID = params.OutAuthBlobUID;
 
-	if (OutAuthBlobUID)
-		*OutAuthBlobUID = CreateServerAuthSession_Parms.OutAuthBlobUID;
+	return params.ReturnValue;
+}
 
-	return CreateServerAuthSession_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.EndRemoteClientAuthSession
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// struct FUniqueNetId            ClientUID                      ( CPF_Parm )
-// int                            ClientIP                       ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FUniqueNetId            ClientUID                      (Parm)
+// int                            ClientIP                       (Parm)
 
-void UOnlineAuthInterfaceSteamworks::EndRemoteClientAuthSession(struct FUniqueNetId ClientUID, int ClientIP)
+void UOnlineAuthInterfaceSteamworks::EndRemoteClientAuthSession(const struct FUniqueNetId& ClientUID, int ClientIP)
 {
-	static UFunction* pFnEndRemoteClientAuthSession = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.EndRemoteClientAuthSession");
 
-	if (!pFnEndRemoteClientAuthSession)
-		pFnEndRemoteClientAuthSession = (UFunction*)UObject::GObjects()->Data[46514];
+	UOnlineAuthInterfaceSteamworks_EndRemoteClientAuthSession_Params params;
+	params.ClientUID = ClientUID;
+	params.ClientIP = ClientIP;
 
-	UOnlineAuthInterfaceSteamworks_execEndRemoteClientAuthSession_Parms EndRemoteClientAuthSession_Parms;
-	memcpy(&EndRemoteClientAuthSession_Parms.ClientUID, &ClientUID, 0x18);
-	EndRemoteClientAuthSession_Parms.ClientIP = ClientIP;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnEndRemoteClientAuthSession->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnEndRemoteClientAuthSession, &EndRemoteClientAuthSession_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnEndRemoteClientAuthSession->FunctionFlags |= 0x400;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.EndLocalClientAuthSession
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// struct FUniqueNetId            ServerUID                      ( CPF_Parm )
-// int                            ServerIP                       ( CPF_Parm )
-// int                            ServerPort                     ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FUniqueNetId            ServerUID                      (Parm)
+// int                            ServerIP                       (Parm)
+// int                            ServerPort                     (Parm)
 
-void UOnlineAuthInterfaceSteamworks::EndLocalClientAuthSession(struct FUniqueNetId ServerUID, int ServerIP, int ServerPort)
+void UOnlineAuthInterfaceSteamworks::EndLocalClientAuthSession(const struct FUniqueNetId& ServerUID, int ServerIP, int ServerPort)
 {
-	static UFunction* pFnEndLocalClientAuthSession = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.EndLocalClientAuthSession");
 
-	if (!pFnEndLocalClientAuthSession)
-		pFnEndLocalClientAuthSession = (UFunction*)UObject::GObjects()->Data[46510];
+	UOnlineAuthInterfaceSteamworks_EndLocalClientAuthSession_Params params;
+	params.ServerUID = ServerUID;
+	params.ServerIP = ServerIP;
+	params.ServerPort = ServerPort;
 
-	UOnlineAuthInterfaceSteamworks_execEndLocalClientAuthSession_Parms EndLocalClientAuthSession_Parms;
-	memcpy(&EndLocalClientAuthSession_Parms.ServerUID, &ServerUID, 0x18);
-	EndLocalClientAuthSession_Parms.ServerIP = ServerIP;
-	EndLocalClientAuthSession_Parms.ServerPort = ServerPort;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnEndLocalClientAuthSession->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnEndLocalClientAuthSession, &EndLocalClientAuthSession_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnEndLocalClientAuthSession->FunctionFlags |= 0x400;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.VerifyClientAuthSession
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FUniqueNetId            ClientUID                      ( CPF_Parm )
-// int                            ClientIP                       ( CPF_Parm )
-// int                            ClientPort                     ( CPF_Parm )
-// int                            AuthBlobUID                    ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FUniqueNetId            ClientUID                      (Parm)
+// int                            ClientIP                       (Parm)
+// int                            ClientPort                     (Parm)
+// int                            AuthBlobUID                    (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineAuthInterfaceSteamworks::VerifyClientAuthSession(struct FUniqueNetId ClientUID, int ClientIP, int ClientPort, int AuthBlobUID)
+bool UOnlineAuthInterfaceSteamworks::VerifyClientAuthSession(const struct FUniqueNetId& ClientUID, int ClientIP, int ClientPort, int AuthBlobUID)
 {
-	static UFunction* pFnVerifyClientAuthSession = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.VerifyClientAuthSession");
 
-	if (!pFnVerifyClientAuthSession)
-		pFnVerifyClientAuthSession = (UFunction*)UObject::GObjects()->Data[46504];
+	UOnlineAuthInterfaceSteamworks_VerifyClientAuthSession_Params params;
+	params.ClientUID = ClientUID;
+	params.ClientIP = ClientIP;
+	params.ClientPort = ClientPort;
+	params.AuthBlobUID = AuthBlobUID;
 
-	UOnlineAuthInterfaceSteamworks_execVerifyClientAuthSession_Parms VerifyClientAuthSession_Parms;
-	memcpy(&VerifyClientAuthSession_Parms.ClientUID, &ClientUID, 0x18);
-	VerifyClientAuthSession_Parms.ClientIP = ClientIP;
-	VerifyClientAuthSession_Parms.ClientPort = ClientPort;
-	VerifyClientAuthSession_Parms.AuthBlobUID = AuthBlobUID;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnVerifyClientAuthSession->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnVerifyClientAuthSession, &VerifyClientAuthSession_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnVerifyClientAuthSession->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return VerifyClientAuthSession_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.CreateClientAuthSession
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FUniqueNetId            ServerUID                      ( CPF_Parm )
-// int                            ServerIP                       ( CPF_Parm )
-// int                            ServerPort                     ( CPF_Parm )
-// unsigned long                  bSecure                        ( CPF_Parm )
-// int                            OutAuthBlobUID                 ( CPF_Parm | CPF_OutParm )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FUniqueNetId            ServerUID                      (Parm)
+// int                            ServerIP                       (Parm)
+// int                            ServerPort                     (Parm)
+// bool                           bSecure                        (Parm)
+// int                            OutAuthBlobUID                 (Parm, OutParm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineAuthInterfaceSteamworks::CreateClientAuthSession(struct FUniqueNetId ServerUID, int ServerIP, int ServerPort, unsigned long bSecure, int* OutAuthBlobUID)
+bool UOnlineAuthInterfaceSteamworks::CreateClientAuthSession(const struct FUniqueNetId& ServerUID, int ServerIP, int ServerPort, bool bSecure, int* OutAuthBlobUID)
 {
-	static UFunction* pFnCreateClientAuthSession = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.CreateClientAuthSession");
 
-	if (!pFnCreateClientAuthSession)
-		pFnCreateClientAuthSession = (UFunction*)UObject::GObjects()->Data[46497];
+	UOnlineAuthInterfaceSteamworks_CreateClientAuthSession_Params params;
+	params.ServerUID = ServerUID;
+	params.ServerIP = ServerIP;
+	params.ServerPort = ServerPort;
+	params.bSecure = bSecure;
 
-	UOnlineAuthInterfaceSteamworks_execCreateClientAuthSession_Parms CreateClientAuthSession_Parms;
-	memcpy(&CreateClientAuthSession_Parms.ServerUID, &ServerUID, 0x18);
-	CreateClientAuthSession_Parms.ServerIP = ServerIP;
-	CreateClientAuthSession_Parms.ServerPort = ServerPort;
-	CreateClientAuthSession_Parms.bSecure = bSecure;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnCreateClientAuthSession->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnCreateClientAuthSession, &CreateClientAuthSession_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnCreateClientAuthSession->FunctionFlags |= 0x400;
+	if (OutAuthBlobUID != nullptr)
+		*OutAuthBlobUID = params.OutAuthBlobUID;
 
-	if (OutAuthBlobUID)
-		*OutAuthBlobUID = CreateClientAuthSession_Parms.OutAuthBlobUID;
+	return params.ReturnValue;
+}
 
-	return CreateClientAuthSession_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.SendAuthRequestServer
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FUniqueNetId            ServerUID                      ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FUniqueNetId            ServerUID                      (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineAuthInterfaceSteamworks::SendAuthRequestServer(struct FUniqueNetId ServerUID)
+bool UOnlineAuthInterfaceSteamworks::SendAuthRequestServer(const struct FUniqueNetId& ServerUID)
 {
-	static UFunction* pFnSendAuthRequestServer = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.SendAuthRequestServer");
 
-	if (!pFnSendAuthRequestServer)
-		pFnSendAuthRequestServer = (UFunction*)UObject::GObjects()->Data[46494];
+	UOnlineAuthInterfaceSteamworks_SendAuthRequestServer_Params params;
+	params.ServerUID = ServerUID;
 
-	UOnlineAuthInterfaceSteamworks_execSendAuthRequestServer_Parms SendAuthRequestServer_Parms;
-	memcpy(&SendAuthRequestServer_Parms.ServerUID, &ServerUID, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSendAuthRequestServer->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSendAuthRequestServer, &SendAuthRequestServer_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnSendAuthRequestServer->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return SendAuthRequestServer_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.SendAuthRequestClient
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// class UPlayer*                 ClientConnection               ( CPF_Parm )
-// struct FUniqueNetId            ClientUID                      ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// class UPlayer*                 ClientConnection               (Parm)
+// struct FUniqueNetId            ClientUID                      (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineAuthInterfaceSteamworks::SendAuthRequestClient(class UPlayer* ClientConnection, struct FUniqueNetId ClientUID)
+bool UOnlineAuthInterfaceSteamworks::SendAuthRequestClient(class UPlayer* ClientConnection, const struct FUniqueNetId& ClientUID)
 {
-	static UFunction* pFnSendAuthRequestClient = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineAuthInterfaceSteamworks.SendAuthRequestClient");
 
-	if (!pFnSendAuthRequestClient)
-		pFnSendAuthRequestClient = (UFunction*)UObject::GObjects()->Data[46490];
+	UOnlineAuthInterfaceSteamworks_SendAuthRequestClient_Params params;
+	params.ClientConnection = ClientConnection;
+	params.ClientUID = ClientUID;
 
-	UOnlineAuthInterfaceSteamworks_execSendAuthRequestClient_Parms SendAuthRequestClient_Parms;
-	SendAuthRequestClient_Parms.ClientConnection = ClientConnection;
-	memcpy(&SendAuthRequestClient_Parms.ClientUID, &ClientUID, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSendAuthRequestClient->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSendAuthRequestClient, &SendAuthRequestClient_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnSendAuthRequestClient->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return SendAuthRequestClient_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.GetGameSettings
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// class UOnlineGameSettings*     ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   SessionName                    ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// class UOnlineGameSettings*     ReturnValue                    (Parm, OutParm, ReturnParm)
 
-class UOnlineGameSettings* UOnlineGameInterfaceSteamworks::GetGameSettings(struct FName SessionName)
+class UOnlineGameSettings* UOnlineGameInterfaceSteamworks::GetGameSettings(const struct FName& SessionName)
 {
-	static UFunction* pFnGetGameSettings = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.GetGameSettings");
 
-	if (!pFnGetGameSettings)
-		pFnGetGameSettings = (UFunction*)UObject::GObjects()->Data[46643];
+	UOnlineGameInterfaceSteamworks_GetGameSettings_Params params;
+	params.SessionName = SessionName;
 
-	UOnlineGameInterfaceSteamworks_execGetGameSettings_Parms GetGameSettings_Parms;
-	memcpy(&GetGameSettings_Parms.SessionName, &SessionName, 0x8);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetGameSettings->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetGameSettings, &GetGameSettings_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetGameSettings->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetGameSettings_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.GetResolvedConnectString
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   SessionName                    ( CPF_Parm )
-// struct FString                 ConnectInfo                    ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// struct FString                 ConnectInfo                    (Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineGameInterfaceSteamworks::GetResolvedConnectString(struct FName SessionName, struct FString* ConnectInfo)
+bool UOnlineGameInterfaceSteamworks::GetResolvedConnectString(const struct FName& SessionName, struct FString* ConnectInfo)
 {
-	static UFunction* pFnGetResolvedConnectString = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.GetResolvedConnectString");
 
-	if (!pFnGetResolvedConnectString)
-		pFnGetResolvedConnectString = (UFunction*)UObject::GObjects()->Data[46639];
+	UOnlineGameInterfaceSteamworks_GetResolvedConnectString_Params params;
+	params.SessionName = SessionName;
 
-	UOnlineGameInterfaceSteamworks_execGetResolvedConnectString_Parms GetResolvedConnectString_Parms;
-	memcpy(&GetResolvedConnectString_Parms.SessionName, &SessionName, 0x8);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetResolvedConnectString->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetResolvedConnectString, &GetResolvedConnectString_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetResolvedConnectString->FunctionFlags |= 0x400;
+	if (ConnectInfo != nullptr)
+		*ConnectInfo = params.ConnectInfo;
 
-	if (ConnectInfo)
-		memcpy(ConnectInfo, &GetResolvedConnectString_Parms.ConnectInfo, 0xC);
+	return params.ReturnValue;
+}
 
-	return GetResolvedConnectString_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.BindPlatformSpecificSessionToSearch
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  SearchingPlayerNum             ( CPF_Parm )
-// class UOnlineGameSearch*       SearchSettings                 ( CPF_Parm )
-// unsigned char                  PlatformSpecificInfo           ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  SearchingPlayerNum             (Parm)
+// class UOnlineGameSearch*       SearchSettings                 (Parm)
+// unsigned char                  PlatformSpecificInfo           (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineGameInterfaceSteamworks::BindPlatformSpecificSessionToSearch(unsigned char SearchingPlayerNum, class UOnlineGameSearch* SearchSettings, unsigned char* PlatformSpecificInfo)
+bool UOnlineGameInterfaceSteamworks::BindPlatformSpecificSessionToSearch(unsigned char SearchingPlayerNum, class UOnlineGameSearch* SearchSettings, unsigned char PlatformSpecificInfo)
 {
-	static UFunction* pFnBindPlatformSpecificSessionToSearch = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.BindPlatformSpecificSessionToSearch");
 
-	if (!pFnBindPlatformSpecificSessionToSearch)
-		pFnBindPlatformSpecificSessionToSearch = (UFunction*)UObject::GObjects()->Data[46634];
+	UOnlineGameInterfaceSteamworks_BindPlatformSpecificSessionToSearch_Params params;
+	params.SearchingPlayerNum = SearchingPlayerNum;
+	params.SearchSettings = SearchSettings;
+	params.PlatformSpecificInfo = PlatformSpecificInfo;
 
-	UOnlineGameInterfaceSteamworks_execBindPlatformSpecificSessionToSearch_Parms BindPlatformSpecificSessionToSearch_Parms;
-	BindPlatformSpecificSessionToSearch_Parms.SearchingPlayerNum = SearchingPlayerNum;
-	BindPlatformSpecificSessionToSearch_Parms.SearchSettings = SearchSettings;
-	memcpy(&BindPlatformSpecificSessionToSearch_Parms.PlatformSpecificInfo, &PlatformSpecificInfo, 0x50);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnBindPlatformSpecificSessionToSearch->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnBindPlatformSpecificSessionToSearch, &BindPlatformSpecificSessionToSearch_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnBindPlatformSpecificSessionToSearch->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return BindPlatformSpecificSessionToSearch_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.ReadPlatformSpecificSessionInfoBySessionName
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   SessionName                    ( CPF_Parm )
-// unsigned char                  PlatformSpecificInfo           ( CPF_Parm | CPF_OutParm )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// unsigned char                  PlatformSpecificInfo           (Parm, OutParm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineGameInterfaceSteamworks::ReadPlatformSpecificSessionInfoBySessionName(struct FName SessionName, unsigned char* PlatformSpecificInfo)
+bool UOnlineGameInterfaceSteamworks::ReadPlatformSpecificSessionInfoBySessionName(const struct FName& SessionName, unsigned char* PlatformSpecificInfo)
 {
-	static UFunction* pFnReadPlatformSpecificSessionInfoBySessionName = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.ReadPlatformSpecificSessionInfoBySessionName");
 
-	if (!pFnReadPlatformSpecificSessionInfoBySessionName)
-		pFnReadPlatformSpecificSessionInfoBySessionName = (UFunction*)UObject::GObjects()->Data[46630];
+	UOnlineGameInterfaceSteamworks_ReadPlatformSpecificSessionInfoBySessionName_Params params;
+	params.SessionName = SessionName;
 
-	UOnlineGameInterfaceSteamworks_execReadPlatformSpecificSessionInfoBySessionName_Parms ReadPlatformSpecificSessionInfoBySessionName_Parms;
-	memcpy(&ReadPlatformSpecificSessionInfoBySessionName_Parms.SessionName, &SessionName, 0x8);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnReadPlatformSpecificSessionInfoBySessionName->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnReadPlatformSpecificSessionInfoBySessionName, &ReadPlatformSpecificSessionInfoBySessionName_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnReadPlatformSpecificSessionInfoBySessionName->FunctionFlags |= 0x400;
+	if (PlatformSpecificInfo != nullptr)
+		*PlatformSpecificInfo = params.PlatformSpecificInfo;
 
-	if (PlatformSpecificInfo)
-		memcpy(PlatformSpecificInfo, &ReadPlatformSpecificSessionInfoBySessionName_Parms.PlatformSpecificInfo, 0x50);
+	return params.ReturnValue;
+}
 
-	return ReadPlatformSpecificSessionInfoBySessionName_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.ReadPlatformSpecificSessionInfo
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FOnlineGameSearchResult DesiredGame                    ( CPF_Const | CPF_Parm | CPF_OutParm )
-// unsigned char                  PlatformSpecificInfo           ( CPF_Parm | CPF_OutParm )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FOnlineGameSearchResult DesiredGame                    (Const, Parm, OutParm)
+// unsigned char                  PlatformSpecificInfo           (Parm, OutParm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineGameInterfaceSteamworks::ReadPlatformSpecificSessionInfo(struct FOnlineGameSearchResult* DesiredGame, unsigned char* PlatformSpecificInfo)
 {
-	static UFunction* pFnReadPlatformSpecificSessionInfo = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.ReadPlatformSpecificSessionInfo");
 
-	if (!pFnReadPlatformSpecificSessionInfo)
-		pFnReadPlatformSpecificSessionInfo = (UFunction*)UObject::GObjects()->Data[46626];
+	UOnlineGameInterfaceSteamworks_ReadPlatformSpecificSessionInfo_Params params;
 
-	UOnlineGameInterfaceSteamworks_execReadPlatformSpecificSessionInfo_Parms ReadPlatformSpecificSessionInfo_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnReadPlatformSpecificSessionInfo->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnReadPlatformSpecificSessionInfo, &ReadPlatformSpecificSessionInfo_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnReadPlatformSpecificSessionInfo->FunctionFlags |= 0x400;
+	if (DesiredGame != nullptr)
+		*DesiredGame = params.DesiredGame;
+	if (PlatformSpecificInfo != nullptr)
+		*PlatformSpecificInfo = params.PlatformSpecificInfo;
 
-	if (DesiredGame)
-		memcpy(DesiredGame, &ReadPlatformSpecificSessionInfo_Parms.DesiredGame, 0x8);
+	return params.ReturnValue;
+}
 
-	if (PlatformSpecificInfo)
-		memcpy(PlatformSpecificInfo, &ReadPlatformSpecificSessionInfo_Parms.PlatformSpecificInfo, 0x50);
-
-	return ReadPlatformSpecificSessionInfo_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.QueryNonAdvertisedData
-// [0x00020002]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            StartAt                        ( CPF_Parm )
-// int                            NumberToQuery                  ( CPF_Parm )
+// (Defined, Public)
+// Parameters:
+// int                            StartAt                        (Parm)
+// int                            NumberToQuery                  (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineGameInterfaceSteamworks::QueryNonAdvertisedData(int StartAt, int NumberToQuery)
 {
-	static UFunction* pFnQueryNonAdvertisedData = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.QueryNonAdvertisedData");
 
-	if (!pFnQueryNonAdvertisedData)
-		pFnQueryNonAdvertisedData = (UFunction*)UObject::GObjects()->Data[46622];
+	UOnlineGameInterfaceSteamworks_QueryNonAdvertisedData_Params params;
+	params.StartAt = StartAt;
+	params.NumberToQuery = NumberToQuery;
 
-	UOnlineGameInterfaceSteamworks_execQueryNonAdvertisedData_Parms QueryNonAdvertisedData_Parms;
-	QueryNonAdvertisedData_Parms.StartAt = StartAt;
-	QueryNonAdvertisedData_Parms.NumberToQuery = NumberToQuery;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnQueryNonAdvertisedData, &QueryNonAdvertisedData_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return QueryNonAdvertisedData_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.ClearUnregisterPlayerCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         UnregisterPlayerCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         UnregisterPlayerCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceSteamworks::ClearUnregisterPlayerCompleteDelegate(struct FScriptDelegate UnregisterPlayerCompleteDelegate)
+void UOnlineGameInterfaceSteamworks::ClearUnregisterPlayerCompleteDelegate(const struct FScriptDelegate& UnregisterPlayerCompleteDelegate)
 {
-	static UFunction* pFnClearUnregisterPlayerCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.ClearUnregisterPlayerCompleteDelegate");
 
-	if (!pFnClearUnregisterPlayerCompleteDelegate)
-		pFnClearUnregisterPlayerCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46620];
+	UOnlineGameInterfaceSteamworks_ClearUnregisterPlayerCompleteDelegate_Params params;
+	params.UnregisterPlayerCompleteDelegate = UnregisterPlayerCompleteDelegate;
 
-	UOnlineGameInterfaceSteamworks_execClearUnregisterPlayerCompleteDelegate_Parms ClearUnregisterPlayerCompleteDelegate_Parms;
-	memcpy(&ClearUnregisterPlayerCompleteDelegate_Parms.UnregisterPlayerCompleteDelegate, &UnregisterPlayerCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearUnregisterPlayerCompleteDelegate, &ClearUnregisterPlayerCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.AddUnregisterPlayerCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         UnregisterPlayerCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         UnregisterPlayerCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceSteamworks::AddUnregisterPlayerCompleteDelegate(struct FScriptDelegate UnregisterPlayerCompleteDelegate)
+void UOnlineGameInterfaceSteamworks::AddUnregisterPlayerCompleteDelegate(const struct FScriptDelegate& UnregisterPlayerCompleteDelegate)
 {
-	static UFunction* pFnAddUnregisterPlayerCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.AddUnregisterPlayerCompleteDelegate");
 
-	if (!pFnAddUnregisterPlayerCompleteDelegate)
-		pFnAddUnregisterPlayerCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46618];
+	UOnlineGameInterfaceSteamworks_AddUnregisterPlayerCompleteDelegate_Params params;
+	params.UnregisterPlayerCompleteDelegate = UnregisterPlayerCompleteDelegate;
 
-	UOnlineGameInterfaceSteamworks_execAddUnregisterPlayerCompleteDelegate_Parms AddUnregisterPlayerCompleteDelegate_Parms;
-	memcpy(&AddUnregisterPlayerCompleteDelegate_Parms.UnregisterPlayerCompleteDelegate, &UnregisterPlayerCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddUnregisterPlayerCompleteDelegate, &AddUnregisterPlayerCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.OnUnregisterPlayerComplete
-// [0x00120000]
-// Parameters infos:
-// struct FName                   SessionName                    ( CPF_Parm )
-// struct FUniqueNetId            PlayerID                       ( CPF_Parm )
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// struct FUniqueNetId            PlayerID                       (Parm)
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineGameInterfaceSteamworks::OnUnregisterPlayerComplete(struct FName SessionName, struct FUniqueNetId PlayerID, unsigned long bWasSuccessful)
+void UOnlineGameInterfaceSteamworks::OnUnregisterPlayerComplete(const struct FName& SessionName, const struct FUniqueNetId& PlayerID, bool bWasSuccessful)
 {
-	static UFunction* pFnOnUnregisterPlayerComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.OnUnregisterPlayerComplete");
 
-	if (!pFnOnUnregisterPlayerComplete)
-		pFnOnUnregisterPlayerComplete = (UFunction*)UObject::GObjects()->Data[46555];
+	UOnlineGameInterfaceSteamworks_OnUnregisterPlayerComplete_Params params;
+	params.SessionName = SessionName;
+	params.PlayerID = PlayerID;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineGameInterfaceSteamworks_execOnUnregisterPlayerComplete_Parms OnUnregisterPlayerComplete_Parms;
-	memcpy(&OnUnregisterPlayerComplete_Parms.SessionName, &SessionName, 0x8);
-	memcpy(&OnUnregisterPlayerComplete_Parms.PlayerID, &PlayerID, 0x18);
-	OnUnregisterPlayerComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnUnregisterPlayerComplete, &OnUnregisterPlayerComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.UnregisterPlayer
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   SessionName                    ( CPF_Parm )
-// struct FUniqueNetId            PlayerID                       ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// struct FUniqueNetId            PlayerID                       (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineGameInterfaceSteamworks::UnregisterPlayer(struct FName SessionName, struct FUniqueNetId PlayerID)
+bool UOnlineGameInterfaceSteamworks::UnregisterPlayer(const struct FName& SessionName, const struct FUniqueNetId& PlayerID)
 {
-	static UFunction* pFnUnregisterPlayer = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.UnregisterPlayer");
 
-	if (!pFnUnregisterPlayer)
-		pFnUnregisterPlayer = (UFunction*)UObject::GObjects()->Data[46611];
+	UOnlineGameInterfaceSteamworks_UnregisterPlayer_Params params;
+	params.SessionName = SessionName;
+	params.PlayerID = PlayerID;
 
-	UOnlineGameInterfaceSteamworks_execUnregisterPlayer_Parms UnregisterPlayer_Parms;
-	memcpy(&UnregisterPlayer_Parms.SessionName, &SessionName, 0x8);
-	memcpy(&UnregisterPlayer_Parms.PlayerID, &PlayerID, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnUnregisterPlayer->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnUnregisterPlayer, &UnregisterPlayer_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnUnregisterPlayer->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return UnregisterPlayer_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.ClearRegisterPlayerCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         RegisterPlayerCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         RegisterPlayerCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceSteamworks::ClearRegisterPlayerCompleteDelegate(struct FScriptDelegate RegisterPlayerCompleteDelegate)
+void UOnlineGameInterfaceSteamworks::ClearRegisterPlayerCompleteDelegate(const struct FScriptDelegate& RegisterPlayerCompleteDelegate)
 {
-	static UFunction* pFnClearRegisterPlayerCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.ClearRegisterPlayerCompleteDelegate");
 
-	if (!pFnClearRegisterPlayerCompleteDelegate)
-		pFnClearRegisterPlayerCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46609];
+	UOnlineGameInterfaceSteamworks_ClearRegisterPlayerCompleteDelegate_Params params;
+	params.RegisterPlayerCompleteDelegate = RegisterPlayerCompleteDelegate;
 
-	UOnlineGameInterfaceSteamworks_execClearRegisterPlayerCompleteDelegate_Parms ClearRegisterPlayerCompleteDelegate_Parms;
-	memcpy(&ClearRegisterPlayerCompleteDelegate_Parms.RegisterPlayerCompleteDelegate, &RegisterPlayerCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearRegisterPlayerCompleteDelegate, &ClearRegisterPlayerCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.AddRegisterPlayerCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         RegisterPlayerCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         RegisterPlayerCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceSteamworks::AddRegisterPlayerCompleteDelegate(struct FScriptDelegate RegisterPlayerCompleteDelegate)
+void UOnlineGameInterfaceSteamworks::AddRegisterPlayerCompleteDelegate(const struct FScriptDelegate& RegisterPlayerCompleteDelegate)
 {
-	static UFunction* pFnAddRegisterPlayerCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.AddRegisterPlayerCompleteDelegate");
 
-	if (!pFnAddRegisterPlayerCompleteDelegate)
-		pFnAddRegisterPlayerCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46607];
+	UOnlineGameInterfaceSteamworks_AddRegisterPlayerCompleteDelegate_Params params;
+	params.RegisterPlayerCompleteDelegate = RegisterPlayerCompleteDelegate;
 
-	UOnlineGameInterfaceSteamworks_execAddRegisterPlayerCompleteDelegate_Parms AddRegisterPlayerCompleteDelegate_Parms;
-	memcpy(&AddRegisterPlayerCompleteDelegate_Parms.RegisterPlayerCompleteDelegate, &RegisterPlayerCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddRegisterPlayerCompleteDelegate, &AddRegisterPlayerCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.OnRegisterPlayerComplete
-// [0x00120000]
-// Parameters infos:
-// struct FName                   SessionName                    ( CPF_Parm )
-// struct FUniqueNetId            PlayerID                       ( CPF_Parm )
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// struct FUniqueNetId            PlayerID                       (Parm)
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineGameInterfaceSteamworks::OnRegisterPlayerComplete(struct FName SessionName, struct FUniqueNetId PlayerID, unsigned long bWasSuccessful)
+void UOnlineGameInterfaceSteamworks::OnRegisterPlayerComplete(const struct FName& SessionName, const struct FUniqueNetId& PlayerID, bool bWasSuccessful)
 {
-	static UFunction* pFnOnRegisterPlayerComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.OnRegisterPlayerComplete");
 
-	if (!pFnOnRegisterPlayerComplete)
-		pFnOnRegisterPlayerComplete = (UFunction*)UObject::GObjects()->Data[46552];
+	UOnlineGameInterfaceSteamworks_OnRegisterPlayerComplete_Params params;
+	params.SessionName = SessionName;
+	params.PlayerID = PlayerID;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineGameInterfaceSteamworks_execOnRegisterPlayerComplete_Parms OnRegisterPlayerComplete_Parms;
-	memcpy(&OnRegisterPlayerComplete_Parms.SessionName, &SessionName, 0x8);
-	memcpy(&OnRegisterPlayerComplete_Parms.PlayerID, &PlayerID, 0x18);
-	OnRegisterPlayerComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnRegisterPlayerComplete, &OnRegisterPlayerComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.RegisterPlayer
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   SessionName                    ( CPF_Parm )
-// struct FUniqueNetId            PlayerID                       ( CPF_Parm )
-// unsigned long                  bWasInvited                    ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// struct FUniqueNetId            PlayerID                       (Parm)
+// bool                           bWasInvited                    (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineGameInterfaceSteamworks::RegisterPlayer(struct FName SessionName, struct FUniqueNetId PlayerID, unsigned long bWasInvited)
+bool UOnlineGameInterfaceSteamworks::RegisterPlayer(const struct FName& SessionName, const struct FUniqueNetId& PlayerID, bool bWasInvited)
 {
-	static UFunction* pFnRegisterPlayer = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.RegisterPlayer");
 
-	if (!pFnRegisterPlayer)
-		pFnRegisterPlayer = (UFunction*)UObject::GObjects()->Data[46599];
+	UOnlineGameInterfaceSteamworks_RegisterPlayer_Params params;
+	params.SessionName = SessionName;
+	params.PlayerID = PlayerID;
+	params.bWasInvited = bWasInvited;
 
-	UOnlineGameInterfaceSteamworks_execRegisterPlayer_Parms RegisterPlayer_Parms;
-	memcpy(&RegisterPlayer_Parms.SessionName, &SessionName, 0x8);
-	memcpy(&RegisterPlayer_Parms.PlayerID, &PlayerID, 0x18);
-	RegisterPlayer_Parms.bWasInvited = bWasInvited;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnRegisterPlayer->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnRegisterPlayer, &RegisterPlayer_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnRegisterPlayer->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return RegisterPlayer_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.AcceptGameInvite
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FName                   SessionName                    ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FName                   SessionName                    (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineGameInterfaceSteamworks::AcceptGameInvite(unsigned char LocalUserNum, struct FName SessionName)
+bool UOnlineGameInterfaceSteamworks::AcceptGameInvite(unsigned char LocalUserNum, const struct FName& SessionName)
 {
-	static UFunction* pFnAcceptGameInvite = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.AcceptGameInvite");
 
-	if (!pFnAcceptGameInvite)
-		pFnAcceptGameInvite = (UFunction*)UObject::GObjects()->Data[46595];
+	UOnlineGameInterfaceSteamworks_AcceptGameInvite_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.SessionName = SessionName;
 
-	UOnlineGameInterfaceSteamworks_execAcceptGameInvite_Parms AcceptGameInvite_Parms;
-	AcceptGameInvite_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AcceptGameInvite_Parms.SessionName, &SessionName, 0x8);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnAcceptGameInvite->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnAcceptGameInvite, &AcceptGameInvite_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnAcceptGameInvite->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return AcceptGameInvite_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.OnGameInviteAccepted
-// [0x00520000]
-// Parameters infos:
-// struct FOnlineGameSearchResult InviteResult                   ( CPF_Const | CPF_Parm | CPF_OutParm )
+// (Public, Delegate, HasOutParms)
+// Parameters:
+// struct FOnlineGameSearchResult InviteResult                   (Const, Parm, OutParm)
 
 void UOnlineGameInterfaceSteamworks::OnGameInviteAccepted(struct FOnlineGameSearchResult* InviteResult)
 {
-	static UFunction* pFnOnGameInviteAccepted = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.OnGameInviteAccepted");
 
-	if (!pFnOnGameInviteAccepted)
-		pFnOnGameInviteAccepted = (UFunction*)UObject::GObjects()->Data[46549];
+	UOnlineGameInterfaceSteamworks_OnGameInviteAccepted_Params params;
 
-	UOnlineGameInterfaceSteamworks_execOnGameInviteAccepted_Parms OnGameInviteAccepted_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnGameInviteAccepted, &OnGameInviteAccepted_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (InviteResult)
-		memcpy(InviteResult, &OnGameInviteAccepted_Parms.InviteResult, 0x8);
-};
+	fn->FunctionFlags = flags;
+
+	if (InviteResult != nullptr)
+		*InviteResult = params.InviteResult;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.ClearGameInviteAcceptedDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         GameInviteAcceptedDelegate     ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         GameInviteAcceptedDelegate     (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceSteamworks::ClearGameInviteAcceptedDelegate(unsigned char LocalUserNum, struct FScriptDelegate GameInviteAcceptedDelegate)
+void UOnlineGameInterfaceSteamworks::ClearGameInviteAcceptedDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& GameInviteAcceptedDelegate)
 {
-	static UFunction* pFnClearGameInviteAcceptedDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.ClearGameInviteAcceptedDelegate");
 
-	if (!pFnClearGameInviteAcceptedDelegate)
-		pFnClearGameInviteAcceptedDelegate = (UFunction*)UObject::GObjects()->Data[46591];
+	UOnlineGameInterfaceSteamworks_ClearGameInviteAcceptedDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.GameInviteAcceptedDelegate = GameInviteAcceptedDelegate;
 
-	UOnlineGameInterfaceSteamworks_execClearGameInviteAcceptedDelegate_Parms ClearGameInviteAcceptedDelegate_Parms;
-	ClearGameInviteAcceptedDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearGameInviteAcceptedDelegate_Parms.GameInviteAcceptedDelegate, &GameInviteAcceptedDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearGameInviteAcceptedDelegate, &ClearGameInviteAcceptedDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.AddGameInviteAcceptedDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         GameInviteAcceptedDelegate     ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         GameInviteAcceptedDelegate     (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceSteamworks::AddGameInviteAcceptedDelegate(unsigned char LocalUserNum, struct FScriptDelegate GameInviteAcceptedDelegate)
+void UOnlineGameInterfaceSteamworks::AddGameInviteAcceptedDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& GameInviteAcceptedDelegate)
 {
-	static UFunction* pFnAddGameInviteAcceptedDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.AddGameInviteAcceptedDelegate");
 
-	if (!pFnAddGameInviteAcceptedDelegate)
-		pFnAddGameInviteAcceptedDelegate = (UFunction*)UObject::GObjects()->Data[46588];
+	UOnlineGameInterfaceSteamworks_AddGameInviteAcceptedDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.GameInviteAcceptedDelegate = GameInviteAcceptedDelegate;
 
-	UOnlineGameInterfaceSteamworks_execAddGameInviteAcceptedDelegate_Parms AddGameInviteAcceptedDelegate_Parms;
-	AddGameInviteAcceptedDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddGameInviteAcceptedDelegate_Parms.GameInviteAcceptedDelegate, &GameInviteAcceptedDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddGameInviteAcceptedDelegate, &AddGameInviteAcceptedDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.UpdateOnlineGame
-// [0x00024400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   SessionName                    ( CPF_Parm )
-// class UOnlineGameSettings*     UpdatedGameSettings            ( CPF_Parm )
-// unsigned long                  bShouldRefreshOnlineData       ( CPF_OptionalParm | CPF_Parm )
+// (Native, HasOptionalParms, Public)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// class UOnlineGameSettings*     UpdatedGameSettings            (Parm)
+// bool                           bShouldRefreshOnlineData       (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineGameInterfaceSteamworks::UpdateOnlineGame(struct FName SessionName, class UOnlineGameSettings* UpdatedGameSettings, unsigned long bShouldRefreshOnlineData)
+bool UOnlineGameInterfaceSteamworks::UpdateOnlineGame(const struct FName& SessionName, class UOnlineGameSettings* UpdatedGameSettings, bool bShouldRefreshOnlineData)
 {
-	static UFunction* pFnUpdateOnlineGame = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineGameInterfaceSteamworks.UpdateOnlineGame");
 
-	if (!pFnUpdateOnlineGame)
-		pFnUpdateOnlineGame = (UFunction*)UObject::GObjects()->Data[46583];
+	UOnlineGameInterfaceSteamworks_UpdateOnlineGame_Params params;
+	params.SessionName = SessionName;
+	params.UpdatedGameSettings = UpdatedGameSettings;
+	params.bShouldRefreshOnlineData = bShouldRefreshOnlineData;
 
-	UOnlineGameInterfaceSteamworks_execUpdateOnlineGame_Parms UpdateOnlineGame_Parms;
-	memcpy(&UpdateOnlineGame_Parms.SessionName, &SessionName, 0x8);
-	UpdateOnlineGame_Parms.UpdatedGameSettings = UpdatedGameSettings;
-	UpdateOnlineGame_Parms.bShouldRefreshOnlineData = bShouldRefreshOnlineData;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnUpdateOnlineGame->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnUpdateOnlineGame, &UpdateOnlineGame_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnUpdateOnlineGame->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return UpdateOnlineGame_Parms.ReturnValue;
-};
+
+// Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetCountryString
+// (Native, Public)
+// Parameters:
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
+
+struct FString UOnlineSubsystemSteamworks::GetCountryString()
+{
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetCountryString");
+
+	UOnlineSubsystemSteamworks_GetCountryString_Params params;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearCheckDownloadableContentListDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         CheckDownloadableContentListDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         CheckDownloadableContentListDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearCheckDownloadableContentListDelegate(unsigned char LocalUserNum, struct FScriptDelegate CheckDownloadableContentListDelegate)
+void UOnlineSubsystemSteamworks::ClearCheckDownloadableContentListDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& CheckDownloadableContentListDelegate)
 {
-	static UFunction* pFnClearCheckDownloadableContentListDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearCheckDownloadableContentListDelegate");
 
-	if (!pFnClearCheckDownloadableContentListDelegate)
-		pFnClearCheckDownloadableContentListDelegate = (UFunction*)UObject::GObjects()->Data[47865];
+	UOnlineSubsystemSteamworks_ClearCheckDownloadableContentListDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.CheckDownloadableContentListDelegate = CheckDownloadableContentListDelegate;
 
-	UOnlineSubsystemSteamworks_execClearCheckDownloadableContentListDelegate_Parms ClearCheckDownloadableContentListDelegate_Parms;
-	ClearCheckDownloadableContentListDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearCheckDownloadableContentListDelegate_Parms.CheckDownloadableContentListDelegate, &CheckDownloadableContentListDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearCheckDownloadableContentListDelegate, &ClearCheckDownloadableContentListDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddCheckDownloadableContentListDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         CheckDownloadableContentListDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         CheckDownloadableContentListDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddCheckDownloadableContentListDelegate(unsigned char LocalUserNum, struct FScriptDelegate CheckDownloadableContentListDelegate)
+void UOnlineSubsystemSteamworks::AddCheckDownloadableContentListDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& CheckDownloadableContentListDelegate)
 {
-	static UFunction* pFnAddCheckDownloadableContentListDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddCheckDownloadableContentListDelegate");
 
-	if (!pFnAddCheckDownloadableContentListDelegate)
-		pFnAddCheckDownloadableContentListDelegate = (UFunction*)UObject::GObjects()->Data[47862];
+	UOnlineSubsystemSteamworks_AddCheckDownloadableContentListDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.CheckDownloadableContentListDelegate = CheckDownloadableContentListDelegate;
 
-	UOnlineSubsystemSteamworks_execAddCheckDownloadableContentListDelegate_Parms AddCheckDownloadableContentListDelegate_Parms;
-	AddCheckDownloadableContentListDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddCheckDownloadableContentListDelegate_Parms.CheckDownloadableContentListDelegate, &CheckDownloadableContentListDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddCheckDownloadableContentListDelegate, &AddCheckDownloadableContentListDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CheckDownloadableContentList
-// [0x00020002]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::CheckDownloadableContentList(unsigned char LocalUserNum)
 {
-	static UFunction* pFnCheckDownloadableContentList = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CheckDownloadableContentList");
 
-	if (!pFnCheckDownloadableContentList)
-		pFnCheckDownloadableContentList = (UFunction*)UObject::GObjects()->Data[47857];
+	UOnlineSubsystemSteamworks_CheckDownloadableContentList_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execCheckDownloadableContentList_Parms CheckDownloadableContentList_Parms;
-	CheckDownloadableContentList_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnCheckDownloadableContentList, &CheckDownloadableContentList_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return CheckDownloadableContentList_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnCheckDownloadableContentList
-// [0x00120000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// unsigned long                  bDownloadableContentListAvailable ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// bool                           bDownloadableContentListAvailable (Parm)
 
-void UOnlineSubsystemSteamworks::OnCheckDownloadableContentList(unsigned char LocalUserNum, unsigned long bDownloadableContentListAvailable)
+void UOnlineSubsystemSteamworks::OnCheckDownloadableContentList(unsigned char LocalUserNum, bool bDownloadableContentListAvailable)
 {
-	static UFunction* pFnOnCheckDownloadableContentList = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnCheckDownloadableContentList");
 
-	if (!pFnOnCheckDownloadableContentList)
-		pFnOnCheckDownloadableContentList = (UFunction*)UObject::GObjects()->Data[47854];
+	UOnlineSubsystemSteamworks_OnCheckDownloadableContentList_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.bDownloadableContentListAvailable = bDownloadableContentListAvailable;
 
-	UOnlineSubsystemSteamworks_execOnCheckDownloadableContentList_Parms OnCheckDownloadableContentList_Parms;
-	OnCheckDownloadableContentList_Parms.LocalUserNum = LocalUserNum;
-	OnCheckDownloadableContentList_Parms.bDownloadableContentListAvailable = bDownloadableContentListAvailable;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnCheckDownloadableContentList, &OnCheckDownloadableContentList_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetCriticalDownloadableContentList
-// [0x00420000]
-// Parameters infos:
-// unsigned char                  ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// TArray< struct FMarketplaceContent > DLCList                        ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Public, HasOutParms)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// TArray<struct FMarketplaceContent> DLCList                        (Parm, OutParm, NeedCtorLink)
+// unsigned char                  ReturnValue                    (Parm, OutParm, ReturnParm)
 
-unsigned char UOnlineSubsystemSteamworks::GetCriticalDownloadableContentList(unsigned char LocalUserNum, TArray< struct FMarketplaceContent >* DLCList)
+unsigned char UOnlineSubsystemSteamworks::GetCriticalDownloadableContentList(unsigned char LocalUserNum, TArray<struct FMarketplaceContent>* DLCList)
 {
-	static UFunction* pFnGetCriticalDownloadableContentList = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetCriticalDownloadableContentList");
 
-	if (!pFnGetCriticalDownloadableContentList)
-		pFnGetCriticalDownloadableContentList = (UFunction*)UObject::GObjects()->Data[47849];
+	UOnlineSubsystemSteamworks_GetCriticalDownloadableContentList_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execGetCriticalDownloadableContentList_Parms GetCriticalDownloadableContentList_Parms;
-	GetCriticalDownloadableContentList_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetCriticalDownloadableContentList, &GetCriticalDownloadableContentList_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (DLCList)
-		memcpy(DLCList, &GetCriticalDownloadableContentList_Parms.DLCList, 0xC);
+	fn->FunctionFlags = flags;
 
-	return GetCriticalDownloadableContentList_Parms.ReturnValue;
-};
+	if (DLCList != nullptr)
+		*DLCList = params.DLCList;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadCriticalDownloadableContentList
-// [0x00024000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            CategoryMask                   ( CPF_OptionalParm | CPF_Parm )
+// (HasOptionalParms, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// int                            CategoryMask                   (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::ReadCriticalDownloadableContentList(unsigned char LocalUserNum, int CategoryMask)
 {
-	static UFunction* pFnReadCriticalDownloadableContentList = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadCriticalDownloadableContentList");
 
-	if (!pFnReadCriticalDownloadableContentList)
-		pFnReadCriticalDownloadableContentList = (UFunction*)UObject::GObjects()->Data[47845];
+	UOnlineSubsystemSteamworks_ReadCriticalDownloadableContentList_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.CategoryMask = CategoryMask;
 
-	UOnlineSubsystemSteamworks_execReadCriticalDownloadableContentList_Parms ReadCriticalDownloadableContentList_Parms;
-	ReadCriticalDownloadableContentList_Parms.LocalUserNum = LocalUserNum;
-	ReadCriticalDownloadableContentList_Parms.CategoryMask = CategoryMask;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnReadCriticalDownloadableContentList, &ReadCriticalDownloadableContentList_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return ReadCriticalDownloadableContentList_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadCriticalDownloadableContentListComplete
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         ReadCriticalDownloadableContentListCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         ReadCriticalDownloadableContentListCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearReadCriticalDownloadableContentListComplete(unsigned char LocalUserNum, struct FScriptDelegate ReadCriticalDownloadableContentListCompleteDelegate)
+void UOnlineSubsystemSteamworks::ClearReadCriticalDownloadableContentListComplete(unsigned char LocalUserNum, const struct FScriptDelegate& ReadCriticalDownloadableContentListCompleteDelegate)
 {
-	static UFunction* pFnClearReadCriticalDownloadableContentListComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadCriticalDownloadableContentListComplete");
 
-	if (!pFnClearReadCriticalDownloadableContentListComplete)
-		pFnClearReadCriticalDownloadableContentListComplete = (UFunction*)UObject::GObjects()->Data[47842];
+	UOnlineSubsystemSteamworks_ClearReadCriticalDownloadableContentListComplete_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ReadCriticalDownloadableContentListCompleteDelegate = ReadCriticalDownloadableContentListCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearReadCriticalDownloadableContentListComplete_Parms ClearReadCriticalDownloadableContentListComplete_Parms;
-	ClearReadCriticalDownloadableContentListComplete_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearReadCriticalDownloadableContentListComplete_Parms.ReadCriticalDownloadableContentListCompleteDelegate, &ReadCriticalDownloadableContentListCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearReadCriticalDownloadableContentListComplete, &ClearReadCriticalDownloadableContentListComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadCriticalDownloadableContentListComplete
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         ReadCriticalDownloadableContentListCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         ReadCriticalDownloadableContentListCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddReadCriticalDownloadableContentListComplete(unsigned char LocalUserNum, struct FScriptDelegate ReadCriticalDownloadableContentListCompleteDelegate)
+void UOnlineSubsystemSteamworks::AddReadCriticalDownloadableContentListComplete(unsigned char LocalUserNum, const struct FScriptDelegate& ReadCriticalDownloadableContentListCompleteDelegate)
 {
-	static UFunction* pFnAddReadCriticalDownloadableContentListComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadCriticalDownloadableContentListComplete");
 
-	if (!pFnAddReadCriticalDownloadableContentListComplete)
-		pFnAddReadCriticalDownloadableContentListComplete = (UFunction*)UObject::GObjects()->Data[47839];
+	UOnlineSubsystemSteamworks_AddReadCriticalDownloadableContentListComplete_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ReadCriticalDownloadableContentListCompleteDelegate = ReadCriticalDownloadableContentListCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddReadCriticalDownloadableContentListComplete_Parms AddReadCriticalDownloadableContentListComplete_Parms;
-	AddReadCriticalDownloadableContentListComplete_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddReadCriticalDownloadableContentListComplete_Parms.ReadCriticalDownloadableContentListCompleteDelegate, &ReadCriticalDownloadableContentListCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddReadCriticalDownloadableContentListComplete, &AddReadCriticalDownloadableContentListComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadCriticalDownloadableContentListComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineSubsystemSteamworks::OnReadCriticalDownloadableContentListComplete(unsigned long bWasSuccessful)
+void UOnlineSubsystemSteamworks::OnReadCriticalDownloadableContentListComplete(bool bWasSuccessful)
 {
-	static UFunction* pFnOnReadCriticalDownloadableContentListComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadCriticalDownloadableContentListComplete");
 
-	if (!pFnOnReadCriticalDownloadableContentListComplete)
-		pFnOnReadCriticalDownloadableContentListComplete = (UFunction*)UObject::GObjects()->Data[47837];
+	UOnlineSubsystemSteamworks_OnReadCriticalDownloadableContentListComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineSubsystemSteamworks_execOnReadCriticalDownloadableContentListComplete_Parms OnReadCriticalDownloadableContentListComplete_Parms;
-	OnReadCriticalDownloadableContentListComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReadCriticalDownloadableContentListComplete, &OnReadCriticalDownloadableContentListComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetHiddenDownloadableContentList
-// [0x00420000]
-// Parameters infos:
-// unsigned char                  ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// TArray< struct FMarketplaceContent > DLCList                        ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Public, HasOutParms)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// TArray<struct FMarketplaceContent> DLCList                        (Parm, OutParm, NeedCtorLink)
+// unsigned char                  ReturnValue                    (Parm, OutParm, ReturnParm)
 
-unsigned char UOnlineSubsystemSteamworks::GetHiddenDownloadableContentList(unsigned char LocalUserNum, TArray< struct FMarketplaceContent >* DLCList)
+unsigned char UOnlineSubsystemSteamworks::GetHiddenDownloadableContentList(unsigned char LocalUserNum, TArray<struct FMarketplaceContent>* DLCList)
 {
-	static UFunction* pFnGetHiddenDownloadableContentList = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetHiddenDownloadableContentList");
 
-	if (!pFnGetHiddenDownloadableContentList)
-		pFnGetHiddenDownloadableContentList = (UFunction*)UObject::GObjects()->Data[47832];
+	UOnlineSubsystemSteamworks_GetHiddenDownloadableContentList_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execGetHiddenDownloadableContentList_Parms GetHiddenDownloadableContentList_Parms;
-	GetHiddenDownloadableContentList_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetHiddenDownloadableContentList, &GetHiddenDownloadableContentList_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (DLCList)
-		memcpy(DLCList, &GetHiddenDownloadableContentList_Parms.DLCList, 0xC);
+	fn->FunctionFlags = flags;
 
-	return GetHiddenDownloadableContentList_Parms.ReturnValue;
-};
+	if (DLCList != nullptr)
+		*DLCList = params.DLCList;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadHiddenDownloadableContentList
-// [0x00020000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// TArray< int >                  OfferIds                       ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// TArray<int>                    OfferIds                       (Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::ReadHiddenDownloadableContentList(unsigned char LocalUserNum, TArray< int > OfferIds)
+bool UOnlineSubsystemSteamworks::ReadHiddenDownloadableContentList(unsigned char LocalUserNum, TArray<int> OfferIds)
 {
-	static UFunction* pFnReadHiddenDownloadableContentList = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadHiddenDownloadableContentList");
 
-	if (!pFnReadHiddenDownloadableContentList)
-		pFnReadHiddenDownloadableContentList = (UFunction*)UObject::GObjects()->Data[47827];
+	UOnlineSubsystemSteamworks_ReadHiddenDownloadableContentList_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.OfferIds = OfferIds;
 
-	UOnlineSubsystemSteamworks_execReadHiddenDownloadableContentList_Parms ReadHiddenDownloadableContentList_Parms;
-	ReadHiddenDownloadableContentList_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ReadHiddenDownloadableContentList_Parms.OfferIds, &OfferIds, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnReadHiddenDownloadableContentList, &ReadHiddenDownloadableContentList_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return ReadHiddenDownloadableContentList_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadHiddenDownloadableContentListComplete
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         ReadHiddenDownloadableContentListCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         ReadHiddenDownloadableContentListCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearReadHiddenDownloadableContentListComplete(unsigned char LocalUserNum, struct FScriptDelegate ReadHiddenDownloadableContentListCompleteDelegate)
+void UOnlineSubsystemSteamworks::ClearReadHiddenDownloadableContentListComplete(unsigned char LocalUserNum, const struct FScriptDelegate& ReadHiddenDownloadableContentListCompleteDelegate)
 {
-	static UFunction* pFnClearReadHiddenDownloadableContentListComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadHiddenDownloadableContentListComplete");
 
-	if (!pFnClearReadHiddenDownloadableContentListComplete)
-		pFnClearReadHiddenDownloadableContentListComplete = (UFunction*)UObject::GObjects()->Data[47824];
+	UOnlineSubsystemSteamworks_ClearReadHiddenDownloadableContentListComplete_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ReadHiddenDownloadableContentListCompleteDelegate = ReadHiddenDownloadableContentListCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearReadHiddenDownloadableContentListComplete_Parms ClearReadHiddenDownloadableContentListComplete_Parms;
-	ClearReadHiddenDownloadableContentListComplete_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearReadHiddenDownloadableContentListComplete_Parms.ReadHiddenDownloadableContentListCompleteDelegate, &ReadHiddenDownloadableContentListCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearReadHiddenDownloadableContentListComplete, &ClearReadHiddenDownloadableContentListComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadHiddenDownloadableContentListComplete
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         ReadHiddenDownloadableContentListCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         ReadHiddenDownloadableContentListCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddReadHiddenDownloadableContentListComplete(unsigned char LocalUserNum, struct FScriptDelegate ReadHiddenDownloadableContentListCompleteDelegate)
+void UOnlineSubsystemSteamworks::AddReadHiddenDownloadableContentListComplete(unsigned char LocalUserNum, const struct FScriptDelegate& ReadHiddenDownloadableContentListCompleteDelegate)
 {
-	static UFunction* pFnAddReadHiddenDownloadableContentListComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadHiddenDownloadableContentListComplete");
 
-	if (!pFnAddReadHiddenDownloadableContentListComplete)
-		pFnAddReadHiddenDownloadableContentListComplete = (UFunction*)UObject::GObjects()->Data[47821];
+	UOnlineSubsystemSteamworks_AddReadHiddenDownloadableContentListComplete_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ReadHiddenDownloadableContentListCompleteDelegate = ReadHiddenDownloadableContentListCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddReadHiddenDownloadableContentListComplete_Parms AddReadHiddenDownloadableContentListComplete_Parms;
-	AddReadHiddenDownloadableContentListComplete_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddReadHiddenDownloadableContentListComplete_Parms.ReadHiddenDownloadableContentListCompleteDelegate, &ReadHiddenDownloadableContentListCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddReadHiddenDownloadableContentListComplete, &AddReadHiddenDownloadableContentListComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadHiddenDownloadableContentListComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineSubsystemSteamworks::OnReadHiddenDownloadableContentListComplete(unsigned long bWasSuccessful)
+void UOnlineSubsystemSteamworks::OnReadHiddenDownloadableContentListComplete(bool bWasSuccessful)
 {
-	static UFunction* pFnOnReadHiddenDownloadableContentListComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadHiddenDownloadableContentListComplete");
 
-	if (!pFnOnReadHiddenDownloadableContentListComplete)
-		pFnOnReadHiddenDownloadableContentListComplete = (UFunction*)UObject::GObjects()->Data[47819];
+	UOnlineSubsystemSteamworks_OnReadHiddenDownloadableContentListComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineSubsystemSteamworks_execOnReadHiddenDownloadableContentListComplete_Parms OnReadHiddenDownloadableContentListComplete_Parms;
-	OnReadHiddenDownloadableContentListComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReadHiddenDownloadableContentListComplete, &OnReadHiddenDownloadableContentListComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetDownloadableContentList
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// unsigned char                  ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// TArray< struct FMarketplaceContent > DLCList                        ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// TArray<struct FMarketplaceContent> DLCList                        (Parm, OutParm, NeedCtorLink)
+// unsigned char                  ReturnValue                    (Parm, OutParm, ReturnParm)
 
-unsigned char UOnlineSubsystemSteamworks::GetDownloadableContentList(unsigned char LocalUserNum, TArray< struct FMarketplaceContent >* DLCList)
+unsigned char UOnlineSubsystemSteamworks::GetDownloadableContentList(unsigned char LocalUserNum, TArray<struct FMarketplaceContent>* DLCList)
 {
-	static UFunction* pFnGetDownloadableContentList = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetDownloadableContentList");
 
-	if (!pFnGetDownloadableContentList)
-		pFnGetDownloadableContentList = (UFunction*)UObject::GObjects()->Data[47814];
+	UOnlineSubsystemSteamworks_GetDownloadableContentList_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execGetDownloadableContentList_Parms GetDownloadableContentList_Parms;
-	GetDownloadableContentList_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetDownloadableContentList->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetDownloadableContentList, &GetDownloadableContentList_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetDownloadableContentList->FunctionFlags |= 0x400;
+	if (DLCList != nullptr)
+		*DLCList = params.DLCList;
 
-	if (DLCList)
-		memcpy(DLCList, &GetDownloadableContentList_Parms.DLCList, 0xC);
+	return params.ReturnValue;
+}
 
-	return GetDownloadableContentList_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadDownloadableContentList
-// [0x00024400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            CategoryMask                   ( CPF_OptionalParm | CPF_Parm )
+// (Native, HasOptionalParms, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// int                            CategoryMask                   (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::ReadDownloadableContentList(unsigned char LocalUserNum, int CategoryMask)
 {
-	static UFunction* pFnReadDownloadableContentList = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadDownloadableContentList");
 
-	if (!pFnReadDownloadableContentList)
-		pFnReadDownloadableContentList = (UFunction*)UObject::GObjects()->Data[47810];
+	UOnlineSubsystemSteamworks_ReadDownloadableContentList_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.CategoryMask = CategoryMask;
 
-	UOnlineSubsystemSteamworks_execReadDownloadableContentList_Parms ReadDownloadableContentList_Parms;
-	ReadDownloadableContentList_Parms.LocalUserNum = LocalUserNum;
-	ReadDownloadableContentList_Parms.CategoryMask = CategoryMask;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnReadDownloadableContentList->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnReadDownloadableContentList, &ReadDownloadableContentList_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnReadDownloadableContentList->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ReadDownloadableContentList_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadDownloadableContentListComplete
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         ReadDownloadableContentListCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         ReadDownloadableContentListCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearReadDownloadableContentListComplete(unsigned char LocalUserNum, struct FScriptDelegate ReadDownloadableContentListCompleteDelegate)
+void UOnlineSubsystemSteamworks::ClearReadDownloadableContentListComplete(unsigned char LocalUserNum, const struct FScriptDelegate& ReadDownloadableContentListCompleteDelegate)
 {
-	static UFunction* pFnClearReadDownloadableContentListComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadDownloadableContentListComplete");
 
-	if (!pFnClearReadDownloadableContentListComplete)
-		pFnClearReadDownloadableContentListComplete = (UFunction*)UObject::GObjects()->Data[47807];
+	UOnlineSubsystemSteamworks_ClearReadDownloadableContentListComplete_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ReadDownloadableContentListCompleteDelegate = ReadDownloadableContentListCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearReadDownloadableContentListComplete_Parms ClearReadDownloadableContentListComplete_Parms;
-	ClearReadDownloadableContentListComplete_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearReadDownloadableContentListComplete_Parms.ReadDownloadableContentListCompleteDelegate, &ReadDownloadableContentListCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearReadDownloadableContentListComplete, &ClearReadDownloadableContentListComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadDownloadableContentListComplete
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         ReadDownloadableContentListCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         ReadDownloadableContentListCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddReadDownloadableContentListComplete(unsigned char LocalUserNum, struct FScriptDelegate ReadDownloadableContentListCompleteDelegate)
+void UOnlineSubsystemSteamworks::AddReadDownloadableContentListComplete(unsigned char LocalUserNum, const struct FScriptDelegate& ReadDownloadableContentListCompleteDelegate)
 {
-	static UFunction* pFnAddReadDownloadableContentListComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadDownloadableContentListComplete");
 
-	if (!pFnAddReadDownloadableContentListComplete)
-		pFnAddReadDownloadableContentListComplete = (UFunction*)UObject::GObjects()->Data[47803];
+	UOnlineSubsystemSteamworks_AddReadDownloadableContentListComplete_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ReadDownloadableContentListCompleteDelegate = ReadDownloadableContentListCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddReadDownloadableContentListComplete_Parms AddReadDownloadableContentListComplete_Parms;
-	AddReadDownloadableContentListComplete_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddReadDownloadableContentListComplete_Parms.ReadDownloadableContentListCompleteDelegate, &ReadDownloadableContentListCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddReadDownloadableContentListComplete, &AddReadDownloadableContentListComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadDownloadableContentListComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineSubsystemSteamworks::OnReadDownloadableContentListComplete(unsigned long bWasSuccessful)
+void UOnlineSubsystemSteamworks::OnReadDownloadableContentListComplete(bool bWasSuccessful)
 {
-	static UFunction* pFnOnReadDownloadableContentListComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadDownloadableContentListComplete");
 
-	if (!pFnOnReadDownloadableContentListComplete)
-		pFnOnReadDownloadableContentListComplete = (UFunction*)UObject::GObjects()->Data[46684];
+	UOnlineSubsystemSteamworks_OnReadDownloadableContentListComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineSubsystemSteamworks_execOnReadDownloadableContentListComplete_Parms OnReadDownloadableContentListComplete_Parms;
-	OnReadDownloadableContentListComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReadDownloadableContentListComplete, &OnReadDownloadableContentListComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetSaveGamesList
-// [0x00420000]
-// Parameters infos:
-// unsigned char                  ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// TArray< struct FOnlineContent > SaveGamesList                  ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Public, HasOutParms)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// TArray<struct FOnlineContent>  SaveGamesList                  (Parm, OutParm, NeedCtorLink)
+// unsigned char                  ReturnValue                    (Parm, OutParm, ReturnParm)
 
-unsigned char UOnlineSubsystemSteamworks::GetSaveGamesList(unsigned char LocalUserNum, TArray< struct FOnlineContent >* SaveGamesList)
+unsigned char UOnlineSubsystemSteamworks::GetSaveGamesList(unsigned char LocalUserNum, TArray<struct FOnlineContent>* SaveGamesList)
 {
-	static UFunction* pFnGetSaveGamesList = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetSaveGamesList");
 
-	if (!pFnGetSaveGamesList)
-		pFnGetSaveGamesList = (UFunction*)UObject::GObjects()->Data[47797];
+	UOnlineSubsystemSteamworks_GetSaveGamesList_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execGetSaveGamesList_Parms GetSaveGamesList_Parms;
-	GetSaveGamesList_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetSaveGamesList, &GetSaveGamesList_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (SaveGamesList)
-		memcpy(SaveGamesList, &GetSaveGamesList_Parms.SaveGamesList, 0xC);
+	fn->FunctionFlags = flags;
 
-	return GetSaveGamesList_Parms.ReturnValue;
-};
+	if (SaveGamesList != nullptr)
+		*SaveGamesList = params.SaveGamesList;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadSaveGamesList
-// [0x00024000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            DeviceID                       ( CPF_OptionalParm | CPF_Parm )
-// struct FString                 SaveFilePrefix                 ( CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink )
+// (HasOptionalParms, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// int                            DeviceID                       (OptionalParm, Parm)
+// struct FString                 SaveFilePrefix                 (OptionalParm, Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::ReadSaveGamesList(unsigned char LocalUserNum, int DeviceID, struct FString SaveFilePrefix)
+bool UOnlineSubsystemSteamworks::ReadSaveGamesList(unsigned char LocalUserNum, int DeviceID, const struct FString& SaveFilePrefix)
 {
-	static UFunction* pFnReadSaveGamesList = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadSaveGamesList");
 
-	if (!pFnReadSaveGamesList)
-		pFnReadSaveGamesList = (UFunction*)UObject::GObjects()->Data[47792];
+	UOnlineSubsystemSteamworks_ReadSaveGamesList_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.DeviceID = DeviceID;
+	params.SaveFilePrefix = SaveFilePrefix;
 
-	UOnlineSubsystemSteamworks_execReadSaveGamesList_Parms ReadSaveGamesList_Parms;
-	ReadSaveGamesList_Parms.LocalUserNum = LocalUserNum;
-	ReadSaveGamesList_Parms.DeviceID = DeviceID;
-	memcpy(&ReadSaveGamesList_Parms.SaveFilePrefix, &SaveFilePrefix, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnReadSaveGamesList, &ReadSaveGamesList_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return ReadSaveGamesList_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadSaveGamesComplete
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         ReadSaveGamesCompleteDelegate  ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         ReadSaveGamesCompleteDelegate  (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearReadSaveGamesComplete(unsigned char LocalUserNum, struct FScriptDelegate ReadSaveGamesCompleteDelegate)
+void UOnlineSubsystemSteamworks::ClearReadSaveGamesComplete(unsigned char LocalUserNum, const struct FScriptDelegate& ReadSaveGamesCompleteDelegate)
 {
-	static UFunction* pFnClearReadSaveGamesComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadSaveGamesComplete");
 
-	if (!pFnClearReadSaveGamesComplete)
-		pFnClearReadSaveGamesComplete = (UFunction*)UObject::GObjects()->Data[47789];
+	UOnlineSubsystemSteamworks_ClearReadSaveGamesComplete_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ReadSaveGamesCompleteDelegate = ReadSaveGamesCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearReadSaveGamesComplete_Parms ClearReadSaveGamesComplete_Parms;
-	ClearReadSaveGamesComplete_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearReadSaveGamesComplete_Parms.ReadSaveGamesCompleteDelegate, &ReadSaveGamesCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearReadSaveGamesComplete, &ClearReadSaveGamesComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadSaveGamesComplete
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         ReadSaveGamesCompleteDelegate  ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         ReadSaveGamesCompleteDelegate  (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddReadSaveGamesComplete(unsigned char LocalUserNum, struct FScriptDelegate ReadSaveGamesCompleteDelegate)
+void UOnlineSubsystemSteamworks::AddReadSaveGamesComplete(unsigned char LocalUserNum, const struct FScriptDelegate& ReadSaveGamesCompleteDelegate)
 {
-	static UFunction* pFnAddReadSaveGamesComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadSaveGamesComplete");
 
-	if (!pFnAddReadSaveGamesComplete)
-		pFnAddReadSaveGamesComplete = (UFunction*)UObject::GObjects()->Data[47786];
+	UOnlineSubsystemSteamworks_AddReadSaveGamesComplete_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ReadSaveGamesCompleteDelegate = ReadSaveGamesCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddReadSaveGamesComplete_Parms AddReadSaveGamesComplete_Parms;
-	AddReadSaveGamesComplete_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddReadSaveGamesComplete_Parms.ReadSaveGamesCompleteDelegate, &ReadSaveGamesCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddReadSaveGamesComplete, &AddReadSaveGamesComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadSaveGamesComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineSubsystemSteamworks::OnReadSaveGamesComplete(unsigned long bWasSuccessful)
+void UOnlineSubsystemSteamworks::OnReadSaveGamesComplete(bool bWasSuccessful)
 {
-	static UFunction* pFnOnReadSaveGamesComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadSaveGamesComplete");
 
-	if (!pFnOnReadSaveGamesComplete)
-		pFnOnReadSaveGamesComplete = (UFunction*)UObject::GObjects()->Data[47784];
+	UOnlineSubsystemSteamworks_OnReadSaveGamesComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineSubsystemSteamworks_execOnReadSaveGamesComplete_Parms OnReadSaveGamesComplete_Parms;
-	OnReadSaveGamesComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReadSaveGamesComplete, &OnReadSaveGamesComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearSaveGames
-// [0x00020000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::ClearSaveGames(unsigned char LocalUserNum)
 {
-	static UFunction* pFnClearSaveGames = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearSaveGames");
 
-	if (!pFnClearSaveGames)
-		pFnClearSaveGames = (UFunction*)UObject::GObjects()->Data[47781];
+	UOnlineSubsystemSteamworks_ClearSaveGames_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execClearSaveGames_Parms ClearSaveGames_Parms;
-	ClearSaveGames_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearSaveGames, &ClearSaveGames_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return ClearSaveGames_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DeleteSaveGame
-// [0x00020000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            DeviceID                       ( CPF_Parm )
-// struct FString                 FriendlyName                   ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// int                            DeviceID                       (Parm)
+// struct FString                 FriendlyName                   (Parm, NeedCtorLink)
+// struct FString                 Filename                       (Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::DeleteSaveGame(unsigned char LocalUserNum, int DeviceID, struct FString FriendlyName, struct FString Filename)
+bool UOnlineSubsystemSteamworks::DeleteSaveGame(unsigned char LocalUserNum, int DeviceID, const struct FString& FriendlyName, const struct FString& Filename)
 {
-	static UFunction* pFnDeleteSaveGame = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DeleteSaveGame");
 
-	if (!pFnDeleteSaveGame)
-		pFnDeleteSaveGame = (UFunction*)UObject::GObjects()->Data[47775];
+	UOnlineSubsystemSteamworks_DeleteSaveGame_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.DeviceID = DeviceID;
+	params.FriendlyName = FriendlyName;
+	params.Filename = Filename;
 
-	UOnlineSubsystemSteamworks_execDeleteSaveGame_Parms DeleteSaveGame_Parms;
-	DeleteSaveGame_Parms.LocalUserNum = LocalUserNum;
-	DeleteSaveGame_Parms.DeviceID = DeviceID;
-	memcpy(&DeleteSaveGame_Parms.FriendlyName, &FriendlyName, 0xC);
-	memcpy(&DeleteSaveGame_Parms.Filename, &Filename, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnDeleteSaveGame, &DeleteSaveGame_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return DeleteSaveGame_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearWriteSaveGameDataComplete
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         WriteSaveGameDataCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         WriteSaveGameDataCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearWriteSaveGameDataComplete(unsigned char LocalUserNum, struct FScriptDelegate WriteSaveGameDataCompleteDelegate)
+void UOnlineSubsystemSteamworks::ClearWriteSaveGameDataComplete(unsigned char LocalUserNum, const struct FScriptDelegate& WriteSaveGameDataCompleteDelegate)
 {
-	static UFunction* pFnClearWriteSaveGameDataComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearWriteSaveGameDataComplete");
 
-	if (!pFnClearWriteSaveGameDataComplete)
-		pFnClearWriteSaveGameDataComplete = (UFunction*)UObject::GObjects()->Data[47772];
+	UOnlineSubsystemSteamworks_ClearWriteSaveGameDataComplete_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.WriteSaveGameDataCompleteDelegate = WriteSaveGameDataCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearWriteSaveGameDataComplete_Parms ClearWriteSaveGameDataComplete_Parms;
-	ClearWriteSaveGameDataComplete_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearWriteSaveGameDataComplete_Parms.WriteSaveGameDataCompleteDelegate, &WriteSaveGameDataCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearWriteSaveGameDataComplete, &ClearWriteSaveGameDataComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddWriteSaveGameDataComplete
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         WriteSaveGameDataCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         WriteSaveGameDataCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddWriteSaveGameDataComplete(unsigned char LocalUserNum, struct FScriptDelegate WriteSaveGameDataCompleteDelegate)
+void UOnlineSubsystemSteamworks::AddWriteSaveGameDataComplete(unsigned char LocalUserNum, const struct FScriptDelegate& WriteSaveGameDataCompleteDelegate)
 {
-	static UFunction* pFnAddWriteSaveGameDataComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddWriteSaveGameDataComplete");
 
-	if (!pFnAddWriteSaveGameDataComplete)
-		pFnAddWriteSaveGameDataComplete = (UFunction*)UObject::GObjects()->Data[47769];
+	UOnlineSubsystemSteamworks_AddWriteSaveGameDataComplete_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.WriteSaveGameDataCompleteDelegate = WriteSaveGameDataCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddWriteSaveGameDataComplete_Parms AddWriteSaveGameDataComplete_Parms;
-	AddWriteSaveGameDataComplete_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddWriteSaveGameDataComplete_Parms.WriteSaveGameDataCompleteDelegate, &WriteSaveGameDataCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddWriteSaveGameDataComplete, &AddWriteSaveGameDataComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnWriteSaveGameDataComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            DeviceID                       ( CPF_Parm )
-// struct FString                 FriendlyName                   ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 SaveFileName                   ( CPF_Parm | CPF_NeedCtorLink )
+// (Public, Delegate)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
+// unsigned char                  LocalUserNum                   (Parm)
+// int                            DeviceID                       (Parm)
+// struct FString                 FriendlyName                   (Parm, NeedCtorLink)
+// struct FString                 Filename                       (Parm, NeedCtorLink)
+// struct FString                 SaveFileName                   (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::OnWriteSaveGameDataComplete(unsigned long bWasSuccessful, unsigned char LocalUserNum, int DeviceID, struct FString FriendlyName, struct FString Filename, struct FString SaveFileName)
+void UOnlineSubsystemSteamworks::OnWriteSaveGameDataComplete(bool bWasSuccessful, unsigned char LocalUserNum, int DeviceID, const struct FString& FriendlyName, const struct FString& Filename, const struct FString& SaveFileName)
 {
-	static UFunction* pFnOnWriteSaveGameDataComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnWriteSaveGameDataComplete");
 
-	if (!pFnOnWriteSaveGameDataComplete)
-		pFnOnWriteSaveGameDataComplete = (UFunction*)UObject::GObjects()->Data[47762];
+	UOnlineSubsystemSteamworks_OnWriteSaveGameDataComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
+	params.LocalUserNum = LocalUserNum;
+	params.DeviceID = DeviceID;
+	params.FriendlyName = FriendlyName;
+	params.Filename = Filename;
+	params.SaveFileName = SaveFileName;
 
-	UOnlineSubsystemSteamworks_execOnWriteSaveGameDataComplete_Parms OnWriteSaveGameDataComplete_Parms;
-	OnWriteSaveGameDataComplete_Parms.bWasSuccessful = bWasSuccessful;
-	OnWriteSaveGameDataComplete_Parms.LocalUserNum = LocalUserNum;
-	OnWriteSaveGameDataComplete_Parms.DeviceID = DeviceID;
-	memcpy(&OnWriteSaveGameDataComplete_Parms.FriendlyName, &FriendlyName, 0xC);
-	memcpy(&OnWriteSaveGameDataComplete_Parms.Filename, &Filename, 0xC);
-	memcpy(&OnWriteSaveGameDataComplete_Parms.SaveFileName, &SaveFileName, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnWriteSaveGameDataComplete, &OnWriteSaveGameDataComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteSaveGameData
-// [0x00420000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            DeviceID                       ( CPF_Parm )
-// struct FString                 FriendlyName                   ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 SaveFileName                   ( CPF_Parm | CPF_NeedCtorLink )
-// TArray< unsigned char >        SaveGameData                   ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Public, HasOutParms)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// int                            DeviceID                       (Parm)
+// struct FString                 FriendlyName                   (Parm, NeedCtorLink)
+// struct FString                 Filename                       (Parm, NeedCtorLink)
+// struct FString                 SaveFileName                   (Parm, NeedCtorLink)
+// TArray<unsigned char>          SaveGameData                   (Const, Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::WriteSaveGameData(unsigned char LocalUserNum, int DeviceID, struct FString FriendlyName, struct FString Filename, struct FString SaveFileName, TArray< unsigned char >* SaveGameData)
+bool UOnlineSubsystemSteamworks::WriteSaveGameData(unsigned char LocalUserNum, int DeviceID, const struct FString& FriendlyName, const struct FString& Filename, const struct FString& SaveFileName, TArray<unsigned char>* SaveGameData)
 {
-	static UFunction* pFnWriteSaveGameData = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteSaveGameData");
 
-	if (!pFnWriteSaveGameData)
-		pFnWriteSaveGameData = (UFunction*)UObject::GObjects()->Data[47753];
+	UOnlineSubsystemSteamworks_WriteSaveGameData_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.DeviceID = DeviceID;
+	params.FriendlyName = FriendlyName;
+	params.Filename = Filename;
+	params.SaveFileName = SaveFileName;
 
-	UOnlineSubsystemSteamworks_execWriteSaveGameData_Parms WriteSaveGameData_Parms;
-	WriteSaveGameData_Parms.LocalUserNum = LocalUserNum;
-	WriteSaveGameData_Parms.DeviceID = DeviceID;
-	memcpy(&WriteSaveGameData_Parms.FriendlyName, &FriendlyName, 0xC);
-	memcpy(&WriteSaveGameData_Parms.Filename, &Filename, 0xC);
-	memcpy(&WriteSaveGameData_Parms.SaveFileName, &SaveFileName, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnWriteSaveGameData, &WriteSaveGameData_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (SaveGameData)
-		memcpy(SaveGameData, &WriteSaveGameData_Parms.SaveGameData, 0xC);
+	fn->FunctionFlags = flags;
 
-	return WriteSaveGameData_Parms.ReturnValue;
-};
+	if (SaveGameData != nullptr)
+		*SaveGameData = params.SaveGameData;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadSaveGameDataComplete
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         ReadSaveGameDataCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         ReadSaveGameDataCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearReadSaveGameDataComplete(unsigned char LocalUserNum, struct FScriptDelegate ReadSaveGameDataCompleteDelegate)
+void UOnlineSubsystemSteamworks::ClearReadSaveGameDataComplete(unsigned char LocalUserNum, const struct FScriptDelegate& ReadSaveGameDataCompleteDelegate)
 {
-	static UFunction* pFnClearReadSaveGameDataComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadSaveGameDataComplete");
 
-	if (!pFnClearReadSaveGameDataComplete)
-		pFnClearReadSaveGameDataComplete = (UFunction*)UObject::GObjects()->Data[47750];
+	UOnlineSubsystemSteamworks_ClearReadSaveGameDataComplete_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ReadSaveGameDataCompleteDelegate = ReadSaveGameDataCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearReadSaveGameDataComplete_Parms ClearReadSaveGameDataComplete_Parms;
-	ClearReadSaveGameDataComplete_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearReadSaveGameDataComplete_Parms.ReadSaveGameDataCompleteDelegate, &ReadSaveGameDataCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearReadSaveGameDataComplete, &ClearReadSaveGameDataComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadSaveGameDataComplete
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         ReadSaveGameDataCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         ReadSaveGameDataCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddReadSaveGameDataComplete(unsigned char LocalUserNum, struct FScriptDelegate ReadSaveGameDataCompleteDelegate)
+void UOnlineSubsystemSteamworks::AddReadSaveGameDataComplete(unsigned char LocalUserNum, const struct FScriptDelegate& ReadSaveGameDataCompleteDelegate)
 {
-	static UFunction* pFnAddReadSaveGameDataComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadSaveGameDataComplete");
 
-	if (!pFnAddReadSaveGameDataComplete)
-		pFnAddReadSaveGameDataComplete = (UFunction*)UObject::GObjects()->Data[47747];
+	UOnlineSubsystemSteamworks_AddReadSaveGameDataComplete_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ReadSaveGameDataCompleteDelegate = ReadSaveGameDataCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddReadSaveGameDataComplete_Parms AddReadSaveGameDataComplete_Parms;
-	AddReadSaveGameDataComplete_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddReadSaveGameDataComplete_Parms.ReadSaveGameDataCompleteDelegate, &ReadSaveGameDataCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddReadSaveGameDataComplete, &AddReadSaveGameDataComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadSaveGameDataComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            DeviceID                       ( CPF_Parm )
-// struct FString                 FriendlyName                   ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 SaveFileName                   ( CPF_Parm | CPF_NeedCtorLink )
+// (Public, Delegate)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
+// unsigned char                  LocalUserNum                   (Parm)
+// int                            DeviceID                       (Parm)
+// struct FString                 FriendlyName                   (Parm, NeedCtorLink)
+// struct FString                 Filename                       (Parm, NeedCtorLink)
+// struct FString                 SaveFileName                   (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::OnReadSaveGameDataComplete(unsigned long bWasSuccessful, unsigned char LocalUserNum, int DeviceID, struct FString FriendlyName, struct FString Filename, struct FString SaveFileName)
+void UOnlineSubsystemSteamworks::OnReadSaveGameDataComplete(bool bWasSuccessful, unsigned char LocalUserNum, int DeviceID, const struct FString& FriendlyName, const struct FString& Filename, const struct FString& SaveFileName)
 {
-	static UFunction* pFnOnReadSaveGameDataComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadSaveGameDataComplete");
 
-	if (!pFnOnReadSaveGameDataComplete)
-		pFnOnReadSaveGameDataComplete = (UFunction*)UObject::GObjects()->Data[47740];
+	UOnlineSubsystemSteamworks_OnReadSaveGameDataComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
+	params.LocalUserNum = LocalUserNum;
+	params.DeviceID = DeviceID;
+	params.FriendlyName = FriendlyName;
+	params.Filename = Filename;
+	params.SaveFileName = SaveFileName;
 
-	UOnlineSubsystemSteamworks_execOnReadSaveGameDataComplete_Parms OnReadSaveGameDataComplete_Parms;
-	OnReadSaveGameDataComplete_Parms.bWasSuccessful = bWasSuccessful;
-	OnReadSaveGameDataComplete_Parms.LocalUserNum = LocalUserNum;
-	OnReadSaveGameDataComplete_Parms.DeviceID = DeviceID;
-	memcpy(&OnReadSaveGameDataComplete_Parms.FriendlyName, &FriendlyName, 0xC);
-	memcpy(&OnReadSaveGameDataComplete_Parms.Filename, &Filename, 0xC);
-	memcpy(&OnReadSaveGameDataComplete_Parms.SaveFileName, &SaveFileName, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReadSaveGameDataComplete, &OnReadSaveGameDataComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetSaveGameData
-// [0x00420000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            DeviceID                       ( CPF_Parm )
-// struct FString                 FriendlyName                   ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 SaveFileName                   ( CPF_Parm | CPF_NeedCtorLink )
-// unsigned char                  bIsValid                       ( CPF_Parm | CPF_OutParm )
-// TArray< unsigned char >        SaveGameData                   ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Public, HasOutParms)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// int                            DeviceID                       (Parm)
+// struct FString                 FriendlyName                   (Parm, NeedCtorLink)
+// struct FString                 Filename                       (Parm, NeedCtorLink)
+// struct FString                 SaveFileName                   (Parm, NeedCtorLink)
+// unsigned char                  bIsValid                       (Parm, OutParm)
+// TArray<unsigned char>          SaveGameData                   (Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::GetSaveGameData(unsigned char LocalUserNum, int DeviceID, struct FString FriendlyName, struct FString Filename, struct FString SaveFileName, unsigned char* bIsValid, TArray< unsigned char >* SaveGameData)
+bool UOnlineSubsystemSteamworks::GetSaveGameData(unsigned char LocalUserNum, int DeviceID, const struct FString& FriendlyName, const struct FString& Filename, const struct FString& SaveFileName, unsigned char* bIsValid, TArray<unsigned char>* SaveGameData)
 {
-	static UFunction* pFnGetSaveGameData = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetSaveGameData");
 
-	if (!pFnGetSaveGameData)
-		pFnGetSaveGameData = (UFunction*)UObject::GObjects()->Data[47730];
+	UOnlineSubsystemSteamworks_GetSaveGameData_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.DeviceID = DeviceID;
+	params.FriendlyName = FriendlyName;
+	params.Filename = Filename;
+	params.SaveFileName = SaveFileName;
 
-	UOnlineSubsystemSteamworks_execGetSaveGameData_Parms GetSaveGameData_Parms;
-	GetSaveGameData_Parms.LocalUserNum = LocalUserNum;
-	GetSaveGameData_Parms.DeviceID = DeviceID;
-	memcpy(&GetSaveGameData_Parms.FriendlyName, &FriendlyName, 0xC);
-	memcpy(&GetSaveGameData_Parms.Filename, &Filename, 0xC);
-	memcpy(&GetSaveGameData_Parms.SaveFileName, &SaveFileName, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetSaveGameData, &GetSaveGameData_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (bIsValid)
-		*bIsValid = GetSaveGameData_Parms.bIsValid;
+	fn->FunctionFlags = flags;
 
-	if (SaveGameData)
-		memcpy(SaveGameData, &GetSaveGameData_Parms.SaveGameData, 0xC);
+	if (bIsValid != nullptr)
+		*bIsValid = params.bIsValid;
+	if (SaveGameData != nullptr)
+		*SaveGameData = params.SaveGameData;
 
-	return GetSaveGameData_Parms.ReturnValue;
-};
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadSaveGameData
-// [0x00020000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            DeviceID                       ( CPF_Parm )
-// struct FString                 FriendlyName                   ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 SaveFileName                   ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// int                            DeviceID                       (Parm)
+// struct FString                 FriendlyName                   (Parm, NeedCtorLink)
+// struct FString                 Filename                       (Parm, NeedCtorLink)
+// struct FString                 SaveFileName                   (Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::ReadSaveGameData(unsigned char LocalUserNum, int DeviceID, struct FString FriendlyName, struct FString Filename, struct FString SaveFileName)
+bool UOnlineSubsystemSteamworks::ReadSaveGameData(unsigned char LocalUserNum, int DeviceID, const struct FString& FriendlyName, const struct FString& Filename, const struct FString& SaveFileName)
 {
-	static UFunction* pFnReadSaveGameData = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadSaveGameData");
 
-	if (!pFnReadSaveGameData)
-		pFnReadSaveGameData = (UFunction*)UObject::GObjects()->Data[47723];
+	UOnlineSubsystemSteamworks_ReadSaveGameData_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.DeviceID = DeviceID;
+	params.FriendlyName = FriendlyName;
+	params.Filename = Filename;
+	params.SaveFileName = SaveFileName;
 
-	UOnlineSubsystemSteamworks_execReadSaveGameData_Parms ReadSaveGameData_Parms;
-	ReadSaveGameData_Parms.LocalUserNum = LocalUserNum;
-	ReadSaveGameData_Parms.DeviceID = DeviceID;
-	memcpy(&ReadSaveGameData_Parms.FriendlyName, &FriendlyName, 0xC);
-	memcpy(&ReadSaveGameData_Parms.Filename, &Filename, 0xC);
-	memcpy(&ReadSaveGameData_Parms.SaveFileName, &SaveFileName, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnReadSaveGameData, &ReadSaveGameData_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return ReadSaveGameData_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetAvailableDownloadCounts
-// [0x00420000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            NewDownloads                   ( CPF_Parm | CPF_OutParm )
-// int                            TotalDownloads                 ( CPF_Parm | CPF_OutParm )
+// (Public, HasOutParms)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// int                            NewDownloads                   (Parm, OutParm)
+// int                            TotalDownloads                 (Parm, OutParm)
 
 void UOnlineSubsystemSteamworks::GetAvailableDownloadCounts(unsigned char LocalUserNum, int* NewDownloads, int* TotalDownloads)
 {
-	static UFunction* pFnGetAvailableDownloadCounts = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetAvailableDownloadCounts");
 
-	if (!pFnGetAvailableDownloadCounts)
-		pFnGetAvailableDownloadCounts = (UFunction*)UObject::GObjects()->Data[47719];
+	UOnlineSubsystemSteamworks_GetAvailableDownloadCounts_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execGetAvailableDownloadCounts_Parms GetAvailableDownloadCounts_Parms;
-	GetAvailableDownloadCounts_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetAvailableDownloadCounts, &GetAvailableDownloadCounts_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (NewDownloads)
-		*NewDownloads = GetAvailableDownloadCounts_Parms.NewDownloads;
+	fn->FunctionFlags = flags;
 
-	if (TotalDownloads)
-		*TotalDownloads = GetAvailableDownloadCounts_Parms.TotalDownloads;
-};
+	if (NewDownloads != nullptr)
+		*NewDownloads = params.NewDownloads;
+	if (TotalDownloads != nullptr)
+		*TotalDownloads = params.TotalDownloads;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearQueryAvailableDownloadsComplete
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         QueryDownloadsDelegate         ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         QueryDownloadsDelegate         (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearQueryAvailableDownloadsComplete(unsigned char LocalUserNum, struct FScriptDelegate QueryDownloadsDelegate)
+void UOnlineSubsystemSteamworks::ClearQueryAvailableDownloadsComplete(unsigned char LocalUserNum, const struct FScriptDelegate& QueryDownloadsDelegate)
 {
-	static UFunction* pFnClearQueryAvailableDownloadsComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearQueryAvailableDownloadsComplete");
 
-	if (!pFnClearQueryAvailableDownloadsComplete)
-		pFnClearQueryAvailableDownloadsComplete = (UFunction*)UObject::GObjects()->Data[47716];
+	UOnlineSubsystemSteamworks_ClearQueryAvailableDownloadsComplete_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.QueryDownloadsDelegate = QueryDownloadsDelegate;
 
-	UOnlineSubsystemSteamworks_execClearQueryAvailableDownloadsComplete_Parms ClearQueryAvailableDownloadsComplete_Parms;
-	ClearQueryAvailableDownloadsComplete_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearQueryAvailableDownloadsComplete_Parms.QueryDownloadsDelegate, &QueryDownloadsDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearQueryAvailableDownloadsComplete, &ClearQueryAvailableDownloadsComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddQueryAvailableDownloadsComplete
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         QueryDownloadsDelegate         ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         QueryDownloadsDelegate         (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddQueryAvailableDownloadsComplete(unsigned char LocalUserNum, struct FScriptDelegate QueryDownloadsDelegate)
+void UOnlineSubsystemSteamworks::AddQueryAvailableDownloadsComplete(unsigned char LocalUserNum, const struct FScriptDelegate& QueryDownloadsDelegate)
 {
-	static UFunction* pFnAddQueryAvailableDownloadsComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddQueryAvailableDownloadsComplete");
 
-	if (!pFnAddQueryAvailableDownloadsComplete)
-		pFnAddQueryAvailableDownloadsComplete = (UFunction*)UObject::GObjects()->Data[47713];
+	UOnlineSubsystemSteamworks_AddQueryAvailableDownloadsComplete_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.QueryDownloadsDelegate = QueryDownloadsDelegate;
 
-	UOnlineSubsystemSteamworks_execAddQueryAvailableDownloadsComplete_Parms AddQueryAvailableDownloadsComplete_Parms;
-	AddQueryAvailableDownloadsComplete_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddQueryAvailableDownloadsComplete_Parms.QueryDownloadsDelegate, &QueryDownloadsDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddQueryAvailableDownloadsComplete, &AddQueryAvailableDownloadsComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnQueryAvailableDownloadsComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineSubsystemSteamworks::OnQueryAvailableDownloadsComplete(unsigned long bWasSuccessful)
+void UOnlineSubsystemSteamworks::OnQueryAvailableDownloadsComplete(bool bWasSuccessful)
 {
-	static UFunction* pFnOnQueryAvailableDownloadsComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnQueryAvailableDownloadsComplete");
 
-	if (!pFnOnQueryAvailableDownloadsComplete)
-		pFnOnQueryAvailableDownloadsComplete = (UFunction*)UObject::GObjects()->Data[47711];
+	UOnlineSubsystemSteamworks_OnQueryAvailableDownloadsComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineSubsystemSteamworks_execOnQueryAvailableDownloadsComplete_Parms OnQueryAvailableDownloadsComplete_Parms;
-	OnQueryAvailableDownloadsComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnQueryAvailableDownloadsComplete, &OnQueryAvailableDownloadsComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.QueryAvailableDownloads
-// [0x00024000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            CategoryMask                   ( CPF_OptionalParm | CPF_Parm )
+// (HasOptionalParms, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// int                            CategoryMask                   (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::QueryAvailableDownloads(unsigned char LocalUserNum, int CategoryMask)
 {
-	static UFunction* pFnQueryAvailableDownloads = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.QueryAvailableDownloads");
 
-	if (!pFnQueryAvailableDownloads)
-		pFnQueryAvailableDownloads = (UFunction*)UObject::GObjects()->Data[47707];
+	UOnlineSubsystemSteamworks_QueryAvailableDownloads_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.CategoryMask = CategoryMask;
 
-	UOnlineSubsystemSteamworks_execQueryAvailableDownloads_Parms QueryAvailableDownloads_Parms;
-	QueryAvailableDownloads_Parms.LocalUserNum = LocalUserNum;
-	QueryAvailableDownloads_Parms.CategoryMask = CategoryMask;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnQueryAvailableDownloads, &QueryAvailableDownloads_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return QueryAvailableDownloads_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearCrossTitleSaveGames
-// [0x00020000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::ClearCrossTitleSaveGames(unsigned char LocalUserNum)
 {
-	static UFunction* pFnClearCrossTitleSaveGames = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearCrossTitleSaveGames");
 
-	if (!pFnClearCrossTitleSaveGames)
-		pFnClearCrossTitleSaveGames = (UFunction*)UObject::GObjects()->Data[47704];
+	UOnlineSubsystemSteamworks_ClearCrossTitleSaveGames_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execClearCrossTitleSaveGames_Parms ClearCrossTitleSaveGames_Parms;
-	ClearCrossTitleSaveGames_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearCrossTitleSaveGames, &ClearCrossTitleSaveGames_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return ClearCrossTitleSaveGames_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadCrossTitleSaveGameDataComplete
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         ReadSaveGameDataCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         ReadSaveGameDataCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearReadCrossTitleSaveGameDataComplete(unsigned char LocalUserNum, struct FScriptDelegate ReadSaveGameDataCompleteDelegate)
+void UOnlineSubsystemSteamworks::ClearReadCrossTitleSaveGameDataComplete(unsigned char LocalUserNum, const struct FScriptDelegate& ReadSaveGameDataCompleteDelegate)
 {
-	static UFunction* pFnClearReadCrossTitleSaveGameDataComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadCrossTitleSaveGameDataComplete");
 
-	if (!pFnClearReadCrossTitleSaveGameDataComplete)
-		pFnClearReadCrossTitleSaveGameDataComplete = (UFunction*)UObject::GObjects()->Data[47701];
+	UOnlineSubsystemSteamworks_ClearReadCrossTitleSaveGameDataComplete_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ReadSaveGameDataCompleteDelegate = ReadSaveGameDataCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearReadCrossTitleSaveGameDataComplete_Parms ClearReadCrossTitleSaveGameDataComplete_Parms;
-	ClearReadCrossTitleSaveGameDataComplete_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearReadCrossTitleSaveGameDataComplete_Parms.ReadSaveGameDataCompleteDelegate, &ReadSaveGameDataCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearReadCrossTitleSaveGameDataComplete, &ClearReadCrossTitleSaveGameDataComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadCrossTitleSaveGameDataComplete
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         ReadSaveGameDataCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         ReadSaveGameDataCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddReadCrossTitleSaveGameDataComplete(unsigned char LocalUserNum, struct FScriptDelegate ReadSaveGameDataCompleteDelegate)
+void UOnlineSubsystemSteamworks::AddReadCrossTitleSaveGameDataComplete(unsigned char LocalUserNum, const struct FScriptDelegate& ReadSaveGameDataCompleteDelegate)
 {
-	static UFunction* pFnAddReadCrossTitleSaveGameDataComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadCrossTitleSaveGameDataComplete");
 
-	if (!pFnAddReadCrossTitleSaveGameDataComplete)
-		pFnAddReadCrossTitleSaveGameDataComplete = (UFunction*)UObject::GObjects()->Data[47698];
+	UOnlineSubsystemSteamworks_AddReadCrossTitleSaveGameDataComplete_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ReadSaveGameDataCompleteDelegate = ReadSaveGameDataCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddReadCrossTitleSaveGameDataComplete_Parms AddReadCrossTitleSaveGameDataComplete_Parms;
-	AddReadCrossTitleSaveGameDataComplete_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddReadCrossTitleSaveGameDataComplete_Parms.ReadSaveGameDataCompleteDelegate, &ReadSaveGameDataCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddReadCrossTitleSaveGameDataComplete, &AddReadCrossTitleSaveGameDataComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadCrossTitleSaveGameDataComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            DeviceID                       ( CPF_Parm )
-// int                            TitleId                        ( CPF_Parm )
-// struct FString                 FriendlyName                   ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 SaveFileName                   ( CPF_Parm | CPF_NeedCtorLink )
+// (Public, Delegate)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
+// unsigned char                  LocalUserNum                   (Parm)
+// int                            DeviceID                       (Parm)
+// int                            TitleId                        (Parm)
+// struct FString                 FriendlyName                   (Parm, NeedCtorLink)
+// struct FString                 Filename                       (Parm, NeedCtorLink)
+// struct FString                 SaveFileName                   (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::OnReadCrossTitleSaveGameDataComplete(unsigned long bWasSuccessful, unsigned char LocalUserNum, int DeviceID, int TitleId, struct FString FriendlyName, struct FString Filename, struct FString SaveFileName)
+void UOnlineSubsystemSteamworks::OnReadCrossTitleSaveGameDataComplete(bool bWasSuccessful, unsigned char LocalUserNum, int DeviceID, int TitleId, const struct FString& FriendlyName, const struct FString& Filename, const struct FString& SaveFileName)
 {
-	static UFunction* pFnOnReadCrossTitleSaveGameDataComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadCrossTitleSaveGameDataComplete");
 
-	if (!pFnOnReadCrossTitleSaveGameDataComplete)
-		pFnOnReadCrossTitleSaveGameDataComplete = (UFunction*)UObject::GObjects()->Data[47690];
+	UOnlineSubsystemSteamworks_OnReadCrossTitleSaveGameDataComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
+	params.LocalUserNum = LocalUserNum;
+	params.DeviceID = DeviceID;
+	params.TitleId = TitleId;
+	params.FriendlyName = FriendlyName;
+	params.Filename = Filename;
+	params.SaveFileName = SaveFileName;
 
-	UOnlineSubsystemSteamworks_execOnReadCrossTitleSaveGameDataComplete_Parms OnReadCrossTitleSaveGameDataComplete_Parms;
-	OnReadCrossTitleSaveGameDataComplete_Parms.bWasSuccessful = bWasSuccessful;
-	OnReadCrossTitleSaveGameDataComplete_Parms.LocalUserNum = LocalUserNum;
-	OnReadCrossTitleSaveGameDataComplete_Parms.DeviceID = DeviceID;
-	OnReadCrossTitleSaveGameDataComplete_Parms.TitleId = TitleId;
-	memcpy(&OnReadCrossTitleSaveGameDataComplete_Parms.FriendlyName, &FriendlyName, 0xC);
-	memcpy(&OnReadCrossTitleSaveGameDataComplete_Parms.Filename, &Filename, 0xC);
-	memcpy(&OnReadCrossTitleSaveGameDataComplete_Parms.SaveFileName, &SaveFileName, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReadCrossTitleSaveGameDataComplete, &OnReadCrossTitleSaveGameDataComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetCrossTitleSaveGameData
-// [0x00420000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            DeviceID                       ( CPF_Parm )
-// int                            TitleId                        ( CPF_Parm )
-// struct FString                 FriendlyName                   ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 SaveFileName                   ( CPF_Parm | CPF_NeedCtorLink )
-// unsigned char                  bIsValid                       ( CPF_Parm | CPF_OutParm )
-// TArray< unsigned char >        SaveGameData                   ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Public, HasOutParms)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// int                            DeviceID                       (Parm)
+// int                            TitleId                        (Parm)
+// struct FString                 FriendlyName                   (Parm, NeedCtorLink)
+// struct FString                 Filename                       (Parm, NeedCtorLink)
+// struct FString                 SaveFileName                   (Parm, NeedCtorLink)
+// unsigned char                  bIsValid                       (Parm, OutParm)
+// TArray<unsigned char>          SaveGameData                   (Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::GetCrossTitleSaveGameData(unsigned char LocalUserNum, int DeviceID, int TitleId, struct FString FriendlyName, struct FString Filename, struct FString SaveFileName, unsigned char* bIsValid, TArray< unsigned char >* SaveGameData)
+bool UOnlineSubsystemSteamworks::GetCrossTitleSaveGameData(unsigned char LocalUserNum, int DeviceID, int TitleId, const struct FString& FriendlyName, const struct FString& Filename, const struct FString& SaveFileName, unsigned char* bIsValid, TArray<unsigned char>* SaveGameData)
 {
-	static UFunction* pFnGetCrossTitleSaveGameData = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetCrossTitleSaveGameData");
 
-	if (!pFnGetCrossTitleSaveGameData)
-		pFnGetCrossTitleSaveGameData = (UFunction*)UObject::GObjects()->Data[47679];
+	UOnlineSubsystemSteamworks_GetCrossTitleSaveGameData_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.DeviceID = DeviceID;
+	params.TitleId = TitleId;
+	params.FriendlyName = FriendlyName;
+	params.Filename = Filename;
+	params.SaveFileName = SaveFileName;
 
-	UOnlineSubsystemSteamworks_execGetCrossTitleSaveGameData_Parms GetCrossTitleSaveGameData_Parms;
-	GetCrossTitleSaveGameData_Parms.LocalUserNum = LocalUserNum;
-	GetCrossTitleSaveGameData_Parms.DeviceID = DeviceID;
-	GetCrossTitleSaveGameData_Parms.TitleId = TitleId;
-	memcpy(&GetCrossTitleSaveGameData_Parms.FriendlyName, &FriendlyName, 0xC);
-	memcpy(&GetCrossTitleSaveGameData_Parms.Filename, &Filename, 0xC);
-	memcpy(&GetCrossTitleSaveGameData_Parms.SaveFileName, &SaveFileName, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetCrossTitleSaveGameData, &GetCrossTitleSaveGameData_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (bIsValid)
-		*bIsValid = GetCrossTitleSaveGameData_Parms.bIsValid;
+	fn->FunctionFlags = flags;
 
-	if (SaveGameData)
-		memcpy(SaveGameData, &GetCrossTitleSaveGameData_Parms.SaveGameData, 0xC);
+	if (bIsValid != nullptr)
+		*bIsValid = params.bIsValid;
+	if (SaveGameData != nullptr)
+		*SaveGameData = params.SaveGameData;
 
-	return GetCrossTitleSaveGameData_Parms.ReturnValue;
-};
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadCrossTitleSaveGameData
-// [0x00020000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            DeviceID                       ( CPF_Parm )
-// int                            TitleId                        ( CPF_Parm )
-// struct FString                 FriendlyName                   ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 SaveFileName                   ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// int                            DeviceID                       (Parm)
+// int                            TitleId                        (Parm)
+// struct FString                 FriendlyName                   (Parm, NeedCtorLink)
+// struct FString                 Filename                       (Parm, NeedCtorLink)
+// struct FString                 SaveFileName                   (Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::ReadCrossTitleSaveGameData(unsigned char LocalUserNum, int DeviceID, int TitleId, struct FString FriendlyName, struct FString Filename, struct FString SaveFileName)
+bool UOnlineSubsystemSteamworks::ReadCrossTitleSaveGameData(unsigned char LocalUserNum, int DeviceID, int TitleId, const struct FString& FriendlyName, const struct FString& Filename, const struct FString& SaveFileName)
 {
-	static UFunction* pFnReadCrossTitleSaveGameData = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadCrossTitleSaveGameData");
 
-	if (!pFnReadCrossTitleSaveGameData)
-		pFnReadCrossTitleSaveGameData = (UFunction*)UObject::GObjects()->Data[47671];
+	UOnlineSubsystemSteamworks_ReadCrossTitleSaveGameData_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.DeviceID = DeviceID;
+	params.TitleId = TitleId;
+	params.FriendlyName = FriendlyName;
+	params.Filename = Filename;
+	params.SaveFileName = SaveFileName;
 
-	UOnlineSubsystemSteamworks_execReadCrossTitleSaveGameData_Parms ReadCrossTitleSaveGameData_Parms;
-	ReadCrossTitleSaveGameData_Parms.LocalUserNum = LocalUserNum;
-	ReadCrossTitleSaveGameData_Parms.DeviceID = DeviceID;
-	ReadCrossTitleSaveGameData_Parms.TitleId = TitleId;
-	memcpy(&ReadCrossTitleSaveGameData_Parms.FriendlyName, &FriendlyName, 0xC);
-	memcpy(&ReadCrossTitleSaveGameData_Parms.Filename, &Filename, 0xC);
-	memcpy(&ReadCrossTitleSaveGameData_Parms.SaveFileName, &SaveFileName, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnReadCrossTitleSaveGameData, &ReadCrossTitleSaveGameData_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return ReadCrossTitleSaveGameData_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadCrossTitleContentCompleteDelegate
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// unsigned char                  ContentType                    ( CPF_Parm )
-// struct FScriptDelegate         ReadContentCompleteDelegate    ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// unsigned char                  ContentType                    (Parm)
+// struct FScriptDelegate         ReadContentCompleteDelegate    (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearReadCrossTitleContentCompleteDelegate(unsigned char LocalUserNum, unsigned char ContentType, struct FScriptDelegate ReadContentCompleteDelegate)
+void UOnlineSubsystemSteamworks::ClearReadCrossTitleContentCompleteDelegate(unsigned char LocalUserNum, unsigned char ContentType, const struct FScriptDelegate& ReadContentCompleteDelegate)
 {
-	static UFunction* pFnClearReadCrossTitleContentCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadCrossTitleContentCompleteDelegate");
 
-	if (!pFnClearReadCrossTitleContentCompleteDelegate)
-		pFnClearReadCrossTitleContentCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47667];
+	UOnlineSubsystemSteamworks_ClearReadCrossTitleContentCompleteDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ContentType = ContentType;
+	params.ReadContentCompleteDelegate = ReadContentCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearReadCrossTitleContentCompleteDelegate_Parms ClearReadCrossTitleContentCompleteDelegate_Parms;
-	ClearReadCrossTitleContentCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
-	ClearReadCrossTitleContentCompleteDelegate_Parms.ContentType = ContentType;
-	memcpy(&ClearReadCrossTitleContentCompleteDelegate_Parms.ReadContentCompleteDelegate, &ReadContentCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearReadCrossTitleContentCompleteDelegate, &ClearReadCrossTitleContentCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadCrossTitleContentCompleteDelegate
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// unsigned char                  ContentType                    ( CPF_Parm )
-// struct FScriptDelegate         ReadContentCompleteDelegate    ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// unsigned char                  ContentType                    (Parm)
+// struct FScriptDelegate         ReadContentCompleteDelegate    (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddReadCrossTitleContentCompleteDelegate(unsigned char LocalUserNum, unsigned char ContentType, struct FScriptDelegate ReadContentCompleteDelegate)
+void UOnlineSubsystemSteamworks::AddReadCrossTitleContentCompleteDelegate(unsigned char LocalUserNum, unsigned char ContentType, const struct FScriptDelegate& ReadContentCompleteDelegate)
 {
-	static UFunction* pFnAddReadCrossTitleContentCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadCrossTitleContentCompleteDelegate");
 
-	if (!pFnAddReadCrossTitleContentCompleteDelegate)
-		pFnAddReadCrossTitleContentCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47663];
+	UOnlineSubsystemSteamworks_AddReadCrossTitleContentCompleteDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ContentType = ContentType;
+	params.ReadContentCompleteDelegate = ReadContentCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddReadCrossTitleContentCompleteDelegate_Parms AddReadCrossTitleContentCompleteDelegate_Parms;
-	AddReadCrossTitleContentCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
-	AddReadCrossTitleContentCompleteDelegate_Parms.ContentType = ContentType;
-	memcpy(&AddReadCrossTitleContentCompleteDelegate_Parms.ReadContentCompleteDelegate, &ReadContentCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddReadCrossTitleContentCompleteDelegate, &AddReadCrossTitleContentCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadCrossTitleContentComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineSubsystemSteamworks::OnReadCrossTitleContentComplete(unsigned long bWasSuccessful)
+void UOnlineSubsystemSteamworks::OnReadCrossTitleContentComplete(bool bWasSuccessful)
 {
-	static UFunction* pFnOnReadCrossTitleContentComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadCrossTitleContentComplete");
 
-	if (!pFnOnReadCrossTitleContentComplete)
-		pFnOnReadCrossTitleContentComplete = (UFunction*)UObject::GObjects()->Data[47661];
+	UOnlineSubsystemSteamworks_OnReadCrossTitleContentComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineSubsystemSteamworks_execOnReadCrossTitleContentComplete_Parms OnReadCrossTitleContentComplete_Parms;
-	OnReadCrossTitleContentComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReadCrossTitleContentComplete, &OnReadCrossTitleContentComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetCrossTitleContentList
-// [0x00420000]
-// Parameters infos:
-// unsigned char                  ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// unsigned char                  ContentType                    ( CPF_Parm )
-// TArray< struct FOnlineCrossTitleContent > ContentList                    ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Public, HasOutParms)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// unsigned char                  ContentType                    (Parm)
+// TArray<struct FOnlineCrossTitleContent> ContentList                    (Parm, OutParm, NeedCtorLink)
+// unsigned char                  ReturnValue                    (Parm, OutParm, ReturnParm)
 
-unsigned char UOnlineSubsystemSteamworks::GetCrossTitleContentList(unsigned char LocalUserNum, unsigned char ContentType, TArray< struct FOnlineCrossTitleContent >* ContentList)
+unsigned char UOnlineSubsystemSteamworks::GetCrossTitleContentList(unsigned char LocalUserNum, unsigned char ContentType, TArray<struct FOnlineCrossTitleContent>* ContentList)
 {
-	static UFunction* pFnGetCrossTitleContentList = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetCrossTitleContentList");
 
-	if (!pFnGetCrossTitleContentList)
-		pFnGetCrossTitleContentList = (UFunction*)UObject::GObjects()->Data[47655];
+	UOnlineSubsystemSteamworks_GetCrossTitleContentList_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ContentType = ContentType;
 
-	UOnlineSubsystemSteamworks_execGetCrossTitleContentList_Parms GetCrossTitleContentList_Parms;
-	GetCrossTitleContentList_Parms.LocalUserNum = LocalUserNum;
-	GetCrossTitleContentList_Parms.ContentType = ContentType;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetCrossTitleContentList, &GetCrossTitleContentList_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (ContentList)
-		memcpy(ContentList, &GetCrossTitleContentList_Parms.ContentList, 0xC);
+	fn->FunctionFlags = flags;
 
-	return GetCrossTitleContentList_Parms.ReturnValue;
-};
+	if (ContentList != nullptr)
+		*ContentList = params.ContentList;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearCrossTitleContentList
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// unsigned char                  ContentType                    ( CPF_Parm )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// unsigned char                  ContentType                    (Parm)
 
 void UOnlineSubsystemSteamworks::ClearCrossTitleContentList(unsigned char LocalUserNum, unsigned char ContentType)
 {
-	static UFunction* pFnClearCrossTitleContentList = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearCrossTitleContentList");
 
-	if (!pFnClearCrossTitleContentList)
-		pFnClearCrossTitleContentList = (UFunction*)UObject::GObjects()->Data[47652];
+	UOnlineSubsystemSteamworks_ClearCrossTitleContentList_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ContentType = ContentType;
 
-	UOnlineSubsystemSteamworks_execClearCrossTitleContentList_Parms ClearCrossTitleContentList_Parms;
-	ClearCrossTitleContentList_Parms.LocalUserNum = LocalUserNum;
-	ClearCrossTitleContentList_Parms.ContentType = ContentType;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearCrossTitleContentList, &ClearCrossTitleContentList_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadCrossTitleContentList
-// [0x00024000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// unsigned char                  ContentType                    ( CPF_Parm )
-// int                            TitleId                        ( CPF_OptionalParm | CPF_Parm )
-// int                            DeviceID                       ( CPF_OptionalParm | CPF_Parm )
+// (HasOptionalParms, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// unsigned char                  ContentType                    (Parm)
+// int                            TitleId                        (OptionalParm, Parm)
+// int                            DeviceID                       (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::ReadCrossTitleContentList(unsigned char LocalUserNum, unsigned char ContentType, int TitleId, int DeviceID)
 {
-	static UFunction* pFnReadCrossTitleContentList = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadCrossTitleContentList");
 
-	if (!pFnReadCrossTitleContentList)
-		pFnReadCrossTitleContentList = (UFunction*)UObject::GObjects()->Data[47646];
+	UOnlineSubsystemSteamworks_ReadCrossTitleContentList_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ContentType = ContentType;
+	params.TitleId = TitleId;
+	params.DeviceID = DeviceID;
 
-	UOnlineSubsystemSteamworks_execReadCrossTitleContentList_Parms ReadCrossTitleContentList_Parms;
-	ReadCrossTitleContentList_Parms.LocalUserNum = LocalUserNum;
-	ReadCrossTitleContentList_Parms.ContentType = ContentType;
-	ReadCrossTitleContentList_Parms.TitleId = TitleId;
-	ReadCrossTitleContentList_Parms.DeviceID = DeviceID;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnReadCrossTitleContentList, &ReadCrossTitleContentList_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return ReadCrossTitleContentList_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetContentList
-// [0x00420000]
-// Parameters infos:
-// unsigned char                  ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// unsigned char                  ContentType                    ( CPF_Parm )
-// TArray< struct FOnlineContent > ContentList                    ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Public, HasOutParms)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// unsigned char                  ContentType                    (Parm)
+// TArray<struct FOnlineContent>  ContentList                    (Parm, OutParm, NeedCtorLink)
+// unsigned char                  ReturnValue                    (Parm, OutParm, ReturnParm)
 
-unsigned char UOnlineSubsystemSteamworks::GetContentList(unsigned char LocalUserNum, unsigned char ContentType, TArray< struct FOnlineContent >* ContentList)
+unsigned char UOnlineSubsystemSteamworks::GetContentList(unsigned char LocalUserNum, unsigned char ContentType, TArray<struct FOnlineContent>* ContentList)
 {
-	static UFunction* pFnGetContentList = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetContentList");
 
-	if (!pFnGetContentList)
-		pFnGetContentList = (UFunction*)UObject::GObjects()->Data[47640];
+	UOnlineSubsystemSteamworks_GetContentList_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ContentType = ContentType;
 
-	UOnlineSubsystemSteamworks_execGetContentList_Parms GetContentList_Parms;
-	GetContentList_Parms.LocalUserNum = LocalUserNum;
-	GetContentList_Parms.ContentType = ContentType;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetContentList, &GetContentList_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (ContentList)
-		memcpy(ContentList, &GetContentList_Parms.ContentList, 0xC);
+	fn->FunctionFlags = flags;
 
-	return GetContentList_Parms.ReturnValue;
-};
+	if (ContentList != nullptr)
+		*ContentList = params.ContentList;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearContentList
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// unsigned char                  ContentType                    ( CPF_Parm )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// unsigned char                  ContentType                    (Parm)
 
 void UOnlineSubsystemSteamworks::ClearContentList(unsigned char LocalUserNum, unsigned char ContentType)
 {
-	static UFunction* pFnClearContentList = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearContentList");
 
-	if (!pFnClearContentList)
-		pFnClearContentList = (UFunction*)UObject::GObjects()->Data[47637];
+	UOnlineSubsystemSteamworks_ClearContentList_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ContentType = ContentType;
 
-	UOnlineSubsystemSteamworks_execClearContentList_Parms ClearContentList_Parms;
-	ClearContentList_Parms.LocalUserNum = LocalUserNum;
-	ClearContentList_Parms.ContentType = ContentType;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearContentList, &ClearContentList_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadContentList
-// [0x00024000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// unsigned char                  ContentType                    ( CPF_Parm )
-// int                            DeviceID                       ( CPF_OptionalParm | CPF_Parm )
+// (HasOptionalParms, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// unsigned char                  ContentType                    (Parm)
+// int                            DeviceID                       (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::ReadContentList(unsigned char LocalUserNum, unsigned char ContentType, int DeviceID)
 {
-	static UFunction* pFnReadContentList = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadContentList");
 
-	if (!pFnReadContentList)
-		pFnReadContentList = (UFunction*)UObject::GObjects()->Data[47632];
+	UOnlineSubsystemSteamworks_ReadContentList_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ContentType = ContentType;
+	params.DeviceID = DeviceID;
 
-	UOnlineSubsystemSteamworks_execReadContentList_Parms ReadContentList_Parms;
-	ReadContentList_Parms.LocalUserNum = LocalUserNum;
-	ReadContentList_Parms.ContentType = ContentType;
-	ReadContentList_Parms.DeviceID = DeviceID;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnReadContentList, &ReadContentList_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return ReadContentList_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadContentComplete
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// unsigned char                  ContentType                    ( CPF_Parm )
-// struct FScriptDelegate         ReadContentCompleteDelegate    ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// unsigned char                  ContentType                    (Parm)
+// struct FScriptDelegate         ReadContentCompleteDelegate    (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearReadContentComplete(unsigned char LocalUserNum, unsigned char ContentType, struct FScriptDelegate ReadContentCompleteDelegate)
+void UOnlineSubsystemSteamworks::ClearReadContentComplete(unsigned char LocalUserNum, unsigned char ContentType, const struct FScriptDelegate& ReadContentCompleteDelegate)
 {
-	static UFunction* pFnClearReadContentComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadContentComplete");
 
-	if (!pFnClearReadContentComplete)
-		pFnClearReadContentComplete = (UFunction*)UObject::GObjects()->Data[47628];
+	UOnlineSubsystemSteamworks_ClearReadContentComplete_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ContentType = ContentType;
+	params.ReadContentCompleteDelegate = ReadContentCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearReadContentComplete_Parms ClearReadContentComplete_Parms;
-	ClearReadContentComplete_Parms.LocalUserNum = LocalUserNum;
-	ClearReadContentComplete_Parms.ContentType = ContentType;
-	memcpy(&ClearReadContentComplete_Parms.ReadContentCompleteDelegate, &ReadContentCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearReadContentComplete, &ClearReadContentComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadContentComplete
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// unsigned char                  ContentType                    ( CPF_Parm )
-// struct FScriptDelegate         ReadContentCompleteDelegate    ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// unsigned char                  ContentType                    (Parm)
+// struct FScriptDelegate         ReadContentCompleteDelegate    (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddReadContentComplete(unsigned char LocalUserNum, unsigned char ContentType, struct FScriptDelegate ReadContentCompleteDelegate)
+void UOnlineSubsystemSteamworks::AddReadContentComplete(unsigned char LocalUserNum, unsigned char ContentType, const struct FScriptDelegate& ReadContentCompleteDelegate)
 {
-	static UFunction* pFnAddReadContentComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadContentComplete");
 
-	if (!pFnAddReadContentComplete)
-		pFnAddReadContentComplete = (UFunction*)UObject::GObjects()->Data[47624];
+	UOnlineSubsystemSteamworks_AddReadContentComplete_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ContentType = ContentType;
+	params.ReadContentCompleteDelegate = ReadContentCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddReadContentComplete_Parms AddReadContentComplete_Parms;
-	AddReadContentComplete_Parms.LocalUserNum = LocalUserNum;
-	AddReadContentComplete_Parms.ContentType = ContentType;
-	memcpy(&AddReadContentComplete_Parms.ReadContentCompleteDelegate, &ReadContentCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddReadContentComplete, &AddReadContentComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadContentComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineSubsystemSteamworks::OnReadContentComplete(unsigned long bWasSuccessful)
+void UOnlineSubsystemSteamworks::OnReadContentComplete(bool bWasSuccessful)
 {
-	static UFunction* pFnOnReadContentComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadContentComplete");
 
-	if (!pFnOnReadContentComplete)
-		pFnOnReadContentComplete = (UFunction*)UObject::GObjects()->Data[47622];
+	UOnlineSubsystemSteamworks_OnReadContentComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineSubsystemSteamworks_execOnReadContentComplete_Parms OnReadContentComplete_Parms;
-	OnReadContentComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReadContentComplete, &OnReadContentComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearContentChangeDelegate
-// [0x00024000]
-// Parameters infos:
-// struct FScriptDelegate         ContentDelegate                ( CPF_Parm | CPF_NeedCtorLink )
-// unsigned char                  LocalUserNum                   ( CPF_OptionalParm | CPF_Parm )
+// (HasOptionalParms, Public)
+// Parameters:
+// struct FScriptDelegate         ContentDelegate                (Parm, NeedCtorLink)
+// unsigned char                  LocalUserNum                   (OptionalParm, Parm)
 
-void UOnlineSubsystemSteamworks::ClearContentChangeDelegate(struct FScriptDelegate ContentDelegate, unsigned char LocalUserNum)
+void UOnlineSubsystemSteamworks::ClearContentChangeDelegate(const struct FScriptDelegate& ContentDelegate, unsigned char LocalUserNum)
 {
-	static UFunction* pFnClearContentChangeDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearContentChangeDelegate");
 
-	if (!pFnClearContentChangeDelegate)
-		pFnClearContentChangeDelegate = (UFunction*)UObject::GObjects()->Data[47619];
+	UOnlineSubsystemSteamworks_ClearContentChangeDelegate_Params params;
+	params.ContentDelegate = ContentDelegate;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execClearContentChangeDelegate_Parms ClearContentChangeDelegate_Parms;
-	memcpy(&ClearContentChangeDelegate_Parms.ContentDelegate, &ContentDelegate, 0xC);
-	ClearContentChangeDelegate_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearContentChangeDelegate, &ClearContentChangeDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddContentChangeDelegate
-// [0x00024000]
-// Parameters infos:
-// struct FScriptDelegate         ContentDelegate                ( CPF_Parm | CPF_NeedCtorLink )
-// unsigned char                  LocalUserNum                   ( CPF_OptionalParm | CPF_Parm )
+// (HasOptionalParms, Public)
+// Parameters:
+// struct FScriptDelegate         ContentDelegate                (Parm, NeedCtorLink)
+// unsigned char                  LocalUserNum                   (OptionalParm, Parm)
 
-void UOnlineSubsystemSteamworks::AddContentChangeDelegate(struct FScriptDelegate ContentDelegate, unsigned char LocalUserNum)
+void UOnlineSubsystemSteamworks::AddContentChangeDelegate(const struct FScriptDelegate& ContentDelegate, unsigned char LocalUserNum)
 {
-	static UFunction* pFnAddContentChangeDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddContentChangeDelegate");
 
-	if (!pFnAddContentChangeDelegate)
-		pFnAddContentChangeDelegate = (UFunction*)UObject::GObjects()->Data[47616];
+	UOnlineSubsystemSteamworks_AddContentChangeDelegate_Params params;
+	params.ContentDelegate = ContentDelegate;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execAddContentChangeDelegate_Parms AddContentChangeDelegate_Parms;
-	memcpy(&AddContentChangeDelegate_Parms.ContentDelegate, &ContentDelegate, 0xC);
-	AddContentChangeDelegate_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddContentChangeDelegate, &AddContentChangeDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearContentChangeDelegateEx
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         ContentDelegate                ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         ContentDelegate                (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearContentChangeDelegateEx(struct FScriptDelegate ContentDelegate)
+void UOnlineSubsystemSteamworks::ClearContentChangeDelegateEx(const struct FScriptDelegate& ContentDelegate)
 {
-	static UFunction* pFnClearContentChangeDelegateEx = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearContentChangeDelegateEx");
 
-	if (!pFnClearContentChangeDelegateEx)
-		pFnClearContentChangeDelegateEx = (UFunction*)UObject::GObjects()->Data[47614];
+	UOnlineSubsystemSteamworks_ClearContentChangeDelegateEx_Params params;
+	params.ContentDelegate = ContentDelegate;
 
-	UOnlineSubsystemSteamworks_execClearContentChangeDelegateEx_Parms ClearContentChangeDelegateEx_Parms;
-	memcpy(&ClearContentChangeDelegateEx_Parms.ContentDelegate, &ContentDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearContentChangeDelegateEx, &ClearContentChangeDelegateEx_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddContentChangeDelegateEx
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         ContentDelegate                ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         ContentDelegate                (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddContentChangeDelegateEx(struct FScriptDelegate ContentDelegate)
+void UOnlineSubsystemSteamworks::AddContentChangeDelegateEx(const struct FScriptDelegate& ContentDelegate)
 {
-	static UFunction* pFnAddContentChangeDelegateEx = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddContentChangeDelegateEx");
 
-	if (!pFnAddContentChangeDelegateEx)
-		pFnAddContentChangeDelegateEx = (UFunction*)UObject::GObjects()->Data[47611];
+	UOnlineSubsystemSteamworks_AddContentChangeDelegateEx_Params params;
+	params.ContentDelegate = ContentDelegate;
 
-	UOnlineSubsystemSteamworks_execAddContentChangeDelegateEx_Parms AddContentChangeDelegateEx_Parms;
-	memcpy(&AddContentChangeDelegateEx_Parms.ContentDelegate, &ContentDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddContentChangeDelegateEx, &AddContentChangeDelegateEx_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnContentChange
-// [0x00120000]
-// Parameters infos:
+// (Public, Delegate)
 
 void UOnlineSubsystemSteamworks::OnContentChange()
 {
-	static UFunction* pFnOnContentChange = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnContentChange");
 
-	if (!pFnOnContentChange)
-		pFnOnContentChange = (UFunction*)UObject::GObjects()->Data[47610];
+	UOnlineSubsystemSteamworks_OnContentChange_Params params;
 
-	UOnlineSubsystemSteamworks_execOnContentChange_Parms OnContentChange_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnContentChange, &OnContentChange_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowRedeemCodeUI
-// [0x00020000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::ShowRedeemCodeUI(unsigned char LocalUserNum)
 {
-	static UFunction* pFnShowRedeemCodeUI = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowRedeemCodeUI");
 
-	if (!pFnShowRedeemCodeUI)
-		pFnShowRedeemCodeUI = (UFunction*)UObject::GObjects()->Data[47607];
+	UOnlineSubsystemSteamworks_ShowRedeemCodeUI_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execShowRedeemCodeUI_Parms ShowRedeemCodeUI_Parms;
-	ShowRedeemCodeUI_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnShowRedeemCodeUI, &ShowRedeemCodeUI_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return ShowRedeemCodeUI_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DumpSteamworksSessionState
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
+// (Native, Public)
 
 void UOnlineSubsystemSteamworks::DumpSteamworksSessionState()
 {
-	static UFunction* pFnDumpSteamworksSessionState = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DumpSteamworksSessionState");
 
-	if (!pFnDumpSteamworksSessionState)
-		pFnDumpSteamworksSessionState = (UFunction*)UObject::GObjects()->Data[47606];
+	UOnlineSubsystemSteamworks_DumpSteamworksSessionState_Params params;
 
-	UOnlineSubsystemSteamworks_execDumpSteamworksSessionState_Parms DumpSteamworksSessionState_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnDumpSteamworksSessionState->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnDumpSteamworksSessionState, &DumpSteamworksSessionState_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnDumpSteamworksSessionState->FunctionFlags |= 0x400;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DumpSessionState
-// [0x00020002]
-// Parameters infos:
+// (Defined, Public)
 
 void UOnlineSubsystemSteamworks::DumpSessionState()
 {
-	static UFunction* pFnDumpSessionState = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DumpSessionState");
 
-	if (!pFnDumpSessionState)
-		pFnDumpSessionState = (UFunction*)UObject::GObjects()->Data[47605];
+	UOnlineSubsystemSteamworks_DumpSessionState_Params params;
 
-	UOnlineSubsystemSteamworks_execDumpSessionState_Parms DumpSessionState_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnDumpSessionState, &DumpSessionState_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SetVoiceVolume
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  VolType                        ( CPF_Parm )
-// float                          VolumeParam                    ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  VolType                        (Parm)
+// float                          VolumeParam                    (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::SetVoiceVolume(unsigned char VolType, float VolumeParam)
 {
-	static UFunction* pFnSetVoiceVolume = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SetVoiceVolume");
 
-	if (!pFnSetVoiceVolume)
-		pFnSetVoiceVolume = (UFunction*)UObject::GObjects()->Data[47601];
+	UOnlineSubsystemSteamworks_SetVoiceVolume_Params params;
+	params.VolType = VolType;
+	params.VolumeParam = VolumeParam;
 
-	UOnlineSubsystemSteamworks_execSetVoiceVolume_Parms SetVoiceVolume_Parms;
-	SetVoiceVolume_Parms.VolType = VolType;
-	SetVoiceVolume_Parms.VolumeParam = VolumeParam;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetVoiceVolume->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetVoiceVolume, &SetVoiceVolume_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnSetVoiceVolume->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return SetVoiceVolume_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearUnlockAvatarAwardCompleteDelegate
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         UnlockAvatarAwardCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         UnlockAvatarAwardCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearUnlockAvatarAwardCompleteDelegate(unsigned char LocalUserNum, struct FScriptDelegate UnlockAvatarAwardCompleteDelegate)
+void UOnlineSubsystemSteamworks::ClearUnlockAvatarAwardCompleteDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& UnlockAvatarAwardCompleteDelegate)
 {
-	static UFunction* pFnClearUnlockAvatarAwardCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearUnlockAvatarAwardCompleteDelegate");
 
-	if (!pFnClearUnlockAvatarAwardCompleteDelegate)
-		pFnClearUnlockAvatarAwardCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47598];
+	UOnlineSubsystemSteamworks_ClearUnlockAvatarAwardCompleteDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.UnlockAvatarAwardCompleteDelegate = UnlockAvatarAwardCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearUnlockAvatarAwardCompleteDelegate_Parms ClearUnlockAvatarAwardCompleteDelegate_Parms;
-	ClearUnlockAvatarAwardCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearUnlockAvatarAwardCompleteDelegate_Parms.UnlockAvatarAwardCompleteDelegate, &UnlockAvatarAwardCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearUnlockAvatarAwardCompleteDelegate, &ClearUnlockAvatarAwardCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddUnlockAvatarAwardCompleteDelegate
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         UnlockAvatarAwardCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         UnlockAvatarAwardCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddUnlockAvatarAwardCompleteDelegate(unsigned char LocalUserNum, struct FScriptDelegate UnlockAvatarAwardCompleteDelegate)
+void UOnlineSubsystemSteamworks::AddUnlockAvatarAwardCompleteDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& UnlockAvatarAwardCompleteDelegate)
 {
-	static UFunction* pFnAddUnlockAvatarAwardCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddUnlockAvatarAwardCompleteDelegate");
 
-	if (!pFnAddUnlockAvatarAwardCompleteDelegate)
-		pFnAddUnlockAvatarAwardCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47595];
+	UOnlineSubsystemSteamworks_AddUnlockAvatarAwardCompleteDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.UnlockAvatarAwardCompleteDelegate = UnlockAvatarAwardCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddUnlockAvatarAwardCompleteDelegate_Parms AddUnlockAvatarAwardCompleteDelegate_Parms;
-	AddUnlockAvatarAwardCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddUnlockAvatarAwardCompleteDelegate_Parms.UnlockAvatarAwardCompleteDelegate, &UnlockAvatarAwardCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddUnlockAvatarAwardCompleteDelegate, &AddUnlockAvatarAwardCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnUnlockAvatarAwardComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineSubsystemSteamworks::OnUnlockAvatarAwardComplete(unsigned long bWasSuccessful)
+void UOnlineSubsystemSteamworks::OnUnlockAvatarAwardComplete(bool bWasSuccessful)
 {
-	static UFunction* pFnOnUnlockAvatarAwardComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnUnlockAvatarAwardComplete");
 
-	if (!pFnOnUnlockAvatarAwardComplete)
-		pFnOnUnlockAvatarAwardComplete = (UFunction*)UObject::GObjects()->Data[47593];
+	UOnlineSubsystemSteamworks_OnUnlockAvatarAwardComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineSubsystemSteamworks_execOnUnlockAvatarAwardComplete_Parms OnUnlockAvatarAwardComplete_Parms;
-	OnUnlockAvatarAwardComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnUnlockAvatarAwardComplete, &OnUnlockAvatarAwardComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetFriendJoinURL
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FUniqueNetId            FriendUID                      ( CPF_Parm )
-// struct FString                 ServerURL                      ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
-// struct FString                 ServerUID                      ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FUniqueNetId            FriendUID                      (Parm)
+// struct FString                 ServerURL                      (Parm, OutParm, NeedCtorLink)
+// struct FString                 ServerUID                      (Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::GetFriendJoinURL(struct FUniqueNetId FriendUID, struct FString* ServerURL, struct FString* ServerUID)
+bool UOnlineSubsystemSteamworks::GetFriendJoinURL(const struct FUniqueNetId& FriendUID, struct FString* ServerURL, struct FString* ServerUID)
 {
-	static UFunction* pFnGetFriendJoinURL = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetFriendJoinURL");
 
-	if (!pFnGetFriendJoinURL)
-		pFnGetFriendJoinURL = (UFunction*)UObject::GObjects()->Data[47588];
+	UOnlineSubsystemSteamworks_GetFriendJoinURL_Params params;
+	params.FriendUID = FriendUID;
 
-	UOnlineSubsystemSteamworks_execGetFriendJoinURL_Parms GetFriendJoinURL_Parms;
-	memcpy(&GetFriendJoinURL_Parms.FriendUID, &FriendUID, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetFriendJoinURL->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetFriendJoinURL, &GetFriendJoinURL_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetFriendJoinURL->FunctionFlags |= 0x400;
+	if (ServerURL != nullptr)
+		*ServerURL = params.ServerURL;
+	if (ServerUID != nullptr)
+		*ServerUID = params.ServerUID;
 
-	if (ServerURL)
-		memcpy(ServerURL, &GetFriendJoinURL_Parms.ServerURL, 0xC);
+	return params.ReturnValue;
+}
 
-	if (ServerUID)
-		memcpy(ServerUID, &GetFriendJoinURL_Parms.ServerUID, 0xC);
-
-	return GetFriendJoinURL_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetCommandlineJoinURL
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned long                  bMarkAsJoined                  ( CPF_Parm )
-// struct FString                 ServerURL                      ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
-// struct FString                 ServerUID                      ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// bool                           bMarkAsJoined                  (Parm)
+// struct FString                 ServerURL                      (Parm, OutParm, NeedCtorLink)
+// struct FString                 ServerUID                      (Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::GetCommandlineJoinURL(unsigned long bMarkAsJoined, struct FString* ServerURL, struct FString* ServerUID)
+bool UOnlineSubsystemSteamworks::GetCommandlineJoinURL(bool bMarkAsJoined, struct FString* ServerURL, struct FString* ServerUID)
 {
-	static UFunction* pFnGetCommandlineJoinURL = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetCommandlineJoinURL");
 
-	if (!pFnGetCommandlineJoinURL)
-		pFnGetCommandlineJoinURL = (UFunction*)UObject::GObjects()->Data[47583];
+	UOnlineSubsystemSteamworks_GetCommandlineJoinURL_Params params;
+	params.bMarkAsJoined = bMarkAsJoined;
 
-	UOnlineSubsystemSteamworks_execGetCommandlineJoinURL_Parms GetCommandlineJoinURL_Parms;
-	GetCommandlineJoinURL_Parms.bMarkAsJoined = bMarkAsJoined;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetCommandlineJoinURL->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetCommandlineJoinURL, &GetCommandlineJoinURL_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetCommandlineJoinURL->FunctionFlags |= 0x400;
+	if (ServerURL != nullptr)
+		*ServerURL = params.ServerURL;
+	if (ServerUID != nullptr)
+		*ServerUID = params.ServerUID;
 
-	if (ServerURL)
-		memcpy(ServerURL, &GetCommandlineJoinURL_Parms.ServerURL, 0xC);
+	return params.ReturnValue;
+}
 
-	if (ServerUID)
-		memcpy(ServerUID, &GetCommandlineJoinURL_Parms.ServerUID, 0xC);
-
-	return GetCommandlineJoinURL_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.Int64ToUniqueNetId
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 UIDString                      ( CPF_Parm | CPF_NeedCtorLink )
-// struct FUniqueNetId            OutUID                         ( CPF_Parm | CPF_OutParm )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FString                 UIDString                      (Parm, NeedCtorLink)
+// struct FUniqueNetId            OutUID                         (Parm, OutParm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::Int64ToUniqueNetId(struct FString UIDString, struct FUniqueNetId* OutUID)
+bool UOnlineSubsystemSteamworks::Int64ToUniqueNetId(const struct FString& UIDString, struct FUniqueNetId* OutUID)
 {
-	static UFunction* pFnInt64ToUniqueNetId = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.Int64ToUniqueNetId");
 
-	if (!pFnInt64ToUniqueNetId)
-		pFnInt64ToUniqueNetId = (UFunction*)UObject::GObjects()->Data[47579];
+	UOnlineSubsystemSteamworks_Int64ToUniqueNetId_Params params;
+	params.UIDString = UIDString;
 
-	UOnlineSubsystemSteamworks_execInt64ToUniqueNetId_Parms Int64ToUniqueNetId_Parms;
-	memcpy(&Int64ToUniqueNetId_Parms.UIDString, &UIDString, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnInt64ToUniqueNetId->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnInt64ToUniqueNetId, &Int64ToUniqueNetId_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnInt64ToUniqueNetId->FunctionFlags |= 0x400;
+	if (OutUID != nullptr)
+		*OutUID = params.OutUID;
 
-	if (OutUID)
-		memcpy(OutUID, &Int64ToUniqueNetId_Parms.OutUID, 0x18);
+	return params.ReturnValue;
+}
 
-	return Int64ToUniqueNetId_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UniqueNetIdToInt64
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// struct FUniqueNetId            Uid                            ( CPF_Const | CPF_Parm | CPF_OutParm )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FUniqueNetId            Uid                            (Const, Parm, OutParm)
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
 struct FString UOnlineSubsystemSteamworks::UniqueNetIdToInt64(struct FUniqueNetId* Uid)
 {
-	static UFunction* pFnUniqueNetIdToInt64 = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UniqueNetIdToInt64");
 
-	if (!pFnUniqueNetIdToInt64)
-		pFnUniqueNetIdToInt64 = (UFunction*)UObject::GObjects()->Data[47576];
+	UOnlineSubsystemSteamworks_UniqueNetIdToInt64_Params params;
 
-	UOnlineSubsystemSteamworks_execUniqueNetIdToInt64_Parms UniqueNetIdToInt64_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnUniqueNetIdToInt64->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnUniqueNetIdToInt64, &UniqueNetIdToInt64_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnUniqueNetIdToInt64->FunctionFlags |= 0x400;
+	if (Uid != nullptr)
+		*Uid = params.Uid;
 
-	if (Uid)
-		memcpy(Uid, &UniqueNetIdToInt64_Parms.Uid, 0x18);
+	return params.ReturnValue;
+}
 
-	return UniqueNetIdToInt64_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.NotifyVOIPPlaybackFinished
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// class UAudioComponent*         VOIPAudioComponent             ( CPF_Parm | CPF_EditInline )
+// (Native, Public)
+// Parameters:
+// class UAudioComponent*         VOIPAudioComponent             (Parm, EditInline)
 
 void UOnlineSubsystemSteamworks::NotifyVOIPPlaybackFinished(class UAudioComponent* VOIPAudioComponent)
 {
-	static UFunction* pFnNotifyVOIPPlaybackFinished = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.NotifyVOIPPlaybackFinished");
 
-	if (!pFnNotifyVOIPPlaybackFinished)
-		pFnNotifyVOIPPlaybackFinished = (UFunction*)UObject::GObjects()->Data[47574];
+	UOnlineSubsystemSteamworks_NotifyVOIPPlaybackFinished_Params params;
+	params.VOIPAudioComponent = VOIPAudioComponent;
 
-	UOnlineSubsystemSteamworks_execNotifyVOIPPlaybackFinished_Parms NotifyVOIPPlaybackFinished_Parms;
-	NotifyVOIPPlaybackFinished_Parms.VOIPAudioComponent = VOIPAudioComponent;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnNotifyVOIPPlaybackFinished->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnNotifyVOIPPlaybackFinished, &NotifyVOIPPlaybackFinished_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnNotifyVOIPPlaybackFinished->FunctionFlags |= 0x400;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnVOIPPlaybackFinished
-// [0x00020002]
-// Parameters infos:
-// class UAudioComponent*         AC                             ( CPF_Parm | CPF_EditInline )
+// (Defined, Public)
+// Parameters:
+// class UAudioComponent*         AC                             (Parm, EditInline)
 
 void UOnlineSubsystemSteamworks::OnVOIPPlaybackFinished(class UAudioComponent* AC)
 {
-	static UFunction* pFnOnVOIPPlaybackFinished = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnVOIPPlaybackFinished");
 
-	if (!pFnOnVOIPPlaybackFinished)
-		pFnOnVOIPPlaybackFinished = (UFunction*)UObject::GObjects()->Data[47572];
+	UOnlineSubsystemSteamworks_OnVOIPPlaybackFinished_Params params;
+	params.AC = AC;
 
-	UOnlineSubsystemSteamworks_execOnVOIPPlaybackFinished_Parms OnVOIPPlaybackFinished_Parms;
-	OnVOIPPlaybackFinished_Parms.AC = AC;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnVOIPPlaybackFinished, &OnVOIPPlaybackFinished_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowProfileUI
-// [0x00024400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FString                 SubURL                         ( CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink )
-// struct FUniqueNetId            PlayerUID                      ( CPF_OptionalParm | CPF_Parm )
+// (Native, HasOptionalParms, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FString                 SubURL                         (OptionalParm, Parm, NeedCtorLink)
+// struct FUniqueNetId            PlayerUID                      (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::ShowProfileUI(unsigned char LocalUserNum, struct FString SubURL, struct FUniqueNetId PlayerUID)
+bool UOnlineSubsystemSteamworks::ShowProfileUI(unsigned char LocalUserNum, const struct FString& SubURL, const struct FUniqueNetId& PlayerUID)
 {
-	static UFunction* pFnShowProfileUI = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowProfileUI");
 
-	if (!pFnShowProfileUI)
-		pFnShowProfileUI = (UFunction*)UObject::GObjects()->Data[47567];
+	UOnlineSubsystemSteamworks_ShowProfileUI_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.SubURL = SubURL;
+	params.PlayerUID = PlayerUID;
 
-	UOnlineSubsystemSteamworks_execShowProfileUI_Parms ShowProfileUI_Parms;
-	ShowProfileUI_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ShowProfileUI_Parms.SubURL, &SubURL, 0xC);
-	memcpy(&ShowProfileUI_Parms.PlayerUID, &PlayerUID, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnShowProfileUI->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnShowProfileUI, &ShowProfileUI_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnShowProfileUI->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ShowProfileUI_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UniqueNetIdToPlayerName
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// struct FUniqueNetId            Uid                            ( CPF_Const | CPF_Parm | CPF_OutParm )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FUniqueNetId            Uid                            (Const, Parm, OutParm)
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
 struct FString UOnlineSubsystemSteamworks::UniqueNetIdToPlayerName(struct FUniqueNetId* Uid)
 {
-	static UFunction* pFnUniqueNetIdToPlayerName = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UniqueNetIdToPlayerName");
 
-	if (!pFnUniqueNetIdToPlayerName)
-		pFnUniqueNetIdToPlayerName = (UFunction*)UObject::GObjects()->Data[47564];
+	UOnlineSubsystemSteamworks_UniqueNetIdToPlayerName_Params params;
 
-	UOnlineSubsystemSteamworks_execUniqueNetIdToPlayerName_Parms UniqueNetIdToPlayerName_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnUniqueNetIdToPlayerName->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnUniqueNetIdToPlayerName, &UniqueNetIdToPlayerName_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnUniqueNetIdToPlayerName->FunctionFlags |= 0x400;
+	if (Uid != nullptr)
+		*Uid = params.Uid;
 
-	if (Uid)
-		memcpy(Uid, &UniqueNetIdToPlayerName_Parms.Uid, 0x18);
+	return params.ReturnValue;
+}
 
-	return UniqueNetIdToPlayerName_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DisplayAchievementProgress
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            AchievementId                  ( CPF_Parm )
-// int                            ProgressCount                  ( CPF_Parm )
-// int                            MaxProgress                    ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// int                            AchievementId                  (Parm)
+// int                            ProgressCount                  (Parm)
+// int                            MaxProgress                    (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::DisplayAchievementProgress(int AchievementId, int ProgressCount, int MaxProgress)
 {
-	static UFunction* pFnDisplayAchievementProgress = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DisplayAchievementProgress");
 
-	if (!pFnDisplayAchievementProgress)
-		pFnDisplayAchievementProgress = (UFunction*)UObject::GObjects()->Data[47559];
+	UOnlineSubsystemSteamworks_DisplayAchievementProgress_Params params;
+	params.AchievementId = AchievementId;
+	params.ProgressCount = ProgressCount;
+	params.MaxProgress = MaxProgress;
 
-	UOnlineSubsystemSteamworks_execDisplayAchievementProgress_Parms DisplayAchievementProgress_Parms;
-	DisplayAchievementProgress_Parms.AchievementId = AchievementId;
-	DisplayAchievementProgress_Parms.ProgressCount = ProgressCount;
-	DisplayAchievementProgress_Parms.MaxProgress = MaxProgress;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnDisplayAchievementProgress->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnDisplayAchievementProgress, &DisplayAchievementProgress_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnDisplayAchievementProgress->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return DisplayAchievementProgress_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CreateLeaderboard
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 LeaderboardName                ( CPF_Parm | CPF_NeedCtorLink )
-// unsigned char                  SortType                       ( CPF_Parm )
-// unsigned char                  DisplayFormat                  ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FString                 LeaderboardName                (Parm, NeedCtorLink)
+// unsigned char                  SortType                       (Parm)
+// unsigned char                  DisplayFormat                  (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::CreateLeaderboard(struct FString LeaderboardName, unsigned char SortType, unsigned char DisplayFormat)
+bool UOnlineSubsystemSteamworks::CreateLeaderboard(const struct FString& LeaderboardName, unsigned char SortType, unsigned char DisplayFormat)
 {
-	static UFunction* pFnCreateLeaderboard = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CreateLeaderboard");
 
-	if (!pFnCreateLeaderboard)
-		pFnCreateLeaderboard = (UFunction*)UObject::GObjects()->Data[47554];
+	UOnlineSubsystemSteamworks_CreateLeaderboard_Params params;
+	params.LeaderboardName = LeaderboardName;
+	params.SortType = SortType;
+	params.DisplayFormat = DisplayFormat;
 
-	UOnlineSubsystemSteamworks_execCreateLeaderboard_Parms CreateLeaderboard_Parms;
-	memcpy(&CreateLeaderboard_Parms.LeaderboardName, &LeaderboardName, 0xC);
-	CreateLeaderboard_Parms.SortType = SortType;
-	CreateLeaderboard_Parms.DisplayFormat = DisplayFormat;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnCreateLeaderboard->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnCreateLeaderboard, &CreateLeaderboard_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnCreateLeaderboard->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return CreateLeaderboard_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ResetStats
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned long                  bResetAchievements             ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// bool                           bResetAchievements             (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::ResetStats(unsigned long bResetAchievements)
+bool UOnlineSubsystemSteamworks::ResetStats(bool bResetAchievements)
 {
-	static UFunction* pFnResetStats = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ResetStats");
 
-	if (!pFnResetStats)
-		pFnResetStats = (UFunction*)UObject::GObjects()->Data[47551];
+	UOnlineSubsystemSteamworks_ResetStats_Params params;
+	params.bResetAchievements = bResetAchievements;
 
-	UOnlineSubsystemSteamworks_execResetStats_Parms ResetStats_Parms;
-	ResetStats_Parms.bResetAchievements = bResetAchievements;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnResetStats->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnResetStats, &ResetStats_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnResetStats->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ResetStats_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowCustomMessageUI
-// [0x00424000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FString                 MessageTitle                   ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 NonEditableMessage             ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 EditableMessage                ( CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink )
-// TArray< struct FUniqueNetId >  Recipients                     ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (HasOptionalParms, Public, HasOutParms)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// TArray<struct FUniqueNetId>    Recipients                     (Const, Parm, OutParm, NeedCtorLink)
+// struct FString                 MessageTitle                   (Parm, NeedCtorLink)
+// struct FString                 NonEditableMessage             (Parm, NeedCtorLink)
+// struct FString                 EditableMessage                (OptionalParm, Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::ShowCustomMessageUI(unsigned char LocalUserNum, struct FString MessageTitle, struct FString NonEditableMessage, struct FString EditableMessage, TArray< struct FUniqueNetId >* Recipients)
+bool UOnlineSubsystemSteamworks::ShowCustomMessageUI(unsigned char LocalUserNum, const struct FString& MessageTitle, const struct FString& NonEditableMessage, const struct FString& EditableMessage, TArray<struct FUniqueNetId>* Recipients)
 {
-	static UFunction* pFnShowCustomMessageUI = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowCustomMessageUI");
 
-	if (!pFnShowCustomMessageUI)
-		pFnShowCustomMessageUI = (UFunction*)UObject::GObjects()->Data[47543];
+	UOnlineSubsystemSteamworks_ShowCustomMessageUI_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.MessageTitle = MessageTitle;
+	params.NonEditableMessage = NonEditableMessage;
+	params.EditableMessage = EditableMessage;
 
-	UOnlineSubsystemSteamworks_execShowCustomMessageUI_Parms ShowCustomMessageUI_Parms;
-	ShowCustomMessageUI_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ShowCustomMessageUI_Parms.MessageTitle, &MessageTitle, 0xC);
-	memcpy(&ShowCustomMessageUI_Parms.NonEditableMessage, &NonEditableMessage, 0xC);
-	memcpy(&ShowCustomMessageUI_Parms.EditableMessage, &EditableMessage, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnShowCustomMessageUI, &ShowCustomMessageUI_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (Recipients)
-		memcpy(Recipients, &ShowCustomMessageUI_Parms.Recipients, 0xC);
+	fn->FunctionFlags = flags;
 
-	return ShowCustomMessageUI_Parms.ReturnValue;
-};
+	if (Recipients != nullptr)
+		*Recipients = params.Recipients;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearCrossTitleProfileSettings
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            TitleId                        ( CPF_Parm )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// int                            TitleId                        (Parm)
 
 void UOnlineSubsystemSteamworks::ClearCrossTitleProfileSettings(unsigned char LocalUserNum, int TitleId)
 {
-	static UFunction* pFnClearCrossTitleProfileSettings = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearCrossTitleProfileSettings");
 
-	if (!pFnClearCrossTitleProfileSettings)
-		pFnClearCrossTitleProfileSettings = (UFunction*)UObject::GObjects()->Data[47540];
+	UOnlineSubsystemSteamworks_ClearCrossTitleProfileSettings_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.TitleId = TitleId;
 
-	UOnlineSubsystemSteamworks_execClearCrossTitleProfileSettings_Parms ClearCrossTitleProfileSettings_Parms;
-	ClearCrossTitleProfileSettings_Parms.LocalUserNum = LocalUserNum;
-	ClearCrossTitleProfileSettings_Parms.TitleId = TitleId;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearCrossTitleProfileSettings, &ClearCrossTitleProfileSettings_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetCrossTitleProfileSettings
-// [0x00020000]
-// Parameters infos:
-// class UOnlineProfileSettings*  ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            TitleId                        ( CPF_Parm )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// int                            TitleId                        (Parm)
+// class UOnlineProfileSettings*  ReturnValue                    (Parm, OutParm, ReturnParm)
 
 class UOnlineProfileSettings* UOnlineSubsystemSteamworks::GetCrossTitleProfileSettings(unsigned char LocalUserNum, int TitleId)
 {
-	static UFunction* pFnGetCrossTitleProfileSettings = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetCrossTitleProfileSettings");
 
-	if (!pFnGetCrossTitleProfileSettings)
-		pFnGetCrossTitleProfileSettings = (UFunction*)UObject::GObjects()->Data[47536];
+	UOnlineSubsystemSteamworks_GetCrossTitleProfileSettings_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.TitleId = TitleId;
 
-	UOnlineSubsystemSteamworks_execGetCrossTitleProfileSettings_Parms GetCrossTitleProfileSettings_Parms;
-	GetCrossTitleProfileSettings_Parms.LocalUserNum = LocalUserNum;
-	GetCrossTitleProfileSettings_Parms.TitleId = TitleId;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetCrossTitleProfileSettings, &GetCrossTitleProfileSettings_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return GetCrossTitleProfileSettings_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadCrossTitleProfileSettingsCompleteDelegate
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         ReadProfileSettingsCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         ReadProfileSettingsCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearReadCrossTitleProfileSettingsCompleteDelegate(unsigned char LocalUserNum, struct FScriptDelegate ReadProfileSettingsCompleteDelegate)
+void UOnlineSubsystemSteamworks::ClearReadCrossTitleProfileSettingsCompleteDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& ReadProfileSettingsCompleteDelegate)
 {
-	static UFunction* pFnClearReadCrossTitleProfileSettingsCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadCrossTitleProfileSettingsCompleteDelegate");
 
-	if (!pFnClearReadCrossTitleProfileSettingsCompleteDelegate)
-		pFnClearReadCrossTitleProfileSettingsCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47533];
+	UOnlineSubsystemSteamworks_ClearReadCrossTitleProfileSettingsCompleteDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ReadProfileSettingsCompleteDelegate = ReadProfileSettingsCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearReadCrossTitleProfileSettingsCompleteDelegate_Parms ClearReadCrossTitleProfileSettingsCompleteDelegate_Parms;
-	ClearReadCrossTitleProfileSettingsCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearReadCrossTitleProfileSettingsCompleteDelegate_Parms.ReadProfileSettingsCompleteDelegate, &ReadProfileSettingsCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearReadCrossTitleProfileSettingsCompleteDelegate, &ClearReadCrossTitleProfileSettingsCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadCrossTitleProfileSettingsCompleteDelegate
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         ReadProfileSettingsCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         ReadProfileSettingsCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddReadCrossTitleProfileSettingsCompleteDelegate(unsigned char LocalUserNum, struct FScriptDelegate ReadProfileSettingsCompleteDelegate)
+void UOnlineSubsystemSteamworks::AddReadCrossTitleProfileSettingsCompleteDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& ReadProfileSettingsCompleteDelegate)
 {
-	static UFunction* pFnAddReadCrossTitleProfileSettingsCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadCrossTitleProfileSettingsCompleteDelegate");
 
-	if (!pFnAddReadCrossTitleProfileSettingsCompleteDelegate)
-		pFnAddReadCrossTitleProfileSettingsCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47530];
+	UOnlineSubsystemSteamworks_AddReadCrossTitleProfileSettingsCompleteDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ReadProfileSettingsCompleteDelegate = ReadProfileSettingsCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddReadCrossTitleProfileSettingsCompleteDelegate_Parms AddReadCrossTitleProfileSettingsCompleteDelegate_Parms;
-	AddReadCrossTitleProfileSettingsCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddReadCrossTitleProfileSettingsCompleteDelegate_Parms.ReadProfileSettingsCompleteDelegate, &ReadProfileSettingsCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddReadCrossTitleProfileSettingsCompleteDelegate, &AddReadCrossTitleProfileSettingsCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadCrossTitleProfileSettingsComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            TitleId                        ( CPF_Parm )
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// int                            TitleId                        (Parm)
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineSubsystemSteamworks::OnReadCrossTitleProfileSettingsComplete(unsigned char LocalUserNum, int TitleId, unsigned long bWasSuccessful)
+void UOnlineSubsystemSteamworks::OnReadCrossTitleProfileSettingsComplete(unsigned char LocalUserNum, int TitleId, bool bWasSuccessful)
 {
-	static UFunction* pFnOnReadCrossTitleProfileSettingsComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadCrossTitleProfileSettingsComplete");
 
-	if (!pFnOnReadCrossTitleProfileSettingsComplete)
-		pFnOnReadCrossTitleProfileSettingsComplete = (UFunction*)UObject::GObjects()->Data[47526];
+	UOnlineSubsystemSteamworks_OnReadCrossTitleProfileSettingsComplete_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.TitleId = TitleId;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineSubsystemSteamworks_execOnReadCrossTitleProfileSettingsComplete_Parms OnReadCrossTitleProfileSettingsComplete_Parms;
-	OnReadCrossTitleProfileSettingsComplete_Parms.LocalUserNum = LocalUserNum;
-	OnReadCrossTitleProfileSettingsComplete_Parms.TitleId = TitleId;
-	OnReadCrossTitleProfileSettingsComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReadCrossTitleProfileSettingsComplete, &OnReadCrossTitleProfileSettingsComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadCrossTitleProfileSettings
-// [0x00020000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            TitleId                        ( CPF_Parm )
-// class UOnlineProfileSettings*  ProfileSettings                ( CPF_Parm )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// int                            TitleId                        (Parm)
+// class UOnlineProfileSettings*  ProfileSettings                (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::ReadCrossTitleProfileSettings(unsigned char LocalUserNum, int TitleId, class UOnlineProfileSettings* ProfileSettings)
 {
-	static UFunction* pFnReadCrossTitleProfileSettings = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadCrossTitleProfileSettings");
 
-	if (!pFnReadCrossTitleProfileSettings)
-		pFnReadCrossTitleProfileSettings = (UFunction*)UObject::GObjects()->Data[47521];
+	UOnlineSubsystemSteamworks_ReadCrossTitleProfileSettings_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.TitleId = TitleId;
+	params.ProfileSettings = ProfileSettings;
 
-	UOnlineSubsystemSteamworks_execReadCrossTitleProfileSettings_Parms ReadCrossTitleProfileSettings_Parms;
-	ReadCrossTitleProfileSettings_Parms.LocalUserNum = LocalUserNum;
-	ReadCrossTitleProfileSettings_Parms.TitleId = TitleId;
-	ReadCrossTitleProfileSettings_Parms.ProfileSettings = ProfileSettings;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnReadCrossTitleProfileSettings, &ReadCrossTitleProfileSettings_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return ReadCrossTitleProfileSettings_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnlockAvatarAward
-// [0x00020000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            AvatarItemId                   ( CPF_Parm )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// int                            AvatarItemId                   (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::UnlockAvatarAward(unsigned char LocalUserNum, int AvatarItemId)
 {
-	static UFunction* pFnUnlockAvatarAward = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnlockAvatarAward");
 
-	if (!pFnUnlockAvatarAward)
-		pFnUnlockAvatarAward = (UFunction*)UObject::GObjects()->Data[47517];
+	UOnlineSubsystemSteamworks_UnlockAvatarAward_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.AvatarItemId = AvatarItemId;
 
-	UOnlineSubsystemSteamworks_execUnlockAvatarAward_Parms UnlockAvatarAward_Parms;
-	UnlockAvatarAward_Parms.LocalUserNum = LocalUserNum;
-	UnlockAvatarAward_Parms.AvatarItemId = AvatarItemId;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnUnlockAvatarAward, &UnlockAvatarAward_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return UnlockAvatarAward_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.EnumerateFilesOnRemoteStorage
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// TArray< struct FString >       ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
+// (Native, Public)
+// Parameters:
+// TArray<struct FString>         ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
-TArray< struct FString > UOnlineSubsystemSteamworks::EnumerateFilesOnRemoteStorage()
+TArray<struct FString> UOnlineSubsystemSteamworks::EnumerateFilesOnRemoteStorage()
 {
-	static UFunction* pFnEnumerateFilesOnRemoteStorage = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.EnumerateFilesOnRemoteStorage");
 
-	if (!pFnEnumerateFilesOnRemoteStorage)
-		pFnEnumerateFilesOnRemoteStorage = (UFunction*)UObject::GObjects()->Data[47514];
+	UOnlineSubsystemSteamworks_EnumerateFilesOnRemoteStorage_Params params;
 
-	UOnlineSubsystemSteamworks_execEnumerateFilesOnRemoteStorage_Parms EnumerateFilesOnRemoteStorage_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnEnumerateFilesOnRemoteStorage->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnEnumerateFilesOnRemoteStorage, &EnumerateFilesOnRemoteStorage_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnEnumerateFilesOnRemoteStorage->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return EnumerateFilesOnRemoteStorage_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DeleteFileFromRemoteStorage
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
+// (Native, Public)
+// Parameters:
+// struct FString                 Filename                       (Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::DeleteFileFromRemoteStorage(struct FString Filename)
+bool UOnlineSubsystemSteamworks::DeleteFileFromRemoteStorage(const struct FString& Filename)
 {
-	static UFunction* pFnDeleteFileFromRemoteStorage = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DeleteFileFromRemoteStorage");
 
-	if (!pFnDeleteFileFromRemoteStorage)
-		pFnDeleteFileFromRemoteStorage = (UFunction*)UObject::GObjects()->Data[47511];
+	UOnlineSubsystemSteamworks_DeleteFileFromRemoteStorage_Params params;
+	params.Filename = Filename;
 
-	UOnlineSubsystemSteamworks_execDeleteFileFromRemoteStorage_Parms DeleteFileFromRemoteStorage_Parms;
-	memcpy(&DeleteFileFromRemoteStorage_Parms.Filename, &Filename, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnDeleteFileFromRemoteStorage->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnDeleteFileFromRemoteStorage, &DeleteFileFromRemoteStorage_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnDeleteFileFromRemoteStorage->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return DeleteFileFromRemoteStorage_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadBytesFromRemoteStorage
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
-// TArray< unsigned char >        Data                           ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FString                 Filename                       (Parm, NeedCtorLink)
+// TArray<unsigned char>          Data                           (Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::ReadBytesFromRemoteStorage(struct FString Filename, TArray< unsigned char >* Data)
+bool UOnlineSubsystemSteamworks::ReadBytesFromRemoteStorage(const struct FString& Filename, TArray<unsigned char>* Data)
 {
-	static UFunction* pFnReadBytesFromRemoteStorage = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadBytesFromRemoteStorage");
 
-	if (!pFnReadBytesFromRemoteStorage)
-		pFnReadBytesFromRemoteStorage = (UFunction*)UObject::GObjects()->Data[47506];
+	UOnlineSubsystemSteamworks_ReadBytesFromRemoteStorage_Params params;
+	params.Filename = Filename;
 
-	UOnlineSubsystemSteamworks_execReadBytesFromRemoteStorage_Parms ReadBytesFromRemoteStorage_Parms;
-	memcpy(&ReadBytesFromRemoteStorage_Parms.Filename, &Filename, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnReadBytesFromRemoteStorage->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnReadBytesFromRemoteStorage, &ReadBytesFromRemoteStorage_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnReadBytesFromRemoteStorage->FunctionFlags |= 0x400;
+	if (Data != nullptr)
+		*Data = params.Data;
 
-	if (Data)
-		memcpy(Data, &ReadBytesFromRemoteStorage_Parms.Data, 0xC);
+	return params.ReturnValue;
+}
 
-	return ReadBytesFromRemoteStorage_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadStringFromRemoteStorage
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 Data                           ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FString                 Filename                       (Parm, NeedCtorLink)
+// struct FString                 Data                           (Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::ReadStringFromRemoteStorage(struct FString Filename, struct FString* Data)
+bool UOnlineSubsystemSteamworks::ReadStringFromRemoteStorage(const struct FString& Filename, struct FString* Data)
 {
-	static UFunction* pFnReadStringFromRemoteStorage = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadStringFromRemoteStorage");
 
-	if (!pFnReadStringFromRemoteStorage)
-		pFnReadStringFromRemoteStorage = (UFunction*)UObject::GObjects()->Data[47502];
+	UOnlineSubsystemSteamworks_ReadStringFromRemoteStorage_Params params;
+	params.Filename = Filename;
 
-	UOnlineSubsystemSteamworks_execReadStringFromRemoteStorage_Parms ReadStringFromRemoteStorage_Parms;
-	memcpy(&ReadStringFromRemoteStorage_Parms.Filename, &Filename, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnReadStringFromRemoteStorage->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnReadStringFromRemoteStorage, &ReadStringFromRemoteStorage_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnReadStringFromRemoteStorage->FunctionFlags |= 0x400;
+	if (Data != nullptr)
+		*Data = params.Data;
 
-	if (Data)
-		memcpy(Data, &ReadStringFromRemoteStorage_Parms.Data, 0xC);
+	return params.ReturnValue;
+}
 
-	return ReadStringFromRemoteStorage_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteBytesToRemoteStorage
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
-// TArray< unsigned char >        Data                           ( CPF_Parm | CPF_NeedCtorLink )
+// (Native, Public)
+// Parameters:
+// struct FString                 Filename                       (Parm, NeedCtorLink)
+// TArray<unsigned char>          Data                           (Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::WriteBytesToRemoteStorage(struct FString Filename, TArray< unsigned char > Data)
+bool UOnlineSubsystemSteamworks::WriteBytesToRemoteStorage(const struct FString& Filename, TArray<unsigned char> Data)
 {
-	static UFunction* pFnWriteBytesToRemoteStorage = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteBytesToRemoteStorage");
 
-	if (!pFnWriteBytesToRemoteStorage)
-		pFnWriteBytesToRemoteStorage = (UFunction*)UObject::GObjects()->Data[47497];
+	UOnlineSubsystemSteamworks_WriteBytesToRemoteStorage_Params params;
+	params.Filename = Filename;
+	params.Data = Data;
 
-	UOnlineSubsystemSteamworks_execWriteBytesToRemoteStorage_Parms WriteBytesToRemoteStorage_Parms;
-	memcpy(&WriteBytesToRemoteStorage_Parms.Filename, &Filename, 0xC);
-	memcpy(&WriteBytesToRemoteStorage_Parms.Data, &Data, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnWriteBytesToRemoteStorage->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnWriteBytesToRemoteStorage, &WriteBytesToRemoteStorage_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnWriteBytesToRemoteStorage->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return WriteBytesToRemoteStorage_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteStringToRemoteStorage
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 Data                           ( CPF_Parm | CPF_NeedCtorLink )
+// (Native, Public)
+// Parameters:
+// struct FString                 Filename                       (Parm, NeedCtorLink)
+// struct FString                 Data                           (Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::WriteStringToRemoteStorage(struct FString Filename, struct FString Data)
+bool UOnlineSubsystemSteamworks::WriteStringToRemoteStorage(const struct FString& Filename, const struct FString& Data)
 {
-	static UFunction* pFnWriteStringToRemoteStorage = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteStringToRemoteStorage");
 
-	if (!pFnWriteStringToRemoteStorage)
-		pFnWriteStringToRemoteStorage = (UFunction*)UObject::GObjects()->Data[47493];
+	UOnlineSubsystemSteamworks_WriteStringToRemoteStorage_Params params;
+	params.Filename = Filename;
+	params.Data = Data;
 
-	UOnlineSubsystemSteamworks_execWriteStringToRemoteStorage_Parms WriteStringToRemoteStorage_Parms;
-	memcpy(&WriteStringToRemoteStorage_Parms.Filename, &Filename, 0xC);
-	memcpy(&WriteStringToRemoteStorage_Parms.Data, &Data, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnWriteStringToRemoteStorage->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnWriteStringToRemoteStorage, &WriteStringToRemoteStorage_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnWriteStringToRemoteStorage->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return WriteStringToRemoteStorage_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetSteamClanData
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// TArray< struct FSteamPlayerClanData > Results                        ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// TArray<struct FSteamPlayerClanData> Results                        (Parm, OutParm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::GetSteamClanData(TArray< struct FSteamPlayerClanData >* Results)
+void UOnlineSubsystemSteamworks::GetSteamClanData(TArray<struct FSteamPlayerClanData>* Results)
 {
-	static UFunction* pFnGetSteamClanData = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetSteamClanData");
 
-	if (!pFnGetSteamClanData)
-		pFnGetSteamClanData = (UFunction*)UObject::GObjects()->Data[47490];
+	UOnlineSubsystemSteamworks_GetSteamClanData_Params params;
 
-	UOnlineSubsystemSteamworks_execGetSteamClanData_Parms GetSteamClanData_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetSteamClanData->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetSteamClanData, &GetSteamClanData_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetSteamClanData->FunctionFlags |= 0x400;
+	if (Results != nullptr)
+		*Results = params.Results;
+}
 
-	if (Results)
-		memcpy(Results, &GetSteamClanData_Parms.Results, 0xC);
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearGetNumberOfCurrentPlayersCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         GetNumberOfCurrentPlayersCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         GetNumberOfCurrentPlayersCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearGetNumberOfCurrentPlayersCompleteDelegate(struct FScriptDelegate GetNumberOfCurrentPlayersCompleteDelegate)
+void UOnlineSubsystemSteamworks::ClearGetNumberOfCurrentPlayersCompleteDelegate(const struct FScriptDelegate& GetNumberOfCurrentPlayersCompleteDelegate)
 {
-	static UFunction* pFnClearGetNumberOfCurrentPlayersCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearGetNumberOfCurrentPlayersCompleteDelegate");
 
-	if (!pFnClearGetNumberOfCurrentPlayersCompleteDelegate)
-		pFnClearGetNumberOfCurrentPlayersCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47488];
+	UOnlineSubsystemSteamworks_ClearGetNumberOfCurrentPlayersCompleteDelegate_Params params;
+	params.GetNumberOfCurrentPlayersCompleteDelegate = GetNumberOfCurrentPlayersCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearGetNumberOfCurrentPlayersCompleteDelegate_Parms ClearGetNumberOfCurrentPlayersCompleteDelegate_Parms;
-	memcpy(&ClearGetNumberOfCurrentPlayersCompleteDelegate_Parms.GetNumberOfCurrentPlayersCompleteDelegate, &GetNumberOfCurrentPlayersCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearGetNumberOfCurrentPlayersCompleteDelegate, &ClearGetNumberOfCurrentPlayersCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddGetNumberOfCurrentPlayersCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         GetNumberOfCurrentPlayersCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         GetNumberOfCurrentPlayersCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddGetNumberOfCurrentPlayersCompleteDelegate(struct FScriptDelegate GetNumberOfCurrentPlayersCompleteDelegate)
+void UOnlineSubsystemSteamworks::AddGetNumberOfCurrentPlayersCompleteDelegate(const struct FScriptDelegate& GetNumberOfCurrentPlayersCompleteDelegate)
 {
-	static UFunction* pFnAddGetNumberOfCurrentPlayersCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddGetNumberOfCurrentPlayersCompleteDelegate");
 
-	if (!pFnAddGetNumberOfCurrentPlayersCompleteDelegate)
-		pFnAddGetNumberOfCurrentPlayersCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47485];
+	UOnlineSubsystemSteamworks_AddGetNumberOfCurrentPlayersCompleteDelegate_Params params;
+	params.GetNumberOfCurrentPlayersCompleteDelegate = GetNumberOfCurrentPlayersCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddGetNumberOfCurrentPlayersCompleteDelegate_Parms AddGetNumberOfCurrentPlayersCompleteDelegate_Parms;
-	memcpy(&AddGetNumberOfCurrentPlayersCompleteDelegate_Parms.GetNumberOfCurrentPlayersCompleteDelegate, &GetNumberOfCurrentPlayersCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddGetNumberOfCurrentPlayersCompleteDelegate, &AddGetNumberOfCurrentPlayersCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnGetNumberOfCurrentPlayersComplete
-// [0x00120000]
-// Parameters infos:
-// int                            TotalPlayers                   ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// int                            TotalPlayers                   (Parm)
 
 void UOnlineSubsystemSteamworks::OnGetNumberOfCurrentPlayersComplete(int TotalPlayers)
 {
-	static UFunction* pFnOnGetNumberOfCurrentPlayersComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnGetNumberOfCurrentPlayersComplete");
 
-	if (!pFnOnGetNumberOfCurrentPlayersComplete)
-		pFnOnGetNumberOfCurrentPlayersComplete = (UFunction*)UObject::GObjects()->Data[47483];
+	UOnlineSubsystemSteamworks_OnGetNumberOfCurrentPlayersComplete_Params params;
+	params.TotalPlayers = TotalPlayers;
 
-	UOnlineSubsystemSteamworks_execOnGetNumberOfCurrentPlayersComplete_Parms OnGetNumberOfCurrentPlayersComplete_Parms;
-	OnGetNumberOfCurrentPlayersComplete_Parms.TotalPlayers = TotalPlayers;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnGetNumberOfCurrentPlayersComplete, &OnGetNumberOfCurrentPlayersComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetNumberOfCurrentPlayers
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Native, Public)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::GetNumberOfCurrentPlayers()
 {
-	static UFunction* pFnGetNumberOfCurrentPlayers = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetNumberOfCurrentPlayers");
 
-	if (!pFnGetNumberOfCurrentPlayers)
-		pFnGetNumberOfCurrentPlayers = (UFunction*)UObject::GObjects()->Data[47481];
+	UOnlineSubsystemSteamworks_GetNumberOfCurrentPlayers_Params params;
 
-	UOnlineSubsystemSteamworks_execGetNumberOfCurrentPlayers_Parms GetNumberOfCurrentPlayers_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetNumberOfCurrentPlayers->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetNumberOfCurrentPlayers, &GetNumberOfCurrentPlayers_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetNumberOfCurrentPlayers->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetNumberOfCurrentPlayers_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadOnlineAvatar
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// struct FUniqueNetId            PlayerNetId                    ( CPF_Const | CPF_Parm )
-// int                            Size                           ( CPF_Parm )
-// struct FScriptDelegate         ReadOnlineAvatarCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Native, Public)
+// Parameters:
+// struct FUniqueNetId            PlayerNetId                    (Const, Parm)
+// int                            Size                           (Parm)
+// struct FScriptDelegate         ReadOnlineAvatarCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ReadOnlineAvatar(struct FUniqueNetId PlayerNetId, int Size, struct FScriptDelegate ReadOnlineAvatarCompleteDelegate)
+void UOnlineSubsystemSteamworks::ReadOnlineAvatar(const struct FUniqueNetId& PlayerNetId, int Size, const struct FScriptDelegate& ReadOnlineAvatarCompleteDelegate)
 {
-	static UFunction* pFnReadOnlineAvatar = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadOnlineAvatar");
 
-	if (!pFnReadOnlineAvatar)
-		pFnReadOnlineAvatar = (UFunction*)UObject::GObjects()->Data[47477];
+	UOnlineSubsystemSteamworks_ReadOnlineAvatar_Params params;
+	params.PlayerNetId = PlayerNetId;
+	params.Size = Size;
+	params.ReadOnlineAvatarCompleteDelegate = ReadOnlineAvatarCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execReadOnlineAvatar_Parms ReadOnlineAvatar_Parms;
-	memcpy(&ReadOnlineAvatar_Parms.PlayerNetId, &PlayerNetId, 0x18);
-	ReadOnlineAvatar_Parms.Size = Size;
-	memcpy(&ReadOnlineAvatar_Parms.ReadOnlineAvatarCompleteDelegate, &ReadOnlineAvatarCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnReadOnlineAvatar->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnReadOnlineAvatar, &ReadOnlineAvatar_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnReadOnlineAvatar->FunctionFlags |= 0x400;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadOnlineAvatarComplete
-// [0x00120000]
-// Parameters infos:
-// struct FUniqueNetId            PlayerNetId                    ( CPF_Const | CPF_Parm )
-// class UTexture2D*              Avatar                         ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// struct FUniqueNetId            PlayerNetId                    (Const, Parm)
+// class UTexture2D*              Avatar                         (Parm)
 
-void UOnlineSubsystemSteamworks::OnReadOnlineAvatarComplete(struct FUniqueNetId PlayerNetId, class UTexture2D* Avatar)
+void UOnlineSubsystemSteamworks::OnReadOnlineAvatarComplete(const struct FUniqueNetId& PlayerNetId, class UTexture2D* Avatar)
 {
-	static UFunction* pFnOnReadOnlineAvatarComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadOnlineAvatarComplete");
 
-	if (!pFnOnReadOnlineAvatarComplete)
-		pFnOnReadOnlineAvatarComplete = (UFunction*)UObject::GObjects()->Data[47474];
+	UOnlineSubsystemSteamworks_OnReadOnlineAvatarComplete_Params params;
+	params.PlayerNetId = PlayerNetId;
+	params.Avatar = Avatar;
 
-	UOnlineSubsystemSteamworks_execOnReadOnlineAvatarComplete_Parms OnReadOnlineAvatarComplete_Parms;
-	memcpy(&OnReadOnlineAvatarComplete_Parms.PlayerNetId, &PlayerNetId, 0x18);
-	OnReadOnlineAvatarComplete_Parms.Avatar = Avatar;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReadOnlineAvatarComplete, &OnReadOnlineAvatarComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowCustomPlayersUI
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FString                 Title                          ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 Description                    ( CPF_Parm | CPF_NeedCtorLink )
-// TArray< struct FUniqueNetId >  Players                        ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// TArray<struct FUniqueNetId>    Players                        (Const, Parm, OutParm, NeedCtorLink)
+// struct FString                 Title                          (Parm, NeedCtorLink)
+// struct FString                 Description                    (Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::ShowCustomPlayersUI(unsigned char LocalUserNum, struct FString Title, struct FString Description, TArray< struct FUniqueNetId >* Players)
+bool UOnlineSubsystemSteamworks::ShowCustomPlayersUI(unsigned char LocalUserNum, const struct FString& Title, const struct FString& Description, TArray<struct FUniqueNetId>* Players)
 {
-	static UFunction* pFnShowCustomPlayersUI = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowCustomPlayersUI");
 
-	if (!pFnShowCustomPlayersUI)
-		pFnShowCustomPlayersUI = (UFunction*)UObject::GObjects()->Data[47467];
+	UOnlineSubsystemSteamworks_ShowCustomPlayersUI_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.Title = Title;
+	params.Description = Description;
 
-	UOnlineSubsystemSteamworks_execShowCustomPlayersUI_Parms ShowCustomPlayersUI_Parms;
-	ShowCustomPlayersUI_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ShowCustomPlayersUI_Parms.Title, &Title, 0xC);
-	memcpy(&ShowCustomPlayersUI_Parms.Description, &Description, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnShowCustomPlayersUI->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnShowCustomPlayersUI, &ShowCustomPlayersUI_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnShowCustomPlayersUI->FunctionFlags |= 0x400;
+	if (Players != nullptr)
+		*Players = params.Players;
 
-	if (Players)
-		memcpy(Players, &ShowCustomPlayersUI_Parms.Players, 0xC);
+	return params.ReturnValue;
+}
 
-	return ShowCustomPlayersUI_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetAchievements
-// [0x00424400] ( FUNC_Native )
-// Parameters infos:
-// unsigned char                  ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            TitleId                        ( CPF_OptionalParm | CPF_Parm )
-// TArray< struct FAchievementDetails > Achievements                   ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, HasOptionalParms, Public, HasOutParms)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// TArray<struct FAchievementDetails> Achievements                   (Parm, OutParm, NeedCtorLink)
+// int                            TitleId                        (OptionalParm, Parm)
+// unsigned char                  ReturnValue                    (Parm, OutParm, ReturnParm)
 
-unsigned char UOnlineSubsystemSteamworks::GetAchievements(unsigned char LocalUserNum, int TitleId, TArray< struct FAchievementDetails >* Achievements)
+unsigned char UOnlineSubsystemSteamworks::GetAchievements(unsigned char LocalUserNum, int TitleId, TArray<struct FAchievementDetails>* Achievements)
 {
-	static UFunction* pFnGetAchievements = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetAchievements");
 
-	if (!pFnGetAchievements)
-		pFnGetAchievements = (UFunction*)UObject::GObjects()->Data[47461];
+	UOnlineSubsystemSteamworks_GetAchievements_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.TitleId = TitleId;
 
-	UOnlineSubsystemSteamworks_execGetAchievements_Parms GetAchievements_Parms;
-	GetAchievements_Parms.LocalUserNum = LocalUserNum;
-	GetAchievements_Parms.TitleId = TitleId;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetAchievements->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetAchievements, &GetAchievements_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetAchievements->FunctionFlags |= 0x400;
+	if (Achievements != nullptr)
+		*Achievements = params.Achievements;
 
-	if (Achievements)
-		memcpy(Achievements, &GetAchievements_Parms.Achievements, 0xC);
+	return params.ReturnValue;
+}
 
-	return GetAchievements_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadAchievementsCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         ReadAchievementsCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         ReadAchievementsCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearReadAchievementsCompleteDelegate(unsigned char LocalUserNum, struct FScriptDelegate ReadAchievementsCompleteDelegate)
+void UOnlineSubsystemSteamworks::ClearReadAchievementsCompleteDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& ReadAchievementsCompleteDelegate)
 {
-	static UFunction* pFnClearReadAchievementsCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadAchievementsCompleteDelegate");
 
-	if (!pFnClearReadAchievementsCompleteDelegate)
-		pFnClearReadAchievementsCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47458];
+	UOnlineSubsystemSteamworks_ClearReadAchievementsCompleteDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ReadAchievementsCompleteDelegate = ReadAchievementsCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearReadAchievementsCompleteDelegate_Parms ClearReadAchievementsCompleteDelegate_Parms;
-	ClearReadAchievementsCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearReadAchievementsCompleteDelegate_Parms.ReadAchievementsCompleteDelegate, &ReadAchievementsCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearReadAchievementsCompleteDelegate, &ClearReadAchievementsCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadAchievementsCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         ReadAchievementsCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         ReadAchievementsCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddReadAchievementsCompleteDelegate(unsigned char LocalUserNum, struct FScriptDelegate ReadAchievementsCompleteDelegate)
+void UOnlineSubsystemSteamworks::AddReadAchievementsCompleteDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& ReadAchievementsCompleteDelegate)
 {
-	static UFunction* pFnAddReadAchievementsCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadAchievementsCompleteDelegate");
 
-	if (!pFnAddReadAchievementsCompleteDelegate)
-		pFnAddReadAchievementsCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47454];
+	UOnlineSubsystemSteamworks_AddReadAchievementsCompleteDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ReadAchievementsCompleteDelegate = ReadAchievementsCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddReadAchievementsCompleteDelegate_Parms AddReadAchievementsCompleteDelegate_Parms;
-	AddReadAchievementsCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddReadAchievementsCompleteDelegate_Parms.ReadAchievementsCompleteDelegate, &ReadAchievementsCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddReadAchievementsCompleteDelegate, &AddReadAchievementsCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadAchievementsComplete
-// [0x00120000]
-// Parameters infos:
-// int                            TitleId                        ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// int                            TitleId                        (Parm)
 
 void UOnlineSubsystemSteamworks::OnReadAchievementsComplete(int TitleId)
 {
-	static UFunction* pFnOnReadAchievementsComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadAchievementsComplete");
 
-	if (!pFnOnReadAchievementsComplete)
-		pFnOnReadAchievementsComplete = (UFunction*)UObject::GObjects()->Data[47452];
+	UOnlineSubsystemSteamworks_OnReadAchievementsComplete_Params params;
+	params.TitleId = TitleId;
 
-	UOnlineSubsystemSteamworks_execOnReadAchievementsComplete_Parms OnReadAchievementsComplete_Parms;
-	OnReadAchievementsComplete_Parms.TitleId = TitleId;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReadAchievementsComplete, &OnReadAchievementsComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadAchievements
-// [0x00024400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            TitleId                        ( CPF_OptionalParm | CPF_Parm )
-// unsigned long                  bShouldReadText                ( CPF_OptionalParm | CPF_Parm )
-// unsigned long                  bShouldReadImages              ( CPF_OptionalParm | CPF_Parm )
+// (Native, HasOptionalParms, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// int                            TitleId                        (OptionalParm, Parm)
+// bool                           bShouldReadText                (OptionalParm, Parm)
+// bool                           bShouldReadImages              (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::ReadAchievements(unsigned char LocalUserNum, int TitleId, unsigned long bShouldReadText, unsigned long bShouldReadImages)
+bool UOnlineSubsystemSteamworks::ReadAchievements(unsigned char LocalUserNum, int TitleId, bool bShouldReadText, bool bShouldReadImages)
 {
-	static UFunction* pFnReadAchievements = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadAchievements");
 
-	if (!pFnReadAchievements)
-		pFnReadAchievements = (UFunction*)UObject::GObjects()->Data[47446];
+	UOnlineSubsystemSteamworks_ReadAchievements_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.TitleId = TitleId;
+	params.bShouldReadText = bShouldReadText;
+	params.bShouldReadImages = bShouldReadImages;
 
-	UOnlineSubsystemSteamworks_execReadAchievements_Parms ReadAchievements_Parms;
-	ReadAchievements_Parms.LocalUserNum = LocalUserNum;
-	ReadAchievements_Parms.TitleId = TitleId;
-	ReadAchievements_Parms.bShouldReadText = bShouldReadText;
-	ReadAchievements_Parms.bShouldReadImages = bShouldReadImages;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnReadAchievements->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnReadAchievements, &ReadAchievements_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnReadAchievements->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ReadAchievements_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowPlayersUI
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::ShowPlayersUI(unsigned char LocalUserNum)
 {
-	static UFunction* pFnShowPlayersUI = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowPlayersUI");
 
-	if (!pFnShowPlayersUI)
-		pFnShowPlayersUI = (UFunction*)UObject::GObjects()->Data[47443];
+	UOnlineSubsystemSteamworks_ShowPlayersUI_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execShowPlayersUI_Parms ShowPlayersUI_Parms;
-	ShowPlayersUI_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnShowPlayersUI->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnShowPlayersUI, &ShowPlayersUI_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnShowPlayersUI->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ShowPlayersUI_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowFriendsInviteUI
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FUniqueNetId            PlayerID                       ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FUniqueNetId            PlayerID                       (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::ShowFriendsInviteUI(unsigned char LocalUserNum, struct FUniqueNetId PlayerID)
+bool UOnlineSubsystemSteamworks::ShowFriendsInviteUI(unsigned char LocalUserNum, const struct FUniqueNetId& PlayerID)
 {
-	static UFunction* pFnShowFriendsInviteUI = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowFriendsInviteUI");
 
-	if (!pFnShowFriendsInviteUI)
-		pFnShowFriendsInviteUI = (UFunction*)UObject::GObjects()->Data[47439];
+	UOnlineSubsystemSteamworks_ShowFriendsInviteUI_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.PlayerID = PlayerID;
 
-	UOnlineSubsystemSteamworks_execShowFriendsInviteUI_Parms ShowFriendsInviteUI_Parms;
-	ShowFriendsInviteUI_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ShowFriendsInviteUI_Parms.PlayerID, &PlayerID, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnShowFriendsInviteUI->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnShowFriendsInviteUI, &ShowFriendsInviteUI_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnShowFriendsInviteUI->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ShowFriendsInviteUI_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowFriendsUI
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::ShowFriendsUI(unsigned char LocalUserNum)
 {
-	static UFunction* pFnShowFriendsUI = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowFriendsUI");
 
-	if (!pFnShowFriendsUI)
-		pFnShowFriendsUI = (UFunction*)UObject::GObjects()->Data[47436];
+	UOnlineSubsystemSteamworks_ShowFriendsUI_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execShowFriendsUI_Parms ShowFriendsUI_Parms;
-	ShowFriendsUI_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnShowFriendsUI->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnShowFriendsUI, &ShowFriendsUI_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnShowFriendsUI->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ShowFriendsUI_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearProfileDataChangedDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         ProfileDataChangedDelegate     ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         ProfileDataChangedDelegate     (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearProfileDataChangedDelegate(unsigned char LocalUserNum, struct FScriptDelegate ProfileDataChangedDelegate)
+void UOnlineSubsystemSteamworks::ClearProfileDataChangedDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& ProfileDataChangedDelegate)
 {
-	static UFunction* pFnClearProfileDataChangedDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearProfileDataChangedDelegate");
 
-	if (!pFnClearProfileDataChangedDelegate)
-		pFnClearProfileDataChangedDelegate = (UFunction*)UObject::GObjects()->Data[47433];
+	UOnlineSubsystemSteamworks_ClearProfileDataChangedDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ProfileDataChangedDelegate = ProfileDataChangedDelegate;
 
-	UOnlineSubsystemSteamworks_execClearProfileDataChangedDelegate_Parms ClearProfileDataChangedDelegate_Parms;
-	ClearProfileDataChangedDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearProfileDataChangedDelegate_Parms.ProfileDataChangedDelegate, &ProfileDataChangedDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearProfileDataChangedDelegate, &ClearProfileDataChangedDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddProfileDataChangedDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         ProfileDataChangedDelegate     ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         ProfileDataChangedDelegate     (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddProfileDataChangedDelegate(unsigned char LocalUserNum, struct FScriptDelegate ProfileDataChangedDelegate)
+void UOnlineSubsystemSteamworks::AddProfileDataChangedDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& ProfileDataChangedDelegate)
 {
-	static UFunction* pFnAddProfileDataChangedDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddProfileDataChangedDelegate");
 
-	if (!pFnAddProfileDataChangedDelegate)
-		pFnAddProfileDataChangedDelegate = (UFunction*)UObject::GObjects()->Data[47429];
+	UOnlineSubsystemSteamworks_AddProfileDataChangedDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ProfileDataChangedDelegate = ProfileDataChangedDelegate;
 
-	UOnlineSubsystemSteamworks_execAddProfileDataChangedDelegate_Parms AddProfileDataChangedDelegate_Parms;
-	AddProfileDataChangedDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddProfileDataChangedDelegate_Parms.ProfileDataChangedDelegate, &ProfileDataChangedDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddProfileDataChangedDelegate, &AddProfileDataChangedDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnProfileDataChanged
-// [0x00120000]
-// Parameters infos:
+// (Public, Delegate)
 
 void UOnlineSubsystemSteamworks::OnProfileDataChanged()
 {
-	static UFunction* pFnOnProfileDataChanged = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnProfileDataChanged");
 
-	if (!pFnOnProfileDataChanged)
-		pFnOnProfileDataChanged = (UFunction*)UObject::GObjects()->Data[47428];
+	UOnlineSubsystemSteamworks_OnProfileDataChanged_Params params;
 
-	UOnlineSubsystemSteamworks_execOnProfileDataChanged_Parms OnProfileDataChanged_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnProfileDataChanged, &OnProfileDataChanged_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnlockGamerPicture
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            PictureId                      ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// int                            PictureId                      (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::UnlockGamerPicture(unsigned char LocalUserNum, int PictureId)
 {
-	static UFunction* pFnUnlockGamerPicture = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnlockGamerPicture");
 
-	if (!pFnUnlockGamerPicture)
-		pFnUnlockGamerPicture = (UFunction*)UObject::GObjects()->Data[47424];
+	UOnlineSubsystemSteamworks_UnlockGamerPicture_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.PictureId = PictureId;
 
-	UOnlineSubsystemSteamworks_execUnlockGamerPicture_Parms UnlockGamerPicture_Parms;
-	UnlockGamerPicture_Parms.LocalUserNum = LocalUserNum;
-	UnlockGamerPicture_Parms.PictureId = PictureId;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnUnlockGamerPicture->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnUnlockGamerPicture, &UnlockGamerPicture_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnUnlockGamerPicture->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return UnlockGamerPicture_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearUnlockAchievementCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         UnlockAchievementCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         UnlockAchievementCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearUnlockAchievementCompleteDelegate(unsigned char LocalUserNum, struct FScriptDelegate UnlockAchievementCompleteDelegate)
+void UOnlineSubsystemSteamworks::ClearUnlockAchievementCompleteDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& UnlockAchievementCompleteDelegate)
 {
-	static UFunction* pFnClearUnlockAchievementCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearUnlockAchievementCompleteDelegate");
 
-	if (!pFnClearUnlockAchievementCompleteDelegate)
-		pFnClearUnlockAchievementCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47421];
+	UOnlineSubsystemSteamworks_ClearUnlockAchievementCompleteDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.UnlockAchievementCompleteDelegate = UnlockAchievementCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearUnlockAchievementCompleteDelegate_Parms ClearUnlockAchievementCompleteDelegate_Parms;
-	ClearUnlockAchievementCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearUnlockAchievementCompleteDelegate_Parms.UnlockAchievementCompleteDelegate, &UnlockAchievementCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearUnlockAchievementCompleteDelegate, &ClearUnlockAchievementCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddUnlockAchievementCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         UnlockAchievementCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         UnlockAchievementCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddUnlockAchievementCompleteDelegate(unsigned char LocalUserNum, struct FScriptDelegate UnlockAchievementCompleteDelegate)
+void UOnlineSubsystemSteamworks::AddUnlockAchievementCompleteDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& UnlockAchievementCompleteDelegate)
 {
-	static UFunction* pFnAddUnlockAchievementCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddUnlockAchievementCompleteDelegate");
 
-	if (!pFnAddUnlockAchievementCompleteDelegate)
-		pFnAddUnlockAchievementCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47417];
+	UOnlineSubsystemSteamworks_AddUnlockAchievementCompleteDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.UnlockAchievementCompleteDelegate = UnlockAchievementCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddUnlockAchievementCompleteDelegate_Parms AddUnlockAchievementCompleteDelegate_Parms;
-	AddUnlockAchievementCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddUnlockAchievementCompleteDelegate_Parms.UnlockAchievementCompleteDelegate, &UnlockAchievementCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddUnlockAchievementCompleteDelegate, &AddUnlockAchievementCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnUnlockAchievementComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineSubsystemSteamworks::OnUnlockAchievementComplete(unsigned long bWasSuccessful)
+void UOnlineSubsystemSteamworks::OnUnlockAchievementComplete(bool bWasSuccessful)
 {
-	static UFunction* pFnOnUnlockAchievementComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnUnlockAchievementComplete");
 
-	if (!pFnOnUnlockAchievementComplete)
-		pFnOnUnlockAchievementComplete = (UFunction*)UObject::GObjects()->Data[47415];
+	UOnlineSubsystemSteamworks_OnUnlockAchievementComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineSubsystemSteamworks_execOnUnlockAchievementComplete_Parms OnUnlockAchievementComplete_Parms;
-	OnUnlockAchievementComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnUnlockAchievementComplete, &OnUnlockAchievementComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnlockAchievement
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            AchievementId                  ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// int                            AchievementId                  (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::UnlockAchievement(unsigned char LocalUserNum, int AchievementId)
 {
-	static UFunction* pFnUnlockAchievement = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnlockAchievement");
 
-	if (!pFnUnlockAchievement)
-		pFnUnlockAchievement = (UFunction*)UObject::GObjects()->Data[47411];
+	UOnlineSubsystemSteamworks_UnlockAchievement_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.AchievementId = AchievementId;
 
-	UOnlineSubsystemSteamworks_execUnlockAchievement_Parms UnlockAchievement_Parms;
-	UnlockAchievement_Parms.LocalUserNum = LocalUserNum;
-	UnlockAchievement_Parms.AchievementId = AchievementId;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnUnlockAchievement->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnUnlockAchievement, &UnlockAchievement_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnUnlockAchievement->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return UnlockAchievement_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsDeviceValid
-// [0x00024400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            DeviceID                       ( CPF_Parm )
-// int                            SizeNeeded                     ( CPF_OptionalParm | CPF_Parm )
+// (Native, HasOptionalParms, Public)
+// Parameters:
+// int                            DeviceID                       (Parm)
+// int                            SizeNeeded                     (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::IsDeviceValid(int DeviceID, int SizeNeeded)
 {
-	static UFunction* pFnIsDeviceValid = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsDeviceValid");
 
-	if (!pFnIsDeviceValid)
-		pFnIsDeviceValid = (UFunction*)UObject::GObjects()->Data[47407];
+	UOnlineSubsystemSteamworks_IsDeviceValid_Params params;
+	params.DeviceID = DeviceID;
+	params.SizeNeeded = SizeNeeded;
 
-	UOnlineSubsystemSteamworks_execIsDeviceValid_Parms IsDeviceValid_Parms;
-	IsDeviceValid_Parms.DeviceID = DeviceID;
-	IsDeviceValid_Parms.SizeNeeded = SizeNeeded;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnIsDeviceValid->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnIsDeviceValid, &IsDeviceValid_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnIsDeviceValid->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return IsDeviceValid_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetDeviceSelectionResults
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// int                            ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FString                 DeviceName                     ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FString                 DeviceName                     (Parm, OutParm, NeedCtorLink)
+// int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
 int UOnlineSubsystemSteamworks::GetDeviceSelectionResults(unsigned char LocalUserNum, struct FString* DeviceName)
 {
-	static UFunction* pFnGetDeviceSelectionResults = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetDeviceSelectionResults");
 
-	if (!pFnGetDeviceSelectionResults)
-		pFnGetDeviceSelectionResults = (UFunction*)UObject::GObjects()->Data[47403];
+	UOnlineSubsystemSteamworks_GetDeviceSelectionResults_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execGetDeviceSelectionResults_Parms GetDeviceSelectionResults_Parms;
-	GetDeviceSelectionResults_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetDeviceSelectionResults->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetDeviceSelectionResults, &GetDeviceSelectionResults_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetDeviceSelectionResults->FunctionFlags |= 0x400;
+	if (DeviceName != nullptr)
+		*DeviceName = params.DeviceName;
 
-	if (DeviceName)
-		memcpy(DeviceName, &GetDeviceSelectionResults_Parms.DeviceName, 0xC);
+	return params.ReturnValue;
+}
 
-	return GetDeviceSelectionResults_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearDeviceSelectionDoneDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         DeviceDelegate                 ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         DeviceDelegate                 (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearDeviceSelectionDoneDelegate(unsigned char LocalUserNum, struct FScriptDelegate DeviceDelegate)
+void UOnlineSubsystemSteamworks::ClearDeviceSelectionDoneDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& DeviceDelegate)
 {
-	static UFunction* pFnClearDeviceSelectionDoneDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearDeviceSelectionDoneDelegate");
 
-	if (!pFnClearDeviceSelectionDoneDelegate)
-		pFnClearDeviceSelectionDoneDelegate = (UFunction*)UObject::GObjects()->Data[47400];
+	UOnlineSubsystemSteamworks_ClearDeviceSelectionDoneDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.DeviceDelegate = DeviceDelegate;
 
-	UOnlineSubsystemSteamworks_execClearDeviceSelectionDoneDelegate_Parms ClearDeviceSelectionDoneDelegate_Parms;
-	ClearDeviceSelectionDoneDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearDeviceSelectionDoneDelegate_Parms.DeviceDelegate, &DeviceDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearDeviceSelectionDoneDelegate, &ClearDeviceSelectionDoneDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddDeviceSelectionDoneDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         DeviceDelegate                 ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         DeviceDelegate                 (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddDeviceSelectionDoneDelegate(unsigned char LocalUserNum, struct FScriptDelegate DeviceDelegate)
+void UOnlineSubsystemSteamworks::AddDeviceSelectionDoneDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& DeviceDelegate)
 {
-	static UFunction* pFnAddDeviceSelectionDoneDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddDeviceSelectionDoneDelegate");
 
-	if (!pFnAddDeviceSelectionDoneDelegate)
-		pFnAddDeviceSelectionDoneDelegate = (UFunction*)UObject::GObjects()->Data[47394];
+	UOnlineSubsystemSteamworks_AddDeviceSelectionDoneDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.DeviceDelegate = DeviceDelegate;
 
-	UOnlineSubsystemSteamworks_execAddDeviceSelectionDoneDelegate_Parms AddDeviceSelectionDoneDelegate_Parms;
-	AddDeviceSelectionDoneDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddDeviceSelectionDoneDelegate_Parms.DeviceDelegate, &DeviceDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddDeviceSelectionDoneDelegate, &AddDeviceSelectionDoneDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnDeviceSelectionComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineSubsystemSteamworks::OnDeviceSelectionComplete(unsigned long bWasSuccessful)
+void UOnlineSubsystemSteamworks::OnDeviceSelectionComplete(bool bWasSuccessful)
 {
-	static UFunction* pFnOnDeviceSelectionComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnDeviceSelectionComplete");
 
-	if (!pFnOnDeviceSelectionComplete)
-		pFnOnDeviceSelectionComplete = (UFunction*)UObject::GObjects()->Data[47392];
+	UOnlineSubsystemSteamworks_OnDeviceSelectionComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineSubsystemSteamworks_execOnDeviceSelectionComplete_Parms OnDeviceSelectionComplete_Parms;
-	OnDeviceSelectionComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnDeviceSelectionComplete, &OnDeviceSelectionComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowDeviceSelectionUI
-// [0x00024400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            SizeNeeded                     ( CPF_Parm )
-// unsigned long                  bForceShow                     ( CPF_OptionalParm | CPF_Parm )
-// unsigned long                  bManageStorage                 ( CPF_OptionalParm | CPF_Parm )
+// (Native, HasOptionalParms, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// int                            SizeNeeded                     (Parm)
+// bool                           bForceShow                     (OptionalParm, Parm)
+// bool                           bManageStorage                 (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::ShowDeviceSelectionUI(unsigned char LocalUserNum, int SizeNeeded, unsigned long bForceShow, unsigned long bManageStorage)
+bool UOnlineSubsystemSteamworks::ShowDeviceSelectionUI(unsigned char LocalUserNum, int SizeNeeded, bool bForceShow, bool bManageStorage)
 {
-	static UFunction* pFnShowDeviceSelectionUI = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowDeviceSelectionUI");
 
-	if (!pFnShowDeviceSelectionUI)
-		pFnShowDeviceSelectionUI = (UFunction*)UObject::GObjects()->Data[47386];
+	UOnlineSubsystemSteamworks_ShowDeviceSelectionUI_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.SizeNeeded = SizeNeeded;
+	params.bForceShow = bForceShow;
+	params.bManageStorage = bManageStorage;
 
-	UOnlineSubsystemSteamworks_execShowDeviceSelectionUI_Parms ShowDeviceSelectionUI_Parms;
-	ShowDeviceSelectionUI_Parms.LocalUserNum = LocalUserNum;
-	ShowDeviceSelectionUI_Parms.SizeNeeded = SizeNeeded;
-	ShowDeviceSelectionUI_Parms.bForceShow = bForceShow;
-	ShowDeviceSelectionUI_Parms.bManageStorage = bManageStorage;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnShowDeviceSelectionUI->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnShowDeviceSelectionUI, &ShowDeviceSelectionUI_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnShowDeviceSelectionUI->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ShowDeviceSelectionUI_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowMembershipMarketplaceUI
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::ShowMembershipMarketplaceUI(unsigned char LocalUserNum)
 {
-	static UFunction* pFnShowMembershipMarketplaceUI = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowMembershipMarketplaceUI");
 
-	if (!pFnShowMembershipMarketplaceUI)
-		pFnShowMembershipMarketplaceUI = (UFunction*)UObject::GObjects()->Data[47383];
+	UOnlineSubsystemSteamworks_ShowMembershipMarketplaceUI_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execShowMembershipMarketplaceUI_Parms ShowMembershipMarketplaceUI_Parms;
-	ShowMembershipMarketplaceUI_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnShowMembershipMarketplaceUI->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnShowMembershipMarketplaceUI, &ShowMembershipMarketplaceUI_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnShowMembershipMarketplaceUI->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ShowMembershipMarketplaceUI_Parms.ReturnValue;
-};
+
+// Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowContentPurchaseWebPage
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FString                 OfferURL                       (Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
+
+bool UOnlineSubsystemSteamworks::ShowContentPurchaseWebPage(unsigned char LocalUserNum, const struct FString& OfferURL)
+{
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowContentPurchaseWebPage");
+
+	UOnlineSubsystemSteamworks_ShowContentPurchaseWebPage_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.OfferURL = OfferURL;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
+
+// Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowContentPurchaseUI
+// (Native, HasOptionalParms, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FString                 Offer                          (Parm, NeedCtorLink)
+// bool                           bCheckOut                      (OptionalParm, Parm)
+// bool                           bPreOrder                      (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
+
+bool UOnlineSubsystemSteamworks::ShowContentPurchaseUI(unsigned char LocalUserNum, const struct FString& Offer, bool bCheckOut, bool bPreOrder)
+{
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowContentPurchaseUI");
+
+	UOnlineSubsystemSteamworks_ShowContentPurchaseUI_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.Offer = Offer;
+	params.bCheckOut = bCheckOut;
+	params.bPreOrder = bPreOrder;
+
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
+
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowContentMarketplaceUI
-// [0x00024400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            CategoryMask                   ( CPF_OptionalParm | CPF_Parm )
-// int                            OfferId                        ( CPF_OptionalParm | CPF_Parm )
+// (Native, HasOptionalParms, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// int                            CategoryMask                   (OptionalParm, Parm)
+// int                            OfferId                        (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::ShowContentMarketplaceUI(unsigned char LocalUserNum, int CategoryMask, int OfferId)
 {
-	static UFunction* pFnShowContentMarketplaceUI = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowContentMarketplaceUI");
 
-	if (!pFnShowContentMarketplaceUI)
-		pFnShowContentMarketplaceUI = (UFunction*)UObject::GObjects()->Data[47368];
+	UOnlineSubsystemSteamworks_ShowContentMarketplaceUI_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.CategoryMask = CategoryMask;
+	params.OfferId = OfferId;
 
-	UOnlineSubsystemSteamworks_execShowContentMarketplaceUI_Parms ShowContentMarketplaceUI_Parms;
-	ShowContentMarketplaceUI_Parms.LocalUserNum = LocalUserNum;
-	ShowContentMarketplaceUI_Parms.CategoryMask = CategoryMask;
-	ShowContentMarketplaceUI_Parms.OfferId = OfferId;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnShowContentMarketplaceUI->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnShowContentMarketplaceUI, &ShowContentMarketplaceUI_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnShowContentMarketplaceUI->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ShowContentMarketplaceUI_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowInviteUI
-// [0x00024400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FString                 InviteText                     ( CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink )
+// (Native, HasOptionalParms, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FString                 InviteText                     (OptionalParm, Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::ShowInviteUI(unsigned char LocalUserNum, struct FString InviteText)
+bool UOnlineSubsystemSteamworks::ShowInviteUI(unsigned char LocalUserNum, const struct FString& InviteText)
 {
-	static UFunction* pFnShowInviteUI = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowInviteUI");
 
-	if (!pFnShowInviteUI)
-		pFnShowInviteUI = (UFunction*)UObject::GObjects()->Data[47364];
+	UOnlineSubsystemSteamworks_ShowInviteUI_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.InviteText = InviteText;
 
-	UOnlineSubsystemSteamworks_execShowInviteUI_Parms ShowInviteUI_Parms;
-	ShowInviteUI_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ShowInviteUI_Parms.InviteText, &InviteText, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnShowInviteUI->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnShowInviteUI, &ShowInviteUI_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnShowInviteUI->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ShowInviteUI_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowAchievementsUI
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::ShowAchievementsUI(unsigned char LocalUserNum)
 {
-	static UFunction* pFnShowAchievementsUI = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowAchievementsUI");
 
-	if (!pFnShowAchievementsUI)
-		pFnShowAchievementsUI = (UFunction*)UObject::GObjects()->Data[47361];
+	UOnlineSubsystemSteamworks_ShowAchievementsUI_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execShowAchievementsUI_Parms ShowAchievementsUI_Parms;
-	ShowAchievementsUI_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnShowAchievementsUI->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnShowAchievementsUI, &ShowAchievementsUI_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnShowAchievementsUI->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ShowAchievementsUI_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowMessagesUI
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::ShowMessagesUI(unsigned char LocalUserNum)
 {
-	static UFunction* pFnShowMessagesUI = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowMessagesUI");
 
-	if (!pFnShowMessagesUI)
-		pFnShowMessagesUI = (UFunction*)UObject::GObjects()->Data[47358];
+	UOnlineSubsystemSteamworks_ShowMessagesUI_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execShowMessagesUI_Parms ShowMessagesUI_Parms;
-	ShowMessagesUI_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnShowMessagesUI->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnShowMessagesUI, &ShowMessagesUI_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnShowMessagesUI->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ShowMessagesUI_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowGamerCardUI
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FUniqueNetId            PlayerID                       ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FUniqueNetId            PlayerID                       (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::ShowGamerCardUI(unsigned char LocalUserNum, struct FUniqueNetId PlayerID)
+bool UOnlineSubsystemSteamworks::ShowGamerCardUI(unsigned char LocalUserNum, const struct FUniqueNetId& PlayerID)
 {
-	static UFunction* pFnShowGamerCardUI = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowGamerCardUI");
 
-	if (!pFnShowGamerCardUI)
-		pFnShowGamerCardUI = (UFunction*)UObject::GObjects()->Data[47354];
+	UOnlineSubsystemSteamworks_ShowGamerCardUI_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.PlayerID = PlayerID;
 
-	UOnlineSubsystemSteamworks_execShowGamerCardUI_Parms ShowGamerCardUI_Parms;
-	ShowGamerCardUI_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ShowGamerCardUI_Parms.PlayerID, &PlayerID, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnShowGamerCardUI->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnShowGamerCardUI, &ShowGamerCardUI_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnShowGamerCardUI->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ShowGamerCardUI_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowFeedbackUI
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FUniqueNetId            PlayerID                       ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FUniqueNetId            PlayerID                       (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::ShowFeedbackUI(unsigned char LocalUserNum, struct FUniqueNetId PlayerID)
+bool UOnlineSubsystemSteamworks::ShowFeedbackUI(unsigned char LocalUserNum, const struct FUniqueNetId& PlayerID)
 {
-	static UFunction* pFnShowFeedbackUI = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowFeedbackUI");
 
-	if (!pFnShowFeedbackUI)
-		pFnShowFeedbackUI = (UFunction*)UObject::GObjects()->Data[47350];
+	UOnlineSubsystemSteamworks_ShowFeedbackUI_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.PlayerID = PlayerID;
 
-	UOnlineSubsystemSteamworks_execShowFeedbackUI_Parms ShowFeedbackUI_Parms;
-	ShowFeedbackUI_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ShowFeedbackUI_Parms.PlayerID, &PlayerID, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnShowFeedbackUI->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnShowFeedbackUI, &ShowFeedbackUI_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnShowFeedbackUI->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ShowFeedbackUI_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DeleteMessage
-// [0x00020000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            MessageIndex                   ( CPF_Parm )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// int                            MessageIndex                   (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::DeleteMessage(unsigned char LocalUserNum, int MessageIndex)
 {
-	static UFunction* pFnDeleteMessage = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DeleteMessage");
 
-	if (!pFnDeleteMessage)
-		pFnDeleteMessage = (UFunction*)UObject::GObjects()->Data[47346];
+	UOnlineSubsystemSteamworks_DeleteMessage_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.MessageIndex = MessageIndex;
 
-	UOnlineSubsystemSteamworks_execDeleteMessage_Parms DeleteMessage_Parms;
-	DeleteMessage_Parms.LocalUserNum = LocalUserNum;
-	DeleteMessage_Parms.MessageIndex = MessageIndex;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnDeleteMessage, &DeleteMessage_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return DeleteMessage_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnmuteAll
-// [0x00020000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::UnmuteAll(unsigned char LocalUserNum)
 {
-	static UFunction* pFnUnmuteAll = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnmuteAll");
 
-	if (!pFnUnmuteAll)
-		pFnUnmuteAll = (UFunction*)UObject::GObjects()->Data[47343];
+	UOnlineSubsystemSteamworks_UnmuteAll_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execUnmuteAll_Parms UnmuteAll_Parms;
-	UnmuteAll_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnUnmuteAll, &UnmuteAll_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return UnmuteAll_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.MuteAll
-// [0x00020000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// unsigned long                  bAllowFriends                  ( CPF_Parm )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// bool                           bAllowFriends                  (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::MuteAll(unsigned char LocalUserNum, unsigned long bAllowFriends)
+bool UOnlineSubsystemSteamworks::MuteAll(unsigned char LocalUserNum, bool bAllowFriends)
 {
-	static UFunction* pFnMuteAll = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.MuteAll");
 
-	if (!pFnMuteAll)
-		pFnMuteAll = (UFunction*)UObject::GObjects()->Data[47339];
+	UOnlineSubsystemSteamworks_MuteAll_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.bAllowFriends = bAllowFriends;
 
-	UOnlineSubsystemSteamworks_execMuteAll_Parms MuteAll_Parms;
-	MuteAll_Parms.LocalUserNum = LocalUserNum;
-	MuteAll_Parms.bAllowFriends = bAllowFriends;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnMuteAll, &MuteAll_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return MuteAll_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CalcAggregateSkill
-// [0x00420000]
-// Parameters infos:
-// TArray< struct FDouble >       Mus                            ( CPF_Parm | CPF_NeedCtorLink )
-// TArray< struct FDouble >       Sigmas                         ( CPF_Parm | CPF_NeedCtorLink )
-// struct FDouble                 OutAggregateMu                 ( CPF_Parm | CPF_OutParm )
-// struct FDouble                 OutAggregateSigma              ( CPF_Parm | CPF_OutParm )
+// (Public, HasOutParms)
+// Parameters:
+// TArray<struct FDouble>         Mus                            (Parm, NeedCtorLink)
+// TArray<struct FDouble>         Sigmas                         (Parm, NeedCtorLink)
+// struct FDouble                 OutAggregateMu                 (Parm, OutParm)
+// struct FDouble                 OutAggregateSigma              (Parm, OutParm)
 
-void UOnlineSubsystemSteamworks::CalcAggregateSkill(TArray< struct FDouble > Mus, TArray< struct FDouble > Sigmas, struct FDouble* OutAggregateMu, struct FDouble* OutAggregateSigma)
+void UOnlineSubsystemSteamworks::CalcAggregateSkill(TArray<struct FDouble> Mus, TArray<struct FDouble> Sigmas, struct FDouble* OutAggregateMu, struct FDouble* OutAggregateSigma)
 {
-	static UFunction* pFnCalcAggregateSkill = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CalcAggregateSkill");
 
-	if (!pFnCalcAggregateSkill)
-		pFnCalcAggregateSkill = (UFunction*)UObject::GObjects()->Data[47332];
+	UOnlineSubsystemSteamworks_CalcAggregateSkill_Params params;
+	params.Mus = Mus;
+	params.Sigmas = Sigmas;
 
-	UOnlineSubsystemSteamworks_execCalcAggregateSkill_Parms CalcAggregateSkill_Parms;
-	memcpy(&CalcAggregateSkill_Parms.Mus, &Mus, 0xC);
-	memcpy(&CalcAggregateSkill_Parms.Sigmas, &Sigmas, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnCalcAggregateSkill, &CalcAggregateSkill_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (OutAggregateMu)
-		memcpy(OutAggregateMu, &CalcAggregateSkill_Parms.OutAggregateMu, 0x8);
+	fn->FunctionFlags = flags;
 
-	if (OutAggregateSigma)
-		memcpy(OutAggregateSigma, &CalcAggregateSkill_Parms.OutAggregateSigma, 0x8);
-};
+	if (OutAggregateMu != nullptr)
+		*OutAggregateMu = params.OutAggregateMu;
+	if (OutAggregateSigma != nullptr)
+		*OutAggregateSigma = params.OutAggregateSigma;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RegisterStatGuid
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FUniqueNetId            PlayerID                       ( CPF_Parm )
-// struct FString                 ClientStatGuid                 ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FUniqueNetId            PlayerID                       (Parm)
+// struct FString                 ClientStatGuid                 (Const, Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::RegisterStatGuid(struct FUniqueNetId PlayerID, struct FString* ClientStatGuid)
+bool UOnlineSubsystemSteamworks::RegisterStatGuid(const struct FUniqueNetId& PlayerID, struct FString* ClientStatGuid)
 {
-	static UFunction* pFnRegisterStatGuid = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RegisterStatGuid");
 
-	if (!pFnRegisterStatGuid)
-		pFnRegisterStatGuid = (UFunction*)UObject::GObjects()->Data[47328];
+	UOnlineSubsystemSteamworks_RegisterStatGuid_Params params;
+	params.PlayerID = PlayerID;
 
-	UOnlineSubsystemSteamworks_execRegisterStatGuid_Parms RegisterStatGuid_Parms;
-	memcpy(&RegisterStatGuid_Parms.PlayerID, &PlayerID, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnRegisterStatGuid->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnRegisterStatGuid, &RegisterStatGuid_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnRegisterStatGuid->FunctionFlags |= 0x400;
+	if (ClientStatGuid != nullptr)
+		*ClientStatGuid = params.ClientStatGuid;
 
-	if (ClientStatGuid)
-		memcpy(ClientStatGuid, &RegisterStatGuid_Parms.ClientStatGuid, 0xC);
+	return params.ReturnValue;
+}
 
-	return RegisterStatGuid_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetClientStatGuid
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
+// (Native, Public)
+// Parameters:
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
 struct FString UOnlineSubsystemSteamworks::GetClientStatGuid()
 {
-	static UFunction* pFnGetClientStatGuid = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetClientStatGuid");
 
-	if (!pFnGetClientStatGuid)
-		pFnGetClientStatGuid = (UFunction*)UObject::GObjects()->Data[47326];
+	UOnlineSubsystemSteamworks_GetClientStatGuid_Params params;
 
-	UOnlineSubsystemSteamworks_execGetClientStatGuid_Parms GetClientStatGuid_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetClientStatGuid->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetClientStatGuid, &GetClientStatGuid_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetClientStatGuid->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetClientStatGuid_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearRegisterHostStatGuidCompleteDelegateDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         RegisterHostStatGuidCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         RegisterHostStatGuidCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearRegisterHostStatGuidCompleteDelegateDelegate(struct FScriptDelegate RegisterHostStatGuidCompleteDelegate)
+void UOnlineSubsystemSteamworks::ClearRegisterHostStatGuidCompleteDelegateDelegate(const struct FScriptDelegate& RegisterHostStatGuidCompleteDelegate)
 {
-	static UFunction* pFnClearRegisterHostStatGuidCompleteDelegateDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearRegisterHostStatGuidCompleteDelegateDelegate");
 
-	if (!pFnClearRegisterHostStatGuidCompleteDelegateDelegate)
-		pFnClearRegisterHostStatGuidCompleteDelegateDelegate = (UFunction*)UObject::GObjects()->Data[47324];
+	UOnlineSubsystemSteamworks_ClearRegisterHostStatGuidCompleteDelegateDelegate_Params params;
+	params.RegisterHostStatGuidCompleteDelegate = RegisterHostStatGuidCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearRegisterHostStatGuidCompleteDelegateDelegate_Parms ClearRegisterHostStatGuidCompleteDelegateDelegate_Parms;
-	memcpy(&ClearRegisterHostStatGuidCompleteDelegateDelegate_Parms.RegisterHostStatGuidCompleteDelegate, &RegisterHostStatGuidCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearRegisterHostStatGuidCompleteDelegateDelegate, &ClearRegisterHostStatGuidCompleteDelegateDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddRegisterHostStatGuidCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         RegisterHostStatGuidCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         RegisterHostStatGuidCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddRegisterHostStatGuidCompleteDelegate(struct FScriptDelegate RegisterHostStatGuidCompleteDelegate)
+void UOnlineSubsystemSteamworks::AddRegisterHostStatGuidCompleteDelegate(const struct FScriptDelegate& RegisterHostStatGuidCompleteDelegate)
 {
-	static UFunction* pFnAddRegisterHostStatGuidCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddRegisterHostStatGuidCompleteDelegate");
 
-	if (!pFnAddRegisterHostStatGuidCompleteDelegate)
-		pFnAddRegisterHostStatGuidCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47321];
+	UOnlineSubsystemSteamworks_AddRegisterHostStatGuidCompleteDelegate_Params params;
+	params.RegisterHostStatGuidCompleteDelegate = RegisterHostStatGuidCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddRegisterHostStatGuidCompleteDelegate_Parms AddRegisterHostStatGuidCompleteDelegate_Parms;
-	memcpy(&AddRegisterHostStatGuidCompleteDelegate_Parms.RegisterHostStatGuidCompleteDelegate, &RegisterHostStatGuidCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddRegisterHostStatGuidCompleteDelegate, &AddRegisterHostStatGuidCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnRegisterHostStatGuidComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineSubsystemSteamworks::OnRegisterHostStatGuidComplete(unsigned long bWasSuccessful)
+void UOnlineSubsystemSteamworks::OnRegisterHostStatGuidComplete(bool bWasSuccessful)
 {
-	static UFunction* pFnOnRegisterHostStatGuidComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnRegisterHostStatGuidComplete");
 
-	if (!pFnOnRegisterHostStatGuidComplete)
-		pFnOnRegisterHostStatGuidComplete = (UFunction*)UObject::GObjects()->Data[47319];
+	UOnlineSubsystemSteamworks_OnRegisterHostStatGuidComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineSubsystemSteamworks_execOnRegisterHostStatGuidComplete_Parms OnRegisterHostStatGuidComplete_Parms;
-	OnRegisterHostStatGuidComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnRegisterHostStatGuidComplete, &OnRegisterHostStatGuidComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RegisterHostStatGuid
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 HostStatGuid                   ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FString                 HostStatGuid                   (Const, Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::RegisterHostStatGuid(struct FString* HostStatGuid)
 {
-	static UFunction* pFnRegisterHostStatGuid = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RegisterHostStatGuid");
 
-	if (!pFnRegisterHostStatGuid)
-		pFnRegisterHostStatGuid = (UFunction*)UObject::GObjects()->Data[47316];
+	UOnlineSubsystemSteamworks_RegisterHostStatGuid_Params params;
 
-	UOnlineSubsystemSteamworks_execRegisterHostStatGuid_Parms RegisterHostStatGuid_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnRegisterHostStatGuid->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnRegisterHostStatGuid, &RegisterHostStatGuid_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnRegisterHostStatGuid->FunctionFlags |= 0x400;
+	if (HostStatGuid != nullptr)
+		*HostStatGuid = params.HostStatGuid;
 
-	if (HostStatGuid)
-		memcpy(HostStatGuid, &RegisterHostStatGuid_Parms.HostStatGuid, 0xC);
+	return params.ReturnValue;
+}
 
-	return RegisterHostStatGuid_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetHostStatGuid
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
+// (Native, Public)
+// Parameters:
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
 struct FString UOnlineSubsystemSteamworks::GetHostStatGuid()
 {
-	static UFunction* pFnGetHostStatGuid = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetHostStatGuid");
 
-	if (!pFnGetHostStatGuid)
-		pFnGetHostStatGuid = (UFunction*)UObject::GObjects()->Data[47314];
+	UOnlineSubsystemSteamworks_GetHostStatGuid_Params params;
 
-	UOnlineSubsystemSteamworks_execGetHostStatGuid_Parms GetHostStatGuid_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetHostStatGuid->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetHostStatGuid, &GetHostStatGuid_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetHostStatGuid->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetHostStatGuid_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearFriendMessageReceivedDelegate
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         MessageDelegate                ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         MessageDelegate                (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearFriendMessageReceivedDelegate(unsigned char LocalUserNum, struct FScriptDelegate MessageDelegate)
+void UOnlineSubsystemSteamworks::ClearFriendMessageReceivedDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& MessageDelegate)
 {
-	static UFunction* pFnClearFriendMessageReceivedDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearFriendMessageReceivedDelegate");
 
-	if (!pFnClearFriendMessageReceivedDelegate)
-		pFnClearFriendMessageReceivedDelegate = (UFunction*)UObject::GObjects()->Data[47311];
+	UOnlineSubsystemSteamworks_ClearFriendMessageReceivedDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.MessageDelegate = MessageDelegate;
 
-	UOnlineSubsystemSteamworks_execClearFriendMessageReceivedDelegate_Parms ClearFriendMessageReceivedDelegate_Parms;
-	ClearFriendMessageReceivedDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearFriendMessageReceivedDelegate_Parms.MessageDelegate, &MessageDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearFriendMessageReceivedDelegate, &ClearFriendMessageReceivedDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFriendMessageReceivedDelegate
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         MessageDelegate                ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         MessageDelegate                (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddFriendMessageReceivedDelegate(unsigned char LocalUserNum, struct FScriptDelegate MessageDelegate)
+void UOnlineSubsystemSteamworks::AddFriendMessageReceivedDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& MessageDelegate)
 {
-	static UFunction* pFnAddFriendMessageReceivedDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFriendMessageReceivedDelegate");
 
-	if (!pFnAddFriendMessageReceivedDelegate)
-		pFnAddFriendMessageReceivedDelegate = (UFunction*)UObject::GObjects()->Data[47308];
+	UOnlineSubsystemSteamworks_AddFriendMessageReceivedDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.MessageDelegate = MessageDelegate;
 
-	UOnlineSubsystemSteamworks_execAddFriendMessageReceivedDelegate_Parms AddFriendMessageReceivedDelegate_Parms;
-	AddFriendMessageReceivedDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddFriendMessageReceivedDelegate_Parms.MessageDelegate, &MessageDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddFriendMessageReceivedDelegate, &AddFriendMessageReceivedDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnFriendMessageReceived
-// [0x00120000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FUniqueNetId            SendingPlayer                  ( CPF_Parm )
-// struct FString                 SendingNick                    ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 Message                        ( CPF_Parm | CPF_NeedCtorLink )
+// (Public, Delegate)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FUniqueNetId            SendingPlayer                  (Parm)
+// struct FString                 SendingNick                    (Parm, NeedCtorLink)
+// struct FString                 Message                        (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::OnFriendMessageReceived(unsigned char LocalUserNum, struct FUniqueNetId SendingPlayer, struct FString SendingNick, struct FString Message)
+void UOnlineSubsystemSteamworks::OnFriendMessageReceived(unsigned char LocalUserNum, const struct FUniqueNetId& SendingPlayer, const struct FString& SendingNick, const struct FString& Message)
 {
-	static UFunction* pFnOnFriendMessageReceived = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnFriendMessageReceived");
 
-	if (!pFnOnFriendMessageReceived)
-		pFnOnFriendMessageReceived = (UFunction*)UObject::GObjects()->Data[47303];
+	UOnlineSubsystemSteamworks_OnFriendMessageReceived_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.SendingPlayer = SendingPlayer;
+	params.SendingNick = SendingNick;
+	params.Message = Message;
 
-	UOnlineSubsystemSteamworks_execOnFriendMessageReceived_Parms OnFriendMessageReceived_Parms;
-	OnFriendMessageReceived_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&OnFriendMessageReceived_Parms.SendingPlayer, &SendingPlayer, 0x18);
-	memcpy(&OnFriendMessageReceived_Parms.SendingNick, &SendingNick, 0xC);
-	memcpy(&OnFriendMessageReceived_Parms.Message, &Message, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnFriendMessageReceived, &OnFriendMessageReceived_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetFriendMessages
-// [0x00420000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// TArray< struct FOnlineFriendMessage > FriendMessages                 ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Public, HasOutParms)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// TArray<struct FOnlineFriendMessage> FriendMessages                 (Parm, OutParm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::GetFriendMessages(unsigned char LocalUserNum, TArray< struct FOnlineFriendMessage >* FriendMessages)
+void UOnlineSubsystemSteamworks::GetFriendMessages(unsigned char LocalUserNum, TArray<struct FOnlineFriendMessage>* FriendMessages)
 {
-	static UFunction* pFnGetFriendMessages = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetFriendMessages");
 
-	if (!pFnGetFriendMessages)
-		pFnGetFriendMessages = (UFunction*)UObject::GObjects()->Data[47299];
+	UOnlineSubsystemSteamworks_GetFriendMessages_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execGetFriendMessages_Parms GetFriendMessages_Parms;
-	GetFriendMessages_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetFriendMessages, &GetFriendMessages_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (FriendMessages)
-		memcpy(FriendMessages, &GetFriendMessages_Parms.FriendMessages, 0xC);
-};
+	fn->FunctionFlags = flags;
+
+	if (FriendMessages != nullptr)
+		*FriendMessages = params.FriendMessages;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearJoinFriendGameCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         JoinFriendGameCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         JoinFriendGameCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearJoinFriendGameCompleteDelegate(struct FScriptDelegate JoinFriendGameCompleteDelegate)
+void UOnlineSubsystemSteamworks::ClearJoinFriendGameCompleteDelegate(const struct FScriptDelegate& JoinFriendGameCompleteDelegate)
 {
-	static UFunction* pFnClearJoinFriendGameCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearJoinFriendGameCompleteDelegate");
 
-	if (!pFnClearJoinFriendGameCompleteDelegate)
-		pFnClearJoinFriendGameCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47297];
+	UOnlineSubsystemSteamworks_ClearJoinFriendGameCompleteDelegate_Params params;
+	params.JoinFriendGameCompleteDelegate = JoinFriendGameCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearJoinFriendGameCompleteDelegate_Parms ClearJoinFriendGameCompleteDelegate_Parms;
-	memcpy(&ClearJoinFriendGameCompleteDelegate_Parms.JoinFriendGameCompleteDelegate, &JoinFriendGameCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearJoinFriendGameCompleteDelegate, &ClearJoinFriendGameCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddJoinFriendGameCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         JoinFriendGameCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         JoinFriendGameCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddJoinFriendGameCompleteDelegate(struct FScriptDelegate JoinFriendGameCompleteDelegate)
+void UOnlineSubsystemSteamworks::AddJoinFriendGameCompleteDelegate(const struct FScriptDelegate& JoinFriendGameCompleteDelegate)
 {
-	static UFunction* pFnAddJoinFriendGameCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddJoinFriendGameCompleteDelegate");
 
-	if (!pFnAddJoinFriendGameCompleteDelegate)
-		pFnAddJoinFriendGameCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47294];
+	UOnlineSubsystemSteamworks_AddJoinFriendGameCompleteDelegate_Params params;
+	params.JoinFriendGameCompleteDelegate = JoinFriendGameCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddJoinFriendGameCompleteDelegate_Parms AddJoinFriendGameCompleteDelegate_Parms;
-	memcpy(&AddJoinFriendGameCompleteDelegate_Parms.JoinFriendGameCompleteDelegate, &JoinFriendGameCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddJoinFriendGameCompleteDelegate, &AddJoinFriendGameCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnJoinFriendGameComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineSubsystemSteamworks::OnJoinFriendGameComplete(unsigned long bWasSuccessful)
+void UOnlineSubsystemSteamworks::OnJoinFriendGameComplete(bool bWasSuccessful)
 {
-	static UFunction* pFnOnJoinFriendGameComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnJoinFriendGameComplete");
 
-	if (!pFnOnJoinFriendGameComplete)
-		pFnOnJoinFriendGameComplete = (UFunction*)UObject::GObjects()->Data[47292];
+	UOnlineSubsystemSteamworks_OnJoinFriendGameComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineSubsystemSteamworks_execOnJoinFriendGameComplete_Parms OnJoinFriendGameComplete_Parms;
-	OnJoinFriendGameComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnJoinFriendGameComplete, &OnJoinFriendGameComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.JoinFriendGame
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FUniqueNetId            Friend                         ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FUniqueNetId            Friend                         (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::JoinFriendGame(unsigned char LocalUserNum, struct FUniqueNetId Friend)
+bool UOnlineSubsystemSteamworks::JoinFriendGame(unsigned char LocalUserNum, const struct FUniqueNetId& Friend)
 {
-	static UFunction* pFnJoinFriendGame = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.JoinFriendGame");
 
-	if (!pFnJoinFriendGame)
-		pFnJoinFriendGame = (UFunction*)UObject::GObjects()->Data[47288];
+	UOnlineSubsystemSteamworks_JoinFriendGame_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.Friend = Friend;
 
-	UOnlineSubsystemSteamworks_execJoinFriendGame_Parms JoinFriendGame_Parms;
-	JoinFriendGame_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&JoinFriendGame_Parms.Friend, &Friend, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnJoinFriendGame->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnJoinFriendGame, &JoinFriendGame_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnJoinFriendGame->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return JoinFriendGame_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReceivedGameInviteDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         ReceivedGameInviteDelegate     ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         ReceivedGameInviteDelegate     (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearReceivedGameInviteDelegate(unsigned char LocalUserNum, struct FScriptDelegate ReceivedGameInviteDelegate)
+void UOnlineSubsystemSteamworks::ClearReceivedGameInviteDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& ReceivedGameInviteDelegate)
 {
-	static UFunction* pFnClearReceivedGameInviteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReceivedGameInviteDelegate");
 
-	if (!pFnClearReceivedGameInviteDelegate)
-		pFnClearReceivedGameInviteDelegate = (UFunction*)UObject::GObjects()->Data[47285];
+	UOnlineSubsystemSteamworks_ClearReceivedGameInviteDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ReceivedGameInviteDelegate = ReceivedGameInviteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearReceivedGameInviteDelegate_Parms ClearReceivedGameInviteDelegate_Parms;
-	ClearReceivedGameInviteDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearReceivedGameInviteDelegate_Parms.ReceivedGameInviteDelegate, &ReceivedGameInviteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearReceivedGameInviteDelegate, &ClearReceivedGameInviteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReceivedGameInviteDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         ReceivedGameInviteDelegate     ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         ReceivedGameInviteDelegate     (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddReceivedGameInviteDelegate(unsigned char LocalUserNum, struct FScriptDelegate ReceivedGameInviteDelegate)
+void UOnlineSubsystemSteamworks::AddReceivedGameInviteDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& ReceivedGameInviteDelegate)
 {
-	static UFunction* pFnAddReceivedGameInviteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReceivedGameInviteDelegate");
 
-	if (!pFnAddReceivedGameInviteDelegate)
-		pFnAddReceivedGameInviteDelegate = (UFunction*)UObject::GObjects()->Data[47281];
+	UOnlineSubsystemSteamworks_AddReceivedGameInviteDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ReceivedGameInviteDelegate = ReceivedGameInviteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddReceivedGameInviteDelegate_Parms AddReceivedGameInviteDelegate_Parms;
-	AddReceivedGameInviteDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddReceivedGameInviteDelegate_Parms.ReceivedGameInviteDelegate, &ReceivedGameInviteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddReceivedGameInviteDelegate, &AddReceivedGameInviteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReceivedGameInvite
-// [0x00120000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FString                 InviterName                    ( CPF_Parm | CPF_NeedCtorLink )
+// (Public, Delegate)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FString                 InviterName                    (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::OnReceivedGameInvite(unsigned char LocalUserNum, struct FString InviterName)
+void UOnlineSubsystemSteamworks::OnReceivedGameInvite(unsigned char LocalUserNum, const struct FString& InviterName)
 {
-	static UFunction* pFnOnReceivedGameInvite = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReceivedGameInvite");
 
-	if (!pFnOnReceivedGameInvite)
-		pFnOnReceivedGameInvite = (UFunction*)UObject::GObjects()->Data[47278];
+	UOnlineSubsystemSteamworks_OnReceivedGameInvite_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.InviterName = InviterName;
 
-	UOnlineSubsystemSteamworks_execOnReceivedGameInvite_Parms OnReceivedGameInvite_Parms;
-	OnReceivedGameInvite_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&OnReceivedGameInvite_Parms.InviterName, &InviterName, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReceivedGameInvite, &OnReceivedGameInvite_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearSentGameInviteDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         SentGameInviteDelegate         ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         SentGameInviteDelegate         (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearSentGameInviteDelegate(unsigned char LocalUserNum, struct FScriptDelegate SentGameInviteDelegate)
+void UOnlineSubsystemSteamworks::ClearSentGameInviteDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& SentGameInviteDelegate)
 {
-	static UFunction* pFnClearSentGameInviteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearSentGameInviteDelegate");
 
-	if (!pFnClearSentGameInviteDelegate)
-		pFnClearSentGameInviteDelegate = (UFunction*)UObject::GObjects()->Data[47275];
+	UOnlineSubsystemSteamworks_ClearSentGameInviteDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.SentGameInviteDelegate = SentGameInviteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearSentGameInviteDelegate_Parms ClearSentGameInviteDelegate_Parms;
-	ClearSentGameInviteDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearSentGameInviteDelegate_Parms.SentGameInviteDelegate, &SentGameInviteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearSentGameInviteDelegate, &ClearSentGameInviteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddSentGameInviteDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         SentGameInviteDelegate         ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         SentGameInviteDelegate         (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddSentGameInviteDelegate(unsigned char LocalUserNum, struct FScriptDelegate SentGameInviteDelegate)
+void UOnlineSubsystemSteamworks::AddSentGameInviteDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& SentGameInviteDelegate)
 {
-	static UFunction* pFnAddSentGameInviteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddSentGameInviteDelegate");
 
-	if (!pFnAddSentGameInviteDelegate)
-		pFnAddSentGameInviteDelegate = (UFunction*)UObject::GObjects()->Data[47271];
+	UOnlineSubsystemSteamworks_AddSentGameInviteDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.SentGameInviteDelegate = SentGameInviteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddSentGameInviteDelegate_Parms AddSentGameInviteDelegate_Parms;
-	AddSentGameInviteDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddSentGameInviteDelegate_Parms.SentGameInviteDelegate, &SentGameInviteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddSentGameInviteDelegate, &AddSentGameInviteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnSentGameInvite
-// [0x00120000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineSubsystemSteamworks::OnSentGameInvite(unsigned char LocalUserNum, unsigned long bWasSuccessful)
+void UOnlineSubsystemSteamworks::OnSentGameInvite(unsigned char LocalUserNum, bool bWasSuccessful)
 {
-	static UFunction* pFnOnSentGameInvite = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnSentGameInvite");
 
-	if (!pFnOnSentGameInvite)
-		pFnOnSentGameInvite = (UFunction*)UObject::GObjects()->Data[47268];
+	UOnlineSubsystemSteamworks_OnSentGameInvite_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineSubsystemSteamworks_execOnSentGameInvite_Parms OnSentGameInvite_Parms;
-	OnSentGameInvite_Parms.LocalUserNum = LocalUserNum;
-	OnSentGameInvite_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnSentGameInvite, &OnSentGameInvite_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SendGameInviteToFriends
-// [0x00024400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// TArray< struct FUniqueNetId >  Friends                        ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 Text                           ( CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink )
+// (Native, HasOptionalParms, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// TArray<struct FUniqueNetId>    Friends                        (Parm, NeedCtorLink)
+// struct FString                 Text                           (OptionalParm, Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::SendGameInviteToFriends(unsigned char LocalUserNum, TArray< struct FUniqueNetId > Friends, struct FString Text)
+bool UOnlineSubsystemSteamworks::SendGameInviteToFriends(unsigned char LocalUserNum, TArray<struct FUniqueNetId> Friends, const struct FString& Text)
 {
-	static UFunction* pFnSendGameInviteToFriends = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SendGameInviteToFriends");
 
-	if (!pFnSendGameInviteToFriends)
-		pFnSendGameInviteToFriends = (UFunction*)UObject::GObjects()->Data[47262];
+	UOnlineSubsystemSteamworks_SendGameInviteToFriends_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.Friends = Friends;
+	params.Text = Text;
 
-	UOnlineSubsystemSteamworks_execSendGameInviteToFriends_Parms SendGameInviteToFriends_Parms;
-	SendGameInviteToFriends_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&SendGameInviteToFriends_Parms.Friends, &Friends, 0xC);
-	memcpy(&SendGameInviteToFriends_Parms.Text, &Text, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSendGameInviteToFriends->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSendGameInviteToFriends, &SendGameInviteToFriends_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnSendGameInviteToFriends->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return SendGameInviteToFriends_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SendGameInviteToFriend
-// [0x00024400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FUniqueNetId            Friend                         ( CPF_Parm )
-// struct FString                 Text                           ( CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink )
+// (Native, HasOptionalParms, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FUniqueNetId            Friend                         (Parm)
+// struct FString                 Text                           (OptionalParm, Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::SendGameInviteToFriend(unsigned char LocalUserNum, struct FUniqueNetId Friend, struct FString Text)
+bool UOnlineSubsystemSteamworks::SendGameInviteToFriend(unsigned char LocalUserNum, const struct FUniqueNetId& Friend, const struct FString& Text)
 {
-	static UFunction* pFnSendGameInviteToFriend = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SendGameInviteToFriend");
 
-	if (!pFnSendGameInviteToFriend)
-		pFnSendGameInviteToFriend = (UFunction*)UObject::GObjects()->Data[47257];
+	UOnlineSubsystemSteamworks_SendGameInviteToFriend_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.Friend = Friend;
+	params.Text = Text;
 
-	UOnlineSubsystemSteamworks_execSendGameInviteToFriend_Parms SendGameInviteToFriend_Parms;
-	SendGameInviteToFriend_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&SendGameInviteToFriend_Parms.Friend, &Friend, 0x18);
-	memcpy(&SendGameInviteToFriend_Parms.Text, &Text, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSendGameInviteToFriend->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSendGameInviteToFriend, &SendGameInviteToFriend_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnSendGameInviteToFriend->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return SendGameInviteToFriend_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SendMessageToFriend
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FUniqueNetId            Friend                         ( CPF_Parm )
-// struct FString                 Message                        ( CPF_Parm | CPF_NeedCtorLink )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FUniqueNetId            Friend                         (Parm)
+// struct FString                 Message                        (Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::SendMessageToFriend(unsigned char LocalUserNum, struct FUniqueNetId Friend, struct FString Message)
+bool UOnlineSubsystemSteamworks::SendMessageToFriend(unsigned char LocalUserNum, const struct FUniqueNetId& Friend, const struct FString& Message)
 {
-	static UFunction* pFnSendMessageToFriend = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SendMessageToFriend");
 
-	if (!pFnSendMessageToFriend)
-		pFnSendMessageToFriend = (UFunction*)UObject::GObjects()->Data[47252];
+	UOnlineSubsystemSteamworks_SendMessageToFriend_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.Friend = Friend;
+	params.Message = Message;
 
-	UOnlineSubsystemSteamworks_execSendMessageToFriend_Parms SendMessageToFriend_Parms;
-	SendMessageToFriend_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&SendMessageToFriend_Parms.Friend, &Friend, 0x18);
-	memcpy(&SendMessageToFriend_Parms.Message, &Message, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSendMessageToFriend->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSendMessageToFriend, &SendMessageToFriend_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnSendMessageToFriend->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return SendMessageToFriend_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearFriendInviteReceivedDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         InviteDelegate                 ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         InviteDelegate                 (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearFriendInviteReceivedDelegate(unsigned char LocalUserNum, struct FScriptDelegate InviteDelegate)
+void UOnlineSubsystemSteamworks::ClearFriendInviteReceivedDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& InviteDelegate)
 {
-	static UFunction* pFnClearFriendInviteReceivedDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearFriendInviteReceivedDelegate");
 
-	if (!pFnClearFriendInviteReceivedDelegate)
-		pFnClearFriendInviteReceivedDelegate = (UFunction*)UObject::GObjects()->Data[47249];
+	UOnlineSubsystemSteamworks_ClearFriendInviteReceivedDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.InviteDelegate = InviteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearFriendInviteReceivedDelegate_Parms ClearFriendInviteReceivedDelegate_Parms;
-	ClearFriendInviteReceivedDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearFriendInviteReceivedDelegate_Parms.InviteDelegate, &InviteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearFriendInviteReceivedDelegate, &ClearFriendInviteReceivedDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFriendInviteReceivedDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         InviteDelegate                 ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         InviteDelegate                 (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddFriendInviteReceivedDelegate(unsigned char LocalUserNum, struct FScriptDelegate InviteDelegate)
+void UOnlineSubsystemSteamworks::AddFriendInviteReceivedDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& InviteDelegate)
 {
-	static UFunction* pFnAddFriendInviteReceivedDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFriendInviteReceivedDelegate");
 
-	if (!pFnAddFriendInviteReceivedDelegate)
-		pFnAddFriendInviteReceivedDelegate = (UFunction*)UObject::GObjects()->Data[47245];
+	UOnlineSubsystemSteamworks_AddFriendInviteReceivedDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.InviteDelegate = InviteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddFriendInviteReceivedDelegate_Parms AddFriendInviteReceivedDelegate_Parms;
-	AddFriendInviteReceivedDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddFriendInviteReceivedDelegate_Parms.InviteDelegate, &InviteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddFriendInviteReceivedDelegate, &AddFriendInviteReceivedDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnFriendInviteReceived
-// [0x00120000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FUniqueNetId            RequestingPlayer               ( CPF_Parm )
-// struct FString                 RequestingNick                 ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 Message                        ( CPF_Parm | CPF_NeedCtorLink )
+// (Public, Delegate)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FUniqueNetId            RequestingPlayer               (Parm)
+// struct FString                 RequestingNick                 (Parm, NeedCtorLink)
+// struct FString                 Message                        (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::OnFriendInviteReceived(unsigned char LocalUserNum, struct FUniqueNetId RequestingPlayer, struct FString RequestingNick, struct FString Message)
+void UOnlineSubsystemSteamworks::OnFriendInviteReceived(unsigned char LocalUserNum, const struct FUniqueNetId& RequestingPlayer, const struct FString& RequestingNick, const struct FString& Message)
 {
-	static UFunction* pFnOnFriendInviteReceived = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnFriendInviteReceived");
 
-	if (!pFnOnFriendInviteReceived)
-		pFnOnFriendInviteReceived = (UFunction*)UObject::GObjects()->Data[47240];
+	UOnlineSubsystemSteamworks_OnFriendInviteReceived_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.RequestingPlayer = RequestingPlayer;
+	params.RequestingNick = RequestingNick;
+	params.Message = Message;
 
-	UOnlineSubsystemSteamworks_execOnFriendInviteReceived_Parms OnFriendInviteReceived_Parms;
-	OnFriendInviteReceived_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&OnFriendInviteReceived_Parms.RequestingPlayer, &RequestingPlayer, 0x18);
-	memcpy(&OnFriendInviteReceived_Parms.RequestingNick, &RequestingNick, 0xC);
-	memcpy(&OnFriendInviteReceived_Parms.Message, &Message, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnFriendInviteReceived, &OnFriendInviteReceived_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DenyFriendInvite
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FUniqueNetId            RequestingPlayer               ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FUniqueNetId            RequestingPlayer               (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::DenyFriendInvite(unsigned char LocalUserNum, struct FUniqueNetId RequestingPlayer)
+bool UOnlineSubsystemSteamworks::DenyFriendInvite(unsigned char LocalUserNum, const struct FUniqueNetId& RequestingPlayer)
 {
-	static UFunction* pFnDenyFriendInvite = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DenyFriendInvite");
 
-	if (!pFnDenyFriendInvite)
-		pFnDenyFriendInvite = (UFunction*)UObject::GObjects()->Data[47236];
+	UOnlineSubsystemSteamworks_DenyFriendInvite_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.RequestingPlayer = RequestingPlayer;
 
-	UOnlineSubsystemSteamworks_execDenyFriendInvite_Parms DenyFriendInvite_Parms;
-	DenyFriendInvite_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&DenyFriendInvite_Parms.RequestingPlayer, &RequestingPlayer, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnDenyFriendInvite->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnDenyFriendInvite, &DenyFriendInvite_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnDenyFriendInvite->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return DenyFriendInvite_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AcceptFriendInvite
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FUniqueNetId            RequestingPlayer               ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FUniqueNetId            RequestingPlayer               (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::AcceptFriendInvite(unsigned char LocalUserNum, struct FUniqueNetId RequestingPlayer)
+bool UOnlineSubsystemSteamworks::AcceptFriendInvite(unsigned char LocalUserNum, const struct FUniqueNetId& RequestingPlayer)
 {
-	static UFunction* pFnAcceptFriendInvite = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AcceptFriendInvite");
 
-	if (!pFnAcceptFriendInvite)
-		pFnAcceptFriendInvite = (UFunction*)UObject::GObjects()->Data[47232];
+	UOnlineSubsystemSteamworks_AcceptFriendInvite_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.RequestingPlayer = RequestingPlayer;
 
-	UOnlineSubsystemSteamworks_execAcceptFriendInvite_Parms AcceptFriendInvite_Parms;
-	AcceptFriendInvite_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AcceptFriendInvite_Parms.RequestingPlayer, &RequestingPlayer, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnAcceptFriendInvite->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnAcceptFriendInvite, &AcceptFriendInvite_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnAcceptFriendInvite->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return AcceptFriendInvite_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RemoveFriend
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FUniqueNetId            FormerFriend                   ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FUniqueNetId            FormerFriend                   (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::RemoveFriend(unsigned char LocalUserNum, struct FUniqueNetId FormerFriend)
+bool UOnlineSubsystemSteamworks::RemoveFriend(unsigned char LocalUserNum, const struct FUniqueNetId& FormerFriend)
 {
-	static UFunction* pFnRemoveFriend = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RemoveFriend");
 
-	if (!pFnRemoveFriend)
-		pFnRemoveFriend = (UFunction*)UObject::GObjects()->Data[47228];
+	UOnlineSubsystemSteamworks_RemoveFriend_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.FormerFriend = FormerFriend;
 
-	UOnlineSubsystemSteamworks_execRemoveFriend_Parms RemoveFriend_Parms;
-	RemoveFriend_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&RemoveFriend_Parms.FormerFriend, &FormerFriend, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnRemoveFriend->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnRemoveFriend, &RemoveFriend_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnRemoveFriend->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return RemoveFriend_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearAddFriendByNameCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         FriendDelegate                 ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         FriendDelegate                 (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearAddFriendByNameCompleteDelegate(unsigned char LocalUserNum, struct FScriptDelegate FriendDelegate)
+void UOnlineSubsystemSteamworks::ClearAddFriendByNameCompleteDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& FriendDelegate)
 {
-	static UFunction* pFnClearAddFriendByNameCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearAddFriendByNameCompleteDelegate");
 
-	if (!pFnClearAddFriendByNameCompleteDelegate)
-		pFnClearAddFriendByNameCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47225];
+	UOnlineSubsystemSteamworks_ClearAddFriendByNameCompleteDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.FriendDelegate = FriendDelegate;
 
-	UOnlineSubsystemSteamworks_execClearAddFriendByNameCompleteDelegate_Parms ClearAddFriendByNameCompleteDelegate_Parms;
-	ClearAddFriendByNameCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearAddFriendByNameCompleteDelegate_Parms.FriendDelegate, &FriendDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearAddFriendByNameCompleteDelegate, &ClearAddFriendByNameCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddAddFriendByNameCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         FriendDelegate                 ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         FriendDelegate                 (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddAddFriendByNameCompleteDelegate(unsigned char LocalUserNum, struct FScriptDelegate FriendDelegate)
+void UOnlineSubsystemSteamworks::AddAddFriendByNameCompleteDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& FriendDelegate)
 {
-	static UFunction* pFnAddAddFriendByNameCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddAddFriendByNameCompleteDelegate");
 
-	if (!pFnAddAddFriendByNameCompleteDelegate)
-		pFnAddAddFriendByNameCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47221];
+	UOnlineSubsystemSteamworks_AddAddFriendByNameCompleteDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.FriendDelegate = FriendDelegate;
 
-	UOnlineSubsystemSteamworks_execAddAddFriendByNameCompleteDelegate_Parms AddAddFriendByNameCompleteDelegate_Parms;
-	AddAddFriendByNameCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddAddFriendByNameCompleteDelegate_Parms.FriendDelegate, &FriendDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddAddFriendByNameCompleteDelegate, &AddAddFriendByNameCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnAddFriendByNameComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineSubsystemSteamworks::OnAddFriendByNameComplete(unsigned long bWasSuccessful)
+void UOnlineSubsystemSteamworks::OnAddFriendByNameComplete(bool bWasSuccessful)
 {
-	static UFunction* pFnOnAddFriendByNameComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnAddFriendByNameComplete");
 
-	if (!pFnOnAddFriendByNameComplete)
-		pFnOnAddFriendByNameComplete = (UFunction*)UObject::GObjects()->Data[47219];
+	UOnlineSubsystemSteamworks_OnAddFriendByNameComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineSubsystemSteamworks_execOnAddFriendByNameComplete_Parms OnAddFriendByNameComplete_Parms;
-	OnAddFriendByNameComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnAddFriendByNameComplete, &OnAddFriendByNameComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFriendByName
-// [0x00024400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FString                 FriendName                     ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 Message                        ( CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink )
+// (Native, HasOptionalParms, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FString                 FriendName                     (Parm, NeedCtorLink)
+// struct FString                 Message                        (OptionalParm, Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::AddFriendByName(unsigned char LocalUserNum, struct FString FriendName, struct FString Message)
+bool UOnlineSubsystemSteamworks::AddFriendByName(unsigned char LocalUserNum, const struct FString& FriendName, const struct FString& Message)
 {
-	static UFunction* pFnAddFriendByName = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFriendByName");
 
-	if (!pFnAddFriendByName)
-		pFnAddFriendByName = (UFunction*)UObject::GObjects()->Data[47214];
+	UOnlineSubsystemSteamworks_AddFriendByName_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.FriendName = FriendName;
+	params.Message = Message;
 
-	UOnlineSubsystemSteamworks_execAddFriendByName_Parms AddFriendByName_Parms;
-	AddFriendByName_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddFriendByName_Parms.FriendName, &FriendName, 0xC);
-	memcpy(&AddFriendByName_Parms.Message, &Message, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnAddFriendByName->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnAddFriendByName, &AddFriendByName_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnAddFriendByName->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return AddFriendByName_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFriend
-// [0x00024400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FUniqueNetId            NewFriend                      ( CPF_Parm )
-// struct FString                 Message                        ( CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink )
+// (Native, HasOptionalParms, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FUniqueNetId            NewFriend                      (Parm)
+// struct FString                 Message                        (OptionalParm, Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::AddFriend(unsigned char LocalUserNum, struct FUniqueNetId NewFriend, struct FString Message)
+bool UOnlineSubsystemSteamworks::AddFriend(unsigned char LocalUserNum, const struct FUniqueNetId& NewFriend, const struct FString& Message)
 {
-	static UFunction* pFnAddFriend = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFriend");
 
-	if (!pFnAddFriend)
-		pFnAddFriend = (UFunction*)UObject::GObjects()->Data[47209];
+	UOnlineSubsystemSteamworks_AddFriend_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.NewFriend = NewFriend;
+	params.Message = Message;
 
-	UOnlineSubsystemSteamworks_execAddFriend_Parms AddFriend_Parms;
-	AddFriend_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddFriend_Parms.NewFriend, &NewFriend, 0x18);
-	memcpy(&AddFriend_Parms.Message, &Message, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnAddFriend->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnAddFriend, &AddFriend_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnAddFriend->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return AddFriend_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetKeyboardInputResults
-// [0x00420002]
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// unsigned char                  bWasCanceled                   ( CPF_Parm | CPF_OutParm )
+// (Defined, Public, HasOutParms)
+// Parameters:
+// unsigned char                  bWasCanceled                   (Parm, OutParm)
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
 struct FString UOnlineSubsystemSteamworks::GetKeyboardInputResults(unsigned char* bWasCanceled)
 {
-	static UFunction* pFnGetKeyboardInputResults = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetKeyboardInputResults");
 
-	if (!pFnGetKeyboardInputResults)
-		pFnGetKeyboardInputResults = (UFunction*)UObject::GObjects()->Data[47204];
+	UOnlineSubsystemSteamworks_GetKeyboardInputResults_Params params;
 
-	UOnlineSubsystemSteamworks_execGetKeyboardInputResults_Parms GetKeyboardInputResults_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetKeyboardInputResults, &GetKeyboardInputResults_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (bWasCanceled)
-		*bWasCanceled = GetKeyboardInputResults_Parms.bWasCanceled;
+	fn->FunctionFlags = flags;
 
-	return GetKeyboardInputResults_Parms.ReturnValue;
-};
+	if (bWasCanceled != nullptr)
+		*bWasCanceled = params.bWasCanceled;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearKeyboardInputDoneDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         InputDelegate                  ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         InputDelegate                  (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearKeyboardInputDoneDelegate(struct FScriptDelegate InputDelegate)
+void UOnlineSubsystemSteamworks::ClearKeyboardInputDoneDelegate(const struct FScriptDelegate& InputDelegate)
 {
-	static UFunction* pFnClearKeyboardInputDoneDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearKeyboardInputDoneDelegate");
 
-	if (!pFnClearKeyboardInputDoneDelegate)
-		pFnClearKeyboardInputDoneDelegate = (UFunction*)UObject::GObjects()->Data[47202];
+	UOnlineSubsystemSteamworks_ClearKeyboardInputDoneDelegate_Params params;
+	params.InputDelegate = InputDelegate;
 
-	UOnlineSubsystemSteamworks_execClearKeyboardInputDoneDelegate_Parms ClearKeyboardInputDoneDelegate_Parms;
-	memcpy(&ClearKeyboardInputDoneDelegate_Parms.InputDelegate, &InputDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearKeyboardInputDoneDelegate, &ClearKeyboardInputDoneDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddKeyboardInputDoneDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         InputDelegate                  ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         InputDelegate                  (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddKeyboardInputDoneDelegate(struct FScriptDelegate InputDelegate)
+void UOnlineSubsystemSteamworks::AddKeyboardInputDoneDelegate(const struct FScriptDelegate& InputDelegate)
 {
-	static UFunction* pFnAddKeyboardInputDoneDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddKeyboardInputDoneDelegate");
 
-	if (!pFnAddKeyboardInputDoneDelegate)
-		pFnAddKeyboardInputDoneDelegate = (UFunction*)UObject::GObjects()->Data[47199];
+	UOnlineSubsystemSteamworks_AddKeyboardInputDoneDelegate_Params params;
+	params.InputDelegate = InputDelegate;
 
-	UOnlineSubsystemSteamworks_execAddKeyboardInputDoneDelegate_Parms AddKeyboardInputDoneDelegate_Parms;
-	memcpy(&AddKeyboardInputDoneDelegate_Parms.InputDelegate, &InputDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddKeyboardInputDoneDelegate, &AddKeyboardInputDoneDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnKeyboardInputComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineSubsystemSteamworks::OnKeyboardInputComplete(unsigned long bWasSuccessful)
+void UOnlineSubsystemSteamworks::OnKeyboardInputComplete(bool bWasSuccessful)
 {
-	static UFunction* pFnOnKeyboardInputComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnKeyboardInputComplete");
 
-	if (!pFnOnKeyboardInputComplete)
-		pFnOnKeyboardInputComplete = (UFunction*)UObject::GObjects()->Data[47197];
+	UOnlineSubsystemSteamworks_OnKeyboardInputComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineSubsystemSteamworks_execOnKeyboardInputComplete_Parms OnKeyboardInputComplete_Parms;
-	OnKeyboardInputComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnKeyboardInputComplete, &OnKeyboardInputComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowKeyboardUI
-// [0x00024400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FString                 TitleText                      ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 DescriptionText                ( CPF_Parm | CPF_NeedCtorLink )
-// unsigned char                  KeyboardType                   ( CPF_OptionalParm | CPF_Parm )
-// unsigned long                  bShouldValidate                ( CPF_OptionalParm | CPF_Parm )
-// struct FString                 DefaultText                    ( CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink )
-// int                            MaxResultLength                ( CPF_OptionalParm | CPF_Parm )
+// (Native, HasOptionalParms, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FString                 TitleText                      (Parm, NeedCtorLink)
+// struct FString                 DescriptionText                (Parm, NeedCtorLink)
+// unsigned char                  KeyboardType                   (OptionalParm, Parm)
+// bool                           bShouldValidate                (OptionalParm, Parm)
+// struct FString                 DefaultText                    (OptionalParm, Parm, NeedCtorLink)
+// int                            MaxResultLength                (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::ShowKeyboardUI(unsigned char LocalUserNum, struct FString TitleText, struct FString DescriptionText, unsigned char KeyboardType, unsigned long bShouldValidate, struct FString DefaultText, int MaxResultLength)
+bool UOnlineSubsystemSteamworks::ShowKeyboardUI(unsigned char LocalUserNum, const struct FString& TitleText, const struct FString& DescriptionText, unsigned char KeyboardType, bool bShouldValidate, const struct FString& DefaultText, int MaxResultLength)
 {
-	static UFunction* pFnShowKeyboardUI = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowKeyboardUI");
 
-	if (!pFnShowKeyboardUI)
-		pFnShowKeyboardUI = (UFunction*)UObject::GObjects()->Data[47188];
+	UOnlineSubsystemSteamworks_ShowKeyboardUI_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.TitleText = TitleText;
+	params.DescriptionText = DescriptionText;
+	params.KeyboardType = KeyboardType;
+	params.bShouldValidate = bShouldValidate;
+	params.DefaultText = DefaultText;
+	params.MaxResultLength = MaxResultLength;
 
-	UOnlineSubsystemSteamworks_execShowKeyboardUI_Parms ShowKeyboardUI_Parms;
-	ShowKeyboardUI_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ShowKeyboardUI_Parms.TitleText, &TitleText, 0xC);
-	memcpy(&ShowKeyboardUI_Parms.DescriptionText, &DescriptionText, 0xC);
-	ShowKeyboardUI_Parms.KeyboardType = KeyboardType;
-	ShowKeyboardUI_Parms.bShouldValidate = bShouldValidate;
-	memcpy(&ShowKeyboardUI_Parms.DefaultText, &DefaultText, 0xC);
-	ShowKeyboardUI_Parms.MaxResultLength = MaxResultLength;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnShowKeyboardUI->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnShowKeyboardUI, &ShowKeyboardUI_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnShowKeyboardUI->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ShowKeyboardUI_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SetOnlineStatus
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            StatusId                       ( CPF_Parm )
-// TArray< struct FLocalizedStringSetting > LocalizedStringSettings        ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
-// TArray< struct FSettingsProperty > Properties                     ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// int                            StatusId                       (Parm)
+// TArray<struct FLocalizedStringSetting> LocalizedStringSettings        (Const, Parm, OutParm, NeedCtorLink)
+// TArray<struct FSettingsProperty> Properties                     (Const, Parm, OutParm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::SetOnlineStatus(unsigned char LocalUserNum, int StatusId, TArray< struct FLocalizedStringSetting >* LocalizedStringSettings, TArray< struct FSettingsProperty >* Properties)
+void UOnlineSubsystemSteamworks::SetOnlineStatus(unsigned char LocalUserNum, int StatusId, TArray<struct FLocalizedStringSetting>* LocalizedStringSettings, TArray<struct FSettingsProperty>* Properties)
 {
-	static UFunction* pFnSetOnlineStatus = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SetOnlineStatus");
 
-	if (!pFnSetOnlineStatus)
-		pFnSetOnlineStatus = (UFunction*)UObject::GObjects()->Data[47181];
+	UOnlineSubsystemSteamworks_SetOnlineStatus_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.StatusId = StatusId;
 
-	UOnlineSubsystemSteamworks_execSetOnlineStatus_Parms SetOnlineStatus_Parms;
-	SetOnlineStatus_Parms.LocalUserNum = LocalUserNum;
-	SetOnlineStatus_Parms.StatusId = StatusId;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetOnlineStatus->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetOnlineStatus, &SetOnlineStatus_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnSetOnlineStatus->FunctionFlags |= 0x400;
+	if (LocalizedStringSettings != nullptr)
+		*LocalizedStringSettings = params.LocalizedStringSettings;
+	if (Properties != nullptr)
+		*Properties = params.Properties;
+}
 
-	if (LocalizedStringSettings)
-		memcpy(LocalizedStringSettings, &SetOnlineStatus_Parms.LocalizedStringSettings, 0xC);
-
-	if (Properties)
-		memcpy(Properties, &SetOnlineStatus_Parms.Properties, 0xC);
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetLocalAccountNames
-// [0x00420000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// TArray< struct FString >       Accounts                       ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Public, HasOutParms)
+// Parameters:
+// TArray<struct FString>         Accounts                       (Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::GetLocalAccountNames(TArray< struct FString >* Accounts)
+bool UOnlineSubsystemSteamworks::GetLocalAccountNames(TArray<struct FString>* Accounts)
 {
-	static UFunction* pFnGetLocalAccountNames = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetLocalAccountNames");
 
-	if (!pFnGetLocalAccountNames)
-		pFnGetLocalAccountNames = (UFunction*)UObject::GObjects()->Data[47177];
+	UOnlineSubsystemSteamworks_GetLocalAccountNames_Params params;
 
-	UOnlineSubsystemSteamworks_execGetLocalAccountNames_Parms GetLocalAccountNames_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetLocalAccountNames, &GetLocalAccountNames_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (Accounts)
-		memcpy(Accounts, &GetLocalAccountNames_Parms.Accounts, 0xC);
+	fn->FunctionFlags = flags;
 
-	return GetLocalAccountNames_Parms.ReturnValue;
-};
+	if (Accounts != nullptr)
+		*Accounts = params.Accounts;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DeleteLocalAccount
-// [0x00024000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 UserName                       ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 Password                       ( CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink )
+// (HasOptionalParms, Public)
+// Parameters:
+// struct FString                 UserName                       (Parm, NeedCtorLink)
+// struct FString                 Password                       (OptionalParm, Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::DeleteLocalAccount(struct FString UserName, struct FString Password)
+bool UOnlineSubsystemSteamworks::DeleteLocalAccount(const struct FString& UserName, const struct FString& Password)
 {
-	static UFunction* pFnDeleteLocalAccount = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.DeleteLocalAccount");
 
-	if (!pFnDeleteLocalAccount)
-		pFnDeleteLocalAccount = (UFunction*)UObject::GObjects()->Data[47173];
+	UOnlineSubsystemSteamworks_DeleteLocalAccount_Params params;
+	params.UserName = UserName;
+	params.Password = Password;
 
-	UOnlineSubsystemSteamworks_execDeleteLocalAccount_Parms DeleteLocalAccount_Parms;
-	memcpy(&DeleteLocalAccount_Parms.UserName, &UserName, 0xC);
-	memcpy(&DeleteLocalAccount_Parms.Password, &Password, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnDeleteLocalAccount, &DeleteLocalAccount_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return DeleteLocalAccount_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RenameLocalAccount
-// [0x00024000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 NewUserName                    ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 OldUserName                    ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 Password                       ( CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink )
+// (HasOptionalParms, Public)
+// Parameters:
+// struct FString                 NewUserName                    (Parm, NeedCtorLink)
+// struct FString                 OldUserName                    (Parm, NeedCtorLink)
+// struct FString                 Password                       (OptionalParm, Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::RenameLocalAccount(struct FString NewUserName, struct FString OldUserName, struct FString Password)
+bool UOnlineSubsystemSteamworks::RenameLocalAccount(const struct FString& NewUserName, const struct FString& OldUserName, const struct FString& Password)
 {
-	static UFunction* pFnRenameLocalAccount = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RenameLocalAccount");
 
-	if (!pFnRenameLocalAccount)
-		pFnRenameLocalAccount = (UFunction*)UObject::GObjects()->Data[47168];
+	UOnlineSubsystemSteamworks_RenameLocalAccount_Params params;
+	params.NewUserName = NewUserName;
+	params.OldUserName = OldUserName;
+	params.Password = Password;
 
-	UOnlineSubsystemSteamworks_execRenameLocalAccount_Parms RenameLocalAccount_Parms;
-	memcpy(&RenameLocalAccount_Parms.NewUserName, &NewUserName, 0xC);
-	memcpy(&RenameLocalAccount_Parms.OldUserName, &OldUserName, 0xC);
-	memcpy(&RenameLocalAccount_Parms.Password, &Password, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnRenameLocalAccount, &RenameLocalAccount_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return RenameLocalAccount_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CreateLocalAccount
-// [0x00024000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 UserName                       ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 Password                       ( CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink )
+// (HasOptionalParms, Public)
+// Parameters:
+// struct FString                 UserName                       (Parm, NeedCtorLink)
+// struct FString                 Password                       (OptionalParm, Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::CreateLocalAccount(struct FString UserName, struct FString Password)
+bool UOnlineSubsystemSteamworks::CreateLocalAccount(const struct FString& UserName, const struct FString& Password)
 {
-	static UFunction* pFnCreateLocalAccount = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CreateLocalAccount");
 
-	if (!pFnCreateLocalAccount)
-		pFnCreateLocalAccount = (UFunction*)UObject::GObjects()->Data[47164];
+	UOnlineSubsystemSteamworks_CreateLocalAccount_Params params;
+	params.UserName = UserName;
+	params.Password = Password;
 
-	UOnlineSubsystemSteamworks_execCreateLocalAccount_Parms CreateLocalAccount_Parms;
-	memcpy(&CreateLocalAccount_Parms.UserName, &UserName, 0xC);
-	memcpy(&CreateLocalAccount_Parms.Password, &Password, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnCreateLocalAccount, &CreateLocalAccount_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return CreateLocalAccount_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearCreateOnlineAccountCompletedDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         AccountCreateDelegate          ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         AccountCreateDelegate          (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearCreateOnlineAccountCompletedDelegate(struct FScriptDelegate AccountCreateDelegate)
+void UOnlineSubsystemSteamworks::ClearCreateOnlineAccountCompletedDelegate(const struct FScriptDelegate& AccountCreateDelegate)
 {
-	static UFunction* pFnClearCreateOnlineAccountCompletedDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearCreateOnlineAccountCompletedDelegate");
 
-	if (!pFnClearCreateOnlineAccountCompletedDelegate)
-		pFnClearCreateOnlineAccountCompletedDelegate = (UFunction*)UObject::GObjects()->Data[47162];
+	UOnlineSubsystemSteamworks_ClearCreateOnlineAccountCompletedDelegate_Params params;
+	params.AccountCreateDelegate = AccountCreateDelegate;
 
-	UOnlineSubsystemSteamworks_execClearCreateOnlineAccountCompletedDelegate_Parms ClearCreateOnlineAccountCompletedDelegate_Parms;
-	memcpy(&ClearCreateOnlineAccountCompletedDelegate_Parms.AccountCreateDelegate, &AccountCreateDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearCreateOnlineAccountCompletedDelegate, &ClearCreateOnlineAccountCompletedDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddCreateOnlineAccountCompletedDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         AccountCreateDelegate          ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         AccountCreateDelegate          (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddCreateOnlineAccountCompletedDelegate(struct FScriptDelegate AccountCreateDelegate)
+void UOnlineSubsystemSteamworks::AddCreateOnlineAccountCompletedDelegate(const struct FScriptDelegate& AccountCreateDelegate)
 {
-	static UFunction* pFnAddCreateOnlineAccountCompletedDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddCreateOnlineAccountCompletedDelegate");
 
-	if (!pFnAddCreateOnlineAccountCompletedDelegate)
-		pFnAddCreateOnlineAccountCompletedDelegate = (UFunction*)UObject::GObjects()->Data[47159];
+	UOnlineSubsystemSteamworks_AddCreateOnlineAccountCompletedDelegate_Params params;
+	params.AccountCreateDelegate = AccountCreateDelegate;
 
-	UOnlineSubsystemSteamworks_execAddCreateOnlineAccountCompletedDelegate_Parms AddCreateOnlineAccountCompletedDelegate_Parms;
-	memcpy(&AddCreateOnlineAccountCompletedDelegate_Parms.AccountCreateDelegate, &AccountCreateDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddCreateOnlineAccountCompletedDelegate, &AddCreateOnlineAccountCompletedDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnCreateOnlineAccountCompleted
-// [0x00120000]
-// Parameters infos:
-// unsigned char                  ErrorStatus                    ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// unsigned char                  ErrorStatus                    (Parm)
 
 void UOnlineSubsystemSteamworks::OnCreateOnlineAccountCompleted(unsigned char ErrorStatus)
 {
-	static UFunction* pFnOnCreateOnlineAccountCompleted = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnCreateOnlineAccountCompleted");
 
-	if (!pFnOnCreateOnlineAccountCompleted)
-		pFnOnCreateOnlineAccountCompleted = (UFunction*)UObject::GObjects()->Data[47157];
+	UOnlineSubsystemSteamworks_OnCreateOnlineAccountCompleted_Params params;
+	params.ErrorStatus = ErrorStatus;
 
-	UOnlineSubsystemSteamworks_execOnCreateOnlineAccountCompleted_Parms OnCreateOnlineAccountCompleted_Parms;
-	OnCreateOnlineAccountCompleted_Parms.ErrorStatus = ErrorStatus;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnCreateOnlineAccountCompleted, &OnCreateOnlineAccountCompleted_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CreateOnlineAccount
-// [0x00024400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 UserName                       ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 Password                       ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 EmailAddress                   ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 ProductKey                     ( CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink )
+// (Native, HasOptionalParms, Public)
+// Parameters:
+// struct FString                 UserName                       (Parm, NeedCtorLink)
+// struct FString                 Password                       (Parm, NeedCtorLink)
+// struct FString                 EmailAddress                   (Parm, NeedCtorLink)
+// struct FString                 ProductKey                     (OptionalParm, Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::CreateOnlineAccount(struct FString UserName, struct FString Password, struct FString EmailAddress, struct FString ProductKey)
+bool UOnlineSubsystemSteamworks::CreateOnlineAccount(const struct FString& UserName, const struct FString& Password, const struct FString& EmailAddress, const struct FString& ProductKey)
 {
-	static UFunction* pFnCreateOnlineAccount = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CreateOnlineAccount");
 
-	if (!pFnCreateOnlineAccount)
-		pFnCreateOnlineAccount = (UFunction*)UObject::GObjects()->Data[47151];
+	UOnlineSubsystemSteamworks_CreateOnlineAccount_Params params;
+	params.UserName = UserName;
+	params.Password = Password;
+	params.EmailAddress = EmailAddress;
+	params.ProductKey = ProductKey;
 
-	UOnlineSubsystemSteamworks_execCreateOnlineAccount_Parms CreateOnlineAccount_Parms;
-	memcpy(&CreateOnlineAccount_Parms.UserName, &UserName, 0xC);
-	memcpy(&CreateOnlineAccount_Parms.Password, &Password, 0xC);
-	memcpy(&CreateOnlineAccount_Parms.EmailAddress, &EmailAddress, 0xC);
-	memcpy(&CreateOnlineAccount_Parms.ProductKey, &ProductKey, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnCreateOnlineAccount->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnCreateOnlineAccount, &CreateOnlineAccount_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnCreateOnlineAccount->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return CreateOnlineAccount_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearDownloadedFile
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
+// (Native, Public)
+// Parameters:
+// struct FString                 Filename                       (Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::ClearDownloadedFile(struct FString Filename)
+bool UOnlineSubsystemSteamworks::ClearDownloadedFile(const struct FString& Filename)
 {
-	static UFunction* pFnClearDownloadedFile = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearDownloadedFile");
 
-	if (!pFnClearDownloadedFile)
-		pFnClearDownloadedFile = (UFunction*)UObject::GObjects()->Data[47148];
+	UOnlineSubsystemSteamworks_ClearDownloadedFile_Params params;
+	params.Filename = Filename;
 
-	UOnlineSubsystemSteamworks_execClearDownloadedFile_Parms ClearDownloadedFile_Parms;
-	memcpy(&ClearDownloadedFile_Parms.Filename, &Filename, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnClearDownloadedFile->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnClearDownloadedFile, &ClearDownloadedFile_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnClearDownloadedFile->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ClearDownloadedFile_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearDownloadedFiles
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Native, Public)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::ClearDownloadedFiles()
 {
-	static UFunction* pFnClearDownloadedFiles = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearDownloadedFiles");
 
-	if (!pFnClearDownloadedFiles)
-		pFnClearDownloadedFiles = (UFunction*)UObject::GObjects()->Data[47146];
+	UOnlineSubsystemSteamworks_ClearDownloadedFiles_Params params;
 
-	UOnlineSubsystemSteamworks_execClearDownloadedFiles_Parms ClearDownloadedFiles_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnClearDownloadedFiles->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnClearDownloadedFiles, &ClearDownloadedFiles_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnClearDownloadedFiles->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ClearDownloadedFiles_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetTitleFileState
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FString                 Filename                       (Parm, NeedCtorLink)
+// unsigned char                  ReturnValue                    (Parm, OutParm, ReturnParm)
 
-unsigned char UOnlineSubsystemSteamworks::GetTitleFileState(struct FString Filename)
+unsigned char UOnlineSubsystemSteamworks::GetTitleFileState(const struct FString& Filename)
 {
-	static UFunction* pFnGetTitleFileState = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetTitleFileState");
 
-	if (!pFnGetTitleFileState)
-		pFnGetTitleFileState = (UFunction*)UObject::GObjects()->Data[47142];
+	UOnlineSubsystemSteamworks_GetTitleFileState_Params params;
+	params.Filename = Filename;
 
-	UOnlineSubsystemSteamworks_execGetTitleFileState_Parms GetTitleFileState_Parms;
-	memcpy(&GetTitleFileState_Parms.Filename, &Filename, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetTitleFileState, &GetTitleFileState_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return GetTitleFileState_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetTitleFileContents
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
-// TArray< unsigned char >        FileContents                   ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FString                 Filename                       (Parm, NeedCtorLink)
+// TArray<unsigned char>          FileContents                   (Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::GetTitleFileContents(struct FString Filename, TArray< unsigned char >* FileContents)
+bool UOnlineSubsystemSteamworks::GetTitleFileContents(const struct FString& Filename, TArray<unsigned char>* FileContents)
 {
-	static UFunction* pFnGetTitleFileContents = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetTitleFileContents");
 
-	if (!pFnGetTitleFileContents)
-		pFnGetTitleFileContents = (UFunction*)UObject::GObjects()->Data[47137];
+	UOnlineSubsystemSteamworks_GetTitleFileContents_Params params;
+	params.Filename = Filename;
 
-	UOnlineSubsystemSteamworks_execGetTitleFileContents_Parms GetTitleFileContents_Parms;
-	memcpy(&GetTitleFileContents_Parms.Filename, &Filename, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetTitleFileContents->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetTitleFileContents, &GetTitleFileContents_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetTitleFileContents->FunctionFlags |= 0x400;
+	if (FileContents != nullptr)
+		*FileContents = params.FileContents;
 
-	if (FileContents)
-		memcpy(FileContents, &GetTitleFileContents_Parms.FileContents, 0xC);
+	return params.ReturnValue;
+}
 
-	return GetTitleFileContents_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadTitleFileCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         ReadTitleFileCompleteDelegate  ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         ReadTitleFileCompleteDelegate  (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearReadTitleFileCompleteDelegate(struct FScriptDelegate ReadTitleFileCompleteDelegate)
+void UOnlineSubsystemSteamworks::ClearReadTitleFileCompleteDelegate(const struct FScriptDelegate& ReadTitleFileCompleteDelegate)
 {
-	static UFunction* pFnClearReadTitleFileCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadTitleFileCompleteDelegate");
 
-	if (!pFnClearReadTitleFileCompleteDelegate)
-		pFnClearReadTitleFileCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47135];
+	UOnlineSubsystemSteamworks_ClearReadTitleFileCompleteDelegate_Params params;
+	params.ReadTitleFileCompleteDelegate = ReadTitleFileCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearReadTitleFileCompleteDelegate_Parms ClearReadTitleFileCompleteDelegate_Parms;
-	memcpy(&ClearReadTitleFileCompleteDelegate_Parms.ReadTitleFileCompleteDelegate, &ReadTitleFileCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearReadTitleFileCompleteDelegate, &ClearReadTitleFileCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadTitleFileCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         ReadTitleFileCompleteDelegate  ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         ReadTitleFileCompleteDelegate  (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddReadTitleFileCompleteDelegate(struct FScriptDelegate ReadTitleFileCompleteDelegate)
+void UOnlineSubsystemSteamworks::AddReadTitleFileCompleteDelegate(const struct FScriptDelegate& ReadTitleFileCompleteDelegate)
 {
-	static UFunction* pFnAddReadTitleFileCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadTitleFileCompleteDelegate");
 
-	if (!pFnAddReadTitleFileCompleteDelegate)
-		pFnAddReadTitleFileCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47132];
+	UOnlineSubsystemSteamworks_AddReadTitleFileCompleteDelegate_Params params;
+	params.ReadTitleFileCompleteDelegate = ReadTitleFileCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddReadTitleFileCompleteDelegate_Parms AddReadTitleFileCompleteDelegate_Parms;
-	memcpy(&AddReadTitleFileCompleteDelegate_Parms.ReadTitleFileCompleteDelegate, &ReadTitleFileCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddReadTitleFileCompleteDelegate, &AddReadTitleFileCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadTitleFile
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FString                 FileToRead                     ( CPF_Parm | CPF_NeedCtorLink )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FString                 FileToRead                     (Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::ReadTitleFile(unsigned char LocalUserNum, struct FString FileToRead)
+bool UOnlineSubsystemSteamworks::ReadTitleFile(unsigned char LocalUserNum, const struct FString& FileToRead)
 {
-	static UFunction* pFnReadTitleFile = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadTitleFile");
 
-	if (!pFnReadTitleFile)
-		pFnReadTitleFile = (UFunction*)UObject::GObjects()->Data[47128];
+	UOnlineSubsystemSteamworks_ReadTitleFile_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.FileToRead = FileToRead;
 
-	UOnlineSubsystemSteamworks_execReadTitleFile_Parms ReadTitleFile_Parms;
-	ReadTitleFile_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ReadTitleFile_Parms.FileToRead, &FileToRead, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnReadTitleFile->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnReadTitleFile, &ReadTitleFile_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnReadTitleFile->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ReadTitleFile_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadTitleFileComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
+// (Public, Delegate)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
+// struct FString                 Filename                       (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::OnReadTitleFileComplete(unsigned long bWasSuccessful, struct FString Filename)
+void UOnlineSubsystemSteamworks::OnReadTitleFileComplete(bool bWasSuccessful, const struct FString& Filename)
 {
-	static UFunction* pFnOnReadTitleFileComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadTitleFileComplete");
 
-	if (!pFnOnReadTitleFileComplete)
-		pFnOnReadTitleFileComplete = (UFunction*)UObject::GObjects()->Data[47125];
+	UOnlineSubsystemSteamworks_OnReadTitleFileComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
+	params.Filename = Filename;
 
-	UOnlineSubsystemSteamworks_execOnReadTitleFileComplete_Parms OnReadTitleFileComplete_Parms;
-	OnReadTitleFileComplete_Parms.bWasSuccessful = bWasSuccessful;
-	memcpy(&OnReadTitleFileComplete_Parms.Filename, &Filename, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReadTitleFileComplete, &OnReadTitleFileComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearShareTitleFileCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         ShareTitleFileCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         ShareTitleFileCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearShareTitleFileCompleteDelegate(struct FScriptDelegate ShareTitleFileCompleteDelegate)
+void UOnlineSubsystemSteamworks::ClearShareTitleFileCompleteDelegate(const struct FScriptDelegate& ShareTitleFileCompleteDelegate)
 {
-	static UFunction* pFnClearShareTitleFileCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearShareTitleFileCompleteDelegate");
 
-	if (!pFnClearShareTitleFileCompleteDelegate)
-		pFnClearShareTitleFileCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47123];
+	UOnlineSubsystemSteamworks_ClearShareTitleFileCompleteDelegate_Params params;
+	params.ShareTitleFileCompleteDelegate = ShareTitleFileCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearShareTitleFileCompleteDelegate_Parms ClearShareTitleFileCompleteDelegate_Parms;
-	memcpy(&ClearShareTitleFileCompleteDelegate_Parms.ShareTitleFileCompleteDelegate, &ShareTitleFileCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearShareTitleFileCompleteDelegate, &ClearShareTitleFileCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddShareTitleFileCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         ShareTitleFileCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         ShareTitleFileCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddShareTitleFileCompleteDelegate(struct FScriptDelegate ShareTitleFileCompleteDelegate)
+void UOnlineSubsystemSteamworks::AddShareTitleFileCompleteDelegate(const struct FScriptDelegate& ShareTitleFileCompleteDelegate)
 {
-	static UFunction* pFnAddShareTitleFileCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddShareTitleFileCompleteDelegate");
 
-	if (!pFnAddShareTitleFileCompleteDelegate)
-		pFnAddShareTitleFileCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47120];
+	UOnlineSubsystemSteamworks_AddShareTitleFileCompleteDelegate_Params params;
+	params.ShareTitleFileCompleteDelegate = ShareTitleFileCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddShareTitleFileCompleteDelegate_Parms AddShareTitleFileCompleteDelegate_Parms;
-	memcpy(&AddShareTitleFileCompleteDelegate_Parms.ShareTitleFileCompleteDelegate, &ShareTitleFileCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddShareTitleFileCompleteDelegate, &AddShareTitleFileCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShareTitleFile
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 FileToShare                    ( CPF_Parm | CPF_NeedCtorLink )
+// (Native, Public)
+// Parameters:
+// struct FString                 FileToShare                    (Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::ShareTitleFile(struct FString FileToShare)
+bool UOnlineSubsystemSteamworks::ShareTitleFile(const struct FString& FileToShare)
 {
-	static UFunction* pFnShareTitleFile = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShareTitleFile");
 
-	if (!pFnShareTitleFile)
-		pFnShareTitleFile = (UFunction*)UObject::GObjects()->Data[47117];
+	UOnlineSubsystemSteamworks_ShareTitleFile_Params params;
+	params.FileToShare = FileToShare;
 
-	UOnlineSubsystemSteamworks_execShareTitleFile_Parms ShareTitleFile_Parms;
-	memcpy(&ShareTitleFile_Parms.FileToShare, &FileToShare, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnShareTitleFile->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnShareTitleFile, &ShareTitleFile_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnShareTitleFile->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ShareTitleFile_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnShareTitleFileComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 UGCHandle                      ( CPF_Parm | CPF_NeedCtorLink )
+// (Public, Delegate)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
+// struct FString                 Filename                       (Parm, NeedCtorLink)
+// struct FString                 UGCHandle                      (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::OnShareTitleFileComplete(unsigned long bWasSuccessful, struct FString Filename, struct FString UGCHandle)
+void UOnlineSubsystemSteamworks::OnShareTitleFileComplete(bool bWasSuccessful, const struct FString& Filename, const struct FString& UGCHandle)
 {
-	static UFunction* pFnOnShareTitleFileComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnShareTitleFileComplete");
 
-	if (!pFnOnShareTitleFileComplete)
-		pFnOnShareTitleFileComplete = (UFunction*)UObject::GObjects()->Data[47113];
+	UOnlineSubsystemSteamworks_OnShareTitleFileComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
+	params.Filename = Filename;
+	params.UGCHandle = UGCHandle;
 
-	UOnlineSubsystemSteamworks_execOnShareTitleFileComplete_Parms OnShareTitleFileComplete_Parms;
-	OnShareTitleFileComplete_Parms.bWasSuccessful = bWasSuccessful;
-	memcpy(&OnShareTitleFileComplete_Parms.Filename, &Filename, 0xC);
-	memcpy(&OnShareTitleFileComplete_Parms.UGCHandle, &UGCHandle, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnShareTitleFileComplete, &OnShareTitleFileComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearStorageDeviceChangeDelegate
-// [0x00020000]
-// Parameters infos:
-// struct FScriptDelegate         StorageDeviceChangeDelegate    ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// struct FScriptDelegate         StorageDeviceChangeDelegate    (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearStorageDeviceChangeDelegate(struct FScriptDelegate StorageDeviceChangeDelegate)
+void UOnlineSubsystemSteamworks::ClearStorageDeviceChangeDelegate(const struct FScriptDelegate& StorageDeviceChangeDelegate)
 {
-	static UFunction* pFnClearStorageDeviceChangeDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearStorageDeviceChangeDelegate");
 
-	if (!pFnClearStorageDeviceChangeDelegate)
-		pFnClearStorageDeviceChangeDelegate = (UFunction*)UObject::GObjects()->Data[47111];
+	UOnlineSubsystemSteamworks_ClearStorageDeviceChangeDelegate_Params params;
+	params.StorageDeviceChangeDelegate = StorageDeviceChangeDelegate;
 
-	UOnlineSubsystemSteamworks_execClearStorageDeviceChangeDelegate_Parms ClearStorageDeviceChangeDelegate_Parms;
-	memcpy(&ClearStorageDeviceChangeDelegate_Parms.StorageDeviceChangeDelegate, &StorageDeviceChangeDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearStorageDeviceChangeDelegate, &ClearStorageDeviceChangeDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddStorageDeviceChangeDelegate
-// [0x00020000]
-// Parameters infos:
-// struct FScriptDelegate         StorageDeviceChangeDelegate    ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// struct FScriptDelegate         StorageDeviceChangeDelegate    (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddStorageDeviceChangeDelegate(struct FScriptDelegate StorageDeviceChangeDelegate)
+void UOnlineSubsystemSteamworks::AddStorageDeviceChangeDelegate(const struct FScriptDelegate& StorageDeviceChangeDelegate)
 {
-	static UFunction* pFnAddStorageDeviceChangeDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddStorageDeviceChangeDelegate");
 
-	if (!pFnAddStorageDeviceChangeDelegate)
-		pFnAddStorageDeviceChangeDelegate = (UFunction*)UObject::GObjects()->Data[47109];
+	UOnlineSubsystemSteamworks_AddStorageDeviceChangeDelegate_Params params;
+	params.StorageDeviceChangeDelegate = StorageDeviceChangeDelegate;
 
-	UOnlineSubsystemSteamworks_execAddStorageDeviceChangeDelegate_Parms AddStorageDeviceChangeDelegate_Parms;
-	memcpy(&AddStorageDeviceChangeDelegate_Parms.StorageDeviceChangeDelegate, &StorageDeviceChangeDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddStorageDeviceChangeDelegate, &AddStorageDeviceChangeDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnStorageDeviceChange
-// [0x00120000]
-// Parameters infos:
+// (Public, Delegate)
 
 void UOnlineSubsystemSteamworks::OnStorageDeviceChange()
 {
-	static UFunction* pFnOnStorageDeviceChange = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnStorageDeviceChange");
 
-	if (!pFnOnStorageDeviceChange)
-		pFnOnStorageDeviceChange = (UFunction*)UObject::GObjects()->Data[47108];
+	UOnlineSubsystemSteamworks_OnStorageDeviceChange_Params params;
 
-	UOnlineSubsystemSteamworks_execOnStorageDeviceChange_Parms OnStorageDeviceChange_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnStorageDeviceChange, &OnStorageDeviceChange_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetLocale
-// [0x00020002]
-// Parameters infos:
-// int                            ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Defined, Public)
+// Parameters:
+// int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
 int UOnlineSubsystemSteamworks::GetLocale()
 {
-	static UFunction* pFnGetLocale = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetLocale");
 
-	if (!pFnGetLocale)
-		pFnGetLocale = (UFunction*)UObject::GObjects()->Data[47106];
+	UOnlineSubsystemSteamworks_GetLocale_Params params;
 
-	UOnlineSubsystemSteamworks_execGetLocale_Parms GetLocale_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetLocale, &GetLocale_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return GetLocale_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetNATType
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// unsigned char                  ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  ReturnValue                    (Parm, OutParm, ReturnParm)
 
 unsigned char UOnlineSubsystemSteamworks::GetNATType()
 {
-	static UFunction* pFnGetNATType = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetNATType");
 
-	if (!pFnGetNATType)
-		pFnGetNATType = (UFunction*)UObject::GObjects()->Data[47104];
+	UOnlineSubsystemSteamworks_GetNATType_Params params;
 
-	UOnlineSubsystemSteamworks_execGetNATType_Parms GetNATType_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetNATType->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetNATType, &GetNATType_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetNATType->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetNATType_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearConnectionStatusChangeDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         ConnectionStatusDelegate       ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         ConnectionStatusDelegate       (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearConnectionStatusChangeDelegate(struct FScriptDelegate ConnectionStatusDelegate)
+void UOnlineSubsystemSteamworks::ClearConnectionStatusChangeDelegate(const struct FScriptDelegate& ConnectionStatusDelegate)
 {
-	static UFunction* pFnClearConnectionStatusChangeDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearConnectionStatusChangeDelegate");
 
-	if (!pFnClearConnectionStatusChangeDelegate)
-		pFnClearConnectionStatusChangeDelegate = (UFunction*)UObject::GObjects()->Data[47102];
+	UOnlineSubsystemSteamworks_ClearConnectionStatusChangeDelegate_Params params;
+	params.ConnectionStatusDelegate = ConnectionStatusDelegate;
 
-	UOnlineSubsystemSteamworks_execClearConnectionStatusChangeDelegate_Parms ClearConnectionStatusChangeDelegate_Parms;
-	memcpy(&ClearConnectionStatusChangeDelegate_Parms.ConnectionStatusDelegate, &ConnectionStatusDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearConnectionStatusChangeDelegate, &ClearConnectionStatusChangeDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddConnectionStatusChangeDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         ConnectionStatusDelegate       ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         ConnectionStatusDelegate       (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddConnectionStatusChangeDelegate(struct FScriptDelegate ConnectionStatusDelegate)
+void UOnlineSubsystemSteamworks::AddConnectionStatusChangeDelegate(const struct FScriptDelegate& ConnectionStatusDelegate)
 {
-	static UFunction* pFnAddConnectionStatusChangeDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddConnectionStatusChangeDelegate");
 
-	if (!pFnAddConnectionStatusChangeDelegate)
-		pFnAddConnectionStatusChangeDelegate = (UFunction*)UObject::GObjects()->Data[47099];
+	UOnlineSubsystemSteamworks_AddConnectionStatusChangeDelegate_Params params;
+	params.ConnectionStatusDelegate = ConnectionStatusDelegate;
 
-	UOnlineSubsystemSteamworks_execAddConnectionStatusChangeDelegate_Parms AddConnectionStatusChangeDelegate_Parms;
-	memcpy(&AddConnectionStatusChangeDelegate_Parms.ConnectionStatusDelegate, &ConnectionStatusDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddConnectionStatusChangeDelegate, &AddConnectionStatusChangeDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnConnectionStatusChange
-// [0x00120000]
-// Parameters infos:
-// unsigned char                  ConnectionStatus               ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// unsigned char                  ConnectionStatus               (Parm)
 
 void UOnlineSubsystemSteamworks::OnConnectionStatusChange(unsigned char ConnectionStatus)
 {
-	static UFunction* pFnOnConnectionStatusChange = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnConnectionStatusChange");
 
-	if (!pFnOnConnectionStatusChange)
-		pFnOnConnectionStatusChange = (UFunction*)UObject::GObjects()->Data[47097];
+	UOnlineSubsystemSteamworks_OnConnectionStatusChange_Params params;
+	params.ConnectionStatus = ConnectionStatus;
 
-	UOnlineSubsystemSteamworks_execOnConnectionStatusChange_Parms OnConnectionStatusChange_Parms;
-	OnConnectionStatusChange_Parms.ConnectionStatus = ConnectionStatus;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnConnectionStatusChange, &OnConnectionStatusChange_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsControllerConnected
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            ControllerId                   ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// int                            ControllerId                   (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::IsControllerConnected(int ControllerId)
 {
-	static UFunction* pFnIsControllerConnected = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsControllerConnected");
 
-	if (!pFnIsControllerConnected)
-		pFnIsControllerConnected = (UFunction*)UObject::GObjects()->Data[47094];
+	UOnlineSubsystemSteamworks_IsControllerConnected_Params params;
+	params.ControllerId = ControllerId;
 
-	UOnlineSubsystemSteamworks_execIsControllerConnected_Parms IsControllerConnected_Parms;
-	IsControllerConnected_Parms.ControllerId = ControllerId;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnIsControllerConnected->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnIsControllerConnected, &IsControllerConnected_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnIsControllerConnected->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return IsControllerConnected_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearControllerChangeDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         ControllerChangeDelegate       ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         ControllerChangeDelegate       (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearControllerChangeDelegate(struct FScriptDelegate ControllerChangeDelegate)
+void UOnlineSubsystemSteamworks::ClearControllerChangeDelegate(const struct FScriptDelegate& ControllerChangeDelegate)
 {
-	static UFunction* pFnClearControllerChangeDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearControllerChangeDelegate");
 
-	if (!pFnClearControllerChangeDelegate)
-		pFnClearControllerChangeDelegate = (UFunction*)UObject::GObjects()->Data[47092];
+	UOnlineSubsystemSteamworks_ClearControllerChangeDelegate_Params params;
+	params.ControllerChangeDelegate = ControllerChangeDelegate;
 
-	UOnlineSubsystemSteamworks_execClearControllerChangeDelegate_Parms ClearControllerChangeDelegate_Parms;
-	memcpy(&ClearControllerChangeDelegate_Parms.ControllerChangeDelegate, &ControllerChangeDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearControllerChangeDelegate, &ClearControllerChangeDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddControllerChangeDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         ControllerChangeDelegate       ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         ControllerChangeDelegate       (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddControllerChangeDelegate(struct FScriptDelegate ControllerChangeDelegate)
+void UOnlineSubsystemSteamworks::AddControllerChangeDelegate(const struct FScriptDelegate& ControllerChangeDelegate)
 {
-	static UFunction* pFnAddControllerChangeDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddControllerChangeDelegate");
 
-	if (!pFnAddControllerChangeDelegate)
-		pFnAddControllerChangeDelegate = (UFunction*)UObject::GObjects()->Data[47089];
+	UOnlineSubsystemSteamworks_AddControllerChangeDelegate_Params params;
+	params.ControllerChangeDelegate = ControllerChangeDelegate;
 
-	UOnlineSubsystemSteamworks_execAddControllerChangeDelegate_Parms AddControllerChangeDelegate_Parms;
-	memcpy(&AddControllerChangeDelegate_Parms.ControllerChangeDelegate, &ControllerChangeDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddControllerChangeDelegate, &AddControllerChangeDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnControllerChange
-// [0x00120000]
-// Parameters infos:
-// int                            ControllerId                   ( CPF_Parm )
-// unsigned long                  bIsConnected                   ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// int                            ControllerId                   (Parm)
+// bool                           bIsConnected                   (Parm)
 
-void UOnlineSubsystemSteamworks::OnControllerChange(int ControllerId, unsigned long bIsConnected)
+void UOnlineSubsystemSteamworks::OnControllerChange(int ControllerId, bool bIsConnected)
 {
-	static UFunction* pFnOnControllerChange = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnControllerChange");
 
-	if (!pFnOnControllerChange)
-		pFnOnControllerChange = (UFunction*)UObject::GObjects()->Data[47086];
+	UOnlineSubsystemSteamworks_OnControllerChange_Params params;
+	params.ControllerId = ControllerId;
+	params.bIsConnected = bIsConnected;
 
-	UOnlineSubsystemSteamworks_execOnControllerChange_Parms OnControllerChange_Parms;
-	OnControllerChange_Parms.ControllerId = ControllerId;
-	OnControllerChange_Parms.bIsConnected = bIsConnected;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnControllerChange, &OnControllerChange_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SetNetworkNotificationPosition
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// unsigned char                  NewPos                         ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  NewPos                         (Parm)
 
 void UOnlineSubsystemSteamworks::SetNetworkNotificationPosition(unsigned char NewPos)
 {
-	static UFunction* pFnSetNetworkNotificationPosition = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SetNetworkNotificationPosition");
 
-	if (!pFnSetNetworkNotificationPosition)
-		pFnSetNetworkNotificationPosition = (UFunction*)UObject::GObjects()->Data[47084];
+	UOnlineSubsystemSteamworks_SetNetworkNotificationPosition_Params params;
+	params.NewPos = NewPos;
 
-	UOnlineSubsystemSteamworks_execSetNetworkNotificationPosition_Parms SetNetworkNotificationPosition_Parms;
-	SetNetworkNotificationPosition_Parms.NewPos = NewPos;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetNetworkNotificationPosition->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetNetworkNotificationPosition, &SetNetworkNotificationPosition_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetNetworkNotificationPosition->FunctionFlags |= 0x400;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetNetworkNotificationPosition
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  ReturnValue                    (Parm, OutParm, ReturnParm)
 
 unsigned char UOnlineSubsystemSteamworks::GetNetworkNotificationPosition()
 {
-	static UFunction* pFnGetNetworkNotificationPosition = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetNetworkNotificationPosition");
 
-	if (!pFnGetNetworkNotificationPosition)
-		pFnGetNetworkNotificationPosition = (UFunction*)UObject::GObjects()->Data[47081];
+	UOnlineSubsystemSteamworks_GetNetworkNotificationPosition_Params params;
 
-	UOnlineSubsystemSteamworks_execGetNetworkNotificationPosition_Parms GetNetworkNotificationPosition_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetNetworkNotificationPosition, &GetNetworkNotificationPosition_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return GetNetworkNotificationPosition_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearExternalUIChangeDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         ExternalUIDelegate             ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         ExternalUIDelegate             (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearExternalUIChangeDelegate(struct FScriptDelegate ExternalUIDelegate)
+void UOnlineSubsystemSteamworks::ClearExternalUIChangeDelegate(const struct FScriptDelegate& ExternalUIDelegate)
 {
-	static UFunction* pFnClearExternalUIChangeDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearExternalUIChangeDelegate");
 
-	if (!pFnClearExternalUIChangeDelegate)
-		pFnClearExternalUIChangeDelegate = (UFunction*)UObject::GObjects()->Data[47079];
+	UOnlineSubsystemSteamworks_ClearExternalUIChangeDelegate_Params params;
+	params.ExternalUIDelegate = ExternalUIDelegate;
 
-	UOnlineSubsystemSteamworks_execClearExternalUIChangeDelegate_Parms ClearExternalUIChangeDelegate_Parms;
-	memcpy(&ClearExternalUIChangeDelegate_Parms.ExternalUIDelegate, &ExternalUIDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearExternalUIChangeDelegate, &ClearExternalUIChangeDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddExternalUIChangeDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         ExternalUIDelegate             ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         ExternalUIDelegate             (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddExternalUIChangeDelegate(struct FScriptDelegate ExternalUIDelegate)
+void UOnlineSubsystemSteamworks::AddExternalUIChangeDelegate(const struct FScriptDelegate& ExternalUIDelegate)
 {
-	static UFunction* pFnAddExternalUIChangeDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddExternalUIChangeDelegate");
 
-	if (!pFnAddExternalUIChangeDelegate)
-		pFnAddExternalUIChangeDelegate = (UFunction*)UObject::GObjects()->Data[47076];
+	UOnlineSubsystemSteamworks_AddExternalUIChangeDelegate_Params params;
+	params.ExternalUIDelegate = ExternalUIDelegate;
 
-	UOnlineSubsystemSteamworks_execAddExternalUIChangeDelegate_Parms AddExternalUIChangeDelegate_Parms;
-	memcpy(&AddExternalUIChangeDelegate_Parms.ExternalUIDelegate, &ExternalUIDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddExternalUIChangeDelegate, &AddExternalUIChangeDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnExternalUIChange
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bIsOpening                     ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// bool                           bIsOpening                     (Parm)
 
-void UOnlineSubsystemSteamworks::OnExternalUIChange(unsigned long bIsOpening)
+void UOnlineSubsystemSteamworks::OnExternalUIChange(bool bIsOpening)
 {
-	static UFunction* pFnOnExternalUIChange = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnExternalUIChange");
 
-	if (!pFnOnExternalUIChange)
-		pFnOnExternalUIChange = (UFunction*)UObject::GObjects()->Data[47074];
+	UOnlineSubsystemSteamworks_OnExternalUIChange_Params params;
+	params.bIsOpening = bIsOpening;
 
-	UOnlineSubsystemSteamworks_execOnExternalUIChange_Parms OnExternalUIChange_Parms;
-	OnExternalUIChange_Parms.bIsOpening = bIsOpening;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnExternalUIChange, &OnExternalUIChange_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLinkStatusChangeDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         LinkStatusDelegate             ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         LinkStatusDelegate             (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearLinkStatusChangeDelegate(struct FScriptDelegate LinkStatusDelegate)
+void UOnlineSubsystemSteamworks::ClearLinkStatusChangeDelegate(const struct FScriptDelegate& LinkStatusDelegate)
 {
-	static UFunction* pFnClearLinkStatusChangeDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLinkStatusChangeDelegate");
 
-	if (!pFnClearLinkStatusChangeDelegate)
-		pFnClearLinkStatusChangeDelegate = (UFunction*)UObject::GObjects()->Data[47072];
+	UOnlineSubsystemSteamworks_ClearLinkStatusChangeDelegate_Params params;
+	params.LinkStatusDelegate = LinkStatusDelegate;
 
-	UOnlineSubsystemSteamworks_execClearLinkStatusChangeDelegate_Parms ClearLinkStatusChangeDelegate_Parms;
-	memcpy(&ClearLinkStatusChangeDelegate_Parms.LinkStatusDelegate, &LinkStatusDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearLinkStatusChangeDelegate, &ClearLinkStatusChangeDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLinkStatusChangeDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         LinkStatusDelegate             ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         LinkStatusDelegate             (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddLinkStatusChangeDelegate(struct FScriptDelegate LinkStatusDelegate)
+void UOnlineSubsystemSteamworks::AddLinkStatusChangeDelegate(const struct FScriptDelegate& LinkStatusDelegate)
 {
-	static UFunction* pFnAddLinkStatusChangeDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLinkStatusChangeDelegate");
 
-	if (!pFnAddLinkStatusChangeDelegate)
-		pFnAddLinkStatusChangeDelegate = (UFunction*)UObject::GObjects()->Data[47069];
+	UOnlineSubsystemSteamworks_AddLinkStatusChangeDelegate_Params params;
+	params.LinkStatusDelegate = LinkStatusDelegate;
 
-	UOnlineSubsystemSteamworks_execAddLinkStatusChangeDelegate_Parms AddLinkStatusChangeDelegate_Parms;
-	memcpy(&AddLinkStatusChangeDelegate_Parms.LinkStatusDelegate, &LinkStatusDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddLinkStatusChangeDelegate, &AddLinkStatusChangeDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLinkStatusChange
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bIsConnected                   ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// bool                           bIsConnected                   (Parm)
 
-void UOnlineSubsystemSteamworks::OnLinkStatusChange(unsigned long bIsConnected)
+void UOnlineSubsystemSteamworks::OnLinkStatusChange(bool bIsConnected)
 {
-	static UFunction* pFnOnLinkStatusChange = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLinkStatusChange");
 
-	if (!pFnOnLinkStatusChange)
-		pFnOnLinkStatusChange = (UFunction*)UObject::GObjects()->Data[47067];
+	UOnlineSubsystemSteamworks_OnLinkStatusChange_Params params;
+	params.bIsConnected = bIsConnected;
 
-	UOnlineSubsystemSteamworks_execOnLinkStatusChange_Parms OnLinkStatusChange_Parms;
-	OnLinkStatusChange_Parms.bIsConnected = bIsConnected;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnLinkStatusChange, &OnLinkStatusChange_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.HasLinkConnection
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Native, Public)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::HasLinkConnection()
 {
-	static UFunction* pFnHasLinkConnection = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.HasLinkConnection");
 
-	if (!pFnHasLinkConnection)
-		pFnHasLinkConnection = (UFunction*)UObject::GObjects()->Data[47065];
+	UOnlineSubsystemSteamworks_HasLinkConnection_Params params;
 
-	UOnlineSubsystemSteamworks_execHasLinkConnection_Parms HasLinkConnection_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnHasLinkConnection->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnHasLinkConnection, &HasLinkConnection_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnHasLinkConnection->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return HasLinkConnection_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetPlayerUniqueNetIdFromIndex
-// [0x00820802] ( FUNC_Event )
-// Parameters infos:
-// struct FUniqueNetId            ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            UserIndex                      ( CPF_Parm )
+// (Defined, Event, Public, HasDefaults)
+// Parameters:
+// int                            UserIndex                      (Parm)
+// struct FUniqueNetId            ReturnValue                    (Parm, OutParm, ReturnParm)
 
-struct FUniqueNetId UOnlineSubsystemSteamworks::eventGetPlayerUniqueNetIdFromIndex(int UserIndex)
+struct FUniqueNetId UOnlineSubsystemSteamworks::GetPlayerUniqueNetIdFromIndex(int UserIndex)
 {
-	static UFunction* pFnGetPlayerUniqueNetIdFromIndex = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetPlayerUniqueNetIdFromIndex");
 
-	if (!pFnGetPlayerUniqueNetIdFromIndex)
-		pFnGetPlayerUniqueNetIdFromIndex = (UFunction*)UObject::GObjects()->Data[47061];
+	UOnlineSubsystemSteamworks_GetPlayerUniqueNetIdFromIndex_Params params;
+	params.UserIndex = UserIndex;
 
-	UOnlineSubsystemSteamworks_eventGetPlayerUniqueNetIdFromIndex_Parms GetPlayerUniqueNetIdFromIndex_Parms;
-	GetPlayerUniqueNetIdFromIndex_Parms.UserIndex = UserIndex;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetPlayerUniqueNetIdFromIndex, &GetPlayerUniqueNetIdFromIndex_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return GetPlayerUniqueNetIdFromIndex_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetPlayerNicknameFromIndex
-// [0x00020802] ( FUNC_Event )
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// int                            UserIndex                      ( CPF_Parm )
+// (Defined, Event, Public)
+// Parameters:
+// int                            UserIndex                      (Parm)
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
-struct FString UOnlineSubsystemSteamworks::eventGetPlayerNicknameFromIndex(int UserIndex)
+struct FString UOnlineSubsystemSteamworks::GetPlayerNicknameFromIndex(int UserIndex)
 {
-	static UFunction* pFnGetPlayerNicknameFromIndex = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetPlayerNicknameFromIndex");
 
-	if (!pFnGetPlayerNicknameFromIndex)
-		pFnGetPlayerNicknameFromIndex = (UFunction*)UObject::GObjects()->Data[47058];
+	UOnlineSubsystemSteamworks_GetPlayerNicknameFromIndex_Params params;
+	params.UserIndex = UserIndex;
 
-	UOnlineSubsystemSteamworks_eventGetPlayerNicknameFromIndex_Parms GetPlayerNicknameFromIndex_Parms;
-	GetPlayerNicknameFromIndex_Parms.UserIndex = UserIndex;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetPlayerNicknameFromIndex, &GetPlayerNicknameFromIndex_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return GetPlayerNicknameFromIndex_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteOnlinePlayerScores
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   SessionName                    ( CPF_Parm )
-// int                            LeaderboardId                  ( CPF_Parm )
-// TArray< struct FOnlinePlayerScore > PlayerScores                   ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// int                            LeaderboardId                  (Parm)
+// TArray<struct FOnlinePlayerScore> PlayerScores                   (Const, Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::WriteOnlinePlayerScores(struct FName SessionName, int LeaderboardId, TArray< struct FOnlinePlayerScore >* PlayerScores)
+bool UOnlineSubsystemSteamworks::WriteOnlinePlayerScores(const struct FName& SessionName, int LeaderboardId, TArray<struct FOnlinePlayerScore>* PlayerScores)
 {
-	static UFunction* pFnWriteOnlinePlayerScores = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteOnlinePlayerScores");
 
-	if (!pFnWriteOnlinePlayerScores)
-		pFnWriteOnlinePlayerScores = (UFunction*)UObject::GObjects()->Data[47052];
+	UOnlineSubsystemSteamworks_WriteOnlinePlayerScores_Params params;
+	params.SessionName = SessionName;
+	params.LeaderboardId = LeaderboardId;
 
-	UOnlineSubsystemSteamworks_execWriteOnlinePlayerScores_Parms WriteOnlinePlayerScores_Parms;
-	memcpy(&WriteOnlinePlayerScores_Parms.SessionName, &SessionName, 0x8);
-	WriteOnlinePlayerScores_Parms.LeaderboardId = LeaderboardId;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnWriteOnlinePlayerScores->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnWriteOnlinePlayerScores, &WriteOnlinePlayerScores_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnWriteOnlinePlayerScores->FunctionFlags |= 0x400;
+	if (PlayerScores != nullptr)
+		*PlayerScores = params.PlayerScores;
 
-	if (PlayerScores)
-		memcpy(PlayerScores, &WriteOnlinePlayerScores_Parms.PlayerScores, 0xC);
+	return params.ReturnValue;
+}
 
-	return WriteOnlinePlayerScores_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearFlushOnlineStatsCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         FlushOnlineStatsCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         FlushOnlineStatsCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearFlushOnlineStatsCompleteDelegate(struct FScriptDelegate FlushOnlineStatsCompleteDelegate)
+void UOnlineSubsystemSteamworks::ClearFlushOnlineStatsCompleteDelegate(const struct FScriptDelegate& FlushOnlineStatsCompleteDelegate)
 {
-	static UFunction* pFnClearFlushOnlineStatsCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearFlushOnlineStatsCompleteDelegate");
 
-	if (!pFnClearFlushOnlineStatsCompleteDelegate)
-		pFnClearFlushOnlineStatsCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47050];
+	UOnlineSubsystemSteamworks_ClearFlushOnlineStatsCompleteDelegate_Params params;
+	params.FlushOnlineStatsCompleteDelegate = FlushOnlineStatsCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearFlushOnlineStatsCompleteDelegate_Parms ClearFlushOnlineStatsCompleteDelegate_Parms;
-	memcpy(&ClearFlushOnlineStatsCompleteDelegate_Parms.FlushOnlineStatsCompleteDelegate, &FlushOnlineStatsCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearFlushOnlineStatsCompleteDelegate, &ClearFlushOnlineStatsCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFlushOnlineStatsCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         FlushOnlineStatsCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         FlushOnlineStatsCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddFlushOnlineStatsCompleteDelegate(struct FScriptDelegate FlushOnlineStatsCompleteDelegate)
+void UOnlineSubsystemSteamworks::AddFlushOnlineStatsCompleteDelegate(const struct FScriptDelegate& FlushOnlineStatsCompleteDelegate)
 {
-	static UFunction* pFnAddFlushOnlineStatsCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFlushOnlineStatsCompleteDelegate");
 
-	if (!pFnAddFlushOnlineStatsCompleteDelegate)
-		pFnAddFlushOnlineStatsCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47047];
+	UOnlineSubsystemSteamworks_AddFlushOnlineStatsCompleteDelegate_Params params;
+	params.FlushOnlineStatsCompleteDelegate = FlushOnlineStatsCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddFlushOnlineStatsCompleteDelegate_Parms AddFlushOnlineStatsCompleteDelegate_Parms;
-	memcpy(&AddFlushOnlineStatsCompleteDelegate_Parms.FlushOnlineStatsCompleteDelegate, &FlushOnlineStatsCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddFlushOnlineStatsCompleteDelegate, &AddFlushOnlineStatsCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnFlushOnlineStatsComplete
-// [0x00120000]
-// Parameters infos:
-// struct FName                   SessionName                    ( CPF_Parm )
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineSubsystemSteamworks::OnFlushOnlineStatsComplete(struct FName SessionName, unsigned long bWasSuccessful)
+void UOnlineSubsystemSteamworks::OnFlushOnlineStatsComplete(const struct FName& SessionName, bool bWasSuccessful)
 {
-	static UFunction* pFnOnFlushOnlineStatsComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnFlushOnlineStatsComplete");
 
-	if (!pFnOnFlushOnlineStatsComplete)
-		pFnOnFlushOnlineStatsComplete = (UFunction*)UObject::GObjects()->Data[47044];
+	UOnlineSubsystemSteamworks_OnFlushOnlineStatsComplete_Params params;
+	params.SessionName = SessionName;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineSubsystemSteamworks_execOnFlushOnlineStatsComplete_Parms OnFlushOnlineStatsComplete_Parms;
-	memcpy(&OnFlushOnlineStatsComplete_Parms.SessionName, &SessionName, 0x8);
-	OnFlushOnlineStatsComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnFlushOnlineStatsComplete, &OnFlushOnlineStatsComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.FlushOnlineStats
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   SessionName                    ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::FlushOnlineStats(struct FName SessionName)
+bool UOnlineSubsystemSteamworks::FlushOnlineStats(const struct FName& SessionName)
 {
-	static UFunction* pFnFlushOnlineStats = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.FlushOnlineStats");
 
-	if (!pFnFlushOnlineStats)
-		pFnFlushOnlineStats = (UFunction*)UObject::GObjects()->Data[47041];
+	UOnlineSubsystemSteamworks_FlushOnlineStats_Params params;
+	params.SessionName = SessionName;
 
-	UOnlineSubsystemSteamworks_execFlushOnlineStats_Parms FlushOnlineStats_Parms;
-	memcpy(&FlushOnlineStats_Parms.SessionName, &SessionName, 0x8);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnFlushOnlineStats->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnFlushOnlineStats, &FlushOnlineStats_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnFlushOnlineStats->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return FlushOnlineStats_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteOnlineStats
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   SessionName                    ( CPF_Parm )
-// struct FUniqueNetId            Player                         ( CPF_Parm )
-// class UOnlineStatsWrite*       StatsWrite                     ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// struct FUniqueNetId            Player                         (Parm)
+// class UOnlineStatsWrite*       StatsWrite                     (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::WriteOnlineStats(struct FName SessionName, struct FUniqueNetId Player, class UOnlineStatsWrite* StatsWrite)
+bool UOnlineSubsystemSteamworks::WriteOnlineStats(const struct FName& SessionName, const struct FUniqueNetId& Player, class UOnlineStatsWrite* StatsWrite)
 {
-	static UFunction* pFnWriteOnlineStats = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteOnlineStats");
 
-	if (!pFnWriteOnlineStats)
-		pFnWriteOnlineStats = (UFunction*)UObject::GObjects()->Data[47036];
+	UOnlineSubsystemSteamworks_WriteOnlineStats_Params params;
+	params.SessionName = SessionName;
+	params.Player = Player;
+	params.StatsWrite = StatsWrite;
 
-	UOnlineSubsystemSteamworks_execWriteOnlineStats_Parms WriteOnlineStats_Parms;
-	memcpy(&WriteOnlineStats_Parms.SessionName, &SessionName, 0x8);
-	memcpy(&WriteOnlineStats_Parms.Player, &Player, 0x18);
-	WriteOnlineStats_Parms.StatsWrite = StatsWrite;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnWriteOnlineStats->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnWriteOnlineStats, &WriteOnlineStats_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnWriteOnlineStats->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return WriteOnlineStats_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.FreeStats
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// class UOnlineStatsRead*        StatsRead                      ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// class UOnlineStatsRead*        StatsRead                      (Parm)
 
 void UOnlineSubsystemSteamworks::FreeStats(class UOnlineStatsRead* StatsRead)
 {
-	static UFunction* pFnFreeStats = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.FreeStats");
 
-	if (!pFnFreeStats)
-		pFnFreeStats = (UFunction*)UObject::GObjects()->Data[47034];
+	UOnlineSubsystemSteamworks_FreeStats_Params params;
+	params.StatsRead = StatsRead;
 
-	UOnlineSubsystemSteamworks_execFreeStats_Parms FreeStats_Parms;
-	FreeStats_Parms.StatsRead = StatsRead;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnFreeStats->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnFreeStats, &FreeStats_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnFreeStats->FunctionFlags |= 0x400;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadOnlineStatsCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         ReadOnlineStatsCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         ReadOnlineStatsCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearReadOnlineStatsCompleteDelegate(struct FScriptDelegate ReadOnlineStatsCompleteDelegate)
+void UOnlineSubsystemSteamworks::ClearReadOnlineStatsCompleteDelegate(const struct FScriptDelegate& ReadOnlineStatsCompleteDelegate)
 {
-	static UFunction* pFnClearReadOnlineStatsCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadOnlineStatsCompleteDelegate");
 
-	if (!pFnClearReadOnlineStatsCompleteDelegate)
-		pFnClearReadOnlineStatsCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47032];
+	UOnlineSubsystemSteamworks_ClearReadOnlineStatsCompleteDelegate_Params params;
+	params.ReadOnlineStatsCompleteDelegate = ReadOnlineStatsCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearReadOnlineStatsCompleteDelegate_Parms ClearReadOnlineStatsCompleteDelegate_Parms;
-	memcpy(&ClearReadOnlineStatsCompleteDelegate_Parms.ReadOnlineStatsCompleteDelegate, &ReadOnlineStatsCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearReadOnlineStatsCompleteDelegate, &ClearReadOnlineStatsCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadOnlineStatsCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         ReadOnlineStatsCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         ReadOnlineStatsCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddReadOnlineStatsCompleteDelegate(struct FScriptDelegate ReadOnlineStatsCompleteDelegate)
+void UOnlineSubsystemSteamworks::AddReadOnlineStatsCompleteDelegate(const struct FScriptDelegate& ReadOnlineStatsCompleteDelegate)
 {
-	static UFunction* pFnAddReadOnlineStatsCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadOnlineStatsCompleteDelegate");
 
-	if (!pFnAddReadOnlineStatsCompleteDelegate)
-		pFnAddReadOnlineStatsCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47029];
+	UOnlineSubsystemSteamworks_AddReadOnlineStatsCompleteDelegate_Params params;
+	params.ReadOnlineStatsCompleteDelegate = ReadOnlineStatsCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddReadOnlineStatsCompleteDelegate_Parms AddReadOnlineStatsCompleteDelegate_Parms;
-	memcpy(&AddReadOnlineStatsCompleteDelegate_Parms.ReadOnlineStatsCompleteDelegate, &ReadOnlineStatsCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddReadOnlineStatsCompleteDelegate, &AddReadOnlineStatsCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadOnlineStatsComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineSubsystemSteamworks::OnReadOnlineStatsComplete(unsigned long bWasSuccessful)
+void UOnlineSubsystemSteamworks::OnReadOnlineStatsComplete(bool bWasSuccessful)
 {
-	static UFunction* pFnOnReadOnlineStatsComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadOnlineStatsComplete");
 
-	if (!pFnOnReadOnlineStatsComplete)
-		pFnOnReadOnlineStatsComplete = (UFunction*)UObject::GObjects()->Data[47027];
+	UOnlineSubsystemSteamworks_OnReadOnlineStatsComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineSubsystemSteamworks_execOnReadOnlineStatsComplete_Parms OnReadOnlineStatsComplete_Parms;
-	OnReadOnlineStatsComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReadOnlineStatsComplete, &OnReadOnlineStatsComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadOnlineStatsByRankAroundPlayer
-// [0x00024400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// class UOnlineStatsRead*        StatsRead                      ( CPF_Parm )
-// int                            NumRows                        ( CPF_OptionalParm | CPF_Parm )
+// (Native, HasOptionalParms, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// class UOnlineStatsRead*        StatsRead                      (Parm)
+// int                            NumRows                        (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::ReadOnlineStatsByRankAroundPlayer(unsigned char LocalUserNum, class UOnlineStatsRead* StatsRead, int NumRows)
 {
-	static UFunction* pFnReadOnlineStatsByRankAroundPlayer = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadOnlineStatsByRankAroundPlayer");
 
-	if (!pFnReadOnlineStatsByRankAroundPlayer)
-		pFnReadOnlineStatsByRankAroundPlayer = (UFunction*)UObject::GObjects()->Data[47022];
+	UOnlineSubsystemSteamworks_ReadOnlineStatsByRankAroundPlayer_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.StatsRead = StatsRead;
+	params.NumRows = NumRows;
 
-	UOnlineSubsystemSteamworks_execReadOnlineStatsByRankAroundPlayer_Parms ReadOnlineStatsByRankAroundPlayer_Parms;
-	ReadOnlineStatsByRankAroundPlayer_Parms.LocalUserNum = LocalUserNum;
-	ReadOnlineStatsByRankAroundPlayer_Parms.StatsRead = StatsRead;
-	ReadOnlineStatsByRankAroundPlayer_Parms.NumRows = NumRows;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnReadOnlineStatsByRankAroundPlayer->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnReadOnlineStatsByRankAroundPlayer, &ReadOnlineStatsByRankAroundPlayer_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnReadOnlineStatsByRankAroundPlayer->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ReadOnlineStatsByRankAroundPlayer_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadOnlineStatsByRank
-// [0x00024400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// class UOnlineStatsRead*        StatsRead                      ( CPF_Parm )
-// int                            StartIndex                     ( CPF_OptionalParm | CPF_Parm )
-// int                            NumToRead                      ( CPF_OptionalParm | CPF_Parm )
+// (Native, HasOptionalParms, Public)
+// Parameters:
+// class UOnlineStatsRead*        StatsRead                      (Parm)
+// int                            StartIndex                     (OptionalParm, Parm)
+// int                            NumToRead                      (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::ReadOnlineStatsByRank(class UOnlineStatsRead* StatsRead, int StartIndex, int NumToRead)
 {
-	static UFunction* pFnReadOnlineStatsByRank = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadOnlineStatsByRank");
 
-	if (!pFnReadOnlineStatsByRank)
-		pFnReadOnlineStatsByRank = (UFunction*)UObject::GObjects()->Data[47017];
+	UOnlineSubsystemSteamworks_ReadOnlineStatsByRank_Params params;
+	params.StatsRead = StatsRead;
+	params.StartIndex = StartIndex;
+	params.NumToRead = NumToRead;
 
-	UOnlineSubsystemSteamworks_execReadOnlineStatsByRank_Parms ReadOnlineStatsByRank_Parms;
-	ReadOnlineStatsByRank_Parms.StatsRead = StatsRead;
-	ReadOnlineStatsByRank_Parms.StartIndex = StartIndex;
-	ReadOnlineStatsByRank_Parms.NumToRead = NumToRead;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnReadOnlineStatsByRank->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnReadOnlineStatsByRank, &ReadOnlineStatsByRank_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnReadOnlineStatsByRank->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ReadOnlineStatsByRank_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadOnlineStatsForFriends
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// class UOnlineStatsRead*        StatsRead                      ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// class UOnlineStatsRead*        StatsRead                      (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::ReadOnlineStatsForFriends(unsigned char LocalUserNum, class UOnlineStatsRead* StatsRead)
 {
-	static UFunction* pFnReadOnlineStatsForFriends = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadOnlineStatsForFriends");
 
-	if (!pFnReadOnlineStatsForFriends)
-		pFnReadOnlineStatsForFriends = (UFunction*)UObject::GObjects()->Data[47013];
+	UOnlineSubsystemSteamworks_ReadOnlineStatsForFriends_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.StatsRead = StatsRead;
 
-	UOnlineSubsystemSteamworks_execReadOnlineStatsForFriends_Parms ReadOnlineStatsForFriends_Parms;
-	ReadOnlineStatsForFriends_Parms.LocalUserNum = LocalUserNum;
-	ReadOnlineStatsForFriends_Parms.StatsRead = StatsRead;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnReadOnlineStatsForFriends->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnReadOnlineStatsForFriends, &ReadOnlineStatsForFriends_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnReadOnlineStatsForFriends->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ReadOnlineStatsForFriends_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadOnlineStats
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// class UOnlineStatsRead*        StatsRead                      ( CPF_Parm )
-// TArray< struct FUniqueNetId >  Players                        ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// TArray<struct FUniqueNetId>    Players                        (Const, Parm, OutParm, NeedCtorLink)
+// class UOnlineStatsRead*        StatsRead                      (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::ReadOnlineStats(class UOnlineStatsRead* StatsRead, TArray< struct FUniqueNetId >* Players)
+bool UOnlineSubsystemSteamworks::ReadOnlineStats(class UOnlineStatsRead* StatsRead, TArray<struct FUniqueNetId>* Players)
 {
-	static UFunction* pFnReadOnlineStats = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadOnlineStats");
 
-	if (!pFnReadOnlineStats)
-		pFnReadOnlineStats = (UFunction*)UObject::GObjects()->Data[47008];
+	UOnlineSubsystemSteamworks_ReadOnlineStats_Params params;
+	params.StatsRead = StatsRead;
 
-	UOnlineSubsystemSteamworks_execReadOnlineStats_Parms ReadOnlineStats_Parms;
-	ReadOnlineStats_Parms.StatsRead = StatsRead;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnReadOnlineStats->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnReadOnlineStats, &ReadOnlineStats_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnReadOnlineStats->FunctionFlags |= 0x400;
+	if (Players != nullptr)
+		*Players = params.Players;
 
-	if (Players)
-		memcpy(Players, &ReadOnlineStats_Parms.Players, 0xC);
+	return params.ReturnValue;
+}
 
-	return ReadOnlineStats_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SetSpeechRecognitionObject
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// class USpeechRecognition*      SpeechRecogObj                 ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// class USpeechRecognition*      SpeechRecogObj                 (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::SetSpeechRecognitionObject(unsigned char LocalUserNum, class USpeechRecognition* SpeechRecogObj)
 {
-	static UFunction* pFnSetSpeechRecognitionObject = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SetSpeechRecognitionObject");
 
-	if (!pFnSetSpeechRecognitionObject)
-		pFnSetSpeechRecognitionObject = (UFunction*)UObject::GObjects()->Data[47004];
+	UOnlineSubsystemSteamworks_SetSpeechRecognitionObject_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.SpeechRecogObj = SpeechRecogObj;
 
-	UOnlineSubsystemSteamworks_execSetSpeechRecognitionObject_Parms SetSpeechRecognitionObject_Parms;
-	SetSpeechRecognitionObject_Parms.LocalUserNum = LocalUserNum;
-	SetSpeechRecognitionObject_Parms.SpeechRecogObj = SpeechRecogObj;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetSpeechRecognitionObject->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetSpeechRecognitionObject, &SetSpeechRecognitionObject_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnSetSpeechRecognitionObject->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return SetSpeechRecognitionObject_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SelectVocabulary
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            VocabularyId                   ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// int                            VocabularyId                   (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::SelectVocabulary(unsigned char LocalUserNum, int VocabularyId)
 {
-	static UFunction* pFnSelectVocabulary = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SelectVocabulary");
 
-	if (!pFnSelectVocabulary)
-		pFnSelectVocabulary = (UFunction*)UObject::GObjects()->Data[47000];
+	UOnlineSubsystemSteamworks_SelectVocabulary_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.VocabularyId = VocabularyId;
 
-	UOnlineSubsystemSteamworks_execSelectVocabulary_Parms SelectVocabulary_Parms;
-	SelectVocabulary_Parms.LocalUserNum = LocalUserNum;
-	SelectVocabulary_Parms.VocabularyId = VocabularyId;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSelectVocabulary->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSelectVocabulary, &SelectVocabulary_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnSelectVocabulary->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return SelectVocabulary_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearRecognitionCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         RecognitionDelegate            ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         RecognitionDelegate            (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearRecognitionCompleteDelegate(unsigned char LocalUserNum, struct FScriptDelegate RecognitionDelegate)
+void UOnlineSubsystemSteamworks::ClearRecognitionCompleteDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& RecognitionDelegate)
 {
-	static UFunction* pFnClearRecognitionCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearRecognitionCompleteDelegate");
 
-	if (!pFnClearRecognitionCompleteDelegate)
-		pFnClearRecognitionCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46997];
+	UOnlineSubsystemSteamworks_ClearRecognitionCompleteDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.RecognitionDelegate = RecognitionDelegate;
 
-	UOnlineSubsystemSteamworks_execClearRecognitionCompleteDelegate_Parms ClearRecognitionCompleteDelegate_Parms;
-	ClearRecognitionCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearRecognitionCompleteDelegate_Parms.RecognitionDelegate, &RecognitionDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearRecognitionCompleteDelegate, &ClearRecognitionCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddRecognitionCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         RecognitionDelegate            ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         RecognitionDelegate            (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddRecognitionCompleteDelegate(unsigned char LocalUserNum, struct FScriptDelegate RecognitionDelegate)
+void UOnlineSubsystemSteamworks::AddRecognitionCompleteDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& RecognitionDelegate)
 {
-	static UFunction* pFnAddRecognitionCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddRecognitionCompleteDelegate");
 
-	if (!pFnAddRecognitionCompleteDelegate)
-		pFnAddRecognitionCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46993];
+	UOnlineSubsystemSteamworks_AddRecognitionCompleteDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.RecognitionDelegate = RecognitionDelegate;
 
-	UOnlineSubsystemSteamworks_execAddRecognitionCompleteDelegate_Parms AddRecognitionCompleteDelegate_Parms;
-	AddRecognitionCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddRecognitionCompleteDelegate_Parms.RecognitionDelegate, &RecognitionDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddRecognitionCompleteDelegate, &AddRecognitionCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnRecognitionComplete
-// [0x00120000]
-// Parameters infos:
+// (Public, Delegate)
 
 void UOnlineSubsystemSteamworks::OnRecognitionComplete()
 {
-	static UFunction* pFnOnRecognitionComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnRecognitionComplete");
 
-	if (!pFnOnRecognitionComplete)
-		pFnOnRecognitionComplete = (UFunction*)UObject::GObjects()->Data[46992];
+	UOnlineSubsystemSteamworks_OnRecognitionComplete_Params params;
 
-	UOnlineSubsystemSteamworks_execOnRecognitionComplete_Parms OnRecognitionComplete_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnRecognitionComplete, &OnRecognitionComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetRecognitionResults
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// TArray< struct FSpeechRecognizedWord > Words                          ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// TArray<struct FSpeechRecognizedWord> Words                          (Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::GetRecognitionResults(unsigned char LocalUserNum, TArray< struct FSpeechRecognizedWord >* Words)
+bool UOnlineSubsystemSteamworks::GetRecognitionResults(unsigned char LocalUserNum, TArray<struct FSpeechRecognizedWord>* Words)
 {
-	static UFunction* pFnGetRecognitionResults = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetRecognitionResults");
 
-	if (!pFnGetRecognitionResults)
-		pFnGetRecognitionResults = (UFunction*)UObject::GObjects()->Data[46987];
+	UOnlineSubsystemSteamworks_GetRecognitionResults_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execGetRecognitionResults_Parms GetRecognitionResults_Parms;
-	GetRecognitionResults_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetRecognitionResults->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetRecognitionResults, &GetRecognitionResults_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetRecognitionResults->FunctionFlags |= 0x400;
+	if (Words != nullptr)
+		*Words = params.Words;
 
-	if (Words)
-		memcpy(Words, &GetRecognitionResults_Parms.Words, 0xC);
+	return params.ReturnValue;
+}
 
-	return GetRecognitionResults_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.StopSpeechRecognition
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::StopSpeechRecognition(unsigned char LocalUserNum)
 {
-	static UFunction* pFnStopSpeechRecognition = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.StopSpeechRecognition");
 
-	if (!pFnStopSpeechRecognition)
-		pFnStopSpeechRecognition = (UFunction*)UObject::GObjects()->Data[46984];
+	UOnlineSubsystemSteamworks_StopSpeechRecognition_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execStopSpeechRecognition_Parms StopSpeechRecognition_Parms;
-	StopSpeechRecognition_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnStopSpeechRecognition->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnStopSpeechRecognition, &StopSpeechRecognition_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnStopSpeechRecognition->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return StopSpeechRecognition_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.StartSpeechRecognition
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::StartSpeechRecognition(unsigned char LocalUserNum)
 {
-	static UFunction* pFnStartSpeechRecognition = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.StartSpeechRecognition");
 
-	if (!pFnStartSpeechRecognition)
-		pFnStartSpeechRecognition = (UFunction*)UObject::GObjects()->Data[46981];
+	UOnlineSubsystemSteamworks_StartSpeechRecognition_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execStartSpeechRecognition_Parms StartSpeechRecognition_Parms;
-	StartSpeechRecognition_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnStartSpeechRecognition->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnStartSpeechRecognition, &StartSpeechRecognition_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnStartSpeechRecognition->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return StartSpeechRecognition_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.StopNetworkedVoice
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
 
 void UOnlineSubsystemSteamworks::StopNetworkedVoice(unsigned char LocalUserNum)
 {
-	static UFunction* pFnStopNetworkedVoice = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.StopNetworkedVoice");
 
-	if (!pFnStopNetworkedVoice)
-		pFnStopNetworkedVoice = (UFunction*)UObject::GObjects()->Data[46979];
+	UOnlineSubsystemSteamworks_StopNetworkedVoice_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execStopNetworkedVoice_Parms StopNetworkedVoice_Parms;
-	StopNetworkedVoice_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnStopNetworkedVoice->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnStopNetworkedVoice, &StopNetworkedVoice_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnStopNetworkedVoice->FunctionFlags |= 0x400;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.StartNetworkedVoice
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
 
 void UOnlineSubsystemSteamworks::StartNetworkedVoice(unsigned char LocalUserNum)
 {
-	static UFunction* pFnStartNetworkedVoice = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.StartNetworkedVoice");
 
-	if (!pFnStartNetworkedVoice)
-		pFnStartNetworkedVoice = (UFunction*)UObject::GObjects()->Data[46977];
+	UOnlineSubsystemSteamworks_StartNetworkedVoice_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execStartNetworkedVoice_Parms StartNetworkedVoice_Parms;
-	StartNetworkedVoice_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnStartNetworkedVoice->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnStartNetworkedVoice, &StartNetworkedVoice_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnStartNetworkedVoice->FunctionFlags |= 0x400;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearPlayerTalkingDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         TalkerDelegate                 ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         TalkerDelegate                 (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearPlayerTalkingDelegate(struct FScriptDelegate TalkerDelegate)
+void UOnlineSubsystemSteamworks::ClearPlayerTalkingDelegate(const struct FScriptDelegate& TalkerDelegate)
 {
-	static UFunction* pFnClearPlayerTalkingDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearPlayerTalkingDelegate");
 
-	if (!pFnClearPlayerTalkingDelegate)
-		pFnClearPlayerTalkingDelegate = (UFunction*)UObject::GObjects()->Data[46975];
+	UOnlineSubsystemSteamworks_ClearPlayerTalkingDelegate_Params params;
+	params.TalkerDelegate = TalkerDelegate;
 
-	UOnlineSubsystemSteamworks_execClearPlayerTalkingDelegate_Parms ClearPlayerTalkingDelegate_Parms;
-	memcpy(&ClearPlayerTalkingDelegate_Parms.TalkerDelegate, &TalkerDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearPlayerTalkingDelegate, &ClearPlayerTalkingDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddPlayerTalkingDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         TalkerDelegate                 ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         TalkerDelegate                 (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddPlayerTalkingDelegate(struct FScriptDelegate TalkerDelegate)
+void UOnlineSubsystemSteamworks::AddPlayerTalkingDelegate(const struct FScriptDelegate& TalkerDelegate)
 {
-	static UFunction* pFnAddPlayerTalkingDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddPlayerTalkingDelegate");
 
-	if (!pFnAddPlayerTalkingDelegate)
-		pFnAddPlayerTalkingDelegate = (UFunction*)UObject::GObjects()->Data[46972];
+	UOnlineSubsystemSteamworks_AddPlayerTalkingDelegate_Params params;
+	params.TalkerDelegate = TalkerDelegate;
 
-	UOnlineSubsystemSteamworks_execAddPlayerTalkingDelegate_Parms AddPlayerTalkingDelegate_Parms;
-	memcpy(&AddPlayerTalkingDelegate_Parms.TalkerDelegate, &TalkerDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddPlayerTalkingDelegate, &AddPlayerTalkingDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnPlayerTalkingStateChange
-// [0x00120000]
-// Parameters infos:
-// struct FUniqueNetId            Player                         ( CPF_Parm )
-// unsigned long                  bIsTalking                     ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// struct FUniqueNetId            Player                         (Parm)
+// bool                           bIsTalking                     (Parm)
 
-void UOnlineSubsystemSteamworks::OnPlayerTalkingStateChange(struct FUniqueNetId Player, unsigned long bIsTalking)
+void UOnlineSubsystemSteamworks::OnPlayerTalkingStateChange(const struct FUniqueNetId& Player, bool bIsTalking)
 {
-	static UFunction* pFnOnPlayerTalkingStateChange = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnPlayerTalkingStateChange");
 
-	if (!pFnOnPlayerTalkingStateChange)
-		pFnOnPlayerTalkingStateChange = (UFunction*)UObject::GObjects()->Data[46969];
+	UOnlineSubsystemSteamworks_OnPlayerTalkingStateChange_Params params;
+	params.Player = Player;
+	params.bIsTalking = bIsTalking;
 
-	UOnlineSubsystemSteamworks_execOnPlayerTalkingStateChange_Parms OnPlayerTalkingStateChange_Parms;
-	memcpy(&OnPlayerTalkingStateChange_Parms.Player, &Player, 0x18);
-	OnPlayerTalkingStateChange_Parms.bIsTalking = bIsTalking;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnPlayerTalkingStateChange, &OnPlayerTalkingStateChange_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnmuteRemoteTalker
-// [0x00024400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FUniqueNetId            PlayerID                       ( CPF_Parm )
-// unsigned long                  bIsSystemWide                  ( CPF_OptionalParm | CPF_Parm )
+// (Native, HasOptionalParms, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FUniqueNetId            PlayerID                       (Parm)
+// bool                           bIsSystemWide                  (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::UnmuteRemoteTalker(unsigned char LocalUserNum, struct FUniqueNetId PlayerID, unsigned long bIsSystemWide)
+bool UOnlineSubsystemSteamworks::UnmuteRemoteTalker(unsigned char LocalUserNum, const struct FUniqueNetId& PlayerID, bool bIsSystemWide)
 {
-	static UFunction* pFnUnmuteRemoteTalker = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnmuteRemoteTalker");
 
-	if (!pFnUnmuteRemoteTalker)
-		pFnUnmuteRemoteTalker = (UFunction*)UObject::GObjects()->Data[46964];
+	UOnlineSubsystemSteamworks_UnmuteRemoteTalker_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.PlayerID = PlayerID;
+	params.bIsSystemWide = bIsSystemWide;
 
-	UOnlineSubsystemSteamworks_execUnmuteRemoteTalker_Parms UnmuteRemoteTalker_Parms;
-	UnmuteRemoteTalker_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&UnmuteRemoteTalker_Parms.PlayerID, &PlayerID, 0x18);
-	UnmuteRemoteTalker_Parms.bIsSystemWide = bIsSystemWide;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnUnmuteRemoteTalker->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnUnmuteRemoteTalker, &UnmuteRemoteTalker_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnUnmuteRemoteTalker->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return UnmuteRemoteTalker_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.MuteRemoteTalker
-// [0x00024400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FUniqueNetId            PlayerID                       ( CPF_Parm )
-// unsigned long                  bIsSystemWide                  ( CPF_OptionalParm | CPF_Parm )
+// (Native, HasOptionalParms, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FUniqueNetId            PlayerID                       (Parm)
+// bool                           bIsSystemWide                  (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::MuteRemoteTalker(unsigned char LocalUserNum, struct FUniqueNetId PlayerID, unsigned long bIsSystemWide)
+bool UOnlineSubsystemSteamworks::MuteRemoteTalker(unsigned char LocalUserNum, const struct FUniqueNetId& PlayerID, bool bIsSystemWide)
 {
-	static UFunction* pFnMuteRemoteTalker = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.MuteRemoteTalker");
 
-	if (!pFnMuteRemoteTalker)
-		pFnMuteRemoteTalker = (UFunction*)UObject::GObjects()->Data[46959];
+	UOnlineSubsystemSteamworks_MuteRemoteTalker_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.PlayerID = PlayerID;
+	params.bIsSystemWide = bIsSystemWide;
 
-	UOnlineSubsystemSteamworks_execMuteRemoteTalker_Parms MuteRemoteTalker_Parms;
-	MuteRemoteTalker_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&MuteRemoteTalker_Parms.PlayerID, &PlayerID, 0x18);
-	MuteRemoteTalker_Parms.bIsSystemWide = bIsSystemWide;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnMuteRemoteTalker->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnMuteRemoteTalker, &MuteRemoteTalker_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnMuteRemoteTalker->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return MuteRemoteTalker_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SetRemoteTalkerPriority
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FUniqueNetId            PlayerID                       ( CPF_Parm )
-// int                            Priority                       ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FUniqueNetId            PlayerID                       (Parm)
+// int                            Priority                       (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::SetRemoteTalkerPriority(unsigned char LocalUserNum, struct FUniqueNetId PlayerID, int Priority)
+bool UOnlineSubsystemSteamworks::SetRemoteTalkerPriority(unsigned char LocalUserNum, const struct FUniqueNetId& PlayerID, int Priority)
 {
-	static UFunction* pFnSetRemoteTalkerPriority = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.SetRemoteTalkerPriority");
 
-	if (!pFnSetRemoteTalkerPriority)
-		pFnSetRemoteTalkerPriority = (UFunction*)UObject::GObjects()->Data[46954];
+	UOnlineSubsystemSteamworks_SetRemoteTalkerPriority_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.PlayerID = PlayerID;
+	params.Priority = Priority;
 
-	UOnlineSubsystemSteamworks_execSetRemoteTalkerPriority_Parms SetRemoteTalkerPriority_Parms;
-	SetRemoteTalkerPriority_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&SetRemoteTalkerPriority_Parms.PlayerID, &PlayerID, 0x18);
-	SetRemoteTalkerPriority_Parms.Priority = Priority;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetRemoteTalkerPriority->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetRemoteTalkerPriority, &SetRemoteTalkerPriority_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnSetRemoteTalkerPriority->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return SetRemoteTalkerPriority_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsHeadsetPresent
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::IsHeadsetPresent(unsigned char LocalUserNum)
 {
-	static UFunction* pFnIsHeadsetPresent = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsHeadsetPresent");
 
-	if (!pFnIsHeadsetPresent)
-		pFnIsHeadsetPresent = (UFunction*)UObject::GObjects()->Data[46951];
+	UOnlineSubsystemSteamworks_IsHeadsetPresent_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execIsHeadsetPresent_Parms IsHeadsetPresent_Parms;
-	IsHeadsetPresent_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnIsHeadsetPresent->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnIsHeadsetPresent, &IsHeadsetPresent_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnIsHeadsetPresent->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return IsHeadsetPresent_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsRemotePlayerTalking
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FUniqueNetId            PlayerID                       ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FUniqueNetId            PlayerID                       (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::IsRemotePlayerTalking(struct FUniqueNetId PlayerID)
+bool UOnlineSubsystemSteamworks::IsRemotePlayerTalking(const struct FUniqueNetId& PlayerID)
 {
-	static UFunction* pFnIsRemotePlayerTalking = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsRemotePlayerTalking");
 
-	if (!pFnIsRemotePlayerTalking)
-		pFnIsRemotePlayerTalking = (UFunction*)UObject::GObjects()->Data[46948];
+	UOnlineSubsystemSteamworks_IsRemotePlayerTalking_Params params;
+	params.PlayerID = PlayerID;
 
-	UOnlineSubsystemSteamworks_execIsRemotePlayerTalking_Parms IsRemotePlayerTalking_Parms;
-	memcpy(&IsRemotePlayerTalking_Parms.PlayerID, &PlayerID, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnIsRemotePlayerTalking->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnIsRemotePlayerTalking, &IsRemotePlayerTalking_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnIsRemotePlayerTalking->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return IsRemotePlayerTalking_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsLocalPlayerTalking
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::IsLocalPlayerTalking(unsigned char LocalUserNum)
 {
-	static UFunction* pFnIsLocalPlayerTalking = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsLocalPlayerTalking");
 
-	if (!pFnIsLocalPlayerTalking)
-		pFnIsLocalPlayerTalking = (UFunction*)UObject::GObjects()->Data[46945];
+	UOnlineSubsystemSteamworks_IsLocalPlayerTalking_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execIsLocalPlayerTalking_Parms IsLocalPlayerTalking_Parms;
-	IsLocalPlayerTalking_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnIsLocalPlayerTalking->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnIsLocalPlayerTalking, &IsLocalPlayerTalking_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnIsLocalPlayerTalking->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return IsLocalPlayerTalking_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnregisterRemoteTalker
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FUniqueNetId            PlayerID                       ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FUniqueNetId            PlayerID                       (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::UnregisterRemoteTalker(struct FUniqueNetId PlayerID)
+bool UOnlineSubsystemSteamworks::UnregisterRemoteTalker(const struct FUniqueNetId& PlayerID)
 {
-	static UFunction* pFnUnregisterRemoteTalker = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnregisterRemoteTalker");
 
-	if (!pFnUnregisterRemoteTalker)
-		pFnUnregisterRemoteTalker = (UFunction*)UObject::GObjects()->Data[46942];
+	UOnlineSubsystemSteamworks_UnregisterRemoteTalker_Params params;
+	params.PlayerID = PlayerID;
 
-	UOnlineSubsystemSteamworks_execUnregisterRemoteTalker_Parms UnregisterRemoteTalker_Parms;
-	memcpy(&UnregisterRemoteTalker_Parms.PlayerID, &PlayerID, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnUnregisterRemoteTalker->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnUnregisterRemoteTalker, &UnregisterRemoteTalker_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnUnregisterRemoteTalker->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return UnregisterRemoteTalker_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RegisterRemoteTalker
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FUniqueNetId            PlayerID                       ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FUniqueNetId            PlayerID                       (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::RegisterRemoteTalker(struct FUniqueNetId PlayerID)
+bool UOnlineSubsystemSteamworks::RegisterRemoteTalker(const struct FUniqueNetId& PlayerID)
 {
-	static UFunction* pFnRegisterRemoteTalker = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RegisterRemoteTalker");
 
-	if (!pFnRegisterRemoteTalker)
-		pFnRegisterRemoteTalker = (UFunction*)UObject::GObjects()->Data[46939];
+	UOnlineSubsystemSteamworks_RegisterRemoteTalker_Params params;
+	params.PlayerID = PlayerID;
 
-	UOnlineSubsystemSteamworks_execRegisterRemoteTalker_Parms RegisterRemoteTalker_Parms;
-	memcpy(&RegisterRemoteTalker_Parms.PlayerID, &PlayerID, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnRegisterRemoteTalker->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnRegisterRemoteTalker, &RegisterRemoteTalker_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnRegisterRemoteTalker->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return RegisterRemoteTalker_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnregisterLocalTalker
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::UnregisterLocalTalker(unsigned char LocalUserNum)
 {
-	static UFunction* pFnUnregisterLocalTalker = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.UnregisterLocalTalker");
 
-	if (!pFnUnregisterLocalTalker)
-		pFnUnregisterLocalTalker = (UFunction*)UObject::GObjects()->Data[46936];
+	UOnlineSubsystemSteamworks_UnregisterLocalTalker_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execUnregisterLocalTalker_Parms UnregisterLocalTalker_Parms;
-	UnregisterLocalTalker_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnUnregisterLocalTalker->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnUnregisterLocalTalker, &UnregisterLocalTalker_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnUnregisterLocalTalker->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return UnregisterLocalTalker_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RegisterLocalTalker
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::RegisterLocalTalker(unsigned char LocalUserNum)
 {
-	static UFunction* pFnRegisterLocalTalker = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.RegisterLocalTalker");
 
-	if (!pFnRegisterLocalTalker)
-		pFnRegisterLocalTalker = (UFunction*)UObject::GObjects()->Data[46933];
+	UOnlineSubsystemSteamworks_RegisterLocalTalker_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execRegisterLocalTalker_Parms RegisterLocalTalker_Parms;
-	RegisterLocalTalker_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnRegisterLocalTalker->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnRegisterLocalTalker, &RegisterLocalTalker_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnRegisterLocalTalker->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return RegisterLocalTalker_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetFriendsList
-// [0x00424400] ( FUNC_Native )
-// Parameters infos:
-// unsigned char                  ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            Count                          ( CPF_OptionalParm | CPF_Parm )
-// int                            StartingAt                     ( CPF_OptionalParm | CPF_Parm )
-// TArray< struct FOnlineFriend > Friends                        ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, HasOptionalParms, Public, HasOutParms)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// TArray<struct FOnlineFriend>   Friends                        (Parm, OutParm, NeedCtorLink)
+// int                            Count                          (OptionalParm, Parm)
+// int                            StartingAt                     (OptionalParm, Parm)
+// unsigned char                  ReturnValue                    (Parm, OutParm, ReturnParm)
 
-unsigned char UOnlineSubsystemSteamworks::GetFriendsList(unsigned char LocalUserNum, int Count, int StartingAt, TArray< struct FOnlineFriend >* Friends)
+unsigned char UOnlineSubsystemSteamworks::GetFriendsList(unsigned char LocalUserNum, int Count, int StartingAt, TArray<struct FOnlineFriend>* Friends)
 {
-	static UFunction* pFnGetFriendsList = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetFriendsList");
 
-	if (!pFnGetFriendsList)
-		pFnGetFriendsList = (UFunction*)UObject::GObjects()->Data[46926];
+	UOnlineSubsystemSteamworks_GetFriendsList_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.Count = Count;
+	params.StartingAt = StartingAt;
 
-	UOnlineSubsystemSteamworks_execGetFriendsList_Parms GetFriendsList_Parms;
-	GetFriendsList_Parms.LocalUserNum = LocalUserNum;
-	GetFriendsList_Parms.Count = Count;
-	GetFriendsList_Parms.StartingAt = StartingAt;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetFriendsList->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetFriendsList, &GetFriendsList_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetFriendsList->FunctionFlags |= 0x400;
+	if (Friends != nullptr)
+		*Friends = params.Friends;
 
-	if (Friends)
-		memcpy(Friends, &GetFriendsList_Parms.Friends, 0xC);
+	return params.ReturnValue;
+}
 
-	return GetFriendsList_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadFriendsCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         ReadFriendsCompleteDelegate    ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         ReadFriendsCompleteDelegate    (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearReadFriendsCompleteDelegate(unsigned char LocalUserNum, struct FScriptDelegate ReadFriendsCompleteDelegate)
+void UOnlineSubsystemSteamworks::ClearReadFriendsCompleteDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& ReadFriendsCompleteDelegate)
 {
-	static UFunction* pFnClearReadFriendsCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadFriendsCompleteDelegate");
 
-	if (!pFnClearReadFriendsCompleteDelegate)
-		pFnClearReadFriendsCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46923];
+	UOnlineSubsystemSteamworks_ClearReadFriendsCompleteDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ReadFriendsCompleteDelegate = ReadFriendsCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearReadFriendsCompleteDelegate_Parms ClearReadFriendsCompleteDelegate_Parms;
-	ClearReadFriendsCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearReadFriendsCompleteDelegate_Parms.ReadFriendsCompleteDelegate, &ReadFriendsCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearReadFriendsCompleteDelegate, &ClearReadFriendsCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadFriendsCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         ReadFriendsCompleteDelegate    ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         ReadFriendsCompleteDelegate    (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddReadFriendsCompleteDelegate(unsigned char LocalUserNum, struct FScriptDelegate ReadFriendsCompleteDelegate)
+void UOnlineSubsystemSteamworks::AddReadFriendsCompleteDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& ReadFriendsCompleteDelegate)
 {
-	static UFunction* pFnAddReadFriendsCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadFriendsCompleteDelegate");
 
-	if (!pFnAddReadFriendsCompleteDelegate)
-		pFnAddReadFriendsCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46919];
+	UOnlineSubsystemSteamworks_AddReadFriendsCompleteDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ReadFriendsCompleteDelegate = ReadFriendsCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddReadFriendsCompleteDelegate_Parms AddReadFriendsCompleteDelegate_Parms;
-	AddReadFriendsCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddReadFriendsCompleteDelegate_Parms.ReadFriendsCompleteDelegate, &ReadFriendsCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddReadFriendsCompleteDelegate, &AddReadFriendsCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadFriendsComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineSubsystemSteamworks::OnReadFriendsComplete(unsigned long bWasSuccessful)
+void UOnlineSubsystemSteamworks::OnReadFriendsComplete(bool bWasSuccessful)
 {
-	static UFunction* pFnOnReadFriendsComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadFriendsComplete");
 
-	if (!pFnOnReadFriendsComplete)
-		pFnOnReadFriendsComplete = (UFunction*)UObject::GObjects()->Data[46917];
+	UOnlineSubsystemSteamworks_OnReadFriendsComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineSubsystemSteamworks_execOnReadFriendsComplete_Parms OnReadFriendsComplete_Parms;
-	OnReadFriendsComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReadFriendsComplete, &OnReadFriendsComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadFriendsList
-// [0x00024400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// int                            Count                          ( CPF_OptionalParm | CPF_Parm )
-// int                            StartingAt                     ( CPF_OptionalParm | CPF_Parm )
+// (Native, HasOptionalParms, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// int                            Count                          (OptionalParm, Parm)
+// int                            StartingAt                     (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::ReadFriendsList(unsigned char LocalUserNum, int Count, int StartingAt)
 {
-	static UFunction* pFnReadFriendsList = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadFriendsList");
 
-	if (!pFnReadFriendsList)
-		pFnReadFriendsList = (UFunction*)UObject::GObjects()->Data[46912];
+	UOnlineSubsystemSteamworks_ReadFriendsList_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.Count = Count;
+	params.StartingAt = StartingAt;
 
-	UOnlineSubsystemSteamworks_execReadFriendsList_Parms ReadFriendsList_Parms;
-	ReadFriendsList_Parms.LocalUserNum = LocalUserNum;
-	ReadFriendsList_Parms.Count = Count;
-	ReadFriendsList_Parms.StartingAt = StartingAt;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnReadFriendsList->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnReadFriendsList, &ReadFriendsList_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnReadFriendsList->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ReadFriendsList_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearWritePlayerStorageCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         WritePlayerStorageCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         WritePlayerStorageCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearWritePlayerStorageCompleteDelegate(unsigned char LocalUserNum, struct FScriptDelegate WritePlayerStorageCompleteDelegate)
+void UOnlineSubsystemSteamworks::ClearWritePlayerStorageCompleteDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& WritePlayerStorageCompleteDelegate)
 {
-	static UFunction* pFnClearWritePlayerStorageCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearWritePlayerStorageCompleteDelegate");
 
-	if (!pFnClearWritePlayerStorageCompleteDelegate)
-		pFnClearWritePlayerStorageCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46909];
+	UOnlineSubsystemSteamworks_ClearWritePlayerStorageCompleteDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.WritePlayerStorageCompleteDelegate = WritePlayerStorageCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearWritePlayerStorageCompleteDelegate_Parms ClearWritePlayerStorageCompleteDelegate_Parms;
-	ClearWritePlayerStorageCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearWritePlayerStorageCompleteDelegate_Parms.WritePlayerStorageCompleteDelegate, &WritePlayerStorageCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearWritePlayerStorageCompleteDelegate, &ClearWritePlayerStorageCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddWritePlayerStorageCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         WritePlayerStorageCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         WritePlayerStorageCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddWritePlayerStorageCompleteDelegate(unsigned char LocalUserNum, struct FScriptDelegate WritePlayerStorageCompleteDelegate)
+void UOnlineSubsystemSteamworks::AddWritePlayerStorageCompleteDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& WritePlayerStorageCompleteDelegate)
 {
-	static UFunction* pFnAddWritePlayerStorageCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddWritePlayerStorageCompleteDelegate");
 
-	if (!pFnAddWritePlayerStorageCompleteDelegate)
-		pFnAddWritePlayerStorageCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46905];
+	UOnlineSubsystemSteamworks_AddWritePlayerStorageCompleteDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.WritePlayerStorageCompleteDelegate = WritePlayerStorageCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddWritePlayerStorageCompleteDelegate_Parms AddWritePlayerStorageCompleteDelegate_Parms;
-	AddWritePlayerStorageCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddWritePlayerStorageCompleteDelegate_Parms.WritePlayerStorageCompleteDelegate, &WritePlayerStorageCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddWritePlayerStorageCompleteDelegate, &AddWritePlayerStorageCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnWritePlayerStorageComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineSubsystemSteamworks::OnWritePlayerStorageComplete(unsigned char LocalUserNum, unsigned long bWasSuccessful)
+void UOnlineSubsystemSteamworks::OnWritePlayerStorageComplete(unsigned char LocalUserNum, bool bWasSuccessful)
 {
-	static UFunction* pFnOnWritePlayerStorageComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnWritePlayerStorageComplete");
 
-	if (!pFnOnWritePlayerStorageComplete)
-		pFnOnWritePlayerStorageComplete = (UFunction*)UObject::GObjects()->Data[46902];
+	UOnlineSubsystemSteamworks_OnWritePlayerStorageComplete_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineSubsystemSteamworks_execOnWritePlayerStorageComplete_Parms OnWritePlayerStorageComplete_Parms;
-	OnWritePlayerStorageComplete_Parms.LocalUserNum = LocalUserNum;
-	OnWritePlayerStorageComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnWritePlayerStorageComplete, &OnWritePlayerStorageComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WritePlayerStorage
-// [0x00024000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// class UOnlinePlayerStorage*    PlayerStorage                  ( CPF_Parm )
-// int                            DeviceID                       ( CPF_OptionalParm | CPF_Parm )
+// (HasOptionalParms, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// class UOnlinePlayerStorage*    PlayerStorage                  (Parm)
+// int                            DeviceID                       (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::WritePlayerStorage(unsigned char LocalUserNum, class UOnlinePlayerStorage* PlayerStorage, int DeviceID)
 {
-	static UFunction* pFnWritePlayerStorage = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WritePlayerStorage");
 
-	if (!pFnWritePlayerStorage)
-		pFnWritePlayerStorage = (UFunction*)UObject::GObjects()->Data[46897];
+	UOnlineSubsystemSteamworks_WritePlayerStorage_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.PlayerStorage = PlayerStorage;
+	params.DeviceID = DeviceID;
 
-	UOnlineSubsystemSteamworks_execWritePlayerStorage_Parms WritePlayerStorage_Parms;
-	WritePlayerStorage_Parms.LocalUserNum = LocalUserNum;
-	WritePlayerStorage_Parms.PlayerStorage = PlayerStorage;
-	WritePlayerStorage_Parms.DeviceID = DeviceID;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnWritePlayerStorage, &WritePlayerStorage_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return WritePlayerStorage_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetPlayerStorage
-// [0x00020002]
-// Parameters infos:
-// class UOnlinePlayerStorage*    ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// class UOnlinePlayerStorage*    ReturnValue                    (Parm, OutParm, ReturnParm)
 
 class UOnlinePlayerStorage* UOnlineSubsystemSteamworks::GetPlayerStorage(unsigned char LocalUserNum)
 {
-	static UFunction* pFnGetPlayerStorage = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetPlayerStorage");
 
-	if (!pFnGetPlayerStorage)
-		pFnGetPlayerStorage = (UFunction*)UObject::GObjects()->Data[46893];
+	UOnlineSubsystemSteamworks_GetPlayerStorage_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execGetPlayerStorage_Parms GetPlayerStorage_Parms;
-	GetPlayerStorage_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetPlayerStorage, &GetPlayerStorage_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return GetPlayerStorage_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadPlayerStorageForNetIdCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FUniqueNetId            NetId                          ( CPF_Parm )
-// struct FScriptDelegate         ReadPlayerStorageForNetIdCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FUniqueNetId            NetId                          (Parm)
+// struct FScriptDelegate         ReadPlayerStorageForNetIdCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearReadPlayerStorageForNetIdCompleteDelegate(struct FUniqueNetId NetId, struct FScriptDelegate ReadPlayerStorageForNetIdCompleteDelegate)
+void UOnlineSubsystemSteamworks::ClearReadPlayerStorageForNetIdCompleteDelegate(const struct FUniqueNetId& NetId, const struct FScriptDelegate& ReadPlayerStorageForNetIdCompleteDelegate)
 {
-	static UFunction* pFnClearReadPlayerStorageForNetIdCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadPlayerStorageForNetIdCompleteDelegate");
 
-	if (!pFnClearReadPlayerStorageForNetIdCompleteDelegate)
-		pFnClearReadPlayerStorageForNetIdCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46890];
+	UOnlineSubsystemSteamworks_ClearReadPlayerStorageForNetIdCompleteDelegate_Params params;
+	params.NetId = NetId;
+	params.ReadPlayerStorageForNetIdCompleteDelegate = ReadPlayerStorageForNetIdCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearReadPlayerStorageForNetIdCompleteDelegate_Parms ClearReadPlayerStorageForNetIdCompleteDelegate_Parms;
-	memcpy(&ClearReadPlayerStorageForNetIdCompleteDelegate_Parms.NetId, &NetId, 0x18);
-	memcpy(&ClearReadPlayerStorageForNetIdCompleteDelegate_Parms.ReadPlayerStorageForNetIdCompleteDelegate, &ReadPlayerStorageForNetIdCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearReadPlayerStorageForNetIdCompleteDelegate, &ClearReadPlayerStorageForNetIdCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadPlayerStorageForNetIdCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FUniqueNetId            NetId                          ( CPF_Parm )
-// struct FScriptDelegate         ReadPlayerStorageForNetIdCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FUniqueNetId            NetId                          (Parm)
+// struct FScriptDelegate         ReadPlayerStorageForNetIdCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddReadPlayerStorageForNetIdCompleteDelegate(struct FUniqueNetId NetId, struct FScriptDelegate ReadPlayerStorageForNetIdCompleteDelegate)
+void UOnlineSubsystemSteamworks::AddReadPlayerStorageForNetIdCompleteDelegate(const struct FUniqueNetId& NetId, const struct FScriptDelegate& ReadPlayerStorageForNetIdCompleteDelegate)
 {
-	static UFunction* pFnAddReadPlayerStorageForNetIdCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadPlayerStorageForNetIdCompleteDelegate");
 
-	if (!pFnAddReadPlayerStorageForNetIdCompleteDelegate)
-		pFnAddReadPlayerStorageForNetIdCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46886];
+	UOnlineSubsystemSteamworks_AddReadPlayerStorageForNetIdCompleteDelegate_Params params;
+	params.NetId = NetId;
+	params.ReadPlayerStorageForNetIdCompleteDelegate = ReadPlayerStorageForNetIdCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddReadPlayerStorageForNetIdCompleteDelegate_Parms AddReadPlayerStorageForNetIdCompleteDelegate_Parms;
-	memcpy(&AddReadPlayerStorageForNetIdCompleteDelegate_Parms.NetId, &NetId, 0x18);
-	memcpy(&AddReadPlayerStorageForNetIdCompleteDelegate_Parms.ReadPlayerStorageForNetIdCompleteDelegate, &ReadPlayerStorageForNetIdCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddReadPlayerStorageForNetIdCompleteDelegate, &AddReadPlayerStorageForNetIdCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadPlayerStorageForNetIdComplete
-// [0x00120000]
-// Parameters infos:
-// struct FUniqueNetId            NetId                          ( CPF_Parm )
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// struct FUniqueNetId            NetId                          (Parm)
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineSubsystemSteamworks::OnReadPlayerStorageForNetIdComplete(struct FUniqueNetId NetId, unsigned long bWasSuccessful)
+void UOnlineSubsystemSteamworks::OnReadPlayerStorageForNetIdComplete(const struct FUniqueNetId& NetId, bool bWasSuccessful)
 {
-	static UFunction* pFnOnReadPlayerStorageForNetIdComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadPlayerStorageForNetIdComplete");
 
-	if (!pFnOnReadPlayerStorageForNetIdComplete)
-		pFnOnReadPlayerStorageForNetIdComplete = (UFunction*)UObject::GObjects()->Data[46883];
+	UOnlineSubsystemSteamworks_OnReadPlayerStorageForNetIdComplete_Params params;
+	params.NetId = NetId;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineSubsystemSteamworks_execOnReadPlayerStorageForNetIdComplete_Parms OnReadPlayerStorageForNetIdComplete_Parms;
-	memcpy(&OnReadPlayerStorageForNetIdComplete_Parms.NetId, &NetId, 0x18);
-	OnReadPlayerStorageForNetIdComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReadPlayerStorageForNetIdComplete, &OnReadPlayerStorageForNetIdComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadPlayerStorageForNetId
-// [0x00020000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FUniqueNetId            NetId                          ( CPF_Parm )
-// class UOnlinePlayerStorage*    PlayerStorage                  ( CPF_Parm )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FUniqueNetId            NetId                          (Parm)
+// class UOnlinePlayerStorage*    PlayerStorage                  (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::ReadPlayerStorageForNetId(unsigned char LocalUserNum, struct FUniqueNetId NetId, class UOnlinePlayerStorage* PlayerStorage)
+bool UOnlineSubsystemSteamworks::ReadPlayerStorageForNetId(unsigned char LocalUserNum, const struct FUniqueNetId& NetId, class UOnlinePlayerStorage* PlayerStorage)
 {
-	static UFunction* pFnReadPlayerStorageForNetId = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadPlayerStorageForNetId");
 
-	if (!pFnReadPlayerStorageForNetId)
-		pFnReadPlayerStorageForNetId = (UFunction*)UObject::GObjects()->Data[46878];
+	UOnlineSubsystemSteamworks_ReadPlayerStorageForNetId_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.NetId = NetId;
+	params.PlayerStorage = PlayerStorage;
 
-	UOnlineSubsystemSteamworks_execReadPlayerStorageForNetId_Parms ReadPlayerStorageForNetId_Parms;
-	ReadPlayerStorageForNetId_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ReadPlayerStorageForNetId_Parms.NetId, &NetId, 0x18);
-	ReadPlayerStorageForNetId_Parms.PlayerStorage = PlayerStorage;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnReadPlayerStorageForNetId, &ReadPlayerStorageForNetId_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return ReadPlayerStorageForNetId_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadPlayerStorageCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         ReadPlayerStorageCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         ReadPlayerStorageCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearReadPlayerStorageCompleteDelegate(unsigned char LocalUserNum, struct FScriptDelegate ReadPlayerStorageCompleteDelegate)
+void UOnlineSubsystemSteamworks::ClearReadPlayerStorageCompleteDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& ReadPlayerStorageCompleteDelegate)
 {
-	static UFunction* pFnClearReadPlayerStorageCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadPlayerStorageCompleteDelegate");
 
-	if (!pFnClearReadPlayerStorageCompleteDelegate)
-		pFnClearReadPlayerStorageCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46875];
+	UOnlineSubsystemSteamworks_ClearReadPlayerStorageCompleteDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ReadPlayerStorageCompleteDelegate = ReadPlayerStorageCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearReadPlayerStorageCompleteDelegate_Parms ClearReadPlayerStorageCompleteDelegate_Parms;
-	ClearReadPlayerStorageCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearReadPlayerStorageCompleteDelegate_Parms.ReadPlayerStorageCompleteDelegate, &ReadPlayerStorageCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearReadPlayerStorageCompleteDelegate, &ClearReadPlayerStorageCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadPlayerStorageCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         ReadPlayerStorageCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         ReadPlayerStorageCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddReadPlayerStorageCompleteDelegate(unsigned char LocalUserNum, struct FScriptDelegate ReadPlayerStorageCompleteDelegate)
+void UOnlineSubsystemSteamworks::AddReadPlayerStorageCompleteDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& ReadPlayerStorageCompleteDelegate)
 {
-	static UFunction* pFnAddReadPlayerStorageCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadPlayerStorageCompleteDelegate");
 
-	if (!pFnAddReadPlayerStorageCompleteDelegate)
-		pFnAddReadPlayerStorageCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46871];
+	UOnlineSubsystemSteamworks_AddReadPlayerStorageCompleteDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ReadPlayerStorageCompleteDelegate = ReadPlayerStorageCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddReadPlayerStorageCompleteDelegate_Parms AddReadPlayerStorageCompleteDelegate_Parms;
-	AddReadPlayerStorageCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddReadPlayerStorageCompleteDelegate_Parms.ReadPlayerStorageCompleteDelegate, &ReadPlayerStorageCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddReadPlayerStorageCompleteDelegate, &AddReadPlayerStorageCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadPlayerStorageComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineSubsystemSteamworks::OnReadPlayerStorageComplete(unsigned char LocalUserNum, unsigned long bWasSuccessful)
+void UOnlineSubsystemSteamworks::OnReadPlayerStorageComplete(unsigned char LocalUserNum, bool bWasSuccessful)
 {
-	static UFunction* pFnOnReadPlayerStorageComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadPlayerStorageComplete");
 
-	if (!pFnOnReadPlayerStorageComplete)
-		pFnOnReadPlayerStorageComplete = (UFunction*)UObject::GObjects()->Data[46868];
+	UOnlineSubsystemSteamworks_OnReadPlayerStorageComplete_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineSubsystemSteamworks_execOnReadPlayerStorageComplete_Parms OnReadPlayerStorageComplete_Parms;
-	OnReadPlayerStorageComplete_Parms.LocalUserNum = LocalUserNum;
-	OnReadPlayerStorageComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReadPlayerStorageComplete, &OnReadPlayerStorageComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadPlayerStorage
-// [0x00024000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// class UOnlinePlayerStorage*    PlayerStorage                  ( CPF_Parm )
-// int                            DeviceID                       ( CPF_OptionalParm | CPF_Parm )
+// (HasOptionalParms, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// class UOnlinePlayerStorage*    PlayerStorage                  (Parm)
+// int                            DeviceID                       (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::ReadPlayerStorage(unsigned char LocalUserNum, class UOnlinePlayerStorage* PlayerStorage, int DeviceID)
 {
-	static UFunction* pFnReadPlayerStorage = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadPlayerStorage");
 
-	if (!pFnReadPlayerStorage)
-		pFnReadPlayerStorage = (UFunction*)UObject::GObjects()->Data[46863];
+	UOnlineSubsystemSteamworks_ReadPlayerStorage_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.PlayerStorage = PlayerStorage;
+	params.DeviceID = DeviceID;
 
-	UOnlineSubsystemSteamworks_execReadPlayerStorage_Parms ReadPlayerStorage_Parms;
-	ReadPlayerStorage_Parms.LocalUserNum = LocalUserNum;
-	ReadPlayerStorage_Parms.PlayerStorage = PlayerStorage;
-	ReadPlayerStorage_Parms.DeviceID = DeviceID;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnReadPlayerStorage, &ReadPlayerStorage_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return ReadPlayerStorage_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearWriteProfileSettingsCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         WriteProfileSettingsCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         WriteProfileSettingsCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearWriteProfileSettingsCompleteDelegate(unsigned char LocalUserNum, struct FScriptDelegate WriteProfileSettingsCompleteDelegate)
+void UOnlineSubsystemSteamworks::ClearWriteProfileSettingsCompleteDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& WriteProfileSettingsCompleteDelegate)
 {
-	static UFunction* pFnClearWriteProfileSettingsCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearWriteProfileSettingsCompleteDelegate");
 
-	if (!pFnClearWriteProfileSettingsCompleteDelegate)
-		pFnClearWriteProfileSettingsCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46860];
+	UOnlineSubsystemSteamworks_ClearWriteProfileSettingsCompleteDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.WriteProfileSettingsCompleteDelegate = WriteProfileSettingsCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearWriteProfileSettingsCompleteDelegate_Parms ClearWriteProfileSettingsCompleteDelegate_Parms;
-	ClearWriteProfileSettingsCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearWriteProfileSettingsCompleteDelegate_Parms.WriteProfileSettingsCompleteDelegate, &WriteProfileSettingsCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearWriteProfileSettingsCompleteDelegate, &ClearWriteProfileSettingsCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddWriteProfileSettingsCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         WriteProfileSettingsCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         WriteProfileSettingsCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddWriteProfileSettingsCompleteDelegate(unsigned char LocalUserNum, struct FScriptDelegate WriteProfileSettingsCompleteDelegate)
+void UOnlineSubsystemSteamworks::AddWriteProfileSettingsCompleteDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& WriteProfileSettingsCompleteDelegate)
 {
-	static UFunction* pFnAddWriteProfileSettingsCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddWriteProfileSettingsCompleteDelegate");
 
-	if (!pFnAddWriteProfileSettingsCompleteDelegate)
-		pFnAddWriteProfileSettingsCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46856];
+	UOnlineSubsystemSteamworks_AddWriteProfileSettingsCompleteDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.WriteProfileSettingsCompleteDelegate = WriteProfileSettingsCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddWriteProfileSettingsCompleteDelegate_Parms AddWriteProfileSettingsCompleteDelegate_Parms;
-	AddWriteProfileSettingsCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddWriteProfileSettingsCompleteDelegate_Parms.WriteProfileSettingsCompleteDelegate, &WriteProfileSettingsCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddWriteProfileSettingsCompleteDelegate, &AddWriteProfileSettingsCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnWriteProfileSettingsComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineSubsystemSteamworks::OnWriteProfileSettingsComplete(unsigned char LocalUserNum, unsigned long bWasSuccessful)
+void UOnlineSubsystemSteamworks::OnWriteProfileSettingsComplete(unsigned char LocalUserNum, bool bWasSuccessful)
 {
-	static UFunction* pFnOnWriteProfileSettingsComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnWriteProfileSettingsComplete");
 
-	if (!pFnOnWriteProfileSettingsComplete)
-		pFnOnWriteProfileSettingsComplete = (UFunction*)UObject::GObjects()->Data[46853];
+	UOnlineSubsystemSteamworks_OnWriteProfileSettingsComplete_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineSubsystemSteamworks_execOnWriteProfileSettingsComplete_Parms OnWriteProfileSettingsComplete_Parms;
-	OnWriteProfileSettingsComplete_Parms.LocalUserNum = LocalUserNum;
-	OnWriteProfileSettingsComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnWriteProfileSettingsComplete, &OnWriteProfileSettingsComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteProfileSettings
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// class UOnlineProfileSettings*  ProfileSettings                ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// class UOnlineProfileSettings*  ProfileSettings                (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::WriteProfileSettings(unsigned char LocalUserNum, class UOnlineProfileSettings* ProfileSettings)
 {
-	static UFunction* pFnWriteProfileSettings = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.WriteProfileSettings");
 
-	if (!pFnWriteProfileSettings)
-		pFnWriteProfileSettings = (UFunction*)UObject::GObjects()->Data[46849];
+	UOnlineSubsystemSteamworks_WriteProfileSettings_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ProfileSettings = ProfileSettings;
 
-	UOnlineSubsystemSteamworks_execWriteProfileSettings_Parms WriteProfileSettings_Parms;
-	WriteProfileSettings_Parms.LocalUserNum = LocalUserNum;
-	WriteProfileSettings_Parms.ProfileSettings = ProfileSettings;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnWriteProfileSettings->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnWriteProfileSettings, &WriteProfileSettings_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnWriteProfileSettings->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return WriteProfileSettings_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetProfileSettings
-// [0x00020002]
-// Parameters infos:
-// class UOnlineProfileSettings*  ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// class UOnlineProfileSettings*  ReturnValue                    (Parm, OutParm, ReturnParm)
 
 class UOnlineProfileSettings* UOnlineSubsystemSteamworks::GetProfileSettings(unsigned char LocalUserNum)
 {
-	static UFunction* pFnGetProfileSettings = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetProfileSettings");
 
-	if (!pFnGetProfileSettings)
-		pFnGetProfileSettings = (UFunction*)UObject::GObjects()->Data[46845];
+	UOnlineSubsystemSteamworks_GetProfileSettings_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execGetProfileSettings_Parms GetProfileSettings_Parms;
-	GetProfileSettings_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetProfileSettings, &GetProfileSettings_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return GetProfileSettings_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadProfileSettingsCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         ReadProfileSettingsCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         ReadProfileSettingsCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearReadProfileSettingsCompleteDelegate(unsigned char LocalUserNum, struct FScriptDelegate ReadProfileSettingsCompleteDelegate)
+void UOnlineSubsystemSteamworks::ClearReadProfileSettingsCompleteDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& ReadProfileSettingsCompleteDelegate)
 {
-	static UFunction* pFnClearReadProfileSettingsCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearReadProfileSettingsCompleteDelegate");
 
-	if (!pFnClearReadProfileSettingsCompleteDelegate)
-		pFnClearReadProfileSettingsCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46842];
+	UOnlineSubsystemSteamworks_ClearReadProfileSettingsCompleteDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ReadProfileSettingsCompleteDelegate = ReadProfileSettingsCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execClearReadProfileSettingsCompleteDelegate_Parms ClearReadProfileSettingsCompleteDelegate_Parms;
-	ClearReadProfileSettingsCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearReadProfileSettingsCompleteDelegate_Parms.ReadProfileSettingsCompleteDelegate, &ReadProfileSettingsCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearReadProfileSettingsCompleteDelegate, &ClearReadProfileSettingsCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadProfileSettingsCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         ReadProfileSettingsCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         ReadProfileSettingsCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddReadProfileSettingsCompleteDelegate(unsigned char LocalUserNum, struct FScriptDelegate ReadProfileSettingsCompleteDelegate)
+void UOnlineSubsystemSteamworks::AddReadProfileSettingsCompleteDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& ReadProfileSettingsCompleteDelegate)
 {
-	static UFunction* pFnAddReadProfileSettingsCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddReadProfileSettingsCompleteDelegate");
 
-	if (!pFnAddReadProfileSettingsCompleteDelegate)
-		pFnAddReadProfileSettingsCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46836];
+	UOnlineSubsystemSteamworks_AddReadProfileSettingsCompleteDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ReadProfileSettingsCompleteDelegate = ReadProfileSettingsCompleteDelegate;
 
-	UOnlineSubsystemSteamworks_execAddReadProfileSettingsCompleteDelegate_Parms AddReadProfileSettingsCompleteDelegate_Parms;
-	AddReadProfileSettingsCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddReadProfileSettingsCompleteDelegate_Parms.ReadProfileSettingsCompleteDelegate, &ReadProfileSettingsCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddReadProfileSettingsCompleteDelegate, &AddReadProfileSettingsCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadProfileSettingsComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineSubsystemSteamworks::OnReadProfileSettingsComplete(unsigned char LocalUserNum, unsigned long bWasSuccessful)
+void UOnlineSubsystemSteamworks::OnReadProfileSettingsComplete(unsigned char LocalUserNum, bool bWasSuccessful)
 {
-	static UFunction* pFnOnReadProfileSettingsComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnReadProfileSettingsComplete");
 
-	if (!pFnOnReadProfileSettingsComplete)
-		pFnOnReadProfileSettingsComplete = (UFunction*)UObject::GObjects()->Data[46833];
+	UOnlineSubsystemSteamworks_OnReadProfileSettingsComplete_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineSubsystemSteamworks_execOnReadProfileSettingsComplete_Parms OnReadProfileSettingsComplete_Parms;
-	OnReadProfileSettingsComplete_Parms.LocalUserNum = LocalUserNum;
-	OnReadProfileSettingsComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReadProfileSettingsComplete, &OnReadProfileSettingsComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadProfileSettings
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// class UOnlineProfileSettings*  ProfileSettings                ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// class UOnlineProfileSettings*  ProfileSettings                (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::ReadProfileSettings(unsigned char LocalUserNum, class UOnlineProfileSettings* ProfileSettings)
 {
-	static UFunction* pFnReadProfileSettings = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ReadProfileSettings");
 
-	if (!pFnReadProfileSettings)
-		pFnReadProfileSettings = (UFunction*)UObject::GObjects()->Data[46829];
+	UOnlineSubsystemSteamworks_ReadProfileSettings_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ProfileSettings = ProfileSettings;
 
-	UOnlineSubsystemSteamworks_execReadProfileSettings_Parms ReadProfileSettings_Parms;
-	ReadProfileSettings_Parms.LocalUserNum = LocalUserNum;
-	ReadProfileSettings_Parms.ProfileSettings = ProfileSettings;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnReadProfileSettings->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnReadProfileSettings, &ReadProfileSettings_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnReadProfileSettings->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ReadProfileSettings_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearFriendsChangeDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         FriendsDelegate                ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         FriendsDelegate                (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearFriendsChangeDelegate(unsigned char LocalUserNum, struct FScriptDelegate FriendsDelegate)
+void UOnlineSubsystemSteamworks::ClearFriendsChangeDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& FriendsDelegate)
 {
-	static UFunction* pFnClearFriendsChangeDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearFriendsChangeDelegate");
 
-	if (!pFnClearFriendsChangeDelegate)
-		pFnClearFriendsChangeDelegate = (UFunction*)UObject::GObjects()->Data[46826];
+	UOnlineSubsystemSteamworks_ClearFriendsChangeDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.FriendsDelegate = FriendsDelegate;
 
-	UOnlineSubsystemSteamworks_execClearFriendsChangeDelegate_Parms ClearFriendsChangeDelegate_Parms;
-	ClearFriendsChangeDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearFriendsChangeDelegate_Parms.FriendsDelegate, &FriendsDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearFriendsChangeDelegate, &ClearFriendsChangeDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFriendsChangeDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         FriendsDelegate                ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         FriendsDelegate                (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddFriendsChangeDelegate(unsigned char LocalUserNum, struct FScriptDelegate FriendsDelegate)
+void UOnlineSubsystemSteamworks::AddFriendsChangeDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& FriendsDelegate)
 {
-	static UFunction* pFnAddFriendsChangeDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddFriendsChangeDelegate");
 
-	if (!pFnAddFriendsChangeDelegate)
-		pFnAddFriendsChangeDelegate = (UFunction*)UObject::GObjects()->Data[46822];
+	UOnlineSubsystemSteamworks_AddFriendsChangeDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.FriendsDelegate = FriendsDelegate;
 
-	UOnlineSubsystemSteamworks_execAddFriendsChangeDelegate_Parms AddFriendsChangeDelegate_Parms;
-	AddFriendsChangeDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddFriendsChangeDelegate_Parms.FriendsDelegate, &FriendsDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddFriendsChangeDelegate, &AddFriendsChangeDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearMutingChangeDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         MutingDelegate                 ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         MutingDelegate                 (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearMutingChangeDelegate(struct FScriptDelegate MutingDelegate)
+void UOnlineSubsystemSteamworks::ClearMutingChangeDelegate(const struct FScriptDelegate& MutingDelegate)
 {
-	static UFunction* pFnClearMutingChangeDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearMutingChangeDelegate");
 
-	if (!pFnClearMutingChangeDelegate)
-		pFnClearMutingChangeDelegate = (UFunction*)UObject::GObjects()->Data[46820];
+	UOnlineSubsystemSteamworks_ClearMutingChangeDelegate_Params params;
+	params.MutingDelegate = MutingDelegate;
 
-	UOnlineSubsystemSteamworks_execClearMutingChangeDelegate_Parms ClearMutingChangeDelegate_Parms;
-	memcpy(&ClearMutingChangeDelegate_Parms.MutingDelegate, &MutingDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearMutingChangeDelegate, &ClearMutingChangeDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddMutingChangeDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         MutingDelegate                 ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         MutingDelegate                 (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddMutingChangeDelegate(struct FScriptDelegate MutingDelegate)
+void UOnlineSubsystemSteamworks::AddMutingChangeDelegate(const struct FScriptDelegate& MutingDelegate)
 {
-	static UFunction* pFnAddMutingChangeDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddMutingChangeDelegate");
 
-	if (!pFnAddMutingChangeDelegate)
-		pFnAddMutingChangeDelegate = (UFunction*)UObject::GObjects()->Data[46817];
+	UOnlineSubsystemSteamworks_AddMutingChangeDelegate_Params params;
+	params.MutingDelegate = MutingDelegate;
 
-	UOnlineSubsystemSteamworks_execAddMutingChangeDelegate_Parms AddMutingChangeDelegate_Parms;
-	memcpy(&AddMutingChangeDelegate_Parms.MutingDelegate, &MutingDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddMutingChangeDelegate, &AddMutingChangeDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLoginCancelledDelegate
-// [0x00020000]
-// Parameters infos:
-// struct FScriptDelegate         CancelledDelegate              ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// struct FScriptDelegate         CancelledDelegate              (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearLoginCancelledDelegate(struct FScriptDelegate CancelledDelegate)
+void UOnlineSubsystemSteamworks::ClearLoginCancelledDelegate(const struct FScriptDelegate& CancelledDelegate)
 {
-	static UFunction* pFnClearLoginCancelledDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLoginCancelledDelegate");
 
-	if (!pFnClearLoginCancelledDelegate)
-		pFnClearLoginCancelledDelegate = (UFunction*)UObject::GObjects()->Data[46815];
+	UOnlineSubsystemSteamworks_ClearLoginCancelledDelegate_Params params;
+	params.CancelledDelegate = CancelledDelegate;
 
-	UOnlineSubsystemSteamworks_execClearLoginCancelledDelegate_Parms ClearLoginCancelledDelegate_Parms;
-	memcpy(&ClearLoginCancelledDelegate_Parms.CancelledDelegate, &CancelledDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearLoginCancelledDelegate, &ClearLoginCancelledDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLoginCancelledDelegate
-// [0x00020000]
-// Parameters infos:
-// struct FScriptDelegate         CancelledDelegate              ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// struct FScriptDelegate         CancelledDelegate              (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddLoginCancelledDelegate(struct FScriptDelegate CancelledDelegate)
+void UOnlineSubsystemSteamworks::AddLoginCancelledDelegate(const struct FScriptDelegate& CancelledDelegate)
 {
-	static UFunction* pFnAddLoginCancelledDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLoginCancelledDelegate");
 
-	if (!pFnAddLoginCancelledDelegate)
-		pFnAddLoginCancelledDelegate = (UFunction*)UObject::GObjects()->Data[46813];
+	UOnlineSubsystemSteamworks_AddLoginCancelledDelegate_Params params;
+	params.CancelledDelegate = CancelledDelegate;
 
-	UOnlineSubsystemSteamworks_execAddLoginCancelledDelegate_Parms AddLoginCancelledDelegate_Parms;
-	memcpy(&AddLoginCancelledDelegate_Parms.CancelledDelegate, &CancelledDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddLoginCancelledDelegate, &AddLoginCancelledDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLoginStatusChangeDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         LoginStatusDelegate            ( CPF_Parm | CPF_NeedCtorLink )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         LoginStatusDelegate            (Parm, NeedCtorLink)
+// unsigned char                  LocalUserNum                   (Parm)
 
-void UOnlineSubsystemSteamworks::ClearLoginStatusChangeDelegate(struct FScriptDelegate LoginStatusDelegate, unsigned char LocalUserNum)
+void UOnlineSubsystemSteamworks::ClearLoginStatusChangeDelegate(const struct FScriptDelegate& LoginStatusDelegate, unsigned char LocalUserNum)
 {
-	static UFunction* pFnClearLoginStatusChangeDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLoginStatusChangeDelegate");
 
-	if (!pFnClearLoginStatusChangeDelegate)
-		pFnClearLoginStatusChangeDelegate = (UFunction*)UObject::GObjects()->Data[46810];
+	UOnlineSubsystemSteamworks_ClearLoginStatusChangeDelegate_Params params;
+	params.LoginStatusDelegate = LoginStatusDelegate;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execClearLoginStatusChangeDelegate_Parms ClearLoginStatusChangeDelegate_Parms;
-	memcpy(&ClearLoginStatusChangeDelegate_Parms.LoginStatusDelegate, &LoginStatusDelegate, 0xC);
-	ClearLoginStatusChangeDelegate_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearLoginStatusChangeDelegate, &ClearLoginStatusChangeDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLoginStatusChangeDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         LoginStatusDelegate            ( CPF_Parm | CPF_NeedCtorLink )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         LoginStatusDelegate            (Parm, NeedCtorLink)
+// unsigned char                  LocalUserNum                   (Parm)
 
-void UOnlineSubsystemSteamworks::AddLoginStatusChangeDelegate(struct FScriptDelegate LoginStatusDelegate, unsigned char LocalUserNum)
+void UOnlineSubsystemSteamworks::AddLoginStatusChangeDelegate(const struct FScriptDelegate& LoginStatusDelegate, unsigned char LocalUserNum)
 {
-	static UFunction* pFnAddLoginStatusChangeDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLoginStatusChangeDelegate");
 
-	if (!pFnAddLoginStatusChangeDelegate)
-		pFnAddLoginStatusChangeDelegate = (UFunction*)UObject::GObjects()->Data[46805];
+	UOnlineSubsystemSteamworks_AddLoginStatusChangeDelegate_Params params;
+	params.LoginStatusDelegate = LoginStatusDelegate;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execAddLoginStatusChangeDelegate_Parms AddLoginStatusChangeDelegate_Parms;
-	memcpy(&AddLoginStatusChangeDelegate_Parms.LoginStatusDelegate, &LoginStatusDelegate, 0xC);
-	AddLoginStatusChangeDelegate_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddLoginStatusChangeDelegate, &AddLoginStatusChangeDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLoginStatusChange
-// [0x00120000]
-// Parameters infos:
-// unsigned char                  NewStatus                      ( CPF_Parm )
-// struct FUniqueNetId            NewId                          ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// unsigned char                  NewStatus                      (Parm)
+// struct FUniqueNetId            NewId                          (Parm)
 
-void UOnlineSubsystemSteamworks::OnLoginStatusChange(unsigned char NewStatus, struct FUniqueNetId NewId)
+void UOnlineSubsystemSteamworks::OnLoginStatusChange(unsigned char NewStatus, const struct FUniqueNetId& NewId)
 {
-	static UFunction* pFnOnLoginStatusChange = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLoginStatusChange");
 
-	if (!pFnOnLoginStatusChange)
-		pFnOnLoginStatusChange = (UFunction*)UObject::GObjects()->Data[46802];
+	UOnlineSubsystemSteamworks_OnLoginStatusChange_Params params;
+	params.NewStatus = NewStatus;
+	params.NewId = NewId;
 
-	UOnlineSubsystemSteamworks_execOnLoginStatusChange_Parms OnLoginStatusChange_Parms;
-	OnLoginStatusChange_Parms.NewStatus = NewStatus;
-	memcpy(&OnLoginStatusChange_Parms.NewId, &NewId, 0x18);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnLoginStatusChange, &OnLoginStatusChange_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLoginChangeDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         LoginDelegate                  ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         LoginDelegate                  (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearLoginChangeDelegate(struct FScriptDelegate LoginDelegate)
+void UOnlineSubsystemSteamworks::ClearLoginChangeDelegate(const struct FScriptDelegate& LoginDelegate)
 {
-	static UFunction* pFnClearLoginChangeDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLoginChangeDelegate");
 
-	if (!pFnClearLoginChangeDelegate)
-		pFnClearLoginChangeDelegate = (UFunction*)UObject::GObjects()->Data[46800];
+	UOnlineSubsystemSteamworks_ClearLoginChangeDelegate_Params params;
+	params.LoginDelegate = LoginDelegate;
 
-	UOnlineSubsystemSteamworks_execClearLoginChangeDelegate_Parms ClearLoginChangeDelegate_Parms;
-	memcpy(&ClearLoginChangeDelegate_Parms.LoginDelegate, &LoginDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearLoginChangeDelegate, &ClearLoginChangeDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLoginChangeDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         LoginDelegate                  ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         LoginDelegate                  (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddLoginChangeDelegate(struct FScriptDelegate LoginDelegate)
+void UOnlineSubsystemSteamworks::AddLoginChangeDelegate(const struct FScriptDelegate& LoginDelegate)
 {
-	static UFunction* pFnAddLoginChangeDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLoginChangeDelegate");
 
-	if (!pFnAddLoginChangeDelegate)
-		pFnAddLoginChangeDelegate = (UFunction*)UObject::GObjects()->Data[46797];
+	UOnlineSubsystemSteamworks_AddLoginChangeDelegate_Params params;
+	params.LoginDelegate = LoginDelegate;
 
-	UOnlineSubsystemSteamworks_execAddLoginChangeDelegate_Parms AddLoginChangeDelegate_Parms;
-	memcpy(&AddLoginChangeDelegate_Parms.LoginDelegate, &LoginDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddLoginChangeDelegate, &AddLoginChangeDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsMuted
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FUniqueNetId            PlayerID                       ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FUniqueNetId            PlayerID                       (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::IsMuted(unsigned char LocalUserNum, struct FUniqueNetId PlayerID)
+bool UOnlineSubsystemSteamworks::IsMuted(unsigned char LocalUserNum, const struct FUniqueNetId& PlayerID)
 {
-	static UFunction* pFnIsMuted = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsMuted");
 
-	if (!pFnIsMuted)
-		pFnIsMuted = (UFunction*)UObject::GObjects()->Data[46793];
+	UOnlineSubsystemSteamworks_IsMuted_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.PlayerID = PlayerID;
 
-	UOnlineSubsystemSteamworks_execIsMuted_Parms IsMuted_Parms;
-	IsMuted_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&IsMuted_Parms.PlayerID, &PlayerID, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnIsMuted->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnIsMuted, &IsMuted_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnIsMuted->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return IsMuted_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AreAnyFriends
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// TArray< struct FFriendsQuery > Query                          ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// TArray<struct FFriendsQuery>   Query                          (Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::AreAnyFriends(unsigned char LocalUserNum, TArray< struct FFriendsQuery >* Query)
+bool UOnlineSubsystemSteamworks::AreAnyFriends(unsigned char LocalUserNum, TArray<struct FFriendsQuery>* Query)
 {
-	static UFunction* pFnAreAnyFriends = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AreAnyFriends");
 
-	if (!pFnAreAnyFriends)
-		pFnAreAnyFriends = (UFunction*)UObject::GObjects()->Data[46788];
+	UOnlineSubsystemSteamworks_AreAnyFriends_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execAreAnyFriends_Parms AreAnyFriends_Parms;
-	AreAnyFriends_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnAreAnyFriends->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnAreAnyFriends, &AreAnyFriends_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnAreAnyFriends->FunctionFlags |= 0x400;
+	if (Query != nullptr)
+		*Query = params.Query;
 
-	if (Query)
-		memcpy(Query, &AreAnyFriends_Parms.Query, 0xC);
+	return params.ReturnValue;
+}
 
-	return AreAnyFriends_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsFriend
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FUniqueNetId            PlayerID                       ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FUniqueNetId            PlayerID                       (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::IsFriend(unsigned char LocalUserNum, struct FUniqueNetId PlayerID)
+bool UOnlineSubsystemSteamworks::IsFriend(unsigned char LocalUserNum, const struct FUniqueNetId& PlayerID)
 {
-	static UFunction* pFnIsFriend = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsFriend");
 
-	if (!pFnIsFriend)
-		pFnIsFriend = (UFunction*)UObject::GObjects()->Data[46784];
+	UOnlineSubsystemSteamworks_IsFriend_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.PlayerID = PlayerID;
 
-	UOnlineSubsystemSteamworks_execIsFriend_Parms IsFriend_Parms;
-	IsFriend_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&IsFriend_Parms.PlayerID, &PlayerID, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnIsFriend->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnIsFriend, &IsFriend_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnIsFriend->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return IsFriend_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanShowPresenceInformation
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// unsigned char                  ReturnValue                    (Parm, OutParm, ReturnParm)
 
 unsigned char UOnlineSubsystemSteamworks::CanShowPresenceInformation(unsigned char LocalUserNum)
 {
-	static UFunction* pFnCanShowPresenceInformation = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanShowPresenceInformation");
 
-	if (!pFnCanShowPresenceInformation)
-		pFnCanShowPresenceInformation = (UFunction*)UObject::GObjects()->Data[46781];
+	UOnlineSubsystemSteamworks_CanShowPresenceInformation_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execCanShowPresenceInformation_Parms CanShowPresenceInformation_Parms;
-	CanShowPresenceInformation_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnCanShowPresenceInformation, &CanShowPresenceInformation_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return CanShowPresenceInformation_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanViewPlayerProfiles
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// unsigned char                  ReturnValue                    (Parm, OutParm, ReturnParm)
 
 unsigned char UOnlineSubsystemSteamworks::CanViewPlayerProfiles(unsigned char LocalUserNum)
 {
-	static UFunction* pFnCanViewPlayerProfiles = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanViewPlayerProfiles");
 
-	if (!pFnCanViewPlayerProfiles)
-		pFnCanViewPlayerProfiles = (UFunction*)UObject::GObjects()->Data[46778];
+	UOnlineSubsystemSteamworks_CanViewPlayerProfiles_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execCanViewPlayerProfiles_Parms CanViewPlayerProfiles_Parms;
-	CanViewPlayerProfiles_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnCanViewPlayerProfiles, &CanViewPlayerProfiles_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return CanViewPlayerProfiles_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanPurchaseContent
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// unsigned char                  ReturnValue                    (Parm, OutParm, ReturnParm)
 
 unsigned char UOnlineSubsystemSteamworks::CanPurchaseContent(unsigned char LocalUserNum)
 {
-	static UFunction* pFnCanPurchaseContent = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanPurchaseContent");
 
-	if (!pFnCanPurchaseContent)
-		pFnCanPurchaseContent = (UFunction*)UObject::GObjects()->Data[46775];
+	UOnlineSubsystemSteamworks_CanPurchaseContent_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execCanPurchaseContent_Parms CanPurchaseContent_Parms;
-	CanPurchaseContent_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnCanPurchaseContent, &CanPurchaseContent_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return CanPurchaseContent_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanDownloadUserContent
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// unsigned char                  ReturnValue                    (Parm, OutParm, ReturnParm)
 
 unsigned char UOnlineSubsystemSteamworks::CanDownloadUserContent(unsigned char LocalUserNum)
 {
-	static UFunction* pFnCanDownloadUserContent = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanDownloadUserContent");
 
-	if (!pFnCanDownloadUserContent)
-		pFnCanDownloadUserContent = (UFunction*)UObject::GObjects()->Data[46772];
+	UOnlineSubsystemSteamworks_CanDownloadUserContent_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execCanDownloadUserContent_Parms CanDownloadUserContent_Parms;
-	CanDownloadUserContent_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnCanDownloadUserContent, &CanDownloadUserContent_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return CanDownloadUserContent_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanCommunicate
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// unsigned char                  ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// unsigned char                  ReturnValue                    (Parm, OutParm, ReturnParm)
 
 unsigned char UOnlineSubsystemSteamworks::CanCommunicate(unsigned char LocalUserNum)
 {
-	static UFunction* pFnCanCommunicate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanCommunicate");
 
-	if (!pFnCanCommunicate)
-		pFnCanCommunicate = (UFunction*)UObject::GObjects()->Data[46769];
+	UOnlineSubsystemSteamworks_CanCommunicate_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execCanCommunicate_Parms CanCommunicate_Parms;
-	CanCommunicate_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnCanCommunicate->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnCanCommunicate, &CanCommunicate_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnCanCommunicate->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return CanCommunicate_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanPlayOnline
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// unsigned char                  ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// unsigned char                  ReturnValue                    (Parm, OutParm, ReturnParm)
 
 unsigned char UOnlineSubsystemSteamworks::CanPlayOnline(unsigned char LocalUserNum)
 {
-	static UFunction* pFnCanPlayOnline = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.CanPlayOnline");
 
-	if (!pFnCanPlayOnline)
-		pFnCanPlayOnline = (UFunction*)UObject::GObjects()->Data[46766];
+	UOnlineSubsystemSteamworks_CanPlayOnline_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execCanPlayOnline_Parms CanPlayOnline_Parms;
-	CanPlayOnline_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnCanPlayOnline->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnCanPlayOnline, &CanPlayOnline_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnCanPlayOnline->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return CanPlayOnline_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearGetUserAgeGroupDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         GetUserAgeGroupDelegate        ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         GetUserAgeGroupDelegate        (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearGetUserAgeGroupDelegate(unsigned char LocalUserNum, struct FScriptDelegate GetUserAgeGroupDelegate)
+void UOnlineSubsystemSteamworks::ClearGetUserAgeGroupDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& GetUserAgeGroupDelegate)
 {
-	static UFunction* pFnClearGetUserAgeGroupDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearGetUserAgeGroupDelegate");
 
-	if (!pFnClearGetUserAgeGroupDelegate)
-		pFnClearGetUserAgeGroupDelegate = (UFunction*)UObject::GObjects()->Data[46763];
+	UOnlineSubsystemSteamworks_ClearGetUserAgeGroupDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.GetUserAgeGroupDelegate = GetUserAgeGroupDelegate;
 
-	UOnlineSubsystemSteamworks_execClearGetUserAgeGroupDelegate_Parms ClearGetUserAgeGroupDelegate_Parms;
-	ClearGetUserAgeGroupDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearGetUserAgeGroupDelegate_Parms.GetUserAgeGroupDelegate, &GetUserAgeGroupDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearGetUserAgeGroupDelegate, &ClearGetUserAgeGroupDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddGetUserAgeGroupDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         GetUserAgeGroupDelegate        ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         GetUserAgeGroupDelegate        (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddGetUserAgeGroupDelegate(unsigned char LocalUserNum, struct FScriptDelegate GetUserAgeGroupDelegate)
+void UOnlineSubsystemSteamworks::AddGetUserAgeGroupDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& GetUserAgeGroupDelegate)
 {
-	static UFunction* pFnAddGetUserAgeGroupDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddGetUserAgeGroupDelegate");
 
-	if (!pFnAddGetUserAgeGroupDelegate)
-		pFnAddGetUserAgeGroupDelegate = (UFunction*)UObject::GObjects()->Data[46760];
+	UOnlineSubsystemSteamworks_AddGetUserAgeGroupDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.GetUserAgeGroupDelegate = GetUserAgeGroupDelegate;
 
-	UOnlineSubsystemSteamworks_execAddGetUserAgeGroupDelegate_Parms AddGetUserAgeGroupDelegate_Parms;
-	AddGetUserAgeGroupDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddGetUserAgeGroupDelegate_Parms.GetUserAgeGroupDelegate, &GetUserAgeGroupDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddGetUserAgeGroupDelegate, &AddGetUserAgeGroupDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetUserAgeGroup
-// [0x00020002]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::GetUserAgeGroup(unsigned char LocalUserNum)
 {
-	static UFunction* pFnGetUserAgeGroup = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetUserAgeGroup");
 
-	if (!pFnGetUserAgeGroup)
-		pFnGetUserAgeGroup = (UFunction*)UObject::GObjects()->Data[46754];
+	UOnlineSubsystemSteamworks_GetUserAgeGroup_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execGetUserAgeGroup_Parms GetUserAgeGroup_Parms;
-	GetUserAgeGroup_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetUserAgeGroup, &GetUserAgeGroup_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return GetUserAgeGroup_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnGetUserAgeGroup
-// [0x00120000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// unsigned char                  UserAgeGroup                   ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// unsigned char                  UserAgeGroup                   (Parm)
 
 void UOnlineSubsystemSteamworks::OnGetUserAgeGroup(unsigned char LocalUserNum, unsigned char UserAgeGroup)
 {
-	static UFunction* pFnOnGetUserAgeGroup = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnGetUserAgeGroup");
 
-	if (!pFnOnGetUserAgeGroup)
-		pFnOnGetUserAgeGroup = (UFunction*)UObject::GObjects()->Data[46751];
+	UOnlineSubsystemSteamworks_OnGetUserAgeGroup_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.UserAgeGroup = UserAgeGroup;
 
-	UOnlineSubsystemSteamworks_execOnGetUserAgeGroup_Parms OnGetUserAgeGroup_Parms;
-	OnGetUserAgeGroup_Parms.LocalUserNum = LocalUserNum;
-	OnGetUserAgeGroup_Parms.UserAgeGroup = UserAgeGroup;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnGetUserAgeGroup, &OnGetUserAgeGroup_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetPlayerNickname
-// [0x00020002]
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
 struct FString UOnlineSubsystemSteamworks::GetPlayerNickname(unsigned char LocalUserNum)
 {
-	static UFunction* pFnGetPlayerNickname = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetPlayerNickname");
 
-	if (!pFnGetPlayerNickname)
-		pFnGetPlayerNickname = (UFunction*)UObject::GObjects()->Data[46747];
+	UOnlineSubsystemSteamworks_GetPlayerNickname_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execGetPlayerNickname_Parms GetPlayerNickname_Parms;
-	GetPlayerNickname_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetPlayerNickname, &GetPlayerNickname_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return GetPlayerNickname_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetUniquePlayerId
-// [0x00420002]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FUniqueNetId            PlayerID                       ( CPF_Parm | CPF_OutParm )
+// (Defined, Public, HasOutParms)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FUniqueNetId            PlayerID                       (Parm, OutParm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::GetUniquePlayerId(unsigned char LocalUserNum, struct FUniqueNetId* PlayerID)
 {
-	static UFunction* pFnGetUniquePlayerId = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetUniquePlayerId");
 
-	if (!pFnGetUniquePlayerId)
-		pFnGetUniquePlayerId = (UFunction*)UObject::GObjects()->Data[46742];
+	UOnlineSubsystemSteamworks_GetUniquePlayerId_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execGetUniquePlayerId_Parms GetUniquePlayerId_Parms;
-	GetUniquePlayerId_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetUniquePlayerId, &GetUniquePlayerId_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (PlayerID)
-		memcpy(PlayerID, &GetUniquePlayerId_Parms.PlayerID, 0x18);
+	fn->FunctionFlags = flags;
 
-	return GetUniquePlayerId_Parms.ReturnValue;
-};
+	if (PlayerID != nullptr)
+		*PlayerID = params.PlayerID;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsLocalLogin
-// [0x00020000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::IsLocalLogin(unsigned char LocalUserNum)
 {
-	static UFunction* pFnIsLocalLogin = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsLocalLogin");
 
-	if (!pFnIsLocalLogin)
-		pFnIsLocalLogin = (UFunction*)UObject::GObjects()->Data[46739];
+	UOnlineSubsystemSteamworks_IsLocalLogin_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execIsLocalLogin_Parms IsLocalLogin_Parms;
-	IsLocalLogin_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnIsLocalLogin, &IsLocalLogin_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return IsLocalLogin_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsGuestLogin
-// [0x00020000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::IsGuestLogin(unsigned char LocalUserNum)
 {
-	static UFunction* pFnIsGuestLogin = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.IsGuestLogin");
 
-	if (!pFnIsGuestLogin)
-		pFnIsGuestLogin = (UFunction*)UObject::GObjects()->Data[46736];
+	UOnlineSubsystemSteamworks_IsGuestLogin_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execIsGuestLogin_Parms IsGuestLogin_Parms;
-	IsGuestLogin_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnIsGuestLogin, &IsGuestLogin_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return IsGuestLogin_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetLoginStatus
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// unsigned char                  ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// unsigned char                  ReturnValue                    (Parm, OutParm, ReturnParm)
 
 unsigned char UOnlineSubsystemSteamworks::GetLoginStatus(unsigned char LocalUserNum)
 {
-	static UFunction* pFnGetLoginStatus = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.GetLoginStatus");
 
-	if (!pFnGetLoginStatus)
-		pFnGetLoginStatus = (UFunction*)UObject::GObjects()->Data[46733];
+	UOnlineSubsystemSteamworks_GetLoginStatus_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execGetLoginStatus_Parms GetLoginStatus_Parms;
-	GetLoginStatus_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetLoginStatus->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetLoginStatus, &GetLoginStatus_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetLoginStatus->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetLoginStatus_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLogoutCompletedDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         LogoutDelegate                 ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         LogoutDelegate                 (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearLogoutCompletedDelegate(unsigned char LocalUserNum, struct FScriptDelegate LogoutDelegate)
+void UOnlineSubsystemSteamworks::ClearLogoutCompletedDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& LogoutDelegate)
 {
-	static UFunction* pFnClearLogoutCompletedDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLogoutCompletedDelegate");
 
-	if (!pFnClearLogoutCompletedDelegate)
-		pFnClearLogoutCompletedDelegate = (UFunction*)UObject::GObjects()->Data[46730];
+	UOnlineSubsystemSteamworks_ClearLogoutCompletedDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.LogoutDelegate = LogoutDelegate;
 
-	UOnlineSubsystemSteamworks_execClearLogoutCompletedDelegate_Parms ClearLogoutCompletedDelegate_Parms;
-	ClearLogoutCompletedDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearLogoutCompletedDelegate_Parms.LogoutDelegate, &LogoutDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearLogoutCompletedDelegate, &ClearLogoutCompletedDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLogoutCompletedDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         LogoutDelegate                 ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         LogoutDelegate                 (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddLogoutCompletedDelegate(unsigned char LocalUserNum, struct FScriptDelegate LogoutDelegate)
+void UOnlineSubsystemSteamworks::AddLogoutCompletedDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& LogoutDelegate)
 {
-	static UFunction* pFnAddLogoutCompletedDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLogoutCompletedDelegate");
 
-	if (!pFnAddLogoutCompletedDelegate)
-		pFnAddLogoutCompletedDelegate = (UFunction*)UObject::GObjects()->Data[46726];
+	UOnlineSubsystemSteamworks_AddLogoutCompletedDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.LogoutDelegate = LogoutDelegate;
 
-	UOnlineSubsystemSteamworks_execAddLogoutCompletedDelegate_Parms AddLogoutCompletedDelegate_Parms;
-	AddLogoutCompletedDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddLogoutCompletedDelegate_Parms.LogoutDelegate, &LogoutDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddLogoutCompletedDelegate, &AddLogoutCompletedDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLogoutCompleted
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineSubsystemSteamworks::OnLogoutCompleted(unsigned long bWasSuccessful)
+void UOnlineSubsystemSteamworks::OnLogoutCompleted(bool bWasSuccessful)
 {
-	static UFunction* pFnOnLogoutCompleted = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLogoutCompleted");
 
-	if (!pFnOnLogoutCompleted)
-		pFnOnLogoutCompleted = (UFunction*)UObject::GObjects()->Data[46724];
+	UOnlineSubsystemSteamworks_OnLogoutCompleted_Params params;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineSubsystemSteamworks_execOnLogoutCompleted_Parms OnLogoutCompleted_Parms;
-	OnLogoutCompleted_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnLogoutCompleted, &OnLogoutCompleted_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.Logout
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::Logout(unsigned char LocalUserNum)
 {
-	static UFunction* pFnLogout = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.Logout");
 
-	if (!pFnLogout)
-		pFnLogout = (UFunction*)UObject::GObjects()->Data[46721];
+	UOnlineSubsystemSteamworks_Logout_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execLogout_Parms Logout_Parms;
-	Logout_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnLogout->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnLogout, &Logout_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnLogout->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return Logout_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLoginFailedDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         LoginFailedDelegate            ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         LoginFailedDelegate            (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::ClearLoginFailedDelegate(unsigned char LocalUserNum, struct FScriptDelegate LoginFailedDelegate)
+void UOnlineSubsystemSteamworks::ClearLoginFailedDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& LoginFailedDelegate)
 {
-	static UFunction* pFnClearLoginFailedDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ClearLoginFailedDelegate");
 
-	if (!pFnClearLoginFailedDelegate)
-		pFnClearLoginFailedDelegate = (UFunction*)UObject::GObjects()->Data[46718];
+	UOnlineSubsystemSteamworks_ClearLoginFailedDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.LoginFailedDelegate = LoginFailedDelegate;
 
-	UOnlineSubsystemSteamworks_execClearLoginFailedDelegate_Parms ClearLoginFailedDelegate_Parms;
-	ClearLoginFailedDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearLoginFailedDelegate_Parms.LoginFailedDelegate, &LoginFailedDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearLoginFailedDelegate, &ClearLoginFailedDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLoginFailedDelegate
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         LoginFailedDelegate            ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         LoginFailedDelegate            (Parm, NeedCtorLink)
 
-void UOnlineSubsystemSteamworks::AddLoginFailedDelegate(unsigned char LocalUserNum, struct FScriptDelegate LoginFailedDelegate)
+void UOnlineSubsystemSteamworks::AddLoginFailedDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& LoginFailedDelegate)
 {
-	static UFunction* pFnAddLoginFailedDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AddLoginFailedDelegate");
 
-	if (!pFnAddLoginFailedDelegate)
-		pFnAddLoginFailedDelegate = (UFunction*)UObject::GObjects()->Data[46714];
+	UOnlineSubsystemSteamworks_AddLoginFailedDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.LoginFailedDelegate = LoginFailedDelegate;
 
-	UOnlineSubsystemSteamworks_execAddLoginFailedDelegate_Parms AddLoginFailedDelegate_Parms;
-	AddLoginFailedDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddLoginFailedDelegate_Parms.LoginFailedDelegate, &LoginFailedDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddLoginFailedDelegate, &AddLoginFailedDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLoginFailed
-// [0x00120000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// unsigned char                  ErrorCode                      ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// unsigned char                  ErrorCode                      (Parm)
 
 void UOnlineSubsystemSteamworks::OnLoginFailed(unsigned char LocalUserNum, unsigned char ErrorCode)
 {
-	static UFunction* pFnOnLoginFailed = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLoginFailed");
 
-	if (!pFnOnLoginFailed)
-		pFnOnLoginFailed = (UFunction*)UObject::GObjects()->Data[46711];
+	UOnlineSubsystemSteamworks_OnLoginFailed_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.ErrorCode = ErrorCode;
 
-	UOnlineSubsystemSteamworks_execOnLoginFailed_Parms OnLoginFailed_Parms;
-	OnLoginFailed_Parms.LocalUserNum = LocalUserNum;
-	OnLoginFailed_Parms.ErrorCode = ErrorCode;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnLoginFailed, &OnLoginFailed_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AutoLogin
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Native, Public)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineSubsystemSteamworks::AutoLogin()
 {
-	static UFunction* pFnAutoLogin = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.AutoLogin");
 
-	if (!pFnAutoLogin)
-		pFnAutoLogin = (UFunction*)UObject::GObjects()->Data[46709];
+	UOnlineSubsystemSteamworks_AutoLogin_Params params;
 
-	UOnlineSubsystemSteamworks_execAutoLogin_Parms AutoLogin_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnAutoLogin->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnAutoLogin, &AutoLogin_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnAutoLogin->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return AutoLogin_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.Login
-// [0x00024400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FString                 LoginName                      ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 Password                       ( CPF_Parm | CPF_NeedCtorLink )
-// unsigned long                  bWantsLocalOnly                ( CPF_OptionalParm | CPF_Parm )
+// (Native, HasOptionalParms, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FString                 LoginName                      (Parm, NeedCtorLink)
+// struct FString                 Password                       (Parm, NeedCtorLink)
+// bool                           bWantsLocalOnly                (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::Login(unsigned char LocalUserNum, struct FString LoginName, struct FString Password, unsigned long bWantsLocalOnly)
+bool UOnlineSubsystemSteamworks::Login(unsigned char LocalUserNum, const struct FString& LoginName, const struct FString& Password, bool bWantsLocalOnly)
 {
-	static UFunction* pFnLogin = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.Login");
 
-	if (!pFnLogin)
-		pFnLogin = (UFunction*)UObject::GObjects()->Data[46703];
+	UOnlineSubsystemSteamworks_Login_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.LoginName = LoginName;
+	params.Password = Password;
+	params.bWantsLocalOnly = bWantsLocalOnly;
 
-	UOnlineSubsystemSteamworks_execLogin_Parms Login_Parms;
-	Login_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&Login_Parms.LoginName, &LoginName, 0xC);
-	memcpy(&Login_Parms.Password, &Password, 0xC);
-	Login_Parms.bWantsLocalOnly = bWantsLocalOnly;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnLogin->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnLogin, &Login_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnLogin->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return Login_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowLoginUI
-// [0x00024400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned long                  bShowOnlineOnly                ( CPF_OptionalParm | CPF_Parm )
-// int                            NumLoginOverride               ( CPF_OptionalParm | CPF_Parm )
-// unsigned long                  bAddUser                       ( CPF_OptionalParm | CPF_Parm )
+// (Native, HasOptionalParms, Public)
+// Parameters:
+// bool                           bShowOnlineOnly                (OptionalParm, Parm)
+// int                            NumLoginOverride               (OptionalParm, Parm)
+// bool                           bAddUser                       (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::ShowLoginUI(unsigned long bShowOnlineOnly, int NumLoginOverride, unsigned long bAddUser)
+bool UOnlineSubsystemSteamworks::ShowLoginUI(bool bShowOnlineOnly, int NumLoginOverride, bool bAddUser)
 {
-	static UFunction* pFnShowLoginUI = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.ShowLoginUI");
 
-	if (!pFnShowLoginUI)
-		pFnShowLoginUI = (UFunction*)UObject::GObjects()->Data[46698];
+	UOnlineSubsystemSteamworks_ShowLoginUI_Params params;
+	params.bShowOnlineOnly = bShowOnlineOnly;
+	params.NumLoginOverride = NumLoginOverride;
+	params.bAddUser = bAddUser;
 
-	UOnlineSubsystemSteamworks_execShowLoginUI_Parms ShowLoginUI_Parms;
-	ShowLoginUI_Parms.bShowOnlineOnly = bShowOnlineOnly;
-	ShowLoginUI_Parms.NumLoginOverride = NumLoginOverride;
-	ShowLoginUI_Parms.bAddUser = bAddUser;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnShowLoginUI->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnShowLoginUI, &ShowLoginUI_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnShowLoginUI->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ShowLoginUI_Parms.ReturnValue;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnFriendsChange
-// [0x00120000]
-// Parameters infos:
+// (Public, Delegate)
 
 void UOnlineSubsystemSteamworks::OnFriendsChange()
 {
-	static UFunction* pFnOnFriendsChange = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnFriendsChange");
 
-	if (!pFnOnFriendsChange)
-		pFnOnFriendsChange = (UFunction*)UObject::GObjects()->Data[46697];
+	UOnlineSubsystemSteamworks_OnFriendsChange_Params params;
 
-	UOnlineSubsystemSteamworks_execOnFriendsChange_Parms OnFriendsChange_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnFriendsChange, &OnFriendsChange_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnMutingChange
-// [0x00120000]
-// Parameters infos:
+// (Public, Delegate)
 
 void UOnlineSubsystemSteamworks::OnMutingChange()
 {
-	static UFunction* pFnOnMutingChange = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnMutingChange");
 
-	if (!pFnOnMutingChange)
-		pFnOnMutingChange = (UFunction*)UObject::GObjects()->Data[46696];
+	UOnlineSubsystemSteamworks_OnMutingChange_Params params;
 
-	UOnlineSubsystemSteamworks_execOnMutingChange_Parms OnMutingChange_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnMutingChange, &OnMutingChange_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLoginCancelled
-// [0x00120000]
-// Parameters infos:
+// (Public, Delegate)
 
 void UOnlineSubsystemSteamworks::OnLoginCancelled()
 {
-	static UFunction* pFnOnLoginCancelled = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLoginCancelled");
 
-	if (!pFnOnLoginCancelled)
-		pFnOnLoginCancelled = (UFunction*)UObject::GObjects()->Data[46695];
+	UOnlineSubsystemSteamworks_OnLoginCancelled_Params params;
 
-	UOnlineSubsystemSteamworks_execOnLoginCancelled_Parms OnLoginCancelled_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnLoginCancelled, &OnLoginCancelled_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLoginChange
-// [0x00120000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
 
 void UOnlineSubsystemSteamworks::OnLoginChange(unsigned char LocalUserNum)
 {
-	static UFunction* pFnOnLoginChange = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.OnLoginChange");
 
-	if (!pFnOnLoginChange)
-		pFnOnLoginChange = (UFunction*)UObject::GObjects()->Data[46693];
+	UOnlineSubsystemSteamworks_OnLoginChange_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlineSubsystemSteamworks_execOnLoginChange_Parms OnLoginChange_Parms;
-	OnLoginChange_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnLoginChange, &OnLoginChange_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.Exit
-// [0x00020C00] ( FUNC_Event | FUNC_Native )
-// Parameters infos:
+// (Native, Event, Public)
 
-void UOnlineSubsystemSteamworks::eventExit()
+void UOnlineSubsystemSteamworks::Exit()
 {
-	static UFunction* pFnExit = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.Exit");
 
-	if (!pFnExit)
-		pFnExit = (UFunction*)UObject::GObjects()->Data[46692];
+	UOnlineSubsystemSteamworks_Exit_Params params;
 
-	UOnlineSubsystemSteamworks_eventExit_Parms Exit_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnExit->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnExit, &Exit_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnExit->FunctionFlags |= 0x400;
-};
 
 // Function OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.Init
-// [0x00020C00] ( FUNC_Event | FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Native, Event, Public)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemSteamworks::eventInit()
+bool UOnlineSubsystemSteamworks::Init()
 {
-	static UFunction* pFnInit = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "OnlineSubsystemSteamworks.OnlineSubsystemSteamworks.Init");
 
-	if (!pFnInit)
-		pFnInit = (UFunction*)UObject::GObjects()->Data[46690];
+	UOnlineSubsystemSteamworks_Init_Params params;
 
-	UOnlineSubsystemSteamworks_eventInit_Parms Init_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnInit->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnInit, &Init_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnInit->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return Init_Parms.ReturnValue;
-};
 
 #ifdef _MSC_VER
-#pragma pack ( pop )
+	#pragma pack(pop)
 #endif

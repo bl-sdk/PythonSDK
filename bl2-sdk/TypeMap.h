@@ -3246,7 +3246,6 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"RemoteDynamicRadarIconData", &typeid(FRemoteDynamicRadarIconData)},
 	{"RemoteTalker", &typeid(FRemoteTalker)},
 	{"RemovedPopulationActor", &typeid(FRemovedPopulationActor)},
-	{"RemoveObject", &typeid(FRemoveObject)},
 	{"RenderCommandFence", &typeid(FRenderCommandFence)},
 	{"RenderCommandFence_Mirror", &typeid(FRenderCommandFence_Mirror)},
 	{"RenderingPerformanceOverrides", &typeid(FRenderingPerformanceOverrides)},

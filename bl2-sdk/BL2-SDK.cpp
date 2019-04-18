@@ -335,7 +335,7 @@ namespace BL2SDK
 
 	void initializeGameVersions()
 	{
-		UObject* obj = UObject::GObjObjects()->Data[0];
+		UObject* obj = UObject::GObjects()->Data[0];
 		EngineVersion = obj->GetEngineVersion();
 		ChangelistNumber = obj->GetBuildChangelistNumber();
 
@@ -347,9 +347,9 @@ namespace BL2SDK
 	{
 		Logging::LogF("[GameReady] Thread: %i\n", GetCurrentThreadId());
 
-		for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
+		for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
 		{
-			UObject* Object = UObject::GObjObjects()->Data[i];
+			UObject* Object = UObject::GObjects()->Data[i];
 
 			if (!Object || !Object->Class)
 				continue;
@@ -389,7 +389,7 @@ namespace BL2SDK
 		LogAllUnrealScriptCalls(false);
 
 		GameHooks::UnrealScriptHookManager->Register("Engine.Console.Initialized", "StartupSDK", GameReady);
-		//GameHooks::UnrealScriptHookManager->Register("Function Engine.Interaction.NotifyGameSessionEnded", "ExitGame", &cleanup);
+		//GameHooks::UnrealScriptHookManager->Register("Engine.Interaction.NotifyGameSessionEnded", "ExitGame", &cleanup);
 	}
 
 	// This is called when the process is closing
@@ -407,9 +407,9 @@ namespace BL2SDK
 		SetIsLoadingUDKPackage(true);
 		UPackage* result = BL2SDK::pLoadPackage(0, wideFilename.c_str(), flags);
 		if (force) {
-			for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
+			for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
 			{
-				UObject* Object = UObject::GObjObjects()->Data[i];
+				UObject* Object = UObject::GObjects()->Data[i];
 				if (Object->GetPackageObject() == result)
 					Object->ObjectFlags.A = Object->ObjectFlags.A | 0x4000;
 			}

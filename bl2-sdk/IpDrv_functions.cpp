@@ -1,6783 +1,7019 @@
-#include "stdafx.h"
-/*
-#############################################################################################
-# Borderlands 2 (1.7) SDK
-# Generated with TheFeckless UE3 SDK Generator v1.4_Beta-Rev.51
-# ========================================================================================= #
-# File: IpDrv_functions.h
-# ========================================================================================= #
-# Credits: uNrEaL, Tamimego, SystemFiles, R00T88, _silencer, the1domo, K@N@VEL
-# Thanks: HOOAH07, lowHertz
-# Forums: www.uc-forum.com, www.gamedeception.net
-#############################################################################################
-*/
+// Borderlands 2 (1.8.5) SDK
 
 #ifdef _MSC_VER
-#pragma pack ( push, 0x4 )
+	#pragma pack(push, 0x4)
 #endif
 
-/*
-# ========================================================================================= #
-# Functions
-# ========================================================================================= #
-*/
+#include "stdafx.h"
+
+//---------------------------------------------------------------------------
+//Functions
+//---------------------------------------------------------------------------
 
 // Function IpDrv.InternetLink.ResolveFailed
-// [0x00020800] ( FUNC_Event )
-// Parameters infos:
+// (Event, Public)
 
-void AInternetLink::eventResolveFailed()
+void AInternetLink::ResolveFailed()
 {
-	static UFunction* pFnResolveFailed = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.InternetLink.ResolveFailed");
 
-	if (!pFnResolveFailed)
-		pFnResolveFailed = (UFunction*)UObject::GObjects()->Data[45254];
+	AInternetLink_ResolveFailed_Params params;
 
-	AInternetLink_eventResolveFailed_Parms ResolveFailed_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnResolveFailed, &ResolveFailed_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.InternetLink.Resolved
-// [0x00020800] ( FUNC_Event )
-// Parameters infos:
-// struct FIpAddr                 Addr                           ( CPF_Parm )
+// (Event, Public)
+// Parameters:
+// struct FIpAddr                 Addr                           (Parm)
 
-void AInternetLink::eventResolved(struct FIpAddr Addr)
+void AInternetLink::Resolved(const struct FIpAddr& Addr)
 {
-	static UFunction* pFnResolved = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.InternetLink.Resolved");
 
-	if (!pFnResolved)
-		pFnResolved = (UFunction*)UObject::GObjects()->Data[45252];
+	AInternetLink_Resolved_Params params;
+	params.Addr = Addr;
 
-	AInternetLink_eventResolved_Parms Resolved_Parms;
-	memcpy(&Resolved_Parms.Addr, &Addr, 0x8);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnResolved, &Resolved_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.InternetLink.GetLocalIP
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// struct FIpAddr                 Arg                            ( CPF_Parm | CPF_OutParm )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FIpAddr                 Arg                            (Parm, OutParm)
 
 void AInternetLink::GetLocalIP(struct FIpAddr* Arg)
 {
-	static UFunction* pFnGetLocalIP = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.InternetLink.GetLocalIP");
 
-	if (!pFnGetLocalIP)
-		pFnGetLocalIP = (UFunction*)UObject::GObjects()->Data[45250];
+	AInternetLink_GetLocalIP_Params params;
 
-	AInternetLink_execGetLocalIP_Parms GetLocalIP_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetLocalIP->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetLocalIP, &GetLocalIP_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetLocalIP->FunctionFlags |= 0x400;
+	if (Arg != nullptr)
+		*Arg = params.Arg;
+}
 
-	if (Arg)
-		memcpy(Arg, &GetLocalIP_Parms.Arg, 0x8);
-};
 
 // Function IpDrv.InternetLink.StringToIpAddr
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Str                            ( CPF_Parm | CPF_NeedCtorLink )
-// struct FIpAddr                 Addr                           ( CPF_Parm | CPF_OutParm )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FString                 Str                            (Parm, NeedCtorLink)
+// struct FIpAddr                 Addr                           (Parm, OutParm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool AInternetLink::StringToIpAddr(struct FString Str, struct FIpAddr* Addr)
+bool AInternetLink::StringToIpAddr(const struct FString& Str, struct FIpAddr* Addr)
 {
-	static UFunction* pFnStringToIpAddr = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.InternetLink.StringToIpAddr");
 
-	if (!pFnStringToIpAddr)
-		pFnStringToIpAddr = (UFunction*)UObject::GObjects()->Data[45246];
+	AInternetLink_StringToIpAddr_Params params;
+	params.Str = Str;
 
-	AInternetLink_execStringToIpAddr_Parms StringToIpAddr_Parms;
-	memcpy(&StringToIpAddr_Parms.Str, &Str, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnStringToIpAddr->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnStringToIpAddr, &StringToIpAddr_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnStringToIpAddr->FunctionFlags |= 0x400;
+	if (Addr != nullptr)
+		*Addr = params.Addr;
 
-	if (Addr)
-		memcpy(Addr, &StringToIpAddr_Parms.Addr, 0x8);
+	return params.ReturnValue;
+}
 
-	return StringToIpAddr_Parms.ReturnValue;
-};
 
 // Function IpDrv.InternetLink.IpAddrToString
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// struct FIpAddr                 Arg                            ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FIpAddr                 Arg                            (Parm)
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
-struct FString AInternetLink::IpAddrToString(struct FIpAddr Arg)
+struct FString AInternetLink::IpAddrToString(const struct FIpAddr& Arg)
 {
-	static UFunction* pFnIpAddrToString = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.InternetLink.IpAddrToString");
 
-	if (!pFnIpAddrToString)
-		pFnIpAddrToString = (UFunction*)UObject::GObjects()->Data[45243];
+	AInternetLink_IpAddrToString_Params params;
+	params.Arg = Arg;
 
-	AInternetLink_execIpAddrToString_Parms IpAddrToString_Parms;
-	memcpy(&IpAddrToString_Parms.Arg, &Arg, 0x8);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnIpAddrToString->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnIpAddrToString, &IpAddrToString_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnIpAddrToString->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return IpAddrToString_Parms.ReturnValue;
-};
 
 // Function IpDrv.InternetLink.GetLastError
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// int                            ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Native, Public)
+// Parameters:
+// int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
 int AInternetLink::GetLastError()
 {
-	static UFunction* pFnGetLastError = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.InternetLink.GetLastError");
 
-	if (!pFnGetLastError)
-		pFnGetLastError = (UFunction*)UObject::GObjects()->Data[45241];
+	AInternetLink_GetLastError_Params params;
 
-	AInternetLink_execGetLastError_Parms GetLastError_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetLastError->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetLastError, &GetLastError_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetLastError->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetLastError_Parms.ReturnValue;
-};
 
 // Function IpDrv.InternetLink.Resolve
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// struct FString                 Domain                         ( CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink )
+// (Native, Public)
+// Parameters:
+// struct FString                 Domain                         (Parm, CoerceParm, NeedCtorLink)
 
-void AInternetLink::Resolve(struct FString Domain)
+void AInternetLink::Resolve(const struct FString& Domain)
 {
-	static UFunction* pFnResolve = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.InternetLink.Resolve");
 
-	if (!pFnResolve)
-		pFnResolve = (UFunction*)UObject::GObjects()->Data[45239];
+	AInternetLink_Resolve_Params params;
+	params.Domain = Domain;
 
-	AInternetLink_execResolve_Parms Resolve_Parms;
-	memcpy(&Resolve_Parms.Domain, &Domain, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnResolve->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnResolve, &Resolve_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnResolve->FunctionFlags |= 0x400;
-};
 
 // Function IpDrv.InternetLink.ParseURL
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 URL                            ( CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink )
-// struct FString                 Addr                           ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
-// int                            PortNum                        ( CPF_Parm | CPF_OutParm )
-// struct FString                 LevelName                      ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
-// struct FString                 EntryName                      ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FString                 URL                            (Parm, CoerceParm, NeedCtorLink)
+// struct FString                 Addr                           (Parm, OutParm, NeedCtorLink)
+// int                            PortNum                        (Parm, OutParm)
+// struct FString                 LevelName                      (Parm, OutParm, NeedCtorLink)
+// struct FString                 EntryName                      (Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool AInternetLink::ParseURL(struct FString URL, struct FString* Addr, int* PortNum, struct FString* LevelName, struct FString* EntryName)
+bool AInternetLink::ParseURL(const struct FString& URL, struct FString* Addr, int* PortNum, struct FString* LevelName, struct FString* EntryName)
 {
-	static UFunction* pFnParseURL = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.InternetLink.ParseURL");
 
-	if (!pFnParseURL)
-		pFnParseURL = (UFunction*)UObject::GObjects()->Data[45232];
+	AInternetLink_ParseURL_Params params;
+	params.URL = URL;
 
-	AInternetLink_execParseURL_Parms ParseURL_Parms;
-	memcpy(&ParseURL_Parms.URL, &URL, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnParseURL->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnParseURL, &ParseURL_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnParseURL->FunctionFlags |= 0x400;
+	if (Addr != nullptr)
+		*Addr = params.Addr;
+	if (PortNum != nullptr)
+		*PortNum = params.PortNum;
+	if (LevelName != nullptr)
+		*LevelName = params.LevelName;
+	if (EntryName != nullptr)
+		*EntryName = params.EntryName;
 
-	if (Addr)
-		memcpy(Addr, &ParseURL_Parms.Addr, 0xC);
+	return params.ReturnValue;
+}
 
-	if (PortNum)
-		*PortNum = ParseURL_Parms.PortNum;
-
-	if (LevelName)
-		memcpy(LevelName, &ParseURL_Parms.LevelName, 0xC);
-
-	if (EntryName)
-		memcpy(EntryName, &ParseURL_Parms.EntryName, 0xC);
-
-	return ParseURL_Parms.ReturnValue;
-};
 
 // Function IpDrv.InternetLink.IsDataPending
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Native, Public)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool AInternetLink::IsDataPending()
 {
-	static UFunction* pFnIsDataPending = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.InternetLink.IsDataPending");
 
-	if (!pFnIsDataPending)
-		pFnIsDataPending = (UFunction*)UObject::GObjects()->Data[45230];
+	AInternetLink_IsDataPending_Params params;
 
-	AInternetLink_execIsDataPending_Parms IsDataPending_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnIsDataPending->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnIsDataPending, &IsDataPending_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnIsDataPending->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return IsDataPending_Parms.ReturnValue;
-};
 
 // Function IpDrv.TcpLink.ReceivedBinary
-// [0x00020800] ( FUNC_Event )
-// Parameters infos:
-// int                            Count                          ( CPF_Parm )
-// unsigned char                  B                              ( CPF_Parm )
+// (Event, Public)
+// Parameters:
+// int                            Count                          (Parm)
+// unsigned char                  B                              (Parm)
 
-void ATcpLink::eventReceivedBinary(int Count, unsigned char* B)
+void ATcpLink::ReceivedBinary(int Count, unsigned char B)
 {
-	static UFunction* pFnReceivedBinary = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.TcpLink.ReceivedBinary");
 
-	if (!pFnReceivedBinary)
-		pFnReceivedBinary = (UFunction*)UObject::GObjects()->Data[46271];
+	ATcpLink_ReceivedBinary_Params params;
+	params.Count = Count;
+	params.B = B;
 
-	ATcpLink_eventReceivedBinary_Parms ReceivedBinary_Parms;
-	ReceivedBinary_Parms.Count = Count;
-	memcpy(&ReceivedBinary_Parms.B, &B, 0xFF);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnReceivedBinary, &ReceivedBinary_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.TcpLink.ReceivedLine
-// [0x00020800] ( FUNC_Event )
-// Parameters infos:
-// struct FString                 Line                           ( CPF_Parm | CPF_NeedCtorLink )
+// (Event, Public)
+// Parameters:
+// struct FString                 Line                           (Parm, NeedCtorLink)
 
-void ATcpLink::eventReceivedLine(struct FString Line)
+void ATcpLink::ReceivedLine(const struct FString& Line)
 {
-	static UFunction* pFnReceivedLine = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.TcpLink.ReceivedLine");
 
-	if (!pFnReceivedLine)
-		pFnReceivedLine = (UFunction*)UObject::GObjects()->Data[46269];
+	ATcpLink_ReceivedLine_Params params;
+	params.Line = Line;
 
-	ATcpLink_eventReceivedLine_Parms ReceivedLine_Parms;
-	memcpy(&ReceivedLine_Parms.Line, &Line, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnReceivedLine, &ReceivedLine_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.TcpLink.ReceivedText
-// [0x00020800] ( FUNC_Event )
-// Parameters infos:
-// struct FString                 Text                           ( CPF_Parm | CPF_NeedCtorLink )
+// (Event, Public)
+// Parameters:
+// struct FString                 Text                           (Parm, NeedCtorLink)
 
-void ATcpLink::eventReceivedText(struct FString Text)
+void ATcpLink::ReceivedText(const struct FString& Text)
 {
-	static UFunction* pFnReceivedText = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.TcpLink.ReceivedText");
 
-	if (!pFnReceivedText)
-		pFnReceivedText = (UFunction*)UObject::GObjects()->Data[46267];
+	ATcpLink_ReceivedText_Params params;
+	params.Text = Text;
 
-	ATcpLink_eventReceivedText_Parms ReceivedText_Parms;
-	memcpy(&ReceivedText_Parms.Text, &Text, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnReceivedText, &ReceivedText_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.TcpLink.Closed
-// [0x00020800] ( FUNC_Event )
-// Parameters infos:
+// (Event, Public)
 
-void ATcpLink::eventClosed()
+void ATcpLink::Closed()
 {
-	static UFunction* pFnClosed = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.TcpLink.Closed");
 
-	if (!pFnClosed)
-		pFnClosed = (UFunction*)UObject::GObjects()->Data[46266];
+	ATcpLink_Closed_Params params;
 
-	ATcpLink_eventClosed_Parms Closed_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClosed, &Closed_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.TcpLink.Opened
-// [0x00020800] ( FUNC_Event )
-// Parameters infos:
+// (Event, Public)
 
-void ATcpLink::eventOpened()
+void ATcpLink::Opened()
 {
-	static UFunction* pFnOpened = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.TcpLink.Opened");
 
-	if (!pFnOpened)
-		pFnOpened = (UFunction*)UObject::GObjects()->Data[46265];
+	ATcpLink_Opened_Params params;
 
-	ATcpLink_eventOpened_Parms Opened_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOpened, &Opened_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.TcpLink.Accepted
-// [0x00020800] ( FUNC_Event )
-// Parameters infos:
+// (Event, Public)
 
-void ATcpLink::eventAccepted()
+void ATcpLink::Accepted()
 {
-	static UFunction* pFnAccepted = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.TcpLink.Accepted");
 
-	if (!pFnAccepted)
-		pFnAccepted = (UFunction*)UObject::GObjects()->Data[46264];
+	ATcpLink_Accepted_Params params;
 
-	ATcpLink_eventAccepted_Parms Accepted_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAccepted, &Accepted_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.TcpLink.ReadBinary
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// int                            ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            Count                          ( CPF_Parm )
-// unsigned char                  B                              ( CPF_Parm | CPF_OutParm )
+// (Native, Public, HasOutParms)
+// Parameters:
+// int                            Count                          (Parm)
+// unsigned char                  B                              (Parm, OutParm)
+// int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
 int ATcpLink::ReadBinary(int Count, unsigned char* B)
 {
-	static UFunction* pFnReadBinary = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.TcpLink.ReadBinary");
 
-	if (!pFnReadBinary)
-		pFnReadBinary = (UFunction*)UObject::GObjects()->Data[46260];
+	ATcpLink_ReadBinary_Params params;
+	params.Count = Count;
 
-	ATcpLink_execReadBinary_Parms ReadBinary_Parms;
-	ReadBinary_Parms.Count = Count;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnReadBinary->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnReadBinary, &ReadBinary_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnReadBinary->FunctionFlags |= 0x400;
+	if (B != nullptr)
+		*B = params.B;
 
-	if (B)
-		memcpy(B, &ReadBinary_Parms.B, 0xFF);
+	return params.ReturnValue;
+}
 
-	return ReadBinary_Parms.ReturnValue;
-};
 
 // Function IpDrv.TcpLink.ReadText
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// int                            ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Str                            ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FString                 Str                            (Parm, OutParm, NeedCtorLink)
+// int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
 int ATcpLink::ReadText(struct FString* Str)
 {
-	static UFunction* pFnReadText = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.TcpLink.ReadText");
 
-	if (!pFnReadText)
-		pFnReadText = (UFunction*)UObject::GObjects()->Data[46257];
+	ATcpLink_ReadText_Params params;
 
-	ATcpLink_execReadText_Parms ReadText_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnReadText->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnReadText, &ReadText_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnReadText->FunctionFlags |= 0x400;
+	if (Str != nullptr)
+		*Str = params.Str;
 
-	if (Str)
-		memcpy(Str, &ReadText_Parms.Str, 0xC);
+	return params.ReturnValue;
+}
 
-	return ReadText_Parms.ReturnValue;
-};
 
 // Function IpDrv.TcpLink.SendBinary
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// int                            ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            Count                          ( CPF_Parm )
-// unsigned char                  B                              ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// int                            Count                          (Parm)
+// unsigned char                  B                              (Parm)
+// int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
-int ATcpLink::SendBinary(int Count, unsigned char* B)
+int ATcpLink::SendBinary(int Count, unsigned char B)
 {
-	static UFunction* pFnSendBinary = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.TcpLink.SendBinary");
 
-	if (!pFnSendBinary)
-		pFnSendBinary = (UFunction*)UObject::GObjects()->Data[46253];
+	ATcpLink_SendBinary_Params params;
+	params.Count = Count;
+	params.B = B;
 
-	ATcpLink_execSendBinary_Parms SendBinary_Parms;
-	SendBinary_Parms.Count = Count;
-	memcpy(&SendBinary_Parms.B, &B, 0xFF);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSendBinary->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSendBinary, &SendBinary_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnSendBinary->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return SendBinary_Parms.ReturnValue;
-};
 
 // Function IpDrv.TcpLink.SendText
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// int                            ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Str                            ( CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink )
+// (Native, Public)
+// Parameters:
+// struct FString                 Str                            (Parm, CoerceParm, NeedCtorLink)
+// int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
-int ATcpLink::SendText(struct FString Str)
+int ATcpLink::SendText(const struct FString& Str)
 {
-	static UFunction* pFnSendText = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.TcpLink.SendText");
 
-	if (!pFnSendText)
-		pFnSendText = (UFunction*)UObject::GObjects()->Data[46250];
+	ATcpLink_SendText_Params params;
+	params.Str = Str;
 
-	ATcpLink_execSendText_Parms SendText_Parms;
-	memcpy(&SendText_Parms.Str, &Str, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSendText->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSendText, &SendText_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnSendText->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return SendText_Parms.ReturnValue;
-};
 
 // Function IpDrv.TcpLink.IsConnected
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Native, Public)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool ATcpLink::IsConnected()
 {
-	static UFunction* pFnIsConnected = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.TcpLink.IsConnected");
 
-	if (!pFnIsConnected)
-		pFnIsConnected = (UFunction*)UObject::GObjects()->Data[46248];
+	ATcpLink_IsConnected_Params params;
 
-	ATcpLink_execIsConnected_Parms IsConnected_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnIsConnected->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnIsConnected, &IsConnected_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnIsConnected->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return IsConnected_Parms.ReturnValue;
-};
 
 // Function IpDrv.TcpLink.Close
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Native, Public)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool ATcpLink::Close()
 {
-	static UFunction* pFnClose = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.TcpLink.Close");
 
-	if (!pFnClose)
-		pFnClose = (UFunction*)UObject::GObjects()->Data[46246];
+	ATcpLink_Close_Params params;
 
-	ATcpLink_execClose_Parms Close_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnClose->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnClose, &Close_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnClose->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return Close_Parms.ReturnValue;
-};
 
 // Function IpDrv.TcpLink.Open
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FIpAddr                 Addr                           ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FIpAddr                 Addr                           (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool ATcpLink::Open(struct FIpAddr Addr)
+bool ATcpLink::Open(const struct FIpAddr& Addr)
 {
-	static UFunction* pFnOpen = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.TcpLink.Open");
 
-	if (!pFnOpen)
-		pFnOpen = (UFunction*)UObject::GObjects()->Data[46243];
+	ATcpLink_Open_Params params;
+	params.Addr = Addr;
 
-	ATcpLink_execOpen_Parms Open_Parms;
-	memcpy(&Open_Parms.Addr, &Addr, 0x8);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnOpen->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnOpen, &Open_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnOpen->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return Open_Parms.ReturnValue;
-};
 
 // Function IpDrv.TcpLink.Listen
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Native, Public)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool ATcpLink::Listen()
 {
-	static UFunction* pFnListen = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.TcpLink.Listen");
 
-	if (!pFnListen)
-		pFnListen = (UFunction*)UObject::GObjects()->Data[46241];
+	ATcpLink_Listen_Params params;
 
-	ATcpLink_execListen_Parms Listen_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnListen->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnListen, &Listen_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnListen->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return Listen_Parms.ReturnValue;
-};
 
 // Function IpDrv.TcpLink.BindPort
-// [0x00024400] ( FUNC_Native )
-// Parameters infos:
-// int                            ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            PortNum                        ( CPF_OptionalParm | CPF_Parm )
-// unsigned long                  bUseNextAvailable              ( CPF_OptionalParm | CPF_Parm )
+// (Native, HasOptionalParms, Public)
+// Parameters:
+// int                            PortNum                        (OptionalParm, Parm)
+// bool                           bUseNextAvailable              (OptionalParm, Parm)
+// int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
-int ATcpLink::BindPort(int PortNum, unsigned long bUseNextAvailable)
+int ATcpLink::BindPort(int PortNum, bool bUseNextAvailable)
 {
-	static UFunction* pFnBindPort = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.TcpLink.BindPort");
 
-	if (!pFnBindPort)
-		pFnBindPort = (UFunction*)UObject::GObjects()->Data[46237];
+	ATcpLink_BindPort_Params params;
+	params.PortNum = PortNum;
+	params.bUseNextAvailable = bUseNextAvailable;
 
-	ATcpLink_execBindPort_Parms BindPort_Parms;
-	BindPort_Parms.PortNum = PortNum;
-	BindPort_Parms.bUseNextAvailable = bUseNextAvailable;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnBindPort->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnBindPort, &BindPort_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnBindPort->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return BindPort_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineEventsInterfaceMcp.UploadMatchmakingStats
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FUniqueNetId            UniqueId                       ( CPF_Parm )
-// class UOnlineMatchmakingStats* MMStats                        ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FUniqueNetId            UniqueId                       (Parm)
+// class UOnlineMatchmakingStats* MMStats                        (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineEventsInterfaceMcp::UploadMatchmakingStats(struct FUniqueNetId UniqueId, class UOnlineMatchmakingStats* MMStats)
+bool UOnlineEventsInterfaceMcp::UploadMatchmakingStats(const struct FUniqueNetId& UniqueId, class UOnlineMatchmakingStats* MMStats)
 {
-	static UFunction* pFnUploadMatchmakingStats = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineEventsInterfaceMcp.UploadMatchmakingStats");
 
-	if (!pFnUploadMatchmakingStats)
-		pFnUploadMatchmakingStats = (UFunction*)UObject::GObjects()->Data[45556];
+	UOnlineEventsInterfaceMcp_UploadMatchmakingStats_Params params;
+	params.UniqueId = UniqueId;
+	params.MMStats = MMStats;
 
-	UOnlineEventsInterfaceMcp_execUploadMatchmakingStats_Parms UploadMatchmakingStats_Parms;
-	memcpy(&UploadMatchmakingStats_Parms.UniqueId, &UniqueId, 0x18);
-	UploadMatchmakingStats_Parms.MMStats = MMStats;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnUploadMatchmakingStats->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnUploadMatchmakingStats, &UploadMatchmakingStats_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnUploadMatchmakingStats->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return UploadMatchmakingStats_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineEventsInterfaceMcp.UpdatePlaylistPopulation
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            PlaylistId                     ( CPF_Parm )
-// int                            NumPlayers                     ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// int                            PlaylistId                     (Parm)
+// int                            NumPlayers                     (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineEventsInterfaceMcp::UpdatePlaylistPopulation(int PlaylistId, int NumPlayers)
 {
-	static UFunction* pFnUpdatePlaylistPopulation = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineEventsInterfaceMcp.UpdatePlaylistPopulation");
 
-	if (!pFnUpdatePlaylistPopulation)
-		pFnUpdatePlaylistPopulation = (UFunction*)UObject::GObjects()->Data[45552];
+	UOnlineEventsInterfaceMcp_UpdatePlaylistPopulation_Params params;
+	params.PlaylistId = PlaylistId;
+	params.NumPlayers = NumPlayers;
 
-	UOnlineEventsInterfaceMcp_execUpdatePlaylistPopulation_Parms UpdatePlaylistPopulation_Parms;
-	UpdatePlaylistPopulation_Parms.PlaylistId = PlaylistId;
-	UpdatePlaylistPopulation_Parms.NumPlayers = NumPlayers;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnUpdatePlaylistPopulation->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnUpdatePlaylistPopulation, &UpdatePlaylistPopulation_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnUpdatePlaylistPopulation->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return UpdatePlaylistPopulation_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineEventsInterfaceMcp.UploadGameplayEventsData
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FUniqueNetId            UniqueId                       ( CPF_Parm )
-// TArray< unsigned char >        Payload                        ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FUniqueNetId            UniqueId                       (Parm)
+// TArray<unsigned char>          Payload                        (Const, Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineEventsInterfaceMcp::UploadGameplayEventsData(struct FUniqueNetId UniqueId, TArray< unsigned char >* Payload)
+bool UOnlineEventsInterfaceMcp::UploadGameplayEventsData(const struct FUniqueNetId& UniqueId, TArray<unsigned char>* Payload)
 {
-	static UFunction* pFnUploadGameplayEventsData = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineEventsInterfaceMcp.UploadGameplayEventsData");
 
-	if (!pFnUploadGameplayEventsData)
-		pFnUploadGameplayEventsData = (UFunction*)UObject::GObjects()->Data[45547];
+	UOnlineEventsInterfaceMcp_UploadGameplayEventsData_Params params;
+	params.UniqueId = UniqueId;
 
-	UOnlineEventsInterfaceMcp_execUploadGameplayEventsData_Parms UploadGameplayEventsData_Parms;
-	memcpy(&UploadGameplayEventsData_Parms.UniqueId, &UniqueId, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnUploadGameplayEventsData->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnUploadGameplayEventsData, &UploadGameplayEventsData_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnUploadGameplayEventsData->FunctionFlags |= 0x400;
+	if (Payload != nullptr)
+		*Payload = params.Payload;
 
-	if (Payload)
-		memcpy(Payload, &UploadGameplayEventsData_Parms.Payload, 0xC);
+	return params.ReturnValue;
+}
 
-	return UploadGameplayEventsData_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineEventsInterfaceMcp.UploadPlayerData
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FUniqueNetId            UniqueId                       ( CPF_Parm )
-// struct FString                 PlayerNick                     ( CPF_Parm | CPF_NeedCtorLink )
-// class UOnlineProfileSettings*  ProfileSettings                ( CPF_Parm )
-// class UOnlinePlayerStorage*    PlayerStorage                  ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FUniqueNetId            UniqueId                       (Parm)
+// struct FString                 PlayerNick                     (Parm, NeedCtorLink)
+// class UOnlineProfileSettings*  ProfileSettings                (Parm)
+// class UOnlinePlayerStorage*    PlayerStorage                  (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineEventsInterfaceMcp::UploadPlayerData(struct FUniqueNetId UniqueId, struct FString PlayerNick, class UOnlineProfileSettings* ProfileSettings, class UOnlinePlayerStorage* PlayerStorage)
+bool UOnlineEventsInterfaceMcp::UploadPlayerData(const struct FUniqueNetId& UniqueId, const struct FString& PlayerNick, class UOnlineProfileSettings* ProfileSettings, class UOnlinePlayerStorage* PlayerStorage)
 {
-	static UFunction* pFnUploadPlayerData = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineEventsInterfaceMcp.UploadPlayerData");
 
-	if (!pFnUploadPlayerData)
-		pFnUploadPlayerData = (UFunction*)UObject::GObjects()->Data[45541];
+	UOnlineEventsInterfaceMcp_UploadPlayerData_Params params;
+	params.UniqueId = UniqueId;
+	params.PlayerNick = PlayerNick;
+	params.ProfileSettings = ProfileSettings;
+	params.PlayerStorage = PlayerStorage;
 
-	UOnlineEventsInterfaceMcp_execUploadPlayerData_Parms UploadPlayerData_Parms;
-	memcpy(&UploadPlayerData_Parms.UniqueId, &UniqueId, 0x18);
-	memcpy(&UploadPlayerData_Parms.PlayerNick, &PlayerNick, 0xC);
-	UploadPlayerData_Parms.ProfileSettings = ProfileSettings;
-	UploadPlayerData_Parms.PlayerStorage = PlayerStorage;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnUploadPlayerData->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnUploadPlayerData, &UploadPlayerData_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnUploadPlayerData->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return UploadPlayerData_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineNewsInterfaceMcp.GetNews
-// [0x00020002]
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// unsigned char                  NewsType                       ( CPF_Parm )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// unsigned char                  NewsType                       (Parm)
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
 struct FString UOnlineNewsInterfaceMcp::GetNews(unsigned char LocalUserNum, unsigned char NewsType)
 {
-	static UFunction* pFnGetNews = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineNewsInterfaceMcp.GetNews");
 
-	if (!pFnGetNews)
-		pFnGetNews = (UFunction*)UObject::GObjects()->Data[45862];
+	UOnlineNewsInterfaceMcp_GetNews_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.NewsType = NewsType;
 
-	UOnlineNewsInterfaceMcp_execGetNews_Parms GetNews_Parms;
-	GetNews_Parms.LocalUserNum = LocalUserNum;
-	GetNews_Parms.NewsType = NewsType;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetNews, &GetNews_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return GetNews_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.OnlineNewsInterfaceMcp.ClearReadNewsCompletedDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         ReadGameNewsDelegate           ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         ReadGameNewsDelegate           (Parm, NeedCtorLink)
 
-void UOnlineNewsInterfaceMcp::ClearReadNewsCompletedDelegate(struct FScriptDelegate ReadGameNewsDelegate)
+void UOnlineNewsInterfaceMcp::ClearReadNewsCompletedDelegate(const struct FScriptDelegate& ReadGameNewsDelegate)
 {
-	static UFunction* pFnClearReadNewsCompletedDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineNewsInterfaceMcp.ClearReadNewsCompletedDelegate");
 
-	if (!pFnClearReadNewsCompletedDelegate)
-		pFnClearReadNewsCompletedDelegate = (UFunction*)UObject::GObjects()->Data[45860];
+	UOnlineNewsInterfaceMcp_ClearReadNewsCompletedDelegate_Params params;
+	params.ReadGameNewsDelegate = ReadGameNewsDelegate;
 
-	UOnlineNewsInterfaceMcp_execClearReadNewsCompletedDelegate_Parms ClearReadNewsCompletedDelegate_Parms;
-	memcpy(&ClearReadNewsCompletedDelegate_Parms.ReadGameNewsDelegate, &ReadGameNewsDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearReadNewsCompletedDelegate, &ClearReadNewsCompletedDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineNewsInterfaceMcp.AddReadNewsCompletedDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         ReadNewsDelegate               ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         ReadNewsDelegate               (Parm, NeedCtorLink)
 
-void UOnlineNewsInterfaceMcp::AddReadNewsCompletedDelegate(struct FScriptDelegate ReadNewsDelegate)
+void UOnlineNewsInterfaceMcp::AddReadNewsCompletedDelegate(const struct FScriptDelegate& ReadNewsDelegate)
 {
-	static UFunction* pFnAddReadNewsCompletedDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineNewsInterfaceMcp.AddReadNewsCompletedDelegate");
 
-	if (!pFnAddReadNewsCompletedDelegate)
-		pFnAddReadNewsCompletedDelegate = (UFunction*)UObject::GObjects()->Data[45858];
+	UOnlineNewsInterfaceMcp_AddReadNewsCompletedDelegate_Params params;
+	params.ReadNewsDelegate = ReadNewsDelegate;
 
-	UOnlineNewsInterfaceMcp_execAddReadNewsCompletedDelegate_Parms AddReadNewsCompletedDelegate_Parms;
-	memcpy(&AddReadNewsCompletedDelegate_Parms.ReadNewsDelegate, &ReadNewsDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddReadNewsCompletedDelegate, &AddReadNewsCompletedDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineNewsInterfaceMcp.OnReadNewsCompleted
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
-// unsigned char                  NewsType                       ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
+// unsigned char                  NewsType                       (Parm)
 
-void UOnlineNewsInterfaceMcp::OnReadNewsCompleted(unsigned long bWasSuccessful, unsigned char NewsType)
+void UOnlineNewsInterfaceMcp::OnReadNewsCompleted(bool bWasSuccessful, unsigned char NewsType)
 {
-	static UFunction* pFnOnReadNewsCompleted = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineNewsInterfaceMcp.OnReadNewsCompleted");
 
-	if (!pFnOnReadNewsCompleted)
-		pFnOnReadNewsCompleted = (UFunction*)UObject::GObjects()->Data[45842];
+	UOnlineNewsInterfaceMcp_OnReadNewsCompleted_Params params;
+	params.bWasSuccessful = bWasSuccessful;
+	params.NewsType = NewsType;
 
-	UOnlineNewsInterfaceMcp_execOnReadNewsCompleted_Parms OnReadNewsCompleted_Parms;
-	OnReadNewsCompleted_Parms.bWasSuccessful = bWasSuccessful;
-	OnReadNewsCompleted_Parms.NewsType = NewsType;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReadNewsCompleted, &OnReadNewsCompleted_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineNewsInterfaceMcp.ReadNews
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// unsigned char                  NewsType                       ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// unsigned char                  NewsType                       (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineNewsInterfaceMcp::ReadNews(unsigned char LocalUserNum, unsigned char NewsType)
 {
-	static UFunction* pFnReadNews = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineNewsInterfaceMcp.ReadNews");
 
-	if (!pFnReadNews)
-		pFnReadNews = (UFunction*)UObject::GObjects()->Data[45852];
+	UOnlineNewsInterfaceMcp_ReadNews_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.NewsType = NewsType;
 
-	UOnlineNewsInterfaceMcp_execReadNews_Parms ReadNews_Parms;
-	ReadNews_Parms.LocalUserNum = LocalUserNum;
-	ReadNews_Parms.NewsType = NewsType;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnReadNews->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnReadNews, &ReadNews_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnReadNews->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ReadNews_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineTitleFileDownloadMcp.ClearShareTitleFileCompleteDelegate
-// [0x00020000]
-// Parameters infos:
-// struct FScriptDelegate         ShareTitleFileCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// struct FScriptDelegate         ShareTitleFileCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineTitleFileDownloadMcp::ClearShareTitleFileCompleteDelegate(struct FScriptDelegate ShareTitleFileCompleteDelegate)
+void UOnlineTitleFileDownloadMcp::ClearShareTitleFileCompleteDelegate(const struct FScriptDelegate& ShareTitleFileCompleteDelegate)
 {
-	static UFunction* pFnClearShareTitleFileCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineTitleFileDownloadMcp.ClearShareTitleFileCompleteDelegate");
 
-	if (!pFnClearShareTitleFileCompleteDelegate)
-		pFnClearShareTitleFileCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46078];
+	UOnlineTitleFileDownloadMcp_ClearShareTitleFileCompleteDelegate_Params params;
+	params.ShareTitleFileCompleteDelegate = ShareTitleFileCompleteDelegate;
 
-	UOnlineTitleFileDownloadMcp_execClearShareTitleFileCompleteDelegate_Parms ClearShareTitleFileCompleteDelegate_Parms;
-	memcpy(&ClearShareTitleFileCompleteDelegate_Parms.ShareTitleFileCompleteDelegate, &ShareTitleFileCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearShareTitleFileCompleteDelegate, &ClearShareTitleFileCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineTitleFileDownloadMcp.AddShareTitleFileCompleteDelegate
-// [0x00020000]
-// Parameters infos:
-// struct FScriptDelegate         ShareTitleFileCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// struct FScriptDelegate         ShareTitleFileCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineTitleFileDownloadMcp::AddShareTitleFileCompleteDelegate(struct FScriptDelegate ShareTitleFileCompleteDelegate)
+void UOnlineTitleFileDownloadMcp::AddShareTitleFileCompleteDelegate(const struct FScriptDelegate& ShareTitleFileCompleteDelegate)
 {
-	static UFunction* pFnAddShareTitleFileCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineTitleFileDownloadMcp.AddShareTitleFileCompleteDelegate");
 
-	if (!pFnAddShareTitleFileCompleteDelegate)
-		pFnAddShareTitleFileCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46076];
+	UOnlineTitleFileDownloadMcp_AddShareTitleFileCompleteDelegate_Params params;
+	params.ShareTitleFileCompleteDelegate = ShareTitleFileCompleteDelegate;
 
-	UOnlineTitleFileDownloadMcp_execAddShareTitleFileCompleteDelegate_Parms AddShareTitleFileCompleteDelegate_Parms;
-	memcpy(&AddShareTitleFileCompleteDelegate_Parms.ShareTitleFileCompleteDelegate, &ShareTitleFileCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddShareTitleFileCompleteDelegate, &AddShareTitleFileCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineTitleFileDownloadMcp.ShareTitleFile
-// [0x00020000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 FileToShare                    ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// struct FString                 FileToShare                    (Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineTitleFileDownloadMcp::ShareTitleFile(struct FString FileToShare)
+bool UOnlineTitleFileDownloadMcp::ShareTitleFile(const struct FString& FileToShare)
 {
-	static UFunction* pFnShareTitleFile = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineTitleFileDownloadMcp.ShareTitleFile");
 
-	if (!pFnShareTitleFile)
-		pFnShareTitleFile = (UFunction*)UObject::GObjects()->Data[46073];
+	UOnlineTitleFileDownloadMcp_ShareTitleFile_Params params;
+	params.FileToShare = FileToShare;
 
-	UOnlineTitleFileDownloadMcp_execShareTitleFile_Parms ShareTitleFile_Parms;
-	memcpy(&ShareTitleFile_Parms.FileToShare, &FileToShare, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnShareTitleFile, &ShareTitleFile_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return ShareTitleFile_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.OnlineTitleFileDownloadMcp.ClearDownloadedFile
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
+// (Native, Public)
+// Parameters:
+// struct FString                 Filename                       (Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineTitleFileDownloadMcp::ClearDownloadedFile(struct FString Filename)
+bool UOnlineTitleFileDownloadMcp::ClearDownloadedFile(const struct FString& Filename)
 {
-	static UFunction* pFnClearDownloadedFile = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineTitleFileDownloadMcp.ClearDownloadedFile");
 
-	if (!pFnClearDownloadedFile)
-		pFnClearDownloadedFile = (UFunction*)UObject::GObjects()->Data[46070];
+	UOnlineTitleFileDownloadMcp_ClearDownloadedFile_Params params;
+	params.Filename = Filename;
 
-	UOnlineTitleFileDownloadMcp_execClearDownloadedFile_Parms ClearDownloadedFile_Parms;
-	memcpy(&ClearDownloadedFile_Parms.Filename, &Filename, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnClearDownloadedFile->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnClearDownloadedFile, &ClearDownloadedFile_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnClearDownloadedFile->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ClearDownloadedFile_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineTitleFileDownloadMcp.ClearDownloadedFiles
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Native, Public)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineTitleFileDownloadMcp::ClearDownloadedFiles()
 {
-	static UFunction* pFnClearDownloadedFiles = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineTitleFileDownloadMcp.ClearDownloadedFiles");
 
-	if (!pFnClearDownloadedFiles)
-		pFnClearDownloadedFiles = (UFunction*)UObject::GObjects()->Data[46068];
+	UOnlineTitleFileDownloadMcp_ClearDownloadedFiles_Params params;
 
-	UOnlineTitleFileDownloadMcp_execClearDownloadedFiles_Parms ClearDownloadedFiles_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnClearDownloadedFiles->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnClearDownloadedFiles, &ClearDownloadedFiles_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnClearDownloadedFiles->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ClearDownloadedFiles_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineTitleFileDownloadMcp.GetTitleFileState
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FString                 Filename                       (Parm, NeedCtorLink)
+// unsigned char                  ReturnValue                    (Parm, OutParm, ReturnParm)
 
-unsigned char UOnlineTitleFileDownloadMcp::GetTitleFileState(struct FString Filename)
+unsigned char UOnlineTitleFileDownloadMcp::GetTitleFileState(const struct FString& Filename)
 {
-	static UFunction* pFnGetTitleFileState = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineTitleFileDownloadMcp.GetTitleFileState");
 
-	if (!pFnGetTitleFileState)
-		pFnGetTitleFileState = (UFunction*)UObject::GObjects()->Data[46065];
+	UOnlineTitleFileDownloadMcp_GetTitleFileState_Params params;
+	params.Filename = Filename;
 
-	UOnlineTitleFileDownloadMcp_execGetTitleFileState_Parms GetTitleFileState_Parms;
-	memcpy(&GetTitleFileState_Parms.Filename, &Filename, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetTitleFileState, &GetTitleFileState_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return GetTitleFileState_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.OnlineTitleFileDownloadMcp.GetTitleFileContents
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
-// TArray< unsigned char >        FileContents                   ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FString                 Filename                       (Parm, NeedCtorLink)
+// TArray<unsigned char>          FileContents                   (Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineTitleFileDownloadMcp::GetTitleFileContents(struct FString Filename, TArray< unsigned char >* FileContents)
+bool UOnlineTitleFileDownloadMcp::GetTitleFileContents(const struct FString& Filename, TArray<unsigned char>* FileContents)
 {
-	static UFunction* pFnGetTitleFileContents = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineTitleFileDownloadMcp.GetTitleFileContents");
 
-	if (!pFnGetTitleFileContents)
-		pFnGetTitleFileContents = (UFunction*)UObject::GObjects()->Data[46060];
+	UOnlineTitleFileDownloadMcp_GetTitleFileContents_Params params;
+	params.Filename = Filename;
 
-	UOnlineTitleFileDownloadMcp_execGetTitleFileContents_Parms GetTitleFileContents_Parms;
-	memcpy(&GetTitleFileContents_Parms.Filename, &Filename, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetTitleFileContents->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetTitleFileContents, &GetTitleFileContents_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetTitleFileContents->FunctionFlags |= 0x400;
+	if (FileContents != nullptr)
+		*FileContents = params.FileContents;
 
-	if (FileContents)
-		memcpy(FileContents, &GetTitleFileContents_Parms.FileContents, 0xC);
+	return params.ReturnValue;
+}
 
-	return GetTitleFileContents_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineTitleFileDownloadMcp.ClearReadTitleFileCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         ReadTitleFileCompleteDelegate  ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         ReadTitleFileCompleteDelegate  (Parm, NeedCtorLink)
 
-void UOnlineTitleFileDownloadMcp::ClearReadTitleFileCompleteDelegate(struct FScriptDelegate ReadTitleFileCompleteDelegate)
+void UOnlineTitleFileDownloadMcp::ClearReadTitleFileCompleteDelegate(const struct FScriptDelegate& ReadTitleFileCompleteDelegate)
 {
-	static UFunction* pFnClearReadTitleFileCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineTitleFileDownloadMcp.ClearReadTitleFileCompleteDelegate");
 
-	if (!pFnClearReadTitleFileCompleteDelegate)
-		pFnClearReadTitleFileCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46058];
+	UOnlineTitleFileDownloadMcp_ClearReadTitleFileCompleteDelegate_Params params;
+	params.ReadTitleFileCompleteDelegate = ReadTitleFileCompleteDelegate;
 
-	UOnlineTitleFileDownloadMcp_execClearReadTitleFileCompleteDelegate_Parms ClearReadTitleFileCompleteDelegate_Parms;
-	memcpy(&ClearReadTitleFileCompleteDelegate_Parms.ReadTitleFileCompleteDelegate, &ReadTitleFileCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearReadTitleFileCompleteDelegate, &ClearReadTitleFileCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineTitleFileDownloadMcp.AddReadTitleFileCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         ReadTitleFileCompleteDelegate  ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         ReadTitleFileCompleteDelegate  (Parm, NeedCtorLink)
 
-void UOnlineTitleFileDownloadMcp::AddReadTitleFileCompleteDelegate(struct FScriptDelegate ReadTitleFileCompleteDelegate)
+void UOnlineTitleFileDownloadMcp::AddReadTitleFileCompleteDelegate(const struct FScriptDelegate& ReadTitleFileCompleteDelegate)
 {
-	static UFunction* pFnAddReadTitleFileCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineTitleFileDownloadMcp.AddReadTitleFileCompleteDelegate");
 
-	if (!pFnAddReadTitleFileCompleteDelegate)
-		pFnAddReadTitleFileCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46056];
+	UOnlineTitleFileDownloadMcp_AddReadTitleFileCompleteDelegate_Params params;
+	params.ReadTitleFileCompleteDelegate = ReadTitleFileCompleteDelegate;
 
-	UOnlineTitleFileDownloadMcp_execAddReadTitleFileCompleteDelegate_Parms AddReadTitleFileCompleteDelegate_Parms;
-	memcpy(&AddReadTitleFileCompleteDelegate_Parms.ReadTitleFileCompleteDelegate, &ReadTitleFileCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddReadTitleFileCompleteDelegate, &AddReadTitleFileCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineTitleFileDownloadMcp.ReadTitleFile
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FString                 FileToRead                     ( CPF_Parm | CPF_NeedCtorLink )
+// (Native, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FString                 FileToRead                     (Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineTitleFileDownloadMcp::ReadTitleFile(unsigned char LocalUserNum, struct FString FileToRead)
+bool UOnlineTitleFileDownloadMcp::ReadTitleFile(unsigned char LocalUserNum, const struct FString& FileToRead)
 {
-	static UFunction* pFnReadTitleFile = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineTitleFileDownloadMcp.ReadTitleFile");
 
-	if (!pFnReadTitleFile)
-		pFnReadTitleFile = (UFunction*)UObject::GObjects()->Data[46052];
+	UOnlineTitleFileDownloadMcp_ReadTitleFile_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.FileToRead = FileToRead;
 
-	UOnlineTitleFileDownloadMcp_execReadTitleFile_Parms ReadTitleFile_Parms;
-	ReadTitleFile_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ReadTitleFile_Parms.FileToRead, &FileToRead, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnReadTitleFile->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnReadTitleFile, &ReadTitleFile_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnReadTitleFile->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ReadTitleFile_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineTitleFileDownloadMcp.OnShareTitleFileComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 UGCHandle                      ( CPF_Parm | CPF_NeedCtorLink )
+// (Public, Delegate)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
+// struct FString                 Filename                       (Parm, NeedCtorLink)
+// struct FString                 UGCHandle                      (Parm, NeedCtorLink)
 
-void UOnlineTitleFileDownloadMcp::OnShareTitleFileComplete(unsigned long bWasSuccessful, struct FString Filename, struct FString UGCHandle)
+void UOnlineTitleFileDownloadMcp::OnShareTitleFileComplete(bool bWasSuccessful, const struct FString& Filename, const struct FString& UGCHandle)
 {
-	static UFunction* pFnOnShareTitleFileComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineTitleFileDownloadMcp.OnShareTitleFileComplete");
 
-	if (!pFnOnShareTitleFileComplete)
-		pFnOnShareTitleFileComplete = (UFunction*)UObject::GObjects()->Data[46039];
+	UOnlineTitleFileDownloadMcp_OnShareTitleFileComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
+	params.Filename = Filename;
+	params.UGCHandle = UGCHandle;
 
-	UOnlineTitleFileDownloadMcp_execOnShareTitleFileComplete_Parms OnShareTitleFileComplete_Parms;
-	OnShareTitleFileComplete_Parms.bWasSuccessful = bWasSuccessful;
-	memcpy(&OnShareTitleFileComplete_Parms.Filename, &Filename, 0xC);
-	memcpy(&OnShareTitleFileComplete_Parms.UGCHandle, &UGCHandle, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnShareTitleFileComplete, &OnShareTitleFileComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineTitleFileDownloadMcp.OnReadTitleFileComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
+// (Public, Delegate)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
+// struct FString                 Filename                       (Parm, NeedCtorLink)
 
-void UOnlineTitleFileDownloadMcp::OnReadTitleFileComplete(unsigned long bWasSuccessful, struct FString Filename)
+void UOnlineTitleFileDownloadMcp::OnReadTitleFileComplete(bool bWasSuccessful, const struct FString& Filename)
 {
-	static UFunction* pFnOnReadTitleFileComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineTitleFileDownloadMcp.OnReadTitleFileComplete");
 
-	if (!pFnOnReadTitleFileComplete)
-		pFnOnReadTitleFileComplete = (UFunction*)UObject::GObjects()->Data[46031];
+	UOnlineTitleFileDownloadMcp_OnReadTitleFileComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
+	params.Filename = Filename;
 
-	UOnlineTitleFileDownloadMcp_execOnReadTitleFileComplete_Parms OnReadTitleFileComplete_Parms;
-	OnReadTitleFileComplete_Parms.bWasSuccessful = bWasSuccessful;
-	memcpy(&OnReadTitleFileComplete_Parms.Filename, &Filename, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReadTitleFileComplete, &OnReadTitleFileComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.MeshBeacon.DestroyBeacon
-// [0x00020C00] ( FUNC_Event | FUNC_Native )
-// Parameters infos:
+// (Native, Event, Public)
 
-void UMeshBeacon::eventDestroyBeacon()
+void UMeshBeacon::DestroyBeacon()
 {
-	static UFunction* pFnDestroyBeacon = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.MeshBeacon.DestroyBeacon");
 
-	if (!pFnDestroyBeacon)
-		pFnDestroyBeacon = (UFunction*)UObject::GObjects()->Data[45285];
+	UMeshBeacon_DestroyBeacon_Params params;
 
-	UMeshBeacon_eventDestroyBeacon_Parms DestroyBeacon_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnDestroyBeacon->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnDestroyBeacon, &DestroyBeacon_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnDestroyBeacon->FunctionFlags |= 0x400;
-};
 
 // Function IpDrv.MeshBeaconClient.SendHostNewGameSessionResponse
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned long                  bSuccess                       ( CPF_Parm )
-// struct FName                   SessionName                    ( CPF_Parm )
-// class UClass*                  SearchClass                    ( CPF_Parm )
-// unsigned char                  PlatformSpecificInfo           ( CPF_Const | CPF_Parm | CPF_OutParm )
+// (Native, Public, HasOutParms)
+// Parameters:
+// bool                           bSuccess                       (Parm)
+// struct FName                   SessionName                    (Parm)
+// class UClass*                  SearchClass                    (Parm)
+// unsigned char                  PlatformSpecificInfo           (Const, Parm, OutParm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UMeshBeaconClient::SendHostNewGameSessionResponse(unsigned long bSuccess, struct FName SessionName, class UClass* SearchClass, unsigned char* PlatformSpecificInfo)
+bool UMeshBeaconClient::SendHostNewGameSessionResponse(bool bSuccess, const struct FName& SessionName, class UClass* SearchClass, unsigned char* PlatformSpecificInfo)
 {
-	static UFunction* pFnSendHostNewGameSessionResponse = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.MeshBeaconClient.SendHostNewGameSessionResponse");
 
-	if (!pFnSendHostNewGameSessionResponse)
-		pFnSendHostNewGameSessionResponse = (UFunction*)UObject::GObjects()->Data[45345];
+	UMeshBeaconClient_SendHostNewGameSessionResponse_Params params;
+	params.bSuccess = bSuccess;
+	params.SessionName = SessionName;
+	params.SearchClass = SearchClass;
 
-	UMeshBeaconClient_execSendHostNewGameSessionResponse_Parms SendHostNewGameSessionResponse_Parms;
-	SendHostNewGameSessionResponse_Parms.bSuccess = bSuccess;
-	memcpy(&SendHostNewGameSessionResponse_Parms.SessionName, &SessionName, 0x8);
-	SendHostNewGameSessionResponse_Parms.SearchClass = SearchClass;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSendHostNewGameSessionResponse->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSendHostNewGameSessionResponse, &SendHostNewGameSessionResponse_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnSendHostNewGameSessionResponse->FunctionFlags |= 0x400;
+	if (PlatformSpecificInfo != nullptr)
+		*PlatformSpecificInfo = params.PlatformSpecificInfo;
 
-	if (PlatformSpecificInfo)
-		memcpy(PlatformSpecificInfo, &SendHostNewGameSessionResponse_Parms.PlatformSpecificInfo, 0x50);
+	return params.ReturnValue;
+}
 
-	return SendHostNewGameSessionResponse_Parms.ReturnValue;
-};
 
 // Function IpDrv.MeshBeaconClient.OnCreateNewSessionRequestReceived
-// [0x00520000]
-// Parameters infos:
-// struct FName                   SessionName                    ( CPF_Parm )
-// class UClass*                  SearchClass                    ( CPF_Parm )
-// TArray< struct FPlayerMember > Players                        ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Public, Delegate, HasOutParms)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// class UClass*                  SearchClass                    (Parm)
+// TArray<struct FPlayerMember>   Players                        (Const, Parm, OutParm, NeedCtorLink)
 
-void UMeshBeaconClient::OnCreateNewSessionRequestReceived(struct FName SessionName, class UClass* SearchClass, TArray< struct FPlayerMember >* Players)
+void UMeshBeaconClient::OnCreateNewSessionRequestReceived(const struct FName& SessionName, class UClass* SearchClass, TArray<struct FPlayerMember>* Players)
 {
-	static UFunction* pFnOnCreateNewSessionRequestReceived = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.MeshBeaconClient.OnCreateNewSessionRequestReceived");
 
-	if (!pFnOnCreateNewSessionRequestReceived)
-		pFnOnCreateNewSessionRequestReceived = (UFunction*)UObject::GObjects()->Data[45287];
+	UMeshBeaconClient_OnCreateNewSessionRequestReceived_Params params;
+	params.SessionName = SessionName;
+	params.SearchClass = SearchClass;
 
-	UMeshBeaconClient_execOnCreateNewSessionRequestReceived_Parms OnCreateNewSessionRequestReceived_Parms;
-	memcpy(&OnCreateNewSessionRequestReceived_Parms.SessionName, &SessionName, 0x8);
-	OnCreateNewSessionRequestReceived_Parms.SearchClass = SearchClass;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnCreateNewSessionRequestReceived, &OnCreateNewSessionRequestReceived_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (Players)
-		memcpy(Players, &OnCreateNewSessionRequestReceived_Parms.Players, 0xC);
-};
+	fn->FunctionFlags = flags;
+
+	if (Players != nullptr)
+		*Players = params.Players;
+}
+
 
 // Function IpDrv.MeshBeaconClient.OnTravelRequestReceived
-// [0x00520000]
-// Parameters infos:
-// struct FName                   SessionName                    ( CPF_Parm )
-// class UClass*                  SearchClass                    ( CPF_Parm )
-// unsigned char                  PlatformSpecificInfo           ( CPF_Const | CPF_Parm | CPF_OutParm )
+// (Public, Delegate, HasOutParms)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// class UClass*                  SearchClass                    (Parm)
+// unsigned char                  PlatformSpecificInfo           (Const, Parm, OutParm)
 
-void UMeshBeaconClient::OnTravelRequestReceived(struct FName SessionName, class UClass* SearchClass, unsigned char* PlatformSpecificInfo)
+void UMeshBeaconClient::OnTravelRequestReceived(const struct FName& SessionName, class UClass* SearchClass, unsigned char* PlatformSpecificInfo)
 {
-	static UFunction* pFnOnTravelRequestReceived = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.MeshBeaconClient.OnTravelRequestReceived");
 
-	if (!pFnOnTravelRequestReceived)
-		pFnOnTravelRequestReceived = (UFunction*)UObject::GObjects()->Data[45289];
+	UMeshBeaconClient_OnTravelRequestReceived_Params params;
+	params.SessionName = SessionName;
+	params.SearchClass = SearchClass;
 
-	UMeshBeaconClient_execOnTravelRequestReceived_Parms OnTravelRequestReceived_Parms;
-	memcpy(&OnTravelRequestReceived_Parms.SessionName, &SessionName, 0x8);
-	OnTravelRequestReceived_Parms.SearchClass = SearchClass;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnTravelRequestReceived, &OnTravelRequestReceived_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (PlatformSpecificInfo)
-		memcpy(PlatformSpecificInfo, &OnTravelRequestReceived_Parms.PlatformSpecificInfo, 0x50);
-};
+	fn->FunctionFlags = flags;
+
+	if (PlatformSpecificInfo != nullptr)
+		*PlatformSpecificInfo = params.PlatformSpecificInfo;
+}
+
 
 // Function IpDrv.MeshBeaconClient.OnReceivedBandwidthTestResults
-// [0x00520000]
-// Parameters infos:
-// unsigned char                  TestType                       ( CPF_Parm )
-// unsigned char                  TestResult                     ( CPF_Parm )
-// struct FConnectionBandwidthStats BandwidthStats                 ( CPF_Const | CPF_Parm | CPF_OutParm )
+// (Public, Delegate, HasOutParms)
+// Parameters:
+// unsigned char                  TestType                       (Parm)
+// unsigned char                  TestResult                     (Parm)
+// struct FConnectionBandwidthStats BandwidthStats                 (Const, Parm, OutParm)
 
 void UMeshBeaconClient::OnReceivedBandwidthTestResults(unsigned char TestType, unsigned char TestResult, struct FConnectionBandwidthStats* BandwidthStats)
 {
-	static UFunction* pFnOnReceivedBandwidthTestResults = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.MeshBeaconClient.OnReceivedBandwidthTestResults");
 
-	if (!pFnOnReceivedBandwidthTestResults)
-		pFnOnReceivedBandwidthTestResults = (UFunction*)UObject::GObjects()->Data[45291];
+	UMeshBeaconClient_OnReceivedBandwidthTestResults_Params params;
+	params.TestType = TestType;
+	params.TestResult = TestResult;
 
-	UMeshBeaconClient_execOnReceivedBandwidthTestResults_Parms OnReceivedBandwidthTestResults_Parms;
-	OnReceivedBandwidthTestResults_Parms.TestType = TestType;
-	OnReceivedBandwidthTestResults_Parms.TestResult = TestResult;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReceivedBandwidthTestResults, &OnReceivedBandwidthTestResults_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (BandwidthStats)
-		memcpy(BandwidthStats, &OnReceivedBandwidthTestResults_Parms.BandwidthStats, 0xC);
-};
+	fn->FunctionFlags = flags;
+
+	if (BandwidthStats != nullptr)
+		*BandwidthStats = params.BandwidthStats;
+}
+
 
 // Function IpDrv.MeshBeaconClient.OnReceivedBandwidthTestRequest
-// [0x00120000]
-// Parameters infos:
-// unsigned char                  TestType                       ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// unsigned char                  TestType                       (Parm)
 
 void UMeshBeaconClient::OnReceivedBandwidthTestRequest(unsigned char TestType)
 {
-	static UFunction* pFnOnReceivedBandwidthTestRequest = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.MeshBeaconClient.OnReceivedBandwidthTestRequest");
 
-	if (!pFnOnReceivedBandwidthTestRequest)
-		pFnOnReceivedBandwidthTestRequest = (UFunction*)UObject::GObjects()->Data[45293];
+	UMeshBeaconClient_OnReceivedBandwidthTestRequest_Params params;
+	params.TestType = TestType;
 
-	UMeshBeaconClient_execOnReceivedBandwidthTestRequest_Parms OnReceivedBandwidthTestRequest_Parms;
-	OnReceivedBandwidthTestRequest_Parms.TestType = TestType;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReceivedBandwidthTestRequest, &OnReceivedBandwidthTestRequest_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.MeshBeaconClient.OnConnectionRequestResult
-// [0x00120000]
-// Parameters infos:
-// unsigned char                  ConnectionResult               ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// unsigned char                  ConnectionResult               (Parm)
 
 void UMeshBeaconClient::OnConnectionRequestResult(unsigned char ConnectionResult)
 {
-	static UFunction* pFnOnConnectionRequestResult = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.MeshBeaconClient.OnConnectionRequestResult");
 
-	if (!pFnOnConnectionRequestResult)
-		pFnOnConnectionRequestResult = (UFunction*)UObject::GObjects()->Data[45295];
+	UMeshBeaconClient_OnConnectionRequestResult_Params params;
+	params.ConnectionResult = ConnectionResult;
 
-	UMeshBeaconClient_execOnConnectionRequestResult_Parms OnConnectionRequestResult_Parms;
-	OnConnectionRequestResult_Parms.ConnectionResult = ConnectionResult;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnConnectionRequestResult, &OnConnectionRequestResult_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.MeshBeaconClient.BeginBandwidthTest
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  TestType                       ( CPF_Parm )
-// int                            TestBufferSize                 ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  TestType                       (Parm)
+// int                            TestBufferSize                 (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UMeshBeaconClient::BeginBandwidthTest(unsigned char TestType, int TestBufferSize)
 {
-	static UFunction* pFnBeginBandwidthTest = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.MeshBeaconClient.BeginBandwidthTest");
 
-	if (!pFnBeginBandwidthTest)
-		pFnBeginBandwidthTest = (UFunction*)UObject::GObjects()->Data[45329];
+	UMeshBeaconClient_BeginBandwidthTest_Params params;
+	params.TestType = TestType;
+	params.TestBufferSize = TestBufferSize;
 
-	UMeshBeaconClient_execBeginBandwidthTest_Parms BeginBandwidthTest_Parms;
-	BeginBandwidthTest_Parms.TestType = TestType;
-	BeginBandwidthTest_Parms.TestBufferSize = TestBufferSize;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnBeginBandwidthTest->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnBeginBandwidthTest, &BeginBandwidthTest_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnBeginBandwidthTest->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return BeginBandwidthTest_Parms.ReturnValue;
-};
 
 // Function IpDrv.MeshBeaconClient.RequestConnection
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned long                  bRegisterSecureAddress         ( CPF_Parm )
-// struct FOnlineGameSearchResult DesiredHost                    ( CPF_Const | CPF_Parm | CPF_OutParm )
-// struct FClientConnectionRequest ClientRequest                  ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FOnlineGameSearchResult DesiredHost                    (Const, Parm, OutParm)
+// struct FClientConnectionRequest ClientRequest                  (Const, Parm, OutParm, NeedCtorLink)
+// bool                           bRegisterSecureAddress         (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UMeshBeaconClient::RequestConnection(unsigned long bRegisterSecureAddress, struct FOnlineGameSearchResult* DesiredHost, struct FClientConnectionRequest* ClientRequest)
+bool UMeshBeaconClient::RequestConnection(bool bRegisterSecureAddress, struct FOnlineGameSearchResult* DesiredHost, struct FClientConnectionRequest* ClientRequest)
 {
-	static UFunction* pFnRequestConnection = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.MeshBeaconClient.RequestConnection");
 
-	if (!pFnRequestConnection)
-		pFnRequestConnection = (UFunction*)UObject::GObjects()->Data[45324];
+	UMeshBeaconClient_RequestConnection_Params params;
+	params.bRegisterSecureAddress = bRegisterSecureAddress;
 
-	UMeshBeaconClient_execRequestConnection_Parms RequestConnection_Parms;
-	RequestConnection_Parms.bRegisterSecureAddress = bRegisterSecureAddress;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnRequestConnection->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnRequestConnection, &RequestConnection_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnRequestConnection->FunctionFlags |= 0x400;
+	if (DesiredHost != nullptr)
+		*DesiredHost = params.DesiredHost;
+	if (ClientRequest != nullptr)
+		*ClientRequest = params.ClientRequest;
 
-	if (DesiredHost)
-		memcpy(DesiredHost, &RequestConnection_Parms.DesiredHost, 0x8);
+	return params.ReturnValue;
+}
 
-	if (ClientRequest)
-		memcpy(ClientRequest, &RequestConnection_Parms.ClientRequest, 0x34);
-
-	return RequestConnection_Parms.ReturnValue;
-};
 
 // Function IpDrv.MeshBeaconClient.DestroyBeacon
-// [0x00020C00] ( FUNC_Event | FUNC_Native )
-// Parameters infos:
+// (Native, Event, Public)
 
-void UMeshBeaconClient::eventDestroyBeacon()
+void UMeshBeaconClient::DestroyBeacon()
 {
-	static UFunction* pFnDestroyBeacon = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.MeshBeaconClient.DestroyBeacon");
 
-	if (!pFnDestroyBeacon)
-		pFnDestroyBeacon = (UFunction*)UObject::GObjects()->Data[45323];
+	UMeshBeaconClient_DestroyBeacon_Params params;
 
-	UMeshBeaconClient_eventDestroyBeacon_Parms DestroyBeacon_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnDestroyBeacon->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnDestroyBeacon, &DestroyBeacon_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnDestroyBeacon->FunctionFlags |= 0x400;
-};
 
 // Function IpDrv.MeshBeaconHost.OnReceivedClientCreateNewSessionResult
-// [0x00520000]
-// Parameters infos:
-// unsigned long                  bSucceeded                     ( CPF_Parm )
-// struct FName                   SessionName                    ( CPF_Parm )
-// class UClass*                  SearchClass                    ( CPF_Parm )
-// unsigned char                  PlatformSpecificInfo           ( CPF_Const | CPF_Parm | CPF_OutParm )
+// (Public, Delegate, HasOutParms)
+// Parameters:
+// bool                           bSucceeded                     (Parm)
+// struct FName                   SessionName                    (Parm)
+// class UClass*                  SearchClass                    (Parm)
+// unsigned char                  PlatformSpecificInfo           (Const, Parm, OutParm)
 
-void UMeshBeaconHost::OnReceivedClientCreateNewSessionResult(unsigned long bSucceeded, struct FName SessionName, class UClass* SearchClass, unsigned char* PlatformSpecificInfo)
+void UMeshBeaconHost::OnReceivedClientCreateNewSessionResult(bool bSucceeded, const struct FName& SessionName, class UClass* SearchClass, unsigned char* PlatformSpecificInfo)
 {
-	static UFunction* pFnOnReceivedClientCreateNewSessionResult = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.MeshBeaconHost.OnReceivedClientCreateNewSessionResult");
 
-	if (!pFnOnReceivedClientCreateNewSessionResult)
-		pFnOnReceivedClientCreateNewSessionResult = (UFunction*)UObject::GObjects()->Data[45376];
+	UMeshBeaconHost_OnReceivedClientCreateNewSessionResult_Params params;
+	params.bSucceeded = bSucceeded;
+	params.SessionName = SessionName;
+	params.SearchClass = SearchClass;
 
-	UMeshBeaconHost_execOnReceivedClientCreateNewSessionResult_Parms OnReceivedClientCreateNewSessionResult_Parms;
-	OnReceivedClientCreateNewSessionResult_Parms.bSucceeded = bSucceeded;
-	memcpy(&OnReceivedClientCreateNewSessionResult_Parms.SessionName, &SessionName, 0x8);
-	OnReceivedClientCreateNewSessionResult_Parms.SearchClass = SearchClass;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReceivedClientCreateNewSessionResult, &OnReceivedClientCreateNewSessionResult_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (PlatformSpecificInfo)
-		memcpy(PlatformSpecificInfo, &OnReceivedClientCreateNewSessionResult_Parms.PlatformSpecificInfo, 0x50);
-};
+	fn->FunctionFlags = flags;
+
+	if (PlatformSpecificInfo != nullptr)
+		*PlatformSpecificInfo = params.PlatformSpecificInfo;
+}
+
 
 // Function IpDrv.MeshBeaconHost.RequestClientCreateNewSession
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FUniqueNetId            PlayerNetId                    ( CPF_Parm )
-// struct FName                   SessionName                    ( CPF_Parm )
-// class UClass*                  SearchClass                    ( CPF_Parm )
-// TArray< struct FPlayerMember > Players                        ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FUniqueNetId            PlayerNetId                    (Parm)
+// struct FName                   SessionName                    (Parm)
+// class UClass*                  SearchClass                    (Parm)
+// TArray<struct FPlayerMember>   Players                        (Const, Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UMeshBeaconHost::RequestClientCreateNewSession(struct FUniqueNetId PlayerNetId, struct FName SessionName, class UClass* SearchClass, TArray< struct FPlayerMember >* Players)
+bool UMeshBeaconHost::RequestClientCreateNewSession(const struct FUniqueNetId& PlayerNetId, const struct FName& SessionName, class UClass* SearchClass, TArray<struct FPlayerMember>* Players)
 {
-	static UFunction* pFnRequestClientCreateNewSession = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.MeshBeaconHost.RequestClientCreateNewSession");
 
-	if (!pFnRequestClientCreateNewSession)
-		pFnRequestClientCreateNewSession = (UFunction*)UObject::GObjects()->Data[45426];
+	UMeshBeaconHost_RequestClientCreateNewSession_Params params;
+	params.PlayerNetId = PlayerNetId;
+	params.SessionName = SessionName;
+	params.SearchClass = SearchClass;
 
-	UMeshBeaconHost_execRequestClientCreateNewSession_Parms RequestClientCreateNewSession_Parms;
-	memcpy(&RequestClientCreateNewSession_Parms.PlayerNetId, &PlayerNetId, 0x18);
-	memcpy(&RequestClientCreateNewSession_Parms.SessionName, &SessionName, 0x8);
-	RequestClientCreateNewSession_Parms.SearchClass = SearchClass;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnRequestClientCreateNewSession->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnRequestClientCreateNewSession, &RequestClientCreateNewSession_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnRequestClientCreateNewSession->FunctionFlags |= 0x400;
+	if (Players != nullptr)
+		*Players = params.Players;
 
-	if (Players)
-		memcpy(Players, &RequestClientCreateNewSession_Parms.Players, 0xC);
+	return params.ReturnValue;
+}
 
-	return RequestClientCreateNewSession_Parms.ReturnValue;
-};
 
 // Function IpDrv.MeshBeaconHost.TellClientsToTravel
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// struct FName                   SessionName                    ( CPF_Parm )
-// class UClass*                  SearchClass                    ( CPF_Parm )
-// unsigned char                  PlatformSpecificInfo           ( CPF_Const | CPF_Parm | CPF_OutParm )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// class UClass*                  SearchClass                    (Parm)
+// unsigned char                  PlatformSpecificInfo           (Const, Parm, OutParm)
 
-void UMeshBeaconHost::TellClientsToTravel(struct FName SessionName, class UClass* SearchClass, unsigned char* PlatformSpecificInfo)
+void UMeshBeaconHost::TellClientsToTravel(const struct FName& SessionName, class UClass* SearchClass, unsigned char* PlatformSpecificInfo)
 {
-	static UFunction* pFnTellClientsToTravel = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.MeshBeaconHost.TellClientsToTravel");
 
-	if (!pFnTellClientsToTravel)
-		pFnTellClientsToTravel = (UFunction*)UObject::GObjects()->Data[45422];
+	UMeshBeaconHost_TellClientsToTravel_Params params;
+	params.SessionName = SessionName;
+	params.SearchClass = SearchClass;
 
-	UMeshBeaconHost_execTellClientsToTravel_Parms TellClientsToTravel_Parms;
-	memcpy(&TellClientsToTravel_Parms.SessionName, &SessionName, 0x8);
-	TellClientsToTravel_Parms.SearchClass = SearchClass;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnTellClientsToTravel->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnTellClientsToTravel, &TellClientsToTravel_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnTellClientsToTravel->FunctionFlags |= 0x400;
+	if (PlatformSpecificInfo != nullptr)
+		*PlatformSpecificInfo = params.PlatformSpecificInfo;
+}
 
-	if (PlatformSpecificInfo)
-		memcpy(PlatformSpecificInfo, &TellClientsToTravel_Parms.PlatformSpecificInfo, 0x50);
-};
 
 // Function IpDrv.MeshBeaconHost.OnAllPendingPlayersConnected
-// [0x00120000]
-// Parameters infos:
+// (Public, Delegate)
 
 void UMeshBeaconHost::OnAllPendingPlayersConnected()
 {
-	static UFunction* pFnOnAllPendingPlayersConnected = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.MeshBeaconHost.OnAllPendingPlayersConnected");
 
-	if (!pFnOnAllPendingPlayersConnected)
-		pFnOnAllPendingPlayersConnected = (UFunction*)UObject::GObjects()->Data[45378];
+	UMeshBeaconHost_OnAllPendingPlayersConnected_Params params;
 
-	UMeshBeaconHost_execOnAllPendingPlayersConnected_Parms OnAllPendingPlayersConnected_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnAllPendingPlayersConnected, &OnAllPendingPlayersConnected_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.MeshBeaconHost.AllPlayersConnected
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// TArray< struct FUniqueNetId >  Players                        ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// TArray<struct FUniqueNetId>    Players                        (Const, Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UMeshBeaconHost::AllPlayersConnected(TArray< struct FUniqueNetId >* Players)
+bool UMeshBeaconHost::AllPlayersConnected(TArray<struct FUniqueNetId>* Players)
 {
-	static UFunction* pFnAllPlayersConnected = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.MeshBeaconHost.AllPlayersConnected");
 
-	if (!pFnAllPlayersConnected)
-		pFnAllPlayersConnected = (UFunction*)UObject::GObjects()->Data[45418];
+	UMeshBeaconHost_AllPlayersConnected_Params params;
 
-	UMeshBeaconHost_execAllPlayersConnected_Parms AllPlayersConnected_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnAllPlayersConnected->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnAllPlayersConnected, &AllPlayersConnected_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnAllPlayersConnected->FunctionFlags |= 0x400;
+	if (Players != nullptr)
+		*Players = params.Players;
 
-	if (Players)
-		memcpy(Players, &AllPlayersConnected_Parms.Players, 0xC);
+	return params.ReturnValue;
+}
 
-	return AllPlayersConnected_Parms.ReturnValue;
-};
 
 // Function IpDrv.MeshBeaconHost.GetConnectionIndexForPlayer
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// int                            ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FUniqueNetId            PlayerNetId                    ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FUniqueNetId            PlayerNetId                    (Parm)
+// int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
-int UMeshBeaconHost::GetConnectionIndexForPlayer(struct FUniqueNetId PlayerNetId)
+int UMeshBeaconHost::GetConnectionIndexForPlayer(const struct FUniqueNetId& PlayerNetId)
 {
-	static UFunction* pFnGetConnectionIndexForPlayer = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.MeshBeaconHost.GetConnectionIndexForPlayer");
 
-	if (!pFnGetConnectionIndexForPlayer)
-		pFnGetConnectionIndexForPlayer = (UFunction*)UObject::GObjects()->Data[45415];
+	UMeshBeaconHost_GetConnectionIndexForPlayer_Params params;
+	params.PlayerNetId = PlayerNetId;
 
-	UMeshBeaconHost_execGetConnectionIndexForPlayer_Parms GetConnectionIndexForPlayer_Parms;
-	memcpy(&GetConnectionIndexForPlayer_Parms.PlayerNetId, &PlayerNetId, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetConnectionIndexForPlayer->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetConnectionIndexForPlayer, &GetConnectionIndexForPlayer_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetConnectionIndexForPlayer->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetConnectionIndexForPlayer_Parms.ReturnValue;
-};
 
 // Function IpDrv.MeshBeaconHost.SetPendingPlayerConnections
-// [0x00420002]
-// Parameters infos:
-// TArray< struct FUniqueNetId >  Players                        ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Defined, Public, HasOutParms)
+// Parameters:
+// TArray<struct FUniqueNetId>    Players                        (Const, Parm, OutParm, NeedCtorLink)
 
-void UMeshBeaconHost::SetPendingPlayerConnections(TArray< struct FUniqueNetId >* Players)
+void UMeshBeaconHost::SetPendingPlayerConnections(TArray<struct FUniqueNetId>* Players)
 {
-	static UFunction* pFnSetPendingPlayerConnections = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.MeshBeaconHost.SetPendingPlayerConnections");
 
-	if (!pFnSetPendingPlayerConnections)
-		pFnSetPendingPlayerConnections = (UFunction*)UObject::GObjects()->Data[45412];
+	UMeshBeaconHost_SetPendingPlayerConnections_Params params;
 
-	UMeshBeaconHost_execSetPendingPlayerConnections_Parms SetPendingPlayerConnections_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnSetPendingPlayerConnections, &SetPendingPlayerConnections_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (Players)
-		memcpy(Players, &SetPendingPlayerConnections_Parms.Players, 0xC);
-};
+	fn->FunctionFlags = flags;
+
+	if (Players != nullptr)
+		*Players = params.Players;
+}
+
 
 // Function IpDrv.MeshBeaconHost.OnFinishedBandwidthTest
-// [0x00520000]
-// Parameters infos:
-// struct FUniqueNetId            PlayerNetId                    ( CPF_Parm )
-// unsigned char                  TestType                       ( CPF_Parm )
-// unsigned char                  TestResult                     ( CPF_Parm )
-// struct FConnectionBandwidthStats BandwidthStats                 ( CPF_Const | CPF_Parm | CPF_OutParm )
+// (Public, Delegate, HasOutParms)
+// Parameters:
+// struct FUniqueNetId            PlayerNetId                    (Parm)
+// unsigned char                  TestType                       (Parm)
+// unsigned char                  TestResult                     (Parm)
+// struct FConnectionBandwidthStats BandwidthStats                 (Const, Parm, OutParm)
 
-void UMeshBeaconHost::OnFinishedBandwidthTest(struct FUniqueNetId PlayerNetId, unsigned char TestType, unsigned char TestResult, struct FConnectionBandwidthStats* BandwidthStats)
+void UMeshBeaconHost::OnFinishedBandwidthTest(const struct FUniqueNetId& PlayerNetId, unsigned char TestType, unsigned char TestResult, struct FConnectionBandwidthStats* BandwidthStats)
 {
-	static UFunction* pFnOnFinishedBandwidthTest = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.MeshBeaconHost.OnFinishedBandwidthTest");
 
-	if (!pFnOnFinishedBandwidthTest)
-		pFnOnFinishedBandwidthTest = (UFunction*)UObject::GObjects()->Data[45380];
+	UMeshBeaconHost_OnFinishedBandwidthTest_Params params;
+	params.PlayerNetId = PlayerNetId;
+	params.TestType = TestType;
+	params.TestResult = TestResult;
 
-	UMeshBeaconHost_execOnFinishedBandwidthTest_Parms OnFinishedBandwidthTest_Parms;
-	memcpy(&OnFinishedBandwidthTest_Parms.PlayerNetId, &PlayerNetId, 0x18);
-	OnFinishedBandwidthTest_Parms.TestType = TestType;
-	OnFinishedBandwidthTest_Parms.TestResult = TestResult;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnFinishedBandwidthTest, &OnFinishedBandwidthTest_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (BandwidthStats)
-		memcpy(BandwidthStats, &OnFinishedBandwidthTest_Parms.BandwidthStats, 0xC);
-};
+	fn->FunctionFlags = flags;
+
+	if (BandwidthStats != nullptr)
+		*BandwidthStats = params.BandwidthStats;
+}
+
 
 // Function IpDrv.MeshBeaconHost.OnStartedBandwidthTest
-// [0x00120000]
-// Parameters infos:
-// struct FUniqueNetId            PlayerNetId                    ( CPF_Parm )
-// unsigned char                  TestType                       ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// struct FUniqueNetId            PlayerNetId                    (Parm)
+// unsigned char                  TestType                       (Parm)
 
-void UMeshBeaconHost::OnStartedBandwidthTest(struct FUniqueNetId PlayerNetId, unsigned char TestType)
+void UMeshBeaconHost::OnStartedBandwidthTest(const struct FUniqueNetId& PlayerNetId, unsigned char TestType)
 {
-	static UFunction* pFnOnStartedBandwidthTest = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.MeshBeaconHost.OnStartedBandwidthTest");
 
-	if (!pFnOnStartedBandwidthTest)
-		pFnOnStartedBandwidthTest = (UFunction*)UObject::GObjects()->Data[45382];
+	UMeshBeaconHost_OnStartedBandwidthTest_Params params;
+	params.PlayerNetId = PlayerNetId;
+	params.TestType = TestType;
 
-	UMeshBeaconHost_execOnStartedBandwidthTest_Parms OnStartedBandwidthTest_Parms;
-	memcpy(&OnStartedBandwidthTest_Parms.PlayerNetId, &PlayerNetId, 0x18);
-	OnStartedBandwidthTest_Parms.TestType = TestType;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnStartedBandwidthTest, &OnStartedBandwidthTest_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.MeshBeaconHost.OnReceivedClientConnectionRequest
-// [0x00520000]
-// Parameters infos:
-// struct FClientMeshBeaconConnection NewClientConnection            ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Public, Delegate, HasOutParms)
+// Parameters:
+// struct FClientMeshBeaconConnection NewClientConnection            (Const, Parm, OutParm, NeedCtorLink)
 
 void UMeshBeaconHost::OnReceivedClientConnectionRequest(struct FClientMeshBeaconConnection* NewClientConnection)
 {
-	static UFunction* pFnOnReceivedClientConnectionRequest = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.MeshBeaconHost.OnReceivedClientConnectionRequest");
 
-	if (!pFnOnReceivedClientConnectionRequest)
-		pFnOnReceivedClientConnectionRequest = (UFunction*)UObject::GObjects()->Data[45384];
+	UMeshBeaconHost_OnReceivedClientConnectionRequest_Params params;
 
-	UMeshBeaconHost_execOnReceivedClientConnectionRequest_Parms OnReceivedClientConnectionRequest_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReceivedClientConnectionRequest, &OnReceivedClientConnectionRequest_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (NewClientConnection)
-		memcpy(NewClientConnection, &OnReceivedClientConnectionRequest_Parms.NewClientConnection, 0x68);
-};
+	fn->FunctionFlags = flags;
+
+	if (NewClientConnection != nullptr)
+		*NewClientConnection = params.NewClientConnection;
+}
+
 
 // Function IpDrv.MeshBeaconHost.AllowBandwidthTesting
-// [0x00020002]
-// Parameters infos:
-// unsigned long                  bEnabled                       ( CPF_Parm )
+// (Defined, Public)
+// Parameters:
+// bool                           bEnabled                       (Parm)
 
-void UMeshBeaconHost::AllowBandwidthTesting(unsigned long bEnabled)
+void UMeshBeaconHost::AllowBandwidthTesting(bool bEnabled)
 {
-	static UFunction* pFnAllowBandwidthTesting = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.MeshBeaconHost.AllowBandwidthTesting");
 
-	if (!pFnAllowBandwidthTesting)
-		pFnAllowBandwidthTesting = (UFunction*)UObject::GObjects()->Data[45403];
+	UMeshBeaconHost_AllowBandwidthTesting_Params params;
+	params.bEnabled = bEnabled;
 
-	UMeshBeaconHost_execAllowBandwidthTesting_Parms AllowBandwidthTesting_Parms;
-	AllowBandwidthTesting_Parms.bEnabled = bEnabled;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAllowBandwidthTesting, &AllowBandwidthTesting_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.MeshBeaconHost.CancelPendingBandwidthTests
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
+// (Native, Public)
 
 void UMeshBeaconHost::CancelPendingBandwidthTests()
 {
-	static UFunction* pFnCancelPendingBandwidthTests = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.MeshBeaconHost.CancelPendingBandwidthTests");
 
-	if (!pFnCancelPendingBandwidthTests)
-		pFnCancelPendingBandwidthTests = (UFunction*)UObject::GObjects()->Data[45402];
+	UMeshBeaconHost_CancelPendingBandwidthTests_Params params;
 
-	UMeshBeaconHost_execCancelPendingBandwidthTests_Parms CancelPendingBandwidthTests_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnCancelPendingBandwidthTests->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnCancelPendingBandwidthTests, &CancelPendingBandwidthTests_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnCancelPendingBandwidthTests->FunctionFlags |= 0x400;
-};
 
 // Function IpDrv.MeshBeaconHost.HasPendingBandwidthTest
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Native, Public)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UMeshBeaconHost::HasPendingBandwidthTest()
 {
-	static UFunction* pFnHasPendingBandwidthTest = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.MeshBeaconHost.HasPendingBandwidthTest");
 
-	if (!pFnHasPendingBandwidthTest)
-		pFnHasPendingBandwidthTest = (UFunction*)UObject::GObjects()->Data[45400];
+	UMeshBeaconHost_HasPendingBandwidthTest_Params params;
 
-	UMeshBeaconHost_execHasPendingBandwidthTest_Parms HasPendingBandwidthTest_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnHasPendingBandwidthTest->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnHasPendingBandwidthTest, &HasPendingBandwidthTest_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnHasPendingBandwidthTest->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return HasPendingBandwidthTest_Parms.ReturnValue;
-};
 
 // Function IpDrv.MeshBeaconHost.CancelInProgressBandwidthTests
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
+// (Native, Public)
 
 void UMeshBeaconHost::CancelInProgressBandwidthTests()
 {
-	static UFunction* pFnCancelInProgressBandwidthTests = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.MeshBeaconHost.CancelInProgressBandwidthTests");
 
-	if (!pFnCancelInProgressBandwidthTests)
-		pFnCancelInProgressBandwidthTests = (UFunction*)UObject::GObjects()->Data[45399];
+	UMeshBeaconHost_CancelInProgressBandwidthTests_Params params;
 
-	UMeshBeaconHost_execCancelInProgressBandwidthTests_Parms CancelInProgressBandwidthTests_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnCancelInProgressBandwidthTests->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnCancelInProgressBandwidthTests, &CancelInProgressBandwidthTests_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnCancelInProgressBandwidthTests->FunctionFlags |= 0x400;
-};
 
 // Function IpDrv.MeshBeaconHost.HasInProgressBandwidthTest
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Native, Public)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UMeshBeaconHost::HasInProgressBandwidthTest()
 {
-	static UFunction* pFnHasInProgressBandwidthTest = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.MeshBeaconHost.HasInProgressBandwidthTest");
 
-	if (!pFnHasInProgressBandwidthTest)
-		pFnHasInProgressBandwidthTest = (UFunction*)UObject::GObjects()->Data[45397];
+	UMeshBeaconHost_HasInProgressBandwidthTest_Params params;
 
-	UMeshBeaconHost_execHasInProgressBandwidthTest_Parms HasInProgressBandwidthTest_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnHasInProgressBandwidthTest->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnHasInProgressBandwidthTest, &HasInProgressBandwidthTest_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnHasInProgressBandwidthTest->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return HasInProgressBandwidthTest_Parms.ReturnValue;
-};
 
 // Function IpDrv.MeshBeaconHost.RequestClientBandwidthTest
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FUniqueNetId            PlayerNetId                    ( CPF_Parm )
-// unsigned char                  TestType                       ( CPF_Parm )
-// int                            TestBufferSize                 ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FUniqueNetId            PlayerNetId                    (Parm)
+// unsigned char                  TestType                       (Parm)
+// int                            TestBufferSize                 (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UMeshBeaconHost::RequestClientBandwidthTest(struct FUniqueNetId PlayerNetId, unsigned char TestType, int TestBufferSize)
+bool UMeshBeaconHost::RequestClientBandwidthTest(const struct FUniqueNetId& PlayerNetId, unsigned char TestType, int TestBufferSize)
 {
-	static UFunction* pFnRequestClientBandwidthTest = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.MeshBeaconHost.RequestClientBandwidthTest");
 
-	if (!pFnRequestClientBandwidthTest)
-		pFnRequestClientBandwidthTest = (UFunction*)UObject::GObjects()->Data[45392];
+	UMeshBeaconHost_RequestClientBandwidthTest_Params params;
+	params.PlayerNetId = PlayerNetId;
+	params.TestType = TestType;
+	params.TestBufferSize = TestBufferSize;
 
-	UMeshBeaconHost_execRequestClientBandwidthTest_Parms RequestClientBandwidthTest_Parms;
-	memcpy(&RequestClientBandwidthTest_Parms.PlayerNetId, &PlayerNetId, 0x18);
-	RequestClientBandwidthTest_Parms.TestType = TestType;
-	RequestClientBandwidthTest_Parms.TestBufferSize = TestBufferSize;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnRequestClientBandwidthTest->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnRequestClientBandwidthTest, &RequestClientBandwidthTest_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnRequestClientBandwidthTest->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return RequestClientBandwidthTest_Parms.ReturnValue;
-};
 
 // Function IpDrv.MeshBeaconHost.DestroyBeacon
-// [0x00020C00] ( FUNC_Event | FUNC_Native )
-// Parameters infos:
+// (Native, Event, Public)
 
-void UMeshBeaconHost::eventDestroyBeacon()
+void UMeshBeaconHost::DestroyBeacon()
 {
-	static UFunction* pFnDestroyBeacon = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.MeshBeaconHost.DestroyBeacon");
 
-	if (!pFnDestroyBeacon)
-		pFnDestroyBeacon = (UFunction*)UObject::GObjects()->Data[45391];
+	UMeshBeaconHost_DestroyBeacon_Params params;
 
-	UMeshBeaconHost_eventDestroyBeacon_Parms DestroyBeacon_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnDestroyBeacon->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnDestroyBeacon, &DestroyBeacon_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnDestroyBeacon->FunctionFlags |= 0x400;
-};
 
 // Function IpDrv.MeshBeaconHost.InitHostBeacon
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FUniqueNetId            InOwningPlayerId               ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FUniqueNetId            InOwningPlayerId               (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UMeshBeaconHost::InitHostBeacon(struct FUniqueNetId InOwningPlayerId)
+bool UMeshBeaconHost::InitHostBeacon(const struct FUniqueNetId& InOwningPlayerId)
 {
-	static UFunction* pFnInitHostBeacon = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.MeshBeaconHost.InitHostBeacon");
 
-	if (!pFnInitHostBeacon)
-		pFnInitHostBeacon = (UFunction*)UObject::GObjects()->Data[45388];
+	UMeshBeaconHost_InitHostBeacon_Params params;
+	params.InOwningPlayerId = InOwningPlayerId;
 
-	UMeshBeaconHost_execInitHostBeacon_Parms InitHostBeacon_Parms;
-	memcpy(&InitHostBeacon_Parms.InOwningPlayerId, &InOwningPlayerId, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnInitHostBeacon->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnInitHostBeacon, &InitHostBeacon_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnInitHostBeacon->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return InitHostBeacon_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineSubsystemCommonImpl.GetRegisteredPlayers
-// [0x00420002]
-// Parameters infos:
-// struct FName                   SessionName                    ( CPF_Parm )
-// TArray< struct FUniqueNetId >  OutRegisteredPlayers           ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Defined, Public, HasOutParms)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// TArray<struct FUniqueNetId>    OutRegisteredPlayers           (Parm, OutParm, NeedCtorLink)
 
-void UOnlineSubsystemCommonImpl::GetRegisteredPlayers(struct FName SessionName, TArray< struct FUniqueNetId >* OutRegisteredPlayers)
+void UOnlineSubsystemCommonImpl::GetRegisteredPlayers(const struct FName& SessionName, TArray<struct FUniqueNetId>* OutRegisteredPlayers)
 {
-	static UFunction* pFnGetRegisteredPlayers = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineSubsystemCommonImpl.GetRegisteredPlayers");
 
-	if (!pFnGetRegisteredPlayers)
-		pFnGetRegisteredPlayers = (UFunction*)UObject::GObjects()->Data[46025];
+	UOnlineSubsystemCommonImpl_GetRegisteredPlayers_Params params;
+	params.SessionName = SessionName;
 
-	UOnlineSubsystemCommonImpl_execGetRegisteredPlayers_Parms GetRegisteredPlayers_Parms;
-	memcpy(&GetRegisteredPlayers_Parms.SessionName, &SessionName, 0x8);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetRegisteredPlayers, &GetRegisteredPlayers_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (OutRegisteredPlayers)
-		memcpy(OutRegisteredPlayers, &GetRegisteredPlayers_Parms.OutRegisteredPlayers, 0xC);
-};
+	fn->FunctionFlags = flags;
+
+	if (OutRegisteredPlayers != nullptr)
+		*OutRegisteredPlayers = params.OutRegisteredPlayers;
+}
+
 
 // Function IpDrv.OnlineSubsystemCommonImpl.IsPlayerInSession
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   SessionName                    ( CPF_Parm )
-// struct FUniqueNetId            PlayerID                       ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// struct FUniqueNetId            PlayerID                       (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineSubsystemCommonImpl::IsPlayerInSession(struct FName SessionName, struct FUniqueNetId PlayerID)
+bool UOnlineSubsystemCommonImpl::IsPlayerInSession(const struct FName& SessionName, const struct FUniqueNetId& PlayerID)
 {
-	static UFunction* pFnIsPlayerInSession = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineSubsystemCommonImpl.IsPlayerInSession");
 
-	if (!pFnIsPlayerInSession)
-		pFnIsPlayerInSession = (UFunction*)UObject::GObjects()->Data[46021];
+	UOnlineSubsystemCommonImpl_IsPlayerInSession_Params params;
+	params.SessionName = SessionName;
+	params.PlayerID = PlayerID;
 
-	UOnlineSubsystemCommonImpl_execIsPlayerInSession_Parms IsPlayerInSession_Parms;
-	memcpy(&IsPlayerInSession_Parms.SessionName, &SessionName, 0x8);
-	memcpy(&IsPlayerInSession_Parms.PlayerID, &PlayerID, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnIsPlayerInSession->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnIsPlayerInSession, &IsPlayerInSession_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnIsPlayerInSession->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return IsPlayerInSession_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineSubsystemCommonImpl.GetPlayerNicknameFromIndex
-// [0x00020800] ( FUNC_Event )
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// int                            UserIndex                      ( CPF_Parm )
+// (Event, Public)
+// Parameters:
+// int                            UserIndex                      (Parm)
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
-struct FString UOnlineSubsystemCommonImpl::eventGetPlayerNicknameFromIndex(int UserIndex)
+struct FString UOnlineSubsystemCommonImpl::GetPlayerNicknameFromIndex(int UserIndex)
 {
-	static UFunction* pFnGetPlayerNicknameFromIndex = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineSubsystemCommonImpl.GetPlayerNicknameFromIndex");
 
-	if (!pFnGetPlayerNicknameFromIndex)
-		pFnGetPlayerNicknameFromIndex = (UFunction*)UObject::GObjects()->Data[46018];
+	UOnlineSubsystemCommonImpl_GetPlayerNicknameFromIndex_Params params;
+	params.UserIndex = UserIndex;
 
-	UOnlineSubsystemCommonImpl_eventGetPlayerNicknameFromIndex_Parms GetPlayerNicknameFromIndex_Parms;
-	GetPlayerNicknameFromIndex_Parms.UserIndex = UserIndex;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetPlayerNicknameFromIndex, &GetPlayerNicknameFromIndex_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return GetPlayerNicknameFromIndex_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.OnlineAuthInterfaceImpl.FindLocalServerAuthSession
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// int                            ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// class UPlayer*                 ClientConnection               ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// class UPlayer*                 ClientConnection               (Parm)
+// int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
 int UOnlineAuthInterfaceImpl::FindLocalServerAuthSession(class UPlayer* ClientConnection)
 {
-	static UFunction* pFnFindLocalServerAuthSession = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.FindLocalServerAuthSession");
 
-	if (!pFnFindLocalServerAuthSession)
-		pFnFindLocalServerAuthSession = (UFunction*)UObject::GObjects()->Data[45525];
+	UOnlineAuthInterfaceImpl_FindLocalServerAuthSession_Params params;
+	params.ClientConnection = ClientConnection;
 
-	UOnlineAuthInterfaceImpl_execFindLocalServerAuthSession_Parms FindLocalServerAuthSession_Parms;
-	FindLocalServerAuthSession_Parms.ClientConnection = ClientConnection;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnFindLocalServerAuthSession->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnFindLocalServerAuthSession, &FindLocalServerAuthSession_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnFindLocalServerAuthSession->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return FindLocalServerAuthSession_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineAuthInterfaceImpl.FindServerAuthSession
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// int                            ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// class UPlayer*                 ServerConnection               ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// class UPlayer*                 ServerConnection               (Parm)
+// int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
 int UOnlineAuthInterfaceImpl::FindServerAuthSession(class UPlayer* ServerConnection)
 {
-	static UFunction* pFnFindServerAuthSession = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.FindServerAuthSession");
 
-	if (!pFnFindServerAuthSession)
-		pFnFindServerAuthSession = (UFunction*)UObject::GObjects()->Data[45522];
+	UOnlineAuthInterfaceImpl_FindServerAuthSession_Params params;
+	params.ServerConnection = ServerConnection;
 
-	UOnlineAuthInterfaceImpl_execFindServerAuthSession_Parms FindServerAuthSession_Parms;
-	FindServerAuthSession_Parms.ServerConnection = ServerConnection;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnFindServerAuthSession->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnFindServerAuthSession, &FindServerAuthSession_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnFindServerAuthSession->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return FindServerAuthSession_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineAuthInterfaceImpl.FindLocalClientAuthSession
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// int                            ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// class UPlayer*                 ServerConnection               ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// class UPlayer*                 ServerConnection               (Parm)
+// int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
 int UOnlineAuthInterfaceImpl::FindLocalClientAuthSession(class UPlayer* ServerConnection)
 {
-	static UFunction* pFnFindLocalClientAuthSession = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.FindLocalClientAuthSession");
 
-	if (!pFnFindLocalClientAuthSession)
-		pFnFindLocalClientAuthSession = (UFunction*)UObject::GObjects()->Data[45519];
+	UOnlineAuthInterfaceImpl_FindLocalClientAuthSession_Params params;
+	params.ServerConnection = ServerConnection;
 
-	UOnlineAuthInterfaceImpl_execFindLocalClientAuthSession_Parms FindLocalClientAuthSession_Parms;
-	FindLocalClientAuthSession_Parms.ServerConnection = ServerConnection;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnFindLocalClientAuthSession->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnFindLocalClientAuthSession, &FindLocalClientAuthSession_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnFindLocalClientAuthSession->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return FindLocalClientAuthSession_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineAuthInterfaceImpl.FindClientAuthSession
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// int                            ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// class UPlayer*                 ClientConnection               ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// class UPlayer*                 ClientConnection               (Parm)
+// int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
 int UOnlineAuthInterfaceImpl::FindClientAuthSession(class UPlayer* ClientConnection)
 {
-	static UFunction* pFnFindClientAuthSession = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.FindClientAuthSession");
 
-	if (!pFnFindClientAuthSession)
-		pFnFindClientAuthSession = (UFunction*)UObject::GObjects()->Data[45516];
+	UOnlineAuthInterfaceImpl_FindClientAuthSession_Params params;
+	params.ClientConnection = ClientConnection;
 
-	UOnlineAuthInterfaceImpl_execFindClientAuthSession_Parms FindClientAuthSession_Parms;
-	FindClientAuthSession_Parms.ClientConnection = ClientConnection;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnFindClientAuthSession->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnFindClientAuthSession, &FindClientAuthSession_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnFindClientAuthSession->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return FindClientAuthSession_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineAuthInterfaceImpl.SendAuthRetryServer
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Native, Public)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineAuthInterfaceImpl::SendAuthRetryServer()
 {
-	static UFunction* pFnSendAuthRetryServer = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.SendAuthRetryServer");
 
-	if (!pFnSendAuthRetryServer)
-		pFnSendAuthRetryServer = (UFunction*)UObject::GObjects()->Data[45514];
+	UOnlineAuthInterfaceImpl_SendAuthRetryServer_Params params;
 
-	UOnlineAuthInterfaceImpl_execSendAuthRetryServer_Parms SendAuthRetryServer_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSendAuthRetryServer->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSendAuthRetryServer, &SendAuthRetryServer_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnSendAuthRetryServer->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return SendAuthRetryServer_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineAuthInterfaceImpl.SendAuthKillClient
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// class UPlayer*                 ClientConnection               ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// class UPlayer*                 ClientConnection               (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineAuthInterfaceImpl::SendAuthKillClient(class UPlayer* ClientConnection)
 {
-	static UFunction* pFnSendAuthKillClient = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.SendAuthKillClient");
 
-	if (!pFnSendAuthKillClient)
-		pFnSendAuthKillClient = (UFunction*)UObject::GObjects()->Data[45511];
+	UOnlineAuthInterfaceImpl_SendAuthKillClient_Params params;
+	params.ClientConnection = ClientConnection;
 
-	UOnlineAuthInterfaceImpl_execSendAuthKillClient_Parms SendAuthKillClient_Parms;
-	SendAuthKillClient_Parms.ClientConnection = ClientConnection;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSendAuthKillClient->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSendAuthKillClient, &SendAuthKillClient_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnSendAuthKillClient->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return SendAuthKillClient_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineAuthInterfaceImpl.SendAuthBlobServer
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// class UPlayer*                 ClientConnection               ( CPF_Parm )
-// int                            AuthBlobUID                    ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// class UPlayer*                 ClientConnection               (Parm)
+// int                            AuthBlobUID                    (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineAuthInterfaceImpl::SendAuthBlobServer(class UPlayer* ClientConnection, int AuthBlobUID)
 {
-	static UFunction* pFnSendAuthBlobServer = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.SendAuthBlobServer");
 
-	if (!pFnSendAuthBlobServer)
-		pFnSendAuthBlobServer = (UFunction*)UObject::GObjects()->Data[45507];
+	UOnlineAuthInterfaceImpl_SendAuthBlobServer_Params params;
+	params.ClientConnection = ClientConnection;
+	params.AuthBlobUID = AuthBlobUID;
 
-	UOnlineAuthInterfaceImpl_execSendAuthBlobServer_Parms SendAuthBlobServer_Parms;
-	SendAuthBlobServer_Parms.ClientConnection = ClientConnection;
-	SendAuthBlobServer_Parms.AuthBlobUID = AuthBlobUID;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSendAuthBlobServer->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSendAuthBlobServer, &SendAuthBlobServer_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnSendAuthBlobServer->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return SendAuthBlobServer_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineAuthInterfaceImpl.SendAuthBlobClient
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            AuthBlobUID                    ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// int                            AuthBlobUID                    (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineAuthInterfaceImpl::SendAuthBlobClient(int AuthBlobUID)
 {
-	static UFunction* pFnSendAuthBlobClient = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.SendAuthBlobClient");
 
-	if (!pFnSendAuthBlobClient)
-		pFnSendAuthBlobClient = (UFunction*)UObject::GObjects()->Data[45504];
+	UOnlineAuthInterfaceImpl_SendAuthBlobClient_Params params;
+	params.AuthBlobUID = AuthBlobUID;
 
-	UOnlineAuthInterfaceImpl_execSendAuthBlobClient_Parms SendAuthBlobClient_Parms;
-	SendAuthBlobClient_Parms.AuthBlobUID = AuthBlobUID;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSendAuthBlobClient->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSendAuthBlobClient, &SendAuthBlobClient_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnSendAuthBlobClient->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return SendAuthBlobClient_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineAuthInterfaceImpl.ClearServerConnectionCloseDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         ServerConnectionCloseDelegate  ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         ServerConnectionCloseDelegate  (Parm, NeedCtorLink)
 
-void UOnlineAuthInterfaceImpl::ClearServerConnectionCloseDelegate(struct FScriptDelegate ServerConnectionCloseDelegate)
+void UOnlineAuthInterfaceImpl::ClearServerConnectionCloseDelegate(const struct FScriptDelegate& ServerConnectionCloseDelegate)
 {
-	static UFunction* pFnClearServerConnectionCloseDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.ClearServerConnectionCloseDelegate");
 
-	if (!pFnClearServerConnectionCloseDelegate)
-		pFnClearServerConnectionCloseDelegate = (UFunction*)UObject::GObjects()->Data[45502];
+	UOnlineAuthInterfaceImpl_ClearServerConnectionCloseDelegate_Params params;
+	params.ServerConnectionCloseDelegate = ServerConnectionCloseDelegate;
 
-	UOnlineAuthInterfaceImpl_execClearServerConnectionCloseDelegate_Parms ClearServerConnectionCloseDelegate_Parms;
-	memcpy(&ClearServerConnectionCloseDelegate_Parms.ServerConnectionCloseDelegate, &ServerConnectionCloseDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearServerConnectionCloseDelegate, &ClearServerConnectionCloseDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineAuthInterfaceImpl.AddServerConnectionCloseDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         ServerConnectionCloseDelegate  ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         ServerConnectionCloseDelegate  (Parm, NeedCtorLink)
 
-void UOnlineAuthInterfaceImpl::AddServerConnectionCloseDelegate(struct FScriptDelegate ServerConnectionCloseDelegate)
+void UOnlineAuthInterfaceImpl::AddServerConnectionCloseDelegate(const struct FScriptDelegate& ServerConnectionCloseDelegate)
 {
-	static UFunction* pFnAddServerConnectionCloseDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.AddServerConnectionCloseDelegate");
 
-	if (!pFnAddServerConnectionCloseDelegate)
-		pFnAddServerConnectionCloseDelegate = (UFunction*)UObject::GObjects()->Data[45500];
+	UOnlineAuthInterfaceImpl_AddServerConnectionCloseDelegate_Params params;
+	params.ServerConnectionCloseDelegate = ServerConnectionCloseDelegate;
 
-	UOnlineAuthInterfaceImpl_execAddServerConnectionCloseDelegate_Parms AddServerConnectionCloseDelegate_Parms;
-	memcpy(&AddServerConnectionCloseDelegate_Parms.ServerConnectionCloseDelegate, &ServerConnectionCloseDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddServerConnectionCloseDelegate, &AddServerConnectionCloseDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineAuthInterfaceImpl.ClearClientConnectionCloseDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         ClientConnectionCloseDelegate  ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         ClientConnectionCloseDelegate  (Parm, NeedCtorLink)
 
-void UOnlineAuthInterfaceImpl::ClearClientConnectionCloseDelegate(struct FScriptDelegate ClientConnectionCloseDelegate)
+void UOnlineAuthInterfaceImpl::ClearClientConnectionCloseDelegate(const struct FScriptDelegate& ClientConnectionCloseDelegate)
 {
-	static UFunction* pFnClearClientConnectionCloseDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.ClearClientConnectionCloseDelegate");
 
-	if (!pFnClearClientConnectionCloseDelegate)
-		pFnClearClientConnectionCloseDelegate = (UFunction*)UObject::GObjects()->Data[45498];
+	UOnlineAuthInterfaceImpl_ClearClientConnectionCloseDelegate_Params params;
+	params.ClientConnectionCloseDelegate = ClientConnectionCloseDelegate;
 
-	UOnlineAuthInterfaceImpl_execClearClientConnectionCloseDelegate_Parms ClearClientConnectionCloseDelegate_Parms;
-	memcpy(&ClearClientConnectionCloseDelegate_Parms.ClientConnectionCloseDelegate, &ClientConnectionCloseDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearClientConnectionCloseDelegate, &ClearClientConnectionCloseDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineAuthInterfaceImpl.AddClientConnectionCloseDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         ClientConnectionCloseDelegate  ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         ClientConnectionCloseDelegate  (Parm, NeedCtorLink)
 
-void UOnlineAuthInterfaceImpl::AddClientConnectionCloseDelegate(struct FScriptDelegate ClientConnectionCloseDelegate)
+void UOnlineAuthInterfaceImpl::AddClientConnectionCloseDelegate(const struct FScriptDelegate& ClientConnectionCloseDelegate)
 {
-	static UFunction* pFnAddClientConnectionCloseDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.AddClientConnectionCloseDelegate");
 
-	if (!pFnAddClientConnectionCloseDelegate)
-		pFnAddClientConnectionCloseDelegate = (UFunction*)UObject::GObjects()->Data[45496];
+	UOnlineAuthInterfaceImpl_AddClientConnectionCloseDelegate_Params params;
+	params.ClientConnectionCloseDelegate = ClientConnectionCloseDelegate;
 
-	UOnlineAuthInterfaceImpl_execAddClientConnectionCloseDelegate_Parms AddClientConnectionCloseDelegate_Parms;
-	memcpy(&AddClientConnectionCloseDelegate_Parms.ClientConnectionCloseDelegate, &ClientConnectionCloseDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddClientConnectionCloseDelegate, &AddClientConnectionCloseDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineAuthInterfaceImpl.ClearAuthRetryServerDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         AuthRetryServerDelegate        ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         AuthRetryServerDelegate        (Parm, NeedCtorLink)
 
-void UOnlineAuthInterfaceImpl::ClearAuthRetryServerDelegate(struct FScriptDelegate AuthRetryServerDelegate)
+void UOnlineAuthInterfaceImpl::ClearAuthRetryServerDelegate(const struct FScriptDelegate& AuthRetryServerDelegate)
 {
-	static UFunction* pFnClearAuthRetryServerDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.ClearAuthRetryServerDelegate");
 
-	if (!pFnClearAuthRetryServerDelegate)
-		pFnClearAuthRetryServerDelegate = (UFunction*)UObject::GObjects()->Data[45494];
+	UOnlineAuthInterfaceImpl_ClearAuthRetryServerDelegate_Params params;
+	params.AuthRetryServerDelegate = AuthRetryServerDelegate;
 
-	UOnlineAuthInterfaceImpl_execClearAuthRetryServerDelegate_Parms ClearAuthRetryServerDelegate_Parms;
-	memcpy(&ClearAuthRetryServerDelegate_Parms.AuthRetryServerDelegate, &AuthRetryServerDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearAuthRetryServerDelegate, &ClearAuthRetryServerDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineAuthInterfaceImpl.AddAuthRetryServerDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         AuthRetryServerDelegate        ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         AuthRetryServerDelegate        (Parm, NeedCtorLink)
 
-void UOnlineAuthInterfaceImpl::AddAuthRetryServerDelegate(struct FScriptDelegate AuthRetryServerDelegate)
+void UOnlineAuthInterfaceImpl::AddAuthRetryServerDelegate(const struct FScriptDelegate& AuthRetryServerDelegate)
 {
-	static UFunction* pFnAddAuthRetryServerDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.AddAuthRetryServerDelegate");
 
-	if (!pFnAddAuthRetryServerDelegate)
-		pFnAddAuthRetryServerDelegate = (UFunction*)UObject::GObjects()->Data[45492];
+	UOnlineAuthInterfaceImpl_AddAuthRetryServerDelegate_Params params;
+	params.AuthRetryServerDelegate = AuthRetryServerDelegate;
 
-	UOnlineAuthInterfaceImpl_execAddAuthRetryServerDelegate_Parms AddAuthRetryServerDelegate_Parms;
-	memcpy(&AddAuthRetryServerDelegate_Parms.AuthRetryServerDelegate, &AuthRetryServerDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddAuthRetryServerDelegate, &AddAuthRetryServerDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineAuthInterfaceImpl.ClearAuthKillClientDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         AuthKillClientDelegate         ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         AuthKillClientDelegate         (Parm, NeedCtorLink)
 
-void UOnlineAuthInterfaceImpl::ClearAuthKillClientDelegate(struct FScriptDelegate AuthKillClientDelegate)
+void UOnlineAuthInterfaceImpl::ClearAuthKillClientDelegate(const struct FScriptDelegate& AuthKillClientDelegate)
 {
-	static UFunction* pFnClearAuthKillClientDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.ClearAuthKillClientDelegate");
 
-	if (!pFnClearAuthKillClientDelegate)
-		pFnClearAuthKillClientDelegate = (UFunction*)UObject::GObjects()->Data[45490];
+	UOnlineAuthInterfaceImpl_ClearAuthKillClientDelegate_Params params;
+	params.AuthKillClientDelegate = AuthKillClientDelegate;
 
-	UOnlineAuthInterfaceImpl_execClearAuthKillClientDelegate_Parms ClearAuthKillClientDelegate_Parms;
-	memcpy(&ClearAuthKillClientDelegate_Parms.AuthKillClientDelegate, &AuthKillClientDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearAuthKillClientDelegate, &ClearAuthKillClientDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineAuthInterfaceImpl.AddAuthKillClientDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         AuthKillClientDelegate         ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         AuthKillClientDelegate         (Parm, NeedCtorLink)
 
-void UOnlineAuthInterfaceImpl::AddAuthKillClientDelegate(struct FScriptDelegate AuthKillClientDelegate)
+void UOnlineAuthInterfaceImpl::AddAuthKillClientDelegate(const struct FScriptDelegate& AuthKillClientDelegate)
 {
-	static UFunction* pFnAddAuthKillClientDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.AddAuthKillClientDelegate");
 
-	if (!pFnAddAuthKillClientDelegate)
-		pFnAddAuthKillClientDelegate = (UFunction*)UObject::GObjects()->Data[45488];
+	UOnlineAuthInterfaceImpl_AddAuthKillClientDelegate_Params params;
+	params.AuthKillClientDelegate = AuthKillClientDelegate;
 
-	UOnlineAuthInterfaceImpl_execAddAuthKillClientDelegate_Parms AddAuthKillClientDelegate_Parms;
-	memcpy(&AddAuthKillClientDelegate_Parms.AuthKillClientDelegate, &AuthKillClientDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddAuthKillClientDelegate, &AddAuthKillClientDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineAuthInterfaceImpl.ClearAuthCompleteServerDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         AuthCompleteServerDelegate     ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         AuthCompleteServerDelegate     (Parm, NeedCtorLink)
 
-void UOnlineAuthInterfaceImpl::ClearAuthCompleteServerDelegate(struct FScriptDelegate AuthCompleteServerDelegate)
+void UOnlineAuthInterfaceImpl::ClearAuthCompleteServerDelegate(const struct FScriptDelegate& AuthCompleteServerDelegate)
 {
-	static UFunction* pFnClearAuthCompleteServerDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.ClearAuthCompleteServerDelegate");
 
-	if (!pFnClearAuthCompleteServerDelegate)
-		pFnClearAuthCompleteServerDelegate = (UFunction*)UObject::GObjects()->Data[45486];
+	UOnlineAuthInterfaceImpl_ClearAuthCompleteServerDelegate_Params params;
+	params.AuthCompleteServerDelegate = AuthCompleteServerDelegate;
 
-	UOnlineAuthInterfaceImpl_execClearAuthCompleteServerDelegate_Parms ClearAuthCompleteServerDelegate_Parms;
-	memcpy(&ClearAuthCompleteServerDelegate_Parms.AuthCompleteServerDelegate, &AuthCompleteServerDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearAuthCompleteServerDelegate, &ClearAuthCompleteServerDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineAuthInterfaceImpl.AddAuthCompleteServerDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         AuthCompleteServerDelegate     ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         AuthCompleteServerDelegate     (Parm, NeedCtorLink)
 
-void UOnlineAuthInterfaceImpl::AddAuthCompleteServerDelegate(struct FScriptDelegate AuthCompleteServerDelegate)
+void UOnlineAuthInterfaceImpl::AddAuthCompleteServerDelegate(const struct FScriptDelegate& AuthCompleteServerDelegate)
 {
-	static UFunction* pFnAddAuthCompleteServerDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.AddAuthCompleteServerDelegate");
 
-	if (!pFnAddAuthCompleteServerDelegate)
-		pFnAddAuthCompleteServerDelegate = (UFunction*)UObject::GObjects()->Data[45484];
+	UOnlineAuthInterfaceImpl_AddAuthCompleteServerDelegate_Params params;
+	params.AuthCompleteServerDelegate = AuthCompleteServerDelegate;
 
-	UOnlineAuthInterfaceImpl_execAddAuthCompleteServerDelegate_Parms AddAuthCompleteServerDelegate_Parms;
-	memcpy(&AddAuthCompleteServerDelegate_Parms.AuthCompleteServerDelegate, &AuthCompleteServerDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddAuthCompleteServerDelegate, &AddAuthCompleteServerDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineAuthInterfaceImpl.ClearAuthCompleteClientDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         AuthCompleteClientDelegate     ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         AuthCompleteClientDelegate     (Parm, NeedCtorLink)
 
-void UOnlineAuthInterfaceImpl::ClearAuthCompleteClientDelegate(struct FScriptDelegate AuthCompleteClientDelegate)
+void UOnlineAuthInterfaceImpl::ClearAuthCompleteClientDelegate(const struct FScriptDelegate& AuthCompleteClientDelegate)
 {
-	static UFunction* pFnClearAuthCompleteClientDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.ClearAuthCompleteClientDelegate");
 
-	if (!pFnClearAuthCompleteClientDelegate)
-		pFnClearAuthCompleteClientDelegate = (UFunction*)UObject::GObjects()->Data[45482];
+	UOnlineAuthInterfaceImpl_ClearAuthCompleteClientDelegate_Params params;
+	params.AuthCompleteClientDelegate = AuthCompleteClientDelegate;
 
-	UOnlineAuthInterfaceImpl_execClearAuthCompleteClientDelegate_Parms ClearAuthCompleteClientDelegate_Parms;
-	memcpy(&ClearAuthCompleteClientDelegate_Parms.AuthCompleteClientDelegate, &AuthCompleteClientDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearAuthCompleteClientDelegate, &ClearAuthCompleteClientDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineAuthInterfaceImpl.AddAuthCompleteClientDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         AuthCompleteClientDelegate     ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         AuthCompleteClientDelegate     (Parm, NeedCtorLink)
 
-void UOnlineAuthInterfaceImpl::AddAuthCompleteClientDelegate(struct FScriptDelegate AuthCompleteClientDelegate)
+void UOnlineAuthInterfaceImpl::AddAuthCompleteClientDelegate(const struct FScriptDelegate& AuthCompleteClientDelegate)
 {
-	static UFunction* pFnAddAuthCompleteClientDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.AddAuthCompleteClientDelegate");
 
-	if (!pFnAddAuthCompleteClientDelegate)
-		pFnAddAuthCompleteClientDelegate = (UFunction*)UObject::GObjects()->Data[45480];
+	UOnlineAuthInterfaceImpl_AddAuthCompleteClientDelegate_Params params;
+	params.AuthCompleteClientDelegate = AuthCompleteClientDelegate;
 
-	UOnlineAuthInterfaceImpl_execAddAuthCompleteClientDelegate_Parms AddAuthCompleteClientDelegate_Parms;
-	memcpy(&AddAuthCompleteClientDelegate_Parms.AuthCompleteClientDelegate, &AuthCompleteClientDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddAuthCompleteClientDelegate, &AddAuthCompleteClientDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineAuthInterfaceImpl.ClearAuthBlobReceivedServerDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         AuthBlobReceivedServerDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         AuthBlobReceivedServerDelegate (Parm, NeedCtorLink)
 
-void UOnlineAuthInterfaceImpl::ClearAuthBlobReceivedServerDelegate(struct FScriptDelegate AuthBlobReceivedServerDelegate)
+void UOnlineAuthInterfaceImpl::ClearAuthBlobReceivedServerDelegate(const struct FScriptDelegate& AuthBlobReceivedServerDelegate)
 {
-	static UFunction* pFnClearAuthBlobReceivedServerDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.ClearAuthBlobReceivedServerDelegate");
 
-	if (!pFnClearAuthBlobReceivedServerDelegate)
-		pFnClearAuthBlobReceivedServerDelegate = (UFunction*)UObject::GObjects()->Data[45478];
+	UOnlineAuthInterfaceImpl_ClearAuthBlobReceivedServerDelegate_Params params;
+	params.AuthBlobReceivedServerDelegate = AuthBlobReceivedServerDelegate;
 
-	UOnlineAuthInterfaceImpl_execClearAuthBlobReceivedServerDelegate_Parms ClearAuthBlobReceivedServerDelegate_Parms;
-	memcpy(&ClearAuthBlobReceivedServerDelegate_Parms.AuthBlobReceivedServerDelegate, &AuthBlobReceivedServerDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearAuthBlobReceivedServerDelegate, &ClearAuthBlobReceivedServerDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineAuthInterfaceImpl.AddAuthBlobReceivedServerDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         AuthBlobReceivedServerDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         AuthBlobReceivedServerDelegate (Parm, NeedCtorLink)
 
-void UOnlineAuthInterfaceImpl::AddAuthBlobReceivedServerDelegate(struct FScriptDelegate AuthBlobReceivedServerDelegate)
+void UOnlineAuthInterfaceImpl::AddAuthBlobReceivedServerDelegate(const struct FScriptDelegate& AuthBlobReceivedServerDelegate)
 {
-	static UFunction* pFnAddAuthBlobReceivedServerDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.AddAuthBlobReceivedServerDelegate");
 
-	if (!pFnAddAuthBlobReceivedServerDelegate)
-		pFnAddAuthBlobReceivedServerDelegate = (UFunction*)UObject::GObjects()->Data[45476];
+	UOnlineAuthInterfaceImpl_AddAuthBlobReceivedServerDelegate_Params params;
+	params.AuthBlobReceivedServerDelegate = AuthBlobReceivedServerDelegate;
 
-	UOnlineAuthInterfaceImpl_execAddAuthBlobReceivedServerDelegate_Parms AddAuthBlobReceivedServerDelegate_Parms;
-	memcpy(&AddAuthBlobReceivedServerDelegate_Parms.AuthBlobReceivedServerDelegate, &AuthBlobReceivedServerDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddAuthBlobReceivedServerDelegate, &AddAuthBlobReceivedServerDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineAuthInterfaceImpl.ClearAuthBlobReceivedClientDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         AuthBlobReceivedClientDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         AuthBlobReceivedClientDelegate (Parm, NeedCtorLink)
 
-void UOnlineAuthInterfaceImpl::ClearAuthBlobReceivedClientDelegate(struct FScriptDelegate AuthBlobReceivedClientDelegate)
+void UOnlineAuthInterfaceImpl::ClearAuthBlobReceivedClientDelegate(const struct FScriptDelegate& AuthBlobReceivedClientDelegate)
 {
-	static UFunction* pFnClearAuthBlobReceivedClientDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.ClearAuthBlobReceivedClientDelegate");
 
-	if (!pFnClearAuthBlobReceivedClientDelegate)
-		pFnClearAuthBlobReceivedClientDelegate = (UFunction*)UObject::GObjects()->Data[45474];
+	UOnlineAuthInterfaceImpl_ClearAuthBlobReceivedClientDelegate_Params params;
+	params.AuthBlobReceivedClientDelegate = AuthBlobReceivedClientDelegate;
 
-	UOnlineAuthInterfaceImpl_execClearAuthBlobReceivedClientDelegate_Parms ClearAuthBlobReceivedClientDelegate_Parms;
-	memcpy(&ClearAuthBlobReceivedClientDelegate_Parms.AuthBlobReceivedClientDelegate, &AuthBlobReceivedClientDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearAuthBlobReceivedClientDelegate, &ClearAuthBlobReceivedClientDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineAuthInterfaceImpl.AddAuthBlobReceivedClientDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         AuthBlobReceivedClientDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         AuthBlobReceivedClientDelegate (Parm, NeedCtorLink)
 
-void UOnlineAuthInterfaceImpl::AddAuthBlobReceivedClientDelegate(struct FScriptDelegate AuthBlobReceivedClientDelegate)
+void UOnlineAuthInterfaceImpl::AddAuthBlobReceivedClientDelegate(const struct FScriptDelegate& AuthBlobReceivedClientDelegate)
 {
-	static UFunction* pFnAddAuthBlobReceivedClientDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.AddAuthBlobReceivedClientDelegate");
 
-	if (!pFnAddAuthBlobReceivedClientDelegate)
-		pFnAddAuthBlobReceivedClientDelegate = (UFunction*)UObject::GObjects()->Data[45472];
+	UOnlineAuthInterfaceImpl_AddAuthBlobReceivedClientDelegate_Params params;
+	params.AuthBlobReceivedClientDelegate = AuthBlobReceivedClientDelegate;
 
-	UOnlineAuthInterfaceImpl_execAddAuthBlobReceivedClientDelegate_Parms AddAuthBlobReceivedClientDelegate_Parms;
-	memcpy(&AddAuthBlobReceivedClientDelegate_Parms.AuthBlobReceivedClientDelegate, &AuthBlobReceivedClientDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddAuthBlobReceivedClientDelegate, &AddAuthBlobReceivedClientDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineAuthInterfaceImpl.ClearAuthRequestServerDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         AuthRequestServerDelegate      ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         AuthRequestServerDelegate      (Parm, NeedCtorLink)
 
-void UOnlineAuthInterfaceImpl::ClearAuthRequestServerDelegate(struct FScriptDelegate AuthRequestServerDelegate)
+void UOnlineAuthInterfaceImpl::ClearAuthRequestServerDelegate(const struct FScriptDelegate& AuthRequestServerDelegate)
 {
-	static UFunction* pFnClearAuthRequestServerDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.ClearAuthRequestServerDelegate");
 
-	if (!pFnClearAuthRequestServerDelegate)
-		pFnClearAuthRequestServerDelegate = (UFunction*)UObject::GObjects()->Data[45470];
+	UOnlineAuthInterfaceImpl_ClearAuthRequestServerDelegate_Params params;
+	params.AuthRequestServerDelegate = AuthRequestServerDelegate;
 
-	UOnlineAuthInterfaceImpl_execClearAuthRequestServerDelegate_Parms ClearAuthRequestServerDelegate_Parms;
-	memcpy(&ClearAuthRequestServerDelegate_Parms.AuthRequestServerDelegate, &AuthRequestServerDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearAuthRequestServerDelegate, &ClearAuthRequestServerDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineAuthInterfaceImpl.AddAuthRequestServerDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         AuthRequestServerDelegate      ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         AuthRequestServerDelegate      (Parm, NeedCtorLink)
 
-void UOnlineAuthInterfaceImpl::AddAuthRequestServerDelegate(struct FScriptDelegate AuthRequestServerDelegate)
+void UOnlineAuthInterfaceImpl::AddAuthRequestServerDelegate(const struct FScriptDelegate& AuthRequestServerDelegate)
 {
-	static UFunction* pFnAddAuthRequestServerDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.AddAuthRequestServerDelegate");
 
-	if (!pFnAddAuthRequestServerDelegate)
-		pFnAddAuthRequestServerDelegate = (UFunction*)UObject::GObjects()->Data[45468];
+	UOnlineAuthInterfaceImpl_AddAuthRequestServerDelegate_Params params;
+	params.AuthRequestServerDelegate = AuthRequestServerDelegate;
 
-	UOnlineAuthInterfaceImpl_execAddAuthRequestServerDelegate_Parms AddAuthRequestServerDelegate_Parms;
-	memcpy(&AddAuthRequestServerDelegate_Parms.AuthRequestServerDelegate, &AuthRequestServerDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddAuthRequestServerDelegate, &AddAuthRequestServerDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineAuthInterfaceImpl.ClearAuthRequestClientDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         AuthRequestClientDelegate      ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         AuthRequestClientDelegate      (Parm, NeedCtorLink)
 
-void UOnlineAuthInterfaceImpl::ClearAuthRequestClientDelegate(struct FScriptDelegate AuthRequestClientDelegate)
+void UOnlineAuthInterfaceImpl::ClearAuthRequestClientDelegate(const struct FScriptDelegate& AuthRequestClientDelegate)
 {
-	static UFunction* pFnClearAuthRequestClientDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.ClearAuthRequestClientDelegate");
 
-	if (!pFnClearAuthRequestClientDelegate)
-		pFnClearAuthRequestClientDelegate = (UFunction*)UObject::GObjects()->Data[45466];
+	UOnlineAuthInterfaceImpl_ClearAuthRequestClientDelegate_Params params;
+	params.AuthRequestClientDelegate = AuthRequestClientDelegate;
 
-	UOnlineAuthInterfaceImpl_execClearAuthRequestClientDelegate_Parms ClearAuthRequestClientDelegate_Parms;
-	memcpy(&ClearAuthRequestClientDelegate_Parms.AuthRequestClientDelegate, &AuthRequestClientDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearAuthRequestClientDelegate, &ClearAuthRequestClientDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineAuthInterfaceImpl.AddAuthRequestClientDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         AuthRequestClientDelegate      ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         AuthRequestClientDelegate      (Parm, NeedCtorLink)
 
-void UOnlineAuthInterfaceImpl::AddAuthRequestClientDelegate(struct FScriptDelegate AuthRequestClientDelegate)
+void UOnlineAuthInterfaceImpl::AddAuthRequestClientDelegate(const struct FScriptDelegate& AuthRequestClientDelegate)
 {
-	static UFunction* pFnAddAuthRequestClientDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.AddAuthRequestClientDelegate");
 
-	if (!pFnAddAuthRequestClientDelegate)
-		pFnAddAuthRequestClientDelegate = (UFunction*)UObject::GObjects()->Data[45464];
+	UOnlineAuthInterfaceImpl_AddAuthRequestClientDelegate_Params params;
+	params.AuthRequestClientDelegate = AuthRequestClientDelegate;
 
-	UOnlineAuthInterfaceImpl_execAddAuthRequestClientDelegate_Parms AddAuthRequestClientDelegate_Parms;
-	memcpy(&AddAuthRequestClientDelegate_Parms.AuthRequestClientDelegate, &AuthRequestClientDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddAuthRequestClientDelegate, &AddAuthRequestClientDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineAuthInterfaceImpl.ClearAuthReadyDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         AuthReadyDelegate              ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         AuthReadyDelegate              (Parm, NeedCtorLink)
 
-void UOnlineAuthInterfaceImpl::ClearAuthReadyDelegate(struct FScriptDelegate AuthReadyDelegate)
+void UOnlineAuthInterfaceImpl::ClearAuthReadyDelegate(const struct FScriptDelegate& AuthReadyDelegate)
 {
-	static UFunction* pFnClearAuthReadyDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.ClearAuthReadyDelegate");
 
-	if (!pFnClearAuthReadyDelegate)
-		pFnClearAuthReadyDelegate = (UFunction*)UObject::GObjects()->Data[45462];
+	UOnlineAuthInterfaceImpl_ClearAuthReadyDelegate_Params params;
+	params.AuthReadyDelegate = AuthReadyDelegate;
 
-	UOnlineAuthInterfaceImpl_execClearAuthReadyDelegate_Parms ClearAuthReadyDelegate_Parms;
-	memcpy(&ClearAuthReadyDelegate_Parms.AuthReadyDelegate, &AuthReadyDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearAuthReadyDelegate, &ClearAuthReadyDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineAuthInterfaceImpl.AddAuthReadyDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         AuthReadyDelegate              ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         AuthReadyDelegate              (Parm, NeedCtorLink)
 
-void UOnlineAuthInterfaceImpl::AddAuthReadyDelegate(struct FScriptDelegate AuthReadyDelegate)
+void UOnlineAuthInterfaceImpl::AddAuthReadyDelegate(const struct FScriptDelegate& AuthReadyDelegate)
 {
-	static UFunction* pFnAddAuthReadyDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineAuthInterfaceImpl.AddAuthReadyDelegate");
 
-	if (!pFnAddAuthReadyDelegate)
-		pFnAddAuthReadyDelegate = (UFunction*)UObject::GObjects()->Data[45460];
+	UOnlineAuthInterfaceImpl_AddAuthReadyDelegate_Params params;
+	params.AuthReadyDelegate = AuthReadyDelegate;
 
-	UOnlineAuthInterfaceImpl_execAddAuthReadyDelegate_Parms AddAuthReadyDelegate_Parms;
-	memcpy(&AddAuthReadyDelegate_Parms.AuthReadyDelegate, &AuthReadyDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddAuthReadyDelegate, &AddAuthReadyDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.HasPendingBootInvite
-// [0x00020002]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Defined, Public)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineGameInterfaceImpl::HasPendingBootInvite()
 {
-	static UFunction* pFnHasPendingBootInvite = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.HasPendingBootInvite");
 
-	if (!pFnHasPendingBootInvite)
-		pFnHasPendingBootInvite = (UFunction*)UObject::GObjects()->Data[45835];
+	UOnlineGameInterfaceImpl_HasPendingBootInvite_Params params;
 
-	UOnlineGameInterfaceImpl_execHasPendingBootInvite_Parms HasPendingBootInvite_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnHasPendingBootInvite, &HasPendingBootInvite_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return HasPendingBootInvite_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.CancelNATNegotiation
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
+// (Native, Public)
 
 void UOnlineGameInterfaceImpl::CancelNATNegotiation()
 {
-	static UFunction* pFnCancelNATNegotiation = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.CancelNATNegotiation");
 
-	if (!pFnCancelNATNegotiation)
-		pFnCancelNATNegotiation = (UFunction*)UObject::GObjects()->Data[45834];
+	UOnlineGameInterfaceImpl_CancelNATNegotiation_Params params;
 
-	UOnlineGameInterfaceImpl_execCancelNATNegotiation_Parms CancelNATNegotiation_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnCancelNATNegotiation->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnCancelNATNegotiation, &CancelNATNegotiation_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnCancelNATNegotiation->FunctionFlags |= 0x400;
-};
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearQosStatusChangedDelegate
-// [0x00020000]
-// Parameters infos:
-// struct FScriptDelegate         QosStatusChangedDelegate       ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// struct FScriptDelegate         QosStatusChangedDelegate       (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::ClearQosStatusChangedDelegate(struct FScriptDelegate QosStatusChangedDelegate)
+void UOnlineGameInterfaceImpl::ClearQosStatusChangedDelegate(const struct FScriptDelegate& QosStatusChangedDelegate)
 {
-	static UFunction* pFnClearQosStatusChangedDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.ClearQosStatusChangedDelegate");
 
-	if (!pFnClearQosStatusChangedDelegate)
-		pFnClearQosStatusChangedDelegate = (UFunction*)UObject::GObjects()->Data[45832];
+	UOnlineGameInterfaceImpl_ClearQosStatusChangedDelegate_Params params;
+	params.QosStatusChangedDelegate = QosStatusChangedDelegate;
 
-	UOnlineGameInterfaceImpl_execClearQosStatusChangedDelegate_Parms ClearQosStatusChangedDelegate_Parms;
-	memcpy(&ClearQosStatusChangedDelegate_Parms.QosStatusChangedDelegate, &QosStatusChangedDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearQosStatusChangedDelegate, &ClearQosStatusChangedDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddQosStatusChangedDelegate
-// [0x00020000]
-// Parameters infos:
-// struct FScriptDelegate         QosStatusChangedDelegate       ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// struct FScriptDelegate         QosStatusChangedDelegate       (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::AddQosStatusChangedDelegate(struct FScriptDelegate QosStatusChangedDelegate)
+void UOnlineGameInterfaceImpl::AddQosStatusChangedDelegate(const struct FScriptDelegate& QosStatusChangedDelegate)
 {
-	static UFunction* pFnAddQosStatusChangedDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.AddQosStatusChangedDelegate");
 
-	if (!pFnAddQosStatusChangedDelegate)
-		pFnAddQosStatusChangedDelegate = (UFunction*)UObject::GObjects()->Data[45830];
+	UOnlineGameInterfaceImpl_AddQosStatusChangedDelegate_Params params;
+	params.QosStatusChangedDelegate = QosStatusChangedDelegate;
 
-	UOnlineGameInterfaceImpl_execAddQosStatusChangedDelegate_Parms AddQosStatusChangedDelegate_Parms;
-	memcpy(&AddQosStatusChangedDelegate_Parms.QosStatusChangedDelegate, &QosStatusChangedDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddQosStatusChangedDelegate, &AddQosStatusChangedDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnQosStatusChanged
-// [0x00120000]
-// Parameters infos:
-// int                            NumComplete                    ( CPF_Parm )
-// int                            NumTotal                       ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// int                            NumComplete                    (Parm)
+// int                            NumTotal                       (Parm)
 
 void UOnlineGameInterfaceImpl::OnQosStatusChanged(int NumComplete, int NumTotal)
 {
-	static UFunction* pFnOnQosStatusChanged = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.OnQosStatusChanged");
 
-	if (!pFnOnQosStatusChanged)
-		pFnOnQosStatusChanged = (UFunction*)UObject::GObjects()->Data[45594];
+	UOnlineGameInterfaceImpl_OnQosStatusChanged_Params params;
+	params.NumComplete = NumComplete;
+	params.NumTotal = NumTotal;
 
-	UOnlineGameInterfaceImpl_execOnQosStatusChanged_Parms OnQosStatusChanged_Parms;
-	OnQosStatusChanged_Parms.NumComplete = NumComplete;
-	OnQosStatusChanged_Parms.NumTotal = NumTotal;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnQosStatusChanged, &OnQosStatusChanged_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.BindPlatformSpecificSessionToSearch
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  SearchingPlayerNum             ( CPF_Parm )
-// class UOnlineGameSearch*       SearchSettings                 ( CPF_Parm )
-// unsigned char                  PlatformSpecificInfo           ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  SearchingPlayerNum             (Parm)
+// class UOnlineGameSearch*       SearchSettings                 (Parm)
+// unsigned char                  PlatformSpecificInfo           (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineGameInterfaceImpl::BindPlatformSpecificSessionToSearch(unsigned char SearchingPlayerNum, class UOnlineGameSearch* SearchSettings, unsigned char* PlatformSpecificInfo)
+bool UOnlineGameInterfaceImpl::BindPlatformSpecificSessionToSearch(unsigned char SearchingPlayerNum, class UOnlineGameSearch* SearchSettings, unsigned char PlatformSpecificInfo)
 {
-	static UFunction* pFnBindPlatformSpecificSessionToSearch = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.BindPlatformSpecificSessionToSearch");
 
-	if (!pFnBindPlatformSpecificSessionToSearch)
-		pFnBindPlatformSpecificSessionToSearch = (UFunction*)UObject::GObjects()->Data[45823];
+	UOnlineGameInterfaceImpl_BindPlatformSpecificSessionToSearch_Params params;
+	params.SearchingPlayerNum = SearchingPlayerNum;
+	params.SearchSettings = SearchSettings;
+	params.PlatformSpecificInfo = PlatformSpecificInfo;
 
-	UOnlineGameInterfaceImpl_execBindPlatformSpecificSessionToSearch_Parms BindPlatformSpecificSessionToSearch_Parms;
-	BindPlatformSpecificSessionToSearch_Parms.SearchingPlayerNum = SearchingPlayerNum;
-	BindPlatformSpecificSessionToSearch_Parms.SearchSettings = SearchSettings;
-	memcpy(&BindPlatformSpecificSessionToSearch_Parms.PlatformSpecificInfo, &PlatformSpecificInfo, 0x50);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnBindPlatformSpecificSessionToSearch->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnBindPlatformSpecificSessionToSearch, &BindPlatformSpecificSessionToSearch_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnBindPlatformSpecificSessionToSearch->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return BindPlatformSpecificSessionToSearch_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineGameInterfaceImpl.ReadPlatformSpecificSessionInfoBySessionName
-// [0x00420000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   SessionName                    ( CPF_Parm )
-// unsigned char                  PlatformSpecificInfo           ( CPF_Parm | CPF_OutParm )
+// (Public, HasOutParms)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// unsigned char                  PlatformSpecificInfo           (Parm, OutParm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineGameInterfaceImpl::ReadPlatformSpecificSessionInfoBySessionName(struct FName SessionName, unsigned char* PlatformSpecificInfo)
+bool UOnlineGameInterfaceImpl::ReadPlatformSpecificSessionInfoBySessionName(const struct FName& SessionName, unsigned char* PlatformSpecificInfo)
 {
-	static UFunction* pFnReadPlatformSpecificSessionInfoBySessionName = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.ReadPlatformSpecificSessionInfoBySessionName");
 
-	if (!pFnReadPlatformSpecificSessionInfoBySessionName)
-		pFnReadPlatformSpecificSessionInfoBySessionName = (UFunction*)UObject::GObjects()->Data[45819];
+	UOnlineGameInterfaceImpl_ReadPlatformSpecificSessionInfoBySessionName_Params params;
+	params.SessionName = SessionName;
 
-	UOnlineGameInterfaceImpl_execReadPlatformSpecificSessionInfoBySessionName_Parms ReadPlatformSpecificSessionInfoBySessionName_Parms;
-	memcpy(&ReadPlatformSpecificSessionInfoBySessionName_Parms.SessionName, &SessionName, 0x8);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnReadPlatformSpecificSessionInfoBySessionName, &ReadPlatformSpecificSessionInfoBySessionName_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (PlatformSpecificInfo)
-		memcpy(PlatformSpecificInfo, &ReadPlatformSpecificSessionInfoBySessionName_Parms.PlatformSpecificInfo, 0x50);
+	fn->FunctionFlags = flags;
 
-	return ReadPlatformSpecificSessionInfoBySessionName_Parms.ReturnValue;
-};
+	if (PlatformSpecificInfo != nullptr)
+		*PlatformSpecificInfo = params.PlatformSpecificInfo;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.ReadPlatformSpecificSessionInfo
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FOnlineGameSearchResult DesiredGame                    ( CPF_Const | CPF_Parm | CPF_OutParm )
-// unsigned char                  PlatformSpecificInfo           ( CPF_Parm | CPF_OutParm )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FOnlineGameSearchResult DesiredGame                    (Const, Parm, OutParm)
+// unsigned char                  PlatformSpecificInfo           (Parm, OutParm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineGameInterfaceImpl::ReadPlatformSpecificSessionInfo(struct FOnlineGameSearchResult* DesiredGame, unsigned char* PlatformSpecificInfo)
 {
-	static UFunction* pFnReadPlatformSpecificSessionInfo = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.ReadPlatformSpecificSessionInfo");
 
-	if (!pFnReadPlatformSpecificSessionInfo)
-		pFnReadPlatformSpecificSessionInfo = (UFunction*)UObject::GObjects()->Data[45815];
+	UOnlineGameInterfaceImpl_ReadPlatformSpecificSessionInfo_Params params;
 
-	UOnlineGameInterfaceImpl_execReadPlatformSpecificSessionInfo_Parms ReadPlatformSpecificSessionInfo_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnReadPlatformSpecificSessionInfo->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnReadPlatformSpecificSessionInfo, &ReadPlatformSpecificSessionInfo_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnReadPlatformSpecificSessionInfo->FunctionFlags |= 0x400;
+	if (DesiredGame != nullptr)
+		*DesiredGame = params.DesiredGame;
+	if (PlatformSpecificInfo != nullptr)
+		*PlatformSpecificInfo = params.PlatformSpecificInfo;
 
-	if (DesiredGame)
-		memcpy(DesiredGame, &ReadPlatformSpecificSessionInfo_Parms.DesiredGame, 0x8);
+	return params.ReturnValue;
+}
 
-	if (PlatformSpecificInfo)
-		memcpy(PlatformSpecificInfo, &ReadPlatformSpecificSessionInfo_Parms.PlatformSpecificInfo, 0x50);
-
-	return ReadPlatformSpecificSessionInfo_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineGameInterfaceImpl.QueryNonAdvertisedData
-// [0x00020000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            StartAt                        ( CPF_Parm )
-// int                            NumberToQuery                  ( CPF_Parm )
+// (Public)
+// Parameters:
+// int                            StartAt                        (Parm)
+// int                            NumberToQuery                  (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineGameInterfaceImpl::QueryNonAdvertisedData(int StartAt, int NumberToQuery)
 {
-	static UFunction* pFnQueryNonAdvertisedData = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.QueryNonAdvertisedData");
 
-	if (!pFnQueryNonAdvertisedData)
-		pFnQueryNonAdvertisedData = (UFunction*)UObject::GObjects()->Data[45811];
+	UOnlineGameInterfaceImpl_QueryNonAdvertisedData_Params params;
+	params.StartAt = StartAt;
+	params.NumberToQuery = NumberToQuery;
 
-	UOnlineGameInterfaceImpl_execQueryNonAdvertisedData_Parms QueryNonAdvertisedData_Parms;
-	QueryNonAdvertisedData_Parms.StartAt = StartAt;
-	QueryNonAdvertisedData_Parms.NumberToQuery = NumberToQuery;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnQueryNonAdvertisedData, &QueryNonAdvertisedData_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return QueryNonAdvertisedData_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearJoinMigratedOnlineGameCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         JoinMigratedOnlineGameCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         JoinMigratedOnlineGameCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::ClearJoinMigratedOnlineGameCompleteDelegate(struct FScriptDelegate JoinMigratedOnlineGameCompleteDelegate)
+void UOnlineGameInterfaceImpl::ClearJoinMigratedOnlineGameCompleteDelegate(const struct FScriptDelegate& JoinMigratedOnlineGameCompleteDelegate)
 {
-	static UFunction* pFnClearJoinMigratedOnlineGameCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.ClearJoinMigratedOnlineGameCompleteDelegate");
 
-	if (!pFnClearJoinMigratedOnlineGameCompleteDelegate)
-		pFnClearJoinMigratedOnlineGameCompleteDelegate = (UFunction*)UObject::GObjects()->Data[45809];
+	UOnlineGameInterfaceImpl_ClearJoinMigratedOnlineGameCompleteDelegate_Params params;
+	params.JoinMigratedOnlineGameCompleteDelegate = JoinMigratedOnlineGameCompleteDelegate;
 
-	UOnlineGameInterfaceImpl_execClearJoinMigratedOnlineGameCompleteDelegate_Parms ClearJoinMigratedOnlineGameCompleteDelegate_Parms;
-	memcpy(&ClearJoinMigratedOnlineGameCompleteDelegate_Parms.JoinMigratedOnlineGameCompleteDelegate, &JoinMigratedOnlineGameCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearJoinMigratedOnlineGameCompleteDelegate, &ClearJoinMigratedOnlineGameCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddJoinMigratedOnlineGameCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         JoinMigratedOnlineGameCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         JoinMigratedOnlineGameCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::AddJoinMigratedOnlineGameCompleteDelegate(struct FScriptDelegate JoinMigratedOnlineGameCompleteDelegate)
+void UOnlineGameInterfaceImpl::AddJoinMigratedOnlineGameCompleteDelegate(const struct FScriptDelegate& JoinMigratedOnlineGameCompleteDelegate)
 {
-	static UFunction* pFnAddJoinMigratedOnlineGameCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.AddJoinMigratedOnlineGameCompleteDelegate");
 
-	if (!pFnAddJoinMigratedOnlineGameCompleteDelegate)
-		pFnAddJoinMigratedOnlineGameCompleteDelegate = (UFunction*)UObject::GObjects()->Data[45807];
+	UOnlineGameInterfaceImpl_AddJoinMigratedOnlineGameCompleteDelegate_Params params;
+	params.JoinMigratedOnlineGameCompleteDelegate = JoinMigratedOnlineGameCompleteDelegate;
 
-	UOnlineGameInterfaceImpl_execAddJoinMigratedOnlineGameCompleteDelegate_Parms AddJoinMigratedOnlineGameCompleteDelegate_Parms;
-	memcpy(&AddJoinMigratedOnlineGameCompleteDelegate_Parms.JoinMigratedOnlineGameCompleteDelegate, &JoinMigratedOnlineGameCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddJoinMigratedOnlineGameCompleteDelegate, &AddJoinMigratedOnlineGameCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnJoinMigratedOnlineGameComplete
-// [0x00120000]
-// Parameters infos:
-// struct FName                   SessionName                    ( CPF_Parm )
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineGameInterfaceImpl::OnJoinMigratedOnlineGameComplete(struct FName SessionName, unsigned long bWasSuccessful)
+void UOnlineGameInterfaceImpl::OnJoinMigratedOnlineGameComplete(const struct FName& SessionName, bool bWasSuccessful)
 {
-	static UFunction* pFnOnJoinMigratedOnlineGameComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.OnJoinMigratedOnlineGameComplete");
 
-	if (!pFnOnJoinMigratedOnlineGameComplete)
-		pFnOnJoinMigratedOnlineGameComplete = (UFunction*)UObject::GObjects()->Data[45577];
+	UOnlineGameInterfaceImpl_OnJoinMigratedOnlineGameComplete_Params params;
+	params.SessionName = SessionName;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineGameInterfaceImpl_execOnJoinMigratedOnlineGameComplete_Parms OnJoinMigratedOnlineGameComplete_Parms;
-	memcpy(&OnJoinMigratedOnlineGameComplete_Parms.SessionName, &SessionName, 0x8);
-	OnJoinMigratedOnlineGameComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnJoinMigratedOnlineGameComplete, &OnJoinMigratedOnlineGameComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.JoinMigratedOnlineGame
-// [0x00420000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  PlayerNum                      ( CPF_Parm )
-// struct FName                   SessionName                    ( CPF_Parm )
-// struct FOnlineGameSearchResult DesiredGame                    ( CPF_Const | CPF_Parm | CPF_OutParm )
+// (Public, HasOutParms)
+// Parameters:
+// unsigned char                  PlayerNum                      (Parm)
+// struct FName                   SessionName                    (Parm)
+// struct FOnlineGameSearchResult DesiredGame                    (Const, Parm, OutParm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineGameInterfaceImpl::JoinMigratedOnlineGame(unsigned char PlayerNum, struct FName SessionName, struct FOnlineGameSearchResult* DesiredGame)
+bool UOnlineGameInterfaceImpl::JoinMigratedOnlineGame(unsigned char PlayerNum, const struct FName& SessionName, struct FOnlineGameSearchResult* DesiredGame)
 {
-	static UFunction* pFnJoinMigratedOnlineGame = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.JoinMigratedOnlineGame");
 
-	if (!pFnJoinMigratedOnlineGame)
-		pFnJoinMigratedOnlineGame = (UFunction*)UObject::GObjects()->Data[45800];
+	UOnlineGameInterfaceImpl_JoinMigratedOnlineGame_Params params;
+	params.PlayerNum = PlayerNum;
+	params.SessionName = SessionName;
 
-	UOnlineGameInterfaceImpl_execJoinMigratedOnlineGame_Parms JoinMigratedOnlineGame_Parms;
-	JoinMigratedOnlineGame_Parms.PlayerNum = PlayerNum;
-	memcpy(&JoinMigratedOnlineGame_Parms.SessionName, &SessionName, 0x8);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnJoinMigratedOnlineGame, &JoinMigratedOnlineGame_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (DesiredGame)
-		memcpy(DesiredGame, &JoinMigratedOnlineGame_Parms.DesiredGame, 0x8);
+	fn->FunctionFlags = flags;
 
-	return JoinMigratedOnlineGame_Parms.ReturnValue;
-};
+	if (DesiredGame != nullptr)
+		*DesiredGame = params.DesiredGame;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearMigrateOnlineGameCompleteDelegate
-// [0x00020000]
-// Parameters infos:
-// struct FScriptDelegate         MigrateOnlineGameCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// struct FScriptDelegate         MigrateOnlineGameCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::ClearMigrateOnlineGameCompleteDelegate(struct FScriptDelegate MigrateOnlineGameCompleteDelegate)
+void UOnlineGameInterfaceImpl::ClearMigrateOnlineGameCompleteDelegate(const struct FScriptDelegate& MigrateOnlineGameCompleteDelegate)
 {
-	static UFunction* pFnClearMigrateOnlineGameCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.ClearMigrateOnlineGameCompleteDelegate");
 
-	if (!pFnClearMigrateOnlineGameCompleteDelegate)
-		pFnClearMigrateOnlineGameCompleteDelegate = (UFunction*)UObject::GObjects()->Data[45798];
+	UOnlineGameInterfaceImpl_ClearMigrateOnlineGameCompleteDelegate_Params params;
+	params.MigrateOnlineGameCompleteDelegate = MigrateOnlineGameCompleteDelegate;
 
-	UOnlineGameInterfaceImpl_execClearMigrateOnlineGameCompleteDelegate_Parms ClearMigrateOnlineGameCompleteDelegate_Parms;
-	memcpy(&ClearMigrateOnlineGameCompleteDelegate_Parms.MigrateOnlineGameCompleteDelegate, &MigrateOnlineGameCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearMigrateOnlineGameCompleteDelegate, &ClearMigrateOnlineGameCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddMigrateOnlineGameCompleteDelegate
-// [0x00020000]
-// Parameters infos:
-// struct FScriptDelegate         MigrateOnlineGameCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// struct FScriptDelegate         MigrateOnlineGameCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::AddMigrateOnlineGameCompleteDelegate(struct FScriptDelegate MigrateOnlineGameCompleteDelegate)
+void UOnlineGameInterfaceImpl::AddMigrateOnlineGameCompleteDelegate(const struct FScriptDelegate& MigrateOnlineGameCompleteDelegate)
 {
-	static UFunction* pFnAddMigrateOnlineGameCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.AddMigrateOnlineGameCompleteDelegate");
 
-	if (!pFnAddMigrateOnlineGameCompleteDelegate)
-		pFnAddMigrateOnlineGameCompleteDelegate = (UFunction*)UObject::GObjects()->Data[45796];
+	UOnlineGameInterfaceImpl_AddMigrateOnlineGameCompleteDelegate_Params params;
+	params.MigrateOnlineGameCompleteDelegate = MigrateOnlineGameCompleteDelegate;
 
-	UOnlineGameInterfaceImpl_execAddMigrateOnlineGameCompleteDelegate_Parms AddMigrateOnlineGameCompleteDelegate_Parms;
-	memcpy(&AddMigrateOnlineGameCompleteDelegate_Parms.MigrateOnlineGameCompleteDelegate, &MigrateOnlineGameCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddMigrateOnlineGameCompleteDelegate, &AddMigrateOnlineGameCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnMigrateOnlineGameComplete
-// [0x00120000]
-// Parameters infos:
-// struct FName                   SessionName                    ( CPF_Parm )
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineGameInterfaceImpl::OnMigrateOnlineGameComplete(struct FName SessionName, unsigned long bWasSuccessful)
+void UOnlineGameInterfaceImpl::OnMigrateOnlineGameComplete(const struct FName& SessionName, bool bWasSuccessful)
 {
-	static UFunction* pFnOnMigrateOnlineGameComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.OnMigrateOnlineGameComplete");
 
-	if (!pFnOnMigrateOnlineGameComplete)
-		pFnOnMigrateOnlineGameComplete = (UFunction*)UObject::GObjects()->Data[45574];
+	UOnlineGameInterfaceImpl_OnMigrateOnlineGameComplete_Params params;
+	params.SessionName = SessionName;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineGameInterfaceImpl_execOnMigrateOnlineGameComplete_Parms OnMigrateOnlineGameComplete_Parms;
-	memcpy(&OnMigrateOnlineGameComplete_Parms.SessionName, &SessionName, 0x8);
-	OnMigrateOnlineGameComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnMigrateOnlineGameComplete, &OnMigrateOnlineGameComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.MigrateOnlineGame
-// [0x00020000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  HostingPlayerNum               ( CPF_Parm )
-// struct FName                   SessionName                    ( CPF_Parm )
+// (Public)
+// Parameters:
+// unsigned char                  HostingPlayerNum               (Parm)
+// struct FName                   SessionName                    (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineGameInterfaceImpl::MigrateOnlineGame(unsigned char HostingPlayerNum, struct FName SessionName)
+bool UOnlineGameInterfaceImpl::MigrateOnlineGame(unsigned char HostingPlayerNum, const struct FName& SessionName)
 {
-	static UFunction* pFnMigrateOnlineGame = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.MigrateOnlineGame");
 
-	if (!pFnMigrateOnlineGame)
-		pFnMigrateOnlineGame = (UFunction*)UObject::GObjects()->Data[45790];
+	UOnlineGameInterfaceImpl_MigrateOnlineGame_Params params;
+	params.HostingPlayerNum = HostingPlayerNum;
+	params.SessionName = SessionName;
 
-	UOnlineGameInterfaceImpl_execMigrateOnlineGame_Parms MigrateOnlineGame_Parms;
-	MigrateOnlineGame_Parms.HostingPlayerNum = HostingPlayerNum;
-	memcpy(&MigrateOnlineGame_Parms.SessionName, &SessionName, 0x8);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnMigrateOnlineGame, &MigrateOnlineGame_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return MigrateOnlineGame_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearRecalculateSkillRatingCompleteDelegate
-// [0x00020000]
-// Parameters infos:
-// struct FScriptDelegate         RecalculateSkillRatingGameCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// struct FScriptDelegate         RecalculateSkillRatingGameCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::ClearRecalculateSkillRatingCompleteDelegate(struct FScriptDelegate RecalculateSkillRatingGameCompleteDelegate)
+void UOnlineGameInterfaceImpl::ClearRecalculateSkillRatingCompleteDelegate(const struct FScriptDelegate& RecalculateSkillRatingGameCompleteDelegate)
 {
-	static UFunction* pFnClearRecalculateSkillRatingCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.ClearRecalculateSkillRatingCompleteDelegate");
 
-	if (!pFnClearRecalculateSkillRatingCompleteDelegate)
-		pFnClearRecalculateSkillRatingCompleteDelegate = (UFunction*)UObject::GObjects()->Data[45788];
+	UOnlineGameInterfaceImpl_ClearRecalculateSkillRatingCompleteDelegate_Params params;
+	params.RecalculateSkillRatingGameCompleteDelegate = RecalculateSkillRatingGameCompleteDelegate;
 
-	UOnlineGameInterfaceImpl_execClearRecalculateSkillRatingCompleteDelegate_Parms ClearRecalculateSkillRatingCompleteDelegate_Parms;
-	memcpy(&ClearRecalculateSkillRatingCompleteDelegate_Parms.RecalculateSkillRatingGameCompleteDelegate, &RecalculateSkillRatingGameCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearRecalculateSkillRatingCompleteDelegate, &ClearRecalculateSkillRatingCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddRecalculateSkillRatingCompleteDelegate
-// [0x00020000]
-// Parameters infos:
-// struct FScriptDelegate         RecalculateSkillRatingCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// struct FScriptDelegate         RecalculateSkillRatingCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::AddRecalculateSkillRatingCompleteDelegate(struct FScriptDelegate RecalculateSkillRatingCompleteDelegate)
+void UOnlineGameInterfaceImpl::AddRecalculateSkillRatingCompleteDelegate(const struct FScriptDelegate& RecalculateSkillRatingCompleteDelegate)
 {
-	static UFunction* pFnAddRecalculateSkillRatingCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.AddRecalculateSkillRatingCompleteDelegate");
 
-	if (!pFnAddRecalculateSkillRatingCompleteDelegate)
-		pFnAddRecalculateSkillRatingCompleteDelegate = (UFunction*)UObject::GObjects()->Data[45786];
+	UOnlineGameInterfaceImpl_AddRecalculateSkillRatingCompleteDelegate_Params params;
+	params.RecalculateSkillRatingCompleteDelegate = RecalculateSkillRatingCompleteDelegate;
 
-	UOnlineGameInterfaceImpl_execAddRecalculateSkillRatingCompleteDelegate_Parms AddRecalculateSkillRatingCompleteDelegate_Parms;
-	memcpy(&AddRecalculateSkillRatingCompleteDelegate_Parms.RecalculateSkillRatingCompleteDelegate, &RecalculateSkillRatingCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddRecalculateSkillRatingCompleteDelegate, &AddRecalculateSkillRatingCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnRecalculateSkillRatingComplete
-// [0x00120000]
-// Parameters infos:
-// struct FName                   SessionName                    ( CPF_Parm )
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineGameInterfaceImpl::OnRecalculateSkillRatingComplete(struct FName SessionName, unsigned long bWasSuccessful)
+void UOnlineGameInterfaceImpl::OnRecalculateSkillRatingComplete(const struct FName& SessionName, bool bWasSuccessful)
 {
-	static UFunction* pFnOnRecalculateSkillRatingComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.OnRecalculateSkillRatingComplete");
 
-	if (!pFnOnRecalculateSkillRatingComplete)
-		pFnOnRecalculateSkillRatingComplete = (UFunction*)UObject::GObjects()->Data[45580];
+	UOnlineGameInterfaceImpl_OnRecalculateSkillRatingComplete_Params params;
+	params.SessionName = SessionName;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineGameInterfaceImpl_execOnRecalculateSkillRatingComplete_Parms OnRecalculateSkillRatingComplete_Parms;
-	memcpy(&OnRecalculateSkillRatingComplete_Parms.SessionName, &SessionName, 0x8);
-	OnRecalculateSkillRatingComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnRecalculateSkillRatingComplete, &OnRecalculateSkillRatingComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.RecalculateSkillRating
-// [0x00420000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   SessionName                    ( CPF_Parm )
-// TArray< struct FUniqueNetId >  Players                        ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Public, HasOutParms)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// TArray<struct FUniqueNetId>    Players                        (Const, Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineGameInterfaceImpl::RecalculateSkillRating(struct FName SessionName, TArray< struct FUniqueNetId >* Players)
+bool UOnlineGameInterfaceImpl::RecalculateSkillRating(const struct FName& SessionName, TArray<struct FUniqueNetId>* Players)
 {
-	static UFunction* pFnRecalculateSkillRating = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.RecalculateSkillRating");
 
-	if (!pFnRecalculateSkillRating)
-		pFnRecalculateSkillRating = (UFunction*)UObject::GObjects()->Data[45779];
+	UOnlineGameInterfaceImpl_RecalculateSkillRating_Params params;
+	params.SessionName = SessionName;
 
-	UOnlineGameInterfaceImpl_execRecalculateSkillRating_Parms RecalculateSkillRating_Parms;
-	memcpy(&RecalculateSkillRating_Parms.SessionName, &SessionName, 0x8);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnRecalculateSkillRating, &RecalculateSkillRating_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (Players)
-		memcpy(Players, &RecalculateSkillRating_Parms.Players, 0xC);
+	fn->FunctionFlags = flags;
 
-	return RecalculateSkillRating_Parms.ReturnValue;
-};
+	if (Players != nullptr)
+		*Players = params.Players;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearGameInviteProcessingStartedDelegate
-// [0x00020000]
-// Parameters infos:
-// struct FScriptDelegate         GameInviteProcessingStartedDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// struct FScriptDelegate         GameInviteProcessingStartedDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::ClearGameInviteProcessingStartedDelegate(struct FScriptDelegate GameInviteProcessingStartedDelegate)
+void UOnlineGameInterfaceImpl::ClearGameInviteProcessingStartedDelegate(const struct FScriptDelegate& GameInviteProcessingStartedDelegate)
 {
-	static UFunction* pFnClearGameInviteProcessingStartedDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.ClearGameInviteProcessingStartedDelegate");
 
-	if (!pFnClearGameInviteProcessingStartedDelegate)
-		pFnClearGameInviteProcessingStartedDelegate = (UFunction*)UObject::GObjects()->Data[45777];
+	UOnlineGameInterfaceImpl_ClearGameInviteProcessingStartedDelegate_Params params;
+	params.GameInviteProcessingStartedDelegate = GameInviteProcessingStartedDelegate;
 
-	UOnlineGameInterfaceImpl_execClearGameInviteProcessingStartedDelegate_Parms ClearGameInviteProcessingStartedDelegate_Parms;
-	memcpy(&ClearGameInviteProcessingStartedDelegate_Parms.GameInviteProcessingStartedDelegate, &GameInviteProcessingStartedDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearGameInviteProcessingStartedDelegate, &ClearGameInviteProcessingStartedDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddGameInviteProcessingStartedDelegate
-// [0x00020000]
-// Parameters infos:
-// struct FScriptDelegate         GameInviteProcessingStartedDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// struct FScriptDelegate         GameInviteProcessingStartedDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::AddGameInviteProcessingStartedDelegate(struct FScriptDelegate GameInviteProcessingStartedDelegate)
+void UOnlineGameInterfaceImpl::AddGameInviteProcessingStartedDelegate(const struct FScriptDelegate& GameInviteProcessingStartedDelegate)
 {
-	static UFunction* pFnAddGameInviteProcessingStartedDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.AddGameInviteProcessingStartedDelegate");
 
-	if (!pFnAddGameInviteProcessingStartedDelegate)
-		pFnAddGameInviteProcessingStartedDelegate = (UFunction*)UObject::GObjects()->Data[45775];
+	UOnlineGameInterfaceImpl_AddGameInviteProcessingStartedDelegate_Params params;
+	params.GameInviteProcessingStartedDelegate = GameInviteProcessingStartedDelegate;
 
-	UOnlineGameInterfaceImpl_execAddGameInviteProcessingStartedDelegate_Parms AddGameInviteProcessingStartedDelegate_Parms;
-	memcpy(&AddGameInviteProcessingStartedDelegate_Parms.GameInviteProcessingStartedDelegate, &GameInviteProcessingStartedDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddGameInviteProcessingStartedDelegate, &AddGameInviteProcessingStartedDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnGameInviteProcessingStarted
-// [0x00120000]
-// Parameters infos:
+// (Public, Delegate)
 
 void UOnlineGameInterfaceImpl::OnGameInviteProcessingStarted()
 {
-	static UFunction* pFnOnGameInviteProcessingStarted = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.OnGameInviteProcessingStarted");
 
-	if (!pFnOnGameInviteProcessingStarted)
-		pFnOnGameInviteProcessingStarted = (UFunction*)UObject::GObjects()->Data[45599];
+	UOnlineGameInterfaceImpl_OnGameInviteProcessingStarted_Params params;
 
-	UOnlineGameInterfaceImpl_execOnGameInviteProcessingStarted_Parms OnGameInviteProcessingStarted_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnGameInviteProcessingStarted, &OnGameInviteProcessingStarted_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.AcceptGameInvite
-// [0x00020000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FName                   SessionName                    ( CPF_Parm )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FName                   SessionName                    (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineGameInterfaceImpl::AcceptGameInvite(unsigned char LocalUserNum, struct FName SessionName)
+bool UOnlineGameInterfaceImpl::AcceptGameInvite(unsigned char LocalUserNum, const struct FName& SessionName)
 {
-	static UFunction* pFnAcceptGameInvite = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.AcceptGameInvite");
 
-	if (!pFnAcceptGameInvite)
-		pFnAcceptGameInvite = (UFunction*)UObject::GObjects()->Data[45771];
+	UOnlineGameInterfaceImpl_AcceptGameInvite_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.SessionName = SessionName;
 
-	UOnlineGameInterfaceImpl_execAcceptGameInvite_Parms AcceptGameInvite_Parms;
-	AcceptGameInvite_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AcceptGameInvite_Parms.SessionName, &SessionName, 0x8);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAcceptGameInvite, &AcceptGameInvite_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return AcceptGameInvite_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearGameInviteAcceptedDelegate
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         GameInviteAcceptedDelegate     ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         GameInviteAcceptedDelegate     (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::ClearGameInviteAcceptedDelegate(unsigned char LocalUserNum, struct FScriptDelegate GameInviteAcceptedDelegate)
+void UOnlineGameInterfaceImpl::ClearGameInviteAcceptedDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& GameInviteAcceptedDelegate)
 {
-	static UFunction* pFnClearGameInviteAcceptedDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.ClearGameInviteAcceptedDelegate");
 
-	if (!pFnClearGameInviteAcceptedDelegate)
-		pFnClearGameInviteAcceptedDelegate = (UFunction*)UObject::GObjects()->Data[45768];
+	UOnlineGameInterfaceImpl_ClearGameInviteAcceptedDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.GameInviteAcceptedDelegate = GameInviteAcceptedDelegate;
 
-	UOnlineGameInterfaceImpl_execClearGameInviteAcceptedDelegate_Parms ClearGameInviteAcceptedDelegate_Parms;
-	ClearGameInviteAcceptedDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&ClearGameInviteAcceptedDelegate_Parms.GameInviteAcceptedDelegate, &GameInviteAcceptedDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearGameInviteAcceptedDelegate, &ClearGameInviteAcceptedDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddGameInviteAcceptedDelegate
-// [0x00020000]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
-// struct FScriptDelegate         GameInviteAcceptedDelegate     ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
+// struct FScriptDelegate         GameInviteAcceptedDelegate     (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::AddGameInviteAcceptedDelegate(unsigned char LocalUserNum, struct FScriptDelegate GameInviteAcceptedDelegate)
+void UOnlineGameInterfaceImpl::AddGameInviteAcceptedDelegate(unsigned char LocalUserNum, const struct FScriptDelegate& GameInviteAcceptedDelegate)
 {
-	static UFunction* pFnAddGameInviteAcceptedDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.AddGameInviteAcceptedDelegate");
 
-	if (!pFnAddGameInviteAcceptedDelegate)
-		pFnAddGameInviteAcceptedDelegate = (UFunction*)UObject::GObjects()->Data[45765];
+	UOnlineGameInterfaceImpl_AddGameInviteAcceptedDelegate_Params params;
+	params.LocalUserNum = LocalUserNum;
+	params.GameInviteAcceptedDelegate = GameInviteAcceptedDelegate;
 
-	UOnlineGameInterfaceImpl_execAddGameInviteAcceptedDelegate_Parms AddGameInviteAcceptedDelegate_Parms;
-	AddGameInviteAcceptedDelegate_Parms.LocalUserNum = LocalUserNum;
-	memcpy(&AddGameInviteAcceptedDelegate_Parms.GameInviteAcceptedDelegate, &GameInviteAcceptedDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddGameInviteAcceptedDelegate, &AddGameInviteAcceptedDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnGameInviteAccepted
-// [0x00520000]
-// Parameters infos:
-// struct FOnlineGameSearchResult InviteResult                   ( CPF_Const | CPF_Parm | CPF_OutParm )
+// (Public, Delegate, HasOutParms)
+// Parameters:
+// struct FOnlineGameSearchResult InviteResult                   (Const, Parm, OutParm)
 
 void UOnlineGameInterfaceImpl::OnGameInviteAccepted(struct FOnlineGameSearchResult* InviteResult)
 {
-	static UFunction* pFnOnGameInviteAccepted = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.OnGameInviteAccepted");
 
-	if (!pFnOnGameInviteAccepted)
-		pFnOnGameInviteAccepted = (UFunction*)UObject::GObjects()->Data[45601];
+	UOnlineGameInterfaceImpl_OnGameInviteAccepted_Params params;
 
-	UOnlineGameInterfaceImpl_execOnGameInviteAccepted_Parms OnGameInviteAccepted_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnGameInviteAccepted, &OnGameInviteAccepted_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (InviteResult)
-		memcpy(InviteResult, &OnGameInviteAccepted_Parms.InviteResult, 0x8);
-};
+	fn->FunctionFlags = flags;
+
+	if (InviteResult != nullptr)
+		*InviteResult = params.InviteResult;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.GetArbitratedPlayers
-// [0x00020000]
-// Parameters infos:
-// TArray< struct FOnlineArbitrationRegistrant > ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// struct FName                   SessionName                    ( CPF_Parm )
+// (Public)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// TArray<struct FOnlineArbitrationRegistrant> ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
-TArray< struct FOnlineArbitrationRegistrant > UOnlineGameInterfaceImpl::GetArbitratedPlayers(struct FName SessionName)
+TArray<struct FOnlineArbitrationRegistrant> UOnlineGameInterfaceImpl::GetArbitratedPlayers(const struct FName& SessionName)
 {
-	static UFunction* pFnGetArbitratedPlayers = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.GetArbitratedPlayers");
 
-	if (!pFnGetArbitratedPlayers)
-		pFnGetArbitratedPlayers = (UFunction*)UObject::GObjects()->Data[45760];
+	UOnlineGameInterfaceImpl_GetArbitratedPlayers_Params params;
+	params.SessionName = SessionName;
 
-	UOnlineGameInterfaceImpl_execGetArbitratedPlayers_Parms GetArbitratedPlayers_Parms;
-	memcpy(&GetArbitratedPlayers_Parms.SessionName, &SessionName, 0x8);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetArbitratedPlayers, &GetArbitratedPlayers_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return GetArbitratedPlayers_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearArbitrationRegistrationCompleteDelegate
-// [0x00020000]
-// Parameters infos:
-// struct FScriptDelegate         ArbitrationRegistrationCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// struct FScriptDelegate         ArbitrationRegistrationCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::ClearArbitrationRegistrationCompleteDelegate(struct FScriptDelegate ArbitrationRegistrationCompleteDelegate)
+void UOnlineGameInterfaceImpl::ClearArbitrationRegistrationCompleteDelegate(const struct FScriptDelegate& ArbitrationRegistrationCompleteDelegate)
 {
-	static UFunction* pFnClearArbitrationRegistrationCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.ClearArbitrationRegistrationCompleteDelegate");
 
-	if (!pFnClearArbitrationRegistrationCompleteDelegate)
-		pFnClearArbitrationRegistrationCompleteDelegate = (UFunction*)UObject::GObjects()->Data[45758];
+	UOnlineGameInterfaceImpl_ClearArbitrationRegistrationCompleteDelegate_Params params;
+	params.ArbitrationRegistrationCompleteDelegate = ArbitrationRegistrationCompleteDelegate;
 
-	UOnlineGameInterfaceImpl_execClearArbitrationRegistrationCompleteDelegate_Parms ClearArbitrationRegistrationCompleteDelegate_Parms;
-	memcpy(&ClearArbitrationRegistrationCompleteDelegate_Parms.ArbitrationRegistrationCompleteDelegate, &ArbitrationRegistrationCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearArbitrationRegistrationCompleteDelegate, &ClearArbitrationRegistrationCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddArbitrationRegistrationCompleteDelegate
-// [0x00020000]
-// Parameters infos:
-// struct FScriptDelegate         ArbitrationRegistrationCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// struct FScriptDelegate         ArbitrationRegistrationCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::AddArbitrationRegistrationCompleteDelegate(struct FScriptDelegate ArbitrationRegistrationCompleteDelegate)
+void UOnlineGameInterfaceImpl::AddArbitrationRegistrationCompleteDelegate(const struct FScriptDelegate& ArbitrationRegistrationCompleteDelegate)
 {
-	static UFunction* pFnAddArbitrationRegistrationCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.AddArbitrationRegistrationCompleteDelegate");
 
-	if (!pFnAddArbitrationRegistrationCompleteDelegate)
-		pFnAddArbitrationRegistrationCompleteDelegate = (UFunction*)UObject::GObjects()->Data[45756];
+	UOnlineGameInterfaceImpl_AddArbitrationRegistrationCompleteDelegate_Params params;
+	params.ArbitrationRegistrationCompleteDelegate = ArbitrationRegistrationCompleteDelegate;
 
-	UOnlineGameInterfaceImpl_execAddArbitrationRegistrationCompleteDelegate_Parms AddArbitrationRegistrationCompleteDelegate_Parms;
-	memcpy(&AddArbitrationRegistrationCompleteDelegate_Parms.ArbitrationRegistrationCompleteDelegate, &ArbitrationRegistrationCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddArbitrationRegistrationCompleteDelegate, &AddArbitrationRegistrationCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnArbitrationRegistrationComplete
-// [0x00120000]
-// Parameters infos:
-// struct FName                   SessionName                    ( CPF_Parm )
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineGameInterfaceImpl::OnArbitrationRegistrationComplete(struct FName SessionName, unsigned long bWasSuccessful)
+void UOnlineGameInterfaceImpl::OnArbitrationRegistrationComplete(const struct FName& SessionName, bool bWasSuccessful)
 {
-	static UFunction* pFnOnArbitrationRegistrationComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.OnArbitrationRegistrationComplete");
 
-	if (!pFnOnArbitrationRegistrationComplete)
-		pFnOnArbitrationRegistrationComplete = (UFunction*)UObject::GObjects()->Data[45603];
+	UOnlineGameInterfaceImpl_OnArbitrationRegistrationComplete_Params params;
+	params.SessionName = SessionName;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineGameInterfaceImpl_execOnArbitrationRegistrationComplete_Parms OnArbitrationRegistrationComplete_Parms;
-	memcpy(&OnArbitrationRegistrationComplete_Parms.SessionName, &SessionName, 0x8);
-	OnArbitrationRegistrationComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnArbitrationRegistrationComplete, &OnArbitrationRegistrationComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.RegisterForArbitration
-// [0x00020000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   SessionName                    ( CPF_Parm )
+// (Public)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineGameInterfaceImpl::RegisterForArbitration(struct FName SessionName)
+bool UOnlineGameInterfaceImpl::RegisterForArbitration(const struct FName& SessionName)
 {
-	static UFunction* pFnRegisterForArbitration = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.RegisterForArbitration");
 
-	if (!pFnRegisterForArbitration)
-		pFnRegisterForArbitration = (UFunction*)UObject::GObjects()->Data[45751];
+	UOnlineGameInterfaceImpl_RegisterForArbitration_Params params;
+	params.SessionName = SessionName;
 
-	UOnlineGameInterfaceImpl_execRegisterForArbitration_Parms RegisterForArbitration_Parms;
-	memcpy(&RegisterForArbitration_Parms.SessionName, &SessionName, 0x8);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnRegisterForArbitration, &RegisterForArbitration_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return RegisterForArbitration_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearEndOnlineGameCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         EndOnlineGameCompleteDelegate  ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         EndOnlineGameCompleteDelegate  (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::ClearEndOnlineGameCompleteDelegate(struct FScriptDelegate EndOnlineGameCompleteDelegate)
+void UOnlineGameInterfaceImpl::ClearEndOnlineGameCompleteDelegate(const struct FScriptDelegate& EndOnlineGameCompleteDelegate)
 {
-	static UFunction* pFnClearEndOnlineGameCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.ClearEndOnlineGameCompleteDelegate");
 
-	if (!pFnClearEndOnlineGameCompleteDelegate)
-		pFnClearEndOnlineGameCompleteDelegate = (UFunction*)UObject::GObjects()->Data[45749];
+	UOnlineGameInterfaceImpl_ClearEndOnlineGameCompleteDelegate_Params params;
+	params.EndOnlineGameCompleteDelegate = EndOnlineGameCompleteDelegate;
 
-	UOnlineGameInterfaceImpl_execClearEndOnlineGameCompleteDelegate_Parms ClearEndOnlineGameCompleteDelegate_Parms;
-	memcpy(&ClearEndOnlineGameCompleteDelegate_Parms.EndOnlineGameCompleteDelegate, &EndOnlineGameCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearEndOnlineGameCompleteDelegate, &ClearEndOnlineGameCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddEndOnlineGameCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         EndOnlineGameCompleteDelegate  ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         EndOnlineGameCompleteDelegate  (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::AddEndOnlineGameCompleteDelegate(struct FScriptDelegate EndOnlineGameCompleteDelegate)
+void UOnlineGameInterfaceImpl::AddEndOnlineGameCompleteDelegate(const struct FScriptDelegate& EndOnlineGameCompleteDelegate)
 {
-	static UFunction* pFnAddEndOnlineGameCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.AddEndOnlineGameCompleteDelegate");
 
-	if (!pFnAddEndOnlineGameCompleteDelegate)
-		pFnAddEndOnlineGameCompleteDelegate = (UFunction*)UObject::GObjects()->Data[45747];
+	UOnlineGameInterfaceImpl_AddEndOnlineGameCompleteDelegate_Params params;
+	params.EndOnlineGameCompleteDelegate = EndOnlineGameCompleteDelegate;
 
-	UOnlineGameInterfaceImpl_execAddEndOnlineGameCompleteDelegate_Parms AddEndOnlineGameCompleteDelegate_Parms;
-	memcpy(&AddEndOnlineGameCompleteDelegate_Parms.EndOnlineGameCompleteDelegate, &EndOnlineGameCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddEndOnlineGameCompleteDelegate, &AddEndOnlineGameCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnEndOnlineGameComplete
-// [0x00120000]
-// Parameters infos:
-// struct FName                   SessionName                    ( CPF_Parm )
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineGameInterfaceImpl::OnEndOnlineGameComplete(struct FName SessionName, unsigned long bWasSuccessful)
+void UOnlineGameInterfaceImpl::OnEndOnlineGameComplete(const struct FName& SessionName, bool bWasSuccessful)
 {
-	static UFunction* pFnOnEndOnlineGameComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.OnEndOnlineGameComplete");
 
-	if (!pFnOnEndOnlineGameComplete)
-		pFnOnEndOnlineGameComplete = (UFunction*)UObject::GObjects()->Data[45586];
+	UOnlineGameInterfaceImpl_OnEndOnlineGameComplete_Params params;
+	params.SessionName = SessionName;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineGameInterfaceImpl_execOnEndOnlineGameComplete_Parms OnEndOnlineGameComplete_Parms;
-	memcpy(&OnEndOnlineGameComplete_Parms.SessionName, &SessionName, 0x8);
-	OnEndOnlineGameComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnEndOnlineGameComplete, &OnEndOnlineGameComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.EndOnlineGame
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   SessionName                    ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineGameInterfaceImpl::EndOnlineGame(struct FName SessionName)
+bool UOnlineGameInterfaceImpl::EndOnlineGame(const struct FName& SessionName)
 {
-	static UFunction* pFnEndOnlineGame = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.EndOnlineGame");
 
-	if (!pFnEndOnlineGame)
-		pFnEndOnlineGame = (UFunction*)UObject::GObjects()->Data[45742];
+	UOnlineGameInterfaceImpl_EndOnlineGame_Params params;
+	params.SessionName = SessionName;
 
-	UOnlineGameInterfaceImpl_execEndOnlineGame_Parms EndOnlineGame_Parms;
-	memcpy(&EndOnlineGame_Parms.SessionName, &SessionName, 0x8);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnEndOnlineGame->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnEndOnlineGame, &EndOnlineGame_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnEndOnlineGame->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return EndOnlineGame_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearStartOnlineGameCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         StartOnlineGameCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         StartOnlineGameCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::ClearStartOnlineGameCompleteDelegate(struct FScriptDelegate StartOnlineGameCompleteDelegate)
+void UOnlineGameInterfaceImpl::ClearStartOnlineGameCompleteDelegate(const struct FScriptDelegate& StartOnlineGameCompleteDelegate)
 {
-	static UFunction* pFnClearStartOnlineGameCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.ClearStartOnlineGameCompleteDelegate");
 
-	if (!pFnClearStartOnlineGameCompleteDelegate)
-		pFnClearStartOnlineGameCompleteDelegate = (UFunction*)UObject::GObjects()->Data[45740];
+	UOnlineGameInterfaceImpl_ClearStartOnlineGameCompleteDelegate_Params params;
+	params.StartOnlineGameCompleteDelegate = StartOnlineGameCompleteDelegate;
 
-	UOnlineGameInterfaceImpl_execClearStartOnlineGameCompleteDelegate_Parms ClearStartOnlineGameCompleteDelegate_Parms;
-	memcpy(&ClearStartOnlineGameCompleteDelegate_Parms.StartOnlineGameCompleteDelegate, &StartOnlineGameCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearStartOnlineGameCompleteDelegate, &ClearStartOnlineGameCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddStartOnlineGameCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         StartOnlineGameCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         StartOnlineGameCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::AddStartOnlineGameCompleteDelegate(struct FScriptDelegate StartOnlineGameCompleteDelegate)
+void UOnlineGameInterfaceImpl::AddStartOnlineGameCompleteDelegate(const struct FScriptDelegate& StartOnlineGameCompleteDelegate)
 {
-	static UFunction* pFnAddStartOnlineGameCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.AddStartOnlineGameCompleteDelegate");
 
-	if (!pFnAddStartOnlineGameCompleteDelegate)
-		pFnAddStartOnlineGameCompleteDelegate = (UFunction*)UObject::GObjects()->Data[45738];
+	UOnlineGameInterfaceImpl_AddStartOnlineGameCompleteDelegate_Params params;
+	params.StartOnlineGameCompleteDelegate = StartOnlineGameCompleteDelegate;
 
-	UOnlineGameInterfaceImpl_execAddStartOnlineGameCompleteDelegate_Parms AddStartOnlineGameCompleteDelegate_Parms;
-	memcpy(&AddStartOnlineGameCompleteDelegate_Parms.StartOnlineGameCompleteDelegate, &StartOnlineGameCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddStartOnlineGameCompleteDelegate, &AddStartOnlineGameCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnStartOnlineGameComplete
-// [0x00120000]
-// Parameters infos:
-// struct FName                   SessionName                    ( CPF_Parm )
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineGameInterfaceImpl::OnStartOnlineGameComplete(struct FName SessionName, unsigned long bWasSuccessful)
+void UOnlineGameInterfaceImpl::OnStartOnlineGameComplete(const struct FName& SessionName, bool bWasSuccessful)
 {
-	static UFunction* pFnOnStartOnlineGameComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.OnStartOnlineGameComplete");
 
-	if (!pFnOnStartOnlineGameComplete)
-		pFnOnStartOnlineGameComplete = (UFunction*)UObject::GObjects()->Data[45583];
+	UOnlineGameInterfaceImpl_OnStartOnlineGameComplete_Params params;
+	params.SessionName = SessionName;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineGameInterfaceImpl_execOnStartOnlineGameComplete_Parms OnStartOnlineGameComplete_Parms;
-	memcpy(&OnStartOnlineGameComplete_Parms.SessionName, &SessionName, 0x8);
-	OnStartOnlineGameComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnStartOnlineGameComplete, &OnStartOnlineGameComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.StartOnlineGame
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   SessionName                    ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineGameInterfaceImpl::StartOnlineGame(struct FName SessionName)
+bool UOnlineGameInterfaceImpl::StartOnlineGame(const struct FName& SessionName)
 {
-	static UFunction* pFnStartOnlineGame = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.StartOnlineGame");
 
-	if (!pFnStartOnlineGame)
-		pFnStartOnlineGame = (UFunction*)UObject::GObjects()->Data[45733];
+	UOnlineGameInterfaceImpl_StartOnlineGame_Params params;
+	params.SessionName = SessionName;
 
-	UOnlineGameInterfaceImpl_execStartOnlineGame_Parms StartOnlineGame_Parms;
-	memcpy(&StartOnlineGame_Parms.SessionName, &SessionName, 0x8);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnStartOnlineGame->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnStartOnlineGame, &StartOnlineGame_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnStartOnlineGame->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return StartOnlineGame_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearUnregisterPlayerCompleteDelegate
-// [0x00020000]
-// Parameters infos:
-// struct FScriptDelegate         UnregisterPlayerCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// struct FScriptDelegate         UnregisterPlayerCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::ClearUnregisterPlayerCompleteDelegate(struct FScriptDelegate UnregisterPlayerCompleteDelegate)
+void UOnlineGameInterfaceImpl::ClearUnregisterPlayerCompleteDelegate(const struct FScriptDelegate& UnregisterPlayerCompleteDelegate)
 {
-	static UFunction* pFnClearUnregisterPlayerCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.ClearUnregisterPlayerCompleteDelegate");
 
-	if (!pFnClearUnregisterPlayerCompleteDelegate)
-		pFnClearUnregisterPlayerCompleteDelegate = (UFunction*)UObject::GObjects()->Data[45731];
+	UOnlineGameInterfaceImpl_ClearUnregisterPlayerCompleteDelegate_Params params;
+	params.UnregisterPlayerCompleteDelegate = UnregisterPlayerCompleteDelegate;
 
-	UOnlineGameInterfaceImpl_execClearUnregisterPlayerCompleteDelegate_Parms ClearUnregisterPlayerCompleteDelegate_Parms;
-	memcpy(&ClearUnregisterPlayerCompleteDelegate_Parms.UnregisterPlayerCompleteDelegate, &UnregisterPlayerCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearUnregisterPlayerCompleteDelegate, &ClearUnregisterPlayerCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddUnregisterPlayerCompleteDelegate
-// [0x00020000]
-// Parameters infos:
-// struct FScriptDelegate         UnregisterPlayerCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// struct FScriptDelegate         UnregisterPlayerCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::AddUnregisterPlayerCompleteDelegate(struct FScriptDelegate UnregisterPlayerCompleteDelegate)
+void UOnlineGameInterfaceImpl::AddUnregisterPlayerCompleteDelegate(const struct FScriptDelegate& UnregisterPlayerCompleteDelegate)
 {
-	static UFunction* pFnAddUnregisterPlayerCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.AddUnregisterPlayerCompleteDelegate");
 
-	if (!pFnAddUnregisterPlayerCompleteDelegate)
-		pFnAddUnregisterPlayerCompleteDelegate = (UFunction*)UObject::GObjects()->Data[45729];
+	UOnlineGameInterfaceImpl_AddUnregisterPlayerCompleteDelegate_Params params;
+	params.UnregisterPlayerCompleteDelegate = UnregisterPlayerCompleteDelegate;
 
-	UOnlineGameInterfaceImpl_execAddUnregisterPlayerCompleteDelegate_Parms AddUnregisterPlayerCompleteDelegate_Parms;
-	memcpy(&AddUnregisterPlayerCompleteDelegate_Parms.UnregisterPlayerCompleteDelegate, &UnregisterPlayerCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddUnregisterPlayerCompleteDelegate, &AddUnregisterPlayerCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnUnregisterPlayerComplete
-// [0x00120000]
-// Parameters infos:
-// struct FName                   SessionName                    ( CPF_Parm )
-// struct FUniqueNetId            PlayerID                       ( CPF_Parm )
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// struct FUniqueNetId            PlayerID                       (Parm)
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineGameInterfaceImpl::OnUnregisterPlayerComplete(struct FName SessionName, struct FUniqueNetId PlayerID, unsigned long bWasSuccessful)
+void UOnlineGameInterfaceImpl::OnUnregisterPlayerComplete(const struct FName& SessionName, const struct FUniqueNetId& PlayerID, bool bWasSuccessful)
 {
-	static UFunction* pFnOnUnregisterPlayerComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.OnUnregisterPlayerComplete");
 
-	if (!pFnOnUnregisterPlayerComplete)
-		pFnOnUnregisterPlayerComplete = (UFunction*)UObject::GObjects()->Data[45607];
+	UOnlineGameInterfaceImpl_OnUnregisterPlayerComplete_Params params;
+	params.SessionName = SessionName;
+	params.PlayerID = PlayerID;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineGameInterfaceImpl_execOnUnregisterPlayerComplete_Parms OnUnregisterPlayerComplete_Parms;
-	memcpy(&OnUnregisterPlayerComplete_Parms.SessionName, &SessionName, 0x8);
-	memcpy(&OnUnregisterPlayerComplete_Parms.PlayerID, &PlayerID, 0x18);
-	OnUnregisterPlayerComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnUnregisterPlayerComplete, &OnUnregisterPlayerComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.UnregisterPlayers
-// [0x00420000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   SessionName                    ( CPF_Parm )
-// TArray< struct FUniqueNetId >  Players                        ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Public, HasOutParms)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// TArray<struct FUniqueNetId>    Players                        (Const, Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineGameInterfaceImpl::UnregisterPlayers(struct FName SessionName, TArray< struct FUniqueNetId >* Players)
+bool UOnlineGameInterfaceImpl::UnregisterPlayers(const struct FName& SessionName, TArray<struct FUniqueNetId>* Players)
 {
-	static UFunction* pFnUnregisterPlayers = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.UnregisterPlayers");
 
-	if (!pFnUnregisterPlayers)
-		pFnUnregisterPlayers = (UFunction*)UObject::GObjects()->Data[45721];
+	UOnlineGameInterfaceImpl_UnregisterPlayers_Params params;
+	params.SessionName = SessionName;
 
-	UOnlineGameInterfaceImpl_execUnregisterPlayers_Parms UnregisterPlayers_Parms;
-	memcpy(&UnregisterPlayers_Parms.SessionName, &SessionName, 0x8);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnUnregisterPlayers, &UnregisterPlayers_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (Players)
-		memcpy(Players, &UnregisterPlayers_Parms.Players, 0xC);
+	fn->FunctionFlags = flags;
 
-	return UnregisterPlayers_Parms.ReturnValue;
-};
+	if (Players != nullptr)
+		*Players = params.Players;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.UnregisterPlayer
-// [0x00020000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   SessionName                    ( CPF_Parm )
-// struct FUniqueNetId            PlayerID                       ( CPF_Parm )
+// (Public)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// struct FUniqueNetId            PlayerID                       (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineGameInterfaceImpl::UnregisterPlayer(struct FName SessionName, struct FUniqueNetId PlayerID)
+bool UOnlineGameInterfaceImpl::UnregisterPlayer(const struct FName& SessionName, const struct FUniqueNetId& PlayerID)
 {
-	static UFunction* pFnUnregisterPlayer = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.UnregisterPlayer");
 
-	if (!pFnUnregisterPlayer)
-		pFnUnregisterPlayer = (UFunction*)UObject::GObjects()->Data[45717];
+	UOnlineGameInterfaceImpl_UnregisterPlayer_Params params;
+	params.SessionName = SessionName;
+	params.PlayerID = PlayerID;
 
-	UOnlineGameInterfaceImpl_execUnregisterPlayer_Parms UnregisterPlayer_Parms;
-	memcpy(&UnregisterPlayer_Parms.SessionName, &SessionName, 0x8);
-	memcpy(&UnregisterPlayer_Parms.PlayerID, &PlayerID, 0x18);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnUnregisterPlayer, &UnregisterPlayer_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return UnregisterPlayer_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearRegisterPlayerCompleteDelegate
-// [0x00020000]
-// Parameters infos:
-// struct FScriptDelegate         RegisterPlayerCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// struct FScriptDelegate         RegisterPlayerCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::ClearRegisterPlayerCompleteDelegate(struct FScriptDelegate RegisterPlayerCompleteDelegate)
+void UOnlineGameInterfaceImpl::ClearRegisterPlayerCompleteDelegate(const struct FScriptDelegate& RegisterPlayerCompleteDelegate)
 {
-	static UFunction* pFnClearRegisterPlayerCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.ClearRegisterPlayerCompleteDelegate");
 
-	if (!pFnClearRegisterPlayerCompleteDelegate)
-		pFnClearRegisterPlayerCompleteDelegate = (UFunction*)UObject::GObjects()->Data[45715];
+	UOnlineGameInterfaceImpl_ClearRegisterPlayerCompleteDelegate_Params params;
+	params.RegisterPlayerCompleteDelegate = RegisterPlayerCompleteDelegate;
 
-	UOnlineGameInterfaceImpl_execClearRegisterPlayerCompleteDelegate_Parms ClearRegisterPlayerCompleteDelegate_Parms;
-	memcpy(&ClearRegisterPlayerCompleteDelegate_Parms.RegisterPlayerCompleteDelegate, &RegisterPlayerCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearRegisterPlayerCompleteDelegate, &ClearRegisterPlayerCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddRegisterPlayerCompleteDelegate
-// [0x00020000]
-// Parameters infos:
-// struct FScriptDelegate         RegisterPlayerCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Public)
+// Parameters:
+// struct FScriptDelegate         RegisterPlayerCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::AddRegisterPlayerCompleteDelegate(struct FScriptDelegate RegisterPlayerCompleteDelegate)
+void UOnlineGameInterfaceImpl::AddRegisterPlayerCompleteDelegate(const struct FScriptDelegate& RegisterPlayerCompleteDelegate)
 {
-	static UFunction* pFnAddRegisterPlayerCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.AddRegisterPlayerCompleteDelegate");
 
-	if (!pFnAddRegisterPlayerCompleteDelegate)
-		pFnAddRegisterPlayerCompleteDelegate = (UFunction*)UObject::GObjects()->Data[45713];
+	UOnlineGameInterfaceImpl_AddRegisterPlayerCompleteDelegate_Params params;
+	params.RegisterPlayerCompleteDelegate = RegisterPlayerCompleteDelegate;
 
-	UOnlineGameInterfaceImpl_execAddRegisterPlayerCompleteDelegate_Parms AddRegisterPlayerCompleteDelegate_Parms;
-	memcpy(&AddRegisterPlayerCompleteDelegate_Parms.RegisterPlayerCompleteDelegate, &RegisterPlayerCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddRegisterPlayerCompleteDelegate, &AddRegisterPlayerCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnRegisterPlayerComplete
-// [0x00120000]
-// Parameters infos:
-// struct FName                   SessionName                    ( CPF_Parm )
-// struct FUniqueNetId            PlayerID                       ( CPF_Parm )
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// struct FUniqueNetId            PlayerID                       (Parm)
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineGameInterfaceImpl::OnRegisterPlayerComplete(struct FName SessionName, struct FUniqueNetId PlayerID, unsigned long bWasSuccessful)
+void UOnlineGameInterfaceImpl::OnRegisterPlayerComplete(const struct FName& SessionName, const struct FUniqueNetId& PlayerID, bool bWasSuccessful)
 {
-	static UFunction* pFnOnRegisterPlayerComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.OnRegisterPlayerComplete");
 
-	if (!pFnOnRegisterPlayerComplete)
-		pFnOnRegisterPlayerComplete = (UFunction*)UObject::GObjects()->Data[45609];
+	UOnlineGameInterfaceImpl_OnRegisterPlayerComplete_Params params;
+	params.SessionName = SessionName;
+	params.PlayerID = PlayerID;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineGameInterfaceImpl_execOnRegisterPlayerComplete_Parms OnRegisterPlayerComplete_Parms;
-	memcpy(&OnRegisterPlayerComplete_Parms.SessionName, &SessionName, 0x8);
-	memcpy(&OnRegisterPlayerComplete_Parms.PlayerID, &PlayerID, 0x18);
-	OnRegisterPlayerComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnRegisterPlayerComplete, &OnRegisterPlayerComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.RegisterPlayers
-// [0x00420000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   SessionName                    ( CPF_Parm )
-// TArray< struct FUniqueNetId >  Players                        ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Public, HasOutParms)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// TArray<struct FUniqueNetId>    Players                        (Const, Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineGameInterfaceImpl::RegisterPlayers(struct FName SessionName, TArray< struct FUniqueNetId >* Players)
+bool UOnlineGameInterfaceImpl::RegisterPlayers(const struct FName& SessionName, TArray<struct FUniqueNetId>* Players)
 {
-	static UFunction* pFnRegisterPlayers = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.RegisterPlayers");
 
-	if (!pFnRegisterPlayers)
-		pFnRegisterPlayers = (UFunction*)UObject::GObjects()->Data[45705];
+	UOnlineGameInterfaceImpl_RegisterPlayers_Params params;
+	params.SessionName = SessionName;
 
-	UOnlineGameInterfaceImpl_execRegisterPlayers_Parms RegisterPlayers_Parms;
-	memcpy(&RegisterPlayers_Parms.SessionName, &SessionName, 0x8);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnRegisterPlayers, &RegisterPlayers_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (Players)
-		memcpy(Players, &RegisterPlayers_Parms.Players, 0xC);
+	fn->FunctionFlags = flags;
 
-	return RegisterPlayers_Parms.ReturnValue;
-};
+	if (Players != nullptr)
+		*Players = params.Players;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.RegisterPlayer
-// [0x00020000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   SessionName                    ( CPF_Parm )
-// struct FUniqueNetId            PlayerID                       ( CPF_Parm )
-// unsigned long                  bWasInvited                    ( CPF_Parm )
+// (Public)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// struct FUniqueNetId            PlayerID                       (Parm)
+// bool                           bWasInvited                    (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineGameInterfaceImpl::RegisterPlayer(struct FName SessionName, struct FUniqueNetId PlayerID, unsigned long bWasInvited)
+bool UOnlineGameInterfaceImpl::RegisterPlayer(const struct FName& SessionName, const struct FUniqueNetId& PlayerID, bool bWasInvited)
 {
-	static UFunction* pFnRegisterPlayer = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.RegisterPlayer");
 
-	if (!pFnRegisterPlayer)
-		pFnRegisterPlayer = (UFunction*)UObject::GObjects()->Data[45700];
+	UOnlineGameInterfaceImpl_RegisterPlayer_Params params;
+	params.SessionName = SessionName;
+	params.PlayerID = PlayerID;
+	params.bWasInvited = bWasInvited;
 
-	UOnlineGameInterfaceImpl_execRegisterPlayer_Parms RegisterPlayer_Parms;
-	memcpy(&RegisterPlayer_Parms.SessionName, &SessionName, 0x8);
-	memcpy(&RegisterPlayer_Parms.PlayerID, &PlayerID, 0x18);
-	RegisterPlayer_Parms.bWasInvited = bWasInvited;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnRegisterPlayer, &RegisterPlayer_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return RegisterPlayer_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.GetResolvedConnectString
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   SessionName                    ( CPF_Parm )
-// struct FString                 ConnectInfo                    ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// struct FString                 ConnectInfo                    (Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineGameInterfaceImpl::GetResolvedConnectString(struct FName SessionName, struct FString* ConnectInfo)
+bool UOnlineGameInterfaceImpl::GetResolvedConnectString(const struct FName& SessionName, struct FString* ConnectInfo)
 {
-	static UFunction* pFnGetResolvedConnectString = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.GetResolvedConnectString");
 
-	if (!pFnGetResolvedConnectString)
-		pFnGetResolvedConnectString = (UFunction*)UObject::GObjects()->Data[45696];
+	UOnlineGameInterfaceImpl_GetResolvedConnectString_Params params;
+	params.SessionName = SessionName;
 
-	UOnlineGameInterfaceImpl_execGetResolvedConnectString_Parms GetResolvedConnectString_Parms;
-	memcpy(&GetResolvedConnectString_Parms.SessionName, &SessionName, 0x8);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetResolvedConnectString->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetResolvedConnectString, &GetResolvedConnectString_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetResolvedConnectString->FunctionFlags |= 0x400;
+	if (ConnectInfo != nullptr)
+		*ConnectInfo = params.ConnectInfo;
 
-	if (ConnectInfo)
-		memcpy(ConnectInfo, &GetResolvedConnectString_Parms.ConnectInfo, 0xC);
+	return params.ReturnValue;
+}
 
-	return GetResolvedConnectString_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearJoinOnlineGameCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         JoinOnlineGameCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         JoinOnlineGameCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::ClearJoinOnlineGameCompleteDelegate(struct FScriptDelegate JoinOnlineGameCompleteDelegate)
+void UOnlineGameInterfaceImpl::ClearJoinOnlineGameCompleteDelegate(const struct FScriptDelegate& JoinOnlineGameCompleteDelegate)
 {
-	static UFunction* pFnClearJoinOnlineGameCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.ClearJoinOnlineGameCompleteDelegate");
 
-	if (!pFnClearJoinOnlineGameCompleteDelegate)
-		pFnClearJoinOnlineGameCompleteDelegate = (UFunction*)UObject::GObjects()->Data[45694];
+	UOnlineGameInterfaceImpl_ClearJoinOnlineGameCompleteDelegate_Params params;
+	params.JoinOnlineGameCompleteDelegate = JoinOnlineGameCompleteDelegate;
 
-	UOnlineGameInterfaceImpl_execClearJoinOnlineGameCompleteDelegate_Parms ClearJoinOnlineGameCompleteDelegate_Parms;
-	memcpy(&ClearJoinOnlineGameCompleteDelegate_Parms.JoinOnlineGameCompleteDelegate, &JoinOnlineGameCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearJoinOnlineGameCompleteDelegate, &ClearJoinOnlineGameCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddJoinOnlineGameCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         JoinOnlineGameCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         JoinOnlineGameCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::AddJoinOnlineGameCompleteDelegate(struct FScriptDelegate JoinOnlineGameCompleteDelegate)
+void UOnlineGameInterfaceImpl::AddJoinOnlineGameCompleteDelegate(const struct FScriptDelegate& JoinOnlineGameCompleteDelegate)
 {
-	static UFunction* pFnAddJoinOnlineGameCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.AddJoinOnlineGameCompleteDelegate");
 
-	if (!pFnAddJoinOnlineGameCompleteDelegate)
-		pFnAddJoinOnlineGameCompleteDelegate = (UFunction*)UObject::GObjects()->Data[45692];
+	UOnlineGameInterfaceImpl_AddJoinOnlineGameCompleteDelegate_Params params;
+	params.JoinOnlineGameCompleteDelegate = JoinOnlineGameCompleteDelegate;
 
-	UOnlineGameInterfaceImpl_execAddJoinOnlineGameCompleteDelegate_Parms AddJoinOnlineGameCompleteDelegate_Parms;
-	memcpy(&AddJoinOnlineGameCompleteDelegate_Parms.JoinOnlineGameCompleteDelegate, &JoinOnlineGameCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddJoinOnlineGameCompleteDelegate, &AddJoinOnlineGameCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnJoinOnlineGameComplete
-// [0x00120000]
-// Parameters infos:
-// struct FName                   SessionName                    ( CPF_Parm )
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineGameInterfaceImpl::OnJoinOnlineGameComplete(struct FName SessionName, unsigned long bWasSuccessful)
+void UOnlineGameInterfaceImpl::OnJoinOnlineGameComplete(const struct FName& SessionName, bool bWasSuccessful)
 {
-	static UFunction* pFnOnJoinOnlineGameComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.OnJoinOnlineGameComplete");
 
-	if (!pFnOnJoinOnlineGameComplete)
-		pFnOnJoinOnlineGameComplete = (UFunction*)UObject::GObjects()->Data[45571];
+	UOnlineGameInterfaceImpl_OnJoinOnlineGameComplete_Params params;
+	params.SessionName = SessionName;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineGameInterfaceImpl_execOnJoinOnlineGameComplete_Parms OnJoinOnlineGameComplete_Parms;
-	memcpy(&OnJoinOnlineGameComplete_Parms.SessionName, &SessionName, 0x8);
-	OnJoinOnlineGameComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnJoinOnlineGameComplete, &OnJoinOnlineGameComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.JoinOnlineGame
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  PlayerNum                      ( CPF_Parm )
-// struct FName                   SessionName                    ( CPF_Parm )
-// struct FOnlineGameSearchResult DesiredGame                    ( CPF_Const | CPF_Parm | CPF_OutParm )
+// (Native, Public, HasOutParms)
+// Parameters:
+// unsigned char                  PlayerNum                      (Parm)
+// struct FName                   SessionName                    (Parm)
+// struct FOnlineGameSearchResult DesiredGame                    (Const, Parm, OutParm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineGameInterfaceImpl::JoinOnlineGame(unsigned char PlayerNum, struct FName SessionName, struct FOnlineGameSearchResult* DesiredGame)
+bool UOnlineGameInterfaceImpl::JoinOnlineGame(unsigned char PlayerNum, const struct FName& SessionName, struct FOnlineGameSearchResult* DesiredGame)
 {
-	static UFunction* pFnJoinOnlineGame = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.JoinOnlineGame");
 
-	if (!pFnJoinOnlineGame)
-		pFnJoinOnlineGame = (UFunction*)UObject::GObjects()->Data[45685];
+	UOnlineGameInterfaceImpl_JoinOnlineGame_Params params;
+	params.PlayerNum = PlayerNum;
+	params.SessionName = SessionName;
 
-	UOnlineGameInterfaceImpl_execJoinOnlineGame_Parms JoinOnlineGame_Parms;
-	JoinOnlineGame_Parms.PlayerNum = PlayerNum;
-	memcpy(&JoinOnlineGame_Parms.SessionName, &SessionName, 0x8);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnJoinOnlineGame->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnJoinOnlineGame, &JoinOnlineGame_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnJoinOnlineGame->FunctionFlags |= 0x400;
+	if (DesiredGame != nullptr)
+		*DesiredGame = params.DesiredGame;
 
-	if (DesiredGame)
-		memcpy(DesiredGame, &JoinOnlineGame_Parms.DesiredGame, 0x8);
+	return params.ReturnValue;
+}
 
-	return JoinOnlineGame_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineGameInterfaceImpl.FreeSearchResults
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// class UOnlineGameSearch*       Search                         ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// class UOnlineGameSearch*       Search                         (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineGameInterfaceImpl::FreeSearchResults(class UOnlineGameSearch* Search)
 {
-	static UFunction* pFnFreeSearchResults = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.FreeSearchResults");
 
-	if (!pFnFreeSearchResults)
-		pFnFreeSearchResults = (UFunction*)UObject::GObjects()->Data[45682];
+	UOnlineGameInterfaceImpl_FreeSearchResults_Params params;
+	params.Search = Search;
 
-	UOnlineGameInterfaceImpl_execFreeSearchResults_Parms FreeSearchResults_Parms;
-	FreeSearchResults_Parms.Search = Search;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnFreeSearchResults->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnFreeSearchResults, &FreeSearchResults_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnFreeSearchResults->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return FreeSearchResults_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearCancelFindOnlineGamesCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         CancelFindOnlineGamesCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         CancelFindOnlineGamesCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::ClearCancelFindOnlineGamesCompleteDelegate(struct FScriptDelegate CancelFindOnlineGamesCompleteDelegate)
+void UOnlineGameInterfaceImpl::ClearCancelFindOnlineGamesCompleteDelegate(const struct FScriptDelegate& CancelFindOnlineGamesCompleteDelegate)
 {
-	static UFunction* pFnClearCancelFindOnlineGamesCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.ClearCancelFindOnlineGamesCompleteDelegate");
 
-	if (!pFnClearCancelFindOnlineGamesCompleteDelegate)
-		pFnClearCancelFindOnlineGamesCompleteDelegate = (UFunction*)UObject::GObjects()->Data[45680];
+	UOnlineGameInterfaceImpl_ClearCancelFindOnlineGamesCompleteDelegate_Params params;
+	params.CancelFindOnlineGamesCompleteDelegate = CancelFindOnlineGamesCompleteDelegate;
 
-	UOnlineGameInterfaceImpl_execClearCancelFindOnlineGamesCompleteDelegate_Parms ClearCancelFindOnlineGamesCompleteDelegate_Parms;
-	memcpy(&ClearCancelFindOnlineGamesCompleteDelegate_Parms.CancelFindOnlineGamesCompleteDelegate, &CancelFindOnlineGamesCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearCancelFindOnlineGamesCompleteDelegate, &ClearCancelFindOnlineGamesCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddCancelFindOnlineGamesCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         CancelFindOnlineGamesCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         CancelFindOnlineGamesCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::AddCancelFindOnlineGamesCompleteDelegate(struct FScriptDelegate CancelFindOnlineGamesCompleteDelegate)
+void UOnlineGameInterfaceImpl::AddCancelFindOnlineGamesCompleteDelegate(const struct FScriptDelegate& CancelFindOnlineGamesCompleteDelegate)
 {
-	static UFunction* pFnAddCancelFindOnlineGamesCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.AddCancelFindOnlineGamesCompleteDelegate");
 
-	if (!pFnAddCancelFindOnlineGamesCompleteDelegate)
-		pFnAddCancelFindOnlineGamesCompleteDelegate = (UFunction*)UObject::GObjects()->Data[45678];
+	UOnlineGameInterfaceImpl_AddCancelFindOnlineGamesCompleteDelegate_Params params;
+	params.CancelFindOnlineGamesCompleteDelegate = CancelFindOnlineGamesCompleteDelegate;
 
-	UOnlineGameInterfaceImpl_execAddCancelFindOnlineGamesCompleteDelegate_Parms AddCancelFindOnlineGamesCompleteDelegate_Parms;
-	memcpy(&AddCancelFindOnlineGamesCompleteDelegate_Parms.CancelFindOnlineGamesCompleteDelegate, &CancelFindOnlineGamesCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddCancelFindOnlineGamesCompleteDelegate, &AddCancelFindOnlineGamesCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnCancelFindOnlineGamesComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineGameInterfaceImpl::OnCancelFindOnlineGamesComplete(unsigned long bWasSuccessful)
+void UOnlineGameInterfaceImpl::OnCancelFindOnlineGamesComplete(bool bWasSuccessful)
 {
-	static UFunction* pFnOnCancelFindOnlineGamesComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.OnCancelFindOnlineGamesComplete");
 
-	if (!pFnOnCancelFindOnlineGamesComplete)
-		pFnOnCancelFindOnlineGamesComplete = (UFunction*)UObject::GObjects()->Data[45592];
+	UOnlineGameInterfaceImpl_OnCancelFindOnlineGamesComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineGameInterfaceImpl_execOnCancelFindOnlineGamesComplete_Parms OnCancelFindOnlineGamesComplete_Parms;
-	OnCancelFindOnlineGamesComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnCancelFindOnlineGamesComplete, &OnCancelFindOnlineGamesComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.CancelFindOnlineGames
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Native, Public)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineGameInterfaceImpl::CancelFindOnlineGames()
 {
-	static UFunction* pFnCancelFindOnlineGames = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.CancelFindOnlineGames");
 
-	if (!pFnCancelFindOnlineGames)
-		pFnCancelFindOnlineGames = (UFunction*)UObject::GObjects()->Data[45675];
+	UOnlineGameInterfaceImpl_CancelFindOnlineGames_Params params;
 
-	UOnlineGameInterfaceImpl_execCancelFindOnlineGames_Parms CancelFindOnlineGames_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnCancelFindOnlineGames->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnCancelFindOnlineGames, &CancelFindOnlineGames_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnCancelFindOnlineGames->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return CancelFindOnlineGames_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearFindOnlineGamesCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         FindOnlineGamesCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         FindOnlineGamesCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::ClearFindOnlineGamesCompleteDelegate(struct FScriptDelegate FindOnlineGamesCompleteDelegate)
+void UOnlineGameInterfaceImpl::ClearFindOnlineGamesCompleteDelegate(const struct FScriptDelegate& FindOnlineGamesCompleteDelegate)
 {
-	static UFunction* pFnClearFindOnlineGamesCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.ClearFindOnlineGamesCompleteDelegate");
 
-	if (!pFnClearFindOnlineGamesCompleteDelegate)
-		pFnClearFindOnlineGamesCompleteDelegate = (UFunction*)UObject::GObjects()->Data[45673];
+	UOnlineGameInterfaceImpl_ClearFindOnlineGamesCompleteDelegate_Params params;
+	params.FindOnlineGamesCompleteDelegate = FindOnlineGamesCompleteDelegate;
 
-	UOnlineGameInterfaceImpl_execClearFindOnlineGamesCompleteDelegate_Parms ClearFindOnlineGamesCompleteDelegate_Parms;
-	memcpy(&ClearFindOnlineGamesCompleteDelegate_Parms.FindOnlineGamesCompleteDelegate, &FindOnlineGamesCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearFindOnlineGamesCompleteDelegate, &ClearFindOnlineGamesCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddFindOnlineGamesCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         FindOnlineGamesCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         FindOnlineGamesCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::AddFindOnlineGamesCompleteDelegate(struct FScriptDelegate FindOnlineGamesCompleteDelegate)
+void UOnlineGameInterfaceImpl::AddFindOnlineGamesCompleteDelegate(const struct FScriptDelegate& FindOnlineGamesCompleteDelegate)
 {
-	static UFunction* pFnAddFindOnlineGamesCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.AddFindOnlineGamesCompleteDelegate");
 
-	if (!pFnAddFindOnlineGamesCompleteDelegate)
-		pFnAddFindOnlineGamesCompleteDelegate = (UFunction*)UObject::GObjects()->Data[45671];
+	UOnlineGameInterfaceImpl_AddFindOnlineGamesCompleteDelegate_Params params;
+	params.FindOnlineGamesCompleteDelegate = FindOnlineGamesCompleteDelegate;
 
-	UOnlineGameInterfaceImpl_execAddFindOnlineGamesCompleteDelegate_Parms AddFindOnlineGamesCompleteDelegate_Parms;
-	memcpy(&AddFindOnlineGamesCompleteDelegate_Parms.FindOnlineGamesCompleteDelegate, &FindOnlineGamesCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddFindOnlineGamesCompleteDelegate, &AddFindOnlineGamesCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.FindOnlineGames
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  SearchingPlayerNum             ( CPF_Parm )
-// class UOnlineGameSearch*       SearchSettings                 ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  SearchingPlayerNum             (Parm)
+// class UOnlineGameSearch*       SearchSettings                 (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlineGameInterfaceImpl::FindOnlineGames(unsigned char SearchingPlayerNum, class UOnlineGameSearch* SearchSettings)
 {
-	static UFunction* pFnFindOnlineGames = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.FindOnlineGames");
 
-	if (!pFnFindOnlineGames)
-		pFnFindOnlineGames = (UFunction*)UObject::GObjects()->Data[45667];
+	UOnlineGameInterfaceImpl_FindOnlineGames_Params params;
+	params.SearchingPlayerNum = SearchingPlayerNum;
+	params.SearchSettings = SearchSettings;
 
-	UOnlineGameInterfaceImpl_execFindOnlineGames_Parms FindOnlineGames_Parms;
-	FindOnlineGames_Parms.SearchingPlayerNum = SearchingPlayerNum;
-	FindOnlineGames_Parms.SearchSettings = SearchSettings;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnFindOnlineGames->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnFindOnlineGames, &FindOnlineGames_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnFindOnlineGames->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return FindOnlineGames_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearDestroyOnlineGameCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         DestroyOnlineGameCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         DestroyOnlineGameCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::ClearDestroyOnlineGameCompleteDelegate(struct FScriptDelegate DestroyOnlineGameCompleteDelegate)
+void UOnlineGameInterfaceImpl::ClearDestroyOnlineGameCompleteDelegate(const struct FScriptDelegate& DestroyOnlineGameCompleteDelegate)
 {
-	static UFunction* pFnClearDestroyOnlineGameCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.ClearDestroyOnlineGameCompleteDelegate");
 
-	if (!pFnClearDestroyOnlineGameCompleteDelegate)
-		pFnClearDestroyOnlineGameCompleteDelegate = (UFunction*)UObject::GObjects()->Data[45665];
+	UOnlineGameInterfaceImpl_ClearDestroyOnlineGameCompleteDelegate_Params params;
+	params.DestroyOnlineGameCompleteDelegate = DestroyOnlineGameCompleteDelegate;
 
-	UOnlineGameInterfaceImpl_execClearDestroyOnlineGameCompleteDelegate_Parms ClearDestroyOnlineGameCompleteDelegate_Parms;
-	memcpy(&ClearDestroyOnlineGameCompleteDelegate_Parms.DestroyOnlineGameCompleteDelegate, &DestroyOnlineGameCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearDestroyOnlineGameCompleteDelegate, &ClearDestroyOnlineGameCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddDestroyOnlineGameCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         DestroyOnlineGameCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         DestroyOnlineGameCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::AddDestroyOnlineGameCompleteDelegate(struct FScriptDelegate DestroyOnlineGameCompleteDelegate)
+void UOnlineGameInterfaceImpl::AddDestroyOnlineGameCompleteDelegate(const struct FScriptDelegate& DestroyOnlineGameCompleteDelegate)
 {
-	static UFunction* pFnAddDestroyOnlineGameCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.AddDestroyOnlineGameCompleteDelegate");
 
-	if (!pFnAddDestroyOnlineGameCompleteDelegate)
-		pFnAddDestroyOnlineGameCompleteDelegate = (UFunction*)UObject::GObjects()->Data[45663];
+	UOnlineGameInterfaceImpl_AddDestroyOnlineGameCompleteDelegate_Params params;
+	params.DestroyOnlineGameCompleteDelegate = DestroyOnlineGameCompleteDelegate;
 
-	UOnlineGameInterfaceImpl_execAddDestroyOnlineGameCompleteDelegate_Parms AddDestroyOnlineGameCompleteDelegate_Parms;
-	memcpy(&AddDestroyOnlineGameCompleteDelegate_Parms.DestroyOnlineGameCompleteDelegate, &DestroyOnlineGameCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddDestroyOnlineGameCompleteDelegate, &AddDestroyOnlineGameCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnDestroyOnlineGameComplete
-// [0x00120000]
-// Parameters infos:
-// struct FName                   SessionName                    ( CPF_Parm )
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineGameInterfaceImpl::OnDestroyOnlineGameComplete(struct FName SessionName, unsigned long bWasSuccessful)
+void UOnlineGameInterfaceImpl::OnDestroyOnlineGameComplete(const struct FName& SessionName, bool bWasSuccessful)
 {
-	static UFunction* pFnOnDestroyOnlineGameComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.OnDestroyOnlineGameComplete");
 
-	if (!pFnOnDestroyOnlineGameComplete)
-		pFnOnDestroyOnlineGameComplete = (UFunction*)UObject::GObjects()->Data[45568];
+	UOnlineGameInterfaceImpl_OnDestroyOnlineGameComplete_Params params;
+	params.SessionName = SessionName;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineGameInterfaceImpl_execOnDestroyOnlineGameComplete_Parms OnDestroyOnlineGameComplete_Parms;
-	memcpy(&OnDestroyOnlineGameComplete_Parms.SessionName, &SessionName, 0x8);
-	OnDestroyOnlineGameComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnDestroyOnlineGameComplete, &OnDestroyOnlineGameComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.DestroyOnlineGame
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   SessionName                    ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineGameInterfaceImpl::DestroyOnlineGame(struct FName SessionName)
+bool UOnlineGameInterfaceImpl::DestroyOnlineGame(const struct FName& SessionName)
 {
-	static UFunction* pFnDestroyOnlineGame = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.DestroyOnlineGame");
 
-	if (!pFnDestroyOnlineGame)
-		pFnDestroyOnlineGame = (UFunction*)UObject::GObjects()->Data[45658];
+	UOnlineGameInterfaceImpl_DestroyOnlineGame_Params params;
+	params.SessionName = SessionName;
 
-	UOnlineGameInterfaceImpl_execDestroyOnlineGame_Parms DestroyOnlineGame_Parms;
-	memcpy(&DestroyOnlineGame_Parms.SessionName, &SessionName, 0x8);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnDestroyOnlineGame->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnDestroyOnlineGame, &DestroyOnlineGame_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnDestroyOnlineGame->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return DestroyOnlineGame_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearUpdateOnlineGameCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         UpdateOnlineGameCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         UpdateOnlineGameCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::ClearUpdateOnlineGameCompleteDelegate(struct FScriptDelegate UpdateOnlineGameCompleteDelegate)
+void UOnlineGameInterfaceImpl::ClearUpdateOnlineGameCompleteDelegate(const struct FScriptDelegate& UpdateOnlineGameCompleteDelegate)
 {
-	static UFunction* pFnClearUpdateOnlineGameCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.ClearUpdateOnlineGameCompleteDelegate");
 
-	if (!pFnClearUpdateOnlineGameCompleteDelegate)
-		pFnClearUpdateOnlineGameCompleteDelegate = (UFunction*)UObject::GObjects()->Data[45656];
+	UOnlineGameInterfaceImpl_ClearUpdateOnlineGameCompleteDelegate_Params params;
+	params.UpdateOnlineGameCompleteDelegate = UpdateOnlineGameCompleteDelegate;
 
-	UOnlineGameInterfaceImpl_execClearUpdateOnlineGameCompleteDelegate_Parms ClearUpdateOnlineGameCompleteDelegate_Parms;
-	memcpy(&ClearUpdateOnlineGameCompleteDelegate_Parms.UpdateOnlineGameCompleteDelegate, &UpdateOnlineGameCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearUpdateOnlineGameCompleteDelegate, &ClearUpdateOnlineGameCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddUpdateOnlineGameCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         UpdateOnlineGameCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         UpdateOnlineGameCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::AddUpdateOnlineGameCompleteDelegate(struct FScriptDelegate UpdateOnlineGameCompleteDelegate)
+void UOnlineGameInterfaceImpl::AddUpdateOnlineGameCompleteDelegate(const struct FScriptDelegate& UpdateOnlineGameCompleteDelegate)
 {
-	static UFunction* pFnAddUpdateOnlineGameCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.AddUpdateOnlineGameCompleteDelegate");
 
-	if (!pFnAddUpdateOnlineGameCompleteDelegate)
-		pFnAddUpdateOnlineGameCompleteDelegate = (UFunction*)UObject::GObjects()->Data[45654];
+	UOnlineGameInterfaceImpl_AddUpdateOnlineGameCompleteDelegate_Params params;
+	params.UpdateOnlineGameCompleteDelegate = UpdateOnlineGameCompleteDelegate;
 
-	UOnlineGameInterfaceImpl_execAddUpdateOnlineGameCompleteDelegate_Parms AddUpdateOnlineGameCompleteDelegate_Parms;
-	memcpy(&AddUpdateOnlineGameCompleteDelegate_Parms.UpdateOnlineGameCompleteDelegate, &UpdateOnlineGameCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddUpdateOnlineGameCompleteDelegate, &AddUpdateOnlineGameCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnUpdateOnlineGameComplete
-// [0x00120000]
-// Parameters infos:
-// struct FName                   SessionName                    ( CPF_Parm )
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineGameInterfaceImpl::OnUpdateOnlineGameComplete(struct FName SessionName, unsigned long bWasSuccessful)
+void UOnlineGameInterfaceImpl::OnUpdateOnlineGameComplete(const struct FName& SessionName, bool bWasSuccessful)
 {
-	static UFunction* pFnOnUpdateOnlineGameComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.OnUpdateOnlineGameComplete");
 
-	if (!pFnOnUpdateOnlineGameComplete)
-		pFnOnUpdateOnlineGameComplete = (UFunction*)UObject::GObjects()->Data[45565];
+	UOnlineGameInterfaceImpl_OnUpdateOnlineGameComplete_Params params;
+	params.SessionName = SessionName;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineGameInterfaceImpl_execOnUpdateOnlineGameComplete_Parms OnUpdateOnlineGameComplete_Parms;
-	memcpy(&OnUpdateOnlineGameComplete_Parms.SessionName, &SessionName, 0x8);
-	OnUpdateOnlineGameComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnUpdateOnlineGameComplete, &OnUpdateOnlineGameComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.UpdateOnlineGame
-// [0x00024000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   SessionName                    ( CPF_Parm )
-// class UOnlineGameSettings*     UpdatedGameSettings            ( CPF_Parm )
-// unsigned long                  bShouldRefreshOnlineData       ( CPF_OptionalParm | CPF_Parm )
+// (HasOptionalParms, Public)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// class UOnlineGameSettings*     UpdatedGameSettings            (Parm)
+// bool                           bShouldRefreshOnlineData       (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineGameInterfaceImpl::UpdateOnlineGame(struct FName SessionName, class UOnlineGameSettings* UpdatedGameSettings, unsigned long bShouldRefreshOnlineData)
+bool UOnlineGameInterfaceImpl::UpdateOnlineGame(const struct FName& SessionName, class UOnlineGameSettings* UpdatedGameSettings, bool bShouldRefreshOnlineData)
 {
-	static UFunction* pFnUpdateOnlineGame = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.UpdateOnlineGame");
 
-	if (!pFnUpdateOnlineGame)
-		pFnUpdateOnlineGame = (UFunction*)UObject::GObjects()->Data[45647];
+	UOnlineGameInterfaceImpl_UpdateOnlineGame_Params params;
+	params.SessionName = SessionName;
+	params.UpdatedGameSettings = UpdatedGameSettings;
+	params.bShouldRefreshOnlineData = bShouldRefreshOnlineData;
 
-	UOnlineGameInterfaceImpl_execUpdateOnlineGame_Parms UpdateOnlineGame_Parms;
-	memcpy(&UpdateOnlineGame_Parms.SessionName, &SessionName, 0x8);
-	UpdateOnlineGame_Parms.UpdatedGameSettings = UpdatedGameSettings;
-	UpdateOnlineGame_Parms.bShouldRefreshOnlineData = bShouldRefreshOnlineData;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnUpdateOnlineGame, &UpdateOnlineGame_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return UpdateOnlineGame_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.ClearCreateOnlineGameCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         CreateOnlineGameCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         CreateOnlineGameCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::ClearCreateOnlineGameCompleteDelegate(struct FScriptDelegate CreateOnlineGameCompleteDelegate)
+void UOnlineGameInterfaceImpl::ClearCreateOnlineGameCompleteDelegate(const struct FScriptDelegate& CreateOnlineGameCompleteDelegate)
 {
-	static UFunction* pFnClearCreateOnlineGameCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.ClearCreateOnlineGameCompleteDelegate");
 
-	if (!pFnClearCreateOnlineGameCompleteDelegate)
-		pFnClearCreateOnlineGameCompleteDelegate = (UFunction*)UObject::GObjects()->Data[45645];
+	UOnlineGameInterfaceImpl_ClearCreateOnlineGameCompleteDelegate_Params params;
+	params.CreateOnlineGameCompleteDelegate = CreateOnlineGameCompleteDelegate;
 
-	UOnlineGameInterfaceImpl_execClearCreateOnlineGameCompleteDelegate_Parms ClearCreateOnlineGameCompleteDelegate_Parms;
-	memcpy(&ClearCreateOnlineGameCompleteDelegate_Parms.CreateOnlineGameCompleteDelegate, &CreateOnlineGameCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClearCreateOnlineGameCompleteDelegate, &ClearCreateOnlineGameCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.AddCreateOnlineGameCompleteDelegate
-// [0x00020002]
-// Parameters infos:
-// struct FScriptDelegate         CreateOnlineGameCompleteDelegate ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FScriptDelegate         CreateOnlineGameCompleteDelegate (Parm, NeedCtorLink)
 
-void UOnlineGameInterfaceImpl::AddCreateOnlineGameCompleteDelegate(struct FScriptDelegate CreateOnlineGameCompleteDelegate)
+void UOnlineGameInterfaceImpl::AddCreateOnlineGameCompleteDelegate(const struct FScriptDelegate& CreateOnlineGameCompleteDelegate)
 {
-	static UFunction* pFnAddCreateOnlineGameCompleteDelegate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.AddCreateOnlineGameCompleteDelegate");
 
-	if (!pFnAddCreateOnlineGameCompleteDelegate)
-		pFnAddCreateOnlineGameCompleteDelegate = (UFunction*)UObject::GObjects()->Data[45643];
+	UOnlineGameInterfaceImpl_AddCreateOnlineGameCompleteDelegate_Params params;
+	params.CreateOnlineGameCompleteDelegate = CreateOnlineGameCompleteDelegate;
 
-	UOnlineGameInterfaceImpl_execAddCreateOnlineGameCompleteDelegate_Parms AddCreateOnlineGameCompleteDelegate_Parms;
-	memcpy(&AddCreateOnlineGameCompleteDelegate_Parms.CreateOnlineGameCompleteDelegate, &CreateOnlineGameCompleteDelegate, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddCreateOnlineGameCompleteDelegate, &AddCreateOnlineGameCompleteDelegate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnCreateOnlineGameComplete
-// [0x00120000]
-// Parameters infos:
-// struct FName                   SessionName                    ( CPF_Parm )
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineGameInterfaceImpl::OnCreateOnlineGameComplete(struct FName SessionName, unsigned long bWasSuccessful)
+void UOnlineGameInterfaceImpl::OnCreateOnlineGameComplete(const struct FName& SessionName, bool bWasSuccessful)
 {
-	static UFunction* pFnOnCreateOnlineGameComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.OnCreateOnlineGameComplete");
 
-	if (!pFnOnCreateOnlineGameComplete)
-		pFnOnCreateOnlineGameComplete = (UFunction*)UObject::GObjects()->Data[45562];
+	UOnlineGameInterfaceImpl_OnCreateOnlineGameComplete_Params params;
+	params.SessionName = SessionName;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineGameInterfaceImpl_execOnCreateOnlineGameComplete_Parms OnCreateOnlineGameComplete_Parms;
-	memcpy(&OnCreateOnlineGameComplete_Parms.SessionName, &SessionName, 0x8);
-	OnCreateOnlineGameComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnCreateOnlineGameComplete, &OnCreateOnlineGameComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.CreateOnlineGame
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned char                  HostingPlayerNum               ( CPF_Parm )
-// struct FName                   SessionName                    ( CPF_Parm )
-// class UOnlineGameSettings*     NewGameSettings                ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  HostingPlayerNum               (Parm)
+// struct FName                   SessionName                    (Parm)
+// class UOnlineGameSettings*     NewGameSettings                (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UOnlineGameInterfaceImpl::CreateOnlineGame(unsigned char HostingPlayerNum, struct FName SessionName, class UOnlineGameSettings* NewGameSettings)
+bool UOnlineGameInterfaceImpl::CreateOnlineGame(unsigned char HostingPlayerNum, const struct FName& SessionName, class UOnlineGameSettings* NewGameSettings)
 {
-	static UFunction* pFnCreateOnlineGame = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.CreateOnlineGame");
 
-	if (!pFnCreateOnlineGame)
-		pFnCreateOnlineGame = (UFunction*)UObject::GObjects()->Data[45636];
+	UOnlineGameInterfaceImpl_CreateOnlineGame_Params params;
+	params.HostingPlayerNum = HostingPlayerNum;
+	params.SessionName = SessionName;
+	params.NewGameSettings = NewGameSettings;
 
-	UOnlineGameInterfaceImpl_execCreateOnlineGame_Parms CreateOnlineGame_Parms;
-	CreateOnlineGame_Parms.HostingPlayerNum = HostingPlayerNum;
-	memcpy(&CreateOnlineGame_Parms.SessionName, &SessionName, 0x8);
-	CreateOnlineGame_Parms.NewGameSettings = NewGameSettings;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnCreateOnlineGame->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnCreateOnlineGame, &CreateOnlineGame_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnCreateOnlineGame->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return CreateOnlineGame_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlineGameInterfaceImpl.GetGameSearch
-// [0x00020002]
-// Parameters infos:
-// class UOnlineGameSearch*       ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Defined, Public)
+// Parameters:
+// class UOnlineGameSearch*       ReturnValue                    (Parm, OutParm, ReturnParm)
 
 class UOnlineGameSearch* UOnlineGameInterfaceImpl::GetGameSearch()
 {
-	static UFunction* pFnGetGameSearch = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.GetGameSearch");
 
-	if (!pFnGetGameSearch)
-		pFnGetGameSearch = (UFunction*)UObject::GObjects()->Data[45634];
+	UOnlineGameInterfaceImpl_GetGameSearch_Params params;
 
-	UOnlineGameInterfaceImpl_execGetGameSearch_Parms GetGameSearch_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetGameSearch, &GetGameSearch_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return GetGameSearch_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.GetGameSettings
-// [0x00020002]
-// Parameters infos:
-// class UOnlineGameSettings*     ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   SessionName                    ( CPF_Parm )
+// (Defined, Public)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// class UOnlineGameSettings*     ReturnValue                    (Parm, OutParm, ReturnParm)
 
-class UOnlineGameSettings* UOnlineGameInterfaceImpl::GetGameSettings(struct FName SessionName)
+class UOnlineGameSettings* UOnlineGameInterfaceImpl::GetGameSettings(const struct FName& SessionName)
 {
-	static UFunction* pFnGetGameSettings = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.GetGameSettings");
 
-	if (!pFnGetGameSettings)
-		pFnGetGameSettings = (UFunction*)UObject::GObjects()->Data[45631];
+	UOnlineGameInterfaceImpl_GetGameSettings_Params params;
+	params.SessionName = SessionName;
 
-	UOnlineGameInterfaceImpl_execGetGameSettings_Parms GetGameSettings_Parms;
-	memcpy(&GetGameSettings_Parms.SessionName, &SessionName, 0x8);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetGameSettings, &GetGameSettings_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return GetGameSettings_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.OnlineGameInterfaceImpl.OnFindOnlineGamesComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlineGameInterfaceImpl::OnFindOnlineGamesComplete(unsigned long bWasSuccessful)
+void UOnlineGameInterfaceImpl::OnFindOnlineGamesComplete(bool bWasSuccessful)
 {
-	static UFunction* pFnOnFindOnlineGamesComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlineGameInterfaceImpl.OnFindOnlineGamesComplete");
 
-	if (!pFnOnFindOnlineGamesComplete)
-		pFnOnFindOnlineGamesComplete = (UFunction*)UObject::GObjects()->Data[45589];
+	UOnlineGameInterfaceImpl_OnFindOnlineGamesComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlineGameInterfaceImpl_execOnFindOnlineGamesComplete_Parms OnFindOnlineGamesComplete_Parms;
-	OnFindOnlineGamesComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnFindOnlineGamesComplete, &OnFindOnlineGamesComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlinePlaylistManager.ParseDataCenterId
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// TArray< unsigned char >        Data                           ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// TArray<unsigned char>          Data                           (Const, Parm, OutParm, NeedCtorLink)
 
-void UOnlinePlaylistManager::ParseDataCenterId(TArray< unsigned char >* Data)
+void UOnlinePlaylistManager::ParseDataCenterId(TArray<unsigned char>* Data)
 {
-	static UFunction* pFnParseDataCenterId = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlinePlaylistManager.ParseDataCenterId");
 
-	if (!pFnParseDataCenterId)
-		pFnParseDataCenterId = (UFunction*)UObject::GObjects()->Data[46004];
+	UOnlinePlaylistManager_ParseDataCenterId_Params params;
 
-	UOnlinePlaylistManager_execParseDataCenterId_Parms ParseDataCenterId_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnParseDataCenterId->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnParseDataCenterId, &ParseDataCenterId_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnParseDataCenterId->FunctionFlags |= 0x400;
+	if (Data != nullptr)
+		*Data = params.Data;
+}
 
-	if (Data)
-		memcpy(Data, &ParseDataCenterId_Parms.Data, 0xC);
-};
 
 // Function IpDrv.OnlinePlaylistManager.OnReadDataCenterIdComplete
-// [0x00020002]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
+// struct FString                 Filename                       (Parm, NeedCtorLink)
 
-void UOnlinePlaylistManager::OnReadDataCenterIdComplete(unsigned long bWasSuccessful, struct FString Filename)
+void UOnlinePlaylistManager::OnReadDataCenterIdComplete(bool bWasSuccessful, const struct FString& Filename)
 {
-	static UFunction* pFnOnReadDataCenterIdComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlinePlaylistManager.OnReadDataCenterIdComplete");
 
-	if (!pFnOnReadDataCenterIdComplete)
-		pFnOnReadDataCenterIdComplete = (UFunction*)UObject::GObjects()->Data[45999];
+	UOnlinePlaylistManager_OnReadDataCenterIdComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
+	params.Filename = Filename;
 
-	UOnlinePlaylistManager_execOnReadDataCenterIdComplete_Parms OnReadDataCenterIdComplete_Parms;
-	OnReadDataCenterIdComplete_Parms.bWasSuccessful = bWasSuccessful;
-	memcpy(&OnReadDataCenterIdComplete_Parms.Filename, &Filename, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReadDataCenterIdComplete, &OnReadDataCenterIdComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlinePlaylistManager.ReadDataCenterId
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
 
 void UOnlinePlaylistManager::ReadDataCenterId(unsigned char LocalUserNum)
 {
-	static UFunction* pFnReadDataCenterId = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlinePlaylistManager.ReadDataCenterId");
 
-	if (!pFnReadDataCenterId)
-		pFnReadDataCenterId = (UFunction*)UObject::GObjects()->Data[45997];
+	UOnlinePlaylistManager_ReadDataCenterId_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlinePlaylistManager_execReadDataCenterId_Parms ReadDataCenterId_Parms;
-	ReadDataCenterId_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnReadDataCenterId, &ReadDataCenterId_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlinePlaylistManager.SendPlaylistPopulationUpdate
-// [0x00020802] ( FUNC_Event )
-// Parameters infos:
-// int                            NumPlayers                     ( CPF_Parm )
+// (Defined, Event, Public)
+// Parameters:
+// int                            NumPlayers                     (Parm)
 
-void UOnlinePlaylistManager::eventSendPlaylistPopulationUpdate(int NumPlayers)
+void UOnlinePlaylistManager::SendPlaylistPopulationUpdate(int NumPlayers)
 {
-	static UFunction* pFnSendPlaylistPopulationUpdate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlinePlaylistManager.SendPlaylistPopulationUpdate");
 
-	if (!pFnSendPlaylistPopulationUpdate)
-		pFnSendPlaylistPopulationUpdate = (UFunction*)UObject::GObjects()->Data[45994];
+	UOnlinePlaylistManager_SendPlaylistPopulationUpdate_Params params;
+	params.NumPlayers = NumPlayers;
 
-	UOnlinePlaylistManager_eventSendPlaylistPopulationUpdate_Parms SendPlaylistPopulationUpdate_Parms;
-	SendPlaylistPopulationUpdate_Parms.NumPlayers = NumPlayers;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnSendPlaylistPopulationUpdate, &SendPlaylistPopulationUpdate_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlinePlaylistManager.GetPopulationInfoFromPlaylist
-// [0x00420002]
-// Parameters infos:
-// int                            PlaylistId                     ( CPF_Parm )
-// int                            WorldwideTotal                 ( CPF_Parm | CPF_OutParm )
-// int                            RegionTotal                    ( CPF_Parm | CPF_OutParm )
+// (Defined, Public, HasOutParms)
+// Parameters:
+// int                            PlaylistId                     (Parm)
+// int                            WorldwideTotal                 (Parm, OutParm)
+// int                            RegionTotal                    (Parm, OutParm)
 
 void UOnlinePlaylistManager::GetPopulationInfoFromPlaylist(int PlaylistId, int* WorldwideTotal, int* RegionTotal)
 {
-	static UFunction* pFnGetPopulationInfoFromPlaylist = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlinePlaylistManager.GetPopulationInfoFromPlaylist");
 
-	if (!pFnGetPopulationInfoFromPlaylist)
-		pFnGetPopulationInfoFromPlaylist = (UFunction*)UObject::GObjects()->Data[45990];
+	UOnlinePlaylistManager_GetPopulationInfoFromPlaylist_Params params;
+	params.PlaylistId = PlaylistId;
 
-	UOnlinePlaylistManager_execGetPopulationInfoFromPlaylist_Parms GetPopulationInfoFromPlaylist_Parms;
-	GetPopulationInfoFromPlaylist_Parms.PlaylistId = PlaylistId;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetPopulationInfoFromPlaylist, &GetPopulationInfoFromPlaylist_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (WorldwideTotal)
-		*WorldwideTotal = GetPopulationInfoFromPlaylist_Parms.WorldwideTotal;
+	fn->FunctionFlags = flags;
 
-	if (RegionTotal)
-		*RegionTotal = GetPopulationInfoFromPlaylist_Parms.RegionTotal;
-};
+	if (WorldwideTotal != nullptr)
+		*WorldwideTotal = params.WorldwideTotal;
+	if (RegionTotal != nullptr)
+		*RegionTotal = params.RegionTotal;
+}
+
 
 // Function IpDrv.OnlinePlaylistManager.ParsePlaylistPopulationData
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// TArray< unsigned char >        Data                           ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// TArray<unsigned char>          Data                           (Const, Parm, OutParm, NeedCtorLink)
 
-void UOnlinePlaylistManager::ParsePlaylistPopulationData(TArray< unsigned char >* Data)
+void UOnlinePlaylistManager::ParsePlaylistPopulationData(TArray<unsigned char>* Data)
 {
-	static UFunction* pFnParsePlaylistPopulationData = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlinePlaylistManager.ParsePlaylistPopulationData");
 
-	if (!pFnParsePlaylistPopulationData)
-		pFnParsePlaylistPopulationData = (UFunction*)UObject::GObjects()->Data[45987];
+	UOnlinePlaylistManager_ParsePlaylistPopulationData_Params params;
 
-	UOnlinePlaylistManager_execParsePlaylistPopulationData_Parms ParsePlaylistPopulationData_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnParsePlaylistPopulationData->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnParsePlaylistPopulationData, &ParsePlaylistPopulationData_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnParsePlaylistPopulationData->FunctionFlags |= 0x400;
+	if (Data != nullptr)
+		*Data = params.Data;
+}
 
-	if (Data)
-		memcpy(Data, &ParsePlaylistPopulationData_Parms.Data, 0xC);
-};
 
 // Function IpDrv.OnlinePlaylistManager.OnPlaylistPopulationDataUpdated
-// [0x00120000]
-// Parameters infos:
+// (Public, Delegate)
 
 void UOnlinePlaylistManager::OnPlaylistPopulationDataUpdated()
 {
-	static UFunction* pFnOnPlaylistPopulationDataUpdated = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlinePlaylistManager.OnPlaylistPopulationDataUpdated");
 
-	if (!pFnOnPlaylistPopulationDataUpdated)
-		pFnOnPlaylistPopulationDataUpdated = (UFunction*)UObject::GObjects()->Data[45877];
+	UOnlinePlaylistManager_OnPlaylistPopulationDataUpdated_Params params;
 
-	UOnlinePlaylistManager_execOnPlaylistPopulationDataUpdated_Parms OnPlaylistPopulationDataUpdated_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnPlaylistPopulationDataUpdated, &OnPlaylistPopulationDataUpdated_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlinePlaylistManager.OnReadPlaylistPopulationComplete
-// [0x00020002]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
+// struct FString                 Filename                       (Parm, NeedCtorLink)
 
-void UOnlinePlaylistManager::OnReadPlaylistPopulationComplete(unsigned long bWasSuccessful, struct FString Filename)
+void UOnlinePlaylistManager::OnReadPlaylistPopulationComplete(bool bWasSuccessful, const struct FString& Filename)
 {
-	static UFunction* pFnOnReadPlaylistPopulationComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlinePlaylistManager.OnReadPlaylistPopulationComplete");
 
-	if (!pFnOnReadPlaylistPopulationComplete)
-		pFnOnReadPlaylistPopulationComplete = (UFunction*)UObject::GObjects()->Data[45982];
+	UOnlinePlaylistManager_OnReadPlaylistPopulationComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
+	params.Filename = Filename;
 
-	UOnlinePlaylistManager_execOnReadPlaylistPopulationComplete_Parms OnReadPlaylistPopulationComplete_Parms;
-	OnReadPlaylistPopulationComplete_Parms.bWasSuccessful = bWasSuccessful;
-	memcpy(&OnReadPlaylistPopulationComplete_Parms.Filename, &Filename, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReadPlaylistPopulationComplete, &OnReadPlaylistPopulationComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlinePlaylistManager.ReadPlaylistPopulation
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
 
 void UOnlinePlaylistManager::ReadPlaylistPopulation(unsigned char LocalUserNum)
 {
-	static UFunction* pFnReadPlaylistPopulation = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlinePlaylistManager.ReadPlaylistPopulation");
 
-	if (!pFnReadPlaylistPopulation)
-		pFnReadPlaylistPopulation = (UFunction*)UObject::GObjects()->Data[45980];
+	UOnlinePlaylistManager_ReadPlaylistPopulation_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlinePlaylistManager_execReadPlaylistPopulation_Parms ReadPlaylistPopulation_Parms;
-	ReadPlaylistPopulation_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnReadPlaylistPopulation, &ReadPlaylistPopulation_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlinePlaylistManager.Reset
-// [0x00020002]
-// Parameters infos:
+// (Defined, Public)
 
 void UOnlinePlaylistManager::Reset()
 {
-	static UFunction* pFnReset = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlinePlaylistManager.Reset");
 
-	if (!pFnReset)
-		pFnReset = (UFunction*)UObject::GObjects()->Data[45979];
+	UOnlinePlaylistManager_Reset_Params params;
 
-	UOnlinePlaylistManager_execReset_Parms Reset_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnReset, &Reset_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlinePlaylistManager.GetContentIdsFromPlaylist
-// [0x00420002]
-// Parameters infos:
-// int                            PlaylistId                     ( CPF_Parm )
-// TArray< int >                  ContentIds                     ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Defined, Public, HasOutParms)
+// Parameters:
+// int                            PlaylistId                     (Parm)
+// TArray<int>                    ContentIds                     (Parm, OutParm, NeedCtorLink)
 
-void UOnlinePlaylistManager::GetContentIdsFromPlaylist(int PlaylistId, TArray< int >* ContentIds)
+void UOnlinePlaylistManager::GetContentIdsFromPlaylist(int PlaylistId, TArray<int>* ContentIds)
 {
-	static UFunction* pFnGetContentIdsFromPlaylist = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlinePlaylistManager.GetContentIdsFromPlaylist");
 
-	if (!pFnGetContentIdsFromPlaylist)
-		pFnGetContentIdsFromPlaylist = (UFunction*)UObject::GObjects()->Data[45975];
+	UOnlinePlaylistManager_GetContentIdsFromPlaylist_Params params;
+	params.PlaylistId = PlaylistId;
 
-	UOnlinePlaylistManager_execGetContentIdsFromPlaylist_Parms GetContentIdsFromPlaylist_Parms;
-	GetContentIdsFromPlaylist_Parms.PlaylistId = PlaylistId;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetContentIdsFromPlaylist, &GetContentIdsFromPlaylist_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (ContentIds)
-		memcpy(ContentIds, &GetContentIdsFromPlaylist_Parms.ContentIds, 0xC);
-};
+	fn->FunctionFlags = flags;
+
+	if (ContentIds != nullptr)
+		*ContentIds = params.ContentIds;
+}
+
 
 // Function IpDrv.OnlinePlaylistManager.GetInventorySwapFromPlaylist
-// [0x00020002]
-// Parameters infos:
-// class UClass*                  ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            PlaylistId                     ( CPF_Parm )
-// class UClass*                  SourceInventory                ( CPF_Parm )
+// (Defined, Public)
+// Parameters:
+// int                            PlaylistId                     (Parm)
+// class UClass*                  SourceInventory                (Parm)
+// class UClass*                  ReturnValue                    (Parm, OutParm, ReturnParm)
 
 class UClass* UOnlinePlaylistManager::GetInventorySwapFromPlaylist(int PlaylistId, class UClass* SourceInventory)
 {
-	static UFunction* pFnGetInventorySwapFromPlaylist = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlinePlaylistManager.GetInventorySwapFromPlaylist");
 
-	if (!pFnGetInventorySwapFromPlaylist)
-		pFnGetInventorySwapFromPlaylist = (UFunction*)UObject::GObjects()->Data[45971];
+	UOnlinePlaylistManager_GetInventorySwapFromPlaylist_Params params;
+	params.PlaylistId = PlaylistId;
+	params.SourceInventory = SourceInventory;
 
-	UOnlinePlaylistManager_execGetInventorySwapFromPlaylist_Parms GetInventorySwapFromPlaylist_Parms;
-	GetInventorySwapFromPlaylist_Parms.PlaylistId = PlaylistId;
-	GetInventorySwapFromPlaylist_Parms.SourceInventory = SourceInventory;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetInventorySwapFromPlaylist, &GetInventorySwapFromPlaylist_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return GetInventorySwapFromPlaylist_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.OnlinePlaylistManager.GetMapCycleFromPlaylist
-// [0x00420002]
-// Parameters infos:
-// int                            PlaylistId                     ( CPF_Parm )
-// TArray< struct FName >         MapCycle                       ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Defined, Public, HasOutParms)
+// Parameters:
+// int                            PlaylistId                     (Parm)
+// TArray<struct FName>           MapCycle                       (Parm, OutParm, NeedCtorLink)
 
-void UOnlinePlaylistManager::GetMapCycleFromPlaylist(int PlaylistId, TArray< struct FName >* MapCycle)
+void UOnlinePlaylistManager::GetMapCycleFromPlaylist(int PlaylistId, TArray<struct FName>* MapCycle)
 {
-	static UFunction* pFnGetMapCycleFromPlaylist = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlinePlaylistManager.GetMapCycleFromPlaylist");
 
-	if (!pFnGetMapCycleFromPlaylist)
-		pFnGetMapCycleFromPlaylist = (UFunction*)UObject::GObjects()->Data[45967];
+	UOnlinePlaylistManager_GetMapCycleFromPlaylist_Params params;
+	params.PlaylistId = PlaylistId;
 
-	UOnlinePlaylistManager_execGetMapCycleFromPlaylist_Parms GetMapCycleFromPlaylist_Parms;
-	GetMapCycleFromPlaylist_Parms.PlaylistId = PlaylistId;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetMapCycleFromPlaylist, &GetMapCycleFromPlaylist_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (MapCycle)
-		memcpy(MapCycle, &GetMapCycleFromPlaylist_Parms.MapCycle, 0xC);
-};
+	fn->FunctionFlags = flags;
+
+	if (MapCycle != nullptr)
+		*MapCycle = params.MapCycle;
+}
+
 
 // Function IpDrv.OnlinePlaylistManager.GetUrlFromPlaylist
-// [0x00020002]
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// int                            PlaylistId                     ( CPF_Parm )
+// (Defined, Public)
+// Parameters:
+// int                            PlaylistId                     (Parm)
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
 struct FString UOnlinePlaylistManager::GetUrlFromPlaylist(int PlaylistId)
 {
-	static UFunction* pFnGetUrlFromPlaylist = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlinePlaylistManager.GetUrlFromPlaylist");
 
-	if (!pFnGetUrlFromPlaylist)
-		pFnGetUrlFromPlaylist = (UFunction*)UObject::GObjects()->Data[45964];
+	UOnlinePlaylistManager_GetUrlFromPlaylist_Params params;
+	params.PlaylistId = PlaylistId;
 
-	UOnlinePlaylistManager_execGetUrlFromPlaylist_Parms GetUrlFromPlaylist_Parms;
-	GetUrlFromPlaylist_Parms.PlaylistId = PlaylistId;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetUrlFromPlaylist, &GetUrlFromPlaylist_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return GetUrlFromPlaylist_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.OnlinePlaylistManager.GetMatchType
-// [0x00020002]
-// Parameters infos:
-// int                            ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            PlaylistId                     ( CPF_Parm )
+// (Defined, Public)
+// Parameters:
+// int                            PlaylistId                     (Parm)
+// int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
 int UOnlinePlaylistManager::GetMatchType(int PlaylistId)
 {
-	static UFunction* pFnGetMatchType = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlinePlaylistManager.GetMatchType");
 
-	if (!pFnGetMatchType)
-		pFnGetMatchType = (UFunction*)UObject::GObjects()->Data[45961];
+	UOnlinePlaylistManager_GetMatchType_Params params;
+	params.PlaylistId = PlaylistId;
 
-	UOnlinePlaylistManager_execGetMatchType_Parms GetMatchType_Parms;
-	GetMatchType_Parms.PlaylistId = PlaylistId;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetMatchType, &GetMatchType_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return GetMatchType_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.OnlinePlaylistManager.IsPlaylistArbitrated
-// [0x00020002]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            PlaylistId                     ( CPF_Parm )
+// (Defined, Public)
+// Parameters:
+// int                            PlaylistId                     (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlinePlaylistManager::IsPlaylistArbitrated(int PlaylistId)
 {
-	static UFunction* pFnIsPlaylistArbitrated = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlinePlaylistManager.IsPlaylistArbitrated");
 
-	if (!pFnIsPlaylistArbitrated)
-		pFnIsPlaylistArbitrated = (UFunction*)UObject::GObjects()->Data[45958];
+	UOnlinePlaylistManager_IsPlaylistArbitrated_Params params;
+	params.PlaylistId = PlaylistId;
 
-	UOnlinePlaylistManager_execIsPlaylistArbitrated_Parms IsPlaylistArbitrated_Parms;
-	IsPlaylistArbitrated_Parms.PlaylistId = PlaylistId;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnIsPlaylistArbitrated, &IsPlaylistArbitrated_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return IsPlaylistArbitrated_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.OnlinePlaylistManager.GetLoadBalanceIdFromPlaylist
-// [0x00420002]
-// Parameters infos:
-// int                            PlaylistId                     ( CPF_Parm )
-// int                            LoadBalanceId                  ( CPF_Parm | CPF_OutParm )
+// (Defined, Public, HasOutParms)
+// Parameters:
+// int                            PlaylistId                     (Parm)
+// int                            LoadBalanceId                  (Parm, OutParm)
 
 void UOnlinePlaylistManager::GetLoadBalanceIdFromPlaylist(int PlaylistId, int* LoadBalanceId)
 {
-	static UFunction* pFnGetLoadBalanceIdFromPlaylist = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlinePlaylistManager.GetLoadBalanceIdFromPlaylist");
 
-	if (!pFnGetLoadBalanceIdFromPlaylist)
-		pFnGetLoadBalanceIdFromPlaylist = (UFunction*)UObject::GObjects()->Data[45955];
+	UOnlinePlaylistManager_GetLoadBalanceIdFromPlaylist_Params params;
+	params.PlaylistId = PlaylistId;
 
-	UOnlinePlaylistManager_execGetLoadBalanceIdFromPlaylist_Parms GetLoadBalanceIdFromPlaylist_Parms;
-	GetLoadBalanceIdFromPlaylist_Parms.PlaylistId = PlaylistId;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetLoadBalanceIdFromPlaylist, &GetLoadBalanceIdFromPlaylist_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (LoadBalanceId)
-		*LoadBalanceId = GetLoadBalanceIdFromPlaylist_Parms.LoadBalanceId;
-};
+	fn->FunctionFlags = flags;
+
+	if (LoadBalanceId != nullptr)
+		*LoadBalanceId = params.LoadBalanceId;
+}
+
 
 // Function IpDrv.OnlinePlaylistManager.GetTeamInfoFromPlaylist
-// [0x00420002]
-// Parameters infos:
-// int                            PlaylistId                     ( CPF_Parm )
-// int                            TeamSize                       ( CPF_Parm | CPF_OutParm )
-// int                            TeamCount                      ( CPF_Parm | CPF_OutParm )
-// int                            MaxPartySize                   ( CPF_Parm | CPF_OutParm )
+// (Defined, Public, HasOutParms)
+// Parameters:
+// int                            PlaylistId                     (Parm)
+// int                            TeamSize                       (Parm, OutParm)
+// int                            TeamCount                      (Parm, OutParm)
+// int                            MaxPartySize                   (Parm, OutParm)
 
 void UOnlinePlaylistManager::GetTeamInfoFromPlaylist(int PlaylistId, int* TeamSize, int* TeamCount, int* MaxPartySize)
 {
-	static UFunction* pFnGetTeamInfoFromPlaylist = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlinePlaylistManager.GetTeamInfoFromPlaylist");
 
-	if (!pFnGetTeamInfoFromPlaylist)
-		pFnGetTeamInfoFromPlaylist = (UFunction*)UObject::GObjects()->Data[45950];
+	UOnlinePlaylistManager_GetTeamInfoFromPlaylist_Params params;
+	params.PlaylistId = PlaylistId;
 
-	UOnlinePlaylistManager_execGetTeamInfoFromPlaylist_Parms GetTeamInfoFromPlaylist_Parms;
-	GetTeamInfoFromPlaylist_Parms.PlaylistId = PlaylistId;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetTeamInfoFromPlaylist, &GetTeamInfoFromPlaylist_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (TeamSize)
-		*TeamSize = GetTeamInfoFromPlaylist_Parms.TeamSize;
+	fn->FunctionFlags = flags;
 
-	if (TeamCount)
-		*TeamCount = GetTeamInfoFromPlaylist_Parms.TeamCount;
+	if (TeamSize != nullptr)
+		*TeamSize = params.TeamSize;
+	if (TeamCount != nullptr)
+		*TeamCount = params.TeamCount;
+	if (MaxPartySize != nullptr)
+		*MaxPartySize = params.MaxPartySize;
+}
 
-	if (MaxPartySize)
-		*MaxPartySize = GetTeamInfoFromPlaylist_Parms.MaxPartySize;
-};
 
 // Function IpDrv.OnlinePlaylistManager.PlaylistSupportsDedicatedServers
-// [0x00020002]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            PlaylistId                     ( CPF_Parm )
+// (Defined, Public)
+// Parameters:
+// int                            PlaylistId                     (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlinePlaylistManager::PlaylistSupportsDedicatedServers(int PlaylistId)
 {
-	static UFunction* pFnPlaylistSupportsDedicatedServers = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlinePlaylistManager.PlaylistSupportsDedicatedServers");
 
-	if (!pFnPlaylistSupportsDedicatedServers)
-		pFnPlaylistSupportsDedicatedServers = (UFunction*)UObject::GObjects()->Data[45947];
+	UOnlinePlaylistManager_PlaylistSupportsDedicatedServers_Params params;
+	params.PlaylistId = PlaylistId;
 
-	UOnlinePlaylistManager_execPlaylistSupportsDedicatedServers_Parms PlaylistSupportsDedicatedServers_Parms;
-	PlaylistSupportsDedicatedServers_Parms.PlaylistId = PlaylistId;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnPlaylistSupportsDedicatedServers, &PlaylistSupportsDedicatedServers_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return PlaylistSupportsDedicatedServers_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.OnlinePlaylistManager.HasAnyGameSettings
-// [0x00020002]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            PlaylistId                     ( CPF_Parm )
+// (Defined, Public)
+// Parameters:
+// int                            PlaylistId                     (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlinePlaylistManager::HasAnyGameSettings(int PlaylistId)
 {
-	static UFunction* pFnHasAnyGameSettings = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlinePlaylistManager.HasAnyGameSettings");
 
-	if (!pFnHasAnyGameSettings)
-		pFnHasAnyGameSettings = (UFunction*)UObject::GObjects()->Data[45944];
+	UOnlinePlaylistManager_HasAnyGameSettings_Params params;
+	params.PlaylistId = PlaylistId;
 
-	UOnlinePlaylistManager_execHasAnyGameSettings_Parms HasAnyGameSettings_Parms;
-	HasAnyGameSettings_Parms.PlaylistId = PlaylistId;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnHasAnyGameSettings, &HasAnyGameSettings_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return HasAnyGameSettings_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.OnlinePlaylistManager.GetGameSettings
-// [0x00020002]
-// Parameters infos:
-// class UOnlineGameSettings*     ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            PlaylistId                     ( CPF_Parm )
-// int                            GameSettingsId                 ( CPF_Parm )
+// (Defined, Public)
+// Parameters:
+// int                            PlaylistId                     (Parm)
+// int                            GameSettingsId                 (Parm)
+// class UOnlineGameSettings*     ReturnValue                    (Parm, OutParm, ReturnParm)
 
 class UOnlineGameSettings* UOnlinePlaylistManager::GetGameSettings(int PlaylistId, int GameSettingsId)
 {
-	static UFunction* pFnGetGameSettings = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlinePlaylistManager.GetGameSettings");
 
-	if (!pFnGetGameSettings)
-		pFnGetGameSettings = (UFunction*)UObject::GObjects()->Data[45940];
+	UOnlinePlaylistManager_GetGameSettings_Params params;
+	params.PlaylistId = PlaylistId;
+	params.GameSettingsId = GameSettingsId;
 
-	UOnlinePlaylistManager_execGetGameSettings_Parms GetGameSettings_Parms;
-	GetGameSettings_Parms.PlaylistId = PlaylistId;
-	GetGameSettings_Parms.GameSettingsId = GameSettingsId;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetGameSettings, &GetGameSettings_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return GetGameSettings_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.OnlinePlaylistManager.FinalizePlaylistObjects
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
+// (Native, Public)
 
 void UOnlinePlaylistManager::FinalizePlaylistObjects()
 {
-	static UFunction* pFnFinalizePlaylistObjects = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlinePlaylistManager.FinalizePlaylistObjects");
 
-	if (!pFnFinalizePlaylistObjects)
-		pFnFinalizePlaylistObjects = (UFunction*)UObject::GObjects()->Data[45939];
+	UOnlinePlaylistManager_FinalizePlaylistObjects_Params params;
 
-	UOnlinePlaylistManager_execFinalizePlaylistObjects_Parms FinalizePlaylistObjects_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnFinalizePlaylistObjects->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnFinalizePlaylistObjects, &FinalizePlaylistObjects_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnFinalizePlaylistObjects->FunctionFlags |= 0x400;
-};
 
 // Function IpDrv.OnlinePlaylistManager.OnReadTitleFileComplete
-// [0x00020002]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
+// struct FString                 Filename                       (Parm, NeedCtorLink)
 
-void UOnlinePlaylistManager::OnReadTitleFileComplete(unsigned long bWasSuccessful, struct FString Filename)
+void UOnlinePlaylistManager::OnReadTitleFileComplete(bool bWasSuccessful, const struct FString& Filename)
 {
-	static UFunction* pFnOnReadTitleFileComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlinePlaylistManager.OnReadTitleFileComplete");
 
-	if (!pFnOnReadTitleFileComplete)
-		pFnOnReadTitleFileComplete = (UFunction*)UObject::GObjects()->Data[45936];
+	UOnlinePlaylistManager_OnReadTitleFileComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
+	params.Filename = Filename;
 
-	UOnlinePlaylistManager_execOnReadTitleFileComplete_Parms OnReadTitleFileComplete_Parms;
-	OnReadTitleFileComplete_Parms.bWasSuccessful = bWasSuccessful;
-	memcpy(&OnReadTitleFileComplete_Parms.Filename, &Filename, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReadTitleFileComplete, &OnReadTitleFileComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlinePlaylistManager.ShouldRefreshPlaylists
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Native, Public)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UOnlinePlaylistManager::ShouldRefreshPlaylists()
 {
-	static UFunction* pFnShouldRefreshPlaylists = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlinePlaylistManager.ShouldRefreshPlaylists");
 
-	if (!pFnShouldRefreshPlaylists)
-		pFnShouldRefreshPlaylists = (UFunction*)UObject::GObjects()->Data[45934];
+	UOnlinePlaylistManager_ShouldRefreshPlaylists_Params params;
 
-	UOnlinePlaylistManager_execShouldRefreshPlaylists_Parms ShouldRefreshPlaylists_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnShouldRefreshPlaylists->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnShouldRefreshPlaylists, &ShouldRefreshPlaylists_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnShouldRefreshPlaylists->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ShouldRefreshPlaylists_Parms.ReturnValue;
-};
 
 // Function IpDrv.OnlinePlaylistManager.DetermineFilesToDownload
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
+// (Native, Public)
 
 void UOnlinePlaylistManager::DetermineFilesToDownload()
 {
-	static UFunction* pFnDetermineFilesToDownload = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlinePlaylistManager.DetermineFilesToDownload");
 
-	if (!pFnDetermineFilesToDownload)
-		pFnDetermineFilesToDownload = (UFunction*)UObject::GObjects()->Data[45933];
+	UOnlinePlaylistManager_DetermineFilesToDownload_Params params;
 
-	UOnlinePlaylistManager_execDetermineFilesToDownload_Parms DetermineFilesToDownload_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnDetermineFilesToDownload->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnDetermineFilesToDownload, &DetermineFilesToDownload_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnDetermineFilesToDownload->FunctionFlags |= 0x400;
-};
 
 // Function IpDrv.OnlinePlaylistManager.DownloadPlaylist
-// [0x00020002]
-// Parameters infos:
-// unsigned char                  LocalUserNum                   ( CPF_Parm )
+// (Defined, Public)
+// Parameters:
+// unsigned char                  LocalUserNum                   (Parm)
 
 void UOnlinePlaylistManager::DownloadPlaylist(unsigned char LocalUserNum)
 {
-	static UFunction* pFnDownloadPlaylist = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlinePlaylistManager.DownloadPlaylist");
 
-	if (!pFnDownloadPlaylist)
-		pFnDownloadPlaylist = (UFunction*)UObject::GObjects()->Data[45931];
+	UOnlinePlaylistManager_DownloadPlaylist_Params params;
+	params.LocalUserNum = LocalUserNum;
 
-	UOnlinePlaylistManager_execDownloadPlaylist_Parms DownloadPlaylist_Parms;
-	DownloadPlaylist_Parms.LocalUserNum = LocalUserNum;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnDownloadPlaylist, &DownloadPlaylist_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.OnlinePlaylistManager.OnReadPlaylistComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned long                  bWasSuccessful                 ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// bool                           bWasSuccessful                 (Parm)
 
-void UOnlinePlaylistManager::OnReadPlaylistComplete(unsigned long bWasSuccessful)
+void UOnlinePlaylistManager::OnReadPlaylistComplete(bool bWasSuccessful)
 {
-	static UFunction* pFnOnReadPlaylistComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.OnlinePlaylistManager.OnReadPlaylistComplete");
 
-	if (!pFnOnReadPlaylistComplete)
-		pFnOnReadPlaylistComplete = (UFunction*)UObject::GObjects()->Data[45879];
+	UOnlinePlaylistManager_OnReadPlaylistComplete_Params params;
+	params.bWasSuccessful = bWasSuccessful;
 
-	UOnlinePlaylistManager_execOnReadPlaylistComplete_Parms OnReadPlaylistComplete_Parms;
-	OnReadPlaylistComplete_Parms.bWasSuccessful = bWasSuccessful;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReadPlaylistComplete, &OnReadPlaylistComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.PartyBeacon.OnDestroyComplete
-// [0x00120000]
-// Parameters infos:
+// (Public, Delegate)
 
 void UPartyBeacon::OnDestroyComplete()
 {
-	static UFunction* pFnOnDestroyComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeacon.OnDestroyComplete");
 
-	if (!pFnOnDestroyComplete)
-		pFnOnDestroyComplete = (UFunction*)UObject::GObjects()->Data[46081];
+	UPartyBeacon_OnDestroyComplete_Params params;
 
-	UPartyBeacon_execOnDestroyComplete_Parms OnDestroyComplete_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnDestroyComplete, &OnDestroyComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.PartyBeacon.DestroyBeacon
-// [0x00020C00] ( FUNC_Event | FUNC_Native )
-// Parameters infos:
+// (Native, Event, Public)
 
-void UPartyBeacon::eventDestroyBeacon()
+void UPartyBeacon::DestroyBeacon()
 {
-	static UFunction* pFnDestroyBeacon = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeacon.DestroyBeacon");
 
-	if (!pFnDestroyBeacon)
-		pFnDestroyBeacon = (UFunction*)UObject::GObjects()->Data[46105];
+	UPartyBeacon_DestroyBeacon_Params params;
 
-	UPartyBeacon_eventDestroyBeacon_Parms DestroyBeacon_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnDestroyBeacon->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnDestroyBeacon, &DestroyBeacon_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnDestroyBeacon->FunctionFlags |= 0x400;
-};
 
 // Function IpDrv.PartyBeaconClient.DestroyBeacon
-// [0x00020C00] ( FUNC_Event | FUNC_Native )
-// Parameters infos:
+// (Native, Event, Public)
 
-void UPartyBeaconClient::eventDestroyBeacon()
+void UPartyBeaconClient::DestroyBeacon()
 {
-	static UFunction* pFnDestroyBeacon = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconClient.DestroyBeacon");
 
-	if (!pFnDestroyBeacon)
-		pFnDestroyBeacon = (UFunction*)UObject::GObjects()->Data[46147];
+	UPartyBeaconClient_DestroyBeacon_Params params;
 
-	UPartyBeaconClient_eventDestroyBeacon_Parms DestroyBeacon_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnDestroyBeacon->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnDestroyBeacon, &DestroyBeacon_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnDestroyBeacon->FunctionFlags |= 0x400;
-};
 
 // Function IpDrv.PartyBeaconClient.CancelReservation
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FUniqueNetId            CancellingPartyLeader          ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FUniqueNetId            CancellingPartyLeader          (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UPartyBeaconClient::CancelReservation(struct FUniqueNetId CancellingPartyLeader)
+bool UPartyBeaconClient::CancelReservation(const struct FUniqueNetId& CancellingPartyLeader)
 {
-	static UFunction* pFnCancelReservation = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconClient.CancelReservation");
 
-	if (!pFnCancelReservation)
-		pFnCancelReservation = (UFunction*)UObject::GObjects()->Data[46144];
+	UPartyBeaconClient_CancelReservation_Params params;
+	params.CancellingPartyLeader = CancellingPartyLeader;
 
-	UPartyBeaconClient_execCancelReservation_Parms CancelReservation_Parms;
-	memcpy(&CancelReservation_Parms.CancellingPartyLeader, &CancellingPartyLeader, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnCancelReservation->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnCancelReservation, &CancelReservation_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnCancelReservation->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return CancelReservation_Parms.ReturnValue;
-};
 
 // Function IpDrv.PartyBeaconClient.RequestReservationUpdate
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FUniqueNetId            RequestingPartyLeader          ( CPF_Parm )
-// struct FOnlineGameSearchResult DesiredHost                    ( CPF_Const | CPF_Parm | CPF_OutParm )
-// TArray< struct FPlayerReservation > PlayersToAdd                   ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FOnlineGameSearchResult DesiredHost                    (Const, Parm, OutParm)
+// struct FUniqueNetId            RequestingPartyLeader          (Parm)
+// TArray<struct FPlayerReservation> PlayersToAdd                   (Const, Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UPartyBeaconClient::RequestReservationUpdate(struct FUniqueNetId RequestingPartyLeader, struct FOnlineGameSearchResult* DesiredHost, TArray< struct FPlayerReservation >* PlayersToAdd)
+bool UPartyBeaconClient::RequestReservationUpdate(const struct FUniqueNetId& RequestingPartyLeader, struct FOnlineGameSearchResult* DesiredHost, TArray<struct FPlayerReservation>* PlayersToAdd)
 {
-	static UFunction* pFnRequestReservationUpdate = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconClient.RequestReservationUpdate");
 
-	if (!pFnRequestReservationUpdate)
-		pFnRequestReservationUpdate = (UFunction*)UObject::GObjects()->Data[46138];
+	UPartyBeaconClient_RequestReservationUpdate_Params params;
+	params.RequestingPartyLeader = RequestingPartyLeader;
 
-	UPartyBeaconClient_execRequestReservationUpdate_Parms RequestReservationUpdate_Parms;
-	memcpy(&RequestReservationUpdate_Parms.RequestingPartyLeader, &RequestingPartyLeader, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnRequestReservationUpdate->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnRequestReservationUpdate, &RequestReservationUpdate_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnRequestReservationUpdate->FunctionFlags |= 0x400;
+	if (DesiredHost != nullptr)
+		*DesiredHost = params.DesiredHost;
+	if (PlayersToAdd != nullptr)
+		*PlayersToAdd = params.PlayersToAdd;
 
-	if (DesiredHost)
-		memcpy(DesiredHost, &RequestReservationUpdate_Parms.DesiredHost, 0x8);
+	return params.ReturnValue;
+}
 
-	if (PlayersToAdd)
-		memcpy(PlayersToAdd, &RequestReservationUpdate_Parms.PlayersToAdd, 0xC);
-
-	return RequestReservationUpdate_Parms.ReturnValue;
-};
 
 // Function IpDrv.PartyBeaconClient.RequestReservation
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FUniqueNetId            RequestingPartyLeader          ( CPF_Parm )
-// struct FOnlineGameSearchResult DesiredHost                    ( CPF_Const | CPF_Parm | CPF_OutParm )
-// TArray< struct FPlayerReservation > Players                        ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FOnlineGameSearchResult DesiredHost                    (Const, Parm, OutParm)
+// struct FUniqueNetId            RequestingPartyLeader          (Parm)
+// TArray<struct FPlayerReservation> Players                        (Const, Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UPartyBeaconClient::RequestReservation(struct FUniqueNetId RequestingPartyLeader, struct FOnlineGameSearchResult* DesiredHost, TArray< struct FPlayerReservation >* Players)
+bool UPartyBeaconClient::RequestReservation(const struct FUniqueNetId& RequestingPartyLeader, struct FOnlineGameSearchResult* DesiredHost, TArray<struct FPlayerReservation>* Players)
 {
-	static UFunction* pFnRequestReservation = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconClient.RequestReservation");
 
-	if (!pFnRequestReservation)
-		pFnRequestReservation = (UFunction*)UObject::GObjects()->Data[46132];
+	UPartyBeaconClient_RequestReservation_Params params;
+	params.RequestingPartyLeader = RequestingPartyLeader;
 
-	UPartyBeaconClient_execRequestReservation_Parms RequestReservation_Parms;
-	memcpy(&RequestReservation_Parms.RequestingPartyLeader, &RequestingPartyLeader, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnRequestReservation->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnRequestReservation, &RequestReservation_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnRequestReservation->FunctionFlags |= 0x400;
+	if (DesiredHost != nullptr)
+		*DesiredHost = params.DesiredHost;
+	if (Players != nullptr)
+		*Players = params.Players;
 
-	if (DesiredHost)
-		memcpy(DesiredHost, &RequestReservation_Parms.DesiredHost, 0x8);
+	return params.ReturnValue;
+}
 
-	if (Players)
-		memcpy(Players, &RequestReservation_Parms.Players, 0xC);
-
-	return RequestReservation_Parms.ReturnValue;
-};
 
 // Function IpDrv.PartyBeaconClient.OnHostHasCancelled
-// [0x00120000]
-// Parameters infos:
+// (Public, Delegate)
 
 void UPartyBeaconClient::OnHostHasCancelled()
 {
-	static UFunction* pFnOnHostHasCancelled = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconClient.OnHostHasCancelled");
 
-	if (!pFnOnHostHasCancelled)
-		pFnOnHostHasCancelled = (UFunction*)UObject::GObjects()->Data[46107];
+	UPartyBeaconClient_OnHostHasCancelled_Params params;
 
-	UPartyBeaconClient_execOnHostHasCancelled_Parms OnHostHasCancelled_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnHostHasCancelled, &OnHostHasCancelled_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.PartyBeaconClient.OnHostIsReady
-// [0x00120000]
-// Parameters infos:
+// (Public, Delegate)
 
 void UPartyBeaconClient::OnHostIsReady()
 {
-	static UFunction* pFnOnHostIsReady = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconClient.OnHostIsReady");
 
-	if (!pFnOnHostIsReady)
-		pFnOnHostIsReady = (UFunction*)UObject::GObjects()->Data[46109];
+	UPartyBeaconClient_OnHostIsReady_Params params;
 
-	UPartyBeaconClient_execOnHostIsReady_Parms OnHostIsReady_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnHostIsReady, &OnHostIsReady_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.PartyBeaconClient.OnTravelRequestReceived
-// [0x00120000]
-// Parameters infos:
-// struct FName                   SessionName                    ( CPF_Parm )
-// class UClass*                  SearchClass                    ( CPF_Parm )
-// unsigned char                  PlatformSpecificInfo           ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// class UClass*                  SearchClass                    (Parm)
+// unsigned char                  PlatformSpecificInfo           (Parm)
 
-void UPartyBeaconClient::OnTravelRequestReceived(struct FName SessionName, class UClass* SearchClass, unsigned char* PlatformSpecificInfo)
+void UPartyBeaconClient::OnTravelRequestReceived(const struct FName& SessionName, class UClass* SearchClass, unsigned char PlatformSpecificInfo)
 {
-	static UFunction* pFnOnTravelRequestReceived = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconClient.OnTravelRequestReceived");
 
-	if (!pFnOnTravelRequestReceived)
-		pFnOnTravelRequestReceived = (UFunction*)UObject::GObjects()->Data[46111];
+	UPartyBeaconClient_OnTravelRequestReceived_Params params;
+	params.SessionName = SessionName;
+	params.SearchClass = SearchClass;
+	params.PlatformSpecificInfo = PlatformSpecificInfo;
 
-	UPartyBeaconClient_execOnTravelRequestReceived_Parms OnTravelRequestReceived_Parms;
-	memcpy(&OnTravelRequestReceived_Parms.SessionName, &SessionName, 0x8);
-	OnTravelRequestReceived_Parms.SearchClass = SearchClass;
-	memcpy(&OnTravelRequestReceived_Parms.PlatformSpecificInfo, &PlatformSpecificInfo, 0x50);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnTravelRequestReceived, &OnTravelRequestReceived_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.PartyBeaconClient.OnReservationCountUpdated
-// [0x00120000]
-// Parameters infos:
-// int                            ReservationRemaining           ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// int                            ReservationRemaining           (Parm)
 
 void UPartyBeaconClient::OnReservationCountUpdated(int ReservationRemaining)
 {
-	static UFunction* pFnOnReservationCountUpdated = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconClient.OnReservationCountUpdated");
 
-	if (!pFnOnReservationCountUpdated)
-		pFnOnReservationCountUpdated = (UFunction*)UObject::GObjects()->Data[46113];
+	UPartyBeaconClient_OnReservationCountUpdated_Params params;
+	params.ReservationRemaining = ReservationRemaining;
 
-	UPartyBeaconClient_execOnReservationCountUpdated_Parms OnReservationCountUpdated_Parms;
-	OnReservationCountUpdated_Parms.ReservationRemaining = ReservationRemaining;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReservationCountUpdated, &OnReservationCountUpdated_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.PartyBeaconClient.OnReservationRequestComplete
-// [0x00120000]
-// Parameters infos:
-// unsigned char                  ReservationResult              ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// unsigned char                  ReservationResult              (Parm)
 
 void UPartyBeaconClient::OnReservationRequestComplete(unsigned char ReservationResult)
 {
-	static UFunction* pFnOnReservationRequestComplete = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconClient.OnReservationRequestComplete");
 
-	if (!pFnOnReservationRequestComplete)
-		pFnOnReservationRequestComplete = (UFunction*)UObject::GObjects()->Data[46115];
+	UPartyBeaconClient_OnReservationRequestComplete_Params params;
+	params.ReservationResult = ReservationResult;
 
-	UPartyBeaconClient_execOnReservationRequestComplete_Parms OnReservationRequestComplete_Parms;
-	OnReservationRequestComplete_Parms.ReservationResult = ReservationResult;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReservationRequestComplete, &OnReservationRequestComplete_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.PartyBeaconHost.GetMaxAvailableTeamSize
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// int                            ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Native, Public)
+// Parameters:
+// int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
 int UPartyBeaconHost::GetMaxAvailableTeamSize()
 {
-	static UFunction* pFnGetMaxAvailableTeamSize = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconHost.GetMaxAvailableTeamSize");
 
-	if (!pFnGetMaxAvailableTeamSize)
-		pFnGetMaxAvailableTeamSize = (UFunction*)UObject::GObjects()->Data[46228];
+	UPartyBeaconHost_GetMaxAvailableTeamSize_Params params;
 
-	UPartyBeaconHost_execGetMaxAvailableTeamSize_Parms GetMaxAvailableTeamSize_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetMaxAvailableTeamSize->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetMaxAvailableTeamSize, &GetMaxAvailableTeamSize_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetMaxAvailableTeamSize->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetMaxAvailableTeamSize_Parms.ReturnValue;
-};
 
 // Function IpDrv.PartyBeaconHost.GetPartyLeaders
-// [0x00420002]
-// Parameters infos:
-// TArray< struct FUniqueNetId >  PartyLeaders                   ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Defined, Public, HasOutParms)
+// Parameters:
+// TArray<struct FUniqueNetId>    PartyLeaders                   (Parm, OutParm, NeedCtorLink)
 
-void UPartyBeaconHost::GetPartyLeaders(TArray< struct FUniqueNetId >* PartyLeaders)
+void UPartyBeaconHost::GetPartyLeaders(TArray<struct FUniqueNetId>* PartyLeaders)
 {
-	static UFunction* pFnGetPartyLeaders = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconHost.GetPartyLeaders");
 
-	if (!pFnGetPartyLeaders)
-		pFnGetPartyLeaders = (UFunction*)UObject::GObjects()->Data[46225];
+	UPartyBeaconHost_GetPartyLeaders_Params params;
 
-	UPartyBeaconHost_execGetPartyLeaders_Parms GetPartyLeaders_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetPartyLeaders, &GetPartyLeaders_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (PartyLeaders)
-		memcpy(PartyLeaders, &GetPartyLeaders_Parms.PartyLeaders, 0xC);
-};
+	fn->FunctionFlags = flags;
+
+	if (PartyLeaders != nullptr)
+		*PartyLeaders = params.PartyLeaders;
+}
+
 
 // Function IpDrv.PartyBeaconHost.GetPlayers
-// [0x00C20002]
-// Parameters infos:
-// TArray< struct FUniqueNetId >  Players                        ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Defined, Public, HasOutParms, HasDefaults)
+// Parameters:
+// TArray<struct FUniqueNetId>    Players                        (Parm, OutParm, NeedCtorLink)
 
-void UPartyBeaconHost::GetPlayers(TArray< struct FUniqueNetId >* Players)
+void UPartyBeaconHost::GetPlayers(TArray<struct FUniqueNetId>* Players)
 {
-	static UFunction* pFnGetPlayers = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconHost.GetPlayers");
 
-	if (!pFnGetPlayers)
-		pFnGetPlayers = (UFunction*)UObject::GObjects()->Data[46221];
+	UPartyBeaconHost_GetPlayers_Params params;
 
-	UPartyBeaconHost_execGetPlayers_Parms GetPlayers_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetPlayers, &GetPlayers_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (Players)
-		memcpy(Players, &GetPlayers_Parms.Players, 0xC);
-};
+	fn->FunctionFlags = flags;
+
+	if (Players != nullptr)
+		*Players = params.Players;
+}
+
 
 // Function IpDrv.PartyBeaconHost.AppendReservationSkillsToSearch
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// class UOnlineGameSearch*       Search                         ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// class UOnlineGameSearch*       Search                         (Parm)
 
 void UPartyBeaconHost::AppendReservationSkillsToSearch(class UOnlineGameSearch* Search)
 {
-	static UFunction* pFnAppendReservationSkillsToSearch = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconHost.AppendReservationSkillsToSearch");
 
-	if (!pFnAppendReservationSkillsToSearch)
-		pFnAppendReservationSkillsToSearch = (UFunction*)UObject::GObjects()->Data[46219];
+	UPartyBeaconHost_AppendReservationSkillsToSearch_Params params;
+	params.Search = Search;
 
-	UPartyBeaconHost_execAppendReservationSkillsToSearch_Parms AppendReservationSkillsToSearch_Parms;
-	AppendReservationSkillsToSearch_Parms.Search = Search;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnAppendReservationSkillsToSearch->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnAppendReservationSkillsToSearch, &AppendReservationSkillsToSearch_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnAppendReservationSkillsToSearch->FunctionFlags |= 0x400;
-};
 
 // Function IpDrv.PartyBeaconHost.UnregisterParty
-// [0x00820802] ( FUNC_Event )
-// Parameters infos:
-// struct FUniqueNetId            PartyLeader                    ( CPF_Parm )
+// (Defined, Event, Public, HasDefaults)
+// Parameters:
+// struct FUniqueNetId            PartyLeader                    (Parm)
 
-void UPartyBeaconHost::eventUnregisterParty(struct FUniqueNetId PartyLeader)
+void UPartyBeaconHost::UnregisterParty(const struct FUniqueNetId& PartyLeader)
 {
-	static UFunction* pFnUnregisterParty = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconHost.UnregisterParty");
 
-	if (!pFnUnregisterParty)
-		pFnUnregisterParty = (UFunction*)UObject::GObjects()->Data[46216];
+	UPartyBeaconHost_UnregisterParty_Params params;
+	params.PartyLeader = PartyLeader;
 
-	UPartyBeaconHost_eventUnregisterParty_Parms UnregisterParty_Parms;
-	memcpy(&UnregisterParty_Parms.PartyLeader, &PartyLeader, 0x18);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnUnregisterParty, &UnregisterParty_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.PartyBeaconHost.UnregisterPartyMembers
-// [0x00820802] ( FUNC_Event )
-// Parameters infos:
+// (Defined, Event, Public, HasDefaults)
 
-void UPartyBeaconHost::eventUnregisterPartyMembers()
+void UPartyBeaconHost::UnregisterPartyMembers()
 {
-	static UFunction* pFnUnregisterPartyMembers = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconHost.UnregisterPartyMembers");
 
-	if (!pFnUnregisterPartyMembers)
-		pFnUnregisterPartyMembers = (UFunction*)UObject::GObjects()->Data[46214];
+	UPartyBeaconHost_UnregisterPartyMembers_Params params;
 
-	UPartyBeaconHost_eventUnregisterPartyMembers_Parms UnregisterPartyMembers_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnUnregisterPartyMembers, &UnregisterPartyMembers_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.PartyBeaconHost.RegisterPartyMembers
-// [0x00820802] ( FUNC_Event )
-// Parameters infos:
+// (Defined, Event, Public, HasDefaults)
 
-void UPartyBeaconHost::eventRegisterPartyMembers()
+void UPartyBeaconHost::RegisterPartyMembers()
 {
-	static UFunction* pFnRegisterPartyMembers = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconHost.RegisterPartyMembers");
 
-	if (!pFnRegisterPartyMembers)
-		pFnRegisterPartyMembers = (UFunction*)UObject::GObjects()->Data[46210];
+	UPartyBeaconHost_RegisterPartyMembers_Params params;
 
-	UPartyBeaconHost_eventRegisterPartyMembers_Parms RegisterPartyMembers_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnRegisterPartyMembers, &RegisterPartyMembers_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.PartyBeaconHost.AreReservationsFull
-// [0x00020002]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Defined, Public)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UPartyBeaconHost::AreReservationsFull()
 {
-	static UFunction* pFnAreReservationsFull = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconHost.AreReservationsFull");
 
-	if (!pFnAreReservationsFull)
-		pFnAreReservationsFull = (UFunction*)UObject::GObjects()->Data[46208];
+	UPartyBeaconHost_AreReservationsFull_Params params;
 
-	UPartyBeaconHost_execAreReservationsFull_Parms AreReservationsFull_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAreReservationsFull, &AreReservationsFull_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return AreReservationsFull_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.PartyBeaconHost.TellClientsHostHasCancelled
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
+// (Native, Public)
 
 void UPartyBeaconHost::TellClientsHostHasCancelled()
 {
-	static UFunction* pFnTellClientsHostHasCancelled = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconHost.TellClientsHostHasCancelled");
 
-	if (!pFnTellClientsHostHasCancelled)
-		pFnTellClientsHostHasCancelled = (UFunction*)UObject::GObjects()->Data[46207];
+	UPartyBeaconHost_TellClientsHostHasCancelled_Params params;
 
-	UPartyBeaconHost_execTellClientsHostHasCancelled_Parms TellClientsHostHasCancelled_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnTellClientsHostHasCancelled->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnTellClientsHostHasCancelled, &TellClientsHostHasCancelled_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnTellClientsHostHasCancelled->FunctionFlags |= 0x400;
-};
 
 // Function IpDrv.PartyBeaconHost.TellClientsHostIsReady
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
+// (Native, Public)
 
 void UPartyBeaconHost::TellClientsHostIsReady()
 {
-	static UFunction* pFnTellClientsHostIsReady = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconHost.TellClientsHostIsReady");
 
-	if (!pFnTellClientsHostIsReady)
-		pFnTellClientsHostIsReady = (UFunction*)UObject::GObjects()->Data[46206];
+	UPartyBeaconHost_TellClientsHostIsReady_Params params;
 
-	UPartyBeaconHost_execTellClientsHostIsReady_Parms TellClientsHostIsReady_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnTellClientsHostIsReady->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnTellClientsHostIsReady, &TellClientsHostIsReady_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnTellClientsHostIsReady->FunctionFlags |= 0x400;
-};
 
 // Function IpDrv.PartyBeaconHost.TellClientsToTravel
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// struct FName                   SessionName                    ( CPF_Parm )
-// class UClass*                  SearchClass                    ( CPF_Parm )
-// unsigned char                  PlatformSpecificInfo           ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FName                   SessionName                    (Parm)
+// class UClass*                  SearchClass                    (Parm)
+// unsigned char                  PlatformSpecificInfo           (Parm)
 
-void UPartyBeaconHost::TellClientsToTravel(struct FName SessionName, class UClass* SearchClass, unsigned char* PlatformSpecificInfo)
+void UPartyBeaconHost::TellClientsToTravel(const struct FName& SessionName, class UClass* SearchClass, unsigned char PlatformSpecificInfo)
 {
-	static UFunction* pFnTellClientsToTravel = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconHost.TellClientsToTravel");
 
-	if (!pFnTellClientsToTravel)
-		pFnTellClientsToTravel = (UFunction*)UObject::GObjects()->Data[46202];
+	UPartyBeaconHost_TellClientsToTravel_Params params;
+	params.SessionName = SessionName;
+	params.SearchClass = SearchClass;
+	params.PlatformSpecificInfo = PlatformSpecificInfo;
 
-	UPartyBeaconHost_execTellClientsToTravel_Parms TellClientsToTravel_Parms;
-	memcpy(&TellClientsToTravel_Parms.SessionName, &SessionName, 0x8);
-	TellClientsToTravel_Parms.SearchClass = SearchClass;
-	memcpy(&TellClientsToTravel_Parms.PlatformSpecificInfo, &PlatformSpecificInfo, 0x50);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnTellClientsToTravel->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnTellClientsToTravel, &TellClientsToTravel_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnTellClientsToTravel->FunctionFlags |= 0x400;
-};
 
 // Function IpDrv.PartyBeaconHost.DestroyBeacon
-// [0x00020C00] ( FUNC_Event | FUNC_Native )
-// Parameters infos:
+// (Native, Event, Public)
 
-void UPartyBeaconHost::eventDestroyBeacon()
+void UPartyBeaconHost::DestroyBeacon()
 {
-	static UFunction* pFnDestroyBeacon = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconHost.DestroyBeacon");
 
-	if (!pFnDestroyBeacon)
-		pFnDestroyBeacon = (UFunction*)UObject::GObjects()->Data[46201];
+	UPartyBeaconHost_DestroyBeacon_Params params;
 
-	UPartyBeaconHost_eventDestroyBeacon_Parms DestroyBeacon_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnDestroyBeacon->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnDestroyBeacon, &DestroyBeacon_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnDestroyBeacon->FunctionFlags |= 0x400;
-};
 
 // Function IpDrv.PartyBeaconHost.OnClientCancellationReceived
-// [0x00120000]
-// Parameters infos:
-// struct FUniqueNetId            PartyLeader                    ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// struct FUniqueNetId            PartyLeader                    (Parm)
 
-void UPartyBeaconHost::OnClientCancellationReceived(struct FUniqueNetId PartyLeader)
+void UPartyBeaconHost::OnClientCancellationReceived(const struct FUniqueNetId& PartyLeader)
 {
-	static UFunction* pFnOnClientCancellationReceived = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconHost.OnClientCancellationReceived");
 
-	if (!pFnOnClientCancellationReceived)
-		pFnOnClientCancellationReceived = (UFunction*)UObject::GObjects()->Data[46157];
+	UPartyBeaconHost_OnClientCancellationReceived_Params params;
+	params.PartyLeader = PartyLeader;
 
-	UPartyBeaconHost_execOnClientCancellationReceived_Parms OnClientCancellationReceived_Parms;
-	memcpy(&OnClientCancellationReceived_Parms.PartyLeader, &PartyLeader, 0x18);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnClientCancellationReceived, &OnClientCancellationReceived_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.PartyBeaconHost.OnReservationsFull
-// [0x00120000]
-// Parameters infos:
+// (Public, Delegate)
 
 void UPartyBeaconHost::OnReservationsFull()
 {
-	static UFunction* pFnOnReservationsFull = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconHost.OnReservationsFull");
 
-	if (!pFnOnReservationsFull)
-		pFnOnReservationsFull = (UFunction*)UObject::GObjects()->Data[46159];
+	UPartyBeaconHost_OnReservationsFull_Params params;
 
-	UPartyBeaconHost_execOnReservationsFull_Parms OnReservationsFull_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReservationsFull, &OnReservationsFull_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.PartyBeaconHost.OnReservationChange
-// [0x00120000]
-// Parameters infos:
+// (Public, Delegate)
 
 void UPartyBeaconHost::OnReservationChange()
 {
-	static UFunction* pFnOnReservationChange = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconHost.OnReservationChange");
 
-	if (!pFnOnReservationChange)
-		pFnOnReservationChange = (UFunction*)UObject::GObjects()->Data[46161];
+	UPartyBeaconHost_OnReservationChange_Params params;
 
-	UPartyBeaconHost_execOnReservationChange_Parms OnReservationChange_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnReservationChange, &OnReservationChange_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.PartyBeaconHost.HandlePlayerLogout
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// struct FUniqueNetId            PlayerID                       ( CPF_Parm )
-// unsigned long                  bMaintainParty                 ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FUniqueNetId            PlayerID                       (Parm)
+// bool                           bMaintainParty                 (Parm)
 
-void UPartyBeaconHost::HandlePlayerLogout(struct FUniqueNetId PlayerID, unsigned long bMaintainParty)
+void UPartyBeaconHost::HandlePlayerLogout(const struct FUniqueNetId& PlayerID, bool bMaintainParty)
 {
-	static UFunction* pFnHandlePlayerLogout = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconHost.HandlePlayerLogout");
 
-	if (!pFnHandlePlayerLogout)
-		pFnHandlePlayerLogout = (UFunction*)UObject::GObjects()->Data[46197];
+	UPartyBeaconHost_HandlePlayerLogout_Params params;
+	params.PlayerID = PlayerID;
+	params.bMaintainParty = bMaintainParty;
 
-	UPartyBeaconHost_execHandlePlayerLogout_Parms HandlePlayerLogout_Parms;
-	memcpy(&HandlePlayerLogout_Parms.PlayerID, &PlayerID, 0x18);
-	HandlePlayerLogout_Parms.bMaintainParty = bMaintainParty;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnHandlePlayerLogout->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnHandlePlayerLogout, &HandlePlayerLogout_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnHandlePlayerLogout->FunctionFlags |= 0x400;
-};
 
 // Function IpDrv.PartyBeaconHost.GetExistingReservation
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// int                            ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FUniqueNetId            PartyLeader                    ( CPF_Const | CPF_Parm | CPF_OutParm )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FUniqueNetId            PartyLeader                    (Const, Parm, OutParm)
+// int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
 int UPartyBeaconHost::GetExistingReservation(struct FUniqueNetId* PartyLeader)
 {
-	static UFunction* pFnGetExistingReservation = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconHost.GetExistingReservation");
 
-	if (!pFnGetExistingReservation)
-		pFnGetExistingReservation = (UFunction*)UObject::GObjects()->Data[46194];
+	UPartyBeaconHost_GetExistingReservation_Params params;
 
-	UPartyBeaconHost_execGetExistingReservation_Parms GetExistingReservation_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetExistingReservation->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetExistingReservation, &GetExistingReservation_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetExistingReservation->FunctionFlags |= 0x400;
+	if (PartyLeader != nullptr)
+		*PartyLeader = params.PartyLeader;
 
-	if (PartyLeader)
-		memcpy(PartyLeader, &GetExistingReservation_Parms.PartyLeader, 0x18);
+	return params.ReturnValue;
+}
 
-	return GetExistingReservation_Parms.ReturnValue;
-};
 
 // Function IpDrv.PartyBeaconHost.UpdatePartyReservationEntry
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// unsigned char                  ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FUniqueNetId            PartyLeader                    ( CPF_Parm )
-// TArray< struct FPlayerReservation > PlayerMembers                  ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FUniqueNetId            PartyLeader                    (Parm)
+// TArray<struct FPlayerReservation> PlayerMembers                  (Const, Parm, OutParm, NeedCtorLink)
+// unsigned char                  ReturnValue                    (Parm, OutParm, ReturnParm)
 
-unsigned char UPartyBeaconHost::UpdatePartyReservationEntry(struct FUniqueNetId PartyLeader, TArray< struct FPlayerReservation >* PlayerMembers)
+unsigned char UPartyBeaconHost::UpdatePartyReservationEntry(const struct FUniqueNetId& PartyLeader, TArray<struct FPlayerReservation>* PlayerMembers)
 {
-	static UFunction* pFnUpdatePartyReservationEntry = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconHost.UpdatePartyReservationEntry");
 
-	if (!pFnUpdatePartyReservationEntry)
-		pFnUpdatePartyReservationEntry = (UFunction*)UObject::GObjects()->Data[46189];
+	UPartyBeaconHost_UpdatePartyReservationEntry_Params params;
+	params.PartyLeader = PartyLeader;
 
-	UPartyBeaconHost_execUpdatePartyReservationEntry_Parms UpdatePartyReservationEntry_Parms;
-	memcpy(&UpdatePartyReservationEntry_Parms.PartyLeader, &PartyLeader, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnUpdatePartyReservationEntry->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnUpdatePartyReservationEntry, &UpdatePartyReservationEntry_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnUpdatePartyReservationEntry->FunctionFlags |= 0x400;
+	if (PlayerMembers != nullptr)
+		*PlayerMembers = params.PlayerMembers;
 
-	if (PlayerMembers)
-		memcpy(PlayerMembers, &UpdatePartyReservationEntry_Parms.PlayerMembers, 0xC);
+	return params.ReturnValue;
+}
 
-	return UpdatePartyReservationEntry_Parms.ReturnValue;
-};
 
 // Function IpDrv.PartyBeaconHost.AddPartyReservationEntry
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// unsigned char                  ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FUniqueNetId            PartyLeader                    ( CPF_Parm )
-// int                            TeamNum                        ( CPF_Parm )
-// unsigned long                  bIsHost                        ( CPF_Parm )
-// TArray< struct FPlayerReservation > PlayerMembers                  ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutParms)
+// Parameters:
+// struct FUniqueNetId            PartyLeader                    (Parm)
+// TArray<struct FPlayerReservation> PlayerMembers                  (Const, Parm, OutParm, NeedCtorLink)
+// int                            TeamNum                        (Parm)
+// bool                           bIsHost                        (Parm)
+// unsigned char                  ReturnValue                    (Parm, OutParm, ReturnParm)
 
-unsigned char UPartyBeaconHost::AddPartyReservationEntry(struct FUniqueNetId PartyLeader, int TeamNum, unsigned long bIsHost, TArray< struct FPlayerReservation >* PlayerMembers)
+unsigned char UPartyBeaconHost::AddPartyReservationEntry(const struct FUniqueNetId& PartyLeader, int TeamNum, bool bIsHost, TArray<struct FPlayerReservation>* PlayerMembers)
 {
-	static UFunction* pFnAddPartyReservationEntry = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconHost.AddPartyReservationEntry");
 
-	if (!pFnAddPartyReservationEntry)
-		pFnAddPartyReservationEntry = (UFunction*)UObject::GObjects()->Data[46182];
+	UPartyBeaconHost_AddPartyReservationEntry_Params params;
+	params.PartyLeader = PartyLeader;
+	params.TeamNum = TeamNum;
+	params.bIsHost = bIsHost;
 
-	UPartyBeaconHost_execAddPartyReservationEntry_Parms AddPartyReservationEntry_Parms;
-	memcpy(&AddPartyReservationEntry_Parms.PartyLeader, &PartyLeader, 0x18);
-	AddPartyReservationEntry_Parms.TeamNum = TeamNum;
-	AddPartyReservationEntry_Parms.bIsHost = bIsHost;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnAddPartyReservationEntry->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnAddPartyReservationEntry, &AddPartyReservationEntry_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnAddPartyReservationEntry->FunctionFlags |= 0x400;
+	if (PlayerMembers != nullptr)
+		*PlayerMembers = params.PlayerMembers;
 
-	if (PlayerMembers)
-		memcpy(PlayerMembers, &AddPartyReservationEntry_Parms.PlayerMembers, 0xC);
+	return params.ReturnValue;
+}
 
-	return AddPartyReservationEntry_Parms.ReturnValue;
-};
 
 // Function IpDrv.PartyBeaconHost.InitHostBeacon
-// [0x00024400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            InNumTeams                     ( CPF_Parm )
-// int                            InNumPlayersPerTeam            ( CPF_Parm )
-// int                            InNumReservations              ( CPF_Parm )
-// struct FName                   InSessionName                  ( CPF_Parm )
-// int                            InForceTeamNum                 ( CPF_OptionalParm | CPF_Parm )
+// (Native, HasOptionalParms, Public)
+// Parameters:
+// int                            InNumTeams                     (Parm)
+// int                            InNumPlayersPerTeam            (Parm)
+// int                            InNumReservations              (Parm)
+// struct FName                   InSessionName                  (Parm)
+// int                            InForceTeamNum                 (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UPartyBeaconHost::InitHostBeacon(int InNumTeams, int InNumPlayersPerTeam, int InNumReservations, struct FName InSessionName, int InForceTeamNum)
+bool UPartyBeaconHost::InitHostBeacon(int InNumTeams, int InNumPlayersPerTeam, int InNumReservations, const struct FName& InSessionName, int InForceTeamNum)
 {
-	static UFunction* pFnInitHostBeacon = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconHost.InitHostBeacon");
 
-	if (!pFnInitHostBeacon)
-		pFnInitHostBeacon = (UFunction*)UObject::GObjects()->Data[46175];
+	UPartyBeaconHost_InitHostBeacon_Params params;
+	params.InNumTeams = InNumTeams;
+	params.InNumPlayersPerTeam = InNumPlayersPerTeam;
+	params.InNumReservations = InNumReservations;
+	params.InSessionName = InSessionName;
+	params.InForceTeamNum = InForceTeamNum;
 
-	UPartyBeaconHost_execInitHostBeacon_Parms InitHostBeacon_Parms;
-	InitHostBeacon_Parms.InNumTeams = InNumTeams;
-	InitHostBeacon_Parms.InNumPlayersPerTeam = InNumPlayersPerTeam;
-	InitHostBeacon_Parms.InNumReservations = InNumReservations;
-	memcpy(&InitHostBeacon_Parms.InSessionName, &InSessionName, 0x8);
-	InitHostBeacon_Parms.InForceTeamNum = InForceTeamNum;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnInitHostBeacon->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnInitHostBeacon, &InitHostBeacon_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnInitHostBeacon->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return InitHostBeacon_Parms.ReturnValue;
-};
 
 // Function IpDrv.PartyBeaconHost.PauseReservationRequests
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// unsigned long                  bPause                         ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// bool                           bPause                         (Parm)
 
-void UPartyBeaconHost::PauseReservationRequests(unsigned long bPause)
+void UPartyBeaconHost::PauseReservationRequests(bool bPause)
 {
-	static UFunction* pFnPauseReservationRequests = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.PartyBeaconHost.PauseReservationRequests");
 
-	if (!pFnPauseReservationRequests)
-		pFnPauseReservationRequests = (UFunction*)UObject::GObjects()->Data[46173];
+	UPartyBeaconHost_PauseReservationRequests_Params params;
+	params.bPause = bPause;
 
-	UPartyBeaconHost_execPauseReservationRequests_Parms PauseReservationRequests_Parms;
-	PauseReservationRequests_Parms.bPause = bPause;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnPauseReservationRequests->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnPauseReservationRequests, &PauseReservationRequests_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnPauseReservationRequests->FunctionFlags |= 0x400;
-};
 
 // Function IpDrv.WebRequest.GetHexDigit
-// [0x00020002]
-// Parameters infos:
-// int                            ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 D                              ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FString                 D                              (Parm, NeedCtorLink)
+// int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
-int UWebRequest::GetHexDigit(struct FString D)
+int UWebRequest::GetHexDigit(const struct FString& D)
 {
-	static UFunction* pFnGetHexDigit = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebRequest.GetHexDigit");
 
-	if (!pFnGetHexDigit)
-		pFnGetHexDigit = (UFunction*)UObject::GObjects()->Data[46409];
+	UWebRequest_GetHexDigit_Params params;
+	params.D = D;
 
-	UWebRequest_execGetHexDigit_Parms GetHexDigit_Parms;
-	memcpy(&GetHexDigit_Parms.D, &D, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetHexDigit, &GetHexDigit_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return GetHexDigit_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.WebRequest.DecodeFormData
-// [0x00020002]
-// Parameters infos:
-// struct FString                 Data                           ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FString                 Data                           (Parm, NeedCtorLink)
 
-void UWebRequest::DecodeFormData(struct FString Data)
+void UWebRequest::DecodeFormData(const struct FString& Data)
 {
-	static UFunction* pFnDecodeFormData = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebRequest.DecodeFormData");
 
-	if (!pFnDecodeFormData)
-		pFnDecodeFormData = (UFunction*)UObject::GObjects()->Data[46405];
+	UWebRequest_DecodeFormData_Params params;
+	params.Data = Data;
 
-	UWebRequest_execDecodeFormData_Parms DecodeFormData_Parms;
-	memcpy(&DecodeFormData_Parms.Data, &Data, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnDecodeFormData, &DecodeFormData_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebRequest.ProcessHeaderString
-// [0x00020002]
-// Parameters infos:
-// struct FString                 S                              ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FString                 S                              (Parm, NeedCtorLink)
 
-void UWebRequest::ProcessHeaderString(struct FString S)
+void UWebRequest::ProcessHeaderString(const struct FString& S)
 {
-	static UFunction* pFnProcessHeaderString = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebRequest.ProcessHeaderString");
 
-	if (!pFnProcessHeaderString)
-		pFnProcessHeaderString = (UFunction*)UObject::GObjects()->Data[46403];
+	UWebRequest_ProcessHeaderString_Params params;
+	params.S = S;
 
-	UWebRequest_execProcessHeaderString_Parms ProcessHeaderString_Parms;
-	memcpy(&ProcessHeaderString_Parms.S, &S, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnProcessHeaderString, &ProcessHeaderString_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebRequest.Dump
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
+// (Final, Native, Public)
 
 void UWebRequest::Dump()
 {
-	static UFunction* pFnDump = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebRequest.Dump");
 
-	if (!pFnDump)
-		pFnDump = (UFunction*)UObject::GObjects()->Data[46402];
+	UWebRequest_Dump_Params params;
 
-	UWebRequest_execDump_Parms Dump_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnDump->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnDump, &Dump_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnDump->FunctionFlags |= 0x400;
-};
 
 // Function IpDrv.WebRequest.GetVariables
-// [0x00420401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// TArray< struct FString >       varNames                       ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Final, Native, Public, HasOutParms)
+// Parameters:
+// TArray<struct FString>         varNames                       (Parm, OutParm, NeedCtorLink)
 
-void UWebRequest::GetVariables(TArray< struct FString >* varNames)
+void UWebRequest::GetVariables(TArray<struct FString>* varNames)
 {
-	static UFunction* pFnGetVariables = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebRequest.GetVariables");
 
-	if (!pFnGetVariables)
-		pFnGetVariables = (UFunction*)UObject::GObjects()->Data[46399];
+	UWebRequest_GetVariables_Params params;
 
-	UWebRequest_execGetVariables_Parms GetVariables_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetVariables->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetVariables, &GetVariables_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetVariables->FunctionFlags |= 0x400;
+	if (varNames != nullptr)
+		*varNames = params.varNames;
+}
 
-	if (varNames)
-		memcpy(varNames, &GetVariables_Parms.varNames, 0xC);
-};
 
 // Function IpDrv.WebRequest.GetVariableNumber
-// [0x00024401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// struct FString                 VariableName                   ( CPF_Parm | CPF_NeedCtorLink )
-// int                            Number                         ( CPF_Parm )
-// struct FString                 DefaultValue                   ( CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, HasOptionalParms, Public)
+// Parameters:
+// struct FString                 VariableName                   (Parm, NeedCtorLink)
+// int                            Number                         (Parm)
+// struct FString                 DefaultValue                   (OptionalParm, Parm, NeedCtorLink)
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
-struct FString UWebRequest::GetVariableNumber(struct FString VariableName, int Number, struct FString DefaultValue)
+struct FString UWebRequest::GetVariableNumber(const struct FString& VariableName, int Number, const struct FString& DefaultValue)
 {
-	static UFunction* pFnGetVariableNumber = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebRequest.GetVariableNumber");
 
-	if (!pFnGetVariableNumber)
-		pFnGetVariableNumber = (UFunction*)UObject::GObjects()->Data[45199];
+	UWebRequest_GetVariableNumber_Params params;
+	params.VariableName = VariableName;
+	params.Number = Number;
+	params.DefaultValue = DefaultValue;
 
-	UWebRequest_execGetVariableNumber_Parms GetVariableNumber_Parms;
-	memcpy(&GetVariableNumber_Parms.VariableName, &VariableName, 0xC);
-	GetVariableNumber_Parms.Number = Number;
-	memcpy(&GetVariableNumber_Parms.DefaultValue, &DefaultValue, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetVariableNumber->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetVariableNumber, &GetVariableNumber_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetVariableNumber->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetVariableNumber_Parms.ReturnValue;
-};
 
 // Function IpDrv.WebRequest.GetVariableCount
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// int                            ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 VariableName                   ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 VariableName                   (Parm, NeedCtorLink)
+// int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
-int UWebRequest::GetVariableCount(struct FString VariableName)
+int UWebRequest::GetVariableCount(const struct FString& VariableName)
 {
-	static UFunction* pFnGetVariableCount = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebRequest.GetVariableCount");
 
-	if (!pFnGetVariableCount)
-		pFnGetVariableCount = (UFunction*)UObject::GObjects()->Data[45197];
+	UWebRequest_GetVariableCount_Params params;
+	params.VariableName = VariableName;
 
-	UWebRequest_execGetVariableCount_Parms GetVariableCount_Parms;
-	memcpy(&GetVariableCount_Parms.VariableName, &VariableName, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetVariableCount->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetVariableCount, &GetVariableCount_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetVariableCount->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetVariableCount_Parms.ReturnValue;
-};
 
 // Function IpDrv.WebRequest.GetVariable
-// [0x00024401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// struct FString                 VariableName                   ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 DefaultValue                   ( CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, HasOptionalParms, Public)
+// Parameters:
+// struct FString                 VariableName                   (Parm, NeedCtorLink)
+// struct FString                 DefaultValue                   (OptionalParm, Parm, NeedCtorLink)
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
-struct FString UWebRequest::GetVariable(struct FString VariableName, struct FString DefaultValue)
+struct FString UWebRequest::GetVariable(const struct FString& VariableName, const struct FString& DefaultValue)
 {
-	static UFunction* pFnGetVariable = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebRequest.GetVariable");
 
-	if (!pFnGetVariable)
-		pFnGetVariable = (UFunction*)UObject::GObjects()->Data[45195];
+	UWebRequest_GetVariable_Params params;
+	params.VariableName = VariableName;
+	params.DefaultValue = DefaultValue;
 
-	UWebRequest_execGetVariable_Parms GetVariable_Parms;
-	memcpy(&GetVariable_Parms.VariableName, &VariableName, 0xC);
-	memcpy(&GetVariable_Parms.DefaultValue, &DefaultValue, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetVariable->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetVariable, &GetVariable_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetVariable->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetVariable_Parms.ReturnValue;
-};
 
 // Function IpDrv.WebRequest.AddVariable
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 VariableName                   ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 Value                          ( CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 VariableName                   (Parm, NeedCtorLink)
+// struct FString                 Value                          (Parm, CoerceParm, NeedCtorLink)
 
-void UWebRequest::AddVariable(struct FString VariableName, struct FString Value)
+void UWebRequest::AddVariable(const struct FString& VariableName, const struct FString& Value)
 {
-	static UFunction* pFnAddVariable = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebRequest.AddVariable");
 
-	if (!pFnAddVariable)
-		pFnAddVariable = (UFunction*)UObject::GObjects()->Data[46390];
+	UWebRequest_AddVariable_Params params;
+	params.VariableName = VariableName;
+	params.Value = Value;
 
-	UWebRequest_execAddVariable_Parms AddVariable_Parms;
-	memcpy(&AddVariable_Parms.VariableName, &VariableName, 0xC);
-	memcpy(&AddVariable_Parms.Value, &Value, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnAddVariable->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnAddVariable, &AddVariable_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnAddVariable->FunctionFlags |= 0x400;
-};
 
 // Function IpDrv.WebRequest.GetHeaders
-// [0x00420401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// TArray< struct FString >       headers                        ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Final, Native, Public, HasOutParms)
+// Parameters:
+// TArray<struct FString>         headers                        (Parm, OutParm, NeedCtorLink)
 
-void UWebRequest::GetHeaders(TArray< struct FString >* headers)
+void UWebRequest::GetHeaders(TArray<struct FString>* headers)
 {
-	static UFunction* pFnGetHeaders = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebRequest.GetHeaders");
 
-	if (!pFnGetHeaders)
-		pFnGetHeaders = (UFunction*)UObject::GObjects()->Data[46387];
+	UWebRequest_GetHeaders_Params params;
 
-	UWebRequest_execGetHeaders_Parms GetHeaders_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetHeaders->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetHeaders, &GetHeaders_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetHeaders->FunctionFlags |= 0x400;
+	if (headers != nullptr)
+		*headers = params.headers;
+}
 
-	if (headers)
-		memcpy(headers, &GetHeaders_Parms.headers, 0xC);
-};
 
 // Function IpDrv.WebRequest.GetHeader
-// [0x00024401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// struct FString                 HeaderName                     ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 DefaultValue                   ( CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, HasOptionalParms, Public)
+// Parameters:
+// struct FString                 HeaderName                     (Parm, NeedCtorLink)
+// struct FString                 DefaultValue                   (OptionalParm, Parm, NeedCtorLink)
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
-struct FString UWebRequest::GetHeader(struct FString HeaderName, struct FString DefaultValue)
+struct FString UWebRequest::GetHeader(const struct FString& HeaderName, const struct FString& DefaultValue)
 {
-	static UFunction* pFnGetHeader = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebRequest.GetHeader");
 
-	if (!pFnGetHeader)
-		pFnGetHeader = (UFunction*)UObject::GObjects()->Data[46383];
+	UWebRequest_GetHeader_Params params;
+	params.HeaderName = HeaderName;
+	params.DefaultValue = DefaultValue;
 
-	UWebRequest_execGetHeader_Parms GetHeader_Parms;
-	memcpy(&GetHeader_Parms.HeaderName, &HeaderName, 0xC);
-	memcpy(&GetHeader_Parms.DefaultValue, &DefaultValue, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetHeader->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetHeader, &GetHeader_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetHeader->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetHeader_Parms.ReturnValue;
-};
 
 // Function IpDrv.WebRequest.AddHeader
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 HeaderName                     ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 Value                          ( CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 HeaderName                     (Parm, NeedCtorLink)
+// struct FString                 Value                          (Parm, CoerceParm, NeedCtorLink)
 
-void UWebRequest::AddHeader(struct FString HeaderName, struct FString Value)
+void UWebRequest::AddHeader(const struct FString& HeaderName, const struct FString& Value)
 {
-	static UFunction* pFnAddHeader = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebRequest.AddHeader");
 
-	if (!pFnAddHeader)
-		pFnAddHeader = (UFunction*)UObject::GObjects()->Data[46380];
+	UWebRequest_AddHeader_Params params;
+	params.HeaderName = HeaderName;
+	params.Value = Value;
 
-	UWebRequest_execAddHeader_Parms AddHeader_Parms;
-	memcpy(&AddHeader_Parms.HeaderName, &HeaderName, 0xC);
-	memcpy(&AddHeader_Parms.Value, &Value, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnAddHeader->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnAddHeader, &AddHeader_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnAddHeader->FunctionFlags |= 0x400;
-};
 
 // Function IpDrv.WebRequest.EncodeBase64
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// struct FString                 Decoded                        ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Decoded                        (Parm, NeedCtorLink)
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
-struct FString UWebRequest::EncodeBase64(struct FString Decoded)
+struct FString UWebRequest::EncodeBase64(const struct FString& Decoded)
 {
-	static UFunction* pFnEncodeBase64 = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebRequest.EncodeBase64");
 
-	if (!pFnEncodeBase64)
-		pFnEncodeBase64 = (UFunction*)UObject::GObjects()->Data[46377];
+	UWebRequest_EncodeBase64_Params params;
+	params.Decoded = Decoded;
 
-	UWebRequest_execEncodeBase64_Parms EncodeBase64_Parms;
-	memcpy(&EncodeBase64_Parms.Decoded, &Decoded, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnEncodeBase64->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnEncodeBase64, &EncodeBase64_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnEncodeBase64->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return EncodeBase64_Parms.ReturnValue;
-};
 
 // Function IpDrv.WebRequest.DecodeBase64
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// struct FString                 Encoded                        ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Encoded                        (Parm, NeedCtorLink)
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
-struct FString UWebRequest::DecodeBase64(struct FString Encoded)
+struct FString UWebRequest::DecodeBase64(const struct FString& Encoded)
 {
-	static UFunction* pFnDecodeBase64 = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebRequest.DecodeBase64");
 
-	if (!pFnDecodeBase64)
-		pFnDecodeBase64 = (UFunction*)UObject::GObjects()->Data[46374];
+	UWebRequest_DecodeBase64_Params params;
+	params.Encoded = Encoded;
 
-	UWebRequest_execDecodeBase64_Parms DecodeBase64_Parms;
-	memcpy(&DecodeBase64_Parms.Encoded, &Encoded, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnDecodeBase64->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnDecodeBase64, &DecodeBase64_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnDecodeBase64->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return DecodeBase64_Parms.ReturnValue;
-};
 
 // Function IpDrv.WebResponse.SentResponse
-// [0x00020002]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Defined, Public)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UWebResponse::SentResponse()
 {
-	static UFunction* pFnSentResponse = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebResponse.SentResponse");
 
-	if (!pFnSentResponse)
-		pFnSentResponse = (UFunction*)UObject::GObjects()->Data[46467];
+	UWebResponse_SentResponse_Params params;
 
-	UWebResponse_execSentResponse_Parms SentResponse_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnSentResponse, &SentResponse_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return SentResponse_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.WebResponse.SentText
-// [0x00020002]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Defined, Public)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UWebResponse::SentText()
 {
-	static UFunction* pFnSentText = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebResponse.SentText");
 
-	if (!pFnSentText)
-		pFnSentText = (UFunction*)UObject::GObjects()->Data[46465];
+	UWebResponse_SentText_Params params;
 
-	UWebResponse_execSentText_Parms SentText_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnSentText, &SentText_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return SentText_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.WebResponse.Redirect
-// [0x00020002]
-// Parameters infos:
-// struct FString                 URL                            ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FString                 URL                            (Parm, NeedCtorLink)
 
-void UWebResponse::Redirect(struct FString URL)
+void UWebResponse::Redirect(const struct FString& URL)
 {
-	static UFunction* pFnRedirect = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebResponse.Redirect");
 
-	if (!pFnRedirect)
-		pFnRedirect = (UFunction*)UObject::GObjects()->Data[46463];
+	UWebResponse_Redirect_Params params;
+	params.URL = URL;
 
-	UWebResponse_execRedirect_Parms Redirect_Parms;
-	memcpy(&Redirect_Parms.URL, &URL, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnRedirect, &Redirect_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebResponse.SendStandardHeaders
-// [0x00024002]
-// Parameters infos:
-// struct FString                 ContentType                    ( CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink )
-// unsigned long                  bCache                         ( CPF_OptionalParm | CPF_Parm )
+// (Defined, HasOptionalParms, Public)
+// Parameters:
+// struct FString                 ContentType                    (OptionalParm, Parm, NeedCtorLink)
+// bool                           bCache                         (OptionalParm, Parm)
 
-void UWebResponse::SendStandardHeaders(struct FString ContentType, unsigned long bCache)
+void UWebResponse::SendStandardHeaders(const struct FString& ContentType, bool bCache)
 {
-	static UFunction* pFnSendStandardHeaders = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebResponse.SendStandardHeaders");
 
-	if (!pFnSendStandardHeaders)
-		pFnSendStandardHeaders = (UFunction*)UObject::GObjects()->Data[46459];
+	UWebResponse_SendStandardHeaders_Params params;
+	params.ContentType = ContentType;
+	params.bCache = bCache;
 
-	UWebResponse_execSendStandardHeaders_Parms SendStandardHeaders_Parms;
-	memcpy(&SendStandardHeaders_Parms.ContentType, &ContentType, 0xC);
-	SendStandardHeaders_Parms.bCache = bCache;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnSendStandardHeaders, &SendStandardHeaders_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebResponse.HTTPError
-// [0x00024002]
-// Parameters infos:
-// int                            ErrorNum                       ( CPF_Parm )
-// struct FString                 Data                           ( CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink )
+// (Defined, HasOptionalParms, Public)
+// Parameters:
+// int                            ErrorNum                       (Parm)
+// struct FString                 Data                           (OptionalParm, Parm, NeedCtorLink)
 
-void UWebResponse::HTTPError(int ErrorNum, struct FString Data)
+void UWebResponse::HTTPError(int ErrorNum, const struct FString& Data)
 {
-	static UFunction* pFnHTTPError = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebResponse.HTTPError");
 
-	if (!pFnHTTPError)
-		pFnHTTPError = (UFunction*)UObject::GObjects()->Data[46456];
+	UWebResponse_HTTPError_Params params;
+	params.ErrorNum = ErrorNum;
+	params.Data = Data;
 
-	UWebResponse_execHTTPError_Parms HTTPError_Parms;
-	HTTPError_Parms.ErrorNum = ErrorNum;
-	memcpy(&HTTPError_Parms.Data, &Data, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnHTTPError, &HTTPError_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebResponse.SendHeaders
-// [0x00020002]
-// Parameters infos:
+// (Defined, Public)
 
 void UWebResponse::SendHeaders()
 {
-	static UFunction* pFnSendHeaders = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebResponse.SendHeaders");
 
-	if (!pFnSendHeaders)
-		pFnSendHeaders = (UFunction*)UObject::GObjects()->Data[46454];
+	UWebResponse_SendHeaders_Params params;
 
-	UWebResponse_execSendHeaders_Parms SendHeaders_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnSendHeaders, &SendHeaders_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebResponse.AddHeader
-// [0x00024002]
-// Parameters infos:
-// struct FString                 Header                         ( CPF_Parm | CPF_NeedCtorLink )
-// unsigned long                  bReplace                       ( CPF_OptionalParm | CPF_Parm )
+// (Defined, HasOptionalParms, Public)
+// Parameters:
+// struct FString                 Header                         (Parm, NeedCtorLink)
+// bool                           bReplace                       (OptionalParm, Parm)
 
-void UWebResponse::AddHeader(struct FString Header, unsigned long bReplace)
+void UWebResponse::AddHeader(const struct FString& Header, bool bReplace)
 {
-	static UFunction* pFnAddHeader = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebResponse.AddHeader");
 
-	if (!pFnAddHeader)
-		pFnAddHeader = (UFunction*)UObject::GObjects()->Data[46449];
+	UWebResponse_AddHeader_Params params;
+	params.Header = Header;
+	params.bReplace = bReplace;
 
-	UWebResponse_execAddHeader_Parms AddHeader_Parms;
-	memcpy(&AddHeader_Parms.Header, &Header, 0xC);
-	AddHeader_Parms.bReplace = bReplace;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddHeader, &AddHeader_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebResponse.HTTPHeader
-// [0x00020002]
-// Parameters infos:
-// struct FString                 Header                         ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FString                 Header                         (Parm, NeedCtorLink)
 
-void UWebResponse::HTTPHeader(struct FString Header)
+void UWebResponse::HTTPHeader(const struct FString& Header)
 {
-	static UFunction* pFnHTTPHeader = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebResponse.HTTPHeader");
 
-	if (!pFnHTTPHeader)
-		pFnHTTPHeader = (UFunction*)UObject::GObjects()->Data[46447];
+	UWebResponse_HTTPHeader_Params params;
+	params.Header = Header;
 
-	UWebResponse_execHTTPHeader_Parms HTTPHeader_Parms;
-	memcpy(&HTTPHeader_Parms.Header, &Header, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnHTTPHeader, &HTTPHeader_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebResponse.HTTPResponse
-// [0x00020002]
-// Parameters infos:
-// struct FString                 Header                         ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FString                 Header                         (Parm, NeedCtorLink)
 
-void UWebResponse::HTTPResponse(struct FString Header)
+void UWebResponse::HTTPResponse(const struct FString& Header)
 {
-	static UFunction* pFnHTTPResponse = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebResponse.HTTPResponse");
 
-	if (!pFnHTTPResponse)
-		pFnHTTPResponse = (UFunction*)UObject::GObjects()->Data[46445];
+	UWebResponse_HTTPResponse_Params params;
+	params.Header = Header;
 
-	UWebResponse_execHTTPResponse_Parms HTTPResponse_Parms;
-	memcpy(&HTTPResponse_Parms.Header, &Header, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnHTTPResponse, &HTTPResponse_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebResponse.FailAuthentication
-// [0x00020002]
-// Parameters infos:
-// struct FString                 Realm                          ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FString                 Realm                          (Parm, NeedCtorLink)
 
-void UWebResponse::FailAuthentication(struct FString Realm)
+void UWebResponse::FailAuthentication(const struct FString& Realm)
 {
-	static UFunction* pFnFailAuthentication = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebResponse.FailAuthentication");
 
-	if (!pFnFailAuthentication)
-		pFnFailAuthentication = (UFunction*)UObject::GObjects()->Data[46443];
+	UWebResponse_FailAuthentication_Params params;
+	params.Realm = Realm;
 
-	UWebResponse_execFailAuthentication_Parms FailAuthentication_Parms;
-	memcpy(&FailAuthentication_Parms.Realm, &Realm, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnFailAuthentication, &FailAuthentication_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebResponse.SendCachedFile
-// [0x00024002]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 ContentType                    ( CPF_OptionalParm | CPF_Parm | CPF_NeedCtorLink )
+// (Defined, HasOptionalParms, Public)
+// Parameters:
+// struct FString                 Filename                       (Parm, NeedCtorLink)
+// struct FString                 ContentType                    (OptionalParm, Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UWebResponse::SendCachedFile(struct FString Filename, struct FString ContentType)
+bool UWebResponse::SendCachedFile(const struct FString& Filename, const struct FString& ContentType)
 {
-	static UFunction* pFnSendCachedFile = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebResponse.SendCachedFile");
 
-	if (!pFnSendCachedFile)
-		pFnSendCachedFile = (UFunction*)UObject::GObjects()->Data[46439];
+	UWebResponse_SendCachedFile_Params params;
+	params.Filename = Filename;
+	params.ContentType = ContentType;
 
-	UWebResponse_execSendCachedFile_Parms SendCachedFile_Parms;
-	memcpy(&SendCachedFile_Parms.Filename, &Filename, 0xC);
-	memcpy(&SendCachedFile_Parms.ContentType, &ContentType, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnSendCachedFile, &SendCachedFile_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return SendCachedFile_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.WebResponse.SendBinary
-// [0x00020802] ( FUNC_Event )
-// Parameters infos:
-// int                            Count                          ( CPF_Parm )
-// unsigned char                  B                              ( CPF_Parm )
+// (Defined, Event, Public)
+// Parameters:
+// int                            Count                          (Parm)
+// unsigned char                  B                              (Parm)
 
-void UWebResponse::eventSendBinary(int Count, unsigned char* B)
+void UWebResponse::SendBinary(int Count, unsigned char B)
 {
-	static UFunction* pFnSendBinary = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebResponse.SendBinary");
 
-	if (!pFnSendBinary)
-		pFnSendBinary = (UFunction*)UObject::GObjects()->Data[46436];
+	UWebResponse_SendBinary_Params params;
+	params.Count = Count;
+	params.B = B;
 
-	UWebResponse_eventSendBinary_Parms SendBinary_Parms;
-	SendBinary_Parms.Count = Count;
-	memcpy(&SendBinary_Parms.B, &B, 0xFF);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnSendBinary, &SendBinary_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebResponse.SendText
-// [0x00024802] ( FUNC_Event )
-// Parameters infos:
-// struct FString                 Text                           ( CPF_Parm | CPF_NeedCtorLink )
-// unsigned long                  bNoCRLF                        ( CPF_OptionalParm | CPF_Parm )
+// (Defined, Event, HasOptionalParms, Public)
+// Parameters:
+// struct FString                 Text                           (Parm, NeedCtorLink)
+// bool                           bNoCRLF                        (OptionalParm, Parm)
 
-void UWebResponse::eventSendText(struct FString Text, unsigned long bNoCRLF)
+void UWebResponse::SendText(const struct FString& Text, bool bNoCRLF)
 {
-	static UFunction* pFnSendText = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebResponse.SendText");
 
-	if (!pFnSendText)
-		pFnSendText = (UFunction*)UObject::GObjects()->Data[46433];
+	UWebResponse_SendText_Params params;
+	params.Text = Text;
+	params.bNoCRLF = bNoCRLF;
 
-	UWebResponse_eventSendText_Parms SendText_Parms;
-	memcpy(&SendText_Parms.Text, &Text, 0xC);
-	SendText_Parms.bNoCRLF = bNoCRLF;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnSendText, &SendText_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebResponse.Dump
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
+// (Final, Native, Public)
 
 void UWebResponse::Dump()
 {
-	static UFunction* pFnDump = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebResponse.Dump");
 
-	if (!pFnDump)
-		pFnDump = (UFunction*)UObject::GObjects()->Data[46432];
+	UWebResponse_Dump_Params params;
 
-	UWebResponse_execDump_Parms Dump_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnDump->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnDump, &Dump_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnDump->FunctionFlags |= 0x400;
-};
 
 // Function IpDrv.WebResponse.GetHTTPExpiration
-// [0x00024401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// int                            OffsetSeconds                  ( CPF_OptionalParm | CPF_Parm )
+// (Final, Native, HasOptionalParms, Public)
+// Parameters:
+// int                            OffsetSeconds                  (OptionalParm, Parm)
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
 struct FString UWebResponse::GetHTTPExpiration(int OffsetSeconds)
 {
-	static UFunction* pFnGetHTTPExpiration = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebResponse.GetHTTPExpiration");
 
-	if (!pFnGetHTTPExpiration)
-		pFnGetHTTPExpiration = (UFunction*)UObject::GObjects()->Data[46429];
+	UWebResponse_GetHTTPExpiration_Params params;
+	params.OffsetSeconds = OffsetSeconds;
 
-	UWebResponse_execGetHTTPExpiration_Parms GetHTTPExpiration_Parms;
-	GetHTTPExpiration_Parms.OffsetSeconds = OffsetSeconds;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetHTTPExpiration->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetHTTPExpiration, &GetHTTPExpiration_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetHTTPExpiration->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetHTTPExpiration_Parms.ReturnValue;
-};
 
 // Function IpDrv.WebResponse.LoadParsedUHTM
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Filename                       (Parm, NeedCtorLink)
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
-struct FString UWebResponse::LoadParsedUHTM(struct FString Filename)
+struct FString UWebResponse::LoadParsedUHTM(const struct FString& Filename)
 {
-	static UFunction* pFnLoadParsedUHTM = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebResponse.LoadParsedUHTM");
 
-	if (!pFnLoadParsedUHTM)
-		pFnLoadParsedUHTM = (UFunction*)UObject::GObjects()->Data[46426];
+	UWebResponse_LoadParsedUHTM_Params params;
+	params.Filename = Filename;
 
-	UWebResponse_execLoadParsedUHTM_Parms LoadParsedUHTM_Parms;
-	memcpy(&LoadParsedUHTM_Parms.Filename, &Filename, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnLoadParsedUHTM->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnLoadParsedUHTM, &LoadParsedUHTM_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnLoadParsedUHTM->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return LoadParsedUHTM_Parms.ReturnValue;
-};
 
 // Function IpDrv.WebResponse.IncludeBinaryFile
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Filename                       (Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UWebResponse::IncludeBinaryFile(struct FString Filename)
+bool UWebResponse::IncludeBinaryFile(const struct FString& Filename)
 {
-	static UFunction* pFnIncludeBinaryFile = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebResponse.IncludeBinaryFile");
 
-	if (!pFnIncludeBinaryFile)
-		pFnIncludeBinaryFile = (UFunction*)UObject::GObjects()->Data[45212];
+	UWebResponse_IncludeBinaryFile_Params params;
+	params.Filename = Filename;
 
-	UWebResponse_execIncludeBinaryFile_Parms IncludeBinaryFile_Parms;
-	memcpy(&IncludeBinaryFile_Parms.Filename, &Filename, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnIncludeBinaryFile->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnIncludeBinaryFile, &IncludeBinaryFile_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnIncludeBinaryFile->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return IncludeBinaryFile_Parms.ReturnValue;
-};
 
 // Function IpDrv.WebResponse.IncludeUHTM
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Filename                       (Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UWebResponse::IncludeUHTM(struct FString Filename)
+bool UWebResponse::IncludeUHTM(const struct FString& Filename)
 {
-	static UFunction* pFnIncludeUHTM = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebResponse.IncludeUHTM");
 
-	if (!pFnIncludeUHTM)
-		pFnIncludeUHTM = (UFunction*)UObject::GObjects()->Data[45202];
+	UWebResponse_IncludeUHTM_Params params;
+	params.Filename = Filename;
 
-	UWebResponse_execIncludeUHTM_Parms IncludeUHTM_Parms;
-	memcpy(&IncludeUHTM_Parms.Filename, &Filename, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnIncludeUHTM->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnIncludeUHTM, &IncludeUHTM_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnIncludeUHTM->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return IncludeUHTM_Parms.ReturnValue;
-};
 
 // Function IpDrv.WebResponse.ClearSubst
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
+// (Final, Native, Public)
 
 void UWebResponse::ClearSubst()
 {
-	static UFunction* pFnClearSubst = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebResponse.ClearSubst");
 
-	if (!pFnClearSubst)
-		pFnClearSubst = (UFunction*)UObject::GObjects()->Data[46423];
+	UWebResponse_ClearSubst_Params params;
 
-	UWebResponse_execClearSubst_Parms ClearSubst_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnClearSubst->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnClearSubst, &ClearSubst_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnClearSubst->FunctionFlags |= 0x400;
-};
 
 // Function IpDrv.WebResponse.Subst
-// [0x00024401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 Variable                       ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 Value                          ( CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink )
-// unsigned long                  bClear                         ( CPF_OptionalParm | CPF_Parm )
+// (Final, Native, HasOptionalParms, Public)
+// Parameters:
+// struct FString                 Variable                       (Parm, NeedCtorLink)
+// struct FString                 Value                          (Parm, CoerceParm, NeedCtorLink)
+// bool                           bClear                         (OptionalParm, Parm)
 
-void UWebResponse::Subst(struct FString Variable, struct FString Value, unsigned long bClear)
+void UWebResponse::Subst(const struct FString& Variable, const struct FString& Value, bool bClear)
 {
-	static UFunction* pFnSubst = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebResponse.Subst");
 
-	if (!pFnSubst)
-		pFnSubst = (UFunction*)UObject::GObjects()->Data[45201];
+	UWebResponse_Subst_Params params;
+	params.Variable = Variable;
+	params.Value = Value;
+	params.bClear = bClear;
 
-	UWebResponse_execSubst_Parms Subst_Parms;
-	memcpy(&Subst_Parms.Variable, &Variable, 0xC);
-	memcpy(&Subst_Parms.Value, &Value, 0xC);
-	Subst_Parms.bClear = bClear;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSubst->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSubst, &Subst_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSubst->FunctionFlags |= 0x400;
-};
 
 // Function IpDrv.WebResponse.FileExists
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Filename                       ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Filename                       (Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UWebResponse::FileExists(struct FString Filename)
+bool UWebResponse::FileExists(const struct FString& Filename)
 {
-	static UFunction* pFnFileExists = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebResponse.FileExists");
 
-	if (!pFnFileExists)
-		pFnFileExists = (UFunction*)UObject::GObjects()->Data[45210];
+	UWebResponse_FileExists_Params params;
+	params.Filename = Filename;
 
-	UWebResponse_execFileExists_Parms FileExists_Parms;
-	memcpy(&FileExists_Parms.Filename, &Filename, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnFileExists->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnFileExists, &FileExists_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnFileExists->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return FileExists_Parms.ReturnValue;
-};
 
 // Function IpDrv.UIDataStore_OnlinePlaylists.GetMatchTypeForPlaylistId
-// [0x00020802] ( FUNC_Event )
-// Parameters infos:
-// int                            ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            PlaylistId                     ( CPF_Parm )
+// (Defined, Event, Public)
+// Parameters:
+// int                            PlaylistId                     (Parm)
+// int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
-int UUIDataStore_OnlinePlaylists::eventGetMatchTypeForPlaylistId(int PlaylistId)
+int UUIDataStore_OnlinePlaylists::GetMatchTypeForPlaylistId(int PlaylistId)
 {
-	static UFunction* pFnGetMatchTypeForPlaylistId = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.UIDataStore_OnlinePlaylists.GetMatchTypeForPlaylistId");
 
-	if (!pFnGetMatchTypeForPlaylistId)
-		pFnGetMatchTypeForPlaylistId = (UFunction*)UObject::GObjects()->Data[46326];
+	UUIDataStore_OnlinePlaylists_GetMatchTypeForPlaylistId_Params params;
+	params.PlaylistId = PlaylistId;
 
-	UUIDataStore_OnlinePlaylists_eventGetMatchTypeForPlaylistId_Parms GetMatchTypeForPlaylistId_Parms;
-	GetMatchTypeForPlaylistId_Parms.PlaylistId = PlaylistId;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetMatchTypeForPlaylistId, &GetMatchTypeForPlaylistId_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return GetMatchTypeForPlaylistId_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.UIDataStore_OnlinePlaylists.GetOnlinePlaylistProvider
-// [0x00C26002]
-// Parameters infos:
-// class UOnlinePlaylistProvider* ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   ProviderTag                    ( CPF_Parm )
-// int                            PlaylistId                     ( CPF_Parm )
-// int                            ProviderIndex                  ( CPF_OptionalParm | CPF_Parm | CPF_OutParm )
+// (Defined, Static, HasOptionalParms, Public, HasOutParms, HasDefaults)
+// Parameters:
+// struct FName                   ProviderTag                    (Parm)
+// int                            PlaylistId                     (Parm)
+// int                            ProviderIndex                  (OptionalParm, Parm, OutParm)
+// class UOnlinePlaylistProvider* ReturnValue                    (Parm, OutParm, ReturnParm)
 
-class UOnlinePlaylistProvider* UUIDataStore_OnlinePlaylists::GetOnlinePlaylistProvider(struct FName ProviderTag, int PlaylistId, int* ProviderIndex)
+class UOnlinePlaylistProvider* UUIDataStore_OnlinePlaylists::GetOnlinePlaylistProvider(const struct FName& ProviderTag, int PlaylistId, int* ProviderIndex)
 {
-	static UFunction* pFnGetOnlinePlaylistProvider = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.UIDataStore_OnlinePlaylists.GetOnlinePlaylistProvider");
 
-	if (!pFnGetOnlinePlaylistProvider)
-		pFnGetOnlinePlaylistProvider = (UFunction*)UObject::GObjects()->Data[46320];
+	UUIDataStore_OnlinePlaylists_GetOnlinePlaylistProvider_Params params;
+	params.ProviderTag = ProviderTag;
+	params.PlaylistId = PlaylistId;
 
-	UUIDataStore_OnlinePlaylists_execGetOnlinePlaylistProvider_Parms GetOnlinePlaylistProvider_Parms;
-	memcpy(&GetOnlinePlaylistProvider_Parms.ProviderTag, &ProviderTag, 0x8);
-	GetOnlinePlaylistProvider_Parms.PlaylistId = PlaylistId;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetOnlinePlaylistProvider, &GetOnlinePlaylistProvider_Parms, NULL);
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 
-	if (ProviderIndex)
-		*ProviderIndex = GetOnlinePlaylistProvider_Parms.ProviderIndex;
+	fn->FunctionFlags = flags;
 
-	return GetOnlinePlaylistProvider_Parms.ReturnValue;
-};
+	if (ProviderIndex != nullptr)
+		*ProviderIndex = params.ProviderIndex;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.UIDataStore_OnlinePlaylists.GetPlaylistProvider
-// [0x00420401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   ProviderTag                    ( CPF_Parm )
-// int                            ProviderIndex                  ( CPF_Parm )
-// class UUIResourceDataProvider* out_Provider                   ( CPF_Parm | CPF_OutParm )
+// (Final, Native, Public, HasOutParms)
+// Parameters:
+// struct FName                   ProviderTag                    (Parm)
+// int                            ProviderIndex                  (Parm)
+// class UUIResourceDataProvider* out_Provider                   (Parm, OutParm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UUIDataStore_OnlinePlaylists::GetPlaylistProvider(struct FName ProviderTag, int ProviderIndex, class UUIResourceDataProvider** out_Provider)
+bool UUIDataStore_OnlinePlaylists::GetPlaylistProvider(const struct FName& ProviderTag, int ProviderIndex, class UUIResourceDataProvider** out_Provider)
 {
-	static UFunction* pFnGetPlaylistProvider = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.UIDataStore_OnlinePlaylists.GetPlaylistProvider");
 
-	if (!pFnGetPlaylistProvider)
-		pFnGetPlaylistProvider = (UFunction*)UObject::GObjects()->Data[46315];
+	UUIDataStore_OnlinePlaylists_GetPlaylistProvider_Params params;
+	params.ProviderTag = ProviderTag;
+	params.ProviderIndex = ProviderIndex;
 
-	UUIDataStore_OnlinePlaylists_execGetPlaylistProvider_Parms GetPlaylistProvider_Parms;
-	memcpy(&GetPlaylistProvider_Parms.ProviderTag, &ProviderTag, 0x8);
-	GetPlaylistProvider_Parms.ProviderIndex = ProviderIndex;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetPlaylistProvider->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetPlaylistProvider, &GetPlaylistProvider_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetPlaylistProvider->FunctionFlags |= 0x400;
+	if (out_Provider != nullptr)
+		*out_Provider = params.out_Provider;
 
-	if (out_Provider)
-		*out_Provider = GetPlaylistProvider_Parms.out_Provider;
+	return params.ReturnValue;
+}
 
-	return GetPlaylistProvider_Parms.ReturnValue;
-};
 
 // Function IpDrv.UIDataStore_OnlinePlaylists.FindProviderIndexByFieldValue
-// [0x00420401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// int                            ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   ProviderTag                    ( CPF_Parm )
-// struct FName                   SearchField                    ( CPF_Parm )
-// struct FUIProviderScriptFieldValue ValueToSearchFor               ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Final, Native, Public, HasOutParms)
+// Parameters:
+// struct FName                   ProviderTag                    (Parm)
+// struct FName                   SearchField                    (Parm)
+// struct FUIProviderScriptFieldValue ValueToSearchFor               (Const, Parm, OutParm, NeedCtorLink)
+// int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
-int UUIDataStore_OnlinePlaylists::FindProviderIndexByFieldValue(struct FName ProviderTag, struct FName SearchField, struct FUIProviderScriptFieldValue* ValueToSearchFor)
+int UUIDataStore_OnlinePlaylists::FindProviderIndexByFieldValue(const struct FName& ProviderTag, const struct FName& SearchField, struct FUIProviderScriptFieldValue* ValueToSearchFor)
 {
-	static UFunction* pFnFindProviderIndexByFieldValue = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.UIDataStore_OnlinePlaylists.FindProviderIndexByFieldValue");
 
-	if (!pFnFindProviderIndexByFieldValue)
-		pFnFindProviderIndexByFieldValue = (UFunction*)UObject::GObjects()->Data[46310];
+	UUIDataStore_OnlinePlaylists_FindProviderIndexByFieldValue_Params params;
+	params.ProviderTag = ProviderTag;
+	params.SearchField = SearchField;
 
-	UUIDataStore_OnlinePlaylists_execFindProviderIndexByFieldValue_Parms FindProviderIndexByFieldValue_Parms;
-	memcpy(&FindProviderIndexByFieldValue_Parms.ProviderTag, &ProviderTag, 0x8);
-	memcpy(&FindProviderIndexByFieldValue_Parms.SearchField, &SearchField, 0x8);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnFindProviderIndexByFieldValue->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnFindProviderIndexByFieldValue, &FindProviderIndexByFieldValue_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnFindProviderIndexByFieldValue->FunctionFlags |= 0x400;
+	if (ValueToSearchFor != nullptr)
+		*ValueToSearchFor = params.ValueToSearchFor;
 
-	if (ValueToSearchFor)
-		memcpy(ValueToSearchFor, &FindProviderIndexByFieldValue_Parms.ValueToSearchFor, 0x64);
+	return params.ReturnValue;
+}
 
-	return FindProviderIndexByFieldValue_Parms.ReturnValue;
-};
 
 // Function IpDrv.UIDataStore_OnlinePlaylists.GetProviderFieldValue
-// [0x00420401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   ProviderTag                    ( CPF_Parm )
-// struct FName                   SearchField                    ( CPF_Parm )
-// int                            ProviderIndex                  ( CPF_Parm )
-// struct FUIProviderScriptFieldValue out_FieldValue                 ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Final, Native, Public, HasOutParms)
+// Parameters:
+// struct FName                   ProviderTag                    (Parm)
+// struct FName                   SearchField                    (Parm)
+// int                            ProviderIndex                  (Parm)
+// struct FUIProviderScriptFieldValue out_FieldValue                 (Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UUIDataStore_OnlinePlaylists::GetProviderFieldValue(struct FName ProviderTag, struct FName SearchField, int ProviderIndex, struct FUIProviderScriptFieldValue* out_FieldValue)
+bool UUIDataStore_OnlinePlaylists::GetProviderFieldValue(const struct FName& ProviderTag, const struct FName& SearchField, int ProviderIndex, struct FUIProviderScriptFieldValue* out_FieldValue)
 {
-	static UFunction* pFnGetProviderFieldValue = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.UIDataStore_OnlinePlaylists.GetProviderFieldValue");
 
-	if (!pFnGetProviderFieldValue)
-		pFnGetProviderFieldValue = (UFunction*)UObject::GObjects()->Data[46304];
+	UUIDataStore_OnlinePlaylists_GetProviderFieldValue_Params params;
+	params.ProviderTag = ProviderTag;
+	params.SearchField = SearchField;
+	params.ProviderIndex = ProviderIndex;
 
-	UUIDataStore_OnlinePlaylists_execGetProviderFieldValue_Parms GetProviderFieldValue_Parms;
-	memcpy(&GetProviderFieldValue_Parms.ProviderTag, &ProviderTag, 0x8);
-	memcpy(&GetProviderFieldValue_Parms.SearchField, &SearchField, 0x8);
-	GetProviderFieldValue_Parms.ProviderIndex = ProviderIndex;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetProviderFieldValue->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetProviderFieldValue, &GetProviderFieldValue_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetProviderFieldValue->FunctionFlags |= 0x400;
+	if (out_FieldValue != nullptr)
+		*out_FieldValue = params.out_FieldValue;
 
-	if (out_FieldValue)
-		memcpy(out_FieldValue, &GetProviderFieldValue_Parms.out_FieldValue, 0x64);
+	return params.ReturnValue;
+}
 
-	return GetProviderFieldValue_Parms.ReturnValue;
-};
 
 // Function IpDrv.UIDataStore_OnlinePlaylists.GetResourceProviderFields
-// [0x00420401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   ProviderTag                    ( CPF_Parm )
-// TArray< struct FName >         ProviderFieldTags              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Final, Native, Public, HasOutParms)
+// Parameters:
+// struct FName                   ProviderTag                    (Parm)
+// TArray<struct FName>           ProviderFieldTags              (Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UUIDataStore_OnlinePlaylists::GetResourceProviderFields(struct FName ProviderTag, TArray< struct FName >* ProviderFieldTags)
+bool UUIDataStore_OnlinePlaylists::GetResourceProviderFields(const struct FName& ProviderTag, TArray<struct FName>* ProviderFieldTags)
 {
-	static UFunction* pFnGetResourceProviderFields = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.UIDataStore_OnlinePlaylists.GetResourceProviderFields");
 
-	if (!pFnGetResourceProviderFields)
-		pFnGetResourceProviderFields = (UFunction*)UObject::GObjects()->Data[46299];
+	UUIDataStore_OnlinePlaylists_GetResourceProviderFields_Params params;
+	params.ProviderTag = ProviderTag;
 
-	UUIDataStore_OnlinePlaylists_execGetResourceProviderFields_Parms GetResourceProviderFields_Parms;
-	memcpy(&GetResourceProviderFields_Parms.ProviderTag, &ProviderTag, 0x8);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetResourceProviderFields->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetResourceProviderFields, &GetResourceProviderFields_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetResourceProviderFields->FunctionFlags |= 0x400;
+	if (ProviderFieldTags != nullptr)
+		*ProviderFieldTags = params.ProviderFieldTags;
 
-	if (ProviderFieldTags)
-		memcpy(ProviderFieldTags, &GetResourceProviderFields_Parms.ProviderFieldTags, 0xC);
+	return params.ReturnValue;
+}
 
-	return GetResourceProviderFields_Parms.ReturnValue;
-};
 
 // Function IpDrv.UIDataStore_OnlinePlaylists.GetResourceProviders
-// [0x00420401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   ProviderTag                    ( CPF_Parm )
-// TArray< class UUIResourceDataProvider* > out_Providers                  ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Final, Native, Public, HasOutParms)
+// Parameters:
+// struct FName                   ProviderTag                    (Parm)
+// TArray<class UUIResourceDataProvider*> out_Providers                  (Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UUIDataStore_OnlinePlaylists::GetResourceProviders(struct FName ProviderTag, TArray< class UUIResourceDataProvider* >* out_Providers)
+bool UUIDataStore_OnlinePlaylists::GetResourceProviders(const struct FName& ProviderTag, TArray<class UUIResourceDataProvider*>* out_Providers)
 {
-	static UFunction* pFnGetResourceProviders = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.UIDataStore_OnlinePlaylists.GetResourceProviders");
 
-	if (!pFnGetResourceProviders)
-		pFnGetResourceProviders = (UFunction*)UObject::GObjects()->Data[46294];
+	UUIDataStore_OnlinePlaylists_GetResourceProviders_Params params;
+	params.ProviderTag = ProviderTag;
 
-	UUIDataStore_OnlinePlaylists_execGetResourceProviders_Parms GetResourceProviders_Parms;
-	memcpy(&GetResourceProviders_Parms.ProviderTag, &ProviderTag, 0x8);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetResourceProviders->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetResourceProviders, &GetResourceProviders_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetResourceProviders->FunctionFlags |= 0x400;
+	if (out_Providers != nullptr)
+		*out_Providers = params.out_Providers;
 
-	if (out_Providers)
-		memcpy(out_Providers, &GetResourceProviders_Parms.out_Providers, 0xC);
+	return params.ReturnValue;
+}
 
-	return GetResourceProviders_Parms.ReturnValue;
-};
 
 // Function IpDrv.UIDataStore_OnlinePlaylists.GetProviderCount
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// int                            ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   ProviderTag                    ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FName                   ProviderTag                    (Parm)
+// int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
-int UUIDataStore_OnlinePlaylists::GetProviderCount(struct FName ProviderTag)
+int UUIDataStore_OnlinePlaylists::GetProviderCount(const struct FName& ProviderTag)
 {
-	static UFunction* pFnGetProviderCount = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.UIDataStore_OnlinePlaylists.GetProviderCount");
 
-	if (!pFnGetProviderCount)
-		pFnGetProviderCount = (UFunction*)UObject::GObjects()->Data[46291];
+	UUIDataStore_OnlinePlaylists_GetProviderCount_Params params;
+	params.ProviderTag = ProviderTag;
 
-	UUIDataStore_OnlinePlaylists_execGetProviderCount_Parms GetProviderCount_Parms;
-	memcpy(&GetProviderCount_Parms.ProviderTag, &ProviderTag, 0x8);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetProviderCount->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetProviderCount, &GetProviderCount_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetProviderCount->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetProviderCount_Parms.ReturnValue;
-};
 
 // Function IpDrv.UIDataStore_OnlinePlaylists.Init
-// [0x00020802] ( FUNC_Event )
-// Parameters infos:
+// (Defined, Event, Public)
 
-void UUIDataStore_OnlinePlaylists::eventInit()
+void UUIDataStore_OnlinePlaylists::Init()
 {
-	static UFunction* pFnInit = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.UIDataStore_OnlinePlaylists.Init");
 
-	if (!pFnInit)
-		pFnInit = (UFunction*)UObject::GObjects()->Data[46290];
+	UUIDataStore_OnlinePlaylists_Init_Params params;
 
-	UUIDataStore_OnlinePlaylists_eventInit_Parms Init_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnInit, &Init_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebApplication.PostQuery
-// [0x00020000]
-// Parameters infos:
-// class UWebRequest*             Request                        ( CPF_Parm )
-// class UWebResponse*            Response                       ( CPF_Parm )
+// (Public)
+// Parameters:
+// class UWebRequest*             Request                        (Parm)
+// class UWebResponse*            Response                       (Parm)
 
 void UWebApplication::PostQuery(class UWebRequest* Request, class UWebResponse* Response)
 {
-	static UFunction* pFnPostQuery = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebApplication.PostQuery");
 
-	if (!pFnPostQuery)
-		pFnPostQuery = (UFunction*)UObject::GObjects()->Data[45183];
+	UWebApplication_PostQuery_Params params;
+	params.Request = Request;
+	params.Response = Response;
 
-	UWebApplication_execPostQuery_Parms PostQuery_Parms;
-	PostQuery_Parms.Request = Request;
-	PostQuery_Parms.Response = Response;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnPostQuery, &PostQuery_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebApplication.Query
-// [0x00020000]
-// Parameters infos:
-// class UWebRequest*             Request                        ( CPF_Parm )
-// class UWebResponse*            Response                       ( CPF_Parm )
+// (Public)
+// Parameters:
+// class UWebRequest*             Request                        (Parm)
+// class UWebResponse*            Response                       (Parm)
 
 void UWebApplication::Query(class UWebRequest* Request, class UWebResponse* Response)
 {
-	static UFunction* pFnQuery = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebApplication.Query");
 
-	if (!pFnQuery)
-		pFnQuery = (UFunction*)UObject::GObjects()->Data[45180];
+	UWebApplication_Query_Params params;
+	params.Request = Request;
+	params.Response = Response;
 
-	UWebApplication_execQuery_Parms Query_Parms;
-	Query_Parms.Request = Request;
-	Query_Parms.Response = Response;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnQuery, &Query_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebApplication.PreQuery
-// [0x00020002]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// class UWebRequest*             Request                        ( CPF_Parm )
-// class UWebResponse*            Response                       ( CPF_Parm )
+// (Defined, Public)
+// Parameters:
+// class UWebRequest*             Request                        (Parm)
+// class UWebResponse*            Response                       (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UWebApplication::PreQuery(class UWebRequest* Request, class UWebResponse* Response)
 {
-	static UFunction* pFnPreQuery = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebApplication.PreQuery");
 
-	if (!pFnPreQuery)
-		pFnPreQuery = (UFunction*)UObject::GObjects()->Data[45176];
+	UWebApplication_PreQuery_Params params;
+	params.Request = Request;
+	params.Response = Response;
 
-	UWebApplication_execPreQuery_Parms PreQuery_Parms;
-	PreQuery_Parms.Request = Request;
-	PreQuery_Parms.Response = Response;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnPreQuery, &PreQuery_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return PreQuery_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.WebApplication.CleanupApp
-// [0x00020002]
-// Parameters infos:
+// (Defined, Public)
 
 void UWebApplication::CleanupApp()
 {
-	static UFunction* pFnCleanupApp = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebApplication.CleanupApp");
 
-	if (!pFnCleanupApp)
-		pFnCleanupApp = (UFunction*)UObject::GObjects()->Data[45175];
+	UWebApplication_CleanupApp_Params params;
 
-	UWebApplication_execCleanupApp_Parms CleanupApp_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnCleanupApp, &CleanupApp_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebApplication.Cleanup
-// [0x00020001] ( FUNC_Final )
-// Parameters infos:
+// (Final, Public)
 
 void UWebApplication::Cleanup()
 {
-	static UFunction* pFnCleanup = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebApplication.Cleanup");
 
-	if (!pFnCleanup)
-		pFnCleanup = (UFunction*)UObject::GObjects()->Data[45174];
+	UWebApplication_Cleanup_Params params;
 
-	UWebApplication_execCleanup_Parms Cleanup_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnCleanup, &Cleanup_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebApplication.Init
-// [0x00020000]
-// Parameters infos:
+// (Public)
 
 void UWebApplication::Init()
 {
-	static UFunction* pFnInit = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebApplication.Init");
 
-	if (!pFnInit)
-		pFnInit = (UFunction*)UObject::GObjects()->Data[45173];
+	UWebApplication_Init_Params params;
 
-	UWebApplication_execInit_Parms Init_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnInit, &Init_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebServer.GetApplication
-// [0x00420002]
-// Parameters infos:
-// class UWebApplication*         ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 URI                            ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 SubURI                         ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Defined, Public, HasOutParms)
+// Parameters:
+// struct FString                 URI                            (Parm, NeedCtorLink)
+// struct FString                 SubURI                         (Parm, OutParm, NeedCtorLink)
+// class UWebApplication*         ReturnValue                    (Parm, OutParm, ReturnParm)
 
-class UWebApplication* AWebServer::GetApplication(struct FString URI, struct FString* SubURI)
+class UWebApplication* AWebServer::GetApplication(const struct FString& URI, struct FString* SubURI)
 {
-	static UFunction* pFnGetApplication = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebServer.GetApplication");
 
-	if (!pFnGetApplication)
-		pFnGetApplication = (UFunction*)UObject::GObjects()->Data[46354];
+	AWebServer_GetApplication_Params params;
+	params.URI = URI;
 
-	AWebServer_execGetApplication_Parms GetApplication_Parms;
-	memcpy(&GetApplication_Parms.URI, &URI, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetApplication, &GetApplication_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	if (SubURI)
-		memcpy(SubURI, &GetApplication_Parms.SubURI, 0xC);
+	fn->FunctionFlags = flags;
 
-	return GetApplication_Parms.ReturnValue;
-};
+	if (SubURI != nullptr)
+		*SubURI = params.SubURI;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.WebServer.LostChild
-// [0x00020802] ( FUNC_Event )
-// Parameters infos:
-// class AActor*                  C                              ( CPF_Parm )
+// (Defined, Event, Public)
+// Parameters:
+// class AActor*                  C                              (Parm)
 
-void AWebServer::eventLostChild(class AActor* C)
+void AWebServer::LostChild(class AActor* C)
 {
-	static UFunction* pFnLostChild = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebServer.LostChild");
 
-	if (!pFnLostChild)
-		pFnLostChild = (UFunction*)UObject::GObjects()->Data[46483];
+	AWebServer_LostChild_Params params;
+	params.C = C;
 
-	AWebServer_eventLostChild_Parms LostChild_Parms;
-	LostChild_Parms.C = C;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnLostChild, &LostChild_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebServer.GainedChild
-// [0x00020802] ( FUNC_Event )
-// Parameters infos:
-// class AActor*                  C                              ( CPF_Parm )
+// (Defined, Event, Public)
+// Parameters:
+// class AActor*                  C                              (Parm)
 
-void AWebServer::eventGainedChild(class AActor* C)
+void AWebServer::GainedChild(class AActor* C)
 {
-	static UFunction* pFnGainedChild = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebServer.GainedChild");
 
-	if (!pFnGainedChild)
-		pFnGainedChild = (UFunction*)UObject::GObjects()->Data[46481];
+	AWebServer_GainedChild_Params params;
+	params.C = C;
 
-	AWebServer_eventGainedChild_Parms GainedChild_Parms;
-	GainedChild_Parms.C = C;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGainedChild, &GainedChild_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebServer.Destroyed
-// [0x00020802] ( FUNC_Event )
-// Parameters infos:
+// (Defined, Event, Public)
 
-void AWebServer::eventDestroyed()
+void AWebServer::Destroyed()
 {
-	static UFunction* pFnDestroyed = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebServer.Destroyed");
 
-	if (!pFnDestroyed)
-		pFnDestroyed = (UFunction*)UObject::GObjects()->Data[46480];
+	AWebServer_Destroyed_Params params;
 
-	AWebServer_eventDestroyed_Parms Destroyed_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnDestroyed, &Destroyed_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebServer.PostBeginPlay
-// [0x00820002]
-// Parameters infos:
+// (Defined, Public, HasDefaults)
 
 void AWebServer::PostBeginPlay()
 {
-	static UFunction* pFnPostBeginPlay = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebServer.PostBeginPlay");
 
-	if (!pFnPostBeginPlay)
-		pFnPostBeginPlay = (UFunction*)UObject::GObjects()->Data[46477];
+	AWebServer_PostBeginPlay_Params params;
 
-	AWebServer_execPostBeginPlay_Parms PostBeginPlay_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnPostBeginPlay, &PostBeginPlay_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.HelloWeb.Query
-// [0x00020802] ( FUNC_Event )
-// Parameters infos:
-// class UWebRequest*             Request                        ( CPF_Parm )
-// class UWebResponse*            Response                       ( CPF_Parm )
+// (Defined, Event, Public)
+// Parameters:
+// class UWebRequest*             Request                        (Parm)
+// class UWebResponse*            Response                       (Parm)
 
-void UHelloWeb::eventQuery(class UWebRequest* Request, class UWebResponse* Response)
+void UHelloWeb::Query(class UWebRequest* Request, class UWebResponse* Response)
 {
-	static UFunction* pFnQuery = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.HelloWeb.Query");
 
-	if (!pFnQuery)
-		pFnQuery = (UFunction*)UObject::GObjects()->Data[45189];
+	UHelloWeb_Query_Params params;
+	params.Request = Request;
+	params.Response = Response;
 
-	UHelloWeb_eventQuery_Parms Query_Parms;
-	Query_Parms.Request = Request;
-	Query_Parms.Response = Response;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnQuery, &Query_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.HelloWeb.Init
-// [0x00020002]
-// Parameters infos:
+// (Defined, Public)
 
 void UHelloWeb::Init()
 {
-	static UFunction* pFnInit = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.HelloWeb.Init");
 
-	if (!pFnInit)
-		pFnInit = (UFunction*)UObject::GObjects()->Data[45188];
+	UHelloWeb_Init_Params params;
 
-	UHelloWeb_execInit_Parms Init_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnInit, &Init_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.ImageServer.Query
-// [0x00020802] ( FUNC_Event )
-// Parameters infos:
-// class UWebRequest*             Request                        ( CPF_Parm )
-// class UWebResponse*            Response                       ( CPF_Parm )
+// (Defined, Event, Public)
+// Parameters:
+// class UWebRequest*             Request                        (Parm)
+// class UWebResponse*            Response                       (Parm)
 
-void UImageServer::eventQuery(class UWebRequest* Request, class UWebResponse* Response)
+void UImageServer::Query(class UWebRequest* Request, class UWebResponse* Response)
 {
-	static UFunction* pFnQuery = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.ImageServer.Query");
 
-	if (!pFnQuery)
-		pFnQuery = (UFunction*)UObject::GObjects()->Data[45206];
+	UImageServer_Query_Params params;
+	params.Request = Request;
+	params.Response = Response;
 
-	UImageServer_eventQuery_Parms Query_Parms;
-	Query_Parms.Request = Request;
-	Query_Parms.Response = Response;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnQuery, &Query_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebConnection.IsHanging
-// [0x00020003] ( FUNC_Final )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Final, Defined, Public)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool AWebConnection::IsHanging()
 {
-	static UFunction* pFnIsHanging = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebConnection.IsHanging");
 
-	if (!pFnIsHanging)
-		pFnIsHanging = (UFunction*)UObject::GObjects()->Data[46368];
+	AWebConnection_IsHanging_Params params;
 
-	AWebConnection_execIsHanging_Parms IsHanging_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnIsHanging, &IsHanging_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return IsHanging_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function IpDrv.WebConnection.Cleanup
-// [0x00020002]
-// Parameters infos:
+// (Defined, Public)
 
 void AWebConnection::Cleanup()
 {
-	static UFunction* pFnCleanup = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebConnection.Cleanup");
 
-	if (!pFnCleanup)
-		pFnCleanup = (UFunction*)UObject::GObjects()->Data[46367];
+	AWebConnection_Cleanup_Params params;
 
-	AWebConnection_execCleanup_Parms Cleanup_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnCleanup, &Cleanup_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebConnection.CheckRawBytes
-// [0x00020002]
-// Parameters infos:
+// (Defined, Public)
 
 void AWebConnection::CheckRawBytes()
 {
-	static UFunction* pFnCheckRawBytes = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebConnection.CheckRawBytes");
 
-	if (!pFnCheckRawBytes)
-		pFnCheckRawBytes = (UFunction*)UObject::GObjects()->Data[46365];
+	AWebConnection_CheckRawBytes_Params params;
 
-	AWebConnection_execCheckRawBytes_Parms CheckRawBytes_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnCheckRawBytes, &CheckRawBytes_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebConnection.EndOfHeaders
-// [0x00020002]
-// Parameters infos:
+// (Defined, Public)
 
 void AWebConnection::EndOfHeaders()
 {
-	static UFunction* pFnEndOfHeaders = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebConnection.EndOfHeaders");
 
-	if (!pFnEndOfHeaders)
-		pFnEndOfHeaders = (UFunction*)UObject::GObjects()->Data[46363];
+	AWebConnection_EndOfHeaders_Params params;
 
-	AWebConnection_execEndOfHeaders_Parms EndOfHeaders_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnEndOfHeaders, &EndOfHeaders_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebConnection.CreateResponseObject
-// [0x00020002]
-// Parameters infos:
+// (Defined, Public)
 
 void AWebConnection::CreateResponseObject()
 {
-	static UFunction* pFnCreateResponseObject = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebConnection.CreateResponseObject");
 
-	if (!pFnCreateResponseObject)
-		pFnCreateResponseObject = (UFunction*)UObject::GObjects()->Data[46360];
+	AWebConnection_CreateResponseObject_Params params;
 
-	AWebConnection_execCreateResponseObject_Parms CreateResponseObject_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnCreateResponseObject, &CreateResponseObject_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebConnection.ProcessPost
-// [0x00020002]
-// Parameters infos:
-// struct FString                 S                              ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FString                 S                              (Parm, NeedCtorLink)
 
-void AWebConnection::ProcessPost(struct FString S)
+void AWebConnection::ProcessPost(const struct FString& S)
 {
-	static UFunction* pFnProcessPost = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebConnection.ProcessPost");
 
-	if (!pFnProcessPost)
-		pFnProcessPost = (UFunction*)UObject::GObjects()->Data[46358];
+	AWebConnection_ProcessPost_Params params;
+	params.S = S;
 
-	AWebConnection_execProcessPost_Parms ProcessPost_Parms;
-	memcpy(&ProcessPost_Parms.S, &S, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnProcessPost, &ProcessPost_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebConnection.ProcessGet
-// [0x00020002]
-// Parameters infos:
-// struct FString                 S                              ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FString                 S                              (Parm, NeedCtorLink)
 
-void AWebConnection::ProcessGet(struct FString S)
+void AWebConnection::ProcessGet(const struct FString& S)
 {
-	static UFunction* pFnProcessGet = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebConnection.ProcessGet");
 
-	if (!pFnProcessGet)
-		pFnProcessGet = (UFunction*)UObject::GObjects()->Data[46351];
+	AWebConnection_ProcessGet_Params params;
+	params.S = S;
 
-	AWebConnection_execProcessGet_Parms ProcessGet_Parms;
-	memcpy(&ProcessGet_Parms.S, &S, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnProcessGet, &ProcessGet_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebConnection.ProcessHead
-// [0x00020002]
-// Parameters infos:
-// struct FString                 S                              ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FString                 S                              (Parm, NeedCtorLink)
 
-void AWebConnection::ProcessHead(struct FString S)
+void AWebConnection::ProcessHead(const struct FString& S)
 {
-	static UFunction* pFnProcessHead = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebConnection.ProcessHead");
 
-	if (!pFnProcessHead)
-		pFnProcessHead = (UFunction*)UObject::GObjects()->Data[46349];
+	AWebConnection_ProcessHead_Params params;
+	params.S = S;
 
-	AWebConnection_execProcessHead_Parms ProcessHead_Parms;
-	memcpy(&ProcessHead_Parms.S, &S, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnProcessHead, &ProcessHead_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebConnection.ReceivedLine
-// [0x00020002]
-// Parameters infos:
-// struct FString                 S                              ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FString                 S                              (Parm, NeedCtorLink)
 
-void AWebConnection::ReceivedLine(struct FString S)
+void AWebConnection::ReceivedLine(const struct FString& S)
 {
-	static UFunction* pFnReceivedLine = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebConnection.ReceivedLine");
 
-	if (!pFnReceivedLine)
-		pFnReceivedLine = (UFunction*)UObject::GObjects()->Data[46347];
+	AWebConnection_ReceivedLine_Params params;
+	params.S = S;
 
-	AWebConnection_execReceivedLine_Parms ReceivedLine_Parms;
-	memcpy(&ReceivedLine_Parms.S, &S, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnReceivedLine, &ReceivedLine_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebConnection.ReceivedText
-// [0x00020802] ( FUNC_Event )
-// Parameters infos:
-// struct FString                 Text                           ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Event, Public)
+// Parameters:
+// struct FString                 Text                           (Parm, NeedCtorLink)
 
-void AWebConnection::eventReceivedText(struct FString Text)
+void AWebConnection::ReceivedText(const struct FString& Text)
 {
-	static UFunction* pFnReceivedText = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebConnection.ReceivedText");
 
-	if (!pFnReceivedText)
-		pFnReceivedText = (UFunction*)UObject::GObjects()->Data[46344];
+	AWebConnection_ReceivedText_Params params;
+	params.Text = Text;
 
-	AWebConnection_eventReceivedText_Parms ReceivedText_Parms;
-	memcpy(&ReceivedText_Parms.Text, &Text, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnReceivedText, &ReceivedText_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebConnection.Timer
-// [0x00020802] ( FUNC_Event )
-// Parameters infos:
+// (Defined, Event, Public)
 
-void AWebConnection::eventTimer()
+void AWebConnection::Timer()
 {
-	static UFunction* pFnTimer = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebConnection.Timer");
 
-	if (!pFnTimer)
-		pFnTimer = (UFunction*)UObject::GObjects()->Data[46343];
+	AWebConnection_Timer_Params params;
 
-	AWebConnection_eventTimer_Parms Timer_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnTimer, &Timer_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebConnection.Closed
-// [0x00020802] ( FUNC_Event )
-// Parameters infos:
+// (Defined, Event, Public)
 
-void AWebConnection::eventClosed()
+void AWebConnection::Closed()
 {
-	static UFunction* pFnClosed = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebConnection.Closed");
 
-	if (!pFnClosed)
-		pFnClosed = (UFunction*)UObject::GObjects()->Data[46342];
+	AWebConnection_Closed_Params params;
 
-	AWebConnection_eventClosed_Parms Closed_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClosed, &Closed_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function IpDrv.WebConnection.Accepted
-// [0x00020802] ( FUNC_Event )
-// Parameters infos:
+// (Defined, Event, Public)
 
-void AWebConnection::eventAccepted()
+void AWebConnection::Accepted()
 {
-	static UFunction* pFnAccepted = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "IpDrv.WebConnection.Accepted");
 
-	if (!pFnAccepted)
-		pFnAccepted = (UFunction*)UObject::GObjects()->Data[46340];
+	AWebConnection_Accepted_Params params;
 
-	AWebConnection_eventAccepted_Parms Accepted_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAccepted, &Accepted_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 #ifdef _MSC_VER
-#pragma pack ( pop )
+	#pragma pack(pop)
 #endif

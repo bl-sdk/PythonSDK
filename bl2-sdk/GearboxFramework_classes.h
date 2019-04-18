@@ -2,7 +2,7 @@
 // Borderlands 2 (1.8.5) SDK
 
 #ifdef _MSC_VER
-#pragma pack(push, 0x4)
+	#pragma pack(push, 0x4)
 #endif
 
 #include "stdafx.h"
@@ -163,7 +163,7 @@ public:
 	unsigned char                                      AnimState;                                                // 0x00EC(0x0001) (Transient)
 	unsigned char                                      UnknownData00[0x3];                                       // 0x00ED(0x0003) MISSED OFFSET
 	float                                              SavedBlendOutTime;                                        // 0x00F0(0x0004) (Transient)
-	TScriptInterface<class USpecialMoveInterface>      SMI;                                                      // 0x00F4(0x0008) (Transient)
+	FScriptInterface                                   SMI;                                                      // 0x00F4(0x0008) (Transient)
 	TArray<struct FSlotAnimParameters>                 AnimParameters;                                           // 0x00FC(0x000C) (Transient, NeedCtorLink)
 	unsigned long                                      bForceLocalSpaceBlend : 1;                                // 0x0108(0x0004) (Edit, Const)
 	unsigned long                                      IssueNotifiesWhenZeroWeight : 1;                          // 0x0108(0x0004) (Edit, Const)
@@ -371,7 +371,7 @@ public:
 	static bool ShouldContinueExecution(float TimeBetweenSteps, int MaxSteps, struct FBehaviorKernelInfo* KernelInfo, int* NumSteps);
 	static struct FName GetNextFireLocationSocket(unsigned char FireSocketSelection, TArray<struct FName> FireLocationSocketNames, TArray<struct FName>* FireLocationSocketsRemaining);
 	static bool GetRotationFromAttachmentLocationData(const struct FAttachmentLocationData& AttachmentLocation, struct FRotator* AttachmentLocationRotation);
-	static struct FVector GetRelativeDirection(const struct FRelativeDirectionData& DesiredDirection, const TScriptInterface<class UIWorldBody>& Source, const struct FVector& DefaultDirection, const struct FName& SpawnSocketName);
+	static struct FVector GetRelativeDirection(const struct FRelativeDirectionData& DesiredDirection, const FScriptInterface& Source, const struct FVector& DefaultDirection, const struct FName& SpawnSocketName);
 };
 
 
@@ -699,7 +699,7 @@ public:
 	int                                                CurrentDeviceID;                                          // 0x07B0(0x0004)
 	unsigned long                                      bHasSelectedValidStorageDevice : 1;                       // 0x07B4(0x0004) (Const, Transient)
 	struct FString                                     DefaultSparkInterfaceName;                                // 0x07B8(0x000C) (Config, NeedCtorLink)
-	TScriptInterface<class USparkInterface>            SparkInterface;                                           // 0x07C4(0x0008) (Const, Transient)
+	FScriptInterface                                   SparkInterface;                                           // 0x07C4(0x0008) (Const, Transient)
 
 	static UClass* StaticClass()
 	{
@@ -708,7 +708,7 @@ public:
 	}
 
 
-	static TScriptInterface<class USparkInterface> GetSparkInterface();
+	static FScriptInterface GetSparkInterface();
 	bool IsCurrentDeviceValid(int SizeNeeded);
 	bool HasStorageDeviceBeenRemoved();
 	int GetCurrentDeviceID();
@@ -803,8 +803,8 @@ public:
 	struct FString GetStyleDebugString();
 	struct FString GetStateDebugString(bool bIncludeFlags);
 	void InitializeFrom(class UGearboxGFxMovie* SrcMovie);
-	bool RemoveStylesDrawnTo(class UPrimitiveComponent* PrimComp, const TScriptInterface<class UIGFxActorMovie>& Target);
-	bool RemoveStyles(const TScriptInterface<class UIGFxActorMovie>& Target);
+	bool RemoveStylesDrawnTo(class UPrimitiveComponent* PrimComp, const FScriptInterface& Target);
+	bool RemoveStyles(const FScriptInterface& Target);
 	void RemoveStyle(class UGFxMovieDrawStyle* Style);
 	void AddStyle(class UGFxMovieDrawStyle* Style);
 	void ShutdownMoviePlayback();
@@ -903,7 +903,7 @@ public:
 	static class UBehaviorKernel* GetBehaviorKernel();
 	class UGearboxDialogManager* GetDialogManager();
 	float GetPopulationRespawnDelay();
-	TScriptInterface<class UIDialogBox> ShowDialog(class APlayerController* PC);
+	FScriptInterface ShowDialog(class APlayerController* PC);
 	void NotifyActorDied(class AActor* TheActor, bool bKeepBody);
 	bool DoesLOSIntersectSpecialOccluder(const struct FVector& FromLoc, const struct FVector& ToLoc, class UPawnAllegiance* AllegianceAffected);
 	static bool HasPhysXCapableGPU();
@@ -1553,7 +1553,7 @@ class UGFxActorMoviePool : public UObject
 public:
 	class UGFxMovieDefinition*                         MovieDefinition;                                          // 0x003C(0x0004)
 	TArray<struct FMovieInstanceArray>                 Pools;                                                    // 0x0040(0x000C) (NeedCtorLink)
-	TArray<TScriptInterface<class UIGFxActorMovie>>    MovieTargets;                                             // 0x004C(0x000C) (NeedCtorLink)
+	TArray<FScriptInterface>                           MovieTargets;                                             // 0x004C(0x000C) (NeedCtorLink)
 
 	static UClass* StaticClass()
 	{
@@ -1613,7 +1613,7 @@ public:
 
 	class UGFxMovieDefinition* FindMovieLink(const struct FName& MovieName);
 	void PostMovieStart(class UGearboxGFxMovie* StartedMovie);
-	class UGearboxGFxMovie* SpawnPlayerMovie(class AGearboxPlayerController* Owner, const TScriptInterface<class UIGFxActorMovie>& TargetActor, class UObject* ContextObject);
+	class UGearboxGFxMovie* SpawnPlayerMovie(class AGearboxPlayerController* Owner, const FScriptInterface& TargetActor, class UObject* ContextObject);
 	bool SupportsStatePooling();
 	unsigned char GetPoolStyle();
 };
@@ -1640,7 +1640,7 @@ class UGFxMovieDrawStyle : public UObject
 {
 public:
 	class UGearboxGFxMovie*                            Movie;                                                    // 0x003C(0x0004) (Transient)
-	TScriptInterface<class UIGFxActorMovie>            TargetActor;                                              // 0x0040(0x0008) (Transient)
+	FScriptInterface                                   TargetActor;                                              // 0x0040(0x0008) (Transient)
 
 	static UClass* StaticClass()
 	{
@@ -1784,13 +1784,13 @@ public:
 	}
 
 
-	void ChangeMovieState(const TScriptInterface<class UIGFxActorMovie>& TargetActor, const struct FName& State, unsigned char Change, class AGearboxPlayerController* PC);
+	void ChangeMovieState(const FScriptInterface& TargetActor, const struct FName& State, unsigned char Change, class AGearboxPlayerController* PC);
 	void Unsubscribe(class AGearboxPlayerController* PC);
 	void Subscribe(class AGearboxPlayerController* PC);
-	void UnregisterMoviesDrawnTo(class UPrimitiveComponent* PrimComp, const TScriptInterface<class UIGFxActorMovie>& TargetActor);
-	void UnregisterTarget(const TScriptInterface<class UIGFxActorMovie>& TargetActor);
-	void UnregisterMovie(class UGFxMovieDefinition* Definition, const TScriptInterface<class UIGFxActorMovie>& TargetActor);
-	void RegisterMovie(class UGFxMovieDefinition* Definition, const TScriptInterface<class UIGFxActorMovie>& TargetActor);
+	void UnregisterMoviesDrawnTo(class UPrimitiveComponent* PrimComp, const FScriptInterface& TargetActor);
+	void UnregisterTarget(const FScriptInterface& TargetActor);
+	void UnregisterMovie(class UGFxMovieDefinition* Definition, const FScriptInterface& TargetActor);
+	void RegisterMovie(class UGFxMovieDefinition* Definition, const FScriptInterface& TargetActor);
 };
 
 
@@ -1863,7 +1863,7 @@ public:
 	class UPawnAllegiance* GetAllegiance();
 	class UAIDefinition* GetAIDefinition();
 	class UAIComponent* GetAIComponent();
-	TScriptInterface<class UIAIInterface> GetAIParent();
+	FScriptInterface GetAIParent();
 	struct FVector GetAILocation();
 	class AActor* GetAIActor();
 	bool CanTickAI();
@@ -2414,15 +2414,15 @@ public:
 	}
 
 
-	bool IsPlayingLocally(const TScriptInterface<class USpecialMoveInterface>& SMI);
-	class USpecialMoveDefinition* GetSMDToPlay(const TScriptInterface<class USpecialMoveInterface>& SMI);
-	bool Contains(class USpecialMoveDefinition* SMD, const TScriptInterface<class USpecialMoveInterface>& SMI);
-	void ClientFinished(const TScriptInterface<class USpecialMoveInterface>& SMI, bool bInterrupted);
-	void ServerFinished(const TScriptInterface<class USpecialMoveInterface>& SMI, bool bInterrupted);
-	float ClientStarted(const TScriptInterface<class USpecialMoveInterface>& SMI, struct FSpecialMoveData* SMData);
-	void ServerStarted(const TScriptInterface<class USpecialMoveInterface>& SMI);
-	bool IsLocalAuthority(const TScriptInterface<class USpecialMoveInterface>& SMI);
-	bool AuthorityCanPlay(const TScriptInterface<class USpecialMoveInterface>& SMI);
+	bool IsPlayingLocally(const FScriptInterface& SMI);
+	class USpecialMoveDefinition* GetSMDToPlay(const FScriptInterface& SMI);
+	bool Contains(class USpecialMoveDefinition* SMD, const FScriptInterface& SMI);
+	void ClientFinished(const FScriptInterface& SMI, bool bInterrupted);
+	void ServerFinished(const FScriptInterface& SMI, bool bInterrupted);
+	float ClientStarted(const FScriptInterface& SMI, struct FSpecialMoveData* SMData);
+	void ServerStarted(const FScriptInterface& SMI);
+	bool IsLocalAuthority(const FScriptInterface& SMI);
+	bool AuthorityCanPlay(const FScriptInterface& SMI);
 };
 
 
@@ -2434,7 +2434,7 @@ public:
 	unsigned char                                      UnknownData00[0x3];                                       // 0x0059(0x0003) MISSED OFFSET
 	unsigned long                                      bLocalPlay : 1;                                           // 0x005C(0x0004) (Transient)
 	float                                              StartTime;                                                // 0x0060(0x0004) (Transient)
-	TScriptInterface<class USpecialMoveInterface>      SMI;                                                      // 0x0064(0x0008) (Transient)
+	FScriptInterface                                   SMI;                                                      // 0x0064(0x0008) (Transient)
 	struct FSpecialMoveData                            CurrentSMData;                                            // 0x006C(0x001C) (Transient)
 	TArray<struct FSpecialMoveData>                    SMDQueue;                                                 // 0x0088(0x000C) (Transient, NeedCtorLink)
 	class UAnimNodeSpecialMoveBlend*                   SMBlendNode;                                              // 0x0094(0x0004) (Transient)
@@ -2488,8 +2488,8 @@ public:
 	}
 
 
-	bool Contains(class USpecialMoveDefinition* SMD, const TScriptInterface<class USpecialMoveInterface>& SMI);
-	class USpecialMoveDefinition* GetSMDToPlay(const TScriptInterface<class USpecialMoveInterface>& SMI);
+	bool Contains(class USpecialMoveDefinition* SMD, const FScriptInterface& SMI);
+	class USpecialMoveDefinition* GetSMDToPlay(const FScriptInterface& SMI);
 };
 
 
@@ -2507,8 +2507,8 @@ public:
 	}
 
 
-	bool Contains(class USpecialMoveDefinition* SMD, const TScriptInterface<class USpecialMoveInterface>& SMI);
-	class USpecialMoveDefinition* GetSMDToPlay(const TScriptInterface<class USpecialMoveInterface>& SMI);
+	bool Contains(class USpecialMoveDefinition* SMD, const FScriptInterface& SMI);
+	class USpecialMoveDefinition* GetSMDToPlay(const FScriptInterface& SMI);
 };
 
 
@@ -2639,7 +2639,7 @@ class UAIComponent : public UActorComponent
 public:
 	unsigned char                                      UnknownData00[0x3];                                       // 0x0059(0x0003) MISSED OFFSET
 	float                                              UpdateRate;                                               // 0x005C(0x0004)
-	TScriptInterface<class UIAIInterface>              AI;                                                       // 0x0060(0x0008) (Transient)
+	FScriptInterface                                   AI;                                                       // 0x0060(0x0008) (Transient)
 	unsigned long                                      bInitialized : 1;                                         // 0x0068(0x0004) (Transient)
 	class UAIDefinition*                               AIDef;                                                    // 0x006C(0x0004) (Transient)
 	float                                              LastStateUpdateTime;                                      // 0x0070(0x0004) (Transient)
@@ -2760,7 +2760,7 @@ public:
 	float                                              StoredDeltaTime;                                          // 0x0070(0x0004)
 	TArray<struct FFlagDefinitionInitialization>       FlagValuesToSetOnBegin;                                   // 0x0074(0x000C) (Edit, Const, NeedCtorLink)
 	TArray<struct FFlagDefinitionInitialization>       FlagValuesToSetOnEnd;                                     // 0x0080(0x000C) (Edit, Const, NeedCtorLink)
-	TScriptInterface<class UIAIInterface>              AI;                                                       // 0x008C(0x0008)
+	FScriptInterface                                   AI;                                                       // 0x008C(0x0008)
 	TArray<struct FName>                               BehaviorOutputs;                                          // 0x0094(0x000C) (Const, NeedCtorLink)
 	struct FName                                       BehaviorName;                                             // 0x00A0(0x0008) (Const, EditConst)
 
@@ -3723,7 +3723,7 @@ public:
 class UGbxMessageManager : public UObject
 {
 public:
-	TArray<TScriptInterface<class UIGbxMessageListener>> Listeners;                                                // 0x003C(0x000C) (NeedCtorLink)
+	TArray<FScriptInterface>                           Listeners;                                                // 0x003C(0x000C) (NeedCtorLink)
 	TArray<class UGbxMessage*>                         MessagesToSend;                                           // 0x0048(0x000C) (NeedCtorLink)
 	struct FFlag                                       SentMessagesRecently;                                     // 0x0054(0x0010)
 	float                                              DistributionInterval;                                     // 0x0064(0x0004) (Const)
@@ -3736,8 +3736,8 @@ public:
 	}
 
 
-	void RemoveListener(const TScriptInterface<class UIGbxMessageListener>& InListener);
-	void AddListener(const TScriptInterface<class UIGbxMessageListener>& InListener);
+	void RemoveListener(const FScriptInterface& InListener);
+	void AddListener(const FScriptInterface& InListener);
 	void PostMessage(class UGbxMessage* Message);
 	class UGbxMessage* AllocateMessage();
 };
@@ -3864,7 +3864,7 @@ public:
 	class UPawnAllegiance* GetAllegiance();
 	class UAIDefinition* GetAIDefinition();
 	class UAIComponent* GetAIComponent();
-	TScriptInterface<class UIAIInterface> GetAIParent();
+	FScriptInterface GetAIParent();
 	struct FVector GetAILocation();
 	class AActor* GetAIActor();
 	bool CanTickAI();
@@ -5199,7 +5199,7 @@ public:
 
 	void ClearBodyCompositionInstance();
 	void ApplyPreviewBodyComposition();
-	TScriptInterface<class UIBodyInfoProvider> GetBodyInfoProvider();
+	FScriptInterface GetBodyInfoProvider();
 	void ChangeInstanceDataSwitch(const struct FName& SwitchName, unsigned char NewValue);
 	void PostInitBodyComposition(const struct FName& Identifier, class UObject* Value, int BodyCompositionIndex, unsigned char Mode);
 	void PreRemoveBodyComposition(const struct FName& Identifier, class UObject* Value, int BodyCompositionIndex);
@@ -5305,7 +5305,7 @@ public:
 
 
 	void ApplyPreviewBodyComposition();
-	TScriptInterface<class UIBodyInfoProvider> GetBodyInfoProvider();
+	FScriptInterface GetBodyInfoProvider();
 	void RespawnKilledActors(float PercentageOfKilledActorsToRespawn);
 	void DoSpawning(class UPopulationMaster* PopMaster);
 };
@@ -5337,7 +5337,7 @@ public:
 
 
 	void ApplyPreviewBodyComposition();
-	TScriptInterface<class UIBodyInfoProvider> GetBodyInfoProvider();
+	FScriptInterface GetBodyInfoProvider();
 	void CloneTimer();
 	void RespawnKilledActors(float PercentageOfKilledActorsToRespawn);
 	void DoSpawning(class UPopulationMaster* PopMaster);
@@ -5383,7 +5383,7 @@ public:
 
 
 	void ApplyPreviewBodyComposition();
-	TScriptInterface<class UIBodyInfoProvider> GetBodyInfoProvider();
+	FScriptInterface GetBodyInfoProvider();
 	void TriggerKismetSingleDeathEvent();
 	void TriggerKismetDeathEvent();
 	float GetNumSpawned();
@@ -5429,7 +5429,7 @@ public:
 
 	void ClearBodyCompositionInstance();
 	void ApplyPreviewBodyComposition();
-	TScriptInterface<class UIBodyInfoProvider> GetBodyInfoProvider();
+	FScriptInterface GetBodyInfoProvider();
 	void ChangeInstanceDataSwitch(const struct FName& SwitchName, unsigned char NewValue);
 	void PostInitBodyComposition(const struct FName& Identifier, class UObject* Value, int BodyCompositionIndex, unsigned char Mode);
 	void PreRemoveBodyComposition(const struct FName& Identifier, class UObject* Value, int BodyCompositionIndex);
@@ -5899,17 +5899,17 @@ public:
 
 
 	float GetAnimLength(class USkeletalMeshComponent* SMC);
-	bool IsPlayingLocally(const TScriptInterface<class USpecialMoveInterface>& SMI);
-	class UAnimNodeSpecialMoveBlend* GetSMNode(const TScriptInterface<class USpecialMoveInterface>& SMI);
-	float PlayAnim(const TScriptInterface<class USpecialMoveInterface>& SMI, struct FSpecialMoveData* SMData);
-	void AnimFinished(const TScriptInterface<class USpecialMoveInterface>& SMI, class UAnimNodeSpecialMoveBlend* BlendNode, bool bInterrupted, struct FSpecialMoveData* SMData);
-	void ClientFinished(const TScriptInterface<class USpecialMoveInterface>& SMI, bool bInterrupted);
-	float ClientStarted(const TScriptInterface<class USpecialMoveInterface>& SMI, struct FSpecialMoveData* SMData);
-	void ServerFinished(const TScriptInterface<class USpecialMoveInterface>& SMI, bool bInterrupted);
-	void ServerStarted(const TScriptInterface<class USpecialMoveInterface>& SMI);
-	void AddAnimSet(const TScriptInterface<class USpecialMoveInterface>& SMI);
-	class USkeletalMeshComponent* GetSkeletalMesh(const TScriptInterface<class USpecialMoveInterface>& SMI);
-	bool AuthorityCanPlay(const TScriptInterface<class USpecialMoveInterface>& SMI);
+	bool IsPlayingLocally(const FScriptInterface& SMI);
+	class UAnimNodeSpecialMoveBlend* GetSMNode(const FScriptInterface& SMI);
+	float PlayAnim(const FScriptInterface& SMI, struct FSpecialMoveData* SMData);
+	void AnimFinished(const FScriptInterface& SMI, class UAnimNodeSpecialMoveBlend* BlendNode, bool bInterrupted, struct FSpecialMoveData* SMData);
+	void ClientFinished(const FScriptInterface& SMI, bool bInterrupted);
+	float ClientStarted(const FScriptInterface& SMI, struct FSpecialMoveData* SMData);
+	void ServerFinished(const FScriptInterface& SMI, bool bInterrupted);
+	void ServerStarted(const FScriptInterface& SMI);
+	void AddAnimSet(const FScriptInterface& SMI);
+	class USkeletalMeshComponent* GetSkeletalMesh(const FScriptInterface& SMI);
+	bool AuthorityCanPlay(const FScriptInterface& SMI);
 	void OnTimedEvent(const struct FName& SpecializedEventName, struct FBehaviorConsumerHandle* ConsumerHandle);
 	void OnServerStop(struct FBehaviorConsumerHandle* ConsumerHandle);
 	void OnServerStart(struct FBehaviorConsumerHandle* ConsumerHandle);
@@ -6003,7 +6003,7 @@ public:
 	void Talk(class UGearboxDialogAct_Talk* TalkAction);
 	void GetMatchingEvent(class UGearboxDialogEventTag* InEventTag, bool bIncludeDisabled, class UGearboxDialogNameTag* OtherNameTag, bool bAllowTemplateGroups, class UGearboxDialogEvent** OutEvent, class UGearboxDialogGroup** OutGroup);
 	class UGearboxDialogEventData* TriggerEvent(class UGearboxDialogEventTag* EventTag, class AActor* Other, class UObject* ObjectParameter, class UGearboxDialogEventData* TemplateEventData);
-	TScriptInterface<class UGearboxDialogInterface> GetDialogInterface();
+	FScriptInterface GetDialogInterface();
 };
 
 
@@ -7609,7 +7609,7 @@ public:
 	}
 
 
-	class USparkServiceConfiguration* Internal_GetService(unsigned char ControllerId, const TScriptInterface<class USparkInterface>& Spark);
+	class USparkServiceConfiguration* Internal_GetService(unsigned char ControllerId, const FScriptInterface& Spark);
 	void CallAndClearRetrievedDelegate(unsigned char RetrievealResult);
 	void ParseArticles(class UJsonObject* NewsArticlesJSONObject);
 	void HandleNewsRetrievalResponse(struct FSparkResult* Result);
@@ -7950,5 +7950,5 @@ public:
 
 
 #ifdef _MSC_VER
-#pragma pack(pop)
+	#pragma pack(pop)
 #endif

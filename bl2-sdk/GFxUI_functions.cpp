@@ -1,4673 +1,4542 @@
-#include "stdafx.h"
-/*
-#############################################################################################
-# Borderlands 2 (1.7) SDK
-# Generated with TheFeckless UE3 SDK Generator v1.4_Beta-Rev.51
-# ========================================================================================= #
-# File: GFxUI_functions.h
-# ========================================================================================= #
-# Credits: uNrEaL, Tamimego, SystemFiles, R00T88, _silencer, the1domo, K@N@VEL
-# Thanks: HOOAH07, lowHertz
-# Forums: www.uc-forum.com, www.gamedeception.net
-#############################################################################################
-*/
+// Borderlands 2 (1.8.5) SDK
 
 #ifdef _MSC_VER
-#pragma pack ( push, 0x4 )
+	#pragma pack(push, 0x4)
 #endif
 
-/*
-# ========================================================================================= #
-# Global Static Class Pointers
-# ========================================================================================= #
-*/
+#include "stdafx.h"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-# ========================================================================================= #
-# Functions
-# ========================================================================================= #
-*/
+//---------------------------------------------------------------------------
+//Functions
+//---------------------------------------------------------------------------
 
 // Function GFxUI.GFxFSCmdHandler.FSCommand
-// [0x00020800] ( FUNC_Event )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// class UGFxMoviePlayer*         Movie                          ( CPF_Parm )
-// class UGFxEvent_FSCommand*     Event                          ( CPF_Parm )
-// struct FString                 Cmd                            ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 Arg                            ( CPF_Parm | CPF_NeedCtorLink )
+// (Event, Public)
+// Parameters:
+// class UGFxMoviePlayer*         Movie                          (Parm)
+// class UGFxEvent_FSCommand*     Event                          (Parm)
+// struct FString                 Cmd                            (Parm, NeedCtorLink)
+// struct FString                 Arg                            (Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxFSCmdHandler::eventFSCommand(class UGFxMoviePlayer* Movie, class UGFxEvent_FSCommand* Event, struct FString Cmd, struct FString Arg)
+bool UGFxFSCmdHandler::FSCommand(class UGFxMoviePlayer* Movie, class UGFxEvent_FSCommand* Event, const struct FString& Cmd, const struct FString& Arg)
 {
-	static UFunction* pFnFSCommand = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxFSCmdHandler.FSCommand");
 
-	if (!pFnFSCommand)
-		pFnFSCommand = (UFunction*)UObject::GObjects()->Data[38370];
+	UGFxFSCmdHandler_FSCommand_Params params;
+	params.Movie = Movie;
+	params.Event = Event;
+	params.Cmd = Cmd;
+	params.Arg = Arg;
 
-	UGFxFSCmdHandler_eventFSCommand_Parms FSCommand_Parms;
-	FSCommand_Parms.Movie = Movie;
-	FSCommand_Parms.Event = Event;
-	memcpy(&FSCommand_Parms.Cmd, &Cmd, 0xC);
-	memcpy(&FSCommand_Parms.Arg, &Arg, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnFSCommand, &FSCommand_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return FSCommand_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function GFxUI.GFxInteraction.CloseAllMoviePlayers
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
+// (Native, Public)
 
 void UGFxInteraction::CloseAllMoviePlayers()
 {
-	static UFunction* pFnCloseAllMoviePlayers = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxInteraction.CloseAllMoviePlayers");
 
-	if (!pFnCloseAllMoviePlayers)
-		pFnCloseAllMoviePlayers = (UFunction*)UObject::GObjects()->Data[38394];
+	UGFxInteraction_CloseAllMoviePlayers_Params params;
 
-	UGFxInteraction_execCloseAllMoviePlayers_Parms CloseAllMoviePlayers_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnCloseAllMoviePlayers->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnCloseAllMoviePlayers, &CloseAllMoviePlayers_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnCloseAllMoviePlayers->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxInteraction.NotifySplitscreenLayoutChanged
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
+// (Native, Public)
 
 void UGFxInteraction::NotifySplitscreenLayoutChanged()
 {
-	static UFunction* pFnNotifySplitscreenLayoutChanged = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxInteraction.NotifySplitscreenLayoutChanged");
 
-	if (!pFnNotifySplitscreenLayoutChanged)
-		pFnNotifySplitscreenLayoutChanged = (UFunction*)UObject::GObjects()->Data[38393];
+	UGFxInteraction_NotifySplitscreenLayoutChanged_Params params;
 
-	UGFxInteraction_execNotifySplitscreenLayoutChanged_Parms NotifySplitscreenLayoutChanged_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnNotifySplitscreenLayoutChanged->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnNotifySplitscreenLayoutChanged, &NotifySplitscreenLayoutChanged_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnNotifySplitscreenLayoutChanged->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxInteraction.NotifyPlayerRemoved
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// int                            PlayerIndex                    ( CPF_Parm )
-// class ULocalPlayer*            RemovedPlayer                  ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// int                            PlayerIndex                    (Parm)
+// class ULocalPlayer*            RemovedPlayer                  (Parm)
 
 void UGFxInteraction::NotifyPlayerRemoved(int PlayerIndex, class ULocalPlayer* RemovedPlayer)
 {
-	static UFunction* pFnNotifyPlayerRemoved = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxInteraction.NotifyPlayerRemoved");
 
-	if (!pFnNotifyPlayerRemoved)
-		pFnNotifyPlayerRemoved = (UFunction*)UObject::GObjects()->Data[38390];
+	UGFxInteraction_NotifyPlayerRemoved_Params params;
+	params.PlayerIndex = PlayerIndex;
+	params.RemovedPlayer = RemovedPlayer;
 
-	UGFxInteraction_execNotifyPlayerRemoved_Parms NotifyPlayerRemoved_Parms;
-	NotifyPlayerRemoved_Parms.PlayerIndex = PlayerIndex;
-	NotifyPlayerRemoved_Parms.RemovedPlayer = RemovedPlayer;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnNotifyPlayerRemoved->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnNotifyPlayerRemoved, &NotifyPlayerRemoved_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnNotifyPlayerRemoved->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxInteraction.NotifyPlayerAdded
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// int                            PlayerIndex                    ( CPF_Parm )
-// class ULocalPlayer*            AddedPlayer                    ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// int                            PlayerIndex                    (Parm)
+// class ULocalPlayer*            AddedPlayer                    (Parm)
 
 void UGFxInteraction::NotifyPlayerAdded(int PlayerIndex, class ULocalPlayer* AddedPlayer)
 {
-	static UFunction* pFnNotifyPlayerAdded = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxInteraction.NotifyPlayerAdded");
 
-	if (!pFnNotifyPlayerAdded)
-		pFnNotifyPlayerAdded = (UFunction*)UObject::GObjects()->Data[38387];
+	UGFxInteraction_NotifyPlayerAdded_Params params;
+	params.PlayerIndex = PlayerIndex;
+	params.AddedPlayer = AddedPlayer;
 
-	UGFxInteraction_execNotifyPlayerAdded_Parms NotifyPlayerAdded_Parms;
-	NotifyPlayerAdded_Parms.PlayerIndex = PlayerIndex;
-	NotifyPlayerAdded_Parms.AddedPlayer = AddedPlayer;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnNotifyPlayerAdded->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnNotifyPlayerAdded, &NotifyPlayerAdded_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnNotifyPlayerAdded->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxInteraction.NotifyGameSessionEnded
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
+// (Native, Public)
 
 void UGFxInteraction::NotifyGameSessionEnded()
 {
-	static UFunction* pFnNotifyGameSessionEnded = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxInteraction.NotifyGameSessionEnded");
 
-	if (!pFnNotifyGameSessionEnded)
-		pFnNotifyGameSessionEnded = (UFunction*)UObject::GObjects()->Data[38386];
+	UGFxInteraction_NotifyGameSessionEnded_Params params;
 
-	UGFxInteraction_execNotifyGameSessionEnded_Parms NotifyGameSessionEnded_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnNotifyGameSessionEnded->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnNotifyGameSessionEnded, &NotifyGameSessionEnded_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnNotifyGameSessionEnded->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxInteraction.GetFocusMovie
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// class UGFxMoviePlayer*         ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            ControllerId                   ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// int                            ControllerId                   (Parm)
+// class UGFxMoviePlayer*         ReturnValue                    (Parm, OutParm, ReturnParm)
 
 class UGFxMoviePlayer* UGFxInteraction::GetFocusMovie(int ControllerId)
 {
-	static UFunction* pFnGetFocusMovie = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxInteraction.GetFocusMovie");
 
-	if (!pFnGetFocusMovie)
-		pFnGetFocusMovie = (UFunction*)UObject::GObjects()->Data[38383];
+	UGFxInteraction_GetFocusMovie_Params params;
+	params.ControllerId = ControllerId;
 
-	UGFxInteraction_execGetFocusMovie_Parms GetFocusMovie_Parms;
-	GetFocusMovie_Parms.ControllerId = ControllerId;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetFocusMovie->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetFocusMovie, &GetFocusMovie_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetFocusMovie->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetFocusMovie_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxManager.GetFocusMovie
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// class UGFxMoviePlayer*         ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            ControllerId                   ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// int                            ControllerId                   (Parm)
+// class UGFxMoviePlayer*         ReturnValue                    (Parm, OutParm, ReturnParm)
 
 class UGFxMoviePlayer* UGFxManager::GetFocusMovie(int ControllerId)
 {
-	static UFunction* pFnGetFocusMovie = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxManager.GetFocusMovie");
 
-	if (!pFnGetFocusMovie)
-		pFnGetFocusMovie = (UFunction*)UObject::GObjects()->Data[38408];
+	UGFxManager_GetFocusMovie_Params params;
+	params.ControllerId = ControllerId;
 
-	UGFxManager_execGetFocusMovie_Parms GetFocusMovie_Parms;
-	GetFocusMovie_Parms.ControllerId = ControllerId;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetFocusMovie->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetFocusMovie, &GetFocusMovie_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetFocusMovie->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetFocusMovie_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxManager.LookupSound
-// [0x00020802] ( FUNC_Event )
-// Parameters infos:
-// class UAkEvent*                ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   UIEvent                        ( CPF_Parm )
+// (Defined, Event, Public)
+// Parameters:
+// struct FName                   UIEvent                        (Parm)
+// class UAkEvent*                ReturnValue                    (Parm, OutParm, ReturnParm)
 
-class UAkEvent* UGFxManager::eventLookupSound(struct FName UIEvent)
+class UAkEvent* UGFxManager::LookupSound(const struct FName& UIEvent)
 {
-	static UFunction* pFnLookupSound = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxManager.LookupSound");
 
-	if (!pFnLookupSound)
-		pFnLookupSound = (UFunction*)UObject::GObjects()->Data[38402];
+	UGFxManager_LookupSound_Params params;
+	params.UIEvent = UIEvent;
 
-	UGFxManager_eventLookupSound_Parms LookupSound_Parms;
-	memcpy(&LookupSound_Parms.UIEvent, &UIEvent, 0x8);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnLookupSound, &LookupSound_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return LookupSound_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function GFxUI.GFxManager.ShowDialog
-// [0x00020800] ( FUNC_Event )
-// Parameters infos:
-// class UIDialogBox*             ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// class APlayerController*       PC                             ( CPF_Parm )
+// (Event, Public)
+// Parameters:
+// class APlayerController*       PC                             (Parm)
+// FScriptInterface               ReturnValue                    (Parm, OutParm, ReturnParm)
 
-class UIDialogBox* UGFxManager::eventShowDialog(class APlayerController* PC)
+FScriptInterface UGFxManager::ShowDialog(class APlayerController* PC)
 {
-	static UFunction* pFnShowDialog = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxManager.ShowDialog");
 
-	if (!pFnShowDialog)
-		pFnShowDialog = (UFunction*)UObject::GObjects()->Data[38399];
+	UGFxManager_ShowDialog_Params params;
+	params.PC = PC;
 
-	UGFxManager_eventShowDialog_Parms ShowDialog_Parms;
-	ShowDialog_Parms.PC = PC;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnShowDialog, &ShowDialog_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return ShowDialog_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function GFxUI.GFxManager.Init
-// [0x00020802] ( FUNC_Event )
-// Parameters infos:
-// class UGFxManagerDefinition*   Def                            ( CPF_Parm )
+// (Defined, Event, Public)
+// Parameters:
+// class UGFxManagerDefinition*   Def                            (Parm)
 
-void UGFxManager::eventInit(class UGFxManagerDefinition* Def)
+void UGFxManager::Init(class UGFxManagerDefinition* Def)
 {
-	static UFunction* pFnInit = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxManager.Init");
 
-	if (!pFnInit)
-		pFnInit = (UFunction*)UObject::GObjects()->Data[38397];
+	UGFxManager_Init_Params params;
+	params.Def = Def;
 
-	UGFxManager_eventInit_Parms Init_Parms;
-	Init_Parms.Def = Def;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnInit, &Init_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GFxUI.GFxMoviePlayer.UnregisterGFxObject
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// class UGFxObject*              anObject                       ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// class UGFxObject*              anObject                       (Parm)
 
 void UGFxMoviePlayer::UnregisterGFxObject(class UGFxObject* anObject)
 {
-	static UFunction* pFnUnregisterGFxObject = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.UnregisterGFxObject");
 
-	if (!pFnUnregisterGFxObject)
-		pFnUnregisterGFxObject = (UFunction*)UObject::GObjects()->Data[37654];
+	UGFxMoviePlayer_UnregisterGFxObject_Params params;
+	params.anObject = anObject;
 
-	UGFxMoviePlayer_execUnregisterGFxObject_Parms UnregisterGFxObject_Parms;
-	UnregisterGFxObject_Parms.anObject = anObject;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnUnregisterGFxObject->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnUnregisterGFxObject, &UnregisterGFxObject_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnUnregisterGFxObject->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.RegisterGFxObject
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// class UGFxObject*              anObject                       ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// class UGFxObject*              anObject                       (Parm)
 
 void UGFxMoviePlayer::RegisterGFxObject(class UGFxObject* anObject)
 {
-	static UFunction* pFnRegisterGFxObject = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.RegisterGFxObject");
 
-	if (!pFnRegisterGFxObject)
-		pFnRegisterGFxObject = (UFunction*)UObject::GObjects()->Data[37655];
+	UGFxMoviePlayer_RegisterGFxObject_Params params;
+	params.anObject = anObject;
 
-	UGFxMoviePlayer_execRegisterGFxObject_Parms RegisterGFxObject_Parms;
-	RegisterGFxObject_Parms.anObject = anObject;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnRegisterGFxObject->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnRegisterGFxObject, &RegisterGFxObject_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnRegisterGFxObject->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.SendMousePos
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
+// (Final, Native, Public)
 
 void UGFxMoviePlayer::SendMousePos()
 {
-	static UFunction* pFnSendMousePos = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.SendMousePos");
 
-	if (!pFnSendMousePos)
-		pFnSendMousePos = (UFunction*)UObject::GObjects()->Data[37657];
+	UGFxMoviePlayer_SendMousePos_Params params;
 
-	UGFxMoviePlayer_execSendMousePos_Parms SendMousePos_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSendMousePos->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSendMousePos, &SendMousePos_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSendMousePos->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.IsShowingFlashMouse
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Native, Public)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UGFxMoviePlayer::IsShowingFlashMouse()
 {
-	static UFunction* pFnIsShowingFlashMouse = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.IsShowingFlashMouse");
 
-	if (!pFnIsShowingFlashMouse)
-		pFnIsShowingFlashMouse = (UFunction*)UObject::GObjects()->Data[37659];
+	UGFxMoviePlayer_IsShowingFlashMouse_Params params;
 
-	UGFxMoviePlayer_execIsShowingFlashMouse_Parms IsShowingFlashMouse_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnIsShowingFlashMouse->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnIsShowingFlashMouse, &IsShowingFlashMouse_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnIsShowingFlashMouse->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return IsShowingFlashMouse_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.HookSaveScreenshot
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
+// (Final, Native, Public)
 
 void UGFxMoviePlayer::HookSaveScreenshot()
 {
-	static UFunction* pFnHookSaveScreenshot = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.HookSaveScreenshot");
 
-	if (!pFnHookSaveScreenshot)
-		pFnHookSaveScreenshot = (UFunction*)UObject::GObjects()->Data[37660];
+	UGFxMoviePlayer_HookSaveScreenshot_Params params;
 
-	UGFxMoviePlayer_execHookSaveScreenshot_Parms HookSaveScreenshot_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnHookSaveScreenshot->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnHookSaveScreenshot, &HookSaveScreenshot_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnHookSaveScreenshot->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.UpdateRenderTexture
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// class UTextureRenderTarget2D*  NewRenderTexture               ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// class UTextureRenderTarget2D*  NewRenderTexture               (Parm)
 
 void UGFxMoviePlayer::UpdateRenderTexture(class UTextureRenderTarget2D* NewRenderTexture)
 {
-	static UFunction* pFnUpdateRenderTexture = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.UpdateRenderTexture");
 
-	if (!pFnUpdateRenderTexture)
-		pFnUpdateRenderTexture = (UFunction*)UObject::GObjects()->Data[37662];
+	UGFxMoviePlayer_UpdateRenderTexture_Params params;
+	params.NewRenderTexture = NewRenderTexture;
 
-	UGFxMoviePlayer_execUpdateRenderTexture_Parms UpdateRenderTexture_Parms;
-	UpdateRenderTexture_Parms.NewRenderTexture = NewRenderTexture;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnUpdateRenderTexture->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnUpdateRenderTexture, &UpdateRenderTexture_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnUpdateRenderTexture->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.OnInputKey
-// [0x00120000]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            ControllerId                   ( CPF_Parm )
-// struct FName                   ukey                           ( CPF_Parm )
-// unsigned char                  uevent                         ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// int                            ControllerId                   (Parm)
+// struct FName                   ukey                           (Parm)
+// unsigned char                  uevent                         (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxMoviePlayer::OnInputKey(int ControllerId, struct FName ukey, unsigned char uevent)
+bool UGFxMoviePlayer::OnInputKey(int ControllerId, const struct FName& ukey, unsigned char uevent)
 {
-	static UFunction* pFnOnInputKey = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.OnInputKey");
 
-	if (!pFnOnInputKey)
-		pFnOnInputKey = (UFunction*)UObject::GObjects()->Data[37663];
+	UGFxMoviePlayer_OnInputKey_Params params;
+	params.ControllerId = ControllerId;
+	params.ukey = ukey;
+	params.uevent = uevent;
 
-	UGFxMoviePlayer_execOnInputKey_Parms OnInputKey_Parms;
-	OnInputKey_Parms.ControllerId = ControllerId;
-	memcpy(&OnInputKey_Parms.ukey, &ukey, 0x8);
-	OnInputKey_Parms.uevent = uevent;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnInputKey, &OnInputKey_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return OnInputKey_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function GFxUI.GFxMoviePlayer.WantsInput
-// [0x00024401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   ukey                           ( CPF_OptionalParm | CPF_Parm )
+// (Final, Native, HasOptionalParms, Public)
+// Parameters:
+// struct FName                   ukey                           (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxMoviePlayer::WantsInput(struct FName ukey)
+bool UGFxMoviePlayer::WantsInput(const struct FName& ukey)
 {
-	static UFunction* pFnWantsInput = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.WantsInput");
 
-	if (!pFnWantsInput)
-		pFnWantsInput = (UFunction*)UObject::GObjects()->Data[37665];
+	UGFxMoviePlayer_WantsInput_Params params;
+	params.ukey = ukey;
 
-	UGFxMoviePlayer_execWantsInput_Parms WantsInput_Parms;
-	memcpy(&WantsInput_Parms.ukey, &ukey, 0x8);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnWantsInput->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnWantsInput, &WantsInput_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnWantsInput->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return WantsInput_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.WantsControllerInput
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            ControllerId                   ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// int                            ControllerId                   (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UGFxMoviePlayer::WantsControllerInput(int ControllerId)
 {
-	static UFunction* pFnWantsControllerInput = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.WantsControllerInput");
 
-	if (!pFnWantsControllerInput)
-		pFnWantsControllerInput = (UFunction*)UObject::GObjects()->Data[37670];
+	UGFxMoviePlayer_WantsControllerInput_Params params;
+	params.ControllerId = ControllerId;
 
-	UGFxMoviePlayer_execWantsControllerInput_Parms WantsControllerInput_Parms;
-	WantsControllerInput_Parms.ControllerId = ControllerId;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnWantsControllerInput->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnWantsControllerInput, &WantsControllerInput_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnWantsControllerInput->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return WantsControllerInput_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.InputKey
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            ControllerId                   ( CPF_Parm )
-// struct FName                   ukey                           ( CPF_Parm )
-// unsigned char                  uevent                         ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// int                            ControllerId                   (Parm)
+// struct FName                   ukey                           (Parm)
+// unsigned char                  uevent                         (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxMoviePlayer::InputKey(int ControllerId, struct FName ukey, unsigned char uevent)
+bool UGFxMoviePlayer::InputKey(int ControllerId, const struct FName& ukey, unsigned char uevent)
 {
-	static UFunction* pFnInputKey = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.InputKey");
 
-	if (!pFnInputKey)
-		pFnInputKey = (UFunction*)UObject::GObjects()->Data[37673];
+	UGFxMoviePlayer_InputKey_Params params;
+	params.ControllerId = ControllerId;
+	params.ukey = ukey;
+	params.uevent = uevent;
 
-	UGFxMoviePlayer_execInputKey_Parms InputKey_Parms;
-	InputKey_Parms.ControllerId = ControllerId;
-	memcpy(&InputKey_Parms.ukey, &ukey, 0x8);
-	InputKey_Parms.uevent = uevent;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnInputKey->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnInputKey, &InputKey_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnInputKey->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return InputKey_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.GetGFxManager
-// [0x00022401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// class UGFxManager*             ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Final, Native, Static, Public)
+// Parameters:
+// class UGFxManager*             ReturnValue                    (Parm, OutParm, ReturnParm)
 
 class UGFxManager* UGFxMoviePlayer::GetGFxManager()
 {
-	static UFunction* pFnGetGFxManager = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.GetGFxManager");
 
-	if (!pFnGetGFxManager)
-		pFnGetGFxManager = (UFunction*)UObject::GObjects()->Data[37676];
+	UGFxMoviePlayer_GetGFxManager_Params params;
 
-	UGFxMoviePlayer_execGetGFxManager_Parms GetGFxManager_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetGFxManager->FunctionFlags |= ~0x400;
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetGFxManager, &GetGFxManager_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetGFxManager->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetGFxManager_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.ResolveDataStoreMarkup
-// [0x00022401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// struct FString                 Markup                         ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Static, Public)
+// Parameters:
+// struct FString                 Markup                         (Parm, NeedCtorLink)
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
-struct FString UGFxMoviePlayer::ResolveDataStoreMarkup(struct FString Markup)
+struct FString UGFxMoviePlayer::ResolveDataStoreMarkup(const struct FString& Markup)
 {
-	static UFunction* pFnResolveDataStoreMarkup = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.ResolveDataStoreMarkup");
 
-	if (!pFnResolveDataStoreMarkup)
-		pFnResolveDataStoreMarkup = (UFunction*)UObject::GObjects()->Data[37681];
+	UGFxMoviePlayer_ResolveDataStoreMarkup_Params params;
+	params.Markup = Markup;
 
-	UGFxMoviePlayer_execResolveDataStoreMarkup_Parms ResolveDataStoreMarkup_Parms;
-	memcpy(&ResolveDataStoreMarkup_Parms.Markup, &Markup, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnResolveDataStoreMarkup->FunctionFlags |= ~0x400;
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnResolveDataStoreMarkup, &ResolveDataStoreMarkup_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnResolveDataStoreMarkup->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ResolveDataStoreMarkup_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.UpdateSplitscreenLayout
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
+// (Final, Native, Public)
 
 void UGFxMoviePlayer::UpdateSplitscreenLayout()
 {
-	static UFunction* pFnUpdateSplitscreenLayout = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.UpdateSplitscreenLayout");
 
-	if (!pFnUpdateSplitscreenLayout)
-		pFnUpdateSplitscreenLayout = (UFunction*)UObject::GObjects()->Data[37683];
+	UGFxMoviePlayer_UpdateSplitscreenLayout_Params params;
 
-	UGFxMoviePlayer_execUpdateSplitscreenLayout_Parms UpdateSplitscreenLayout_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnUpdateSplitscreenLayout->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnUpdateSplitscreenLayout, &UpdateSplitscreenLayout_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnUpdateSplitscreenLayout->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.ApplyPriorityVisibilityEffect
-// [0x00020000]
-// Parameters infos:
-// unsigned long                  bRemoveEffect                  ( CPF_Parm )
+// (Public)
+// Parameters:
+// bool                           bRemoveEffect                  (Parm)
 
-void UGFxMoviePlayer::ApplyPriorityVisibilityEffect(unsigned long bRemoveEffect)
+void UGFxMoviePlayer::ApplyPriorityVisibilityEffect(bool bRemoveEffect)
 {
-	static UFunction* pFnApplyPriorityVisibilityEffect = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.ApplyPriorityVisibilityEffect");
 
-	if (!pFnApplyPriorityVisibilityEffect)
-		pFnApplyPriorityVisibilityEffect = (UFunction*)UObject::GObjects()->Data[37686];
+	UGFxMoviePlayer_ApplyPriorityVisibilityEffect_Params params;
+	params.bRemoveEffect = bRemoveEffect;
 
-	UGFxMoviePlayer_execApplyPriorityVisibilityEffect_Parms ApplyPriorityVisibilityEffect_Parms;
-	ApplyPriorityVisibilityEffect_Parms.bRemoveEffect = bRemoveEffect;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnApplyPriorityVisibilityEffect, &ApplyPriorityVisibilityEffect_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GFxUI.GFxMoviePlayer.ApplyPriorityBlurEffect
-// [0x00020000]
-// Parameters infos:
-// unsigned long                  bRemoveEffect                  ( CPF_Parm )
+// (Public)
+// Parameters:
+// bool                           bRemoveEffect                  (Parm)
 
-void UGFxMoviePlayer::ApplyPriorityBlurEffect(unsigned long bRemoveEffect)
+void UGFxMoviePlayer::ApplyPriorityBlurEffect(bool bRemoveEffect)
 {
-	static UFunction* pFnApplyPriorityBlurEffect = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.ApplyPriorityBlurEffect");
 
-	if (!pFnApplyPriorityBlurEffect)
-		pFnApplyPriorityBlurEffect = (UFunction*)UObject::GObjects()->Data[37687];
+	UGFxMoviePlayer_ApplyPriorityBlurEffect_Params params;
+	params.bRemoveEffect = bRemoveEffect;
 
-	UGFxMoviePlayer_execApplyPriorityBlurEffect_Parms ApplyPriorityBlurEffect_Parms;
-	ApplyPriorityBlurEffect_Parms.bRemoveEffect = bRemoveEffect;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnApplyPriorityBlurEffect, &ApplyPriorityBlurEffect_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GFxUI.GFxMoviePlayer.ApplyPriorityEffect
-// [0x00020802] ( FUNC_Event )
-// Parameters infos:
-// unsigned long                  bRequestedBlurState            ( CPF_Parm )
-// unsigned long                  bRequestedHiddenState          ( CPF_Parm )
+// (Defined, Event, Public)
+// Parameters:
+// bool                           bRequestedBlurState            (Parm)
+// bool                           bRequestedHiddenState          (Parm)
 
-void UGFxMoviePlayer::eventApplyPriorityEffect(unsigned long bRequestedBlurState, unsigned long bRequestedHiddenState)
+void UGFxMoviePlayer::ApplyPriorityEffect(bool bRequestedBlurState, bool bRequestedHiddenState)
 {
-	static UFunction* pFnApplyPriorityEffect = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.ApplyPriorityEffect");
 
-	if (!pFnApplyPriorityEffect)
-		pFnApplyPriorityEffect = (UFunction*)UObject::GObjects()->Data[37689];
+	UGFxMoviePlayer_ApplyPriorityEffect_Params params;
+	params.bRequestedBlurState = bRequestedBlurState;
+	params.bRequestedHiddenState = bRequestedHiddenState;
 
-	UGFxMoviePlayer_eventApplyPriorityEffect_Parms ApplyPriorityEffect_Parms;
-	ApplyPriorityEffect_Parms.bRequestedBlurState = bRequestedBlurState;
-	ApplyPriorityEffect_Parms.bRequestedHiddenState = bRequestedHiddenState;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnApplyPriorityEffect, &ApplyPriorityEffect_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GFxUI.GFxMoviePlayer.PlaySoundFromTheme
-// [0x00024002]
-// Parameters infos:
-// struct FName                   EventName                      ( CPF_Parm )
-// struct FName                   SoundThemeName                 ( CPF_OptionalParm | CPF_Parm )
+// (Defined, HasOptionalParms, Public)
+// Parameters:
+// struct FName                   EventName                      (Parm)
+// struct FName                   SoundThemeName                 (OptionalParm, Parm)
 
-void UGFxMoviePlayer::PlaySoundFromTheme(struct FName EventName, struct FName SoundThemeName)
+void UGFxMoviePlayer::PlaySoundFromTheme(const struct FName& EventName, const struct FName& SoundThemeName)
 {
-	static UFunction* pFnPlaySoundFromTheme = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.PlaySoundFromTheme");
 
-	if (!pFnPlaySoundFromTheme)
-		pFnPlaySoundFromTheme = (UFunction*)UObject::GObjects()->Data[37691];
+	UGFxMoviePlayer_PlaySoundFromTheme_Params params;
+	params.EventName = EventName;
+	params.SoundThemeName = SoundThemeName;
 
-	UGFxMoviePlayer_execPlaySoundFromTheme_Parms PlaySoundFromTheme_Parms;
-	memcpy(&PlaySoundFromTheme_Parms.EventName, &EventName, 0x8);
-	memcpy(&PlaySoundFromTheme_Parms.SoundThemeName, &SoundThemeName, 0x8);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnPlaySoundFromTheme, &PlaySoundFromTheme_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GFxUI.GFxMoviePlayer.OnFocusLost
-// [0x00020800] ( FUNC_Event )
-// Parameters infos:
-// int                            LocalPlayerIndex               ( CPF_Parm )
+// (Event, Public)
+// Parameters:
+// int                            LocalPlayerIndex               (Parm)
 
-void UGFxMoviePlayer::eventOnFocusLost(int LocalPlayerIndex)
+void UGFxMoviePlayer::OnFocusLost(int LocalPlayerIndex)
 {
-	static UFunction* pFnOnFocusLost = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.OnFocusLost");
 
-	if (!pFnOnFocusLost)
-		pFnOnFocusLost = (UFunction*)UObject::GObjects()->Data[37698];
+	UGFxMoviePlayer_OnFocusLost_Params params;
+	params.LocalPlayerIndex = LocalPlayerIndex;
 
-	UGFxMoviePlayer_eventOnFocusLost_Parms OnFocusLost_Parms;
-	OnFocusLost_Parms.LocalPlayerIndex = LocalPlayerIndex;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnFocusLost, &OnFocusLost_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GFxUI.GFxMoviePlayer.OnFocusGained
-// [0x00020800] ( FUNC_Event )
-// Parameters infos:
-// int                            LocalPlayerIndex               ( CPF_Parm )
+// (Event, Public)
+// Parameters:
+// int                            LocalPlayerIndex               (Parm)
 
-void UGFxMoviePlayer::eventOnFocusGained(int LocalPlayerIndex)
+void UGFxMoviePlayer::OnFocusGained(int LocalPlayerIndex)
 {
-	static UFunction* pFnOnFocusGained = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.OnFocusGained");
 
-	if (!pFnOnFocusGained)
-		pFnOnFocusGained = (UFunction*)UObject::GObjects()->Data[37705];
+	UGFxMoviePlayer_OnFocusGained_Params params;
+	params.LocalPlayerIndex = LocalPlayerIndex;
 
-	UGFxMoviePlayer_eventOnFocusGained_Parms OnFocusGained_Parms;
-	OnFocusGained_Parms.LocalPlayerIndex = LocalPlayerIndex;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnFocusGained, &OnFocusGained_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GFxUI.GFxMoviePlayer.ConsoleCommand
-// [0x00020002]
-// Parameters infos:
-// struct FString                 Command                        ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FString                 Command                        (Parm, NeedCtorLink)
 
-void UGFxMoviePlayer::ConsoleCommand(struct FString Command)
+void UGFxMoviePlayer::ConsoleCommand(const struct FString& Command)
 {
-	static UFunction* pFnConsoleCommand = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.ConsoleCommand");
 
-	if (!pFnConsoleCommand)
-		pFnConsoleCommand = (UFunction*)UObject::GObjects()->Data[37707];
+	UGFxMoviePlayer_ConsoleCommand_Params params;
+	params.Command = Command;
 
-	UGFxMoviePlayer_execConsoleCommand_Parms ConsoleCommand_Parms;
-	memcpy(&ConsoleCommand_Parms.Command, &Command, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnConsoleCommand, &ConsoleCommand_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GFxUI.GFxMoviePlayer.SetLP
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// class ULocalPlayer*            LocPlay                        ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// class ULocalPlayer*            LocPlay                        (Parm)
 
 void UGFxMoviePlayer::SetLP(class ULocalPlayer* LocPlay)
 {
-	static UFunction* pFnSetLP = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.SetLP");
 
-	if (!pFnSetLP)
-		pFnSetLP = (UFunction*)UObject::GObjects()->Data[37709];
+	UGFxMoviePlayer_SetLP_Params params;
+	params.LocPlay = LocPlay;
 
-	UGFxMoviePlayer_execSetLP_Parms SetLP_Parms;
-	SetLP_Parms.LocPlay = LocPlay;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetLP->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetLP, &SetLP_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetLP->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.GetPC
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// class APlayerController*       ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Final, Native, Public)
+// Parameters:
+// class APlayerController*       ReturnValue                    (Parm, OutParm, ReturnParm)
 
 class APlayerController* UGFxMoviePlayer::GetPC()
 {
-	static UFunction* pFnGetPC = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.GetPC");
 
-	if (!pFnGetPC)
-		pFnGetPC = (UFunction*)UObject::GObjects()->Data[37704];
+	UGFxMoviePlayer_GetPC_Params params;
 
-	UGFxMoviePlayer_execGetPC_Parms GetPC_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetPC->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetPC, &GetPC_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetPC->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetPC_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.GetLP
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// class ULocalPlayer*            ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Final, Native, Public)
+// Parameters:
+// class ULocalPlayer*            ReturnValue                    (Parm, OutParm, ReturnParm)
 
 class ULocalPlayer* UGFxMoviePlayer::GetLP()
 {
-	static UFunction* pFnGetLP = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.GetLP");
 
-	if (!pFnGetLP)
-		pFnGetLP = (UFunction*)UObject::GObjects()->Data[37712];
+	UGFxMoviePlayer_GetLP_Params params;
 
-	UGFxMoviePlayer_execGetLP_Parms GetLP_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetLP->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetLP, &GetLP_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetLP->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetLP_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.Init
-// [0x00024002]
-// Parameters infos:
-// class ULocalPlayer*            LocPlay                        ( CPF_OptionalParm | CPF_Parm )
+// (Defined, HasOptionalParms, Public)
+// Parameters:
+// class ULocalPlayer*            LocPlay                        (OptionalParm, Parm)
 
 void UGFxMoviePlayer::Init(class ULocalPlayer* LocPlay)
 {
-	static UFunction* pFnInit = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.Init");
 
-	if (!pFnInit)
-		pFnInit = (UFunction*)UObject::GObjects()->Data[37714];
+	UGFxMoviePlayer_Init_Params params;
+	params.LocPlay = LocPlay;
 
-	UGFxMoviePlayer_execInit_Parms Init_Parms;
-	Init_Parms.LocPlay = LocPlay;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnInit, &Init_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GFxUI.GFxMoviePlayer.SetWidgetPathBinding
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// class UGFxObject*              WidgetToBind                   ( CPF_Parm )
-// struct FName                   Path                           ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// class UGFxObject*              WidgetToBind                   (Parm)
+// struct FName                   Path                           (Parm)
 
-void UGFxMoviePlayer::SetWidgetPathBinding(class UGFxObject* WidgetToBind, struct FName Path)
+void UGFxMoviePlayer::SetWidgetPathBinding(class UGFxObject* WidgetToBind, const struct FName& Path)
 {
-	static UFunction* pFnSetWidgetPathBinding = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.SetWidgetPathBinding");
 
-	if (!pFnSetWidgetPathBinding)
-		pFnSetWidgetPathBinding = (UFunction*)UObject::GObjects()->Data[37716];
+	UGFxMoviePlayer_SetWidgetPathBinding_Params params;
+	params.WidgetToBind = WidgetToBind;
+	params.Path = Path;
 
-	UGFxMoviePlayer_execSetWidgetPathBinding_Parms SetWidgetPathBinding_Parms;
-	SetWidgetPathBinding_Parms.WidgetToBind = WidgetToBind;
-	memcpy(&SetWidgetPathBinding_Parms.Path, &Path, 0x8);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetWidgetPathBinding->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetWidgetPathBinding, &SetWidgetPathBinding_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetWidgetPathBinding->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.PostWidgetInit
-// [0x00020800] ( FUNC_Event )
-// Parameters infos:
+// (Event, Public)
 
-void UGFxMoviePlayer::eventPostWidgetInit()
+void UGFxMoviePlayer::PostWidgetInit()
 {
-	static UFunction* pFnPostWidgetInit = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.PostWidgetInit");
 
-	if (!pFnPostWidgetInit)
-		pFnPostWidgetInit = (UFunction*)UObject::GObjects()->Data[37722];
+	UGFxMoviePlayer_PostWidgetInit_Params params;
 
-	UGFxMoviePlayer_eventPostWidgetInit_Parms PostWidgetInit_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnPostWidgetInit, &PostWidgetInit_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GFxUI.GFxMoviePlayer.WidgetUnloaded
-// [0x00020800] ( FUNC_Event )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   WidgetName                     ( CPF_Parm )
-// struct FName                   WidgetPath                     ( CPF_Parm )
-// class UGFxObject*              Widget                         ( CPF_Parm )
+// (Event, Public)
+// Parameters:
+// struct FName                   WidgetName                     (Parm)
+// struct FName                   WidgetPath                     (Parm)
+// class UGFxObject*              Widget                         (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxMoviePlayer::eventWidgetUnloaded(struct FName WidgetName, struct FName WidgetPath, class UGFxObject* Widget)
+bool UGFxMoviePlayer::WidgetUnloaded(const struct FName& WidgetName, const struct FName& WidgetPath, class UGFxObject* Widget)
 {
-	static UFunction* pFnWidgetUnloaded = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.WidgetUnloaded");
 
-	if (!pFnWidgetUnloaded)
-		pFnWidgetUnloaded = (UFunction*)UObject::GObjects()->Data[37725];
+	UGFxMoviePlayer_WidgetUnloaded_Params params;
+	params.WidgetName = WidgetName;
+	params.WidgetPath = WidgetPath;
+	params.Widget = Widget;
 
-	UGFxMoviePlayer_eventWidgetUnloaded_Parms WidgetUnloaded_Parms;
-	memcpy(&WidgetUnloaded_Parms.WidgetName, &WidgetName, 0x8);
-	memcpy(&WidgetUnloaded_Parms.WidgetPath, &WidgetPath, 0x8);
-	WidgetUnloaded_Parms.Widget = Widget;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnWidgetUnloaded, &WidgetUnloaded_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return WidgetUnloaded_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function GFxUI.GFxMoviePlayer.WidgetInitialized
-// [0x00020800] ( FUNC_Event )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   WidgetName                     ( CPF_Parm )
-// struct FName                   WidgetPath                     ( CPF_Parm )
-// class UGFxObject*              Widget                         ( CPF_Parm )
+// (Event, Public)
+// Parameters:
+// struct FName                   WidgetName                     (Parm)
+// struct FName                   WidgetPath                     (Parm)
+// class UGFxObject*              Widget                         (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxMoviePlayer::eventWidgetInitialized(struct FName WidgetName, struct FName WidgetPath, class UGFxObject* Widget)
+bool UGFxMoviePlayer::WidgetInitialized(const struct FName& WidgetName, const struct FName& WidgetPath, class UGFxObject* Widget)
 {
-	static UFunction* pFnWidgetInitialized = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.WidgetInitialized");
 
-	if (!pFnWidgetInitialized)
-		pFnWidgetInitialized = (UFunction*)UObject::GObjects()->Data[37726];
+	UGFxMoviePlayer_WidgetInitialized_Params params;
+	params.WidgetName = WidgetName;
+	params.WidgetPath = WidgetPath;
+	params.Widget = Widget;
 
-	UGFxMoviePlayer_eventWidgetInitialized_Parms WidgetInitialized_Parms;
-	memcpy(&WidgetInitialized_Parms.WidgetName, &WidgetName, 0x8);
-	memcpy(&WidgetInitialized_Parms.WidgetPath, &WidgetPath, 0x8);
-	WidgetInitialized_Parms.Widget = Widget;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnWidgetInitialized, &WidgetInitialized_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return WidgetInitialized_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function GFxUI.GFxMoviePlayer.ActionScriptObject
-// [0x00080401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// class UGFxObject*              ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Path                           ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Protected)
+// Parameters:
+// struct FString                 Path                           (Parm, NeedCtorLink)
+// class UGFxObject*              ReturnValue                    (Parm, OutParm, ReturnParm)
 
-class UGFxObject* UGFxMoviePlayer::ActionScriptObject(struct FString Path)
+class UGFxObject* UGFxMoviePlayer::ActionScriptObject(const struct FString& Path)
 {
-	static UFunction* pFnActionScriptObject = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.ActionScriptObject");
 
-	if (!pFnActionScriptObject)
-		pFnActionScriptObject = (UFunction*)UObject::GObjects()->Data[37731];
+	UGFxMoviePlayer_ActionScriptObject_Params params;
+	params.Path = Path;
 
-	UGFxMoviePlayer_execActionScriptObject_Parms ActionScriptObject_Parms;
-	memcpy(&ActionScriptObject_Parms.Path, &Path, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnActionScriptObject->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnActionScriptObject, &ActionScriptObject_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnActionScriptObject->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ActionScriptObject_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.ActionScriptString
-// [0x00080401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// struct FString                 Path                           ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Protected)
+// Parameters:
+// struct FString                 Path                           (Parm, NeedCtorLink)
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
-struct FString UGFxMoviePlayer::ActionScriptString(struct FString Path)
+struct FString UGFxMoviePlayer::ActionScriptString(const struct FString& Path)
 {
-	static UFunction* pFnActionScriptString = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.ActionScriptString");
 
-	if (!pFnActionScriptString)
-		pFnActionScriptString = (UFunction*)UObject::GObjects()->Data[37736];
+	UGFxMoviePlayer_ActionScriptString_Params params;
+	params.Path = Path;
 
-	UGFxMoviePlayer_execActionScriptString_Parms ActionScriptString_Parms;
-	memcpy(&ActionScriptString_Parms.Path, &Path, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnActionScriptString->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnActionScriptString, &ActionScriptString_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnActionScriptString->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ActionScriptString_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.ActionScriptFloat
-// [0x00080401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// float                          ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Path                           ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Protected)
+// Parameters:
+// struct FString                 Path                           (Parm, NeedCtorLink)
+// float                          ReturnValue                    (Parm, OutParm, ReturnParm)
 
-float UGFxMoviePlayer::ActionScriptFloat(struct FString Path)
+float UGFxMoviePlayer::ActionScriptFloat(const struct FString& Path)
 {
-	static UFunction* pFnActionScriptFloat = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.ActionScriptFloat");
 
-	if (!pFnActionScriptFloat)
-		pFnActionScriptFloat = (UFunction*)UObject::GObjects()->Data[37739];
+	UGFxMoviePlayer_ActionScriptFloat_Params params;
+	params.Path = Path;
 
-	UGFxMoviePlayer_execActionScriptFloat_Parms ActionScriptFloat_Parms;
-	memcpy(&ActionScriptFloat_Parms.Path, &Path, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnActionScriptFloat->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnActionScriptFloat, &ActionScriptFloat_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnActionScriptFloat->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ActionScriptFloat_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.ActionScriptInt
-// [0x00080401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// int                            ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Path                           ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Protected)
+// Parameters:
+// struct FString                 Path                           (Parm, NeedCtorLink)
+// int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
-int UGFxMoviePlayer::ActionScriptInt(struct FString Path)
+int UGFxMoviePlayer::ActionScriptInt(const struct FString& Path)
 {
-	static UFunction* pFnActionScriptInt = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.ActionScriptInt");
 
-	if (!pFnActionScriptInt)
-		pFnActionScriptInt = (UFunction*)UObject::GObjects()->Data[37742];
+	UGFxMoviePlayer_ActionScriptInt_Params params;
+	params.Path = Path;
 
-	UGFxMoviePlayer_execActionScriptInt_Parms ActionScriptInt_Parms;
-	memcpy(&ActionScriptInt_Parms.Path, &Path, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnActionScriptInt->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnActionScriptInt, &ActionScriptInt_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnActionScriptInt->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ActionScriptInt_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.ActionScriptVoid
-// [0x00080401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 Path                           ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Protected)
+// Parameters:
+// struct FString                 Path                           (Parm, NeedCtorLink)
 
-void UGFxMoviePlayer::ActionScriptVoid(struct FString Path)
+void UGFxMoviePlayer::ActionScriptVoid(const struct FString& Path)
 {
-	static UFunction* pFnActionScriptVoid = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.ActionScriptVoid");
 
-	if (!pFnActionScriptVoid)
-		pFnActionScriptVoid = (UFunction*)UObject::GObjects()->Data[37745];
+	UGFxMoviePlayer_ActionScriptVoid_Params params;
+	params.Path = Path;
 
-	UGFxMoviePlayer_execActionScriptVoid_Parms ActionScriptVoid_Parms;
-	memcpy(&ActionScriptVoid_Parms.Path, &Path, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnActionScriptVoid->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnActionScriptVoid, &ActionScriptVoid_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnActionScriptVoid->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.ActionScript
-// [0x00080401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 Path                           ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Protected)
+// Parameters:
+// struct FString                 Path                           (Parm, NeedCtorLink)
 
-void UGFxMoviePlayer::ActionScript(struct FString Path)
+void UGFxMoviePlayer::ActionScript(const struct FString& Path)
 {
-	static UFunction* pFnActionScript = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.ActionScript");
 
-	if (!pFnActionScript)
-		pFnActionScript = (UFunction*)UObject::GObjects()->Data[37748];
+	UGFxMoviePlayer_ActionScript_Params params;
+	params.Path = Path;
 
-	UGFxMoviePlayer_execActionScript_Parms ActionScript_Parms;
-	memcpy(&ActionScript_Parms.Path, &Path, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnActionScript->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnActionScript, &ActionScript_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnActionScript->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.Invoke
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// struct FASValue                ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// struct FString                 Method                         ( CPF_Parm | CPF_NeedCtorLink )
-// TArray< struct FASValue >      args                           ( CPF_Parm | CPF_NeedCtorLink )
+// (Native, Public)
+// Parameters:
+// struct FString                 Method                         (Parm, NeedCtorLink)
+// TArray<struct FASValue>        args                           (Parm, NeedCtorLink)
+// struct FASValue                ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
-struct FASValue UGFxMoviePlayer::Invoke(struct FString Method, TArray< struct FASValue > args)
+struct FASValue UGFxMoviePlayer::Invoke(const struct FString& Method, TArray<struct FASValue> args)
 {
-	static UFunction* pFnInvoke = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.Invoke");
 
-	if (!pFnInvoke)
-		pFnInvoke = (UFunction*)UObject::GObjects()->Data[37750];
+	UGFxMoviePlayer_Invoke_Params params;
+	params.Method = Method;
+	params.args = args;
 
-	UGFxMoviePlayer_execInvoke_Parms Invoke_Parms;
-	memcpy(&Invoke_Parms.Method, &Method, 0xC);
-	memcpy(&Invoke_Parms.args, &args, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnInvoke->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnInvoke, &Invoke_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnInvoke->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return Invoke_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.ActionScriptSetFunction
-// [0x00080401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// class UGFxObject*              Object                         ( CPF_Parm )
-// struct FString                 Member                         ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Protected)
+// Parameters:
+// class UGFxObject*              Object                         (Parm)
+// struct FString                 Member                         (Parm, NeedCtorLink)
 
-void UGFxMoviePlayer::ActionScriptSetFunction(class UGFxObject* Object, struct FString Member)
+void UGFxMoviePlayer::ActionScriptSetFunction(class UGFxObject* Object, const struct FString& Member)
 {
-	static UFunction* pFnActionScriptSetFunction = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.ActionScriptSetFunction");
 
-	if (!pFnActionScriptSetFunction)
-		pFnActionScriptSetFunction = (UFunction*)UObject::GObjects()->Data[37752];
+	UGFxMoviePlayer_ActionScriptSetFunction_Params params;
+	params.Object = Object;
+	params.Member = Member;
 
-	UGFxMoviePlayer_execActionScriptSetFunction_Parms ActionScriptSetFunction_Parms;
-	ActionScriptSetFunction_Parms.Object = Object;
-	memcpy(&ActionScriptSetFunction_Parms.Member, &Member, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnActionScriptSetFunction->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnActionScriptSetFunction, &ActionScriptSetFunction_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnActionScriptSetFunction->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.CreateArray
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// class UGFxObject*              ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Final, Native, Public)
+// Parameters:
+// class UGFxObject*              ReturnValue                    (Parm, OutParm, ReturnParm)
 
 class UGFxObject* UGFxMoviePlayer::CreateArray()
 {
-	static UFunction* pFnCreateArray = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.CreateArray");
 
-	if (!pFnCreateArray)
-		pFnCreateArray = (UFunction*)UObject::GObjects()->Data[37764];
+	UGFxMoviePlayer_CreateArray_Params params;
 
-	UGFxMoviePlayer_execCreateArray_Parms CreateArray_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnCreateArray->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnCreateArray, &CreateArray_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnCreateArray->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return CreateArray_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.CreateObject
-// [0x00024401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// class UGFxObject*              ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 ASClass                        ( CPF_Parm | CPF_NeedCtorLink )
-// class UClass*                  Type                           ( CPF_OptionalParm | CPF_Parm )
+// (Final, Native, HasOptionalParms, Public)
+// Parameters:
+// struct FString                 ASClass                        (Parm, NeedCtorLink)
+// class UClass*                  Type                           (OptionalParm, Parm)
+// class UGFxObject*              ReturnValue                    (Parm, OutParm, ReturnParm)
 
-class UGFxObject* UGFxMoviePlayer::CreateObject(struct FString ASClass, class UClass* Type)
+class UGFxObject* UGFxMoviePlayer::CreateObject(const struct FString& ASClass, class UClass* Type)
 {
-	static UFunction* pFnCreateObject = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.CreateObject");
 
-	if (!pFnCreateObject)
-		pFnCreateObject = (UFunction*)UObject::GObjects()->Data[37767];
+	UGFxMoviePlayer_CreateObject_Params params;
+	params.ASClass = ASClass;
+	params.Type = Type;
 
-	UGFxMoviePlayer_execCreateObject_Parms CreateObject_Parms;
-	memcpy(&CreateObject_Parms.ASClass, &ASClass, 0xC);
-	CreateObject_Parms.Type = Type;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnCreateObject->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnCreateObject, &CreateObject_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnCreateObject->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return CreateObject_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.SetVariableStringArray
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Path                           ( CPF_Parm | CPF_NeedCtorLink )
-// int                            Index                          ( CPF_Parm )
-// TArray< struct FString >       Arg                            ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Path                           (Parm, NeedCtorLink)
+// int                            Index                          (Parm)
+// TArray<struct FString>         Arg                            (Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxMoviePlayer::SetVariableStringArray(struct FString Path, int Index, TArray< struct FString > Arg)
+bool UGFxMoviePlayer::SetVariableStringArray(const struct FString& Path, int Index, TArray<struct FString> Arg)
 {
-	static UFunction* pFnSetVariableStringArray = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.SetVariableStringArray");
 
-	if (!pFnSetVariableStringArray)
-		pFnSetVariableStringArray = (UFunction*)UObject::GObjects()->Data[37769];
+	UGFxMoviePlayer_SetVariableStringArray_Params params;
+	params.Path = Path;
+	params.Index = Index;
+	params.Arg = Arg;
 
-	UGFxMoviePlayer_execSetVariableStringArray_Parms SetVariableStringArray_Parms;
-	memcpy(&SetVariableStringArray_Parms.Path, &Path, 0xC);
-	SetVariableStringArray_Parms.Index = Index;
-	memcpy(&SetVariableStringArray_Parms.Arg, &Arg, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetVariableStringArray->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetVariableStringArray, &SetVariableStringArray_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnSetVariableStringArray->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return SetVariableStringArray_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.SetVariableFloatArray
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Path                           ( CPF_Parm | CPF_NeedCtorLink )
-// int                            Index                          ( CPF_Parm )
-// TArray< float >                Arg                            ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Path                           (Parm, NeedCtorLink)
+// int                            Index                          (Parm)
+// TArray<float>                  Arg                            (Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxMoviePlayer::SetVariableFloatArray(struct FString Path, int Index, TArray< float > Arg)
+bool UGFxMoviePlayer::SetVariableFloatArray(const struct FString& Path, int Index, TArray<float> Arg)
 {
-	static UFunction* pFnSetVariableFloatArray = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.SetVariableFloatArray");
 
-	if (!pFnSetVariableFloatArray)
-		pFnSetVariableFloatArray = (UFunction*)UObject::GObjects()->Data[37773];
+	UGFxMoviePlayer_SetVariableFloatArray_Params params;
+	params.Path = Path;
+	params.Index = Index;
+	params.Arg = Arg;
 
-	UGFxMoviePlayer_execSetVariableFloatArray_Parms SetVariableFloatArray_Parms;
-	memcpy(&SetVariableFloatArray_Parms.Path, &Path, 0xC);
-	SetVariableFloatArray_Parms.Index = Index;
-	memcpy(&SetVariableFloatArray_Parms.Arg, &Arg, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetVariableFloatArray->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetVariableFloatArray, &SetVariableFloatArray_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnSetVariableFloatArray->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return SetVariableFloatArray_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.SetVariableIntArray
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Path                           ( CPF_Parm | CPF_NeedCtorLink )
-// int                            Index                          ( CPF_Parm )
-// TArray< int >                  Arg                            ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Path                           (Parm, NeedCtorLink)
+// int                            Index                          (Parm)
+// TArray<int>                    Arg                            (Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxMoviePlayer::SetVariableIntArray(struct FString Path, int Index, TArray< int > Arg)
+bool UGFxMoviePlayer::SetVariableIntArray(const struct FString& Path, int Index, TArray<int> Arg)
 {
-	static UFunction* pFnSetVariableIntArray = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.SetVariableIntArray");
 
-	if (!pFnSetVariableIntArray)
-		pFnSetVariableIntArray = (UFunction*)UObject::GObjects()->Data[37779];
+	UGFxMoviePlayer_SetVariableIntArray_Params params;
+	params.Path = Path;
+	params.Index = Index;
+	params.Arg = Arg;
 
-	UGFxMoviePlayer_execSetVariableIntArray_Parms SetVariableIntArray_Parms;
-	memcpy(&SetVariableIntArray_Parms.Path, &Path, 0xC);
-	SetVariableIntArray_Parms.Index = Index;
-	memcpy(&SetVariableIntArray_Parms.Arg, &Arg, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetVariableIntArray->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetVariableIntArray, &SetVariableIntArray_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnSetVariableIntArray->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return SetVariableIntArray_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.SetVariableArray
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Path                           ( CPF_Parm | CPF_NeedCtorLink )
-// int                            Index                          ( CPF_Parm )
-// TArray< struct FASValue >      Arg                            ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Path                           (Parm, NeedCtorLink)
+// int                            Index                          (Parm)
+// TArray<struct FASValue>        Arg                            (Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxMoviePlayer::SetVariableArray(struct FString Path, int Index, TArray< struct FASValue > Arg)
+bool UGFxMoviePlayer::SetVariableArray(const struct FString& Path, int Index, TArray<struct FASValue> Arg)
 {
-	static UFunction* pFnSetVariableArray = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.SetVariableArray");
 
-	if (!pFnSetVariableArray)
-		pFnSetVariableArray = (UFunction*)UObject::GObjects()->Data[37785];
+	UGFxMoviePlayer_SetVariableArray_Params params;
+	params.Path = Path;
+	params.Index = Index;
+	params.Arg = Arg;
 
-	UGFxMoviePlayer_execSetVariableArray_Parms SetVariableArray_Parms;
-	memcpy(&SetVariableArray_Parms.Path, &Path, 0xC);
-	SetVariableArray_Parms.Index = Index;
-	memcpy(&SetVariableArray_Parms.Arg, &Arg, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetVariableArray->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetVariableArray, &SetVariableArray_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnSetVariableArray->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return SetVariableArray_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.GetVariableStringArray
-// [0x00420401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Path                           ( CPF_Parm | CPF_NeedCtorLink )
-// int                            Index                          ( CPF_Parm )
-// TArray< struct FString >       Arg                            ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Final, Native, Public, HasOutParms)
+// Parameters:
+// struct FString                 Path                           (Parm, NeedCtorLink)
+// int                            Index                          (Parm)
+// TArray<struct FString>         Arg                            (Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxMoviePlayer::GetVariableStringArray(struct FString Path, int Index, TArray< struct FString >* Arg)
+bool UGFxMoviePlayer::GetVariableStringArray(const struct FString& Path, int Index, TArray<struct FString>* Arg)
 {
-	static UFunction* pFnGetVariableStringArray = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.GetVariableStringArray");
 
-	if (!pFnGetVariableStringArray)
-		pFnGetVariableStringArray = (UFunction*)UObject::GObjects()->Data[37791];
+	UGFxMoviePlayer_GetVariableStringArray_Params params;
+	params.Path = Path;
+	params.Index = Index;
 
-	UGFxMoviePlayer_execGetVariableStringArray_Parms GetVariableStringArray_Parms;
-	memcpy(&GetVariableStringArray_Parms.Path, &Path, 0xC);
-	GetVariableStringArray_Parms.Index = Index;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetVariableStringArray->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetVariableStringArray, &GetVariableStringArray_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetVariableStringArray->FunctionFlags |= 0x400;
+	if (Arg != nullptr)
+		*Arg = params.Arg;
 
-	if (Arg)
-		memcpy(Arg, &GetVariableStringArray_Parms.Arg, 0xC);
+	return params.ReturnValue;
+}
 
-	return GetVariableStringArray_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.GetVariableFloatArray
-// [0x00420401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Path                           ( CPF_Parm | CPF_NeedCtorLink )
-// int                            Index                          ( CPF_Parm )
-// TArray< float >                Arg                            ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Final, Native, Public, HasOutParms)
+// Parameters:
+// struct FString                 Path                           (Parm, NeedCtorLink)
+// int                            Index                          (Parm)
+// TArray<float>                  Arg                            (Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxMoviePlayer::GetVariableFloatArray(struct FString Path, int Index, TArray< float >* Arg)
+bool UGFxMoviePlayer::GetVariableFloatArray(const struct FString& Path, int Index, TArray<float>* Arg)
 {
-	static UFunction* pFnGetVariableFloatArray = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.GetVariableFloatArray");
 
-	if (!pFnGetVariableFloatArray)
-		pFnGetVariableFloatArray = (UFunction*)UObject::GObjects()->Data[37797];
+	UGFxMoviePlayer_GetVariableFloatArray_Params params;
+	params.Path = Path;
+	params.Index = Index;
 
-	UGFxMoviePlayer_execGetVariableFloatArray_Parms GetVariableFloatArray_Parms;
-	memcpy(&GetVariableFloatArray_Parms.Path, &Path, 0xC);
-	GetVariableFloatArray_Parms.Index = Index;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetVariableFloatArray->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetVariableFloatArray, &GetVariableFloatArray_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetVariableFloatArray->FunctionFlags |= 0x400;
+	if (Arg != nullptr)
+		*Arg = params.Arg;
 
-	if (Arg)
-		memcpy(Arg, &GetVariableFloatArray_Parms.Arg, 0xC);
+	return params.ReturnValue;
+}
 
-	return GetVariableFloatArray_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.GetVariableIntArray
-// [0x00420401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Path                           ( CPF_Parm | CPF_NeedCtorLink )
-// int                            Index                          ( CPF_Parm )
-// TArray< int >                  Arg                            ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Final, Native, Public, HasOutParms)
+// Parameters:
+// struct FString                 Path                           (Parm, NeedCtorLink)
+// int                            Index                          (Parm)
+// TArray<int>                    Arg                            (Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxMoviePlayer::GetVariableIntArray(struct FString Path, int Index, TArray< int >* Arg)
+bool UGFxMoviePlayer::GetVariableIntArray(const struct FString& Path, int Index, TArray<int>* Arg)
 {
-	static UFunction* pFnGetVariableIntArray = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.GetVariableIntArray");
 
-	if (!pFnGetVariableIntArray)
-		pFnGetVariableIntArray = (UFunction*)UObject::GObjects()->Data[37803];
+	UGFxMoviePlayer_GetVariableIntArray_Params params;
+	params.Path = Path;
+	params.Index = Index;
 
-	UGFxMoviePlayer_execGetVariableIntArray_Parms GetVariableIntArray_Parms;
-	memcpy(&GetVariableIntArray_Parms.Path, &Path, 0xC);
-	GetVariableIntArray_Parms.Index = Index;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetVariableIntArray->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetVariableIntArray, &GetVariableIntArray_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetVariableIntArray->FunctionFlags |= 0x400;
+	if (Arg != nullptr)
+		*Arg = params.Arg;
 
-	if (Arg)
-		memcpy(Arg, &GetVariableIntArray_Parms.Arg, 0xC);
+	return params.ReturnValue;
+}
 
-	return GetVariableIntArray_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.GetVariableArray
-// [0x00420401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Path                           ( CPF_Parm | CPF_NeedCtorLink )
-// int                            Index                          ( CPF_Parm )
-// TArray< struct FASValue >      Arg                            ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Final, Native, Public, HasOutParms)
+// Parameters:
+// struct FString                 Path                           (Parm, NeedCtorLink)
+// int                            Index                          (Parm)
+// TArray<struct FASValue>        Arg                            (Parm, OutParm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxMoviePlayer::GetVariableArray(struct FString Path, int Index, TArray< struct FASValue >* Arg)
+bool UGFxMoviePlayer::GetVariableArray(const struct FString& Path, int Index, TArray<struct FASValue>* Arg)
 {
-	static UFunction* pFnGetVariableArray = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.GetVariableArray");
 
-	if (!pFnGetVariableArray)
-		pFnGetVariableArray = (UFunction*)UObject::GObjects()->Data[37809];
+	UGFxMoviePlayer_GetVariableArray_Params params;
+	params.Path = Path;
+	params.Index = Index;
 
-	UGFxMoviePlayer_execGetVariableArray_Parms GetVariableArray_Parms;
-	memcpy(&GetVariableArray_Parms.Path, &Path, 0xC);
-	GetVariableArray_Parms.Index = Index;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetVariableArray->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetVariableArray, &GetVariableArray_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetVariableArray->FunctionFlags |= 0x400;
+	if (Arg != nullptr)
+		*Arg = params.Arg;
 
-	if (Arg)
-		memcpy(Arg, &GetVariableArray_Parms.Arg, 0xC);
+	return params.ReturnValue;
+}
 
-	return GetVariableArray_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.SetVariableObject
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 Path                           ( CPF_Parm | CPF_NeedCtorLink )
-// class UGFxObject*              Object                         ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Path                           (Parm, NeedCtorLink)
+// class UGFxObject*              Object                         (Parm)
 
-void UGFxMoviePlayer::SetVariableObject(struct FString Path, class UGFxObject* Object)
+void UGFxMoviePlayer::SetVariableObject(const struct FString& Path, class UGFxObject* Object)
 {
-	static UFunction* pFnSetVariableObject = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.SetVariableObject");
 
-	if (!pFnSetVariableObject)
-		pFnSetVariableObject = (UFunction*)UObject::GObjects()->Data[37815];
+	UGFxMoviePlayer_SetVariableObject_Params params;
+	params.Path = Path;
+	params.Object = Object;
 
-	UGFxMoviePlayer_execSetVariableObject_Parms SetVariableObject_Parms;
-	memcpy(&SetVariableObject_Parms.Path, &Path, 0xC);
-	SetVariableObject_Parms.Object = Object;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetVariableObject->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetVariableObject, &SetVariableObject_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetVariableObject->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.SetVariableString
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 Path                           ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 S                              ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Path                           (Parm, NeedCtorLink)
+// struct FString                 S                              (Parm, NeedCtorLink)
 
-void UGFxMoviePlayer::SetVariableString(struct FString Path, struct FString S)
+void UGFxMoviePlayer::SetVariableString(const struct FString& Path, const struct FString& S)
 {
-	static UFunction* pFnSetVariableString = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.SetVariableString");
 
-	if (!pFnSetVariableString)
-		pFnSetVariableString = (UFunction*)UObject::GObjects()->Data[37821];
+	UGFxMoviePlayer_SetVariableString_Params params;
+	params.Path = Path;
+	params.S = S;
 
-	UGFxMoviePlayer_execSetVariableString_Parms SetVariableString_Parms;
-	memcpy(&SetVariableString_Parms.Path, &Path, 0xC);
-	memcpy(&SetVariableString_Parms.S, &S, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetVariableString->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetVariableString, &SetVariableString_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetVariableString->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.SetVariableNumber
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 Path                           ( CPF_Parm | CPF_NeedCtorLink )
-// float                          F                              ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Path                           (Parm, NeedCtorLink)
+// float                          F                              (Parm)
 
-void UGFxMoviePlayer::SetVariableNumber(struct FString Path, float F)
+void UGFxMoviePlayer::SetVariableNumber(const struct FString& Path, float F)
 {
-	static UFunction* pFnSetVariableNumber = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.SetVariableNumber");
 
-	if (!pFnSetVariableNumber)
-		pFnSetVariableNumber = (UFunction*)UObject::GObjects()->Data[37824];
+	UGFxMoviePlayer_SetVariableNumber_Params params;
+	params.Path = Path;
+	params.F = F;
 
-	UGFxMoviePlayer_execSetVariableNumber_Parms SetVariableNumber_Parms;
-	memcpy(&SetVariableNumber_Parms.Path, &Path, 0xC);
-	SetVariableNumber_Parms.F = F;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetVariableNumber->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetVariableNumber, &SetVariableNumber_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetVariableNumber->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.SetVariableBool
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 Path                           ( CPF_Parm | CPF_NeedCtorLink )
-// unsigned long                  B                              ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Path                           (Parm, NeedCtorLink)
+// bool                           B                              (Parm)
 
-void UGFxMoviePlayer::SetVariableBool(struct FString Path, unsigned long B)
+void UGFxMoviePlayer::SetVariableBool(const struct FString& Path, bool B)
 {
-	static UFunction* pFnSetVariableBool = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.SetVariableBool");
 
-	if (!pFnSetVariableBool)
-		pFnSetVariableBool = (UFunction*)UObject::GObjects()->Data[37827];
+	UGFxMoviePlayer_SetVariableBool_Params params;
+	params.Path = Path;
+	params.B = B;
 
-	UGFxMoviePlayer_execSetVariableBool_Parms SetVariableBool_Parms;
-	memcpy(&SetVariableBool_Parms.Path, &Path, 0xC);
-	SetVariableBool_Parms.B = B;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetVariableBool->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetVariableBool, &SetVariableBool_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetVariableBool->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.SetVariable
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 Path                           ( CPF_Parm | CPF_NeedCtorLink )
-// struct FASValue                Arg                            ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Path                           (Parm, NeedCtorLink)
+// struct FASValue                Arg                            (Parm, NeedCtorLink)
 
-void UGFxMoviePlayer::SetVariable(struct FString Path, struct FASValue Arg)
+void UGFxMoviePlayer::SetVariable(const struct FString& Path, const struct FASValue& Arg)
 {
-	static UFunction* pFnSetVariable = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.SetVariable");
 
-	if (!pFnSetVariable)
-		pFnSetVariable = (UFunction*)UObject::GObjects()->Data[37830];
+	UGFxMoviePlayer_SetVariable_Params params;
+	params.Path = Path;
+	params.Arg = Arg;
 
-	UGFxMoviePlayer_execSetVariable_Parms SetVariable_Parms;
-	memcpy(&SetVariable_Parms.Path, &Path, 0xC);
-	memcpy(&SetVariable_Parms.Arg, &Arg, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetVariable->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetVariable, &SetVariable_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetVariable->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.GetVariableObject
-// [0x00024401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// class UGFxObject*              ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Path                           ( CPF_Parm | CPF_NeedCtorLink )
-// class UClass*                  Type                           ( CPF_OptionalParm | CPF_Parm )
+// (Final, Native, HasOptionalParms, Public)
+// Parameters:
+// struct FString                 Path                           (Parm, NeedCtorLink)
+// class UClass*                  Type                           (OptionalParm, Parm)
+// class UGFxObject*              ReturnValue                    (Parm, OutParm, ReturnParm)
 
-class UGFxObject* UGFxMoviePlayer::GetVariableObject(struct FString Path, class UClass* Type)
+class UGFxObject* UGFxMoviePlayer::GetVariableObject(const struct FString& Path, class UClass* Type)
 {
-	static UFunction* pFnGetVariableObject = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.GetVariableObject");
 
-	if (!pFnGetVariableObject)
-		pFnGetVariableObject = (UFunction*)UObject::GObjects()->Data[37833];
+	UGFxMoviePlayer_GetVariableObject_Params params;
+	params.Path = Path;
+	params.Type = Type;
 
-	UGFxMoviePlayer_execGetVariableObject_Parms GetVariableObject_Parms;
-	memcpy(&GetVariableObject_Parms.Path, &Path, 0xC);
-	GetVariableObject_Parms.Type = Type;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetVariableObject->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetVariableObject, &GetVariableObject_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetVariableObject->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetVariableObject_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.GetVariableString
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// struct FString                 Path                           ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Path                           (Parm, NeedCtorLink)
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
-struct FString UGFxMoviePlayer::GetVariableString(struct FString Path)
+struct FString UGFxMoviePlayer::GetVariableString(const struct FString& Path)
 {
-	static UFunction* pFnGetVariableString = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.GetVariableString");
 
-	if (!pFnGetVariableString)
-		pFnGetVariableString = (UFunction*)UObject::GObjects()->Data[37836];
+	UGFxMoviePlayer_GetVariableString_Params params;
+	params.Path = Path;
 
-	UGFxMoviePlayer_execGetVariableString_Parms GetVariableString_Parms;
-	memcpy(&GetVariableString_Parms.Path, &Path, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetVariableString->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetVariableString, &GetVariableString_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetVariableString->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetVariableString_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.GetVariableNumber
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// float                          ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Path                           ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Path                           (Parm, NeedCtorLink)
+// float                          ReturnValue                    (Parm, OutParm, ReturnParm)
 
-float UGFxMoviePlayer::GetVariableNumber(struct FString Path)
+float UGFxMoviePlayer::GetVariableNumber(const struct FString& Path)
 {
-	static UFunction* pFnGetVariableNumber = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.GetVariableNumber");
 
-	if (!pFnGetVariableNumber)
-		pFnGetVariableNumber = (UFunction*)UObject::GObjects()->Data[37840];
+	UGFxMoviePlayer_GetVariableNumber_Params params;
+	params.Path = Path;
 
-	UGFxMoviePlayer_execGetVariableNumber_Parms GetVariableNumber_Parms;
-	memcpy(&GetVariableNumber_Parms.Path, &Path, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetVariableNumber->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetVariableNumber, &GetVariableNumber_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetVariableNumber->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetVariableNumber_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.GetVariableBool
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Path                           ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Path                           (Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxMoviePlayer::GetVariableBool(struct FString Path)
+bool UGFxMoviePlayer::GetVariableBool(const struct FString& Path)
 {
-	static UFunction* pFnGetVariableBool = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.GetVariableBool");
 
-	if (!pFnGetVariableBool)
-		pFnGetVariableBool = (UFunction*)UObject::GObjects()->Data[37843];
+	UGFxMoviePlayer_GetVariableBool_Params params;
+	params.Path = Path;
 
-	UGFxMoviePlayer_execGetVariableBool_Parms GetVariableBool_Parms;
-	memcpy(&GetVariableBool_Parms.Path, &Path, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetVariableBool->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetVariableBool, &GetVariableBool_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetVariableBool->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetVariableBool_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.GetVariable
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FASValue                ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// struct FString                 Path                           ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Path                           (Parm, NeedCtorLink)
+// struct FASValue                ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
-struct FASValue UGFxMoviePlayer::GetVariable(struct FString Path)
+struct FASValue UGFxMoviePlayer::GetVariable(const struct FString& Path)
 {
-	static UFunction* pFnGetVariable = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.GetVariable");
 
-	if (!pFnGetVariable)
-		pFnGetVariable = (UFunction*)UObject::GObjects()->Data[37846];
+	UGFxMoviePlayer_GetVariable_Params params;
+	params.Path = Path;
 
-	UGFxMoviePlayer_execGetVariable_Parms GetVariable_Parms;
-	memcpy(&GetVariable_Parms.Path, &Path, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetVariable->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetVariable, &GetVariable_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetVariable->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetVariable_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.FilterAxisInput
-// [0x00020800] ( FUNC_Event )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            ControllerId                   ( CPF_Parm )
-// struct FName                   Key                            ( CPF_Parm )
-// float                          Delta                          ( CPF_Parm )
-// float                          DeltaTime                      ( CPF_Parm )
+// (Event, Public)
+// Parameters:
+// int                            ControllerId                   (Parm)
+// struct FName                   Key                            (Parm)
+// float                          Delta                          (Parm)
+// float                          DeltaTime                      (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxMoviePlayer::eventFilterAxisInput(int ControllerId, struct FName Key, float Delta, float DeltaTime)
+bool UGFxMoviePlayer::FilterAxisInput(int ControllerId, const struct FName& Key, float Delta, float DeltaTime)
 {
-	static UFunction* pFnFilterAxisInput = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.FilterAxisInput");
 
-	if (!pFnFilterAxisInput)
-		pFnFilterAxisInput = (UFunction*)UObject::GObjects()->Data[37849];
+	UGFxMoviePlayer_FilterAxisInput_Params params;
+	params.ControllerId = ControllerId;
+	params.Key = Key;
+	params.Delta = Delta;
+	params.DeltaTime = DeltaTime;
 
-	UGFxMoviePlayer_eventFilterAxisInput_Parms FilterAxisInput_Parms;
-	FilterAxisInput_Parms.ControllerId = ControllerId;
-	memcpy(&FilterAxisInput_Parms.Key, &Key, 0x8);
-	FilterAxisInput_Parms.Delta = Delta;
-	FilterAxisInput_Parms.DeltaTime = DeltaTime;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnFilterAxisInput, &FilterAxisInput_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return FilterAxisInput_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function GFxUI.GFxMoviePlayer.FilterButtonInput
-// [0x00020800] ( FUNC_Event )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            ControllerId                   ( CPF_Parm )
-// struct FName                   ButtonName                     ( CPF_Parm )
-// unsigned char                  InputEvent                     ( CPF_Parm )
+// (Event, Public)
+// Parameters:
+// int                            ControllerId                   (Parm)
+// struct FName                   ButtonName                     (Parm)
+// unsigned char                  InputEvent                     (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxMoviePlayer::eventFilterButtonInput(int ControllerId, struct FName ButtonName, unsigned char InputEvent)
+bool UGFxMoviePlayer::FilterButtonInput(int ControllerId, const struct FName& ButtonName, unsigned char InputEvent)
 {
-	static UFunction* pFnFilterButtonInput = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.FilterButtonInput");
 
-	if (!pFnFilterButtonInput)
-		pFnFilterButtonInput = (UFunction*)UObject::GObjects()->Data[37852];
+	UGFxMoviePlayer_FilterButtonInput_Params params;
+	params.ControllerId = ControllerId;
+	params.ButtonName = ButtonName;
+	params.InputEvent = InputEvent;
 
-	UGFxMoviePlayer_eventFilterButtonInput_Parms FilterButtonInput_Parms;
-	FilterButtonInput_Parms.ControllerId = ControllerId;
-	memcpy(&FilterButtonInput_Parms.ButtonName, &ButtonName, 0x8);
-	FilterButtonInput_Parms.InputEvent = InputEvent;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnFilterButtonInput, &FilterButtonInput_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return FilterButtonInput_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function GFxUI.GFxMoviePlayer.FlushPlayerInput
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// unsigned long                  capturekeysonly                ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// bool                           capturekeysonly                (Parm)
 
-void UGFxMoviePlayer::FlushPlayerInput(unsigned long capturekeysonly)
+void UGFxMoviePlayer::FlushPlayerInput(bool capturekeysonly)
 {
-	static UFunction* pFnFlushPlayerInput = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.FlushPlayerInput");
 
-	if (!pFnFlushPlayerInput)
-		pFnFlushPlayerInput = (UFunction*)UObject::GObjects()->Data[37858];
+	UGFxMoviePlayer_FlushPlayerInput_Params params;
+	params.capturekeysonly = capturekeysonly;
 
-	UGFxMoviePlayer_execFlushPlayerInput_Parms FlushPlayerInput_Parms;
-	FlushPlayerInput_Parms.capturekeysonly = capturekeysonly;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnFlushPlayerInput->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnFlushPlayerInput, &FlushPlayerInput_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnFlushPlayerInput->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.ClearFocusIgnoreKeys
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
+// (Final, Native, Public)
 
 void UGFxMoviePlayer::ClearFocusIgnoreKeys()
 {
-	static UFunction* pFnClearFocusIgnoreKeys = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.ClearFocusIgnoreKeys");
 
-	if (!pFnClearFocusIgnoreKeys)
-		pFnClearFocusIgnoreKeys = (UFunction*)UObject::GObjects()->Data[37863];
+	UGFxMoviePlayer_ClearFocusIgnoreKeys_Params params;
 
-	UGFxMoviePlayer_execClearFocusIgnoreKeys_Parms ClearFocusIgnoreKeys_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnClearFocusIgnoreKeys->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnClearFocusIgnoreKeys, &ClearFocusIgnoreKeys_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnClearFocusIgnoreKeys->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.AddFocusIgnoreKey
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FName                   Key                            ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// struct FName                   Key                            (Parm)
 
-void UGFxMoviePlayer::AddFocusIgnoreKey(struct FName Key)
+void UGFxMoviePlayer::AddFocusIgnoreKey(const struct FName& Key)
 {
-	static UFunction* pFnAddFocusIgnoreKey = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.AddFocusIgnoreKey");
 
-	if (!pFnAddFocusIgnoreKey)
-		pFnAddFocusIgnoreKey = (UFunction*)UObject::GObjects()->Data[37865];
+	UGFxMoviePlayer_AddFocusIgnoreKey_Params params;
+	params.Key = Key;
 
-	UGFxMoviePlayer_execAddFocusIgnoreKey_Parms AddFocusIgnoreKey_Parms;
-	memcpy(&AddFocusIgnoreKey_Parms.Key, &Key, 0x8);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnAddFocusIgnoreKey->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnAddFocusIgnoreKey, &AddFocusIgnoreKey_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnAddFocusIgnoreKey->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.ClearCaptureKeys
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
+// (Final, Native, Public)
 
 void UGFxMoviePlayer::ClearCaptureKeys()
 {
-	static UFunction* pFnClearCaptureKeys = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.ClearCaptureKeys");
 
-	if (!pFnClearCaptureKeys)
-		pFnClearCaptureKeys = (UFunction*)UObject::GObjects()->Data[37866];
+	UGFxMoviePlayer_ClearCaptureKeys_Params params;
 
-	UGFxMoviePlayer_execClearCaptureKeys_Parms ClearCaptureKeys_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnClearCaptureKeys->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnClearCaptureKeys, &ClearCaptureKeys_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnClearCaptureKeys->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.AddCaptureKey
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FName                   Key                            ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// struct FName                   Key                            (Parm)
 
-void UGFxMoviePlayer::AddCaptureKey(struct FName Key)
+void UGFxMoviePlayer::AddCaptureKey(const struct FName& Key)
 {
-	static UFunction* pFnAddCaptureKey = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.AddCaptureKey");
 
-	if (!pFnAddCaptureKey)
-		pFnAddCaptureKey = (UFunction*)UObject::GObjects()->Data[37868];
+	UGFxMoviePlayer_AddCaptureKey_Params params;
+	params.Key = Key;
 
-	UGFxMoviePlayer_execAddCaptureKey_Parms AddCaptureKey_Parms;
-	memcpy(&AddCaptureKey_Parms.Key, &Key, 0x8);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnAddCaptureKey->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnAddCaptureKey, &AddCaptureKey_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnAddCaptureKey->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.SetMovieCanReceiveInput
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// unsigned long                  bCanReceiveInput               ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// bool                           bCanReceiveInput               (Parm)
 
-void UGFxMoviePlayer::SetMovieCanReceiveInput(unsigned long bCanReceiveInput)
+void UGFxMoviePlayer::SetMovieCanReceiveInput(bool bCanReceiveInput)
 {
-	static UFunction* pFnSetMovieCanReceiveInput = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.SetMovieCanReceiveInput");
 
-	if (!pFnSetMovieCanReceiveInput)
-		pFnSetMovieCanReceiveInput = (UFunction*)UObject::GObjects()->Data[37869];
+	UGFxMoviePlayer_SetMovieCanReceiveInput_Params params;
+	params.bCanReceiveInput = bCanReceiveInput;
 
-	UGFxMoviePlayer_execSetMovieCanReceiveInput_Parms SetMovieCanReceiveInput_Parms;
-	SetMovieCanReceiveInput_Parms.bCanReceiveInput = bCanReceiveInput;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetMovieCanReceiveInput->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetMovieCanReceiveInput, &SetMovieCanReceiveInput_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetMovieCanReceiveInput->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.SetMovieCanReceiveFocus
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// unsigned long                  bCanReceiveFocus               ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// bool                           bCanReceiveFocus               (Parm)
 
-void UGFxMoviePlayer::SetMovieCanReceiveFocus(unsigned long bCanReceiveFocus)
+void UGFxMoviePlayer::SetMovieCanReceiveFocus(bool bCanReceiveFocus)
 {
-	static UFunction* pFnSetMovieCanReceiveFocus = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.SetMovieCanReceiveFocus");
 
-	if (!pFnSetMovieCanReceiveFocus)
-		pFnSetMovieCanReceiveFocus = (UFunction*)UObject::GObjects()->Data[37871];
+	UGFxMoviePlayer_SetMovieCanReceiveFocus_Params params;
+	params.bCanReceiveFocus = bCanReceiveFocus;
 
-	UGFxMoviePlayer_execSetMovieCanReceiveFocus_Parms SetMovieCanReceiveFocus_Parms;
-	SetMovieCanReceiveFocus_Parms.bCanReceiveFocus = bCanReceiveFocus;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetMovieCanReceiveFocus->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetMovieCanReceiveFocus, &SetMovieCanReceiveFocus_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetMovieCanReceiveFocus->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.SetSceneDPG
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// unsigned char                  NewDPG                         ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// unsigned char                  NewDPG                         (Parm)
 
 void UGFxMoviePlayer::SetSceneDPG(unsigned char NewDPG)
 {
-	static UFunction* pFnSetSceneDPG = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.SetSceneDPG");
 
-	if (!pFnSetSceneDPG)
-		pFnSetSceneDPG = (UFunction*)UObject::GObjects()->Data[37873];
+	UGFxMoviePlayer_SetSceneDPG_Params params;
+	params.NewDPG = NewDPG;
 
-	UGFxMoviePlayer_execSetSceneDPG_Parms SetSceneDPG_Parms;
-	SetSceneDPG_Parms.NewDPG = NewDPG;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetSceneDPG->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetSceneDPG, &SetSceneDPG_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetSceneDPG->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.SetPerspective3D
-// [0x00420401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FMatrix                 matPersp                       ( CPF_Const | CPF_Parm | CPF_OutParm )
+// (Final, Native, Public, HasOutParms)
+// Parameters:
+// struct FMatrix                 matPersp                       (Const, Parm, OutParm)
 
 void UGFxMoviePlayer::SetPerspective3D(struct FMatrix* matPersp)
 {
-	static UFunction* pFnSetPerspective3D = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.SetPerspective3D");
 
-	if (!pFnSetPerspective3D)
-		pFnSetPerspective3D = (UFunction*)UObject::GObjects()->Data[37875];
+	UGFxMoviePlayer_SetPerspective3D_Params params;
 
-	UGFxMoviePlayer_execSetPerspective3D_Parms SetPerspective3D_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetPerspective3D->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetPerspective3D, &SetPerspective3D_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnSetPerspective3D->FunctionFlags |= 0x400;
+	if (matPersp != nullptr)
+		*matPersp = params.matPersp;
+}
 
-	if (matPersp)
-		memcpy(matPersp, &SetPerspective3D_Parms.matPersp, 0x40);
-};
 
 // Function GFxUI.GFxMoviePlayer.SetView3D
-// [0x00420401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FMatrix                 matView                        ( CPF_Const | CPF_Parm | CPF_OutParm )
+// (Final, Native, Public, HasOutParms)
+// Parameters:
+// struct FMatrix                 matView                        (Const, Parm, OutParm)
 
 void UGFxMoviePlayer::SetView3D(struct FMatrix* matView)
 {
-	static UFunction* pFnSetView3D = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.SetView3D");
 
-	if (!pFnSetView3D)
-		pFnSetView3D = (UFunction*)UObject::GObjects()->Data[37877];
+	UGFxMoviePlayer_SetView3D_Params params;
 
-	UGFxMoviePlayer_execSetView3D_Parms SetView3D_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetView3D->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetView3D, &SetView3D_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnSetView3D->FunctionFlags |= 0x400;
+	if (matView != nullptr)
+		*matView = params.matView;
+}
 
-	if (matView)
-		memcpy(matView, &SetView3D_Parms.matView, 0x40);
-};
 
 // Function GFxUI.GFxMoviePlayer.GetVisibleFrameRect
-// [0x00420401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// float                          x0                             ( CPF_Parm | CPF_OutParm )
-// float                          y0                             ( CPF_Parm | CPF_OutParm )
-// float                          X1                             ( CPF_Parm | CPF_OutParm )
-// float                          Y1                             ( CPF_Parm | CPF_OutParm )
+// (Final, Native, Public, HasOutParms)
+// Parameters:
+// float                          x0                             (Parm, OutParm)
+// float                          y0                             (Parm, OutParm)
+// float                          X1                             (Parm, OutParm)
+// float                          Y1                             (Parm, OutParm)
 
 void UGFxMoviePlayer::GetVisibleFrameRect(float* x0, float* y0, float* X1, float* Y1)
 {
-	static UFunction* pFnGetVisibleFrameRect = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.GetVisibleFrameRect");
 
-	if (!pFnGetVisibleFrameRect)
-		pFnGetVisibleFrameRect = (UFunction*)UObject::GObjects()->Data[37879];
+	UGFxMoviePlayer_GetVisibleFrameRect_Params params;
 
-	UGFxMoviePlayer_execGetVisibleFrameRect_Parms GetVisibleFrameRect_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetVisibleFrameRect->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetVisibleFrameRect, &GetVisibleFrameRect_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetVisibleFrameRect->FunctionFlags |= 0x400;
+	if (x0 != nullptr)
+		*x0 = params.x0;
+	if (y0 != nullptr)
+		*y0 = params.y0;
+	if (X1 != nullptr)
+		*X1 = params.X1;
+	if (Y1 != nullptr)
+		*Y1 = params.Y1;
+}
 
-	if (x0)
-		*x0 = GetVisibleFrameRect_Parms.x0;
-
-	if (y0)
-		*y0 = GetVisibleFrameRect_Parms.y0;
-
-	if (X1)
-		*X1 = GetVisibleFrameRect_Parms.X1;
-
-	if (Y1)
-		*Y1 = GetVisibleFrameRect_Parms.Y1;
-};
 
 // Function GFxUI.GFxMoviePlayer.SetAlignment
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// unsigned char                  A                              ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// unsigned char                  A                              (Parm)
 
 void UGFxMoviePlayer::SetAlignment(unsigned char A)
 {
-	static UFunction* pFnSetAlignment = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.SetAlignment");
 
-	if (!pFnSetAlignment)
-		pFnSetAlignment = (UFunction*)UObject::GObjects()->Data[37881];
+	UGFxMoviePlayer_SetAlignment_Params params;
+	params.A = A;
 
-	UGFxMoviePlayer_execSetAlignment_Parms SetAlignment_Parms;
-	SetAlignment_Parms.A = A;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetAlignment->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetAlignment, &SetAlignment_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetAlignment->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.SetViewScaleMode
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// unsigned char                  SM                             ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  SM                             (Parm)
 
 void UGFxMoviePlayer::SetViewScaleMode(unsigned char SM)
 {
-	static UFunction* pFnSetViewScaleMode = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.SetViewScaleMode");
 
-	if (!pFnSetViewScaleMode)
-		pFnSetViewScaleMode = (UFunction*)UObject::GObjects()->Data[37886];
+	UGFxMoviePlayer_SetViewScaleMode_Params params;
+	params.SM = SM;
 
-	UGFxMoviePlayer_execSetViewScaleMode_Parms SetViewScaleMode_Parms;
-	SetViewScaleMode_Parms.SM = SM;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetViewScaleMode->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetViewScaleMode, &SetViewScaleMode_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetViewScaleMode->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.OnSetViewport
-// [0x00020800] ( FUNC_Event )
-// Parameters infos:
+// (Event, Public)
 
-void UGFxMoviePlayer::eventOnSetViewport()
+void UGFxMoviePlayer::OnSetViewport()
 {
-	static UFunction* pFnOnSetViewport = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.OnSetViewport");
 
-	if (!pFnOnSetViewport)
-		pFnOnSetViewport = (UFunction*)UObject::GObjects()->Data[37890];
+	UGFxMoviePlayer_OnSetViewport_Params params;
 
-	UGFxMoviePlayer_eventOnSetViewport_Parms OnSetViewport_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnSetViewport, &OnSetViewport_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GFxUI.GFxMoviePlayer.SetViewport
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// int                            X                              ( CPF_Parm )
-// int                            Y                              ( CPF_Parm )
-// int                            Width                          ( CPF_Parm )
-// int                            Height                         ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// int                            X                              (Parm)
+// int                            Y                              (Parm)
+// int                            Width                          (Parm)
+// int                            Height                         (Parm)
 
 void UGFxMoviePlayer::SetViewport(int X, int Y, int Width, int Height)
 {
-	static UFunction* pFnSetViewport = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.SetViewport");
 
-	if (!pFnSetViewport)
-		pFnSetViewport = (UFunction*)UObject::GObjects()->Data[37892];
+	UGFxMoviePlayer_SetViewport_Params params;
+	params.X = X;
+	params.Y = Y;
+	params.Width = Width;
+	params.Height = Height;
 
-	UGFxMoviePlayer_execSetViewport_Parms SetViewport_Parms;
-	SetViewport_Parms.X = X;
-	SetViewport_Parms.Y = Y;
-	SetViewport_Parms.Width = Width;
-	SetViewport_Parms.Height = Height;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetViewport->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetViewport, &SetViewport_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetViewport->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.GetGameViewportClient
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// class UGameViewportClient*     ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Final, Native, Public)
+// Parameters:
+// class UGameViewportClient*     ReturnValue                    (Parm, OutParm, ReturnParm)
 
 class UGameViewportClient* UGFxMoviePlayer::GetGameViewportClient()
 {
-	static UFunction* pFnGetGameViewportClient = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.GetGameViewportClient");
 
-	if (!pFnGetGameViewportClient)
-		pFnGetGameViewportClient = (UFunction*)UObject::GObjects()->Data[37893];
+	UGFxMoviePlayer_GetGameViewportClient_Params params;
 
-	UGFxMoviePlayer_execGetGameViewportClient_Parms GetGameViewportClient_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetGameViewportClient->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetGameViewportClient, &GetGameViewportClient_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetGameViewportClient->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetGameViewportClient_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.SetPriority
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// unsigned char                  NewPriority                    ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  NewPriority                    (Parm)
 
 void UGFxMoviePlayer::SetPriority(unsigned char NewPriority)
 {
-	static UFunction* pFnSetPriority = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.SetPriority");
 
-	if (!pFnSetPriority)
-		pFnSetPriority = (UFunction*)UObject::GObjects()->Data[37898];
+	UGFxMoviePlayer_SetPriority_Params params;
+	params.NewPriority = NewPriority;
 
-	UGFxMoviePlayer_execSetPriority_Parms SetPriority_Parms;
-	SetPriority_Parms.NewPriority = NewPriority;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetPriority->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetPriority, &SetPriority_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetPriority->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.PublishDataStoreValues
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
+// (Native, Public)
 
 void UGFxMoviePlayer::PublishDataStoreValues()
 {
-	static UFunction* pFnPublishDataStoreValues = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.PublishDataStoreValues");
 
-	if (!pFnPublishDataStoreValues)
-		pFnPublishDataStoreValues = (UFunction*)UObject::GObjects()->Data[37900];
+	UGFxMoviePlayer_PublishDataStoreValues_Params params;
 
-	UGFxMoviePlayer_execPublishDataStoreValues_Parms PublishDataStoreValues_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnPublishDataStoreValues->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnPublishDataStoreValues, &PublishDataStoreValues_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnPublishDataStoreValues->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.RefreshDataStoreBindings
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
+// (Native, Public)
 
 void UGFxMoviePlayer::RefreshDataStoreBindings()
 {
-	static UFunction* pFnRefreshDataStoreBindings = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.RefreshDataStoreBindings");
 
-	if (!pFnRefreshDataStoreBindings)
-		pFnRefreshDataStoreBindings = (UFunction*)UObject::GObjects()->Data[37902];
+	UGFxMoviePlayer_RefreshDataStoreBindings_Params params;
 
-	UGFxMoviePlayer_execRefreshDataStoreBindings_Parms RefreshDataStoreBindings_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnRefreshDataStoreBindings->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnRefreshDataStoreBindings, &RefreshDataStoreBindings_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnRefreshDataStoreBindings->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.SetExternalTexture
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Resource                       ( CPF_Parm | CPF_NeedCtorLink )
-// class UTexture*                Texture                        ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// struct FString                 Resource                       (Parm, NeedCtorLink)
+// class UTexture*                Texture                        (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxMoviePlayer::SetExternalTexture(struct FString Resource, class UTexture* Texture)
+bool UGFxMoviePlayer::SetExternalTexture(const struct FString& Resource, class UTexture* Texture)
 {
-	static UFunction* pFnSetExternalTexture = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.SetExternalTexture");
 
-	if (!pFnSetExternalTexture)
-		pFnSetExternalTexture = (UFunction*)UObject::GObjects()->Data[37903];
+	UGFxMoviePlayer_SetExternalTexture_Params params;
+	params.Resource = Resource;
+	params.Texture = Texture;
 
-	UGFxMoviePlayer_execSetExternalTexture_Parms SetExternalTexture_Parms;
-	memcpy(&SetExternalTexture_Parms.Resource, &Resource, 0xC);
-	SetExternalTexture_Parms.Texture = Texture;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetExternalTexture->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetExternalTexture, &SetExternalTexture_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnSetExternalTexture->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return SetExternalTexture_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxMoviePlayer.SetExternalInterface
-// [0x00020002]
-// Parameters infos:
-// class UObject*                 H                              ( CPF_Parm )
+// (Defined, Public)
+// Parameters:
+// class UObject*                 H                              (Parm)
 
 void UGFxMoviePlayer::SetExternalInterface(class UObject* H)
 {
-	static UFunction* pFnSetExternalInterface = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.SetExternalInterface");
 
-	if (!pFnSetExternalInterface)
-		pFnSetExternalInterface = (UFunction*)UObject::GObjects()->Data[37904];
+	UGFxMoviePlayer_SetExternalInterface_Params params;
+	params.H = H;
 
-	UGFxMoviePlayer_execSetExternalInterface_Parms SetExternalInterface_Parms;
-	SetExternalInterface_Parms.H = H;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnSetExternalInterface, &SetExternalInterface_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GFxUI.GFxMoviePlayer.SetTimingMode
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// unsigned char                  Mode                           ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// unsigned char                  Mode                           (Parm)
 
 void UGFxMoviePlayer::SetTimingMode(unsigned char Mode)
 {
-	static UFunction* pFnSetTimingMode = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.SetTimingMode");
 
-	if (!pFnSetTimingMode)
-		pFnSetTimingMode = (UFunction*)UObject::GObjects()->Data[37908];
+	UGFxMoviePlayer_SetTimingMode_Params params;
+	params.Mode = Mode;
 
-	UGFxMoviePlayer_execSetTimingMode_Parms SetTimingMode_Parms;
-	SetTimingMode_Parms.Mode = Mode;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetTimingMode->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetTimingMode, &SetTimingMode_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetTimingMode->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.SetMovieInfo
-// [0x00020002]
-// Parameters infos:
-// class USwfMovie*               Data                           ( CPF_Parm )
+// (Defined, Public)
+// Parameters:
+// class USwfMovie*               Data                           (Parm)
 
 void UGFxMoviePlayer::SetMovieInfo(class USwfMovie* Data)
 {
-	static UFunction* pFnSetMovieInfo = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.SetMovieInfo");
 
-	if (!pFnSetMovieInfo)
-		pFnSetMovieInfo = (UFunction*)UObject::GObjects()->Data[37911];
+	UGFxMoviePlayer_SetMovieInfo_Params params;
+	params.Data = Data;
 
-	UGFxMoviePlayer_execSetMovieInfo_Parms SetMovieInfo_Parms;
-	SetMovieInfo_Parms.Data = Data;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnSetMovieInfo, &SetMovieInfo_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GFxUI.GFxMoviePlayer.ConditionalClearPause
-// [0x00020803] ( FUNC_Final | FUNC_Event )
-// Parameters infos:
+// (Final, Defined, Event, Public)
 
-void UGFxMoviePlayer::eventConditionalClearPause()
+void UGFxMoviePlayer::ConditionalClearPause()
 {
-	static UFunction* pFnConditionalClearPause = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.ConditionalClearPause");
 
-	if (!pFnConditionalClearPause)
-		pFnConditionalClearPause = (UFunction*)UObject::GObjects()->Data[37914];
+	UGFxMoviePlayer_ConditionalClearPause_Params params;
 
-	UGFxMoviePlayer_eventConditionalClearPause_Parms ConditionalClearPause_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnConditionalClearPause, &ConditionalClearPause_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GFxUI.GFxMoviePlayer.OnCleanup
-// [0x00020800] ( FUNC_Event )
-// Parameters infos:
+// (Event, Public)
 
-void UGFxMoviePlayer::eventOnCleanup()
+void UGFxMoviePlayer::OnCleanup()
 {
-	static UFunction* pFnOnCleanup = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.OnCleanup");
 
-	if (!pFnOnCleanup)
-		pFnOnCleanup = (UFunction*)UObject::GObjects()->Data[37916];
+	UGFxMoviePlayer_OnCleanup_Params params;
 
-	UGFxMoviePlayer_eventOnCleanup_Parms OnCleanup_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnCleanup, &OnCleanup_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GFxUI.GFxMoviePlayer.OnClose
-// [0x00020800] ( FUNC_Event )
-// Parameters infos:
+// (Event, Public)
 
-void UGFxMoviePlayer::eventOnClose()
+void UGFxMoviePlayer::OnClose()
 {
-	static UFunction* pFnOnClose = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.OnClose");
 
-	if (!pFnOnClose)
-		pFnOnClose = (UFunction*)UObject::GObjects()->Data[37918];
+	UGFxMoviePlayer_OnClose_Params params;
 
-	UGFxMoviePlayer_eventOnClose_Parms OnClose_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnClose, &OnClose_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GFxUI.GFxMoviePlayer.Close
-// [0x00024401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// unsigned long                  Unload                         ( CPF_OptionalParm | CPF_Parm )
+// (Final, Native, HasOptionalParms, Public)
+// Parameters:
+// bool                           Unload                         (OptionalParm, Parm)
 
-void UGFxMoviePlayer::Close(unsigned long Unload)
+void UGFxMoviePlayer::Close(bool Unload)
 {
-	static UFunction* pFnClose = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.Close");
 
-	if (!pFnClose)
-		pFnClose = (UFunction*)UObject::GObjects()->Data[37919];
+	UGFxMoviePlayer_Close_Params params;
+	params.Unload = Unload;
 
-	UGFxMoviePlayer_execClose_Parms Close_Parms;
-	Close_Parms.Unload = Unload;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnClose->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnClose, &Close_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnClose->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.SetPause
-// [0x00024400] ( FUNC_Native )
-// Parameters infos:
-// unsigned long                  bPausePlayback                 ( CPF_OptionalParm | CPF_Parm )
+// (Native, HasOptionalParms, Public)
+// Parameters:
+// bool                           bPausePlayback                 (OptionalParm, Parm)
 
-void UGFxMoviePlayer::SetPause(unsigned long bPausePlayback)
+void UGFxMoviePlayer::SetPause(bool bPausePlayback)
 {
-	static UFunction* pFnSetPause = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.SetPause");
 
-	if (!pFnSetPause)
-		pFnSetPause = (UFunction*)UObject::GObjects()->Data[37920];
+	UGFxMoviePlayer_SetPause_Params params;
+	params.bPausePlayback = bPausePlayback;
 
-	UGFxMoviePlayer_execSetPause_Parms SetPause_Parms;
-	SetPause_Parms.bPausePlayback = bPausePlayback;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetPause->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetPause, &SetPause_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetPause->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.OnPostAdvance
-// [0x00120000]
-// Parameters infos:
-// float                          DeltaTime                      ( CPF_Parm )
+// (Public, Delegate)
+// Parameters:
+// float                          DeltaTime                      (Parm)
 
 void UGFxMoviePlayer::OnPostAdvance(float DeltaTime)
 {
-	static UFunction* pFnOnPostAdvance = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.OnPostAdvance");
 
-	if (!pFnOnPostAdvance)
-		pFnOnPostAdvance = (UFunction*)UObject::GObjects()->Data[37922];
+	UGFxMoviePlayer_OnPostAdvance_Params params;
+	params.DeltaTime = DeltaTime;
 
-	UGFxMoviePlayer_execOnPostAdvance_Parms OnPostAdvance_Parms;
-	OnPostAdvance_Parms.DeltaTime = DeltaTime;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnOnPostAdvance, &OnPostAdvance_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GFxUI.GFxMoviePlayer.PostAdvance
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// float                          DeltaTime                      ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// float                          DeltaTime                      (Parm)
 
 void UGFxMoviePlayer::PostAdvance(float DeltaTime)
 {
-	static UFunction* pFnPostAdvance = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.PostAdvance");
 
-	if (!pFnPostAdvance)
-		pFnPostAdvance = (UFunction*)UObject::GObjects()->Data[37924];
+	UGFxMoviePlayer_PostAdvance_Params params;
+	params.DeltaTime = DeltaTime;
 
-	UGFxMoviePlayer_execPostAdvance_Parms PostAdvance_Parms;
-	PostAdvance_Parms.DeltaTime = DeltaTime;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnPostAdvance->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnPostAdvance, &PostAdvance_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnPostAdvance->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.Advance
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// float                          Time                           ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// float                          Time                           (Parm)
 
 void UGFxMoviePlayer::Advance(float Time)
 {
-	static UFunction* pFnAdvance = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.Advance");
 
-	if (!pFnAdvance)
-		pFnAdvance = (UFunction*)UObject::GObjects()->Data[37721];
+	UGFxMoviePlayer_Advance_Params params;
+	params.Time = Time;
 
-	UGFxMoviePlayer_execAdvance_Parms Advance_Parms;
-	Advance_Parms.Time = Time;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnAdvance->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnAdvance, &Advance_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnAdvance->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxMoviePlayer.Start
-// [0x00024C00] ( FUNC_Event | FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// unsigned long                  StartPaused                    ( CPF_OptionalParm | CPF_Parm )
+// (Native, Event, HasOptionalParms, Public)
+// Parameters:
+// bool                           StartPaused                    (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxMoviePlayer::eventStart(unsigned long StartPaused)
+bool UGFxMoviePlayer::Start(bool StartPaused)
 {
-	static UFunction* pFnStart = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxMoviePlayer.Start");
 
-	if (!pFnStart)
-		pFnStart = (UFunction*)UObject::GObjects()->Data[37927];
+	UGFxMoviePlayer_Start_Params params;
+	params.StartPaused = StartPaused;
 
-	UGFxMoviePlayer_eventStart_Parms Start_Parms;
-	Start_Parms.StartPaused = StartPaused;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnStart->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnStart, &Start_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnStart->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return Start_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.WidgetUnloaded
-// [0x00020800] ( FUNC_Event )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   WidgetName                     ( CPF_Parm )
-// struct FName                   WidgetPath                     ( CPF_Parm )
-// class UGFxObject*              Widget                         ( CPF_Parm )
+// (Event, Public)
+// Parameters:
+// struct FName                   WidgetName                     (Parm)
+// struct FName                   WidgetPath                     (Parm)
+// class UGFxObject*              Widget                         (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxObject::eventWidgetUnloaded(struct FName WidgetName, struct FName WidgetPath, class UGFxObject* Widget)
+bool UGFxObject::WidgetUnloaded(const struct FName& WidgetName, const struct FName& WidgetPath, class UGFxObject* Widget)
 {
-	static UFunction* pFnWidgetUnloaded = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.WidgetUnloaded");
 
-	if (!pFnWidgetUnloaded)
-		pFnWidgetUnloaded = (UFunction*)UObject::GObjects()->Data[38297];
+	UGFxObject_WidgetUnloaded_Params params;
+	params.WidgetName = WidgetName;
+	params.WidgetPath = WidgetPath;
+	params.Widget = Widget;
 
-	UGFxObject_eventWidgetUnloaded_Parms WidgetUnloaded_Parms;
-	memcpy(&WidgetUnloaded_Parms.WidgetName, &WidgetName, 0x8);
-	memcpy(&WidgetUnloaded_Parms.WidgetPath, &WidgetPath, 0x8);
-	WidgetUnloaded_Parms.Widget = Widget;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnWidgetUnloaded, &WidgetUnloaded_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return WidgetUnloaded_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function GFxUI.GFxObject.WidgetInitialized
-// [0x00020800] ( FUNC_Event )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FName                   WidgetName                     ( CPF_Parm )
-// struct FName                   WidgetPath                     ( CPF_Parm )
-// class UGFxObject*              Widget                         ( CPF_Parm )
+// (Event, Public)
+// Parameters:
+// struct FName                   WidgetName                     (Parm)
+// struct FName                   WidgetPath                     (Parm)
+// class UGFxObject*              Widget                         (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxObject::eventWidgetInitialized(struct FName WidgetName, struct FName WidgetPath, class UGFxObject* Widget)
+bool UGFxObject::WidgetInitialized(const struct FName& WidgetName, const struct FName& WidgetPath, class UGFxObject* Widget)
 {
-	static UFunction* pFnWidgetInitialized = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.WidgetInitialized");
 
-	if (!pFnWidgetInitialized)
-		pFnWidgetInitialized = (UFunction*)UObject::GObjects()->Data[38292];
+	UGFxObject_WidgetInitialized_Params params;
+	params.WidgetName = WidgetName;
+	params.WidgetPath = WidgetPath;
+	params.Widget = Widget;
 
-	UGFxObject_eventWidgetInitialized_Parms WidgetInitialized_Parms;
-	memcpy(&WidgetInitialized_Parms.WidgetName, &WidgetName, 0x8);
-	memcpy(&WidgetInitialized_Parms.WidgetPath, &WidgetPath, 0x8);
-	WidgetInitialized_Parms.Widget = Widget;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnWidgetInitialized, &WidgetInitialized_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return WidgetInitialized_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function GFxUI.GFxObject.MouseHitTest
-// [0x00020003] ( FUNC_Final )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Final, Defined, Public)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UGFxObject::MouseHitTest()
 {
-	static UFunction* pFnMouseHitTest = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.MouseHitTest");
 
-	if (!pFnMouseHitTest)
-		pFnMouseHitTest = (UFunction*)UObject::GObjects()->Data[38290];
+	UGFxObject_MouseHitTest_Params params;
 
-	UGFxObject_execMouseHitTest_Parms MouseHitTest_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnMouseHitTest, &MouseHitTest_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return MouseHitTest_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function GFxUI.GFxObject.HitTest
-// [0x00024003] ( FUNC_Final )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            TestX                          ( CPF_Parm )
-// int                            TestY                          ( CPF_Parm )
-// unsigned long                  bTestShape                     ( CPF_OptionalParm | CPF_Parm )
+// (Final, Defined, HasOptionalParms, Public)
+// Parameters:
+// int                            TestX                          (Parm)
+// int                            TestY                          (Parm)
+// bool                           bTestShape                     (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxObject::HitTest(int TestX, int TestY, unsigned long bTestShape)
+bool UGFxObject::HitTest(int TestX, int TestY, bool bTestShape)
 {
-	static UFunction* pFnHitTest = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.HitTest");
 
-	if (!pFnHitTest)
-		pFnHitTest = (UFunction*)UObject::GObjects()->Data[38285];
+	UGFxObject_HitTest_Params params;
+	params.TestX = TestX;
+	params.TestY = TestY;
+	params.bTestShape = bTestShape;
 
-	UGFxObject_execHitTest_Parms HitTest_Parms;
-	HitTest_Parms.TestX = TestX;
-	HitTest_Parms.TestY = TestY;
-	HitTest_Parms.bTestShape = bTestShape;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnHitTest, &HitTest_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return HitTest_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function GFxUI.GFxObject._HitTest
-// [0x00040003] ( FUNC_Final )
-// Parameters infos:
-// int                            ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            TestX                          ( CPF_Parm )
-// int                            TestY                          ( CPF_Parm )
-// unsigned long                  bTestShape                     ( CPF_Parm )
+// (Final, Defined, Private)
+// Parameters:
+// int                            TestX                          (Parm)
+// int                            TestY                          (Parm)
+// bool                           bTestShape                     (Parm)
+// int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
-int UGFxObject::_HitTest(int TestX, int TestY, unsigned long bTestShape)
+int UGFxObject::_HitTest(int TestX, int TestY, bool bTestShape)
 {
-	static UFunction* pFn_HitTest = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject._HitTest");
 
-	if (!pFn_HitTest)
-		pFn_HitTest = (UFunction*)UObject::GObjects()->Data[38280];
+	UGFxObject__HitTest_Params params;
+	params.TestX = TestX;
+	params.TestY = TestY;
+	params.bTestShape = bTestShape;
 
-	UGFxObject_exec_HitTest_Parms _HitTest_Parms;
-	_HitTest_Parms.TestX = TestX;
-	_HitTest_Parms.TestY = TestY;
-	_HitTest_Parms.bTestShape = bTestShape;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFn_HitTest, &_HitTest_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return _HitTest_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function GFxUI.GFxObject.GetNextHighestDepth
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// float                          ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Final, Native, Public)
+// Parameters:
+// float                          ReturnValue                    (Parm, OutParm, ReturnParm)
 
 float UGFxObject::GetNextHighestDepth()
 {
-	static UFunction* pFnGetNextHighestDepth = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.GetNextHighestDepth");
 
-	if (!pFnGetNextHighestDepth)
-		pFnGetNextHighestDepth = (UFunction*)UObject::GObjects()->Data[38278];
+	UGFxObject_GetNextHighestDepth_Params params;
 
-	UGFxObject_execGetNextHighestDepth_Parms GetNextHighestDepth_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetNextHighestDepth->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetNextHighestDepth, &GetNextHighestDepth_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetNextHighestDepth->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetNextHighestDepth_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.RemoveMovieClip
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
+// (Final, Native, Public)
 
 void UGFxObject::RemoveMovieClip()
 {
-	static UFunction* pFnRemoveMovieClip = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.RemoveMovieClip");
 
-	if (!pFnRemoveMovieClip)
-		pFnRemoveMovieClip = (UFunction*)UObject::GObjects()->Data[38277];
+	UGFxObject_RemoveMovieClip_Params params;
 
-	UGFxObject_execRemoveMovieClip_Parms RemoveMovieClip_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnRemoveMovieClip->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnRemoveMovieClip, &RemoveMovieClip_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnRemoveMovieClip->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.AttachMovie
-// [0x00024401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// class UGFxObject*              ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 symbolname                     ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 instancename                   ( CPF_Parm | CPF_NeedCtorLink )
-// int                            Depth                          ( CPF_OptionalParm | CPF_Parm )
-// class UClass*                  Type                           ( CPF_OptionalParm | CPF_Parm )
+// (Final, Native, HasOptionalParms, Public)
+// Parameters:
+// struct FString                 symbolname                     (Parm, NeedCtorLink)
+// struct FString                 instancename                   (Parm, NeedCtorLink)
+// int                            Depth                          (OptionalParm, Parm)
+// class UClass*                  Type                           (OptionalParm, Parm)
+// class UGFxObject*              ReturnValue                    (Parm, OutParm, ReturnParm)
 
-class UGFxObject* UGFxObject::AttachMovie(struct FString symbolname, struct FString instancename, int Depth, class UClass* Type)
+class UGFxObject* UGFxObject::AttachMovie(const struct FString& symbolname, const struct FString& instancename, int Depth, class UClass* Type)
 {
-	static UFunction* pFnAttachMovie = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.AttachMovie");
 
-	if (!pFnAttachMovie)
-		pFnAttachMovie = (UFunction*)UObject::GObjects()->Data[38271];
+	UGFxObject_AttachMovie_Params params;
+	params.symbolname = symbolname;
+	params.instancename = instancename;
+	params.Depth = Depth;
+	params.Type = Type;
 
-	UGFxObject_execAttachMovie_Parms AttachMovie_Parms;
-	memcpy(&AttachMovie_Parms.symbolname, &symbolname, 0xC);
-	memcpy(&AttachMovie_Parms.instancename, &instancename, 0xC);
-	AttachMovie_Parms.Depth = Depth;
-	AttachMovie_Parms.Type = Type;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnAttachMovie->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnAttachMovie, &AttachMovie_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnAttachMovie->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return AttachMovie_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.CreateEmptyMovieClip
-// [0x00024401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// class UGFxObject*              ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 instancename                   ( CPF_Parm | CPF_NeedCtorLink )
-// int                            Depth                          ( CPF_OptionalParm | CPF_Parm )
-// class UClass*                  Type                           ( CPF_OptionalParm | CPF_Parm )
+// (Final, Native, HasOptionalParms, Public)
+// Parameters:
+// struct FString                 instancename                   (Parm, NeedCtorLink)
+// int                            Depth                          (OptionalParm, Parm)
+// class UClass*                  Type                           (OptionalParm, Parm)
+// class UGFxObject*              ReturnValue                    (Parm, OutParm, ReturnParm)
 
-class UGFxObject* UGFxObject::CreateEmptyMovieClip(struct FString instancename, int Depth, class UClass* Type)
+class UGFxObject* UGFxObject::CreateEmptyMovieClip(const struct FString& instancename, int Depth, class UClass* Type)
 {
-	static UFunction* pFnCreateEmptyMovieClip = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.CreateEmptyMovieClip");
 
-	if (!pFnCreateEmptyMovieClip)
-		pFnCreateEmptyMovieClip = (UFunction*)UObject::GObjects()->Data[38266];
+	UGFxObject_CreateEmptyMovieClip_Params params;
+	params.instancename = instancename;
+	params.Depth = Depth;
+	params.Type = Type;
 
-	UGFxObject_execCreateEmptyMovieClip_Parms CreateEmptyMovieClip_Parms;
-	memcpy(&CreateEmptyMovieClip_Parms.instancename, &instancename, 0xC);
-	CreateEmptyMovieClip_Parms.Depth = Depth;
-	CreateEmptyMovieClip_Parms.Type = Type;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnCreateEmptyMovieClip->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnCreateEmptyMovieClip, &CreateEmptyMovieClip_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnCreateEmptyMovieClip->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return CreateEmptyMovieClip_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.GotoAndStopI
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// int                            frame                          ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// int                            frame                          (Parm)
 
 void UGFxObject::GotoAndStopI(int frame)
 {
-	static UFunction* pFnGotoAndStopI = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.GotoAndStopI");
 
-	if (!pFnGotoAndStopI)
-		pFnGotoAndStopI = (UFunction*)UObject::GObjects()->Data[38264];
+	UGFxObject_GotoAndStopI_Params params;
+	params.frame = frame;
 
-	UGFxObject_execGotoAndStopI_Parms GotoAndStopI_Parms;
-	GotoAndStopI_Parms.frame = frame;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGotoAndStopI->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGotoAndStopI, &GotoAndStopI_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnGotoAndStopI->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.GotoAndStop
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 frame                          ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 frame                          (Parm, NeedCtorLink)
 
-void UGFxObject::GotoAndStop(struct FString frame)
+void UGFxObject::GotoAndStop(const struct FString& frame)
 {
-	static UFunction* pFnGotoAndStop = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.GotoAndStop");
 
-	if (!pFnGotoAndStop)
-		pFnGotoAndStop = (UFunction*)UObject::GObjects()->Data[38262];
+	UGFxObject_GotoAndStop_Params params;
+	params.frame = frame;
 
-	UGFxObject_execGotoAndStop_Parms GotoAndStop_Parms;
-	memcpy(&GotoAndStop_Parms.frame, &frame, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGotoAndStop->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGotoAndStop, &GotoAndStop_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnGotoAndStop->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.GotoAndPlayI
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// int                            frame                          ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// int                            frame                          (Parm)
 
 void UGFxObject::GotoAndPlayI(int frame)
 {
-	static UFunction* pFnGotoAndPlayI = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.GotoAndPlayI");
 
-	if (!pFnGotoAndPlayI)
-		pFnGotoAndPlayI = (UFunction*)UObject::GObjects()->Data[38260];
+	UGFxObject_GotoAndPlayI_Params params;
+	params.frame = frame;
 
-	UGFxObject_execGotoAndPlayI_Parms GotoAndPlayI_Parms;
-	GotoAndPlayI_Parms.frame = frame;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGotoAndPlayI->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGotoAndPlayI, &GotoAndPlayI_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnGotoAndPlayI->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.GotoAndPlay
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 frame                          ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 frame                          (Parm, NeedCtorLink)
 
-void UGFxObject::GotoAndPlay(struct FString frame)
+void UGFxObject::GotoAndPlay(const struct FString& frame)
 {
-	static UFunction* pFnGotoAndPlay = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.GotoAndPlay");
 
-	if (!pFnGotoAndPlay)
-		pFnGotoAndPlay = (UFunction*)UObject::GObjects()->Data[38258];
+	UGFxObject_GotoAndPlay_Params params;
+	params.frame = frame;
 
-	UGFxObject_execGotoAndPlay_Parms GotoAndPlay_Parms;
-	memcpy(&GotoAndPlay_Parms.frame, &frame, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGotoAndPlay->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGotoAndPlay, &GotoAndPlay_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnGotoAndPlay->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.ActionScriptArray
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// TArray< class UGFxObject* >    ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// struct FString                 Path                           ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Path                           (Parm, NeedCtorLink)
+// TArray<class UGFxObject*>      ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
-TArray< class UGFxObject* > UGFxObject::ActionScriptArray(struct FString Path)
+TArray<class UGFxObject*> UGFxObject::ActionScriptArray(const struct FString& Path)
 {
-	static UFunction* pFnActionScriptArray = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.ActionScriptArray");
 
-	if (!pFnActionScriptArray)
-		pFnActionScriptArray = (UFunction*)UObject::GObjects()->Data[38254];
+	UGFxObject_ActionScriptArray_Params params;
+	params.Path = Path;
 
-	UGFxObject_execActionScriptArray_Parms ActionScriptArray_Parms;
-	memcpy(&ActionScriptArray_Parms.Path, &Path, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnActionScriptArray->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnActionScriptArray, &ActionScriptArray_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnActionScriptArray->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ActionScriptArray_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.ActionScriptObject
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// class UGFxObject*              ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Path                           ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Path                           (Parm, NeedCtorLink)
+// class UGFxObject*              ReturnValue                    (Parm, OutParm, ReturnParm)
 
-class UGFxObject* UGFxObject::ActionScriptObject(struct FString Path)
+class UGFxObject* UGFxObject::ActionScriptObject(const struct FString& Path)
 {
-	static UFunction* pFnActionScriptObject = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.ActionScriptObject");
 
-	if (!pFnActionScriptObject)
-		pFnActionScriptObject = (UFunction*)UObject::GObjects()->Data[38251];
+	UGFxObject_ActionScriptObject_Params params;
+	params.Path = Path;
 
-	UGFxObject_execActionScriptObject_Parms ActionScriptObject_Parms;
-	memcpy(&ActionScriptObject_Parms.Path, &Path, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnActionScriptObject->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnActionScriptObject, &ActionScriptObject_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnActionScriptObject->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ActionScriptObject_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.ActionScriptString
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// struct FString                 Method                         ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Method                         (Parm, NeedCtorLink)
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
-struct FString UGFxObject::ActionScriptString(struct FString Method)
+struct FString UGFxObject::ActionScriptString(const struct FString& Method)
 {
-	static UFunction* pFnActionScriptString = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.ActionScriptString");
 
-	if (!pFnActionScriptString)
-		pFnActionScriptString = (UFunction*)UObject::GObjects()->Data[38248];
+	UGFxObject_ActionScriptString_Params params;
+	params.Method = Method;
 
-	UGFxObject_execActionScriptString_Parms ActionScriptString_Parms;
-	memcpy(&ActionScriptString_Parms.Method, &Method, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnActionScriptString->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnActionScriptString, &ActionScriptString_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnActionScriptString->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ActionScriptString_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.ActionScriptFloat
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// float                          ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Method                         ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Method                         (Parm, NeedCtorLink)
+// float                          ReturnValue                    (Parm, OutParm, ReturnParm)
 
-float UGFxObject::ActionScriptFloat(struct FString Method)
+float UGFxObject::ActionScriptFloat(const struct FString& Method)
 {
-	static UFunction* pFnActionScriptFloat = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.ActionScriptFloat");
 
-	if (!pFnActionScriptFloat)
-		pFnActionScriptFloat = (UFunction*)UObject::GObjects()->Data[38245];
+	UGFxObject_ActionScriptFloat_Params params;
+	params.Method = Method;
 
-	UGFxObject_execActionScriptFloat_Parms ActionScriptFloat_Parms;
-	memcpy(&ActionScriptFloat_Parms.Method, &Method, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnActionScriptFloat->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnActionScriptFloat, &ActionScriptFloat_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnActionScriptFloat->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ActionScriptFloat_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.ActionScriptInt
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// int                            ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Method                         ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Method                         (Parm, NeedCtorLink)
+// int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
-int UGFxObject::ActionScriptInt(struct FString Method)
+int UGFxObject::ActionScriptInt(const struct FString& Method)
 {
-	static UFunction* pFnActionScriptInt = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.ActionScriptInt");
 
-	if (!pFnActionScriptInt)
-		pFnActionScriptInt = (UFunction*)UObject::GObjects()->Data[38242];
+	UGFxObject_ActionScriptInt_Params params;
+	params.Method = Method;
 
-	UGFxObject_execActionScriptInt_Parms ActionScriptInt_Parms;
-	memcpy(&ActionScriptInt_Parms.Method, &Method, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnActionScriptInt->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnActionScriptInt, &ActionScriptInt_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnActionScriptInt->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return ActionScriptInt_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.ActionScriptVoid
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 Method                         ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Method                         (Parm, NeedCtorLink)
 
-void UGFxObject::ActionScriptVoid(struct FString Method)
+void UGFxObject::ActionScriptVoid(const struct FString& Method)
 {
-	static UFunction* pFnActionScriptVoid = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.ActionScriptVoid");
 
-	if (!pFnActionScriptVoid)
-		pFnActionScriptVoid = (UFunction*)UObject::GObjects()->Data[38240];
+	UGFxObject_ActionScriptVoid_Params params;
+	params.Method = Method;
 
-	UGFxObject_execActionScriptVoid_Parms ActionScriptVoid_Parms;
-	memcpy(&ActionScriptVoid_Parms.Method, &Method, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnActionScriptVoid->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnActionScriptVoid, &ActionScriptVoid_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnActionScriptVoid->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.Invoke
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FASValue                ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// struct FString                 Member                         ( CPF_Parm | CPF_NeedCtorLink )
-// TArray< struct FASValue >      args                           ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Member                         (Parm, NeedCtorLink)
+// TArray<struct FASValue>        args                           (Parm, NeedCtorLink)
+// struct FASValue                ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
-struct FASValue UGFxObject::Invoke(struct FString Member, TArray< struct FASValue > args)
+struct FASValue UGFxObject::Invoke(const struct FString& Member, TArray<struct FASValue> args)
 {
-	static UFunction* pFnInvoke = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.Invoke");
 
-	if (!pFnInvoke)
-		pFnInvoke = (UFunction*)UObject::GObjects()->Data[38235];
+	UGFxObject_Invoke_Params params;
+	params.Member = Member;
+	params.args = args;
 
-	UGFxObject_execInvoke_Parms Invoke_Parms;
-	memcpy(&Invoke_Parms.Member, &Member, 0xC);
-	memcpy(&Invoke_Parms.args, &args, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnInvoke->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnInvoke, &Invoke_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnInvoke->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return Invoke_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.ActionScriptSetFunctionOn
-// [0x00080401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// class UGFxObject*              Target                         ( CPF_Parm )
-// struct FString                 Member                         ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Protected)
+// Parameters:
+// class UGFxObject*              Target                         (Parm)
+// struct FString                 Member                         (Parm, NeedCtorLink)
 
-void UGFxObject::ActionScriptSetFunctionOn(class UGFxObject* Target, struct FString Member)
+void UGFxObject::ActionScriptSetFunctionOn(class UGFxObject* Target, const struct FString& Member)
 {
-	static UFunction* pFnActionScriptSetFunctionOn = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.ActionScriptSetFunctionOn");
 
-	if (!pFnActionScriptSetFunctionOn)
-		pFnActionScriptSetFunctionOn = (UFunction*)UObject::GObjects()->Data[38232];
+	UGFxObject_ActionScriptSetFunctionOn_Params params;
+	params.Target = Target;
+	params.Member = Member;
 
-	UGFxObject_execActionScriptSetFunctionOn_Parms ActionScriptSetFunctionOn_Parms;
-	ActionScriptSetFunctionOn_Parms.Target = Target;
-	memcpy(&ActionScriptSetFunctionOn_Parms.Member, &Member, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnActionScriptSetFunctionOn->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnActionScriptSetFunctionOn, &ActionScriptSetFunctionOn_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnActionScriptSetFunctionOn->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.ActionScriptSetFunction
-// [0x00080401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 Member                         ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Protected)
+// Parameters:
+// struct FString                 Member                         (Parm, NeedCtorLink)
 
-void UGFxObject::ActionScriptSetFunction(struct FString Member)
+void UGFxObject::ActionScriptSetFunction(const struct FString& Member)
 {
-	static UFunction* pFnActionScriptSetFunction = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.ActionScriptSetFunction");
 
-	if (!pFnActionScriptSetFunction)
-		pFnActionScriptSetFunction = (UFunction*)UObject::GObjects()->Data[38230];
+	UGFxObject_ActionScriptSetFunction_Params params;
+	params.Member = Member;
 
-	UGFxObject_execActionScriptSetFunction_Parms ActionScriptSetFunction_Parms;
-	memcpy(&ActionScriptSetFunction_Parms.Member, &Member, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnActionScriptSetFunction->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnActionScriptSetFunction, &ActionScriptSetFunction_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnActionScriptSetFunction->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.SetElementMemberString
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// int                            Index                          ( CPF_Parm )
-// struct FString                 Member                         ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 S                              ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// int                            Index                          (Parm)
+// struct FString                 Member                         (Parm, NeedCtorLink)
+// struct FString                 S                              (Parm, NeedCtorLink)
 
-void UGFxObject::SetElementMemberString(int Index, struct FString Member, struct FString S)
+void UGFxObject::SetElementMemberString(int Index, const struct FString& Member, const struct FString& S)
 {
-	static UFunction* pFnSetElementMemberString = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.SetElementMemberString");
 
-	if (!pFnSetElementMemberString)
-		pFnSetElementMemberString = (UFunction*)UObject::GObjects()->Data[38226];
+	UGFxObject_SetElementMemberString_Params params;
+	params.Index = Index;
+	params.Member = Member;
+	params.S = S;
 
-	UGFxObject_execSetElementMemberString_Parms SetElementMemberString_Parms;
-	SetElementMemberString_Parms.Index = Index;
-	memcpy(&SetElementMemberString_Parms.Member, &Member, 0xC);
-	memcpy(&SetElementMemberString_Parms.S, &S, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetElementMemberString->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetElementMemberString, &SetElementMemberString_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetElementMemberString->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.SetElementMemberFloat
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// int                            Index                          ( CPF_Parm )
-// struct FString                 Member                         ( CPF_Parm | CPF_NeedCtorLink )
-// float                          F                              ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// int                            Index                          (Parm)
+// struct FString                 Member                         (Parm, NeedCtorLink)
+// float                          F                              (Parm)
 
-void UGFxObject::SetElementMemberFloat(int Index, struct FString Member, float F)
+void UGFxObject::SetElementMemberFloat(int Index, const struct FString& Member, float F)
 {
-	static UFunction* pFnSetElementMemberFloat = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.SetElementMemberFloat");
 
-	if (!pFnSetElementMemberFloat)
-		pFnSetElementMemberFloat = (UFunction*)UObject::GObjects()->Data[38222];
+	UGFxObject_SetElementMemberFloat_Params params;
+	params.Index = Index;
+	params.Member = Member;
+	params.F = F;
 
-	UGFxObject_execSetElementMemberFloat_Parms SetElementMemberFloat_Parms;
-	SetElementMemberFloat_Parms.Index = Index;
-	memcpy(&SetElementMemberFloat_Parms.Member, &Member, 0xC);
-	SetElementMemberFloat_Parms.F = F;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetElementMemberFloat->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetElementMemberFloat, &SetElementMemberFloat_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetElementMemberFloat->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.SetElementMemberBool
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// int                            Index                          ( CPF_Parm )
-// struct FString                 Member                         ( CPF_Parm | CPF_NeedCtorLink )
-// unsigned long                  B                              ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// int                            Index                          (Parm)
+// struct FString                 Member                         (Parm, NeedCtorLink)
+// bool                           B                              (Parm)
 
-void UGFxObject::SetElementMemberBool(int Index, struct FString Member, unsigned long B)
+void UGFxObject::SetElementMemberBool(int Index, const struct FString& Member, bool B)
 {
-	static UFunction* pFnSetElementMemberBool = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.SetElementMemberBool");
 
-	if (!pFnSetElementMemberBool)
-		pFnSetElementMemberBool = (UFunction*)UObject::GObjects()->Data[38218];
+	UGFxObject_SetElementMemberBool_Params params;
+	params.Index = Index;
+	params.Member = Member;
+	params.B = B;
 
-	UGFxObject_execSetElementMemberBool_Parms SetElementMemberBool_Parms;
-	SetElementMemberBool_Parms.Index = Index;
-	memcpy(&SetElementMemberBool_Parms.Member, &Member, 0xC);
-	SetElementMemberBool_Parms.B = B;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetElementMemberBool->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetElementMemberBool, &SetElementMemberBool_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetElementMemberBool->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.SetElementMemberObject
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// int                            Index                          ( CPF_Parm )
-// struct FString                 Member                         ( CPF_Parm | CPF_NeedCtorLink )
-// class UGFxObject*              val                            ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// int                            Index                          (Parm)
+// struct FString                 Member                         (Parm, NeedCtorLink)
+// class UGFxObject*              val                            (Parm)
 
-void UGFxObject::SetElementMemberObject(int Index, struct FString Member, class UGFxObject* val)
+void UGFxObject::SetElementMemberObject(int Index, const struct FString& Member, class UGFxObject* val)
 {
-	static UFunction* pFnSetElementMemberObject = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.SetElementMemberObject");
 
-	if (!pFnSetElementMemberObject)
-		pFnSetElementMemberObject = (UFunction*)UObject::GObjects()->Data[38214];
+	UGFxObject_SetElementMemberObject_Params params;
+	params.Index = Index;
+	params.Member = Member;
+	params.val = val;
 
-	UGFxObject_execSetElementMemberObject_Parms SetElementMemberObject_Parms;
-	SetElementMemberObject_Parms.Index = Index;
-	memcpy(&SetElementMemberObject_Parms.Member, &Member, 0xC);
-	SetElementMemberObject_Parms.val = val;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetElementMemberObject->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetElementMemberObject, &SetElementMemberObject_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetElementMemberObject->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.SetElementMember
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// int                            Index                          ( CPF_Parm )
-// struct FString                 Member                         ( CPF_Parm | CPF_NeedCtorLink )
-// struct FASValue                Arg                            ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// int                            Index                          (Parm)
+// struct FString                 Member                         (Parm, NeedCtorLink)
+// struct FASValue                Arg                            (Parm, NeedCtorLink)
 
-void UGFxObject::SetElementMember(int Index, struct FString Member, struct FASValue Arg)
+void UGFxObject::SetElementMember(int Index, const struct FString& Member, const struct FASValue& Arg)
 {
-	static UFunction* pFnSetElementMember = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.SetElementMember");
 
-	if (!pFnSetElementMember)
-		pFnSetElementMember = (UFunction*)UObject::GObjects()->Data[38210];
+	UGFxObject_SetElementMember_Params params;
+	params.Index = Index;
+	params.Member = Member;
+	params.Arg = Arg;
 
-	UGFxObject_execSetElementMember_Parms SetElementMember_Parms;
-	SetElementMember_Parms.Index = Index;
-	memcpy(&SetElementMember_Parms.Member, &Member, 0xC);
-	memcpy(&SetElementMember_Parms.Arg, &Arg, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetElementMember->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetElementMember, &SetElementMember_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetElementMember->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.GetElementMemberString
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// int                            Index                          ( CPF_Parm )
-// struct FString                 Member                         ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// int                            Index                          (Parm)
+// struct FString                 Member                         (Parm, NeedCtorLink)
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
-struct FString UGFxObject::GetElementMemberString(int Index, struct FString Member)
+struct FString UGFxObject::GetElementMemberString(int Index, const struct FString& Member)
 {
-	static UFunction* pFnGetElementMemberString = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.GetElementMemberString");
 
-	if (!pFnGetElementMemberString)
-		pFnGetElementMemberString = (UFunction*)UObject::GObjects()->Data[38206];
+	UGFxObject_GetElementMemberString_Params params;
+	params.Index = Index;
+	params.Member = Member;
 
-	UGFxObject_execGetElementMemberString_Parms GetElementMemberString_Parms;
-	GetElementMemberString_Parms.Index = Index;
-	memcpy(&GetElementMemberString_Parms.Member, &Member, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetElementMemberString->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetElementMemberString, &GetElementMemberString_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetElementMemberString->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetElementMemberString_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.GetElementMemberFloat
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// float                          ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            Index                          ( CPF_Parm )
-// struct FString                 Member                         ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// int                            Index                          (Parm)
+// struct FString                 Member                         (Parm, NeedCtorLink)
+// float                          ReturnValue                    (Parm, OutParm, ReturnParm)
 
-float UGFxObject::GetElementMemberFloat(int Index, struct FString Member)
+float UGFxObject::GetElementMemberFloat(int Index, const struct FString& Member)
 {
-	static UFunction* pFnGetElementMemberFloat = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.GetElementMemberFloat");
 
-	if (!pFnGetElementMemberFloat)
-		pFnGetElementMemberFloat = (UFunction*)UObject::GObjects()->Data[38202];
+	UGFxObject_GetElementMemberFloat_Params params;
+	params.Index = Index;
+	params.Member = Member;
 
-	UGFxObject_execGetElementMemberFloat_Parms GetElementMemberFloat_Parms;
-	GetElementMemberFloat_Parms.Index = Index;
-	memcpy(&GetElementMemberFloat_Parms.Member, &Member, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetElementMemberFloat->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetElementMemberFloat, &GetElementMemberFloat_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetElementMemberFloat->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetElementMemberFloat_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.GetElementMemberBool
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            Index                          ( CPF_Parm )
-// struct FString                 Member                         ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// int                            Index                          (Parm)
+// struct FString                 Member                         (Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxObject::GetElementMemberBool(int Index, struct FString Member)
+bool UGFxObject::GetElementMemberBool(int Index, const struct FString& Member)
 {
-	static UFunction* pFnGetElementMemberBool = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.GetElementMemberBool");
 
-	if (!pFnGetElementMemberBool)
-		pFnGetElementMemberBool = (UFunction*)UObject::GObjects()->Data[38198];
+	UGFxObject_GetElementMemberBool_Params params;
+	params.Index = Index;
+	params.Member = Member;
 
-	UGFxObject_execGetElementMemberBool_Parms GetElementMemberBool_Parms;
-	GetElementMemberBool_Parms.Index = Index;
-	memcpy(&GetElementMemberBool_Parms.Member, &Member, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetElementMemberBool->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetElementMemberBool, &GetElementMemberBool_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetElementMemberBool->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetElementMemberBool_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.GetElementMemberObject
-// [0x00024401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// class UGFxObject*              ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            Index                          ( CPF_Parm )
-// struct FString                 Member                         ( CPF_Parm | CPF_NeedCtorLink )
-// class UClass*                  Type                           ( CPF_OptionalParm | CPF_Parm )
+// (Final, Native, HasOptionalParms, Public)
+// Parameters:
+// int                            Index                          (Parm)
+// struct FString                 Member                         (Parm, NeedCtorLink)
+// class UClass*                  Type                           (OptionalParm, Parm)
+// class UGFxObject*              ReturnValue                    (Parm, OutParm, ReturnParm)
 
-class UGFxObject* UGFxObject::GetElementMemberObject(int Index, struct FString Member, class UClass* Type)
+class UGFxObject* UGFxObject::GetElementMemberObject(int Index, const struct FString& Member, class UClass* Type)
 {
-	static UFunction* pFnGetElementMemberObject = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.GetElementMemberObject");
 
-	if (!pFnGetElementMemberObject)
-		pFnGetElementMemberObject = (UFunction*)UObject::GObjects()->Data[38193];
+	UGFxObject_GetElementMemberObject_Params params;
+	params.Index = Index;
+	params.Member = Member;
+	params.Type = Type;
 
-	UGFxObject_execGetElementMemberObject_Parms GetElementMemberObject_Parms;
-	GetElementMemberObject_Parms.Index = Index;
-	memcpy(&GetElementMemberObject_Parms.Member, &Member, 0xC);
-	GetElementMemberObject_Parms.Type = Type;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetElementMemberObject->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetElementMemberObject, &GetElementMemberObject_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetElementMemberObject->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetElementMemberObject_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.GetElementMember
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FASValue                ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// int                            Index                          ( CPF_Parm )
-// struct FString                 Member                         ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// int                            Index                          (Parm)
+// struct FString                 Member                         (Parm, NeedCtorLink)
+// struct FASValue                ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
-struct FASValue UGFxObject::GetElementMember(int Index, struct FString Member)
+struct FASValue UGFxObject::GetElementMember(int Index, const struct FString& Member)
 {
-	static UFunction* pFnGetElementMember = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.GetElementMember");
 
-	if (!pFnGetElementMember)
-		pFnGetElementMember = (UFunction*)UObject::GObjects()->Data[38189];
+	UGFxObject_GetElementMember_Params params;
+	params.Index = Index;
+	params.Member = Member;
 
-	UGFxObject_execGetElementMember_Parms GetElementMember_Parms;
-	GetElementMember_Parms.Index = Index;
-	memcpy(&GetElementMember_Parms.Member, &Member, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetElementMember->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetElementMember, &GetElementMember_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetElementMember->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetElementMember_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.SetElementColorTransform
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// int                            Index                          ( CPF_Parm )
-// struct FASColorTransform       cxform                         ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// int                            Index                          (Parm)
+// struct FASColorTransform       cxform                         (Parm)
 
-void UGFxObject::SetElementColorTransform(int Index, struct FASColorTransform cxform)
+void UGFxObject::SetElementColorTransform(int Index, const struct FASColorTransform& cxform)
 {
-	static UFunction* pFnSetElementColorTransform = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.SetElementColorTransform");
 
-	if (!pFnSetElementColorTransform)
-		pFnSetElementColorTransform = (UFunction*)UObject::GObjects()->Data[38186];
+	UGFxObject_SetElementColorTransform_Params params;
+	params.Index = Index;
+	params.cxform = cxform;
 
-	UGFxObject_execSetElementColorTransform_Parms SetElementColorTransform_Parms;
-	SetElementColorTransform_Parms.Index = Index;
-	memcpy(&SetElementColorTransform_Parms.cxform, &cxform, 0x20);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetElementColorTransform->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetElementColorTransform, &SetElementColorTransform_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetElementColorTransform->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.SetElementPosition
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// int                            Index                          ( CPF_Parm )
-// float                          X                              ( CPF_Parm )
-// float                          Y                              ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// int                            Index                          (Parm)
+// float                          X                              (Parm)
+// float                          Y                              (Parm)
 
 void UGFxObject::SetElementPosition(int Index, float X, float Y)
 {
-	static UFunction* pFnSetElementPosition = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.SetElementPosition");
 
-	if (!pFnSetElementPosition)
-		pFnSetElementPosition = (UFunction*)UObject::GObjects()->Data[38182];
+	UGFxObject_SetElementPosition_Params params;
+	params.Index = Index;
+	params.X = X;
+	params.Y = Y;
 
-	UGFxObject_execSetElementPosition_Parms SetElementPosition_Parms;
-	SetElementPosition_Parms.Index = Index;
-	SetElementPosition_Parms.X = X;
-	SetElementPosition_Parms.Y = Y;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetElementPosition->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetElementPosition, &SetElementPosition_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetElementPosition->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.SetElementVisible
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// int                            Index                          ( CPF_Parm )
-// unsigned long                  Visible                        ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// int                            Index                          (Parm)
+// bool                           Visible                        (Parm)
 
-void UGFxObject::SetElementVisible(int Index, unsigned long Visible)
+void UGFxObject::SetElementVisible(int Index, bool Visible)
 {
-	static UFunction* pFnSetElementVisible = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.SetElementVisible");
 
-	if (!pFnSetElementVisible)
-		pFnSetElementVisible = (UFunction*)UObject::GObjects()->Data[38179];
+	UGFxObject_SetElementVisible_Params params;
+	params.Index = Index;
+	params.Visible = Visible;
 
-	UGFxObject_execSetElementVisible_Parms SetElementVisible_Parms;
-	SetElementVisible_Parms.Index = Index;
-	SetElementVisible_Parms.Visible = Visible;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetElementVisible->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetElementVisible, &SetElementVisible_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetElementVisible->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.SetElementDisplayMatrix
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// int                            Index                          ( CPF_Parm )
-// struct FMatrix                 M                              ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// int                            Index                          (Parm)
+// struct FMatrix                 M                              (Parm)
 
-void UGFxObject::SetElementDisplayMatrix(int Index, struct FMatrix M)
+void UGFxObject::SetElementDisplayMatrix(int Index, const struct FMatrix& M)
 {
-	static UFunction* pFnSetElementDisplayMatrix = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.SetElementDisplayMatrix");
 
-	if (!pFnSetElementDisplayMatrix)
-		pFnSetElementDisplayMatrix = (UFunction*)UObject::GObjects()->Data[38176];
+	UGFxObject_SetElementDisplayMatrix_Params params;
+	params.Index = Index;
+	params.M = M;
 
-	UGFxObject_execSetElementDisplayMatrix_Parms SetElementDisplayMatrix_Parms;
-	SetElementDisplayMatrix_Parms.Index = Index;
-	memcpy(&SetElementDisplayMatrix_Parms.M, &M, 0x40);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetElementDisplayMatrix->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetElementDisplayMatrix, &SetElementDisplayMatrix_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetElementDisplayMatrix->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.SetElementDisplayInfo
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// int                            Index                          ( CPF_Parm )
-// struct FASDisplayInfo          D                              ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// int                            Index                          (Parm)
+// struct FASDisplayInfo          D                              (Parm)
 
-void UGFxObject::SetElementDisplayInfo(int Index, struct FASDisplayInfo D)
+void UGFxObject::SetElementDisplayInfo(int Index, const struct FASDisplayInfo& D)
 {
-	static UFunction* pFnSetElementDisplayInfo = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.SetElementDisplayInfo");
 
-	if (!pFnSetElementDisplayInfo)
-		pFnSetElementDisplayInfo = (UFunction*)UObject::GObjects()->Data[38173];
+	UGFxObject_SetElementDisplayInfo_Params params;
+	params.Index = Index;
+	params.D = D;
 
-	UGFxObject_execSetElementDisplayInfo_Parms SetElementDisplayInfo_Parms;
-	SetElementDisplayInfo_Parms.Index = Index;
-	memcpy(&SetElementDisplayInfo_Parms.D, &D, 0x2C);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetElementDisplayInfo->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetElementDisplayInfo, &SetElementDisplayInfo_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetElementDisplayInfo->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.GetElementDisplayMatrix
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FMatrix                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            Index                          ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// int                            Index                          (Parm)
+// struct FMatrix                 ReturnValue                    (Parm, OutParm, ReturnParm)
 
 struct FMatrix UGFxObject::GetElementDisplayMatrix(int Index)
 {
-	static UFunction* pFnGetElementDisplayMatrix = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.GetElementDisplayMatrix");
 
-	if (!pFnGetElementDisplayMatrix)
-		pFnGetElementDisplayMatrix = (UFunction*)UObject::GObjects()->Data[38170];
+	UGFxObject_GetElementDisplayMatrix_Params params;
+	params.Index = Index;
 
-	UGFxObject_execGetElementDisplayMatrix_Parms GetElementDisplayMatrix_Parms;
-	GetElementDisplayMatrix_Parms.Index = Index;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetElementDisplayMatrix->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetElementDisplayMatrix, &GetElementDisplayMatrix_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetElementDisplayMatrix->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetElementDisplayMatrix_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.GetElementDisplayInfo
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FASDisplayInfo          ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            Index                          ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// int                            Index                          (Parm)
+// struct FASDisplayInfo          ReturnValue                    (Parm, OutParm, ReturnParm)
 
 struct FASDisplayInfo UGFxObject::GetElementDisplayInfo(int Index)
 {
-	static UFunction* pFnGetElementDisplayInfo = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.GetElementDisplayInfo");
 
-	if (!pFnGetElementDisplayInfo)
-		pFnGetElementDisplayInfo = (UFunction*)UObject::GObjects()->Data[38167];
+	UGFxObject_GetElementDisplayInfo_Params params;
+	params.Index = Index;
 
-	UGFxObject_execGetElementDisplayInfo_Parms GetElementDisplayInfo_Parms;
-	GetElementDisplayInfo_Parms.Index = Index;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetElementDisplayInfo->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetElementDisplayInfo, &GetElementDisplayInfo_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetElementDisplayInfo->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetElementDisplayInfo_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.SetElementString
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// int                            Index                          ( CPF_Parm )
-// struct FString                 S                              ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// int                            Index                          (Parm)
+// struct FString                 S                              (Parm, NeedCtorLink)
 
-void UGFxObject::SetElementString(int Index, struct FString S)
+void UGFxObject::SetElementString(int Index, const struct FString& S)
 {
-	static UFunction* pFnSetElementString = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.SetElementString");
 
-	if (!pFnSetElementString)
-		pFnSetElementString = (UFunction*)UObject::GObjects()->Data[38164];
+	UGFxObject_SetElementString_Params params;
+	params.Index = Index;
+	params.S = S;
 
-	UGFxObject_execSetElementString_Parms SetElementString_Parms;
-	SetElementString_Parms.Index = Index;
-	memcpy(&SetElementString_Parms.S, &S, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetElementString->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetElementString, &SetElementString_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetElementString->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.SetElementFloat
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// int                            Index                          ( CPF_Parm )
-// float                          F                              ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// int                            Index                          (Parm)
+// float                          F                              (Parm)
 
 void UGFxObject::SetElementFloat(int Index, float F)
 {
-	static UFunction* pFnSetElementFloat = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.SetElementFloat");
 
-	if (!pFnSetElementFloat)
-		pFnSetElementFloat = (UFunction*)UObject::GObjects()->Data[38161];
+	UGFxObject_SetElementFloat_Params params;
+	params.Index = Index;
+	params.F = F;
 
-	UGFxObject_execSetElementFloat_Parms SetElementFloat_Parms;
-	SetElementFloat_Parms.Index = Index;
-	SetElementFloat_Parms.F = F;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetElementFloat->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetElementFloat, &SetElementFloat_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetElementFloat->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.SetElementBool
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// int                            Index                          ( CPF_Parm )
-// unsigned long                  B                              ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// int                            Index                          (Parm)
+// bool                           B                              (Parm)
 
-void UGFxObject::SetElementBool(int Index, unsigned long B)
+void UGFxObject::SetElementBool(int Index, bool B)
 {
-	static UFunction* pFnSetElementBool = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.SetElementBool");
 
-	if (!pFnSetElementBool)
-		pFnSetElementBool = (UFunction*)UObject::GObjects()->Data[38158];
+	UGFxObject_SetElementBool_Params params;
+	params.Index = Index;
+	params.B = B;
 
-	UGFxObject_execSetElementBool_Parms SetElementBool_Parms;
-	SetElementBool_Parms.Index = Index;
-	SetElementBool_Parms.B = B;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetElementBool->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetElementBool, &SetElementBool_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetElementBool->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.SetElementObject
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// int                            Index                          ( CPF_Parm )
-// class UGFxObject*              val                            ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// int                            Index                          (Parm)
+// class UGFxObject*              val                            (Parm)
 
 void UGFxObject::SetElementObject(int Index, class UGFxObject* val)
 {
-	static UFunction* pFnSetElementObject = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.SetElementObject");
 
-	if (!pFnSetElementObject)
-		pFnSetElementObject = (UFunction*)UObject::GObjects()->Data[38155];
+	UGFxObject_SetElementObject_Params params;
+	params.Index = Index;
+	params.val = val;
 
-	UGFxObject_execSetElementObject_Parms SetElementObject_Parms;
-	SetElementObject_Parms.Index = Index;
-	SetElementObject_Parms.val = val;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetElementObject->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetElementObject, &SetElementObject_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetElementObject->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.SetElement
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// int                            Index                          ( CPF_Parm )
-// struct FASValue                Arg                            ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// int                            Index                          (Parm)
+// struct FASValue                Arg                            (Parm, NeedCtorLink)
 
-void UGFxObject::SetElement(int Index, struct FASValue Arg)
+void UGFxObject::SetElement(int Index, const struct FASValue& Arg)
 {
-	static UFunction* pFnSetElement = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.SetElement");
 
-	if (!pFnSetElement)
-		pFnSetElement = (UFunction*)UObject::GObjects()->Data[38152];
+	UGFxObject_SetElement_Params params;
+	params.Index = Index;
+	params.Arg = Arg;
 
-	UGFxObject_execSetElement_Parms SetElement_Parms;
-	SetElement_Parms.Index = Index;
-	memcpy(&SetElement_Parms.Arg, &Arg, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetElement->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetElement, &SetElement_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetElement->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.GetElementString
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// int                            Index                          ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// int                            Index                          (Parm)
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
 struct FString UGFxObject::GetElementString(int Index)
 {
-	static UFunction* pFnGetElementString = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.GetElementString");
 
-	if (!pFnGetElementString)
-		pFnGetElementString = (UFunction*)UObject::GObjects()->Data[38149];
+	UGFxObject_GetElementString_Params params;
+	params.Index = Index;
 
-	UGFxObject_execGetElementString_Parms GetElementString_Parms;
-	GetElementString_Parms.Index = Index;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetElementString->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetElementString, &GetElementString_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetElementString->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetElementString_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.GetElementFloat
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// float                          ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            Index                          ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// int                            Index                          (Parm)
+// float                          ReturnValue                    (Parm, OutParm, ReturnParm)
 
 float UGFxObject::GetElementFloat(int Index)
 {
-	static UFunction* pFnGetElementFloat = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.GetElementFloat");
 
-	if (!pFnGetElementFloat)
-		pFnGetElementFloat = (UFunction*)UObject::GObjects()->Data[38146];
+	UGFxObject_GetElementFloat_Params params;
+	params.Index = Index;
 
-	UGFxObject_execGetElementFloat_Parms GetElementFloat_Parms;
-	GetElementFloat_Parms.Index = Index;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetElementFloat->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetElementFloat, &GetElementFloat_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetElementFloat->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetElementFloat_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.GetElementBool
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            Index                          ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// int                            Index                          (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UGFxObject::GetElementBool(int Index)
 {
-	static UFunction* pFnGetElementBool = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.GetElementBool");
 
-	if (!pFnGetElementBool)
-		pFnGetElementBool = (UFunction*)UObject::GObjects()->Data[38143];
+	UGFxObject_GetElementBool_Params params;
+	params.Index = Index;
 
-	UGFxObject_execGetElementBool_Parms GetElementBool_Parms;
-	GetElementBool_Parms.Index = Index;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetElementBool->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetElementBool, &GetElementBool_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetElementBool->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetElementBool_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.GetElementObject
-// [0x00024401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// class UGFxObject*              ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            Index                          ( CPF_Parm )
-// class UClass*                  Type                           ( CPF_OptionalParm | CPF_Parm )
+// (Final, Native, HasOptionalParms, Public)
+// Parameters:
+// int                            Index                          (Parm)
+// class UClass*                  Type                           (OptionalParm, Parm)
+// class UGFxObject*              ReturnValue                    (Parm, OutParm, ReturnParm)
 
 class UGFxObject* UGFxObject::GetElementObject(int Index, class UClass* Type)
 {
-	static UFunction* pFnGetElementObject = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.GetElementObject");
 
-	if (!pFnGetElementObject)
-		pFnGetElementObject = (UFunction*)UObject::GObjects()->Data[38139];
+	UGFxObject_GetElementObject_Params params;
+	params.Index = Index;
+	params.Type = Type;
 
-	UGFxObject_execGetElementObject_Parms GetElementObject_Parms;
-	GetElementObject_Parms.Index = Index;
-	GetElementObject_Parms.Type = Type;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetElementObject->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetElementObject, &GetElementObject_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetElementObject->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetElementObject_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.GetElement
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FASValue                ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// int                            Index                          ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// int                            Index                          (Parm)
+// struct FASValue                ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
 struct FASValue UGFxObject::GetElement(int Index)
 {
-	static UFunction* pFnGetElement = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.GetElement");
 
-	if (!pFnGetElement)
-		pFnGetElement = (UFunction*)UObject::GObjects()->Data[38136];
+	UGFxObject_GetElement_Params params;
+	params.Index = Index;
 
-	UGFxObject_execGetElement_Parms GetElement_Parms;
-	GetElement_Parms.Index = Index;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetElement->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetElement, &GetElement_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetElement->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetElement_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.SetText
-// [0x00024401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 Text                           ( CPF_Parm | CPF_CoerceParm | CPF_NeedCtorLink )
-// class UTranslationContext*     InContext                      ( CPF_OptionalParm | CPF_Parm )
+// (Final, Native, HasOptionalParms, Public)
+// Parameters:
+// struct FString                 Text                           (Parm, CoerceParm, NeedCtorLink)
+// class UTranslationContext*     InContext                      (OptionalParm, Parm)
 
-void UGFxObject::SetText(struct FString Text, class UTranslationContext* InContext)
+void UGFxObject::SetText(const struct FString& Text, class UTranslationContext* InContext)
 {
-	static UFunction* pFnSetText = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.SetText");
 
-	if (!pFnSetText)
-		pFnSetText = (UFunction*)UObject::GObjects()->Data[38133];
+	UGFxObject_SetText_Params params;
+	params.Text = Text;
+	params.InContext = InContext;
 
-	UGFxObject_execSetText_Parms SetText_Parms;
-	memcpy(&SetText_Parms.Text, &Text, 0xC);
-	SetText_Parms.InContext = InContext;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetText->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetText, &SetText_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetText->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.GetText
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
 struct FString UGFxObject::GetText()
 {
-	static UFunction* pFnGetText = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.GetText");
 
-	if (!pFnGetText)
-		pFnGetText = (UFunction*)UObject::GObjects()->Data[38131];
+	UGFxObject_GetText_Params params;
 
-	UGFxObject_execGetText_Parms GetText_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetText->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetText, &GetText_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetText->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetText_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.SetVisible
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// unsigned long                  Visible                        ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// bool                           Visible                        (Parm)
 
-void UGFxObject::SetVisible(unsigned long Visible)
+void UGFxObject::SetVisible(bool Visible)
 {
-	static UFunction* pFnSetVisible = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.SetVisible");
 
-	if (!pFnSetVisible)
-		pFnSetVisible = (UFunction*)UObject::GObjects()->Data[38129];
+	UGFxObject_SetVisible_Params params;
+	params.Visible = Visible;
 
-	UGFxObject_execSetVisible_Parms SetVisible_Parms;
-	SetVisible_Parms.Visible = Visible;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetVisible->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetVisible, &SetVisible_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetVisible->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.SetDisplayMatrix3D
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FMatrix                 M                              ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// struct FMatrix                 M                              (Parm)
 
-void UGFxObject::SetDisplayMatrix3D(struct FMatrix M)
+void UGFxObject::SetDisplayMatrix3D(const struct FMatrix& M)
 {
-	static UFunction* pFnSetDisplayMatrix3D = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.SetDisplayMatrix3D");
 
-	if (!pFnSetDisplayMatrix3D)
-		pFnSetDisplayMatrix3D = (UFunction*)UObject::GObjects()->Data[38127];
+	UGFxObject_SetDisplayMatrix3D_Params params;
+	params.M = M;
 
-	UGFxObject_execSetDisplayMatrix3D_Parms SetDisplayMatrix3D_Parms;
-	memcpy(&SetDisplayMatrix3D_Parms.M, &M, 0x40);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetDisplayMatrix3D->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetDisplayMatrix3D, &SetDisplayMatrix3D_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetDisplayMatrix3D->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.SetDisplayMatrix
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FMatrix                 M                              ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// struct FMatrix                 M                              (Parm)
 
-void UGFxObject::SetDisplayMatrix(struct FMatrix M)
+void UGFxObject::SetDisplayMatrix(const struct FMatrix& M)
 {
-	static UFunction* pFnSetDisplayMatrix = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.SetDisplayMatrix");
 
-	if (!pFnSetDisplayMatrix)
-		pFnSetDisplayMatrix = (UFunction*)UObject::GObjects()->Data[38125];
+	UGFxObject_SetDisplayMatrix_Params params;
+	params.M = M;
 
-	UGFxObject_execSetDisplayMatrix_Parms SetDisplayMatrix_Parms;
-	memcpy(&SetDisplayMatrix_Parms.M, &M, 0x40);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetDisplayMatrix->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetDisplayMatrix, &SetDisplayMatrix_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetDisplayMatrix->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.SetColorTransform
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FASColorTransform       cxform                         ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// struct FASColorTransform       cxform                         (Parm)
 
-void UGFxObject::SetColorTransform(struct FASColorTransform cxform)
+void UGFxObject::SetColorTransform(const struct FASColorTransform& cxform)
 {
-	static UFunction* pFnSetColorTransform = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.SetColorTransform");
 
-	if (!pFnSetColorTransform)
-		pFnSetColorTransform = (UFunction*)UObject::GObjects()->Data[38123];
+	UGFxObject_SetColorTransform_Params params;
+	params.cxform = cxform;
 
-	UGFxObject_execSetColorTransform_Parms SetColorTransform_Parms;
-	memcpy(&SetColorTransform_Parms.cxform, &cxform, 0x20);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetColorTransform->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetColorTransform, &SetColorTransform_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetColorTransform->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.SetPosition
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// float                          X                              ( CPF_Parm )
-// float                          Y                              ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// float                          X                              (Parm)
+// float                          Y                              (Parm)
 
 void UGFxObject::SetPosition(float X, float Y)
 {
-	static UFunction* pFnSetPosition = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.SetPosition");
 
-	if (!pFnSetPosition)
-		pFnSetPosition = (UFunction*)UObject::GObjects()->Data[38120];
+	UGFxObject_SetPosition_Params params;
+	params.X = X;
+	params.Y = Y;
 
-	UGFxObject_execSetPosition_Parms SetPosition_Parms;
-	SetPosition_Parms.X = X;
-	SetPosition_Parms.Y = Y;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetPosition->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetPosition, &SetPosition_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetPosition->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.SetDisplayInfo
-// [0x00420401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FASDisplayInfo          D                              ( CPF_Const | CPF_Parm | CPF_OutParm )
+// (Final, Native, Public, HasOutParms)
+// Parameters:
+// struct FASDisplayInfo          D                              (Const, Parm, OutParm)
 
 void UGFxObject::SetDisplayInfo(struct FASDisplayInfo* D)
 {
-	static UFunction* pFnSetDisplayInfo = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.SetDisplayInfo");
 
-	if (!pFnSetDisplayInfo)
-		pFnSetDisplayInfo = (UFunction*)UObject::GObjects()->Data[38118];
+	UGFxObject_SetDisplayInfo_Params params;
 
-	UGFxObject_execSetDisplayInfo_Parms SetDisplayInfo_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetDisplayInfo->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetDisplayInfo, &SetDisplayInfo_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnSetDisplayInfo->FunctionFlags |= 0x400;
+	if (D != nullptr)
+		*D = params.D;
+}
 
-	if (D)
-		memcpy(D, &SetDisplayInfo_Parms.D, 0x2C);
-};
 
 // Function GFxUI.GFxObject.GetDisplayMatrix
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FMatrix                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Final, Native, Public)
+// Parameters:
+// struct FMatrix                 ReturnValue                    (Parm, OutParm, ReturnParm)
 
 struct FMatrix UGFxObject::GetDisplayMatrix()
 {
-	static UFunction* pFnGetDisplayMatrix = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.GetDisplayMatrix");
 
-	if (!pFnGetDisplayMatrix)
-		pFnGetDisplayMatrix = (UFunction*)UObject::GObjects()->Data[38116];
+	UGFxObject_GetDisplayMatrix_Params params;
 
-	UGFxObject_execGetDisplayMatrix_Parms GetDisplayMatrix_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetDisplayMatrix->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetDisplayMatrix, &GetDisplayMatrix_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetDisplayMatrix->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetDisplayMatrix_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.GetColorTransform
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FASColorTransform       ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Final, Native, Public)
+// Parameters:
+// struct FASColorTransform       ReturnValue                    (Parm, OutParm, ReturnParm)
 
 struct FASColorTransform UGFxObject::GetColorTransform()
 {
-	static UFunction* pFnGetColorTransform = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.GetColorTransform");
 
-	if (!pFnGetColorTransform)
-		pFnGetColorTransform = (UFunction*)UObject::GObjects()->Data[38114];
+	UGFxObject_GetColorTransform_Params params;
 
-	UGFxObject_execGetColorTransform_Parms GetColorTransform_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetColorTransform->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetColorTransform, &GetColorTransform_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetColorTransform->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetColorTransform_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.GetPosition
-// [0x00420401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// float                          X                              ( CPF_Parm | CPF_OutParm )
-// float                          Y                              ( CPF_Parm | CPF_OutParm )
+// (Final, Native, Public, HasOutParms)
+// Parameters:
+// float                          X                              (Parm, OutParm)
+// float                          Y                              (Parm, OutParm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UGFxObject::GetPosition(float* X, float* Y)
 {
-	static UFunction* pFnGetPosition = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.GetPosition");
 
-	if (!pFnGetPosition)
-		pFnGetPosition = (UFunction*)UObject::GObjects()->Data[38110];
+	UGFxObject_GetPosition_Params params;
 
-	UGFxObject_execGetPosition_Parms GetPosition_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetPosition->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetPosition, &GetPosition_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetPosition->FunctionFlags |= 0x400;
+	if (X != nullptr)
+		*X = params.X;
+	if (Y != nullptr)
+		*Y = params.Y;
 
-	if (X)
-		*X = GetPosition_Parms.X;
+	return params.ReturnValue;
+}
 
-	if (Y)
-		*Y = GetPosition_Parms.Y;
-
-	return GetPosition_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.GetDisplayInfo
-// [0x00420401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FASDisplayInfo          D                              ( CPF_Parm | CPF_OutParm )
+// (Final, Native, Public, HasOutParms)
+// Parameters:
+// struct FASDisplayInfo          D                              (Parm, OutParm)
 
 void UGFxObject::GetDisplayInfo(struct FASDisplayInfo* D)
 {
-	static UFunction* pFnGetDisplayInfo = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.GetDisplayInfo");
 
-	if (!pFnGetDisplayInfo)
-		pFnGetDisplayInfo = (UFunction*)UObject::GObjects()->Data[38108];
+	UGFxObject_GetDisplayInfo_Params params;
 
-	UGFxObject_execGetDisplayInfo_Parms GetDisplayInfo_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetDisplayInfo->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetDisplayInfo, &GetDisplayInfo_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetDisplayInfo->FunctionFlags |= 0x400;
+	if (D != nullptr)
+		*D = params.D;
+}
 
-	if (D)
-		memcpy(D, &GetDisplayInfo_Parms.D, 0x2C);
-};
 
 // Function GFxUI.GFxObject.TranslateString
-// [0x00026400] ( FUNC_Native )
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// struct FString                 StringToTranslate              ( CPF_Parm | CPF_NeedCtorLink )
-// class UTranslationContext*     InContext                      ( CPF_OptionalParm | CPF_Parm )
+// (Native, Static, HasOptionalParms, Public)
+// Parameters:
+// struct FString                 StringToTranslate              (Parm, NeedCtorLink)
+// class UTranslationContext*     InContext                      (OptionalParm, Parm)
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
-struct FString UGFxObject::TranslateString(struct FString StringToTranslate, class UTranslationContext* InContext)
+struct FString UGFxObject::TranslateString(const struct FString& StringToTranslate, class UTranslationContext* InContext)
 {
-	static UFunction* pFnTranslateString = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.TranslateString");
 
-	if (!pFnTranslateString)
-		pFnTranslateString = (UFunction*)UObject::GObjects()->Data[38104];
+	UGFxObject_TranslateString_Params params;
+	params.StringToTranslate = StringToTranslate;
+	params.InContext = InContext;
 
-	UGFxObject_execTranslateString_Parms TranslateString_Parms;
-	memcpy(&TranslateString_Parms.StringToTranslate, &StringToTranslate, 0xC);
-	TranslateString_Parms.InContext = InContext;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnTranslateString->FunctionFlags |= ~0x400;
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnTranslateString, &TranslateString_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnTranslateString->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return TranslateString_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.SetFunction
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 Member                         ( CPF_Parm | CPF_NeedCtorLink )
-// class UObject*                 Context                        ( CPF_Parm )
-// struct FName                   fname                          ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Member                         (Parm, NeedCtorLink)
+// class UObject*                 Context                        (Parm)
+// struct FName                   fname                          (Parm)
 
-void UGFxObject::SetFunction(struct FString Member, class UObject* Context, struct FName fname)
+void UGFxObject::SetFunction(const struct FString& Member, class UObject* Context, const struct FName& fname)
 {
-	static UFunction* pFnSetFunction = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.SetFunction");
 
-	if (!pFnSetFunction)
-		pFnSetFunction = (UFunction*)UObject::GObjects()->Data[38100];
+	UGFxObject_SetFunction_Params params;
+	params.Member = Member;
+	params.Context = Context;
+	params.fname = fname;
 
-	UGFxObject_execSetFunction_Parms SetFunction_Parms;
-	memcpy(&SetFunction_Parms.Member, &Member, 0xC);
-	SetFunction_Parms.Context = Context;
-	memcpy(&SetFunction_Parms.fname, &fname, 0x8);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetFunction->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetFunction, &SetFunction_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetFunction->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.SetObject
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 Member                         ( CPF_Parm | CPF_NeedCtorLink )
-// class UGFxObject*              val                            ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Member                         (Parm, NeedCtorLink)
+// class UGFxObject*              val                            (Parm)
 
-void UGFxObject::SetObject(struct FString Member, class UGFxObject* val)
+void UGFxObject::SetObject(const struct FString& Member, class UGFxObject* val)
 {
-	static UFunction* pFnSetObject = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.SetObject");
 
-	if (!pFnSetObject)
-		pFnSetObject = (UFunction*)UObject::GObjects()->Data[38097];
+	UGFxObject_SetObject_Params params;
+	params.Member = Member;
+	params.val = val;
 
-	UGFxObject_execSetObject_Parms SetObject_Parms;
-	memcpy(&SetObject_Parms.Member, &Member, 0xC);
-	SetObject_Parms.val = val;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetObject->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetObject, &SetObject_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetObject->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.SetString
-// [0x00024401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 Member                         ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 S                              ( CPF_Parm | CPF_NeedCtorLink )
-// class UTranslationContext*     InContext                      ( CPF_OptionalParm | CPF_Parm )
+// (Final, Native, HasOptionalParms, Public)
+// Parameters:
+// struct FString                 Member                         (Parm, NeedCtorLink)
+// struct FString                 S                              (Parm, NeedCtorLink)
+// class UTranslationContext*     InContext                      (OptionalParm, Parm)
 
-void UGFxObject::SetString(struct FString Member, struct FString S, class UTranslationContext* InContext)
+void UGFxObject::SetString(const struct FString& Member, const struct FString& S, class UTranslationContext* InContext)
 {
-	static UFunction* pFnSetString = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.SetString");
 
-	if (!pFnSetString)
-		pFnSetString = (UFunction*)UObject::GObjects()->Data[38093];
+	UGFxObject_SetString_Params params;
+	params.Member = Member;
+	params.S = S;
+	params.InContext = InContext;
 
-	UGFxObject_execSetString_Parms SetString_Parms;
-	memcpy(&SetString_Parms.Member, &Member, 0xC);
-	memcpy(&SetString_Parms.S, &S, 0xC);
-	SetString_Parms.InContext = InContext;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetString->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetString, &SetString_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetString->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.SetFloat
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 Member                         ( CPF_Parm | CPF_NeedCtorLink )
-// float                          F                              ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Member                         (Parm, NeedCtorLink)
+// float                          F                              (Parm)
 
-void UGFxObject::SetFloat(struct FString Member, float F)
+void UGFxObject::SetFloat(const struct FString& Member, float F)
 {
-	static UFunction* pFnSetFloat = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.SetFloat");
 
-	if (!pFnSetFloat)
-		pFnSetFloat = (UFunction*)UObject::GObjects()->Data[38090];
+	UGFxObject_SetFloat_Params params;
+	params.Member = Member;
+	params.F = F;
 
-	UGFxObject_execSetFloat_Parms SetFloat_Parms;
-	memcpy(&SetFloat_Parms.Member, &Member, 0xC);
-	SetFloat_Parms.F = F;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetFloat->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetFloat, &SetFloat_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetFloat->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.SetBool
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 Member                         ( CPF_Parm | CPF_NeedCtorLink )
-// unsigned long                  B                              ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Member                         (Parm, NeedCtorLink)
+// bool                           B                              (Parm)
 
-void UGFxObject::SetBool(struct FString Member, unsigned long B)
+void UGFxObject::SetBool(const struct FString& Member, bool B)
 {
-	static UFunction* pFnSetBool = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.SetBool");
 
-	if (!pFnSetBool)
-		pFnSetBool = (UFunction*)UObject::GObjects()->Data[38087];
+	UGFxObject_SetBool_Params params;
+	params.Member = Member;
+	params.B = B;
 
-	UGFxObject_execSetBool_Parms SetBool_Parms;
-	memcpy(&SetBool_Parms.Member, &Member, 0xC);
-	SetBool_Parms.B = B;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetBool->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetBool, &SetBool_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetBool->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.Set
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 Member                         ( CPF_Parm | CPF_NeedCtorLink )
-// struct FASValue                Arg                            ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Member                         (Parm, NeedCtorLink)
+// struct FASValue                Arg                            (Parm, NeedCtorLink)
 
-void UGFxObject::Set(struct FString Member, struct FASValue Arg)
+void UGFxObject::Set(const struct FString& Member, const struct FASValue& Arg)
 {
-	static UFunction* pFnSet = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.Set");
 
-	if (!pFnSet)
-		pFnSet = (UFunction*)UObject::GObjects()->Data[38084];
+	UGFxObject_Set_Params params;
+	params.Member = Member;
+	params.Arg = Arg;
 
-	UGFxObject_execSet_Parms Set_Parms;
-	memcpy(&Set_Parms.Member, &Member, 0xC);
-	memcpy(&Set_Parms.Arg, &Arg, 0x18);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSet->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSet, &Set_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSet->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxObject.GetObject
-// [0x00024401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// class UGFxObject*              ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Member                         ( CPF_Parm | CPF_NeedCtorLink )
-// class UClass*                  Type                           ( CPF_OptionalParm | CPF_Parm )
+// (Final, Native, HasOptionalParms, Public)
+// Parameters:
+// struct FString                 Member                         (Parm, NeedCtorLink)
+// class UClass*                  Type                           (OptionalParm, Parm)
+// class UGFxObject*              ReturnValue                    (Parm, OutParm, ReturnParm)
 
-class UGFxObject* UGFxObject::GetObject(struct FString Member, class UClass* Type)
+class UGFxObject* UGFxObject::GetObject(const struct FString& Member, class UClass* Type)
 {
-	static UFunction* pFnGetObject = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.GetObject");
 
-	if (!pFnGetObject)
-		pFnGetObject = (UFunction*)UObject::GObjects()->Data[38080];
+	UGFxObject_GetObject_Params params;
+	params.Member = Member;
+	params.Type = Type;
 
-	UGFxObject_execGetObject_Parms GetObject_Parms;
-	memcpy(&GetObject_Parms.Member, &Member, 0xC);
-	GetObject_Parms.Type = Type;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetObject->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetObject, &GetObject_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetObject->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetObject_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.GetString
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// struct FString                 Member                         ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Member                         (Parm, NeedCtorLink)
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
-struct FString UGFxObject::GetString(struct FString Member)
+struct FString UGFxObject::GetString(const struct FString& Member)
 {
-	static UFunction* pFnGetString = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.GetString");
 
-	if (!pFnGetString)
-		pFnGetString = (UFunction*)UObject::GObjects()->Data[38077];
+	UGFxObject_GetString_Params params;
+	params.Member = Member;
 
-	UGFxObject_execGetString_Parms GetString_Parms;
-	memcpy(&GetString_Parms.Member, &Member, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetString->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetString, &GetString_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetString->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetString_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.GetFloat
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// float                          ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Member                         ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Member                         (Parm, NeedCtorLink)
+// float                          ReturnValue                    (Parm, OutParm, ReturnParm)
 
-float UGFxObject::GetFloat(struct FString Member)
+float UGFxObject::GetFloat(const struct FString& Member)
 {
-	static UFunction* pFnGetFloat = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.GetFloat");
 
-	if (!pFnGetFloat)
-		pFnGetFloat = (UFunction*)UObject::GObjects()->Data[38074];
+	UGFxObject_GetFloat_Params params;
+	params.Member = Member;
 
-	UGFxObject_execGetFloat_Parms GetFloat_Parms;
-	memcpy(&GetFloat_Parms.Member, &Member, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetFloat->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetFloat, &GetFloat_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetFloat->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetFloat_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.GetBool
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Member                         ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Member                         (Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxObject::GetBool(struct FString Member)
+bool UGFxObject::GetBool(const struct FString& Member)
 {
-	static UFunction* pFnGetBool = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.GetBool");
 
-	if (!pFnGetBool)
-		pFnGetBool = (UFunction*)UObject::GObjects()->Data[38071];
+	UGFxObject_GetBool_Params params;
+	params.Member = Member;
 
-	UGFxObject_execGetBool_Parms GetBool_Parms;
-	memcpy(&GetBool_Parms.Member, &Member, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetBool->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetBool, &GetBool_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetBool->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetBool_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxObject.Get
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FASValue                ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// struct FString                 Member                         ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Native, Public)
+// Parameters:
+// struct FString                 Member                         (Parm, NeedCtorLink)
+// struct FASValue                ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
-struct FASValue UGFxObject::Get(struct FString Member)
+struct FASValue UGFxObject::Get(const struct FString& Member)
 {
-	static UFunction* pFnGet = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxObject.Get");
 
-	if (!pFnGet)
-		pFnGet = (UFunction*)UObject::GObjects()->Data[38068];
+	UGFxObject_Get_Params params;
+	params.Member = Member;
 
-	UGFxObject_execGet_Parms Get_Parms;
-	memcpy(&Get_Parms.Member, &Member, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGet->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGet, &Get_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGet->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return Get_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxClikWidget.ASRemoveAllEventListeners
-// [0x00040003] ( FUNC_Final )
-// Parameters infos:
-// struct FString                 Event                          ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Defined, Private)
+// Parameters:
+// struct FString                 Event                          (Parm, NeedCtorLink)
 
-void UGFxClikWidget::ASRemoveAllEventListeners(struct FString Event)
+void UGFxClikWidget::ASRemoveAllEventListeners(const struct FString& Event)
 {
-	static UFunction* pFnASRemoveAllEventListeners = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxClikWidget.ASRemoveAllEventListeners");
 
-	if (!pFnASRemoveAllEventListeners)
-		pFnASRemoveAllEventListeners = (UFunction*)UObject::GObjects()->Data[38322];
+	UGFxClikWidget_ASRemoveAllEventListeners_Params params;
+	params.Event = Event;
 
-	UGFxClikWidget_execASRemoveAllEventListeners_Parms ASRemoveAllEventListeners_Parms;
-	memcpy(&ASRemoveAllEventListeners_Parms.Event, &Event, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnASRemoveAllEventListeners, &ASRemoveAllEventListeners_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GFxUI.GFxClikWidget.ASAddEventListener
-// [0x00040003] ( FUNC_Final )
-// Parameters infos:
-// struct FString                 Type                           ( CPF_Parm | CPF_NeedCtorLink )
-// class UGFxObject*              O                              ( CPF_Parm )
-// struct FString                 func                           ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Defined, Private)
+// Parameters:
+// struct FString                 Type                           (Parm, NeedCtorLink)
+// class UGFxObject*              O                              (Parm)
+// struct FString                 func                           (Parm, NeedCtorLink)
 
-void UGFxClikWidget::ASAddEventListener(struct FString Type, class UGFxObject* O, struct FString func)
+void UGFxClikWidget::ASAddEventListener(const struct FString& Type, class UGFxObject* O, const struct FString& func)
 {
-	static UFunction* pFnASAddEventListener = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxClikWidget.ASAddEventListener");
 
-	if (!pFnASAddEventListener)
-		pFnASAddEventListener = (UFunction*)UObject::GObjects()->Data[38319];
+	UGFxClikWidget_ASAddEventListener_Params params;
+	params.Type = Type;
+	params.O = O;
+	params.func = func;
 
-	UGFxClikWidget_execASAddEventListener_Parms ASAddEventListener_Parms;
-	memcpy(&ASAddEventListener_Parms.Type, &Type, 0xC);
-	ASAddEventListener_Parms.O = O;
-	memcpy(&ASAddEventListener_Parms.func, &func, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnASAddEventListener, &ASAddEventListener_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GFxUI.GFxClikWidget.SetListener
-// [0x00040003] ( FUNC_Final )
-// Parameters infos:
-// class UGFxObject*              O                              ( CPF_Parm )
-// struct FString                 Member                         ( CPF_Parm | CPF_NeedCtorLink )
-// struct FScriptDelegate         Listener                       ( CPF_Parm | CPF_NeedCtorLink )
+// (Final, Defined, Private)
+// Parameters:
+// class UGFxObject*              O                              (Parm)
+// struct FString                 Member                         (Parm, NeedCtorLink)
+// struct FScriptDelegate         Listener                       (Parm, NeedCtorLink)
 
-void UGFxClikWidget::SetListener(class UGFxObject* O, struct FString Member, struct FScriptDelegate Listener)
+void UGFxClikWidget::SetListener(class UGFxObject* O, const struct FString& Member, const struct FScriptDelegate& Listener)
 {
-	static UFunction* pFnSetListener = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxClikWidget.SetListener");
 
-	if (!pFnSetListener)
-		pFnSetListener = (UFunction*)UObject::GObjects()->Data[38318];
+	UGFxClikWidget_SetListener_Params params;
+	params.O = O;
+	params.Member = Member;
+	params.Listener = Listener;
 
-	UGFxClikWidget_execSetListener_Parms SetListener_Parms;
-	SetListener_Parms.O = O;
-	memcpy(&SetListener_Parms.Member, &Member, 0xC);
-	memcpy(&SetListener_Parms.Listener, &Listener, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnSetListener, &SetListener_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GFxUI.GFxClikWidget.GetEventStringFromTypename
-// [0x00040003] ( FUNC_Final )
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// struct FName                   Typename                       ( CPF_Parm )
+// (Final, Defined, Private)
+// Parameters:
+// struct FName                   Typename                       (Parm)
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
-struct FString UGFxClikWidget::GetEventStringFromTypename(struct FName Typename)
+struct FString UGFxClikWidget::GetEventStringFromTypename(const struct FName& Typename)
 {
-	static UFunction* pFnGetEventStringFromTypename = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxClikWidget.GetEventStringFromTypename");
 
-	if (!pFnGetEventStringFromTypename)
-		pFnGetEventStringFromTypename = (UFunction*)UObject::GObjects()->Data[38317];
+	UGFxClikWidget_GetEventStringFromTypename_Params params;
+	params.Typename = Typename;
 
-	UGFxClikWidget_execGetEventStringFromTypename_Parms GetEventStringFromTypename_Parms;
-	memcpy(&GetEventStringFromTypename_Parms.Typename, &Typename, 0x8);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetEventStringFromTypename, &GetEventStringFromTypename_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return GetEventStringFromTypename_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function GFxUI.GFxClikWidget.RemoveAllEventListeners
-// [0x00020002]
-// Parameters infos:
-// struct FString                 Event                          ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FString                 Event                          (Parm, NeedCtorLink)
 
-void UGFxClikWidget::RemoveAllEventListeners(struct FString Event)
+void UGFxClikWidget::RemoveAllEventListeners(const struct FString& Event)
 {
-	static UFunction* pFnRemoveAllEventListeners = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxClikWidget.RemoveAllEventListeners");
 
-	if (!pFnRemoveAllEventListeners)
-		pFnRemoveAllEventListeners = (UFunction*)UObject::GObjects()->Data[38320];
+	UGFxClikWidget_RemoveAllEventListeners_Params params;
+	params.Event = Event;
 
-	UGFxClikWidget_execRemoveAllEventListeners_Parms RemoveAllEventListeners_Parms;
-	memcpy(&RemoveAllEventListeners_Parms.Event, &Event, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnRemoveAllEventListeners, &RemoveAllEventListeners_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GFxUI.GFxClikWidget.AddEventListener
-// [0x00020002]
-// Parameters infos:
-// struct FName                   Type                           ( CPF_Parm )
-// struct FScriptDelegate         Listener                       ( CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Public)
+// Parameters:
+// struct FName                   Type                           (Parm)
+// struct FScriptDelegate         Listener                       (Parm, NeedCtorLink)
 
-void UGFxClikWidget::AddEventListener(struct FName Type, struct FScriptDelegate Listener)
+void UGFxClikWidget::AddEventListener(const struct FName& Type, const struct FScriptDelegate& Listener)
 {
-	static UFunction* pFnAddEventListener = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxClikWidget.AddEventListener");
 
-	if (!pFnAddEventListener)
-		pFnAddEventListener = (UFunction*)UObject::GObjects()->Data[38313];
+	UGFxClikWidget_AddEventListener_Params params;
+	params.Type = Type;
+	params.Listener = Listener;
 
-	UGFxClikWidget_execAddEventListener_Parms AddEventListener_Parms;
-	memcpy(&AddEventListener_Parms.Type, &Type, 0x8);
-	memcpy(&AddEventListener_Parms.Listener, &Listener, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnAddEventListener, &AddEventListener_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GFxUI.GFxClikWidget.EventListener
-// [0x00120000]
-// Parameters infos:
-// struct FEventData              Data                           ( CPF_Parm | CPF_NeedCtorLink )
+// (Public, Delegate)
+// Parameters:
+// struct FEventData              Data                           (Parm, NeedCtorLink)
 
-void UGFxClikWidget::EventListener(struct FEventData Data)
+void UGFxClikWidget::EventListener(const struct FEventData& Data)
 {
-	static UFunction* pFnEventListener = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxClikWidget.EventListener");
 
-	if (!pFnEventListener)
-		pFnEventListener = (UFunction*)UObject::GObjects()->Data[38310];
+	UGFxClikWidget_EventListener_Params params;
+	params.Data = Data;
 
-	UGFxClikWidget_execEventListener_Parms EventListener_Parms;
-	memcpy(&EventListener_Parms.Data, &Data, 0x24);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnEventListener, &EventListener_Parms, NULL);
-};
+	UObject::ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GFxUI.SwfMovie.GetPathForLoadMovie
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
+// (Native, Public)
+// Parameters:
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
 struct FString USwfMovie::GetPathForLoadMovie()
 {
-	static UFunction* pFnGetPathForLoadMovie = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.SwfMovie.GetPathForLoadMovie");
 
-	if (!pFnGetPathForLoadMovie)
-		pFnGetPathForLoadMovie = (UFunction*)UObject::GObjects()->Data[37644];
+	USwfMovie_GetPathForLoadMovie_Params params;
 
-	USwfMovie_execGetPathForLoadMovie_Parms GetPathForLoadMovie_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetPathForLoadMovie->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetPathForLoadMovie, &GetPathForLoadMovie_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetPathForLoadMovie->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetPathForLoadMovie_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxAction_CloseMovie.IsValidLevelSequenceObject
-// [0x00020802] ( FUNC_Event )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Defined, Event, Public)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxAction_CloseMovie::eventIsValidLevelSequenceObject()
+bool UGFxAction_CloseMovie::IsValidLevelSequenceObject()
 {
-	static UFunction* pFnIsValidLevelSequenceObject = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxAction_CloseMovie.IsValidLevelSequenceObject");
 
-	if (!pFnIsValidLevelSequenceObject)
-		pFnIsValidLevelSequenceObject = (UFunction*)UObject::GObjects()->Data[37648];
+	UGFxAction_CloseMovie_IsValidLevelSequenceObject_Params params;
 
-	UGFxAction_CloseMovie_eventIsValidLevelSequenceObject_Parms IsValidLevelSequenceObject_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnIsValidLevelSequenceObject, &IsValidLevelSequenceObject_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return IsValidLevelSequenceObject_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function GFxUI.GFxAction_GetVariable.IsValidLevelSequenceObject
-// [0x00020802] ( FUNC_Event )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Defined, Event, Public)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxAction_GetVariable::eventIsValidLevelSequenceObject()
+bool UGFxAction_GetVariable::IsValidLevelSequenceObject()
 {
-	static UFunction* pFnIsValidLevelSequenceObject = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxAction_GetVariable.IsValidLevelSequenceObject");
 
-	if (!pFnIsValidLevelSequenceObject)
-		pFnIsValidLevelSequenceObject = (UFunction*)UObject::GObjects()->Data[37652];
+	UGFxAction_GetVariable_IsValidLevelSequenceObject_Params params;
 
-	UGFxAction_GetVariable_eventIsValidLevelSequenceObject_Parms IsValidLevelSequenceObject_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnIsValidLevelSequenceObject, &IsValidLevelSequenceObject_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return IsValidLevelSequenceObject_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function GFxUI.GFxAction_Invoke.IsValidLevelSequenceObject
-// [0x00020802] ( FUNC_Event )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Defined, Event, Public)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxAction_Invoke::eventIsValidLevelSequenceObject()
+bool UGFxAction_Invoke::IsValidLevelSequenceObject()
 {
-	static UFunction* pFnIsValidLevelSequenceObject = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxAction_Invoke.IsValidLevelSequenceObject");
 
-	if (!pFnIsValidLevelSequenceObject)
-		pFnIsValidLevelSequenceObject = (UFunction*)UObject::GObjects()->Data[38011];
+	UGFxAction_Invoke_IsValidLevelSequenceObject_Params params;
 
-	UGFxAction_Invoke_eventIsValidLevelSequenceObject_Parms IsValidLevelSequenceObject_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnIsValidLevelSequenceObject, &IsValidLevelSequenceObject_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return IsValidLevelSequenceObject_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function GFxUI.GFxAction_OpenMovie.IsValidLevelSequenceObject
-// [0x00020802] ( FUNC_Event )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Defined, Event, Public)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxAction_OpenMovie::eventIsValidLevelSequenceObject()
+bool UGFxAction_OpenMovie::IsValidLevelSequenceObject()
 {
-	static UFunction* pFnIsValidLevelSequenceObject = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxAction_OpenMovie.IsValidLevelSequenceObject");
 
-	if (!pFnIsValidLevelSequenceObject)
-		pFnIsValidLevelSequenceObject = (UFunction*)UObject::GObjects()->Data[38030];
+	UGFxAction_OpenMovie_IsValidLevelSequenceObject_Params params;
 
-	UGFxAction_OpenMovie_eventIsValidLevelSequenceObject_Parms IsValidLevelSequenceObject_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnIsValidLevelSequenceObject, &IsValidLevelSequenceObject_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return IsValidLevelSequenceObject_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function GFxUI.GFxAction_SetVariable.IsValidLevelSequenceObject
-// [0x00020802] ( FUNC_Event )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Defined, Event, Public)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxAction_SetVariable::eventIsValidLevelSequenceObject()
+bool UGFxAction_SetVariable::IsValidLevelSequenceObject()
 {
-	static UFunction* pFnIsValidLevelSequenceObject = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxAction_SetVariable.IsValidLevelSequenceObject");
 
-	if (!pFnIsValidLevelSequenceObject)
-		pFnIsValidLevelSequenceObject = (UFunction*)UObject::GObjects()->Data[38037];
+	UGFxAction_SetVariable_IsValidLevelSequenceObject_Params params;
 
-	UGFxAction_SetVariable_eventIsValidLevelSequenceObject_Parms IsValidLevelSequenceObject_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnIsValidLevelSequenceObject, &IsValidLevelSequenceObject_Parms, NULL);
+	UObject::ProcessEvent(fn, &params);
 
-	return IsValidLevelSequenceObject_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function GFxUI.GFxFSCmdHandler_Kismet.FSCommand
-// [0x00020C00] ( FUNC_Event | FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// class UGFxMoviePlayer*         Movie                          ( CPF_Parm )
-// class UGFxEvent_FSCommand*     Event                          ( CPF_Parm )
-// struct FString                 Cmd                            ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 Arg                            ( CPF_Parm | CPF_NeedCtorLink )
+// (Native, Event, Public)
+// Parameters:
+// class UGFxMoviePlayer*         Movie                          (Parm)
+// class UGFxEvent_FSCommand*     Event                          (Parm)
+// struct FString                 Cmd                            (Parm, NeedCtorLink)
+// struct FString                 Arg                            (Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxFSCmdHandler_Kismet::eventFSCommand(class UGFxMoviePlayer* Movie, class UGFxEvent_FSCommand* Event, struct FString Cmd, struct FString Arg)
+bool UGFxFSCmdHandler_Kismet::FSCommand(class UGFxMoviePlayer* Movie, class UGFxEvent_FSCommand* Event, const struct FString& Cmd, const struct FString& Arg)
 {
-	static UFunction* pFnFSCommand = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxFSCmdHandler_Kismet.FSCommand");
 
-	if (!pFnFSCommand)
-		pFnFSCommand = (UFunction*)UObject::GObjects()->Data[38376];
+	UGFxFSCmdHandler_Kismet_FSCommand_Params params;
+	params.Movie = Movie;
+	params.Event = Event;
+	params.Cmd = Cmd;
+	params.Arg = Arg;
 
-	UGFxFSCmdHandler_Kismet_eventFSCommand_Parms FSCommand_Parms;
-	FSCommand_Parms.Movie = Movie;
-	FSCommand_Parms.Event = Event;
-	memcpy(&FSCommand_Parms.Cmd, &Cmd, 0xC);
-	memcpy(&FSCommand_Parms.Arg, &Arg, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnFSCommand->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnFSCommand, &FSCommand_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnFSCommand->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return FSCommand_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxDataStoreSubscriber.SaveSubscriberValue
-// [0x00424400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            BindingIndex                   ( CPF_OptionalParm | CPF_Parm )
-// TArray< class UUIDataStore* >  out_BoundDataStores            ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, HasOptionalParms, Public, HasOutParms)
+// Parameters:
+// TArray<class UUIDataStore*>    out_BoundDataStores            (Parm, OutParm, NeedCtorLink)
+// int                            BindingIndex                   (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UGFxDataStoreSubscriber::SaveSubscriberValue(int BindingIndex, TArray< class UUIDataStore* >* out_BoundDataStores)
+bool UGFxDataStoreSubscriber::SaveSubscriberValue(int BindingIndex, TArray<class UUIDataStore*>* out_BoundDataStores)
 {
-	static UFunction* pFnSaveSubscriberValue = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxDataStoreSubscriber.SaveSubscriberValue");
 
-	if (!pFnSaveSubscriberValue)
-		pFnSaveSubscriberValue = (UFunction*)UObject::GObjects()->Data[38355];
+	UGFxDataStoreSubscriber_SaveSubscriberValue_Params params;
+	params.BindingIndex = BindingIndex;
 
-	UGFxDataStoreSubscriber_execSaveSubscriberValue_Parms SaveSubscriberValue_Parms;
-	SaveSubscriberValue_Parms.BindingIndex = BindingIndex;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSaveSubscriberValue->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSaveSubscriberValue, &SaveSubscriberValue_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnSaveSubscriberValue->FunctionFlags |= 0x400;
+	if (out_BoundDataStores != nullptr)
+		*out_BoundDataStores = params.out_BoundDataStores;
 
-	if (out_BoundDataStores)
-		memcpy(out_BoundDataStores, &SaveSubscriberValue_Parms.out_BoundDataStores, 0xC);
+	return params.ReturnValue;
+}
 
-	return SaveSubscriberValue_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxDataStoreSubscriber.ClearBoundDataStores
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
+// (Final, Native, Public)
 
 void UGFxDataStoreSubscriber::ClearBoundDataStores()
 {
-	static UFunction* pFnClearBoundDataStores = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxDataStoreSubscriber.ClearBoundDataStores");
 
-	if (!pFnClearBoundDataStores)
-		pFnClearBoundDataStores = (UFunction*)UObject::GObjects()->Data[38354];
+	UGFxDataStoreSubscriber_ClearBoundDataStores_Params params;
 
-	UGFxDataStoreSubscriber_execClearBoundDataStores_Parms ClearBoundDataStores_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnClearBoundDataStores->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnClearBoundDataStores, &ClearBoundDataStores_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnClearBoundDataStores->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxDataStoreSubscriber.GetBoundDataStores
-// [0x00420401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// TArray< class UUIDataStore* >  out_BoundDataStores            ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Final, Native, Public, HasOutParms)
+// Parameters:
+// TArray<class UUIDataStore*>    out_BoundDataStores            (Parm, OutParm, NeedCtorLink)
 
-void UGFxDataStoreSubscriber::GetBoundDataStores(TArray< class UUIDataStore* >* out_BoundDataStores)
+void UGFxDataStoreSubscriber::GetBoundDataStores(TArray<class UUIDataStore*>* out_BoundDataStores)
 {
-	static UFunction* pFnGetBoundDataStores = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxDataStoreSubscriber.GetBoundDataStores");
 
-	if (!pFnGetBoundDataStores)
-		pFnGetBoundDataStores = (UFunction*)UObject::GObjects()->Data[38351];
+	UGFxDataStoreSubscriber_GetBoundDataStores_Params params;
 
-	UGFxDataStoreSubscriber_execGetBoundDataStores_Parms GetBoundDataStores_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetBoundDataStores->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetBoundDataStores, &GetBoundDataStores_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetBoundDataStores->FunctionFlags |= 0x400;
+	if (out_BoundDataStores != nullptr)
+		*out_BoundDataStores = params.out_BoundDataStores;
+}
 
-	if (out_BoundDataStores)
-		memcpy(out_BoundDataStores, &GetBoundDataStores_Parms.out_BoundDataStores, 0xC);
-};
 
 // Function GFxUI.GFxDataStoreSubscriber.NotifyDataStoreValueUpdated
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// class UUIDataStore*            SourceDataStore                ( CPF_Parm )
-// unsigned long                  bValuesInvalidated             ( CPF_Parm )
-// struct FName                   PropertyTag                    ( CPF_Parm )
-// class UUIDataProvider*         SourceProvider                 ( CPF_Parm )
-// int                            ArrayIndex                     ( CPF_Parm )
+// (Final, Native, Public)
+// Parameters:
+// class UUIDataStore*            SourceDataStore                (Parm)
+// bool                           bValuesInvalidated             (Parm)
+// struct FName                   PropertyTag                    (Parm)
+// class UUIDataProvider*         SourceProvider                 (Parm)
+// int                            ArrayIndex                     (Parm)
 
-void UGFxDataStoreSubscriber::NotifyDataStoreValueUpdated(class UUIDataStore* SourceDataStore, unsigned long bValuesInvalidated, struct FName PropertyTag, class UUIDataProvider* SourceProvider, int ArrayIndex)
+void UGFxDataStoreSubscriber::NotifyDataStoreValueUpdated(class UUIDataStore* SourceDataStore, bool bValuesInvalidated, const struct FName& PropertyTag, class UUIDataProvider* SourceProvider, int ArrayIndex)
 {
-	static UFunction* pFnNotifyDataStoreValueUpdated = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxDataStoreSubscriber.NotifyDataStoreValueUpdated");
 
-	if (!pFnNotifyDataStoreValueUpdated)
-		pFnNotifyDataStoreValueUpdated = (UFunction*)UObject::GObjects()->Data[38345];
+	UGFxDataStoreSubscriber_NotifyDataStoreValueUpdated_Params params;
+	params.SourceDataStore = SourceDataStore;
+	params.bValuesInvalidated = bValuesInvalidated;
+	params.PropertyTag = PropertyTag;
+	params.SourceProvider = SourceProvider;
+	params.ArrayIndex = ArrayIndex;
 
-	UGFxDataStoreSubscriber_execNotifyDataStoreValueUpdated_Parms NotifyDataStoreValueUpdated_Parms;
-	NotifyDataStoreValueUpdated_Parms.SourceDataStore = SourceDataStore;
-	NotifyDataStoreValueUpdated_Parms.bValuesInvalidated = bValuesInvalidated;
-	memcpy(&NotifyDataStoreValueUpdated_Parms.PropertyTag, &PropertyTag, 0x8);
-	NotifyDataStoreValueUpdated_Parms.SourceProvider = SourceProvider;
-	NotifyDataStoreValueUpdated_Parms.ArrayIndex = ArrayIndex;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnNotifyDataStoreValueUpdated->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnNotifyDataStoreValueUpdated, &NotifyDataStoreValueUpdated_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnNotifyDataStoreValueUpdated->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxDataStoreSubscriber.RefreshSubscriberValue
-// [0x00024401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            BindingIndex                   ( CPF_OptionalParm | CPF_Parm )
+// (Final, Native, HasOptionalParms, Public)
+// Parameters:
+// int                            BindingIndex                   (OptionalParm, Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UGFxDataStoreSubscriber::RefreshSubscriberValue(int BindingIndex)
 {
-	static UFunction* pFnRefreshSubscriberValue = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxDataStoreSubscriber.RefreshSubscriberValue");
 
-	if (!pFnRefreshSubscriberValue)
-		pFnRefreshSubscriberValue = (UFunction*)UObject::GObjects()->Data[38342];
+	UGFxDataStoreSubscriber_RefreshSubscriberValue_Params params;
+	params.BindingIndex = BindingIndex;
 
-	UGFxDataStoreSubscriber_execRefreshSubscriberValue_Parms RefreshSubscriberValue_Parms;
-	RefreshSubscriberValue_Parms.BindingIndex = BindingIndex;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnRefreshSubscriberValue->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnRefreshSubscriberValue, &RefreshSubscriberValue_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnRefreshSubscriberValue->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return RefreshSubscriberValue_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxDataStoreSubscriber.GetDataStoreBinding
-// [0x00024401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// int                            BindingIndex                   ( CPF_OptionalParm | CPF_Parm )
+// (Final, Native, HasOptionalParms, Public)
+// Parameters:
+// int                            BindingIndex                   (OptionalParm, Parm)
+// struct FString                 ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
 struct FString UGFxDataStoreSubscriber::GetDataStoreBinding(int BindingIndex)
 {
-	static UFunction* pFnGetDataStoreBinding = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxDataStoreSubscriber.GetDataStoreBinding");
 
-	if (!pFnGetDataStoreBinding)
-		pFnGetDataStoreBinding = (UFunction*)UObject::GObjects()->Data[38339];
+	UGFxDataStoreSubscriber_GetDataStoreBinding_Params params;
+	params.BindingIndex = BindingIndex;
 
-	UGFxDataStoreSubscriber_execGetDataStoreBinding_Parms GetDataStoreBinding_Parms;
-	GetDataStoreBinding_Parms.BindingIndex = BindingIndex;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetDataStoreBinding->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetDataStoreBinding, &GetDataStoreBinding_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetDataStoreBinding->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetDataStoreBinding_Parms.ReturnValue;
-};
 
 // Function GFxUI.GFxDataStoreSubscriber.SetDataStoreBinding
-// [0x00024401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 MarkupText                     ( CPF_Parm | CPF_NeedCtorLink )
-// int                            BindingIndex                   ( CPF_OptionalParm | CPF_Parm )
+// (Final, Native, HasOptionalParms, Public)
+// Parameters:
+// struct FString                 MarkupText                     (Parm, NeedCtorLink)
+// int                            BindingIndex                   (OptionalParm, Parm)
 
-void UGFxDataStoreSubscriber::SetDataStoreBinding(struct FString MarkupText, int BindingIndex)
+void UGFxDataStoreSubscriber::SetDataStoreBinding(const struct FString& MarkupText, int BindingIndex)
 {
-	static UFunction* pFnSetDataStoreBinding = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxDataStoreSubscriber.SetDataStoreBinding");
 
-	if (!pFnSetDataStoreBinding)
-		pFnSetDataStoreBinding = (UFunction*)UObject::GObjects()->Data[38336];
+	UGFxDataStoreSubscriber_SetDataStoreBinding_Params params;
+	params.MarkupText = MarkupText;
+	params.BindingIndex = BindingIndex;
 
-	UGFxDataStoreSubscriber_execSetDataStoreBinding_Parms SetDataStoreBinding_Parms;
-	memcpy(&SetDataStoreBinding_Parms.MarkupText, &MarkupText, 0xC);
-	SetDataStoreBinding_Parms.BindingIndex = BindingIndex;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetDataStoreBinding->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetDataStoreBinding, &SetDataStoreBinding_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetDataStoreBinding->FunctionFlags |= 0x400;
-};
 
 // Function GFxUI.GFxDataStoreSubscriber.PublishValues
-// [0x00020401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
+// (Final, Native, Public)
 
 void UGFxDataStoreSubscriber::PublishValues()
 {
-	static UFunction* pFnPublishValues = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxDataStoreSubscriber.PublishValues");
 
-	if (!pFnPublishValues)
-		pFnPublishValues = (UFunction*)UObject::GObjects()->Data[38335];
+	UGFxDataStoreSubscriber_PublishValues_Params params;
 
-	UGFxDataStoreSubscriber_execPublishValues_Parms PublishValues_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnPublishValues->FunctionFlags |= ~0x400;
+	UObject::ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnPublishValues, &PublishValues_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnPublishValues->FunctionFlags |= 0x400;
-};
 
 #ifdef _MSC_VER
-#pragma pack ( pop )
+	#pragma pack(pop)
 #endif

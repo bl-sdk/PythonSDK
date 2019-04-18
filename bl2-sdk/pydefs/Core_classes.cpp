@@ -7,7 +7,7 @@ void Export_pystes_Core_classes(py::module &m)
 {
 	py::class_< UObject >(m, "UObject")
 		.def_readwrite("ObjectArchetype", &UObject::ObjectArchetype)
-		.def_static("GObjObjects", &UObject::GObjObjects, py::return_value_policy::reference)
+		.def_static("GObjects", &UObject::GObjects, py::return_value_policy::reference)
 		.def_static("FindClass", &UObject::FindClass, py::arg("ClassName"), py::arg("Lookup") = false, py::return_value_policy::reference)
 		.def_static("FindObjectsRegex", &UObject::FindObjectsRegex, py::return_value_policy::reference)
 		.def_static("FindObjectsContaining", &UObject::FindObjectsContaining, py::return_value_policy::reference)

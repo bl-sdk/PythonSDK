@@ -1,47 +1,32 @@
 #pragma once
-#include "stdafx.h"
-/*
-#############################################################################################
-# Borderlands 2 (1.7) SDK
-# Generated with TheFeckless UE3 SDK Generator v1.4_Beta-Rev.51
-# ========================================================================================= #
-# File: XAudio2_classes.h
-# ========================================================================================= #
-# Credits: uNrEaL, Tamimego, SystemFiles, R00T88, _silencer, the1domo, K@N@VEL
-# Thanks: HOOAH07, lowHertz
-# Forums: www.uc-forum.com, www.gamedeception.net
-#############################################################################################
-*/
+// Borderlands 2 (1.8.5) SDK
 
 #ifdef _MSC_VER
-#pragma pack ( push, 0x4 )
+	#pragma pack(push, 0x4)
 #endif
 
-/*
-# ========================================================================================= #
-# Constants
-# ========================================================================================= #
-*/
+#include "stdafx.h"
 
-/*
-# ========================================================================================= #
-# Enums
-# ========================================================================================= #
-*/
+//---------------------------------------------------------------------------
+//Classes
+//---------------------------------------------------------------------------
 
-/*
-# ========================================================================================= #
-# Classes
-# ========================================================================================= #
-*/
-
-// 0x009C (0x0360 - 0x02C4)
+// Class XAudio2.XAudio2Device
+// 0x009C (0x02C4 - 0x0360)
 class UXAudio2Device : public UAudioDevice
 {
 public:
-	unsigned char                                      UnknownData00[0x9C];                            		// 0x02C4 (0x009C) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x9C];                                      // 0x02C4(0x009C) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("XAudio2Device");
+		return ptr;
+	}
+
 };
 
+
 #ifdef _MSC_VER
-#pragma pack ( pop )
+	#pragma pack(pop)
 #endif

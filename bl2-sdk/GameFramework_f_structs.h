@@ -1,239 +1,198 @@
 #pragma once
-#include "stdafx.h"
-/*
-#############################################################################################
-# Borderlands 2 (1.7) SDK
-# Generated with TheFeckless UE3 SDK Generator v1.4_Beta-Rev.51
-# ========================================================================================= #
-# File: GameFramework_f_structs.h
-# ========================================================================================= #
-# Credits: uNrEaL, Tamimego, SystemFiles, R00T88, _silencer, the1domo, K@N@VEL
-# Thanks: HOOAH07, lowHertz
-# Forums: www.uc-forum.com, www.gamedeception.net
-#############################################################################################
-*/
+// Borderlands 2 (1.8.5) SDK
 
 #ifdef _MSC_VER
-#pragma pack ( push, 0x4 )
+	#pragma pack(push, 0x4)
 #endif
 
-/*
-# ========================================================================================= #
-# Function Structs
-# ========================================================================================= #
-*/
+#include "stdafx.h"
+
+//---------------------------------------------------------------------------
+//Parameters
+//---------------------------------------------------------------------------
 
 // Function GameFramework.GamePlayerController.ClientColorFade
-// [0x010201C0]
-struct AGamePlayerController_execClientColorFade_Parms
+struct AGamePlayerController_ClientColorFade_Params
 {
-	struct FColor                                      FadeColor;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	unsigned char                                      FromAlpha;                                        		// 0x0004 (0x0001) [0x0000000000000080]              ( CPF_Parm )
-	unsigned char                                      ToAlpha;                                          		// 0x0005 (0x0001) [0x0000000000000080]              ( CPF_Parm )
-	float                                              FadeTime;                                         		// 0x0008 (0x0004) [0x0000000000000080]              ( CPF_Parm )
+	struct FColor                                      FadeColor;                                                // (Parm)
+	unsigned char                                      FromAlpha;                                                // (Parm)
+	unsigned char                                      ToAlpha;                                                  // (Parm)
+	float                                              FadeTime;                                                 // (Parm)
 };
 
 // Function GameFramework.GamePlayerController.CallMemLeakCheck
-// [0x00040003] ( FUNC_Final )
-struct AGamePlayerController_execCallMemLeakCheck_Parms
+struct AGamePlayerController_CallMemLeakCheck_Params
 {
 };
 
 // Function GameFramework.GamePlayerController.StopMemLeakChecking
-// [0x00020202] ( FUNC_Exec )
-struct AGamePlayerController_execStopMemLeakChecking_Parms
+struct AGamePlayerController_StopMemLeakChecking_Params
 {
 };
 
 // Function GameFramework.GamePlayerController.DoMemLeakChecking
-// [0x00020202] ( FUNC_Exec )
-struct AGamePlayerController_execDoMemLeakChecking_Parms
+struct AGamePlayerController_DoMemLeakChecking_Params
 {
-	float                                              InTimeBetweenMemLeakChecks;                       		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
+	float                                              InTimeBetweenMemLeakChecks;                               // (Parm)
 };
 
 // Function GameFramework.GamePlayerController.WarmupPause
-// [0x00820802] ( FUNC_Event )
-struct AGamePlayerController_eventWarmupPause_Parms
+struct AGamePlayerController_WarmupPause_Params
 {
-	unsigned long                                      bDesiredPauseState : 1;                           		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
-	// struct FColor                                   FadeColor;                                        		// 0x0004 (0x0004) [0x0000000000000000]
-	// struct FString                                  MovieName;                                        		// 0x000C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	bool                                               bDesiredPauseState;                                       // (Parm)
 };
 
 // Function GameFramework.GamePlayerController.CanUnpauseWarmup
-// [0x00020002]
-struct AGamePlayerController_execCanUnpauseWarmup_Parms
+struct AGamePlayerController_CanUnpauseWarmup_Params
 {
-	unsigned long                                      ReturnValue : 1;                                  		// 0x0000 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GameFramework.GamePlayerController.GetCurrentMovie
-// [0x00420401] ( FUNC_Final | FUNC_Native )
-struct AGamePlayerController_execGetCurrentMovie_Parms
+struct AGamePlayerController_GetCurrentMovie_Params
 {
-	struct FString                                     MovieName;                                        		// 0x0000 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+	struct FString                                     MovieName;                                                // (Parm, OutParm, NeedCtorLink)
 };
 
 // Function GameFramework.GamePlayerController.ClientStopMovie
-// [0x01020DC1] ( FUNC_Final | FUNC_Event | FUNC_Native )
-struct AGamePlayerController_eventClientStopMovie_Parms
+struct AGamePlayerController_ClientStopMovie_Params
 {
-	float                                              DelayInSeconds;                                   		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	unsigned long                                      bAllowMovieToFinish : 1;                          		// 0x0004 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
-	unsigned long                                      bForceStopNonSkippable : 1;                       		// 0x0008 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
-	unsigned long                                      bForceStopLoadingMovie : 1;                       		// 0x000C (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
+	float                                              DelayInSeconds;                                           // (Parm)
+	bool                                               bAllowMovieToFinish;                                      // (Parm)
+	bool                                               bForceStopNonSkippable;                                   // (Parm)
+	bool                                               bForceStopLoadingMovie;                                   // (Parm)
 };
 
 // Function GameFramework.GamePlayerController.ClientPlayMovie
-// [0x01020DC1] ( FUNC_Final | FUNC_Event | FUNC_Native )
-struct AGamePlayerController_eventClientPlayMovie_Parms
+struct AGamePlayerController_ClientPlayMovie_Params
 {
-	struct FString                                     MovieName;                                        		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	int                                                InStartOfRenderingMovieFrame;                     		// 0x000C (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	int                                                InEndOfRenderingMovieFrame;                       		// 0x0010 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	unsigned long                                      bRestrictPausing : 1;                             		// 0x0014 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
-	unsigned long                                      bPlayOnceFromStream : 1;                          		// 0x0018 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
-	unsigned long                                      bOnlyBackButtonSkipsMovie : 1;                    		// 0x001C (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
+	struct FString                                     MovieName;                                                // (Parm, NeedCtorLink)
+	int                                                InStartOfRenderingMovieFrame;                             // (Parm)
+	int                                                InEndOfRenderingMovieFrame;                               // (Parm)
+	bool                                               bRestrictPausing;                                         // (Parm)
+	bool                                               bPlayOnceFromStream;                                      // (Parm)
+	bool                                               bOnlyBackButtonSkipsMovie;                                // (Parm)
 };
 
 // Function GameFramework.GamePlayerController.KeepPlayingLoadingMovie
-// [0x00022401] ( FUNC_Final | FUNC_Native )
-struct AGamePlayerController_execKeepPlayingLoadingMovie_Parms
+struct AGamePlayerController_KeepPlayingLoadingMovie_Params
 {
 };
 
 // Function GameFramework.GamePlayerController.ShowLoadingMovie
-// [0x00026401] ( FUNC_Final | FUNC_Native )
-struct AGamePlayerController_execShowLoadingMovie_Parms
+struct AGamePlayerController_ShowLoadingMovie_Params
 {
-	unsigned long                                      bShowMovie : 1;                                   		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
-	unsigned long                                      bPauseAfterHide : 1;                              		// 0x0004 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
-	float                                              PauseDuration;                                    		// 0x0008 (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
-	float                                              KeepPlayingDuration;                              		// 0x000C (0x0004) [0x0000000000000090]              ( CPF_OptionalParm | CPF_Parm )
-	unsigned long                                      bOverridePreviousDelays : 1;                      		// 0x0010 (0x0004) [0x0000000000000090] [0x00000001] ( CPF_OptionalParm | CPF_Parm )
+	bool                                               bShowMovie;                                               // (Parm)
+	bool                                               bPauseAfterHide;                                          // (OptionalParm, Parm)
+	float                                              PauseDuration;                                            // (OptionalParm, Parm)
+	float                                              KeepPlayingDuration;                                      // (OptionalParm, Parm)
+	bool                                               bOverridePreviousDelays;                                  // (OptionalParm, Parm)
 };
 
 // Function GameFramework.GamePlayerController.SetSoundMode
-// [0x00020102]
-struct AGamePlayerController_execSetSoundMode_Parms
+struct AGamePlayerController_SetSoundMode_Params
 {
-	struct FName                                       InSoundModeName;                                  		// 0x0000 (0x0008) [0x0000000000000080]              ( CPF_Parm )
+	struct FName                                       InSoundModeName;                                          // (Parm)
 };
 
 // Function GameFramework.GamePlayerController.DoForceFeedbackForScreenShake
-// [0x00080102]
-struct AGamePlayerController_execDoForceFeedbackForScreenShake_Parms
+struct AGamePlayerController_DoForceFeedbackForScreenShake_Params
 {
-	class UCameraShake*                                ShakeData;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	float                                              Scale;                                            		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
+	class UCameraShake*                                ShakeData;                                                // (Parm)
+	float                                              Scale;                                                    // (Parm)
 };
 
 // Function GameFramework.GamePlayerController.GetUIPlayerIndex
-// [0x00020400] ( FUNC_Native )
-struct AGamePlayerController_execGetUIPlayerIndex_Parms
+struct AGamePlayerController_GetUIPlayerIndex_Params
 {
-	int                                                ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+	int                                                ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GameFramework.NavMeshGoal_OutOfViewFrom.Recycle
-// [0x00020002]
-struct UNavMeshGoal_OutOfViewFrom_execRecycle_Parms
+struct UNavMeshGoal_OutOfViewFrom_Recycle_Params
 {
 };
 
 // Function GameFramework.NavMeshGoal_OutOfViewFrom.MustBeHiddenFromThisPoint
-// [0x00022002]
-struct UNavMeshGoal_OutOfViewFrom_execMustBeHiddenFromThisPoint_Parms
+struct UNavMeshGoal_OutOfViewFrom_MustBeHiddenFromThisPoint_Params
 {
-	class UNavigationHandle*                           NavHandle;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	struct FVector                                     InOutOfViewLocation;                              		// 0x0004 (0x000C) [0x0000000000000080]              ( CPF_Parm )
-	unsigned long                                      ReturnValue : 1;                                  		// 0x0010 (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+	class UNavigationHandle*                           NavHandle;                                                // (Parm)
+	struct FVector                                     InOutOfViewLocation;                                      // (Parm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GameFramework.NavMeshGoal_OutOfViewFrom.RecycleNative
-// [0x00020400] ( FUNC_Native )
-struct UNavMeshGoal_OutOfViewFrom_execRecycleNative_Parms
+struct UNavMeshGoal_OutOfViewFrom_RecycleNative_Params
 {
 };
 
 // Function GameFramework.NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations.Recycle
-// [0x00020002]
-struct UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations_execRecycle_Parms
+struct UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations_Recycle_Params
 {
 };
 
 // Function GameFramework.NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations.BiasAgainstPolysWithinDistanceOfLocations
-// [0x00022002]
-struct UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations_execBiasAgainstPolysWithinDistanceOfLocations_Parms
+struct UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations_BiasAgainstPolysWithinDistanceOfLocations_Params
 {
-	class UNavigationHandle*                           NavHandle;                                        		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	struct FVector                                     InLocation;                                       		// 0x0004 (0x000C) [0x0000000000000082]              ( CPF_Const | CPF_Parm )
-	struct FRotator                                    InRotation;                                       		// 0x0010 (0x000C) [0x0000000000000082]              ( CPF_Const | CPF_Parm )
-	float                                              InDistanceToCheck;                                		// 0x001C (0x0004) [0x0000000000000082]              ( CPF_Const | CPF_Parm )
-	TArray< struct FVector >                           InLocationsToCheck;                               		// 0x0020 (0x000C) [0x0000000000400082]              ( CPF_Const | CPF_Parm | CPF_NeedCtorLink )
-	unsigned long                                      ReturnValue : 1;                                  		// 0x002C (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+	class UNavigationHandle*                           NavHandle;                                                // (Parm)
+	struct FVector                                     InLocation;                                               // (Const, Parm)
+	struct FRotator                                    InRotation;                                               // (Const, Parm)
+	float                                              InDistanceToCheck;                                        // (Const, Parm)
+	TArray<struct FVector>                             InLocationsToCheck;                                       // (Const, Parm, NeedCtorLink)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GameFramework.GameStateObject.Reset
-// [0x00020400] ( FUNC_Native )
-struct UGameStateObject_execReset_Parms
+struct UGameStateObject_Reset_Params
 {
 };
 
 // Function GameFramework.GameStateObject.PreProcessStream
-// [0x00020C00] ( FUNC_Event | FUNC_Native )
-struct UGameStateObject_eventPreProcessStream_Parms
+struct UGameStateObject_PreProcessStream_Params
 {
 };
 
 // Function GameFramework.GameStatsAggregator.GetAggregateMappingIDs
-// [0x00420400] ( FUNC_Native )
-struct UGameStatsAggregator_execGetAggregateMappingIDs_Parms
+struct UGameStatsAggregator_GetAggregateMappingIDs_Params
 {
-	int                                                EventID;                                          		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	int                                                AggregateID;                                      		// 0x0004 (0x0004) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
-	int                                                TargetAggregateID;                                		// 0x0008 (0x0004) [0x0000000000000180]              ( CPF_Parm | CPF_OutParm )
-	unsigned long                                      ReturnValue : 1;                                  		// 0x000C (0x0004) [0x0000000000000580] [0x00000001] ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+	int                                                EventID;                                                  // (Parm)
+	int                                                AggregateID;                                              // (Parm, OutParm)
+	int                                                TargetAggregateID;                                        // (Parm, OutParm)
+	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GameFramework.GameStatsAggregator.Reset
-// [0x00020400] ( FUNC_Native )
-struct UGameStatsAggregator_execReset_Parms
+struct UGameStatsAggregator_Reset_Params
 {
 };
 
 // Function GameFramework.GameStatsAggregator.PostProcessStream
-// [0x00020C00] ( FUNC_Event | FUNC_Native )
-struct UGameStatsAggregator_eventPostProcessStream_Parms
+struct UGameStatsAggregator_PostProcessStream_Params
 {
 };
 
 // Function GameFramework.GameStatsAggregator.PreProcessStream
-// [0x00020C00] ( FUNC_Event | FUNC_Native )
-struct UGameStatsAggregator_eventPreProcessStream_Parms
+struct UGameStatsAggregator_PreProcessStream_Params
 {
 };
 
 // Function GameFramework.PlayerCollectorGame.GetSeamlessTravelActorList
-// [0x00420800] ( FUNC_Event )
-struct APlayerCollectorGame_eventGetSeamlessTravelActorList_Parms
+struct APlayerCollectorGame_GetSeamlessTravelActorList_Params
 {
-	unsigned long                                      bToEntry : 1;                                     		// 0x0000 (0x0004) [0x0000000000000080] [0x00000001] ( CPF_Parm )
-	TArray< class AActor* >                            ActorList;                                        		// 0x0004 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+	bool                                               bToEntry;                                                 // (Parm)
+	TArray<class AActor*>                              ActorList;                                                // (Parm, OutParm, NeedCtorLink)
 };
 
 // Function GameFramework.PlayerCollectorGame.Login
-// [0x00420802] ( FUNC_Event )
-struct APlayerCollectorGame_eventLogin_Parms
+struct APlayerCollectorGame_Login_Params
 {
-	struct FString                                     Portal;                                           		// 0x0000 (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	struct FString                                     Options;                                          		// 0x000C (0x000C) [0x0000000000400080]              ( CPF_Parm | CPF_NeedCtorLink )
-	struct FUniqueNetId                                UniqueId;                                         		// 0x0018 (0x0018) [0x0000000000000082]              ( CPF_Const | CPF_Parm )
-	struct FString                                     ErrorMessage;                                     		// 0x0030 (0x000C) [0x0000000000400180]              ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
-	class APlayerController*                           ReturnValue;                                      		// 0x003C (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+	struct FString                                     Portal;                                                   // (Parm, NeedCtorLink)
+	struct FString                                     Options;                                                  // (Parm, NeedCtorLink)
+	struct FUniqueNetId                                UniqueId;                                                 // (Const, Parm)
+	struct FString                                     ErrorMessage;                                             // (Parm, OutParm, NeedCtorLink)
+	class APlayerController*                           ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
 #ifdef _MSC_VER
-#pragma pack ( pop )
+	#pragma pack(pop)
 #endif

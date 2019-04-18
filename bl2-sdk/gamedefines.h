@@ -160,6 +160,12 @@ struct FScriptDelegate
 	class UObject *Object;
 };
 
+class FScriptInterface
+{
+	UObject* ObjectPointer;
+	void* InterfacePointer;
+};
+
 struct FOutputDevice
 {
 	void* VfTable;

@@ -1,136 +1,110 @@
 #pragma once
-#include "stdafx.h"
-/*
-#############################################################################################
-# Borderlands 2 (1.7) SDK
-# Generated with TheFeckless UE3 SDK Generator v1.4_Beta-Rev.51
-# ========================================================================================= #
-# File: AkAudio_f_structs.h
-# ========================================================================================= #
-# Credits: uNrEaL, Tamimego, SystemFiles, R00T88, _silencer, the1domo, K@N@VEL
-# Thanks: HOOAH07, lowHertz
-# Forums: www.uc-forum.com, www.gamedeception.net
-#############################################################################################
-*/
+// Borderlands 2 (1.8.5) SDK
 
 #ifdef _MSC_VER
-#pragma pack ( push, 0x4 )
+	#pragma pack(push, 0x4)
 #endif
 
-/*
-# ========================================================================================= #
-# Function Structs
-# ========================================================================================= #
-*/
+#include "stdafx.h"
+
+//---------------------------------------------------------------------------
+//Parameters
+//---------------------------------------------------------------------------
 
 // Function AkAudio.IAkEnvironmentalEffectProvider.GetEnvironmentalEffectsForLocation
-// [0x00020400] ( FUNC_Native )
-struct UIAkEnvironmentalEffectProvider_execGetEnvironmentalEffectsForLocation_Parms
+struct UIAkEnvironmentalEffectProvider_GetEnvironmentalEffectsForLocation_Params
 {
-	class UAkComponent*                                GameObjComponent;                                 		// 0x0000 (0x0004) [0x0000000004000080]              ( CPF_Parm | CPF_EditInline )
-	struct FVector                                     ListenerLocation;                                 		// 0x0004 (0x000C) [0x0000000000000080]              ( CPF_Parm )
-	struct FVector                                     ObjectLocation;                                   		// 0x0010 (0x000C) [0x0000000000000080]              ( CPF_Parm )
-	TArray< struct FEnvironmentalEffectInfo >          ReturnValue;                                      		// 0x001C (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
+	class UAkComponent*                                GameObjComponent;                                         // (Parm, EditInline)
+	struct FVector                                     ListenerLocation;                                         // (Parm)
+	struct FVector                                     ObjectLocation;                                           // (Parm)
+	TArray<struct FEnvironmentalEffectInfo>            ReturnValue;                                              // (Parm, OutParm, ReturnParm, NeedCtorLink)
 };
 
 // Function AkAudio.ISpecialOcclusionAccumulator.RemoveOcclusionProvider
-// [0x00020400] ( FUNC_Native )
-struct UISpecialOcclusionAccumulator_execRemoveOcclusionProvider_Parms
+struct UISpecialOcclusionAccumulator_RemoveOcclusionProvider_Params
 {
-	class AActor*                                      Source;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
+	class AActor*                                      Source;                                                   // (Parm)
 };
 
 // Function AkAudio.ISpecialOcclusionAccumulator.SetOcclusionForProvider
-// [0x00020400] ( FUNC_Native )
-struct UISpecialOcclusionAccumulator_execSetOcclusionForProvider_Parms
+struct UISpecialOcclusionAccumulator_SetOcclusionForProvider_Params
 {
-	class AActor*                                      Source;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	float                                              Amount;                                           		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
+	class AActor*                                      Source;                                                   // (Parm)
+	float                                              Amount;                                                   // (Parm)
 };
 
 // Function AkAudio.WwiseSoundGroup.RemoveOcclusionProvider
-// [0x00020400] ( FUNC_Native )
-struct AWwiseSoundGroup_execRemoveOcclusionProvider_Parms
+struct AWwiseSoundGroup_RemoveOcclusionProvider_Params
 {
-	class AActor*                                      Source;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
+	class AActor*                                      Source;                                                   // (Parm)
 };
 
 // Function AkAudio.WwiseSoundGroup.SetOcclusionForProvider
-// [0x00020400] ( FUNC_Native )
-struct AWwiseSoundGroup_execSetOcclusionForProvider_Parms
+struct AWwiseSoundGroup_SetOcclusionForProvider_Params
 {
-	class AActor*                                      Source;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	float                                              Amount;                                           		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
+	class AActor*                                      Source;                                                   // (Parm)
+	float                                              Amount;                                                   // (Parm)
 };
 
 // Function AkAudio.WwiseSoundGroup.GetOcclusionAmount
-// [0x00020400] ( FUNC_Native )
-struct AWwiseSoundGroup_execGetOcclusionAmount_Parms
+struct AWwiseSoundGroup_GetOcclusionAmount_Params
 {
-	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+	float                                              ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function AkAudio.WwiseSoundGroup.SetAkSwitchObject
-// [0x00020400] ( FUNC_Native )
-struct AWwiseSoundGroup_execSetAkSwitchObject_Parms
+struct AWwiseSoundGroup_SetAkSwitchObject_Params
 {
-	class UAkSwitch*                                   Switch;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
+	class UAkSwitch*                                   Switch;                                                   // (Parm)
 };
 
 // Function AkAudio.WwiseSoundGroup.SetRTPCObjectValue
-// [0x00020400] ( FUNC_Native )
-struct AWwiseSoundGroup_execSetRTPCObjectValue_Parms
+struct AWwiseSoundGroup_SetRTPCObjectValue_Params
 {
-	class UAkRtpc*                                     InRtpc;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	float                                              TargetValue;                                      		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
+	class UAkRtpc*                                     InRtpc;                                                   // (Parm)
+	float                                              TargetValue;                                              // (Parm)
 };
 
 // Function AkAudio.WwiseSoundVolume.RemoveOcclusionProvider
-// [0x00020400] ( FUNC_Native )
-struct AWwiseSoundVolume_execRemoveOcclusionProvider_Parms
+struct AWwiseSoundVolume_RemoveOcclusionProvider_Params
 {
-	class AActor*                                      Source;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
+	class AActor*                                      Source;                                                   // (Parm)
 };
 
 // Function AkAudio.WwiseSoundVolume.SetOcclusionForProvider
-// [0x00020400] ( FUNC_Native )
-struct AWwiseSoundVolume_execSetOcclusionForProvider_Parms
+struct AWwiseSoundVolume_SetOcclusionForProvider_Params
 {
-	class AActor*                                      Source;                                           		// 0x0000 (0x0004) [0x0000000000000080]              ( CPF_Parm )
-	float                                              Amount;                                           		// 0x0004 (0x0004) [0x0000000000000080]              ( CPF_Parm )
+	class AActor*                                      Source;                                                   // (Parm)
+	float                                              Amount;                                                   // (Parm)
 };
 
 // Function AkAudio.WwiseSoundVolume.GetOcclusionAmount
-// [0x00020400] ( FUNC_Native )
-struct AWwiseSoundVolume_execGetOcclusionAmount_Parms
+struct AWwiseSoundVolume_GetOcclusionAmount_Params
 {
-	float                                              ReturnValue;                                      		// 0x0000 (0x0004) [0x0000000000000580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+	float                                              ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function AkAudio.WwiseSoundVolume.UpdateAkComponentPosition
-// [0x00420400] ( FUNC_Native )
-struct AWwiseSoundVolume_execUpdateAkComponentPosition_Parms
+struct AWwiseSoundVolume_UpdateAkComponentPosition_Params
 {
-	TArray< struct FVector >                           ListenerPositions;                                		// 0x0000 (0x000C) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
-	TArray< struct FRotator >                          ListenerOrientations;                             		// 0x000C (0x000C) [0x0000000000400182]              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+	TArray<struct FVector>                             ListenerPositions;                                        // (Const, Parm, OutParm, NeedCtorLink)
+	TArray<struct FRotator>                            ListenerOrientations;                                     // (Const, Parm, OutParm, NeedCtorLink)
 };
 
 // Function AkAudio.WwiseSoundVolume.GetEnvironmentalEffectsForLocation
-// [0x00020400] ( FUNC_Native )
-struct AWwiseSoundVolume_execGetEnvironmentalEffectsForLocation_Parms
+struct AWwiseSoundVolume_GetEnvironmentalEffectsForLocation_Params
 {
-	class UAkComponent*                                GameObjComponent;                                 		// 0x0000 (0x0004) [0x0000000004000080]              ( CPF_Parm | CPF_EditInline )
-	struct FVector                                     ListenerLocation;                                 		// 0x0004 (0x000C) [0x0000000000000080]              ( CPF_Parm )
-	struct FVector                                     ObjectLocation;                                   		// 0x0010 (0x000C) [0x0000000000000080]              ( CPF_Parm )
-	TArray< struct FEnvironmentalEffectInfo >          ReturnValue;                                      		// 0x001C (0x000C) [0x0000000000400580]              ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
+	class UAkComponent*                                GameObjComponent;                                         // (Parm, EditInline)
+	struct FVector                                     ListenerLocation;                                         // (Parm)
+	struct FVector                                     ObjectLocation;                                           // (Parm)
+	TArray<struct FEnvironmentalEffectInfo>            ReturnValue;                                              // (Parm, OutParm, ReturnParm, NeedCtorLink)
 };
 
 // Function AkAudio.WwiseSoundVolume.CalculateFacePlanes
-// [0x00020400] ( FUNC_Native )
-struct AWwiseSoundVolume_execCalculateFacePlanes_Parms
+struct AWwiseSoundVolume_CalculateFacePlanes_Params
 {
 };
 
 #ifdef _MSC_VER
-#pragma pack ( pop )
+	#pragma pack(pop)
 #endif
