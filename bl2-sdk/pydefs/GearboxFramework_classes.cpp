@@ -324,11 +324,11 @@ void Export_pystes_GearboxFramework_classes(py::module &m)
 		.def("GetCurrentDeviceID", &UGearboxEngine::GetCurrentDeviceID)
 		.def("SetCurrentDeviceID", &UGearboxEngine::SetCurrentDeviceID)
 		;
+#ifndef _DEBUG
 	py::class_< AGearboxGameInfo, AGameInfo >(m, "AGearboxGameInfo")
 		.def_static("StaticClass", &AGearboxGameInfo::StaticClass, py::return_value_policy::reference)
 		.def("PostLogin", &AGearboxGameInfo::PostLogin)
 		;
-#ifndef _DEBUG
 	py::class_< UGFxMovieState, UObject >(m, "UGFxMovieState")
 		.def_static("StaticClass", &UGFxMovieState::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("StateName", &UGFxMovieState::StateName, py::return_value_policy::reference)
@@ -508,6 +508,7 @@ void Export_pystes_GearboxFramework_classes(py::module &m)
 		.def_readwrite("OverrideDistanceForCover", &UPawnMoveLocationRequest::OverrideDistanceForCover, py::return_value_policy::reference)
 		.def("Get", &UPawnMoveLocationRequest::Get)
 		;
+#endif
 	py::class_< AGearboxPawn, AGamePawn >(m, "AGearboxPawn")
 		.def_static("StaticClass", &AGearboxPawn::StaticClass, py::return_value_policy::reference)
 		.def_property("bWantsToMove", [](AGearboxPawn &self){return self.bWantsToMove;}, [](AGearboxPawn &self, bool value){self.bWantsToMove = value ? 1 : 0;})
@@ -555,6 +556,7 @@ void Export_pystes_GearboxFramework_classes(py::module &m)
 		.def("NotifyShotAtBy", &AGearboxPawn::NotifyShotAtBy)
 		.def("HaveIBeenShotAtRecently", &AGearboxPawn::HaveIBeenShotAtRecently)
 		;
+#ifndef _DEBUG
 	py::class_< USparkTypes, UObject >(m, "USparkTypes")
 		.def_static("StaticClass", &USparkTypes::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("__OnSparkRequestComplete__Delegate", &USparkTypes::__OnSparkRequestComplete__Delegate, py::return_value_policy::reference)

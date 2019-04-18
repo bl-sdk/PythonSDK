@@ -227,6 +227,7 @@ void Export_pystes_WillowGame_classes(py::module &m)
 		.def_readwrite("AssociatedResource", &UAmmoResourceUpgradeAttributeValueResolver::AssociatedResource, py::return_value_policy::reference)
 		.def_readwrite("AmmoResourceUpgradesArrayIndex", &UAmmoResourceUpgradeAttributeValueResolver::AmmoResourceUpgradesArrayIndex)
 		;
+#endif
 	py::class_< UAnemoneInfectionDefinition, UGBXDefinition >(m, "UAnemoneInfectionDefinition")
 		.def_static("StaticClass", &UAnemoneInfectionDefinition::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("FullInfectionTime", &UAnemoneInfectionDefinition::FullInfectionTime)
@@ -251,6 +252,7 @@ void Export_pystes_WillowGame_classes(py::module &m)
 		.def_readwrite("FogDensityValue", &UAnemoneInfectionDefinition::FogDensityValue)
 		.def_readwrite("FogRampUpTime", &UAnemoneInfectionDefinition::FogRampUpTime)
 		;
+#ifndef _DEBUG
 	py::class_< UIScreenParticle, UInterface >(m, "UIScreenParticle")
 		.def_static("StaticClass", &UIScreenParticle::StaticClass, py::return_value_policy::reference)
 		.def("UpdateVisibilityOfAllActiveScreenParticles", &UIScreenParticle::UpdateVisibilityOfAllActiveScreenParticles)
@@ -270,6 +272,7 @@ void Export_pystes_WillowGame_classes(py::module &m)
 		.def("GetPostProcessOverlayIndex", &UIUpdatePostProcessOverride::GetPostProcessOverlayIndex)
 		.def("AddPostProcessOverlay", &UIUpdatePostProcessOverride::AddPostProcessOverlay)
 		;
+#endif
 	py::class_< AAnemoneInfectionState, AActor >(m, "AAnemoneInfectionState")
 		.def_static("StaticClass", &AAnemoneInfectionState::StaticClass, py::return_value_policy::reference)
 		.def_property("bIsLocalPlayer", [](AAnemoneInfectionState &self){return self.bIsLocalPlayer;}, [](AAnemoneInfectionState &self, bool value){self.bIsLocalPlayer = value ? 1 : 0;})
@@ -319,6 +322,7 @@ void Export_pystes_WillowGame_classes(py::module &m)
 		.def("UpdateInfectionSound", &AAnemoneInfectionState::UpdateInfectionSound)
 		.def("StartInfectionSound", &AAnemoneInfectionState::StartInfectionSound)
 		;
+#ifndef _DEBUG
 	py::class_< UAssetLibraryManager, UObject >(m, "UAssetLibraryManager")
 		.def_static("StaticClass", &UAssetLibraryManager::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("EditorAssetLibraries", &UAssetLibraryManager::EditorAssetLibraries, py::return_value_policy::reference)
@@ -10922,6 +10926,7 @@ void Export_pystes_WillowGame_classes(py::module &m)
 		.def("IsTimerActive", &UWillowPauseTicker::IsTimerActive)
 		.def("SetTimer", &UWillowPauseTicker::SetTimer)
 		;
+#endif
 	py::class_< AWillowPawn, AGearboxPawn >(m, "AWillowPawn")
 		.def_static("StaticClass", &AWillowPawn::StaticClass, py::return_value_policy::reference)
 		.def_property("bHasShieldVar", [](AWillowPawn &self){return self.bHasShieldVar;}, [](AWillowPawn &self, bool value){self.bHasShieldVar = value ? 1 : 0;})
@@ -11822,6 +11827,7 @@ void Export_pystes_WillowGame_classes(py::module &m)
 		.def("ShieldAbsorbedAmmo", [](AWillowPawn &self , class UClass* DamageSource, class UWillowDamageTypeDefinition* DamageTypeDef) { float* pyDamagePercentToAbsorb = (float*)malloc(sizeof(float)) ;  bool ret =  self.ShieldAbsorbedAmmo(DamageSource, DamageTypeDef, pyDamagePercentToAbsorb); return py::make_tuple(ret, *pyDamagePercentToAbsorb); })
 		.def("GetHitRegionHealthValues", [](AWillowPawn &self , class UBodyHitRegionDefinition* HitRegion) { float* pyHealth = (float*)malloc(sizeof(float)) ; float* pyMaxHealth = (float*)malloc(sizeof(float)) ;   self.GetHitRegionHealthValues(HitRegion, pyHealth, pyMaxHealth); return py::make_tuple(*pyHealth, *pyMaxHealth); })
 		;
+#ifndef _DEBUG
 	py::class_< AWillowAIPawn, AWillowPawn >(m, "AWillowAIPawn")
 		.def_static("StaticClass", &AWillowAIPawn::StaticClass, py::return_value_policy::reference)
 		.def_property("bMigratedAIClass", [](AWillowAIPawn &self){return self.bMigratedAIClass;}, [](AWillowAIPawn &self, bool value){self.bMigratedAIClass = value ? 1 : 0;})
@@ -12188,6 +12194,7 @@ void Export_pystes_WillowGame_classes(py::module &m)
 		.def("ApplyBodyClassStartingValues", &AWillowAICranePawn::ApplyBodyClassStartingValues)
 		.def("Died", &AWillowAICranePawn::Died)
 		;
+#endif
 	py::class_< AWillowPlayerPawn, AWillowPawn >(m, "AWillowPlayerPawn")
 		.def_static("StaticClass", &AWillowPlayerPawn::StaticClass, py::return_value_policy::reference)
 		.def_property("bFirstPersonVisibilityLocked", [](AWillowPlayerPawn &self){return self.bFirstPersonVisibilityLocked;}, [](AWillowPlayerPawn &self, bool value){self.bFirstPersonVisibilityLocked = value ? 1 : 0;})
@@ -12518,6 +12525,7 @@ void Export_pystes_WillowGame_classes(py::module &m)
 		.def("AdjustDamage", [](AWillowPlayerPawn &self , class AController* InstigatedBy, const struct FVector& HitLocation, class UClass* DamageType, const FScriptInterface& DamageCauser, class UDamagePipeline* Pipeline, struct FVector* Momentum, struct FTraceHitInfo* HitInfo) { float* pyInDamage = (float*)malloc(sizeof(float)) ; float* pyDamageSeverityPercent = (float*)malloc(sizeof(float)) ;   self.AdjustDamage(InstigatedBy, HitLocation, DamageType, DamageCauser, Pipeline, pyInDamage, pyDamageSeverityPercent, Momentum, HitInfo); return py::make_tuple(*pyInDamage, *pyDamageSeverityPercent); })
 		.def("ShieldAbsorbedAmmo", [](AWillowPlayerPawn &self , class UClass* DamageSource, class UWillowDamageTypeDefinition* DamageTypeDef) { float* pyDamagePercentToAbsorb = (float*)malloc(sizeof(float)) ;  bool ret =  self.ShieldAbsorbedAmmo(DamageSource, DamageTypeDef, pyDamagePercentToAbsorb); return py::make_tuple(ret, *pyDamagePercentToAbsorb); })
 		;
+#ifndef _DEBUG
 	py::class_< UWillowPawnInteractionDefinition, UPawnInteractionDefinition >(m, "UWillowPawnInteractionDefinition")
 		.def_static("StaticClass", &UWillowPawnInteractionDefinition::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("HUDIcon", &UWillowPawnInteractionDefinition::HUDIcon)

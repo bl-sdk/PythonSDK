@@ -170,8 +170,10 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"AmmoPanelGFxObject", &typeid(UAmmoPanelGFxObject)},
 	{"AmmoResourcePool", &typeid(UAmmoResourcePool)},
 	{"AmmoResourceUpgradeAttributeValueResolver", &typeid(UAmmoResourceUpgradeAttributeValueResolver)},
+#endif
 	{"AnemoneInfectionDefinition", &typeid(UAnemoneInfectionDefinition)},
 	{"AnemoneInfectionState", &typeid(AAnemoneInfectionState)},
+#ifndef _DEBUG
 	{"AnimationCompressionAlgorithm", &typeid(UAnimationCompressionAlgorithm)},
 	{"AnimationCompressionAlgorithm_Automatic", &typeid(UAnimationCompressionAlgorithm_Automatic)},
 	{"AnimationCompressionAlgorithm_BitwiseCompressOnly", &typeid(UAnimationCompressionAlgorithm_BitwiseCompressOnly)},
@@ -1188,7 +1190,9 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"HealthBarGFxObject", &typeid(UHealthBarGFxObject)},
 	{"HealthResourcePool", &typeid(UHealthResourcePool)},
 	{"HealthStateExpressionEvaluator", &typeid(UHealthStateExpressionEvaluator)},
+#endif
 	{"HeightFog", &typeid(AHeightFog)},
+#ifndef _DEBUG
 	{"HeightFogComponent", &typeid(UHeightFogComponent)},
 	{"HelloWeb", &typeid(UHelloWeb)},
 	{"HelpCommandlet", &typeid(UHelpCommandlet)},
@@ -3196,7 +3200,9 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"WillowOnlineGameSettings", &typeid(UWillowOnlineGameSettings)},
 	{"WillowOnlineGameSettings_DataStore", &typeid(UWillowOnlineGameSettings_DataStore)},
 	{"WillowPauseTicker", &typeid(UWillowPauseTicker)},
+#endif
 	{"WillowPawn", &typeid(AWillowPawn)},
+#ifndef _DEBUG
 	{"WillowPawnInteractionDefinition", &typeid(UWillowPawnInteractionDefinition)},
 	{"WillowPawnSnapshotRecord", &typeid(UWillowPawnSnapshotRecord)},
 	{"WillowPendingLevelPlayerController", &typeid(AWillowPendingLevelPlayerController)},
@@ -3209,7 +3215,9 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"WillowPlayerController", &typeid(AWillowPlayerController)},
 #ifndef _DEBUG
 	{"WillowPlayerInput", &typeid(UWillowPlayerInput)},
+#endif
 	{"WillowPlayerPawn", &typeid(AWillowPlayerPawn)},
+#ifndef _DEBUG
 	{"WillowPlayerPawnDataManager", &typeid(UWillowPlayerPawnDataManager)},
 	{"WillowPlayerReplicationInfo", &typeid(AWillowPlayerReplicationInfo)},
 	{"WillowPlayerSnapshotRecord", &typeid(UWillowPlayerSnapshotRecord)},

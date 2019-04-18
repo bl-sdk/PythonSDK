@@ -224,13 +224,7 @@ public:
 	{
 		UClass *classToFind = FindClass((char *)ClassName.c_str(), true);
 		if (classToFind)
-		{
-			Logging::LogF("Find Found class at %p\n", classToFind);
 			return Find(classToFind, ObjectFullName);
-		}
-		else {
-			Logging::LogF("Find missed class\n");
-		}
 		return nullptr;
 	}
 

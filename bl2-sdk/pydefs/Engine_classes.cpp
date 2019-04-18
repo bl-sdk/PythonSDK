@@ -941,6 +941,7 @@ void Export_pystes_Engine_classes(py::module &m)
 		.def("InstallNamedDLC", &UDownloadableContentManager::InstallNamedDLC)
 		.def("InstallDLC", &UDownloadableContentManager::InstallDLC)
 		;
+#endif
 	py::class_< UEngine, USubsystem >(m, "UEngine")
 		.def_static("StaticClass", &UEngine::StaticClass, py::return_value_policy::reference)
 		.def_property("bCombineSimilarMappings", [](UEngine &self){return self.bCombineSimilarMappings;}, [](UEngine &self, bool value){self.bCombineSimilarMappings = value ? 1 : 0;})
@@ -1281,6 +1282,7 @@ void Export_pystes_Engine_classes(py::module &m)
 		.def("ShowBanner", &UInGameAdManager::ShowBanner)
 		.def("Init", &UInGameAdManager::Init)
 		;
+#ifndef _DEBUG
 	py::class_< UEngineBaseTypes, UObject >(m, "UEngineBaseTypes")
 		.def_static("StaticClass", &UEngineBaseTypes::StaticClass, py::return_value_policy::reference)
 		;
@@ -4008,7 +4010,6 @@ void Export_pystes_Engine_classes(py::module &m)
 		.def("SortSearchResults", &UOnlineGameSearch::SortSearchResults)
 		.def("SetSkillOverride", &UOnlineGameSearch::SetSkillOverride)
 		;
-#ifndef _DEBUG
 	py::class_< ACamera, AActor >(m, "ACamera")
 		.def_static("StaticClass", &ACamera::StaticClass, py::return_value_policy::reference)
 		.def_property("bLockedFOV", [](ACamera &self){return self.bLockedFOV;}, [](ACamera &self, bool value){self.bLockedFOV = value ? 1 : 0;})
@@ -4659,6 +4660,7 @@ void Export_pystes_Engine_classes(py::module &m)
 		.def("GetAchievementProgression", [](APlayerController &self , int AchievementId) { float* pyCurrentValue = (float*)malloc(sizeof(float)) ; float* pyMaxValue = (float*)malloc(sizeof(float)) ;  bool ret =  self.GetAchievementProgression(AchievementId, pyCurrentValue, pyMaxValue); return py::make_tuple(ret, *pyCurrentValue, *pyMaxValue); })
 		.def("IsSplitscreenPlayer", [](APlayerController &self ) { int* pyout_SplitscreenPlayerIndex = (int*)malloc(sizeof(int)) ;  bool ret =  self.IsSplitscreenPlayer(pyout_SplitscreenPlayerIndex); return py::make_tuple(ret, *pyout_SplitscreenPlayerIndex); })
 		;
+#ifndef _DEBUG
 	py::class_< UCheatManager, UObject >(m, "UCheatManager")
 		.def_static("StaticClass", &UCheatManager::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("DebugCameraControllerRef", &UCheatManager::DebugCameraControllerRef, py::return_value_policy::reference)
@@ -18128,6 +18130,7 @@ void Export_pystes_Engine_classes(py::module &m)
 	py::class_< AHoldingAreaDestination, ATeleporterDestination >(m, "AHoldingAreaDestination")
 		.def_static("StaticClass", &AHoldingAreaDestination::StaticClass, py::return_value_policy::reference)
 		;
+#endif
 	py::class_< AHeightFog, AInfo >(m, "AHeightFog")
 		.def_static("StaticClass", &AHeightFog::StaticClass, py::return_value_policy::reference)
 		.def_property("bEnabled", [](AHeightFog &self){return self.bEnabled;}, [](AHeightFog &self, bool value){self.bEnabled = value ? 1 : 0;})
@@ -18136,6 +18139,7 @@ void Export_pystes_Engine_classes(py::module &m)
 		.def("ReplicatedEvent", &AHeightFog::ReplicatedEvent)
 		.def("PostBeginPlay", &AHeightFog::PostBeginPlay)
 		;
+#ifndef _DEBUG
 	py::class_< UIChangeBehaviorSetStateBehavior, UInterface >(m, "UIChangeBehaviorSetStateBehavior")
 		.def_static("StaticClass", &UIChangeBehaviorSetStateBehavior::StaticClass, py::return_value_policy::reference)
 		.def("Behavior_ChangeBehaviorSet", &UIChangeBehaviorSetStateBehavior::Behavior_ChangeBehaviorSet)

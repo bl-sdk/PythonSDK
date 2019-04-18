@@ -30,6 +30,7 @@ void Export_pystes_GameFramework_classes(py::module &m)
 	py::class_< UGameTypes, UObject >(m, "UGameTypes")
 		.def_static("StaticClass", &UGameTypes::StaticClass, py::return_value_policy::reference)
 		;
+#ifndef _DEBUG
 	py::class_< UNavMeshGoal_OutOfViewFrom, UNavMeshPathGoalEvaluator >(m, "UNavMeshGoal_OutOfViewFrom")
 		.def_static("StaticClass", &UNavMeshGoal_OutOfViewFrom::StaticClass, py::return_value_policy::reference)
 		.def_property("bShowDebug", [](UNavMeshGoal_OutOfViewFrom &self){return self.bShowDebug;}, [](UNavMeshGoal_OutOfViewFrom &self, bool value){self.bShowDebug = value ? 1 : 0;})
@@ -125,5 +126,5 @@ void Export_pystes_GameFramework_classes(py::module &m)
 		.def_static("StaticClass", &UPMESTG_LeaveADecalBase::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("PhysicalMaterialPropertyClass", &UPMESTG_LeaveADecalBase::PhysicalMaterialPropertyClass, py::return_value_policy::reference)
 		;
-
+#endif
 }

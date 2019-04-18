@@ -301,9 +301,8 @@ namespace BL2SDK
 
 	void initializeGameVersions()
 	{
-		UObject* obj = BL2SDK::ClassMap["Object"];
-		EngineVersion = obj->GetEngineVersion();
-		ChangelistNumber = obj->GetBuildChangelistNumber();
+		EngineVersion = UObject::GetEngineVersion();
+		ChangelistNumber = UObject::GetBuildChangelistNumber();
 
 		Logging::LogF("[Internal] Engine Version = %d, Build Changelist = %d\n", EngineVersion, ChangelistNumber);
 	}
@@ -331,7 +330,7 @@ namespace BL2SDK
 #endif
 		Logging::InitializeGameConsole();
 
-		//initializeGameVersions();
+		initializeGameVersions();
 
 		Logging::PrintLogHeader();
 
@@ -339,7 +338,7 @@ namespace BL2SDK
 		gameConsole = (UConsole *)UObject::Find("WillowConsole", "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0");
 		if (gameConsole && (gameConsole->ConsoleKey == FName("None") || gameConsole->ConsoleKey == FName("Undefined")))
 			gameConsole->ConsoleKey = FName("Tilde");
-
+		
 		GameHooks::UnrealScriptHookManager->RemoveStaticHook(function, "StartupSDK");
 		GameHooks::EngineHookManager->Register("WillowGame.WillowGameViewportClient.PostRender", "GetCanvas", getCanvasPostRender);
 

@@ -144,9 +144,9 @@ UClass* UObject::FindClass(const char* ClassName, bool Lookup)
 	if (!Lookup)
 		return nullptr;
 
-	for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
+	for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
 	{
-		UObject* Object = UObject::GObjObjects()->Data[i];
+		UObject* Object = UObject::GObjects()->Data[i];
 
 		if (!Object || !Object->Class)
 			continue;
@@ -345,7 +345,6 @@ int UObject::GetBuildChangelistNumber()
 int UObject::GetEngineVersion()
 {
 	static auto fn = (UFunction *)UObject::Find("Function", "Core.Object.GetEngineVersion");
-
 	UObject_GetEngineVersion_Params params;
 
 	auto flags = fn->FunctionFlags;
@@ -1066,11 +1065,6 @@ class UObject* UObject::FindObject(const struct FString& ObjectName, class UClas
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
 	defaultObj->ProcessEvent(fn, &params);
-	if (params.ReturnValue)
-		Logging::LogF("FindObject ObjectName:%s, ObjectClass:%s, defaultObj:%s, return:%s\n", ((FString)ObjectName).AsString(), ObjectClass->GetFullName().c_str(), defaultObj->GetFullName().c_str(), params.ReturnValue->GetFullName().c_str());
-	else
-		Logging::LogF("FindObject ObjectName:%s, ObjectClass:%s, defaultObj:%s, return:%p\n", ((FString)ObjectName).AsString(), ObjectClass->GetFullName().c_str(), defaultObj->GetFullName().c_str(), params.ReturnValue);
-
 	fn->FunctionFlags = flags;
 
 	return params.ReturnValue;

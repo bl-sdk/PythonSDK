@@ -52,7 +52,7 @@ bool CScriptHookManager::RemoveFromTable(tHookMap& hookTable, const std::string&
 	}
 	else
 	{
-		//Logging::LogF("[CScriptHookManager] (%s) Hook \"%s\" removed for function \"%s\" successfully\n", this->DebugName.c_str(), hookName.c_str(), funcName.c_str());
+		Logging::LogF("[CScriptHookManager] (%s) Hook \"%s\" removed for function \"%s\" successfully\n", this->DebugName.c_str(), hookName.c_str(), funcName.c_str());
 		return true;
 	}
 }
@@ -66,9 +66,7 @@ void CScriptHookManager::Register(const std::string& funcName, const std::string
 	tFuncNameHookPair hookPair = std::make_pair(hookName, funcHook);
 
 	// Find func
-	Logging::LogF("1\n");
 	UFunction* function = (UFunction *)UObject::Find("Function", funcNameChar);
-	Logging::LogF("2\n");
 	if (function == nullptr)
 	{
 		// The function was not found, so we need to create a virtual hook for it
@@ -121,7 +119,7 @@ bool CScriptHookManager::RemoveStaticHook(UFunction* function, const std::string
 	tiStaticHooks iHooks = StaticHooks.find(function);
 	if (iHooks == StaticHooks.end())
 	{
-		//Logging::LogF("[CScriptHookManager] (%s) ERROR: Failed to remove static hook \"%s\" for \"%s\"\n", this->DebugName.c_str(), hookName.c_str(), function->GetFullName().c_str());
+		Logging::LogF("[CScriptHookManager] (%s) ERROR: Failed to remove static hook \"%s\" for \"%s\"\n", this->DebugName.c_str(), hookName.c_str(), function->GetFullName().c_str());
 		return false;
 	}
 
@@ -143,7 +141,7 @@ void CScriptHookManager::ResolveVirtualHooks(UFunction* function)
 			int size = iVHooks->second.size();
 			StaticHooks.emplace(function, iVHooks->second);
 			VirtualHooks.erase(iVHooks);
-			//Logging::LogF("[CScriptHookManager] (%s) Function pointer found for \"%s\", added map with %i elements to static hooks map\n", this->DebugName.c_str(), funcName.c_str(), size);
+			Logging::LogF("[CScriptHookManager] (%s) Function pointer found for \"%s\", added map with %i elements to static hooks map\n", this->DebugName.c_str(), funcName.c_str(), size);
 		}
 	}
 }
