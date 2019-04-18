@@ -5,6 +5,7 @@ namespace py = pybind11;
 // Module ======================================================================
 void Export_pystes_WillowGame_classes(py::module &m)
 {
+#ifndef _DEBUG
 	py::class_< UAchievementUtility, UObject >(m, "UAchievementUtility")
 		.def_static("StaticClass", &UAchievementUtility::StaticClass, py::return_value_policy::reference)
 		.def_static("ShouldUnlockAchievementFromUnlockType", &UAchievementUtility::ShouldUnlockAchievementFromUnlockType)
@@ -4675,6 +4676,7 @@ void Export_pystes_WillowGame_classes(py::module &m)
 		.def("ApplyUpwardMomentum", &UWillowDamageTypeDefinition::ApplyUpwardMomentum)
 		.def_static("GetDamageTypeModifiers", [](class UWillowDamageTypeDefinition* DamageTypeDefinition, class AController* DamageInstigator) { float* pyDamageInstigatorModifier = (float*)malloc(sizeof(float)) ;  UWillowDamageTypeDefinition::GetDamageTypeModifiers(DamageTypeDefinition, DamageInstigator, pyDamageInstigatorModifier); return py::make_tuple(*pyDamageInstigatorModifier); })
 		;
+#endif
 	py::class_< AWillowPlayerController, AGearboxPlayerController >(m, "AWillowPlayerController")
 		.def_static("StaticClass", &AWillowPlayerController::StaticClass, py::return_value_policy::reference)
 		.def_property("bCenteredWeaponFire", [](AWillowPlayerController &self){return self.bCenteredWeaponFire;}, [](AWillowPlayerController &self, bool value){self.bCenteredWeaponFire = value ? 1 : 0;})
@@ -6878,6 +6880,7 @@ void Export_pystes_WillowGame_classes(py::module &m)
 		.def("GetChallengeTotalProgress", [](AWillowPlayerController &self , class UChallengeDefinition* ChalDef) { int* pyCurrentValue = (int*)malloc(sizeof(int)) ; int* pyTargetValue = (int*)malloc(sizeof(int)) ;  bool ret =  self.GetChallengeTotalProgress(ChalDef, pyCurrentValue, pyTargetValue); return py::make_tuple(ret, *pyCurrentValue, *pyTargetValue); })
 		.def("GetChallengeCurrentLevelProgress", [](AWillowPlayerController &self , class UChallengeDefinition* ChalDef) { int* pyCurrentValue = (int*)malloc(sizeof(int)) ; int* pyTargetValue = (int*)malloc(sizeof(int)) ; int* pyCurrentLevel = (int*)malloc(sizeof(int)) ;  bool ret =  self.GetChallengeCurrentLevelProgress(ChalDef, pyCurrentValue, pyTargetValue, pyCurrentLevel); return py::make_tuple(ret, *pyCurrentValue, *pyTargetValue, *pyCurrentLevel); })
 		;
+#ifndef _DEBUG
 	py::class_< APlayerStandIn, AActor >(m, "APlayerStandIn")
 		.def_static("StaticClass", &APlayerStandIn::StaticClass, py::return_value_policy::reference)
 		.def_property("bIsPrimary", [](APlayerStandIn &self){return self.bIsPrimary;}, [](APlayerStandIn &self, bool value){self.bIsPrimary = value ? 1 : 0;})
@@ -7347,6 +7350,7 @@ void Export_pystes_WillowGame_classes(py::module &m)
 	py::class_< UShopTimerRateValueResolver, UAttributeValueResolver >(m, "UShopTimerRateValueResolver")
 		.def_static("StaticClass", &UShopTimerRateValueResolver::StaticClass, py::return_value_policy::reference)
 		;
+#endif
 	py::class_< USkillDefinition, UGBXDefinition >(m, "USkillDefinition")
 		.def_static("StaticClass", &USkillDefinition::StaticClass, py::return_value_policy::reference)
 		.def_property("bAutoUpdateContexts", [](USkillDefinition &self){return self.bAutoUpdateContexts;}, [](USkillDefinition &self, bool value){self.bAutoUpdateContexts = value ? 1 : 0;})
@@ -7510,6 +7514,7 @@ void Export_pystes_WillowGame_classes(py::module &m)
 		.def_readwrite("VfTable_IIConstructObject", &USkillTreeDefinition::VfTable_IIConstructObject, py::return_value_policy::reference)
 		.def_readwrite("Root", &USkillTreeDefinition::Root, py::return_value_policy::reference)
 		;
+#ifndef _DEBUG
 	py::class_< USpecialMove_FirstPerson, UGearboxAnimDefinition >(m, "USpecialMove_FirstPerson")
 		.def_static("StaticClass", &USpecialMove_FirstPerson::StaticClass, py::return_value_policy::reference)
 		.def_property("bStopWeaponRecoilAnim", [](USpecialMove_FirstPerson &self){return self.bStopWeaponRecoilAnim;}, [](USpecialMove_FirstPerson &self, bool value){self.bStopWeaponRecoilAnim = value ? 1 : 0;})
@@ -9218,6 +9223,7 @@ void Export_pystes_WillowGame_classes(py::module &m)
 		.def_static("StaticClass", &UWillowForcedReachSpec::StaticClass, py::return_value_policy::reference)
 		.def("DoSpecialMove", &UWillowForcedReachSpec::DoSpecialMove)
 		;
+#endif
 	py::class_< UWillowGameEngine, UGearboxEngine >(m, "UWillowGameEngine")
 		.def_static("StaticClass", &UWillowGameEngine::StaticClass, py::return_value_policy::reference)
 		.def_property("bPauseLostFocusWindowed", [](UWillowGameEngine &self){return self.bPauseLostFocusWindowed;}, [](UWillowGameEngine &self, bool value){self.bPauseLostFocusWindowed = value ? 1 : 0;})
@@ -9241,6 +9247,7 @@ void Export_pystes_WillowGame_classes(py::module &m)
 		.def("PauseForLevelLoad", &UWillowGameEngine::PauseForLevelLoad)
 		.def("CanUnpause", &UWillowGameEngine::CanUnpause)
 		;
+#ifndef _DEBUG
 	py::class_< AWillowCoopGameInfo, AWillowGameInfo >(m, "AWillowCoopGameInfo")
 		.def_static("StaticClass", &AWillowCoopGameInfo::StaticClass, py::return_value_policy::reference)
 		.def_property("bSomeoneJustJoined", [](AWillowCoopGameInfo &self){return self.bSomeoneJustJoined;}, [](AWillowCoopGameInfo &self, bool value){self.bSomeoneJustJoined = value ? 1 : 0;})
@@ -26464,5 +26471,5 @@ void Export_pystes_WillowGame_classes(py::module &m)
 		.def_static("StaticClass", &UWillowVersusDuelBehavior::StaticClass, py::return_value_policy::reference)
 		.def("ApplyBehaviorToContext", &UWillowVersusDuelBehavior::ApplyBehaviorToContext)
 		;
-
+#endif
 }

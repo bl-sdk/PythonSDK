@@ -5,6 +5,7 @@ namespace py = pybind11;
 // Module ======================================================================
 void Export_pystes_WillowGame_structs(py::module &m)
 {
+#ifndef _DEBUG
 	py::class_< FActionSkillCustomEventReplicationData >(m, "FActionSkillCustomEventReplicationData")
 		.def(py::init<>())
 		.def_readwrite("EventCountForReplication", &FActionSkillCustomEventReplicationData::EventCountForReplication)
@@ -3594,5 +3595,5 @@ void Export_pystes_WillowGame_structs(py::module &m)
 		.def_readwrite("Part", &FItemPartSettings::Part, py::return_value_policy::reference)
 		.def_readwrite("PartName", &FItemPartSettings::PartName, py::return_value_policy::reference)
 		;
-
+#endif
 }

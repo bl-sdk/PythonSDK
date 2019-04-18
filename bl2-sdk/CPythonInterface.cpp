@@ -93,17 +93,21 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	Export_pystes_gamedefines(m);
 	Export_pystes_Core_structs(m);
 	Export_pystes_Core_classes(m);
+#ifndef _DEBUG
 	Export_pystes_Engine_structs(m);
+#endif
 	Export_pystes_Engine_classes(m);
 	Export_pystes_GameFramework_structs(m);
 	Export_pystes_GameFramework_classes(m);
 #ifndef _DEBUG
 	Export_pystes_GFxUI_structs(m);
 	Export_pystes_GFxUI_classes(m);
-#endif
 	Export_pystes_GearboxFramework_structs(m);
+#endif
 	Export_pystes_GearboxFramework_classes(m);
+#ifndef _DEBUG
 	Export_pystes_WillowGame_structs(m);
+#endif
 	Export_pystes_WillowGame_classes(m);
 #ifndef _DEBUG
 	Export_pystes_AkAudio_structs(m);

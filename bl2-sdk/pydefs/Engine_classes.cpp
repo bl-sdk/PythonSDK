@@ -524,6 +524,7 @@ void Export_pystes_Engine_classes(py::module &m)
 		.def_readwrite("BrushComponent", &ABrush::BrushComponent, py::return_value_policy::reference)
 		.def_readwrite("SavedSelections", &ABrush::SavedSelections, py::return_value_policy::reference)
 		;
+#ifndef _DEBUG
 	py::class_< AVolume, ABrush >(m, "AVolume")
 		.def_static("StaticClass", &AVolume::StaticClass, py::return_value_policy::reference)
 		.def_property("bForcePawnWalk", [](AVolume &self){return self.bForcePawnWalk;}, [](AVolume &self, bool value){self.bForcePawnWalk = value ? 1 : 0;})
@@ -3565,6 +3566,7 @@ void Export_pystes_Engine_classes(py::module &m)
 	py::class_< UVoiceChannel, UChannel >(m, "UVoiceChannel")
 		.def_static("StaticClass", &UVoiceChannel::StaticClass, py::return_value_policy::reference)
 		;
+#endif
 	py::class_< UIInstanceData, UInterface >(m, "UIInstanceData")
 		.def_static("StaticClass", &UIInstanceData::StaticClass, py::return_value_policy::reference)
 		.def("GetReplicatedInstanceDataState", &UIInstanceData::GetReplicatedInstanceDataState)
@@ -4006,6 +4008,7 @@ void Export_pystes_Engine_classes(py::module &m)
 		.def("SortSearchResults", &UOnlineGameSearch::SortSearchResults)
 		.def("SetSkillOverride", &UOnlineGameSearch::SetSkillOverride)
 		;
+#ifndef _DEBUG
 	py::class_< ACamera, AActor >(m, "ACamera")
 		.def_static("StaticClass", &ACamera::StaticClass, py::return_value_policy::reference)
 		.def_property("bLockedFOV", [](ACamera &self){return self.bLockedFOV;}, [](ACamera &self, bool value){self.bLockedFOV = value ? 1 : 0;})
@@ -5126,6 +5129,7 @@ void Export_pystes_Engine_classes(py::module &m)
 		.def_static("StaticClass", &UGBXCrossLevelReferenceContainer::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("CrossLevelObjectRef", &UGBXCrossLevelReferenceContainer::CrossLevelObjectRef, py::return_value_policy::reference)
 		;
+#endif
 	py::class_< UGBXDefinition, UObject >(m, "UGBXDefinition")
 		.def_static("StaticClass", &UGBXDefinition::StaticClass, py::return_value_policy::reference)
 		.def("InitializeDefinitionActor", &UGBXDefinition::InitializeDefinitionActor)
@@ -5134,6 +5138,7 @@ void Export_pystes_Engine_classes(py::module &m)
 		.def("GetFullDefinitionName", &UGBXDefinition::GetFullDefinitionName, py::return_value_policy::reference)
 		.def_static("GetDefinition", &UGBXDefinition::GetDefinition)
 		;
+#ifndef _DEBUG
 	py::class_< UBaseHitRegionDefinition, UGBXDefinition >(m, "UBaseHitRegionDefinition")
 		.def_static("StaticClass", &UBaseHitRegionDefinition::StaticClass, py::return_value_policy::reference)
 		;
@@ -5956,6 +5961,7 @@ void Export_pystes_Engine_classes(py::module &m)
 	py::class_< UPatchScriptCommandlet, UCommandlet >(m, "UPatchScriptCommandlet")
 		.def_static("StaticClass", &UPatchScriptCommandlet::StaticClass, py::return_value_policy::reference)
 		;
+#endif
 	py::class_< UPlayer, UObject >(m, "UPlayer")
 		.def_static("StaticClass", &UPlayer::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("VfTable_FExec", &UPlayer::VfTable_FExec, py::return_value_policy::reference)
@@ -6034,6 +6040,7 @@ void Export_pystes_Engine_classes(py::module &m)
 		.def("SendSplitJoin", &ULocalPlayer::SendSplitJoin)
 		.def("SpawnPlayActor", &ULocalPlayer::SpawnPlayActor)
 		;
+#ifndef _DEBUG
 	py::class_< UNetConnection, UPlayer >(m, "UNetConnection")
 		.def_static("StaticClass", &UNetConnection::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("Children", &UNetConnection::Children, py::return_value_policy::reference)
@@ -7403,6 +7410,7 @@ void Export_pystes_Engine_classes(py::module &m)
 		.def_static("SetBaseValue", &UAttributeInitializationDefinition::SetBaseValue)
 		.def_static("EvaluateInitializationData", &UAttributeInitializationDefinition::EvaluateInitializationData)
 		;
+#endif
 	py::class_< APawn, AActor >(m, "APawn")
 		.def_static("StaticClass", &APawn::StaticClass, py::return_value_policy::reference)
 		.def_property("bScriptTickSpecial", [](APawn &self){return self.bScriptTickSpecial;}, [](APawn &self, bool value){self.bScriptTickSpecial = value ? 1 : 0;})
@@ -8000,6 +8008,7 @@ void Export_pystes_Engine_classes(py::module &m)
 		.def("GetBestAnchor", [](APawn &self , class AActor* TestActor, const struct FVector& TestLocation, bool bStartPoint, bool bOnlyCheckVisible) { float* pyout_Dist = (float*)malloc(sizeof(float)) ;  class ANavigationPoint* ret =  self.GetBestAnchor(TestActor, TestLocation, bStartPoint, bOnlyCheckVisible, pyout_Dist); return py::make_tuple(ret, *pyout_Dist); })
 		.def("GetExpInfo", [](APawn &self ) { int* pyExpLevelValue = (int*)malloc(sizeof(int)) ;   self.GetExpInfo(pyExpLevelValue); return py::make_tuple(*pyExpLevelValue); })
 		;
+#ifndef _DEBUG
 	py::class_< UAnimNotify_PawnMaterialParam, UAnimNotify_Scripted >(m, "UAnimNotify_PawnMaterialParam")
 		.def_static("StaticClass", &UAnimNotify_PawnMaterialParam::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("ScalarParameterInterpArray", &UAnimNotify_PawnMaterialParam::ScalarParameterInterpArray, py::return_value_policy::reference)
@@ -18410,5 +18419,5 @@ void Export_pystes_Engine_classes(py::module &m)
 		.def_static("StaticClass", &AWindDirectionalSource::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("Component", &AWindDirectionalSource::Component, py::return_value_policy::reference)
 		;
-
+#endif
 }

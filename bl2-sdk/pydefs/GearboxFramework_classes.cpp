@@ -5,6 +5,7 @@ namespace py = pybind11;
 // Module ======================================================================
 void Export_pystes_GearboxFramework_classes(py::module &m)
 {
+#ifndef _DEBUG
 	py::class_< UActorFactoryClone, UActorFactory >(m, "UActorFactoryClone")
 		.def_static("StaticClass", &UActorFactoryClone::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("CloneArchetype", &UActorFactoryClone::CloneArchetype, py::return_value_policy::reference)
@@ -309,6 +310,7 @@ void Export_pystes_GearboxFramework_classes(py::module &m)
 		.def_readwrite("SliderPosition", &UGearboxEditorNode::SliderPosition)
 		.def("IsChild", &UGearboxEditorNode::IsChild)
 		;
+#endif
 	py::class_< UGearboxEngine, UGameEngine >(m, "UGearboxEngine")
 		.def_static("StaticClass", &UGearboxEngine::StaticClass, py::return_value_policy::reference)
 		.def_property("bHasSelectedValidStorageDevice", [](UGearboxEngine &self){return self.bHasSelectedValidStorageDevice;}, [](UGearboxEngine &self, bool value){self.bHasSelectedValidStorageDevice = value ? 1 : 0;})
@@ -326,6 +328,7 @@ void Export_pystes_GearboxFramework_classes(py::module &m)
 		.def_static("StaticClass", &AGearboxGameInfo::StaticClass, py::return_value_policy::reference)
 		.def("PostLogin", &AGearboxGameInfo::PostLogin)
 		;
+#ifndef _DEBUG
 	py::class_< UGFxMovieState, UObject >(m, "UGFxMovieState")
 		.def_static("StaticClass", &UGFxMovieState::StaticClass, py::return_value_policy::reference)
 		.def_readwrite("StateName", &UGFxMovieState::StateName, py::return_value_policy::reference)
@@ -687,6 +690,7 @@ void Export_pystes_GearboxFramework_classes(py::module &m)
 		.def("OnSignUpGearboxAccount", &UGearboxAccountActions::OnSignUpGearboxAccount)
 		.def("OnSignInGearboxAccount", &UGearboxAccountActions::OnSignInGearboxAccount)
 		;
+#endif
 	py::class_< AGearboxPlayerController, AGamePlayerController >(m, "AGearboxPlayerController")
 		.def_static("StaticClass", &AGearboxPlayerController::StaticClass, py::return_value_policy::reference)
 		.def_property("bWantsToShowStorageMenu", [](AGearboxPlayerController &self){return self.bWantsToShowStorageMenu;}, [](AGearboxPlayerController &self, bool value){self.bWantsToShowStorageMenu = value ? 1 : 0;})
@@ -793,6 +797,7 @@ void Export_pystes_GearboxFramework_classes(py::module &m)
 		.def("UpdateShakeRotComponent", [](AGearboxPlayerController &self , float Time, float DeltaTime) { float* pyMax = (float*)malloc(sizeof(float)) ; int* pyCurrent = (int*)malloc(sizeof(int)) ; float* pyRate = (float*)malloc(sizeof(float)) ;   self.UpdateShakeRotComponent(Time, DeltaTime, pyMax, pyCurrent, pyRate); return py::make_tuple(*pyMax, *pyCurrent, *pyRate); })
 		.def("CheckShake", [](AGearboxPlayerController &self , float Time) { float* pyMaxOffset = (float*)malloc(sizeof(float)) ; float* pyOffset = (float*)malloc(sizeof(float)) ; float* pyRate = (float*)malloc(sizeof(float)) ;   self.CheckShake(Time, pyMaxOffset, pyOffset, pyRate); return py::make_tuple(*pyMaxOffset, *pyOffset, *pyRate); })
 		;
+#ifndef _DEBUG
 	py::class_< UGearboxPlayerInput, UPlayerInput >(m, "UGearboxPlayerInput")
 		.def_static("StaticClass", &UGearboxPlayerInput::StaticClass, py::return_value_policy::reference)
 		.def("PlayerInput", &UGearboxPlayerInput::PlayerInput)
@@ -3641,5 +3646,5 @@ void Export_pystes_GearboxFramework_classes(py::module &m)
 	py::class_< ASkeletalMeshActorGBXMatinee, ASkeletalMeshActor >(m, "ASkeletalMeshActorGBXMatinee")
 		.def_static("StaticClass", &ASkeletalMeshActorGBXMatinee::StaticClass, py::return_value_policy::reference)
 		;
-
+#endif
 }

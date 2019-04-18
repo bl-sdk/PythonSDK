@@ -5,6 +5,7 @@ namespace py = pybind11;
 // Module ======================================================================
 void Export_pystes_Engine_structs(py::module &m)
 {
+#ifndef _DEBUG
 	py::class_< FAkPlayingInfo >(m, "FAkPlayingInfo")
 		.def(py::init<>())
 		.def_readwrite("SourceComponent", &FAkPlayingInfo::SourceComponent, py::return_value_policy::reference)
@@ -3909,5 +3910,5 @@ void Export_pystes_Engine_structs(py::module &m)
 		.def_property("bShouldBlockOnLoad", [](FLevelStreamingData &self){return self.bShouldBlockOnLoad;}, [](FLevelStreamingData &self, bool value){self.bShouldBlockOnLoad = value ? 1 : 0;})
 		.def_readwrite("Level", &FLevelStreamingData::Level, py::return_value_policy::reference)
 		;
-
+#endif
 }

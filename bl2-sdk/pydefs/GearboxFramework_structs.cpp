@@ -5,6 +5,7 @@ namespace py = pybind11;
 // Module ======================================================================
 void Export_pystes_GearboxFramework_structs(py::module &m)
 {
+#ifndef _DEBUG
 	py::class_< FDebugListItem >(m, "FDebugListItem")
 		.def(py::init<>())
 		.def_readwrite("DisplayType", &FDebugListItem::DisplayType)
@@ -1244,5 +1245,5 @@ void Export_pystes_GearboxFramework_structs(py::module &m)
 		.def_readwrite("OriginalValue", &FSparkMicropatch::OriginalValue, py::return_value_policy::reference)
 		.def_readwrite("NewValue", &FSparkMicropatch::NewValue, py::return_value_policy::reference)
 		;
-
+#endif
 }
