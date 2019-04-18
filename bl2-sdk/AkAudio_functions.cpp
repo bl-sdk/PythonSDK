@@ -41,7 +41,7 @@ TArray< struct FEnvironmentalEffectInfo > UIAkEnvironmentalEffectProvider::GetEn
 	static UFunction* pFnGetEnvironmentalEffectsForLocation = NULL;
 
 	if (!pFnGetEnvironmentalEffectsForLocation)
-		pFnGetEnvironmentalEffectsForLocation = (UFunction*)UObject::GObjObjects()->Data[37492];
+		pFnGetEnvironmentalEffectsForLocation = (UFunction*)UObject::GObjects()->Data[37492];
 
 	UIAkEnvironmentalEffectProvider_execGetEnvironmentalEffectsForLocation_Parms GetEnvironmentalEffectsForLocation_Parms;
 	GetEnvironmentalEffectsForLocation_Parms.GameObjComponent = GameObjComponent;
@@ -67,7 +67,7 @@ void UISpecialOcclusionAccumulator::RemoveOcclusionProvider(class AActor* Source
 	static UFunction* pFnRemoveOcclusionProvider = NULL;
 
 	if (!pFnRemoveOcclusionProvider)
-		pFnRemoveOcclusionProvider = (UFunction*)UObject::GObjObjects()->Data[37508];
+		pFnRemoveOcclusionProvider = (UFunction*)UObject::GObjects()->Data[37508];
 
 	UISpecialOcclusionAccumulator_execRemoveOcclusionProvider_Parms RemoveOcclusionProvider_Parms;
 	RemoveOcclusionProvider_Parms.Source = Source;
@@ -90,7 +90,7 @@ void UISpecialOcclusionAccumulator::SetOcclusionForProvider(class AActor* Source
 	static UFunction* pFnSetOcclusionForProvider = NULL;
 
 	if (!pFnSetOcclusionForProvider)
-		pFnSetOcclusionForProvider = (UFunction*)UObject::GObjObjects()->Data[37505];
+		pFnSetOcclusionForProvider = (UFunction*)UObject::GObjects()->Data[37505];
 
 	UISpecialOcclusionAccumulator_execSetOcclusionForProvider_Parms SetOcclusionForProvider_Parms;
 	SetOcclusionForProvider_Parms.Source = Source;
@@ -113,7 +113,7 @@ void AWwiseSoundGroup::RemoveOcclusionProvider(class AActor* Source)
 	static UFunction* pFnRemoveOcclusionProvider = NULL;
 
 	if (!pFnRemoveOcclusionProvider)
-		pFnRemoveOcclusionProvider = (UFunction*)UObject::GObjObjects()->Data[37537];
+		pFnRemoveOcclusionProvider = (UFunction*)UObject::GObjects()->Data[37537];
 
 	AWwiseSoundGroup_execRemoveOcclusionProvider_Parms RemoveOcclusionProvider_Parms;
 	RemoveOcclusionProvider_Parms.Source = Source;
@@ -136,7 +136,7 @@ void AWwiseSoundGroup::SetOcclusionForProvider(class AActor* Source, float Amoun
 	static UFunction* pFnSetOcclusionForProvider = NULL;
 
 	if (!pFnSetOcclusionForProvider)
-		pFnSetOcclusionForProvider = (UFunction*)UObject::GObjObjects()->Data[37534];
+		pFnSetOcclusionForProvider = (UFunction*)UObject::GObjects()->Data[37534];
 
 	AWwiseSoundGroup_execSetOcclusionForProvider_Parms SetOcclusionForProvider_Parms;
 	SetOcclusionForProvider_Parms.Source = Source;
@@ -159,7 +159,7 @@ float AWwiseSoundGroup::GetOcclusionAmount()
 	static UFunction* pFnGetOcclusionAmount = NULL;
 
 	if (!pFnGetOcclusionAmount)
-		pFnGetOcclusionAmount = (UFunction*)UObject::GObjObjects()->Data[37532];
+		pFnGetOcclusionAmount = (UFunction*)UObject::GObjects()->Data[37532];
 
 	AWwiseSoundGroup_execGetOcclusionAmount_Parms GetOcclusionAmount_Parms;
 
@@ -182,7 +182,7 @@ void AWwiseSoundGroup::SetAkSwitchObject(class UAkSwitch* Switch)
 	static UFunction* pFnSetAkSwitchObject = NULL;
 
 	if (!pFnSetAkSwitchObject)
-		pFnSetAkSwitchObject = (UFunction*)UObject::GObjObjects()->Data[37530];
+		pFnSetAkSwitchObject = (UFunction*)UObject::GObjects()->Data[37530];
 
 	AWwiseSoundGroup_execSetAkSwitchObject_Parms SetAkSwitchObject_Parms;
 	SetAkSwitchObject_Parms.Switch = Switch;
@@ -205,7 +205,7 @@ void AWwiseSoundGroup::SetRTPCObjectValue(class UAkRtpc* InRtpc, float TargetVal
 	static UFunction* pFnSetRTPCObjectValue = NULL;
 
 	if (!pFnSetRTPCObjectValue)
-		pFnSetRTPCObjectValue = (UFunction*)UObject::GObjObjects()->Data[37527];
+		pFnSetRTPCObjectValue = (UFunction*)UObject::GObjects()->Data[37527];
 
 	AWwiseSoundGroup_execSetRTPCObjectValue_Parms SetRTPCObjectValue_Parms;
 	SetRTPCObjectValue_Parms.InRtpc = InRtpc;
@@ -228,7 +228,7 @@ void AWwiseSoundVolume::RemoveOcclusionProvider(class AActor* Source)
 	static UFunction* pFnRemoveOcclusionProvider = NULL;
 
 	if (!pFnRemoveOcclusionProvider)
-		pFnRemoveOcclusionProvider = (UFunction*)UObject::GObjObjects()->Data[37617];
+		pFnRemoveOcclusionProvider = (UFunction*)UObject::GObjects()->Data[37617];
 
 	AWwiseSoundVolume_execRemoveOcclusionProvider_Parms RemoveOcclusionProvider_Parms;
 	RemoveOcclusionProvider_Parms.Source = Source;
@@ -251,7 +251,7 @@ void AWwiseSoundVolume::SetOcclusionForProvider(class AActor* Source, float Amou
 	static UFunction* pFnSetOcclusionForProvider = NULL;
 
 	if (!pFnSetOcclusionForProvider)
-		pFnSetOcclusionForProvider = (UFunction*)UObject::GObjObjects()->Data[37614];
+		pFnSetOcclusionForProvider = (UFunction*)UObject::GObjects()->Data[37614];
 
 	AWwiseSoundVolume_execSetOcclusionForProvider_Parms SetOcclusionForProvider_Parms;
 	SetOcclusionForProvider_Parms.Source = Source;
@@ -274,7 +274,7 @@ float AWwiseSoundVolume::GetOcclusionAmount()
 	static UFunction* pFnGetOcclusionAmount = NULL;
 
 	if (!pFnGetOcclusionAmount)
-		pFnGetOcclusionAmount = (UFunction*)UObject::GObjObjects()->Data[37612];
+		pFnGetOcclusionAmount = (UFunction*)UObject::GObjects()->Data[37612];
 
 	AWwiseSoundVolume_execGetOcclusionAmount_Parms GetOcclusionAmount_Parms;
 
@@ -298,7 +298,7 @@ void AWwiseSoundVolume::UpdateAkComponentPosition(TArray< struct FVector >* List
 	static UFunction* pFnUpdateAkComponentPosition = NULL;
 
 	if (!pFnUpdateAkComponentPosition)
-		pFnUpdateAkComponentPosition = (UFunction*)UObject::GObjObjects()->Data[37607];
+		pFnUpdateAkComponentPosition = (UFunction*)UObject::GObjects()->Data[37607];
 
 	AWwiseSoundVolume_execUpdateAkComponentPosition_Parms UpdateAkComponentPosition_Parms;
 
@@ -328,7 +328,7 @@ TArray< struct FEnvironmentalEffectInfo > AWwiseSoundVolume::GetEnvironmentalEff
 	static UFunction* pFnGetEnvironmentalEffectsForLocation = NULL;
 
 	if (!pFnGetEnvironmentalEffectsForLocation)
-		pFnGetEnvironmentalEffectsForLocation = (UFunction*)UObject::GObjObjects()->Data[37601];
+		pFnGetEnvironmentalEffectsForLocation = (UFunction*)UObject::GObjects()->Data[37601];
 
 	AWwiseSoundVolume_execGetEnvironmentalEffectsForLocation_Parms GetEnvironmentalEffectsForLocation_Parms;
 	GetEnvironmentalEffectsForLocation_Parms.GameObjComponent = GameObjComponent;
@@ -353,7 +353,7 @@ void AWwiseSoundVolume::CalculateFacePlanes()
 	static UFunction* pFnCalculateFacePlanes = NULL;
 
 	if (!pFnCalculateFacePlanes)
-		pFnCalculateFacePlanes = (UFunction*)UObject::GObjObjects()->Data[37600];
+		pFnCalculateFacePlanes = (UFunction*)UObject::GObjects()->Data[37600];
 
 	AWwiseSoundVolume_execCalculateFacePlanes_Parms CalculateFacePlanes_Parms;
 

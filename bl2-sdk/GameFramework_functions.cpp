@@ -42,7 +42,7 @@ void AGamePlayerController::ClientColorFade(struct FColor FadeColor, unsigned ch
 	static UFunction* pFnClientColorFade = NULL;
 
 	if (!pFnClientColorFade)
-		pFnClientColorFade = (UFunction*)UObject::GObjObjects()->Data[38462];
+		pFnClientColorFade = (UFunction*)UObject::GObjects()->Data[38462];
 
 	AGamePlayerController_execClientColorFade_Parms ClientColorFade_Parms;
 	memcpy(&ClientColorFade_Parms.FadeColor, &FadeColor, 0x4);
@@ -62,7 +62,7 @@ void AGamePlayerController::CallMemLeakCheck()
 	static UFunction* pFnCallMemLeakCheck = NULL;
 
 	if (!pFnCallMemLeakCheck)
-		pFnCallMemLeakCheck = (UFunction*)UObject::GObjObjects()->Data[38461];
+		pFnCallMemLeakCheck = (UFunction*)UObject::GObjects()->Data[38461];
 
 	AGamePlayerController_execCallMemLeakCheck_Parms CallMemLeakCheck_Parms;
 
@@ -78,7 +78,7 @@ void AGamePlayerController::StopMemLeakChecking()
 	static UFunction* pFnStopMemLeakChecking = NULL;
 
 	if (!pFnStopMemLeakChecking)
-		pFnStopMemLeakChecking = (UFunction*)UObject::GObjObjects()->Data[38460];
+		pFnStopMemLeakChecking = (UFunction*)UObject::GObjects()->Data[38460];
 
 	AGamePlayerController_execStopMemLeakChecking_Parms StopMemLeakChecking_Parms;
 
@@ -95,7 +95,7 @@ void AGamePlayerController::DoMemLeakChecking(float InTimeBetweenMemLeakChecks)
 	static UFunction* pFnDoMemLeakChecking = NULL;
 
 	if (!pFnDoMemLeakChecking)
-		pFnDoMemLeakChecking = (UFunction*)UObject::GObjObjects()->Data[38458];
+		pFnDoMemLeakChecking = (UFunction*)UObject::GObjects()->Data[38458];
 
 	AGamePlayerController_execDoMemLeakChecking_Parms DoMemLeakChecking_Parms;
 	DoMemLeakChecking_Parms.InTimeBetweenMemLeakChecks = InTimeBetweenMemLeakChecks;
@@ -113,7 +113,7 @@ void AGamePlayerController::eventWarmupPause(unsigned long bDesiredPauseState)
 	static UFunction* pFnWarmupPause = NULL;
 
 	if (!pFnWarmupPause)
-		pFnWarmupPause = (UFunction*)UObject::GObjObjects()->Data[38454];
+		pFnWarmupPause = (UFunction*)UObject::GObjects()->Data[38454];
 
 	AGamePlayerController_eventWarmupPause_Parms WarmupPause_Parms;
 	WarmupPause_Parms.bDesiredPauseState = bDesiredPauseState;
@@ -131,7 +131,7 @@ bool AGamePlayerController::CanUnpauseWarmup()
 	static UFunction* pFnCanUnpauseWarmup = NULL;
 
 	if (!pFnCanUnpauseWarmup)
-		pFnCanUnpauseWarmup = (UFunction*)UObject::GObjObjects()->Data[38452];
+		pFnCanUnpauseWarmup = (UFunction*)UObject::GObjects()->Data[38452];
 
 	AGamePlayerController_execCanUnpauseWarmup_Parms CanUnpauseWarmup_Parms;
 
@@ -150,7 +150,7 @@ void AGamePlayerController::GetCurrentMovie(struct FString* MovieName)
 	static UFunction* pFnGetCurrentMovie = NULL;
 
 	if (!pFnGetCurrentMovie)
-		pFnGetCurrentMovie = (UFunction*)UObject::GObjObjects()->Data[38450];
+		pFnGetCurrentMovie = (UFunction*)UObject::GObjects()->Data[38450];
 
 	AGamePlayerController_execGetCurrentMovie_Parms GetCurrentMovie_Parms;
 
@@ -177,7 +177,7 @@ void AGamePlayerController::eventClientStopMovie(float DelayInSeconds, unsigned 
 	static UFunction* pFnClientStopMovie = NULL;
 
 	if (!pFnClientStopMovie)
-		pFnClientStopMovie = (UFunction*)UObject::GObjObjects()->Data[38445];
+		pFnClientStopMovie = (UFunction*)UObject::GObjects()->Data[38445];
 
 	AGamePlayerController_eventClientStopMovie_Parms ClientStopMovie_Parms;
 	ClientStopMovie_Parms.DelayInSeconds = DelayInSeconds;
@@ -207,7 +207,7 @@ void AGamePlayerController::eventClientPlayMovie(struct FString MovieName, int I
 	static UFunction* pFnClientPlayMovie = NULL;
 
 	if (!pFnClientPlayMovie)
-		pFnClientPlayMovie = (UFunction*)UObject::GObjObjects()->Data[38438];
+		pFnClientPlayMovie = (UFunction*)UObject::GObjects()->Data[38438];
 
 	AGamePlayerController_eventClientPlayMovie_Parms ClientPlayMovie_Parms;
 	memcpy(&ClientPlayMovie_Parms.MovieName, &MovieName, 0xC);
@@ -233,7 +233,7 @@ void AGamePlayerController::KeepPlayingLoadingMovie()
 	static UFunction* pFnKeepPlayingLoadingMovie = NULL;
 
 	if (!pFnKeepPlayingLoadingMovie)
-		pFnKeepPlayingLoadingMovie = (UFunction*)UObject::GObjObjects()->Data[38437];
+		pFnKeepPlayingLoadingMovie = (UFunction*)UObject::GObjects()->Data[38437];
 
 	AGamePlayerController_execKeepPlayingLoadingMovie_Parms KeepPlayingLoadingMovie_Parms;
 
@@ -258,7 +258,7 @@ void AGamePlayerController::ShowLoadingMovie(unsigned long bShowMovie, unsigned 
 	static UFunction* pFnShowLoadingMovie = NULL;
 
 	if (!pFnShowLoadingMovie)
-		pFnShowLoadingMovie = (UFunction*)UObject::GObjObjects()->Data[38431];
+		pFnShowLoadingMovie = (UFunction*)UObject::GObjects()->Data[38431];
 
 	AGamePlayerController_execShowLoadingMovie_Parms ShowLoadingMovie_Parms;
 	ShowLoadingMovie_Parms.bShowMovie = bShowMovie;
@@ -284,7 +284,7 @@ void AGamePlayerController::SetSoundMode(struct FName InSoundModeName)
 	static UFunction* pFnSetSoundMode = NULL;
 
 	if (!pFnSetSoundMode)
-		pFnSetSoundMode = (UFunction*)UObject::GObjObjects()->Data[38429];
+		pFnSetSoundMode = (UFunction*)UObject::GObjects()->Data[38429];
 
 	AGamePlayerController_execSetSoundMode_Parms SetSoundMode_Parms;
 	memcpy(&SetSoundMode_Parms.InSoundModeName, &InSoundModeName, 0x8);
@@ -303,7 +303,7 @@ void AGamePlayerController::DoForceFeedbackForScreenShake(class UCameraShake* Sh
 	static UFunction* pFnDoForceFeedbackForScreenShake = NULL;
 
 	if (!pFnDoForceFeedbackForScreenShake)
-		pFnDoForceFeedbackForScreenShake = (UFunction*)UObject::GObjObjects()->Data[38421];
+		pFnDoForceFeedbackForScreenShake = (UFunction*)UObject::GObjects()->Data[38421];
 
 	AGamePlayerController_execDoForceFeedbackForScreenShake_Parms DoForceFeedbackForScreenShake_Parms;
 	DoForceFeedbackForScreenShake_Parms.ShakeData = ShakeData;
@@ -322,7 +322,7 @@ int AGamePlayerController::GetUIPlayerIndex()
 	static UFunction* pFnGetUIPlayerIndex = NULL;
 
 	if (!pFnGetUIPlayerIndex)
-		pFnGetUIPlayerIndex = (UFunction*)UObject::GObjObjects()->Data[38419];
+		pFnGetUIPlayerIndex = (UFunction*)UObject::GObjects()->Data[38419];
 
 	AGamePlayerController_execGetUIPlayerIndex_Parms GetUIPlayerIndex_Parms;
 
@@ -344,7 +344,7 @@ void UNavMeshGoal_OutOfViewFrom::Recycle()
 	static UFunction* pFnRecycle = NULL;
 
 	if (!pFnRecycle)
-		pFnRecycle = (UFunction*)UObject::GObjObjects()->Data[38606];
+		pFnRecycle = (UFunction*)UObject::GObjects()->Data[38606];
 
 	UNavMeshGoal_OutOfViewFrom_execRecycle_Parms Recycle_Parms;
 
@@ -363,7 +363,7 @@ bool UNavMeshGoal_OutOfViewFrom::MustBeHiddenFromThisPoint(class UNavigationHand
 	static UFunction* pFnMustBeHiddenFromThisPoint = NULL;
 
 	if (!pFnMustBeHiddenFromThisPoint)
-		pFnMustBeHiddenFromThisPoint = (UFunction*)UObject::GObjObjects()->Data[38602];
+		pFnMustBeHiddenFromThisPoint = (UFunction*)UObject::GObjects()->Data[38602];
 
 	UNavMeshGoal_OutOfViewFrom_execMustBeHiddenFromThisPoint_Parms MustBeHiddenFromThisPoint_Parms;
 	MustBeHiddenFromThisPoint_Parms.NavHandle = NavHandle;
@@ -383,7 +383,7 @@ void UNavMeshGoal_OutOfViewFrom::RecycleNative()
 	static UFunction* pFnRecycleNative = NULL;
 
 	if (!pFnRecycleNative)
-		pFnRecycleNative = (UFunction*)UObject::GObjObjects()->Data[38601];
+		pFnRecycleNative = (UFunction*)UObject::GObjects()->Data[38601];
 
 	UNavMeshGoal_OutOfViewFrom_execRecycleNative_Parms RecycleNative_Parms;
 
@@ -403,7 +403,7 @@ void UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations::Recycle()
 	static UFunction* pFnRecycle = NULL;
 
 	if (!pFnRecycle)
-		pFnRecycle = (UFunction*)UObject::GObjObjects()->Data[38620];
+		pFnRecycle = (UFunction*)UObject::GObjects()->Data[38620];
 
 	UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations_execRecycle_Parms Recycle_Parms;
 
@@ -425,7 +425,7 @@ bool UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations::BiasAgainstPolysWit
 	static UFunction* pFnBiasAgainstPolysWithinDistanceOfLocations = NULL;
 
 	if (!pFnBiasAgainstPolysWithinDistanceOfLocations)
-		pFnBiasAgainstPolysWithinDistanceOfLocations = (UFunction*)UObject::GObjObjects()->Data[38612];
+		pFnBiasAgainstPolysWithinDistanceOfLocations = (UFunction*)UObject::GObjects()->Data[38612];
 
 	UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations_execBiasAgainstPolysWithinDistanceOfLocations_Parms BiasAgainstPolysWithinDistanceOfLocations_Parms;
 	BiasAgainstPolysWithinDistanceOfLocations_Parms.NavHandle = NavHandle;
@@ -448,7 +448,7 @@ void UGameStateObject::Reset()
 	static UFunction* pFnReset = NULL;
 
 	if (!pFnReset)
-		pFnReset = (UFunction*)UObject::GObjObjects()->Data[38511];
+		pFnReset = (UFunction*)UObject::GObjects()->Data[38511];
 
 	UGameStateObject_execReset_Parms Reset_Parms;
 
@@ -468,7 +468,7 @@ void UGameStateObject::eventPreProcessStream()
 	static UFunction* pFnPreProcessStream = NULL;
 
 	if (!pFnPreProcessStream)
-		pFnPreProcessStream = (UFunction*)UObject::GObjObjects()->Data[38510];
+		pFnPreProcessStream = (UFunction*)UObject::GObjects()->Data[38510];
 
 	UGameStateObject_eventPreProcessStream_Parms PreProcessStream_Parms;
 
@@ -492,7 +492,7 @@ bool UGameStatsAggregator::GetAggregateMappingIDs(int EventID, int* AggregateID,
 	static UFunction* pFnGetAggregateMappingIDs = NULL;
 
 	if (!pFnGetAggregateMappingIDs)
-		pFnGetAggregateMappingIDs = (UFunction*)UObject::GObjObjects()->Data[38587];
+		pFnGetAggregateMappingIDs = (UFunction*)UObject::GObjects()->Data[38587];
 
 	UGameStatsAggregator_execGetAggregateMappingIDs_Parms GetAggregateMappingIDs_Parms;
 	GetAggregateMappingIDs_Parms.EventID = EventID;
@@ -521,7 +521,7 @@ void UGameStatsAggregator::Reset()
 	static UFunction* pFnReset = NULL;
 
 	if (!pFnReset)
-		pFnReset = (UFunction*)UObject::GObjObjects()->Data[38586];
+		pFnReset = (UFunction*)UObject::GObjects()->Data[38586];
 
 	UGameStatsAggregator_execReset_Parms Reset_Parms;
 
@@ -541,7 +541,7 @@ void UGameStatsAggregator::eventPostProcessStream()
 	static UFunction* pFnPostProcessStream = NULL;
 
 	if (!pFnPostProcessStream)
-		pFnPostProcessStream = (UFunction*)UObject::GObjObjects()->Data[38585];
+		pFnPostProcessStream = (UFunction*)UObject::GObjects()->Data[38585];
 
 	UGameStatsAggregator_eventPostProcessStream_Parms PostProcessStream_Parms;
 
@@ -561,7 +561,7 @@ void UGameStatsAggregator::eventPreProcessStream()
 	static UFunction* pFnPreProcessStream = NULL;
 
 	if (!pFnPreProcessStream)
-		pFnPreProcessStream = (UFunction*)UObject::GObjObjects()->Data[38584];
+		pFnPreProcessStream = (UFunction*)UObject::GObjects()->Data[38584];
 
 	UGameStatsAggregator_eventPreProcessStream_Parms PreProcessStream_Parms;
 
@@ -583,7 +583,7 @@ void APlayerCollectorGame::eventGetSeamlessTravelActorList(unsigned long bToEntr
 	static UFunction* pFnGetSeamlessTravelActorList = NULL;
 
 	if (!pFnGetSeamlessTravelActorList)
-		pFnGetSeamlessTravelActorList = (UFunction*)UObject::GObjObjects()->Data[38630];
+		pFnGetSeamlessTravelActorList = (UFunction*)UObject::GObjects()->Data[38630];
 
 	APlayerCollectorGame_eventGetSeamlessTravelActorList_Parms GetSeamlessTravelActorList_Parms;
 	GetSeamlessTravelActorList_Parms.bToEntry = bToEntry;
@@ -608,7 +608,7 @@ class APlayerController* APlayerCollectorGame::eventLogin(struct FString Portal,
 	static UFunction* pFnLogin = NULL;
 
 	if (!pFnLogin)
-		pFnLogin = (UFunction*)UObject::GObjObjects()->Data[38624];
+		pFnLogin = (UFunction*)UObject::GObjects()->Data[38624];
 
 	APlayerCollectorGame_eventLogin_Parms Login_Parms;
 	memcpy(&Login_Parms.Portal, &Portal, 0xC);

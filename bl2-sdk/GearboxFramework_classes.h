@@ -1,1202 +1,88 @@
 #pragma once
-#include "stdafx.h"
-/*
-#############################################################################################
-# Borderlands 2 (1.7) SDK
-# Generated with TheFeckless UE3 SDK Generator v1.4_Beta-Rev.51
-# ========================================================================================= #
-# File: GearboxFramework_classes.h
-# ========================================================================================= #
-# Credits: uNrEaL, Tamimego, SystemFiles, R00T88, _silencer, the1domo, K@N@VEL
-# Thanks: HOOAH07, lowHertz
-# Forums: www.uc-forum.com, www.gamedeception.net
-#############################################################################################
-*/
+// Borderlands 2 (1.8.5) SDK
 
 #ifdef _MSC_VER
-#pragma pack ( push, 0x4 )
+#pragma pack(push, 0x4)
 #endif
 
-/*
-# ========================================================================================= #
-# Constants
-# ========================================================================================= #
-*/
+#include "stdafx.h"
 
-#define CONST_MAX_VANTAGES_PER_LOOKER                            3
-#define CONST_SNAPSHOT_MAX                                       50
-#define CONST_OFFSCREEN_BUCKET                                   3
-#define CONST_SKIP_UPDATE_TIME                                   0.1f
-#define CONST_TimeToMarkTargetsWhoShotAtMe                       10.0
-#define CONST_SecondsToRememberRecentIncomingShots               3.0
-#define CONST_MaxContainedRules                                  45
-#define CONST_SPLITSCREEN_CHARACTER_COUNT                        2
-#define CONST_MAX_HIT_TARGET_RECORDS                             5
-#define CONST_MaxTimeMSAllowedPerFrame                           1.f
-#define CONST_ScreenBaseX                                        640
-#define CONST_ScreenBaseY                                        480
+//---------------------------------------------------------------------------
+//Classes
+//---------------------------------------------------------------------------
 
-/*
-# ========================================================================================= #
-# Enums
-# ========================================================================================= #
-*/
-
-// Enum GearboxFramework.AIComponent.AINodeType
-/*enum AINodeType
-{
-	NodeType_Blank                                     = 0,
-	NodeType_Action                                    = 1,
-	NodeType_Random                                    = 2,
-	NodeType_Priority                                  = 3,
-	NodeType_Sequential                                = 4,
-	NodeType_MAX                                       = 5
-};*/
-
-// Enum GearboxFramework.AIComponent.AIFailReason
-/*enum AIFailReason
-{
-	AIFail_None                                        = 0,
-	AIFail_Timer                                       = 1,
-	AIFail_Failed                                      = 2,
-	AIFail_Action                                      = 3,
-	AIFail_Resource                                    = 4,
-	AIFail_Conditional                                 = 5,
-	AIFail_MAX                                         = 6
-};*/
-
-// Enum GearboxFramework.GearboxGlobals.EGBXPlatform
-/*enum EGBXPlatform
-{
-	GBXPlatform_PC                                     = 0,
-	GBXPlatform                                        = 1,
-	GBXPlatform_PS3                                    = 2,
-	GBXPlatform_MAX                                    = 3
-};*/
-
-// Enum GearboxFramework.GearboxGlobals.EDifficultyLevel
-/*enum EDifficultyLevel
-{
-	DL_Casual                                          = 0,
-	DL_Normal                                          = 1,
-	DL_Hardcore                                        = 2,
-	DL_Insane                                          = 3,
-	DL_MAX                                             = 4
-};*/
-
-// Enum GearboxFramework.GearboxGlobals.EGearboxCoverTransition
-/*enum EGearboxCoverTransition
-{
-	GBXCOVERTRANS_None                                 = 0,
-	GBXCOVERTRANS_Detach                               = 1,
-	GBXCOVERTRANS_PoppingUp                            = 2,
-	GBXCOVERTRANS_LeaningOut                           = 3,
-	GBXCOVERTRANS_PeekingUp                            = 4,
-	GBXCOVERTRANS_BlindFiringUp                        = 5,
-	GBXCOVERTRANS_ReturnToCover                        = 6,
-	GBXCOVERTRANS_Mounting                             = 7,
-	GBXCOVERTRANS_Dismounting                          = 8,
-	GBXCOVERTRANS_Mantling                             = 9,
-	GBXCOVERTRANS_ChangingDirection                    = 10,
-	GBXCOVERTRANS_GameSpecific                         = 11,
-	GBXCOVERTRANS_Reserved1                            = 12,
-	GBXCOVERTRANS_Reserved2                            = 13,
-	GBXCOVERTRANS_Reserved3                            = 14,
-	GBXCOVERTRANS_Reserved4                            = 15,
-	GBXCOVERTRANS_Reserved5                            = 16,
-	GBXCOVERTRANS_Reserved6                            = 17,
-	GBXCOVERTRANS_Reserved7                            = 18,
-	GBXCOVERTRANS_Reserved8                            = 19,
-	GBXCOVERTRANS_Reserved9                            = 20,
-	GBXCOVERTRANS_MAX                                  = 21
-};*/
-
-// Enum GearboxFramework.GearboxGlobals.EGearboxCoverStateMetaData
-/*enum EGearboxCoverStateMetaData
-{
-	GBXCOVERMETA_None                                  = 0,
-	GBXCOVERMETA_Detach                                = 1,
-	GBXCOVERMETA_Left                                  = 2,
-	GBXCOVERMETA_Right                                 = 3,
-	GBXCOVERMETA_Interior                              = 4,
-	GBXCOVERMETA_Dismount_SurpriseLeft                 = 5,
-	GBXCOVERMETA_Dismount_SurpriseRight                = 6,
-	GBXCOVERMETA_Dismount_SurpriseTowardCover          = 7,
-	GBXCOVERMETA_Dismount_SurpriseWith180Turn          = 8,
-	GBXCOVERMETA_Dismount_Wallhop                      = 9,
-	GBXCOVERMETA_Dismount_TowardCover                  = 10,
-	GBXCOVERMETA_Dismount_With180Turn                  = 11,
-	GBXCOVERMETA_GameSpecific                          = 12,
-	GBXCOVERMETA_Reserved1                             = 13,
-	GBXCOVERMETA_Reserved2                             = 14,
-	GBXCOVERMETA_Reserved3                             = 15,
-	GBXCOVERMETA_Reserved4                             = 16,
-	GBXCOVERMETA_Reserved5                             = 17,
-	GBXCOVERMETA_Reserved6                             = 18,
-	GBXCOVERMETA_Reserved7                             = 19,
-	GBXCOVERMETA_Reserved8                             = 20,
-	GBXCOVERMETA_Reserved9                             = 21,
-	GBXCOVERMETA_MAX                                   = 22
-};*/
-
-// Enum GearboxFramework.GearboxGlobals.EGearboxCoverState
-/*enum EGearboxCoverState
-{
-	GBXCOVERSTATE_Uncovered                            = 0,
-	GBXCOVERSTATE_Covered                              = 1,
-	GBXCOVERSTATE_PoppedUp                             = 2,
-	GBXCOVERSTATE_LeanedOut                            = 3,
-	GBXCOVERSTATE_Peeking                              = 4,
-	GBXCOVERSTATE_BlindFiring                          = 5,
-	GBXCOVERSTATE_Mantling                             = 6,
-	GBXCOVERSTATE_GameSpecific                         = 7,
-	GBXCOVERSTATE_Reserved1                            = 8,
-	GBXCOVERSTATE_Reserved2                            = 9,
-	GBXCOVERSTATE_Reserved3                            = 10,
-	GBXCOVERSTATE_Reserved4                            = 11,
-	GBXCOVERSTATE_Reserved5                            = 12,
-	GBXCOVERSTATE_Reserved6                            = 13,
-	GBXCOVERSTATE_Reserved7                            = 14,
-	GBXCOVERSTATE_Reserved8                            = 15,
-	GBXCOVERSTATE_Reserved9                            = 16,
-	GBXCOVERSTATE_MAX                                  = 17
-};*/
-
-// Enum GearboxFramework.GearboxGlobals.EVantageType
-/*enum EVantageType
-{
-	VTYPE_Normal                                       = 0,
-	VTYPE_StandingUp                                   = 1,
-	VTYPE_OverWall                                     = 2,
-	VTYPE_AroundCorner                                 = 3,
-	VTYPE_MAX                                          = 4
-};*/
-
-// Enum GearboxFramework.GearboxGlobals.AwarenessReason
-/*enum AwarenessReason
-{
-	AWAREREASON_SawEnemy                               = 0,
-	AWAREREASON_HeardEnemy                             = 1,
-	AWAREREASON_HeardWeaponNoise                       = 2,
-	AWAREREASON_NotifiedByFireTeam                     = 3,
-	AWAREREASON_NotifiedByPlayer                       = 4,
-	AWAREREASON_SuppressOrderGiven                     = 5,
-	AWAREREASON_AttackedByEnemy                        = 6,
-	AWAREREASON_BulletImpactOrWhiz                     = 7,
-	AWAREREASON_GrenadeFromEnemy                       = 8,
-	AWAREREASON_LevelDesignForceSee                    = 9,
-	AWAREREASON_FriendlyKilled                         = 10,
-	AWAREREASON_MAX                                    = 11
-};*/
-
-// Enum GearboxFramework.GearboxGlobals.ELocationSearchRandomness
-/*enum ELocationSearchRandomness
-{
-	ELOCRAND_PreferIdealDirection                      = 0,
-	ELOCRAND_PreferRandomLight                         = 1,
-	ELOCRAND_PreferRandomHeavy                         = 2,
-	ELOCRAND_MAX                                       = 3
-};*/
-
-// Enum GearboxFramework.GearboxGlobals.ERepathBehavior
-/*enum ERepathBehavior
-{
-	REPATH_None                                        = 0,
-	REPATH_IfOriginMoves                               = 1,
-	REPATH_IfCoverBecomesInvalid                       = 2,
-	REPATH_MAX                                         = 3
-};*/
-
-// Enum GearboxFramework.GearboxGlobals.ECoverFailureBehavior
-/*enum ECoverFailureBehavior
-{
-	COVERFAIL_TryToFindNonCoverSpot                    = 0,
-	COVERFAIL_StopSearch                               = 1,
-	COVERFAIL_MAX                                      = 2
-};*/
-
-// Enum GearboxFramework.GearboxGlobals.ECoverSearchFilter
-/*enum ECoverSearchFilter
-{
-	COVERSEARCH_Normal                                 = 0,
-	COVERSEARCH_IgnoreCurrentCover                     = 1,
-	COVERSEARCH_MAX                                    = 2
-};*/
-
-// Enum GearboxFramework.GearboxGlobals.EDestinationAdditionalTest
-/*enum EDestinationAdditionalTest
-{
-	DESTTEST_None                                      = 0,
-	DESTTEST_HasLOSToTarget                            = 1,
-	DESTTEST_BlockedLOSToTarget                        = 2,
-	DESTTEST_MAX                                       = 3
-};*/
-
-// Enum GearboxFramework.GearboxGlobals.EMaterialParamType
-/*enum EMaterialParamType
-{
-	MatParmType_None                                   = 0,
-	MatParmType_Color                                  = 1,
-	MatParmType_Font                                   = 2,
-	MatParmType_Scalar                                 = 3,
-	MatParmType_Texture                                = 4,
-	MatParmType_Vector                                 = 5,
-	MatParmType_MAX                                    = 6
-};*/
-
-// Enum GearboxFramework.GearboxGlobals.ECameraZoomScale
-/*enum ECameraZoomScale
-{
-	EZOOM_NoChange                                     = 0,
-	EZOOM_UltraClose                                   = 1,
-	EZOOM_Close                                        = 2,
-	EZOOM_MidRange                                     = 3,
-	EZOOM_Wide                                         = 4,
-	EZOOM_MAX                                          = 5
-};*/
-
-// Enum GearboxFramework.GearboxGlobals.ECameraInterpolationMode
-/*enum ECameraInterpolationMode
-{
-	IM_Logarithmic                                     = 0,
-	IM_Linear                                          = 1,
-	IM_SineCurve                                       = 2,
-	IM_MAX                                             = 3
-};*/
-
-// Enum GearboxFramework.GearboxGlobals.EFacingPolicy
-/*enum EFacingPolicy
-{
-	FACE_Unknown                                       = 0,
-	FACE_NoChange                                      = 1,
-	FACE_Actor                                         = 2,
-	FACE_Vector                                        = 3,
-	FACE_Destination                                   = 4,
-	FACE_CoverRegionIdle                               = 5,
-	FACE_MAX                                           = 6
-};*/
-
-// Enum GearboxFramework.GearboxGlobals.EMovementSpeed
-/*enum EMovementSpeed
-{
-	MOVESPEED_Stationary                               = 0,
-	MOVESPEED_Walking                                  = 1,
-	MOVESPEED_Running                                  = 2,
-	MOVESPEED_Sprinting                                = 3,
-	MOVESPEED_FastSprinting                            = 4,
-	MOVESPEED_MAX                                      = 5
-};*/
-
-// Enum GearboxFramework.GearboxGlobals.EMovementFinishedCause
-/*enum EMovementFinishedCause
-{
-	MOVEFINISHED_None                                  = 0,
-	MOVEFINISHED_FailedToFindCover                     = 1,
-	MOVEFINISHED_FailedFindSearchOrigin                = 2,
-	MOVEFINISHED_FailedFindSearchDirection             = 3,
-	MOVEFINISHED_FailedFindNavMeshSpot                 = 4,
-	MOVEFINISHED_FailedToGeneratePath                  = 5,
-	MOVEFINISHED_FailedToCompleteNavigation            = 6,
-	MOVEFINISHED_Repath                                = 7,
-	MOVEFINISHED_MovementInterrupted                   = 8,
-	MOVEFINISHED_MoveSuccessfullyEnded                 = 9,
-	MOVEFINISHED_MAX                                   = 10
-};*/
-
-// Enum GearboxFramework.Action_PawnMovementBase.EAttributeEvaluationStyle
-/*enum EAttributeEvaluationStyle
-{
-	ATTREVALSTYLE_Once                                 = 0,
-	ATTREVALSTYLE_EveryFrame                           = 1,
-	ATTREVALSTYLE_MAX                                  = 2
-};*/
-
-// Enum GearboxFramework.BehaviorProviderDefinition.EBehaviorVariableType
-/*enum EBehaviorVariableType
-{
-	BVAR_None                                          = 0,
-	BVAR_Bool                                          = 1,
-	BVAR_Int                                           = 2,
-	BVAR_Float                                         = 3,
-	BVAR_Vector                                        = 4,
-	BVAR_Object                                        = 5,
-	BVAR_AllPlayers                                    = 6,
-	BVAR_Attribute                                     = 7,
-	BVAR_InstanceData                                  = 8,
-	BVAR_NamedVariable                                 = 9,
-	BVAR_NamedKismetVariable                           = 10,
-	BVAR_DirectionVector                               = 11,
-	BVAR_AttachmentLocation                            = 12,
-	BVAR_UnaryMath                                     = 13,
-	BVAR_BinaryMath                                    = 14,
-	BVAR_Flag                                          = 15,
-	BVAR_MAX                                           = 16
-};*/
-
-// Enum GearboxFramework.BehaviorProviderDefinition.EBehaviorVariableLinkType
-/*enum EBehaviorVariableLinkType
-{
-	BVARLINK_Unknown                                   = 0,
-	BVARLINK_Context                                   = 1,
-	BVARLINK_Input                                     = 2,
-	BVARLINK_Output                                    = 3,
-	BVARLINK_MAX                                       = 4
-};*/
-
-// Enum GearboxFramework.AIDebugCamera.EDebugItemType
-/*enum EDebugItemType
-{
-	DEBUGITEM_String                                   = 0,
-	DEBUGITEM_StringSpacer                             = 1,
-	DEBUGITEM_ScreenIcon                               = 2,
-	DEBUGITEM_WorldString                              = 3,
-	DEBUGITEM_Icon                                     = 4,
-	DEBUGITEM_Line                                     = 5,
-	DEBUGITEM_Box                                      = 6,
-	DEBUGITEM_Circle                                   = 7,
-	DEBUGITEM_Cone                                     = 8,
-	DEBUGITEM_BarGraphScreenTop                        = 9,
-	DEBUGITEM_BarGraphScreenTopTitle                   = 10,
-	DEBUGITEM_BarGraphScreenCenter                     = 11,
-	DEBUGITEM_BarGraphScreenCenterTitle                = 12,
-	DEBUGITEM_MAX                                      = 13
-};*/
-
-// Enum GearboxFramework.AIDebugCamera.EDebugAlignment
-/*enum EDebugAlignment
-{
-	DEBUGALIGN_Left                                    = 0,
-	DEBUGALIGN_Center                                  = 1,
-	DEBUGALIGN_Right                                   = 2,
-	DEBUGALIGN_LeftNoWrap                              = 3,
-	DEBUGALIGN_LeftColumn2                             = 4,
-	DEBUGALIGN_LeftColumn2NoWrap                       = 5,
-	DEBUGALIGN_MAX                                     = 6
-};*/
-
-// Enum GearboxFramework.AIDefinition.ENPCOnUsedOutputs
-/*enum ENPCOnUsedOutputs
-{
-	USEDNPC_HasMissions                                = 0,
-	USEDNPC_NoMissions                                 = 1,
-	USEDNPC_Generic                                    = 2,
-	USEDNPC_MAX                                        = 3
-};*/
-
-// Enum GearboxFramework.AIResourceExpressionEvaluator.AIResourceOption
-/*enum AIResourceOption
-{
-	AIResourceOption_On                                = 0,
-	AIResourceOption_Off                               = 1,
-	AIResourceOption_MAX                               = 2
-};*/
-
-// Enum GearboxFramework.GearboxEditorNode.NodeType
-/*enum NodeType
-{
-	NT_Event                                           = 0,
-	NT_Action                                          = 1,
-	NT_Variable                                        = 2,
-	NT_MAX                                             = 3
-};*/
-
-// Enum GearboxFramework.AITracker.ESnapshotEventType
-/*enum ESnapshotEventType
-{
-	SNAP_NoEvent                                       = 0,
-	SNAP_ChildSequenceStart                            = 1,
-	SNAP_RuleStart                                     = 2,
-	SNAP_RuleEnd                                       = 3,
-	SNAP_RuleInterrupt                                 = 4,
-	SNAP_SwitchRuleSet                                 = 5,
-	SNAP_PreventNewRules                               = 6,
-	SNAP_MAX                                           = 7
-};*/
-
-// Enum GearboxFramework.AllegianceExpressionEvaluator.EAllegianceExpression
-/*enum EAllegianceExpression
-{
-	EAllegianceExpression_IsAllegiance                 = 0,
-	EAllegianceExpression_IsNotAllegiance              = 1,
-	EAllegianceExpression_MAX                          = 2
-};*/
-
-// Enum GearboxFramework.AnimNodeSpecialMoveBlend.EAnimState
-/*enum EAnimState
-{
-	EAnimState_None                                    = 0,
-	EAnimState_Playing                                 = 1,
-	EAnimState_Finished                                = 2,
-	EAnimState_BlendingOut                             = 3,
-	EAnimState_MAX                                     = 4
-};*/
-
-// Enum GearboxFramework.AwarenessZoneDefinition.EViewConeStyle
-/*enum EViewConeStyle
-{
-	VIEWCONE_UseSightBone                              = 0,
-	VIEWCONE_UsePawnRotation                           = 1,
-	VIEWCONE_MAX                                       = 2
-};*/
-
-// Enum GearboxFramework.AwarenessZoneDefinition.ESpecialExposureBehavior
-/*enum ESpecialExposureBehavior
-{
-	EXPOSUREBEHAVIOR_Normal                            = 0,
-	EXPOSUREBEHAVIOR_AlwaysSeeThreats                  = 1,
-	EXPOSUREBEHAVIOR_NeverSeeThreats                   = 2,
-	EXPOSUREBEHAVIOR_MAX                               = 3
-};*/
-
-// Enum GearboxFramework.AwarenessZoneDefinition.EHearingBehavior
-/*enum EHearingBehavior
-{
-	HEARINGBEHAVIOR_NeverHear                          = 0,
-	HEARINGBEHAVIOR_HearIfExposed                      = 1,
-	HEARINGBEHAVIOR_AlwaysHear                         = 2,
-	HEARINGBEHAVIOR_MAX                                = 3
-};*/
-
-// Enum GearboxFramework.Behavior_AIHold.AIHoldAction
-/*enum AIHoldAction
-{
-	AIHold_Hold                                        = 0,
-	AIHold_Release                                     = 1,
-	AIHold_MAX                                         = 2
-};*/
-
-// Enum GearboxFramework.Behavior_AIHold.AIHoldType
-/*enum AIHoldType
-{
-	AIHoldType_AI                                      = 0,
-	AIHoldType_Target                                  = 1,
-	AIHoldType_Movement                                = 2,
-	AIHoldType_Demigod                                 = 3,
-	AIHoldType_God                                     = 4,
-	AIHoldType_Dialog                                  = 5,
-	AIHoldType_MAX                                     = 6
-};*/
-
-// Enum GearboxFramework.ITimerBehavior.EBehaviorTimerID
-/*enum EBehaviorTimerID
-{
-	BTIMER                                             = 0,
-	BTIMER01                                           = 1,
-	BTIMER02                                           = 2,
-	BTIMER_MAX                                         = 3
-};*/
-
-// Enum GearboxFramework.ITimerBehavior.EBehaviorTimerEvent
-/*enum EBehaviorTimerEvent
-{
-	TIMEREVENT_Timer1Elapsed                           = 0,
-	TIMEREVENT_Timer2Elapsed                           = 1,
-	TIMEREVENT_Timer3Elapsed                           = 2,
-	TIMEREVENT_MAX                                     = 3
-};*/
-
-// Enum GearboxFramework.Behavior_ChangeTimer.EBehaviorTimerReaction
-/*enum EBehaviorTimerReaction
-{
-	TR_NoChange                                        = 0,
-	TR_Start                                           = 1,
-	TR_Stop                                            = 2,
-	TR_Toggle                                          = 3,
-	TR_ResetValue                                      = 4,
-	TR_MAX                                             = 5
-};*/
-
-// Enum GearboxFramework.Behavior_CompareBool.ECompareBoolOutputLinkIds
-/*enum ECompareBoolOutputLinkIds
-{
-	OUTPUT_True                                        = 0,
-	OUTPUT_False                                       = 1,
-	OUTPUT_MAX                                         = 2
-};*/
-
-// Enum GearboxFramework.Behavior_CompareValues.ECompareValuesOutputLinkIds
-/*enum ECompareValuesOutputLinkIds
-{
-	OUTPUT_LessThanOrEqual                             = 0,
-	OUTPUT_GreaterThan                                 = 1,
-	OUTPUT_Equal                                       = 2,
-	OUTPUT_LessThan                                    = 3,
-	OUTPUT_GreaterThanOrEqual                          = 4,
-	OUTPUT_MAX                                         = 5
-};*/
-
-// Enum GearboxFramework.Behavior_IsSequenceEnabled.EIsSequenceOutputLinkIds
-/*enum EIsSequenceOutputLinkIds
-{
-	OUTPUT_SequenceIsEnabled                           = 0,
-	OUTPUT_SequenceIsDisabled                          = 1,
-	OUTPUT_MAX                                         = 2
-};*/
-
-// Enum GearboxFramework.Behavior_ModifyTimer.BehaviorTimerFunction
-/*enum BehaviorTimerFunction
-{
-	BETF_None                                          = 0,
-	BETF_Start                                         = 1,
-	BETF_Pause                                         = 2,
-	BETF_Toggle                                        = 3,
-	BETF_Resume                                        = 4,
-	BETF_Stop                                          = 5,
-	BETF_MAX                                           = 6
-};*/
-
-// Enum GearboxFramework.Behavior_PostAkEvent.EPostAkEventOutputLinks
-/*enum EPostAkEventOutputLinks
-{
-	POSTAK_Out                                         = 0,
-	POSTAK_Finished                                    = 1,
-	POSTAK_MAX                                         = 2
-};*/
-
-// Enum GearboxFramework.Behavior_SendGbxMessage.MessageBehaviorLogic
-/*enum MessageBehaviorLogic
-{
-	SENDERLOGIC_None                                   = 0,
-	SENDERLOGIC_UseBehaviorContext                     = 1,
-	SENDERLOGIC_Self                                   = 2,
-	SENDERLOGIC_MyInstigator                           = 3,
-	SENDERLOGIC_Other                                  = 4,
-	SENDERLOGIC_MAX                                    = 5
-};*/
-
-// Enum GearboxFramework.GbxMessageDefinition.EGbxMessageDupeStruct
-/*enum EGbxMessageDupeStruct
-{
-	GBXMSGDUPE_SameSender                              = 0,
-	GBXMSGDUPE_SameSubject                             = 1,
-	GBXMSGDUPE_SameNameData                            = 2,
-	GBXMSGDUPE_SameIntData                             = 3,
-	GBXMSGDUPE_SameFloatData                           = 4,
-	GBXMSGDUPE_SameMetaData1                           = 5,
-	GBXMSGDUPE_SameMetaData2                           = 6,
-	GBXMSGDUPE_SameMetaData3                           = 7,
-	GBXMSGDUPE_SameMetaData4                           = 8,
-	GBXMSGDUPE_MAX                                     = 9
-};*/
-
-// Enum GearboxFramework.Behavior_SpecialMove.ETriggerSpecialMoveOutputLinks
-/*enum ETriggerSpecialMoveOutputLinks
-{
-	TRIGGER_SPECIALMOVE_Out                            = 0,
-	TRIGGER_SPECIALMOVE_Finished                       = 1,
-	TRIGGER_SPECIALMOVE_MAX                            = 2
-};*/
-
-// Enum GearboxFramework.Behavior_ToggleDialog.EToggleDialogOption
-/*enum EToggleDialogOption
-{
-	ToggleDialog_Toggle                                = 0,
-	ToggleDialog_Enable                                = 1,
-	ToggleDialog_Disable                               = 2,
-	ToggleDialog_MAX                                   = 3
-};*/
-
-// Enum GearboxFramework.Behavior_TriggerDialogEvent.ETriggerDialogEventOutputLinks
-/*enum ETriggerDialogEventOutputLinks
-{
-	TRIGGER_EVENT_Out                                  = 0,
-	TRIGGER_EVENT_Finished                             = 1,
-	TRIGGER_EVENT_MAX                                  = 2
-};*/
-
-// Enum GearboxFramework.BehaviorHelpers.EFireSocketSelectionMethod
-/*enum EFireSocketSelectionMethod
-{
-	FSSM_Increment                                     = 0,
-	FSSM_Random                                        = 1,
-	FSSM_RandomLooping                                 = 2,
-	FSSM_MAX                                           = 3
-};*/
-
-// Enum GearboxFramework.BehaviorHelpers.EDirectionRelativeToParent
-/*enum EDirectionRelativeToParent
-{
-	DIRECTION_Default                                  = 0,
-	DIRECTION_ParentOrientation                        = 1,
-	DIRECTION_InverseParentOrientation                 = 2,
-	DIRECTION_ParentVelocity                           = 3,
-	DIRECTION_InverseParentVelocity                    = 4,
-	DIRECTION_Random                                   = 5,
-	DIRECTION_RandomUpwards                            = 6,
-	DIRECTION_RandomDownwards                          = 7,
-	DIRECTION_RandomOnHorizontalPlane                  = 8,
-	DIRECTION_StraightUp                               = 9,
-	DIRECTION_StraightDown                             = 10,
-	DIRECTION_StraightTowardTarget                     = 11,
-	DIRECTION_ParentAimDirection                       = 12,
-	DIRECTION_InverseParentAimDirection                = 13,
-	DIRECTION_InverseTearOffMomentum                   = 14,
-	DIRECTION_MAX                                      = 15
-};*/
-
-// Enum GearboxFramework.BehaviorKernel.EBehaviorProcessState
-/*enum EBehaviorProcessState
-{
-	BPROCESS_Uninitialized                             = 0,
-	BPROCESS_Terminated                                = 1,
-	BPROCESS_Running                                   = 2,
-	BPROCESS_Suspended                                 = 3,
-	BPROCESS_MAX                                       = 4
-};*/
-
-// Enum GearboxFramework.BehaviorKernel.EBehaviorThreadState
-/*enum EBehaviorThreadState
-{
-	BTHREAD_Waiting                                    = 0,
-	BTHREAD_Running                                    = 1,
-	BTHREAD_Terminated                                 = 2,
-	BTHREAD_Unknown                                    = 3,
-	BTHREAD_MAX                                        = 4
-};*/
-
-// Enum GearboxFramework.BehaviorSequenceEnableByMultipleConditions.EMultiConditionOperator
-/*enum EMultiConditionOperator
-{
-	EMCL_OR                                            = 0,
-	EMCL_AND                                           = 1,
-	EMCL_MAX                                           = 2
-};*/
-
-// Enum GearboxFramework.InterfaceGearboxCamera.ECameraLookAtMode
-/*enum ECameraLookAtMode
-{
-	CLAM_FirstPerson                                   = 0,
-	CLAM_ThirdPersonAlignWithPlayer                    = 1,
-	CLAM_ThirdPersonAlignBetweenPlayerAndTarget        = 2,
-	CLAM_MAX                                           = 3
-};*/
-
-// Enum GearboxFramework.CharacterClassMessageDefinition.EBehaviorMsgInstigator
-/*enum EBehaviorMsgInstigator
-{
-	BEHAVMSGINST_NoInstigator                          = 0,
-	BEHAVMSGINST_UseMsgSender                          = 1,
-	BEHAVMSGINST_UseMsgSubject                         = 2,
-	BEHAVMSGINST_UseAddlData                           = 3,
-	BEHAVMSGINST_MAX                                   = 4
-};*/
-
-// Enum GearboxFramework.CharacterClassMessageDefinition.EBehaviorMsgEventParticipant
-/*enum EBehaviorMsgEventParticipant
-{
-	BEHAVMSGPART_NoInstigator                          = 0,
-	BEHAVMSGPART_UseMsgSender                          = 1,
-	BEHAVMSGPART_UseMsgSubject                         = 2,
-	BEHAVMSGPART_UseAddlData                           = 3,
-	BEHAVMSGPART_MAX                                   = 4
-};*/
-
-// Enum GearboxFramework.CompoundExpressionEvaluator.ECExpressionOperatorType
-/*enum ECExpressionOperatorType
-{
-	CEOP_Or                                            = 0,
-	CEOP_And                                           = 1,
-	CEOP_MAX                                           = 2
-};*/
-
-// Enum GearboxFramework.FiringPattern.EPointSpreadType
-/*enum EPointSpreadType
-{
-	POINTSPREAD_Linear                                 = 0,
-	POINTSPREAD_Squared                                = 1,
-	POINTSPREAD_InverseSquared                         = 2,
-	POINTSPREAD_Cubed                                  = 3,
-	POINTSPREAD_InverseCubed                           = 4,
-	POINTSPREAD_MAX                                    = 5
-};*/
-
-// Enum GearboxFramework.Rule.ExecutionPatternType
-/*enum ExecutionPatternType
-{
-	RULEEXEC_Normal                                    = 0,
-	RULEEXEC_Limited                                   = 1,
-	RULEEXEC_MAX                                       = 2
-};*/
-
-// Enum GearboxFramework.Rule.EFlagEvalType
-/*enum EFlagEvalType
-{
-	FLAG_IsTrue                                        = 0,
-	FLAG_IsFalse                                       = 1,
-	FLAG_HasBeenTrueForXSeconds                        = 2,
-	FLAG_HasBeenFalseForXSeconds                       = 3,
-	FLAG_MAX                                           = 4
-};*/
-
-// Enum GearboxFramework.SparkTypes.EInitializedResult
-/*enum EInitializedResult
-{
-	INITIALIZED_ValidWithAccount                       = 0,
-	INITIALIZED_ValidNoAccount                         = 1,
-	INITIALIZED_InProgress                             = 2,
-	INITIALIZED_NetworkFailure                         = 3,
-	INITIALIZED_PlatformFailure                        = 4,
-	INITIALIZED_NotValid                               = 5,
-	INITIALIZED_MAX                                    = 6
-};*/
-
-// Enum GearboxFramework.SparkTypes.EHttpError
-/*enum EHttpError
-{
-	HE_Success                                         = 0,
-	HE_UnknownFailure                                  = 1,
-	HE_Timeout                                         = 2,
-	HE_BadUrl                                          = 3,
-	HE_Connect                                         = 4,
-	HE_SendRequest                                     = 5,
-	HE_ReceiveResponse                                 = 6,
-	HE_ReadResponse                                    = 7,
-	HE_WriteData                                       = 8,
-	HE_HttpStatus                                      = 9,
-	HE_ServerCertificate                               = 10,
-	HE_MAX                                             = 11
-};*/
-
-// Enum GearboxFramework.SparkTypes.ESparkStepResult
-/*enum ESparkStepResult
-{
-	STEP_Success                                       = 0,
-	STEP_Fail                                          = 1,
-	STEP_Async                                         = 2,
-	STEP_Disable                                       = 3,
-	STEP_Final                                         = 4,
-	STEP_MAX                                           = 5
-};*/
-
-// Enum GearboxFramework.SparkTypes.ESparkInitializationStatus
-/*enum ESparkInitializationStatus
-{
-	SPARKINIT_Uninitialized                            = 0,
-	SPARKINIT_TMSDownloaded                            = 1,
-	SPARKINIT_PendingAuthentication                    = 2,
-	SPARKINIT_PendingVerification                      = 3,
-	SPARKINIT_VerificationComplete                     = 4,
-	SPARKINIT_Initialized                              = 5,
-	SPARKINIT_Disabled                                 = 6,
-	SPARKINIT_UnrecoverableError                       = 7,
-	SPARKINIT_MAX                                      = 8
-};*/
-
-// Enum GearboxFramework.GearboxAccountActions.EEntitlementConsumedResult
-/*enum EEntitlementConsumedResult
-{
-	CONSUME_Success                                    = 0,
-	CONSUME_GeneralFailure                             = 1,
-	CONSUME_NetworkFailure                             = 2,
-	CONSUME_Timeout                                    = 3,
-	CONSUME_MAX                                        = 4
-};*/
-
-// Enum GearboxFramework.GearboxAccountActions.EResetPasswordResult
-/*enum EResetPasswordResult
-{
-	RESETP_Success                                     = 0,
-	RESETP_GeneralFailure                              = 1,
-	RESETP_NetworkFailure                              = 2,
-	RESETP_Timeout                                     = 3,
-	RESETP_MAX                                         = 4
-};*/
-
-// Enum GearboxFramework.GearboxAccountActions.ECodeRedeemedResult
-/*enum ECodeRedeemedResult
-{
-	REDEEM_Success                                     = 0,
-	REDEEM_Expired                                     = 1,
-	REDEEM_NotValid                                    = 2,
-	REDEEM_Taken                                       = 3,
-	REDEEM_GeneralFailure                              = 4,
-	REDEEM_NetworkFailure                              = 5,
-	REDEEM_Timeout                                     = 6,
-	REDEEM_Duplicate                                   = 7,
-	REDEEM_MAX                                         = 8
-};*/
-
-// Enum GearboxFramework.GearboxAccountActions.ESignInResult
-/*enum ESignInResult
-{
-	SIGNIN_Success                                     = 0,
-	SIGNIN_PlatformTakenByOther                        = 1,
-	SIGNIN_PlatformTakenBySelf                         = 2,
-	SIGNIN_LoginFail                                   = 3,
-	SIGNIN_NetworkFailure                              = 4,
-	SIGNIN_GeneralFailure                              = 5,
-	SIGNIN_Timeout                                     = 6,
-	SIGNIN_MAX                                         = 7
-};*/
-
-// Enum GearboxFramework.GearboxAccountActions.ESignUpResult
-/*enum ESignUpResult
-{
-	SIGNUP_Success                                     = 0,
-	SIGNUP_EmailTaken                                  = 1,
-	SIGNUP_PlatformTaken                               = 2,
-	SIGNUP_GeneralFailure                              = 3,
-	SIGNUP_PasswordNotSet                              = 4,
-	SIGNUP_PasswordTooShort                            = 5,
-	SIGNUP_PasswordTooLong                             = 6,
-	SIGNUP_PasswordInvalid                             = 7,
-	SIGNUP_EmailNotSet                                 = 8,
-	SIGNUP_EmailNotValid                               = 9,
-	SIGNUP_NetworkFailure                              = 10,
-	SIGNUP_Timeout                                     = 11,
-	SIGNUP_MAX                                         = 12
-};*/
-
-// Enum GearboxFramework.GearboxAccountActions.EAgeGateResult
-/*enum EAgeGateResult
-{
-	AGE_Valid                                          = 0,
-	AGE_InvalidDate                                    = 1,
-	AGE_BelowMinimum                                   = 2,
-	AGE_MAX                                            = 3
-};*/
-
-// Enum GearboxFramework.SparkInterface.HttpMethod
-/*enum HttpMethod
-{
-	HM_POST                                            = 0,
-	HM_GET                                             = 1,
-	HM_PUT                                             = 2,
-	HM_MAX                                             = 3
-};*/
-
-// Enum GearboxFramework.SparkInterface.HttpMimeType
-/*enum HttpMimeType
-{
-	HMT_Default                                        = 0,
-	HMT_TEXT_PLAIN                                     = 1,
-	HMT_JSON                                           = 2,
-	HMT_PROTOBUF                                       = 3,
-	HMT_CUSTOM                                         = 4,
-	HMT_MAX                                            = 5
-};*/
-
-// Enum GearboxFramework.GearboxAnimDefinition.EEndingCondition
-/*enum EEndingCondition
-{
-	EC_StopOnLastFrame                                 = 0,
-	EC_OnAnimEnd                                       = 1,
-	EC_OnBlendOut                                      = 2,
-	EC_Loop                                            = 3,
-	EC_MAX                                             = 4
-};*/
-
-// Enum GearboxFramework.GearboxDialogEventTag.EDialogEventMatchQuality
-/*enum EDialogEventMatchQuality
-{
-	MQ_NoMatch                                         = 0,
-	MQ_Match                                           = 1,
-	MQ_ForceMatch                                      = 2,
-	MQ_MAX                                             = 3
-};*/
-
-// Enum GearboxFramework.GFxMovieState.EMovieStateMode
-/*enum EMovieStateMode
-{
-	MOVIESTATE_Any                                     = 0,
-	MOVIESTATE_StateMachine                            = 1,
-	MOVIESTATE_Flags                                   = 2,
-	MOVIESTATE_Custom                                  = 3,
-	MOVIESTATE_MAX                                     = 4
-};*/
-
-// Enum GearboxFramework.GFxMovieState.EStateApplyMode
-/*enum EStateApplyMode
-{
-	SAM_None                                           = 0,
-	SAM_GotoAndStop                                    = 1,
-	SAM_GotoAndPlay                                    = 2,
-	SAM_ActionScript                                   = 3,
-	SAM_MAX                                            = 4
-};*/
-
-// Enum GearboxFramework.INounAttributeProvider.ENounReplicationStrategy
-/*enum ENounReplicationStrategy
-{
-	NOUNREP_NoReplication                              = 0,
-	NOUNREP_RepToOwnerOnly                             = 1,
-	NOUNREP_RepToEveryone                              = 2,
-	NOUNREP_MAX                                        = 3
-};*/
-
-// Enum GearboxFramework.GearboxProfileSettings.EGenericYesOrNo
-/*enum EGenericYesOrNo
-{
-	GPID_VALUE_NO                                      = 0,
-	GPID_VALUE_YES                                     = 1,
-	GPID_VALUE_MAX                                     = 2
-};*/
-
-// Enum GearboxFramework.GearboxRenderTextureManager.EThumbnailUpdate
-/*enum EThumbnailUpdate
-{
-	Thumbnail_Static                                   = 0,
-	Thumbnail_Update                                   = 1,
-	Thumbnail_StreamTextures                           = 2,
-	Thumbnail_Dynamic                                  = 3,
-	Thumbnail_MAX                                      = 4
-};*/
-
-// Enum GearboxFramework.GFxActorMoviePool.EGFxMoviePooling
-/*enum EGFxMoviePooling
-{
-	GMP_Pooled                                         = 0,
-	GMP_Shared                                         = 1,
-	GMP_Instanced                                      = 2,
-	GMP_MAX                                            = 3
-};*/
-
-// Enum GearboxFramework.GFxMovieDrawStyleHUD.EHUDAnchorPoint
-/*enum EHUDAnchorPoint
-{
-	HAP_None                                           = 0,
-	HAP_Center                                         = 1,
-	HAP_TopLeft                                        = 2,
-	HAP_TopRight                                       = 3,
-	HAP_BottomLeft                                     = 4,
-	HAP_BottomRight                                    = 5,
-	HAP_Left                                           = 6,
-	HAP_Top                                            = 7,
-	HAP_Right                                          = 8,
-	HAP_Bottom                                         = 9,
-	HAP_Projected                                      = 10,
-	HAP_ProjectedScaled                                = 11,
-	HAP_MAX                                            = 12
-};*/
-
-// Enum GearboxFramework.GFxMovieDrawStyleHUD.EHUDOrientation
-/*enum EHUDOrientation
-{
-	HO_Horizontal                                      = 0,
-	HO_Vertical                                        = 1,
-	HO_MAX                                             = 2
-};*/
-
-// Enum GearboxFramework.GFxMovieDrawStyleHUD.EHUDCoordType
-/*enum EHUDCoordType
-{
-	HCT_Scaled                                         = 0,
-	HCT_Fixed                                          = 1,
-	HCT_MovieRelative                                  = 2,
-	HCT_MAX                                            = 3
-};*/
-
-// Enum GearboxFramework.IPopulationSpawnPoint.EInitialActionType
-/*enum EInitialActionType
-{
-	INITIALACTION_None                                 = 0,
-	INITIALACTION_MoveForward                          = 1,
-	INITIALACTION_MoveToActor                          = 2,
-	INITIALACTION_MoveToCover                          = 3,
-	INITIALACTION_Burrow                               = 4,
-	INITIALACTION_MAX                                  = 5
-};*/
-
-// Enum GearboxFramework.IPopulationSpawnPoint.ESpawnStyleType
-/*enum ESpawnStyleType
-{
-	ENTRANCE_None                                      = 0,
-	ENTRANCE_WalkOut                                   = 1,
-	ENTRANCE_CrawlOut                                  = 2,
-	ENTRANCE_ClimbOver1                                = 3,
-	ENTRANCE_ClimbOver2                                = 4,
-	ENTRANCE_PushTarpAside1                            = 5,
-	ENTRANCE_PushTarpAside2                            = 6,
-	ENTRANCE_PhaseIn                                   = 7,
-	ENTRANCE_PerchedLeft                               = 8,
-	ENTRANCE_PerchedRight                              = 9,
-	ENTRANCE_MAX                                       = 10
-};*/
-
-// Enum GearboxFramework.KnowledgeRecord.KDBCategory
-/*enum KDBCategory
-{
-	KDB_None                                           = 0,
-	KDB_Standard                                       = 1,
-	KDB_MAX                                            = 2
-};*/
-
-// Enum GearboxFramework.KnowledgeRecord.KDBEvalType
-/*enum KDBEvalType
-{
-	Eval_Poll                                          = 0,
-	Eval_TargetIterator                                = 1,
-	Eval_MAX                                           = 2
-};*/
-
-// Enum GearboxFramework.MultipleFlagValueResolver.ValueResolveAggregationType
-/*enum ValueResolveAggregationType
-{
-	AGGREG_AtLeastOne                                  = 0,
-	AGGREG_All                                         = 1,
-	AGGREG_None                                        = 2,
-	AGGREG_MAX                                         = 3
-};*/
-
-// Enum GearboxFramework.PopulationDefinition.EPopulationRespawnOptions
-/*enum EPopulationRespawnOptions
-{
-	POPRESPAWN_Never                                   = 0,
-	POPRESPAWN_OnTimeDelay                             = 1,
-	POPRESPAWN_OnlyOnLevelLoad                         = 2,
-	POPRESPAWN_MAX                                     = 3
-};*/
-
-// Enum GearboxFramework.PopulationEncounter.EEncounterConstraintType
-/*enum EEncounterConstraintType
-{
-	ENCOUNTERCONSTAINT_All                             = 0,
-	ENCOUNTERCONSTAINT_Any                             = 1,
-	ENCOUNTERCONSTAINT_NotAll                          = 2,
-	ENCOUNTERCONSTAINT_NotAny                          = 3,
-	ENCOUNTERCONSTAINT_MAX                             = 4
-};*/
-
-// Enum GearboxFramework.PopulationMaster.EPopulationStats
-/*enum EPopulationStats
-{
-	STATTYPE_SpawnActor                                = 0,
-	STATTYPE_PointSearch                               = 1,
-	STATTYPE_MAX                                       = 2
-};*/
-
-// Enum GearboxFramework.PopulationPoint.EPopPointContraintType
-/*enum EPopPointContraintType
-{
-	POPOINTCONSTRAINT_None                             = 0,
-	POPOINTCONSTRAINT_Inclusion                        = 1,
-	POPOINTCONSTRAINT_Exclusion                        = 2,
-	POPOINTCONSTRAINT_InclusionOr                      = 3,
-	POPOINTCONSTRAINT_ExclusionOr                      = 4,
-	POPOINTCONSTRAINT_MAX                              = 5
-};*/
-
-// Enum GearboxFramework.PopulationPoint.EPopulationPointType
-/*enum EPopulationPointType
-{
-	POINT_Ambush                                       = 0,
-	POINT_PointOfInterest                              = 1,
-	POINT_Vehicle                                      = 2,
-	POINT_MAX                                          = 3
-};*/
-
-// Enum GearboxFramework.SimpleMathValueResolver.EMathValueResolverOperand
-/*enum EMathValueResolverOperand
-{
-	MATHRESOLVEROPERAND_Add                            = 0,
-	MATHRESOLVEROPERAND_Sub                            = 1,
-	MATHRESOLVEROPERAND_Mul                            = 2,
-	MATHRESOLVEROPERAND_Div                            = 3,
-	MATHRESOLVEROPERAND_MAX                            = 4
-};*/
-
-// Enum GearboxFramework.SimpleMathValueResolver.EMathValueResolverArg1Option
-/*enum EMathValueResolverArg1Option
-{
-	MATHRESOLVEARG1_UsePreviousValue                   = 0,
-	MATHRESOLVEARG1_FromAttribute                      = 1,
-	MATHRESOLVEARG1_MAX                                = 2
-};*/
-
-// Enum GearboxFramework.SparkInterfaceImpl.SparkRequestState
-/*enum SparkRequestState
-{
-	SRS_IDLE                                           = 0,
-	SRS_AWAITING_RETRY                                 = 1,
-	SRS_IN_FLIGHT                                      = 2,
-	SRS_AWAITING_AUTHENTICATE                          = 3,
-	SRS_START                                          = 4,
-	SRS_FAIL                                           = 5,
-	SRS_QUEUED                                         = 6,
-	SRS_CLEANUP                                        = 7,
-	SRS_MAX                                            = 8
-};*/
-
-// Enum GearboxFramework.TargetIterator.ETargetIterator
-/*enum ETargetIterator
-{
-	TARGITER_UpdateState                               = 0,
-	TARGITER_PriorityCalc                              = 1,
-	TARGITER_ForgetTarget                              = 2,
-	TARGITER_RemoveTarget                              = 3,
-	TARGITER_PostProcess                               = 4,
-	TARGITER_MAX                                       = 5
-};*/
-
-// Enum GearboxFramework.TimeValueResolver.ETimeValueResolverMode
-/*enum ETimeValueResolverMode
-{
-	TVRM_CurrentTime                                   = 0,
-	TVRM_FrameTime                                     = 1,
-	TVRM_ElapsedTime                                   = 2,
-	TVRM_MAX                                           = 3
-};*/
-
-// Enum GearboxFramework.SparkNews.ENewsRetrievalResult
-/*enum ENewsRetrievalResult
-{
-	NEWSRETRIEVE_Success                               = 0,
-	NEWSRETRIEVE_GeneralFailure                        = 1,
-	NEWSRETRIEVE_NetworkFailure                        = 2,
-	NEWSRETRIEVE_Timeout                               = 3,
-	NEWSRETRIEVE_MAX                                   = 4
-};*/
-
-/*
-# ========================================================================================= #
-# Classes
-# ========================================================================================= #
-*/
-
-// 0x0014 (0x0090 - 0x007C)
+// Class GearboxFramework.ActorFactoryClone
+// 0x0014 (0x007C - 0x0090)
 class UActorFactoryClone : public UActorFactory
 {
 public:
-	TArray< class AGearboxPawn* >                      CloneArchetype;                                   		// 0x007C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	struct FName                                       NewCloneTag;                                      		// 0x0088 (0x0008) [0x0000000000000001]              ( CPF_Edit )
+	TArray<class AGearboxPawn*>                        CloneArchetype;                                           // 0x007C(0x000C) (Edit, NeedCtorLink)
+	struct FName                                       NewCloneTag;                                              // 0x0088(0x0008) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("ActorFactoryClone");
+		return ptr;
+	}
+
 };
 
-// 0x0000 (0x007C - 0x007C)
-class UActorFactoryWireTerminal : public UActorFactory {};
 
-// 0x0050 (0x008C - 0x003C)
+// Class GearboxFramework.ActorFactoryWireTerminal
+// 0x0000 (0x007C - 0x007C)
+class UActorFactoryWireTerminal : public UActorFactory
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("ActorFactoryWireTerminal");
+		return ptr;
+	}
+
+};
+
+
+// Class GearboxFramework.AIDebugCamera
+// 0x0050 (0x003C - 0x008C)
 class UAIDebugCamera : public UObject
 {
 public:
-	class AGearboxMind*                                Mind;                                             		// 0x003C (0x0004) [0x0000000000000000]
-	class URuleEngine*                                 RuleEngine;                                       		// 0x0040 (0x0004) [0x0000000000000000]
-	TArray< struct FDebugListItem >                    DisplayList;                                      		// 0x0044 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned long                                      bSnapshotModeOn : 1;                              		// 0x0050 (0x0004) [0x0000000000000000] [0x00000001]
-	unsigned long                                      bShowFlags : 1;                                   		// 0x0050 (0x0004) [0x0000000000044000] [0x00000002] ( CPF_Config | CPF_GlobalConfig )
-	unsigned long                                      bShowRules : 1;                                   		// 0x0050 (0x0004) [0x0000000000044000] [0x00000004] ( CPF_Config | CPF_GlobalConfig )
-	unsigned long                                      bShowInactiveRules : 1;                           		// 0x0050 (0x0004) [0x0000000000044000] [0x00000008] ( CPF_Config | CPF_GlobalConfig )
-	unsigned long                                      bShowResources : 1;                               		// 0x0050 (0x0004) [0x0000000000044000] [0x00000010] ( CPF_Config | CPF_GlobalConfig )
-	unsigned long                                      bShowCombat : 1;                                  		// 0x0050 (0x0004) [0x0000000000044000] [0x00000020] ( CPF_Config | CPF_GlobalConfig )
-	unsigned long                                      bShowRuleEngineLoadBalance : 1;                   		// 0x0050 (0x0004) [0x0000000000044000] [0x00000040] ( CPF_Config | CPF_GlobalConfig )
-	unsigned long                                      bShowAwarenessZones : 1;                          		// 0x0050 (0x0004) [0x0000000000044000] [0x00000080] ( CPF_Config | CPF_GlobalConfig )
-	unsigned long                                      bShowTargetViewCones : 1;                         		// 0x0050 (0x0004) [0x0000000000044000] [0x00000100] ( CPF_Config | CPF_GlobalConfig )
-	unsigned long                                      bShowTimers : 1;                                  		// 0x0050 (0x0004) [0x0000000000044000] [0x00000200] ( CPF_Config | CPF_GlobalConfig )
-	unsigned long                                      bShowAITree : 1;                                  		// 0x0050 (0x0004) [0x0000000000000000] [0x00000400]
-	int                                                SnapshotNdx;                                      		// 0x0054 (0x0004) [0x0000000000000000]
-	class USnapshotRecord*                             CurSnapshot;                                      		// 0x0058 (0x0004) [0x0000000000000000]
-	class UPopUpDebugBarGraph*                         PopUpGraphTop;                                    		// 0x005C (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UPopUpDebugBarGraph*                         PopUpGraphCenter;                                 		// 0x0060 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FName                                       CurrentInspectedTargetName;                       		// 0x0064 (0x0008) [0x0000000000000000]
-	float                                              TopBarGraphStartXPct;                             		// 0x006C (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              TopBarGraphStartYPct;                             		// 0x0070 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              CenterBarGraphStartXPct;                          		// 0x0074 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              CenterBarGraphStartYPct;                          		// 0x0078 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              Column2XOffset;                                   		// 0x007C (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              Column1LastY;                                     		// 0x0080 (0x0004) [0x0000000000000000]
-	float                                              Column2LastY;                                     		// 0x0084 (0x0004) [0x0000000000000000]
-	int                                                LastColumnDrawnTo;                                		// 0x0088 (0x0004) [0x0000000000000000]
+	class AGearboxMind*                                Mind;                                                     // 0x003C(0x0004)
+	class URuleEngine*                                 RuleEngine;                                               // 0x0040(0x0004)
+	TArray<struct FDebugListItem>                      DisplayList;                                              // 0x0044(0x000C) (NeedCtorLink)
+	unsigned long                                      bSnapshotModeOn : 1;                                      // 0x0050(0x0004)
+	unsigned long                                      bShowFlags : 1;                                           // 0x0050(0x0004) (Config, GlobalConfig)
+	unsigned long                                      bShowRules : 1;                                           // 0x0050(0x0004) (Config, GlobalConfig)
+	unsigned long                                      bShowInactiveRules : 1;                                   // 0x0050(0x0004) (Config, GlobalConfig)
+	unsigned long                                      bShowResources : 1;                                       // 0x0050(0x0004) (Config, GlobalConfig)
+	unsigned long                                      bShowCombat : 1;                                          // 0x0050(0x0004) (Config, GlobalConfig)
+	unsigned long                                      bShowRuleEngineLoadBalance : 1;                           // 0x0050(0x0004) (Config, GlobalConfig)
+	unsigned long                                      bShowAwarenessZones : 1;                                  // 0x0050(0x0004) (Config, GlobalConfig)
+	unsigned long                                      bShowTargetViewCones : 1;                                 // 0x0050(0x0004) (Config, GlobalConfig)
+	unsigned long                                      bShowTimers : 1;                                          // 0x0050(0x0004) (Config, GlobalConfig)
+	unsigned long                                      bShowAITree : 1;                                          // 0x0050(0x0004)
+	int                                                SnapshotNdx;                                              // 0x0054(0x0004)
+	class USnapshotRecord*                             CurSnapshot;                                              // 0x0058(0x0004)
+	class UPopUpDebugBarGraph*                         PopUpGraphTop;                                            // 0x005C(0x0004) (Transient)
+	class UPopUpDebugBarGraph*                         PopUpGraphCenter;                                         // 0x0060(0x0004) (Transient)
+	struct FName                                       CurrentInspectedTargetName;                               // 0x0064(0x0008)
+	float                                              TopBarGraphStartXPct;                                     // 0x006C(0x0004) (Const)
+	float                                              TopBarGraphStartYPct;                                     // 0x0070(0x0004) (Const)
+	float                                              CenterBarGraphStartXPct;                                  // 0x0074(0x0004) (Const)
+	float                                              CenterBarGraphStartYPct;                                  // 0x0078(0x0004) (Const)
+	float                                              Column2XOffset;                                           // 0x007C(0x0004) (Const)
+	float                                              Column1LastY;                                             // 0x0080(0x0004)
+	float                                              Column2LastY;                                             // 0x0084(0x0004)
+	int                                                LastColumnDrawnTo;                                        // 0x0088(0x0004)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("AIDebugCamera");
+		return ptr;
+	}
+
+
 	void ToggleAITree();
 	void ToggleTargetViewCones();
 	void ToggleAwarenessZones();
@@ -1211,7 +97,7 @@ public:
 	void SetMind(class AGearboxMind* NewMind);
 	void InitDummies(int NewNumDummies);
 	bool WantsToDoCameraInspection();
-	void SetCurrentInspectedTarget(struct FName NewName);
+	void SetCurrentInspectedTarget(const struct FName& NewName);
 	void CompareRuleSetAndAdjustRuleIdx(class USnapshotRecord* OldSnapshot, class USnapshotRecord* NewSnapshot);
 	void SetRuleEngine(class URuleEngine* NewRuleEngine);
 	void SetPrevSnapshotRule();
@@ -1223,181 +109,371 @@ public:
 	void Display(class AHUD* HUD);
 };
 
-// 0x00D4 (0x0110 - 0x003C)
+
+// Class GearboxFramework.AITracker
+// 0x00D4 (0x003C - 0x0110)
 class UAITracker : public UObject
 {
 public:
-	class USnapshotRecord*                             Snapshots[0x32];                                		// 0x003C (0x00C8) [0x0000000000002000]              ( CPF_Transient )
-	int                                                SnapshotSize;                                     		// 0x0104 (0x0004) [0x0000000000000000]
-	int                                                SnapshotIndex;                                    		// 0x0108 (0x0004) [0x0000000000000000]
-	class AActor*                                      DebugOwner;                                       		// 0x010C (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class USnapshotRecord*                             Snapshots[0x32];                                          // 0x003C(0x0004) (Transient)
+	int                                                SnapshotSize;                                             // 0x0104(0x0004)
+	int                                                SnapshotIndex;                                            // 0x0108(0x0004)
+	class AActor*                                      DebugOwner;                                               // 0x010C(0x0004) (Transient)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("AITracker");
+		return ptr;
+	}
+
 };
 
-// 0x0020 (0x010C - 0x00EC)
+
+// Class GearboxFramework.SpecialMoveInterface
+// 0x0000 (0x003C - 0x003C)
+class USpecialMoveInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SpecialMoveInterface");
+		return ptr;
+	}
+
+
+	void SetReplicatedSMData(struct FSpecialMoveData* NewSMData);
+	void ServerSpecialMove_StopAny();
+	void ServerSpecialMove_Stop(class USpecialMoveDefinition* OldSMD);
+	void ServerSpecialMove_Queue(class USpecialMoveDefinition* NewSMD, float PlayRateScale, float Duration, const struct FName& CallbackName, class UObject* CallbackObject, class UObject* Data);
+	void ServerSpecialMove_Play(class USpecialMoveDefinition* NewSMD, float PlayRateScale, float Duration, const struct FName& CallbackName, class UObject* CallbackObject, class UObject* Data);
+	unsigned char GetDefaultRootMotionRotationMode();
+	unsigned char GetDefaultRootMotionMode();
+	class USkeletalMeshComponent* GetSkelMesh();
+	class USpecialMoveComponent* GetSMComponent();
+	class AActor* GetActor();
+};
+
+
+// Class GearboxFramework.AnimNodeSpecialMoveBlend
+// 0x0020 (0x00EC - 0x010C)
 class UAnimNodeSpecialMoveBlend : public UAnimNodeSlot
 {
 public:
-	unsigned char                                      AnimState;                                        		// 0x00EC (0x0001) [0x0000000000002000]              ( CPF_Transient )
-	float                                              SavedBlendOutTime;                                		// 0x00F0 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class USpecialMoveInterface*                       SMI;                                              		// 0x00F4 (0x0008) [0x0000000000002000]              ( CPF_Transient )
-	unsigned char                                      UnknownData00[0x4];                             		// 0x00F8 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	TArray< struct FSlotAnimParameters >               AnimParameters;                                   		// 0x00FC (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	unsigned long                                      bForceLocalSpaceBlend : 1;                        		// 0x0108 (0x0004) [0x0000000000000003] [0x00000001] ( CPF_Edit | CPF_Const )
-	unsigned long                                      IssueNotifiesWhenZeroWeight : 1;                  		// 0x0108 (0x0004) [0x0000000000000003] [0x00000002] ( CPF_Edit | CPF_Const )
+	unsigned char                                      AnimState;                                                // 0x00EC(0x0001) (Transient)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x00ED(0x0003) MISSED OFFSET
+	float                                              SavedBlendOutTime;                                        // 0x00F0(0x0004) (Transient)
+	TScriptInterface<class USpecialMoveInterface>      SMI;                                                      // 0x00F4(0x0008) (Transient)
+	TArray<struct FSlotAnimParameters>                 AnimParameters;                                           // 0x00FC(0x000C) (Transient, NeedCtorLink)
+	unsigned long                                      bForceLocalSpaceBlend : 1;                                // 0x0108(0x0004) (Edit, Const)
+	unsigned long                                      IssueNotifiesWhenZeroWeight : 1;                          // 0x0108(0x0004) (Edit, Const)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("AnimNodeSpecialMoveBlend");
+		return ptr;
+	}
+
+
 	bool IsPlaying(class UGearboxAnimDefinition* AnimSMD);
 	void SetRootMotion(class URootMotionDefinition* RMDef);
 	class UGearboxAnimDefinition* GetCurrentAnimDef();
 	struct FName GetCurrentAnimName();
-	void Finish(unsigned long bInterrupted);
-	void Stop(unsigned long bInterrupted);
-	float PlayData(struct FName AnimNameOverride, float PlayRateScale, float BlendInOverride, float BlendOutOverride, struct FSpecialMoveData* SMData);
-	float Play(class UGearboxAnimDefinition* CustomAnimSMD, struct FName AnimNameOverride, float PlayRateScale, float BlendInOverride, float BlendOutOverride);
+	void Finish(bool bInterrupted);
+	void Stop(bool bInterrupted);
+	float PlayData(const struct FName& AnimNameOverride, float PlayRateScale, float BlendInOverride, float BlendOutOverride, struct FSpecialMoveData* SMData);
+	float Play(class UGearboxAnimDefinition* CustomAnimSMD, const struct FName& AnimNameOverride, float PlayRateScale, float BlendInOverride, float BlendOutOverride);
 };
 
-// 0x0010 (0x004C - 0x003C)
+
+// Class GearboxFramework.AttributeExpressionEvaluator
+// 0x0010 (0x003C - 0x004C)
 class UAttributeExpressionEvaluator : public UExpressionEvaluator
 {
 public:
-	struct FAttributeExpressionData                    Expression;                                       		// 0x003C (0x0010) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	struct FAttributeExpressionData                    Expression;                                               // 0x003C(0x0010) (Edit, Const)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("AttributeExpressionEvaluator");
+		return ptr;
+	}
+
+
 	bool Evaluate(class UObject* ContextSource);
 };
 
-// 0x0008 (0x0054 - 0x004C)
+
+// Class GearboxFramework.Behavior_CallFunction
+// 0x0008 (0x004C - 0x0054)
 class UBehavior_CallFunction : public UBehaviorBase
 {
 public:
-	struct FName                                       FunctionName;                                     		// 0x004C (0x0008) [0x0000000000000001]              ( CPF_Edit )
+	struct FName                                       FunctionName;                                             // 0x004C(0x0008) (Edit)
 
-public:
-	void CallFunction(class AActor* inActor, struct FName InFunctionName);
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_CallFunction");
+		return ptr;
+	}
+
+
+	void CallFunction(class AActor* inActor, const struct FName& InFunctionName);
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// 0x0044 (0x0090 - 0x004C)
+
+// Class GearboxFramework.IBehaviorConsumer
+// 0x0000 (0x003C - 0x003C)
+class UIBehaviorConsumer : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("IBehaviorConsumer");
+		return ptr;
+	}
+
+
+	struct FBehaviorConsumerHandle GetBehaviorConsumerHandle();
+};
+
+
+// Class GearboxFramework.Behavior_ChangeRemoteBehaviorSequenceState
+// 0x0044 (0x004C - 0x0090)
 class UBehavior_ChangeRemoteBehaviorSequenceState : public UBehaviorBase
 {
 public:
-	unsigned char                                      Action;                                           		// 0x004C (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	struct FName                                       SequenceName;                                     		// 0x0050 (0x0008) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	class UObject*                                     SequenceProvider;                                 		// 0x0058 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	struct FNameBasedObjectPath                        ProviderDefinitionPathName;                       		// 0x005C (0x0034) [0x0000000000000002]              ( CPF_Const )
+	unsigned char                                      Action;                                                   // 0x004C(0x0001) (Edit, Const)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x004D(0x0003) MISSED OFFSET
+	struct FName                                       SequenceName;                                             // 0x0050(0x0008) (Edit, Const)
+	class UObject*                                     SequenceProvider;                                         // 0x0058(0x0004) (Edit, Const)
+	struct FNameBasedObjectPath                        ProviderDefinitionPathName;                               // 0x005C(0x0034) (Const)
 
-public:
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_ChangeRemoteBehaviorSequenceState");
+		return ptr;
+	}
+
+
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// 0x001C (0x0068 - 0x004C)
+
+// Class GearboxFramework.ITimerBehavior
+// 0x0000 (0x003C - 0x003C)
+class UITimerBehavior : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("ITimerBehavior");
+		return ptr;
+	}
+
+
+	bool SetTimerState(unsigned char TimerId, const struct FBehaviorTimerState& TimerState);
+	bool GetTimerState(unsigned char TimerId, struct FBehaviorTimerState* TimerState);
+	float GetTimeSeconds();
+};
+
+
+// Class GearboxFramework.Behavior_ChangeTimer
+// 0x001C (0x004C - 0x0068)
 class UBehavior_ChangeTimer : public UBehaviorBase
 {
 public:
-	unsigned char                                      TimerId;                                          		// 0x004C (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	unsigned char                                      Reaction;                                         		// 0x004D (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	unsigned long                                      bSetNewTimerDelay : 1;                            		// 0x0050 (0x0004) [0x0000000000000003] [0x00000001] ( CPF_Edit | CPF_Const )
-	struct FAttributeInitializationData                NewTimerDelayFormula;                             		// 0x0054 (0x0010) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	float                                              NewTimerDelay;                                    		// 0x0064 (0x0004) [0x0000000020000002]              ( CPF_Const | CPF_Deprecated )
+	unsigned char                                      TimerId;                                                  // 0x004C(0x0001) (Edit, Const)
+	unsigned char                                      Reaction;                                                 // 0x004D(0x0001) (Edit, Const)
+	unsigned char                                      UnknownData00[0x2];                                       // 0x004E(0x0002) MISSED OFFSET
+	unsigned long                                      bSetNewTimerDelay : 1;                                    // 0x0050(0x0004) (Edit, Const)
+	struct FAttributeInitializationData                NewTimerDelayFormula;                                     // 0x0054(0x0010) (Edit, Const)
+	float                                              NewTimerDelay;                                            // 0x0064(0x0004) (Const, Deprecated)
 
-public:
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_ChangeTimer");
+		return ptr;
+	}
+
+
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// 0x0040 (0x008C - 0x004C)
+
+// Class GearboxFramework.Behavior_IsSequenceEnabled
+// 0x0040 (0x004C - 0x008C)
 class UBehavior_IsSequenceEnabled : public UBehaviorBase
 {
 public:
-	struct FName                                       SequenceName;                                     		// 0x004C (0x0008) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	class UObject*                                     SequenceProvider;                                 		// 0x0054 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	struct FNameBasedObjectPath                        ProviderDefinitionPathName;                       		// 0x0058 (0x0034) [0x0000000000000002]              ( CPF_Const )
+	struct FName                                       SequenceName;                                             // 0x004C(0x0008) (Edit, Const)
+	class UObject*                                     SequenceProvider;                                         // 0x0054(0x0004) (Edit, Const)
+	struct FNameBasedObjectPath                        ProviderDefinitionPathName;                               // 0x0058(0x0034) (Const)
 
-public:
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_IsSequenceEnabled");
+		return ptr;
+	}
+
+
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// 0x0010 (0x005C - 0x004C)
+
+// Class GearboxFramework.Behavior_PostAkEvent
+// 0x0010 (0x004C - 0x005C)
 class UBehavior_PostAkEvent : public UBehaviorBase
 {
 public:
-	class UAkEvent*                                    Event;                                            		// 0x004C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	unsigned long                                      bReplicateEvent : 1;                              		// 0x0050 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      bForLocalPlayerOnly : 1;                          		// 0x0050 (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
-	unsigned long                                      bForcePlayImmediate : 1;                          		// 0x0050 (0x0004) [0x0000000000000001] [0x00000004] ( CPF_Edit )
-	unsigned long                                      bPlayFromActor : 1;                               		// 0x0050 (0x0004) [0x0000000000000001] [0x00000008] ( CPF_Edit )
-	unsigned long                                      bLatentWhenNoConnections : 1;                     		// 0x0050 (0x0004) [0x0000000000000000] [0x00000010]
-	struct FAkPlayingInfo                              PlayingInfo;                                      		// 0x0054 (0x0008) [0x0000000000082000]              ( CPF_Transient | CPF_Component )
+	class UAkEvent*                                    Event;                                                    // 0x004C(0x0004) (Edit)
+	unsigned long                                      bReplicateEvent : 1;                                      // 0x0050(0x0004) (Edit)
+	unsigned long                                      bForLocalPlayerOnly : 1;                                  // 0x0050(0x0004) (Edit)
+	unsigned long                                      bForcePlayImmediate : 1;                                  // 0x0050(0x0004) (Edit)
+	unsigned long                                      bPlayFromActor : 1;                                       // 0x0050(0x0004) (Edit)
+	unsigned long                                      bLatentWhenNoConnections : 1;                             // 0x0050(0x0004)
+	struct FAkPlayingInfo                              PlayingInfo;                                              // 0x0054(0x0008) (Transient, Component)
 
-public:
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_PostAkEvent");
+		return ptr;
+	}
+
+
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// 0x0018 (0x0054 - 0x003C)
+
+// Class GearboxFramework.BehaviorHelpers
+// 0x0018 (0x003C - 0x0054)
 class UBehaviorHelpers : public UObject
 {
 public:
-	struct FScriptDelegate                             __BehaviorSetStrategy__Delegate;                  		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FScriptDelegate                             __BehaviorStrategy__Delegate;                     		// 0x0048 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	struct FScriptDelegate                             __BehaviorSetStrategy__Delegate;                          // 0x003C(0x000C) (NeedCtorLink)
+	struct FScriptDelegate                             __BehaviorStrategy__Delegate;                             // 0x0048(0x000C) (NeedCtorLink)
 
-public:
-	void RunAllBehaviorsForEvent(struct FName EventName, struct FScriptDelegate SetStrategy, struct FScriptDelegate Strategy, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, unsigned char EnumValue);
-	void BehaviorStrategy(struct FPointer BehaviorSet, struct FName EventName, unsigned char EnumValue, TArray< class UBehaviorBase* >* BehaviorList);
-	void BehaviorSetStrategy(TArray< struct FPointer >* BehaviorSetList);
-	class UBehaviorProviderDefinition* ResolveBehaviorProviderDefinitionReference(class UBehaviorBase* SourceBehavior, class UObject* ProviderReference, struct FNameBasedObjectPath* PathName);
-	bool IsBehaviorsV2(struct FBehaviorKernelInfo* KernelInfo);
-	bool ShouldContinueExecution(float TimeBetweenSteps, int MaxSteps, struct FBehaviorKernelInfo* KernelInfo, int* NumSteps);
-	struct FName GetNextFireLocationSocket(unsigned char FireSocketSelection, TArray< struct FName > FireLocationSocketNames, TArray< struct FName >* FireLocationSocketsRemaining);
-	bool GetRotationFromAttachmentLocationData(struct FAttachmentLocationData AttachmentLocation, struct FRotator* AttachmentLocationRotation);
-	struct FVector GetRelativeDirection(struct FRelativeDirectionData DesiredDirection, class UIWorldBody* Source, struct FVector DefaultDirection, struct FName SpawnSocketName);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("BehaviorHelpers");
+		return ptr;
+	}
+
+
+	static void RunAllBehaviorsForEvent(const struct FName& EventName, const struct FScriptDelegate& SetStrategy, const struct FScriptDelegate& Strategy, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, unsigned char EnumValue);
+	void BehaviorStrategy(const struct FPointer& BehaviorSet, const struct FName& EventName, unsigned char EnumValue, TArray<class UBehaviorBase*>* BehaviorList);
+	void BehaviorSetStrategy(TArray<struct FPointer>* BehaviorSetList);
+	static class UBehaviorProviderDefinition* ResolveBehaviorProviderDefinitionReference(class UBehaviorBase* SourceBehavior, class UObject* ProviderReference, struct FNameBasedObjectPath* PathName);
+	static bool IsBehaviorsV2(struct FBehaviorKernelInfo* KernelInfo);
+	static bool ShouldContinueExecution(float TimeBetweenSteps, int MaxSteps, struct FBehaviorKernelInfo* KernelInfo, int* NumSteps);
+	static struct FName GetNextFireLocationSocket(unsigned char FireSocketSelection, TArray<struct FName> FireLocationSocketNames, TArray<struct FName>* FireLocationSocketsRemaining);
+	static bool GetRotationFromAttachmentLocationData(const struct FAttachmentLocationData& AttachmentLocation, struct FRotator* AttachmentLocationRotation);
+	static struct FVector GetRelativeDirection(const struct FRelativeDirectionData& DesiredDirection, const TScriptInterface<class UIWorldBody>& Source, const struct FVector& DefaultDirection, const struct FName& SpawnSocketName);
 };
 
-// 0x000C (0x0048 - 0x003C)
+
+// Class GearboxFramework.CompoundExpressionEvaluator
+// 0x000C (0x003C - 0x0048)
 class UCompoundExpressionEvaluator : public UExpressionEvaluator
 {
 public:
-	class UExpressionEvaluator*                        Expression1;                                      		// 0x003C (0x0004) [0x0000000004000001]              ( CPF_Edit | CPF_EditInline )
-	unsigned char                                      Operator;                                         		// 0x0040 (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	class UExpressionEvaluator*                        Expression2;                                      		// 0x0044 (0x0004) [0x0000000004000001]              ( CPF_Edit | CPF_EditInline )
+	class UExpressionEvaluator*                        Expression1;                                              // 0x003C(0x0004) (Edit, EditInline)
+	unsigned char                                      Operator;                                                 // 0x0040(0x0001) (Edit)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0041(0x0003) MISSED OFFSET
+	class UExpressionEvaluator*                        Expression2;                                              // 0x0044(0x0004) (Edit, EditInline)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("CompoundExpressionEvaluator");
+		return ptr;
+	}
+
+
 	bool Evaluate(class UObject* ContextSource);
 };
 
-// 0x0020 (0x005C - 0x003C)
+
+// Class GearboxFramework.ConditionalAttributeValueResolver
+// 0x0020 (0x003C - 0x005C)
 class UConditionalAttributeValueResolver : public UAttributeValueResolver
 {
 public:
-	struct FConditionalInitializationExpressions       ValueExpressions;                                 		// 0x003C (0x0020) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	struct FConditionalInitializationExpressions       ValueExpressions;                                         // 0x003C(0x0020) (Edit, NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("ConditionalAttributeValueResolver");
+		return ptr;
+	}
+
 };
 
-// 0x0004 (0x0040 - 0x003C)
+
+// Class GearboxFramework.ConstantAttributeValueResolver
+// 0x0004 (0x003C - 0x0040)
 class UConstantAttributeValueResolver : public UAttributeValueResolver
 {
 public:
-	float                                              ConstantValue;                                    		// 0x003C (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	float                                              ConstantValue;                                            // 0x003C(0x0004) (Edit, Const)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("ConstantAttributeValueResolver");
+		return ptr;
+	}
+
 };
 
-// 0x0028 (0x0064 - 0x003C)
+
+// Class GearboxFramework.ConstraintAttributeValueResolver
+// 0x0028 (0x003C - 0x0064)
 class UConstraintAttributeValueResolver : public UAttributeValueResolver
 {
 public:
-	struct FRange                                      Constraints;                                      		// 0x003C (0x0028) [0x0000000000000001]              ( CPF_Edit )
+	struct FRange                                      Constraints;                                              // 0x003C(0x0028) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("ConstraintAttributeValueResolver");
+		return ptr;
+	}
+
 };
 
-// 0x000C (0x0048 - 0x003C)
+
+// Class GearboxFramework.FeatherBoneBlendDefinition
+// 0x000C (0x003C - 0x0048)
 class UFeatherBoneBlendDefinition : public UGBXDefinition
 {
 public:
-	TArray< struct FFeatherBoneBlendData >             BoneBlends;                                       		// 0x003C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	TArray<struct FFeatherBoneBlendData>               BoneBlends;                                               // 0x003C(0x000C) (Edit, NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("FeatherBoneBlendDefinition");
+		return ptr;
+	}
+
 };
 
-// 0x000C (0x0048 - 0x003C)
+
+// Class GearboxFramework.GBXActorList
+// 0x000C (0x003C - 0x0048)
 class UGBXActorList : public UObject
 {
 public:
-	TArray< struct Fs_actorList >                      ActorList;                                        		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	TArray<struct Fs_actorList>                        ActorList;                                                // 0x003C(0x000C) (NeedCtorLink)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GBXActorList");
+		return ptr;
+	}
+
+
 	void RemoveAndDeleteActorsOfClassFromLevel(class UClass* TheClass, class ULevel* Level);
 	void RemoveActorsOfClassFromLevel(class UClass* TheClass, class ULevel* Level);
 	void RemoveAndDeleteActorsFromLevel(class ULevel* Level);
@@ -1410,13 +486,21 @@ public:
 	void AddActor(class AActor* Actor, class ULevel* Level);
 };
 
-// 0x000C (0x0048 - 0x003C)
+
+// Class GearboxFramework.GBXObjectList
+// 0x000C (0x003C - 0x0048)
 class UGBXObjectList : public UObject
 {
 public:
-	TArray< class UObject* >                           ObjectList;                                       		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	TArray<class UObject*>                             ObjectList;                                               // 0x003C(0x000C) (NeedCtorLink)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GBXObjectList");
+		return ptr;
+	}
+
+
 	void RemoveObjectsOfClass(class UClass* TheClass);
 	class UObject* FindNextObjectByClass(class UClass* TheClass, int* Index);
 	class UObject* FindFirstObjectByClass(class UClass* TheClass, int* Index);
@@ -1424,30 +508,48 @@ public:
 	void AddObject(class UObject* TheObject);
 };
 
+
+// Class GearboxFramework.GearboxAIController
 // 0x0000 (0x0684 - 0x0684)
 class AGearboxAIController : public AAIController
 {
 public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxAIController");
+		return ptr;
+	}
+
+
 	void ForceMoveToActor(class AActor* destActor);
 };
 
-// 0x003C (0x01C4 - 0x0188)
+
+// Class GearboxFramework.GearboxAIMoveNode
+// 0x003C (0x0188 - 0x01C4)
 class AGearboxAIMoveNode : public AActor
 {
 public:
-	unsigned long                                      bEnabled : 1;                                     		// 0x0188 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      bFaceNodeDirection : 1;                           		// 0x0188 (0x0004) [0x0000000000000003] [0x00000002] ( CPF_Edit | CPF_Const )
-	TArray< struct FNodeData >                         NextNodes;                                        		// 0x018C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	TArray< class AGearboxAIMoveNode* >                PreviousNodes;                                    		// 0x0198 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	float                                              HoldTime;                                         		// 0x01A4 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	TArray< class UBehaviorBase* >                     Behaviors;                                        		// 0x01A8 (0x000C) [0x0000000004400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink | CPF_EditInline )
-	TArray< class USpecialMoveDefinition* >            SpecialMoves;                                     		// 0x01B4 (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
-	class USpriteComponent*                            Sprite;                                           		// 0x01C0 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
+	unsigned long                                      bEnabled : 1;                                             // 0x0188(0x0004) (Edit)
+	unsigned long                                      bFaceNodeDirection : 1;                                   // 0x0188(0x0004) (Edit, Const)
+	TArray<struct FNodeData>                           NextNodes;                                                // 0x018C(0x000C) (Edit, NeedCtorLink)
+	TArray<class AGearboxAIMoveNode*>                  PreviousNodes;                                            // 0x0198(0x000C) (NeedCtorLink)
+	float                                              HoldTime;                                                 // 0x01A4(0x0004) (Edit, Const)
+	TArray<class UBehaviorBase*>                       Behaviors;                                                // 0x01A8(0x000C) (Edit, Const, NeedCtorLink, EditInline)
+	TArray<class USpecialMoveDefinition*>              SpecialMoves;                                             // 0x01B4(0x000C) (Edit, Const, NeedCtorLink)
+	class USpriteComponent*                            Sprite;                                                   // 0x01C0(0x0004) (ExportObject, Component, EditInline)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxAIMoveNode");
+		return ptr;
+	}
+
+
 	bool DoesPatrolPathExistToPoint(class AGearboxAIMoveNode* PatrolPoint);
-	void GetAllLinkedNodes(TArray< class AGearboxAIMoveNode* >* OutNodes);
-	class AGearboxAIMoveNode* GetNextMoveNodeClosestToPoint(struct FVector TestPoint);
+	void GetAllLinkedNodes(TArray<class AGearboxAIMoveNode*>* OutNodes);
+	class AGearboxAIMoveNode* GetNextMoveNodeClosestToPoint(const struct FVector& TestPoint);
 	class AGearboxAIMoveNode* GetNextMoveNode();
 	int RemoveNode(class AGearboxAIMoveNode* OldNode);
 	void AddNode(class AGearboxAIMoveNode* NewNode);
@@ -1455,272 +557,367 @@ public:
 	void OnToggle(class USeqAct_Toggle* Action);
 };
 
-// UClass* AGearboxAIMoveNode::pClassPointer = NULL;
 
-// 0x0004 (0x0400 - 0x03FC)
+// Class GearboxFramework.GearboxCameraBasic
+// 0x0004 (0x03FC - 0x0400)
 class AGearboxCameraBasic : public ACamera
 {
 public:
-	struct FPointer                                    VfTable_IInterfaceGearboxCamera;                  		// 0x03FC (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
+	struct FPointer                                    VfTable_IInterfaceGearboxCamera;                          // 0x03FC(0x0004) (Const, Native, NoExport)
 
-public:
-	void eventFinishCameraLookAt();
-	void eventEnableThirdPersonLookAt(float LookAtXOffset, float LookAtYOffset, float LookAtZOffset, unsigned char LookAtMode);
-	void BeginCameraLookAt(class AActor* LookAtTarget, struct FName LookAtBone, struct FVector TargetLocation, float Zoom, struct FVector2D FOV, float Duration, float TransitionTimeIn, float TransitionTimeOut);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxCameraBasic");
+		return ptr;
+	}
+
+
+	void FinishCameraLookAt();
+	void EnableThirdPersonLookAt(float LookAtXOffset, float LookAtYOffset, float LookAtZOffset, unsigned char LookAtMode);
+	void BeginCameraLookAt(class AActor* LookAtTarget, const struct FName& LookAtBone, const struct FVector& TargetLocation, float Zoom, const struct FVector2D& FOV, float Duration, float TransitionTimeIn, float TransitionTimeOut);
 	void CalcSimpleThirdPersonView(float DeltaTime, struct FTViewTarget* OutVT);
 	void CalcBaseView(float DeltaTime, struct FTViewTarget* OutVT);
 	void UpdateViewTarget(float DeltaTime, struct FTViewTarget* OutVT);
 };
 
-// UClass* AGearboxCameraBasic::pClassPointer = NULL;
 
-// 0x0031 (0x0089 - 0x0058)
+// Class GearboxFramework.GearboxCameraModifier
+// 0x0031 (0x0058 - 0x0089)
 class UGearboxCameraModifier : public UCameraModifier
 {
 public:
-	class AGearboxCameraBasic*                         GBXCameraOwner;                                   		// 0x0058 (0x0004) [0x0000000000000000]
-	struct FTPOV                                       DesiredPOV;                                       		// 0x005C (0x001C) [0x0000000000000000]
-	float                                              MasterFadeValue;                                  		// 0x0078 (0x0004) [0x0000000000000000]
-	float                                              FadeElapsedTime;                                  		// 0x007C (0x0004) [0x0000000000000000]
-	float                                              FadeTimeSpan;                                     		// 0x0080 (0x0004) [0x0000000000000000]
-	unsigned long                                      FadeStarted : 1;                                  		// 0x0084 (0x0004) [0x0000000000000000] [0x00000001]
-	unsigned long                                      FadingUpwards : 1;                                		// 0x0084 (0x0004) [0x0000000000000000] [0x00000002]
-	unsigned long                                      DisableWhenFadedOut : 1;                          		// 0x0084 (0x0004) [0x0000000000000000] [0x00000004]
-	unsigned long                                      AdjustForTimeDilation : 1;                        		// 0x0084 (0x0004) [0x0000000000000002] [0x00000008] ( CPF_Const )
-	unsigned char                                      FadeMode;                                         		// 0x0088 (0x0001) [0x0000000000000000]
+	class AGearboxCameraBasic*                         GBXCameraOwner;                                           // 0x0058(0x0004)
+	struct FTPOV                                       DesiredPOV;                                               // 0x005C(0x001C)
+	float                                              MasterFadeValue;                                          // 0x0078(0x0004)
+	float                                              FadeElapsedTime;                                          // 0x007C(0x0004)
+	float                                              FadeTimeSpan;                                             // 0x0080(0x0004)
+	unsigned long                                      FadeStarted : 1;                                          // 0x0084(0x0004)
+	unsigned long                                      FadingUpwards : 1;                                        // 0x0084(0x0004)
+	unsigned long                                      DisableWhenFadedOut : 1;                                  // 0x0084(0x0004)
+	unsigned long                                      AdjustForTimeDilation : 1;                                // 0x0084(0x0004) (Const)
+	unsigned char                                      FadeMode;                                                 // 0x0088(0x0001)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxCameraModifier");
+		return ptr;
+	}
+
+
 	float LerpFOV(float Src, float Dest, float T);
-	struct FRotator LerpRotation(struct FRotator Src, struct FRotator Dest, float T);
-	struct FVector LerpLocation(struct FVector Src, struct FVector Dest, float T);
+	struct FRotator LerpRotation(const struct FRotator& Src, const struct FRotator& Dest, float T);
+	struct FVector LerpLocation(const struct FVector& Src, const struct FVector& Dest, float T);
 	void UpdateAllLerps(float DeltaTime, struct FTPOV* OutPOV);
 	void UpdateMasterFadePercentage(float AdjustedDeltaTime);
 	bool IsFadingDownwards();
 	bool IsFadingUpwards();
 	bool IsFadeInProgress();
-	void StartFadeOut(float NewTimeSpan, unsigned long NewDisableWhenFadedOut, unsigned char NewFadeMode);
+	void StartFadeOut(float NewTimeSpan, bool NewDisableWhenFadedOut, unsigned char NewFadeMode);
 	void StartFadeIn(float NewTimeSpan, unsigned char NewFadeMode);
-	void SetDesiredCamera(struct FVector DesiredLoc, struct FRotator DesiredRot, float DesiredFOV);
+	void SetDesiredCamera(const struct FVector& DesiredLoc, const struct FRotator& DesiredRot, float DesiredFOV);
 	void SetGBXCameraOwner(class AGearboxCameraBasic* InCamera);
 	bool AddCameraModifier(class ACamera* Camera);
 };
 
-// UClass* UGearboxCameraModifier::pClassPointer = NULL;
 
+// Class GearboxFramework.GearboxCheatManager
 // 0x0000 (0x005C - 0x005C)
-class UGearboxCheatManager : public UCheatManager {};
+class UGearboxCheatManager : public UCheatManager
+{
+public:
 
-// UClass* UGearboxCheatManager::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxCheatManager");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.GearboxDialogInterface
 // 0x0000 (0x003C - 0x003C)
 class UGearboxDialogInterface : public UInterface
 {
 public:
-	void eventServerDialog_TriggerEvent(class UGearboxDialogEventTag* EventTag, class AActor* Other, class UObject* ObjectParameter);
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxDialogInterface");
+		return ptr;
+	}
+
+
+	void ServerDialog_TriggerEvent(class UGearboxDialogEventTag* EventTag, class AActor* Other, class UObject* ObjectParameter);
 	void SetDialogNameTag(class UGearboxDialogNameTag* NewName);
 	struct FGearboxDialogReplicatedData GetReplicatedDialogData();
 	void SetReplicatedDialogData(class UGearboxDialogAct_Talk* TalkAct, struct FGearboxDialogData* Data);
-	void GetDialogGroups(TArray< class UGearboxDialogGroup* >* Groups);
+	void GetDialogGroups(TArray<class UGearboxDialogGroup*>* Groups);
 	class UGearboxDialogComponent* GetDialogComponent();
 	class UGearboxDialogNameTag* GetDialogNameTag();
 	class AActor* GetActor();
 	bool CanTalk();
 };
 
-// UClass* UGearboxDialogInterface::pClassPointer = NULL;
 
-// 0x0030 (0x006C - 0x003C)
+// Class GearboxFramework.GearboxEditorNode
+// 0x0030 (0x003C - 0x006C)
 class UGearboxEditorNode : public UObject
 {
 public:
-	unsigned char                                      Type;                                             		// 0x003C (0x0001) [0x0000000000000000]
-	TArray< struct FOutputLink >                       OutputLinks;                                      		// 0x0040 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< class UGearboxEditorNode* >                InputLinks;                                       		// 0x004C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FVariableLink >                     VariableLinks;                                    		// 0x0058 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned long                                      bAllowInputs : 1;                                 		// 0x0064 (0x0004) [0x0000000000000000] [0x00000001]
-	unsigned long                                      bAllowOutputs : 1;                                		// 0x0064 (0x0004) [0x0000000000000000] [0x00000002]
-	unsigned long                                      bAllowVariables : 1;                              		// 0x0064 (0x0004) [0x0000000000000000] [0x00000004]
-	unsigned long                                      bAllowMovement : 1;                               		// 0x0064 (0x0004) [0x0000000000000000] [0x00000008]
-	unsigned long                                      bAllowMultipleInputs : 1;                         		// 0x0064 (0x0004) [0x0000000000000000] [0x00000010]
-	unsigned long                                      bAllowMultipleOutputs : 1;                        		// 0x0064 (0x0004) [0x0000000000000000] [0x00000020]
-	unsigned long                                      bAllowMultipleVariables : 1;                      		// 0x0064 (0x0004) [0x0000000000000000] [0x00000040]
-	float                                              SliderPosition;                                   		// 0x0068 (0x0004) [0x0000000000000000]
+	unsigned char                                      Type;                                                     // 0x003C(0x0001)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x003D(0x0003) MISSED OFFSET
+	TArray<struct FOutputLink>                         OutputLinks;                                              // 0x0040(0x000C) (NeedCtorLink)
+	TArray<class UGearboxEditorNode*>                  InputLinks;                                               // 0x004C(0x000C) (NeedCtorLink)
+	TArray<struct FVariableLink>                       VariableLinks;                                            // 0x0058(0x000C) (NeedCtorLink)
+	unsigned long                                      bAllowInputs : 1;                                         // 0x0064(0x0004) (EditorOnly)
+	unsigned long                                      bAllowOutputs : 1;                                        // 0x0064(0x0004) (EditorOnly)
+	unsigned long                                      bAllowVariables : 1;                                      // 0x0064(0x0004) (EditorOnly)
+	unsigned long                                      bAllowMovement : 1;                                       // 0x0064(0x0004) (EditorOnly)
+	unsigned long                                      bAllowMultipleInputs : 1;                                 // 0x0064(0x0004) (EditorOnly)
+	unsigned long                                      bAllowMultipleOutputs : 1;                                // 0x0064(0x0004) (EditorOnly)
+	unsigned long                                      bAllowMultipleVariables : 1;                              // 0x0064(0x0004) (EditorOnly)
+	float                                              SliderPosition;                                           // 0x0068(0x0004)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxEditorNode");
+		return ptr;
+	}
+
+
 	bool IsChild(class UGearboxEditorNode* TestNode);
 };
 
-// UClass* UGearboxEditorNode::pClassPointer = NULL;
 
-// 0x0020 (0x07CC - 0x07AC)
+// Class GearboxFramework.GearboxEngine
+// 0x0020 (0x07AC - 0x07CC)
 class UGearboxEngine : public UGameEngine
 {
 public:
-	int                                                CurrentUserID;                                    		// 0x07AC (0x0004) [0x0000000000000000]
-	int                                                CurrentDeviceID;                                  		// 0x07B0 (0x0004) [0x0000000000000000]
-	unsigned long                                      bHasSelectedValidStorageDevice : 1;               		// 0x07B4 (0x0004) [0x0000000000002002] [0x00000001] ( CPF_Const | CPF_Transient )
-	struct FString                                     DefaultSparkInterfaceName;                        		// 0x07B8 (0x000C) [0x0000000000404000]              ( CPF_Config | CPF_NeedCtorLink )
-	class USparkInterface*                             SparkInterface;                                   		// 0x07C4 (0x0008) [0x0000000000002002]              ( CPF_Const | CPF_Transient )
-	unsigned char                                      UnknownData00[0x4];                             		// 0x07C8 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	int                                                CurrentUserID;                                            // 0x07AC(0x0004)
+	int                                                CurrentDeviceID;                                          // 0x07B0(0x0004)
+	unsigned long                                      bHasSelectedValidStorageDevice : 1;                       // 0x07B4(0x0004) (Const, Transient)
+	struct FString                                     DefaultSparkInterfaceName;                                // 0x07B8(0x000C) (Config, NeedCtorLink)
+	TScriptInterface<class USparkInterface>            SparkInterface;                                           // 0x07C4(0x0008) (Const, Transient)
 
-public:
-	class USparkInterface* GetSparkInterface();
-	bool eventIsCurrentDeviceValid(int SizeNeeded);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxEngine");
+		return ptr;
+	}
+
+
+	static TScriptInterface<class USparkInterface> GetSparkInterface();
+	bool IsCurrentDeviceValid(int SizeNeeded);
 	bool HasStorageDeviceBeenRemoved();
 	int GetCurrentDeviceID();
-	void SetCurrentDeviceID(int NewDeviceID, unsigned long bProfileSignedOut);
+	void SetCurrentDeviceID(int NewDeviceID, bool bProfileSignedOut);
 };
 
-// UClass* UGearboxEngine::pClassPointer = NULL;
 
+// Class GearboxFramework.GearboxGameInfo
 // 0x0000 (0x0330 - 0x0330)
 class AGearboxGameInfo : public AGameInfo
 {
 public:
-	void eventPostLogin(class APlayerController* NewPlayer);
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxGameInfo");
+		return ptr;
+	}
+
+
+	void PostLogin(class APlayerController* NewPlayer);
 };
 
-// UClass* AGearboxGameInfo::pClassPointer = NULL;
 
-// 0x008C (0x0254 - 0x01C8)
+// Class GearboxFramework.GFxMovieState
+// 0x0020 (0x003C - 0x005C)
+class UGFxMovieState : public UObject
+{
+public:
+	struct FName                                       StateName;                                                // 0x003C(0x0008) (Edit)
+	struct FName                                       DefaultState;                                             // 0x0044(0x0008) (Edit)
+	unsigned char                                      StateType;                                                // 0x004C(0x0001) (Edit)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x004D(0x0003) MISSED OFFSET
+	TArray<struct FMovieStateData>                     AllStates;                                                // 0x0050(0x000C) (Transient, NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GFxMovieState");
+		return ptr;
+	}
+
+
+	struct FString GetDebugString(class UGearboxGFxMovie* Movie, bool bIncludeFlags);
+	void ApplyMovieState(class UGearboxGFxMovie* Movie, class UClass* HandlerClass);
+	int FindMovieState(const struct FName& TheState);
+	bool TestState(const struct FName& TheState, struct FMovieStateStruct* MovieState);
+	int ToggleState(const struct FName& TheState, struct FMovieStateStruct* MovieState);
+	int EnableState(const struct FName& TheState, bool bEnable, struct FMovieStateStruct* MovieState);
+};
+
+
+// Class GearboxFramework.GearboxGFxMovie
+// 0x008C (0x01C8 - 0x0254)
 class UGearboxGFxMovie : public UGFxMovie
 {
 public:
-	TArray< struct FAkEventResolver >                  InteractionOverrideSounds;                        		// 0x01C8 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	float                                              TickRateSeconds;                                  		// 0x01D4 (0x0004) [0x0000000000000000]
-	unsigned long                                      bTickScript : 1;                                  		// 0x01D8 (0x0004) [0x0000000000000000] [0x00000001]
-	unsigned long                                      bTickFirstFrame : 1;                              		// 0x01D8 (0x0004) [0x0000000000002000] [0x00000002] ( CPF_Transient )
-	unsigned long                                      bRenderingDisabled : 1;                           		// 0x01D8 (0x0004) [0x0000000000002000] [0x00000004] ( CPF_Transient )
-	unsigned long                                      bSupportsStatePooling : 1;                        		// 0x01D8 (0x0004) [0x0000000000000000] [0x00000008]
-	unsigned long                                      bIsUsingFlashMouse : 1;                           		// 0x01D8 (0x0004) [0x0000000000000000] [0x00000010]
-	unsigned long                                      bBlockingMovie : 1;                               		// 0x01D8 (0x0004) [0x0000000000000000] [0x00000020]
-	unsigned long                                      bCloseOnDeath : 1;                                		// 0x01D8 (0x0004) [0x0000000000000000] [0x00000040]
-	TArray< class UGFxMovieDrawStyle* >                AllStyles;                                        		// 0x01DC (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	class UGFxMovieDefinition*                         MyDefinition;                                     		// 0x01E8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UGFxActorMoviePool*                          MyPool;                                           		// 0x01EC (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	TArray< class AGearboxPlayerController* >          PlayerOwners;                                     		// 0x01F0 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	class UObject*                                     ContextObject;                                    		// 0x01FC (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	float                                              LastTickTime;                                     		// 0x0200 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UGearboxGFxMovie*                            PoolParent;                                       		// 0x0204 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FMovieStateStruct                           CurrentMovieState;                                		// 0x0208 (0x0018) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	TArray< class UGFxMovieState* >                    BaseMovieStates;                                  		// 0x0220 (0x000C) [0x0000000004400001]              ( CPF_Edit | CPF_NeedCtorLink | CPF_EditInline )
-	TArray< class UGFxMovieState* >                    AllMovieStates;                                   		// 0x022C (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	int                                                bMouseable;                                       		// 0x0238 (0x0004) [0x0000000000000000]
-	struct FScriptDelegate                             __OnInputAxis__Delegate;                          		// 0x023C (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	struct FScriptDelegate                             __OnClosed__Delegate;                             		// 0x0248 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	TArray<struct FAkEventResolver>                    InteractionOverrideSounds;                                // 0x01C8(0x000C) (Edit, NeedCtorLink)
+	float                                              TickRateSeconds;                                          // 0x01D4(0x0004)
+	unsigned long                                      bTickScript : 1;                                          // 0x01D8(0x0004)
+	unsigned long                                      bTickFirstFrame : 1;                                      // 0x01D8(0x0004) (Transient)
+	unsigned long                                      bRenderingDisabled : 1;                                   // 0x01D8(0x0004) (Transient)
+	unsigned long                                      bSupportsStatePooling : 1;                                // 0x01D8(0x0004)
+	unsigned long                                      bIsUsingFlashMouse : 1;                                   // 0x01D8(0x0004)
+	unsigned long                                      bBlockingMovie : 1;                                       // 0x01D8(0x0004)
+	unsigned long                                      bCloseOnDeath : 1;                                        // 0x01D8(0x0004)
+	TArray<class UGFxMovieDrawStyle*>                  AllStyles;                                                // 0x01DC(0x000C) (Transient, NeedCtorLink)
+	class UGFxMovieDefinition*                         MyDefinition;                                             // 0x01E8(0x0004) (Transient)
+	class UGFxActorMoviePool*                          MyPool;                                                   // 0x01EC(0x0004) (Transient)
+	TArray<class AGearboxPlayerController*>            PlayerOwners;                                             // 0x01F0(0x000C) (Transient, NeedCtorLink)
+	class UObject*                                     ContextObject;                                            // 0x01FC(0x0004) (Transient)
+	float                                              LastTickTime;                                             // 0x0200(0x0004) (Transient)
+	class UGearboxGFxMovie*                            PoolParent;                                               // 0x0204(0x0004) (Transient)
+	struct FMovieStateStruct                           CurrentMovieState;                                        // 0x0208(0x0018) (Transient, NeedCtorLink)
+	TArray<class UGFxMovieState*>                      BaseMovieStates;                                          // 0x0220(0x000C) (Edit, NeedCtorLink, EditInline)
+	TArray<class UGFxMovieState*>                      AllMovieStates;                                           // 0x022C(0x000C) (Transient, NeedCtorLink)
+	int                                                bMouseable;                                               // 0x0238(0x0004)
+	struct FScriptDelegate                             __OnInputAxis__Delegate;                                  // 0x023C(0x000C) (Transient, NeedCtorLink)
+	struct FScriptDelegate                             __OnClosed__Delegate;                                     // 0x0248(0x000C) (NeedCtorLink)
 
-public:
-	void extSetLanguageExt(struct FString ClipPath);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxGFxMovie");
+		return ptr;
+	}
+
+
+	void extSetLanguageExt(const struct FString& ClipPath);
 	void OnClosedOnDeath();
 	bool IsShowingFlashMouse();
 	int extIsMouseablePlatform();
-	void eventSetMouseableFlag();
+	void SetMouseableFlag();
 	struct FString GetStyleDebugString();
-	struct FString GetStateDebugString(unsigned long bIncludeFlags);
+	struct FString GetStateDebugString(bool bIncludeFlags);
 	void InitializeFrom(class UGearboxGFxMovie* SrcMovie);
-	bool RemoveStylesDrawnTo(class UPrimitiveComponent* PrimComp, class UIGFxActorMovie* Target);
-	bool RemoveStyles(class UIGFxActorMovie* Target);
+	bool RemoveStylesDrawnTo(class UPrimitiveComponent* PrimComp, const TScriptInterface<class UIGFxActorMovie>& Target);
+	bool RemoveStyles(const TScriptInterface<class UIGFxActorMovie>& Target);
 	void RemoveStyle(class UGFxMovieDrawStyle* Style);
 	void AddStyle(class UGFxMovieDrawStyle* Style);
 	void ShutdownMoviePlayback();
 	void InitMoviePlayback();
 	class UTextureRenderTarget2D* GetRenderTexture();
-	void eventMovieState_OnChanged(unsigned long bStateWasChanged);
-	bool eventMovieState_SetFromMovie(class UGearboxGFxMovie* Movie);
+	void MovieState_OnChanged(bool bStateWasChanged);
+	bool MovieState_SetFromMovie(class UGearboxGFxMovie* Movie);
 	bool MovieState_Copy(struct FMovieStateStruct* StateDst, struct FMovieStateStruct* StateSrc);
 	bool MovieState_Compare(struct FMovieStateStruct* S1, struct FMovieStateStruct* S2);
-	void MovieState_Toggle(struct FName TheState);
-	bool MovieState_Enable(struct FName TheState, unsigned long bEnable);
-	bool MovieState_IsEnabled(struct FName TheState);
-	bool MovieState_SupportsState(struct FName TheState);
+	void MovieState_Toggle(const struct FName& TheState);
+	bool MovieState_Enable(const struct FName& TheState, bool bEnable);
+	bool MovieState_IsEnabled(const struct FName& TheState);
+	bool MovieState_SupportsState(const struct FName& TheState);
 	void MovieState_Init();
 	void InitFromDefinition();
-	void MovieState_Apply(class UGearboxGFxMovie* Movie, class UClass* HandlerClass);
-	void MovieState_ApplyState(struct FName TheState, class UGearboxGFxMovie* Movie);
-	void ApplyState(struct FString StateName, struct FString StateAction);
-	void SetRenderingEnabled(unsigned long bEnabled);
-	void GotoAndStop(struct FString FrameLabel);
-	void GotoAndPlay(struct FString FrameLabel);
-	void PlaySpecialUISound(struct FString SoundString);
-	void eventPlayUISound(struct FName UIEvent);
-	void eventSetOtherObject(class UObject* Obj);
+	static void MovieState_Apply(class UGearboxGFxMovie* Movie, class UClass* HandlerClass);
+	static void MovieState_ApplyState(const struct FName& TheState, class UGearboxGFxMovie* Movie);
+	void ApplyState(const struct FString& StateName, const struct FString& StateAction);
+	void SetRenderingEnabled(bool bEnabled);
+	void GotoAndStop(const struct FString& FrameLabel);
+	void GotoAndPlay(const struct FString& FrameLabel);
+	void PlaySpecialUISound(const struct FString& SoundString);
+	void PlayUISound(const struct FName& UIEvent);
+	void SetOtherObject(class UObject* Obj);
 	class UObject* GetInstanceContextObject();
-	void eventOnTick();
-	void eventOnClose();
-	bool eventStart(unsigned long StartPaused);
-	struct FString ColorizeTooltipText(struct FString S, unsigned long bDisabled);
-	struct FString GFxColoredText(unsigned long bAppendNewline, struct FColor* C, struct FString* S);
-	void SingleArgInvokeB(struct FString Command, unsigned long Arg);
-	void SingleArgInvokeS(struct FString Command, struct FString Arg);
-	void SingleArgInvokeF(struct FString Command, float Arg);
+	void OnTick();
+	void OnClose();
+	bool Start(bool StartPaused);
+	struct FString ColorizeTooltipText(const struct FString& S, bool bDisabled);
+	static struct FString GFxColoredText(bool bAppendNewline, struct FColor* C, struct FString* S);
+	void SingleArgInvokeB(const struct FString& Command, bool Arg);
+	void SingleArgInvokeS(const struct FString& Command, const struct FString& Arg);
+	void SingleArgInvokeF(const struct FString& Command, float Arg);
 	class ULocalPlayer* GetLocalPlayer();
 	void OnClosed(class UGearboxGFxMovie* Movie);
 	bool WantsControllerInput(int ControllerId);
-	bool SetExternalTexture(struct FString Resource, class UTexture* Texture);
-	bool OnInputAxis(int ControllerId, struct FName ukey, float Delta, float DeltaTime);
+	bool SetExternalTexture(const struct FString& Resource, class UTexture* Texture);
+	bool OnInputAxis(int ControllerId, const struct FName& ukey, float Delta, float DeltaTime);
 };
 
-// UClass* UGearboxGFxMovie::pClassPointer = NULL;
 
-// 0x0004 (0x0258 - 0x0254)
+// Class GearboxFramework.GFxMovie_StateParent
+// 0x0004 (0x0254 - 0x0258)
 class UGFxMovie_StateParent : public UGearboxGFxMovie
 {
 public:
-	class UClass*                                      StateClass;                                       		// 0x0254 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class UClass*                                      StateClass;                                               // 0x0254(0x0004) (Transient)
 
-public:
-	void MovieState_OnChanged(unsigned long bStateWasChanged);
-	bool eventStart(unsigned long StartPaused);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GFxMovie_StateParent");
+		return ptr;
+	}
+
+
+	void MovieState_OnChanged(bool bStateWasChanged);
+	bool Start(bool StartPaused);
 };
 
-// UClass* UGFxMovie_StateParent::pClassPointer = NULL;
 
-// 0x0070 (0x00F4 - 0x0084)
+// Class GearboxFramework.GearboxGlobals
+// 0x0070 (0x0084 - 0x00F4)
 class UGearboxGlobals : public UGearboxEngineGlobals
 {
 public:
-	class UGearboxGlobalsDefinition*                   TheGlobalsDefinition;                             		// 0x0084 (0x0004) [0x0000000000000000]
-	class UClass*                                      ExposureUtilityClass;                             		// 0x0088 (0x0004) [0x0000000000000000]
-	class UClass*                                      ExposureUtilityStrategyClass;                     		// 0x008C (0x0004) [0x0000000000000000]
-	class UExposureUtilityBase*                        TheExposureUtility;                               		// 0x0090 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UGearboxAIFactory*                           TheAIFactory;                                     		// 0x0094 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class URuleEngineLoadBalanceManager*               TheRuleEngineLoadBalanceManager;                  		// 0x0098 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UGBXActorList*                               TheGBXActorList;                                  		// 0x009C (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UGBXObjectList*                              TheGBXObjectList;                                 		// 0x00A0 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	TArray< struct FValidNameRange >                   ValidNameList;                                    		// 0x00A4 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	class AWireManager*                                TheWireMgr;                                       		// 0x00B0 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UGbxMessageManager*                          TheMessageManager;                                		// 0x00B4 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UGBXActorList*                               TheDynamicTextureActorList;                       		// 0x00B8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UPopulationMaster*                           ThePopulationMaster;                              		// 0x00BC (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UBehaviorKernel*                             TheBehaviorKernel;                                		// 0x00C0 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UScreenSpaceManager*                         TheScreenSpaceManager;                            		// 0x00C4 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UGFxMovieManager*                            TheGFxManager;                                    		// 0x00C8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UGearboxRenderTextureManager*                TheRenderTextureManager;                          		// 0x00CC (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FString                                     GlobalInstanceClassName;                          		// 0x00D0 (0x000C) [0x0000000000404000]              ( CPF_Config | CPF_NeedCtorLink )
-	int                                                DefaultMaxPopulationActorCost;                    		// 0x00DC (0x0004) [0x0000000000004000]              ( CPF_Config )
-	TArray< struct FLevelStateRecord >                 StateRecords;                                     		// 0x00E0 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	class UAkComponent*                                UIAudioComponent;                                 		// 0x00EC (0x0004) [0x0000000004082008]              ( CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline )
-	class UGearboxDialogManager*                       TheDialogManager;                                 		// 0x00F0 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class UGearboxGlobalsDefinition*                   TheGlobalsDefinition;                                     // 0x0084(0x0004)
+	class UClass*                                      ExposureUtilityClass;                                     // 0x0088(0x0004)
+	class UClass*                                      ExposureUtilityStrategyClass;                             // 0x008C(0x0004)
+	class UExposureUtilityBase*                        TheExposureUtility;                                       // 0x0090(0x0004) (Transient)
+	class UGearboxAIFactory*                           TheAIFactory;                                             // 0x0094(0x0004) (Transient)
+	class URuleEngineLoadBalanceManager*               TheRuleEngineLoadBalanceManager;                          // 0x0098(0x0004) (Transient)
+	class UGBXActorList*                               TheGBXActorList;                                          // 0x009C(0x0004) (Transient)
+	class UGBXObjectList*                              TheGBXObjectList;                                         // 0x00A0(0x0004) (Transient)
+	TArray<struct FValidNameRange>                     ValidNameList;                                            // 0x00A4(0x000C) (Transient, NeedCtorLink)
+	class AWireManager*                                TheWireMgr;                                               // 0x00B0(0x0004) (Transient)
+	class UGbxMessageManager*                          TheMessageManager;                                        // 0x00B4(0x0004) (Transient)
+	class UGBXActorList*                               TheDynamicTextureActorList;                               // 0x00B8(0x0004) (Transient)
+	class UPopulationMaster*                           ThePopulationMaster;                                      // 0x00BC(0x0004) (Transient)
+	class UBehaviorKernel*                             TheBehaviorKernel;                                        // 0x00C0(0x0004) (Transient)
+	class UScreenSpaceManager*                         TheScreenSpaceManager;                                    // 0x00C4(0x0004) (Transient)
+	class UGFxMovieManager*                            TheGFxManager;                                            // 0x00C8(0x0004) (Transient)
+	class UGearboxRenderTextureManager*                TheRenderTextureManager;                                  // 0x00CC(0x0004) (Transient)
+	struct FString                                     GlobalInstanceClassName;                                  // 0x00D0(0x000C) (Config, NeedCtorLink)
+	int                                                DefaultMaxPopulationActorCost;                            // 0x00DC(0x0004) (Config)
+	TArray<struct FLevelStateRecord>                   StateRecords;                                             // 0x00E0(0x000C) (NeedCtorLink)
+	class UAkComponent*                                UIAudioComponent;                                         // 0x00EC(0x0004) (ExportObject, Transient, Component, EditInline)
+	class UGearboxDialogManager*                       TheDialogManager;                                         // 0x00F0(0x0004) (Transient)
 
-public:
-	class UBehaviorKernel* GetBehaviorKernel();
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxGlobals");
+		return ptr;
+	}
+
+
+	static class UBehaviorKernel* GetBehaviorKernel();
 	class UGearboxDialogManager* GetDialogManager();
 	float GetPopulationRespawnDelay();
-	class UIDialogBox* eventShowDialog(class APlayerController* PC);
-	void NotifyActorDied(class AActor* TheActor, unsigned long bKeepBody);
-	bool DoesLOSIntersectSpecialOccluder(struct FVector FromLoc, struct FVector ToLoc, class UPawnAllegiance* AllegianceAffected);
-	bool HasPhysXCapableGPU();
-	unsigned char GetPlatform();
-	bool ValidatePlayerName(unsigned long bReplaceCharacters, struct FString* InName);
-	bool RegisterStateKey(struct FName LevelName, struct FName ObjectName, struct FName AdditionalKey);
-	bool DoesStateKeyExist(struct FName LevelName, struct FName ObjectName, struct FName AdditionalKey);
+	TScriptInterface<class UIDialogBox> ShowDialog(class APlayerController* PC);
+	void NotifyActorDied(class AActor* TheActor, bool bKeepBody);
+	bool DoesLOSIntersectSpecialOccluder(const struct FVector& FromLoc, const struct FVector& ToLoc, class UPawnAllegiance* AllegianceAffected);
+	static bool HasPhysXCapableGPU();
+	static unsigned char GetPlatform();
+	bool ValidatePlayerName(bool bReplaceCharacters, struct FString* InName);
+	bool RegisterStateKey(const struct FName& LevelName, const struct FName& ObjectName, const struct FName& AdditionalKey);
+	bool DoesStateKeyExist(const struct FName& LevelName, const struct FName& ObjectName, const struct FName& AdditionalKey);
 	bool FreeTexture2D(class UTexture2D* Texture);
 	class UTexture2D* GetTexture2D();
 	class UGearboxRenderTextureManager* GetRenderTextureManager();
 	class UGFxMovieManager* GetGFxManager();
 	class UScreenSpaceManager* GetScreenSpaceManager();
 	class UGbxMessageManager* GetMessageManager();
-	void RegDynamicTextureStreaming(class AActor* A, unsigned long bRegister);
+	void RegDynamicTextureStreaming(class AActor* A, bool bRegister);
 	class UGBXActorList* GetDynamicTextureActorList();
 	class UPopulationMaster* GetPopulationMaster();
 	class AWireManager* GetWireManager();
@@ -1729,36 +926,51 @@ public:
 	class URuleEngineLoadBalanceManager* GetRuleEngineLoadBalanceManager();
 	class UGearboxAIFactory* GetGearboxAIFactory();
 	class UExposureUtilityBase* GetExposureUtility();
-	class UGearboxGlobals* GetGearboxGlobals();
+	static class UGearboxGlobals* GetGearboxGlobals();
 };
 
-// UClass* UGearboxGlobals::pClassPointer = NULL;
 
-// 0x0008 (0x0044 - 0x003C)
+// Class GearboxFramework.GearboxGlobalsDefinition
+// 0x000C (0x003C - 0x0048)
 class UGearboxGlobalsDefinition : public UGBXDefinition
 {
 public:
-	float                                              RespawnDelayInSeconds;                            		// 0x003C (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	class UGearboxDialogGlobalsDefinition*             Dialog;                                           		// 0x0040 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	float                                              RespawnDelayInSeconds;                                    // 0x003C(0x0004) (Edit, Const)
+	class UGearboxDialogGlobalsDefinition*             Dialog;                                                   // 0x0040(0x0004) (Edit)
+	class UGFxMovieDefinition*                         EulaMovieDefinition;                                      // 0x0044(0x0004) (Edit, Const)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxGlobalsDefinition");
+		return ptr;
+	}
+
 };
 
-// UClass* UGearboxGlobalsDefinition::pClassPointer = NULL;
 
-// 0x004C (0x0088 - 0x003C)
+// Class GearboxFramework.GearboxLocationRequest
+// 0x004C (0x003C - 0x0088)
 class UGearboxLocationRequest : public UObject
 {
 public:
-	class USearchOrigin*                               SearchOrigin;                                     		// 0x003C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class USearchDirection*                            DirectionFromOrigin;                              		// 0x0040 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class ULocationFilter*                             LocationFilterTest;                               		// 0x0044 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              DirectionCone;                                    		// 0x0048 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	struct FAttributeInitializationData                MinDistanceFromOrigin;                            		// 0x004C (0x0010) [0x0000000000000001]              ( CPF_Edit )
-	struct FAttributeInitializationData                MaxDistanceFromOrigin;                            		// 0x005C (0x0010) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      SearchRandomness;                                 		// 0x006C (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	struct FVector                                     SearchOriginResult;                               		// 0x0070 (0x000C) [0x0000000000000000]
-	struct FVector                                     SearchDirectionResult;                            		// 0x007C (0x000C) [0x0000000000000000]
+	class USearchOrigin*                               SearchOrigin;                                             // 0x003C(0x0004) (Edit)
+	class USearchDirection*                            DirectionFromOrigin;                                      // 0x0040(0x0004) (Edit)
+	class ULocationFilter*                             LocationFilterTest;                                       // 0x0044(0x0004) (Edit)
+	float                                              DirectionCone;                                            // 0x0048(0x0004) (Edit)
+	struct FAttributeInitializationData                MinDistanceFromOrigin;                                    // 0x004C(0x0010) (Edit)
+	struct FAttributeInitializationData                MaxDistanceFromOrigin;                                    // 0x005C(0x0010) (Edit)
+	unsigned char                                      SearchRandomness;                                         // 0x006C(0x0001) (Edit)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x006D(0x0003) MISSED OFFSET
+	struct FVector                                     SearchOriginResult;                                       // 0x0070(0x000C)
+	struct FVector                                     SearchDirectionResult;                                    // 0x007C(0x000C)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxLocationRequest");
+		return ptr;
+	}
+
+
 	struct FVector GetLastDirection();
 	struct FVector GetLastOrigin();
 	bool GetDirection(class AActor* ContextActor, struct FVector* OutDirection);
@@ -1766,108 +978,318 @@ public:
 	bool Get(class AActor* ContextActor, struct FVector* OutLocation);
 };
 
-// UClass* UGearboxLocationRequest::pClassPointer = NULL;
 
-// 0x002C (0x00B4 - 0x0088)
+// Class GearboxFramework.PawnMoveLocationRequest
+// 0x002C (0x0088 - 0x00B4)
 class UPawnMoveLocationRequest : public UGearboxLocationRequest
 {
 public:
-	unsigned long                                      GoToCover : 1;                                    		// 0x0088 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned char                                      CoverSearchFilter;                                		// 0x008C (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      RepathOption;                                     		// 0x008D (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      CoverFailureResponse;                             		// 0x008E (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      DestinationTestNonCover;                          		// 0x008F (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	struct FAttributeInitializationData                RepathDistanceThresh;                             		// 0x0090 (0x0010) [0x0000000000000001]              ( CPF_Edit )
-	class URuleEventDef*                               FailureEvent;                                     		// 0x00A0 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	struct FAttributeInitializationData                OverrideDistanceForCover;                         		// 0x00A4 (0x0010) [0x0000000000000001]              ( CPF_Edit )
+	unsigned long                                      GoToCover : 1;                                            // 0x0088(0x0004) (Edit)
+	unsigned char                                      CoverSearchFilter;                                        // 0x008C(0x0001) (Edit)
+	unsigned char                                      RepathOption;                                             // 0x008D(0x0001) (Edit)
+	unsigned char                                      CoverFailureResponse;                                     // 0x008E(0x0001) (Edit)
+	unsigned char                                      DestinationTestNonCover;                                  // 0x008F(0x0001) (Edit)
+	struct FAttributeInitializationData                RepathDistanceThresh;                                     // 0x0090(0x0010) (Edit)
+	class URuleEventDef*                               FailureEvent;                                             // 0x00A0(0x0004) (Edit)
+	struct FAttributeInitializationData                OverrideDistanceForCover;                                 // 0x00A4(0x0010) (Edit)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PawnMoveLocationRequest");
+		return ptr;
+	}
+
+
 	bool Get(class AActor* ContextActor, struct FVector* OutLocation);
 };
 
-// UClass* UPawnMoveLocationRequest::pClassPointer = NULL;
 
-// 0x006C (0x06FC - 0x0690)
+// Class GearboxFramework.GearboxPawn
+// 0x006C (0x0694 - 0x0700)
 class AGearboxPawn : public AGamePawn
 {
 public:
-	struct FPointer                                    VfTable_ISpecialMoveInterface;                    		// 0x0690 (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-	struct FPointer                                    VfTable_IGearboxDialogInterface;                  		// 0x0694 (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-	struct FName                                       NPCSightBone;                                     		// 0x0698 (0x0008) [0x0000000000000000]
-	unsigned long                                      bWantsToMove : 1;                                 		// 0x06A0 (0x0004) [0x0000000000000000] [0x00000001]
-	class USpecialMoveComponent*                       SMComponent;                                      		// 0x06A4 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
-	struct FReplicatedSpecialMoveData                  ReplicatedSMData;                                 		// 0x06A8 (0x0014) [0x0000000000000020]              ( CPF_Net )
-	struct FFlag                                       HasBeenShotAtRecently;                            		// 0x06BC (0x0010) [0x0000000000002000]              ( CPF_Transient )
-	struct FGearboxCoverState                          CoverState;                                       		// 0x06CC (0x000C) [0x0000000000002020]              ( CPF_Net | CPF_Transient )
-	class UGearboxCoverStateManager*                   CoverManager;                                     		// 0x06D8 (0x0004) [0x0000000004402008]              ( CPF_ExportObject | CPF_Transient | CPF_NeedCtorLink | CPF_EditInline )
-	class UGearboxDialogComponent*                     DialogComponent;                                  		// 0x06DC (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
-	struct FGearboxDialogReplicatedData                DialogReplicatedData;                             		// 0x06E0 (0x0014) [0x0000000000000020]              ( CPF_Net )
-	struct FAkPlayingInfo                              DyingScream;                                      		// 0x06F4 (0x0008) [0x0000000000082000]              ( CPF_Transient | CPF_Component )
+	struct FPointer                                    VfTable_ISpecialMoveInterface;                            // 0x0694(0x0004) (Const, Native, NoExport)
+	struct FPointer                                    VfTable_IGearboxDialogInterface;                          // 0x0698(0x0004) (Const, Native, NoExport)
+	struct FName                                       NPCSightBone;                                             // 0x069C(0x0008)
+	unsigned long                                      bWantsToMove : 1;                                         // 0x06A4(0x0004)
+	class USpecialMoveComponent*                       SMComponent;                                              // 0x06A8(0x0004) (ExportObject, Component, EditInline)
+	struct FReplicatedSpecialMoveData                  ReplicatedSMData;                                         // 0x06AC(0x0014) (Net, RepNotify)
+	struct FFlag                                       HasBeenShotAtRecently;                                    // 0x06C0(0x0010) (Transient)
+	struct FGearboxCoverState                          CoverState;                                               // 0x06D0(0x000C) (Net, Transient, RepNotify, RepRetry)
+	class UGearboxCoverStateManager*                   CoverManager;                                             // 0x06DC(0x0004) (ExportObject, Transient, NeedCtorLink, EditInline)
+	class UGearboxDialogComponent*                     DialogComponent;                                          // 0x06E0(0x0004) (ExportObject, Component, EditInline)
+	struct FGearboxDialogReplicatedData                DialogReplicatedData;                                     // 0x06E4(0x0014) (Net, RepNotify)
+	struct FAkPlayingInfo                              DyingScream;                                              // 0x06F8(0x0008) (Transient, Component)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxPawn");
+		return ptr;
+	}
+
+
 	struct FVector GetAimDirection();
 	void SetDialogNameTag(class UGearboxDialogNameTag* NewName);
-	void eventServerDialog_TriggerEvent(class UGearboxDialogEventTag* EventTag, class AActor* Other, class UObject* ObjectParameter);
+	void ServerDialog_TriggerEvent(class UGearboxDialogEventTag* EventTag, class AActor* Other, class UObject* ObjectParameter);
 	struct FGearboxDialogReplicatedData GetReplicatedDialogData();
 	void SetReplicatedDialogData(class UGearboxDialogAct_Talk* TalkAct, struct FGearboxDialogData* Data);
-	void GetDialogGroups(TArray< class UGearboxDialogGroup* >* Groups);
+	void GetDialogGroups(TArray<class UGearboxDialogGroup*>* Groups);
 	class UGearboxDialogComponent* GetDialogComponent();
 	class UGearboxDialogNameTag* GetDialogNameTag();
 	bool CanTalk();
 	void OnCoverStateChanged();
-	void ServerSetCoverState(struct FGearboxCoverState NewCoverState);
-	void eventSetCoverState(struct FGearboxCoverState NewCoverState);
+	void ServerSetCoverState(const struct FGearboxCoverState& NewCoverState);
+	void SetCoverState(const struct FGearboxCoverState& NewCoverState);
 	float GetMountAnimDistanceForSpeed(unsigned char TheSpeed, unsigned char CoverHeight, unsigned char CoverDir);
-	struct FVector eventGetSpotOthersShouldLookAt();
+	struct FVector GetSpotOthersShouldLookAt();
 	void SetReplicatedSMData(struct FSpecialMoveData* NewSMData);
-	void eventServerSpecialMove_StopAny();
-	void eventServerSpecialMove_Stop(class USpecialMoveDefinition* OldSMD);
-	void eventServerSpecialMove_Queue(class USpecialMoveDefinition* NewSMD, float PlayRateScale, float Duration, struct FName CallbackName, class UObject* CallbackObject, class UObject* Data);
-	void eventServerSpecialMove_Play(class USpecialMoveDefinition* NewSMD, float PlayRateScale, float Duration, struct FName CallbackName, class UObject* CallbackObject, class UObject* Data);
+	void ServerSpecialMove_StopAny();
+	void ServerSpecialMove_Stop(class USpecialMoveDefinition* OldSMD);
+	void ServerSpecialMove_Queue(class USpecialMoveDefinition* NewSMD, float PlayRateScale, float Duration, const struct FName& CallbackName, class UObject* CallbackObject, class UObject* Data);
+	void ServerSpecialMove_Play(class USpecialMoveDefinition* NewSMD, float PlayRateScale, float Duration, const struct FName& CallbackName, class UObject* CallbackObject, class UObject* Data);
 	unsigned char GetDefaultRootMotionRotationMode();
 	unsigned char GetDefaultRootMotionMode();
 	class USkeletalMeshComponent* GetSkelMesh();
 	class USpecialMoveComponent* GetSMComponent();
 	class AActor* GetActor();
 	class UGearboxNavigationHandle* GetNavigationHandle();
-	void PlayHit(class APawn* SomePawn, struct FVector HitLocation, class UClass* DamageType, struct FVector Momentum, struct FTraceHitInfo HitInfo, class UDamagePipeline* Pipeline);
-	void eventReplicatedEvent(struct FName VarName);
-	bool Died(class AController* Killer, class UClass* DamageType, struct FVector HitLocation, class UDamagePipeline* Pipeline);
+	void PlayHit(class APawn* SomePawn, const struct FVector& HitLocation, class UClass* DamageType, const struct FVector& Momentum, const struct FTraceHitInfo& HitInfo, class UDamagePipeline* Pipeline);
+	void ReplicatedEvent(const struct FName& VarName);
+	bool Died(class AController* Killer, class UClass* DamageType, const struct FVector& HitLocation, class UDamagePipeline* Pipeline);
 	void SetMovementPhysics();
-	void eventPostBeginPlay();
+	void PostBeginPlay();
 	void NotifyShotAtBy(class AGearboxPawn* ShootingPawn);
 	bool HaveIBeenShotAtRecently();
 };
 
-// UClass* AGearboxPawn::pClassPointer = NULL;
 
-// 0x00F8 (0x09F4 - 0x08FC)
+// Class GearboxFramework.SparkTypes
+// 0x003C (0x003C - 0x0078)
+class USparkTypes : public UObject
+{
+public:
+	struct FScriptDelegate                             __OnSparkRequestComplete__Delegate;                       // 0x003C(0x000C) (NeedCtorLink)
+	struct FScriptDelegate                             __OnSparkConfigReceived__Delegate;                        // 0x0048(0x000C) (NeedCtorLink)
+	struct FScriptDelegate                             __OnSparkInitialized__Delegate;                           // 0x0054(0x000C) (NeedCtorLink)
+	struct FScriptDelegate                             __OnSparkEmergencyMessageUpdated__Delegate;               // 0x0060(0x000C) (NeedCtorLink)
+	struct FScriptDelegate                             __OnEntitlementsUpdated__Delegate;                        // 0x006C(0x000C) (NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SparkTypes");
+		return ptr;
+	}
+
+
+	static struct FString UTF8toString(TArray<unsigned char> inputBytes);
+	void OnEntitlementsUpdated(class UGearboxAccountData* GbxAccount);
+	void OnSparkEmergencyMessageUpdated();
+	void OnSparkInitialized(unsigned char InitializedResult);
+	void OnSparkConfigReceived(TArray<unsigned char> ConfigArray);
+	void OnSparkRequestComplete(struct FSparkResult* Result);
+};
+
+
+// Class GearboxFramework.SparkInterface
+// 0x0000 (0x003C - 0x003C)
+class USparkInterface : public UInterface
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SparkInterface");
+		return ptr;
+	}
+
+
+	void RemoveScriptCallback(int HttpRequestId);
+	class USparkNews* GetNewsService();
+	class USparkServiceConfiguration* GetTitleStorageServiceConfiguration();
+	struct FString GetTitleStorageUrl();
+	void ClearGearboxAccountData(bool IncludePrimaryPlayer);
+	void SignOutGearboxAccount(unsigned char ControllerId);
+	void SignInGearboxAccount(unsigned char ControllerId);
+	class UGearboxAccountData* GetGearboxAccountData(unsigned char ControllerId);
+	bool IsGearboxAccountAuthenticated(unsigned char ControllerId);
+	bool IsGearboxAccountSignedIn(unsigned char ControllerId);
+	struct FString ConvertUtcTimeToLocalTime(const struct FString& UtcTime);
+	bool ShouldUpdateEmergencyMessage();
+	struct FString GetEmergencyMessage();
+	void SetEmergencyMessage(const struct FString& Message);
+	struct FString GetPlatformLoginNameFromSplitscreenIndex(int SplitscreenIndex);
+	struct FString GetPlatformLoginNameFromController(unsigned char ControllerId);
+	void IncreaseInteractionTries();
+	int GetInteractionTries();
+	int GetInteractionGraceTries();
+	int GetInteractionPunishmentMinWaitSeconds();
+	int GetInteractionMinWaitSeconds();
+	bool IsTmsComplete();
+	void SetTmsComplete();
+	class USparkInitializationProcess* GetSparkInitialization();
+	void RestartSparkInitialization(bool bPrimary);
+	void RestartSparkInitializationFromScript(bool bPrimary, const struct FScriptDelegate& SparkInitializedDelegate, const struct FScriptDelegate& SparkEmergencyMessageDelegate);
+	void StartSparkInitialization(unsigned char ControllerId, const struct FScriptDelegate& SparkInitializedDelegate, const struct FScriptDelegate& SparkEmergencyMessageDelegate, const struct FScriptDelegate& EntitlementsUpdatedDelegate);
+	void StartSecondaryInitialization(unsigned char ControllerId, const struct FScriptDelegate& SparkInitializedDelegate, const struct FScriptDelegate& EntitlementsUpdatedDelegate);
+	struct FString GetGameName();
+	struct FString GetHardwareName();
+	struct FString GetPlatformName();
+	struct FString GetPlatformTicket(int ControllerId, bool bPrimary);
+	void ClearSparkConfigReceivedDelegate(const struct FScriptDelegate& SparkConfigReceivedDelegate);
+	void AddSparkConfigReceivedDelegate(const struct FScriptDelegate& SparkConfigReceivedDelegate);
+	void ResetInitializationStatus();
+	bool IsSparkEnabled();
+	int IssueSparkStringRequest(const struct FString& URL, const struct FString& RequestData, const struct FScriptDelegate& SparkRequestCompleteDelegate, struct FHttpParameters* HttpRequestParameters);
+	int IssueSparkRequest(const struct FString& URL, const struct FScriptDelegate& SparkRequestCompleteDelegate, struct FHttpParameters* HttpRequestParameters, TArray<unsigned char>* RequestData);
+};
+
+
+// Class GearboxFramework.GearboxAccountData
+// 0x0064 (0x003C - 0x00A0)
+class UGearboxAccountData : public UObject
+{
+public:
+	struct FString                                     RequestId;                                                // 0x003C(0x000C) (NeedCtorLink)
+	unsigned long                                      SignedIn : 1;                                             // 0x0048(0x0004)
+	unsigned long                                      HasValidPlatform : 1;                                     // 0x0048(0x0004)
+	struct FString                                     PlatformLoginName;                                        // 0x004C(0x000C) (NeedCtorLink)
+	struct FDouble                                     NextEntitlementUpdateTime;                                // 0x0058(0x0008)
+	TArray<class UGearboxAccountEntitlement*>          Entitlements;                                             // 0x0060(0x000C) (NeedCtorLink)
+	TArray<class UGearboxAccountOffer*>                Offers;                                                   // 0x006C(0x000C) (NeedCtorLink)
+	TArray<struct FScriptDelegate>                     EntitlementsUpdatedDelegates;                             // 0x0078(0x000C) (NeedCtorLink)
+	TArray<class USparkServiceConfiguration*>          Services;                                                 // 0x0084(0x000C) (NeedCtorLink)
+	unsigned char                                      AgreementsSigning;                                        // 0x0090(0x0001)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0091(0x0003) MISSED OFFSET
+	struct FString                                     SupportId;                                                // 0x0094(0x000C) (AlwaysInit, NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxAccountData");
+		return ptr;
+	}
+
+
+	bool HasSignedAllEulas();
+	int CountEntitlement(const struct FName& EntitlementName, bool bIgnoreLocallyConsumed);
+	int GetTotalGoldenKeyCount();
+	int GetGoldenKeyCount(bool bIgnoreLocallyConsumed);
+	bool HasGoldenKey(bool bIgnoreLocallyConsumed);
+	bool HasDeveloperSkin();
+	bool IsDeveloper();
+	void MarkOffersNotified();
+	TArray<class UGearboxAccountOffer*> GetUnnotifiedOffers();
+	class UGearboxAccountEntitlement* GetEntitlementWithName(const struct FName& EntitlementName);
+	class UGearboxAccountEntitlement* GetEntitlementWithId(int Id);
+	bool HasEntitlement(const struct FName& EntitlementName, bool bIgnoreLocallyConsumed);
+	void RemoveEntitlement(class UGearboxAccountEntitlement* Entitlement);
+	void ReplaceEntitlements(TArray<struct FEntitlementResult>* NewEntitlements, TArray<struct FOfferResult>* NewOffers);
+	void ReplaceServices(TArray<struct FServiceResult>* NewServices);
+	void HandleReloadEntitlementsResponse(struct FSparkResult* Result);
+	bool ReloadEntitlements();
+	void ResetEntitlementUpdateTimer();
+	bool CanReloadEntitlements();
+	void TriggerEntitlementsUpdatedDelegates();
+	void ClearEntitlementsUpdatedDelegate(const struct FScriptDelegate& EntitlementsUpdatedDelegate);
+	void AddEntitlementsUpdatedDelegate(const struct FScriptDelegate& EntitlementsUpdatedDelegate);
+	class USparkServiceConfiguration* GetService(const struct FName& ServiceName);
+	void Clear();
+	static bool ExtractArchwayResultJson(TArray<unsigned char>* Data, struct FArchwayResult* ArchwayData);
+	static bool ExtractArchwayResult(TArray<unsigned char>* Data, struct FArchwayResult* ArchwayData);
+};
+
+
+// Class GearboxFramework.GearboxAccountActions
+// 0x006C (0x003C - 0x00A8)
+class UGearboxAccountActions : public UObject
+{
+public:
+	int                                                CurrentConsumeCount;                                      // 0x003C(0x0004)
+	unsigned char                                      CurrentControllerId;                                      // 0x0040(0x0001)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0041(0x0003) MISSED OFFSET
+	class UGearboxAccountEntitlement*                  CurrentEntitlement;                                       // 0x0044(0x0004)
+	TArray<class UGearboxAccountEntitlement*>          CurrentBulkConsumeEntitlements;                           // 0x0048(0x000C) (NeedCtorLink)
+	TArray<int>                                        CurrentBulkConsumeControllerIds;                          // 0x0054(0x000C) (NeedCtorLink)
+	TArray<int>                                        CurrentBulkConsumeCounts;                                 // 0x0060(0x000C) (NeedCtorLink)
+	struct FScriptDelegate                             __OnSignInGearboxAccount__Delegate;                       // 0x006C(0x000C) (NeedCtorLink)
+	struct FScriptDelegate                             __OnSignUpGearboxAccount__Delegate;                       // 0x0078(0x000C) (NeedCtorLink)
+	struct FScriptDelegate                             __OnResetPasswordGearboxAccount__Delegate;                // 0x0084(0x000C) (NeedCtorLink)
+	struct FScriptDelegate                             __OnCodeRedeemed__Delegate;                               // 0x0090(0x000C) (NeedCtorLink)
+	struct FScriptDelegate                             __OnEntitlementConsumed__Delegate;                        // 0x009C(0x000C) (NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxAccountActions");
+		return ptr;
+	}
+
+
+	void HandleEULAInteractionCompleteResponse(struct FSparkResult* Result);
+	void HandleEULAInteractionComplete(unsigned char ControllerId, TArray<struct FEULAData>* EULAState);
+	void HandleEULAChainResponse(struct FSparkResult* Result);
+	int ReadEULAChain(unsigned char ControllerId, bool bAllowRetries);
+	void HandleOffersNotifiedResponse(struct FSparkResult* Result);
+	void HandleBulkEntitlementsConsumedResponse(struct FSparkResult* Result);
+	void HandleEntitlementConsumedResponse(struct FSparkResult* Result);
+	void HandleCodeRedeemedResponse(struct FSparkResult* Result);
+	void HandleResetPasswordResponse(struct FSparkResult* Result);
+	void HandleSignUpResponse(struct FSparkResult* Result);
+	void HandleSignInResponse(struct FSparkResult* Result);
+	struct FArchwayResult ExtractArchwayResult(TArray<unsigned char> Data);
+	void MarkOffersNotified(unsigned char ControllerId);
+	bool LocallyConsumeEntitlementWithCount(const struct FName& EntitlementName, int NumToConsume, unsigned char ControllerId);
+	void ConsumeEntitlementsWithCounts(TArray<class UGearboxAccountEntitlement*> EntitlementsToConsume, TArray<int> Counts, unsigned char ControllerId, const struct FScriptDelegate& EntitlementConsumedDelegate);
+	void ConsumeEntitlementWithCount(const struct FName& EntitlementName, int Count, unsigned char ControllerId, const struct FScriptDelegate& EntitlementConsumedDelegate);
+	void RedeemCode(const struct FString& Code, unsigned char ControllerId, const struct FScriptDelegate& CodeRedeemedDelegate);
+	void ResetPasswordGearboxAccount(const struct FString& Email, unsigned char ControllerId, const struct FScriptDelegate& ResetPasswordDelegate);
+	struct FString EscapeJson(const struct FString& Input);
+	void SignUpGearboxAccount(const struct FString& Email, const struct FString& Password, const struct FString& PasswordConfirm, const struct FString& AgeString, unsigned char ControllerId, const struct FScriptDelegate& SignUpDelegate);
+	void SignInGearboxAccount(const struct FString& Email, const struct FString& Password, unsigned char ControllerId, const struct FScriptDelegate& SignInDelegate);
+	void OnEntitlementConsumed(unsigned char ConsumeResult);
+	void OnCodeRedeemed(unsigned char RedeemResult, const struct FString& CustomTitle, const struct FString& CustomBody);
+	void OnResetPasswordGearboxAccount(unsigned char ResetResult);
+	void OnSignUpGearboxAccount(unsigned char SignUpResult);
+	void OnSignInGearboxAccount(unsigned char SignInResult);
+};
+
+
+// Class GearboxFramework.GearboxPlayerController
+// 0x00F8 (0x08FC - 0x09F4)
 class AGearboxPlayerController : public AGamePlayerController
 {
 public:
-	struct FGearboxViewShakeInfo                       CurrentViewShake;                                 		// 0x08FC (0x0044) [0x0000000000000000]
-	struct FGearboxViewShakeInfo                       BaseDamageShake;                                  		// 0x0940 (0x0044) [0x0000000000000000]
-	struct FVector                                     ShakeOffset;                                      		// 0x0984 (0x000C) [0x0000000000000000]
-	struct FRotator                                    ShakeRot;                                         		// 0x0990 (0x000C) [0x0000000000000000]
-	float                                              ShakeFOV;                                         		// 0x099C (0x0004) [0x0000000000000000]
-	unsigned long                                      bWantsToShowStorageMenu : 1;                      		// 0x09A0 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
-	unsigned long                                      bShouldCheckForProfileDeviceRemoval : 1;          		// 0x09A0 (0x0004) [0x0000000000006000] [0x00000002] ( CPF_Transient | CPF_Config )
-	class UAIDebugCamera*                              AIDebugCam;                                       		// 0x09A4 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class AGearboxPawn*                                PreviousDebugPawn;                                		// 0x09A8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UClass*                                      AIDebugCamClass;                                  		// 0x09AC (0x0004) [0x0000000000000000]
-	float                                              DamageShakeMagnitudeMultiplier;                   		// 0x09B0 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	float                                              DamageShakeMagnitudeMultiplierBaseValue;          		// 0x09B4 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	TArray< class UAttributeModifier* >                DamageShakeMagnitudeMultiplierModifierStack;      		// 0x09B8 (0x000C) [0x0000000000402002]              ( CPF_Const | CPF_Transient | CPF_NeedCtorLink )
-	float                                              DamageShakeTimeMultiplier;                        		// 0x09C4 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	float                                              DamageShakeTimeMultiplierBaseValue;               		// 0x09C8 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	TArray< class UAttributeModifier* >                DamageShakeTimeMultiplierModifierStack;           		// 0x09CC (0x000C) [0x0000000000402002]              ( CPF_Const | CPF_Transient | CPF_NeedCtorLink )
-	class ULeviathanChannel*                           LeviathanReplicationChannel;                      		// 0x09D8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FGuid                                       PlaySessionGuid;                                  		// 0x09DC (0x0010) [0x0000000000002000]              ( CPF_Transient )
-	int                                                SessionBundleNumber;                              		// 0x09EC (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UGearboxProfileSettings*                     CachedProfileSettings;                            		// 0x09F0 (0x0004) [0x0000000000000000]
+	struct FGearboxViewShakeInfo                       CurrentViewShake;                                         // 0x08FC(0x0044)
+	struct FGearboxViewShakeInfo                       BaseDamageShake;                                          // 0x0940(0x0044)
+	struct FVector                                     ShakeOffset;                                              // 0x0984(0x000C)
+	struct FRotator                                    ShakeRot;                                                 // 0x0990(0x000C)
+	float                                              ShakeFOV;                                                 // 0x099C(0x0004)
+	unsigned long                                      bWantsToShowStorageMenu : 1;                              // 0x09A0(0x0004) (Transient)
+	unsigned long                                      bShouldCheckForProfileDeviceRemoval : 1;                  // 0x09A0(0x0004) (Transient, Config)
+	class UAIDebugCamera*                              AIDebugCam;                                               // 0x09A4(0x0004) (Transient)
+	class AGearboxPawn*                                PreviousDebugPawn;                                        // 0x09A8(0x0004) (Transient)
+	class UClass*                                      AIDebugCamClass;                                          // 0x09AC(0x0004)
+	float                                              DamageShakeMagnitudeMultiplier;                           // 0x09B0(0x0004) (Transient)
+	float                                              DamageShakeMagnitudeMultiplierBaseValue;                  // 0x09B4(0x0004) (Const)
+	TArray<class UAttributeModifier*>                  DamageShakeMagnitudeMultiplierModifierStack;              // 0x09B8(0x000C) (Const, Transient, NeedCtorLink)
+	float                                              DamageShakeTimeMultiplier;                                // 0x09C4(0x0004) (Transient)
+	float                                              DamageShakeTimeMultiplierBaseValue;                       // 0x09C8(0x0004) (Const)
+	TArray<class UAttributeModifier*>                  DamageShakeTimeMultiplierModifierStack;                   // 0x09CC(0x000C) (Const, Transient, NeedCtorLink)
+	class ULeviathanChannel*                           LeviathanReplicationChannel;                              // 0x09D8(0x0004) (Transient)
+	struct FGuid                                       PlaySessionGuid;                                          // 0x09DC(0x0010) (Transient)
+	int                                                SessionBundleNumber;                                      // 0x09EC(0x0004) (Transient)
+	class UGearboxProfileSettings*                     CachedProfileSettings;                                    // 0x09F0(0x0004)
 
-public:
-	int RequestTitleStorageFile(struct FString Filename, struct FScriptDelegate TitleStorageRequestCompleteDelegate, unsigned char AcceptsType, struct FString CustomAcceptsType);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxPlayerController");
+		return ptr;
+	}
+
+
+	bool CanPlayOnline();
+	void DisplayShiftCommunicationFailedDialog();
+	void ShowEULAScreen(TArray<struct FEULAData>* EulaChain);
+	int RequestTitleStorageFile(const struct FString& Filename, const struct FScriptDelegate& TitleStorageRequestCompleteDelegate, unsigned char AcceptsType, const struct FString& CustomAcceptsType);
 	void ShowSparkID();
 	bool ShouldCheckRemoteControlCheckbox(unsigned char CheckBoxName, class AHUD* HUD);
 	void DisplayDebugSpark(class AHUD* HUD, float* out_YL, float* out_YPos);
@@ -1883,56 +1305,56 @@ public:
 	void AIDebugPrevSnapshot();
 	void ainext();
 	void aiprev();
-	void AINextRule(unsigned long bSkipContainers);
-	void AIPrevRule(unsigned long bSkipContainers);
+	void AINextRule(bool bSkipContainers);
+	void AIPrevRule(bool bSkipContainers);
 	void AIDebugSetPawn(class AGearboxPawn* NewPawn);
-	void AIDebugSetPawnByName(struct FName NewPawnName);
+	void AIDebugSetPawnByName(const struct FName& NewPawnName);
 	void debugpawn();
-	void aisetp(struct FName NewPawnName);
+	void aisetp(const struct FName& NewPawnName);
 	void NotifyGameUnPaused();
 	void NotifyGamePaused();
 	void SetSettingsFromProfile();
 	int GetStorageDeviceID();
 	void SetStorageDeviceID(int DeviceID);
-	void NotifyDeviceSelectComplete(unsigned long bWasSuccessful);
-	void eventDisplayStorageRemovedMenu();
+	void NotifyDeviceSelectComplete(bool bWasSuccessful);
+	void DisplayStorageRemovedMenu();
 	void DisplayProfileRemovedMenu();
-	void NotifyProfileWriteFromStorageChangeComplete(unsigned char LocalUser, unsigned long bWasSuccessful);
+	void NotifyProfileWriteFromStorageChangeComplete(unsigned char LocalUser, bool bWasSuccessful);
 	bool IsCurrentStorageDeviceValid();
 	void NotifyStorageDeviceChange();
-	void eventDestroyOnlineGame();
-	void ReturnToTitleScreen(unsigned long bSkipSave, unsigned long bRemoveSplitPlayer);
+	void DestroyOnlineGame();
+	void ReturnToTitleScreen(bool bSkipSave, bool bRemoveSplitPlayer);
 	struct FString GetConnectionFailureNoticeMsg();
 	struct FString GetMainMenuMapName();
-	void NotifyLinkStatusChange(unsigned long bIsConnected);
-	void NotifyLoginStatusChange(unsigned char NewStatus, struct FUniqueNetId NewId);
+	void NotifyLinkStatusChange(bool bIsConnected);
+	void NotifyLoginStatusChange(unsigned char NewStatus, const struct FUniqueNetId& NewId);
 	void NotifyLoginChange(unsigned char LocalUserNum);
-	void OnReadProfileSettingsComplete(unsigned char LocalUserNum, unsigned long bWasSuccessful);
+	void OnReadProfileSettingsComplete(unsigned char LocalUserNum, bool bWasSuccessful);
 	void OnReceivedNewProfile();
 	void ClearOnlineDelegates();
 	void RegisterOnlineDelegates();
-	void OnProfileWriteComplete(unsigned char LocalUserNum, unsigned long bWasSuccessful);
+	void OnProfileWriteComplete(unsigned char LocalUserNum, bool bWasSuccessful);
 	void HidePS3WritingProfileDialog();
 	void ShowPS3WritingProfileDialog();
-	bool eventWriteProfile(unsigned long bShouldShowProfileDialog);
-	class UGearboxProfileSettings* eventGetProfileSettings();
+	bool WriteProfile(bool bShouldShowProfileDialog);
+	class UGearboxProfileSettings* GetProfileSettings();
 	unsigned char GetMyControllerId();
-	void eventReadProfile();
+	void ReadProfile();
 	void UnregisterPlayerDataStores();
 	void RegisterCustomPlayerDataStores();
-	void SetDataStoreStringValue(struct FString MarkupString, struct FString NewValue);
-	struct FString GetDataStoreStringValue(struct FString MarkupString);
-	void eventClientKeepPlayingLoadingMovie();
+	void SetDataStoreStringValue(const struct FString& MarkupString, const struct FString& NewValue);
+	struct FString GetDataStoreStringValue(const struct FString& MarkupString);
+	void ClientKeepPlayingLoadingMovie();
 	void ClientResetCamera();
-	void eventSpawnPlayerCamera();
-	void eventInitInputSystem();
+	void SpawnPlayerCamera();
+	void InitInputSystem();
 	void NoTargetAll();
 	void NoTarget();
-	bool GetNoTargetPlayers();
-	void SetNoTargetPlayers(unsigned long bNoTarget);
-	void Possess(class APawn* aPawn, unsigned long bVehicleTransition);
-	void DontTarget(unsigned long bModeFlag);
-	void ClientConsoleCommand(struct FString Command);
+	static bool GetNoTargetPlayers();
+	static void SetNoTargetPlayers(bool bNoTarget);
+	void Possess(class APawn* aPawn, bool bVehicleTransition);
+	void DontTarget(bool bModeFlag);
+	void ClientConsoleCommand(const struct FString& Command);
 	bool IsPlayerAllowingActiveMoment();
 	bool IsActiveMomentRunning();
 	void ViewShake(float DeltaTime);
@@ -1940,691 +1362,1106 @@ public:
 	void CheckShake(float Time, float* MaxOffset, float* Offset, float* Rate);
 	void StopViewShaking();
 	void OnCameraShake(class UGearboxSeqAct_CameraShake* ShakeAction);
-	void ShakeView(struct FGearboxViewShakeInfo NewViewShake);
+	void ShakeView(const struct FGearboxViewShakeInfo& NewViewShake);
 	void ClientDamageShake(int Damage);
-	void ConsoleEcho(struct FString Text, unsigned long bLogOutput);
-	void initialize();
+	void ConsoleEcho(const struct FString& Text, bool bLogOutput);
+	void Initialize();
 	void PostBeginPlay();
 	void TryAndSpawnLeviathanChannel(class UNetConnection* Connection);
 	void GenerateNewSessionGuid();
 };
 
-// UClass* AGearboxPlayerController::pClassPointer = NULL;
 
+// Class GearboxFramework.GearboxPlayerInput
 // 0x0000 (0x017C - 0x017C)
 class UGearboxPlayerInput : public UPlayerInput
 {
 public:
-	void eventPlayerInput(float DeltaTime);
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxPlayerInput");
+		return ptr;
+	}
+
+
+	void PlayerInput(float DeltaTime);
 };
 
-// UClass* UGearboxPlayerInput::pClassPointer = NULL;
 
-// 0x0008 (0x025C - 0x0254)
+// Class GearboxFramework.GearboxPlayerReplicationInfo
+// 0x0008 (0x0254 - 0x025C)
 class AGearboxPlayerReplicationInfo : public APlayerReplicationInfo
 {
 public:
-	unsigned char                                      Difficulty;                                       		// 0x0254 (0x0001) [0x0000000000000020]              ( CPF_Net )
-	int                                                Dummy;                                            		// 0x0258 (0x0004) [0x0000000000000000]
+	unsigned char                                      Difficulty;                                               // 0x0254(0x0001) (Net)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0255(0x0003) MISSED OFFSET
+	int                                                Dummy;                                                    // 0x0258(0x0004)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxPlayerReplicationInfo");
+		return ptr;
+	}
+
 };
 
-// UClass* AGearboxPlayerReplicationInfo::pClassPointer = NULL;
 
+// Class GearboxFramework.GearboxProfileSettings
 // 0x0000 (0x0098 - 0x0098)
-class UGearboxProfileSettings : public UOnlineProfileSettings {};
+class UGearboxProfileSettings : public UOnlineProfileSettings
+{
+public:
 
-// UClass* UGearboxProfileSettings::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxProfileSettings");
+		return ptr;
+	}
 
-// 0x003C (0x0078 - 0x003C)
+};
+
+
+// Class GearboxFramework.GearboxRenderTextureManager
+// 0x003C (0x003C - 0x0078)
 class UGearboxRenderTextureManager : public UObject
 {
 public:
-	TArray< class UTexture2D* >                        FreeList2D;                                       		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< class UTextureRenderTarget2D* >            FreeList;                                         		// 0x0048 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	float                                              HoldDuration;                                     		// 0x0054 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              TimeToNextTick;                                   		// 0x0058 (0x0004) [0x0000000000000000]
-	TArray< struct FThumbnailRenderData >              Thumbnails;                                       		// 0x005C (0x000C) [0x0000000000480000]              ( CPF_Component | CPF_NeedCtorLink )
-	TArray< struct FThumbnailLightData >               DefaultLights;                                    		// 0x0068 (0x000C) [0x0000000000480000]              ( CPF_Component | CPF_NeedCtorLink )
-	float                                              ThumbnailTextureArea;                             		// 0x0074 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	TArray<class UTexture2D*>                          FreeList2D;                                               // 0x003C(0x000C) (NeedCtorLink)
+	TArray<class UTextureRenderTarget2D*>              FreeList;                                                 // 0x0048(0x000C) (NeedCtorLink)
+	float                                              HoldDuration;                                             // 0x0054(0x0004) (Const)
+	float                                              TimeToNextTick;                                           // 0x0058(0x0004)
+	TArray<struct FThumbnailRenderData>                Thumbnails;                                               // 0x005C(0x000C) (Component, NeedCtorLink)
+	TArray<struct FThumbnailLightData>                 DefaultLights;                                            // 0x0068(0x000C) (Component, NeedCtorLink)
+	float                                              ThumbnailTextureArea;                                     // 0x0074(0x0004) (Const)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxRenderTextureManager");
+		return ptr;
+	}
+
+
 	void SetThumbnailMesh(class UTexture* Texture, class UMeshComponent* Mesh);
-	void FreeContext(struct FName Context);
+	void FreeContext(const struct FName& Context);
 	void FreeThumbnail(class UTexture* Texture);
-	class UTexture* GetThumbnail(struct FName Context, int TextureSizeX, int TextureSizeY, unsigned char UpdateType, int SizeX, int SizeY);
+	class UTexture* GetThumbnail(const struct FName& Context, int TextureSizeX, int TextureSizeY, unsigned char UpdateType, int SizeX, int SizeY);
 	bool FreeTexture2D(class UTexture2D* Texture);
 	class UTexture2D* GetTexture2D();
 	bool FreeRenderTexture(class UTextureRenderTarget2D* Texture);
-	class UTextureRenderTarget2D* GetRenderTexture(int InSizeX, int InSizeY, unsigned long bNeedsTwoCopies);
+	class UTextureRenderTarget2D* GetRenderTexture(int InSizeX, int InSizeY, bool bNeedsTwoCopies);
 };
 
-// UClass* UGearboxRenderTextureManager::pClassPointer = NULL;
 
-// 0x001C (0x00D0 - 0x00B4)
+// Class GearboxFramework.GearboxSeqAct_DestroyPopulationActors
+// 0x001C (0x00B4 - 0x00D0)
 class UGearboxSeqAct_DestroyPopulationActors : public USeqAct_Latent
 {
 public:
-	unsigned long                                      SaveDestroyedActors : 1;                          		// 0x00B4 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      DisablePopulationSpawners : 1;                    		// 0x00B4 (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
-	unsigned long                                      bActorsDestroyed : 1;                             		// 0x00B4 (0x0004) [0x0000000000000000] [0x00000004]
-	TArray< class APopulationOpportunity* >            Opportunities;                                    		// 0x00B8 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	TArray< class APopulationEncounter* >              Encounters;                                       		// 0x00C4 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	unsigned long                                      SaveDestroyedActors : 1;                                  // 0x00B4(0x0004) (Edit)
+	unsigned long                                      DisablePopulationSpawners : 1;                            // 0x00B4(0x0004) (Edit)
+	unsigned long                                      bActorsDestroyed : 1;                                     // 0x00B4(0x0004)
+	TArray<class APopulationOpportunity*>              Opportunities;                                            // 0x00B8(0x000C) (Edit, NeedCtorLink)
+	TArray<class APopulationEncounter*>                Encounters;                                               // 0x00C4(0x000C) (Edit, NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxSeqAct_DestroyPopulationActors");
+		return ptr;
+	}
+
 };
 
-// UClass* UGearboxSeqAct_DestroyPopulationActors::pClassPointer = NULL;
 
+// Class GearboxFramework.GearboxSeqAct_ResetPopulationCount
 // 0x0000 (0x00A4 - 0x00A4)
-class UGearboxSeqAct_ResetPopulationCount : public USequenceAction {};
+class UGearboxSeqAct_ResetPopulationCount : public USequenceAction
+{
+public:
 
-// UClass* UGearboxSeqAct_ResetPopulationCount::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxSeqAct_ResetPopulationCount");
+		return ptr;
+	}
 
-// 0x0004 (0x06B0 - 0x06AC)
+};
+
+
+// Class GearboxFramework.GearboxSkeletalMeshComponent
+// 0x0004 (0x06AC - 0x06B0)
 class UGearboxSkeletalMeshComponent : public USkeletalMeshComponent
 {
 public:
-	float                                              FOV;                                              		// 0x06AC (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	float                                              FOV;                                                      // 0x06AC(0x0004) (Edit, Const)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxSkeletalMeshComponent");
+		return ptr;
+	}
+
+
 	void SetFOV(float NewFOV);
 };
 
-// UClass* UGearboxSkeletalMeshComponent::pClassPointer = NULL;
 
-// 0x0004 (0x024C - 0x0248)
+// Class GearboxFramework.GearboxStaticMeshComponent
+// 0x0004 (0x0248 - 0x024C)
 class UGearboxStaticMeshComponent : public UStaticMeshComponent
 {
 public:
-	float                                              FOV;                                              		// 0x0248 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	float                                              FOV;                                                      // 0x0248(0x0004) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxStaticMeshComponent");
+		return ptr;
+	}
+
 };
 
-// UClass* UGearboxStaticMeshComponent::pClassPointer = NULL;
 
-// 0x0038 (0x0074 - 0x003C)
+// Class GearboxFramework.GestaltSkeletalMeshDefinition
+// 0x0038 (0x003C - 0x0074)
 class UGestaltSkeletalMeshDefinition : public UGBXDefinition
 {
 public:
-	class USkeletalMesh*                               GestaltSkeletalMesh;                              		// 0x003C (0x0004) [0x0000000000020003]              ( CPF_Edit | CPF_Const | CPF_EditConst )
-	unsigned long                                      bStaticMeshRigidBodyMesh : 1;                     		// 0x0040 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	TArray< struct FGestaltInfo >                      GestaltInfos;                                     		// 0x0044 (0x000C) [0x0000000000420001]              ( CPF_Edit | CPF_EditConst | CPF_NeedCtorLink )
-	TArray< struct FGestaltAccessoryNameEntry >        GestaltAccessoryNames;                            		// 0x0050 (0x000C) [0x0000000000420001]              ( CPF_Edit | CPF_EditConst | CPF_NeedCtorLink )
-	TArray< struct FGestaltSocketRemapEntry >          GestaltSocketMappings;                            		// 0x005C (0x000C) [0x0000000000420001]              ( CPF_Edit | CPF_EditConst | CPF_NeedCtorLink )
-	TArray< struct FGestaltPartBoundsEntry >           GestaltPartBounds;                                		// 0x0068 (0x000C) [0x0000000000420001]              ( CPF_Edit | CPF_EditConst | CPF_NeedCtorLink )
+	class USkeletalMesh*                               GestaltSkeletalMesh;                                      // 0x003C(0x0004) (Edit, Const, EditConst)
+	unsigned long                                      bStaticMeshRigidBodyMesh : 1;                             // 0x0040(0x0004) (Edit)
+	TArray<struct FGestaltInfo>                        GestaltInfos;                                             // 0x0044(0x000C) (Edit, EditConst, NeedCtorLink)
+	TArray<struct FGestaltAccessoryNameEntry>          GestaltAccessoryNames;                                    // 0x0050(0x000C) (Edit, EditConst, NeedCtorLink)
+	TArray<struct FGestaltSocketRemapEntry>            GestaltSocketMappings;                                    // 0x005C(0x000C) (Edit, EditConst, NeedCtorLink)
+	TArray<struct FGestaltPartBoundsEntry>             GestaltPartBounds;                                        // 0x0068(0x000C) (Edit, EditConst, NeedCtorLink)
 
-public:
-	void InitGestaltAccessoryMeshDataFromParts(class USkeletalMesh* MeshToBorrowBonesFrom, class UGestaltPartMatrices* AccessoryMatrices, class USkeletalMeshComponent* TargetComponent, TArray< struct FGestaltPartPermutation >* PermutationConfiguration);
-	void InitGestaltMeshDataFromParts(class USkeletalMeshComponent* TargetComponent, TArray< struct FName >* PartMeshNames);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GestaltSkeletalMeshDefinition");
+		return ptr;
+	}
+
+
+	void InitGestaltAccessoryMeshDataFromParts(class USkeletalMesh* MeshToBorrowBonesFrom, class UGestaltPartMatrices* AccessoryMatrices, class USkeletalMeshComponent* TargetComponent, TArray<struct FGestaltPartPermutation>* PermutationConfiguration);
+	void InitGestaltMeshDataFromParts(class USkeletalMeshComponent* TargetComponent, TArray<struct FName>* PartMeshNames);
 };
 
-// UClass* UGestaltSkeletalMeshDefinition::pClassPointer = NULL;
 
-// 0x001C (0x0058 - 0x003C)
+// Class GearboxFramework.GFxActorMoviePool
+// 0x001C (0x003C - 0x0058)
 class UGFxActorMoviePool : public UObject
 {
 public:
-	class UGFxMovieDefinition*                         MovieDefinition;                                  		// 0x003C (0x0004) [0x0000000000000000]
-	TArray< struct FMovieInstanceArray >               Pools;                                            		// 0x0040 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< class UIGFxActorMovie* >                   MovieTargets;                                     		// 0x004C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	class UGFxMovieDefinition*                         MovieDefinition;                                          // 0x003C(0x0004)
+	TArray<struct FMovieInstanceArray>                 Pools;                                                    // 0x0040(0x000C) (NeedCtorLink)
+	TArray<TScriptInterface<class UIGFxActorMovie>>    MovieTargets;                                             // 0x004C(0x000C) (NeedCtorLink)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GFxActorMoviePool");
+		return ptr;
+	}
+
+
 	void DisplayDebug(class AHUD* HUD, float X, float* out_YL, float* out_YPos);
 	struct FString GetPoolName(int Index);
 	struct FString PoolStyleString(unsigned char Pooling);
 	void MovieStateChanged(class UGearboxGFxMovie* Movie);
 };
 
-// UClass* UGFxActorMoviePool::pClassPointer = NULL;
 
-// 0x0080 (0x00BC - 0x003C)
+// Class GearboxFramework.GFxMovieDefinition
+// 0x0080 (0x003C - 0x00BC)
 class UGFxMovieDefinition : public UGBXDefinition
 {
 public:
-	class USwfMovie*                                   SwfMovie;                                         		// 0x003C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UClass*                                      SwfMovieClass;                                    		// 0x0040 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UGearboxGFxMovie*                            Movie;                                            		// 0x0044 (0x0004) [0x0000000020000000]              ( CPF_Deprecated )
-	class UClass*                                      ExternalInterfaceClass;                           		// 0x0048 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	unsigned long                                      bTakeFocus : 1;                                   		// 0x004C (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      bCaptureInput : 1;                                		// 0x004C (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
-	unsigned long                                      bStartPaused : 1;                                 		// 0x004C (0x0004) [0x0000000000000001] [0x00000004] ( CPF_Edit )
-	unsigned long                                      bIsModalGameMenu : 1;                             		// 0x004C (0x0004) [0x0000000000000001] [0x00000008] ( CPF_Edit )
-	unsigned long                                      bOverrideWorldLighting : 1;                       		// 0x004C (0x0004) [0x0000000000000001] [0x00000010] ( CPF_Edit )
-	unsigned long                                      bInputOwnerOnly : 1;                              		// 0x004C (0x0004) [0x0000000000000001] [0x00000020] ( CPF_Edit )
-	unsigned long                                      bInputAllKeys : 1;                                		// 0x004C (0x0004) [0x0000000000000001] [0x00000040] ( CPF_Edit )
-	float                                              FadeInSeconds;                                    		// 0x0050 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              FadeOutSeconds;                                   		// 0x0054 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	struct FRotator                                    WorldLightingDirectionOffset;                     		// 0x0058 (0x000C) [0x0000000000000001]              ( CPF_Edit )
-	class UGFxMovieDrawStyle*                          DrawStyle;                                        		// 0x0064 (0x0004) [0x0000000004000001]              ( CPF_Edit | CPF_EditInline )
-	int                                                DepthPriority;                                    		// 0x0068 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      PoolType;                                         		// 0x006C (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      ScaleMode;                                        		// 0x006D (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      AlignMode;                                        		// 0x006E (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      TimingMode;                                       		// 0x006F (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      RenderTextureMode;                                		// 0x0070 (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	struct FName                                       Pool;                                             		// 0x0074 (0x0008) [0x0000000000000001]              ( CPF_Edit )
-	TArray< class UGFxMovieState* >                    CustomStates;                                     		// 0x007C (0x000C) [0x0000000004400001]              ( CPF_Edit | CPF_NeedCtorLink | CPF_EditInline )
-	TArray< struct FName >                             AutoActivateStates;                               		// 0x0088 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	TArray< struct FGFxMenuLink >                      MenuLinks;                                        		// 0x0094 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	class UTextureRenderTarget2D*                      RenderTexture;                                    		// 0x00A0 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	TArray< struct FAkEventResolver >                  InteractionOverrideSounds;                        		// 0x00A4 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	TArray< class UGFxMovieState* >                    BaseMovieStates;                                  		// 0x00B0 (0x000C) [0x0000000004400001]              ( CPF_Edit | CPF_NeedCtorLink | CPF_EditInline )
+	class USwfMovie*                                   SwfMovie;                                                 // 0x003C(0x0004) (Edit)
+	class UClass*                                      SwfMovieClass;                                            // 0x0040(0x0004) (Edit)
+	class UGearboxGFxMovie*                            Movie;                                                    // 0x0044(0x0004) (Deprecated)
+	class UClass*                                      ExternalInterfaceClass;                                   // 0x0048(0x0004) (Edit)
+	unsigned long                                      bTakeFocus : 1;                                           // 0x004C(0x0004) (Edit)
+	unsigned long                                      bCaptureInput : 1;                                        // 0x004C(0x0004) (Edit)
+	unsigned long                                      bStartPaused : 1;                                         // 0x004C(0x0004) (Edit)
+	unsigned long                                      bIsModalGameMenu : 1;                                     // 0x004C(0x0004) (Edit)
+	unsigned long                                      bOverrideWorldLighting : 1;                               // 0x004C(0x0004) (Edit)
+	unsigned long                                      bInputOwnerOnly : 1;                                      // 0x004C(0x0004) (Edit)
+	unsigned long                                      bInputAllKeys : 1;                                        // 0x004C(0x0004) (Edit)
+	float                                              FadeInSeconds;                                            // 0x0050(0x0004) (Edit)
+	float                                              FadeOutSeconds;                                           // 0x0054(0x0004) (Edit)
+	struct FRotator                                    WorldLightingDirectionOffset;                             // 0x0058(0x000C) (Edit)
+	class UGFxMovieDrawStyle*                          DrawStyle;                                                // 0x0064(0x0004) (Edit, EditInline)
+	int                                                DepthPriority;                                            // 0x0068(0x0004) (Edit)
+	unsigned char                                      PoolType;                                                 // 0x006C(0x0001) (Edit)
+	unsigned char                                      ScaleMode;                                                // 0x006D(0x0001) (Edit)
+	unsigned char                                      AlignMode;                                                // 0x006E(0x0001) (Edit)
+	unsigned char                                      TimingMode;                                               // 0x006F(0x0001) (Edit)
+	unsigned char                                      RenderTextureMode;                                        // 0x0070(0x0001) (Edit)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0071(0x0003) MISSED OFFSET
+	struct FName                                       Pool;                                                     // 0x0074(0x0008) (Edit)
+	TArray<class UGFxMovieState*>                      CustomStates;                                             // 0x007C(0x000C) (Edit, NeedCtorLink, EditInline)
+	TArray<struct FName>                               AutoActivateStates;                                       // 0x0088(0x000C) (Edit, NeedCtorLink)
+	TArray<struct FGFxMenuLink>                        MenuLinks;                                                // 0x0094(0x000C) (Edit, NeedCtorLink)
+	class UTextureRenderTarget2D*                      RenderTexture;                                            // 0x00A0(0x0004) (Edit)
+	TArray<struct FAkEventResolver>                    InteractionOverrideSounds;                                // 0x00A4(0x000C) (Edit, NeedCtorLink)
+	TArray<class UGFxMovieState*>                      BaseMovieStates;                                          // 0x00B0(0x000C) (Edit, NeedCtorLink, EditInline)
 
-public:
-	class UGFxMovieDefinition* FindMovieLink(struct FName MovieName);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GFxMovieDefinition");
+		return ptr;
+	}
+
+
+	class UGFxMovieDefinition* FindMovieLink(const struct FName& MovieName);
 	void PostMovieStart(class UGearboxGFxMovie* StartedMovie);
-	class UGearboxGFxMovie* SpawnPlayerMovie(class AGearboxPlayerController* Owner, class UIGFxActorMovie* TargetActor, class UObject* ContextObject);
+	class UGearboxGFxMovie* SpawnPlayerMovie(class AGearboxPlayerController* Owner, const TScriptInterface<class UIGFxActorMovie>& TargetActor, class UObject* ContextObject);
 	bool SupportsStatePooling();
 	unsigned char GetPoolStyle();
 };
 
-// UClass* UGFxMovieDefinition::pClassPointer = NULL;
 
-// 0x000C (0x0048 - 0x003C)
+// Class GearboxFramework.GearboxEULAGFxMovieDefinition
+// 0x0000 (0x00BC - 0x00BC)
+class UGearboxEULAGFxMovieDefinition : public UGFxMovieDefinition
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxEULAGFxMovieDefinition");
+		return ptr;
+	}
+
+};
+
+
+// Class GearboxFramework.GFxMovieDrawStyle
+// 0x000C (0x003C - 0x0048)
 class UGFxMovieDrawStyle : public UObject
 {
 public:
-	class UGearboxGFxMovie*                            Movie;                                            		// 0x003C (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UIGFxActorMovie*                             TargetActor;                                      		// 0x0040 (0x0008) [0x0000000000002000]              ( CPF_Transient )
-	unsigned char                                      UnknownData00[0x4];                             		// 0x0044 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
+	class UGearboxGFxMovie*                            Movie;                                                    // 0x003C(0x0004) (Transient)
+	TScriptInterface<class UIGFxActorMovie>            TargetActor;                                              // 0x0040(0x0008) (Transient)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GFxMovieDrawStyle");
+		return ptr;
+	}
+
+
 	struct FString GetStyleDebugString();
 };
 
-// UClass* UGFxMovieDrawStyle::pClassPointer = NULL;
 
-// 0x0040 (0x0088 - 0x0048)
+// Class GearboxFramework.GFxMovieDrawStyleHUD
+// 0x0040 (0x0048 - 0x0088)
 class UGFxMovieDrawStyleHUD : public UGFxMovieDrawStyle
 {
 public:
-	TArray< struct FHUDAnchorPoint >                   AnchorPoints;                                     		// 0x0048 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	struct FHUDCoordValue                              MovieDimensions[0x2];                           		// 0x0054 (0x0020) [0x0000000000000001]              ( CPF_Edit )
-	unsigned long                                      bCacheValid : 1;                                  		// 0x0074 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
-	float                                              MovieScreenPos[0x4];                            		// 0x0078 (0x0010) [0x0000000000002000]              ( CPF_Transient )
+	TArray<struct FHUDAnchorPoint>                     AnchorPoints;                                             // 0x0048(0x000C) (Edit, NeedCtorLink)
+	struct FHUDCoordValue                              MovieDimensions[0x2];                                     // 0x0054(0x0010) (Edit)
+	unsigned long                                      bCacheValid : 1;                                          // 0x0074(0x0004) (Transient)
+	float                                              MovieScreenPos[0x4];                                      // 0x0078(0x0004) (Transient)
 
-public:
-	bool eventRequiresClientInstance();
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GFxMovieDrawStyleHUD");
+		return ptr;
+	}
+
+
+	bool RequiresClientInstance();
 };
 
-// UClass* UGFxMovieDrawStyleHUD::pClassPointer = NULL;
 
-// 0x0005 (0x004D - 0x0048)
+// Class GearboxFramework.GFxMovieDrawStyleRTT
+// 0x0005 (0x0048 - 0x004D)
 class UGFxMovieDrawStyleRTT : public UGFxMovieDrawStyle
 {
 public:
-	int                                                TextureSize;                                      		// 0x0048 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      RenderTextureMode;                                		// 0x004C (0x0001) [0x0000000000000001]              ( CPF_Edit )
+	int                                                TextureSize;                                              // 0x0048(0x0004) (Edit)
+	unsigned char                                      RenderTextureMode;                                        // 0x004C(0x0001) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GFxMovieDrawStyleRTT");
+		return ptr;
+	}
+
 };
 
-// UClass* UGFxMovieDrawStyleRTT::pClassPointer = NULL;
 
-// 0x0003 (0x0050 - 0x004D)
-class UGFxMovieDrawStyleComponent : public UGFxMovieDrawStyleRTT {};
+// Class GearboxFramework.GFxMovieDrawStyleComponent
+// 0x0003 (0x004D - 0x0050)
+class UGFxMovieDrawStyleComponent : public UGFxMovieDrawStyleRTT
+{
+public:
+	unsigned char                                      UnknownData00[0x3];                                       // 0x004D(0x0003) MISSED OFFSET
 
-// UClass* UGFxMovieDrawStyleComponent::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GFxMovieDrawStyleComponent");
+		return ptr;
+	}
 
-// 0x0030 (0x0080 - 0x0050)
+};
+
+
+// Class GearboxFramework.GFxMovieDrawStyleMesh
+// 0x0030 (0x0050 - 0x0080)
 class UGFxMovieDrawStyleMesh : public UGFxMovieDrawStyleComponent
 {
 public:
-	class UMeshComponent*                              MeshComponentArchetype;                           		// 0x0050 (0x0004) [0x0000000004080009]              ( CPF_Edit | CPF_ExportObject | CPF_Component | CPF_EditInline )
-	class UStaticMesh*                                 UseStaticMesh;                                    		// 0x0054 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class USkeletalMesh*                               UseSkeletalMesh;                                  		// 0x0058 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	struct FName                                       UseMeshInstanceName;                              		// 0x005C (0x0008) [0x0000000000000001]              ( CPF_Edit )
-	int                                                MaterialIndex;                                    		// 0x0064 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UMaterial*                                   OverrideMaterial;                                 		// 0x0068 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	struct FName                                       TextureParameterName;                             		// 0x006C (0x0008) [0x0000000000000001]              ( CPF_Edit )
-	class UMeshComponent*                              Component;                                        		// 0x0074 (0x0004) [0x0000000004082008]              ( CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline )
-	class UMaterialInstanceConstant*                   Mati;                                             		// 0x0078 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UMaterialInterface*                          OriginalMaterial;                                 		// 0x007C (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class UMeshComponent*                              MeshComponentArchetype;                                   // 0x0050(0x0004) (Edit, ExportObject, Component, EditInline)
+	class UStaticMesh*                                 UseStaticMesh;                                            // 0x0054(0x0004) (Edit)
+	class USkeletalMesh*                               UseSkeletalMesh;                                          // 0x0058(0x0004) (Edit)
+	struct FName                                       UseMeshInstanceName;                                      // 0x005C(0x0008) (Edit)
+	int                                                MaterialIndex;                                            // 0x0064(0x0004) (Edit)
+	class UMaterial*                                   OverrideMaterial;                                         // 0x0068(0x0004) (Edit)
+	struct FName                                       TextureParameterName;                                     // 0x006C(0x0008) (Edit)
+	class UMeshComponent*                              Component;                                                // 0x0074(0x0004) (ExportObject, Transient, Component, EditInline)
+	class UMaterialInstanceConstant*                   Mati;                                                     // 0x0078(0x0004) (Transient)
+	class UMaterialInterface*                          OriginalMaterial;                                         // 0x007C(0x0004) (Transient)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GFxMovieDrawStyleMesh");
+		return ptr;
+	}
+
+
 	struct FString GetStyleDebugString();
-	bool eventRequiresClientInstance();
+	bool RequiresClientInstance();
 };
 
-// UClass* UGFxMovieDrawStyleMesh::pClassPointer = NULL;
 
-// 0x0008 (0x0058 - 0x0050)
+// Class GearboxFramework.GFxMovieDrawStyleSprite
+// 0x0008 (0x0050 - 0x0058)
 class UGFxMovieDrawStyleSprite : public UGFxMovieDrawStyleComponent
 {
 public:
-	int                                                SpriteSize;                                       		// 0x0050 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class USpriteRTTComponent*                         TheSprite;                                        		// 0x0054 (0x0004) [0x0000000004082008]              ( CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline )
+	int                                                SpriteSize;                                               // 0x0050(0x0004) (Edit)
+	class USpriteRTTComponent*                         TheSprite;                                                // 0x0054(0x0004) (ExportObject, Transient, Component, EditInline)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GFxMovieDrawStyleSprite");
+		return ptr;
+	}
+
 };
 
-// UClass* UGFxMovieDrawStyleSprite::pClassPointer = NULL;
 
+// Class GearboxFramework.GFxMovieDrawStyleSplitscreen
 // 0x0000 (0x0048 - 0x0048)
 class UGFxMovieDrawStyleSplitscreen : public UGFxMovieDrawStyle
 {
 public:
-	bool eventRequiresClientInstance();
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GFxMovieDrawStyleSplitscreen");
+		return ptr;
+	}
+
+
+	bool RequiresClientInstance();
 };
 
-// UClass* UGFxMovieDrawStyleSplitscreen::pClassPointer = NULL;
 
-// 0x0018 (0x0054 - 0x003C)
+// Class GearboxFramework.GFxMovieManager
+// 0x0018 (0x003C - 0x0054)
 class UGFxMovieManager : public UObject
 {
 public:
-	TArray< class AGearboxPlayerController* >          Subscribers;                                      		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< class UGFxActorMoviePool* >                MoviePools;                                       		// 0x0048 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	TArray<class AGearboxPlayerController*>            Subscribers;                                              // 0x003C(0x000C) (NeedCtorLink)
+	TArray<class UGFxActorMoviePool*>                  MoviePools;                                               // 0x0048(0x000C) (NeedCtorLink)
 
-public:
-	void ChangeMovieState(class UIGFxActorMovie* TargetActor, struct FName State, unsigned char Change, class AGearboxPlayerController* PC);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GFxMovieManager");
+		return ptr;
+	}
+
+
+	void ChangeMovieState(const TScriptInterface<class UIGFxActorMovie>& TargetActor, const struct FName& State, unsigned char Change, class AGearboxPlayerController* PC);
 	void Unsubscribe(class AGearboxPlayerController* PC);
 	void Subscribe(class AGearboxPlayerController* PC);
-	void UnregisterMoviesDrawnTo(class UPrimitiveComponent* PrimComp, class UIGFxActorMovie* TargetActor);
-	void UnregisterTarget(class UIGFxActorMovie* TargetActor);
-	void UnregisterMovie(class UGFxMovieDefinition* Definition, class UIGFxActorMovie* TargetActor);
-	void RegisterMovie(class UGFxMovieDefinition* Definition, class UIGFxActorMovie* TargetActor);
+	void UnregisterMoviesDrawnTo(class UPrimitiveComponent* PrimComp, const TScriptInterface<class UIGFxActorMovie>& TargetActor);
+	void UnregisterTarget(const TScriptInterface<class UIGFxActorMovie>& TargetActor);
+	void UnregisterMovie(class UGFxMovieDefinition* Definition, const TScriptInterface<class UIGFxActorMovie>& TargetActor);
+	void RegisterMovie(class UGFxMovieDefinition* Definition, const TScriptInterface<class UIGFxActorMovie>& TargetActor);
 };
 
-// UClass* UGFxMovieManager::pClassPointer = NULL;
 
-// 0x0020 (0x005C - 0x003C)
-class UGFxMovieState : public UObject
-{
-public:
-	struct FName                                       StateName;                                        		// 0x003C (0x0008) [0x0000000000000001]              ( CPF_Edit )
-	struct FName                                       DefaultState;                                     		// 0x0044 (0x0008) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      StateType;                                        		// 0x004C (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	TArray< struct FMovieStateData >                   AllStates;                                        		// 0x0050 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-
-public:
-	struct FString GetDebugString(class UGearboxGFxMovie* Movie, unsigned long bIncludeFlags);
-	void ApplyMovieState(class UGearboxGFxMovie* Movie, class UClass* HandlerClass);
-	int FindMovieState(struct FName TheState);
-	bool TestState(struct FName TheState, struct FMovieStateStruct* MovieState);
-	int ToggleState(struct FName TheState, struct FMovieStateStruct* MovieState);
-	int EnableState(struct FName TheState, unsigned long bEnable, struct FMovieStateStruct* MovieState);
-};
-
-// UClass* UGFxMovieState::pClassPointer = NULL;
-
-// 0x000C (0x0068 - 0x005C)
+// Class GearboxFramework.GFxMovieStateCustom
+// 0x000C (0x005C - 0x0068)
 class UGFxMovieStateCustom : public UGFxMovieState
 {
 public:
-	TArray< struct FMovieStateData >                   CustomStates;                                     		// 0x005C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	TArray<struct FMovieStateData>                     CustomStates;                                             // 0x005C(0x000C) (Edit, NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GFxMovieStateCustom");
+		return ptr;
+	}
+
 };
 
-// UClass* UGFxMovieStateCustom::pClassPointer = NULL;
 
-// 0x000C (0x0068 - 0x005C)
+// Class GearboxFramework.GFxMovieStateFlags
+// 0x000C (0x005C - 0x0068)
 class UGFxMovieStateFlags : public UGFxMovieState
 {
 public:
-	TArray< struct FName >                             CustomFlags;                                      		// 0x005C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	TArray<struct FName>                               CustomFlags;                                              // 0x005C(0x000C) (Edit, NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GFxMovieStateFlags");
+		return ptr;
+	}
+
 };
 
-// UClass* UGFxMovieStateFlags::pClassPointer = NULL;
 
-// 0x001C (0x0078 - 0x005C)
+// Class GearboxFramework.GFxMovieStatePlayerAware
+// 0x001C (0x005C - 0x0078)
 class UGFxMovieStatePlayerAware : public UGFxMovieState
 {
 public:
-	float                                              LookAtThreshold;                                  		// 0x005C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	TArray< struct FMovieStateData >                   LookStates;                                       		// 0x0060 (0x000C) [0x0000000000400041]              ( CPF_Edit | CPF_EditConstArray | CPF_NeedCtorLink )
-	TArray< struct FMovieRangeStateData >              RangeStates;                                      		// 0x006C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	float                                              LookAtThreshold;                                          // 0x005C(0x0004) (Edit)
+	TArray<struct FMovieStateData>                     LookStates;                                               // 0x0060(0x000C) (Edit, EditFixedSize, NeedCtorLink)
+	TArray<struct FMovieRangeStateData>                RangeStates;                                              // 0x006C(0x000C) (Edit, NeedCtorLink)
 
-public:
-	int EnableState(struct FName TheState, unsigned long bEnable, struct FMovieStateStruct* MovieState);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GFxMovieStatePlayerAware");
+		return ptr;
+	}
+
+
+	int EnableState(const struct FName& TheState, bool bEnable, struct FMovieStateStruct* MovieState);
 };
 
-// UClass* UGFxMovieStatePlayerAware::pClassPointer = NULL;
 
+// Class GearboxFramework.IAIInterface
 // 0x0000 (0x003C - 0x003C)
 class UIAIInterface : public UInterface
 {
 public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("IAIInterface");
+		return ptr;
+	}
+
+
 	void InitSequence(class UActionSequence* NewSequence);
 	class UPawnAllegiance* GetAllegiance();
 	class UAIDefinition* GetAIDefinition();
 	class UAIComponent* GetAIComponent();
-	class UIAIInterface* GetAIParent();
+	TScriptInterface<class UIAIInterface> GetAIParent();
 	struct FVector GetAILocation();
 	class AActor* GetAIActor();
 	bool CanTickAI();
 };
 
-// UClass* UIAIInterface::pClassPointer = NULL;
 
+// Class GearboxFramework.IConstructObject
 // 0x0000 (0x003C - 0x003C)
-class UIConstructObject : public UInterface {};
+class UIConstructObject : public UInterface
+{
+public:
 
-// UClass* UIConstructObject::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("IConstructObject");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.IGFxActorMovie
 // 0x0000 (0x003C - 0x003C)
 class UIGFxActorMovie : public UInterface
 {
 public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("IGFxActorMovie");
+		return ptr;
+	}
+
+
 	void GFx_NotifyMovieDestroy(class UGearboxGFxMovie* Movie);
 	void GFx_NotifyMovieCreate(class UGearboxGFxMovie* Movie);
 	class AActor* GFx_GetMovieActor();
 };
 
-// UClass* UIGFxActorMovie::pClassPointer = NULL;
 
+// Class GearboxFramework.INounAttributeProvider
 // 0x0000 (0x003C - 0x003C)
-class UINounAttributeProvider : public UInterface {};
+class UINounAttributeProvider : public UInterface
+{
+public:
 
-// UClass* UINounAttributeProvider::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("INounAttributeProvider");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.InterfaceGearboxCamera
 // 0x0000 (0x003C - 0x003C)
 class UInterfaceGearboxCamera : public UInterface
 {
 public:
-	void eventFinishCameraLookAt();
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("InterfaceGearboxCamera");
+		return ptr;
+	}
+
+
+	void FinishCameraLookAt();
 	void EnableThirdPersonLookAt(float LookAtXOffset, float LookAtYOffset, float LookAtZOffset, unsigned char LookAtMode);
-	void BeginCameraLookAt(class AActor* LookAtTarget, struct FName LookAtBone, struct FVector TargetLocation, float Zoom, struct FVector2D FOV, float Duration, float TransitionTimeIn, float TransitionTimeOut);
+	void BeginCameraLookAt(class AActor* LookAtTarget, const struct FName& LookAtBone, const struct FVector& TargetLocation, float Zoom, const struct FVector2D& FOV, float Duration, float TransitionTimeIn, float TransitionTimeOut);
 };
 
-// UClass* UInterfaceGearboxCamera::pClassPointer = NULL;
 
+// Class GearboxFramework.IStreamingDataEvent
 // 0x0000 (0x003C - 0x003C)
 class UIStreamingDataEvent : public UInterface
 {
 public:
-	void eventRunStreamingDataEvent(struct FName EventName, class UObject* EventInstigator, class UObject* OtherEventParticipantObject, int IntParam, float FloatParam);
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("IStreamingDataEvent");
+		return ptr;
+	}
+
+
+	void RunStreamingDataEvent(const struct FName& EventName, class UObject* EventInstigator, class UObject* OtherEventParticipantObject, int IntParam, float FloatParam);
 };
 
-// UClass* UIStreamingDataEvent::pClassPointer = NULL;
 
-// 0x0010 (0x0078 - 0x0068)
+// Class GearboxFramework.LeviathanChannel
+// 0x0010 (0x0068 - 0x0078)
 class ULeviathanChannel : public UChannel
 {
 public:
-	unsigned char                                      UnknownData00[0x10];                            		// 0x0068 (0x0010) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x10];                                      // 0x0068(0x0010) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("LeviathanChannel");
+		return ptr;
+	}
+
 };
 
-// UClass* ULeviathanChannel::pClassPointer = NULL;
 
+// Class GearboxFramework.NoContextNeededAttributeContextResolver
 // 0x0000 (0x003C - 0x003C)
-class UNoContextNeededAttributeContextResolver : public UAttributeContextResolver {};
+class UNoContextNeededAttributeContextResolver : public UAttributeContextResolver
+{
+public:
 
-// UClass* UNoContextNeededAttributeContextResolver::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("NoContextNeededAttributeContextResolver");
+		return ptr;
+	}
 
-// 0x0014 (0x0050 - 0x003C)
+};
+
+
+// Class GearboxFramework.NounAttributeValueResolver
+// 0x0014 (0x003C - 0x0050)
 class UNounAttributeValueResolver : public UAttributeValueResolver
 {
 public:
-	unsigned char                                      ReplicationStrategy;                              		// 0x003C (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	struct FAttributeInitializationData                DefaultValue;                                     		// 0x0040 (0x0010) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	unsigned char                                      ReplicationStrategy;                                      // 0x003C(0x0001) (Edit, Const)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x003D(0x0003) MISSED OFFSET
+	struct FAttributeInitializationData                DefaultValue;                                             // 0x0040(0x0010) (Edit, Const)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("NounAttributeValueResolver");
+		return ptr;
+	}
+
 };
 
-// UClass* UNounAttributeValueResolver::pClassPointer = NULL;
 
-// 0x000C (0x0048 - 0x003C)
+// Class GearboxFramework.ObjectFunctionAttributeValueResolver
+// 0x000C (0x003C - 0x0048)
 class UObjectFunctionAttributeValueResolver : public UAttributeValueResolver
 {
 public:
-	struct FString                                     FunctionCall;                                     		// 0x003C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	struct FString                                     FunctionCall;                                             // 0x003C(0x000C) (Edit, NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("ObjectFunctionAttributeValueResolver");
+		return ptr;
+	}
+
 };
 
-// UClass* UObjectFunctionAttributeValueResolver::pClassPointer = NULL;
 
-// 0x0008 (0x0044 - 0x003C)
+// Class GearboxFramework.ObjectPropertyContextResolver
+// 0x0008 (0x003C - 0x0044)
 class UObjectPropertyContextResolver : public UAttributeContextResolver
 {
 public:
-	struct FName                                       PropertyName;                                     		// 0x003C (0x0008) [0x0000000000000001]              ( CPF_Edit )
+	struct FName                                       PropertyName;                                             // 0x003C(0x0008) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("ObjectPropertyContextResolver");
+		return ptr;
+	}
+
 };
 
-// UClass* UObjectPropertyContextResolver::pClassPointer = NULL;
 
-// 0x0008 (0x0044 - 0x003C)
+// Class GearboxFramework.PhysicsStateExpressionEvaluator
+// 0x0008 (0x003C - 0x0044)
 class UPhysicsStateExpressionEvaluator : public UExpressionEvaluator
 {
 public:
-	unsigned char                                      PhysicsState;                                     		// 0x003C (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	unsigned long                                      bIsInState : 1;                                   		// 0x0040 (0x0004) [0x0000000000000003] [0x00000001] ( CPF_Edit | CPF_Const )
+	unsigned char                                      PhysicsState;                                             // 0x003C(0x0001) (Edit, Const)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x003D(0x0003) MISSED OFFSET
+	unsigned long                                      bIsInState : 1;                                           // 0x0040(0x0004) (Edit, Const)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PhysicsStateExpressionEvaluator");
+		return ptr;
+	}
+
+
 	bool Evaluate(class UObject* ContextSource);
 };
 
-// UClass* UPhysicsStateExpressionEvaluator::pClassPointer = NULL;
 
+// Class GearboxFramework.PopulationAspect
 // 0x0000 (0x003C - 0x003C)
 class UPopulationAspect : public UObject
 {
 public:
-	void eventDenStatRemoved(class APawn* DenPawn);
-	void eventDenStatAdded(class APawn* DenPawn);
-	void eventEnabledStatusChanged(unsigned long bIsEnabled, unsigned long bHasActiveActors);
-	void eventAllActorsRemoved(unsigned long bFinishedSpawning);
-	void eventOnActorDeath(class AActor* DeadActor);
-	void eventOnSpawnActor(class AActor* SpawnedActor);
-	void eventinitialize();
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PopulationAspect");
+		return ptr;
+	}
+
+
+	void DenStatRemoved(class APawn* DenPawn);
+	void DenStatAdded(class APawn* DenPawn);
+	void EnabledStatusChanged(bool bIsEnabled, bool bHasActiveActors);
+	void AllActorsRemoved(bool bFinishedSpawning);
+	void OnActorDeath(class AActor* DeadActor);
+	void OnSpawnActor(class AActor* SpawnedActor);
+	void Initialize();
 };
 
-// UClass* UPopulationAspect::pClassPointer = NULL;
 
+// Class GearboxFramework.PopulationBodyTag
 // 0x0000 (0x003C - 0x003C)
-class UPopulationBodyTag : public UGBXDefinition {};
+class UPopulationBodyTag : public UGBXDefinition
+{
+public:
 
-// UClass* UPopulationBodyTag::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PopulationBodyTag");
+		return ptr;
+	}
 
-// 0x0044 (0x01CC - 0x0188)
+};
+
+
+// Class GearboxFramework.PopulationEncounter
+// 0x0044 (0x0188 - 0x01CC)
 class APopulationEncounter : public AInfo
 {
 public:
-	class UPopulationDefinition*                       EncounterPopulationDef;                           		// 0x0188 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	TArray< class APopulationOpportunity* >            MemberOutposts;                                   		// 0x018C (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
-	TArray< class APopulationOpportunity* >            MemberOpportunities;                              		// 0x0198 (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
-	TArray< struct FEncounterLimitData >               SpawnLimits;                                      		// 0x01A4 (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
-	unsigned long                                      IsEnabled : 1;                                    		// 0x01B0 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      AutoEnableOpportunities : 1;                      		// 0x01B0 (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
-	unsigned long                                      bWaitingForNextWave : 1;                          		// 0x01B0 (0x0004) [0x0000000000002000] [0x00000004] ( CPF_Transient )
-	unsigned long                                      bIsWaitingForRespawn : 1;                         		// 0x01B0 (0x0004) [0x0000000000002000] [0x00000008] ( CPF_Transient )
-	TArray< struct FEncounterWaveData >                Waves;                                            		// 0x01B4 (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
-	int                                                CurrentWave;                                      		// 0x01C0 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	float                                              TimeToStartNextWave;                              		// 0x01C4 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	float                                              RespawnDelayStartTime;                            		// 0x01C8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class UPopulationDefinition*                       EncounterPopulationDef;                                   // 0x0188(0x0004) (Edit, Const)
+	TArray<class APopulationOpportunity*>              MemberOutposts;                                           // 0x018C(0x000C) (Edit, Const, NeedCtorLink)
+	TArray<class APopulationOpportunity*>              MemberOpportunities;                                      // 0x0198(0x000C) (Edit, Const, NeedCtorLink)
+	TArray<struct FEncounterLimitData>                 SpawnLimits;                                              // 0x01A4(0x000C) (Edit, Const, NeedCtorLink)
+	unsigned long                                      IsEnabled : 1;                                            // 0x01B0(0x0004) (Edit)
+	unsigned long                                      AutoEnableOpportunities : 1;                              // 0x01B0(0x0004) (Edit)
+	unsigned long                                      bWaitingForNextWave : 1;                                  // 0x01B0(0x0004) (Transient)
+	unsigned long                                      bIsWaitingForRespawn : 1;                                 // 0x01B0(0x0004) (Transient)
+	TArray<struct FEncounterWaveData>                  Waves;                                                    // 0x01B4(0x000C) (Edit, Const, NeedCtorLink)
+	int                                                CurrentWave;                                              // 0x01C0(0x0004) (Transient)
+	float                                              TimeToStartNextWave;                                      // 0x01C4(0x0004) (Transient)
+	float                                              RespawnDelayStartTime;                                    // 0x01C8(0x0004) (Transient)
 
-public:
-	void eventTriggerKismetAllSpawnedEvent();
-	void eventTriggerKismetDeathEvent();
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PopulationEncounter");
+		return ptr;
+	}
+
+
+	void TriggerKismetAllSpawnedEvent();
+	void TriggerKismetDeathEvent();
 	void OnToggle(class USeqAct_Toggle* Action);
-	void UpdateOpportunityEnabledStates(int nWave, unsigned long bUpdateIfOnlyOneWave);
+	void UpdateOpportunityEnabledStates(int nWave, bool bUpdateIfOnlyOneWave);
 	void UpdateKismetNotifications();
 };
 
-// UClass* APopulationEncounter::pClassPointer = NULL;
 
+// Class GearboxFramework.PopulationEncounterRenderingComponent
 // 0x0000 (0x0210 - 0x0210)
-class UPopulationEncounterRenderingComponent : public UPrimitiveComponent {};
+class UPopulationEncounterRenderingComponent : public UPrimitiveComponent
+{
+public:
 
-// UClass* UPopulationEncounterRenderingComponent::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PopulationEncounterRenderingComponent");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.PopulationOpportunityCombatRenderingComponent
 // 0x0000 (0x0210 - 0x0210)
-class UPopulationOpportunityCombatRenderingComponent : public UPrimitiveComponent {};
+class UPopulationOpportunityCombatRenderingComponent : public UPrimitiveComponent
+{
+public:
 
-// UClass* UPopulationOpportunityCombatRenderingComponent::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PopulationOpportunityCombatRenderingComponent");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.PopulationSpawnedActorTagDefinition
 // 0x0000 (0x003C - 0x003C)
-class UPopulationSpawnedActorTagDefinition : public UGBXDefinition {};
+class UPopulationSpawnedActorTagDefinition : public UGBXDefinition
+{
+public:
 
-// UClass* UPopulationSpawnedActorTagDefinition::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PopulationSpawnedActorTagDefinition");
+		return ptr;
+	}
 
-// 0x0040 (0x007C - 0x003C)
+};
+
+
+// Class GearboxFramework.PopUpDebugBarGraph
+// 0x0040 (0x003C - 0x007C)
 class UPopUpDebugBarGraph : public UObject
 {
 public:
-	TArray< struct FColumnDataStruct >                 Columns;                                          		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FString                                     TitleText;                                        		// 0x0048 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FColor                                      BaseLineColor;                                    		// 0x0054 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	struct FColor                                      TitleTextColor;                                   		// 0x0058 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              ColumnWidth;                                      		// 0x005C (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              ColumnPadding;                                    		// 0x0060 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              ColumnMaxHeight;                                  		// 0x0064 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              TextScale;                                        		// 0x0068 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              TextPadding;                                      		// 0x006C (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              TitleTextScale;                                   		// 0x0070 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              TitleTextPaddingY;                                		// 0x0074 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              ColumnValueTextOffsetY;                           		// 0x0078 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	TArray<struct FColumnDataStruct>                   Columns;                                                  // 0x003C(0x000C) (NeedCtorLink)
+	struct FString                                     TitleText;                                                // 0x0048(0x000C) (NeedCtorLink)
+	struct FColor                                      BaseLineColor;                                            // 0x0054(0x0004) (Const)
+	struct FColor                                      TitleTextColor;                                           // 0x0058(0x0004) (Const)
+	float                                              ColumnWidth;                                              // 0x005C(0x0004) (Const)
+	float                                              ColumnPadding;                                            // 0x0060(0x0004) (Const)
+	float                                              ColumnMaxHeight;                                          // 0x0064(0x0004) (Const)
+	float                                              TextScale;                                                // 0x0068(0x0004) (Const)
+	float                                              TextPadding;                                              // 0x006C(0x0004) (Const)
+	float                                              TitleTextScale;                                           // 0x0070(0x0004) (Const)
+	float                                              TitleTextPaddingY;                                        // 0x0074(0x0004) (Const)
+	float                                              ColumnValueTextOffsetY;                                   // 0x0078(0x0004) (Const)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PopUpDebugBarGraph");
+		return ptr;
+	}
+
+
 	void Display(float DeltaSeconds, class UCanvas* Canvas);
 	float GetValue(int ColumnNdx);
 	void SetValue(int ColumnNdx, float NewValue);
-	int AddNewColumn(struct FColor ColumnColor, struct FString HeaderText, float Value);
-	void AddTitleText(struct FString NewTitleText);
+	int AddNewColumn(const struct FColor& ColumnColor, const struct FString& HeaderText, float Value);
+	void AddTitleText(const struct FString& NewTitleText);
 };
 
-// UClass* UPopUpDebugBarGraph::pClassPointer = NULL;
 
-// 0x0040 (0x007C - 0x003C)
+// Class GearboxFramework.RandomAttributeValueResolver
+// 0x0040 (0x003C - 0x007C)
 class URandomAttributeValueResolver : public UAttributeValueResolver
 {
 public:
-	unsigned long                                      bUseIntegerRandomization : 1;                     		// 0x003C (0x0004) [0x0000000000000003] [0x00000001] ( CPF_Edit | CPF_Const )
-	struct FAttributeInitializationData                LowerBound;                                       		// 0x0040 (0x0010) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	struct FAttributeInitializationData                UpperBound;                                       		// 0x0050 (0x0010) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	struct FAttributeInitializationData                ValueLifetime;                                    		// 0x0060 (0x0010) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	TArray< struct FSavedRandomValue >                 SavedRandomValues;                                		// 0x0070 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	unsigned long                                      bUseIntegerRandomization : 1;                             // 0x003C(0x0004) (Edit, Const)
+	struct FAttributeInitializationData                LowerBound;                                               // 0x0040(0x0010) (Edit, Const)
+	struct FAttributeInitializationData                UpperBound;                                               // 0x0050(0x0010) (Edit, Const)
+	struct FAttributeInitializationData                ValueLifetime;                                            // 0x0060(0x0010) (Edit, Const)
+	TArray<struct FSavedRandomValue>                   SavedRandomValues;                                        // 0x0070(0x000C) (Transient, NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("RandomAttributeValueResolver");
+		return ptr;
+	}
+
 };
 
-// UClass* URandomAttributeValueResolver::pClassPointer = NULL;
 
+// Class GearboxFramework.RegionDefinition
 // 0x0000 (0x003C - 0x003C)
 class URegionDefinition : public UGBXDefinition
 {
 public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("RegionDefinition");
+		return ptr;
+	}
+
+
 	bool GetDefaultRegionGameStage(int* MinGameStage, int* MaxGameStage, int* AwesomeLevel, int* GameStageIncreaseOverPlayerLevel);
-	bool TestRegionGameStage(unsigned long bDefaultGameStage, int* GameStage, int* AwesomeLevel);
-	bool GetRegionGameStage(unsigned long bDefaultGameStage, int* GameStage, int* AwesomeLevel);
+	bool TestRegionGameStage(bool bDefaultGameStage, int* GameStage, int* AwesomeLevel);
+	bool GetRegionGameStage(bool bDefaultGameStage, int* GameStage, int* AwesomeLevel);
 };
 
-// UClass* URegionDefinition::pClassPointer = NULL;
 
-// 0x0008 (0x0044 - 0x003C)
+// Class GearboxFramework.RootMotionDefinition
+// 0x0008 (0x003C - 0x0044)
 class URootMotionDefinition : public UGBXDefinition
 {
 public:
-	unsigned char                                      RootMotionMode;                                   		// 0x003C (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	unsigned char                                      RootBoneOption[0x3];                            		// 0x003D (0x0003) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	unsigned char                                      RootRotationMode;                                 		// 0x0040 (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	unsigned char                                      RootRotationOption[0x3];                        		// 0x0041 (0x0003) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	unsigned char                                      RootMotionMode;                                           // 0x003C(0x0001) (Edit, Const)
+	unsigned char                                      RootBoneOption[0x3];                                      // 0x003D(0x0001) (Edit, Const)
+	unsigned char                                      RootRotationMode;                                         // 0x0040(0x0001) (Edit, Const)
+	unsigned char                                      RootRotationOption[0x3];                                  // 0x0041(0x0001) (Edit, Const)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("RootMotionDefinition");
+		return ptr;
+	}
+
 };
 
-// UClass* URootMotionDefinition::pClassPointer = NULL;
 
-// 0x0034 (0x0070 - 0x003C)
+// Class GearboxFramework.RuleEngineLoadBalanceManager
+// 0x0034 (0x003C - 0x0070)
 class URuleEngineLoadBalanceManager : public UObject
 {
 public:
-	float                                              NumTimeSpentThisFrame;                            		// 0x003C (0x0004) [0x0000000000000000]
-	float                                              LastTimeFullUpdate;                               		// 0x0040 (0x0004) [0x0000000000000000]
-	TArray< struct FRuleEngineLoadBalanceStruct >      WaitingEngines;                                   		// 0x0044 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FDebugLoadBalance >                 DebugEngines;                                     		// 0x0050 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	TArray< struct FRELBManagerStats >                 ManagerStats;                                     		// 0x005C (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	unsigned long                                      bIsDebugging : 1;                                 		// 0x0068 (0x0004) [0x0000000000000000] [0x00000001]
-	int                                                MSPosition;                                       		// 0x006C (0x0004) [0x0000000000000000]
+	float                                              NumTimeSpentThisFrame;                                    // 0x003C(0x0004)
+	float                                              LastTimeFullUpdate;                                       // 0x0040(0x0004)
+	TArray<struct FRuleEngineLoadBalanceStruct>        WaitingEngines;                                           // 0x0044(0x000C) (NeedCtorLink)
+	TArray<struct FDebugLoadBalance>                   DebugEngines;                                             // 0x0050(0x000C) (Transient, NeedCtorLink)
+	TArray<struct FRELBManagerStats>                   ManagerStats;                                             // 0x005C(0x000C) (Transient, NeedCtorLink)
+	unsigned long                                      bIsDebugging : 1;                                         // 0x0068(0x0004)
+	int                                                MSPosition;                                               // 0x006C(0x0004)
 
-public:
-	void SetAsDebugging(unsigned long bSetDebugging);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("RuleEngineLoadBalanceManager");
+		return ptr;
+	}
+
+
+	void SetAsDebugging(bool bSetDebugging);
 };
 
-// UClass* URuleEngineLoadBalanceManager::pClassPointer = NULL;
 
-// 0x0058 (0x0094 - 0x003C)
+// Class GearboxFramework.ScreenSpaceManager
+// 0x0058 (0x003C - 0x0094)
 class UScreenSpaceManager : public UObject
 {
 public:
-	class ULocalPlayer*                                pLocalPlayer;                                     		// 0x003C (0x0004) [0x0000000000000000]
-	int                                                ViewWidth;                                        		// 0x0040 (0x0004) [0x0000000000000000]
-	int                                                ViewHeight;                                       		// 0x0044 (0x0004) [0x0000000000000000]
-	unsigned char                                      UnknownData00[0x8];                             		// 0x0048 (0x0008) MISSED OFFSET
-	struct FMatrix                                     ViewProjectionMatrix;                             		// 0x0050 (0x0040) [0x0000000000000000]
-	unsigned long                                      bMatricesUpToDate : 1;                            		// 0x0090 (0x0004) [0x0000000000000000] [0x00000001]
+	class ULocalPlayer*                                pLocalPlayer;                                             // 0x003C(0x0004)
+	int                                                ViewWidth;                                                // 0x0040(0x0004)
+	int                                                ViewHeight;                                               // 0x0044(0x0004)
+	unsigned char                                      UnknownData00[0x8];                                       // 0x0048(0x0008) MISSED OFFSET
+	struct FMatrix                                     ViewProjectionMatrix;                                     // 0x0050(0x0040)
+	unsigned long                                      bMatricesUpToDate : 1;                                    // 0x0090(0x0004)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("ScreenSpaceManager");
+		return ptr;
+	}
+
 };
 
-// UClass* UScreenSpaceManager::pClassPointer = NULL;
 
-// 0x0010 (0x00B4 - 0x00A4)
+// Class GearboxFramework.SeqAct_AllPlayersInVolume
+// 0x0010 (0x00A4 - 0x00B4)
 class USeqAct_AllPlayersInVolume : public USequenceAction
 {
 public:
-	TArray< class AVolume* >                           Volumes;                                          		// 0x00A4 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	unsigned long                                      bAllActorsInVolumes : 1;                          		// 0x00B0 (0x0004) [0x0000000000000000] [0x00000001]
-	unsigned long                                      bCheckForAllPlayers : 1;                          		// 0x00B0 (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
+	TArray<class AVolume*>                             Volumes;                                                  // 0x00A4(0x000C) (Edit, NeedCtorLink)
+	unsigned long                                      bAllActorsInVolumes : 1;                                  // 0x00B0(0x0004)
+	unsigned long                                      bCheckForAllPlayers : 1;                                  // 0x00B0(0x0004) (Edit)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SeqAct_AllPlayersInVolume");
+		return ptr;
+	}
+
+
 	bool AllPlayersInVolumes();
 	bool PlayerIsInAVolume(class APlayerController* PC);
 };
 
-// UClass* USeqAct_AllPlayersInVolume::pClassPointer = NULL;
 
-// 0x0004 (0x0090 - 0x008C)
+// Class GearboxFramework.SeqCond_CompareLocation
+// 0x0004 (0x008C - 0x0090)
 class USeqCond_CompareLocation : public USequenceCondition
 {
 public:
-	float                                              CheckRadius;                                      		// 0x008C (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	float                                              CheckRadius;                                              // 0x008C(0x0004) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SeqCond_CompareLocation");
+		return ptr;
+	}
+
 };
 
-// UClass* USeqCond_CompareLocation::pClassPointer = NULL;
 
-// 0x0004 (0x0090 - 0x008C)
+// Class GearboxFramework.SeqCond_CompareString
+// 0x0004 (0x008C - 0x0090)
 class USeqCond_CompareString : public USequenceCondition
 {
 public:
-	unsigned long                                      bCaseSensitive : 1;                               		// 0x008C (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
+	unsigned long                                      bCaseSensitive : 1;                                       // 0x008C(0x0004) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SeqCond_CompareString");
+		return ptr;
+	}
+
 };
 
-// UClass* USeqCond_CompareString::pClassPointer = NULL;
 
-// 0x000C (0x0098 - 0x008C)
+// Class GearboxFramework.SeqCond_GetLanguage
+// 0x000C (0x008C - 0x0098)
 class USeqCond_GetLanguage : public USequenceCondition
 {
 public:
-	TArray< struct FString >                           LangList;                                         		// 0x008C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	TArray<struct FString>                             LangList;                                                 // 0x008C(0x000C) (NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SeqCond_GetLanguage");
+		return ptr;
+	}
+
 };
 
-// UClass* USeqCond_GetLanguage::pClassPointer = NULL;
 
-// 0x0024 (0x0060 - 0x003C)
+// Class GearboxFramework.SimpleMathValueResolver
+// 0x0024 (0x003C - 0x0060)
 class USimpleMathValueResolver : public UAttributeValueResolver
 {
 public:
-	unsigned char                                      Arg1Option;                                       		// 0x003C (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      Operand;                                          		// 0x003D (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	struct FAttributeInitializationData                Arg1Attribute;                                    		// 0x0040 (0x0010) [0x0000000000000001]              ( CPF_Edit )
-	struct FAttributeInitializationData                Argument;                                         		// 0x0050 (0x0010) [0x0000000000000001]              ( CPF_Edit )
+	unsigned char                                      Arg1Option;                                               // 0x003C(0x0001) (Edit)
+	unsigned char                                      Operand;                                                  // 0x003D(0x0001) (Edit)
+	unsigned char                                      UnknownData00[0x2];                                       // 0x003E(0x0002) MISSED OFFSET
+	struct FAttributeInitializationData                Arg1Attribute;                                            // 0x0040(0x0010) (Edit)
+	struct FAttributeInitializationData                Argument;                                                 // 0x0050(0x0010) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SimpleMathValueResolver");
+		return ptr;
+	}
+
 };
 
-// UClass* USimpleMathValueResolver::pClassPointer = NULL;
 
-// 0x003F (0x0098 - 0x0059)
+// Class GearboxFramework.SpecialMoveDefinition
+// 0x000C (0x003C - 0x0048)
+class USpecialMoveDefinition : public UGBXDefinition
+{
+public:
+	class USpecialMoveDefinition*                      NextSpecialMove;                                          // 0x003C(0x0004) (Edit)
+	class UExpressionEvaluator*                        StopExpression;                                           // 0x0040(0x0004) (Edit, Const, EditInline)
+	unsigned long                                      bOwnerAlwaysRelevant : 1;                                 // 0x0044(0x0004) (Edit)
+	unsigned long                                      bClientHasAuthority : 1;                                  // 0x0044(0x0004) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SpecialMoveDefinition");
+		return ptr;
+	}
+
+
+	bool IsPlayingLocally(const TScriptInterface<class USpecialMoveInterface>& SMI);
+	class USpecialMoveDefinition* GetSMDToPlay(const TScriptInterface<class USpecialMoveInterface>& SMI);
+	bool Contains(class USpecialMoveDefinition* SMD, const TScriptInterface<class USpecialMoveInterface>& SMI);
+	void ClientFinished(const TScriptInterface<class USpecialMoveInterface>& SMI, bool bInterrupted);
+	void ServerFinished(const TScriptInterface<class USpecialMoveInterface>& SMI, bool bInterrupted);
+	float ClientStarted(const TScriptInterface<class USpecialMoveInterface>& SMI, struct FSpecialMoveData* SMData);
+	void ServerStarted(const TScriptInterface<class USpecialMoveInterface>& SMI);
+	bool IsLocalAuthority(const TScriptInterface<class USpecialMoveInterface>& SMI);
+	bool AuthorityCanPlay(const TScriptInterface<class USpecialMoveInterface>& SMI);
+};
+
+
+// Class GearboxFramework.SpecialMoveComponent
+// 0x003F (0x0059 - 0x0098)
 class USpecialMoveComponent : public UActorComponent
 {
 public:
-	unsigned long                                      bLocalPlay : 1;                                   		// 0x005C (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
-	float                                              StartTime;                                        		// 0x0060 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class USpecialMoveInterface*                       SMI;                                              		// 0x0064 (0x0008) [0x0000000000002000]              ( CPF_Transient )
-	unsigned char                                      UnknownData00[0x4];                             		// 0x0068 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	struct FSpecialMoveData                            CurrentSMData;                                    		// 0x006C (0x001C) [0x0000000000002000]              ( CPF_Transient )
-	TArray< struct FSpecialMoveData >                  SMDQueue;                                         		// 0x0088 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	class UAnimNodeSpecialMoveBlend*                   SMBlendNode;                                      		// 0x0094 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0059(0x0003) MISSED OFFSET
+	unsigned long                                      bLocalPlay : 1;                                           // 0x005C(0x0004) (Transient)
+	float                                              StartTime;                                                // 0x0060(0x0004) (Transient)
+	TScriptInterface<class USpecialMoveInterface>      SMI;                                                      // 0x0064(0x0008) (Transient)
+	struct FSpecialMoveData                            CurrentSMData;                                            // 0x006C(0x001C) (Transient)
+	TArray<struct FSpecialMoveData>                    SMDQueue;                                                 // 0x0088(0x000C) (Transient, NeedCtorLink)
+	class UAnimNodeSpecialMoveBlend*                   SMBlendNode;                                              // 0x0094(0x0004) (Transient)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SpecialMoveComponent");
+		return ptr;
+	}
+
+
 	bool IsOwnerAlwaysNetRelevant();
 	bool CanPlayBehaviorData(struct FSMBehavior* Data);
-	void RunBehaviors(TArray< struct FSMBehavior >* SMBehaviors);
+	void RunBehaviors(TArray<struct FSMBehavior>* SMBehaviors);
 	class USpecialMoveDefinition* GetCurrent();
 	float GetPlayRateScale();
 	float GetDuration();
 	class UObject* GetData();
-	void LocalAnimFinished(class USpecialMoveDefinition* SMD, unsigned long bInterrupted, struct FSpecialMoveData* SMData);
+	void LocalAnimFinished(class USpecialMoveDefinition* SMD, bool bInterrupted, struct FSpecialMoveData* SMData);
 	void ClearQueue();
-	void StopAnyLocal(struct FName SMNodeName, unsigned long bInterrupted, class USkeletalMeshComponent* MeshComp);
-	void StopLocal(class USpecialMoveDefinition* OldSMD, unsigned long bInterrupted);
-	void StopAny(unsigned long bClearQueue, unsigned long bInterrupted);
-	void Stop(class USpecialMoveDefinition* OldSMD, unsigned long bClearQueue, unsigned long bInterrupted);
-	float PlayLocal(class USpecialMoveDefinition* NewSMD, float PlayRateScale, float Duration, struct FName CallbackName, class UObject* CallbackObject, class UObject* Data);
-	void Queue(class USpecialMoveDefinition* NewSMD, float PlayRateScale, float Duration, struct FName CallbackName, class UObject* CallbackObject, class UObject* Data);
-	float Play(class USpecialMoveDefinition* NewSMD, float PlayRateScale, float Duration, struct FName CallbackName, class UObject* CallbackObject, class UObject* Data);
+	void StopAnyLocal(const struct FName& SMNodeName, bool bInterrupted, class USkeletalMeshComponent* MeshComp);
+	void StopLocal(class USpecialMoveDefinition* OldSMD, bool bInterrupted);
+	void StopAny(bool bClearQueue, bool bInterrupted);
+	void Stop(class USpecialMoveDefinition* OldSMD, bool bClearQueue, bool bInterrupted);
+	float PlayLocal(class USpecialMoveDefinition* NewSMD, float PlayRateScale, float Duration, const struct FName& CallbackName, class UObject* CallbackObject, class UObject* Data);
+	void Queue(class USpecialMoveDefinition* NewSMD, float PlayRateScale, float Duration, const struct FName& CallbackName, class UObject* CallbackObject, class UObject* Data);
+	float Play(class USpecialMoveDefinition* NewSMD, float PlayRateScale, float Duration, const struct FName& CallbackName, class UObject* CallbackObject, class UObject* Data);
 	void RemoveFromQueue(class USpecialMoveDefinition* SMD);
 	bool IsQueued(class USpecialMoveDefinition* SMD);
 	bool IsPlayingClass(class UClass* SMClass);
@@ -2632,337 +2469,229 @@ public:
 	bool IsPlaying(class USpecialMoveDefinition* SMD);
 	struct FVector GetAnimDelta(class UGearboxAnimDefinition* CustomAnimSMD);
 	class UAnimNodeSpecialMoveBlend* GetSMNode();
-	void PlayReplicated(struct FReplicatedSpecialMoveData NewSMData);
-	float GetAnimLength(class UGearboxAnimDefinition* CustomAnimSMD, unsigned long bIncludeNextSMD, class USkeletalMeshComponent* SMC);
+	void PlayReplicated(const struct FReplicatedSpecialMoveData& NewSMData);
+	float GetAnimLength(class UGearboxAnimDefinition* CustomAnimSMD, bool bIncludeNextSMD, class USkeletalMeshComponent* SMC);
 };
 
-// UClass* USpecialMoveComponent::pClassPointer = NULL;
 
-// 0x000C (0x0048 - 0x003C)
-class USpecialMoveDefinition : public UGBXDefinition
-{
-public:
-	class USpecialMoveDefinition*                      NextSpecialMove;                                  		// 0x003C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UExpressionEvaluator*                        StopExpression;                                   		// 0x0040 (0x0004) [0x0000000004000003]              ( CPF_Edit | CPF_Const | CPF_EditInline )
-	unsigned long                                      bOwnerAlwaysRelevant : 1;                         		// 0x0044 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      bClientHasAuthority : 1;                          		// 0x0044 (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
-
-public:
-	bool eventIsPlayingLocally(class USpecialMoveInterface* SMI);
-	class USpecialMoveDefinition* GetSMDToPlay(class USpecialMoveInterface* SMI);
-	bool Contains(class USpecialMoveDefinition* SMD, class USpecialMoveInterface* SMI);
-	void eventClientFinished(class USpecialMoveInterface* SMI, unsigned long bInterrupted);
-	void eventServerFinished(class USpecialMoveInterface* SMI, unsigned long bInterrupted);
-	float eventClientStarted(class USpecialMoveInterface* SMI, struct FSpecialMoveData* SMData);
-	void eventServerStarted(class USpecialMoveInterface* SMI);
-	bool IsLocalAuthority(class USpecialMoveInterface* SMI);
-	bool eventAuthorityCanPlay(class USpecialMoveInterface* SMI);
-};
-
-// UClass* USpecialMoveDefinition::pClassPointer = NULL;
-
-// 0x000C (0x0054 - 0x0048)
+// Class GearboxFramework.SpecialMoveExpressionList
+// 0x000C (0x0048 - 0x0054)
 class USpecialMoveExpressionList : public USpecialMoveDefinition
 {
 public:
-	TArray< struct FSMExpressionList >                 SpecialMoveList;                                  		// 0x0048 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	TArray<struct FSMExpressionList>                   SpecialMoveList;                                          // 0x0048(0x000C) (Edit, NeedCtorLink)
 
-public:
-	bool Contains(class USpecialMoveDefinition* SMD, class USpecialMoveInterface* SMI);
-	class USpecialMoveDefinition* GetSMDToPlay(class USpecialMoveInterface* SMI);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SpecialMoveExpressionList");
+		return ptr;
+	}
+
+
+	bool Contains(class USpecialMoveDefinition* SMD, const TScriptInterface<class USpecialMoveInterface>& SMI);
+	class USpecialMoveDefinition* GetSMDToPlay(const TScriptInterface<class USpecialMoveInterface>& SMI);
 };
 
-// UClass* USpecialMoveExpressionList::pClassPointer = NULL;
 
-// 0x000C (0x0054 - 0x0048)
+// Class GearboxFramework.SpecialMoveRandom
+// 0x000C (0x0048 - 0x0054)
 class USpecialMoveRandom : public USpecialMoveDefinition
 {
 public:
-	TArray< struct FSMRandomPair >                     RandomList;                                       		// 0x0048 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	TArray<struct FSMRandomPair>                       RandomList;                                               // 0x0048(0x000C) (Edit, NeedCtorLink)
 
-public:
-	bool Contains(class USpecialMoveDefinition* SMD, class USpecialMoveInterface* SMI);
-	class USpecialMoveDefinition* GetSMDToPlay(class USpecialMoveInterface* SMI);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SpecialMoveRandom");
+		return ptr;
+	}
+
+
+	bool Contains(class USpecialMoveDefinition* SMD, const TScriptInterface<class USpecialMoveInterface>& SMI);
+	class USpecialMoveDefinition* GetSMDToPlay(const TScriptInterface<class USpecialMoveInterface>& SMI);
 };
 
-// UClass* USpecialMoveRandom::pClassPointer = NULL;
 
-// 0x0000 (0x003C - 0x003C)
-class USpecialMoveInterface : public UInterface
-{
-public:
-	void SetReplicatedSMData(struct FSpecialMoveData* NewSMData);
-	void eventServerSpecialMove_StopAny();
-	void eventServerSpecialMove_Stop(class USpecialMoveDefinition* OldSMD);
-	void eventServerSpecialMove_Queue(class USpecialMoveDefinition* NewSMD, float PlayRateScale, float Duration, struct FName CallbackName, class UObject* CallbackObject, class UObject* Data);
-	void eventServerSpecialMove_Play(class USpecialMoveDefinition* NewSMD, float PlayRateScale, float Duration, struct FName CallbackName, class UObject* CallbackObject, class UObject* Data);
-	unsigned char GetDefaultRootMotionRotationMode();
-	unsigned char GetDefaultRootMotionMode();
-	class USkeletalMeshComponent* GetSkelMesh();
-	class USpecialMoveComponent* GetSMComponent();
-	class AActor* GetActor();
-};
-
-// UClass* USpecialMoveInterface::pClassPointer = NULL;
-
-// 0x0008 (0x0044 - 0x003C)
+// Class GearboxFramework.StateAttributeResolver
+// 0x0008 (0x003C - 0x0044)
 class UStateAttributeResolver : public UAttributeValueResolver
 {
 public:
-	struct FName                                       NameKey;                                          		// 0x003C (0x0008) [0x0000000000000001]              ( CPF_Edit )
+	struct FName                                       NameKey;                                                  // 0x003C(0x0008) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("StateAttributeResolver");
+		return ptr;
+	}
+
 };
 
-// UClass* UStateAttributeResolver::pClassPointer = NULL;
 
-// 0x0028 (0x0064 - 0x003C)
+// Class GearboxFramework.TimeValueResolver
+// 0x0028 (0x003C - 0x0064)
 class UTimeValueResolver : public UAttributeValueResolver
 {
 public:
-	unsigned char                                      TimeMode;                                         		// 0x003C (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	unsigned long                                      bNormalizeTime : 1;                               		// 0x0040 (0x0004) [0x0000000000000003] [0x00000001] ( CPF_Edit | CPF_Const )
-	struct FAttributeInitializationData                StartTime;                                        		// 0x0044 (0x0010) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	struct FAttributeInitializationData                TotalTime;                                        		// 0x0054 (0x0010) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	unsigned char                                      TimeMode;                                                 // 0x003C(0x0001) (Edit, Const)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x003D(0x0003) MISSED OFFSET
+	unsigned long                                      bNormalizeTime : 1;                                       // 0x0040(0x0004) (Edit, Const)
+	struct FAttributeInitializationData                StartTime;                                                // 0x0044(0x0010) (Edit, Const)
+	struct FAttributeInitializationData                TotalTime;                                                // 0x0054(0x0010) (Edit, Const)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("TimeValueResolver");
+		return ptr;
+	}
+
 };
 
-// UClass* UTimeValueResolver::pClassPointer = NULL;
 
-// 0x0004 (0x018C - 0x0188)
+// Class GearboxFramework.WireManager
+// 0x0004 (0x0188 - 0x018C)
 class AWireManager : public AActor
 {
 public:
-	class UMaterialInterface*                          DefaultMaterial;                                  		// 0x0188 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	class UMaterialInterface*                          DefaultMaterial;                                          // 0x0188(0x0004) (Const)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("WireManager");
+		return ptr;
+	}
+
 };
 
-// UClass* AWireManager::pClassPointer = NULL;
 
-// 0x0018 (0x01A8 - 0x0190)
+// Class GearboxFramework.WireTerminal
+// 0x0018 (0x0190 - 0x01A8)
 class AWireTerminal : public AStaticMeshActor
 {
 public:
-	class AWireTerminal*                               NextTerminal;                                     		// 0x0190 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	TArray< struct FWireLinkage >                      Linkages;                                         		// 0x0194 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	class UMaterialInterface*                          WireMaterial;                                     		// 0x01A0 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	unsigned long                                      bTerminalDirty : 1;                               		// 0x01A4 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
+	class AWireTerminal*                               NextTerminal;                                             // 0x0190(0x0004) (Edit)
+	TArray<struct FWireLinkage>                        Linkages;                                                 // 0x0194(0x000C) (Edit, NeedCtorLink)
+	class UMaterialInterface*                          WireMaterial;                                             // 0x01A0(0x0004) (Edit)
+	unsigned long                                      bTerminalDirty : 1;                                       // 0x01A4(0x0004) (Transient)
 
-public:
-	void eventDestroyed();
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("WireTerminal");
+		return ptr;
+	}
+
+
+	void Destroyed();
 	void NotifyModifiedTerminal();
 };
 
-// UClass* AWireTerminal::pClassPointer = NULL;
 
+// Class GearboxFramework.WiringActor
 // 0x0000 (0x0190 - 0x0190)
-class AWiringActor : public AStaticMeshActor {};
+class AWiringActor : public AStaticMeshActor
+{
+public:
 
-// UClass* AWiringActor::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("WiringActor");
+		return ptr;
+	}
 
-// 0x0240 (0x0370 - 0x0130)
+};
+
+
+// Class GearboxFramework.WiringMesh
+// 0x0240 (0x0130 - 0x0370)
 class UWiringMesh : public UStaticMesh
 {
 public:
-	unsigned char                                      UnknownData00[0x240];                           		// 0x0130 (0x0240) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x240];                                     // 0x0130(0x0240) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("WiringMesh");
+		return ptr;
+	}
+
 };
 
-// UClass* UWiringMesh::pClassPointer = NULL;
 
+// Class GearboxFramework.ActionResource
 // 0x0000 (0x003C - 0x003C)
-class UActionResource : public UObject {};
-
-// UClass* UActionResource::pClassPointer = NULL;
-
-// 0x006C (0x00A8 - 0x003C)
-class UActionSequence : public UObject
+class UActionResource : public UObject
 {
 public:
-	TArray< class UClass* >                            ResourcesUsed;                                    		// 0x003C (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
-	class URuleEngine*                                 MyRuleEngine;                                     		// 0x0048 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class URule*                                       AttachedRule;                                     		// 0x004C (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	float                                              LatentFloat;                                      		// 0x0050 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	unsigned long                                      bInitialized : 1;                                 		// 0x0054 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
-	unsigned long                                      bDoWorkFinished : 1;                              		// 0x0054 (0x0004) [0x0000000000002000] [0x00000002] ( CPF_Transient )
-	unsigned long                                      bInAtomicSection : 1;                             		// 0x0054 (0x0004) [0x0000000000002000] [0x00000004] ( CPF_Transient )
-	unsigned long                                      bDoNotLoadBalance : 1;                            		// 0x0054 (0x0004) [0x0000000000000001] [0x00000008] ( CPF_Edit )
-	class UActionSequence*                             ParentSequence;                                   		// 0x0058 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UActionSequence*                             ChildSequence;                                    		// 0x005C (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UAIFactoryBase*                              TheAIFactory;                                     		// 0x0060 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FString                                     ContextMenu;                                      		// 0x0064 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	float                                              StoredDeltaTime;                                  		// 0x0070 (0x0004) [0x0000000000000000]
-	TArray< struct FFlagDefinitionInitialization >     FlagValuesToSetOnBegin;                           		// 0x0074 (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
-	TArray< struct FFlagDefinitionInitialization >     FlagValuesToSetOnEnd;                             		// 0x0080 (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
-	class UIAIInterface*                               AI;                                               		// 0x008C (0x0008) [0x0000000000000000]
-	unsigned char                                      UnknownData00[0x4];                             		// 0x0090 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	TArray< struct FName >                             BehaviorOutputs;                                  		// 0x0094 (0x000C) [0x0000000000400002]              ( CPF_Const | CPF_NeedCtorLink )
-	struct FName                                       BehaviorName;                                     		// 0x00A0 (0x0008) [0x0000000000020002]              ( CPF_Const | CPF_EditConst )
 
-public:
-	void TriggerBehavior(struct FName OutputName);
-	float GetRangeValue(struct FAIRange* Range);
-	bool RangeIsValid(struct FAIRange* Range);
-	void Finish(unsigned long bFailed);
-	bool IsRunning();
-	void eventScriptCleanUp();
-	struct FName eventCanRun();
-	void eventActivateEvent(struct FName EventName);
-	void eventUpdate();
-	void eventInit();
-	void eventStop();
-	void eventStart();
-	void eventInterruptSequence(class UActionSequence* InterruptingSequence);
-	void eventStopSequence();
-	void eventStartSequence();
-	void ExecuteSequence(class UActionSequence* SequenceTemplate);
-	void Sleep(float Seconds);
-	void RunSubSequence(class UActionSequence* SubSequence);
-	void InterruptLatentAction();
-	void DoRuleSetPop();
-	bool DoRuleSetPush(class URuleSet* NewRuleSet);
-	void DoRuleSetSwitch(class URuleSet* NewRuleSet);
-	void PreventNewRulesFromStarting();
-	class URule* GetRuleNative();
-	void GetActionSequence(class UActionSequence* Template, class UActionSequence** OutSequence);
-	bool IsInLabel(struct FName TestLabel);
-	bool IsAtomic();
-	void StopAtomic();
-	void StartAtomic();
-	bool IsActionReadyToFinish();
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("ActionResource");
+		return ptr;
+	}
+
 };
 
-// UClass* UActionSequence::pClassPointer = NULL;
 
-// 0x0004 (0x00AC - 0x00A8)
-class UActionSequenceList : public UActionSequence
-{
-public:
-	int                                                CurrentIndex;                                     		// 0x00A8 (0x0004) [0x0000000000000000]
-
-public:
-	bool IsActionReadyToFinish();
-};
-
-// UClass* UActionSequenceList::pClassPointer = NULL;
-
-// 0x0008 (0x00B0 - 0x00A8)
-class UActionSequencePawn : public UActionSequence
-{
-public:
-	class AGearboxMind*                                MyGearboxMind;                                    		// 0x00A8 (0x0004) [0x0000000000000000]
-	class AGearboxPawn*                                MyGearboxPawn;                                    		// 0x00AC (0x0004) [0x0000000000000000]
-};
-
-// UClass* UActionSequencePawn::pClassPointer = NULL;
-
-// 0x00A0 (0x0150 - 0x00B0)
-class UAction_PawnMovementBase : public UActionSequencePawn
-{
-public:
-	struct FVector                                     CachedSearchOrigin;                               		// 0x00B0 (0x000C) [0x0000000000000000]
-	struct FFlag                                       CoverCheckThrottle;                               		// 0x00BC (0x0010) [0x0000000000000000]
-	float                                              CoverCheckThrottleInterval;                       		// 0x00CC (0x0004) [0x0000000000000002]              ( CPF_Const )
-	unsigned long                                      ShouldRepeatNavSearch : 1;                        		// 0x00D0 (0x0004) [0x0000000000000000] [0x00000001]
-	unsigned long                                      Interrupted : 1;                                  		// 0x00D0 (0x0004) [0x0000000000002000] [0x00000002] ( CPF_Transient )
-	unsigned long                                      GoToCover : 1;                                    		// 0x00D0 (0x0004) [0x0000000000000001] [0x00000004] ( CPF_Edit )
-	unsigned long                                      UsePreciseArrival : 1;                            		// 0x00D0 (0x0004) [0x0000000000000001] [0x00000008] ( CPF_Edit )
-	struct FVector                                     NewGoalLocation;                                  		// 0x00D4 (0x000C) [0x0000000000002000]              ( CPF_Transient )
-	class UPawnMoveLocationRequest*                    OneMoveRequest;                                   		// 0x00E0 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UClass*                                      MoveRequestClass;                                 		// 0x00E4 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	TArray< struct FAttributeInitializationData >      AttributesToEvaluate;                             		// 0x00E8 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	unsigned char                                      AttributeEvalStyle;                               		// 0x00F4 (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      SearchRandomness;                                 		// 0x00F5 (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      CoverSearchFilter;                                		// 0x00F6 (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      CoverFailureResponse;                             		// 0x00F7 (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      RepathOption;                                     		// 0x00F8 (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	class USearchOrigin*                               SearchOrigin;                                     		// 0x00FC (0x0004) [0x0000000004000001]              ( CPF_Edit | CPF_EditInline )
-	class USearchDirection*                            DirectionFromOrigin;                              		// 0x0100 (0x0004) [0x0000000004000001]              ( CPF_Edit | CPF_EditInline )
-	float                                              DirectionCone;                                    		// 0x0104 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class ULocationFilter*                             LocationFilterTest;                               		// 0x0108 (0x0004) [0x0000000004000001]              ( CPF_Edit | CPF_EditInline )
-	struct FAttributeInitializationData                MinDistanceFromOrigin;                            		// 0x010C (0x0010) [0x0000000000000001]              ( CPF_Edit )
-	struct FAttributeInitializationData                MaxDistanceFromOrigin;                            		// 0x011C (0x0010) [0x0000000000000001]              ( CPF_Edit )
-	struct FAttributeInitializationData                OverrideDistanceForCover;                         		// 0x012C (0x0010) [0x0000000000000001]              ( CPF_Edit )
-	struct FAttributeInitializationData                RepathDistanceThresh;                             		// 0x013C (0x0010) [0x0000000000000001]              ( CPF_Edit )
-	class URuleEventDef*                               FailureEvent;                                     		// 0x014C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-
-public:
-	void eventPostMovement();
-	void eventPreMovement();
-	void eventPrePathFind();
-	void eventInterruptSequence(class UActionSequence* InterruptingSequence);
-	void eventStopSequence();
-	void eventStartSequence();
-	void MovePawnToDestinationLocation(struct FVector GoalLocation, unsigned long NewUsePreciseArrival);
-	void TakeDebugSnapshotMoveFailure(unsigned char Cause);
-	void SetMaxMovementSpeed(unsigned char NewMaxSpeed);
-	void EndMovePawnToDestinationLocation();
-};
-
-// UClass* UAction_PawnMovementBase::pClassPointer = NULL;
-
-// 0x000C (0x00B4 - 0x00A8)
-class UActionSequenceRandom : public UActionSequence
-{
-public:
-	TArray< struct FActionSequenceRandomData >         ActionList;                                       		// 0x00A8 (0x000C) [0x0000000004400001]              ( CPF_Edit | CPF_NeedCtorLink | CPF_EditInline )
-
-public:
-	void EvaluateActionList();
-	void OverrideNextSequenceToRun(class UActionSequence* NewSequence);
-	class UActionSequence* GetRandomAction();
-};
-
-// UClass* UActionSequenceRandom::pClassPointer = NULL;
-
-// 0x0093 (0x00EC - 0x0059)
+// Class GearboxFramework.AIComponent
+// 0x0093 (0x0059 - 0x00EC)
 class UAIComponent : public UActorComponent
 {
 public:
-	float                                              UpdateRate;                                       		// 0x005C (0x0004) [0x0000000000000000]
-	class UIAIInterface*                               AI;                                               		// 0x0060 (0x0008) [0x0000000000002000]              ( CPF_Transient )
-	unsigned char                                      UnknownData00[0x4];                             		// 0x0064 (0x0004) FIX WRONG TYPE SIZE OF PREVIUS PROPERTY
-	unsigned long                                      bInitialized : 1;                                 		// 0x0068 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
-	class UAIDefinition*                               AIDef;                                            		// 0x006C (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	float                                              LastStateUpdateTime;                              		// 0x0070 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FPointer                                    CurrentState;                                     		// 0x0074 (0x0004) [0x0000000000001002]              ( CPF_Const | CPF_Native )
-	TArray< struct FAIResourceData >                   ResourceData;                                     		// 0x0078 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	class AActor*                                      CurrentTarget;                                    		// 0x0084 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class AActor*                                      ScriptedTarget;                                   		// 0x0088 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	float                                              LastTargetUpdateTime;                             		// 0x008C (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	TArray< class UMindTargetInfo* >                   Targets;                                          		// 0x0090 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	class UTargetingDefinition*                        TargetingDef;                                     		// 0x009C (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UClass*                                      MindTargetInfoClass;                              		// 0x00A0 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	TArray< struct FAIHoldData >                       Holds;                                            		// 0x00A4 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	TArray< struct FAIHoldData >                       TargetHolds;                                      		// 0x00B0 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	TArray< struct FAIHoldData >                       MovementHolds;                                    		// 0x00BC (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	TArray< struct FAIHoldData >                       DemigodHolds;                                     		// 0x00C8 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	TArray< struct FAIHoldData >                       GodHolds;                                         		// 0x00D4 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	TArray< struct FAIHoldData >                       DialogHolds;                                      		// 0x00E0 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0059(0x0003) MISSED OFFSET
+	float                                              UpdateRate;                                               // 0x005C(0x0004)
+	TScriptInterface<class UIAIInterface>              AI;                                                       // 0x0060(0x0008) (Transient)
+	unsigned long                                      bInitialized : 1;                                         // 0x0068(0x0004) (Transient)
+	class UAIDefinition*                               AIDef;                                                    // 0x006C(0x0004) (Transient)
+	float                                              LastStateUpdateTime;                                      // 0x0070(0x0004) (Transient)
+	struct FPointer                                    CurrentState;                                             // 0x0074(0x0004) (Const, Native)
+	TArray<struct FAIResourceData>                     ResourceData;                                             // 0x0078(0x000C) (Transient, NeedCtorLink)
+	class AActor*                                      CurrentTarget;                                            // 0x0084(0x0004) (Transient)
+	class AActor*                                      ScriptedTarget;                                           // 0x0088(0x0004) (Transient)
+	float                                              LastTargetUpdateTime;                                     // 0x008C(0x0004) (Transient)
+	TArray<class UMindTargetInfo*>                     Targets;                                                  // 0x0090(0x000C) (Transient, NeedCtorLink)
+	class UTargetingDefinition*                        TargetingDef;                                             // 0x009C(0x0004) (Transient)
+	class UClass*                                      MindTargetInfoClass;                                      // 0x00A0(0x0004) (Const)
+	TArray<struct FAIHoldData>                         Holds;                                                    // 0x00A4(0x000C) (Transient, NeedCtorLink)
+	TArray<struct FAIHoldData>                         TargetHolds;                                              // 0x00B0(0x000C) (Transient, NeedCtorLink)
+	TArray<struct FAIHoldData>                         MovementHolds;                                            // 0x00BC(0x000C) (Transient, NeedCtorLink)
+	TArray<struct FAIHoldData>                         DemigodHolds;                                             // 0x00C8(0x000C) (Transient, NeedCtorLink)
+	TArray<struct FAIHoldData>                         GodHolds;                                                 // 0x00D4(0x000C) (Transient, NeedCtorLink)
+	TArray<struct FAIHoldData>                         DialogHolds;                                              // 0x00E0(0x000C) (Transient, NeedCtorLink)
 
-public:
-	float GetAIRangeTime(struct FAIRange InRange);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("AIComponent");
+		return ptr;
+	}
+
+
+	static float GetAIRangeTime(const struct FAIRange& InRange);
 	void DrawAITree(class UCanvas* Canvas);
 	void LogDemigodHolds();
-	void ReleaseDialog(struct FName HoldName, class UObject* Tag);
-	void HoldDialog(struct FName HoldName, class UObject* Tag);
+	void ReleaseDialog(const struct FName& HoldName, class UObject* Tag);
+	void HoldDialog(const struct FName& HoldName, class UObject* Tag);
 	bool DialogOnHold();
-	void ReleaseGod(struct FName HoldName, class UObject* Tag);
-	void HoldGod(struct FName HoldName, class UObject* Tag);
+	void ReleaseGod(const struct FName& HoldName, class UObject* Tag);
+	void HoldGod(const struct FName& HoldName, class UObject* Tag);
 	bool GodOnHold();
-	void ReleaseDemigod(struct FName HoldName, class UObject* Tag);
-	void HoldDemigod(struct FName HoldName, class UObject* Tag);
+	void ReleaseDemigod(const struct FName& HoldName, class UObject* Tag);
+	void HoldDemigod(const struct FName& HoldName, class UObject* Tag);
 	bool DemigodOnHold();
-	void ReleaseMovement(struct FName HoldName, class UObject* Tag);
-	void HoldMovement(struct FName HoldName, class UObject* Tag);
+	void ReleaseMovement(const struct FName& HoldName, class UObject* Tag);
+	void HoldMovement(const struct FName& HoldName, class UObject* Tag);
 	bool MovementOnHold();
-	void ReleaseTarget(struct FName HoldName, class UObject* Tag);
-	void HoldTarget(struct FName HoldName, class UObject* Tag);
+	void ReleaseTarget(const struct FName& HoldName, class UObject* Tag);
+	void HoldTarget(const struct FName& HoldName, class UObject* Tag);
 	bool TargetOnHold();
-	void Release(struct FName HoldName, class UObject* Tag);
-	void Hold(struct FName HoldName, class UObject* Tag);
+	void Release(const struct FName& HoldName, class UObject* Tag);
+	void Hold(const struct FName& HoldName, class UObject* Tag);
 	bool OnHold();
 	void ForceUpdateTargets();
 	void TargetChanged(class AActor* OldTarget, class AActor* NewTarget);
 	void SetTarget(class AActor* NewTarget);
 	void SetScriptedTarget(class AActor* NewScriptedTarget);
-	class UMindTargetInfo* GetTargetRecordFor(class AActor* Target, unsigned long bTryParent);
-	class UMindTargetInfo* GetTargetRecord(unsigned long bTryParent);
+	class UMindTargetInfo* GetTargetRecordFor(class AActor* Target, bool bTryParent);
+	class UMindTargetInfo* GetTargetRecord(bool bTryParent);
 	bool IsTarget(class AActor* TestTarget);
 	class AActor* GetTarget();
 	bool HasTarget();
@@ -2984,37 +2713,243 @@ public:
 	class UAIComponent* GetParentComponent();
 	class UPawnAllegiance* GetAllegiance();
 	void ClearState();
-	bool ActivateEvent(struct FName EventName);
+	bool ActivateEvent(const struct FName& EventName);
 };
 
-// UClass* UAIComponent::pClassPointer = NULL;
 
-// 0x0008 (0x0044 - 0x003C)
+// Class GearboxFramework.FlagDefinition
+// 0x0014 (0x003C - 0x0050)
+class UFlagDefinition : public UGBXDefinition
+{
+public:
+	class UExpressionEvaluator*                        EvaluationExpression;                                     // 0x003C(0x0004) (Edit, Const, EditInline)
+	TArray<class UAttributeContextResolver*>           ContextResolverChain;                                     // 0x0040(0x000C) (Edit, Const, NeedCtorLink, EditInline)
+	class UFlagValueResolver*                          ValueResolver;                                            // 0x004C(0x0004) (Edit, Const, EditInline)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("FlagDefinition");
+		return ptr;
+	}
+
+
+	static void ApplyFlagInitializationData(class UObject* ContextSource, TArray<struct FFlagDefinitionInitialization>* FlagsToSet);
+	class UObject* ResolveContext(class UObject* ContextSource);
+	bool SetTrueTimed(class UObject* ContextSource, float TimeSeconds);
+	bool SetValue(class UObject* ContextSource, bool Value);
+};
+
+
+// Class GearboxFramework.ActionSequence
+// 0x006C (0x003C - 0x00A8)
+class UActionSequence : public UObject
+{
+public:
+	TArray<class UClass*>                              ResourcesUsed;                                            // 0x003C(0x000C) (Edit, Const, NeedCtorLink)
+	class URuleEngine*                                 MyRuleEngine;                                             // 0x0048(0x0004) (Transient)
+	class URule*                                       AttachedRule;                                             // 0x004C(0x0004) (Transient)
+	float                                              LatentFloat;                                              // 0x0050(0x0004) (Transient)
+	unsigned long                                      bInitialized : 1;                                         // 0x0054(0x0004) (Transient)
+	unsigned long                                      bDoWorkFinished : 1;                                      // 0x0054(0x0004) (Transient)
+	unsigned long                                      bInAtomicSection : 1;                                     // 0x0054(0x0004) (Transient)
+	unsigned long                                      bDoNotLoadBalance : 1;                                    // 0x0054(0x0004) (Edit)
+	class UActionSequence*                             ParentSequence;                                           // 0x0058(0x0004) (Transient)
+	class UActionSequence*                             ChildSequence;                                            // 0x005C(0x0004) (Transient)
+	class UAIFactoryBase*                              TheAIFactory;                                             // 0x0060(0x0004) (Transient)
+	struct FString                                     ContextMenu;                                              // 0x0064(0x000C) (NeedCtorLink)
+	float                                              StoredDeltaTime;                                          // 0x0070(0x0004)
+	TArray<struct FFlagDefinitionInitialization>       FlagValuesToSetOnBegin;                                   // 0x0074(0x000C) (Edit, Const, NeedCtorLink)
+	TArray<struct FFlagDefinitionInitialization>       FlagValuesToSetOnEnd;                                     // 0x0080(0x000C) (Edit, Const, NeedCtorLink)
+	TScriptInterface<class UIAIInterface>              AI;                                                       // 0x008C(0x0008)
+	TArray<struct FName>                               BehaviorOutputs;                                          // 0x0094(0x000C) (Const, NeedCtorLink)
+	struct FName                                       BehaviorName;                                             // 0x00A0(0x0008) (Const, EditConst)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("ActionSequence");
+		return ptr;
+	}
+
+
+	void TriggerBehavior(const struct FName& OutputName);
+	float GetRangeValue(struct FAIRange* Range);
+	bool RangeIsValid(struct FAIRange* Range);
+	void Finish(bool bFailed);
+	bool IsRunning();
+	void ScriptCleanUp();
+	struct FName CanRun();
+	void ActivateEvent(const struct FName& EventName);
+	void Update();
+	void Init();
+	void Stop();
+	void Start();
+	void InterruptSequence(class UActionSequence* InterruptingSequence);
+	void StopSequence();
+	void StartSequence();
+	void ExecuteSequence(class UActionSequence* SequenceTemplate);
+	void Sleep(float Seconds);
+	void RunSubSequence(class UActionSequence* SubSequence);
+	void InterruptLatentAction();
+	void DoRuleSetPop();
+	bool DoRuleSetPush(class URuleSet* NewRuleSet);
+	void DoRuleSetSwitch(class URuleSet* NewRuleSet);
+	void PreventNewRulesFromStarting();
+	class URule* GetRuleNative();
+	void GetActionSequence(class UActionSequence* Template, class UActionSequence** OutSequence);
+	bool IsInLabel(const struct FName& TestLabel);
+	bool IsAtomic();
+	void StopAtomic();
+	void StartAtomic();
+	bool IsActionReadyToFinish();
+};
+
+
+// Class GearboxFramework.ActionSequenceList
+// 0x0004 (0x00A8 - 0x00AC)
+class UActionSequenceList : public UActionSequence
+{
+public:
+	int                                                CurrentIndex;                                             // 0x00A8(0x0004)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("ActionSequenceList");
+		return ptr;
+	}
+
+
+	bool IsActionReadyToFinish();
+};
+
+
+// Class GearboxFramework.ActionSequencePawn
+// 0x0008 (0x00A8 - 0x00B0)
+class UActionSequencePawn : public UActionSequence
+{
+public:
+	class AGearboxMind*                                MyGearboxMind;                                            // 0x00A8(0x0004)
+	class AGearboxPawn*                                MyGearboxPawn;                                            // 0x00AC(0x0004)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("ActionSequencePawn");
+		return ptr;
+	}
+
+};
+
+
+// Class GearboxFramework.Action_PawnMovementBase
+// 0x00A0 (0x00B0 - 0x0150)
+class UAction_PawnMovementBase : public UActionSequencePawn
+{
+public:
+	struct FVector                                     CachedSearchOrigin;                                       // 0x00B0(0x000C)
+	struct FFlag                                       CoverCheckThrottle;                                       // 0x00BC(0x0010)
+	float                                              CoverCheckThrottleInterval;                               // 0x00CC(0x0004) (Const)
+	unsigned long                                      ShouldRepeatNavSearch : 1;                                // 0x00D0(0x0004)
+	unsigned long                                      Interrupted : 1;                                          // 0x00D0(0x0004) (Transient)
+	unsigned long                                      GoToCover : 1;                                            // 0x00D0(0x0004) (Edit)
+	unsigned long                                      UsePreciseArrival : 1;                                    // 0x00D0(0x0004) (Edit)
+	struct FVector                                     NewGoalLocation;                                          // 0x00D4(0x000C) (Transient)
+	class UPawnMoveLocationRequest*                    OneMoveRequest;                                           // 0x00E0(0x0004) (Transient)
+	class UClass*                                      MoveRequestClass;                                         // 0x00E4(0x0004) (Const)
+	TArray<struct FAttributeInitializationData>        AttributesToEvaluate;                                     // 0x00E8(0x000C) (Edit, NeedCtorLink)
+	unsigned char                                      AttributeEvalStyle;                                       // 0x00F4(0x0001) (Edit)
+	unsigned char                                      SearchRandomness;                                         // 0x00F5(0x0001) (Edit)
+	unsigned char                                      CoverSearchFilter;                                        // 0x00F6(0x0001) (Edit)
+	unsigned char                                      CoverFailureResponse;                                     // 0x00F7(0x0001) (Edit)
+	unsigned char                                      RepathOption;                                             // 0x00F8(0x0001) (Edit)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x00F9(0x0003) MISSED OFFSET
+	class USearchOrigin*                               SearchOrigin;                                             // 0x00FC(0x0004) (Edit, EditInline)
+	class USearchDirection*                            DirectionFromOrigin;                                      // 0x0100(0x0004) (Edit, EditInline)
+	float                                              DirectionCone;                                            // 0x0104(0x0004) (Edit)
+	class ULocationFilter*                             LocationFilterTest;                                       // 0x0108(0x0004) (Edit, EditInline)
+	struct FAttributeInitializationData                MinDistanceFromOrigin;                                    // 0x010C(0x0010) (Edit)
+	struct FAttributeInitializationData                MaxDistanceFromOrigin;                                    // 0x011C(0x0010) (Edit)
+	struct FAttributeInitializationData                OverrideDistanceForCover;                                 // 0x012C(0x0010) (Edit)
+	struct FAttributeInitializationData                RepathDistanceThresh;                                     // 0x013C(0x0010) (Edit)
+	class URuleEventDef*                               FailureEvent;                                             // 0x014C(0x0004) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Action_PawnMovementBase");
+		return ptr;
+	}
+
+
+	void PostMovement();
+	void PreMovement();
+	void PrePathFind();
+	void InterruptSequence(class UActionSequence* InterruptingSequence);
+	void StopSequence();
+	void StartSequence();
+	void MovePawnToDestinationLocation(const struct FVector& GoalLocation, bool NewUsePreciseArrival);
+	void TakeDebugSnapshotMoveFailure(unsigned char Cause);
+	void SetMaxMovementSpeed(unsigned char NewMaxSpeed);
+	void EndMovePawnToDestinationLocation();
+};
+
+
+// Class GearboxFramework.ActionSequenceRandom
+// 0x000C (0x00A8 - 0x00B4)
+class UActionSequenceRandom : public UActionSequence
+{
+public:
+	TArray<struct FActionSequenceRandomData>           ActionList;                                               // 0x00A8(0x000C) (Edit, NeedCtorLink, EditInline)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("ActionSequenceRandom");
+		return ptr;
+	}
+
+
+	void EvaluateActionList();
+	void OverrideNextSequenceToRun(class UActionSequence* NewSequence);
+	class UActionSequence* GetRandomAction();
+};
+
+
+// Class GearboxFramework.AICostExpressionEvaluator
+// 0x0008 (0x003C - 0x0044)
 class UAICostExpressionEvaluator : public UExpressionEvaluator
 {
 public:
-	int                                                Multiplier;                                       		// 0x003C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UPopulationDefinition*                       PopDef;                                           		// 0x0040 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	int                                                Multiplier;                                               // 0x003C(0x0004) (Edit)
+	class UPopulationDefinition*                       PopDef;                                                   // 0x0040(0x0004) (Edit)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("AICostExpressionEvaluator");
+		return ptr;
+	}
+
+
 	bool Evaluate(class UObject* ContextSource);
 };
 
-// UClass* UAICostExpressionEvaluator::pClassPointer = NULL;
 
-// 0x004C (0x0088 - 0x003C)
+// Class GearboxFramework.AIFactoryBase
+// 0x004C (0x003C - 0x0088)
 class UAIFactoryBase : public UObject
 {
 public:
-	TArray< struct FKnowledgeRecordStruct >            KnowledgeRecordList;                              		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FRuleSetRecord >                    RuleSets;                                         		// 0x0048 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FRuleRecord >                       Rules;                                            		// 0x0054 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FActionSequenceRecord >             ActionSequences;                                  		// 0x0060 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FTargetInfoRecord >                 TargetRecords;                                    		// 0x006C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FAIDefinitionRecord >               AIDefinitionRecords;                              		// 0x0078 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	float                                              TimeStampedRecordLifetime;                        		// 0x0084 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	TArray<struct FKnowledgeRecordStruct>              KnowledgeRecordList;                                      // 0x003C(0x000C) (NeedCtorLink)
+	TArray<struct FRuleSetRecord>                      RuleSets;                                                 // 0x0048(0x000C) (NeedCtorLink)
+	TArray<struct FRuleRecord>                         Rules;                                                    // 0x0054(0x000C) (NeedCtorLink)
+	TArray<struct FActionSequenceRecord>               ActionSequences;                                          // 0x0060(0x000C) (NeedCtorLink)
+	TArray<struct FTargetInfoRecord>                   TargetRecords;                                            // 0x006C(0x000C) (NeedCtorLink)
+	TArray<struct FAIDefinitionRecord>                 AIDefinitionRecords;                                      // 0x0078(0x000C) (NeedCtorLink)
+	float                                              TimeStampedRecordLifetime;                                // 0x0084(0x0004) (Const)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("AIFactoryBase");
+		return ptr;
+	}
+
+
 	void FlushPools();
 	void ReturnAIDef(class UAIDefinition** InAIDef);
 	bool GetAIDef(class UAIDefinition* AIDefTemplate, class UAIDefinition** OutAIDef);
@@ -3023,9 +2958,9 @@ public:
 	void ReturnActionSequence(class UActionSequence** InSequence);
 	bool GetActionSequence(class UActionSequence* SequenceTemplate, class UActionSequence** OutSequence);
 	void ReturnRuleSet(class URuleSet** InRuleSet);
-	bool GetRuleSetFromArchetype(class URuleSet* RuleSetArchetype, class URuleSet** OutRuleSet, TArray< class URule* >* CurRunningRules);
+	bool GetRuleSetFromArchetype(class URuleSet* RuleSetArchetype, class URuleSet** OutRuleSet, TArray<class URule*>* CurRunningRules);
 	void ReturnKnowledgeRecord(class UKnowledgeRecord** InKR);
-	bool GetKnowledgeRecordListFromArchetypes(TArray< class UKnowledgeRecord* > KnowledgeRecordTemplates, TArray< class UKnowledgeRecord* >* KnowledgeRecords);
+	bool GetKnowledgeRecordListFromArchetypes(TArray<class UKnowledgeRecord*> KnowledgeRecordTemplates, TArray<class UKnowledgeRecord*>* KnowledgeRecords);
 	bool GetKnowledgeRecordFromArchetype(class UKnowledgeRecord* InKR, class UKnowledgeRecord** OutKR);
 	bool GetKnowledgeRecord(class UClass* KnowledgeRecordClass, class UKnowledgeRecord** OutKR);
 	void ReturnRule(class URule** InRule);
@@ -3034,540 +2969,902 @@ public:
 	void ReturnRuleEngine(class URuleEngine* InRuleEngine);
 };
 
-// UClass* UAIFactoryBase::pClassPointer = NULL;
 
+// Class GearboxFramework.GearboxAIFactory
 // 0x0000 (0x0088 - 0x0088)
 class UGearboxAIFactory : public UAIFactoryBase
 {
 public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxAIFactory");
+		return ptr;
+	}
+
+
 	void FreeRuleEngine(class URuleEngine* InRuleEngine);
 	bool GetRuleEngineFromTemplate(class URuleEngine* RuleEngineTemplate, class URuleEngine** OutRuleEngine);
 };
 
-// UClass* UGearboxAIFactory::pClassPointer = NULL;
 
-// 0x0014 (0x0050 - 0x003C)
+// Class GearboxFramework.AIResource
+// 0x0014 (0x003C - 0x0050)
 class UAIResource : public UGBXDefinition
 {
 public:
-	TArray< struct FAIResourceRestriction >            ResourceRestrictions;                             		// 0x003C (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
-	int                                                MaxUsers;                                         		// 0x0048 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	int                                                MinUsers;                                         		// 0x004C (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	TArray<struct FAIResourceRestriction>              ResourceRestrictions;                                     // 0x003C(0x000C) (Edit, Const, NeedCtorLink)
+	int                                                MaxUsers;                                                 // 0x0048(0x0004) (Edit, Const)
+	int                                                MinUsers;                                                 // 0x004C(0x0004) (Edit, Const)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("AIResource");
+		return ptr;
+	}
+
 };
 
-// UClass* UAIResource::pClassPointer = NULL;
 
-// 0x0008 (0x0044 - 0x003C)
+// Class GearboxFramework.AIResourceExpressionEvaluator
+// 0x0008 (0x003C - 0x0044)
 class UAIResourceExpressionEvaluator : public UExpressionEvaluator
 {
 public:
-	unsigned char                                      Option;                                           		// 0x003C (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	class UAIResource*                                 Resource;                                         		// 0x0040 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	unsigned char                                      Option;                                                   // 0x003C(0x0001) (Edit, Const)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x003D(0x0003) MISSED OFFSET
+	class UAIResource*                                 Resource;                                                 // 0x0040(0x0004) (Edit, Const)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("AIResourceExpressionEvaluator");
+		return ptr;
+	}
+
+
 	bool Evaluate(class UObject* ContextSource);
 };
 
-// UClass* UAIResourceExpressionEvaluator::pClassPointer = NULL;
 
-// 0x0008 (0x0044 - 0x003C)
+// Class GearboxFramework.AllegianceExpressionEvaluator
+// 0x0008 (0x003C - 0x0044)
 class UAllegianceExpressionEvaluator : public UExpressionEvaluator
 {
 public:
-	unsigned char                                      AllegianceCheck;                                  		// 0x003C (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	class UPawnAllegiance*                             Allegiance;                                       		// 0x0040 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	unsigned char                                      AllegianceCheck;                                          // 0x003C(0x0001) (Edit, Const)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x003D(0x0003) MISSED OFFSET
+	class UPawnAllegiance*                             Allegiance;                                               // 0x0040(0x0004) (Edit, Const)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("AllegianceExpressionEvaluator");
+		return ptr;
+	}
+
+
 	bool Evaluate(class UObject* ContextSource);
 };
 
-// UClass* UAllegianceExpressionEvaluator::pClassPointer = NULL;
 
-// 0x0014 (0x0050 - 0x003C)
+// Class GearboxFramework.AwarenessZoneCollectionDefinition
+// 0x0014 (0x003C - 0x0050)
 class UAwarenessZoneCollectionDefinition : public UGBXDefinition
 {
 public:
-	TArray< class UAwarenessZoneDefinition* >          DefaultAwarenessZones;                            		// 0x003C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	struct FName                                       CollectionName;                                   		// 0x0048 (0x0008) [0x0000000000000001]              ( CPF_Edit )
+	TArray<class UAwarenessZoneDefinition*>            DefaultAwarenessZones;                                    // 0x003C(0x000C) (Edit, NeedCtorLink)
+	struct FName                                       CollectionName;                                           // 0x0048(0x0008) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("AwarenessZoneCollectionDefinition");
+		return ptr;
+	}
+
 };
 
-// UClass* UAwarenessZoneCollectionDefinition::pClassPointer = NULL;
 
-// 0x0030 (0x006C - 0x003C)
+// Class GearboxFramework.AwarenessZoneDefinition
+// 0x0030 (0x003C - 0x006C)
 class UAwarenessZoneDefinition : public UGBXDefinition
 {
 public:
-	struct FString                                     ZoneName;                                         		// 0x003C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	unsigned long                                      OuterRimInfinitelyFarAway : 1;                    		// 0x0048 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      ViewConeOnlyUsedForUnknownTargets : 1;            		// 0x0048 (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
-	unsigned long                                      NeverForgetHiddenThreats : 1;                     		// 0x0048 (0x0004) [0x0000000000000001] [0x00000004] ( CPF_Edit )
-	float                                              OuterRimDistance;                                 		// 0x004C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      ViewConeStyle;                                    		// 0x0050 (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      SpecialExposureBehavior;                          		// 0x0051 (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      HearingBehavior;                                  		// 0x0052 (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	float                                              ViewConeFieldOfViewInDegrees;                     		// 0x0054 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              MinExposureRatingConsideredVisible;               		// 0x0058 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              ForgetHiddenThreatsAfterXSeconds;                 		// 0x005C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              TargetSelectionPriority;                          		// 0x0060 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	struct FColor                                      ZoneColor;                                        		// 0x0064 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              TimeFiringAtLastKnownLocation;                    		// 0x0068 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	struct FString                                     ZoneName;                                                 // 0x003C(0x000C) (Edit, NeedCtorLink)
+	unsigned long                                      OuterRimInfinitelyFarAway : 1;                            // 0x0048(0x0004) (Edit)
+	unsigned long                                      ViewConeOnlyUsedForUnknownTargets : 1;                    // 0x0048(0x0004) (Edit)
+	unsigned long                                      NeverForgetHiddenThreats : 1;                             // 0x0048(0x0004) (Edit)
+	float                                              OuterRimDistance;                                         // 0x004C(0x0004) (Edit)
+	unsigned char                                      ViewConeStyle;                                            // 0x0050(0x0001) (Edit)
+	unsigned char                                      SpecialExposureBehavior;                                  // 0x0051(0x0001) (Edit)
+	unsigned char                                      HearingBehavior;                                          // 0x0052(0x0001) (Edit)
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0053(0x0001) MISSED OFFSET
+	float                                              ViewConeFieldOfViewInDegrees;                             // 0x0054(0x0004) (Edit)
+	float                                              MinExposureRatingConsideredVisible;                       // 0x0058(0x0004) (Edit)
+	float                                              ForgetHiddenThreatsAfterXSeconds;                         // 0x005C(0x0004) (Edit)
+	float                                              TargetSelectionPriority;                                  // 0x0060(0x0004) (Edit)
+	struct FColor                                      ZoneColor;                                                // 0x0064(0x0004) (Edit)
+	float                                              TimeFiringAtLastKnownLocation;                            // 0x0068(0x0004) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("AwarenessZoneDefinition");
+		return ptr;
+	}
+
 };
 
-// UClass* UAwarenessZoneDefinition::pClassPointer = NULL;
 
-// 0x0024 (0x0070 - 0x004C)
+// Class GearboxFramework.GbxMessage
+// 0x00D8 (0x003C - 0x0114)
+class UGbxMessage : public UObject
+{
+public:
+	class UGbxMessageDefinition*                       Definition;                                               // 0x003C(0x0004)
+	struct FName                                       NameKey;                                                  // 0x0040(0x0008)
+	class UObject*                                     Sender;                                                   // 0x0048(0x0004)
+	class UObject*                                     Subject;                                                  // 0x004C(0x0004)
+	class UObject*                                     AdditionalData;                                           // 0x0050(0x0004)
+	struct FGbxMessageSimpleMetaData                   SimpleMetaData;                                           // 0x0054(0x001C)
+	struct FGbxMessageSimpleMetaData                   SimpleMetaData2;                                          // 0x0070(0x001C)
+	struct FGbxMessageSimpleMetaData                   SimpleMetaData3;                                          // 0x008C(0x001C)
+	struct FGbxMessageSimpleMetaData                   SimpleMetaData4;                                          // 0x00A8(0x001C)
+	class UPawnAllegiance*                             SenderAllegiance;                                         // 0x00C4(0x0004)
+	class UPawnAllegiance*                             SubjectAllegiance;                                        // 0x00C8(0x0004)
+	unsigned long                                      IntendedForAllies : 1;                                    // 0x00CC(0x0004)
+	unsigned long                                      IntendedForEnemies : 1;                                   // 0x00CC(0x0004)
+	unsigned long                                      HasLocation : 1;                                          // 0x00CC(0x0004)
+	unsigned long                                      HasRadius : 1;                                            // 0x00CC(0x0004)
+	unsigned long                                      SendRepeatedly : 1;                                       // 0x00CC(0x0004)
+	struct FVector                                     MessageLocation;                                          // 0x00D0(0x000C)
+	float                                              BroadcastRadius;                                          // 0x00DC(0x0004)
+	float                                              DeliverTime;                                              // 0x00E0(0x0004)
+	float                                              TimePosted;                                               // 0x00E4(0x0004)
+	float                                              TimeSent;                                                 // 0x00E8(0x0004)
+	struct FFlag                                       DoNotSendRightNow;                                        // 0x00EC(0x0010)
+	int                                                StopSendingAfterXReceptions;                              // 0x00FC(0x0004)
+	float                                              MaxDurationToSend;                                        // 0x0100(0x0004)
+	float                                              TimeBetweenSends;                                         // 0x0104(0x0004)
+	TArray<unsigned char>                              DupeCriteria;                                             // 0x0108(0x000C) (NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GbxMessage");
+		return ptr;
+	}
+
+
+	void InitializeFromDefinition(class UGbxMessageDefinition* InDefinition, class UObject* RadiusContextSource, class UObject* InSender, class UObject* InSubject, class UPawnAllegiance* ManualSenderAllegiance);
+};
+
+
+// Class GearboxFramework.Behavior_SendGbxMessage
+// 0x0024 (0x004C - 0x0070)
 class UBehavior_SendGbxMessage : public UBehaviorBase
 {
 public:
-	class UGbxMessageDefinition*                       MessageDefinition;                                		// 0x004C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      AssignSenderTo;                                   		// 0x0050 (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      AssignSubjectTo;                                  		// 0x0051 (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      TakeLocationFrom;                                 		// 0x0052 (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	struct FGbxMessageSimpleMetaData                   MetaData;                                         		// 0x0054 (0x001C) [0x0000000000000001]              ( CPF_Edit )
+	class UGbxMessageDefinition*                       MessageDefinition;                                        // 0x004C(0x0004) (Edit)
+	unsigned char                                      AssignSenderTo;                                           // 0x0050(0x0001) (Edit)
+	unsigned char                                      AssignSubjectTo;                                          // 0x0051(0x0001) (Edit)
+	unsigned char                                      TakeLocationFrom;                                         // 0x0052(0x0001) (Edit)
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0053(0x0001) MISSED OFFSET
+	struct FGbxMessageSimpleMetaData                   MetaData;                                                 // 0x0054(0x001C) (Edit)
 
-public:
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_SendGbxMessage");
+		return ptr;
+	}
+
+
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 	struct FVector GetLocation(unsigned char SelectionParam, class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject);
 	class UObject* GetMessageParameter(unsigned char SelectionParam, class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject);
 };
 
-// UClass* UBehavior_SendGbxMessage::pClassPointer = NULL;
 
-// 0x000C (0x0058 - 0x004C)
+// Class GearboxFramework.Behavior_SetFlag
+// 0x000C (0x004C - 0x0058)
 class UBehavior_SetFlag : public UBehaviorBase
 {
 public:
-	TArray< struct FFlagDefinitionInitialization >     FlagsToSet;                                       		// 0x004C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	TArray<struct FFlagDefinitionInitialization>       FlagsToSet;                                               // 0x004C(0x000C) (Edit, NeedCtorLink)
 
-public:
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_SetFlag");
+		return ptr;
+	}
+
+
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// UClass* UBehavior_SetFlag::pClassPointer = NULL;
 
-// 0x0004 (0x0040 - 0x003C)
+// Class GearboxFramework.BestTargetAttributeContextResolver
+// 0x0004 (0x003C - 0x0040)
 class UBestTargetAttributeContextResolver : public UAttributeContextResolver
 {
 public:
-	unsigned long                                      bGetTargetInfo : 1;                               		// 0x003C (0x0004) [0x0000000000000003] [0x00000001] ( CPF_Edit | CPF_Const )
+	unsigned long                                      bGetTargetInfo : 1;                                       // 0x003C(0x0004) (Edit, Const)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("BestTargetAttributeContextResolver");
+		return ptr;
+	}
+
 };
 
-// UClass* UBestTargetAttributeContextResolver::pClassPointer = NULL;
 
-// 0x000C (0x0048 - 0x003C)
+// Class GearboxFramework.CharacterClassMessageDefinition
+// 0x000C (0x003C - 0x0048)
 class UCharacterClassMessageDefinition : public UGBXDefinition
 {
 public:
-	TArray< struct FBehaviorTriggerMessageStruct >     BehaviorTriggers;                                 		// 0x003C (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
+	TArray<struct FBehaviorTriggerMessageStruct>       BehaviorTriggers;                                         // 0x003C(0x000C) (Edit, Const, NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("CharacterClassMessageDefinition");
+		return ptr;
+	}
+
 };
 
-// UClass* UCharacterClassMessageDefinition::pClassPointer = NULL;
 
-// 0x003C (0x0078 - 0x003C)
+// Class GearboxFramework.CoverSearchCriteria
+// 0x003C (0x003C - 0x0078)
 class UCoverSearchCriteria : public UGBXDefinition
 {
 public:
-	unsigned long                                      DoDistanceToOriginCandidateTest : 1;              		// 0x003C (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      DoProvidesCoverCandidateTest : 1;                 		// 0x003C (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
-	unsigned long                                      DoDistanceToThreatCandidateTest : 1;              		// 0x003C (0x0004) [0x0000000000000001] [0x00000004] ( CPF_Edit )
-	unsigned long                                      DoVantageToBestTargetCandidateTest : 1;           		// 0x003C (0x0004) [0x0000000000000001] [0x00000008] ( CPF_Edit )
-	unsigned long                                      DoVantageToAnyTargetCandidateTest : 1;            		// 0x003C (0x0004) [0x0000000000000001] [0x00000010] ( CPF_Edit )
-	unsigned long                                      DoAssignmentVolumeCandidateTest : 1;              		// 0x003C (0x0004) [0x0000000000000001] [0x00000020] ( CPF_Edit )
-	unsigned long                                      DoBlacklistedCoverCandidateTest : 1;              		// 0x003C (0x0004) [0x0000000000000001] [0x00000040] ( CPF_Edit )
-	unsigned long                                      DoScoringForDistanceToOrigin : 1;                 		// 0x003C (0x0004) [0x0000000000000001] [0x00000080] ( CPF_Edit )
-	unsigned long                                      DoScoringForDistanceToThreat : 1;                 		// 0x003C (0x0004) [0x0000000000000001] [0x00000100] ( CPF_Edit )
-	unsigned long                                      DoScoringForProvidesCover : 1;                    		// 0x003C (0x0004) [0x0000000000000001] [0x00000200] ( CPF_Edit )
-	unsigned long                                      DoScoringForVantageOnBestTarget : 1;              		// 0x003C (0x0004) [0x0000000000000001] [0x00000400] ( CPF_Edit )
-	unsigned long                                      DoScoringForVantageOnAnyTarget : 1;               		// 0x003C (0x0004) [0x0000000000000001] [0x00000800] ( CPF_Edit )
-	unsigned long                                      DoScoringForUnoccupiedLink : 1;                   		// 0x003C (0x0004) [0x0000000000000001] [0x00001000] ( CPF_Edit )
-	unsigned long                                      DoScoringForNonBlacklistedCover : 1;              		// 0x003C (0x0004) [0x0000000000000001] [0x00002000] ( CPF_Edit )
-	float                                              DistanceToOriginCandidateTestMax;                 		// 0x0040 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              DistanceToThreatCandidateTest;                    		// 0x0044 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              MinDistanceToOrigin;                              		// 0x0048 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              MaxDistanceToOrigin;                              		// 0x004C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              ScoreDistanceToOrigin;                            		// 0x0050 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              MinDistanceToThreat;                              		// 0x0054 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              MaxDistanceToThreat;                              		// 0x0058 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              ScoreDistanceToThreat;                            		// 0x005C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              MaxDistanceProvidesCover;                         		// 0x0060 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              ScoreProvidesCover;                               		// 0x0064 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              ScoreVantageOnBestTarget;                         		// 0x0068 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              ScoreVantageOnAnyTarget;                          		// 0x006C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              ScoreUnoccupiedLink;                              		// 0x0070 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              ScoreNonBlacklistedCover;                         		// 0x0074 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	unsigned long                                      DoDistanceToOriginCandidateTest : 1;                      // 0x003C(0x0004) (Edit)
+	unsigned long                                      DoProvidesCoverCandidateTest : 1;                         // 0x003C(0x0004) (Edit)
+	unsigned long                                      DoDistanceToThreatCandidateTest : 1;                      // 0x003C(0x0004) (Edit)
+	unsigned long                                      DoVantageToBestTargetCandidateTest : 1;                   // 0x003C(0x0004) (Edit)
+	unsigned long                                      DoVantageToAnyTargetCandidateTest : 1;                    // 0x003C(0x0004) (Edit)
+	unsigned long                                      DoAssignmentVolumeCandidateTest : 1;                      // 0x003C(0x0004) (Edit)
+	unsigned long                                      DoBlacklistedCoverCandidateTest : 1;                      // 0x003C(0x0004) (Edit)
+	unsigned long                                      DoScoringForDistanceToOrigin : 1;                         // 0x003C(0x0004) (Edit)
+	unsigned long                                      DoScoringForDistanceToThreat : 1;                         // 0x003C(0x0004) (Edit)
+	unsigned long                                      DoScoringForProvidesCover : 1;                            // 0x003C(0x0004) (Edit)
+	unsigned long                                      DoScoringForVantageOnBestTarget : 1;                      // 0x003C(0x0004) (Edit)
+	unsigned long                                      DoScoringForVantageOnAnyTarget : 1;                       // 0x003C(0x0004) (Edit)
+	unsigned long                                      DoScoringForUnoccupiedLink : 1;                           // 0x003C(0x0004) (Edit)
+	unsigned long                                      DoScoringForNonBlacklistedCover : 1;                      // 0x003C(0x0004) (Edit)
+	float                                              DistanceToOriginCandidateTestMax;                         // 0x0040(0x0004) (Edit)
+	float                                              DistanceToThreatCandidateTest;                            // 0x0044(0x0004) (Edit)
+	float                                              MinDistanceToOrigin;                                      // 0x0048(0x0004) (Edit)
+	float                                              MaxDistanceToOrigin;                                      // 0x004C(0x0004) (Edit)
+	float                                              ScoreDistanceToOrigin;                                    // 0x0050(0x0004) (Edit)
+	float                                              MinDistanceToThreat;                                      // 0x0054(0x0004) (Edit)
+	float                                              MaxDistanceToThreat;                                      // 0x0058(0x0004) (Edit)
+	float                                              ScoreDistanceToThreat;                                    // 0x005C(0x0004) (Edit)
+	float                                              MaxDistanceProvidesCover;                                 // 0x0060(0x0004) (Edit)
+	float                                              ScoreProvidesCover;                                       // 0x0064(0x0004) (Edit)
+	float                                              ScoreVantageOnBestTarget;                                 // 0x0068(0x0004) (Edit)
+	float                                              ScoreVantageOnAnyTarget;                                  // 0x006C(0x0004) (Edit)
+	float                                              ScoreUnoccupiedLink;                                      // 0x0070(0x0004) (Edit)
+	float                                              ScoreNonBlacklistedCover;                                 // 0x0074(0x0004) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("CoverSearchCriteria");
+		return ptr;
+	}
+
 };
 
-// UClass* UCoverSearchCriteria::pClassPointer = NULL;
 
-// 0x0008 (0x0044 - 0x003C)
+// Class GearboxFramework.ExposureUtilityBase
+// 0x0008 (0x003C - 0x0044)
 class UExposureUtilityBase : public UObject
 {
 public:
-	unsigned long                                      ExposureEnabled : 1;                              		// 0x003C (0x0004) [0x0000000000000002] [0x00000001] ( CPF_Const )
-	class UExposureUtilityStrategy*                    ExposureStrategy;                                 		// 0x0040 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	unsigned long                                      ExposureEnabled : 1;                                      // 0x003C(0x0004) (Const)
+	class UExposureUtilityStrategy*                    ExposureStrategy;                                         // 0x0040(0x0004) (Transient)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("ExposureUtilityBase");
+		return ptr;
+	}
+
+
 	float CalculateVantageToPoint(class AActor* pLooker, struct FVector* TargetPoint);
 	float CalculateTargetExposure(class AGearboxPawn* pLooker, class AActor* pTarget);
 };
 
-// UClass* UExposureUtilityBase::pClassPointer = NULL;
 
-// 0x0040 (0x0084 - 0x0044)
+// Class GearboxFramework.ExposureUtilityBasicCaching
+// 0x0040 (0x0044 - 0x0084)
 class UExposureUtilityBasicCaching : public UExposureUtilityBase
 {
 public:
-	unsigned long                                      CachingEnabled : 1;                               		// 0x0044 (0x0004) [0x0000000000000002] [0x00000001] ( CPF_Const )
-	float                                              MaxCacheTime;                                     		// 0x0048 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              DistanceClose;                                    		// 0x004C (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              DistanceMed;                                      		// 0x0050 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              CacheFreshnessTimeClose;                          		// 0x0054 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              CacheFreshnessTimeMed;                            		// 0x0058 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              CacheFreshnessTimeFar;                            		// 0x005C (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              CacheFreshnessTimePlayer;                         		// 0x0060 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              CacheTimeFudgeFactorClose;                        		// 0x0064 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              CacheTimeFudgeFactorMed;                          		// 0x0068 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              CacheTimeFudgeFactorFar;                          		// 0x006C (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              HasMovedDistThreshold;                            		// 0x0070 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              HasMovedDistThresholdPlayer;                      		// 0x0074 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	TArray< struct FExposureCacheStruct >              CachedExposures;                                  		// 0x0078 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	unsigned long                                      CachingEnabled : 1;                                       // 0x0044(0x0004) (Const)
+	float                                              MaxCacheTime;                                             // 0x0048(0x0004) (Const)
+	float                                              DistanceClose;                                            // 0x004C(0x0004) (Const)
+	float                                              DistanceMed;                                              // 0x0050(0x0004) (Const)
+	float                                              CacheFreshnessTimeClose;                                  // 0x0054(0x0004) (Const)
+	float                                              CacheFreshnessTimeMed;                                    // 0x0058(0x0004) (Const)
+	float                                              CacheFreshnessTimeFar;                                    // 0x005C(0x0004) (Const)
+	float                                              CacheFreshnessTimePlayer;                                 // 0x0060(0x0004) (Const)
+	float                                              CacheTimeFudgeFactorClose;                                // 0x0064(0x0004) (Const)
+	float                                              CacheTimeFudgeFactorMed;                                  // 0x0068(0x0004) (Const)
+	float                                              CacheTimeFudgeFactorFar;                                  // 0x006C(0x0004) (Const)
+	float                                              HasMovedDistThreshold;                                    // 0x0070(0x0004) (Const)
+	float                                              HasMovedDistThresholdPlayer;                              // 0x0074(0x0004) (Const)
+	TArray<struct FExposureCacheStruct>                CachedExposures;                                          // 0x0078(0x000C) (NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("ExposureUtilityBasicCaching");
+		return ptr;
+	}
+
 };
 
-// UClass* UExposureUtilityBasicCaching::pClassPointer = NULL;
 
-// 0x0048 (0x00CC - 0x0084)
+// Class GearboxFramework.ExposureUtilityFixedCost
+// 0x0048 (0x0084 - 0x00CC)
 class UExposureUtilityFixedCost : public UExposureUtilityBasicCaching
 {
 public:
-	float                                              CloseDistanceSquared;                             		// 0x0084 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              MedDistanceSquared;                               		// 0x0088 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	int                                                MaxLineChecksPerFrame;                            		// 0x008C (0x0004) [0x0000000000000002]              ( CPF_Const )
-	TArray< struct FBucketStruct >                     Buckets;                                          		// 0x0090 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	float                                              MedAccumulatedTime;                               		// 0x009C (0x0004) [0x0000000000000000]
-	float                                              FarAccumulatedTime;                               		// 0x00A0 (0x0004) [0x0000000000000000]
-	float                                              SkipUpdateForTime;                                		// 0x00A4 (0x0004) [0x0000000000000000]
-	int                                                MaxPointData;                                     		// 0x00A8 (0x0004) [0x0000000000000000]
-	int                                                PointLineChecks;                                  		// 0x00AC (0x0004) [0x0000000000000000]
-	int                                                PointMaxLineChecks;                               		// 0x00B0 (0x0004) [0x0000000000000000]
-	float                                              PointFreshTime;                                   		// 0x00B4 (0x0004) [0x0000000000000000]
-	float                                              PointStaleTime;                                   		// 0x00B8 (0x0004) [0x0000000000000000]
-	float                                              PointMaxErrorSq;                                  		// 0x00BC (0x0004) [0x0000000000000000]
-	TArray< struct FPointExposureData >                PointData;                                        		// 0x00C0 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	float                                              CloseDistanceSquared;                                     // 0x0084(0x0004) (Const)
+	float                                              MedDistanceSquared;                                       // 0x0088(0x0004) (Const)
+	int                                                MaxLineChecksPerFrame;                                    // 0x008C(0x0004) (Const)
+	TArray<struct FBucketStruct>                       Buckets;                                                  // 0x0090(0x000C) (Transient, NeedCtorLink)
+	float                                              MedAccumulatedTime;                                       // 0x009C(0x0004)
+	float                                              FarAccumulatedTime;                                       // 0x00A0(0x0004)
+	float                                              SkipUpdateForTime;                                        // 0x00A4(0x0004)
+	int                                                MaxPointData;                                             // 0x00A8(0x0004)
+	int                                                PointLineChecks;                                          // 0x00AC(0x0004)
+	int                                                PointMaxLineChecks;                                       // 0x00B0(0x0004)
+	float                                              PointFreshTime;                                           // 0x00B4(0x0004)
+	float                                              PointStaleTime;                                           // 0x00B8(0x0004)
+	float                                              PointMaxErrorSq;                                          // 0x00BC(0x0004)
+	TArray<struct FPointExposureData>                  PointData;                                                // 0x00C0(0x000C) (NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("ExposureUtilityFixedCost");
+		return ptr;
+	}
+
 };
 
-// UClass* UExposureUtilityFixedCost::pClassPointer = NULL;
 
+// Class GearboxFramework.ExposureUtilityStrategy
 // 0x0000 (0x003C - 0x003C)
-class UExposureUtilityStrategy : public UObject {};
+class UExposureUtilityStrategy : public UObject
+{
+public:
 
-// UClass* UExposureUtilityStrategy::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("ExposureUtilityStrategy");
+		return ptr;
+	}
 
-// 0x000C (0x0048 - 0x003C)
+};
+
+
+// Class GearboxFramework.FiringBehaviorDefinition
+// 0x000C (0x003C - 0x0048)
 class UFiringBehaviorDefinition : public UGBXDefinition
 {
 public:
-	TArray< struct FConditionalPattern >               ConditionalPatterns;                              		// 0x003C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	TArray<struct FConditionalPattern>                 ConditionalPatterns;                                      // 0x003C(0x000C) (Edit, NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("FiringBehaviorDefinition");
+		return ptr;
+	}
+
 };
 
-// UClass* UFiringBehaviorDefinition::pClassPointer = NULL;
 
-// 0x0034 (0x0070 - 0x003C)
+// Class GearboxFramework.FiringBehaviorManager
+// 0x0034 (0x003C - 0x0070)
 class UFiringBehaviorManager : public UObject
 {
 public:
-	class UFiringPattern*                              CurrentFiringPattern;                             		// 0x003C (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	float                                              CurrentTargetExposure;                            		// 0x0040 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	int                                                NumShotsThisBurst;                                		// 0x0044 (0x0004) [0x0000000000000000]
-	struct FVector                                     CachedTargetPoint;                                		// 0x0048 (0x000C) [0x0000000000000000]
-	unsigned long                                      bHasTargetPoint : 1;                              		// 0x0054 (0x0004) [0x0000000000000000] [0x00000001]
-	unsigned long                                      bSetupWithZoneCollection : 1;                     		// 0x0054 (0x0004) [0x0000000000000000] [0x00000002]
-	class UFiringZoneCollectionDefinition*             CurrentZoneCollection;                            		// 0x0058 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UFiringZoneDefinition*                       CurrentZone;                                      		// 0x005C (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UFiringBehaviorDefinition*                   CurrentBehavior;                                  		// 0x0060 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	int                                                CurrentConditionalPattern;                        		// 0x0064 (0x0004) [0x0000000000000000]
-	class UFiringBehaviorDefinition*                   DefaultFiringBehaviorDefinition;                  		// 0x0068 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UFiringPattern*                              DefaultFiringPatternTemplate;                     		// 0x006C (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UFiringPattern*                              CurrentFiringPattern;                                     // 0x003C(0x0004) (Transient)
+	float                                              CurrentTargetExposure;                                    // 0x0040(0x0004) (Transient)
+	int                                                NumShotsThisBurst;                                        // 0x0044(0x0004)
+	struct FVector                                     CachedTargetPoint;                                        // 0x0048(0x000C)
+	unsigned long                                      bHasTargetPoint : 1;                                      // 0x0054(0x0004)
+	unsigned long                                      bSetupWithZoneCollection : 1;                             // 0x0054(0x0004)
+	class UFiringZoneCollectionDefinition*             CurrentZoneCollection;                                    // 0x0058(0x0004) (Transient)
+	class UFiringZoneDefinition*                       CurrentZone;                                              // 0x005C(0x0004) (Transient)
+	class UFiringBehaviorDefinition*                   CurrentBehavior;                                          // 0x0060(0x0004) (Transient)
+	int                                                CurrentConditionalPattern;                                // 0x0064(0x0004)
+	class UFiringBehaviorDefinition*                   DefaultFiringBehaviorDefinition;                          // 0x0068(0x0004) (Edit)
+	class UFiringPattern*                              DefaultFiringPatternTemplate;                             // 0x006C(0x0004) (Edit)
 
-public:
-	class UClass* eventGetTemplateClass(class UObject* TemplateObject);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("FiringBehaviorManager");
+		return ptr;
+	}
+
+
+	static class UClass* GetTemplateClass(class UObject* TemplateObject);
 };
 
-// UClass* UFiringBehaviorManager::pClassPointer = NULL;
 
+// Class GearboxFramework.FiringCondition
 // 0x0000 (0x003C - 0x003C)
-class UFiringCondition : public UObject {};
+class UFiringCondition : public UObject
+{
+public:
 
-// UClass* UFiringCondition::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("FiringCondition");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.FireCond_IsPlayerTarget
 // 0x0000 (0x003C - 0x003C)
-class UFireCond_IsPlayerTarget : public UFiringCondition {};
+class UFireCond_IsPlayerTarget : public UFiringCondition
+{
+public:
 
-// UClass* UFireCond_IsPlayerTarget::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("FireCond_IsPlayerTarget");
+		return ptr;
+	}
 
-// 0x0004 (0x0040 - 0x003C)
+};
+
+
+// Class GearboxFramework.FiringPattern
+// 0x0004 (0x003C - 0x0040)
 class UFiringPattern : public UObject
 {
 public:
-	unsigned long                                      bIsHarmlessToPawns : 1;                           		// 0x003C (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      bAllowFakeShots : 1;                              		// 0x003C (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
+	unsigned long                                      bIsHarmlessToPawns : 1;                                   // 0x003C(0x0004) (Edit)
+	unsigned long                                      bAllowFakeShots : 1;                                      // 0x003C(0x0004) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("FiringPattern");
+		return ptr;
+	}
+
 };
 
-// UClass* UFiringPattern::pClassPointer = NULL;
 
-// 0x0005 (0x0045 - 0x0040)
+// Class GearboxFramework.FirePatt_Cone
+// 0x0005 (0x0040 - 0x0045)
 class UFirePatt_Cone : public UFiringPattern
 {
 public:
-	float                                              ConeDegrees;                                      		// 0x0040 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      ShotSpreadType;                                   		// 0x0044 (0x0001) [0x0000000000000001]              ( CPF_Edit )
+	float                                              ConeDegrees;                                              // 0x0040(0x0004) (Edit)
+	unsigned char                                      ShotSpreadType;                                           // 0x0044(0x0001) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("FirePatt_Cone");
+		return ptr;
+	}
+
 };
 
-// UClass* UFirePatt_Cone::pClassPointer = NULL;
 
-// 0x0019 (0x0059 - 0x0040)
+// Class GearboxFramework.FirePatt_ShrinkingCone
+// 0x0019 (0x0040 - 0x0059)
 class UFirePatt_ShrinkingCone : public UFiringPattern
 {
 public:
-	float                                              CurrentAccuracyConeDeg;                           		// 0x0040 (0x0004) [0x0000000000000000]
-	struct FRotator                                    LastDesiredAim;                                   		// 0x0044 (0x000C) [0x0000000000000000]
-	float                                              MaxAccuracyConeDeg;                               		// 0x0050 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              ConeMultiplierPerShot;                            		// 0x0054 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      ShotSpreadType;                                   		// 0x0058 (0x0001) [0x0000000000000001]              ( CPF_Edit )
+	float                                              CurrentAccuracyConeDeg;                                   // 0x0040(0x0004)
+	struct FRotator                                    LastDesiredAim;                                           // 0x0044(0x000C)
+	float                                              MaxAccuracyConeDeg;                                       // 0x0050(0x0004) (Edit)
+	float                                              ConeMultiplierPerShot;                                    // 0x0054(0x0004) (Edit)
+	unsigned char                                      ShotSpreadType;                                           // 0x0058(0x0001) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("FirePatt_ShrinkingCone");
+		return ptr;
+	}
+
 };
 
-// UClass* UFirePatt_ShrinkingCone::pClassPointer = NULL;
 
-// 0x0028 (0x0068 - 0x0040)
+// Class GearboxFramework.FirePatt_StrafeOver
+// 0x0028 (0x0040 - 0x0068)
 class UFirePatt_StrafeOver : public UFiringPattern
 {
 public:
-	struct FRotator                                    CurrentAimRotation;                               		// 0x0040 (0x000C) [0x0000000000000000]
-	float                                              PitchDeltaPerShot;                                		// 0x004C (0x0004) [0x0000000000000000]
-	float                                              MaxYawDeltaPerShot;                               		// 0x0050 (0x0004) [0x0000000000000000]
-	float                                              RefireRate;                                       		// 0x0054 (0x0004) [0x0000000000000000]
-	float                                              LineOfShotsSpeed;                                 		// 0x0058 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              LineOfShotsEndZ;                                  		// 0x005C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              YawDeltaRatio;                                    		// 0x0060 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              TargetPosition;                                   		// 0x0064 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	struct FRotator                                    CurrentAimRotation;                                       // 0x0040(0x000C)
+	float                                              PitchDeltaPerShot;                                        // 0x004C(0x0004)
+	float                                              MaxYawDeltaPerShot;                                       // 0x0050(0x0004)
+	float                                              RefireRate;                                               // 0x0054(0x0004)
+	float                                              LineOfShotsSpeed;                                         // 0x0058(0x0004) (Edit)
+	float                                              LineOfShotsEndZ;                                          // 0x005C(0x0004) (Edit)
+	float                                              YawDeltaRatio;                                            // 0x0060(0x0004) (Edit)
+	float                                              TargetPosition;                                           // 0x0064(0x0004) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("FirePatt_StrafeOver");
+		return ptr;
+	}
+
 };
 
-// UClass* UFirePatt_StrafeOver::pClassPointer = NULL;
 
-// 0x000C (0x0048 - 0x003C)
+// Class GearboxFramework.FiringZoneCollectionDefinition
+// 0x000C (0x003C - 0x0048)
 class UFiringZoneCollectionDefinition : public UGBXDefinition
 {
 public:
-	TArray< class UFiringZoneDefinition* >             Zones;                                            		// 0x003C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	TArray<class UFiringZoneDefinition*>               Zones;                                                    // 0x003C(0x000C) (Edit, NeedCtorLink)
 
-public:
-	class UFiringZoneDefinition* eventGetZoneForDistance(float Distance);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("FiringZoneCollectionDefinition");
+		return ptr;
+	}
+
+
+	class UFiringZoneDefinition* GetZoneForDistance(float Distance);
 };
 
-// UClass* UFiringZoneCollectionDefinition::pClassPointer = NULL;
 
-// 0x001C (0x0058 - 0x003C)
+// Class GearboxFramework.FiringZoneDefinition
+// 0x001C (0x003C - 0x0058)
 class UFiringZoneDefinition : public UGBXDefinition
 {
 public:
-	struct FString                                     ZoneName;                                         		// 0x003C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	unsigned long                                      OuterRimInfinitelyFarAway : 1;                    		// 0x0048 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	float                                              OuterRimDistance;                                 		// 0x004C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	struct FColor                                      ZoneColor;                                        		// 0x0050 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UFiringBehaviorDefinition*                   FiringBehavior;                                   		// 0x0054 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	struct FString                                     ZoneName;                                                 // 0x003C(0x000C) (Edit, NeedCtorLink)
+	unsigned long                                      OuterRimInfinitelyFarAway : 1;                            // 0x0048(0x0004) (Edit)
+	float                                              OuterRimDistance;                                         // 0x004C(0x0004) (Edit)
+	struct FColor                                      ZoneColor;                                                // 0x0050(0x0004) (Edit)
+	class UFiringBehaviorDefinition*                   FiringBehavior;                                           // 0x0054(0x0004) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("FiringZoneDefinition");
+		return ptr;
+	}
+
 };
 
-// UClass* UFiringZoneDefinition::pClassPointer = NULL;
 
-// 0x0014 (0x0050 - 0x003C)
-class UFlagDefinition : public UGBXDefinition
+// Class GearboxFramework.Rule
+// 0x00C0 (0x003C - 0x00FC)
+class URule : public UObject
 {
 public:
-	class UExpressionEvaluator*                        EvaluationExpression;                             		// 0x003C (0x0004) [0x0000000004000003]              ( CPF_Edit | CPF_Const | CPF_EditInline )
-	TArray< class UAttributeContextResolver* >         ContextResolverChain;                             		// 0x0040 (0x000C) [0x0000000004400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink | CPF_EditInline )
-	class UFlagValueResolver*                          ValueResolver;                                    		// 0x004C (0x0004) [0x0000000004000003]              ( CPF_Edit | CPF_Const | CPF_EditInline )
+	class URuleEngine*                                 MyRuleEngine;                                             // 0x003C(0x0004) (Transient)
+	int                                                Priority;                                                 // 0x0040(0x0004)
+	int                                                BasePriority;                                             // 0x0044(0x0004)
+	class UActionSequence*                             StartingSequenceTemplate;                                 // 0x0048(0x0004) (Edit, Const, EditInline)
+	unsigned long                                      RuleEnabled : 1;                                          // 0x004C(0x0004) (Edit, Const)
+	unsigned long                                      StopWhenStateCodeRunsOut : 1;                             // 0x004C(0x0004) (Edit, Const)
+	unsigned long                                      AlwaysExecute : 1;                                        // 0x004C(0x0004) (Edit, Const)
+	unsigned long                                      bInitialized : 1;                                         // 0x004C(0x0004) (Transient)
+	unsigned long                                      bIsRunning : 1;                                           // 0x004C(0x0004) (Transient)
+	unsigned long                                      bCanRunMultipleInstances : 1;                             // 0x004C(0x0004)
+	unsigned long                                      bIsTransferable : 1;                                      // 0x004C(0x0004) (Edit)
+	unsigned long                                      bRestartable : 1;                                         // 0x004C(0x0004) (Edit)
+	unsigned long                                      bBlockRuleSetChange : 1;                                  // 0x004C(0x0004) (Edit, Const)
+	unsigned long                                      WasTransferred : 1;                                       // 0x004C(0x0004) (Transient)
+	unsigned char                                      ExecutionPattern;                                         // 0x0050(0x0001) (Edit, Const)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0051(0x0003) MISSED OFFSET
+	struct FAttributeInitializationData                TimeToWaitBeforeFirstExecution;                           // 0x0054(0x0010) (Edit, Const)
+	struct FAttributeInitializationData                TimeToWaitBeforeNextExecution;                            // 0x0064(0x0010) (Edit, Const)
+	struct FAttributeInitializationData                MaxTimeToExecute;                                         // 0x0074(0x0010) (Edit, Const)
+	int                                                MaxNumberOfExecutions;                                    // 0x0084(0x0004) (Edit, Const)
+	TArray<struct FFlagEvalORConnector>                CanExecuteConditionals;                                   // 0x0088(0x000C) (Edit, Const, NeedCtorLink, EditInline)
+	TArray<struct FFlagEvalORConnector>                ShouldStopConditionals;                                   // 0x0094(0x000C) (Edit, Const, NeedCtorLink, EditInline)
+	class UExpressionEvaluator*                        CanExecuteExpression;                                     // 0x00A0(0x0004) (Edit, Const, EditInline)
+	class UExpressionEvaluator*                        ShouldStopExpression;                                     // 0x00A4(0x0004) (Edit, Const, EditInline)
+	class UActionSequence*                             MyActionSequence;                                         // 0x00A8(0x0004) (Transient)
+	class UAIFactoryBase*                              TheAIFactory;                                             // 0x00AC(0x0004) (Transient)
+	class URuleEventDef*                               MyRuleEventDef;                                           // 0x00B0(0x0004) (Edit, Const)
+	TArray<class UClass*>                              AssociatedKnowledgeRecords;                               // 0x00B4(0x000C) (Const, NeedCtorLink)
+	struct FString                                     FlagDebugString;                                          // 0x00C0(0x000C) (NeedCtorLink)
+	struct FName                                       RuleName;                                                 // 0x00CC(0x0008)
+	class UObject*                                     OtherEventParticipantObject;                              // 0x00D4(0x0004)
+	struct FFlag                                       IsTimingRestrictedNow;                                    // 0x00D8(0x0010) (Transient)
+	int                                                NumExecutions;                                            // 0x00E8(0x0004) (Transient)
+	struct FString                                     RuleEventDefPath;                                         // 0x00EC(0x000C) (Transient, NeedCtorLink)
+	float                                              StartExecutionTimeStamp;                                  // 0x00F8(0x0004) (Transient)
 
-public:
-	void ApplyFlagInitializationData(class UObject* ContextSource, TArray< struct FFlagDefinitionInitialization >* FlagsToSet);
-	class UObject* ResolveContext(class UObject* ContextSource);
-	bool SetTrueTimed(class UObject* ContextSource, float TimeSeconds);
-	bool SetValue(class UObject* ContextSource, unsigned long Value);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Rule");
+		return ptr;
+	}
+
+
+	struct FString GetRuleName();
+	struct FName GetRuleFName();
+	class UObject* GetOtherEventParticipant();
 };
 
-// UClass* UFlagDefinition::pClassPointer = NULL;
 
-// 0x000D (0x0049 - 0x003C)
+// Class GearboxFramework.FlagExpressionEvaluator
+// 0x000D (0x003C - 0x0049)
 class UFlagExpressionEvaluator : public UExpressionEvaluator
 {
 public:
-	TArray< struct FFlagEvalConditional >              FlagChain;                                        		// 0x003C (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
-	unsigned char                                      FlagChainOperator;                                		// 0x0048 (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	TArray<struct FFlagEvalConditional>                FlagChain;                                                // 0x003C(0x000C) (Edit, Const, NeedCtorLink)
+	unsigned char                                      FlagChainOperator;                                        // 0x0048(0x0001) (Edit, Const)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("FlagExpressionEvaluator");
+		return ptr;
+	}
+
+
 	bool Evaluate(class UObject* ContextSource);
 };
 
-// UClass* UFlagExpressionEvaluator::pClassPointer = NULL;
 
+// Class GearboxFramework.FlagValueResolver
 // 0x0000 (0x003C - 0x003C)
-class UFlagValueResolver : public UObject {};
+class UFlagValueResolver : public UObject
+{
+public:
 
-// UClass* UFlagValueResolver::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("FlagValueResolver");
+		return ptr;
+	}
 
-// 0x0005 (0x0041 - 0x003C)
+};
+
+
+// Class GearboxFramework.MultipleFlagValueResolver
+// 0x0005 (0x003C - 0x0041)
 class UMultipleFlagValueResolver : public UFlagValueResolver
 {
 public:
-	class UFlagDefinition*                             FlagToLookUp;                                     		// 0x003C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      AggregationType;                                  		// 0x0040 (0x0001) [0x0000000000000001]              ( CPF_Edit )
+	class UFlagDefinition*                             FlagToLookUp;                                             // 0x003C(0x0004) (Edit)
+	unsigned char                                      AggregationType;                                          // 0x0040(0x0001) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("MultipleFlagValueResolver");
+		return ptr;
+	}
+
 };
 
-// UClass* UMultipleFlagValueResolver::pClassPointer = NULL;
 
-// 0x0010 (0x004C - 0x003C)
+// Class GearboxFramework.ObjectFunctionFlagValueResolver
+// 0x0010 (0x003C - 0x004C)
 class UObjectFunctionFlagValueResolver : public UFlagValueResolver
 {
 public:
-	float                                              CheckRate;                                        		// 0x003C (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	struct FString                                     FunctionCall;                                     		// 0x0040 (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
+	float                                              CheckRate;                                                // 0x003C(0x0004) (Edit, Const)
+	struct FString                                     FunctionCall;                                             // 0x0040(0x000C) (Edit, Const, NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("ObjectFunctionFlagValueResolver");
+		return ptr;
+	}
+
 };
 
-// UClass* UObjectFunctionFlagValueResolver::pClassPointer = NULL;
 
-// 0x0008 (0x0044 - 0x003C)
+// Class GearboxFramework.ObjectPropertyFlagValueResolver
+// 0x0008 (0x003C - 0x0044)
 class UObjectPropertyFlagValueResolver : public UFlagValueResolver
 {
 public:
-	struct FName                                       PropertyName;                                     		// 0x003C (0x0008) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	struct FName                                       PropertyName;                                             // 0x003C(0x0008) (Edit, Const)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("ObjectPropertyFlagValueResolver");
+		return ptr;
+	}
+
 };
 
-// UClass* UObjectPropertyFlagValueResolver::pClassPointer = NULL;
 
+// Class GearboxFramework.RuleEngineFlagValueResolver
 // 0x0000 (0x003C - 0x003C)
-class URuleEngineFlagValueResolver : public UFlagValueResolver {};
-
-// UClass* URuleEngineFlagValueResolver::pClassPointer = NULL;
-
-// 0x00D8 (0x0114 - 0x003C)
-class UGbxMessage : public UObject
+class URuleEngineFlagValueResolver : public UFlagValueResolver
 {
 public:
-	class UGbxMessageDefinition*                       Definition;                                       		// 0x003C (0x0004) [0x0000000000000000]
-	struct FName                                       NameKey;                                          		// 0x0040 (0x0008) [0x0000000000000000]
-	class UObject*                                     Sender;                                           		// 0x0048 (0x0004) [0x0000000000000000]
-	class UObject*                                     Subject;                                          		// 0x004C (0x0004) [0x0000000000000000]
-	class UObject*                                     AdditionalData;                                   		// 0x0050 (0x0004) [0x0000000000000000]
-	struct FGbxMessageSimpleMetaData                   SimpleMetaData;                                   		// 0x0054 (0x001C) [0x0000000000000000]
-	struct FGbxMessageSimpleMetaData                   SimpleMetaData2;                                  		// 0x0070 (0x001C) [0x0000000000000000]
-	struct FGbxMessageSimpleMetaData                   SimpleMetaData3;                                  		// 0x008C (0x001C) [0x0000000000000000]
-	struct FGbxMessageSimpleMetaData                   SimpleMetaData4;                                  		// 0x00A8 (0x001C) [0x0000000000000000]
-	class UPawnAllegiance*                             SenderAllegiance;                                 		// 0x00C4 (0x0004) [0x0000000000000000]
-	class UPawnAllegiance*                             SubjectAllegiance;                                		// 0x00C8 (0x0004) [0x0000000000000000]
-	unsigned long                                      IntendedForAllies : 1;                            		// 0x00CC (0x0004) [0x0000000000000000] [0x00000001]
-	unsigned long                                      IntendedForEnemies : 1;                           		// 0x00CC (0x0004) [0x0000000000000000] [0x00000002]
-	unsigned long                                      HasLocation : 1;                                  		// 0x00CC (0x0004) [0x0000000000000000] [0x00000004]
-	unsigned long                                      HasRadius : 1;                                    		// 0x00CC (0x0004) [0x0000000000000000] [0x00000008]
-	unsigned long                                      SendRepeatedly : 1;                               		// 0x00CC (0x0004) [0x0000000000000000] [0x00000010]
-	struct FVector                                     MessageLocation;                                  		// 0x00D0 (0x000C) [0x0000000000000000]
-	float                                              BroadcastRadius;                                  		// 0x00DC (0x0004) [0x0000000000000000]
-	float                                              DeliverTime;                                      		// 0x00E0 (0x0004) [0x0000000000000000]
-	float                                              TimePosted;                                       		// 0x00E4 (0x0004) [0x0000000000000000]
-	float                                              TimeSent;                                         		// 0x00E8 (0x0004) [0x0000000000000000]
-	struct FFlag                                       DoNotSendRightNow;                                		// 0x00EC (0x0010) [0x0000000000000000]
-	int                                                StopSendingAfterXReceptions;                      		// 0x00FC (0x0004) [0x0000000000000000]
-	float                                              MaxDurationToSend;                                		// 0x0100 (0x0004) [0x0000000000000000]
-	float                                              TimeBetweenSends;                                 		// 0x0104 (0x0004) [0x0000000000000000]
-	TArray< unsigned char >                            DupeCriteria;                                     		// 0x0108 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
 
-public:
-	void InitializeFromDefinition(class UGbxMessageDefinition* InDefinition, class UObject* RadiusContextSource, class UObject* InSender, class UObject* InSubject, class UPawnAllegiance* ManualSenderAllegiance);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("RuleEngineFlagValueResolver");
+		return ptr;
+	}
+
 };
 
-// UClass* UGbxMessage::pClassPointer = NULL;
 
-// 0x0034 (0x0070 - 0x003C)
+// Class GearboxFramework.GbxMessageDefinition
+// 0x0034 (0x003C - 0x0070)
 class UGbxMessageDefinition : public UGBXDefinition
 {
 public:
-	struct FName                                       NameKey;                                          		// 0x003C (0x0008) [0x0000000000000001]              ( CPF_Edit )
-	unsigned long                                      HasLocation : 1;                                  		// 0x0044 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      HasRadius : 1;                                    		// 0x0044 (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
-	unsigned long                                      TakeLocationFromSender : 1;                       		// 0x0044 (0x0004) [0x0000000000000001] [0x00000004] ( CPF_Edit )
-	unsigned long                                      IntendedForAllies : 1;                            		// 0x0044 (0x0004) [0x0000000000000001] [0x00000008] ( CPF_Edit )
-	unsigned long                                      IntendedForEnemies : 1;                           		// 0x0044 (0x0004) [0x0000000000000001] [0x00000010] ( CPF_Edit )
-	unsigned long                                      AllowRepeatSends : 1;                             		// 0x0044 (0x0004) [0x0000000000000001] [0x00000020] ( CPF_Edit )
-	unsigned long                                      LimitedReception : 1;                             		// 0x0044 (0x0004) [0x0000000000000001] [0x00000040] ( CPF_Edit )
-	struct FAttributeInitializationData                Radius;                                           		// 0x0048 (0x0010) [0x0000000000000001]              ( CPF_Edit )
-	float                                              SecondsBetweenSends;                              		// 0x0058 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              MaxTimeToKeepSending;                             		// 0x005C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	TArray< unsigned char >                            DupeCriteria;                                     		// 0x0060 (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
-	int                                                MaxRecipients;                                    		// 0x006C (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	struct FName                                       NameKey;                                                  // 0x003C(0x0008) (Edit)
+	unsigned long                                      HasLocation : 1;                                          // 0x0044(0x0004) (Edit)
+	unsigned long                                      HasRadius : 1;                                            // 0x0044(0x0004) (Edit)
+	unsigned long                                      TakeLocationFromSender : 1;                               // 0x0044(0x0004) (Edit)
+	unsigned long                                      IntendedForAllies : 1;                                    // 0x0044(0x0004) (Edit)
+	unsigned long                                      IntendedForEnemies : 1;                                   // 0x0044(0x0004) (Edit)
+	unsigned long                                      AllowRepeatSends : 1;                                     // 0x0044(0x0004) (Edit)
+	unsigned long                                      LimitedReception : 1;                                     // 0x0044(0x0004) (Edit)
+	struct FAttributeInitializationData                Radius;                                                   // 0x0048(0x0010) (Edit)
+	float                                              SecondsBetweenSends;                                      // 0x0058(0x0004) (Edit)
+	float                                              MaxTimeToKeepSending;                                     // 0x005C(0x0004) (Edit)
+	TArray<unsigned char>                              DupeCriteria;                                             // 0x0060(0x000C) (Edit, Const, NeedCtorLink)
+	int                                                MaxRecipients;                                            // 0x006C(0x0004) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GbxMessageDefinition");
+		return ptr;
+	}
+
 };
 
-// UClass* UGbxMessageDefinition::pClassPointer = NULL;
 
-// 0x0030 (0x006C - 0x003C)
+// Class GearboxFramework.GbxMessageManager
+// 0x0030 (0x003C - 0x006C)
 class UGbxMessageManager : public UObject
 {
 public:
-	TArray< class UIGbxMessageListener* >              Listeners;                                        		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< class UGbxMessage* >                       MessagesToSend;                                   		// 0x0048 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FFlag                                       SentMessagesRecently;                             		// 0x0054 (0x0010) [0x0000000000000000]
-	float                                              DistributionInterval;                             		// 0x0064 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	int                                                MaxMessagesPerDistribution;                       		// 0x0068 (0x0004) [0x0000000000000002]              ( CPF_Const )
+	TArray<TScriptInterface<class UIGbxMessageListener>> Listeners;                                                // 0x003C(0x000C) (NeedCtorLink)
+	TArray<class UGbxMessage*>                         MessagesToSend;                                           // 0x0048(0x000C) (NeedCtorLink)
+	struct FFlag                                       SentMessagesRecently;                                     // 0x0054(0x0010)
+	float                                              DistributionInterval;                                     // 0x0064(0x0004) (Const)
+	int                                                MaxMessagesPerDistribution;                               // 0x0068(0x0004) (Const)
 
-public:
-	void RemoveListener(class UIGbxMessageListener* InListener);
-	void AddListener(class UIGbxMessageListener* InListener);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GbxMessageManager");
+		return ptr;
+	}
+
+
+	void RemoveListener(const TScriptInterface<class UIGbxMessageListener>& InListener);
+	void AddListener(const TScriptInterface<class UIGbxMessageListener>& InListener);
 	void PostMessage(class UGbxMessage* Message);
 	class UGbxMessage* AllocateMessage();
 };
 
-// UClass* UGbxMessageManager::pClassPointer = NULL;
 
-// 0x00E4 (0x0768 - 0x0684)
+// Class GearboxFramework.RuleEngine
+// 0x00FC (0x003C - 0x0138)
+class URuleEngine : public UObject
+{
+public:
+	struct FPointer                                    VfTable_IIFlagProvider;                                   // 0x003C(0x0004) (Const, Native, NoExport)
+	class UAIFactoryBase*                              TheAIFactory;                                             // 0x0040(0x0004)
+	class AActor*                                      ActorProxy;                                               // 0x0044(0x0004)
+	float                                              ThinkRate;                                                // 0x0048(0x0004) (Edit, Const)
+	float                                              ElapsedTime;                                              // 0x004C(0x0004)
+	float                                              TickRate;                                                 // 0x0050(0x0004)
+	class URuleSet*                                    RuleSetTemplate;                                          // 0x0054(0x0004) (Edit)
+	class URuleSet*                                    CurRuleSet;                                               // 0x0058(0x0004) (Transient)
+	class URuleSet*                                    PendingRuleSetTemplate;                                   // 0x005C(0x0004)
+	TArray<struct FFlagDefinitionInitialization>       FlagInitialization;                                       // 0x0060(0x000C) (Edit, Const, NeedCtorLink)
+	TArray<class UFlagDefinition*>                     DynamicFlagDefinitions;                                   // 0x006C(0x000C) (Transient, NeedCtorLink)
+	TArray<struct FDynamicFlagInstanceData>            DynamicFlags;                                             // 0x0078(0x000C) (Transient, NeedCtorLink)
+	unsigned char                                      UnknownData00[0x3C];                                      // 0x0084(0x003C) UNKNOWN PROPERTY: MapProperty GearboxFramework.RuleEngine.DynamicFlagDefLookup
+	TArray<class UKnowledgeRecord*>                    KnowledgeDB;                                              // 0x00C0(0x000C) (NeedCtorLink, EditInline)
+	TArray<class URule*>                               RunningRules;                                             // 0x00CC(0x000C) (NeedCtorLink)
+	TArray<class UClass*>                              ResourcesInUse;                                           // 0x00D8(0x000C) (NeedCtorLink)
+	unsigned long                                      bRulesEnabled : 1;                                        // 0x00E4(0x0004)
+	unsigned long                                      bHasDebugFocus : 1;                                       // 0x00E4(0x0004)
+	unsigned long                                      bVerboseLoggingEnabled : 1;                               // 0x00E4(0x0004)
+	unsigned long                                      bInitialized : 1;                                         // 0x00E4(0x0004)
+	unsigned long                                      DoLoadBalancing : 1;                                      // 0x00E4(0x0004) (Const)
+	unsigned long                                      bForceFullUpdate : 1;                                     // 0x00E4(0x0004)
+	unsigned long                                      OnlyIterateRulesForEvents : 1;                            // 0x00E4(0x0004) (Edit, Const)
+	unsigned long                                      bEventsCausedKnowledgeRecordUpdate : 1;                   // 0x00E4(0x0004)
+	unsigned long                                      EnableSnapshots : 1;                                      // 0x00E4(0x0004) (Const)
+	class UAITracker*                                  MyTracker;                                                // 0x00E8(0x0004)
+	TArray<class URuleSet*>                            RuleSetStack;                                             // 0x00EC(0x000C) (NeedCtorLink)
+	TArray<struct FEventRecord>                        QueuedRuleEvents;                                         // 0x00F8(0x000C) (NeedCtorLink)
+	float                                              LastFullUpdateTime;                                       // 0x0104(0x0004)
+	int                                                MaxRuleSetPasses;                                         // 0x0108(0x0004) (Edit)
+	TArray<class UClass*>                              KRCache;                                                  // 0x010C(0x000C) (Transient, NeedCtorLink)
+	float                                              LastTargetIteratorTime;                                   // 0x0118(0x0004)
+	float                                              LastTargetIteratorRuleEvalDiffTime;                       // 0x011C(0x0004)
+	float                                              AverageTargetIteratorRuleEvalDiffTime;                    // 0x0120(0x0004)
+	float                                              WorstTargetIteratorRuleEvalDiffTime;                      // 0x0124(0x0004)
+	float                                              ActivateTime;                                             // 0x0128(0x0004)
+	TArray<struct FRuleSetReference>                   RuleSetReferences;                                        // 0x012C(0x000C) (Edit, NeedCtorLink, EditInline)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("RuleEngine");
+		return ptr;
+	}
+
+
+	void ApplyFlagInitializationData(TArray<struct FFlagDefinitionInitialization>* FlagsToSet);
+	bool IsResourceInUse(class UClass* TestResourceClass);
+	class UObject* GetContextSource();
+	bool IsRunningRuleWhichBlocksRuleSetChange();
+	bool GetDynamicFlagValue(class UFlagDefinition* FlagDefinition);
+	void SetDynamicFlagDefTrueTimed(class UFlagDefinition* FlagDefinition, float Time);
+	void SetDynamicFlagDefValue(class UFlagDefinition* FlagDefinition, bool Value);
+	class URuleSet* GetRuleSetFromReference(const struct FName& ReferenceName);
+	void ClearRuleSetStack();
+	void PopRuleSetSwitch();
+	bool PushRuleSetSwitch(class URuleSet* NewRuleSetTemplate);
+	void SetRuleSet(class URuleSet* NewRuleSetTemplate);
+	void SwitchActiveRuleSet(class URuleSet* NewRuleSetTemplate);
+	void UpdateKnowledge(class UClass* pKnowledgeRecordType);
+	int ActivateEventRuleEx(const struct FName& EventDefName, TArray<class AGearboxPawn*> Participants, class AActor* Subject, bool CastSizeMustMatch);
+	void CleanUpRuleEngineData();
+	int ActivateEventRule(const struct FName& EventDefName, class AGearboxPawn* Instigator, class AActor* Subject, bool CastSizeMustMatch);
+	int ActivateEventRuleByDefinition(class URuleEventDef* EventDefinition, class UObject* OtherEventParticipantObject);
+};
+
+
+// Class GearboxFramework.GearboxMind
+// 0x00E4 (0x0684 - 0x0768)
 class AGearboxMind : public AGearboxAIController
 {
 public:
-	struct FPointer                                    VfTable_IIRuleEngineOwner;                        		// 0x0684 (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-	struct FPointer                                    VfTable_IINounAttributeProvider;                  		// 0x0688 (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-	struct FPointer                                    VfTable_IIFlagProvider;                           		// 0x068C (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-	struct FPointer                                    VfTable_IIAIInterface;                            		// 0x0690 (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-	unsigned long                                      bDisabledDueToPopulationIrrelevance : 1;          		// 0x0694 (0x0004) [0x0000000000000000] [0x00000001]
-	unsigned long                                      bWantsToWalk : 1;                                 		// 0x0694 (0x0004) [0x0000000000000000] [0x00000002]
-	class UGearboxRuleEngine*                          MyRuleEngine;                                     		// 0x0698 (0x0004) [0x0000000000000000]
-	class UGearboxRuleEngine*                          RuleEngineTemplate;                               		// 0x069C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class AGearboxPawn*                                MyGearboxPawn;                                    		// 0x06A0 (0x0004) [0x0000000000000000]
-	unsigned char                                      FacingPolicy;                                     		// 0x06A4 (0x0001) [0x0000000000000000]
-	unsigned char                                      AtLeastOneKnownThreat;                            		// 0x06A5 (0x0001) [0x0000000000000000]
-	unsigned char                                      NewEnemyAwarenessReason;                          		// 0x06A6 (0x0001) [0x0000000000000000]
-	unsigned char                                      DebugMoveFinishedReason;                          		// 0x06A7 (0x0001) [0x0000000000002000]              ( CPF_Transient )
-	class AActor*                                      FacingActor;                                      		// 0x06A8 (0x0004) [0x0000000000000000]
-	struct FVector                                     FacingVector;                                     		// 0x06AC (0x000C) [0x0000000000000000]
-	float                                              DotProductToFacingPolicy;                         		// 0x06B8 (0x0004) [0x0000000000000000]
-	float                                              DotProductToCurrentEnemy;                         		// 0x06BC (0x0004) [0x0000000000000000]
-	struct FName                                       MostRecentNewEnemyName;                           		// 0x06C0 (0x0008) [0x0000000000000000]
-	struct FName                                       MostRecentNewEnemyArchName;                       		// 0x06C8 (0x0008) [0x0000000000000000]
-	class UAwarenessZoneCollectionDefinition*          DefaultAwarenessZoneCollection;                   		// 0x06D0 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	class UAwarenessZoneCollectionDefinition*          CurrentAwarenessZoneCollection;                   		// 0x06D4 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UAwarenessZoneDefinition*                    CurrentAwarenessZone;                             		// 0x06D8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UCoverSearchCriteria*                        DefaultCoverSearchCriteria;                       		// 0x06DC (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	TArray< struct FVector >                           FailedMoveSpots;                                  		// 0x06E0 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	TArray< struct FNounAttributeState >               NounState;                                        		// 0x06EC (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FVector                                     HomeLocation;                                     		// 0x06F8 (0x000C) [0x0000000000002000]              ( CPF_Transient )
-	int                                                PopulationOpportunityIndex;                       		// 0x0704 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UClass*                                      MindTargetInfoClass;                              		// 0x0708 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UAITracker*                                  MyTracker;                                        		// 0x070C (0x0004) [0x0000000004400008]              ( CPF_ExportObject | CPF_NeedCtorLink | CPF_EditInline )
-	TArray< class UFlagDefinition* >                   DynamicFlagDefinitions;                           		// 0x0710 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	TArray< struct FDynamicFlagInstanceData >          DynamicFlags;                                     		// 0x071C (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[0x3C];                            		// 0x0728 (0x003C) UNKNOWN PROPERTY: MapProperty GearboxFramework.GearboxMind.DynamicFlagDefLookup
-	class UAIComponent*                                AIComponent;                                      		// 0x0764 (0x0004) [0x0000000004082008]              ( CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline )
+	struct FPointer                                    VfTable_IIRuleEngineOwner;                                // 0x0684(0x0004) (Const, Native, NoExport)
+	struct FPointer                                    VfTable_IINounAttributeProvider;                          // 0x0688(0x0004) (Const, Native, NoExport)
+	struct FPointer                                    VfTable_IIFlagProvider;                                   // 0x068C(0x0004) (Const, Native, NoExport)
+	struct FPointer                                    VfTable_IIAIInterface;                                    // 0x0690(0x0004) (Const, Native, NoExport)
+	unsigned long                                      bDisabledDueToPopulationIrrelevance : 1;                  // 0x0694(0x0004)
+	unsigned long                                      bWantsToWalk : 1;                                         // 0x0694(0x0004)
+	class UGearboxRuleEngine*                          MyRuleEngine;                                             // 0x0698(0x0004)
+	class UGearboxRuleEngine*                          RuleEngineTemplate;                                       // 0x069C(0x0004) (Edit)
+	class AGearboxPawn*                                MyGearboxPawn;                                            // 0x06A0(0x0004)
+	unsigned char                                      FacingPolicy;                                             // 0x06A4(0x0001)
+	unsigned char                                      AtLeastOneKnownThreat;                                    // 0x06A5(0x0001)
+	unsigned char                                      NewEnemyAwarenessReason;                                  // 0x06A6(0x0001)
+	unsigned char                                      DebugMoveFinishedReason;                                  // 0x06A7(0x0001) (Transient)
+	class AActor*                                      FacingActor;                                              // 0x06A8(0x0004)
+	struct FVector                                     FacingVector;                                             // 0x06AC(0x000C)
+	float                                              DotProductToFacingPolicy;                                 // 0x06B8(0x0004)
+	float                                              DotProductToCurrentEnemy;                                 // 0x06BC(0x0004)
+	struct FName                                       MostRecentNewEnemyName;                                   // 0x06C0(0x0008)
+	struct FName                                       MostRecentNewEnemyArchName;                               // 0x06C8(0x0008)
+	class UAwarenessZoneCollectionDefinition*          DefaultAwarenessZoneCollection;                           // 0x06D0(0x0004) (Edit, Const)
+	class UAwarenessZoneCollectionDefinition*          CurrentAwarenessZoneCollection;                           // 0x06D4(0x0004) (Transient)
+	class UAwarenessZoneDefinition*                    CurrentAwarenessZone;                                     // 0x06D8(0x0004) (Transient)
+	class UCoverSearchCriteria*                        DefaultCoverSearchCriteria;                               // 0x06DC(0x0004) (Edit)
+	TArray<struct FVector>                             FailedMoveSpots;                                          // 0x06E0(0x000C) (Transient, NeedCtorLink)
+	TArray<struct FNounAttributeState>                 NounState;                                                // 0x06EC(0x000C) (NeedCtorLink)
+	struct FVector                                     HomeLocation;                                             // 0x06F8(0x000C) (Transient)
+	int                                                PopulationOpportunityIndex;                               // 0x0704(0x0004) (Transient)
+	class UClass*                                      MindTargetInfoClass;                                      // 0x0708(0x0004) (Const)
+	class UAITracker*                                  MyTracker;                                                // 0x070C(0x0004) (ExportObject, NeedCtorLink, EditInline)
+	TArray<class UFlagDefinition*>                     DynamicFlagDefinitions;                                   // 0x0710(0x000C) (Transient, NeedCtorLink)
+	TArray<struct FDynamicFlagInstanceData>            DynamicFlags;                                             // 0x071C(0x000C) (Transient, NeedCtorLink)
+	unsigned char                                      UnknownData00[0x3C];                                      // 0x0728(0x003C) UNKNOWN PROPERTY: MapProperty GearboxFramework.GearboxMind.DynamicFlagDefLookup
+	class UAIComponent*                                AIComponent;                                              // 0x0764(0x0004) (ExportObject, Transient, Component, EditInline)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxMind");
+		return ptr;
+	}
+
+
 	void InitSequence(class UActionSequence* NewSequence);
 	class UPawnAllegiance* GetAllegiance();
 	class UAIDefinition* GetAIDefinition();
 	class UAIComponent* GetAIComponent();
-	class UIAIInterface* GetAIParent();
+	TScriptInterface<class UIAIInterface> GetAIParent();
 	struct FVector GetAILocation();
 	class AActor* GetAIActor();
 	bool CanTickAI();
@@ -3575,19 +3872,19 @@ public:
 	void PawnDied(class APawn* inPawn);
 	void OnTargetPriority(class UGearboxSeqAct_TargetPriority* inAction);
 	void Behavior_SetCanTarget(unsigned char ChangeStatus);
-	bool GetNoTargetAllEnemies();
-	void SetNoTargetAllEnemies(unsigned long bNoTarget);
-	void eventClearScriptedMoveTarget();
-	bool eventIsCloseEnoughToScriptedMoveTarget();
-	struct FVector eventGetWeaponFireLocation();
-	int ActivateEventRule(struct FName RuleEventName);
-	void AddHitTargetRecord(class AGearboxPawn* HitByPawn, struct FVector NewHitLocation, float flNewDamage);
+	static bool GetNoTargetAllEnemies();
+	static void SetNoTargetAllEnemies(bool bNoTarget);
+	void ClearScriptedMoveTarget();
+	bool IsCloseEnoughToScriptedMoveTarget();
+	struct FVector GetWeaponFireLocation();
+	int ActivateEventRule(const struct FName& RuleEventName);
+	void AddHitTargetRecord(class AGearboxPawn* HitByPawn, const struct FVector& NewHitLocation, float flNewDamage);
 	void StopMovement();
-	void eventPossess(class APawn* inPawn, unsigned long bVehicleTransition);
+	void Possess(class APawn* inPawn, bool bVehicleTransition);
 	class UGearboxRuleEngine* GetGearboxRuleEngine();
 	class URuleEngine* GetRuleEngine();
 	void NotifyShotAtBy(class AGearboxPawn* ShootingPawn);
-	bool FindCoverAndClaim(struct FVector CoverSearchOrigin, class UPawnMoveLocationRequest* LocationRequest, float MinSearchRadius, float MaxSearchRadius, unsigned long bEnactCoverChanges, struct FVector* OutDestination);
+	bool FindCoverAndClaim(const struct FVector& CoverSearchOrigin, class UPawnMoveLocationRequest* LocationRequest, float MinSearchRadius, float MaxSearchRadius, bool bEnactCoverChanges, struct FVector* OutDestination);
 	void UpdateRuleEngineKnowledge(class UClass* aKDBClass);
 	bool GetCurrentTargetInfo(class UMindTargetInfo** OutTargetRec);
 	bool IsSameAllegianceMind(class AGearboxMind* aMind);
@@ -3599,56 +3896,72 @@ public:
 	bool IsEnemyMind(class AGearboxMind* aMind);
 	bool IsEnemy(class UObject* anObject);
 	bool WantsToWalk();
-	void SetWantsToWalk(unsigned long bInWantsToWalk);
+	void SetWantsToWalk(bool bInWantsToWalk);
 	unsigned char GetFacingPolicy();
-	void SetFacingPolicy(unsigned char NewFacingPolicy, class AActor* NewFacingActor, struct FVector NewFacingVector);
+	void SetFacingPolicy(unsigned char NewFacingPolicy, class AActor* NewFacingActor, const struct FVector& NewFacingVector);
 	class AActor* GetCurrentTarget();
 	void RemoveEnemyFromQueue(class AActor* Target);
 	class UGearboxNavigationHandle* GetNavigationHandle();
 };
 
-// UClass* AGearboxMind::pClassPointer = NULL;
 
+// Class GearboxFramework.GearboxAIMoveNodeRenderComponent
 // 0x0000 (0x0210 - 0x0210)
-class UGearboxAIMoveNodeRenderComponent : public UPrimitiveComponent {};
+class UGearboxAIMoveNodeRenderComponent : public UPrimitiveComponent
+{
+public:
 
-// UClass* UGearboxAIMoveNodeRenderComponent::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxAIMoveNodeRenderComponent");
+		return ptr;
+	}
 
-// 0x00B8 (0x00F4 - 0x003C)
+};
+
+
+// Class GearboxFramework.GearboxCoverStateManager
+// 0x00B8 (0x003C - 0x00F4)
 class UGearboxCoverStateManager : public UObject
 {
 public:
-	class AGearboxPawn*                                MyGearboxPawn;                                    		// 0x003C (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FGearboxCoverState                          DesiredCoverState;                                		// 0x0040 (0x000C) [0x0000000000002000]              ( CPF_Transient )
-	struct FGearboxCoverState                          CurrentCoverState;                                		// 0x004C (0x000C) [0x0000000000002000]              ( CPF_Transient )
-	struct FGearboxCoverTransition                     DesiredCoverTransition;                           		// 0x0058 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FGearboxCoverTransition                     CurrentCoverTransition;                           		// 0x005C (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FCoverSpotInfo                              DesiredCoverInfo;                                 		// 0x0060 (0x0018) [0x0000000000002000]              ( CPF_Transient )
-	struct FCoverSpotInfo                              CurrentCoverInfo;                                 		// 0x0078 (0x0018) [0x0000000000002000]              ( CPF_Transient )
-	struct FCoverSpotInfo                              LastCoverInfo;                                    		// 0x0090 (0x0018) [0x0000000000002000]              ( CPF_Transient )
-	unsigned long                                      PawnCrouchedPriorToMount : 1;                     		// 0x00A8 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
-	unsigned long                                      CoverDebugSearchWasFinalized : 1;                 		// 0x00A8 (0x0004) [0x0000000000002000] [0x00000002] ( CPF_Transient )
-	float                                              CoverDebugInnerRadius;                            		// 0x00AC (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	float                                              CoverDebugOuterRadius;                            		// 0x00B0 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	float                                              CoverDebugSearchAngle;                            		// 0x00B4 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FVector                                     CoverDebugSearchDirection;                        		// 0x00B8 (0x000C) [0x0000000000002000]              ( CPF_Transient )
-	struct FSmartVector                                CoverDebugSearchOrigin;                           		// 0x00C4 (0x001C) [0x0000000000002000]              ( CPF_Transient )
-	TArray< struct FCoverDebugPriority >               CoverDebugList;                                   		// 0x00E0 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	float                                              HorizontalCoverAngleDegrees;                      		// 0x00EC (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	float                                              VerticalCoverAngleDegrees;                        		// 0x00F0 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	class AGearboxPawn*                                MyGearboxPawn;                                            // 0x003C(0x0004) (Transient)
+	struct FGearboxCoverState                          DesiredCoverState;                                        // 0x0040(0x000C) (Transient)
+	struct FGearboxCoverState                          CurrentCoverState;                                        // 0x004C(0x000C) (Transient)
+	struct FGearboxCoverTransition                     DesiredCoverTransition;                                   // 0x0058(0x0004) (Transient)
+	struct FGearboxCoverTransition                     CurrentCoverTransition;                                   // 0x005C(0x0004) (Transient)
+	struct FCoverSpotInfo                              DesiredCoverInfo;                                         // 0x0060(0x0018) (Transient)
+	struct FCoverSpotInfo                              CurrentCoverInfo;                                         // 0x0078(0x0018) (Transient)
+	struct FCoverSpotInfo                              LastCoverInfo;                                            // 0x0090(0x0018) (Transient)
+	unsigned long                                      PawnCrouchedPriorToMount : 1;                             // 0x00A8(0x0004) (Transient)
+	unsigned long                                      CoverDebugSearchWasFinalized : 1;                         // 0x00A8(0x0004) (Transient)
+	float                                              CoverDebugInnerRadius;                                    // 0x00AC(0x0004) (Transient)
+	float                                              CoverDebugOuterRadius;                                    // 0x00B0(0x0004) (Transient)
+	float                                              CoverDebugSearchAngle;                                    // 0x00B4(0x0004) (Transient)
+	struct FVector                                     CoverDebugSearchDirection;                                // 0x00B8(0x000C) (Transient)
+	struct FSmartVector                                CoverDebugSearchOrigin;                                   // 0x00C4(0x001C) (Transient)
+	TArray<struct FCoverDebugPriority>                 CoverDebugList;                                           // 0x00E0(0x000C) (Transient, NeedCtorLink)
+	float                                              HorizontalCoverAngleDegrees;                              // 0x00EC(0x0004) (Edit, Const)
+	float                                              VerticalCoverAngleDegrees;                                // 0x00F0(0x0004) (Edit, Const)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxCoverStateManager");
+		return ptr;
+	}
+
+
 	bool IsChangingDirection();
 	bool IsMantlingOverCoverInProgress();
 	bool IsReturnFromPeekInProgress();
 	bool IsPeekTransitionInProgress();
-	bool IsPeekedUp(unsigned long bTransitionCounts);
+	bool IsPeekedUp(bool bTransitionCounts);
 	bool IsReturnFromLeanOutInProgress();
 	bool IsLeanOutTransitionInProgress();
-	bool IsLeanedOut(unsigned long bTransitionCounts);
+	bool IsLeanedOut(bool bTransitionCounts);
 	bool IsReturnFromPopUpInProgress();
 	bool IsPopUpTransitionInProgress();
-	bool IsPoppedUp(unsigned long bTransitionCounts);
+	bool IsPoppedUp(bool bTransitionCounts);
 	bool IsExecutingAnyTransition();
 	unsigned char GetDesiredState();
 	unsigned char GetCurrentTransition();
@@ -3659,8 +3972,8 @@ public:
 	void OnMountAnimEnd();
 	bool MantleOverCover(class AActor* CoverActor, int CoverSlotNdx);
 	bool ReturnToCover();
-	bool LeanOutForFiring(unsigned long BlindFire);
-	bool PopUpForFiring(unsigned long BlindFire);
+	bool LeanOutForFiring(bool BlindFire);
+	bool PopUpForFiring(bool BlindFire);
 	bool Peek();
 	bool DetachFromCover();
 	bool DismountCover(unsigned char DismountType);
@@ -3673,9 +3986,9 @@ public:
 	unsigned char GetLastCoverHeight();
 	unsigned char GetCurrentCoverHeight();
 	unsigned char GetDesiredCoverHeight();
-	bool WasCoveredFrom(struct FVector ThreatLocation);
-	bool WillBeCoveredFrom(struct FVector ThreatLocation);
-	bool IsCoveredFrom(struct FVector ThreatLocation);
+	bool WasCoveredFrom(const struct FVector& ThreatLocation);
+	bool WillBeCoveredFrom(const struct FVector& ThreatLocation);
+	bool IsCoveredFrom(const struct FVector& ThreatLocation);
 	bool IsDismountInProgress();
 	bool IsMountInProgress();
 	bool WasMountedOnCover();
@@ -3685,79 +3998,124 @@ public:
 	void GetLastCover(class AActor** OutCoverActor, int* OutSlotNdx);
 	void GetCurrentCover(class AActor** OutCoverActor, int* OutSlotNdx);
 	void GetDesiredCover(class AActor** OutCoverActor, int* OutSlotNdx);
-	bool FindCoverAndClaim(class AGearboxMind* TheMind, struct FVector CoverSearchOrigin, class UPawnMoveLocationRequest* LocationRequest, float MinSearchRadius, float MaxSearchRadius, unsigned long bEnactCoverChanges, struct FVector* OutDestination);
+	bool FindCoverAndClaim(class AGearboxMind* TheMind, const struct FVector& CoverSearchOrigin, class UPawnMoveLocationRequest* LocationRequest, float MinSearchRadius, float MaxSearchRadius, bool bEnactCoverChanges, struct FVector* OutDestination);
 	void Initialize(class AGearboxPawn* P);
 };
 
-// UClass* UGearboxCoverStateManager::pClassPointer = NULL;
 
+// Class GearboxFramework.GearboxMindAttributeContextResolver
 // 0x0000 (0x003C - 0x003C)
-class UGearboxMindAttributeContextResolver : public UAttributeContextResolver {};
+class UGearboxMindAttributeContextResolver : public UAttributeContextResolver
+{
+public:
 
-// UClass* UGearboxMindAttributeContextResolver::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxMindAttributeContextResolver");
+		return ptr;
+	}
 
-// 0x0120 (0x02A0 - 0x0180)
+};
+
+
+// Class GearboxFramework.GearboxNavigationHandle
+// 0x0120 (0x0180 - 0x02A0)
 class UGearboxNavigationHandle : public UNavigationHandle
 {
 public:
-	unsigned char                                      DesiredMovementSpeed;                             		// 0x0180 (0x0001) [0x0000000000002000]              ( CPF_Transient )
-	unsigned char                                      ActiveSpecialNavMeshMove;                         		// 0x0181 (0x0001) [0x0000000000002000]              ( CPF_Transient )
-	unsigned long                                      bFollowingPath : 1;                               		// 0x0184 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
-	unsigned long                                      bReachedDestination : 1;                          		// 0x0184 (0x0004) [0x0000000000002000] [0x00000002] ( CPF_Transient )
-	unsigned long                                      bSpecialMovementFinished : 1;                     		// 0x0184 (0x0004) [0x0000000000002000] [0x00000004] ( CPF_Transient )
-	unsigned long                                      bClearPathAfterSpecialMove : 1;                   		// 0x0184 (0x0004) [0x0000000000002000] [0x00000008] ( CPF_Transient )
-	struct FBasedPosition                              CurrentGoal;                                      		// 0x0188 (0x0034) [0x0000000000002000]              ( CPF_Transient )
-	struct FPathFindData                               CurrentPath;                                      		// 0x01BC (0x0058) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	struct FGBXNavMeshPolyRef                          Anchor;                                           		// 0x0214 (0x0008) [0x0000000000002000]              ( CPF_Transient )
-	struct FGBXNavMeshPolyRef                          LastValidAnchor;                                  		// 0x021C (0x0008) [0x0000000000002000]              ( CPF_Transient )
-	struct FBasedPosition                              LastAnchorPosition;                               		// 0x0224 (0x0034) [0x0000000000002000]              ( CPF_Transient )
-	struct FVector                                     LastAnchorDelta;                                  		// 0x0258 (0x000C) [0x0000000000002000]              ( CPF_Transient )
-	float                                              NextPathObjectDistance;                           		// 0x0264 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FVector                                     CurrentGoalStartLoc;                              		// 0x0268 (0x000C) [0x0000000000002000]              ( CPF_Transient )
-	struct FRotator                                    DesiredLookDirection;                             		// 0x0274 (0x000C) [0x0000000000002000]              ( CPF_Transient )
-	struct FRotator                                    LookDirection;                                    		// 0x0280 (0x000C) [0x0000000000002000]              ( CPF_Transient )
-	class UGBXNavMeshPathFinder*                       PathFinder;                                       		// 0x028C (0x0004) [0x0000000004402008]              ( CPF_ExportObject | CPF_Transient | CPF_NeedCtorLink | CPF_EditInline )
-	float                                              NearPathCheckDist;                                		// 0x0290 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	float                                              NearPathCheckDistMin;                             		// 0x0294 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	float                                              NearPathCheckDistMax;                             		// 0x0298 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	float                                              NearPathCheckDistRate;                            		// 0x029C (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	unsigned char                                      DesiredMovementSpeed;                                     // 0x0180(0x0001) (Transient)
+	unsigned char                                      ActiveSpecialNavMeshMove;                                 // 0x0181(0x0001) (Transient)
+	unsigned char                                      UnknownData00[0x2];                                       // 0x0182(0x0002) MISSED OFFSET
+	unsigned long                                      bFollowingPath : 1;                                       // 0x0184(0x0004) (Transient)
+	unsigned long                                      bReachedDestination : 1;                                  // 0x0184(0x0004) (Transient)
+	unsigned long                                      bSpecialMovementFinished : 1;                             // 0x0184(0x0004) (Transient)
+	unsigned long                                      bClearPathAfterSpecialMove : 1;                           // 0x0184(0x0004) (Transient)
+	struct FBasedPosition                              CurrentGoal;                                              // 0x0188(0x0034) (Transient)
+	struct FPathFindData                               CurrentPath;                                              // 0x01BC(0x0058) (Transient, NeedCtorLink)
+	struct FGBXNavMeshPolyRef                          Anchor;                                                   // 0x0214(0x0008) (Transient)
+	struct FGBXNavMeshPolyRef                          LastValidAnchor;                                          // 0x021C(0x0008) (Transient)
+	struct FBasedPosition                              LastAnchorPosition;                                       // 0x0224(0x0034) (Transient)
+	struct FVector                                     LastAnchorDelta;                                          // 0x0258(0x000C) (Transient)
+	float                                              NextPathObjectDistance;                                   // 0x0264(0x0004) (Transient)
+	struct FVector                                     CurrentGoalStartLoc;                                      // 0x0268(0x000C) (Transient)
+	struct FRotator                                    DesiredLookDirection;                                     // 0x0274(0x000C) (Transient)
+	struct FRotator                                    LookDirection;                                            // 0x0280(0x000C) (Transient)
+	class UGBXNavMeshPathFinder*                       PathFinder;                                               // 0x028C(0x0004) (ExportObject, Transient, NeedCtorLink, EditInline)
+	float                                              NearPathCheckDist;                                        // 0x0290(0x0004) (Transient)
+	float                                              NearPathCheckDistMin;                                     // 0x0294(0x0004) (Transient)
+	float                                              NearPathCheckDistMax;                                     // 0x0298(0x0004) (Transient)
+	float                                              NearPathCheckDistRate;                                    // 0x029C(0x0004) (Transient)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxNavigationHandle");
+		return ptr;
+	}
+
+
 	void SetDesiredMovementSpeed(unsigned char Speed);
 	void ClearAnchor();
-	bool GetNearestPositionOnNavMesh(float Radius, struct FVector TestLoc, unsigned long bAnyHeight, struct FBasedPosition* NearestPos, struct FNavMeshPathParams* PolyUsableCheckParams, struct FGBXNavMeshPolyRef* NearestPoly);
-	bool GetNavMeshPolyForPoint(struct FVector Point, struct FGBXNavMeshPolyRef* FoundPoly, struct FNavMeshPathParams* PolyUsableCheckParams);
+	static bool GetNearestPositionOnNavMesh(float Radius, const struct FVector& TestLoc, bool bAnyHeight, struct FBasedPosition* NearestPos, struct FNavMeshPathParams* PolyUsableCheckParams, struct FGBXNavMeshPolyRef* NearestPoly);
+	static bool GetNavMeshPolyForPoint(const struct FVector& Point, struct FGBXNavMeshPolyRef* FoundPoly, struct FNavMeshPathParams* PolyUsableCheckParams);
 	bool IsDoingSpecialMove();
-	bool InFinalPoly(struct FVector TestLoc);
+	bool InFinalPoly(const struct FVector& TestLoc);
 	bool NeedsRegularWalkingPhysics();
 	bool PopulatePathfindingParamCache();
 	bool TrySpecialMove(struct FBasedPosition* MoveTarget);
 	void Finished();
 	bool IsGoalValid();
 	void MovePawnToGoal();
-	bool PathIsValid(unsigned long bCheckAnchor, struct FPathFindData* Data);
+	bool PathIsValid(bool bCheckAnchor, struct FPathFindData* Data);
 	bool IsFollowingPath();
-	bool ClearPath(unsigned long bStopMovement, unsigned long bAllowDelayedClear);
+	bool ClearPath(bool bStopMovement, bool bAllowDelayedClear);
 	bool FollowPath(struct FPathFindData* Data);
-	bool CreatePathToLocation(struct FVector DestLocation, struct FGBXNavMeshPolyRef DestPoly, unsigned long bAdjustStartForMotion, struct FPathFindData* PathData);
+	bool CreatePathToLocation(const struct FVector& DestLocation, const struct FGBXNavMeshPolyRef& DestPoly, bool bAdjustStartForMotion, struct FPathFindData* PathData);
 };
 
-// UClass* UGearboxNavigationHandle::pClassPointer = NULL;
 
+// Class GearboxFramework.IFlagProvider
 // 0x0000 (0x003C - 0x003C)
-class UIFlagProvider : public UInterface {};
+class UIFlagProvider : public UInterface
+{
+public:
 
-// UClass* UIFlagProvider::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("IFlagProvider");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.IFlagProviderGroup
 // 0x0000 (0x003C - 0x003C)
-class UIFlagProviderGroup : public UInterface {};
+class UIFlagProviderGroup : public UInterface
+{
+public:
 
-// UClass* UIFlagProviderGroup::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("IFlagProviderGroup");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.IGbxMessageListener
 // 0x0000 (0x003C - 0x003C)
 class UIGbxMessageListener : public UInterface
 {
 public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("IGbxMessageListener");
+		return ptr;
+	}
+
+
 	bool WantsToStopListening();
 	class AActor* GetActor();
 	struct FVector GetListenerLocation();
@@ -3766,701 +4124,1138 @@ public:
 	bool CaresAboutMessage(class UGbxMessage* Message);
 };
 
-// UClass* UIGbxMessageListener::pClassPointer = NULL;
 
+// Class GearboxFramework.IRuleEngineOwner
 // 0x0000 (0x003C - 0x003C)
 class UIRuleEngineOwner : public UInterface
 {
 public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("IRuleEngineOwner");
+		return ptr;
+	}
+
+
 	class URuleEngine* GetRuleEngine();
 };
 
-// UClass* UIRuleEngineOwner::pClassPointer = NULL;
 
-// 0x001C (0x0058 - 0x003C)
+// Class GearboxFramework.KnowledgeRecord
+// 0x001C (0x003C - 0x0058)
 class UKnowledgeRecord : public UObject
 {
 public:
-	class UAIFactoryBase*                              TheAIFactory;                                     		// 0x003C (0x0004) [0x0000000000000000]
-	struct FName                                       TheName;                                          		// 0x0040 (0x0008) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	unsigned char                                      KCategory;                                        		// 0x0048 (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	unsigned char                                      EvalType;                                         		// 0x0049 (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	unsigned char                                      Active;                                           		// 0x004A (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      Marked;                                           		// 0x004B (0x0001) [0x0000000000000000]
-	float                                              Frequency;                                        		// 0x004C (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	float                                              NextUpdateTime;                                   		// 0x0050 (0x0004) [0x0000000000000000]
-	int                                                FlagIndex;                                        		// 0x0054 (0x0004) [0x0000000000000000]
+	class UAIFactoryBase*                              TheAIFactory;                                             // 0x003C(0x0004)
+	struct FName                                       TheName;                                                  // 0x0040(0x0008) (Edit, Const)
+	unsigned char                                      KCategory;                                                // 0x0048(0x0001) (Edit, Const)
+	unsigned char                                      EvalType;                                                 // 0x0049(0x0001) (Edit, Const)
+	unsigned char                                      Active;                                                   // 0x004A(0x0001) (Edit)
+	unsigned char                                      Marked;                                                   // 0x004B(0x0001)
+	float                                              Frequency;                                                // 0x004C(0x0004) (Edit, Const)
+	float                                              NextUpdateTime;                                           // 0x0050(0x0004)
+	int                                                FlagIndex;                                                // 0x0054(0x0004)
 
-public:
-	void eventRecordEvalCallback(class URuleEngine* EvalRuleEngine);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("KnowledgeRecord");
+		return ptr;
+	}
+
+
+	void RecordEvalCallback(class URuleEngine* EvalRuleEngine);
 };
 
-// UClass* UKnowledgeRecord::pClassPointer = NULL;
 
+// Class GearboxFramework.LocationFilter
 // 0x0000 (0x003C - 0x003C)
-class ULocationFilter : public UObject {};
+class ULocationFilter : public UObject
+{
+public:
 
-// UClass* ULocationFilter::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("LocationFilter");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.LocationFilter_MustHaveLOS
 // 0x0000 (0x003C - 0x003C)
-class ULocationFilter_MustHaveLOS : public ULocationFilter {};
+class ULocationFilter_MustHaveLOS : public ULocationFilter
+{
+public:
 
-// UClass* ULocationFilter_MustHaveLOS::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("LocationFilter_MustHaveLOS");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.LocationFilter_MustNotHaveLOS
 // 0x0000 (0x003C - 0x003C)
-class ULocationFilter_MustNotHaveLOS : public ULocationFilter {};
+class ULocationFilter_MustNotHaveLOS : public ULocationFilter
+{
+public:
 
-// UClass* ULocationFilter_MustNotHaveLOS::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("LocationFilter_MustNotHaveLOS");
+		return ptr;
+	}
 
-// 0x009C (0x00D8 - 0x003C)
+};
+
+
+// Class GearboxFramework.MindTargetInfo
+// 0x009C (0x003C - 0x00D8)
 class UMindTargetInfo : public UObject
 {
 public:
-	class AActor*                                      Target;                                           		// 0x003C (0x0004) [0x0000000000000000]
-	float                                              Distance;                                         		// 0x0040 (0x0004) [0x0000000000000000]
-	unsigned long                                      bShouldRemove : 1;                                		// 0x0044 (0x0004) [0x0000000000000000] [0x00000001]
-	unsigned long                                      bCanSeeOrHearTarget : 1;                          		// 0x0044 (0x0004) [0x0000000000000000] [0x00000002]
-	unsigned char                                      bCanFireAt;                                       		// 0x0048 (0x0001) [0x0000000000000000]
-	float                                              Priority;                                         		// 0x004C (0x0004) [0x0000000000000000]
-	float                                              OnePriority;                                      		// 0x0050 (0x0004) [0x0000000000000000]
-	float                                              TargetExposureToMe;                               		// 0x0054 (0x0004) [0x0000000000000000]
-	float                                              MyExposureToTarget;                               		// 0x0058 (0x0004) [0x0000000000000000]
-	TArray< struct FHitTargetRecord >                  HitTargetHistory;                                 		// 0x005C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FPriorityDebugStruct >              PriorityDebugRecords;                             		// 0x0068 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FFlag                                       IAmConsciousOfTarget;                             		// 0x0074 (0x0010) [0x0000000000000000]
-	float                                              IAmConsciousTime;                                 		// 0x0084 (0x0004) [0x0000000000000000]
-	struct FFlag                                       TargetHasShotAtMeRecently;                        		// 0x0088 (0x0010) [0x0000000000000000]
-	struct FFlag                                       TargetOccludedBySmoke;                            		// 0x0098 (0x0010) [0x0000000000000000]
-	struct FFlag                                       IHaveSeenOrKnownThisTargetBefore;                 		// 0x00A8 (0x0010) [0x0000000000000000]
-	struct FSmartVector                                LastVisibleOrAudibleLocation;                     		// 0x00B8 (0x001C) [0x0000000000000000]
-	float                                              BonusPriority;                                    		// 0x00D4 (0x0004) [0x0000000000000000]
+	class AActor*                                      Target;                                                   // 0x003C(0x0004)
+	float                                              Distance;                                                 // 0x0040(0x0004)
+	unsigned long                                      bShouldRemove : 1;                                        // 0x0044(0x0004)
+	unsigned long                                      bCanSeeOrHearTarget : 1;                                  // 0x0044(0x0004)
+	unsigned char                                      bCanFireAt;                                               // 0x0048(0x0001)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0049(0x0003) MISSED OFFSET
+	float                                              Priority;                                                 // 0x004C(0x0004)
+	float                                              OnePriority;                                              // 0x0050(0x0004)
+	float                                              TargetExposureToMe;                                       // 0x0054(0x0004)
+	float                                              MyExposureToTarget;                                       // 0x0058(0x0004)
+	TArray<struct FHitTargetRecord>                    HitTargetHistory;                                         // 0x005C(0x000C) (NeedCtorLink)
+	TArray<struct FPriorityDebugStruct>                PriorityDebugRecords;                                     // 0x0068(0x000C) (NeedCtorLink)
+	struct FFlag                                       IAmConsciousOfTarget;                                     // 0x0074(0x0010)
+	float                                              IAmConsciousTime;                                         // 0x0084(0x0004)
+	struct FFlag                                       TargetHasShotAtMeRecently;                                // 0x0088(0x0010)
+	struct FFlag                                       TargetOccludedBySmoke;                                    // 0x0098(0x0010)
+	struct FFlag                                       IHaveSeenOrKnownThisTargetBefore;                         // 0x00A8(0x0010)
+	struct FSmartVector                                LastVisibleOrAudibleLocation;                             // 0x00B8(0x001C)
+	float                                              BonusPriority;                                            // 0x00D4(0x0004)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("MindTargetInfo");
+		return ptr;
+	}
+
+
 	float GetAverageHitTime();
-	void AddHitTargetRecord(struct FVector vecNewHitLoc, float flNewDamage);
+	void AddHitTargetRecord(const struct FVector& vecNewHitLoc, float flNewDamage);
 };
 
-// UClass* UMindTargetInfo::pClassPointer = NULL;
 
-// 0x00C0 (0x00FC - 0x003C)
-class URule : public UObject
-{
-public:
-	class URuleEngine*                                 MyRuleEngine;                                     		// 0x003C (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	int                                                Priority;                                         		// 0x0040 (0x0004) [0x0000000000000000]
-	int                                                BasePriority;                                     		// 0x0044 (0x0004) [0x0000000000000000]
-	class UActionSequence*                             StartingSequenceTemplate;                         		// 0x0048 (0x0004) [0x0000000004000003]              ( CPF_Edit | CPF_Const | CPF_EditInline )
-	unsigned long                                      RuleEnabled : 1;                                  		// 0x004C (0x0004) [0x0000000000000003] [0x00000001] ( CPF_Edit | CPF_Const )
-	unsigned long                                      StopWhenStateCodeRunsOut : 1;                     		// 0x004C (0x0004) [0x0000000000000003] [0x00000002] ( CPF_Edit | CPF_Const )
-	unsigned long                                      AlwaysExecute : 1;                                		// 0x004C (0x0004) [0x0000000000000003] [0x00000004] ( CPF_Edit | CPF_Const )
-	unsigned long                                      bInitialized : 1;                                 		// 0x004C (0x0004) [0x0000000000002000] [0x00000008] ( CPF_Transient )
-	unsigned long                                      bIsRunning : 1;                                   		// 0x004C (0x0004) [0x0000000000002000] [0x00000010] ( CPF_Transient )
-	unsigned long                                      bCanRunMultipleInstances : 1;                     		// 0x004C (0x0004) [0x0000000000000000] [0x00000020]
-	unsigned long                                      bIsTransferable : 1;                              		// 0x004C (0x0004) [0x0000000000000001] [0x00000040] ( CPF_Edit )
-	unsigned long                                      bRestartable : 1;                                 		// 0x004C (0x0004) [0x0000000000000001] [0x00000080] ( CPF_Edit )
-	unsigned long                                      bBlockRuleSetChange : 1;                          		// 0x004C (0x0004) [0x0000000000000003] [0x00000100] ( CPF_Edit | CPF_Const )
-	unsigned long                                      WasTransferred : 1;                               		// 0x004C (0x0004) [0x0000000000002000] [0x00000200] ( CPF_Transient )
-	unsigned char                                      ExecutionPattern;                                 		// 0x0050 (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	struct FAttributeInitializationData                TimeToWaitBeforeFirstExecution;                   		// 0x0054 (0x0010) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	struct FAttributeInitializationData                TimeToWaitBeforeNextExecution;                    		// 0x0064 (0x0010) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	struct FAttributeInitializationData                MaxTimeToExecute;                                 		// 0x0074 (0x0010) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	int                                                MaxNumberOfExecutions;                            		// 0x0084 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	TArray< struct FFlagEvalORConnector >              CanExecuteConditionals;                           		// 0x0088 (0x000C) [0x0000000004400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink | CPF_EditInline )
-	TArray< struct FFlagEvalORConnector >              ShouldStopConditionals;                           		// 0x0094 (0x000C) [0x0000000004400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink | CPF_EditInline )
-	class UExpressionEvaluator*                        CanExecuteExpression;                             		// 0x00A0 (0x0004) [0x0000000004000003]              ( CPF_Edit | CPF_Const | CPF_EditInline )
-	class UExpressionEvaluator*                        ShouldStopExpression;                             		// 0x00A4 (0x0004) [0x0000000004000003]              ( CPF_Edit | CPF_Const | CPF_EditInline )
-	class UActionSequence*                             MyActionSequence;                                 		// 0x00A8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UAIFactoryBase*                              TheAIFactory;                                     		// 0x00AC (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class URuleEventDef*                               MyRuleEventDef;                                   		// 0x00B0 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	TArray< class UClass* >                            AssociatedKnowledgeRecords;                       		// 0x00B4 (0x000C) [0x0000000000400002]              ( CPF_Const | CPF_NeedCtorLink )
-	struct FString                                     FlagDebugString;                                  		// 0x00C0 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FName                                       RuleName;                                         		// 0x00CC (0x0008) [0x0000000000000000]
-	class UObject*                                     OtherEventParticipantObject;                      		// 0x00D4 (0x0004) [0x0000000000000000]
-	struct FFlag                                       IsTimingRestrictedNow;                            		// 0x00D8 (0x0010) [0x0000000000002000]              ( CPF_Transient )
-	int                                                NumExecutions;                                    		// 0x00E8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FString                                     RuleEventDefPath;                                 		// 0x00EC (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	float                                              StartExecutionTimeStamp;                          		// 0x00F8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-
-public:
-	struct FString GetRuleName();
-	struct FName GetRuleFName();
-	class UObject* GetOtherEventParticipant();
-};
-
-// UClass* URule::pClassPointer = NULL;
-
-// 0x000C (0x0108 - 0x00FC)
+// Class GearboxFramework.RuleContainer
+// 0x000C (0x00FC - 0x0108)
 class URuleContainer : public URule
 {
 public:
-	class URuleSet*                                    RuleSetTemplate;                                  		// 0x00FC (0x0004) [0x0000000004000003]              ( CPF_Edit | CPF_Const | CPF_EditInline )
-	class URuleSet*                                    CurRuleSet;                                       		// 0x0100 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	unsigned long                                      AllowAllEventsThrough : 1;                        		// 0x0104 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
+	class URuleSet*                                    RuleSetTemplate;                                          // 0x00FC(0x0004) (Edit, Const, EditInline)
+	class URuleSet*                                    CurRuleSet;                                               // 0x0100(0x0004) (Transient)
+	unsigned long                                      AllowAllEventsThrough : 1;                                // 0x0104(0x0004) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("RuleContainer");
+		return ptr;
+	}
+
 };
 
-// UClass* URuleContainer::pClassPointer = NULL;
 
+// Class GearboxFramework.RulePlaceholder
 // 0x0000 (0x00FC - 0x00FC)
-class URulePlaceholder : public URule {};
-
-// UClass* URulePlaceholder::pClassPointer = NULL;
-
-// 0x00FC (0x0138 - 0x003C)
-class URuleEngine : public UObject
+class URulePlaceholder : public URule
 {
 public:
-	struct FPointer                                    VfTable_IIFlagProvider;                           		// 0x003C (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-	class UAIFactoryBase*                              TheAIFactory;                                     		// 0x0040 (0x0004) [0x0000000000000000]
-	class AActor*                                      ActorProxy;                                       		// 0x0044 (0x0004) [0x0000000000000000]
-	float                                              ThinkRate;                                        		// 0x0048 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	float                                              ElapsedTime;                                      		// 0x004C (0x0004) [0x0000000000000000]
-	float                                              TickRate;                                         		// 0x0050 (0x0004) [0x0000000000000000]
-	class URuleSet*                                    RuleSetTemplate;                                  		// 0x0054 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class URuleSet*                                    CurRuleSet;                                       		// 0x0058 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class URuleSet*                                    PendingRuleSetTemplate;                           		// 0x005C (0x0004) [0x0000000000000000]
-	TArray< struct FFlagDefinitionInitialization >     FlagInitialization;                               		// 0x0060 (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
-	TArray< class UFlagDefinition* >                   DynamicFlagDefinitions;                           		// 0x006C (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	TArray< struct FDynamicFlagInstanceData >          DynamicFlags;                                     		// 0x0078 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	unsigned char                                      UnknownData00[0x3C];                            		// 0x0084 (0x003C) UNKNOWN PROPERTY: MapProperty GearboxFramework.RuleEngine.DynamicFlagDefLookup
-	TArray< class UKnowledgeRecord* >                  KnowledgeDB;                                      		// 0x00C0 (0x000C) [0x0000000004400000]              ( CPF_NeedCtorLink | CPF_EditInline )
-	TArray< class URule* >                             RunningRules;                                     		// 0x00CC (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< class UClass* >                            ResourcesInUse;                                   		// 0x00D8 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned long                                      bRulesEnabled : 1;                                		// 0x00E4 (0x0004) [0x0000000000000000] [0x00000001]
-	unsigned long                                      bHasDebugFocus : 1;                               		// 0x00E4 (0x0004) [0x0000000000000000] [0x00000002]
-	unsigned long                                      bVerboseLoggingEnabled : 1;                       		// 0x00E4 (0x0004) [0x0000000000000000] [0x00000004]
-	unsigned long                                      bInitialized : 1;                                 		// 0x00E4 (0x0004) [0x0000000000000000] [0x00000008]
-	unsigned long                                      DoLoadBalancing : 1;                              		// 0x00E4 (0x0004) [0x0000000000000002] [0x00000010] ( CPF_Const )
-	unsigned long                                      bForceFullUpdate : 1;                             		// 0x00E4 (0x0004) [0x0000000000000000] [0x00000020]
-	unsigned long                                      OnlyIterateRulesForEvents : 1;                    		// 0x00E4 (0x0004) [0x0000000000000003] [0x00000040] ( CPF_Edit | CPF_Const )
-	unsigned long                                      bEventsCausedKnowledgeRecordUpdate : 1;           		// 0x00E4 (0x0004) [0x0000000000000000] [0x00000080]
-	unsigned long                                      EnableSnapshots : 1;                              		// 0x00E4 (0x0004) [0x0000000000000002] [0x00000100] ( CPF_Const )
-	class UAITracker*                                  MyTracker;                                        		// 0x00E8 (0x0004) [0x0000000000000000]
-	TArray< class URuleSet* >                          RuleSetStack;                                     		// 0x00EC (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FEventRecord >                      QueuedRuleEvents;                                 		// 0x00F8 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	float                                              LastFullUpdateTime;                               		// 0x0104 (0x0004) [0x0000000000000000]
-	int                                                MaxRuleSetPasses;                                 		// 0x0108 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	TArray< class UClass* >                            KRCache;                                          		// 0x010C (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	float                                              LastTargetIteratorTime;                           		// 0x0118 (0x0004) [0x0000000000000000]
-	float                                              LastTargetIteratorRuleEvalDiffTime;               		// 0x011C (0x0004) [0x0000000000000000]
-	float                                              AverageTargetIteratorRuleEvalDiffTime;            		// 0x0120 (0x0004) [0x0000000000000000]
-	float                                              WorstTargetIteratorRuleEvalDiffTime;              		// 0x0124 (0x0004) [0x0000000000000000]
-	float                                              ActivateTime;                                     		// 0x0128 (0x0004) [0x0000000000000000]
-	TArray< struct FRuleSetReference >                 RuleSetReferences;                                		// 0x012C (0x000C) [0x0000000004400001]              ( CPF_Edit | CPF_NeedCtorLink | CPF_EditInline )
 
-public:
-	void ApplyFlagInitializationData(TArray< struct FFlagDefinitionInitialization >* FlagsToSet);
-	bool IsResourceInUse(class UClass* TestResourceClass);
-	class UObject* GetContextSource();
-	bool IsRunningRuleWhichBlocksRuleSetChange();
-	bool GetDynamicFlagValue(class UFlagDefinition* FlagDefinition);
-	void SetDynamicFlagDefTrueTimed(class UFlagDefinition* FlagDefinition, float Time);
-	void SetDynamicFlagDefValue(class UFlagDefinition* FlagDefinition, unsigned long Value);
-	class URuleSet* GetRuleSetFromReference(struct FName ReferenceName);
-	void ClearRuleSetStack();
-	void PopRuleSetSwitch();
-	bool PushRuleSetSwitch(class URuleSet* NewRuleSetTemplate);
-	void SetRuleSet(class URuleSet* NewRuleSetTemplate);
-	void SwitchActiveRuleSet(class URuleSet* NewRuleSetTemplate);
-	void UpdateKnowledge(class UClass* pKnowledgeRecordType);
-	int ActivateEventRuleEx(struct FName EventDefName, TArray< class AGearboxPawn* > Participants, class AActor* Subject, unsigned long CastSizeMustMatch);
-	void CleanUpRuleEngineData();
-	int ActivateEventRule(struct FName EventDefName, class AGearboxPawn* Instigator, class AActor* Subject, unsigned long CastSizeMustMatch);
-	int ActivateEventRuleByDefinition(class URuleEventDef* EventDefinition, class UObject* OtherEventParticipantObject);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("RulePlaceholder");
+		return ptr;
+	}
+
 };
 
-// UClass* URuleEngine::pClassPointer = NULL;
 
-// 0x0008 (0x0140 - 0x0138)
+// Class GearboxFramework.GearboxRuleEngine
+// 0x0008 (0x0138 - 0x0140)
 class UGearboxRuleEngine : public URuleEngine
 {
 public:
-	class AGearboxPawn*                                MyGearboxPawn;                                    		// 0x0138 (0x0004) [0x0000000000000000]
-	class AGearboxMind*                                MyGearboxMind;                                    		// 0x013C (0x0004) [0x0000000000000000]
+	class AGearboxPawn*                                MyGearboxPawn;                                            // 0x0138(0x0004)
+	class AGearboxMind*                                MyGearboxMind;                                            // 0x013C(0x0004)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxRuleEngine");
+		return ptr;
+	}
+
+
 	void Initialize(class AGearboxPawn* NewGearboxPawn, class AGearboxMind* NewMind, class UGearboxAIFactory* NewAIFactory);
 	class UObject* GetContextSource();
 };
 
-// UClass* UGearboxRuleEngine::pClassPointer = NULL;
 
-// 0x0030 (0x006C - 0x003C)
+// Class GearboxFramework.RuleEventDef
+// 0x0030 (0x003C - 0x006C)
 class URuleEventDef : public UGBXDefinition
 {
 public:
-	struct FName                                       EventDefName;                                     		// 0x003C (0x0008) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	struct FFlagDefinitionInitialization               FlagActionOnEventTrigger;                         		// 0x0044 (0x0028) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	struct FName                                       EventDefName;                                             // 0x003C(0x0008) (Edit, Const)
+	struct FFlagDefinitionInitialization               FlagActionOnEventTrigger;                                 // 0x0044(0x0028) (Edit, Const)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("RuleEventDef");
+		return ptr;
+	}
+
 };
 
-// UClass* URuleEventDef::pClassPointer = NULL;
 
-// 0x0058 (0x0094 - 0x003C)
+// Class GearboxFramework.RuleSet
+// 0x0058 (0x003C - 0x0094)
 class URuleSet : public UObject
 {
 public:
-	class UAIFactoryBase*                              TheAIFactory;                                     		// 0x003C (0x0004) [0x0000000000000000]
-	TArray< class URule* >                             RuleTemplateRefs;                                 		// 0x0040 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	TArray< class URule* >                             Rules;                                            		// 0x004C (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	TArray< class URulePlaceholder* >                  ToDiscard;                                        		// 0x0058 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned long                                      bInitialized : 1;                                 		// 0x0064 (0x0004) [0x0000000000000000] [0x00000001]
-	unsigned long                                      bNewRuleEvaluationEnabled : 1;                    		// 0x0064 (0x0004) [0x0000000000000000] [0x00000002]
-	struct FName                                       RuleSetName;                                      		// 0x0068 (0x0008) [0x0000000000000000]
-	TArray< struct FFlagDefinitionInitialization >     FlagsOnEntry;                                     		// 0x0070 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	TArray< struct FFlagDefinitionInitialization >     FlagsOnExit;                                      		// 0x007C (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	TArray< class URuleSet* >                          HACK_RuleSetsAllowedToFollow;                     		// 0x0088 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	class UAIFactoryBase*                              TheAIFactory;                                             // 0x003C(0x0004)
+	TArray<class URule*>                               RuleTemplateRefs;                                         // 0x0040(0x000C) (Edit, NeedCtorLink)
+	TArray<class URule*>                               Rules;                                                    // 0x004C(0x000C) (Transient, NeedCtorLink)
+	TArray<class URulePlaceholder*>                    ToDiscard;                                                // 0x0058(0x000C) (NeedCtorLink)
+	unsigned long                                      bInitialized : 1;                                         // 0x0064(0x0004)
+	unsigned long                                      bNewRuleEvaluationEnabled : 1;                            // 0x0064(0x0004)
+	struct FName                                       RuleSetName;                                              // 0x0068(0x0008)
+	TArray<struct FFlagDefinitionInitialization>       FlagsOnEntry;                                             // 0x0070(0x000C) (Edit, NeedCtorLink)
+	TArray<struct FFlagDefinitionInitialization>       FlagsOnExit;                                              // 0x007C(0x000C) (Edit, NeedCtorLink)
+	TArray<class URuleSet*>                            HACK_RuleSetsAllowedToFollow;                             // 0x0088(0x000C) (Edit, NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("RuleSet");
+		return ptr;
+	}
+
 };
 
-// UClass* URuleSet::pClassPointer = NULL;
 
-// 0x001C (0x00B0 - 0x0094)
+// Class GearboxFramework.StateRuleSet
+// 0x001C (0x0094 - 0x00B0)
 class UStateRuleSet : public URuleSet
 {
 public:
-	TArray< class URule* >                             StateRules;                                       		// 0x0094 (0x000C) [0x0000000004400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink | CPF_EditInline )
-	unsigned long                                      bShowPawnInRadarWhenActive : 1;                   		// 0x00A0 (0x0004) [0x0000000000000003] [0x00000001] ( CPF_Edit | CPF_Const )
-	TArray< struct FStateAttributeData >               StateAttributeMap;                                		// 0x00A4 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	TArray<class URule*>                               StateRules;                                               // 0x0094(0x000C) (Edit, Const, NeedCtorLink, EditInline)
+	unsigned long                                      bShowPawnInRadarWhenActive : 1;                           // 0x00A0(0x0004) (Edit, Const)
+	TArray<struct FStateAttributeData>                 StateAttributeMap;                                        // 0x00A4(0x000C) (Edit, NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("StateRuleSet");
+		return ptr;
+	}
+
 };
 
-// UClass* UStateRuleSet::pClassPointer = NULL;
 
+// Class GearboxFramework.SearchDirection
 // 0x0000 (0x003C - 0x003C)
-class USearchDirection : public UObject {};
+class USearchDirection : public UObject
+{
+public:
 
-// UClass* USearchDirection::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SearchDirection");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.SearchDirection_Any
 // 0x0000 (0x003C - 0x003C)
-class USearchDirection_Any : public USearchDirection {};
+class USearchDirection_Any : public USearchDirection
+{
+public:
 
-// UClass* USearchDirection_Any::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SearchDirection_Any");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.SearchDirection_AwayFromMe
 // 0x0000 (0x003C - 0x003C)
-class USearchDirection_AwayFromMe : public USearchDirection {};
+class USearchDirection_AwayFromMe : public USearchDirection
+{
+public:
 
-// UClass* USearchDirection_AwayFromMe::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SearchDirection_AwayFromMe");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.SearchDirection_AwayFromTarget
 // 0x0000 (0x003C - 0x003C)
-class USearchDirection_AwayFromTarget : public USearchDirection {};
+class USearchDirection_AwayFromTarget : public USearchDirection
+{
+public:
 
-// UClass* USearchDirection_AwayFromTarget::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SearchDirection_AwayFromTarget");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.SearchDirection_MyFacingDirection
 // 0x0000 (0x003C - 0x003C)
-class USearchDirection_MyFacingDirection : public USearchDirection {};
+class USearchDirection_MyFacingDirection : public USearchDirection
+{
+public:
 
-// UClass* USearchDirection_MyFacingDirection::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SearchDirection_MyFacingDirection");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.SearchDirection_OppositeMyFacingDirection
 // 0x0000 (0x003C - 0x003C)
-class USearchDirection_OppositeMyFacingDirection : public USearchDirection {};
+class USearchDirection_OppositeMyFacingDirection : public USearchDirection
+{
+public:
 
-// UClass* USearchDirection_OppositeMyFacingDirection::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SearchDirection_OppositeMyFacingDirection");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.SearchDirection_OppositeTargetsFacingDirection
 // 0x0000 (0x003C - 0x003C)
-class USearchDirection_OppositeTargetsFacingDirection : public USearchDirection {};
+class USearchDirection_OppositeTargetsFacingDirection : public USearchDirection
+{
+public:
 
-// UClass* USearchDirection_OppositeTargetsFacingDirection::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SearchDirection_OppositeTargetsFacingDirection");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.SearchDirection_RandomLeftOrRight
 // 0x0000 (0x003C - 0x003C)
-class USearchDirection_RandomLeftOrRight : public USearchDirection {};
+class USearchDirection_RandomLeftOrRight : public USearchDirection
+{
+public:
 
-// UClass* USearchDirection_RandomLeftOrRight::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SearchDirection_RandomLeftOrRight");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.SearchDirection_TargetsFacingDirection
 // 0x0000 (0x003C - 0x003C)
-class USearchDirection_TargetsFacingDirection : public USearchDirection {};
+class USearchDirection_TargetsFacingDirection : public USearchDirection
+{
+public:
 
-// UClass* USearchDirection_TargetsFacingDirection::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SearchDirection_TargetsFacingDirection");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.SearchDirection_ToMyLeft
 // 0x0000 (0x003C - 0x003C)
-class USearchDirection_ToMyLeft : public USearchDirection {};
+class USearchDirection_ToMyLeft : public USearchDirection
+{
+public:
 
-// UClass* USearchDirection_ToMyLeft::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SearchDirection_ToMyLeft");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.SearchDirection_ToMyRight
 // 0x0000 (0x003C - 0x003C)
-class USearchDirection_ToMyRight : public USearchDirection {};
+class USearchDirection_ToMyRight : public USearchDirection
+{
+public:
 
-// UClass* USearchDirection_ToMyRight::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SearchDirection_ToMyRight");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.SearchDirection_TowardMe
 // 0x0000 (0x003C - 0x003C)
-class USearchDirection_TowardMe : public USearchDirection {};
+class USearchDirection_TowardMe : public USearchDirection
+{
+public:
 
-// UClass* USearchDirection_TowardMe::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SearchDirection_TowardMe");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.SearchDirection_TowardTarget
 // 0x0000 (0x003C - 0x003C)
-class USearchDirection_TowardTarget : public USearchDirection {};
+class USearchDirection_TowardTarget : public USearchDirection
+{
+public:
 
-// UClass* USearchDirection_TowardTarget::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SearchDirection_TowardTarget");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.SearchOrigin
 // 0x0000 (0x003C - 0x003C)
-class USearchOrigin : public UObject {};
+class USearchOrigin : public UObject
+{
+public:
 
-// UClass* USearchOrigin::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SearchOrigin");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.SearchOrigin_CurrentLocation
 // 0x0000 (0x003C - 0x003C)
-class USearchOrigin_CurrentLocation : public USearchOrigin {};
+class USearchOrigin_CurrentLocation : public USearchOrigin
+{
+public:
 
-// UClass* USearchOrigin_CurrentLocation::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SearchOrigin_CurrentLocation");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.SearchOrigin_ScriptedMoveTarget
 // 0x0000 (0x003C - 0x003C)
-class USearchOrigin_ScriptedMoveTarget : public USearchOrigin {};
+class USearchOrigin_ScriptedMoveTarget : public USearchOrigin
+{
+public:
 
-// UClass* USearchOrigin_ScriptedMoveTarget::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SearchOrigin_ScriptedMoveTarget");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.SearchOrigin_TargetLocation
 // 0x0000 (0x003C - 0x003C)
-class USearchOrigin_TargetLocation : public USearchOrigin {};
+class USearchOrigin_TargetLocation : public USearchOrigin
+{
+public:
 
-// UClass* USearchOrigin_TargetLocation::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SearchOrigin_TargetLocation");
+		return ptr;
+	}
 
-// 0x0CC0 (0x0D00 - 0x0040)
+};
+
+
+// Class GearboxFramework.SnapshotRecord
+// 0x0CC0 (0x0040 - 0x0D00)
 class USnapshotRecord : public USnapshotInterface
 {
 public:
-	struct FName                                       MyName;                                           		// 0x0040 (0x0008) [0x0000000000000000]
-	struct FName                                       RuleSet;                                          		// 0x0048 (0x0008) [0x0000000000000000]
-	TArray< struct FRuleInfo >                         CurrentRules;                                     		// 0x0050 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FRuleInfo                                   ContainedRules[0x2D];                           		// 0x005C (0x0BF4) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                SelectedRuleIdx;                                  		// 0x0C50 (0x0004) [0x0000000000000000]
-	int                                                SelectedSubRuleIdx;                               		// 0x0C54 (0x0004) [0x0000000000000000]
-	TArray< struct FName >                             ResourcesInUse;                                   		// 0x0C58 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FName >                             Flags;                                            		// 0x0C64 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FVector                                     Location;                                         		// 0x0C70 (0x000C) [0x0000000000000000]
-	struct FVector                                     Velocity;                                         		// 0x0C7C (0x000C) [0x0000000000000000]
-	struct FRotator                                    Rotation;                                         		// 0x0C88 (0x000C) [0x0000000000000000]
-	struct FName                                       RuleAffected;                                     		// 0x0C94 (0x0008) [0x0000000000000000]
-	struct FName                                       Rule2Affected;                                    		// 0x0C9C (0x0008) [0x0000000000000000]
-	struct FName                                       SequenceAffected;                                 		// 0x0CA4 (0x0008) [0x0000000000000000]
-	struct FName                                       Sequence2Affected;                                		// 0x0CAC (0x0008) [0x0000000000000000]
-	unsigned char                                      Event;                                            		// 0x0CB4 (0x0001) [0x0000000000000000]
-	struct FName                                       RuleStartName;                                    		// 0x0CB8 (0x0008) [0x0000000000000002]              ( CPF_Const )
-	struct FName                                       RuleEndName;                                      		// 0x0CC0 (0x0008) [0x0000000000000002]              ( CPF_Const )
-	struct FName                                       RuleInterruptName;                                		// 0x0CC8 (0x0008) [0x0000000000000002]              ( CPF_Const )
-	struct FName                                       ChildSequenceStartName;                           		// 0x0CD0 (0x0008) [0x0000000000000002]              ( CPF_Const )
-	struct FName                                       SwitchRuleSetName;                                		// 0x0CD8 (0x0008) [0x0000000000000002]              ( CPF_Const )
-	struct FName                                       PreventNewRulesName;                              		// 0x0CE0 (0x0008) [0x0000000000000002]              ( CPF_Const )
-	struct FColor                                      RunningRulesColor;                                		// 0x0CE8 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	struct FColor                                      StalledRulesColor;                                		// 0x0CEC (0x0004) [0x0000000000000002]              ( CPF_Const )
-	struct FColor                                      NotRunningRulesColor;                             		// 0x0CF0 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	struct FColor                                      DisabledRulesColor;                               		// 0x0CF4 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	struct FColor                                      FlagsColor;                                       		// 0x0CF8 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	struct FColor                                      ResourcesColor;                                   		// 0x0CFC (0x0004) [0x0000000000000002]              ( CPF_Const )
+	struct FName                                       MyName;                                                   // 0x0040(0x0008)
+	struct FName                                       RuleSet;                                                  // 0x0048(0x0008)
+	TArray<struct FRuleInfo>                           CurrentRules;                                             // 0x0050(0x000C) (NeedCtorLink)
+	struct FRuleInfo                                   ContainedRules[0x2D];                                     // 0x005C(0x0044) (NeedCtorLink)
+	int                                                SelectedRuleIdx;                                          // 0x0C50(0x0004)
+	int                                                SelectedSubRuleIdx;                                       // 0x0C54(0x0004)
+	TArray<struct FName>                               ResourcesInUse;                                           // 0x0C58(0x000C) (NeedCtorLink)
+	TArray<struct FName>                               Flags;                                                    // 0x0C64(0x000C) (NeedCtorLink)
+	struct FVector                                     Location;                                                 // 0x0C70(0x000C)
+	struct FVector                                     Velocity;                                                 // 0x0C7C(0x000C)
+	struct FRotator                                    Rotation;                                                 // 0x0C88(0x000C)
+	struct FName                                       RuleAffected;                                             // 0x0C94(0x0008)
+	struct FName                                       Rule2Affected;                                            // 0x0C9C(0x0008)
+	struct FName                                       SequenceAffected;                                         // 0x0CA4(0x0008)
+	struct FName                                       Sequence2Affected;                                        // 0x0CAC(0x0008)
+	unsigned char                                      Event;                                                    // 0x0CB4(0x0001)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0CB5(0x0003) MISSED OFFSET
+	struct FName                                       RuleStartName;                                            // 0x0CB8(0x0008) (Const)
+	struct FName                                       RuleEndName;                                              // 0x0CC0(0x0008) (Const)
+	struct FName                                       RuleInterruptName;                                        // 0x0CC8(0x0008) (Const)
+	struct FName                                       ChildSequenceStartName;                                   // 0x0CD0(0x0008) (Const)
+	struct FName                                       SwitchRuleSetName;                                        // 0x0CD8(0x0008) (Const)
+	struct FName                                       PreventNewRulesName;                                      // 0x0CE0(0x0008) (Const)
+	struct FColor                                      RunningRulesColor;                                        // 0x0CE8(0x0004) (Const)
+	struct FColor                                      StalledRulesColor;                                        // 0x0CEC(0x0004) (Const)
+	struct FColor                                      NotRunningRulesColor;                                     // 0x0CF0(0x0004) (Const)
+	struct FColor                                      DisabledRulesColor;                                       // 0x0CF4(0x0004) (Const)
+	struct FColor                                      FlagsColor;                                               // 0x0CF8(0x0004) (Const)
+	struct FColor                                      ResourcesColor;                                           // 0x0CFC(0x0004) (Const)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SnapshotRecord");
+		return ptr;
+	}
+
 };
 
-// UClass* USnapshotRecord::pClassPointer = NULL;
 
-// 0x02CC (0x0FCC - 0x0D00)
+// Class GearboxFramework.GearboxPawnSnapshotRecord
+// 0x02CC (0x0D00 - 0x0FCC)
 class UGearboxPawnSnapshotRecord : public USnapshotRecord
 {
 public:
-	float                                              PawnIconZOffset;                                  		// 0x0D00 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              PawnExposureZOffset;                              		// 0x0D04 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	float                                              CollectionNameOffset;                             		// 0x0D08 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	struct FColor                                      LastVisibleConnectionColor;                       		// 0x0D0C (0x0004) [0x0000000000000002]              ( CPF_Const )
-	struct FColor                                      RouteColor;                                       		// 0x0D10 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	struct FColor                                      OriginalRouteColor;                               		// 0x0D14 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	struct FColor                                      DestLineColor;                                    		// 0x0D18 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	struct FColor                                      BestCoverColor;                                   		// 0x0D1C (0x0004) [0x0000000000000002]              ( CPF_Const )
-	struct FColor                                      PotentialCoverColor;                              		// 0x0D20 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	struct FColor                                      StandardCoverColor;                               		// 0x0D24 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	class UTexture2D*                                  AIDebugTexture;                                   		// 0x0D28 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	struct FName                                       MyPawnName;                                       		// 0x0D2C (0x0008) [0x0000000000000000]
-	struct FName                                       MyArchetypeName;                                  		// 0x0D34 (0x0008) [0x0000000000000000]
-	float                                              CurrentHealth;                                    		// 0x0D3C (0x0004) [0x0000000000000000]
-	float                                              MaxHealth;                                        		// 0x0D40 (0x0004) [0x0000000000000000]
-	float                                              DistanceToBestTarget;                             		// 0x0D44 (0x0004) [0x0000000000000000]
-	TArray< struct FAwarenessInfo >                    AwarenessZones;                                   		// 0x0D48 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FName                                       AwarenessCollectionName;                          		// 0x0D54 (0x0008) [0x0000000000000000]
-	class AActor*                                      BestTarget;                                       		// 0x0D5C (0x0004) [0x0000000000000000]
-	TArray< struct FLocationInfo >                     TargetLocs;                                       		// 0x0D60 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FLastVisibleInfo >                  LastVisibleTargetLocs;                            		// 0x0D6C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FName                                       AnimTree;                                         		// 0x0D78 (0x0008) [0x0000000000000000]
-	TArray< struct FBoneAtom >                         Bones;                                            		// 0x0D80 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FLocationInfo >                     ForgottenTargets;                                 		// 0x0D8C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FName                                       NewEnemyName;                                     		// 0x0D98 (0x0008) [0x0000000000000000]
-	struct FName                                       NewEnemyArchName;                                 		// 0x0DA0 (0x0008) [0x0000000000000000]
-	unsigned char                                      NewEnemyAwarenessReason;                          		// 0x0DA8 (0x0001) [0x0000000000000000]
-	unsigned char                                      CurrentMoveSpeed;                                 		// 0x0DA9 (0x0001) [0x0000000000000000]
-	unsigned char                                      MaxDesiredMoveSpeed;                              		// 0x0DAA (0x0001) [0x0000000000000000]
-	unsigned char                                      ReasonForMovementFinish;                          		// 0x0DAB (0x0001) [0x0000000000000000]
-	TArray< struct FDebugExposure >                    Exposure;                                         		// 0x0DAC (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	class USkeletalMesh*                               DummyMesh;                                        		// 0x0DB8 (0x0004) [0x0000000000000000]
-	int                                                DummyMesh_LOD;                                    		// 0x0DBC (0x0004) [0x0000000000000000]
-	TArray< struct FViewConeInfo >                     TargetViewCones;                                  		// 0x0DC0 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FVector                                     PawnLocalDestination;                             		// 0x0DCC (0x000C) [0x0000000000000000]
-	TArray< struct FVector >                           FailedMoveSpots;                                  		// 0x0DD8 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FVector >                           RouteCache;                                       		// 0x0DE4 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FVector >                           OriginalRouteCache;                               		// 0x0DF0 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FSmartVector                                DesiredCoverLocation;                             		// 0x0DFC (0x001C) [0x0000000000000000]
-	struct FSmartVector                                CurrentCoverLocation;                             		// 0x0E18 (0x001C) [0x0000000000000000]
-	struct FSmartVector                                ScriptedMoveTargetLocation;                       		// 0x0E34 (0x001C) [0x0000000000000000]
-	float                                              CoverSearchInnerRadius;                           		// 0x0E50 (0x0004) [0x0000000000000000]
-	float                                              CoverSearchOuterRadius;                           		// 0x0E54 (0x0004) [0x0000000000000000]
-	float                                              CoverSearchAngle;                                 		// 0x0E58 (0x0004) [0x0000000000000000]
-	struct FSmartVector                                CoverSearchOrigin;                                		// 0x0E5C (0x001C) [0x0000000000000000]
-	struct FVector                                     CoverSearchDirection;                             		// 0x0E78 (0x000C) [0x0000000000000000]
-	TArray< struct FCoverDebugInfo >                   CoverSlotDebugList;                               		// 0x0E84 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned long                                      CoverSearchWasFinalized : 1;                      		// 0x0E90 (0x0004) [0x0000000000000000] [0x00000001]
-	struct FIconData                                   ICON_BLUELOCATION;                                		// 0x0E94 (0x0014) [0x0000000000000002]              ( CPF_Const )
-	struct FIconData                                   ICON_YELLOWLOCATION;                              		// 0x0EA8 (0x0014) [0x0000000000000002]              ( CPF_Const )
-	struct FIconData                                   ICON_QUESTIONMARK;                                		// 0x0EBC (0x0014) [0x0000000000000002]              ( CPF_Const )
-	struct FIconData                                   ICON_EXCLAMATIONPOINT;                            		// 0x0ED0 (0x0014) [0x0000000000000002]              ( CPF_Const )
-	struct FIconData                                   ICON_REDARROW;                                    		// 0x0EE4 (0x0014) [0x0000000000000002]              ( CPF_Const )
-	struct FIconData                                   ICON_GREENARROW;                                  		// 0x0EF8 (0x0014) [0x0000000000000002]              ( CPF_Const )
-	struct FIconData                                   ICON_FAILED_MOVE_DEST;                            		// 0x0F0C (0x0014) [0x0000000000000002]              ( CPF_Const )
-	struct FIconData                                   ICON_GREENCIRCLE;                                 		// 0x0F20 (0x0014) [0x0000000000000002]              ( CPF_Const )
-	struct FIconData                                   ICON_PATHPOINT;                                   		// 0x0F34 (0x0014) [0x0000000000000002]              ( CPF_Const )
-	struct FIconData                                   ICON_CURRENTCOVER;                                		// 0x0F48 (0x0014) [0x0000000000000002]              ( CPF_Const )
-	struct FIconData                                   ICON_DESIREDCOVER;                                		// 0x0F5C (0x0014) [0x0000000000000002]              ( CPF_Const )
-	struct FIconData                                   ICON_SCRIPTEDMOVETARGET;                          		// 0x0F70 (0x0014) [0x0000000000000002]              ( CPF_Const )
-	TArray< struct FTargetDebugDatum >                 TargetData;                                       		// 0x0F84 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FAIHoldDebugData >                  Holds;                                            		// 0x0F90 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FAIHoldDebugData >                  TargetHolds;                                      		// 0x0F9C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FAIHoldDebugData >                  MovementHolds;                                    		// 0x0FA8 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FAIHoldDebugData >                  DemigodHolds;                                     		// 0x0FB4 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FAIHoldDebugData >                  GodHolds;                                         		// 0x0FC0 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	float                                              PawnIconZOffset;                                          // 0x0D00(0x0004) (Const)
+	float                                              PawnExposureZOffset;                                      // 0x0D04(0x0004) (Const)
+	float                                              CollectionNameOffset;                                     // 0x0D08(0x0004) (Const)
+	struct FColor                                      LastVisibleConnectionColor;                               // 0x0D0C(0x0004) (Const)
+	struct FColor                                      RouteColor;                                               // 0x0D10(0x0004) (Const)
+	struct FColor                                      OriginalRouteColor;                                       // 0x0D14(0x0004) (Const)
+	struct FColor                                      DestLineColor;                                            // 0x0D18(0x0004) (Const)
+	struct FColor                                      BestCoverColor;                                           // 0x0D1C(0x0004) (Const)
+	struct FColor                                      PotentialCoverColor;                                      // 0x0D20(0x0004) (Const)
+	struct FColor                                      StandardCoverColor;                                       // 0x0D24(0x0004) (Const)
+	class UTexture2D*                                  AIDebugTexture;                                           // 0x0D28(0x0004) (Const)
+	struct FName                                       MyPawnName;                                               // 0x0D2C(0x0008)
+	struct FName                                       MyArchetypeName;                                          // 0x0D34(0x0008)
+	float                                              CurrentHealth;                                            // 0x0D3C(0x0004)
+	float                                              MaxHealth;                                                // 0x0D40(0x0004)
+	float                                              DistanceToBestTarget;                                     // 0x0D44(0x0004)
+	TArray<struct FAwarenessInfo>                      AwarenessZones;                                           // 0x0D48(0x000C) (NeedCtorLink)
+	struct FName                                       AwarenessCollectionName;                                  // 0x0D54(0x0008)
+	class AActor*                                      BestTarget;                                               // 0x0D5C(0x0004)
+	TArray<struct FLocationInfo>                       TargetLocs;                                               // 0x0D60(0x000C) (NeedCtorLink)
+	TArray<struct FLastVisibleInfo>                    LastVisibleTargetLocs;                                    // 0x0D6C(0x000C) (NeedCtorLink)
+	struct FName                                       AnimTree;                                                 // 0x0D78(0x0008)
+	TArray<struct FBoneAtom>                           Bones;                                                    // 0x0D80(0x000C) (NeedCtorLink)
+	TArray<struct FLocationInfo>                       ForgottenTargets;                                         // 0x0D8C(0x000C) (NeedCtorLink)
+	struct FName                                       NewEnemyName;                                             // 0x0D98(0x0008)
+	struct FName                                       NewEnemyArchName;                                         // 0x0DA0(0x0008)
+	unsigned char                                      NewEnemyAwarenessReason;                                  // 0x0DA8(0x0001)
+	unsigned char                                      CurrentMoveSpeed;                                         // 0x0DA9(0x0001)
+	unsigned char                                      MaxDesiredMoveSpeed;                                      // 0x0DAA(0x0001)
+	unsigned char                                      ReasonForMovementFinish;                                  // 0x0DAB(0x0001)
+	TArray<struct FDebugExposure>                      Exposure;                                                 // 0x0DAC(0x000C) (NeedCtorLink)
+	class USkeletalMesh*                               DummyMesh;                                                // 0x0DB8(0x0004)
+	int                                                DummyMesh_LOD;                                            // 0x0DBC(0x0004)
+	TArray<struct FViewConeInfo>                       TargetViewCones;                                          // 0x0DC0(0x000C) (NeedCtorLink)
+	struct FVector                                     PawnLocalDestination;                                     // 0x0DCC(0x000C)
+	TArray<struct FVector>                             FailedMoveSpots;                                          // 0x0DD8(0x000C) (NeedCtorLink)
+	TArray<struct FVector>                             RouteCache;                                               // 0x0DE4(0x000C) (NeedCtorLink)
+	TArray<struct FVector>                             OriginalRouteCache;                                       // 0x0DF0(0x000C) (NeedCtorLink)
+	struct FSmartVector                                DesiredCoverLocation;                                     // 0x0DFC(0x001C)
+	struct FSmartVector                                CurrentCoverLocation;                                     // 0x0E18(0x001C)
+	struct FSmartVector                                ScriptedMoveTargetLocation;                               // 0x0E34(0x001C)
+	float                                              CoverSearchInnerRadius;                                   // 0x0E50(0x0004)
+	float                                              CoverSearchOuterRadius;                                   // 0x0E54(0x0004)
+	float                                              CoverSearchAngle;                                         // 0x0E58(0x0004)
+	struct FSmartVector                                CoverSearchOrigin;                                        // 0x0E5C(0x001C)
+	struct FVector                                     CoverSearchDirection;                                     // 0x0E78(0x000C)
+	TArray<struct FCoverDebugInfo>                     CoverSlotDebugList;                                       // 0x0E84(0x000C) (NeedCtorLink)
+	unsigned long                                      CoverSearchWasFinalized : 1;                              // 0x0E90(0x0004)
+	struct FIconData                                   ICON_BLUELOCATION;                                        // 0x0E94(0x0014) (Const)
+	struct FIconData                                   ICON_YELLOWLOCATION;                                      // 0x0EA8(0x0014) (Const)
+	struct FIconData                                   ICON_QUESTIONMARK;                                        // 0x0EBC(0x0014) (Const)
+	struct FIconData                                   ICON_EXCLAMATIONPOINT;                                    // 0x0ED0(0x0014) (Const)
+	struct FIconData                                   ICON_REDARROW;                                            // 0x0EE4(0x0014) (Const)
+	struct FIconData                                   ICON_GREENARROW;                                          // 0x0EF8(0x0014) (Const)
+	struct FIconData                                   ICON_FAILED_MOVE_DEST;                                    // 0x0F0C(0x0014) (Const)
+	struct FIconData                                   ICON_GREENCIRCLE;                                         // 0x0F20(0x0014) (Const)
+	struct FIconData                                   ICON_PATHPOINT;                                           // 0x0F34(0x0014) (Const)
+	struct FIconData                                   ICON_CURRENTCOVER;                                        // 0x0F48(0x0014) (Const)
+	struct FIconData                                   ICON_DESIREDCOVER;                                        // 0x0F5C(0x0014) (Const)
+	struct FIconData                                   ICON_SCRIPTEDMOVETARGET;                                  // 0x0F70(0x0014) (Const)
+	TArray<struct FTargetDebugDatum>                   TargetData;                                               // 0x0F84(0x000C) (NeedCtorLink)
+	TArray<struct FAIHoldDebugData>                    Holds;                                                    // 0x0F90(0x000C) (NeedCtorLink)
+	TArray<struct FAIHoldDebugData>                    TargetHolds;                                              // 0x0F9C(0x000C) (NeedCtorLink)
+	TArray<struct FAIHoldDebugData>                    MovementHolds;                                            // 0x0FA8(0x000C) (NeedCtorLink)
+	TArray<struct FAIHoldDebugData>                    DemigodHolds;                                             // 0x0FB4(0x000C) (NeedCtorLink)
+	TArray<struct FAIHoldDebugData>                    GodHolds;                                                 // 0x0FC0(0x000C) (NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxPawnSnapshotRecord");
+		return ptr;
+	}
+
 };
 
-// UClass* UGearboxPawnSnapshotRecord::pClassPointer = NULL;
 
-// 0x002C (0x0068 - 0x003C)
+// Class GearboxFramework.TargetingDefinition
+// 0x002C (0x003C - 0x0068)
 class UTargetingDefinition : public UGBXDefinition
 {
 public:
-	TArray< class UTI_Calc* >                          Knowledge;                                        		// 0x003C (0x000C) [0x000000000440000B]              ( CPF_Edit | CPF_Const | CPF_ExportObject | CPF_NeedCtorLink | CPF_EditInline )
-	TArray< class UTI_Prioritize* >                    Prioritization;                                   		// 0x0048 (0x000C) [0x000000000440000B]              ( CPF_Edit | CPF_Const | CPF_ExportObject | CPF_NeedCtorLink | CPF_EditInline )
-	class UExpressionEvaluator*                        CanTargetIf;                                      		// 0x0054 (0x0004) [0x0000000004000003]              ( CPF_Edit | CPF_Const | CPF_EditInline )
-	class UExpressionEvaluator*                        StopTargetingIf;                                  		// 0x0058 (0x0004) [0x0000000004000003]              ( CPF_Edit | CPF_Const | CPF_EditInline )
-	unsigned long                                      bCanTargetFriendlies : 1;                         		// 0x005C (0x0004) [0x0000000000000003] [0x00000001] ( CPF_Edit | CPF_Const )
-	unsigned long                                      bOverrideSearchRadius : 1;                        		// 0x005C (0x0004) [0x0000000000000003] [0x00000002] ( CPF_Edit | CPF_Const )
-	class UExpressionEvaluator*                        CanTargetFriendliesIf;                            		// 0x0060 (0x0004) [0x0000000004000003]              ( CPF_Edit | CPF_Const | CPF_EditInline )
-	float                                              SearchRadius;                                     		// 0x0064 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	TArray<class UTI_Calc*>                            Knowledge;                                                // 0x003C(0x000C) (Edit, Const, ExportObject, NeedCtorLink, EditInline)
+	TArray<class UTI_Prioritize*>                      Prioritization;                                           // 0x0048(0x000C) (Edit, Const, ExportObject, NeedCtorLink, EditInline)
+	class UExpressionEvaluator*                        CanTargetIf;                                              // 0x0054(0x0004) (Edit, Const, EditInline)
+	class UExpressionEvaluator*                        StopTargetingIf;                                          // 0x0058(0x0004) (Edit, Const, EditInline)
+	unsigned long                                      bCanTargetFriendlies : 1;                                 // 0x005C(0x0004) (Edit, Const)
+	unsigned long                                      bOverrideSearchRadius : 1;                                // 0x005C(0x0004) (Edit, Const)
+	class UExpressionEvaluator*                        CanTargetFriendliesIf;                                    // 0x0060(0x0004) (Edit, Const, EditInline)
+	float                                              SearchRadius;                                             // 0x0064(0x0004) (Edit, Const)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("TargetingDefinition");
+		return ptr;
+	}
+
 };
 
-// UClass* UTargetingDefinition::pClassPointer = NULL;
 
-// 0x0010 (0x004C - 0x003C)
+// Class GearboxFramework.TargetIterator
+// 0x0010 (0x003C - 0x004C)
 class UTargetIterator : public UObject
 {
 public:
-	unsigned char                                      IteratorType;                                     		// 0x003C (0x0001) [0x0000000000000002]              ( CPF_Const )
-	struct FString                                     BarGraphShortName;                                		// 0x0040 (0x000C) [0x0000000000400002]              ( CPF_Const | CPF_NeedCtorLink )
+	unsigned char                                      IteratorType;                                             // 0x003C(0x0001) (Const)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x003D(0x0003) MISSED OFFSET
+	struct FString                                     BarGraphShortName;                                        // 0x0040(0x000C) (Const, NeedCtorLink)
 
-public:
-	void eventRecordEvalCallback(class URuleEngine* EvalRuleEngine);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("TargetIterator");
+		return ptr;
+	}
+
+
+	static void RecordEvalCallback(class URuleEngine* EvalRuleEngine);
 };
 
-// UClass* UTargetIterator::pClassPointer = NULL;
 
+// Class GearboxFramework.TargetIteratorCalculateDistance
 // 0x0000 (0x004C - 0x004C)
-class UTargetIteratorCalculateDistance : public UTargetIterator {};
+class UTargetIteratorCalculateDistance : public UTargetIterator
+{
+public:
 
-// UClass* UTargetIteratorCalculateDistance::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("TargetIteratorCalculateDistance");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.TargetIteratorCalculateExposure
 // 0x0000 (0x004C - 0x004C)
-class UTargetIteratorCalculateExposure : public UTargetIterator {};
+class UTargetIteratorCalculateExposure : public UTargetIterator
+{
+public:
 
-// UClass* UTargetIteratorCalculateExposure::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("TargetIteratorCalculateExposure");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.TargetIteratorCheckAwareness
 // 0x0000 (0x004C - 0x004C)
-class UTargetIteratorCheckAwareness : public UTargetIterator {};
+class UTargetIteratorCheckAwareness : public UTargetIterator
+{
+public:
 
-// UClass* UTargetIteratorCheckAwareness::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("TargetIteratorCheckAwareness");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.TargetIteratorCheckRemoveTarget
 // 0x0000 (0x004C - 0x004C)
-class UTargetIteratorCheckRemoveTarget : public UTargetIterator {};
+class UTargetIteratorCheckRemoveTarget : public UTargetIterator
+{
+public:
 
-// UClass* UTargetIteratorCheckRemoveTarget::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("TargetIteratorCheckRemoveTarget");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.TargetIteratorForgetAboutTarget
 // 0x0000 (0x004C - 0x004C)
-class UTargetIteratorForgetAboutTarget : public UTargetIterator {};
+class UTargetIteratorForgetAboutTarget : public UTargetIterator
+{
+public:
 
-// UClass* UTargetIteratorForgetAboutTarget::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("TargetIteratorForgetAboutTarget");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.TargetIteratorPrioritizeTargetsIAmExposedTo
 // 0x0000 (0x004C - 0x004C)
-class UTargetIteratorPrioritizeTargetsIAmExposedTo : public UTargetIterator {};
+class UTargetIteratorPrioritizeTargetsIAmExposedTo : public UTargetIterator
+{
+public:
 
-// UClass* UTargetIteratorPrioritizeTargetsIAmExposedTo::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("TargetIteratorPrioritizeTargetsIAmExposedTo");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.TI_Calc
 // 0x0000 (0x004C - 0x004C)
-class UTI_Calc : public UTargetIterator {};
+class UTI_Calc : public UTargetIterator
+{
+public:
 
-// UClass* UTI_Calc::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("TI_Calc");
+		return ptr;
+	}
 
-// 0x0004 (0x0050 - 0x004C)
+};
+
+
+// Class GearboxFramework.TI_Prioritize
+// 0x0004 (0x004C - 0x0050)
 class UTI_Prioritize : public UTargetIterator
 {
 public:
-	float                                              Weight;                                           		// 0x004C (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	float                                              Weight;                                                   // 0x004C(0x0004) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("TI_Prioritize");
+		return ptr;
+	}
+
 };
 
-// UClass* UTI_Prioritize::pClassPointer = NULL;
 
+// Class GearboxFramework.TargetIteratorPrioritizeExposedTargets
 // 0x0000 (0x0050 - 0x0050)
-class UTargetIteratorPrioritizeExposedTargets : public UTI_Prioritize {};
+class UTargetIteratorPrioritizeExposedTargets : public UTI_Prioritize
+{
+public:
 
-// UClass* UTargetIteratorPrioritizeExposedTargets::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("TargetIteratorPrioritizeExposedTargets");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.TargetIteratorPrioritizeHumanTargets
 // 0x0000 (0x0050 - 0x0050)
-class UTargetIteratorPrioritizeHumanTargets : public UTI_Prioritize {};
+class UTargetIteratorPrioritizeHumanTargets : public UTI_Prioritize
+{
+public:
 
-// UClass* UTargetIteratorPrioritizeHumanTargets::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("TargetIteratorPrioritizeHumanTargets");
+		return ptr;
+	}
 
-// 0x0004 (0x0054 - 0x0050)
+};
+
+
+// Class GearboxFramework.TargetIteratorPrioritizeNearbyTarget
+// 0x0004 (0x0050 - 0x0054)
 class UTargetIteratorPrioritizeNearbyTarget : public UTI_Prioritize
 {
 public:
-	float                                              MaxDistance;                                      		// 0x0050 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	float                                              MaxDistance;                                              // 0x0050(0x0004) (Edit, Const)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("TargetIteratorPrioritizeNearbyTarget");
+		return ptr;
+	}
+
 };
 
-// UClass* UTargetIteratorPrioritizeNearbyTarget::pClassPointer = NULL;
 
+// Class GearboxFramework.TargetIteratorPrioritizePreviousTarget
 // 0x0000 (0x0050 - 0x0050)
-class UTargetIteratorPrioritizePreviousTarget : public UTI_Prioritize {};
+class UTargetIteratorPrioritizePreviousTarget : public UTI_Prioritize
+{
+public:
 
-// UClass* UTargetIteratorPrioritizePreviousTarget::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("TargetIteratorPrioritizePreviousTarget");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.TargetIteratorPrioritizeTargetNotBeingShotAt
 // 0x0000 (0x0050 - 0x0050)
-class UTargetIteratorPrioritizeTargetNotBeingShotAt : public UTI_Prioritize {};
+class UTargetIteratorPrioritizeTargetNotBeingShotAt : public UTI_Prioritize
+{
+public:
 
-// UClass* UTargetIteratorPrioritizeTargetNotBeingShotAt::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("TargetIteratorPrioritizeTargetNotBeingShotAt");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.TargetIteratorPrioritizeTargetWhoShootsAtMe
 // 0x0000 (0x0050 - 0x0050)
-class UTargetIteratorPrioritizeTargetWhoShootsAtMe : public UTI_Prioritize {};
+class UTargetIteratorPrioritizeTargetWhoShootsAtMe : public UTI_Prioritize
+{
+public:
 
-// UClass* UTargetIteratorPrioritizeTargetWhoShootsAtMe::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("TargetIteratorPrioritizeTargetWhoShootsAtMe");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.TI_PrioritizeBonus
 // 0x0000 (0x0050 - 0x0050)
-class UTI_PrioritizeBonus : public UTI_Prioritize {};
+class UTI_PrioritizeBonus : public UTI_Prioritize
+{
+public:
 
-// UClass* UTI_PrioritizeBonus::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("TI_PrioritizeBonus");
+		return ptr;
+	}
 
-// 0x0004 (0x0054 - 0x0050)
+};
+
+
+// Class GearboxFramework.TI_PrioritizeConditional
+// 0x0004 (0x0050 - 0x0054)
 class UTI_PrioritizeConditional : public UTI_Prioritize
 {
 public:
-	class UExpressionEvaluator*                        Condition;                                        		// 0x0050 (0x0004) [0x0000000004000003]              ( CPF_Edit | CPF_Const | CPF_EditInline )
+	class UExpressionEvaluator*                        Condition;                                                // 0x0050(0x0004) (Edit, Const, EditInline)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("TI_PrioritizeConditional");
+		return ptr;
+	}
+
 };
 
-// UClass* UTI_PrioritizeConditional::pClassPointer = NULL;
 
-// 0x000C (0x00C0 - 0x00B4)
+// Class GearboxFramework.GearboxSeqAct_PopulationOpportunityLink
+// 0x000C (0x00B4 - 0x00C0)
 class UGearboxSeqAct_PopulationOpportunityLink : public USeqAct_Latent
 {
 public:
-	TArray< class APopulationOpportunity* >            CloneOpportunities;                               		// 0x00B4 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	TArray<class APopulationOpportunity*>              CloneOpportunities;                                       // 0x00B4(0x000C) (Edit, NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxSeqAct_PopulationOpportunityLink");
+		return ptr;
+	}
+
 };
 
-// UClass* UGearboxSeqAct_PopulationOpportunityLink::pClassPointer = NULL;
 
+// Class GearboxFramework.IPopulationSpawnPoint
 // 0x0000 (0x003C - 0x003C)
 class UIPopulationSpawnPoint : public UInterface
 {
 public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("IPopulationSpawnPoint");
+		return ptr;
+	}
+
+
 	float GetInitialMovementHoldTime();
 	class AActor* GetInitialDestination();
 	unsigned char GetInitialActionType();
 	unsigned char GetSpawnStyleType();
 };
 
-// UClass* UIPopulationSpawnPoint::pClassPointer = NULL;
 
-// 0x0018 (0x0054 - 0x003C)
+// Class GearboxFramework.PopulationDefinition
+// 0x0018 (0x003C - 0x0054)
 class UPopulationDefinition : public UGBXDefinition
 {
 public:
-	struct FPointer                                    VfTable_IIConstructObject;                        		// 0x003C (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-	TArray< struct FPopulationActor >                  ActorArchetypeList;                               		// 0x0040 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	unsigned char                                      RespawnStyle;                                     		// 0x004C (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	unsigned long                                      bTotalResetOnLevelLoad : 1;                       		// 0x0050 (0x0004) [0x0000000000000003] [0x00000001] ( CPF_Edit | CPF_Const )
+	struct FPointer                                    VfTable_IIConstructObject;                                // 0x003C(0x0004) (Const, Native, NoExport)
+	TArray<struct FPopulationActor>                    ActorArchetypeList;                                       // 0x0040(0x000C) (Edit, NeedCtorLink)
+	unsigned char                                      RespawnStyle;                                             // 0x004C(0x0001) (Edit, Const)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x004D(0x0003) MISSED OFFSET
+	unsigned long                                      bTotalResetOnLevelLoad : 1;                               // 0x0050(0x0004) (Edit, Const)
 
-public:
-	bool IsAllSpawnTypesDebugEnabled();
-	void ToggleAllSpawnTypesDebug();
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PopulationDefinition");
+		return ptr;
+	}
+
+
+	static bool IsAllSpawnTypesDebugEnabled();
+	static void ToggleAllSpawnTypesDebug();
 	class UPopulationFactory* GetRandomFactory(class APopulationOpportunity* SpawningOpportunity, int GameStage, int Rarity);
 };
 
-// UClass* UPopulationDefinition::pClassPointer = NULL;
 
-// 0x001C (0x0058 - 0x003C)
+// Class GearboxFramework.PopulationFactory
+// 0x001C (0x003C - 0x0058)
 class UPopulationFactory : public UObject
 {
 public:
-	struct FPointer                                    VfTable_IIConstructObject;                        		// 0x003C (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-	TArray< class UBehaviorBase* >                     OnActorSpawn;                                     		// 0x0040 (0x000C) [0x0000000004400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink | CPF_EditInline )
-	struct FDestructionParameters                      DestructionParams;                                		// 0x004C (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	unsigned long                                      bIsCriticalActor : 1;                             		// 0x0050 (0x0004) [0x0000000000000003] [0x00000001] ( CPF_Edit | CPF_Const )
-	unsigned long                                      bUseSavedLocationWhenRestored : 1;                		// 0x0050 (0x0004) [0x0000000000000003] [0x00000002] ( CPF_Edit | CPF_Const )
-	unsigned long                                      UseCostOverride : 1;                              		// 0x0050 (0x0004) [0x0000000000000003] [0x00000004] ( CPF_Edit | CPF_Const )
-	int                                                SpawnCostOverride;                                		// 0x0054 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	struct FPointer                                    VfTable_IIConstructObject;                                // 0x003C(0x0004) (Const, Native, NoExport)
+	TArray<class UBehaviorBase*>                       OnActorSpawn;                                             // 0x0040(0x000C) (Edit, Const, NeedCtorLink, EditInline)
+	struct FDestructionParameters                      DestructionParams;                                        // 0x004C(0x0004) (Edit, Const)
+	unsigned long                                      bIsCriticalActor : 1;                                     // 0x0050(0x0004) (Edit, Const)
+	unsigned long                                      bUseSavedLocationWhenRestored : 1;                        // 0x0050(0x0004) (Edit, Const)
+	unsigned long                                      UseCostOverride : 1;                                      // 0x0050(0x0004) (Edit, Const)
+	int                                                SpawnCostOverride;                                        // 0x0054(0x0004) (Edit, Const)
 
-public:
-	struct FString eventGetDescriptionOfFactoryOutput();
-	bool eventShouldSavePopulationActor(class UPopulationMaster* Master, class AActor* ActorToSave);
-	bool eventDestroyPopulationActor(class UPopulationMaster* Master, int nOpportunityIdx, class AActor* ActorToDestroy, class UPopulationFactory* SpawnFactory, int CreationFlags, unsigned long bDontSaveActor);
-	class AActor* eventCreatePopulationActor(class UPopulationMaster* Master, class APopulationOpportunity* Opportunity, class UObject* SpawnLocationContextObject, struct FVector SpawnLocation, struct FRotator SpawnRotation, int GameStage, int Rarity);
-	struct FBoxSphereBounds eventGetSpawnVisibilityBounds(int GameStage, int Rarity);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PopulationFactory");
+		return ptr;
+	}
+
+
+	struct FString GetDescriptionOfFactoryOutput();
+	static bool ShouldSavePopulationActor(class UPopulationMaster* Master, class AActor* ActorToSave);
+	static bool DestroyPopulationActor(class UPopulationMaster* Master, int nOpportunityIdx, class AActor* ActorToDestroy, class UPopulationFactory* SpawnFactory, int CreationFlags, bool bDontSaveActor);
+	class AActor* CreatePopulationActor(class UPopulationMaster* Master, class APopulationOpportunity* Opportunity, class UObject* SpawnLocationContextObject, const struct FVector& SpawnLocation, const struct FRotator& SpawnRotation, int GameStage, int Rarity);
+	struct FBoxSphereBounds GetSpawnVisibilityBounds(int GameStage, int Rarity);
 	class UPawnAllegiance* GetActorAllegiance(int GameStage, int Rarity);
-	int eventGetActorSpawnCost(int GameStage, int Rarity, unsigned long bCanSpawnTest);
-	void eventOnSpawnActor(class AActor* aNewActor);
-	void eventSetupMatineeForActor(class AActor* aNewActor);
+	int GetActorSpawnCost(int GameStage, int Rarity, bool bCanSpawnTest);
+	void OnSpawnActor(class AActor* aNewActor);
+	static void SetupMatineeForActor(class AActor* aNewActor);
 	class UPopulationFactory* GetSpawnFactory(class APopulationOpportunity* SpawningOpportunity, int GameStage, int Rarity);
 	float GetSpawnProbabilityAtThisGameStage(int GameStage, int Rarity);
 	bool IsFactoryWithin(class UPopulationFactory* TestFactory);
 	bool CanSpawn(class APopulationOpportunity* SpawningOpportunity);
 };
 
-// UClass* UPopulationFactory::pClassPointer = NULL;
 
-// 0x0004 (0x005C - 0x0058)
+// Class GearboxFramework.PopulationFactoryGeneric
+// 0x0004 (0x0058 - 0x005C)
 class UPopulationFactoryGeneric : public UPopulationFactory
 {
 public:
-	class AActor*                                      ActorArchetype;                                   		// 0x0058 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	class AActor*                                      ActorArchetype;                                           // 0x0058(0x0004) (Edit, Const)
 
-public:
-	class AActor* eventCreatePopulationActor(class UPopulationMaster* Master, class APopulationOpportunity* Opportunity, class UObject* SpawnLocationContextObject, struct FVector SpawnLocation, struct FRotator SpawnRotation, int GameStage, int Rarity);
-	struct FBoxSphereBounds eventGetSpawnVisibilityBounds(int GameStage, int Rarity);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PopulationFactoryGeneric");
+		return ptr;
+	}
+
+
+	class AActor* CreatePopulationActor(class UPopulationMaster* Master, class APopulationOpportunity* Opportunity, class UObject* SpawnLocationContextObject, const struct FVector& SpawnLocation, const struct FRotator& SpawnRotation, int GameStage, int Rarity);
+	struct FBoxSphereBounds GetSpawnVisibilityBounds(int GameStage, int Rarity);
 };
 
-// UClass* UPopulationFactoryGeneric::pClassPointer = NULL;
 
-// 0x0004 (0x005C - 0x0058)
+// Class GearboxFramework.PopulationFactoryPopulationDefinition
+// 0x0004 (0x0058 - 0x005C)
 class UPopulationFactoryPopulationDefinition : public UPopulationFactory
 {
 public:
-	class UPopulationDefinition*                       PopulationDef;                                    		// 0x0058 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	class UPopulationDefinition*                       PopulationDef;                                            // 0x0058(0x0004) (Edit, Const)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PopulationFactoryPopulationDefinition");
+		return ptr;
+	}
+
+
 	class UPopulationFactory* GetSpawnFactory(class APopulationOpportunity* SpawningOpportunity, int GameStage, int Rarity);
 	class UPawnAllegiance* GetActorAllegiance(int GameStage, int AwesomeLevel);
 	bool IsFactoryWithin(class UPopulationFactory* TestFactory);
 };
 
-// UClass* UPopulationFactoryPopulationDefinition::pClassPointer = NULL;
 
-// 0x004C (0x0088 - 0x003C)
+// Class GearboxFramework.PopulationOpportunity
+// 0x0068 (0x0188 - 0x01F0)
+class APopulationOpportunity : public AInfo
+{
+public:
+	struct FPointer                                    VfTable_IIBodyCompositionInstance;                        // 0x0188(0x0004) (Const, Native, NoExport)
+	struct FOpportunityCleanupParameters               CleanupParams;                                            // 0x018C(0x0008) (Edit, Const)
+	unsigned long                                      IsEnabled : 1;                                            // 0x0194(0x0004) (Edit)
+	unsigned long                                      bNoRespawning : 1;                                        // 0x0194(0x0004) (Edit, Const)
+	unsigned long                                      bIsWaitingForRespawn : 1;                                 // 0x0194(0x0004) (Transient)
+	unsigned long                                      bUseRandomSpawns : 1;                                     // 0x0194(0x0004) (Transient)
+	TArray<class APopulationPoint*>                    SpawnPoints;                                              // 0x0198(0x000C) (Edit, NeedCtorLink)
+	class ULevelStreaming*                             StreamingLevel;                                           // 0x01A4(0x0004) (Transient)
+	int                                                SystemID;                                                 // 0x01A8(0x0004) (Transient)
+	int                                                NextInitialDestinationIdx;                                // 0x01AC(0x0004) (Transient)
+	class UGearboxSeqAct_PopulationOpportunityLink*    SequenceActionLink;                                       // 0x01B0(0x0004) (Transient)
+	float                                              LastTimeBlockedFromSpawningDueToPopLimits;                // 0x01B4(0x0004) (Transient)
+	float                                              RespawnDelayStartTime;                                    // 0x01B8(0x0004) (Transient)
+	class URegionDefinition*                           GameStageRegion;                                          // 0x01BC(0x0004) (Edit, Const)
+	class UPopulationAspect*                           Aspect;                                                   // 0x01C0(0x0004) (Edit, Const, ExportObject, NeedCtorLink, EditInline)
+	TArray<class UPopulationAspect*>                   Aspects;                                                  // 0x01C4(0x000C) (Edit, Const, ExportObject, NeedCtorLink, EditInline)
+	int                                                SpawnIndex;                                               // 0x01D0(0x0004) (Transient)
+	TArray<int>                                        SpawnList;                                                // 0x01D4(0x000C) (Transient, NeedCtorLink)
+	int                                                InclusiveSpawnIndex;                                      // 0x01E0(0x0004) (Transient)
+	TArray<int>                                        InclusiveSpawnList;                                       // 0x01E4(0x000C) (Transient, NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PopulationOpportunity");
+		return ptr;
+	}
+
+
+	void ClearBodyCompositionInstance();
+	void ApplyPreviewBodyComposition();
+	TScriptInterface<class UIBodyInfoProvider> GetBodyInfoProvider();
+	void ChangeInstanceDataSwitch(const struct FName& SwitchName, unsigned char NewValue);
+	void PostInitBodyComposition(const struct FName& Identifier, class UObject* Value, int BodyCompositionIndex, unsigned char Mode);
+	void PreRemoveBodyComposition(const struct FName& Identifier, class UObject* Value, int BodyCompositionIndex);
+	float GetNumSpawned();
+	float GetNumAlive();
+	float GetNumDied();
+	void Destroyed();
+	int GetRarity();
+	int GetGameStage();
+	bool GetOpportunityGameStage(int* GameStage, int* Rarity);
+	void TriggerKismetAllSpawnedEvent();
+	void ClearSequenceActionLink();
+	void SetSequenceActionLink(class UGearboxSeqAct_PopulationOpportunityLink* Link);
+	void SetEnabledStatus(bool bEnable);
+	void OnToggle(class USeqAct_Toggle* Action);
+	void GetNumLeftToSpawnAndStillAlive(int* NumLeftToSpawn, int* NumStillAlive);
+	float GetNextSpawnTime();
+	void RespawnKilledActors(float PercentageOfKilledActorsToRespawn);
+	void DoSpawning(class UPopulationMaster* PopMaster);
+};
+
+
+// Class GearboxFramework.PopulationMaster
+// 0x004C (0x003C - 0x0088)
 class UPopulationMaster : public UObject
 {
 public:
-	TArray< struct FPopulationOpportunityTracker >     OpportunityList;                                  		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                ActiveActorCost;                                  		// 0x0048 (0x0004) [0x0000000000000000]
-	int                                                MaxActorCost;                                     		// 0x004C (0x0004) [0x0000000000000000]
-	float                                              MasterThinkRate;                                  		// 0x0050 (0x0004) [0x0000000000000000]
-	float                                              MasterTestForDestroyRate;                         		// 0x0054 (0x0004) [0x0000000000000000]
-	float                                              IfIrrelevantDestroyTimeout;                       		// 0x0058 (0x0004) [0x0000000000000000]
-	TArray< struct FPopulationMasterStat >             PopulationMasterStats;                            		// 0x005C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FEncounterTracker >                 EncounterList;                                    		// 0x0068 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	float                                              SecondsElapsed;                                   		// 0x0074 (0x0004) [0x0000000000000000]
-	float                                              NextOpportunityTickTime;                          		// 0x0078 (0x0004) [0x0000000000000000]
-	float                                              NextDestroyTestTickTime;                          		// 0x007C (0x0004) [0x0000000000000000]
-	float                                              PopulationRespawnDelayInSeconds;                  		// 0x0080 (0x0004) [0x0000000000000000]
-	unsigned long                                      bHasActorsReadyToDeleteIfSpaceIsNeeded : 1;       		// 0x0084 (0x0004) [0x0000000000000000] [0x00000001]
-	unsigned long                                      bShutdownAIWhenIrrelevant : 1;                    		// 0x0084 (0x0004) [0x0000000000000000] [0x00000002]
+	TArray<struct FPopulationOpportunityTracker>       OpportunityList;                                          // 0x003C(0x000C) (NeedCtorLink)
+	int                                                ActiveActorCost;                                          // 0x0048(0x0004)
+	int                                                MaxActorCost;                                             // 0x004C(0x0004)
+	float                                              MasterThinkRate;                                          // 0x0050(0x0004)
+	float                                              MasterTestForDestroyRate;                                 // 0x0054(0x0004)
+	float                                              IfIrrelevantDestroyTimeout;                               // 0x0058(0x0004)
+	TArray<struct FPopulationMasterStat>               PopulationMasterStats;                                    // 0x005C(0x000C) (NeedCtorLink)
+	TArray<struct FEncounterTracker>                   EncounterList;                                            // 0x0068(0x000C) (NeedCtorLink)
+	float                                              SecondsElapsed;                                           // 0x0074(0x0004)
+	float                                              NextOpportunityTickTime;                                  // 0x0078(0x0004)
+	float                                              NextDestroyTestTickTime;                                  // 0x007C(0x0004)
+	float                                              PopulationRespawnDelayInSeconds;                          // 0x0080(0x0004)
+	unsigned long                                      bHasActorsReadyToDeleteIfSpaceIsNeeded : 1;               // 0x0084(0x0004)
+	unsigned long                                      bShutdownAIWhenIrrelevant : 1;                            // 0x0084(0x0004)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PopulationMaster");
+		return ptr;
+	}
+
+
 	class AActor* GetActorSpawnedFromOpportunity(class APopulationOpportunity* Opportunity, int ActorIndex);
-	void GetSavedActorDebugInfoForOpportunity(int OpportunityIndex, TArray< struct FString >* SavedActorsDebugInfo);
+	void GetSavedActorDebugInfoForOpportunity(int OpportunityIndex, TArray<struct FString>* SavedActorsDebugInfo);
 	int GetNumberOfSavedActorsForOpportunity(int OpportunityIndex);
 	bool WillActorsOpportunityBeResetOnLevelLoad(class AActor* TestActor);
 	void ResetRespawn();
-	class ULevelStreaming* GetStreamingLevelForActor(class AActor* OpportunityInLevel);
-	bool HasCapacityToSpawnFromFactories(int GameStage, int Rarity, TArray< class UPopulationFactory* >* TheFactories);
+	static class ULevelStreaming* GetStreamingLevelForActor(class AActor* OpportunityInLevel);
+	bool HasCapacityToSpawnFromFactories(int GameStage, int Rarity, TArray<class UPopulationFactory*>* TheFactories);
 	bool HasCapacityToSpawnFromFactory(class UPopulationFactory* TheFactory, int GameStage, int Rarity);
 	bool IsPopulationSystemAtCapacity();
 	void StatProfileStop(int nStat);
@@ -4469,160 +5264,128 @@ public:
 	void AddSavedActor(int OpportunityIdx, class AActor* TheActor, class UPopulationFactory* SpawnFactory, int CreationFlags);
 	void DisconnectEncounter(class APopulationEncounter* Encounter);
 	void ConnectEncounter(class APopulationEncounter* Encounter);
-	bool DisconnectOpportunity(class APopulationOpportunity* DeactivatedOpportunity, unsigned long bSaveState);
+	bool DisconnectOpportunity(class APopulationOpportunity* DeactivatedOpportunity, bool bSaveState);
 	bool ConnectOpportunity(class APopulationOpportunity* ActivatedOpportunity);
 	class AWorldInfo* GetWorldInfo();
-	void DestroySpawnedActors(class APopulationOpportunity* Opportunity, unsigned long bDontSaveActors);
-	void RemoveSpawnedActor(class AActor* TheActor, unsigned long bKeepBody, unsigned long bActorDied);
-	void SetSpawnedActorsReuse(class AActor* TheActor, unsigned long bReuse);
+	void DestroySpawnedActors(class APopulationOpportunity* Opportunity, bool bDontSaveActors);
+	void RemoveSpawnedActor(class AActor* TheActor, bool bKeepBody, bool bActorDied);
+	void SetSpawnedActorsReuse(class AActor* TheActor, bool bReuse);
 	void AddExternalActor(class AActor* SpawnedActor, class UClass* FactoryClass);
-	class AActor* SpawnActorFromOpportunity(class UPopulationFactory* TheFactory, class UObject* SpawnLocationContextObject, struct FVector SpawnLocation, struct FRotator SpawnRotation, int GameStage, int Rarity, int OpportunityIdx, int PopOppFlags, unsigned long bCanSave, unsigned long bForceSpawn);
-	class AActor* SpawnActor(class UPopulationFactory* TheFactory, class UObject* SpawnLocationContextObject, struct FVector SpawnLocation, struct FRotator SpawnRotation, int GameStage, int Rarity);
+	class AActor* SpawnActorFromOpportunity(class UPopulationFactory* TheFactory, class UObject* SpawnLocationContextObject, const struct FVector& SpawnLocation, const struct FRotator& SpawnRotation, int GameStage, int Rarity, int OpportunityIdx, int PopOppFlags, bool bCanSave, bool bForceSpawn);
+	class AActor* SpawnActor(class UPopulationFactory* TheFactory, class UObject* SpawnLocationContextObject, const struct FVector& SpawnLocation, const struct FRotator& SpawnRotation, int GameStage, int Rarity);
 	int GetPopulationOpportunityIndex(class APopulationOpportunity* Opportunity);
 	class APopulationOpportunity* GetActorsOpportunity(class AActor* SpawnedActor);
-	class AActor* SpawnPopulationControlledActor(class UClass* SpawnClass, class AActor* SpawnOwner, struct FName SpawnTag, struct FVector SpawnLocation, struct FRotator SpawnRotation, class AActor* ActorTemplate, unsigned long bNoCollisionFail, unsigned long bPersistAcrossLevelTransitions);
+	class AActor* SpawnPopulationControlledActor(class UClass* SpawnClass, class AActor* SpawnOwner, const struct FName& SpawnTag, const struct FVector& SpawnLocation, const struct FRotator& SpawnRotation, class AActor* ActorTemplate, bool bNoCollisionFail, bool bPersistAcrossLevelTransitions);
 };
 
-// UClass* UPopulationMaster::pClassPointer = NULL;
 
-// 0x005C (0x01E4 - 0x0188)
-class APopulationOpportunity : public AInfo
-{
-public:
-	struct FPointer                                    VfTable_IIBodyCompositionInstance;                		// 0x0188 (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-	struct FOpportunityCleanupParameters               CleanupParams;                                    		// 0x018C (0x0008) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	unsigned long                                      IsEnabled : 1;                                    		// 0x0194 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      bNoRespawning : 1;                                		// 0x0194 (0x0004) [0x0000000000000003] [0x00000002] ( CPF_Edit | CPF_Const )
-	unsigned long                                      bIsWaitingForRespawn : 1;                         		// 0x0194 (0x0004) [0x0000000000002000] [0x00000004] ( CPF_Transient )
-	unsigned long                                      bUseRandomSpawns : 1;                             		// 0x0194 (0x0004) [0x0000000000002000] [0x00000008] ( CPF_Transient )
-	TArray< class APopulationPoint* >                  SpawnPoints;                                      		// 0x0198 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	class ULevelStreaming*                             StreamingLevel;                                   		// 0x01A4 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	int                                                SystemID;                                         		// 0x01A8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	int                                                NextInitialDestinationIdx;                        		// 0x01AC (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UGearboxSeqAct_PopulationOpportunityLink*    SequenceActionLink;                               		// 0x01B0 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	float                                              LastTimeBlockedFromSpawningDueToPopLimits;        		// 0x01B4 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	float                                              RespawnDelayStartTime;                            		// 0x01B8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class URegionDefinition*                           GameStageRegion;                                  		// 0x01BC (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	class UPopulationAspect*                           Aspect;                                           		// 0x01C0 (0x0004) [0x000000000440000B]              ( CPF_Edit | CPF_Const | CPF_ExportObject | CPF_NeedCtorLink | CPF_EditInline )
-	int                                                SpawnIndex;                                       		// 0x01C4 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	TArray< int >                                      SpawnList;                                        		// 0x01C8 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	int                                                InclusiveSpawnIndex;                              		// 0x01D4 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	TArray< int >                                      InclusiveSpawnList;                               		// 0x01D8 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-
-public:
-	void ClearBodyCompositionInstance();
-	void ApplyPreviewBodyComposition();
-	class UIBodyInfoProvider* GetBodyInfoProvider();
-	void ChangeInstanceDataSwitch(struct FName SwitchName, unsigned char NewValue);
-	void PostInitBodyComposition(struct FName Identifier, class UObject* Value, int BodyCompositionIndex, unsigned char Mode);
-	void PreRemoveBodyComposition(struct FName Identifier, class UObject* Value, int BodyCompositionIndex);
-	float GetNumSpawned();
-	float GetNumAlive();
-	float GetNumDied();
-	void eventDestroyed();
-	int GetRarity();
-	int GetGameStage();
-	bool GetOpportunityGameStage(int* GameStage, int* Rarity);
-	void eventTriggerKismetAllSpawnedEvent();
-	void eventClearSequenceActionLink();
-	void eventSetSequenceActionLink(class UGearboxSeqAct_PopulationOpportunityLink* Link);
-	void SetEnabledStatus(unsigned long bEnable);
-	void OnToggle(class USeqAct_Toggle* Action);
-	void GetNumLeftToSpawnAndStillAlive(int* NumLeftToSpawn, int* NumStillAlive);
-	float GetNextSpawnTime();
-	void RespawnKilledActors(float PercentageOfKilledActorsToRespawn);
-	void DoSpawning(class UPopulationMaster* PopMaster);
-};
-
-// UClass* APopulationOpportunity::pClassPointer = NULL;
-
-// 0x0040 (0x0224 - 0x01E4)
+// Class GearboxFramework.PopulationOpportunityArea
+// 0x0040 (0x01F0 - 0x0230)
 class APopulationOpportunityArea : public APopulationOpportunity
 {
 public:
-	TArray< struct FPopulationOptionAreaData >         SpawnOptions;                                     		// 0x01E4 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	unsigned long                                      bContinueSpawningAfterPlayerDetected : 1;         		// 0x01F0 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      bOpportunityVolume : 1;                           		// 0x01F0 (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
-	unsigned long                                      bOpportunityRadius : 1;                           		// 0x01F0 (0x0004) [0x0000000000000001] [0x00000004] ( CPF_Edit )
-	unsigned long                                      bOpportunityLevel : 1;                            		// 0x01F0 (0x0004) [0x0000000000000001] [0x00000008] ( CPF_Edit )
-	unsigned long                                      bPlayerHasBeenDetected : 1;                       		// 0x01F0 (0x0004) [0x0000000000002000] [0x00000010] ( CPF_Transient )
-	TArray< class AVolume* >                           DetectionVolumes;                                 		// 0x01F4 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	float                                              DetectionRadius;                                  		// 0x0200 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	int                                                SelectedSpawnIdx;                                 		// 0x0204 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	TArray< struct FPopulationAreaOptionSpawnData >    SpawnData;                                        		// 0x0208 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	TArray< class APlayerController* >                 PlayersDetected;                                  		// 0x0214 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	int                                                NumPlayersDetected;                               		// 0x0220 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	TArray<struct FPopulationOptionAreaData>           SpawnOptions;                                             // 0x01F0(0x000C) (Edit, NeedCtorLink)
+	unsigned long                                      bContinueSpawningAfterPlayerDetected : 1;                 // 0x01FC(0x0004) (Edit)
+	unsigned long                                      bOpportunityVolume : 1;                                   // 0x01FC(0x0004) (Edit)
+	unsigned long                                      bOpportunityRadius : 1;                                   // 0x01FC(0x0004) (Edit)
+	unsigned long                                      bOpportunityLevel : 1;                                    // 0x01FC(0x0004) (Edit)
+	unsigned long                                      bPlayerHasBeenDetected : 1;                               // 0x01FC(0x0004) (Transient)
+	TArray<class AVolume*>                             DetectionVolumes;                                         // 0x0200(0x000C) (Edit, NeedCtorLink)
+	float                                              DetectionRadius;                                          // 0x020C(0x0004) (Edit)
+	int                                                SelectedSpawnIdx;                                         // 0x0210(0x0004) (Transient)
+	TArray<struct FPopulationAreaOptionSpawnData>      SpawnData;                                                // 0x0214(0x000C) (Transient, NeedCtorLink)
+	TArray<class APlayerController*>                   PlayersDetected;                                          // 0x0220(0x000C) (Transient, NeedCtorLink)
+	int                                                NumPlayersDetected;                                       // 0x022C(0x0004) (Transient)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PopulationOpportunityArea");
+		return ptr;
+	}
+
+
 	void ApplyPreviewBodyComposition();
-	class UIBodyInfoProvider* GetBodyInfoProvider();
+	TScriptInterface<class UIBodyInfoProvider> GetBodyInfoProvider();
 	void RespawnKilledActors(float PercentageOfKilledActorsToRespawn);
 	void DoSpawning(class UPopulationMaster* PopMaster);
 };
 
-// UClass* APopulationOpportunityArea::pClassPointer = NULL;
 
-// 0x0028 (0x020C - 0x01E4)
+// Class GearboxFramework.PopulationOpportunityCloner
+// 0x0028 (0x01F0 - 0x0218)
 class APopulationOpportunityCloner : public APopulationOpportunity
 {
 public:
-	class UExpressionEvaluator*                        Conditions;                                       		// 0x01E4 (0x0004) [0x0000000004000001]              ( CPF_Edit | CPF_EditInline )
-	class UPopulationFactory*                          SpawnFactory;                                     		// 0x01E8 (0x0004) [0x0000000004000001]              ( CPF_Edit | CPF_EditInline )
-	int                                                MaxTotalActors;                                   		// 0x01EC (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	int                                                MaxActiveActors;                                  		// 0x01F0 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      RespawnStyle;                                     		// 0x01F4 (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	unsigned long                                      bTotalResetOnLevelLoad : 1;                       		// 0x01F8 (0x0004) [0x0000000000000003] [0x00000001] ( CPF_Edit | CPF_Const )
-	unsigned long                                      bReadyToSpawn : 1;                                		// 0x01F8 (0x0004) [0x0000000000002000] [0x00000002] ( CPF_Transient )
-	float                                              RespawnDelay;                                     		// 0x01FC (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              RespawnDelayAfterDeath;                           		// 0x0200 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	int                                                NumTotalActors;                                   		// 0x0204 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	int                                                NumActiveActors;                                  		// 0x0208 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class UExpressionEvaluator*                        Conditions;                                               // 0x01F0(0x0004) (Edit, EditInline)
+	class UPopulationFactory*                          SpawnFactory;                                             // 0x01F4(0x0004) (Edit, EditInline)
+	int                                                MaxTotalActors;                                           // 0x01F8(0x0004) (Edit)
+	int                                                MaxActiveActors;                                          // 0x01FC(0x0004) (Edit)
+	unsigned char                                      RespawnStyle;                                             // 0x0200(0x0001) (Edit, Const)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0201(0x0003) MISSED OFFSET
+	unsigned long                                      bTotalResetOnLevelLoad : 1;                               // 0x0204(0x0004) (Edit, Const)
+	unsigned long                                      bReadyToSpawn : 1;                                        // 0x0204(0x0004) (Transient)
+	float                                              RespawnDelay;                                             // 0x0208(0x0004) (Edit)
+	float                                              RespawnDelayAfterDeath;                                   // 0x020C(0x0004) (Edit)
+	int                                                NumTotalActors;                                           // 0x0210(0x0004) (Transient)
+	int                                                NumActiveActors;                                          // 0x0214(0x0004) (Transient)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PopulationOpportunityCloner");
+		return ptr;
+	}
+
+
 	void ApplyPreviewBodyComposition();
-	class UIBodyInfoProvider* GetBodyInfoProvider();
+	TScriptInterface<class UIBodyInfoProvider> GetBodyInfoProvider();
 	void CloneTimer();
 	void RespawnKilledActors(float PercentageOfKilledActorsToRespawn);
 	void DoSpawning(class UPopulationMaster* PopMaster);
 };
 
-// UClass* APopulationOpportunityCloner::pClassPointer = NULL;
 
-// 0x009C (0x0280 - 0x01E4)
+// Class GearboxFramework.PopulationOpportunityCombat
+// 0x009C (0x01F0 - 0x028C)
 class APopulationOpportunityCombat : public APopulationOpportunity
 {
 public:
-	struct FPointer                                    VfTable_IIGbxMessageListener;                     		// 0x01E4 (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-	class APopulationEncounter*                        ParentEncounter;                                  		// 0x01E8 (0x0004) [0x0000000000220001]              ( CPF_Edit | CPF_EditConst )
-	int                                                ParentEncounterWave;                              		// 0x01EC (0x0004) [0x0000000000220001]              ( CPF_Edit | CPF_EditConst )
-	class UPopulationDefinition*                       PopulationDef;                                    		// 0x01F0 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	struct FAttributeInitializationData                MaxTotalActorsFormula;                            		// 0x01F4 (0x0010) [0x0000000000000001]              ( CPF_Edit )
-	int                                                MaxTotalActors;                                   		// 0x0204 (0x0004) [0x0000000000000000]
-	int                                                MaxActiveActorsIsNormal;                          		// 0x0208 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	int                                                MaxActiveActorsThreatened;                        		// 0x020C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	struct FAttributeInitializationData                RespawnDelayFormula;                              		// 0x0210 (0x0010) [0x0000000000000001]              ( CPF_Edit )
-	unsigned long                                      bAdjustForPlayerCount : 1;                        		// 0x0220 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      bOpportunityVolume : 1;                           		// 0x0220 (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
-	unsigned long                                      bOpportunityRadius : 1;                           		// 0x0220 (0x0004) [0x0000000000000001] [0x00000004] ( CPF_Edit )
-	unsigned long                                      bPlayerHasBeenDetected : 1;                       		// 0x0220 (0x0004) [0x0000000000002000] [0x00000008] ( CPF_Transient )
-	unsigned long                                      bShowDebugEnabled : 1;                            		// 0x0220 (0x0004) [0x0000000000000000] [0x00000010]
-	TArray< class AVolume* >                           DetectionVolumes;                                 		// 0x0224 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	float                                              DetectionRadius;                                  		// 0x0230 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              OpportunityHeight;                                		// 0x0234 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	struct FColor                                      RadiusDebugColor;                                 		// 0x0238 (0x0004) [0x0000000000000000]
-	float                                              RespawnDelay;                                     		// 0x023C (0x0004) [0x0000000000000000]
-	class UDrawSphereComponent*                        DetectionDrawSphere;                              		// 0x0240 (0x0004) [0x0000000004082008]              ( CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline )
-	float                                              ActivePlayerScale;                                		// 0x0244 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	TArray< class AGearboxPawn* >                      SpawnedMembers;                                   		// 0x0248 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	struct FPopulationOptionSpawnData                  SpawnData;                                        		// 0x0254 (0x001C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	TArray< class APlayerController* >                 PlayersDetected;                                  		// 0x0270 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	int                                                NumPlayersDetected;                               		// 0x027C (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	struct FPointer                                    VfTable_IIGbxMessageListener;                             // 0x01F0(0x0004) (Const, Native, NoExport)
+	class APopulationEncounter*                        ParentEncounter;                                          // 0x01F4(0x0004) (Edit, EditConst, DuplicateTransient)
+	int                                                ParentEncounterWave;                                      // 0x01F8(0x0004) (Edit, EditConst, DuplicateTransient)
+	class UPopulationDefinition*                       PopulationDef;                                            // 0x01FC(0x0004) (Edit)
+	struct FAttributeInitializationData                MaxTotalActorsFormula;                                    // 0x0200(0x0010) (Edit)
+	int                                                MaxTotalActors;                                           // 0x0210(0x0004)
+	int                                                MaxActiveActorsIsNormal;                                  // 0x0214(0x0004) (Edit)
+	int                                                MaxActiveActorsThreatened;                                // 0x0218(0x0004) (Edit)
+	struct FAttributeInitializationData                RespawnDelayFormula;                                      // 0x021C(0x0010) (Edit)
+	unsigned long                                      bAdjustForPlayerCount : 1;                                // 0x022C(0x0004) (Edit)
+	unsigned long                                      bOpportunityVolume : 1;                                   // 0x022C(0x0004) (Edit)
+	unsigned long                                      bOpportunityRadius : 1;                                   // 0x022C(0x0004) (Edit)
+	unsigned long                                      bPlayerHasBeenDetected : 1;                               // 0x022C(0x0004) (Transient)
+	unsigned long                                      bShowDebugEnabled : 1;                                    // 0x022C(0x0004)
+	TArray<class AVolume*>                             DetectionVolumes;                                         // 0x0230(0x000C) (Edit, NeedCtorLink)
+	float                                              DetectionRadius;                                          // 0x023C(0x0004) (Edit)
+	float                                              OpportunityHeight;                                        // 0x0240(0x0004) (Edit)
+	struct FColor                                      RadiusDebugColor;                                         // 0x0244(0x0004)
+	float                                              RespawnDelay;                                             // 0x0248(0x0004)
+	class UDrawSphereComponent*                        DetectionDrawSphere;                                      // 0x024C(0x0004) (ExportObject, Transient, Component, EditInline)
+	float                                              ActivePlayerScale;                                        // 0x0250(0x0004) (Transient)
+	TArray<class AGearboxPawn*>                        SpawnedMembers;                                           // 0x0254(0x000C) (Transient, NeedCtorLink)
+	struct FPopulationOptionSpawnData                  SpawnData;                                                // 0x0260(0x001C) (Transient, NeedCtorLink)
+	TArray<class APlayerController*>                   PlayersDetected;                                          // 0x027C(0x000C) (Transient, NeedCtorLink)
+	int                                                NumPlayersDetected;                                       // 0x0288(0x0004) (Transient)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PopulationOpportunityCombat");
+		return ptr;
+	}
+
+
 	void ApplyPreviewBodyComposition();
-	class UIBodyInfoProvider* GetBodyInfoProvider();
-	void eventTriggerKismetSingleDeathEvent();
-	void eventTriggerKismetDeathEvent();
+	TScriptInterface<class UIBodyInfoProvider> GetBodyInfoProvider();
+	void TriggerKismetSingleDeathEvent();
+	void TriggerKismetDeathEvent();
 	float GetNumSpawned();
 	float GetNumAlive();
 	float GetNumDied();
@@ -4633,36 +5396,43 @@ public:
 	bool ReceiveMessage(class UGbxMessage* Message);
 	bool CaresAboutMessage(class UGbxMessage* Message);
 	void PostBeginPlay();
-	void EnableDebugging(unsigned long bEnabled);
+	void EnableDebugging(bool bEnabled);
 	void RespawnKilledActors(float PercentageOfKilledActorsToRespawn);
 	void DoSpawning(class UPopulationMaster* PopMaster);
 };
 
-// UClass* APopulationOpportunityCombat::pClassPointer = NULL;
 
-// 0x002C (0x0210 - 0x01E4)
+// Class GearboxFramework.PopulationOpportunityPoint
+// 0x002C (0x01F0 - 0x021C)
 class APopulationOpportunityPoint : public APopulationOpportunity
 {
 public:
-	struct FPointer                                    VfTable_IIPopulationSpawnPoint;                   		// 0x01E4 (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-	class UPopulationDefinition*                       PopulationDef;                                    		// 0x01E8 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              SpawnAndCullRadius;                               		// 0x01EC (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	TArray< class UBehaviorBase* >                     SpawnCustomizations;                              		// 0x01F0 (0x000C) [0x0000000004400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink | CPF_EditInline )
-	unsigned long                                      SpawnedForMatinee : 1;                            		// 0x01FC (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      bHasSpawned : 1;                                  		// 0x01FC (0x0004) [0x0000000000002000] [0x00000002] ( CPF_Transient )
-	unsigned long                                      bActiveSpawn : 1;                                 		// 0x01FC (0x0004) [0x0000000000002000] [0x00000004] ( CPF_Transient )
-	unsigned long                                      bDetectedPlayer : 1;                              		// 0x01FC (0x0004) [0x0000000000002000] [0x00000008] ( CPF_Transient )
-	unsigned char                                      AISpawnStyle;                                     		// 0x0200 (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	unsigned char                                      InitialAction;                                    		// 0x0201 (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	TArray< class AActor* >                            InitialActionDestinations;                        		// 0x0204 (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
+	struct FPointer                                    VfTable_IIPopulationSpawnPoint;                           // 0x01F0(0x0004) (Const, Native, NoExport)
+	class UPopulationDefinition*                       PopulationDef;                                            // 0x01F4(0x0004) (Edit)
+	float                                              SpawnAndCullRadius;                                       // 0x01F8(0x0004) (Edit)
+	TArray<class UBehaviorBase*>                       SpawnCustomizations;                                      // 0x01FC(0x000C) (Edit, Const, NeedCtorLink, EditInline)
+	unsigned long                                      SpawnedForMatinee : 1;                                    // 0x0208(0x0004) (Edit)
+	unsigned long                                      bHasSpawned : 1;                                          // 0x0208(0x0004) (Transient)
+	unsigned long                                      bActiveSpawn : 1;                                         // 0x0208(0x0004) (Transient)
+	unsigned long                                      bDetectedPlayer : 1;                                      // 0x0208(0x0004) (Transient)
+	unsigned char                                      AISpawnStyle;                                             // 0x020C(0x0001) (Edit, Const)
+	unsigned char                                      InitialAction;                                            // 0x020D(0x0001) (Edit, Const)
+	unsigned char                                      UnknownData00[0x2];                                       // 0x020E(0x0002) MISSED OFFSET
+	TArray<class AActor*>                              InitialActionDestinations;                                // 0x0210(0x000C) (Edit, Const, NeedCtorLink)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PopulationOpportunityPoint");
+		return ptr;
+	}
+
+
 	void ClearBodyCompositionInstance();
 	void ApplyPreviewBodyComposition();
-	class UIBodyInfoProvider* GetBodyInfoProvider();
-	void ChangeInstanceDataSwitch(struct FName SwitchName, unsigned char NewValue);
-	void PostInitBodyComposition(struct FName Identifier, class UObject* Value, int BodyCompositionIndex, unsigned char Mode);
-	void PreRemoveBodyComposition(struct FName Identifier, class UObject* Value, int BodyCompositionIndex);
+	TScriptInterface<class UIBodyInfoProvider> GetBodyInfoProvider();
+	void ChangeInstanceDataSwitch(const struct FName& SwitchName, unsigned char NewValue);
+	void PostInitBodyComposition(const struct FName& Identifier, class UObject* Value, int BodyCompositionIndex, unsigned char Mode);
+	void PreRemoveBodyComposition(const struct FName& Identifier, class UObject* Value, int BodyCompositionIndex);
 	float GetInitialMovementHoldTime();
 	class AActor* GetInitialDestination();
 	unsigned char GetInitialActionType();
@@ -4671,45 +5441,82 @@ public:
 	void DoSpawning(class UPopulationMaster* PopMaster);
 };
 
-// UClass* APopulationOpportunityPoint::pClassPointer = NULL;
 
+// Class GearboxFramework.PopulationOpportunityAreaRenderingComponent
 // 0x0000 (0x0210 - 0x0210)
-class UPopulationOpportunityAreaRenderingComponent : public UPrimitiveComponent {};
+class UPopulationOpportunityAreaRenderingComponent : public UPrimitiveComponent
+{
+public:
 
-// UClass* UPopulationOpportunityAreaRenderingComponent::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PopulationOpportunityAreaRenderingComponent");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.PopulationOpportunityAttributeContextResolver
 // 0x0000 (0x003C - 0x003C)
-class UPopulationOpportunityAttributeContextResolver : public UAttributeContextResolver {};
+class UPopulationOpportunityAttributeContextResolver : public UAttributeContextResolver
+{
+public:
 
-// UClass* UPopulationOpportunityAttributeContextResolver::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PopulationOpportunityAttributeContextResolver");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.PopulationOpportunityPointRenderingComponent
 // 0x0000 (0x0210 - 0x0210)
-class UPopulationOpportunityPointRenderingComponent : public UPrimitiveComponent {};
+class UPopulationOpportunityPointRenderingComponent : public UPrimitiveComponent
+{
+public:
 
-// UClass* UPopulationOpportunityPointRenderingComponent::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PopulationOpportunityPointRenderingComponent");
+		return ptr;
+	}
 
-// 0x0040 (0x01C8 - 0x0188)
+};
+
+
+// Class GearboxFramework.PopulationPoint
+// 0x0040 (0x0188 - 0x01C8)
 class APopulationPoint : public AActor
 {
 public:
-	struct FPointer                                    VfTable_IIPopulationSpawnPoint;                   		// 0x0188 (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-	int                                                Flags;                                            		// 0x018C (0x0004) [0x0000000000020000]              ( CPF_EditConst )
-	unsigned char                                      AISpawnStyle;                                     		// 0x0190 (0x0001) [0x0000000000000002]              ( CPF_Const )
-	unsigned char                                      InitialAction;                                    		// 0x0191 (0x0001) [0x0000000000000002]              ( CPF_Const )
-	unsigned char                                      ConstraintType;                                   		// 0x0192 (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	TArray< class AActor* >                            InitialActionDestinations;                        		// 0x0194 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	float                                              InitialMovementHoldTime;                          		// 0x01A0 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	unsigned long                                      bAttachSpawnedToBase : 1;                         		// 0x01A4 (0x0004) [0x0000000000000003] [0x00000001] ( CPF_Edit | CPF_Const )
-	unsigned long                                      IsEnabled : 1;                                    		// 0x01A4 (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
-	unsigned long                                      bDisableAfterUse : 1;                             		// 0x01A4 (0x0004) [0x0000000000000003] [0x00000004] ( CPF_Edit | CPF_Const )
-	unsigned long                                      TestVisibility : 1;                               		// 0x01A4 (0x0004) [0x0000000000000003] [0x00000008] ( CPF_Edit | CPF_Const )
-	unsigned long                                      TestFOV : 1;                                      		// 0x01A4 (0x0004) [0x0000000000000003] [0x00000010] ( CPF_Edit | CPF_Const )
-	int                                                InitialDestinationIndex;                          		// 0x01A8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	TArray< class UPopulationSpawnedActorTagDefinition* > TagsToUseWithConstraint;                          		// 0x01AC (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
-	TArray< class UBehaviorBase* >                     OnSpawnCustomizations;                            		// 0x01B8 (0x000C) [0x0000000004400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink | CPF_EditInline )
-	float                                              MinSpawnDistance;                                 		// 0x01C4 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	struct FPointer                                    VfTable_IIPopulationSpawnPoint;                           // 0x0188(0x0004) (Const, Native, NoExport)
+	int                                                Flags;                                                    // 0x018C(0x0004) (EditConst)
+	unsigned char                                      AISpawnStyle;                                             // 0x0190(0x0001) (Const)
+	unsigned char                                      InitialAction;                                            // 0x0191(0x0001) (Const)
+	unsigned char                                      ConstraintType;                                           // 0x0192(0x0001) (Edit, Const)
+	unsigned char                                      UnknownData00[0x1];                                       // 0x0193(0x0001) MISSED OFFSET
+	TArray<class AActor*>                              InitialActionDestinations;                                // 0x0194(0x000C) (Edit, NeedCtorLink)
+	float                                              InitialMovementHoldTime;                                  // 0x01A0(0x0004) (Const)
+	unsigned long                                      bAttachSpawnedToBase : 1;                                 // 0x01A4(0x0004) (Edit, Const)
+	unsigned long                                      IsEnabled : 1;                                            // 0x01A4(0x0004) (Edit)
+	unsigned long                                      bDisableAfterUse : 1;                                     // 0x01A4(0x0004) (Edit, Const)
+	unsigned long                                      TestVisibility : 1;                                       // 0x01A4(0x0004) (Edit, Const)
+	unsigned long                                      TestFOV : 1;                                              // 0x01A4(0x0004) (Edit, Const)
+	int                                                InitialDestinationIndex;                                  // 0x01A8(0x0004) (Transient)
+	TArray<class UPopulationSpawnedActorTagDefinition*> TagsToUseWithConstraint;                                  // 0x01AC(0x000C) (Edit, Const, NeedCtorLink)
+	TArray<class UBehaviorBase*>                       OnSpawnCustomizations;                                    // 0x01B8(0x000C) (Edit, Const, NeedCtorLink, EditInline)
+	float                                              MinSpawnDistance;                                         // 0x01C4(0x0004) (Edit, Const)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PopulationPoint");
+		return ptr;
+	}
+
+
 	bool CanSpawnFromFactory(class UPopulationFactory* Factory, int GameStage, int AwesomeLevel);
 	struct FRotator GetSpawnRotation();
 	struct FVector GetSpawnLocation();
@@ -4722,83 +5529,134 @@ public:
 	void OnToggle(class USeqAct_Toggle* Action);
 };
 
-// UClass* APopulationPoint::pClassPointer = NULL;
 
-// 0x000C (0x01D4 - 0x01C8)
+// Class GearboxFramework.PopulationPoint_Dynamic
+// 0x000C (0x01C8 - 0x01D4)
 class APopulationPoint_Dynamic : public APopulationPoint
 {
 public:
-	struct FName                                       DynamicPointName;                                 		// 0x01C8 (0x0008) [0x0000000000000001]              ( CPF_Edit )
-	unsigned long                                      bSaveAsInstanceDataOnBase : 1;                    		// 0x01D0 (0x0004) [0x0000000000000003] [0x00000001] ( CPF_Edit | CPF_Const )
+	struct FName                                       DynamicPointName;                                         // 0x01C8(0x0008) (Edit)
+	unsigned long                                      bSaveAsInstanceDataOnBase : 1;                            // 0x01D0(0x0004) (Edit, Const)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PopulationPoint_Dynamic");
+		return ptr;
+	}
+
 };
 
-// UClass* APopulationPoint_Dynamic::pClassPointer = NULL;
 
+// Class GearboxFramework.PopulationPointRenderingComponent
 // 0x0000 (0x0210 - 0x0210)
-class UPopulationPointRenderingComponent : public UPrimitiveComponent {};
+class UPopulationPointRenderingComponent : public UPrimitiveComponent
+{
+public:
 
-// UClass* UPopulationPointRenderingComponent::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PopulationPointRenderingComponent");
+		return ptr;
+	}
 
-// 0x0004 (0x00C8 - 0x00C4)
+};
+
+
+// Class GearboxFramework.SeqEvent_EncounterWaveComplete
+// 0x0004 (0x00C4 - 0x00C8)
 class USeqEvent_EncounterWaveComplete : public USequenceEvent
 {
 public:
-	int                                                CurrentWave;                                      		// 0x00C4 (0x0004) [0x0000000000000000]
+	int                                                CurrentWave;                                              // 0x00C4(0x0004)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SeqEvent_EncounterWaveComplete");
+		return ptr;
+	}
+
+
 	void NotifyWaveComplete(int nWave);
 };
 
-// UClass* USeqEvent_EncounterWaveComplete::pClassPointer = NULL;
 
-// 0x0008 (0x00CC - 0x00C4)
+// Class GearboxFramework.SeqEvent_PopulatedActor
+// 0x0008 (0x00C4 - 0x00CC)
 class USeqEvent_PopulatedActor : public USequenceEvent
 {
 public:
-	class APopulationOpportunity*                      DestPopulationOpportunity;                        		// 0x00C4 (0x0004) [0x0000000000000000]
-	class AActor*                                      SpawnPoint;                                       		// 0x00C8 (0x0004) [0x0000000000000000]
+	class APopulationOpportunity*                      DestPopulationOpportunity;                                // 0x00C4(0x0004)
+	class AActor*                                      SpawnPoint;                                               // 0x00C8(0x0004)
 
-public:
-	void eventNotifyPopulatedActor(class AActor* PopulatedActor, class APopulationOpportunity* InDestPopulationOpportunity, class AActor* InSpawnPoint, class AWorldInfo* InOriginator);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SeqEvent_PopulatedActor");
+		return ptr;
+	}
+
+
+	void NotifyPopulatedActor(class AActor* PopulatedActor, class APopulationOpportunity* InDestPopulationOpportunity, class AActor* InSpawnPoint, class AWorldInfo* InOriginator);
 };
 
-// UClass* USeqEvent_PopulatedActor::pClassPointer = NULL;
 
-// 0x0008 (0x00CC - 0x00C4)
+// Class GearboxFramework.SeqEvent_PopulatedPoint
+// 0x0008 (0x00C4 - 0x00CC)
 class USeqEvent_PopulatedPoint : public USequenceEvent
 {
 public:
-	class APopulationOpportunity*                      DestPopulationOpportunity;                        		// 0x00C4 (0x0004) [0x0000000000000000]
-	class AActor*                                      SpawnPoint;                                       		// 0x00C8 (0x0004) [0x0000000000000000]
+	class APopulationOpportunity*                      DestPopulationOpportunity;                                // 0x00C4(0x0004)
+	class AActor*                                      SpawnPoint;                                               // 0x00C8(0x0004)
 
-public:
-	void eventNotifyPopulatedActor(class AActor* PopulatedActor, class APopulationOpportunity* InDestPopulationOpportunity, class AActor* InSpawnPoint, class AWorldInfo* InOriginator);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SeqEvent_PopulatedPoint");
+		return ptr;
+	}
+
+
+	void NotifyPopulatedActor(class AActor* PopulatedActor, class APopulationOpportunity* InDestPopulationOpportunity, class AActor* InSpawnPoint, class AWorldInfo* InOriginator);
 };
 
-// UClass* USeqEvent_PopulatedPoint::pClassPointer = NULL;
 
+// Class GearboxFramework.GearboxHUD
 // 0x0000 (0x0224 - 0x0224)
-class AGearboxHUD : public AHUD {};
+class AGearboxHUD : public AHUD
+{
+public:
 
-// UClass* AGearboxHUD::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxHUD");
+		return ptr;
+	}
 
-// 0x0024 (0x0060 - 0x003C)
+};
+
+
+// Class GearboxFramework.AIDefinition
+// 0x0024 (0x003C - 0x0060)
 class UAIDefinition : public UObject
 {
 public:
-	struct FPointer                                    VfTable_IIBehaviorProvider;                       		// 0x003C (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-	class UBehaviorProviderDefinition*                 BehaviorProviderDefinition;                       		// 0x0040 (0x0004) [0x0000000000020003]              ( CPF_Edit | CPF_Const | CPF_EditConst )
-	class UAIBehaviorProviderDefinition*               AIBehaviorProviderDefinition;                     		// 0x0044 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	unsigned long                                      bHealOnReset : 1;                                 		// 0x0048 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	TArray< struct FAITreeData >                       NodeList;                                         		// 0x004C (0x000C) [0x0000000000400002]              ( CPF_Const | CPF_NeedCtorLink )
-	float                                              TargetSearchRadius;                               		// 0x0058 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	class UTargetingDefinition*                        TargetingDef;                                     		// 0x005C (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	struct FPointer                                    VfTable_IIBehaviorProvider;                               // 0x003C(0x0004) (Const, Native, NoExport)
+	class UBehaviorProviderDefinition*                 BehaviorProviderDefinition;                               // 0x0040(0x0004) (Edit, Const, EditConst)
+	class UAIBehaviorProviderDefinition*               AIBehaviorProviderDefinition;                             // 0x0044(0x0004) (Const)
+	unsigned long                                      bHealOnReset : 1;                                         // 0x0048(0x0004) (Edit)
+	TArray<struct FAITreeData>                         NodeList;                                                 // 0x004C(0x000C) (Const, NeedCtorLink)
+	float                                              TargetSearchRadius;                                       // 0x0058(0x0004) (Edit, Const)
+	class UTargetingDefinition*                        TargetingDef;                                             // 0x005C(0x0004) (Edit, Const)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("AIDefinition");
+		return ptr;
+	}
+
+
 	void OnReset(struct FBehaviorConsumerHandle* ConsumerHandle);
 	void OnHitByVehicle(class AVehicle* Vehicle, struct FBehaviorConsumerHandle* ConsumerHandle);
 	void OnRanOver(class AVehicle* Vehicle, struct FBehaviorConsumerHandle* ConsumerHandle);
-	void OnTimerEvent(struct FName SpecializedEventName, struct FBehaviorConsumerHandle* ConsumerHandle);
+	void OnTimerEvent(const struct FName& SpecializedEventName, struct FBehaviorConsumerHandle* ConsumerHandle);
 	void OnKilledPawn(class UObject* Killed, struct FBehaviorConsumerHandle* ConsumerHandle);
 	void OnLanded(struct FBehaviorConsumerHandle* ConsumerHandle);
 	void OnStopFiringWeapon(struct FBehaviorConsumerHandle* ConsumerHandle);
@@ -4818,194 +5676,241 @@ public:
 	class UBehaviorProviderDefinition* GetBehaviorProviderDefinition();
 };
 
-// UClass* UAIDefinition::pClassPointer = NULL;
 
-// 0x0004 (0x0040 - 0x003C)
+// Class GearboxFramework.BehaviorEventFilterBase
+// 0x0004 (0x003C - 0x0040)
 class UBehaviorEventFilterBase : public UObject
 {
 public:
-	unsigned long                                      ShouldBeInstanced : 1;                            		// 0x003C (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      ShouldBeInstanced : 1;                                    // 0x003C(0x0004)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("BehaviorEventFilterBase");
+		return ptr;
+	}
+
 };
 
-// UClass* UBehaviorEventFilterBase::pClassPointer = NULL;
 
-// 0x0088 (0x00C4 - 0x003C)
+// Class GearboxFramework.BehaviorProviderDefinition
+// 0x0010 (0x003C - 0x004C)
+class UBehaviorProviderDefinition : public UGBXDefinition
+{
+public:
+	int                                                CurrentVersion;                                           // 0x003C(0x0004)
+	TArray<struct FBehaviorSequenceData>               BehaviorSequences;                                        // 0x0040(0x000C) (Edit, Const, NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("BehaviorProviderDefinition");
+		return ptr;
+	}
+
+
+	static void SetObjectBehaviorVariable(class UObject* Value, struct FBehaviorVariableValue* BehaviorVariable);
+	static void SetVectorBehaviorVariable(struct FBehaviorVariableValue* BehaviorVariable, struct FVector* Value);
+	static void SetFloatBehaviorVariable(float Value, struct FBehaviorVariableValue* BehaviorVariable);
+	static void SetIntBehaviorVariable(int Value, struct FBehaviorVariableValue* BehaviorVariable);
+	static void SetBoolBehaviorVariable(bool Value, struct FBehaviorVariableValue* BehaviorVariable);
+};
+
+
+// Class GearboxFramework.BehaviorKernel
+// 0x0088 (0x003C - 0x00C4)
 class UBehaviorKernel : public UObject
 {
 public:
-	struct FStableArray_Mirror                         Processes;                                        		// 0x003C (0x001C) [0x0000000000003000]              ( CPF_Native | CPF_Transient )
-	struct FChunkedList_Mirror                         ProcessDeathList;                                 		// 0x0058 (0x0004) [0x0000000000003000]              ( CPF_Native | CPF_Transient )
-	struct FChunkedList_Mirror                         WaitingThreads;                                   		// 0x005C (0x0004) [0x0000000000003000]              ( CPF_Native | CPF_Transient )
-	TArray< struct FProviderRecord >                   Providers;                                        		// 0x0060 (0x000C) [0x0000000000502000]              ( CPF_Transient | CPF_NeedCtorLink )
-	struct FChunkedList_Mirror                         ProvidersIndexFreeList;                           		// 0x006C (0x0004) [0x0000000000003000]              ( CPF_Native | CPF_Transient )
-	struct FChunkedList_Mirror                         ProvidersPendingRemoval;                          		// 0x0070 (0x0004) [0x0000000000003000]              ( CPF_Native | CPF_Transient )
-	TArray< class UObject* >                           ObjectVariables;                                  		// 0x0074 (0x000C) [0x0000000000502000]              ( CPF_Transient | CPF_NeedCtorLink )
-	struct FChunkedList_Mirror                         ObjectVariablesIndexFreeList;                     		// 0x0080 (0x0004) [0x0000000000003000]              ( CPF_Native | CPF_Transient )
-	TArray< struct FBehaviorSequenceActionData2 >      DynamicBehaviors;                                 		// 0x0084 (0x000C) [0x0000000000502000]              ( CPF_Transient | CPF_NeedCtorLink )
-	struct FChunkedList_Mirror                         DynamicBehaviorsIndexFreeList;                    		// 0x0090 (0x0004) [0x0000000000003000]              ( CPF_Native | CPF_Transient )
-	int                                                ProvidersListReserveLength;                       		// 0x0094 (0x0004) [0x0000000000004000]              ( CPF_Config )
-	int                                                ObjectVariablesListReserveLength;                 		// 0x0098 (0x0004) [0x0000000000004000]              ( CPF_Config )
-	int                                                DynamicBehaviorsListReserveLength;                		// 0x009C (0x0004) [0x0000000000004000]              ( CPF_Config )
-	int                                                WatchedPID;                                       		// 0x00A0 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FChunkedList_Mirror                         RecentlyRunBehaviors;                             		// 0x00A4 (0x0004) [0x0000000000003000]              ( CPF_Native | CPF_Transient )
-	int                                                CurrentDebugPage;                                 		// 0x00A8 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	TArray< struct FString >                           DebugPages;                                       		// 0x00AC (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	TArray< class UObject* >                           EventFilterObjects;                               		// 0x00B8 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	struct FStableArray_Mirror                         Processes;                                                // 0x003C(0x001C) (Native, Transient)
+	struct FChunkedList_Mirror                         ProcessDeathList;                                         // 0x0058(0x0004) (Native, Transient)
+	struct FChunkedList_Mirror                         WaitingThreads;                                           // 0x005C(0x0004) (Native, Transient)
+	TArray<struct FProviderRecord>                     Providers;                                                // 0x0060(0x000C) (Transient, AlwaysInit, NeedCtorLink)
+	struct FChunkedList_Mirror                         ProvidersIndexFreeList;                                   // 0x006C(0x0004) (Native, Transient)
+	struct FChunkedList_Mirror                         ProvidersPendingRemoval;                                  // 0x0070(0x0004) (Native, Transient)
+	TArray<class UObject*>                             ObjectVariables;                                          // 0x0074(0x000C) (Transient, AlwaysInit, NeedCtorLink)
+	struct FChunkedList_Mirror                         ObjectVariablesIndexFreeList;                             // 0x0080(0x0004) (Native, Transient)
+	TArray<struct FBehaviorSequenceActionData2>        DynamicBehaviors;                                         // 0x0084(0x000C) (Transient, AlwaysInit, NeedCtorLink)
+	struct FChunkedList_Mirror                         DynamicBehaviorsIndexFreeList;                            // 0x0090(0x0004) (Native, Transient)
+	int                                                ProvidersListReserveLength;                               // 0x0094(0x0004) (Config)
+	int                                                ObjectVariablesListReserveLength;                         // 0x0098(0x0004) (Config)
+	int                                                DynamicBehaviorsListReserveLength;                        // 0x009C(0x0004) (Config)
+	int                                                WatchedPID;                                               // 0x00A0(0x0004) (Transient)
+	struct FChunkedList_Mirror                         RecentlyRunBehaviors;                                     // 0x00A4(0x0004) (Native, Transient)
+	int                                                CurrentDebugPage;                                         // 0x00A8(0x0004) (Transient)
+	TArray<struct FString>                             DebugPages;                                               // 0x00AC(0x000C) (Transient, NeedCtorLink)
+	TArray<class UObject*>                             EventFilterObjects;                                       // 0x00B8(0x000C) (Transient, NeedCtorLink)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("BehaviorKernel");
+		return ptr;
+	}
+
+
 	void RecentlyRunBehaviorsForSequence(int PID, int ProvidersIndex, int SequencesIndex, struct FBehaviorExecutionRecord* ExecutionRecord);
 	void AllEventStateForSequence(int PID, int ProvidersIndex, int SequencesDataIndex, struct FBehaviorEventState* EventState);
 	void AllWaitingThreadsForSequence(int PID, int ProvidersIndex, int SequencesDataIndex, struct FBehaviorThread* Thread);
 	void AllSequencesForProvider(int PID, int ProvidersIndex, struct FBehaviorSequenceState* SequenceState);
 	void AllProvidersForProcess(int PID, class UBehaviorProviderDefinition** ProviderDefinition, int* ProvidersIndex);
 	void AllProcesses(struct FBehaviorProcess* Process);
-	void GetVariableStateSummaryForSequence(int PID, int SequencesDataIndex, TArray< struct FString >* DebugInfo);
-	void GetChunkedListSummaries(TArray< struct FString >* DebugInfo);
+	void GetVariableStateSummaryForSequence(int PID, int SequencesDataIndex, TArray<struct FString>* DebugInfo);
+	void GetChunkedListSummaries(TArray<struct FString>* DebugInfo);
 	struct FBehaviorKernelStats GetBehaviorKernelStats();
-	bool IsBehaviorKernelWatchingConsumer(struct FBehaviorConsumerHandle ConsumerHandle);
-	bool IsBehaviorSequenceEnabled(class UBehaviorProviderDefinition* ProviderDefinition, struct FName BehaviorSequenceName, struct FBehaviorConsumerHandle* ConsumerHandle);
-	void ActivateBehaviorOutputLink(int OutputLinkId, struct FBehaviorKernelInfo* KernelInfo);
-	void PublishBoolOutputVariable(unsigned long Output, struct FBehaviorKernelInfo* KernelInfo);
-	void PublishObjectOutputVariable(class UObject* Output, struct FBehaviorKernelInfo* KernelInfo);
-	void PublishVectorOutputVariable(struct FBehaviorKernelInfo* KernelInfo, struct FVector* Output);
-	void PublishFloatOutputVariable(float Output, struct FBehaviorKernelInfo* KernelInfo);
-	void PublishIntOutputVariable(int Output, struct FBehaviorKernelInfo* KernelInfo);
-	void BeginNondeterministicProviderRegistration(struct FBehaviorConsumerHandle* ConsumerHandle);
-	void ProcessReplicatedBehaviorEvent(struct FBehaviorConsumerHandle* ConsumerHandle, struct FReplicatedBehaviorEvent* EventData);
-	bool ProcessReplicatedBehaviorConsumerState(struct FBehaviorConsumerHandle* ConsumerHandle, struct FReplicatedBehaviorConsumerState* ReplicatedConsumerState);
-	void ChangeBehaviorSequenceActivationStatus(class UBehaviorProviderDefinition* ProviderDefinition, struct FName SequenceName, unsigned char ActivationStatusChanage, struct FBehaviorConsumerHandle* ConsumerHandle);
-	void ChangeBehaviorConsumerSuspensionStatus(unsigned char SuspensionStatusChanage, struct FBehaviorConsumerHandle* ConsumerHandle);
-	void BroadcastBehaviorEventFromScript(struct FName EventName, int EventOutputToActivate, struct FBehaviorConsumerHandle* ConsumerHandle, TArray< class UBehaviorProviderDefinition* >* ProvidersToBroadcast, TArray< struct FBehaviorVariableValue >* Parameters);
-	void ActivateBehaviorEventFromScript(class UBehaviorProviderDefinition* ProviderDefinition, struct FName EventName, int EventOutputToActivate, struct FBehaviorConsumerHandle* ConsumerHandle, TArray< struct FBehaviorVariableValue >* Parameters);
-	void RemoveBehaviorProviderFromConsumer(class UBehaviorProviderDefinition* ProviderDefinition, struct FBehaviorConsumerHandle* ConsumerHandle);
-	void IntializeBehaviorProviderForConsumer(class UBehaviorProviderDefinition* ProviderDefinition, struct FBehaviorConsumerHandle* ConsumerHandle);
-	void ForceUnregisterBehaviorConsumer(struct FBehaviorConsumerHandle* ConsumerHandle);
-	struct FBehaviorConsumerHandle RegisterBehaviorConsumer(class UObject* BehaviorConsumer);
+	static bool IsBehaviorKernelWatchingConsumer(const struct FBehaviorConsumerHandle& ConsumerHandle);
+	static bool IsBehaviorSequenceEnabled(class UBehaviorProviderDefinition* ProviderDefinition, const struct FName& BehaviorSequenceName, struct FBehaviorConsumerHandle* ConsumerHandle);
+	static void ActivateBehaviorOutputLink(int OutputLinkId, struct FBehaviorKernelInfo* KernelInfo);
+	static void PublishBoolOutputVariable(bool Output, struct FBehaviorKernelInfo* KernelInfo);
+	static void PublishObjectOutputVariable(class UObject* Output, struct FBehaviorKernelInfo* KernelInfo);
+	static void PublishVectorOutputVariable(struct FBehaviorKernelInfo* KernelInfo, struct FVector* Output);
+	static void PublishFloatOutputVariable(float Output, struct FBehaviorKernelInfo* KernelInfo);
+	static void PublishIntOutputVariable(int Output, struct FBehaviorKernelInfo* KernelInfo);
+	static void BeginNondeterministicProviderRegistration(struct FBehaviorConsumerHandle* ConsumerHandle);
+	static void ProcessReplicatedBehaviorEvent(struct FBehaviorConsumerHandle* ConsumerHandle, struct FReplicatedBehaviorEvent* EventData);
+	static bool ProcessReplicatedBehaviorConsumerState(struct FBehaviorConsumerHandle* ConsumerHandle, struct FReplicatedBehaviorConsumerState* ReplicatedConsumerState);
+	static void ChangeBehaviorSequenceActivationStatus(class UBehaviorProviderDefinition* ProviderDefinition, const struct FName& SequenceName, unsigned char ActivationStatusChanage, struct FBehaviorConsumerHandle* ConsumerHandle);
+	static void ChangeBehaviorConsumerSuspensionStatus(unsigned char SuspensionStatusChanage, struct FBehaviorConsumerHandle* ConsumerHandle);
+	static void BroadcastBehaviorEventFromScript(const struct FName& EventName, int EventOutputToActivate, struct FBehaviorConsumerHandle* ConsumerHandle, TArray<class UBehaviorProviderDefinition*>* ProvidersToBroadcast, TArray<struct FBehaviorVariableValue>* Parameters);
+	static void ActivateBehaviorEventFromScript(class UBehaviorProviderDefinition* ProviderDefinition, const struct FName& EventName, int EventOutputToActivate, struct FBehaviorConsumerHandle* ConsumerHandle, TArray<struct FBehaviorVariableValue>* Parameters);
+	static void RemoveBehaviorProviderFromConsumer(class UBehaviorProviderDefinition* ProviderDefinition, struct FBehaviorConsumerHandle* ConsumerHandle);
+	static void IntializeBehaviorProviderForConsumer(class UBehaviorProviderDefinition* ProviderDefinition, struct FBehaviorConsumerHandle* ConsumerHandle);
+	static void ForceUnregisterBehaviorConsumer(struct FBehaviorConsumerHandle* ConsumerHandle);
+	static struct FBehaviorConsumerHandle RegisterBehaviorConsumer(class UObject* BehaviorConsumer);
 };
 
-// UClass* UBehaviorKernel::pClassPointer = NULL;
 
-// 0x0010 (0x004C - 0x003C)
-class UBehaviorProviderDefinition : public UGBXDefinition
+// Class GearboxFramework.AIBehaviorProviderDefinition
+// 0x0000 (0x004C - 0x004C)
+class UAIBehaviorProviderDefinition : public UBehaviorProviderDefinition
 {
 public:
-	int                                                CurrentVersion;                                   		// 0x003C (0x0004) [0x0000000000000000]
-	TArray< struct FBehaviorSequenceData >             BehaviorSequences;                                		// 0x0040 (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
 
-public:
-	void SetObjectBehaviorVariable(class UObject* Value, struct FBehaviorVariableValue* BehaviorVariable);
-	void SetVectorBehaviorVariable(struct FBehaviorVariableValue* BehaviorVariable, struct FVector* Value);
-	void SetFloatBehaviorVariable(float Value, struct FBehaviorVariableValue* BehaviorVariable);
-	void SetIntBehaviorVariable(int Value, struct FBehaviorVariableValue* BehaviorVariable);
-	void SetBoolBehaviorVariable(unsigned long Value, struct FBehaviorVariableValue* BehaviorVariable);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("AIBehaviorProviderDefinition");
+		return ptr;
+	}
+
 };
 
-// UClass* UBehaviorProviderDefinition::pClassPointer = NULL;
 
-// 0x0000 (0x004C - 0x004C)
-class UAIBehaviorProviderDefinition : public UBehaviorProviderDefinition {};
-
-// UClass* UAIBehaviorProviderDefinition::pClassPointer = NULL;
-
-// 0x0005 (0x0041 - 0x003C)
+// Class GearboxFramework.BehaviorSequenceCustomEnableCondition
+// 0x0005 (0x003C - 0x0041)
 class UBehaviorSequenceCustomEnableCondition : public UObject
 {
 public:
-	struct FChunkedList_Mirror                         LinkedBehaviorSequences;                          		// 0x003C (0x0004) [0x0000000000003000]              ( CPF_Native | CPF_Transient )
-	unsigned char                                      BehaviorKernelInstanceTagForTransientState;       		// 0x0040 (0x0001) [0x0000000000002000]              ( CPF_Transient )
+	struct FChunkedList_Mirror                         LinkedBehaviorSequences;                                  // 0x003C(0x0004) (Native, Transient)
+	unsigned char                                      BehaviorKernelInstanceTagForTransientState;               // 0x0040(0x0001) (Transient)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("BehaviorSequenceCustomEnableCondition");
+		return ptr;
+	}
+
 };
 
-// UClass* UBehaviorSequenceCustomEnableCondition::pClassPointer = NULL;
 
-// 0x0010 (0x0051 - 0x0041)
+// Class GearboxFramework.BehaviorSequenceEnableByMultipleConditions
+// 0x0010 (0x0041 - 0x0051)
 class UBehaviorSequenceEnableByMultipleConditions : public UBehaviorSequenceCustomEnableCondition
 {
 public:
-	TArray< class UBehaviorSequenceCustomEnableCondition* > EnableConditions;                                 		// 0x0044 (0x000C) [0x0000000004400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink | CPF_EditInline )
-	unsigned char                                      Operator;                                         		// 0x0050 (0x0001) [0x0000000000000001]              ( CPF_Edit )
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0041(0x0003) MISSED OFFSET
+	TArray<class UBehaviorSequenceCustomEnableCondition*> EnableConditions;                                         // 0x0044(0x000C) (Edit, Const, NeedCtorLink, EditInline)
+	unsigned char                                      Operator;                                                 // 0x0050(0x0001) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("BehaviorSequenceEnableByMultipleConditions");
+		return ptr;
+	}
+
 };
 
-// UClass* UBehaviorSequenceEnableByMultipleConditions::pClassPointer = NULL;
 
-// 0x0000 (0x003C - 0x003C)
-class UIBehaviorConsumer : public UInterface
-{
-public:
-	struct FBehaviorConsumerHandle GetBehaviorConsumerHandle();
-};
-
-// UClass* UIBehaviorConsumer::pClassPointer = NULL;
-
+// Class GearboxFramework.IBehaviorProvider
 // 0x0000 (0x003C - 0x003C)
 class UIBehaviorProvider : public UInterface
 {
 public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("IBehaviorProvider");
+		return ptr;
+	}
+
+
 	void SetBehaviorProviderDefinition(class UBehaviorProviderDefinition* NewBehaviorProviderDefinition);
 	class UBehaviorProviderDefinition* GetBehaviorProviderDefinition();
 };
 
-// UClass* UIBehaviorProvider::pClassPointer = NULL;
 
+// Class GearboxFramework.ICustomEvent
 // 0x0000 (0x003C - 0x003C)
 class UICustomEvent : public UInterface
 {
 public:
-	void eventRunCustomEvent(struct FName EventName, class UObject* EventInstigator, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData);
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("ICustomEvent");
+		return ptr;
+	}
+
+
+	void RunCustomEvent(const struct FName& EventName, class UObject* EventInstigator, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData);
 };
 
-// UClass* UICustomEvent::pClassPointer = NULL;
 
-// 0x0000 (0x003C - 0x003C)
-class UITimerBehavior : public UInterface
-{
-public:
-	bool SetTimerState(unsigned char TimerId, struct FBehaviorTimerState TimerState);
-	bool GetTimerState(unsigned char TimerId, struct FBehaviorTimerState* TimerState);
-	float GetTimeSeconds();
-};
-
-// UClass* UITimerBehavior::pClassPointer = NULL;
-
-// 0x0074 (0x00BC - 0x0048)
+// Class GearboxFramework.GearboxAnimDefinition
+// 0x0074 (0x0048 - 0x00BC)
 class UGearboxAnimDefinition : public USpecialMoveDefinition
 {
 public:
-	struct FPointer                                    VfTable_IIBehaviorProvider;                       		// 0x0048 (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-	struct FName                                       AnimName;                                         		// 0x004C (0x0008) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	float                                              BlendInTime;                                      		// 0x0054 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	float                                              BlendOutTime;                                     		// 0x0058 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	float                                              PlayRate;                                         		// 0x005C (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	unsigned char                                      EndingCondition;                                  		// 0x0060 (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	class UAnimSet*                                    AnimSet;                                          		// 0x0064 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	unsigned long                                      bMirrored : 1;                                    		// 0x0068 (0x0004) [0x0000000000000003] [0x00000001] ( CPF_Edit | CPF_Const )
-	unsigned long                                      BlendPerBone : 1;                                 		// 0x0068 (0x0004) [0x0000000000000003] [0x00000002] ( CPF_Edit | CPF_Const )
-	unsigned long                                      DisableAnimSequenceNotifies : 1;                  		// 0x0068 (0x0004) [0x0000000000000003] [0x00000004] ( CPF_Edit | CPF_Const )
-	unsigned long                                      bOnlyPlayNotifiesWhileActive : 1;                 		// 0x0068 (0x0004) [0x0000000000000001] [0x00000008] ( CPF_Edit )
-	unsigned long                                      bReverseAnimSearchOrder : 1;                      		// 0x0068 (0x0004) [0x0000000000000003] [0x00000010] ( CPF_Edit | CPF_Const )
-	struct FName                                       AnimNodeName;                                     		// 0x006C (0x0008) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	class URootMotionDefinition*                       RootMotionDef;                                    		// 0x0074 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	class UFeatherBoneBlendDefinition*                 BoneBlendDef;                                     		// 0x0078 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	TArray< struct FName >                             BoneNames;                                        		// 0x007C (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
-	TArray< struct FSMBehavior >                       StartBehaviors;                                   		// 0x0088 (0x000C) [0x0000000004400001]              ( CPF_Edit | CPF_NeedCtorLink | CPF_EditInline )
-	TArray< struct FSMNotify >                         SMNotifies;                                       		// 0x0094 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	TArray< struct FSMBehavior >                       StopBehaviors;                                    		// 0x00A0 (0x000C) [0x0000000004400001]              ( CPF_Edit | CPF_NeedCtorLink | CPF_EditInline )
-	TArray< struct FTimedAnimBehaviorEvent >           TimedBehaviorEvents;                              		// 0x00AC (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
-	class UBehaviorProviderDefinition*                 BehaviorProviderDefinition;                       		// 0x00B8 (0x0004) [0x0000000000020001]              ( CPF_Edit | CPF_EditConst )
+	struct FPointer                                    VfTable_IIBehaviorProvider;                               // 0x0048(0x0004) (Const, Native, NoExport)
+	struct FName                                       AnimName;                                                 // 0x004C(0x0008) (Edit, Const)
+	float                                              BlendInTime;                                              // 0x0054(0x0004) (Edit, Const)
+	float                                              BlendOutTime;                                             // 0x0058(0x0004) (Edit, Const)
+	float                                              PlayRate;                                                 // 0x005C(0x0004) (Edit, Const)
+	unsigned char                                      EndingCondition;                                          // 0x0060(0x0001) (Edit, Const)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0061(0x0003) MISSED OFFSET
+	class UAnimSet*                                    AnimSet;                                                  // 0x0064(0x0004) (Edit, Const)
+	unsigned long                                      bMirrored : 1;                                            // 0x0068(0x0004) (Edit, Const)
+	unsigned long                                      BlendPerBone : 1;                                         // 0x0068(0x0004) (Edit, Const)
+	unsigned long                                      DisableAnimSequenceNotifies : 1;                          // 0x0068(0x0004) (Edit, Const)
+	unsigned long                                      bOnlyPlayNotifiesWhileActive : 1;                         // 0x0068(0x0004) (Edit)
+	unsigned long                                      bReverseAnimSearchOrder : 1;                              // 0x0068(0x0004) (Edit, Const)
+	struct FName                                       AnimNodeName;                                             // 0x006C(0x0008) (Edit, Const)
+	class URootMotionDefinition*                       RootMotionDef;                                            // 0x0074(0x0004) (Edit, Const)
+	class UFeatherBoneBlendDefinition*                 BoneBlendDef;                                             // 0x0078(0x0004) (Edit, Const)
+	TArray<struct FName>                               BoneNames;                                                // 0x007C(0x000C) (Edit, Const, NeedCtorLink)
+	TArray<struct FSMBehavior>                         StartBehaviors;                                           // 0x0088(0x000C) (Edit, NeedCtorLink, EditInline)
+	TArray<struct FSMNotify>                           SMNotifies;                                               // 0x0094(0x000C) (Edit, NeedCtorLink)
+	TArray<struct FSMBehavior>                         StopBehaviors;                                            // 0x00A0(0x000C) (Edit, NeedCtorLink, EditInline)
+	TArray<struct FTimedAnimBehaviorEvent>             TimedBehaviorEvents;                                      // 0x00AC(0x000C) (Edit, Const, NeedCtorLink)
+	class UBehaviorProviderDefinition*                 BehaviorProviderDefinition;                               // 0x00B8(0x0004) (Edit, EditConst)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxAnimDefinition");
+		return ptr;
+	}
+
+
 	float GetAnimLength(class USkeletalMeshComponent* SMC);
-	bool eventIsPlayingLocally(class USpecialMoveInterface* SMI);
-	class UAnimNodeSpecialMoveBlend* GetSMNode(class USpecialMoveInterface* SMI);
-	float PlayAnim(class USpecialMoveInterface* SMI, struct FSpecialMoveData* SMData);
-	void eventAnimFinished(class USpecialMoveInterface* SMI, class UAnimNodeSpecialMoveBlend* BlendNode, unsigned long bInterrupted, struct FSpecialMoveData* SMData);
-	void eventClientFinished(class USpecialMoveInterface* SMI, unsigned long bInterrupted);
-	float eventClientStarted(class USpecialMoveInterface* SMI, struct FSpecialMoveData* SMData);
-	void eventServerFinished(class USpecialMoveInterface* SMI, unsigned long bInterrupted);
-	void eventServerStarted(class USpecialMoveInterface* SMI);
-	void AddAnimSet(class USpecialMoveInterface* SMI);
-	class USkeletalMeshComponent* GetSkeletalMesh(class USpecialMoveInterface* SMI);
-	bool eventAuthorityCanPlay(class USpecialMoveInterface* SMI);
-	void OnTimedEvent(struct FName SpecializedEventName, struct FBehaviorConsumerHandle* ConsumerHandle);
+	bool IsPlayingLocally(const TScriptInterface<class USpecialMoveInterface>& SMI);
+	class UAnimNodeSpecialMoveBlend* GetSMNode(const TScriptInterface<class USpecialMoveInterface>& SMI);
+	float PlayAnim(const TScriptInterface<class USpecialMoveInterface>& SMI, struct FSpecialMoveData* SMData);
+	void AnimFinished(const TScriptInterface<class USpecialMoveInterface>& SMI, class UAnimNodeSpecialMoveBlend* BlendNode, bool bInterrupted, struct FSpecialMoveData* SMData);
+	void ClientFinished(const TScriptInterface<class USpecialMoveInterface>& SMI, bool bInterrupted);
+	float ClientStarted(const TScriptInterface<class USpecialMoveInterface>& SMI, struct FSpecialMoveData* SMData);
+	void ServerFinished(const TScriptInterface<class USpecialMoveInterface>& SMI, bool bInterrupted);
+	void ServerStarted(const TScriptInterface<class USpecialMoveInterface>& SMI);
+	void AddAnimSet(const TScriptInterface<class USpecialMoveInterface>& SMI);
+	class USkeletalMeshComponent* GetSkeletalMesh(const TScriptInterface<class USpecialMoveInterface>& SMI);
+	bool AuthorityCanPlay(const TScriptInterface<class USpecialMoveInterface>& SMI);
+	void OnTimedEvent(const struct FName& SpecializedEventName, struct FBehaviorConsumerHandle* ConsumerHandle);
 	void OnServerStop(struct FBehaviorConsumerHandle* ConsumerHandle);
 	void OnServerStart(struct FBehaviorConsumerHandle* ConsumerHandle);
 	void OnStop(struct FBehaviorConsumerHandle* ConsumerHandle);
@@ -5014,166 +5919,227 @@ public:
 	class UBehaviorProviderDefinition* GetBehaviorProviderDefinition();
 };
 
-// UClass* UGearboxAnimDefinition::pClassPointer = NULL;
 
-// 0x001C (0x0068 - 0x004C)
+// Class GearboxFramework.Behavior_TriggerDialogEvent
+// 0x001C (0x004C - 0x0068)
 class UBehavior_TriggerDialogEvent : public UBehaviorBase
 {
 public:
-	class UGearboxDialogEventTag*                      EventTag;                                         		// 0x004C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UGearboxDialogGroup*                         Group;                                            		// 0x0050 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UGearboxDialogNameTag*                       NameTag;                                          		// 0x0054 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UObject*                                     Other;                                            		// 0x0058 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	unsigned long                                      bForcePlayImmediate : 1;                          		// 0x005C (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      bCheckCanPreview : 1;                             		// 0x005C (0x0004) [0x0000000000002000] [0x00000002] ( CPF_Transient )
-	unsigned long                                      bCanPreview : 1;                                  		// 0x005C (0x0004) [0x0000000000002000] [0x00000004] ( CPF_Transient )
-	class UGearboxDialogEventData*                     MyEventData;                                      		// 0x0060 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	int                                                MyDataUseCount;                                   		// 0x0064 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	class UGearboxDialogEventTag*                      EventTag;                                                 // 0x004C(0x0004) (Edit)
+	class UGearboxDialogGroup*                         Group;                                                    // 0x0050(0x0004) (Edit)
+	class UGearboxDialogNameTag*                       NameTag;                                                  // 0x0054(0x0004) (Edit)
+	class UObject*                                     Other;                                                    // 0x0058(0x0004) (Edit)
+	unsigned long                                      bForcePlayImmediate : 1;                                  // 0x005C(0x0004) (Edit)
+	unsigned long                                      bCheckCanPreview : 1;                                     // 0x005C(0x0004) (Transient, EditorOnly)
+	unsigned long                                      bCanPreview : 1;                                          // 0x005C(0x0004) (Transient, EditorOnly)
+	class UGearboxDialogEventData*                     MyEventData;                                              // 0x0060(0x0004) (Transient)
+	int                                                MyDataUseCount;                                           // 0x0064(0x0004) (Transient)
 
-public:
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_TriggerDialogEvent");
+		return ptr;
+	}
+
+
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 	void TriggerDialogEvent(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters* EventData);
 };
 
-// UClass* UBehavior_TriggerDialogEvent::pClassPointer = NULL;
 
-// 0x0034 (0x01BC - 0x0188)
+// Class GearboxFramework.GearboxDialogActor
+// 0x0034 (0x0188 - 0x01BC)
 class AGearboxDialogActor : public AActor
 {
 public:
-	struct FPointer                                    VfTable_IGearboxDialogInterface;                  		// 0x0188 (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-	TArray< class UGearboxDialogGroup* >               DialogGroups;                                     		// 0x018C (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
-	class UGearboxDialogNameTag*                       NameTag;                                          		// 0x0198 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	class USpriteComponent*                            EditorSprite;                                     		// 0x019C (0x0004) [0x000000000408000A]              ( CPF_Const | CPF_ExportObject | CPF_Component | CPF_EditInline )
-	class UGearboxDialogComponent*                     DialogComponent;                                  		// 0x01A0 (0x0004) [0x0000000004080008]              ( CPF_ExportObject | CPF_Component | CPF_EditInline )
-	struct FGearboxDialogReplicatedData                DialogReplicatedData;                             		// 0x01A4 (0x0014) [0x0000000000000020]              ( CPF_Net )
-	class UGearboxDialogNameTag*                       CurrentNameTag;                                   		// 0x01B8 (0x0004) [0x0000000000002020]              ( CPF_Net | CPF_Transient )
+	struct FPointer                                    VfTable_IGearboxDialogInterface;                          // 0x0188(0x0004) (Const, Native, NoExport)
+	TArray<class UGearboxDialogGroup*>                 DialogGroups;                                             // 0x018C(0x000C) (Edit, Const, NeedCtorLink)
+	class UGearboxDialogNameTag*                       NameTag;                                                  // 0x0198(0x0004) (Edit, Const)
+	class USpriteComponent*                            EditorSprite;                                             // 0x019C(0x0004) (Const, ExportObject, Component, EditInline)
+	class UGearboxDialogComponent*                     DialogComponent;                                          // 0x01A0(0x0004) (ExportObject, Component, EditInline)
+	struct FGearboxDialogReplicatedData                DialogReplicatedData;                                     // 0x01A4(0x0014) (Net, RepNotify)
+	class UGearboxDialogNameTag*                       CurrentNameTag;                                           // 0x01B8(0x0004) (Net, Transient)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxDialogActor");
+		return ptr;
+	}
+
+
 	void SetDialogNameTag(class UGearboxDialogNameTag* NewName);
 	struct FGearboxDialogReplicatedData GetReplicatedDialogData();
 	void SetReplicatedDialogData(class UGearboxDialogAct_Talk* TalkAct, struct FGearboxDialogData* Data);
-	void GetDialogGroups(TArray< class UGearboxDialogGroup* >* Groups);
+	void GetDialogGroups(TArray<class UGearboxDialogGroup*>* Groups);
 	class UGearboxDialogComponent* GetDialogComponent();
 	class UGearboxDialogNameTag* GetDialogNameTag();
 	class AActor* GetActor();
 	bool CanTalk();
-	void eventServerDialog_TriggerEvent(class UGearboxDialogEventTag* EventTag, class AActor* Other, class UObject* ObjectParameter);
-	void eventReplicatedEvent(struct FName VarName);
+	void ServerDialog_TriggerEvent(class UGearboxDialogEventTag* EventTag, class AActor* Other, class UObject* ObjectParameter);
+	void ReplicatedEvent(const struct FName& VarName);
 };
 
-// UClass* AGearboxDialogActor::pClassPointer = NULL;
 
-// 0x0013 (0x006C - 0x0059)
+// Class GearboxFramework.GearboxDialogComponent
+// 0x0013 (0x0059 - 0x006C)
 class UGearboxDialogComponent : public UActorComponent
 {
 public:
-	class UGearboxDialogEventData*                     EventData;                                        		// 0x005C (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FAkPlayingInfo                              ClientPlayingInfo;                                		// 0x0060 (0x0008) [0x0000000000082000]              ( CPF_Transient | CPF_Component )
-	unsigned long                                      bIsReattaching : 1;                               		// 0x0068 (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0059(0x0003) MISSED OFFSET
+	class UGearboxDialogEventData*                     EventData;                                                // 0x005C(0x0004) (Transient)
+	struct FAkPlayingInfo                              ClientPlayingInfo;                                        // 0x0060(0x0008) (Transient, Component)
+	unsigned long                                      bIsReattaching : 1;                                       // 0x0068(0x0004)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxDialogComponent");
+		return ptr;
+	}
+
+
 	bool IsTalking();
-	void StopTalking(class UGearboxDialogEventTag* EventTag, unsigned long bForceStop);
-	void TalkReplicated(struct FGearboxDialogReplicatedData NewDialogData);
+	void StopTalking(class UGearboxDialogEventTag* EventTag, bool bForceStop);
+	void TalkReplicated(const struct FGearboxDialogReplicatedData& NewDialogData);
 	void Talk(class UGearboxDialogAct_Talk* TalkAction);
-	void GetMatchingEvent(class UGearboxDialogEventTag* InEventTag, unsigned long bIncludeDisabled, class UGearboxDialogNameTag* OtherNameTag, unsigned long bAllowTemplateGroups, class UGearboxDialogEvent** OutEvent, class UGearboxDialogGroup** OutGroup);
+	void GetMatchingEvent(class UGearboxDialogEventTag* InEventTag, bool bIncludeDisabled, class UGearboxDialogNameTag* OtherNameTag, bool bAllowTemplateGroups, class UGearboxDialogEvent** OutEvent, class UGearboxDialogGroup** OutGroup);
 	class UGearboxDialogEventData* TriggerEvent(class UGearboxDialogEventTag* EventTag, class AActor* Other, class UObject* ObjectParameter, class UGearboxDialogEventData* TemplateEventData);
-	class UGearboxDialogInterface* GetDialogInterface();
+	TScriptInterface<class UGearboxDialogInterface> GetDialogInterface();
 };
 
-// UClass* UGearboxDialogComponent::pClassPointer = NULL;
 
-// 0x003C (0x0078 - 0x003C)
-class UGearboxDialogEventData : public UObject
-{
-public:
-	struct FDialogEventInfo                            EventInfo;                                        		// 0x003C (0x0008) [0x0000000000000000]
-	class AActor*                                      Instigator;                                       		// 0x0044 (0x0004) [0x0000000000000000]
-	class AActor*                                      Other;                                            		// 0x0048 (0x0004) [0x0000000000000000]
-	class UObject*                                     ObjectParameter;                                  		// 0x004C (0x0004) [0x0000000000000000]
-	class AActor*                                      LastTalker;                                       		// 0x0050 (0x0004) [0x0000000000000000]
-	class UGearboxDialogAct_Talk*                      LiveTalkAction;                                   		// 0x0054 (0x0004) [0x0000000000000000]
-	int                                                LiveTalkActionDataID;                             		// 0x0058 (0x0004) [0x0000000000000000]
-	struct FDialogEventInfo                            TemplateEventInfo;                                		// 0x005C (0x0008) [0x0000000000000000]
-	class UGearboxDialogAct_Trigger*                   LiveTriggerAction;                                		// 0x0064 (0x0004) [0x0000000000000000]
-	struct FAkPlayingInfo                              PlayingInfo;                                      		// 0x0068 (0x0008) [0x0000000000080000]              ( CPF_Component )
-	float                                              TalkFinishTime;                                   		// 0x0070 (0x0004) [0x0000000000000000]
-	int                                                UseCount;                                         		// 0x0074 (0x0004) [0x0000000000000000]
-
-public:
-	bool IsActive();
-};
-
-// UClass* UGearboxDialogEventData::pClassPointer = NULL;
-
-// 0x0008 (0x0044 - 0x003C)
-class UGearboxDialogEventTag : public UGBXDefinition
-{
-public:
-	unsigned long                                      bGroupEvent : 1;                                  		// 0x003C (0x0004) [0x0000000000000003] [0x00000001] ( CPF_Edit | CPF_Const )
-	unsigned long                                      bSoundEffect : 1;                                 		// 0x003C (0x0004) [0x0000000000000003] [0x00000002] ( CPF_Edit | CPF_Const )
-	unsigned long                                      bIsDeathScream : 1;                               		// 0x003C (0x0004) [0x0000000000000003] [0x00000004] ( CPF_Edit | CPF_Const )
-	class UGearboxDialogPriority*                      Priority;                                         		// 0x0040 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-};
-
-// UClass* UGearboxDialogEventTag::pClassPointer = NULL;
-
-// 0x0010 (0x004C - 0x003C)
-class UGearboxDialogGlobalsDefinition : public UGBXDefinition
-{
-public:
-	class UAkRtpc*                                     PitchRTPC;                                        		// 0x003C (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	TArray< class UGearboxDialogPriority* >            Priorities;                                       		// 0x0040 (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
-};
-
-// UClass* UGearboxDialogGlobalsDefinition::pClassPointer = NULL;
-
-// 0x0060 (0x009C - 0x003C)
+// Class GearboxFramework.GearboxDialogGroup
+// 0x0060 (0x003C - 0x009C)
 class UGearboxDialogGroup : public UObject
 {
 public:
-	TArray< class UPackage* >                          EventTagPackages;                                 		// 0x003C (0x000C) [0x0000000000400003]              ( CPF_Edit | CPF_Const | CPF_NeedCtorLink )
-	TArray< class UGearboxDialogNameTag* >             NameTags;                                         		// 0x0048 (0x000C) [0x0000000000420003]              ( CPF_Edit | CPF_Const | CPF_EditConst | CPF_NeedCtorLink )
-	TArray< class UGearboxDialogEventTag* >            EventTags;                                        		// 0x0054 (0x000C) [0x0000000000420003]              ( CPF_Edit | CPF_Const | CPF_EditConst | CPF_NeedCtorLink )
-	class UGearboxDialogGroup*                         ParentGroup;                                      		// 0x0060 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	TArray< class UGearboxDialogNode* >                Nodes;                                            		// 0x0064 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	class UGearboxDialogEvent*                         SharedDialogEvent;                                		// 0x0070 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UGearboxDialogAct_Talk*                      SharedTalkAct;                                    		// 0x0074 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	TArray< struct FOutputLinkToStruct >               OutputLinksToStructs;                             		// 0x0078 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FDialogEventData >                  DialogEvents;                                     		// 0x0084 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FTalkActData >                      TalkActs;                                         		// 0x0090 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	TArray<class UPackage*>                            EventTagPackages;                                         // 0x003C(0x000C) (Edit, Const, NeedCtorLink)
+	TArray<class UGearboxDialogNameTag*>               NameTags;                                                 // 0x0048(0x000C) (Edit, Const, EditConst, NeedCtorLink)
+	TArray<class UGearboxDialogEventTag*>              EventTags;                                                // 0x0054(0x000C) (Edit, Const, EditConst, NeedCtorLink)
+	class UGearboxDialogGroup*                         ParentGroup;                                              // 0x0060(0x0004) (Edit, Const)
+	TArray<class UGearboxDialogNode*>                  Nodes;                                                    // 0x0064(0x000C) (NeedCtorLink)
+	class UGearboxDialogEvent*                         SharedDialogEvent;                                        // 0x0070(0x0004) (Transient)
+	class UGearboxDialogAct_Talk*                      SharedTalkAct;                                            // 0x0074(0x0004) (Transient)
+	TArray<struct FOutputLinkToStruct>                 OutputLinksToStructs;                                     // 0x0078(0x000C) (NeedCtorLink)
+	TArray<struct FDialogEventData>                    DialogEvents;                                             // 0x0084(0x000C) (NeedCtorLink)
+	TArray<struct FTalkActData>                        TalkActs;                                                 // 0x0090(0x000C) (NeedCtorLink)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxDialogGroup");
+		return ptr;
+	}
+
+
 	void SimpleEvent(class AActor* Owner, class UGearboxDialogNameTag* NameTag, class UGearboxDialogEventTag* EventTag);
 };
 
-// UClass* UGearboxDialogGroup::pClassPointer = NULL;
 
+// Class GearboxFramework.GearboxDialogEventData
+// 0x003C (0x003C - 0x0078)
+class UGearboxDialogEventData : public UObject
+{
+public:
+	struct FDialogEventInfo                            EventInfo;                                                // 0x003C(0x0008)
+	class AActor*                                      Instigator;                                               // 0x0044(0x0004)
+	class AActor*                                      Other;                                                    // 0x0048(0x0004)
+	class UObject*                                     ObjectParameter;                                          // 0x004C(0x0004)
+	class AActor*                                      LastTalker;                                               // 0x0050(0x0004)
+	class UGearboxDialogAct_Talk*                      LiveTalkAction;                                           // 0x0054(0x0004)
+	int                                                LiveTalkActionDataID;                                     // 0x0058(0x0004)
+	struct FDialogEventInfo                            TemplateEventInfo;                                        // 0x005C(0x0008)
+	class UGearboxDialogAct_Trigger*                   LiveTriggerAction;                                        // 0x0064(0x0004)
+	struct FAkPlayingInfo                              PlayingInfo;                                              // 0x0068(0x0008) (Component)
+	float                                              TalkFinishTime;                                           // 0x0070(0x0004)
+	int                                                UseCount;                                                 // 0x0074(0x0004)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxDialogEventData");
+		return ptr;
+	}
+
+
+	bool IsActive();
+};
+
+
+// Class GearboxFramework.GearboxDialogEventTag
+// 0x0008 (0x003C - 0x0044)
+class UGearboxDialogEventTag : public UGBXDefinition
+{
+public:
+	unsigned long                                      bGroupEvent : 1;                                          // 0x003C(0x0004) (Edit, Const)
+	unsigned long                                      bSoundEffect : 1;                                         // 0x003C(0x0004) (Edit, Const)
+	unsigned long                                      bIsDeathScream : 1;                                       // 0x003C(0x0004) (Edit, Const)
+	class UGearboxDialogPriority*                      Priority;                                                 // 0x0040(0x0004) (Edit, Const)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxDialogEventTag");
+		return ptr;
+	}
+
+};
+
+
+// Class GearboxFramework.GearboxDialogGlobalsDefinition
+// 0x0010 (0x003C - 0x004C)
+class UGearboxDialogGlobalsDefinition : public UGBXDefinition
+{
+public:
+	class UAkRtpc*                                     PitchRTPC;                                                // 0x003C(0x0004) (Edit, Const)
+	TArray<class UGearboxDialogPriority*>              Priorities;                                               // 0x0040(0x000C) (Edit, Const, NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxDialogGlobalsDefinition");
+		return ptr;
+	}
+
+};
+
+
+// Class GearboxFramework.GearboxDialogTemplateGroup
 // 0x0000 (0x009C - 0x009C)
-class UGearboxDialogTemplateGroup : public UGearboxDialogGroup {};
+class UGearboxDialogTemplateGroup : public UGearboxDialogGroup
+{
+public:
 
-// UClass* UGearboxDialogTemplateGroup::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxDialogTemplateGroup");
+		return ptr;
+	}
 
-// 0x0084 (0x00C0 - 0x003C)
+};
+
+
+// Class GearboxFramework.GearboxDialogManager
+// 0x0084 (0x003C - 0x00C0)
 class UGearboxDialogManager : public UObject
 {
 public:
-	unsigned long                                      bEnabled : 1;                                     		// 0x003C (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
-	unsigned long                                      bShowDebug : 1;                                   		// 0x003C (0x0004) [0x0000000000002000] [0x00000002] ( CPF_Transient )
-	TArray< class AActor* >                            Talkers;                                          		// 0x0040 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	TArray< class AActor* >                            DisabledTalkers;                                  		// 0x004C (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	TArray< class UGearboxDialogGroup* >               Groups;                                           		// 0x0058 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	class UGearboxDialogEventData*                     CurrentEventContext;                              		// 0x0064 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FMap_Mirror                                 GroupEventTagMap;                                 		// 0x0068 (0x003C) [0x0000000000003002]              ( CPF_Const | CPF_Native | CPF_Transient )
-	TArray< class UGearboxDialogEventData* >           EventDataPool;                                    		// 0x00A4 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	struct FString                                     EventDataClassPath;                               		// 0x00B0 (0x000C) [0x0000000000444000]              ( CPF_Config | CPF_GlobalConfig | CPF_NeedCtorLink )
-	class UClass*                                      EventDataClass;                                   		// 0x00BC (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	unsigned long                                      bEnabled : 1;                                             // 0x003C(0x0004) (Transient)
+	unsigned long                                      bShowDebug : 1;                                           // 0x003C(0x0004) (Transient)
+	TArray<class AActor*>                              Talkers;                                                  // 0x0040(0x000C) (Transient, NeedCtorLink)
+	TArray<class AActor*>                              DisabledTalkers;                                          // 0x004C(0x000C) (Transient, NeedCtorLink)
+	TArray<class UGearboxDialogGroup*>                 Groups;                                                   // 0x0058(0x000C) (Transient, NeedCtorLink)
+	class UGearboxDialogEventData*                     CurrentEventContext;                                      // 0x0064(0x0004) (Transient)
+	struct FMap_Mirror                                 GroupEventTagMap;                                         // 0x0068(0x003C) (Const, Native, Transient)
+	TArray<class UGearboxDialogEventData*>             EventDataPool;                                            // 0x00A4(0x000C) (Transient, NeedCtorLink)
+	struct FString                                     EventDataClassPath;                                       // 0x00B0(0x000C) (Config, GlobalConfig, NeedCtorLink)
+	class UClass*                                      EventDataClass;                                           // 0x00BC(0x0004) (Transient)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxDialogManager");
+		return ptr;
+	}
+
+
 	void DrawDialogDebug(class AHUD* HUD, float StartY);
 	void CheckpointRemoveReferencesBeforeDestroy();
-	class UGearboxDialogEventTag* GetEventTagForEventInfo(struct FDialogEventInfo EventInfo);
+	class UGearboxDialogEventTag* GetEventTagForEventInfo(const struct FDialogEventInfo& EventInfo);
 	class UGearboxDialogEventData* TriggerGroupEvent(class UGearboxDialogGroup* Group, class UGearboxDialogEventTag* EventTag, class AActor* Instigator, class AActor* Other, class UObject* ObjectParameter, class UGearboxDialogEventData* TemplateEventData);
 	void Cleanup();
 	void SetGroupEventTag(class UGearboxDialogGroup* Group, class UGearboxDialogEventTag* EventTag);
@@ -5187,464 +6153,531 @@ public:
 	int GetPriority(class UGearboxDialogPriority* InPriority);
 };
 
-// UClass* UGearboxDialogManager::pClassPointer = NULL;
 
-// 0x000C (0x0048 - 0x003C)
+// Class GearboxFramework.GearboxDialogNameTag
+// 0x000C (0x003C - 0x0048)
 class UGearboxDialogNameTag : public UGBXDefinition
 {
 public:
-	struct FName                                       NameTag;                                          		// 0x003C (0x0008) [0x0000000000000001]              ( CPF_Edit )
-	class UGearboxDialogNameTag*                       ParentTag;                                        		// 0x0044 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	struct FName                                       NameTag;                                                  // 0x003C(0x0008) (Edit)
+	class UGearboxDialogNameTag*                       ParentTag;                                                // 0x0044(0x0004) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxDialogNameTag");
+		return ptr;
+	}
+
 };
 
-// UClass* UGearboxDialogNameTag::pClassPointer = NULL;
 
+// Class GearboxFramework.GearboxDialogPriority
 // 0x0000 (0x003C - 0x003C)
-class UGearboxDialogPriority : public UGBXDefinition {};
+class UGearboxDialogPriority : public UGBXDefinition
+{
+public:
 
-// UClass* UGearboxDialogPriority::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxDialogPriority");
+		return ptr;
+	}
 
-// 0x0004 (0x0070 - 0x006C)
+};
+
+
+// Class GearboxFramework.GearboxDialogNode
+// 0x0004 (0x006C - 0x0070)
 class UGearboxDialogNode : public UGearboxEditorNode
 {
 public:
-	int                                                NodeID;                                           		// 0x006C (0x0004) [0x0000000000000000]
+	int                                                NodeID;                                                   // 0x006C(0x0004)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxDialogNode");
+		return ptr;
+	}
+
+
 	void ActivateOutput(int Link);
 };
 
-// UClass* UGearboxDialogNode::pClassPointer = NULL;
 
+// Class GearboxFramework.GearboxDialogAction
 // 0x0000 (0x0070 - 0x0070)
 class UGearboxDialogAction : public UGearboxDialogNode
 {
 public:
-	void eventActivate();
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxDialogAction");
+		return ptr;
+	}
+
+
+	void Activate();
 };
 
-// UClass* UGearboxDialogAction::pClassPointer = NULL;
 
-// 0x0010 (0x0080 - 0x0070)
+// Class GearboxFramework.GearboxDialogAct_Chance
+// 0x0010 (0x0070 - 0x0080)
 class UGearboxDialogAct_Chance : public UGearboxDialogAction
 {
 public:
-	float                                              Chance;                                           		// 0x0070 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              QuietTimeMin;                                     		// 0x0074 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              QuietTimeMax;                                     		// 0x0078 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              NextFireTime;                                     		// 0x007C (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	float                                              Chance;                                                   // 0x0070(0x0004) (Edit)
+	float                                              QuietTimeMin;                                             // 0x0074(0x0004) (Edit)
+	float                                              QuietTimeMax;                                             // 0x0078(0x0004) (Edit)
+	float                                              NextFireTime;                                             // 0x007C(0x0004) (Transient)
 
-public:
-	void eventActivate();
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxDialogAct_Chance");
+		return ptr;
+	}
+
+
+	void Activate();
 };
 
-// UClass* UGearboxDialogAct_Chance::pClassPointer = NULL;
 
+// Class GearboxFramework.GearboxDialogAct_Compare
 // 0x0000 (0x0070 - 0x0070)
 class UGearboxDialogAct_Compare : public UGearboxDialogAction
 {
 public:
-	void eventActivate();
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxDialogAct_Compare");
+		return ptr;
+	}
+
+
+	void Activate();
 };
 
-// UClass* UGearboxDialogAct_Compare::pClassPointer = NULL;
 
-// 0x000C (0x007C - 0x0070)
+// Class GearboxFramework.GearboxDialogAct_ObjectParameterSwitch
+// 0x000C (0x0070 - 0x007C)
 class UGearboxDialogAct_ObjectParameterSwitch : public UGearboxDialogAction
 {
 public:
-	TArray< class UObject* >                           Outputs;                                          		// 0x0070 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	TArray<class UObject*>                             Outputs;                                                  // 0x0070(0x000C) (Edit, NeedCtorLink)
 
-public:
-	void eventActivate();
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxDialogAct_ObjectParameterSwitch");
+		return ptr;
+	}
+
+
+	void Activate();
 };
 
-// UClass* UGearboxDialogAct_ObjectParameterSwitch::pClassPointer = NULL;
 
+// Class GearboxFramework.GearboxDialogNonTemplateAction
 // 0x0000 (0x0070 - 0x0070)
-class UGearboxDialogNonTemplateAction : public UGearboxDialogAction {};
+class UGearboxDialogNonTemplateAction : public UGearboxDialogAction
+{
+public:
 
-// UClass* UGearboxDialogNonTemplateAction::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxDialogNonTemplateAction");
+		return ptr;
+	}
 
-// 0x0014 (0x0084 - 0x0070)
+};
+
+
+// Class GearboxFramework.GearboxDialogAct_Talk
+// 0x0014 (0x0070 - 0x0084)
 class UGearboxDialogAct_Talk : public UGearboxDialogNonTemplateAction
 {
 public:
-	float                                              OutputDelay;                                      		// 0x0070 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	unsigned long                                      bShowTalkers : 1;                                 		// 0x0074 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      bPreviewing : 1;                                  		// 0x0074 (0x0004) [0x0000000000002000] [0x00000002] ( CPF_Transient )
-	unsigned long                                      bInstigatorTalker : 1;                            		// 0x0074 (0x0004) [0x0000000000000000] [0x00000004]
-	TArray< struct FGearboxDialogData >                TalkData;                                         		// 0x0078 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	float                                              OutputDelay;                                              // 0x0070(0x0004) (Edit)
+	unsigned long                                      bShowTalkers : 1;                                         // 0x0074(0x0004) (Edit)
+	unsigned long                                      bPreviewing : 1;                                          // 0x0074(0x0004) (Transient)
+	unsigned long                                      bInstigatorTalker : 1;                                    // 0x0074(0x0004)
+	TArray<struct FGearboxDialogData>                  TalkData;                                                 // 0x0078(0x000C) (Edit, NeedCtorLink)
 
-public:
-	void eventActivate();
-	void eventTalkFinished(class AActor* InTalker);
-	void eventTalkStarted(class AActor* InTalker);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxDialogAct_Talk");
+		return ptr;
+	}
+
+
+	void Activate();
+	void TalkFinished(class AActor* InTalker);
+	void TalkStarted(class AActor* InTalker);
 };
 
-// UClass* UGearboxDialogAct_Talk::pClassPointer = NULL;
 
+// Class GearboxFramework.GearboxDialogTemplateAction
 // 0x0000 (0x0070 - 0x0070)
-class UGearboxDialogTemplateAction : public UGearboxDialogAction {};
+class UGearboxDialogTemplateAction : public UGearboxDialogAction
+{
+public:
 
-// UClass* UGearboxDialogTemplateAction::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxDialogTemplateAction");
+		return ptr;
+	}
 
-// 0x0008 (0x0078 - 0x0070)
+};
+
+
+// Class GearboxFramework.GearboxDialogAct_Trigger
+// 0x0008 (0x0070 - 0x0078)
 class UGearboxDialogAct_Trigger : public UGearboxDialogTemplateAction
 {
 public:
-	class UGearboxDialogEventTag*                      DialogEvent;                                      		// 0x0070 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	unsigned long                                      bPreviewing : 1;                                  		// 0x0074 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
+	class UGearboxDialogEventTag*                      DialogEvent;                                              // 0x0070(0x0004) (Edit, Const)
+	unsigned long                                      bPreviewing : 1;                                          // 0x0074(0x0004) (Transient)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxDialogAct_Trigger");
+		return ptr;
+	}
+
+
 	void ActivateOutput(int Link);
-	void eventActivate();
+	void Activate();
 };
 
-// UClass* UGearboxDialogAct_Trigger::pClassPointer = NULL;
 
-// 0x0008 (0x0078 - 0x0070)
+// Class GearboxFramework.GearboxDialogEvent
+// 0x0008 (0x0070 - 0x0078)
 class UGearboxDialogEvent : public UGearboxDialogNode
 {
 public:
-	unsigned long                                      bDisabled : 1;                                    		// 0x0070 (0x0004) [0x0000000000000002] [0x00000001] ( CPF_Const )
-	class UGearboxDialogEventTag*                      Tag;                                              		// 0x0074 (0x0004) [0x0000000000000000]
+	unsigned long                                      bDisabled : 1;                                            // 0x0070(0x0004) (Const)
+	class UGearboxDialogEventTag*                      Tag;                                                      // 0x0074(0x0004)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxDialogEvent");
+		return ptr;
+	}
+
 };
 
-// UClass* UGearboxDialogEvent::pClassPointer = NULL;
 
+// Class GearboxFramework.GearboxDialogTemplateEvent
 // 0x0000 (0x0078 - 0x0078)
-class UGearboxDialogTemplateEvent : public UGearboxDialogEvent {};
+class UGearboxDialogTemplateEvent : public UGearboxDialogEvent
+{
+public:
 
-// UClass* UGearboxDialogTemplateEvent::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxDialogTemplateEvent");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.GearboxDialogVariable
 // 0x0000 (0x0070 - 0x0070)
 class UGearboxDialogVariable : public UGearboxDialogNode
 {
 public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxDialogVariable");
+		return ptr;
+	}
+
+
 	void ResolveToArgumentValue(struct FString* Out_ArgumentValue);
-	void GetTalkers(TArray< class AActor* >* Talkers);
+	void GetTalkers(TArray<class AActor*>* Talkers);
 };
 
-// UClass* UGearboxDialogVariable::pClassPointer = NULL;
 
+// Class GearboxFramework.GearboxDialogVar_Instigator
 // 0x0000 (0x0070 - 0x0070)
-class UGearboxDialogVar_Instigator : public UGearboxDialogVariable {};
+class UGearboxDialogVar_Instigator : public UGearboxDialogVariable
+{
+public:
 
-// UClass* UGearboxDialogVar_Instigator::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxDialogVar_Instigator");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.GearboxDialogVar_LastTalker
 // 0x0000 (0x0070 - 0x0070)
-class UGearboxDialogVar_LastTalker : public UGearboxDialogVariable {};
+class UGearboxDialogVar_LastTalker : public UGearboxDialogVariable
+{
+public:
 
-// UClass* UGearboxDialogVar_LastTalker::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxDialogVar_LastTalker");
+		return ptr;
+	}
 
-// 0x0004 (0x0074 - 0x0070)
+};
+
+
+// Class GearboxFramework.GearboxDialogVar_NameTag
+// 0x0004 (0x0070 - 0x0074)
 class UGearboxDialogVar_NameTag : public UGearboxDialogVariable
 {
 public:
-	class UGearboxDialogNameTag*                       NameTag;                                          		// 0x0070 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UGearboxDialogNameTag*                       NameTag;                                                  // 0x0070(0x0004) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxDialogVar_NameTag");
+		return ptr;
+	}
+
 };
 
-// UClass* UGearboxDialogVar_NameTag::pClassPointer = NULL;
 
+// Class GearboxFramework.GearboxDialogVar_Other
 // 0x0000 (0x0070 - 0x0070)
-class UGearboxDialogVar_Other : public UGearboxDialogVariable {};
+class UGearboxDialogVar_Other : public UGearboxDialogVariable
+{
+public:
 
-// UClass* UGearboxDialogVar_Other::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxDialogVar_Other");
+		return ptr;
+	}
 
-// 0x0018 (0x0088 - 0x0070)
+};
+
+
+// Class GearboxFramework.GearboxDialogVar_Random
+// 0x0018 (0x0070 - 0x0088)
 class UGearboxDialogVar_Random : public UGearboxDialogVariable
 {
 public:
-	unsigned long                                      bNotOther : 1;                                    		// 0x0070 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      bNotInstigator : 1;                               		// 0x0070 (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
-	unsigned long                                      bNotLastTalker : 1;                               		// 0x0070 (0x0004) [0x0000000000000001] [0x00000004] ( CPF_Edit )
-	class UPawnAllegiance*                             Allegiance;                                       		// 0x0074 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	struct FAttributeInitializationData                DistanceLimit;                                    		// 0x0078 (0x0010) [0x0000000000000001]              ( CPF_Edit )
+	unsigned long                                      bNotOther : 1;                                            // 0x0070(0x0004) (Edit)
+	unsigned long                                      bNotInstigator : 1;                                       // 0x0070(0x0004) (Edit)
+	unsigned long                                      bNotLastTalker : 1;                                       // 0x0070(0x0004) (Edit)
+	class UPawnAllegiance*                             Allegiance;                                               // 0x0074(0x0004) (Edit)
+	struct FAttributeInitializationData                DistanceLimit;                                            // 0x0078(0x0010) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxDialogVar_Random");
+		return ptr;
+	}
+
 };
 
-// UClass* UGearboxDialogVar_Random::pClassPointer = NULL;
 
-// 0x0004 (0x00A8 - 0x00A4)
+// Class GearboxFramework.GearboxSeqAct_ToggleDialog
+// 0x0004 (0x00A4 - 0x00A8)
 class UGearboxSeqAct_ToggleDialog : public USequenceAction
 {
 public:
-	unsigned long                                      bDialogEnabled : 1;                               		// 0x00A4 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
+	unsigned long                                      bDialogEnabled : 1;                                       // 0x00A4(0x0004) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxSeqAct_ToggleDialog");
+		return ptr;
+	}
+
 };
 
-// UClass* UGearboxSeqAct_ToggleDialog::pClassPointer = NULL;
 
-// 0x0018 (0x00CC - 0x00B4)
+// Class GearboxFramework.GearboxSeqAct_TriggerDialog
+// 0x0018 (0x00B4 - 0x00CC)
 class UGearboxSeqAct_TriggerDialog : public USeqAct_Latent
 {
 public:
-	class AActor*                                      Other;                                            		// 0x00B4 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UGearboxDialogEventTag*                      EventTag;                                         		// 0x00B8 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UGearboxDialogNameTag*                       NameTag;                                          		// 0x00BC (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UGearboxDialogEventData*                     EventData;                                        		// 0x00C0 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	int                                                MyDataUseCount;                                   		// 0x00C4 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	unsigned long                                      bCheckCanPreview : 1;                             		// 0x00C8 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
-	unsigned long                                      bCanPreview : 1;                                  		// 0x00C8 (0x0004) [0x0000000000002000] [0x00000002] ( CPF_Transient )
+	class AActor*                                      Other;                                                    // 0x00B4(0x0004) (Edit)
+	class UGearboxDialogEventTag*                      EventTag;                                                 // 0x00B8(0x0004) (Edit)
+	class UGearboxDialogNameTag*                       NameTag;                                                  // 0x00BC(0x0004) (Edit)
+	class UGearboxDialogEventData*                     EventData;                                                // 0x00C0(0x0004) (Transient)
+	int                                                MyDataUseCount;                                           // 0x00C4(0x0004) (Transient)
+	unsigned long                                      bCheckCanPreview : 1;                                     // 0x00C8(0x0004) (Transient, EditorOnly)
+	unsigned long                                      bCanPreview : 1;                                          // 0x00C8(0x0004) (Transient, EditorOnly)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxSeqAct_TriggerDialog");
+		return ptr;
+	}
+
 };
 
-// UClass* UGearboxSeqAct_TriggerDialog::pClassPointer = NULL;
 
-// 0x0004 (0x00D0 - 0x00CC)
+// Class GearboxFramework.GearboxSeqAct_TriggerDialogName
+// 0x0004 (0x00CC - 0x00D0)
 class UGearboxSeqAct_TriggerDialogName : public UGearboxSeqAct_TriggerDialog
 {
 public:
-	class UGearboxDialogGroup*                         Group;                                            		// 0x00CC (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UGearboxDialogGroup*                         Group;                                                    // 0x00CC(0x0004) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxSeqAct_TriggerDialogName");
+		return ptr;
+	}
+
 };
 
-// UClass* UGearboxSeqAct_TriggerDialogName::pClassPointer = NULL;
 
-// 0x006C (0x00A8 - 0x003C)
-class UGearboxAccountActions : public UObject
-{
-public:
-	int                                                CurrentConsumeCount;                              		// 0x003C (0x0004) [0x0000000000000000]
-	unsigned char                                      CurrentControllerId;                              		// 0x0040 (0x0001) [0x0000000000000000]
-	class UGearboxAccountEntitlement*                  CurrentEntitlement;                               		// 0x0044 (0x0004) [0x0000000000000000]
-	TArray< class UGearboxAccountEntitlement* >        CurrentBulkConsumeEntitlements;                   		// 0x0048 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< int >                                      CurrentBulkConsumeControllerIds;                  		// 0x0054 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< int >                                      CurrentBulkConsumeCounts;                         		// 0x0060 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FScriptDelegate                             __OnSignInGearboxAccount__Delegate;               		// 0x006C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FScriptDelegate                             __OnSignUpGearboxAccount__Delegate;               		// 0x0078 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FScriptDelegate                             __OnResetPasswordGearboxAccount__Delegate;        		// 0x0084 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FScriptDelegate                             __OnCodeRedeemed__Delegate;                       		// 0x0090 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FScriptDelegate                             __OnEntitlementConsumed__Delegate;                		// 0x009C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-
-public:
-	void HandleOffersNotifiedResponse(struct FSparkResult* Result);
-	void HandleBulkEntitlementsConsumedResponse(struct FSparkResult* Result);
-	void HandleEntitlementConsumedResponse(struct FSparkResult* Result);
-	void HandleCodeRedeemedResponse(struct FSparkResult* Result);
-	void HandleResetPasswordResponse(struct FSparkResult* Result);
-	void HandleSignUpResponse(struct FSparkResult* Result);
-	void HandleSignInResponse(struct FSparkResult* Result);
-	struct FArchwayResult ExtractArchwayResult(TArray< unsigned char > Data);
-	void MarkOffersNotified(unsigned char ControllerId);
-	bool LocallyConsumeEntitlementWithCount(struct FName EntitlementName, int NumToConsume, unsigned char ControllerId);
-	void eventConsumeEntitlementsWithCounts(TArray< class UGearboxAccountEntitlement* > EntitlementsToConsume, TArray< int > Counts, unsigned char ControllerId, struct FScriptDelegate EntitlementConsumedDelegate);
-	void ConsumeEntitlementWithCount(struct FName EntitlementName, int Count, unsigned char ControllerId, struct FScriptDelegate EntitlementConsumedDelegate);
-	void RedeemCode(struct FString Code, unsigned char ControllerId, struct FScriptDelegate CodeRedeemedDelegate);
-	void ResetPasswordGearboxAccount(struct FString Email, unsigned char ControllerId, struct FScriptDelegate ResetPasswordDelegate);
-	struct FString EscapeJson(struct FString Input);
-	void SignUpGearboxAccount(struct FString Email, struct FString Password, struct FString PasswordConfirm, struct FString AgeString, unsigned char ControllerId, struct FScriptDelegate SignUpDelegate);
-	void SignInGearboxAccount(struct FString Email, struct FString Password, unsigned char ControllerId, struct FScriptDelegate SignInDelegate);
-	void OnEntitlementConsumed(unsigned char ConsumeResult);
-	void OnCodeRedeemed(unsigned char RedeemResult, struct FString CustomTitle, struct FString CustomBody);
-	void OnResetPasswordGearboxAccount(unsigned char ResetResult);
-	void OnSignUpGearboxAccount(unsigned char SignUpResult);
-	void OnSignInGearboxAccount(unsigned char SignInResult);
-};
-
-// UClass* UGearboxAccountActions::pClassPointer = NULL;
-
-// 0x0054 (0x0090 - 0x003C)
-class UGearboxAccountData : public UObject
-{
-public:
-	struct FString                                     RequestId;                                        		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned long                                      SignedIn : 1;                                     		// 0x0048 (0x0004) [0x0000000000000000] [0x00000001]
-	unsigned long                                      HasValidPlatform : 1;                             		// 0x0048 (0x0004) [0x0000000000000000] [0x00000002]
-	struct FString                                     PlatformLoginName;                                		// 0x004C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FDouble                                     NextEntitlementUpdateTime;                        		// 0x0058 (0x0008) [0x0000000000000000]
-	TArray< class UGearboxAccountEntitlement* >        Entitlements;                                     		// 0x0060 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< class UGearboxAccountOffer* >              Offers;                                           		// 0x006C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FScriptDelegate >                   EntitlementsUpdatedDelegates;                     		// 0x0078 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< class USparkServiceConfiguration* >        Services;                                         		// 0x0084 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-
-public:
-	int CountEntitlement(struct FName EntitlementName, unsigned long bIgnoreLocallyConsumed);
-	int GetTotalGoldenKeyCount();
-	int GetGoldenKeyCount(unsigned long bIgnoreLocallyConsumed);
-	bool HasGoldenKey(unsigned long bIgnoreLocallyConsumed);
-	bool HasDeveloperSkin();
-	bool IsDeveloper();
-	void MarkOffersNotified();
-	TArray< class UGearboxAccountOffer* > GetUnnotifiedOffers();
-	class UGearboxAccountEntitlement* GetEntitlementWithName(struct FName EntitlementName);
-	class UGearboxAccountEntitlement* GetEntitlementWithId(int Id);
-	bool HasEntitlement(struct FName EntitlementName, unsigned long bIgnoreLocallyConsumed);
-	void RemoveEntitlement(class UGearboxAccountEntitlement* Entitlement);
-	void ReplaceEntitlements(TArray< struct FEntitlementResult >* NewEntitlements, TArray< struct FOfferResult >* NewOffers);
-	void ReplaceServices(TArray< struct FServiceResult >* NewServices);
-	void HandleReloadEntitlementsResponse(struct FSparkResult* Result);
-	bool ReloadEntitlements();
-	void ResetEntitlementUpdateTimer();
-	bool CanReloadEntitlements();
-	void TriggerEntitlementsUpdatedDelegates();
-	void ClearEntitlementsUpdatedDelegate(struct FScriptDelegate EntitlementsUpdatedDelegate);
-	void AddEntitlementsUpdatedDelegate(struct FScriptDelegate EntitlementsUpdatedDelegate);
-	class USparkServiceConfiguration* eventGetService(struct FName ServiceName);
-	void Clear();
-	bool ExtractArchwayResultJson(TArray< unsigned char >* Data, struct FArchwayResult* ArchwayData);
-	bool ExtractArchwayResult(TArray< unsigned char >* Data, struct FArchwayResult* ArchwayData);
-};
-
-// UClass* UGearboxAccountData::pClassPointer = NULL;
-
-// 0x002C (0x0068 - 0x003C)
+// Class GearboxFramework.GearboxProcess
+// 0x002C (0x003C - 0x0068)
 class UGearboxProcess : public UObject
 {
 public:
-	int                                                FirstAttemptDelay;                                		// 0x003C (0x0004) [0x0000000000000000]
-	int                                                BaseRetrySeconds;                                 		// 0x0040 (0x0004) [0x0000000000000000]
-	int                                                MaxRetryAttempts;                                 		// 0x0044 (0x0004) [0x0000000000000000]
-	float                                              RetryMultiplier;                                  		// 0x0048 (0x0004) [0x0000000000000000]
-	int                                                RetryJitter;                                      		// 0x004C (0x0004) [0x0000000000000000]
-	float                                              CurrentRetrySeconds;                              		// 0x0050 (0x0004) [0x0000000000000000]
-	int                                                Attempts;                                         		// 0x0054 (0x0004) [0x0000000000000000]
-	float                                              WaitTime;                                         		// 0x0058 (0x0004) [0x0000000000000000]
-	unsigned long                                      Waiting : 1;                                      		// 0x005C (0x0004) [0x0000000000000000] [0x00000001]
-	int                                                CurrentStep;                                      		// 0x0060 (0x0004) [0x0000000000000000]
-	int                                                FailureStep;                                      		// 0x0064 (0x0004) [0x0000000000000000]
+	int                                                FirstAttemptDelay;                                        // 0x003C(0x0004)
+	int                                                BaseRetrySeconds;                                         // 0x0040(0x0004)
+	int                                                MaxRetryAttempts;                                         // 0x0044(0x0004)
+	float                                              RetryMultiplier;                                          // 0x0048(0x0004)
+	int                                                RetryJitter;                                              // 0x004C(0x0004)
+	float                                              CurrentRetrySeconds;                                      // 0x0050(0x0004)
+	int                                                Attempts;                                                 // 0x0054(0x0004)
+	float                                              WaitTime;                                                 // 0x0058(0x0004)
+	unsigned long                                      Waiting : 1;                                              // 0x005C(0x0004)
+	int                                                CurrentStep;                                              // 0x0060(0x0004)
+	int                                                FailureStep;                                              // 0x0064(0x0004)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxProcess");
+		return ptr;
+	}
+
+
 	struct FStepConfiguration GetStepConfiguration();
 	void GotoStep(int Step);
 	void GotoNextStep();
 	void GotoFirstStep();
-	unsigned char eventPerformStep();
+	unsigned char PerformStep();
 	void PauseLoop();
 	void Init();
 	void ContinueLoop();
 	void StopLoop();
 };
 
-// UClass* UGearboxProcess::pClassPointer = NULL;
 
-// 0x0024 (0x008C - 0x0068)
+// Class GearboxFramework.SparkInitializationProcess
+// 0x0024 (0x0068 - 0x008C)
 class USparkInitializationProcess : public UGearboxProcess
 {
 public:
-	class UGearboxAccountData*                         Data;                                             		// 0x0068 (0x0004) [0x0000000000000000]
-	int                                                PlayerIndex;                                      		// 0x006C (0x0004) [0x0000000000000000]
-	TArray< struct FScriptDelegate >                   SparkInitializedDelegates;                        		// 0x0070 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	unsigned long                                      bPrimary : 1;                                     		// 0x007C (0x0004) [0x0000000000000000] [0x00000001]
-	unsigned long                                      ValidAccount : 1;                                 		// 0x007C (0x0004) [0x0000000000000000] [0x00000002]
-	struct FString                                     AsyncTicket;                                      		// 0x0080 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	class UGearboxAccountData*                         Data;                                                     // 0x0068(0x0004)
+	int                                                PlayerIndex;                                              // 0x006C(0x0004)
+	TArray<struct FScriptDelegate>                     SparkInitializedDelegates;                                // 0x0070(0x000C) (NeedCtorLink)
+	unsigned long                                      bPrimary : 1;                                             // 0x007C(0x0004)
+	unsigned long                                      ValidAccount : 1;                                         // 0x007C(0x0004)
+	struct FString                                     AsyncTicket;                                              // 0x0080(0x000C) (NeedCtorLink)
 
-public:
-	void eventTriggerSparkInitializedDelegates(unsigned char InitializeResult);
-	void ClearSparkInitializedDelegate(struct FScriptDelegate SparkInitializedDelegate);
-	void AddSparkInitializedDelegate(struct FScriptDelegate SparkInitializedDelegate);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SparkInitializationProcess");
+		return ptr;
+	}
+
+
+	void TriggerSparkInitializedDelegates(unsigned char InitializeResult);
+	void ClearSparkInitializedDelegate(const struct FScriptDelegate& SparkInitializedDelegate);
+	void AddSparkInitializedDelegate(const struct FScriptDelegate& SparkInitializedDelegate);
 	struct FString GetStepName();
 	struct FStepConfiguration GetStepConfiguration();
 	bool IsInitialized();
 	bool IsDisabled();
 	bool IsInitializing();
+	static void UpdateAgreementsSigning(class UGearboxAccountData* GbxAccountData, const struct FString& NeedsSignAgreements);
 	void HandleVerificationReceived(struct FSparkResult* Result);
-	unsigned char eventVerifyAuthentication();
-	unsigned char AuthenticateTicketStringWithDelegate(struct FString ticket, struct FScriptDelegate SparkRequestCompleteDelegate);
+	unsigned char VerifyAuthentication();
+	unsigned char AuthenticateTicketStringWithDelegate(const struct FString& ticket, const struct FScriptDelegate& SparkRequestCompleteDelegate);
 	void HandleAuthenticationReceived(struct FSparkResult* Result);
-	unsigned char eventAuthenticateAccount();
+	unsigned char AuthenticateAccount();
 	struct FString GetConfigQuery();
 	unsigned char CompleteInitialization();
 	unsigned char HttpInit();
 	unsigned char CheckForTMS();
 	unsigned char PerformStep();
 	bool StartProcess();
-	void InitWithController(unsigned char ControllerId, unsigned long bNewPrimary, struct FScriptDelegate SparkInitializedDelegate);
+	void InitWithController(unsigned char ControllerId, bool bNewPrimary, const struct FScriptDelegate& SparkInitializedDelegate);
 };
 
-// UClass* USparkInitializationProcess::pClassPointer = NULL;
 
-// 0x0010 (0x004C - 0x003C)
+// Class GearboxFramework.LeviathanService
+// 0x0010 (0x003C - 0x004C)
 class ULeviathanService : public UObject
 {
 public:
-	struct FPointer                                    VfTable_ISparkUpdateCallback;                     		// 0x003C (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-	int                                                EventBufferSize;                                  		// 0x0040 (0x0004) [0x0000000000000000]
-	int                                                StatBufferSize;                                   		// 0x0044 (0x0004) [0x0000000000000000]
-	int                                                AtomTableBufferSize;                              		// 0x0048 (0x0004) [0x0000000000000000]
+	struct FPointer                                    VfTable_ISparkUpdateCallback;                             // 0x003C(0x0004) (Const, Native, NoExport)
+	int                                                EventBufferSize;                                          // 0x0040(0x0004)
+	int                                                StatBufferSize;                                           // 0x0044(0x0004)
+	int                                                AtomTableBufferSize;                                      // 0x0048(0x0004)
 
-public:
-	class USparkServiceConfiguration* eventGetLeviathanServiceConfiguration(int ControllerNumber);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("LeviathanService");
+		return ptr;
+	}
+
+
+	class USparkServiceConfiguration* GetLeviathanServiceConfiguration(int ControllerNumber);
 	void OnSparkInitialized(unsigned char InitializedResult);
 	void LoadServiceConfigurationForPlayer(int SplitscreenIndex);
-	class ULeviathanService* GetLeviathanService();
+	static class ULeviathanService* GetLeviathanService();
 };
 
-// UClass* ULeviathanService::pClassPointer = NULL;
 
-// 0x0000 (0x003C - 0x003C)
-class USparkInterface : public UInterface
-{
-public:
-	class USparkNews* GetNewsService();
-	class USparkServiceConfiguration* GetTitleStorageServiceConfiguration();
-	struct FString GetTitleStorageUrl();
-	void ClearGearboxAccountData(unsigned long IncludePrimaryPlayer);
-	void SignOutGearboxAccount(unsigned char ControllerId);
-	void SignInGearboxAccount(unsigned char ControllerId);
-	class UGearboxAccountData* eventGetGearboxAccountData(unsigned char ControllerId);
-	bool eventIsGearboxAccountAuthenticated(unsigned char ControllerId);
-	bool IsGearboxAccountSignedIn(unsigned char ControllerId);
-	struct FString ConvertUtcTimeToLocalTime(struct FString UtcTime);
-	bool ShouldUpdateEmergencyMessage();
-	struct FString GetEmergencyMessage();
-	void SetEmergencyMessage(struct FString Message);
-	struct FString eventGetPlatformLoginNameFromSplitscreenIndex(int SplitscreenIndex);
-	struct FString GetPlatformLoginNameFromController(unsigned char ControllerId);
-	void IncreaseInteractionTries();
-	int GetInteractionTries();
-	int GetInteractionGraceTries();
-	int GetInteractionPunishmentMinWaitSeconds();
-	int GetInteractionMinWaitSeconds();
-	bool IsTmsComplete();
-	void SetTmsComplete();
-	class USparkInitializationProcess* GetSparkInitialization();
-	void eventRestartSparkInitialization(unsigned long bPrimary);
-	void RestartSparkInitializationFromScript(unsigned long bPrimary, struct FScriptDelegate SparkInitializedDelegate, struct FScriptDelegate SparkEmergencyMessageDelegate);
-	void StartSparkInitialization(unsigned char ControllerId, struct FScriptDelegate SparkInitializedDelegate, struct FScriptDelegate SparkEmergencyMessageDelegate, struct FScriptDelegate EntitlementsUpdatedDelegate);
-	void StartSecondaryInitialization(unsigned char ControllerId, struct FScriptDelegate SparkInitializedDelegate, struct FScriptDelegate EntitlementsUpdatedDelegate);
-	struct FString GetGameName();
-	struct FString GetHardwareName();
-	struct FString GetPlatformName();
-	struct FString GetPlatformTicket(int ControllerId, unsigned long bPrimary);
-	void ClearSparkConfigReceivedDelegate(struct FScriptDelegate SparkConfigReceivedDelegate);
-	void AddSparkConfigReceivedDelegate(struct FScriptDelegate SparkConfigReceivedDelegate);
-	void ResetInitializationStatus();
-	bool eventIsSparkEnabled();
-	int IssueSparkStringRequest(struct FString URL, struct FString RequestData, struct FScriptDelegate SparkRequestCompleteDelegate, struct FHttpParameters* HttpRequestParameters);
-	int IssueSparkRequest(struct FString URL, struct FScriptDelegate SparkRequestCompleteDelegate, struct FHttpParameters* HttpRequestParameters, TArray< unsigned char >* RequestData);
-};
-
-// UClass* USparkInterface::pClassPointer = NULL;
-
-// 0x00A0 (0x00DC - 0x003C)
+// Class GearboxFramework.SparkInterfaceImpl
+// 0x00A0 (0x003C - 0x00DC)
 class USparkInterfaceImpl : public UObject
 {
 public:
-	struct FPointer                                    VfTable_ISparkInterface;                          		// 0x003C (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-	struct FPointer                                    VfTable_FTickableObject;                          		// 0x0040 (0x0004) [0x0000000000801002]              ( CPF_Const | CPF_Native | CPF_NoExport )
-	class USparkInitializationProcess*                 SparkInitialization;                              		// 0x0044 (0x0004) [0x0000000000000000]
-	class USparkInitializationProcess*                 SecondaryInitialization;                          		// 0x0048 (0x0004) [0x0000000000000000]
-	TArray< class UGearboxAccountData* >               Accounts;                                         		// 0x004C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FString                                     LeviathanServiceClassName;                        		// 0x0058 (0x000C) [0x0000000000404000]              ( CPF_Config | CPF_NeedCtorLink )
-	class ULeviathanService*                           LeviathanSvc;                                     		// 0x0064 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	int                                                ReadBufferSize;                                   		// 0x0068 (0x0004) [0x0000000000004000]              ( CPF_Config )
-	unsigned long                                      TmsInitComplete : 1;                              		// 0x006C (0x0004) [0x0000000000000000] [0x00000001]
-	unsigned long                                      UpdateEmergencyMessage : 1;                       		// 0x006C (0x0004) [0x0000000000000000] [0x00000002]
-	struct FString                                     EmergencyMessage;                                 		// 0x0070 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< struct FSparkOutstandingRequest >          Requests;                                         		// 0x007C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                LastHttpRequestRetries;                           		// 0x0088 (0x0004) [0x0000000000000000]
-	float                                              LastHttpRequestResponseTime;                      		// 0x008C (0x0004) [0x0000000000000000]
-	int                                                RecentHttpRequestFailures;                        		// 0x0090 (0x0004) [0x0000000000000000]
-	int                                                InteractionMinWaitSeconds;                        		// 0x0094 (0x0004) [0x0000000000000000]
-	int                                                InteractionGraceTries;                            		// 0x0098 (0x0004) [0x0000000000000000]
-	int                                                InteractionPunishmentMinWaitSeconds;              		// 0x009C (0x0004) [0x0000000000000000]
-	int                                                InteractionTries;                                 		// 0x00A0 (0x0004) [0x0000000000000000]
-	class USparkServiceConfiguration*                  TitleStorageService;                              		// 0x00A4 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	struct FString                                     TitleStorageUrl;                                  		// 0x00A8 (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
-	class USparkNews*                                  NewsService;                                      		// 0x00B4 (0x0004) [0x0000000000000000]
-	struct FScriptDelegate                             __OnSparkRequestComplete__Delegate;               		// 0x00B8 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FScriptDelegate                             __OnSparkConfigReceived__Delegate;                		// 0x00C4 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FScriptDelegate                             __OnSparkEmergencyMessageUpdated__Delegate;       		// 0x00D0 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	struct FPointer                                    VfTable_ISparkInterface;                                  // 0x003C(0x0004) (Const, Native, NoExport)
+	struct FPointer                                    VfTable_FTickableObject;                                  // 0x0040(0x0004) (Const, Native, NoExport)
+	class USparkInitializationProcess*                 SparkInitialization;                                      // 0x0044(0x0004)
+	class USparkInitializationProcess*                 SecondaryInitialization;                                  // 0x0048(0x0004)
+	TArray<class UGearboxAccountData*>                 Accounts;                                                 // 0x004C(0x000C) (NeedCtorLink)
+	struct FString                                     LeviathanServiceClassName;                                // 0x0058(0x000C) (Config, NeedCtorLink)
+	class ULeviathanService*                           LeviathanSvc;                                             // 0x0064(0x0004) (Transient)
+	int                                                ReadBufferSize;                                           // 0x0068(0x0004) (Config)
+	unsigned long                                      TmsInitComplete : 1;                                      // 0x006C(0x0004)
+	unsigned long                                      UpdateEmergencyMessage : 1;                               // 0x006C(0x0004)
+	struct FString                                     EmergencyMessage;                                         // 0x0070(0x000C) (NeedCtorLink)
+	TArray<struct FSparkOutstandingRequest>            Requests;                                                 // 0x007C(0x000C) (NeedCtorLink)
+	int                                                LastHttpRequestRetries;                                   // 0x0088(0x0004)
+	float                                              LastHttpRequestResponseTime;                              // 0x008C(0x0004)
+	int                                                RecentHttpRequestFailures;                                // 0x0090(0x0004)
+	int                                                InteractionMinWaitSeconds;                                // 0x0094(0x0004)
+	int                                                InteractionGraceTries;                                    // 0x0098(0x0004)
+	int                                                InteractionPunishmentMinWaitSeconds;                      // 0x009C(0x0004)
+	int                                                InteractionTries;                                         // 0x00A0(0x0004)
+	class USparkServiceConfiguration*                  TitleStorageService;                                      // 0x00A4(0x0004) (Transient)
+	struct FString                                     TitleStorageUrl;                                          // 0x00A8(0x000C) (Transient, NeedCtorLink)
+	class USparkNews*                                  NewsService;                                              // 0x00B4(0x0004)
+	struct FScriptDelegate                             __OnSparkRequestComplete__Delegate;                       // 0x00B8(0x000C) (NeedCtorLink)
+	struct FScriptDelegate                             __OnSparkConfigReceived__Delegate;                        // 0x00C4(0x000C) (NeedCtorLink)
+	struct FScriptDelegate                             __OnSparkEmergencyMessageUpdated__Delegate;               // 0x00D0(0x000C) (NeedCtorLink)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SparkInterfaceImpl");
+		return ptr;
+	}
+
+
+	void RemoveScriptCallback(int HttpRequestId);
 	class USparkNews* GetNewsService();
 	class USparkServiceConfiguration* GetTitleStorageServiceConfiguration();
 	struct FString GetTitleStorageUrl();
@@ -5654,758 +6687,1268 @@ public:
 	int GetInteractionGraceTries();
 	int GetInteractionPunishmentMinWaitSeconds();
 	int GetInteractionMinWaitSeconds();
-	struct FString ConvertUtcTimeToLocalTime(struct FString UtcTime);
+	struct FString ConvertUtcTimeToLocalTime(const struct FString& UtcTime);
 	bool ShouldUpdateEmergencyMessage();
 	struct FString GetEmergencyMessage();
-	void SetEmergencyMessage(struct FString NewMessage);
+	void SetEmergencyMessage(const struct FString& NewMessage);
 	bool IsTmsComplete();
 	void SetTmsComplete();
-	void RestartSparkInitializationFromScript(unsigned long bPrimary, struct FScriptDelegate SparkInitializedDelegate, struct FScriptDelegate SparkEmergencyMessageDelegate);
-	void eventRestartSparkInitialization(unsigned long bPrimary);
-	void StartSparkInitialization(unsigned char ControllerId, struct FScriptDelegate SparkInitializedDelegate, struct FScriptDelegate SparkEmergencyMessageDelegate, struct FScriptDelegate EntitlementsUpdatedDelegate);
+	void RestartSparkInitializationFromScript(bool bPrimary, const struct FScriptDelegate& SparkInitializedDelegate, const struct FScriptDelegate& SparkEmergencyMessageDelegate);
+	void RestartSparkInitialization(bool bPrimary);
+	void StartSparkInitialization(unsigned char ControllerId, const struct FScriptDelegate& SparkInitializedDelegate, const struct FScriptDelegate& SparkEmergencyMessageDelegate, const struct FScriptDelegate& EntitlementsUpdatedDelegate);
 	void ResetInitializationStatus();
 	void ResetSecondaryInitializationStatus();
-	void StartSecondaryInitialization(unsigned char ControllerId, struct FScriptDelegate SparkInitializedDelegate, struct FScriptDelegate EntitlementsUpdatedDelegate);
+	void StartSecondaryInitialization(unsigned char ControllerId, const struct FScriptDelegate& SparkInitializedDelegate, const struct FScriptDelegate& EntitlementsUpdatedDelegate);
 	class USparkInitializationProcess* GetSparkInitialization();
 	void SignInGearboxAccount(unsigned char ControllerId);
-	class UGearboxAccountData* eventGetGearboxAccountData(unsigned char ControllerId);
+	class UGearboxAccountData* GetGearboxAccountData(unsigned char ControllerId);
 	void SignOutGearboxAccount(unsigned char ControllerId);
 	bool ValidPlayerIndex(int PlayerIndex);
 	int GetPlayerIndex(int ControllerId);
-	void ClearGearboxAccountData(unsigned long IncludePrimaryPlayer);
+	void ClearGearboxAccountData(bool IncludePrimaryPlayer);
 	bool IsGearboxAccountSignedIn(unsigned char ControllerId);
-	bool eventIsGearboxAccountAuthenticated(unsigned char ControllerId);
+	bool IsGearboxAccountAuthenticated(unsigned char ControllerId);
 	struct FString GetGameName();
 	struct FString GetHardwareName();
 	struct FString GetPlatformName();
-	struct FString GetPlatformTicket(int ControllerId, unsigned long bPrimary);
-	void ClearSparkConfigReceivedDelegate(struct FScriptDelegate SparkConfigReceivedDelegate);
-	void AddSparkConfigReceivedDelegate(struct FScriptDelegate SparkConfigReceivedDelegate);
+	struct FString GetPlatformTicket(int ControllerId, bool bPrimary);
+	void ClearSparkConfigReceivedDelegate(const struct FScriptDelegate& SparkConfigReceivedDelegate);
+	void AddSparkConfigReceivedDelegate(const struct FScriptDelegate& SparkConfigReceivedDelegate);
 	struct FString GetPlatformLoginNameFromController(unsigned char ControllerId);
-	struct FString eventGetPlatformLoginNameFromSplitscreenIndex(int SplitscreenIndex);
-	struct FString eventGetPlatformLoginName();
-	unsigned char eventGetLoginStatus();
-	bool eventIsShiftEnabled();
-	bool eventIsSparkEnabled();
-	bool WithShift();
-	bool WithSpark();
-	int IssueSparkStringRequest(struct FString URL, struct FString RequestData, struct FScriptDelegate SparkRequestCompleteDelegate, struct FHttpParameters* HttpRequestParameters);
-	int IssueSparkRequest(struct FString URL, struct FScriptDelegate SparkRequestCompleteDelegate, struct FHttpParameters* HttpParameters, TArray< unsigned char >* RequestData);
+	struct FString GetPlatformLoginNameFromSplitscreenIndex(int SplitscreenIndex);
+	struct FString GetPlatformLoginName();
+	unsigned char GetLoginStatus();
+	bool IsShiftEnabled();
+	bool IsSparkEnabled();
+	static bool WithShift();
+	static bool WithSpark();
+	int IssueSparkStringRequest(const struct FString& URL, const struct FString& RequestData, const struct FScriptDelegate& SparkRequestCompleteDelegate, struct FHttpParameters* HttpRequestParameters);
+	int IssueSparkRequest(const struct FString& URL, const struct FScriptDelegate& SparkRequestCompleteDelegate, struct FHttpParameters* HttpParameters, TArray<unsigned char>* RequestData);
 	struct FString AlternativeXboxlivePlatformId(struct FUniqueNetId* NetId);
 	void OnSparkEmergencyMessageUpdated();
-	void OnSparkConfigReceived(TArray< unsigned char > ConfigArray);
+	void OnSparkConfigReceived(TArray<unsigned char> ConfigArray);
 	void OnSparkRequestComplete(struct FSparkResult* Result);
 };
 
-// UClass* USparkInterfaceImpl::pClassPointer = NULL;
 
-// 0x0034 (0x0070 - 0x003C)
+// Class GearboxFramework.SparkServiceConfiguration
+// 0x0034 (0x003C - 0x0070)
 class USparkServiceConfiguration : public UObject
 {
 public:
-	struct FName                                       ServiceName;                                      		// 0x003C (0x0008) [0x0000000000000000]
-	struct FName                                       ConfigurationGroup;                               		// 0x0044 (0x0008) [0x0000000000000000]
-	TArray< struct FString >                           Keys;                                             		// 0x004C (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
-	TArray< struct FString >                           Values;                                           		// 0x0058 (0x000C) [0x0000000000500000]              ( CPF_NeedCtorLink )
-	struct FString                                     OverrideUrl;                                      		// 0x0064 (0x000C) [0x0000000000404000]              ( CPF_Config | CPF_NeedCtorLink )
+	struct FName                                       ServiceName;                                              // 0x003C(0x0008)
+	struct FName                                       ConfigurationGroup;                                       // 0x0044(0x0008)
+	TArray<struct FString>                             Keys;                                                     // 0x004C(0x000C) (AlwaysInit, NeedCtorLink)
+	TArray<struct FString>                             Values;                                                   // 0x0058(0x000C) (AlwaysInit, NeedCtorLink)
+	struct FString                                     OverrideUrl;                                              // 0x0064(0x000C) (Config, NeedCtorLink)
 
-public:
-	float GetFloatParameter(struct FString KeyName, float DefaultValue, float MinimumValue, float MaximumValue);
-	int GetIntParameter(struct FString KeyName, int DefaultValue, int MinimumValue, int MaximumValue);
-	struct FString GetStringParameter(struct FString KeyName, struct FString Default);
-	struct FString GetParameter(struct FString KeyNameToSearchFor);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SparkServiceConfiguration");
+		return ptr;
+	}
+
+
+	bool GetBoolParameter(const struct FString& KeyName, bool Default);
+	float GetFloatParameter(const struct FString& KeyName, float DefaultValue, float MinimumValue, float MaximumValue);
+	int GetIntParameter(const struct FString& KeyName, int DefaultValue, int MinimumValue, int MaximumValue);
+	struct FString GetStringParameter(const struct FString& KeyName, const struct FString& Default);
+	struct FString GetParameter(const struct FString& KeyNameToSearchFor);
 	void LoadService(struct FServiceResult* Service);
 	void LoadOverrides();
 };
 
-// UClass* USparkServiceConfiguration::pClassPointer = NULL;
 
-// 0x003C (0x0078 - 0x003C)
-class USparkTypes : public UObject
-{
-public:
-	struct FScriptDelegate                             __OnSparkRequestComplete__Delegate;               		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FScriptDelegate                             __OnSparkConfigReceived__Delegate;                		// 0x0048 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FScriptDelegate                             __OnSparkInitialized__Delegate;                   		// 0x0054 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FScriptDelegate                             __OnSparkEmergencyMessageUpdated__Delegate;       		// 0x0060 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FScriptDelegate                             __OnEntitlementsUpdated__Delegate;                		// 0x006C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-
-public:
-	struct FString UTF8toString(TArray< unsigned char > inputBytes);
-	void OnEntitlementsUpdated(class UGearboxAccountData* GbxAccount);
-	void OnSparkEmergencyMessageUpdated();
-	void OnSparkInitialized(unsigned char InitializedResult);
-	void OnSparkConfigReceived(TArray< unsigned char > ConfigArray);
-	void OnSparkRequestComplete(struct FSparkResult* Result);
-};
-
-// UClass* USparkTypes::pClassPointer = NULL;
-
-// 0x0004 (0x00AC - 0x00A8)
+// Class GearboxFramework.Action_ChangeRuleSet
+// 0x0004 (0x00A8 - 0x00AC)
 class UAction_ChangeRuleSet : public UActionSequence
 {
 public:
-	class URuleSet*                                    NewRuleSet;                                       		// 0x00A8 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class URuleSet*                                    NewRuleSet;                                               // 0x00A8(0x0004) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Action_ChangeRuleSet");
+		return ptr;
+	}
+
 };
 
-// UClass* UAction_ChangeRuleSet::pClassPointer = NULL;
 
+// Class GearboxFramework.RES_RuleSetChange
 // 0x0000 (0x003C - 0x003C)
-class URES_RuleSetChange : public UActionResource {};
+class URES_RuleSetChange : public UActionResource
+{
+public:
 
-// UClass* URES_RuleSetChange::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("RES_RuleSetChange");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.Action_FaceThreat
 // 0x0000 (0x00B0 - 0x00B0)
 class UAction_FaceThreat : public UActionSequencePawn
 {
 public:
-	void eventStopSequence();
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Action_FaceThreat");
+		return ptr;
+	}
+
+
+	void StopSequence();
 };
 
-// UClass* UAction_FaceThreat::pClassPointer = NULL;
 
+// Class GearboxFramework.RES_FacingPolicy
 // 0x0000 (0x003C - 0x003C)
-class URES_FacingPolicy : public UActionResource {};
+class URES_FacingPolicy : public UActionResource
+{
+public:
 
-// UClass* URES_FacingPolicy::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("RES_FacingPolicy");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.Action_MoveRandom
 // 0x0000 (0x00B0 - 0x00B0)
-class UAction_MoveRandom : public UActionSequencePawn {};
+class UAction_MoveRandom : public UActionSequencePawn
+{
+public:
 
-// UClass* UAction_MoveRandom::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Action_MoveRandom");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.Action_MoveTo
 // 0x0000 (0x00B0 - 0x00B0)
-class UAction_MoveTo : public UActionSequencePawn {};
+class UAction_MoveTo : public UActionSequencePawn
+{
+public:
 
-// UClass* UAction_MoveTo::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Action_MoveTo");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.RES_Movement
 // 0x0000 (0x003C - 0x003C)
-class URES_Movement : public UActionResource {};
+class URES_Movement : public UActionResource
+{
+public:
 
-// UClass* URES_Movement::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("RES_Movement");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.Action_PopRuleSet
 // 0x0000 (0x00B0 - 0x00B0)
-class UAction_PopRuleSet : public UActionSequencePawn {};
+class UAction_PopRuleSet : public UActionSequencePawn
+{
+public:
 
-// UClass* UAction_PopRuleSet::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Action_PopRuleSet");
+		return ptr;
+	}
 
-// 0x0004 (0x00B4 - 0x00B0)
+};
+
+
+// Class GearboxFramework.Action_PushRuleSet
+// 0x0004 (0x00B0 - 0x00B4)
 class UAction_PushRuleSet : public UActionSequencePawn
 {
 public:
-	class URuleSet*                                    NewRuleSet;                                       		// 0x00B0 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class URuleSet*                                    NewRuleSet;                                               // 0x00B0(0x0004) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Action_PushRuleSet");
+		return ptr;
+	}
+
 };
 
-// UClass* UAction_PushRuleSet::pClassPointer = NULL;
 
+// Class GearboxFramework.ActorAttributeContextResolver
 // 0x0000 (0x003C - 0x003C)
 class UActorAttributeContextResolver : public UAttributeContextResolver
 {
 public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("ActorAttributeContextResolver");
+		return ptr;
+	}
+
+
 	class UObject* GetAttributeContext(class UAttributeDefinitionBase* Attribute, class UObject* AttributeContextSource);
 };
 
-// UClass* UActorAttributeContextResolver::pClassPointer = NULL;
 
+// Class GearboxFramework.AIComponentAttributeContextResolver
 // 0x0000 (0x003C - 0x003C)
 class UAIComponentAttributeContextResolver : public UAttributeContextResolver
 {
 public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("AIComponentAttributeContextResolver");
+		return ptr;
+	}
+
+
 	class UObject* GetAttributeContext(class UAttributeDefinitionBase* Attribute, class UObject* AttributeContextSource);
 };
 
-// UClass* UAIComponentAttributeContextResolver::pClassPointer = NULL;
 
+// Class GearboxFramework.AIStateBase
 // 0x0000 (0x006C - 0x006C)
-class UAIStateBase : public UGearboxEditorNode {};
+class UAIStateBase : public UGearboxEditorNode
+{
+public:
 
-// UClass* UAIStateBase::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("AIStateBase");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.AIState
 // 0x0000 (0x006C - 0x006C)
-class UAIState : public UAIStateBase {};
+class UAIState : public UAIStateBase
+{
+public:
 
-// UClass* UAIState::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("AIState");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.AIState_Priority
 // 0x0000 (0x006C - 0x006C)
-class UAIState_Priority : public UAIStateBase {};
+class UAIState_Priority : public UAIStateBase
+{
+public:
 
-// UClass* UAIState_Priority::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("AIState_Priority");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.AIState_Random
 // 0x0000 (0x006C - 0x006C)
-class UAIState_Random : public UAIStateBase {};
+class UAIState_Random : public UAIStateBase
+{
+public:
 
-// UClass* UAIState_Random::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("AIState_Random");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.AIState_Sequential
 // 0x0000 (0x006C - 0x006C)
-class UAIState_Sequential : public UAIStateBase {};
+class UAIState_Sequential : public UAIStateBase
+{
+public:
 
-// UClass* UAIState_Sequential::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("AIState_Sequential");
+		return ptr;
+	}
 
-// 0x000A (0x0056 - 0x004C)
+};
+
+
+// Class GearboxFramework.Behavior_AIHold
+// 0x000A (0x004C - 0x0056)
 class UBehavior_AIHold : public UBehaviorBase
 {
 public:
-	struct FName                                       Reason;                                           		// 0x004C (0x0008) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      Action;                                           		// 0x0054 (0x0001) [0x0000000000000001]              ( CPF_Edit )
-	unsigned char                                      Type;                                             		// 0x0055 (0x0001) [0x0000000000000001]              ( CPF_Edit )
+	struct FName                                       Reason;                                                   // 0x004C(0x0008) (Edit)
+	unsigned char                                      Action;                                                   // 0x0054(0x0001) (Edit)
+	unsigned char                                      Type;                                                     // 0x0055(0x0001) (Edit)
 
-public:
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_AIHold");
+		return ptr;
+	}
+
+
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// UClass* UBehavior_AIHold::pClassPointer = NULL;
 
-// 0x0014 (0x0060 - 0x004C)
+// Class GearboxFramework.Behavior_AIPriority
+// 0x0014 (0x004C - 0x0060)
 class UBehavior_AIPriority : public UBehaviorBase
 {
 public:
-	float                                              PriorityModifier;                                 		// 0x004C (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	struct FBehaviorContextData                        Target;                                           		// 0x0050 (0x0010) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	float                                              PriorityModifier;                                         // 0x004C(0x0004) (Edit, Const)
+	struct FBehaviorContextData                        Target;                                                   // 0x0050(0x0010) (Edit, Const)
 
-public:
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_AIPriority");
+		return ptr;
+	}
+
+
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// UClass* UBehavior_AIPriority::pClassPointer = NULL;
 
-// 0x0004 (0x0050 - 0x004C)
+// Class GearboxFramework.Behavior_AITargeting
+// 0x0004 (0x004C - 0x0050)
 class UBehavior_AITargeting : public UBehaviorBase
 {
 public:
-	class UTargetingDefinition*                        NewTargetingDefinition;                           		// 0x004C (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	class UTargetingDefinition*                        NewTargetingDefinition;                                   // 0x004C(0x0004) (Edit, Const)
 
-public:
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_AITargeting");
+		return ptr;
+	}
+
+
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// UClass* UBehavior_AITargeting::pClassPointer = NULL;
 
-// 0x000C (0x0058 - 0x004C)
+// Class GearboxFramework.Behavior_ChangeAnyBehaviorSequenceState
+// 0x000C (0x004C - 0x0058)
 class UBehavior_ChangeAnyBehaviorSequenceState : public UBehaviorBase
 {
 public:
-	unsigned char                                      Action;                                           		// 0x004C (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	struct FName                                       SequenceName;                                     		// 0x0050 (0x0008) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	unsigned char                                      Action;                                                   // 0x004C(0x0001) (Edit, Const)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x004D(0x0003) MISSED OFFSET
+	struct FName                                       SequenceName;                                             // 0x0050(0x0008) (Edit, Const)
 
-public:
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_ChangeAnyBehaviorSequenceState");
+		return ptr;
+	}
+
+
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// UClass* UBehavior_ChangeAnyBehaviorSequenceState::pClassPointer = NULL;
 
-// 0x000C (0x0058 - 0x004C)
+// Class GearboxFramework.Behavior_ChangeLocalBehaviorSequenceState
+// 0x000C (0x004C - 0x0058)
 class UBehavior_ChangeLocalBehaviorSequenceState : public UBehaviorBase
 {
 public:
-	unsigned char                                      Action;                                           		// 0x004C (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	struct FName                                       SequenceName;                                     		// 0x0050 (0x0008) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	unsigned char                                      Action;                                                   // 0x004C(0x0001) (Edit, Const)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x004D(0x0003) MISSED OFFSET
+	struct FName                                       SequenceName;                                             // 0x0050(0x0008) (Edit, Const)
 
-public:
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_ChangeLocalBehaviorSequenceState");
+		return ptr;
+	}
+
+
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// UClass* UBehavior_ChangeLocalBehaviorSequenceState::pClassPointer = NULL;
 
-// 0x0004 (0x0050 - 0x004C)
+// Class GearboxFramework.Behavior_CompareBool
+// 0x0004 (0x004C - 0x0050)
 class UBehavior_CompareBool : public UBehaviorBase
 {
 public:
-	unsigned long                                      BoolValue : 1;                                    		// 0x004C (0x0004) [0x0000000000000000] [0x00000001]
+	unsigned long                                      BoolValue : 1;                                            // 0x004C(0x0004)
 
-public:
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_CompareBool");
+		return ptr;
+	}
+
+
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// UClass* UBehavior_CompareBool::pClassPointer = NULL;
 
-// 0x0030 (0x007C - 0x004C)
+// Class GearboxFramework.Behavior_CompareValues
+// 0x0030 (0x004C - 0x007C)
 class UBehavior_CompareValues : public UBehaviorBase
 {
 public:
-	struct FAttributeInitializationData                ValueA;                                           		// 0x004C (0x0010) [0x0000000000000001]              ( CPF_Edit )
-	struct FBehaviorContextData                        ContextB;                                         		// 0x005C (0x0010) [0x0000000000000001]              ( CPF_Edit )
-	struct FAttributeInitializationData                ValueB;                                           		// 0x006C (0x0010) [0x0000000000000001]              ( CPF_Edit )
+	struct FAttributeInitializationData                ValueA;                                                   // 0x004C(0x0010) (Edit)
+	struct FBehaviorContextData                        ContextB;                                                 // 0x005C(0x0010) (Edit)
+	struct FAttributeInitializationData                ValueB;                                                   // 0x006C(0x0010) (Edit)
 
-public:
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_CompareValues");
+		return ptr;
+	}
+
+
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// UClass* UBehavior_CompareValues::pClassPointer = NULL;
 
-// 0x0008 (0x0054 - 0x004C)
+// Class GearboxFramework.Behavior_CustomEvent
+// 0x0008 (0x004C - 0x0054)
 class UBehavior_CustomEvent : public UBehaviorBase
 {
 public:
-	struct FName                                       CustomEventName;                                  		// 0x004C (0x0008) [0x0000000000000001]              ( CPF_Edit )
+	struct FName                                       CustomEventName;                                          // 0x004C(0x0008) (Edit)
 
-public:
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_CustomEvent");
+		return ptr;
+	}
+
+
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// UClass* UBehavior_CustomEvent::pClassPointer = NULL;
 
-// 0x0004 (0x0050 - 0x004C)
+// Class GearboxFramework.Behavior_Delay
+// 0x0004 (0x004C - 0x0050)
 class UBehavior_Delay : public UBehaviorBase
 {
 public:
-	float                                              Delay;                                            		// 0x004C (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	float                                              Delay;                                                    // 0x004C(0x0004) (Edit, Const)
 
-public:
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_Delay");
+		return ptr;
+	}
+
+
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// UClass* UBehavior_Delay::pClassPointer = NULL;
 
-// 0x0008 (0x0054 - 0x004C)
+// Class GearboxFramework.Behavior_Gate
+// 0x0008 (0x004C - 0x0054)
 class UBehavior_Gate : public UBehaviorBase
 {
 public:
-	int                                                GateCount;                                        		// 0x004C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	int                                                ActivationCount;                                  		// 0x0050 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	int                                                GateCount;                                                // 0x004C(0x0004) (Edit)
+	int                                                ActivationCount;                                          // 0x0050(0x0004) (Transient)
 
-public:
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_Gate");
+		return ptr;
+	}
+
+
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// UClass* UBehavior_Gate::pClassPointer = NULL;
 
+// Class GearboxFramework.Behavior_GetFloatParam
 // 0x0000 (0x0058 - 0x0058)
 class UBehavior_GetFloatParam : public UParameterBehaviorBase
 {
 public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_GetFloatParam");
+		return ptr;
+	}
+
+
 	void PublishBehaviorOutput(float Value, struct FBehaviorKernelInfo* KernelInfo);
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// UClass* UBehavior_GetFloatParam::pClassPointer = NULL;
 
+// Class GearboxFramework.Behavior_GetObjectParam
 // 0x0000 (0x0058 - 0x0058)
 class UBehavior_GetObjectParam : public UParameterBehaviorBase
 {
 public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_GetObjectParam");
+		return ptr;
+	}
+
+
 	void PublishBehaviorOutput(class UObject* Value, struct FBehaviorKernelInfo* KernelInfo);
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// UClass* UBehavior_GetObjectParam::pClassPointer = NULL;
 
-// 0x0004 (0x005C - 0x0058)
+// Class GearboxFramework.Behavior_GetVectorParam
+// 0x0004 (0x0058 - 0x005C)
 class UBehavior_GetVectorParam : public UParameterBehaviorBase
 {
 public:
-	unsigned long                                      bTreatAsVector : 1;                               		// 0x0058 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
+	unsigned long                                      bTreatAsVector : 1;                                       // 0x0058(0x0004) (Edit)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_GetVectorParam");
+		return ptr;
+	}
+
+
 	void PublishBehaviorOutput(float R, float G, float B, float A, struct FBehaviorKernelInfo* KernelInfo);
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// UClass* UBehavior_GetVectorParam::pClassPointer = NULL;
 
-// 0x0010 (0x005C - 0x004C)
+// Class GearboxFramework.Behavior_InterpolateFloatOverTime
+// 0x0010 (0x004C - 0x005C)
 class UBehavior_InterpolateFloatOverTime : public UBehaviorBase
 {
 public:
-	float                                              Duration;                                         		// 0x004C (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	float                                              UpdateInterval;                                   		// 0x0050 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	float                                              EndingValue;                                      		// 0x0054 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	float                                              BeginningValue;                                   		// 0x0058 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	float                                              Duration;                                                 // 0x004C(0x0004) (Edit, Const)
+	float                                              UpdateInterval;                                           // 0x0050(0x0004) (Edit, Const)
+	float                                              EndingValue;                                              // 0x0054(0x0004) (Edit, Const)
+	float                                              BeginningValue;                                           // 0x0058(0x0004) (Edit, Const)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_InterpolateFloatOverTime");
+		return ptr;
+	}
+
+
 	void PublishBehaviorOutput(float Result, struct FBehaviorKernelInfo* KernelInfo);
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// UClass* UBehavior_InterpolateFloatOverTime::pClassPointer = NULL;
 
-// 0x0014 (0x0060 - 0x004C)
+// Class GearboxFramework.Behavior_Metronome
+// 0x0014 (0x004C - 0x0060)
 class UBehavior_Metronome : public UBehaviorBase
 {
 public:
-	unsigned long                                      bUseTickCount : 1;                                		// 0x004C (0x0004) [0x0000000000000002] [0x00000001] ( CPF_Const )
-	unsigned long                                      bUseDuration : 1;                                 		// 0x004C (0x0004) [0x0000000000000002] [0x00000002] ( CPF_Const )
-	int                                                MaxTickCount;                                     		// 0x0050 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	int                                                CurrentTickCount;                                 		// 0x0054 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	float                                              Duration;                                         		// 0x0058 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	float                                              TickInterval;                                     		// 0x005C (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	unsigned long                                      bUseTickCount : 1;                                        // 0x004C(0x0004) (Const)
+	unsigned long                                      bUseDuration : 1;                                         // 0x004C(0x0004) (Const)
+	int                                                MaxTickCount;                                             // 0x0050(0x0004) (Edit, Const)
+	int                                                CurrentTickCount;                                         // 0x0054(0x0004) (Transient)
+	float                                              Duration;                                                 // 0x0058(0x0004) (Edit, Const)
+	float                                              TickInterval;                                             // 0x005C(0x0004) (Edit, Const)
 
-public:
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_Metronome");
+		return ptr;
+	}
+
+
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// UClass* UBehavior_Metronome::pClassPointer = NULL;
 
-// 0x0014 (0x0060 - 0x004C)
+// Class GearboxFramework.Behavior_ModifyTimer
+// 0x0014 (0x004C - 0x0060)
 class UBehavior_ModifyTimer : public UBehaviorBase
 {
 public:
-	unsigned char                                      TimerId;                                          		// 0x004C (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	unsigned char                                      Operation;                                        		// 0x004D (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
-	struct FAttributeInitializationData                NewTimerDelay;                                    		// 0x0050 (0x0010) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	unsigned char                                      TimerId;                                                  // 0x004C(0x0001) (Edit, Const)
+	unsigned char                                      Operation;                                                // 0x004D(0x0001) (Edit, Const)
+	unsigned char                                      UnknownData00[0x2];                                       // 0x004E(0x0002) MISSED OFFSET
+	struct FAttributeInitializationData                NewTimerDelay;                                            // 0x0050(0x0010) (Edit, Const)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_ModifyTimer");
+		return ptr;
+	}
+
+
 	void PublishBehaviorOutput(float TimeRemaining, struct FBehaviorKernelInfo* KernelInfo);
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// UClass* UBehavior_ModifyTimer::pClassPointer = NULL;
 
-// 0x0004 (0x005C - 0x0058)
+// Class GearboxFramework.Behavior_SetFloatParam
+// 0x0004 (0x0058 - 0x005C)
 class UBehavior_SetFloatParam : public UParameterBehaviorBase
 {
 public:
-	float                                              Value;                                            		// 0x0058 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	float                                              Value;                                                    // 0x0058(0x0004) (Edit)
 
-public:
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_SetFloatParam");
+		return ptr;
+	}
+
+
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// UClass* UBehavior_SetFloatParam::pClassPointer = NULL;
 
-// 0x0004 (0x005C - 0x0058)
+// Class GearboxFramework.Behavior_SetObjectParam
+// 0x0004 (0x0058 - 0x005C)
 class UBehavior_SetObjectParam : public UParameterBehaviorBase
 {
 public:
-	class UObject*                                     Value;                                            		// 0x0058 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UObject*                                     Value;                                                    // 0x0058(0x0004) (Edit)
 
-public:
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_SetObjectParam");
+		return ptr;
+	}
+
+
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// UClass* UBehavior_SetObjectParam::pClassPointer = NULL;
 
-// 0x0014 (0x006C - 0x0058)
+// Class GearboxFramework.Behavior_SetVectorParam
+// 0x0014 (0x0058 - 0x006C)
 class UBehavior_SetVectorParam : public UParameterBehaviorBase
 {
 public:
-	float                                              RValue;                                           		// 0x0058 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              GValue;                                           		// 0x005C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              bValue;                                           		// 0x0060 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              AValue;                                           		// 0x0064 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	unsigned long                                      bKeepR : 1;                                       		// 0x0068 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      bKeepG : 1;                                       		// 0x0068 (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
-	unsigned long                                      bKeepB : 1;                                       		// 0x0068 (0x0004) [0x0000000000000001] [0x00000004] ( CPF_Edit )
-	unsigned long                                      bKeepA : 1;                                       		// 0x0068 (0x0004) [0x0000000000000001] [0x00000008] ( CPF_Edit )
-	unsigned long                                      bTreatAsVector : 1;                               		// 0x0068 (0x0004) [0x0000000000000001] [0x00000010] ( CPF_Edit )
+	float                                              RValue;                                                   // 0x0058(0x0004) (Edit)
+	float                                              GValue;                                                   // 0x005C(0x0004) (Edit)
+	float                                              bValue;                                                   // 0x0060(0x0004) (Edit)
+	float                                              AValue;                                                   // 0x0064(0x0004) (Edit)
+	unsigned long                                      bKeepR : 1;                                               // 0x0068(0x0004) (Edit)
+	unsigned long                                      bKeepG : 1;                                               // 0x0068(0x0004) (Edit)
+	unsigned long                                      bKeepB : 1;                                               // 0x0068(0x0004) (Edit)
+	unsigned long                                      bKeepA : 1;                                               // 0x0068(0x0004) (Edit)
+	unsigned long                                      bTreatAsVector : 1;                                       // 0x0068(0x0004) (Edit)
 
-public:
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_SetVectorParam");
+		return ptr;
+	}
+
+
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// UClass* UBehavior_SetVectorParam::pClassPointer = NULL;
 
-// 0x000C (0x0058 - 0x004C)
+// Class GearboxFramework.Behavior_SpecialMove
+// 0x000C (0x004C - 0x0058)
 class UBehavior_SpecialMove : public UBehaviorBase
 {
 public:
-	class USpecialMoveDefinition*                      SpecialMove;                                      		// 0x004C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	unsigned long                                      bStopCurrentMove : 1;                             		// 0x0050 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      bQueueIfCannotPlay : 1;                           		// 0x0050 (0x0004) [0x0000000000000001] [0x00000002] ( CPF_Edit )
-	unsigned long                                      bLocal : 1;                                       		// 0x0050 (0x0004) [0x0000000000000001] [0x00000004] ( CPF_Edit )
-	float                                              Duration;                                         		// 0x0054 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class USpecialMoveDefinition*                      SpecialMove;                                              // 0x004C(0x0004) (Edit)
+	unsigned long                                      bStopCurrentMove : 1;                                     // 0x0050(0x0004) (Edit)
+	unsigned long                                      bQueueIfCannotPlay : 1;                                   // 0x0050(0x0004) (Edit)
+	unsigned long                                      bLocal : 1;                                               // 0x0050(0x0004) (Edit)
+	float                                              Duration;                                                 // 0x0054(0x0004) (Edit)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_SpecialMove");
+		return ptr;
+	}
+
+
 	void PlaySpecialMove(class USpecialMoveComponent* SMC);
 	void TriggerOutput(struct FBehaviorKernelInfo* KernelInfo);
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// UClass* UBehavior_SpecialMove::pClassPointer = NULL;
 
-// 0x0004 (0x0050 - 0x004C)
+// Class GearboxFramework.Behavior_SpecialMoveStop
+// 0x0004 (0x004C - 0x0050)
 class UBehavior_SpecialMoveStop : public UBehaviorBase
 {
 public:
-	class USpecialMoveDefinition*                      SpecificMove;                                     		// 0x004C (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class USpecialMoveDefinition*                      SpecificMove;                                             // 0x004C(0x0004) (Edit)
 
-public:
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_SpecialMoveStop");
+		return ptr;
+	}
+
+
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// UClass* UBehavior_SpecialMoveStop::pClassPointer = NULL;
 
-// 0x0008 (0x0054 - 0x004C)
+// Class GearboxFramework.Behavior_StartAkAmbientSound
+// 0x0008 (0x004C - 0x0054)
 class UBehavior_StartAkAmbientSound : public UBehaviorBase
 {
 public:
-	class UAkEvent*                                    AkEvent;                                          		// 0x004C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class AWwiseSoundGroup*                            SoundGroup;                                       		// 0x0050 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UAkEvent*                                    AkEvent;                                                  // 0x004C(0x0004) (Edit)
+	class AWwiseSoundGroup*                            SoundGroup;                                               // 0x0050(0x0004) (Edit)
 
-public:
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_StartAkAmbientSound");
+		return ptr;
+	}
+
+
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// UClass* UBehavior_StartAkAmbientSound::pClassPointer = NULL;
 
-// 0x0008 (0x0054 - 0x004C)
+// Class GearboxFramework.Behavior_StopAkAmbientSound
+// 0x0008 (0x004C - 0x0054)
 class UBehavior_StopAkAmbientSound : public UBehaviorBase
 {
 public:
-	class UAkEvent*                                    AkEvent;                                          		// 0x004C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class AWwiseSoundGroup*                            SoundGroup;                                       		// 0x0050 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	class UAkEvent*                                    AkEvent;                                                  // 0x004C(0x0004) (Edit)
+	class AWwiseSoundGroup*                            SoundGroup;                                               // 0x0050(0x0004) (Edit)
 
-public:
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_StopAkAmbientSound");
+		return ptr;
+	}
+
+
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// UClass* UBehavior_StopAkAmbientSound::pClassPointer = NULL;
 
-// 0x0004 (0x0050 - 0x004C)
+// Class GearboxFramework.Behavior_StopDialog
+// 0x0004 (0x004C - 0x0050)
 class UBehavior_StopDialog : public UBehaviorBase
 {
 public:
-	class UGearboxDialogEventTag*                      EventTag;                                         		// 0x004C (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	class UGearboxDialogEventTag*                      EventTag;                                                 // 0x004C(0x0004) (Edit, Const)
 
-public:
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_StopDialog");
+		return ptr;
+	}
+
+
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// UClass* UBehavior_StopDialog::pClassPointer = NULL;
 
-// 0x0001 (0x004D - 0x004C)
+// Class GearboxFramework.Behavior_ToggleDialog
+// 0x0001 (0x004C - 0x004D)
 class UBehavior_ToggleDialog : public UBehaviorBase
 {
 public:
-	unsigned char                                      Option;                                           		// 0x004C (0x0001) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	unsigned char                                      Option;                                                   // 0x004C(0x0001) (Edit, Const)
 
-public:
-	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, struct FBehaviorParameters EventData, struct FBehaviorKernelInfo* KernelInfo);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Behavior_ToggleDialog");
+		return ptr;
+	}
+
+
+	void ApplyBehaviorToContext(class UObject* ContextObject, class UObject* SelfObject, class UObject* MyInstigatorObject, class UObject* OtherEventParticipantObject, const struct FBehaviorParameters& EventData, struct FBehaviorKernelInfo* KernelInfo);
 };
 
-// UClass* UBehavior_ToggleDialog::pClassPointer = NULL;
 
-// 0x001C (0x00A5 - 0x0089)
+// Class GearboxFramework.CameraModifierCrossfade
+// 0x001C (0x0089 - 0x00A5)
 class UCameraModifierCrossfade : public UGearboxCameraModifier
 {
 public:
-	class UGearboxCameraModifier*                      ModifierA;                                        		// 0x008C (0x0004) [0x0000000000000000]
-	class UGearboxCameraModifier*                      ModifierB;                                        		// 0x0090 (0x0004) [0x0000000000000000]
-	int                                                CurModifierNdx;                                   		// 0x0094 (0x0004) [0x0000000000000000]
-	float                                              CurBlendWeight;                                   		// 0x0098 (0x0004) [0x0000000000000000]
-	float                                              BlendSpeed;                                       		// 0x009C (0x0004) [0x0000000000000002]              ( CPF_Const )
-	int                                                DebugInset;                                       		// 0x00A0 (0x0004) [0x0000000000000002]              ( CPF_Const )
-	unsigned char                                      LerpMode;                                         		// 0x00A4 (0x0001) [0x0000000000000002]              ( CPF_Const )
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0089(0x0003) MISSED OFFSET
+	class UGearboxCameraModifier*                      ModifierA;                                                // 0x008C(0x0004)
+	class UGearboxCameraModifier*                      ModifierB;                                                // 0x0090(0x0004)
+	int                                                CurModifierNdx;                                           // 0x0094(0x0004)
+	float                                              CurBlendWeight;                                           // 0x0098(0x0004)
+	float                                              BlendSpeed;                                               // 0x009C(0x0004) (Const)
+	int                                                DebugInset;                                               // 0x00A0(0x0004) (Const)
+	unsigned char                                      LerpMode;                                                 // 0x00A4(0x0001) (Const)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("CameraModifierCrossfade");
+		return ptr;
+	}
+
+
 	void DoCrossfade();
 	void UpdateAllLerps(float DeltaTime, struct FTPOV* OutPOV);
 	bool ModifyCamera(class ACamera* Camera, float DeltaTime, struct FTPOV* OutPOV);
 	void ProcessCameraBlend(class ACamera* Camera, float AdjustedDeltaTime, struct FTPOV* OutPOV);
 	void InitializeSubModifiers();
-	void eventEnableModifier();
+	void EnableModifier();
 };
 
-// UClass* UCameraModifierCrossfade::pClassPointer = NULL;
 
-// 0x0037 (0x00C0 - 0x0089)
+// Class GearboxFramework.CameraModifierLookAt
+// 0x0037 (0x0089 - 0x00C0)
 class UCameraModifierLookAt : public UGearboxCameraModifier
 {
 public:
-	unsigned char                                      LookAtMode;                                       		// 0x008C (0x0001) [0x0000000000000000]
-	unsigned long                                      bActionFinished : 1;                              		// 0x0090 (0x0004) [0x0000000000000000] [0x00000001]
-	float                                              Duration;                                         		// 0x0094 (0x0004) [0x0000000000000000]
-	float                                              TimeElapsed;                                      		// 0x0098 (0x0004) [0x0000000000000000]
-	float                                              ThirdPersonPullBackDistance;                      		// 0x009C (0x0004) [0x0000000000000000]
-	float                                              ThirdPersonPushSideDistance;                      		// 0x00A0 (0x0004) [0x0000000000000000]
-	float                                              ThirdPersonRaiseUpDistance;                       		// 0x00A4 (0x0004) [0x0000000000000000]
-	float                                              Zoom;                                             		// 0x00A8 (0x0004) [0x0000000000000000]
-	float                                              TransitionInTime;                                 		// 0x00AC (0x0004) [0x0000000000000000]
-	float                                              TransitionOutTime;                                		// 0x00B0 (0x0004) [0x0000000000000000]
-	class AActor*                                      LookAtTarget;                                     		// 0x00B4 (0x0004) [0x0000000000000000]
-	struct FName                                       LookAtBone;                                       		// 0x00B8 (0x0008) [0x0000000000000000]
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0089(0x0003) MISSED OFFSET
+	unsigned char                                      LookAtMode;                                               // 0x008C(0x0001)
+	unsigned char                                      UnknownData01[0x3];                                       // 0x008D(0x0003) MISSED OFFSET
+	unsigned long                                      bActionFinished : 1;                                      // 0x0090(0x0004)
+	float                                              Duration;                                                 // 0x0094(0x0004)
+	float                                              TimeElapsed;                                              // 0x0098(0x0004)
+	float                                              ThirdPersonPullBackDistance;                              // 0x009C(0x0004)
+	float                                              ThirdPersonPushSideDistance;                              // 0x00A0(0x0004)
+	float                                              ThirdPersonRaiseUpDistance;                               // 0x00A4(0x0004)
+	float                                              Zoom;                                                     // 0x00A8(0x0004)
+	float                                              TransitionInTime;                                         // 0x00AC(0x0004)
+	float                                              TransitionOutTime;                                        // 0x00B0(0x0004)
+	class AActor*                                      LookAtTarget;                                             // 0x00B4(0x0004)
+	struct FName                                       LookAtBone;                                               // 0x00B8(0x0008)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("CameraModifierLookAt");
+		return ptr;
+	}
+
+
 	void ExecuteFadeIfNeeded(class AGearboxPlayerController** PC);
 	struct FVector GetDesiredLocation(struct FTPOV* OutPOV, class AGearboxPlayerController** PC);
 	bool ModifyCamera(class ACamera* Camera, float DeltaTime, struct FTPOV* OutPOV);
-	bool GetBoneLocation(class AActor* Target, struct FName BoneName, struct FVector* BoneLoc);
-	void SetLookAtBone(struct FName NewBone);
+	bool GetBoneLocation(class AActor* Target, const struct FName& BoneName, struct FVector* BoneLoc);
+	void SetLookAtBone(const struct FName& NewBone);
 	void SetLookAtTarget(class AActor* newLookAtTarget);
-	void SetTargetLocation(struct FVector NewTargetLocation, float newTransitionTimeIn, float newTransitionTimeOut);
+	void SetTargetLocation(const struct FVector& NewTargetLocation, float newTransitionTimeIn, float newTransitionTimeOut);
 	void SetDuration(float NewDuration);
 	void SetTransitionTimes(float NewInTime, float NewOutTime);
 	void SetZoomFOV(float newZoom);
 	void SetThirdPersonDistances(float NewX, float NewY, float NewZ);
 	void SetLookAtMode(unsigned char NewMode);
-	void DisableModifier(unsigned long bImmediate);
+	void DisableModifier(bool bImmediate);
 	void EnableModifier();
 };
 
-// UClass* UCameraModifierLookAt::pClassPointer = NULL;
 
-// 0x0040 (0x007C - 0x003C)
+// Class GearboxFramework.DefinitionUITestCaseDefinition
+// 0x0040 (0x003C - 0x007C)
 class UDefinitionUITestCaseDefinition : public UGBXDefinition
 {
 public:
-	float                                              ConstantFloat;                                    		// 0x003C (0x0004) [0x0000000000020001]              ( CPF_Edit | CPF_EditConst )
-	TArray< float >                                    ConstantFloatArray;                               		// 0x0040 (0x000C) [0x0000000000420001]              ( CPF_Edit | CPF_EditConst | CPF_NeedCtorLink )
-	float                                              Float;                                            		// 0x004C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	TArray< float >                                    FloatArray;                                       		// 0x0050 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	class UGBXDefinition*                              EditConstReferencedDefinition;                    		// 0x005C (0x0004) [0x0000000000020001]              ( CPF_Edit | CPF_EditConst )
-	TArray< class UGBXDefinition* >                    EditConstArrayOfReferences;                       		// 0x0060 (0x000C) [0x0000000000420001]              ( CPF_Edit | CPF_EditConst | CPF_NeedCtorLink )
-	class UGBXDefinition*                              ReferencedDefinition;                             		// 0x006C (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	TArray< class UGBXDefinition* >                    ArrayOfReferences;                                		// 0x0070 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	float                                              ConstantFloat;                                            // 0x003C(0x0004) (Edit, EditConst)
+	TArray<float>                                      ConstantFloatArray;                                       // 0x0040(0x000C) (Edit, EditConst, NeedCtorLink)
+	float                                              Float;                                                    // 0x004C(0x0004) (Edit)
+	TArray<float>                                      FloatArray;                                               // 0x0050(0x000C) (Edit, NeedCtorLink)
+	class UGBXDefinition*                              EditConstReferencedDefinition;                            // 0x005C(0x0004) (Edit, EditConst)
+	TArray<class UGBXDefinition*>                      EditConstArrayOfReferences;                               // 0x0060(0x000C) (Edit, EditConst, NeedCtorLink)
+	class UGBXDefinition*                              ReferencedDefinition;                                     // 0x006C(0x0004) (Edit)
+	TArray<class UGBXDefinition*>                      ArrayOfReferences;                                        // 0x0070(0x000C) (Edit, NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("DefinitionUITestCaseDefinition");
+		return ptr;
+	}
+
 };
 
-// UClass* UDefinitionUITestCaseDefinition::pClassPointer = NULL;
 
-// 0x0018 (0x0054 - 0x003C)
+// Class GearboxFramework.SparkNews
+// 0x0018 (0x003C - 0x0054)
 class USparkNews : public UObject
 {
 public:
-	TArray< struct FNewsArticle >                      Articles;                                         		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FScriptDelegate                             __OnNewsRetrieved__Delegate;                      		// 0x0048 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	TArray<struct FNewsArticle>                        Articles;                                                 // 0x003C(0x000C) (NeedCtorLink)
+	struct FScriptDelegate                             __OnNewsRetrieved__Delegate;                              // 0x0048(0x000C) (NeedCtorLink)
 
-public:
-	class USparkServiceConfiguration* Internal_GetService(unsigned char ControllerId, class USparkInterface* Spark);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SparkNews");
+		return ptr;
+	}
+
+
+	class USparkServiceConfiguration* Internal_GetService(unsigned char ControllerId, const TScriptInterface<class USparkInterface>& Spark);
 	void CallAndClearRetrievedDelegate(unsigned char RetrievealResult);
 	void ParseArticles(class UJsonObject* NewsArticlesJSONObject);
 	void HandleNewsRetrievalResponse(struct FSparkResult* Result);
 	bool GetArticle(int Idx, struct FString* Header, struct FString* Body);
 	int GetArticleCount();
-	void RetrieveNews(unsigned char ControllerId, struct FScriptDelegate RetrievalDelegate);
+	void RetrieveNews(unsigned char ControllerId, const struct FScriptDelegate& RetrievalDelegate);
 	void OnNewsRetrieved(unsigned char RetrievealResult, class USparkNews* newsObj);
 };
 
-// UClass* USparkNews::pClassPointer = NULL;
 
-// 0x0028 (0x0064 - 0x003C)
+// Class GearboxFramework.GearboxAccountEntitlement
+// 0x0028 (0x003C - 0x0064)
 class UGearboxAccountEntitlement : public UObject
 {
 public:
-	struct FName                                       Identifier;                                       		// 0x003C (0x0008) [0x0000000000000000]
-	int                                                Id;                                               		// 0x0044 (0x0004) [0x0000000000000000]
-	unsigned long                                      Consumable : 1;                                   		// 0x0048 (0x0004) [0x0000000000000000] [0x00000001]
-	int                                                ConsumableAmount;                                 		// 0x004C (0x0004) [0x0000000000000000]
-	int                                                Consumed;                                         		// 0x0050 (0x0004) [0x0000000000000000]
-	struct FString                                     Payload;                                          		// 0x0054 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                LocallyConsumed;                                  		// 0x0060 (0x0004) [0x0000000000000000]
+	struct FName                                       Identifier;                                               // 0x003C(0x0008)
+	int                                                Id;                                                       // 0x0044(0x0004)
+	unsigned long                                      Consumable : 1;                                           // 0x0048(0x0004)
+	int                                                ConsumableAmount;                                         // 0x004C(0x0004)
+	int                                                Consumed;                                                 // 0x0050(0x0004)
+	struct FString                                     Payload;                                                  // 0x0054(0x000C) (NeedCtorLink)
+	int                                                LocallyConsumed;                                          // 0x0060(0x0004)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxAccountEntitlement");
+		return ptr;
+	}
+
 };
 
-// UClass* UGearboxAccountEntitlement::pClassPointer = NULL;
 
-// 0x002C (0x0068 - 0x003C)
+// Class GearboxFramework.GearboxAccountOffer
+// 0x002C (0x003C - 0x0068)
 class UGearboxAccountOffer : public UObject
 {
 public:
-	struct FString                                     TitleEfigs;                                       		// 0x003C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FString                                     DescriptionEfigs;                                 		// 0x0048 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	int                                                Id;                                               		// 0x0054 (0x0004) [0x0000000000000000]
-	unsigned long                                      Notified : 1;                                     		// 0x0058 (0x0004) [0x0000000000000000] [0x00000001]
-	struct FString                                     DateUnlocked;                                     		// 0x005C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	struct FString                                     TitleEfigs;                                               // 0x003C(0x000C) (NeedCtorLink)
+	struct FString                                     DescriptionEfigs;                                         // 0x0048(0x000C) (NeedCtorLink)
+	int                                                Id;                                                       // 0x0054(0x0004)
+	unsigned long                                      Notified : 1;                                             // 0x0058(0x0004)
+	struct FString                                     DateUnlocked;                                             // 0x005C(0x000C) (NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxAccountOffer");
+		return ptr;
+	}
+
 };
 
-// UClass* UGearboxAccountOffer::pClassPointer = NULL;
 
-// 0x000C (0x0194 - 0x0188)
+// Class GearboxFramework.PatrolDestination
+// 0x000C (0x0188 - 0x0194)
 class APatrolDestination : public AActor
 {
 public:
-	TArray< class APatrolDestination* >                NextPatrolPoints;                                 		// 0x0188 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
+	TArray<class APatrolDestination*>                  NextPatrolPoints;                                         // 0x0188(0x000C) (Edit, NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PatrolDestination");
+		return ptr;
+	}
+
 };
 
-// UClass* APatrolDestination::pClassPointer = NULL;
 
-// 0x0010 (0x00B4 - 0x00A4)
+// Class GearboxFramework.GearboxEULAGFxMovie
+// 0x0024 (0x0254 - 0x0278)
+class UGearboxEULAGFxMovie : public UGearboxGFxMovie
+{
+public:
+	class UGearboxEULAGFxObject*                       GearboxEULAObj;                                           // 0x0254(0x0004) (Transient)
+	unsigned char                                      CurrentControllerId;                                      // 0x0258(0x0001)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0259(0x0003) MISSED OFFSET
+	TArray<struct FEULAData>                           EULAs;                                                    // 0x025C(0x000C) (Transient, NeedCtorLink)
+	int                                                EULAIndexToDisplay;                                       // 0x0268(0x0004) (Transient)
+	struct FScriptDelegate                             __OnEULAInteractionComplete__Delegate;                    // 0x026C(0x000C) (NeedCtorLink)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxEULAGFxMovie");
+		return ptr;
+	}
+
+
+	bool HandleInputKey(int ControllerId, const struct FName& ukey, unsigned char uevent);
+	void ShowEULA();
+	void OnDeclineButtonClick();
+	void OnAcceptButtonClick();
+	void FireCompleteDelegate();
+	void extClosed();
+	void extOnDeclineButtonClick();
+	void extOnAcceptButtonClick();
+	void extOnLoad(const struct FString& Path);
+	void OnClose();
+	bool Start(bool StartPaused);
+	void OnEULAInteractionComplete(TArray<struct FEULAData>* EULAState);
+};
+
+
+// Class GearboxFramework.GearboxEULAGFxObject
+// 0x0000 (0x0078 - 0x0078)
+class UGearboxEULAGFxObject : public UGFxObject
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxEULAGFxObject");
+		return ptr;
+	}
+
+
+	void NavigateDown();
+	void NavigateUp();
+	void SetTooltipText(const struct FString& AcceptText, const struct FString& DeclineText);
+	void SetEULAText(const struct FString& Title, const struct FString& Text);
+	void Init();
+};
+
+
+// Class GearboxFramework.GearboxSeqAct_TargetPriority
+// 0x0010 (0x00A4 - 0x00B4)
 class UGearboxSeqAct_TargetPriority : public USequenceAction
 {
 public:
-	TArray< class AActor* >                            AITargets;                                        		// 0x00A4 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	float                                              PriorityModifier;                                 		// 0x00B0 (0x0004) [0x0000000000000003]              ( CPF_Edit | CPF_Const )
+	TArray<class AActor*>                              AITargets;                                                // 0x00A4(0x000C) (Edit, NeedCtorLink)
+	float                                              PriorityModifier;                                         // 0x00B0(0x0004) (Edit, Const)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxSeqAct_TargetPriority");
+		return ptr;
+	}
+
 };
 
-// UClass* UGearboxSeqAct_TargetPriority::pClassPointer = NULL;
 
-// 0x0044 (0x00E8 - 0x00A4)
+// Class GearboxFramework.GearboxSeqAct_CameraShake
+// 0x0044 (0x00A4 - 0x00E8)
 class UGearboxSeqAct_CameraShake : public USequenceAction
 {
 public:
-	struct FGearboxViewShakeInfo                       CameraShake;                                      		// 0x00A4 (0x0044) [0x0000000000000001]              ( CPF_Edit )
+	struct FGearboxViewShakeInfo                       CameraShake;                                              // 0x00A4(0x0044) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxSeqAct_CameraShake");
+		return ptr;
+	}
+
 };
 
-// UClass* UGearboxSeqAct_CameraShake::pClassPointer = NULL;
 
-// 0x0018 (0x00CC - 0x00B4)
+// Class GearboxFramework.GearboxSeqAct_PawnClonerLink
+// 0x0018 (0x00B4 - 0x00CC)
 class UGearboxSeqAct_PawnClonerLink : public USeqAct_Latent
 {
 public:
-	unsigned long                                      bEnabled : 1;                                     		// 0x00B4 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      bIsSpawning : 1;                                  		// 0x00B4 (0x0004) [0x0000000000000000] [0x00000002]
-	TArray< class AActor* >                            ClonePoints;                                      		// 0x00B8 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	int                                                SpawnedCount;                                     		// 0x00C4 (0x0004) [0x0000000000000000]
-	float                                              RemainingDelay;                                   		// 0x00C8 (0x0004) [0x0000000000000000]
+	unsigned long                                      bEnabled : 1;                                             // 0x00B4(0x0004) (Edit)
+	unsigned long                                      bIsSpawning : 1;                                          // 0x00B4(0x0004)
+	TArray<class AActor*>                              ClonePoints;                                              // 0x00B8(0x000C) (Edit, NeedCtorLink)
+	int                                                SpawnedCount;                                             // 0x00C4(0x0004)
+	float                                              RemainingDelay;                                           // 0x00C8(0x0004)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GearboxSeqAct_PawnClonerLink");
+		return ptr;
+	}
+
 };
 
-// UClass* UGearboxSeqAct_PawnClonerLink::pClassPointer = NULL;
 
-// 0x002F (0x007C - 0x004D)
+// Class GearboxFramework.GFxMovieDrawStyleInstanceData
+// 0x002F (0x004D - 0x007C)
 class UGFxMovieDrawStyleInstanceData : public UGFxMovieDrawStyleRTT
 {
 public:
-	struct FName                                       ComponentIDName;                                  		// 0x0050 (0x0008) [0x0000000000000001]              ( CPF_Edit )
-	struct FName                                       MatIndexName;                                     		// 0x0058 (0x0008) [0x0000000000000001]              ( CPF_Edit )
-	unsigned long                                      bAlwaysInstance : 1;                              		// 0x0060 (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	class UMaterial*                                   MatiSource;                                       		// 0x0064 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	struct FName                                       TextureParameterName;                             		// 0x0068 (0x0008) [0x0000000000000001]              ( CPF_Edit )
-	class UMeshComponent*                              Component;                                        		// 0x0070 (0x0004) [0x0000000004082008]              ( CPF_ExportObject | CPF_Transient | CPF_Component | CPF_EditInline )
-	int                                                MaterialIndex;                                    		// 0x0074 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	class UMaterialInstanceConstant*                   Mati;                                             		// 0x0078 (0x0004) [0x0000000000002000]              ( CPF_Transient )
+	unsigned char                                      UnknownData00[0x3];                                       // 0x004D(0x0003) MISSED OFFSET
+	struct FName                                       ComponentIDName;                                          // 0x0050(0x0008) (Edit)
+	struct FName                                       MatIndexName;                                             // 0x0058(0x0008) (Edit)
+	unsigned long                                      bAlwaysInstance : 1;                                      // 0x0060(0x0004) (Edit)
+	class UMaterial*                                   MatiSource;                                               // 0x0064(0x0004) (Edit)
+	struct FName                                       TextureParameterName;                                     // 0x0068(0x0008) (Edit)
+	class UMeshComponent*                              Component;                                                // 0x0070(0x0004) (ExportObject, Transient, Component, EditInline)
+	int                                                MaterialIndex;                                            // 0x0074(0x0004) (Transient)
+	class UMaterialInstanceConstant*                   Mati;                                                     // 0x0078(0x0004) (Transient)
 
-public:
-	bool eventRequiresClientInstance();
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GFxMovieDrawStyleInstanceData");
+		return ptr;
+	}
+
+
+	bool RequiresClientInstance();
 };
 
-// UClass* UGFxMovieDrawStyleInstanceData::pClassPointer = NULL;
 
+// Class GearboxFramework.SeqEvent_AllSpawned
 // 0x0000 (0x00C4 - 0x00C4)
-class USeqEvent_AllSpawned : public USequenceEvent {};
+class USeqEvent_AllSpawned : public USequenceEvent
+{
+public:
 
-// UClass* USeqEvent_AllSpawned::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SeqEvent_AllSpawned");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.PopulationMasterAttributeContextResolver
 // 0x0000 (0x003C - 0x003C)
 class UPopulationMasterAttributeContextResolver : public UAttributeContextResolver
 {
 public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PopulationMasterAttributeContextResolver");
+		return ptr;
+	}
+
+
 	class UObject* GetAttributeContext(class UAttributeDefinitionBase* Attribute, class UObject* AttributeContextSource);
 };
 
-// UClass* UPopulationMasterAttributeContextResolver::pClassPointer = NULL;
 
+// Class GearboxFramework.SeqEvent_SinglePopulationDeath
 // 0x0000 (0x00C4 - 0x00C4)
-class USeqEvent_SinglePopulationDeath : public USequenceEvent {};
+class USeqEvent_SinglePopulationDeath : public USequenceEvent
+{
+public:
 
-// UClass* USeqEvent_SinglePopulationDeath::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SeqEvent_SinglePopulationDeath");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.RES_Rotation
 // 0x0000 (0x003C - 0x003C)
-class URES_Rotation : public UActionResource {};
+class URES_Rotation : public UActionResource
+{
+public:
 
-// UClass* URES_Rotation::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("RES_Rotation");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.RES_SpecialMove
 // 0x0000 (0x003C - 0x003C)
-class URES_SpecialMove : public UActionResource {};
+class URES_SpecialMove : public UActionResource
+{
+public:
 
-// UClass* URES_SpecialMove::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("RES_SpecialMove");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.SeqEvent_ArrivedAtMoveNode
 // 0x0000 (0x00C4 - 0x00C4)
-class USeqEvent_ArrivedAtMoveNode : public USequenceEvent {};
+class USeqEvent_ArrivedAtMoveNode : public USequenceEvent
+{
+public:
 
-// UClass* USeqEvent_ArrivedAtMoveNode::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SeqEvent_ArrivedAtMoveNode");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.SeqEvent_LeavingMoveNode
 // 0x0000 (0x00C4 - 0x00C4)
-class USeqEvent_LeavingMoveNode : public USequenceEvent {};
+class USeqEvent_LeavingMoveNode : public USequenceEvent
+{
+public:
 
-// UClass* USeqEvent_LeavingMoveNode::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SeqEvent_LeavingMoveNode");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.ShowDebugHelpers
 // 0x0000 (0x003C - 0x003C)
-class UShowDebugHelpers : public UObject {};
+class UShowDebugHelpers : public UObject
+{
+public:
 
-// UClass* UShowDebugHelpers::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("ShowDebugHelpers");
+		return ptr;
+	}
 
+};
+
+
+// Class GearboxFramework.SkeletalMeshActorGBXMatinee
 // 0x0000 (0x01CC - 0x01CC)
-class ASkeletalMeshActorGBXMatinee : public ASkeletalMeshActor {};
+class ASkeletalMeshActorGBXMatinee : public ASkeletalMeshActor
+{
+public:
 
-// UClass* ASkeletalMeshActorGBXMatinee::pClassPointer = NULL;
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SkeletalMeshActorGBXMatinee");
+		return ptr;
+	}
+
+};
+
 
 #ifdef _MSC_VER
-#pragma pack ( pop )
+#pragma pack(pop)
 #endif

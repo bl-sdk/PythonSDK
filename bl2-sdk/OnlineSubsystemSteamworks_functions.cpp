@@ -34,7 +34,7 @@ bool UOnlineAuthInterfaceSteamworks::GetServerAddr(int* OutServerIP, int* OutSer
 	static UFunction* pFnGetServerAddr = NULL;
 
 	if (!pFnGetServerAddr)
-		pFnGetServerAddr = (UFunction*)UObject::GObjObjects()->Data[46537];
+		pFnGetServerAddr = (UFunction*)UObject::GObjects()->Data[46537];
 
 	UOnlineAuthInterfaceSteamworks_execGetServerAddr_Parms GetServerAddr_Parms;
 
@@ -64,7 +64,7 @@ bool UOnlineAuthInterfaceSteamworks::GetServerUniqueId(struct FUniqueNetId* OutS
 	static UFunction* pFnGetServerUniqueId = NULL;
 
 	if (!pFnGetServerUniqueId)
-		pFnGetServerUniqueId = (UFunction*)UObject::GObjObjects()->Data[46534];
+		pFnGetServerUniqueId = (UFunction*)UObject::GObjects()->Data[46534];
 
 	UOnlineAuthInterfaceSteamworks_execGetServerUniqueId_Parms GetServerUniqueId_Parms;
 
@@ -91,7 +91,7 @@ void UOnlineAuthInterfaceSteamworks::EndRemoteServerAuthSession(struct FUniqueNe
 	static UFunction* pFnEndRemoteServerAuthSession = NULL;
 
 	if (!pFnEndRemoteServerAuthSession)
-		pFnEndRemoteServerAuthSession = (UFunction*)UObject::GObjObjects()->Data[46531];
+		pFnEndRemoteServerAuthSession = (UFunction*)UObject::GObjects()->Data[46531];
 
 	UOnlineAuthInterfaceSteamworks_execEndRemoteServerAuthSession_Parms EndRemoteServerAuthSession_Parms;
 	memcpy(&EndRemoteServerAuthSession_Parms.ServerUID, &ServerUID, 0x18);
@@ -115,7 +115,7 @@ void UOnlineAuthInterfaceSteamworks::EndLocalServerAuthSession(struct FUniqueNet
 	static UFunction* pFnEndLocalServerAuthSession = NULL;
 
 	if (!pFnEndLocalServerAuthSession)
-		pFnEndLocalServerAuthSession = (UFunction*)UObject::GObjObjects()->Data[46528];
+		pFnEndLocalServerAuthSession = (UFunction*)UObject::GObjects()->Data[46528];
 
 	UOnlineAuthInterfaceSteamworks_execEndLocalServerAuthSession_Parms EndLocalServerAuthSession_Parms;
 	memcpy(&EndLocalServerAuthSession_Parms.ClientUID, &ClientUID, 0x18);
@@ -141,7 +141,7 @@ bool UOnlineAuthInterfaceSteamworks::VerifyServerAuthSession(struct FUniqueNetId
 	static UFunction* pFnVerifyServerAuthSession = NULL;
 
 	if (!pFnVerifyServerAuthSession)
-		pFnVerifyServerAuthSession = (UFunction*)UObject::GObjObjects()->Data[46523];
+		pFnVerifyServerAuthSession = (UFunction*)UObject::GObjects()->Data[46523];
 
 	UOnlineAuthInterfaceSteamworks_execVerifyServerAuthSession_Parms VerifyServerAuthSession_Parms;
 	memcpy(&VerifyServerAuthSession_Parms.ServerUID, &ServerUID, 0x18);
@@ -171,7 +171,7 @@ bool UOnlineAuthInterfaceSteamworks::CreateServerAuthSession(struct FUniqueNetId
 	static UFunction* pFnCreateServerAuthSession = NULL;
 
 	if (!pFnCreateServerAuthSession)
-		pFnCreateServerAuthSession = (UFunction*)UObject::GObjObjects()->Data[46517];
+		pFnCreateServerAuthSession = (UFunction*)UObject::GObjects()->Data[46517];
 
 	UOnlineAuthInterfaceSteamworks_execCreateServerAuthSession_Parms CreateServerAuthSession_Parms;
 	memcpy(&CreateServerAuthSession_Parms.ClientUID, &ClientUID, 0x18);
@@ -201,7 +201,7 @@ void UOnlineAuthInterfaceSteamworks::EndRemoteClientAuthSession(struct FUniqueNe
 	static UFunction* pFnEndRemoteClientAuthSession = NULL;
 
 	if (!pFnEndRemoteClientAuthSession)
-		pFnEndRemoteClientAuthSession = (UFunction*)UObject::GObjObjects()->Data[46514];
+		pFnEndRemoteClientAuthSession = (UFunction*)UObject::GObjects()->Data[46514];
 
 	UOnlineAuthInterfaceSteamworks_execEndRemoteClientAuthSession_Parms EndRemoteClientAuthSession_Parms;
 	memcpy(&EndRemoteClientAuthSession_Parms.ClientUID, &ClientUID, 0x18);
@@ -226,7 +226,7 @@ void UOnlineAuthInterfaceSteamworks::EndLocalClientAuthSession(struct FUniqueNet
 	static UFunction* pFnEndLocalClientAuthSession = NULL;
 
 	if (!pFnEndLocalClientAuthSession)
-		pFnEndLocalClientAuthSession = (UFunction*)UObject::GObjObjects()->Data[46510];
+		pFnEndLocalClientAuthSession = (UFunction*)UObject::GObjects()->Data[46510];
 
 	UOnlineAuthInterfaceSteamworks_execEndLocalClientAuthSession_Parms EndLocalClientAuthSession_Parms;
 	memcpy(&EndLocalClientAuthSession_Parms.ServerUID, &ServerUID, 0x18);
@@ -254,7 +254,7 @@ bool UOnlineAuthInterfaceSteamworks::VerifyClientAuthSession(struct FUniqueNetId
 	static UFunction* pFnVerifyClientAuthSession = NULL;
 
 	if (!pFnVerifyClientAuthSession)
-		pFnVerifyClientAuthSession = (UFunction*)UObject::GObjObjects()->Data[46504];
+		pFnVerifyClientAuthSession = (UFunction*)UObject::GObjects()->Data[46504];
 
 	UOnlineAuthInterfaceSteamworks_execVerifyClientAuthSession_Parms VerifyClientAuthSession_Parms;
 	memcpy(&VerifyClientAuthSession_Parms.ClientUID, &ClientUID, 0x18);
@@ -286,7 +286,7 @@ bool UOnlineAuthInterfaceSteamworks::CreateClientAuthSession(struct FUniqueNetId
 	static UFunction* pFnCreateClientAuthSession = NULL;
 
 	if (!pFnCreateClientAuthSession)
-		pFnCreateClientAuthSession = (UFunction*)UObject::GObjObjects()->Data[46497];
+		pFnCreateClientAuthSession = (UFunction*)UObject::GObjects()->Data[46497];
 
 	UOnlineAuthInterfaceSteamworks_execCreateClientAuthSession_Parms CreateClientAuthSession_Parms;
 	memcpy(&CreateClientAuthSession_Parms.ServerUID, &ServerUID, 0x18);
@@ -317,7 +317,7 @@ bool UOnlineAuthInterfaceSteamworks::SendAuthRequestServer(struct FUniqueNetId S
 	static UFunction* pFnSendAuthRequestServer = NULL;
 
 	if (!pFnSendAuthRequestServer)
-		pFnSendAuthRequestServer = (UFunction*)UObject::GObjObjects()->Data[46494];
+		pFnSendAuthRequestServer = (UFunction*)UObject::GObjects()->Data[46494];
 
 	UOnlineAuthInterfaceSteamworks_execSendAuthRequestServer_Parms SendAuthRequestServer_Parms;
 	memcpy(&SendAuthRequestServer_Parms.ServerUID, &ServerUID, 0x18);
@@ -343,7 +343,7 @@ bool UOnlineAuthInterfaceSteamworks::SendAuthRequestClient(class UPlayer* Client
 	static UFunction* pFnSendAuthRequestClient = NULL;
 
 	if (!pFnSendAuthRequestClient)
-		pFnSendAuthRequestClient = (UFunction*)UObject::GObjObjects()->Data[46490];
+		pFnSendAuthRequestClient = (UFunction*)UObject::GObjects()->Data[46490];
 
 	UOnlineAuthInterfaceSteamworks_execSendAuthRequestClient_Parms SendAuthRequestClient_Parms;
 	SendAuthRequestClient_Parms.ClientConnection = ClientConnection;
@@ -369,7 +369,7 @@ class UOnlineGameSettings* UOnlineGameInterfaceSteamworks::GetGameSettings(struc
 	static UFunction* pFnGetGameSettings = NULL;
 
 	if (!pFnGetGameSettings)
-		pFnGetGameSettings = (UFunction*)UObject::GObjObjects()->Data[46643];
+		pFnGetGameSettings = (UFunction*)UObject::GObjects()->Data[46643];
 
 	UOnlineGameInterfaceSteamworks_execGetGameSettings_Parms GetGameSettings_Parms;
 	memcpy(&GetGameSettings_Parms.SessionName, &SessionName, 0x8);
@@ -395,7 +395,7 @@ bool UOnlineGameInterfaceSteamworks::GetResolvedConnectString(struct FName Sessi
 	static UFunction* pFnGetResolvedConnectString = NULL;
 
 	if (!pFnGetResolvedConnectString)
-		pFnGetResolvedConnectString = (UFunction*)UObject::GObjObjects()->Data[46639];
+		pFnGetResolvedConnectString = (UFunction*)UObject::GObjects()->Data[46639];
 
 	UOnlineGameInterfaceSteamworks_execGetResolvedConnectString_Parms GetResolvedConnectString_Parms;
 	memcpy(&GetResolvedConnectString_Parms.SessionName, &SessionName, 0x8);
@@ -425,7 +425,7 @@ bool UOnlineGameInterfaceSteamworks::BindPlatformSpecificSessionToSearch(unsigne
 	static UFunction* pFnBindPlatformSpecificSessionToSearch = NULL;
 
 	if (!pFnBindPlatformSpecificSessionToSearch)
-		pFnBindPlatformSpecificSessionToSearch = (UFunction*)UObject::GObjObjects()->Data[46634];
+		pFnBindPlatformSpecificSessionToSearch = (UFunction*)UObject::GObjects()->Data[46634];
 
 	UOnlineGameInterfaceSteamworks_execBindPlatformSpecificSessionToSearch_Parms BindPlatformSpecificSessionToSearch_Parms;
 	BindPlatformSpecificSessionToSearch_Parms.SearchingPlayerNum = SearchingPlayerNum;
@@ -453,7 +453,7 @@ bool UOnlineGameInterfaceSteamworks::ReadPlatformSpecificSessionInfoBySessionNam
 	static UFunction* pFnReadPlatformSpecificSessionInfoBySessionName = NULL;
 
 	if (!pFnReadPlatformSpecificSessionInfoBySessionName)
-		pFnReadPlatformSpecificSessionInfoBySessionName = (UFunction*)UObject::GObjObjects()->Data[46630];
+		pFnReadPlatformSpecificSessionInfoBySessionName = (UFunction*)UObject::GObjects()->Data[46630];
 
 	UOnlineGameInterfaceSteamworks_execReadPlatformSpecificSessionInfoBySessionName_Parms ReadPlatformSpecificSessionInfoBySessionName_Parms;
 	memcpy(&ReadPlatformSpecificSessionInfoBySessionName_Parms.SessionName, &SessionName, 0x8);
@@ -482,7 +482,7 @@ bool UOnlineGameInterfaceSteamworks::ReadPlatformSpecificSessionInfo(struct FOnl
 	static UFunction* pFnReadPlatformSpecificSessionInfo = NULL;
 
 	if (!pFnReadPlatformSpecificSessionInfo)
-		pFnReadPlatformSpecificSessionInfo = (UFunction*)UObject::GObjObjects()->Data[46626];
+		pFnReadPlatformSpecificSessionInfo = (UFunction*)UObject::GObjects()->Data[46626];
 
 	UOnlineGameInterfaceSteamworks_execReadPlatformSpecificSessionInfo_Parms ReadPlatformSpecificSessionInfo_Parms;
 
@@ -513,7 +513,7 @@ bool UOnlineGameInterfaceSteamworks::QueryNonAdvertisedData(int StartAt, int Num
 	static UFunction* pFnQueryNonAdvertisedData = NULL;
 
 	if (!pFnQueryNonAdvertisedData)
-		pFnQueryNonAdvertisedData = (UFunction*)UObject::GObjObjects()->Data[46622];
+		pFnQueryNonAdvertisedData = (UFunction*)UObject::GObjects()->Data[46622];
 
 	UOnlineGameInterfaceSteamworks_execQueryNonAdvertisedData_Parms QueryNonAdvertisedData_Parms;
 	QueryNonAdvertisedData_Parms.StartAt = StartAt;
@@ -534,7 +534,7 @@ void UOnlineGameInterfaceSteamworks::ClearUnregisterPlayerCompleteDelegate(struc
 	static UFunction* pFnClearUnregisterPlayerCompleteDelegate = NULL;
 
 	if (!pFnClearUnregisterPlayerCompleteDelegate)
-		pFnClearUnregisterPlayerCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[46620];
+		pFnClearUnregisterPlayerCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46620];
 
 	UOnlineGameInterfaceSteamworks_execClearUnregisterPlayerCompleteDelegate_Parms ClearUnregisterPlayerCompleteDelegate_Parms;
 	memcpy(&ClearUnregisterPlayerCompleteDelegate_Parms.UnregisterPlayerCompleteDelegate, &UnregisterPlayerCompleteDelegate, 0xC);
@@ -552,7 +552,7 @@ void UOnlineGameInterfaceSteamworks::AddUnregisterPlayerCompleteDelegate(struct 
 	static UFunction* pFnAddUnregisterPlayerCompleteDelegate = NULL;
 
 	if (!pFnAddUnregisterPlayerCompleteDelegate)
-		pFnAddUnregisterPlayerCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[46618];
+		pFnAddUnregisterPlayerCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46618];
 
 	UOnlineGameInterfaceSteamworks_execAddUnregisterPlayerCompleteDelegate_Parms AddUnregisterPlayerCompleteDelegate_Parms;
 	memcpy(&AddUnregisterPlayerCompleteDelegate_Parms.UnregisterPlayerCompleteDelegate, &UnregisterPlayerCompleteDelegate, 0xC);
@@ -572,7 +572,7 @@ void UOnlineGameInterfaceSteamworks::OnUnregisterPlayerComplete(struct FName Ses
 	static UFunction* pFnOnUnregisterPlayerComplete = NULL;
 
 	if (!pFnOnUnregisterPlayerComplete)
-		pFnOnUnregisterPlayerComplete = (UFunction*)UObject::GObjObjects()->Data[46555];
+		pFnOnUnregisterPlayerComplete = (UFunction*)UObject::GObjects()->Data[46555];
 
 	UOnlineGameInterfaceSteamworks_execOnUnregisterPlayerComplete_Parms OnUnregisterPlayerComplete_Parms;
 	memcpy(&OnUnregisterPlayerComplete_Parms.SessionName, &SessionName, 0x8);
@@ -594,7 +594,7 @@ bool UOnlineGameInterfaceSteamworks::UnregisterPlayer(struct FName SessionName, 
 	static UFunction* pFnUnregisterPlayer = NULL;
 
 	if (!pFnUnregisterPlayer)
-		pFnUnregisterPlayer = (UFunction*)UObject::GObjObjects()->Data[46611];
+		pFnUnregisterPlayer = (UFunction*)UObject::GObjects()->Data[46611];
 
 	UOnlineGameInterfaceSteamworks_execUnregisterPlayer_Parms UnregisterPlayer_Parms;
 	memcpy(&UnregisterPlayer_Parms.SessionName, &SessionName, 0x8);
@@ -619,7 +619,7 @@ void UOnlineGameInterfaceSteamworks::ClearRegisterPlayerCompleteDelegate(struct 
 	static UFunction* pFnClearRegisterPlayerCompleteDelegate = NULL;
 
 	if (!pFnClearRegisterPlayerCompleteDelegate)
-		pFnClearRegisterPlayerCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[46609];
+		pFnClearRegisterPlayerCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46609];
 
 	UOnlineGameInterfaceSteamworks_execClearRegisterPlayerCompleteDelegate_Parms ClearRegisterPlayerCompleteDelegate_Parms;
 	memcpy(&ClearRegisterPlayerCompleteDelegate_Parms.RegisterPlayerCompleteDelegate, &RegisterPlayerCompleteDelegate, 0xC);
@@ -637,7 +637,7 @@ void UOnlineGameInterfaceSteamworks::AddRegisterPlayerCompleteDelegate(struct FS
 	static UFunction* pFnAddRegisterPlayerCompleteDelegate = NULL;
 
 	if (!pFnAddRegisterPlayerCompleteDelegate)
-		pFnAddRegisterPlayerCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[46607];
+		pFnAddRegisterPlayerCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46607];
 
 	UOnlineGameInterfaceSteamworks_execAddRegisterPlayerCompleteDelegate_Parms AddRegisterPlayerCompleteDelegate_Parms;
 	memcpy(&AddRegisterPlayerCompleteDelegate_Parms.RegisterPlayerCompleteDelegate, &RegisterPlayerCompleteDelegate, 0xC);
@@ -657,7 +657,7 @@ void UOnlineGameInterfaceSteamworks::OnRegisterPlayerComplete(struct FName Sessi
 	static UFunction* pFnOnRegisterPlayerComplete = NULL;
 
 	if (!pFnOnRegisterPlayerComplete)
-		pFnOnRegisterPlayerComplete = (UFunction*)UObject::GObjObjects()->Data[46552];
+		pFnOnRegisterPlayerComplete = (UFunction*)UObject::GObjects()->Data[46552];
 
 	UOnlineGameInterfaceSteamworks_execOnRegisterPlayerComplete_Parms OnRegisterPlayerComplete_Parms;
 	memcpy(&OnRegisterPlayerComplete_Parms.SessionName, &SessionName, 0x8);
@@ -680,7 +680,7 @@ bool UOnlineGameInterfaceSteamworks::RegisterPlayer(struct FName SessionName, st
 	static UFunction* pFnRegisterPlayer = NULL;
 
 	if (!pFnRegisterPlayer)
-		pFnRegisterPlayer = (UFunction*)UObject::GObjObjects()->Data[46599];
+		pFnRegisterPlayer = (UFunction*)UObject::GObjects()->Data[46599];
 
 	UOnlineGameInterfaceSteamworks_execRegisterPlayer_Parms RegisterPlayer_Parms;
 	memcpy(&RegisterPlayer_Parms.SessionName, &SessionName, 0x8);
@@ -708,7 +708,7 @@ bool UOnlineGameInterfaceSteamworks::AcceptGameInvite(unsigned char LocalUserNum
 	static UFunction* pFnAcceptGameInvite = NULL;
 
 	if (!pFnAcceptGameInvite)
-		pFnAcceptGameInvite = (UFunction*)UObject::GObjObjects()->Data[46595];
+		pFnAcceptGameInvite = (UFunction*)UObject::GObjects()->Data[46595];
 
 	UOnlineGameInterfaceSteamworks_execAcceptGameInvite_Parms AcceptGameInvite_Parms;
 	AcceptGameInvite_Parms.LocalUserNum = LocalUserNum;
@@ -733,7 +733,7 @@ void UOnlineGameInterfaceSteamworks::OnGameInviteAccepted(struct FOnlineGameSear
 	static UFunction* pFnOnGameInviteAccepted = NULL;
 
 	if (!pFnOnGameInviteAccepted)
-		pFnOnGameInviteAccepted = (UFunction*)UObject::GObjObjects()->Data[46549];
+		pFnOnGameInviteAccepted = (UFunction*)UObject::GObjects()->Data[46549];
 
 	UOnlineGameInterfaceSteamworks_execOnGameInviteAccepted_Parms OnGameInviteAccepted_Parms;
 
@@ -754,7 +754,7 @@ void UOnlineGameInterfaceSteamworks::ClearGameInviteAcceptedDelegate(unsigned ch
 	static UFunction* pFnClearGameInviteAcceptedDelegate = NULL;
 
 	if (!pFnClearGameInviteAcceptedDelegate)
-		pFnClearGameInviteAcceptedDelegate = (UFunction*)UObject::GObjObjects()->Data[46591];
+		pFnClearGameInviteAcceptedDelegate = (UFunction*)UObject::GObjects()->Data[46591];
 
 	UOnlineGameInterfaceSteamworks_execClearGameInviteAcceptedDelegate_Parms ClearGameInviteAcceptedDelegate_Parms;
 	ClearGameInviteAcceptedDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -774,7 +774,7 @@ void UOnlineGameInterfaceSteamworks::AddGameInviteAcceptedDelegate(unsigned char
 	static UFunction* pFnAddGameInviteAcceptedDelegate = NULL;
 
 	if (!pFnAddGameInviteAcceptedDelegate)
-		pFnAddGameInviteAcceptedDelegate = (UFunction*)UObject::GObjObjects()->Data[46588];
+		pFnAddGameInviteAcceptedDelegate = (UFunction*)UObject::GObjects()->Data[46588];
 
 	UOnlineGameInterfaceSteamworks_execAddGameInviteAcceptedDelegate_Parms AddGameInviteAcceptedDelegate_Parms;
 	AddGameInviteAcceptedDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -796,7 +796,7 @@ bool UOnlineGameInterfaceSteamworks::UpdateOnlineGame(struct FName SessionName, 
 	static UFunction* pFnUpdateOnlineGame = NULL;
 
 	if (!pFnUpdateOnlineGame)
-		pFnUpdateOnlineGame = (UFunction*)UObject::GObjObjects()->Data[46583];
+		pFnUpdateOnlineGame = (UFunction*)UObject::GObjects()->Data[46583];
 
 	UOnlineGameInterfaceSteamworks_execUpdateOnlineGame_Parms UpdateOnlineGame_Parms;
 	memcpy(&UpdateOnlineGame_Parms.SessionName, &SessionName, 0x8);
@@ -823,7 +823,7 @@ void UOnlineSubsystemSteamworks::ClearCheckDownloadableContentListDelegate(unsig
 	static UFunction* pFnClearCheckDownloadableContentListDelegate = NULL;
 
 	if (!pFnClearCheckDownloadableContentListDelegate)
-		pFnClearCheckDownloadableContentListDelegate = (UFunction*)UObject::GObjObjects()->Data[47865];
+		pFnClearCheckDownloadableContentListDelegate = (UFunction*)UObject::GObjects()->Data[47865];
 
 	UOnlineSubsystemSteamworks_execClearCheckDownloadableContentListDelegate_Parms ClearCheckDownloadableContentListDelegate_Parms;
 	ClearCheckDownloadableContentListDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -843,7 +843,7 @@ void UOnlineSubsystemSteamworks::AddCheckDownloadableContentListDelegate(unsigne
 	static UFunction* pFnAddCheckDownloadableContentListDelegate = NULL;
 
 	if (!pFnAddCheckDownloadableContentListDelegate)
-		pFnAddCheckDownloadableContentListDelegate = (UFunction*)UObject::GObjObjects()->Data[47862];
+		pFnAddCheckDownloadableContentListDelegate = (UFunction*)UObject::GObjects()->Data[47862];
 
 	UOnlineSubsystemSteamworks_execAddCheckDownloadableContentListDelegate_Parms AddCheckDownloadableContentListDelegate_Parms;
 	AddCheckDownloadableContentListDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -863,7 +863,7 @@ bool UOnlineSubsystemSteamworks::CheckDownloadableContentList(unsigned char Loca
 	static UFunction* pFnCheckDownloadableContentList = NULL;
 
 	if (!pFnCheckDownloadableContentList)
-		pFnCheckDownloadableContentList = (UFunction*)UObject::GObjObjects()->Data[47857];
+		pFnCheckDownloadableContentList = (UFunction*)UObject::GObjects()->Data[47857];
 
 	UOnlineSubsystemSteamworks_execCheckDownloadableContentList_Parms CheckDownloadableContentList_Parms;
 	CheckDownloadableContentList_Parms.LocalUserNum = LocalUserNum;
@@ -884,7 +884,7 @@ void UOnlineSubsystemSteamworks::OnCheckDownloadableContentList(unsigned char Lo
 	static UFunction* pFnOnCheckDownloadableContentList = NULL;
 
 	if (!pFnOnCheckDownloadableContentList)
-		pFnOnCheckDownloadableContentList = (UFunction*)UObject::GObjObjects()->Data[47854];
+		pFnOnCheckDownloadableContentList = (UFunction*)UObject::GObjects()->Data[47854];
 
 	UOnlineSubsystemSteamworks_execOnCheckDownloadableContentList_Parms OnCheckDownloadableContentList_Parms;
 	OnCheckDownloadableContentList_Parms.LocalUserNum = LocalUserNum;
@@ -905,7 +905,7 @@ unsigned char UOnlineSubsystemSteamworks::GetCriticalDownloadableContentList(uns
 	static UFunction* pFnGetCriticalDownloadableContentList = NULL;
 
 	if (!pFnGetCriticalDownloadableContentList)
-		pFnGetCriticalDownloadableContentList = (UFunction*)UObject::GObjObjects()->Data[47849];
+		pFnGetCriticalDownloadableContentList = (UFunction*)UObject::GObjects()->Data[47849];
 
 	UOnlineSubsystemSteamworks_execGetCriticalDownloadableContentList_Parms GetCriticalDownloadableContentList_Parms;
 	GetCriticalDownloadableContentList_Parms.LocalUserNum = LocalUserNum;
@@ -930,7 +930,7 @@ bool UOnlineSubsystemSteamworks::ReadCriticalDownloadableContentList(unsigned ch
 	static UFunction* pFnReadCriticalDownloadableContentList = NULL;
 
 	if (!pFnReadCriticalDownloadableContentList)
-		pFnReadCriticalDownloadableContentList = (UFunction*)UObject::GObjObjects()->Data[47845];
+		pFnReadCriticalDownloadableContentList = (UFunction*)UObject::GObjects()->Data[47845];
 
 	UOnlineSubsystemSteamworks_execReadCriticalDownloadableContentList_Parms ReadCriticalDownloadableContentList_Parms;
 	ReadCriticalDownloadableContentList_Parms.LocalUserNum = LocalUserNum;
@@ -952,7 +952,7 @@ void UOnlineSubsystemSteamworks::ClearReadCriticalDownloadableContentListComplet
 	static UFunction* pFnClearReadCriticalDownloadableContentListComplete = NULL;
 
 	if (!pFnClearReadCriticalDownloadableContentListComplete)
-		pFnClearReadCriticalDownloadableContentListComplete = (UFunction*)UObject::GObjObjects()->Data[47842];
+		pFnClearReadCriticalDownloadableContentListComplete = (UFunction*)UObject::GObjects()->Data[47842];
 
 	UOnlineSubsystemSteamworks_execClearReadCriticalDownloadableContentListComplete_Parms ClearReadCriticalDownloadableContentListComplete_Parms;
 	ClearReadCriticalDownloadableContentListComplete_Parms.LocalUserNum = LocalUserNum;
@@ -972,7 +972,7 @@ void UOnlineSubsystemSteamworks::AddReadCriticalDownloadableContentListComplete(
 	static UFunction* pFnAddReadCriticalDownloadableContentListComplete = NULL;
 
 	if (!pFnAddReadCriticalDownloadableContentListComplete)
-		pFnAddReadCriticalDownloadableContentListComplete = (UFunction*)UObject::GObjObjects()->Data[47839];
+		pFnAddReadCriticalDownloadableContentListComplete = (UFunction*)UObject::GObjects()->Data[47839];
 
 	UOnlineSubsystemSteamworks_execAddReadCriticalDownloadableContentListComplete_Parms AddReadCriticalDownloadableContentListComplete_Parms;
 	AddReadCriticalDownloadableContentListComplete_Parms.LocalUserNum = LocalUserNum;
@@ -991,7 +991,7 @@ void UOnlineSubsystemSteamworks::OnReadCriticalDownloadableContentListComplete(u
 	static UFunction* pFnOnReadCriticalDownloadableContentListComplete = NULL;
 
 	if (!pFnOnReadCriticalDownloadableContentListComplete)
-		pFnOnReadCriticalDownloadableContentListComplete = (UFunction*)UObject::GObjObjects()->Data[47837];
+		pFnOnReadCriticalDownloadableContentListComplete = (UFunction*)UObject::GObjects()->Data[47837];
 
 	UOnlineSubsystemSteamworks_execOnReadCriticalDownloadableContentListComplete_Parms OnReadCriticalDownloadableContentListComplete_Parms;
 	OnReadCriticalDownloadableContentListComplete_Parms.bWasSuccessful = bWasSuccessful;
@@ -1011,7 +1011,7 @@ unsigned char UOnlineSubsystemSteamworks::GetHiddenDownloadableContentList(unsig
 	static UFunction* pFnGetHiddenDownloadableContentList = NULL;
 
 	if (!pFnGetHiddenDownloadableContentList)
-		pFnGetHiddenDownloadableContentList = (UFunction*)UObject::GObjObjects()->Data[47832];
+		pFnGetHiddenDownloadableContentList = (UFunction*)UObject::GObjects()->Data[47832];
 
 	UOnlineSubsystemSteamworks_execGetHiddenDownloadableContentList_Parms GetHiddenDownloadableContentList_Parms;
 	GetHiddenDownloadableContentList_Parms.LocalUserNum = LocalUserNum;
@@ -1036,7 +1036,7 @@ bool UOnlineSubsystemSteamworks::ReadHiddenDownloadableContentList(unsigned char
 	static UFunction* pFnReadHiddenDownloadableContentList = NULL;
 
 	if (!pFnReadHiddenDownloadableContentList)
-		pFnReadHiddenDownloadableContentList = (UFunction*)UObject::GObjObjects()->Data[47827];
+		pFnReadHiddenDownloadableContentList = (UFunction*)UObject::GObjects()->Data[47827];
 
 	UOnlineSubsystemSteamworks_execReadHiddenDownloadableContentList_Parms ReadHiddenDownloadableContentList_Parms;
 	ReadHiddenDownloadableContentList_Parms.LocalUserNum = LocalUserNum;
@@ -1058,7 +1058,7 @@ void UOnlineSubsystemSteamworks::ClearReadHiddenDownloadableContentListComplete(
 	static UFunction* pFnClearReadHiddenDownloadableContentListComplete = NULL;
 
 	if (!pFnClearReadHiddenDownloadableContentListComplete)
-		pFnClearReadHiddenDownloadableContentListComplete = (UFunction*)UObject::GObjObjects()->Data[47824];
+		pFnClearReadHiddenDownloadableContentListComplete = (UFunction*)UObject::GObjects()->Data[47824];
 
 	UOnlineSubsystemSteamworks_execClearReadHiddenDownloadableContentListComplete_Parms ClearReadHiddenDownloadableContentListComplete_Parms;
 	ClearReadHiddenDownloadableContentListComplete_Parms.LocalUserNum = LocalUserNum;
@@ -1078,7 +1078,7 @@ void UOnlineSubsystemSteamworks::AddReadHiddenDownloadableContentListComplete(un
 	static UFunction* pFnAddReadHiddenDownloadableContentListComplete = NULL;
 
 	if (!pFnAddReadHiddenDownloadableContentListComplete)
-		pFnAddReadHiddenDownloadableContentListComplete = (UFunction*)UObject::GObjObjects()->Data[47821];
+		pFnAddReadHiddenDownloadableContentListComplete = (UFunction*)UObject::GObjects()->Data[47821];
 
 	UOnlineSubsystemSteamworks_execAddReadHiddenDownloadableContentListComplete_Parms AddReadHiddenDownloadableContentListComplete_Parms;
 	AddReadHiddenDownloadableContentListComplete_Parms.LocalUserNum = LocalUserNum;
@@ -1097,7 +1097,7 @@ void UOnlineSubsystemSteamworks::OnReadHiddenDownloadableContentListComplete(uns
 	static UFunction* pFnOnReadHiddenDownloadableContentListComplete = NULL;
 
 	if (!pFnOnReadHiddenDownloadableContentListComplete)
-		pFnOnReadHiddenDownloadableContentListComplete = (UFunction*)UObject::GObjObjects()->Data[47819];
+		pFnOnReadHiddenDownloadableContentListComplete = (UFunction*)UObject::GObjects()->Data[47819];
 
 	UOnlineSubsystemSteamworks_execOnReadHiddenDownloadableContentListComplete_Parms OnReadHiddenDownloadableContentListComplete_Parms;
 	OnReadHiddenDownloadableContentListComplete_Parms.bWasSuccessful = bWasSuccessful;
@@ -1117,7 +1117,7 @@ unsigned char UOnlineSubsystemSteamworks::GetDownloadableContentList(unsigned ch
 	static UFunction* pFnGetDownloadableContentList = NULL;
 
 	if (!pFnGetDownloadableContentList)
-		pFnGetDownloadableContentList = (UFunction*)UObject::GObjObjects()->Data[47814];
+		pFnGetDownloadableContentList = (UFunction*)UObject::GObjects()->Data[47814];
 
 	UOnlineSubsystemSteamworks_execGetDownloadableContentList_Parms GetDownloadableContentList_Parms;
 	GetDownloadableContentList_Parms.LocalUserNum = LocalUserNum;
@@ -1146,7 +1146,7 @@ bool UOnlineSubsystemSteamworks::ReadDownloadableContentList(unsigned char Local
 	static UFunction* pFnReadDownloadableContentList = NULL;
 
 	if (!pFnReadDownloadableContentList)
-		pFnReadDownloadableContentList = (UFunction*)UObject::GObjObjects()->Data[47810];
+		pFnReadDownloadableContentList = (UFunction*)UObject::GObjects()->Data[47810];
 
 	UOnlineSubsystemSteamworks_execReadDownloadableContentList_Parms ReadDownloadableContentList_Parms;
 	ReadDownloadableContentList_Parms.LocalUserNum = LocalUserNum;
@@ -1172,7 +1172,7 @@ void UOnlineSubsystemSteamworks::ClearReadDownloadableContentListComplete(unsign
 	static UFunction* pFnClearReadDownloadableContentListComplete = NULL;
 
 	if (!pFnClearReadDownloadableContentListComplete)
-		pFnClearReadDownloadableContentListComplete = (UFunction*)UObject::GObjObjects()->Data[47807];
+		pFnClearReadDownloadableContentListComplete = (UFunction*)UObject::GObjects()->Data[47807];
 
 	UOnlineSubsystemSteamworks_execClearReadDownloadableContentListComplete_Parms ClearReadDownloadableContentListComplete_Parms;
 	ClearReadDownloadableContentListComplete_Parms.LocalUserNum = LocalUserNum;
@@ -1192,7 +1192,7 @@ void UOnlineSubsystemSteamworks::AddReadDownloadableContentListComplete(unsigned
 	static UFunction* pFnAddReadDownloadableContentListComplete = NULL;
 
 	if (!pFnAddReadDownloadableContentListComplete)
-		pFnAddReadDownloadableContentListComplete = (UFunction*)UObject::GObjObjects()->Data[47803];
+		pFnAddReadDownloadableContentListComplete = (UFunction*)UObject::GObjects()->Data[47803];
 
 	UOnlineSubsystemSteamworks_execAddReadDownloadableContentListComplete_Parms AddReadDownloadableContentListComplete_Parms;
 	AddReadDownloadableContentListComplete_Parms.LocalUserNum = LocalUserNum;
@@ -1211,7 +1211,7 @@ void UOnlineSubsystemSteamworks::OnReadDownloadableContentListComplete(unsigned 
 	static UFunction* pFnOnReadDownloadableContentListComplete = NULL;
 
 	if (!pFnOnReadDownloadableContentListComplete)
-		pFnOnReadDownloadableContentListComplete = (UFunction*)UObject::GObjObjects()->Data[46684];
+		pFnOnReadDownloadableContentListComplete = (UFunction*)UObject::GObjects()->Data[46684];
 
 	UOnlineSubsystemSteamworks_execOnReadDownloadableContentListComplete_Parms OnReadDownloadableContentListComplete_Parms;
 	OnReadDownloadableContentListComplete_Parms.bWasSuccessful = bWasSuccessful;
@@ -1231,7 +1231,7 @@ unsigned char UOnlineSubsystemSteamworks::GetSaveGamesList(unsigned char LocalUs
 	static UFunction* pFnGetSaveGamesList = NULL;
 
 	if (!pFnGetSaveGamesList)
-		pFnGetSaveGamesList = (UFunction*)UObject::GObjObjects()->Data[47797];
+		pFnGetSaveGamesList = (UFunction*)UObject::GObjects()->Data[47797];
 
 	UOnlineSubsystemSteamworks_execGetSaveGamesList_Parms GetSaveGamesList_Parms;
 	GetSaveGamesList_Parms.LocalUserNum = LocalUserNum;
@@ -1257,7 +1257,7 @@ bool UOnlineSubsystemSteamworks::ReadSaveGamesList(unsigned char LocalUserNum, i
 	static UFunction* pFnReadSaveGamesList = NULL;
 
 	if (!pFnReadSaveGamesList)
-		pFnReadSaveGamesList = (UFunction*)UObject::GObjObjects()->Data[47792];
+		pFnReadSaveGamesList = (UFunction*)UObject::GObjects()->Data[47792];
 
 	UOnlineSubsystemSteamworks_execReadSaveGamesList_Parms ReadSaveGamesList_Parms;
 	ReadSaveGamesList_Parms.LocalUserNum = LocalUserNum;
@@ -1280,7 +1280,7 @@ void UOnlineSubsystemSteamworks::ClearReadSaveGamesComplete(unsigned char LocalU
 	static UFunction* pFnClearReadSaveGamesComplete = NULL;
 
 	if (!pFnClearReadSaveGamesComplete)
-		pFnClearReadSaveGamesComplete = (UFunction*)UObject::GObjObjects()->Data[47789];
+		pFnClearReadSaveGamesComplete = (UFunction*)UObject::GObjects()->Data[47789];
 
 	UOnlineSubsystemSteamworks_execClearReadSaveGamesComplete_Parms ClearReadSaveGamesComplete_Parms;
 	ClearReadSaveGamesComplete_Parms.LocalUserNum = LocalUserNum;
@@ -1300,7 +1300,7 @@ void UOnlineSubsystemSteamworks::AddReadSaveGamesComplete(unsigned char LocalUse
 	static UFunction* pFnAddReadSaveGamesComplete = NULL;
 
 	if (!pFnAddReadSaveGamesComplete)
-		pFnAddReadSaveGamesComplete = (UFunction*)UObject::GObjObjects()->Data[47786];
+		pFnAddReadSaveGamesComplete = (UFunction*)UObject::GObjects()->Data[47786];
 
 	UOnlineSubsystemSteamworks_execAddReadSaveGamesComplete_Parms AddReadSaveGamesComplete_Parms;
 	AddReadSaveGamesComplete_Parms.LocalUserNum = LocalUserNum;
@@ -1319,7 +1319,7 @@ void UOnlineSubsystemSteamworks::OnReadSaveGamesComplete(unsigned long bWasSucce
 	static UFunction* pFnOnReadSaveGamesComplete = NULL;
 
 	if (!pFnOnReadSaveGamesComplete)
-		pFnOnReadSaveGamesComplete = (UFunction*)UObject::GObjObjects()->Data[47784];
+		pFnOnReadSaveGamesComplete = (UFunction*)UObject::GObjects()->Data[47784];
 
 	UOnlineSubsystemSteamworks_execOnReadSaveGamesComplete_Parms OnReadSaveGamesComplete_Parms;
 	OnReadSaveGamesComplete_Parms.bWasSuccessful = bWasSuccessful;
@@ -1338,7 +1338,7 @@ bool UOnlineSubsystemSteamworks::ClearSaveGames(unsigned char LocalUserNum)
 	static UFunction* pFnClearSaveGames = NULL;
 
 	if (!pFnClearSaveGames)
-		pFnClearSaveGames = (UFunction*)UObject::GObjObjects()->Data[47781];
+		pFnClearSaveGames = (UFunction*)UObject::GObjects()->Data[47781];
 
 	UOnlineSubsystemSteamworks_execClearSaveGames_Parms ClearSaveGames_Parms;
 	ClearSaveGames_Parms.LocalUserNum = LocalUserNum;
@@ -1362,7 +1362,7 @@ bool UOnlineSubsystemSteamworks::DeleteSaveGame(unsigned char LocalUserNum, int 
 	static UFunction* pFnDeleteSaveGame = NULL;
 
 	if (!pFnDeleteSaveGame)
-		pFnDeleteSaveGame = (UFunction*)UObject::GObjObjects()->Data[47775];
+		pFnDeleteSaveGame = (UFunction*)UObject::GObjects()->Data[47775];
 
 	UOnlineSubsystemSteamworks_execDeleteSaveGame_Parms DeleteSaveGame_Parms;
 	DeleteSaveGame_Parms.LocalUserNum = LocalUserNum;
@@ -1386,7 +1386,7 @@ void UOnlineSubsystemSteamworks::ClearWriteSaveGameDataComplete(unsigned char Lo
 	static UFunction* pFnClearWriteSaveGameDataComplete = NULL;
 
 	if (!pFnClearWriteSaveGameDataComplete)
-		pFnClearWriteSaveGameDataComplete = (UFunction*)UObject::GObjObjects()->Data[47772];
+		pFnClearWriteSaveGameDataComplete = (UFunction*)UObject::GObjects()->Data[47772];
 
 	UOnlineSubsystemSteamworks_execClearWriteSaveGameDataComplete_Parms ClearWriteSaveGameDataComplete_Parms;
 	ClearWriteSaveGameDataComplete_Parms.LocalUserNum = LocalUserNum;
@@ -1406,7 +1406,7 @@ void UOnlineSubsystemSteamworks::AddWriteSaveGameDataComplete(unsigned char Loca
 	static UFunction* pFnAddWriteSaveGameDataComplete = NULL;
 
 	if (!pFnAddWriteSaveGameDataComplete)
-		pFnAddWriteSaveGameDataComplete = (UFunction*)UObject::GObjObjects()->Data[47769];
+		pFnAddWriteSaveGameDataComplete = (UFunction*)UObject::GObjects()->Data[47769];
 
 	UOnlineSubsystemSteamworks_execAddWriteSaveGameDataComplete_Parms AddWriteSaveGameDataComplete_Parms;
 	AddWriteSaveGameDataComplete_Parms.LocalUserNum = LocalUserNum;
@@ -1430,7 +1430,7 @@ void UOnlineSubsystemSteamworks::OnWriteSaveGameDataComplete(unsigned long bWasS
 	static UFunction* pFnOnWriteSaveGameDataComplete = NULL;
 
 	if (!pFnOnWriteSaveGameDataComplete)
-		pFnOnWriteSaveGameDataComplete = (UFunction*)UObject::GObjObjects()->Data[47762];
+		pFnOnWriteSaveGameDataComplete = (UFunction*)UObject::GObjects()->Data[47762];
 
 	UOnlineSubsystemSteamworks_execOnWriteSaveGameDataComplete_Parms OnWriteSaveGameDataComplete_Parms;
 	OnWriteSaveGameDataComplete_Parms.bWasSuccessful = bWasSuccessful;
@@ -1459,7 +1459,7 @@ bool UOnlineSubsystemSteamworks::WriteSaveGameData(unsigned char LocalUserNum, i
 	static UFunction* pFnWriteSaveGameData = NULL;
 
 	if (!pFnWriteSaveGameData)
-		pFnWriteSaveGameData = (UFunction*)UObject::GObjObjects()->Data[47753];
+		pFnWriteSaveGameData = (UFunction*)UObject::GObjects()->Data[47753];
 
 	UOnlineSubsystemSteamworks_execWriteSaveGameData_Parms WriteSaveGameData_Parms;
 	WriteSaveGameData_Parms.LocalUserNum = LocalUserNum;
@@ -1487,7 +1487,7 @@ void UOnlineSubsystemSteamworks::ClearReadSaveGameDataComplete(unsigned char Loc
 	static UFunction* pFnClearReadSaveGameDataComplete = NULL;
 
 	if (!pFnClearReadSaveGameDataComplete)
-		pFnClearReadSaveGameDataComplete = (UFunction*)UObject::GObjObjects()->Data[47750];
+		pFnClearReadSaveGameDataComplete = (UFunction*)UObject::GObjects()->Data[47750];
 
 	UOnlineSubsystemSteamworks_execClearReadSaveGameDataComplete_Parms ClearReadSaveGameDataComplete_Parms;
 	ClearReadSaveGameDataComplete_Parms.LocalUserNum = LocalUserNum;
@@ -1507,7 +1507,7 @@ void UOnlineSubsystemSteamworks::AddReadSaveGameDataComplete(unsigned char Local
 	static UFunction* pFnAddReadSaveGameDataComplete = NULL;
 
 	if (!pFnAddReadSaveGameDataComplete)
-		pFnAddReadSaveGameDataComplete = (UFunction*)UObject::GObjObjects()->Data[47747];
+		pFnAddReadSaveGameDataComplete = (UFunction*)UObject::GObjects()->Data[47747];
 
 	UOnlineSubsystemSteamworks_execAddReadSaveGameDataComplete_Parms AddReadSaveGameDataComplete_Parms;
 	AddReadSaveGameDataComplete_Parms.LocalUserNum = LocalUserNum;
@@ -1531,7 +1531,7 @@ void UOnlineSubsystemSteamworks::OnReadSaveGameDataComplete(unsigned long bWasSu
 	static UFunction* pFnOnReadSaveGameDataComplete = NULL;
 
 	if (!pFnOnReadSaveGameDataComplete)
-		pFnOnReadSaveGameDataComplete = (UFunction*)UObject::GObjObjects()->Data[47740];
+		pFnOnReadSaveGameDataComplete = (UFunction*)UObject::GObjects()->Data[47740];
 
 	UOnlineSubsystemSteamworks_execOnReadSaveGameDataComplete_Parms OnReadSaveGameDataComplete_Parms;
 	OnReadSaveGameDataComplete_Parms.bWasSuccessful = bWasSuccessful;
@@ -1561,7 +1561,7 @@ bool UOnlineSubsystemSteamworks::GetSaveGameData(unsigned char LocalUserNum, int
 	static UFunction* pFnGetSaveGameData = NULL;
 
 	if (!pFnGetSaveGameData)
-		pFnGetSaveGameData = (UFunction*)UObject::GObjObjects()->Data[47730];
+		pFnGetSaveGameData = (UFunction*)UObject::GObjects()->Data[47730];
 
 	UOnlineSubsystemSteamworks_execGetSaveGameData_Parms GetSaveGameData_Parms;
 	GetSaveGameData_Parms.LocalUserNum = LocalUserNum;
@@ -1596,7 +1596,7 @@ bool UOnlineSubsystemSteamworks::ReadSaveGameData(unsigned char LocalUserNum, in
 	static UFunction* pFnReadSaveGameData = NULL;
 
 	if (!pFnReadSaveGameData)
-		pFnReadSaveGameData = (UFunction*)UObject::GObjObjects()->Data[47723];
+		pFnReadSaveGameData = (UFunction*)UObject::GObjects()->Data[47723];
 
 	UOnlineSubsystemSteamworks_execReadSaveGameData_Parms ReadSaveGameData_Parms;
 	ReadSaveGameData_Parms.LocalUserNum = LocalUserNum;
@@ -1622,7 +1622,7 @@ void UOnlineSubsystemSteamworks::GetAvailableDownloadCounts(unsigned char LocalU
 	static UFunction* pFnGetAvailableDownloadCounts = NULL;
 
 	if (!pFnGetAvailableDownloadCounts)
-		pFnGetAvailableDownloadCounts = (UFunction*)UObject::GObjObjects()->Data[47719];
+		pFnGetAvailableDownloadCounts = (UFunction*)UObject::GObjects()->Data[47719];
 
 	UOnlineSubsystemSteamworks_execGetAvailableDownloadCounts_Parms GetAvailableDownloadCounts_Parms;
 	GetAvailableDownloadCounts_Parms.LocalUserNum = LocalUserNum;
@@ -1647,7 +1647,7 @@ void UOnlineSubsystemSteamworks::ClearQueryAvailableDownloadsComplete(unsigned c
 	static UFunction* pFnClearQueryAvailableDownloadsComplete = NULL;
 
 	if (!pFnClearQueryAvailableDownloadsComplete)
-		pFnClearQueryAvailableDownloadsComplete = (UFunction*)UObject::GObjObjects()->Data[47716];
+		pFnClearQueryAvailableDownloadsComplete = (UFunction*)UObject::GObjects()->Data[47716];
 
 	UOnlineSubsystemSteamworks_execClearQueryAvailableDownloadsComplete_Parms ClearQueryAvailableDownloadsComplete_Parms;
 	ClearQueryAvailableDownloadsComplete_Parms.LocalUserNum = LocalUserNum;
@@ -1667,7 +1667,7 @@ void UOnlineSubsystemSteamworks::AddQueryAvailableDownloadsComplete(unsigned cha
 	static UFunction* pFnAddQueryAvailableDownloadsComplete = NULL;
 
 	if (!pFnAddQueryAvailableDownloadsComplete)
-		pFnAddQueryAvailableDownloadsComplete = (UFunction*)UObject::GObjObjects()->Data[47713];
+		pFnAddQueryAvailableDownloadsComplete = (UFunction*)UObject::GObjects()->Data[47713];
 
 	UOnlineSubsystemSteamworks_execAddQueryAvailableDownloadsComplete_Parms AddQueryAvailableDownloadsComplete_Parms;
 	AddQueryAvailableDownloadsComplete_Parms.LocalUserNum = LocalUserNum;
@@ -1686,7 +1686,7 @@ void UOnlineSubsystemSteamworks::OnQueryAvailableDownloadsComplete(unsigned long
 	static UFunction* pFnOnQueryAvailableDownloadsComplete = NULL;
 
 	if (!pFnOnQueryAvailableDownloadsComplete)
-		pFnOnQueryAvailableDownloadsComplete = (UFunction*)UObject::GObjObjects()->Data[47711];
+		pFnOnQueryAvailableDownloadsComplete = (UFunction*)UObject::GObjects()->Data[47711];
 
 	UOnlineSubsystemSteamworks_execOnQueryAvailableDownloadsComplete_Parms OnQueryAvailableDownloadsComplete_Parms;
 	OnQueryAvailableDownloadsComplete_Parms.bWasSuccessful = bWasSuccessful;
@@ -1706,7 +1706,7 @@ bool UOnlineSubsystemSteamworks::QueryAvailableDownloads(unsigned char LocalUser
 	static UFunction* pFnQueryAvailableDownloads = NULL;
 
 	if (!pFnQueryAvailableDownloads)
-		pFnQueryAvailableDownloads = (UFunction*)UObject::GObjObjects()->Data[47707];
+		pFnQueryAvailableDownloads = (UFunction*)UObject::GObjects()->Data[47707];
 
 	UOnlineSubsystemSteamworks_execQueryAvailableDownloads_Parms QueryAvailableDownloads_Parms;
 	QueryAvailableDownloads_Parms.LocalUserNum = LocalUserNum;
@@ -1728,7 +1728,7 @@ bool UOnlineSubsystemSteamworks::ClearCrossTitleSaveGames(unsigned char LocalUse
 	static UFunction* pFnClearCrossTitleSaveGames = NULL;
 
 	if (!pFnClearCrossTitleSaveGames)
-		pFnClearCrossTitleSaveGames = (UFunction*)UObject::GObjObjects()->Data[47704];
+		pFnClearCrossTitleSaveGames = (UFunction*)UObject::GObjects()->Data[47704];
 
 	UOnlineSubsystemSteamworks_execClearCrossTitleSaveGames_Parms ClearCrossTitleSaveGames_Parms;
 	ClearCrossTitleSaveGames_Parms.LocalUserNum = LocalUserNum;
@@ -1749,7 +1749,7 @@ void UOnlineSubsystemSteamworks::ClearReadCrossTitleSaveGameDataComplete(unsigne
 	static UFunction* pFnClearReadCrossTitleSaveGameDataComplete = NULL;
 
 	if (!pFnClearReadCrossTitleSaveGameDataComplete)
-		pFnClearReadCrossTitleSaveGameDataComplete = (UFunction*)UObject::GObjObjects()->Data[47701];
+		pFnClearReadCrossTitleSaveGameDataComplete = (UFunction*)UObject::GObjects()->Data[47701];
 
 	UOnlineSubsystemSteamworks_execClearReadCrossTitleSaveGameDataComplete_Parms ClearReadCrossTitleSaveGameDataComplete_Parms;
 	ClearReadCrossTitleSaveGameDataComplete_Parms.LocalUserNum = LocalUserNum;
@@ -1769,7 +1769,7 @@ void UOnlineSubsystemSteamworks::AddReadCrossTitleSaveGameDataComplete(unsigned 
 	static UFunction* pFnAddReadCrossTitleSaveGameDataComplete = NULL;
 
 	if (!pFnAddReadCrossTitleSaveGameDataComplete)
-		pFnAddReadCrossTitleSaveGameDataComplete = (UFunction*)UObject::GObjObjects()->Data[47698];
+		pFnAddReadCrossTitleSaveGameDataComplete = (UFunction*)UObject::GObjects()->Data[47698];
 
 	UOnlineSubsystemSteamworks_execAddReadCrossTitleSaveGameDataComplete_Parms AddReadCrossTitleSaveGameDataComplete_Parms;
 	AddReadCrossTitleSaveGameDataComplete_Parms.LocalUserNum = LocalUserNum;
@@ -1794,7 +1794,7 @@ void UOnlineSubsystemSteamworks::OnReadCrossTitleSaveGameDataComplete(unsigned l
 	static UFunction* pFnOnReadCrossTitleSaveGameDataComplete = NULL;
 
 	if (!pFnOnReadCrossTitleSaveGameDataComplete)
-		pFnOnReadCrossTitleSaveGameDataComplete = (UFunction*)UObject::GObjObjects()->Data[47690];
+		pFnOnReadCrossTitleSaveGameDataComplete = (UFunction*)UObject::GObjects()->Data[47690];
 
 	UOnlineSubsystemSteamworks_execOnReadCrossTitleSaveGameDataComplete_Parms OnReadCrossTitleSaveGameDataComplete_Parms;
 	OnReadCrossTitleSaveGameDataComplete_Parms.bWasSuccessful = bWasSuccessful;
@@ -1826,7 +1826,7 @@ bool UOnlineSubsystemSteamworks::GetCrossTitleSaveGameData(unsigned char LocalUs
 	static UFunction* pFnGetCrossTitleSaveGameData = NULL;
 
 	if (!pFnGetCrossTitleSaveGameData)
-		pFnGetCrossTitleSaveGameData = (UFunction*)UObject::GObjObjects()->Data[47679];
+		pFnGetCrossTitleSaveGameData = (UFunction*)UObject::GObjects()->Data[47679];
 
 	UOnlineSubsystemSteamworks_execGetCrossTitleSaveGameData_Parms GetCrossTitleSaveGameData_Parms;
 	GetCrossTitleSaveGameData_Parms.LocalUserNum = LocalUserNum;
@@ -1863,7 +1863,7 @@ bool UOnlineSubsystemSteamworks::ReadCrossTitleSaveGameData(unsigned char LocalU
 	static UFunction* pFnReadCrossTitleSaveGameData = NULL;
 
 	if (!pFnReadCrossTitleSaveGameData)
-		pFnReadCrossTitleSaveGameData = (UFunction*)UObject::GObjObjects()->Data[47671];
+		pFnReadCrossTitleSaveGameData = (UFunction*)UObject::GObjects()->Data[47671];
 
 	UOnlineSubsystemSteamworks_execReadCrossTitleSaveGameData_Parms ReadCrossTitleSaveGameData_Parms;
 	ReadCrossTitleSaveGameData_Parms.LocalUserNum = LocalUserNum;
@@ -1890,7 +1890,7 @@ void UOnlineSubsystemSteamworks::ClearReadCrossTitleContentCompleteDelegate(unsi
 	static UFunction* pFnClearReadCrossTitleContentCompleteDelegate = NULL;
 
 	if (!pFnClearReadCrossTitleContentCompleteDelegate)
-		pFnClearReadCrossTitleContentCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[47667];
+		pFnClearReadCrossTitleContentCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47667];
 
 	UOnlineSubsystemSteamworks_execClearReadCrossTitleContentCompleteDelegate_Parms ClearReadCrossTitleContentCompleteDelegate_Parms;
 	ClearReadCrossTitleContentCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -1912,7 +1912,7 @@ void UOnlineSubsystemSteamworks::AddReadCrossTitleContentCompleteDelegate(unsign
 	static UFunction* pFnAddReadCrossTitleContentCompleteDelegate = NULL;
 
 	if (!pFnAddReadCrossTitleContentCompleteDelegate)
-		pFnAddReadCrossTitleContentCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[47663];
+		pFnAddReadCrossTitleContentCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47663];
 
 	UOnlineSubsystemSteamworks_execAddReadCrossTitleContentCompleteDelegate_Parms AddReadCrossTitleContentCompleteDelegate_Parms;
 	AddReadCrossTitleContentCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -1932,7 +1932,7 @@ void UOnlineSubsystemSteamworks::OnReadCrossTitleContentComplete(unsigned long b
 	static UFunction* pFnOnReadCrossTitleContentComplete = NULL;
 
 	if (!pFnOnReadCrossTitleContentComplete)
-		pFnOnReadCrossTitleContentComplete = (UFunction*)UObject::GObjObjects()->Data[47661];
+		pFnOnReadCrossTitleContentComplete = (UFunction*)UObject::GObjects()->Data[47661];
 
 	UOnlineSubsystemSteamworks_execOnReadCrossTitleContentComplete_Parms OnReadCrossTitleContentComplete_Parms;
 	OnReadCrossTitleContentComplete_Parms.bWasSuccessful = bWasSuccessful;
@@ -1953,7 +1953,7 @@ unsigned char UOnlineSubsystemSteamworks::GetCrossTitleContentList(unsigned char
 	static UFunction* pFnGetCrossTitleContentList = NULL;
 
 	if (!pFnGetCrossTitleContentList)
-		pFnGetCrossTitleContentList = (UFunction*)UObject::GObjObjects()->Data[47655];
+		pFnGetCrossTitleContentList = (UFunction*)UObject::GObjects()->Data[47655];
 
 	UOnlineSubsystemSteamworks_execGetCrossTitleContentList_Parms GetCrossTitleContentList_Parms;
 	GetCrossTitleContentList_Parms.LocalUserNum = LocalUserNum;
@@ -1978,7 +1978,7 @@ void UOnlineSubsystemSteamworks::ClearCrossTitleContentList(unsigned char LocalU
 	static UFunction* pFnClearCrossTitleContentList = NULL;
 
 	if (!pFnClearCrossTitleContentList)
-		pFnClearCrossTitleContentList = (UFunction*)UObject::GObjObjects()->Data[47652];
+		pFnClearCrossTitleContentList = (UFunction*)UObject::GObjects()->Data[47652];
 
 	UOnlineSubsystemSteamworks_execClearCrossTitleContentList_Parms ClearCrossTitleContentList_Parms;
 	ClearCrossTitleContentList_Parms.LocalUserNum = LocalUserNum;
@@ -2001,7 +2001,7 @@ bool UOnlineSubsystemSteamworks::ReadCrossTitleContentList(unsigned char LocalUs
 	static UFunction* pFnReadCrossTitleContentList = NULL;
 
 	if (!pFnReadCrossTitleContentList)
-		pFnReadCrossTitleContentList = (UFunction*)UObject::GObjObjects()->Data[47646];
+		pFnReadCrossTitleContentList = (UFunction*)UObject::GObjects()->Data[47646];
 
 	UOnlineSubsystemSteamworks_execReadCrossTitleContentList_Parms ReadCrossTitleContentList_Parms;
 	ReadCrossTitleContentList_Parms.LocalUserNum = LocalUserNum;
@@ -2027,7 +2027,7 @@ unsigned char UOnlineSubsystemSteamworks::GetContentList(unsigned char LocalUser
 	static UFunction* pFnGetContentList = NULL;
 
 	if (!pFnGetContentList)
-		pFnGetContentList = (UFunction*)UObject::GObjObjects()->Data[47640];
+		pFnGetContentList = (UFunction*)UObject::GObjects()->Data[47640];
 
 	UOnlineSubsystemSteamworks_execGetContentList_Parms GetContentList_Parms;
 	GetContentList_Parms.LocalUserNum = LocalUserNum;
@@ -2052,7 +2052,7 @@ void UOnlineSubsystemSteamworks::ClearContentList(unsigned char LocalUserNum, un
 	static UFunction* pFnClearContentList = NULL;
 
 	if (!pFnClearContentList)
-		pFnClearContentList = (UFunction*)UObject::GObjObjects()->Data[47637];
+		pFnClearContentList = (UFunction*)UObject::GObjects()->Data[47637];
 
 	UOnlineSubsystemSteamworks_execClearContentList_Parms ClearContentList_Parms;
 	ClearContentList_Parms.LocalUserNum = LocalUserNum;
@@ -2074,7 +2074,7 @@ bool UOnlineSubsystemSteamworks::ReadContentList(unsigned char LocalUserNum, uns
 	static UFunction* pFnReadContentList = NULL;
 
 	if (!pFnReadContentList)
-		pFnReadContentList = (UFunction*)UObject::GObjObjects()->Data[47632];
+		pFnReadContentList = (UFunction*)UObject::GObjects()->Data[47632];
 
 	UOnlineSubsystemSteamworks_execReadContentList_Parms ReadContentList_Parms;
 	ReadContentList_Parms.LocalUserNum = LocalUserNum;
@@ -2098,7 +2098,7 @@ void UOnlineSubsystemSteamworks::ClearReadContentComplete(unsigned char LocalUse
 	static UFunction* pFnClearReadContentComplete = NULL;
 
 	if (!pFnClearReadContentComplete)
-		pFnClearReadContentComplete = (UFunction*)UObject::GObjObjects()->Data[47628];
+		pFnClearReadContentComplete = (UFunction*)UObject::GObjects()->Data[47628];
 
 	UOnlineSubsystemSteamworks_execClearReadContentComplete_Parms ClearReadContentComplete_Parms;
 	ClearReadContentComplete_Parms.LocalUserNum = LocalUserNum;
@@ -2120,7 +2120,7 @@ void UOnlineSubsystemSteamworks::AddReadContentComplete(unsigned char LocalUserN
 	static UFunction* pFnAddReadContentComplete = NULL;
 
 	if (!pFnAddReadContentComplete)
-		pFnAddReadContentComplete = (UFunction*)UObject::GObjObjects()->Data[47624];
+		pFnAddReadContentComplete = (UFunction*)UObject::GObjects()->Data[47624];
 
 	UOnlineSubsystemSteamworks_execAddReadContentComplete_Parms AddReadContentComplete_Parms;
 	AddReadContentComplete_Parms.LocalUserNum = LocalUserNum;
@@ -2140,7 +2140,7 @@ void UOnlineSubsystemSteamworks::OnReadContentComplete(unsigned long bWasSuccess
 	static UFunction* pFnOnReadContentComplete = NULL;
 
 	if (!pFnOnReadContentComplete)
-		pFnOnReadContentComplete = (UFunction*)UObject::GObjObjects()->Data[47622];
+		pFnOnReadContentComplete = (UFunction*)UObject::GObjects()->Data[47622];
 
 	UOnlineSubsystemSteamworks_execOnReadContentComplete_Parms OnReadContentComplete_Parms;
 	OnReadContentComplete_Parms.bWasSuccessful = bWasSuccessful;
@@ -2159,7 +2159,7 @@ void UOnlineSubsystemSteamworks::ClearContentChangeDelegate(struct FScriptDelega
 	static UFunction* pFnClearContentChangeDelegate = NULL;
 
 	if (!pFnClearContentChangeDelegate)
-		pFnClearContentChangeDelegate = (UFunction*)UObject::GObjObjects()->Data[47619];
+		pFnClearContentChangeDelegate = (UFunction*)UObject::GObjects()->Data[47619];
 
 	UOnlineSubsystemSteamworks_execClearContentChangeDelegate_Parms ClearContentChangeDelegate_Parms;
 	memcpy(&ClearContentChangeDelegate_Parms.ContentDelegate, &ContentDelegate, 0xC);
@@ -2179,7 +2179,7 @@ void UOnlineSubsystemSteamworks::AddContentChangeDelegate(struct FScriptDelegate
 	static UFunction* pFnAddContentChangeDelegate = NULL;
 
 	if (!pFnAddContentChangeDelegate)
-		pFnAddContentChangeDelegate = (UFunction*)UObject::GObjObjects()->Data[47616];
+		pFnAddContentChangeDelegate = (UFunction*)UObject::GObjects()->Data[47616];
 
 	UOnlineSubsystemSteamworks_execAddContentChangeDelegate_Parms AddContentChangeDelegate_Parms;
 	memcpy(&AddContentChangeDelegate_Parms.ContentDelegate, &ContentDelegate, 0xC);
@@ -2198,7 +2198,7 @@ void UOnlineSubsystemSteamworks::ClearContentChangeDelegateEx(struct FScriptDele
 	static UFunction* pFnClearContentChangeDelegateEx = NULL;
 
 	if (!pFnClearContentChangeDelegateEx)
-		pFnClearContentChangeDelegateEx = (UFunction*)UObject::GObjObjects()->Data[47614];
+		pFnClearContentChangeDelegateEx = (UFunction*)UObject::GObjects()->Data[47614];
 
 	UOnlineSubsystemSteamworks_execClearContentChangeDelegateEx_Parms ClearContentChangeDelegateEx_Parms;
 	memcpy(&ClearContentChangeDelegateEx_Parms.ContentDelegate, &ContentDelegate, 0xC);
@@ -2216,7 +2216,7 @@ void UOnlineSubsystemSteamworks::AddContentChangeDelegateEx(struct FScriptDelega
 	static UFunction* pFnAddContentChangeDelegateEx = NULL;
 
 	if (!pFnAddContentChangeDelegateEx)
-		pFnAddContentChangeDelegateEx = (UFunction*)UObject::GObjObjects()->Data[47611];
+		pFnAddContentChangeDelegateEx = (UFunction*)UObject::GObjects()->Data[47611];
 
 	UOnlineSubsystemSteamworks_execAddContentChangeDelegateEx_Parms AddContentChangeDelegateEx_Parms;
 	memcpy(&AddContentChangeDelegateEx_Parms.ContentDelegate, &ContentDelegate, 0xC);
@@ -2233,7 +2233,7 @@ void UOnlineSubsystemSteamworks::OnContentChange()
 	static UFunction* pFnOnContentChange = NULL;
 
 	if (!pFnOnContentChange)
-		pFnOnContentChange = (UFunction*)UObject::GObjObjects()->Data[47610];
+		pFnOnContentChange = (UFunction*)UObject::GObjects()->Data[47610];
 
 	UOnlineSubsystemSteamworks_execOnContentChange_Parms OnContentChange_Parms;
 
@@ -2251,7 +2251,7 @@ bool UOnlineSubsystemSteamworks::ShowRedeemCodeUI(unsigned char LocalUserNum)
 	static UFunction* pFnShowRedeemCodeUI = NULL;
 
 	if (!pFnShowRedeemCodeUI)
-		pFnShowRedeemCodeUI = (UFunction*)UObject::GObjObjects()->Data[47607];
+		pFnShowRedeemCodeUI = (UFunction*)UObject::GObjects()->Data[47607];
 
 	UOnlineSubsystemSteamworks_execShowRedeemCodeUI_Parms ShowRedeemCodeUI_Parms;
 	ShowRedeemCodeUI_Parms.LocalUserNum = LocalUserNum;
@@ -2270,7 +2270,7 @@ void UOnlineSubsystemSteamworks::DumpSteamworksSessionState()
 	static UFunction* pFnDumpSteamworksSessionState = NULL;
 
 	if (!pFnDumpSteamworksSessionState)
-		pFnDumpSteamworksSessionState = (UFunction*)UObject::GObjObjects()->Data[47606];
+		pFnDumpSteamworksSessionState = (UFunction*)UObject::GObjects()->Data[47606];
 
 	UOnlineSubsystemSteamworks_execDumpSteamworksSessionState_Parms DumpSteamworksSessionState_Parms;
 
@@ -2290,7 +2290,7 @@ void UOnlineSubsystemSteamworks::DumpSessionState()
 	static UFunction* pFnDumpSessionState = NULL;
 
 	if (!pFnDumpSessionState)
-		pFnDumpSessionState = (UFunction*)UObject::GObjObjects()->Data[47605];
+		pFnDumpSessionState = (UFunction*)UObject::GObjects()->Data[47605];
 
 	UOnlineSubsystemSteamworks_execDumpSessionState_Parms DumpSessionState_Parms;
 
@@ -2309,7 +2309,7 @@ bool UOnlineSubsystemSteamworks::SetVoiceVolume(unsigned char VolType, float Vol
 	static UFunction* pFnSetVoiceVolume = NULL;
 
 	if (!pFnSetVoiceVolume)
-		pFnSetVoiceVolume = (UFunction*)UObject::GObjObjects()->Data[47601];
+		pFnSetVoiceVolume = (UFunction*)UObject::GObjects()->Data[47601];
 
 	UOnlineSubsystemSteamworks_execSetVoiceVolume_Parms SetVoiceVolume_Parms;
 	SetVoiceVolume_Parms.VolType = VolType;
@@ -2335,7 +2335,7 @@ void UOnlineSubsystemSteamworks::ClearUnlockAvatarAwardCompleteDelegate(unsigned
 	static UFunction* pFnClearUnlockAvatarAwardCompleteDelegate = NULL;
 
 	if (!pFnClearUnlockAvatarAwardCompleteDelegate)
-		pFnClearUnlockAvatarAwardCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[47598];
+		pFnClearUnlockAvatarAwardCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47598];
 
 	UOnlineSubsystemSteamworks_execClearUnlockAvatarAwardCompleteDelegate_Parms ClearUnlockAvatarAwardCompleteDelegate_Parms;
 	ClearUnlockAvatarAwardCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -2355,7 +2355,7 @@ void UOnlineSubsystemSteamworks::AddUnlockAvatarAwardCompleteDelegate(unsigned c
 	static UFunction* pFnAddUnlockAvatarAwardCompleteDelegate = NULL;
 
 	if (!pFnAddUnlockAvatarAwardCompleteDelegate)
-		pFnAddUnlockAvatarAwardCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[47595];
+		pFnAddUnlockAvatarAwardCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47595];
 
 	UOnlineSubsystemSteamworks_execAddUnlockAvatarAwardCompleteDelegate_Parms AddUnlockAvatarAwardCompleteDelegate_Parms;
 	AddUnlockAvatarAwardCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -2374,7 +2374,7 @@ void UOnlineSubsystemSteamworks::OnUnlockAvatarAwardComplete(unsigned long bWasS
 	static UFunction* pFnOnUnlockAvatarAwardComplete = NULL;
 
 	if (!pFnOnUnlockAvatarAwardComplete)
-		pFnOnUnlockAvatarAwardComplete = (UFunction*)UObject::GObjObjects()->Data[47593];
+		pFnOnUnlockAvatarAwardComplete = (UFunction*)UObject::GObjects()->Data[47593];
 
 	UOnlineSubsystemSteamworks_execOnUnlockAvatarAwardComplete_Parms OnUnlockAvatarAwardComplete_Parms;
 	OnUnlockAvatarAwardComplete_Parms.bWasSuccessful = bWasSuccessful;
@@ -2395,7 +2395,7 @@ bool UOnlineSubsystemSteamworks::GetFriendJoinURL(struct FUniqueNetId FriendUID,
 	static UFunction* pFnGetFriendJoinURL = NULL;
 
 	if (!pFnGetFriendJoinURL)
-		pFnGetFriendJoinURL = (UFunction*)UObject::GObjObjects()->Data[47588];
+		pFnGetFriendJoinURL = (UFunction*)UObject::GObjects()->Data[47588];
 
 	UOnlineSubsystemSteamworks_execGetFriendJoinURL_Parms GetFriendJoinURL_Parms;
 	memcpy(&GetFriendJoinURL_Parms.FriendUID, &FriendUID, 0x18);
@@ -2428,7 +2428,7 @@ bool UOnlineSubsystemSteamworks::GetCommandlineJoinURL(unsigned long bMarkAsJoin
 	static UFunction* pFnGetCommandlineJoinURL = NULL;
 
 	if (!pFnGetCommandlineJoinURL)
-		pFnGetCommandlineJoinURL = (UFunction*)UObject::GObjObjects()->Data[47583];
+		pFnGetCommandlineJoinURL = (UFunction*)UObject::GObjects()->Data[47583];
 
 	UOnlineSubsystemSteamworks_execGetCommandlineJoinURL_Parms GetCommandlineJoinURL_Parms;
 	GetCommandlineJoinURL_Parms.bMarkAsJoined = bMarkAsJoined;
@@ -2460,7 +2460,7 @@ bool UOnlineSubsystemSteamworks::Int64ToUniqueNetId(struct FString UIDString, st
 	static UFunction* pFnInt64ToUniqueNetId = NULL;
 
 	if (!pFnInt64ToUniqueNetId)
-		pFnInt64ToUniqueNetId = (UFunction*)UObject::GObjObjects()->Data[47579];
+		pFnInt64ToUniqueNetId = (UFunction*)UObject::GObjects()->Data[47579];
 
 	UOnlineSubsystemSteamworks_execInt64ToUniqueNetId_Parms Int64ToUniqueNetId_Parms;
 	memcpy(&Int64ToUniqueNetId_Parms.UIDString, &UIDString, 0xC);
@@ -2488,7 +2488,7 @@ struct FString UOnlineSubsystemSteamworks::UniqueNetIdToInt64(struct FUniqueNetI
 	static UFunction* pFnUniqueNetIdToInt64 = NULL;
 
 	if (!pFnUniqueNetIdToInt64)
-		pFnUniqueNetIdToInt64 = (UFunction*)UObject::GObjObjects()->Data[47576];
+		pFnUniqueNetIdToInt64 = (UFunction*)UObject::GObjects()->Data[47576];
 
 	UOnlineSubsystemSteamworks_execUniqueNetIdToInt64_Parms UniqueNetIdToInt64_Parms;
 
@@ -2514,7 +2514,7 @@ void UOnlineSubsystemSteamworks::NotifyVOIPPlaybackFinished(class UAudioComponen
 	static UFunction* pFnNotifyVOIPPlaybackFinished = NULL;
 
 	if (!pFnNotifyVOIPPlaybackFinished)
-		pFnNotifyVOIPPlaybackFinished = (UFunction*)UObject::GObjObjects()->Data[47574];
+		pFnNotifyVOIPPlaybackFinished = (UFunction*)UObject::GObjects()->Data[47574];
 
 	UOnlineSubsystemSteamworks_execNotifyVOIPPlaybackFinished_Parms NotifyVOIPPlaybackFinished_Parms;
 	NotifyVOIPPlaybackFinished_Parms.VOIPAudioComponent = VOIPAudioComponent;
@@ -2536,7 +2536,7 @@ void UOnlineSubsystemSteamworks::OnVOIPPlaybackFinished(class UAudioComponent* A
 	static UFunction* pFnOnVOIPPlaybackFinished = NULL;
 
 	if (!pFnOnVOIPPlaybackFinished)
-		pFnOnVOIPPlaybackFinished = (UFunction*)UObject::GObjObjects()->Data[47572];
+		pFnOnVOIPPlaybackFinished = (UFunction*)UObject::GObjects()->Data[47572];
 
 	UOnlineSubsystemSteamworks_execOnVOIPPlaybackFinished_Parms OnVOIPPlaybackFinished_Parms;
 	OnVOIPPlaybackFinished_Parms.AC = AC;
@@ -2557,7 +2557,7 @@ bool UOnlineSubsystemSteamworks::ShowProfileUI(unsigned char LocalUserNum, struc
 	static UFunction* pFnShowProfileUI = NULL;
 
 	if (!pFnShowProfileUI)
-		pFnShowProfileUI = (UFunction*)UObject::GObjObjects()->Data[47567];
+		pFnShowProfileUI = (UFunction*)UObject::GObjects()->Data[47567];
 
 	UOnlineSubsystemSteamworks_execShowProfileUI_Parms ShowProfileUI_Parms;
 	ShowProfileUI_Parms.LocalUserNum = LocalUserNum;
@@ -2584,7 +2584,7 @@ struct FString UOnlineSubsystemSteamworks::UniqueNetIdToPlayerName(struct FUniqu
 	static UFunction* pFnUniqueNetIdToPlayerName = NULL;
 
 	if (!pFnUniqueNetIdToPlayerName)
-		pFnUniqueNetIdToPlayerName = (UFunction*)UObject::GObjObjects()->Data[47564];
+		pFnUniqueNetIdToPlayerName = (UFunction*)UObject::GObjects()->Data[47564];
 
 	UOnlineSubsystemSteamworks_execUniqueNetIdToPlayerName_Parms UniqueNetIdToPlayerName_Parms;
 
@@ -2613,7 +2613,7 @@ bool UOnlineSubsystemSteamworks::DisplayAchievementProgress(int AchievementId, i
 	static UFunction* pFnDisplayAchievementProgress = NULL;
 
 	if (!pFnDisplayAchievementProgress)
-		pFnDisplayAchievementProgress = (UFunction*)UObject::GObjObjects()->Data[47559];
+		pFnDisplayAchievementProgress = (UFunction*)UObject::GObjects()->Data[47559];
 
 	UOnlineSubsystemSteamworks_execDisplayAchievementProgress_Parms DisplayAchievementProgress_Parms;
 	DisplayAchievementProgress_Parms.AchievementId = AchievementId;
@@ -2642,7 +2642,7 @@ bool UOnlineSubsystemSteamworks::CreateLeaderboard(struct FString LeaderboardNam
 	static UFunction* pFnCreateLeaderboard = NULL;
 
 	if (!pFnCreateLeaderboard)
-		pFnCreateLeaderboard = (UFunction*)UObject::GObjObjects()->Data[47554];
+		pFnCreateLeaderboard = (UFunction*)UObject::GObjects()->Data[47554];
 
 	UOnlineSubsystemSteamworks_execCreateLeaderboard_Parms CreateLeaderboard_Parms;
 	memcpy(&CreateLeaderboard_Parms.LeaderboardName, &LeaderboardName, 0xC);
@@ -2669,7 +2669,7 @@ bool UOnlineSubsystemSteamworks::ResetStats(unsigned long bResetAchievements)
 	static UFunction* pFnResetStats = NULL;
 
 	if (!pFnResetStats)
-		pFnResetStats = (UFunction*)UObject::GObjObjects()->Data[47551];
+		pFnResetStats = (UFunction*)UObject::GObjects()->Data[47551];
 
 	UOnlineSubsystemSteamworks_execResetStats_Parms ResetStats_Parms;
 	ResetStats_Parms.bResetAchievements = bResetAchievements;
@@ -2698,7 +2698,7 @@ bool UOnlineSubsystemSteamworks::ShowCustomMessageUI(unsigned char LocalUserNum,
 	static UFunction* pFnShowCustomMessageUI = NULL;
 
 	if (!pFnShowCustomMessageUI)
-		pFnShowCustomMessageUI = (UFunction*)UObject::GObjObjects()->Data[47543];
+		pFnShowCustomMessageUI = (UFunction*)UObject::GObjects()->Data[47543];
 
 	UOnlineSubsystemSteamworks_execShowCustomMessageUI_Parms ShowCustomMessageUI_Parms;
 	ShowCustomMessageUI_Parms.LocalUserNum = LocalUserNum;
@@ -2725,7 +2725,7 @@ void UOnlineSubsystemSteamworks::ClearCrossTitleProfileSettings(unsigned char Lo
 	static UFunction* pFnClearCrossTitleProfileSettings = NULL;
 
 	if (!pFnClearCrossTitleProfileSettings)
-		pFnClearCrossTitleProfileSettings = (UFunction*)UObject::GObjObjects()->Data[47540];
+		pFnClearCrossTitleProfileSettings = (UFunction*)UObject::GObjects()->Data[47540];
 
 	UOnlineSubsystemSteamworks_execClearCrossTitleProfileSettings_Parms ClearCrossTitleProfileSettings_Parms;
 	ClearCrossTitleProfileSettings_Parms.LocalUserNum = LocalUserNum;
@@ -2746,7 +2746,7 @@ class UOnlineProfileSettings* UOnlineSubsystemSteamworks::GetCrossTitleProfileSe
 	static UFunction* pFnGetCrossTitleProfileSettings = NULL;
 
 	if (!pFnGetCrossTitleProfileSettings)
-		pFnGetCrossTitleProfileSettings = (UFunction*)UObject::GObjObjects()->Data[47536];
+		pFnGetCrossTitleProfileSettings = (UFunction*)UObject::GObjects()->Data[47536];
 
 	UOnlineSubsystemSteamworks_execGetCrossTitleProfileSettings_Parms GetCrossTitleProfileSettings_Parms;
 	GetCrossTitleProfileSettings_Parms.LocalUserNum = LocalUserNum;
@@ -2768,7 +2768,7 @@ void UOnlineSubsystemSteamworks::ClearReadCrossTitleProfileSettingsCompleteDeleg
 	static UFunction* pFnClearReadCrossTitleProfileSettingsCompleteDelegate = NULL;
 
 	if (!pFnClearReadCrossTitleProfileSettingsCompleteDelegate)
-		pFnClearReadCrossTitleProfileSettingsCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[47533];
+		pFnClearReadCrossTitleProfileSettingsCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47533];
 
 	UOnlineSubsystemSteamworks_execClearReadCrossTitleProfileSettingsCompleteDelegate_Parms ClearReadCrossTitleProfileSettingsCompleteDelegate_Parms;
 	ClearReadCrossTitleProfileSettingsCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -2788,7 +2788,7 @@ void UOnlineSubsystemSteamworks::AddReadCrossTitleProfileSettingsCompleteDelegat
 	static UFunction* pFnAddReadCrossTitleProfileSettingsCompleteDelegate = NULL;
 
 	if (!pFnAddReadCrossTitleProfileSettingsCompleteDelegate)
-		pFnAddReadCrossTitleProfileSettingsCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[47530];
+		pFnAddReadCrossTitleProfileSettingsCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47530];
 
 	UOnlineSubsystemSteamworks_execAddReadCrossTitleProfileSettingsCompleteDelegate_Parms AddReadCrossTitleProfileSettingsCompleteDelegate_Parms;
 	AddReadCrossTitleProfileSettingsCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -2809,7 +2809,7 @@ void UOnlineSubsystemSteamworks::OnReadCrossTitleProfileSettingsComplete(unsigne
 	static UFunction* pFnOnReadCrossTitleProfileSettingsComplete = NULL;
 
 	if (!pFnOnReadCrossTitleProfileSettingsComplete)
-		pFnOnReadCrossTitleProfileSettingsComplete = (UFunction*)UObject::GObjObjects()->Data[47526];
+		pFnOnReadCrossTitleProfileSettingsComplete = (UFunction*)UObject::GObjects()->Data[47526];
 
 	UOnlineSubsystemSteamworks_execOnReadCrossTitleProfileSettingsComplete_Parms OnReadCrossTitleProfileSettingsComplete_Parms;
 	OnReadCrossTitleProfileSettingsComplete_Parms.LocalUserNum = LocalUserNum;
@@ -2832,7 +2832,7 @@ bool UOnlineSubsystemSteamworks::ReadCrossTitleProfileSettings(unsigned char Loc
 	static UFunction* pFnReadCrossTitleProfileSettings = NULL;
 
 	if (!pFnReadCrossTitleProfileSettings)
-		pFnReadCrossTitleProfileSettings = (UFunction*)UObject::GObjObjects()->Data[47521];
+		pFnReadCrossTitleProfileSettings = (UFunction*)UObject::GObjects()->Data[47521];
 
 	UOnlineSubsystemSteamworks_execReadCrossTitleProfileSettings_Parms ReadCrossTitleProfileSettings_Parms;
 	ReadCrossTitleProfileSettings_Parms.LocalUserNum = LocalUserNum;
@@ -2856,7 +2856,7 @@ bool UOnlineSubsystemSteamworks::UnlockAvatarAward(unsigned char LocalUserNum, i
 	static UFunction* pFnUnlockAvatarAward = NULL;
 
 	if (!pFnUnlockAvatarAward)
-		pFnUnlockAvatarAward = (UFunction*)UObject::GObjObjects()->Data[47517];
+		pFnUnlockAvatarAward = (UFunction*)UObject::GObjects()->Data[47517];
 
 	UOnlineSubsystemSteamworks_execUnlockAvatarAward_Parms UnlockAvatarAward_Parms;
 	UnlockAvatarAward_Parms.LocalUserNum = LocalUserNum;
@@ -2877,7 +2877,7 @@ TArray< struct FString > UOnlineSubsystemSteamworks::EnumerateFilesOnRemoteStora
 	static UFunction* pFnEnumerateFilesOnRemoteStorage = NULL;
 
 	if (!pFnEnumerateFilesOnRemoteStorage)
-		pFnEnumerateFilesOnRemoteStorage = (UFunction*)UObject::GObjObjects()->Data[47514];
+		pFnEnumerateFilesOnRemoteStorage = (UFunction*)UObject::GObjects()->Data[47514];
 
 	UOnlineSubsystemSteamworks_execEnumerateFilesOnRemoteStorage_Parms EnumerateFilesOnRemoteStorage_Parms;
 
@@ -2901,7 +2901,7 @@ bool UOnlineSubsystemSteamworks::DeleteFileFromRemoteStorage(struct FString File
 	static UFunction* pFnDeleteFileFromRemoteStorage = NULL;
 
 	if (!pFnDeleteFileFromRemoteStorage)
-		pFnDeleteFileFromRemoteStorage = (UFunction*)UObject::GObjObjects()->Data[47511];
+		pFnDeleteFileFromRemoteStorage = (UFunction*)UObject::GObjects()->Data[47511];
 
 	UOnlineSubsystemSteamworks_execDeleteFileFromRemoteStorage_Parms DeleteFileFromRemoteStorage_Parms;
 	memcpy(&DeleteFileFromRemoteStorage_Parms.Filename, &Filename, 0xC);
@@ -2927,7 +2927,7 @@ bool UOnlineSubsystemSteamworks::ReadBytesFromRemoteStorage(struct FString Filen
 	static UFunction* pFnReadBytesFromRemoteStorage = NULL;
 
 	if (!pFnReadBytesFromRemoteStorage)
-		pFnReadBytesFromRemoteStorage = (UFunction*)UObject::GObjObjects()->Data[47506];
+		pFnReadBytesFromRemoteStorage = (UFunction*)UObject::GObjects()->Data[47506];
 
 	UOnlineSubsystemSteamworks_execReadBytesFromRemoteStorage_Parms ReadBytesFromRemoteStorage_Parms;
 	memcpy(&ReadBytesFromRemoteStorage_Parms.Filename, &Filename, 0xC);
@@ -2956,7 +2956,7 @@ bool UOnlineSubsystemSteamworks::ReadStringFromRemoteStorage(struct FString File
 	static UFunction* pFnReadStringFromRemoteStorage = NULL;
 
 	if (!pFnReadStringFromRemoteStorage)
-		pFnReadStringFromRemoteStorage = (UFunction*)UObject::GObjObjects()->Data[47502];
+		pFnReadStringFromRemoteStorage = (UFunction*)UObject::GObjects()->Data[47502];
 
 	UOnlineSubsystemSteamworks_execReadStringFromRemoteStorage_Parms ReadStringFromRemoteStorage_Parms;
 	memcpy(&ReadStringFromRemoteStorage_Parms.Filename, &Filename, 0xC);
@@ -2985,7 +2985,7 @@ bool UOnlineSubsystemSteamworks::WriteBytesToRemoteStorage(struct FString Filena
 	static UFunction* pFnWriteBytesToRemoteStorage = NULL;
 
 	if (!pFnWriteBytesToRemoteStorage)
-		pFnWriteBytesToRemoteStorage = (UFunction*)UObject::GObjObjects()->Data[47497];
+		pFnWriteBytesToRemoteStorage = (UFunction*)UObject::GObjects()->Data[47497];
 
 	UOnlineSubsystemSteamworks_execWriteBytesToRemoteStorage_Parms WriteBytesToRemoteStorage_Parms;
 	memcpy(&WriteBytesToRemoteStorage_Parms.Filename, &Filename, 0xC);
@@ -3012,7 +3012,7 @@ bool UOnlineSubsystemSteamworks::WriteStringToRemoteStorage(struct FString Filen
 	static UFunction* pFnWriteStringToRemoteStorage = NULL;
 
 	if (!pFnWriteStringToRemoteStorage)
-		pFnWriteStringToRemoteStorage = (UFunction*)UObject::GObjObjects()->Data[47493];
+		pFnWriteStringToRemoteStorage = (UFunction*)UObject::GObjects()->Data[47493];
 
 	UOnlineSubsystemSteamworks_execWriteStringToRemoteStorage_Parms WriteStringToRemoteStorage_Parms;
 	memcpy(&WriteStringToRemoteStorage_Parms.Filename, &Filename, 0xC);
@@ -3037,7 +3037,7 @@ void UOnlineSubsystemSteamworks::GetSteamClanData(TArray< struct FSteamPlayerCla
 	static UFunction* pFnGetSteamClanData = NULL;
 
 	if (!pFnGetSteamClanData)
-		pFnGetSteamClanData = (UFunction*)UObject::GObjObjects()->Data[47490];
+		pFnGetSteamClanData = (UFunction*)UObject::GObjects()->Data[47490];
 
 	UOnlineSubsystemSteamworks_execGetSteamClanData_Parms GetSteamClanData_Parms;
 
@@ -3061,7 +3061,7 @@ void UOnlineSubsystemSteamworks::ClearGetNumberOfCurrentPlayersCompleteDelegate(
 	static UFunction* pFnClearGetNumberOfCurrentPlayersCompleteDelegate = NULL;
 
 	if (!pFnClearGetNumberOfCurrentPlayersCompleteDelegate)
-		pFnClearGetNumberOfCurrentPlayersCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[47488];
+		pFnClearGetNumberOfCurrentPlayersCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47488];
 
 	UOnlineSubsystemSteamworks_execClearGetNumberOfCurrentPlayersCompleteDelegate_Parms ClearGetNumberOfCurrentPlayersCompleteDelegate_Parms;
 	memcpy(&ClearGetNumberOfCurrentPlayersCompleteDelegate_Parms.GetNumberOfCurrentPlayersCompleteDelegate, &GetNumberOfCurrentPlayersCompleteDelegate, 0xC);
@@ -3079,7 +3079,7 @@ void UOnlineSubsystemSteamworks::AddGetNumberOfCurrentPlayersCompleteDelegate(st
 	static UFunction* pFnAddGetNumberOfCurrentPlayersCompleteDelegate = NULL;
 
 	if (!pFnAddGetNumberOfCurrentPlayersCompleteDelegate)
-		pFnAddGetNumberOfCurrentPlayersCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[47485];
+		pFnAddGetNumberOfCurrentPlayersCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47485];
 
 	UOnlineSubsystemSteamworks_execAddGetNumberOfCurrentPlayersCompleteDelegate_Parms AddGetNumberOfCurrentPlayersCompleteDelegate_Parms;
 	memcpy(&AddGetNumberOfCurrentPlayersCompleteDelegate_Parms.GetNumberOfCurrentPlayersCompleteDelegate, &GetNumberOfCurrentPlayersCompleteDelegate, 0xC);
@@ -3097,7 +3097,7 @@ void UOnlineSubsystemSteamworks::OnGetNumberOfCurrentPlayersComplete(int TotalPl
 	static UFunction* pFnOnGetNumberOfCurrentPlayersComplete = NULL;
 
 	if (!pFnOnGetNumberOfCurrentPlayersComplete)
-		pFnOnGetNumberOfCurrentPlayersComplete = (UFunction*)UObject::GObjObjects()->Data[47483];
+		pFnOnGetNumberOfCurrentPlayersComplete = (UFunction*)UObject::GObjects()->Data[47483];
 
 	UOnlineSubsystemSteamworks_execOnGetNumberOfCurrentPlayersComplete_Parms OnGetNumberOfCurrentPlayersComplete_Parms;
 	OnGetNumberOfCurrentPlayersComplete_Parms.TotalPlayers = TotalPlayers;
@@ -3115,7 +3115,7 @@ bool UOnlineSubsystemSteamworks::GetNumberOfCurrentPlayers()
 	static UFunction* pFnGetNumberOfCurrentPlayers = NULL;
 
 	if (!pFnGetNumberOfCurrentPlayers)
-		pFnGetNumberOfCurrentPlayers = (UFunction*)UObject::GObjObjects()->Data[47481];
+		pFnGetNumberOfCurrentPlayers = (UFunction*)UObject::GObjects()->Data[47481];
 
 	UOnlineSubsystemSteamworks_execGetNumberOfCurrentPlayers_Parms GetNumberOfCurrentPlayers_Parms;
 
@@ -3140,7 +3140,7 @@ void UOnlineSubsystemSteamworks::ReadOnlineAvatar(struct FUniqueNetId PlayerNetI
 	static UFunction* pFnReadOnlineAvatar = NULL;
 
 	if (!pFnReadOnlineAvatar)
-		pFnReadOnlineAvatar = (UFunction*)UObject::GObjObjects()->Data[47477];
+		pFnReadOnlineAvatar = (UFunction*)UObject::GObjects()->Data[47477];
 
 	UOnlineSubsystemSteamworks_execReadOnlineAvatar_Parms ReadOnlineAvatar_Parms;
 	memcpy(&ReadOnlineAvatar_Parms.PlayerNetId, &PlayerNetId, 0x18);
@@ -3165,7 +3165,7 @@ void UOnlineSubsystemSteamworks::OnReadOnlineAvatarComplete(struct FUniqueNetId 
 	static UFunction* pFnOnReadOnlineAvatarComplete = NULL;
 
 	if (!pFnOnReadOnlineAvatarComplete)
-		pFnOnReadOnlineAvatarComplete = (UFunction*)UObject::GObjObjects()->Data[47474];
+		pFnOnReadOnlineAvatarComplete = (UFunction*)UObject::GObjects()->Data[47474];
 
 	UOnlineSubsystemSteamworks_execOnReadOnlineAvatarComplete_Parms OnReadOnlineAvatarComplete_Parms;
 	memcpy(&OnReadOnlineAvatarComplete_Parms.PlayerNetId, &PlayerNetId, 0x18);
@@ -3188,7 +3188,7 @@ bool UOnlineSubsystemSteamworks::ShowCustomPlayersUI(unsigned char LocalUserNum,
 	static UFunction* pFnShowCustomPlayersUI = NULL;
 
 	if (!pFnShowCustomPlayersUI)
-		pFnShowCustomPlayersUI = (UFunction*)UObject::GObjObjects()->Data[47467];
+		pFnShowCustomPlayersUI = (UFunction*)UObject::GObjects()->Data[47467];
 
 	UOnlineSubsystemSteamworks_execShowCustomPlayersUI_Parms ShowCustomPlayersUI_Parms;
 	ShowCustomPlayersUI_Parms.LocalUserNum = LocalUserNum;
@@ -3220,7 +3220,7 @@ unsigned char UOnlineSubsystemSteamworks::GetAchievements(unsigned char LocalUse
 	static UFunction* pFnGetAchievements = NULL;
 
 	if (!pFnGetAchievements)
-		pFnGetAchievements = (UFunction*)UObject::GObjObjects()->Data[47461];
+		pFnGetAchievements = (UFunction*)UObject::GObjects()->Data[47461];
 
 	UOnlineSubsystemSteamworks_execGetAchievements_Parms GetAchievements_Parms;
 	GetAchievements_Parms.LocalUserNum = LocalUserNum;
@@ -3249,7 +3249,7 @@ void UOnlineSubsystemSteamworks::ClearReadAchievementsCompleteDelegate(unsigned 
 	static UFunction* pFnClearReadAchievementsCompleteDelegate = NULL;
 
 	if (!pFnClearReadAchievementsCompleteDelegate)
-		pFnClearReadAchievementsCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[47458];
+		pFnClearReadAchievementsCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47458];
 
 	UOnlineSubsystemSteamworks_execClearReadAchievementsCompleteDelegate_Parms ClearReadAchievementsCompleteDelegate_Parms;
 	ClearReadAchievementsCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -3269,7 +3269,7 @@ void UOnlineSubsystemSteamworks::AddReadAchievementsCompleteDelegate(unsigned ch
 	static UFunction* pFnAddReadAchievementsCompleteDelegate = NULL;
 
 	if (!pFnAddReadAchievementsCompleteDelegate)
-		pFnAddReadAchievementsCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[47454];
+		pFnAddReadAchievementsCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47454];
 
 	UOnlineSubsystemSteamworks_execAddReadAchievementsCompleteDelegate_Parms AddReadAchievementsCompleteDelegate_Parms;
 	AddReadAchievementsCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -3288,7 +3288,7 @@ void UOnlineSubsystemSteamworks::OnReadAchievementsComplete(int TitleId)
 	static UFunction* pFnOnReadAchievementsComplete = NULL;
 
 	if (!pFnOnReadAchievementsComplete)
-		pFnOnReadAchievementsComplete = (UFunction*)UObject::GObjObjects()->Data[47452];
+		pFnOnReadAchievementsComplete = (UFunction*)UObject::GObjects()->Data[47452];
 
 	UOnlineSubsystemSteamworks_execOnReadAchievementsComplete_Parms OnReadAchievementsComplete_Parms;
 	OnReadAchievementsComplete_Parms.TitleId = TitleId;
@@ -3310,7 +3310,7 @@ bool UOnlineSubsystemSteamworks::ReadAchievements(unsigned char LocalUserNum, in
 	static UFunction* pFnReadAchievements = NULL;
 
 	if (!pFnReadAchievements)
-		pFnReadAchievements = (UFunction*)UObject::GObjObjects()->Data[47446];
+		pFnReadAchievements = (UFunction*)UObject::GObjects()->Data[47446];
 
 	UOnlineSubsystemSteamworks_execReadAchievements_Parms ReadAchievements_Parms;
 	ReadAchievements_Parms.LocalUserNum = LocalUserNum;
@@ -3338,7 +3338,7 @@ bool UOnlineSubsystemSteamworks::ShowPlayersUI(unsigned char LocalUserNum)
 	static UFunction* pFnShowPlayersUI = NULL;
 
 	if (!pFnShowPlayersUI)
-		pFnShowPlayersUI = (UFunction*)UObject::GObjObjects()->Data[47443];
+		pFnShowPlayersUI = (UFunction*)UObject::GObjects()->Data[47443];
 
 	UOnlineSubsystemSteamworks_execShowPlayersUI_Parms ShowPlayersUI_Parms;
 	ShowPlayersUI_Parms.LocalUserNum = LocalUserNum;
@@ -3364,7 +3364,7 @@ bool UOnlineSubsystemSteamworks::ShowFriendsInviteUI(unsigned char LocalUserNum,
 	static UFunction* pFnShowFriendsInviteUI = NULL;
 
 	if (!pFnShowFriendsInviteUI)
-		pFnShowFriendsInviteUI = (UFunction*)UObject::GObjObjects()->Data[47439];
+		pFnShowFriendsInviteUI = (UFunction*)UObject::GObjects()->Data[47439];
 
 	UOnlineSubsystemSteamworks_execShowFriendsInviteUI_Parms ShowFriendsInviteUI_Parms;
 	ShowFriendsInviteUI_Parms.LocalUserNum = LocalUserNum;
@@ -3390,7 +3390,7 @@ bool UOnlineSubsystemSteamworks::ShowFriendsUI(unsigned char LocalUserNum)
 	static UFunction* pFnShowFriendsUI = NULL;
 
 	if (!pFnShowFriendsUI)
-		pFnShowFriendsUI = (UFunction*)UObject::GObjObjects()->Data[47436];
+		pFnShowFriendsUI = (UFunction*)UObject::GObjects()->Data[47436];
 
 	UOnlineSubsystemSteamworks_execShowFriendsUI_Parms ShowFriendsUI_Parms;
 	ShowFriendsUI_Parms.LocalUserNum = LocalUserNum;
@@ -3415,7 +3415,7 @@ void UOnlineSubsystemSteamworks::ClearProfileDataChangedDelegate(unsigned char L
 	static UFunction* pFnClearProfileDataChangedDelegate = NULL;
 
 	if (!pFnClearProfileDataChangedDelegate)
-		pFnClearProfileDataChangedDelegate = (UFunction*)UObject::GObjObjects()->Data[47433];
+		pFnClearProfileDataChangedDelegate = (UFunction*)UObject::GObjects()->Data[47433];
 
 	UOnlineSubsystemSteamworks_execClearProfileDataChangedDelegate_Parms ClearProfileDataChangedDelegate_Parms;
 	ClearProfileDataChangedDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -3435,7 +3435,7 @@ void UOnlineSubsystemSteamworks::AddProfileDataChangedDelegate(unsigned char Loc
 	static UFunction* pFnAddProfileDataChangedDelegate = NULL;
 
 	if (!pFnAddProfileDataChangedDelegate)
-		pFnAddProfileDataChangedDelegate = (UFunction*)UObject::GObjObjects()->Data[47429];
+		pFnAddProfileDataChangedDelegate = (UFunction*)UObject::GObjects()->Data[47429];
 
 	UOnlineSubsystemSteamworks_execAddProfileDataChangedDelegate_Parms AddProfileDataChangedDelegate_Parms;
 	AddProfileDataChangedDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -3453,7 +3453,7 @@ void UOnlineSubsystemSteamworks::OnProfileDataChanged()
 	static UFunction* pFnOnProfileDataChanged = NULL;
 
 	if (!pFnOnProfileDataChanged)
-		pFnOnProfileDataChanged = (UFunction*)UObject::GObjObjects()->Data[47428];
+		pFnOnProfileDataChanged = (UFunction*)UObject::GObjects()->Data[47428];
 
 	UOnlineSubsystemSteamworks_execOnProfileDataChanged_Parms OnProfileDataChanged_Parms;
 
@@ -3472,7 +3472,7 @@ bool UOnlineSubsystemSteamworks::UnlockGamerPicture(unsigned char LocalUserNum, 
 	static UFunction* pFnUnlockGamerPicture = NULL;
 
 	if (!pFnUnlockGamerPicture)
-		pFnUnlockGamerPicture = (UFunction*)UObject::GObjObjects()->Data[47424];
+		pFnUnlockGamerPicture = (UFunction*)UObject::GObjects()->Data[47424];
 
 	UOnlineSubsystemSteamworks_execUnlockGamerPicture_Parms UnlockGamerPicture_Parms;
 	UnlockGamerPicture_Parms.LocalUserNum = LocalUserNum;
@@ -3498,7 +3498,7 @@ void UOnlineSubsystemSteamworks::ClearUnlockAchievementCompleteDelegate(unsigned
 	static UFunction* pFnClearUnlockAchievementCompleteDelegate = NULL;
 
 	if (!pFnClearUnlockAchievementCompleteDelegate)
-		pFnClearUnlockAchievementCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[47421];
+		pFnClearUnlockAchievementCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47421];
 
 	UOnlineSubsystemSteamworks_execClearUnlockAchievementCompleteDelegate_Parms ClearUnlockAchievementCompleteDelegate_Parms;
 	ClearUnlockAchievementCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -3518,7 +3518,7 @@ void UOnlineSubsystemSteamworks::AddUnlockAchievementCompleteDelegate(unsigned c
 	static UFunction* pFnAddUnlockAchievementCompleteDelegate = NULL;
 
 	if (!pFnAddUnlockAchievementCompleteDelegate)
-		pFnAddUnlockAchievementCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[47417];
+		pFnAddUnlockAchievementCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47417];
 
 	UOnlineSubsystemSteamworks_execAddUnlockAchievementCompleteDelegate_Parms AddUnlockAchievementCompleteDelegate_Parms;
 	AddUnlockAchievementCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -3537,7 +3537,7 @@ void UOnlineSubsystemSteamworks::OnUnlockAchievementComplete(unsigned long bWasS
 	static UFunction* pFnOnUnlockAchievementComplete = NULL;
 
 	if (!pFnOnUnlockAchievementComplete)
-		pFnOnUnlockAchievementComplete = (UFunction*)UObject::GObjObjects()->Data[47415];
+		pFnOnUnlockAchievementComplete = (UFunction*)UObject::GObjects()->Data[47415];
 
 	UOnlineSubsystemSteamworks_execOnUnlockAchievementComplete_Parms OnUnlockAchievementComplete_Parms;
 	OnUnlockAchievementComplete_Parms.bWasSuccessful = bWasSuccessful;
@@ -3557,7 +3557,7 @@ bool UOnlineSubsystemSteamworks::UnlockAchievement(unsigned char LocalUserNum, i
 	static UFunction* pFnUnlockAchievement = NULL;
 
 	if (!pFnUnlockAchievement)
-		pFnUnlockAchievement = (UFunction*)UObject::GObjObjects()->Data[47411];
+		pFnUnlockAchievement = (UFunction*)UObject::GObjects()->Data[47411];
 
 	UOnlineSubsystemSteamworks_execUnlockAchievement_Parms UnlockAchievement_Parms;
 	UnlockAchievement_Parms.LocalUserNum = LocalUserNum;
@@ -3584,7 +3584,7 @@ bool UOnlineSubsystemSteamworks::IsDeviceValid(int DeviceID, int SizeNeeded)
 	static UFunction* pFnIsDeviceValid = NULL;
 
 	if (!pFnIsDeviceValid)
-		pFnIsDeviceValid = (UFunction*)UObject::GObjObjects()->Data[47407];
+		pFnIsDeviceValid = (UFunction*)UObject::GObjects()->Data[47407];
 
 	UOnlineSubsystemSteamworks_execIsDeviceValid_Parms IsDeviceValid_Parms;
 	IsDeviceValid_Parms.DeviceID = DeviceID;
@@ -3611,7 +3611,7 @@ int UOnlineSubsystemSteamworks::GetDeviceSelectionResults(unsigned char LocalUse
 	static UFunction* pFnGetDeviceSelectionResults = NULL;
 
 	if (!pFnGetDeviceSelectionResults)
-		pFnGetDeviceSelectionResults = (UFunction*)UObject::GObjObjects()->Data[47403];
+		pFnGetDeviceSelectionResults = (UFunction*)UObject::GObjects()->Data[47403];
 
 	UOnlineSubsystemSteamworks_execGetDeviceSelectionResults_Parms GetDeviceSelectionResults_Parms;
 	GetDeviceSelectionResults_Parms.LocalUserNum = LocalUserNum;
@@ -3639,7 +3639,7 @@ void UOnlineSubsystemSteamworks::ClearDeviceSelectionDoneDelegate(unsigned char 
 	static UFunction* pFnClearDeviceSelectionDoneDelegate = NULL;
 
 	if (!pFnClearDeviceSelectionDoneDelegate)
-		pFnClearDeviceSelectionDoneDelegate = (UFunction*)UObject::GObjObjects()->Data[47400];
+		pFnClearDeviceSelectionDoneDelegate = (UFunction*)UObject::GObjects()->Data[47400];
 
 	UOnlineSubsystemSteamworks_execClearDeviceSelectionDoneDelegate_Parms ClearDeviceSelectionDoneDelegate_Parms;
 	ClearDeviceSelectionDoneDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -3659,7 +3659,7 @@ void UOnlineSubsystemSteamworks::AddDeviceSelectionDoneDelegate(unsigned char Lo
 	static UFunction* pFnAddDeviceSelectionDoneDelegate = NULL;
 
 	if (!pFnAddDeviceSelectionDoneDelegate)
-		pFnAddDeviceSelectionDoneDelegate = (UFunction*)UObject::GObjObjects()->Data[47394];
+		pFnAddDeviceSelectionDoneDelegate = (UFunction*)UObject::GObjects()->Data[47394];
 
 	UOnlineSubsystemSteamworks_execAddDeviceSelectionDoneDelegate_Parms AddDeviceSelectionDoneDelegate_Parms;
 	AddDeviceSelectionDoneDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -3678,7 +3678,7 @@ void UOnlineSubsystemSteamworks::OnDeviceSelectionComplete(unsigned long bWasSuc
 	static UFunction* pFnOnDeviceSelectionComplete = NULL;
 
 	if (!pFnOnDeviceSelectionComplete)
-		pFnOnDeviceSelectionComplete = (UFunction*)UObject::GObjObjects()->Data[47392];
+		pFnOnDeviceSelectionComplete = (UFunction*)UObject::GObjects()->Data[47392];
 
 	UOnlineSubsystemSteamworks_execOnDeviceSelectionComplete_Parms OnDeviceSelectionComplete_Parms;
 	OnDeviceSelectionComplete_Parms.bWasSuccessful = bWasSuccessful;
@@ -3700,7 +3700,7 @@ bool UOnlineSubsystemSteamworks::ShowDeviceSelectionUI(unsigned char LocalUserNu
 	static UFunction* pFnShowDeviceSelectionUI = NULL;
 
 	if (!pFnShowDeviceSelectionUI)
-		pFnShowDeviceSelectionUI = (UFunction*)UObject::GObjObjects()->Data[47386];
+		pFnShowDeviceSelectionUI = (UFunction*)UObject::GObjects()->Data[47386];
 
 	UOnlineSubsystemSteamworks_execShowDeviceSelectionUI_Parms ShowDeviceSelectionUI_Parms;
 	ShowDeviceSelectionUI_Parms.LocalUserNum = LocalUserNum;
@@ -3728,7 +3728,7 @@ bool UOnlineSubsystemSteamworks::ShowMembershipMarketplaceUI(unsigned char Local
 	static UFunction* pFnShowMembershipMarketplaceUI = NULL;
 
 	if (!pFnShowMembershipMarketplaceUI)
-		pFnShowMembershipMarketplaceUI = (UFunction*)UObject::GObjObjects()->Data[47383];
+		pFnShowMembershipMarketplaceUI = (UFunction*)UObject::GObjects()->Data[47383];
 
 	UOnlineSubsystemSteamworks_execShowMembershipMarketplaceUI_Parms ShowMembershipMarketplaceUI_Parms;
 	ShowMembershipMarketplaceUI_Parms.LocalUserNum = LocalUserNum;
@@ -3755,7 +3755,7 @@ bool UOnlineSubsystemSteamworks::ShowContentMarketplaceUI(unsigned char LocalUse
 	static UFunction* pFnShowContentMarketplaceUI = NULL;
 
 	if (!pFnShowContentMarketplaceUI)
-		pFnShowContentMarketplaceUI = (UFunction*)UObject::GObjObjects()->Data[47368];
+		pFnShowContentMarketplaceUI = (UFunction*)UObject::GObjects()->Data[47368];
 
 	UOnlineSubsystemSteamworks_execShowContentMarketplaceUI_Parms ShowContentMarketplaceUI_Parms;
 	ShowContentMarketplaceUI_Parms.LocalUserNum = LocalUserNum;
@@ -3783,7 +3783,7 @@ bool UOnlineSubsystemSteamworks::ShowInviteUI(unsigned char LocalUserNum, struct
 	static UFunction* pFnShowInviteUI = NULL;
 
 	if (!pFnShowInviteUI)
-		pFnShowInviteUI = (UFunction*)UObject::GObjObjects()->Data[47364];
+		pFnShowInviteUI = (UFunction*)UObject::GObjects()->Data[47364];
 
 	UOnlineSubsystemSteamworks_execShowInviteUI_Parms ShowInviteUI_Parms;
 	ShowInviteUI_Parms.LocalUserNum = LocalUserNum;
@@ -3809,7 +3809,7 @@ bool UOnlineSubsystemSteamworks::ShowAchievementsUI(unsigned char LocalUserNum)
 	static UFunction* pFnShowAchievementsUI = NULL;
 
 	if (!pFnShowAchievementsUI)
-		pFnShowAchievementsUI = (UFunction*)UObject::GObjObjects()->Data[47361];
+		pFnShowAchievementsUI = (UFunction*)UObject::GObjects()->Data[47361];
 
 	UOnlineSubsystemSteamworks_execShowAchievementsUI_Parms ShowAchievementsUI_Parms;
 	ShowAchievementsUI_Parms.LocalUserNum = LocalUserNum;
@@ -3834,7 +3834,7 @@ bool UOnlineSubsystemSteamworks::ShowMessagesUI(unsigned char LocalUserNum)
 	static UFunction* pFnShowMessagesUI = NULL;
 
 	if (!pFnShowMessagesUI)
-		pFnShowMessagesUI = (UFunction*)UObject::GObjObjects()->Data[47358];
+		pFnShowMessagesUI = (UFunction*)UObject::GObjects()->Data[47358];
 
 	UOnlineSubsystemSteamworks_execShowMessagesUI_Parms ShowMessagesUI_Parms;
 	ShowMessagesUI_Parms.LocalUserNum = LocalUserNum;
@@ -3860,7 +3860,7 @@ bool UOnlineSubsystemSteamworks::ShowGamerCardUI(unsigned char LocalUserNum, str
 	static UFunction* pFnShowGamerCardUI = NULL;
 
 	if (!pFnShowGamerCardUI)
-		pFnShowGamerCardUI = (UFunction*)UObject::GObjObjects()->Data[47354];
+		pFnShowGamerCardUI = (UFunction*)UObject::GObjects()->Data[47354];
 
 	UOnlineSubsystemSteamworks_execShowGamerCardUI_Parms ShowGamerCardUI_Parms;
 	ShowGamerCardUI_Parms.LocalUserNum = LocalUserNum;
@@ -3887,7 +3887,7 @@ bool UOnlineSubsystemSteamworks::ShowFeedbackUI(unsigned char LocalUserNum, stru
 	static UFunction* pFnShowFeedbackUI = NULL;
 
 	if (!pFnShowFeedbackUI)
-		pFnShowFeedbackUI = (UFunction*)UObject::GObjObjects()->Data[47350];
+		pFnShowFeedbackUI = (UFunction*)UObject::GObjects()->Data[47350];
 
 	UOnlineSubsystemSteamworks_execShowFeedbackUI_Parms ShowFeedbackUI_Parms;
 	ShowFeedbackUI_Parms.LocalUserNum = LocalUserNum;
@@ -3914,7 +3914,7 @@ bool UOnlineSubsystemSteamworks::DeleteMessage(unsigned char LocalUserNum, int M
 	static UFunction* pFnDeleteMessage = NULL;
 
 	if (!pFnDeleteMessage)
-		pFnDeleteMessage = (UFunction*)UObject::GObjObjects()->Data[47346];
+		pFnDeleteMessage = (UFunction*)UObject::GObjects()->Data[47346];
 
 	UOnlineSubsystemSteamworks_execDeleteMessage_Parms DeleteMessage_Parms;
 	DeleteMessage_Parms.LocalUserNum = LocalUserNum;
@@ -3936,7 +3936,7 @@ bool UOnlineSubsystemSteamworks::UnmuteAll(unsigned char LocalUserNum)
 	static UFunction* pFnUnmuteAll = NULL;
 
 	if (!pFnUnmuteAll)
-		pFnUnmuteAll = (UFunction*)UObject::GObjObjects()->Data[47343];
+		pFnUnmuteAll = (UFunction*)UObject::GObjects()->Data[47343];
 
 	UOnlineSubsystemSteamworks_execUnmuteAll_Parms UnmuteAll_Parms;
 	UnmuteAll_Parms.LocalUserNum = LocalUserNum;
@@ -3958,7 +3958,7 @@ bool UOnlineSubsystemSteamworks::MuteAll(unsigned char LocalUserNum, unsigned lo
 	static UFunction* pFnMuteAll = NULL;
 
 	if (!pFnMuteAll)
-		pFnMuteAll = (UFunction*)UObject::GObjObjects()->Data[47339];
+		pFnMuteAll = (UFunction*)UObject::GObjects()->Data[47339];
 
 	UOnlineSubsystemSteamworks_execMuteAll_Parms MuteAll_Parms;
 	MuteAll_Parms.LocalUserNum = LocalUserNum;
@@ -3982,7 +3982,7 @@ void UOnlineSubsystemSteamworks::CalcAggregateSkill(TArray< struct FDouble > Mus
 	static UFunction* pFnCalcAggregateSkill = NULL;
 
 	if (!pFnCalcAggregateSkill)
-		pFnCalcAggregateSkill = (UFunction*)UObject::GObjObjects()->Data[47332];
+		pFnCalcAggregateSkill = (UFunction*)UObject::GObjects()->Data[47332];
 
 	UOnlineSubsystemSteamworks_execCalcAggregateSkill_Parms CalcAggregateSkill_Parms;
 	memcpy(&CalcAggregateSkill_Parms.Mus, &Mus, 0xC);
@@ -4009,7 +4009,7 @@ bool UOnlineSubsystemSteamworks::RegisterStatGuid(struct FUniqueNetId PlayerID, 
 	static UFunction* pFnRegisterStatGuid = NULL;
 
 	if (!pFnRegisterStatGuid)
-		pFnRegisterStatGuid = (UFunction*)UObject::GObjObjects()->Data[47328];
+		pFnRegisterStatGuid = (UFunction*)UObject::GObjects()->Data[47328];
 
 	UOnlineSubsystemSteamworks_execRegisterStatGuid_Parms RegisterStatGuid_Parms;
 	memcpy(&RegisterStatGuid_Parms.PlayerID, &PlayerID, 0x18);
@@ -4036,7 +4036,7 @@ struct FString UOnlineSubsystemSteamworks::GetClientStatGuid()
 	static UFunction* pFnGetClientStatGuid = NULL;
 
 	if (!pFnGetClientStatGuid)
-		pFnGetClientStatGuid = (UFunction*)UObject::GObjObjects()->Data[47326];
+		pFnGetClientStatGuid = (UFunction*)UObject::GObjects()->Data[47326];
 
 	UOnlineSubsystemSteamworks_execGetClientStatGuid_Parms GetClientStatGuid_Parms;
 
@@ -4059,7 +4059,7 @@ void UOnlineSubsystemSteamworks::ClearRegisterHostStatGuidCompleteDelegateDelega
 	static UFunction* pFnClearRegisterHostStatGuidCompleteDelegateDelegate = NULL;
 
 	if (!pFnClearRegisterHostStatGuidCompleteDelegateDelegate)
-		pFnClearRegisterHostStatGuidCompleteDelegateDelegate = (UFunction*)UObject::GObjObjects()->Data[47324];
+		pFnClearRegisterHostStatGuidCompleteDelegateDelegate = (UFunction*)UObject::GObjects()->Data[47324];
 
 	UOnlineSubsystemSteamworks_execClearRegisterHostStatGuidCompleteDelegateDelegate_Parms ClearRegisterHostStatGuidCompleteDelegateDelegate_Parms;
 	memcpy(&ClearRegisterHostStatGuidCompleteDelegateDelegate_Parms.RegisterHostStatGuidCompleteDelegate, &RegisterHostStatGuidCompleteDelegate, 0xC);
@@ -4077,7 +4077,7 @@ void UOnlineSubsystemSteamworks::AddRegisterHostStatGuidCompleteDelegate(struct 
 	static UFunction* pFnAddRegisterHostStatGuidCompleteDelegate = NULL;
 
 	if (!pFnAddRegisterHostStatGuidCompleteDelegate)
-		pFnAddRegisterHostStatGuidCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[47321];
+		pFnAddRegisterHostStatGuidCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47321];
 
 	UOnlineSubsystemSteamworks_execAddRegisterHostStatGuidCompleteDelegate_Parms AddRegisterHostStatGuidCompleteDelegate_Parms;
 	memcpy(&AddRegisterHostStatGuidCompleteDelegate_Parms.RegisterHostStatGuidCompleteDelegate, &RegisterHostStatGuidCompleteDelegate, 0xC);
@@ -4095,7 +4095,7 @@ void UOnlineSubsystemSteamworks::OnRegisterHostStatGuidComplete(unsigned long bW
 	static UFunction* pFnOnRegisterHostStatGuidComplete = NULL;
 
 	if (!pFnOnRegisterHostStatGuidComplete)
-		pFnOnRegisterHostStatGuidComplete = (UFunction*)UObject::GObjObjects()->Data[47319];
+		pFnOnRegisterHostStatGuidComplete = (UFunction*)UObject::GObjects()->Data[47319];
 
 	UOnlineSubsystemSteamworks_execOnRegisterHostStatGuidComplete_Parms OnRegisterHostStatGuidComplete_Parms;
 	OnRegisterHostStatGuidComplete_Parms.bWasSuccessful = bWasSuccessful;
@@ -4114,7 +4114,7 @@ bool UOnlineSubsystemSteamworks::RegisterHostStatGuid(struct FString* HostStatGu
 	static UFunction* pFnRegisterHostStatGuid = NULL;
 
 	if (!pFnRegisterHostStatGuid)
-		pFnRegisterHostStatGuid = (UFunction*)UObject::GObjObjects()->Data[47316];
+		pFnRegisterHostStatGuid = (UFunction*)UObject::GObjects()->Data[47316];
 
 	UOnlineSubsystemSteamworks_execRegisterHostStatGuid_Parms RegisterHostStatGuid_Parms;
 
@@ -4140,7 +4140,7 @@ struct FString UOnlineSubsystemSteamworks::GetHostStatGuid()
 	static UFunction* pFnGetHostStatGuid = NULL;
 
 	if (!pFnGetHostStatGuid)
-		pFnGetHostStatGuid = (UFunction*)UObject::GObjObjects()->Data[47314];
+		pFnGetHostStatGuid = (UFunction*)UObject::GObjects()->Data[47314];
 
 	UOnlineSubsystemSteamworks_execGetHostStatGuid_Parms GetHostStatGuid_Parms;
 
@@ -4164,7 +4164,7 @@ void UOnlineSubsystemSteamworks::ClearFriendMessageReceivedDelegate(unsigned cha
 	static UFunction* pFnClearFriendMessageReceivedDelegate = NULL;
 
 	if (!pFnClearFriendMessageReceivedDelegate)
-		pFnClearFriendMessageReceivedDelegate = (UFunction*)UObject::GObjObjects()->Data[47311];
+		pFnClearFriendMessageReceivedDelegate = (UFunction*)UObject::GObjects()->Data[47311];
 
 	UOnlineSubsystemSteamworks_execClearFriendMessageReceivedDelegate_Parms ClearFriendMessageReceivedDelegate_Parms;
 	ClearFriendMessageReceivedDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -4184,7 +4184,7 @@ void UOnlineSubsystemSteamworks::AddFriendMessageReceivedDelegate(unsigned char 
 	static UFunction* pFnAddFriendMessageReceivedDelegate = NULL;
 
 	if (!pFnAddFriendMessageReceivedDelegate)
-		pFnAddFriendMessageReceivedDelegate = (UFunction*)UObject::GObjObjects()->Data[47308];
+		pFnAddFriendMessageReceivedDelegate = (UFunction*)UObject::GObjects()->Data[47308];
 
 	UOnlineSubsystemSteamworks_execAddFriendMessageReceivedDelegate_Parms AddFriendMessageReceivedDelegate_Parms;
 	AddFriendMessageReceivedDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -4206,7 +4206,7 @@ void UOnlineSubsystemSteamworks::OnFriendMessageReceived(unsigned char LocalUser
 	static UFunction* pFnOnFriendMessageReceived = NULL;
 
 	if (!pFnOnFriendMessageReceived)
-		pFnOnFriendMessageReceived = (UFunction*)UObject::GObjObjects()->Data[47303];
+		pFnOnFriendMessageReceived = (UFunction*)UObject::GObjects()->Data[47303];
 
 	UOnlineSubsystemSteamworks_execOnFriendMessageReceived_Parms OnFriendMessageReceived_Parms;
 	OnFriendMessageReceived_Parms.LocalUserNum = LocalUserNum;
@@ -4228,7 +4228,7 @@ void UOnlineSubsystemSteamworks::GetFriendMessages(unsigned char LocalUserNum, T
 	static UFunction* pFnGetFriendMessages = NULL;
 
 	if (!pFnGetFriendMessages)
-		pFnGetFriendMessages = (UFunction*)UObject::GObjObjects()->Data[47299];
+		pFnGetFriendMessages = (UFunction*)UObject::GObjects()->Data[47299];
 
 	UOnlineSubsystemSteamworks_execGetFriendMessages_Parms GetFriendMessages_Parms;
 	GetFriendMessages_Parms.LocalUserNum = LocalUserNum;
@@ -4249,7 +4249,7 @@ void UOnlineSubsystemSteamworks::ClearJoinFriendGameCompleteDelegate(struct FScr
 	static UFunction* pFnClearJoinFriendGameCompleteDelegate = NULL;
 
 	if (!pFnClearJoinFriendGameCompleteDelegate)
-		pFnClearJoinFriendGameCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[47297];
+		pFnClearJoinFriendGameCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47297];
 
 	UOnlineSubsystemSteamworks_execClearJoinFriendGameCompleteDelegate_Parms ClearJoinFriendGameCompleteDelegate_Parms;
 	memcpy(&ClearJoinFriendGameCompleteDelegate_Parms.JoinFriendGameCompleteDelegate, &JoinFriendGameCompleteDelegate, 0xC);
@@ -4267,7 +4267,7 @@ void UOnlineSubsystemSteamworks::AddJoinFriendGameCompleteDelegate(struct FScrip
 	static UFunction* pFnAddJoinFriendGameCompleteDelegate = NULL;
 
 	if (!pFnAddJoinFriendGameCompleteDelegate)
-		pFnAddJoinFriendGameCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[47294];
+		pFnAddJoinFriendGameCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47294];
 
 	UOnlineSubsystemSteamworks_execAddJoinFriendGameCompleteDelegate_Parms AddJoinFriendGameCompleteDelegate_Parms;
 	memcpy(&AddJoinFriendGameCompleteDelegate_Parms.JoinFriendGameCompleteDelegate, &JoinFriendGameCompleteDelegate, 0xC);
@@ -4285,7 +4285,7 @@ void UOnlineSubsystemSteamworks::OnJoinFriendGameComplete(unsigned long bWasSucc
 	static UFunction* pFnOnJoinFriendGameComplete = NULL;
 
 	if (!pFnOnJoinFriendGameComplete)
-		pFnOnJoinFriendGameComplete = (UFunction*)UObject::GObjObjects()->Data[47292];
+		pFnOnJoinFriendGameComplete = (UFunction*)UObject::GObjects()->Data[47292];
 
 	UOnlineSubsystemSteamworks_execOnJoinFriendGameComplete_Parms OnJoinFriendGameComplete_Parms;
 	OnJoinFriendGameComplete_Parms.bWasSuccessful = bWasSuccessful;
@@ -4305,7 +4305,7 @@ bool UOnlineSubsystemSteamworks::JoinFriendGame(unsigned char LocalUserNum, stru
 	static UFunction* pFnJoinFriendGame = NULL;
 
 	if (!pFnJoinFriendGame)
-		pFnJoinFriendGame = (UFunction*)UObject::GObjObjects()->Data[47288];
+		pFnJoinFriendGame = (UFunction*)UObject::GObjects()->Data[47288];
 
 	UOnlineSubsystemSteamworks_execJoinFriendGame_Parms JoinFriendGame_Parms;
 	JoinFriendGame_Parms.LocalUserNum = LocalUserNum;
@@ -4331,7 +4331,7 @@ void UOnlineSubsystemSteamworks::ClearReceivedGameInviteDelegate(unsigned char L
 	static UFunction* pFnClearReceivedGameInviteDelegate = NULL;
 
 	if (!pFnClearReceivedGameInviteDelegate)
-		pFnClearReceivedGameInviteDelegate = (UFunction*)UObject::GObjObjects()->Data[47285];
+		pFnClearReceivedGameInviteDelegate = (UFunction*)UObject::GObjects()->Data[47285];
 
 	UOnlineSubsystemSteamworks_execClearReceivedGameInviteDelegate_Parms ClearReceivedGameInviteDelegate_Parms;
 	ClearReceivedGameInviteDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -4351,7 +4351,7 @@ void UOnlineSubsystemSteamworks::AddReceivedGameInviteDelegate(unsigned char Loc
 	static UFunction* pFnAddReceivedGameInviteDelegate = NULL;
 
 	if (!pFnAddReceivedGameInviteDelegate)
-		pFnAddReceivedGameInviteDelegate = (UFunction*)UObject::GObjObjects()->Data[47281];
+		pFnAddReceivedGameInviteDelegate = (UFunction*)UObject::GObjects()->Data[47281];
 
 	UOnlineSubsystemSteamworks_execAddReceivedGameInviteDelegate_Parms AddReceivedGameInviteDelegate_Parms;
 	AddReceivedGameInviteDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -4371,7 +4371,7 @@ void UOnlineSubsystemSteamworks::OnReceivedGameInvite(unsigned char LocalUserNum
 	static UFunction* pFnOnReceivedGameInvite = NULL;
 
 	if (!pFnOnReceivedGameInvite)
-		pFnOnReceivedGameInvite = (UFunction*)UObject::GObjObjects()->Data[47278];
+		pFnOnReceivedGameInvite = (UFunction*)UObject::GObjects()->Data[47278];
 
 	UOnlineSubsystemSteamworks_execOnReceivedGameInvite_Parms OnReceivedGameInvite_Parms;
 	OnReceivedGameInvite_Parms.LocalUserNum = LocalUserNum;
@@ -4391,7 +4391,7 @@ void UOnlineSubsystemSteamworks::ClearSentGameInviteDelegate(unsigned char Local
 	static UFunction* pFnClearSentGameInviteDelegate = NULL;
 
 	if (!pFnClearSentGameInviteDelegate)
-		pFnClearSentGameInviteDelegate = (UFunction*)UObject::GObjObjects()->Data[47275];
+		pFnClearSentGameInviteDelegate = (UFunction*)UObject::GObjects()->Data[47275];
 
 	UOnlineSubsystemSteamworks_execClearSentGameInviteDelegate_Parms ClearSentGameInviteDelegate_Parms;
 	ClearSentGameInviteDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -4411,7 +4411,7 @@ void UOnlineSubsystemSteamworks::AddSentGameInviteDelegate(unsigned char LocalUs
 	static UFunction* pFnAddSentGameInviteDelegate = NULL;
 
 	if (!pFnAddSentGameInviteDelegate)
-		pFnAddSentGameInviteDelegate = (UFunction*)UObject::GObjObjects()->Data[47271];
+		pFnAddSentGameInviteDelegate = (UFunction*)UObject::GObjects()->Data[47271];
 
 	UOnlineSubsystemSteamworks_execAddSentGameInviteDelegate_Parms AddSentGameInviteDelegate_Parms;
 	AddSentGameInviteDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -4431,7 +4431,7 @@ void UOnlineSubsystemSteamworks::OnSentGameInvite(unsigned char LocalUserNum, un
 	static UFunction* pFnOnSentGameInvite = NULL;
 
 	if (!pFnOnSentGameInvite)
-		pFnOnSentGameInvite = (UFunction*)UObject::GObjObjects()->Data[47268];
+		pFnOnSentGameInvite = (UFunction*)UObject::GObjects()->Data[47268];
 
 	UOnlineSubsystemSteamworks_execOnSentGameInvite_Parms OnSentGameInvite_Parms;
 	OnSentGameInvite_Parms.LocalUserNum = LocalUserNum;
@@ -4453,7 +4453,7 @@ bool UOnlineSubsystemSteamworks::SendGameInviteToFriends(unsigned char LocalUser
 	static UFunction* pFnSendGameInviteToFriends = NULL;
 
 	if (!pFnSendGameInviteToFriends)
-		pFnSendGameInviteToFriends = (UFunction*)UObject::GObjObjects()->Data[47262];
+		pFnSendGameInviteToFriends = (UFunction*)UObject::GObjects()->Data[47262];
 
 	UOnlineSubsystemSteamworks_execSendGameInviteToFriends_Parms SendGameInviteToFriends_Parms;
 	SendGameInviteToFriends_Parms.LocalUserNum = LocalUserNum;
@@ -4482,7 +4482,7 @@ bool UOnlineSubsystemSteamworks::SendGameInviteToFriend(unsigned char LocalUserN
 	static UFunction* pFnSendGameInviteToFriend = NULL;
 
 	if (!pFnSendGameInviteToFriend)
-		pFnSendGameInviteToFriend = (UFunction*)UObject::GObjObjects()->Data[47257];
+		pFnSendGameInviteToFriend = (UFunction*)UObject::GObjects()->Data[47257];
 
 	UOnlineSubsystemSteamworks_execSendGameInviteToFriend_Parms SendGameInviteToFriend_Parms;
 	SendGameInviteToFriend_Parms.LocalUserNum = LocalUserNum;
@@ -4511,7 +4511,7 @@ bool UOnlineSubsystemSteamworks::SendMessageToFriend(unsigned char LocalUserNum,
 	static UFunction* pFnSendMessageToFriend = NULL;
 
 	if (!pFnSendMessageToFriend)
-		pFnSendMessageToFriend = (UFunction*)UObject::GObjObjects()->Data[47252];
+		pFnSendMessageToFriend = (UFunction*)UObject::GObjects()->Data[47252];
 
 	UOnlineSubsystemSteamworks_execSendMessageToFriend_Parms SendMessageToFriend_Parms;
 	SendMessageToFriend_Parms.LocalUserNum = LocalUserNum;
@@ -4538,7 +4538,7 @@ void UOnlineSubsystemSteamworks::ClearFriendInviteReceivedDelegate(unsigned char
 	static UFunction* pFnClearFriendInviteReceivedDelegate = NULL;
 
 	if (!pFnClearFriendInviteReceivedDelegate)
-		pFnClearFriendInviteReceivedDelegate = (UFunction*)UObject::GObjObjects()->Data[47249];
+		pFnClearFriendInviteReceivedDelegate = (UFunction*)UObject::GObjects()->Data[47249];
 
 	UOnlineSubsystemSteamworks_execClearFriendInviteReceivedDelegate_Parms ClearFriendInviteReceivedDelegate_Parms;
 	ClearFriendInviteReceivedDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -4558,7 +4558,7 @@ void UOnlineSubsystemSteamworks::AddFriendInviteReceivedDelegate(unsigned char L
 	static UFunction* pFnAddFriendInviteReceivedDelegate = NULL;
 
 	if (!pFnAddFriendInviteReceivedDelegate)
-		pFnAddFriendInviteReceivedDelegate = (UFunction*)UObject::GObjObjects()->Data[47245];
+		pFnAddFriendInviteReceivedDelegate = (UFunction*)UObject::GObjects()->Data[47245];
 
 	UOnlineSubsystemSteamworks_execAddFriendInviteReceivedDelegate_Parms AddFriendInviteReceivedDelegate_Parms;
 	AddFriendInviteReceivedDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -4580,7 +4580,7 @@ void UOnlineSubsystemSteamworks::OnFriendInviteReceived(unsigned char LocalUserN
 	static UFunction* pFnOnFriendInviteReceived = NULL;
 
 	if (!pFnOnFriendInviteReceived)
-		pFnOnFriendInviteReceived = (UFunction*)UObject::GObjObjects()->Data[47240];
+		pFnOnFriendInviteReceived = (UFunction*)UObject::GObjects()->Data[47240];
 
 	UOnlineSubsystemSteamworks_execOnFriendInviteReceived_Parms OnFriendInviteReceived_Parms;
 	OnFriendInviteReceived_Parms.LocalUserNum = LocalUserNum;
@@ -4603,7 +4603,7 @@ bool UOnlineSubsystemSteamworks::DenyFriendInvite(unsigned char LocalUserNum, st
 	static UFunction* pFnDenyFriendInvite = NULL;
 
 	if (!pFnDenyFriendInvite)
-		pFnDenyFriendInvite = (UFunction*)UObject::GObjObjects()->Data[47236];
+		pFnDenyFriendInvite = (UFunction*)UObject::GObjects()->Data[47236];
 
 	UOnlineSubsystemSteamworks_execDenyFriendInvite_Parms DenyFriendInvite_Parms;
 	DenyFriendInvite_Parms.LocalUserNum = LocalUserNum;
@@ -4630,7 +4630,7 @@ bool UOnlineSubsystemSteamworks::AcceptFriendInvite(unsigned char LocalUserNum, 
 	static UFunction* pFnAcceptFriendInvite = NULL;
 
 	if (!pFnAcceptFriendInvite)
-		pFnAcceptFriendInvite = (UFunction*)UObject::GObjObjects()->Data[47232];
+		pFnAcceptFriendInvite = (UFunction*)UObject::GObjects()->Data[47232];
 
 	UOnlineSubsystemSteamworks_execAcceptFriendInvite_Parms AcceptFriendInvite_Parms;
 	AcceptFriendInvite_Parms.LocalUserNum = LocalUserNum;
@@ -4657,7 +4657,7 @@ bool UOnlineSubsystemSteamworks::RemoveFriend(unsigned char LocalUserNum, struct
 	static UFunction* pFnRemoveFriend = NULL;
 
 	if (!pFnRemoveFriend)
-		pFnRemoveFriend = (UFunction*)UObject::GObjObjects()->Data[47228];
+		pFnRemoveFriend = (UFunction*)UObject::GObjects()->Data[47228];
 
 	UOnlineSubsystemSteamworks_execRemoveFriend_Parms RemoveFriend_Parms;
 	RemoveFriend_Parms.LocalUserNum = LocalUserNum;
@@ -4683,7 +4683,7 @@ void UOnlineSubsystemSteamworks::ClearAddFriendByNameCompleteDelegate(unsigned c
 	static UFunction* pFnClearAddFriendByNameCompleteDelegate = NULL;
 
 	if (!pFnClearAddFriendByNameCompleteDelegate)
-		pFnClearAddFriendByNameCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[47225];
+		pFnClearAddFriendByNameCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47225];
 
 	UOnlineSubsystemSteamworks_execClearAddFriendByNameCompleteDelegate_Parms ClearAddFriendByNameCompleteDelegate_Parms;
 	ClearAddFriendByNameCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -4703,7 +4703,7 @@ void UOnlineSubsystemSteamworks::AddAddFriendByNameCompleteDelegate(unsigned cha
 	static UFunction* pFnAddAddFriendByNameCompleteDelegate = NULL;
 
 	if (!pFnAddAddFriendByNameCompleteDelegate)
-		pFnAddAddFriendByNameCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[47221];
+		pFnAddAddFriendByNameCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47221];
 
 	UOnlineSubsystemSteamworks_execAddAddFriendByNameCompleteDelegate_Parms AddAddFriendByNameCompleteDelegate_Parms;
 	AddAddFriendByNameCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -4722,7 +4722,7 @@ void UOnlineSubsystemSteamworks::OnAddFriendByNameComplete(unsigned long bWasSuc
 	static UFunction* pFnOnAddFriendByNameComplete = NULL;
 
 	if (!pFnOnAddFriendByNameComplete)
-		pFnOnAddFriendByNameComplete = (UFunction*)UObject::GObjObjects()->Data[47219];
+		pFnOnAddFriendByNameComplete = (UFunction*)UObject::GObjects()->Data[47219];
 
 	UOnlineSubsystemSteamworks_execOnAddFriendByNameComplete_Parms OnAddFriendByNameComplete_Parms;
 	OnAddFriendByNameComplete_Parms.bWasSuccessful = bWasSuccessful;
@@ -4743,7 +4743,7 @@ bool UOnlineSubsystemSteamworks::AddFriendByName(unsigned char LocalUserNum, str
 	static UFunction* pFnAddFriendByName = NULL;
 
 	if (!pFnAddFriendByName)
-		pFnAddFriendByName = (UFunction*)UObject::GObjObjects()->Data[47214];
+		pFnAddFriendByName = (UFunction*)UObject::GObjects()->Data[47214];
 
 	UOnlineSubsystemSteamworks_execAddFriendByName_Parms AddFriendByName_Parms;
 	AddFriendByName_Parms.LocalUserNum = LocalUserNum;
@@ -4772,7 +4772,7 @@ bool UOnlineSubsystemSteamworks::AddFriend(unsigned char LocalUserNum, struct FU
 	static UFunction* pFnAddFriend = NULL;
 
 	if (!pFnAddFriend)
-		pFnAddFriend = (UFunction*)UObject::GObjObjects()->Data[47209];
+		pFnAddFriend = (UFunction*)UObject::GObjects()->Data[47209];
 
 	UOnlineSubsystemSteamworks_execAddFriend_Parms AddFriend_Parms;
 	AddFriend_Parms.LocalUserNum = LocalUserNum;
@@ -4799,7 +4799,7 @@ struct FString UOnlineSubsystemSteamworks::GetKeyboardInputResults(unsigned char
 	static UFunction* pFnGetKeyboardInputResults = NULL;
 
 	if (!pFnGetKeyboardInputResults)
-		pFnGetKeyboardInputResults = (UFunction*)UObject::GObjObjects()->Data[47204];
+		pFnGetKeyboardInputResults = (UFunction*)UObject::GObjects()->Data[47204];
 
 	UOnlineSubsystemSteamworks_execGetKeyboardInputResults_Parms GetKeyboardInputResults_Parms;
 
@@ -4821,7 +4821,7 @@ void UOnlineSubsystemSteamworks::ClearKeyboardInputDoneDelegate(struct FScriptDe
 	static UFunction* pFnClearKeyboardInputDoneDelegate = NULL;
 
 	if (!pFnClearKeyboardInputDoneDelegate)
-		pFnClearKeyboardInputDoneDelegate = (UFunction*)UObject::GObjObjects()->Data[47202];
+		pFnClearKeyboardInputDoneDelegate = (UFunction*)UObject::GObjects()->Data[47202];
 
 	UOnlineSubsystemSteamworks_execClearKeyboardInputDoneDelegate_Parms ClearKeyboardInputDoneDelegate_Parms;
 	memcpy(&ClearKeyboardInputDoneDelegate_Parms.InputDelegate, &InputDelegate, 0xC);
@@ -4839,7 +4839,7 @@ void UOnlineSubsystemSteamworks::AddKeyboardInputDoneDelegate(struct FScriptDele
 	static UFunction* pFnAddKeyboardInputDoneDelegate = NULL;
 
 	if (!pFnAddKeyboardInputDoneDelegate)
-		pFnAddKeyboardInputDoneDelegate = (UFunction*)UObject::GObjObjects()->Data[47199];
+		pFnAddKeyboardInputDoneDelegate = (UFunction*)UObject::GObjects()->Data[47199];
 
 	UOnlineSubsystemSteamworks_execAddKeyboardInputDoneDelegate_Parms AddKeyboardInputDoneDelegate_Parms;
 	memcpy(&AddKeyboardInputDoneDelegate_Parms.InputDelegate, &InputDelegate, 0xC);
@@ -4857,7 +4857,7 @@ void UOnlineSubsystemSteamworks::OnKeyboardInputComplete(unsigned long bWasSucce
 	static UFunction* pFnOnKeyboardInputComplete = NULL;
 
 	if (!pFnOnKeyboardInputComplete)
-		pFnOnKeyboardInputComplete = (UFunction*)UObject::GObjObjects()->Data[47197];
+		pFnOnKeyboardInputComplete = (UFunction*)UObject::GObjects()->Data[47197];
 
 	UOnlineSubsystemSteamworks_execOnKeyboardInputComplete_Parms OnKeyboardInputComplete_Parms;
 	OnKeyboardInputComplete_Parms.bWasSuccessful = bWasSuccessful;
@@ -4882,7 +4882,7 @@ bool UOnlineSubsystemSteamworks::ShowKeyboardUI(unsigned char LocalUserNum, stru
 	static UFunction* pFnShowKeyboardUI = NULL;
 
 	if (!pFnShowKeyboardUI)
-		pFnShowKeyboardUI = (UFunction*)UObject::GObjObjects()->Data[47188];
+		pFnShowKeyboardUI = (UFunction*)UObject::GObjects()->Data[47188];
 
 	UOnlineSubsystemSteamworks_execShowKeyboardUI_Parms ShowKeyboardUI_Parms;
 	ShowKeyboardUI_Parms.LocalUserNum = LocalUserNum;
@@ -4915,7 +4915,7 @@ void UOnlineSubsystemSteamworks::SetOnlineStatus(unsigned char LocalUserNum, int
 	static UFunction* pFnSetOnlineStatus = NULL;
 
 	if (!pFnSetOnlineStatus)
-		pFnSetOnlineStatus = (UFunction*)UObject::GObjObjects()->Data[47181];
+		pFnSetOnlineStatus = (UFunction*)UObject::GObjects()->Data[47181];
 
 	UOnlineSubsystemSteamworks_execSetOnlineStatus_Parms SetOnlineStatus_Parms;
 	SetOnlineStatus_Parms.LocalUserNum = LocalUserNum;
@@ -4945,7 +4945,7 @@ bool UOnlineSubsystemSteamworks::GetLocalAccountNames(TArray< struct FString >* 
 	static UFunction* pFnGetLocalAccountNames = NULL;
 
 	if (!pFnGetLocalAccountNames)
-		pFnGetLocalAccountNames = (UFunction*)UObject::GObjObjects()->Data[47177];
+		pFnGetLocalAccountNames = (UFunction*)UObject::GObjects()->Data[47177];
 
 	UOnlineSubsystemSteamworks_execGetLocalAccountNames_Parms GetLocalAccountNames_Parms;
 
@@ -4969,7 +4969,7 @@ bool UOnlineSubsystemSteamworks::DeleteLocalAccount(struct FString UserName, str
 	static UFunction* pFnDeleteLocalAccount = NULL;
 
 	if (!pFnDeleteLocalAccount)
-		pFnDeleteLocalAccount = (UFunction*)UObject::GObjObjects()->Data[47173];
+		pFnDeleteLocalAccount = (UFunction*)UObject::GObjects()->Data[47173];
 
 	UOnlineSubsystemSteamworks_execDeleteLocalAccount_Parms DeleteLocalAccount_Parms;
 	memcpy(&DeleteLocalAccount_Parms.UserName, &UserName, 0xC);
@@ -4993,7 +4993,7 @@ bool UOnlineSubsystemSteamworks::RenameLocalAccount(struct FString NewUserName, 
 	static UFunction* pFnRenameLocalAccount = NULL;
 
 	if (!pFnRenameLocalAccount)
-		pFnRenameLocalAccount = (UFunction*)UObject::GObjObjects()->Data[47168];
+		pFnRenameLocalAccount = (UFunction*)UObject::GObjects()->Data[47168];
 
 	UOnlineSubsystemSteamworks_execRenameLocalAccount_Parms RenameLocalAccount_Parms;
 	memcpy(&RenameLocalAccount_Parms.NewUserName, &NewUserName, 0xC);
@@ -5017,7 +5017,7 @@ bool UOnlineSubsystemSteamworks::CreateLocalAccount(struct FString UserName, str
 	static UFunction* pFnCreateLocalAccount = NULL;
 
 	if (!pFnCreateLocalAccount)
-		pFnCreateLocalAccount = (UFunction*)UObject::GObjObjects()->Data[47164];
+		pFnCreateLocalAccount = (UFunction*)UObject::GObjects()->Data[47164];
 
 	UOnlineSubsystemSteamworks_execCreateLocalAccount_Parms CreateLocalAccount_Parms;
 	memcpy(&CreateLocalAccount_Parms.UserName, &UserName, 0xC);
@@ -5038,7 +5038,7 @@ void UOnlineSubsystemSteamworks::ClearCreateOnlineAccountCompletedDelegate(struc
 	static UFunction* pFnClearCreateOnlineAccountCompletedDelegate = NULL;
 
 	if (!pFnClearCreateOnlineAccountCompletedDelegate)
-		pFnClearCreateOnlineAccountCompletedDelegate = (UFunction*)UObject::GObjObjects()->Data[47162];
+		pFnClearCreateOnlineAccountCompletedDelegate = (UFunction*)UObject::GObjects()->Data[47162];
 
 	UOnlineSubsystemSteamworks_execClearCreateOnlineAccountCompletedDelegate_Parms ClearCreateOnlineAccountCompletedDelegate_Parms;
 	memcpy(&ClearCreateOnlineAccountCompletedDelegate_Parms.AccountCreateDelegate, &AccountCreateDelegate, 0xC);
@@ -5056,7 +5056,7 @@ void UOnlineSubsystemSteamworks::AddCreateOnlineAccountCompletedDelegate(struct 
 	static UFunction* pFnAddCreateOnlineAccountCompletedDelegate = NULL;
 
 	if (!pFnAddCreateOnlineAccountCompletedDelegate)
-		pFnAddCreateOnlineAccountCompletedDelegate = (UFunction*)UObject::GObjObjects()->Data[47159];
+		pFnAddCreateOnlineAccountCompletedDelegate = (UFunction*)UObject::GObjects()->Data[47159];
 
 	UOnlineSubsystemSteamworks_execAddCreateOnlineAccountCompletedDelegate_Parms AddCreateOnlineAccountCompletedDelegate_Parms;
 	memcpy(&AddCreateOnlineAccountCompletedDelegate_Parms.AccountCreateDelegate, &AccountCreateDelegate, 0xC);
@@ -5074,7 +5074,7 @@ void UOnlineSubsystemSteamworks::OnCreateOnlineAccountCompleted(unsigned char Er
 	static UFunction* pFnOnCreateOnlineAccountCompleted = NULL;
 
 	if (!pFnOnCreateOnlineAccountCompleted)
-		pFnOnCreateOnlineAccountCompleted = (UFunction*)UObject::GObjObjects()->Data[47157];
+		pFnOnCreateOnlineAccountCompleted = (UFunction*)UObject::GObjects()->Data[47157];
 
 	UOnlineSubsystemSteamworks_execOnCreateOnlineAccountCompleted_Parms OnCreateOnlineAccountCompleted_Parms;
 	OnCreateOnlineAccountCompleted_Parms.ErrorStatus = ErrorStatus;
@@ -5096,7 +5096,7 @@ bool UOnlineSubsystemSteamworks::CreateOnlineAccount(struct FString UserName, st
 	static UFunction* pFnCreateOnlineAccount = NULL;
 
 	if (!pFnCreateOnlineAccount)
-		pFnCreateOnlineAccount = (UFunction*)UObject::GObjObjects()->Data[47151];
+		pFnCreateOnlineAccount = (UFunction*)UObject::GObjects()->Data[47151];
 
 	UOnlineSubsystemSteamworks_execCreateOnlineAccount_Parms CreateOnlineAccount_Parms;
 	memcpy(&CreateOnlineAccount_Parms.UserName, &UserName, 0xC);
@@ -5124,7 +5124,7 @@ bool UOnlineSubsystemSteamworks::ClearDownloadedFile(struct FString Filename)
 	static UFunction* pFnClearDownloadedFile = NULL;
 
 	if (!pFnClearDownloadedFile)
-		pFnClearDownloadedFile = (UFunction*)UObject::GObjObjects()->Data[47148];
+		pFnClearDownloadedFile = (UFunction*)UObject::GObjects()->Data[47148];
 
 	UOnlineSubsystemSteamworks_execClearDownloadedFile_Parms ClearDownloadedFile_Parms;
 	memcpy(&ClearDownloadedFile_Parms.Filename, &Filename, 0xC);
@@ -5148,7 +5148,7 @@ bool UOnlineSubsystemSteamworks::ClearDownloadedFiles()
 	static UFunction* pFnClearDownloadedFiles = NULL;
 
 	if (!pFnClearDownloadedFiles)
-		pFnClearDownloadedFiles = (UFunction*)UObject::GObjObjects()->Data[47146];
+		pFnClearDownloadedFiles = (UFunction*)UObject::GObjects()->Data[47146];
 
 	UOnlineSubsystemSteamworks_execClearDownloadedFiles_Parms ClearDownloadedFiles_Parms;
 
@@ -5172,7 +5172,7 @@ unsigned char UOnlineSubsystemSteamworks::GetTitleFileState(struct FString Filen
 	static UFunction* pFnGetTitleFileState = NULL;
 
 	if (!pFnGetTitleFileState)
-		pFnGetTitleFileState = (UFunction*)UObject::GObjObjects()->Data[47142];
+		pFnGetTitleFileState = (UFunction*)UObject::GObjects()->Data[47142];
 
 	UOnlineSubsystemSteamworks_execGetTitleFileState_Parms GetTitleFileState_Parms;
 	memcpy(&GetTitleFileState_Parms.Filename, &Filename, 0xC);
@@ -5194,7 +5194,7 @@ bool UOnlineSubsystemSteamworks::GetTitleFileContents(struct FString Filename, T
 	static UFunction* pFnGetTitleFileContents = NULL;
 
 	if (!pFnGetTitleFileContents)
-		pFnGetTitleFileContents = (UFunction*)UObject::GObjObjects()->Data[47137];
+		pFnGetTitleFileContents = (UFunction*)UObject::GObjects()->Data[47137];
 
 	UOnlineSubsystemSteamworks_execGetTitleFileContents_Parms GetTitleFileContents_Parms;
 	memcpy(&GetTitleFileContents_Parms.Filename, &Filename, 0xC);
@@ -5221,7 +5221,7 @@ void UOnlineSubsystemSteamworks::ClearReadTitleFileCompleteDelegate(struct FScri
 	static UFunction* pFnClearReadTitleFileCompleteDelegate = NULL;
 
 	if (!pFnClearReadTitleFileCompleteDelegate)
-		pFnClearReadTitleFileCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[47135];
+		pFnClearReadTitleFileCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47135];
 
 	UOnlineSubsystemSteamworks_execClearReadTitleFileCompleteDelegate_Parms ClearReadTitleFileCompleteDelegate_Parms;
 	memcpy(&ClearReadTitleFileCompleteDelegate_Parms.ReadTitleFileCompleteDelegate, &ReadTitleFileCompleteDelegate, 0xC);
@@ -5239,7 +5239,7 @@ void UOnlineSubsystemSteamworks::AddReadTitleFileCompleteDelegate(struct FScript
 	static UFunction* pFnAddReadTitleFileCompleteDelegate = NULL;
 
 	if (!pFnAddReadTitleFileCompleteDelegate)
-		pFnAddReadTitleFileCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[47132];
+		pFnAddReadTitleFileCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47132];
 
 	UOnlineSubsystemSteamworks_execAddReadTitleFileCompleteDelegate_Parms AddReadTitleFileCompleteDelegate_Parms;
 	memcpy(&AddReadTitleFileCompleteDelegate_Parms.ReadTitleFileCompleteDelegate, &ReadTitleFileCompleteDelegate, 0xC);
@@ -5259,7 +5259,7 @@ bool UOnlineSubsystemSteamworks::ReadTitleFile(unsigned char LocalUserNum, struc
 	static UFunction* pFnReadTitleFile = NULL;
 
 	if (!pFnReadTitleFile)
-		pFnReadTitleFile = (UFunction*)UObject::GObjObjects()->Data[47128];
+		pFnReadTitleFile = (UFunction*)UObject::GObjects()->Data[47128];
 
 	UOnlineSubsystemSteamworks_execReadTitleFile_Parms ReadTitleFile_Parms;
 	ReadTitleFile_Parms.LocalUserNum = LocalUserNum;
@@ -5285,7 +5285,7 @@ void UOnlineSubsystemSteamworks::OnReadTitleFileComplete(unsigned long bWasSucce
 	static UFunction* pFnOnReadTitleFileComplete = NULL;
 
 	if (!pFnOnReadTitleFileComplete)
-		pFnOnReadTitleFileComplete = (UFunction*)UObject::GObjObjects()->Data[47125];
+		pFnOnReadTitleFileComplete = (UFunction*)UObject::GObjects()->Data[47125];
 
 	UOnlineSubsystemSteamworks_execOnReadTitleFileComplete_Parms OnReadTitleFileComplete_Parms;
 	OnReadTitleFileComplete_Parms.bWasSuccessful = bWasSuccessful;
@@ -5304,7 +5304,7 @@ void UOnlineSubsystemSteamworks::ClearShareTitleFileCompleteDelegate(struct FScr
 	static UFunction* pFnClearShareTitleFileCompleteDelegate = NULL;
 
 	if (!pFnClearShareTitleFileCompleteDelegate)
-		pFnClearShareTitleFileCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[47123];
+		pFnClearShareTitleFileCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47123];
 
 	UOnlineSubsystemSteamworks_execClearShareTitleFileCompleteDelegate_Parms ClearShareTitleFileCompleteDelegate_Parms;
 	memcpy(&ClearShareTitleFileCompleteDelegate_Parms.ShareTitleFileCompleteDelegate, &ShareTitleFileCompleteDelegate, 0xC);
@@ -5322,7 +5322,7 @@ void UOnlineSubsystemSteamworks::AddShareTitleFileCompleteDelegate(struct FScrip
 	static UFunction* pFnAddShareTitleFileCompleteDelegate = NULL;
 
 	if (!pFnAddShareTitleFileCompleteDelegate)
-		pFnAddShareTitleFileCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[47120];
+		pFnAddShareTitleFileCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47120];
 
 	UOnlineSubsystemSteamworks_execAddShareTitleFileCompleteDelegate_Parms AddShareTitleFileCompleteDelegate_Parms;
 	memcpy(&AddShareTitleFileCompleteDelegate_Parms.ShareTitleFileCompleteDelegate, &ShareTitleFileCompleteDelegate, 0xC);
@@ -5341,7 +5341,7 @@ bool UOnlineSubsystemSteamworks::ShareTitleFile(struct FString FileToShare)
 	static UFunction* pFnShareTitleFile = NULL;
 
 	if (!pFnShareTitleFile)
-		pFnShareTitleFile = (UFunction*)UObject::GObjObjects()->Data[47117];
+		pFnShareTitleFile = (UFunction*)UObject::GObjects()->Data[47117];
 
 	UOnlineSubsystemSteamworks_execShareTitleFile_Parms ShareTitleFile_Parms;
 	memcpy(&ShareTitleFile_Parms.FileToShare, &FileToShare, 0xC);
@@ -5367,7 +5367,7 @@ void UOnlineSubsystemSteamworks::OnShareTitleFileComplete(unsigned long bWasSucc
 	static UFunction* pFnOnShareTitleFileComplete = NULL;
 
 	if (!pFnOnShareTitleFileComplete)
-		pFnOnShareTitleFileComplete = (UFunction*)UObject::GObjObjects()->Data[47113];
+		pFnOnShareTitleFileComplete = (UFunction*)UObject::GObjects()->Data[47113];
 
 	UOnlineSubsystemSteamworks_execOnShareTitleFileComplete_Parms OnShareTitleFileComplete_Parms;
 	OnShareTitleFileComplete_Parms.bWasSuccessful = bWasSuccessful;
@@ -5387,7 +5387,7 @@ void UOnlineSubsystemSteamworks::ClearStorageDeviceChangeDelegate(struct FScript
 	static UFunction* pFnClearStorageDeviceChangeDelegate = NULL;
 
 	if (!pFnClearStorageDeviceChangeDelegate)
-		pFnClearStorageDeviceChangeDelegate = (UFunction*)UObject::GObjObjects()->Data[47111];
+		pFnClearStorageDeviceChangeDelegate = (UFunction*)UObject::GObjects()->Data[47111];
 
 	UOnlineSubsystemSteamworks_execClearStorageDeviceChangeDelegate_Parms ClearStorageDeviceChangeDelegate_Parms;
 	memcpy(&ClearStorageDeviceChangeDelegate_Parms.StorageDeviceChangeDelegate, &StorageDeviceChangeDelegate, 0xC);
@@ -5405,7 +5405,7 @@ void UOnlineSubsystemSteamworks::AddStorageDeviceChangeDelegate(struct FScriptDe
 	static UFunction* pFnAddStorageDeviceChangeDelegate = NULL;
 
 	if (!pFnAddStorageDeviceChangeDelegate)
-		pFnAddStorageDeviceChangeDelegate = (UFunction*)UObject::GObjObjects()->Data[47109];
+		pFnAddStorageDeviceChangeDelegate = (UFunction*)UObject::GObjects()->Data[47109];
 
 	UOnlineSubsystemSteamworks_execAddStorageDeviceChangeDelegate_Parms AddStorageDeviceChangeDelegate_Parms;
 	memcpy(&AddStorageDeviceChangeDelegate_Parms.StorageDeviceChangeDelegate, &StorageDeviceChangeDelegate, 0xC);
@@ -5422,7 +5422,7 @@ void UOnlineSubsystemSteamworks::OnStorageDeviceChange()
 	static UFunction* pFnOnStorageDeviceChange = NULL;
 
 	if (!pFnOnStorageDeviceChange)
-		pFnOnStorageDeviceChange = (UFunction*)UObject::GObjObjects()->Data[47108];
+		pFnOnStorageDeviceChange = (UFunction*)UObject::GObjects()->Data[47108];
 
 	UOnlineSubsystemSteamworks_execOnStorageDeviceChange_Parms OnStorageDeviceChange_Parms;
 
@@ -5439,7 +5439,7 @@ int UOnlineSubsystemSteamworks::GetLocale()
 	static UFunction* pFnGetLocale = NULL;
 
 	if (!pFnGetLocale)
-		pFnGetLocale = (UFunction*)UObject::GObjObjects()->Data[47106];
+		pFnGetLocale = (UFunction*)UObject::GObjects()->Data[47106];
 
 	UOnlineSubsystemSteamworks_execGetLocale_Parms GetLocale_Parms;
 
@@ -5458,7 +5458,7 @@ unsigned char UOnlineSubsystemSteamworks::GetNATType()
 	static UFunction* pFnGetNATType = NULL;
 
 	if (!pFnGetNATType)
-		pFnGetNATType = (UFunction*)UObject::GObjObjects()->Data[47104];
+		pFnGetNATType = (UFunction*)UObject::GObjects()->Data[47104];
 
 	UOnlineSubsystemSteamworks_execGetNATType_Parms GetNATType_Parms;
 
@@ -5481,7 +5481,7 @@ void UOnlineSubsystemSteamworks::ClearConnectionStatusChangeDelegate(struct FScr
 	static UFunction* pFnClearConnectionStatusChangeDelegate = NULL;
 
 	if (!pFnClearConnectionStatusChangeDelegate)
-		pFnClearConnectionStatusChangeDelegate = (UFunction*)UObject::GObjObjects()->Data[47102];
+		pFnClearConnectionStatusChangeDelegate = (UFunction*)UObject::GObjects()->Data[47102];
 
 	UOnlineSubsystemSteamworks_execClearConnectionStatusChangeDelegate_Parms ClearConnectionStatusChangeDelegate_Parms;
 	memcpy(&ClearConnectionStatusChangeDelegate_Parms.ConnectionStatusDelegate, &ConnectionStatusDelegate, 0xC);
@@ -5499,7 +5499,7 @@ void UOnlineSubsystemSteamworks::AddConnectionStatusChangeDelegate(struct FScrip
 	static UFunction* pFnAddConnectionStatusChangeDelegate = NULL;
 
 	if (!pFnAddConnectionStatusChangeDelegate)
-		pFnAddConnectionStatusChangeDelegate = (UFunction*)UObject::GObjObjects()->Data[47099];
+		pFnAddConnectionStatusChangeDelegate = (UFunction*)UObject::GObjects()->Data[47099];
 
 	UOnlineSubsystemSteamworks_execAddConnectionStatusChangeDelegate_Parms AddConnectionStatusChangeDelegate_Parms;
 	memcpy(&AddConnectionStatusChangeDelegate_Parms.ConnectionStatusDelegate, &ConnectionStatusDelegate, 0xC);
@@ -5517,7 +5517,7 @@ void UOnlineSubsystemSteamworks::OnConnectionStatusChange(unsigned char Connecti
 	static UFunction* pFnOnConnectionStatusChange = NULL;
 
 	if (!pFnOnConnectionStatusChange)
-		pFnOnConnectionStatusChange = (UFunction*)UObject::GObjObjects()->Data[47097];
+		pFnOnConnectionStatusChange = (UFunction*)UObject::GObjects()->Data[47097];
 
 	UOnlineSubsystemSteamworks_execOnConnectionStatusChange_Parms OnConnectionStatusChange_Parms;
 	OnConnectionStatusChange_Parms.ConnectionStatus = ConnectionStatus;
@@ -5536,7 +5536,7 @@ bool UOnlineSubsystemSteamworks::IsControllerConnected(int ControllerId)
 	static UFunction* pFnIsControllerConnected = NULL;
 
 	if (!pFnIsControllerConnected)
-		pFnIsControllerConnected = (UFunction*)UObject::GObjObjects()->Data[47094];
+		pFnIsControllerConnected = (UFunction*)UObject::GObjects()->Data[47094];
 
 	UOnlineSubsystemSteamworks_execIsControllerConnected_Parms IsControllerConnected_Parms;
 	IsControllerConnected_Parms.ControllerId = ControllerId;
@@ -5560,7 +5560,7 @@ void UOnlineSubsystemSteamworks::ClearControllerChangeDelegate(struct FScriptDel
 	static UFunction* pFnClearControllerChangeDelegate = NULL;
 
 	if (!pFnClearControllerChangeDelegate)
-		pFnClearControllerChangeDelegate = (UFunction*)UObject::GObjObjects()->Data[47092];
+		pFnClearControllerChangeDelegate = (UFunction*)UObject::GObjects()->Data[47092];
 
 	UOnlineSubsystemSteamworks_execClearControllerChangeDelegate_Parms ClearControllerChangeDelegate_Parms;
 	memcpy(&ClearControllerChangeDelegate_Parms.ControllerChangeDelegate, &ControllerChangeDelegate, 0xC);
@@ -5578,7 +5578,7 @@ void UOnlineSubsystemSteamworks::AddControllerChangeDelegate(struct FScriptDeleg
 	static UFunction* pFnAddControllerChangeDelegate = NULL;
 
 	if (!pFnAddControllerChangeDelegate)
-		pFnAddControllerChangeDelegate = (UFunction*)UObject::GObjObjects()->Data[47089];
+		pFnAddControllerChangeDelegate = (UFunction*)UObject::GObjects()->Data[47089];
 
 	UOnlineSubsystemSteamworks_execAddControllerChangeDelegate_Parms AddControllerChangeDelegate_Parms;
 	memcpy(&AddControllerChangeDelegate_Parms.ControllerChangeDelegate, &ControllerChangeDelegate, 0xC);
@@ -5597,7 +5597,7 @@ void UOnlineSubsystemSteamworks::OnControllerChange(int ControllerId, unsigned l
 	static UFunction* pFnOnControllerChange = NULL;
 
 	if (!pFnOnControllerChange)
-		pFnOnControllerChange = (UFunction*)UObject::GObjObjects()->Data[47086];
+		pFnOnControllerChange = (UFunction*)UObject::GObjects()->Data[47086];
 
 	UOnlineSubsystemSteamworks_execOnControllerChange_Parms OnControllerChange_Parms;
 	OnControllerChange_Parms.ControllerId = ControllerId;
@@ -5616,7 +5616,7 @@ void UOnlineSubsystemSteamworks::SetNetworkNotificationPosition(unsigned char Ne
 	static UFunction* pFnSetNetworkNotificationPosition = NULL;
 
 	if (!pFnSetNetworkNotificationPosition)
-		pFnSetNetworkNotificationPosition = (UFunction*)UObject::GObjObjects()->Data[47084];
+		pFnSetNetworkNotificationPosition = (UFunction*)UObject::GObjects()->Data[47084];
 
 	UOnlineSubsystemSteamworks_execSetNetworkNotificationPosition_Parms SetNetworkNotificationPosition_Parms;
 	SetNetworkNotificationPosition_Parms.NewPos = NewPos;
@@ -5638,7 +5638,7 @@ unsigned char UOnlineSubsystemSteamworks::GetNetworkNotificationPosition()
 	static UFunction* pFnGetNetworkNotificationPosition = NULL;
 
 	if (!pFnGetNetworkNotificationPosition)
-		pFnGetNetworkNotificationPosition = (UFunction*)UObject::GObjObjects()->Data[47081];
+		pFnGetNetworkNotificationPosition = (UFunction*)UObject::GObjects()->Data[47081];
 
 	UOnlineSubsystemSteamworks_execGetNetworkNotificationPosition_Parms GetNetworkNotificationPosition_Parms;
 
@@ -5657,7 +5657,7 @@ void UOnlineSubsystemSteamworks::ClearExternalUIChangeDelegate(struct FScriptDel
 	static UFunction* pFnClearExternalUIChangeDelegate = NULL;
 
 	if (!pFnClearExternalUIChangeDelegate)
-		pFnClearExternalUIChangeDelegate = (UFunction*)UObject::GObjObjects()->Data[47079];
+		pFnClearExternalUIChangeDelegate = (UFunction*)UObject::GObjects()->Data[47079];
 
 	UOnlineSubsystemSteamworks_execClearExternalUIChangeDelegate_Parms ClearExternalUIChangeDelegate_Parms;
 	memcpy(&ClearExternalUIChangeDelegate_Parms.ExternalUIDelegate, &ExternalUIDelegate, 0xC);
@@ -5675,7 +5675,7 @@ void UOnlineSubsystemSteamworks::AddExternalUIChangeDelegate(struct FScriptDeleg
 	static UFunction* pFnAddExternalUIChangeDelegate = NULL;
 
 	if (!pFnAddExternalUIChangeDelegate)
-		pFnAddExternalUIChangeDelegate = (UFunction*)UObject::GObjObjects()->Data[47076];
+		pFnAddExternalUIChangeDelegate = (UFunction*)UObject::GObjects()->Data[47076];
 
 	UOnlineSubsystemSteamworks_execAddExternalUIChangeDelegate_Parms AddExternalUIChangeDelegate_Parms;
 	memcpy(&AddExternalUIChangeDelegate_Parms.ExternalUIDelegate, &ExternalUIDelegate, 0xC);
@@ -5693,7 +5693,7 @@ void UOnlineSubsystemSteamworks::OnExternalUIChange(unsigned long bIsOpening)
 	static UFunction* pFnOnExternalUIChange = NULL;
 
 	if (!pFnOnExternalUIChange)
-		pFnOnExternalUIChange = (UFunction*)UObject::GObjObjects()->Data[47074];
+		pFnOnExternalUIChange = (UFunction*)UObject::GObjects()->Data[47074];
 
 	UOnlineSubsystemSteamworks_execOnExternalUIChange_Parms OnExternalUIChange_Parms;
 	OnExternalUIChange_Parms.bIsOpening = bIsOpening;
@@ -5711,7 +5711,7 @@ void UOnlineSubsystemSteamworks::ClearLinkStatusChangeDelegate(struct FScriptDel
 	static UFunction* pFnClearLinkStatusChangeDelegate = NULL;
 
 	if (!pFnClearLinkStatusChangeDelegate)
-		pFnClearLinkStatusChangeDelegate = (UFunction*)UObject::GObjObjects()->Data[47072];
+		pFnClearLinkStatusChangeDelegate = (UFunction*)UObject::GObjects()->Data[47072];
 
 	UOnlineSubsystemSteamworks_execClearLinkStatusChangeDelegate_Parms ClearLinkStatusChangeDelegate_Parms;
 	memcpy(&ClearLinkStatusChangeDelegate_Parms.LinkStatusDelegate, &LinkStatusDelegate, 0xC);
@@ -5729,7 +5729,7 @@ void UOnlineSubsystemSteamworks::AddLinkStatusChangeDelegate(struct FScriptDeleg
 	static UFunction* pFnAddLinkStatusChangeDelegate = NULL;
 
 	if (!pFnAddLinkStatusChangeDelegate)
-		pFnAddLinkStatusChangeDelegate = (UFunction*)UObject::GObjObjects()->Data[47069];
+		pFnAddLinkStatusChangeDelegate = (UFunction*)UObject::GObjects()->Data[47069];
 
 	UOnlineSubsystemSteamworks_execAddLinkStatusChangeDelegate_Parms AddLinkStatusChangeDelegate_Parms;
 	memcpy(&AddLinkStatusChangeDelegate_Parms.LinkStatusDelegate, &LinkStatusDelegate, 0xC);
@@ -5747,7 +5747,7 @@ void UOnlineSubsystemSteamworks::OnLinkStatusChange(unsigned long bIsConnected)
 	static UFunction* pFnOnLinkStatusChange = NULL;
 
 	if (!pFnOnLinkStatusChange)
-		pFnOnLinkStatusChange = (UFunction*)UObject::GObjObjects()->Data[47067];
+		pFnOnLinkStatusChange = (UFunction*)UObject::GObjects()->Data[47067];
 
 	UOnlineSubsystemSteamworks_execOnLinkStatusChange_Parms OnLinkStatusChange_Parms;
 	OnLinkStatusChange_Parms.bIsConnected = bIsConnected;
@@ -5765,7 +5765,7 @@ bool UOnlineSubsystemSteamworks::HasLinkConnection()
 	static UFunction* pFnHasLinkConnection = NULL;
 
 	if (!pFnHasLinkConnection)
-		pFnHasLinkConnection = (UFunction*)UObject::GObjObjects()->Data[47065];
+		pFnHasLinkConnection = (UFunction*)UObject::GObjects()->Data[47065];
 
 	UOnlineSubsystemSteamworks_execHasLinkConnection_Parms HasLinkConnection_Parms;
 
@@ -5789,7 +5789,7 @@ struct FUniqueNetId UOnlineSubsystemSteamworks::eventGetPlayerUniqueNetIdFromInd
 	static UFunction* pFnGetPlayerUniqueNetIdFromIndex = NULL;
 
 	if (!pFnGetPlayerUniqueNetIdFromIndex)
-		pFnGetPlayerUniqueNetIdFromIndex = (UFunction*)UObject::GObjObjects()->Data[47061];
+		pFnGetPlayerUniqueNetIdFromIndex = (UFunction*)UObject::GObjects()->Data[47061];
 
 	UOnlineSubsystemSteamworks_eventGetPlayerUniqueNetIdFromIndex_Parms GetPlayerUniqueNetIdFromIndex_Parms;
 	GetPlayerUniqueNetIdFromIndex_Parms.UserIndex = UserIndex;
@@ -5810,7 +5810,7 @@ struct FString UOnlineSubsystemSteamworks::eventGetPlayerNicknameFromIndex(int U
 	static UFunction* pFnGetPlayerNicknameFromIndex = NULL;
 
 	if (!pFnGetPlayerNicknameFromIndex)
-		pFnGetPlayerNicknameFromIndex = (UFunction*)UObject::GObjObjects()->Data[47058];
+		pFnGetPlayerNicknameFromIndex = (UFunction*)UObject::GObjects()->Data[47058];
 
 	UOnlineSubsystemSteamworks_eventGetPlayerNicknameFromIndex_Parms GetPlayerNicknameFromIndex_Parms;
 	GetPlayerNicknameFromIndex_Parms.UserIndex = UserIndex;
@@ -5833,7 +5833,7 @@ bool UOnlineSubsystemSteamworks::WriteOnlinePlayerScores(struct FName SessionNam
 	static UFunction* pFnWriteOnlinePlayerScores = NULL;
 
 	if (!pFnWriteOnlinePlayerScores)
-		pFnWriteOnlinePlayerScores = (UFunction*)UObject::GObjObjects()->Data[47052];
+		pFnWriteOnlinePlayerScores = (UFunction*)UObject::GObjects()->Data[47052];
 
 	UOnlineSubsystemSteamworks_execWriteOnlinePlayerScores_Parms WriteOnlinePlayerScores_Parms;
 	memcpy(&WriteOnlinePlayerScores_Parms.SessionName, &SessionName, 0x8);
@@ -5861,7 +5861,7 @@ void UOnlineSubsystemSteamworks::ClearFlushOnlineStatsCompleteDelegate(struct FS
 	static UFunction* pFnClearFlushOnlineStatsCompleteDelegate = NULL;
 
 	if (!pFnClearFlushOnlineStatsCompleteDelegate)
-		pFnClearFlushOnlineStatsCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[47050];
+		pFnClearFlushOnlineStatsCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47050];
 
 	UOnlineSubsystemSteamworks_execClearFlushOnlineStatsCompleteDelegate_Parms ClearFlushOnlineStatsCompleteDelegate_Parms;
 	memcpy(&ClearFlushOnlineStatsCompleteDelegate_Parms.FlushOnlineStatsCompleteDelegate, &FlushOnlineStatsCompleteDelegate, 0xC);
@@ -5879,7 +5879,7 @@ void UOnlineSubsystemSteamworks::AddFlushOnlineStatsCompleteDelegate(struct FScr
 	static UFunction* pFnAddFlushOnlineStatsCompleteDelegate = NULL;
 
 	if (!pFnAddFlushOnlineStatsCompleteDelegate)
-		pFnAddFlushOnlineStatsCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[47047];
+		pFnAddFlushOnlineStatsCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47047];
 
 	UOnlineSubsystemSteamworks_execAddFlushOnlineStatsCompleteDelegate_Parms AddFlushOnlineStatsCompleteDelegate_Parms;
 	memcpy(&AddFlushOnlineStatsCompleteDelegate_Parms.FlushOnlineStatsCompleteDelegate, &FlushOnlineStatsCompleteDelegate, 0xC);
@@ -5898,7 +5898,7 @@ void UOnlineSubsystemSteamworks::OnFlushOnlineStatsComplete(struct FName Session
 	static UFunction* pFnOnFlushOnlineStatsComplete = NULL;
 
 	if (!pFnOnFlushOnlineStatsComplete)
-		pFnOnFlushOnlineStatsComplete = (UFunction*)UObject::GObjObjects()->Data[47044];
+		pFnOnFlushOnlineStatsComplete = (UFunction*)UObject::GObjects()->Data[47044];
 
 	UOnlineSubsystemSteamworks_execOnFlushOnlineStatsComplete_Parms OnFlushOnlineStatsComplete_Parms;
 	memcpy(&OnFlushOnlineStatsComplete_Parms.SessionName, &SessionName, 0x8);
@@ -5918,7 +5918,7 @@ bool UOnlineSubsystemSteamworks::FlushOnlineStats(struct FName SessionName)
 	static UFunction* pFnFlushOnlineStats = NULL;
 
 	if (!pFnFlushOnlineStats)
-		pFnFlushOnlineStats = (UFunction*)UObject::GObjObjects()->Data[47041];
+		pFnFlushOnlineStats = (UFunction*)UObject::GObjects()->Data[47041];
 
 	UOnlineSubsystemSteamworks_execFlushOnlineStats_Parms FlushOnlineStats_Parms;
 	memcpy(&FlushOnlineStats_Parms.SessionName, &SessionName, 0x8);
@@ -5945,7 +5945,7 @@ bool UOnlineSubsystemSteamworks::WriteOnlineStats(struct FName SessionName, stru
 	static UFunction* pFnWriteOnlineStats = NULL;
 
 	if (!pFnWriteOnlineStats)
-		pFnWriteOnlineStats = (UFunction*)UObject::GObjObjects()->Data[47036];
+		pFnWriteOnlineStats = (UFunction*)UObject::GObjects()->Data[47036];
 
 	UOnlineSubsystemSteamworks_execWriteOnlineStats_Parms WriteOnlineStats_Parms;
 	memcpy(&WriteOnlineStats_Parms.SessionName, &SessionName, 0x8);
@@ -5971,7 +5971,7 @@ void UOnlineSubsystemSteamworks::FreeStats(class UOnlineStatsRead* StatsRead)
 	static UFunction* pFnFreeStats = NULL;
 
 	if (!pFnFreeStats)
-		pFnFreeStats = (UFunction*)UObject::GObjObjects()->Data[47034];
+		pFnFreeStats = (UFunction*)UObject::GObjects()->Data[47034];
 
 	UOnlineSubsystemSteamworks_execFreeStats_Parms FreeStats_Parms;
 	FreeStats_Parms.StatsRead = StatsRead;
@@ -5993,7 +5993,7 @@ void UOnlineSubsystemSteamworks::ClearReadOnlineStatsCompleteDelegate(struct FSc
 	static UFunction* pFnClearReadOnlineStatsCompleteDelegate = NULL;
 
 	if (!pFnClearReadOnlineStatsCompleteDelegate)
-		pFnClearReadOnlineStatsCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[47032];
+		pFnClearReadOnlineStatsCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47032];
 
 	UOnlineSubsystemSteamworks_execClearReadOnlineStatsCompleteDelegate_Parms ClearReadOnlineStatsCompleteDelegate_Parms;
 	memcpy(&ClearReadOnlineStatsCompleteDelegate_Parms.ReadOnlineStatsCompleteDelegate, &ReadOnlineStatsCompleteDelegate, 0xC);
@@ -6011,7 +6011,7 @@ void UOnlineSubsystemSteamworks::AddReadOnlineStatsCompleteDelegate(struct FScri
 	static UFunction* pFnAddReadOnlineStatsCompleteDelegate = NULL;
 
 	if (!pFnAddReadOnlineStatsCompleteDelegate)
-		pFnAddReadOnlineStatsCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[47029];
+		pFnAddReadOnlineStatsCompleteDelegate = (UFunction*)UObject::GObjects()->Data[47029];
 
 	UOnlineSubsystemSteamworks_execAddReadOnlineStatsCompleteDelegate_Parms AddReadOnlineStatsCompleteDelegate_Parms;
 	memcpy(&AddReadOnlineStatsCompleteDelegate_Parms.ReadOnlineStatsCompleteDelegate, &ReadOnlineStatsCompleteDelegate, 0xC);
@@ -6029,7 +6029,7 @@ void UOnlineSubsystemSteamworks::OnReadOnlineStatsComplete(unsigned long bWasSuc
 	static UFunction* pFnOnReadOnlineStatsComplete = NULL;
 
 	if (!pFnOnReadOnlineStatsComplete)
-		pFnOnReadOnlineStatsComplete = (UFunction*)UObject::GObjObjects()->Data[47027];
+		pFnOnReadOnlineStatsComplete = (UFunction*)UObject::GObjects()->Data[47027];
 
 	UOnlineSubsystemSteamworks_execOnReadOnlineStatsComplete_Parms OnReadOnlineStatsComplete_Parms;
 	OnReadOnlineStatsComplete_Parms.bWasSuccessful = bWasSuccessful;
@@ -6050,7 +6050,7 @@ bool UOnlineSubsystemSteamworks::ReadOnlineStatsByRankAroundPlayer(unsigned char
 	static UFunction* pFnReadOnlineStatsByRankAroundPlayer = NULL;
 
 	if (!pFnReadOnlineStatsByRankAroundPlayer)
-		pFnReadOnlineStatsByRankAroundPlayer = (UFunction*)UObject::GObjObjects()->Data[47022];
+		pFnReadOnlineStatsByRankAroundPlayer = (UFunction*)UObject::GObjects()->Data[47022];
 
 	UOnlineSubsystemSteamworks_execReadOnlineStatsByRankAroundPlayer_Parms ReadOnlineStatsByRankAroundPlayer_Parms;
 	ReadOnlineStatsByRankAroundPlayer_Parms.LocalUserNum = LocalUserNum;
@@ -6079,7 +6079,7 @@ bool UOnlineSubsystemSteamworks::ReadOnlineStatsByRank(class UOnlineStatsRead* S
 	static UFunction* pFnReadOnlineStatsByRank = NULL;
 
 	if (!pFnReadOnlineStatsByRank)
-		pFnReadOnlineStatsByRank = (UFunction*)UObject::GObjObjects()->Data[47017];
+		pFnReadOnlineStatsByRank = (UFunction*)UObject::GObjects()->Data[47017];
 
 	UOnlineSubsystemSteamworks_execReadOnlineStatsByRank_Parms ReadOnlineStatsByRank_Parms;
 	ReadOnlineStatsByRank_Parms.StatsRead = StatsRead;
@@ -6107,7 +6107,7 @@ bool UOnlineSubsystemSteamworks::ReadOnlineStatsForFriends(unsigned char LocalUs
 	static UFunction* pFnReadOnlineStatsForFriends = NULL;
 
 	if (!pFnReadOnlineStatsForFriends)
-		pFnReadOnlineStatsForFriends = (UFunction*)UObject::GObjObjects()->Data[47013];
+		pFnReadOnlineStatsForFriends = (UFunction*)UObject::GObjects()->Data[47013];
 
 	UOnlineSubsystemSteamworks_execReadOnlineStatsForFriends_Parms ReadOnlineStatsForFriends_Parms;
 	ReadOnlineStatsForFriends_Parms.LocalUserNum = LocalUserNum;
@@ -6134,7 +6134,7 @@ bool UOnlineSubsystemSteamworks::ReadOnlineStats(class UOnlineStatsRead* StatsRe
 	static UFunction* pFnReadOnlineStats = NULL;
 
 	if (!pFnReadOnlineStats)
-		pFnReadOnlineStats = (UFunction*)UObject::GObjObjects()->Data[47008];
+		pFnReadOnlineStats = (UFunction*)UObject::GObjects()->Data[47008];
 
 	UOnlineSubsystemSteamworks_execReadOnlineStats_Parms ReadOnlineStats_Parms;
 	ReadOnlineStats_Parms.StatsRead = StatsRead;
@@ -6163,7 +6163,7 @@ bool UOnlineSubsystemSteamworks::SetSpeechRecognitionObject(unsigned char LocalU
 	static UFunction* pFnSetSpeechRecognitionObject = NULL;
 
 	if (!pFnSetSpeechRecognitionObject)
-		pFnSetSpeechRecognitionObject = (UFunction*)UObject::GObjObjects()->Data[47004];
+		pFnSetSpeechRecognitionObject = (UFunction*)UObject::GObjects()->Data[47004];
 
 	UOnlineSubsystemSteamworks_execSetSpeechRecognitionObject_Parms SetSpeechRecognitionObject_Parms;
 	SetSpeechRecognitionObject_Parms.LocalUserNum = LocalUserNum;
@@ -6190,7 +6190,7 @@ bool UOnlineSubsystemSteamworks::SelectVocabulary(unsigned char LocalUserNum, in
 	static UFunction* pFnSelectVocabulary = NULL;
 
 	if (!pFnSelectVocabulary)
-		pFnSelectVocabulary = (UFunction*)UObject::GObjObjects()->Data[47000];
+		pFnSelectVocabulary = (UFunction*)UObject::GObjects()->Data[47000];
 
 	UOnlineSubsystemSteamworks_execSelectVocabulary_Parms SelectVocabulary_Parms;
 	SelectVocabulary_Parms.LocalUserNum = LocalUserNum;
@@ -6216,7 +6216,7 @@ void UOnlineSubsystemSteamworks::ClearRecognitionCompleteDelegate(unsigned char 
 	static UFunction* pFnClearRecognitionCompleteDelegate = NULL;
 
 	if (!pFnClearRecognitionCompleteDelegate)
-		pFnClearRecognitionCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[46997];
+		pFnClearRecognitionCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46997];
 
 	UOnlineSubsystemSteamworks_execClearRecognitionCompleteDelegate_Parms ClearRecognitionCompleteDelegate_Parms;
 	ClearRecognitionCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -6236,7 +6236,7 @@ void UOnlineSubsystemSteamworks::AddRecognitionCompleteDelegate(unsigned char Lo
 	static UFunction* pFnAddRecognitionCompleteDelegate = NULL;
 
 	if (!pFnAddRecognitionCompleteDelegate)
-		pFnAddRecognitionCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[46993];
+		pFnAddRecognitionCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46993];
 
 	UOnlineSubsystemSteamworks_execAddRecognitionCompleteDelegate_Parms AddRecognitionCompleteDelegate_Parms;
 	AddRecognitionCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -6254,7 +6254,7 @@ void UOnlineSubsystemSteamworks::OnRecognitionComplete()
 	static UFunction* pFnOnRecognitionComplete = NULL;
 
 	if (!pFnOnRecognitionComplete)
-		pFnOnRecognitionComplete = (UFunction*)UObject::GObjObjects()->Data[46992];
+		pFnOnRecognitionComplete = (UFunction*)UObject::GObjects()->Data[46992];
 
 	UOnlineSubsystemSteamworks_execOnRecognitionComplete_Parms OnRecognitionComplete_Parms;
 
@@ -6273,7 +6273,7 @@ bool UOnlineSubsystemSteamworks::GetRecognitionResults(unsigned char LocalUserNu
 	static UFunction* pFnGetRecognitionResults = NULL;
 
 	if (!pFnGetRecognitionResults)
-		pFnGetRecognitionResults = (UFunction*)UObject::GObjObjects()->Data[46987];
+		pFnGetRecognitionResults = (UFunction*)UObject::GObjects()->Data[46987];
 
 	UOnlineSubsystemSteamworks_execGetRecognitionResults_Parms GetRecognitionResults_Parms;
 	GetRecognitionResults_Parms.LocalUserNum = LocalUserNum;
@@ -6301,7 +6301,7 @@ bool UOnlineSubsystemSteamworks::StopSpeechRecognition(unsigned char LocalUserNu
 	static UFunction* pFnStopSpeechRecognition = NULL;
 
 	if (!pFnStopSpeechRecognition)
-		pFnStopSpeechRecognition = (UFunction*)UObject::GObjObjects()->Data[46984];
+		pFnStopSpeechRecognition = (UFunction*)UObject::GObjects()->Data[46984];
 
 	UOnlineSubsystemSteamworks_execStopSpeechRecognition_Parms StopSpeechRecognition_Parms;
 	StopSpeechRecognition_Parms.LocalUserNum = LocalUserNum;
@@ -6326,7 +6326,7 @@ bool UOnlineSubsystemSteamworks::StartSpeechRecognition(unsigned char LocalUserN
 	static UFunction* pFnStartSpeechRecognition = NULL;
 
 	if (!pFnStartSpeechRecognition)
-		pFnStartSpeechRecognition = (UFunction*)UObject::GObjObjects()->Data[46981];
+		pFnStartSpeechRecognition = (UFunction*)UObject::GObjects()->Data[46981];
 
 	UOnlineSubsystemSteamworks_execStartSpeechRecognition_Parms StartSpeechRecognition_Parms;
 	StartSpeechRecognition_Parms.LocalUserNum = LocalUserNum;
@@ -6350,7 +6350,7 @@ void UOnlineSubsystemSteamworks::StopNetworkedVoice(unsigned char LocalUserNum)
 	static UFunction* pFnStopNetworkedVoice = NULL;
 
 	if (!pFnStopNetworkedVoice)
-		pFnStopNetworkedVoice = (UFunction*)UObject::GObjObjects()->Data[46979];
+		pFnStopNetworkedVoice = (UFunction*)UObject::GObjects()->Data[46979];
 
 	UOnlineSubsystemSteamworks_execStopNetworkedVoice_Parms StopNetworkedVoice_Parms;
 	StopNetworkedVoice_Parms.LocalUserNum = LocalUserNum;
@@ -6372,7 +6372,7 @@ void UOnlineSubsystemSteamworks::StartNetworkedVoice(unsigned char LocalUserNum)
 	static UFunction* pFnStartNetworkedVoice = NULL;
 
 	if (!pFnStartNetworkedVoice)
-		pFnStartNetworkedVoice = (UFunction*)UObject::GObjObjects()->Data[46977];
+		pFnStartNetworkedVoice = (UFunction*)UObject::GObjects()->Data[46977];
 
 	UOnlineSubsystemSteamworks_execStartNetworkedVoice_Parms StartNetworkedVoice_Parms;
 	StartNetworkedVoice_Parms.LocalUserNum = LocalUserNum;
@@ -6394,7 +6394,7 @@ void UOnlineSubsystemSteamworks::ClearPlayerTalkingDelegate(struct FScriptDelega
 	static UFunction* pFnClearPlayerTalkingDelegate = NULL;
 
 	if (!pFnClearPlayerTalkingDelegate)
-		pFnClearPlayerTalkingDelegate = (UFunction*)UObject::GObjObjects()->Data[46975];
+		pFnClearPlayerTalkingDelegate = (UFunction*)UObject::GObjects()->Data[46975];
 
 	UOnlineSubsystemSteamworks_execClearPlayerTalkingDelegate_Parms ClearPlayerTalkingDelegate_Parms;
 	memcpy(&ClearPlayerTalkingDelegate_Parms.TalkerDelegate, &TalkerDelegate, 0xC);
@@ -6412,7 +6412,7 @@ void UOnlineSubsystemSteamworks::AddPlayerTalkingDelegate(struct FScriptDelegate
 	static UFunction* pFnAddPlayerTalkingDelegate = NULL;
 
 	if (!pFnAddPlayerTalkingDelegate)
-		pFnAddPlayerTalkingDelegate = (UFunction*)UObject::GObjObjects()->Data[46972];
+		pFnAddPlayerTalkingDelegate = (UFunction*)UObject::GObjects()->Data[46972];
 
 	UOnlineSubsystemSteamworks_execAddPlayerTalkingDelegate_Parms AddPlayerTalkingDelegate_Parms;
 	memcpy(&AddPlayerTalkingDelegate_Parms.TalkerDelegate, &TalkerDelegate, 0xC);
@@ -6431,7 +6431,7 @@ void UOnlineSubsystemSteamworks::OnPlayerTalkingStateChange(struct FUniqueNetId 
 	static UFunction* pFnOnPlayerTalkingStateChange = NULL;
 
 	if (!pFnOnPlayerTalkingStateChange)
-		pFnOnPlayerTalkingStateChange = (UFunction*)UObject::GObjObjects()->Data[46969];
+		pFnOnPlayerTalkingStateChange = (UFunction*)UObject::GObjects()->Data[46969];
 
 	UOnlineSubsystemSteamworks_execOnPlayerTalkingStateChange_Parms OnPlayerTalkingStateChange_Parms;
 	memcpy(&OnPlayerTalkingStateChange_Parms.Player, &Player, 0x18);
@@ -6453,7 +6453,7 @@ bool UOnlineSubsystemSteamworks::UnmuteRemoteTalker(unsigned char LocalUserNum, 
 	static UFunction* pFnUnmuteRemoteTalker = NULL;
 
 	if (!pFnUnmuteRemoteTalker)
-		pFnUnmuteRemoteTalker = (UFunction*)UObject::GObjObjects()->Data[46964];
+		pFnUnmuteRemoteTalker = (UFunction*)UObject::GObjects()->Data[46964];
 
 	UOnlineSubsystemSteamworks_execUnmuteRemoteTalker_Parms UnmuteRemoteTalker_Parms;
 	UnmuteRemoteTalker_Parms.LocalUserNum = LocalUserNum;
@@ -6482,7 +6482,7 @@ bool UOnlineSubsystemSteamworks::MuteRemoteTalker(unsigned char LocalUserNum, st
 	static UFunction* pFnMuteRemoteTalker = NULL;
 
 	if (!pFnMuteRemoteTalker)
-		pFnMuteRemoteTalker = (UFunction*)UObject::GObjObjects()->Data[46959];
+		pFnMuteRemoteTalker = (UFunction*)UObject::GObjects()->Data[46959];
 
 	UOnlineSubsystemSteamworks_execMuteRemoteTalker_Parms MuteRemoteTalker_Parms;
 	MuteRemoteTalker_Parms.LocalUserNum = LocalUserNum;
@@ -6511,7 +6511,7 @@ bool UOnlineSubsystemSteamworks::SetRemoteTalkerPriority(unsigned char LocalUser
 	static UFunction* pFnSetRemoteTalkerPriority = NULL;
 
 	if (!pFnSetRemoteTalkerPriority)
-		pFnSetRemoteTalkerPriority = (UFunction*)UObject::GObjObjects()->Data[46954];
+		pFnSetRemoteTalkerPriority = (UFunction*)UObject::GObjects()->Data[46954];
 
 	UOnlineSubsystemSteamworks_execSetRemoteTalkerPriority_Parms SetRemoteTalkerPriority_Parms;
 	SetRemoteTalkerPriority_Parms.LocalUserNum = LocalUserNum;
@@ -6538,7 +6538,7 @@ bool UOnlineSubsystemSteamworks::IsHeadsetPresent(unsigned char LocalUserNum)
 	static UFunction* pFnIsHeadsetPresent = NULL;
 
 	if (!pFnIsHeadsetPresent)
-		pFnIsHeadsetPresent = (UFunction*)UObject::GObjObjects()->Data[46951];
+		pFnIsHeadsetPresent = (UFunction*)UObject::GObjects()->Data[46951];
 
 	UOnlineSubsystemSteamworks_execIsHeadsetPresent_Parms IsHeadsetPresent_Parms;
 	IsHeadsetPresent_Parms.LocalUserNum = LocalUserNum;
@@ -6563,7 +6563,7 @@ bool UOnlineSubsystemSteamworks::IsRemotePlayerTalking(struct FUniqueNetId Playe
 	static UFunction* pFnIsRemotePlayerTalking = NULL;
 
 	if (!pFnIsRemotePlayerTalking)
-		pFnIsRemotePlayerTalking = (UFunction*)UObject::GObjObjects()->Data[46948];
+		pFnIsRemotePlayerTalking = (UFunction*)UObject::GObjects()->Data[46948];
 
 	UOnlineSubsystemSteamworks_execIsRemotePlayerTalking_Parms IsRemotePlayerTalking_Parms;
 	memcpy(&IsRemotePlayerTalking_Parms.PlayerID, &PlayerID, 0x18);
@@ -6588,7 +6588,7 @@ bool UOnlineSubsystemSteamworks::IsLocalPlayerTalking(unsigned char LocalUserNum
 	static UFunction* pFnIsLocalPlayerTalking = NULL;
 
 	if (!pFnIsLocalPlayerTalking)
-		pFnIsLocalPlayerTalking = (UFunction*)UObject::GObjObjects()->Data[46945];
+		pFnIsLocalPlayerTalking = (UFunction*)UObject::GObjects()->Data[46945];
 
 	UOnlineSubsystemSteamworks_execIsLocalPlayerTalking_Parms IsLocalPlayerTalking_Parms;
 	IsLocalPlayerTalking_Parms.LocalUserNum = LocalUserNum;
@@ -6613,7 +6613,7 @@ bool UOnlineSubsystemSteamworks::UnregisterRemoteTalker(struct FUniqueNetId Play
 	static UFunction* pFnUnregisterRemoteTalker = NULL;
 
 	if (!pFnUnregisterRemoteTalker)
-		pFnUnregisterRemoteTalker = (UFunction*)UObject::GObjObjects()->Data[46942];
+		pFnUnregisterRemoteTalker = (UFunction*)UObject::GObjects()->Data[46942];
 
 	UOnlineSubsystemSteamworks_execUnregisterRemoteTalker_Parms UnregisterRemoteTalker_Parms;
 	memcpy(&UnregisterRemoteTalker_Parms.PlayerID, &PlayerID, 0x18);
@@ -6638,7 +6638,7 @@ bool UOnlineSubsystemSteamworks::RegisterRemoteTalker(struct FUniqueNetId Player
 	static UFunction* pFnRegisterRemoteTalker = NULL;
 
 	if (!pFnRegisterRemoteTalker)
-		pFnRegisterRemoteTalker = (UFunction*)UObject::GObjObjects()->Data[46939];
+		pFnRegisterRemoteTalker = (UFunction*)UObject::GObjects()->Data[46939];
 
 	UOnlineSubsystemSteamworks_execRegisterRemoteTalker_Parms RegisterRemoteTalker_Parms;
 	memcpy(&RegisterRemoteTalker_Parms.PlayerID, &PlayerID, 0x18);
@@ -6663,7 +6663,7 @@ bool UOnlineSubsystemSteamworks::UnregisterLocalTalker(unsigned char LocalUserNu
 	static UFunction* pFnUnregisterLocalTalker = NULL;
 
 	if (!pFnUnregisterLocalTalker)
-		pFnUnregisterLocalTalker = (UFunction*)UObject::GObjObjects()->Data[46936];
+		pFnUnregisterLocalTalker = (UFunction*)UObject::GObjects()->Data[46936];
 
 	UOnlineSubsystemSteamworks_execUnregisterLocalTalker_Parms UnregisterLocalTalker_Parms;
 	UnregisterLocalTalker_Parms.LocalUserNum = LocalUserNum;
@@ -6688,7 +6688,7 @@ bool UOnlineSubsystemSteamworks::RegisterLocalTalker(unsigned char LocalUserNum)
 	static UFunction* pFnRegisterLocalTalker = NULL;
 
 	if (!pFnRegisterLocalTalker)
-		pFnRegisterLocalTalker = (UFunction*)UObject::GObjObjects()->Data[46933];
+		pFnRegisterLocalTalker = (UFunction*)UObject::GObjects()->Data[46933];
 
 	UOnlineSubsystemSteamworks_execRegisterLocalTalker_Parms RegisterLocalTalker_Parms;
 	RegisterLocalTalker_Parms.LocalUserNum = LocalUserNum;
@@ -6716,7 +6716,7 @@ unsigned char UOnlineSubsystemSteamworks::GetFriendsList(unsigned char LocalUser
 	static UFunction* pFnGetFriendsList = NULL;
 
 	if (!pFnGetFriendsList)
-		pFnGetFriendsList = (UFunction*)UObject::GObjObjects()->Data[46926];
+		pFnGetFriendsList = (UFunction*)UObject::GObjects()->Data[46926];
 
 	UOnlineSubsystemSteamworks_execGetFriendsList_Parms GetFriendsList_Parms;
 	GetFriendsList_Parms.LocalUserNum = LocalUserNum;
@@ -6746,7 +6746,7 @@ void UOnlineSubsystemSteamworks::ClearReadFriendsCompleteDelegate(unsigned char 
 	static UFunction* pFnClearReadFriendsCompleteDelegate = NULL;
 
 	if (!pFnClearReadFriendsCompleteDelegate)
-		pFnClearReadFriendsCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[46923];
+		pFnClearReadFriendsCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46923];
 
 	UOnlineSubsystemSteamworks_execClearReadFriendsCompleteDelegate_Parms ClearReadFriendsCompleteDelegate_Parms;
 	ClearReadFriendsCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -6766,7 +6766,7 @@ void UOnlineSubsystemSteamworks::AddReadFriendsCompleteDelegate(unsigned char Lo
 	static UFunction* pFnAddReadFriendsCompleteDelegate = NULL;
 
 	if (!pFnAddReadFriendsCompleteDelegate)
-		pFnAddReadFriendsCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[46919];
+		pFnAddReadFriendsCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46919];
 
 	UOnlineSubsystemSteamworks_execAddReadFriendsCompleteDelegate_Parms AddReadFriendsCompleteDelegate_Parms;
 	AddReadFriendsCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -6785,7 +6785,7 @@ void UOnlineSubsystemSteamworks::OnReadFriendsComplete(unsigned long bWasSuccess
 	static UFunction* pFnOnReadFriendsComplete = NULL;
 
 	if (!pFnOnReadFriendsComplete)
-		pFnOnReadFriendsComplete = (UFunction*)UObject::GObjObjects()->Data[46917];
+		pFnOnReadFriendsComplete = (UFunction*)UObject::GObjects()->Data[46917];
 
 	UOnlineSubsystemSteamworks_execOnReadFriendsComplete_Parms OnReadFriendsComplete_Parms;
 	OnReadFriendsComplete_Parms.bWasSuccessful = bWasSuccessful;
@@ -6806,7 +6806,7 @@ bool UOnlineSubsystemSteamworks::ReadFriendsList(unsigned char LocalUserNum, int
 	static UFunction* pFnReadFriendsList = NULL;
 
 	if (!pFnReadFriendsList)
-		pFnReadFriendsList = (UFunction*)UObject::GObjObjects()->Data[46912];
+		pFnReadFriendsList = (UFunction*)UObject::GObjects()->Data[46912];
 
 	UOnlineSubsystemSteamworks_execReadFriendsList_Parms ReadFriendsList_Parms;
 	ReadFriendsList_Parms.LocalUserNum = LocalUserNum;
@@ -6833,7 +6833,7 @@ void UOnlineSubsystemSteamworks::ClearWritePlayerStorageCompleteDelegate(unsigne
 	static UFunction* pFnClearWritePlayerStorageCompleteDelegate = NULL;
 
 	if (!pFnClearWritePlayerStorageCompleteDelegate)
-		pFnClearWritePlayerStorageCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[46909];
+		pFnClearWritePlayerStorageCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46909];
 
 	UOnlineSubsystemSteamworks_execClearWritePlayerStorageCompleteDelegate_Parms ClearWritePlayerStorageCompleteDelegate_Parms;
 	ClearWritePlayerStorageCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -6853,7 +6853,7 @@ void UOnlineSubsystemSteamworks::AddWritePlayerStorageCompleteDelegate(unsigned 
 	static UFunction* pFnAddWritePlayerStorageCompleteDelegate = NULL;
 
 	if (!pFnAddWritePlayerStorageCompleteDelegate)
-		pFnAddWritePlayerStorageCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[46905];
+		pFnAddWritePlayerStorageCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46905];
 
 	UOnlineSubsystemSteamworks_execAddWritePlayerStorageCompleteDelegate_Parms AddWritePlayerStorageCompleteDelegate_Parms;
 	AddWritePlayerStorageCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -6873,7 +6873,7 @@ void UOnlineSubsystemSteamworks::OnWritePlayerStorageComplete(unsigned char Loca
 	static UFunction* pFnOnWritePlayerStorageComplete = NULL;
 
 	if (!pFnOnWritePlayerStorageComplete)
-		pFnOnWritePlayerStorageComplete = (UFunction*)UObject::GObjObjects()->Data[46902];
+		pFnOnWritePlayerStorageComplete = (UFunction*)UObject::GObjects()->Data[46902];
 
 	UOnlineSubsystemSteamworks_execOnWritePlayerStorageComplete_Parms OnWritePlayerStorageComplete_Parms;
 	OnWritePlayerStorageComplete_Parms.LocalUserNum = LocalUserNum;
@@ -6895,7 +6895,7 @@ bool UOnlineSubsystemSteamworks::WritePlayerStorage(unsigned char LocalUserNum, 
 	static UFunction* pFnWritePlayerStorage = NULL;
 
 	if (!pFnWritePlayerStorage)
-		pFnWritePlayerStorage = (UFunction*)UObject::GObjObjects()->Data[46897];
+		pFnWritePlayerStorage = (UFunction*)UObject::GObjects()->Data[46897];
 
 	UOnlineSubsystemSteamworks_execWritePlayerStorage_Parms WritePlayerStorage_Parms;
 	WritePlayerStorage_Parms.LocalUserNum = LocalUserNum;
@@ -6918,7 +6918,7 @@ class UOnlinePlayerStorage* UOnlineSubsystemSteamworks::GetPlayerStorage(unsigne
 	static UFunction* pFnGetPlayerStorage = NULL;
 
 	if (!pFnGetPlayerStorage)
-		pFnGetPlayerStorage = (UFunction*)UObject::GObjObjects()->Data[46893];
+		pFnGetPlayerStorage = (UFunction*)UObject::GObjects()->Data[46893];
 
 	UOnlineSubsystemSteamworks_execGetPlayerStorage_Parms GetPlayerStorage_Parms;
 	GetPlayerStorage_Parms.LocalUserNum = LocalUserNum;
@@ -6939,7 +6939,7 @@ void UOnlineSubsystemSteamworks::ClearReadPlayerStorageForNetIdCompleteDelegate(
 	static UFunction* pFnClearReadPlayerStorageForNetIdCompleteDelegate = NULL;
 
 	if (!pFnClearReadPlayerStorageForNetIdCompleteDelegate)
-		pFnClearReadPlayerStorageForNetIdCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[46890];
+		pFnClearReadPlayerStorageForNetIdCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46890];
 
 	UOnlineSubsystemSteamworks_execClearReadPlayerStorageForNetIdCompleteDelegate_Parms ClearReadPlayerStorageForNetIdCompleteDelegate_Parms;
 	memcpy(&ClearReadPlayerStorageForNetIdCompleteDelegate_Parms.NetId, &NetId, 0x18);
@@ -6959,7 +6959,7 @@ void UOnlineSubsystemSteamworks::AddReadPlayerStorageForNetIdCompleteDelegate(st
 	static UFunction* pFnAddReadPlayerStorageForNetIdCompleteDelegate = NULL;
 
 	if (!pFnAddReadPlayerStorageForNetIdCompleteDelegate)
-		pFnAddReadPlayerStorageForNetIdCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[46886];
+		pFnAddReadPlayerStorageForNetIdCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46886];
 
 	UOnlineSubsystemSteamworks_execAddReadPlayerStorageForNetIdCompleteDelegate_Parms AddReadPlayerStorageForNetIdCompleteDelegate_Parms;
 	memcpy(&AddReadPlayerStorageForNetIdCompleteDelegate_Parms.NetId, &NetId, 0x18);
@@ -6979,7 +6979,7 @@ void UOnlineSubsystemSteamworks::OnReadPlayerStorageForNetIdComplete(struct FUni
 	static UFunction* pFnOnReadPlayerStorageForNetIdComplete = NULL;
 
 	if (!pFnOnReadPlayerStorageForNetIdComplete)
-		pFnOnReadPlayerStorageForNetIdComplete = (UFunction*)UObject::GObjObjects()->Data[46883];
+		pFnOnReadPlayerStorageForNetIdComplete = (UFunction*)UObject::GObjects()->Data[46883];
 
 	UOnlineSubsystemSteamworks_execOnReadPlayerStorageForNetIdComplete_Parms OnReadPlayerStorageForNetIdComplete_Parms;
 	memcpy(&OnReadPlayerStorageForNetIdComplete_Parms.NetId, &NetId, 0x18);
@@ -7001,7 +7001,7 @@ bool UOnlineSubsystemSteamworks::ReadPlayerStorageForNetId(unsigned char LocalUs
 	static UFunction* pFnReadPlayerStorageForNetId = NULL;
 
 	if (!pFnReadPlayerStorageForNetId)
-		pFnReadPlayerStorageForNetId = (UFunction*)UObject::GObjObjects()->Data[46878];
+		pFnReadPlayerStorageForNetId = (UFunction*)UObject::GObjects()->Data[46878];
 
 	UOnlineSubsystemSteamworks_execReadPlayerStorageForNetId_Parms ReadPlayerStorageForNetId_Parms;
 	ReadPlayerStorageForNetId_Parms.LocalUserNum = LocalUserNum;
@@ -7024,7 +7024,7 @@ void UOnlineSubsystemSteamworks::ClearReadPlayerStorageCompleteDelegate(unsigned
 	static UFunction* pFnClearReadPlayerStorageCompleteDelegate = NULL;
 
 	if (!pFnClearReadPlayerStorageCompleteDelegate)
-		pFnClearReadPlayerStorageCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[46875];
+		pFnClearReadPlayerStorageCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46875];
 
 	UOnlineSubsystemSteamworks_execClearReadPlayerStorageCompleteDelegate_Parms ClearReadPlayerStorageCompleteDelegate_Parms;
 	ClearReadPlayerStorageCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -7044,7 +7044,7 @@ void UOnlineSubsystemSteamworks::AddReadPlayerStorageCompleteDelegate(unsigned c
 	static UFunction* pFnAddReadPlayerStorageCompleteDelegate = NULL;
 
 	if (!pFnAddReadPlayerStorageCompleteDelegate)
-		pFnAddReadPlayerStorageCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[46871];
+		pFnAddReadPlayerStorageCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46871];
 
 	UOnlineSubsystemSteamworks_execAddReadPlayerStorageCompleteDelegate_Parms AddReadPlayerStorageCompleteDelegate_Parms;
 	AddReadPlayerStorageCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -7064,7 +7064,7 @@ void UOnlineSubsystemSteamworks::OnReadPlayerStorageComplete(unsigned char Local
 	static UFunction* pFnOnReadPlayerStorageComplete = NULL;
 
 	if (!pFnOnReadPlayerStorageComplete)
-		pFnOnReadPlayerStorageComplete = (UFunction*)UObject::GObjObjects()->Data[46868];
+		pFnOnReadPlayerStorageComplete = (UFunction*)UObject::GObjects()->Data[46868];
 
 	UOnlineSubsystemSteamworks_execOnReadPlayerStorageComplete_Parms OnReadPlayerStorageComplete_Parms;
 	OnReadPlayerStorageComplete_Parms.LocalUserNum = LocalUserNum;
@@ -7086,7 +7086,7 @@ bool UOnlineSubsystemSteamworks::ReadPlayerStorage(unsigned char LocalUserNum, c
 	static UFunction* pFnReadPlayerStorage = NULL;
 
 	if (!pFnReadPlayerStorage)
-		pFnReadPlayerStorage = (UFunction*)UObject::GObjObjects()->Data[46863];
+		pFnReadPlayerStorage = (UFunction*)UObject::GObjects()->Data[46863];
 
 	UOnlineSubsystemSteamworks_execReadPlayerStorage_Parms ReadPlayerStorage_Parms;
 	ReadPlayerStorage_Parms.LocalUserNum = LocalUserNum;
@@ -7109,7 +7109,7 @@ void UOnlineSubsystemSteamworks::ClearWriteProfileSettingsCompleteDelegate(unsig
 	static UFunction* pFnClearWriteProfileSettingsCompleteDelegate = NULL;
 
 	if (!pFnClearWriteProfileSettingsCompleteDelegate)
-		pFnClearWriteProfileSettingsCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[46860];
+		pFnClearWriteProfileSettingsCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46860];
 
 	UOnlineSubsystemSteamworks_execClearWriteProfileSettingsCompleteDelegate_Parms ClearWriteProfileSettingsCompleteDelegate_Parms;
 	ClearWriteProfileSettingsCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -7129,7 +7129,7 @@ void UOnlineSubsystemSteamworks::AddWriteProfileSettingsCompleteDelegate(unsigne
 	static UFunction* pFnAddWriteProfileSettingsCompleteDelegate = NULL;
 
 	if (!pFnAddWriteProfileSettingsCompleteDelegate)
-		pFnAddWriteProfileSettingsCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[46856];
+		pFnAddWriteProfileSettingsCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46856];
 
 	UOnlineSubsystemSteamworks_execAddWriteProfileSettingsCompleteDelegate_Parms AddWriteProfileSettingsCompleteDelegate_Parms;
 	AddWriteProfileSettingsCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -7149,7 +7149,7 @@ void UOnlineSubsystemSteamworks::OnWriteProfileSettingsComplete(unsigned char Lo
 	static UFunction* pFnOnWriteProfileSettingsComplete = NULL;
 
 	if (!pFnOnWriteProfileSettingsComplete)
-		pFnOnWriteProfileSettingsComplete = (UFunction*)UObject::GObjObjects()->Data[46853];
+		pFnOnWriteProfileSettingsComplete = (UFunction*)UObject::GObjects()->Data[46853];
 
 	UOnlineSubsystemSteamworks_execOnWriteProfileSettingsComplete_Parms OnWriteProfileSettingsComplete_Parms;
 	OnWriteProfileSettingsComplete_Parms.LocalUserNum = LocalUserNum;
@@ -7170,7 +7170,7 @@ bool UOnlineSubsystemSteamworks::WriteProfileSettings(unsigned char LocalUserNum
 	static UFunction* pFnWriteProfileSettings = NULL;
 
 	if (!pFnWriteProfileSettings)
-		pFnWriteProfileSettings = (UFunction*)UObject::GObjObjects()->Data[46849];
+		pFnWriteProfileSettings = (UFunction*)UObject::GObjects()->Data[46849];
 
 	UOnlineSubsystemSteamworks_execWriteProfileSettings_Parms WriteProfileSettings_Parms;
 	WriteProfileSettings_Parms.LocalUserNum = LocalUserNum;
@@ -7196,7 +7196,7 @@ class UOnlineProfileSettings* UOnlineSubsystemSteamworks::GetProfileSettings(uns
 	static UFunction* pFnGetProfileSettings = NULL;
 
 	if (!pFnGetProfileSettings)
-		pFnGetProfileSettings = (UFunction*)UObject::GObjObjects()->Data[46845];
+		pFnGetProfileSettings = (UFunction*)UObject::GObjects()->Data[46845];
 
 	UOnlineSubsystemSteamworks_execGetProfileSettings_Parms GetProfileSettings_Parms;
 	GetProfileSettings_Parms.LocalUserNum = LocalUserNum;
@@ -7217,7 +7217,7 @@ void UOnlineSubsystemSteamworks::ClearReadProfileSettingsCompleteDelegate(unsign
 	static UFunction* pFnClearReadProfileSettingsCompleteDelegate = NULL;
 
 	if (!pFnClearReadProfileSettingsCompleteDelegate)
-		pFnClearReadProfileSettingsCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[46842];
+		pFnClearReadProfileSettingsCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46842];
 
 	UOnlineSubsystemSteamworks_execClearReadProfileSettingsCompleteDelegate_Parms ClearReadProfileSettingsCompleteDelegate_Parms;
 	ClearReadProfileSettingsCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -7237,7 +7237,7 @@ void UOnlineSubsystemSteamworks::AddReadProfileSettingsCompleteDelegate(unsigned
 	static UFunction* pFnAddReadProfileSettingsCompleteDelegate = NULL;
 
 	if (!pFnAddReadProfileSettingsCompleteDelegate)
-		pFnAddReadProfileSettingsCompleteDelegate = (UFunction*)UObject::GObjObjects()->Data[46836];
+		pFnAddReadProfileSettingsCompleteDelegate = (UFunction*)UObject::GObjects()->Data[46836];
 
 	UOnlineSubsystemSteamworks_execAddReadProfileSettingsCompleteDelegate_Parms AddReadProfileSettingsCompleteDelegate_Parms;
 	AddReadProfileSettingsCompleteDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -7257,7 +7257,7 @@ void UOnlineSubsystemSteamworks::OnReadProfileSettingsComplete(unsigned char Loc
 	static UFunction* pFnOnReadProfileSettingsComplete = NULL;
 
 	if (!pFnOnReadProfileSettingsComplete)
-		pFnOnReadProfileSettingsComplete = (UFunction*)UObject::GObjObjects()->Data[46833];
+		pFnOnReadProfileSettingsComplete = (UFunction*)UObject::GObjects()->Data[46833];
 
 	UOnlineSubsystemSteamworks_execOnReadProfileSettingsComplete_Parms OnReadProfileSettingsComplete_Parms;
 	OnReadProfileSettingsComplete_Parms.LocalUserNum = LocalUserNum;
@@ -7278,7 +7278,7 @@ bool UOnlineSubsystemSteamworks::ReadProfileSettings(unsigned char LocalUserNum,
 	static UFunction* pFnReadProfileSettings = NULL;
 
 	if (!pFnReadProfileSettings)
-		pFnReadProfileSettings = (UFunction*)UObject::GObjObjects()->Data[46829];
+		pFnReadProfileSettings = (UFunction*)UObject::GObjects()->Data[46829];
 
 	UOnlineSubsystemSteamworks_execReadProfileSettings_Parms ReadProfileSettings_Parms;
 	ReadProfileSettings_Parms.LocalUserNum = LocalUserNum;
@@ -7304,7 +7304,7 @@ void UOnlineSubsystemSteamworks::ClearFriendsChangeDelegate(unsigned char LocalU
 	static UFunction* pFnClearFriendsChangeDelegate = NULL;
 
 	if (!pFnClearFriendsChangeDelegate)
-		pFnClearFriendsChangeDelegate = (UFunction*)UObject::GObjObjects()->Data[46826];
+		pFnClearFriendsChangeDelegate = (UFunction*)UObject::GObjects()->Data[46826];
 
 	UOnlineSubsystemSteamworks_execClearFriendsChangeDelegate_Parms ClearFriendsChangeDelegate_Parms;
 	ClearFriendsChangeDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -7324,7 +7324,7 @@ void UOnlineSubsystemSteamworks::AddFriendsChangeDelegate(unsigned char LocalUse
 	static UFunction* pFnAddFriendsChangeDelegate = NULL;
 
 	if (!pFnAddFriendsChangeDelegate)
-		pFnAddFriendsChangeDelegate = (UFunction*)UObject::GObjObjects()->Data[46822];
+		pFnAddFriendsChangeDelegate = (UFunction*)UObject::GObjects()->Data[46822];
 
 	UOnlineSubsystemSteamworks_execAddFriendsChangeDelegate_Parms AddFriendsChangeDelegate_Parms;
 	AddFriendsChangeDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -7343,7 +7343,7 @@ void UOnlineSubsystemSteamworks::ClearMutingChangeDelegate(struct FScriptDelegat
 	static UFunction* pFnClearMutingChangeDelegate = NULL;
 
 	if (!pFnClearMutingChangeDelegate)
-		pFnClearMutingChangeDelegate = (UFunction*)UObject::GObjObjects()->Data[46820];
+		pFnClearMutingChangeDelegate = (UFunction*)UObject::GObjects()->Data[46820];
 
 	UOnlineSubsystemSteamworks_execClearMutingChangeDelegate_Parms ClearMutingChangeDelegate_Parms;
 	memcpy(&ClearMutingChangeDelegate_Parms.MutingDelegate, &MutingDelegate, 0xC);
@@ -7361,7 +7361,7 @@ void UOnlineSubsystemSteamworks::AddMutingChangeDelegate(struct FScriptDelegate 
 	static UFunction* pFnAddMutingChangeDelegate = NULL;
 
 	if (!pFnAddMutingChangeDelegate)
-		pFnAddMutingChangeDelegate = (UFunction*)UObject::GObjObjects()->Data[46817];
+		pFnAddMutingChangeDelegate = (UFunction*)UObject::GObjects()->Data[46817];
 
 	UOnlineSubsystemSteamworks_execAddMutingChangeDelegate_Parms AddMutingChangeDelegate_Parms;
 	memcpy(&AddMutingChangeDelegate_Parms.MutingDelegate, &MutingDelegate, 0xC);
@@ -7379,7 +7379,7 @@ void UOnlineSubsystemSteamworks::ClearLoginCancelledDelegate(struct FScriptDeleg
 	static UFunction* pFnClearLoginCancelledDelegate = NULL;
 
 	if (!pFnClearLoginCancelledDelegate)
-		pFnClearLoginCancelledDelegate = (UFunction*)UObject::GObjObjects()->Data[46815];
+		pFnClearLoginCancelledDelegate = (UFunction*)UObject::GObjects()->Data[46815];
 
 	UOnlineSubsystemSteamworks_execClearLoginCancelledDelegate_Parms ClearLoginCancelledDelegate_Parms;
 	memcpy(&ClearLoginCancelledDelegate_Parms.CancelledDelegate, &CancelledDelegate, 0xC);
@@ -7397,7 +7397,7 @@ void UOnlineSubsystemSteamworks::AddLoginCancelledDelegate(struct FScriptDelegat
 	static UFunction* pFnAddLoginCancelledDelegate = NULL;
 
 	if (!pFnAddLoginCancelledDelegate)
-		pFnAddLoginCancelledDelegate = (UFunction*)UObject::GObjObjects()->Data[46813];
+		pFnAddLoginCancelledDelegate = (UFunction*)UObject::GObjects()->Data[46813];
 
 	UOnlineSubsystemSteamworks_execAddLoginCancelledDelegate_Parms AddLoginCancelledDelegate_Parms;
 	memcpy(&AddLoginCancelledDelegate_Parms.CancelledDelegate, &CancelledDelegate, 0xC);
@@ -7416,7 +7416,7 @@ void UOnlineSubsystemSteamworks::ClearLoginStatusChangeDelegate(struct FScriptDe
 	static UFunction* pFnClearLoginStatusChangeDelegate = NULL;
 
 	if (!pFnClearLoginStatusChangeDelegate)
-		pFnClearLoginStatusChangeDelegate = (UFunction*)UObject::GObjObjects()->Data[46810];
+		pFnClearLoginStatusChangeDelegate = (UFunction*)UObject::GObjects()->Data[46810];
 
 	UOnlineSubsystemSteamworks_execClearLoginStatusChangeDelegate_Parms ClearLoginStatusChangeDelegate_Parms;
 	memcpy(&ClearLoginStatusChangeDelegate_Parms.LoginStatusDelegate, &LoginStatusDelegate, 0xC);
@@ -7436,7 +7436,7 @@ void UOnlineSubsystemSteamworks::AddLoginStatusChangeDelegate(struct FScriptDele
 	static UFunction* pFnAddLoginStatusChangeDelegate = NULL;
 
 	if (!pFnAddLoginStatusChangeDelegate)
-		pFnAddLoginStatusChangeDelegate = (UFunction*)UObject::GObjObjects()->Data[46805];
+		pFnAddLoginStatusChangeDelegate = (UFunction*)UObject::GObjects()->Data[46805];
 
 	UOnlineSubsystemSteamworks_execAddLoginStatusChangeDelegate_Parms AddLoginStatusChangeDelegate_Parms;
 	memcpy(&AddLoginStatusChangeDelegate_Parms.LoginStatusDelegate, &LoginStatusDelegate, 0xC);
@@ -7456,7 +7456,7 @@ void UOnlineSubsystemSteamworks::OnLoginStatusChange(unsigned char NewStatus, st
 	static UFunction* pFnOnLoginStatusChange = NULL;
 
 	if (!pFnOnLoginStatusChange)
-		pFnOnLoginStatusChange = (UFunction*)UObject::GObjObjects()->Data[46802];
+		pFnOnLoginStatusChange = (UFunction*)UObject::GObjects()->Data[46802];
 
 	UOnlineSubsystemSteamworks_execOnLoginStatusChange_Parms OnLoginStatusChange_Parms;
 	OnLoginStatusChange_Parms.NewStatus = NewStatus;
@@ -7475,7 +7475,7 @@ void UOnlineSubsystemSteamworks::ClearLoginChangeDelegate(struct FScriptDelegate
 	static UFunction* pFnClearLoginChangeDelegate = NULL;
 
 	if (!pFnClearLoginChangeDelegate)
-		pFnClearLoginChangeDelegate = (UFunction*)UObject::GObjObjects()->Data[46800];
+		pFnClearLoginChangeDelegate = (UFunction*)UObject::GObjects()->Data[46800];
 
 	UOnlineSubsystemSteamworks_execClearLoginChangeDelegate_Parms ClearLoginChangeDelegate_Parms;
 	memcpy(&ClearLoginChangeDelegate_Parms.LoginDelegate, &LoginDelegate, 0xC);
@@ -7493,7 +7493,7 @@ void UOnlineSubsystemSteamworks::AddLoginChangeDelegate(struct FScriptDelegate L
 	static UFunction* pFnAddLoginChangeDelegate = NULL;
 
 	if (!pFnAddLoginChangeDelegate)
-		pFnAddLoginChangeDelegate = (UFunction*)UObject::GObjObjects()->Data[46797];
+		pFnAddLoginChangeDelegate = (UFunction*)UObject::GObjects()->Data[46797];
 
 	UOnlineSubsystemSteamworks_execAddLoginChangeDelegate_Parms AddLoginChangeDelegate_Parms;
 	memcpy(&AddLoginChangeDelegate_Parms.LoginDelegate, &LoginDelegate, 0xC);
@@ -7513,7 +7513,7 @@ bool UOnlineSubsystemSteamworks::IsMuted(unsigned char LocalUserNum, struct FUni
 	static UFunction* pFnIsMuted = NULL;
 
 	if (!pFnIsMuted)
-		pFnIsMuted = (UFunction*)UObject::GObjObjects()->Data[46793];
+		pFnIsMuted = (UFunction*)UObject::GObjects()->Data[46793];
 
 	UOnlineSubsystemSteamworks_execIsMuted_Parms IsMuted_Parms;
 	IsMuted_Parms.LocalUserNum = LocalUserNum;
@@ -7540,7 +7540,7 @@ bool UOnlineSubsystemSteamworks::AreAnyFriends(unsigned char LocalUserNum, TArra
 	static UFunction* pFnAreAnyFriends = NULL;
 
 	if (!pFnAreAnyFriends)
-		pFnAreAnyFriends = (UFunction*)UObject::GObjObjects()->Data[46788];
+		pFnAreAnyFriends = (UFunction*)UObject::GObjects()->Data[46788];
 
 	UOnlineSubsystemSteamworks_execAreAnyFriends_Parms AreAnyFriends_Parms;
 	AreAnyFriends_Parms.LocalUserNum = LocalUserNum;
@@ -7569,7 +7569,7 @@ bool UOnlineSubsystemSteamworks::IsFriend(unsigned char LocalUserNum, struct FUn
 	static UFunction* pFnIsFriend = NULL;
 
 	if (!pFnIsFriend)
-		pFnIsFriend = (UFunction*)UObject::GObjObjects()->Data[46784];
+		pFnIsFriend = (UFunction*)UObject::GObjects()->Data[46784];
 
 	UOnlineSubsystemSteamworks_execIsFriend_Parms IsFriend_Parms;
 	IsFriend_Parms.LocalUserNum = LocalUserNum;
@@ -7595,7 +7595,7 @@ unsigned char UOnlineSubsystemSteamworks::CanShowPresenceInformation(unsigned ch
 	static UFunction* pFnCanShowPresenceInformation = NULL;
 
 	if (!pFnCanShowPresenceInformation)
-		pFnCanShowPresenceInformation = (UFunction*)UObject::GObjObjects()->Data[46781];
+		pFnCanShowPresenceInformation = (UFunction*)UObject::GObjects()->Data[46781];
 
 	UOnlineSubsystemSteamworks_execCanShowPresenceInformation_Parms CanShowPresenceInformation_Parms;
 	CanShowPresenceInformation_Parms.LocalUserNum = LocalUserNum;
@@ -7616,7 +7616,7 @@ unsigned char UOnlineSubsystemSteamworks::CanViewPlayerProfiles(unsigned char Lo
 	static UFunction* pFnCanViewPlayerProfiles = NULL;
 
 	if (!pFnCanViewPlayerProfiles)
-		pFnCanViewPlayerProfiles = (UFunction*)UObject::GObjObjects()->Data[46778];
+		pFnCanViewPlayerProfiles = (UFunction*)UObject::GObjects()->Data[46778];
 
 	UOnlineSubsystemSteamworks_execCanViewPlayerProfiles_Parms CanViewPlayerProfiles_Parms;
 	CanViewPlayerProfiles_Parms.LocalUserNum = LocalUserNum;
@@ -7637,7 +7637,7 @@ unsigned char UOnlineSubsystemSteamworks::CanPurchaseContent(unsigned char Local
 	static UFunction* pFnCanPurchaseContent = NULL;
 
 	if (!pFnCanPurchaseContent)
-		pFnCanPurchaseContent = (UFunction*)UObject::GObjObjects()->Data[46775];
+		pFnCanPurchaseContent = (UFunction*)UObject::GObjects()->Data[46775];
 
 	UOnlineSubsystemSteamworks_execCanPurchaseContent_Parms CanPurchaseContent_Parms;
 	CanPurchaseContent_Parms.LocalUserNum = LocalUserNum;
@@ -7658,7 +7658,7 @@ unsigned char UOnlineSubsystemSteamworks::CanDownloadUserContent(unsigned char L
 	static UFunction* pFnCanDownloadUserContent = NULL;
 
 	if (!pFnCanDownloadUserContent)
-		pFnCanDownloadUserContent = (UFunction*)UObject::GObjObjects()->Data[46772];
+		pFnCanDownloadUserContent = (UFunction*)UObject::GObjects()->Data[46772];
 
 	UOnlineSubsystemSteamworks_execCanDownloadUserContent_Parms CanDownloadUserContent_Parms;
 	CanDownloadUserContent_Parms.LocalUserNum = LocalUserNum;
@@ -7679,7 +7679,7 @@ unsigned char UOnlineSubsystemSteamworks::CanCommunicate(unsigned char LocalUser
 	static UFunction* pFnCanCommunicate = NULL;
 
 	if (!pFnCanCommunicate)
-		pFnCanCommunicate = (UFunction*)UObject::GObjObjects()->Data[46769];
+		pFnCanCommunicate = (UFunction*)UObject::GObjects()->Data[46769];
 
 	UOnlineSubsystemSteamworks_execCanCommunicate_Parms CanCommunicate_Parms;
 	CanCommunicate_Parms.LocalUserNum = LocalUserNum;
@@ -7704,7 +7704,7 @@ unsigned char UOnlineSubsystemSteamworks::CanPlayOnline(unsigned char LocalUserN
 	static UFunction* pFnCanPlayOnline = NULL;
 
 	if (!pFnCanPlayOnline)
-		pFnCanPlayOnline = (UFunction*)UObject::GObjObjects()->Data[46766];
+		pFnCanPlayOnline = (UFunction*)UObject::GObjects()->Data[46766];
 
 	UOnlineSubsystemSteamworks_execCanPlayOnline_Parms CanPlayOnline_Parms;
 	CanPlayOnline_Parms.LocalUserNum = LocalUserNum;
@@ -7729,7 +7729,7 @@ void UOnlineSubsystemSteamworks::ClearGetUserAgeGroupDelegate(unsigned char Loca
 	static UFunction* pFnClearGetUserAgeGroupDelegate = NULL;
 
 	if (!pFnClearGetUserAgeGroupDelegate)
-		pFnClearGetUserAgeGroupDelegate = (UFunction*)UObject::GObjObjects()->Data[46763];
+		pFnClearGetUserAgeGroupDelegate = (UFunction*)UObject::GObjects()->Data[46763];
 
 	UOnlineSubsystemSteamworks_execClearGetUserAgeGroupDelegate_Parms ClearGetUserAgeGroupDelegate_Parms;
 	ClearGetUserAgeGroupDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -7749,7 +7749,7 @@ void UOnlineSubsystemSteamworks::AddGetUserAgeGroupDelegate(unsigned char LocalU
 	static UFunction* pFnAddGetUserAgeGroupDelegate = NULL;
 
 	if (!pFnAddGetUserAgeGroupDelegate)
-		pFnAddGetUserAgeGroupDelegate = (UFunction*)UObject::GObjObjects()->Data[46760];
+		pFnAddGetUserAgeGroupDelegate = (UFunction*)UObject::GObjects()->Data[46760];
 
 	UOnlineSubsystemSteamworks_execAddGetUserAgeGroupDelegate_Parms AddGetUserAgeGroupDelegate_Parms;
 	AddGetUserAgeGroupDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -7769,7 +7769,7 @@ bool UOnlineSubsystemSteamworks::GetUserAgeGroup(unsigned char LocalUserNum)
 	static UFunction* pFnGetUserAgeGroup = NULL;
 
 	if (!pFnGetUserAgeGroup)
-		pFnGetUserAgeGroup = (UFunction*)UObject::GObjObjects()->Data[46754];
+		pFnGetUserAgeGroup = (UFunction*)UObject::GObjects()->Data[46754];
 
 	UOnlineSubsystemSteamworks_execGetUserAgeGroup_Parms GetUserAgeGroup_Parms;
 	GetUserAgeGroup_Parms.LocalUserNum = LocalUserNum;
@@ -7790,7 +7790,7 @@ void UOnlineSubsystemSteamworks::OnGetUserAgeGroup(unsigned char LocalUserNum, u
 	static UFunction* pFnOnGetUserAgeGroup = NULL;
 
 	if (!pFnOnGetUserAgeGroup)
-		pFnOnGetUserAgeGroup = (UFunction*)UObject::GObjObjects()->Data[46751];
+		pFnOnGetUserAgeGroup = (UFunction*)UObject::GObjects()->Data[46751];
 
 	UOnlineSubsystemSteamworks_execOnGetUserAgeGroup_Parms OnGetUserAgeGroup_Parms;
 	OnGetUserAgeGroup_Parms.LocalUserNum = LocalUserNum;
@@ -7810,7 +7810,7 @@ struct FString UOnlineSubsystemSteamworks::GetPlayerNickname(unsigned char Local
 	static UFunction* pFnGetPlayerNickname = NULL;
 
 	if (!pFnGetPlayerNickname)
-		pFnGetPlayerNickname = (UFunction*)UObject::GObjObjects()->Data[46747];
+		pFnGetPlayerNickname = (UFunction*)UObject::GObjects()->Data[46747];
 
 	UOnlineSubsystemSteamworks_execGetPlayerNickname_Parms GetPlayerNickname_Parms;
 	GetPlayerNickname_Parms.LocalUserNum = LocalUserNum;
@@ -7832,7 +7832,7 @@ bool UOnlineSubsystemSteamworks::GetUniquePlayerId(unsigned char LocalUserNum, s
 	static UFunction* pFnGetUniquePlayerId = NULL;
 
 	if (!pFnGetUniquePlayerId)
-		pFnGetUniquePlayerId = (UFunction*)UObject::GObjObjects()->Data[46742];
+		pFnGetUniquePlayerId = (UFunction*)UObject::GObjects()->Data[46742];
 
 	UOnlineSubsystemSteamworks_execGetUniquePlayerId_Parms GetUniquePlayerId_Parms;
 	GetUniquePlayerId_Parms.LocalUserNum = LocalUserNum;
@@ -7856,7 +7856,7 @@ bool UOnlineSubsystemSteamworks::IsLocalLogin(unsigned char LocalUserNum)
 	static UFunction* pFnIsLocalLogin = NULL;
 
 	if (!pFnIsLocalLogin)
-		pFnIsLocalLogin = (UFunction*)UObject::GObjObjects()->Data[46739];
+		pFnIsLocalLogin = (UFunction*)UObject::GObjects()->Data[46739];
 
 	UOnlineSubsystemSteamworks_execIsLocalLogin_Parms IsLocalLogin_Parms;
 	IsLocalLogin_Parms.LocalUserNum = LocalUserNum;
@@ -7877,7 +7877,7 @@ bool UOnlineSubsystemSteamworks::IsGuestLogin(unsigned char LocalUserNum)
 	static UFunction* pFnIsGuestLogin = NULL;
 
 	if (!pFnIsGuestLogin)
-		pFnIsGuestLogin = (UFunction*)UObject::GObjObjects()->Data[46736];
+		pFnIsGuestLogin = (UFunction*)UObject::GObjects()->Data[46736];
 
 	UOnlineSubsystemSteamworks_execIsGuestLogin_Parms IsGuestLogin_Parms;
 	IsGuestLogin_Parms.LocalUserNum = LocalUserNum;
@@ -7898,7 +7898,7 @@ unsigned char UOnlineSubsystemSteamworks::GetLoginStatus(unsigned char LocalUser
 	static UFunction* pFnGetLoginStatus = NULL;
 
 	if (!pFnGetLoginStatus)
-		pFnGetLoginStatus = (UFunction*)UObject::GObjObjects()->Data[46733];
+		pFnGetLoginStatus = (UFunction*)UObject::GObjects()->Data[46733];
 
 	UOnlineSubsystemSteamworks_execGetLoginStatus_Parms GetLoginStatus_Parms;
 	GetLoginStatus_Parms.LocalUserNum = LocalUserNum;
@@ -7923,7 +7923,7 @@ void UOnlineSubsystemSteamworks::ClearLogoutCompletedDelegate(unsigned char Loca
 	static UFunction* pFnClearLogoutCompletedDelegate = NULL;
 
 	if (!pFnClearLogoutCompletedDelegate)
-		pFnClearLogoutCompletedDelegate = (UFunction*)UObject::GObjObjects()->Data[46730];
+		pFnClearLogoutCompletedDelegate = (UFunction*)UObject::GObjects()->Data[46730];
 
 	UOnlineSubsystemSteamworks_execClearLogoutCompletedDelegate_Parms ClearLogoutCompletedDelegate_Parms;
 	ClearLogoutCompletedDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -7943,7 +7943,7 @@ void UOnlineSubsystemSteamworks::AddLogoutCompletedDelegate(unsigned char LocalU
 	static UFunction* pFnAddLogoutCompletedDelegate = NULL;
 
 	if (!pFnAddLogoutCompletedDelegate)
-		pFnAddLogoutCompletedDelegate = (UFunction*)UObject::GObjObjects()->Data[46726];
+		pFnAddLogoutCompletedDelegate = (UFunction*)UObject::GObjects()->Data[46726];
 
 	UOnlineSubsystemSteamworks_execAddLogoutCompletedDelegate_Parms AddLogoutCompletedDelegate_Parms;
 	AddLogoutCompletedDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -7962,7 +7962,7 @@ void UOnlineSubsystemSteamworks::OnLogoutCompleted(unsigned long bWasSuccessful)
 	static UFunction* pFnOnLogoutCompleted = NULL;
 
 	if (!pFnOnLogoutCompleted)
-		pFnOnLogoutCompleted = (UFunction*)UObject::GObjObjects()->Data[46724];
+		pFnOnLogoutCompleted = (UFunction*)UObject::GObjects()->Data[46724];
 
 	UOnlineSubsystemSteamworks_execOnLogoutCompleted_Parms OnLogoutCompleted_Parms;
 	OnLogoutCompleted_Parms.bWasSuccessful = bWasSuccessful;
@@ -7981,7 +7981,7 @@ bool UOnlineSubsystemSteamworks::Logout(unsigned char LocalUserNum)
 	static UFunction* pFnLogout = NULL;
 
 	if (!pFnLogout)
-		pFnLogout = (UFunction*)UObject::GObjObjects()->Data[46721];
+		pFnLogout = (UFunction*)UObject::GObjects()->Data[46721];
 
 	UOnlineSubsystemSteamworks_execLogout_Parms Logout_Parms;
 	Logout_Parms.LocalUserNum = LocalUserNum;
@@ -8006,7 +8006,7 @@ void UOnlineSubsystemSteamworks::ClearLoginFailedDelegate(unsigned char LocalUse
 	static UFunction* pFnClearLoginFailedDelegate = NULL;
 
 	if (!pFnClearLoginFailedDelegate)
-		pFnClearLoginFailedDelegate = (UFunction*)UObject::GObjObjects()->Data[46718];
+		pFnClearLoginFailedDelegate = (UFunction*)UObject::GObjects()->Data[46718];
 
 	UOnlineSubsystemSteamworks_execClearLoginFailedDelegate_Parms ClearLoginFailedDelegate_Parms;
 	ClearLoginFailedDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -8026,7 +8026,7 @@ void UOnlineSubsystemSteamworks::AddLoginFailedDelegate(unsigned char LocalUserN
 	static UFunction* pFnAddLoginFailedDelegate = NULL;
 
 	if (!pFnAddLoginFailedDelegate)
-		pFnAddLoginFailedDelegate = (UFunction*)UObject::GObjObjects()->Data[46714];
+		pFnAddLoginFailedDelegate = (UFunction*)UObject::GObjects()->Data[46714];
 
 	UOnlineSubsystemSteamworks_execAddLoginFailedDelegate_Parms AddLoginFailedDelegate_Parms;
 	AddLoginFailedDelegate_Parms.LocalUserNum = LocalUserNum;
@@ -8046,7 +8046,7 @@ void UOnlineSubsystemSteamworks::OnLoginFailed(unsigned char LocalUserNum, unsig
 	static UFunction* pFnOnLoginFailed = NULL;
 
 	if (!pFnOnLoginFailed)
-		pFnOnLoginFailed = (UFunction*)UObject::GObjObjects()->Data[46711];
+		pFnOnLoginFailed = (UFunction*)UObject::GObjects()->Data[46711];
 
 	UOnlineSubsystemSteamworks_execOnLoginFailed_Parms OnLoginFailed_Parms;
 	OnLoginFailed_Parms.LocalUserNum = LocalUserNum;
@@ -8065,7 +8065,7 @@ bool UOnlineSubsystemSteamworks::AutoLogin()
 	static UFunction* pFnAutoLogin = NULL;
 
 	if (!pFnAutoLogin)
-		pFnAutoLogin = (UFunction*)UObject::GObjObjects()->Data[46709];
+		pFnAutoLogin = (UFunction*)UObject::GObjects()->Data[46709];
 
 	UOnlineSubsystemSteamworks_execAutoLogin_Parms AutoLogin_Parms;
 
@@ -8092,7 +8092,7 @@ bool UOnlineSubsystemSteamworks::Login(unsigned char LocalUserNum, struct FStrin
 	static UFunction* pFnLogin = NULL;
 
 	if (!pFnLogin)
-		pFnLogin = (UFunction*)UObject::GObjObjects()->Data[46703];
+		pFnLogin = (UFunction*)UObject::GObjects()->Data[46703];
 
 	UOnlineSubsystemSteamworks_execLogin_Parms Login_Parms;
 	Login_Parms.LocalUserNum = LocalUserNum;
@@ -8122,7 +8122,7 @@ bool UOnlineSubsystemSteamworks::ShowLoginUI(unsigned long bShowOnlineOnly, int 
 	static UFunction* pFnShowLoginUI = NULL;
 
 	if (!pFnShowLoginUI)
-		pFnShowLoginUI = (UFunction*)UObject::GObjObjects()->Data[46698];
+		pFnShowLoginUI = (UFunction*)UObject::GObjects()->Data[46698];
 
 	UOnlineSubsystemSteamworks_execShowLoginUI_Parms ShowLoginUI_Parms;
 	ShowLoginUI_Parms.bShowOnlineOnly = bShowOnlineOnly;
@@ -8147,7 +8147,7 @@ void UOnlineSubsystemSteamworks::OnFriendsChange()
 	static UFunction* pFnOnFriendsChange = NULL;
 
 	if (!pFnOnFriendsChange)
-		pFnOnFriendsChange = (UFunction*)UObject::GObjObjects()->Data[46697];
+		pFnOnFriendsChange = (UFunction*)UObject::GObjects()->Data[46697];
 
 	UOnlineSubsystemSteamworks_execOnFriendsChange_Parms OnFriendsChange_Parms;
 
@@ -8163,7 +8163,7 @@ void UOnlineSubsystemSteamworks::OnMutingChange()
 	static UFunction* pFnOnMutingChange = NULL;
 
 	if (!pFnOnMutingChange)
-		pFnOnMutingChange = (UFunction*)UObject::GObjObjects()->Data[46696];
+		pFnOnMutingChange = (UFunction*)UObject::GObjects()->Data[46696];
 
 	UOnlineSubsystemSteamworks_execOnMutingChange_Parms OnMutingChange_Parms;
 
@@ -8179,7 +8179,7 @@ void UOnlineSubsystemSteamworks::OnLoginCancelled()
 	static UFunction* pFnOnLoginCancelled = NULL;
 
 	if (!pFnOnLoginCancelled)
-		pFnOnLoginCancelled = (UFunction*)UObject::GObjObjects()->Data[46695];
+		pFnOnLoginCancelled = (UFunction*)UObject::GObjects()->Data[46695];
 
 	UOnlineSubsystemSteamworks_execOnLoginCancelled_Parms OnLoginCancelled_Parms;
 
@@ -8196,7 +8196,7 @@ void UOnlineSubsystemSteamworks::OnLoginChange(unsigned char LocalUserNum)
 	static UFunction* pFnOnLoginChange = NULL;
 
 	if (!pFnOnLoginChange)
-		pFnOnLoginChange = (UFunction*)UObject::GObjObjects()->Data[46693];
+		pFnOnLoginChange = (UFunction*)UObject::GObjects()->Data[46693];
 
 	UOnlineSubsystemSteamworks_execOnLoginChange_Parms OnLoginChange_Parms;
 	OnLoginChange_Parms.LocalUserNum = LocalUserNum;
@@ -8213,7 +8213,7 @@ void UOnlineSubsystemSteamworks::eventExit()
 	static UFunction* pFnExit = NULL;
 
 	if (!pFnExit)
-		pFnExit = (UFunction*)UObject::GObjObjects()->Data[46692];
+		pFnExit = (UFunction*)UObject::GObjects()->Data[46692];
 
 	UOnlineSubsystemSteamworks_eventExit_Parms Exit_Parms;
 
@@ -8234,7 +8234,7 @@ bool UOnlineSubsystemSteamworks::eventInit()
 	static UFunction* pFnInit = NULL;
 
 	if (!pFnInit)
-		pFnInit = (UFunction*)UObject::GObjObjects()->Data[46690];
+		pFnInit = (UFunction*)UObject::GObjects()->Data[46690];
 
 	UOnlineSubsystemSteamworks_eventInit_Parms Init_Parms;
 

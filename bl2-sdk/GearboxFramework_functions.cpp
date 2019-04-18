@@ -375,7 +375,7 @@ void UAIDebugCamera::ToggleAITree()
 	static UFunction* pFnToggleAITree = NULL;
 
 	if (!pFnToggleAITree)
-		pFnToggleAITree = (UFunction*)UObject::GObjObjects()->Data[39401];
+		pFnToggleAITree = (UFunction*)UObject::GObjects()->Data[39401];
 
 	UAIDebugCamera_execToggleAITree_Parms ToggleAITree_Parms;
 
@@ -391,7 +391,7 @@ void UAIDebugCamera::ToggleTargetViewCones()
 	static UFunction* pFnToggleTargetViewCones = NULL;
 
 	if (!pFnToggleTargetViewCones)
-		pFnToggleTargetViewCones = (UFunction*)UObject::GObjObjects()->Data[39400];
+		pFnToggleTargetViewCones = (UFunction*)UObject::GObjects()->Data[39400];
 
 	UAIDebugCamera_execToggleTargetViewCones_Parms ToggleTargetViewCones_Parms;
 
@@ -407,7 +407,7 @@ void UAIDebugCamera::ToggleAwarenessZones()
 	static UFunction* pFnToggleAwarenessZones = NULL;
 
 	if (!pFnToggleAwarenessZones)
-		pFnToggleAwarenessZones = (UFunction*)UObject::GObjObjects()->Data[39399];
+		pFnToggleAwarenessZones = (UFunction*)UObject::GObjects()->Data[39399];
 
 	UAIDebugCamera_execToggleAwarenessZones_Parms ToggleAwarenessZones_Parms;
 
@@ -423,7 +423,7 @@ void UAIDebugCamera::ToggleRuleEngineLoadBalance()
 	static UFunction* pFnToggleRuleEngineLoadBalance = NULL;
 
 	if (!pFnToggleRuleEngineLoadBalance)
-		pFnToggleRuleEngineLoadBalance = (UFunction*)UObject::GObjObjects()->Data[39398];
+		pFnToggleRuleEngineLoadBalance = (UFunction*)UObject::GObjects()->Data[39398];
 
 	UAIDebugCamera_execToggleRuleEngineLoadBalance_Parms ToggleRuleEngineLoadBalance_Parms;
 
@@ -439,7 +439,7 @@ void UAIDebugCamera::ToggleCombat()
 	static UFunction* pFnToggleCombat = NULL;
 
 	if (!pFnToggleCombat)
-		pFnToggleCombat = (UFunction*)UObject::GObjObjects()->Data[39397];
+		pFnToggleCombat = (UFunction*)UObject::GObjects()->Data[39397];
 
 	UAIDebugCamera_execToggleCombat_Parms ToggleCombat_Parms;
 
@@ -455,7 +455,7 @@ void UAIDebugCamera::ToggleShowTimers()
 	static UFunction* pFnToggleShowTimers = NULL;
 
 	if (!pFnToggleShowTimers)
-		pFnToggleShowTimers = (UFunction*)UObject::GObjObjects()->Data[39396];
+		pFnToggleShowTimers = (UFunction*)UObject::GObjects()->Data[39396];
 
 	UAIDebugCamera_execToggleShowTimers_Parms ToggleShowTimers_Parms;
 
@@ -471,7 +471,7 @@ void UAIDebugCamera::ToggleResources()
 	static UFunction* pFnToggleResources = NULL;
 
 	if (!pFnToggleResources)
-		pFnToggleResources = (UFunction*)UObject::GObjObjects()->Data[39395];
+		pFnToggleResources = (UFunction*)UObject::GObjects()->Data[39395];
 
 	UAIDebugCamera_execToggleResources_Parms ToggleResources_Parms;
 
@@ -487,7 +487,7 @@ void UAIDebugCamera::ToggleInactiveRules()
 	static UFunction* pFnToggleInactiveRules = NULL;
 
 	if (!pFnToggleInactiveRules)
-		pFnToggleInactiveRules = (UFunction*)UObject::GObjObjects()->Data[39394];
+		pFnToggleInactiveRules = (UFunction*)UObject::GObjects()->Data[39394];
 
 	UAIDebugCamera_execToggleInactiveRules_Parms ToggleInactiveRules_Parms;
 
@@ -503,7 +503,7 @@ void UAIDebugCamera::ToggleRules()
 	static UFunction* pFnToggleRules = NULL;
 
 	if (!pFnToggleRules)
-		pFnToggleRules = (UFunction*)UObject::GObjObjects()->Data[39393];
+		pFnToggleRules = (UFunction*)UObject::GObjects()->Data[39393];
 
 	UAIDebugCamera_execToggleRules_Parms ToggleRules_Parms;
 
@@ -519,7 +519,7 @@ void UAIDebugCamera::ToggleFlags()
 	static UFunction* pFnToggleFlags = NULL;
 
 	if (!pFnToggleFlags)
-		pFnToggleFlags = (UFunction*)UObject::GObjObjects()->Data[39392];
+		pFnToggleFlags = (UFunction*)UObject::GObjects()->Data[39392];
 
 	UAIDebugCamera_execToggleFlags_Parms ToggleFlags_Parms;
 
@@ -536,7 +536,7 @@ class UAITracker* UAIDebugCamera::GetTracker()
 	static UFunction* pFnGetTracker = NULL;
 
 	if (!pFnGetTracker)
-		pFnGetTracker = (UFunction*)UObject::GObjObjects()->Data[39390];
+		pFnGetTracker = (UFunction*)UObject::GObjects()->Data[39390];
 
 	UAIDebugCamera_execGetTracker_Parms GetTracker_Parms;
 
@@ -559,7 +559,7 @@ void UAIDebugCamera::SetMind(class AGearboxMind* NewMind)
 	static UFunction* pFnSetMind = NULL;
 
 	if (!pFnSetMind)
-		pFnSetMind = (UFunction*)UObject::GObjObjects()->Data[39388];
+		pFnSetMind = (UFunction*)UObject::GObjects()->Data[39388];
 
 	UAIDebugCamera_execSetMind_Parms SetMind_Parms;
 	SetMind_Parms.NewMind = NewMind;
@@ -581,7 +581,7 @@ void UAIDebugCamera::InitDummies(int NewNumDummies)
 	static UFunction* pFnInitDummies = NULL;
 
 	if (!pFnInitDummies)
-		pFnInitDummies = (UFunction*)UObject::GObjObjects()->Data[39386];
+		pFnInitDummies = (UFunction*)UObject::GObjects()->Data[39386];
 
 	UAIDebugCamera_execInitDummies_Parms InitDummies_Parms;
 	InitDummies_Parms.NewNumDummies = NewNumDummies;
@@ -603,7 +603,7 @@ bool UAIDebugCamera::WantsToDoCameraInspection()
 	static UFunction* pFnWantsToDoCameraInspection = NULL;
 
 	if (!pFnWantsToDoCameraInspection)
-		pFnWantsToDoCameraInspection = (UFunction*)UObject::GObjObjects()->Data[39384];
+		pFnWantsToDoCameraInspection = (UFunction*)UObject::GObjects()->Data[39384];
 
 	UAIDebugCamera_execWantsToDoCameraInspection_Parms WantsToDoCameraInspection_Parms;
 
@@ -626,7 +626,7 @@ void UAIDebugCamera::SetCurrentInspectedTarget(struct FName NewName)
 	static UFunction* pFnSetCurrentInspectedTarget = NULL;
 
 	if (!pFnSetCurrentInspectedTarget)
-		pFnSetCurrentInspectedTarget = (UFunction*)UObject::GObjObjects()->Data[39382];
+		pFnSetCurrentInspectedTarget = (UFunction*)UObject::GObjects()->Data[39382];
 
 	UAIDebugCamera_execSetCurrentInspectedTarget_Parms SetCurrentInspectedTarget_Parms;
 	memcpy(&SetCurrentInspectedTarget_Parms.NewName, &NewName, 0x8);
@@ -649,7 +649,7 @@ void UAIDebugCamera::CompareRuleSetAndAdjustRuleIdx(class USnapshotRecord* OldSn
 	static UFunction* pFnCompareRuleSetAndAdjustRuleIdx = NULL;
 
 	if (!pFnCompareRuleSetAndAdjustRuleIdx)
-		pFnCompareRuleSetAndAdjustRuleIdx = (UFunction*)UObject::GObjObjects()->Data[39379];
+		pFnCompareRuleSetAndAdjustRuleIdx = (UFunction*)UObject::GObjects()->Data[39379];
 
 	UAIDebugCamera_execCompareRuleSetAndAdjustRuleIdx_Parms CompareRuleSetAndAdjustRuleIdx_Parms;
 	CompareRuleSetAndAdjustRuleIdx_Parms.OldSnapshot = OldSnapshot;
@@ -672,7 +672,7 @@ void UAIDebugCamera::SetRuleEngine(class URuleEngine* NewRuleEngine)
 	static UFunction* pFnSetRuleEngine = NULL;
 
 	if (!pFnSetRuleEngine)
-		pFnSetRuleEngine = (UFunction*)UObject::GObjObjects()->Data[39377];
+		pFnSetRuleEngine = (UFunction*)UObject::GObjects()->Data[39377];
 
 	UAIDebugCamera_execSetRuleEngine_Parms SetRuleEngine_Parms;
 	SetRuleEngine_Parms.NewRuleEngine = NewRuleEngine;
@@ -693,7 +693,7 @@ void UAIDebugCamera::SetPrevSnapshotRule()
 	static UFunction* pFnSetPrevSnapshotRule = NULL;
 
 	if (!pFnSetPrevSnapshotRule)
-		pFnSetPrevSnapshotRule = (UFunction*)UObject::GObjObjects()->Data[39376];
+		pFnSetPrevSnapshotRule = (UFunction*)UObject::GObjects()->Data[39376];
 
 	UAIDebugCamera_execSetPrevSnapshotRule_Parms SetPrevSnapshotRule_Parms;
 
@@ -713,7 +713,7 @@ void UAIDebugCamera::SetNextSnapshotRule()
 	static UFunction* pFnSetNextSnapshotRule = NULL;
 
 	if (!pFnSetNextSnapshotRule)
-		pFnSetNextSnapshotRule = (UFunction*)UObject::GObjObjects()->Data[39375];
+		pFnSetNextSnapshotRule = (UFunction*)UObject::GObjects()->Data[39375];
 
 	UAIDebugCamera_execSetNextSnapshotRule_Parms SetNextSnapshotRule_Parms;
 
@@ -733,7 +733,7 @@ void UAIDebugCamera::SetPrevSnapshot()
 	static UFunction* pFnSetPrevSnapshot = NULL;
 
 	if (!pFnSetPrevSnapshot)
-		pFnSetPrevSnapshot = (UFunction*)UObject::GObjObjects()->Data[39374];
+		pFnSetPrevSnapshot = (UFunction*)UObject::GObjects()->Data[39374];
 
 	UAIDebugCamera_execSetPrevSnapshot_Parms SetPrevSnapshot_Parms;
 
@@ -753,7 +753,7 @@ void UAIDebugCamera::SetNextSnapshot()
 	static UFunction* pFnSetNextSnapshot = NULL;
 
 	if (!pFnSetNextSnapshot)
-		pFnSetNextSnapshot = (UFunction*)UObject::GObjObjects()->Data[39373];
+		pFnSetNextSnapshot = (UFunction*)UObject::GObjects()->Data[39373];
 
 	UAIDebugCamera_execSetNextSnapshot_Parms SetNextSnapshot_Parms;
 
@@ -773,7 +773,7 @@ void UAIDebugCamera::NotifyGameUnPaused()
 	static UFunction* pFnNotifyGameUnPaused = NULL;
 
 	if (!pFnNotifyGameUnPaused)
-		pFnNotifyGameUnPaused = (UFunction*)UObject::GObjObjects()->Data[39372];
+		pFnNotifyGameUnPaused = (UFunction*)UObject::GObjects()->Data[39372];
 
 	UAIDebugCamera_execNotifyGameUnPaused_Parms NotifyGameUnPaused_Parms;
 
@@ -793,7 +793,7 @@ void UAIDebugCamera::NotifyGamePaused()
 	static UFunction* pFnNotifyGamePaused = NULL;
 
 	if (!pFnNotifyGamePaused)
-		pFnNotifyGamePaused = (UFunction*)UObject::GObjObjects()->Data[39371];
+		pFnNotifyGamePaused = (UFunction*)UObject::GObjects()->Data[39371];
 
 	UAIDebugCamera_execNotifyGamePaused_Parms NotifyGamePaused_Parms;
 
@@ -814,7 +814,7 @@ void UAIDebugCamera::Display(class AHUD* HUD)
 	static UFunction* pFnDisplay = NULL;
 
 	if (!pFnDisplay)
-		pFnDisplay = (UFunction*)UObject::GObjObjects()->Data[39369];
+		pFnDisplay = (UFunction*)UObject::GObjects()->Data[39369];
 
 	UAIDebugCamera_execDisplay_Parms Display_Parms;
 	Display_Parms.HUD = HUD;
@@ -837,7 +837,7 @@ bool UAnimNodeSpecialMoveBlend::IsPlaying(class UGearboxAnimDefinition* AnimSMD)
 	static UFunction* pFnIsPlaying = NULL;
 
 	if (!pFnIsPlaying)
-		pFnIsPlaying = (UFunction*)UObject::GObjObjects()->Data[39700];
+		pFnIsPlaying = (UFunction*)UObject::GObjects()->Data[39700];
 
 	UAnimNodeSpecialMoveBlend_execIsPlaying_Parms IsPlaying_Parms;
 	IsPlaying_Parms.AnimSMD = AnimSMD;
@@ -861,7 +861,7 @@ void UAnimNodeSpecialMoveBlend::SetRootMotion(class URootMotionDefinition* RMDef
 	static UFunction* pFnSetRootMotion = NULL;
 
 	if (!pFnSetRootMotion)
-		pFnSetRootMotion = (UFunction*)UObject::GObjObjects()->Data[39698];
+		pFnSetRootMotion = (UFunction*)UObject::GObjects()->Data[39698];
 
 	UAnimNodeSpecialMoveBlend_execSetRootMotion_Parms SetRootMotion_Parms;
 	SetRootMotion_Parms.RMDef = RMDef;
@@ -883,7 +883,7 @@ class UGearboxAnimDefinition* UAnimNodeSpecialMoveBlend::GetCurrentAnimDef()
 	static UFunction* pFnGetCurrentAnimDef = NULL;
 
 	if (!pFnGetCurrentAnimDef)
-		pFnGetCurrentAnimDef = (UFunction*)UObject::GObjObjects()->Data[39696];
+		pFnGetCurrentAnimDef = (UFunction*)UObject::GObjects()->Data[39696];
 
 	UAnimNodeSpecialMoveBlend_execGetCurrentAnimDef_Parms GetCurrentAnimDef_Parms;
 
@@ -906,7 +906,7 @@ struct FName UAnimNodeSpecialMoveBlend::GetCurrentAnimName()
 	static UFunction* pFnGetCurrentAnimName = NULL;
 
 	if (!pFnGetCurrentAnimName)
-		pFnGetCurrentAnimName = (UFunction*)UObject::GObjObjects()->Data[39694];
+		pFnGetCurrentAnimName = (UFunction*)UObject::GObjects()->Data[39694];
 
 	UAnimNodeSpecialMoveBlend_execGetCurrentAnimName_Parms GetCurrentAnimName_Parms;
 
@@ -929,7 +929,7 @@ void UAnimNodeSpecialMoveBlend::Finish(unsigned long bInterrupted)
 	static UFunction* pFnFinish = NULL;
 
 	if (!pFnFinish)
-		pFnFinish = (UFunction*)UObject::GObjObjects()->Data[39692];
+		pFnFinish = (UFunction*)UObject::GObjects()->Data[39692];
 
 	UAnimNodeSpecialMoveBlend_execFinish_Parms Finish_Parms;
 	Finish_Parms.bInterrupted = bInterrupted;
@@ -951,7 +951,7 @@ void UAnimNodeSpecialMoveBlend::Stop(unsigned long bInterrupted)
 	static UFunction* pFnStop = NULL;
 
 	if (!pFnStop)
-		pFnStop = (UFunction*)UObject::GObjObjects()->Data[39690];
+		pFnStop = (UFunction*)UObject::GObjects()->Data[39690];
 
 	UAnimNodeSpecialMoveBlend_execStop_Parms Stop_Parms;
 	Stop_Parms.bInterrupted = bInterrupted;
@@ -978,7 +978,7 @@ float UAnimNodeSpecialMoveBlend::PlayData(struct FName AnimNameOverride, float P
 	static UFunction* pFnPlayData = NULL;
 
 	if (!pFnPlayData)
-		pFnPlayData = (UFunction*)UObject::GObjObjects()->Data[39683];
+		pFnPlayData = (UFunction*)UObject::GObjects()->Data[39683];
 
 	UAnimNodeSpecialMoveBlend_execPlayData_Parms PlayData_Parms;
 	memcpy(&PlayData_Parms.AnimNameOverride, &AnimNameOverride, 0x8);
@@ -1013,7 +1013,7 @@ float UAnimNodeSpecialMoveBlend::Play(class UGearboxAnimDefinition* CustomAnimSM
 	static UFunction* pFnPlay = NULL;
 
 	if (!pFnPlay)
-		pFnPlay = (UFunction*)UObject::GObjObjects()->Data[39676];
+		pFnPlay = (UFunction*)UObject::GObjects()->Data[39676];
 
 	UAnimNodeSpecialMoveBlend_execPlay_Parms Play_Parms;
 	Play_Parms.CustomAnimSMD = CustomAnimSMD;
@@ -1042,7 +1042,7 @@ bool UAttributeExpressionEvaluator::Evaluate(class UObject* ContextSource)
 	static UFunction* pFnEvaluate = NULL;
 
 	if (!pFnEvaluate)
-		pFnEvaluate = (UFunction*)UObject::GObjObjects()->Data[39704];
+		pFnEvaluate = (UFunction*)UObject::GObjects()->Data[39704];
 
 	UAttributeExpressionEvaluator_execEvaluate_Parms Evaluate_Parms;
 	Evaluate_Parms.ContextSource = ContextSource;
@@ -1067,7 +1067,7 @@ void UBehavior_CallFunction::CallFunction(class AActor* inActor, struct FName In
 	static UFunction* pFnCallFunction = NULL;
 
 	if (!pFnCallFunction)
-		pFnCallFunction = (UFunction*)UObject::GObjObjects()->Data[39776];
+		pFnCallFunction = (UFunction*)UObject::GObjects()->Data[39776];
 
 	UBehavior_CallFunction_execCallFunction_Parms CallFunction_Parms;
 	CallFunction_Parms.inActor = inActor;
@@ -1095,7 +1095,7 @@ void UBehavior_CallFunction::ApplyBehaviorToContext(class UObject* ContextObject
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[39769];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[39769];
 
 	UBehavior_CallFunction_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -1125,7 +1125,7 @@ void UBehavior_ChangeRemoteBehaviorSequenceState::ApplyBehaviorToContext(class U
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[39812];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[39812];
 
 	UBehavior_ChangeRemoteBehaviorSequenceState_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -1155,7 +1155,7 @@ void UBehavior_ChangeTimer::ApplyBehaviorToContext(class UObject* ContextObject,
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[39854];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[39854];
 
 	UBehavior_ChangeTimer_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -1185,7 +1185,7 @@ void UBehavior_IsSequenceEnabled::ApplyBehaviorToContext(class UObject* ContextO
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[39991];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[39991];
 
 	UBehavior_IsSequenceEnabled_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -1215,7 +1215,7 @@ void UBehavior_PostAkEvent::ApplyBehaviorToContext(class UObject* ContextObject,
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[40044];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[40044];
 
 	UBehavior_PostAkEvent_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -1247,7 +1247,7 @@ void UBehaviorHelpers::RunAllBehaviorsForEvent(struct FName EventName, struct FS
 	static UFunction* pFnRunAllBehaviorsForEvent = NULL;
 
 	if (!pFnRunAllBehaviorsForEvent)
-		pFnRunAllBehaviorsForEvent = (UFunction*)UObject::GObjObjects()->Data[40367];
+		pFnRunAllBehaviorsForEvent = (UFunction*)UObject::GObjects()->Data[40367];
 
 	UBehaviorHelpers_execRunAllBehaviorsForEvent_Parms RunAllBehaviorsForEvent_Parms;
 	memcpy(&RunAllBehaviorsForEvent_Parms.EventName, &EventName, 0x8);
@@ -1279,7 +1279,7 @@ void UBehaviorHelpers::BehaviorStrategy(struct FPointer BehaviorSet, struct FNam
 	static UFunction* pFnBehaviorStrategy = NULL;
 
 	if (!pFnBehaviorStrategy)
-		pFnBehaviorStrategy = (UFunction*)UObject::GObjObjects()->Data[40360];
+		pFnBehaviorStrategy = (UFunction*)UObject::GObjects()->Data[40360];
 
 	UBehaviorHelpers_execBehaviorStrategy_Parms BehaviorStrategy_Parms;
 	memcpy(&BehaviorStrategy_Parms.BehaviorSet, &BehaviorSet, 0x4);
@@ -1302,7 +1302,7 @@ void UBehaviorHelpers::BehaviorSetStrategy(TArray< struct FPointer >* BehaviorSe
 	static UFunction* pFnBehaviorSetStrategy = NULL;
 
 	if (!pFnBehaviorSetStrategy)
-		pFnBehaviorSetStrategy = (UFunction*)UObject::GObjObjects()->Data[40356];
+		pFnBehaviorSetStrategy = (UFunction*)UObject::GObjects()->Data[40356];
 
 	UBehaviorHelpers_execBehaviorSetStrategy_Parms BehaviorSetStrategy_Parms;
 
@@ -1325,7 +1325,7 @@ class UBehaviorProviderDefinition* UBehaviorHelpers::ResolveBehaviorProviderDefi
 	static UFunction* pFnResolveBehaviorProviderDefinitionReference = NULL;
 
 	if (!pFnResolveBehaviorProviderDefinitionReference)
-		pFnResolveBehaviorProviderDefinitionReference = (UFunction*)UObject::GObjObjects()->Data[39821];
+		pFnResolveBehaviorProviderDefinitionReference = (UFunction*)UObject::GObjects()->Data[39821];
 
 	UBehaviorHelpers_execResolveBehaviorProviderDefinitionReference_Parms ResolveBehaviorProviderDefinitionReference_Parms;
 	ResolveBehaviorProviderDefinitionReference_Parms.SourceBehavior = SourceBehavior;
@@ -1354,7 +1354,7 @@ bool UBehaviorHelpers::IsBehaviorsV2(struct FBehaviorKernelInfo* KernelInfo)
 	static UFunction* pFnIsBehaviorsV2 = NULL;
 
 	if (!pFnIsBehaviorsV2)
-		pFnIsBehaviorsV2 = (UFunction*)UObject::GObjObjects()->Data[40053];
+		pFnIsBehaviorsV2 = (UFunction*)UObject::GObjects()->Data[40053];
 
 	UBehaviorHelpers_execIsBehaviorsV2_Parms IsBehaviorsV2_Parms;
 
@@ -1384,7 +1384,7 @@ bool UBehaviorHelpers::ShouldContinueExecution(float TimeBetweenSteps, int MaxSt
 	static UFunction* pFnShouldContinueExecution = NULL;
 
 	if (!pFnShouldContinueExecution)
-		pFnShouldContinueExecution = (UFunction*)UObject::GObjObjects()->Data[40346];
+		pFnShouldContinueExecution = (UFunction*)UObject::GObjects()->Data[40346];
 
 	UBehaviorHelpers_execShouldContinueExecution_Parms ShouldContinueExecution_Parms;
 	ShouldContinueExecution_Parms.TimeBetweenSteps = TimeBetweenSteps;
@@ -1414,7 +1414,7 @@ struct FName UBehaviorHelpers::GetNextFireLocationSocket(unsigned char FireSocke
 	static UFunction* pFnGetNextFireLocationSocket = NULL;
 
 	if (!pFnGetNextFireLocationSocket)
-		pFnGetNextFireLocationSocket = (UFunction*)UObject::GObjObjects()->Data[40338];
+		pFnGetNextFireLocationSocket = (UFunction*)UObject::GObjects()->Data[40338];
 
 	UBehaviorHelpers_execGetNextFireLocationSocket_Parms GetNextFireLocationSocket_Parms;
 	GetNextFireLocationSocket_Parms.FireSocketSelection = FireSocketSelection;
@@ -1440,7 +1440,7 @@ bool UBehaviorHelpers::GetRotationFromAttachmentLocationData(struct FAttachmentL
 	static UFunction* pFnGetRotationFromAttachmentLocationData = NULL;
 
 	if (!pFnGetRotationFromAttachmentLocationData)
-		pFnGetRotationFromAttachmentLocationData = (UFunction*)UObject::GObjObjects()->Data[40334];
+		pFnGetRotationFromAttachmentLocationData = (UFunction*)UObject::GObjects()->Data[40334];
 
 	UBehaviorHelpers_execGetRotationFromAttachmentLocationData_Parms GetRotationFromAttachmentLocationData_Parms;
 	memcpy(&GetRotationFromAttachmentLocationData_Parms.AttachmentLocation, &AttachmentLocation, 0x1C);
@@ -1471,7 +1471,7 @@ struct FVector UBehaviorHelpers::GetRelativeDirection(struct FRelativeDirectionD
 	static UFunction* pFnGetRelativeDirection = NULL;
 
 	if (!pFnGetRelativeDirection)
-		pFnGetRelativeDirection = (UFunction*)UObject::GObjObjects()->Data[40324];
+		pFnGetRelativeDirection = (UFunction*)UObject::GObjects()->Data[40324];
 
 	UBehaviorHelpers_execGetRelativeDirection_Parms GetRelativeDirection_Parms;
 	memcpy(&GetRelativeDirection_Parms.DesiredDirection, &DesiredDirection, 0x20);
@@ -1499,7 +1499,7 @@ bool UCompoundExpressionEvaluator::Evaluate(class UObject* ContextSource)
 	static UFunction* pFnEvaluate = NULL;
 
 	if (!pFnEvaluate)
-		pFnEvaluate = (UFunction*)UObject::GObjObjects()->Data[40757];
+		pFnEvaluate = (UFunction*)UObject::GObjects()->Data[40757];
 
 	UCompoundExpressionEvaluator_execEvaluate_Parms Evaluate_Parms;
 	Evaluate_Parms.ContextSource = ContextSource;
@@ -1524,7 +1524,7 @@ void UGBXActorList::RemoveAndDeleteActorsOfClassFromLevel(class UClass* TheClass
 	static UFunction* pFnRemoveAndDeleteActorsOfClassFromLevel = NULL;
 
 	if (!pFnRemoveAndDeleteActorsOfClassFromLevel)
-		pFnRemoveAndDeleteActorsOfClassFromLevel = (UFunction*)UObject::GObjObjects()->Data[41052];
+		pFnRemoveAndDeleteActorsOfClassFromLevel = (UFunction*)UObject::GObjects()->Data[41052];
 
 	UGBXActorList_execRemoveAndDeleteActorsOfClassFromLevel_Parms RemoveAndDeleteActorsOfClassFromLevel_Parms;
 	RemoveAndDeleteActorsOfClassFromLevel_Parms.TheClass = TheClass;
@@ -1548,7 +1548,7 @@ void UGBXActorList::RemoveActorsOfClassFromLevel(class UClass* TheClass, class U
 	static UFunction* pFnRemoveActorsOfClassFromLevel = NULL;
 
 	if (!pFnRemoveActorsOfClassFromLevel)
-		pFnRemoveActorsOfClassFromLevel = (UFunction*)UObject::GObjObjects()->Data[41049];
+		pFnRemoveActorsOfClassFromLevel = (UFunction*)UObject::GObjects()->Data[41049];
 
 	UGBXActorList_execRemoveActorsOfClassFromLevel_Parms RemoveActorsOfClassFromLevel_Parms;
 	RemoveActorsOfClassFromLevel_Parms.TheClass = TheClass;
@@ -1571,7 +1571,7 @@ void UGBXActorList::RemoveAndDeleteActorsFromLevel(class ULevel* Level)
 	static UFunction* pFnRemoveAndDeleteActorsFromLevel = NULL;
 
 	if (!pFnRemoveAndDeleteActorsFromLevel)
-		pFnRemoveAndDeleteActorsFromLevel = (UFunction*)UObject::GObjObjects()->Data[41047];
+		pFnRemoveAndDeleteActorsFromLevel = (UFunction*)UObject::GObjects()->Data[41047];
 
 	UGBXActorList_execRemoveAndDeleteActorsFromLevel_Parms RemoveAndDeleteActorsFromLevel_Parms;
 	RemoveAndDeleteActorsFromLevel_Parms.Level = Level;
@@ -1593,7 +1593,7 @@ void UGBXActorList::RemoveActorsFromLevel(class ULevel* Level)
 	static UFunction* pFnRemoveActorsFromLevel = NULL;
 
 	if (!pFnRemoveActorsFromLevel)
-		pFnRemoveActorsFromLevel = (UFunction*)UObject::GObjObjects()->Data[41045];
+		pFnRemoveActorsFromLevel = (UFunction*)UObject::GObjects()->Data[41045];
 
 	UGBXActorList_execRemoveActorsFromLevel_Parms RemoveActorsFromLevel_Parms;
 	RemoveActorsFromLevel_Parms.Level = Level;
@@ -1617,7 +1617,7 @@ class AActor* UGBXActorList::FindNextActorByLevel(class ULevel* Level, int* Inde
 	static UFunction* pFnFindNextActorByLevel = NULL;
 
 	if (!pFnFindNextActorByLevel)
-		pFnFindNextActorByLevel = (UFunction*)UObject::GObjObjects()->Data[41041];
+		pFnFindNextActorByLevel = (UFunction*)UObject::GObjects()->Data[41041];
 
 	UGBXActorList_execFindNextActorByLevel_Parms FindNextActorByLevel_Parms;
 	FindNextActorByLevel_Parms.Level = Level;
@@ -1646,7 +1646,7 @@ class AActor* UGBXActorList::FindFirstActorByLevel(class ULevel* Level, int* Ind
 	static UFunction* pFnFindFirstActorByLevel = NULL;
 
 	if (!pFnFindFirstActorByLevel)
-		pFnFindFirstActorByLevel = (UFunction*)UObject::GObjObjects()->Data[41037];
+		pFnFindFirstActorByLevel = (UFunction*)UObject::GObjects()->Data[41037];
 
 	UGBXActorList_execFindFirstActorByLevel_Parms FindFirstActorByLevel_Parms;
 	FindFirstActorByLevel_Parms.Level = Level;
@@ -1675,7 +1675,7 @@ class AActor* UGBXActorList::FindNextActorByClass(class UClass* TheClass, int* I
 	static UFunction* pFnFindNextActorByClass = NULL;
 
 	if (!pFnFindNextActorByClass)
-		pFnFindNextActorByClass = (UFunction*)UObject::GObjObjects()->Data[41033];
+		pFnFindNextActorByClass = (UFunction*)UObject::GObjects()->Data[41033];
 
 	UGBXActorList_execFindNextActorByClass_Parms FindNextActorByClass_Parms;
 	FindNextActorByClass_Parms.TheClass = TheClass;
@@ -1704,7 +1704,7 @@ class AActor* UGBXActorList::FindFirstActorByClass(class UClass* TheClass, int* 
 	static UFunction* pFnFindFirstActorByClass = NULL;
 
 	if (!pFnFindFirstActorByClass)
-		pFnFindFirstActorByClass = (UFunction*)UObject::GObjObjects()->Data[41029];
+		pFnFindFirstActorByClass = (UFunction*)UObject::GObjects()->Data[41029];
 
 	UGBXActorList_execFindFirstActorByClass_Parms FindFirstActorByClass_Parms;
 	FindFirstActorByClass_Parms.TheClass = TheClass;
@@ -1731,7 +1731,7 @@ void UGBXActorList::RemoveActor(class AActor* Actor)
 	static UFunction* pFnRemoveActor = NULL;
 
 	if (!pFnRemoveActor)
-		pFnRemoveActor = (UFunction*)UObject::GObjObjects()->Data[41027];
+		pFnRemoveActor = (UFunction*)UObject::GObjects()->Data[41027];
 
 	UGBXActorList_execRemoveActor_Parms RemoveActor_Parms;
 	RemoveActor_Parms.Actor = Actor;
@@ -1754,7 +1754,7 @@ void UGBXActorList::AddActor(class AActor* Actor, class ULevel* Level)
 	static UFunction* pFnAddActor = NULL;
 
 	if (!pFnAddActor)
-		pFnAddActor = (UFunction*)UObject::GObjObjects()->Data[41024];
+		pFnAddActor = (UFunction*)UObject::GObjects()->Data[41024];
 
 	UGBXActorList_execAddActor_Parms AddActor_Parms;
 	AddActor_Parms.Actor = Actor;
@@ -1777,7 +1777,7 @@ void UGBXObjectList::RemoveObjectsOfClass(class UClass* TheClass)
 	static UFunction* pFnRemoveObjectsOfClass = NULL;
 
 	if (!pFnRemoveObjectsOfClass)
-		pFnRemoveObjectsOfClass = (UFunction*)UObject::GObjObjects()->Data[41087];
+		pFnRemoveObjectsOfClass = (UFunction*)UObject::GObjects()->Data[41087];
 
 	UGBXObjectList_execRemoveObjectsOfClass_Parms RemoveObjectsOfClass_Parms;
 	RemoveObjectsOfClass_Parms.TheClass = TheClass;
@@ -1801,7 +1801,7 @@ class UObject* UGBXObjectList::FindNextObjectByClass(class UClass* TheClass, int
 	static UFunction* pFnFindNextObjectByClass = NULL;
 
 	if (!pFnFindNextObjectByClass)
-		pFnFindNextObjectByClass = (UFunction*)UObject::GObjObjects()->Data[41083];
+		pFnFindNextObjectByClass = (UFunction*)UObject::GObjects()->Data[41083];
 
 	UGBXObjectList_execFindNextObjectByClass_Parms FindNextObjectByClass_Parms;
 	FindNextObjectByClass_Parms.TheClass = TheClass;
@@ -1830,7 +1830,7 @@ class UObject* UGBXObjectList::FindFirstObjectByClass(class UClass* TheClass, in
 	static UFunction* pFnFindFirstObjectByClass = NULL;
 
 	if (!pFnFindFirstObjectByClass)
-		pFnFindFirstObjectByClass = (UFunction*)UObject::GObjObjects()->Data[41079];
+		pFnFindFirstObjectByClass = (UFunction*)UObject::GObjects()->Data[41079];
 
 	UGBXObjectList_execFindFirstObjectByClass_Parms FindFirstObjectByClass_Parms;
 	FindFirstObjectByClass_Parms.TheClass = TheClass;
@@ -1857,7 +1857,7 @@ void UGBXObjectList::RemoveObject(class UObject* TheObject)
 	static UFunction* pFnRemoveObject = NULL;
 
 	if (!pFnRemoveObject)
-		pFnRemoveObject = (UFunction*)UObject::GObjObjects()->Data[41077];
+		pFnRemoveObject = (UFunction*)UObject::GObjects()->Data[41077];
 
 	UGBXObjectList_execRemoveObject_Parms RemoveObject_Parms;
 	RemoveObject_Parms.TheObject = TheObject;
@@ -1879,7 +1879,7 @@ void UGBXObjectList::AddObject(class UObject* TheObject)
 	static UFunction* pFnAddObject = NULL;
 
 	if (!pFnAddObject)
-		pFnAddObject = (UFunction*)UObject::GObjObjects()->Data[41075];
+		pFnAddObject = (UFunction*)UObject::GObjects()->Data[41075];
 
 	UGBXObjectList_execAddObject_Parms AddObject_Parms;
 	AddObject_Parms.TheObject = TheObject;
@@ -1901,7 +1901,7 @@ void AGearboxAIController::ForceMoveToActor(class AActor* destActor)
 	static UFunction* pFnForceMoveToActor = NULL;
 
 	if (!pFnForceMoveToActor)
-		pFnForceMoveToActor = (UFunction*)UObject::GObjObjects()->Data[41587];
+		pFnForceMoveToActor = (UFunction*)UObject::GObjects()->Data[41587];
 
 	AGearboxAIController_execForceMoveToActor_Parms ForceMoveToActor_Parms;
 	ForceMoveToActor_Parms.destActor = destActor;
@@ -1920,7 +1920,7 @@ bool AGearboxAIMoveNode::DoesPatrolPathExistToPoint(class AGearboxAIMoveNode* Pa
 	static UFunction* pFnDoesPatrolPathExistToPoint = NULL;
 
 	if (!pFnDoesPatrolPathExistToPoint)
-		pFnDoesPatrolPathExistToPoint = (UFunction*)UObject::GObjObjects()->Data[41635];
+		pFnDoesPatrolPathExistToPoint = (UFunction*)UObject::GObjects()->Data[41635];
 
 	AGearboxAIMoveNode_execDoesPatrolPathExistToPoint_Parms DoesPatrolPathExistToPoint_Parms;
 	DoesPatrolPathExistToPoint_Parms.PatrolPoint = PatrolPoint;
@@ -1944,7 +1944,7 @@ void AGearboxAIMoveNode::GetAllLinkedNodes(TArray< class AGearboxAIMoveNode* >* 
 	static UFunction* pFnGetAllLinkedNodes = NULL;
 
 	if (!pFnGetAllLinkedNodes)
-		pFnGetAllLinkedNodes = (UFunction*)UObject::GObjObjects()->Data[41632];
+		pFnGetAllLinkedNodes = (UFunction*)UObject::GObjects()->Data[41632];
 
 	AGearboxAIMoveNode_execGetAllLinkedNodes_Parms GetAllLinkedNodes_Parms;
 
@@ -1969,7 +1969,7 @@ class AGearboxAIMoveNode* AGearboxAIMoveNode::GetNextMoveNodeClosestToPoint(stru
 	static UFunction* pFnGetNextMoveNodeClosestToPoint = NULL;
 
 	if (!pFnGetNextMoveNodeClosestToPoint)
-		pFnGetNextMoveNodeClosestToPoint = (UFunction*)UObject::GObjObjects()->Data[41629];
+		pFnGetNextMoveNodeClosestToPoint = (UFunction*)UObject::GObjects()->Data[41629];
 
 	AGearboxAIMoveNode_execGetNextMoveNodeClosestToPoint_Parms GetNextMoveNodeClosestToPoint_Parms;
 	memcpy(&GetNextMoveNodeClosestToPoint_Parms.TestPoint, &TestPoint, 0xC);
@@ -1993,7 +1993,7 @@ class AGearboxAIMoveNode* AGearboxAIMoveNode::GetNextMoveNode()
 	static UFunction* pFnGetNextMoveNode = NULL;
 
 	if (!pFnGetNextMoveNode)
-		pFnGetNextMoveNode = (UFunction*)UObject::GObjObjects()->Data[41627];
+		pFnGetNextMoveNode = (UFunction*)UObject::GObjects()->Data[41627];
 
 	AGearboxAIMoveNode_execGetNextMoveNode_Parms GetNextMoveNode_Parms;
 
@@ -2017,7 +2017,7 @@ int AGearboxAIMoveNode::RemoveNode(class AGearboxAIMoveNode* OldNode)
 	static UFunction* pFnRemoveNode = NULL;
 
 	if (!pFnRemoveNode)
-		pFnRemoveNode = (UFunction*)UObject::GObjObjects()->Data[41624];
+		pFnRemoveNode = (UFunction*)UObject::GObjects()->Data[41624];
 
 	AGearboxAIMoveNode_execRemoveNode_Parms RemoveNode_Parms;
 	RemoveNode_Parms.OldNode = OldNode;
@@ -2041,7 +2041,7 @@ void AGearboxAIMoveNode::AddNode(class AGearboxAIMoveNode* NewNode)
 	static UFunction* pFnAddNode = NULL;
 
 	if (!pFnAddNode)
-		pFnAddNode = (UFunction*)UObject::GObjObjects()->Data[41622];
+		pFnAddNode = (UFunction*)UObject::GObjects()->Data[41622];
 
 	AGearboxAIMoveNode_execAddNode_Parms AddNode_Parms;
 	AddNode_Parms.NewNode = NewNode;
@@ -2062,7 +2062,7 @@ void AGearboxAIMoveNode::ClearLinks()
 	static UFunction* pFnClearLinks = NULL;
 
 	if (!pFnClearLinks)
-		pFnClearLinks = (UFunction*)UObject::GObjObjects()->Data[41621];
+		pFnClearLinks = (UFunction*)UObject::GObjects()->Data[41621];
 
 	AGearboxAIMoveNode_execClearLinks_Parms ClearLinks_Parms;
 
@@ -2083,7 +2083,7 @@ void AGearboxAIMoveNode::OnToggle(class USeqAct_Toggle* Action)
 	static UFunction* pFnOnToggle = NULL;
 
 	if (!pFnOnToggle)
-		pFnOnToggle = (UFunction*)UObject::GObjObjects()->Data[41619];
+		pFnOnToggle = (UFunction*)UObject::GObjects()->Data[41619];
 
 	AGearboxAIMoveNode_execOnToggle_Parms OnToggle_Parms;
 	OnToggle_Parms.Action = Action;
@@ -2100,7 +2100,7 @@ void AGearboxCameraBasic::eventFinishCameraLookAt()
 	static UFunction* pFnFinishCameraLookAt = NULL;
 
 	if (!pFnFinishCameraLookAt)
-		pFnFinishCameraLookAt = (UFunction*)UObject::GObjObjects()->Data[41813];
+		pFnFinishCameraLookAt = (UFunction*)UObject::GObjects()->Data[41813];
 
 	AGearboxCameraBasic_eventFinishCameraLookAt_Parms FinishCameraLookAt_Parms;
 
@@ -2120,7 +2120,7 @@ void AGearboxCameraBasic::eventEnableThirdPersonLookAt(float LookAtXOffset, floa
 	static UFunction* pFnEnableThirdPersonLookAt = NULL;
 
 	if (!pFnEnableThirdPersonLookAt)
-		pFnEnableThirdPersonLookAt = (UFunction*)UObject::GObjObjects()->Data[41808];
+		pFnEnableThirdPersonLookAt = (UFunction*)UObject::GObjects()->Data[41808];
 
 	AGearboxCameraBasic_eventEnableThirdPersonLookAt_Parms EnableThirdPersonLookAt_Parms;
 	EnableThirdPersonLookAt_Parms.LookAtXOffset = LookAtXOffset;
@@ -2148,7 +2148,7 @@ void AGearboxCameraBasic::BeginCameraLookAt(class AActor* LookAtTarget, struct F
 	static UFunction* pFnBeginCameraLookAt = NULL;
 
 	if (!pFnBeginCameraLookAt)
-		pFnBeginCameraLookAt = (UFunction*)UObject::GObjObjects()->Data[41799];
+		pFnBeginCameraLookAt = (UFunction*)UObject::GObjects()->Data[41799];
 
 	AGearboxCameraBasic_execBeginCameraLookAt_Parms BeginCameraLookAt_Parms;
 	BeginCameraLookAt_Parms.LookAtTarget = LookAtTarget;
@@ -2174,7 +2174,7 @@ void AGearboxCameraBasic::CalcSimpleThirdPersonView(float DeltaTime, struct FTVi
 	static UFunction* pFnCalcSimpleThirdPersonView = NULL;
 
 	if (!pFnCalcSimpleThirdPersonView)
-		pFnCalcSimpleThirdPersonView = (UFunction*)UObject::GObjObjects()->Data[41791];
+		pFnCalcSimpleThirdPersonView = (UFunction*)UObject::GObjects()->Data[41791];
 
 	AGearboxCameraBasic_execCalcSimpleThirdPersonView_Parms CalcSimpleThirdPersonView_Parms;
 	CalcSimpleThirdPersonView_Parms.DeltaTime = DeltaTime;
@@ -2196,7 +2196,7 @@ void AGearboxCameraBasic::CalcBaseView(float DeltaTime, struct FTViewTarget* Out
 	static UFunction* pFnCalcBaseView = NULL;
 
 	if (!pFnCalcBaseView)
-		pFnCalcBaseView = (UFunction*)UObject::GObjObjects()->Data[41788];
+		pFnCalcBaseView = (UFunction*)UObject::GObjects()->Data[41788];
 
 	AGearboxCameraBasic_execCalcBaseView_Parms CalcBaseView_Parms;
 	CalcBaseView_Parms.DeltaTime = DeltaTime;
@@ -2218,7 +2218,7 @@ void AGearboxCameraBasic::UpdateViewTarget(float DeltaTime, struct FTViewTarget*
 	static UFunction* pFnUpdateViewTarget = NULL;
 
 	if (!pFnUpdateViewTarget)
-		pFnUpdateViewTarget = (UFunction*)UObject::GObjObjects()->Data[41784];
+		pFnUpdateViewTarget = (UFunction*)UObject::GObjects()->Data[41784];
 
 	AGearboxCameraBasic_execUpdateViewTarget_Parms UpdateViewTarget_Parms;
 	UpdateViewTarget_Parms.DeltaTime = DeltaTime;
@@ -2242,7 +2242,7 @@ float UGearboxCameraModifier::LerpFOV(float Src, float Dest, float T)
 	static UFunction* pFnLerpFOV = NULL;
 
 	if (!pFnLerpFOV)
-		pFnLerpFOV = (UFunction*)UObject::GObjObjects()->Data[40630];
+		pFnLerpFOV = (UFunction*)UObject::GObjects()->Data[40630];
 
 	UGearboxCameraModifier_execLerpFOV_Parms LerpFOV_Parms;
 	LerpFOV_Parms.Src = Src;
@@ -2267,7 +2267,7 @@ struct FRotator UGearboxCameraModifier::LerpRotation(struct FRotator Src, struct
 	static UFunction* pFnLerpRotation = NULL;
 
 	if (!pFnLerpRotation)
-		pFnLerpRotation = (UFunction*)UObject::GObjObjects()->Data[40625];
+		pFnLerpRotation = (UFunction*)UObject::GObjects()->Data[40625];
 
 	UGearboxCameraModifier_execLerpRotation_Parms LerpRotation_Parms;
 	memcpy(&LerpRotation_Parms.Src, &Src, 0xC);
@@ -2292,7 +2292,7 @@ struct FVector UGearboxCameraModifier::LerpLocation(struct FVector Src, struct F
 	static UFunction* pFnLerpLocation = NULL;
 
 	if (!pFnLerpLocation)
-		pFnLerpLocation = (UFunction*)UObject::GObjObjects()->Data[40620];
+		pFnLerpLocation = (UFunction*)UObject::GObjects()->Data[40620];
 
 	UGearboxCameraModifier_execLerpLocation_Parms LerpLocation_Parms;
 	memcpy(&LerpLocation_Parms.Src, &Src, 0xC);
@@ -2315,7 +2315,7 @@ void UGearboxCameraModifier::UpdateAllLerps(float DeltaTime, struct FTPOV* OutPO
 	static UFunction* pFnUpdateAllLerps = NULL;
 
 	if (!pFnUpdateAllLerps)
-		pFnUpdateAllLerps = (UFunction*)UObject::GObjObjects()->Data[40616];
+		pFnUpdateAllLerps = (UFunction*)UObject::GObjects()->Data[40616];
 
 	UGearboxCameraModifier_execUpdateAllLerps_Parms UpdateAllLerps_Parms;
 	UpdateAllLerps_Parms.DeltaTime = DeltaTime;
@@ -2336,7 +2336,7 @@ void UGearboxCameraModifier::UpdateMasterFadePercentage(float AdjustedDeltaTime)
 	static UFunction* pFnUpdateMasterFadePercentage = NULL;
 
 	if (!pFnUpdateMasterFadePercentage)
-		pFnUpdateMasterFadePercentage = (UFunction*)UObject::GObjObjects()->Data[40614];
+		pFnUpdateMasterFadePercentage = (UFunction*)UObject::GObjects()->Data[40614];
 
 	UGearboxCameraModifier_execUpdateMasterFadePercentage_Parms UpdateMasterFadePercentage_Parms;
 	UpdateMasterFadePercentage_Parms.AdjustedDeltaTime = AdjustedDeltaTime;
@@ -2354,7 +2354,7 @@ bool UGearboxCameraModifier::IsFadingDownwards()
 	static UFunction* pFnIsFadingDownwards = NULL;
 
 	if (!pFnIsFadingDownwards)
-		pFnIsFadingDownwards = (UFunction*)UObject::GObjObjects()->Data[40612];
+		pFnIsFadingDownwards = (UFunction*)UObject::GObjects()->Data[40612];
 
 	UGearboxCameraModifier_execIsFadingDownwards_Parms IsFadingDownwards_Parms;
 
@@ -2373,7 +2373,7 @@ bool UGearboxCameraModifier::IsFadingUpwards()
 	static UFunction* pFnIsFadingUpwards = NULL;
 
 	if (!pFnIsFadingUpwards)
-		pFnIsFadingUpwards = (UFunction*)UObject::GObjObjects()->Data[40610];
+		pFnIsFadingUpwards = (UFunction*)UObject::GObjects()->Data[40610];
 
 	UGearboxCameraModifier_execIsFadingUpwards_Parms IsFadingUpwards_Parms;
 
@@ -2392,7 +2392,7 @@ bool UGearboxCameraModifier::IsFadeInProgress()
 	static UFunction* pFnIsFadeInProgress = NULL;
 
 	if (!pFnIsFadeInProgress)
-		pFnIsFadeInProgress = (UFunction*)UObject::GObjObjects()->Data[40608];
+		pFnIsFadeInProgress = (UFunction*)UObject::GObjects()->Data[40608];
 
 	UGearboxCameraModifier_execIsFadeInProgress_Parms IsFadeInProgress_Parms;
 
@@ -2413,7 +2413,7 @@ void UGearboxCameraModifier::StartFadeOut(float NewTimeSpan, unsigned long NewDi
 	static UFunction* pFnStartFadeOut = NULL;
 
 	if (!pFnStartFadeOut)
-		pFnStartFadeOut = (UFunction*)UObject::GObjObjects()->Data[40604];
+		pFnStartFadeOut = (UFunction*)UObject::GObjects()->Data[40604];
 
 	UGearboxCameraModifier_execStartFadeOut_Parms StartFadeOut_Parms;
 	StartFadeOut_Parms.NewTimeSpan = NewTimeSpan;
@@ -2434,7 +2434,7 @@ void UGearboxCameraModifier::StartFadeIn(float NewTimeSpan, unsigned char NewFad
 	static UFunction* pFnStartFadeIn = NULL;
 
 	if (!pFnStartFadeIn)
-		pFnStartFadeIn = (UFunction*)UObject::GObjObjects()->Data[40601];
+		pFnStartFadeIn = (UFunction*)UObject::GObjects()->Data[40601];
 
 	UGearboxCameraModifier_execStartFadeIn_Parms StartFadeIn_Parms;
 	StartFadeIn_Parms.NewTimeSpan = NewTimeSpan;
@@ -2455,7 +2455,7 @@ void UGearboxCameraModifier::SetDesiredCamera(struct FVector DesiredLoc, struct 
 	static UFunction* pFnSetDesiredCamera = NULL;
 
 	if (!pFnSetDesiredCamera)
-		pFnSetDesiredCamera = (UFunction*)UObject::GObjObjects()->Data[40597];
+		pFnSetDesiredCamera = (UFunction*)UObject::GObjects()->Data[40597];
 
 	UGearboxCameraModifier_execSetDesiredCamera_Parms SetDesiredCamera_Parms;
 	memcpy(&SetDesiredCamera_Parms.DesiredLoc, &DesiredLoc, 0xC);
@@ -2475,7 +2475,7 @@ void UGearboxCameraModifier::SetGBXCameraOwner(class AGearboxCameraBasic* InCame
 	static UFunction* pFnSetGBXCameraOwner = NULL;
 
 	if (!pFnSetGBXCameraOwner)
-		pFnSetGBXCameraOwner = (UFunction*)UObject::GObjObjects()->Data[40595];
+		pFnSetGBXCameraOwner = (UFunction*)UObject::GObjects()->Data[40595];
 
 	UGearboxCameraModifier_execSetGBXCameraOwner_Parms SetGBXCameraOwner_Parms;
 	SetGBXCameraOwner_Parms.InCamera = InCamera;
@@ -2494,7 +2494,7 @@ bool UGearboxCameraModifier::AddCameraModifier(class ACamera* Camera)
 	static UFunction* pFnAddCameraModifier = NULL;
 
 	if (!pFnAddCameraModifier)
-		pFnAddCameraModifier = (UFunction*)UObject::GObjObjects()->Data[40592];
+		pFnAddCameraModifier = (UFunction*)UObject::GObjects()->Data[40592];
 
 	UGearboxCameraModifier_execAddCameraModifier_Parms AddCameraModifier_Parms;
 	AddCameraModifier_Parms.Camera = Camera;
@@ -2516,7 +2516,7 @@ void UGearboxDialogInterface::eventServerDialog_TriggerEvent(class UGearboxDialo
 	static UFunction* pFnServerDialog_TriggerEvent = NULL;
 
 	if (!pFnServerDialog_TriggerEvent)
-		pFnServerDialog_TriggerEvent = (UFunction*)UObject::GObjObjects()->Data[42132];
+		pFnServerDialog_TriggerEvent = (UFunction*)UObject::GObjects()->Data[42132];
 
 	UGearboxDialogInterface_eventServerDialog_TriggerEvent_Parms ServerDialog_TriggerEvent_Parms;
 	ServerDialog_TriggerEvent_Parms.EventTag = EventTag;
@@ -2536,7 +2536,7 @@ void UGearboxDialogInterface::SetDialogNameTag(class UGearboxDialogNameTag* NewN
 	static UFunction* pFnSetDialogNameTag = NULL;
 
 	if (!pFnSetDialogNameTag)
-		pFnSetDialogNameTag = (UFunction*)UObject::GObjObjects()->Data[42130];
+		pFnSetDialogNameTag = (UFunction*)UObject::GObjects()->Data[42130];
 
 	UGearboxDialogInterface_execSetDialogNameTag_Parms SetDialogNameTag_Parms;
 	SetDialogNameTag_Parms.NewName = NewName;
@@ -2558,7 +2558,7 @@ struct FGearboxDialogReplicatedData UGearboxDialogInterface::GetReplicatedDialog
 	static UFunction* pFnGetReplicatedDialogData = NULL;
 
 	if (!pFnGetReplicatedDialogData)
-		pFnGetReplicatedDialogData = (UFunction*)UObject::GObjObjects()->Data[42128];
+		pFnGetReplicatedDialogData = (UFunction*)UObject::GObjects()->Data[42128];
 
 	UGearboxDialogInterface_execGetReplicatedDialogData_Parms GetReplicatedDialogData_Parms;
 
@@ -2582,7 +2582,7 @@ void UGearboxDialogInterface::SetReplicatedDialogData(class UGearboxDialogAct_Ta
 	static UFunction* pFnSetReplicatedDialogData = NULL;
 
 	if (!pFnSetReplicatedDialogData)
-		pFnSetReplicatedDialogData = (UFunction*)UObject::GObjObjects()->Data[42125];
+		pFnSetReplicatedDialogData = (UFunction*)UObject::GObjects()->Data[42125];
 
 	UGearboxDialogInterface_execSetReplicatedDialogData_Parms SetReplicatedDialogData_Parms;
 	SetReplicatedDialogData_Parms.TalkAct = TalkAct;
@@ -2607,7 +2607,7 @@ void UGearboxDialogInterface::GetDialogGroups(TArray< class UGearboxDialogGroup*
 	static UFunction* pFnGetDialogGroups = NULL;
 
 	if (!pFnGetDialogGroups)
-		pFnGetDialogGroups = (UFunction*)UObject::GObjObjects()->Data[42122];
+		pFnGetDialogGroups = (UFunction*)UObject::GObjects()->Data[42122];
 
 	UGearboxDialogInterface_execGetDialogGroups_Parms GetDialogGroups_Parms;
 
@@ -2631,7 +2631,7 @@ class UGearboxDialogComponent* UGearboxDialogInterface::GetDialogComponent()
 	static UFunction* pFnGetDialogComponent = NULL;
 
 	if (!pFnGetDialogComponent)
-		pFnGetDialogComponent = (UFunction*)UObject::GObjObjects()->Data[40273];
+		pFnGetDialogComponent = (UFunction*)UObject::GObjects()->Data[40273];
 
 	UGearboxDialogInterface_execGetDialogComponent_Parms GetDialogComponent_Parms;
 
@@ -2654,7 +2654,7 @@ class UGearboxDialogNameTag* UGearboxDialogInterface::GetDialogNameTag()
 	static UFunction* pFnGetDialogNameTag = NULL;
 
 	if (!pFnGetDialogNameTag)
-		pFnGetDialogNameTag = (UFunction*)UObject::GObjObjects()->Data[42120];
+		pFnGetDialogNameTag = (UFunction*)UObject::GObjects()->Data[42120];
 
 	UGearboxDialogInterface_execGetDialogNameTag_Parms GetDialogNameTag_Parms;
 
@@ -2677,7 +2677,7 @@ class AActor* UGearboxDialogInterface::GetActor()
 	static UFunction* pFnGetActor = NULL;
 
 	if (!pFnGetActor)
-		pFnGetActor = (UFunction*)UObject::GObjObjects()->Data[40287];
+		pFnGetActor = (UFunction*)UObject::GObjects()->Data[40287];
 
 	UGearboxDialogInterface_execGetActor_Parms GetActor_Parms;
 
@@ -2700,7 +2700,7 @@ bool UGearboxDialogInterface::CanTalk()
 	static UFunction* pFnCanTalk = NULL;
 
 	if (!pFnCanTalk)
-		pFnCanTalk = (UFunction*)UObject::GObjObjects()->Data[42118];
+		pFnCanTalk = (UFunction*)UObject::GObjects()->Data[42118];
 
 	UGearboxDialogInterface_execCanTalk_Parms CanTalk_Parms;
 
@@ -2724,7 +2724,7 @@ bool UGearboxEditorNode::IsChild(class UGearboxEditorNode* TestNode)
 	static UFunction* pFnIsChild = NULL;
 
 	if (!pFnIsChild)
-		pFnIsChild = (UFunction*)UObject::GObjObjects()->Data[39627];
+		pFnIsChild = (UFunction*)UObject::GObjects()->Data[39627];
 
 	UGearboxEditorNode_execIsChild_Parms IsChild_Parms;
 	IsChild_Parms.TestNode = TestNode;
@@ -2748,7 +2748,7 @@ class USparkInterface* UGearboxEngine::GetSparkInterface()
 	static UFunction* pFnGetSparkInterface = NULL;
 
 	if (!pFnGetSparkInterface)
-		pFnGetSparkInterface = (UFunction*)UObject::GObjObjects()->Data[41240];
+		pFnGetSparkInterface = (UFunction*)UObject::GObjects()->Data[41240];
 
 	UGearboxEngine_execGetSparkInterface_Parms GetSparkInterface_Parms;
 
@@ -2772,7 +2772,7 @@ bool UGearboxEngine::eventIsCurrentDeviceValid(int SizeNeeded)
 	static UFunction* pFnIsCurrentDeviceValid = NULL;
 
 	if (!pFnIsCurrentDeviceValid)
-		pFnIsCurrentDeviceValid = (UFunction*)UObject::GObjObjects()->Data[42213];
+		pFnIsCurrentDeviceValid = (UFunction*)UObject::GObjects()->Data[42213];
 
 	UGearboxEngine_eventIsCurrentDeviceValid_Parms IsCurrentDeviceValid_Parms;
 	IsCurrentDeviceValid_Parms.SizeNeeded = SizeNeeded;
@@ -2792,7 +2792,7 @@ bool UGearboxEngine::HasStorageDeviceBeenRemoved()
 	static UFunction* pFnHasStorageDeviceBeenRemoved = NULL;
 
 	if (!pFnHasStorageDeviceBeenRemoved)
-		pFnHasStorageDeviceBeenRemoved = (UFunction*)UObject::GObjObjects()->Data[42211];
+		pFnHasStorageDeviceBeenRemoved = (UFunction*)UObject::GObjects()->Data[42211];
 
 	UGearboxEngine_execHasStorageDeviceBeenRemoved_Parms HasStorageDeviceBeenRemoved_Parms;
 
@@ -2815,7 +2815,7 @@ int UGearboxEngine::GetCurrentDeviceID()
 	static UFunction* pFnGetCurrentDeviceID = NULL;
 
 	if (!pFnGetCurrentDeviceID)
-		pFnGetCurrentDeviceID = (UFunction*)UObject::GObjObjects()->Data[42209];
+		pFnGetCurrentDeviceID = (UFunction*)UObject::GObjects()->Data[42209];
 
 	UGearboxEngine_execGetCurrentDeviceID_Parms GetCurrentDeviceID_Parms;
 
@@ -2839,7 +2839,7 @@ void UGearboxEngine::SetCurrentDeviceID(int NewDeviceID, unsigned long bProfileS
 	static UFunction* pFnSetCurrentDeviceID = NULL;
 
 	if (!pFnSetCurrentDeviceID)
-		pFnSetCurrentDeviceID = (UFunction*)UObject::GObjObjects()->Data[42206];
+		pFnSetCurrentDeviceID = (UFunction*)UObject::GObjects()->Data[42206];
 
 	UGearboxEngine_execSetCurrentDeviceID_Parms SetCurrentDeviceID_Parms;
 	SetCurrentDeviceID_Parms.NewDeviceID = NewDeviceID;
@@ -2862,7 +2862,7 @@ void AGearboxGameInfo::eventPostLogin(class APlayerController* NewPlayer)
 	static UFunction* pFnPostLogin = NULL;
 
 	if (!pFnPostLogin)
-		pFnPostLogin = (UFunction*)UObject::GObjObjects()->Data[42528];
+		pFnPostLogin = (UFunction*)UObject::GObjects()->Data[42528];
 
 	AGearboxGameInfo_eventPostLogin_Parms PostLogin_Parms;
 	PostLogin_Parms.NewPlayer = NewPlayer;
@@ -2880,7 +2880,7 @@ void UGearboxGFxMovie::extSetLanguageExt(struct FString ClipPath)
 	static UFunction* pFnextSetLanguageExt = NULL;
 
 	if (!pFnextSetLanguageExt)
-		pFnextSetLanguageExt = (UFunction*)UObject::GObjObjects()->Data[42412];
+		pFnextSetLanguageExt = (UFunction*)UObject::GObjects()->Data[42412];
 
 	UGearboxGFxMovie_execextSetLanguageExt_Parms extSetLanguageExt_Parms;
 	memcpy(&extSetLanguageExt_Parms.ClipPath, &ClipPath, 0xC);
@@ -2897,7 +2897,7 @@ void UGearboxGFxMovie::OnClosedOnDeath()
 	static UFunction* pFnOnClosedOnDeath = NULL;
 
 	if (!pFnOnClosedOnDeath)
-		pFnOnClosedOnDeath = (UFunction*)UObject::GObjObjects()->Data[42411];
+		pFnOnClosedOnDeath = (UFunction*)UObject::GObjects()->Data[42411];
 
 	UGearboxGFxMovie_execOnClosedOnDeath_Parms OnClosedOnDeath_Parms;
 
@@ -2914,7 +2914,7 @@ bool UGearboxGFxMovie::IsShowingFlashMouse()
 	static UFunction* pFnIsShowingFlashMouse = NULL;
 
 	if (!pFnIsShowingFlashMouse)
-		pFnIsShowingFlashMouse = (UFunction*)UObject::GObjObjects()->Data[42409];
+		pFnIsShowingFlashMouse = (UFunction*)UObject::GObjects()->Data[42409];
 
 	UGearboxGFxMovie_execIsShowingFlashMouse_Parms IsShowingFlashMouse_Parms;
 
@@ -2937,7 +2937,7 @@ int UGearboxGFxMovie::extIsMouseablePlatform()
 	static UFunction* pFnextIsMouseablePlatform = NULL;
 
 	if (!pFnextIsMouseablePlatform)
-		pFnextIsMouseablePlatform = (UFunction*)UObject::GObjObjects()->Data[42407];
+		pFnextIsMouseablePlatform = (UFunction*)UObject::GObjects()->Data[42407];
 
 	UGearboxGFxMovie_execextIsMouseablePlatform_Parms extIsMouseablePlatform_Parms;
 
@@ -2955,7 +2955,7 @@ void UGearboxGFxMovie::eventSetMouseableFlag()
 	static UFunction* pFnSetMouseableFlag = NULL;
 
 	if (!pFnSetMouseableFlag)
-		pFnSetMouseableFlag = (UFunction*)UObject::GObjObjects()->Data[42406];
+		pFnSetMouseableFlag = (UFunction*)UObject::GObjects()->Data[42406];
 
 	UGearboxGFxMovie_eventSetMouseableFlag_Parms SetMouseableFlag_Parms;
 
@@ -2976,7 +2976,7 @@ struct FString UGearboxGFxMovie::GetStyleDebugString()
 	static UFunction* pFnGetStyleDebugString = NULL;
 
 	if (!pFnGetStyleDebugString)
-		pFnGetStyleDebugString = (UFunction*)UObject::GObjObjects()->Data[42400];
+		pFnGetStyleDebugString = (UFunction*)UObject::GObjects()->Data[42400];
 
 	UGearboxGFxMovie_execGetStyleDebugString_Parms GetStyleDebugString_Parms;
 
@@ -2996,7 +2996,7 @@ struct FString UGearboxGFxMovie::GetStateDebugString(unsigned long bIncludeFlags
 	static UFunction* pFnGetStateDebugString = NULL;
 
 	if (!pFnGetStateDebugString)
-		pFnGetStateDebugString = (UFunction*)UObject::GObjObjects()->Data[42395];
+		pFnGetStateDebugString = (UFunction*)UObject::GObjects()->Data[42395];
 
 	UGearboxGFxMovie_execGetStateDebugString_Parms GetStateDebugString_Parms;
 	GetStateDebugString_Parms.bIncludeFlags = bIncludeFlags;
@@ -3016,7 +3016,7 @@ void UGearboxGFxMovie::InitializeFrom(class UGearboxGFxMovie* SrcMovie)
 	static UFunction* pFnInitializeFrom = NULL;
 
 	if (!pFnInitializeFrom)
-		pFnInitializeFrom = (UFunction*)UObject::GObjObjects()->Data[42393];
+		pFnInitializeFrom = (UFunction*)UObject::GObjects()->Data[42393];
 
 	UGearboxGFxMovie_execInitializeFrom_Parms InitializeFrom_Parms;
 	InitializeFrom_Parms.SrcMovie = SrcMovie;
@@ -3040,7 +3040,7 @@ bool UGearboxGFxMovie::RemoveStylesDrawnTo(class UPrimitiveComponent* PrimComp, 
 	static UFunction* pFnRemoveStylesDrawnTo = NULL;
 
 	if (!pFnRemoveStylesDrawnTo)
-		pFnRemoveStylesDrawnTo = (UFunction*)UObject::GObjObjects()->Data[42389];
+		pFnRemoveStylesDrawnTo = (UFunction*)UObject::GObjects()->Data[42389];
 
 	UGearboxGFxMovie_execRemoveStylesDrawnTo_Parms RemoveStylesDrawnTo_Parms;
 	RemoveStylesDrawnTo_Parms.PrimComp = PrimComp;
@@ -3066,7 +3066,7 @@ bool UGearboxGFxMovie::RemoveStyles(class UIGFxActorMovie* Target)
 	static UFunction* pFnRemoveStyles = NULL;
 
 	if (!pFnRemoveStyles)
-		pFnRemoveStyles = (UFunction*)UObject::GObjObjects()->Data[42386];
+		pFnRemoveStyles = (UFunction*)UObject::GObjects()->Data[42386];
 
 	UGearboxGFxMovie_execRemoveStyles_Parms RemoveStyles_Parms;
 	RemoveStyles_Parms.Target = Target;
@@ -3090,7 +3090,7 @@ void UGearboxGFxMovie::RemoveStyle(class UGFxMovieDrawStyle* Style)
 	static UFunction* pFnRemoveStyle = NULL;
 
 	if (!pFnRemoveStyle)
-		pFnRemoveStyle = (UFunction*)UObject::GObjObjects()->Data[42384];
+		pFnRemoveStyle = (UFunction*)UObject::GObjects()->Data[42384];
 
 	UGearboxGFxMovie_execRemoveStyle_Parms RemoveStyle_Parms;
 	RemoveStyle_Parms.Style = Style;
@@ -3112,7 +3112,7 @@ void UGearboxGFxMovie::AddStyle(class UGFxMovieDrawStyle* Style)
 	static UFunction* pFnAddStyle = NULL;
 
 	if (!pFnAddStyle)
-		pFnAddStyle = (UFunction*)UObject::GObjObjects()->Data[42382];
+		pFnAddStyle = (UFunction*)UObject::GObjects()->Data[42382];
 
 	UGearboxGFxMovie_execAddStyle_Parms AddStyle_Parms;
 	AddStyle_Parms.Style = Style;
@@ -3133,7 +3133,7 @@ void UGearboxGFxMovie::ShutdownMoviePlayback()
 	static UFunction* pFnShutdownMoviePlayback = NULL;
 
 	if (!pFnShutdownMoviePlayback)
-		pFnShutdownMoviePlayback = (UFunction*)UObject::GObjObjects()->Data[42325];
+		pFnShutdownMoviePlayback = (UFunction*)UObject::GObjects()->Data[42325];
 
 	UGearboxGFxMovie_execShutdownMoviePlayback_Parms ShutdownMoviePlayback_Parms;
 
@@ -3153,7 +3153,7 @@ void UGearboxGFxMovie::InitMoviePlayback()
 	static UFunction* pFnInitMoviePlayback = NULL;
 
 	if (!pFnInitMoviePlayback)
-		pFnInitMoviePlayback = (UFunction*)UObject::GObjObjects()->Data[42323];
+		pFnInitMoviePlayback = (UFunction*)UObject::GObjects()->Data[42323];
 
 	UGearboxGFxMovie_execInitMoviePlayback_Parms InitMoviePlayback_Parms;
 
@@ -3174,7 +3174,7 @@ class UTextureRenderTarget2D* UGearboxGFxMovie::GetRenderTexture()
 	static UFunction* pFnGetRenderTexture = NULL;
 
 	if (!pFnGetRenderTexture)
-		pFnGetRenderTexture = (UFunction*)UObject::GObjObjects()->Data[42380];
+		pFnGetRenderTexture = (UFunction*)UObject::GObjects()->Data[42380];
 
 	UGearboxGFxMovie_execGetRenderTexture_Parms GetRenderTexture_Parms;
 
@@ -3197,7 +3197,7 @@ void UGearboxGFxMovie::eventMovieState_OnChanged(unsigned long bStateWasChanged)
 	static UFunction* pFnMovieState_OnChanged = NULL;
 
 	if (!pFnMovieState_OnChanged)
-		pFnMovieState_OnChanged = (UFunction*)UObject::GObjObjects()->Data[42377];
+		pFnMovieState_OnChanged = (UFunction*)UObject::GObjects()->Data[42377];
 
 	UGearboxGFxMovie_eventMovieState_OnChanged_Parms MovieState_OnChanged_Parms;
 	MovieState_OnChanged_Parms.bStateWasChanged = bStateWasChanged;
@@ -3216,7 +3216,7 @@ bool UGearboxGFxMovie::eventMovieState_SetFromMovie(class UGearboxGFxMovie* Movi
 	static UFunction* pFnMovieState_SetFromMovie = NULL;
 
 	if (!pFnMovieState_SetFromMovie)
-		pFnMovieState_SetFromMovie = (UFunction*)UObject::GObjObjects()->Data[42374];
+		pFnMovieState_SetFromMovie = (UFunction*)UObject::GObjects()->Data[42374];
 
 	UGearboxGFxMovie_eventMovieState_SetFromMovie_Parms MovieState_SetFromMovie_Parms;
 	MovieState_SetFromMovie_Parms.Movie = Movie;
@@ -3238,7 +3238,7 @@ bool UGearboxGFxMovie::MovieState_Copy(struct FMovieStateStruct* StateDst, struc
 	static UFunction* pFnMovieState_Copy = NULL;
 
 	if (!pFnMovieState_Copy)
-		pFnMovieState_Copy = (UFunction*)UObject::GObjObjects()->Data[42370];
+		pFnMovieState_Copy = (UFunction*)UObject::GObjects()->Data[42370];
 
 	UGearboxGFxMovie_execMovieState_Copy_Parms MovieState_Copy_Parms;
 
@@ -3269,7 +3269,7 @@ bool UGearboxGFxMovie::MovieState_Compare(struct FMovieStateStruct* S1, struct F
 	static UFunction* pFnMovieState_Compare = NULL;
 
 	if (!pFnMovieState_Compare)
-		pFnMovieState_Compare = (UFunction*)UObject::GObjObjects()->Data[42366];
+		pFnMovieState_Compare = (UFunction*)UObject::GObjects()->Data[42366];
 
 	UGearboxGFxMovie_execMovieState_Compare_Parms MovieState_Compare_Parms;
 
@@ -3298,7 +3298,7 @@ void UGearboxGFxMovie::MovieState_Toggle(struct FName TheState)
 	static UFunction* pFnMovieState_Toggle = NULL;
 
 	if (!pFnMovieState_Toggle)
-		pFnMovieState_Toggle = (UFunction*)UObject::GObjObjects()->Data[42364];
+		pFnMovieState_Toggle = (UFunction*)UObject::GObjects()->Data[42364];
 
 	UGearboxGFxMovie_execMovieState_Toggle_Parms MovieState_Toggle_Parms;
 	memcpy(&MovieState_Toggle_Parms.TheState, &TheState, 0x8);
@@ -3322,7 +3322,7 @@ bool UGearboxGFxMovie::MovieState_Enable(struct FName TheState, unsigned long bE
 	static UFunction* pFnMovieState_Enable = NULL;
 
 	if (!pFnMovieState_Enable)
-		pFnMovieState_Enable = (UFunction*)UObject::GObjObjects()->Data[42360];
+		pFnMovieState_Enable = (UFunction*)UObject::GObjects()->Data[42360];
 
 	UGearboxGFxMovie_execMovieState_Enable_Parms MovieState_Enable_Parms;
 	memcpy(&MovieState_Enable_Parms.TheState, &TheState, 0x8);
@@ -3348,7 +3348,7 @@ bool UGearboxGFxMovie::MovieState_IsEnabled(struct FName TheState)
 	static UFunction* pFnMovieState_IsEnabled = NULL;
 
 	if (!pFnMovieState_IsEnabled)
-		pFnMovieState_IsEnabled = (UFunction*)UObject::GObjObjects()->Data[42357];
+		pFnMovieState_IsEnabled = (UFunction*)UObject::GObjects()->Data[42357];
 
 	UGearboxGFxMovie_execMovieState_IsEnabled_Parms MovieState_IsEnabled_Parms;
 	memcpy(&MovieState_IsEnabled_Parms.TheState, &TheState, 0x8);
@@ -3373,7 +3373,7 @@ bool UGearboxGFxMovie::MovieState_SupportsState(struct FName TheState)
 	static UFunction* pFnMovieState_SupportsState = NULL;
 
 	if (!pFnMovieState_SupportsState)
-		pFnMovieState_SupportsState = (UFunction*)UObject::GObjObjects()->Data[42354];
+		pFnMovieState_SupportsState = (UFunction*)UObject::GObjects()->Data[42354];
 
 	UGearboxGFxMovie_execMovieState_SupportsState_Parms MovieState_SupportsState_Parms;
 	memcpy(&MovieState_SupportsState_Parms.TheState, &TheState, 0x8);
@@ -3396,7 +3396,7 @@ void UGearboxGFxMovie::MovieState_Init()
 	static UFunction* pFnMovieState_Init = NULL;
 
 	if (!pFnMovieState_Init)
-		pFnMovieState_Init = (UFunction*)UObject::GObjObjects()->Data[42353];
+		pFnMovieState_Init = (UFunction*)UObject::GObjects()->Data[42353];
 
 	UGearboxGFxMovie_execMovieState_Init_Parms MovieState_Init_Parms;
 
@@ -3416,7 +3416,7 @@ void UGearboxGFxMovie::InitFromDefinition()
 	static UFunction* pFnInitFromDefinition = NULL;
 
 	if (!pFnInitFromDefinition)
-		pFnInitFromDefinition = (UFunction*)UObject::GObjObjects()->Data[42352];
+		pFnInitFromDefinition = (UFunction*)UObject::GObjects()->Data[42352];
 
 	UGearboxGFxMovie_execInitFromDefinition_Parms InitFromDefinition_Parms;
 
@@ -3438,7 +3438,7 @@ void UGearboxGFxMovie::MovieState_Apply(class UGearboxGFxMovie* Movie, class UCl
 	static UFunction* pFnMovieState_Apply = NULL;
 
 	if (!pFnMovieState_Apply)
-		pFnMovieState_Apply = (UFunction*)UObject::GObjObjects()->Data[42349];
+		pFnMovieState_Apply = (UFunction*)UObject::GObjects()->Data[42349];
 
 	UGearboxGFxMovie_execMovieState_Apply_Parms MovieState_Apply_Parms;
 	MovieState_Apply_Parms.Movie = Movie;
@@ -3458,7 +3458,7 @@ void UGearboxGFxMovie::MovieState_ApplyState(struct FName TheState, class UGearb
 	static UFunction* pFnMovieState_ApplyState = NULL;
 
 	if (!pFnMovieState_ApplyState)
-		pFnMovieState_ApplyState = (UFunction*)UObject::GObjObjects()->Data[42346];
+		pFnMovieState_ApplyState = (UFunction*)UObject::GObjects()->Data[42346];
 
 	UGearboxGFxMovie_execMovieState_ApplyState_Parms MovieState_ApplyState_Parms;
 	memcpy(&MovieState_ApplyState_Parms.TheState, &TheState, 0x8);
@@ -3478,7 +3478,7 @@ void UGearboxGFxMovie::ApplyState(struct FString StateName, struct FString State
 	static UFunction* pFnApplyState = NULL;
 
 	if (!pFnApplyState)
-		pFnApplyState = (UFunction*)UObject::GObjObjects()->Data[42343];
+		pFnApplyState = (UFunction*)UObject::GObjects()->Data[42343];
 
 	UGearboxGFxMovie_execApplyState_Parms ApplyState_Parms;
 	memcpy(&ApplyState_Parms.StateName, &StateName, 0xC);
@@ -3497,7 +3497,7 @@ void UGearboxGFxMovie::SetRenderingEnabled(unsigned long bEnabled)
 	static UFunction* pFnSetRenderingEnabled = NULL;
 
 	if (!pFnSetRenderingEnabled)
-		pFnSetRenderingEnabled = (UFunction*)UObject::GObjObjects()->Data[42341];
+		pFnSetRenderingEnabled = (UFunction*)UObject::GObjects()->Data[42341];
 
 	UGearboxGFxMovie_execSetRenderingEnabled_Parms SetRenderingEnabled_Parms;
 	SetRenderingEnabled_Parms.bEnabled = bEnabled;
@@ -3515,7 +3515,7 @@ void UGearboxGFxMovie::GotoAndStop(struct FString FrameLabel)
 	static UFunction* pFnGotoAndStop = NULL;
 
 	if (!pFnGotoAndStop)
-		pFnGotoAndStop = (UFunction*)UObject::GObjObjects()->Data[42339];
+		pFnGotoAndStop = (UFunction*)UObject::GObjects()->Data[42339];
 
 	UGearboxGFxMovie_execGotoAndStop_Parms GotoAndStop_Parms;
 	memcpy(&GotoAndStop_Parms.FrameLabel, &FrameLabel, 0xC);
@@ -3533,7 +3533,7 @@ void UGearboxGFxMovie::GotoAndPlay(struct FString FrameLabel)
 	static UFunction* pFnGotoAndPlay = NULL;
 
 	if (!pFnGotoAndPlay)
-		pFnGotoAndPlay = (UFunction*)UObject::GObjObjects()->Data[42337];
+		pFnGotoAndPlay = (UFunction*)UObject::GObjects()->Data[42337];
 
 	UGearboxGFxMovie_execGotoAndPlay_Parms GotoAndPlay_Parms;
 	memcpy(&GotoAndPlay_Parms.FrameLabel, &FrameLabel, 0xC);
@@ -3551,7 +3551,7 @@ void UGearboxGFxMovie::PlaySpecialUISound(struct FString SoundString)
 	static UFunction* pFnPlaySpecialUISound = NULL;
 
 	if (!pFnPlaySpecialUISound)
-		pFnPlaySpecialUISound = (UFunction*)UObject::GObjObjects()->Data[42334];
+		pFnPlaySpecialUISound = (UFunction*)UObject::GObjects()->Data[42334];
 
 	UGearboxGFxMovie_execPlaySpecialUISound_Parms PlaySpecialUISound_Parms;
 	memcpy(&PlaySpecialUISound_Parms.SoundString, &SoundString, 0xC);
@@ -3569,7 +3569,7 @@ void UGearboxGFxMovie::eventPlayUISound(struct FName UIEvent)
 	static UFunction* pFnPlayUISound = NULL;
 
 	if (!pFnPlayUISound)
-		pFnPlayUISound = (UFunction*)UObject::GObjObjects()->Data[42332];
+		pFnPlayUISound = (UFunction*)UObject::GObjects()->Data[42332];
 
 	UGearboxGFxMovie_eventPlayUISound_Parms PlayUISound_Parms;
 	memcpy(&PlayUISound_Parms.UIEvent, &UIEvent, 0x8);
@@ -3591,7 +3591,7 @@ void UGearboxGFxMovie::eventSetOtherObject(class UObject* Obj)
 	static UFunction* pFnSetOtherObject = NULL;
 
 	if (!pFnSetOtherObject)
-		pFnSetOtherObject = (UFunction*)UObject::GObjObjects()->Data[42330];
+		pFnSetOtherObject = (UFunction*)UObject::GObjects()->Data[42330];
 
 	UGearboxGFxMovie_eventSetOtherObject_Parms SetOtherObject_Parms;
 	SetOtherObject_Parms.Obj = Obj;
@@ -3609,7 +3609,7 @@ class UObject* UGearboxGFxMovie::GetInstanceContextObject()
 	static UFunction* pFnGetInstanceContextObject = NULL;
 
 	if (!pFnGetInstanceContextObject)
-		pFnGetInstanceContextObject = (UFunction*)UObject::GObjObjects()->Data[42328];
+		pFnGetInstanceContextObject = (UFunction*)UObject::GObjects()->Data[42328];
 
 	UGearboxGFxMovie_execGetInstanceContextObject_Parms GetInstanceContextObject_Parms;
 
@@ -3631,7 +3631,7 @@ void UGearboxGFxMovie::eventOnTick()
 	static UFunction* pFnOnTick = NULL;
 
 	if (!pFnOnTick)
-		pFnOnTick = (UFunction*)UObject::GObjObjects()->Data[42327];
+		pFnOnTick = (UFunction*)UObject::GObjects()->Data[42327];
 
 	UGearboxGFxMovie_eventOnTick_Parms OnTick_Parms;
 
@@ -3647,7 +3647,7 @@ void UGearboxGFxMovie::eventOnClose()
 	static UFunction* pFnOnClose = NULL;
 
 	if (!pFnOnClose)
-		pFnOnClose = (UFunction*)UObject::GObjObjects()->Data[42326];
+		pFnOnClose = (UFunction*)UObject::GObjects()->Data[42326];
 
 	UGearboxGFxMovie_eventOnClose_Parms OnClose_Parms;
 
@@ -3665,7 +3665,7 @@ bool UGearboxGFxMovie::eventStart(unsigned long StartPaused)
 	static UFunction* pFnStart = NULL;
 
 	if (!pFnStart)
-		pFnStart = (UFunction*)UObject::GObjObjects()->Data[42320];
+		pFnStart = (UFunction*)UObject::GObjects()->Data[42320];
 
 	UGearboxGFxMovie_eventStart_Parms Start_Parms;
 	Start_Parms.StartPaused = StartPaused;
@@ -3687,7 +3687,7 @@ struct FString UGearboxGFxMovie::ColorizeTooltipText(struct FString S, unsigned 
 	static UFunction* pFnColorizeTooltipText = NULL;
 
 	if (!pFnColorizeTooltipText)
-		pFnColorizeTooltipText = (UFunction*)UObject::GObjObjects()->Data[42316];
+		pFnColorizeTooltipText = (UFunction*)UObject::GObjects()->Data[42316];
 
 	UGearboxGFxMovie_execColorizeTooltipText_Parms ColorizeTooltipText_Parms;
 	memcpy(&ColorizeTooltipText_Parms.S, &S, 0xC);
@@ -3711,7 +3711,7 @@ struct FString UGearboxGFxMovie::GFxColoredText(unsigned long bAppendNewline, st
 	static UFunction* pFnGFxColoredText = NULL;
 
 	if (!pFnGFxColoredText)
-		pFnGFxColoredText = (UFunction*)UObject::GObjObjects()->Data[42311];
+		pFnGFxColoredText = (UFunction*)UObject::GObjects()->Data[42311];
 
 	UGearboxGFxMovie_execGFxColoredText_Parms GFxColoredText_Parms;
 	GFxColoredText_Parms.bAppendNewline = bAppendNewline;
@@ -3742,7 +3742,7 @@ void UGearboxGFxMovie::SingleArgInvokeB(struct FString Command, unsigned long Ar
 	static UFunction* pFnSingleArgInvokeB = NULL;
 
 	if (!pFnSingleArgInvokeB)
-		pFnSingleArgInvokeB = (UFunction*)UObject::GObjObjects()->Data[42308];
+		pFnSingleArgInvokeB = (UFunction*)UObject::GObjects()->Data[42308];
 
 	UGearboxGFxMovie_execSingleArgInvokeB_Parms SingleArgInvokeB_Parms;
 	memcpy(&SingleArgInvokeB_Parms.Command, &Command, 0xC);
@@ -3766,7 +3766,7 @@ void UGearboxGFxMovie::SingleArgInvokeS(struct FString Command, struct FString A
 	static UFunction* pFnSingleArgInvokeS = NULL;
 
 	if (!pFnSingleArgInvokeS)
-		pFnSingleArgInvokeS = (UFunction*)UObject::GObjObjects()->Data[42305];
+		pFnSingleArgInvokeS = (UFunction*)UObject::GObjects()->Data[42305];
 
 	UGearboxGFxMovie_execSingleArgInvokeS_Parms SingleArgInvokeS_Parms;
 	memcpy(&SingleArgInvokeS_Parms.Command, &Command, 0xC);
@@ -3790,7 +3790,7 @@ void UGearboxGFxMovie::SingleArgInvokeF(struct FString Command, float Arg)
 	static UFunction* pFnSingleArgInvokeF = NULL;
 
 	if (!pFnSingleArgInvokeF)
-		pFnSingleArgInvokeF = (UFunction*)UObject::GObjObjects()->Data[42302];
+		pFnSingleArgInvokeF = (UFunction*)UObject::GObjects()->Data[42302];
 
 	UGearboxGFxMovie_execSingleArgInvokeF_Parms SingleArgInvokeF_Parms;
 	memcpy(&SingleArgInvokeF_Parms.Command, &Command, 0xC);
@@ -3813,7 +3813,7 @@ class ULocalPlayer* UGearboxGFxMovie::GetLocalPlayer()
 	static UFunction* pFnGetLocalPlayer = NULL;
 
 	if (!pFnGetLocalPlayer)
-		pFnGetLocalPlayer = (UFunction*)UObject::GObjObjects()->Data[42300];
+		pFnGetLocalPlayer = (UFunction*)UObject::GObjects()->Data[42300];
 
 	UGearboxGFxMovie_execGetLocalPlayer_Parms GetLocalPlayer_Parms;
 
@@ -3836,7 +3836,7 @@ void UGearboxGFxMovie::OnClosed(class UGearboxGFxMovie* Movie)
 	static UFunction* pFnOnClosed = NULL;
 
 	if (!pFnOnClosed)
-		pFnOnClosed = (UFunction*)UObject::GObjObjects()->Data[42270];
+		pFnOnClosed = (UFunction*)UObject::GObjects()->Data[42270];
 
 	UGearboxGFxMovie_execOnClosed_Parms OnClosed_Parms;
 	OnClosed_Parms.Movie = Movie;
@@ -3855,7 +3855,7 @@ bool UGearboxGFxMovie::WantsControllerInput(int ControllerId)
 	static UFunction* pFnWantsControllerInput = NULL;
 
 	if (!pFnWantsControllerInput)
-		pFnWantsControllerInput = (UFunction*)UObject::GObjObjects()->Data[42296];
+		pFnWantsControllerInput = (UFunction*)UObject::GObjects()->Data[42296];
 
 	UGearboxGFxMovie_execWantsControllerInput_Parms WantsControllerInput_Parms;
 	WantsControllerInput_Parms.ControllerId = ControllerId;
@@ -3881,7 +3881,7 @@ bool UGearboxGFxMovie::SetExternalTexture(struct FString Resource, class UTextur
 	static UFunction* pFnSetExternalTexture = NULL;
 
 	if (!pFnSetExternalTexture)
-		pFnSetExternalTexture = (UFunction*)UObject::GObjObjects()->Data[42292];
+		pFnSetExternalTexture = (UFunction*)UObject::GObjects()->Data[42292];
 
 	UGearboxGFxMovie_execSetExternalTexture_Parms SetExternalTexture_Parms;
 	memcpy(&SetExternalTexture_Parms.Resource, &Resource, 0xC);
@@ -3910,7 +3910,7 @@ bool UGearboxGFxMovie::OnInputAxis(int ControllerId, struct FName ukey, float De
 	static UFunction* pFnOnInputAxis = NULL;
 
 	if (!pFnOnInputAxis)
-		pFnOnInputAxis = (UFunction*)UObject::GObjObjects()->Data[42272];
+		pFnOnInputAxis = (UFunction*)UObject::GObjects()->Data[42272];
 
 	UGearboxGFxMovie_execOnInputAxis_Parms OnInputAxis_Parms;
 	OnInputAxis_Parms.ControllerId = ControllerId;
@@ -3933,7 +3933,7 @@ void UGFxMovie_StateParent::MovieState_OnChanged(unsigned long bStateWasChanged)
 	static UFunction* pFnMovieState_OnChanged = NULL;
 
 	if (!pFnMovieState_OnChanged)
-		pFnMovieState_OnChanged = (UFunction*)UObject::GObjObjects()->Data[43640];
+		pFnMovieState_OnChanged = (UFunction*)UObject::GObjects()->Data[43640];
 
 	UGFxMovie_StateParent_execMovieState_OnChanged_Parms MovieState_OnChanged_Parms;
 	MovieState_OnChanged_Parms.bStateWasChanged = bStateWasChanged;
@@ -3952,7 +3952,7 @@ bool UGFxMovie_StateParent::eventStart(unsigned long StartPaused)
 	static UFunction* pFnStart = NULL;
 
 	if (!pFnStart)
-		pFnStart = (UFunction*)UObject::GObjObjects()->Data[43637];
+		pFnStart = (UFunction*)UObject::GObjects()->Data[43637];
 
 	UGFxMovie_StateParent_eventStart_Parms Start_Parms;
 	Start_Parms.StartPaused = StartPaused;
@@ -3972,7 +3972,7 @@ class UBehaviorKernel* UGearboxGlobals::GetBehaviorKernel()
 	static UFunction* pFnGetBehaviorKernel = NULL;
 
 	if (!pFnGetBehaviorKernel)
-		pFnGetBehaviorKernel = (UFunction*)UObject::GObjObjects()->Data[39077];
+		pFnGetBehaviorKernel = (UFunction*)UObject::GObjects()->Data[39077];
 
 	UGearboxGlobals_execGetBehaviorKernel_Parms GetBehaviorKernel_Parms;
 
@@ -3995,7 +3995,7 @@ class UGearboxDialogManager* UGearboxGlobals::GetDialogManager()
 	static UFunction* pFnGetDialogManager = NULL;
 
 	if (!pFnGetDialogManager)
-		pFnGetDialogManager = (UFunction*)UObject::GObjObjects()->Data[39075];
+		pFnGetDialogManager = (UFunction*)UObject::GObjects()->Data[39075];
 
 	UGearboxGlobals_execGetDialogManager_Parms GetDialogManager_Parms;
 
@@ -4018,7 +4018,7 @@ float UGearboxGlobals::GetPopulationRespawnDelay()
 	static UFunction* pFnGetPopulationRespawnDelay = NULL;
 
 	if (!pFnGetPopulationRespawnDelay)
-		pFnGetPopulationRespawnDelay = (UFunction*)UObject::GObjObjects()->Data[39073];
+		pFnGetPopulationRespawnDelay = (UFunction*)UObject::GObjects()->Data[39073];
 
 	UGearboxGlobals_execGetPopulationRespawnDelay_Parms GetPopulationRespawnDelay_Parms;
 
@@ -4042,7 +4042,7 @@ class UIDialogBox* UGearboxGlobals::eventShowDialog(class APlayerController* PC)
 	static UFunction* pFnShowDialog = NULL;
 
 	if (!pFnShowDialog)
-		pFnShowDialog = (UFunction*)UObject::GObjObjects()->Data[39070];
+		pFnShowDialog = (UFunction*)UObject::GObjects()->Data[39070];
 
 	UGearboxGlobals_eventShowDialog_Parms ShowDialog_Parms;
 	ShowDialog_Parms.PC = PC;
@@ -4063,7 +4063,7 @@ void UGearboxGlobals::NotifyActorDied(class AActor* TheActor, unsigned long bKee
 	static UFunction* pFnNotifyActorDied = NULL;
 
 	if (!pFnNotifyActorDied)
-		pFnNotifyActorDied = (UFunction*)UObject::GObjObjects()->Data[39067];
+		pFnNotifyActorDied = (UFunction*)UObject::GObjects()->Data[39067];
 
 	UGearboxGlobals_execNotifyActorDied_Parms NotifyActorDied_Parms;
 	NotifyActorDied_Parms.TheActor = TheActor;
@@ -4089,7 +4089,7 @@ bool UGearboxGlobals::DoesLOSIntersectSpecialOccluder(struct FVector FromLoc, st
 	static UFunction* pFnDoesLOSIntersectSpecialOccluder = NULL;
 
 	if (!pFnDoesLOSIntersectSpecialOccluder)
-		pFnDoesLOSIntersectSpecialOccluder = (UFunction*)UObject::GObjObjects()->Data[39062];
+		pFnDoesLOSIntersectSpecialOccluder = (UFunction*)UObject::GObjects()->Data[39062];
 
 	UGearboxGlobals_execDoesLOSIntersectSpecialOccluder_Parms DoesLOSIntersectSpecialOccluder_Parms;
 	memcpy(&DoesLOSIntersectSpecialOccluder_Parms.FromLoc, &FromLoc, 0xC);
@@ -4115,7 +4115,7 @@ bool UGearboxGlobals::HasPhysXCapableGPU()
 	static UFunction* pFnHasPhysXCapableGPU = NULL;
 
 	if (!pFnHasPhysXCapableGPU)
-		pFnHasPhysXCapableGPU = (UFunction*)UObject::GObjObjects()->Data[39060];
+		pFnHasPhysXCapableGPU = (UFunction*)UObject::GObjects()->Data[39060];
 
 	UGearboxGlobals_execHasPhysXCapableGPU_Parms HasPhysXCapableGPU_Parms;
 
@@ -4138,7 +4138,7 @@ unsigned char UGearboxGlobals::GetPlatform()
 	static UFunction* pFnGetPlatform = NULL;
 
 	if (!pFnGetPlatform)
-		pFnGetPlatform = (UFunction*)UObject::GObjObjects()->Data[39058];
+		pFnGetPlatform = (UFunction*)UObject::GObjects()->Data[39058];
 
 	UGearboxGlobals_execGetPlatform_Parms GetPlatform_Parms;
 
@@ -4163,7 +4163,7 @@ bool UGearboxGlobals::ValidatePlayerName(unsigned long bReplaceCharacters, struc
 	static UFunction* pFnValidatePlayerName = NULL;
 
 	if (!pFnValidatePlayerName)
-		pFnValidatePlayerName = (UFunction*)UObject::GObjObjects()->Data[39054];
+		pFnValidatePlayerName = (UFunction*)UObject::GObjects()->Data[39054];
 
 	UGearboxGlobals_execValidatePlayerName_Parms ValidatePlayerName_Parms;
 	ValidatePlayerName_Parms.bReplaceCharacters = bReplaceCharacters;
@@ -4193,7 +4193,7 @@ bool UGearboxGlobals::RegisterStateKey(struct FName LevelName, struct FName Obje
 	static UFunction* pFnRegisterStateKey = NULL;
 
 	if (!pFnRegisterStateKey)
-		pFnRegisterStateKey = (UFunction*)UObject::GObjObjects()->Data[39049];
+		pFnRegisterStateKey = (UFunction*)UObject::GObjects()->Data[39049];
 
 	UGearboxGlobals_execRegisterStateKey_Parms RegisterStateKey_Parms;
 	memcpy(&RegisterStateKey_Parms.LevelName, &LevelName, 0x8);
@@ -4222,7 +4222,7 @@ bool UGearboxGlobals::DoesStateKeyExist(struct FName LevelName, struct FName Obj
 	static UFunction* pFnDoesStateKeyExist = NULL;
 
 	if (!pFnDoesStateKeyExist)
-		pFnDoesStateKeyExist = (UFunction*)UObject::GObjObjects()->Data[39044];
+		pFnDoesStateKeyExist = (UFunction*)UObject::GObjects()->Data[39044];
 
 	UGearboxGlobals_execDoesStateKeyExist_Parms DoesStateKeyExist_Parms;
 	memcpy(&DoesStateKeyExist_Parms.LevelName, &LevelName, 0x8);
@@ -4249,7 +4249,7 @@ bool UGearboxGlobals::FreeTexture2D(class UTexture2D* Texture)
 	static UFunction* pFnFreeTexture2D = NULL;
 
 	if (!pFnFreeTexture2D)
-		pFnFreeTexture2D = (UFunction*)UObject::GObjObjects()->Data[39041];
+		pFnFreeTexture2D = (UFunction*)UObject::GObjects()->Data[39041];
 
 	UGearboxGlobals_execFreeTexture2D_Parms FreeTexture2D_Parms;
 	FreeTexture2D_Parms.Texture = Texture;
@@ -4273,7 +4273,7 @@ class UTexture2D* UGearboxGlobals::GetTexture2D()
 	static UFunction* pFnGetTexture2D = NULL;
 
 	if (!pFnGetTexture2D)
-		pFnGetTexture2D = (UFunction*)UObject::GObjObjects()->Data[39039];
+		pFnGetTexture2D = (UFunction*)UObject::GObjects()->Data[39039];
 
 	UGearboxGlobals_execGetTexture2D_Parms GetTexture2D_Parms;
 
@@ -4296,7 +4296,7 @@ class UGearboxRenderTextureManager* UGearboxGlobals::GetRenderTextureManager()
 	static UFunction* pFnGetRenderTextureManager = NULL;
 
 	if (!pFnGetRenderTextureManager)
-		pFnGetRenderTextureManager = (UFunction*)UObject::GObjObjects()->Data[39037];
+		pFnGetRenderTextureManager = (UFunction*)UObject::GObjects()->Data[39037];
 
 	UGearboxGlobals_execGetRenderTextureManager_Parms GetRenderTextureManager_Parms;
 
@@ -4319,7 +4319,7 @@ class UGFxMovieManager* UGearboxGlobals::GetGFxManager()
 	static UFunction* pFnGetGFxManager = NULL;
 
 	if (!pFnGetGFxManager)
-		pFnGetGFxManager = (UFunction*)UObject::GObjObjects()->Data[39035];
+		pFnGetGFxManager = (UFunction*)UObject::GObjects()->Data[39035];
 
 	UGearboxGlobals_execGetGFxManager_Parms GetGFxManager_Parms;
 
@@ -4342,7 +4342,7 @@ class UScreenSpaceManager* UGearboxGlobals::GetScreenSpaceManager()
 	static UFunction* pFnGetScreenSpaceManager = NULL;
 
 	if (!pFnGetScreenSpaceManager)
-		pFnGetScreenSpaceManager = (UFunction*)UObject::GObjObjects()->Data[39033];
+		pFnGetScreenSpaceManager = (UFunction*)UObject::GObjects()->Data[39033];
 
 	UGearboxGlobals_execGetScreenSpaceManager_Parms GetScreenSpaceManager_Parms;
 
@@ -4365,7 +4365,7 @@ class UGbxMessageManager* UGearboxGlobals::GetMessageManager()
 	static UFunction* pFnGetMessageManager = NULL;
 
 	if (!pFnGetMessageManager)
-		pFnGetMessageManager = (UFunction*)UObject::GObjObjects()->Data[39031];
+		pFnGetMessageManager = (UFunction*)UObject::GObjects()->Data[39031];
 
 	UGearboxGlobals_execGetMessageManager_Parms GetMessageManager_Parms;
 
@@ -4389,7 +4389,7 @@ void UGearboxGlobals::RegDynamicTextureStreaming(class AActor* A, unsigned long 
 	static UFunction* pFnRegDynamicTextureStreaming = NULL;
 
 	if (!pFnRegDynamicTextureStreaming)
-		pFnRegDynamicTextureStreaming = (UFunction*)UObject::GObjObjects()->Data[39028];
+		pFnRegDynamicTextureStreaming = (UFunction*)UObject::GObjects()->Data[39028];
 
 	UGearboxGlobals_execRegDynamicTextureStreaming_Parms RegDynamicTextureStreaming_Parms;
 	RegDynamicTextureStreaming_Parms.A = A;
@@ -4412,7 +4412,7 @@ class UGBXActorList* UGearboxGlobals::GetDynamicTextureActorList()
 	static UFunction* pFnGetDynamicTextureActorList = NULL;
 
 	if (!pFnGetDynamicTextureActorList)
-		pFnGetDynamicTextureActorList = (UFunction*)UObject::GObjObjects()->Data[39026];
+		pFnGetDynamicTextureActorList = (UFunction*)UObject::GObjects()->Data[39026];
 
 	UGearboxGlobals_execGetDynamicTextureActorList_Parms GetDynamicTextureActorList_Parms;
 
@@ -4435,7 +4435,7 @@ class UPopulationMaster* UGearboxGlobals::GetPopulationMaster()
 	static UFunction* pFnGetPopulationMaster = NULL;
 
 	if (!pFnGetPopulationMaster)
-		pFnGetPopulationMaster = (UFunction*)UObject::GObjObjects()->Data[39024];
+		pFnGetPopulationMaster = (UFunction*)UObject::GObjects()->Data[39024];
 
 	UGearboxGlobals_execGetPopulationMaster_Parms GetPopulationMaster_Parms;
 
@@ -4458,7 +4458,7 @@ class AWireManager* UGearboxGlobals::GetWireManager()
 	static UFunction* pFnGetWireManager = NULL;
 
 	if (!pFnGetWireManager)
-		pFnGetWireManager = (UFunction*)UObject::GObjObjects()->Data[39022];
+		pFnGetWireManager = (UFunction*)UObject::GObjects()->Data[39022];
 
 	UGearboxGlobals_execGetWireManager_Parms GetWireManager_Parms;
 
@@ -4481,7 +4481,7 @@ class UGBXObjectList* UGearboxGlobals::GetGBXObjectList()
 	static UFunction* pFnGetGBXObjectList = NULL;
 
 	if (!pFnGetGBXObjectList)
-		pFnGetGBXObjectList = (UFunction*)UObject::GObjObjects()->Data[39020];
+		pFnGetGBXObjectList = (UFunction*)UObject::GObjects()->Data[39020];
 
 	UGearboxGlobals_execGetGBXObjectList_Parms GetGBXObjectList_Parms;
 
@@ -4504,7 +4504,7 @@ class UGBXActorList* UGearboxGlobals::GetGBXActorList()
 	static UFunction* pFnGetGBXActorList = NULL;
 
 	if (!pFnGetGBXActorList)
-		pFnGetGBXActorList = (UFunction*)UObject::GObjObjects()->Data[39018];
+		pFnGetGBXActorList = (UFunction*)UObject::GObjects()->Data[39018];
 
 	UGearboxGlobals_execGetGBXActorList_Parms GetGBXActorList_Parms;
 
@@ -4527,7 +4527,7 @@ class URuleEngineLoadBalanceManager* UGearboxGlobals::GetRuleEngineLoadBalanceMa
 	static UFunction* pFnGetRuleEngineLoadBalanceManager = NULL;
 
 	if (!pFnGetRuleEngineLoadBalanceManager)
-		pFnGetRuleEngineLoadBalanceManager = (UFunction*)UObject::GObjObjects()->Data[39016];
+		pFnGetRuleEngineLoadBalanceManager = (UFunction*)UObject::GObjects()->Data[39016];
 
 	UGearboxGlobals_execGetRuleEngineLoadBalanceManager_Parms GetRuleEngineLoadBalanceManager_Parms;
 
@@ -4550,7 +4550,7 @@ class UGearboxAIFactory* UGearboxGlobals::GetGearboxAIFactory()
 	static UFunction* pFnGetGearboxAIFactory = NULL;
 
 	if (!pFnGetGearboxAIFactory)
-		pFnGetGearboxAIFactory = (UFunction*)UObject::GObjObjects()->Data[39014];
+		pFnGetGearboxAIFactory = (UFunction*)UObject::GObjects()->Data[39014];
 
 	UGearboxGlobals_execGetGearboxAIFactory_Parms GetGearboxAIFactory_Parms;
 
@@ -4573,7 +4573,7 @@ class UExposureUtilityBase* UGearboxGlobals::GetExposureUtility()
 	static UFunction* pFnGetExposureUtility = NULL;
 
 	if (!pFnGetExposureUtility)
-		pFnGetExposureUtility = (UFunction*)UObject::GObjObjects()->Data[39012];
+		pFnGetExposureUtility = (UFunction*)UObject::GObjects()->Data[39012];
 
 	UGearboxGlobals_execGetExposureUtility_Parms GetExposureUtility_Parms;
 
@@ -4596,7 +4596,7 @@ class UGearboxGlobals* UGearboxGlobals::GetGearboxGlobals()
 	static UFunction* pFnGetGearboxGlobals = NULL;
 
 	if (!pFnGetGearboxGlobals)
-		pFnGetGearboxGlobals = (UFunction*)UObject::GObjObjects()->Data[39010];
+		pFnGetGearboxGlobals = (UFunction*)UObject::GObjects()->Data[39010];
 
 	UGearboxGlobals_execGetGearboxGlobals_Parms GetGearboxGlobals_Parms;
 
@@ -4619,7 +4619,7 @@ struct FVector UGearboxLocationRequest::GetLastDirection()
 	static UFunction* pFnGetLastDirection = NULL;
 
 	if (!pFnGetLastDirection)
-		pFnGetLastDirection = (UFunction*)UObject::GObjObjects()->Data[42549];
+		pFnGetLastDirection = (UFunction*)UObject::GObjects()->Data[42549];
 
 	UGearboxLocationRequest_execGetLastDirection_Parms GetLastDirection_Parms;
 
@@ -4642,7 +4642,7 @@ struct FVector UGearboxLocationRequest::GetLastOrigin()
 	static UFunction* pFnGetLastOrigin = NULL;
 
 	if (!pFnGetLastOrigin)
-		pFnGetLastOrigin = (UFunction*)UObject::GObjObjects()->Data[42547];
+		pFnGetLastOrigin = (UFunction*)UObject::GObjects()->Data[42547];
 
 	UGearboxLocationRequest_execGetLastOrigin_Parms GetLastOrigin_Parms;
 
@@ -4667,7 +4667,7 @@ bool UGearboxLocationRequest::GetDirection(class AActor* ContextActor, struct FV
 	static UFunction* pFnGetDirection = NULL;
 
 	if (!pFnGetDirection)
-		pFnGetDirection = (UFunction*)UObject::GObjObjects()->Data[42543];
+		pFnGetDirection = (UFunction*)UObject::GObjects()->Data[42543];
 
 	UGearboxLocationRequest_execGetDirection_Parms GetDirection_Parms;
 	GetDirection_Parms.ContextActor = ContextActor;
@@ -4696,7 +4696,7 @@ bool UGearboxLocationRequest::GetOrigin(class AActor* ContextActor, struct FVect
 	static UFunction* pFnGetOrigin = NULL;
 
 	if (!pFnGetOrigin)
-		pFnGetOrigin = (UFunction*)UObject::GObjObjects()->Data[42539];
+		pFnGetOrigin = (UFunction*)UObject::GObjects()->Data[42539];
 
 	UGearboxLocationRequest_execGetOrigin_Parms GetOrigin_Parms;
 	GetOrigin_Parms.ContextActor = ContextActor;
@@ -4725,7 +4725,7 @@ bool UGearboxLocationRequest::Get(class AActor* ContextActor, struct FVector* Ou
 	static UFunction* pFnGet = NULL;
 
 	if (!pFnGet)
-		pFnGet = (UFunction*)UObject::GObjObjects()->Data[39169];
+		pFnGet = (UFunction*)UObject::GObjects()->Data[39169];
 
 	UGearboxLocationRequest_execGet_Parms Get_Parms;
 	Get_Parms.ContextActor = ContextActor;
@@ -4754,7 +4754,7 @@ bool UPawnMoveLocationRequest::Get(class AActor* ContextActor, struct FVector* O
 	static UFunction* pFnGet = NULL;
 
 	if (!pFnGet)
-		pFnGet = (UFunction*)UObject::GObjObjects()->Data[39168];
+		pFnGet = (UFunction*)UObject::GObjects()->Data[39168];
 
 	UPawnMoveLocationRequest_execGet_Parms Get_Parms;
 	Get_Parms.ContextActor = ContextActor;
@@ -4781,7 +4781,7 @@ struct FVector AGearboxPawn::GetAimDirection()
 	static UFunction* pFnGetAimDirection = NULL;
 
 	if (!pFnGetAimDirection)
-		pFnGetAimDirection = (UFunction*)UObject::GObjObjects()->Data[43020];
+		pFnGetAimDirection = (UFunction*)UObject::GObjects()->Data[43020];
 
 	AGearboxPawn_execGetAimDirection_Parms GetAimDirection_Parms;
 
@@ -4804,7 +4804,7 @@ void AGearboxPawn::SetDialogNameTag(class UGearboxDialogNameTag* NewName)
 	static UFunction* pFnSetDialogNameTag = NULL;
 
 	if (!pFnSetDialogNameTag)
-		pFnSetDialogNameTag = (UFunction*)UObject::GObjObjects()->Data[43018];
+		pFnSetDialogNameTag = (UFunction*)UObject::GObjects()->Data[43018];
 
 	AGearboxPawn_execSetDialogNameTag_Parms SetDialogNameTag_Parms;
 	SetDialogNameTag_Parms.NewName = NewName;
@@ -4828,7 +4828,7 @@ void AGearboxPawn::eventServerDialog_TriggerEvent(class UGearboxDialogEventTag* 
 	static UFunction* pFnServerDialog_TriggerEvent = NULL;
 
 	if (!pFnServerDialog_TriggerEvent)
-		pFnServerDialog_TriggerEvent = (UFunction*)UObject::GObjObjects()->Data[43014];
+		pFnServerDialog_TriggerEvent = (UFunction*)UObject::GObjects()->Data[43014];
 
 	AGearboxPawn_eventServerDialog_TriggerEvent_Parms ServerDialog_TriggerEvent_Parms;
 	ServerDialog_TriggerEvent_Parms.EventTag = EventTag;
@@ -4852,7 +4852,7 @@ struct FGearboxDialogReplicatedData AGearboxPawn::GetReplicatedDialogData()
 	static UFunction* pFnGetReplicatedDialogData = NULL;
 
 	if (!pFnGetReplicatedDialogData)
-		pFnGetReplicatedDialogData = (UFunction*)UObject::GObjObjects()->Data[43012];
+		pFnGetReplicatedDialogData = (UFunction*)UObject::GObjects()->Data[43012];
 
 	AGearboxPawn_execGetReplicatedDialogData_Parms GetReplicatedDialogData_Parms;
 
@@ -4876,7 +4876,7 @@ void AGearboxPawn::SetReplicatedDialogData(class UGearboxDialogAct_Talk* TalkAct
 	static UFunction* pFnSetReplicatedDialogData = NULL;
 
 	if (!pFnSetReplicatedDialogData)
-		pFnSetReplicatedDialogData = (UFunction*)UObject::GObjObjects()->Data[43009];
+		pFnSetReplicatedDialogData = (UFunction*)UObject::GObjects()->Data[43009];
 
 	AGearboxPawn_execSetReplicatedDialogData_Parms SetReplicatedDialogData_Parms;
 	SetReplicatedDialogData_Parms.TalkAct = TalkAct;
@@ -4901,7 +4901,7 @@ void AGearboxPawn::GetDialogGroups(TArray< class UGearboxDialogGroup* >* Groups)
 	static UFunction* pFnGetDialogGroups = NULL;
 
 	if (!pFnGetDialogGroups)
-		pFnGetDialogGroups = (UFunction*)UObject::GObjObjects()->Data[43006];
+		pFnGetDialogGroups = (UFunction*)UObject::GObjects()->Data[43006];
 
 	AGearboxPawn_execGetDialogGroups_Parms GetDialogGroups_Parms;
 
@@ -4925,7 +4925,7 @@ class UGearboxDialogComponent* AGearboxPawn::GetDialogComponent()
 	static UFunction* pFnGetDialogComponent = NULL;
 
 	if (!pFnGetDialogComponent)
-		pFnGetDialogComponent = (UFunction*)UObject::GObjObjects()->Data[43004];
+		pFnGetDialogComponent = (UFunction*)UObject::GObjects()->Data[43004];
 
 	AGearboxPawn_execGetDialogComponent_Parms GetDialogComponent_Parms;
 
@@ -4948,7 +4948,7 @@ class UGearboxDialogNameTag* AGearboxPawn::GetDialogNameTag()
 	static UFunction* pFnGetDialogNameTag = NULL;
 
 	if (!pFnGetDialogNameTag)
-		pFnGetDialogNameTag = (UFunction*)UObject::GObjObjects()->Data[43002];
+		pFnGetDialogNameTag = (UFunction*)UObject::GObjects()->Data[43002];
 
 	AGearboxPawn_execGetDialogNameTag_Parms GetDialogNameTag_Parms;
 
@@ -4971,7 +4971,7 @@ bool AGearboxPawn::CanTalk()
 	static UFunction* pFnCanTalk = NULL;
 
 	if (!pFnCanTalk)
-		pFnCanTalk = (UFunction*)UObject::GObjObjects()->Data[43000];
+		pFnCanTalk = (UFunction*)UObject::GObjects()->Data[43000];
 
 	AGearboxPawn_execCanTalk_Parms CanTalk_Parms;
 
@@ -4993,7 +4993,7 @@ void AGearboxPawn::OnCoverStateChanged()
 	static UFunction* pFnOnCoverStateChanged = NULL;
 
 	if (!pFnOnCoverStateChanged)
-		pFnOnCoverStateChanged = (UFunction*)UObject::GObjObjects()->Data[42999];
+		pFnOnCoverStateChanged = (UFunction*)UObject::GObjects()->Data[42999];
 
 	AGearboxPawn_execOnCoverStateChanged_Parms OnCoverStateChanged_Parms;
 
@@ -5010,7 +5010,7 @@ void AGearboxPawn::ServerSetCoverState(struct FGearboxCoverState NewCoverState)
 	static UFunction* pFnServerSetCoverState = NULL;
 
 	if (!pFnServerSetCoverState)
-		pFnServerSetCoverState = (UFunction*)UObject::GObjObjects()->Data[42997];
+		pFnServerSetCoverState = (UFunction*)UObject::GObjects()->Data[42997];
 
 	AGearboxPawn_execServerSetCoverState_Parms ServerSetCoverState_Parms;
 	memcpy(&ServerSetCoverState_Parms.NewCoverState, &NewCoverState, 0xC);
@@ -5028,7 +5028,7 @@ void AGearboxPawn::eventSetCoverState(struct FGearboxCoverState NewCoverState)
 	static UFunction* pFnSetCoverState = NULL;
 
 	if (!pFnSetCoverState)
-		pFnSetCoverState = (UFunction*)UObject::GObjObjects()->Data[42995];
+		pFnSetCoverState = (UFunction*)UObject::GObjects()->Data[42995];
 
 	AGearboxPawn_eventSetCoverState_Parms SetCoverState_Parms;
 	memcpy(&SetCoverState_Parms.NewCoverState, &NewCoverState, 0xC);
@@ -5049,7 +5049,7 @@ float AGearboxPawn::GetMountAnimDistanceForSpeed(unsigned char TheSpeed, unsigne
 	static UFunction* pFnGetMountAnimDistanceForSpeed = NULL;
 
 	if (!pFnGetMountAnimDistanceForSpeed)
-		pFnGetMountAnimDistanceForSpeed = (UFunction*)UObject::GObjObjects()->Data[42990];
+		pFnGetMountAnimDistanceForSpeed = (UFunction*)UObject::GObjects()->Data[42990];
 
 	AGearboxPawn_execGetMountAnimDistanceForSpeed_Parms GetMountAnimDistanceForSpeed_Parms;
 	GetMountAnimDistanceForSpeed_Parms.TheSpeed = TheSpeed;
@@ -5075,7 +5075,7 @@ struct FVector AGearboxPawn::eventGetSpotOthersShouldLookAt()
 	static UFunction* pFnGetSpotOthersShouldLookAt = NULL;
 
 	if (!pFnGetSpotOthersShouldLookAt)
-		pFnGetSpotOthersShouldLookAt = (UFunction*)UObject::GObjObjects()->Data[42986];
+		pFnGetSpotOthersShouldLookAt = (UFunction*)UObject::GObjects()->Data[42986];
 
 	AGearboxPawn_eventGetSpotOthersShouldLookAt_Parms GetSpotOthersShouldLookAt_Parms;
 
@@ -5094,7 +5094,7 @@ void AGearboxPawn::SetReplicatedSMData(struct FSpecialMoveData* NewSMData)
 	static UFunction* pFnSetReplicatedSMData = NULL;
 
 	if (!pFnSetReplicatedSMData)
-		pFnSetReplicatedSMData = (UFunction*)UObject::GObjObjects()->Data[42984];
+		pFnSetReplicatedSMData = (UFunction*)UObject::GObjects()->Data[42984];
 
 	AGearboxPawn_execSetReplicatedSMData_Parms SetReplicatedSMData_Parms;
 
@@ -5117,7 +5117,7 @@ void AGearboxPawn::eventServerSpecialMove_StopAny()
 	static UFunction* pFnServerSpecialMove_StopAny = NULL;
 
 	if (!pFnServerSpecialMove_StopAny)
-		pFnServerSpecialMove_StopAny = (UFunction*)UObject::GObjObjects()->Data[42983];
+		pFnServerSpecialMove_StopAny = (UFunction*)UObject::GObjects()->Data[42983];
 
 	AGearboxPawn_eventServerSpecialMove_StopAny_Parms ServerSpecialMove_StopAny_Parms;
 
@@ -5134,7 +5134,7 @@ void AGearboxPawn::eventServerSpecialMove_Stop(class USpecialMoveDefinition* Old
 	static UFunction* pFnServerSpecialMove_Stop = NULL;
 
 	if (!pFnServerSpecialMove_Stop)
-		pFnServerSpecialMove_Stop = (UFunction*)UObject::GObjObjects()->Data[42981];
+		pFnServerSpecialMove_Stop = (UFunction*)UObject::GObjects()->Data[42981];
 
 	AGearboxPawn_eventServerSpecialMove_Stop_Parms ServerSpecialMove_Stop_Parms;
 	ServerSpecialMove_Stop_Parms.OldSMD = OldSMD;
@@ -5157,7 +5157,7 @@ void AGearboxPawn::eventServerSpecialMove_Queue(class USpecialMoveDefinition* Ne
 	static UFunction* pFnServerSpecialMove_Queue = NULL;
 
 	if (!pFnServerSpecialMove_Queue)
-		pFnServerSpecialMove_Queue = (UFunction*)UObject::GObjObjects()->Data[42974];
+		pFnServerSpecialMove_Queue = (UFunction*)UObject::GObjects()->Data[42974];
 
 	AGearboxPawn_eventServerSpecialMove_Queue_Parms ServerSpecialMove_Queue_Parms;
 	ServerSpecialMove_Queue_Parms.NewSMD = NewSMD;
@@ -5185,7 +5185,7 @@ void AGearboxPawn::eventServerSpecialMove_Play(class USpecialMoveDefinition* New
 	static UFunction* pFnServerSpecialMove_Play = NULL;
 
 	if (!pFnServerSpecialMove_Play)
-		pFnServerSpecialMove_Play = (UFunction*)UObject::GObjObjects()->Data[42967];
+		pFnServerSpecialMove_Play = (UFunction*)UObject::GObjects()->Data[42967];
 
 	AGearboxPawn_eventServerSpecialMove_Play_Parms ServerSpecialMove_Play_Parms;
 	ServerSpecialMove_Play_Parms.NewSMD = NewSMD;
@@ -5208,7 +5208,7 @@ unsigned char AGearboxPawn::GetDefaultRootMotionRotationMode()
 	static UFunction* pFnGetDefaultRootMotionRotationMode = NULL;
 
 	if (!pFnGetDefaultRootMotionRotationMode)
-		pFnGetDefaultRootMotionRotationMode = (UFunction*)UObject::GObjObjects()->Data[42965];
+		pFnGetDefaultRootMotionRotationMode = (UFunction*)UObject::GObjects()->Data[42965];
 
 	AGearboxPawn_execGetDefaultRootMotionRotationMode_Parms GetDefaultRootMotionRotationMode_Parms;
 
@@ -5231,7 +5231,7 @@ unsigned char AGearboxPawn::GetDefaultRootMotionMode()
 	static UFunction* pFnGetDefaultRootMotionMode = NULL;
 
 	if (!pFnGetDefaultRootMotionMode)
-		pFnGetDefaultRootMotionMode = (UFunction*)UObject::GObjObjects()->Data[42963];
+		pFnGetDefaultRootMotionMode = (UFunction*)UObject::GObjects()->Data[42963];
 
 	AGearboxPawn_execGetDefaultRootMotionMode_Parms GetDefaultRootMotionMode_Parms;
 
@@ -5254,7 +5254,7 @@ class USkeletalMeshComponent* AGearboxPawn::GetSkelMesh()
 	static UFunction* pFnGetSkelMesh = NULL;
 
 	if (!pFnGetSkelMesh)
-		pFnGetSkelMesh = (UFunction*)UObject::GObjObjects()->Data[42961];
+		pFnGetSkelMesh = (UFunction*)UObject::GObjects()->Data[42961];
 
 	AGearboxPawn_execGetSkelMesh_Parms GetSkelMesh_Parms;
 
@@ -5277,7 +5277,7 @@ class USpecialMoveComponent* AGearboxPawn::GetSMComponent()
 	static UFunction* pFnGetSMComponent = NULL;
 
 	if (!pFnGetSMComponent)
-		pFnGetSMComponent = (UFunction*)UObject::GObjObjects()->Data[42959];
+		pFnGetSMComponent = (UFunction*)UObject::GObjects()->Data[42959];
 
 	AGearboxPawn_execGetSMComponent_Parms GetSMComponent_Parms;
 
@@ -5300,7 +5300,7 @@ class AActor* AGearboxPawn::GetActor()
 	static UFunction* pFnGetActor = NULL;
 
 	if (!pFnGetActor)
-		pFnGetActor = (UFunction*)UObject::GObjObjects()->Data[42957];
+		pFnGetActor = (UFunction*)UObject::GObjects()->Data[42957];
 
 	AGearboxPawn_execGetActor_Parms GetActor_Parms;
 
@@ -5323,7 +5323,7 @@ class UGearboxNavigationHandle* AGearboxPawn::GetNavigationHandle()
 	static UFunction* pFnGetNavigationHandle = NULL;
 
 	if (!pFnGetNavigationHandle)
-		pFnGetNavigationHandle = (UFunction*)UObject::GObjObjects()->Data[42955];
+		pFnGetNavigationHandle = (UFunction*)UObject::GObjects()->Data[42955];
 
 	AGearboxPawn_execGetNavigationHandle_Parms GetNavigationHandle_Parms;
 
@@ -5351,7 +5351,7 @@ void AGearboxPawn::PlayHit(class APawn* SomePawn, struct FVector HitLocation, cl
 	static UFunction* pFnPlayHit = NULL;
 
 	if (!pFnPlayHit)
-		pFnPlayHit = (UFunction*)UObject::GObjObjects()->Data[42948];
+		pFnPlayHit = (UFunction*)UObject::GObjects()->Data[42948];
 
 	AGearboxPawn_execPlayHit_Parms PlayHit_Parms;
 	PlayHit_Parms.SomePawn = SomePawn;
@@ -5374,7 +5374,7 @@ void AGearboxPawn::eventReplicatedEvent(struct FName VarName)
 	static UFunction* pFnReplicatedEvent = NULL;
 
 	if (!pFnReplicatedEvent)
-		pFnReplicatedEvent = (UFunction*)UObject::GObjObjects()->Data[42946];
+		pFnReplicatedEvent = (UFunction*)UObject::GObjects()->Data[42946];
 
 	AGearboxPawn_eventReplicatedEvent_Parms ReplicatedEvent_Parms;
 	memcpy(&ReplicatedEvent_Parms.VarName, &VarName, 0x8);
@@ -5396,7 +5396,7 @@ bool AGearboxPawn::Died(class AController* Killer, class UClass* DamageType, str
 	static UFunction* pFnDied = NULL;
 
 	if (!pFnDied)
-		pFnDied = (UFunction*)UObject::GObjObjects()->Data[42940];
+		pFnDied = (UFunction*)UObject::GObjects()->Data[42940];
 
 	AGearboxPawn_execDied_Parms Died_Parms;
 	Died_Parms.Killer = Killer;
@@ -5418,7 +5418,7 @@ void AGearboxPawn::SetMovementPhysics()
 	static UFunction* pFnSetMovementPhysics = NULL;
 
 	if (!pFnSetMovementPhysics)
-		pFnSetMovementPhysics = (UFunction*)UObject::GObjObjects()->Data[42939];
+		pFnSetMovementPhysics = (UFunction*)UObject::GObjects()->Data[42939];
 
 	AGearboxPawn_execSetMovementPhysics_Parms SetMovementPhysics_Parms;
 
@@ -5434,7 +5434,7 @@ void AGearboxPawn::eventPostBeginPlay()
 	static UFunction* pFnPostBeginPlay = NULL;
 
 	if (!pFnPostBeginPlay)
-		pFnPostBeginPlay = (UFunction*)UObject::GObjObjects()->Data[42937];
+		pFnPostBeginPlay = (UFunction*)UObject::GObjects()->Data[42937];
 
 	AGearboxPawn_eventPostBeginPlay_Parms PostBeginPlay_Parms;
 
@@ -5451,7 +5451,7 @@ void AGearboxPawn::NotifyShotAtBy(class AGearboxPawn* ShootingPawn)
 	static UFunction* pFnNotifyShotAtBy = NULL;
 
 	if (!pFnNotifyShotAtBy)
-		pFnNotifyShotAtBy = (UFunction*)UObject::GObjObjects()->Data[42935];
+		pFnNotifyShotAtBy = (UFunction*)UObject::GObjects()->Data[42935];
 
 	AGearboxPawn_execNotifyShotAtBy_Parms NotifyShotAtBy_Parms;
 	NotifyShotAtBy_Parms.ShootingPawn = ShootingPawn;
@@ -5473,7 +5473,7 @@ bool AGearboxPawn::HaveIBeenShotAtRecently()
 	static UFunction* pFnHaveIBeenShotAtRecently = NULL;
 
 	if (!pFnHaveIBeenShotAtRecently)
-		pFnHaveIBeenShotAtRecently = (UFunction*)UObject::GObjObjects()->Data[42933];
+		pFnHaveIBeenShotAtRecently = (UFunction*)UObject::GObjects()->Data[42933];
 
 	AGearboxPawn_execHaveIBeenShotAtRecently_Parms HaveIBeenShotAtRecently_Parms;
 
@@ -5500,7 +5500,7 @@ int AGearboxPlayerController::RequestTitleStorageFile(struct FString Filename, s
 	static UFunction* pFnRequestTitleStorageFile = NULL;
 
 	if (!pFnRequestTitleStorageFile)
-		pFnRequestTitleStorageFile = (UFunction*)UObject::GObjObjects()->Data[43390];
+		pFnRequestTitleStorageFile = (UFunction*)UObject::GObjects()->Data[43390];
 
 	AGearboxPlayerController_execRequestTitleStorageFile_Parms RequestTitleStorageFile_Parms;
 	memcpy(&RequestTitleStorageFile_Parms.Filename, &Filename, 0xC);
@@ -5522,7 +5522,7 @@ void AGearboxPlayerController::ShowSparkID()
 	static UFunction* pFnShowSparkID = NULL;
 
 	if (!pFnShowSparkID)
-		pFnShowSparkID = (UFunction*)UObject::GObjObjects()->Data[43388];
+		pFnShowSparkID = (UFunction*)UObject::GObjects()->Data[43388];
 
 	AGearboxPlayerController_execShowSparkID_Parms ShowSparkID_Parms;
 
@@ -5541,7 +5541,7 @@ bool AGearboxPlayerController::ShouldCheckRemoteControlCheckbox(unsigned char Ch
 	static UFunction* pFnShouldCheckRemoteControlCheckbox = NULL;
 
 	if (!pFnShouldCheckRemoteControlCheckbox)
-		pFnShouldCheckRemoteControlCheckbox = (UFunction*)UObject::GObjObjects()->Data[43384];
+		pFnShouldCheckRemoteControlCheckbox = (UFunction*)UObject::GObjects()->Data[43384];
 
 	AGearboxPlayerController_execShouldCheckRemoteControlCheckbox_Parms ShouldCheckRemoteControlCheckbox_Parms;
 	ShouldCheckRemoteControlCheckbox_Parms.CheckBoxName = CheckBoxName;
@@ -5568,7 +5568,7 @@ void AGearboxPlayerController::DisplayDebugSpark(class AHUD* HUD, float* out_YL,
 	static UFunction* pFnDisplayDebugSpark = NULL;
 
 	if (!pFnDisplayDebugSpark)
-		pFnDisplayDebugSpark = (UFunction*)UObject::GObjObjects()->Data[43380];
+		pFnDisplayDebugSpark = (UFunction*)UObject::GObjects()->Data[43380];
 
 	AGearboxPlayerController_execDisplayDebugSpark_Parms DisplayDebugSpark_Parms;
 	DisplayDebugSpark_Parms.HUD = HUD;
@@ -5595,7 +5595,7 @@ void AGearboxPlayerController::AITree()
 	static UFunction* pFnAITree = NULL;
 
 	if (!pFnAITree)
-		pFnAITree = (UFunction*)UObject::GObjObjects()->Data[43379];
+		pFnAITree = (UFunction*)UObject::GObjects()->Data[43379];
 
 	AGearboxPlayerController_execAITree_Parms AITree_Parms;
 
@@ -5611,7 +5611,7 @@ void AGearboxPlayerController::AIToggleTargetViewCones()
 	static UFunction* pFnAIToggleTargetViewCones = NULL;
 
 	if (!pFnAIToggleTargetViewCones)
-		pFnAIToggleTargetViewCones = (UFunction*)UObject::GObjObjects()->Data[43378];
+		pFnAIToggleTargetViewCones = (UFunction*)UObject::GObjects()->Data[43378];
 
 	AGearboxPlayerController_execAIToggleTargetViewCones_Parms AIToggleTargetViewCones_Parms;
 
@@ -5627,7 +5627,7 @@ void AGearboxPlayerController::AIToggleAwarenessZones()
 	static UFunction* pFnAIToggleAwarenessZones = NULL;
 
 	if (!pFnAIToggleAwarenessZones)
-		pFnAIToggleAwarenessZones = (UFunction*)UObject::GObjObjects()->Data[43377];
+		pFnAIToggleAwarenessZones = (UFunction*)UObject::GObjects()->Data[43377];
 
 	AGearboxPlayerController_execAIToggleAwarenessZones_Parms AIToggleAwarenessZones_Parms;
 
@@ -5643,7 +5643,7 @@ void AGearboxPlayerController::AIToggleCombat()
 	static UFunction* pFnAIToggleCombat = NULL;
 
 	if (!pFnAIToggleCombat)
-		pFnAIToggleCombat = (UFunction*)UObject::GObjObjects()->Data[43376];
+		pFnAIToggleCombat = (UFunction*)UObject::GObjects()->Data[43376];
 
 	AGearboxPlayerController_execAIToggleCombat_Parms AIToggleCombat_Parms;
 
@@ -5659,7 +5659,7 @@ void AGearboxPlayerController::AIToggleResources()
 	static UFunction* pFnAIToggleResources = NULL;
 
 	if (!pFnAIToggleResources)
-		pFnAIToggleResources = (UFunction*)UObject::GObjObjects()->Data[43375];
+		pFnAIToggleResources = (UFunction*)UObject::GObjects()->Data[43375];
 
 	AGearboxPlayerController_execAIToggleResources_Parms AIToggleResources_Parms;
 
@@ -5675,7 +5675,7 @@ void AGearboxPlayerController::AIToggleInactiveRules()
 	static UFunction* pFnAIToggleInactiveRules = NULL;
 
 	if (!pFnAIToggleInactiveRules)
-		pFnAIToggleInactiveRules = (UFunction*)UObject::GObjObjects()->Data[43374];
+		pFnAIToggleInactiveRules = (UFunction*)UObject::GObjects()->Data[43374];
 
 	AGearboxPlayerController_execAIToggleInactiveRules_Parms AIToggleInactiveRules_Parms;
 
@@ -5691,7 +5691,7 @@ void AGearboxPlayerController::AIToggleRules()
 	static UFunction* pFnAIToggleRules = NULL;
 
 	if (!pFnAIToggleRules)
-		pFnAIToggleRules = (UFunction*)UObject::GObjObjects()->Data[43373];
+		pFnAIToggleRules = (UFunction*)UObject::GObjects()->Data[43373];
 
 	AGearboxPlayerController_execAIToggleRules_Parms AIToggleRules_Parms;
 
@@ -5707,7 +5707,7 @@ void AGearboxPlayerController::AIToggleFlags()
 	static UFunction* pFnAIToggleFlags = NULL;
 
 	if (!pFnAIToggleFlags)
-		pFnAIToggleFlags = (UFunction*)UObject::GObjObjects()->Data[43372];
+		pFnAIToggleFlags = (UFunction*)UObject::GObjects()->Data[43372];
 
 	AGearboxPlayerController_execAIToggleFlags_Parms AIToggleFlags_Parms;
 
@@ -5723,7 +5723,7 @@ void AGearboxPlayerController::AIDebugNextSnapshot()
 	static UFunction* pFnAIDebugNextSnapshot = NULL;
 
 	if (!pFnAIDebugNextSnapshot)
-		pFnAIDebugNextSnapshot = (UFunction*)UObject::GObjObjects()->Data[43371];
+		pFnAIDebugNextSnapshot = (UFunction*)UObject::GObjects()->Data[43371];
 
 	AGearboxPlayerController_execAIDebugNextSnapshot_Parms AIDebugNextSnapshot_Parms;
 
@@ -5739,7 +5739,7 @@ void AGearboxPlayerController::AIDebugPrevSnapshot()
 	static UFunction* pFnAIDebugPrevSnapshot = NULL;
 
 	if (!pFnAIDebugPrevSnapshot)
-		pFnAIDebugPrevSnapshot = (UFunction*)UObject::GObjObjects()->Data[43370];
+		pFnAIDebugPrevSnapshot = (UFunction*)UObject::GObjects()->Data[43370];
 
 	AGearboxPlayerController_execAIDebugPrevSnapshot_Parms AIDebugPrevSnapshot_Parms;
 
@@ -5755,7 +5755,7 @@ void AGearboxPlayerController::ainext()
 	static UFunction* pFnainext = NULL;
 
 	if (!pFnainext)
-		pFnainext = (UFunction*)UObject::GObjObjects()->Data[43369];
+		pFnainext = (UFunction*)UObject::GObjects()->Data[43369];
 
 	AGearboxPlayerController_execainext_Parms ainext_Parms;
 
@@ -5771,7 +5771,7 @@ void AGearboxPlayerController::aiprev()
 	static UFunction* pFnaiprev = NULL;
 
 	if (!pFnaiprev)
-		pFnaiprev = (UFunction*)UObject::GObjObjects()->Data[43368];
+		pFnaiprev = (UFunction*)UObject::GObjects()->Data[43368];
 
 	AGearboxPlayerController_execaiprev_Parms aiprev_Parms;
 
@@ -5788,7 +5788,7 @@ void AGearboxPlayerController::AINextRule(unsigned long bSkipContainers)
 	static UFunction* pFnAINextRule = NULL;
 
 	if (!pFnAINextRule)
-		pFnAINextRule = (UFunction*)UObject::GObjObjects()->Data[43366];
+		pFnAINextRule = (UFunction*)UObject::GObjects()->Data[43366];
 
 	AGearboxPlayerController_execAINextRule_Parms AINextRule_Parms;
 	AINextRule_Parms.bSkipContainers = bSkipContainers;
@@ -5806,7 +5806,7 @@ void AGearboxPlayerController::AIPrevRule(unsigned long bSkipContainers)
 	static UFunction* pFnAIPrevRule = NULL;
 
 	if (!pFnAIPrevRule)
-		pFnAIPrevRule = (UFunction*)UObject::GObjObjects()->Data[43364];
+		pFnAIPrevRule = (UFunction*)UObject::GObjects()->Data[43364];
 
 	AGearboxPlayerController_execAIPrevRule_Parms AIPrevRule_Parms;
 	AIPrevRule_Parms.bSkipContainers = bSkipContainers;
@@ -5824,7 +5824,7 @@ void AGearboxPlayerController::AIDebugSetPawn(class AGearboxPawn* NewPawn)
 	static UFunction* pFnAIDebugSetPawn = NULL;
 
 	if (!pFnAIDebugSetPawn)
-		pFnAIDebugSetPawn = (UFunction*)UObject::GObjObjects()->Data[43362];
+		pFnAIDebugSetPawn = (UFunction*)UObject::GObjects()->Data[43362];
 
 	AGearboxPlayerController_execAIDebugSetPawn_Parms AIDebugSetPawn_Parms;
 	AIDebugSetPawn_Parms.NewPawn = NewPawn;
@@ -5842,7 +5842,7 @@ void AGearboxPlayerController::AIDebugSetPawnByName(struct FName NewPawnName)
 	static UFunction* pFnAIDebugSetPawnByName = NULL;
 
 	if (!pFnAIDebugSetPawnByName)
-		pFnAIDebugSetPawnByName = (UFunction*)UObject::GObjObjects()->Data[43360];
+		pFnAIDebugSetPawnByName = (UFunction*)UObject::GObjects()->Data[43360];
 
 	AGearboxPlayerController_execAIDebugSetPawnByName_Parms AIDebugSetPawnByName_Parms;
 	memcpy(&AIDebugSetPawnByName_Parms.NewPawnName, &NewPawnName, 0x8);
@@ -5859,7 +5859,7 @@ void AGearboxPlayerController::debugpawn()
 	static UFunction* pFndebugpawn = NULL;
 
 	if (!pFndebugpawn)
-		pFndebugpawn = (UFunction*)UObject::GObjObjects()->Data[43359];
+		pFndebugpawn = (UFunction*)UObject::GObjects()->Data[43359];
 
 	AGearboxPlayerController_execdebugpawn_Parms debugpawn_Parms;
 
@@ -5876,7 +5876,7 @@ void AGearboxPlayerController::aisetp(struct FName NewPawnName)
 	static UFunction* pFnaisetp = NULL;
 
 	if (!pFnaisetp)
-		pFnaisetp = (UFunction*)UObject::GObjObjects()->Data[43357];
+		pFnaisetp = (UFunction*)UObject::GObjects()->Data[43357];
 
 	AGearboxPlayerController_execaisetp_Parms aisetp_Parms;
 	memcpy(&aisetp_Parms.NewPawnName, &NewPawnName, 0x8);
@@ -5893,7 +5893,7 @@ void AGearboxPlayerController::NotifyGameUnPaused()
 	static UFunction* pFnNotifyGameUnPaused = NULL;
 
 	if (!pFnNotifyGameUnPaused)
-		pFnNotifyGameUnPaused = (UFunction*)UObject::GObjObjects()->Data[43356];
+		pFnNotifyGameUnPaused = (UFunction*)UObject::GObjects()->Data[43356];
 
 	AGearboxPlayerController_execNotifyGameUnPaused_Parms NotifyGameUnPaused_Parms;
 
@@ -5909,7 +5909,7 @@ void AGearboxPlayerController::NotifyGamePaused()
 	static UFunction* pFnNotifyGamePaused = NULL;
 
 	if (!pFnNotifyGamePaused)
-		pFnNotifyGamePaused = (UFunction*)UObject::GObjObjects()->Data[43355];
+		pFnNotifyGamePaused = (UFunction*)UObject::GObjects()->Data[43355];
 
 	AGearboxPlayerController_execNotifyGamePaused_Parms NotifyGamePaused_Parms;
 
@@ -5925,7 +5925,7 @@ void AGearboxPlayerController::SetSettingsFromProfile()
 	static UFunction* pFnSetSettingsFromProfile = NULL;
 
 	if (!pFnSetSettingsFromProfile)
-		pFnSetSettingsFromProfile = (UFunction*)UObject::GObjObjects()->Data[43354];
+		pFnSetSettingsFromProfile = (UFunction*)UObject::GObjects()->Data[43354];
 
 	AGearboxPlayerController_execSetSettingsFromProfile_Parms SetSettingsFromProfile_Parms;
 
@@ -5942,7 +5942,7 @@ int AGearboxPlayerController::GetStorageDeviceID()
 	static UFunction* pFnGetStorageDeviceID = NULL;
 
 	if (!pFnGetStorageDeviceID)
-		pFnGetStorageDeviceID = (UFunction*)UObject::GObjObjects()->Data[43352];
+		pFnGetStorageDeviceID = (UFunction*)UObject::GObjects()->Data[43352];
 
 	AGearboxPlayerController_execGetStorageDeviceID_Parms GetStorageDeviceID_Parms;
 
@@ -5965,7 +5965,7 @@ void AGearboxPlayerController::SetStorageDeviceID(int DeviceID)
 	static UFunction* pFnSetStorageDeviceID = NULL;
 
 	if (!pFnSetStorageDeviceID)
-		pFnSetStorageDeviceID = (UFunction*)UObject::GObjObjects()->Data[43350];
+		pFnSetStorageDeviceID = (UFunction*)UObject::GObjects()->Data[43350];
 
 	AGearboxPlayerController_execSetStorageDeviceID_Parms SetStorageDeviceID_Parms;
 	SetStorageDeviceID_Parms.DeviceID = DeviceID;
@@ -5987,7 +5987,7 @@ void AGearboxPlayerController::NotifyDeviceSelectComplete(unsigned long bWasSucc
 	static UFunction* pFnNotifyDeviceSelectComplete = NULL;
 
 	if (!pFnNotifyDeviceSelectComplete)
-		pFnNotifyDeviceSelectComplete = (UFunction*)UObject::GObjObjects()->Data[43346];
+		pFnNotifyDeviceSelectComplete = (UFunction*)UObject::GObjects()->Data[43346];
 
 	AGearboxPlayerController_execNotifyDeviceSelectComplete_Parms NotifyDeviceSelectComplete_Parms;
 	NotifyDeviceSelectComplete_Parms.bWasSuccessful = bWasSuccessful;
@@ -6004,7 +6004,7 @@ void AGearboxPlayerController::eventDisplayStorageRemovedMenu()
 	static UFunction* pFnDisplayStorageRemovedMenu = NULL;
 
 	if (!pFnDisplayStorageRemovedMenu)
-		pFnDisplayStorageRemovedMenu = (UFunction*)UObject::GObjObjects()->Data[43345];
+		pFnDisplayStorageRemovedMenu = (UFunction*)UObject::GObjects()->Data[43345];
 
 	AGearboxPlayerController_eventDisplayStorageRemovedMenu_Parms DisplayStorageRemovedMenu_Parms;
 
@@ -6020,7 +6020,7 @@ void AGearboxPlayerController::DisplayProfileRemovedMenu()
 	static UFunction* pFnDisplayProfileRemovedMenu = NULL;
 
 	if (!pFnDisplayProfileRemovedMenu)
-		pFnDisplayProfileRemovedMenu = (UFunction*)UObject::GObjObjects()->Data[43344];
+		pFnDisplayProfileRemovedMenu = (UFunction*)UObject::GObjects()->Data[43344];
 
 	AGearboxPlayerController_execDisplayProfileRemovedMenu_Parms DisplayProfileRemovedMenu_Parms;
 
@@ -6038,7 +6038,7 @@ void AGearboxPlayerController::NotifyProfileWriteFromStorageChangeComplete(unsig
 	static UFunction* pFnNotifyProfileWriteFromStorageChangeComplete = NULL;
 
 	if (!pFnNotifyProfileWriteFromStorageChangeComplete)
-		pFnNotifyProfileWriteFromStorageChangeComplete = (UFunction*)UObject::GObjObjects()->Data[43341];
+		pFnNotifyProfileWriteFromStorageChangeComplete = (UFunction*)UObject::GObjects()->Data[43341];
 
 	AGearboxPlayerController_execNotifyProfileWriteFromStorageChangeComplete_Parms NotifyProfileWriteFromStorageChangeComplete_Parms;
 	NotifyProfileWriteFromStorageChangeComplete_Parms.LocalUser = LocalUser;
@@ -6057,7 +6057,7 @@ bool AGearboxPlayerController::IsCurrentStorageDeviceValid()
 	static UFunction* pFnIsCurrentStorageDeviceValid = NULL;
 
 	if (!pFnIsCurrentStorageDeviceValid)
-		pFnIsCurrentStorageDeviceValid = (UFunction*)UObject::GObjObjects()->Data[43339];
+		pFnIsCurrentStorageDeviceValid = (UFunction*)UObject::GObjects()->Data[43339];
 
 	AGearboxPlayerController_execIsCurrentStorageDeviceValid_Parms IsCurrentStorageDeviceValid_Parms;
 
@@ -6075,7 +6075,7 @@ void AGearboxPlayerController::NotifyStorageDeviceChange()
 	static UFunction* pFnNotifyStorageDeviceChange = NULL;
 
 	if (!pFnNotifyStorageDeviceChange)
-		pFnNotifyStorageDeviceChange = (UFunction*)UObject::GObjObjects()->Data[43338];
+		pFnNotifyStorageDeviceChange = (UFunction*)UObject::GObjects()->Data[43338];
 
 	AGearboxPlayerController_execNotifyStorageDeviceChange_Parms NotifyStorageDeviceChange_Parms;
 
@@ -6091,7 +6091,7 @@ void AGearboxPlayerController::eventDestroyOnlineGame()
 	static UFunction* pFnDestroyOnlineGame = NULL;
 
 	if (!pFnDestroyOnlineGame)
-		pFnDestroyOnlineGame = (UFunction*)UObject::GObjObjects()->Data[43336];
+		pFnDestroyOnlineGame = (UFunction*)UObject::GObjects()->Data[43336];
 
 	AGearboxPlayerController_eventDestroyOnlineGame_Parms DestroyOnlineGame_Parms;
 
@@ -6109,7 +6109,7 @@ void AGearboxPlayerController::ReturnToTitleScreen(unsigned long bSkipSave, unsi
 	static UFunction* pFnReturnToTitleScreen = NULL;
 
 	if (!pFnReturnToTitleScreen)
-		pFnReturnToTitleScreen = (UFunction*)UObject::GObjObjects()->Data[43333];
+		pFnReturnToTitleScreen = (UFunction*)UObject::GObjects()->Data[43333];
 
 	AGearboxPlayerController_execReturnToTitleScreen_Parms ReturnToTitleScreen_Parms;
 	ReturnToTitleScreen_Parms.bSkipSave = bSkipSave;
@@ -6132,7 +6132,7 @@ struct FString AGearboxPlayerController::GetConnectionFailureNoticeMsg()
 	static UFunction* pFnGetConnectionFailureNoticeMsg = NULL;
 
 	if (!pFnGetConnectionFailureNoticeMsg)
-		pFnGetConnectionFailureNoticeMsg = (UFunction*)UObject::GObjObjects()->Data[43331];
+		pFnGetConnectionFailureNoticeMsg = (UFunction*)UObject::GObjects()->Data[43331];
 
 	AGearboxPlayerController_execGetConnectionFailureNoticeMsg_Parms GetConnectionFailureNoticeMsg_Parms;
 
@@ -6155,7 +6155,7 @@ struct FString AGearboxPlayerController::GetMainMenuMapName()
 	static UFunction* pFnGetMainMenuMapName = NULL;
 
 	if (!pFnGetMainMenuMapName)
-		pFnGetMainMenuMapName = (UFunction*)UObject::GObjObjects()->Data[43329];
+		pFnGetMainMenuMapName = (UFunction*)UObject::GObjects()->Data[43329];
 
 	AGearboxPlayerController_execGetMainMenuMapName_Parms GetMainMenuMapName_Parms;
 
@@ -6178,7 +6178,7 @@ void AGearboxPlayerController::NotifyLinkStatusChange(unsigned long bIsConnected
 	static UFunction* pFnNotifyLinkStatusChange = NULL;
 
 	if (!pFnNotifyLinkStatusChange)
-		pFnNotifyLinkStatusChange = (UFunction*)UObject::GObjObjects()->Data[43326];
+		pFnNotifyLinkStatusChange = (UFunction*)UObject::GObjects()->Data[43326];
 
 	AGearboxPlayerController_execNotifyLinkStatusChange_Parms NotifyLinkStatusChange_Parms;
 	NotifyLinkStatusChange_Parms.bIsConnected = bIsConnected;
@@ -6197,7 +6197,7 @@ void AGearboxPlayerController::NotifyLoginStatusChange(unsigned char NewStatus, 
 	static UFunction* pFnNotifyLoginStatusChange = NULL;
 
 	if (!pFnNotifyLoginStatusChange)
-		pFnNotifyLoginStatusChange = (UFunction*)UObject::GObjObjects()->Data[43322];
+		pFnNotifyLoginStatusChange = (UFunction*)UObject::GObjects()->Data[43322];
 
 	AGearboxPlayerController_execNotifyLoginStatusChange_Parms NotifyLoginStatusChange_Parms;
 	NotifyLoginStatusChange_Parms.NewStatus = NewStatus;
@@ -6216,7 +6216,7 @@ void AGearboxPlayerController::NotifyLoginChange(unsigned char LocalUserNum)
 	static UFunction* pFnNotifyLoginChange = NULL;
 
 	if (!pFnNotifyLoginChange)
-		pFnNotifyLoginChange = (UFunction*)UObject::GObjObjects()->Data[43318];
+		pFnNotifyLoginChange = (UFunction*)UObject::GObjects()->Data[43318];
 
 	AGearboxPlayerController_execNotifyLoginChange_Parms NotifyLoginChange_Parms;
 	NotifyLoginChange_Parms.LocalUserNum = LocalUserNum;
@@ -6235,7 +6235,7 @@ void AGearboxPlayerController::OnReadProfileSettingsComplete(unsigned char Local
 	static UFunction* pFnOnReadProfileSettingsComplete = NULL;
 
 	if (!pFnOnReadProfileSettingsComplete)
-		pFnOnReadProfileSettingsComplete = (UFunction*)UObject::GObjObjects()->Data[43315];
+		pFnOnReadProfileSettingsComplete = (UFunction*)UObject::GObjects()->Data[43315];
 
 	AGearboxPlayerController_execOnReadProfileSettingsComplete_Parms OnReadProfileSettingsComplete_Parms;
 	OnReadProfileSettingsComplete_Parms.LocalUserNum = LocalUserNum;
@@ -6253,7 +6253,7 @@ void AGearboxPlayerController::OnReceivedNewProfile()
 	static UFunction* pFnOnReceivedNewProfile = NULL;
 
 	if (!pFnOnReceivedNewProfile)
-		pFnOnReceivedNewProfile = (UFunction*)UObject::GObjObjects()->Data[43314];
+		pFnOnReceivedNewProfile = (UFunction*)UObject::GObjects()->Data[43314];
 
 	AGearboxPlayerController_execOnReceivedNewProfile_Parms OnReceivedNewProfile_Parms;
 
@@ -6273,7 +6273,7 @@ void AGearboxPlayerController::ClearOnlineDelegates()
 	static UFunction* pFnClearOnlineDelegates = NULL;
 
 	if (!pFnClearOnlineDelegates)
-		pFnClearOnlineDelegates = (UFunction*)UObject::GObjObjects()->Data[43313];
+		pFnClearOnlineDelegates = (UFunction*)UObject::GObjects()->Data[43313];
 
 	AGearboxPlayerController_execClearOnlineDelegates_Parms ClearOnlineDelegates_Parms;
 
@@ -6289,7 +6289,7 @@ void AGearboxPlayerController::RegisterOnlineDelegates()
 	static UFunction* pFnRegisterOnlineDelegates = NULL;
 
 	if (!pFnRegisterOnlineDelegates)
-		pFnRegisterOnlineDelegates = (UFunction*)UObject::GObjObjects()->Data[43312];
+		pFnRegisterOnlineDelegates = (UFunction*)UObject::GObjects()->Data[43312];
 
 	AGearboxPlayerController_execRegisterOnlineDelegates_Parms RegisterOnlineDelegates_Parms;
 
@@ -6307,7 +6307,7 @@ void AGearboxPlayerController::OnProfileWriteComplete(unsigned char LocalUserNum
 	static UFunction* pFnOnProfileWriteComplete = NULL;
 
 	if (!pFnOnProfileWriteComplete)
-		pFnOnProfileWriteComplete = (UFunction*)UObject::GObjObjects()->Data[43309];
+		pFnOnProfileWriteComplete = (UFunction*)UObject::GObjects()->Data[43309];
 
 	AGearboxPlayerController_execOnProfileWriteComplete_Parms OnProfileWriteComplete_Parms;
 	OnProfileWriteComplete_Parms.LocalUserNum = LocalUserNum;
@@ -6325,7 +6325,7 @@ void AGearboxPlayerController::HidePS3WritingProfileDialog()
 	static UFunction* pFnHidePS3WritingProfileDialog = NULL;
 
 	if (!pFnHidePS3WritingProfileDialog)
-		pFnHidePS3WritingProfileDialog = (UFunction*)UObject::GObjObjects()->Data[43308];
+		pFnHidePS3WritingProfileDialog = (UFunction*)UObject::GObjects()->Data[43308];
 
 	AGearboxPlayerController_execHidePS3WritingProfileDialog_Parms HidePS3WritingProfileDialog_Parms;
 
@@ -6341,7 +6341,7 @@ void AGearboxPlayerController::ShowPS3WritingProfileDialog()
 	static UFunction* pFnShowPS3WritingProfileDialog = NULL;
 
 	if (!pFnShowPS3WritingProfileDialog)
-		pFnShowPS3WritingProfileDialog = (UFunction*)UObject::GObjObjects()->Data[43307];
+		pFnShowPS3WritingProfileDialog = (UFunction*)UObject::GObjects()->Data[43307];
 
 	AGearboxPlayerController_execShowPS3WritingProfileDialog_Parms ShowPS3WritingProfileDialog_Parms;
 
@@ -6359,7 +6359,7 @@ bool AGearboxPlayerController::eventWriteProfile(unsigned long bShouldShowProfil
 	static UFunction* pFnWriteProfile = NULL;
 
 	if (!pFnWriteProfile)
-		pFnWriteProfile = (UFunction*)UObject::GObjObjects()->Data[43303];
+		pFnWriteProfile = (UFunction*)UObject::GObjects()->Data[43303];
 
 	AGearboxPlayerController_eventWriteProfile_Parms WriteProfile_Parms;
 	WriteProfile_Parms.bShouldShowProfileDialog = bShouldShowProfileDialog;
@@ -6379,7 +6379,7 @@ class UGearboxProfileSettings* AGearboxPlayerController::eventGetProfileSettings
 	static UFunction* pFnGetProfileSettings = NULL;
 
 	if (!pFnGetProfileSettings)
-		pFnGetProfileSettings = (UFunction*)UObject::GObjObjects()->Data[43301];
+		pFnGetProfileSettings = (UFunction*)UObject::GObjects()->Data[43301];
 
 	AGearboxPlayerController_eventGetProfileSettings_Parms GetProfileSettings_Parms;
 
@@ -6398,7 +6398,7 @@ unsigned char AGearboxPlayerController::GetMyControllerId()
 	static UFunction* pFnGetMyControllerId = NULL;
 
 	if (!pFnGetMyControllerId)
-		pFnGetMyControllerId = (UFunction*)UObject::GObjObjects()->Data[43299];
+		pFnGetMyControllerId = (UFunction*)UObject::GObjects()->Data[43299];
 
 	AGearboxPlayerController_execGetMyControllerId_Parms GetMyControllerId_Parms;
 
@@ -6420,7 +6420,7 @@ void AGearboxPlayerController::eventReadProfile()
 	static UFunction* pFnReadProfile = NULL;
 
 	if (!pFnReadProfile)
-		pFnReadProfile = (UFunction*)UObject::GObjObjects()->Data[43297];
+		pFnReadProfile = (UFunction*)UObject::GObjects()->Data[43297];
 
 	AGearboxPlayerController_eventReadProfile_Parms ReadProfile_Parms;
 
@@ -6436,7 +6436,7 @@ void AGearboxPlayerController::UnregisterPlayerDataStores()
 	static UFunction* pFnUnregisterPlayerDataStores = NULL;
 
 	if (!pFnUnregisterPlayerDataStores)
-		pFnUnregisterPlayerDataStores = (UFunction*)UObject::GObjObjects()->Data[43296];
+		pFnUnregisterPlayerDataStores = (UFunction*)UObject::GObjects()->Data[43296];
 
 	AGearboxPlayerController_execUnregisterPlayerDataStores_Parms UnregisterPlayerDataStores_Parms;
 
@@ -6452,7 +6452,7 @@ void AGearboxPlayerController::RegisterCustomPlayerDataStores()
 	static UFunction* pFnRegisterCustomPlayerDataStores = NULL;
 
 	if (!pFnRegisterCustomPlayerDataStores)
-		pFnRegisterCustomPlayerDataStores = (UFunction*)UObject::GObjObjects()->Data[43295];
+		pFnRegisterCustomPlayerDataStores = (UFunction*)UObject::GObjects()->Data[43295];
 
 	AGearboxPlayerController_execRegisterCustomPlayerDataStores_Parms RegisterCustomPlayerDataStores_Parms;
 
@@ -6470,7 +6470,7 @@ void AGearboxPlayerController::SetDataStoreStringValue(struct FString MarkupStri
 	static UFunction* pFnSetDataStoreStringValue = NULL;
 
 	if (!pFnSetDataStoreStringValue)
-		pFnSetDataStoreStringValue = (UFunction*)UObject::GObjObjects()->Data[43292];
+		pFnSetDataStoreStringValue = (UFunction*)UObject::GObjects()->Data[43292];
 
 	AGearboxPlayerController_execSetDataStoreStringValue_Parms SetDataStoreStringValue_Parms;
 	memcpy(&SetDataStoreStringValue_Parms.MarkupString, &MarkupString, 0xC);
@@ -6494,7 +6494,7 @@ struct FString AGearboxPlayerController::GetDataStoreStringValue(struct FString 
 	static UFunction* pFnGetDataStoreStringValue = NULL;
 
 	if (!pFnGetDataStoreStringValue)
-		pFnGetDataStoreStringValue = (UFunction*)UObject::GObjObjects()->Data[43289];
+		pFnGetDataStoreStringValue = (UFunction*)UObject::GObjects()->Data[43289];
 
 	AGearboxPlayerController_execGetDataStoreStringValue_Parms GetDataStoreStringValue_Parms;
 	memcpy(&GetDataStoreStringValue_Parms.MarkupString, &MarkupString, 0xC);
@@ -6517,7 +6517,7 @@ void AGearboxPlayerController::eventClientKeepPlayingLoadingMovie()
 	static UFunction* pFnClientKeepPlayingLoadingMovie = NULL;
 
 	if (!pFnClientKeepPlayingLoadingMovie)
-		pFnClientKeepPlayingLoadingMovie = (UFunction*)UObject::GObjObjects()->Data[43288];
+		pFnClientKeepPlayingLoadingMovie = (UFunction*)UObject::GObjects()->Data[43288];
 
 	AGearboxPlayerController_eventClientKeepPlayingLoadingMovie_Parms ClientKeepPlayingLoadingMovie_Parms;
 
@@ -6533,7 +6533,7 @@ void AGearboxPlayerController::ClientResetCamera()
 	static UFunction* pFnClientResetCamera = NULL;
 
 	if (!pFnClientResetCamera)
-		pFnClientResetCamera = (UFunction*)UObject::GObjObjects()->Data[43287];
+		pFnClientResetCamera = (UFunction*)UObject::GObjects()->Data[43287];
 
 	AGearboxPlayerController_execClientResetCamera_Parms ClientResetCamera_Parms;
 
@@ -6549,7 +6549,7 @@ void AGearboxPlayerController::eventSpawnPlayerCamera()
 	static UFunction* pFnSpawnPlayerCamera = NULL;
 
 	if (!pFnSpawnPlayerCamera)
-		pFnSpawnPlayerCamera = (UFunction*)UObject::GObjObjects()->Data[43286];
+		pFnSpawnPlayerCamera = (UFunction*)UObject::GObjects()->Data[43286];
 
 	AGearboxPlayerController_eventSpawnPlayerCamera_Parms SpawnPlayerCamera_Parms;
 
@@ -6565,7 +6565,7 @@ void AGearboxPlayerController::eventInitInputSystem()
 	static UFunction* pFnInitInputSystem = NULL;
 
 	if (!pFnInitInputSystem)
-		pFnInitInputSystem = (UFunction*)UObject::GObjObjects()->Data[43285];
+		pFnInitInputSystem = (UFunction*)UObject::GObjects()->Data[43285];
 
 	AGearboxPlayerController_eventInitInputSystem_Parms InitInputSystem_Parms;
 
@@ -6581,7 +6581,7 @@ void AGearboxPlayerController::NoTargetAll()
 	static UFunction* pFnNoTargetAll = NULL;
 
 	if (!pFnNoTargetAll)
-		pFnNoTargetAll = (UFunction*)UObject::GObjObjects()->Data[43284];
+		pFnNoTargetAll = (UFunction*)UObject::GObjects()->Data[43284];
 
 	AGearboxPlayerController_execNoTargetAll_Parms NoTargetAll_Parms;
 
@@ -6597,7 +6597,7 @@ void AGearboxPlayerController::NoTarget()
 	static UFunction* pFnNoTarget = NULL;
 
 	if (!pFnNoTarget)
-		pFnNoTarget = (UFunction*)UObject::GObjObjects()->Data[43283];
+		pFnNoTarget = (UFunction*)UObject::GObjects()->Data[43283];
 
 	AGearboxPlayerController_execNoTarget_Parms NoTarget_Parms;
 
@@ -6614,7 +6614,7 @@ bool AGearboxPlayerController::GetNoTargetPlayers()
 	static UFunction* pFnGetNoTargetPlayers = NULL;
 
 	if (!pFnGetNoTargetPlayers)
-		pFnGetNoTargetPlayers = (UFunction*)UObject::GObjObjects()->Data[43279];
+		pFnGetNoTargetPlayers = (UFunction*)UObject::GObjects()->Data[43279];
 
 	AGearboxPlayerController_execGetNoTargetPlayers_Parms GetNoTargetPlayers_Parms;
 
@@ -6637,7 +6637,7 @@ void AGearboxPlayerController::SetNoTargetPlayers(unsigned long bNoTarget)
 	static UFunction* pFnSetNoTargetPlayers = NULL;
 
 	if (!pFnSetNoTargetPlayers)
-		pFnSetNoTargetPlayers = (UFunction*)UObject::GObjObjects()->Data[43281];
+		pFnSetNoTargetPlayers = (UFunction*)UObject::GObjects()->Data[43281];
 
 	AGearboxPlayerController_execSetNoTargetPlayers_Parms SetNoTargetPlayers_Parms;
 	SetNoTargetPlayers_Parms.bNoTarget = bNoTarget;
@@ -6660,7 +6660,7 @@ void AGearboxPlayerController::Possess(class APawn* aPawn, unsigned long bVehicl
 	static UFunction* pFnPossess = NULL;
 
 	if (!pFnPossess)
-		pFnPossess = (UFunction*)UObject::GObjObjects()->Data[43276];
+		pFnPossess = (UFunction*)UObject::GObjects()->Data[43276];
 
 	AGearboxPlayerController_execPossess_Parms Possess_Parms;
 	Possess_Parms.aPawn = aPawn;
@@ -6679,7 +6679,7 @@ void AGearboxPlayerController::DontTarget(unsigned long bModeFlag)
 	static UFunction* pFnDontTarget = NULL;
 
 	if (!pFnDontTarget)
-		pFnDontTarget = (UFunction*)UObject::GObjObjects()->Data[43274];
+		pFnDontTarget = (UFunction*)UObject::GObjects()->Data[43274];
 
 	AGearboxPlayerController_execDontTarget_Parms DontTarget_Parms;
 	DontTarget_Parms.bModeFlag = bModeFlag;
@@ -6697,7 +6697,7 @@ void AGearboxPlayerController::ClientConsoleCommand(struct FString Command)
 	static UFunction* pFnClientConsoleCommand = NULL;
 
 	if (!pFnClientConsoleCommand)
-		pFnClientConsoleCommand = (UFunction*)UObject::GObjObjects()->Data[43272];
+		pFnClientConsoleCommand = (UFunction*)UObject::GObjects()->Data[43272];
 
 	AGearboxPlayerController_execClientConsoleCommand_Parms ClientConsoleCommand_Parms;
 	memcpy(&ClientConsoleCommand_Parms.Command, &Command, 0xC);
@@ -6715,7 +6715,7 @@ bool AGearboxPlayerController::IsPlayerAllowingActiveMoment()
 	static UFunction* pFnIsPlayerAllowingActiveMoment = NULL;
 
 	if (!pFnIsPlayerAllowingActiveMoment)
-		pFnIsPlayerAllowingActiveMoment = (UFunction*)UObject::GObjObjects()->Data[40740];
+		pFnIsPlayerAllowingActiveMoment = (UFunction*)UObject::GObjects()->Data[40740];
 
 	AGearboxPlayerController_execIsPlayerAllowingActiveMoment_Parms IsPlayerAllowingActiveMoment_Parms;
 
@@ -6734,7 +6734,7 @@ bool AGearboxPlayerController::IsActiveMomentRunning()
 	static UFunction* pFnIsActiveMomentRunning = NULL;
 
 	if (!pFnIsActiveMomentRunning)
-		pFnIsActiveMomentRunning = (UFunction*)UObject::GObjObjects()->Data[40738];
+		pFnIsActiveMomentRunning = (UFunction*)UObject::GObjects()->Data[40738];
 
 	AGearboxPlayerController_execIsActiveMomentRunning_Parms IsActiveMomentRunning_Parms;
 
@@ -6753,7 +6753,7 @@ void AGearboxPlayerController::ViewShake(float DeltaTime)
 	static UFunction* pFnViewShake = NULL;
 
 	if (!pFnViewShake)
-		pFnViewShake = (UFunction*)UObject::GObjObjects()->Data[43270];
+		pFnViewShake = (UFunction*)UObject::GObjects()->Data[43270];
 
 	AGearboxPlayerController_execViewShake_Parms ViewShake_Parms;
 	ViewShake_Parms.DeltaTime = DeltaTime;
@@ -6775,7 +6775,7 @@ void AGearboxPlayerController::UpdateShakeRotComponent(float Time, float DeltaTi
 	static UFunction* pFnUpdateShakeRotComponent = NULL;
 
 	if (!pFnUpdateShakeRotComponent)
-		pFnUpdateShakeRotComponent = (UFunction*)UObject::GObjObjects()->Data[43264];
+		pFnUpdateShakeRotComponent = (UFunction*)UObject::GObjects()->Data[43264];
 
 	AGearboxPlayerController_execUpdateShakeRotComponent_Parms UpdateShakeRotComponent_Parms;
 	UpdateShakeRotComponent_Parms.Time = Time;
@@ -6810,7 +6810,7 @@ void AGearboxPlayerController::CheckShake(float Time, float* MaxOffset, float* O
 	static UFunction* pFnCheckShake = NULL;
 
 	if (!pFnCheckShake)
-		pFnCheckShake = (UFunction*)UObject::GObjObjects()->Data[43259];
+		pFnCheckShake = (UFunction*)UObject::GObjects()->Data[43259];
 
 	AGearboxPlayerController_execCheckShake_Parms CheckShake_Parms;
 	CheckShake_Parms.Time = Time;
@@ -6840,7 +6840,7 @@ void AGearboxPlayerController::StopViewShaking()
 	static UFunction* pFnStopViewShaking = NULL;
 
 	if (!pFnStopViewShaking)
-		pFnStopViewShaking = (UFunction*)UObject::GObjObjects()->Data[43257];
+		pFnStopViewShaking = (UFunction*)UObject::GObjects()->Data[43257];
 
 	AGearboxPlayerController_execStopViewShaking_Parms StopViewShaking_Parms;
 
@@ -6857,7 +6857,7 @@ void AGearboxPlayerController::OnCameraShake(class UGearboxSeqAct_CameraShake* S
 	static UFunction* pFnOnCameraShake = NULL;
 
 	if (!pFnOnCameraShake)
-		pFnOnCameraShake = (UFunction*)UObject::GObjObjects()->Data[43253];
+		pFnOnCameraShake = (UFunction*)UObject::GObjects()->Data[43253];
 
 	AGearboxPlayerController_execOnCameraShake_Parms OnCameraShake_Parms;
 	OnCameraShake_Parms.ShakeAction = ShakeAction;
@@ -6875,7 +6875,7 @@ void AGearboxPlayerController::ShakeView(struct FGearboxViewShakeInfo NewViewSha
 	static UFunction* pFnShakeView = NULL;
 
 	if (!pFnShakeView)
-		pFnShakeView = (UFunction*)UObject::GObjObjects()->Data[43251];
+		pFnShakeView = (UFunction*)UObject::GObjects()->Data[43251];
 
 	AGearboxPlayerController_execShakeView_Parms ShakeView_Parms;
 	memcpy(&ShakeView_Parms.NewViewShake, &NewViewShake, 0x44);
@@ -6897,7 +6897,7 @@ void AGearboxPlayerController::ClientDamageShake(int Damage)
 	static UFunction* pFnClientDamageShake = NULL;
 
 	if (!pFnClientDamageShake)
-		pFnClientDamageShake = (UFunction*)UObject::GObjObjects()->Data[43248];
+		pFnClientDamageShake = (UFunction*)UObject::GObjects()->Data[43248];
 
 	AGearboxPlayerController_execClientDamageShake_Parms ClientDamageShake_Parms;
 	ClientDamageShake_Parms.Damage = Damage;
@@ -6916,7 +6916,7 @@ void AGearboxPlayerController::ConsoleEcho(struct FString Text, unsigned long bL
 	static UFunction* pFnConsoleEcho = NULL;
 
 	if (!pFnConsoleEcho)
-		pFnConsoleEcho = (UFunction*)UObject::GObjObjects()->Data[43245];
+		pFnConsoleEcho = (UFunction*)UObject::GObjects()->Data[43245];
 
 	AGearboxPlayerController_execConsoleEcho_Parms ConsoleEcho_Parms;
 	memcpy(&ConsoleEcho_Parms.Text, &Text, 0xC);
@@ -6934,7 +6934,7 @@ void AGearboxPlayerController::initialize()
 	static UFunction* pFnInitialize = NULL;
 
 	if (!pFnInitialize)
-		pFnInitialize = (UFunction*)UObject::GObjObjects()->Data[43244];
+		pFnInitialize = (UFunction*)UObject::GObjects()->Data[43244];
 
 	AGearboxPlayerController_execInitialize_Parms Initialize_Parms;
 
@@ -6950,7 +6950,7 @@ void AGearboxPlayerController::PostBeginPlay()
 	static UFunction* pFnPostBeginPlay = NULL;
 
 	if (!pFnPostBeginPlay)
-		pFnPostBeginPlay = (UFunction*)UObject::GObjObjects()->Data[43243];
+		pFnPostBeginPlay = (UFunction*)UObject::GObjects()->Data[43243];
 
 	AGearboxPlayerController_execPostBeginPlay_Parms PostBeginPlay_Parms;
 
@@ -6967,7 +6967,7 @@ void AGearboxPlayerController::TryAndSpawnLeviathanChannel(class UNetConnection*
 	static UFunction* pFnTryAndSpawnLeviathanChannel = NULL;
 
 	if (!pFnTryAndSpawnLeviathanChannel)
-		pFnTryAndSpawnLeviathanChannel = (UFunction*)UObject::GObjObjects()->Data[42530];
+		pFnTryAndSpawnLeviathanChannel = (UFunction*)UObject::GObjects()->Data[42530];
 
 	AGearboxPlayerController_execTryAndSpawnLeviathanChannel_Parms TryAndSpawnLeviathanChannel_Parms;
 	TryAndSpawnLeviathanChannel_Parms.Connection = Connection;
@@ -6988,7 +6988,7 @@ void AGearboxPlayerController::GenerateNewSessionGuid()
 	static UFunction* pFnGenerateNewSessionGuid = NULL;
 
 	if (!pFnGenerateNewSessionGuid)
-		pFnGenerateNewSessionGuid = (UFunction*)UObject::GObjObjects()->Data[43241];
+		pFnGenerateNewSessionGuid = (UFunction*)UObject::GObjects()->Data[43241];
 
 	AGearboxPlayerController_execGenerateNewSessionGuid_Parms GenerateNewSessionGuid_Parms;
 
@@ -7009,7 +7009,7 @@ void UGearboxPlayerInput::eventPlayerInput(float DeltaTime)
 	static UFunction* pFnPlayerInput = NULL;
 
 	if (!pFnPlayerInput)
-		pFnPlayerInput = (UFunction*)UObject::GObjObjects()->Data[43408];
+		pFnPlayerInput = (UFunction*)UObject::GObjects()->Data[43408];
 
 	UGearboxPlayerInput_eventPlayerInput_Parms PlayerInput_Parms;
 	PlayerInput_Parms.DeltaTime = DeltaTime;
@@ -7028,7 +7028,7 @@ void UGearboxRenderTextureManager::SetThumbnailMesh(class UTexture* Texture, cla
 	static UFunction* pFnSetThumbnailMesh = NULL;
 
 	if (!pFnSetThumbnailMesh)
-		pFnSetThumbnailMesh = (UFunction*)UObject::GObjObjects()->Data[43495];
+		pFnSetThumbnailMesh = (UFunction*)UObject::GObjects()->Data[43495];
 
 	UGearboxRenderTextureManager_execSetThumbnailMesh_Parms SetThumbnailMesh_Parms;
 	SetThumbnailMesh_Parms.Texture = Texture;
@@ -7051,7 +7051,7 @@ void UGearboxRenderTextureManager::FreeContext(struct FName Context)
 	static UFunction* pFnFreeContext = NULL;
 
 	if (!pFnFreeContext)
-		pFnFreeContext = (UFunction*)UObject::GObjObjects()->Data[43493];
+		pFnFreeContext = (UFunction*)UObject::GObjects()->Data[43493];
 
 	UGearboxRenderTextureManager_execFreeContext_Parms FreeContext_Parms;
 	memcpy(&FreeContext_Parms.Context, &Context, 0x8);
@@ -7073,7 +7073,7 @@ void UGearboxRenderTextureManager::FreeThumbnail(class UTexture* Texture)
 	static UFunction* pFnFreeThumbnail = NULL;
 
 	if (!pFnFreeThumbnail)
-		pFnFreeThumbnail = (UFunction*)UObject::GObjObjects()->Data[43491];
+		pFnFreeThumbnail = (UFunction*)UObject::GObjects()->Data[43491];
 
 	UGearboxRenderTextureManager_execFreeThumbnail_Parms FreeThumbnail_Parms;
 	FreeThumbnail_Parms.Texture = Texture;
@@ -7101,7 +7101,7 @@ class UTexture* UGearboxRenderTextureManager::GetThumbnail(struct FName Context,
 	static UFunction* pFnGetThumbnail = NULL;
 
 	if (!pFnGetThumbnail)
-		pFnGetThumbnail = (UFunction*)UObject::GObjObjects()->Data[43483];
+		pFnGetThumbnail = (UFunction*)UObject::GObjects()->Data[43483];
 
 	UGearboxRenderTextureManager_execGetThumbnail_Parms GetThumbnail_Parms;
 	memcpy(&GetThumbnail_Parms.Context, &Context, 0x8);
@@ -7131,7 +7131,7 @@ bool UGearboxRenderTextureManager::FreeTexture2D(class UTexture2D* Texture)
 	static UFunction* pFnFreeTexture2D = NULL;
 
 	if (!pFnFreeTexture2D)
-		pFnFreeTexture2D = (UFunction*)UObject::GObjObjects()->Data[43480];
+		pFnFreeTexture2D = (UFunction*)UObject::GObjects()->Data[43480];
 
 	UGearboxRenderTextureManager_execFreeTexture2D_Parms FreeTexture2D_Parms;
 	FreeTexture2D_Parms.Texture = Texture;
@@ -7155,7 +7155,7 @@ class UTexture2D* UGearboxRenderTextureManager::GetTexture2D()
 	static UFunction* pFnGetTexture2D = NULL;
 
 	if (!pFnGetTexture2D)
-		pFnGetTexture2D = (UFunction*)UObject::GObjObjects()->Data[43478];
+		pFnGetTexture2D = (UFunction*)UObject::GObjects()->Data[43478];
 
 	UGearboxRenderTextureManager_execGetTexture2D_Parms GetTexture2D_Parms;
 
@@ -7179,7 +7179,7 @@ bool UGearboxRenderTextureManager::FreeRenderTexture(class UTextureRenderTarget2
 	static UFunction* pFnFreeRenderTexture = NULL;
 
 	if (!pFnFreeRenderTexture)
-		pFnFreeRenderTexture = (UFunction*)UObject::GObjObjects()->Data[43475];
+		pFnFreeRenderTexture = (UFunction*)UObject::GObjects()->Data[43475];
 
 	UGearboxRenderTextureManager_execFreeRenderTexture_Parms FreeRenderTexture_Parms;
 	FreeRenderTexture_Parms.Texture = Texture;
@@ -7206,7 +7206,7 @@ class UTextureRenderTarget2D* UGearboxRenderTextureManager::GetRenderTexture(int
 	static UFunction* pFnGetRenderTexture = NULL;
 
 	if (!pFnGetRenderTexture)
-		pFnGetRenderTexture = (UFunction*)UObject::GObjObjects()->Data[43470];
+		pFnGetRenderTexture = (UFunction*)UObject::GObjects()->Data[43470];
 
 	UGearboxRenderTextureManager_execGetRenderTexture_Parms GetRenderTexture_Parms;
 	GetRenderTexture_Parms.InSizeX = InSizeX;
@@ -7232,7 +7232,7 @@ void UGearboxSkeletalMeshComponent::SetFOV(float NewFOV)
 	static UFunction* pFnSetFOV = NULL;
 
 	if (!pFnSetFOV)
-		pFnSetFOV = (UFunction*)UObject::GObjObjects()->Data[43590];
+		pFnSetFOV = (UFunction*)UObject::GObjects()->Data[43590];
 
 	UGearboxSkeletalMeshComponent_execSetFOV_Parms SetFOV_Parms;
 	SetFOV_Parms.NewFOV = NewFOV;
@@ -7257,7 +7257,7 @@ void UGestaltSkeletalMeshDefinition::InitGestaltAccessoryMeshDataFromParts(class
 	static UFunction* pFnInitGestaltAccessoryMeshDataFromParts = NULL;
 
 	if (!pFnInitGestaltAccessoryMeshDataFromParts)
-		pFnInitGestaltAccessoryMeshDataFromParts = (UFunction*)UObject::GObjObjects()->Data[43630];
+		pFnInitGestaltAccessoryMeshDataFromParts = (UFunction*)UObject::GObjects()->Data[43630];
 
 	UGestaltSkeletalMeshDefinition_execInitGestaltAccessoryMeshDataFromParts_Parms InitGestaltAccessoryMeshDataFromParts_Parms;
 	InitGestaltAccessoryMeshDataFromParts_Parms.MeshToBorrowBonesFrom = MeshToBorrowBonesFrom;
@@ -7285,7 +7285,7 @@ void UGestaltSkeletalMeshDefinition::InitGestaltMeshDataFromParts(class USkeleta
 	static UFunction* pFnInitGestaltMeshDataFromParts = NULL;
 
 	if (!pFnInitGestaltMeshDataFromParts)
-		pFnInitGestaltMeshDataFromParts = (UFunction*)UObject::GObjObjects()->Data[43626];
+		pFnInitGestaltMeshDataFromParts = (UFunction*)UObject::GObjects()->Data[43626];
 
 	UGestaltSkeletalMeshDefinition_execInitGestaltMeshDataFromParts_Parms InitGestaltMeshDataFromParts_Parms;
 	InitGestaltMeshDataFromParts_Parms.TargetComponent = TargetComponent;
@@ -7313,7 +7313,7 @@ void UGFxActorMoviePool::DisplayDebug(class AHUD* HUD, float X, float* out_YL, f
 	static UFunction* pFnDisplayDebug = NULL;
 
 	if (!pFnDisplayDebug)
-		pFnDisplayDebug = (UFunction*)UObject::GObjObjects()->Data[42462];
+		pFnDisplayDebug = (UFunction*)UObject::GObjects()->Data[42462];
 
 	UGFxActorMoviePool_execDisplayDebug_Parms DisplayDebug_Parms;
 	DisplayDebug_Parms.HUD = HUD;
@@ -7339,7 +7339,7 @@ struct FString UGFxActorMoviePool::GetPoolName(int Index)
 	static UFunction* pFnGetPoolName = NULL;
 
 	if (!pFnGetPoolName)
-		pFnGetPoolName = (UFunction*)UObject::GObjObjects()->Data[42458];
+		pFnGetPoolName = (UFunction*)UObject::GObjects()->Data[42458];
 
 	UGFxActorMoviePool_execGetPoolName_Parms GetPoolName_Parms;
 	GetPoolName_Parms.Index = Index;
@@ -7360,7 +7360,7 @@ struct FString UGFxActorMoviePool::PoolStyleString(unsigned char Pooling)
 	static UFunction* pFnPoolStyleString = NULL;
 
 	if (!pFnPoolStyleString)
-		pFnPoolStyleString = (UFunction*)UObject::GObjObjects()->Data[42455];
+		pFnPoolStyleString = (UFunction*)UObject::GObjects()->Data[42455];
 
 	UGFxActorMoviePool_execPoolStyleString_Parms PoolStyleString_Parms;
 	PoolStyleString_Parms.Pooling = Pooling;
@@ -7380,7 +7380,7 @@ void UGFxActorMoviePool::MovieStateChanged(class UGearboxGFxMovie* Movie)
 	static UFunction* pFnMovieStateChanged = NULL;
 
 	if (!pFnMovieStateChanged)
-		pFnMovieStateChanged = (UFunction*)UObject::GObjObjects()->Data[42379];
+		pFnMovieStateChanged = (UFunction*)UObject::GObjects()->Data[42379];
 
 	UGFxActorMoviePool_execMovieStateChanged_Parms MovieStateChanged_Parms;
 	MovieStateChanged_Parms.Movie = Movie;
@@ -7403,7 +7403,7 @@ class UGFxMovieDefinition* UGFxMovieDefinition::FindMovieLink(struct FName Movie
 	static UFunction* pFnFindMovieLink = NULL;
 
 	if (!pFnFindMovieLink)
-		pFnFindMovieLink = (UFunction*)UObject::GObjObjects()->Data[42515];
+		pFnFindMovieLink = (UFunction*)UObject::GObjects()->Data[42515];
 
 	UGFxMovieDefinition_execFindMovieLink_Parms FindMovieLink_Parms;
 	memcpy(&FindMovieLink_Parms.MovieName, &MovieName, 0x8);
@@ -7423,7 +7423,7 @@ void UGFxMovieDefinition::PostMovieStart(class UGearboxGFxMovie* StartedMovie)
 	static UFunction* pFnPostMovieStart = NULL;
 
 	if (!pFnPostMovieStart)
-		pFnPostMovieStart = (UFunction*)UObject::GObjObjects()->Data[42324];
+		pFnPostMovieStart = (UFunction*)UObject::GObjects()->Data[42324];
 
 	UGFxMovieDefinition_execPostMovieStart_Parms PostMovieStart_Parms;
 	PostMovieStart_Parms.StartedMovie = StartedMovie;
@@ -7444,7 +7444,7 @@ class UGearboxGFxMovie* UGFxMovieDefinition::SpawnPlayerMovie(class AGearboxPlay
 	static UFunction* pFnSpawnPlayerMovie = NULL;
 
 	if (!pFnSpawnPlayerMovie)
-		pFnSpawnPlayerMovie = (UFunction*)UObject::GObjObjects()->Data[42508];
+		pFnSpawnPlayerMovie = (UFunction*)UObject::GObjects()->Data[42508];
 
 	UGFxMovieDefinition_execSpawnPlayerMovie_Parms SpawnPlayerMovie_Parms;
 	SpawnPlayerMovie_Parms.Owner = Owner;
@@ -7470,7 +7470,7 @@ bool UGFxMovieDefinition::SupportsStatePooling()
 	static UFunction* pFnSupportsStatePooling = NULL;
 
 	if (!pFnSupportsStatePooling)
-		pFnSupportsStatePooling = (UFunction*)UObject::GObjObjects()->Data[42506];
+		pFnSupportsStatePooling = (UFunction*)UObject::GObjects()->Data[42506];
 
 	UGFxMovieDefinition_execSupportsStatePooling_Parms SupportsStatePooling_Parms;
 
@@ -7493,7 +7493,7 @@ unsigned char UGFxMovieDefinition::GetPoolStyle()
 	static UFunction* pFnGetPoolStyle = NULL;
 
 	if (!pFnGetPoolStyle)
-		pFnGetPoolStyle = (UFunction*)UObject::GObjObjects()->Data[42468];
+		pFnGetPoolStyle = (UFunction*)UObject::GObjects()->Data[42468];
 
 	UGFxMovieDefinition_execGetPoolStyle_Parms GetPoolStyle_Parms;
 
@@ -7516,7 +7516,7 @@ struct FString UGFxMovieDrawStyle::GetStyleDebugString()
 	static UFunction* pFnGetStyleDebugString = NULL;
 
 	if (!pFnGetStyleDebugString)
-		pFnGetStyleDebugString = (UFunction*)UObject::GObjObjects()->Data[42404];
+		pFnGetStyleDebugString = (UFunction*)UObject::GObjects()->Data[42404];
 
 	UGFxMovieDrawStyle_execGetStyleDebugString_Parms GetStyleDebugString_Parms;
 
@@ -7535,7 +7535,7 @@ bool UGFxMovieDrawStyleHUD::eventRequiresClientInstance()
 	static UFunction* pFnRequiresClientInstance = NULL;
 
 	if (!pFnRequiresClientInstance)
-		pFnRequiresClientInstance = (UFunction*)UObject::GObjObjects()->Data[43665];
+		pFnRequiresClientInstance = (UFunction*)UObject::GObjects()->Data[43665];
 
 	UGFxMovieDrawStyleHUD_eventRequiresClientInstance_Parms RequiresClientInstance_Parms;
 
@@ -7554,7 +7554,7 @@ struct FString UGFxMovieDrawStyleMesh::GetStyleDebugString()
 	static UFunction* pFnGetStyleDebugString = NULL;
 
 	if (!pFnGetStyleDebugString)
-		pFnGetStyleDebugString = (UFunction*)UObject::GObjObjects()->Data[43691];
+		pFnGetStyleDebugString = (UFunction*)UObject::GObjects()->Data[43691];
 
 	UGFxMovieDrawStyleMesh_execGetStyleDebugString_Parms GetStyleDebugString_Parms;
 
@@ -7573,7 +7573,7 @@ bool UGFxMovieDrawStyleMesh::eventRequiresClientInstance()
 	static UFunction* pFnRequiresClientInstance = NULL;
 
 	if (!pFnRequiresClientInstance)
-		pFnRequiresClientInstance = (UFunction*)UObject::GObjObjects()->Data[43689];
+		pFnRequiresClientInstance = (UFunction*)UObject::GObjects()->Data[43689];
 
 	UGFxMovieDrawStyleMesh_eventRequiresClientInstance_Parms RequiresClientInstance_Parms;
 
@@ -7592,7 +7592,7 @@ bool UGFxMovieDrawStyleSplitscreen::eventRequiresClientInstance()
 	static UFunction* pFnRequiresClientInstance = NULL;
 
 	if (!pFnRequiresClientInstance)
-		pFnRequiresClientInstance = (UFunction*)UObject::GObjObjects()->Data[43693];
+		pFnRequiresClientInstance = (UFunction*)UObject::GObjects()->Data[43693];
 
 	UGFxMovieDrawStyleSplitscreen_eventRequiresClientInstance_Parms RequiresClientInstance_Parms;
 
@@ -7614,7 +7614,7 @@ void UGFxMovieManager::ChangeMovieState(class UIGFxActorMovie* TargetActor, stru
 	static UFunction* pFnChangeMovieState = NULL;
 
 	if (!pFnChangeMovieState)
-		pFnChangeMovieState = (UFunction*)UObject::GObjObjects()->Data[43720];
+		pFnChangeMovieState = (UFunction*)UObject::GObjects()->Data[43720];
 
 	UGFxMovieManager_execChangeMovieState_Parms ChangeMovieState_Parms;
 	ChangeMovieState_Parms.TargetActor = TargetActor;
@@ -7639,7 +7639,7 @@ void UGFxMovieManager::Unsubscribe(class AGearboxPlayerController* PC)
 	static UFunction* pFnUnsubscribe = NULL;
 
 	if (!pFnUnsubscribe)
-		pFnUnsubscribe = (UFunction*)UObject::GObjObjects()->Data[43718];
+		pFnUnsubscribe = (UFunction*)UObject::GObjects()->Data[43718];
 
 	UGFxMovieManager_execUnsubscribe_Parms Unsubscribe_Parms;
 	Unsubscribe_Parms.PC = PC;
@@ -7661,7 +7661,7 @@ void UGFxMovieManager::Subscribe(class AGearboxPlayerController* PC)
 	static UFunction* pFnSubscribe = NULL;
 
 	if (!pFnSubscribe)
-		pFnSubscribe = (UFunction*)UObject::GObjObjects()->Data[43716];
+		pFnSubscribe = (UFunction*)UObject::GObjects()->Data[43716];
 
 	UGFxMovieManager_execSubscribe_Parms Subscribe_Parms;
 	Subscribe_Parms.PC = PC;
@@ -7684,7 +7684,7 @@ void UGFxMovieManager::UnregisterMoviesDrawnTo(class UPrimitiveComponent* PrimCo
 	static UFunction* pFnUnregisterMoviesDrawnTo = NULL;
 
 	if (!pFnUnregisterMoviesDrawnTo)
-		pFnUnregisterMoviesDrawnTo = (UFunction*)UObject::GObjObjects()->Data[43713];
+		pFnUnregisterMoviesDrawnTo = (UFunction*)UObject::GObjects()->Data[43713];
 
 	UGFxMovieManager_execUnregisterMoviesDrawnTo_Parms UnregisterMoviesDrawnTo_Parms;
 	UnregisterMoviesDrawnTo_Parms.PrimComp = PrimComp;
@@ -7707,7 +7707,7 @@ void UGFxMovieManager::UnregisterTarget(class UIGFxActorMovie* TargetActor)
 	static UFunction* pFnUnregisterTarget = NULL;
 
 	if (!pFnUnregisterTarget)
-		pFnUnregisterTarget = (UFunction*)UObject::GObjObjects()->Data[43711];
+		pFnUnregisterTarget = (UFunction*)UObject::GObjects()->Data[43711];
 
 	UGFxMovieManager_execUnregisterTarget_Parms UnregisterTarget_Parms;
 	UnregisterTarget_Parms.TargetActor = TargetActor;
@@ -7730,7 +7730,7 @@ void UGFxMovieManager::UnregisterMovie(class UGFxMovieDefinition* Definition, cl
 	static UFunction* pFnUnregisterMovie = NULL;
 
 	if (!pFnUnregisterMovie)
-		pFnUnregisterMovie = (UFunction*)UObject::GObjObjects()->Data[43708];
+		pFnUnregisterMovie = (UFunction*)UObject::GObjects()->Data[43708];
 
 	UGFxMovieManager_execUnregisterMovie_Parms UnregisterMovie_Parms;
 	UnregisterMovie_Parms.Definition = Definition;
@@ -7754,7 +7754,7 @@ void UGFxMovieManager::RegisterMovie(class UGFxMovieDefinition* Definition, clas
 	static UFunction* pFnRegisterMovie = NULL;
 
 	if (!pFnRegisterMovie)
-		pFnRegisterMovie = (UFunction*)UObject::GObjObjects()->Data[43705];
+		pFnRegisterMovie = (UFunction*)UObject::GObjects()->Data[43705];
 
 	UGFxMovieManager_execRegisterMovie_Parms RegisterMovie_Parms;
 	RegisterMovie_Parms.Definition = Definition;
@@ -7779,7 +7779,7 @@ struct FString UGFxMovieState::GetDebugString(class UGearboxGFxMovie* Movie, uns
 	static UFunction* pFnGetDebugString = NULL;
 
 	if (!pFnGetDebugString)
-		pFnGetDebugString = (UFunction*)UObject::GObjObjects()->Data[42216];
+		pFnGetDebugString = (UFunction*)UObject::GObjects()->Data[42216];
 
 	UGFxMovieState_execGetDebugString_Parms GetDebugString_Parms;
 	GetDebugString_Parms.Movie = Movie;
@@ -7801,7 +7801,7 @@ void UGFxMovieState::ApplyMovieState(class UGearboxGFxMovie* Movie, class UClass
 	static UFunction* pFnApplyMovieState = NULL;
 
 	if (!pFnApplyMovieState)
-		pFnApplyMovieState = (UFunction*)UObject::GObjObjects()->Data[42217];
+		pFnApplyMovieState = (UFunction*)UObject::GObjects()->Data[42217];
 
 	UGFxMovieState_execApplyMovieState_Parms ApplyMovieState_Parms;
 	ApplyMovieState_Parms.Movie = Movie;
@@ -7821,7 +7821,7 @@ int UGFxMovieState::FindMovieState(struct FName TheState)
 	static UFunction* pFnFindMovieState = NULL;
 
 	if (!pFnFindMovieState)
-		pFnFindMovieState = (UFunction*)UObject::GObjObjects()->Data[42228];
+		pFnFindMovieState = (UFunction*)UObject::GObjects()->Data[42228];
 
 	UGFxMovieState_execFindMovieState_Parms FindMovieState_Parms;
 	memcpy(&FindMovieState_Parms.TheState, &TheState, 0x8);
@@ -7847,7 +7847,7 @@ bool UGFxMovieState::TestState(struct FName TheState, struct FMovieStateStruct* 
 	static UFunction* pFnTestState = NULL;
 
 	if (!pFnTestState)
-		pFnTestState = (UFunction*)UObject::GObjObjects()->Data[42234];
+		pFnTestState = (UFunction*)UObject::GObjects()->Data[42234];
 
 	UGFxMovieState_execTestState_Parms TestState_Parms;
 	memcpy(&TestState_Parms.TheState, &TheState, 0x8);
@@ -7876,7 +7876,7 @@ int UGFxMovieState::ToggleState(struct FName TheState, struct FMovieStateStruct*
 	static UFunction* pFnToggleState = NULL;
 
 	if (!pFnToggleState)
-		pFnToggleState = (UFunction*)UObject::GObjObjects()->Data[42237];
+		pFnToggleState = (UFunction*)UObject::GObjects()->Data[42237];
 
 	UGFxMovieState_execToggleState_Parms ToggleState_Parms;
 	memcpy(&ToggleState_Parms.TheState, &TheState, 0x8);
@@ -7906,7 +7906,7 @@ int UGFxMovieState::EnableState(struct FName TheState, unsigned long bEnable, st
 	static UFunction* pFnEnableState = NULL;
 
 	if (!pFnEnableState)
-		pFnEnableState = (UFunction*)UObject::GObjObjects()->Data[42246];
+		pFnEnableState = (UFunction*)UObject::GObjects()->Data[42246];
 
 	UGFxMovieState_execEnableState_Parms EnableState_Parms;
 	memcpy(&EnableState_Parms.TheState, &TheState, 0x8);
@@ -7937,7 +7937,7 @@ int UGFxMovieStatePlayerAware::EnableState(struct FName TheState, unsigned long 
 	static UFunction* pFnEnableState = NULL;
 
 	if (!pFnEnableState)
-		pFnEnableState = (UFunction*)UObject::GObjObjects()->Data[43736];
+		pFnEnableState = (UFunction*)UObject::GObjects()->Data[43736];
 
 	UGFxMovieStatePlayerAware_execEnableState_Parms EnableState_Parms;
 	memcpy(&EnableState_Parms.TheState, &TheState, 0x8);
@@ -7965,7 +7965,7 @@ void UIAIInterface::InitSequence(class UActionSequence* NewSequence)
 	static UFunction* pFnInitSequence = NULL;
 
 	if (!pFnInitSequence)
-		pFnInitSequence = (UFunction*)UObject::GObjObjects()->Data[43759];
+		pFnInitSequence = (UFunction*)UObject::GObjects()->Data[43759];
 
 	UIAIInterface_execInitSequence_Parms InitSequence_Parms;
 	InitSequence_Parms.NewSequence = NewSequence;
@@ -7987,7 +7987,7 @@ class UPawnAllegiance* UIAIInterface::GetAllegiance()
 	static UFunction* pFnGetAllegiance = NULL;
 
 	if (!pFnGetAllegiance)
-		pFnGetAllegiance = (UFunction*)UObject::GObjObjects()->Data[43757];
+		pFnGetAllegiance = (UFunction*)UObject::GObjects()->Data[43757];
 
 	UIAIInterface_execGetAllegiance_Parms GetAllegiance_Parms;
 
@@ -8010,7 +8010,7 @@ class UAIDefinition* UIAIInterface::GetAIDefinition()
 	static UFunction* pFnGetAIDefinition = NULL;
 
 	if (!pFnGetAIDefinition)
-		pFnGetAIDefinition = (UFunction*)UObject::GObjObjects()->Data[43755];
+		pFnGetAIDefinition = (UFunction*)UObject::GObjects()->Data[43755];
 
 	UIAIInterface_execGetAIDefinition_Parms GetAIDefinition_Parms;
 
@@ -8033,7 +8033,7 @@ class UAIComponent* UIAIInterface::GetAIComponent()
 	static UFunction* pFnGetAIComponent = NULL;
 
 	if (!pFnGetAIComponent)
-		pFnGetAIComponent = (UFunction*)UObject::GObjObjects()->Data[39317];
+		pFnGetAIComponent = (UFunction*)UObject::GObjects()->Data[39317];
 
 	UIAIInterface_execGetAIComponent_Parms GetAIComponent_Parms;
 
@@ -8056,7 +8056,7 @@ class UIAIInterface* UIAIInterface::GetAIParent()
 	static UFunction* pFnGetAIParent = NULL;
 
 	if (!pFnGetAIParent)
-		pFnGetAIParent = (UFunction*)UObject::GObjObjects()->Data[43753];
+		pFnGetAIParent = (UFunction*)UObject::GObjects()->Data[43753];
 
 	UIAIInterface_execGetAIParent_Parms GetAIParent_Parms;
 
@@ -8079,7 +8079,7 @@ struct FVector UIAIInterface::GetAILocation()
 	static UFunction* pFnGetAILocation = NULL;
 
 	if (!pFnGetAILocation)
-		pFnGetAILocation = (UFunction*)UObject::GObjObjects()->Data[43751];
+		pFnGetAILocation = (UFunction*)UObject::GObjects()->Data[43751];
 
 	UIAIInterface_execGetAILocation_Parms GetAILocation_Parms;
 
@@ -8102,7 +8102,7 @@ class AActor* UIAIInterface::GetAIActor()
 	static UFunction* pFnGetAIActor = NULL;
 
 	if (!pFnGetAIActor)
-		pFnGetAIActor = (UFunction*)UObject::GObjObjects()->Data[43749];
+		pFnGetAIActor = (UFunction*)UObject::GObjects()->Data[43749];
 
 	UIAIInterface_execGetAIActor_Parms GetAIActor_Parms;
 
@@ -8125,7 +8125,7 @@ bool UIAIInterface::CanTickAI()
 	static UFunction* pFnCanTickAI = NULL;
 
 	if (!pFnCanTickAI)
-		pFnCanTickAI = (UFunction*)UObject::GObjObjects()->Data[43747];
+		pFnCanTickAI = (UFunction*)UObject::GObjects()->Data[43747];
 
 	UIAIInterface_execCanTickAI_Parms CanTickAI_Parms;
 
@@ -8148,7 +8148,7 @@ void UIGFxActorMovie::GFx_NotifyMovieDestroy(class UGearboxGFxMovie* Movie)
 	static UFunction* pFnGFx_NotifyMovieDestroy = NULL;
 
 	if (!pFnGFx_NotifyMovieDestroy)
-		pFnGFx_NotifyMovieDestroy = (UFunction*)UObject::GObjObjects()->Data[43793];
+		pFnGFx_NotifyMovieDestroy = (UFunction*)UObject::GObjects()->Data[43793];
 
 	UIGFxActorMovie_execGFx_NotifyMovieDestroy_Parms GFx_NotifyMovieDestroy_Parms;
 	GFx_NotifyMovieDestroy_Parms.Movie = Movie;
@@ -8170,7 +8170,7 @@ void UIGFxActorMovie::GFx_NotifyMovieCreate(class UGearboxGFxMovie* Movie)
 	static UFunction* pFnGFx_NotifyMovieCreate = NULL;
 
 	if (!pFnGFx_NotifyMovieCreate)
-		pFnGFx_NotifyMovieCreate = (UFunction*)UObject::GObjObjects()->Data[43791];
+		pFnGFx_NotifyMovieCreate = (UFunction*)UObject::GObjects()->Data[43791];
 
 	UIGFxActorMovie_execGFx_NotifyMovieCreate_Parms GFx_NotifyMovieCreate_Parms;
 	GFx_NotifyMovieCreate_Parms.Movie = Movie;
@@ -8192,7 +8192,7 @@ class AActor* UIGFxActorMovie::GFx_GetMovieActor()
 	static UFunction* pFnGFx_GetMovieActor = NULL;
 
 	if (!pFnGFx_GetMovieActor)
-		pFnGFx_GetMovieActor = (UFunction*)UObject::GObjObjects()->Data[43644];
+		pFnGFx_GetMovieActor = (UFunction*)UObject::GObjects()->Data[43644];
 
 	UIGFxActorMovie_execGFx_GetMovieActor_Parms GFx_GetMovieActor_Parms;
 
@@ -8214,7 +8214,7 @@ void UInterfaceGearboxCamera::eventFinishCameraLookAt()
 	static UFunction* pFnFinishCameraLookAt = NULL;
 
 	if (!pFnFinishCameraLookAt)
-		pFnFinishCameraLookAt = (UFunction*)UObject::GObjObjects()->Data[40676];
+		pFnFinishCameraLookAt = (UFunction*)UObject::GObjects()->Data[40676];
 
 	UInterfaceGearboxCamera_eventFinishCameraLookAt_Parms FinishCameraLookAt_Parms;
 
@@ -8234,7 +8234,7 @@ void UInterfaceGearboxCamera::EnableThirdPersonLookAt(float LookAtXOffset, float
 	static UFunction* pFnEnableThirdPersonLookAt = NULL;
 
 	if (!pFnEnableThirdPersonLookAt)
-		pFnEnableThirdPersonLookAt = (UFunction*)UObject::GObjObjects()->Data[40671];
+		pFnEnableThirdPersonLookAt = (UFunction*)UObject::GObjects()->Data[40671];
 
 	UInterfaceGearboxCamera_execEnableThirdPersonLookAt_Parms EnableThirdPersonLookAt_Parms;
 	EnableThirdPersonLookAt_Parms.LookAtXOffset = LookAtXOffset;
@@ -8262,7 +8262,7 @@ void UInterfaceGearboxCamera::BeginCameraLookAt(class AActor* LookAtTarget, stru
 	static UFunction* pFnBeginCameraLookAt = NULL;
 
 	if (!pFnBeginCameraLookAt)
-		pFnBeginCameraLookAt = (UFunction*)UObject::GObjObjects()->Data[40661];
+		pFnBeginCameraLookAt = (UFunction*)UObject::GObjects()->Data[40661];
 
 	UInterfaceGearboxCamera_execBeginCameraLookAt_Parms BeginCameraLookAt_Parms;
 	BeginCameraLookAt_Parms.LookAtTarget = LookAtTarget;
@@ -8291,7 +8291,7 @@ void UIStreamingDataEvent::eventRunStreamingDataEvent(struct FName EventName, cl
 	static UFunction* pFnRunStreamingDataEvent = NULL;
 
 	if (!pFnRunStreamingDataEvent)
-		pFnRunStreamingDataEvent = (UFunction*)UObject::GObjObjects()->Data[43807];
+		pFnRunStreamingDataEvent = (UFunction*)UObject::GObjects()->Data[43807];
 
 	UIStreamingDataEvent_eventRunStreamingDataEvent_Parms RunStreamingDataEvent_Parms;
 	memcpy(&RunStreamingDataEvent_Parms.EventName, &EventName, 0x8);
@@ -8314,7 +8314,7 @@ bool UPhysicsStateExpressionEvaluator::Evaluate(class UObject* ContextSource)
 	static UFunction* pFnEvaluate = NULL;
 
 	if (!pFnEvaluate)
-		pFnEvaluate = (UFunction*)UObject::GObjObjects()->Data[43892];
+		pFnEvaluate = (UFunction*)UObject::GObjects()->Data[43892];
 
 	UPhysicsStateExpressionEvaluator_execEvaluate_Parms Evaluate_Parms;
 	Evaluate_Parms.ContextSource = ContextSource;
@@ -8338,7 +8338,7 @@ void UPopulationAspect::eventDenStatRemoved(class APawn* DenPawn)
 	static UFunction* pFnDenStatRemoved = NULL;
 
 	if (!pFnDenStatRemoved)
-		pFnDenStatRemoved = (UFunction*)UObject::GObjObjects()->Data[43907];
+		pFnDenStatRemoved = (UFunction*)UObject::GObjects()->Data[43907];
 
 	UPopulationAspect_eventDenStatRemoved_Parms DenStatRemoved_Parms;
 	DenStatRemoved_Parms.DenPawn = DenPawn;
@@ -8356,7 +8356,7 @@ void UPopulationAspect::eventDenStatAdded(class APawn* DenPawn)
 	static UFunction* pFnDenStatAdded = NULL;
 
 	if (!pFnDenStatAdded)
-		pFnDenStatAdded = (UFunction*)UObject::GObjObjects()->Data[43905];
+		pFnDenStatAdded = (UFunction*)UObject::GObjects()->Data[43905];
 
 	UPopulationAspect_eventDenStatAdded_Parms DenStatAdded_Parms;
 	DenStatAdded_Parms.DenPawn = DenPawn;
@@ -8375,7 +8375,7 @@ void UPopulationAspect::eventEnabledStatusChanged(unsigned long bIsEnabled, unsi
 	static UFunction* pFnEnabledStatusChanged = NULL;
 
 	if (!pFnEnabledStatusChanged)
-		pFnEnabledStatusChanged = (UFunction*)UObject::GObjObjects()->Data[43902];
+		pFnEnabledStatusChanged = (UFunction*)UObject::GObjects()->Data[43902];
 
 	UPopulationAspect_eventEnabledStatusChanged_Parms EnabledStatusChanged_Parms;
 	EnabledStatusChanged_Parms.bIsEnabled = bIsEnabled;
@@ -8394,7 +8394,7 @@ void UPopulationAspect::eventAllActorsRemoved(unsigned long bFinishedSpawning)
 	static UFunction* pFnAllActorsRemoved = NULL;
 
 	if (!pFnAllActorsRemoved)
-		pFnAllActorsRemoved = (UFunction*)UObject::GObjObjects()->Data[43900];
+		pFnAllActorsRemoved = (UFunction*)UObject::GObjects()->Data[43900];
 
 	UPopulationAspect_eventAllActorsRemoved_Parms AllActorsRemoved_Parms;
 	AllActorsRemoved_Parms.bFinishedSpawning = bFinishedSpawning;
@@ -8412,7 +8412,7 @@ void UPopulationAspect::eventOnActorDeath(class AActor* DeadActor)
 	static UFunction* pFnOnActorDeath = NULL;
 
 	if (!pFnOnActorDeath)
-		pFnOnActorDeath = (UFunction*)UObject::GObjObjects()->Data[43898];
+		pFnOnActorDeath = (UFunction*)UObject::GObjects()->Data[43898];
 
 	UPopulationAspect_eventOnActorDeath_Parms OnActorDeath_Parms;
 	OnActorDeath_Parms.DeadActor = DeadActor;
@@ -8430,7 +8430,7 @@ void UPopulationAspect::eventOnSpawnActor(class AActor* SpawnedActor)
 	static UFunction* pFnOnSpawnActor = NULL;
 
 	if (!pFnOnSpawnActor)
-		pFnOnSpawnActor = (UFunction*)UObject::GObjObjects()->Data[43896];
+		pFnOnSpawnActor = (UFunction*)UObject::GObjects()->Data[43896];
 
 	UPopulationAspect_eventOnSpawnActor_Parms OnSpawnActor_Parms;
 	OnSpawnActor_Parms.SpawnedActor = SpawnedActor;
@@ -8447,7 +8447,7 @@ void UPopulationAspect::eventinitialize()
 	static UFunction* pFnInitialize = NULL;
 
 	if (!pFnInitialize)
-		pFnInitialize = (UFunction*)UObject::GObjObjects()->Data[43895];
+		pFnInitialize = (UFunction*)UObject::GObjects()->Data[43895];
 
 	UPopulationAspect_eventInitialize_Parms Initialize_Parms;
 
@@ -8463,7 +8463,7 @@ void APopulationEncounter::eventTriggerKismetAllSpawnedEvent()
 	static UFunction* pFnTriggerKismetAllSpawnedEvent = NULL;
 
 	if (!pFnTriggerKismetAllSpawnedEvent)
-		pFnTriggerKismetAllSpawnedEvent = (UFunction*)UObject::GObjObjects()->Data[43970];
+		pFnTriggerKismetAllSpawnedEvent = (UFunction*)UObject::GObjects()->Data[43970];
 
 	APopulationEncounter_eventTriggerKismetAllSpawnedEvent_Parms TriggerKismetAllSpawnedEvent_Parms;
 
@@ -8479,7 +8479,7 @@ void APopulationEncounter::eventTriggerKismetDeathEvent()
 	static UFunction* pFnTriggerKismetDeathEvent = NULL;
 
 	if (!pFnTriggerKismetDeathEvent)
-		pFnTriggerKismetDeathEvent = (UFunction*)UObject::GObjObjects()->Data[43969];
+		pFnTriggerKismetDeathEvent = (UFunction*)UObject::GObjects()->Data[43969];
 
 	APopulationEncounter_eventTriggerKismetDeathEvent_Parms TriggerKismetDeathEvent_Parms;
 
@@ -8496,7 +8496,7 @@ void APopulationEncounter::OnToggle(class USeqAct_Toggle* Action)
 	static UFunction* pFnOnToggle = NULL;
 
 	if (!pFnOnToggle)
-		pFnOnToggle = (UFunction*)UObject::GObjObjects()->Data[43967];
+		pFnOnToggle = (UFunction*)UObject::GObjects()->Data[43967];
 
 	APopulationEncounter_execOnToggle_Parms OnToggle_Parms;
 	OnToggle_Parms.Action = Action;
@@ -8515,7 +8515,7 @@ void APopulationEncounter::UpdateOpportunityEnabledStates(int nWave, unsigned lo
 	static UFunction* pFnUpdateOpportunityEnabledStates = NULL;
 
 	if (!pFnUpdateOpportunityEnabledStates)
-		pFnUpdateOpportunityEnabledStates = (UFunction*)UObject::GObjObjects()->Data[43964];
+		pFnUpdateOpportunityEnabledStates = (UFunction*)UObject::GObjects()->Data[43964];
 
 	APopulationEncounter_execUpdateOpportunityEnabledStates_Parms UpdateOpportunityEnabledStates_Parms;
 	UpdateOpportunityEnabledStates_Parms.nWave = nWave;
@@ -8537,7 +8537,7 @@ void APopulationEncounter::UpdateKismetNotifications()
 	static UFunction* pFnUpdateKismetNotifications = NULL;
 
 	if (!pFnUpdateKismetNotifications)
-		pFnUpdateKismetNotifications = (UFunction*)UObject::GObjObjects()->Data[43963];
+		pFnUpdateKismetNotifications = (UFunction*)UObject::GObjects()->Data[43963];
 
 	APopulationEncounter_execUpdateKismetNotifications_Parms UpdateKismetNotifications_Parms;
 
@@ -8559,7 +8559,7 @@ void UPopUpDebugBarGraph::Display(float DeltaSeconds, class UCanvas* Canvas)
 	static UFunction* pFnDisplay = NULL;
 
 	if (!pFnDisplay)
-		pFnDisplay = (UFunction*)UObject::GObjObjects()->Data[44582];
+		pFnDisplay = (UFunction*)UObject::GObjects()->Data[44582];
 
 	UPopUpDebugBarGraph_execDisplay_Parms Display_Parms;
 	Display_Parms.DeltaSeconds = DeltaSeconds;
@@ -8583,7 +8583,7 @@ float UPopUpDebugBarGraph::GetValue(int ColumnNdx)
 	static UFunction* pFnGetValue = NULL;
 
 	if (!pFnGetValue)
-		pFnGetValue = (UFunction*)UObject::GObjObjects()->Data[44579];
+		pFnGetValue = (UFunction*)UObject::GObjects()->Data[44579];
 
 	UPopUpDebugBarGraph_execGetValue_Parms GetValue_Parms;
 	GetValue_Parms.ColumnNdx = ColumnNdx;
@@ -8608,7 +8608,7 @@ void UPopUpDebugBarGraph::SetValue(int ColumnNdx, float NewValue)
 	static UFunction* pFnSetValue = NULL;
 
 	if (!pFnSetValue)
-		pFnSetValue = (UFunction*)UObject::GObjObjects()->Data[44576];
+		pFnSetValue = (UFunction*)UObject::GObjects()->Data[44576];
 
 	UPopUpDebugBarGraph_execSetValue_Parms SetValue_Parms;
 	SetValue_Parms.ColumnNdx = ColumnNdx;
@@ -8634,7 +8634,7 @@ int UPopUpDebugBarGraph::AddNewColumn(struct FColor ColumnColor, struct FString 
 	static UFunction* pFnAddNewColumn = NULL;
 
 	if (!pFnAddNewColumn)
-		pFnAddNewColumn = (UFunction*)UObject::GObjObjects()->Data[44571];
+		pFnAddNewColumn = (UFunction*)UObject::GObjects()->Data[44571];
 
 	UPopUpDebugBarGraph_execAddNewColumn_Parms AddNewColumn_Parms;
 	memcpy(&AddNewColumn_Parms.ColumnColor, &ColumnColor, 0x4);
@@ -8660,7 +8660,7 @@ void UPopUpDebugBarGraph::AddTitleText(struct FString NewTitleText)
 	static UFunction* pFnAddTitleText = NULL;
 
 	if (!pFnAddTitleText)
-		pFnAddTitleText = (UFunction*)UObject::GObjObjects()->Data[44569];
+		pFnAddTitleText = (UFunction*)UObject::GObjects()->Data[44569];
 
 	UPopUpDebugBarGraph_execAddTitleText_Parms AddTitleText_Parms;
 	memcpy(&AddTitleText_Parms.NewTitleText, &NewTitleText, 0xC);
@@ -8686,7 +8686,7 @@ bool URegionDefinition::GetDefaultRegionGameStage(int* MinGameStage, int* MaxGam
 	static UFunction* pFnGetDefaultRegionGameStage = NULL;
 
 	if (!pFnGetDefaultRegionGameStage)
-		pFnGetDefaultRegionGameStage = (UFunction*)UObject::GObjObjects()->Data[44605];
+		pFnGetDefaultRegionGameStage = (UFunction*)UObject::GObjects()->Data[44605];
 
 	URegionDefinition_execGetDefaultRegionGameStage_Parms GetDefaultRegionGameStage_Parms;
 
@@ -8724,7 +8724,7 @@ bool URegionDefinition::TestRegionGameStage(unsigned long bDefaultGameStage, int
 	static UFunction* pFnTestRegionGameStage = NULL;
 
 	if (!pFnTestRegionGameStage)
-		pFnTestRegionGameStage = (UFunction*)UObject::GObjObjects()->Data[44600];
+		pFnTestRegionGameStage = (UFunction*)UObject::GObjects()->Data[44600];
 
 	URegionDefinition_execTestRegionGameStage_Parms TestRegionGameStage_Parms;
 	TestRegionGameStage_Parms.bDefaultGameStage = bDefaultGameStage;
@@ -8757,7 +8757,7 @@ bool URegionDefinition::GetRegionGameStage(unsigned long bDefaultGameStage, int*
 	static UFunction* pFnGetRegionGameStage = NULL;
 
 	if (!pFnGetRegionGameStage)
-		pFnGetRegionGameStage = (UFunction*)UObject::GObjObjects()->Data[44595];
+		pFnGetRegionGameStage = (UFunction*)UObject::GObjects()->Data[44595];
 
 	URegionDefinition_execGetRegionGameStage_Parms GetRegionGameStage_Parms;
 	GetRegionGameStage_Parms.bDefaultGameStage = bDefaultGameStage;
@@ -8787,7 +8787,7 @@ void URuleEngineLoadBalanceManager::SetAsDebugging(unsigned long bSetDebugging)
 	static UFunction* pFnSetAsDebugging = NULL;
 
 	if (!pFnSetAsDebugging)
-		pFnSetAsDebugging = (UFunction*)UObject::GObjObjects()->Data[44653];
+		pFnSetAsDebugging = (UFunction*)UObject::GObjects()->Data[44653];
 
 	URuleEngineLoadBalanceManager_execSetAsDebugging_Parms SetAsDebugging_Parms;
 	SetAsDebugging_Parms.bSetDebugging = bSetDebugging;
@@ -8809,7 +8809,7 @@ bool USeqAct_AllPlayersInVolume::AllPlayersInVolumes()
 	static UFunction* pFnAllPlayersInVolumes = NULL;
 
 	if (!pFnAllPlayersInVolumes)
-		pFnAllPlayersInVolumes = (UFunction*)UObject::GObjObjects()->Data[44687];
+		pFnAllPlayersInVolumes = (UFunction*)UObject::GObjects()->Data[44687];
 
 	USeqAct_AllPlayersInVolume_execAllPlayersInVolumes_Parms AllPlayersInVolumes_Parms;
 
@@ -8833,7 +8833,7 @@ bool USeqAct_AllPlayersInVolume::PlayerIsInAVolume(class APlayerController* PC)
 	static UFunction* pFnPlayerIsInAVolume = NULL;
 
 	if (!pFnPlayerIsInAVolume)
-		pFnPlayerIsInAVolume = (UFunction*)UObject::GObjObjects()->Data[44684];
+		pFnPlayerIsInAVolume = (UFunction*)UObject::GObjects()->Data[44684];
 
 	USeqAct_AllPlayersInVolume_execPlayerIsInAVolume_Parms PlayerIsInAVolume_Parms;
 	PlayerIsInAVolume_Parms.PC = PC;
@@ -8857,7 +8857,7 @@ bool USpecialMoveComponent::IsOwnerAlwaysNetRelevant()
 	static UFunction* pFnIsOwnerAlwaysNetRelevant = NULL;
 
 	if (!pFnIsOwnerAlwaysNetRelevant)
-		pFnIsOwnerAlwaysNetRelevant = (UFunction*)UObject::GObjObjects()->Data[42918];
+		pFnIsOwnerAlwaysNetRelevant = (UFunction*)UObject::GObjects()->Data[42918];
 
 	USpecialMoveComponent_execIsOwnerAlwaysNetRelevant_Parms IsOwnerAlwaysNetRelevant_Parms;
 
@@ -8881,7 +8881,7 @@ bool USpecialMoveComponent::CanPlayBehaviorData(struct FSMBehavior* Data)
 	static UFunction* pFnCanPlayBehaviorData = NULL;
 
 	if (!pFnCanPlayBehaviorData)
-		pFnCanPlayBehaviorData = (UFunction*)UObject::GObjObjects()->Data[42915];
+		pFnCanPlayBehaviorData = (UFunction*)UObject::GObjects()->Data[42915];
 
 	USpecialMoveComponent_execCanPlayBehaviorData_Parms CanPlayBehaviorData_Parms;
 
@@ -8907,7 +8907,7 @@ void USpecialMoveComponent::RunBehaviors(TArray< struct FSMBehavior >* SMBehavio
 	static UFunction* pFnRunBehaviors = NULL;
 
 	if (!pFnRunBehaviors)
-		pFnRunBehaviors = (UFunction*)UObject::GObjObjects()->Data[41754];
+		pFnRunBehaviors = (UFunction*)UObject::GObjects()->Data[41754];
 
 	USpecialMoveComponent_execRunBehaviors_Parms RunBehaviors_Parms;
 
@@ -8931,7 +8931,7 @@ class USpecialMoveDefinition* USpecialMoveComponent::GetCurrent()
 	static UFunction* pFnGetCurrent = NULL;
 
 	if (!pFnGetCurrent)
-		pFnGetCurrent = (UFunction*)UObject::GObjObjects()->Data[42911];
+		pFnGetCurrent = (UFunction*)UObject::GObjects()->Data[42911];
 
 	USpecialMoveComponent_execGetCurrent_Parms GetCurrent_Parms;
 
@@ -8954,7 +8954,7 @@ float USpecialMoveComponent::GetPlayRateScale()
 	static UFunction* pFnGetPlayRateScale = NULL;
 
 	if (!pFnGetPlayRateScale)
-		pFnGetPlayRateScale = (UFunction*)UObject::GObjObjects()->Data[42909];
+		pFnGetPlayRateScale = (UFunction*)UObject::GObjects()->Data[42909];
 
 	USpecialMoveComponent_execGetPlayRateScale_Parms GetPlayRateScale_Parms;
 
@@ -8977,7 +8977,7 @@ float USpecialMoveComponent::GetDuration()
 	static UFunction* pFnGetDuration = NULL;
 
 	if (!pFnGetDuration)
-		pFnGetDuration = (UFunction*)UObject::GObjObjects()->Data[42907];
+		pFnGetDuration = (UFunction*)UObject::GObjects()->Data[42907];
 
 	USpecialMoveComponent_execGetDuration_Parms GetDuration_Parms;
 
@@ -9000,7 +9000,7 @@ class UObject* USpecialMoveComponent::GetData()
 	static UFunction* pFnGetData = NULL;
 
 	if (!pFnGetData)
-		pFnGetData = (UFunction*)UObject::GObjObjects()->Data[42905];
+		pFnGetData = (UFunction*)UObject::GObjects()->Data[42905];
 
 	USpecialMoveComponent_execGetData_Parms GetData_Parms;
 
@@ -9025,7 +9025,7 @@ void USpecialMoveComponent::LocalAnimFinished(class USpecialMoveDefinition* SMD,
 	static UFunction* pFnLocalAnimFinished = NULL;
 
 	if (!pFnLocalAnimFinished)
-		pFnLocalAnimFinished = (UFunction*)UObject::GObjObjects()->Data[41769];
+		pFnLocalAnimFinished = (UFunction*)UObject::GObjects()->Data[41769];
 
 	USpecialMoveComponent_execLocalAnimFinished_Parms LocalAnimFinished_Parms;
 	LocalAnimFinished_Parms.SMD = SMD;
@@ -9050,7 +9050,7 @@ void USpecialMoveComponent::ClearQueue()
 	static UFunction* pFnClearQueue = NULL;
 
 	if (!pFnClearQueue)
-		pFnClearQueue = (UFunction*)UObject::GObjObjects()->Data[42901];
+		pFnClearQueue = (UFunction*)UObject::GObjects()->Data[42901];
 
 	USpecialMoveComponent_execClearQueue_Parms ClearQueue_Parms;
 
@@ -9073,7 +9073,7 @@ void USpecialMoveComponent::StopAnyLocal(struct FName SMNodeName, unsigned long 
 	static UFunction* pFnStopAnyLocal = NULL;
 
 	if (!pFnStopAnyLocal)
-		pFnStopAnyLocal = (UFunction*)UObject::GObjObjects()->Data[42897];
+		pFnStopAnyLocal = (UFunction*)UObject::GObjects()->Data[42897];
 
 	USpecialMoveComponent_execStopAnyLocal_Parms StopAnyLocal_Parms;
 	memcpy(&StopAnyLocal_Parms.SMNodeName, &SMNodeName, 0x8);
@@ -9098,7 +9098,7 @@ void USpecialMoveComponent::StopLocal(class USpecialMoveDefinition* OldSMD, unsi
 	static UFunction* pFnStopLocal = NULL;
 
 	if (!pFnStopLocal)
-		pFnStopLocal = (UFunction*)UObject::GObjObjects()->Data[42894];
+		pFnStopLocal = (UFunction*)UObject::GObjects()->Data[42894];
 
 	USpecialMoveComponent_execStopLocal_Parms StopLocal_Parms;
 	StopLocal_Parms.OldSMD = OldSMD;
@@ -9122,7 +9122,7 @@ void USpecialMoveComponent::StopAny(unsigned long bClearQueue, unsigned long bIn
 	static UFunction* pFnStopAny = NULL;
 
 	if (!pFnStopAny)
-		pFnStopAny = (UFunction*)UObject::GObjObjects()->Data[40232];
+		pFnStopAny = (UFunction*)UObject::GObjects()->Data[40232];
 
 	USpecialMoveComponent_execStopAny_Parms StopAny_Parms;
 	StopAny_Parms.bClearQueue = bClearQueue;
@@ -9147,7 +9147,7 @@ void USpecialMoveComponent::Stop(class USpecialMoveDefinition* OldSMD, unsigned 
 	static UFunction* pFnStop = NULL;
 
 	if (!pFnStop)
-		pFnStop = (UFunction*)UObject::GObjObjects()->Data[40231];
+		pFnStop = (UFunction*)UObject::GObjects()->Data[40231];
 
 	USpecialMoveComponent_execStop_Parms Stop_Parms;
 	Stop_Parms.OldSMD = OldSMD;
@@ -9177,7 +9177,7 @@ float USpecialMoveComponent::PlayLocal(class USpecialMoveDefinition* NewSMD, flo
 	static UFunction* pFnPlayLocal = NULL;
 
 	if (!pFnPlayLocal)
-		pFnPlayLocal = (UFunction*)UObject::GObjObjects()->Data[40212];
+		pFnPlayLocal = (UFunction*)UObject::GObjects()->Data[40212];
 
 	USpecialMoveComponent_execPlayLocal_Parms PlayLocal_Parms;
 	PlayLocal_Parms.NewSMD = NewSMD;
@@ -9211,7 +9211,7 @@ void USpecialMoveComponent::Queue(class USpecialMoveDefinition* NewSMD, float Pl
 	static UFunction* pFnQueue = NULL;
 
 	if (!pFnQueue)
-		pFnQueue = (UFunction*)UObject::GObjObjects()->Data[40218];
+		pFnQueue = (UFunction*)UObject::GObjects()->Data[40218];
 
 	USpecialMoveComponent_execQueue_Parms Queue_Parms;
 	Queue_Parms.NewSMD = NewSMD;
@@ -9244,7 +9244,7 @@ float USpecialMoveComponent::Play(class USpecialMoveDefinition* NewSMD, float Pl
 	static UFunction* pFnPlay = NULL;
 
 	if (!pFnPlay)
-		pFnPlay = (UFunction*)UObject::GObjObjects()->Data[40216];
+		pFnPlay = (UFunction*)UObject::GObjects()->Data[40216];
 
 	USpecialMoveComponent_execPlay_Parms Play_Parms;
 	Play_Parms.NewSMD = NewSMD;
@@ -9273,7 +9273,7 @@ void USpecialMoveComponent::RemoveFromQueue(class USpecialMoveDefinition* SMD)
 	static UFunction* pFnRemoveFromQueue = NULL;
 
 	if (!pFnRemoveFromQueue)
-		pFnRemoveFromQueue = (UFunction*)UObject::GObjObjects()->Data[42869];
+		pFnRemoveFromQueue = (UFunction*)UObject::GObjects()->Data[42869];
 
 	USpecialMoveComponent_execRemoveFromQueue_Parms RemoveFromQueue_Parms;
 	RemoveFromQueue_Parms.SMD = SMD;
@@ -9296,7 +9296,7 @@ bool USpecialMoveComponent::IsQueued(class USpecialMoveDefinition* SMD)
 	static UFunction* pFnIsQueued = NULL;
 
 	if (!pFnIsQueued)
-		pFnIsQueued = (UFunction*)UObject::GObjObjects()->Data[40206];
+		pFnIsQueued = (UFunction*)UObject::GObjects()->Data[40206];
 
 	USpecialMoveComponent_execIsQueued_Parms IsQueued_Parms;
 	IsQueued_Parms.SMD = SMD;
@@ -9321,7 +9321,7 @@ bool USpecialMoveComponent::IsPlayingClass(class UClass* SMClass)
 	static UFunction* pFnIsPlayingClass = NULL;
 
 	if (!pFnIsPlayingClass)
-		pFnIsPlayingClass = (UFunction*)UObject::GObjObjects()->Data[42865];
+		pFnIsPlayingClass = (UFunction*)UObject::GObjects()->Data[42865];
 
 	USpecialMoveComponent_execIsPlayingClass_Parms IsPlayingClass_Parms;
 	IsPlayingClass_Parms.SMClass = SMClass;
@@ -9345,7 +9345,7 @@ bool USpecialMoveComponent::IsPlayingAny()
 	static UFunction* pFnIsPlayingAny = NULL;
 
 	if (!pFnIsPlayingAny)
-		pFnIsPlayingAny = (UFunction*)UObject::GObjObjects()->Data[40214];
+		pFnIsPlayingAny = (UFunction*)UObject::GObjects()->Data[40214];
 
 	USpecialMoveComponent_execIsPlayingAny_Parms IsPlayingAny_Parms;
 
@@ -9369,7 +9369,7 @@ bool USpecialMoveComponent::IsPlaying(class USpecialMoveDefinition* SMD)
 	static UFunction* pFnIsPlaying = NULL;
 
 	if (!pFnIsPlaying)
-		pFnIsPlaying = (UFunction*)UObject::GObjObjects()->Data[40204];
+		pFnIsPlaying = (UFunction*)UObject::GObjects()->Data[40204];
 
 	USpecialMoveComponent_execIsPlaying_Parms IsPlaying_Parms;
 	IsPlaying_Parms.SMD = SMD;
@@ -9394,7 +9394,7 @@ struct FVector USpecialMoveComponent::GetAnimDelta(class UGearboxAnimDefinition*
 	static UFunction* pFnGetAnimDelta = NULL;
 
 	if (!pFnGetAnimDelta)
-		pFnGetAnimDelta = (UFunction*)UObject::GObjObjects()->Data[42861];
+		pFnGetAnimDelta = (UFunction*)UObject::GObjects()->Data[42861];
 
 	USpecialMoveComponent_execGetAnimDelta_Parms GetAnimDelta_Parms;
 	GetAnimDelta_Parms.CustomAnimSMD = CustomAnimSMD;
@@ -9418,7 +9418,7 @@ class UAnimNodeSpecialMoveBlend* USpecialMoveComponent::GetSMNode()
 	static UFunction* pFnGetSMNode = NULL;
 
 	if (!pFnGetSMNode)
-		pFnGetSMNode = (UFunction*)UObject::GObjObjects()->Data[41727];
+		pFnGetSMNode = (UFunction*)UObject::GObjects()->Data[41727];
 
 	USpecialMoveComponent_execGetSMNode_Parms GetSMNode_Parms;
 
@@ -9441,7 +9441,7 @@ void USpecialMoveComponent::PlayReplicated(struct FReplicatedSpecialMoveData New
 	static UFunction* pFnPlayReplicated = NULL;
 
 	if (!pFnPlayReplicated)
-		pFnPlayReplicated = (UFunction*)UObject::GObjObjects()->Data[42859];
+		pFnPlayReplicated = (UFunction*)UObject::GObjects()->Data[42859];
 
 	USpecialMoveComponent_execPlayReplicated_Parms PlayReplicated_Parms;
 	memcpy(&PlayReplicated_Parms.NewSMData, &NewSMData, 0x14);
@@ -9466,7 +9466,7 @@ float USpecialMoveComponent::GetAnimLength(class UGearboxAnimDefinition* CustomA
 	static UFunction* pFnGetAnimLength = NULL;
 
 	if (!pFnGetAnimLength)
-		pFnGetAnimLength = (UFunction*)UObject::GObjObjects()->Data[42848];
+		pFnGetAnimLength = (UFunction*)UObject::GObjects()->Data[42848];
 
 	USpecialMoveComponent_execGetAnimLength_Parms GetAnimLength_Parms;
 	GetAnimLength_Parms.CustomAnimSMD = CustomAnimSMD;
@@ -9493,7 +9493,7 @@ bool USpecialMoveDefinition::eventIsPlayingLocally(class USpecialMoveInterface* 
 	static UFunction* pFnIsPlayingLocally = NULL;
 
 	if (!pFnIsPlayingLocally)
-		pFnIsPlayingLocally = (UFunction*)UObject::GObjObjects()->Data[41676];
+		pFnIsPlayingLocally = (UFunction*)UObject::GObjects()->Data[41676];
 
 	USpecialMoveDefinition_eventIsPlayingLocally_Parms IsPlayingLocally_Parms;
 	IsPlayingLocally_Parms.SMI = SMI;
@@ -9514,7 +9514,7 @@ class USpecialMoveDefinition* USpecialMoveDefinition::GetSMDToPlay(class USpecia
 	static UFunction* pFnGetSMDToPlay = NULL;
 
 	if (!pFnGetSMDToPlay)
-		pFnGetSMDToPlay = (UFunction*)UObject::GObjObjects()->Data[41673];
+		pFnGetSMDToPlay = (UFunction*)UObject::GObjects()->Data[41673];
 
 	USpecialMoveDefinition_execGetSMDToPlay_Parms GetSMDToPlay_Parms;
 	GetSMDToPlay_Parms.SMI = SMI;
@@ -9540,7 +9540,7 @@ bool USpecialMoveDefinition::Contains(class USpecialMoveDefinition* SMD, class U
 	static UFunction* pFnContains = NULL;
 
 	if (!pFnContains)
-		pFnContains = (UFunction*)UObject::GObjObjects()->Data[41669];
+		pFnContains = (UFunction*)UObject::GObjects()->Data[41669];
 
 	USpecialMoveDefinition_execContains_Parms Contains_Parms;
 	Contains_Parms.SMD = SMD;
@@ -9566,7 +9566,7 @@ void USpecialMoveDefinition::eventClientFinished(class USpecialMoveInterface* SM
 	static UFunction* pFnClientFinished = NULL;
 
 	if (!pFnClientFinished)
-		pFnClientFinished = (UFunction*)UObject::GObjObjects()->Data[41666];
+		pFnClientFinished = (UFunction*)UObject::GObjects()->Data[41666];
 
 	USpecialMoveDefinition_eventClientFinished_Parms ClientFinished_Parms;
 	ClientFinished_Parms.SMI = SMI;
@@ -9586,7 +9586,7 @@ void USpecialMoveDefinition::eventServerFinished(class USpecialMoveInterface* SM
 	static UFunction* pFnServerFinished = NULL;
 
 	if (!pFnServerFinished)
-		pFnServerFinished = (UFunction*)UObject::GObjObjects()->Data[41663];
+		pFnServerFinished = (UFunction*)UObject::GObjects()->Data[41663];
 
 	USpecialMoveDefinition_eventServerFinished_Parms ServerFinished_Parms;
 	ServerFinished_Parms.SMI = SMI;
@@ -9607,7 +9607,7 @@ float USpecialMoveDefinition::eventClientStarted(class USpecialMoveInterface* SM
 	static UFunction* pFnClientStarted = NULL;
 
 	if (!pFnClientStarted)
-		pFnClientStarted = (UFunction*)UObject::GObjObjects()->Data[41659];
+		pFnClientStarted = (UFunction*)UObject::GObjects()->Data[41659];
 
 	USpecialMoveDefinition_eventClientStarted_Parms ClientStarted_Parms;
 	ClientStarted_Parms.SMI = SMI;
@@ -9630,7 +9630,7 @@ void USpecialMoveDefinition::eventServerStarted(class USpecialMoveInterface* SMI
 	static UFunction* pFnServerStarted = NULL;
 
 	if (!pFnServerStarted)
-		pFnServerStarted = (UFunction*)UObject::GObjObjects()->Data[41657];
+		pFnServerStarted = (UFunction*)UObject::GObjects()->Data[41657];
 
 	USpecialMoveDefinition_eventServerStarted_Parms ServerStarted_Parms;
 	ServerStarted_Parms.SMI = SMI;
@@ -9649,7 +9649,7 @@ bool USpecialMoveDefinition::IsLocalAuthority(class USpecialMoveInterface* SMI)
 	static UFunction* pFnIsLocalAuthority = NULL;
 
 	if (!pFnIsLocalAuthority)
-		pFnIsLocalAuthority = (UFunction*)UObject::GObjObjects()->Data[41654];
+		pFnIsLocalAuthority = (UFunction*)UObject::GObjects()->Data[41654];
 
 	USpecialMoveDefinition_execIsLocalAuthority_Parms IsLocalAuthority_Parms;
 	IsLocalAuthority_Parms.SMI = SMI;
@@ -9674,7 +9674,7 @@ bool USpecialMoveDefinition::eventAuthorityCanPlay(class USpecialMoveInterface* 
 	static UFunction* pFnAuthorityCanPlay = NULL;
 
 	if (!pFnAuthorityCanPlay)
-		pFnAuthorityCanPlay = (UFunction*)UObject::GObjObjects()->Data[41651];
+		pFnAuthorityCanPlay = (UFunction*)UObject::GObjects()->Data[41651];
 
 	USpecialMoveDefinition_eventAuthorityCanPlay_Parms AuthorityCanPlay_Parms;
 	AuthorityCanPlay_Parms.SMI = SMI;
@@ -9696,7 +9696,7 @@ bool USpecialMoveExpressionList::Contains(class USpecialMoveDefinition* SMD, cla
 	static UFunction* pFnContains = NULL;
 
 	if (!pFnContains)
-		pFnContains = (UFunction*)UObject::GObjObjects()->Data[45074];
+		pFnContains = (UFunction*)UObject::GObjects()->Data[45074];
 
 	USpecialMoveExpressionList_execContains_Parms Contains_Parms;
 	Contains_Parms.SMD = SMD;
@@ -9722,7 +9722,7 @@ class USpecialMoveDefinition* USpecialMoveExpressionList::GetSMDToPlay(class USp
 	static UFunction* pFnGetSMDToPlay = NULL;
 
 	if (!pFnGetSMDToPlay)
-		pFnGetSMDToPlay = (UFunction*)UObject::GObjObjects()->Data[45071];
+		pFnGetSMDToPlay = (UFunction*)UObject::GObjects()->Data[45071];
 
 	USpecialMoveExpressionList_execGetSMDToPlay_Parms GetSMDToPlay_Parms;
 	GetSMDToPlay_Parms.SMI = SMI;
@@ -9748,7 +9748,7 @@ bool USpecialMoveRandom::Contains(class USpecialMoveDefinition* SMD, class USpec
 	static UFunction* pFnContains = NULL;
 
 	if (!pFnContains)
-		pFnContains = (UFunction*)UObject::GObjObjects()->Data[45105];
+		pFnContains = (UFunction*)UObject::GObjects()->Data[45105];
 
 	USpecialMoveRandom_execContains_Parms Contains_Parms;
 	Contains_Parms.SMD = SMD;
@@ -9774,7 +9774,7 @@ class USpecialMoveDefinition* USpecialMoveRandom::GetSMDToPlay(class USpecialMov
 	static UFunction* pFnGetSMDToPlay = NULL;
 
 	if (!pFnGetSMDToPlay)
-		pFnGetSMDToPlay = (UFunction*)UObject::GObjObjects()->Data[45102];
+		pFnGetSMDToPlay = (UFunction*)UObject::GObjects()->Data[45102];
 
 	USpecialMoveRandom_execGetSMDToPlay_Parms GetSMDToPlay_Parms;
 	GetSMDToPlay_Parms.SMI = SMI;
@@ -9798,7 +9798,7 @@ void USpecialMoveInterface::SetReplicatedSMData(struct FSpecialMoveData* NewSMDa
 	static UFunction* pFnSetReplicatedSMData = NULL;
 
 	if (!pFnSetReplicatedSMData)
-		pFnSetReplicatedSMData = (UFunction*)UObject::GObjObjects()->Data[45095];
+		pFnSetReplicatedSMData = (UFunction*)UObject::GObjects()->Data[45095];
 
 	USpecialMoveInterface_execSetReplicatedSMData_Parms SetReplicatedSMData_Parms;
 
@@ -9821,7 +9821,7 @@ void USpecialMoveInterface::eventServerSpecialMove_StopAny()
 	static UFunction* pFnServerSpecialMove_StopAny = NULL;
 
 	if (!pFnServerSpecialMove_StopAny)
-		pFnServerSpecialMove_StopAny = (UFunction*)UObject::GObjObjects()->Data[45094];
+		pFnServerSpecialMove_StopAny = (UFunction*)UObject::GObjects()->Data[45094];
 
 	USpecialMoveInterface_eventServerSpecialMove_StopAny_Parms ServerSpecialMove_StopAny_Parms;
 
@@ -9838,7 +9838,7 @@ void USpecialMoveInterface::eventServerSpecialMove_Stop(class USpecialMoveDefini
 	static UFunction* pFnServerSpecialMove_Stop = NULL;
 
 	if (!pFnServerSpecialMove_Stop)
-		pFnServerSpecialMove_Stop = (UFunction*)UObject::GObjObjects()->Data[45092];
+		pFnServerSpecialMove_Stop = (UFunction*)UObject::GObjects()->Data[45092];
 
 	USpecialMoveInterface_eventServerSpecialMove_Stop_Parms ServerSpecialMove_Stop_Parms;
 	ServerSpecialMove_Stop_Parms.OldSMD = OldSMD;
@@ -9861,7 +9861,7 @@ void USpecialMoveInterface::eventServerSpecialMove_Queue(class USpecialMoveDefin
 	static UFunction* pFnServerSpecialMove_Queue = NULL;
 
 	if (!pFnServerSpecialMove_Queue)
-		pFnServerSpecialMove_Queue = (UFunction*)UObject::GObjObjects()->Data[45085];
+		pFnServerSpecialMove_Queue = (UFunction*)UObject::GObjects()->Data[45085];
 
 	USpecialMoveInterface_eventServerSpecialMove_Queue_Parms ServerSpecialMove_Queue_Parms;
 	ServerSpecialMove_Queue_Parms.NewSMD = NewSMD;
@@ -9889,7 +9889,7 @@ void USpecialMoveInterface::eventServerSpecialMove_Play(class USpecialMoveDefini
 	static UFunction* pFnServerSpecialMove_Play = NULL;
 
 	if (!pFnServerSpecialMove_Play)
-		pFnServerSpecialMove_Play = (UFunction*)UObject::GObjObjects()->Data[45078];
+		pFnServerSpecialMove_Play = (UFunction*)UObject::GObjects()->Data[45078];
 
 	USpecialMoveInterface_eventServerSpecialMove_Play_Parms ServerSpecialMove_Play_Parms;
 	ServerSpecialMove_Play_Parms.NewSMD = NewSMD;
@@ -9912,7 +9912,7 @@ unsigned char USpecialMoveInterface::GetDefaultRootMotionRotationMode()
 	static UFunction* pFnGetDefaultRootMotionRotationMode = NULL;
 
 	if (!pFnGetDefaultRootMotionRotationMode)
-		pFnGetDefaultRootMotionRotationMode = (UFunction*)UObject::GObjObjects()->Data[41762];
+		pFnGetDefaultRootMotionRotationMode = (UFunction*)UObject::GObjects()->Data[41762];
 
 	USpecialMoveInterface_execGetDefaultRootMotionRotationMode_Parms GetDefaultRootMotionRotationMode_Parms;
 
@@ -9935,7 +9935,7 @@ unsigned char USpecialMoveInterface::GetDefaultRootMotionMode()
 	static UFunction* pFnGetDefaultRootMotionMode = NULL;
 
 	if (!pFnGetDefaultRootMotionMode)
-		pFnGetDefaultRootMotionMode = (UFunction*)UObject::GObjObjects()->Data[41760];
+		pFnGetDefaultRootMotionMode = (UFunction*)UObject::GObjects()->Data[41760];
 
 	USpecialMoveInterface_execGetDefaultRootMotionMode_Parms GetDefaultRootMotionMode_Parms;
 
@@ -9958,7 +9958,7 @@ class USkeletalMeshComponent* USpecialMoveInterface::GetSkelMesh()
 	static UFunction* pFnGetSkelMesh = NULL;
 
 	if (!pFnGetSkelMesh)
-		pFnGetSkelMesh = (UFunction*)UObject::GObjObjects()->Data[41732];
+		pFnGetSkelMesh = (UFunction*)UObject::GObjects()->Data[41732];
 
 	USpecialMoveInterface_execGetSkelMesh_Parms GetSkelMesh_Parms;
 
@@ -9981,7 +9981,7 @@ class USpecialMoveComponent* USpecialMoveInterface::GetSMComponent()
 	static UFunction* pFnGetSMComponent = NULL;
 
 	if (!pFnGetSMComponent)
-		pFnGetSMComponent = (UFunction*)UObject::GObjObjects()->Data[40202];
+		pFnGetSMComponent = (UFunction*)UObject::GObjects()->Data[40202];
 
 	USpecialMoveInterface_execGetSMComponent_Parms GetSMComponent_Parms;
 
@@ -10004,7 +10004,7 @@ class AActor* USpecialMoveInterface::GetActor()
 	static UFunction* pFnGetActor = NULL;
 
 	if (!pFnGetActor)
-		pFnGetActor = (UFunction*)UObject::GObjObjects()->Data[41741];
+		pFnGetActor = (UFunction*)UObject::GObjects()->Data[41741];
 
 	USpecialMoveInterface_execGetActor_Parms GetActor_Parms;
 
@@ -10026,7 +10026,7 @@ void AWireTerminal::eventDestroyed()
 	static UFunction* pFnDestroyed = NULL;
 
 	if (!pFnDestroyed)
-		pFnDestroyed = (UFunction*)UObject::GObjObjects()->Data[45147];
+		pFnDestroyed = (UFunction*)UObject::GObjects()->Data[45147];
 
 	AWireTerminal_eventDestroyed_Parms Destroyed_Parms;
 
@@ -10042,7 +10042,7 @@ void AWireTerminal::NotifyModifiedTerminal()
 	static UFunction* pFnNotifyModifiedTerminal = NULL;
 
 	if (!pFnNotifyModifiedTerminal)
-		pFnNotifyModifiedTerminal = (UFunction*)UObject::GObjObjects()->Data[45146];
+		pFnNotifyModifiedTerminal = (UFunction*)UObject::GObjects()->Data[45146];
 
 	AWireTerminal_execNotifyModifiedTerminal_Parms NotifyModifiedTerminal_Parms;
 
@@ -10063,7 +10063,7 @@ void UActionSequence::TriggerBehavior(struct FName OutputName)
 	static UFunction* pFnTriggerBehavior = NULL;
 
 	if (!pFnTriggerBehavior)
-		pFnTriggerBehavior = (UFunction*)UObject::GObjObjects()->Data[38908];
+		pFnTriggerBehavior = (UFunction*)UObject::GObjects()->Data[38908];
 
 	UActionSequence_execTriggerBehavior_Parms TriggerBehavior_Parms;
 	memcpy(&TriggerBehavior_Parms.OutputName, &OutputName, 0x8);
@@ -10086,7 +10086,7 @@ float UActionSequence::GetRangeValue(struct FAIRange* Range)
 	static UFunction* pFnGetRangeValue = NULL;
 
 	if (!pFnGetRangeValue)
-		pFnGetRangeValue = (UFunction*)UObject::GObjObjects()->Data[38924];
+		pFnGetRangeValue = (UFunction*)UObject::GObjects()->Data[38924];
 
 	UActionSequence_execGetRangeValue_Parms GetRangeValue_Parms;
 
@@ -10113,7 +10113,7 @@ bool UActionSequence::RangeIsValid(struct FAIRange* Range)
 	static UFunction* pFnRangeIsValid = NULL;
 
 	if (!pFnRangeIsValid)
-		pFnRangeIsValid = (UFunction*)UObject::GObjObjects()->Data[38921];
+		pFnRangeIsValid = (UFunction*)UObject::GObjects()->Data[38921];
 
 	UActionSequence_execRangeIsValid_Parms RangeIsValid_Parms;
 
@@ -10139,7 +10139,7 @@ void UActionSequence::Finish(unsigned long bFailed)
 	static UFunction* pFnFinish = NULL;
 
 	if (!pFnFinish)
-		pFnFinish = (UFunction*)UObject::GObjObjects()->Data[38919];
+		pFnFinish = (UFunction*)UObject::GObjects()->Data[38919];
 
 	UActionSequence_execFinish_Parms Finish_Parms;
 	Finish_Parms.bFailed = bFailed;
@@ -10161,7 +10161,7 @@ bool UActionSequence::IsRunning()
 	static UFunction* pFnIsRunning = NULL;
 
 	if (!pFnIsRunning)
-		pFnIsRunning = (UFunction*)UObject::GObjObjects()->Data[38917];
+		pFnIsRunning = (UFunction*)UObject::GObjects()->Data[38917];
 
 	UActionSequence_execIsRunning_Parms IsRunning_Parms;
 
@@ -10183,7 +10183,7 @@ void UActionSequence::eventScriptCleanUp()
 	static UFunction* pFnScriptCleanUp = NULL;
 
 	if (!pFnScriptCleanUp)
-		pFnScriptCleanUp = (UFunction*)UObject::GObjObjects()->Data[38916];
+		pFnScriptCleanUp = (UFunction*)UObject::GObjects()->Data[38916];
 
 	UActionSequence_eventScriptCleanUp_Parms ScriptCleanUp_Parms;
 
@@ -10200,7 +10200,7 @@ struct FName UActionSequence::eventCanRun()
 	static UFunction* pFnCanRun = NULL;
 
 	if (!pFnCanRun)
-		pFnCanRun = (UFunction*)UObject::GObjObjects()->Data[38914];
+		pFnCanRun = (UFunction*)UObject::GObjects()->Data[38914];
 
 	UActionSequence_eventCanRun_Parms CanRun_Parms;
 
@@ -10219,7 +10219,7 @@ void UActionSequence::eventActivateEvent(struct FName EventName)
 	static UFunction* pFnActivateEvent = NULL;
 
 	if (!pFnActivateEvent)
-		pFnActivateEvent = (UFunction*)UObject::GObjObjects()->Data[38912];
+		pFnActivateEvent = (UFunction*)UObject::GObjects()->Data[38912];
 
 	UActionSequence_eventActivateEvent_Parms ActivateEvent_Parms;
 	memcpy(&ActivateEvent_Parms.EventName, &EventName, 0x8);
@@ -10236,7 +10236,7 @@ void UActionSequence::eventUpdate()
 	static UFunction* pFnUpdate = NULL;
 
 	if (!pFnUpdate)
-		pFnUpdate = (UFunction*)UObject::GObjObjects()->Data[38911];
+		pFnUpdate = (UFunction*)UObject::GObjects()->Data[38911];
 
 	UActionSequence_eventUpdate_Parms Update_Parms;
 
@@ -10252,7 +10252,7 @@ void UActionSequence::eventInit()
 	static UFunction* pFnInit = NULL;
 
 	if (!pFnInit)
-		pFnInit = (UFunction*)UObject::GObjObjects()->Data[38910];
+		pFnInit = (UFunction*)UObject::GObjects()->Data[38910];
 
 	UActionSequence_eventInit_Parms Init_Parms;
 
@@ -10268,7 +10268,7 @@ void UActionSequence::eventStop()
 	static UFunction* pFnStop = NULL;
 
 	if (!pFnStop)
-		pFnStop = (UFunction*)UObject::GObjObjects()->Data[38909];
+		pFnStop = (UFunction*)UObject::GObjects()->Data[38909];
 
 	UActionSequence_eventStop_Parms Stop_Parms;
 
@@ -10284,7 +10284,7 @@ void UActionSequence::eventStart()
 	static UFunction* pFnStart = NULL;
 
 	if (!pFnStart)
-		pFnStart = (UFunction*)UObject::GObjObjects()->Data[38907];
+		pFnStart = (UFunction*)UObject::GObjects()->Data[38907];
 
 	UActionSequence_eventStart_Parms Start_Parms;
 
@@ -10301,7 +10301,7 @@ void UActionSequence::eventInterruptSequence(class UActionSequence* Interrupting
 	static UFunction* pFnInterruptSequence = NULL;
 
 	if (!pFnInterruptSequence)
-		pFnInterruptSequence = (UFunction*)UObject::GObjObjects()->Data[38904];
+		pFnInterruptSequence = (UFunction*)UObject::GObjects()->Data[38904];
 
 	UActionSequence_eventInterruptSequence_Parms InterruptSequence_Parms;
 	InterruptSequence_Parms.InterruptingSequence = InterruptingSequence;
@@ -10318,7 +10318,7 @@ void UActionSequence::eventStopSequence()
 	static UFunction* pFnStopSequence = NULL;
 
 	if (!pFnStopSequence)
-		pFnStopSequence = (UFunction*)UObject::GObjObjects()->Data[38903];
+		pFnStopSequence = (UFunction*)UObject::GObjects()->Data[38903];
 
 	UActionSequence_eventStopSequence_Parms StopSequence_Parms;
 
@@ -10334,7 +10334,7 @@ void UActionSequence::eventStartSequence()
 	static UFunction* pFnStartSequence = NULL;
 
 	if (!pFnStartSequence)
-		pFnStartSequence = (UFunction*)UObject::GObjObjects()->Data[38902];
+		pFnStartSequence = (UFunction*)UObject::GObjects()->Data[38902];
 
 	UActionSequence_eventStartSequence_Parms StartSequence_Parms;
 
@@ -10351,7 +10351,7 @@ void UActionSequence::ExecuteSequence(class UActionSequence* SequenceTemplate)
 	static UFunction* pFnExecuteSequence = NULL;
 
 	if (!pFnExecuteSequence)
-		pFnExecuteSequence = (UFunction*)UObject::GObjObjects()->Data[38900];
+		pFnExecuteSequence = (UFunction*)UObject::GObjects()->Data[38900];
 
 	UActionSequence_execExecuteSequence_Parms ExecuteSequence_Parms;
 	ExecuteSequence_Parms.SequenceTemplate = SequenceTemplate;
@@ -10373,7 +10373,7 @@ void UActionSequence::Sleep(float Seconds)
 	static UFunction* pFnSleep = NULL;
 
 	if (!pFnSleep)
-		pFnSleep = (UFunction*)UObject::GObjObjects()->Data[38898];
+		pFnSleep = (UFunction*)UObject::GObjects()->Data[38898];
 
 	UActionSequence_execSleep_Parms Sleep_Parms;
 	Sleep_Parms.Seconds = Seconds;
@@ -10395,7 +10395,7 @@ void UActionSequence::RunSubSequence(class UActionSequence* SubSequence)
 	static UFunction* pFnRunSubSequence = NULL;
 
 	if (!pFnRunSubSequence)
-		pFnRunSubSequence = (UFunction*)UObject::GObjObjects()->Data[38896];
+		pFnRunSubSequence = (UFunction*)UObject::GObjects()->Data[38896];
 
 	UActionSequence_execRunSubSequence_Parms RunSubSequence_Parms;
 	RunSubSequence_Parms.SubSequence = SubSequence;
@@ -10416,7 +10416,7 @@ void UActionSequence::InterruptLatentAction()
 	static UFunction* pFnInterruptLatentAction = NULL;
 
 	if (!pFnInterruptLatentAction)
-		pFnInterruptLatentAction = (UFunction*)UObject::GObjObjects()->Data[38895];
+		pFnInterruptLatentAction = (UFunction*)UObject::GObjects()->Data[38895];
 
 	UActionSequence_execInterruptLatentAction_Parms InterruptLatentAction_Parms;
 
@@ -10436,7 +10436,7 @@ void UActionSequence::DoRuleSetPop()
 	static UFunction* pFnDoRuleSetPop = NULL;
 
 	if (!pFnDoRuleSetPop)
-		pFnDoRuleSetPop = (UFunction*)UObject::GObjObjects()->Data[38894];
+		pFnDoRuleSetPop = (UFunction*)UObject::GObjects()->Data[38894];
 
 	UActionSequence_execDoRuleSetPop_Parms DoRuleSetPop_Parms;
 
@@ -10458,7 +10458,7 @@ bool UActionSequence::DoRuleSetPush(class URuleSet* NewRuleSet)
 	static UFunction* pFnDoRuleSetPush = NULL;
 
 	if (!pFnDoRuleSetPush)
-		pFnDoRuleSetPush = (UFunction*)UObject::GObjObjects()->Data[38891];
+		pFnDoRuleSetPush = (UFunction*)UObject::GObjects()->Data[38891];
 
 	UActionSequence_execDoRuleSetPush_Parms DoRuleSetPush_Parms;
 	DoRuleSetPush_Parms.NewRuleSet = NewRuleSet;
@@ -10482,7 +10482,7 @@ void UActionSequence::DoRuleSetSwitch(class URuleSet* NewRuleSet)
 	static UFunction* pFnDoRuleSetSwitch = NULL;
 
 	if (!pFnDoRuleSetSwitch)
-		pFnDoRuleSetSwitch = (UFunction*)UObject::GObjObjects()->Data[38889];
+		pFnDoRuleSetSwitch = (UFunction*)UObject::GObjects()->Data[38889];
 
 	UActionSequence_execDoRuleSetSwitch_Parms DoRuleSetSwitch_Parms;
 	DoRuleSetSwitch_Parms.NewRuleSet = NewRuleSet;
@@ -10503,7 +10503,7 @@ void UActionSequence::PreventNewRulesFromStarting()
 	static UFunction* pFnPreventNewRulesFromStarting = NULL;
 
 	if (!pFnPreventNewRulesFromStarting)
-		pFnPreventNewRulesFromStarting = (UFunction*)UObject::GObjObjects()->Data[38888];
+		pFnPreventNewRulesFromStarting = (UFunction*)UObject::GObjects()->Data[38888];
 
 	UActionSequence_execPreventNewRulesFromStarting_Parms PreventNewRulesFromStarting_Parms;
 
@@ -10524,7 +10524,7 @@ class URule* UActionSequence::GetRuleNative()
 	static UFunction* pFnGetRuleNative = NULL;
 
 	if (!pFnGetRuleNative)
-		pFnGetRuleNative = (UFunction*)UObject::GObjObjects()->Data[38886];
+		pFnGetRuleNative = (UFunction*)UObject::GObjects()->Data[38886];
 
 	UActionSequence_execGetRuleNative_Parms GetRuleNative_Parms;
 
@@ -10548,7 +10548,7 @@ void UActionSequence::GetActionSequence(class UActionSequence* Template, class U
 	static UFunction* pFnGetActionSequence = NULL;
 
 	if (!pFnGetActionSequence)
-		pFnGetActionSequence = (UFunction*)UObject::GObjObjects()->Data[38883];
+		pFnGetActionSequence = (UFunction*)UObject::GObjects()->Data[38883];
 
 	UActionSequence_execGetActionSequence_Parms GetActionSequence_Parms;
 	GetActionSequence_Parms.Template = Template;
@@ -10574,7 +10574,7 @@ bool UActionSequence::IsInLabel(struct FName TestLabel)
 	static UFunction* pFnIsInLabel = NULL;
 
 	if (!pFnIsInLabel)
-		pFnIsInLabel = (UFunction*)UObject::GObjObjects()->Data[38880];
+		pFnIsInLabel = (UFunction*)UObject::GObjects()->Data[38880];
 
 	UActionSequence_execIsInLabel_Parms IsInLabel_Parms;
 	memcpy(&IsInLabel_Parms.TestLabel, &TestLabel, 0x8);
@@ -10598,7 +10598,7 @@ bool UActionSequence::IsAtomic()
 	static UFunction* pFnIsAtomic = NULL;
 
 	if (!pFnIsAtomic)
-		pFnIsAtomic = (UFunction*)UObject::GObjObjects()->Data[38878];
+		pFnIsAtomic = (UFunction*)UObject::GObjects()->Data[38878];
 
 	UActionSequence_execIsAtomic_Parms IsAtomic_Parms;
 
@@ -10620,7 +10620,7 @@ void UActionSequence::StopAtomic()
 	static UFunction* pFnStopAtomic = NULL;
 
 	if (!pFnStopAtomic)
-		pFnStopAtomic = (UFunction*)UObject::GObjObjects()->Data[38877];
+		pFnStopAtomic = (UFunction*)UObject::GObjects()->Data[38877];
 
 	UActionSequence_execStopAtomic_Parms StopAtomic_Parms;
 
@@ -10640,7 +10640,7 @@ void UActionSequence::StartAtomic()
 	static UFunction* pFnStartAtomic = NULL;
 
 	if (!pFnStartAtomic)
-		pFnStartAtomic = (UFunction*)UObject::GObjObjects()->Data[38876];
+		pFnStartAtomic = (UFunction*)UObject::GObjects()->Data[38876];
 
 	UActionSequence_execStartAtomic_Parms StartAtomic_Parms;
 
@@ -10661,7 +10661,7 @@ bool UActionSequence::IsActionReadyToFinish()
 	static UFunction* pFnIsActionReadyToFinish = NULL;
 
 	if (!pFnIsActionReadyToFinish)
-		pFnIsActionReadyToFinish = (UFunction*)UObject::GObjObjects()->Data[38874];
+		pFnIsActionReadyToFinish = (UFunction*)UObject::GObjects()->Data[38874];
 
 	UActionSequence_execIsActionReadyToFinish_Parms IsActionReadyToFinish_Parms;
 
@@ -10684,7 +10684,7 @@ bool UActionSequenceList::IsActionReadyToFinish()
 	static UFunction* pFnIsActionReadyToFinish = NULL;
 
 	if (!pFnIsActionReadyToFinish)
-		pFnIsActionReadyToFinish = (UFunction*)UObject::GObjObjects()->Data[39182];
+		pFnIsActionReadyToFinish = (UFunction*)UObject::GObjects()->Data[39182];
 
 	UActionSequenceList_execIsActionReadyToFinish_Parms IsActionReadyToFinish_Parms;
 
@@ -10706,7 +10706,7 @@ void UAction_PawnMovementBase::eventPostMovement()
 	static UFunction* pFnPostMovement = NULL;
 
 	if (!pFnPostMovement)
-		pFnPostMovement = (UFunction*)UObject::GObjObjects()->Data[39166];
+		pFnPostMovement = (UFunction*)UObject::GObjects()->Data[39166];
 
 	UAction_PawnMovementBase_eventPostMovement_Parms PostMovement_Parms;
 
@@ -10722,7 +10722,7 @@ void UAction_PawnMovementBase::eventPreMovement()
 	static UFunction* pFnPreMovement = NULL;
 
 	if (!pFnPreMovement)
-		pFnPreMovement = (UFunction*)UObject::GObjObjects()->Data[39165];
+		pFnPreMovement = (UFunction*)UObject::GObjects()->Data[39165];
 
 	UAction_PawnMovementBase_eventPreMovement_Parms PreMovement_Parms;
 
@@ -10738,7 +10738,7 @@ void UAction_PawnMovementBase::eventPrePathFind()
 	static UFunction* pFnPrePathFind = NULL;
 
 	if (!pFnPrePathFind)
-		pFnPrePathFind = (UFunction*)UObject::GObjObjects()->Data[39164];
+		pFnPrePathFind = (UFunction*)UObject::GObjects()->Data[39164];
 
 	UAction_PawnMovementBase_eventPrePathFind_Parms PrePathFind_Parms;
 
@@ -10755,7 +10755,7 @@ void UAction_PawnMovementBase::eventInterruptSequence(class UActionSequence* Int
 	static UFunction* pFnInterruptSequence = NULL;
 
 	if (!pFnInterruptSequence)
-		pFnInterruptSequence = (UFunction*)UObject::GObjObjects()->Data[39162];
+		pFnInterruptSequence = (UFunction*)UObject::GObjects()->Data[39162];
 
 	UAction_PawnMovementBase_eventInterruptSequence_Parms InterruptSequence_Parms;
 	InterruptSequence_Parms.InterruptingSequence = InterruptingSequence;
@@ -10772,7 +10772,7 @@ void UAction_PawnMovementBase::eventStopSequence()
 	static UFunction* pFnStopSequence = NULL;
 
 	if (!pFnStopSequence)
-		pFnStopSequence = (UFunction*)UObject::GObjObjects()->Data[39160];
+		pFnStopSequence = (UFunction*)UObject::GObjects()->Data[39160];
 
 	UAction_PawnMovementBase_eventStopSequence_Parms StopSequence_Parms;
 
@@ -10788,7 +10788,7 @@ void UAction_PawnMovementBase::eventStartSequence()
 	static UFunction* pFnStartSequence = NULL;
 
 	if (!pFnStartSequence)
-		pFnStartSequence = (UFunction*)UObject::GObjObjects()->Data[39145];
+		pFnStartSequence = (UFunction*)UObject::GObjects()->Data[39145];
 
 	UAction_PawnMovementBase_eventStartSequence_Parms StartSequence_Parms;
 
@@ -10806,7 +10806,7 @@ void UAction_PawnMovementBase::MovePawnToDestinationLocation(struct FVector Goal
 	static UFunction* pFnMovePawnToDestinationLocation = NULL;
 
 	if (!pFnMovePawnToDestinationLocation)
-		pFnMovePawnToDestinationLocation = (UFunction*)UObject::GObjObjects()->Data[39142];
+		pFnMovePawnToDestinationLocation = (UFunction*)UObject::GObjects()->Data[39142];
 
 	UAction_PawnMovementBase_execMovePawnToDestinationLocation_Parms MovePawnToDestinationLocation_Parms;
 	memcpy(&MovePawnToDestinationLocation_Parms.GoalLocation, &GoalLocation, 0xC);
@@ -10829,7 +10829,7 @@ void UAction_PawnMovementBase::TakeDebugSnapshotMoveFailure(unsigned char Cause)
 	static UFunction* pFnTakeDebugSnapshotMoveFailure = NULL;
 
 	if (!pFnTakeDebugSnapshotMoveFailure)
-		pFnTakeDebugSnapshotMoveFailure = (UFunction*)UObject::GObjObjects()->Data[39140];
+		pFnTakeDebugSnapshotMoveFailure = (UFunction*)UObject::GObjects()->Data[39140];
 
 	UAction_PawnMovementBase_execTakeDebugSnapshotMoveFailure_Parms TakeDebugSnapshotMoveFailure_Parms;
 	TakeDebugSnapshotMoveFailure_Parms.Cause = Cause;
@@ -10851,7 +10851,7 @@ void UAction_PawnMovementBase::SetMaxMovementSpeed(unsigned char NewMaxSpeed)
 	static UFunction* pFnSetMaxMovementSpeed = NULL;
 
 	if (!pFnSetMaxMovementSpeed)
-		pFnSetMaxMovementSpeed = (UFunction*)UObject::GObjObjects()->Data[39138];
+		pFnSetMaxMovementSpeed = (UFunction*)UObject::GObjects()->Data[39138];
 
 	UAction_PawnMovementBase_execSetMaxMovementSpeed_Parms SetMaxMovementSpeed_Parms;
 	SetMaxMovementSpeed_Parms.NewMaxSpeed = NewMaxSpeed;
@@ -10872,7 +10872,7 @@ void UAction_PawnMovementBase::EndMovePawnToDestinationLocation()
 	static UFunction* pFnEndMovePawnToDestinationLocation = NULL;
 
 	if (!pFnEndMovePawnToDestinationLocation)
-		pFnEndMovePawnToDestinationLocation = (UFunction*)UObject::GObjObjects()->Data[39137];
+		pFnEndMovePawnToDestinationLocation = (UFunction*)UObject::GObjects()->Data[39137];
 
 	UAction_PawnMovementBase_execEndMovePawnToDestinationLocation_Parms EndMovePawnToDestinationLocation_Parms;
 
@@ -10892,7 +10892,7 @@ void UActionSequenceRandom::EvaluateActionList()
 	static UFunction* pFnEvaluateActionList = NULL;
 
 	if (!pFnEvaluateActionList)
-		pFnEvaluateActionList = (UFunction*)UObject::GObjObjects()->Data[39193];
+		pFnEvaluateActionList = (UFunction*)UObject::GObjects()->Data[39193];
 
 	UActionSequenceRandom_execEvaluateActionList_Parms EvaluateActionList_Parms;
 
@@ -10909,7 +10909,7 @@ void UActionSequenceRandom::OverrideNextSequenceToRun(class UActionSequence* New
 	static UFunction* pFnOverrideNextSequenceToRun = NULL;
 
 	if (!pFnOverrideNextSequenceToRun)
-		pFnOverrideNextSequenceToRun = (UFunction*)UObject::GObjObjects()->Data[39191];
+		pFnOverrideNextSequenceToRun = (UFunction*)UObject::GObjects()->Data[39191];
 
 	UActionSequenceRandom_execOverrideNextSequenceToRun_Parms OverrideNextSequenceToRun_Parms;
 	OverrideNextSequenceToRun_Parms.NewSequence = NewSequence;
@@ -10931,7 +10931,7 @@ class UActionSequence* UActionSequenceRandom::GetRandomAction()
 	static UFunction* pFnGetRandomAction = NULL;
 
 	if (!pFnGetRandomAction)
-		pFnGetRandomAction = (UFunction*)UObject::GObjObjects()->Data[39189];
+		pFnGetRandomAction = (UFunction*)UObject::GObjects()->Data[39189];
 
 	UActionSequenceRandom_execGetRandomAction_Parms GetRandomAction_Parms;
 
@@ -10955,7 +10955,7 @@ float UAIComponent::GetAIRangeTime(struct FAIRange InRange)
 	static UFunction* pFnGetAIRangeTime = NULL;
 
 	if (!pFnGetAIRangeTime)
-		pFnGetAIRangeTime = (UFunction*)UObject::GObjObjects()->Data[38771];
+		pFnGetAIRangeTime = (UFunction*)UObject::GObjects()->Data[38771];
 
 	UAIComponent_execGetAIRangeTime_Parms GetAIRangeTime_Parms;
 	memcpy(&GetAIRangeTime_Parms.InRange, &InRange, 0x8);
@@ -10979,7 +10979,7 @@ void UAIComponent::DrawAITree(class UCanvas* Canvas)
 	static UFunction* pFnDrawAITree = NULL;
 
 	if (!pFnDrawAITree)
-		pFnDrawAITree = (UFunction*)UObject::GObjObjects()->Data[38769];
+		pFnDrawAITree = (UFunction*)UObject::GObjects()->Data[38769];
 
 	UAIComponent_execDrawAITree_Parms DrawAITree_Parms;
 	DrawAITree_Parms.Canvas = Canvas;
@@ -11000,7 +11000,7 @@ void UAIComponent::LogDemigodHolds()
 	static UFunction* pFnLogDemigodHolds = NULL;
 
 	if (!pFnLogDemigodHolds)
-		pFnLogDemigodHolds = (UFunction*)UObject::GObjObjects()->Data[38763];
+		pFnLogDemigodHolds = (UFunction*)UObject::GObjects()->Data[38763];
 
 	UAIComponent_execLogDemigodHolds_Parms LogDemigodHolds_Parms;
 
@@ -11018,7 +11018,7 @@ void UAIComponent::ReleaseDialog(struct FName HoldName, class UObject* Tag)
 	static UFunction* pFnReleaseDialog = NULL;
 
 	if (!pFnReleaseDialog)
-		pFnReleaseDialog = (UFunction*)UObject::GObjObjects()->Data[38760];
+		pFnReleaseDialog = (UFunction*)UObject::GObjects()->Data[38760];
 
 	UAIComponent_execReleaseDialog_Parms ReleaseDialog_Parms;
 	memcpy(&ReleaseDialog_Parms.HoldName, &HoldName, 0x8);
@@ -11042,7 +11042,7 @@ void UAIComponent::HoldDialog(struct FName HoldName, class UObject* Tag)
 	static UFunction* pFnHoldDialog = NULL;
 
 	if (!pFnHoldDialog)
-		pFnHoldDialog = (UFunction*)UObject::GObjObjects()->Data[38757];
+		pFnHoldDialog = (UFunction*)UObject::GObjects()->Data[38757];
 
 	UAIComponent_execHoldDialog_Parms HoldDialog_Parms;
 	memcpy(&HoldDialog_Parms.HoldName, &HoldName, 0x8);
@@ -11065,7 +11065,7 @@ bool UAIComponent::DialogOnHold()
 	static UFunction* pFnDialogOnHold = NULL;
 
 	if (!pFnDialogOnHold)
-		pFnDialogOnHold = (UFunction*)UObject::GObjObjects()->Data[38755];
+		pFnDialogOnHold = (UFunction*)UObject::GObjects()->Data[38755];
 
 	UAIComponent_execDialogOnHold_Parms DialogOnHold_Parms;
 
@@ -11089,7 +11089,7 @@ void UAIComponent::ReleaseGod(struct FName HoldName, class UObject* Tag)
 	static UFunction* pFnReleaseGod = NULL;
 
 	if (!pFnReleaseGod)
-		pFnReleaseGod = (UFunction*)UObject::GObjObjects()->Data[38752];
+		pFnReleaseGod = (UFunction*)UObject::GObjects()->Data[38752];
 
 	UAIComponent_execReleaseGod_Parms ReleaseGod_Parms;
 	memcpy(&ReleaseGod_Parms.HoldName, &HoldName, 0x8);
@@ -11113,7 +11113,7 @@ void UAIComponent::HoldGod(struct FName HoldName, class UObject* Tag)
 	static UFunction* pFnHoldGod = NULL;
 
 	if (!pFnHoldGod)
-		pFnHoldGod = (UFunction*)UObject::GObjObjects()->Data[38749];
+		pFnHoldGod = (UFunction*)UObject::GObjects()->Data[38749];
 
 	UAIComponent_execHoldGod_Parms HoldGod_Parms;
 	memcpy(&HoldGod_Parms.HoldName, &HoldName, 0x8);
@@ -11136,7 +11136,7 @@ bool UAIComponent::GodOnHold()
 	static UFunction* pFnGodOnHold = NULL;
 
 	if (!pFnGodOnHold)
-		pFnGodOnHold = (UFunction*)UObject::GObjObjects()->Data[38747];
+		pFnGodOnHold = (UFunction*)UObject::GObjects()->Data[38747];
 
 	UAIComponent_execGodOnHold_Parms GodOnHold_Parms;
 
@@ -11160,7 +11160,7 @@ void UAIComponent::ReleaseDemigod(struct FName HoldName, class UObject* Tag)
 	static UFunction* pFnReleaseDemigod = NULL;
 
 	if (!pFnReleaseDemigod)
-		pFnReleaseDemigod = (UFunction*)UObject::GObjObjects()->Data[38744];
+		pFnReleaseDemigod = (UFunction*)UObject::GObjects()->Data[38744];
 
 	UAIComponent_execReleaseDemigod_Parms ReleaseDemigod_Parms;
 	memcpy(&ReleaseDemigod_Parms.HoldName, &HoldName, 0x8);
@@ -11184,7 +11184,7 @@ void UAIComponent::HoldDemigod(struct FName HoldName, class UObject* Tag)
 	static UFunction* pFnHoldDemigod = NULL;
 
 	if (!pFnHoldDemigod)
-		pFnHoldDemigod = (UFunction*)UObject::GObjObjects()->Data[38741];
+		pFnHoldDemigod = (UFunction*)UObject::GObjects()->Data[38741];
 
 	UAIComponent_execHoldDemigod_Parms HoldDemigod_Parms;
 	memcpy(&HoldDemigod_Parms.HoldName, &HoldName, 0x8);
@@ -11207,7 +11207,7 @@ bool UAIComponent::DemigodOnHold()
 	static UFunction* pFnDemigodOnHold = NULL;
 
 	if (!pFnDemigodOnHold)
-		pFnDemigodOnHold = (UFunction*)UObject::GObjObjects()->Data[38739];
+		pFnDemigodOnHold = (UFunction*)UObject::GObjects()->Data[38739];
 
 	UAIComponent_execDemigodOnHold_Parms DemigodOnHold_Parms;
 
@@ -11231,7 +11231,7 @@ void UAIComponent::ReleaseMovement(struct FName HoldName, class UObject* Tag)
 	static UFunction* pFnReleaseMovement = NULL;
 
 	if (!pFnReleaseMovement)
-		pFnReleaseMovement = (UFunction*)UObject::GObjObjects()->Data[38736];
+		pFnReleaseMovement = (UFunction*)UObject::GObjects()->Data[38736];
 
 	UAIComponent_execReleaseMovement_Parms ReleaseMovement_Parms;
 	memcpy(&ReleaseMovement_Parms.HoldName, &HoldName, 0x8);
@@ -11255,7 +11255,7 @@ void UAIComponent::HoldMovement(struct FName HoldName, class UObject* Tag)
 	static UFunction* pFnHoldMovement = NULL;
 
 	if (!pFnHoldMovement)
-		pFnHoldMovement = (UFunction*)UObject::GObjObjects()->Data[38733];
+		pFnHoldMovement = (UFunction*)UObject::GObjects()->Data[38733];
 
 	UAIComponent_execHoldMovement_Parms HoldMovement_Parms;
 	memcpy(&HoldMovement_Parms.HoldName, &HoldName, 0x8);
@@ -11278,7 +11278,7 @@ bool UAIComponent::MovementOnHold()
 	static UFunction* pFnMovementOnHold = NULL;
 
 	if (!pFnMovementOnHold)
-		pFnMovementOnHold = (UFunction*)UObject::GObjObjects()->Data[38731];
+		pFnMovementOnHold = (UFunction*)UObject::GObjects()->Data[38731];
 
 	UAIComponent_execMovementOnHold_Parms MovementOnHold_Parms;
 
@@ -11302,7 +11302,7 @@ void UAIComponent::ReleaseTarget(struct FName HoldName, class UObject* Tag)
 	static UFunction* pFnReleaseTarget = NULL;
 
 	if (!pFnReleaseTarget)
-		pFnReleaseTarget = (UFunction*)UObject::GObjObjects()->Data[38728];
+		pFnReleaseTarget = (UFunction*)UObject::GObjects()->Data[38728];
 
 	UAIComponent_execReleaseTarget_Parms ReleaseTarget_Parms;
 	memcpy(&ReleaseTarget_Parms.HoldName, &HoldName, 0x8);
@@ -11326,7 +11326,7 @@ void UAIComponent::HoldTarget(struct FName HoldName, class UObject* Tag)
 	static UFunction* pFnHoldTarget = NULL;
 
 	if (!pFnHoldTarget)
-		pFnHoldTarget = (UFunction*)UObject::GObjObjects()->Data[38725];
+		pFnHoldTarget = (UFunction*)UObject::GObjects()->Data[38725];
 
 	UAIComponent_execHoldTarget_Parms HoldTarget_Parms;
 	memcpy(&HoldTarget_Parms.HoldName, &HoldName, 0x8);
@@ -11349,7 +11349,7 @@ bool UAIComponent::TargetOnHold()
 	static UFunction* pFnTargetOnHold = NULL;
 
 	if (!pFnTargetOnHold)
-		pFnTargetOnHold = (UFunction*)UObject::GObjObjects()->Data[38723];
+		pFnTargetOnHold = (UFunction*)UObject::GObjects()->Data[38723];
 
 	UAIComponent_execTargetOnHold_Parms TargetOnHold_Parms;
 
@@ -11373,7 +11373,7 @@ void UAIComponent::Release(struct FName HoldName, class UObject* Tag)
 	static UFunction* pFnRelease = NULL;
 
 	if (!pFnRelease)
-		pFnRelease = (UFunction*)UObject::GObjObjects()->Data[38720];
+		pFnRelease = (UFunction*)UObject::GObjects()->Data[38720];
 
 	UAIComponent_execRelease_Parms Release_Parms;
 	memcpy(&Release_Parms.HoldName, &HoldName, 0x8);
@@ -11397,7 +11397,7 @@ void UAIComponent::Hold(struct FName HoldName, class UObject* Tag)
 	static UFunction* pFnHold = NULL;
 
 	if (!pFnHold)
-		pFnHold = (UFunction*)UObject::GObjObjects()->Data[38717];
+		pFnHold = (UFunction*)UObject::GObjects()->Data[38717];
 
 	UAIComponent_execHold_Parms Hold_Parms;
 	memcpy(&Hold_Parms.HoldName, &HoldName, 0x8);
@@ -11420,7 +11420,7 @@ bool UAIComponent::OnHold()
 	static UFunction* pFnOnHold = NULL;
 
 	if (!pFnOnHold)
-		pFnOnHold = (UFunction*)UObject::GObjObjects()->Data[38715];
+		pFnOnHold = (UFunction*)UObject::GObjects()->Data[38715];
 
 	UAIComponent_execOnHold_Parms OnHold_Parms;
 
@@ -11442,7 +11442,7 @@ void UAIComponent::ForceUpdateTargets()
 	static UFunction* pFnForceUpdateTargets = NULL;
 
 	if (!pFnForceUpdateTargets)
-		pFnForceUpdateTargets = (UFunction*)UObject::GObjObjects()->Data[38714];
+		pFnForceUpdateTargets = (UFunction*)UObject::GObjects()->Data[38714];
 
 	UAIComponent_execForceUpdateTargets_Parms ForceUpdateTargets_Parms;
 
@@ -11464,7 +11464,7 @@ void UAIComponent::TargetChanged(class AActor* OldTarget, class AActor* NewTarge
 	static UFunction* pFnTargetChanged = NULL;
 
 	if (!pFnTargetChanged)
-		pFnTargetChanged = (UFunction*)UObject::GObjObjects()->Data[38711];
+		pFnTargetChanged = (UFunction*)UObject::GObjects()->Data[38711];
 
 	UAIComponent_execTargetChanged_Parms TargetChanged_Parms;
 	TargetChanged_Parms.OldTarget = OldTarget;
@@ -11487,7 +11487,7 @@ void UAIComponent::SetTarget(class AActor* NewTarget)
 	static UFunction* pFnSetTarget = NULL;
 
 	if (!pFnSetTarget)
-		pFnSetTarget = (UFunction*)UObject::GObjObjects()->Data[38709];
+		pFnSetTarget = (UFunction*)UObject::GObjects()->Data[38709];
 
 	UAIComponent_execSetTarget_Parms SetTarget_Parms;
 	SetTarget_Parms.NewTarget = NewTarget;
@@ -11509,7 +11509,7 @@ void UAIComponent::SetScriptedTarget(class AActor* NewScriptedTarget)
 	static UFunction* pFnSetScriptedTarget = NULL;
 
 	if (!pFnSetScriptedTarget)
-		pFnSetScriptedTarget = (UFunction*)UObject::GObjObjects()->Data[38707];
+		pFnSetScriptedTarget = (UFunction*)UObject::GObjects()->Data[38707];
 
 	UAIComponent_execSetScriptedTarget_Parms SetScriptedTarget_Parms;
 	SetScriptedTarget_Parms.NewScriptedTarget = NewScriptedTarget;
@@ -11533,7 +11533,7 @@ class UMindTargetInfo* UAIComponent::GetTargetRecordFor(class AActor* Target, un
 	static UFunction* pFnGetTargetRecordFor = NULL;
 
 	if (!pFnGetTargetRecordFor)
-		pFnGetTargetRecordFor = (UFunction*)UObject::GObjObjects()->Data[38703];
+		pFnGetTargetRecordFor = (UFunction*)UObject::GObjects()->Data[38703];
 
 	UAIComponent_execGetTargetRecordFor_Parms GetTargetRecordFor_Parms;
 	GetTargetRecordFor_Parms.Target = Target;
@@ -11559,7 +11559,7 @@ class UMindTargetInfo* UAIComponent::GetTargetRecord(unsigned long bTryParent)
 	static UFunction* pFnGetTargetRecord = NULL;
 
 	if (!pFnGetTargetRecord)
-		pFnGetTargetRecord = (UFunction*)UObject::GObjObjects()->Data[38700];
+		pFnGetTargetRecord = (UFunction*)UObject::GObjects()->Data[38700];
 
 	UAIComponent_execGetTargetRecord_Parms GetTargetRecord_Parms;
 	GetTargetRecord_Parms.bTryParent = bTryParent;
@@ -11584,7 +11584,7 @@ bool UAIComponent::IsTarget(class AActor* TestTarget)
 	static UFunction* pFnIsTarget = NULL;
 
 	if (!pFnIsTarget)
-		pFnIsTarget = (UFunction*)UObject::GObjObjects()->Data[38697];
+		pFnIsTarget = (UFunction*)UObject::GObjects()->Data[38697];
 
 	UAIComponent_execIsTarget_Parms IsTarget_Parms;
 	IsTarget_Parms.TestTarget = TestTarget;
@@ -11608,7 +11608,7 @@ class AActor* UAIComponent::GetTarget()
 	static UFunction* pFnGetTarget = NULL;
 
 	if (!pFnGetTarget)
-		pFnGetTarget = (UFunction*)UObject::GObjObjects()->Data[38695];
+		pFnGetTarget = (UFunction*)UObject::GObjects()->Data[38695];
 
 	UAIComponent_execGetTarget_Parms GetTarget_Parms;
 
@@ -11631,7 +11631,7 @@ bool UAIComponent::HasTarget()
 	static UFunction* pFnHasTarget = NULL;
 
 	if (!pFnHasTarget)
-		pFnHasTarget = (UFunction*)UObject::GObjObjects()->Data[38693];
+		pFnHasTarget = (UFunction*)UObject::GObjects()->Data[38693];
 
 	UAIComponent_execHasTarget_Parms HasTarget_Parms;
 
@@ -11655,7 +11655,7 @@ bool UAIComponent::ShouldRemoveTarget(class UMindTargetInfo* TargetRec)
 	static UFunction* pFnShouldRemoveTarget = NULL;
 
 	if (!pFnShouldRemoveTarget)
-		pFnShouldRemoveTarget = (UFunction*)UObject::GObjObjects()->Data[38690];
+		pFnShouldRemoveTarget = (UFunction*)UObject::GObjects()->Data[38690];
 
 	UAIComponent_execShouldRemoveTarget_Parms ShouldRemoveTarget_Parms;
 	ShouldRemoveTarget_Parms.TargetRec = TargetRec;
@@ -11679,7 +11679,7 @@ void UAIComponent::TargetRemoved(class UMindTargetInfo* TargetRec)
 	static UFunction* pFnTargetRemoved = NULL;
 
 	if (!pFnTargetRemoved)
-		pFnTargetRemoved = (UFunction*)UObject::GObjObjects()->Data[38688];
+		pFnTargetRemoved = (UFunction*)UObject::GObjects()->Data[38688];
 
 	UAIComponent_execTargetRemoved_Parms TargetRemoved_Parms;
 	TargetRemoved_Parms.TargetRec = TargetRec;
@@ -11701,7 +11701,7 @@ void UAIComponent::ForceRemoveTarget(class AActor* Target)
 	static UFunction* pFnForceRemoveTarget = NULL;
 
 	if (!pFnForceRemoveTarget)
-		pFnForceRemoveTarget = (UFunction*)UObject::GObjObjects()->Data[38686];
+		pFnForceRemoveTarget = (UFunction*)UObject::GObjects()->Data[38686];
 
 	UAIComponent_execForceRemoveTarget_Parms ForceRemoveTarget_Parms;
 	ForceRemoveTarget_Parms.Target = Target;
@@ -11724,7 +11724,7 @@ bool UAIComponent::ValidCurrentTarget(class UMindTargetInfo* TargetRec)
 	static UFunction* pFnValidCurrentTarget = NULL;
 
 	if (!pFnValidCurrentTarget)
-		pFnValidCurrentTarget = (UFunction*)UObject::GObjObjects()->Data[38683];
+		pFnValidCurrentTarget = (UFunction*)UObject::GObjects()->Data[38683];
 
 	UAIComponent_execValidCurrentTarget_Parms ValidCurrentTarget_Parms;
 	ValidCurrentTarget_Parms.TargetRec = TargetRec;
@@ -11749,7 +11749,7 @@ bool UAIComponent::ValidTarget(class AActor* Target)
 	static UFunction* pFnValidTarget = NULL;
 
 	if (!pFnValidTarget)
-		pFnValidTarget = (UFunction*)UObject::GObjObjects()->Data[38680];
+		pFnValidTarget = (UFunction*)UObject::GObjects()->Data[38680];
 
 	UAIComponent_execValidTarget_Parms ValidTarget_Parms;
 	ValidTarget_Parms.Target = Target;
@@ -11773,7 +11773,7 @@ void UAIComponent::PrioritizeTarget(class UMindTargetInfo* TargetRec)
 	static UFunction* pFnPrioritizeTarget = NULL;
 
 	if (!pFnPrioritizeTarget)
-		pFnPrioritizeTarget = (UFunction*)UObject::GObjObjects()->Data[38678];
+		pFnPrioritizeTarget = (UFunction*)UObject::GObjects()->Data[38678];
 
 	UAIComponent_execPrioritizeTarget_Parms PrioritizeTarget_Parms;
 	PrioritizeTarget_Parms.TargetRec = TargetRec;
@@ -11795,7 +11795,7 @@ void UAIComponent::CalcTargetInfo(class UMindTargetInfo* TargetRec)
 	static UFunction* pFnCalcTargetInfo = NULL;
 
 	if (!pFnCalcTargetInfo)
-		pFnCalcTargetInfo = (UFunction*)UObject::GObjObjects()->Data[38676];
+		pFnCalcTargetInfo = (UFunction*)UObject::GObjects()->Data[38676];
 
 	UAIComponent_execCalcTargetInfo_Parms CalcTargetInfo_Parms;
 	CalcTargetInfo_Parms.TargetRec = TargetRec;
@@ -11816,7 +11816,7 @@ void UAIComponent::ChooseBestTarget()
 	static UFunction* pFnChooseBestTarget = NULL;
 
 	if (!pFnChooseBestTarget)
-		pFnChooseBestTarget = (UFunction*)UObject::GObjObjects()->Data[38675];
+		pFnChooseBestTarget = (UFunction*)UObject::GObjects()->Data[38675];
 
 	UAIComponent_execChooseBestTarget_Parms ChooseBestTarget_Parms;
 
@@ -11837,7 +11837,7 @@ void UAIComponent::InheritTargets(class UAIComponent* Parent)
 	static UFunction* pFnInheritTargets = NULL;
 
 	if (!pFnInheritTargets)
-		pFnInheritTargets = (UFunction*)UObject::GObjObjects()->Data[38673];
+		pFnInheritTargets = (UFunction*)UObject::GObjects()->Data[38673];
 
 	UAIComponent_execInheritTargets_Parms InheritTargets_Parms;
 	InheritTargets_Parms.Parent = Parent;
@@ -11858,7 +11858,7 @@ void UAIComponent::RemoveTargets()
 	static UFunction* pFnRemoveTargets = NULL;
 
 	if (!pFnRemoveTargets)
-		pFnRemoveTargets = (UFunction*)UObject::GObjObjects()->Data[38672];
+		pFnRemoveTargets = (UFunction*)UObject::GObjects()->Data[38672];
 
 	UAIComponent_execRemoveTargets_Parms RemoveTargets_Parms;
 
@@ -11878,7 +11878,7 @@ void UAIComponent::FindTargets()
 	static UFunction* pFnFindTargets = NULL;
 
 	if (!pFnFindTargets)
-		pFnFindTargets = (UFunction*)UObject::GObjObjects()->Data[38671];
+		pFnFindTargets = (UFunction*)UObject::GObjects()->Data[38671];
 
 	UAIComponent_execFindTargets_Parms FindTargets_Parms;
 
@@ -11898,7 +11898,7 @@ void UAIComponent::GetTargets()
 	static UFunction* pFnGetTargets = NULL;
 
 	if (!pFnGetTargets)
-		pFnGetTargets = (UFunction*)UObject::GObjObjects()->Data[38670];
+		pFnGetTargets = (UFunction*)UObject::GObjects()->Data[38670];
 
 	UAIComponent_execGetTargets_Parms GetTargets_Parms;
 
@@ -11919,7 +11919,7 @@ void UAIComponent::InitializeTargetRecord(class UMindTargetInfo* TargetRec)
 	static UFunction* pFnInitializeTargetRecord = NULL;
 
 	if (!pFnInitializeTargetRecord)
-		pFnInitializeTargetRecord = (UFunction*)UObject::GObjObjects()->Data[38668];
+		pFnInitializeTargetRecord = (UFunction*)UObject::GObjects()->Data[38668];
 
 	UAIComponent_execInitializeTargetRecord_Parms InitializeTargetRecord_Parms;
 	InitializeTargetRecord_Parms.TargetRec = TargetRec;
@@ -11941,7 +11941,7 @@ void UAIComponent::NotifyAttackedBy(class AActor* Attacker)
 	static UFunction* pFnNotifyAttackedBy = NULL;
 
 	if (!pFnNotifyAttackedBy)
-		pFnNotifyAttackedBy = (UFunction*)UObject::GObjObjects()->Data[38666];
+		pFnNotifyAttackedBy = (UFunction*)UObject::GObjects()->Data[38666];
 
 	UAIComponent_execNotifyAttackedBy_Parms NotifyAttackedBy_Parms;
 	NotifyAttackedBy_Parms.Attacker = Attacker;
@@ -11964,7 +11964,7 @@ class UMindTargetInfo* UAIComponent::AddTarget(class AActor* NewTarget)
 	static UFunction* pFnAddTarget = NULL;
 
 	if (!pFnAddTarget)
-		pFnAddTarget = (UFunction*)UObject::GObjObjects()->Data[38663];
+		pFnAddTarget = (UFunction*)UObject::GObjects()->Data[38663];
 
 	UAIComponent_execAddTarget_Parms AddTarget_Parms;
 	AddTarget_Parms.NewTarget = NewTarget;
@@ -11988,7 +11988,7 @@ class UAIComponent* UAIComponent::GetParentComponent()
 	static UFunction* pFnGetParentComponent = NULL;
 
 	if (!pFnGetParentComponent)
-		pFnGetParentComponent = (UFunction*)UObject::GObjObjects()->Data[38661];
+		pFnGetParentComponent = (UFunction*)UObject::GObjects()->Data[38661];
 
 	UAIComponent_execGetParentComponent_Parms GetParentComponent_Parms;
 
@@ -12011,7 +12011,7 @@ class UPawnAllegiance* UAIComponent::GetAllegiance()
 	static UFunction* pFnGetAllegiance = NULL;
 
 	if (!pFnGetAllegiance)
-		pFnGetAllegiance = (UFunction*)UObject::GObjObjects()->Data[38659];
+		pFnGetAllegiance = (UFunction*)UObject::GObjects()->Data[38659];
 
 	UAIComponent_execGetAllegiance_Parms GetAllegiance_Parms;
 
@@ -12033,7 +12033,7 @@ void UAIComponent::ClearState()
 	static UFunction* pFnClearState = NULL;
 
 	if (!pFnClearState)
-		pFnClearState = (UFunction*)UObject::GObjObjects()->Data[38658];
+		pFnClearState = (UFunction*)UObject::GObjects()->Data[38658];
 
 	UAIComponent_execClearState_Parms ClearState_Parms;
 
@@ -12055,7 +12055,7 @@ bool UAIComponent::ActivateEvent(struct FName EventName)
 	static UFunction* pFnActivateEvent = NULL;
 
 	if (!pFnActivateEvent)
-		pFnActivateEvent = (UFunction*)UObject::GObjObjects()->Data[38654];
+		pFnActivateEvent = (UFunction*)UObject::GObjects()->Data[38654];
 
 	UAIComponent_execActivateEvent_Parms ActivateEvent_Parms;
 	memcpy(&ActivateEvent_Parms.EventName, &EventName, 0x8);
@@ -12080,7 +12080,7 @@ bool UAICostExpressionEvaluator::Evaluate(class UObject* ContextSource)
 	static UFunction* pFnEvaluate = NULL;
 
 	if (!pFnEvaluate)
-		pFnEvaluate = (UFunction*)UObject::GObjObjects()->Data[39322];
+		pFnEvaluate = (UFunction*)UObject::GObjects()->Data[39322];
 
 	UAICostExpressionEvaluator_execEvaluate_Parms Evaluate_Parms;
 	Evaluate_Parms.ContextSource = ContextSource;
@@ -12103,7 +12103,7 @@ void UAIFactoryBase::FlushPools()
 	static UFunction* pFnFlushPools = NULL;
 
 	if (!pFnFlushPools)
-		pFnFlushPools = (UFunction*)UObject::GObjObjects()->Data[39590];
+		pFnFlushPools = (UFunction*)UObject::GObjects()->Data[39590];
 
 	UAIFactoryBase_execFlushPools_Parms FlushPools_Parms;
 
@@ -12124,7 +12124,7 @@ void UAIFactoryBase::ReturnAIDef(class UAIDefinition** InAIDef)
 	static UFunction* pFnReturnAIDef = NULL;
 
 	if (!pFnReturnAIDef)
-		pFnReturnAIDef = (UFunction*)UObject::GObjObjects()->Data[39588];
+		pFnReturnAIDef = (UFunction*)UObject::GObjects()->Data[39588];
 
 	UAIFactoryBase_execReturnAIDef_Parms ReturnAIDef_Parms;
 
@@ -12150,7 +12150,7 @@ bool UAIFactoryBase::GetAIDef(class UAIDefinition* AIDefTemplate, class UAIDefin
 	static UFunction* pFnGetAIDef = NULL;
 
 	if (!pFnGetAIDef)
-		pFnGetAIDef = (UFunction*)UObject::GObjObjects()->Data[39584];
+		pFnGetAIDef = (UFunction*)UObject::GObjects()->Data[39584];
 
 	UAIFactoryBase_execGetAIDef_Parms GetAIDef_Parms;
 	GetAIDef_Parms.AIDefTemplate = AIDefTemplate;
@@ -12177,7 +12177,7 @@ void UAIFactoryBase::ReturnTargetRecord(class UMindTargetInfo** InTargetRecord)
 	static UFunction* pFnReturnTargetRecord = NULL;
 
 	if (!pFnReturnTargetRecord)
-		pFnReturnTargetRecord = (UFunction*)UObject::GObjObjects()->Data[39582];
+		pFnReturnTargetRecord = (UFunction*)UObject::GObjects()->Data[39582];
 
 	UAIFactoryBase_execReturnTargetRecord_Parms ReturnTargetRecord_Parms;
 
@@ -12203,7 +12203,7 @@ bool UAIFactoryBase::GetTargetRecord(class UClass* InfoClass, class UMindTargetI
 	static UFunction* pFnGetTargetRecord = NULL;
 
 	if (!pFnGetTargetRecord)
-		pFnGetTargetRecord = (UFunction*)UObject::GObjObjects()->Data[39578];
+		pFnGetTargetRecord = (UFunction*)UObject::GObjects()->Data[39578];
 
 	UAIFactoryBase_execGetTargetRecord_Parms GetTargetRecord_Parms;
 	GetTargetRecord_Parms.InfoClass = InfoClass;
@@ -12230,7 +12230,7 @@ void UAIFactoryBase::ReturnActionSequence(class UActionSequence** InSequence)
 	static UFunction* pFnReturnActionSequence = NULL;
 
 	if (!pFnReturnActionSequence)
-		pFnReturnActionSequence = (UFunction*)UObject::GObjObjects()->Data[39576];
+		pFnReturnActionSequence = (UFunction*)UObject::GObjects()->Data[39576];
 
 	UAIFactoryBase_execReturnActionSequence_Parms ReturnActionSequence_Parms;
 
@@ -12256,7 +12256,7 @@ bool UAIFactoryBase::GetActionSequence(class UActionSequence* SequenceTemplate, 
 	static UFunction* pFnGetActionSequence = NULL;
 
 	if (!pFnGetActionSequence)
-		pFnGetActionSequence = (UFunction*)UObject::GObjObjects()->Data[39572];
+		pFnGetActionSequence = (UFunction*)UObject::GObjects()->Data[39572];
 
 	UAIFactoryBase_execGetActionSequence_Parms GetActionSequence_Parms;
 	GetActionSequence_Parms.SequenceTemplate = SequenceTemplate;
@@ -12283,7 +12283,7 @@ void UAIFactoryBase::ReturnRuleSet(class URuleSet** InRuleSet)
 	static UFunction* pFnReturnRuleSet = NULL;
 
 	if (!pFnReturnRuleSet)
-		pFnReturnRuleSet = (UFunction*)UObject::GObjObjects()->Data[39570];
+		pFnReturnRuleSet = (UFunction*)UObject::GObjects()->Data[39570];
 
 	UAIFactoryBase_execReturnRuleSet_Parms ReturnRuleSet_Parms;
 
@@ -12310,7 +12310,7 @@ bool UAIFactoryBase::GetRuleSetFromArchetype(class URuleSet* RuleSetArchetype, c
 	static UFunction* pFnGetRuleSetFromArchetype = NULL;
 
 	if (!pFnGetRuleSetFromArchetype)
-		pFnGetRuleSetFromArchetype = (UFunction*)UObject::GObjObjects()->Data[39564];
+		pFnGetRuleSetFromArchetype = (UFunction*)UObject::GObjects()->Data[39564];
 
 	UAIFactoryBase_execGetRuleSetFromArchetype_Parms GetRuleSetFromArchetype_Parms;
 	GetRuleSetFromArchetype_Parms.RuleSetArchetype = RuleSetArchetype;
@@ -12340,7 +12340,7 @@ void UAIFactoryBase::ReturnKnowledgeRecord(class UKnowledgeRecord** InKR)
 	static UFunction* pFnReturnKnowledgeRecord = NULL;
 
 	if (!pFnReturnKnowledgeRecord)
-		pFnReturnKnowledgeRecord = (UFunction*)UObject::GObjObjects()->Data[39562];
+		pFnReturnKnowledgeRecord = (UFunction*)UObject::GObjects()->Data[39562];
 
 	UAIFactoryBase_execReturnKnowledgeRecord_Parms ReturnKnowledgeRecord_Parms;
 
@@ -12366,7 +12366,7 @@ bool UAIFactoryBase::GetKnowledgeRecordListFromArchetypes(TArray< class UKnowled
 	static UFunction* pFnGetKnowledgeRecordListFromArchetypes = NULL;
 
 	if (!pFnGetKnowledgeRecordListFromArchetypes)
-		pFnGetKnowledgeRecordListFromArchetypes = (UFunction*)UObject::GObjObjects()->Data[39556];
+		pFnGetKnowledgeRecordListFromArchetypes = (UFunction*)UObject::GObjects()->Data[39556];
 
 	UAIFactoryBase_execGetKnowledgeRecordListFromArchetypes_Parms GetKnowledgeRecordListFromArchetypes_Parms;
 	memcpy(&GetKnowledgeRecordListFromArchetypes_Parms.KnowledgeRecordTemplates, &KnowledgeRecordTemplates, 0xC);
@@ -12395,7 +12395,7 @@ bool UAIFactoryBase::GetKnowledgeRecordFromArchetype(class UKnowledgeRecord* InK
 	static UFunction* pFnGetKnowledgeRecordFromArchetype = NULL;
 
 	if (!pFnGetKnowledgeRecordFromArchetype)
-		pFnGetKnowledgeRecordFromArchetype = (UFunction*)UObject::GObjObjects()->Data[39552];
+		pFnGetKnowledgeRecordFromArchetype = (UFunction*)UObject::GObjects()->Data[39552];
 
 	UAIFactoryBase_execGetKnowledgeRecordFromArchetype_Parms GetKnowledgeRecordFromArchetype_Parms;
 	GetKnowledgeRecordFromArchetype_Parms.InKR = InKR;
@@ -12424,7 +12424,7 @@ bool UAIFactoryBase::GetKnowledgeRecord(class UClass* KnowledgeRecordClass, clas
 	static UFunction* pFnGetKnowledgeRecord = NULL;
 
 	if (!pFnGetKnowledgeRecord)
-		pFnGetKnowledgeRecord = (UFunction*)UObject::GObjObjects()->Data[39548];
+		pFnGetKnowledgeRecord = (UFunction*)UObject::GObjects()->Data[39548];
 
 	UAIFactoryBase_execGetKnowledgeRecord_Parms GetKnowledgeRecord_Parms;
 	GetKnowledgeRecord_Parms.KnowledgeRecordClass = KnowledgeRecordClass;
@@ -12451,7 +12451,7 @@ void UAIFactoryBase::ReturnRule(class URule** InRule)
 	static UFunction* pFnReturnRule = NULL;
 
 	if (!pFnReturnRule)
-		pFnReturnRule = (UFunction*)UObject::GObjObjects()->Data[39546];
+		pFnReturnRule = (UFunction*)UObject::GObjects()->Data[39546];
 
 	UAIFactoryBase_execReturnRule_Parms ReturnRule_Parms;
 
@@ -12477,7 +12477,7 @@ bool UAIFactoryBase::GetRuleFromArchetype(class URule* InRule, class URule** Out
 	static UFunction* pFnGetRuleFromArchetype = NULL;
 
 	if (!pFnGetRuleFromArchetype)
-		pFnGetRuleFromArchetype = (UFunction*)UObject::GObjObjects()->Data[39542];
+		pFnGetRuleFromArchetype = (UFunction*)UObject::GObjects()->Data[39542];
 
 	UAIFactoryBase_execGetRuleFromArchetype_Parms GetRuleFromArchetype_Parms;
 	GetRuleFromArchetype_Parms.InRule = InRule;
@@ -12506,7 +12506,7 @@ bool UAIFactoryBase::GetRule(class UClass* RuleClass, class URule** OutRule)
 	static UFunction* pFnGetRule = NULL;
 
 	if (!pFnGetRule)
-		pFnGetRule = (UFunction*)UObject::GObjObjects()->Data[39538];
+		pFnGetRule = (UFunction*)UObject::GObjects()->Data[39538];
 
 	UAIFactoryBase_execGetRule_Parms GetRule_Parms;
 	GetRule_Parms.RuleClass = RuleClass;
@@ -12533,7 +12533,7 @@ void UAIFactoryBase::ReturnRuleEngine(class URuleEngine* InRuleEngine)
 	static UFunction* pFnReturnRuleEngine = NULL;
 
 	if (!pFnReturnRuleEngine)
-		pFnReturnRuleEngine = (UFunction*)UObject::GObjObjects()->Data[39536];
+		pFnReturnRuleEngine = (UFunction*)UObject::GObjects()->Data[39536];
 
 	UAIFactoryBase_execReturnRuleEngine_Parms ReturnRuleEngine_Parms;
 	ReturnRuleEngine_Parms.InRuleEngine = InRuleEngine;
@@ -12555,7 +12555,7 @@ void UGearboxAIFactory::FreeRuleEngine(class URuleEngine* InRuleEngine)
 	static UFunction* pFnFreeRuleEngine = NULL;
 
 	if (!pFnFreeRuleEngine)
-		pFnFreeRuleEngine = (UFunction*)UObject::GObjObjects()->Data[41602];
+		pFnFreeRuleEngine = (UFunction*)UObject::GObjects()->Data[41602];
 
 	UGearboxAIFactory_execFreeRuleEngine_Parms FreeRuleEngine_Parms;
 	FreeRuleEngine_Parms.InRuleEngine = InRuleEngine;
@@ -12579,7 +12579,7 @@ bool UGearboxAIFactory::GetRuleEngineFromTemplate(class URuleEngine* RuleEngineT
 	static UFunction* pFnGetRuleEngineFromTemplate = NULL;
 
 	if (!pFnGetRuleEngineFromTemplate)
-		pFnGetRuleEngineFromTemplate = (UFunction*)UObject::GObjObjects()->Data[41598];
+		pFnGetRuleEngineFromTemplate = (UFunction*)UObject::GObjects()->Data[41598];
 
 	UGearboxAIFactory_execGetRuleEngineFromTemplate_Parms GetRuleEngineFromTemplate_Parms;
 	GetRuleEngineFromTemplate_Parms.RuleEngineTemplate = RuleEngineTemplate;
@@ -12607,7 +12607,7 @@ bool UAIResourceExpressionEvaluator::Evaluate(class UObject* ContextSource)
 	static UFunction* pFnEvaluate = NULL;
 
 	if (!pFnEvaluate)
-		pFnEvaluate = (UFunction*)UObject::GObjObjects()->Data[39602];
+		pFnEvaluate = (UFunction*)UObject::GObjects()->Data[39602];
 
 	UAIResourceExpressionEvaluator_execEvaluate_Parms Evaluate_Parms;
 	Evaluate_Parms.ContextSource = ContextSource;
@@ -12632,7 +12632,7 @@ bool UAllegianceExpressionEvaluator::Evaluate(class UObject* ContextSource)
 	static UFunction* pFnEvaluate = NULL;
 
 	if (!pFnEvaluate)
-		pFnEvaluate = (UFunction*)UObject::GObjObjects()->Data[39649];
+		pFnEvaluate = (UFunction*)UObject::GObjects()->Data[39649];
 
 	UAllegianceExpressionEvaluator_execEvaluate_Parms Evaluate_Parms;
 	Evaluate_Parms.ContextSource = ContextSource;
@@ -12661,7 +12661,7 @@ void UBehavior_SendGbxMessage::ApplyBehaviorToContext(class UObject* ContextObje
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[40123];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[40123];
 
 	UBehavior_SendGbxMessage_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -12691,7 +12691,7 @@ struct FVector UBehavior_SendGbxMessage::GetLocation(unsigned char SelectionPara
 	static UFunction* pFnGetLocation = NULL;
 
 	if (!pFnGetLocation)
-		pFnGetLocation = (UFunction*)UObject::GObjObjects()->Data[40115];
+		pFnGetLocation = (UFunction*)UObject::GObjects()->Data[40115];
 
 	UBehavior_SendGbxMessage_execGetLocation_Parms GetLocation_Parms;
 	GetLocation_Parms.SelectionParam = SelectionParam;
@@ -12720,7 +12720,7 @@ class UObject* UBehavior_SendGbxMessage::GetMessageParameter(unsigned char Selec
 	static UFunction* pFnGetMessageParameter = NULL;
 
 	if (!pFnGetMessageParameter)
-		pFnGetMessageParameter = (UFunction*)UObject::GObjObjects()->Data[40108];
+		pFnGetMessageParameter = (UFunction*)UObject::GObjects()->Data[40108];
 
 	UBehavior_SendGbxMessage_execGetMessageParameter_Parms GetMessageParameter_Parms;
 	GetMessageParameter_Parms.SelectionParam = SelectionParam;
@@ -12749,7 +12749,7 @@ void UBehavior_SetFlag::ApplyBehaviorToContext(class UObject* ContextObject, cla
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[40136];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[40136];
 
 	UBehavior_SetFlag_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -12776,7 +12776,7 @@ float UExposureUtilityBase::CalculateVantageToPoint(class AActor* pLooker, struc
 	static UFunction* pFnCalculateVantageToPoint = NULL;
 
 	if (!pFnCalculateVantageToPoint)
-		pFnCalculateVantageToPoint = (UFunction*)UObject::GObjObjects()->Data[40811];
+		pFnCalculateVantageToPoint = (UFunction*)UObject::GObjects()->Data[40811];
 
 	UExposureUtilityBase_execCalculateVantageToPoint_Parms CalculateVantageToPoint_Parms;
 	CalculateVantageToPoint_Parms.pLooker = pLooker;
@@ -12805,7 +12805,7 @@ float UExposureUtilityBase::CalculateTargetExposure(class AGearboxPawn* pLooker,
 	static UFunction* pFnCalculateTargetExposure = NULL;
 
 	if (!pFnCalculateTargetExposure)
-		pFnCalculateTargetExposure = (UFunction*)UObject::GObjObjects()->Data[40807];
+		pFnCalculateTargetExposure = (UFunction*)UObject::GObjects()->Data[40807];
 
 	UExposureUtilityBase_execCalculateTargetExposure_Parms CalculateTargetExposure_Parms;
 	CalculateTargetExposure_Parms.pLooker = pLooker;
@@ -12831,7 +12831,7 @@ class UClass* UFiringBehaviorManager::eventGetTemplateClass(class UObject* Templ
 	static UFunction* pFnGetTemplateClass = NULL;
 
 	if (!pFnGetTemplateClass)
-		pFnGetTemplateClass = (UFunction*)UObject::GObjObjects()->Data[40929];
+		pFnGetTemplateClass = (UFunction*)UObject::GObjects()->Data[40929];
 
 	UFiringBehaviorManager_eventGetTemplateClass_Parms GetTemplateClass_Parms;
 	GetTemplateClass_Parms.TemplateObject = TemplateObject;
@@ -12852,7 +12852,7 @@ class UFiringZoneDefinition* UFiringZoneCollectionDefinition::eventGetZoneForDis
 	static UFunction* pFnGetZoneForDistance = NULL;
 
 	if (!pFnGetZoneForDistance)
-		pFnGetZoneForDistance = (UFunction*)UObject::GObjObjects()->Data[40934];
+		pFnGetZoneForDistance = (UFunction*)UObject::GObjects()->Data[40934];
 
 	UFiringZoneCollectionDefinition_eventGetZoneForDistance_Parms GetZoneForDistance_Parms;
 	GetZoneForDistance_Parms.Distance = Distance;
@@ -12873,7 +12873,7 @@ void UFlagDefinition::ApplyFlagInitializationData(class UObject* ContextSource, 
 	static UFunction* pFnApplyFlagInitializationData = NULL;
 
 	if (!pFnApplyFlagInitializationData)
-		pFnApplyFlagInitializationData = (UFunction*)UObject::GObjObjects()->Data[40957];
+		pFnApplyFlagInitializationData = (UFunction*)UObject::GObjects()->Data[40957];
 
 	UFlagDefinition_execApplyFlagInitializationData_Parms ApplyFlagInitializationData_Parms;
 	ApplyFlagInitializationData_Parms.ContextSource = ContextSource;
@@ -12899,7 +12899,7 @@ class UObject* UFlagDefinition::ResolveContext(class UObject* ContextSource)
 	static UFunction* pFnResolveContext = NULL;
 
 	if (!pFnResolveContext)
-		pFnResolveContext = (UFunction*)UObject::GObjObjects()->Data[40954];
+		pFnResolveContext = (UFunction*)UObject::GObjects()->Data[40954];
 
 	UFlagDefinition_execResolveContext_Parms ResolveContext_Parms;
 	ResolveContext_Parms.ContextSource = ContextSource;
@@ -12925,7 +12925,7 @@ bool UFlagDefinition::SetTrueTimed(class UObject* ContextSource, float TimeSecon
 	static UFunction* pFnSetTrueTimed = NULL;
 
 	if (!pFnSetTrueTimed)
-		pFnSetTrueTimed = (UFunction*)UObject::GObjObjects()->Data[40950];
+		pFnSetTrueTimed = (UFunction*)UObject::GObjects()->Data[40950];
 
 	UFlagDefinition_execSetTrueTimed_Parms SetTrueTimed_Parms;
 	SetTrueTimed_Parms.ContextSource = ContextSource;
@@ -12952,7 +12952,7 @@ bool UFlagDefinition::SetValue(class UObject* ContextSource, unsigned long Value
 	static UFunction* pFnSetValue = NULL;
 
 	if (!pFnSetValue)
-		pFnSetValue = (UFunction*)UObject::GObjObjects()->Data[40946];
+		pFnSetValue = (UFunction*)UObject::GObjects()->Data[40946];
 
 	UFlagDefinition_execSetValue_Parms SetValue_Parms;
 	SetValue_Parms.ContextSource = ContextSource;
@@ -12978,7 +12978,7 @@ bool UFlagExpressionEvaluator::Evaluate(class UObject* ContextSource)
 	static UFunction* pFnEvaluate = NULL;
 
 	if (!pFnEvaluate)
-		pFnEvaluate = (UFunction*)UObject::GObjObjects()->Data[41016];
+		pFnEvaluate = (UFunction*)UObject::GObjects()->Data[41016];
 
 	UFlagExpressionEvaluator_execEvaluate_Parms Evaluate_Parms;
 	Evaluate_Parms.ContextSource = ContextSource;
@@ -13006,7 +13006,7 @@ void UGbxMessage::InitializeFromDefinition(class UGbxMessageDefinition* InDefini
 	static UFunction* pFnInitializeFromDefinition = NULL;
 
 	if (!pFnInitializeFromDefinition)
-		pFnInitializeFromDefinition = (UFunction*)UObject::GObjObjects()->Data[40133];
+		pFnInitializeFromDefinition = (UFunction*)UObject::GObjects()->Data[40133];
 
 	UGbxMessage_execInitializeFromDefinition_Parms InitializeFromDefinition_Parms;
 	InitializeFromDefinition_Parms.InDefinition = InDefinition;
@@ -13032,7 +13032,7 @@ void UGbxMessageManager::RemoveListener(class UIGbxMessageListener* InListener)
 	static UFunction* pFnRemoveListener = NULL;
 
 	if (!pFnRemoveListener)
-		pFnRemoveListener = (UFunction*)UObject::GObjObjects()->Data[41071];
+		pFnRemoveListener = (UFunction*)UObject::GObjects()->Data[41071];
 
 	UGbxMessageManager_execRemoveListener_Parms RemoveListener_Parms;
 	RemoveListener_Parms.InListener = InListener;
@@ -13054,7 +13054,7 @@ void UGbxMessageManager::AddListener(class UIGbxMessageListener* InListener)
 	static UFunction* pFnAddListener = NULL;
 
 	if (!pFnAddListener)
-		pFnAddListener = (UFunction*)UObject::GObjObjects()->Data[41069];
+		pFnAddListener = (UFunction*)UObject::GObjects()->Data[41069];
 
 	UGbxMessageManager_execAddListener_Parms AddListener_Parms;
 	AddListener_Parms.InListener = InListener;
@@ -13076,7 +13076,7 @@ void UGbxMessageManager::PostMessage(class UGbxMessage* Message)
 	static UFunction* pFnPostMessage = NULL;
 
 	if (!pFnPostMessage)
-		pFnPostMessage = (UFunction*)UObject::GObjObjects()->Data[41067];
+		pFnPostMessage = (UFunction*)UObject::GObjects()->Data[41067];
 
 	UGbxMessageManager_execPostMessage_Parms PostMessage_Parms;
 	PostMessage_Parms.Message = Message;
@@ -13098,7 +13098,7 @@ class UGbxMessage* UGbxMessageManager::AllocateMessage()
 	static UFunction* pFnAllocateMessage = NULL;
 
 	if (!pFnAllocateMessage)
-		pFnAllocateMessage = (UFunction*)UObject::GObjObjects()->Data[40131];
+		pFnAllocateMessage = (UFunction*)UObject::GObjects()->Data[40131];
 
 	UGbxMessageManager_execAllocateMessage_Parms AllocateMessage_Parms;
 
@@ -13121,7 +13121,7 @@ void AGearboxMind::InitSequence(class UActionSequence* NewSequence)
 	static UFunction* pFnInitSequence = NULL;
 
 	if (!pFnInitSequence)
-		pFnInitSequence = (UFunction*)UObject::GObjObjects()->Data[42760];
+		pFnInitSequence = (UFunction*)UObject::GObjects()->Data[42760];
 
 	AGearboxMind_execInitSequence_Parms InitSequence_Parms;
 	InitSequence_Parms.NewSequence = NewSequence;
@@ -13143,7 +13143,7 @@ class UPawnAllegiance* AGearboxMind::GetAllegiance()
 	static UFunction* pFnGetAllegiance = NULL;
 
 	if (!pFnGetAllegiance)
-		pFnGetAllegiance = (UFunction*)UObject::GObjObjects()->Data[42758];
+		pFnGetAllegiance = (UFunction*)UObject::GObjects()->Data[42758];
 
 	AGearboxMind_execGetAllegiance_Parms GetAllegiance_Parms;
 
@@ -13166,7 +13166,7 @@ class UAIDefinition* AGearboxMind::GetAIDefinition()
 	static UFunction* pFnGetAIDefinition = NULL;
 
 	if (!pFnGetAIDefinition)
-		pFnGetAIDefinition = (UFunction*)UObject::GObjObjects()->Data[42756];
+		pFnGetAIDefinition = (UFunction*)UObject::GObjects()->Data[42756];
 
 	AGearboxMind_execGetAIDefinition_Parms GetAIDefinition_Parms;
 
@@ -13189,7 +13189,7 @@ class UAIComponent* AGearboxMind::GetAIComponent()
 	static UFunction* pFnGetAIComponent = NULL;
 
 	if (!pFnGetAIComponent)
-		pFnGetAIComponent = (UFunction*)UObject::GObjObjects()->Data[42754];
+		pFnGetAIComponent = (UFunction*)UObject::GObjects()->Data[42754];
 
 	AGearboxMind_execGetAIComponent_Parms GetAIComponent_Parms;
 
@@ -13212,7 +13212,7 @@ class UIAIInterface* AGearboxMind::GetAIParent()
 	static UFunction* pFnGetAIParent = NULL;
 
 	if (!pFnGetAIParent)
-		pFnGetAIParent = (UFunction*)UObject::GObjObjects()->Data[42752];
+		pFnGetAIParent = (UFunction*)UObject::GObjects()->Data[42752];
 
 	AGearboxMind_execGetAIParent_Parms GetAIParent_Parms;
 
@@ -13235,7 +13235,7 @@ struct FVector AGearboxMind::GetAILocation()
 	static UFunction* pFnGetAILocation = NULL;
 
 	if (!pFnGetAILocation)
-		pFnGetAILocation = (UFunction*)UObject::GObjObjects()->Data[42750];
+		pFnGetAILocation = (UFunction*)UObject::GObjects()->Data[42750];
 
 	AGearboxMind_execGetAILocation_Parms GetAILocation_Parms;
 
@@ -13258,7 +13258,7 @@ class AActor* AGearboxMind::GetAIActor()
 	static UFunction* pFnGetAIActor = NULL;
 
 	if (!pFnGetAIActor)
-		pFnGetAIActor = (UFunction*)UObject::GObjObjects()->Data[42748];
+		pFnGetAIActor = (UFunction*)UObject::GObjects()->Data[42748];
 
 	AGearboxMind_execGetAIActor_Parms GetAIActor_Parms;
 
@@ -13281,7 +13281,7 @@ bool AGearboxMind::CanTickAI()
 	static UFunction* pFnCanTickAI = NULL;
 
 	if (!pFnCanTickAI)
-		pFnCanTickAI = (UFunction*)UObject::GObjObjects()->Data[42746];
+		pFnCanTickAI = (UFunction*)UObject::GObjects()->Data[42746];
 
 	AGearboxMind_execCanTickAI_Parms CanTickAI_Parms;
 
@@ -13304,7 +13304,7 @@ bool AGearboxMind::InGodMode()
 	static UFunction* pFnInGodMode = NULL;
 
 	if (!pFnInGodMode)
-		pFnInGodMode = (UFunction*)UObject::GObjObjects()->Data[42744];
+		pFnInGodMode = (UFunction*)UObject::GObjects()->Data[42744];
 
 	AGearboxMind_execInGodMode_Parms InGodMode_Parms;
 
@@ -13327,7 +13327,7 @@ void AGearboxMind::PawnDied(class APawn* inPawn)
 	static UFunction* pFnPawnDied = NULL;
 
 	if (!pFnPawnDied)
-		pFnPawnDied = (UFunction*)UObject::GObjObjects()->Data[42742];
+		pFnPawnDied = (UFunction*)UObject::GObjects()->Data[42742];
 
 	AGearboxMind_execPawnDied_Parms PawnDied_Parms;
 	PawnDied_Parms.inPawn = inPawn;
@@ -13345,7 +13345,7 @@ void AGearboxMind::OnTargetPriority(class UGearboxSeqAct_TargetPriority* inActio
 	static UFunction* pFnOnTargetPriority = NULL;
 
 	if (!pFnOnTargetPriority)
-		pFnOnTargetPriority = (UFunction*)UObject::GObjObjects()->Data[42737];
+		pFnOnTargetPriority = (UFunction*)UObject::GObjects()->Data[42737];
 
 	AGearboxMind_execOnTargetPriority_Parms OnTargetPriority_Parms;
 	OnTargetPriority_Parms.inAction = inAction;
@@ -13363,7 +13363,7 @@ void AGearboxMind::Behavior_SetCanTarget(unsigned char ChangeStatus)
 	static UFunction* pFnBehavior_SetCanTarget = NULL;
 
 	if (!pFnBehavior_SetCanTarget)
-		pFnBehavior_SetCanTarget = (UFunction*)UObject::GObjObjects()->Data[42735];
+		pFnBehavior_SetCanTarget = (UFunction*)UObject::GObjects()->Data[42735];
 
 	AGearboxMind_execBehavior_SetCanTarget_Parms Behavior_SetCanTarget_Parms;
 	Behavior_SetCanTarget_Parms.ChangeStatus = ChangeStatus;
@@ -13381,7 +13381,7 @@ bool AGearboxMind::GetNoTargetAllEnemies()
 	static UFunction* pFnGetNoTargetAllEnemies = NULL;
 
 	if (!pFnGetNoTargetAllEnemies)
-		pFnGetNoTargetAllEnemies = (UFunction*)UObject::GObjObjects()->Data[42733];
+		pFnGetNoTargetAllEnemies = (UFunction*)UObject::GObjects()->Data[42733];
 
 	AGearboxMind_execGetNoTargetAllEnemies_Parms GetNoTargetAllEnemies_Parms;
 
@@ -13404,7 +13404,7 @@ void AGearboxMind::SetNoTargetAllEnemies(unsigned long bNoTarget)
 	static UFunction* pFnSetNoTargetAllEnemies = NULL;
 
 	if (!pFnSetNoTargetAllEnemies)
-		pFnSetNoTargetAllEnemies = (UFunction*)UObject::GObjObjects()->Data[42731];
+		pFnSetNoTargetAllEnemies = (UFunction*)UObject::GObjects()->Data[42731];
 
 	AGearboxMind_execSetNoTargetAllEnemies_Parms SetNoTargetAllEnemies_Parms;
 	SetNoTargetAllEnemies_Parms.bNoTarget = bNoTarget;
@@ -13425,7 +13425,7 @@ void AGearboxMind::eventClearScriptedMoveTarget()
 	static UFunction* pFnClearScriptedMoveTarget = NULL;
 
 	if (!pFnClearScriptedMoveTarget)
-		pFnClearScriptedMoveTarget = (UFunction*)UObject::GObjObjects()->Data[42730];
+		pFnClearScriptedMoveTarget = (UFunction*)UObject::GObjects()->Data[42730];
 
 	AGearboxMind_eventClearScriptedMoveTarget_Parms ClearScriptedMoveTarget_Parms;
 
@@ -13442,7 +13442,7 @@ bool AGearboxMind::eventIsCloseEnoughToScriptedMoveTarget()
 	static UFunction* pFnIsCloseEnoughToScriptedMoveTarget = NULL;
 
 	if (!pFnIsCloseEnoughToScriptedMoveTarget)
-		pFnIsCloseEnoughToScriptedMoveTarget = (UFunction*)UObject::GObjObjects()->Data[39171];
+		pFnIsCloseEnoughToScriptedMoveTarget = (UFunction*)UObject::GObjects()->Data[39171];
 
 	AGearboxMind_eventIsCloseEnoughToScriptedMoveTarget_Parms IsCloseEnoughToScriptedMoveTarget_Parms;
 
@@ -13461,7 +13461,7 @@ struct FVector AGearboxMind::eventGetWeaponFireLocation()
 	static UFunction* pFnGetWeaponFireLocation = NULL;
 
 	if (!pFnGetWeaponFireLocation)
-		pFnGetWeaponFireLocation = (UFunction*)UObject::GObjObjects()->Data[42728];
+		pFnGetWeaponFireLocation = (UFunction*)UObject::GObjects()->Data[42728];
 
 	AGearboxMind_eventGetWeaponFireLocation_Parms GetWeaponFireLocation_Parms;
 
@@ -13481,7 +13481,7 @@ int AGearboxMind::ActivateEventRule(struct FName RuleEventName)
 	static UFunction* pFnActivateEventRule = NULL;
 
 	if (!pFnActivateEventRule)
-		pFnActivateEventRule = (UFunction*)UObject::GObjObjects()->Data[42725];
+		pFnActivateEventRule = (UFunction*)UObject::GObjects()->Data[42725];
 
 	AGearboxMind_execActivateEventRule_Parms ActivateEventRule_Parms;
 	memcpy(&ActivateEventRule_Parms.RuleEventName, &RuleEventName, 0x8);
@@ -13507,7 +13507,7 @@ void AGearboxMind::AddHitTargetRecord(class AGearboxPawn* HitByPawn, struct FVec
 	static UFunction* pFnAddHitTargetRecord = NULL;
 
 	if (!pFnAddHitTargetRecord)
-		pFnAddHitTargetRecord = (UFunction*)UObject::GObjObjects()->Data[42721];
+		pFnAddHitTargetRecord = (UFunction*)UObject::GObjects()->Data[42721];
 
 	AGearboxMind_execAddHitTargetRecord_Parms AddHitTargetRecord_Parms;
 	AddHitTargetRecord_Parms.HitByPawn = HitByPawn;
@@ -13526,7 +13526,7 @@ void AGearboxMind::StopMovement()
 	static UFunction* pFnStopMovement = NULL;
 
 	if (!pFnStopMovement)
-		pFnStopMovement = (UFunction*)UObject::GObjObjects()->Data[42720];
+		pFnStopMovement = (UFunction*)UObject::GObjects()->Data[42720];
 
 	AGearboxMind_execStopMovement_Parms StopMovement_Parms;
 
@@ -13544,7 +13544,7 @@ void AGearboxMind::eventPossess(class APawn* inPawn, unsigned long bVehicleTrans
 	static UFunction* pFnPossess = NULL;
 
 	if (!pFnPossess)
-		pFnPossess = (UFunction*)UObject::GObjObjects()->Data[42717];
+		pFnPossess = (UFunction*)UObject::GObjects()->Data[42717];
 
 	AGearboxMind_eventPossess_Parms Possess_Parms;
 	Possess_Parms.inPawn = inPawn;
@@ -13563,7 +13563,7 @@ class UGearboxRuleEngine* AGearboxMind::GetGearboxRuleEngine()
 	static UFunction* pFnGetGearboxRuleEngine = NULL;
 
 	if (!pFnGetGearboxRuleEngine)
-		pFnGetGearboxRuleEngine = (UFunction*)UObject::GObjObjects()->Data[42715];
+		pFnGetGearboxRuleEngine = (UFunction*)UObject::GObjects()->Data[42715];
 
 	AGearboxMind_execGetGearboxRuleEngine_Parms GetGearboxRuleEngine_Parms;
 
@@ -13582,7 +13582,7 @@ class URuleEngine* AGearboxMind::GetRuleEngine()
 	static UFunction* pFnGetRuleEngine = NULL;
 
 	if (!pFnGetRuleEngine)
-		pFnGetRuleEngine = (UFunction*)UObject::GObjObjects()->Data[42713];
+		pFnGetRuleEngine = (UFunction*)UObject::GObjects()->Data[42713];
 
 	AGearboxMind_execGetRuleEngine_Parms GetRuleEngine_Parms;
 
@@ -13605,7 +13605,7 @@ void AGearboxMind::NotifyShotAtBy(class AGearboxPawn* ShootingPawn)
 	static UFunction* pFnNotifyShotAtBy = NULL;
 
 	if (!pFnNotifyShotAtBy)
-		pFnNotifyShotAtBy = (UFunction*)UObject::GObjObjects()->Data[42711];
+		pFnNotifyShotAtBy = (UFunction*)UObject::GObjects()->Data[42711];
 
 	AGearboxMind_execNotifyShotAtBy_Parms NotifyShotAtBy_Parms;
 	NotifyShotAtBy_Parms.ShootingPawn = ShootingPawn;
@@ -13633,7 +13633,7 @@ bool AGearboxMind::FindCoverAndClaim(struct FVector CoverSearchOrigin, class UPa
 	static UFunction* pFnFindCoverAndClaim = NULL;
 
 	if (!pFnFindCoverAndClaim)
-		pFnFindCoverAndClaim = (UFunction*)UObject::GObjObjects()->Data[42703];
+		pFnFindCoverAndClaim = (UFunction*)UObject::GObjects()->Data[42703];
 
 	AGearboxMind_execFindCoverAndClaim_Parms FindCoverAndClaim_Parms;
 	memcpy(&FindCoverAndClaim_Parms.CoverSearchOrigin, &CoverSearchOrigin, 0xC);
@@ -13664,7 +13664,7 @@ void AGearboxMind::UpdateRuleEngineKnowledge(class UClass* aKDBClass)
 	static UFunction* pFnUpdateRuleEngineKnowledge = NULL;
 
 	if (!pFnUpdateRuleEngineKnowledge)
-		pFnUpdateRuleEngineKnowledge = (UFunction*)UObject::GObjObjects()->Data[42701];
+		pFnUpdateRuleEngineKnowledge = (UFunction*)UObject::GObjects()->Data[42701];
 
 	AGearboxMind_execUpdateRuleEngineKnowledge_Parms UpdateRuleEngineKnowledge_Parms;
 	UpdateRuleEngineKnowledge_Parms.aKDBClass = aKDBClass;
@@ -13687,7 +13687,7 @@ bool AGearboxMind::GetCurrentTargetInfo(class UMindTargetInfo** OutTargetRec)
 	static UFunction* pFnGetCurrentTargetInfo = NULL;
 
 	if (!pFnGetCurrentTargetInfo)
-		pFnGetCurrentTargetInfo = (UFunction*)UObject::GObjObjects()->Data[42698];
+		pFnGetCurrentTargetInfo = (UFunction*)UObject::GObjects()->Data[42698];
 
 	AGearboxMind_execGetCurrentTargetInfo_Parms GetCurrentTargetInfo_Parms;
 
@@ -13714,7 +13714,7 @@ bool AGearboxMind::IsSameAllegianceMind(class AGearboxMind* aMind)
 	static UFunction* pFnIsSameAllegianceMind = NULL;
 
 	if (!pFnIsSameAllegianceMind)
-		pFnIsSameAllegianceMind = (UFunction*)UObject::GObjObjects()->Data[42695];
+		pFnIsSameAllegianceMind = (UFunction*)UObject::GObjects()->Data[42695];
 
 	AGearboxMind_execIsSameAllegianceMind_Parms IsSameAllegianceMind_Parms;
 	IsSameAllegianceMind_Parms.aMind = aMind;
@@ -13739,7 +13739,7 @@ bool AGearboxMind::IsSameAllegiance(class UObject* anObject)
 	static UFunction* pFnIsSameAllegiance = NULL;
 
 	if (!pFnIsSameAllegiance)
-		pFnIsSameAllegiance = (UFunction*)UObject::GObjObjects()->Data[42692];
+		pFnIsSameAllegiance = (UFunction*)UObject::GObjects()->Data[42692];
 
 	AGearboxMind_execIsSameAllegiance_Parms IsSameAllegiance_Parms;
 	IsSameAllegiance_Parms.anObject = anObject;
@@ -13764,7 +13764,7 @@ bool AGearboxMind::IsNeutralMind(class AGearboxMind* aMind)
 	static UFunction* pFnIsNeutralMind = NULL;
 
 	if (!pFnIsNeutralMind)
-		pFnIsNeutralMind = (UFunction*)UObject::GObjObjects()->Data[42689];
+		pFnIsNeutralMind = (UFunction*)UObject::GObjects()->Data[42689];
 
 	AGearboxMind_execIsNeutralMind_Parms IsNeutralMind_Parms;
 	IsNeutralMind_Parms.aMind = aMind;
@@ -13789,7 +13789,7 @@ bool AGearboxMind::IsNeutral(class UObject* anObject)
 	static UFunction* pFnIsNeutral = NULL;
 
 	if (!pFnIsNeutral)
-		pFnIsNeutral = (UFunction*)UObject::GObjObjects()->Data[42686];
+		pFnIsNeutral = (UFunction*)UObject::GObjects()->Data[42686];
 
 	AGearboxMind_execIsNeutral_Parms IsNeutral_Parms;
 	IsNeutral_Parms.anObject = anObject;
@@ -13814,7 +13814,7 @@ bool AGearboxMind::IsFriendlyMind(class AGearboxMind* aMind)
 	static UFunction* pFnIsFriendlyMind = NULL;
 
 	if (!pFnIsFriendlyMind)
-		pFnIsFriendlyMind = (UFunction*)UObject::GObjObjects()->Data[42683];
+		pFnIsFriendlyMind = (UFunction*)UObject::GObjects()->Data[42683];
 
 	AGearboxMind_execIsFriendlyMind_Parms IsFriendlyMind_Parms;
 	IsFriendlyMind_Parms.aMind = aMind;
@@ -13839,7 +13839,7 @@ bool AGearboxMind::IsFriendly(class UObject* anObject)
 	static UFunction* pFnIsFriendly = NULL;
 
 	if (!pFnIsFriendly)
-		pFnIsFriendly = (UFunction*)UObject::GObjObjects()->Data[42680];
+		pFnIsFriendly = (UFunction*)UObject::GObjects()->Data[42680];
 
 	AGearboxMind_execIsFriendly_Parms IsFriendly_Parms;
 	IsFriendly_Parms.anObject = anObject;
@@ -13864,7 +13864,7 @@ bool AGearboxMind::IsEnemyMind(class AGearboxMind* aMind)
 	static UFunction* pFnIsEnemyMind = NULL;
 
 	if (!pFnIsEnemyMind)
-		pFnIsEnemyMind = (UFunction*)UObject::GObjObjects()->Data[42677];
+		pFnIsEnemyMind = (UFunction*)UObject::GObjects()->Data[42677];
 
 	AGearboxMind_execIsEnemyMind_Parms IsEnemyMind_Parms;
 	IsEnemyMind_Parms.aMind = aMind;
@@ -13889,7 +13889,7 @@ bool AGearboxMind::IsEnemy(class UObject* anObject)
 	static UFunction* pFnIsEnemy = NULL;
 
 	if (!pFnIsEnemy)
-		pFnIsEnemy = (UFunction*)UObject::GObjObjects()->Data[42674];
+		pFnIsEnemy = (UFunction*)UObject::GObjects()->Data[42674];
 
 	AGearboxMind_execIsEnemy_Parms IsEnemy_Parms;
 	IsEnemy_Parms.anObject = anObject;
@@ -13913,7 +13913,7 @@ bool AGearboxMind::WantsToWalk()
 	static UFunction* pFnWantsToWalk = NULL;
 
 	if (!pFnWantsToWalk)
-		pFnWantsToWalk = (UFunction*)UObject::GObjObjects()->Data[42672];
+		pFnWantsToWalk = (UFunction*)UObject::GObjects()->Data[42672];
 
 	AGearboxMind_execWantsToWalk_Parms WantsToWalk_Parms;
 
@@ -13936,7 +13936,7 @@ void AGearboxMind::SetWantsToWalk(unsigned long bInWantsToWalk)
 	static UFunction* pFnSetWantsToWalk = NULL;
 
 	if (!pFnSetWantsToWalk)
-		pFnSetWantsToWalk = (UFunction*)UObject::GObjObjects()->Data[42670];
+		pFnSetWantsToWalk = (UFunction*)UObject::GObjects()->Data[42670];
 
 	AGearboxMind_execSetWantsToWalk_Parms SetWantsToWalk_Parms;
 	SetWantsToWalk_Parms.bInWantsToWalk = bInWantsToWalk;
@@ -13958,7 +13958,7 @@ unsigned char AGearboxMind::GetFacingPolicy()
 	static UFunction* pFnGetFacingPolicy = NULL;
 
 	if (!pFnGetFacingPolicy)
-		pFnGetFacingPolicy = (UFunction*)UObject::GObjObjects()->Data[42668];
+		pFnGetFacingPolicy = (UFunction*)UObject::GObjects()->Data[42668];
 
 	AGearboxMind_execGetFacingPolicy_Parms GetFacingPolicy_Parms;
 
@@ -13983,7 +13983,7 @@ void AGearboxMind::SetFacingPolicy(unsigned char NewFacingPolicy, class AActor* 
 	static UFunction* pFnSetFacingPolicy = NULL;
 
 	if (!pFnSetFacingPolicy)
-		pFnSetFacingPolicy = (UFunction*)UObject::GObjObjects()->Data[38937];
+		pFnSetFacingPolicy = (UFunction*)UObject::GObjects()->Data[38937];
 
 	AGearboxMind_execSetFacingPolicy_Parms SetFacingPolicy_Parms;
 	SetFacingPolicy_Parms.NewFacingPolicy = NewFacingPolicy;
@@ -14007,7 +14007,7 @@ class AActor* AGearboxMind::GetCurrentTarget()
 	static UFunction* pFnGetCurrentTarget = NULL;
 
 	if (!pFnGetCurrentTarget)
-		pFnGetCurrentTarget = (UFunction*)UObject::GObjObjects()->Data[38939];
+		pFnGetCurrentTarget = (UFunction*)UObject::GObjects()->Data[38939];
 
 	AGearboxMind_execGetCurrentTarget_Parms GetCurrentTarget_Parms;
 
@@ -14030,7 +14030,7 @@ void AGearboxMind::RemoveEnemyFromQueue(class AActor* Target)
 	static UFunction* pFnRemoveEnemyFromQueue = NULL;
 
 	if (!pFnRemoveEnemyFromQueue)
-		pFnRemoveEnemyFromQueue = (UFunction*)UObject::GObjObjects()->Data[42663];
+		pFnRemoveEnemyFromQueue = (UFunction*)UObject::GObjects()->Data[42663];
 
 	AGearboxMind_execRemoveEnemyFromQueue_Parms RemoveEnemyFromQueue_Parms;
 	RemoveEnemyFromQueue_Parms.Target = Target;
@@ -14052,7 +14052,7 @@ class UGearboxNavigationHandle* AGearboxMind::GetNavigationHandle()
 	static UFunction* pFnGetNavigationHandle = NULL;
 
 	if (!pFnGetNavigationHandle)
-		pFnGetNavigationHandle = (UFunction*)UObject::GObjObjects()->Data[42661];
+		pFnGetNavigationHandle = (UFunction*)UObject::GObjects()->Data[42661];
 
 	AGearboxMind_execGetNavigationHandle_Parms GetNavigationHandle_Parms;
 
@@ -14075,7 +14075,7 @@ bool UGearboxCoverStateManager::IsChangingDirection()
 	static UFunction* pFnIsChangingDirection = NULL;
 
 	if (!pFnIsChangingDirection)
-		pFnIsChangingDirection = (UFunction*)UObject::GObjObjects()->Data[41956];
+		pFnIsChangingDirection = (UFunction*)UObject::GObjects()->Data[41956];
 
 	UGearboxCoverStateManager_execIsChangingDirection_Parms IsChangingDirection_Parms;
 
@@ -14098,7 +14098,7 @@ bool UGearboxCoverStateManager::IsMantlingOverCoverInProgress()
 	static UFunction* pFnIsMantlingOverCoverInProgress = NULL;
 
 	if (!pFnIsMantlingOverCoverInProgress)
-		pFnIsMantlingOverCoverInProgress = (UFunction*)UObject::GObjObjects()->Data[41954];
+		pFnIsMantlingOverCoverInProgress = (UFunction*)UObject::GObjects()->Data[41954];
 
 	UGearboxCoverStateManager_execIsMantlingOverCoverInProgress_Parms IsMantlingOverCoverInProgress_Parms;
 
@@ -14121,7 +14121,7 @@ bool UGearboxCoverStateManager::IsReturnFromPeekInProgress()
 	static UFunction* pFnIsReturnFromPeekInProgress = NULL;
 
 	if (!pFnIsReturnFromPeekInProgress)
-		pFnIsReturnFromPeekInProgress = (UFunction*)UObject::GObjObjects()->Data[41952];
+		pFnIsReturnFromPeekInProgress = (UFunction*)UObject::GObjects()->Data[41952];
 
 	UGearboxCoverStateManager_execIsReturnFromPeekInProgress_Parms IsReturnFromPeekInProgress_Parms;
 
@@ -14144,7 +14144,7 @@ bool UGearboxCoverStateManager::IsPeekTransitionInProgress()
 	static UFunction* pFnIsPeekTransitionInProgress = NULL;
 
 	if (!pFnIsPeekTransitionInProgress)
-		pFnIsPeekTransitionInProgress = (UFunction*)UObject::GObjObjects()->Data[41950];
+		pFnIsPeekTransitionInProgress = (UFunction*)UObject::GObjects()->Data[41950];
 
 	UGearboxCoverStateManager_execIsPeekTransitionInProgress_Parms IsPeekTransitionInProgress_Parms;
 
@@ -14168,7 +14168,7 @@ bool UGearboxCoverStateManager::IsPeekedUp(unsigned long bTransitionCounts)
 	static UFunction* pFnIsPeekedUp = NULL;
 
 	if (!pFnIsPeekedUp)
-		pFnIsPeekedUp = (UFunction*)UObject::GObjObjects()->Data[41947];
+		pFnIsPeekedUp = (UFunction*)UObject::GObjects()->Data[41947];
 
 	UGearboxCoverStateManager_execIsPeekedUp_Parms IsPeekedUp_Parms;
 	IsPeekedUp_Parms.bTransitionCounts = bTransitionCounts;
@@ -14192,7 +14192,7 @@ bool UGearboxCoverStateManager::IsReturnFromLeanOutInProgress()
 	static UFunction* pFnIsReturnFromLeanOutInProgress = NULL;
 
 	if (!pFnIsReturnFromLeanOutInProgress)
-		pFnIsReturnFromLeanOutInProgress = (UFunction*)UObject::GObjObjects()->Data[41945];
+		pFnIsReturnFromLeanOutInProgress = (UFunction*)UObject::GObjects()->Data[41945];
 
 	UGearboxCoverStateManager_execIsReturnFromLeanOutInProgress_Parms IsReturnFromLeanOutInProgress_Parms;
 
@@ -14215,7 +14215,7 @@ bool UGearboxCoverStateManager::IsLeanOutTransitionInProgress()
 	static UFunction* pFnIsLeanOutTransitionInProgress = NULL;
 
 	if (!pFnIsLeanOutTransitionInProgress)
-		pFnIsLeanOutTransitionInProgress = (UFunction*)UObject::GObjObjects()->Data[41943];
+		pFnIsLeanOutTransitionInProgress = (UFunction*)UObject::GObjects()->Data[41943];
 
 	UGearboxCoverStateManager_execIsLeanOutTransitionInProgress_Parms IsLeanOutTransitionInProgress_Parms;
 
@@ -14239,7 +14239,7 @@ bool UGearboxCoverStateManager::IsLeanedOut(unsigned long bTransitionCounts)
 	static UFunction* pFnIsLeanedOut = NULL;
 
 	if (!pFnIsLeanedOut)
-		pFnIsLeanedOut = (UFunction*)UObject::GObjObjects()->Data[41940];
+		pFnIsLeanedOut = (UFunction*)UObject::GObjects()->Data[41940];
 
 	UGearboxCoverStateManager_execIsLeanedOut_Parms IsLeanedOut_Parms;
 	IsLeanedOut_Parms.bTransitionCounts = bTransitionCounts;
@@ -14263,7 +14263,7 @@ bool UGearboxCoverStateManager::IsReturnFromPopUpInProgress()
 	static UFunction* pFnIsReturnFromPopUpInProgress = NULL;
 
 	if (!pFnIsReturnFromPopUpInProgress)
-		pFnIsReturnFromPopUpInProgress = (UFunction*)UObject::GObjObjects()->Data[41938];
+		pFnIsReturnFromPopUpInProgress = (UFunction*)UObject::GObjects()->Data[41938];
 
 	UGearboxCoverStateManager_execIsReturnFromPopUpInProgress_Parms IsReturnFromPopUpInProgress_Parms;
 
@@ -14286,7 +14286,7 @@ bool UGearboxCoverStateManager::IsPopUpTransitionInProgress()
 	static UFunction* pFnIsPopUpTransitionInProgress = NULL;
 
 	if (!pFnIsPopUpTransitionInProgress)
-		pFnIsPopUpTransitionInProgress = (UFunction*)UObject::GObjObjects()->Data[41936];
+		pFnIsPopUpTransitionInProgress = (UFunction*)UObject::GObjects()->Data[41936];
 
 	UGearboxCoverStateManager_execIsPopUpTransitionInProgress_Parms IsPopUpTransitionInProgress_Parms;
 
@@ -14310,7 +14310,7 @@ bool UGearboxCoverStateManager::IsPoppedUp(unsigned long bTransitionCounts)
 	static UFunction* pFnIsPoppedUp = NULL;
 
 	if (!pFnIsPoppedUp)
-		pFnIsPoppedUp = (UFunction*)UObject::GObjObjects()->Data[41933];
+		pFnIsPoppedUp = (UFunction*)UObject::GObjects()->Data[41933];
 
 	UGearboxCoverStateManager_execIsPoppedUp_Parms IsPoppedUp_Parms;
 	IsPoppedUp_Parms.bTransitionCounts = bTransitionCounts;
@@ -14334,7 +14334,7 @@ bool UGearboxCoverStateManager::IsExecutingAnyTransition()
 	static UFunction* pFnIsExecutingAnyTransition = NULL;
 
 	if (!pFnIsExecutingAnyTransition)
-		pFnIsExecutingAnyTransition = (UFunction*)UObject::GObjObjects()->Data[41931];
+		pFnIsExecutingAnyTransition = (UFunction*)UObject::GObjects()->Data[41931];
 
 	UGearboxCoverStateManager_execIsExecutingAnyTransition_Parms IsExecutingAnyTransition_Parms;
 
@@ -14357,7 +14357,7 @@ unsigned char UGearboxCoverStateManager::GetDesiredState()
 	static UFunction* pFnGetDesiredState = NULL;
 
 	if (!pFnGetDesiredState)
-		pFnGetDesiredState = (UFunction*)UObject::GObjObjects()->Data[41929];
+		pFnGetDesiredState = (UFunction*)UObject::GObjects()->Data[41929];
 
 	UGearboxCoverStateManager_execGetDesiredState_Parms GetDesiredState_Parms;
 
@@ -14380,7 +14380,7 @@ unsigned char UGearboxCoverStateManager::GetCurrentTransition()
 	static UFunction* pFnGetCurrentTransition = NULL;
 
 	if (!pFnGetCurrentTransition)
-		pFnGetCurrentTransition = (UFunction*)UObject::GObjObjects()->Data[41927];
+		pFnGetCurrentTransition = (UFunction*)UObject::GObjects()->Data[41927];
 
 	UGearboxCoverStateManager_execGetCurrentTransition_Parms GetCurrentTransition_Parms;
 
@@ -14402,7 +14402,7 @@ void UGearboxCoverStateManager::OnMantleOverCoverAnimEnd()
 	static UFunction* pFnOnMantleOverCoverAnimEnd = NULL;
 
 	if (!pFnOnMantleOverCoverAnimEnd)
-		pFnOnMantleOverCoverAnimEnd = (UFunction*)UObject::GObjObjects()->Data[41926];
+		pFnOnMantleOverCoverAnimEnd = (UFunction*)UObject::GObjects()->Data[41926];
 
 	UGearboxCoverStateManager_execOnMantleOverCoverAnimEnd_Parms OnMantleOverCoverAnimEnd_Parms;
 
@@ -14422,7 +14422,7 @@ void UGearboxCoverStateManager::OnTransitionAnimEndEx()
 	static UFunction* pFnOnTransitionAnimEndEx = NULL;
 
 	if (!pFnOnTransitionAnimEndEx)
-		pFnOnTransitionAnimEndEx = (UFunction*)UObject::GObjObjects()->Data[41925];
+		pFnOnTransitionAnimEndEx = (UFunction*)UObject::GObjects()->Data[41925];
 
 	UGearboxCoverStateManager_execOnTransitionAnimEndEx_Parms OnTransitionAnimEndEx_Parms;
 
@@ -14443,7 +14443,7 @@ void UGearboxCoverStateManager::OnTransitionAnimEnd(unsigned char Transition)
 	static UFunction* pFnOnTransitionAnimEnd = NULL;
 
 	if (!pFnOnTransitionAnimEnd)
-		pFnOnTransitionAnimEnd = (UFunction*)UObject::GObjObjects()->Data[41923];
+		pFnOnTransitionAnimEnd = (UFunction*)UObject::GObjects()->Data[41923];
 
 	UGearboxCoverStateManager_execOnTransitionAnimEnd_Parms OnTransitionAnimEnd_Parms;
 	OnTransitionAnimEnd_Parms.Transition = Transition;
@@ -14464,7 +14464,7 @@ void UGearboxCoverStateManager::OnDismountAnimEnd()
 	static UFunction* pFnOnDismountAnimEnd = NULL;
 
 	if (!pFnOnDismountAnimEnd)
-		pFnOnDismountAnimEnd = (UFunction*)UObject::GObjObjects()->Data[41922];
+		pFnOnDismountAnimEnd = (UFunction*)UObject::GObjects()->Data[41922];
 
 	UGearboxCoverStateManager_execOnDismountAnimEnd_Parms OnDismountAnimEnd_Parms;
 
@@ -14484,7 +14484,7 @@ void UGearboxCoverStateManager::OnMountAnimEnd()
 	static UFunction* pFnOnMountAnimEnd = NULL;
 
 	if (!pFnOnMountAnimEnd)
-		pFnOnMountAnimEnd = (UFunction*)UObject::GObjObjects()->Data[41921];
+		pFnOnMountAnimEnd = (UFunction*)UObject::GObjects()->Data[41921];
 
 	UGearboxCoverStateManager_execOnMountAnimEnd_Parms OnMountAnimEnd_Parms;
 
@@ -14507,7 +14507,7 @@ bool UGearboxCoverStateManager::MantleOverCover(class AActor* CoverActor, int Co
 	static UFunction* pFnMantleOverCover = NULL;
 
 	if (!pFnMantleOverCover)
-		pFnMantleOverCover = (UFunction*)UObject::GObjObjects()->Data[41917];
+		pFnMantleOverCover = (UFunction*)UObject::GObjects()->Data[41917];
 
 	UGearboxCoverStateManager_execMantleOverCover_Parms MantleOverCover_Parms;
 	MantleOverCover_Parms.CoverActor = CoverActor;
@@ -14532,7 +14532,7 @@ bool UGearboxCoverStateManager::ReturnToCover()
 	static UFunction* pFnReturnToCover = NULL;
 
 	if (!pFnReturnToCover)
-		pFnReturnToCover = (UFunction*)UObject::GObjObjects()->Data[41915];
+		pFnReturnToCover = (UFunction*)UObject::GObjects()->Data[41915];
 
 	UGearboxCoverStateManager_execReturnToCover_Parms ReturnToCover_Parms;
 
@@ -14556,7 +14556,7 @@ bool UGearboxCoverStateManager::LeanOutForFiring(unsigned long BlindFire)
 	static UFunction* pFnLeanOutForFiring = NULL;
 
 	if (!pFnLeanOutForFiring)
-		pFnLeanOutForFiring = (UFunction*)UObject::GObjObjects()->Data[41912];
+		pFnLeanOutForFiring = (UFunction*)UObject::GObjects()->Data[41912];
 
 	UGearboxCoverStateManager_execLeanOutForFiring_Parms LeanOutForFiring_Parms;
 	LeanOutForFiring_Parms.BlindFire = BlindFire;
@@ -14581,7 +14581,7 @@ bool UGearboxCoverStateManager::PopUpForFiring(unsigned long BlindFire)
 	static UFunction* pFnPopUpForFiring = NULL;
 
 	if (!pFnPopUpForFiring)
-		pFnPopUpForFiring = (UFunction*)UObject::GObjObjects()->Data[41909];
+		pFnPopUpForFiring = (UFunction*)UObject::GObjects()->Data[41909];
 
 	UGearboxCoverStateManager_execPopUpForFiring_Parms PopUpForFiring_Parms;
 	PopUpForFiring_Parms.BlindFire = BlindFire;
@@ -14605,7 +14605,7 @@ bool UGearboxCoverStateManager::Peek()
 	static UFunction* pFnPeek = NULL;
 
 	if (!pFnPeek)
-		pFnPeek = (UFunction*)UObject::GObjObjects()->Data[41907];
+		pFnPeek = (UFunction*)UObject::GObjects()->Data[41907];
 
 	UGearboxCoverStateManager_execPeek_Parms Peek_Parms;
 
@@ -14628,7 +14628,7 @@ bool UGearboxCoverStateManager::DetachFromCover()
 	static UFunction* pFnDetachFromCover = NULL;
 
 	if (!pFnDetachFromCover)
-		pFnDetachFromCover = (UFunction*)UObject::GObjObjects()->Data[41905];
+		pFnDetachFromCover = (UFunction*)UObject::GObjects()->Data[41905];
 
 	UGearboxCoverStateManager_execDetachFromCover_Parms DetachFromCover_Parms;
 
@@ -14652,7 +14652,7 @@ bool UGearboxCoverStateManager::DismountCover(unsigned char DismountType)
 	static UFunction* pFnDismountCover = NULL;
 
 	if (!pFnDismountCover)
-		pFnDismountCover = (UFunction*)UObject::GObjObjects()->Data[41902];
+		pFnDismountCover = (UFunction*)UObject::GObjects()->Data[41902];
 
 	UGearboxCoverStateManager_execDismountCover_Parms DismountCover_Parms;
 	DismountCover_Parms.DismountType = DismountType;
@@ -14678,7 +14678,7 @@ bool UGearboxCoverStateManager::ClaimAndMountCover(class ACoverLink* TheCoverLin
 	static UFunction* pFnClaimAndMountCover = NULL;
 
 	if (!pFnClaimAndMountCover)
-		pFnClaimAndMountCover = (UFunction*)UObject::GObjObjects()->Data[41898];
+		pFnClaimAndMountCover = (UFunction*)UObject::GObjects()->Data[41898];
 
 	UGearboxCoverStateManager_execClaimAndMountCover_Parms ClaimAndMountCover_Parms;
 	ClaimAndMountCover_Parms.TheCoverLink = TheCoverLink;
@@ -14703,7 +14703,7 @@ bool UGearboxCoverStateManager::MountDesiredCover()
 	static UFunction* pFnMountDesiredCover = NULL;
 
 	if (!pFnMountDesiredCover)
-		pFnMountDesiredCover = (UFunction*)UObject::GObjObjects()->Data[41896];
+		pFnMountDesiredCover = (UFunction*)UObject::GObjects()->Data[41896];
 
 	UGearboxCoverStateManager_execMountDesiredCover_Parms MountDesiredCover_Parms;
 
@@ -14725,7 +14725,7 @@ void UGearboxCoverStateManager::ClearDesiredCover()
 	static UFunction* pFnClearDesiredCover = NULL;
 
 	if (!pFnClearDesiredCover)
-		pFnClearDesiredCover = (UFunction*)UObject::GObjObjects()->Data[41895];
+		pFnClearDesiredCover = (UFunction*)UObject::GObjects()->Data[41895];
 
 	UGearboxCoverStateManager_execClearDesiredCover_Parms ClearDesiredCover_Parms;
 
@@ -14747,7 +14747,7 @@ void UGearboxCoverStateManager::GetCurrentCoverLocationAndRotation(struct FVecto
 	static UFunction* pFnGetCurrentCoverLocationAndRotation = NULL;
 
 	if (!pFnGetCurrentCoverLocationAndRotation)
-		pFnGetCurrentCoverLocationAndRotation = (UFunction*)UObject::GObjObjects()->Data[41892];
+		pFnGetCurrentCoverLocationAndRotation = (UFunction*)UObject::GObjects()->Data[41892];
 
 	UGearboxCoverStateManager_execGetCurrentCoverLocationAndRotation_Parms GetCurrentCoverLocationAndRotation_Parms;
 
@@ -14775,7 +14775,7 @@ void UGearboxCoverStateManager::GetDesiredCoverLocationAndRotation(struct FVecto
 	static UFunction* pFnGetDesiredCoverLocationAndRotation = NULL;
 
 	if (!pFnGetDesiredCoverLocationAndRotation)
-		pFnGetDesiredCoverLocationAndRotation = (UFunction*)UObject::GObjObjects()->Data[41889];
+		pFnGetDesiredCoverLocationAndRotation = (UFunction*)UObject::GObjects()->Data[41889];
 
 	UGearboxCoverStateManager_execGetDesiredCoverLocationAndRotation_Parms GetDesiredCoverLocationAndRotation_Parms;
 
@@ -14802,7 +14802,7 @@ bool UGearboxCoverStateManager::HasDesiredCover()
 	static UFunction* pFnHasDesiredCover = NULL;
 
 	if (!pFnHasDesiredCover)
-		pFnHasDesiredCover = (UFunction*)UObject::GObjObjects()->Data[41887];
+		pFnHasDesiredCover = (UFunction*)UObject::GObjects()->Data[41887];
 
 	UGearboxCoverStateManager_execHasDesiredCover_Parms HasDesiredCover_Parms;
 
@@ -14825,7 +14825,7 @@ unsigned char UGearboxCoverStateManager::GetLastCoverHeight()
 	static UFunction* pFnGetLastCoverHeight = NULL;
 
 	if (!pFnGetLastCoverHeight)
-		pFnGetLastCoverHeight = (UFunction*)UObject::GObjObjects()->Data[41885];
+		pFnGetLastCoverHeight = (UFunction*)UObject::GObjects()->Data[41885];
 
 	UGearboxCoverStateManager_execGetLastCoverHeight_Parms GetLastCoverHeight_Parms;
 
@@ -14848,7 +14848,7 @@ unsigned char UGearboxCoverStateManager::GetCurrentCoverHeight()
 	static UFunction* pFnGetCurrentCoverHeight = NULL;
 
 	if (!pFnGetCurrentCoverHeight)
-		pFnGetCurrentCoverHeight = (UFunction*)UObject::GObjObjects()->Data[41883];
+		pFnGetCurrentCoverHeight = (UFunction*)UObject::GObjects()->Data[41883];
 
 	UGearboxCoverStateManager_execGetCurrentCoverHeight_Parms GetCurrentCoverHeight_Parms;
 
@@ -14871,7 +14871,7 @@ unsigned char UGearboxCoverStateManager::GetDesiredCoverHeight()
 	static UFunction* pFnGetDesiredCoverHeight = NULL;
 
 	if (!pFnGetDesiredCoverHeight)
-		pFnGetDesiredCoverHeight = (UFunction*)UObject::GObjObjects()->Data[41881];
+		pFnGetDesiredCoverHeight = (UFunction*)UObject::GObjects()->Data[41881];
 
 	UGearboxCoverStateManager_execGetDesiredCoverHeight_Parms GetDesiredCoverHeight_Parms;
 
@@ -14895,7 +14895,7 @@ bool UGearboxCoverStateManager::WasCoveredFrom(struct FVector ThreatLocation)
 	static UFunction* pFnWasCoveredFrom = NULL;
 
 	if (!pFnWasCoveredFrom)
-		pFnWasCoveredFrom = (UFunction*)UObject::GObjObjects()->Data[41878];
+		pFnWasCoveredFrom = (UFunction*)UObject::GObjects()->Data[41878];
 
 	UGearboxCoverStateManager_execWasCoveredFrom_Parms WasCoveredFrom_Parms;
 	memcpy(&WasCoveredFrom_Parms.ThreatLocation, &ThreatLocation, 0xC);
@@ -14920,7 +14920,7 @@ bool UGearboxCoverStateManager::WillBeCoveredFrom(struct FVector ThreatLocation)
 	static UFunction* pFnWillBeCoveredFrom = NULL;
 
 	if (!pFnWillBeCoveredFrom)
-		pFnWillBeCoveredFrom = (UFunction*)UObject::GObjObjects()->Data[41875];
+		pFnWillBeCoveredFrom = (UFunction*)UObject::GObjects()->Data[41875];
 
 	UGearboxCoverStateManager_execWillBeCoveredFrom_Parms WillBeCoveredFrom_Parms;
 	memcpy(&WillBeCoveredFrom_Parms.ThreatLocation, &ThreatLocation, 0xC);
@@ -14945,7 +14945,7 @@ bool UGearboxCoverStateManager::IsCoveredFrom(struct FVector ThreatLocation)
 	static UFunction* pFnIsCoveredFrom = NULL;
 
 	if (!pFnIsCoveredFrom)
-		pFnIsCoveredFrom = (UFunction*)UObject::GObjObjects()->Data[41872];
+		pFnIsCoveredFrom = (UFunction*)UObject::GObjects()->Data[41872];
 
 	UGearboxCoverStateManager_execIsCoveredFrom_Parms IsCoveredFrom_Parms;
 	memcpy(&IsCoveredFrom_Parms.ThreatLocation, &ThreatLocation, 0xC);
@@ -14969,7 +14969,7 @@ bool UGearboxCoverStateManager::IsDismountInProgress()
 	static UFunction* pFnIsDismountInProgress = NULL;
 
 	if (!pFnIsDismountInProgress)
-		pFnIsDismountInProgress = (UFunction*)UObject::GObjObjects()->Data[41870];
+		pFnIsDismountInProgress = (UFunction*)UObject::GObjects()->Data[41870];
 
 	UGearboxCoverStateManager_execIsDismountInProgress_Parms IsDismountInProgress_Parms;
 
@@ -14992,7 +14992,7 @@ bool UGearboxCoverStateManager::IsMountInProgress()
 	static UFunction* pFnIsMountInProgress = NULL;
 
 	if (!pFnIsMountInProgress)
-		pFnIsMountInProgress = (UFunction*)UObject::GObjObjects()->Data[41868];
+		pFnIsMountInProgress = (UFunction*)UObject::GObjects()->Data[41868];
 
 	UGearboxCoverStateManager_execIsMountInProgress_Parms IsMountInProgress_Parms;
 
@@ -15015,7 +15015,7 @@ bool UGearboxCoverStateManager::WasMountedOnCover()
 	static UFunction* pFnWasMountedOnCover = NULL;
 
 	if (!pFnWasMountedOnCover)
-		pFnWasMountedOnCover = (UFunction*)UObject::GObjObjects()->Data[41866];
+		pFnWasMountedOnCover = (UFunction*)UObject::GObjects()->Data[41866];
 
 	UGearboxCoverStateManager_execWasMountedOnCover_Parms WasMountedOnCover_Parms;
 
@@ -15038,7 +15038,7 @@ bool UGearboxCoverStateManager::IsMountedOnCover()
 	static UFunction* pFnIsMountedOnCover = NULL;
 
 	if (!pFnIsMountedOnCover)
-		pFnIsMountedOnCover = (UFunction*)UObject::GObjObjects()->Data[41864];
+		pFnIsMountedOnCover = (UFunction*)UObject::GObjects()->Data[41864];
 
 	UGearboxCoverStateManager_execIsMountedOnCover_Parms IsMountedOnCover_Parms;
 
@@ -15061,7 +15061,7 @@ bool UGearboxCoverStateManager::IsUsingCover()
 	static UFunction* pFnIsUsingCover = NULL;
 
 	if (!pFnIsUsingCover)
-		pFnIsUsingCover = (UFunction*)UObject::GObjObjects()->Data[41862];
+		pFnIsUsingCover = (UFunction*)UObject::GObjects()->Data[41862];
 
 	UGearboxCoverStateManager_execIsUsingCover_Parms IsUsingCover_Parms;
 
@@ -15083,7 +15083,7 @@ void UGearboxCoverStateManager::OnCoverStateChanged()
 	static UFunction* pFnOnCoverStateChanged = NULL;
 
 	if (!pFnOnCoverStateChanged)
-		pFnOnCoverStateChanged = (UFunction*)UObject::GObjObjects()->Data[41861];
+		pFnOnCoverStateChanged = (UFunction*)UObject::GObjects()->Data[41861];
 
 	UGearboxCoverStateManager_execOnCoverStateChanged_Parms OnCoverStateChanged_Parms;
 
@@ -15105,7 +15105,7 @@ void UGearboxCoverStateManager::GetLastCover(class AActor** OutCoverActor, int* 
 	static UFunction* pFnGetLastCover = NULL;
 
 	if (!pFnGetLastCover)
-		pFnGetLastCover = (UFunction*)UObject::GObjObjects()->Data[41858];
+		pFnGetLastCover = (UFunction*)UObject::GObjects()->Data[41858];
 
 	UGearboxCoverStateManager_execGetLastCover_Parms GetLastCover_Parms;
 
@@ -15133,7 +15133,7 @@ void UGearboxCoverStateManager::GetCurrentCover(class AActor** OutCoverActor, in
 	static UFunction* pFnGetCurrentCover = NULL;
 
 	if (!pFnGetCurrentCover)
-		pFnGetCurrentCover = (UFunction*)UObject::GObjObjects()->Data[41855];
+		pFnGetCurrentCover = (UFunction*)UObject::GObjects()->Data[41855];
 
 	UGearboxCoverStateManager_execGetCurrentCover_Parms GetCurrentCover_Parms;
 
@@ -15161,7 +15161,7 @@ void UGearboxCoverStateManager::GetDesiredCover(class AActor** OutCoverActor, in
 	static UFunction* pFnGetDesiredCover = NULL;
 
 	if (!pFnGetDesiredCover)
-		pFnGetDesiredCover = (UFunction*)UObject::GObjObjects()->Data[41852];
+		pFnGetDesiredCover = (UFunction*)UObject::GObjects()->Data[41852];
 
 	UGearboxCoverStateManager_execGetDesiredCover_Parms GetDesiredCover_Parms;
 
@@ -15195,7 +15195,7 @@ bool UGearboxCoverStateManager::FindCoverAndClaim(class AGearboxMind* TheMind, s
 	static UFunction* pFnFindCoverAndClaim = NULL;
 
 	if (!pFnFindCoverAndClaim)
-		pFnFindCoverAndClaim = (UFunction*)UObject::GObjObjects()->Data[41843];
+		pFnFindCoverAndClaim = (UFunction*)UObject::GObjects()->Data[41843];
 
 	UGearboxCoverStateManager_execFindCoverAndClaim_Parms FindCoverAndClaim_Parms;
 	FindCoverAndClaim_Parms.TheMind = TheMind;
@@ -15227,7 +15227,7 @@ void UGearboxCoverStateManager::Initialize(class AGearboxPawn* P)
 	static UFunction* pFnInitialize = NULL;
 
 	if (!pFnInitialize)
-		pFnInitialize = (UFunction*)UObject::GObjObjects()->Data[41841];
+		pFnInitialize = (UFunction*)UObject::GObjects()->Data[41841];
 
 	UGearboxCoverStateManager_execInitialize_Parms Initialize_Parms;
 	Initialize_Parms.P = P;
@@ -15245,7 +15245,7 @@ void UGearboxNavigationHandle::SetDesiredMovementSpeed(unsigned char Speed)
 	static UFunction* pFnSetDesiredMovementSpeed = NULL;
 
 	if (!pFnSetDesiredMovementSpeed)
-		pFnSetDesiredMovementSpeed = (UFunction*)UObject::GObjObjects()->Data[39161];
+		pFnSetDesiredMovementSpeed = (UFunction*)UObject::GObjects()->Data[39161];
 
 	UGearboxNavigationHandle_execSetDesiredMovementSpeed_Parms SetDesiredMovementSpeed_Parms;
 	SetDesiredMovementSpeed_Parms.Speed = Speed;
@@ -15266,7 +15266,7 @@ void UGearboxNavigationHandle::ClearAnchor()
 	static UFunction* pFnClearAnchor = NULL;
 
 	if (!pFnClearAnchor)
-		pFnClearAnchor = (UFunction*)UObject::GObjObjects()->Data[42838];
+		pFnClearAnchor = (UFunction*)UObject::GObjects()->Data[42838];
 
 	UGearboxNavigationHandle_execClearAnchor_Parms ClearAnchor_Parms;
 
@@ -15293,7 +15293,7 @@ bool UGearboxNavigationHandle::GetNearestPositionOnNavMesh(float Radius, struct 
 	static UFunction* pFnGetNearestPositionOnNavMesh = NULL;
 
 	if (!pFnGetNearestPositionOnNavMesh)
-		pFnGetNearestPositionOnNavMesh = (UFunction*)UObject::GObjObjects()->Data[42830];
+		pFnGetNearestPositionOnNavMesh = (UFunction*)UObject::GObjects()->Data[42830];
 
 	UGearboxNavigationHandle_execGetNearestPositionOnNavMesh_Parms GetNearestPositionOnNavMesh_Parms;
 	GetNearestPositionOnNavMesh_Parms.Radius = Radius;
@@ -15331,7 +15331,7 @@ bool UGearboxNavigationHandle::GetNavMeshPolyForPoint(struct FVector Point, stru
 	static UFunction* pFnGetNavMeshPolyForPoint = NULL;
 
 	if (!pFnGetNavMeshPolyForPoint)
-		pFnGetNavMeshPolyForPoint = (UFunction*)UObject::GObjObjects()->Data[42825];
+		pFnGetNavMeshPolyForPoint = (UFunction*)UObject::GObjects()->Data[42825];
 
 	UGearboxNavigationHandle_execGetNavMeshPolyForPoint_Parms GetNavMeshPolyForPoint_Parms;
 	memcpy(&GetNavMeshPolyForPoint_Parms.Point, &Point, 0xC);
@@ -15361,7 +15361,7 @@ bool UGearboxNavigationHandle::IsDoingSpecialMove()
 	static UFunction* pFnIsDoingSpecialMove = NULL;
 
 	if (!pFnIsDoingSpecialMove)
-		pFnIsDoingSpecialMove = (UFunction*)UObject::GObjObjects()->Data[42823];
+		pFnIsDoingSpecialMove = (UFunction*)UObject::GObjects()->Data[42823];
 
 	UGearboxNavigationHandle_execIsDoingSpecialMove_Parms IsDoingSpecialMove_Parms;
 
@@ -15385,7 +15385,7 @@ bool UGearboxNavigationHandle::InFinalPoly(struct FVector TestLoc)
 	static UFunction* pFnInFinalPoly = NULL;
 
 	if (!pFnInFinalPoly)
-		pFnInFinalPoly = (UFunction*)UObject::GObjObjects()->Data[42820];
+		pFnInFinalPoly = (UFunction*)UObject::GObjects()->Data[42820];
 
 	UGearboxNavigationHandle_execInFinalPoly_Parms InFinalPoly_Parms;
 	memcpy(&InFinalPoly_Parms.TestLoc, &TestLoc, 0xC);
@@ -15409,7 +15409,7 @@ bool UGearboxNavigationHandle::NeedsRegularWalkingPhysics()
 	static UFunction* pFnNeedsRegularWalkingPhysics = NULL;
 
 	if (!pFnNeedsRegularWalkingPhysics)
-		pFnNeedsRegularWalkingPhysics = (UFunction*)UObject::GObjObjects()->Data[42818];
+		pFnNeedsRegularWalkingPhysics = (UFunction*)UObject::GObjects()->Data[42818];
 
 	UGearboxNavigationHandle_execNeedsRegularWalkingPhysics_Parms NeedsRegularWalkingPhysics_Parms;
 
@@ -15432,7 +15432,7 @@ bool UGearboxNavigationHandle::PopulatePathfindingParamCache()
 	static UFunction* pFnPopulatePathfindingParamCache = NULL;
 
 	if (!pFnPopulatePathfindingParamCache)
-		pFnPopulatePathfindingParamCache = (UFunction*)UObject::GObjObjects()->Data[42816];
+		pFnPopulatePathfindingParamCache = (UFunction*)UObject::GObjects()->Data[42816];
 
 	UGearboxNavigationHandle_execPopulatePathfindingParamCache_Parms PopulatePathfindingParamCache_Parms;
 
@@ -15456,7 +15456,7 @@ bool UGearboxNavigationHandle::TrySpecialMove(struct FBasedPosition* MoveTarget)
 	static UFunction* pFnTrySpecialMove = NULL;
 
 	if (!pFnTrySpecialMove)
-		pFnTrySpecialMove = (UFunction*)UObject::GObjObjects()->Data[42813];
+		pFnTrySpecialMove = (UFunction*)UObject::GObjects()->Data[42813];
 
 	UGearboxNavigationHandle_execTrySpecialMove_Parms TrySpecialMove_Parms;
 
@@ -15481,7 +15481,7 @@ void UGearboxNavigationHandle::Finished()
 	static UFunction* pFnFinished = NULL;
 
 	if (!pFnFinished)
-		pFnFinished = (UFunction*)UObject::GObjObjects()->Data[42812];
+		pFnFinished = (UFunction*)UObject::GObjects()->Data[42812];
 
 	UGearboxNavigationHandle_execFinished_Parms Finished_Parms;
 
@@ -15502,7 +15502,7 @@ bool UGearboxNavigationHandle::IsGoalValid()
 	static UFunction* pFnIsGoalValid = NULL;
 
 	if (!pFnIsGoalValid)
-		pFnIsGoalValid = (UFunction*)UObject::GObjObjects()->Data[42810];
+		pFnIsGoalValid = (UFunction*)UObject::GObjects()->Data[42810];
 
 	UGearboxNavigationHandle_execIsGoalValid_Parms IsGoalValid_Parms;
 
@@ -15524,7 +15524,7 @@ void UGearboxNavigationHandle::MovePawnToGoal()
 	static UFunction* pFnMovePawnToGoal = NULL;
 
 	if (!pFnMovePawnToGoal)
-		pFnMovePawnToGoal = (UFunction*)UObject::GObjObjects()->Data[42809];
+		pFnMovePawnToGoal = (UFunction*)UObject::GObjects()->Data[42809];
 
 	UGearboxNavigationHandle_execMovePawnToGoal_Parms MovePawnToGoal_Parms;
 
@@ -15547,7 +15547,7 @@ bool UGearboxNavigationHandle::PathIsValid(unsigned long bCheckAnchor, struct FP
 	static UFunction* pFnPathIsValid = NULL;
 
 	if (!pFnPathIsValid)
-		pFnPathIsValid = (UFunction*)UObject::GObjObjects()->Data[42805];
+		pFnPathIsValid = (UFunction*)UObject::GObjects()->Data[42805];
 
 	UGearboxNavigationHandle_execPathIsValid_Parms PathIsValid_Parms;
 	PathIsValid_Parms.bCheckAnchor = bCheckAnchor;
@@ -15574,7 +15574,7 @@ bool UGearboxNavigationHandle::IsFollowingPath()
 	static UFunction* pFnIsFollowingPath = NULL;
 
 	if (!pFnIsFollowingPath)
-		pFnIsFollowingPath = (UFunction*)UObject::GObjObjects()->Data[42803];
+		pFnIsFollowingPath = (UFunction*)UObject::GObjects()->Data[42803];
 
 	UGearboxNavigationHandle_execIsFollowingPath_Parms IsFollowingPath_Parms;
 
@@ -15599,7 +15599,7 @@ bool UGearboxNavigationHandle::ClearPath(unsigned long bStopMovement, unsigned l
 	static UFunction* pFnClearPath = NULL;
 
 	if (!pFnClearPath)
-		pFnClearPath = (UFunction*)UObject::GObjObjects()->Data[42799];
+		pFnClearPath = (UFunction*)UObject::GObjects()->Data[42799];
 
 	UGearboxNavigationHandle_execClearPath_Parms ClearPath_Parms;
 	ClearPath_Parms.bStopMovement = bStopMovement;
@@ -15625,7 +15625,7 @@ bool UGearboxNavigationHandle::FollowPath(struct FPathFindData* Data)
 	static UFunction* pFnFollowPath = NULL;
 
 	if (!pFnFollowPath)
-		pFnFollowPath = (UFunction*)UObject::GObjObjects()->Data[42796];
+		pFnFollowPath = (UFunction*)UObject::GObjects()->Data[42796];
 
 	UGearboxNavigationHandle_execFollowPath_Parms FollowPath_Parms;
 
@@ -15655,7 +15655,7 @@ bool UGearboxNavigationHandle::CreatePathToLocation(struct FVector DestLocation,
 	static UFunction* pFnCreatePathToLocation = NULL;
 
 	if (!pFnCreatePathToLocation)
-		pFnCreatePathToLocation = (UFunction*)UObject::GObjObjects()->Data[42790];
+		pFnCreatePathToLocation = (UFunction*)UObject::GObjects()->Data[42790];
 
 	UGearboxNavigationHandle_execCreatePathToLocation_Parms CreatePathToLocation_Parms;
 	memcpy(&CreatePathToLocation_Parms.DestLocation, &DestLocation, 0xC);
@@ -15684,7 +15684,7 @@ bool UIGbxMessageListener::WantsToStopListening()
 	static UFunction* pFnWantsToStopListening = NULL;
 
 	if (!pFnWantsToStopListening)
-		pFnWantsToStopListening = (UFunction*)UObject::GObjObjects()->Data[43789];
+		pFnWantsToStopListening = (UFunction*)UObject::GObjects()->Data[43789];
 
 	UIGbxMessageListener_execWantsToStopListening_Parms WantsToStopListening_Parms;
 
@@ -15707,7 +15707,7 @@ class AActor* UIGbxMessageListener::GetActor()
 	static UFunction* pFnGetActor = NULL;
 
 	if (!pFnGetActor)
-		pFnGetActor = (UFunction*)UObject::GObjObjects()->Data[43787];
+		pFnGetActor = (UFunction*)UObject::GObjects()->Data[43787];
 
 	UIGbxMessageListener_execGetActor_Parms GetActor_Parms;
 
@@ -15730,7 +15730,7 @@ struct FVector UIGbxMessageListener::GetListenerLocation()
 	static UFunction* pFnGetListenerLocation = NULL;
 
 	if (!pFnGetListenerLocation)
-		pFnGetListenerLocation = (UFunction*)UObject::GObjObjects()->Data[43785];
+		pFnGetListenerLocation = (UFunction*)UObject::GObjects()->Data[43785];
 
 	UIGbxMessageListener_execGetListenerLocation_Parms GetListenerLocation_Parms;
 
@@ -15753,7 +15753,7 @@ class UPawnAllegiance* UIGbxMessageListener::GetAllegiance()
 	static UFunction* pFnGetAllegiance = NULL;
 
 	if (!pFnGetAllegiance)
-		pFnGetAllegiance = (UFunction*)UObject::GObjObjects()->Data[43783];
+		pFnGetAllegiance = (UFunction*)UObject::GObjects()->Data[43783];
 
 	UIGbxMessageListener_execGetAllegiance_Parms GetAllegiance_Parms;
 
@@ -15777,7 +15777,7 @@ bool UIGbxMessageListener::ReceiveMessage(class UGbxMessage* Message)
 	static UFunction* pFnReceiveMessage = NULL;
 
 	if (!pFnReceiveMessage)
-		pFnReceiveMessage = (UFunction*)UObject::GObjObjects()->Data[43780];
+		pFnReceiveMessage = (UFunction*)UObject::GObjects()->Data[43780];
 
 	UIGbxMessageListener_execReceiveMessage_Parms ReceiveMessage_Parms;
 	ReceiveMessage_Parms.Message = Message;
@@ -15802,7 +15802,7 @@ bool UIGbxMessageListener::CaresAboutMessage(class UGbxMessage* Message)
 	static UFunction* pFnCaresAboutMessage = NULL;
 
 	if (!pFnCaresAboutMessage)
-		pFnCaresAboutMessage = (UFunction*)UObject::GObjObjects()->Data[43777];
+		pFnCaresAboutMessage = (UFunction*)UObject::GObjects()->Data[43777];
 
 	UIGbxMessageListener_execCaresAboutMessage_Parms CaresAboutMessage_Parms;
 	CaresAboutMessage_Parms.Message = Message;
@@ -15826,7 +15826,7 @@ class URuleEngine* UIRuleEngineOwner::GetRuleEngine()
 	static UFunction* pFnGetRuleEngine = NULL;
 
 	if (!pFnGetRuleEngine)
-		pFnGetRuleEngine = (UFunction*)UObject::GObjObjects()->Data[43805];
+		pFnGetRuleEngine = (UFunction*)UObject::GObjects()->Data[43805];
 
 	UIRuleEngineOwner_execGetRuleEngine_Parms GetRuleEngine_Parms;
 
@@ -15849,7 +15849,7 @@ void UKnowledgeRecord::eventRecordEvalCallback(class URuleEngine* EvalRuleEngine
 	static UFunction* pFnRecordEvalCallback = NULL;
 
 	if (!pFnRecordEvalCallback)
-		pFnRecordEvalCallback = (UFunction*)UObject::GObjObjects()->Data[43824];
+		pFnRecordEvalCallback = (UFunction*)UObject::GObjects()->Data[43824];
 
 	UKnowledgeRecord_eventRecordEvalCallback_Parms RecordEvalCallback_Parms;
 	RecordEvalCallback_Parms.EvalRuleEngine = EvalRuleEngine;
@@ -15867,7 +15867,7 @@ float UMindTargetInfo::GetAverageHitTime()
 	static UFunction* pFnGetAverageHitTime = NULL;
 
 	if (!pFnGetAverageHitTime)
-		pFnGetAverageHitTime = (UFunction*)UObject::GObjObjects()->Data[43873];
+		pFnGetAverageHitTime = (UFunction*)UObject::GObjects()->Data[43873];
 
 	UMindTargetInfo_execGetAverageHitTime_Parms GetAverageHitTime_Parms;
 
@@ -15891,7 +15891,7 @@ void UMindTargetInfo::AddHitTargetRecord(struct FVector vecNewHitLoc, float flNe
 	static UFunction* pFnAddHitTargetRecord = NULL;
 
 	if (!pFnAddHitTargetRecord)
-		pFnAddHitTargetRecord = (UFunction*)UObject::GObjObjects()->Data[43870];
+		pFnAddHitTargetRecord = (UFunction*)UObject::GObjects()->Data[43870];
 
 	UMindTargetInfo_execAddHitTargetRecord_Parms AddHitTargetRecord_Parms;
 	memcpy(&AddHitTargetRecord_Parms.vecNewHitLoc, &vecNewHitLoc, 0xC);
@@ -15914,7 +15914,7 @@ struct FString URule::GetRuleName()
 	static UFunction* pFnGetRuleName = NULL;
 
 	if (!pFnGetRuleName)
-		pFnGetRuleName = (UFunction*)UObject::GObjObjects()->Data[40961];
+		pFnGetRuleName = (UFunction*)UObject::GObjects()->Data[40961];
 
 	URule_execGetRuleName_Parms GetRuleName_Parms;
 
@@ -15937,7 +15937,7 @@ struct FName URule::GetRuleFName()
 	static UFunction* pFnGetRuleFName = NULL;
 
 	if (!pFnGetRuleFName)
-		pFnGetRuleFName = (UFunction*)UObject::GObjObjects()->Data[40962];
+		pFnGetRuleFName = (UFunction*)UObject::GObjects()->Data[40962];
 
 	URule_execGetRuleFName_Parms GetRuleFName_Parms;
 
@@ -15960,7 +15960,7 @@ class UObject* URule::GetOtherEventParticipant()
 	static UFunction* pFnGetOtherEventParticipant = NULL;
 
 	if (!pFnGetOtherEventParticipant)
-		pFnGetOtherEventParticipant = (UFunction*)UObject::GObjObjects()->Data[40964];
+		pFnGetOtherEventParticipant = (UFunction*)UObject::GObjects()->Data[40964];
 
 	URule_execGetOtherEventParticipant_Parms GetOtherEventParticipant_Parms;
 
@@ -15979,7 +15979,7 @@ void URuleEngine::ApplyFlagInitializationData(TArray< struct FFlagDefinitionInit
 	static UFunction* pFnApplyFlagInitializationData = NULL;
 
 	if (!pFnApplyFlagInitializationData)
-		pFnApplyFlagInitializationData = (UFunction*)UObject::GObjObjects()->Data[43549];
+		pFnApplyFlagInitializationData = (UFunction*)UObject::GObjects()->Data[43549];
 
 	URuleEngine_execApplyFlagInitializationData_Parms ApplyFlagInitializationData_Parms;
 
@@ -16004,7 +16004,7 @@ bool URuleEngine::IsResourceInUse(class UClass* TestResourceClass)
 	static UFunction* pFnIsResourceInUse = NULL;
 
 	if (!pFnIsResourceInUse)
-		pFnIsResourceInUse = (UFunction*)UObject::GObjObjects()->Data[43546];
+		pFnIsResourceInUse = (UFunction*)UObject::GObjects()->Data[43546];
 
 	URuleEngine_execIsResourceInUse_Parms IsResourceInUse_Parms;
 	IsResourceInUse_Parms.TestResourceClass = TestResourceClass;
@@ -16024,7 +16024,7 @@ class UObject* URuleEngine::GetContextSource()
 	static UFunction* pFnGetContextSource = NULL;
 
 	if (!pFnGetContextSource)
-		pFnGetContextSource = (UFunction*)UObject::GObjObjects()->Data[43544];
+		pFnGetContextSource = (UFunction*)UObject::GObjects()->Data[43544];
 
 	URuleEngine_execGetContextSource_Parms GetContextSource_Parms;
 
@@ -16047,7 +16047,7 @@ bool URuleEngine::IsRunningRuleWhichBlocksRuleSetChange()
 	static UFunction* pFnIsRunningRuleWhichBlocksRuleSetChange = NULL;
 
 	if (!pFnIsRunningRuleWhichBlocksRuleSetChange)
-		pFnIsRunningRuleWhichBlocksRuleSetChange = (UFunction*)UObject::GObjObjects()->Data[43542];
+		pFnIsRunningRuleWhichBlocksRuleSetChange = (UFunction*)UObject::GObjects()->Data[43542];
 
 	URuleEngine_execIsRunningRuleWhichBlocksRuleSetChange_Parms IsRunningRuleWhichBlocksRuleSetChange_Parms;
 
@@ -16071,7 +16071,7 @@ bool URuleEngine::GetDynamicFlagValue(class UFlagDefinition* FlagDefinition)
 	static UFunction* pFnGetDynamicFlagValue = NULL;
 
 	if (!pFnGetDynamicFlagValue)
-		pFnGetDynamicFlagValue = (UFunction*)UObject::GObjObjects()->Data[43539];
+		pFnGetDynamicFlagValue = (UFunction*)UObject::GObjects()->Data[43539];
 
 	URuleEngine_execGetDynamicFlagValue_Parms GetDynamicFlagValue_Parms;
 	GetDynamicFlagValue_Parms.FlagDefinition = FlagDefinition;
@@ -16096,7 +16096,7 @@ void URuleEngine::SetDynamicFlagDefTrueTimed(class UFlagDefinition* FlagDefiniti
 	static UFunction* pFnSetDynamicFlagDefTrueTimed = NULL;
 
 	if (!pFnSetDynamicFlagDefTrueTimed)
-		pFnSetDynamicFlagDefTrueTimed = (UFunction*)UObject::GObjObjects()->Data[43536];
+		pFnSetDynamicFlagDefTrueTimed = (UFunction*)UObject::GObjects()->Data[43536];
 
 	URuleEngine_execSetDynamicFlagDefTrueTimed_Parms SetDynamicFlagDefTrueTimed_Parms;
 	SetDynamicFlagDefTrueTimed_Parms.FlagDefinition = FlagDefinition;
@@ -16120,7 +16120,7 @@ void URuleEngine::SetDynamicFlagDefValue(class UFlagDefinition* FlagDefinition, 
 	static UFunction* pFnSetDynamicFlagDefValue = NULL;
 
 	if (!pFnSetDynamicFlagDefValue)
-		pFnSetDynamicFlagDefValue = (UFunction*)UObject::GObjObjects()->Data[43533];
+		pFnSetDynamicFlagDefValue = (UFunction*)UObject::GObjects()->Data[43533];
 
 	URuleEngine_execSetDynamicFlagDefValue_Parms SetDynamicFlagDefValue_Parms;
 	SetDynamicFlagDefValue_Parms.FlagDefinition = FlagDefinition;
@@ -16144,7 +16144,7 @@ class URuleSet* URuleEngine::GetRuleSetFromReference(struct FName ReferenceName)
 	static UFunction* pFnGetRuleSetFromReference = NULL;
 
 	if (!pFnGetRuleSetFromReference)
-		pFnGetRuleSetFromReference = (UFunction*)UObject::GObjObjects()->Data[43530];
+		pFnGetRuleSetFromReference = (UFunction*)UObject::GObjects()->Data[43530];
 
 	URuleEngine_execGetRuleSetFromReference_Parms GetRuleSetFromReference_Parms;
 	memcpy(&GetRuleSetFromReference_Parms.ReferenceName, &ReferenceName, 0x8);
@@ -16167,7 +16167,7 @@ void URuleEngine::ClearRuleSetStack()
 	static UFunction* pFnClearRuleSetStack = NULL;
 
 	if (!pFnClearRuleSetStack)
-		pFnClearRuleSetStack = (UFunction*)UObject::GObjObjects()->Data[43529];
+		pFnClearRuleSetStack = (UFunction*)UObject::GObjects()->Data[43529];
 
 	URuleEngine_execClearRuleSetStack_Parms ClearRuleSetStack_Parms;
 
@@ -16187,7 +16187,7 @@ void URuleEngine::PopRuleSetSwitch()
 	static UFunction* pFnPopRuleSetSwitch = NULL;
 
 	if (!pFnPopRuleSetSwitch)
-		pFnPopRuleSetSwitch = (UFunction*)UObject::GObjObjects()->Data[43528];
+		pFnPopRuleSetSwitch = (UFunction*)UObject::GObjects()->Data[43528];
 
 	URuleEngine_execPopRuleSetSwitch_Parms PopRuleSetSwitch_Parms;
 
@@ -16209,7 +16209,7 @@ bool URuleEngine::PushRuleSetSwitch(class URuleSet* NewRuleSetTemplate)
 	static UFunction* pFnPushRuleSetSwitch = NULL;
 
 	if (!pFnPushRuleSetSwitch)
-		pFnPushRuleSetSwitch = (UFunction*)UObject::GObjObjects()->Data[43525];
+		pFnPushRuleSetSwitch = (UFunction*)UObject::GObjects()->Data[43525];
 
 	URuleEngine_execPushRuleSetSwitch_Parms PushRuleSetSwitch_Parms;
 	PushRuleSetSwitch_Parms.NewRuleSetTemplate = NewRuleSetTemplate;
@@ -16233,7 +16233,7 @@ void URuleEngine::SetRuleSet(class URuleSet* NewRuleSetTemplate)
 	static UFunction* pFnSetRuleSet = NULL;
 
 	if (!pFnSetRuleSet)
-		pFnSetRuleSet = (UFunction*)UObject::GObjObjects()->Data[43523];
+		pFnSetRuleSet = (UFunction*)UObject::GObjects()->Data[43523];
 
 	URuleEngine_execSetRuleSet_Parms SetRuleSet_Parms;
 	SetRuleSet_Parms.NewRuleSetTemplate = NewRuleSetTemplate;
@@ -16255,7 +16255,7 @@ void URuleEngine::SwitchActiveRuleSet(class URuleSet* NewRuleSetTemplate)
 	static UFunction* pFnSwitchActiveRuleSet = NULL;
 
 	if (!pFnSwitchActiveRuleSet)
-		pFnSwitchActiveRuleSet = (UFunction*)UObject::GObjObjects()->Data[43521];
+		pFnSwitchActiveRuleSet = (UFunction*)UObject::GObjects()->Data[43521];
 
 	URuleEngine_execSwitchActiveRuleSet_Parms SwitchActiveRuleSet_Parms;
 	SwitchActiveRuleSet_Parms.NewRuleSetTemplate = NewRuleSetTemplate;
@@ -16277,7 +16277,7 @@ void URuleEngine::UpdateKnowledge(class UClass* pKnowledgeRecordType)
 	static UFunction* pFnUpdateKnowledge = NULL;
 
 	if (!pFnUpdateKnowledge)
-		pFnUpdateKnowledge = (UFunction*)UObject::GObjObjects()->Data[43519];
+		pFnUpdateKnowledge = (UFunction*)UObject::GObjects()->Data[43519];
 
 	URuleEngine_execUpdateKnowledge_Parms UpdateKnowledge_Parms;
 	UpdateKnowledge_Parms.pKnowledgeRecordType = pKnowledgeRecordType;
@@ -16303,7 +16303,7 @@ int URuleEngine::ActivateEventRuleEx(struct FName EventDefName, TArray< class AG
 	static UFunction* pFnActivateEventRuleEx = NULL;
 
 	if (!pFnActivateEventRuleEx)
-		pFnActivateEventRuleEx = (UFunction*)UObject::GObjObjects()->Data[43512];
+		pFnActivateEventRuleEx = (UFunction*)UObject::GObjects()->Data[43512];
 
 	URuleEngine_execActivateEventRuleEx_Parms ActivateEventRuleEx_Parms;
 	memcpy(&ActivateEventRuleEx_Parms.EventDefName, &EventDefName, 0x8);
@@ -16329,7 +16329,7 @@ void URuleEngine::CleanUpRuleEngineData()
 	static UFunction* pFnCleanUpRuleEngineData = NULL;
 
 	if (!pFnCleanUpRuleEngineData)
-		pFnCleanUpRuleEngineData = (UFunction*)UObject::GObjObjects()->Data[43511];
+		pFnCleanUpRuleEngineData = (UFunction*)UObject::GObjects()->Data[43511];
 
 	URuleEngine_execCleanUpRuleEngineData_Parms CleanUpRuleEngineData_Parms;
 
@@ -16354,7 +16354,7 @@ int URuleEngine::ActivateEventRule(struct FName EventDefName, class AGearboxPawn
 	static UFunction* pFnActivateEventRule = NULL;
 
 	if (!pFnActivateEventRule)
-		pFnActivateEventRule = (UFunction*)UObject::GObjObjects()->Data[43505];
+		pFnActivateEventRule = (UFunction*)UObject::GObjects()->Data[43505];
 
 	URuleEngine_execActivateEventRule_Parms ActivateEventRule_Parms;
 	memcpy(&ActivateEventRule_Parms.EventDefName, &EventDefName, 0x8);
@@ -16383,7 +16383,7 @@ int URuleEngine::ActivateEventRuleByDefinition(class URuleEventDef* EventDefinit
 	static UFunction* pFnActivateEventRuleByDefinition = NULL;
 
 	if (!pFnActivateEventRuleByDefinition)
-		pFnActivateEventRuleByDefinition = (UFunction*)UObject::GObjObjects()->Data[43501];
+		pFnActivateEventRuleByDefinition = (UFunction*)UObject::GObjects()->Data[43501];
 
 	URuleEngine_execActivateEventRuleByDefinition_Parms ActivateEventRuleByDefinition_Parms;
 	ActivateEventRuleByDefinition_Parms.EventDefinition = EventDefinition;
@@ -16410,7 +16410,7 @@ void UGearboxRuleEngine::Initialize(class AGearboxPawn* NewGearboxPawn, class AG
 	static UFunction* pFnInitialize = NULL;
 
 	if (!pFnInitialize)
-		pFnInitialize = (UFunction*)UObject::GObjObjects()->Data[43556];
+		pFnInitialize = (UFunction*)UObject::GObjects()->Data[43556];
 
 	UGearboxRuleEngine_execInitialize_Parms Initialize_Parms;
 	Initialize_Parms.NewGearboxPawn = NewGearboxPawn;
@@ -16434,7 +16434,7 @@ class UObject* UGearboxRuleEngine::GetContextSource()
 	static UFunction* pFnGetContextSource = NULL;
 
 	if (!pFnGetContextSource)
-		pFnGetContextSource = (UFunction*)UObject::GObjObjects()->Data[43554];
+		pFnGetContextSource = (UFunction*)UObject::GObjects()->Data[43554];
 
 	UGearboxRuleEngine_execGetContextSource_Parms GetContextSource_Parms;
 
@@ -16457,7 +16457,7 @@ void UTargetIterator::eventRecordEvalCallback(class URuleEngine* EvalRuleEngine)
 	static UFunction* pFnRecordEvalCallback = NULL;
 
 	if (!pFnRecordEvalCallback)
-		pFnRecordEvalCallback = (UFunction*)UObject::GObjObjects()->Data[45121];
+		pFnRecordEvalCallback = (UFunction*)UObject::GObjects()->Data[45121];
 
 	UTargetIterator_eventRecordEvalCallback_Parms RecordEvalCallback_Parms;
 	RecordEvalCallback_Parms.EvalRuleEngine = EvalRuleEngine;
@@ -16475,7 +16475,7 @@ float UIPopulationSpawnPoint::GetInitialMovementHoldTime()
 	static UFunction* pFnGetInitialMovementHoldTime = NULL;
 
 	if (!pFnGetInitialMovementHoldTime)
-		pFnGetInitialMovementHoldTime = (UFunction*)UObject::GObjObjects()->Data[43803];
+		pFnGetInitialMovementHoldTime = (UFunction*)UObject::GObjects()->Data[43803];
 
 	UIPopulationSpawnPoint_execGetInitialMovementHoldTime_Parms GetInitialMovementHoldTime_Parms;
 
@@ -16494,7 +16494,7 @@ class AActor* UIPopulationSpawnPoint::GetInitialDestination()
 	static UFunction* pFnGetInitialDestination = NULL;
 
 	if (!pFnGetInitialDestination)
-		pFnGetInitialDestination = (UFunction*)UObject::GObjObjects()->Data[43801];
+		pFnGetInitialDestination = (UFunction*)UObject::GObjects()->Data[43801];
 
 	UIPopulationSpawnPoint_execGetInitialDestination_Parms GetInitialDestination_Parms;
 
@@ -16513,7 +16513,7 @@ unsigned char UIPopulationSpawnPoint::GetInitialActionType()
 	static UFunction* pFnGetInitialActionType = NULL;
 
 	if (!pFnGetInitialActionType)
-		pFnGetInitialActionType = (UFunction*)UObject::GObjObjects()->Data[43799];
+		pFnGetInitialActionType = (UFunction*)UObject::GObjects()->Data[43799];
 
 	UIPopulationSpawnPoint_execGetInitialActionType_Parms GetInitialActionType_Parms;
 
@@ -16532,7 +16532,7 @@ unsigned char UIPopulationSpawnPoint::GetSpawnStyleType()
 	static UFunction* pFnGetSpawnStyleType = NULL;
 
 	if (!pFnGetSpawnStyleType)
-		pFnGetSpawnStyleType = (UFunction*)UObject::GObjObjects()->Data[43797];
+		pFnGetSpawnStyleType = (UFunction*)UObject::GObjects()->Data[43797];
 
 	UIPopulationSpawnPoint_execGetSpawnStyleType_Parms GetSpawnStyleType_Parms;
 
@@ -16551,7 +16551,7 @@ bool UPopulationDefinition::IsAllSpawnTypesDebugEnabled()
 	static UFunction* pFnIsAllSpawnTypesDebugEnabled = NULL;
 
 	if (!pFnIsAllSpawnTypesDebugEnabled)
-		pFnIsAllSpawnTypesDebugEnabled = (UFunction*)UObject::GObjObjects()->Data[43921];
+		pFnIsAllSpawnTypesDebugEnabled = (UFunction*)UObject::GObjects()->Data[43921];
 
 	UPopulationDefinition_execIsAllSpawnTypesDebugEnabled_Parms IsAllSpawnTypesDebugEnabled_Parms;
 
@@ -16573,7 +16573,7 @@ void UPopulationDefinition::ToggleAllSpawnTypesDebug()
 	static UFunction* pFnToggleAllSpawnTypesDebug = NULL;
 
 	if (!pFnToggleAllSpawnTypesDebug)
-		pFnToggleAllSpawnTypesDebug = (UFunction*)UObject::GObjObjects()->Data[43920];
+		pFnToggleAllSpawnTypesDebug = (UFunction*)UObject::GObjects()->Data[43920];
 
 	UPopulationDefinition_execToggleAllSpawnTypesDebug_Parms ToggleAllSpawnTypesDebug_Parms;
 
@@ -16597,7 +16597,7 @@ class UPopulationFactory* UPopulationDefinition::GetRandomFactory(class APopulat
 	static UFunction* pFnGetRandomFactory = NULL;
 
 	if (!pFnGetRandomFactory)
-		pFnGetRandomFactory = (UFunction*)UObject::GObjObjects()->Data[43915];
+		pFnGetRandomFactory = (UFunction*)UObject::GObjects()->Data[43915];
 
 	UPopulationDefinition_execGetRandomFactory_Parms GetRandomFactory_Parms;
 	GetRandomFactory_Parms.SpawningOpportunity = SpawningOpportunity;
@@ -16623,7 +16623,7 @@ struct FString UPopulationFactory::eventGetDescriptionOfFactoryOutput()
 	static UFunction* pFnGetDescriptionOfFactoryOutput = NULL;
 
 	if (!pFnGetDescriptionOfFactoryOutput)
-		pFnGetDescriptionOfFactoryOutput = (UFunction*)UObject::GObjObjects()->Data[44036];
+		pFnGetDescriptionOfFactoryOutput = (UFunction*)UObject::GObjects()->Data[44036];
 
 	UPopulationFactory_eventGetDescriptionOfFactoryOutput_Parms GetDescriptionOfFactoryOutput_Parms;
 
@@ -16644,7 +16644,7 @@ bool UPopulationFactory::eventShouldSavePopulationActor(class UPopulationMaster*
 	static UFunction* pFnShouldSavePopulationActor = NULL;
 
 	if (!pFnShouldSavePopulationActor)
-		pFnShouldSavePopulationActor = (UFunction*)UObject::GObjObjects()->Data[44032];
+		pFnShouldSavePopulationActor = (UFunction*)UObject::GObjects()->Data[44032];
 
 	UPopulationFactory_eventShouldSavePopulationActor_Parms ShouldSavePopulationActor_Parms;
 	ShouldSavePopulationActor_Parms.Master = Master;
@@ -16671,7 +16671,7 @@ bool UPopulationFactory::eventDestroyPopulationActor(class UPopulationMaster* Ma
 	static UFunction* pFnDestroyPopulationActor = NULL;
 
 	if (!pFnDestroyPopulationActor)
-		pFnDestroyPopulationActor = (UFunction*)UObject::GObjObjects()->Data[44024];
+		pFnDestroyPopulationActor = (UFunction*)UObject::GObjects()->Data[44024];
 
 	UPopulationFactory_eventDestroyPopulationActor_Parms DestroyPopulationActor_Parms;
 	DestroyPopulationActor_Parms.Master = Master;
@@ -16703,7 +16703,7 @@ class AActor* UPopulationFactory::eventCreatePopulationActor(class UPopulationMa
 	static UFunction* pFnCreatePopulationActor = NULL;
 
 	if (!pFnCreatePopulationActor)
-		pFnCreatePopulationActor = (UFunction*)UObject::GObjObjects()->Data[44015];
+		pFnCreatePopulationActor = (UFunction*)UObject::GObjects()->Data[44015];
 
 	UPopulationFactory_eventCreatePopulationActor_Parms CreatePopulationActor_Parms;
 	CreatePopulationActor_Parms.Master = Master;
@@ -16731,7 +16731,7 @@ struct FBoxSphereBounds UPopulationFactory::eventGetSpawnVisibilityBounds(int Ga
 	static UFunction* pFnGetSpawnVisibilityBounds = NULL;
 
 	if (!pFnGetSpawnVisibilityBounds)
-		pFnGetSpawnVisibilityBounds = (UFunction*)UObject::GObjObjects()->Data[44010];
+		pFnGetSpawnVisibilityBounds = (UFunction*)UObject::GObjects()->Data[44010];
 
 	UPopulationFactory_eventGetSpawnVisibilityBounds_Parms GetSpawnVisibilityBounds_Parms;
 	GetSpawnVisibilityBounds_Parms.GameStage = GameStage;
@@ -16754,7 +16754,7 @@ class UPawnAllegiance* UPopulationFactory::GetActorAllegiance(int GameStage, int
 	static UFunction* pFnGetActorAllegiance = NULL;
 
 	if (!pFnGetActorAllegiance)
-		pFnGetActorAllegiance = (UFunction*)UObject::GObjObjects()->Data[44006];
+		pFnGetActorAllegiance = (UFunction*)UObject::GObjects()->Data[44006];
 
 	UPopulationFactory_execGetActorAllegiance_Parms GetActorAllegiance_Parms;
 	GetActorAllegiance_Parms.GameStage = GameStage;
@@ -16782,7 +16782,7 @@ int UPopulationFactory::eventGetActorSpawnCost(int GameStage, int Rarity, unsign
 	static UFunction* pFnGetActorSpawnCost = NULL;
 
 	if (!pFnGetActorSpawnCost)
-		pFnGetActorSpawnCost = (UFunction*)UObject::GObjObjects()->Data[44001];
+		pFnGetActorSpawnCost = (UFunction*)UObject::GObjects()->Data[44001];
 
 	UPopulationFactory_eventGetActorSpawnCost_Parms GetActorSpawnCost_Parms;
 	GetActorSpawnCost_Parms.GameStage = GameStage;
@@ -16804,7 +16804,7 @@ void UPopulationFactory::eventOnSpawnActor(class AActor* aNewActor)
 	static UFunction* pFnOnSpawnActor = NULL;
 
 	if (!pFnOnSpawnActor)
-		pFnOnSpawnActor = (UFunction*)UObject::GObjObjects()->Data[43999];
+		pFnOnSpawnActor = (UFunction*)UObject::GObjects()->Data[43999];
 
 	UPopulationFactory_eventOnSpawnActor_Parms OnSpawnActor_Parms;
 	OnSpawnActor_Parms.aNewActor = aNewActor;
@@ -16822,7 +16822,7 @@ void UPopulationFactory::eventSetupMatineeForActor(class AActor* aNewActor)
 	static UFunction* pFnSetupMatineeForActor = NULL;
 
 	if (!pFnSetupMatineeForActor)
-		pFnSetupMatineeForActor = (UFunction*)UObject::GObjObjects()->Data[43997];
+		pFnSetupMatineeForActor = (UFunction*)UObject::GObjects()->Data[43997];
 
 	UPopulationFactory_eventSetupMatineeForActor_Parms SetupMatineeForActor_Parms;
 	SetupMatineeForActor_Parms.aNewActor = aNewActor;
@@ -16843,7 +16843,7 @@ class UPopulationFactory* UPopulationFactory::GetSpawnFactory(class APopulationO
 	static UFunction* pFnGetSpawnFactory = NULL;
 
 	if (!pFnGetSpawnFactory)
-		pFnGetSpawnFactory = (UFunction*)UObject::GObjObjects()->Data[43992];
+		pFnGetSpawnFactory = (UFunction*)UObject::GObjects()->Data[43992];
 
 	UPopulationFactory_execGetSpawnFactory_Parms GetSpawnFactory_Parms;
 	GetSpawnFactory_Parms.SpawningOpportunity = SpawningOpportunity;
@@ -16871,7 +16871,7 @@ float UPopulationFactory::GetSpawnProbabilityAtThisGameStage(int GameStage, int 
 	static UFunction* pFnGetSpawnProbabilityAtThisGameStage = NULL;
 
 	if (!pFnGetSpawnProbabilityAtThisGameStage)
-		pFnGetSpawnProbabilityAtThisGameStage = (UFunction*)UObject::GObjObjects()->Data[43988];
+		pFnGetSpawnProbabilityAtThisGameStage = (UFunction*)UObject::GObjects()->Data[43988];
 
 	UPopulationFactory_execGetSpawnProbabilityAtThisGameStage_Parms GetSpawnProbabilityAtThisGameStage_Parms;
 	GetSpawnProbabilityAtThisGameStage_Parms.GameStage = GameStage;
@@ -16897,7 +16897,7 @@ bool UPopulationFactory::IsFactoryWithin(class UPopulationFactory* TestFactory)
 	static UFunction* pFnIsFactoryWithin = NULL;
 
 	if (!pFnIsFactoryWithin)
-		pFnIsFactoryWithin = (UFunction*)UObject::GObjObjects()->Data[43985];
+		pFnIsFactoryWithin = (UFunction*)UObject::GObjects()->Data[43985];
 
 	UPopulationFactory_execIsFactoryWithin_Parms IsFactoryWithin_Parms;
 	IsFactoryWithin_Parms.TestFactory = TestFactory;
@@ -16922,7 +16922,7 @@ bool UPopulationFactory::CanSpawn(class APopulationOpportunity* SpawningOpportun
 	static UFunction* pFnCanSpawn = NULL;
 
 	if (!pFnCanSpawn)
-		pFnCanSpawn = (UFunction*)UObject::GObjObjects()->Data[43982];
+		pFnCanSpawn = (UFunction*)UObject::GObjects()->Data[43982];
 
 	UPopulationFactory_execCanSpawn_Parms CanSpawn_Parms;
 	CanSpawn_Parms.SpawningOpportunity = SpawningOpportunity;
@@ -16953,7 +16953,7 @@ class AActor* UPopulationFactoryGeneric::eventCreatePopulationActor(class UPopul
 	static UFunction* pFnCreatePopulationActor = NULL;
 
 	if (!pFnCreatePopulationActor)
-		pFnCreatePopulationActor = (UFunction*)UObject::GObjObjects()->Data[44043];
+		pFnCreatePopulationActor = (UFunction*)UObject::GObjects()->Data[44043];
 
 	UPopulationFactoryGeneric_eventCreatePopulationActor_Parms CreatePopulationActor_Parms;
 	CreatePopulationActor_Parms.Master = Master;
@@ -16981,7 +16981,7 @@ struct FBoxSphereBounds UPopulationFactoryGeneric::eventGetSpawnVisibilityBounds
 	static UFunction* pFnGetSpawnVisibilityBounds = NULL;
 
 	if (!pFnGetSpawnVisibilityBounds)
-		pFnGetSpawnVisibilityBounds = (UFunction*)UObject::GObjObjects()->Data[44039];
+		pFnGetSpawnVisibilityBounds = (UFunction*)UObject::GObjects()->Data[44039];
 
 	UPopulationFactoryGeneric_eventGetSpawnVisibilityBounds_Parms GetSpawnVisibilityBounds_Parms;
 	GetSpawnVisibilityBounds_Parms.GameStage = GameStage;
@@ -17005,7 +17005,7 @@ class UPopulationFactory* UPopulationFactoryPopulationDefinition::GetSpawnFactor
 	static UFunction* pFnGetSpawnFactory = NULL;
 
 	if (!pFnGetSpawnFactory)
-		pFnGetSpawnFactory = (UFunction*)UObject::GObjObjects()->Data[44062];
+		pFnGetSpawnFactory = (UFunction*)UObject::GObjects()->Data[44062];
 
 	UPopulationFactoryPopulationDefinition_execGetSpawnFactory_Parms GetSpawnFactory_Parms;
 	GetSpawnFactory_Parms.SpawningOpportunity = SpawningOpportunity;
@@ -17033,7 +17033,7 @@ class UPawnAllegiance* UPopulationFactoryPopulationDefinition::GetActorAllegianc
 	static UFunction* pFnGetActorAllegiance = NULL;
 
 	if (!pFnGetActorAllegiance)
-		pFnGetActorAllegiance = (UFunction*)UObject::GObjObjects()->Data[44058];
+		pFnGetActorAllegiance = (UFunction*)UObject::GObjects()->Data[44058];
 
 	UPopulationFactoryPopulationDefinition_execGetActorAllegiance_Parms GetActorAllegiance_Parms;
 	GetActorAllegiance_Parms.GameStage = GameStage;
@@ -17059,7 +17059,7 @@ bool UPopulationFactoryPopulationDefinition::IsFactoryWithin(class UPopulationFa
 	static UFunction* pFnIsFactoryWithin = NULL;
 
 	if (!pFnIsFactoryWithin)
-		pFnIsFactoryWithin = (UFunction*)UObject::GObjObjects()->Data[44055];
+		pFnIsFactoryWithin = (UFunction*)UObject::GObjects()->Data[44055];
 
 	UPopulationFactoryPopulationDefinition_execIsFactoryWithin_Parms IsFactoryWithin_Parms;
 	IsFactoryWithin_Parms.TestFactory = TestFactory;
@@ -17085,7 +17085,7 @@ class AActor* UPopulationMaster::GetActorSpawnedFromOpportunity(class APopulatio
 	static UFunction* pFnGetActorSpawnedFromOpportunity = NULL;
 
 	if (!pFnGetActorSpawnedFromOpportunity)
-		pFnGetActorSpawnedFromOpportunity = (UFunction*)UObject::GObjObjects()->Data[44278];
+		pFnGetActorSpawnedFromOpportunity = (UFunction*)UObject::GObjects()->Data[44278];
 
 	UPopulationMaster_execGetActorSpawnedFromOpportunity_Parms GetActorSpawnedFromOpportunity_Parms;
 	GetActorSpawnedFromOpportunity_Parms.Opportunity = Opportunity;
@@ -17111,7 +17111,7 @@ void UPopulationMaster::GetSavedActorDebugInfoForOpportunity(int OpportunityInde
 	static UFunction* pFnGetSavedActorDebugInfoForOpportunity = NULL;
 
 	if (!pFnGetSavedActorDebugInfoForOpportunity)
-		pFnGetSavedActorDebugInfoForOpportunity = (UFunction*)UObject::GObjObjects()->Data[44274];
+		pFnGetSavedActorDebugInfoForOpportunity = (UFunction*)UObject::GObjects()->Data[44274];
 
 	UPopulationMaster_execGetSavedActorDebugInfoForOpportunity_Parms GetSavedActorDebugInfoForOpportunity_Parms;
 	GetSavedActorDebugInfoForOpportunity_Parms.OpportunityIndex = OpportunityIndex;
@@ -17137,7 +17137,7 @@ int UPopulationMaster::GetNumberOfSavedActorsForOpportunity(int OpportunityIndex
 	static UFunction* pFnGetNumberOfSavedActorsForOpportunity = NULL;
 
 	if (!pFnGetNumberOfSavedActorsForOpportunity)
-		pFnGetNumberOfSavedActorsForOpportunity = (UFunction*)UObject::GObjObjects()->Data[44271];
+		pFnGetNumberOfSavedActorsForOpportunity = (UFunction*)UObject::GObjects()->Data[44271];
 
 	UPopulationMaster_execGetNumberOfSavedActorsForOpportunity_Parms GetNumberOfSavedActorsForOpportunity_Parms;
 	GetNumberOfSavedActorsForOpportunity_Parms.OpportunityIndex = OpportunityIndex;
@@ -17162,7 +17162,7 @@ bool UPopulationMaster::WillActorsOpportunityBeResetOnLevelLoad(class AActor* Te
 	static UFunction* pFnWillActorsOpportunityBeResetOnLevelLoad = NULL;
 
 	if (!pFnWillActorsOpportunityBeResetOnLevelLoad)
-		pFnWillActorsOpportunityBeResetOnLevelLoad = (UFunction*)UObject::GObjObjects()->Data[44268];
+		pFnWillActorsOpportunityBeResetOnLevelLoad = (UFunction*)UObject::GObjects()->Data[44268];
 
 	UPopulationMaster_execWillActorsOpportunityBeResetOnLevelLoad_Parms WillActorsOpportunityBeResetOnLevelLoad_Parms;
 	WillActorsOpportunityBeResetOnLevelLoad_Parms.TestActor = TestActor;
@@ -17185,7 +17185,7 @@ void UPopulationMaster::ResetRespawn()
 	static UFunction* pFnResetRespawn = NULL;
 
 	if (!pFnResetRespawn)
-		pFnResetRespawn = (UFunction*)UObject::GObjObjects()->Data[44267];
+		pFnResetRespawn = (UFunction*)UObject::GObjects()->Data[44267];
 
 	UPopulationMaster_execResetRespawn_Parms ResetRespawn_Parms;
 
@@ -17207,7 +17207,7 @@ class ULevelStreaming* UPopulationMaster::GetStreamingLevelForActor(class AActor
 	static UFunction* pFnGetStreamingLevelForActor = NULL;
 
 	if (!pFnGetStreamingLevelForActor)
-		pFnGetStreamingLevelForActor = (UFunction*)UObject::GObjObjects()->Data[44264];
+		pFnGetStreamingLevelForActor = (UFunction*)UObject::GObjects()->Data[44264];
 
 	UPopulationMaster_execGetStreamingLevelForActor_Parms GetStreamingLevelForActor_Parms;
 	GetStreamingLevelForActor_Parms.OpportunityInLevel = OpportunityInLevel;
@@ -17234,7 +17234,7 @@ bool UPopulationMaster::HasCapacityToSpawnFromFactories(int GameStage, int Rarit
 	static UFunction* pFnHasCapacityToSpawnFromFactories = NULL;
 
 	if (!pFnHasCapacityToSpawnFromFactories)
-		pFnHasCapacityToSpawnFromFactories = (UFunction*)UObject::GObjObjects()->Data[44258];
+		pFnHasCapacityToSpawnFromFactories = (UFunction*)UObject::GObjects()->Data[44258];
 
 	UPopulationMaster_execHasCapacityToSpawnFromFactories_Parms HasCapacityToSpawnFromFactories_Parms;
 	HasCapacityToSpawnFromFactories_Parms.GameStage = GameStage;
@@ -17265,7 +17265,7 @@ bool UPopulationMaster::HasCapacityToSpawnFromFactory(class UPopulationFactory* 
 	static UFunction* pFnHasCapacityToSpawnFromFactory = NULL;
 
 	if (!pFnHasCapacityToSpawnFromFactory)
-		pFnHasCapacityToSpawnFromFactory = (UFunction*)UObject::GObjObjects()->Data[44253];
+		pFnHasCapacityToSpawnFromFactory = (UFunction*)UObject::GObjects()->Data[44253];
 
 	UPopulationMaster_execHasCapacityToSpawnFromFactory_Parms HasCapacityToSpawnFromFactory_Parms;
 	HasCapacityToSpawnFromFactory_Parms.TheFactory = TheFactory;
@@ -17291,7 +17291,7 @@ bool UPopulationMaster::IsPopulationSystemAtCapacity()
 	static UFunction* pFnIsPopulationSystemAtCapacity = NULL;
 
 	if (!pFnIsPopulationSystemAtCapacity)
-		pFnIsPopulationSystemAtCapacity = (UFunction*)UObject::GObjObjects()->Data[44251];
+		pFnIsPopulationSystemAtCapacity = (UFunction*)UObject::GObjects()->Data[44251];
 
 	UPopulationMaster_execIsPopulationSystemAtCapacity_Parms IsPopulationSystemAtCapacity_Parms;
 
@@ -17314,7 +17314,7 @@ void UPopulationMaster::StatProfileStop(int nStat)
 	static UFunction* pFnStatProfileStop = NULL;
 
 	if (!pFnStatProfileStop)
-		pFnStatProfileStop = (UFunction*)UObject::GObjObjects()->Data[44249];
+		pFnStatProfileStop = (UFunction*)UObject::GObjects()->Data[44249];
 
 	UPopulationMaster_execStatProfileStop_Parms StatProfileStop_Parms;
 	StatProfileStop_Parms.nStat = nStat;
@@ -17336,7 +17336,7 @@ void UPopulationMaster::StatProfileStart(int nStat)
 	static UFunction* pFnStatProfileStart = NULL;
 
 	if (!pFnStatProfileStart)
-		pFnStatProfileStart = (UFunction*)UObject::GObjObjects()->Data[44247];
+		pFnStatProfileStart = (UFunction*)UObject::GObjects()->Data[44247];
 
 	UPopulationMaster_execStatProfileStart_Parms StatProfileStart_Parms;
 	StatProfileStart_Parms.nStat = nStat;
@@ -17359,7 +17359,7 @@ float UPopulationMaster::GetStatProfileTime(int nStat)
 	static UFunction* pFnGetStatProfileTime = NULL;
 
 	if (!pFnGetStatProfileTime)
-		pFnGetStatProfileTime = (UFunction*)UObject::GObjObjects()->Data[44244];
+		pFnGetStatProfileTime = (UFunction*)UObject::GObjects()->Data[44244];
 
 	UPopulationMaster_execGetStatProfileTime_Parms GetStatProfileTime_Parms;
 	GetStatProfileTime_Parms.nStat = nStat;
@@ -17386,7 +17386,7 @@ void UPopulationMaster::AddSavedActor(int OpportunityIdx, class AActor* TheActor
 	static UFunction* pFnAddSavedActor = NULL;
 
 	if (!pFnAddSavedActor)
-		pFnAddSavedActor = (UFunction*)UObject::GObjObjects()->Data[44239];
+		pFnAddSavedActor = (UFunction*)UObject::GObjects()->Data[44239];
 
 	UPopulationMaster_execAddSavedActor_Parms AddSavedActor_Parms;
 	AddSavedActor_Parms.OpportunityIdx = OpportunityIdx;
@@ -17411,7 +17411,7 @@ void UPopulationMaster::DisconnectEncounter(class APopulationEncounter* Encounte
 	static UFunction* pFnDisconnectEncounter = NULL;
 
 	if (!pFnDisconnectEncounter)
-		pFnDisconnectEncounter = (UFunction*)UObject::GObjObjects()->Data[44237];
+		pFnDisconnectEncounter = (UFunction*)UObject::GObjects()->Data[44237];
 
 	UPopulationMaster_execDisconnectEncounter_Parms DisconnectEncounter_Parms;
 	DisconnectEncounter_Parms.Encounter = Encounter;
@@ -17433,7 +17433,7 @@ void UPopulationMaster::ConnectEncounter(class APopulationEncounter* Encounter)
 	static UFunction* pFnConnectEncounter = NULL;
 
 	if (!pFnConnectEncounter)
-		pFnConnectEncounter = (UFunction*)UObject::GObjObjects()->Data[44235];
+		pFnConnectEncounter = (UFunction*)UObject::GObjects()->Data[44235];
 
 	UPopulationMaster_execConnectEncounter_Parms ConnectEncounter_Parms;
 	ConnectEncounter_Parms.Encounter = Encounter;
@@ -17457,7 +17457,7 @@ bool UPopulationMaster::DisconnectOpportunity(class APopulationOpportunity* Deac
 	static UFunction* pFnDisconnectOpportunity = NULL;
 
 	if (!pFnDisconnectOpportunity)
-		pFnDisconnectOpportunity = (UFunction*)UObject::GObjObjects()->Data[44231];
+		pFnDisconnectOpportunity = (UFunction*)UObject::GObjects()->Data[44231];
 
 	UPopulationMaster_execDisconnectOpportunity_Parms DisconnectOpportunity_Parms;
 	DisconnectOpportunity_Parms.DeactivatedOpportunity = DeactivatedOpportunity;
@@ -17483,7 +17483,7 @@ bool UPopulationMaster::ConnectOpportunity(class APopulationOpportunity* Activat
 	static UFunction* pFnConnectOpportunity = NULL;
 
 	if (!pFnConnectOpportunity)
-		pFnConnectOpportunity = (UFunction*)UObject::GObjObjects()->Data[44228];
+		pFnConnectOpportunity = (UFunction*)UObject::GObjects()->Data[44228];
 
 	UPopulationMaster_execConnectOpportunity_Parms ConnectOpportunity_Parms;
 	ConnectOpportunity_Parms.ActivatedOpportunity = ActivatedOpportunity;
@@ -17507,7 +17507,7 @@ class AWorldInfo* UPopulationMaster::GetWorldInfo()
 	static UFunction* pFnGetWorldInfo = NULL;
 
 	if (!pFnGetWorldInfo)
-		pFnGetWorldInfo = (UFunction*)UObject::GObjObjects()->Data[44226];
+		pFnGetWorldInfo = (UFunction*)UObject::GObjects()->Data[44226];
 
 	UPopulationMaster_execGetWorldInfo_Parms GetWorldInfo_Parms;
 
@@ -17531,7 +17531,7 @@ void UPopulationMaster::DestroySpawnedActors(class APopulationOpportunity* Oppor
 	static UFunction* pFnDestroySpawnedActors = NULL;
 
 	if (!pFnDestroySpawnedActors)
-		pFnDestroySpawnedActors = (UFunction*)UObject::GObjObjects()->Data[44223];
+		pFnDestroySpawnedActors = (UFunction*)UObject::GObjects()->Data[44223];
 
 	UPopulationMaster_execDestroySpawnedActors_Parms DestroySpawnedActors_Parms;
 	DestroySpawnedActors_Parms.Opportunity = Opportunity;
@@ -17556,7 +17556,7 @@ void UPopulationMaster::RemoveSpawnedActor(class AActor* TheActor, unsigned long
 	static UFunction* pFnRemoveSpawnedActor = NULL;
 
 	if (!pFnRemoveSpawnedActor)
-		pFnRemoveSpawnedActor = (UFunction*)UObject::GObjObjects()->Data[44219];
+		pFnRemoveSpawnedActor = (UFunction*)UObject::GObjects()->Data[44219];
 
 	UPopulationMaster_execRemoveSpawnedActor_Parms RemoveSpawnedActor_Parms;
 	RemoveSpawnedActor_Parms.TheActor = TheActor;
@@ -17581,7 +17581,7 @@ void UPopulationMaster::SetSpawnedActorsReuse(class AActor* TheActor, unsigned l
 	static UFunction* pFnSetSpawnedActorsReuse = NULL;
 
 	if (!pFnSetSpawnedActorsReuse)
-		pFnSetSpawnedActorsReuse = (UFunction*)UObject::GObjObjects()->Data[44216];
+		pFnSetSpawnedActorsReuse = (UFunction*)UObject::GObjects()->Data[44216];
 
 	UPopulationMaster_execSetSpawnedActorsReuse_Parms SetSpawnedActorsReuse_Parms;
 	SetSpawnedActorsReuse_Parms.TheActor = TheActor;
@@ -17605,7 +17605,7 @@ void UPopulationMaster::AddExternalActor(class AActor* SpawnedActor, class UClas
 	static UFunction* pFnAddExternalActor = NULL;
 
 	if (!pFnAddExternalActor)
-		pFnAddExternalActor = (UFunction*)UObject::GObjObjects()->Data[44213];
+		pFnAddExternalActor = (UFunction*)UObject::GObjects()->Data[44213];
 
 	UPopulationMaster_execAddExternalActor_Parms AddExternalActor_Parms;
 	AddExternalActor_Parms.SpawnedActor = SpawnedActor;
@@ -17638,7 +17638,7 @@ class AActor* UPopulationMaster::SpawnActorFromOpportunity(class UPopulationFact
 	static UFunction* pFnSpawnActorFromOpportunity = NULL;
 
 	if (!pFnSpawnActorFromOpportunity)
-		pFnSpawnActorFromOpportunity = (UFunction*)UObject::GObjObjects()->Data[44201];
+		pFnSpawnActorFromOpportunity = (UFunction*)UObject::GObjects()->Data[44201];
 
 	UPopulationMaster_execSpawnActorFromOpportunity_Parms SpawnActorFromOpportunity_Parms;
 	SpawnActorFromOpportunity_Parms.TheFactory = TheFactory;
@@ -17677,7 +17677,7 @@ class AActor* UPopulationMaster::SpawnActor(class UPopulationFactory* TheFactory
 	static UFunction* pFnSpawnActor = NULL;
 
 	if (!pFnSpawnActor)
-		pFnSpawnActor = (UFunction*)UObject::GObjObjects()->Data[44193];
+		pFnSpawnActor = (UFunction*)UObject::GObjects()->Data[44193];
 
 	UPopulationMaster_execSpawnActor_Parms SpawnActor_Parms;
 	SpawnActor_Parms.TheFactory = TheFactory;
@@ -17707,7 +17707,7 @@ int UPopulationMaster::GetPopulationOpportunityIndex(class APopulationOpportunit
 	static UFunction* pFnGetPopulationOpportunityIndex = NULL;
 
 	if (!pFnGetPopulationOpportunityIndex)
-		pFnGetPopulationOpportunityIndex = (UFunction*)UObject::GObjObjects()->Data[44190];
+		pFnGetPopulationOpportunityIndex = (UFunction*)UObject::GObjects()->Data[44190];
 
 	UPopulationMaster_execGetPopulationOpportunityIndex_Parms GetPopulationOpportunityIndex_Parms;
 	GetPopulationOpportunityIndex_Parms.Opportunity = Opportunity;
@@ -17732,7 +17732,7 @@ class APopulationOpportunity* UPopulationMaster::GetActorsOpportunity(class AAct
 	static UFunction* pFnGetActorsOpportunity = NULL;
 
 	if (!pFnGetActorsOpportunity)
-		pFnGetActorsOpportunity = (UFunction*)UObject::GObjObjects()->Data[44187];
+		pFnGetActorsOpportunity = (UFunction*)UObject::GObjects()->Data[44187];
 
 	UPopulationMaster_execGetActorsOpportunity_Parms GetActorsOpportunity_Parms;
 	GetActorsOpportunity_Parms.SpawnedActor = SpawnedActor;
@@ -17764,7 +17764,7 @@ class AActor* UPopulationMaster::SpawnPopulationControlledActor(class UClass* Sp
 	static UFunction* pFnSpawnPopulationControlledActor = NULL;
 
 	if (!pFnSpawnPopulationControlledActor)
-		pFnSpawnPopulationControlledActor = (UFunction*)UObject::GObjObjects()->Data[44052];
+		pFnSpawnPopulationControlledActor = (UFunction*)UObject::GObjects()->Data[44052];
 
 	UPopulationMaster_execSpawnPopulationControlledActor_Parms SpawnPopulationControlledActor_Parms;
 	SpawnPopulationControlledActor_Parms.SpawnClass = SpawnClass;
@@ -17794,7 +17794,7 @@ void APopulationOpportunity::ClearBodyCompositionInstance()
 	static UFunction* pFnClearBodyCompositionInstance = NULL;
 
 	if (!pFnClearBodyCompositionInstance)
-		pFnClearBodyCompositionInstance = (UFunction*)UObject::GObjObjects()->Data[44335];
+		pFnClearBodyCompositionInstance = (UFunction*)UObject::GObjects()->Data[44335];
 
 	APopulationOpportunity_execClearBodyCompositionInstance_Parms ClearBodyCompositionInstance_Parms;
 
@@ -17814,7 +17814,7 @@ void APopulationOpportunity::ApplyPreviewBodyComposition()
 	static UFunction* pFnApplyPreviewBodyComposition = NULL;
 
 	if (!pFnApplyPreviewBodyComposition)
-		pFnApplyPreviewBodyComposition = (UFunction*)UObject::GObjObjects()->Data[44334];
+		pFnApplyPreviewBodyComposition = (UFunction*)UObject::GObjects()->Data[44334];
 
 	APopulationOpportunity_execApplyPreviewBodyComposition_Parms ApplyPreviewBodyComposition_Parms;
 
@@ -17835,7 +17835,7 @@ class UIBodyInfoProvider* APopulationOpportunity::GetBodyInfoProvider()
 	static UFunction* pFnGetBodyInfoProvider = NULL;
 
 	if (!pFnGetBodyInfoProvider)
-		pFnGetBodyInfoProvider = (UFunction*)UObject::GObjObjects()->Data[44332];
+		pFnGetBodyInfoProvider = (UFunction*)UObject::GObjects()->Data[44332];
 
 	APopulationOpportunity_execGetBodyInfoProvider_Parms GetBodyInfoProvider_Parms;
 
@@ -17859,7 +17859,7 @@ void APopulationOpportunity::ChangeInstanceDataSwitch(struct FName SwitchName, u
 	static UFunction* pFnChangeInstanceDataSwitch = NULL;
 
 	if (!pFnChangeInstanceDataSwitch)
-		pFnChangeInstanceDataSwitch = (UFunction*)UObject::GObjObjects()->Data[44329];
+		pFnChangeInstanceDataSwitch = (UFunction*)UObject::GObjects()->Data[44329];
 
 	APopulationOpportunity_execChangeInstanceDataSwitch_Parms ChangeInstanceDataSwitch_Parms;
 	memcpy(&ChangeInstanceDataSwitch_Parms.SwitchName, &SwitchName, 0x8);
@@ -17885,7 +17885,7 @@ void APopulationOpportunity::PostInitBodyComposition(struct FName Identifier, cl
 	static UFunction* pFnPostInitBodyComposition = NULL;
 
 	if (!pFnPostInitBodyComposition)
-		pFnPostInitBodyComposition = (UFunction*)UObject::GObjObjects()->Data[44324];
+		pFnPostInitBodyComposition = (UFunction*)UObject::GObjects()->Data[44324];
 
 	APopulationOpportunity_execPostInitBodyComposition_Parms PostInitBodyComposition_Parms;
 	memcpy(&PostInitBodyComposition_Parms.Identifier, &Identifier, 0x8);
@@ -17912,7 +17912,7 @@ void APopulationOpportunity::PreRemoveBodyComposition(struct FName Identifier, c
 	static UFunction* pFnPreRemoveBodyComposition = NULL;
 
 	if (!pFnPreRemoveBodyComposition)
-		pFnPreRemoveBodyComposition = (UFunction*)UObject::GObjObjects()->Data[44320];
+		pFnPreRemoveBodyComposition = (UFunction*)UObject::GObjects()->Data[44320];
 
 	APopulationOpportunity_execPreRemoveBodyComposition_Parms PreRemoveBodyComposition_Parms;
 	memcpy(&PreRemoveBodyComposition_Parms.Identifier, &Identifier, 0x8);
@@ -17936,7 +17936,7 @@ float APopulationOpportunity::GetNumSpawned()
 	static UFunction* pFnGetNumSpawned = NULL;
 
 	if (!pFnGetNumSpawned)
-		pFnGetNumSpawned = (UFunction*)UObject::GObjObjects()->Data[44318];
+		pFnGetNumSpawned = (UFunction*)UObject::GObjects()->Data[44318];
 
 	APopulationOpportunity_execGetNumSpawned_Parms GetNumSpawned_Parms;
 
@@ -17955,7 +17955,7 @@ float APopulationOpportunity::GetNumAlive()
 	static UFunction* pFnGetNumAlive = NULL;
 
 	if (!pFnGetNumAlive)
-		pFnGetNumAlive = (UFunction*)UObject::GObjObjects()->Data[44316];
+		pFnGetNumAlive = (UFunction*)UObject::GObjects()->Data[44316];
 
 	APopulationOpportunity_execGetNumAlive_Parms GetNumAlive_Parms;
 
@@ -17974,7 +17974,7 @@ float APopulationOpportunity::GetNumDied()
 	static UFunction* pFnGetNumDied = NULL;
 
 	if (!pFnGetNumDied)
-		pFnGetNumDied = (UFunction*)UObject::GObjObjects()->Data[44314];
+		pFnGetNumDied = (UFunction*)UObject::GObjects()->Data[44314];
 
 	APopulationOpportunity_execGetNumDied_Parms GetNumDied_Parms;
 
@@ -17992,7 +17992,7 @@ void APopulationOpportunity::eventDestroyed()
 	static UFunction* pFnDestroyed = NULL;
 
 	if (!pFnDestroyed)
-		pFnDestroyed = (UFunction*)UObject::GObjObjects()->Data[44313];
+		pFnDestroyed = (UFunction*)UObject::GObjects()->Data[44313];
 
 	APopulationOpportunity_eventDestroyed_Parms Destroyed_Parms;
 
@@ -18009,7 +18009,7 @@ int APopulationOpportunity::GetRarity()
 	static UFunction* pFnGetRarity = NULL;
 
 	if (!pFnGetRarity)
-		pFnGetRarity = (UFunction*)UObject::GObjObjects()->Data[44311];
+		pFnGetRarity = (UFunction*)UObject::GObjects()->Data[44311];
 
 	APopulationOpportunity_execGetRarity_Parms GetRarity_Parms;
 
@@ -18032,7 +18032,7 @@ int APopulationOpportunity::GetGameStage()
 	static UFunction* pFnGetGameStage = NULL;
 
 	if (!pFnGetGameStage)
-		pFnGetGameStage = (UFunction*)UObject::GObjObjects()->Data[44309];
+		pFnGetGameStage = (UFunction*)UObject::GObjects()->Data[44309];
 
 	APopulationOpportunity_execGetGameStage_Parms GetGameStage_Parms;
 
@@ -18057,7 +18057,7 @@ bool APopulationOpportunity::GetOpportunityGameStage(int* GameStage, int* Rarity
 	static UFunction* pFnGetOpportunityGameStage = NULL;
 
 	if (!pFnGetOpportunityGameStage)
-		pFnGetOpportunityGameStage = (UFunction*)UObject::GObjObjects()->Data[44305];
+		pFnGetOpportunityGameStage = (UFunction*)UObject::GObjects()->Data[44305];
 
 	APopulationOpportunity_execGetOpportunityGameStage_Parms GetOpportunityGameStage_Parms;
 
@@ -18085,7 +18085,7 @@ void APopulationOpportunity::eventTriggerKismetAllSpawnedEvent()
 	static UFunction* pFnTriggerKismetAllSpawnedEvent = NULL;
 
 	if (!pFnTriggerKismetAllSpawnedEvent)
-		pFnTriggerKismetAllSpawnedEvent = (UFunction*)UObject::GObjObjects()->Data[44304];
+		pFnTriggerKismetAllSpawnedEvent = (UFunction*)UObject::GObjects()->Data[44304];
 
 	APopulationOpportunity_eventTriggerKismetAllSpawnedEvent_Parms TriggerKismetAllSpawnedEvent_Parms;
 
@@ -18101,7 +18101,7 @@ void APopulationOpportunity::eventClearSequenceActionLink()
 	static UFunction* pFnClearSequenceActionLink = NULL;
 
 	if (!pFnClearSequenceActionLink)
-		pFnClearSequenceActionLink = (UFunction*)UObject::GObjObjects()->Data[44303];
+		pFnClearSequenceActionLink = (UFunction*)UObject::GObjects()->Data[44303];
 
 	APopulationOpportunity_eventClearSequenceActionLink_Parms ClearSequenceActionLink_Parms;
 
@@ -18118,7 +18118,7 @@ void APopulationOpportunity::eventSetSequenceActionLink(class UGearboxSeqAct_Pop
 	static UFunction* pFnSetSequenceActionLink = NULL;
 
 	if (!pFnSetSequenceActionLink)
-		pFnSetSequenceActionLink = (UFunction*)UObject::GObjObjects()->Data[44301];
+		pFnSetSequenceActionLink = (UFunction*)UObject::GObjects()->Data[44301];
 
 	APopulationOpportunity_eventSetSequenceActionLink_Parms SetSequenceActionLink_Parms;
 	SetSequenceActionLink_Parms.Link = Link;
@@ -18136,7 +18136,7 @@ void APopulationOpportunity::SetEnabledStatus(unsigned long bEnable)
 	static UFunction* pFnSetEnabledStatus = NULL;
 
 	if (!pFnSetEnabledStatus)
-		pFnSetEnabledStatus = (UFunction*)UObject::GObjObjects()->Data[44299];
+		pFnSetEnabledStatus = (UFunction*)UObject::GObjects()->Data[44299];
 
 	APopulationOpportunity_execSetEnabledStatus_Parms SetEnabledStatus_Parms;
 	SetEnabledStatus_Parms.bEnable = bEnable;
@@ -18158,7 +18158,7 @@ void APopulationOpportunity::OnToggle(class USeqAct_Toggle* Action)
 	static UFunction* pFnOnToggle = NULL;
 
 	if (!pFnOnToggle)
-		pFnOnToggle = (UFunction*)UObject::GObjObjects()->Data[44297];
+		pFnOnToggle = (UFunction*)UObject::GObjects()->Data[44297];
 
 	APopulationOpportunity_execOnToggle_Parms OnToggle_Parms;
 	OnToggle_Parms.Action = Action;
@@ -18177,7 +18177,7 @@ void APopulationOpportunity::GetNumLeftToSpawnAndStillAlive(int* NumLeftToSpawn,
 	static UFunction* pFnGetNumLeftToSpawnAndStillAlive = NULL;
 
 	if (!pFnGetNumLeftToSpawnAndStillAlive)
-		pFnGetNumLeftToSpawnAndStillAlive = (UFunction*)UObject::GObjObjects()->Data[44294];
+		pFnGetNumLeftToSpawnAndStillAlive = (UFunction*)UObject::GObjects()->Data[44294];
 
 	APopulationOpportunity_execGetNumLeftToSpawnAndStillAlive_Parms GetNumLeftToSpawnAndStillAlive_Parms;
 
@@ -18204,7 +18204,7 @@ float APopulationOpportunity::GetNextSpawnTime()
 	static UFunction* pFnGetNextSpawnTime = NULL;
 
 	if (!pFnGetNextSpawnTime)
-		pFnGetNextSpawnTime = (UFunction*)UObject::GObjObjects()->Data[44292];
+		pFnGetNextSpawnTime = (UFunction*)UObject::GObjects()->Data[44292];
 
 	APopulationOpportunity_execGetNextSpawnTime_Parms GetNextSpawnTime_Parms;
 
@@ -18227,7 +18227,7 @@ void APopulationOpportunity::RespawnKilledActors(float PercentageOfKilledActorsT
 	static UFunction* pFnRespawnKilledActors = NULL;
 
 	if (!pFnRespawnKilledActors)
-		pFnRespawnKilledActors = (UFunction*)UObject::GObjObjects()->Data[44290];
+		pFnRespawnKilledActors = (UFunction*)UObject::GObjects()->Data[44290];
 
 	APopulationOpportunity_execRespawnKilledActors_Parms RespawnKilledActors_Parms;
 	RespawnKilledActors_Parms.PercentageOfKilledActorsToRespawn = PercentageOfKilledActorsToRespawn;
@@ -18249,7 +18249,7 @@ void APopulationOpportunity::DoSpawning(class UPopulationMaster* PopMaster)
 	static UFunction* pFnDoSpawning = NULL;
 
 	if (!pFnDoSpawning)
-		pFnDoSpawning = (UFunction*)UObject::GObjObjects()->Data[44288];
+		pFnDoSpawning = (UFunction*)UObject::GObjects()->Data[44288];
 
 	APopulationOpportunity_execDoSpawning_Parms DoSpawning_Parms;
 	DoSpawning_Parms.PopMaster = PopMaster;
@@ -18270,7 +18270,7 @@ void APopulationOpportunityArea::ApplyPreviewBodyComposition()
 	static UFunction* pFnApplyPreviewBodyComposition = NULL;
 
 	if (!pFnApplyPreviewBodyComposition)
-		pFnApplyPreviewBodyComposition = (UFunction*)UObject::GObjObjects()->Data[44377];
+		pFnApplyPreviewBodyComposition = (UFunction*)UObject::GObjects()->Data[44377];
 
 	APopulationOpportunityArea_execApplyPreviewBodyComposition_Parms ApplyPreviewBodyComposition_Parms;
 
@@ -18291,7 +18291,7 @@ class UIBodyInfoProvider* APopulationOpportunityArea::GetBodyInfoProvider()
 	static UFunction* pFnGetBodyInfoProvider = NULL;
 
 	if (!pFnGetBodyInfoProvider)
-		pFnGetBodyInfoProvider = (UFunction*)UObject::GObjObjects()->Data[44375];
+		pFnGetBodyInfoProvider = (UFunction*)UObject::GObjects()->Data[44375];
 
 	APopulationOpportunityArea_execGetBodyInfoProvider_Parms GetBodyInfoProvider_Parms;
 
@@ -18314,7 +18314,7 @@ void APopulationOpportunityArea::RespawnKilledActors(float PercentageOfKilledAct
 	static UFunction* pFnRespawnKilledActors = NULL;
 
 	if (!pFnRespawnKilledActors)
-		pFnRespawnKilledActors = (UFunction*)UObject::GObjObjects()->Data[44373];
+		pFnRespawnKilledActors = (UFunction*)UObject::GObjects()->Data[44373];
 
 	APopulationOpportunityArea_execRespawnKilledActors_Parms RespawnKilledActors_Parms;
 	RespawnKilledActors_Parms.PercentageOfKilledActorsToRespawn = PercentageOfKilledActorsToRespawn;
@@ -18336,7 +18336,7 @@ void APopulationOpportunityArea::DoSpawning(class UPopulationMaster* PopMaster)
 	static UFunction* pFnDoSpawning = NULL;
 
 	if (!pFnDoSpawning)
-		pFnDoSpawning = (UFunction*)UObject::GObjObjects()->Data[44371];
+		pFnDoSpawning = (UFunction*)UObject::GObjects()->Data[44371];
 
 	APopulationOpportunityArea_execDoSpawning_Parms DoSpawning_Parms;
 	DoSpawning_Parms.PopMaster = PopMaster;
@@ -18357,7 +18357,7 @@ void APopulationOpportunityCloner::ApplyPreviewBodyComposition()
 	static UFunction* pFnApplyPreviewBodyComposition = NULL;
 
 	if (!pFnApplyPreviewBodyComposition)
-		pFnApplyPreviewBodyComposition = (UFunction*)UObject::GObjObjects()->Data[44396];
+		pFnApplyPreviewBodyComposition = (UFunction*)UObject::GObjects()->Data[44396];
 
 	APopulationOpportunityCloner_execApplyPreviewBodyComposition_Parms ApplyPreviewBodyComposition_Parms;
 
@@ -18378,7 +18378,7 @@ class UIBodyInfoProvider* APopulationOpportunityCloner::GetBodyInfoProvider()
 	static UFunction* pFnGetBodyInfoProvider = NULL;
 
 	if (!pFnGetBodyInfoProvider)
-		pFnGetBodyInfoProvider = (UFunction*)UObject::GObjObjects()->Data[44394];
+		pFnGetBodyInfoProvider = (UFunction*)UObject::GObjects()->Data[44394];
 
 	APopulationOpportunityCloner_execGetBodyInfoProvider_Parms GetBodyInfoProvider_Parms;
 
@@ -18400,7 +18400,7 @@ void APopulationOpportunityCloner::CloneTimer()
 	static UFunction* pFnCloneTimer = NULL;
 
 	if (!pFnCloneTimer)
-		pFnCloneTimer = (UFunction*)UObject::GObjObjects()->Data[44393];
+		pFnCloneTimer = (UFunction*)UObject::GObjects()->Data[44393];
 
 	APopulationOpportunityCloner_execCloneTimer_Parms CloneTimer_Parms;
 
@@ -18417,7 +18417,7 @@ void APopulationOpportunityCloner::RespawnKilledActors(float PercentageOfKilledA
 	static UFunction* pFnRespawnKilledActors = NULL;
 
 	if (!pFnRespawnKilledActors)
-		pFnRespawnKilledActors = (UFunction*)UObject::GObjObjects()->Data[44391];
+		pFnRespawnKilledActors = (UFunction*)UObject::GObjects()->Data[44391];
 
 	APopulationOpportunityCloner_execRespawnKilledActors_Parms RespawnKilledActors_Parms;
 	RespawnKilledActors_Parms.PercentageOfKilledActorsToRespawn = PercentageOfKilledActorsToRespawn;
@@ -18439,7 +18439,7 @@ void APopulationOpportunityCloner::DoSpawning(class UPopulationMaster* PopMaster
 	static UFunction* pFnDoSpawning = NULL;
 
 	if (!pFnDoSpawning)
-		pFnDoSpawning = (UFunction*)UObject::GObjObjects()->Data[44389];
+		pFnDoSpawning = (UFunction*)UObject::GObjects()->Data[44389];
 
 	APopulationOpportunityCloner_execDoSpawning_Parms DoSpawning_Parms;
 	DoSpawning_Parms.PopMaster = PopMaster;
@@ -18460,7 +18460,7 @@ void APopulationOpportunityCombat::ApplyPreviewBodyComposition()
 	static UFunction* pFnApplyPreviewBodyComposition = NULL;
 
 	if (!pFnApplyPreviewBodyComposition)
-		pFnApplyPreviewBodyComposition = (UFunction*)UObject::GObjObjects()->Data[44463];
+		pFnApplyPreviewBodyComposition = (UFunction*)UObject::GObjects()->Data[44463];
 
 	APopulationOpportunityCombat_execApplyPreviewBodyComposition_Parms ApplyPreviewBodyComposition_Parms;
 
@@ -18481,7 +18481,7 @@ class UIBodyInfoProvider* APopulationOpportunityCombat::GetBodyInfoProvider()
 	static UFunction* pFnGetBodyInfoProvider = NULL;
 
 	if (!pFnGetBodyInfoProvider)
-		pFnGetBodyInfoProvider = (UFunction*)UObject::GObjObjects()->Data[44461];
+		pFnGetBodyInfoProvider = (UFunction*)UObject::GObjects()->Data[44461];
 
 	APopulationOpportunityCombat_execGetBodyInfoProvider_Parms GetBodyInfoProvider_Parms;
 
@@ -18503,7 +18503,7 @@ void APopulationOpportunityCombat::eventTriggerKismetSingleDeathEvent()
 	static UFunction* pFnTriggerKismetSingleDeathEvent = NULL;
 
 	if (!pFnTriggerKismetSingleDeathEvent)
-		pFnTriggerKismetSingleDeathEvent = (UFunction*)UObject::GObjObjects()->Data[44459];
+		pFnTriggerKismetSingleDeathEvent = (UFunction*)UObject::GObjects()->Data[44459];
 
 	APopulationOpportunityCombat_eventTriggerKismetSingleDeathEvent_Parms TriggerKismetSingleDeathEvent_Parms;
 
@@ -18519,7 +18519,7 @@ void APopulationOpportunityCombat::eventTriggerKismetDeathEvent()
 	static UFunction* pFnTriggerKismetDeathEvent = NULL;
 
 	if (!pFnTriggerKismetDeathEvent)
-		pFnTriggerKismetDeathEvent = (UFunction*)UObject::GObjObjects()->Data[44458];
+		pFnTriggerKismetDeathEvent = (UFunction*)UObject::GObjects()->Data[44458];
 
 	APopulationOpportunityCombat_eventTriggerKismetDeathEvent_Parms TriggerKismetDeathEvent_Parms;
 
@@ -18536,7 +18536,7 @@ float APopulationOpportunityCombat::GetNumSpawned()
 	static UFunction* pFnGetNumSpawned = NULL;
 
 	if (!pFnGetNumSpawned)
-		pFnGetNumSpawned = (UFunction*)UObject::GObjObjects()->Data[44456];
+		pFnGetNumSpawned = (UFunction*)UObject::GObjects()->Data[44456];
 
 	APopulationOpportunityCombat_execGetNumSpawned_Parms GetNumSpawned_Parms;
 
@@ -18555,7 +18555,7 @@ float APopulationOpportunityCombat::GetNumAlive()
 	static UFunction* pFnGetNumAlive = NULL;
 
 	if (!pFnGetNumAlive)
-		pFnGetNumAlive = (UFunction*)UObject::GObjObjects()->Data[44454];
+		pFnGetNumAlive = (UFunction*)UObject::GObjects()->Data[44454];
 
 	APopulationOpportunityCombat_execGetNumAlive_Parms GetNumAlive_Parms;
 
@@ -18574,7 +18574,7 @@ float APopulationOpportunityCombat::GetNumDied()
 	static UFunction* pFnGetNumDied = NULL;
 
 	if (!pFnGetNumDied)
-		pFnGetNumDied = (UFunction*)UObject::GObjObjects()->Data[44452];
+		pFnGetNumDied = (UFunction*)UObject::GObjects()->Data[44452];
 
 	APopulationOpportunityCombat_execGetNumDied_Parms GetNumDied_Parms;
 
@@ -18593,7 +18593,7 @@ bool APopulationOpportunityCombat::WantsToStopListening()
 	static UFunction* pFnWantsToStopListening = NULL;
 
 	if (!pFnWantsToStopListening)
-		pFnWantsToStopListening = (UFunction*)UObject::GObjObjects()->Data[44450];
+		pFnWantsToStopListening = (UFunction*)UObject::GObjects()->Data[44450];
 
 	APopulationOpportunityCombat_execWantsToStopListening_Parms WantsToStopListening_Parms;
 
@@ -18616,7 +18616,7 @@ class AActor* APopulationOpportunityCombat::GetActor()
 	static UFunction* pFnGetActor = NULL;
 
 	if (!pFnGetActor)
-		pFnGetActor = (UFunction*)UObject::GObjObjects()->Data[44448];
+		pFnGetActor = (UFunction*)UObject::GObjects()->Data[44448];
 
 	APopulationOpportunityCombat_execGetActor_Parms GetActor_Parms;
 
@@ -18639,7 +18639,7 @@ struct FVector APopulationOpportunityCombat::GetListenerLocation()
 	static UFunction* pFnGetListenerLocation = NULL;
 
 	if (!pFnGetListenerLocation)
-		pFnGetListenerLocation = (UFunction*)UObject::GObjObjects()->Data[44446];
+		pFnGetListenerLocation = (UFunction*)UObject::GObjects()->Data[44446];
 
 	APopulationOpportunityCombat_execGetListenerLocation_Parms GetListenerLocation_Parms;
 
@@ -18662,7 +18662,7 @@ class UPawnAllegiance* APopulationOpportunityCombat::GetAllegiance()
 	static UFunction* pFnGetAllegiance = NULL;
 
 	if (!pFnGetAllegiance)
-		pFnGetAllegiance = (UFunction*)UObject::GObjObjects()->Data[44444];
+		pFnGetAllegiance = (UFunction*)UObject::GObjects()->Data[44444];
 
 	APopulationOpportunityCombat_execGetAllegiance_Parms GetAllegiance_Parms;
 
@@ -18686,7 +18686,7 @@ bool APopulationOpportunityCombat::ReceiveMessage(class UGbxMessage* Message)
 	static UFunction* pFnReceiveMessage = NULL;
 
 	if (!pFnReceiveMessage)
-		pFnReceiveMessage = (UFunction*)UObject::GObjObjects()->Data[44441];
+		pFnReceiveMessage = (UFunction*)UObject::GObjects()->Data[44441];
 
 	APopulationOpportunityCombat_execReceiveMessage_Parms ReceiveMessage_Parms;
 	ReceiveMessage_Parms.Message = Message;
@@ -18711,7 +18711,7 @@ bool APopulationOpportunityCombat::CaresAboutMessage(class UGbxMessage* Message)
 	static UFunction* pFnCaresAboutMessage = NULL;
 
 	if (!pFnCaresAboutMessage)
-		pFnCaresAboutMessage = (UFunction*)UObject::GObjObjects()->Data[44438];
+		pFnCaresAboutMessage = (UFunction*)UObject::GObjects()->Data[44438];
 
 	APopulationOpportunityCombat_execCaresAboutMessage_Parms CaresAboutMessage_Parms;
 	CaresAboutMessage_Parms.Message = Message;
@@ -18734,7 +18734,7 @@ void APopulationOpportunityCombat::PostBeginPlay()
 	static UFunction* pFnPostBeginPlay = NULL;
 
 	if (!pFnPostBeginPlay)
-		pFnPostBeginPlay = (UFunction*)UObject::GObjObjects()->Data[44437];
+		pFnPostBeginPlay = (UFunction*)UObject::GObjects()->Data[44437];
 
 	APopulationOpportunityCombat_execPostBeginPlay_Parms PostBeginPlay_Parms;
 
@@ -18751,7 +18751,7 @@ void APopulationOpportunityCombat::EnableDebugging(unsigned long bEnabled)
 	static UFunction* pFnEnableDebugging = NULL;
 
 	if (!pFnEnableDebugging)
-		pFnEnableDebugging = (UFunction*)UObject::GObjObjects()->Data[44435];
+		pFnEnableDebugging = (UFunction*)UObject::GObjects()->Data[44435];
 
 	APopulationOpportunityCombat_execEnableDebugging_Parms EnableDebugging_Parms;
 	EnableDebugging_Parms.bEnabled = bEnabled;
@@ -18773,7 +18773,7 @@ void APopulationOpportunityCombat::RespawnKilledActors(float PercentageOfKilledA
 	static UFunction* pFnRespawnKilledActors = NULL;
 
 	if (!pFnRespawnKilledActors)
-		pFnRespawnKilledActors = (UFunction*)UObject::GObjObjects()->Data[44433];
+		pFnRespawnKilledActors = (UFunction*)UObject::GObjects()->Data[44433];
 
 	APopulationOpportunityCombat_execRespawnKilledActors_Parms RespawnKilledActors_Parms;
 	RespawnKilledActors_Parms.PercentageOfKilledActorsToRespawn = PercentageOfKilledActorsToRespawn;
@@ -18795,7 +18795,7 @@ void APopulationOpportunityCombat::DoSpawning(class UPopulationMaster* PopMaster
 	static UFunction* pFnDoSpawning = NULL;
 
 	if (!pFnDoSpawning)
-		pFnDoSpawning = (UFunction*)UObject::GObjObjects()->Data[44431];
+		pFnDoSpawning = (UFunction*)UObject::GObjects()->Data[44431];
 
 	APopulationOpportunityCombat_execDoSpawning_Parms DoSpawning_Parms;
 	DoSpawning_Parms.PopMaster = PopMaster;
@@ -18816,7 +18816,7 @@ void APopulationOpportunityPoint::ClearBodyCompositionInstance()
 	static UFunction* pFnClearBodyCompositionInstance = NULL;
 
 	if (!pFnClearBodyCompositionInstance)
-		pFnClearBodyCompositionInstance = (UFunction*)UObject::GObjObjects()->Data[44504];
+		pFnClearBodyCompositionInstance = (UFunction*)UObject::GObjects()->Data[44504];
 
 	APopulationOpportunityPoint_execClearBodyCompositionInstance_Parms ClearBodyCompositionInstance_Parms;
 
@@ -18836,7 +18836,7 @@ void APopulationOpportunityPoint::ApplyPreviewBodyComposition()
 	static UFunction* pFnApplyPreviewBodyComposition = NULL;
 
 	if (!pFnApplyPreviewBodyComposition)
-		pFnApplyPreviewBodyComposition = (UFunction*)UObject::GObjObjects()->Data[44503];
+		pFnApplyPreviewBodyComposition = (UFunction*)UObject::GObjects()->Data[44503];
 
 	APopulationOpportunityPoint_execApplyPreviewBodyComposition_Parms ApplyPreviewBodyComposition_Parms;
 
@@ -18857,7 +18857,7 @@ class UIBodyInfoProvider* APopulationOpportunityPoint::GetBodyInfoProvider()
 	static UFunction* pFnGetBodyInfoProvider = NULL;
 
 	if (!pFnGetBodyInfoProvider)
-		pFnGetBodyInfoProvider = (UFunction*)UObject::GObjObjects()->Data[44501];
+		pFnGetBodyInfoProvider = (UFunction*)UObject::GObjects()->Data[44501];
 
 	APopulationOpportunityPoint_execGetBodyInfoProvider_Parms GetBodyInfoProvider_Parms;
 
@@ -18881,7 +18881,7 @@ void APopulationOpportunityPoint::ChangeInstanceDataSwitch(struct FName SwitchNa
 	static UFunction* pFnChangeInstanceDataSwitch = NULL;
 
 	if (!pFnChangeInstanceDataSwitch)
-		pFnChangeInstanceDataSwitch = (UFunction*)UObject::GObjObjects()->Data[44498];
+		pFnChangeInstanceDataSwitch = (UFunction*)UObject::GObjects()->Data[44498];
 
 	APopulationOpportunityPoint_execChangeInstanceDataSwitch_Parms ChangeInstanceDataSwitch_Parms;
 	memcpy(&ChangeInstanceDataSwitch_Parms.SwitchName, &SwitchName, 0x8);
@@ -18907,7 +18907,7 @@ void APopulationOpportunityPoint::PostInitBodyComposition(struct FName Identifie
 	static UFunction* pFnPostInitBodyComposition = NULL;
 
 	if (!pFnPostInitBodyComposition)
-		pFnPostInitBodyComposition = (UFunction*)UObject::GObjObjects()->Data[44493];
+		pFnPostInitBodyComposition = (UFunction*)UObject::GObjects()->Data[44493];
 
 	APopulationOpportunityPoint_execPostInitBodyComposition_Parms PostInitBodyComposition_Parms;
 	memcpy(&PostInitBodyComposition_Parms.Identifier, &Identifier, 0x8);
@@ -18934,7 +18934,7 @@ void APopulationOpportunityPoint::PreRemoveBodyComposition(struct FName Identifi
 	static UFunction* pFnPreRemoveBodyComposition = NULL;
 
 	if (!pFnPreRemoveBodyComposition)
-		pFnPreRemoveBodyComposition = (UFunction*)UObject::GObjObjects()->Data[44489];
+		pFnPreRemoveBodyComposition = (UFunction*)UObject::GObjects()->Data[44489];
 
 	APopulationOpportunityPoint_execPreRemoveBodyComposition_Parms PreRemoveBodyComposition_Parms;
 	memcpy(&PreRemoveBodyComposition_Parms.Identifier, &Identifier, 0x8);
@@ -18958,7 +18958,7 @@ float APopulationOpportunityPoint::GetInitialMovementHoldTime()
 	static UFunction* pFnGetInitialMovementHoldTime = NULL;
 
 	if (!pFnGetInitialMovementHoldTime)
-		pFnGetInitialMovementHoldTime = (UFunction*)UObject::GObjObjects()->Data[44487];
+		pFnGetInitialMovementHoldTime = (UFunction*)UObject::GObjects()->Data[44487];
 
 	APopulationOpportunityPoint_execGetInitialMovementHoldTime_Parms GetInitialMovementHoldTime_Parms;
 
@@ -18977,7 +18977,7 @@ class AActor* APopulationOpportunityPoint::GetInitialDestination()
 	static UFunction* pFnGetInitialDestination = NULL;
 
 	if (!pFnGetInitialDestination)
-		pFnGetInitialDestination = (UFunction*)UObject::GObjObjects()->Data[44485];
+		pFnGetInitialDestination = (UFunction*)UObject::GObjects()->Data[44485];
 
 	APopulationOpportunityPoint_execGetInitialDestination_Parms GetInitialDestination_Parms;
 
@@ -18996,7 +18996,7 @@ unsigned char APopulationOpportunityPoint::GetInitialActionType()
 	static UFunction* pFnGetInitialActionType = NULL;
 
 	if (!pFnGetInitialActionType)
-		pFnGetInitialActionType = (UFunction*)UObject::GObjObjects()->Data[44483];
+		pFnGetInitialActionType = (UFunction*)UObject::GObjects()->Data[44483];
 
 	APopulationOpportunityPoint_execGetInitialActionType_Parms GetInitialActionType_Parms;
 
@@ -19015,7 +19015,7 @@ unsigned char APopulationOpportunityPoint::GetSpawnStyleType()
 	static UFunction* pFnGetSpawnStyleType = NULL;
 
 	if (!pFnGetSpawnStyleType)
-		pFnGetSpawnStyleType = (UFunction*)UObject::GObjObjects()->Data[44481];
+		pFnGetSpawnStyleType = (UFunction*)UObject::GObjects()->Data[44481];
 
 	APopulationOpportunityPoint_execGetSpawnStyleType_Parms GetSpawnStyleType_Parms;
 
@@ -19034,7 +19034,7 @@ void APopulationOpportunityPoint::RespawnKilledActors(float PercentageOfKilledAc
 	static UFunction* pFnRespawnKilledActors = NULL;
 
 	if (!pFnRespawnKilledActors)
-		pFnRespawnKilledActors = (UFunction*)UObject::GObjObjects()->Data[44479];
+		pFnRespawnKilledActors = (UFunction*)UObject::GObjects()->Data[44479];
 
 	APopulationOpportunityPoint_execRespawnKilledActors_Parms RespawnKilledActors_Parms;
 	RespawnKilledActors_Parms.PercentageOfKilledActorsToRespawn = PercentageOfKilledActorsToRespawn;
@@ -19056,7 +19056,7 @@ void APopulationOpportunityPoint::DoSpawning(class UPopulationMaster* PopMaster)
 	static UFunction* pFnDoSpawning = NULL;
 
 	if (!pFnDoSpawning)
-		pFnDoSpawning = (UFunction*)UObject::GObjObjects()->Data[44477];
+		pFnDoSpawning = (UFunction*)UObject::GObjects()->Data[44477];
 
 	APopulationOpportunityPoint_execDoSpawning_Parms DoSpawning_Parms;
 	DoSpawning_Parms.PopMaster = PopMaster;
@@ -19081,7 +19081,7 @@ bool APopulationPoint::CanSpawnFromFactory(class UPopulationFactory* Factory, in
 	static UFunction* pFnCanSpawnFromFactory = NULL;
 
 	if (!pFnCanSpawnFromFactory)
-		pFnCanSpawnFromFactory = (UFunction*)UObject::GObjObjects()->Data[44545];
+		pFnCanSpawnFromFactory = (UFunction*)UObject::GObjects()->Data[44545];
 
 	APopulationPoint_execCanSpawnFromFactory_Parms CanSpawnFromFactory_Parms;
 	CanSpawnFromFactory_Parms.Factory = Factory;
@@ -19107,7 +19107,7 @@ struct FRotator APopulationPoint::GetSpawnRotation()
 	static UFunction* pFnGetSpawnRotation = NULL;
 
 	if (!pFnGetSpawnRotation)
-		pFnGetSpawnRotation = (UFunction*)UObject::GObjObjects()->Data[44543];
+		pFnGetSpawnRotation = (UFunction*)UObject::GObjects()->Data[44543];
 
 	APopulationPoint_execGetSpawnRotation_Parms GetSpawnRotation_Parms;
 
@@ -19130,7 +19130,7 @@ struct FVector APopulationPoint::GetSpawnLocation()
 	static UFunction* pFnGetSpawnLocation = NULL;
 
 	if (!pFnGetSpawnLocation)
-		pFnGetSpawnLocation = (UFunction*)UObject::GObjObjects()->Data[44541];
+		pFnGetSpawnLocation = (UFunction*)UObject::GObjects()->Data[44541];
 
 	APopulationPoint_execGetSpawnLocation_Parms GetSpawnLocation_Parms;
 
@@ -19153,7 +19153,7 @@ void APopulationPoint::ActorSpawned(class AActor* SpawnedActor)
 	static UFunction* pFnActorSpawned = NULL;
 
 	if (!pFnActorSpawned)
-		pFnActorSpawned = (UFunction*)UObject::GObjObjects()->Data[44539];
+		pFnActorSpawned = (UFunction*)UObject::GObjects()->Data[44539];
 
 	APopulationPoint_execActorSpawned_Parms ActorSpawned_Parms;
 	ActorSpawned_Parms.SpawnedActor = SpawnedActor;
@@ -19175,7 +19175,7 @@ float APopulationPoint::GetInitialMovementHoldTime()
 	static UFunction* pFnGetInitialMovementHoldTime = NULL;
 
 	if (!pFnGetInitialMovementHoldTime)
-		pFnGetInitialMovementHoldTime = (UFunction*)UObject::GObjObjects()->Data[44537];
+		pFnGetInitialMovementHoldTime = (UFunction*)UObject::GObjects()->Data[44537];
 
 	APopulationPoint_execGetInitialMovementHoldTime_Parms GetInitialMovementHoldTime_Parms;
 
@@ -19194,7 +19194,7 @@ class AActor* APopulationPoint::GetInitialDestination()
 	static UFunction* pFnGetInitialDestination = NULL;
 
 	if (!pFnGetInitialDestination)
-		pFnGetInitialDestination = (UFunction*)UObject::GObjObjects()->Data[44535];
+		pFnGetInitialDestination = (UFunction*)UObject::GObjects()->Data[44535];
 
 	APopulationPoint_execGetInitialDestination_Parms GetInitialDestination_Parms;
 
@@ -19212,7 +19212,7 @@ void APopulationPoint::RandomizeInitialDestinations()
 	static UFunction* pFnRandomizeInitialDestinations = NULL;
 
 	if (!pFnRandomizeInitialDestinations)
-		pFnRandomizeInitialDestinations = (UFunction*)UObject::GObjObjects()->Data[44532];
+		pFnRandomizeInitialDestinations = (UFunction*)UObject::GObjects()->Data[44532];
 
 	APopulationPoint_execRandomizeInitialDestinations_Parms RandomizeInitialDestinations_Parms;
 
@@ -19229,7 +19229,7 @@ unsigned char APopulationPoint::GetInitialActionType()
 	static UFunction* pFnGetInitialActionType = NULL;
 
 	if (!pFnGetInitialActionType)
-		pFnGetInitialActionType = (UFunction*)UObject::GObjObjects()->Data[44530];
+		pFnGetInitialActionType = (UFunction*)UObject::GObjects()->Data[44530];
 
 	APopulationPoint_execGetInitialActionType_Parms GetInitialActionType_Parms;
 
@@ -19248,7 +19248,7 @@ unsigned char APopulationPoint::GetSpawnStyleType()
 	static UFunction* pFnGetSpawnStyleType = NULL;
 
 	if (!pFnGetSpawnStyleType)
-		pFnGetSpawnStyleType = (UFunction*)UObject::GObjObjects()->Data[44528];
+		pFnGetSpawnStyleType = (UFunction*)UObject::GObjects()->Data[44528];
 
 	APopulationPoint_execGetSpawnStyleType_Parms GetSpawnStyleType_Parms;
 
@@ -19267,7 +19267,7 @@ void APopulationPoint::OnToggle(class USeqAct_Toggle* Action)
 	static UFunction* pFnOnToggle = NULL;
 
 	if (!pFnOnToggle)
-		pFnOnToggle = (UFunction*)UObject::GObjObjects()->Data[44526];
+		pFnOnToggle = (UFunction*)UObject::GObjects()->Data[44526];
 
 	APopulationPoint_execOnToggle_Parms OnToggle_Parms;
 	OnToggle_Parms.Action = Action;
@@ -19285,7 +19285,7 @@ void USeqEvent_EncounterWaveComplete::NotifyWaveComplete(int nWave)
 	static UFunction* pFnNotifyWaveComplete = NULL;
 
 	if (!pFnNotifyWaveComplete)
-		pFnNotifyWaveComplete = (UFunction*)UObject::GObjObjects()->Data[44697];
+		pFnNotifyWaveComplete = (UFunction*)UObject::GObjects()->Data[44697];
 
 	USeqEvent_EncounterWaveComplete_execNotifyWaveComplete_Parms NotifyWaveComplete_Parms;
 	NotifyWaveComplete_Parms.nWave = nWave;
@@ -19310,7 +19310,7 @@ void USeqEvent_PopulatedActor::eventNotifyPopulatedActor(class AActor* Populated
 	static UFunction* pFnNotifyPopulatedActor = NULL;
 
 	if (!pFnNotifyPopulatedActor)
-		pFnNotifyPopulatedActor = (UFunction*)UObject::GObjObjects()->Data[44703];
+		pFnNotifyPopulatedActor = (UFunction*)UObject::GObjects()->Data[44703];
 
 	USeqEvent_PopulatedActor_eventNotifyPopulatedActor_Parms NotifyPopulatedActor_Parms;
 	NotifyPopulatedActor_Parms.PopulatedActor = PopulatedActor;
@@ -19334,7 +19334,7 @@ void USeqEvent_PopulatedPoint::eventNotifyPopulatedActor(class AActor* Populated
 	static UFunction* pFnNotifyPopulatedActor = NULL;
 
 	if (!pFnNotifyPopulatedActor)
-		pFnNotifyPopulatedActor = (UFunction*)UObject::GObjObjects()->Data[44710];
+		pFnNotifyPopulatedActor = (UFunction*)UObject::GObjects()->Data[44710];
 
 	USeqEvent_PopulatedPoint_eventNotifyPopulatedActor_Parms NotifyPopulatedActor_Parms;
 	NotifyPopulatedActor_Parms.PopulatedActor = PopulatedActor;
@@ -19355,7 +19355,7 @@ void UAIDefinition::OnReset(struct FBehaviorConsumerHandle* ConsumerHandle)
 	static UFunction* pFnOnReset = NULL;
 
 	if (!pFnOnReset)
-		pFnOnReset = (UFunction*)UObject::GObjObjects()->Data[39492];
+		pFnOnReset = (UFunction*)UObject::GObjects()->Data[39492];
 
 	UAIDefinition_execOnReset_Parms OnReset_Parms;
 
@@ -19380,7 +19380,7 @@ void UAIDefinition::OnHitByVehicle(class AVehicle* Vehicle, struct FBehaviorCons
 	static UFunction* pFnOnHitByVehicle = NULL;
 
 	if (!pFnOnHitByVehicle)
-		pFnOnHitByVehicle = (UFunction*)UObject::GObjObjects()->Data[39489];
+		pFnOnHitByVehicle = (UFunction*)UObject::GObjects()->Data[39489];
 
 	UAIDefinition_execOnHitByVehicle_Parms OnHitByVehicle_Parms;
 	OnHitByVehicle_Parms.Vehicle = Vehicle;
@@ -19406,7 +19406,7 @@ void UAIDefinition::OnRanOver(class AVehicle* Vehicle, struct FBehaviorConsumerH
 	static UFunction* pFnOnRanOver = NULL;
 
 	if (!pFnOnRanOver)
-		pFnOnRanOver = (UFunction*)UObject::GObjObjects()->Data[39486];
+		pFnOnRanOver = (UFunction*)UObject::GObjects()->Data[39486];
 
 	UAIDefinition_execOnRanOver_Parms OnRanOver_Parms;
 	OnRanOver_Parms.Vehicle = Vehicle;
@@ -19432,7 +19432,7 @@ void UAIDefinition::OnTimerEvent(struct FName SpecializedEventName, struct FBeha
 	static UFunction* pFnOnTimerEvent = NULL;
 
 	if (!pFnOnTimerEvent)
-		pFnOnTimerEvent = (UFunction*)UObject::GObjObjects()->Data[39483];
+		pFnOnTimerEvent = (UFunction*)UObject::GObjects()->Data[39483];
 
 	UAIDefinition_execOnTimerEvent_Parms OnTimerEvent_Parms;
 	memcpy(&OnTimerEvent_Parms.SpecializedEventName, &SpecializedEventName, 0x8);
@@ -19458,7 +19458,7 @@ void UAIDefinition::OnKilledPawn(class UObject* Killed, struct FBehaviorConsumer
 	static UFunction* pFnOnKilledPawn = NULL;
 
 	if (!pFnOnKilledPawn)
-		pFnOnKilledPawn = (UFunction*)UObject::GObjObjects()->Data[39480];
+		pFnOnKilledPawn = (UFunction*)UObject::GObjects()->Data[39480];
 
 	UAIDefinition_execOnKilledPawn_Parms OnKilledPawn_Parms;
 	OnKilledPawn_Parms.Killed = Killed;
@@ -19483,7 +19483,7 @@ void UAIDefinition::OnLanded(struct FBehaviorConsumerHandle* ConsumerHandle)
 	static UFunction* pFnOnLanded = NULL;
 
 	if (!pFnOnLanded)
-		pFnOnLanded = (UFunction*)UObject::GObjObjects()->Data[39478];
+		pFnOnLanded = (UFunction*)UObject::GObjects()->Data[39478];
 
 	UAIDefinition_execOnLanded_Parms OnLanded_Parms;
 
@@ -19507,7 +19507,7 @@ void UAIDefinition::OnStopFiringWeapon(struct FBehaviorConsumerHandle* ConsumerH
 	static UFunction* pFnOnStopFiringWeapon = NULL;
 
 	if (!pFnOnStopFiringWeapon)
-		pFnOnStopFiringWeapon = (UFunction*)UObject::GObjObjects()->Data[39476];
+		pFnOnStopFiringWeapon = (UFunction*)UObject::GObjects()->Data[39476];
 
 	UAIDefinition_execOnStopFiringWeapon_Parms OnStopFiringWeapon_Parms;
 
@@ -19531,7 +19531,7 @@ void UAIDefinition::OnStartFiringWeapon(struct FBehaviorConsumerHandle* Consumer
 	static UFunction* pFnOnStartFiringWeapon = NULL;
 
 	if (!pFnOnStartFiringWeapon)
-		pFnOnStartFiringWeapon = (UFunction*)UObject::GObjObjects()->Data[39474];
+		pFnOnStartFiringWeapon = (UFunction*)UObject::GObjects()->Data[39474];
 
 	UAIDefinition_execOnStartFiringWeapon_Parms OnStartFiringWeapon_Parms;
 
@@ -19556,7 +19556,7 @@ void UAIDefinition::OnTargetLost(class UObject* OldTarget, struct FBehaviorConsu
 	static UFunction* pFnOnTargetLost = NULL;
 
 	if (!pFnOnTargetLost)
-		pFnOnTargetLost = (UFunction*)UObject::GObjObjects()->Data[39471];
+		pFnOnTargetLost = (UFunction*)UObject::GObjects()->Data[39471];
 
 	UAIDefinition_execOnTargetLost_Parms OnTargetLost_Parms;
 	OnTargetLost_Parms.OldTarget = OldTarget;
@@ -19583,7 +19583,7 @@ void UAIDefinition::OnTargetChanged(class UObject* OldTarget, class UObject* New
 	static UFunction* pFnOnTargetChanged = NULL;
 
 	if (!pFnOnTargetChanged)
-		pFnOnTargetChanged = (UFunction*)UObject::GObjObjects()->Data[39467];
+		pFnOnTargetChanged = (UFunction*)UObject::GObjects()->Data[39467];
 
 	UAIDefinition_execOnTargetChanged_Parms OnTargetChanged_Parms;
 	OnTargetChanged_Parms.OldTarget = OldTarget;
@@ -19610,7 +19610,7 @@ void UAIDefinition::OnTargetAcquired(class UObject* NewTarget, struct FBehaviorC
 	static UFunction* pFnOnTargetAcquired = NULL;
 
 	if (!pFnOnTargetAcquired)
-		pFnOnTargetAcquired = (UFunction*)UObject::GObjObjects()->Data[39464];
+		pFnOnTargetAcquired = (UFunction*)UObject::GObjects()->Data[39464];
 
 	UAIDefinition_execOnTargetAcquired_Parms OnTargetAcquired_Parms;
 	OnTargetAcquired_Parms.NewTarget = NewTarget;
@@ -19635,7 +19635,7 @@ void UAIDefinition::OnSpawned(struct FBehaviorConsumerHandle* ConsumerHandle)
 	static UFunction* pFnOnSpawned = NULL;
 
 	if (!pFnOnSpawned)
-		pFnOnSpawned = (UFunction*)UObject::GObjObjects()->Data[39462];
+		pFnOnSpawned = (UFunction*)UObject::GObjects()->Data[39462];
 
 	UAIDefinition_execOnSpawned_Parms OnSpawned_Parms;
 
@@ -19664,7 +19664,7 @@ void UAIDefinition::OnTakeHeal(class UObject* Instigator, float Damage, float Sh
 	static UFunction* pFnOnTakeHeal = NULL;
 
 	if (!pFnOnTakeHeal)
-		pFnOnTakeHeal = (UFunction*)UObject::GObjObjects()->Data[39455];
+		pFnOnTakeHeal = (UFunction*)UObject::GObjects()->Data[39455];
 
 	UAIDefinition_execOnTakeHeal_Parms OnTakeHeal_Parms;
 	OnTakeHeal_Parms.Instigator = Instigator;
@@ -19699,7 +19699,7 @@ void UAIDefinition::OnVehicleTakeDamage(class UObject* Instigator, class UObject
 	static UFunction* pFnOnVehicleTakeDamage = NULL;
 
 	if (!pFnOnVehicleTakeDamage)
-		pFnOnVehicleTakeDamage = (UFunction*)UObject::GObjObjects()->Data[39447];
+		pFnOnVehicleTakeDamage = (UFunction*)UObject::GObjects()->Data[39447];
 
 	UAIDefinition_execOnVehicleTakeDamage_Parms OnVehicleTakeDamage_Parms;
 	OnVehicleTakeDamage_Parms.Instigator = Instigator;
@@ -19734,7 +19734,7 @@ void UAIDefinition::OnTakeDamage(class UObject* Instigator, float Damage, float 
 	static UFunction* pFnOnTakeDamage = NULL;
 
 	if (!pFnOnTakeDamage)
-		pFnOnTakeDamage = (UFunction*)UObject::GObjObjects()->Data[39440];
+		pFnOnTakeDamage = (UFunction*)UObject::GObjects()->Data[39440];
 
 	UAIDefinition_execOnTakeDamage_Parms OnTakeDamage_Parms;
 	OnTakeDamage_Parms.Instigator = Instigator;
@@ -19766,7 +19766,7 @@ void UAIDefinition::OnUserCouldNotAffordSecondary(unsigned char EventOutput, cla
 	static UFunction* pFnOnUserCouldNotAffordSecondary = NULL;
 
 	if (!pFnOnUserCouldNotAffordSecondary)
-		pFnOnUserCouldNotAffordSecondary = (UFunction*)UObject::GObjObjects()->Data[39435];
+		pFnOnUserCouldNotAffordSecondary = (UFunction*)UObject::GObjects()->Data[39435];
 
 	UAIDefinition_execOnUserCouldNotAffordSecondary_Parms OnUserCouldNotAffordSecondary_Parms;
 	OnUserCouldNotAffordSecondary_Parms.EventOutput = EventOutput;
@@ -19796,7 +19796,7 @@ void UAIDefinition::OnUserCouldNotAfford(unsigned char EventOutput, class UObjec
 	static UFunction* pFnOnUserCouldNotAfford = NULL;
 
 	if (!pFnOnUserCouldNotAfford)
-		pFnOnUserCouldNotAfford = (UFunction*)UObject::GObjObjects()->Data[39430];
+		pFnOnUserCouldNotAfford = (UFunction*)UObject::GObjects()->Data[39430];
 
 	UAIDefinition_execOnUserCouldNotAfford_Parms OnUserCouldNotAfford_Parms;
 	OnUserCouldNotAfford_Parms.EventOutput = EventOutput;
@@ -19826,7 +19826,7 @@ void UAIDefinition::OnSecondaryUsed(unsigned char EventOutput, class UObject* In
 	static UFunction* pFnOnSecondaryUsed = NULL;
 
 	if (!pFnOnSecondaryUsed)
-		pFnOnSecondaryUsed = (UFunction*)UObject::GObjObjects()->Data[39425];
+		pFnOnSecondaryUsed = (UFunction*)UObject::GObjects()->Data[39425];
 
 	UAIDefinition_execOnSecondaryUsed_Parms OnSecondaryUsed_Parms;
 	OnSecondaryUsed_Parms.EventOutput = EventOutput;
@@ -19856,7 +19856,7 @@ void UAIDefinition::OnUsed(unsigned char EventOutput, class UObject* Instigator,
 	static UFunction* pFnOnUsed = NULL;
 
 	if (!pFnOnUsed)
-		pFnOnUsed = (UFunction*)UObject::GObjObjects()->Data[39418];
+		pFnOnUsed = (UFunction*)UObject::GObjects()->Data[39418];
 
 	UAIDefinition_execOnUsed_Parms OnUsed_Parms;
 	OnUsed_Parms.EventOutput = EventOutput;
@@ -19883,7 +19883,7 @@ void UAIDefinition::SetBehaviorProviderDefinition(class UBehaviorProviderDefinit
 	static UFunction* pFnSetBehaviorProviderDefinition = NULL;
 
 	if (!pFnSetBehaviorProviderDefinition)
-		pFnSetBehaviorProviderDefinition = (UFunction*)UObject::GObjObjects()->Data[39416];
+		pFnSetBehaviorProviderDefinition = (UFunction*)UObject::GObjects()->Data[39416];
 
 	UAIDefinition_execSetBehaviorProviderDefinition_Parms SetBehaviorProviderDefinition_Parms;
 	SetBehaviorProviderDefinition_Parms.NewBehaviorProviderDefinition = NewBehaviorProviderDefinition;
@@ -19905,7 +19905,7 @@ class UBehaviorProviderDefinition* UAIDefinition::GetBehaviorProviderDefinition(
 	static UFunction* pFnGetBehaviorProviderDefinition = NULL;
 
 	if (!pFnGetBehaviorProviderDefinition)
-		pFnGetBehaviorProviderDefinition = (UFunction*)UObject::GObjObjects()->Data[39414];
+		pFnGetBehaviorProviderDefinition = (UFunction*)UObject::GObjects()->Data[39414];
 
 	UAIDefinition_execGetBehaviorProviderDefinition_Parms GetBehaviorProviderDefinition_Parms;
 
@@ -19931,7 +19931,7 @@ void UBehaviorKernel::RecentlyRunBehaviorsForSequence(int PID, int ProvidersInde
 	static UFunction* pFnRecentlyRunBehaviorsForSequence = NULL;
 
 	if (!pFnRecentlyRunBehaviorsForSequence)
-		pFnRecentlyRunBehaviorsForSequence = (UFunction*)UObject::GObjObjects()->Data[40567];
+		pFnRecentlyRunBehaviorsForSequence = (UFunction*)UObject::GObjects()->Data[40567];
 
 	UBehaviorKernel_execRecentlyRunBehaviorsForSequence_Parms RecentlyRunBehaviorsForSequence_Parms;
 	RecentlyRunBehaviorsForSequence_Parms.PID = PID;
@@ -19961,7 +19961,7 @@ void UBehaviorKernel::AllEventStateForSequence(int PID, int ProvidersIndex, int 
 	static UFunction* pFnAllEventStateForSequence = NULL;
 
 	if (!pFnAllEventStateForSequence)
-		pFnAllEventStateForSequence = (UFunction*)UObject::GObjObjects()->Data[40562];
+		pFnAllEventStateForSequence = (UFunction*)UObject::GObjects()->Data[40562];
 
 	UBehaviorKernel_execAllEventStateForSequence_Parms AllEventStateForSequence_Parms;
 	AllEventStateForSequence_Parms.PID = PID;
@@ -19991,7 +19991,7 @@ void UBehaviorKernel::AllWaitingThreadsForSequence(int PID, int ProvidersIndex, 
 	static UFunction* pFnAllWaitingThreadsForSequence = NULL;
 
 	if (!pFnAllWaitingThreadsForSequence)
-		pFnAllWaitingThreadsForSequence = (UFunction*)UObject::GObjObjects()->Data[40557];
+		pFnAllWaitingThreadsForSequence = (UFunction*)UObject::GObjects()->Data[40557];
 
 	UBehaviorKernel_execAllWaitingThreadsForSequence_Parms AllWaitingThreadsForSequence_Parms;
 	AllWaitingThreadsForSequence_Parms.PID = PID;
@@ -20020,7 +20020,7 @@ void UBehaviorKernel::AllSequencesForProvider(int PID, int ProvidersIndex, struc
 	static UFunction* pFnAllSequencesForProvider = NULL;
 
 	if (!pFnAllSequencesForProvider)
-		pFnAllSequencesForProvider = (UFunction*)UObject::GObjObjects()->Data[40553];
+		pFnAllSequencesForProvider = (UFunction*)UObject::GObjects()->Data[40553];
 
 	UBehaviorKernel_execAllSequencesForProvider_Parms AllSequencesForProvider_Parms;
 	AllSequencesForProvider_Parms.PID = PID;
@@ -20048,7 +20048,7 @@ void UBehaviorKernel::AllProvidersForProcess(int PID, class UBehaviorProviderDef
 	static UFunction* pFnAllProvidersForProcess = NULL;
 
 	if (!pFnAllProvidersForProcess)
-		pFnAllProvidersForProcess = (UFunction*)UObject::GObjObjects()->Data[40549];
+		pFnAllProvidersForProcess = (UFunction*)UObject::GObjects()->Data[40549];
 
 	UBehaviorKernel_execAllProvidersForProcess_Parms AllProvidersForProcess_Parms;
 	AllProvidersForProcess_Parms.PID = PID;
@@ -20076,7 +20076,7 @@ void UBehaviorKernel::AllProcesses(struct FBehaviorProcess* Process)
 	static UFunction* pFnAllProcesses = NULL;
 
 	if (!pFnAllProcesses)
-		pFnAllProcesses = (UFunction*)UObject::GObjObjects()->Data[40547];
+		pFnAllProcesses = (UFunction*)UObject::GObjects()->Data[40547];
 
 	UBehaviorKernel_execAllProcesses_Parms AllProcesses_Parms;
 
@@ -20102,7 +20102,7 @@ void UBehaviorKernel::GetVariableStateSummaryForSequence(int PID, int SequencesD
 	static UFunction* pFnGetVariableStateSummaryForSequence = NULL;
 
 	if (!pFnGetVariableStateSummaryForSequence)
-		pFnGetVariableStateSummaryForSequence = (UFunction*)UObject::GObjObjects()->Data[40542];
+		pFnGetVariableStateSummaryForSequence = (UFunction*)UObject::GObjects()->Data[40542];
 
 	UBehaviorKernel_execGetVariableStateSummaryForSequence_Parms GetVariableStateSummaryForSequence_Parms;
 	GetVariableStateSummaryForSequence_Parms.PID = PID;
@@ -20128,7 +20128,7 @@ void UBehaviorKernel::GetChunkedListSummaries(TArray< struct FString >* DebugInf
 	static UFunction* pFnGetChunkedListSummaries = NULL;
 
 	if (!pFnGetChunkedListSummaries)
-		pFnGetChunkedListSummaries = (UFunction*)UObject::GObjObjects()->Data[40539];
+		pFnGetChunkedListSummaries = (UFunction*)UObject::GObjects()->Data[40539];
 
 	UBehaviorKernel_execGetChunkedListSummaries_Parms GetChunkedListSummaries_Parms;
 
@@ -20152,7 +20152,7 @@ struct FBehaviorKernelStats UBehaviorKernel::GetBehaviorKernelStats()
 	static UFunction* pFnGetBehaviorKernelStats = NULL;
 
 	if (!pFnGetBehaviorKernelStats)
-		pFnGetBehaviorKernelStats = (UFunction*)UObject::GObjObjects()->Data[40537];
+		pFnGetBehaviorKernelStats = (UFunction*)UObject::GObjects()->Data[40537];
 
 	UBehaviorKernel_execGetBehaviorKernelStats_Parms GetBehaviorKernelStats_Parms;
 
@@ -20176,7 +20176,7 @@ bool UBehaviorKernel::IsBehaviorKernelWatchingConsumer(struct FBehaviorConsumerH
 	static UFunction* pFnIsBehaviorKernelWatchingConsumer = NULL;
 
 	if (!pFnIsBehaviorKernelWatchingConsumer)
-		pFnIsBehaviorKernelWatchingConsumer = (UFunction*)UObject::GObjObjects()->Data[40534];
+		pFnIsBehaviorKernelWatchingConsumer = (UFunction*)UObject::GObjects()->Data[40534];
 
 	UBehaviorKernel_execIsBehaviorKernelWatchingConsumer_Parms IsBehaviorKernelWatchingConsumer_Parms;
 	memcpy(&IsBehaviorKernelWatchingConsumer_Parms.ConsumerHandle, &ConsumerHandle, 0x4);
@@ -20203,7 +20203,7 @@ bool UBehaviorKernel::IsBehaviorSequenceEnabled(class UBehaviorProviderDefinitio
 	static UFunction* pFnIsBehaviorSequenceEnabled = NULL;
 
 	if (!pFnIsBehaviorSequenceEnabled)
-		pFnIsBehaviorSequenceEnabled = (UFunction*)UObject::GObjObjects()->Data[40000];
+		pFnIsBehaviorSequenceEnabled = (UFunction*)UObject::GObjects()->Data[40000];
 
 	UBehaviorKernel_execIsBehaviorSequenceEnabled_Parms IsBehaviorSequenceEnabled_Parms;
 	IsBehaviorSequenceEnabled_Parms.ProviderDefinition = ProviderDefinition;
@@ -20232,7 +20232,7 @@ void UBehaviorKernel::ActivateBehaviorOutputLink(int OutputLinkId, struct FBehav
 	static UFunction* pFnActivateBehaviorOutputLink = NULL;
 
 	if (!pFnActivateBehaviorOutputLink)
-		pFnActivateBehaviorOutputLink = (UFunction*)UObject::GObjObjects()->Data[39873];
+		pFnActivateBehaviorOutputLink = (UFunction*)UObject::GObjects()->Data[39873];
 
 	UBehaviorKernel_execActivateBehaviorOutputLink_Parms ActivateBehaviorOutputLink_Parms;
 	ActivateBehaviorOutputLink_Parms.OutputLinkId = OutputLinkId;
@@ -20258,7 +20258,7 @@ void UBehaviorKernel::PublishBoolOutputVariable(unsigned long Output, struct FBe
 	static UFunction* pFnPublishBoolOutputVariable = NULL;
 
 	if (!pFnPublishBoolOutputVariable)
-		pFnPublishBoolOutputVariable = (UFunction*)UObject::GObjObjects()->Data[40526];
+		pFnPublishBoolOutputVariable = (UFunction*)UObject::GObjects()->Data[40526];
 
 	UBehaviorKernel_execPublishBoolOutputVariable_Parms PublishBoolOutputVariable_Parms;
 	PublishBoolOutputVariable_Parms.Output = Output;
@@ -20284,7 +20284,7 @@ void UBehaviorKernel::PublishObjectOutputVariable(class UObject* Output, struct 
 	static UFunction* pFnPublishObjectOutputVariable = NULL;
 
 	if (!pFnPublishObjectOutputVariable)
-		pFnPublishObjectOutputVariable = (UFunction*)UObject::GObjObjects()->Data[39950];
+		pFnPublishObjectOutputVariable = (UFunction*)UObject::GObjects()->Data[39950];
 
 	UBehaviorKernel_execPublishObjectOutputVariable_Parms PublishObjectOutputVariable_Parms;
 	PublishObjectOutputVariable_Parms.Output = Output;
@@ -20310,7 +20310,7 @@ void UBehaviorKernel::PublishVectorOutputVariable(struct FBehaviorKernelInfo* Ke
 	static UFunction* pFnPublishVectorOutputVariable = NULL;
 
 	if (!pFnPublishVectorOutputVariable)
-		pFnPublishVectorOutputVariable = (UFunction*)UObject::GObjObjects()->Data[40521];
+		pFnPublishVectorOutputVariable = (UFunction*)UObject::GObjects()->Data[40521];
 
 	UBehaviorKernel_execPublishVectorOutputVariable_Parms PublishVectorOutputVariable_Parms;
 
@@ -20338,7 +20338,7 @@ void UBehaviorKernel::PublishFloatOutputVariable(float Output, struct FBehaviorK
 	static UFunction* pFnPublishFloatOutputVariable = NULL;
 
 	if (!pFnPublishFloatOutputVariable)
-		pFnPublishFloatOutputVariable = (UFunction*)UObject::GObjObjects()->Data[39936];
+		pFnPublishFloatOutputVariable = (UFunction*)UObject::GObjects()->Data[39936];
 
 	UBehaviorKernel_execPublishFloatOutputVariable_Parms PublishFloatOutputVariable_Parms;
 	PublishFloatOutputVariable_Parms.Output = Output;
@@ -20364,7 +20364,7 @@ void UBehaviorKernel::PublishIntOutputVariable(int Output, struct FBehaviorKerne
 	static UFunction* pFnPublishIntOutputVariable = NULL;
 
 	if (!pFnPublishIntOutputVariable)
-		pFnPublishIntOutputVariable = (UFunction*)UObject::GObjObjects()->Data[39922];
+		pFnPublishIntOutputVariable = (UFunction*)UObject::GObjects()->Data[39922];
 
 	UBehaviorKernel_execPublishIntOutputVariable_Parms PublishIntOutputVariable_Parms;
 	PublishIntOutputVariable_Parms.Output = Output;
@@ -20389,7 +20389,7 @@ void UBehaviorKernel::BeginNondeterministicProviderRegistration(struct FBehavior
 	static UFunction* pFnBeginNondeterministicProviderRegistration = NULL;
 
 	if (!pFnBeginNondeterministicProviderRegistration)
-		pFnBeginNondeterministicProviderRegistration = (UFunction*)UObject::GObjObjects()->Data[40515];
+		pFnBeginNondeterministicProviderRegistration = (UFunction*)UObject::GObjects()->Data[40515];
 
 	UBehaviorKernel_execBeginNondeterministicProviderRegistration_Parms BeginNondeterministicProviderRegistration_Parms;
 
@@ -20414,7 +20414,7 @@ void UBehaviorKernel::ProcessReplicatedBehaviorEvent(struct FBehaviorConsumerHan
 	static UFunction* pFnProcessReplicatedBehaviorEvent = NULL;
 
 	if (!pFnProcessReplicatedBehaviorEvent)
-		pFnProcessReplicatedBehaviorEvent = (UFunction*)UObject::GObjObjects()->Data[40512];
+		pFnProcessReplicatedBehaviorEvent = (UFunction*)UObject::GObjects()->Data[40512];
 
 	UBehaviorKernel_execProcessReplicatedBehaviorEvent_Parms ProcessReplicatedBehaviorEvent_Parms;
 
@@ -20443,7 +20443,7 @@ bool UBehaviorKernel::ProcessReplicatedBehaviorConsumerState(struct FBehaviorCon
 	static UFunction* pFnProcessReplicatedBehaviorConsumerState = NULL;
 
 	if (!pFnProcessReplicatedBehaviorConsumerState)
-		pFnProcessReplicatedBehaviorConsumerState = (UFunction*)UObject::GObjObjects()->Data[40504];
+		pFnProcessReplicatedBehaviorConsumerState = (UFunction*)UObject::GObjects()->Data[40504];
 
 	UBehaviorKernel_execProcessReplicatedBehaviorConsumerState_Parms ProcessReplicatedBehaviorConsumerState_Parms;
 
@@ -20475,7 +20475,7 @@ void UBehaviorKernel::ChangeBehaviorSequenceActivationStatus(class UBehaviorProv
 	static UFunction* pFnChangeBehaviorSequenceActivationStatus = NULL;
 
 	if (!pFnChangeBehaviorSequenceActivationStatus)
-		pFnChangeBehaviorSequenceActivationStatus = (UFunction*)UObject::GObjObjects()->Data[39793];
+		pFnChangeBehaviorSequenceActivationStatus = (UFunction*)UObject::GObjects()->Data[39793];
 
 	UBehaviorKernel_execChangeBehaviorSequenceActivationStatus_Parms ChangeBehaviorSequenceActivationStatus_Parms;
 	ChangeBehaviorSequenceActivationStatus_Parms.ProviderDefinition = ProviderDefinition;
@@ -20503,7 +20503,7 @@ void UBehaviorKernel::ChangeBehaviorConsumerSuspensionStatus(unsigned char Suspe
 	static UFunction* pFnChangeBehaviorConsumerSuspensionStatus = NULL;
 
 	if (!pFnChangeBehaviorConsumerSuspensionStatus)
-		pFnChangeBehaviorConsumerSuspensionStatus = (UFunction*)UObject::GObjObjects()->Data[40492];
+		pFnChangeBehaviorConsumerSuspensionStatus = (UFunction*)UObject::GObjects()->Data[40492];
 
 	UBehaviorKernel_execChangeBehaviorConsumerSuspensionStatus_Parms ChangeBehaviorConsumerSuspensionStatus_Parms;
 	ChangeBehaviorConsumerSuspensionStatus_Parms.SuspensionStatusChanage = SuspensionStatusChanage;
@@ -20532,7 +20532,7 @@ void UBehaviorKernel::BroadcastBehaviorEventFromScript(struct FName EventName, i
 	static UFunction* pFnBroadcastBehaviorEventFromScript = NULL;
 
 	if (!pFnBroadcastBehaviorEventFromScript)
-		pFnBroadcastBehaviorEventFromScript = (UFunction*)UObject::GObjObjects()->Data[39900];
+		pFnBroadcastBehaviorEventFromScript = (UFunction*)UObject::GObjects()->Data[39900];
 
 	UBehaviorKernel_execBroadcastBehaviorEventFromScript_Parms BroadcastBehaviorEventFromScript_Parms;
 	memcpy(&BroadcastBehaviorEventFromScript_Parms.EventName, &EventName, 0x8);
@@ -20568,7 +20568,7 @@ void UBehaviorKernel::ActivateBehaviorEventFromScript(class UBehaviorProviderDef
 	static UFunction* pFnActivateBehaviorEventFromScript = NULL;
 
 	if (!pFnActivateBehaviorEventFromScript)
-		pFnActivateBehaviorEventFromScript = (UFunction*)UObject::GObjObjects()->Data[40478];
+		pFnActivateBehaviorEventFromScript = (UFunction*)UObject::GObjects()->Data[40478];
 
 	UBehaviorKernel_execActivateBehaviorEventFromScript_Parms ActivateBehaviorEventFromScript_Parms;
 	ActivateBehaviorEventFromScript_Parms.ProviderDefinition = ProviderDefinition;
@@ -20599,7 +20599,7 @@ void UBehaviorKernel::RemoveBehaviorProviderFromConsumer(class UBehaviorProvider
 	static UFunction* pFnRemoveBehaviorProviderFromConsumer = NULL;
 
 	if (!pFnRemoveBehaviorProviderFromConsumer)
-		pFnRemoveBehaviorProviderFromConsumer = (UFunction*)UObject::GObjObjects()->Data[40475];
+		pFnRemoveBehaviorProviderFromConsumer = (UFunction*)UObject::GObjects()->Data[40475];
 
 	UBehaviorKernel_execRemoveBehaviorProviderFromConsumer_Parms RemoveBehaviorProviderFromConsumer_Parms;
 	RemoveBehaviorProviderFromConsumer_Parms.ProviderDefinition = ProviderDefinition;
@@ -20625,7 +20625,7 @@ void UBehaviorKernel::IntializeBehaviorProviderForConsumer(class UBehaviorProvid
 	static UFunction* pFnIntializeBehaviorProviderForConsumer = NULL;
 
 	if (!pFnIntializeBehaviorProviderForConsumer)
-		pFnIntializeBehaviorProviderForConsumer = (UFunction*)UObject::GObjObjects()->Data[40472];
+		pFnIntializeBehaviorProviderForConsumer = (UFunction*)UObject::GObjects()->Data[40472];
 
 	UBehaviorKernel_execIntializeBehaviorProviderForConsumer_Parms IntializeBehaviorProviderForConsumer_Parms;
 	IntializeBehaviorProviderForConsumer_Parms.ProviderDefinition = ProviderDefinition;
@@ -20650,7 +20650,7 @@ void UBehaviorKernel::ForceUnregisterBehaviorConsumer(struct FBehaviorConsumerHa
 	static UFunction* pFnForceUnregisterBehaviorConsumer = NULL;
 
 	if (!pFnForceUnregisterBehaviorConsumer)
-		pFnForceUnregisterBehaviorConsumer = (UFunction*)UObject::GObjObjects()->Data[40470];
+		pFnForceUnregisterBehaviorConsumer = (UFunction*)UObject::GObjects()->Data[40470];
 
 	UBehaviorKernel_execForceUnregisterBehaviorConsumer_Parms ForceUnregisterBehaviorConsumer_Parms;
 
@@ -20675,7 +20675,7 @@ struct FBehaviorConsumerHandle UBehaviorKernel::RegisterBehaviorConsumer(class U
 	static UFunction* pFnRegisterBehaviorConsumer = NULL;
 
 	if (!pFnRegisterBehaviorConsumer)
-		pFnRegisterBehaviorConsumer = (UFunction*)UObject::GObjObjects()->Data[40467];
+		pFnRegisterBehaviorConsumer = (UFunction*)UObject::GObjects()->Data[40467];
 
 	UBehaviorKernel_execRegisterBehaviorConsumer_Parms RegisterBehaviorConsumer_Parms;
 	RegisterBehaviorConsumer_Parms.BehaviorConsumer = BehaviorConsumer;
@@ -20700,7 +20700,7 @@ void UBehaviorProviderDefinition::SetObjectBehaviorVariable(class UObject* Value
 	static UFunction* pFnSetObjectBehaviorVariable = NULL;
 
 	if (!pFnSetObjectBehaviorVariable)
-		pFnSetObjectBehaviorVariable = (UFunction*)UObject::GObjObjects()->Data[39306];
+		pFnSetObjectBehaviorVariable = (UFunction*)UObject::GObjects()->Data[39306];
 
 	UBehaviorProviderDefinition_execSetObjectBehaviorVariable_Parms SetObjectBehaviorVariable_Parms;
 	SetObjectBehaviorVariable_Parms.Value = Value;
@@ -20726,7 +20726,7 @@ void UBehaviorProviderDefinition::SetVectorBehaviorVariable(struct FBehaviorVari
 	static UFunction* pFnSetVectorBehaviorVariable = NULL;
 
 	if (!pFnSetVectorBehaviorVariable)
-		pFnSetVectorBehaviorVariable = (UFunction*)UObject::GObjObjects()->Data[39303];
+		pFnSetVectorBehaviorVariable = (UFunction*)UObject::GObjects()->Data[39303];
 
 	UBehaviorProviderDefinition_execSetVectorBehaviorVariable_Parms SetVectorBehaviorVariable_Parms;
 
@@ -20754,7 +20754,7 @@ void UBehaviorProviderDefinition::SetFloatBehaviorVariable(float Value, struct F
 	static UFunction* pFnSetFloatBehaviorVariable = NULL;
 
 	if (!pFnSetFloatBehaviorVariable)
-		pFnSetFloatBehaviorVariable = (UFunction*)UObject::GObjObjects()->Data[39300];
+		pFnSetFloatBehaviorVariable = (UFunction*)UObject::GObjects()->Data[39300];
 
 	UBehaviorProviderDefinition_execSetFloatBehaviorVariable_Parms SetFloatBehaviorVariable_Parms;
 	SetFloatBehaviorVariable_Parms.Value = Value;
@@ -20780,7 +20780,7 @@ void UBehaviorProviderDefinition::SetIntBehaviorVariable(int Value, struct FBeha
 	static UFunction* pFnSetIntBehaviorVariable = NULL;
 
 	if (!pFnSetIntBehaviorVariable)
-		pFnSetIntBehaviorVariable = (UFunction*)UObject::GObjObjects()->Data[39297];
+		pFnSetIntBehaviorVariable = (UFunction*)UObject::GObjects()->Data[39297];
 
 	UBehaviorProviderDefinition_execSetIntBehaviorVariable_Parms SetIntBehaviorVariable_Parms;
 	SetIntBehaviorVariable_Parms.Value = Value;
@@ -20806,7 +20806,7 @@ void UBehaviorProviderDefinition::SetBoolBehaviorVariable(unsigned long Value, s
 	static UFunction* pFnSetBoolBehaviorVariable = NULL;
 
 	if (!pFnSetBoolBehaviorVariable)
-		pFnSetBoolBehaviorVariable = (UFunction*)UObject::GObjObjects()->Data[39294];
+		pFnSetBoolBehaviorVariable = (UFunction*)UObject::GObjects()->Data[39294];
 
 	UBehaviorProviderDefinition_execSetBoolBehaviorVariable_Parms SetBoolBehaviorVariable_Parms;
 	SetBoolBehaviorVariable_Parms.Value = Value;
@@ -20831,7 +20831,7 @@ struct FBehaviorConsumerHandle UIBehaviorConsumer::GetBehaviorConsumerHandle()
 	static UFunction* pFnGetBehaviorConsumerHandle = NULL;
 
 	if (!pFnGetBehaviorConsumerHandle)
-		pFnGetBehaviorConsumerHandle = (UFunction*)UObject::GObjObjects()->Data[39791];
+		pFnGetBehaviorConsumerHandle = (UFunction*)UObject::GObjects()->Data[39791];
 
 	UIBehaviorConsumer_execGetBehaviorConsumerHandle_Parms GetBehaviorConsumerHandle_Parms;
 
@@ -20854,7 +20854,7 @@ void UIBehaviorProvider::SetBehaviorProviderDefinition(class UBehaviorProviderDe
 	static UFunction* pFnSetBehaviorProviderDefinition = NULL;
 
 	if (!pFnSetBehaviorProviderDefinition)
-		pFnSetBehaviorProviderDefinition = (UFunction*)UObject::GObjObjects()->Data[43763];
+		pFnSetBehaviorProviderDefinition = (UFunction*)UObject::GObjects()->Data[43763];
 
 	UIBehaviorProvider_execSetBehaviorProviderDefinition_Parms SetBehaviorProviderDefinition_Parms;
 	SetBehaviorProviderDefinition_Parms.NewBehaviorProviderDefinition = NewBehaviorProviderDefinition;
@@ -20876,7 +20876,7 @@ class UBehaviorProviderDefinition* UIBehaviorProvider::GetBehaviorProviderDefini
 	static UFunction* pFnGetBehaviorProviderDefinition = NULL;
 
 	if (!pFnGetBehaviorProviderDefinition)
-		pFnGetBehaviorProviderDefinition = (UFunction*)UObject::GObjObjects()->Data[43761];
+		pFnGetBehaviorProviderDefinition = (UFunction*)UObject::GObjects()->Data[43761];
 
 	UIBehaviorProvider_execGetBehaviorProviderDefinition_Parms GetBehaviorProviderDefinition_Parms;
 
@@ -20902,7 +20902,7 @@ void UICustomEvent::eventRunCustomEvent(struct FName EventName, class UObject* E
 	static UFunction* pFnRunCustomEvent = NULL;
 
 	if (!pFnRunCustomEvent)
-		pFnRunCustomEvent = (UFunction*)UObject::GObjObjects()->Data[43772];
+		pFnRunCustomEvent = (UFunction*)UObject::GObjects()->Data[43772];
 
 	UICustomEvent_eventRunCustomEvent_Parms RunCustomEvent_Parms;
 	memcpy(&RunCustomEvent_Parms.EventName, &EventName, 0x8);
@@ -20925,7 +20925,7 @@ bool UITimerBehavior::SetTimerState(unsigned char TimerId, struct FBehaviorTimer
 	static UFunction* pFnSetTimerState = NULL;
 
 	if (!pFnSetTimerState)
-		pFnSetTimerState = (UFunction*)UObject::GObjObjects()->Data[39825];
+		pFnSetTimerState = (UFunction*)UObject::GObjects()->Data[39825];
 
 	UITimerBehavior_execSetTimerState_Parms SetTimerState_Parms;
 	SetTimerState_Parms.TimerId = TimerId;
@@ -20948,7 +20948,7 @@ bool UITimerBehavior::GetTimerState(unsigned char TimerId, struct FBehaviorTimer
 	static UFunction* pFnGetTimerState = NULL;
 
 	if (!pFnGetTimerState)
-		pFnGetTimerState = (UFunction*)UObject::GObjObjects()->Data[39826];
+		pFnGetTimerState = (UFunction*)UObject::GObjects()->Data[39826];
 
 	UITimerBehavior_execGetTimerState_Parms GetTimerState_Parms;
 	GetTimerState_Parms.TimerId = TimerId;
@@ -20971,7 +20971,7 @@ float UITimerBehavior::GetTimeSeconds()
 	static UFunction* pFnGetTimeSeconds = NULL;
 
 	if (!pFnGetTimeSeconds)
-		pFnGetTimeSeconds = (UFunction*)UObject::GObjObjects()->Data[39836];
+		pFnGetTimeSeconds = (UFunction*)UObject::GObjects()->Data[39836];
 
 	UITimerBehavior_execGetTimeSeconds_Parms GetTimeSeconds_Parms;
 
@@ -20991,7 +20991,7 @@ float UGearboxAnimDefinition::GetAnimLength(class USkeletalMeshComponent* SMC)
 	static UFunction* pFnGetAnimLength = NULL;
 
 	if (!pFnGetAnimLength)
-		pFnGetAnimLength = (UFunction*)UObject::GObjObjects()->Data[41780];
+		pFnGetAnimLength = (UFunction*)UObject::GObjects()->Data[41780];
 
 	UGearboxAnimDefinition_execGetAnimLength_Parms GetAnimLength_Parms;
 	GetAnimLength_Parms.SMC = SMC;
@@ -21016,7 +21016,7 @@ bool UGearboxAnimDefinition::eventIsPlayingLocally(class USpecialMoveInterface* 
 	static UFunction* pFnIsPlayingLocally = NULL;
 
 	if (!pFnIsPlayingLocally)
-		pFnIsPlayingLocally = (UFunction*)UObject::GObjObjects()->Data[41777];
+		pFnIsPlayingLocally = (UFunction*)UObject::GObjects()->Data[41777];
 
 	UGearboxAnimDefinition_eventIsPlayingLocally_Parms IsPlayingLocally_Parms;
 	IsPlayingLocally_Parms.SMI = SMI;
@@ -21037,7 +21037,7 @@ class UAnimNodeSpecialMoveBlend* UGearboxAnimDefinition::GetSMNode(class USpecia
 	static UFunction* pFnGetSMNode = NULL;
 
 	if (!pFnGetSMNode)
-		pFnGetSMNode = (UFunction*)UObject::GObjObjects()->Data[41774];
+		pFnGetSMNode = (UFunction*)UObject::GObjects()->Data[41774];
 
 	UGearboxAnimDefinition_execGetSMNode_Parms GetSMNode_Parms;
 	GetSMNode_Parms.SMI = SMI;
@@ -21059,7 +21059,7 @@ float UGearboxAnimDefinition::PlayAnim(class USpecialMoveInterface* SMI, struct 
 	static UFunction* pFnPlayAnim = NULL;
 
 	if (!pFnPlayAnim)
-		pFnPlayAnim = (UFunction*)UObject::GObjObjects()->Data[41770];
+		pFnPlayAnim = (UFunction*)UObject::GObjects()->Data[41770];
 
 	UGearboxAnimDefinition_execPlayAnim_Parms PlayAnim_Parms;
 	PlayAnim_Parms.SMI = SMI;
@@ -21085,7 +21085,7 @@ void UGearboxAnimDefinition::eventAnimFinished(class USpecialMoveInterface* SMI,
 	static UFunction* pFnAnimFinished = NULL;
 
 	if (!pFnAnimFinished)
-		pFnAnimFinished = (UFunction*)UObject::GObjObjects()->Data[41764];
+		pFnAnimFinished = (UFunction*)UObject::GObjects()->Data[41764];
 
 	UGearboxAnimDefinition_eventAnimFinished_Parms AnimFinished_Parms;
 	AnimFinished_Parms.SMI = SMI;
@@ -21109,7 +21109,7 @@ void UGearboxAnimDefinition::eventClientFinished(class USpecialMoveInterface* SM
 	static UFunction* pFnClientFinished = NULL;
 
 	if (!pFnClientFinished)
-		pFnClientFinished = (UFunction*)UObject::GObjObjects()->Data[41755];
+		pFnClientFinished = (UFunction*)UObject::GObjects()->Data[41755];
 
 	UGearboxAnimDefinition_eventClientFinished_Parms ClientFinished_Parms;
 	ClientFinished_Parms.SMI = SMI;
@@ -21130,7 +21130,7 @@ float UGearboxAnimDefinition::eventClientStarted(class USpecialMoveInterface* SM
 	static UFunction* pFnClientStarted = NULL;
 
 	if (!pFnClientStarted)
-		pFnClientStarted = (UFunction*)UObject::GObjObjects()->Data[41748];
+		pFnClientStarted = (UFunction*)UObject::GObjects()->Data[41748];
 
 	UGearboxAnimDefinition_eventClientStarted_Parms ClientStarted_Parms;
 	ClientStarted_Parms.SMI = SMI;
@@ -21154,7 +21154,7 @@ void UGearboxAnimDefinition::eventServerFinished(class USpecialMoveInterface* SM
 	static UFunction* pFnServerFinished = NULL;
 
 	if (!pFnServerFinished)
-		pFnServerFinished = (UFunction*)UObject::GObjObjects()->Data[41743];
+		pFnServerFinished = (UFunction*)UObject::GObjects()->Data[41743];
 
 	UGearboxAnimDefinition_eventServerFinished_Parms ServerFinished_Parms;
 	ServerFinished_Parms.SMI = SMI;
@@ -21173,7 +21173,7 @@ void UGearboxAnimDefinition::eventServerStarted(class USpecialMoveInterface* SMI
 	static UFunction* pFnServerStarted = NULL;
 
 	if (!pFnServerStarted)
-		pFnServerStarted = (UFunction*)UObject::GObjObjects()->Data[41737];
+		pFnServerStarted = (UFunction*)UObject::GObjects()->Data[41737];
 
 	UGearboxAnimDefinition_eventServerStarted_Parms ServerStarted_Parms;
 	ServerStarted_Parms.SMI = SMI;
@@ -21191,7 +21191,7 @@ void UGearboxAnimDefinition::AddAnimSet(class USpecialMoveInterface* SMI)
 	static UFunction* pFnAddAnimSet = NULL;
 
 	if (!pFnAddAnimSet)
-		pFnAddAnimSet = (UFunction*)UObject::GObjObjects()->Data[41734];
+		pFnAddAnimSet = (UFunction*)UObject::GObjects()->Data[41734];
 
 	UGearboxAnimDefinition_execAddAnimSet_Parms AddAnimSet_Parms;
 	AddAnimSet_Parms.SMI = SMI;
@@ -21210,7 +21210,7 @@ class USkeletalMeshComponent* UGearboxAnimDefinition::GetSkeletalMesh(class USpe
 	static UFunction* pFnGetSkeletalMesh = NULL;
 
 	if (!pFnGetSkeletalMesh)
-		pFnGetSkeletalMesh = (UFunction*)UObject::GObjObjects()->Data[41729];
+		pFnGetSkeletalMesh = (UFunction*)UObject::GObjects()->Data[41729];
 
 	UGearboxAnimDefinition_execGetSkeletalMesh_Parms GetSkeletalMesh_Parms;
 	GetSkeletalMesh_Parms.SMI = SMI;
@@ -21231,7 +21231,7 @@ bool UGearboxAnimDefinition::eventAuthorityCanPlay(class USpecialMoveInterface* 
 	static UFunction* pFnAuthorityCanPlay = NULL;
 
 	if (!pFnAuthorityCanPlay)
-		pFnAuthorityCanPlay = (UFunction*)UObject::GObjObjects()->Data[41724];
+		pFnAuthorityCanPlay = (UFunction*)UObject::GObjects()->Data[41724];
 
 	UGearboxAnimDefinition_eventAuthorityCanPlay_Parms AuthorityCanPlay_Parms;
 	AuthorityCanPlay_Parms.SMI = SMI;
@@ -21252,7 +21252,7 @@ void UGearboxAnimDefinition::OnTimedEvent(struct FName SpecializedEventName, str
 	static UFunction* pFnOnTimedEvent = NULL;
 
 	if (!pFnOnTimedEvent)
-		pFnOnTimedEvent = (UFunction*)UObject::GObjObjects()->Data[41721];
+		pFnOnTimedEvent = (UFunction*)UObject::GObjects()->Data[41721];
 
 	UGearboxAnimDefinition_execOnTimedEvent_Parms OnTimedEvent_Parms;
 	memcpy(&OnTimedEvent_Parms.SpecializedEventName, &SpecializedEventName, 0x8);
@@ -21277,7 +21277,7 @@ void UGearboxAnimDefinition::OnServerStop(struct FBehaviorConsumerHandle* Consum
 	static UFunction* pFnOnServerStop = NULL;
 
 	if (!pFnOnServerStop)
-		pFnOnServerStop = (UFunction*)UObject::GObjObjects()->Data[41719];
+		pFnOnServerStop = (UFunction*)UObject::GObjects()->Data[41719];
 
 	UGearboxAnimDefinition_execOnServerStop_Parms OnServerStop_Parms;
 
@@ -21301,7 +21301,7 @@ void UGearboxAnimDefinition::OnServerStart(struct FBehaviorConsumerHandle* Consu
 	static UFunction* pFnOnServerStart = NULL;
 
 	if (!pFnOnServerStart)
-		pFnOnServerStart = (UFunction*)UObject::GObjObjects()->Data[41717];
+		pFnOnServerStart = (UFunction*)UObject::GObjects()->Data[41717];
 
 	UGearboxAnimDefinition_execOnServerStart_Parms OnServerStart_Parms;
 
@@ -21325,7 +21325,7 @@ void UGearboxAnimDefinition::OnStop(struct FBehaviorConsumerHandle* ConsumerHand
 	static UFunction* pFnOnStop = NULL;
 
 	if (!pFnOnStop)
-		pFnOnStop = (UFunction*)UObject::GObjObjects()->Data[41715];
+		pFnOnStop = (UFunction*)UObject::GObjects()->Data[41715];
 
 	UGearboxAnimDefinition_execOnStop_Parms OnStop_Parms;
 
@@ -21349,7 +21349,7 @@ void UGearboxAnimDefinition::OnStart(struct FBehaviorConsumerHandle* ConsumerHan
 	static UFunction* pFnOnStart = NULL;
 
 	if (!pFnOnStart)
-		pFnOnStart = (UFunction*)UObject::GObjObjects()->Data[41713];
+		pFnOnStart = (UFunction*)UObject::GObjects()->Data[41713];
 
 	UGearboxAnimDefinition_execOnStart_Parms OnStart_Parms;
 
@@ -21373,7 +21373,7 @@ void UGearboxAnimDefinition::SetBehaviorProviderDefinition(class UBehaviorProvid
 	static UFunction* pFnSetBehaviorProviderDefinition = NULL;
 
 	if (!pFnSetBehaviorProviderDefinition)
-		pFnSetBehaviorProviderDefinition = (UFunction*)UObject::GObjObjects()->Data[41711];
+		pFnSetBehaviorProviderDefinition = (UFunction*)UObject::GObjects()->Data[41711];
 
 	UGearboxAnimDefinition_execSetBehaviorProviderDefinition_Parms SetBehaviorProviderDefinition_Parms;
 	SetBehaviorProviderDefinition_Parms.NewBehaviorProviderDefinition = NewBehaviorProviderDefinition;
@@ -21395,7 +21395,7 @@ class UBehaviorProviderDefinition* UGearboxAnimDefinition::GetBehaviorProviderDe
 	static UFunction* pFnGetBehaviorProviderDefinition = NULL;
 
 	if (!pFnGetBehaviorProviderDefinition)
-		pFnGetBehaviorProviderDefinition = (UFunction*)UObject::GObjObjects()->Data[41709];
+		pFnGetBehaviorProviderDefinition = (UFunction*)UObject::GObjects()->Data[41709];
 
 	UGearboxAnimDefinition_execGetBehaviorProviderDefinition_Parms GetBehaviorProviderDefinition_Parms;
 
@@ -21423,7 +21423,7 @@ void UBehavior_TriggerDialogEvent::ApplyBehaviorToContext(class UObject* Context
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[40307];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[40307];
 
 	UBehavior_TriggerDialogEvent_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -21452,7 +21452,7 @@ void UBehavior_TriggerDialogEvent::TriggerDialogEvent(class UObject* ContextObje
 	static UFunction* pFnTriggerDialogEvent = NULL;
 
 	if (!pFnTriggerDialogEvent)
-		pFnTriggerDialogEvent = (UFunction*)UObject::GObjObjects()->Data[40301];
+		pFnTriggerDialogEvent = (UFunction*)UObject::GObjects()->Data[40301];
 
 	UBehavior_TriggerDialogEvent_execTriggerDialogEvent_Parms TriggerDialogEvent_Parms;
 	TriggerDialogEvent_Parms.ContextObject = ContextObject;
@@ -21480,7 +21480,7 @@ void AGearboxDialogActor::SetDialogNameTag(class UGearboxDialogNameTag* NewName)
 	static UFunction* pFnSetDialogNameTag = NULL;
 
 	if (!pFnSetDialogNameTag)
-		pFnSetDialogNameTag = (UFunction*)UObject::GObjObjects()->Data[42055];
+		pFnSetDialogNameTag = (UFunction*)UObject::GObjects()->Data[42055];
 
 	AGearboxDialogActor_execSetDialogNameTag_Parms SetDialogNameTag_Parms;
 	SetDialogNameTag_Parms.NewName = NewName;
@@ -21502,7 +21502,7 @@ struct FGearboxDialogReplicatedData AGearboxDialogActor::GetReplicatedDialogData
 	static UFunction* pFnGetReplicatedDialogData = NULL;
 
 	if (!pFnGetReplicatedDialogData)
-		pFnGetReplicatedDialogData = (UFunction*)UObject::GObjObjects()->Data[42053];
+		pFnGetReplicatedDialogData = (UFunction*)UObject::GObjects()->Data[42053];
 
 	AGearboxDialogActor_execGetReplicatedDialogData_Parms GetReplicatedDialogData_Parms;
 
@@ -21526,7 +21526,7 @@ void AGearboxDialogActor::SetReplicatedDialogData(class UGearboxDialogAct_Talk* 
 	static UFunction* pFnSetReplicatedDialogData = NULL;
 
 	if (!pFnSetReplicatedDialogData)
-		pFnSetReplicatedDialogData = (UFunction*)UObject::GObjObjects()->Data[42050];
+		pFnSetReplicatedDialogData = (UFunction*)UObject::GObjects()->Data[42050];
 
 	AGearboxDialogActor_execSetReplicatedDialogData_Parms SetReplicatedDialogData_Parms;
 	SetReplicatedDialogData_Parms.TalkAct = TalkAct;
@@ -21551,7 +21551,7 @@ void AGearboxDialogActor::GetDialogGroups(TArray< class UGearboxDialogGroup* >* 
 	static UFunction* pFnGetDialogGroups = NULL;
 
 	if (!pFnGetDialogGroups)
-		pFnGetDialogGroups = (UFunction*)UObject::GObjObjects()->Data[42047];
+		pFnGetDialogGroups = (UFunction*)UObject::GObjects()->Data[42047];
 
 	AGearboxDialogActor_execGetDialogGroups_Parms GetDialogGroups_Parms;
 
@@ -21575,7 +21575,7 @@ class UGearboxDialogComponent* AGearboxDialogActor::GetDialogComponent()
 	static UFunction* pFnGetDialogComponent = NULL;
 
 	if (!pFnGetDialogComponent)
-		pFnGetDialogComponent = (UFunction*)UObject::GObjObjects()->Data[42045];
+		pFnGetDialogComponent = (UFunction*)UObject::GObjects()->Data[42045];
 
 	AGearboxDialogActor_execGetDialogComponent_Parms GetDialogComponent_Parms;
 
@@ -21598,7 +21598,7 @@ class UGearboxDialogNameTag* AGearboxDialogActor::GetDialogNameTag()
 	static UFunction* pFnGetDialogNameTag = NULL;
 
 	if (!pFnGetDialogNameTag)
-		pFnGetDialogNameTag = (UFunction*)UObject::GObjObjects()->Data[42043];
+		pFnGetDialogNameTag = (UFunction*)UObject::GObjects()->Data[42043];
 
 	AGearboxDialogActor_execGetDialogNameTag_Parms GetDialogNameTag_Parms;
 
@@ -21621,7 +21621,7 @@ class AActor* AGearboxDialogActor::GetActor()
 	static UFunction* pFnGetActor = NULL;
 
 	if (!pFnGetActor)
-		pFnGetActor = (UFunction*)UObject::GObjObjects()->Data[42041];
+		pFnGetActor = (UFunction*)UObject::GObjects()->Data[42041];
 
 	AGearboxDialogActor_execGetActor_Parms GetActor_Parms;
 
@@ -21644,7 +21644,7 @@ bool AGearboxDialogActor::CanTalk()
 	static UFunction* pFnCanTalk = NULL;
 
 	if (!pFnCanTalk)
-		pFnCanTalk = (UFunction*)UObject::GObjObjects()->Data[42039];
+		pFnCanTalk = (UFunction*)UObject::GObjects()->Data[42039];
 
 	AGearboxDialogActor_execCanTalk_Parms CanTalk_Parms;
 
@@ -21669,7 +21669,7 @@ void AGearboxDialogActor::eventServerDialog_TriggerEvent(class UGearboxDialogEve
 	static UFunction* pFnServerDialog_TriggerEvent = NULL;
 
 	if (!pFnServerDialog_TriggerEvent)
-		pFnServerDialog_TriggerEvent = (UFunction*)UObject::GObjObjects()->Data[42035];
+		pFnServerDialog_TriggerEvent = (UFunction*)UObject::GObjects()->Data[42035];
 
 	AGearboxDialogActor_eventServerDialog_TriggerEvent_Parms ServerDialog_TriggerEvent_Parms;
 	ServerDialog_TriggerEvent_Parms.EventTag = EventTag;
@@ -21693,7 +21693,7 @@ void AGearboxDialogActor::eventReplicatedEvent(struct FName VarName)
 	static UFunction* pFnReplicatedEvent = NULL;
 
 	if (!pFnReplicatedEvent)
-		pFnReplicatedEvent = (UFunction*)UObject::GObjObjects()->Data[42033];
+		pFnReplicatedEvent = (UFunction*)UObject::GObjects()->Data[42033];
 
 	AGearboxDialogActor_eventReplicatedEvent_Parms ReplicatedEvent_Parms;
 	memcpy(&ReplicatedEvent_Parms.VarName, &VarName, 0x8);
@@ -21711,7 +21711,7 @@ bool UGearboxDialogComponent::IsTalking()
 	static UFunction* pFnIsTalking = NULL;
 
 	if (!pFnIsTalking)
-		pFnIsTalking = (UFunction*)UObject::GObjObjects()->Data[42023];
+		pFnIsTalking = (UFunction*)UObject::GObjects()->Data[42023];
 
 	UGearboxDialogComponent_execIsTalking_Parms IsTalking_Parms;
 
@@ -21735,7 +21735,7 @@ void UGearboxDialogComponent::StopTalking(class UGearboxDialogEventTag* EventTag
 	static UFunction* pFnStopTalking = NULL;
 
 	if (!pFnStopTalking)
-		pFnStopTalking = (UFunction*)UObject::GObjObjects()->Data[42020];
+		pFnStopTalking = (UFunction*)UObject::GObjects()->Data[42020];
 
 	UGearboxDialogComponent_execStopTalking_Parms StopTalking_Parms;
 	StopTalking_Parms.EventTag = EventTag;
@@ -21758,7 +21758,7 @@ void UGearboxDialogComponent::TalkReplicated(struct FGearboxDialogReplicatedData
 	static UFunction* pFnTalkReplicated = NULL;
 
 	if (!pFnTalkReplicated)
-		pFnTalkReplicated = (UFunction*)UObject::GObjObjects()->Data[42018];
+		pFnTalkReplicated = (UFunction*)UObject::GObjects()->Data[42018];
 
 	UGearboxDialogComponent_execTalkReplicated_Parms TalkReplicated_Parms;
 	memcpy(&TalkReplicated_Parms.NewDialogData, &NewDialogData, 0x14);
@@ -21780,7 +21780,7 @@ void UGearboxDialogComponent::Talk(class UGearboxDialogAct_Talk* TalkAction)
 	static UFunction* pFnTalk = NULL;
 
 	if (!pFnTalk)
-		pFnTalk = (UFunction*)UObject::GObjObjects()->Data[42010];
+		pFnTalk = (UFunction*)UObject::GObjects()->Data[42010];
 
 	UGearboxDialogComponent_execTalk_Parms Talk_Parms;
 	Talk_Parms.TalkAction = TalkAction;
@@ -21807,7 +21807,7 @@ void UGearboxDialogComponent::GetMatchingEvent(class UGearboxDialogEventTag* InE
 	static UFunction* pFnGetMatchingEvent = NULL;
 
 	if (!pFnGetMatchingEvent)
-		pFnGetMatchingEvent = (UFunction*)UObject::GObjObjects()->Data[42003];
+		pFnGetMatchingEvent = (UFunction*)UObject::GObjects()->Data[42003];
 
 	UGearboxDialogComponent_execGetMatchingEvent_Parms GetMatchingEvent_Parms;
 	GetMatchingEvent_Parms.InEventTag = InEventTag;
@@ -21842,7 +21842,7 @@ class UGearboxDialogEventData* UGearboxDialogComponent::TriggerEvent(class UGear
 	static UFunction* pFnTriggerEvent = NULL;
 
 	if (!pFnTriggerEvent)
-		pFnTriggerEvent = (UFunction*)UObject::GObjObjects()->Data[41997];
+		pFnTriggerEvent = (UFunction*)UObject::GObjects()->Data[41997];
 
 	UGearboxDialogComponent_execTriggerEvent_Parms TriggerEvent_Parms;
 	TriggerEvent_Parms.EventTag = EventTag;
@@ -21869,7 +21869,7 @@ class UGearboxDialogInterface* UGearboxDialogComponent::GetDialogInterface()
 	static UFunction* pFnGetDialogInterface = NULL;
 
 	if (!pFnGetDialogInterface)
-		pFnGetDialogInterface = (UFunction*)UObject::GObjObjects()->Data[41995];
+		pFnGetDialogInterface = (UFunction*)UObject::GObjects()->Data[41995];
 
 	UGearboxDialogComponent_execGetDialogInterface_Parms GetDialogInterface_Parms;
 
@@ -21892,7 +21892,7 @@ bool UGearboxDialogEventData::IsActive()
 	static UFunction* pFnIsActive = NULL;
 
 	if (!pFnIsActive)
-		pFnIsActive = (UFunction*)UObject::GObjObjects()->Data[40314];
+		pFnIsActive = (UFunction*)UObject::GObjects()->Data[40314];
 
 	UGearboxDialogEventData_execIsActive_Parms IsActive_Parms;
 
@@ -21917,7 +21917,7 @@ void UGearboxDialogGroup::SimpleEvent(class AActor* Owner, class UGearboxDialogN
 	static UFunction* pFnSimpleEvent = NULL;
 
 	if (!pFnSimpleEvent)
-		pFnSimpleEvent = (UFunction*)UObject::GObjObjects()->Data[42114];
+		pFnSimpleEvent = (UFunction*)UObject::GObjects()->Data[42114];
 
 	UGearboxDialogGroup_execSimpleEvent_Parms SimpleEvent_Parms;
 	SimpleEvent_Parms.Owner = Owner;
@@ -21942,7 +21942,7 @@ void UGearboxDialogManager::DrawDialogDebug(class AHUD* HUD, float StartY)
 	static UFunction* pFnDrawDialogDebug = NULL;
 
 	if (!pFnDrawDialogDebug)
-		pFnDrawDialogDebug = (UFunction*)UObject::GObjObjects()->Data[42183];
+		pFnDrawDialogDebug = (UFunction*)UObject::GObjects()->Data[42183];
 
 	UGearboxDialogManager_execDrawDialogDebug_Parms DrawDialogDebug_Parms;
 	DrawDialogDebug_Parms.HUD = HUD;
@@ -21960,7 +21960,7 @@ void UGearboxDialogManager::CheckpointRemoveReferencesBeforeDestroy()
 	static UFunction* pFnCheckpointRemoveReferencesBeforeDestroy = NULL;
 
 	if (!pFnCheckpointRemoveReferencesBeforeDestroy)
-		pFnCheckpointRemoveReferencesBeforeDestroy = (UFunction*)UObject::GObjObjects()->Data[42182];
+		pFnCheckpointRemoveReferencesBeforeDestroy = (UFunction*)UObject::GObjects()->Data[42182];
 
 	UGearboxDialogManager_execCheckpointRemoveReferencesBeforeDestroy_Parms CheckpointRemoveReferencesBeforeDestroy_Parms;
 
@@ -21978,7 +21978,7 @@ class UGearboxDialogEventTag* UGearboxDialogManager::GetEventTagForEventInfo(str
 	static UFunction* pFnGetEventTagForEventInfo = NULL;
 
 	if (!pFnGetEventTagForEventInfo)
-		pFnGetEventTagForEventInfo = (UFunction*)UObject::GObjObjects()->Data[42179];
+		pFnGetEventTagForEventInfo = (UFunction*)UObject::GObjects()->Data[42179];
 
 	UGearboxDialogManager_execGetEventTagForEventInfo_Parms GetEventTagForEventInfo_Parms;
 	memcpy(&GetEventTagForEventInfo_Parms.EventInfo, &EventInfo, 0x8);
@@ -22008,7 +22008,7 @@ class UGearboxDialogEventData* UGearboxDialogManager::TriggerGroupEvent(class UG
 	static UFunction* pFnTriggerGroupEvent = NULL;
 
 	if (!pFnTriggerGroupEvent)
-		pFnTriggerGroupEvent = (UFunction*)UObject::GObjObjects()->Data[42171];
+		pFnTriggerGroupEvent = (UFunction*)UObject::GObjects()->Data[42171];
 
 	UGearboxDialogManager_execTriggerGroupEvent_Parms TriggerGroupEvent_Parms;
 	TriggerGroupEvent_Parms.Group = Group;
@@ -22036,7 +22036,7 @@ void UGearboxDialogManager::Cleanup()
 	static UFunction* pFnCleanup = NULL;
 
 	if (!pFnCleanup)
-		pFnCleanup = (UFunction*)UObject::GObjObjects()->Data[42170];
+		pFnCleanup = (UFunction*)UObject::GObjects()->Data[42170];
 
 	UGearboxDialogManager_execCleanup_Parms Cleanup_Parms;
 
@@ -22058,7 +22058,7 @@ void UGearboxDialogManager::SetGroupEventTag(class UGearboxDialogGroup* Group, c
 	static UFunction* pFnSetGroupEventTag = NULL;
 
 	if (!pFnSetGroupEventTag)
-		pFnSetGroupEventTag = (UFunction*)UObject::GObjObjects()->Data[42167];
+		pFnSetGroupEventTag = (UFunction*)UObject::GObjects()->Data[42167];
 
 	UGearboxDialogManager_execSetGroupEventTag_Parms SetGroupEventTag_Parms;
 	SetGroupEventTag_Parms.Group = Group;
@@ -22082,7 +22082,7 @@ class UGearboxDialogEventTag* UGearboxDialogManager::GetGroupEventTag(class UGea
 	static UFunction* pFnGetGroupEventTag = NULL;
 
 	if (!pFnGetGroupEventTag)
-		pFnGetGroupEventTag = (UFunction*)UObject::GObjObjects()->Data[42164];
+		pFnGetGroupEventTag = (UFunction*)UObject::GObjects()->Data[42164];
 
 	UGearboxDialogManager_execGetGroupEventTag_Parms GetGroupEventTag_Parms;
 	GetGroupEventTag_Parms.Group = Group;
@@ -22106,7 +22106,7 @@ void UGearboxDialogManager::SilenceGroup(class UGearboxDialogGroup* Group)
 	static UFunction* pFnSilenceGroup = NULL;
 
 	if (!pFnSilenceGroup)
-		pFnSilenceGroup = (UFunction*)UObject::GObjObjects()->Data[42162];
+		pFnSilenceGroup = (UFunction*)UObject::GObjects()->Data[42162];
 
 	UGearboxDialogManager_execSilenceGroup_Parms SilenceGroup_Parms;
 	SilenceGroup_Parms.Group = Group;
@@ -22128,7 +22128,7 @@ void UGearboxDialogManager::AddGroup(class UGearboxDialogGroup* Group)
 	static UFunction* pFnAddGroup = NULL;
 
 	if (!pFnAddGroup)
-		pFnAddGroup = (UFunction*)UObject::GObjObjects()->Data[42160];
+		pFnAddGroup = (UFunction*)UObject::GObjects()->Data[42160];
 
 	UGearboxDialogManager_execAddGroup_Parms AddGroup_Parms;
 	AddGroup_Parms.Group = Group;
@@ -22150,7 +22150,7 @@ void UGearboxDialogManager::UnregisterTalker(class AActor* Talker)
 	static UFunction* pFnUnregisterTalker = NULL;
 
 	if (!pFnUnregisterTalker)
-		pFnUnregisterTalker = (UFunction*)UObject::GObjObjects()->Data[42158];
+		pFnUnregisterTalker = (UFunction*)UObject::GObjects()->Data[42158];
 
 	UGearboxDialogManager_execUnregisterTalker_Parms UnregisterTalker_Parms;
 	UnregisterTalker_Parms.Talker = Talker;
@@ -22172,7 +22172,7 @@ void UGearboxDialogManager::RegisterTalker(class AActor* Talker)
 	static UFunction* pFnRegisterTalker = NULL;
 
 	if (!pFnRegisterTalker)
-		pFnRegisterTalker = (UFunction*)UObject::GObjObjects()->Data[42156];
+		pFnRegisterTalker = (UFunction*)UObject::GObjects()->Data[42156];
 
 	UGearboxDialogManager_execRegisterTalker_Parms RegisterTalker_Parms;
 	RegisterTalker_Parms.Talker = Talker;
@@ -22194,7 +22194,7 @@ void UGearboxDialogManager::DisableTalker(class AActor* Talker)
 	static UFunction* pFnDisableTalker = NULL;
 
 	if (!pFnDisableTalker)
-		pFnDisableTalker = (UFunction*)UObject::GObjObjects()->Data[42154];
+		pFnDisableTalker = (UFunction*)UObject::GObjects()->Data[42154];
 
 	UGearboxDialogManager_execDisableTalker_Parms DisableTalker_Parms;
 	DisableTalker_Parms.Talker = Talker;
@@ -22216,7 +22216,7 @@ void UGearboxDialogManager::EnableTalker(class AActor* Talker)
 	static UFunction* pFnEnableTalker = NULL;
 
 	if (!pFnEnableTalker)
-		pFnEnableTalker = (UFunction*)UObject::GObjObjects()->Data[42152];
+		pFnEnableTalker = (UFunction*)UObject::GObjects()->Data[42152];
 
 	UGearboxDialogManager_execEnableTalker_Parms EnableTalker_Parms;
 	EnableTalker_Parms.Talker = Talker;
@@ -22239,7 +22239,7 @@ int UGearboxDialogManager::GetPriority(class UGearboxDialogPriority* InPriority)
 	static UFunction* pFnGetPriority = NULL;
 
 	if (!pFnGetPriority)
-		pFnGetPriority = (UFunction*)UObject::GObjObjects()->Data[42149];
+		pFnGetPriority = (UFunction*)UObject::GObjects()->Data[42149];
 
 	UGearboxDialogManager_execGetPriority_Parms GetPriority_Parms;
 	GetPriority_Parms.InPriority = InPriority;
@@ -22263,7 +22263,7 @@ void UGearboxDialogNode::ActivateOutput(int Link)
 	static UFunction* pFnActivateOutput = NULL;
 
 	if (!pFnActivateOutput)
-		pFnActivateOutput = (UFunction*)UObject::GObjObjects()->Data[41959];
+		pFnActivateOutput = (UFunction*)UObject::GObjects()->Data[41959];
 
 	UGearboxDialogNode_execActivateOutput_Parms ActivateOutput_Parms;
 	ActivateOutput_Parms.Link = Link;
@@ -22284,7 +22284,7 @@ void UGearboxDialogAction::eventActivate()
 	static UFunction* pFnActivate = NULL;
 
 	if (!pFnActivate)
-		pFnActivate = (UFunction*)UObject::GObjObjects()->Data[41961];
+		pFnActivate = (UFunction*)UObject::GObjects()->Data[41961];
 
 	UGearboxDialogAction_eventActivate_Parms Activate_Parms;
 
@@ -22300,7 +22300,7 @@ void UGearboxDialogAct_Chance::eventActivate()
 	static UFunction* pFnActivate = NULL;
 
 	if (!pFnActivate)
-		pFnActivate = (UFunction*)UObject::GObjObjects()->Data[41966];
+		pFnActivate = (UFunction*)UObject::GObjects()->Data[41966];
 
 	UGearboxDialogAct_Chance_eventActivate_Parms Activate_Parms;
 
@@ -22320,7 +22320,7 @@ void UGearboxDialogAct_Compare::eventActivate()
 	static UFunction* pFnActivate = NULL;
 
 	if (!pFnActivate)
-		pFnActivate = (UFunction*)UObject::GObjObjects()->Data[41967];
+		pFnActivate = (UFunction*)UObject::GObjects()->Data[41967];
 
 	UGearboxDialogAct_Compare_eventActivate_Parms Activate_Parms;
 
@@ -22340,7 +22340,7 @@ void UGearboxDialogAct_ObjectParameterSwitch::eventActivate()
 	static UFunction* pFnActivate = NULL;
 
 	if (!pFnActivate)
-		pFnActivate = (UFunction*)UObject::GObjObjects()->Data[41970];
+		pFnActivate = (UFunction*)UObject::GObjects()->Data[41970];
 
 	UGearboxDialogAct_ObjectParameterSwitch_eventActivate_Parms Activate_Parms;
 
@@ -22360,7 +22360,7 @@ void UGearboxDialogAct_Talk::eventActivate()
 	static UFunction* pFnActivate = NULL;
 
 	if (!pFnActivate)
-		pFnActivate = (UFunction*)UObject::GObjObjects()->Data[41986];
+		pFnActivate = (UFunction*)UObject::GObjects()->Data[41986];
 
 	UGearboxDialogAct_Talk_eventActivate_Parms Activate_Parms;
 
@@ -22381,7 +22381,7 @@ void UGearboxDialogAct_Talk::eventTalkFinished(class AActor* InTalker)
 	static UFunction* pFnTalkFinished = NULL;
 
 	if (!pFnTalkFinished)
-		pFnTalkFinished = (UFunction*)UObject::GObjObjects()->Data[41984];
+		pFnTalkFinished = (UFunction*)UObject::GObjects()->Data[41984];
 
 	UGearboxDialogAct_Talk_eventTalkFinished_Parms TalkFinished_Parms;
 	TalkFinished_Parms.InTalker = InTalker;
@@ -22399,7 +22399,7 @@ void UGearboxDialogAct_Talk::eventTalkStarted(class AActor* InTalker)
 	static UFunction* pFnTalkStarted = NULL;
 
 	if (!pFnTalkStarted)
-		pFnTalkStarted = (UFunction*)UObject::GObjObjects()->Data[41982];
+		pFnTalkStarted = (UFunction*)UObject::GObjects()->Data[41982];
 
 	UGearboxDialogAct_Talk_eventTalkStarted_Parms TalkStarted_Parms;
 	TalkStarted_Parms.InTalker = InTalker;
@@ -22417,7 +22417,7 @@ void UGearboxDialogAct_Trigger::ActivateOutput(int Link)
 	static UFunction* pFnActivateOutput = NULL;
 
 	if (!pFnActivateOutput)
-		pFnActivateOutput = (UFunction*)UObject::GObjObjects()->Data[41990];
+		pFnActivateOutput = (UFunction*)UObject::GObjects()->Data[41990];
 
 	UGearboxDialogAct_Trigger_execActivateOutput_Parms ActivateOutput_Parms;
 	ActivateOutput_Parms.Link = Link;
@@ -22438,7 +22438,7 @@ void UGearboxDialogAct_Trigger::eventActivate()
 	static UFunction* pFnActivate = NULL;
 
 	if (!pFnActivate)
-		pFnActivate = (UFunction*)UObject::GObjObjects()->Data[41989];
+		pFnActivate = (UFunction*)UObject::GObjects()->Data[41989];
 
 	UGearboxDialogAct_Trigger_eventActivate_Parms Activate_Parms;
 
@@ -22459,7 +22459,7 @@ void UGearboxDialogVariable::ResolveToArgumentValue(struct FString* Out_Argument
 	static UFunction* pFnResolveToArgumentValue = NULL;
 
 	if (!pFnResolveToArgumentValue)
-		pFnResolveToArgumentValue = (UFunction*)UObject::GObjObjects()->Data[42193];
+		pFnResolveToArgumentValue = (UFunction*)UObject::GObjects()->Data[42193];
 
 	UGearboxDialogVariable_execResolveToArgumentValue_Parms ResolveToArgumentValue_Parms;
 
@@ -22483,7 +22483,7 @@ void UGearboxDialogVariable::GetTalkers(TArray< class AActor* >* Talkers)
 	static UFunction* pFnGetTalkers = NULL;
 
 	if (!pFnGetTalkers)
-		pFnGetTalkers = (UFunction*)UObject::GObjObjects()->Data[42190];
+		pFnGetTalkers = (UFunction*)UObject::GObjects()->Data[42190];
 
 	UGearboxDialogVariable_execGetTalkers_Parms GetTalkers_Parms;
 
@@ -22507,7 +22507,7 @@ void UGearboxAccountActions::HandleOffersNotifiedResponse(struct FSparkResult* R
 	static UFunction* pFnHandleOffersNotifiedResponse = NULL;
 
 	if (!pFnHandleOffersNotifiedResponse)
-		pFnHandleOffersNotifiedResponse = (UFunction*)UObject::GObjObjects()->Data[41433];
+		pFnHandleOffersNotifiedResponse = (UFunction*)UObject::GObjects()->Data[41433];
 
 	UGearboxAccountActions_execHandleOffersNotifiedResponse_Parms HandleOffersNotifiedResponse_Parms;
 
@@ -22527,7 +22527,7 @@ void UGearboxAccountActions::HandleBulkEntitlementsConsumedResponse(struct FSpar
 	static UFunction* pFnHandleBulkEntitlementsConsumedResponse = NULL;
 
 	if (!pFnHandleBulkEntitlementsConsumedResponse)
-		pFnHandleBulkEntitlementsConsumedResponse = (UFunction*)UObject::GObjObjects()->Data[41427];
+		pFnHandleBulkEntitlementsConsumedResponse = (UFunction*)UObject::GObjects()->Data[41427];
 
 	UGearboxAccountActions_execHandleBulkEntitlementsConsumedResponse_Parms HandleBulkEntitlementsConsumedResponse_Parms;
 
@@ -22547,7 +22547,7 @@ void UGearboxAccountActions::HandleEntitlementConsumedResponse(struct FSparkResu
 	static UFunction* pFnHandleEntitlementConsumedResponse = NULL;
 
 	if (!pFnHandleEntitlementConsumedResponse)
-		pFnHandleEntitlementConsumedResponse = (UFunction*)UObject::GObjObjects()->Data[41420];
+		pFnHandleEntitlementConsumedResponse = (UFunction*)UObject::GObjects()->Data[41420];
 
 	UGearboxAccountActions_execHandleEntitlementConsumedResponse_Parms HandleEntitlementConsumedResponse_Parms;
 
@@ -22567,7 +22567,7 @@ void UGearboxAccountActions::HandleCodeRedeemedResponse(struct FSparkResult* Res
 	static UFunction* pFnHandleCodeRedeemedResponse = NULL;
 
 	if (!pFnHandleCodeRedeemedResponse)
-		pFnHandleCodeRedeemedResponse = (UFunction*)UObject::GObjObjects()->Data[41412];
+		pFnHandleCodeRedeemedResponse = (UFunction*)UObject::GObjects()->Data[41412];
 
 	UGearboxAccountActions_execHandleCodeRedeemedResponse_Parms HandleCodeRedeemedResponse_Parms;
 
@@ -22587,7 +22587,7 @@ void UGearboxAccountActions::HandleResetPasswordResponse(struct FSparkResult* Re
 	static UFunction* pFnHandleResetPasswordResponse = NULL;
 
 	if (!pFnHandleResetPasswordResponse)
-		pFnHandleResetPasswordResponse = (UFunction*)UObject::GObjObjects()->Data[41405];
+		pFnHandleResetPasswordResponse = (UFunction*)UObject::GObjects()->Data[41405];
 
 	UGearboxAccountActions_execHandleResetPasswordResponse_Parms HandleResetPasswordResponse_Parms;
 
@@ -22607,7 +22607,7 @@ void UGearboxAccountActions::HandleSignUpResponse(struct FSparkResult* Result)
 	static UFunction* pFnHandleSignUpResponse = NULL;
 
 	if (!pFnHandleSignUpResponse)
-		pFnHandleSignUpResponse = (UFunction*)UObject::GObjObjects()->Data[41398];
+		pFnHandleSignUpResponse = (UFunction*)UObject::GObjects()->Data[41398];
 
 	UGearboxAccountActions_execHandleSignUpResponse_Parms HandleSignUpResponse_Parms;
 
@@ -22627,7 +22627,7 @@ void UGearboxAccountActions::HandleSignInResponse(struct FSparkResult* Result)
 	static UFunction* pFnHandleSignInResponse = NULL;
 
 	if (!pFnHandleSignInResponse)
-		pFnHandleSignInResponse = (UFunction*)UObject::GObjObjects()->Data[41387];
+		pFnHandleSignInResponse = (UFunction*)UObject::GObjects()->Data[41387];
 
 	UGearboxAccountActions_execHandleSignInResponse_Parms HandleSignInResponse_Parms;
 
@@ -22648,7 +22648,7 @@ struct FArchwayResult UGearboxAccountActions::ExtractArchwayResult(TArray< unsig
 	static UFunction* pFnExtractArchwayResult = NULL;
 
 	if (!pFnExtractArchwayResult)
-		pFnExtractArchwayResult = (UFunction*)UObject::GObjObjects()->Data[41341];
+		pFnExtractArchwayResult = (UFunction*)UObject::GObjects()->Data[41341];
 
 	UGearboxAccountActions_execExtractArchwayResult_Parms ExtractArchwayResult_Parms;
 	memcpy(&ExtractArchwayResult_Parms.Data, &Data, 0xC);
@@ -22672,7 +22672,7 @@ void UGearboxAccountActions::MarkOffersNotified(unsigned char ControllerId)
 	static UFunction* pFnMarkOffersNotified = NULL;
 
 	if (!pFnMarkOffersNotified)
-		pFnMarkOffersNotified = (UFunction*)UObject::GObjObjects()->Data[41328];
+		pFnMarkOffersNotified = (UFunction*)UObject::GObjects()->Data[41328];
 
 	UGearboxAccountActions_execMarkOffersNotified_Parms MarkOffersNotified_Parms;
 	MarkOffersNotified_Parms.ControllerId = ControllerId;
@@ -22693,7 +22693,7 @@ bool UGearboxAccountActions::LocallyConsumeEntitlementWithCount(struct FName Ent
 	static UFunction* pFnLocallyConsumeEntitlementWithCount = NULL;
 
 	if (!pFnLocallyConsumeEntitlementWithCount)
-		pFnLocallyConsumeEntitlementWithCount = (UFunction*)UObject::GObjObjects()->Data[41321];
+		pFnLocallyConsumeEntitlementWithCount = (UFunction*)UObject::GObjects()->Data[41321];
 
 	UGearboxAccountActions_execLocallyConsumeEntitlementWithCount_Parms LocallyConsumeEntitlementWithCount_Parms;
 	memcpy(&LocallyConsumeEntitlementWithCount_Parms.EntitlementName, &EntitlementName, 0x8);
@@ -22718,7 +22718,7 @@ void UGearboxAccountActions::eventConsumeEntitlementsWithCounts(TArray< class UG
 	static UFunction* pFnConsumeEntitlementsWithCounts = NULL;
 
 	if (!pFnConsumeEntitlementsWithCounts)
-		pFnConsumeEntitlementsWithCounts = (UFunction*)UObject::GObjObjects()->Data[41306];
+		pFnConsumeEntitlementsWithCounts = (UFunction*)UObject::GObjects()->Data[41306];
 
 	UGearboxAccountActions_eventConsumeEntitlementsWithCounts_Parms ConsumeEntitlementsWithCounts_Parms;
 	memcpy(&ConsumeEntitlementsWithCounts_Parms.EntitlementsToConsume, &EntitlementsToConsume, 0xC);
@@ -22742,7 +22742,7 @@ void UGearboxAccountActions::ConsumeEntitlementWithCount(struct FName Entitlemen
 	static UFunction* pFnConsumeEntitlementWithCount = NULL;
 
 	if (!pFnConsumeEntitlementWithCount)
-		pFnConsumeEntitlementWithCount = (UFunction*)UObject::GObjObjects()->Data[41287];
+		pFnConsumeEntitlementWithCount = (UFunction*)UObject::GObjects()->Data[41287];
 
 	UGearboxAccountActions_execConsumeEntitlementWithCount_Parms ConsumeEntitlementWithCount_Parms;
 	memcpy(&ConsumeEntitlementWithCount_Parms.EntitlementName, &EntitlementName, 0x8);
@@ -22765,7 +22765,7 @@ void UGearboxAccountActions::RedeemCode(struct FString Code, unsigned char Contr
 	static UFunction* pFnRedeemCode = NULL;
 
 	if (!pFnRedeemCode)
-		pFnRedeemCode = (UFunction*)UObject::GObjObjects()->Data[41276];
+		pFnRedeemCode = (UFunction*)UObject::GObjects()->Data[41276];
 
 	UGearboxAccountActions_execRedeemCode_Parms RedeemCode_Parms;
 	memcpy(&RedeemCode_Parms.Code, &Code, 0xC);
@@ -22787,7 +22787,7 @@ void UGearboxAccountActions::ResetPasswordGearboxAccount(struct FString Email, u
 	static UFunction* pFnResetPasswordGearboxAccount = NULL;
 
 	if (!pFnResetPasswordGearboxAccount)
-		pFnResetPasswordGearboxAccount = (UFunction*)UObject::GObjObjects()->Data[41266];
+		pFnResetPasswordGearboxAccount = (UFunction*)UObject::GObjects()->Data[41266];
 
 	UGearboxAccountActions_execResetPasswordGearboxAccount_Parms ResetPasswordGearboxAccount_Parms;
 	memcpy(&ResetPasswordGearboxAccount_Parms.Email, &Email, 0xC);
@@ -22808,7 +22808,7 @@ struct FString UGearboxAccountActions::EscapeJson(struct FString Input)
 	static UFunction* pFnEscapeJson = NULL;
 
 	if (!pFnEscapeJson)
-		pFnEscapeJson = (UFunction*)UObject::GObjObjects()->Data[41262];
+		pFnEscapeJson = (UFunction*)UObject::GObjects()->Data[41262];
 
 	UGearboxAccountActions_execEscapeJson_Parms EscapeJson_Parms;
 	memcpy(&EscapeJson_Parms.Input, &Input, 0xC);
@@ -22833,7 +22833,7 @@ void UGearboxAccountActions::SignUpGearboxAccount(struct FString Email, struct F
 	static UFunction* pFnSignUpGearboxAccount = NULL;
 
 	if (!pFnSignUpGearboxAccount)
-		pFnSignUpGearboxAccount = (UFunction*)UObject::GObjObjects()->Data[41249];
+		pFnSignUpGearboxAccount = (UFunction*)UObject::GObjects()->Data[41249];
 
 	UGearboxAccountActions_execSignUpGearboxAccount_Parms SignUpGearboxAccount_Parms;
 	memcpy(&SignUpGearboxAccount_Parms.Email, &Email, 0xC);
@@ -22859,7 +22859,7 @@ void UGearboxAccountActions::SignInGearboxAccount(struct FString Email, struct F
 	static UFunction* pFnSignInGearboxAccount = NULL;
 
 	if (!pFnSignInGearboxAccount)
-		pFnSignInGearboxAccount = (UFunction*)UObject::GObjObjects()->Data[41229];
+		pFnSignInGearboxAccount = (UFunction*)UObject::GObjects()->Data[41229];
 
 	UGearboxAccountActions_execSignInGearboxAccount_Parms SignInGearboxAccount_Parms;
 	memcpy(&SignInGearboxAccount_Parms.Email, &Email, 0xC);
@@ -22880,7 +22880,7 @@ void UGearboxAccountActions::OnEntitlementConsumed(unsigned char ConsumeResult)
 	static UFunction* pFnOnEntitlementConsumed = NULL;
 
 	if (!pFnOnEntitlementConsumed)
-		pFnOnEntitlementConsumed = (UFunction*)UObject::GObjObjects()->Data[41239];
+		pFnOnEntitlementConsumed = (UFunction*)UObject::GObjects()->Data[41239];
 
 	UGearboxAccountActions_execOnEntitlementConsumed_Parms OnEntitlementConsumed_Parms;
 	OnEntitlementConsumed_Parms.ConsumeResult = ConsumeResult;
@@ -22900,7 +22900,7 @@ void UGearboxAccountActions::OnCodeRedeemed(unsigned char RedeemResult, struct F
 	static UFunction* pFnOnCodeRedeemed = NULL;
 
 	if (!pFnOnCodeRedeemed)
-		pFnOnCodeRedeemed = (UFunction*)UObject::GObjObjects()->Data[41283];
+		pFnOnCodeRedeemed = (UFunction*)UObject::GObjects()->Data[41283];
 
 	UGearboxAccountActions_execOnCodeRedeemed_Parms OnCodeRedeemed_Parms;
 	OnCodeRedeemed_Parms.RedeemResult = RedeemResult;
@@ -22920,7 +22920,7 @@ void UGearboxAccountActions::OnResetPasswordGearboxAccount(unsigned char ResetRe
 	static UFunction* pFnOnResetPasswordGearboxAccount = NULL;
 
 	if (!pFnOnResetPasswordGearboxAccount)
-		pFnOnResetPasswordGearboxAccount = (UFunction*)UObject::GObjObjects()->Data[41272];
+		pFnOnResetPasswordGearboxAccount = (UFunction*)UObject::GObjects()->Data[41272];
 
 	UGearboxAccountActions_execOnResetPasswordGearboxAccount_Parms OnResetPasswordGearboxAccount_Parms;
 	OnResetPasswordGearboxAccount_Parms.ResetResult = ResetResult;
@@ -22938,7 +22938,7 @@ void UGearboxAccountActions::OnSignUpGearboxAccount(unsigned char SignUpResult)
 	static UFunction* pFnOnSignUpGearboxAccount = NULL;
 
 	if (!pFnOnSignUpGearboxAccount)
-		pFnOnSignUpGearboxAccount = (UFunction*)UObject::GObjObjects()->Data[41255];
+		pFnOnSignUpGearboxAccount = (UFunction*)UObject::GObjects()->Data[41255];
 
 	UGearboxAccountActions_execOnSignUpGearboxAccount_Parms OnSignUpGearboxAccount_Parms;
 	OnSignUpGearboxAccount_Parms.SignUpResult = SignUpResult;
@@ -22956,7 +22956,7 @@ void UGearboxAccountActions::OnSignInGearboxAccount(unsigned char SignInResult)
 	static UFunction* pFnOnSignInGearboxAccount = NULL;
 
 	if (!pFnOnSignInGearboxAccount)
-		pFnOnSignInGearboxAccount = (UFunction*)UObject::GObjObjects()->Data[41235];
+		pFnOnSignInGearboxAccount = (UFunction*)UObject::GObjects()->Data[41235];
 
 	UGearboxAccountActions_execOnSignInGearboxAccount_Parms OnSignInGearboxAccount_Parms;
 	OnSignInGearboxAccount_Parms.SignInResult = SignInResult;
@@ -22976,7 +22976,7 @@ int UGearboxAccountData::CountEntitlement(struct FName EntitlementName, unsigned
 	static UFunction* pFnCountEntitlement = NULL;
 
 	if (!pFnCountEntitlement)
-		pFnCountEntitlement = (UFunction*)UObject::GObjObjects()->Data[41579];
+		pFnCountEntitlement = (UFunction*)UObject::GObjects()->Data[41579];
 
 	UGearboxAccountData_execCountEntitlement_Parms CountEntitlement_Parms;
 	memcpy(&CountEntitlement_Parms.EntitlementName, &EntitlementName, 0x8);
@@ -22997,7 +22997,7 @@ int UGearboxAccountData::GetTotalGoldenKeyCount()
 	static UFunction* pFnGetTotalGoldenKeyCount = NULL;
 
 	if (!pFnGetTotalGoldenKeyCount)
-		pFnGetTotalGoldenKeyCount = (UFunction*)UObject::GObjObjects()->Data[41577];
+		pFnGetTotalGoldenKeyCount = (UFunction*)UObject::GObjects()->Data[41577];
 
 	UGearboxAccountData_execGetTotalGoldenKeyCount_Parms GetTotalGoldenKeyCount_Parms;
 
@@ -23017,7 +23017,7 @@ int UGearboxAccountData::GetGoldenKeyCount(unsigned long bIgnoreLocallyConsumed)
 	static UFunction* pFnGetGoldenKeyCount = NULL;
 
 	if (!pFnGetGoldenKeyCount)
-		pFnGetGoldenKeyCount = (UFunction*)UObject::GObjObjects()->Data[41574];
+		pFnGetGoldenKeyCount = (UFunction*)UObject::GObjects()->Data[41574];
 
 	UGearboxAccountData_execGetGoldenKeyCount_Parms GetGoldenKeyCount_Parms;
 	GetGoldenKeyCount_Parms.bIgnoreLocallyConsumed = bIgnoreLocallyConsumed;
@@ -23038,7 +23038,7 @@ bool UGearboxAccountData::HasGoldenKey(unsigned long bIgnoreLocallyConsumed)
 	static UFunction* pFnHasGoldenKey = NULL;
 
 	if (!pFnHasGoldenKey)
-		pFnHasGoldenKey = (UFunction*)UObject::GObjObjects()->Data[41571];
+		pFnHasGoldenKey = (UFunction*)UObject::GObjects()->Data[41571];
 
 	UGearboxAccountData_execHasGoldenKey_Parms HasGoldenKey_Parms;
 	HasGoldenKey_Parms.bIgnoreLocallyConsumed = bIgnoreLocallyConsumed;
@@ -23058,7 +23058,7 @@ bool UGearboxAccountData::HasDeveloperSkin()
 	static UFunction* pFnHasDeveloperSkin = NULL;
 
 	if (!pFnHasDeveloperSkin)
-		pFnHasDeveloperSkin = (UFunction*)UObject::GObjObjects()->Data[41569];
+		pFnHasDeveloperSkin = (UFunction*)UObject::GObjects()->Data[41569];
 
 	UGearboxAccountData_execHasDeveloperSkin_Parms HasDeveloperSkin_Parms;
 
@@ -23077,7 +23077,7 @@ bool UGearboxAccountData::IsDeveloper()
 	static UFunction* pFnIsDeveloper = NULL;
 
 	if (!pFnIsDeveloper)
-		pFnIsDeveloper = (UFunction*)UObject::GObjObjects()->Data[41567];
+		pFnIsDeveloper = (UFunction*)UObject::GObjects()->Data[41567];
 
 	UGearboxAccountData_execIsDeveloper_Parms IsDeveloper_Parms;
 
@@ -23095,7 +23095,7 @@ void UGearboxAccountData::MarkOffersNotified()
 	static UFunction* pFnMarkOffersNotified = NULL;
 
 	if (!pFnMarkOffersNotified)
-		pFnMarkOffersNotified = (UFunction*)UObject::GObjObjects()->Data[41566];
+		pFnMarkOffersNotified = (UFunction*)UObject::GObjects()->Data[41566];
 
 	UGearboxAccountData_execMarkOffersNotified_Parms MarkOffersNotified_Parms;
 
@@ -23112,7 +23112,7 @@ TArray< class UGearboxAccountOffer* > UGearboxAccountData::GetUnnotifiedOffers()
 	static UFunction* pFnGetUnnotifiedOffers = NULL;
 
 	if (!pFnGetUnnotifiedOffers)
-		pFnGetUnnotifiedOffers = (UFunction*)UObject::GObjObjects()->Data[41338];
+		pFnGetUnnotifiedOffers = (UFunction*)UObject::GObjects()->Data[41338];
 
 	UGearboxAccountData_execGetUnnotifiedOffers_Parms GetUnnotifiedOffers_Parms;
 
@@ -23132,7 +23132,7 @@ class UGearboxAccountEntitlement* UGearboxAccountData::GetEntitlementWithName(st
 	static UFunction* pFnGetEntitlementWithName = NULL;
 
 	if (!pFnGetEntitlementWithName)
-		pFnGetEntitlementWithName = (UFunction*)UObject::GObjObjects()->Data[41298];
+		pFnGetEntitlementWithName = (UFunction*)UObject::GObjects()->Data[41298];
 
 	UGearboxAccountData_execGetEntitlementWithName_Parms GetEntitlementWithName_Parms;
 	memcpy(&GetEntitlementWithName_Parms.EntitlementName, &EntitlementName, 0x8);
@@ -23153,7 +23153,7 @@ class UGearboxAccountEntitlement* UGearboxAccountData::GetEntitlementWithId(int 
 	static UFunction* pFnGetEntitlementWithId = NULL;
 
 	if (!pFnGetEntitlementWithId)
-		pFnGetEntitlementWithId = (UFunction*)UObject::GObjObjects()->Data[41559];
+		pFnGetEntitlementWithId = (UFunction*)UObject::GObjects()->Data[41559];
 
 	UGearboxAccountData_execGetEntitlementWithId_Parms GetEntitlementWithId_Parms;
 	GetEntitlementWithId_Parms.Id = Id;
@@ -23175,7 +23175,7 @@ bool UGearboxAccountData::HasEntitlement(struct FName EntitlementName, unsigned 
 	static UFunction* pFnHasEntitlement = NULL;
 
 	if (!pFnHasEntitlement)
-		pFnHasEntitlement = (UFunction*)UObject::GObjObjects()->Data[41555];
+		pFnHasEntitlement = (UFunction*)UObject::GObjects()->Data[41555];
 
 	UGearboxAccountData_execHasEntitlement_Parms HasEntitlement_Parms;
 	memcpy(&HasEntitlement_Parms.EntitlementName, &EntitlementName, 0x8);
@@ -23196,7 +23196,7 @@ void UGearboxAccountData::RemoveEntitlement(class UGearboxAccountEntitlement* En
 	static UFunction* pFnRemoveEntitlement = NULL;
 
 	if (!pFnRemoveEntitlement)
-		pFnRemoveEntitlement = (UFunction*)UObject::GObjObjects()->Data[41553];
+		pFnRemoveEntitlement = (UFunction*)UObject::GObjects()->Data[41553];
 
 	UGearboxAccountData_execRemoveEntitlement_Parms RemoveEntitlement_Parms;
 	RemoveEntitlement_Parms.Entitlement = Entitlement;
@@ -23215,7 +23215,7 @@ void UGearboxAccountData::ReplaceEntitlements(TArray< struct FEntitlementResult 
 	static UFunction* pFnReplaceEntitlements = NULL;
 
 	if (!pFnReplaceEntitlements)
-		pFnReplaceEntitlements = (UFunction*)UObject::GObjObjects()->Data[41540];
+		pFnReplaceEntitlements = (UFunction*)UObject::GObjects()->Data[41540];
 
 	UGearboxAccountData_execReplaceEntitlements_Parms ReplaceEntitlements_Parms;
 
@@ -23238,7 +23238,7 @@ void UGearboxAccountData::ReplaceServices(TArray< struct FServiceResult >* NewSe
 	static UFunction* pFnReplaceServices = NULL;
 
 	if (!pFnReplaceServices)
-		pFnReplaceServices = (UFunction*)UObject::GObjObjects()->Data[41537];
+		pFnReplaceServices = (UFunction*)UObject::GObjects()->Data[41537];
 
 	UGearboxAccountData_execReplaceServices_Parms ReplaceServices_Parms;
 
@@ -23262,7 +23262,7 @@ void UGearboxAccountData::HandleReloadEntitlementsResponse(struct FSparkResult* 
 	static UFunction* pFnHandleReloadEntitlementsResponse = NULL;
 
 	if (!pFnHandleReloadEntitlementsResponse)
-		pFnHandleReloadEntitlementsResponse = (UFunction*)UObject::GObjObjects()->Data[41534];
+		pFnHandleReloadEntitlementsResponse = (UFunction*)UObject::GObjects()->Data[41534];
 
 	UGearboxAccountData_execHandleReloadEntitlementsResponse_Parms HandleReloadEntitlementsResponse_Parms;
 
@@ -23282,7 +23282,7 @@ bool UGearboxAccountData::ReloadEntitlements()
 	static UFunction* pFnReloadEntitlements = NULL;
 
 	if (!pFnReloadEntitlements)
-		pFnReloadEntitlements = (UFunction*)UObject::GObjObjects()->Data[41526];
+		pFnReloadEntitlements = (UFunction*)UObject::GObjects()->Data[41526];
 
 	UGearboxAccountData_execReloadEntitlements_Parms ReloadEntitlements_Parms;
 
@@ -23300,7 +23300,7 @@ void UGearboxAccountData::ResetEntitlementUpdateTimer()
 	static UFunction* pFnResetEntitlementUpdateTimer = NULL;
 
 	if (!pFnResetEntitlementUpdateTimer)
-		pFnResetEntitlementUpdateTimer = (UFunction*)UObject::GObjObjects()->Data[41525];
+		pFnResetEntitlementUpdateTimer = (UFunction*)UObject::GObjects()->Data[41525];
 
 	UGearboxAccountData_execResetEntitlementUpdateTimer_Parms ResetEntitlementUpdateTimer_Parms;
 
@@ -23321,7 +23321,7 @@ bool UGearboxAccountData::CanReloadEntitlements()
 	static UFunction* pFnCanReloadEntitlements = NULL;
 
 	if (!pFnCanReloadEntitlements)
-		pFnCanReloadEntitlements = (UFunction*)UObject::GObjObjects()->Data[41523];
+		pFnCanReloadEntitlements = (UFunction*)UObject::GObjects()->Data[41523];
 
 	UGearboxAccountData_execCanReloadEntitlements_Parms CanReloadEntitlements_Parms;
 
@@ -23343,7 +23343,7 @@ void UGearboxAccountData::TriggerEntitlementsUpdatedDelegates()
 	static UFunction* pFnTriggerEntitlementsUpdatedDelegates = NULL;
 
 	if (!pFnTriggerEntitlementsUpdatedDelegates)
-		pFnTriggerEntitlementsUpdatedDelegates = (UFunction*)UObject::GObjObjects()->Data[41521];
+		pFnTriggerEntitlementsUpdatedDelegates = (UFunction*)UObject::GObjects()->Data[41521];
 
 	UGearboxAccountData_execTriggerEntitlementsUpdatedDelegates_Parms TriggerEntitlementsUpdatedDelegates_Parms;
 
@@ -23360,7 +23360,7 @@ void UGearboxAccountData::ClearEntitlementsUpdatedDelegate(struct FScriptDelegat
 	static UFunction* pFnClearEntitlementsUpdatedDelegate = NULL;
 
 	if (!pFnClearEntitlementsUpdatedDelegate)
-		pFnClearEntitlementsUpdatedDelegate = (UFunction*)UObject::GObjObjects()->Data[41519];
+		pFnClearEntitlementsUpdatedDelegate = (UFunction*)UObject::GObjects()->Data[41519];
 
 	UGearboxAccountData_execClearEntitlementsUpdatedDelegate_Parms ClearEntitlementsUpdatedDelegate_Parms;
 	memcpy(&ClearEntitlementsUpdatedDelegate_Parms.EntitlementsUpdatedDelegate, &EntitlementsUpdatedDelegate, 0xC);
@@ -23378,7 +23378,7 @@ void UGearboxAccountData::AddEntitlementsUpdatedDelegate(struct FScriptDelegate 
 	static UFunction* pFnAddEntitlementsUpdatedDelegate = NULL;
 
 	if (!pFnAddEntitlementsUpdatedDelegate)
-		pFnAddEntitlementsUpdatedDelegate = (UFunction*)UObject::GObjObjects()->Data[41517];
+		pFnAddEntitlementsUpdatedDelegate = (UFunction*)UObject::GObjects()->Data[41517];
 
 	UGearboxAccountData_execAddEntitlementsUpdatedDelegate_Parms AddEntitlementsUpdatedDelegate_Parms;
 	memcpy(&AddEntitlementsUpdatedDelegate_Parms.EntitlementsUpdatedDelegate, &EntitlementsUpdatedDelegate, 0xC);
@@ -23397,7 +23397,7 @@ class USparkServiceConfiguration* UGearboxAccountData::eventGetService(struct FN
 	static UFunction* pFnGetService = NULL;
 
 	if (!pFnGetService)
-		pFnGetService = (UFunction*)UObject::GObjObjects()->Data[41245];
+		pFnGetService = (UFunction*)UObject::GObjects()->Data[41245];
 
 	UGearboxAccountData_eventGetService_Parms GetService_Parms;
 	memcpy(&GetService_Parms.ServiceName, &ServiceName, 0x8);
@@ -23416,7 +23416,7 @@ void UGearboxAccountData::Clear()
 	static UFunction* pFnClear = NULL;
 
 	if (!pFnClear)
-		pFnClear = (UFunction*)UObject::GObjObjects()->Data[41514];
+		pFnClear = (UFunction*)UObject::GObjects()->Data[41514];
 
 	UGearboxAccountData_execClear_Parms Clear_Parms;
 
@@ -23435,7 +23435,7 @@ bool UGearboxAccountData::ExtractArchwayResultJson(TArray< unsigned char >* Data
 	static UFunction* pFnExtractArchwayResultJson = NULL;
 
 	if (!pFnExtractArchwayResultJson)
-		pFnExtractArchwayResultJson = (UFunction*)UObject::GObjObjects()->Data[41395];
+		pFnExtractArchwayResultJson = (UFunction*)UObject::GObjects()->Data[41395];
 
 	UGearboxAccountData_execExtractArchwayResultJson_Parms ExtractArchwayResultJson_Parms;
 
@@ -23462,7 +23462,7 @@ bool UGearboxAccountData::ExtractArchwayResult(TArray< unsigned char >* Data, st
 	static UFunction* pFnExtractArchwayResult = NULL;
 
 	if (!pFnExtractArchwayResult)
-		pFnExtractArchwayResult = (UFunction*)UObject::GObjObjects()->Data[41495];
+		pFnExtractArchwayResult = (UFunction*)UObject::GObjects()->Data[41495];
 
 	UGearboxAccountData_execExtractArchwayResult_Parms ExtractArchwayResult_Parms;
 
@@ -23491,7 +23491,7 @@ struct FStepConfiguration UGearboxProcess::GetStepConfiguration()
 	static UFunction* pFnGetStepConfiguration = NULL;
 
 	if (!pFnGetStepConfiguration)
-		pFnGetStepConfiguration = (UFunction*)UObject::GObjObjects()->Data[43439];
+		pFnGetStepConfiguration = (UFunction*)UObject::GObjects()->Data[43439];
 
 	UGearboxProcess_execGetStepConfiguration_Parms GetStepConfiguration_Parms;
 
@@ -23514,7 +23514,7 @@ void UGearboxProcess::GotoStep(int Step)
 	static UFunction* pFnGotoStep = NULL;
 
 	if (!pFnGotoStep)
-		pFnGotoStep = (UFunction*)UObject::GObjObjects()->Data[43437];
+		pFnGotoStep = (UFunction*)UObject::GObjects()->Data[43437];
 
 	UGearboxProcess_execGotoStep_Parms GotoStep_Parms;
 	GotoStep_Parms.Step = Step;
@@ -23535,7 +23535,7 @@ void UGearboxProcess::GotoNextStep()
 	static UFunction* pFnGotoNextStep = NULL;
 
 	if (!pFnGotoNextStep)
-		pFnGotoNextStep = (UFunction*)UObject::GObjObjects()->Data[43436];
+		pFnGotoNextStep = (UFunction*)UObject::GObjects()->Data[43436];
 
 	UGearboxProcess_execGotoNextStep_Parms GotoNextStep_Parms;
 
@@ -23555,7 +23555,7 @@ void UGearboxProcess::GotoFirstStep()
 	static UFunction* pFnGotoFirstStep = NULL;
 
 	if (!pFnGotoFirstStep)
-		pFnGotoFirstStep = (UFunction*)UObject::GObjObjects()->Data[43435];
+		pFnGotoFirstStep = (UFunction*)UObject::GObjects()->Data[43435];
 
 	UGearboxProcess_execGotoFirstStep_Parms GotoFirstStep_Parms;
 
@@ -23576,7 +23576,7 @@ unsigned char UGearboxProcess::eventPerformStep()
 	static UFunction* pFnPerformStep = NULL;
 
 	if (!pFnPerformStep)
-		pFnPerformStep = (UFunction*)UObject::GObjObjects()->Data[43433];
+		pFnPerformStep = (UFunction*)UObject::GObjects()->Data[43433];
 
 	UGearboxProcess_eventPerformStep_Parms PerformStep_Parms;
 
@@ -23594,7 +23594,7 @@ void UGearboxProcess::PauseLoop()
 	static UFunction* pFnPauseLoop = NULL;
 
 	if (!pFnPauseLoop)
-		pFnPauseLoop = (UFunction*)UObject::GObjObjects()->Data[43432];
+		pFnPauseLoop = (UFunction*)UObject::GObjects()->Data[43432];
 
 	UGearboxProcess_execPauseLoop_Parms PauseLoop_Parms;
 
@@ -23614,7 +23614,7 @@ void UGearboxProcess::Init()
 	static UFunction* pFnInit = NULL;
 
 	if (!pFnInit)
-		pFnInit = (UFunction*)UObject::GObjObjects()->Data[43431];
+		pFnInit = (UFunction*)UObject::GObjects()->Data[43431];
 
 	UGearboxProcess_execInit_Parms Init_Parms;
 
@@ -23634,7 +23634,7 @@ void UGearboxProcess::ContinueLoop()
 	static UFunction* pFnContinueLoop = NULL;
 
 	if (!pFnContinueLoop)
-		pFnContinueLoop = (UFunction*)UObject::GObjObjects()->Data[43430];
+		pFnContinueLoop = (UFunction*)UObject::GObjects()->Data[43430];
 
 	UGearboxProcess_execContinueLoop_Parms ContinueLoop_Parms;
 
@@ -23654,7 +23654,7 @@ void UGearboxProcess::StopLoop()
 	static UFunction* pFnStopLoop = NULL;
 
 	if (!pFnStopLoop)
-		pFnStopLoop = (UFunction*)UObject::GObjObjects()->Data[43429];
+		pFnStopLoop = (UFunction*)UObject::GObjects()->Data[43429];
 
 	UGearboxProcess_execStopLoop_Parms StopLoop_Parms;
 
@@ -23675,7 +23675,7 @@ void USparkInitializationProcess::eventTriggerSparkInitializedDelegates(unsigned
 	static UFunction* pFnTriggerSparkInitializedDelegates = NULL;
 
 	if (!pFnTriggerSparkInitializedDelegates)
-		pFnTriggerSparkInitializedDelegates = (UFunction*)UObject::GObjObjects()->Data[44802];
+		pFnTriggerSparkInitializedDelegates = (UFunction*)UObject::GObjects()->Data[44802];
 
 	USparkInitializationProcess_eventTriggerSparkInitializedDelegates_Parms TriggerSparkInitializedDelegates_Parms;
 	TriggerSparkInitializedDelegates_Parms.InitializeResult = InitializeResult;
@@ -23693,7 +23693,7 @@ void USparkInitializationProcess::ClearSparkInitializedDelegate(struct FScriptDe
 	static UFunction* pFnClearSparkInitializedDelegate = NULL;
 
 	if (!pFnClearSparkInitializedDelegate)
-		pFnClearSparkInitializedDelegate = (UFunction*)UObject::GObjObjects()->Data[44800];
+		pFnClearSparkInitializedDelegate = (UFunction*)UObject::GObjects()->Data[44800];
 
 	USparkInitializationProcess_execClearSparkInitializedDelegate_Parms ClearSparkInitializedDelegate_Parms;
 	memcpy(&ClearSparkInitializedDelegate_Parms.SparkInitializedDelegate, &SparkInitializedDelegate, 0xC);
@@ -23711,7 +23711,7 @@ void USparkInitializationProcess::AddSparkInitializedDelegate(struct FScriptDele
 	static UFunction* pFnAddSparkInitializedDelegate = NULL;
 
 	if (!pFnAddSparkInitializedDelegate)
-		pFnAddSparkInitializedDelegate = (UFunction*)UObject::GObjObjects()->Data[44798];
+		pFnAddSparkInitializedDelegate = (UFunction*)UObject::GObjects()->Data[44798];
 
 	USparkInitializationProcess_execAddSparkInitializedDelegate_Parms AddSparkInitializedDelegate_Parms;
 	memcpy(&AddSparkInitializedDelegate_Parms.SparkInitializedDelegate, &SparkInitializedDelegate, 0xC);
@@ -23729,7 +23729,7 @@ struct FString USparkInitializationProcess::GetStepName()
 	static UFunction* pFnGetStepName = NULL;
 
 	if (!pFnGetStepName)
-		pFnGetStepName = (UFunction*)UObject::GObjObjects()->Data[44796];
+		pFnGetStepName = (UFunction*)UObject::GObjects()->Data[44796];
 
 	USparkInitializationProcess_execGetStepName_Parms GetStepName_Parms;
 
@@ -23752,7 +23752,7 @@ struct FStepConfiguration USparkInitializationProcess::GetStepConfiguration()
 	static UFunction* pFnGetStepConfiguration = NULL;
 
 	if (!pFnGetStepConfiguration)
-		pFnGetStepConfiguration = (UFunction*)UObject::GObjObjects()->Data[44794];
+		pFnGetStepConfiguration = (UFunction*)UObject::GObjects()->Data[44794];
 
 	USparkInitializationProcess_execGetStepConfiguration_Parms GetStepConfiguration_Parms;
 
@@ -23775,7 +23775,7 @@ bool USparkInitializationProcess::IsInitialized()
 	static UFunction* pFnIsInitialized = NULL;
 
 	if (!pFnIsInitialized)
-		pFnIsInitialized = (UFunction*)UObject::GObjObjects()->Data[44792];
+		pFnIsInitialized = (UFunction*)UObject::GObjects()->Data[44792];
 
 	USparkInitializationProcess_execIsInitialized_Parms IsInitialized_Parms;
 
@@ -23794,7 +23794,7 @@ bool USparkInitializationProcess::IsDisabled()
 	static UFunction* pFnIsDisabled = NULL;
 
 	if (!pFnIsDisabled)
-		pFnIsDisabled = (UFunction*)UObject::GObjObjects()->Data[44790];
+		pFnIsDisabled = (UFunction*)UObject::GObjects()->Data[44790];
 
 	USparkInitializationProcess_execIsDisabled_Parms IsDisabled_Parms;
 
@@ -23813,7 +23813,7 @@ bool USparkInitializationProcess::IsInitializing()
 	static UFunction* pFnIsInitializing = NULL;
 
 	if (!pFnIsInitializing)
-		pFnIsInitializing = (UFunction*)UObject::GObjObjects()->Data[44788];
+		pFnIsInitializing = (UFunction*)UObject::GObjects()->Data[44788];
 
 	USparkInitializationProcess_execIsInitializing_Parms IsInitializing_Parms;
 
@@ -23832,7 +23832,7 @@ void USparkInitializationProcess::HandleVerificationReceived(struct FSparkResult
 	static UFunction* pFnHandleVerificationReceived = NULL;
 
 	if (!pFnHandleVerificationReceived)
-		pFnHandleVerificationReceived = (UFunction*)UObject::GObjObjects()->Data[44782];
+		pFnHandleVerificationReceived = (UFunction*)UObject::GObjects()->Data[44782];
 
 	USparkInitializationProcess_execHandleVerificationReceived_Parms HandleVerificationReceived_Parms;
 
@@ -23852,7 +23852,7 @@ unsigned char USparkInitializationProcess::eventVerifyAuthentication()
 	static UFunction* pFnVerifyAuthentication = NULL;
 
 	if (!pFnVerifyAuthentication)
-		pFnVerifyAuthentication = (UFunction*)UObject::GObjObjects()->Data[44774];
+		pFnVerifyAuthentication = (UFunction*)UObject::GObjects()->Data[44774];
 
 	USparkInitializationProcess_eventVerifyAuthentication_Parms VerifyAuthentication_Parms;
 
@@ -23873,7 +23873,7 @@ unsigned char USparkInitializationProcess::AuthenticateTicketStringWithDelegate(
 	static UFunction* pFnAuthenticateTicketStringWithDelegate = NULL;
 
 	if (!pFnAuthenticateTicketStringWithDelegate)
-		pFnAuthenticateTicketStringWithDelegate = (UFunction*)UObject::GObjObjects()->Data[44766];
+		pFnAuthenticateTicketStringWithDelegate = (UFunction*)UObject::GObjects()->Data[44766];
 
 	USparkInitializationProcess_execAuthenticateTicketStringWithDelegate_Parms AuthenticateTicketStringWithDelegate_Parms;
 	memcpy(&AuthenticateTicketStringWithDelegate_Parms.ticket, &ticket, 0xC);
@@ -23894,7 +23894,7 @@ void USparkInitializationProcess::HandleAuthenticationReceived(struct FSparkResu
 	static UFunction* pFnHandleAuthenticationReceived = NULL;
 
 	if (!pFnHandleAuthenticationReceived)
-		pFnHandleAuthenticationReceived = (UFunction*)UObject::GObjObjects()->Data[44763];
+		pFnHandleAuthenticationReceived = (UFunction*)UObject::GObjects()->Data[44763];
 
 	USparkInitializationProcess_execHandleAuthenticationReceived_Parms HandleAuthenticationReceived_Parms;
 
@@ -23914,7 +23914,7 @@ unsigned char USparkInitializationProcess::eventAuthenticateAccount()
 	static UFunction* pFnAuthenticateAccount = NULL;
 
 	if (!pFnAuthenticateAccount)
-		pFnAuthenticateAccount = (UFunction*)UObject::GObjObjects()->Data[44759];
+		pFnAuthenticateAccount = (UFunction*)UObject::GObjects()->Data[44759];
 
 	USparkInitializationProcess_eventAuthenticateAccount_Parms AuthenticateAccount_Parms;
 
@@ -23933,7 +23933,7 @@ struct FString USparkInitializationProcess::GetConfigQuery()
 	static UFunction* pFnGetConfigQuery = NULL;
 
 	if (!pFnGetConfigQuery)
-		pFnGetConfigQuery = (UFunction*)UObject::GObjObjects()->Data[44757];
+		pFnGetConfigQuery = (UFunction*)UObject::GObjects()->Data[44757];
 
 	USparkInitializationProcess_execGetConfigQuery_Parms GetConfigQuery_Parms;
 
@@ -23956,7 +23956,7 @@ unsigned char USparkInitializationProcess::CompleteInitialization()
 	static UFunction* pFnCompleteInitialization = NULL;
 
 	if (!pFnCompleteInitialization)
-		pFnCompleteInitialization = (UFunction*)UObject::GObjObjects()->Data[44755];
+		pFnCompleteInitialization = (UFunction*)UObject::GObjects()->Data[44755];
 
 	USparkInitializationProcess_execCompleteInitialization_Parms CompleteInitialization_Parms;
 
@@ -23979,7 +23979,7 @@ unsigned char USparkInitializationProcess::HttpInit()
 	static UFunction* pFnHttpInit = NULL;
 
 	if (!pFnHttpInit)
-		pFnHttpInit = (UFunction*)UObject::GObjObjects()->Data[44753];
+		pFnHttpInit = (UFunction*)UObject::GObjects()->Data[44753];
 
 	USparkInitializationProcess_execHttpInit_Parms HttpInit_Parms;
 
@@ -24002,7 +24002,7 @@ unsigned char USparkInitializationProcess::CheckForTMS()
 	static UFunction* pFnCheckForTMS = NULL;
 
 	if (!pFnCheckForTMS)
-		pFnCheckForTMS = (UFunction*)UObject::GObjObjects()->Data[44751];
+		pFnCheckForTMS = (UFunction*)UObject::GObjects()->Data[44751];
 
 	USparkInitializationProcess_execCheckForTMS_Parms CheckForTMS_Parms;
 
@@ -24025,7 +24025,7 @@ unsigned char USparkInitializationProcess::PerformStep()
 	static UFunction* pFnPerformStep = NULL;
 
 	if (!pFnPerformStep)
-		pFnPerformStep = (UFunction*)UObject::GObjObjects()->Data[44749];
+		pFnPerformStep = (UFunction*)UObject::GObjects()->Data[44749];
 
 	USparkInitializationProcess_execPerformStep_Parms PerformStep_Parms;
 
@@ -24048,7 +24048,7 @@ bool USparkInitializationProcess::StartProcess()
 	static UFunction* pFnStartProcess = NULL;
 
 	if (!pFnStartProcess)
-		pFnStartProcess = (UFunction*)UObject::GObjObjects()->Data[44747];
+		pFnStartProcess = (UFunction*)UObject::GObjects()->Data[44747];
 
 	USparkInitializationProcess_execStartProcess_Parms StartProcess_Parms;
 
@@ -24073,7 +24073,7 @@ void USparkInitializationProcess::InitWithController(unsigned char ControllerId,
 	static UFunction* pFnInitWithController = NULL;
 
 	if (!pFnInitWithController)
-		pFnInitWithController = (UFunction*)UObject::GObjObjects()->Data[44742];
+		pFnInitWithController = (UFunction*)UObject::GObjects()->Data[44742];
 
 	USparkInitializationProcess_execInitWithController_Parms InitWithController_Parms;
 	InitWithController_Parms.ControllerId = ControllerId;
@@ -24094,7 +24094,7 @@ class USparkServiceConfiguration* ULeviathanService::eventGetLeviathanServiceCon
 	static UFunction* pFnGetLeviathanServiceConfiguration = NULL;
 
 	if (!pFnGetLeviathanServiceConfiguration)
-		pFnGetLeviathanServiceConfiguration = (UFunction*)UObject::GObjObjects()->Data[43837];
+		pFnGetLeviathanServiceConfiguration = (UFunction*)UObject::GObjects()->Data[43837];
 
 	ULeviathanService_eventGetLeviathanServiceConfiguration_Parms GetLeviathanServiceConfiguration_Parms;
 	GetLeviathanServiceConfiguration_Parms.ControllerNumber = ControllerNumber;
@@ -24114,7 +24114,7 @@ void ULeviathanService::OnSparkInitialized(unsigned char InitializedResult)
 	static UFunction* pFnOnSparkInitialized = NULL;
 
 	if (!pFnOnSparkInitialized)
-		pFnOnSparkInitialized = (UFunction*)UObject::GObjObjects()->Data[43835];
+		pFnOnSparkInitialized = (UFunction*)UObject::GObjects()->Data[43835];
 
 	ULeviathanService_execOnSparkInitialized_Parms OnSparkInitialized_Parms;
 	OnSparkInitialized_Parms.InitializedResult = InitializedResult;
@@ -24136,7 +24136,7 @@ void ULeviathanService::LoadServiceConfigurationForPlayer(int SplitscreenIndex)
 	static UFunction* pFnLoadServiceConfigurationForPlayer = NULL;
 
 	if (!pFnLoadServiceConfigurationForPlayer)
-		pFnLoadServiceConfigurationForPlayer = (UFunction*)UObject::GObjObjects()->Data[43833];
+		pFnLoadServiceConfigurationForPlayer = (UFunction*)UObject::GObjects()->Data[43833];
 
 	ULeviathanService_execLoadServiceConfigurationForPlayer_Parms LoadServiceConfigurationForPlayer_Parms;
 	LoadServiceConfigurationForPlayer_Parms.SplitscreenIndex = SplitscreenIndex;
@@ -24158,7 +24158,7 @@ class ULeviathanService* ULeviathanService::GetLeviathanService()
 	static UFunction* pFnGetLeviathanService = NULL;
 
 	if (!pFnGetLeviathanService)
-		pFnGetLeviathanService = (UFunction*)UObject::GObjObjects()->Data[43831];
+		pFnGetLeviathanService = (UFunction*)UObject::GObjects()->Data[43831];
 
 	ULeviathanService_execGetLeviathanService_Parms GetLeviathanService_Parms;
 
@@ -24181,7 +24181,7 @@ class USparkNews* USparkInterface::GetNewsService()
 	static UFunction* pFnGetNewsService = NULL;
 
 	if (!pFnGetNewsService)
-		pFnGetNewsService = (UFunction*)UObject::GObjObjects()->Data[41120];
+		pFnGetNewsService = (UFunction*)UObject::GObjects()->Data[41120];
 
 	USparkInterface_execGetNewsService_Parms GetNewsService_Parms;
 
@@ -24200,7 +24200,7 @@ class USparkServiceConfiguration* USparkInterface::GetTitleStorageServiceConfigu
 	static UFunction* pFnGetTitleStorageServiceConfiguration = NULL;
 
 	if (!pFnGetTitleStorageServiceConfiguration)
-		pFnGetTitleStorageServiceConfiguration = (UFunction*)UObject::GObjObjects()->Data[41122];
+		pFnGetTitleStorageServiceConfiguration = (UFunction*)UObject::GObjects()->Data[41122];
 
 	USparkInterface_execGetTitleStorageServiceConfiguration_Parms GetTitleStorageServiceConfiguration_Parms;
 
@@ -24223,7 +24223,7 @@ struct FString USparkInterface::GetTitleStorageUrl()
 	static UFunction* pFnGetTitleStorageUrl = NULL;
 
 	if (!pFnGetTitleStorageUrl)
-		pFnGetTitleStorageUrl = (UFunction*)UObject::GObjObjects()->Data[41125];
+		pFnGetTitleStorageUrl = (UFunction*)UObject::GObjects()->Data[41125];
 
 	USparkInterface_execGetTitleStorageUrl_Parms GetTitleStorageUrl_Parms;
 
@@ -24246,7 +24246,7 @@ void USparkInterface::ClearGearboxAccountData(unsigned long IncludePrimaryPlayer
 	static UFunction* pFnClearGearboxAccountData = NULL;
 
 	if (!pFnClearGearboxAccountData)
-		pFnClearGearboxAccountData = (UFunction*)UObject::GObjObjects()->Data[41127];
+		pFnClearGearboxAccountData = (UFunction*)UObject::GObjects()->Data[41127];
 
 	USparkInterface_execClearGearboxAccountData_Parms ClearGearboxAccountData_Parms;
 	ClearGearboxAccountData_Parms.IncludePrimaryPlayer = IncludePrimaryPlayer;
@@ -24264,7 +24264,7 @@ void USparkInterface::SignOutGearboxAccount(unsigned char ControllerId)
 	static UFunction* pFnSignOutGearboxAccount = NULL;
 
 	if (!pFnSignOutGearboxAccount)
-		pFnSignOutGearboxAccount = (UFunction*)UObject::GObjObjects()->Data[41129];
+		pFnSignOutGearboxAccount = (UFunction*)UObject::GObjects()->Data[41129];
 
 	USparkInterface_execSignOutGearboxAccount_Parms SignOutGearboxAccount_Parms;
 	SignOutGearboxAccount_Parms.ControllerId = ControllerId;
@@ -24282,7 +24282,7 @@ void USparkInterface::SignInGearboxAccount(unsigned char ControllerId)
 	static UFunction* pFnSignInGearboxAccount = NULL;
 
 	if (!pFnSignInGearboxAccount)
-		pFnSignInGearboxAccount = (UFunction*)UObject::GObjObjects()->Data[41131];
+		pFnSignInGearboxAccount = (UFunction*)UObject::GObjects()->Data[41131];
 
 	USparkInterface_execSignInGearboxAccount_Parms SignInGearboxAccount_Parms;
 	SignInGearboxAccount_Parms.ControllerId = ControllerId;
@@ -24301,7 +24301,7 @@ class UGearboxAccountData* USparkInterface::eventGetGearboxAccountData(unsigned 
 	static UFunction* pFnGetGearboxAccountData = NULL;
 
 	if (!pFnGetGearboxAccountData)
-		pFnGetGearboxAccountData = (UFunction*)UObject::GObjObjects()->Data[41133];
+		pFnGetGearboxAccountData = (UFunction*)UObject::GObjects()->Data[41133];
 
 	USparkInterface_eventGetGearboxAccountData_Parms GetGearboxAccountData_Parms;
 	GetGearboxAccountData_Parms.ControllerId = ControllerId;
@@ -24322,7 +24322,7 @@ bool USparkInterface::eventIsGearboxAccountAuthenticated(unsigned char Controlle
 	static UFunction* pFnIsGearboxAccountAuthenticated = NULL;
 
 	if (!pFnIsGearboxAccountAuthenticated)
-		pFnIsGearboxAccountAuthenticated = (UFunction*)UObject::GObjObjects()->Data[41135];
+		pFnIsGearboxAccountAuthenticated = (UFunction*)UObject::GObjects()->Data[41135];
 
 	USparkInterface_eventIsGearboxAccountAuthenticated_Parms IsGearboxAccountAuthenticated_Parms;
 	IsGearboxAccountAuthenticated_Parms.ControllerId = ControllerId;
@@ -24343,7 +24343,7 @@ bool USparkInterface::IsGearboxAccountSignedIn(unsigned char ControllerId)
 	static UFunction* pFnIsGearboxAccountSignedIn = NULL;
 
 	if (!pFnIsGearboxAccountSignedIn)
-		pFnIsGearboxAccountSignedIn = (UFunction*)UObject::GObjObjects()->Data[41138];
+		pFnIsGearboxAccountSignedIn = (UFunction*)UObject::GObjects()->Data[41138];
 
 	USparkInterface_execIsGearboxAccountSignedIn_Parms IsGearboxAccountSignedIn_Parms;
 	IsGearboxAccountSignedIn_Parms.ControllerId = ControllerId;
@@ -24364,7 +24364,7 @@ struct FString USparkInterface::ConvertUtcTimeToLocalTime(struct FString UtcTime
 	static UFunction* pFnConvertUtcTimeToLocalTime = NULL;
 
 	if (!pFnConvertUtcTimeToLocalTime)
-		pFnConvertUtcTimeToLocalTime = (UFunction*)UObject::GObjObjects()->Data[41141];
+		pFnConvertUtcTimeToLocalTime = (UFunction*)UObject::GObjects()->Data[41141];
 
 	USparkInterface_execConvertUtcTimeToLocalTime_Parms ConvertUtcTimeToLocalTime_Parms;
 	memcpy(&ConvertUtcTimeToLocalTime_Parms.UtcTime, &UtcTime, 0xC);
@@ -24384,7 +24384,7 @@ bool USparkInterface::ShouldUpdateEmergencyMessage()
 	static UFunction* pFnShouldUpdateEmergencyMessage = NULL;
 
 	if (!pFnShouldUpdateEmergencyMessage)
-		pFnShouldUpdateEmergencyMessage = (UFunction*)UObject::GObjObjects()->Data[41144];
+		pFnShouldUpdateEmergencyMessage = (UFunction*)UObject::GObjects()->Data[41144];
 
 	USparkInterface_execShouldUpdateEmergencyMessage_Parms ShouldUpdateEmergencyMessage_Parms;
 
@@ -24403,7 +24403,7 @@ struct FString USparkInterface::GetEmergencyMessage()
 	static UFunction* pFnGetEmergencyMessage = NULL;
 
 	if (!pFnGetEmergencyMessage)
-		pFnGetEmergencyMessage = (UFunction*)UObject::GObjObjects()->Data[41147];
+		pFnGetEmergencyMessage = (UFunction*)UObject::GObjects()->Data[41147];
 
 	USparkInterface_execGetEmergencyMessage_Parms GetEmergencyMessage_Parms;
 
@@ -24422,7 +24422,7 @@ void USparkInterface::SetEmergencyMessage(struct FString Message)
 	static UFunction* pFnSetEmergencyMessage = NULL;
 
 	if (!pFnSetEmergencyMessage)
-		pFnSetEmergencyMessage = (UFunction*)UObject::GObjObjects()->Data[41149];
+		pFnSetEmergencyMessage = (UFunction*)UObject::GObjects()->Data[41149];
 
 	USparkInterface_execSetEmergencyMessage_Parms SetEmergencyMessage_Parms;
 	memcpy(&SetEmergencyMessage_Parms.Message, &Message, 0xC);
@@ -24441,7 +24441,7 @@ struct FString USparkInterface::eventGetPlatformLoginNameFromSplitscreenIndex(in
 	static UFunction* pFnGetPlatformLoginNameFromSplitscreenIndex = NULL;
 
 	if (!pFnGetPlatformLoginNameFromSplitscreenIndex)
-		pFnGetPlatformLoginNameFromSplitscreenIndex = (UFunction*)UObject::GObjObjects()->Data[41151];
+		pFnGetPlatformLoginNameFromSplitscreenIndex = (UFunction*)UObject::GObjects()->Data[41151];
 
 	USparkInterface_eventGetPlatformLoginNameFromSplitscreenIndex_Parms GetPlatformLoginNameFromSplitscreenIndex_Parms;
 	GetPlatformLoginNameFromSplitscreenIndex_Parms.SplitscreenIndex = SplitscreenIndex;
@@ -24462,7 +24462,7 @@ struct FString USparkInterface::GetPlatformLoginNameFromController(unsigned char
 	static UFunction* pFnGetPlatformLoginNameFromController = NULL;
 
 	if (!pFnGetPlatformLoginNameFromController)
-		pFnGetPlatformLoginNameFromController = (UFunction*)UObject::GObjObjects()->Data[41153];
+		pFnGetPlatformLoginNameFromController = (UFunction*)UObject::GObjects()->Data[41153];
 
 	USparkInterface_execGetPlatformLoginNameFromController_Parms GetPlatformLoginNameFromController_Parms;
 	GetPlatformLoginNameFromController_Parms.ControllerId = ControllerId;
@@ -24481,7 +24481,7 @@ void USparkInterface::IncreaseInteractionTries()
 	static UFunction* pFnIncreaseInteractionTries = NULL;
 
 	if (!pFnIncreaseInteractionTries)
-		pFnIncreaseInteractionTries = (UFunction*)UObject::GObjObjects()->Data[41156];
+		pFnIncreaseInteractionTries = (UFunction*)UObject::GObjects()->Data[41156];
 
 	USparkInterface_execIncreaseInteractionTries_Parms IncreaseInteractionTries_Parms;
 
@@ -24498,7 +24498,7 @@ int USparkInterface::GetInteractionTries()
 	static UFunction* pFnGetInteractionTries = NULL;
 
 	if (!pFnGetInteractionTries)
-		pFnGetInteractionTries = (UFunction*)UObject::GObjObjects()->Data[41159];
+		pFnGetInteractionTries = (UFunction*)UObject::GObjects()->Data[41159];
 
 	USparkInterface_execGetInteractionTries_Parms GetInteractionTries_Parms;
 
@@ -24517,7 +24517,7 @@ int USparkInterface::GetInteractionGraceTries()
 	static UFunction* pFnGetInteractionGraceTries = NULL;
 
 	if (!pFnGetInteractionGraceTries)
-		pFnGetInteractionGraceTries = (UFunction*)UObject::GObjObjects()->Data[41160];
+		pFnGetInteractionGraceTries = (UFunction*)UObject::GObjects()->Data[41160];
 
 	USparkInterface_execGetInteractionGraceTries_Parms GetInteractionGraceTries_Parms;
 
@@ -24536,7 +24536,7 @@ int USparkInterface::GetInteractionPunishmentMinWaitSeconds()
 	static UFunction* pFnGetInteractionPunishmentMinWaitSeconds = NULL;
 
 	if (!pFnGetInteractionPunishmentMinWaitSeconds)
-		pFnGetInteractionPunishmentMinWaitSeconds = (UFunction*)UObject::GObjObjects()->Data[41162];
+		pFnGetInteractionPunishmentMinWaitSeconds = (UFunction*)UObject::GObjects()->Data[41162];
 
 	USparkInterface_execGetInteractionPunishmentMinWaitSeconds_Parms GetInteractionPunishmentMinWaitSeconds_Parms;
 
@@ -24555,7 +24555,7 @@ int USparkInterface::GetInteractionMinWaitSeconds()
 	static UFunction* pFnGetInteractionMinWaitSeconds = NULL;
 
 	if (!pFnGetInteractionMinWaitSeconds)
-		pFnGetInteractionMinWaitSeconds = (UFunction*)UObject::GObjObjects()->Data[41164];
+		pFnGetInteractionMinWaitSeconds = (UFunction*)UObject::GObjects()->Data[41164];
 
 	USparkInterface_execGetInteractionMinWaitSeconds_Parms GetInteractionMinWaitSeconds_Parms;
 
@@ -24574,7 +24574,7 @@ bool USparkInterface::IsTmsComplete()
 	static UFunction* pFnIsTmsComplete = NULL;
 
 	if (!pFnIsTmsComplete)
-		pFnIsTmsComplete = (UFunction*)UObject::GObjObjects()->Data[41166];
+		pFnIsTmsComplete = (UFunction*)UObject::GObjects()->Data[41166];
 
 	USparkInterface_execIsTmsComplete_Parms IsTmsComplete_Parms;
 
@@ -24596,7 +24596,7 @@ void USparkInterface::SetTmsComplete()
 	static UFunction* pFnSetTmsComplete = NULL;
 
 	if (!pFnSetTmsComplete)
-		pFnSetTmsComplete = (UFunction*)UObject::GObjObjects()->Data[41168];
+		pFnSetTmsComplete = (UFunction*)UObject::GObjects()->Data[41168];
 
 	USparkInterface_execSetTmsComplete_Parms SetTmsComplete_Parms;
 
@@ -24613,7 +24613,7 @@ class USparkInitializationProcess* USparkInterface::GetSparkInitialization()
 	static UFunction* pFnGetSparkInitialization = NULL;
 
 	if (!pFnGetSparkInitialization)
-		pFnGetSparkInitialization = (UFunction*)UObject::GObjObjects()->Data[41170];
+		pFnGetSparkInitialization = (UFunction*)UObject::GObjects()->Data[41170];
 
 	USparkInterface_execGetSparkInitialization_Parms GetSparkInitialization_Parms;
 
@@ -24632,7 +24632,7 @@ void USparkInterface::eventRestartSparkInitialization(unsigned long bPrimary)
 	static UFunction* pFnRestartSparkInitialization = NULL;
 
 	if (!pFnRestartSparkInitialization)
-		pFnRestartSparkInitialization = (UFunction*)UObject::GObjObjects()->Data[41171];
+		pFnRestartSparkInitialization = (UFunction*)UObject::GObjects()->Data[41171];
 
 	USparkInterface_eventRestartSparkInitialization_Parms RestartSparkInitialization_Parms;
 	RestartSparkInitialization_Parms.bPrimary = bPrimary;
@@ -24652,7 +24652,7 @@ void USparkInterface::RestartSparkInitializationFromScript(unsigned long bPrimar
 	static UFunction* pFnRestartSparkInitializationFromScript = NULL;
 
 	if (!pFnRestartSparkInitializationFromScript)
-		pFnRestartSparkInitializationFromScript = (UFunction*)UObject::GObjObjects()->Data[41173];
+		pFnRestartSparkInitializationFromScript = (UFunction*)UObject::GObjects()->Data[41173];
 
 	USparkInterface_execRestartSparkInitializationFromScript_Parms RestartSparkInitializationFromScript_Parms;
 	RestartSparkInitializationFromScript_Parms.bPrimary = bPrimary;
@@ -24675,7 +24675,7 @@ void USparkInterface::StartSparkInitialization(unsigned char ControllerId, struc
 	static UFunction* pFnStartSparkInitialization = NULL;
 
 	if (!pFnStartSparkInitialization)
-		pFnStartSparkInitialization = (UFunction*)UObject::GObjObjects()->Data[41175];
+		pFnStartSparkInitialization = (UFunction*)UObject::GObjects()->Data[41175];
 
 	USparkInterface_execStartSparkInitialization_Parms StartSparkInitialization_Parms;
 	StartSparkInitialization_Parms.ControllerId = ControllerId;
@@ -24698,7 +24698,7 @@ void USparkInterface::StartSecondaryInitialization(unsigned char ControllerId, s
 	static UFunction* pFnStartSecondaryInitialization = NULL;
 
 	if (!pFnStartSecondaryInitialization)
-		pFnStartSecondaryInitialization = (UFunction*)UObject::GObjObjects()->Data[41179];
+		pFnStartSecondaryInitialization = (UFunction*)UObject::GObjects()->Data[41179];
 
 	USparkInterface_execStartSecondaryInitialization_Parms StartSecondaryInitialization_Parms;
 	StartSecondaryInitialization_Parms.ControllerId = ControllerId;
@@ -24718,7 +24718,7 @@ struct FString USparkInterface::GetGameName()
 	static UFunction* pFnGetGameName = NULL;
 
 	if (!pFnGetGameName)
-		pFnGetGameName = (UFunction*)UObject::GObjObjects()->Data[41184];
+		pFnGetGameName = (UFunction*)UObject::GObjects()->Data[41184];
 
 	USparkInterface_execGetGameName_Parms GetGameName_Parms;
 
@@ -24741,7 +24741,7 @@ struct FString USparkInterface::GetHardwareName()
 	static UFunction* pFnGetHardwareName = NULL;
 
 	if (!pFnGetHardwareName)
-		pFnGetHardwareName = (UFunction*)UObject::GObjObjects()->Data[41188];
+		pFnGetHardwareName = (UFunction*)UObject::GObjects()->Data[41188];
 
 	USparkInterface_execGetHardwareName_Parms GetHardwareName_Parms;
 
@@ -24764,7 +24764,7 @@ struct FString USparkInterface::GetPlatformName()
 	static UFunction* pFnGetPlatformName = NULL;
 
 	if (!pFnGetPlatformName)
-		pFnGetPlatformName = (UFunction*)UObject::GObjObjects()->Data[41190];
+		pFnGetPlatformName = (UFunction*)UObject::GObjects()->Data[41190];
 
 	USparkInterface_execGetPlatformName_Parms GetPlatformName_Parms;
 
@@ -24789,7 +24789,7 @@ struct FString USparkInterface::GetPlatformTicket(int ControllerId, unsigned lon
 	static UFunction* pFnGetPlatformTicket = NULL;
 
 	if (!pFnGetPlatformTicket)
-		pFnGetPlatformTicket = (UFunction*)UObject::GObjObjects()->Data[41192];
+		pFnGetPlatformTicket = (UFunction*)UObject::GObjects()->Data[41192];
 
 	USparkInterface_execGetPlatformTicket_Parms GetPlatformTicket_Parms;
 	GetPlatformTicket_Parms.ControllerId = ControllerId;
@@ -24814,7 +24814,7 @@ void USparkInterface::ClearSparkConfigReceivedDelegate(struct FScriptDelegate Sp
 	static UFunction* pFnClearSparkConfigReceivedDelegate = NULL;
 
 	if (!pFnClearSparkConfigReceivedDelegate)
-		pFnClearSparkConfigReceivedDelegate = (UFunction*)UObject::GObjObjects()->Data[41194];
+		pFnClearSparkConfigReceivedDelegate = (UFunction*)UObject::GObjects()->Data[41194];
 
 	USparkInterface_execClearSparkConfigReceivedDelegate_Parms ClearSparkConfigReceivedDelegate_Parms;
 	memcpy(&ClearSparkConfigReceivedDelegate_Parms.SparkConfigReceivedDelegate, &SparkConfigReceivedDelegate, 0xC);
@@ -24832,7 +24832,7 @@ void USparkInterface::AddSparkConfigReceivedDelegate(struct FScriptDelegate Spar
 	static UFunction* pFnAddSparkConfigReceivedDelegate = NULL;
 
 	if (!pFnAddSparkConfigReceivedDelegate)
-		pFnAddSparkConfigReceivedDelegate = (UFunction*)UObject::GObjObjects()->Data[41198];
+		pFnAddSparkConfigReceivedDelegate = (UFunction*)UObject::GObjects()->Data[41198];
 
 	USparkInterface_execAddSparkConfigReceivedDelegate_Parms AddSparkConfigReceivedDelegate_Parms;
 	memcpy(&AddSparkConfigReceivedDelegate_Parms.SparkConfigReceivedDelegate, &SparkConfigReceivedDelegate, 0xC);
@@ -24849,7 +24849,7 @@ void USparkInterface::ResetInitializationStatus()
 	static UFunction* pFnResetInitializationStatus = NULL;
 
 	if (!pFnResetInitializationStatus)
-		pFnResetInitializationStatus = (UFunction*)UObject::GObjObjects()->Data[41200];
+		pFnResetInitializationStatus = (UFunction*)UObject::GObjects()->Data[41200];
 
 	USparkInterface_execResetInitializationStatus_Parms ResetInitializationStatus_Parms;
 
@@ -24866,7 +24866,7 @@ bool USparkInterface::eventIsSparkEnabled()
 	static UFunction* pFnIsSparkEnabled = NULL;
 
 	if (!pFnIsSparkEnabled)
-		pFnIsSparkEnabled = (UFunction*)UObject::GObjObjects()->Data[41202];
+		pFnIsSparkEnabled = (UFunction*)UObject::GObjects()->Data[41202];
 
 	USparkInterface_eventIsSparkEnabled_Parms IsSparkEnabled_Parms;
 
@@ -24889,7 +24889,7 @@ int USparkInterface::IssueSparkStringRequest(struct FString URL, struct FString 
 	static UFunction* pFnIssueSparkStringRequest = NULL;
 
 	if (!pFnIssueSparkStringRequest)
-		pFnIssueSparkStringRequest = (UFunction*)UObject::GObjObjects()->Data[41203];
+		pFnIssueSparkStringRequest = (UFunction*)UObject::GObjects()->Data[41203];
 
 	USparkInterface_execIssueSparkStringRequest_Parms IssueSparkStringRequest_Parms;
 	memcpy(&IssueSparkStringRequest_Parms.URL, &URL, 0xC);
@@ -24918,7 +24918,7 @@ int USparkInterface::IssueSparkRequest(struct FString URL, struct FScriptDelegat
 	static UFunction* pFnIssueSparkRequest = NULL;
 
 	if (!pFnIssueSparkRequest)
-		pFnIssueSparkRequest = (UFunction*)UObject::GObjObjects()->Data[41205];
+		pFnIssueSparkRequest = (UFunction*)UObject::GObjects()->Data[41205];
 
 	USparkInterface_execIssueSparkRequest_Parms IssueSparkRequest_Parms;
 	memcpy(&IssueSparkRequest_Parms.URL, &URL, 0xC);
@@ -24945,7 +24945,7 @@ class USparkNews* USparkInterfaceImpl::GetNewsService()
 	static UFunction* pFnGetNewsService = NULL;
 
 	if (!pFnGetNewsService)
-		pFnGetNewsService = (UFunction*)UObject::GObjObjects()->Data[44976];
+		pFnGetNewsService = (UFunction*)UObject::GObjects()->Data[44976];
 
 	USparkInterfaceImpl_execGetNewsService_Parms GetNewsService_Parms;
 
@@ -24964,7 +24964,7 @@ class USparkServiceConfiguration* USparkInterfaceImpl::GetTitleStorageServiceCon
 	static UFunction* pFnGetTitleStorageServiceConfiguration = NULL;
 
 	if (!pFnGetTitleStorageServiceConfiguration)
-		pFnGetTitleStorageServiceConfiguration = (UFunction*)UObject::GObjObjects()->Data[44974];
+		pFnGetTitleStorageServiceConfiguration = (UFunction*)UObject::GObjects()->Data[44974];
 
 	USparkInterfaceImpl_execGetTitleStorageServiceConfiguration_Parms GetTitleStorageServiceConfiguration_Parms;
 
@@ -24987,7 +24987,7 @@ struct FString USparkInterfaceImpl::GetTitleStorageUrl()
 	static UFunction* pFnGetTitleStorageUrl = NULL;
 
 	if (!pFnGetTitleStorageUrl)
-		pFnGetTitleStorageUrl = (UFunction*)UObject::GObjObjects()->Data[44972];
+		pFnGetTitleStorageUrl = (UFunction*)UObject::GObjects()->Data[44972];
 
 	USparkInterfaceImpl_execGetTitleStorageUrl_Parms GetTitleStorageUrl_Parms;
 
@@ -25010,7 +25010,7 @@ void USparkInterfaceImpl::OnSparkInitialized(unsigned char InitializedResult)
 	static UFunction* pFnOnSparkInitialized = NULL;
 
 	if (!pFnOnSparkInitialized)
-		pFnOnSparkInitialized = (UFunction*)UObject::GObjObjects()->Data[44967];
+		pFnOnSparkInitialized = (UFunction*)UObject::GObjects()->Data[44967];
 
 	USparkInterfaceImpl_execOnSparkInitialized_Parms OnSparkInitialized_Parms;
 	OnSparkInitialized_Parms.InitializedResult = InitializedResult;
@@ -25027,7 +25027,7 @@ void USparkInterfaceImpl::IncreaseInteractionTries()
 	static UFunction* pFnIncreaseInteractionTries = NULL;
 
 	if (!pFnIncreaseInteractionTries)
-		pFnIncreaseInteractionTries = (UFunction*)UObject::GObjObjects()->Data[44966];
+		pFnIncreaseInteractionTries = (UFunction*)UObject::GObjects()->Data[44966];
 
 	USparkInterfaceImpl_execIncreaseInteractionTries_Parms IncreaseInteractionTries_Parms;
 
@@ -25044,7 +25044,7 @@ int USparkInterfaceImpl::GetInteractionTries()
 	static UFunction* pFnGetInteractionTries = NULL;
 
 	if (!pFnGetInteractionTries)
-		pFnGetInteractionTries = (UFunction*)UObject::GObjObjects()->Data[44963];
+		pFnGetInteractionTries = (UFunction*)UObject::GObjects()->Data[44963];
 
 	USparkInterfaceImpl_execGetInteractionTries_Parms GetInteractionTries_Parms;
 
@@ -25063,7 +25063,7 @@ int USparkInterfaceImpl::GetInteractionGraceTries()
 	static UFunction* pFnGetInteractionGraceTries = NULL;
 
 	if (!pFnGetInteractionGraceTries)
-		pFnGetInteractionGraceTries = (UFunction*)UObject::GObjObjects()->Data[44960];
+		pFnGetInteractionGraceTries = (UFunction*)UObject::GObjects()->Data[44960];
 
 	USparkInterfaceImpl_execGetInteractionGraceTries_Parms GetInteractionGraceTries_Parms;
 
@@ -25082,7 +25082,7 @@ int USparkInterfaceImpl::GetInteractionPunishmentMinWaitSeconds()
 	static UFunction* pFnGetInteractionPunishmentMinWaitSeconds = NULL;
 
 	if (!pFnGetInteractionPunishmentMinWaitSeconds)
-		pFnGetInteractionPunishmentMinWaitSeconds = (UFunction*)UObject::GObjObjects()->Data[44957];
+		pFnGetInteractionPunishmentMinWaitSeconds = (UFunction*)UObject::GObjects()->Data[44957];
 
 	USparkInterfaceImpl_execGetInteractionPunishmentMinWaitSeconds_Parms GetInteractionPunishmentMinWaitSeconds_Parms;
 
@@ -25101,7 +25101,7 @@ int USparkInterfaceImpl::GetInteractionMinWaitSeconds()
 	static UFunction* pFnGetInteractionMinWaitSeconds = NULL;
 
 	if (!pFnGetInteractionMinWaitSeconds)
-		pFnGetInteractionMinWaitSeconds = (UFunction*)UObject::GObjObjects()->Data[44954];
+		pFnGetInteractionMinWaitSeconds = (UFunction*)UObject::GObjects()->Data[44954];
 
 	USparkInterfaceImpl_execGetInteractionMinWaitSeconds_Parms GetInteractionMinWaitSeconds_Parms;
 
@@ -25121,7 +25121,7 @@ struct FString USparkInterfaceImpl::ConvertUtcTimeToLocalTime(struct FString Utc
 	static UFunction* pFnConvertUtcTimeToLocalTime = NULL;
 
 	if (!pFnConvertUtcTimeToLocalTime)
-		pFnConvertUtcTimeToLocalTime = (UFunction*)UObject::GObjObjects()->Data[44951];
+		pFnConvertUtcTimeToLocalTime = (UFunction*)UObject::GObjects()->Data[44951];
 
 	USparkInterfaceImpl_execConvertUtcTimeToLocalTime_Parms ConvertUtcTimeToLocalTime_Parms;
 	memcpy(&ConvertUtcTimeToLocalTime_Parms.UtcTime, &UtcTime, 0xC);
@@ -25145,7 +25145,7 @@ bool USparkInterfaceImpl::ShouldUpdateEmergencyMessage()
 	static UFunction* pFnShouldUpdateEmergencyMessage = NULL;
 
 	if (!pFnShouldUpdateEmergencyMessage)
-		pFnShouldUpdateEmergencyMessage = (UFunction*)UObject::GObjObjects()->Data[44949];
+		pFnShouldUpdateEmergencyMessage = (UFunction*)UObject::GObjects()->Data[44949];
 
 	USparkInterfaceImpl_execShouldUpdateEmergencyMessage_Parms ShouldUpdateEmergencyMessage_Parms;
 
@@ -25164,7 +25164,7 @@ struct FString USparkInterfaceImpl::GetEmergencyMessage()
 	static UFunction* pFnGetEmergencyMessage = NULL;
 
 	if (!pFnGetEmergencyMessage)
-		pFnGetEmergencyMessage = (UFunction*)UObject::GObjObjects()->Data[44947];
+		pFnGetEmergencyMessage = (UFunction*)UObject::GObjects()->Data[44947];
 
 	USparkInterfaceImpl_execGetEmergencyMessage_Parms GetEmergencyMessage_Parms;
 
@@ -25183,7 +25183,7 @@ void USparkInterfaceImpl::SetEmergencyMessage(struct FString NewMessage)
 	static UFunction* pFnSetEmergencyMessage = NULL;
 
 	if (!pFnSetEmergencyMessage)
-		pFnSetEmergencyMessage = (UFunction*)UObject::GObjObjects()->Data[44943];
+		pFnSetEmergencyMessage = (UFunction*)UObject::GObjects()->Data[44943];
 
 	USparkInterfaceImpl_execSetEmergencyMessage_Parms SetEmergencyMessage_Parms;
 	memcpy(&SetEmergencyMessage_Parms.NewMessage, &NewMessage, 0xC);
@@ -25201,7 +25201,7 @@ bool USparkInterfaceImpl::IsTmsComplete()
 	static UFunction* pFnIsTmsComplete = NULL;
 
 	if (!pFnIsTmsComplete)
-		pFnIsTmsComplete = (UFunction*)UObject::GObjObjects()->Data[44941];
+		pFnIsTmsComplete = (UFunction*)UObject::GObjects()->Data[44941];
 
 	USparkInterfaceImpl_execIsTmsComplete_Parms IsTmsComplete_Parms;
 
@@ -25223,7 +25223,7 @@ void USparkInterfaceImpl::SetTmsComplete()
 	static UFunction* pFnSetTmsComplete = NULL;
 
 	if (!pFnSetTmsComplete)
-		pFnSetTmsComplete = (UFunction*)UObject::GObjObjects()->Data[44939];
+		pFnSetTmsComplete = (UFunction*)UObject::GObjects()->Data[44939];
 
 	USparkInterfaceImpl_execSetTmsComplete_Parms SetTmsComplete_Parms;
 
@@ -25242,7 +25242,7 @@ void USparkInterfaceImpl::RestartSparkInitializationFromScript(unsigned long bPr
 	static UFunction* pFnRestartSparkInitializationFromScript = NULL;
 
 	if (!pFnRestartSparkInitializationFromScript)
-		pFnRestartSparkInitializationFromScript = (UFunction*)UObject::GObjObjects()->Data[44935];
+		pFnRestartSparkInitializationFromScript = (UFunction*)UObject::GObjects()->Data[44935];
 
 	USparkInterfaceImpl_execRestartSparkInitializationFromScript_Parms RestartSparkInitializationFromScript_Parms;
 	RestartSparkInitializationFromScript_Parms.bPrimary = bPrimary;
@@ -25262,7 +25262,7 @@ void USparkInterfaceImpl::eventRestartSparkInitialization(unsigned long bPrimary
 	static UFunction* pFnRestartSparkInitialization = NULL;
 
 	if (!pFnRestartSparkInitialization)
-		pFnRestartSparkInitialization = (UFunction*)UObject::GObjObjects()->Data[44933];
+		pFnRestartSparkInitialization = (UFunction*)UObject::GObjects()->Data[44933];
 
 	USparkInterfaceImpl_eventRestartSparkInitialization_Parms RestartSparkInitialization_Parms;
 	RestartSparkInitialization_Parms.bPrimary = bPrimary;
@@ -25283,7 +25283,7 @@ void USparkInterfaceImpl::StartSparkInitialization(unsigned char ControllerId, s
 	static UFunction* pFnStartSparkInitialization = NULL;
 
 	if (!pFnStartSparkInitialization)
-		pFnStartSparkInitialization = (UFunction*)UObject::GObjObjects()->Data[44924];
+		pFnStartSparkInitialization = (UFunction*)UObject::GObjects()->Data[44924];
 
 	USparkInterfaceImpl_execStartSparkInitialization_Parms StartSparkInitialization_Parms;
 	StartSparkInitialization_Parms.ControllerId = ControllerId;
@@ -25303,7 +25303,7 @@ void USparkInterfaceImpl::ResetInitializationStatus()
 	static UFunction* pFnResetInitializationStatus = NULL;
 
 	if (!pFnResetInitializationStatus)
-		pFnResetInitializationStatus = (UFunction*)UObject::GObjObjects()->Data[44923];
+		pFnResetInitializationStatus = (UFunction*)UObject::GObjects()->Data[44923];
 
 	USparkInterfaceImpl_execResetInitializationStatus_Parms ResetInitializationStatus_Parms;
 
@@ -25319,7 +25319,7 @@ void USparkInterfaceImpl::ResetSecondaryInitializationStatus()
 	static UFunction* pFnResetSecondaryInitializationStatus = NULL;
 
 	if (!pFnResetSecondaryInitializationStatus)
-		pFnResetSecondaryInitializationStatus = (UFunction*)UObject::GObjObjects()->Data[44922];
+		pFnResetSecondaryInitializationStatus = (UFunction*)UObject::GObjects()->Data[44922];
 
 	USparkInterfaceImpl_execResetSecondaryInitializationStatus_Parms ResetSecondaryInitializationStatus_Parms;
 
@@ -25338,7 +25338,7 @@ void USparkInterfaceImpl::StartSecondaryInitialization(unsigned char ControllerI
 	static UFunction* pFnStartSecondaryInitialization = NULL;
 
 	if (!pFnStartSecondaryInitialization)
-		pFnStartSecondaryInitialization = (UFunction*)UObject::GObjObjects()->Data[44915];
+		pFnStartSecondaryInitialization = (UFunction*)UObject::GObjects()->Data[44915];
 
 	USparkInterfaceImpl_execStartSecondaryInitialization_Parms StartSecondaryInitialization_Parms;
 	StartSecondaryInitialization_Parms.ControllerId = ControllerId;
@@ -25358,7 +25358,7 @@ class USparkInitializationProcess* USparkInterfaceImpl::GetSparkInitialization()
 	static UFunction* pFnGetSparkInitialization = NULL;
 
 	if (!pFnGetSparkInitialization)
-		pFnGetSparkInitialization = (UFunction*)UObject::GObjObjects()->Data[44912];
+		pFnGetSparkInitialization = (UFunction*)UObject::GObjects()->Data[44912];
 
 	USparkInterfaceImpl_execGetSparkInitialization_Parms GetSparkInitialization_Parms;
 
@@ -25377,7 +25377,7 @@ void USparkInterfaceImpl::SignInGearboxAccount(unsigned char ControllerId)
 	static UFunction* pFnSignInGearboxAccount = NULL;
 
 	if (!pFnSignInGearboxAccount)
-		pFnSignInGearboxAccount = (UFunction*)UObject::GObjObjects()->Data[44910];
+		pFnSignInGearboxAccount = (UFunction*)UObject::GObjects()->Data[44910];
 
 	USparkInterfaceImpl_execSignInGearboxAccount_Parms SignInGearboxAccount_Parms;
 	SignInGearboxAccount_Parms.ControllerId = ControllerId;
@@ -25396,7 +25396,7 @@ class UGearboxAccountData* USparkInterfaceImpl::eventGetGearboxAccountData(unsig
 	static UFunction* pFnGetGearboxAccountData = NULL;
 
 	if (!pFnGetGearboxAccountData)
-		pFnGetGearboxAccountData = (UFunction*)UObject::GObjObjects()->Data[44907];
+		pFnGetGearboxAccountData = (UFunction*)UObject::GObjects()->Data[44907];
 
 	USparkInterfaceImpl_eventGetGearboxAccountData_Parms GetGearboxAccountData_Parms;
 	GetGearboxAccountData_Parms.ControllerId = ControllerId;
@@ -25416,7 +25416,7 @@ void USparkInterfaceImpl::SignOutGearboxAccount(unsigned char ControllerId)
 	static UFunction* pFnSignOutGearboxAccount = NULL;
 
 	if (!pFnSignOutGearboxAccount)
-		pFnSignOutGearboxAccount = (UFunction*)UObject::GObjObjects()->Data[44905];
+		pFnSignOutGearboxAccount = (UFunction*)UObject::GObjects()->Data[44905];
 
 	USparkInterfaceImpl_execSignOutGearboxAccount_Parms SignOutGearboxAccount_Parms;
 	SignOutGearboxAccount_Parms.ControllerId = ControllerId;
@@ -25435,7 +25435,7 @@ bool USparkInterfaceImpl::ValidPlayerIndex(int PlayerIndex)
 	static UFunction* pFnValidPlayerIndex = NULL;
 
 	if (!pFnValidPlayerIndex)
-		pFnValidPlayerIndex = (UFunction*)UObject::GObjObjects()->Data[44902];
+		pFnValidPlayerIndex = (UFunction*)UObject::GObjects()->Data[44902];
 
 	USparkInterfaceImpl_execValidPlayerIndex_Parms ValidPlayerIndex_Parms;
 	ValidPlayerIndex_Parms.PlayerIndex = PlayerIndex;
@@ -25456,7 +25456,7 @@ int USparkInterfaceImpl::GetPlayerIndex(int ControllerId)
 	static UFunction* pFnGetPlayerIndex = NULL;
 
 	if (!pFnGetPlayerIndex)
-		pFnGetPlayerIndex = (UFunction*)UObject::GObjObjects()->Data[44899];
+		pFnGetPlayerIndex = (UFunction*)UObject::GObjects()->Data[44899];
 
 	USparkInterfaceImpl_execGetPlayerIndex_Parms GetPlayerIndex_Parms;
 	GetPlayerIndex_Parms.ControllerId = ControllerId;
@@ -25476,7 +25476,7 @@ void USparkInterfaceImpl::ClearGearboxAccountData(unsigned long IncludePrimaryPl
 	static UFunction* pFnClearGearboxAccountData = NULL;
 
 	if (!pFnClearGearboxAccountData)
-		pFnClearGearboxAccountData = (UFunction*)UObject::GObjObjects()->Data[44896];
+		pFnClearGearboxAccountData = (UFunction*)UObject::GObjects()->Data[44896];
 
 	USparkInterfaceImpl_execClearGearboxAccountData_Parms ClearGearboxAccountData_Parms;
 	ClearGearboxAccountData_Parms.IncludePrimaryPlayer = IncludePrimaryPlayer;
@@ -25495,7 +25495,7 @@ bool USparkInterfaceImpl::IsGearboxAccountSignedIn(unsigned char ControllerId)
 	static UFunction* pFnIsGearboxAccountSignedIn = NULL;
 
 	if (!pFnIsGearboxAccountSignedIn)
-		pFnIsGearboxAccountSignedIn = (UFunction*)UObject::GObjObjects()->Data[44893];
+		pFnIsGearboxAccountSignedIn = (UFunction*)UObject::GObjects()->Data[44893];
 
 	USparkInterfaceImpl_execIsGearboxAccountSignedIn_Parms IsGearboxAccountSignedIn_Parms;
 	IsGearboxAccountSignedIn_Parms.ControllerId = ControllerId;
@@ -25516,7 +25516,7 @@ bool USparkInterfaceImpl::eventIsGearboxAccountAuthenticated(unsigned char Contr
 	static UFunction* pFnIsGearboxAccountAuthenticated = NULL;
 
 	if (!pFnIsGearboxAccountAuthenticated)
-		pFnIsGearboxAccountAuthenticated = (UFunction*)UObject::GObjObjects()->Data[44890];
+		pFnIsGearboxAccountAuthenticated = (UFunction*)UObject::GObjects()->Data[44890];
 
 	USparkInterfaceImpl_eventIsGearboxAccountAuthenticated_Parms IsGearboxAccountAuthenticated_Parms;
 	IsGearboxAccountAuthenticated_Parms.ControllerId = ControllerId;
@@ -25536,7 +25536,7 @@ struct FString USparkInterfaceImpl::GetGameName()
 	static UFunction* pFnGetGameName = NULL;
 
 	if (!pFnGetGameName)
-		pFnGetGameName = (UFunction*)UObject::GObjObjects()->Data[44888];
+		pFnGetGameName = (UFunction*)UObject::GObjects()->Data[44888];
 
 	USparkInterfaceImpl_execGetGameName_Parms GetGameName_Parms;
 
@@ -25559,7 +25559,7 @@ struct FString USparkInterfaceImpl::GetHardwareName()
 	static UFunction* pFnGetHardwareName = NULL;
 
 	if (!pFnGetHardwareName)
-		pFnGetHardwareName = (UFunction*)UObject::GObjObjects()->Data[44886];
+		pFnGetHardwareName = (UFunction*)UObject::GObjects()->Data[44886];
 
 	USparkInterfaceImpl_execGetHardwareName_Parms GetHardwareName_Parms;
 
@@ -25582,7 +25582,7 @@ struct FString USparkInterfaceImpl::GetPlatformName()
 	static UFunction* pFnGetPlatformName = NULL;
 
 	if (!pFnGetPlatformName)
-		pFnGetPlatformName = (UFunction*)UObject::GObjObjects()->Data[44884];
+		pFnGetPlatformName = (UFunction*)UObject::GObjects()->Data[44884];
 
 	USparkInterfaceImpl_execGetPlatformName_Parms GetPlatformName_Parms;
 
@@ -25607,7 +25607,7 @@ struct FString USparkInterfaceImpl::GetPlatformTicket(int ControllerId, unsigned
 	static UFunction* pFnGetPlatformTicket = NULL;
 
 	if (!pFnGetPlatformTicket)
-		pFnGetPlatformTicket = (UFunction*)UObject::GObjObjects()->Data[44880];
+		pFnGetPlatformTicket = (UFunction*)UObject::GObjects()->Data[44880];
 
 	USparkInterfaceImpl_execGetPlatformTicket_Parms GetPlatformTicket_Parms;
 	GetPlatformTicket_Parms.ControllerId = ControllerId;
@@ -25632,7 +25632,7 @@ void USparkInterfaceImpl::ClearSparkConfigReceivedDelegate(struct FScriptDelegat
 	static UFunction* pFnClearSparkConfigReceivedDelegate = NULL;
 
 	if (!pFnClearSparkConfigReceivedDelegate)
-		pFnClearSparkConfigReceivedDelegate = (UFunction*)UObject::GObjObjects()->Data[44878];
+		pFnClearSparkConfigReceivedDelegate = (UFunction*)UObject::GObjects()->Data[44878];
 
 	USparkInterfaceImpl_execClearSparkConfigReceivedDelegate_Parms ClearSparkConfigReceivedDelegate_Parms;
 	memcpy(&ClearSparkConfigReceivedDelegate_Parms.SparkConfigReceivedDelegate, &SparkConfigReceivedDelegate, 0xC);
@@ -25650,7 +25650,7 @@ void USparkInterfaceImpl::AddSparkConfigReceivedDelegate(struct FScriptDelegate 
 	static UFunction* pFnAddSparkConfigReceivedDelegate = NULL;
 
 	if (!pFnAddSparkConfigReceivedDelegate)
-		pFnAddSparkConfigReceivedDelegate = (UFunction*)UObject::GObjObjects()->Data[44876];
+		pFnAddSparkConfigReceivedDelegate = (UFunction*)UObject::GObjects()->Data[44876];
 
 	USparkInterfaceImpl_execAddSparkConfigReceivedDelegate_Parms AddSparkConfigReceivedDelegate_Parms;
 	memcpy(&AddSparkConfigReceivedDelegate_Parms.SparkConfigReceivedDelegate, &SparkConfigReceivedDelegate, 0xC);
@@ -25669,7 +25669,7 @@ struct FString USparkInterfaceImpl::GetPlatformLoginNameFromController(unsigned 
 	static UFunction* pFnGetPlatformLoginNameFromController = NULL;
 
 	if (!pFnGetPlatformLoginNameFromController)
-		pFnGetPlatformLoginNameFromController = (UFunction*)UObject::GObjObjects()->Data[44867];
+		pFnGetPlatformLoginNameFromController = (UFunction*)UObject::GObjects()->Data[44867];
 
 	USparkInterfaceImpl_execGetPlatformLoginNameFromController_Parms GetPlatformLoginNameFromController_Parms;
 	GetPlatformLoginNameFromController_Parms.ControllerId = ControllerId;
@@ -25690,7 +25690,7 @@ struct FString USparkInterfaceImpl::eventGetPlatformLoginNameFromSplitscreenInde
 	static UFunction* pFnGetPlatformLoginNameFromSplitscreenIndex = NULL;
 
 	if (!pFnGetPlatformLoginNameFromSplitscreenIndex)
-		pFnGetPlatformLoginNameFromSplitscreenIndex = (UFunction*)UObject::GObjObjects()->Data[44864];
+		pFnGetPlatformLoginNameFromSplitscreenIndex = (UFunction*)UObject::GObjects()->Data[44864];
 
 	USparkInterfaceImpl_eventGetPlatformLoginNameFromSplitscreenIndex_Parms GetPlatformLoginNameFromSplitscreenIndex_Parms;
 	GetPlatformLoginNameFromSplitscreenIndex_Parms.SplitscreenIndex = SplitscreenIndex;
@@ -25710,7 +25710,7 @@ struct FString USparkInterfaceImpl::eventGetPlatformLoginName()
 	static UFunction* pFnGetPlatformLoginName = NULL;
 
 	if (!pFnGetPlatformLoginName)
-		pFnGetPlatformLoginName = (UFunction*)UObject::GObjObjects()->Data[44862];
+		pFnGetPlatformLoginName = (UFunction*)UObject::GObjects()->Data[44862];
 
 	USparkInterfaceImpl_eventGetPlatformLoginName_Parms GetPlatformLoginName_Parms;
 
@@ -25729,7 +25729,7 @@ unsigned char USparkInterfaceImpl::eventGetLoginStatus()
 	static UFunction* pFnGetLoginStatus = NULL;
 
 	if (!pFnGetLoginStatus)
-		pFnGetLoginStatus = (UFunction*)UObject::GObjObjects()->Data[44860];
+		pFnGetLoginStatus = (UFunction*)UObject::GObjects()->Data[44860];
 
 	USparkInterfaceImpl_eventGetLoginStatus_Parms GetLoginStatus_Parms;
 
@@ -25748,7 +25748,7 @@ bool USparkInterfaceImpl::eventIsShiftEnabled()
 	static UFunction* pFnIsShiftEnabled = NULL;
 
 	if (!pFnIsShiftEnabled)
-		pFnIsShiftEnabled = (UFunction*)UObject::GObjObjects()->Data[44858];
+		pFnIsShiftEnabled = (UFunction*)UObject::GObjects()->Data[44858];
 
 	USparkInterfaceImpl_eventIsShiftEnabled_Parms IsShiftEnabled_Parms;
 
@@ -25767,7 +25767,7 @@ bool USparkInterfaceImpl::eventIsSparkEnabled()
 	static UFunction* pFnIsSparkEnabled = NULL;
 
 	if (!pFnIsSparkEnabled)
-		pFnIsSparkEnabled = (UFunction*)UObject::GObjObjects()->Data[44856];
+		pFnIsSparkEnabled = (UFunction*)UObject::GObjects()->Data[44856];
 
 	USparkInterfaceImpl_eventIsSparkEnabled_Parms IsSparkEnabled_Parms;
 
@@ -25786,7 +25786,7 @@ bool USparkInterfaceImpl::WithShift()
 	static UFunction* pFnWithShift = NULL;
 
 	if (!pFnWithShift)
-		pFnWithShift = (UFunction*)UObject::GObjObjects()->Data[44854];
+		pFnWithShift = (UFunction*)UObject::GObjects()->Data[44854];
 
 	USparkInterfaceImpl_execWithShift_Parms WithShift_Parms;
 
@@ -25809,7 +25809,7 @@ bool USparkInterfaceImpl::WithSpark()
 	static UFunction* pFnWithSpark = NULL;
 
 	if (!pFnWithSpark)
-		pFnWithSpark = (UFunction*)UObject::GObjObjects()->Data[44852];
+		pFnWithSpark = (UFunction*)UObject::GObjects()->Data[44852];
 
 	USparkInterfaceImpl_execWithSpark_Parms WithSpark_Parms;
 
@@ -25836,7 +25836,7 @@ int USparkInterfaceImpl::IssueSparkStringRequest(struct FString URL, struct FStr
 	static UFunction* pFnIssueSparkStringRequest = NULL;
 
 	if (!pFnIssueSparkStringRequest)
-		pFnIssueSparkStringRequest = (UFunction*)UObject::GObjObjects()->Data[44846];
+		pFnIssueSparkStringRequest = (UFunction*)UObject::GObjects()->Data[44846];
 
 	USparkInterfaceImpl_execIssueSparkStringRequest_Parms IssueSparkStringRequest_Parms;
 	memcpy(&IssueSparkStringRequest_Parms.URL, &URL, 0xC);
@@ -25869,7 +25869,7 @@ int USparkInterfaceImpl::IssueSparkRequest(struct FString URL, struct FScriptDel
 	static UFunction* pFnIssueSparkRequest = NULL;
 
 	if (!pFnIssueSparkRequest)
-		pFnIssueSparkRequest = (UFunction*)UObject::GObjObjects()->Data[44839];
+		pFnIssueSparkRequest = (UFunction*)UObject::GObjects()->Data[44839];
 
 	USparkInterfaceImpl_execIssueSparkRequest_Parms IssueSparkRequest_Parms;
 	memcpy(&IssueSparkRequest_Parms.URL, &URL, 0xC);
@@ -25901,7 +25901,7 @@ struct FString USparkInterfaceImpl::AlternativeXboxlivePlatformId(struct FUnique
 	static UFunction* pFnAlternativeXboxlivePlatformId = NULL;
 
 	if (!pFnAlternativeXboxlivePlatformId)
-		pFnAlternativeXboxlivePlatformId = (UFunction*)UObject::GObjObjects()->Data[44836];
+		pFnAlternativeXboxlivePlatformId = (UFunction*)UObject::GObjects()->Data[44836];
 
 	USparkInterfaceImpl_execAlternativeXboxlivePlatformId_Parms AlternativeXboxlivePlatformId_Parms;
 
@@ -25926,7 +25926,7 @@ void USparkInterfaceImpl::OnSparkEmergencyMessageUpdated()
 	static UFunction* pFnOnSparkEmergencyMessageUpdated = NULL;
 
 	if (!pFnOnSparkEmergencyMessageUpdated)
-		pFnOnSparkEmergencyMessageUpdated = (UFunction*)UObject::GObjObjects()->Data[44835];
+		pFnOnSparkEmergencyMessageUpdated = (UFunction*)UObject::GObjects()->Data[44835];
 
 	USparkInterfaceImpl_execOnSparkEmergencyMessageUpdated_Parms OnSparkEmergencyMessageUpdated_Parms;
 
@@ -25943,7 +25943,7 @@ void USparkInterfaceImpl::OnSparkConfigReceived(TArray< unsigned char > ConfigAr
 	static UFunction* pFnOnSparkConfigReceived = NULL;
 
 	if (!pFnOnSparkConfigReceived)
-		pFnOnSparkConfigReceived = (UFunction*)UObject::GObjObjects()->Data[44832];
+		pFnOnSparkConfigReceived = (UFunction*)UObject::GObjects()->Data[44832];
 
 	USparkInterfaceImpl_execOnSparkConfigReceived_Parms OnSparkConfigReceived_Parms;
 	memcpy(&OnSparkConfigReceived_Parms.ConfigArray, &ConfigArray, 0xC);
@@ -25961,7 +25961,7 @@ void USparkInterfaceImpl::OnSparkRequestComplete(struct FSparkResult* Result)
 	static UFunction* pFnOnSparkRequestComplete = NULL;
 
 	if (!pFnOnSparkRequestComplete)
-		pFnOnSparkRequestComplete = (UFunction*)UObject::GObjObjects()->Data[44826];
+		pFnOnSparkRequestComplete = (UFunction*)UObject::GObjects()->Data[44826];
 
 	USparkInterfaceImpl_execOnSparkRequestComplete_Parms OnSparkRequestComplete_Parms;
 
@@ -25985,7 +25985,7 @@ float USparkServiceConfiguration::GetFloatParameter(struct FString KeyName, floa
 	static UFunction* pFnGetFloatParameter = NULL;
 
 	if (!pFnGetFloatParameter)
-		pFnGetFloatParameter = (UFunction*)UObject::GObjObjects()->Data[45056];
+		pFnGetFloatParameter = (UFunction*)UObject::GObjects()->Data[45056];
 
 	USparkServiceConfiguration_execGetFloatParameter_Parms GetFloatParameter_Parms;
 	memcpy(&GetFloatParameter_Parms.KeyName, &KeyName, 0xC);
@@ -26016,7 +26016,7 @@ int USparkServiceConfiguration::GetIntParameter(struct FString KeyName, int Defa
 	static UFunction* pFnGetIntParameter = NULL;
 
 	if (!pFnGetIntParameter)
-		pFnGetIntParameter = (UFunction*)UObject::GObjObjects()->Data[44969];
+		pFnGetIntParameter = (UFunction*)UObject::GObjects()->Data[44969];
 
 	USparkServiceConfiguration_execGetIntParameter_Parms GetIntParameter_Parms;
 	memcpy(&GetIntParameter_Parms.KeyName, &KeyName, 0xC);
@@ -26045,7 +26045,7 @@ struct FString USparkServiceConfiguration::GetStringParameter(struct FString Key
 	static UFunction* pFnGetStringParameter = NULL;
 
 	if (!pFnGetStringParameter)
-		pFnGetStringParameter = (UFunction*)UObject::GObjObjects()->Data[45048];
+		pFnGetStringParameter = (UFunction*)UObject::GObjects()->Data[45048];
 
 	USparkServiceConfiguration_execGetStringParameter_Parms GetStringParameter_Parms;
 	memcpy(&GetStringParameter_Parms.KeyName, &KeyName, 0xC);
@@ -26071,7 +26071,7 @@ struct FString USparkServiceConfiguration::GetParameter(struct FString KeyNameTo
 	static UFunction* pFnGetParameter = NULL;
 
 	if (!pFnGetParameter)
-		pFnGetParameter = (UFunction*)UObject::GObjObjects()->Data[41247];
+		pFnGetParameter = (UFunction*)UObject::GObjects()->Data[41247];
 
 	USparkServiceConfiguration_execGetParameter_Parms GetParameter_Parms;
 	memcpy(&GetParameter_Parms.KeyNameToSearchFor, &KeyNameToSearchFor, 0xC);
@@ -26095,7 +26095,7 @@ void USparkServiceConfiguration::LoadService(struct FServiceResult* Service)
 	static UFunction* pFnLoadService = NULL;
 
 	if (!pFnLoadService)
-		pFnLoadService = (UFunction*)UObject::GObjObjects()->Data[45045];
+		pFnLoadService = (UFunction*)UObject::GObjects()->Data[45045];
 
 	USparkServiceConfiguration_execLoadService_Parms LoadService_Parms;
 
@@ -26118,7 +26118,7 @@ void USparkServiceConfiguration::LoadOverrides()
 	static UFunction* pFnLoadOverrides = NULL;
 
 	if (!pFnLoadOverrides)
-		pFnLoadOverrides = (UFunction*)UObject::GObjObjects()->Data[45044];
+		pFnLoadOverrides = (UFunction*)UObject::GObjects()->Data[45044];
 
 	USparkServiceConfiguration_execLoadOverrides_Parms LoadOverrides_Parms;
 
@@ -26140,7 +26140,7 @@ struct FString USparkTypes::UTF8toString(TArray< unsigned char > inputBytes)
 	static UFunction* pFnUTF8toString = NULL;
 
 	if (!pFnUTF8toString)
-		pFnUTF8toString = (UFunction*)UObject::GObjObjects()->Data[41114];
+		pFnUTF8toString = (UFunction*)UObject::GObjects()->Data[41114];
 
 	USparkTypes_execUTF8toString_Parms UTF8toString_Parms;
 	memcpy(&UTF8toString_Parms.inputBytes, &inputBytes, 0xC);
@@ -26164,7 +26164,7 @@ void USparkTypes::OnEntitlementsUpdated(class UGearboxAccountData* GbxAccount)
 	static UFunction* pFnOnEntitlementsUpdated = NULL;
 
 	if (!pFnOnEntitlementsUpdated)
-		pFnOnEntitlementsUpdated = (UFunction*)UObject::GObjObjects()->Data[41102];
+		pFnOnEntitlementsUpdated = (UFunction*)UObject::GObjects()->Data[41102];
 
 	USparkTypes_execOnEntitlementsUpdated_Parms OnEntitlementsUpdated_Parms;
 	OnEntitlementsUpdated_Parms.GbxAccount = GbxAccount;
@@ -26181,7 +26181,7 @@ void USparkTypes::OnSparkEmergencyMessageUpdated()
 	static UFunction* pFnOnSparkEmergencyMessageUpdated = NULL;
 
 	if (!pFnOnSparkEmergencyMessageUpdated)
-		pFnOnSparkEmergencyMessageUpdated = (UFunction*)UObject::GObjObjects()->Data[41104];
+		pFnOnSparkEmergencyMessageUpdated = (UFunction*)UObject::GObjects()->Data[41104];
 
 	USparkTypes_execOnSparkEmergencyMessageUpdated_Parms OnSparkEmergencyMessageUpdated_Parms;
 
@@ -26198,7 +26198,7 @@ void USparkTypes::OnSparkInitialized(unsigned char InitializedResult)
 	static UFunction* pFnOnSparkInitialized = NULL;
 
 	if (!pFnOnSparkInitialized)
-		pFnOnSparkInitialized = (UFunction*)UObject::GObjObjects()->Data[41106];
+		pFnOnSparkInitialized = (UFunction*)UObject::GObjects()->Data[41106];
 
 	USparkTypes_execOnSparkInitialized_Parms OnSparkInitialized_Parms;
 	OnSparkInitialized_Parms.InitializedResult = InitializedResult;
@@ -26216,7 +26216,7 @@ void USparkTypes::OnSparkConfigReceived(TArray< unsigned char > ConfigArray)
 	static UFunction* pFnOnSparkConfigReceived = NULL;
 
 	if (!pFnOnSparkConfigReceived)
-		pFnOnSparkConfigReceived = (UFunction*)UObject::GObjObjects()->Data[41108];
+		pFnOnSparkConfigReceived = (UFunction*)UObject::GObjects()->Data[41108];
 
 	USparkTypes_execOnSparkConfigReceived_Parms OnSparkConfigReceived_Parms;
 	memcpy(&OnSparkConfigReceived_Parms.ConfigArray, &ConfigArray, 0xC);
@@ -26234,7 +26234,7 @@ void USparkTypes::OnSparkRequestComplete(struct FSparkResult* Result)
 	static UFunction* pFnOnSparkRequestComplete = NULL;
 
 	if (!pFnOnSparkRequestComplete)
-		pFnOnSparkRequestComplete = (UFunction*)UObject::GObjObjects()->Data[41099];
+		pFnOnSparkRequestComplete = (UFunction*)UObject::GObjects()->Data[41099];
 
 	USparkTypes_execOnSparkRequestComplete_Parms OnSparkRequestComplete_Parms;
 
@@ -26253,7 +26253,7 @@ void UAction_FaceThreat::eventStopSequence()
 	static UFunction* pFnStopSequence = NULL;
 
 	if (!pFnStopSequence)
-		pFnStopSequence = (UFunction*)UObject::GObjObjects()->Data[38936];
+		pFnStopSequence = (UFunction*)UObject::GObjects()->Data[38936];
 
 	UAction_FaceThreat_eventStopSequence_Parms StopSequence_Parms;
 
@@ -26272,7 +26272,7 @@ class UObject* UActorAttributeContextResolver::GetAttributeContext(class UAttrib
 	static UFunction* pFnGetAttributeContext = NULL;
 
 	if (!pFnGetAttributeContext)
-		pFnGetAttributeContext = (UFunction*)UObject::GObjObjects()->Data[39196];
+		pFnGetAttributeContext = (UFunction*)UObject::GObjects()->Data[39196];
 
 	UActorAttributeContextResolver_execGetAttributeContext_Parms GetAttributeContext_Parms;
 	GetAttributeContext_Parms.Attribute = Attribute;
@@ -26295,7 +26295,7 @@ class UObject* UAIComponentAttributeContextResolver::GetAttributeContext(class U
 	static UFunction* pFnGetAttributeContext = NULL;
 
 	if (!pFnGetAttributeContext)
-		pFnGetAttributeContext = (UFunction*)UObject::GObjObjects()->Data[39312];
+		pFnGetAttributeContext = (UFunction*)UObject::GObjects()->Data[39312];
 
 	UAIComponentAttributeContextResolver_execGetAttributeContext_Parms GetAttributeContext_Parms;
 	GetAttributeContext_Parms.Attribute = Attribute;
@@ -26321,7 +26321,7 @@ void UBehavior_AIHold::ApplyBehaviorToContext(class UObject* ContextObject, clas
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[39733];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[39733];
 
 	UBehavior_AIHold_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -26351,7 +26351,7 @@ void UBehavior_AIPriority::ApplyBehaviorToContext(class UObject* ContextObject, 
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[39745];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[39745];
 
 	UBehavior_AIPriority_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -26381,7 +26381,7 @@ void UBehavior_AITargeting::ApplyBehaviorToContext(class UObject* ContextObject,
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[39758];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[39758];
 
 	UBehavior_AITargeting_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -26411,7 +26411,7 @@ void UBehavior_ChangeAnyBehaviorSequenceState::ApplyBehaviorToContext(class UObj
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[39782];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[39782];
 
 	UBehavior_ChangeAnyBehaviorSequenceState_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -26441,7 +26441,7 @@ void UBehavior_ChangeLocalBehaviorSequenceState::ApplyBehaviorToContext(class UO
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[39798];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[39798];
 
 	UBehavior_ChangeLocalBehaviorSequenceState_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -26471,7 +26471,7 @@ void UBehavior_CompareBool::ApplyBehaviorToContext(class UObject* ContextObject,
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[39866];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[39866];
 
 	UBehavior_CompareBool_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -26501,7 +26501,7 @@ void UBehavior_CompareValues::ApplyBehaviorToContext(class UObject* ContextObjec
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[39880];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[39880];
 
 	UBehavior_CompareValues_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -26531,7 +26531,7 @@ void UBehavior_CustomEvent::ApplyBehaviorToContext(class UObject* ContextObject,
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[39890];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[39890];
 
 	UBehavior_CustomEvent_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -26561,7 +26561,7 @@ void UBehavior_Delay::ApplyBehaviorToContext(class UObject* ContextObject, class
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[39904];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[39904];
 
 	UBehavior_Delay_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -26591,7 +26591,7 @@ void UBehavior_Gate::ApplyBehaviorToContext(class UObject* ContextObject, class 
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[39915];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[39915];
 
 	UBehavior_Gate_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -26617,7 +26617,7 @@ void UBehavior_GetFloatParam::PublishBehaviorOutput(float Value, struct FBehavio
 	static UFunction* pFnPublishBehaviorOutput = NULL;
 
 	if (!pFnPublishBehaviorOutput)
-		pFnPublishBehaviorOutput = (UFunction*)UObject::GObjObjects()->Data[39933];
+		pFnPublishBehaviorOutput = (UFunction*)UObject::GObjects()->Data[39933];
 
 	UBehavior_GetFloatParam_execPublishBehaviorOutput_Parms PublishBehaviorOutput_Parms;
 	PublishBehaviorOutput_Parms.Value = Value;
@@ -26643,7 +26643,7 @@ void UBehavior_GetFloatParam::ApplyBehaviorToContext(class UObject* ContextObjec
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[39925];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[39925];
 
 	UBehavior_GetFloatParam_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -26669,7 +26669,7 @@ void UBehavior_GetObjectParam::PublishBehaviorOutput(class UObject* Value, struc
 	static UFunction* pFnPublishBehaviorOutput = NULL;
 
 	if (!pFnPublishBehaviorOutput)
-		pFnPublishBehaviorOutput = (UFunction*)UObject::GObjObjects()->Data[39947];
+		pFnPublishBehaviorOutput = (UFunction*)UObject::GObjects()->Data[39947];
 
 	UBehavior_GetObjectParam_execPublishBehaviorOutput_Parms PublishBehaviorOutput_Parms;
 	PublishBehaviorOutput_Parms.Value = Value;
@@ -26695,7 +26695,7 @@ void UBehavior_GetObjectParam::ApplyBehaviorToContext(class UObject* ContextObje
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[39939];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[39939];
 
 	UBehavior_GetObjectParam_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -26724,7 +26724,7 @@ void UBehavior_GetVectorParam::PublishBehaviorOutput(float R, float G, float B, 
 	static UFunction* pFnPublishBehaviorOutput = NULL;
 
 	if (!pFnPublishBehaviorOutput)
-		pFnPublishBehaviorOutput = (UFunction*)UObject::GObjObjects()->Data[39964];
+		pFnPublishBehaviorOutput = (UFunction*)UObject::GObjects()->Data[39964];
 
 	UBehavior_GetVectorParam_execPublishBehaviorOutput_Parms PublishBehaviorOutput_Parms;
 	PublishBehaviorOutput_Parms.R = R;
@@ -26753,7 +26753,7 @@ void UBehavior_GetVectorParam::ApplyBehaviorToContext(class UObject* ContextObje
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[39954];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[39954];
 
 	UBehavior_GetVectorParam_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -26779,7 +26779,7 @@ void UBehavior_InterpolateFloatOverTime::PublishBehaviorOutput(float Result, str
 	static UFunction* pFnPublishBehaviorOutput = NULL;
 
 	if (!pFnPublishBehaviorOutput)
-		pFnPublishBehaviorOutput = (UFunction*)UObject::GObjObjects()->Data[39983];
+		pFnPublishBehaviorOutput = (UFunction*)UObject::GObjects()->Data[39983];
 
 	UBehavior_InterpolateFloatOverTime_execPublishBehaviorOutput_Parms PublishBehaviorOutput_Parms;
 	PublishBehaviorOutput_Parms.Result = Result;
@@ -26805,7 +26805,7 @@ void UBehavior_InterpolateFloatOverTime::ApplyBehaviorToContext(class UObject* C
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[39976];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[39976];
 
 	UBehavior_InterpolateFloatOverTime_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -26835,7 +26835,7 @@ void UBehavior_Metronome::ApplyBehaviorToContext(class UObject* ContextObject, c
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[40009];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[40009];
 
 	UBehavior_Metronome_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -26861,7 +26861,7 @@ void UBehavior_ModifyTimer::PublishBehaviorOutput(float TimeRemaining, struct FB
 	static UFunction* pFnPublishBehaviorOutput = NULL;
 
 	if (!pFnPublishBehaviorOutput)
-		pFnPublishBehaviorOutput = (UFunction*)UObject::GObjObjects()->Data[40032];
+		pFnPublishBehaviorOutput = (UFunction*)UObject::GObjects()->Data[40032];
 
 	UBehavior_ModifyTimer_execPublishBehaviorOutput_Parms PublishBehaviorOutput_Parms;
 	PublishBehaviorOutput_Parms.TimeRemaining = TimeRemaining;
@@ -26887,7 +26887,7 @@ void UBehavior_ModifyTimer::ApplyBehaviorToContext(class UObject* ContextObject,
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[40022];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[40022];
 
 	UBehavior_ModifyTimer_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -26917,7 +26917,7 @@ void UBehavior_SetFloatParam::ApplyBehaviorToContext(class UObject* ContextObjec
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[40145];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[40145];
 
 	UBehavior_SetFloatParam_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -26947,7 +26947,7 @@ void UBehavior_SetObjectParam::ApplyBehaviorToContext(class UObject* ContextObje
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[40156];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[40156];
 
 	UBehavior_SetObjectParam_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -26977,7 +26977,7 @@ void UBehavior_SetVectorParam::ApplyBehaviorToContext(class UObject* ContextObje
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[40175];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[40175];
 
 	UBehavior_SetVectorParam_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -27002,7 +27002,7 @@ void UBehavior_SpecialMove::PlaySpecialMove(class USpecialMoveComponent* SMC)
 	static UFunction* pFnPlaySpecialMove = NULL;
 
 	if (!pFnPlaySpecialMove)
-		pFnPlaySpecialMove = (UFunction*)UObject::GObjObjects()->Data[40210];
+		pFnPlaySpecialMove = (UFunction*)UObject::GObjects()->Data[40210];
 
 	UBehavior_SpecialMove_execPlaySpecialMove_Parms PlaySpecialMove_Parms;
 	PlaySpecialMove_Parms.SMC = SMC;
@@ -27020,7 +27020,7 @@ void UBehavior_SpecialMove::TriggerOutput(struct FBehaviorKernelInfo* KernelInfo
 	static UFunction* pFnTriggerOutput = NULL;
 
 	if (!pFnTriggerOutput)
-		pFnTriggerOutput = (UFunction*)UObject::GObjObjects()->Data[40208];
+		pFnTriggerOutput = (UFunction*)UObject::GObjects()->Data[40208];
 
 	UBehavior_SpecialMove_execTriggerOutput_Parms TriggerOutput_Parms;
 
@@ -27045,7 +27045,7 @@ void UBehavior_SpecialMove::ApplyBehaviorToContext(class UObject* ContextObject,
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[40193];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[40193];
 
 	UBehavior_SpecialMove_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -27075,7 +27075,7 @@ void UBehavior_SpecialMoveStop::ApplyBehaviorToContext(class UObject* ContextObj
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[40222];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[40222];
 
 	UBehavior_SpecialMoveStop_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -27105,7 +27105,7 @@ void UBehavior_StartAkAmbientSound::ApplyBehaviorToContext(class UObject* Contex
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[40237];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[40237];
 
 	UBehavior_StartAkAmbientSound_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -27135,7 +27135,7 @@ void UBehavior_StopAkAmbientSound::ApplyBehaviorToContext(class UObject* Context
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[40251];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[40251];
 
 	UBehavior_StopAkAmbientSound_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -27165,7 +27165,7 @@ void UBehavior_StopDialog::ApplyBehaviorToContext(class UObject* ContextObject, 
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[40264];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[40264];
 
 	UBehavior_StopDialog_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -27195,7 +27195,7 @@ void UBehavior_ToggleDialog::ApplyBehaviorToContext(class UObject* ContextObject
 	static UFunction* pFnApplyBehaviorToContext = NULL;
 
 	if (!pFnApplyBehaviorToContext)
-		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjObjects()->Data[40279];
+		pFnApplyBehaviorToContext = (UFunction*)UObject::GObjects()->Data[40279];
 
 	UBehavior_ToggleDialog_execApplyBehaviorToContext_Parms ApplyBehaviorToContext_Parms;
 	ApplyBehaviorToContext_Parms.ContextObject = ContextObject;
@@ -27219,7 +27219,7 @@ void UCameraModifierCrossfade::DoCrossfade()
 	static UFunction* pFnDoCrossfade = NULL;
 
 	if (!pFnDoCrossfade)
-		pFnDoCrossfade = (UFunction*)UObject::GObjObjects()->Data[40659];
+		pFnDoCrossfade = (UFunction*)UObject::GObjects()->Data[40659];
 
 	UCameraModifierCrossfade_execDoCrossfade_Parms DoCrossfade_Parms;
 
@@ -27237,7 +27237,7 @@ void UCameraModifierCrossfade::UpdateAllLerps(float DeltaTime, struct FTPOV* Out
 	static UFunction* pFnUpdateAllLerps = NULL;
 
 	if (!pFnUpdateAllLerps)
-		pFnUpdateAllLerps = (UFunction*)UObject::GObjObjects()->Data[40656];
+		pFnUpdateAllLerps = (UFunction*)UObject::GObjects()->Data[40656];
 
 	UCameraModifierCrossfade_execUpdateAllLerps_Parms UpdateAllLerps_Parms;
 	UpdateAllLerps_Parms.DeltaTime = DeltaTime;
@@ -27261,7 +27261,7 @@ bool UCameraModifierCrossfade::ModifyCamera(class ACamera* Camera, float DeltaTi
 	static UFunction* pFnModifyCamera = NULL;
 
 	if (!pFnModifyCamera)
-		pFnModifyCamera = (UFunction*)UObject::GObjObjects()->Data[40650];
+		pFnModifyCamera = (UFunction*)UObject::GObjects()->Data[40650];
 
 	UCameraModifierCrossfade_execModifyCamera_Parms ModifyCamera_Parms;
 	ModifyCamera_Parms.Camera = Camera;
@@ -27287,7 +27287,7 @@ void UCameraModifierCrossfade::ProcessCameraBlend(class ACamera* Camera, float A
 	static UFunction* pFnProcessCameraBlend = NULL;
 
 	if (!pFnProcessCameraBlend)
-		pFnProcessCameraBlend = (UFunction*)UObject::GObjObjects()->Data[40645];
+		pFnProcessCameraBlend = (UFunction*)UObject::GObjects()->Data[40645];
 
 	UCameraModifierCrossfade_execProcessCameraBlend_Parms ProcessCameraBlend_Parms;
 	ProcessCameraBlend_Parms.Camera = Camera;
@@ -27308,7 +27308,7 @@ void UCameraModifierCrossfade::InitializeSubModifiers()
 	static UFunction* pFnInitializeSubModifiers = NULL;
 
 	if (!pFnInitializeSubModifiers)
-		pFnInitializeSubModifiers = (UFunction*)UObject::GObjObjects()->Data[40644];
+		pFnInitializeSubModifiers = (UFunction*)UObject::GObjects()->Data[40644];
 
 	UCameraModifierCrossfade_execInitializeSubModifiers_Parms InitializeSubModifiers_Parms;
 
@@ -27324,7 +27324,7 @@ void UCameraModifierCrossfade::eventEnableModifier()
 	static UFunction* pFnEnableModifier = NULL;
 
 	if (!pFnEnableModifier)
-		pFnEnableModifier = (UFunction*)UObject::GObjObjects()->Data[40643];
+		pFnEnableModifier = (UFunction*)UObject::GObjects()->Data[40643];
 
 	UCameraModifierCrossfade_eventEnableModifier_Parms EnableModifier_Parms;
 
@@ -27341,7 +27341,7 @@ void UCameraModifierLookAt::ExecuteFadeIfNeeded(class AGearboxPlayerController**
 	static UFunction* pFnExecuteFadeIfNeeded = NULL;
 
 	if (!pFnExecuteFadeIfNeeded)
-		pFnExecuteFadeIfNeeded = (UFunction*)UObject::GObjObjects()->Data[40736];
+		pFnExecuteFadeIfNeeded = (UFunction*)UObject::GObjects()->Data[40736];
 
 	UCameraModifierLookAt_execExecuteFadeIfNeeded_Parms ExecuteFadeIfNeeded_Parms;
 
@@ -27363,7 +27363,7 @@ struct FVector UCameraModifierLookAt::GetDesiredLocation(struct FTPOV* OutPOV, c
 	static UFunction* pFnGetDesiredLocation = NULL;
 
 	if (!pFnGetDesiredLocation)
-		pFnGetDesiredLocation = (UFunction*)UObject::GObjObjects()->Data[40728];
+		pFnGetDesiredLocation = (UFunction*)UObject::GObjects()->Data[40728];
 
 	UCameraModifierLookAt_execGetDesiredLocation_Parms GetDesiredLocation_Parms;
 
@@ -27391,7 +27391,7 @@ bool UCameraModifierLookAt::ModifyCamera(class ACamera* Camera, float DeltaTime,
 	static UFunction* pFnModifyCamera = NULL;
 
 	if (!pFnModifyCamera)
-		pFnModifyCamera = (UFunction*)UObject::GObjObjects()->Data[40720];
+		pFnModifyCamera = (UFunction*)UObject::GObjects()->Data[40720];
 
 	UCameraModifierLookAt_execModifyCamera_Parms ModifyCamera_Parms;
 	ModifyCamera_Parms.Camera = Camera;
@@ -27418,7 +27418,7 @@ bool UCameraModifierLookAt::GetBoneLocation(class AActor* Target, struct FName B
 	static UFunction* pFnGetBoneLocation = NULL;
 
 	if (!pFnGetBoneLocation)
-		pFnGetBoneLocation = (UFunction*)UObject::GObjObjects()->Data[40714];
+		pFnGetBoneLocation = (UFunction*)UObject::GObjects()->Data[40714];
 
 	UCameraModifierLookAt_execGetBoneLocation_Parms GetBoneLocation_Parms;
 	GetBoneLocation_Parms.Target = Target;
@@ -27442,7 +27442,7 @@ void UCameraModifierLookAt::SetLookAtBone(struct FName NewBone)
 	static UFunction* pFnSetLookAtBone = NULL;
 
 	if (!pFnSetLookAtBone)
-		pFnSetLookAtBone = (UFunction*)UObject::GObjObjects()->Data[40712];
+		pFnSetLookAtBone = (UFunction*)UObject::GObjects()->Data[40712];
 
 	UCameraModifierLookAt_execSetLookAtBone_Parms SetLookAtBone_Parms;
 	memcpy(&SetLookAtBone_Parms.NewBone, &NewBone, 0x8);
@@ -27460,7 +27460,7 @@ void UCameraModifierLookAt::SetLookAtTarget(class AActor* newLookAtTarget)
 	static UFunction* pFnSetLookAtTarget = NULL;
 
 	if (!pFnSetLookAtTarget)
-		pFnSetLookAtTarget = (UFunction*)UObject::GObjObjects()->Data[40710];
+		pFnSetLookAtTarget = (UFunction*)UObject::GObjects()->Data[40710];
 
 	UCameraModifierLookAt_execSetLookAtTarget_Parms SetLookAtTarget_Parms;
 	SetLookAtTarget_Parms.newLookAtTarget = newLookAtTarget;
@@ -27480,7 +27480,7 @@ void UCameraModifierLookAt::SetTargetLocation(struct FVector NewTargetLocation, 
 	static UFunction* pFnSetTargetLocation = NULL;
 
 	if (!pFnSetTargetLocation)
-		pFnSetTargetLocation = (UFunction*)UObject::GObjObjects()->Data[40706];
+		pFnSetTargetLocation = (UFunction*)UObject::GObjects()->Data[40706];
 
 	UCameraModifierLookAt_execSetTargetLocation_Parms SetTargetLocation_Parms;
 	memcpy(&SetTargetLocation_Parms.NewTargetLocation, &NewTargetLocation, 0xC);
@@ -27500,7 +27500,7 @@ void UCameraModifierLookAt::SetDuration(float NewDuration)
 	static UFunction* pFnSetDuration = NULL;
 
 	if (!pFnSetDuration)
-		pFnSetDuration = (UFunction*)UObject::GObjObjects()->Data[40704];
+		pFnSetDuration = (UFunction*)UObject::GObjects()->Data[40704];
 
 	UCameraModifierLookAt_execSetDuration_Parms SetDuration_Parms;
 	SetDuration_Parms.NewDuration = NewDuration;
@@ -27519,7 +27519,7 @@ void UCameraModifierLookAt::SetTransitionTimes(float NewInTime, float NewOutTime
 	static UFunction* pFnSetTransitionTimes = NULL;
 
 	if (!pFnSetTransitionTimes)
-		pFnSetTransitionTimes = (UFunction*)UObject::GObjObjects()->Data[40701];
+		pFnSetTransitionTimes = (UFunction*)UObject::GObjects()->Data[40701];
 
 	UCameraModifierLookAt_execSetTransitionTimes_Parms SetTransitionTimes_Parms;
 	SetTransitionTimes_Parms.NewInTime = NewInTime;
@@ -27538,7 +27538,7 @@ void UCameraModifierLookAt::SetZoomFOV(float newZoom)
 	static UFunction* pFnSetZoomFOV = NULL;
 
 	if (!pFnSetZoomFOV)
-		pFnSetZoomFOV = (UFunction*)UObject::GObjObjects()->Data[40699];
+		pFnSetZoomFOV = (UFunction*)UObject::GObjects()->Data[40699];
 
 	UCameraModifierLookAt_execSetZoomFOV_Parms SetZoomFOV_Parms;
 	SetZoomFOV_Parms.newZoom = newZoom;
@@ -27558,7 +27558,7 @@ void UCameraModifierLookAt::SetThirdPersonDistances(float NewX, float NewY, floa
 	static UFunction* pFnSetThirdPersonDistances = NULL;
 
 	if (!pFnSetThirdPersonDistances)
-		pFnSetThirdPersonDistances = (UFunction*)UObject::GObjObjects()->Data[40695];
+		pFnSetThirdPersonDistances = (UFunction*)UObject::GObjects()->Data[40695];
 
 	UCameraModifierLookAt_execSetThirdPersonDistances_Parms SetThirdPersonDistances_Parms;
 	SetThirdPersonDistances_Parms.NewX = NewX;
@@ -27578,7 +27578,7 @@ void UCameraModifierLookAt::SetLookAtMode(unsigned char NewMode)
 	static UFunction* pFnSetLookAtMode = NULL;
 
 	if (!pFnSetLookAtMode)
-		pFnSetLookAtMode = (UFunction*)UObject::GObjObjects()->Data[40693];
+		pFnSetLookAtMode = (UFunction*)UObject::GObjects()->Data[40693];
 
 	UCameraModifierLookAt_execSetLookAtMode_Parms SetLookAtMode_Parms;
 	SetLookAtMode_Parms.NewMode = NewMode;
@@ -27596,7 +27596,7 @@ void UCameraModifierLookAt::DisableModifier(unsigned long bImmediate)
 	static UFunction* pFnDisableModifier = NULL;
 
 	if (!pFnDisableModifier)
-		pFnDisableModifier = (UFunction*)UObject::GObjObjects()->Data[40691];
+		pFnDisableModifier = (UFunction*)UObject::GObjects()->Data[40691];
 
 	UCameraModifierLookAt_execDisableModifier_Parms DisableModifier_Parms;
 	DisableModifier_Parms.bImmediate = bImmediate;
@@ -27613,7 +27613,7 @@ void UCameraModifierLookAt::EnableModifier()
 	static UFunction* pFnEnableModifier = NULL;
 
 	if (!pFnEnableModifier)
-		pFnEnableModifier = (UFunction*)UObject::GObjObjects()->Data[40690];
+		pFnEnableModifier = (UFunction*)UObject::GObjects()->Data[40690];
 
 	UCameraModifierLookAt_execEnableModifier_Parms EnableModifier_Parms;
 
@@ -27632,7 +27632,7 @@ class USparkServiceConfiguration* USparkNews::Internal_GetService(unsigned char 
 	static UFunction* pFnInternal_GetService = NULL;
 
 	if (!pFnInternal_GetService)
-		pFnInternal_GetService = (UFunction*)UObject::GObjObjects()->Data[45009];
+		pFnInternal_GetService = (UFunction*)UObject::GObjects()->Data[45009];
 
 	USparkNews_execInternal_GetService_Parms Internal_GetService_Parms;
 	Internal_GetService_Parms.ControllerId = ControllerId;
@@ -27653,7 +27653,7 @@ void USparkNews::CallAndClearRetrievedDelegate(unsigned char RetrievealResult)
 	static UFunction* pFnCallAndClearRetrievedDelegate = NULL;
 
 	if (!pFnCallAndClearRetrievedDelegate)
-		pFnCallAndClearRetrievedDelegate = (UFunction*)UObject::GObjObjects()->Data[45010];
+		pFnCallAndClearRetrievedDelegate = (UFunction*)UObject::GObjects()->Data[45010];
 
 	USparkNews_execCallAndClearRetrievedDelegate_Parms CallAndClearRetrievedDelegate_Parms;
 	CallAndClearRetrievedDelegate_Parms.RetrievealResult = RetrievealResult;
@@ -27671,7 +27671,7 @@ void USparkNews::ParseArticles(class UJsonObject* NewsArticlesJSONObject)
 	static UFunction* pFnParseArticles = NULL;
 
 	if (!pFnParseArticles)
-		pFnParseArticles = (UFunction*)UObject::GObjObjects()->Data[45021];
+		pFnParseArticles = (UFunction*)UObject::GObjects()->Data[45021];
 
 	USparkNews_execParseArticles_Parms ParseArticles_Parms;
 	ParseArticles_Parms.NewsArticlesJSONObject = NewsArticlesJSONObject;
@@ -27689,7 +27689,7 @@ void USparkNews::HandleNewsRetrievalResponse(struct FSparkResult* Result)
 	static UFunction* pFnHandleNewsRetrievalResponse = NULL;
 
 	if (!pFnHandleNewsRetrievalResponse)
-		pFnHandleNewsRetrievalResponse = (UFunction*)UObject::GObjObjects()->Data[45018];
+		pFnHandleNewsRetrievalResponse = (UFunction*)UObject::GObjects()->Data[45018];
 
 	USparkNews_execHandleNewsRetrievalResponse_Parms HandleNewsRetrievalResponse_Parms;
 
@@ -27712,7 +27712,7 @@ bool USparkNews::GetArticle(int Idx, struct FString* Header, struct FString* Bod
 	static UFunction* pFnGetArticle = NULL;
 
 	if (!pFnGetArticle)
-		pFnGetArticle = (UFunction*)UObject::GObjObjects()->Data[45013];
+		pFnGetArticle = (UFunction*)UObject::GObjects()->Data[45013];
 
 	USparkNews_execGetArticle_Parms GetArticle_Parms;
 	GetArticle_Parms.Idx = Idx;
@@ -27738,7 +27738,7 @@ int USparkNews::GetArticleCount()
 	static UFunction* pFnGetArticleCount = NULL;
 
 	if (!pFnGetArticleCount)
-		pFnGetArticleCount = (UFunction*)UObject::GObjObjects()->Data[45011];
+		pFnGetArticleCount = (UFunction*)UObject::GObjects()->Data[45011];
 
 	USparkNews_execGetArticleCount_Parms GetArticleCount_Parms;
 
@@ -27758,7 +27758,7 @@ void USparkNews::RetrieveNews(unsigned char ControllerId, struct FScriptDelegate
 	static UFunction* pFnRetrieveNews = NULL;
 
 	if (!pFnRetrieveNews)
-		pFnRetrieveNews = (UFunction*)UObject::GObjObjects()->Data[45003];
+		pFnRetrieveNews = (UFunction*)UObject::GObjects()->Data[45003];
 
 	USparkNews_execRetrieveNews_Parms RetrieveNews_Parms;
 	RetrieveNews_Parms.ControllerId = ControllerId;
@@ -27778,7 +27778,7 @@ void USparkNews::OnNewsRetrieved(unsigned char RetrievealResult, class USparkNew
 	static UFunction* pFnOnNewsRetrieved = NULL;
 
 	if (!pFnOnNewsRetrieved)
-		pFnOnNewsRetrieved = (UFunction*)UObject::GObjObjects()->Data[45000];
+		pFnOnNewsRetrieved = (UFunction*)UObject::GObjects()->Data[45000];
 
 	USparkNews_execOnNewsRetrieved_Parms OnNewsRetrieved_Parms;
 	OnNewsRetrieved_Parms.RetrievealResult = RetrievealResult;
@@ -27797,7 +27797,7 @@ bool UGFxMovieDrawStyleInstanceData::eventRequiresClientInstance()
 	static UFunction* pFnRequiresClientInstance = NULL;
 
 	if (!pFnRequiresClientInstance)
-		pFnRequiresClientInstance = (UFunction*)UObject::GObjObjects()->Data[43676];
+		pFnRequiresClientInstance = (UFunction*)UObject::GObjects()->Data[43676];
 
 	UGFxMovieDrawStyleInstanceData_eventRequiresClientInstance_Parms RequiresClientInstance_Parms;
 
@@ -27818,7 +27818,7 @@ class UObject* UPopulationMasterAttributeContextResolver::GetAttributeContext(cl
 	static UFunction* pFnGetAttributeContext = NULL;
 
 	if (!pFnGetAttributeContext)
-		pFnGetAttributeContext = (UFunction*)UObject::GObjObjects()->Data[44283];
+		pFnGetAttributeContext = (UFunction*)UObject::GObjects()->Data[44283];
 
 	UPopulationMasterAttributeContextResolver_execGetAttributeContext_Parms GetAttributeContext_Parms;
 	GetAttributeContext_Parms.Attribute = Attribute;
