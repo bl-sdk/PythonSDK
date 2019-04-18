@@ -35,6 +35,7 @@ namespace BL2SDK
 	tStaticConstructObject pStaticConstructObject;
 	tLoadPackage pLoadPackage;
 	tByteOrderSerialize pByteOrderSerialize;
+	tGetDefaultObject pGetDefaultObject;
 	UObject *engine = nullptr;
 
 	CPythonInterface *Python;
@@ -311,23 +312,12 @@ namespace BL2SDK
 	{
 		Logging::LogF("[GameReady] Thread: %i\n", GetCurrentThreadId());
 
-		for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
-		{
-			UObject* Object = UObject::GObjects()->Data[i];
-
-			if (!Object || !Object->Class)
-				continue;
-
-			if (!strcmp(Object->GetFullName().c_str(), "WillowGameEngine Transient.WillowGameEngine"))
-				engine = Object;
-		}
-
 #ifdef _DEBUG
 		Logging::InitializeExtern();
 #endif
 		Logging::InitializeGameConsole();
 
-		initializeGameVersions();
+		//initializeGameVersions();
 
 		Logging::PrintLogHeader();
 

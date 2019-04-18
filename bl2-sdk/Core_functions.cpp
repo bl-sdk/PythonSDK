@@ -1025,7 +1025,12 @@ bool UObject::AddModifier(class UAttributeModifier* mod, const struct FName& Att
 
 class UObject* UObject::FindObject(const struct FString& ObjectName, class UClass* ObjectClass)
 {
-	static auto fn = (UFunction *)UObject::Find("Function", "Core.Object.FindObject");
+	static UFunction* fn = NULL;
+	if (!fn)
+		fn = (UFunction *)UObject::GObjects()->Data[5528];
+
+	if (!fn)
+		return nullptr;
 
 	UObject_FindObject_Params params;
 	params.ObjectName = ObjectName;
@@ -1036,6 +1041,10 @@ class UObject* UObject::FindObject(const struct FString& ObjectName, class UClas
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
 	defaultObj->ProcessEvent(fn, &params);
+	if (params.ReturnValue)
+		Logging::LogF("FindObject ObjectName:%s, ObjectClass:%s, defaultObj:%s, return:%s\n", ((FString)ObjectName).AsString(), ObjectClass->GetFullName().c_str(), defaultObj->GetFullName().c_str(), params.ReturnValue->GetFullName().c_str());
+	else
+		Logging::LogF("FindObject ObjectName:%s, ObjectClass:%s, defaultObj:%s, return:%p\n", ((FString)ObjectName).AsString(), ObjectClass->GetFullName().c_str(), defaultObj->GetFullName().c_str(), params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 

@@ -66,7 +66,9 @@ void CScriptHookManager::Register(const std::string& funcName, const std::string
 	tFuncNameHookPair hookPair = std::make_pair(hookName, funcHook);
 
 	// Find func
+	Logging::LogF("1\n");
 	UFunction* function = (UFunction *)UObject::Find("Function", funcNameChar);
+	Logging::LogF("2\n");
 	if (function == nullptr)
 	{
 		// The function was not found, so we need to create a virtual hook for it

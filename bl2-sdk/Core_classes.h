@@ -217,14 +217,21 @@ public:
 
 	static UObject* Find(UClass *Class, const std::string& ObjectFullName)
 	{
-		return GObjects()->Data[0]->FindObject(FString((char *)ObjectFullName.c_str()), Class);
+		return UObject::FindObject(FString((char *)ObjectFullName.c_str()), Class);
 	}
 
 	static UObject* Find(const std::string& ClassName, const std::string& ObjectFullName)
 	{
+		Logging::LogF("Find %s, %s\n", ClassName.c_str(), ObjectFullName.c_str());
 		UClass *classToFind = FindClass((char *)ClassName.c_str());
 		if (classToFind)
+		{
+			Logging::LogF("Find Found class at %p\n", classToFind);
 			return Find(classToFind, ObjectFullName);
+		}
+		else {
+			Logging::LogF("Find missed class\n");
+		}
 		return nullptr;
 	}
 
@@ -260,7 +267,7 @@ public:
 		return ret;
 	}
 	static UClass* FindClass(const char* ClassName) {
-		return (UClass *)GObjects()->Data[0]->FindObject(FString((char *)ClassName), (UClass *)GObjects()->Data[2]);
+		return (UClass *)UObject::FindObject(FString((char *)ClassName), (UClass *)GObjects()->Data[138]);
 	}
 
 	bool IsA(UClass* pClass) const;
@@ -277,7 +284,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		static auto ptr = UObject::FindClass("Object");
+		static auto ptr = (UClass *)GObjects()->Data[2];
 		return ptr;
 	};
 	
