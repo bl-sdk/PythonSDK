@@ -15,7 +15,7 @@
 struct UObject_IsRelevantForDebugging_Params
 {
 	class UObject*                                     Source;                                                   // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.GetGlobalDebugTarget
@@ -85,7 +85,7 @@ struct UObject_TransformVectorByRotation_Params
 {
 	struct FRotator                                    SourceRotation;                                           // (Parm)
 	struct FVector                                     SourceVector;                                             // (Parm)
-	bool                                               bInverse;                                                 // (OptionalParm, Parm)
+	unsigned long                                      bInverse : 1;                                                 // (OptionalParm, Parm)
 	struct FVector                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
@@ -98,14 +98,14 @@ struct UObject_GetPackageName_Params
 // Function Core.Object.IsPendingKill
 struct UObject_IsPendingKill_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.ByteToFloat
 struct UObject_ByteToFloat_Params
 {
 	unsigned char                                      inputByte;                                                // (Parm)
-	bool                                               bSigned;                                                  // (OptionalParm, Parm)
+	unsigned long                                      bSigned : 1;                                                  // (OptionalParm, Parm)
 	float                                              ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
@@ -113,7 +113,7 @@ struct UObject_ByteToFloat_Params
 struct UObject_FloatToByte_Params
 {
 	float                                              inputFloat;                                               // (Parm)
-	bool                                               bSigned;                                                  // (OptionalParm, Parm)
+	unsigned long                                      bSigned : 1;                                                  // (OptionalParm, Parm)
 	unsigned char                                      ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
@@ -160,7 +160,7 @@ struct UObject_GetAngularDistance_Params
 	struct FVector                                     AxisX;                                                    // (Parm)
 	struct FVector                                     AxisY;                                                    // (Parm)
 	struct FVector                                     AxisZ;                                                    // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.GetDotDistance
@@ -171,7 +171,7 @@ struct UObject_GetDotDistance_Params
 	struct FVector                                     AxisX;                                                    // (Parm)
 	struct FVector                                     AxisY;                                                    // (Parm)
 	struct FVector                                     AxisZ;                                                    // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.PointProjectToPlane
@@ -221,7 +221,7 @@ struct UObject_GetPerObjectConfigSections_Params
 	TArray<struct FString>                             out_SectionNames;                                         // (Parm, OutParm, NeedCtorLink)
 	class UObject*                                     ObjectOuter;                                              // (OptionalParm, Parm)
 	int                                                MaxResults;                                               // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.StaticSaveConfig
@@ -253,8 +253,8 @@ struct UObject_RemoveModifier_Params
 {
 	class UAttributeModifier*                          mod;                                                      // (Parm)
 	struct FName                                       AttributeName;                                            // (Parm)
-	bool                                               bSuppressNotify;                                          // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      bSuppressNotify : 1;                                          // (OptionalParm, Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.AddModifier
@@ -262,8 +262,8 @@ struct UObject_AddModifier_Params
 {
 	class UAttributeModifier*                          mod;                                                      // (Parm)
 	struct FName                                       AttributeName;                                            // (Parm)
-	bool                                               bSuppressNotify;                                          // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      bSuppressNotify : 1;                                          // (OptionalParm, Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.FindObject
@@ -279,7 +279,7 @@ struct UObject_DynamicLoadObject_Params
 {
 	struct FString                                     ObjectName;                                               // (Parm, NeedCtorLink)
 	class UClass*                                      ObjectClass;                                              // (Parm)
-	bool                                               MayFail;                                                  // (OptionalParm, Parm)
+	unsigned long                                      MayFail : 1;                                                  // (OptionalParm, Parm)
 	class UObject*                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
@@ -354,7 +354,7 @@ struct UObject_DumpStateStack_Params
 // Function Core.Object.PopState
 struct UObject_PopState_Params
 {
-	bool                                               bPopAll;                                                  // (OptionalParm, Parm)
+	unsigned long                                      bPopAll : 1;                                                  // (OptionalParm, Parm)
 };
 
 // Function Core.Object.PushState
@@ -375,15 +375,15 @@ struct UObject_IsChildState_Params
 {
 	struct FName                                       TestState;                                                // (Parm)
 	struct FName                                       TestParentState;                                          // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.IsInState
 struct UObject_IsInState_Params
 {
 	struct FName                                       TestState;                                                // (Parm)
-	bool                                               bTestStateStack;                                          // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      bTestStateStack : 1;                                          // (OptionalParm, Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.GotoState
@@ -391,20 +391,20 @@ struct UObject_GotoState_Params
 {
 	struct FName                                       NewState;                                                 // (OptionalParm, Parm)
 	struct FName                                       Label;                                                    // (OptionalParm, Parm)
-	bool                                               bForceEvents;                                             // (OptionalParm, Parm)
-	bool                                               bKeepStack;                                               // (OptionalParm, Parm)
+	unsigned long                                      bForceEvents : 1;                                             // (OptionalParm, Parm)
+	unsigned long                                      bKeepStack : 1;                                               // (OptionalParm, Parm)
 };
 
 // Function Core.Object.IsUTracing
 struct UObject_IsUTracing_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.SetUTracing
 struct UObject_SetUTracing_Params
 {
-	bool                                               bShouldUTrace;                                            // (Parm)
+	unsigned long                                      bShouldUTrace : 1;                                            // (Parm)
 };
 
 // Function Core.Object.GetFuncName
@@ -487,7 +487,7 @@ struct UObject_FlagHasBeenTrueFor_Params
 {
 	struct FFlag                                       theFlag;                                                  // (Parm, OutParm)
 	float                                              TimeSeconds;                                              // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.FlagTimeRemaining
@@ -508,36 +508,36 @@ struct UObject_FlagTimeSinceRaised_Params
 struct UObject_FlagSetValue_Params
 {
 	struct FFlag                                       theFlag;                                                  // (Parm, OutParm)
-	bool                                               bNewValue;                                                // (Parm)
-	bool                                               bForceTimeStamp;                                          // (OptionalParm, Parm)
+	unsigned long                                      bNewValue : 1;                                                // (Parm)
+	unsigned long                                      bForceTimeStamp : 1;                                          // (OptionalParm, Parm)
 };
 
 // Function Core.Object.FlagIsLowered
 struct UObject_FlagIsLowered_Params
 {
 	struct FFlag                                       theFlag;                                                  // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.FlagIsRaised
 struct UObject_FlagIsRaised_Params
 {
 	struct FFlag                                       theFlag;                                                  // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.FlagIsFalse
 struct UObject_FlagIsFalse_Params
 {
 	struct FFlag                                       theFlag;                                                  // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.FlagIsTrue
 struct UObject_FlagIsTrue_Params
 {
 	struct FFlag                                       theFlag;                                                  // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.FlagSetTrueTimed
@@ -566,14 +566,14 @@ struct UObject_SmartVectGetVector_Params
 {
 	struct FSmartVector                                theSV;                                                    // (Parm, OutParm)
 	struct FVector                                     OutVector;                                                // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.SmartVectIsSet
 struct UObject_SmartVectIsSet_Params
 {
 	struct FSmartVector                                theSV;                                                    // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.SmartVectSetVectorTimed
@@ -602,7 +602,7 @@ struct UObject_SmartVectSetVector_Params
 {
 	struct FSmartVector                                theSV;                                                    // (Parm, OutParm)
 	struct FVector                                     InVector;                                                 // (Parm)
-	bool                                               bUpdateTime;                                              // (OptionalParm, Parm)
+	unsigned long                                      bUpdateTime : 1;                                              // (OptionalParm, Parm)
 };
 
 // Function Core.Object.Subtract_LinearColorLinearColor
@@ -839,7 +839,7 @@ struct UObject_QuatSlerp_Params
 	struct FQuat                                       A;                                                        // (Parm)
 	struct FQuat                                       B;                                                        // (Parm)
 	float                                              Alpha;                                                    // (Parm)
-	bool                                               bShortestPath;                                            // (OptionalParm, Parm)
+	unsigned long                                      bShortestPath : 1;                                            // (OptionalParm, Parm)
 	struct FQuat                                       ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
@@ -986,7 +986,7 @@ struct UObject_NotEqual_NameName_Params
 {
 	struct FName                                       A;                                                        // (Parm)
 	struct FName                                       B;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.EqualEqual_NameName
@@ -994,7 +994,7 @@ struct UObject_EqualEqual_NameName_Params
 {
 	struct FName                                       A;                                                        // (Parm)
 	struct FName                                       B;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.QueryInterface
@@ -1008,7 +1008,7 @@ struct UObject_QueryInterface_Params
 struct UObject_IsA_Params
 {
 	struct FName                                       ClassName;                                                // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.ClassIsChildOf
@@ -1016,7 +1016,7 @@ struct UObject_ClassIsChildOf_Params
 {
 	class UClass*                                      TestClass;                                                // (Parm)
 	class UClass*                                      ParentClass;                                              // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.NotEqual_InterfaceInterface
@@ -1024,7 +1024,7 @@ struct UObject_NotEqual_InterfaceInterface_Params
 {
 	FScriptInterface                                   A;                                                        // (Parm)
 	FScriptInterface                                   B;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.EqualEqual_InterfaceInterface
@@ -1032,7 +1032,7 @@ struct UObject_EqualEqual_InterfaceInterface_Params
 {
 	FScriptInterface                                   A;                                                        // (Parm)
 	FScriptInterface                                   B;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.NotEqual_ObjectObject
@@ -1040,7 +1040,7 @@ struct UObject_NotEqual_ObjectObject_Params
 {
 	class UObject*                                     A;                                                        // (Parm)
 	class UObject*                                     B;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.EqualEqual_ObjectObject
@@ -1048,7 +1048,7 @@ struct UObject_EqualEqual_ObjectObject_Params
 {
 	class UObject*                                     A;                                                        // (Parm)
 	class UObject*                                     B;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.GuidToString
@@ -1070,7 +1070,7 @@ struct UObject_SplitString_Params
 {
 	struct FString                                     Source;                                                   // (Parm, NeedCtorLink)
 	struct FString                                     Delimiter;                                                // (OptionalParm, Parm, NeedCtorLink)
-	bool                                               bCullEmpty;                                               // (OptionalParm, Parm)
+	unsigned long                                      bCullEmpty : 1;                                               // (OptionalParm, Parm)
 	TArray<struct FString>                             ReturnValue;                                              // (Parm, OutParm, ReturnParm, NeedCtorLink)
 };
 
@@ -1080,7 +1080,7 @@ struct UObject_ParseStringIntoArray_Params
 	struct FString                                     BaseString;                                               // (Parm, NeedCtorLink)
 	TArray<struct FString>                             Pieces;                                                   // (Parm, OutParm, NeedCtorLink)
 	struct FString                                     delim;                                                    // (Parm, NeedCtorLink)
-	bool                                               bCullEmpty;                                               // (Parm)
+	unsigned long                                      bCullEmpty : 1;                                               // (Parm)
 };
 
 // Function Core.Object.JoinArray
@@ -1089,7 +1089,7 @@ struct UObject_JoinArray_Params
 	TArray<struct FString>                             StringArray;                                              // (Parm, NeedCtorLink)
 	struct FString                                     out_Result;                                               // (Parm, OutParm, NeedCtorLink)
 	struct FString                                     delim;                                                    // (OptionalParm, Parm, NeedCtorLink)
-	bool                                               bIgnoreBlanks;                                            // (OptionalParm, Parm)
+	unsigned long                                      bIgnoreBlanks : 1;                                            // (OptionalParm, Parm)
 };
 
 // Function Core.Object.GetRightMost
@@ -1104,7 +1104,7 @@ struct UObject_Split_Params
 {
 	struct FString                                     Text;                                                     // (Parm, CoerceParm, NeedCtorLink)
 	struct FString                                     SplitStr;                                                 // (Parm, CoerceParm, NeedCtorLink)
-	bool                                               bOmitSplitStr;                                            // (OptionalParm, Parm)
+	unsigned long                                      bOmitSplitStr : 1;                                            // (OptionalParm, Parm)
 	struct FString                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, NeedCtorLink)
 };
 
@@ -1121,7 +1121,7 @@ struct UObject_Repl_Params
 	struct FString                                     Src;                                                      // (Parm, CoerceParm, NeedCtorLink)
 	struct FString                                     Match;                                                    // (Parm, CoerceParm, NeedCtorLink)
 	struct FString                                     With;                                                     // (Parm, CoerceParm, NeedCtorLink)
-	bool                                               bCaseSensitive;                                           // (OptionalParm, Parm)
+	unsigned long                                      bCaseSensitive : 1;                                           // (OptionalParm, Parm)
 	struct FString                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, NeedCtorLink)
 };
 
@@ -1183,8 +1183,8 @@ struct UObject_InStr_Params
 {
 	struct FString                                     S;                                                        // (Parm, CoerceParm, NeedCtorLink)
 	struct FString                                     T;                                                        // (Parm, CoerceParm, NeedCtorLink)
-	bool                                               bSearchFromRight;                                         // (OptionalParm, Parm)
-	bool                                               bIgnoreCase;                                              // (OptionalParm, Parm)
+	unsigned long                                      bSearchFromRight : 1;                                         // (OptionalParm, Parm)
+	unsigned long                                      bIgnoreCase : 1;                                              // (OptionalParm, Parm)
 	int                                                StartPos;                                                 // (OptionalParm, Parm)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
@@ -1225,7 +1225,7 @@ struct UObject_ComplementEqual_StrStr_Params
 {
 	struct FString                                     A;                                                        // (Parm, NeedCtorLink)
 	struct FString                                     B;                                                        // (Parm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.NotEqual_StrStr
@@ -1233,7 +1233,7 @@ struct UObject_NotEqual_StrStr_Params
 {
 	struct FString                                     A;                                                        // (Parm, NeedCtorLink)
 	struct FString                                     B;                                                        // (Parm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.EqualEqual_StrStr
@@ -1241,7 +1241,7 @@ struct UObject_EqualEqual_StrStr_Params
 {
 	struct FString                                     A;                                                        // (Parm, NeedCtorLink)
 	struct FString                                     B;                                                        // (Parm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.GreaterEqual_StrStr
@@ -1249,7 +1249,7 @@ struct UObject_GreaterEqual_StrStr_Params
 {
 	struct FString                                     A;                                                        // (Parm, NeedCtorLink)
 	struct FString                                     B;                                                        // (Parm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.LessEqual_StrStr
@@ -1257,7 +1257,7 @@ struct UObject_LessEqual_StrStr_Params
 {
 	struct FString                                     A;                                                        // (Parm, NeedCtorLink)
 	struct FString                                     B;                                                        // (Parm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.Greater_StrStr
@@ -1265,7 +1265,7 @@ struct UObject_Greater_StrStr_Params
 {
 	struct FString                                     A;                                                        // (Parm, NeedCtorLink)
 	struct FString                                     B;                                                        // (Parm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.Less_StrStr
@@ -1273,7 +1273,7 @@ struct UObject_Less_StrStr_Params
 {
 	struct FString                                     A;                                                        // (Parm, NeedCtorLink)
 	struct FString                                     B;                                                        // (Parm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.At_StrStr
@@ -1310,7 +1310,7 @@ struct UObject_SClampRotAxis_Params
 	int                                                MaxLimit;                                                 // (Parm)
 	int                                                MinLimit;                                                 // (Parm)
 	float                                              InterpolationSpeed;                                       // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.ClampRotAxisFromRange
@@ -1369,7 +1369,7 @@ struct UObject_RInterpTo_Params
 	struct FRotator                                    Target;                                                   // (Parm)
 	float                                              DeltaTime;                                                // (Parm)
 	float                                              InterpSpeed;                                              // (Parm)
-	bool                                               bConstantInterpSpeed;                                     // (OptionalParm, Parm)
+	unsigned long                                      bConstantInterpSpeed : 1;                                     // (OptionalParm, Parm)
 	struct FRotator                                    ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
@@ -1387,7 +1387,7 @@ struct UObject_RLerp_Params
 	struct FRotator                                    A;                                                        // (Parm)
 	struct FRotator                                    B;                                                        // (Parm)
 	float                                              Alpha;                                                    // (Parm)
-	bool                                               bShortestPath;                                            // (OptionalParm, Parm)
+	unsigned long                                      bShortestPath : 1;                                            // (OptionalParm, Parm)
 	struct FRotator                                    ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
@@ -1410,7 +1410,7 @@ struct UObject_OrthoRotation_Params
 // Function Core.Object.RotRand
 struct UObject_RotRand_Params
 {
-	bool                                               bRoll;                                                    // (OptionalParm, Parm)
+	unsigned long                                      bRoll : 1;                                                    // (OptionalParm, Parm)
 	struct FRotator                                    ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
@@ -1445,7 +1445,7 @@ struct UObject_ClockwiseFrom_IntInt_Params
 {
 	int                                                A;                                                        // (Parm)
 	int                                                B;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.SubtractEqual_RotatorRotator
@@ -1525,7 +1525,7 @@ struct UObject_NotEqual_RotatorRotator_Params
 {
 	struct FRotator                                    A;                                                        // (Parm)
 	struct FRotator                                    B;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.EqualEqual_RotatorRotator
@@ -1533,7 +1533,7 @@ struct UObject_EqualEqual_RotatorRotator_Params
 {
 	struct FRotator                                    A;                                                        // (Parm)
 	struct FRotator                                    B;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.InCylinder
@@ -1543,8 +1543,8 @@ struct UObject_InCylinder_Params
 	struct FRotator                                    Dir;                                                      // (Parm)
 	float                                              Width;                                                    // (Parm)
 	struct FVector                                     A;                                                        // (Parm)
-	bool                                               bIgnoreZ;                                                 // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      bIgnoreZ : 1;                                                 // (OptionalParm, Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.NoZDot
@@ -1577,7 +1577,7 @@ struct UObject_VInterpTo_Params
 struct UObject_IsZero_Params
 {
 	struct FVector                                     A;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.ProjectOnTo
@@ -1724,7 +1724,7 @@ struct UObject_NotEqual_VectorVector_Params
 {
 	struct FVector                                     A;                                                        // (Parm)
 	struct FVector                                     B;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.EqualEqual_VectorVector
@@ -1732,7 +1732,7 @@ struct UObject_EqualEqual_VectorVector_Params
 {
 	struct FVector                                     A;                                                        // (Parm)
 	struct FVector                                     B;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.GreaterGreater_VectorRotator
@@ -2077,7 +2077,7 @@ struct UObject_NotEqual_FloatFloat_Params
 {
 	float                                              A;                                                        // (Parm)
 	float                                              B;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.ComplementEqual_FloatFloat
@@ -2085,7 +2085,7 @@ struct UObject_ComplementEqual_FloatFloat_Params
 {
 	float                                              A;                                                        // (Parm)
 	float                                              B;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.EqualEqual_FloatFloat
@@ -2093,7 +2093,7 @@ struct UObject_EqualEqual_FloatFloat_Params
 {
 	float                                              A;                                                        // (Parm)
 	float                                              B;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.GreaterEqual_FloatFloat
@@ -2101,7 +2101,7 @@ struct UObject_GreaterEqual_FloatFloat_Params
 {
 	float                                              A;                                                        // (Parm)
 	float                                              B;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.LessEqual_FloatFloat
@@ -2109,7 +2109,7 @@ struct UObject_LessEqual_FloatFloat_Params
 {
 	float                                              A;                                                        // (Parm)
 	float                                              B;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.Greater_FloatFloat
@@ -2117,7 +2117,7 @@ struct UObject_Greater_FloatFloat_Params
 {
 	float                                              A;                                                        // (Parm)
 	float                                              B;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.Less_FloatFloat
@@ -2125,7 +2125,7 @@ struct UObject_Less_FloatFloat_Params
 {
 	float                                              A;                                                        // (Parm)
 	float                                              B;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.Subtract_FloatFloat
@@ -2311,7 +2311,7 @@ struct UObject_NotEqual_IntInt_Params
 {
 	int                                                A;                                                        // (Parm)
 	int                                                B;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.EqualEqual_IntInt
@@ -2319,7 +2319,7 @@ struct UObject_EqualEqual_IntInt_Params
 {
 	int                                                A;                                                        // (Parm)
 	int                                                B;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.GreaterEqual_IntInt
@@ -2327,7 +2327,7 @@ struct UObject_GreaterEqual_IntInt_Params
 {
 	int                                                A;                                                        // (Parm)
 	int                                                B;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.LessEqual_IntInt
@@ -2335,7 +2335,7 @@ struct UObject_LessEqual_IntInt_Params
 {
 	int                                                A;                                                        // (Parm)
 	int                                                B;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.Greater_IntInt
@@ -2343,7 +2343,7 @@ struct UObject_Greater_IntInt_Params
 {
 	int                                                A;                                                        // (Parm)
 	int                                                B;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.Less_IntInt
@@ -2351,7 +2351,7 @@ struct UObject_Less_IntInt_Params
 {
 	int                                                A;                                                        // (Parm)
 	int                                                B;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.GreaterGreaterGreater_IntInt
@@ -2503,48 +2503,48 @@ struct UObject_MultiplyEqual_ByteByte_Params
 // Function Core.Object.OrOr_BoolBool
 struct UObject_OrOr_BoolBool_Params
 {
-	bool                                               A;                                                        // (Parm)
-	bool                                               B;                                                        // (Parm, SkipParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      A : 1;                                                        // (Parm)
+	unsigned long                                      B : 1;                                                        // (Parm, SkipParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.XorXor_BoolBool
 struct UObject_XorXor_BoolBool_Params
 {
-	bool                                               A;                                                        // (Parm)
-	bool                                               B;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      A : 1;                                                        // (Parm)
+	unsigned long                                      B : 1;                                                        // (Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.AndAnd_BoolBool
 struct UObject_AndAnd_BoolBool_Params
 {
-	bool                                               A;                                                        // (Parm)
-	bool                                               B;                                                        // (Parm, SkipParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      A : 1;                                                        // (Parm)
+	unsigned long                                      B : 1;                                                        // (Parm, SkipParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.NotEqual_BoolBool
 struct UObject_NotEqual_BoolBool_Params
 {
-	bool                                               A;                                                        // (Parm)
-	bool                                               B;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      A : 1;                                                        // (Parm)
+	unsigned long                                      B : 1;                                                        // (Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.EqualEqual_BoolBool
 struct UObject_EqualEqual_BoolBool_Params
 {
-	bool                                               A;                                                        // (Parm)
-	bool                                               B;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      A : 1;                                                        // (Parm)
+	unsigned long                                      B : 1;                                                        // (Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.Object.Not_PreBool
 struct UObject_Not_PreBool_Params
 {
-	bool                                               A;                                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      A : 1;                                                        // (Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function Core.DistributionVector.GetVectorValue

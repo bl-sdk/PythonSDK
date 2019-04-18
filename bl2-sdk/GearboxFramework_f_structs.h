@@ -82,7 +82,7 @@ struct UAIDebugCamera_InitDummies_Params
 // Function GearboxFramework.AIDebugCamera.WantsToDoCameraInspection
 struct UAIDebugCamera_WantsToDoCameraInspection_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.AIDebugCamera.SetCurrentInspectedTarget
@@ -213,7 +213,7 @@ struct USpecialMoveInterface_GetActor_Params
 struct UAnimNodeSpecialMoveBlend_IsPlaying_Params
 {
 	class UGearboxAnimDefinition*                      AnimSMD;                                                  // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.AnimNodeSpecialMoveBlend.SetRootMotion
@@ -237,13 +237,13 @@ struct UAnimNodeSpecialMoveBlend_GetCurrentAnimName_Params
 // Function GearboxFramework.AnimNodeSpecialMoveBlend.Finish
 struct UAnimNodeSpecialMoveBlend_Finish_Params
 {
-	bool                                               bInterrupted;                                             // (Parm)
+	unsigned long                                      bInterrupted : 1;                                             // (Parm)
 };
 
 // Function GearboxFramework.AnimNodeSpecialMoveBlend.Stop
 struct UAnimNodeSpecialMoveBlend_Stop_Params
 {
-	bool                                               bInterrupted;                                             // (Parm)
+	unsigned long                                      bInterrupted : 1;                                             // (Parm)
 };
 
 // Function GearboxFramework.AnimNodeSpecialMoveBlend.PlayData
@@ -272,7 +272,7 @@ struct UAnimNodeSpecialMoveBlend_Play_Params
 struct UAttributeExpressionEvaluator_Evaluate_Params
 {
 	class UObject*                                     ContextSource;                                            // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.Behavior_CallFunction.CallFunction
@@ -315,7 +315,7 @@ struct UITimerBehavior_SetTimerState_Params
 {
 	unsigned char                                      TimerId;                                                  // (Parm)
 	struct FBehaviorTimerState                         TimerState;                                               // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.ITimerBehavior.GetTimerState
@@ -323,7 +323,7 @@ struct UITimerBehavior_GetTimerState_Params
 {
 	unsigned char                                      TimerId;                                                  // (Parm)
 	struct FBehaviorTimerState                         TimerState;                                               // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.ITimerBehavior.GetTimeSeconds
@@ -406,7 +406,7 @@ struct UBehaviorHelpers_ResolveBehaviorProviderDefinitionReference_Params
 struct UBehaviorHelpers_IsBehaviorsV2_Params
 {
 	struct FBehaviorKernelInfo                         KernelInfo;                                               // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.BehaviorHelpers.ShouldContinueExecution
@@ -416,7 +416,7 @@ struct UBehaviorHelpers_ShouldContinueExecution_Params
 	float                                              TimeBetweenSteps;                                         // (Parm)
 	int                                                NumSteps;                                                 // (Parm, OutParm)
 	int                                                MaxSteps;                                                 // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.BehaviorHelpers.GetNextFireLocationSocket
@@ -433,7 +433,7 @@ struct UBehaviorHelpers_GetRotationFromAttachmentLocationData_Params
 {
 	struct FAttachmentLocationData                     AttachmentLocation;                                       // (Const, Parm)
 	struct FRotator                                    AttachmentLocationRotation;                               // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.BehaviorHelpers.GetRelativeDirection
@@ -450,7 +450,7 @@ struct UBehaviorHelpers_GetRelativeDirection_Params
 struct UCompoundExpressionEvaluator_Evaluate_Params
 {
 	class UObject*                                     ContextSource;                                            // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GBXActorList.RemoveAndDeleteActorsOfClassFromLevel
@@ -568,7 +568,7 @@ struct AGearboxAIController_ForceMoveToActor_Params
 struct AGearboxAIMoveNode_DoesPatrolPathExistToPoint_Params
 {
 	class AGearboxAIMoveNode*                          PatrolPoint;                                              // (Const, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxAIMoveNode.GetAllLinkedNodes
@@ -705,26 +705,26 @@ struct UGearboxCameraModifier_UpdateMasterFadePercentage_Params
 // Function GearboxFramework.GearboxCameraModifier.IsFadingDownwards
 struct UGearboxCameraModifier_IsFadingDownwards_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCameraModifier.IsFadingUpwards
 struct UGearboxCameraModifier_IsFadingUpwards_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCameraModifier.IsFadeInProgress
 struct UGearboxCameraModifier_IsFadeInProgress_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCameraModifier.StartFadeOut
 struct UGearboxCameraModifier_StartFadeOut_Params
 {
 	float                                              NewTimeSpan;                                              // (Parm)
-	bool                                               NewDisableWhenFadedOut;                                   // (OptionalParm, Parm)
+	unsigned long                                      NewDisableWhenFadedOut : 1;                                   // (OptionalParm, Parm)
 	unsigned char                                      NewFadeMode;                                              // (OptionalParm, Parm)
 };
 
@@ -753,7 +753,7 @@ struct UGearboxCameraModifier_SetGBXCameraOwner_Params
 struct UGearboxCameraModifier_AddCameraModifier_Params
 {
 	class ACamera*                                     Camera;                                                   // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxDialogInterface.ServerDialog_TriggerEvent
@@ -810,14 +810,14 @@ struct UGearboxDialogInterface_GetActor_Params
 // Function GearboxFramework.GearboxDialogInterface.CanTalk
 struct UGearboxDialogInterface_CanTalk_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxEditorNode.IsChild
 struct UGearboxEditorNode_IsChild_Params
 {
 	class UGearboxEditorNode*                          TestNode;                                                 // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxEngine.GetSparkInterface
@@ -830,13 +830,13 @@ struct UGearboxEngine_GetSparkInterface_Params
 struct UGearboxEngine_IsCurrentDeviceValid_Params
 {
 	int                                                SizeNeeded;                                               // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxEngine.HasStorageDeviceBeenRemoved
 struct UGearboxEngine_HasStorageDeviceBeenRemoved_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxEngine.GetCurrentDeviceID
@@ -849,7 +849,7 @@ struct UGearboxEngine_GetCurrentDeviceID_Params
 struct UGearboxEngine_SetCurrentDeviceID_Params
 {
 	int                                                NewDeviceID;                                              // (Parm)
-	bool                                               bProfileSignedOut;                                        // (OptionalParm, Parm)
+	unsigned long                                      bProfileSignedOut : 1;                                        // (OptionalParm, Parm)
 };
 
 // Function GearboxFramework.GearboxGameInfo.PostLogin
@@ -862,7 +862,7 @@ struct AGearboxGameInfo_PostLogin_Params
 struct UGFxMovieState_GetDebugString_Params
 {
 	class UGearboxGFxMovie*                            Movie;                                                    // (Parm)
-	bool                                               bIncludeFlags;                                            // (OptionalParm, Parm)
+	unsigned long                                      bIncludeFlags : 1;                                            // (OptionalParm, Parm)
 	struct FString                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, NeedCtorLink)
 };
 
@@ -885,7 +885,7 @@ struct UGFxMovieState_TestState_Params
 {
 	struct FName                                       TheState;                                                 // (Parm)
 	struct FMovieStateStruct                           MovieState;                                               // (Parm, OutParm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GFxMovieState.ToggleState
@@ -901,7 +901,7 @@ struct UGFxMovieState_EnableState_Params
 {
 	struct FName                                       TheState;                                                 // (Parm)
 	struct FMovieStateStruct                           MovieState;                                               // (Parm, OutParm, NeedCtorLink)
-	bool                                               bEnable;                                                  // (OptionalParm, Parm)
+	unsigned long                                      bEnable : 1;                                                  // (OptionalParm, Parm)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
@@ -919,7 +919,7 @@ struct UGearboxGFxMovie_OnClosedOnDeath_Params
 // Function GearboxFramework.GearboxGFxMovie.IsShowingFlashMouse
 struct UGearboxGFxMovie_IsShowingFlashMouse_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxGFxMovie.extIsMouseablePlatform
@@ -942,7 +942,7 @@ struct UGearboxGFxMovie_GetStyleDebugString_Params
 // Function GearboxFramework.GearboxGFxMovie.GetStateDebugString
 struct UGearboxGFxMovie_GetStateDebugString_Params
 {
-	bool                                               bIncludeFlags;                                            // (OptionalParm, Parm)
+	unsigned long                                      bIncludeFlags : 1;                                            // (OptionalParm, Parm)
 	struct FString                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, NeedCtorLink)
 };
 
@@ -957,14 +957,14 @@ struct UGearboxGFxMovie_RemoveStylesDrawnTo_Params
 {
 	class UPrimitiveComponent*                         PrimComp;                                                 // (Parm, EditInline)
 	FScriptInterface                                   Target;                                                   // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxGFxMovie.RemoveStyles
 struct UGearboxGFxMovie_RemoveStyles_Params
 {
 	FScriptInterface                                   Target;                                                   // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxGFxMovie.RemoveStyle
@@ -998,14 +998,14 @@ struct UGearboxGFxMovie_GetRenderTexture_Params
 // Function GearboxFramework.GearboxGFxMovie.MovieState_OnChanged
 struct UGearboxGFxMovie_MovieState_OnChanged_Params
 {
-	bool                                               bStateWasChanged;                                         // (Parm)
+	unsigned long                                      bStateWasChanged : 1;                                         // (Parm)
 };
 
 // Function GearboxFramework.GearboxGFxMovie.MovieState_SetFromMovie
 struct UGearboxGFxMovie_MovieState_SetFromMovie_Params
 {
 	class UGearboxGFxMovie*                            Movie;                                                    // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxGFxMovie.MovieState_Copy
@@ -1013,7 +1013,7 @@ struct UGearboxGFxMovie_MovieState_Copy_Params
 {
 	struct FMovieStateStruct                           StateDst;                                                 // (Parm, OutParm, NeedCtorLink)
 	struct FMovieStateStruct                           StateSrc;                                                 // (Parm, OutParm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxGFxMovie.MovieState_Compare
@@ -1021,7 +1021,7 @@ struct UGearboxGFxMovie_MovieState_Compare_Params
 {
 	struct FMovieStateStruct                           S1;                                                       // (Parm, OutParm, NeedCtorLink)
 	struct FMovieStateStruct                           S2;                                                       // (Parm, OutParm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxGFxMovie.MovieState_Toggle
@@ -1034,22 +1034,22 @@ struct UGearboxGFxMovie_MovieState_Toggle_Params
 struct UGearboxGFxMovie_MovieState_Enable_Params
 {
 	struct FName                                       TheState;                                                 // (Parm)
-	bool                                               bEnable;                                                  // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      bEnable : 1;                                                  // (OptionalParm, Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxGFxMovie.MovieState_IsEnabled
 struct UGearboxGFxMovie_MovieState_IsEnabled_Params
 {
 	struct FName                                       TheState;                                                 // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxGFxMovie.MovieState_SupportsState
 struct UGearboxGFxMovie_MovieState_SupportsState_Params
 {
 	struct FName                                       TheState;                                                 // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxGFxMovie.MovieState_Init
@@ -1086,7 +1086,7 @@ struct UGearboxGFxMovie_ApplyState_Params
 // Function GearboxFramework.GearboxGFxMovie.SetRenderingEnabled
 struct UGearboxGFxMovie_SetRenderingEnabled_Params
 {
-	bool                                               bEnabled;                                                 // (Parm)
+	unsigned long                                      bEnabled : 1;                                                 // (Parm)
 };
 
 // Function GearboxFramework.GearboxGFxMovie.GotoAndStop
@@ -1138,15 +1138,15 @@ struct UGearboxGFxMovie_OnClose_Params
 // Function GearboxFramework.GearboxGFxMovie.Start
 struct UGearboxGFxMovie_Start_Params
 {
-	bool                                               StartPaused;                                              // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      StartPaused : 1;                                              // (OptionalParm, Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxGFxMovie.ColorizeTooltipText
 struct UGearboxGFxMovie_ColorizeTooltipText_Params
 {
 	struct FString                                     S;                                                        // (Const, Parm, NeedCtorLink)
-	bool                                               bDisabled;                                                // (OptionalParm, Parm)
+	unsigned long                                      bDisabled : 1;                                                // (OptionalParm, Parm)
 	struct FString                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, NeedCtorLink)
 };
 
@@ -1155,7 +1155,7 @@ struct UGearboxGFxMovie_GFxColoredText_Params
 {
 	struct FColor                                      C;                                                        // (Const, Parm, OutParm)
 	struct FString                                     S;                                                        // (Const, Parm, OutParm, NeedCtorLink)
-	bool                                               bAppendNewline;                                           // (OptionalParm, Parm)
+	unsigned long                                      bAppendNewline : 1;                                           // (OptionalParm, Parm)
 	struct FString                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, NeedCtorLink)
 };
 
@@ -1163,7 +1163,7 @@ struct UGearboxGFxMovie_GFxColoredText_Params
 struct UGearboxGFxMovie_SingleArgInvokeB_Params
 {
 	struct FString                                     Command;                                                  // (Parm, NeedCtorLink)
-	bool                                               Arg;                                                      // (Parm)
+	unsigned long                                      Arg : 1;                                                      // (Parm)
 };
 
 // Function GearboxFramework.GearboxGFxMovie.SingleArgInvokeS
@@ -1196,7 +1196,7 @@ struct UGearboxGFxMovie_OnClosed_Params
 struct UGearboxGFxMovie_WantsControllerInput_Params
 {
 	int                                                ControllerId;                                             // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxGFxMovie.SetExternalTexture
@@ -1204,7 +1204,7 @@ struct UGearboxGFxMovie_SetExternalTexture_Params
 {
 	struct FString                                     Resource;                                                 // (Parm, NeedCtorLink)
 	class UTexture*                                    Texture;                                                  // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxGFxMovie.OnInputAxis
@@ -1214,20 +1214,20 @@ struct UGearboxGFxMovie_OnInputAxis_Params
 	struct FName                                       ukey;                                                     // (Parm)
 	float                                              Delta;                                                    // (Parm)
 	float                                              DeltaTime;                                                // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GFxMovie_StateParent.MovieState_OnChanged
 struct UGFxMovie_StateParent_MovieState_OnChanged_Params
 {
-	bool                                               bStateWasChanged;                                         // (Parm)
+	unsigned long                                      bStateWasChanged : 1;                                         // (Parm)
 };
 
 // Function GearboxFramework.GFxMovie_StateParent.Start
 struct UGFxMovie_StateParent_Start_Params
 {
-	bool                                               StartPaused;                                              // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      StartPaused : 1;                                              // (OptionalParm, Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxGlobals.GetBehaviorKernel
@@ -1259,7 +1259,7 @@ struct UGearboxGlobals_ShowDialog_Params
 struct UGearboxGlobals_NotifyActorDied_Params
 {
 	class AActor*                                      TheActor;                                                 // (Parm)
-	bool                                               bKeepBody;                                                // (Parm)
+	unsigned long                                      bKeepBody : 1;                                                // (Parm)
 };
 
 // Function GearboxFramework.GearboxGlobals.DoesLOSIntersectSpecialOccluder
@@ -1268,13 +1268,13 @@ struct UGearboxGlobals_DoesLOSIntersectSpecialOccluder_Params
 	struct FVector                                     FromLoc;                                                  // (Parm)
 	struct FVector                                     ToLoc;                                                    // (Parm)
 	class UPawnAllegiance*                             AllegianceAffected;                                       // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxGlobals.HasPhysXCapableGPU
 struct UGearboxGlobals_HasPhysXCapableGPU_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxGlobals.GetPlatform
@@ -1287,8 +1287,8 @@ struct UGearboxGlobals_GetPlatform_Params
 struct UGearboxGlobals_ValidatePlayerName_Params
 {
 	struct FString                                     InName;                                                   // (Parm, OutParm, NeedCtorLink)
-	bool                                               bReplaceCharacters;                                       // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      bReplaceCharacters : 1;                                       // (OptionalParm, Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxGlobals.RegisterStateKey
@@ -1297,7 +1297,7 @@ struct UGearboxGlobals_RegisterStateKey_Params
 	struct FName                                       LevelName;                                                // (Parm)
 	struct FName                                       ObjectName;                                               // (Parm)
 	struct FName                                       AdditionalKey;                                            // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxGlobals.DoesStateKeyExist
@@ -1306,14 +1306,14 @@ struct UGearboxGlobals_DoesStateKeyExist_Params
 	struct FName                                       LevelName;                                                // (Parm)
 	struct FName                                       ObjectName;                                               // (Parm)
 	struct FName                                       AdditionalKey;                                            // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxGlobals.FreeTexture2D
 struct UGearboxGlobals_FreeTexture2D_Params
 {
 	class UTexture2D*                                  Texture;                                                  // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxGlobals.GetTexture2D
@@ -1350,7 +1350,7 @@ struct UGearboxGlobals_GetMessageManager_Params
 struct UGearboxGlobals_RegDynamicTextureStreaming_Params
 {
 	class AActor*                                      A;                                                        // (Parm)
-	bool                                               bRegister;                                                // (OptionalParm, Parm)
+	unsigned long                                      bRegister : 1;                                                // (OptionalParm, Parm)
 };
 
 // Function GearboxFramework.GearboxGlobals.GetDynamicTextureActorList
@@ -1424,7 +1424,7 @@ struct UGearboxLocationRequest_GetDirection_Params
 {
 	class AActor*                                      ContextActor;                                             // (Parm)
 	struct FVector                                     OutDirection;                                             // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxLocationRequest.GetOrigin
@@ -1432,7 +1432,7 @@ struct UGearboxLocationRequest_GetOrigin_Params
 {
 	class AActor*                                      ContextActor;                                             // (Parm)
 	struct FVector                                     OutOrigin;                                                // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxLocationRequest.Get
@@ -1440,7 +1440,7 @@ struct UGearboxLocationRequest_Get_Params
 {
 	class AActor*                                      ContextActor;                                             // (Parm)
 	struct FVector                                     OutLocation;                                              // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.PawnMoveLocationRequest.Get
@@ -1448,7 +1448,7 @@ struct UPawnMoveLocationRequest_Get_Params
 {
 	class AActor*                                      ContextActor;                                             // (Parm)
 	struct FVector                                     OutLocation;                                              // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxPawn.GetAimDirection
@@ -1505,7 +1505,7 @@ struct AGearboxPawn_GetDialogNameTag_Params
 // Function GearboxFramework.GearboxPawn.CanTalk
 struct AGearboxPawn_CanTalk_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxPawn.OnCoverStateChanged
@@ -1639,7 +1639,7 @@ struct AGearboxPawn_Died_Params
 	class UClass*                                      DamageType;                                               // (Parm)
 	struct FVector                                     HitLocation;                                              // (Parm)
 	class UDamagePipeline*                             Pipeline;                                                 // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxPawn.SetMovementPhysics
@@ -1661,7 +1661,7 @@ struct AGearboxPawn_NotifyShotAtBy_Params
 // Function GearboxFramework.GearboxPawn.HaveIBeenShotAtRecently
 struct AGearboxPawn_HaveIBeenShotAtRecently_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SparkTypes.UTF8toString
@@ -1727,7 +1727,7 @@ struct USparkInterface_GetTitleStorageUrl_Params
 // Function GearboxFramework.SparkInterface.ClearGearboxAccountData
 struct USparkInterface_ClearGearboxAccountData_Params
 {
-	bool                                               IncludePrimaryPlayer;                                     // (Parm)
+	unsigned long                                      IncludePrimaryPlayer : 1;                                     // (Parm)
 };
 
 // Function GearboxFramework.SparkInterface.SignOutGearboxAccount
@@ -1753,14 +1753,14 @@ struct USparkInterface_GetGearboxAccountData_Params
 struct USparkInterface_IsGearboxAccountAuthenticated_Params
 {
 	unsigned char                                      ControllerId;                                             // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SparkInterface.IsGearboxAccountSignedIn
 struct USparkInterface_IsGearboxAccountSignedIn_Params
 {
 	unsigned char                                      ControllerId;                                             // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SparkInterface.ConvertUtcTimeToLocalTime
@@ -1773,7 +1773,7 @@ struct USparkInterface_ConvertUtcTimeToLocalTime_Params
 // Function GearboxFramework.SparkInterface.ShouldUpdateEmergencyMessage
 struct USparkInterface_ShouldUpdateEmergencyMessage_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SparkInterface.GetEmergencyMessage
@@ -1834,7 +1834,7 @@ struct USparkInterface_GetInteractionMinWaitSeconds_Params
 // Function GearboxFramework.SparkInterface.IsTmsComplete
 struct USparkInterface_IsTmsComplete_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SparkInterface.SetTmsComplete
@@ -1851,13 +1851,13 @@ struct USparkInterface_GetSparkInitialization_Params
 // Function GearboxFramework.SparkInterface.RestartSparkInitialization
 struct USparkInterface_RestartSparkInitialization_Params
 {
-	bool                                               bPrimary;                                                 // (Parm)
+	unsigned long                                      bPrimary : 1;                                                 // (Parm)
 };
 
 // Function GearboxFramework.SparkInterface.RestartSparkInitializationFromScript
 struct USparkInterface_RestartSparkInitializationFromScript_Params
 {
-	bool                                               bPrimary;                                                 // (Parm)
+	unsigned long                                      bPrimary : 1;                                                 // (Parm)
 	struct FScriptDelegate                             SparkInitializedDelegate;                                 // (Parm, NeedCtorLink)
 	struct FScriptDelegate                             SparkEmergencyMessageDelegate;                            // (Parm, NeedCtorLink)
 };
@@ -1901,7 +1901,7 @@ struct USparkInterface_GetPlatformName_Params
 struct USparkInterface_GetPlatformTicket_Params
 {
 	int                                                ControllerId;                                             // (Parm)
-	bool                                               bPrimary;                                                 // (Parm)
+	unsigned long                                      bPrimary : 1;                                                 // (Parm)
 	struct FString                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, NeedCtorLink)
 };
 
@@ -1925,7 +1925,7 @@ struct USparkInterface_ResetInitializationStatus_Params
 // Function GearboxFramework.SparkInterface.IsSparkEnabled
 struct USparkInterface_IsSparkEnabled_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SparkInterface.IssueSparkStringRequest
@@ -1951,14 +1951,14 @@ struct USparkInterface_IssueSparkRequest_Params
 // Function GearboxFramework.GearboxAccountData.HasSignedAllEulas
 struct UGearboxAccountData_HasSignedAllEulas_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxAccountData.CountEntitlement
 struct UGearboxAccountData_CountEntitlement_Params
 {
 	struct FName                                       EntitlementName;                                          // (Parm)
-	bool                                               bIgnoreLocallyConsumed;                                   // (OptionalParm, Parm)
+	unsigned long                                      bIgnoreLocallyConsumed : 1;                                   // (OptionalParm, Parm)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
@@ -1971,27 +1971,27 @@ struct UGearboxAccountData_GetTotalGoldenKeyCount_Params
 // Function GearboxFramework.GearboxAccountData.GetGoldenKeyCount
 struct UGearboxAccountData_GetGoldenKeyCount_Params
 {
-	bool                                               bIgnoreLocallyConsumed;                                   // (OptionalParm, Parm)
+	unsigned long                                      bIgnoreLocallyConsumed : 1;                                   // (OptionalParm, Parm)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxAccountData.HasGoldenKey
 struct UGearboxAccountData_HasGoldenKey_Params
 {
-	bool                                               bIgnoreLocallyConsumed;                                   // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      bIgnoreLocallyConsumed : 1;                                   // (OptionalParm, Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxAccountData.HasDeveloperSkin
 struct UGearboxAccountData_HasDeveloperSkin_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxAccountData.IsDeveloper
 struct UGearboxAccountData_IsDeveloper_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxAccountData.MarkOffersNotified
@@ -2023,8 +2023,8 @@ struct UGearboxAccountData_GetEntitlementWithId_Params
 struct UGearboxAccountData_HasEntitlement_Params
 {
 	struct FName                                       EntitlementName;                                          // (Parm)
-	bool                                               bIgnoreLocallyConsumed;                                   // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      bIgnoreLocallyConsumed : 1;                                   // (OptionalParm, Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxAccountData.RemoveEntitlement
@@ -2055,7 +2055,7 @@ struct UGearboxAccountData_HandleReloadEntitlementsResponse_Params
 // Function GearboxFramework.GearboxAccountData.ReloadEntitlements
 struct UGearboxAccountData_ReloadEntitlements_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxAccountData.ResetEntitlementUpdateTimer
@@ -2066,7 +2066,7 @@ struct UGearboxAccountData_ResetEntitlementUpdateTimer_Params
 // Function GearboxFramework.GearboxAccountData.CanReloadEntitlements
 struct UGearboxAccountData_CanReloadEntitlements_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxAccountData.TriggerEntitlementsUpdatedDelegates
@@ -2103,7 +2103,7 @@ struct UGearboxAccountData_ExtractArchwayResultJson_Params
 {
 	TArray<unsigned char>                              Data;                                                     // (Const, Parm, OutParm, NeedCtorLink)
 	struct FArchwayResult                              ArchwayData;                                              // (Parm, OutParm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxAccountData.ExtractArchwayResult
@@ -2111,7 +2111,7 @@ struct UGearboxAccountData_ExtractArchwayResult_Params
 {
 	TArray<unsigned char>                              Data;                                                     // (Const, Parm, OutParm, NeedCtorLink)
 	struct FArchwayResult                              ArchwayData;                                              // (Parm, OutParm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxAccountActions.HandleEULAInteractionCompleteResponse
@@ -2137,7 +2137,7 @@ struct UGearboxAccountActions_HandleEULAChainResponse_Params
 struct UGearboxAccountActions_ReadEULAChain_Params
 {
 	unsigned char                                      ControllerId;                                             // (Parm)
-	bool                                               bAllowRetries;                                            // (OptionalParm, Parm)
+	unsigned long                                      bAllowRetries : 1;                                            // (OptionalParm, Parm)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
@@ -2202,7 +2202,7 @@ struct UGearboxAccountActions_LocallyConsumeEntitlementWithCount_Params
 	struct FName                                       EntitlementName;                                          // (Parm)
 	int                                                NumToConsume;                                             // (Parm)
 	unsigned char                                      ControllerId;                                             // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxAccountActions.ConsumeEntitlementsWithCounts
@@ -2301,7 +2301,7 @@ struct UGearboxAccountActions_OnSignInGearboxAccount_Params
 // Function GearboxFramework.GearboxPlayerController.CanPlayOnline
 struct AGearboxPlayerController_CanPlayOnline_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxPlayerController.DisplayShiftCommunicationFailedDialog
@@ -2335,7 +2335,7 @@ struct AGearboxPlayerController_ShouldCheckRemoteControlCheckbox_Params
 {
 	unsigned char                                      CheckBoxName;                                             // (Parm)
 	class AHUD*                                        HUD;                                                      // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxPlayerController.DisplayDebugSpark
@@ -2409,13 +2409,13 @@ struct AGearboxPlayerController_aiprev_Params
 // Function GearboxFramework.GearboxPlayerController.AINextRule
 struct AGearboxPlayerController_AINextRule_Params
 {
-	bool                                               bSkipContainers;                                          // (OptionalParm, Parm)
+	unsigned long                                      bSkipContainers : 1;                                          // (OptionalParm, Parm)
 };
 
 // Function GearboxFramework.GearboxPlayerController.AIPrevRule
 struct AGearboxPlayerController_AIPrevRule_Params
 {
-	bool                                               bSkipContainers;                                          // (OptionalParm, Parm)
+	unsigned long                                      bSkipContainers : 1;                                          // (OptionalParm, Parm)
 };
 
 // Function GearboxFramework.GearboxPlayerController.AIDebugSetPawn
@@ -2471,7 +2471,7 @@ struct AGearboxPlayerController_SetStorageDeviceID_Params
 // Function GearboxFramework.GearboxPlayerController.NotifyDeviceSelectComplete
 struct AGearboxPlayerController_NotifyDeviceSelectComplete_Params
 {
-	bool                                               bWasSuccessful;                                           // (Parm)
+	unsigned long                                      bWasSuccessful : 1;                                           // (Parm)
 };
 
 // Function GearboxFramework.GearboxPlayerController.DisplayStorageRemovedMenu
@@ -2488,13 +2488,13 @@ struct AGearboxPlayerController_DisplayProfileRemovedMenu_Params
 struct AGearboxPlayerController_NotifyProfileWriteFromStorageChangeComplete_Params
 {
 	unsigned char                                      LocalUser;                                                // (Parm)
-	bool                                               bWasSuccessful;                                           // (Parm)
+	unsigned long                                      bWasSuccessful : 1;                                           // (Parm)
 };
 
 // Function GearboxFramework.GearboxPlayerController.IsCurrentStorageDeviceValid
 struct AGearboxPlayerController_IsCurrentStorageDeviceValid_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxPlayerController.NotifyStorageDeviceChange
@@ -2510,8 +2510,8 @@ struct AGearboxPlayerController_DestroyOnlineGame_Params
 // Function GearboxFramework.GearboxPlayerController.ReturnToTitleScreen
 struct AGearboxPlayerController_ReturnToTitleScreen_Params
 {
-	bool                                               bSkipSave;                                                // (OptionalParm, Parm)
-	bool                                               bRemoveSplitPlayer;                                       // (OptionalParm, Parm)
+	unsigned long                                      bSkipSave : 1;                                                // (OptionalParm, Parm)
+	unsigned long                                      bRemoveSplitPlayer : 1;                                       // (OptionalParm, Parm)
 };
 
 // Function GearboxFramework.GearboxPlayerController.GetConnectionFailureNoticeMsg
@@ -2529,7 +2529,7 @@ struct AGearboxPlayerController_GetMainMenuMapName_Params
 // Function GearboxFramework.GearboxPlayerController.NotifyLinkStatusChange
 struct AGearboxPlayerController_NotifyLinkStatusChange_Params
 {
-	bool                                               bIsConnected;                                             // (Parm)
+	unsigned long                                      bIsConnected : 1;                                             // (Parm)
 };
 
 // Function GearboxFramework.GearboxPlayerController.NotifyLoginStatusChange
@@ -2549,7 +2549,7 @@ struct AGearboxPlayerController_NotifyLoginChange_Params
 struct AGearboxPlayerController_OnReadProfileSettingsComplete_Params
 {
 	unsigned char                                      LocalUserNum;                                             // (Parm)
-	bool                                               bWasSuccessful;                                           // (Parm)
+	unsigned long                                      bWasSuccessful : 1;                                           // (Parm)
 };
 
 // Function GearboxFramework.GearboxPlayerController.OnReceivedNewProfile
@@ -2571,7 +2571,7 @@ struct AGearboxPlayerController_RegisterOnlineDelegates_Params
 struct AGearboxPlayerController_OnProfileWriteComplete_Params
 {
 	unsigned char                                      LocalUserNum;                                             // (Parm)
-	bool                                               bWasSuccessful;                                           // (Parm)
+	unsigned long                                      bWasSuccessful : 1;                                           // (Parm)
 };
 
 // Function GearboxFramework.GearboxPlayerController.HidePS3WritingProfileDialog
@@ -2587,8 +2587,8 @@ struct AGearboxPlayerController_ShowPS3WritingProfileDialog_Params
 // Function GearboxFramework.GearboxPlayerController.WriteProfile
 struct AGearboxPlayerController_WriteProfile_Params
 {
-	bool                                               bShouldShowProfileDialog;                                 // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      bShouldShowProfileDialog : 1;                                 // (OptionalParm, Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxPlayerController.GetProfileSettings
@@ -2665,26 +2665,26 @@ struct AGearboxPlayerController_NoTarget_Params
 // Function GearboxFramework.GearboxPlayerController.GetNoTargetPlayers
 struct AGearboxPlayerController_GetNoTargetPlayers_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxPlayerController.SetNoTargetPlayers
 struct AGearboxPlayerController_SetNoTargetPlayers_Params
 {
-	bool                                               bNoTarget;                                                // (Parm)
+	unsigned long                                      bNoTarget : 1;                                                // (Parm)
 };
 
 // Function GearboxFramework.GearboxPlayerController.Possess
 struct AGearboxPlayerController_Possess_Params
 {
 	class APawn*                                       aPawn;                                                    // (Parm)
-	bool                                               bVehicleTransition;                                       // (Parm)
+	unsigned long                                      bVehicleTransition : 1;                                       // (Parm)
 };
 
 // Function GearboxFramework.GearboxPlayerController.DontTarget
 struct AGearboxPlayerController_DontTarget_Params
 {
-	bool                                               bModeFlag;                                                // (Parm)
+	unsigned long                                      bModeFlag : 1;                                                // (Parm)
 };
 
 // Function GearboxFramework.GearboxPlayerController.ClientConsoleCommand
@@ -2696,13 +2696,13 @@ struct AGearboxPlayerController_ClientConsoleCommand_Params
 // Function GearboxFramework.GearboxPlayerController.IsPlayerAllowingActiveMoment
 struct AGearboxPlayerController_IsPlayerAllowingActiveMoment_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxPlayerController.IsActiveMomentRunning
 struct AGearboxPlayerController_IsActiveMomentRunning_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxPlayerController.ViewShake
@@ -2757,7 +2757,7 @@ struct AGearboxPlayerController_ClientDamageShake_Params
 struct AGearboxPlayerController_ConsoleEcho_Params
 {
 	struct FString                                     Text;                                                     // (Parm, NeedCtorLink)
-	bool                                               bLogOutput;                                               // (OptionalParm, Parm)
+	unsigned long                                      bLogOutput : 1;                                               // (OptionalParm, Parm)
 };
 
 // Function GearboxFramework.GearboxPlayerController.Initialize
@@ -2822,7 +2822,7 @@ struct UGearboxRenderTextureManager_GetThumbnail_Params
 struct UGearboxRenderTextureManager_FreeTexture2D_Params
 {
 	class UTexture2D*                                  Texture;                                                  // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxRenderTextureManager.GetTexture2D
@@ -2835,7 +2835,7 @@ struct UGearboxRenderTextureManager_GetTexture2D_Params
 struct UGearboxRenderTextureManager_FreeRenderTexture_Params
 {
 	class UTextureRenderTarget2D*                      Texture;                                                  // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxRenderTextureManager.GetRenderTexture
@@ -2843,7 +2843,7 @@ struct UGearboxRenderTextureManager_GetRenderTexture_Params
 {
 	int                                                InSizeX;                                                  // (Parm)
 	int                                                InSizeY;                                                  // (Parm)
-	bool                                               bNeedsTwoCopies;                                          // (OptionalParm, Parm)
+	unsigned long                                      bNeedsTwoCopies : 1;                                          // (OptionalParm, Parm)
 	class UTextureRenderTarget2D*                      ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
@@ -2923,7 +2923,7 @@ struct UGFxMovieDefinition_SpawnPlayerMovie_Params
 // Function GearboxFramework.GFxMovieDefinition.SupportsStatePooling
 struct UGFxMovieDefinition_SupportsStatePooling_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GFxMovieDefinition.GetPoolStyle
@@ -2941,7 +2941,7 @@ struct UGFxMovieDrawStyle_GetStyleDebugString_Params
 // Function GearboxFramework.GFxMovieDrawStyleHUD.RequiresClientInstance
 struct UGFxMovieDrawStyleHUD_RequiresClientInstance_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GFxMovieDrawStyleMesh.GetStyleDebugString
@@ -2953,13 +2953,13 @@ struct UGFxMovieDrawStyleMesh_GetStyleDebugString_Params
 // Function GearboxFramework.GFxMovieDrawStyleMesh.RequiresClientInstance
 struct UGFxMovieDrawStyleMesh_RequiresClientInstance_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GFxMovieDrawStyleSplitscreen.RequiresClientInstance
 struct UGFxMovieDrawStyleSplitscreen_RequiresClientInstance_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GFxMovieManager.ChangeMovieState
@@ -3015,7 +3015,7 @@ struct UGFxMovieStatePlayerAware_EnableState_Params
 {
 	struct FName                                       TheState;                                                 // (Parm)
 	struct FMovieStateStruct                           MovieState;                                               // (Parm, OutParm, NeedCtorLink)
-	bool                                               bEnable;                                                  // (OptionalParm, Parm)
+	unsigned long                                      bEnable : 1;                                                  // (OptionalParm, Parm)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
@@ -3064,7 +3064,7 @@ struct UIAIInterface_GetAIActor_Params
 // Function GearboxFramework.IAIInterface.CanTickAI
 struct UIAIInterface_CanTickAI_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.IGFxActorMovie.GFx_NotifyMovieDestroy
@@ -3126,7 +3126,7 @@ struct UIStreamingDataEvent_RunStreamingDataEvent_Params
 struct UPhysicsStateExpressionEvaluator_Evaluate_Params
 {
 	class UObject*                                     ContextSource;                                            // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.PopulationAspect.DenStatRemoved
@@ -3144,14 +3144,14 @@ struct UPopulationAspect_DenStatAdded_Params
 // Function GearboxFramework.PopulationAspect.EnabledStatusChanged
 struct UPopulationAspect_EnabledStatusChanged_Params
 {
-	bool                                               bIsEnabled;                                               // (Parm)
-	bool                                               bHasActiveActors;                                         // (Parm)
+	unsigned long                                      bIsEnabled : 1;                                               // (Parm)
+	unsigned long                                      bHasActiveActors : 1;                                         // (Parm)
 };
 
 // Function GearboxFramework.PopulationAspect.AllActorsRemoved
 struct UPopulationAspect_AllActorsRemoved_Params
 {
-	bool                                               bFinishedSpawning;                                        // (Parm)
+	unsigned long                                      bFinishedSpawning : 1;                                        // (Parm)
 };
 
 // Function GearboxFramework.PopulationAspect.OnActorDeath
@@ -3191,7 +3191,7 @@ struct APopulationEncounter_OnToggle_Params
 struct APopulationEncounter_UpdateOpportunityEnabledStates_Params
 {
 	int                                                nWave;                                                    // (Parm)
-	bool                                               bUpdateIfOnlyOneWave;                                     // (Parm)
+	unsigned long                                      bUpdateIfOnlyOneWave : 1;                                     // (Parm)
 };
 
 // Function GearboxFramework.PopulationEncounter.UpdateKismetNotifications
@@ -3242,7 +3242,7 @@ struct URegionDefinition_GetDefaultRegionGameStage_Params
 	int                                                MaxGameStage;                                             // (Parm, OutParm)
 	int                                                AwesomeLevel;                                             // (Parm, OutParm)
 	int                                                GameStageIncreaseOverPlayerLevel;                         // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.RegionDefinition.TestRegionGameStage
@@ -3250,8 +3250,8 @@ struct URegionDefinition_TestRegionGameStage_Params
 {
 	int                                                GameStage;                                                // (Parm, OutParm)
 	int                                                AwesomeLevel;                                             // (Parm, OutParm)
-	bool                                               bDefaultGameStage;                                        // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      bDefaultGameStage : 1;                                        // (OptionalParm, Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.RegionDefinition.GetRegionGameStage
@@ -3259,34 +3259,34 @@ struct URegionDefinition_GetRegionGameStage_Params
 {
 	int                                                GameStage;                                                // (Parm, OutParm)
 	int                                                AwesomeLevel;                                             // (Parm, OutParm)
-	bool                                               bDefaultGameStage;                                        // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      bDefaultGameStage : 1;                                        // (OptionalParm, Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.RuleEngineLoadBalanceManager.SetAsDebugging
 struct URuleEngineLoadBalanceManager_SetAsDebugging_Params
 {
-	bool                                               bSetDebugging;                                            // (Parm)
+	unsigned long                                      bSetDebugging : 1;                                            // (Parm)
 };
 
 // Function GearboxFramework.SeqAct_AllPlayersInVolume.AllPlayersInVolumes
 struct USeqAct_AllPlayersInVolume_AllPlayersInVolumes_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SeqAct_AllPlayersInVolume.PlayerIsInAVolume
 struct USeqAct_AllPlayersInVolume_PlayerIsInAVolume_Params
 {
 	class APlayerController*                           PC;                                                       // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SpecialMoveDefinition.IsPlayingLocally
 struct USpecialMoveDefinition_IsPlayingLocally_Params
 {
 	FScriptInterface                                   SMI;                                                      // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SpecialMoveDefinition.GetSMDToPlay
@@ -3301,21 +3301,21 @@ struct USpecialMoveDefinition_Contains_Params
 {
 	class USpecialMoveDefinition*                      SMD;                                                      // (Parm)
 	FScriptInterface                                   SMI;                                                      // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SpecialMoveDefinition.ClientFinished
 struct USpecialMoveDefinition_ClientFinished_Params
 {
 	FScriptInterface                                   SMI;                                                      // (Parm)
-	bool                                               bInterrupted;                                             // (Parm)
+	unsigned long                                      bInterrupted : 1;                                             // (Parm)
 };
 
 // Function GearboxFramework.SpecialMoveDefinition.ServerFinished
 struct USpecialMoveDefinition_ServerFinished_Params
 {
 	FScriptInterface                                   SMI;                                                      // (Parm)
-	bool                                               bInterrupted;                                             // (Parm)
+	unsigned long                                      bInterrupted : 1;                                             // (Parm)
 };
 
 // Function GearboxFramework.SpecialMoveDefinition.ClientStarted
@@ -3336,27 +3336,27 @@ struct USpecialMoveDefinition_ServerStarted_Params
 struct USpecialMoveDefinition_IsLocalAuthority_Params
 {
 	FScriptInterface                                   SMI;                                                      // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SpecialMoveDefinition.AuthorityCanPlay
 struct USpecialMoveDefinition_AuthorityCanPlay_Params
 {
 	FScriptInterface                                   SMI;                                                      // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SpecialMoveComponent.IsOwnerAlwaysNetRelevant
 struct USpecialMoveComponent_IsOwnerAlwaysNetRelevant_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SpecialMoveComponent.CanPlayBehaviorData
 struct USpecialMoveComponent_CanPlayBehaviorData_Params
 {
 	struct FSMBehavior                                 Data;                                                     // (Const, Parm, OutParm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SpecialMoveComponent.RunBehaviors
@@ -3394,7 +3394,7 @@ struct USpecialMoveComponent_LocalAnimFinished_Params
 {
 	class USpecialMoveDefinition*                      SMD;                                                      // (Parm)
 	struct FSpecialMoveData                            SMData;                                                   // (Parm, OutParm)
-	bool                                               bInterrupted;                                             // (Parm)
+	unsigned long                                      bInterrupted : 1;                                             // (Parm)
 };
 
 // Function GearboxFramework.SpecialMoveComponent.ClearQueue
@@ -3406,7 +3406,7 @@ struct USpecialMoveComponent_ClearQueue_Params
 struct USpecialMoveComponent_StopAnyLocal_Params
 {
 	struct FName                                       SMNodeName;                                               // (OptionalParm, Parm)
-	bool                                               bInterrupted;                                             // (OptionalParm, Parm)
+	unsigned long                                      bInterrupted : 1;                                             // (OptionalParm, Parm)
 	class USkeletalMeshComponent*                      MeshComp;                                                 // (OptionalParm, Parm, EditInline)
 };
 
@@ -3414,22 +3414,22 @@ struct USpecialMoveComponent_StopAnyLocal_Params
 struct USpecialMoveComponent_StopLocal_Params
 {
 	class USpecialMoveDefinition*                      OldSMD;                                                   // (Parm)
-	bool                                               bInterrupted;                                             // (OptionalParm, Parm)
+	unsigned long                                      bInterrupted : 1;                                             // (OptionalParm, Parm)
 };
 
 // Function GearboxFramework.SpecialMoveComponent.StopAny
 struct USpecialMoveComponent_StopAny_Params
 {
-	bool                                               bClearQueue;                                              // (OptionalParm, Parm)
-	bool                                               bInterrupted;                                             // (OptionalParm, Parm)
+	unsigned long                                      bClearQueue : 1;                                              // (OptionalParm, Parm)
+	unsigned long                                      bInterrupted : 1;                                             // (OptionalParm, Parm)
 };
 
 // Function GearboxFramework.SpecialMoveComponent.Stop
 struct USpecialMoveComponent_Stop_Params
 {
 	class USpecialMoveDefinition*                      OldSMD;                                                   // (Parm)
-	bool                                               bClearQueue;                                              // (OptionalParm, Parm)
-	bool                                               bInterrupted;                                             // (OptionalParm, Parm)
+	unsigned long                                      bClearQueue : 1;                                              // (OptionalParm, Parm)
+	unsigned long                                      bInterrupted : 1;                                             // (OptionalParm, Parm)
 };
 
 // Function GearboxFramework.SpecialMoveComponent.PlayLocal
@@ -3477,27 +3477,27 @@ struct USpecialMoveComponent_RemoveFromQueue_Params
 struct USpecialMoveComponent_IsQueued_Params
 {
 	class USpecialMoveDefinition*                      SMD;                                                      // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SpecialMoveComponent.IsPlayingClass
 struct USpecialMoveComponent_IsPlayingClass_Params
 {
 	class UClass*                                      SMClass;                                                  // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SpecialMoveComponent.IsPlayingAny
 struct USpecialMoveComponent_IsPlayingAny_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SpecialMoveComponent.IsPlaying
 struct USpecialMoveComponent_IsPlaying_Params
 {
 	class USpecialMoveDefinition*                      SMD;                                                      // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SpecialMoveComponent.GetAnimDelta
@@ -3523,7 +3523,7 @@ struct USpecialMoveComponent_PlayReplicated_Params
 struct USpecialMoveComponent_GetAnimLength_Params
 {
 	class UGearboxAnimDefinition*                      CustomAnimSMD;                                            // (Parm)
-	bool                                               bIncludeNextSMD;                                          // (OptionalParm, Parm)
+	unsigned long                                      bIncludeNextSMD : 1;                                          // (OptionalParm, Parm)
 	class USkeletalMeshComponent*                      SMC;                                                      // (OptionalParm, Parm, EditInline)
 	float                                              ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
@@ -3533,7 +3533,7 @@ struct USpecialMoveExpressionList_Contains_Params
 {
 	class USpecialMoveDefinition*                      SMD;                                                      // (Parm)
 	FScriptInterface                                   SMI;                                                      // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SpecialMoveExpressionList.GetSMDToPlay
@@ -3548,7 +3548,7 @@ struct USpecialMoveRandom_Contains_Params
 {
 	class USpecialMoveDefinition*                      SMD;                                                      // (Parm)
 	FScriptInterface                                   SMI;                                                      // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SpecialMoveRandom.GetSMDToPlay
@@ -3603,7 +3603,7 @@ struct UAIComponent_HoldDialog_Params
 // Function GearboxFramework.AIComponent.DialogOnHold
 struct UAIComponent_DialogOnHold_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.AIComponent.ReleaseGod
@@ -3623,7 +3623,7 @@ struct UAIComponent_HoldGod_Params
 // Function GearboxFramework.AIComponent.GodOnHold
 struct UAIComponent_GodOnHold_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.AIComponent.ReleaseDemigod
@@ -3643,7 +3643,7 @@ struct UAIComponent_HoldDemigod_Params
 // Function GearboxFramework.AIComponent.DemigodOnHold
 struct UAIComponent_DemigodOnHold_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.AIComponent.ReleaseMovement
@@ -3663,7 +3663,7 @@ struct UAIComponent_HoldMovement_Params
 // Function GearboxFramework.AIComponent.MovementOnHold
 struct UAIComponent_MovementOnHold_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.AIComponent.ReleaseTarget
@@ -3683,7 +3683,7 @@ struct UAIComponent_HoldTarget_Params
 // Function GearboxFramework.AIComponent.TargetOnHold
 struct UAIComponent_TargetOnHold_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.AIComponent.Release
@@ -3703,7 +3703,7 @@ struct UAIComponent_Hold_Params
 // Function GearboxFramework.AIComponent.OnHold
 struct UAIComponent_OnHold_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.AIComponent.ForceUpdateTargets
@@ -3734,14 +3734,14 @@ struct UAIComponent_SetScriptedTarget_Params
 struct UAIComponent_GetTargetRecordFor_Params
 {
 	class AActor*                                      Target;                                                   // (Parm)
-	bool                                               bTryParent;                                               // (OptionalParm, Parm)
+	unsigned long                                      bTryParent : 1;                                               // (OptionalParm, Parm)
 	class UMindTargetInfo*                             ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.AIComponent.GetTargetRecord
 struct UAIComponent_GetTargetRecord_Params
 {
-	bool                                               bTryParent;                                               // (OptionalParm, Parm)
+	unsigned long                                      bTryParent : 1;                                               // (OptionalParm, Parm)
 	class UMindTargetInfo*                             ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
@@ -3749,7 +3749,7 @@ struct UAIComponent_GetTargetRecord_Params
 struct UAIComponent_IsTarget_Params
 {
 	class AActor*                                      TestTarget;                                               // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.AIComponent.GetTarget
@@ -3761,14 +3761,14 @@ struct UAIComponent_GetTarget_Params
 // Function GearboxFramework.AIComponent.HasTarget
 struct UAIComponent_HasTarget_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.AIComponent.ShouldRemoveTarget
 struct UAIComponent_ShouldRemoveTarget_Params
 {
 	class UMindTargetInfo*                             TargetRec;                                                // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.AIComponent.TargetRemoved
@@ -3787,14 +3787,14 @@ struct UAIComponent_ForceRemoveTarget_Params
 struct UAIComponent_ValidCurrentTarget_Params
 {
 	class UMindTargetInfo*                             TargetRec;                                                // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.AIComponent.ValidTarget
 struct UAIComponent_ValidTarget_Params
 {
 	class AActor*                                      Target;                                                   // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.AIComponent.PrioritizeTarget
@@ -3875,7 +3875,7 @@ struct UAIComponent_ClearState_Params
 struct UAIComponent_ActivateEvent_Params
 {
 	struct FName                                       EventName;                                                // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.FlagDefinition.ApplyFlagInitializationData
@@ -3897,15 +3897,15 @@ struct UFlagDefinition_SetTrueTimed_Params
 {
 	class UObject*                                     ContextSource;                                            // (Parm)
 	float                                              TimeSeconds;                                              // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.FlagDefinition.SetValue
 struct UFlagDefinition_SetValue_Params
 {
 	class UObject*                                     ContextSource;                                            // (Parm)
-	bool                                               Value;                                                    // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      Value : 1;                                                    // (Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.ActionSequence.TriggerBehavior
@@ -3925,19 +3925,19 @@ struct UActionSequence_GetRangeValue_Params
 struct UActionSequence_RangeIsValid_Params
 {
 	struct FAIRange                                    Range;                                                    // (Const, Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.ActionSequence.Finish
 struct UActionSequence_Finish_Params
 {
-	bool                                               bFailed;                                                  // (OptionalParm, Parm)
+	unsigned long                                      bFailed : 1;                                                  // (OptionalParm, Parm)
 };
 
 // Function GearboxFramework.ActionSequence.IsRunning
 struct UActionSequence_IsRunning_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.ActionSequence.ScriptCleanUp
@@ -4025,7 +4025,7 @@ struct UActionSequence_DoRuleSetPop_Params
 struct UActionSequence_DoRuleSetPush_Params
 {
 	class URuleSet*                                    NewRuleSet;                                               // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.ActionSequence.DoRuleSetSwitch
@@ -4056,13 +4056,13 @@ struct UActionSequence_GetActionSequence_Params
 struct UActionSequence_IsInLabel_Params
 {
 	struct FName                                       TestLabel;                                                // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.ActionSequence.IsAtomic
 struct UActionSequence_IsAtomic_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.ActionSequence.StopAtomic
@@ -4078,13 +4078,13 @@ struct UActionSequence_StartAtomic_Params
 // Function GearboxFramework.ActionSequence.IsActionReadyToFinish
 struct UActionSequence_IsActionReadyToFinish_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.ActionSequenceList.IsActionReadyToFinish
 struct UActionSequenceList_IsActionReadyToFinish_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.Action_PawnMovementBase.PostMovement
@@ -4122,7 +4122,7 @@ struct UAction_PawnMovementBase_StartSequence_Params
 struct UAction_PawnMovementBase_MovePawnToDestinationLocation_Params
 {
 	struct FVector                                     GoalLocation;                                             // (Parm)
-	bool                                               NewUsePreciseArrival;                                     // (Parm)
+	unsigned long                                      NewUsePreciseArrival : 1;                                     // (Parm)
 };
 
 // Function GearboxFramework.Action_PawnMovementBase.TakeDebugSnapshotMoveFailure
@@ -4163,7 +4163,7 @@ struct UActionSequenceRandom_GetRandomAction_Params
 struct UAICostExpressionEvaluator_Evaluate_Params
 {
 	class UObject*                                     ContextSource;                                            // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.AIFactoryBase.FlushPools
@@ -4182,7 +4182,7 @@ struct UAIFactoryBase_GetAIDef_Params
 {
 	class UAIDefinition*                               AIDefTemplate;                                            // (Parm)
 	class UAIDefinition*                               OutAIDef;                                                 // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.AIFactoryBase.ReturnTargetRecord
@@ -4196,7 +4196,7 @@ struct UAIFactoryBase_GetTargetRecord_Params
 {
 	class UClass*                                      InfoClass;                                                // (Parm)
 	class UMindTargetInfo*                             OutTargetRecord;                                          // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.AIFactoryBase.ReturnActionSequence
@@ -4210,7 +4210,7 @@ struct UAIFactoryBase_GetActionSequence_Params
 {
 	class UActionSequence*                             SequenceTemplate;                                         // (Parm)
 	class UActionSequence*                             OutSequence;                                              // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.AIFactoryBase.ReturnRuleSet
@@ -4225,7 +4225,7 @@ struct UAIFactoryBase_GetRuleSetFromArchetype_Params
 	class URuleSet*                                    RuleSetArchetype;                                         // (Parm)
 	class URuleSet*                                    OutRuleSet;                                               // (Parm, OutParm)
 	TArray<class URule*>                               CurRunningRules;                                          // (Parm, OutParm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.AIFactoryBase.ReturnKnowledgeRecord
@@ -4239,7 +4239,7 @@ struct UAIFactoryBase_GetKnowledgeRecordListFromArchetypes_Params
 {
 	TArray<class UKnowledgeRecord*>                    KnowledgeRecordTemplates;                                 // (Parm, NeedCtorLink)
 	TArray<class UKnowledgeRecord*>                    KnowledgeRecords;                                         // (Parm, OutParm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.AIFactoryBase.GetKnowledgeRecordFromArchetype
@@ -4247,7 +4247,7 @@ struct UAIFactoryBase_GetKnowledgeRecordFromArchetype_Params
 {
 	class UKnowledgeRecord*                            InKR;                                                     // (Parm)
 	class UKnowledgeRecord*                            OutKR;                                                    // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.AIFactoryBase.GetKnowledgeRecord
@@ -4255,7 +4255,7 @@ struct UAIFactoryBase_GetKnowledgeRecord_Params
 {
 	class UClass*                                      KnowledgeRecordClass;                                     // (Parm)
 	class UKnowledgeRecord*                            OutKR;                                                    // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.AIFactoryBase.ReturnRule
@@ -4269,7 +4269,7 @@ struct UAIFactoryBase_GetRuleFromArchetype_Params
 {
 	class URule*                                       InRule;                                                   // (Parm)
 	class URule*                                       OutRule;                                                  // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.AIFactoryBase.GetRule
@@ -4277,7 +4277,7 @@ struct UAIFactoryBase_GetRule_Params
 {
 	class UClass*                                      RuleClass;                                                // (Parm)
 	class URule*                                       OutRule;                                                  // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.AIFactoryBase.ReturnRuleEngine
@@ -4297,21 +4297,21 @@ struct UGearboxAIFactory_GetRuleEngineFromTemplate_Params
 {
 	class URuleEngine*                                 OutRuleEngine;                                            // (Parm, OutParm)
 	class URuleEngine*                                 RuleEngineTemplate;                                       // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.AIResourceExpressionEvaluator.Evaluate
 struct UAIResourceExpressionEvaluator_Evaluate_Params
 {
 	class UObject*                                     ContextSource;                                            // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.AllegianceExpressionEvaluator.Evaluate
 struct UAllegianceExpressionEvaluator_Evaluate_Params
 {
 	class UObject*                                     ContextSource;                                            // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GbxMessage.InitializeFromDefinition
@@ -4420,7 +4420,7 @@ struct URule_GetOtherEventParticipant_Params
 struct UFlagExpressionEvaluator_Evaluate_Params
 {
 	class UObject*                                     ContextSource;                                            // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GbxMessageManager.RemoveListener
@@ -4457,7 +4457,7 @@ struct URuleEngine_ApplyFlagInitializationData_Params
 struct URuleEngine_IsResourceInUse_Params
 {
 	class UClass*                                      TestResourceClass;                                        // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.RuleEngine.GetContextSource
@@ -4469,14 +4469,14 @@ struct URuleEngine_GetContextSource_Params
 // Function GearboxFramework.RuleEngine.IsRunningRuleWhichBlocksRuleSetChange
 struct URuleEngine_IsRunningRuleWhichBlocksRuleSetChange_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.RuleEngine.GetDynamicFlagValue
 struct URuleEngine_GetDynamicFlagValue_Params
 {
 	class UFlagDefinition*                             FlagDefinition;                                           // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.RuleEngine.SetDynamicFlagDefTrueTimed
@@ -4490,7 +4490,7 @@ struct URuleEngine_SetDynamicFlagDefTrueTimed_Params
 struct URuleEngine_SetDynamicFlagDefValue_Params
 {
 	class UFlagDefinition*                             FlagDefinition;                                           // (Parm)
-	bool                                               Value;                                                    // (Parm)
+	unsigned long                                      Value : 1;                                                    // (Parm)
 };
 
 // Function GearboxFramework.RuleEngine.GetRuleSetFromReference
@@ -4514,7 +4514,7 @@ struct URuleEngine_PopRuleSetSwitch_Params
 struct URuleEngine_PushRuleSetSwitch_Params
 {
 	class URuleSet*                                    NewRuleSetTemplate;                                       // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.RuleEngine.SetRuleSet
@@ -4541,7 +4541,7 @@ struct URuleEngine_ActivateEventRuleEx_Params
 	struct FName                                       EventDefName;                                             // (Parm)
 	TArray<class AGearboxPawn*>                        Participants;                                             // (OptionalParm, Parm, NeedCtorLink)
 	class AActor*                                      Subject;                                                  // (OptionalParm, Parm)
-	bool                                               CastSizeMustMatch;                                        // (OptionalParm, Parm)
+	unsigned long                                      CastSizeMustMatch : 1;                                        // (OptionalParm, Parm)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
@@ -4556,7 +4556,7 @@ struct URuleEngine_ActivateEventRule_Params
 	struct FName                                       EventDefName;                                             // (Parm)
 	class AGearboxPawn*                                Instigator;                                               // (OptionalParm, Parm)
 	class AActor*                                      Subject;                                                  // (OptionalParm, Parm)
-	bool                                               CastSizeMustMatch;                                        // (OptionalParm, Parm)
+	unsigned long                                      CastSizeMustMatch : 1;                                        // (OptionalParm, Parm)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
@@ -4613,13 +4613,13 @@ struct AGearboxMind_GetAIActor_Params
 // Function GearboxFramework.GearboxMind.CanTickAI
 struct AGearboxMind_CanTickAI_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxMind.InGodMode
 struct AGearboxMind_InGodMode_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxMind.PawnDied
@@ -4643,13 +4643,13 @@ struct AGearboxMind_Behavior_SetCanTarget_Params
 // Function GearboxFramework.GearboxMind.GetNoTargetAllEnemies
 struct AGearboxMind_GetNoTargetAllEnemies_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxMind.SetNoTargetAllEnemies
 struct AGearboxMind_SetNoTargetAllEnemies_Params
 {
-	bool                                               bNoTarget;                                                // (Parm)
+	unsigned long                                      bNoTarget : 1;                                                // (Parm)
 };
 
 // Function GearboxFramework.GearboxMind.ClearScriptedMoveTarget
@@ -4660,7 +4660,7 @@ struct AGearboxMind_ClearScriptedMoveTarget_Params
 // Function GearboxFramework.GearboxMind.IsCloseEnoughToScriptedMoveTarget
 struct AGearboxMind_IsCloseEnoughToScriptedMoveTarget_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxMind.GetWeaponFireLocation
@@ -4693,7 +4693,7 @@ struct AGearboxMind_StopMovement_Params
 struct AGearboxMind_Possess_Params
 {
 	class APawn*                                       inPawn;                                                   // (Parm)
-	bool                                               bVehicleTransition;                                       // (Parm)
+	unsigned long                                      bVehicleTransition : 1;                                       // (Parm)
 };
 
 // Function GearboxFramework.GearboxMind.GetGearboxRuleEngine
@@ -4722,8 +4722,8 @@ struct AGearboxMind_FindCoverAndClaim_Params
 	struct FVector                                     OutDestination;                                           // (Parm, OutParm)
 	float                                              MinSearchRadius;                                          // (Parm)
 	float                                              MaxSearchRadius;                                          // (Parm)
-	bool                                               bEnactCoverChanges;                                       // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      bEnactCoverChanges : 1;                                       // (OptionalParm, Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxMind.UpdateRuleEngineKnowledge
@@ -4736,75 +4736,75 @@ struct AGearboxMind_UpdateRuleEngineKnowledge_Params
 struct AGearboxMind_GetCurrentTargetInfo_Params
 {
 	class UMindTargetInfo*                             OutTargetRec;                                             // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxMind.IsSameAllegianceMind
 struct AGearboxMind_IsSameAllegianceMind_Params
 {
 	class AGearboxMind*                                aMind;                                                    // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxMind.IsSameAllegiance
 struct AGearboxMind_IsSameAllegiance_Params
 {
 	class UObject*                                     anObject;                                                 // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxMind.IsNeutralMind
 struct AGearboxMind_IsNeutralMind_Params
 {
 	class AGearboxMind*                                aMind;                                                    // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxMind.IsNeutral
 struct AGearboxMind_IsNeutral_Params
 {
 	class UObject*                                     anObject;                                                 // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxMind.IsFriendlyMind
 struct AGearboxMind_IsFriendlyMind_Params
 {
 	class AGearboxMind*                                aMind;                                                    // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxMind.IsFriendly
 struct AGearboxMind_IsFriendly_Params
 {
 	class UObject*                                     anObject;                                                 // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxMind.IsEnemyMind
 struct AGearboxMind_IsEnemyMind_Params
 {
 	class AGearboxMind*                                aMind;                                                    // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxMind.IsEnemy
 struct AGearboxMind_IsEnemy_Params
 {
 	class UObject*                                     anObject;                                                 // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxMind.WantsToWalk
 struct AGearboxMind_WantsToWalk_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxMind.SetWantsToWalk
 struct AGearboxMind_SetWantsToWalk_Params
 {
-	bool                                               bInWantsToWalk;                                           // (Parm)
+	unsigned long                                      bInWantsToWalk : 1;                                           // (Parm)
 };
 
 // Function GearboxFramework.GearboxMind.GetFacingPolicy
@@ -4842,76 +4842,76 @@ struct AGearboxMind_GetNavigationHandle_Params
 // Function GearboxFramework.GearboxCoverStateManager.IsChangingDirection
 struct UGearboxCoverStateManager_IsChangingDirection_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.IsMantlingOverCoverInProgress
 struct UGearboxCoverStateManager_IsMantlingOverCoverInProgress_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.IsReturnFromPeekInProgress
 struct UGearboxCoverStateManager_IsReturnFromPeekInProgress_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.IsPeekTransitionInProgress
 struct UGearboxCoverStateManager_IsPeekTransitionInProgress_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.IsPeekedUp
 struct UGearboxCoverStateManager_IsPeekedUp_Params
 {
-	bool                                               bTransitionCounts;                                        // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      bTransitionCounts : 1;                                        // (OptionalParm, Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.IsReturnFromLeanOutInProgress
 struct UGearboxCoverStateManager_IsReturnFromLeanOutInProgress_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.IsLeanOutTransitionInProgress
 struct UGearboxCoverStateManager_IsLeanOutTransitionInProgress_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.IsLeanedOut
 struct UGearboxCoverStateManager_IsLeanedOut_Params
 {
-	bool                                               bTransitionCounts;                                        // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      bTransitionCounts : 1;                                        // (OptionalParm, Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.IsReturnFromPopUpInProgress
 struct UGearboxCoverStateManager_IsReturnFromPopUpInProgress_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.IsPopUpTransitionInProgress
 struct UGearboxCoverStateManager_IsPopUpTransitionInProgress_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.IsPoppedUp
 struct UGearboxCoverStateManager_IsPoppedUp_Params
 {
-	bool                                               bTransitionCounts;                                        // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      bTransitionCounts : 1;                                        // (OptionalParm, Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.IsExecutingAnyTransition
 struct UGearboxCoverStateManager_IsExecutingAnyTransition_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.GetDesiredState
@@ -4957,46 +4957,46 @@ struct UGearboxCoverStateManager_MantleOverCover_Params
 {
 	class AActor*                                      CoverActor;                                               // (OptionalParm, Parm)
 	int                                                CoverSlotNdx;                                             // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.ReturnToCover
 struct UGearboxCoverStateManager_ReturnToCover_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.LeanOutForFiring
 struct UGearboxCoverStateManager_LeanOutForFiring_Params
 {
-	bool                                               BlindFire;                                                // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      BlindFire : 1;                                                // (OptionalParm, Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.PopUpForFiring
 struct UGearboxCoverStateManager_PopUpForFiring_Params
 {
-	bool                                               BlindFire;                                                // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      BlindFire : 1;                                                // (OptionalParm, Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.Peek
 struct UGearboxCoverStateManager_Peek_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.DetachFromCover
 struct UGearboxCoverStateManager_DetachFromCover_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.DismountCover
 struct UGearboxCoverStateManager_DismountCover_Params
 {
 	unsigned char                                      DismountType;                                             // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.ClaimAndMountCover
@@ -5004,13 +5004,13 @@ struct UGearboxCoverStateManager_ClaimAndMountCover_Params
 {
 	class ACoverLink*                                  TheCoverLink;                                             // (Parm)
 	int                                                SlotNdx;                                                  // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.MountDesiredCover
 struct UGearboxCoverStateManager_MountDesiredCover_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.ClearDesiredCover
@@ -5035,7 +5035,7 @@ struct UGearboxCoverStateManager_GetDesiredCoverLocationAndRotation_Params
 // Function GearboxFramework.GearboxCoverStateManager.HasDesiredCover
 struct UGearboxCoverStateManager_HasDesiredCover_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.GetLastCoverHeight
@@ -5060,51 +5060,51 @@ struct UGearboxCoverStateManager_GetDesiredCoverHeight_Params
 struct UGearboxCoverStateManager_WasCoveredFrom_Params
 {
 	struct FVector                                     ThreatLocation;                                           // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.WillBeCoveredFrom
 struct UGearboxCoverStateManager_WillBeCoveredFrom_Params
 {
 	struct FVector                                     ThreatLocation;                                           // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.IsCoveredFrom
 struct UGearboxCoverStateManager_IsCoveredFrom_Params
 {
 	struct FVector                                     ThreatLocation;                                           // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.IsDismountInProgress
 struct UGearboxCoverStateManager_IsDismountInProgress_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.IsMountInProgress
 struct UGearboxCoverStateManager_IsMountInProgress_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.WasMountedOnCover
 struct UGearboxCoverStateManager_WasMountedOnCover_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.IsMountedOnCover
 struct UGearboxCoverStateManager_IsMountedOnCover_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.IsUsingCover
 struct UGearboxCoverStateManager_IsUsingCover_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.OnCoverStateChanged
@@ -5142,8 +5142,8 @@ struct UGearboxCoverStateManager_FindCoverAndClaim_Params
 	struct FVector                                     OutDestination;                                           // (Parm, OutParm)
 	float                                              MinSearchRadius;                                          // (Parm)
 	float                                              MaxSearchRadius;                                          // (Parm)
-	bool                                               bEnactCoverChanges;                                       // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      bEnactCoverChanges : 1;                                       // (OptionalParm, Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxCoverStateManager.Initialize
@@ -5171,8 +5171,8 @@ struct UGearboxNavigationHandle_GetNearestPositionOnNavMesh_Params
 	struct FBasedPosition                              NearestPos;                                               // (Parm, OutParm)
 	struct FNavMeshPathParams                          PolyUsableCheckParams;                                    // (Const, OptionalParm, Parm, OutParm, NeedCtorLink)
 	struct FGBXNavMeshPolyRef                          NearestPoly;                                              // (OptionalParm, Parm, OutParm)
-	bool                                               bAnyHeight;                                               // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      bAnyHeight : 1;                                               // (OptionalParm, Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxNavigationHandle.GetNavMeshPolyForPoint
@@ -5181,39 +5181,39 @@ struct UGearboxNavigationHandle_GetNavMeshPolyForPoint_Params
 	struct FVector                                     Point;                                                    // (Parm)
 	struct FGBXNavMeshPolyRef                          FoundPoly;                                                // (Parm, OutParm)
 	struct FNavMeshPathParams                          PolyUsableCheckParams;                                    // (Const, OptionalParm, Parm, OutParm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxNavigationHandle.IsDoingSpecialMove
 struct UGearboxNavigationHandle_IsDoingSpecialMove_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxNavigationHandle.InFinalPoly
 struct UGearboxNavigationHandle_InFinalPoly_Params
 {
 	struct FVector                                     TestLoc;                                                  // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxNavigationHandle.NeedsRegularWalkingPhysics
 struct UGearboxNavigationHandle_NeedsRegularWalkingPhysics_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxNavigationHandle.PopulatePathfindingParamCache
 struct UGearboxNavigationHandle_PopulatePathfindingParamCache_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxNavigationHandle.TrySpecialMove
 struct UGearboxNavigationHandle_TrySpecialMove_Params
 {
 	struct FBasedPosition                              MoveTarget;                                               // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxNavigationHandle.Finished
@@ -5224,7 +5224,7 @@ struct UGearboxNavigationHandle_Finished_Params
 // Function GearboxFramework.GearboxNavigationHandle.IsGoalValid
 struct UGearboxNavigationHandle_IsGoalValid_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxNavigationHandle.MovePawnToGoal
@@ -5236,29 +5236,29 @@ struct UGearboxNavigationHandle_MovePawnToGoal_Params
 struct UGearboxNavigationHandle_PathIsValid_Params
 {
 	struct FPathFindData                               Data;                                                     // (Const, Parm, OutParm, NeedCtorLink)
-	bool                                               bCheckAnchor;                                             // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      bCheckAnchor : 1;                                             // (OptionalParm, Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxNavigationHandle.IsFollowingPath
 struct UGearboxNavigationHandle_IsFollowingPath_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxNavigationHandle.ClearPath
 struct UGearboxNavigationHandle_ClearPath_Params
 {
-	bool                                               bStopMovement;                                            // (OptionalParm, Parm)
-	bool                                               bAllowDelayedClear;                                       // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      bStopMovement : 1;                                            // (OptionalParm, Parm)
+	unsigned long                                      bAllowDelayedClear : 1;                                       // (OptionalParm, Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxNavigationHandle.FollowPath
 struct UGearboxNavigationHandle_FollowPath_Params
 {
 	struct FPathFindData                               Data;                                                     // (Parm, OutParm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxNavigationHandle.CreatePathToLocation
@@ -5267,14 +5267,14 @@ struct UGearboxNavigationHandle_CreatePathToLocation_Params
 	struct FPathFindData                               PathData;                                                 // (Parm, OutParm, NeedCtorLink)
 	struct FVector                                     DestLocation;                                             // (Parm)
 	struct FGBXNavMeshPolyRef                          DestPoly;                                                 // (OptionalParm, Parm)
-	bool                                               bAdjustStartForMotion;                                    // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      bAdjustStartForMotion : 1;                                    // (OptionalParm, Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.IGbxMessageListener.WantsToStopListening
 struct UIGbxMessageListener_WantsToStopListening_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.IGbxMessageListener.GetActor
@@ -5299,14 +5299,14 @@ struct UIGbxMessageListener_GetAllegiance_Params
 struct UIGbxMessageListener_ReceiveMessage_Params
 {
 	class UGbxMessage*                                 Message;                                                  // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.IGbxMessageListener.CaresAboutMessage
 struct UIGbxMessageListener_CaresAboutMessage_Params
 {
 	class UGbxMessage*                                 Message;                                                  // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.IRuleEngineOwner.GetRuleEngine
@@ -5381,7 +5381,7 @@ struct UIPopulationSpawnPoint_GetSpawnStyleType_Params
 // Function GearboxFramework.PopulationDefinition.IsAllSpawnTypesDebugEnabled
 struct UPopulationDefinition_IsAllSpawnTypesDebugEnabled_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.PopulationDefinition.ToggleAllSpawnTypesDebug
@@ -5409,7 +5409,7 @@ struct UPopulationFactory_ShouldSavePopulationActor_Params
 {
 	class UPopulationMaster*                           Master;                                                   // (Parm)
 	class AActor*                                      ActorToSave;                                              // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.PopulationFactory.DestroyPopulationActor
@@ -5420,8 +5420,8 @@ struct UPopulationFactory_DestroyPopulationActor_Params
 	class AActor*                                      ActorToDestroy;                                           // (Parm)
 	class UPopulationFactory*                          SpawnFactory;                                             // (Parm)
 	int                                                CreationFlags;                                            // (Parm)
-	bool                                               bDontSaveActor;                                           // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      bDontSaveActor : 1;                                           // (OptionalParm, Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.PopulationFactory.CreatePopulationActor
@@ -5458,7 +5458,7 @@ struct UPopulationFactory_GetActorSpawnCost_Params
 {
 	int                                                GameStage;                                                // (Parm)
 	int                                                Rarity;                                                   // (Parm)
-	bool                                               bCanSpawnTest;                                            // (Parm)
+	unsigned long                                      bCanSpawnTest : 1;                                            // (Parm)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
@@ -5495,14 +5495,14 @@ struct UPopulationFactory_GetSpawnProbabilityAtThisGameStage_Params
 struct UPopulationFactory_IsFactoryWithin_Params
 {
 	class UPopulationFactory*                          TestFactory;                                              // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.PopulationFactory.CanSpawn
 struct UPopulationFactory_CanSpawn_Params
 {
 	class APopulationOpportunity*                      SpawningOpportunity;                                      // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.PopulationFactoryGeneric.CreatePopulationActor
@@ -5547,7 +5547,7 @@ struct UPopulationFactoryPopulationDefinition_GetActorAllegiance_Params
 struct UPopulationFactoryPopulationDefinition_IsFactoryWithin_Params
 {
 	class UPopulationFactory*                          TestFactory;                                              // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.PopulationOpportunity.ClearBodyCompositionInstance
@@ -5630,7 +5630,7 @@ struct APopulationOpportunity_GetOpportunityGameStage_Params
 {
 	int                                                GameStage;                                                // (Parm, OutParm)
 	int                                                Rarity;                                                   // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.PopulationOpportunity.TriggerKismetAllSpawnedEvent
@@ -5652,7 +5652,7 @@ struct APopulationOpportunity_SetSequenceActionLink_Params
 // Function GearboxFramework.PopulationOpportunity.SetEnabledStatus
 struct APopulationOpportunity_SetEnabledStatus_Params
 {
-	bool                                               bEnable;                                                  // (Parm)
+	unsigned long                                      bEnable : 1;                                                  // (Parm)
 };
 
 // Function GearboxFramework.PopulationOpportunity.OnToggle
@@ -5712,7 +5712,7 @@ struct UPopulationMaster_GetNumberOfSavedActorsForOpportunity_Params
 struct UPopulationMaster_WillActorsOpportunityBeResetOnLevelLoad_Params
 {
 	class AActor*                                      TestActor;                                                // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.PopulationMaster.ResetRespawn
@@ -5733,7 +5733,7 @@ struct UPopulationMaster_HasCapacityToSpawnFromFactories_Params
 	TArray<class UPopulationFactory*>                  TheFactories;                                             // (Parm, OutParm, NeedCtorLink)
 	int                                                GameStage;                                                // (Parm)
 	int                                                Rarity;                                                   // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.PopulationMaster.HasCapacityToSpawnFromFactory
@@ -5742,13 +5742,13 @@ struct UPopulationMaster_HasCapacityToSpawnFromFactory_Params
 	class UPopulationFactory*                          TheFactory;                                               // (Parm)
 	int                                                GameStage;                                                // (Parm)
 	int                                                Rarity;                                                   // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.PopulationMaster.IsPopulationSystemAtCapacity
 struct UPopulationMaster_IsPopulationSystemAtCapacity_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.PopulationMaster.StatProfileStop
@@ -5795,15 +5795,15 @@ struct UPopulationMaster_ConnectEncounter_Params
 struct UPopulationMaster_DisconnectOpportunity_Params
 {
 	class APopulationOpportunity*                      DeactivatedOpportunity;                                   // (Parm)
-	bool                                               bSaveState;                                               // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      bSaveState : 1;                                               // (Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.PopulationMaster.ConnectOpportunity
 struct UPopulationMaster_ConnectOpportunity_Params
 {
 	class APopulationOpportunity*                      ActivatedOpportunity;                                     // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.PopulationMaster.GetWorldInfo
@@ -5816,22 +5816,22 @@ struct UPopulationMaster_GetWorldInfo_Params
 struct UPopulationMaster_DestroySpawnedActors_Params
 {
 	class APopulationOpportunity*                      Opportunity;                                              // (Parm)
-	bool                                               bDontSaveActors;                                          // (OptionalParm, Parm)
+	unsigned long                                      bDontSaveActors : 1;                                          // (OptionalParm, Parm)
 };
 
 // Function GearboxFramework.PopulationMaster.RemoveSpawnedActor
 struct UPopulationMaster_RemoveSpawnedActor_Params
 {
 	class AActor*                                      TheActor;                                                 // (Parm)
-	bool                                               bKeepBody;                                                // (Parm)
-	bool                                               bActorDied;                                               // (OptionalParm, Parm)
+	unsigned long                                      bKeepBody : 1;                                                // (Parm)
+	unsigned long                                      bActorDied : 1;                                               // (OptionalParm, Parm)
 };
 
 // Function GearboxFramework.PopulationMaster.SetSpawnedActorsReuse
 struct UPopulationMaster_SetSpawnedActorsReuse_Params
 {
 	class AActor*                                      TheActor;                                                 // (Parm)
-	bool                                               bReuse;                                                   // (Parm)
+	unsigned long                                      bReuse : 1;                                                   // (Parm)
 };
 
 // Function GearboxFramework.PopulationMaster.AddExternalActor
@@ -5852,8 +5852,8 @@ struct UPopulationMaster_SpawnActorFromOpportunity_Params
 	int                                                Rarity;                                                   // (Parm)
 	int                                                OpportunityIdx;                                           // (Parm)
 	int                                                PopOppFlags;                                              // (Parm)
-	bool                                               bCanSave;                                                 // (OptionalParm, Parm)
-	bool                                               bForceSpawn;                                              // (OptionalParm, Parm)
+	unsigned long                                      bCanSave : 1;                                                 // (OptionalParm, Parm)
+	unsigned long                                      bForceSpawn : 1;                                              // (OptionalParm, Parm)
 	class AActor*                                      ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
@@ -5892,8 +5892,8 @@ struct UPopulationMaster_SpawnPopulationControlledActor_Params
 	struct FVector                                     SpawnLocation;                                            // (OptionalParm, Parm)
 	struct FRotator                                    SpawnRotation;                                            // (OptionalParm, Parm)
 	class AActor*                                      ActorTemplate;                                            // (OptionalParm, Parm)
-	bool                                               bNoCollisionFail;                                         // (OptionalParm, Parm)
-	bool                                               bPersistAcrossLevelTransitions;                           // (OptionalParm, Parm)
+	unsigned long                                      bNoCollisionFail : 1;                                         // (OptionalParm, Parm)
+	unsigned long                                      bPersistAcrossLevelTransitions : 1;                           // (OptionalParm, Parm)
 	class AActor*                                      ReturnValue;                                              // (Parm, OutParm, ReturnParm, CoerceParm)
 };
 
@@ -5990,7 +5990,7 @@ struct APopulationOpportunityCombat_GetNumDied_Params
 // Function GearboxFramework.PopulationOpportunityCombat.WantsToStopListening
 struct APopulationOpportunityCombat_WantsToStopListening_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.PopulationOpportunityCombat.GetActor
@@ -6015,14 +6015,14 @@ struct APopulationOpportunityCombat_GetAllegiance_Params
 struct APopulationOpportunityCombat_ReceiveMessage_Params
 {
 	class UGbxMessage*                                 Message;                                                  // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.PopulationOpportunityCombat.CaresAboutMessage
 struct APopulationOpportunityCombat_CaresAboutMessage_Params
 {
 	class UGbxMessage*                                 Message;                                                  // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.PopulationOpportunityCombat.PostBeginPlay
@@ -6033,7 +6033,7 @@ struct APopulationOpportunityCombat_PostBeginPlay_Params
 // Function GearboxFramework.PopulationOpportunityCombat.EnableDebugging
 struct APopulationOpportunityCombat_EnableDebugging_Params
 {
-	bool                                               bEnabled;                                                 // (Parm)
+	unsigned long                                      bEnabled : 1;                                                 // (Parm)
 };
 
 // Function GearboxFramework.PopulationOpportunityCombat.RespawnKilledActors
@@ -6130,7 +6130,7 @@ struct APopulationPoint_CanSpawnFromFactory_Params
 	class UPopulationFactory*                          Factory;                                                  // (Parm)
 	int                                                GameStage;                                                // (Parm)
 	int                                                AwesomeLevel;                                             // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.PopulationPoint.GetSpawnRotation
@@ -6404,7 +6404,7 @@ struct UBehaviorProviderDefinition_SetIntBehaviorVariable_Params
 struct UBehaviorProviderDefinition_SetBoolBehaviorVariable_Params
 {
 	struct FBehaviorVariableValue                      BehaviorVariable;                                         // (Parm, OutParm)
-	bool                                               Value;                                                    // (Parm)
+	unsigned long                                      Value : 1;                                                    // (Parm)
 };
 
 // Function GearboxFramework.BehaviorKernel.RecentlyRunBehaviorsForSequence
@@ -6480,7 +6480,7 @@ struct UBehaviorKernel_GetBehaviorKernelStats_Params
 struct UBehaviorKernel_IsBehaviorKernelWatchingConsumer_Params
 {
 	struct FBehaviorConsumerHandle                     ConsumerHandle;                                           // (Const, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.BehaviorKernel.IsBehaviorSequenceEnabled
@@ -6489,7 +6489,7 @@ struct UBehaviorKernel_IsBehaviorSequenceEnabled_Params
 	struct FBehaviorConsumerHandle                     ConsumerHandle;                                           // (Const, Parm, OutParm)
 	class UBehaviorProviderDefinition*                 ProviderDefinition;                                       // (Parm)
 	struct FName                                       BehaviorSequenceName;                                     // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.BehaviorKernel.ActivateBehaviorOutputLink
@@ -6503,7 +6503,7 @@ struct UBehaviorKernel_ActivateBehaviorOutputLink_Params
 struct UBehaviorKernel_PublishBoolOutputVariable_Params
 {
 	struct FBehaviorKernelInfo                         KernelInfo;                                               // (Const, Parm, OutParm)
-	bool                                               Output;                                                   // (Parm)
+	unsigned long                                      Output : 1;                                                   // (Parm)
 };
 
 // Function GearboxFramework.BehaviorKernel.PublishObjectOutputVariable
@@ -6552,7 +6552,7 @@ struct UBehaviorKernel_ProcessReplicatedBehaviorConsumerState_Params
 {
 	struct FBehaviorConsumerHandle                     ConsumerHandle;                                           // (Const, Parm, OutParm)
 	struct FReplicatedBehaviorConsumerState            ReplicatedConsumerState;                                  // (Const, Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.BehaviorKernel.ChangeBehaviorSequenceActivationStatus
@@ -6650,7 +6650,7 @@ struct UGearboxAnimDefinition_GetAnimLength_Params
 struct UGearboxAnimDefinition_IsPlayingLocally_Params
 {
 	FScriptInterface                                   SMI;                                                      // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxAnimDefinition.GetSMNode
@@ -6674,14 +6674,14 @@ struct UGearboxAnimDefinition_AnimFinished_Params
 	FScriptInterface                                   SMI;                                                      // (Parm)
 	class UAnimNodeSpecialMoveBlend*                   BlendNode;                                                // (Parm)
 	struct FSpecialMoveData                            SMData;                                                   // (Parm, OutParm)
-	bool                                               bInterrupted;                                             // (Parm)
+	unsigned long                                      bInterrupted : 1;                                             // (Parm)
 };
 
 // Function GearboxFramework.GearboxAnimDefinition.ClientFinished
 struct UGearboxAnimDefinition_ClientFinished_Params
 {
 	FScriptInterface                                   SMI;                                                      // (Parm)
-	bool                                               bInterrupted;                                             // (Parm)
+	unsigned long                                      bInterrupted : 1;                                             // (Parm)
 };
 
 // Function GearboxFramework.GearboxAnimDefinition.ClientStarted
@@ -6696,7 +6696,7 @@ struct UGearboxAnimDefinition_ClientStarted_Params
 struct UGearboxAnimDefinition_ServerFinished_Params
 {
 	FScriptInterface                                   SMI;                                                      // (Parm)
-	bool                                               bInterrupted;                                             // (Parm)
+	unsigned long                                      bInterrupted : 1;                                             // (Parm)
 };
 
 // Function GearboxFramework.GearboxAnimDefinition.ServerStarted
@@ -6722,7 +6722,7 @@ struct UGearboxAnimDefinition_GetSkeletalMesh_Params
 struct UGearboxAnimDefinition_AuthorityCanPlay_Params
 {
 	FScriptInterface                                   SMI;                                                      // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxAnimDefinition.OnTimedEvent
@@ -6835,7 +6835,7 @@ struct AGearboxDialogActor_GetActor_Params
 // Function GearboxFramework.GearboxDialogActor.CanTalk
 struct AGearboxDialogActor_CanTalk_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxDialogActor.ServerDialog_TriggerEvent
@@ -6855,14 +6855,14 @@ struct AGearboxDialogActor_ReplicatedEvent_Params
 // Function GearboxFramework.GearboxDialogComponent.IsTalking
 struct UGearboxDialogComponent_IsTalking_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxDialogComponent.StopTalking
 struct UGearboxDialogComponent_StopTalking_Params
 {
 	class UGearboxDialogEventTag*                      EventTag;                                                 // (OptionalParm, Parm)
-	bool                                               bForceStop;                                               // (OptionalParm, Parm)
+	unsigned long                                      bForceStop : 1;                                               // (OptionalParm, Parm)
 };
 
 // Function GearboxFramework.GearboxDialogComponent.TalkReplicated
@@ -6883,9 +6883,9 @@ struct UGearboxDialogComponent_GetMatchingEvent_Params
 	class UGearboxDialogEventTag*                      InEventTag;                                               // (Parm)
 	class UGearboxDialogEvent*                         OutEvent;                                                 // (Parm, OutParm)
 	class UGearboxDialogGroup*                         OutGroup;                                                 // (Parm, OutParm)
-	bool                                               bIncludeDisabled;                                         // (OptionalParm, Parm)
+	unsigned long                                      bIncludeDisabled : 1;                                         // (OptionalParm, Parm)
 	class UGearboxDialogNameTag*                       OtherNameTag;                                             // (OptionalParm, Parm)
-	bool                                               bAllowTemplateGroups;                                     // (OptionalParm, Parm)
+	unsigned long                                      bAllowTemplateGroups : 1;                                     // (OptionalParm, Parm)
 };
 
 // Function GearboxFramework.GearboxDialogComponent.TriggerEvent
@@ -6915,7 +6915,7 @@ struct UGearboxDialogGroup_SimpleEvent_Params
 // Function GearboxFramework.GearboxDialogEventData.IsActive
 struct UGearboxDialogEventData_IsActive_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxDialogManager.DrawDialogDebug
@@ -7158,19 +7158,19 @@ struct USparkInitializationProcess_GetStepConfiguration_Params
 // Function GearboxFramework.SparkInitializationProcess.IsInitialized
 struct USparkInitializationProcess_IsInitialized_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SparkInitializationProcess.IsDisabled
 struct USparkInitializationProcess_IsDisabled_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SparkInitializationProcess.IsInitializing
 struct USparkInitializationProcess_IsInitializing_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SparkInitializationProcess.UpdateAgreementsSigning
@@ -7245,14 +7245,14 @@ struct USparkInitializationProcess_PerformStep_Params
 // Function GearboxFramework.SparkInitializationProcess.StartProcess
 struct USparkInitializationProcess_StartProcess_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SparkInitializationProcess.InitWithController
 struct USparkInitializationProcess_InitWithController_Params
 {
 	unsigned char                                      ControllerId;                                             // (Parm)
-	bool                                               bNewPrimary;                                              // (Parm)
+	unsigned long                                      bNewPrimary : 1;                                              // (Parm)
 	struct FScriptDelegate                             SparkInitializedDelegate;                                 // (Parm, NeedCtorLink)
 };
 
@@ -7350,7 +7350,7 @@ struct USparkInterfaceImpl_ConvertUtcTimeToLocalTime_Params
 // Function GearboxFramework.SparkInterfaceImpl.ShouldUpdateEmergencyMessage
 struct USparkInterfaceImpl_ShouldUpdateEmergencyMessage_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.GetEmergencyMessage
@@ -7368,7 +7368,7 @@ struct USparkInterfaceImpl_SetEmergencyMessage_Params
 // Function GearboxFramework.SparkInterfaceImpl.IsTmsComplete
 struct USparkInterfaceImpl_IsTmsComplete_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.SetTmsComplete
@@ -7379,7 +7379,7 @@ struct USparkInterfaceImpl_SetTmsComplete_Params
 // Function GearboxFramework.SparkInterfaceImpl.RestartSparkInitializationFromScript
 struct USparkInterfaceImpl_RestartSparkInitializationFromScript_Params
 {
-	bool                                               bPrimary;                                                 // (Parm)
+	unsigned long                                      bPrimary : 1;                                                 // (Parm)
 	struct FScriptDelegate                             SparkInitializedDelegate;                                 // (Parm, NeedCtorLink)
 	struct FScriptDelegate                             SparkEmergencyMessageDelegate;                            // (Parm, NeedCtorLink)
 };
@@ -7387,7 +7387,7 @@ struct USparkInterfaceImpl_RestartSparkInitializationFromScript_Params
 // Function GearboxFramework.SparkInterfaceImpl.RestartSparkInitialization
 struct USparkInterfaceImpl_RestartSparkInitialization_Params
 {
-	bool                                               bPrimary;                                                 // (Parm)
+	unsigned long                                      bPrimary : 1;                                                 // (Parm)
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.StartSparkInitialization
@@ -7446,7 +7446,7 @@ struct USparkInterfaceImpl_SignOutGearboxAccount_Params
 struct USparkInterfaceImpl_ValidPlayerIndex_Params
 {
 	int                                                PlayerIndex;                                              // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.GetPlayerIndex
@@ -7459,21 +7459,21 @@ struct USparkInterfaceImpl_GetPlayerIndex_Params
 // Function GearboxFramework.SparkInterfaceImpl.ClearGearboxAccountData
 struct USparkInterfaceImpl_ClearGearboxAccountData_Params
 {
-	bool                                               IncludePrimaryPlayer;                                     // (Parm)
+	unsigned long                                      IncludePrimaryPlayer : 1;                                     // (Parm)
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.IsGearboxAccountSignedIn
 struct USparkInterfaceImpl_IsGearboxAccountSignedIn_Params
 {
 	unsigned char                                      ControllerId;                                             // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.IsGearboxAccountAuthenticated
 struct USparkInterfaceImpl_IsGearboxAccountAuthenticated_Params
 {
 	unsigned char                                      ControllerId;                                             // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.GetGameName
@@ -7498,7 +7498,7 @@ struct USparkInterfaceImpl_GetPlatformName_Params
 struct USparkInterfaceImpl_GetPlatformTicket_Params
 {
 	int                                                ControllerId;                                             // (Parm)
-	bool                                               bPrimary;                                                 // (Parm)
+	unsigned long                                      bPrimary : 1;                                                 // (Parm)
 	struct FString                                     ReturnValue;                                              // (Parm, OutParm, ReturnParm, NeedCtorLink)
 };
 
@@ -7543,25 +7543,25 @@ struct USparkInterfaceImpl_GetLoginStatus_Params
 // Function GearboxFramework.SparkInterfaceImpl.IsShiftEnabled
 struct USparkInterfaceImpl_IsShiftEnabled_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.IsSparkEnabled
 struct USparkInterfaceImpl_IsSparkEnabled_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.WithShift
 struct USparkInterfaceImpl_WithShift_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.WithSpark
 struct USparkInterfaceImpl_WithSpark_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SparkInterfaceImpl.IssueSparkStringRequest
@@ -7612,8 +7612,8 @@ struct USparkInterfaceImpl_OnSparkRequestComplete_Params
 struct USparkServiceConfiguration_GetBoolParameter_Params
 {
 	struct FString                                     KeyName;                                                  // (Parm, NeedCtorLink)
-	bool                                               Default;                                                  // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      Default : 1;                                                  // (Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SparkServiceConfiguration.GetFloatParameter
@@ -8026,7 +8026,7 @@ struct UCameraModifierCrossfade_ModifyCamera_Params
 	class ACamera*                                     Camera;                                                   // (Parm)
 	float                                              DeltaTime;                                                // (Parm)
 	struct FTPOV                                       OutPOV;                                                   // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.CameraModifierCrossfade.ProcessCameraBlend
@@ -8067,7 +8067,7 @@ struct UCameraModifierLookAt_ModifyCamera_Params
 	class ACamera*                                     Camera;                                                   // (Parm)
 	float                                              DeltaTime;                                                // (Parm)
 	struct FTPOV                                       OutPOV;                                                   // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.CameraModifierLookAt.GetBoneLocation
@@ -8076,7 +8076,7 @@ struct UCameraModifierLookAt_GetBoneLocation_Params
 	class AActor*                                      Target;                                                   // (Parm)
 	struct FName                                       BoneName;                                                 // (Parm)
 	struct FVector                                     BoneLoc;                                                  // (OptionalParm, Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.CameraModifierLookAt.SetLookAtBone
@@ -8135,7 +8135,7 @@ struct UCameraModifierLookAt_SetLookAtMode_Params
 // Function GearboxFramework.CameraModifierLookAt.DisableModifier
 struct UCameraModifierLookAt_DisableModifier_Params
 {
-	bool                                               bImmediate;                                               // (OptionalParm, Parm)
+	unsigned long                                      bImmediate : 1;                                               // (OptionalParm, Parm)
 };
 
 // Function GearboxFramework.CameraModifierLookAt.EnableModifier
@@ -8175,7 +8175,7 @@ struct USparkNews_GetArticle_Params
 	int                                                Idx;                                                      // (Parm)
 	struct FString                                     Header;                                                   // (Parm, OutParm, NeedCtorLink)
 	struct FString                                     Body;                                                     // (Parm, OutParm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.SparkNews.GetArticleCount
@@ -8204,7 +8204,7 @@ struct UGearboxEULAGFxMovie_HandleInputKey_Params
 	int                                                ControllerId;                                             // (Parm)
 	struct FName                                       ukey;                                                     // (Parm)
 	unsigned char                                      uevent;                                                   // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxEULAGFxMovie.ShowEULA
@@ -8256,8 +8256,8 @@ struct UGearboxEULAGFxMovie_OnClose_Params
 // Function GearboxFramework.GearboxEULAGFxMovie.Start
 struct UGearboxEULAGFxMovie_Start_Params
 {
-	bool                                               StartPaused;                                              // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      StartPaused : 1;                                              // (OptionalParm, Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.GearboxEULAGFxMovie.OnEULAInteractionComplete
@@ -8298,7 +8298,7 @@ struct UGearboxEULAGFxObject_Init_Params
 // Function GearboxFramework.GFxMovieDrawStyleInstanceData.RequiresClientInstance
 struct UGFxMovieDrawStyleInstanceData_RequiresClientInstance_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GearboxFramework.PopulationMasterAttributeContextResolver.GetAttributeContext

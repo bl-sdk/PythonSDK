@@ -39,13 +39,13 @@ struct AGamePlayerController_DoMemLeakChecking_Params
 // Function GameFramework.GamePlayerController.WarmupPause
 struct AGamePlayerController_WarmupPause_Params
 {
-	bool                                               bDesiredPauseState;                                       // (Parm)
+	unsigned long                                      bDesiredPauseState : 1;                                       // (Parm)
 };
 
 // Function GameFramework.GamePlayerController.CanUnpauseWarmup
 struct AGamePlayerController_CanUnpauseWarmup_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GameFramework.GamePlayerController.GetCurrentMovie
@@ -58,9 +58,9 @@ struct AGamePlayerController_GetCurrentMovie_Params
 struct AGamePlayerController_ClientStopMovie_Params
 {
 	float                                              DelayInSeconds;                                           // (Parm)
-	bool                                               bAllowMovieToFinish;                                      // (Parm)
-	bool                                               bForceStopNonSkippable;                                   // (Parm)
-	bool                                               bForceStopLoadingMovie;                                   // (Parm)
+	unsigned long                                      bAllowMovieToFinish : 1;                                      // (Parm)
+	unsigned long                                      bForceStopNonSkippable : 1;                                   // (Parm)
+	unsigned long                                      bForceStopLoadingMovie : 1;                                   // (Parm)
 };
 
 // Function GameFramework.GamePlayerController.ClientPlayMovie
@@ -69,9 +69,9 @@ struct AGamePlayerController_ClientPlayMovie_Params
 	struct FString                                     MovieName;                                                // (Parm, NeedCtorLink)
 	int                                                InStartOfRenderingMovieFrame;                             // (Parm)
 	int                                                InEndOfRenderingMovieFrame;                               // (Parm)
-	bool                                               bRestrictPausing;                                         // (Parm)
-	bool                                               bPlayOnceFromStream;                                      // (Parm)
-	bool                                               bOnlyBackButtonSkipsMovie;                                // (Parm)
+	unsigned long                                      bRestrictPausing : 1;                                         // (Parm)
+	unsigned long                                      bPlayOnceFromStream : 1;                                      // (Parm)
+	unsigned long                                      bOnlyBackButtonSkipsMovie : 1;                                // (Parm)
 };
 
 // Function GameFramework.GamePlayerController.KeepPlayingLoadingMovie
@@ -82,11 +82,11 @@ struct AGamePlayerController_KeepPlayingLoadingMovie_Params
 // Function GameFramework.GamePlayerController.ShowLoadingMovie
 struct AGamePlayerController_ShowLoadingMovie_Params
 {
-	bool                                               bShowMovie;                                               // (Parm)
-	bool                                               bPauseAfterHide;                                          // (OptionalParm, Parm)
+	unsigned long                                      bShowMovie : 1;                                               // (Parm)
+	unsigned long                                      bPauseAfterHide : 1;                                          // (OptionalParm, Parm)
 	float                                              PauseDuration;                                            // (OptionalParm, Parm)
 	float                                              KeepPlayingDuration;                                      // (OptionalParm, Parm)
-	bool                                               bOverridePreviousDelays;                                  // (OptionalParm, Parm)
+	unsigned long                                      bOverridePreviousDelays : 1;                                  // (OptionalParm, Parm)
 };
 
 // Function GameFramework.GamePlayerController.SetSoundMode
@@ -118,7 +118,7 @@ struct UNavMeshGoal_OutOfViewFrom_MustBeHiddenFromThisPoint_Params
 {
 	class UNavigationHandle*                           NavHandle;                                                // (Parm)
 	struct FVector                                     InOutOfViewLocation;                                      // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GameFramework.NavMeshGoal_OutOfViewFrom.RecycleNative
@@ -139,7 +139,7 @@ struct UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations_BiasAgainstPolysWi
 	struct FRotator                                    InRotation;                                               // (Const, Parm)
 	float                                              InDistanceToCheck;                                        // (Const, Parm)
 	TArray<struct FVector>                             InLocationsToCheck;                                       // (Const, Parm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GameFramework.GameStateObject.Reset
@@ -158,7 +158,7 @@ struct UGameStatsAggregator_GetAggregateMappingIDs_Params
 	int                                                EventID;                                                  // (Parm)
 	int                                                AggregateID;                                              // (Parm, OutParm)
 	int                                                TargetAggregateID;                                        // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GameFramework.GameStatsAggregator.Reset
@@ -179,7 +179,7 @@ struct UGameStatsAggregator_PreProcessStream_Params
 // Function GameFramework.PlayerCollectorGame.GetSeamlessTravelActorList
 struct APlayerCollectorGame_GetSeamlessTravelActorList_Params
 {
-	bool                                               bToEntry;                                                 // (Parm)
+	unsigned long                                      bToEntry : 1;                                                 // (Parm)
 	TArray<class AActor*>                              ActorList;                                                // (Parm, OutParm, NeedCtorLink)
 };
 

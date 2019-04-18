@@ -18,7 +18,7 @@ struct UGFxFSCmdHandler_FSCommand_Params
 	class UGFxEvent_FSCommand*                         Event;                                                    // (Parm)
 	struct FString                                     Cmd;                                                      // (Parm, NeedCtorLink)
 	struct FString                                     Arg;                                                      // (Parm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxInteraction.CloseAllMoviePlayers
@@ -104,7 +104,7 @@ struct UGFxMoviePlayer_SendMousePos_Params
 // Function GFxUI.GFxMoviePlayer.IsShowingFlashMouse
 struct UGFxMoviePlayer_IsShowingFlashMouse_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxMoviePlayer.HookSaveScreenshot
@@ -124,21 +124,21 @@ struct UGFxMoviePlayer_OnInputKey_Params
 	int                                                ControllerId;                                             // (Parm)
 	struct FName                                       ukey;                                                     // (Parm)
 	unsigned char                                      uevent;                                                   // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxMoviePlayer.WantsInput
 struct UGFxMoviePlayer_WantsInput_Params
 {
 	struct FName                                       ukey;                                                     // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxMoviePlayer.WantsControllerInput
 struct UGFxMoviePlayer_WantsControllerInput_Params
 {
 	int                                                ControllerId;                                             // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxMoviePlayer.InputKey
@@ -147,7 +147,7 @@ struct UGFxMoviePlayer_InputKey_Params
 	int                                                ControllerId;                                             // (Parm)
 	struct FName                                       ukey;                                                     // (Parm)
 	unsigned char                                      uevent;                                                   // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxMoviePlayer.GetGFxManager
@@ -171,20 +171,20 @@ struct UGFxMoviePlayer_UpdateSplitscreenLayout_Params
 // Function GFxUI.GFxMoviePlayer.ApplyPriorityVisibilityEffect
 struct UGFxMoviePlayer_ApplyPriorityVisibilityEffect_Params
 {
-	bool                                               bRemoveEffect;                                            // (Parm)
+	unsigned long                                      bRemoveEffect : 1;                                            // (Parm)
 };
 
 // Function GFxUI.GFxMoviePlayer.ApplyPriorityBlurEffect
 struct UGFxMoviePlayer_ApplyPriorityBlurEffect_Params
 {
-	bool                                               bRemoveEffect;                                            // (Parm)
+	unsigned long                                      bRemoveEffect : 1;                                            // (Parm)
 };
 
 // Function GFxUI.GFxMoviePlayer.ApplyPriorityEffect
 struct UGFxMoviePlayer_ApplyPriorityEffect_Params
 {
-	bool                                               bRequestedBlurState;                                      // (Parm)
-	bool                                               bRequestedHiddenState;                                    // (Parm)
+	unsigned long                                      bRequestedBlurState : 1;                                      // (Parm)
+	unsigned long                                      bRequestedHiddenState : 1;                                    // (Parm)
 };
 
 // Function GFxUI.GFxMoviePlayer.PlaySoundFromTheme
@@ -254,7 +254,7 @@ struct UGFxMoviePlayer_WidgetUnloaded_Params
 	struct FName                                       WidgetName;                                               // (Parm)
 	struct FName                                       WidgetPath;                                               // (Parm)
 	class UGFxObject*                                  Widget;                                                   // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxMoviePlayer.WidgetInitialized
@@ -263,7 +263,7 @@ struct UGFxMoviePlayer_WidgetInitialized_Params
 	struct FName                                       WidgetName;                                               // (Parm)
 	struct FName                                       WidgetPath;                                               // (Parm)
 	class UGFxObject*                                  Widget;                                                   // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxMoviePlayer.ActionScriptObject
@@ -341,7 +341,7 @@ struct UGFxMoviePlayer_SetVariableStringArray_Params
 	struct FString                                     Path;                                                     // (Parm, NeedCtorLink)
 	int                                                Index;                                                    // (Parm)
 	TArray<struct FString>                             Arg;                                                      // (Parm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxMoviePlayer.SetVariableFloatArray
@@ -350,7 +350,7 @@ struct UGFxMoviePlayer_SetVariableFloatArray_Params
 	struct FString                                     Path;                                                     // (Parm, NeedCtorLink)
 	int                                                Index;                                                    // (Parm)
 	TArray<float>                                      Arg;                                                      // (Parm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxMoviePlayer.SetVariableIntArray
@@ -359,7 +359,7 @@ struct UGFxMoviePlayer_SetVariableIntArray_Params
 	struct FString                                     Path;                                                     // (Parm, NeedCtorLink)
 	int                                                Index;                                                    // (Parm)
 	TArray<int>                                        Arg;                                                      // (Parm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxMoviePlayer.SetVariableArray
@@ -368,7 +368,7 @@ struct UGFxMoviePlayer_SetVariableArray_Params
 	struct FString                                     Path;                                                     // (Parm, NeedCtorLink)
 	int                                                Index;                                                    // (Parm)
 	TArray<struct FASValue>                            Arg;                                                      // (Parm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxMoviePlayer.GetVariableStringArray
@@ -377,7 +377,7 @@ struct UGFxMoviePlayer_GetVariableStringArray_Params
 	struct FString                                     Path;                                                     // (Parm, NeedCtorLink)
 	int                                                Index;                                                    // (Parm)
 	TArray<struct FString>                             Arg;                                                      // (Parm, OutParm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxMoviePlayer.GetVariableFloatArray
@@ -386,7 +386,7 @@ struct UGFxMoviePlayer_GetVariableFloatArray_Params
 	struct FString                                     Path;                                                     // (Parm, NeedCtorLink)
 	int                                                Index;                                                    // (Parm)
 	TArray<float>                                      Arg;                                                      // (Parm, OutParm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxMoviePlayer.GetVariableIntArray
@@ -395,7 +395,7 @@ struct UGFxMoviePlayer_GetVariableIntArray_Params
 	struct FString                                     Path;                                                     // (Parm, NeedCtorLink)
 	int                                                Index;                                                    // (Parm)
 	TArray<int>                                        Arg;                                                      // (Parm, OutParm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxMoviePlayer.GetVariableArray
@@ -404,7 +404,7 @@ struct UGFxMoviePlayer_GetVariableArray_Params
 	struct FString                                     Path;                                                     // (Parm, NeedCtorLink)
 	int                                                Index;                                                    // (Parm)
 	TArray<struct FASValue>                            Arg;                                                      // (Parm, OutParm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxMoviePlayer.SetVariableObject
@@ -432,7 +432,7 @@ struct UGFxMoviePlayer_SetVariableNumber_Params
 struct UGFxMoviePlayer_SetVariableBool_Params
 {
 	struct FString                                     Path;                                                     // (Parm, NeedCtorLink)
-	bool                                               B;                                                        // (Parm)
+	unsigned long                                      B : 1;                                                        // (Parm)
 };
 
 // Function GFxUI.GFxMoviePlayer.SetVariable
@@ -468,7 +468,7 @@ struct UGFxMoviePlayer_GetVariableNumber_Params
 struct UGFxMoviePlayer_GetVariableBool_Params
 {
 	struct FString                                     Path;                                                     // (Parm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxMoviePlayer.GetVariable
@@ -485,7 +485,7 @@ struct UGFxMoviePlayer_FilterAxisInput_Params
 	struct FName                                       Key;                                                      // (Parm)
 	float                                              Delta;                                                    // (Parm)
 	float                                              DeltaTime;                                                // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxMoviePlayer.FilterButtonInput
@@ -494,13 +494,13 @@ struct UGFxMoviePlayer_FilterButtonInput_Params
 	int                                                ControllerId;                                             // (Parm)
 	struct FName                                       ButtonName;                                               // (Parm)
 	unsigned char                                      InputEvent;                                               // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxMoviePlayer.FlushPlayerInput
 struct UGFxMoviePlayer_FlushPlayerInput_Params
 {
-	bool                                               capturekeysonly;                                          // (Parm)
+	unsigned long                                      capturekeysonly : 1;                                          // (Parm)
 };
 
 // Function GFxUI.GFxMoviePlayer.ClearFocusIgnoreKeys
@@ -528,13 +528,13 @@ struct UGFxMoviePlayer_AddCaptureKey_Params
 // Function GFxUI.GFxMoviePlayer.SetMovieCanReceiveInput
 struct UGFxMoviePlayer_SetMovieCanReceiveInput_Params
 {
-	bool                                               bCanReceiveInput;                                         // (Parm)
+	unsigned long                                      bCanReceiveInput : 1;                                         // (Parm)
 };
 
 // Function GFxUI.GFxMoviePlayer.SetMovieCanReceiveFocus
 struct UGFxMoviePlayer_SetMovieCanReceiveFocus_Params
 {
-	bool                                               bCanReceiveFocus;                                         // (Parm)
+	unsigned long                                      bCanReceiveFocus : 1;                                         // (Parm)
 };
 
 // Function GFxUI.GFxMoviePlayer.SetSceneDPG
@@ -617,7 +617,7 @@ struct UGFxMoviePlayer_SetExternalTexture_Params
 {
 	struct FString                                     Resource;                                                 // (Parm, NeedCtorLink)
 	class UTexture*                                    Texture;                                                  // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxMoviePlayer.SetExternalInterface
@@ -656,13 +656,13 @@ struct UGFxMoviePlayer_OnClose_Params
 // Function GFxUI.GFxMoviePlayer.Close
 struct UGFxMoviePlayer_Close_Params
 {
-	bool                                               Unload;                                                   // (OptionalParm, Parm)
+	unsigned long                                      Unload : 1;                                                   // (OptionalParm, Parm)
 };
 
 // Function GFxUI.GFxMoviePlayer.SetPause
 struct UGFxMoviePlayer_SetPause_Params
 {
-	bool                                               bPausePlayback;                                           // (OptionalParm, Parm)
+	unsigned long                                      bPausePlayback : 1;                                           // (OptionalParm, Parm)
 };
 
 // Function GFxUI.GFxMoviePlayer.OnPostAdvance
@@ -686,8 +686,8 @@ struct UGFxMoviePlayer_Advance_Params
 // Function GFxUI.GFxMoviePlayer.Start
 struct UGFxMoviePlayer_Start_Params
 {
-	bool                                               StartPaused;                                              // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      StartPaused : 1;                                              // (OptionalParm, Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxObject.WidgetUnloaded
@@ -696,7 +696,7 @@ struct UGFxObject_WidgetUnloaded_Params
 	struct FName                                       WidgetName;                                               // (Parm)
 	struct FName                                       WidgetPath;                                               // (Parm)
 	class UGFxObject*                                  Widget;                                                   // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxObject.WidgetInitialized
@@ -705,13 +705,13 @@ struct UGFxObject_WidgetInitialized_Params
 	struct FName                                       WidgetName;                                               // (Parm)
 	struct FName                                       WidgetPath;                                               // (Parm)
 	class UGFxObject*                                  Widget;                                                   // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxObject.MouseHitTest
 struct UGFxObject_MouseHitTest_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxObject.HitTest
@@ -719,8 +719,8 @@ struct UGFxObject_HitTest_Params
 {
 	int                                                TestX;                                                    // (Parm)
 	int                                                TestY;                                                    // (Parm)
-	bool                                               bTestShape;                                               // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      bTestShape : 1;                                               // (OptionalParm, Parm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxObject._HitTest
@@ -728,7 +728,7 @@ struct UGFxObject__HitTest_Params
 {
 	int                                                TestX;                                                    // (Parm)
 	int                                                TestY;                                                    // (Parm)
-	bool                                               bTestShape;                                               // (Parm)
+	unsigned long                                      bTestShape : 1;                                               // (Parm)
 	int                                                ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
@@ -869,7 +869,7 @@ struct UGFxObject_SetElementMemberBool_Params
 {
 	int                                                Index;                                                    // (Parm)
 	struct FString                                     Member;                                                   // (Parm, NeedCtorLink)
-	bool                                               B;                                                        // (Parm)
+	unsigned long                                      B : 1;                                                        // (Parm)
 };
 
 // Function GFxUI.GFxObject.SetElementMemberObject
@@ -909,7 +909,7 @@ struct UGFxObject_GetElementMemberBool_Params
 {
 	int                                                Index;                                                    // (Parm)
 	struct FString                                     Member;                                                   // (Parm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxObject.GetElementMemberObject
@@ -948,7 +948,7 @@ struct UGFxObject_SetElementPosition_Params
 struct UGFxObject_SetElementVisible_Params
 {
 	int                                                Index;                                                    // (Parm)
-	bool                                               Visible;                                                  // (Parm)
+	unsigned long                                      Visible : 1;                                                  // (Parm)
 };
 
 // Function GFxUI.GFxObject.SetElementDisplayMatrix
@@ -997,7 +997,7 @@ struct UGFxObject_SetElementFloat_Params
 struct UGFxObject_SetElementBool_Params
 {
 	int                                                Index;                                                    // (Parm)
-	bool                                               B;                                                        // (Parm)
+	unsigned long                                      B : 1;                                                        // (Parm)
 };
 
 // Function GFxUI.GFxObject.SetElementObject
@@ -1032,7 +1032,7 @@ struct UGFxObject_GetElementFloat_Params
 struct UGFxObject_GetElementBool_Params
 {
 	int                                                Index;                                                    // (Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxObject.GetElementObject
@@ -1066,7 +1066,7 @@ struct UGFxObject_GetText_Params
 // Function GFxUI.GFxObject.SetVisible
 struct UGFxObject_SetVisible_Params
 {
-	bool                                               Visible;                                                  // (Parm)
+	unsigned long                                      Visible : 1;                                                  // (Parm)
 };
 
 // Function GFxUI.GFxObject.SetDisplayMatrix3D
@@ -1117,7 +1117,7 @@ struct UGFxObject_GetPosition_Params
 {
 	float                                              X;                                                        // (Parm, OutParm)
 	float                                              Y;                                                        // (Parm, OutParm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxObject.GetDisplayInfo
@@ -1168,7 +1168,7 @@ struct UGFxObject_SetFloat_Params
 struct UGFxObject_SetBool_Params
 {
 	struct FString                                     Member;                                                   // (Parm, NeedCtorLink)
-	bool                                               B;                                                        // (Parm)
+	unsigned long                                      B : 1;                                                        // (Parm)
 };
 
 // Function GFxUI.GFxObject.Set
@@ -1204,7 +1204,7 @@ struct UGFxObject_GetFloat_Params
 struct UGFxObject_GetBool_Params
 {
 	struct FString                                     Member;                                                   // (Parm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxObject.Get
@@ -1271,31 +1271,31 @@ struct USwfMovie_GetPathForLoadMovie_Params
 // Function GFxUI.GFxAction_CloseMovie.IsValidLevelSequenceObject
 struct UGFxAction_CloseMovie_IsValidLevelSequenceObject_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxAction_GetVariable.IsValidLevelSequenceObject
 struct UGFxAction_GetVariable_IsValidLevelSequenceObject_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxAction_Invoke.IsValidLevelSequenceObject
 struct UGFxAction_Invoke_IsValidLevelSequenceObject_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxAction_OpenMovie.IsValidLevelSequenceObject
 struct UGFxAction_OpenMovie_IsValidLevelSequenceObject_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxAction_SetVariable.IsValidLevelSequenceObject
 struct UGFxAction_SetVariable_IsValidLevelSequenceObject_Params
 {
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxFSCmdHandler_Kismet.FSCommand
@@ -1305,7 +1305,7 @@ struct UGFxFSCmdHandler_Kismet_FSCommand_Params
 	class UGFxEvent_FSCommand*                         Event;                                                    // (Parm)
 	struct FString                                     Cmd;                                                      // (Parm, NeedCtorLink)
 	struct FString                                     Arg;                                                      // (Parm, NeedCtorLink)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxDataStoreSubscriber.SaveSubscriberValue
@@ -1313,7 +1313,7 @@ struct UGFxDataStoreSubscriber_SaveSubscriberValue_Params
 {
 	TArray<class UUIDataStore*>                        out_BoundDataStores;                                      // (Parm, OutParm, NeedCtorLink)
 	int                                                BindingIndex;                                             // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxDataStoreSubscriber.ClearBoundDataStores
@@ -1331,7 +1331,7 @@ struct UGFxDataStoreSubscriber_GetBoundDataStores_Params
 struct UGFxDataStoreSubscriber_NotifyDataStoreValueUpdated_Params
 {
 	class UUIDataStore*                                SourceDataStore;                                          // (Parm)
-	bool                                               bValuesInvalidated;                                       // (Parm)
+	unsigned long                                      bValuesInvalidated : 1;                                       // (Parm)
 	struct FName                                       PropertyTag;                                              // (Parm)
 	class UUIDataProvider*                             SourceProvider;                                           // (Parm)
 	int                                                ArrayIndex;                                               // (Parm)
@@ -1341,7 +1341,7 @@ struct UGFxDataStoreSubscriber_NotifyDataStoreValueUpdated_Params
 struct UGFxDataStoreSubscriber_RefreshSubscriberValue_Params
 {
 	int                                                BindingIndex;                                             // (OptionalParm, Parm)
-	bool                                               ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+	unsigned long                                      ReturnValue : 1;                                              // (Parm, OutParm, ReturnParm)
 };
 
 // Function GFxUI.GFxDataStoreSubscriber.GetDataStoreBinding
