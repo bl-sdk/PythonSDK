@@ -356,7 +356,7 @@ namespace pybind11 {
 				char *tmp = PyUnicode_AsUTF8AndSize(source, nullptr);
 				if (!tmp)
 					return false;
-				value = UObject::FindClass(tmp);
+				value = UObject::FindClass(tmp, false);
 				return value != nullptr;
 			}
 			static handle cast(UClass *src, return_value_policy policy, handle parent) {

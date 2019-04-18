@@ -43,6 +43,7 @@ namespace BL2SDK
 	int EngineVersion = -1;
 	int ChangelistNumber = -1;
 
+	std::map<std::string, UClass *> ClassMap = std::map<std::string, UClass *>{};
 	void __stdcall hkProcessEvent(UFunction* function, void* params, void* result)
 	{
 		// Get "this"
@@ -300,7 +301,7 @@ namespace BL2SDK
 
 	void initializeGameVersions()
 	{
-		UObject* obj = UObject::GObjects()->Data[0];
+		UObject* obj = BL2SDK::ClassMap["Object"];
 		EngineVersion = obj->GetEngineVersion();
 		ChangelistNumber = obj->GetBuildChangelistNumber();
 
@@ -312,6 +313,19 @@ namespace BL2SDK
 	{
 		Logging::LogF("[GameReady] Thread: %i\n", GetCurrentThreadId());
 
+		for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
+		{
+			UObject* Object = UObject::GObjects()->Data[i];
+
+			if (!Object || !Object->Class)
+				continue;
+
+			if (!strcmp(Object->Class->GetName().c_str(), "Class"))
+				BL2SDK::ClassMap[Object->GetName()] = (UClass *)Object;
+
+			if (!strcmp(Object->GetFullName().c_str(), "WillowGameEngine Transient.WillowGameEngine"))
+				engine = Object;
+		}
 #ifdef _DEBUG
 		Logging::InitializeExtern();
 #endif
