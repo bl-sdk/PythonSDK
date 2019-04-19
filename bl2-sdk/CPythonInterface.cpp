@@ -47,15 +47,15 @@ bool VerifyPythonFunction(py::object funcHook, const char** expectedKeys) {
 }
 
 void RegisterEngineHook(const std::string& funcName, const std::string& hookName, py::object funcHook) {
-	static const char *params[] = { "caller", "function", "parms", "result", "return" };
+	static const char *params[] = { "caller", "function", "params", "result", "return" };
 	if (VerifyPythonFunction(funcHook, params))
-		GameHooks::EngineHookManager->Register(funcName, hookName, [funcHook](UObject* caller, UFunction* function, void* parms, void* result) {
+		GameHooks::EngineHookManager->Register(funcName, hookName, [funcHook](UObject* caller, UFunction* function, void* params, void* result) {
 		try {
 			py::object py_caller = py::cast(caller, py::return_value_policy::reference);
 			py::object py_function = py::cast(function, py::return_value_policy::reference);
-			py::object py_parms = py::cast(FStruct(parms), py::return_value_policy::reference);
+			py::object py_params = py::cast(FStruct(params), py::return_value_policy::reference);
 			py::object py_result = py::cast(FStruct(result), py::return_value_policy::reference);
-			py::object ret = funcHook(py_caller, py_function, py_parms, py_result);
+			py::object ret = funcHook(py_caller, py_function, py_params, py_result);
 			return ret.cast<bool>();
 		}
 		catch (std::exception e) {
@@ -93,17 +93,21 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	Export_pystes_gamedefines(m);
 	Export_pystes_Core_structs(m);
 	Export_pystes_Core_classes(m);
+#ifndef _DEBUG
 	Export_pystes_Engine_structs(m);
+#endif
 	Export_pystes_Engine_classes(m);
 	Export_pystes_GameFramework_structs(m);
 	Export_pystes_GameFramework_classes(m);
 #ifndef _DEBUG
 	Export_pystes_GFxUI_structs(m);
 	Export_pystes_GFxUI_classes(m);
-#endif
 	Export_pystes_GearboxFramework_structs(m);
+#endif
 	Export_pystes_GearboxFramework_classes(m);
+#ifndef _DEBUG
 	Export_pystes_WillowGame_structs(m);
+#endif
 	Export_pystes_WillowGame_classes(m);
 #ifndef _DEBUG
 	Export_pystes_AkAudio_structs(m);
@@ -136,7 +140,7 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	m.def("DoInjectedCallNext", &BL2SDK::doInjectedCallNext);
 }
 
-bool PythonGCTick(UObject* caller, UFunction* function, void* parms, void* result)
+bool PythonGCTick(UObject* caller, UFunction* function, void* params, void* result)
 {
 	return true;
 }
@@ -174,7 +178,7 @@ bool CheckPythonCommand(UObject* caller, FFrame& stack, void* const result, UFun
 		stack.SkipFunction();
 		return false;
 	}
-	((UConsole *)caller)->eventConsoleCommand(*command);
+	((UConsole *)caller)->ConsoleCommand(*command);
 	stack.SkipFunction();
 	return false;
 }

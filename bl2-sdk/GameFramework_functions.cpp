@@ -1,628 +1,616 @@
-#pragma once
-#include "stdafx.h"
-/*
-#############################################################################################
-# Borderlands 2 (1.7) SDK
-# Generated with TheFeckless UE3 SDK Generator v1.4_Beta-Rev.51
-# ========================================================================================= #
-# File: GameFramework_functions.h
-# ========================================================================================= #
-# Credits: uNrEaL, Tamimego, SystemFiles, R00T88, _silencer, the1domo, K@N@VEL
-# Thanks: HOOAH07, lowHertz
-# Forums: www.uc-forum.com, www.gamedeception.net
-#############################################################################################
-*/
+// Borderlands 2 (1.8.5) SDK
 
 #ifdef _MSC_VER
-#pragma pack ( push, 0x4 )
+	#pragma pack(push, 0x4)
 #endif
 
-/*
-# ========================================================================================= #
-# Global Static Class Pointers
-# ========================================================================================= #
-*/
+#include "stdafx.h"
 
-/*
-# ========================================================================================= #
-# Functions
-# ========================================================================================= #
-*/
+//---------------------------------------------------------------------------
+//Functions
+//---------------------------------------------------------------------------
 
 // Function GameFramework.GamePlayerController.ClientColorFade
-// [0x010201C0]
-// Parameters infos:
-// struct FColor                  FadeColor                      ( CPF_Parm )
-// unsigned char                  FromAlpha                      ( CPF_Parm )
-// unsigned char                  ToAlpha                        ( CPF_Parm )
-// float                          FadeTime                       ( CPF_Parm )
+// (Net, NetReliable, Simulated, Public, NetClient)
+// Parameters:
+// struct FColor                  FadeColor                      (Parm)
+// unsigned char                  FromAlpha                      (Parm)
+// unsigned char                  ToAlpha                        (Parm)
+// float                          FadeTime                       (Parm)
 
-void AGamePlayerController::ClientColorFade(struct FColor FadeColor, unsigned char FromAlpha, unsigned char ToAlpha, float FadeTime)
+void AGamePlayerController::ClientColorFade(const struct FColor& FadeColor, unsigned char FromAlpha, unsigned char ToAlpha, float FadeTime)
 {
-	static UFunction* pFnClientColorFade = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GameFramework.GamePlayerController.ClientColorFade");
 
-	if (!pFnClientColorFade)
-		pFnClientColorFade = (UFunction*)UObject::GObjObjects()->Data[38462];
+	AGamePlayerController_ClientColorFade_Params params;
+	params.FadeColor = FadeColor;
+	params.FromAlpha = FromAlpha;
+	params.ToAlpha = ToAlpha;
+	params.FadeTime = FadeTime;
 
-	AGamePlayerController_execClientColorFade_Parms ClientColorFade_Parms;
-	memcpy(&ClientColorFade_Parms.FadeColor, &FadeColor, 0x4);
-	ClientColorFade_Parms.FromAlpha = FromAlpha;
-	ClientColorFade_Parms.ToAlpha = ToAlpha;
-	ClientColorFade_Parms.FadeTime = FadeTime;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnClientColorFade, &ClientColorFade_Parms, NULL);
-};
+	this->ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GameFramework.GamePlayerController.CallMemLeakCheck
-// [0x00040003] ( FUNC_Final )
-// Parameters infos:
+// (Final, Defined, Private)
 
 void AGamePlayerController::CallMemLeakCheck()
 {
-	static UFunction* pFnCallMemLeakCheck = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GameFramework.GamePlayerController.CallMemLeakCheck");
 
-	if (!pFnCallMemLeakCheck)
-		pFnCallMemLeakCheck = (UFunction*)UObject::GObjObjects()->Data[38461];
+	AGamePlayerController_CallMemLeakCheck_Params params;
 
-	AGamePlayerController_execCallMemLeakCheck_Parms CallMemLeakCheck_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnCallMemLeakCheck, &CallMemLeakCheck_Parms, NULL);
-};
+	this->ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GameFramework.GamePlayerController.StopMemLeakChecking
-// [0x00020202] ( FUNC_Exec )
-// Parameters infos:
+// (Defined, Exec, Public)
 
 void AGamePlayerController::StopMemLeakChecking()
 {
-	static UFunction* pFnStopMemLeakChecking = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GameFramework.GamePlayerController.StopMemLeakChecking");
 
-	if (!pFnStopMemLeakChecking)
-		pFnStopMemLeakChecking = (UFunction*)UObject::GObjObjects()->Data[38460];
+	AGamePlayerController_StopMemLeakChecking_Params params;
 
-	AGamePlayerController_execStopMemLeakChecking_Parms StopMemLeakChecking_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnStopMemLeakChecking, &StopMemLeakChecking_Parms, NULL);
-};
+	this->ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GameFramework.GamePlayerController.DoMemLeakChecking
-// [0x00020202] ( FUNC_Exec )
-// Parameters infos:
-// float                          InTimeBetweenMemLeakChecks     ( CPF_Parm )
+// (Defined, Exec, Public)
+// Parameters:
+// float                          InTimeBetweenMemLeakChecks     (Parm)
 
 void AGamePlayerController::DoMemLeakChecking(float InTimeBetweenMemLeakChecks)
 {
-	static UFunction* pFnDoMemLeakChecking = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GameFramework.GamePlayerController.DoMemLeakChecking");
 
-	if (!pFnDoMemLeakChecking)
-		pFnDoMemLeakChecking = (UFunction*)UObject::GObjObjects()->Data[38458];
+	AGamePlayerController_DoMemLeakChecking_Params params;
+	params.InTimeBetweenMemLeakChecks = InTimeBetweenMemLeakChecks;
 
-	AGamePlayerController_execDoMemLeakChecking_Parms DoMemLeakChecking_Parms;
-	DoMemLeakChecking_Parms.InTimeBetweenMemLeakChecks = InTimeBetweenMemLeakChecks;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnDoMemLeakChecking, &DoMemLeakChecking_Parms, NULL);
-};
+	this->ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GameFramework.GamePlayerController.WarmupPause
-// [0x00820802] ( FUNC_Event )
-// Parameters infos:
-// unsigned long                  bDesiredPauseState             ( CPF_Parm )
+// (Defined, Event, Public, HasDefaults)
+// Parameters:
+// bool                           bDesiredPauseState             (Parm)
 
-void AGamePlayerController::eventWarmupPause(unsigned long bDesiredPauseState)
+void AGamePlayerController::WarmupPause(bool bDesiredPauseState)
 {
-	static UFunction* pFnWarmupPause = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GameFramework.GamePlayerController.WarmupPause");
 
-	if (!pFnWarmupPause)
-		pFnWarmupPause = (UFunction*)UObject::GObjObjects()->Data[38454];
+	AGamePlayerController_WarmupPause_Params params;
+	params.bDesiredPauseState = bDesiredPauseState;
 
-	AGamePlayerController_eventWarmupPause_Parms WarmupPause_Parms;
-	WarmupPause_Parms.bDesiredPauseState = bDesiredPauseState;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnWarmupPause, &WarmupPause_Parms, NULL);
-};
+	this->ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GameFramework.GamePlayerController.CanUnpauseWarmup
-// [0x00020002]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Defined, Public)
+// Parameters:
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool AGamePlayerController::CanUnpauseWarmup()
 {
-	static UFunction* pFnCanUnpauseWarmup = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GameFramework.GamePlayerController.CanUnpauseWarmup");
 
-	if (!pFnCanUnpauseWarmup)
-		pFnCanUnpauseWarmup = (UFunction*)UObject::GObjObjects()->Data[38452];
+	AGamePlayerController_CanUnpauseWarmup_Params params;
 
-	AGamePlayerController_execCanUnpauseWarmup_Parms CanUnpauseWarmup_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnCanUnpauseWarmup, &CanUnpauseWarmup_Parms, NULL);
+	this->ProcessEvent(fn, &params);
 
-	return CanUnpauseWarmup_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function GameFramework.GamePlayerController.GetCurrentMovie
-// [0x00420401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// struct FString                 MovieName                      ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Final, Native, Public, HasOutparams)
+// Parameters:
+// struct FString                 MovieName                      (Parm, OutParm, NeedCtorLink)
 
 void AGamePlayerController::GetCurrentMovie(struct FString* MovieName)
 {
-	static UFunction* pFnGetCurrentMovie = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GameFramework.GamePlayerController.GetCurrentMovie");
 
-	if (!pFnGetCurrentMovie)
-		pFnGetCurrentMovie = (UFunction*)UObject::GObjObjects()->Data[38450];
+	AGamePlayerController_GetCurrentMovie_Params params;
 
-	AGamePlayerController_execGetCurrentMovie_Parms GetCurrentMovie_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetCurrentMovie->FunctionFlags |= ~0x400;
+	this->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetCurrentMovie, &GetCurrentMovie_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetCurrentMovie->FunctionFlags |= 0x400;
+	if (MovieName != nullptr)
+		*MovieName = params.MovieName;
+}
 
-	if (MovieName)
-		memcpy(MovieName, &GetCurrentMovie_Parms.MovieName, 0xC);
-};
 
 // Function GameFramework.GamePlayerController.ClientStopMovie
-// [0x01020DC1] ( FUNC_Final | FUNC_Event | FUNC_Native )
-// Parameters infos:
-// float                          DelayInSeconds                 ( CPF_Parm )
-// unsigned long                  bAllowMovieToFinish            ( CPF_Parm )
-// unsigned long                  bForceStopNonSkippable         ( CPF_Parm )
-// unsigned long                  bForceStopLoadingMovie         ( CPF_Parm )
+// (Final, Net, NetReliable, Simulated, Native, Event, Public, NetClient)
+// Parameters:
+// float                          DelayInSeconds                 (Parm)
+// bool                           bAllowMovieToFinish            (Parm)
+// bool                           bForceStopNonSkippable         (Parm)
+// bool                           bForceStopLoadingMovie         (Parm)
 
-void AGamePlayerController::eventClientStopMovie(float DelayInSeconds, unsigned long bAllowMovieToFinish, unsigned long bForceStopNonSkippable, unsigned long bForceStopLoadingMovie)
+void AGamePlayerController::ClientStopMovie(float DelayInSeconds, bool bAllowMovieToFinish, bool bForceStopNonSkippable, bool bForceStopLoadingMovie)
 {
-	static UFunction* pFnClientStopMovie = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GameFramework.GamePlayerController.ClientStopMovie");
 
-	if (!pFnClientStopMovie)
-		pFnClientStopMovie = (UFunction*)UObject::GObjObjects()->Data[38445];
+	AGamePlayerController_ClientStopMovie_Params params;
+	params.DelayInSeconds = DelayInSeconds;
+	params.bAllowMovieToFinish = bAllowMovieToFinish;
+	params.bForceStopNonSkippable = bForceStopNonSkippable;
+	params.bForceStopLoadingMovie = bForceStopLoadingMovie;
 
-	AGamePlayerController_eventClientStopMovie_Parms ClientStopMovie_Parms;
-	ClientStopMovie_Parms.DelayInSeconds = DelayInSeconds;
-	ClientStopMovie_Parms.bAllowMovieToFinish = bAllowMovieToFinish;
-	ClientStopMovie_Parms.bForceStopNonSkippable = bForceStopNonSkippable;
-	ClientStopMovie_Parms.bForceStopLoadingMovie = bForceStopLoadingMovie;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnClientStopMovie->FunctionFlags |= ~0x400;
+	this->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnClientStopMovie, &ClientStopMovie_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnClientStopMovie->FunctionFlags |= 0x400;
-};
 
 // Function GameFramework.GamePlayerController.ClientPlayMovie
-// [0x01020DC1] ( FUNC_Final | FUNC_Event | FUNC_Native )
-// Parameters infos:
-// struct FString                 MovieName                      ( CPF_Parm | CPF_NeedCtorLink )
-// int                            InStartOfRenderingMovieFrame   ( CPF_Parm )
-// int                            InEndOfRenderingMovieFrame     ( CPF_Parm )
-// unsigned long                  bRestrictPausing               ( CPF_Parm )
-// unsigned long                  bPlayOnceFromStream            ( CPF_Parm )
-// unsigned long                  bOnlyBackButtonSkipsMovie      ( CPF_Parm )
+// (Final, Net, NetReliable, Simulated, Native, Event, Public, NetClient)
+// Parameters:
+// struct FString                 MovieName                      (Parm, NeedCtorLink)
+// int                            InStartOfRenderingMovieFrame   (Parm)
+// int                            InEndOfRenderingMovieFrame     (Parm)
+// bool                           bRestrictPausing               (Parm)
+// bool                           bPlayOnceFromStream            (Parm)
+// bool                           bOnlyBackButtonSkipsMovie      (Parm)
 
-void AGamePlayerController::eventClientPlayMovie(struct FString MovieName, int InStartOfRenderingMovieFrame, int InEndOfRenderingMovieFrame, unsigned long bRestrictPausing, unsigned long bPlayOnceFromStream, unsigned long bOnlyBackButtonSkipsMovie)
+void AGamePlayerController::ClientPlayMovie(const struct FString& MovieName, int InStartOfRenderingMovieFrame, int InEndOfRenderingMovieFrame, bool bRestrictPausing, bool bPlayOnceFromStream, bool bOnlyBackButtonSkipsMovie)
 {
-	static UFunction* pFnClientPlayMovie = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GameFramework.GamePlayerController.ClientPlayMovie");
 
-	if (!pFnClientPlayMovie)
-		pFnClientPlayMovie = (UFunction*)UObject::GObjObjects()->Data[38438];
+	AGamePlayerController_ClientPlayMovie_Params params;
+	params.MovieName = MovieName;
+	params.InStartOfRenderingMovieFrame = InStartOfRenderingMovieFrame;
+	params.InEndOfRenderingMovieFrame = InEndOfRenderingMovieFrame;
+	params.bRestrictPausing = bRestrictPausing;
+	params.bPlayOnceFromStream = bPlayOnceFromStream;
+	params.bOnlyBackButtonSkipsMovie = bOnlyBackButtonSkipsMovie;
 
-	AGamePlayerController_eventClientPlayMovie_Parms ClientPlayMovie_Parms;
-	memcpy(&ClientPlayMovie_Parms.MovieName, &MovieName, 0xC);
-	ClientPlayMovie_Parms.InStartOfRenderingMovieFrame = InStartOfRenderingMovieFrame;
-	ClientPlayMovie_Parms.InEndOfRenderingMovieFrame = InEndOfRenderingMovieFrame;
-	ClientPlayMovie_Parms.bRestrictPausing = bRestrictPausing;
-	ClientPlayMovie_Parms.bPlayOnceFromStream = bPlayOnceFromStream;
-	ClientPlayMovie_Parms.bOnlyBackButtonSkipsMovie = bOnlyBackButtonSkipsMovie;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnClientPlayMovie->FunctionFlags |= ~0x400;
+	this->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnClientPlayMovie, &ClientPlayMovie_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnClientPlayMovie->FunctionFlags |= 0x400;
-};
 
 // Function GameFramework.GamePlayerController.KeepPlayingLoadingMovie
-// [0x00022401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
+// (Final, Native, Static, Public)
 
 void AGamePlayerController::KeepPlayingLoadingMovie()
 {
-	static UFunction* pFnKeepPlayingLoadingMovie = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GameFramework.GamePlayerController.KeepPlayingLoadingMovie");
 
-	if (!pFnKeepPlayingLoadingMovie)
-		pFnKeepPlayingLoadingMovie = (UFunction*)UObject::GObjObjects()->Data[38437];
+	AGamePlayerController_KeepPlayingLoadingMovie_Params params;
 
-	AGamePlayerController_execKeepPlayingLoadingMovie_Parms KeepPlayingLoadingMovie_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnKeepPlayingLoadingMovie->FunctionFlags |= ~0x400;
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnKeepPlayingLoadingMovie, &KeepPlayingLoadingMovie_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnKeepPlayingLoadingMovie->FunctionFlags |= 0x400;
-};
 
 // Function GameFramework.GamePlayerController.ShowLoadingMovie
-// [0x00026401] ( FUNC_Final | FUNC_Native )
-// Parameters infos:
-// unsigned long                  bShowMovie                     ( CPF_Parm )
-// unsigned long                  bPauseAfterHide                ( CPF_OptionalParm | CPF_Parm )
-// float                          PauseDuration                  ( CPF_OptionalParm | CPF_Parm )
-// float                          KeepPlayingDuration            ( CPF_OptionalParm | CPF_Parm )
-// unsigned long                  bOverridePreviousDelays        ( CPF_OptionalParm | CPF_Parm )
+// (Final, Native, Static, HasOptionalparams, Public)
+// Parameters:
+// bool                           bShowMovie                     (Parm)
+// bool                           bPauseAfterHide                (OptionalParm, Parm)
+// float                          PauseDuration                  (OptionalParm, Parm)
+// float                          KeepPlayingDuration            (OptionalParm, Parm)
+// bool                           bOverridePreviousDelays        (OptionalParm, Parm)
 
-void AGamePlayerController::ShowLoadingMovie(unsigned long bShowMovie, unsigned long bPauseAfterHide, float PauseDuration, float KeepPlayingDuration, unsigned long bOverridePreviousDelays)
+void AGamePlayerController::ShowLoadingMovie(bool bShowMovie, bool bPauseAfterHide, float PauseDuration, float KeepPlayingDuration, bool bOverridePreviousDelays)
 {
-	static UFunction* pFnShowLoadingMovie = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GameFramework.GamePlayerController.ShowLoadingMovie");
 
-	if (!pFnShowLoadingMovie)
-		pFnShowLoadingMovie = (UFunction*)UObject::GObjObjects()->Data[38431];
+	AGamePlayerController_ShowLoadingMovie_Params params;
+	params.bShowMovie = bShowMovie;
+	params.bPauseAfterHide = bPauseAfterHide;
+	params.PauseDuration = PauseDuration;
+	params.KeepPlayingDuration = KeepPlayingDuration;
+	params.bOverridePreviousDelays = bOverridePreviousDelays;
 
-	AGamePlayerController_execShowLoadingMovie_Parms ShowLoadingMovie_Parms;
-	ShowLoadingMovie_Parms.bShowMovie = bShowMovie;
-	ShowLoadingMovie_Parms.bPauseAfterHide = bPauseAfterHide;
-	ShowLoadingMovie_Parms.PauseDuration = PauseDuration;
-	ShowLoadingMovie_Parms.KeepPlayingDuration = KeepPlayingDuration;
-	ShowLoadingMovie_Parms.bOverridePreviousDelays = bOverridePreviousDelays;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnShowLoadingMovie->FunctionFlags |= ~0x400;
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnShowLoadingMovie, &ShowLoadingMovie_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnShowLoadingMovie->FunctionFlags |= 0x400;
-};
 
 // Function GameFramework.GamePlayerController.SetSoundMode
-// [0x00020102]
-// Parameters infos:
-// struct FName                   InSoundModeName                ( CPF_Parm )
+// (Defined, Simulated, Public)
+// Parameters:
+// struct FName                   InSoundModeName                (Parm)
 
-void AGamePlayerController::SetSoundMode(struct FName InSoundModeName)
+void AGamePlayerController::SetSoundMode(const struct FName& InSoundModeName)
 {
-	static UFunction* pFnSetSoundMode = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GameFramework.GamePlayerController.SetSoundMode");
 
-	if (!pFnSetSoundMode)
-		pFnSetSoundMode = (UFunction*)UObject::GObjObjects()->Data[38429];
+	AGamePlayerController_SetSoundMode_Params params;
+	params.InSoundModeName = InSoundModeName;
 
-	AGamePlayerController_execSetSoundMode_Parms SetSoundMode_Parms;
-	memcpy(&SetSoundMode_Parms.InSoundModeName, &InSoundModeName, 0x8);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnSetSoundMode, &SetSoundMode_Parms, NULL);
-};
+	this->ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GameFramework.GamePlayerController.DoForceFeedbackForScreenShake
-// [0x00080102]
-// Parameters infos:
-// class UCameraShake*            ShakeData                      ( CPF_Parm )
-// float                          Scale                          ( CPF_Parm )
+// (Defined, Simulated, Protected)
+// Parameters:
+// class UCameraShake*            ShakeData                      (Parm)
+// float                          Scale                          (Parm)
 
 void AGamePlayerController::DoForceFeedbackForScreenShake(class UCameraShake* ShakeData, float Scale)
 {
-	static UFunction* pFnDoForceFeedbackForScreenShake = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GameFramework.GamePlayerController.DoForceFeedbackForScreenShake");
 
-	if (!pFnDoForceFeedbackForScreenShake)
-		pFnDoForceFeedbackForScreenShake = (UFunction*)UObject::GObjObjects()->Data[38421];
+	AGamePlayerController_DoForceFeedbackForScreenShake_Params params;
+	params.ShakeData = ShakeData;
+	params.Scale = Scale;
 
-	AGamePlayerController_execDoForceFeedbackForScreenShake_Parms DoForceFeedbackForScreenShake_Parms;
-	DoForceFeedbackForScreenShake_Parms.ShakeData = ShakeData;
-	DoForceFeedbackForScreenShake_Parms.Scale = Scale;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnDoForceFeedbackForScreenShake, &DoForceFeedbackForScreenShake_Parms, NULL);
-};
+	this->ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GameFramework.GamePlayerController.GetUIPlayerIndex
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// int                            ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Native, Public)
+// Parameters:
+// int                            ReturnValue                    (Parm, OutParm, ReturnParm)
 
 int AGamePlayerController::GetUIPlayerIndex()
 {
-	static UFunction* pFnGetUIPlayerIndex = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GameFramework.GamePlayerController.GetUIPlayerIndex");
 
-	if (!pFnGetUIPlayerIndex)
-		pFnGetUIPlayerIndex = (UFunction*)UObject::GObjObjects()->Data[38419];
+	AGamePlayerController_GetUIPlayerIndex_Params params;
 
-	AGamePlayerController_execGetUIPlayerIndex_Parms GetUIPlayerIndex_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetUIPlayerIndex->FunctionFlags |= ~0x400;
+	this->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetUIPlayerIndex, &GetUIPlayerIndex_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetUIPlayerIndex->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetUIPlayerIndex_Parms.ReturnValue;
-};
 
 // Function GameFramework.NavMeshGoal_OutOfViewFrom.Recycle
-// [0x00020002]
-// Parameters infos:
+// (Defined, Public)
 
 void UNavMeshGoal_OutOfViewFrom::Recycle()
 {
-	static UFunction* pFnRecycle = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GameFramework.NavMeshGoal_OutOfViewFrom.Recycle");
 
-	if (!pFnRecycle)
-		pFnRecycle = (UFunction*)UObject::GObjObjects()->Data[38606];
+	UNavMeshGoal_OutOfViewFrom_Recycle_Params params;
 
-	UNavMeshGoal_OutOfViewFrom_execRecycle_Parms Recycle_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnRecycle, &Recycle_Parms, NULL);
-};
+	this->ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GameFramework.NavMeshGoal_OutOfViewFrom.MustBeHiddenFromThisPoint
-// [0x00022002]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// class UNavigationHandle*       NavHandle                      ( CPF_Parm )
-// struct FVector                 InOutOfViewLocation            ( CPF_Parm )
+// (Defined, Static, Public)
+// Parameters:
+// class UNavigationHandle*       NavHandle                      (Parm)
+// struct FVector                 InOutOfViewLocation            (Parm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UNavMeshGoal_OutOfViewFrom::MustBeHiddenFromThisPoint(class UNavigationHandle* NavHandle, struct FVector InOutOfViewLocation)
+bool UNavMeshGoal_OutOfViewFrom::MustBeHiddenFromThisPoint(class UNavigationHandle* NavHandle, const struct FVector& InOutOfViewLocation)
 {
-	static UFunction* pFnMustBeHiddenFromThisPoint = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GameFramework.NavMeshGoal_OutOfViewFrom.MustBeHiddenFromThisPoint");
 
-	if (!pFnMustBeHiddenFromThisPoint)
-		pFnMustBeHiddenFromThisPoint = (UFunction*)UObject::GObjObjects()->Data[38602];
+	UNavMeshGoal_OutOfViewFrom_MustBeHiddenFromThisPoint_Params params;
+	params.NavHandle = NavHandle;
+	params.InOutOfViewLocation = InOutOfViewLocation;
 
-	UNavMeshGoal_OutOfViewFrom_execMustBeHiddenFromThisPoint_Parms MustBeHiddenFromThisPoint_Parms;
-	MustBeHiddenFromThisPoint_Parms.NavHandle = NavHandle;
-	memcpy(&MustBeHiddenFromThisPoint_Parms.InOutOfViewLocation, &InOutOfViewLocation, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnMustBeHiddenFromThisPoint, &MustBeHiddenFromThisPoint_Parms, NULL);
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 
-	return MustBeHiddenFromThisPoint_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function GameFramework.NavMeshGoal_OutOfViewFrom.RecycleNative
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
+// (Native, Public)
 
 void UNavMeshGoal_OutOfViewFrom::RecycleNative()
 {
-	static UFunction* pFnRecycleNative = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GameFramework.NavMeshGoal_OutOfViewFrom.RecycleNative");
 
-	if (!pFnRecycleNative)
-		pFnRecycleNative = (UFunction*)UObject::GObjObjects()->Data[38601];
+	UNavMeshGoal_OutOfViewFrom_RecycleNative_Params params;
 
-	UNavMeshGoal_OutOfViewFrom_execRecycleNative_Parms RecycleNative_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnRecycleNative->FunctionFlags |= ~0x400;
+	this->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnRecycleNative, &RecycleNative_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnRecycleNative->FunctionFlags |= 0x400;
-};
 
 // Function GameFramework.NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations.Recycle
-// [0x00020002]
-// Parameters infos:
+// (Defined, Public)
 
 void UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations::Recycle()
 {
-	static UFunction* pFnRecycle = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GameFramework.NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations.Recycle");
 
-	if (!pFnRecycle)
-		pFnRecycle = (UFunction*)UObject::GObjObjects()->Data[38620];
+	UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations_Recycle_Params params;
 
-	UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations_execRecycle_Parms Recycle_Parms;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnRecycle, &Recycle_Parms, NULL);
-};
+	this->ProcessEvent(fn, &params);
+
+	fn->FunctionFlags = flags;
+}
+
 
 // Function GameFramework.NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations.BiasAgainstPolysWithinDistanceOfLocations
-// [0x00022002]
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// class UNavigationHandle*       NavHandle                      ( CPF_Parm )
-// struct FVector                 InLocation                     ( CPF_Const | CPF_Parm )
-// struct FRotator                InRotation                     ( CPF_Const | CPF_Parm )
-// float                          InDistanceToCheck              ( CPF_Const | CPF_Parm )
-// TArray< struct FVector >       InLocationsToCheck             ( CPF_Const | CPF_Parm | CPF_NeedCtorLink )
+// (Defined, Static, Public)
+// Parameters:
+// class UNavigationHandle*       NavHandle                      (Parm)
+// struct FVector                 InLocation                     (Const, Parm)
+// struct FRotator                InRotation                     (Const, Parm)
+// float                          InDistanceToCheck              (Const, Parm)
+// TArray<struct FVector>         InLocationsToCheck             (Const, Parm, NeedCtorLink)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
-bool UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations::BiasAgainstPolysWithinDistanceOfLocations(class UNavigationHandle* NavHandle, struct FVector InLocation, struct FRotator InRotation, float InDistanceToCheck, TArray< struct FVector > InLocationsToCheck)
+bool UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations::BiasAgainstPolysWithinDistanceOfLocations(class UNavigationHandle* NavHandle, const struct FVector& InLocation, const struct FRotator& InRotation, float InDistanceToCheck, TArray<struct FVector> InLocationsToCheck)
 {
-	static UFunction* pFnBiasAgainstPolysWithinDistanceOfLocations = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GameFramework.NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations.BiasAgainstPolysWithinDistanceOfLocations");
 
-	if (!pFnBiasAgainstPolysWithinDistanceOfLocations)
-		pFnBiasAgainstPolysWithinDistanceOfLocations = (UFunction*)UObject::GObjObjects()->Data[38612];
+	UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations_BiasAgainstPolysWithinDistanceOfLocations_Params params;
+	params.NavHandle = NavHandle;
+	params.InLocation = InLocation;
+	params.InRotation = InRotation;
+	params.InDistanceToCheck = InDistanceToCheck;
+	params.InLocationsToCheck = InLocationsToCheck;
 
-	UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations_execBiasAgainstPolysWithinDistanceOfLocations_Parms BiasAgainstPolysWithinDistanceOfLocations_Parms;
-	BiasAgainstPolysWithinDistanceOfLocations_Parms.NavHandle = NavHandle;
-	memcpy(&BiasAgainstPolysWithinDistanceOfLocations_Parms.InLocation, &InLocation, 0xC);
-	memcpy(&BiasAgainstPolysWithinDistanceOfLocations_Parms.InRotation, &InRotation, 0xC);
-	BiasAgainstPolysWithinDistanceOfLocations_Parms.InDistanceToCheck = InDistanceToCheck;
-	memcpy(&BiasAgainstPolysWithinDistanceOfLocations_Parms.InLocationsToCheck, &InLocationsToCheck, 0xC);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnBiasAgainstPolysWithinDistanceOfLocations, &BiasAgainstPolysWithinDistanceOfLocations_Parms, NULL);
+	static auto defaultObj = StaticClass()->CreateDefaultObject();
+	defaultObj->ProcessEvent(fn, &params);
 
-	return BiasAgainstPolysWithinDistanceOfLocations_Parms.ReturnValue;
-};
+	fn->FunctionFlags = flags;
+
+	return params.ReturnValue;
+}
+
 
 // Function GameFramework.GameStateObject.Reset
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
+// (Native, Public)
 
 void UGameStateObject::Reset()
 {
-	static UFunction* pFnReset = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GameFramework.GameStateObject.Reset");
 
-	if (!pFnReset)
-		pFnReset = (UFunction*)UObject::GObjObjects()->Data[38511];
+	UGameStateObject_Reset_Params params;
 
-	UGameStateObject_execReset_Parms Reset_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnReset->FunctionFlags |= ~0x400;
+	this->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnReset, &Reset_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnReset->FunctionFlags |= 0x400;
-};
 
 // Function GameFramework.GameStateObject.PreProcessStream
-// [0x00020C00] ( FUNC_Event | FUNC_Native )
-// Parameters infos:
+// (Native, Event, Public)
 
-void UGameStateObject::eventPreProcessStream()
+void UGameStateObject::PreProcessStream()
 {
-	static UFunction* pFnPreProcessStream = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GameFramework.GameStateObject.PreProcessStream");
 
-	if (!pFnPreProcessStream)
-		pFnPreProcessStream = (UFunction*)UObject::GObjObjects()->Data[38510];
+	UGameStateObject_PreProcessStream_Params params;
 
-	UGameStateObject_eventPreProcessStream_Parms PreProcessStream_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnPreProcessStream->FunctionFlags |= ~0x400;
+	this->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnPreProcessStream, &PreProcessStream_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnPreProcessStream->FunctionFlags |= 0x400;
-};
 
 // Function GameFramework.GameStatsAggregator.GetAggregateMappingIDs
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// bool                           ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// int                            EventID                        ( CPF_Parm )
-// int                            AggregateID                    ( CPF_Parm | CPF_OutParm )
-// int                            TargetAggregateID              ( CPF_Parm | CPF_OutParm )
+// (Native, Public, HasOutparams)
+// Parameters:
+// int                            EventID                        (Parm)
+// int                            AggregateID                    (Parm, OutParm)
+// int                            TargetAggregateID              (Parm, OutParm)
+// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UGameStatsAggregator::GetAggregateMappingIDs(int EventID, int* AggregateID, int* TargetAggregateID)
 {
-	static UFunction* pFnGetAggregateMappingIDs = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GameFramework.GameStatsAggregator.GetAggregateMappingIDs");
 
-	if (!pFnGetAggregateMappingIDs)
-		pFnGetAggregateMappingIDs = (UFunction*)UObject::GObjObjects()->Data[38587];
+	UGameStatsAggregator_GetAggregateMappingIDs_Params params;
+	params.EventID = EventID;
 
-	UGameStatsAggregator_execGetAggregateMappingIDs_Parms GetAggregateMappingIDs_Parms;
-	GetAggregateMappingIDs_Parms.EventID = EventID;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetAggregateMappingIDs->FunctionFlags |= ~0x400;
+	this->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetAggregateMappingIDs, &GetAggregateMappingIDs_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetAggregateMappingIDs->FunctionFlags |= 0x400;
+	if (AggregateID != nullptr)
+		*AggregateID = params.AggregateID;
+	if (TargetAggregateID != nullptr)
+		*TargetAggregateID = params.TargetAggregateID;
 
-	if (AggregateID)
-		*AggregateID = GetAggregateMappingIDs_Parms.AggregateID;
+	return params.ReturnValue;
+}
 
-	if (TargetAggregateID)
-		*TargetAggregateID = GetAggregateMappingIDs_Parms.TargetAggregateID;
-
-	return GetAggregateMappingIDs_Parms.ReturnValue;
-};
 
 // Function GameFramework.GameStatsAggregator.Reset
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
+// (Native, Public)
 
 void UGameStatsAggregator::Reset()
 {
-	static UFunction* pFnReset = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GameFramework.GameStatsAggregator.Reset");
 
-	if (!pFnReset)
-		pFnReset = (UFunction*)UObject::GObjObjects()->Data[38586];
+	UGameStatsAggregator_Reset_Params params;
 
-	UGameStatsAggregator_execReset_Parms Reset_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnReset->FunctionFlags |= ~0x400;
+	this->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnReset, &Reset_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnReset->FunctionFlags |= 0x400;
-};
 
 // Function GameFramework.GameStatsAggregator.PostProcessStream
-// [0x00020C00] ( FUNC_Event | FUNC_Native )
-// Parameters infos:
+// (Native, Event, Public)
 
-void UGameStatsAggregator::eventPostProcessStream()
+void UGameStatsAggregator::PostProcessStream()
 {
-	static UFunction* pFnPostProcessStream = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GameFramework.GameStatsAggregator.PostProcessStream");
 
-	if (!pFnPostProcessStream)
-		pFnPostProcessStream = (UFunction*)UObject::GObjObjects()->Data[38585];
+	UGameStatsAggregator_PostProcessStream_Params params;
 
-	UGameStatsAggregator_eventPostProcessStream_Parms PostProcessStream_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnPostProcessStream->FunctionFlags |= ~0x400;
+	this->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnPostProcessStream, &PostProcessStream_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnPostProcessStream->FunctionFlags |= 0x400;
-};
 
 // Function GameFramework.GameStatsAggregator.PreProcessStream
-// [0x00020C00] ( FUNC_Event | FUNC_Native )
-// Parameters infos:
+// (Native, Event, Public)
 
-void UGameStatsAggregator::eventPreProcessStream()
+void UGameStatsAggregator::PreProcessStream()
 {
-	static UFunction* pFnPreProcessStream = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GameFramework.GameStatsAggregator.PreProcessStream");
 
-	if (!pFnPreProcessStream)
-		pFnPreProcessStream = (UFunction*)UObject::GObjObjects()->Data[38584];
+	UGameStatsAggregator_PreProcessStream_Params params;
 
-	UGameStatsAggregator_eventPreProcessStream_Parms PreProcessStream_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnPreProcessStream->FunctionFlags |= ~0x400;
+	this->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnPreProcessStream, &PreProcessStream_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnPreProcessStream->FunctionFlags |= 0x400;
-};
 
 // Function GameFramework.PlayerCollectorGame.GetSeamlessTravelActorList
-// [0x00420800] ( FUNC_Event )
-// Parameters infos:
-// unsigned long                  bToEntry                       ( CPF_Parm )
-// TArray< class AActor* >        ActorList                      ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Event, Public, HasOutparams)
+// Parameters:
+// bool                           bToEntry                       (Parm)
+// TArray<class AActor*>          ActorList                      (Parm, OutParm, NeedCtorLink)
 
-void APlayerCollectorGame::eventGetSeamlessTravelActorList(unsigned long bToEntry, TArray< class AActor* >* ActorList)
+void APlayerCollectorGame::GetSeamlessTravelActorList(bool bToEntry, TArray<class AActor*>* ActorList)
 {
-	static UFunction* pFnGetSeamlessTravelActorList = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GameFramework.PlayerCollectorGame.GetSeamlessTravelActorList");
 
-	if (!pFnGetSeamlessTravelActorList)
-		pFnGetSeamlessTravelActorList = (UFunction*)UObject::GObjObjects()->Data[38630];
+	APlayerCollectorGame_GetSeamlessTravelActorList_Params params;
+	params.bToEntry = bToEntry;
 
-	APlayerCollectorGame_eventGetSeamlessTravelActorList_Parms GetSeamlessTravelActorList_Parms;
-	GetSeamlessTravelActorList_Parms.bToEntry = bToEntry;
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnGetSeamlessTravelActorList, &GetSeamlessTravelActorList_Parms, NULL);
+	this->ProcessEvent(fn, &params);
 
-	if (ActorList)
-		memcpy(ActorList, &GetSeamlessTravelActorList_Parms.ActorList, 0xC);
-};
+	fn->FunctionFlags = flags;
+
+	if (ActorList != nullptr)
+		*ActorList = params.ActorList;
+}
+
 
 // Function GameFramework.PlayerCollectorGame.Login
-// [0x00420802] ( FUNC_Event )
-// Parameters infos:
-// class APlayerController*       ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
-// struct FString                 Portal                         ( CPF_Parm | CPF_NeedCtorLink )
-// struct FString                 Options                        ( CPF_Parm | CPF_NeedCtorLink )
-// struct FUniqueNetId            UniqueId                       ( CPF_Const | CPF_Parm )
-// struct FString                 ErrorMessage                   ( CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Defined, Event, Public, HasOutparams)
+// Parameters:
+// struct FString                 Portal                         (Parm, NeedCtorLink)
+// struct FString                 Options                        (Parm, NeedCtorLink)
+// struct FUniqueNetId            UniqueId                       (Const, Parm)
+// struct FString                 ErrorMessage                   (Parm, OutParm, NeedCtorLink)
+// class APlayerController*       ReturnValue                    (Parm, OutParm, ReturnParm)
 
-class APlayerController* APlayerCollectorGame::eventLogin(struct FString Portal, struct FString Options, struct FUniqueNetId UniqueId, struct FString* ErrorMessage)
+class APlayerController* APlayerCollectorGame::Login(const struct FString& Portal, const struct FString& Options, const struct FUniqueNetId& UniqueId, struct FString* ErrorMessage)
 {
-	static UFunction* pFnLogin = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "GameFramework.PlayerCollectorGame.Login");
 
-	if (!pFnLogin)
-		pFnLogin = (UFunction*)UObject::GObjObjects()->Data[38624];
+	APlayerCollectorGame_Login_Params params;
+	params.Portal = Portal;
+	params.Options = Options;
+	params.UniqueId = UniqueId;
 
-	APlayerCollectorGame_eventLogin_Parms Login_Parms;
-	memcpy(&Login_Parms.Portal, &Portal, 0xC);
-	memcpy(&Login_Parms.Options, &Options, 0xC);
-	memcpy(&Login_Parms.UniqueId, &UniqueId, 0x18);
+	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(pFnLogin, &Login_Parms, NULL);
+	this->ProcessEvent(fn, &params);
 
-	if (ErrorMessage)
-		memcpy(ErrorMessage, &Login_Parms.ErrorMessage, 0xC);
+	fn->FunctionFlags = flags;
 
-	return Login_Parms.ReturnValue;
-};
+	if (ErrorMessage != nullptr)
+		*ErrorMessage = params.ErrorMessage;
+
+	return params.ReturnValue;
+}
+
 
 #ifdef _MSC_VER
-#pragma pack ( pop )
+	#pragma pack(pop)
 #endif

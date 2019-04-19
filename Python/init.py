@@ -29,7 +29,7 @@ bl2sdk.Mods = []
 
 import randomizer
 
-def LoadModList(caller: UObject, function: UFunction, parms: FStruct, result: FStruct) -> bool:
+def LoadModList(caller: UObject, function: UFunction, params: FStruct, result: FStruct) -> bool:
 	caller.SetStoreHeader("Mods", 0, "By Abahbob", "Mod Manager")
 	pc = GetEngine().GamePlayers[0]
 	for idx, mod in enumerate(bl2sdk.Mods):
@@ -45,11 +45,11 @@ def LoadModList(caller: UObject, function: UFunction, parms: FStruct, result: FS
 RemoveEngineHook("WillowGame.MarketplaceGFxMovie.OnDownloadableContentListRead", "InjectMods")
 RegisterEngineHook("WillowGame.MarketplaceGFxMovie.OnDownloadableContentListRead", "InjectMods", LoadModList)
 
-def process_hook(caller: UObject, function: UFunction, parms: FStruct, result: FStruct) -> bool:
+def process_hook(caller: UObject, function: UFunction, params: FStruct, result: FStruct) -> bool:
 	pc = GetEngine().GamePlayers[0]
-	ControllerId = parms.popInt()
-	ukey = parms.popFName()
-	event = parms.popByte()
+	ControllerId = params.popInt()
+	ukey = params.popFName()
+	event = params.popByte()
 	if ukey == 'Enter':
 		if event == 0:
 			selected_object = caller.GetSelectedObject()
@@ -78,7 +78,7 @@ def ReplaceDLCWithMods(caller: UObject, stack: FFrame, result: FStruct, function
 	bNew = stack.popULong()
 	if Caption == "$WillowMenu.WillowScrollingListDataProviderFrontEnd.DLC":
 		Caption = "MODS"
-	caller.AddListItem(EventID, Caption, bDisabled, bNew)
+	caller.AddListItem(EventID, Caption, bDisabled, False)
 	stack.SkipFunction()
 	return False
 

@@ -5,6 +5,12 @@ namespace py = pybind11;
 // Module ======================================================================
 void Export_pystes_GameFramework_structs(py::module &m)
 {
+	py::class_< FPropertyInfo >(m, "FPropertyInfo")
+		.def(py::init<>())
+		.def_property("bModifyProperty", [](FPropertyInfo &self){return self.bModifyProperty;}, [](FPropertyInfo &self, bool value){self.bModifyProperty = value ? 1 : 0;})
+		.def_readwrite("PropertyName", &FPropertyInfo::PropertyName, py::return_value_policy::reference)
+		.def_readwrite("PropertyValue", &FPropertyInfo::PropertyValue, py::return_value_policy::reference)
+		;
 	py::class_< FRecoilParams >(m, "FRecoilParams")
 		.def(py::init<>())
 		.def_readwrite("X", &FRecoilParams::X)
@@ -26,18 +32,6 @@ void Export_pystes_GameFramework_structs(py::module &m)
 		.def_readwrite("LocSinOffset", &FRecoilDef::LocSinOffset, py::return_value_policy::reference)
 		.def_readwrite("LocParams", &FRecoilDef::LocParams, py::return_value_policy::reference)
 		.def_readwrite("LocOffset", &FRecoilDef::LocOffset, py::return_value_policy::reference)
-		;
-	py::class_< FTeamState >(m, "FTeamState")
-		.def(py::init<>())
-		.def_readwrite("TeamIndex", &FTeamState::TeamIndex)
-		.def_readwrite("PlayerIndices", &FTeamState::PlayerIndices, py::return_value_policy::reference)
-		;
-	py::class_< FPlayerState >(m, "FPlayerState")
-		.def(py::init<>())
-		.def_readwrite("PlayerIndex", &FPlayerState::PlayerIndex)
-		.def_readwrite("CurrentTeamIndex", &FPlayerState::CurrentTeamIndex)
-		.def_readwrite("TimeSpawned", &FPlayerState::TimeSpawned)
-		.def_readwrite("TimeAliveSinceLastDeath", &FPlayerState::TimeAliveSinceLastDeath)
 		;
 	py::class_< FAggregateEventMapping >(m, "FAggregateEventMapping")
 		.def(py::init<>())
@@ -84,15 +78,21 @@ void Export_pystes_GameFramework_structs(py::module &m)
 		.def_readwrite("ProjectileEvents", &FPlayerEvents::ProjectileEvents, py::return_value_policy::reference)
 		.def_readwrite("PawnEvents", &FPlayerEvents::PawnEvents, py::return_value_policy::reference)
 		;
+	py::class_< FTeamState >(m, "FTeamState")
+		.def(py::init<>())
+		.def_readwrite("TeamIndex", &FTeamState::TeamIndex)
+		.def_readwrite("PlayerIndices", &FTeamState::PlayerIndices, py::return_value_policy::reference)
+		;
+	py::class_< FPlayerState >(m, "FPlayerState")
+		.def(py::init<>())
+		.def_readwrite("PlayerIndex", &FPlayerState::PlayerIndex)
+		.def_readwrite("CurrentTeamIndex", &FPlayerState::CurrentTeamIndex)
+		.def_readwrite("TimeSpawned", &FPlayerState::TimeSpawned)
+		.def_readwrite("TimeAliveSinceLastDeath", &FPlayerState::TimeAliveSinceLastDeath)
+		;
 	py::class_< FGameEvent >(m, "FGameEvent")
 		.def(py::init<>())
 		.def_readwrite("EventCountByTimePeriod", &FGameEvent::EventCountByTimePeriod, py::return_value_policy::reference)
-		;
-	py::class_< FPropertyInfo >(m, "FPropertyInfo")
-		.def(py::init<>())
-		.def_property("bModifyProperty", [](FPropertyInfo &self){return self.bModifyProperty;}, [](FPropertyInfo &self, bool value){self.bModifyProperty = value ? 1 : 0;})
-		.def_readwrite("PropertyName", &FPropertyInfo::PropertyName, py::return_value_policy::reference)
-		.def_readwrite("PropertyValue", &FPropertyInfo::PropertyValue, py::return_value_policy::reference)
 		;
 
 }

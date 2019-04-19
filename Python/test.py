@@ -65,37 +65,18 @@ import bl2sdk
 # 	NewSkill = bl2sdk.ConstructObject(Class="SkillDefinition", Name="MyBrandNewSkill", Template=SomeSkill, Outer=SomeSkill.Outer)
 # 	Branch.Tiers[0].Skills.Set(1, NewSkill)
 # 	return True
-packages = [
-    "GD_Assassin_Streaming_SF",
-    "GD_Mercenary_Streaming_SF",
-    "GD_Siren_Streaming_SF",
-    "GD_Lilac_Psycho_Streaming_SF",
-    "GD_Tulip_Mechro_Streaming_SF",
-    "GD_Soldier_Streaming_SF",
-]
-
-for package in packages:
-    bl2sdk.LoadPackage(package)
-skills = ['PreshrunkCyberpunk',
-    'Discord',
-    'TypecastIconoclast',
-    'RationalAnarchist',
-    'WithClaws',
-    'BloodSoakedShields',
-    'DeathFromAbove','BloodOverdrive',
-    'BloodyRevival',
-    'BloodBath',
-    'FuelTheBlood',
-    'BoilingBlood',
-    'NervousBlood',
-    'Bloodsplosion']
-
-skilldefs = bl2sdk.UObject.FindObjectsContaining("SkillDefinition ")
-
-for skill in skills:
-	for skilldef in skilldefs:
-		if skilldef.GetFullName().endswith(skill):
-			print(skilldef.GetFullName().split(' ')[-1])
+pc = bl2sdk.GetEngine().GamePlayers[0].Actor
+InfectionStateDef = bl2sdk.ConstructObject(Class="AnemoneInfectionDefinition", Outer=AIS.Outer, SetFlags=3)
+# Fog = bl2sdk.FindObject("HeightFog", "SanctuaryAir_Light.TheWorld:PersistentLevel.HeightFog_0")
+# print(InfectionStateDef)
+# print(Fog)
+pc.Pawn.AnemoneInfectionState = pc.Spawn(bl2sdk.UObject.FindClass("AnemoneInfectionState", False), pc, "Test", pc.Location, pc.Rotation, None, True)
+AIS = pc.Pawn.AnemoneInfectionState
+AIS.WPC = pc
+AIS.InfectionRate = 1.0
+AIS.ToggleInfectionEffects(True, pc)
+AIS.bIsLocalPlayer = True
+# pc.Pawn.SetAnemoneInfectionState(True,True,pc.Pawn,InfectionStateDef,Fog)
 
 # x = bl2sdk.ConstructObject(bl2sdk.UObject.StaticClass())
 # print(x)

@@ -5,10 +5,16 @@ namespace py = pybind11;
 // Module ======================================================================
 void Export_pystes_GFxUI_structs(py::module &m)
 {
-	py::class_< FSoundThemeBinding >(m, "FSoundThemeBinding")
+	py::class_< FGCReference >(m, "FGCReference")
 		.def(py::init<>())
-		.def_readwrite("ThemeName", &FSoundThemeBinding::ThemeName, py::return_value_policy::reference)
-		.def_readwrite("Theme", &FSoundThemeBinding::Theme, py::return_value_policy::reference)
+		.def_readwrite("m_object", &FGCReference::m_object, py::return_value_policy::reference)
+		.def_readwrite("m_count", &FGCReference::m_count)
+		.def_readwrite("m_statid", &FGCReference::m_statid)
+		;
+	py::class_< FAkEventResolver >(m, "FAkEventResolver")
+		.def(py::init<>())
+		.def_readwrite("Interaction", &FAkEventResolver::Interaction, py::return_value_policy::reference)
+		.def_readwrite("AkEvent", &FAkEventResolver::AkEvent, py::return_value_policy::reference)
 		;
 	py::class_< FASValue >(m, "FASValue")
 		.def(py::init<>())
@@ -17,10 +23,15 @@ void Export_pystes_GFxUI_structs(py::module &m)
 		.def_readwrite("N", &FASValue::N)
 		.def_readwrite("S", &FASValue::S, py::return_value_policy::reference)
 		;
-	py::class_< FGFxWidgetBinding >(m, "FGFxWidgetBinding")
+	py::class_< FExternalTexture >(m, "FExternalTexture")
 		.def(py::init<>())
-		.def_readwrite("WidgetName", &FGFxWidgetBinding::WidgetName, py::return_value_policy::reference)
-		.def_readwrite("WidgetClass", &FGFxWidgetBinding::WidgetClass, py::return_value_policy::reference)
+		.def_readwrite("Resource", &FExternalTexture::Resource, py::return_value_policy::reference)
+		.def_readwrite("Texture", &FExternalTexture::Texture, py::return_value_policy::reference)
+		;
+	py::class_< FSoundThemeBinding >(m, "FSoundThemeBinding")
+		.def(py::init<>())
+		.def_readwrite("ThemeName", &FSoundThemeBinding::ThemeName, py::return_value_policy::reference)
+		.def_readwrite("Theme", &FSoundThemeBinding::Theme, py::return_value_policy::reference)
 		;
 	py::class_< FGFxDataStoreBinding >(m, "FGFxDataStoreBinding")
 		.def(py::init<>())
@@ -32,15 +43,20 @@ void Export_pystes_GFxUI_structs(py::module &m)
 		.def_readwrite("CellTags", &FGFxDataStoreBinding::CellTags, py::return_value_policy::reference)
 		.def_readwrite("ModelIdUtf8", &FGFxDataStoreBinding::ModelIdUtf8, py::return_value_policy::reference)
 		.def_readwrite("ControlIdUtf8", &FGFxDataStoreBinding::ControlIdUtf8, py::return_value_policy::reference)
-		.def_readwrite("ListDataProvider", &FGFxDataStoreBinding::ListDataProvider, py::return_value_policy::reference)
+		.def_readwrite("ListDataProvider", &FGFxDataStoreBinding::ListDataProvider)
 		.def_readwrite("FullCellTags", &FGFxDataStoreBinding::FullCellTags, py::return_value_policy::reference)
 		.def_readwrite("ModelRef", &FGFxDataStoreBinding::ModelRef, py::return_value_policy::reference)
 		.def_readwrite("ControlRef", &FGFxDataStoreBinding::ControlRef, py::return_value_policy::reference)
 		;
-	py::class_< FExternalTexture >(m, "FExternalTexture")
+	py::class_< FGFxWidgetBinding >(m, "FGFxWidgetBinding")
 		.def(py::init<>())
-		.def_readwrite("Resource", &FExternalTexture::Resource, py::return_value_policy::reference)
-		.def_readwrite("Texture", &FExternalTexture::Texture, py::return_value_policy::reference)
+		.def_readwrite("WidgetName", &FGFxWidgetBinding::WidgetName, py::return_value_policy::reference)
+		.def_readwrite("WidgetClass", &FGFxWidgetBinding::WidgetClass, py::return_value_policy::reference)
+		;
+	py::class_< FASColorTransform >(m, "FASColorTransform")
+		.def(py::init<>())
+		.def_readwrite("Multiply", &FASColorTransform::Multiply, py::return_value_policy::reference)
+		.def_readwrite("Add", &FASColorTransform::Add, py::return_value_policy::reference)
 		;
 	py::class_< FASDisplayInfo >(m, "FASDisplayInfo")
 		.def(py::init<>())
@@ -67,11 +83,6 @@ void Export_pystes_GFxUI_structs(py::module &m)
 		.def_readwrite("ZScale", &FASDisplayInfo::ZScale)
 		.def_readwrite("Alpha", &FASDisplayInfo::Alpha)
 		;
-	py::class_< FASColorTransform >(m, "FASColorTransform")
-		.def(py::init<>())
-		.def_readwrite("Multiply", &FASColorTransform::Multiply, py::return_value_policy::reference)
-		.def_readwrite("Add", &FASColorTransform::Add, py::return_value_policy::reference)
-		;
 	py::class_< FEventData >(m, "FEventData")
 		.def(py::init<>())
 		.def_readwrite("Type", &FEventData::Type, py::return_value_policy::reference)
@@ -81,17 +92,6 @@ void Export_pystes_GFxUI_structs(py::module &m)
 		.def_readwrite("Index", &FEventData::Index)
 		.def_readwrite("lastIndex", &FEventData::lastIndex)
 		.def_readwrite("controllerIdx", &FEventData::controllerIdx)
-		;
-	py::class_< FGCReference >(m, "FGCReference")
-		.def(py::init<>())
-		.def_readwrite("m_object", &FGCReference::m_object, py::return_value_policy::reference)
-		.def_readwrite("m_count", &FGCReference::m_count)
-		.def_readwrite("m_statid", &FGCReference::m_statid)
-		;
-	py::class_< FAkEventResolver >(m, "FAkEventResolver")
-		.def(py::init<>())
-		.def_readwrite("Interaction", &FAkEventResolver::Interaction, py::return_value_policy::reference)
-		.def_readwrite("AkEvent", &FAkEventResolver::AkEvent, py::return_value_policy::reference)
 		;
 
 }

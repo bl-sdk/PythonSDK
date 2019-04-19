@@ -197,14 +197,14 @@ public:
 	class UObject*                                     ObjectArchetype;                                  		// 0x0038 (0x0004) [0x0000000000021003]              ( CPF_Edit | CPF_Const | CPF_Native | CPF_EditConst )
 
 public:
-	static TArray< UObject* >* GObjObjects();
+	static TArray< UObject* >* GObjects();
 	std::string GetName();
 	std::string GetNameCPP();
 	std::string GetFullName();
 	std::string GetObjectName();
 	static UObject* Load(UClass *ClassToLoad, const std::string& ObjectFullName)
 	{
-		return GObjObjects()->Data[0]->DynamicLoadObject(FString((char *)ObjectFullName.c_str()), ClassToLoad, true);
+		return GObjects()->Data[0]->DynamicLoadObject(FString((char *)ObjectFullName.c_str()), ClassToLoad, true);
 	}
 
 	static UObject* Load(const std::string& ClassName, const std::string& ObjectFullName)
@@ -217,7 +217,7 @@ public:
 
 	static UObject* Find(UClass *Class, const std::string& ObjectFullName)
 	{
-		return GObjObjects()->Data[0]->FindObject(FString((char *)ObjectFullName.c_str()), Class);
+		return UObject::FindObject(FString((char *)ObjectFullName.c_str()), Class);
 	}
 
 	static UObject* Find(const std::string& ClassName, const std::string& ObjectFullName)
@@ -232,13 +232,13 @@ public:
 	{
 		std::regex re = std::regex(regexString);
 		std::vector<UObject *> ret;
-		while (!UObject::GObjObjects())
+		while (!UObject::GObjects())
 			Sleep(100);
 		while (!FName::Names())
 			Sleep(100);
-		for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
+		for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
 		{
-			UObject* Object = UObject::GObjObjects()->Data[i];
+			UObject* Object = UObject::GObjects()->Data[i];
 			if (Object && std::regex_match(Object->GetFullName(), re))
 				ret.push_back(Object);
 		}
@@ -247,13 +247,13 @@ public:
 	static std::vector<UObject*> FindObjectsContaining(const std::string& stringLookup)
 	{
 		std::vector<UObject *> ret;
-		while (!UObject::GObjObjects())
+		while (!UObject::GObjects())
 			Sleep(100);
 		while (!FName::Names())
 			Sleep(100);
-		for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
+		for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
 		{
-			UObject* Object = UObject::GObjObjects()->Data[i];
+			UObject* Object = UObject::GObjects()->Data[i];
 			if (Object && Object->GetFullName().find(stringLookup) != std::string::npos)
 				ret.push_back(Object);
 		}
@@ -271,76 +271,83 @@ public:
 		}
 		return (UPackage*)pkg;
 	};
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = (UClass *)GObjects()->Data[2];
+		return ptr;
+	};
+	
 	bool IsRelevantForDebugging(class UObject* Source);
 	class UObject* GetGlobalDebugTarget();
 	void SetGlobalDebugTarget(class UObject* Target);
-	void LogContentDebug(struct FString Message);
-	struct FString GetLanguage();
-	int GetRandomOptionSumFrequency(TArray< float >* FreqList);
-	int GetBuildChangelistNumber();
-	int GetEngineVersion();
+	void LogContentDebug(const struct FString& Message);
+	static struct FString GetLanguage();
+	int GetRandomOptionSumFrequency(TArray<float>* FreqList);
+	static int GetBuildChangelistNumber();
+	static int GetEngineVersion();
 	void GetSystemTime(int* Year, int* Month, int* DayOfWeek, int* Day, int* Hour, int* Min, int* Sec, int* MSec);
 	struct FString TimeStamp();
-	struct FVector TransformVectorByRotation(struct FRotator SourceRotation, struct FVector SourceVector, unsigned long bInverse);
+	struct FVector TransformVectorByRotation(const struct FRotator& SourceRotation, const struct FVector& SourceVector, bool bInverse);
 	struct FName GetPackageName();
 	bool IsPendingKill();
-	float ByteToFloat(unsigned char inputByte, unsigned long bSigned);
-	unsigned char FloatToByte(float inputFloat, unsigned long bSigned);
-	float UnwindHeading(float A);
-	float FindDeltaAngle(float A1, float A2);
-	float GetHeadingAngle(struct FVector Dir);
-	void GetAngularDegreesFromRadians(struct FVector2D* OutFOV);
-	void GetAngularFromDotDist(struct FVector2D DotDist, struct FVector2D* OutAngDist);
-	bool GetAngularDistance(struct FVector Direction, struct FVector AxisX, struct FVector AxisY, struct FVector AxisZ, struct FVector2D* OutAngularDist);
-	bool GetDotDistance(struct FVector Direction, struct FVector AxisX, struct FVector AxisY, struct FVector AxisZ, struct FVector2D* OutDotDist);
-	struct FVector PointProjectToPlane(struct FVector Point, struct FVector A, struct FVector B, struct FVector C);
-	float PointDistToPlane(struct FVector Point, struct FRotator Orientation, struct FVector Origin, struct FVector* out_ClosestPoint);
-	float PointDistToSegment(struct FVector Point, struct FVector StartPoint, struct FVector EndPoint, struct FVector* OutClosestPoint);
-	float PointDistToLine(struct FVector Point, struct FVector Line, struct FVector Origin, struct FVector* OutClosestPoint);
-	bool GetPerObjectConfigSections(class UClass* SearchClass, class UObject* ObjectOuter, int MaxResults, TArray< struct FString >* out_SectionNames);
-	void StaticSaveConfig();
+	float ByteToFloat(unsigned char inputByte, bool bSigned);
+	unsigned char FloatToByte(float inputFloat, bool bSigned);
+	static float UnwindHeading(float A);
+	static float FindDeltaAngle(float A1, float A2);
+	static float GetHeadingAngle(const struct FVector& Dir);
+	static void GetAngularDegreesFromRadians(struct FVector2D* OutFOV);
+	static void GetAngularFromDotDist(const struct FVector2D& DotDist, struct FVector2D* OutAngDist);
+	static bool GetAngularDistance(const struct FVector& Direction, const struct FVector& AxisX, const struct FVector& AxisY, const struct FVector& AxisZ, struct FVector2D* OutAngularDist);
+	static bool GetDotDistance(const struct FVector& Direction, const struct FVector& AxisX, const struct FVector& AxisY, const struct FVector& AxisZ, struct FVector2D* OutDotDist);
+	static struct FVector PointProjectToPlane(const struct FVector& Point, const struct FVector& A, const struct FVector& B, const struct FVector& C);
+	float PointDistToPlane(const struct FVector& Point, const struct FRotator& Orientation, const struct FVector& Origin, struct FVector* out_ClosestPoint);
+	float PointDistToSegment(const struct FVector& Point, const struct FVector& StartPoint, const struct FVector& EndPoint, struct FVector* OutClosestPoint);
+	float PointDistToLine(const struct FVector& Point, const struct FVector& Line, const struct FVector& Origin, struct FVector* OutClosestPoint);
+	static bool GetPerObjectConfigSections(class UClass* SearchClass, class UObject* ObjectOuter, int MaxResults, TArray<struct FString>* out_SectionNames);
+	static void StaticSaveConfig();
 	void SaveConfig();
-	struct FString GetAttributeModiferDescriptor(struct FName AttributeName);
-	float GetAttributeValueByName(struct FName AttributeName);
-	bool RemoveModifier(class UAttributeModifier* mod, struct FName AttributeName, unsigned long bSuppressNotify);
-	bool AddModifier(class UAttributeModifier* mod, struct FName AttributeName, unsigned long bSuppressNotify);
-	class UObject* FindObject(struct FString ObjectName, class UClass* ObjectClass);
-	class UObject* DynamicLoadObject(struct FString ObjectName, class UClass* ObjectClass, unsigned long MayFail);
-	struct FName GetEnum(class UObject* E, int I);
-	void Disable(struct FName ProbeFunc);
-	void Enable(struct FName ProbeFunc);
-	void eventContinuedState();
-	void eventPausedState();
-	void eventPoppedState();
-	void eventPushedState();
-	void eventEndState(struct FName NextStateName);
-	void eventBeginState(struct FName PreviousStateName);
+	struct FString GetAttributeModiferDescriptor(const struct FName& AttributeName);
+	float GetAttributeValueByName(const struct FName& AttributeName);
+	bool RemoveModifier(class UAttributeModifier* mod, const struct FName& AttributeName, bool bSuppressNotify);
+	bool AddModifier(class UAttributeModifier* mod, const struct FName& AttributeName, bool bSuppressNotify);
+	static class UObject* FindObject(const struct FString& ObjectName, class UClass* ObjectClass);
+	static class UObject* DynamicLoadObject(const struct FString& ObjectName, class UClass* ObjectClass, bool MayFail);
+	static struct FName GetEnum(class UObject* E, int I);
+	void Disable(const struct FName& ProbeFunc);
+	void Enable(const struct FName& ProbeFunc);
+	void ContinuedState();
+	void PausedState();
+	void PoppedState();
+	void PushedState();
+	void EndState(const struct FName& NextStateName);
+	void BeginState(const struct FName& PreviousStateName);
 	void BreakPoint(class UObject* SomeObject);
 	void PrintScriptStack();
 	void DumpStateStack();
-	void PopState(unsigned long bPopAll);
-	void PushState(struct FName NewState, struct FName NewLabel);
+	void PopState(bool bPopAll);
+	void PushState(const struct FName& NewState, const struct FName& NewLabel);
 	struct FName GetStateName();
-	bool IsChildState(struct FName TestState, struct FName TestParentState);
-	bool IsInState(struct FName TestState, unsigned long bTestStateStack);
-	void GotoState(struct FName NewState, struct FName Label, unsigned long bForceEvents, unsigned long bKeepStack);
-	bool IsUTracing();
-	void SetUTracing(unsigned long bShouldUTrace);
-	struct FName GetFuncName();
-	void DebugBreak(int UserFlags, unsigned char DebuggerType);
-	struct FString GetScriptTrace();
-	void ScriptTrace();
-	struct FString ParseLocalizedPropertyPath(struct FString PathName);
-	struct FString Localize(struct FString SectionName, struct FString KeyName, struct FString PackageName);
-	void LogIndentedInternal(struct FString S, struct FName LogTag, int IndentationLevelChange);
-	void WarnInternal(struct FString S);
-	void LogInternal(struct FString S, struct FName Tag);
-	struct FString GetStringForNameBasedObjectPath(struct FNameBasedObjectPath ObjectPath);
-	void SetNameBasedObjectPath(class UObject* Object, struct FNameBasedObjectPath* ObjectPath);
+	bool IsChildState(const struct FName& TestState, const struct FName& TestParentState);
+	bool IsInState(const struct FName& TestState, bool bTestStateStack);
+	void GotoState(const struct FName& NewState, const struct FName& Label, bool bForceEvents, bool bKeepStack);
+	static bool IsUTracing();
+	static void SetUTracing(bool bShouldUTrace);
+	static struct FName GetFuncName();
+	static void DebugBreak(int UserFlags, unsigned char DebuggerType);
+	static struct FString GetScriptTrace();
+	static void ScriptTrace();
+	static struct FString ParseLocalizedPropertyPath(const struct FString& PathName);
+	static struct FString Localize(const struct FString& SectionName, const struct FString& KeyName, const struct FString& PackageName);
+	static void LogIndentedInternal(const struct FString& S, const struct FName& LogTag, int IndentationLevelChange);
+	static void WarnInternal(const struct FString& S);
+	static void LogInternal(const struct FString& S, const struct FName& Tag);
+	static struct FString GetStringForNameBasedObjectPath(const struct FNameBasedObjectPath& ObjectPath);
+	static void SetNameBasedObjectPath(class UObject* Object, struct FNameBasedObjectPath* ObjectPath);
 	bool FlagHasBeenTrueFor(float TimeSeconds, struct FFlag* theFlag);
 	float FlagTimeRemaining(struct FFlag* theFlag);
 	float FlagTimeSinceRaised(struct FFlag* theFlag);
-	void FlagSetValue(unsigned long bNewValue, unsigned long bForceTimeStamp, struct FFlag* theFlag);
+	void FlagSetValue(bool bNewValue, bool bForceTimeStamp, struct FFlag* theFlag);
 	bool FlagIsLowered(struct FFlag* theFlag);
 	bool FlagIsRaised(struct FFlag* theFlag);
 	bool FlagIsFalse(struct FFlag* theFlag);
@@ -350,253 +357,253 @@ public:
 	float SmartVectTimeSinceSet(struct FSmartVector* theSV);
 	bool SmartVectGetVector(struct FSmartVector* theSV, struct FVector* OutVector);
 	bool SmartVectIsSet(struct FSmartVector* theSV);
-	void SmartVectSetVectorTimed(struct FVector InVector, float Duration, struct FSmartVector* theSV);
+	void SmartVectSetVectorTimed(const struct FVector& InVector, float Duration, struct FSmartVector* theSV);
 	struct FVector SmartVectValue(struct FSmartVector* theSV);
 	void SmartVectReset(struct FSmartVector* theSV);
-	void SmartVectSetVector(struct FVector InVector, unsigned long bUpdateTime, struct FSmartVector* theSV);
-	struct FLinearColor Subtract_LinearColorLinearColor(struct FLinearColor A, struct FLinearColor B);
-	struct FLinearColor Multiply_LinearColorFloat(struct FLinearColor LC, float Mult);
-	struct FLinearColor ColorToLinearColor(struct FColor OldColor);
-	struct FLinearColor MakeLinearColor(float R, float G, float B, float A);
-	struct FString GetHTMLColor(struct FColor* C);
-	struct FColor LerpColor(struct FColor A, struct FColor B, float Alpha);
-	struct FColor MakeColor(unsigned char R, unsigned char G, unsigned char B, unsigned char A);
-	struct FColor Add_ColorColor(struct FColor A, struct FColor B);
-	struct FColor Multiply_ColorFloat(struct FColor A, float B);
-	struct FColor Multiply_FloatColor(float A, struct FColor B);
-	struct FColor Subtract_ColorColor(struct FColor A, struct FColor B);
-	struct FVector2D EvalInterpCurveVector2D(struct FInterpCurveVector2D Vector2DCurve, float InVal);
-	struct FVector EvalInterpCurveVector(struct FInterpCurveVector VectorCurve, float InVal);
-	float EvalInterpCurveFloat(struct FInterpCurveFloat FloatCurve, float InVal);
-	struct FVector2D vect2d(float InX, float InY);
-	float GetMappedRangeValue(struct FVector2D InputRange, struct FVector2D OutputRange, float Value);
-	float GetRangePctByValue(struct FVector2D Range, float Value);
-	float GetRangeValueByPct(struct FVector2D Range, float Pct);
-	struct FVector2D SubtractEqual_Vector2DVector2D(struct FVector2D B, struct FVector2D* A);
-	struct FVector2D AddEqual_Vector2DVector2D(struct FVector2D B, struct FVector2D* A);
-	struct FVector2D DivideEqual_Vector2DFloat(float B, struct FVector2D* A);
-	struct FVector2D MultiplyEqual_Vector2DFloat(float B, struct FVector2D* A);
-	struct FVector2D Divide_Vector2DFloat(struct FVector2D A, float B);
-	struct FVector2D Multiply_Vector2DFloat(struct FVector2D A, float B);
-	struct FVector2D Subtract_Vector2DVector2D(struct FVector2D A, struct FVector2D B);
-	struct FVector2D Add_Vector2DVector2D(struct FVector2D A, struct FVector2D B);
-	struct FQuat Subtract_QuatQuat(struct FQuat A, struct FQuat B);
-	struct FQuat Add_QuatQuat(struct FQuat A, struct FQuat B);
-	struct FQuat QuatSlerp(struct FQuat A, struct FQuat B, float Alpha, unsigned long bShortestPath);
-	struct FRotator QuatToRotator(struct FQuat A);
-	struct FQuat QuatFromRotator(struct FRotator A);
-	struct FQuat QuatFromAxisAndAngle(struct FVector Axis, float Angle);
-	struct FQuat QuatFindBetween(struct FVector A, struct FVector B);
-	struct FVector QuatRotateVector(struct FQuat A, struct FVector B);
-	struct FQuat QuatInvert(struct FQuat A);
-	float QuatDot(struct FQuat A, struct FQuat B);
-	struct FQuat QuatProduct(struct FQuat A, struct FQuat B);
-	struct FVector MatrixGetAxis(struct FMatrix TM, unsigned char Axis);
-	struct FVector MatrixGetOrigin(struct FMatrix TM);
-	struct FRotator MatrixGetRotator(struct FMatrix TM);
-	struct FMatrix MakeRotationMatrix(struct FRotator Rotation);
-	struct FMatrix MakeRotationTranslationMatrix(struct FVector Translation, struct FRotator Rotation);
-	struct FVector InverseTransformNormal(struct FMatrix TM, struct FVector A);
-	struct FVector TransformNormal(struct FMatrix TM, struct FVector A);
-	struct FVector InverseTransformVector(struct FMatrix TM, struct FVector A);
-	struct FVector TransformVector(struct FMatrix TM, struct FVector A);
-	struct FMatrix Multiply_MatrixMatrix(struct FMatrix A, struct FMatrix B);
-	bool NotEqual_NameName(struct FName A, struct FName B);
-	bool EqualEqual_NameName(struct FName A, struct FName B);
-	class UInterface* QueryInterface(class UClass* InterfaceClass);
-	bool IsA(struct FName ClassName);
-	bool ClassIsChildOf(class UClass* TestClass, class UClass* ParentClass);
-	bool NotEqual_InterfaceInterface(class UInterface* A, class UInterface* B);
-	bool EqualEqual_InterfaceInterface(class UInterface* A, class UInterface* B);
-	bool NotEqual_ObjectObject(class UObject* A, class UObject* B);
-	bool EqualEqual_ObjectObject(class UObject* A, class UObject* B);
-	struct FString GuidToString(struct FGuid* G);
-	struct FString PathName(class UObject* CheckObject);
-	TArray< struct FString > SplitString(struct FString Source, struct FString Delimiter, unsigned long bCullEmpty);
-	void ParseStringIntoArray(struct FString BaseString, struct FString delim, unsigned long bCullEmpty, TArray< struct FString >* Pieces);
-	void JoinArray(TArray< struct FString > StringArray, struct FString delim, unsigned long bIgnoreBlanks, struct FString* out_Result);
-	struct FString GetRightMost(struct FString Text);
-	struct FString Split(struct FString Text, struct FString SplitStr, unsigned long bOmitSplitStr);
-	int StringHash(struct FString S);
-	struct FString Repl(struct FString Src, struct FString Match, struct FString With, unsigned long bCaseSensitive);
-	int Asc(struct FString S);
-	struct FString Chr(int I);
-	struct FString Locs(struct FString S);
-	struct FString Caps(struct FString S);
-	struct FString Right(struct FString S, int I);
-	struct FString Left(struct FString S, int I);
-	struct FString Mid(struct FString S, int I, int J);
-	int InStr(struct FString S, struct FString T, unsigned long bSearchFromRight, unsigned long bIgnoreCase, int StartPos);
-	int Len(struct FString S);
-	struct FString SubtractEqual_StrStr(struct FString B, struct FString* A);
-	struct FString AtEqual_StrStr(struct FString B, struct FString* A);
-	struct FString ConcatEqual_StrStr(struct FString B, struct FString* A);
-	bool ComplementEqual_StrStr(struct FString A, struct FString B);
-	bool NotEqual_StrStr(struct FString A, struct FString B);
-	bool EqualEqual_StrStr(struct FString A, struct FString B);
-	bool GreaterEqual_StrStr(struct FString A, struct FString B);
-	bool LessEqual_StrStr(struct FString A, struct FString B);
-	bool Greater_StrStr(struct FString A, struct FString B);
-	bool Less_StrStr(struct FString A, struct FString B);
-	struct FString At_StrStr(struct FString A, struct FString B);
-	struct FString Concat_StrStr(struct FString A, struct FString B);
-	struct FRotator MakeRotator(int Pitch, int Yaw, int Roll);
-	bool SClampRotAxis(float DeltaTime, int ViewAxis, int MaxLimit, int MinLimit, float InterpolationSpeed, int* out_DeltaViewAxis);
-	int ClampRotAxisFromRange(int Current, int Min, int Max);
-	int ClampRotAxisFromBase(int Current, int Center, int MaxDelta);
-	void ClampRotAxis(int ViewAxis, int MaxLimit, int MinLimit, int* out_DeltaViewAxis);
-	float RSize(struct FRotator R);
-	float RDiff(struct FRotator A, struct FRotator B);
-	int NormalizeRotAxis(int Angle);
-	struct FRotator RInterpTo(struct FRotator Current, struct FRotator Target, float DeltaTime, float InterpSpeed, unsigned long bConstantInterpSpeed);
-	struct FRotator RTransform(struct FRotator R, struct FRotator RBasis);
-	struct FRotator RLerp(struct FRotator A, struct FRotator B, float Alpha, unsigned long bShortestPath);
-	struct FRotator Normalize(struct FRotator Rot);
-	struct FRotator OrthoRotation(struct FVector X, struct FVector Y, struct FVector Z);
-	struct FRotator RotRand(unsigned long bRoll);
-	struct FVector GetRotatorAxis(struct FRotator A, int Axis);
-	void GetUnAxes(struct FRotator A, struct FVector* X, struct FVector* Y, struct FVector* Z);
-	void GetAxes(struct FRotator A, struct FVector* X, struct FVector* Y, struct FVector* Z);
-	bool ClockwiseFrom_IntInt(int A, int B);
-	struct FRotator SubtractEqual_RotatorRotator(struct FRotator B, struct FRotator* A);
-	struct FRotator AddEqual_RotatorRotator(struct FRotator B, struct FRotator* A);
-	struct FRotator Subtract_RotatorRotator(struct FRotator A, struct FRotator B);
-	struct FRotator Add_RotatorRotator(struct FRotator A, struct FRotator B);
-	struct FRotator DivideEqual_RotatorFloat(float B, struct FRotator* A);
-	struct FRotator MultiplyEqual_RotatorFloat(float B, struct FRotator* A);
-	struct FRotator Divide_RotatorFloat(struct FRotator A, float B);
-	struct FRotator Multiply_FloatRotator(float A, struct FRotator B);
-	struct FRotator Multiply_RotatorFloat(struct FRotator A, float B);
-	bool NotEqual_RotatorRotator(struct FRotator A, struct FRotator B);
-	bool EqualEqual_RotatorRotator(struct FRotator A, struct FRotator B);
-	bool InCylinder(struct FVector Origin, struct FRotator Dir, float Width, struct FVector A, unsigned long bIgnoreZ);
-	float NoZDot(struct FVector A, struct FVector B);
-	struct FVector ClampLength(struct FVector V, float MaxLength);
-	struct FVector VInterpTo(struct FVector Current, struct FVector Target, float DeltaTime, float InterpSpeed);
-	bool IsZero(struct FVector A);
-	struct FVector ProjectOnTo(struct FVector X, struct FVector Y);
-	struct FVector MirrorVectorByNormal(struct FVector InVect, struct FVector InNormal);
-	struct FVector VRandCone2(struct FVector Dir, float HorizontalConeHalfAngleRadians, float VerticalConeHalfAngleRadians);
-	struct FVector VRandCone(struct FVector Dir, float ConeHalfAngleRadians);
-	struct FVector VRand();
-	struct FVector VLerp(struct FVector A, struct FVector B, float Alpha);
-	struct FVector Normal(struct FVector A);
-	float VSizeSq2D(struct FVector A);
-	float VSizeSq(struct FVector A);
-	float VSize2D(struct FVector A);
-	float VSize(struct FVector A);
-	struct FVector SubtractEqual_VectorVector(struct FVector B, struct FVector* A);
-	struct FVector AddEqual_VectorVector(struct FVector B, struct FVector* A);
-	struct FVector DivideEqual_VectorFloat(float B, struct FVector* A);
-	struct FVector MultiplyEqual_VectorVector(struct FVector B, struct FVector* A);
-	struct FVector MultiplyEqual_VectorFloat(float B, struct FVector* A);
-	struct FVector Cross_VectorVector(struct FVector A, struct FVector B);
-	float Dot_VectorVector(struct FVector A, struct FVector B);
-	bool NotEqual_VectorVector(struct FVector A, struct FVector B);
-	bool EqualEqual_VectorVector(struct FVector A, struct FVector B);
-	struct FVector GreaterGreater_VectorRotator(struct FVector A, struct FRotator B);
-	struct FVector LessLess_VectorRotator(struct FVector A, struct FRotator B);
-	struct FVector Subtract_VectorVector(struct FVector A, struct FVector B);
-	struct FVector Add_VectorVector(struct FVector A, struct FVector B);
-	struct FVector Divide_VectorFloat(struct FVector A, float B);
-	struct FVector Multiply_VectorVector(struct FVector A, struct FVector B);
-	struct FVector Multiply_FloatVector(float A, struct FVector B);
-	struct FVector Multiply_VectorFloat(struct FVector A, float B);
-	struct FVector Subtract_PreVector(struct FVector A);
-	float SmoothInterp(float DeltaTime, float InterpSpeed, float deltaDist, float overallDist);
-	float FInterpConstantTo(float Current, float Target, float DeltaTime, float InterpSpeed);
-	float FInterpTo(float Current, float Target, float DeltaTime, float InterpSpeed);
-	float FPctByRange(float Value, float InMin, float InMax);
-	float RandRange(float InMin, float InMax);
-	float FInterpEaseInOut(float A, float B, float Alpha, float Exp);
-	float FInterpEaseOut(float A, float B, float Alpha, float Exp);
-	float FInterpEaseIn(float A, float B, float Alpha, float Exp);
-	float FCubicInterp(float P0, float T0, float P1, float T1, float A);
-	int FCeil(float A);
-	int FFloor(float A);
-	int Round(float A);
-	float Lerp(float A, float B, float Alpha);
-	float FClamp(float V, float A, float B);
-	float FMax(float A, float B);
-	float FMin(float A, float B);
-	float FRand();
-	float Square(float A);
-	float Sqrt(float A);
-	float Loge(float A);
-	float Exp(float A);
-	float Atan2(float A, float B);
-	float Atan(float A);
-	float Tan(float A);
-	float Acos(float A);
-	float Cos(float A);
-	float Asin(float A);
-	float Sin(float A);
-	float Abs(float A);
-	float SubtractEqual_FloatFloat(float B, float* A);
-	float AddEqual_FloatFloat(float B, float* A);
-	float DivideEqual_FloatFloat(float B, float* A);
-	float MultiplyEqual_FloatFloat(float B, float* A);
-	bool NotEqual_FloatFloat(float A, float B);
-	bool ComplementEqual_FloatFloat(float A, float B);
-	bool EqualEqual_FloatFloat(float A, float B);
-	bool GreaterEqual_FloatFloat(float A, float B);
-	bool LessEqual_FloatFloat(float A, float B);
-	bool Greater_FloatFloat(float A, float B);
-	bool Less_FloatFloat(float A, float B);
-	float Subtract_FloatFloat(float A, float B);
-	float Add_FloatFloat(float A, float B);
-	float Percent_FloatFloat(float A, float B);
-	float Divide_FloatFloat(float A, float B);
-	float Multiply_FloatFloat(float A, float B);
-	float MultiplyMultiply_FloatFloat(float Base, float Exp);
-	float Subtract_PreFloat(float A);
-	struct FString ToHex(int A);
-	int Clamp(int V, int A, int B);
-	int Max(int A, int B);
-	int Min(int A, int B);
-	int Rand(int Max);
-	int SubtractSubtract_Int(int* A);
-	int AddAdd_Int(int* A);
-	int SubtractSubtract_PreInt(int* A);
-	int AddAdd_PreInt(int* A);
-	int SubtractEqual_IntInt(int B, int* A);
-	int AddEqual_IntInt(int B, int* A);
-	int DivideEqual_IntFloat(float B, int* A);
-	int MultiplyEqual_IntFloat(float B, int* A);
-	int Or_IntInt(int A, int B);
-	int Xor_IntInt(int A, int B);
-	int And_IntInt(int A, int B);
-	bool NotEqual_IntInt(int A, int B);
-	bool EqualEqual_IntInt(int A, int B);
-	bool GreaterEqual_IntInt(int A, int B);
-	bool LessEqual_IntInt(int A, int B);
-	bool Greater_IntInt(int A, int B);
-	bool Less_IntInt(int A, int B);
-	int GreaterGreaterGreater_IntInt(int A, int B);
-	int GreaterGreater_IntInt(int A, int B);
-	int LessLess_IntInt(int A, int B);
-	int Subtract_IntInt(int A, int B);
-	int Add_IntInt(int A, int B);
-	int Percent_IntInt(int A, int B);
-	int Divide_IntInt(int A, int B);
-	int Multiply_IntInt(int A, int B);
-	int Subtract_PreInt(int A);
-	int Complement_PreInt(int A);
-	unsigned char SubtractSubtract_Byte(unsigned char* A);
-	unsigned char AddAdd_Byte(unsigned char* A);
-	unsigned char SubtractSubtract_PreByte(unsigned char* A);
-	unsigned char AddAdd_PreByte(unsigned char* A);
-	unsigned char SubtractEqual_ByteByte(unsigned char B, unsigned char* A);
-	unsigned char AddEqual_ByteByte(unsigned char B, unsigned char* A);
-	unsigned char DivideEqual_ByteByte(unsigned char B, unsigned char* A);
-	unsigned char MultiplyEqual_ByteFloat(float B, unsigned char* A);
-	unsigned char MultiplyEqual_ByteByte(unsigned char B, unsigned char* A);
-	bool OrOr_BoolBool(unsigned long A, unsigned long B);
-	bool XorXor_BoolBool(unsigned long A, unsigned long B);
-	bool AndAnd_BoolBool(unsigned long A, unsigned long B);
-	bool NotEqual_BoolBool(unsigned long A, unsigned long B);
-	bool EqualEqual_BoolBool(unsigned long A, unsigned long B);
-	bool Not_PreBool(unsigned long A);
+	void SmartVectSetVector(const struct FVector& InVector, bool bUpdateTime, struct FSmartVector* theSV);
+	static struct FLinearColor Subtract_LinearColorLinearColor(const struct FLinearColor& A, const struct FLinearColor& B);
+	static struct FLinearColor Multiply_LinearColorFloat(const struct FLinearColor& LC, float Mult);
+	static struct FLinearColor ColorToLinearColor(const struct FColor& OldColor);
+	static struct FLinearColor MakeLinearColor(float R, float G, float B, float A);
+	static struct FString GetHTMLColor(struct FColor* C);
+	static struct FColor LerpColor(const struct FColor& A, const struct FColor& B, float Alpha);
+	static struct FColor MakeColor(unsigned char R, unsigned char G, unsigned char B, unsigned char A);
+	static struct FColor Add_ColorColor(const struct FColor& A, const struct FColor& B);
+	static struct FColor Multiply_ColorFloat(const struct FColor& A, float B);
+	static struct FColor Multiply_FloatColor(float A, const struct FColor& B);
+	static struct FColor Subtract_ColorColor(const struct FColor& A, const struct FColor& B);
+	struct FVector2D EvalInterpCurveVector2D(const struct FInterpCurveVector2D& Vector2DCurve, float InVal);
+	struct FVector EvalInterpCurveVector(const struct FInterpCurveVector& VectorCurve, float InVal);
+	float EvalInterpCurveFloat(const struct FInterpCurveFloat& FloatCurve, float InVal);
+	static struct FVector2D vect2d(float InX, float InY);
+	static float GetMappedRangeValue(const struct FVector2D& InputRange, const struct FVector2D& OutputRange, float Value);
+	static float GetRangePctByValue(const struct FVector2D& Range, float Value);
+	static float GetRangeValueByPct(const struct FVector2D& Range, float Pct);
+	static struct FVector2D SubtractEqual_Vector2DVector2D(const struct FVector2D& B, struct FVector2D* A);
+	static struct FVector2D AddEqual_Vector2DVector2D(const struct FVector2D& B, struct FVector2D* A);
+	static struct FVector2D DivideEqual_Vector2DFloat(float B, struct FVector2D* A);
+	static struct FVector2D MultiplyEqual_Vector2DFloat(float B, struct FVector2D* A);
+	static struct FVector2D Divide_Vector2DFloat(const struct FVector2D& A, float B);
+	static struct FVector2D Multiply_Vector2DFloat(const struct FVector2D& A, float B);
+	static struct FVector2D Subtract_Vector2DVector2D(const struct FVector2D& A, const struct FVector2D& B);
+	static struct FVector2D Add_Vector2DVector2D(const struct FVector2D& A, const struct FVector2D& B);
+	static struct FQuat Subtract_QuatQuat(const struct FQuat& A, const struct FQuat& B);
+	static struct FQuat Add_QuatQuat(const struct FQuat& A, const struct FQuat& B);
+	static struct FQuat QuatSlerp(const struct FQuat& A, const struct FQuat& B, float Alpha, bool bShortestPath);
+	static struct FRotator QuatToRotator(const struct FQuat& A);
+	static struct FQuat QuatFromRotator(const struct FRotator& A);
+	static struct FQuat QuatFromAxisAndAngle(const struct FVector& Axis, float Angle);
+	static struct FQuat QuatFindBetween(const struct FVector& A, const struct FVector& B);
+	static struct FVector QuatRotateVector(const struct FQuat& A, const struct FVector& B);
+	static struct FQuat QuatInvert(const struct FQuat& A);
+	static float QuatDot(const struct FQuat& A, const struct FQuat& B);
+	static struct FQuat QuatProduct(const struct FQuat& A, const struct FQuat& B);
+	static struct FVector MatrixGetAxis(const struct FMatrix& TM, unsigned char Axis);
+	static struct FVector MatrixGetOrigin(const struct FMatrix& TM);
+	static struct FRotator MatrixGetRotator(const struct FMatrix& TM);
+	static struct FMatrix MakeRotationMatrix(const struct FRotator& Rotation);
+	static struct FMatrix MakeRotationTranslationMatrix(const struct FVector& Translation, const struct FRotator& Rotation);
+	static struct FVector InverseTransformNormal(const struct FMatrix& TM, const struct FVector& A);
+	static struct FVector TransformNormal(const struct FMatrix& TM, const struct FVector& A);
+	static struct FVector InverseTransformVector(const struct FMatrix& TM, const struct FVector& A);
+	static struct FVector TransformVector(const struct FMatrix& TM, const struct FVector& A);
+	static struct FMatrix Multiply_MatrixMatrix(const struct FMatrix& A, const struct FMatrix& B);
+	static bool NotEqual_NameName(const struct FName& A, const struct FName& B);
+	static bool EqualEqual_NameName(const struct FName& A, const struct FName& B);
+	FScriptInterface QueryInterface(class UClass* InterfaceClass);
+	bool IsA(const struct FName& ClassName);
+	static bool ClassIsChildOf(class UClass* TestClass, class UClass* ParentClass);
+	static bool NotEqual_InterfaceInterface(const FScriptInterface& A, const FScriptInterface& B);
+	static bool EqualEqual_InterfaceInterface(const FScriptInterface& A, const FScriptInterface& B);
+	static bool NotEqual_ObjectObject(class UObject* A, class UObject* B);
+	static bool EqualEqual_ObjectObject(class UObject* A, class UObject* B);
+	static struct FString GuidToString(struct FGuid* G);
+	static struct FString PathName(class UObject* CheckObject);
+	static TArray<struct FString> SplitString(const struct FString& Source, const struct FString& Delimiter, bool bCullEmpty);
+	static void ParseStringIntoArray(const struct FString& BaseString, const struct FString& delim, bool bCullEmpty, TArray<struct FString>* Pieces);
+	static void JoinArray(TArray<struct FString> StringArray, const struct FString& delim, bool bIgnoreBlanks, struct FString* out_Result);
+	static struct FString GetRightMost(const struct FString& Text);
+	static struct FString Split(const struct FString& Text, const struct FString& SplitStr, bool bOmitSplitStr);
+	static int StringHash(const struct FString& S);
+	static struct FString Repl(const struct FString& Src, const struct FString& Match, const struct FString& With, bool bCaseSensitive);
+	static int Asc(const struct FString& S);
+	static struct FString Chr(int I);
+	static struct FString Locs(const struct FString& S);
+	static struct FString Caps(const struct FString& S);
+	static struct FString Right(const struct FString& S, int I);
+	static struct FString Left(const struct FString& S, int I);
+	static struct FString Mid(const struct FString& S, int I, int J);
+	static int InStr(const struct FString& S, const struct FString& T, bool bSearchFromRight, bool bIgnoreCase, int StartPos);
+	static int Len(const struct FString& S);
+	static struct FString SubtractEqual_StrStr(const struct FString& B, struct FString* A);
+	static struct FString AtEqual_StrStr(const struct FString& B, struct FString* A);
+	static struct FString ConcatEqual_StrStr(const struct FString& B, struct FString* A);
+	static bool ComplementEqual_StrStr(const struct FString& A, const struct FString& B);
+	static bool NotEqual_StrStr(const struct FString& A, const struct FString& B);
+	static bool EqualEqual_StrStr(const struct FString& A, const struct FString& B);
+	static bool GreaterEqual_StrStr(const struct FString& A, const struct FString& B);
+	static bool LessEqual_StrStr(const struct FString& A, const struct FString& B);
+	static bool Greater_StrStr(const struct FString& A, const struct FString& B);
+	static bool Less_StrStr(const struct FString& A, const struct FString& B);
+	static struct FString At_StrStr(const struct FString& A, const struct FString& B);
+	static struct FString Concat_StrStr(const struct FString& A, const struct FString& B);
+	static struct FRotator MakeRotator(int Pitch, int Yaw, int Roll);
+	static bool SClampRotAxis(float DeltaTime, int ViewAxis, int MaxLimit, int MinLimit, float InterpolationSpeed, int* out_DeltaViewAxis);
+	static int ClampRotAxisFromRange(int Current, int Min, int Max);
+	static int ClampRotAxisFromBase(int Current, int Center, int MaxDelta);
+	static void ClampRotAxis(int ViewAxis, int MaxLimit, int MinLimit, int* out_DeltaViewAxis);
+	static float RSize(const struct FRotator& R);
+	static float RDiff(const struct FRotator& A, const struct FRotator& B);
+	static int NormalizeRotAxis(int Angle);
+	static struct FRotator RInterpTo(const struct FRotator& Current, const struct FRotator& Target, float DeltaTime, float InterpSpeed, bool bConstantInterpSpeed);
+	static struct FRotator RTransform(const struct FRotator& R, const struct FRotator& RBasis);
+	static struct FRotator RLerp(const struct FRotator& A, const struct FRotator& B, float Alpha, bool bShortestPath);
+	static struct FRotator Normalize(const struct FRotator& Rot);
+	static struct FRotator OrthoRotation(const struct FVector& X, const struct FVector& Y, const struct FVector& Z);
+	static struct FRotator RotRand(bool bRoll);
+	static struct FVector GetRotatorAxis(const struct FRotator& A, int Axis);
+	static void GetUnAxes(const struct FRotator& A, struct FVector* X, struct FVector* Y, struct FVector* Z);
+	static void GetAxes(const struct FRotator& A, struct FVector* X, struct FVector* Y, struct FVector* Z);
+	static bool ClockwiseFrom_IntInt(int A, int B);
+	static struct FRotator SubtractEqual_RotatorRotator(const struct FRotator& B, struct FRotator* A);
+	static struct FRotator AddEqual_RotatorRotator(const struct FRotator& B, struct FRotator* A);
+	static struct FRotator Subtract_RotatorRotator(const struct FRotator& A, const struct FRotator& B);
+	static struct FRotator Add_RotatorRotator(const struct FRotator& A, const struct FRotator& B);
+	static struct FRotator DivideEqual_RotatorFloat(float B, struct FRotator* A);
+	static struct FRotator MultiplyEqual_RotatorFloat(float B, struct FRotator* A);
+	static struct FRotator Divide_RotatorFloat(const struct FRotator& A, float B);
+	static struct FRotator Multiply_FloatRotator(float A, const struct FRotator& B);
+	static struct FRotator Multiply_RotatorFloat(const struct FRotator& A, float B);
+	static bool NotEqual_RotatorRotator(const struct FRotator& A, const struct FRotator& B);
+	static bool EqualEqual_RotatorRotator(const struct FRotator& A, const struct FRotator& B);
+	bool InCylinder(const struct FVector& Origin, const struct FRotator& Dir, float Width, const struct FVector& A, bool bIgnoreZ);
+	static float NoZDot(const struct FVector& A, const struct FVector& B);
+	static struct FVector ClampLength(const struct FVector& V, float MaxLength);
+	static struct FVector VInterpTo(const struct FVector& Current, const struct FVector& Target, float DeltaTime, float InterpSpeed);
+	static bool IsZero(const struct FVector& A);
+	static struct FVector ProjectOnTo(const struct FVector& X, const struct FVector& Y);
+	static struct FVector MirrorVectorByNormal(const struct FVector& InVect, const struct FVector& InNormal);
+	static struct FVector VRandCone2(const struct FVector& Dir, float HorizontalConeHalfAngleRadians, float VerticalConeHalfAngleRadians);
+	static struct FVector VRandCone(const struct FVector& Dir, float ConeHalfAngleRadians);
+	static struct FVector VRand();
+	static struct FVector VLerp(const struct FVector& A, const struct FVector& B, float Alpha);
+	static struct FVector Normal(const struct FVector& A);
+	static float VSizeSq2D(const struct FVector& A);
+	static float VSizeSq(const struct FVector& A);
+	static float VSize2D(const struct FVector& A);
+	static float VSize(const struct FVector& A);
+	static struct FVector SubtractEqual_VectorVector(const struct FVector& B, struct FVector* A);
+	static struct FVector AddEqual_VectorVector(const struct FVector& B, struct FVector* A);
+	static struct FVector DivideEqual_VectorFloat(float B, struct FVector* A);
+	static struct FVector MultiplyEqual_VectorVector(const struct FVector& B, struct FVector* A);
+	static struct FVector MultiplyEqual_VectorFloat(float B, struct FVector* A);
+	static struct FVector Cross_VectorVector(const struct FVector& A, const struct FVector& B);
+	static float Dot_VectorVector(const struct FVector& A, const struct FVector& B);
+	static bool NotEqual_VectorVector(const struct FVector& A, const struct FVector& B);
+	static bool EqualEqual_VectorVector(const struct FVector& A, const struct FVector& B);
+	static struct FVector GreaterGreater_VectorRotator(const struct FVector& A, const struct FRotator& B);
+	static struct FVector LessLess_VectorRotator(const struct FVector& A, const struct FRotator& B);
+	static struct FVector Subtract_VectorVector(const struct FVector& A, const struct FVector& B);
+	static struct FVector Add_VectorVector(const struct FVector& A, const struct FVector& B);
+	static struct FVector Divide_VectorFloat(const struct FVector& A, float B);
+	static struct FVector Multiply_VectorVector(const struct FVector& A, const struct FVector& B);
+	static struct FVector Multiply_FloatVector(float A, const struct FVector& B);
+	static struct FVector Multiply_VectorFloat(const struct FVector& A, float B);
+	static struct FVector Subtract_PreVector(const struct FVector& A);
+	static float SmoothInterp(float DeltaTime, float InterpSpeed, float deltaDist, float overallDist);
+	static float FInterpConstantTo(float Current, float Target, float DeltaTime, float InterpSpeed);
+	static float FInterpTo(float Current, float Target, float DeltaTime, float InterpSpeed);
+	static float FPctByRange(float Value, float InMin, float InMax);
+	static float RandRange(float InMin, float InMax);
+	static float FInterpEaseInOut(float A, float B, float Alpha, float Exp);
+	static float FInterpEaseOut(float A, float B, float Alpha, float Exp);
+	static float FInterpEaseIn(float A, float B, float Alpha, float Exp);
+	static float FCubicInterp(float P0, float T0, float P1, float T1, float A);
+	static int FCeil(float A);
+	static int FFloor(float A);
+	static int Round(float A);
+	static float Lerp(float A, float B, float Alpha);
+	static float FClamp(float V, float A, float B);
+	static float FMax(float A, float B);
+	static float FMin(float A, float B);
+	static float FRand();
+	static float Square(float A);
+	static float Sqrt(float A);
+	static float Loge(float A);
+	static float Exp(float A);
+	static float Atan2(float A, float B);
+	static float Atan(float A);
+	static float Tan(float A);
+	static float Acos(float A);
+	static float Cos(float A);
+	static float Asin(float A);
+	static float Sin(float A);
+	static float Abs(float A);
+	static float SubtractEqual_FloatFloat(float B, float* A);
+	static float AddEqual_FloatFloat(float B, float* A);
+	static float DivideEqual_FloatFloat(float B, float* A);
+	static float MultiplyEqual_FloatFloat(float B, float* A);
+	static bool NotEqual_FloatFloat(float A, float B);
+	static bool ComplementEqual_FloatFloat(float A, float B);
+	static bool EqualEqual_FloatFloat(float A, float B);
+	static bool GreaterEqual_FloatFloat(float A, float B);
+	static bool LessEqual_FloatFloat(float A, float B);
+	static bool Greater_FloatFloat(float A, float B);
+	static bool Less_FloatFloat(float A, float B);
+	static float Subtract_FloatFloat(float A, float B);
+	static float Add_FloatFloat(float A, float B);
+	static float Percent_FloatFloat(float A, float B);
+	static float Divide_FloatFloat(float A, float B);
+	static float Multiply_FloatFloat(float A, float B);
+	static float MultiplyMultiply_FloatFloat(float Base, float Exp);
+	static float Subtract_PreFloat(float A);
+	static struct FString ToHex(int A);
+	static int Clamp(int V, int A, int B);
+	static int Max(int A, int B);
+	static int Min(int A, int B);
+	static int Rand(int Max);
+	static int SubtractSubtract_Int(int* A);
+	static int AddAdd_Int(int* A);
+	static int SubtractSubtract_PreInt(int* A);
+	static int AddAdd_PreInt(int* A);
+	static int SubtractEqual_IntInt(int B, int* A);
+	static int AddEqual_IntInt(int B, int* A);
+	static int DivideEqual_IntFloat(float B, int* A);
+	static int MultiplyEqual_IntFloat(float B, int* A);
+	static int Or_IntInt(int A, int B);
+	static int Xor_IntInt(int A, int B);
+	static int And_IntInt(int A, int B);
+	static bool NotEqual_IntInt(int A, int B);
+	static bool EqualEqual_IntInt(int A, int B);
+	static bool GreaterEqual_IntInt(int A, int B);
+	static bool LessEqual_IntInt(int A, int B);
+	static bool Greater_IntInt(int A, int B);
+	static bool Less_IntInt(int A, int B);
+	static int GreaterGreaterGreater_IntInt(int A, int B);
+	static int GreaterGreater_IntInt(int A, int B);
+	static int LessLess_IntInt(int A, int B);
+	static int Subtract_IntInt(int A, int B);
+	static int Add_IntInt(int A, int B);
+	static int Percent_IntInt(int A, int B);
+	static int Divide_IntInt(int A, int B);
+	static int Multiply_IntInt(int A, int B);
+	static int Subtract_PreInt(int A);
+	static int Complement_PreInt(int A);
+	static unsigned char SubtractSubtract_Byte(unsigned char* A);
+	static unsigned char AddAdd_Byte(unsigned char* A);
+	static unsigned char SubtractSubtract_PreByte(unsigned char* A);
+	static unsigned char AddAdd_PreByte(unsigned char* A);
+	static unsigned char SubtractEqual_ByteByte(unsigned char B, unsigned char* A);
+	static unsigned char AddEqual_ByteByte(unsigned char B, unsigned char* A);
+	static unsigned char DivideEqual_ByteByte(unsigned char B, unsigned char* A);
+	static unsigned char MultiplyEqual_ByteFloat(float B, unsigned char* A);
+	static unsigned char MultiplyEqual_ByteByte(unsigned char B, unsigned char* A);
+	static bool OrOr_BoolBool(bool A, bool B);
+	static bool XorXor_BoolBool(bool A, bool B);
+	static bool AndAnd_BoolBool(bool A, bool B);
+	static bool NotEqual_BoolBool(bool A, bool B);
+	static bool EqualEqual_BoolBool(bool A, bool B);
+	static bool Not_PreBool(bool A);
 	// Virtual Functions
 	virtual void VirtualFunction00() {};																			// 0x005838A0 (0x00)
 	virtual void VirtualFunction01() {};																			// 0x005FC030 (0x04)
@@ -665,7 +672,7 @@ public:
 	virtual void VirtualFunction64() {};																			// 0x0028AA90 (0x100)
 	virtual void VirtualFunction65() {};																			// 0x00EE7430 (0x104)
 	virtual void VirtualFunction66() {};																			// 0x00592990 (0x108)
-	virtual void ProcessEvent(class UFunction* pFunction, void* pParms, void* pResult = NULL) {};																			// 0x00F757C0 (0x10C)
+	virtual void ProcessEvent(class UFunction* pFunction, void* params, void* pResult = NULL) {};																			// 0x00F757C0 (0x10C)
 	virtual void VirtualFunction68() {};																			// 0x001E10C0 (0x110)
 	virtual void VirtualFunction69() {};																			// 0x01218070 (0x114)
 	virtual void VirtualFunction70() {};																			// 0x00782B80 (0x118)
@@ -953,7 +960,9 @@ public:
 */
 
 // 0x0000 (0x003C - 0x003C)
-class UInterface : public UObject {};
+class UInterface : public UObject {
+
+};
 
 // 0x0004 (0x0040 - 0x003C)
 class UField : public UObject
@@ -988,8 +997,8 @@ public:
 	unsigned short		iNative;									// NOT AUTO-GENERATED PROPERTY
 	unsigned short		RepOffset;									// NOT AUTO-GENERATED PROPERTY
 	struct FName		FriendlyName;								// NOT AUTO-GENERATED PROPERTY
-	unsigned short		NumParms;									// NOT AUTO-GENERATED PROPERTY
-	unsigned short		ParmsSize;									// NOT AUTO-GENERATED PROPERTY
+	unsigned short		Numparams;									// NOT AUTO-GENERATED PROPERTY
+	unsigned short		paramsSize;									// NOT AUTO-GENERATED PROPERTY
 	unsigned long		ReturnValueOffset;							// NOT AUTO-GENERATED PROPERTY
 	unsigned char		UnknownData00[0x4];						// NOT AUTO-GENERATED PROPERTY
 	void*				Func;										// NOT AUTO-GENERATED PROPERTY
@@ -1192,14 +1201,14 @@ public:
 	unsigned long                                      ShowErrorCount : 1;                               		// 0x0078 (0x0004) [0x0000000000000000] [0x00000010]
 
 public:
-	int eventMain(struct FString Params);
+	int Main(struct FString Params);
 };
 
 // 0x0000 (0x007C - 0x007C)
 class UHelpCommandlet : public UCommandlet
 {
 public:
-	int eventMain(struct FString Params);
+	int Main(struct FString Params);
 };
 
 // 0x0008 (0x0044 - 0x003C)
@@ -1236,6 +1245,17 @@ public:
 	UObject				*ClassDefaultObject;
 	unsigned int		ClassFlags;
 	unsigned char       UnknownData00[0xD8];                           		// 0x00D0 (0x0100) MISSED OFFSET
+
+	UObject* CreateDefaultObject()
+	{
+		return BL2SDK::pGetDefaultObject(this, 0);
+	}
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class");
+		return ptr;
+	}
 };
 
 #ifdef _MSC_VER

@@ -17,9 +17,9 @@ class_def = '\tpy::class_< {class_with_parent} >(m, "{class_name}")\n'
 bitfield_def = '\t\t.def_property("{field_name}", []({class_name} &self){{return self.{field_name};}}, []({class_name} &self, bool value){{self.{field_name} = value ? 1 : 0;}})\n'
 staticclass_def = '\t\t.def_static("StaticClass", &{class_name}::StaticClass, py::return_value_policy::reference)\n'
 variable_def = '\t\t.def_readwrite("{var_name}", &{class_name}::{var_name}{policy})\n'
-function_def = '\t\t.def("{func_name}", &{class_name}::{func_name}{policy})\n'
+function_def = '\t\t.def{static_def}("{func_name}", &{class_name}::{func_name}{policy})\n'
 policy_def = ', py::return_value_policy::reference'
-reference_def = '\t\t.def("{func_name}", {l}'
+reference_def = '\t\t.def{static_def}("{func_name}", {l}'
 reference_template = '[]({class_name} &self {py_args}) {{ {init} {capture} self.{function_name}({new_args}); return py::make_tuple({returned_args}); }})\n'
 
 dir_path_python = 'C:/Users/abahb/source/repos/BL2-SDK/bl2-sdk/pydefs/'
@@ -66,11 +66,12 @@ def generate_lambda(clas, fun):
 	return(reference_template.format(class_name = clas, py_args = py_args, init = init, capture = capture, function_name = fun.name, new_args = new_args, returned_args = returned_args))
 
 class Function_def():
-	def __init__(self, return_type, name, params, pointers):
+	def __init__(self, return_type, name, params, pointers, static = False):
 		self.return_type = return_type
 		self.name = name
 		self.params = params
 		self.pointers = pointers
+		self.static = static
 
 class Pointer():
 	def __init__(self, pre, t, name):
@@ -104,13 +105,14 @@ for filename in os.listdir(dir_path_h):
 					line = line.split('//')[0].strip()
 					if line.endswith(';') and line[-2] != ')' and not 'pClassPointer' in line:
 						needs_reference = '*' in line or 'class ' in line or 'struct ' in line or 'TArray' in line
-						name = line.split(' ')[-1][:-1]
+						name = line.split(' ')[-1].split('\t')[-1][:-1].strip()
 						variables.append((name, needs_reference))
-					elif line.endswith(');') and not line.startswith('static') and not line.startswith('virtual') and not line.startswith('template'):
+					elif line.endswith(');') and not line.startswith('virtual') and not line.startswith('template') and not (line.startswith('static') and 'StaticClass' in line):
+						static = line.startswith('static')
 						if not '*' in line:
 							needs_reference = line.startswith('TArray') or line.startswith('class') or line.startswith('struct')
 							name = line.split('(')[0].split(' ')[-1].split('\t')[-1]
-							functions.append((name, needs_reference))
+							functions.append((name, needs_reference, static))
 						else:
 							start, end = line.split('(')
 							function_name = start.split(' ')[-1]
@@ -127,14 +129,14 @@ for filename in os.listdir(dir_path_h):
 									s = param.split(' ')
 									pointers.append(Pointer(None, ' '.join(s[:-1]), s[-1]))
 							if pointers:
-								reference_functions[function_name] = Function_def(return_type, function_name, params, pointers)
+								reference_functions[function_name] = Function_def(return_type, function_name, params, pointers, static)
 							else:
 								needs_reference = line.startswith('TArray') or line.startswith('class') or line.startswith('struct')
 								name = line.split('(')[0].split(' ')[-1].split('\t')[-1]
-								functions.append((name, needs_reference))
+								functions.append((name, needs_reference, static))
 					elif line.startswith('static') and 'StaticClass' in line:
 						objs[c]['static'] = True
-				if line == '};\n':
+				if line == '};\n' or line.endswith(' {};\n'):
 					objs[c]['bitfields'] = fields
 					objs[c]['variables'] = variables
 					objs[c]['functions'] = functions
@@ -153,12 +155,15 @@ for module in classes.keys():
 		f.write(top.format(module))
 		objs = classes[module]
 		for ck in objs.keys():
-			print('\t{{"{0}", &typeid({0})}},'.format(ck[1:]))
 			c = objs[ck]
 			name = ck
 			if 'parent' in c.keys():
 				name = '{}, {}'.format(name, c['parent'])
 			f.write(class_def.format(class_with_parent=name, class_name=ck))
+			if ck.startswith('F'):
+				f.write('\t\t.def(py::init<>())\n')
+			else:
+				print('\t{{"{0}", &typeid({1})}},'.format(ck[1:], ck))
 			if 'static' in c.keys():
 				f.write(staticclass_def.format(class_name=ck))
 			if c['bitfields']:
@@ -171,10 +176,10 @@ for module in classes.keys():
 			if c['functions']:
 				for function in c['functions']:
 					policy = policy_def if function[1] else ''
-					f.write(function_def.format(class_name=ck, func_name=function[0], policy=policy))
+					f.write(function_def.format(static_def='' if not function[2] else '_static', class_name=ck, func_name=function[0], policy=policy))
 			if c['reference_functions']:
 				for reference_function in c['reference_functions'].keys():
-					f.write(reference_def.format(func_name=reference_function, l=generate_lambda(ck, c['reference_functions'][reference_function])))
+					f.write(reference_def.format(static_def='' if not c['reference_functions'][reference_function].static else '_static', func_name=reference_function, l=generate_lambda(ck, c['reference_functions'][reference_function])))
 			f.write('\t\t;\n')
 		f.write(bottom)
 

@@ -1,252 +1,311 @@
 #pragma once
-#include "stdafx.h"
-/*
-#############################################################################################
-# Borderlands 2 (1.7) SDK
-# Generated with TheFeckless UE3 SDK Generator v1.4_Beta-Rev.51
-# ========================================================================================= #
-# File: GameFramework_classes.h
-# ========================================================================================= #
-# Credits: uNrEaL, Tamimego, SystemFiles, R00T88, _silencer, the1domo, K@N@VEL
-# Thanks: HOOAH07, lowHertz
-# Forums: www.uc-forum.com, www.gamedeception.net
-#############################################################################################
-*/
+// Borderlands 2 (1.8.5) SDK
 
 #ifdef _MSC_VER
-#pragma pack ( push, 0x4 )
+	#pragma pack(push, 0x4)
 #endif
 
-/*
-# ========================================================================================= #
-# Constants
-# ========================================================================================= #
-*/
+#include "stdafx.h"
 
-#define CONST_GAMEEVENT_AGGREGATED_DATA                          10000
-#define CONST_GAMEEVENT_AGGREGATED_PLAYER_TIMEALIVE              10001
-#define CONST_GAMEEVENT_AGGREGATED_PLAYER_KILLS                  10002
-#define CONST_GAMEEVENT_AGGREGATED_PLAYER_DEATHS                 10003
-#define CONST_GAMEEVENT_AGGREGATED_PLAYER_MATCH_WON              10004
-#define CONST_GAMEEVENT_AGGREGATED_PLAYER_ROUND_WON              10005
-#define CONST_GAMEEVENT_AGGREGATED_DAMAGE_DEALT_NORMALKILL       10006
-#define CONST_GAMEEVENT_AGGREGATED_DAMAGE_RECEIVED_WASNORMALKILL 10007
-#define CONST_GAMEEVENT_AGGREGATED_TEAM_KILLS                    10100
-#define CONST_GAMEEVENT_AGGREGATED_TEAM_DEATHS                   10101
-#define CONST_GAMEEVENT_AGGREGATED_TEAM_GAME_SCORE               10102
-#define CONST_GAMEEVENT_AGGREGATED_TEAM_MATCH_WON                10103
-#define CONST_GAMEEVENT_AGGREGATED_TEAM_ROUND_WON                10104
-#define CONST_GAMEEVENT_AGGREGATED_DAMAGE_KILLS                  10200
-#define CONST_GAMEEVENT_AGGREGATED_DAMAGE_DEATHS                 10201
-#define CONST_GAMEEVENT_AGGREGATED_DAMAGE_DEALT_WEAPON_DAMAGE    10202
-#define CONST_GAMEEVENT_AGGREGATED_DAMAGE_DEALT_MELEE_DAMAGE     10203
-#define CONST_GAMEEVENT_AGGREGATED_DAMAGE_RECEIVED_WEAPON_DAMAGE 10204
-#define CONST_GAMEEVENT_AGGREGATED_DAMAGE_RECEIVED_MELEE_DAMAGE  10205
-#define CONST_GAMEEVENT_AGGREGATED_DAMAGE_DEALT_MELEEHITS        10206
-#define CONST_GAMEEVENT_AGGREGATED_DAMAGE_RECEIVED_WASMELEEHIT   10207
-#define CONST_GAMEEVENT_AGGREGATED_WEAPON_FIRED                  10300
-#define CONST_GAMEEVENT_AGGREGATED_PAWN_SPAWN                    10400
-#define CONST_GAMEEVENT_AGGREGATED_GAME_SPECIFIC                 11000
-#define CONST_LOADING_MOVIE                                      "LoadingMovie"
+//---------------------------------------------------------------------------
+//Classes
+//---------------------------------------------------------------------------
 
-/*
-# ========================================================================================= #
-# Enums
-# ========================================================================================= #
-*/
-
-// Enum GameFramework.GameSkelCtrl_Recoil.ERecoilStart
-/*enum ERecoilStart
+// Class GameFramework.GamePawn
+// 0x0000 (0x0694 - 0x0694)
+class AGamePawn : public APawn
 {
-	ERS_Zero                                           = 0,
-	ERS_Random                                         = 1,
-	ERS_MAX                                            = 2
-};*/
+public:
 
-// Enum GameFramework.GameStateObject.GameSessionType
-/*enum GameSessionType
-{
-	GT_SessionInvalid                                  = 0,
-	GT_SinglePlayer                                    = 1,
-	GT_Coop                                            = 2,
-	GT_Multiplayer                                     = 3,
-	GT_MAX                                             = 4
-};*/
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GamePawn");
+		return ptr;
+	}
 
-/*
-# ========================================================================================= #
-# Classes
-# ========================================================================================= #
-*/
+};
 
-// 0x0000 (0x0690 - 0x0690)
-class AGamePawn : public APawn {};
 
-// 0x000C (0x08FC - 0x08F0)
+// Class GameFramework.GamePlayerController
+// 0x000C (0x08F0 - 0x08FC)
 class AGamePlayerController : public APlayerController
 {
 public:
-	struct FName                                       CurrentSoundMode;                                 		// 0x08F0 (0x0008) [0x0000000000002000]              ( CPF_Transient )
-	unsigned long                                      bIsWarmupPaused : 1;                              		// 0x08F8 (0x0004) [0x0000000000002000] [0x00000001] ( CPF_Transient )
+	struct FName                                       CurrentSoundMode;                                         // 0x08F0(0x0008) (Transient)
+	unsigned long                                      bIsWarmupPaused : 1;                                      // 0x08F8(0x0004) (Transient)
 
-public:
-	void ClientColorFade(struct FColor FadeColor, unsigned char FromAlpha, unsigned char ToAlpha, float FadeTime);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GamePlayerController");
+		return ptr;
+	}
+
+
+	void ClientColorFade(const struct FColor& FadeColor, unsigned char FromAlpha, unsigned char ToAlpha, float FadeTime);
 	void CallMemLeakCheck();
 	void StopMemLeakChecking();
 	void DoMemLeakChecking(float InTimeBetweenMemLeakChecks);
-	void eventWarmupPause(unsigned long bDesiredPauseState);
+	void WarmupPause(bool bDesiredPauseState);
 	bool CanUnpauseWarmup();
 	void GetCurrentMovie(struct FString* MovieName);
-	void eventClientStopMovie(float DelayInSeconds, unsigned long bAllowMovieToFinish, unsigned long bForceStopNonSkippable, unsigned long bForceStopLoadingMovie);
-	void eventClientPlayMovie(struct FString MovieName, int InStartOfRenderingMovieFrame, int InEndOfRenderingMovieFrame, unsigned long bRestrictPausing, unsigned long bPlayOnceFromStream, unsigned long bOnlyBackButtonSkipsMovie);
-	void KeepPlayingLoadingMovie();
-	void ShowLoadingMovie(unsigned long bShowMovie, unsigned long bPauseAfterHide, float PauseDuration, float KeepPlayingDuration, unsigned long bOverridePreviousDelays);
-	void SetSoundMode(struct FName InSoundModeName);
+	void ClientStopMovie(float DelayInSeconds, bool bAllowMovieToFinish, bool bForceStopNonSkippable, bool bForceStopLoadingMovie);
+	void ClientPlayMovie(const struct FString& MovieName, int InStartOfRenderingMovieFrame, int InEndOfRenderingMovieFrame, bool bRestrictPausing, bool bPlayOnceFromStream, bool bOnlyBackButtonSkipsMovie);
+	static void KeepPlayingLoadingMovie();
+	static void ShowLoadingMovie(bool bShowMovie, bool bPauseAfterHide, float PauseDuration, float KeepPlayingDuration, bool bOverridePreviousDelays);
+	void SetSoundMode(const struct FName& InSoundModeName);
 	void DoForceFeedbackForScreenShake(class UCameraShake* ShakeData, float Scale);
 	int GetUIPlayerIndex();
 };
 
-// 0x0000 (0x003C - 0x003C)
-class UGameTypes : public UObject {};
 
-// 0x0014 (0x0064 - 0x0050)
+// Class GameFramework.GameTypes
+// 0x0000 (0x003C - 0x003C)
+class UGameTypes : public UObject
+{
+public:
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GameTypes");
+		return ptr;
+	}
+
+};
+
+
+// Class GameFramework.NavMeshGoal_OutOfViewFrom
+// 0x0014 (0x0050 - 0x0064)
 class UNavMeshGoal_OutOfViewFrom : public UNavMeshPathGoalEvaluator
 {
 public:
-	struct FPointer                                    GoalPoly;                                         		// 0x0050 (0x0004) [0x0000000000001000]              ( CPF_Native )
-	struct FVector                                     OutOfViewLocation;                                		// 0x0054 (0x000C) [0x0000000000000000]
-	unsigned long                                      bShowDebug : 1;                                   		// 0x0060 (0x0004) [0x0000000000000000] [0x00000001]
+	struct FPointer                                    GoalPoly;                                                 // 0x0050(0x0004) (Native)
+	struct FVector                                     OutOfViewLocation;                                        // 0x0054(0x000C)
+	unsigned long                                      bShowDebug : 1;                                           // 0x0060(0x0004)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("NavMeshGoal_OutOfViewFrom");
+		return ptr;
+	}
+
+
 	void Recycle();
-	bool MustBeHiddenFromThisPoint(class UNavigationHandle* NavHandle, struct FVector InOutOfViewLocation);
+	static bool MustBeHiddenFromThisPoint(class UNavigationHandle* NavHandle, const struct FVector& InOutOfViewLocation);
 	void RecycleNative();
 };
 
-// 0x0028 (0x0078 - 0x0050)
+
+// Class GameFramework.NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations
+// 0x0028 (0x0050 - 0x0078)
 class UNavMeshPath_BiasAgainstPolysWithinDistanceOfLocations : public UNavMeshPathConstraint
 {
 public:
-	struct FVector                                     Location;                                         		// 0x0050 (0x000C) [0x0000000000002000]              ( CPF_Transient )
-	struct FVector                                     Rotation;                                         		// 0x005C (0x000C) [0x0000000000002000]              ( CPF_Transient )
-	float                                              DistanceToCheck;                                  		// 0x0068 (0x0004) [0x0000000000002000]              ( CPF_Transient )
-	TArray< struct FVector >                           LocationsToCheck;                                 		// 0x006C (0x000C) [0x0000000000402000]              ( CPF_Transient | CPF_NeedCtorLink )
+	struct FVector                                     Location;                                                 // 0x0050(0x000C) (Transient)
+	struct FVector                                     Rotation;                                                 // 0x005C(0x000C) (Transient)
+	float                                              DistanceToCheck;                                          // 0x0068(0x0004) (Transient)
+	TArray<struct FVector>                             LocationsToCheck;                                         // 0x006C(0x000C) (Transient, NeedCtorLink)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("NavMeshPath_BiasAgainstPolysWithinDistanceOfLocations");
+		return ptr;
+	}
+
+
 	void Recycle();
-	bool BiasAgainstPolysWithinDistanceOfLocations(class UNavigationHandle* NavHandle, struct FVector InLocation, struct FRotator InRotation, float InDistanceToCheck, TArray< struct FVector > InLocationsToCheck);
+	static bool BiasAgainstPolysWithinDistanceOfLocations(class UNavigationHandle* NavHandle, const struct FVector& InLocation, const struct FRotator& InRotation, float InDistanceToCheck, TArray<struct FVector> InLocationsToCheck);
 };
 
-// 0x0014 (0x00C8 - 0x00B4)
+
+// Class GameFramework.SeqAct_ControlGameMovie
+// 0x0014 (0x00B4 - 0x00C8)
 class USeqAct_ControlGameMovie : public USeqAct_Latent
 {
 public:
-	struct FString                                     MovieName;                                        		// 0x00B4 (0x000C) [0x0000000000400001]              ( CPF_Edit | CPF_NeedCtorLink )
-	int                                                StartOfRenderingMovieFrame;                       		// 0x00C0 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	int                                                EndOfRenderingMovieFrame;                         		// 0x00C4 (0x0004) [0x0000000000000001]              ( CPF_Edit )
+	struct FString                                     MovieName;                                                // 0x00B4(0x000C) (Edit, NeedCtorLink)
+	int                                                StartOfRenderingMovieFrame;                               // 0x00C0(0x0004) (Edit)
+	int                                                EndOfRenderingMovieFrame;                                 // 0x00C4(0x0004) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SeqAct_ControlGameMovie");
+		return ptr;
+	}
+
 };
 
-// 0x0028 (0x00CC - 0x00A4)
+
+// Class GameFramework.SeqAct_Deproject
+// 0x0028 (0x00A4 - 0x00CC)
 class USeqAct_Deproject : public USequenceAction
 {
 public:
-	float                                              ScreenX;                                          		// 0x00A4 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              ScreenY;                                          		// 0x00A8 (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	float                                              TraceDistance;                                    		// 0x00AC (0x0004) [0x0000000000000001]              ( CPF_Edit )
-	class UObject*                                     HitObject;                                        		// 0x00B0 (0x0004) [0x0000000000000000]
-	struct FVector                                     HitLocation;                                      		// 0x00B4 (0x000C) [0x0000000000000000]
-	struct FVector                                     HitNormal;                                        		// 0x00C0 (0x000C) [0x0000000000000000]
+	float                                              ScreenX;                                                  // 0x00A4(0x0004) (Edit)
+	float                                              ScreenY;                                                  // 0x00A8(0x0004) (Edit)
+	float                                              TraceDistance;                                            // 0x00AC(0x0004) (Edit)
+	class UObject*                                     HitObject;                                                // 0x00B0(0x0004)
+	struct FVector                                     HitLocation;                                              // 0x00B4(0x000C)
+	struct FVector                                     HitNormal;                                                // 0x00C0(0x000C)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SeqAct_Deproject");
+		return ptr;
+	}
+
 };
 
-// 0x000C (0x00B0 - 0x00A4)
+
+// Class GameFramework.SeqAct_ModifyProperty
+// 0x000C (0x00A4 - 0x00B0)
 class USeqAct_ModifyProperty : public USequenceAction
 {
 public:
-	TArray< struct FPropertyInfo >                     Properties;                                       		// 0x00A4 (0x000C) [0x0000000004400001]              ( CPF_Edit | CPF_NeedCtorLink | CPF_EditInline )
+	TArray<struct FPropertyInfo>                       Properties;                                               // 0x00A4(0x000C) (Edit, NeedCtorLink, EditInline)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("SeqAct_ModifyProperty");
+		return ptr;
+	}
+
 };
 
-// 0x007C (0x0118 - 0x009C)
+
+// Class GameFramework.GameSkelCtrl_Recoil
+// 0x007C (0x009C - 0x0118)
 class UGameSkelCtrl_Recoil : public USkelControlBase
 {
 public:
-	unsigned long                                      bBoneSpaceRecoil : 1;                             		// 0x009C (0x0004) [0x0000000000000001] [0x00000001] ( CPF_Edit )
-	unsigned long                                      bPlayRecoil : 1;                                  		// 0x009C (0x0004) [0x0000000000002001] [0x00000002] ( CPF_Edit | CPF_Transient )
-	unsigned long                                      bOldPlayRecoil : 1;                               		// 0x009C (0x0004) [0x0000000000002000] [0x00000004] ( CPF_Transient )
-	unsigned long                                      bApplyControl : 1;                                		// 0x009C (0x0004) [0x0000000000002000] [0x00000008] ( CPF_Transient )
-	struct FRecoilDef                                  Recoil;                                           		// 0x00A0 (0x0070) [0x0000000000000001]              ( CPF_Edit )
-	struct FVector2D                                   Aim;                                              		// 0x0110 (0x0008) [0x0000000000000001]              ( CPF_Edit )
+	unsigned long                                      bBoneSpaceRecoil : 1;                                     // 0x009C(0x0004) (Edit)
+	unsigned long                                      bPlayRecoil : 1;                                          // 0x009C(0x0004) (Edit, Transient)
+	unsigned long                                      bOldPlayRecoil : 1;                                       // 0x009C(0x0004) (Transient)
+	unsigned long                                      bApplyControl : 1;                                        // 0x009C(0x0004) (Transient)
+	struct FRecoilDef                                  Recoil;                                                   // 0x00A0(0x0070) (Edit)
+	struct FVector2D                                   Aim;                                                      // 0x0110(0x0008) (Edit)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GameSkelCtrl_Recoil");
+		return ptr;
+	}
+
 };
 
-// 0x0028 (0x0080 - 0x0058)
+
+// Class GameFramework.GameStateObject
+// 0x0028 (0x0058 - 0x0080)
 class UGameStateObject : public UGameplayEventsHandler
 {
 public:
-	struct FArray_Mirror                               TeamStates;                                       		// 0x0058 (0x000C) [0x0000000000001002]              ( CPF_Const | CPF_Native )
-	struct FArray_Mirror                               PlayerStates;                                     		// 0x0064 (0x000C) [0x0000000000001002]              ( CPF_Const | CPF_Native )
-	unsigned char                                      SessionType;                                      		// 0x0070 (0x0001) [0x0000000000000000]
-	unsigned long                                      bIsMatchStarted : 1;                              		// 0x0074 (0x0004) [0x0000000000000000] [0x00000001]
-	unsigned long                                      bIsRoundStarted : 1;                              		// 0x0074 (0x0004) [0x0000000000000000] [0x00000002]
-	int                                                RoundNumber;                                      		// 0x0078 (0x0004) [0x0000000000000000]
-	int                                                MaxRoundNumber;                                   		// 0x007C (0x0004) [0x0000000000000000]
+	struct FArray_Mirror                               TeamStates;                                               // 0x0058(0x000C) (Const, Native)
+	struct FArray_Mirror                               PlayerStates;                                             // 0x0064(0x000C) (Const, Native)
+	unsigned char                                      SessionType;                                              // 0x0070(0x0001)
+	unsigned char                                      UnknownData00[0x3];                                       // 0x0071(0x0003) MISSED OFFSET
+	unsigned long                                      bIsMatchStarted : 1;                                      // 0x0074(0x0004)
+	unsigned long                                      bIsRoundStarted : 1;                                      // 0x0074(0x0004)
+	int                                                RoundNumber;                                              // 0x0078(0x0004)
+	int                                                MaxRoundNumber;                                           // 0x007C(0x0004)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GameStateObject");
+		return ptr;
+	}
+
+
 	void Reset();
-	void eventPreProcessStream();
+	void PreProcessStream();
 };
 
-// 0x01D8 (0x0230 - 0x0058)
+
+// Class GameFramework.GameStatsAggregator
+// 0x01D8 (0x0058 - 0x0230)
 class UGameStatsAggregator : public UGameplayEventsHandler
 {
 public:
-	class UGameStateObject*                            GameState;                                        		// 0x0058 (0x0004) [0x0000000000000000]
-	TArray< struct FAggregateEventMapping >            AggregatesList;                                   		// 0x005C (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	struct FMap_Mirror                                 AggregateEventsMapping;                           		// 0x0068 (0x003C) [0x0000000000003002]              ( CPF_Const | CPF_Native | CPF_Transient )
-	TArray< struct FGameplayEventMetaData >            AggregateEvents;                                  		// 0x00A4 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
-	TArray< int >                                      AggregatesFound;                                  		// 0x00B0 (0x000C) [0x0000000000400002]              ( CPF_Const | CPF_NeedCtorLink )
-	struct FGameEvents                                 AllGameEvents;                                    		// 0x00BC (0x003C) [0x0000000000000000]
-	TArray< struct FTeamEvents >                       AllTeamEvents;                                    		// 0x00F8 (0x000C) [0x0000000000400002]              ( CPF_Const | CPF_NeedCtorLink )
-	TArray< struct FPlayerEvents >                     AllPlayerEvents;                                  		// 0x0104 (0x000C) [0x0000000000400002]              ( CPF_Const | CPF_NeedCtorLink )
-	struct FWeaponEvents                               AllWeaponEvents;                                  		// 0x0110 (0x0048) [0x0000000000400002]              ( CPF_Const | CPF_NeedCtorLink )
-	struct FProjectileEvents                           AllProjectileEvents;                              		// 0x0158 (0x0048) [0x0000000000400002]              ( CPF_Const | CPF_NeedCtorLink )
-	struct FPawnEvents                                 AllPawnEvents;                                    		// 0x01A0 (0x0048) [0x0000000000400002]              ( CPF_Const | CPF_NeedCtorLink )
-	struct FDamageEvents                               AllDamageEvents;                                  		// 0x01E8 (0x0048) [0x0000000000400002]              ( CPF_Const | CPF_NeedCtorLink )
+	class UGameStateObject*                            GameState;                                                // 0x0058(0x0004)
+	TArray<struct FAggregateEventMapping>              AggregatesList;                                           // 0x005C(0x000C) (NeedCtorLink)
+	struct FMap_Mirror                                 AggregateEventsMapping;                                   // 0x0068(0x003C) (Const, Native, Transient)
+	TArray<struct FGameplayEventMetaData>              AggregateEvents;                                          // 0x00A4(0x000C) (NeedCtorLink)
+	TArray<int>                                        AggregatesFound;                                          // 0x00B0(0x000C) (Const, NeedCtorLink)
+	struct FGameEvents                                 AllGameEvents;                                            // 0x00BC(0x003C)
+	TArray<struct FTeamEvents>                         AllTeamEvents;                                            // 0x00F8(0x000C) (Const, NeedCtorLink)
+	TArray<struct FPlayerEvents>                       AllPlayerEvents;                                          // 0x0104(0x000C) (Const, NeedCtorLink)
+	struct FWeaponEvents                               AllWeaponEvents;                                          // 0x0110(0x0048) (Const, NeedCtorLink)
+	struct FProjectileEvents                           AllProjectileEvents;                                      // 0x0158(0x0048) (Const, NeedCtorLink)
+	struct FPawnEvents                                 AllPawnEvents;                                            // 0x01A0(0x0048) (Const, NeedCtorLink)
+	struct FDamageEvents                               AllDamageEvents;                                          // 0x01E8(0x0048) (Const, NeedCtorLink)
 
-public:
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GameStatsAggregator");
+		return ptr;
+	}
+
+
 	bool GetAggregateMappingIDs(int EventID, int* AggregateID, int* TargetAggregateID);
 	void Reset();
-	void eventPostProcessStream();
-	void eventPreProcessStream();
+	void PostProcessStream();
+	void PreProcessStream();
 };
 
-// 0x0010 (0x004C - 0x003C)
+
+// Class GameFramework.GameWaveForms
+// 0x0010 (0x003C - 0x004C)
 class UGameWaveForms : public UObject
 {
 public:
-	class UForceFeedbackWaveform*                      CameraShakeMediumShort;                           		// 0x003C (0x0004) [0x0000000000000000]
-	class UForceFeedbackWaveform*                      CameraShakeMediumLong;                            		// 0x0040 (0x0004) [0x0000000000000000]
-	class UForceFeedbackWaveform*                      CameraShakeBigShort;                              		// 0x0044 (0x0004) [0x0000000000000000]
-	class UForceFeedbackWaveform*                      CameraShakeBigLong;                               		// 0x0048 (0x0004) [0x0000000000000000]
+	class UForceFeedbackWaveform*                      CameraShakeMediumShort;                                   // 0x003C(0x0004)
+	class UForceFeedbackWaveform*                      CameraShakeMediumLong;                                    // 0x0040(0x0004)
+	class UForceFeedbackWaveform*                      CameraShakeBigShort;                                      // 0x0044(0x0004)
+	class UForceFeedbackWaveform*                      CameraShakeBigLong;                                       // 0x0048(0x0004)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("GameWaveForms");
+		return ptr;
+	}
+
 };
 
-// 0x0010 (0x0340 - 0x0330)
+
+// Class GameFramework.PlayerCollectorGame
+// 0x0010 (0x0330 - 0x0340)
 class APlayerCollectorGame : public AGameInfo
 {
 public:
-	int                                                NumberOfClientsToWaitFor;                         		// 0x0330 (0x0004) [0x0000000000000000]
-	struct FString                                     URLToLoad;                                        		// 0x0334 (0x000C) [0x0000000000400000]              ( CPF_NeedCtorLink )
+	int                                                NumberOfClientsToWaitFor;                                 // 0x0330(0x0004)
+	struct FString                                     URLToLoad;                                                // 0x0334(0x000C) (NeedCtorLink)
 
-public:
-	void eventGetSeamlessTravelActorList(unsigned long bToEntry, TArray< class AActor* >* ActorList);
-	class APlayerController* eventLogin(struct FString Portal, struct FString Options, struct FUniqueNetId UniqueId, struct FString* ErrorMessage);
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PlayerCollectorGame");
+		return ptr;
+	}
+
+
+	void GetSeamlessTravelActorList(bool bToEntry, TArray<class AActor*>* ActorList);
+	class APlayerController* Login(const struct FString& Portal, const struct FString& Options, const struct FUniqueNetId& UniqueId, struct FString* ErrorMessage);
 };
 
-// 0x0004 (0x0040 - 0x003C)
+
+// Class GameFramework.PMESTG_LeaveADecalBase
+// 0x0004 (0x003C - 0x0040)
 class UPMESTG_LeaveADecalBase : public UParticleModuleEventSendToGame
 {
 public:
-	class UClass*                                      PhysicalMaterialPropertyClass;                    		// 0x003C (0x0004) [0x0000000000000000]
+	class UClass*                                      PhysicalMaterialPropertyClass;                            // 0x003C(0x0004)
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("PMESTG_LeaveADecalBase");
+		return ptr;
+	}
+
 };
 
+
 #ifdef _MSC_VER
-#pragma pack ( pop )
+	#pragma pack(pop)
 #endif

@@ -1,369 +1,335 @@
-#include "stdafx.h"
-/*
-#############################################################################################
-# Borderlands 2 (1.7) SDK
-# Generated with TheFeckless UE3 SDK Generator v1.4_Beta-Rev.51
-# ========================================================================================= #
-# File: AkAudio_functions.h
-# ========================================================================================= #
-# Credits: uNrEaL, Tamimego, SystemFiles, R00T88, _silencer, the1domo, K@N@VEL
-# Thanks: HOOAH07, lowHertz
-# Forums: www.uc-forum.com, www.gamedeception.net
-#############################################################################################
-*/
+// Borderlands 2 (1.8.5) SDK
 
 #ifdef _MSC_VER
-#pragma pack ( push, 0x4 )
+	#pragma pack(push, 0x4)
 #endif
 
-/*
-# ========================================================================================= #
-# Global Static Class Pointers
-# ========================================================================================= #
-*/
+#include "stdafx.h"
 
-/*
-# ========================================================================================= #
-# Functions
-# ========================================================================================= #
-*/
+//---------------------------------------------------------------------------
+//Functions
+//---------------------------------------------------------------------------
 
 // Function AkAudio.IAkEnvironmentalEffectProvider.GetEnvironmentalEffectsForLocation
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// TArray< struct FEnvironmentalEffectInfo > ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// class UAkComponent*            GameObjComponent               ( CPF_Parm | CPF_EditInline )
-// struct FVector                 ListenerLocation               ( CPF_Parm )
-// struct FVector                 ObjectLocation                 ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// class UAkComponent*            GameObjComponent               (Parm, EditInline)
+// struct FVector                 ListenerLocation               (Parm)
+// struct FVector                 ObjectLocation                 (Parm)
+// TArray<struct FEnvironmentalEffectInfo> ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
-TArray< struct FEnvironmentalEffectInfo > UIAkEnvironmentalEffectProvider::GetEnvironmentalEffectsForLocation(class UAkComponent* GameObjComponent, struct FVector ListenerLocation, struct FVector ObjectLocation)
+TArray<struct FEnvironmentalEffectInfo> UIAkEnvironmentalEffectProvider::GetEnvironmentalEffectsForLocation(class UAkComponent* GameObjComponent, const struct FVector& ListenerLocation, const struct FVector& ObjectLocation)
 {
-	static UFunction* pFnGetEnvironmentalEffectsForLocation = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "AkAudio.IAkEnvironmentalEffectProvider.GetEnvironmentalEffectsForLocation");
 
-	if (!pFnGetEnvironmentalEffectsForLocation)
-		pFnGetEnvironmentalEffectsForLocation = (UFunction*)UObject::GObjObjects()->Data[37492];
+	UIAkEnvironmentalEffectProvider_GetEnvironmentalEffectsForLocation_Params params;
+	params.GameObjComponent = GameObjComponent;
+	params.ListenerLocation = ListenerLocation;
+	params.ObjectLocation = ObjectLocation;
 
-	UIAkEnvironmentalEffectProvider_execGetEnvironmentalEffectsForLocation_Parms GetEnvironmentalEffectsForLocation_Parms;
-	GetEnvironmentalEffectsForLocation_Parms.GameObjComponent = GameObjComponent;
-	memcpy(&GetEnvironmentalEffectsForLocation_Parms.ListenerLocation, &ListenerLocation, 0xC);
-	memcpy(&GetEnvironmentalEffectsForLocation_Parms.ObjectLocation, &ObjectLocation, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetEnvironmentalEffectsForLocation->FunctionFlags |= ~0x400;
+	this->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetEnvironmentalEffectsForLocation, &GetEnvironmentalEffectsForLocation_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetEnvironmentalEffectsForLocation->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetEnvironmentalEffectsForLocation_Parms.ReturnValue;
-};
 
 // Function AkAudio.ISpecialOcclusionAccumulator.RemoveOcclusionProvider
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// class AActor*                  Source                         ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// class AActor*                  Source                         (Parm)
 
 void UISpecialOcclusionAccumulator::RemoveOcclusionProvider(class AActor* Source)
 {
-	static UFunction* pFnRemoveOcclusionProvider = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "AkAudio.ISpecialOcclusionAccumulator.RemoveOcclusionProvider");
 
-	if (!pFnRemoveOcclusionProvider)
-		pFnRemoveOcclusionProvider = (UFunction*)UObject::GObjObjects()->Data[37508];
+	UISpecialOcclusionAccumulator_RemoveOcclusionProvider_Params params;
+	params.Source = Source;
 
-	UISpecialOcclusionAccumulator_execRemoveOcclusionProvider_Parms RemoveOcclusionProvider_Parms;
-	RemoveOcclusionProvider_Parms.Source = Source;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnRemoveOcclusionProvider->FunctionFlags |= ~0x400;
+	this->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnRemoveOcclusionProvider, &RemoveOcclusionProvider_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnRemoveOcclusionProvider->FunctionFlags |= 0x400;
-};
 
 // Function AkAudio.ISpecialOcclusionAccumulator.SetOcclusionForProvider
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// class AActor*                  Source                         ( CPF_Parm )
-// float                          Amount                         ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// class AActor*                  Source                         (Parm)
+// float                          Amount                         (Parm)
 
 void UISpecialOcclusionAccumulator::SetOcclusionForProvider(class AActor* Source, float Amount)
 {
-	static UFunction* pFnSetOcclusionForProvider = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "AkAudio.ISpecialOcclusionAccumulator.SetOcclusionForProvider");
 
-	if (!pFnSetOcclusionForProvider)
-		pFnSetOcclusionForProvider = (UFunction*)UObject::GObjObjects()->Data[37505];
+	UISpecialOcclusionAccumulator_SetOcclusionForProvider_Params params;
+	params.Source = Source;
+	params.Amount = Amount;
 
-	UISpecialOcclusionAccumulator_execSetOcclusionForProvider_Parms SetOcclusionForProvider_Parms;
-	SetOcclusionForProvider_Parms.Source = Source;
-	SetOcclusionForProvider_Parms.Amount = Amount;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetOcclusionForProvider->FunctionFlags |= ~0x400;
+	this->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetOcclusionForProvider, &SetOcclusionForProvider_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetOcclusionForProvider->FunctionFlags |= 0x400;
-};
 
 // Function AkAudio.WwiseSoundGroup.RemoveOcclusionProvider
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// class AActor*                  Source                         ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// class AActor*                  Source                         (Parm)
 
 void AWwiseSoundGroup::RemoveOcclusionProvider(class AActor* Source)
 {
-	static UFunction* pFnRemoveOcclusionProvider = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "AkAudio.WwiseSoundGroup.RemoveOcclusionProvider");
 
-	if (!pFnRemoveOcclusionProvider)
-		pFnRemoveOcclusionProvider = (UFunction*)UObject::GObjObjects()->Data[37537];
+	AWwiseSoundGroup_RemoveOcclusionProvider_Params params;
+	params.Source = Source;
 
-	AWwiseSoundGroup_execRemoveOcclusionProvider_Parms RemoveOcclusionProvider_Parms;
-	RemoveOcclusionProvider_Parms.Source = Source;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnRemoveOcclusionProvider->FunctionFlags |= ~0x400;
+	this->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnRemoveOcclusionProvider, &RemoveOcclusionProvider_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnRemoveOcclusionProvider->FunctionFlags |= 0x400;
-};
 
 // Function AkAudio.WwiseSoundGroup.SetOcclusionForProvider
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// class AActor*                  Source                         ( CPF_Parm )
-// float                          Amount                         ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// class AActor*                  Source                         (Parm)
+// float                          Amount                         (Parm)
 
 void AWwiseSoundGroup::SetOcclusionForProvider(class AActor* Source, float Amount)
 {
-	static UFunction* pFnSetOcclusionForProvider = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "AkAudio.WwiseSoundGroup.SetOcclusionForProvider");
 
-	if (!pFnSetOcclusionForProvider)
-		pFnSetOcclusionForProvider = (UFunction*)UObject::GObjObjects()->Data[37534];
+	AWwiseSoundGroup_SetOcclusionForProvider_Params params;
+	params.Source = Source;
+	params.Amount = Amount;
 
-	AWwiseSoundGroup_execSetOcclusionForProvider_Parms SetOcclusionForProvider_Parms;
-	SetOcclusionForProvider_Parms.Source = Source;
-	SetOcclusionForProvider_Parms.Amount = Amount;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetOcclusionForProvider->FunctionFlags |= ~0x400;
+	this->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetOcclusionForProvider, &SetOcclusionForProvider_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetOcclusionForProvider->FunctionFlags |= 0x400;
-};
 
 // Function AkAudio.WwiseSoundGroup.GetOcclusionAmount
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// float                          ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Native, Public)
+// Parameters:
+// float                          ReturnValue                    (Parm, OutParm, ReturnParm)
 
 float AWwiseSoundGroup::GetOcclusionAmount()
 {
-	static UFunction* pFnGetOcclusionAmount = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "AkAudio.WwiseSoundGroup.GetOcclusionAmount");
 
-	if (!pFnGetOcclusionAmount)
-		pFnGetOcclusionAmount = (UFunction*)UObject::GObjObjects()->Data[37532];
+	AWwiseSoundGroup_GetOcclusionAmount_Params params;
 
-	AWwiseSoundGroup_execGetOcclusionAmount_Parms GetOcclusionAmount_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetOcclusionAmount->FunctionFlags |= ~0x400;
+	this->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetOcclusionAmount, &GetOcclusionAmount_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetOcclusionAmount->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetOcclusionAmount_Parms.ReturnValue;
-};
 
 // Function AkAudio.WwiseSoundGroup.SetAkSwitchObject
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// class UAkSwitch*               Switch                         ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// class UAkSwitch*               Switch                         (Parm)
 
 void AWwiseSoundGroup::SetAkSwitchObject(class UAkSwitch* Switch)
 {
-	static UFunction* pFnSetAkSwitchObject = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "AkAudio.WwiseSoundGroup.SetAkSwitchObject");
 
-	if (!pFnSetAkSwitchObject)
-		pFnSetAkSwitchObject = (UFunction*)UObject::GObjObjects()->Data[37530];
+	AWwiseSoundGroup_SetAkSwitchObject_Params params;
+	params.Switch = Switch;
 
-	AWwiseSoundGroup_execSetAkSwitchObject_Parms SetAkSwitchObject_Parms;
-	SetAkSwitchObject_Parms.Switch = Switch;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetAkSwitchObject->FunctionFlags |= ~0x400;
+	this->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetAkSwitchObject, &SetAkSwitchObject_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetAkSwitchObject->FunctionFlags |= 0x400;
-};
 
 // Function AkAudio.WwiseSoundGroup.SetRTPCObjectValue
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// class UAkRtpc*                 InRtpc                         ( CPF_Parm )
-// float                          TargetValue                    ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// class UAkRtpc*                 InRtpc                         (Parm)
+// float                          TargetValue                    (Parm)
 
 void AWwiseSoundGroup::SetRTPCObjectValue(class UAkRtpc* InRtpc, float TargetValue)
 {
-	static UFunction* pFnSetRTPCObjectValue = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "AkAudio.WwiseSoundGroup.SetRTPCObjectValue");
 
-	if (!pFnSetRTPCObjectValue)
-		pFnSetRTPCObjectValue = (UFunction*)UObject::GObjObjects()->Data[37527];
+	AWwiseSoundGroup_SetRTPCObjectValue_Params params;
+	params.InRtpc = InRtpc;
+	params.TargetValue = TargetValue;
 
-	AWwiseSoundGroup_execSetRTPCObjectValue_Parms SetRTPCObjectValue_Parms;
-	SetRTPCObjectValue_Parms.InRtpc = InRtpc;
-	SetRTPCObjectValue_Parms.TargetValue = TargetValue;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetRTPCObjectValue->FunctionFlags |= ~0x400;
+	this->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetRTPCObjectValue, &SetRTPCObjectValue_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetRTPCObjectValue->FunctionFlags |= 0x400;
-};
 
 // Function AkAudio.WwiseSoundVolume.RemoveOcclusionProvider
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// class AActor*                  Source                         ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// class AActor*                  Source                         (Parm)
 
 void AWwiseSoundVolume::RemoveOcclusionProvider(class AActor* Source)
 {
-	static UFunction* pFnRemoveOcclusionProvider = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "AkAudio.WwiseSoundVolume.RemoveOcclusionProvider");
 
-	if (!pFnRemoveOcclusionProvider)
-		pFnRemoveOcclusionProvider = (UFunction*)UObject::GObjObjects()->Data[37617];
+	AWwiseSoundVolume_RemoveOcclusionProvider_Params params;
+	params.Source = Source;
 
-	AWwiseSoundVolume_execRemoveOcclusionProvider_Parms RemoveOcclusionProvider_Parms;
-	RemoveOcclusionProvider_Parms.Source = Source;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnRemoveOcclusionProvider->FunctionFlags |= ~0x400;
+	this->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnRemoveOcclusionProvider, &RemoveOcclusionProvider_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnRemoveOcclusionProvider->FunctionFlags |= 0x400;
-};
 
 // Function AkAudio.WwiseSoundVolume.SetOcclusionForProvider
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// class AActor*                  Source                         ( CPF_Parm )
-// float                          Amount                         ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// class AActor*                  Source                         (Parm)
+// float                          Amount                         (Parm)
 
 void AWwiseSoundVolume::SetOcclusionForProvider(class AActor* Source, float Amount)
 {
-	static UFunction* pFnSetOcclusionForProvider = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "AkAudio.WwiseSoundVolume.SetOcclusionForProvider");
 
-	if (!pFnSetOcclusionForProvider)
-		pFnSetOcclusionForProvider = (UFunction*)UObject::GObjObjects()->Data[37614];
+	AWwiseSoundVolume_SetOcclusionForProvider_Params params;
+	params.Source = Source;
+	params.Amount = Amount;
 
-	AWwiseSoundVolume_execSetOcclusionForProvider_Parms SetOcclusionForProvider_Parms;
-	SetOcclusionForProvider_Parms.Source = Source;
-	SetOcclusionForProvider_Parms.Amount = Amount;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnSetOcclusionForProvider->FunctionFlags |= ~0x400;
+	this->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnSetOcclusionForProvider, &SetOcclusionForProvider_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnSetOcclusionForProvider->FunctionFlags |= 0x400;
-};
 
 // Function AkAudio.WwiseSoundVolume.GetOcclusionAmount
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// float                          ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm )
+// (Native, Public)
+// Parameters:
+// float                          ReturnValue                    (Parm, OutParm, ReturnParm)
 
 float AWwiseSoundVolume::GetOcclusionAmount()
 {
-	static UFunction* pFnGetOcclusionAmount = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "AkAudio.WwiseSoundVolume.GetOcclusionAmount");
 
-	if (!pFnGetOcclusionAmount)
-		pFnGetOcclusionAmount = (UFunction*)UObject::GObjObjects()->Data[37612];
+	AWwiseSoundVolume_GetOcclusionAmount_Params params;
 
-	AWwiseSoundVolume_execGetOcclusionAmount_Parms GetOcclusionAmount_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetOcclusionAmount->FunctionFlags |= ~0x400;
+	this->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetOcclusionAmount, &GetOcclusionAmount_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetOcclusionAmount->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetOcclusionAmount_Parms.ReturnValue;
-};
 
 // Function AkAudio.WwiseSoundVolume.UpdateAkComponentPosition
-// [0x00420400] ( FUNC_Native )
-// Parameters infos:
-// TArray< struct FVector >       ListenerPositions              ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
-// TArray< struct FRotator >      ListenerOrientations           ( CPF_Const | CPF_Parm | CPF_OutParm | CPF_NeedCtorLink )
+// (Native, Public, HasOutparams)
+// Parameters:
+// TArray<struct FVector>         ListenerPositions              (Const, Parm, OutParm, NeedCtorLink)
+// TArray<struct FRotator>        ListenerOrientations           (Const, Parm, OutParm, NeedCtorLink)
 
-void AWwiseSoundVolume::UpdateAkComponentPosition(TArray< struct FVector >* ListenerPositions, TArray< struct FRotator >* ListenerOrientations)
+void AWwiseSoundVolume::UpdateAkComponentPosition(TArray<struct FVector>* ListenerPositions, TArray<struct FRotator>* ListenerOrientations)
 {
-	static UFunction* pFnUpdateAkComponentPosition = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "AkAudio.WwiseSoundVolume.UpdateAkComponentPosition");
 
-	if (!pFnUpdateAkComponentPosition)
-		pFnUpdateAkComponentPosition = (UFunction*)UObject::GObjObjects()->Data[37607];
+	AWwiseSoundVolume_UpdateAkComponentPosition_Params params;
 
-	AWwiseSoundVolume_execUpdateAkComponentPosition_Parms UpdateAkComponentPosition_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnUpdateAkComponentPosition->FunctionFlags |= ~0x400;
+	this->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnUpdateAkComponentPosition, &UpdateAkComponentPosition_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnUpdateAkComponentPosition->FunctionFlags |= 0x400;
+	if (ListenerPositions != nullptr)
+		*ListenerPositions = params.ListenerPositions;
+	if (ListenerOrientations != nullptr)
+		*ListenerOrientations = params.ListenerOrientations;
+}
 
-	if (ListenerPositions)
-		memcpy(ListenerPositions, &UpdateAkComponentPosition_Parms.ListenerPositions, 0xC);
-
-	if (ListenerOrientations)
-		memcpy(ListenerOrientations, &UpdateAkComponentPosition_Parms.ListenerOrientations, 0xC);
-};
 
 // Function AkAudio.WwiseSoundVolume.GetEnvironmentalEffectsForLocation
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
-// TArray< struct FEnvironmentalEffectInfo > ReturnValue                    ( CPF_Parm | CPF_OutParm | CPF_ReturnParm | CPF_NeedCtorLink )
-// class UAkComponent*            GameObjComponent               ( CPF_Parm | CPF_EditInline )
-// struct FVector                 ListenerLocation               ( CPF_Parm )
-// struct FVector                 ObjectLocation                 ( CPF_Parm )
+// (Native, Public)
+// Parameters:
+// class UAkComponent*            GameObjComponent               (Parm, EditInline)
+// struct FVector                 ListenerLocation               (Parm)
+// struct FVector                 ObjectLocation                 (Parm)
+// TArray<struct FEnvironmentalEffectInfo> ReturnValue                    (Parm, OutParm, ReturnParm, NeedCtorLink)
 
-TArray< struct FEnvironmentalEffectInfo > AWwiseSoundVolume::GetEnvironmentalEffectsForLocation(class UAkComponent* GameObjComponent, struct FVector ListenerLocation, struct FVector ObjectLocation)
+TArray<struct FEnvironmentalEffectInfo> AWwiseSoundVolume::GetEnvironmentalEffectsForLocation(class UAkComponent* GameObjComponent, const struct FVector& ListenerLocation, const struct FVector& ObjectLocation)
 {
-	static UFunction* pFnGetEnvironmentalEffectsForLocation = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "AkAudio.WwiseSoundVolume.GetEnvironmentalEffectsForLocation");
 
-	if (!pFnGetEnvironmentalEffectsForLocation)
-		pFnGetEnvironmentalEffectsForLocation = (UFunction*)UObject::GObjObjects()->Data[37601];
+	AWwiseSoundVolume_GetEnvironmentalEffectsForLocation_Params params;
+	params.GameObjComponent = GameObjComponent;
+	params.ListenerLocation = ListenerLocation;
+	params.ObjectLocation = ObjectLocation;
 
-	AWwiseSoundVolume_execGetEnvironmentalEffectsForLocation_Parms GetEnvironmentalEffectsForLocation_Parms;
-	GetEnvironmentalEffectsForLocation_Parms.GameObjComponent = GameObjComponent;
-	memcpy(&GetEnvironmentalEffectsForLocation_Parms.ListenerLocation, &ListenerLocation, 0xC);
-	memcpy(&GetEnvironmentalEffectsForLocation_Parms.ObjectLocation, &ObjectLocation, 0xC);
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnGetEnvironmentalEffectsForLocation->FunctionFlags |= ~0x400;
+	this->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnGetEnvironmentalEffectsForLocation, &GetEnvironmentalEffectsForLocation_Parms, NULL);
+	fn->FunctionFlags = flags;
 
-	pFnGetEnvironmentalEffectsForLocation->FunctionFlags |= 0x400;
+	return params.ReturnValue;
+}
 
-	return GetEnvironmentalEffectsForLocation_Parms.ReturnValue;
-};
 
 // Function AkAudio.WwiseSoundVolume.CalculateFacePlanes
-// [0x00020400] ( FUNC_Native )
-// Parameters infos:
+// (Native, Public)
 
 void AWwiseSoundVolume::CalculateFacePlanes()
 {
-	static UFunction* pFnCalculateFacePlanes = NULL;
+	static auto fn = (UFunction *)UObject::Find("Function", "AkAudio.WwiseSoundVolume.CalculateFacePlanes");
 
-	if (!pFnCalculateFacePlanes)
-		pFnCalculateFacePlanes = (UFunction*)UObject::GObjObjects()->Data[37600];
+	AWwiseSoundVolume_CalculateFacePlanes_Params params;
 
-	AWwiseSoundVolume_execCalculateFacePlanes_Parms CalculateFacePlanes_Parms;
+	auto flags = fn->FunctionFlags;
+	fn->FunctionFlags |= 0x400;
 
-	pFnCalculateFacePlanes->FunctionFlags |= ~0x400;
+	this->ProcessEvent(fn, &params);
 
-	this->ProcessEvent(pFnCalculateFacePlanes, &CalculateFacePlanes_Parms, NULL);
+	fn->FunctionFlags = flags;
+}
 
-	pFnCalculateFacePlanes->FunctionFlags |= 0x400;
-};
 
 #ifdef _MSC_VER
-#pragma pack ( pop )
+	#pragma pack(pop)
 #endif

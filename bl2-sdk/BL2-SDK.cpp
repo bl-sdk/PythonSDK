@@ -35,6 +35,7 @@ namespace BL2SDK
 	tStaticConstructObject pStaticConstructObject;
 	tLoadPackage pLoadPackage;
 	tByteOrderSerialize pByteOrderSerialize;
+	tGetDefaultObject pGetDefaultObject;
 	UObject *engine = nullptr;
 
 	CPythonInterface *Python;
@@ -43,8 +44,7 @@ namespace BL2SDK
 	int ChangelistNumber = -1;
 
 	std::map<std::string, UClass *> ClassMap = std::map<std::string, UClass *>{};
-
-	void __stdcall hkProcessEvent(UFunction* function, void* parms, void* result)
+	void __stdcall hkProcessEvent(UFunction* function, void* params, void* result)
 	{
 		// Get "this"
 		UObject* caller;
@@ -53,7 +53,7 @@ namespace BL2SDK
 		if (injectedCallNext)
 		{
 			injectedCallNext = false;
-			pProcessEvent(caller, function, parms, result);
+			pProcessEvent(caller, function, params, result);
 			return;
 		}
 
@@ -65,13 +65,13 @@ namespace BL2SDK
 			Logging::LogF("===== ProcessEvent called =====\npCaller Name = %s\npFunction Name = %s\n", callerName.c_str(), functionName.c_str());
 		}
 
-		if (!GameHooks::ProcessEngineHooks(caller, function, parms, result))
+		if (!GameHooks::ProcessEngineHooks(caller, function, params, result))
 		{
 			// The engine hook manager told us not to pass this function to the engine
 			return;
 		}
 
-		pProcessEvent(caller, function, parms, result);
+		pProcessEvent(caller, function, params, result);
 	}
 
 	void __stdcall hkCallFunction(FFrame& stack, void* const result, UFunction* function)
@@ -250,6 +250,10 @@ namespace BL2SDK
 		pFNameInit = reinterpret_cast<tFNameInit>(sigscan.Scan(Signatures::FNameInit));
 		Logging::LogF("[Internal] FindOrCreateFName = 0x%p\n", pFNameInit);
 
+		pGetDefaultObject = reinterpret_cast<tGetDefaultObject>(sigscan.Scan(Signatures::GetDefaultObject));
+		Logging::LogF("[Internal] GetDefaultObject = 0x%p\n", pGetDefaultObject);
+
+
 		// Detour UObject::ProcessEvent()
 		//SETUP_SIMPLE_DETOUR(detProcessEvent, pProcessEvent, hkProcessEvent);
 		CSimpleDetour detProcessEvent(&(PVOID&)pProcessEvent, hkProcessEvent);
@@ -286,46 +290,10 @@ namespace BL2SDK
 		}
 	}
 
-	bool devInputKeyHook(UObject* caller, UFunction* function, void* parms, void* result)
-	{
-		UWillowGameViewportClient_execInputKey_Parms* realParms = reinterpret_cast<UWillowGameViewportClient_execInputKey_Parms*>(parms);
-
-		// If F11 is pressed
-		if (realParms->EventType == 0)
-		{
-			const char* name = realParms->Key.GetName();
-			if (strcmp(name, "F11") == 0)
-			{
-				/*delete Python;
-				InitializePython();*/
-				Python->DoFile("init.py");
-				return false;
-			}
-			/*
-			else if (strcmp(name, "F10") == 0)
-			{
-				LogAllProcessEventCalls(!logAllProcessEvent);
-			}
-			else if (strcmp(name, "F9") == 0)
-			{
-				LogAllUnrealScriptCalls(!logAllUnrealScriptCalls);
-			}
-			*/
-		}
-
-		return true;
-	}
-
 	// This function is used to get the dimensions of the game window for Gwen's renderer
-	bool getCanvasPostRender(UObject* caller, UFunction* function, void* parms, void* result)
+	bool getCanvasPostRender(UObject* caller, UFunction* function, void* params, void* result)
 	{
 		InitializePython();
-
-		if (Settings::DeveloperModeEnabled())
-		{
-			GameHooks::EngineHookManager->Register("WillowGame.WillowGameViewportClient.InputKey", "DevInputKeyHook", &devInputKeyHook);
-			Logging::LogF("[Internal] Developer mode key hook enabled\n");
-		}
 
 		GameHooks::EngineHookManager->RemoveStaticHook(function, "GetCanvas");
 		return true;
@@ -333,9 +301,8 @@ namespace BL2SDK
 
 	void initializeGameVersions()
 	{
-		UObject* obj = BL2SDK::ClassMap["Object"];
-		EngineVersion = obj->GetEngineVersion();
-		ChangelistNumber = obj->GetBuildChangelistNumber();
+		EngineVersion = UObject::GetEngineVersion();
+		ChangelistNumber = UObject::GetBuildChangelistNumber();
 
 		Logging::LogF("[Internal] Engine Version = %d, Build Changelist = %d\n", EngineVersion, ChangelistNumber);
 	}
@@ -345,9 +312,9 @@ namespace BL2SDK
 	{
 		Logging::LogF("[GameReady] Thread: %i\n", GetCurrentThreadId());
 
-		for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
+		for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
 		{
-			UObject* Object = UObject::GObjObjects()->Data[i];
+			UObject* Object = UObject::GObjects()->Data[i];
 
 			if (!Object || !Object->Class)
 				continue;
@@ -358,7 +325,6 @@ namespace BL2SDK
 			if (!strcmp(Object->GetFullName().c_str(), "WillowGameEngine Transient.WillowGameEngine"))
 				engine = Object;
 		}
-
 #ifdef _DEBUG
 		Logging::InitializeExtern();
 #endif
@@ -372,7 +338,7 @@ namespace BL2SDK
 		gameConsole = (UConsole *)UObject::Find("WillowConsole", "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0");
 		if (gameConsole && (gameConsole->ConsoleKey == FName("None") || gameConsole->ConsoleKey == FName("Undefined")))
 			gameConsole->ConsoleKey = FName("Tilde");
-
+		
 		GameHooks::UnrealScriptHookManager->RemoveStaticHook(function, "StartupSDK");
 		GameHooks::EngineHookManager->Register("WillowGame.WillowGameViewportClient.PostRender", "GetCanvas", getCanvasPostRender);
 
@@ -390,7 +356,7 @@ namespace BL2SDK
 		LogAllUnrealScriptCalls(false);
 
 		GameHooks::UnrealScriptHookManager->Register("Engine.Console.Initialized", "StartupSDK", GameReady);
-		//GameHooks::UnrealScriptHookManager->Register("Function Engine.Interaction.NotifyGameSessionEnded", "ExitGame", &cleanup);
+		//GameHooks::UnrealScriptHookManager->Register("Engine.Interaction.NotifyGameSessionEnded", "ExitGame", &cleanup);
 	}
 
 	// This is called when the process is closing
@@ -408,9 +374,9 @@ namespace BL2SDK
 		SetIsLoadingUDKPackage(true);
 		UPackage* result = BL2SDK::pLoadPackage(0, wideFilename.c_str(), flags);
 		if (force) {
-			for (size_t i = 0; i < UObject::GObjObjects()->Count; ++i)
+			for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
 			{
-				UObject* Object = UObject::GObjObjects()->Data[i];
+				UObject* Object = UObject::GObjects()->Data[i];
 				if (Object->GetPackageObject() == result)
 					Object->ObjectFlags.A = Object->ObjectFlags.A | 0x4000;
 			}

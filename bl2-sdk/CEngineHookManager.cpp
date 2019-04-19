@@ -52,7 +52,7 @@ bool CEngineHookManager::RemoveFromTable(tHookMap& hookTable, const std::string&
 	}
 	else
 	{
-		//Logging::LogF("[CEngineHookManager] (%s) Hook \"%s\" removed for function \"%s\" successfully\n", this->DebugName.c_str(), hookName.c_str(), funcName.c_str());
+		Logging::LogF("[CEngineHookManager] (%s) Hook \"%s\" removed for function \"%s\" successfully\n", this->DebugName.c_str(), hookName.c_str(), funcName.c_str());
 		return true;
 	}
 }
@@ -66,7 +66,7 @@ void CEngineHookManager::Register(const std::string& funcName, const std::string
 	tFuncNameHookPair hookPair = std::make_pair(hookName, funcHook);
 
 	// Find func
-	UFunction* function = (UFunction *)UObject::UObject::Find("Function", funcNameChar);
+	UFunction* function = (UFunction *)UObject::Find("Function", funcNameChar);
 	if (function == nullptr)
 	{
 		// The function was not found, so we need to create a virtual hook for it
@@ -84,7 +84,7 @@ bool CEngineHookManager::Remove(const std::string& funcName, const std::string& 
 	char funcNameChar[255];
 	strcpy(funcNameChar, funcName.c_str());
 
-	UFunction* function = (UFunction *)UObject::UObject::Find("Function", funcNameChar);
+	UFunction* function = (UFunction *)UObject::Find("Function", funcNameChar);
 	if (function == nullptr)
 	{
 		// Function wasn't found, so virtual hook removal time!
@@ -119,7 +119,7 @@ bool CEngineHookManager::RemoveStaticHook(UFunction* function, const std::string
 	tiStaticHooks iHooks = StaticHooks.find(function);
 	if (iHooks == StaticHooks.end())
 	{
-		//Logging::LogF("[CEngineHookManager] (%s) ERROR: Failed to remove static hook \"%s\" for \"%s\"\n", this->DebugName.c_str(), hookName.c_str(), function->GetFullName().c_str());
+		Logging::LogF("[CEngineHookManager] (%s) ERROR: Failed to remove static hook \"%s\" for \"%s\"\n", this->DebugName.c_str(), hookName.c_str(), function->GetFullName().c_str());
 		return false;
 	}
 
@@ -141,7 +141,7 @@ void CEngineHookManager::ResolveVirtualHooks(UFunction* function)
 			int size = iVHooks->second.size();
 			StaticHooks.emplace(function, iVHooks->second);
 			VirtualHooks.erase(iVHooks);
-			//Logging::LogF("[CEngineHookManager] (%s) Function pointer found for \"%s\", added map with %i elements to static hooks map\n", this->DebugName.c_str(), funcName.c_str(), size);
+			Logging::LogF("[CEngineHookManager] (%s) Function pointer found for \"%s\", added map with %i elements to static hooks map\n", this->DebugName.c_str(), funcName.c_str(), size);
 		}
 	}
 }

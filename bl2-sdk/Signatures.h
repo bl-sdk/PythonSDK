@@ -98,6 +98,12 @@ namespace BL2SDK
 			"xxxxxxxx????xxxx",
 			16
 		};
+
+		MemorySignature GetDefaultObject = {
+			"\x55\x8B\xEC\x56\x8B\xF1\x83\xBE\x58\x01\x00\x00\x00\x57\x0F\x85",
+			"xxxxxxxxxxxxxxxx",
+			16
+		};
 	}
 }
 
