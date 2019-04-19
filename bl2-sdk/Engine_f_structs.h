@@ -24113,7 +24113,7 @@ struct USequenceOp_LinkedVariables_Params
 // Function Engine.SequenceOp.GetBoolVars
 struct USequenceOp_GetBoolVars_Params
 {
-	TArray<unsigned char>                              unsigned longVars : 1;                                                 // (Parm, OutParm, NeedCtorLink)
+	TArray<unsigned char>                              boolVars;                                                 // (Parm, OutParm, NeedCtorLink)
 	struct FString                                     inDesc;                                                   // (OptionalParm, Parm, NeedCtorLink)
 };
 

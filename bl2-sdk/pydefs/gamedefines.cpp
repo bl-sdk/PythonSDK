@@ -50,6 +50,7 @@ void Export_pystes_gamedefines(py::module &m)
 		.def("popInt", &FFrame::popInt, py::return_value_policy::reference)
 		.def("popFString", &FFrame::popFString, py::return_value_policy::reference)
 		.def("popULong", &FFrame::popULong, py::return_value_policy::reference)
+		.def("popBool", &FFrame::popBool, py::return_value_policy::reference)
 		.def("popTArrayObjects", &FFrame::popTArrayObjects, py::return_value_policy::reference)
 		.def("popRawTArray", &FFrame::popRawTArray, py::return_value_policy::reference)
 		;

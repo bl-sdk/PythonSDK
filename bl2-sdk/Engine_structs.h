@@ -4860,7 +4860,7 @@ struct FInstanceDataUnion
 	unsigned char                                      Replication;                                              // 0x0009(0x0001) (Edit)
 	unsigned char                                      MaxSwitchValue;                                           // 0x000A(0x0001)
 	unsigned char                                      BitsRequiredForMaxSwitchValue;                            // 0x000B(0x0001)
-	unsigned long                                      unsigned long : 1 : 1;                                                 // 0x000C(0x0004)
+	unsigned long                                      Bool : 1;                                                 // 0x000C(0x0004)
 	unsigned long                                      DeleteByOwner : 1;                                        // 0x000C(0x0004) (Edit)
 	int                                                Int;                                                      // 0x0010(0x0004)
 	float                                              Float;                                                    // 0x0014(0x0004) (Edit)
