@@ -17,7 +17,7 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
             self.Name = "Cross Class Skill Randomizer (New Seed)"
 
     def RecordSeed(self):
-        with open("rando_log.json", "r+") as f:
+        with open(".\\Plugins\\Python\\rando_log.json", "r+") as f:
             history = json.loads(f.read())
             if self.Seed in history:
                 return
@@ -25,11 +25,9 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
             f.seek(0)
             f.write(json.dumps(history))
             f.truncate()
-            NewRando = CrossSkillRandomizer(self.Seed)
-            NewRando._Enabled = True
-            self._Enabled = False
-            bl2sdk.Mods.append(NewRando)
-            self.Seed = None
+            self.Name = "Cross Class Skill Randomizer ({})".format(self.Seed)
+            NewRando = CrossSkillRandomizer()
+            bl2sdk.Mods.insert(0, NewRando)
 
     def Enable(self):
         def InjectSkills(caller: UObject, stack: FFrame, result: FStruct, function: UFunction):
@@ -90,6 +88,8 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
                     or Skill == 2
                     and Pity
                 ):
+                    if (Skill == 2 and Pity):
+                        Skill = self.RNG.randint(0, 2)
                     Pity = False
                     TierLayout[Skill] = 1
                     SkillDefNum = self.RNG.randint(0, len(self.ValidSkills) - 1)
@@ -181,7 +181,7 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
             "GD_Mercenary_Skills.Rampage.SteadyAsSheGoes",
             "GD_Mercenary_Skills.Rampage.YippeeKiYay",
         ],
-        "Psycho": [
+        "Lilac": [
             "GD_Lilac_Skills_Bloodlust.Skills.BloodTrance",
             "GD_Lilac_Skills_Bloodlust.Skills.BuzzAxeBombadier",
             "GD_Lilac_Skills_Bloodlust.Skills.TasteOfBlood",
@@ -190,7 +190,7 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
             "GD_Lilac_Skills_Mania.Skills.LightTheFuse",
             "GD_Lilac_Skills_Mania.Skills.ReleaseTheBeast",
         ],
-        "Mechro": [
+        "Mechromancer": [
             "GD_Tulip_Mechromancer_Skills.BestFriendsForever.20PercentCooler",
             "GD_Tulip_Mechromancer_Skills.BestFriendsForever.BuckUp",
             "GD_Tulip_Mechromancer_Skills.BestFriendsForever.ExplosiveClap",
