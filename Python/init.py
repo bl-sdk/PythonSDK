@@ -27,7 +27,10 @@ class BL2MOD():
 bl2sdk.BL2MOD = BL2MOD
 bl2sdk.Mods = []
 
-import randomizer
+try:
+	import randomizer
+except:
+	pass
 
 def LoadModList(caller: UObject, function: UFunction, params: FStruct, result: FStruct) -> bool:
 	caller.SetStoreHeader("Mods", 0, "By Abahbob", "Mod Manager")
@@ -93,3 +96,7 @@ def HookMainMenuPopulateForMods(caller: UObject, stack: FFrame, result: FStruct,
 
 RemoveEngineHook("WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods")
 RegisterScriptHook("WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods", HookMainMenuPopulateForMods)
+
+
+if os.getcwd().endswith('\\Plugins\\Python'):
+	os.chdir(os.getcwd().split('\\Plugins\\Python')[0])
