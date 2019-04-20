@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Pydefs">
+      <UniqueIdentifier>{0241dca9-df47-4dfc-a299-6736b999e9c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\detours">
+      <UniqueIdentifier>{4cb6112d-4243-443f-ac29-227e7f2aee8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BL2SDK">
+      <UniqueIdentifier>{7bf7198c-b867-4f19-8dd0-9d0c5b3dd967}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BL2SDK\AkAudio">
+      <UniqueIdentifier>{a35f7e4b-aca4-4f4d-9b7f-bdb677892eaf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BL2SDK\Core">
+      <UniqueIdentifier>{04c08247-d924-4643-9cc3-81d3f780584f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BL2SDK\Engine">
+      <UniqueIdentifier>{ac95e023-e0c6-4b75-8573-f4e1cdb4ced8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BL2SDK\GameFramework">
+      <UniqueIdentifier>{599bf996-230a-4347-ae66-2ef729cf1f05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BL2SDK\GearboxFramework">
+      <UniqueIdentifier>{88972c37-7945-41da-8427-57ad9810b5bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BL2SDK\GFxUI">
+      <UniqueIdentifier>{be638887-8210-49a5-9697-e4460458bb49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BL2SDK\IpDrv">
+      <UniqueIdentifier>{c6999954-5a8b-4f2e-abc2-b185d2a59a29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BL2SDK\OnlineSubsystemSteamworks">
+      <UniqueIdentifier>{50489432-eee6-43af-a43a-8562c5b48a9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BL2SDK\WillowGame">
+      <UniqueIdentifier>{b52ce72b-8efd-4d5e-ad65-fc954642f140}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BL2SDK\WinDrv">
+      <UniqueIdentifier>{8070e9a6-240c-4f4e-ac56-47f8a09de67a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\BL2SDK\XAudio2">
+      <UniqueIdentifier>{fec894fd-eca2-4d60-8abb-4fa9c7fd6a1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BL2SDK">
+      <UniqueIdentifier>{ca10c96a-ad51-49b0-9c52-82799b632232}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pybind11">
+      <UniqueIdentifier>{4743287b-5d52-4c1a-9a74-1fe28a8f731e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\pybind11\detail">
+      <UniqueIdentifier>{9050e9b0-3811-4e57-849b-003612c464a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\detours">
+      <UniqueIdentifier>{98795b3c-cdd8-4e5a-b1f7-e589dae14fe2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\include\external\detours\detours.h">
+      <Filter>Header Files\detours</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\external\detours\detver.h">
+      <Filter>Header Files\detours</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\AntiDebug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2-SDK.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\CEngineHookManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\CPythonInterface.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\CScriptHookManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\CSigScan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\CSimpleDetour.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\Exceptions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\Exports.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\gamedefines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\GameHooks.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\Logging.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\MemoryDebug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\MemorySignature.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\PackageFix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\pydef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\Settings.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\Signatures.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\TypeMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\Util.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\AkAudio\AkAudio_classes.h">
+      <Filter>Header Files\BL2SDK\AkAudio</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\AkAudio\AkAudio_f_structs.h">
+      <Filter>Header Files\BL2SDK\AkAudio</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\AkAudio\AkAudio_structs.h">
+      <Filter>Header Files\BL2SDK\AkAudio</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\Core\Core_f_structs.h">
+      <Filter>Header Files\BL2SDK\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\Core\Core_structs.h">
+      <Filter>Header Files\BL2SDK\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\Core\Core_classes.h">
+      <Filter>Header Files\BL2SDK\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\Engine\Engine_f_structs.h">
+      <Filter>Header Files\BL2SDK\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\Engine\Engine_structs.h">
+      <Filter>Header Files\BL2SDK\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\Engine\Engine_classes.h">
+      <Filter>Header Files\BL2SDK\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\GameFramework\GameFramework_f_structs.h">
+      <Filter>Header Files\BL2SDK\GameFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\GameFramework\GameFramework_structs.h">
+      <Filter>Header Files\BL2SDK\GameFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\GameFramework\GameFramework_classes.h">
+      <Filter>Header Files\BL2SDK\GameFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\GearboxFramework\GearboxFramework_structs.h">
+      <Filter>Header Files\BL2SDK\GearboxFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\GearboxFramework\GearboxFramework_classes.h">
+      <Filter>Header Files\BL2SDK\GearboxFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\GearboxFramework\GearboxFramework_f_structs.h">
+      <Filter>Header Files\BL2SDK\GearboxFramework</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\GFxUI\GFxUI_structs.h">
+      <Filter>Header Files\BL2SDK\GFxUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\GFxUI\GFxUI_classes.h">
+      <Filter>Header Files\BL2SDK\GFxUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\GFxUI\GFxUI_f_structs.h">
+      <Filter>Header Files\BL2SDK\GFxUI</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\IpDrv\IpDrv_structs.h">
+      <Filter>Header Files\BL2SDK\IpDrv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\IpDrv\IpDrv_classes.h">
+      <Filter>Header Files\BL2SDK\IpDrv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\IpDrv\IpDrv_f_structs.h">
+      <Filter>Header Files\BL2SDK\IpDrv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\OnlineSubsystemSteamworks\OnlineSubsystemSteamworks_structs.h">
+      <Filter>Header Files\BL2SDK\OnlineSubsystemSteamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\OnlineSubsystemSteamworks\OnlineSubsystemSteamworks_classes.h">
+      <Filter>Header Files\BL2SDK\OnlineSubsystemSteamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\OnlineSubsystemSteamworks\OnlineSubsystemSteamworks_f_structs.h">
+      <Filter>Header Files\BL2SDK\OnlineSubsystemSteamworks</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\WillowGame\WillowGame_f_structs.h">
+      <Filter>Header Files\BL2SDK\WillowGame</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\WillowGame\WillowGame_structs.h">
+      <Filter>Header Files\BL2SDK\WillowGame</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\WillowGame\WillowGame_classes.h">
+      <Filter>Header Files\BL2SDK\WillowGame</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\WinDrv\WinDrv_f_structs.h">
+      <Filter>Header Files\BL2SDK\WinDrv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\WinDrv\WinDrv_structs.h">
+      <Filter>Header Files\BL2SDK\WinDrv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\WinDrv\WinDrv_classes.h">
+      <Filter>Header Files\BL2SDK\WinDrv</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\XAudio2\XAudio2_f_structs.h">
+      <Filter>Header Files\BL2SDK\XAudio2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\XAudio2\XAudio2_structs.h">
+      <Filter>Header Files\BL2SDK\XAudio2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\BL2SDK\XAudio2\XAudio2_classes.h">
+      <Filter>Header Files\BL2SDK\XAudio2</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\pybind11\detail\class.h">
+      <Filter>Header Files\pybind11\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\pybind11\detail\common.h">
+      <Filter>Header Files\pybind11\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\pybind11\detail\descr.h">
+      <Filter>Header Files\pybind11\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\pybind11\detail\init.h">
+      <Filter>Header Files\pybind11\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\pybind11\detail\internals.h">
+      <Filter>Header Files\pybind11\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\pybind11\detail\typeid.h">
+      <Filter>Header Files\pybind11\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\pybind11\attr.h">
+      <Filter>Header Files\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\pybind11\cast.h">
+      <Filter>Header Files\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\pybind11\chrono.h">
+      <Filter>Header Files\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\pybind11\common.h">
+      <Filter>Header Files\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\pybind11\complex.h">
+      <Filter>Header Files\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\pybind11\eigen.h">
+      <Filter>Header Files\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\pybind11\embed.h">
+      <Filter>Header Files\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\pybind11\eval.h">
+      <Filter>Header Files\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\pybind11\functional.h">
+      <Filter>Header Files\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\pybind11\iostream.h">
+      <Filter>Header Files\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\pybind11\pybind11.h">
+      <Filter>Header Files\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\pybind11\numpy.h">
+      <Filter>Header Files\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\pybind11\operators.h">
+      <Filter>Header Files\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\pybind11\options.h">
+      <Filter>Header Files\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\pybind11\pytypes.h">
+      <Filter>Header Files\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\pybind11\stl.h">
+      <Filter>Header Files\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\pybind11\stl_bind.h">
+      <Filter>Header Files\pybind11</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\pybind11\buffer_info.h">
+      <Filter>Header Files\pybind11</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\pydefs\_TArray.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\AkAudio_classes.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\AkAudio_f_structs.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\AkAudio_structs.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\Core_classes.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\Core_f_structs.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\Core_structs.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\Engine_classes.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\Engine_f_structs.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\Engine_structs.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\gamedefines.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\GameFramework_classes.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\GameFramework_f_structs.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\GameFramework_structs.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\GearboxFramework_classes.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\GearboxFramework_f_structs.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\GearboxFramework_structs.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\GFxUI_classes.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\GFxUI_f_structs.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\GFxUI_structs.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\IpDrv_classes.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\IpDrv_f_structs.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\IpDrv_structs.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\OnlineSubsystemSteamworks_classes.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\OnlineSubsystemSteamworks_f_structs.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\OnlineSubsystemSteamworks_structs.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\WillowGame_classes.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\WillowGame_f_structs.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\WillowGame_structs.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\WinDrv_classes.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\WinDrv_f_structs.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\WinDrv_structs.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\XAudio2_classes.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\XAudio2_f_structs.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\XAudio2_structs.cpp">
+      <Filter>Source Files\Pydefs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AntiDebug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BL2-SDK.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CEngineHookManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CPythonInterface.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CScriptHookManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CSigScan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CSimpleDetour.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameHooks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Logging.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\PackageFix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Settings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Util.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BL2SDK\GearboxFramework_functions.cpp">
+      <Filter>Source Files\BL2SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BL2SDK\GFxUI_functions.cpp">
+      <Filter>Source Files\BL2SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BL2SDK\IpDrv_functions.cpp">
+      <Filter>Source Files\BL2SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BL2SDK\OnlineSubsystemSteamworks_functions.cpp">
+      <Filter>Source Files\BL2SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BL2SDK\WillowGame_functions.cpp">
+      <Filter>Source Files\BL2SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BL2SDK\WinDrv_functions.cpp">
+      <Filter>Source Files\BL2SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BL2SDK\XAudio2_functions.cpp">
+      <Filter>Source Files\BL2SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BL2SDK\AkAudio_functions.cpp">
+      <Filter>Source Files\BL2SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BL2SDK\Core_functions.cpp">
+      <Filter>Source Files\BL2SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BL2SDK\Engine_functions.cpp">
+      <Filter>Source Files\BL2SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BL2SDK\GameFramework_functions.cpp">
+      <Filter>Source Files\BL2SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="src\include\detours\detours.cpp">
+      <Filter>Source Files\detours</Filter>
+    </ClCompile>
+    <ClCompile Include="src\include\detours\disasm.cpp">
+      <Filter>Source Files\detours</Filter>
+    </ClCompile>
+    <ClCompile Include="src\include\detours\modules.cpp">
+      <Filter>Source Files\detours</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
