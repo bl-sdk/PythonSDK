@@ -65,17 +65,17 @@ import bl2sdk
 # 	NewSkill = bl2sdk.ConstructObject(Class="SkillDefinition", Name="MyBrandNewSkill", Template=SomeSkill, Outer=SomeSkill.Outer)
 # 	Branch.Tiers[0].Skills.Set(1, NewSkill)
 # 	return True
-pc = bl2sdk.GetEngine().GamePlayers[0].Actor
-InfectionStateDef = bl2sdk.ConstructObject(Class="AnemoneInfectionDefinition", Outer=AIS.Outer, SetFlags=3)
+# pc = bl2sdk.GetEngine().GamePlayers[0].Actor
+# InfectionStateDef = bl2sdk.ConstructObject(Class="AnemoneInfectionDefinition", Outer=AIS.Outer, SetFlags=3)
 # Fog = bl2sdk.FindObject("HeightFog", "SanctuaryAir_Light.TheWorld:PersistentLevel.HeightFog_0")
 # print(InfectionStateDef)
 # print(Fog)
-pc.Pawn.AnemoneInfectionState = pc.Spawn(bl2sdk.UObject.FindClass("AnemoneInfectionState", False), pc, "Test", pc.Location, pc.Rotation, None, True)
-AIS = pc.Pawn.AnemoneInfectionState
-AIS.WPC = pc
-AIS.InfectionRate = 1.0
-AIS.ToggleInfectionEffects(True, pc)
-AIS.bIsLocalPlayer = True
+# pc.Pawn.AnemoneInfectionState = pc.Spawn(bl2sdk.UObject.FindClass("AnemoneInfectionState", False), pc, "Test", pc.Location, pc.Rotation, None, True)
+# AIS = pc.Pawn.AnemoneInfectionState
+# AIS.WPC = pc
+# AIS.InfectionRate = 1.0
+# AIS.ToggleInfectionEffects(True, pc)
+# AIS.bIsLocalPlayer = True
 # pc.Pawn.SetAnemoneInfectionState(True,True,pc.Pawn,InfectionStateDef,Fog)
 
 # x = bl2sdk.ConstructObject(bl2sdk.UObject.StaticClass())
@@ -95,3 +95,24 @@ AIS.bIsLocalPlayer = True
 # tree.Branches.Set(2, definition)
 # for y in x:
 # 	print(y.GetFullName())
+def RefreshRandoList(caller: UObject, stack: FFrame, result: FStruct, function: UFunction) -> bool:
+	new_list = []
+	for x in range(5):
+		CD = FLoadCharacterData()
+		CD.CharClass = "TestClass"
+		CD.CharName = "TestName"
+		CD.SaveDataId = -1
+		CD.CharPlayedTime = "NULL"
+		CD.CharSaveDate = "NULL"
+		CD.PlayThrough = caller.ResolvePlaythrough(1)
+		CD.ActiveMission = caller.ResolveMission(0)
+		CD.PlotMission = caller.ResolveMission(0)
+		new_list.append(CD)
+	caller.DisplayedCharacterDataList = new_list
+	stack.SkipFunction()
+	return False
+
+pc = bl2sdk.GetEngine().GamePlayers[0].Actor
+# RemoveEngineHook("WillowGame.WillowGFxLobbyLoadCharacter.SavesUpdated", "RefreshRandoList")
+RegisterScriptHook("WillowGame.WillowGFxLobbyLoadCharacter.SavesUpdated", "RefreshRandoList", RefreshRandoList)
+# movie = pc.GFxUIManager.PlayMovie(pc.GetWillowGlobals().GetGlobalsDefinition().LoadCharacterMovieDefinition, None)

@@ -218,67 +218,52 @@ struct FMalloc
 struct FStruct
 {
 	void* base;
-private:
-	int bitfield = 0;
-	unsigned long currentField = NULL;
 public:
 	FStruct(void *base) {
 		this->base = base;
 	};
 	UObject *popObject() {
-		bitfield = 0;
 		class UObject *object = ((UObject **)(this->base))[0];
 		this->base = (void*)((UObject **)this->base + 1);
 		return object;
 	};
 	struct FName *popFName() {
-		bitfield = 0;
 		struct FName *object = (FName *)(this->base);
 		this->base = (void *)((FName *)this->base + 1);
 		return object;
 	};
 	struct FString *popFString() {
-		bitfield = 0;
 		struct FString *object = (FString *)(this->base);
 		this->base = (void *)((FString *)this->base + 1);
 		return object;
 	};
 	struct FVector *popFVector() {
-		bitfield = 0;
 		struct FVector *object = (FVector *)(this->base);
 		this->base = (void *)((int)this->base + 0xC);
 		return object;
 	};
 	float *popFloat() {
-		bitfield = 0;
 		float *object = (float *)(this->base);
 		this->base = (void *)((float *)this->base + 1);
 		return object;
 	};
 	unsigned char popByte() {
-		bitfield = 0;
 		unsigned char object = ((char *)(this->base))[0];
 		this->base = (void *)((char *)this->base + 1);
 		return object;
 	};
 	int popInt() {
-		bitfield = 0;
 		int object = ((int *)(this->base))[0];
 		this->base = (void *)((int *)this->base + 1);
 		return object;
 	};
 	unsigned long popULong() {
-		bitfield = 0;
 		unsigned long object = ((unsigned long *)(this->base))[0];
 		this->base = (void *)((unsigned long *)this->base + 1);
 		return object;
 	};
 	bool popBool() {
-		if (bitfield % 64 == 0) {
-			currentField = popULong();
-			bitfield = 0;
-		}
-		return (currentField & (1 << (63 - bitfield++))) == 1;
+		return (bool)popULong();
 	};
 };
 
@@ -292,71 +277,55 @@ struct FFrame : public FOutputDevice
 	struct FFrame* PreviousFrame;
 	struct FOutParmRec* Outparams;
 
-private:
-	int bitfield = 0;
-	unsigned long currentField = NULL;
 public:
 	void SkipFunction() {
 		while ((this->Code++)[0] != 0x16)
 			;
 	}
 	UObject *popObject() {
-		bitfield = 0;
 		UObject *obj = nullptr;
 		BL2SDK::pFrameStep(this, this->Object, &obj);
 		return obj;
 	};
 	struct FName *popFName() {
-		bitfield = 0;
 		FName *obj = new FName();
 		BL2SDK::pFrameStep(this, this->Object, obj);
 		return obj;
 	};
 	struct FString *popFString() {
-		bitfield = 0;
 		FString *obj = new FString();
 		BL2SDK::pFrameStep(this, this->Object, obj);
 		return obj;
 	};
 	float popFloat() {
-		bitfield = 0;
 		float obj = 0;
 		BL2SDK::pFrameStep(this, this->Object, &obj);
 		return obj;
 	};
 	unsigned char popByte() {
-		bitfield = 0;
 		unsigned char obj = 0;
 		BL2SDK::pFrameStep(this, this->Object, &obj);
 		return obj;
 	};
 	int popInt() {
-		bitfield = 0;
 		int obj = 0;
 		BL2SDK::pFrameStep(this, this->Object, &obj);
 		return obj;
 	};
 	unsigned long popULong() {
-		bitfield = 0;
 		unsigned long obj = 0;
 		BL2SDK::pFrameStep(this, this->Object, &obj);
 		return obj;
 	};
 	bool popBool() {
-		if (bitfield % 64 == 0) {
-			currentField = popULong();
-			bitfield = 0;
-		}
-		return (currentField & (1 << (63 - bitfield++))) == 1;
+		return (bool)popULong();
 	};
 	TArray<UObject *> *popTArrayObjects() {
-		bitfield = 0;
 		TArray<UObject *> *obj = new TArray<UObject *>();
 		BL2SDK::pFrameStep(this, this->Object, obj);
 		return obj;
 	};
 	py::tuple popRawTArray() {
-		bitfield = 0;
 		TArray<void *> *obj = &TArray<void *>();
 		BL2SDK::pFrameStep(this, this->Object, obj);
 		return py::make_tuple(FStruct((void *)obj->Data), obj->Count);

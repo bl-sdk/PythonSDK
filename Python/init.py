@@ -78,7 +78,8 @@ def ReplaceDLCWithMods(caller: UObject, stack: FFrame, result: FStruct, function
 	bNew = stack.popULong()
 	if Caption == "$WillowMenu.WillowScrollingListDataProviderFrontEnd.DLC":
 		Caption = "MODS"
-	caller.AddListItem(EventID, Caption, bDisabled, False)
+		bNew = True
+	caller.AddListItem(EventID, Caption, bDisabled, bNew)
 	stack.SkipFunction()
 	return False
 
