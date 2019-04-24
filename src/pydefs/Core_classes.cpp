@@ -425,25 +425,25 @@ void Export_pystes_Core_classes(py::module &m)
 		;
 	py::class_< UStructProperty, UProperty >(m, "UStructProperty")
 		;
-	py::class_< UStrProperty >(m, "UStrProperty")
+	py::class_< UStrProperty, UProperty >(m, "UStrProperty")
 		;
 	py::class_< UObjectProperty, UProperty >(m, "UObjectProperty")
 		;
-	py::class_< UComponentProperty >(m, "UComponentProperty")
+	py::class_< UComponentProperty, UProperty >(m, "UComponentProperty")
 		;
 	py::class_< UClassProperty, UObjectProperty >(m, "UClassProperty")
 		;
-	py::class_< UNameProperty >(m, "UNameProperty")
+	py::class_< UNameProperty, UProperty >(m, "UNameProperty")
 		;
 	py::class_< UMapProperty, UProperty >(m, "UMapProperty")
 		;
-	py::class_< UIntProperty >(m, "UIntProperty")
+	py::class_< UIntProperty, UProperty >(m, "UIntProperty")
 		;
 	py::class_< UIntAttributeProperty, UIntProperty >(m, "UIntAttributeProperty")
 		;
 	py::class_< UInterfaceProperty, UProperty >(m, "UInterfaceProperty")
 		;
-	py::class_< UFloatProperty >(m, "UFloatProperty")
+	py::class_< UFloatProperty, UProperty >(m, "UFloatProperty")
 		;
 	py::class_< UFloatAttributeProperty, UFloatProperty >(m, "UFloatAttributeProperty")
 		;
@@ -473,7 +473,7 @@ void Export_pystes_Core_classes(py::module &m)
 		.def_readwrite("AutoPriority", &UFactory::AutoPriority)
 		.def_readwrite("ValidGameNames", &UFactory::ValidGameNames, py::return_value_policy::reference)
 		;
-	py::class_< UTextBufferFactory >(m, "UTextBufferFactory")
+	py::class_< UTextBufferFactory, UFactory >(m, "UTextBufferFactory")
 		;
 	py::class_< UExporter, UObject >(m, "UExporter")
 		.def_readwrite("FormatExtension", &UExporter::FormatExtension, py::return_value_policy::reference)

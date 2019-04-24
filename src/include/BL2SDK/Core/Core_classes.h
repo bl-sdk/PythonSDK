@@ -1008,14 +1008,22 @@ public:
 class UProperty : public UField
 {
 public:
-	unsigned char                                      UnknownData00[0x40];                            		// 0x0040 (0x0040) MISSED OFFSET
+	int					ArrayDim;
+	UProperty*			DestructorLinkNext;
+	int					ElementSize;
+	UProperty*			NextRef;
+	UProperty*			PostConstructLinkNext;
+	unsigned int		PropertyFlags;
+	UProperty*			PropertyLinkNext;
+	unsigned short		RepIndex;
+	FName				RepNotifyFunc;
 };
 
 // 0x0004 (0x0084 - 0x0080)
 class UStructProperty : public UProperty
 {
 public:
-	unsigned char                                      UnknownData00[0x4];                             		// 0x0080 (0x0004) MISSED OFFSET
+	UScriptStruct* Struct;
 };
 
 // 0x0000 (0x0080 - 0x0080)
@@ -1025,7 +1033,7 @@ class UStrProperty : public UProperty {};
 class UObjectProperty : public UProperty
 {
 public:
-	unsigned char                                      UnknownData00[0x4];                             		// 0x0080 (0x0004) MISSED OFFSET
+	UObject* Object;
 };
 
 // 0x0000 (0x0084 - 0x0084)
@@ -1035,7 +1043,7 @@ class UComponentProperty : public UObjectProperty {};
 class UClassProperty : public UObjectProperty
 {
 public:
-	unsigned char                                      UnknownData00[0x4];                             		// 0x0084 (0x0004) MISSED OFFSET
+	UClass* MetaClass;
 };
 
 // 0x0000 (0x0080 - 0x0080)
