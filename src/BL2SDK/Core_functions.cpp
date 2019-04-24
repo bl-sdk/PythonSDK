@@ -172,6 +172,110 @@ bool UObject::IsA(UClass* pClass) const
 	return false;
 }
 
+class UScriptStruct* UObject::GetStructProperty(std::string& PropName) {
+	class UObject *obj = this->Class->FindChildByName(FName(PropName));
+	if (!obj || obj->Class->GetName() != "StructProperty")
+		return nullptr;
+	auto prop = reinterpret_cast<UProperty *>(obj);
+	return (UScriptStruct *)(((char *)this) + prop->Offset_Internal);
+}
+
+struct FString* UObject::GetStrProperty(std::string& PropName) {
+	class UObject *obj = this->Class->FindChildByName(FName(PropName));
+	if (!obj || obj->Class->GetName() != "StrProperty")
+		return nullptr;
+	auto prop = reinterpret_cast<UProperty *>(obj);
+	return (FString *)(((char *)this) + prop->Offset_Internal);
+}
+
+class UObject* UObject::GetObjectProperty(std::string& PropName) {
+	class UObject *obj = this->Class->FindChildByName(FName(PropName));
+	if (!obj || obj->Class->GetName() != "ObjectProperty")
+		return nullptr;
+	auto prop = reinterpret_cast<UProperty *>(obj);
+	return (UObject *)(((char *)this) + prop->Offset_Internal);
+}
+
+class UComponent* UObject::GetComponentProperty(std::string& PropName) {
+	class UObject *obj = this->Class->FindChildByName(FName(PropName));
+	if (!obj || obj->Class->GetName() != "ComponentProperty")
+		return nullptr;
+	auto prop = reinterpret_cast<UProperty *>(obj);
+	return (UComponent *)(((char *)this) + prop->Offset_Internal);
+}
+
+class UClass* UObject::GetClassProperty(std::string& PropName) {
+	class UObject *obj = this->Class->FindChildByName(FName(PropName));
+	if (!obj || obj->Class->GetName() != "ClassProperty")
+		return nullptr;
+	auto prop = reinterpret_cast<UProperty *>(obj);
+	return (UClass *)(((char *)this) + prop->Offset_Internal);
+}
+
+struct FName* UObject::GetNameProperty(std::string& PropName) {
+	class UObject *obj = this->Class->FindChildByName(FName(PropName));
+	if (!obj || obj->Class->GetName() != "NameProperty")
+		return nullptr;
+	auto prop = reinterpret_cast<UProperty *>(obj);
+	return (FName *)(((char *)this) + prop->Offset_Internal);
+}
+
+int UObject::GetIntProperty(std::string& PropName) {
+	class UObject *obj = this->Class->FindChildByName(FName(PropName));
+	if (!obj || obj->Class->GetName() != "IntProperty")
+		return 0;
+	auto prop = reinterpret_cast<UProperty *>(obj);
+	return ((int *)(((char *)this) + prop->Offset_Internal))[0];
+}
+
+struct FScriptInterface* UObject::GetInterfaceProperty(std::string& PropName) {
+	class UObject *obj = this->Class->FindChildByName(FName(PropName));
+	if (!obj || obj->Class->GetName() != "InterfaceProperty")
+		return nullptr;
+	auto prop = reinterpret_cast<UProperty *>(obj);
+	return (FScriptInterface *)(((char *)this) + prop->Offset_Internal);
+}
+
+float UObject::GetFloatProperty(std::string& PropName) {
+	class UObject *obj = this->Class->FindChildByName(FName(PropName));
+	if (!obj || obj->Class->GetName() != "FloatProperty")
+		return 0;
+	auto prop = reinterpret_cast<UProperty *>(obj);
+	return ((float *)(((char *)this) + prop->Offset_Internal))[0];
+}
+
+struct FScriptDelegate* UObject::GetDelegateProperty(std::string& PropName) {
+	class UObject *obj = this->Class->FindChildByName(FName(PropName));
+	if (!obj || obj->Class->GetName() != "DelegateProperty")
+		return nullptr;
+	auto prop = reinterpret_cast<UProperty *>(obj);
+	return (FScriptDelegate *)(((char *)this) + prop->Offset_Internal);
+}
+
+unsigned char UObject::GetByteProperty(std::string& PropName) {
+	class UObject *obj = this->Class->FindChildByName(FName(PropName));
+	if (!obj || obj->Class->GetName() != "ByteProperty")
+		return 0;
+	auto prop = reinterpret_cast<UProperty *>(obj);
+	return (((unsigned char *)this) + prop->Offset_Internal)[0];
+}
+
+bool UObject::GetBoolProperty(std::string& PropName) {
+	class UObject *obj = this->Class->FindChildByName(FName(PropName));
+	if (!obj || obj->Class->GetName() != "BoolProperty")
+		return false;
+	class UBoolProperty *boolProp = reinterpret_cast<UBoolProperty *>(obj);
+	return !!((((unsigned char *)this) + boolProp->Offset_Internal)[boolProp->ByteOffset] & boolProp->ByteMask);
+}
+
+//class FScriptMap* UObject::GetMapProperty(std::string& PropName) {
+//	class UProperty *prop = this->Class->FindPropeFindChildByNamertyByName(FName(PropName));
+//	if (!prop || prop->Class->GetName() != "MapProperty")
+//		return nullptr;
+//	return (FScriptMap *)(((char *)this) + prop->Offset_Internal);
+//}
+//struct FScriptArray UObject::GetArrayProperty(std::string& PropName);
+
 /*
 # ========================================================================================= #
 # Functions

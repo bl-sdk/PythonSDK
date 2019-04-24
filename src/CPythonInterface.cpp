@@ -93,35 +93,8 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	Export_pystes_gamedefines(m);
 	Export_pystes_Core_structs(m);
 	Export_pystes_Core_classes(m);
-#ifndef _DEBUG
-	Export_pystes_Engine_structs(m);
-#endif
-	Export_pystes_Engine_classes(m);
-	Export_pystes_GameFramework_structs(m);
-	Export_pystes_GameFramework_classes(m);
-#ifndef _DEBUG
-	Export_pystes_GFxUI_structs(m);
-	Export_pystes_GFxUI_classes(m);
-	Export_pystes_GearboxFramework_structs(m);
-#endif
-	Export_pystes_GearboxFramework_classes(m);
-#ifndef _DEBUG
-	Export_pystes_WillowGame_structs(m);
-#endif
-	Export_pystes_WillowGame_classes(m);
-#ifndef _DEBUG
-	Export_pystes_AkAudio_structs(m);
-	Export_pystes_AkAudio_classes(m);
-	Export_pystes_IpDrv_structs(m);
-	Export_pystes_IpDrv_classes(m);
-	Export_pystes_WinDrv_structs(m);
-	Export_pystes_WinDrv_classes(m);
-	Export_pystes_XAudio2_structs(m);
-	Export_pystes_XAudio2_classes(m);
-	Export_pystes_OnlineSubsystemSteamworks_structs(m);
-	Export_pystes_OnlineSubsystemSteamworks_classes(m);
-#endif
 	Export_pystes_TArray(m);
+
 	m.def("Log", [](std::string in) { Logging::Log(in.c_str(), in.length()); });
 	m.def("LoadPackage", &BL2SDK::LoadPackage, py::arg("filename"), py::arg("flags") = 0, py::arg("force") = false);
 	m.def("FindObject", [](char *ClassName, char *ObjectFullName) { return UObject::Find(ClassName, ObjectFullName); }, py::return_value_policy::reference);

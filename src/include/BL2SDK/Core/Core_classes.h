@@ -277,7 +277,23 @@ public:
 		static auto ptr = (UClass *)GObjects()->Data[2];
 		return ptr;
 	};
-	
+
+
+	class UScriptStruct* GetStructProperty(std::string& PropName);
+	struct FString* GetStrProperty(std::string& PropName);
+	class UObject* GetObjectProperty(std::string& PropName);
+	class UComponent* GetComponentProperty(std::string& PropName);
+	class UClass* GetClassProperty(std::string& PropName);
+	struct FName* GetNameProperty(std::string& PropName);
+	int GetIntProperty(std::string& PropName);
+	struct FScriptInterface* GetInterfaceProperty(std::string& PropName);
+	float GetFloatProperty(std::string& PropName);
+	struct FScriptDelegate* GetDelegateProperty(std::string& PropName);
+	unsigned char GetByteProperty(std::string& PropName);
+	bool GetBoolProperty(std::string& PropName);
+	//struct FScriptArray GetArrayProperty(std::string& PropName);
+	//struct FScriptMap GetMapProperty(std::string& PropName);
+
 	bool IsRelevantForDebugging(class UObject* Source);
 	class UObject* GetGlobalDebugTarget();
 	void SetGlobalDebugTarget(class UObject* Target);
@@ -971,15 +987,48 @@ public:
 	class UField*                                      Next;                                             		// NOT AUTO-GENERATED PROPERTY
 };
 
+// 0x0040 (0x0080 - 0x0040)
+class UProperty : public UField
+{
+public:
+	int					ArrayDim;
+	int					ElementSize;
+	unsigned int		PropertyFlags;
+	unsigned char		UnknownData00[0x14];
+	int					Offset_Internal;
+	UProperty*			PropertyLinkNext;
+	unsigned char		UnknownData01[0x18];
+};
+
 // 0x004C (0x008C - 0x0040)
 class UStruct : public UField
 {
 public:
 	unsigned char			UnknownData00[0x8];					// NOT AUTO-GENERATED PROPERTY
-	class UField*			SuperField;								// NOT AUTO-GENERATED PROPERTY
+	class UStruct*			SuperField;								// NOT AUTO-GENERATED PROPERTY
 	class UField*			Children;								// NOT AUTO-GENERATED PROPERTY
-	unsigned short			PropertySize;							// NOT AUTO-GENERATED PROPERTY
-	unsigned char			UnknownData01[0x3A];					// NOT AUTO-GENERATED PROPERTY
+	unsigned int			PropertySize;							// NOT AUTO-GENERATED PROPERTY
+	unsigned int			MinAlignment;
+	TArray <char>			Script;
+	UProperty*				PropertyLink;
+	UProperty*				RefLink;
+	UProperty*				DestructorLink;
+	UProperty*				PostConstructLink;
+	TArray<UObject*>		ScriptObjectReferences;
+
+	UObject* FindChildByName(FName InName) const
+	{
+		const UStruct *thisField = this;
+		while (thisField)
+		{
+			for (UField* Child = thisField->Children; Child != NULL; Child = Child->Next)
+				if (Child->Name == InName)
+					return Child;
+			thisField = thisField->SuperField;
+		}
+
+		return NULL;
+	}
 };
 
 // 0x001C (0x00A8 - 0x008C)
@@ -1002,21 +1051,6 @@ public:
 	unsigned long		ReturnValueOffset;							// NOT AUTO-GENERATED PROPERTY
 	unsigned char		UnknownData00[0x4];						// NOT AUTO-GENERATED PROPERTY
 	void*				Func;										// NOT AUTO-GENERATED PROPERTY
-};
-
-// 0x0040 (0x0080 - 0x0040)
-class UProperty : public UField
-{
-public:
-	int					ArrayDim;
-	UProperty*			DestructorLinkNext;
-	int					ElementSize;
-	UProperty*			NextRef;
-	UProperty*			PostConstructLinkNext;
-	unsigned int		PropertyFlags;
-	UProperty*			PropertyLinkNext;
-	unsigned short		RepIndex;
-	FName				RepNotifyFunc;
 };
 
 // 0x0004 (0x0084 - 0x0080)
@@ -1108,7 +1142,10 @@ public:
 class UBoolProperty : public UProperty
 {
 public:
-	unsigned char                                      UnknownData00[0x4];                             		// 0x0080 (0x0004) MISSED OFFSET
+	unsigned char FieldSize;
+	unsigned char ByteOffset;
+	unsigned char ByteMask;
+	unsigned char FieldMask;
 };
 
 // 0x0004 (0x0084 - 0x0080)

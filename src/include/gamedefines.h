@@ -160,7 +160,7 @@ struct FScriptDelegate
 	class UObject *Object;
 };
 
-class FScriptInterface
+struct FScriptInterface
 {
 	UObject* ObjectPointer;
 	void* InterfacePointer;

@@ -313,106 +313,13 @@
     <ClCompile Include="src\pydefs\_TArray.cpp">
       <Filter>Source Files\Pydefs</Filter>
     </ClCompile>
-    <ClCompile Include="src\pydefs\AkAudio_classes.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\AkAudio_f_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\AkAudio_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
     <ClCompile Include="src\pydefs\Core_classes.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\Core_f_structs.cpp">
       <Filter>Source Files\Pydefs</Filter>
     </ClCompile>
     <ClCompile Include="src\pydefs\Core_structs.cpp">
       <Filter>Source Files\Pydefs</Filter>
     </ClCompile>
-    <ClCompile Include="src\pydefs\Engine_classes.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\Engine_f_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\Engine_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
     <ClCompile Include="src\pydefs\gamedefines.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\GameFramework_classes.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\GameFramework_f_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\GameFramework_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\GearboxFramework_classes.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\GearboxFramework_f_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\GearboxFramework_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\GFxUI_classes.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\GFxUI_f_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\GFxUI_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\IpDrv_classes.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\IpDrv_f_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\IpDrv_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\OnlineSubsystemSteamworks_classes.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\OnlineSubsystemSteamworks_f_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\OnlineSubsystemSteamworks_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\WillowGame_classes.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\WillowGame_f_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\WillowGame_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\WinDrv_classes.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\WinDrv_f_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\WinDrv_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\XAudio2_classes.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\XAudio2_f_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\XAudio2_structs.cpp">
       <Filter>Source Files\Pydefs</Filter>
     </ClCompile>
     <ClCompile Include="src\AntiDebug.cpp">

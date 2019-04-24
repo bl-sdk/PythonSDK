@@ -251,7 +251,9 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"ApexGenericAsset", &typeid(UApexGenericAsset)},
 	{"ApexStaticComponent", &typeid(UApexStaticComponent)},
 	{"ApexStaticDestructibleComponent", &typeid(UApexStaticDestructibleComponent)},
+#endif
 	{"ArrayProperty", &typeid(UArrayProperty)},
+#ifndef _DEBUG
 	{"ArrowComponent", &typeid(UArrowComponent)},
 	{"ArtifactDefinition", &typeid(UArtifactDefinition)},
 	{"ArtifactPartDefinition", &typeid(UArtifactPartDefinition)},
@@ -641,7 +643,9 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"BodyWeaponHoldDefinition", &typeid(UBodyWeaponHoldDefinition)},
 	{"BookMark", &typeid(UBookMark)},
 	{"BookMark2D", &typeid(UBookMark2D)},
+#endif
 	{"BoolProperty", &typeid(UBoolProperty)},
+#ifndef _DEBUG
 	{"BoundaryTurretRenderingComponent", &typeid(UBoundaryTurretRenderingComponent)},
 	{"BroadcastHandler", &typeid(ABroadcastHandler)},
 	{"Brush", &typeid(ABrush)},
@@ -651,7 +655,9 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"BuzzaxeActionSkill", &typeid(ABuzzaxeActionSkill)},
 	{"BuzzaxeWeaponTypeDefinition", &typeid(UBuzzaxeWeaponTypeDefinition)},
 	{"ByteAttributeProperty", &typeid(UByteAttributeProperty)},
+#endif
 	{"ByteProperty", &typeid(UByteProperty)},
+#ifndef _DEBUG
 	{"Camera", &typeid(ACamera)},
 	{"CameraActor", &typeid(ACameraActor)},
 	{"CameraAnim", &typeid(UCameraAnim)},
@@ -696,7 +702,9 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"ClassModBalanceDefinition", &typeid(UClassModBalanceDefinition)},
 	{"ClassModDefinition", &typeid(UClassModDefinition)},
 	{"ClassModPartDefinition", &typeid(UClassModPartDefinition)},
+#endif
 	{"ClassProperty", &typeid(UClassProperty)},
+#ifndef _DEBUG
 	{"Client", &typeid(UClient)},
 	{"ClientBeaconAddressResolver", &typeid(UClientBeaconAddressResolver)},
 	{"ClipPadEntry", &typeid(UClipPadEntry)},
@@ -710,7 +718,9 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"Commandlet", &typeid(UCommandlet)},
 	{"Component", &typeid(UComponent)},
 	{"ComponentLifetimeManagerComponent", &typeid(UComponentLifetimeManagerComponent)},
+#endif
 	{"ComponentProperty", &typeid(UComponentProperty)},
+#ifndef _DEBUG
 	{"CompoundExpressionEvaluator", &typeid(UCompoundExpressionEvaluator)},
 	{"ConditionalAttributeValueResolver", &typeid(UConditionalAttributeValueResolver)},
 	{"ConfirmCharacterLobbyGFxMovie", &typeid(UConfirmCharacterLobbyGFxMovie)},
@@ -802,7 +812,9 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"DeferredDataProviderGFxObject", &typeid(UDeferredDataProviderGFxObject)},
 	{"DefinitionGlobalsDefinition", &typeid(UDefinitionGlobalsDefinition)},
 	{"DefinitionUITestCaseDefinition", &typeid(UDefinitionUITestCaseDefinition)},
+#endif
 	{"DelegateProperty", &typeid(UDelegateProperty)},
+#ifndef _DEBUG
 	{"DemoPlayPendingLevel", &typeid(UDemoPlayPendingLevel)},
 	{"DemoRecConnection", &typeid(UDemoRecConnection)},
 	{"DemoRecDriver", &typeid(UDemoRecDriver)},
@@ -969,8 +981,10 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"FlagExpressionEvaluator", &typeid(UFlagExpressionEvaluator)},
 	{"FlagValueResolver", &typeid(UFlagValueResolver)},
 	{"FlashMovie", &typeid(UFlashMovie)},
+#endif
 	{"FloatAttributeProperty", &typeid(UFloatAttributeProperty)},
 	{"FloatProperty", &typeid(UFloatProperty)},
+#ifndef _DEBUG
 	{"FloorToCeilingReachSpec", &typeid(UFloorToCeilingReachSpec)},
 	{"FluidInfluenceActor", &typeid(AFluidInfluenceActor)},
 	{"FluidInfluenceComponent", &typeid(UFluidInfluenceComponent)},
@@ -1312,7 +1326,9 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"InstancedDesignerAttribute", &typeid(UInstancedDesignerAttribute)},
 	{"InstancedFoliageActor", &typeid(AInstancedFoliageActor)},
 	{"InstancedStaticMeshComponent", &typeid(UInstancedStaticMeshComponent)},
+#endif
 	{"IntAttributeProperty", &typeid(UIntAttributeProperty)},
+#ifndef _DEBUG
 	{"Interaction", &typeid(UInteraction)},
 	{"InteractionIconDefinition", &typeid(UInteractionIconDefinition)},
 	{"InteractionProxy", &typeid(AInteractionProxy)},
@@ -1328,7 +1344,9 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"Interface_NavMeshPathSwitch", &typeid(UInterface_NavMeshPathSwitch)},
 	{"Interface_Speaker", &typeid(UInterface_Speaker)},
 	{"InterfaceGearboxCamera", &typeid(UInterfaceGearboxCamera)},
+#endif
 	{"InterfaceProperty", &typeid(UInterfaceProperty)},
+#ifndef _DEBUG
 	{"InternetLink", &typeid(AInternetLink)},
 	{"InterpActor", &typeid(AInterpActor)},
 	{"InterpActor_FCheckpointRecord", &typeid(AInterpActor_FCheckpointRecord)},
@@ -1411,7 +1429,9 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"InterpTrackVectorMaterialParam", &typeid(UInterpTrackVectorMaterialParam)},
 	{"InterpTrackVectorProp", &typeid(UInterpTrackVectorProp)},
 	{"InterpTrackVisibility", &typeid(UInterpTrackVisibility)},
+#endif
 	{"IntProperty", &typeid(UIntProperty)},
+#ifndef _DEBUG
 	{"Inventory", &typeid(AInventory)},
 	{"InventoryAttributeContextResolver", &typeid(UInventoryAttributeContextResolver)},
 	{"InventoryAttributeDefinition", &typeid(UInventoryAttributeDefinition)},
@@ -1583,7 +1603,9 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"ManufacturerAttributeValueResolver", &typeid(UManufacturerAttributeValueResolver)},
 	{"ManufacturerDefinition", &typeid(UManufacturerDefinition)},
 	{"MapInfo", &typeid(UMapInfo)},
+#endif
 	{"MapProperty", &typeid(UMapProperty)},
+#ifndef _DEBUG
 	{"MarketingUnlockDefinition", &typeid(UMarketingUnlockDefinition)},
 	{"MarketingUnlockInventoryDefinition", &typeid(UMarketingUnlockInventoryDefinition)},
 	{"MarketingUnlockLicenseItem", &typeid(UMarketingUnlockLicenseItem)},
@@ -1805,7 +1827,9 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"MusicTrackDataStructures", &typeid(UMusicTrackDataStructures)},
 	{"Mutator", &typeid(AMutator)},
 	{"NameListDefinition", &typeid(UNameListDefinition)},
+#endif
 	{"NameProperty", &typeid(UNameProperty)},
+#ifndef _DEBUG
 	{"NavigationHandle", &typeid(UNavigationHandle)},
 	{"NavigationMeshBase", &typeid(UNavigationMeshBase)},
 	{"NavigationPoint", &typeid(ANavigationPoint)},
@@ -2256,7 +2280,9 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"ProjectileBehavior_TagPayloadType", &typeid(UProjectileBehavior_TagPayloadType)},
 	{"ProjectileBehaviorBase", &typeid(UProjectileBehaviorBase)},
 	{"ProjectileDefinition", &typeid(UProjectileDefinition)},
+#endif
 	{"Property", &typeid(UProperty)},
+#ifndef _DEBUG
 	{"ProscribedReachSpec", &typeid(UProscribedReachSpec)},
 	{"ProximityActor", &typeid(AProximityActor)},
 	{"PS3InvitesPopupGFxObject", &typeid(UPS3InvitesPopupGFxObject)},
@@ -2777,9 +2803,11 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"StatusMenuInventoryPanelGFxObject", &typeid(UStatusMenuInventoryPanelGFxObject)},
 	{"StatusMenuMapGFxObject", &typeid(UStatusMenuMapGFxObject)},
 	{"StringsTag", &typeid(UStringsTag)},
+#endif
 	{"StrProperty", &typeid(UStrProperty)},
 	{"Struct", &typeid(UStruct)},
 	{"StructProperty", &typeid(UStructProperty)},
+#ifndef _DEBUG
 	{"Subsystem", &typeid(USubsystem)},
 	{"Surface", &typeid(USurface)},
 	{"SVehicle", &typeid(ASVehicle)},
