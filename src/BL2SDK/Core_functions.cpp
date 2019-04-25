@@ -172,6 +172,40 @@ bool UObject::IsA(UClass* pClass) const
 	return false;
 }
 
+pybind11::object UObject::GetProperty(std::string& PropName) {
+	class UObject *obj = this->Class->FindChildByName(FName(PropName));
+	if (!obj)
+		return pybind11::none();
+	if (!strcmp(obj->Class->GetName().c_str(), "StructProperty"))
+		return pybind11::cast(GetStructProperty(PropName));
+	else if (!strcmp(obj->Class->GetName().c_str(), "StrProperty"))
+		return pybind11::cast(GetStrProperty(PropName));
+	else if (!strcmp(obj->Class->GetName().c_str(), "ObjectProperty"))
+		return pybind11::cast(GetObjectProperty(PropName));
+	else if (!strcmp(obj->Class->GetName().c_str(), "ComponentProperty"))
+		return pybind11::cast(GetComponentProperty(PropName));
+	else if (!strcmp(obj->Class->GetName().c_str(), "ClassProperty"))
+		return pybind11::cast(GetClassProperty(PropName));
+	else if (!strcmp(obj->Class->GetName().c_str(), "NameProperty"))
+		return pybind11::cast(GetNameProperty(PropName));
+	else if (!strcmp(obj->Class->GetName().c_str(), "IntProperty"))
+		return pybind11::cast(GetIntProperty(PropName));
+	else if (!strcmp(obj->Class->GetName().c_str(), "InterfaceProperty"))
+		return pybind11::cast(GetInterfaceProperty(PropName));
+	else if (!strcmp(obj->Class->GetName().c_str(), "FloatProperty"))
+		return pybind11::cast(GetFloatProperty(PropName));
+	else if (!strcmp(obj->Class->GetName().c_str(), "DelegateProperty"))
+		return pybind11::cast(GetDelegateProperty(PropName));
+	else if (!strcmp(obj->Class->GetName().c_str(), "ByteProperty"))
+		return pybind11::cast(GetByteProperty(PropName));
+	else if (!strcmp(obj->Class->GetName().c_str(), "BoolProperty"))
+		return pybind11::cast(GetBoolProperty(PropName));
+	else if (!strcmp(obj->Class->GetName().c_str(), "Function"))
+		return pybind11::cast(GetFunction(PropName));
+	Logging::LogF("Found unexpected type for %s\n", obj->GetFullName().c_str());
+	return pybind11::none();
+}
+
 class UScriptStruct* UObject::GetStructProperty(std::string& PropName) {
 	class UObject *obj = this->Class->FindChildByName(FName(PropName));
 	if (!obj || obj->Class->GetName() != "StructProperty")
@@ -268,6 +302,11 @@ bool UObject::GetBoolProperty(std::string& PropName) {
 	return !!((((unsigned char *)this) + boolProp->Offset_Internal)[boolProp->ByteOffset] & boolProp->ByteMask);
 }
 
+struct FFunction UObject::GetFunction(std::string& PropName) {
+	class UObject *obj = this->Class->FindChildByName(FName(PropName));
+	auto function = reinterpret_cast<UFunction *>(obj);
+	return FFunction{ this, function };
+}
 //class FScriptMap* UObject::GetMapProperty(std::string& PropName) {
 //	class UProperty *prop = this->Class->FindPropeFindChildByNamertyByName(FName(PropName));
 //	if (!prop || prop->Class->GetName() != "MapProperty")

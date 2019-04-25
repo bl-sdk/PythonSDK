@@ -356,26 +356,26 @@ namespace pybind11 {
 }
 
 
-namespace pybind11 {
-	namespace detail {
-		template <> struct type_caster<struct FName> {
-		public:
-			PYBIND11_TYPE_CASTER(FName, _("FName"));
-			bool load(handle src, bool) {
-				if (!isinstance<sequence>(src))
-					return false;
-				PyObject *source = src.ptr();
-				char *tmp = PyUnicode_AsUTF8AndSize(source, nullptr);
-				if (!tmp)
-					return false;
-				value = FName(tmp);
-				return true;
-			}
-			static handle cast(FName src, return_value_policy /* policy */, handle /* parent */) {
-				return PyUnicode_FromString(src.GetName());
-			}
-		};
-	}
-}
+//namespace pybind11 {
+//	namespace detail {
+//		template <> struct type_caster<struct FName> {
+//		public:
+//			PYBIND11_TYPE_CASTER(FName, _("FName"));
+//			bool load(handle src, bool) {
+//				if (!isinstance<sequence>(src))
+//					return false;
+//				PyObject *source = src.ptr();
+//				char *tmp = PyUnicode_AsUTF8AndSize(source, nullptr);
+//				if (!tmp)
+//					return false;
+//				value = FName(tmp);
+//				return true;
+//			}
+//			static handle cast(FName src, return_value_policy /* policy */, handle /* parent */) {
+//				return PyUnicode_FromString(src.GetName());
+//			}
+//		};
+//	}
+//}
 
 #include "pydef.h"

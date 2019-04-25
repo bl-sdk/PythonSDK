@@ -278,7 +278,7 @@ public:
 		return ptr;
 	};
 
-
+	py::object GetProperty(std::string& PropName);
 	class UScriptStruct* GetStructProperty(std::string& PropName);
 	struct FString* GetStrProperty(std::string& PropName);
 	class UObject* GetObjectProperty(std::string& PropName);
@@ -291,6 +291,7 @@ public:
 	struct FScriptDelegate* GetDelegateProperty(std::string& PropName);
 	unsigned char GetByteProperty(std::string& PropName);
 	bool GetBoolProperty(std::string& PropName);
+	struct FFunction GetFunction(std::string& PropName);
 	//struct FScriptArray GetArrayProperty(std::string& PropName);
 	//struct FScriptMap GetMapProperty(std::string& PropName);
 
@@ -1004,17 +1005,11 @@ public:
 class UStruct : public UField
 {
 public:
-	unsigned char			UnknownData00[0x8];					// NOT AUTO-GENERATED PROPERTY
-	class UStruct*			SuperField;								// NOT AUTO-GENERATED PROPERTY
-	class UField*			Children;								// NOT AUTO-GENERATED PROPERTY
-	unsigned int			PropertySize;							// NOT AUTO-GENERATED PROPERTY
-	unsigned int			MinAlignment;
-	TArray <char>			Script;
-	UProperty*				PropertyLink;
-	UProperty*				RefLink;
-	UProperty*				DestructorLink;
-	UProperty*				PostConstructLink;
-	TArray<UObject*>		ScriptObjectReferences;
+	unsigned char			UnknownData00[0x8];
+	class UStruct*			SuperField;
+	class UField*			Children;
+	unsigned short			PropertySize;
+	char					UnknownData01[0x3A];
 
 	UObject* FindChildByName(FName InName) const
 	{
@@ -1038,19 +1033,91 @@ public:
 	unsigned char                                      UnknownData00[0x1C];                            		// 0x008C (0x001C) MISSED OFFSET
 };
 
-// 0x0024 (0x00B0 - 0x008C)
 class UFunction : public UStruct
 {
 public:
-	unsigned long		FunctionFlags;								// NOT AUTO-GENERATED PROPERTY
-	unsigned short		iNative;									// NOT AUTO-GENERATED PROPERTY
-	unsigned short		RepOffset;									// NOT AUTO-GENERATED PROPERTY
-	struct FName		FriendlyName;								// NOT AUTO-GENERATED PROPERTY
-	unsigned short		Numparams;									// NOT AUTO-GENERATED PROPERTY
-	unsigned short		paramsSize;									// NOT AUTO-GENERATED PROPERTY
-	unsigned long		ReturnValueOffset;							// NOT AUTO-GENERATED PROPERTY
-	unsigned char		UnknownData00[0x4];						// NOT AUTO-GENERATED PROPERTY
-	void*				Func;										// NOT AUTO-GENERATED PROPERTY
+	unsigned long		FunctionFlags;
+	unsigned short		iNative;
+	unsigned short		RepOffset;
+	struct FName		FriendlyName;
+	unsigned char		OperPrecedence;
+	unsigned char		NumParams;
+	unsigned short		ParamsSize;
+	unsigned long		ReturnValueOffset;
+	void*				Func;
+};
+
+struct FFunction
+{
+	UObject *obj;
+	UFunction *func;
+
+private:
+	bool VerifyArgType(py::object pyObj, UProperty *prop) {
+		if (!strcmp(prop->Class->GetName().c_str(), "StructProperty"))
+			return py::isinstance<FStruct>(pyObj);
+		else if (!strcmp(prop->Class->GetName().c_str(), "StrProperty"))
+			return py::isinstance<py::str>(pyObj);
+		else if (!strcmp(prop->Class->GetName().c_str(), "ObjectProperty"))
+			return py::isinstance<UObject>(pyObj);
+		else if (!strcmp(prop->Class->GetName().c_str(), "ComponentProperty"))
+			return py::isinstance<UComponent>(pyObj);
+		else if (!strcmp(prop->Class->GetName().c_str(), "ClassProperty"))
+			return py::isinstance<UClass>(pyObj);
+		else if (!strcmp(prop->Class->GetName().c_str(), "NameProperty"))
+			return py::isinstance<py::str>(pyObj);
+		else if (!strcmp(prop->Class->GetName().c_str(), "IntProperty"))
+			return py::isinstance<py::int_>(pyObj);
+		else if (!strcmp(prop->Class->GetName().c_str(), "InterfaceProperty"))
+			return py::isinstance<UInterface>(pyObj);
+		else if (!strcmp(prop->Class->GetName().c_str(), "FloatProperty"))
+			return py::isinstance<py::float_>(pyObj);
+		else if (!strcmp(prop->Class->GetName().c_str(), "DelegateProperty"))
+			return py::isinstance<FScriptDelegate>(pyObj);
+		else if (!strcmp(prop->Class->GetName().c_str(), "ByteProperty"))
+			return py::isinstance<py::int_>(pyObj);
+		else if (!strcmp(prop->Class->GetName().c_str(), "BoolProperty"))
+			return py::isinstance<py::bool_>(pyObj);
+		Logging::LogF("Found unexpected type for %s\n", prop->GetFullName().c_str());
+		return false;
+	}
+
+	bool VerifyArgs(py::args args, py::kwargs kwargs) {
+		int currentIndex = 0;
+		for (UProperty* Child = (UProperty *)func->Children; Child; Child = (UProperty *)Child->Next) {
+			if (kwargs.contains(Child->GetName().c_str()))
+				VerifyArgType(kwargs[Child->GetName().c_str()], Child);
+			if (currentIndex < args.size)
+				VerifyArgType(args[currentIndex++], Child);
+			if (Child->PropertyFlags & 0x10) // Optional
+				continue;
+			if (Child->PropertyFlags & 0x110) // Output
+				continue;
+			return false;
+		}
+		return true;
+	}
+
+	void *GenerateParams(py::args args, py::kwargs kwargs) {
+		return (void *)((tMalloc)BL2SDK::pGMalloc[0]->VfTable[1])(BL2SDK::pGMalloc[0], func->ParamsSize, 8);
+	}
+
+	py::object GetReturn(py::args args, py::kwargs kwargs, void* params) {
+		return py::none();
+	}
+
+public:
+	py::object Call(py::args args, py::kwargs kwargs) {
+		if (!obj || !func)
+			return py::none();
+		if (!VerifyArgs(args, kwargs))
+			return py::none();
+		void *params = GenerateParams(args, kwargs);
+		auto flags = func->FunctionFlags;
+		obj->ProcessEvent(func, params);
+		func->FunctionFlags = flags;
+		return GetReturn(args, kwargs, params);
+	}
 };
 
 // 0x0004 (0x0084 - 0x0080)
