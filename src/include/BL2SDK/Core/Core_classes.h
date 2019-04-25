@@ -1053,56 +1053,113 @@ struct FFunction
 	UFunction *func;
 
 private:
-	bool VerifyArgType(py::object pyObj, UProperty *prop) {
-		if (!strcmp(prop->Class->GetName().c_str(), "StructProperty"))
-			return py::isinstance<FStruct>(pyObj);
-		else if (!strcmp(prop->Class->GetName().c_str(), "StrProperty"))
-			return py::isinstance<py::str>(pyObj);
-		else if (!strcmp(prop->Class->GetName().c_str(), "ObjectProperty"))
-			return py::isinstance<UObject>(pyObj);
-		else if (!strcmp(prop->Class->GetName().c_str(), "ComponentProperty"))
-			return py::isinstance<UComponent>(pyObj);
-		else if (!strcmp(prop->Class->GetName().c_str(), "ClassProperty"))
-			return py::isinstance<UClass>(pyObj);
-		else if (!strcmp(prop->Class->GetName().c_str(), "NameProperty"))
-			return py::isinstance<py::str>(pyObj);
-		else if (!strcmp(prop->Class->GetName().c_str(), "IntProperty"))
-			return py::isinstance<py::int_>(pyObj);
-		else if (!strcmp(prop->Class->GetName().c_str(), "InterfaceProperty"))
-			return py::isinstance<UInterface>(pyObj);
-		else if (!strcmp(prop->Class->GetName().c_str(), "FloatProperty"))
-			return py::isinstance<py::float_>(pyObj);
-		else if (!strcmp(prop->Class->GetName().c_str(), "DelegateProperty"))
-			return py::isinstance<FScriptDelegate>(pyObj);
-		else if (!strcmp(prop->Class->GetName().c_str(), "ByteProperty"))
-			return py::isinstance<py::int_>(pyObj);
-		else if (!strcmp(prop->Class->GetName().c_str(), "BoolProperty"))
-			return py::isinstance<py::bool_>(pyObj);
+	bool InsertArg(py::object pyObj, UProperty *prop, void *params) {
+		//if (!strcmp(prop->Class->GetName().c_str(), "StructProperty")) {
+		//	if (py::isinstance<FStruct>(pyObj)) {
+		//		(UObject *)(((char *)params) + prop->Offset_Internal) = pyObj.cast<FStruct>();
+		//	}
+		//	else
+		//		return false;
+		//}
+		if (!strcmp(prop->Class->GetName().c_str(), "StrProperty")) {
+			if (py::isinstance<py::str>(pyObj))
+				memcpy(((char *)params) + prop->Offset_Internal, &FString(pyObj.cast<char *>()), sizeof(FString));
+			else
+				return false;
+		}
+		else if (!strcmp(prop->Class->GetName().c_str(), "ObjectProperty")) {
+			if (py::isinstance<UObject>(pyObj))
+				((UObject **)(((char *)params) + prop->Offset_Internal))[0] = pyObj.cast<UObject *>();
+			else
+				return false;
+		}
+		else if (!strcmp(prop->Class->GetName().c_str(), "ComponentProperty")) {
+			if (py::isinstance<UComponent>(pyObj))
+				((UComponent **)(((char *)params) + prop->Offset_Internal))[0] = pyObj.cast<UComponent *>();
+			else
+				return false;
+		}
+		else if (!strcmp(prop->Class->GetName().c_str(), "ClassProperty")) {
+			if (py::isinstance<UClass>(pyObj))
+				((UClass **)(((char *)params) + prop->Offset_Internal))[0] = pyObj.cast<UClass *>();
+			else
+				return false;
+		}
+		else if (!strcmp(prop->Class->GetName().c_str(), "NameProperty")) {
+			if (py::isinstance<py::str>(pyObj))
+				memcpy(((char *)params) + prop->Offset_Internal, &FName(pyObj.cast<char *>()), sizeof(FName));
+			else
+				return false;
+		}
+		else if (!strcmp(prop->Class->GetName().c_str(), "IntProperty")) {
+			if (py::isinstance<py::int_>(pyObj))
+				((int *)(((char *)params) + prop->Offset_Internal))[0] = pyObj.cast<int>();
+			else
+				return false;
+		}
+		else if (!strcmp(prop->Class->GetName().c_str(), "InterfaceProperty")) {
+			if (py::isinstance<UInterface>(pyObj))
+				((UInterface **)(((char *)params) + prop->Offset_Internal))[0] = pyObj.cast<UInterface *>();
+			else
+				return false;
+		}
+		else if (!strcmp(prop->Class->GetName().c_str(), "FloatProperty")) {
+			if (py::isinstance<py::float_>(pyObj))
+				((float *)(((char *)params) + prop->Offset_Internal))[0] = pyObj.cast<float>();
+			else
+				return false;
+		}
+		else if (!strcmp(prop->Class->GetName().c_str(), "DelegateProperty")) {
+			if (py::isinstance<FScriptDelegate>(pyObj))
+				memcpy(((char *)params) + prop->Offset_Internal, &FScriptDelegate(pyObj.cast<FScriptDelegate>()), sizeof(FScriptDelegate));
+			else
+				return false;
+		}
+		else if (!strcmp(prop->Class->GetName().c_str(), "ByteProperty")) {
+			if (py::isinstance<py::int_>(pyObj) && pyObj.cast<int>() <= 255)
+				(((char *)params) + prop->Offset_Internal)[0] = (char)pyObj.cast<int>();
+			else
+				return false;
+		}
+		else if (!strcmp(prop->Class->GetName().c_str(), "BoolProperty")) {
+			auto boolProp = reinterpret_cast<UBoolProperty *>(prop);
+			if (py::isinstance<py::bool_>(pyObj) && pyObj.cast<bool>())
+				((((unsigned char *)params) + boolProp->Offset_Internal)[boolProp->ByteOffset] |= boolProp->ByteMask);
+			else
+				return false;
+		}
 		Logging::LogF("Found unexpected type for %s\n", prop->GetFullName().c_str());
 		return false;
 	}
 
-	bool VerifyArgs(py::args args, py::kwargs kwargs) {
+	void *GenerateParams(py::args args, py::kwargs kwargs) {
+		void *params = (void *)((tMalloc)BL2SDK::pGMalloc[0]->VfTable[1])(BL2SDK::pGMalloc[0], func->ParamsSize, 8);
 		int currentIndex = 0;
 		for (UProperty* Child = (UProperty *)func->Children; Child; Child = (UProperty *)Child->Next) {
 			if (kwargs.contains(Child->GetName().c_str()))
-				VerifyArgType(kwargs[Child->GetName().c_str()], Child);
+				InsertArg(kwargs[Child->GetName().c_str()], Child, params);
 			if (currentIndex < args.size)
-				VerifyArgType(args[currentIndex++], Child);
+				InsertArg(args[currentIndex++], Child, params);
 			if (Child->PropertyFlags & 0x10) // Optional
 				continue;
-			if (Child->PropertyFlags & 0x110) // Output
+			if (Child->PropertyFlags & 0x100) // Output
 				continue;
-			return false;
+			((tFree)BL2SDK::pGMalloc[0]->VfTable[3])(BL2SDK::pGMalloc[0], params);
+			return nullptr;
 		}
-		return true;
-	}
-
-	void *GenerateParams(py::args args, py::kwargs kwargs) {
-		return (void *)((tMalloc)BL2SDK::pGMalloc[0]->VfTable[1])(BL2SDK::pGMalloc[0], func->ParamsSize, 8);
+		return params;
+		
 	}
 
 	py::object GetReturn(py::args args, py::kwargs kwargs, void* params) {
+		std::vector<py::object> ReturnObjects{};
+		for (UProperty* Child = (UProperty *)func->Children; Child; Child = (UProperty *)Child->Next) {
+			if (Child->PropertyFlags & 0x100) // Output
+				ReturnObjects.emplace_back();
+			if (Child->PropertyFlags & 0x400) // Return
+				ReturnObjects.emplace(0, );
+		}
+		((tFree)BL2SDK::pGMalloc[0]->VfTable[3])(BL2SDK::pGMalloc[0], params);
 		return py::none();
 	}
 
@@ -1110,9 +1167,9 @@ public:
 	py::object Call(py::args args, py::kwargs kwargs) {
 		if (!obj || !func)
 			return py::none();
-		if (!VerifyArgs(args, kwargs))
-			return py::none();
 		void *params = GenerateParams(args, kwargs);
+		if (!params)
+			return py::none();
 		auto flags = func->FunctionFlags;
 		obj->ProcessEvent(func, params);
 		func->FunctionFlags = flags;

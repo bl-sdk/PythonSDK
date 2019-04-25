@@ -16,6 +16,9 @@ engine = bl2sdk.GetEngine()
 # print('%x' % engine.BrowseToURL.func.GetAddress())
 print(engine.BrowseToURL.func.Children)
 
+returnValue = engine.BrowseToURL()[0]
+
+
 # class TestUObject(bl2sdk.UObject):
 # 	def __getattribute__(self, name):
 # 		prop = self.Class.FindPropertyByName(name)
