@@ -68,6 +68,16 @@ def process_hook(caller: UObject, function: UFunction, params: FStruct, result: 
 			mod._Enabled = not mod._Enabled
 			caller.RefreshDLC()
 		return False
+	if ukey == 'Delete' or ukey == 'BackSpace':
+		if event == 0:
+			selected_object = caller.GetSelectedObject()
+			mod = selected_object.GetString(caller.Prop_offeringId)
+			idx = int(mod)
+			mod = bl2sdk.Mods[idx]
+			mod.Disable()
+			bl2sdk.Mods.pop(idx)
+			caller.RefreshDLC()
+		return False
 	return True
 
 RemoveEngineHook("WillowGame.MarketplaceGFxMovie.ShopInputKey", "OpenModMenu")
