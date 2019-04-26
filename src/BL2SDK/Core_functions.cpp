@@ -29,6 +29,111 @@
 # ========================================================================================= #
 */
 
+
+class UScriptStruct* FHelper::GetStructProperty(UProperty *prop) {
+	return (UScriptStruct *)(((char *)this) + prop->Offset_Internal);
+}
+
+struct FString* FHelper::GetStrProperty(UProperty *prop) {
+	return (FString *)(((char *)this) + prop->Offset_Internal);
+}
+
+class UObject* FHelper::GetObjectProperty(UProperty *prop) {
+	return (UObject *)(((char *)this) + prop->Offset_Internal);
+}
+
+class UComponent* FHelper::GetComponentProperty(UProperty *prop) {
+	return (UComponent *)(((char *)this) + prop->Offset_Internal);
+}
+
+class UClass* FHelper::GetClassProperty(UProperty *prop) {
+	return (UClass *)(((char *)this) + prop->Offset_Internal);
+}
+
+struct FName* FHelper::GetNameProperty(UProperty *prop) {
+	return (FName *)(((char *)this) + prop->Offset_Internal);
+}
+
+int FHelper::GetIntProperty(UProperty *prop) {
+	return ((int *)(((char *)this) + prop->Offset_Internal))[0];
+}
+
+struct FScriptInterface* FHelper::GetInterfaceProperty(UProperty *prop) {
+	return (FScriptInterface *)(((char *)this) + prop->Offset_Internal);
+}
+
+float FHelper::GetFloatProperty(UProperty *prop) {
+	return ((float *)(((char *)this) + prop->Offset_Internal))[0];
+}
+
+struct FScriptDelegate* FHelper::GetDelegateProperty(UProperty *prop) {
+	return (FScriptDelegate *)(((char *)this) + prop->Offset_Internal);
+}
+
+unsigned char FHelper::GetByteProperty(UProperty *prop) {
+	return (((unsigned char *)this) + prop->Offset_Internal)[0];
+}
+
+bool FHelper::GetBoolProperty(UBoolProperty *boolProp) {
+	return !!((((unsigned char *)this) + boolProp->Offset_Internal)[boolProp->ByteOffset] & boolProp->ByteMask);
+}
+
+py::object FHelper::GetArrayProperty(UArrayProperty *prop) {
+	if (!strcmp(prop->Inner->Class->GetName().c_str(), "StructProperty"))
+		return pybind11::cast((TArray<FStruct> *)(((char *)this) + prop->Offset_Internal));
+	else if (!strcmp(prop->Inner->Class->GetName().c_str(), "StrProperty"))
+		return pybind11::cast((TArray<FString> *)(((char *)this) + prop->Offset_Internal));
+	else if (!strcmp(prop->Inner->Class->GetName().c_str(), "ObjectProperty"))
+		return pybind11::cast((TArray<UObject *> *)(((char *)this) + prop->Offset_Internal - 4));
+	else if (!strcmp(prop->Inner->Class->GetName().c_str(), "ComponentProperty"))
+		return pybind11::cast((TArray<UComponent *> *)(((char *)this) + prop->Offset_Internal));
+	else if (!strcmp(prop->Inner->Class->GetName().c_str(), "ClassProperty"))
+		return pybind11::cast((TArray<UClass *> *)(((char *)this) + prop->Offset_Internal));
+	else if (!strcmp(prop->Inner->Class->GetName().c_str(), "NameProperty"))
+		return pybind11::cast((TArray<FName> *)(((char *)this) + prop->Offset_Internal));
+	else if (!strcmp(prop->Inner->Class->GetName().c_str(), "IntProperty"))
+		return pybind11::cast((TArray<int> *)(((char *)this) + prop->Offset_Internal));
+	else if (!strcmp(prop->Inner->Class->GetName().c_str(), "InterfaceProperty"))
+		return pybind11::cast((TArray<UInterface *> *)(((char *)this) + prop->Offset_Internal));
+	else if (!strcmp(prop->Inner->Class->GetName().c_str(), "FloatProperty"))
+		return pybind11::cast((TArray<float> *)(((char *)this) + prop->Offset_Internal));
+	else if (!strcmp(prop->Inner->Class->GetName().c_str(), "DelegateProperty"))
+		return pybind11::cast((TArray<FScriptDelegate> *)(((char *)this) + prop->Offset_Internal));
+	else if (!strcmp(prop->Inner->Class->GetName().c_str(), "ByteProperty"))
+		return pybind11::cast((TArray<char> *)(((char *)this) + prop->Offset_Internal));
+	return py::none();
+}
+
+pybind11::object FHelper::GetProperty(UProperty *prop) {
+	if (!strcmp(prop->Class->GetName().c_str(), "StructProperty"))
+		return pybind11::cast(GetStructProperty(prop));
+	else if (!strcmp(prop->Class->GetName().c_str(), "StrProperty"))
+		return pybind11::cast(GetStrProperty(prop));
+	else if (!strcmp(prop->Class->GetName().c_str(), "ObjectProperty"))
+		return pybind11::cast(GetObjectProperty(prop));
+	else if (!strcmp(prop->Class->GetName().c_str(), "ComponentProperty"))
+		return pybind11::cast(GetComponentProperty(prop));
+	else if (!strcmp(prop->Class->GetName().c_str(), "ClassProperty"))
+		return pybind11::cast(GetClassProperty(prop));
+	else if (!strcmp(prop->Class->GetName().c_str(), "NameProperty"))
+		return pybind11::cast(GetNameProperty(prop));
+	else if (!strcmp(prop->Class->GetName().c_str(), "IntProperty"))
+		return pybind11::cast(GetIntProperty(prop));
+	else if (!strcmp(prop->Class->GetName().c_str(), "InterfaceProperty"))
+		return pybind11::cast(GetInterfaceProperty(prop));
+	else if (!strcmp(prop->Class->GetName().c_str(), "FloatProperty"))
+		return pybind11::cast(GetFloatProperty(prop));
+	else if (!strcmp(prop->Class->GetName().c_str(), "DelegateProperty"))
+		return pybind11::cast(GetDelegateProperty(prop));
+	else if (!strcmp(prop->Class->GetName().c_str(), "ByteProperty"))
+		return pybind11::cast(GetByteProperty(prop));
+	else if (!strcmp(prop->Class->GetName().c_str(), "BoolProperty"))
+		return pybind11::cast(GetBoolProperty((UBoolProperty *)prop));
+	else if (!strcmp(prop->Class->GetName().c_str(), "ArrayProperty"))
+		return GetArrayProperty((UArrayProperty *)prop);
+	return py::none();
+}
+
 TArray< UObject* >* UObject::GObjects()
 {
 	TArray< UObject* >* ObjectArray = (TArray< UObject* >*) BL2SDK::pGObjects;
@@ -172,134 +277,18 @@ bool UObject::IsA(UClass* pClass) const
 	return false;
 }
 
+
 pybind11::object UObject::GetProperty(std::string& PropName) {
 	class UObject *obj = this->Class->FindChildByName(FName(PropName));
 	if (!obj)
 		return pybind11::none();
-	if (!strcmp(obj->Class->GetName().c_str(), "StructProperty"))
-		return pybind11::cast(GetStructProperty(PropName));
-	else if (!strcmp(obj->Class->GetName().c_str(), "StrProperty"))
-		return pybind11::cast(GetStrProperty(PropName));
-	else if (!strcmp(obj->Class->GetName().c_str(), "ObjectProperty"))
-		return pybind11::cast(GetObjectProperty(PropName));
-	else if (!strcmp(obj->Class->GetName().c_str(), "ComponentProperty"))
-		return pybind11::cast(GetComponentProperty(PropName));
-	else if (!strcmp(obj->Class->GetName().c_str(), "ClassProperty"))
-		return pybind11::cast(GetClassProperty(PropName));
-	else if (!strcmp(obj->Class->GetName().c_str(), "NameProperty"))
-		return pybind11::cast(GetNameProperty(PropName));
-	else if (!strcmp(obj->Class->GetName().c_str(), "IntProperty"))
-		return pybind11::cast(GetIntProperty(PropName));
-	else if (!strcmp(obj->Class->GetName().c_str(), "InterfaceProperty"))
-		return pybind11::cast(GetInterfaceProperty(PropName));
-	else if (!strcmp(obj->Class->GetName().c_str(), "FloatProperty"))
-		return pybind11::cast(GetFloatProperty(PropName));
-	else if (!strcmp(obj->Class->GetName().c_str(), "DelegateProperty"))
-		return pybind11::cast(GetDelegateProperty(PropName));
-	else if (!strcmp(obj->Class->GetName().c_str(), "ByteProperty"))
-		return pybind11::cast(GetByteProperty(PropName));
-	else if (!strcmp(obj->Class->GetName().c_str(), "BoolProperty"))
-		return pybind11::cast(GetBoolProperty(PropName));
-	else if (!strcmp(obj->Class->GetName().c_str(), "Function"))
+	auto prop = reinterpret_cast<UProperty *>(obj);
+	if (!strcmp(obj->Class->GetName().c_str(), "Function"))
 		return pybind11::cast(GetFunction(PropName));
-	Logging::LogF("Found unexpected type for %s\n", obj->GetFullName().c_str());
+	else
+		return ((FHelper *)this)->GetProperty(prop);
+	Logging::LogF("GET Found unexpected type for %s\n", obj->GetFullName().c_str());
 	return pybind11::none();
-}
-
-class UScriptStruct* UObject::GetStructProperty(std::string& PropName) {
-	class UObject *obj = this->Class->FindChildByName(FName(PropName));
-	if (!obj || obj->Class->GetName() != "StructProperty")
-		return nullptr;
-	auto prop = reinterpret_cast<UProperty *>(obj);
-	return (UScriptStruct *)(((char *)this) + prop->Offset_Internal);
-}
-
-struct FString* UObject::GetStrProperty(std::string& PropName) {
-	class UObject *obj = this->Class->FindChildByName(FName(PropName));
-	if (!obj || obj->Class->GetName() != "StrProperty")
-		return nullptr;
-	auto prop = reinterpret_cast<UProperty *>(obj);
-	return (FString *)(((char *)this) + prop->Offset_Internal);
-}
-
-class UObject* UObject::GetObjectProperty(std::string& PropName) {
-	class UObject *obj = this->Class->FindChildByName(FName(PropName));
-	if (!obj || obj->Class->GetName() != "ObjectProperty")
-		return nullptr;
-	auto prop = reinterpret_cast<UProperty *>(obj);
-	return (UObject *)(((char *)this) + prop->Offset_Internal);
-}
-
-class UComponent* UObject::GetComponentProperty(std::string& PropName) {
-	class UObject *obj = this->Class->FindChildByName(FName(PropName));
-	if (!obj || obj->Class->GetName() != "ComponentProperty")
-		return nullptr;
-	auto prop = reinterpret_cast<UProperty *>(obj);
-	return (UComponent *)(((char *)this) + prop->Offset_Internal);
-}
-
-class UClass* UObject::GetClassProperty(std::string& PropName) {
-	class UObject *obj = this->Class->FindChildByName(FName(PropName));
-	if (!obj || obj->Class->GetName() != "ClassProperty")
-		return nullptr;
-	auto prop = reinterpret_cast<UProperty *>(obj);
-	return (UClass *)(((char *)this) + prop->Offset_Internal);
-}
-
-struct FName* UObject::GetNameProperty(std::string& PropName) {
-	class UObject *obj = this->Class->FindChildByName(FName(PropName));
-	if (!obj || obj->Class->GetName() != "NameProperty")
-		return nullptr;
-	auto prop = reinterpret_cast<UProperty *>(obj);
-	return (FName *)(((char *)this) + prop->Offset_Internal);
-}
-
-int UObject::GetIntProperty(std::string& PropName) {
-	class UObject *obj = this->Class->FindChildByName(FName(PropName));
-	if (!obj || obj->Class->GetName() != "IntProperty")
-		return 0;
-	auto prop = reinterpret_cast<UProperty *>(obj);
-	return ((int *)(((char *)this) + prop->Offset_Internal))[0];
-}
-
-struct FScriptInterface* UObject::GetInterfaceProperty(std::string& PropName) {
-	class UObject *obj = this->Class->FindChildByName(FName(PropName));
-	if (!obj || obj->Class->GetName() != "InterfaceProperty")
-		return nullptr;
-	auto prop = reinterpret_cast<UProperty *>(obj);
-	return (FScriptInterface *)(((char *)this) + prop->Offset_Internal);
-}
-
-float UObject::GetFloatProperty(std::string& PropName) {
-	class UObject *obj = this->Class->FindChildByName(FName(PropName));
-	if (!obj || obj->Class->GetName() != "FloatProperty")
-		return 0;
-	auto prop = reinterpret_cast<UProperty *>(obj);
-	return ((float *)(((char *)this) + prop->Offset_Internal))[0];
-}
-
-struct FScriptDelegate* UObject::GetDelegateProperty(std::string& PropName) {
-	class UObject *obj = this->Class->FindChildByName(FName(PropName));
-	if (!obj || obj->Class->GetName() != "DelegateProperty")
-		return nullptr;
-	auto prop = reinterpret_cast<UProperty *>(obj);
-	return (FScriptDelegate *)(((char *)this) + prop->Offset_Internal);
-}
-
-unsigned char UObject::GetByteProperty(std::string& PropName) {
-	class UObject *obj = this->Class->FindChildByName(FName(PropName));
-	if (!obj || obj->Class->GetName() != "ByteProperty")
-		return 0;
-	auto prop = reinterpret_cast<UProperty *>(obj);
-	return (((unsigned char *)this) + prop->Offset_Internal)[0];
-}
-
-bool UObject::GetBoolProperty(std::string& PropName) {
-	class UObject *obj = this->Class->FindChildByName(FName(PropName));
-	if (!obj || obj->Class->GetName() != "BoolProperty")
-		return false;
-	class UBoolProperty *boolProp = reinterpret_cast<UBoolProperty *>(obj);
-	return !!((((unsigned char *)this) + boolProp->Offset_Internal)[boolProp->ByteOffset] & boolProp->ByteMask);
 }
 
 struct FFunction UObject::GetFunction(std::string& PropName) {

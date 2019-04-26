@@ -12,11 +12,8 @@ from bl2sdk import *
 # RemoveScriptHook("Engine.Console.InputKey", "Test")
 # RegisterScriptHook("Engine.Console.InputKey", "Test", Test)
 
-engine = bl2sdk.GetEngine()
-# print('%x' % engine.BrowseToURL.func.GetAddress())
-print(engine.BrowseToURL.func.Children)
-
-returnValue = engine.BrowseToURL()[0]
+pc = GetEngine().GamePlayers[0]
+# print(engine.CanUnpause())
 
 
 # class TestUObject(bl2sdk.UObject):

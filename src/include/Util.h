@@ -3,6 +3,7 @@
 
 #ifndef UTIL_H
 #define UTIL_H
+#include "stdafx.h"
 
 #define PATH_SEPARATOR "\\"
 

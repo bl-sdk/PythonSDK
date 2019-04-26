@@ -39,6 +39,9 @@ namespace BL2SDK
 	extern FMalloc** pGMalloc;
 }
 
+typedef void *(__thiscall *tMalloc) (struct FMalloc*, unsigned long, unsigned long);
+typedef void(__thiscall *tFree) (struct FMalloc*, void*);
+
 #include "BL2SDK/Core/Core_structs.h"
 #include "BL2SDK/Core/Core_f_structs.h"
 #include "BL2SDK/Core/Core_classes.h"
@@ -84,9 +87,6 @@ namespace BL2SDK
 #include "BL2SDK/AkAudio/AkAudio_classes.h"
 
 #include "TypeMap.h"
-
-typedef void *(__thiscall *tMalloc) (struct FMalloc*, unsigned long, unsigned long);
-typedef void(__thiscall *tFree) (struct FMalloc*, void*);
 
 namespace pybind11 {
 	template <typename itype> struct polymorphic_type_hook<itype, detail::enable_if_t<std::is_base_of<UObject, itype>::value>>

@@ -123,7 +123,7 @@ struct FString : public TArray<wchar_t>
 			wcscpy(this->Data, Other);
 	};
 
-	FString(char* Other)
+	FString(const char* Other)
 	{
 		this->Max = this->Count = Other ? (strlen(Other) + 1) : 0;
 		this->Data = (wchar_t *)calloc(this->Count, sizeof(wchar_t));
