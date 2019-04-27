@@ -31,7 +31,7 @@
 
 
 class UScriptStruct* FHelper::GetStructProperty(UProperty *prop) {
-	return (UScriptStruct *)(((char *)this) + prop->Offset_Internal);
+	return ((UScriptStruct **)(((char *)this) + prop->Offset_Internal))[0];
 }
 
 struct FString* FHelper::GetStrProperty(UProperty *prop) {
@@ -39,15 +39,15 @@ struct FString* FHelper::GetStrProperty(UProperty *prop) {
 }
 
 class UObject* FHelper::GetObjectProperty(UProperty *prop) {
-	return (UObject *)(((char *)this) + prop->Offset_Internal);
+	return ((UObject **)(((char *)this) + prop->Offset_Internal))[0];
 }
 
 class UComponent* FHelper::GetComponentProperty(UProperty *prop) {
-	return (UComponent *)(((char *)this) + prop->Offset_Internal);
+	return ((UComponent **)(((char *)this) + prop->Offset_Internal))[0];
 }
 
 class UClass* FHelper::GetClassProperty(UProperty *prop) {
-	return (UClass *)(((char *)this) + prop->Offset_Internal);
+	return ((UClass **)(((char *)this) + prop->Offset_Internal))[0];
 }
 
 struct FName* FHelper::GetNameProperty(UProperty *prop) {
@@ -84,7 +84,7 @@ py::object FHelper::GetArrayProperty(UArrayProperty *prop) {
 	else if (!strcmp(prop->Inner->Class->GetName().c_str(), "StrProperty"))
 		return pybind11::cast((TArray<FString> *)(((char *)this) + prop->Offset_Internal));
 	else if (!strcmp(prop->Inner->Class->GetName().c_str(), "ObjectProperty"))
-		return pybind11::cast((TArray<UObject *> *)(((char *)this) + prop->Offset_Internal - 4));
+		return pybind11::cast((TArray<UObject *> *)(((char *)this) + prop->Offset_Internal));
 	else if (!strcmp(prop->Inner->Class->GetName().c_str(), "ComponentProperty"))
 		return pybind11::cast((TArray<UComponent *> *)(((char *)this) + prop->Offset_Internal));
 	else if (!strcmp(prop->Inner->Class->GetName().c_str(), "ClassProperty"))
@@ -105,6 +105,7 @@ py::object FHelper::GetArrayProperty(UArrayProperty *prop) {
 }
 
 pybind11::object FHelper::GetProperty(UProperty *prop) {
+	Logging::LogD("FHelper::GetProperty '%s' (offset %d) on %p\n", prop->GetFullName().c_str(), prop->Offset_Internal, this);
 	if (!strcmp(prop->Class->GetName().c_str(), "StructProperty"))
 		return pybind11::cast(GetStructProperty(prop));
 	else if (!strcmp(prop->Class->GetName().c_str(), "StrProperty"))
@@ -405,7 +406,7 @@ pybind11::object UObject::GetProperty(std::string& PropName) {
 	if (!strcmp(obj->Class->GetName().c_str(), "Function"))
 		return pybind11::cast(GetFunction(PropName));
 	else
-		return ((FHelper *)this)->GetProperty(prop);
+		return ((FHelper *)((char *)this))->GetProperty(prop);
 	Logging::LogF("UObject::GetProperty Found unexpected type for %s\n", obj->GetFullName().c_str());
 	return pybind11::none();
 }

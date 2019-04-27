@@ -86,6 +86,26 @@ typedef void(__thiscall *tFree) (struct FMalloc*, void*);
 #include "BL2SDK/AkAudio/AkAudio_f_structs.h"
 #include "BL2SDK/AkAudio/AkAudio_classes.h"
 
+#include "TypeMap.h"
+
+namespace pybind11 {
+	template <typename itype> struct polymorphic_type_hook<itype, detail::enable_if_t<std::is_base_of<UObject, itype>::value>>
+	{
+		static const void *get(const itype *src, const std::type_info*& type) {
+			if (src) {
+				if (((UObject *)src)->Class) {
+					std::string type_name = ((UObject *)src)->Class->GetName();
+					if (uobject_type_map.count(type_name))
+						type = uobject_type_map[type_name];
+				}
+				return src;
+			}
+			type = nullptr;
+			return dynamic_cast<const void*>(src);
+		}
+	};
+}
+
 typedef struct {
 	PyObject_VAR_HEAD
 		PyObject **ob_item;

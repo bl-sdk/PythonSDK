@@ -305,6 +305,9 @@
     <ClInclude Include="src\include\pybind11\buffer_info.h">
       <Filter>Header Files\pybind11</Filter>
     </ClInclude>
+    <ClInclude Include="src\include\TypeMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pydefs\_TArray.cpp">

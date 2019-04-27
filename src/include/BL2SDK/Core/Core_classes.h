@@ -1327,7 +1327,7 @@ private:
 	bool GenerateStruct(py::tuple tuple, UProperty *prop) {};
 
 	FHelper *GenerateParams(py::args args, py::kwargs kwargs) {
-		FHelper *params = (FHelper *)((tMalloc)BL2SDK::pGMalloc[0]->VfTable[1])(BL2SDK::pGMalloc[0], func->ParamsSize, 8);
+		FHelper *params = (FHelper *)calloc(1, func->ParamsSize);
 		memset(params, 0, func->ParamsSize);
 		int currentIndex = 0;
 		for (UProperty* Child = (UProperty *)func->Children; Child; Child = (UProperty *)Child->Next) {
@@ -1335,14 +1335,14 @@ private:
 				continue;
 			else if (kwargs.contains(Child->GetName().c_str())) {
 				if (!params->SetProperty(Child, kwargs[Child->GetName().c_str()])) {
-					((tFree)BL2SDK::pGMalloc[0]->VfTable[3])(BL2SDK::pGMalloc[0], params);
+					free(params);
 					return nullptr;
 				}
 				continue;
 			}
 			else if (currentIndex < args.size()) {
 				if (!params->SetProperty(Child, args[currentIndex++])) {
-					((tFree)BL2SDK::pGMalloc[0]->VfTable[3])(BL2SDK::pGMalloc[0], params);
+					free(params);
 					return nullptr;
 				}
 				continue;
@@ -1351,7 +1351,7 @@ private:
 				continue;
 			else if (Child->PropertyFlags & 0x100) // Output
 				continue;
-			((tFree)BL2SDK::pGMalloc[0]->VfTable[3])(BL2SDK::pGMalloc[0], params);
+			free(params);
 			return nullptr;
 		}
 		return params;
@@ -1361,12 +1361,14 @@ private:
 	py::object GetReturn(py::args args, py::kwargs kwargs, FHelper* params) {
 		std::deque<py::object> ReturnObjects{};
 		for (UProperty* Child = (UProperty *)func->Children; Child; Child = (UProperty *)Child->Next) {
-			if (Child->PropertyFlags & 0x100) // Output
-				ReturnObjects.push_back(params->GetProperty(Child));
-			else if (Child->PropertyFlags & 0x400) // Return
+			Logging::LogD("Child = %s, %d\n", Child->GetFullName().c_str(), Child->Offset_Internal);
+			if (Child->PropertyFlags & 0x400) // Return
 				ReturnObjects.push_front(params->GetProperty(Child));
+			else if (Child->PropertyFlags & 0x100) // Output
+				ReturnObjects.push_back(params->GetProperty(Child));
 		}
-		((tFree)BL2SDK::pGMalloc[0]->VfTable[3])(BL2SDK::pGMalloc[0], params);
+		Logging::LogD("Finished popping return\n");
+		free(params);
 		if (ReturnObjects.size() == 1)
 			return ReturnObjects[0];
 		else if (ReturnObjects.size() > 1)

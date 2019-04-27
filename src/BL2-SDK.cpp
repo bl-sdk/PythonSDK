@@ -304,13 +304,13 @@ namespace BL2SDK
 		EngineVersion = UObject::GetEngineVersion();
 		ChangelistNumber = UObject::GetBuildChangelistNumber();
 
-		Logging::LogF("[Internal] Engine Version = %d, Build Changelist = %d\n", EngineVersion, ChangelistNumber);
+		Logging::LogD("[Internal] Engine Version = %d, Build Changelist = %d\n", EngineVersion, ChangelistNumber);
 	}
 
 	// This function is used to ensure that everything gets called in the game thread once the game itself has loaded
 	bool GameReady(UObject* caller, FFrame& stack, void* const result, UFunction* function)
 	{
-		Logging::LogF("[GameReady] Thread: %i\n", GetCurrentThreadId());
+		Logging::LogD("[GameReady] Thread: %i\n", GetCurrentThreadId());
 
 		for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
 		{
