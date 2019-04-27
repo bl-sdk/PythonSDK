@@ -82,6 +82,49 @@ namespace Logging
 		Log(formatted.c_str(), formatted.length());
 	}
 
+	enum LogLevel {
+		DEBUG,
+		INFO,
+		WARNING,
+		EXCEPTION,
+		CRITICAL
+	};
+	Logging::LogLevel Level = WARNING;
+
+	void LogD(const char* fmt, ...)
+	{
+		if (Logging::Level == LogLevel::DEBUG) {
+			va_list args;
+			va_start(args, fmt);
+			std::string formatted = "[DEBUG] " + Util::FormatInternal(fmt, args);
+			va_end(args);
+
+			Log(formatted.c_str(), formatted.length());
+		}
+	}
+
+	void SetLoggingLevel(const char *NewLevel) {
+		std::string str = NewLevel;
+		std::transform(str.begin(), str.end(), str.begin(), ::toupper);
+		if (str == "DEBUG") {
+			Logging::Level = DEBUG;
+		}
+		else if (str == "INFO") {
+			Logging::Level = INFO;
+		}
+		else if (str == "WARNING") {
+			Logging::Level = WARNING;
+		}
+		else if (str == "EXCEPTION") {
+			Logging::Level = EXCEPTION;
+		}
+		else if (str == "CRITICAL") {
+			Logging::Level = CRITICAL;
+		} else {
+			LogF("Unknown logging level '%s'\n", NewLevel);
+		}
+	}
+
 	void InitializeExtern()
 	{
 		BOOL result = AllocConsole();

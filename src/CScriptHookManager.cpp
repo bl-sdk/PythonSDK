@@ -18,7 +18,7 @@ void CScriptHookManager::AddVirtualHook(const std::string& funcName, const tFunc
 		VirtualHooks.emplace(funcName, newMap);
 	}
 
-	Logging::LogF("[CScriptHookManager] (%s) Hook \"%s\" added as virtual hook for \"%s\"\n", this->DebugName.c_str(), hookPair.first.c_str(), funcName.c_str());
+	Logging::LogD("[CScriptHookManager] (%s) Hook \"%s\" added as virtual hook for \"%s\"\n", this->DebugName.c_str(), hookPair.first.c_str(), funcName.c_str());
 }
 
 void CScriptHookManager::AddStaticHook(UFunction* function, const tFuncNameHookPair& hookPair)
@@ -37,7 +37,7 @@ void CScriptHookManager::AddStaticHook(UFunction* function, const tFuncNameHookP
 		StaticHooks.emplace(function, newMap);
 	}
 
-	Logging::LogF("[CScriptHookManager] (%s) Hook \"%s\" added as static hook for \"%s\"\n", this->DebugName.c_str(), hookPair.first.c_str(), function->GetFullName().c_str());
+	Logging::LogD("[CScriptHookManager] (%s) Hook \"%s\" added as static hook for \"%s\"\n", this->DebugName.c_str(), hookPair.first.c_str(), function->GetFullName().c_str());
 }
 
 bool CScriptHookManager::RemoveFromTable(tHookMap& hookTable, const std::string& funcName, const std::string& hookName)
@@ -52,7 +52,7 @@ bool CScriptHookManager::RemoveFromTable(tHookMap& hookTable, const std::string&
 	}
 	else
 	{
-		Logging::LogF("[CScriptHookManager] (%s) Hook \"%s\" removed for function \"%s\" successfully\n", this->DebugName.c_str(), hookName.c_str(), funcName.c_str());
+		Logging::LogD("[CScriptHookManager] (%s) Hook \"%s\" removed for function \"%s\" successfully\n", this->DebugName.c_str(), hookName.c_str(), funcName.c_str());
 		return true;
 	}
 }
@@ -141,7 +141,7 @@ void CScriptHookManager::ResolveVirtualHooks(UFunction* function)
 			int size = iVHooks->second.size();
 			StaticHooks.emplace(function, iVHooks->second);
 			VirtualHooks.erase(iVHooks);
-			Logging::LogF("[CScriptHookManager] (%s) Function pointer found for \"%s\", added map with %i elements to static hooks map\n", this->DebugName.c_str(), funcName.c_str(), size);
+			Logging::LogD("[CScriptHookManager] (%s) Function pointer found for \"%s\", added map with %i elements to static hooks map\n", this->DebugName.c_str(), funcName.c_str(), size);
 		}
 	}
 }

@@ -148,6 +148,8 @@ struct FString : public TArray<wchar_t>
 	};
 
 	char *AsString() {
+		if (this->Data == nullptr || this->Count == 0)
+			return (char *)"";
 		char *output = (char *)calloc(this->Count + 1, sizeof(char));
 		wcstombs(output, this->Data, this->Count);
 		return output;

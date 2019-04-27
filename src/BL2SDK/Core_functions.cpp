@@ -134,6 +134,125 @@ pybind11::object FHelper::GetProperty(UProperty *prop) {
 	return py::none();
 }
 
+bool FHelper::SetProperty(class UStructProperty *prop, py::object val) {
+	Logging::LogF("Setting Structs is unimplemented!\n");
+	return false;
+}
+
+bool FHelper::SetProperty(class UStrProperty *prop, py::object val) {
+	if (!py::isinstance<py::str>(val))
+		return false;
+	memcpy(((char *)this) + prop->Offset_Internal, &FString(val.cast<std::string>().c_str()), sizeof(FString));
+	return true;
+}
+
+bool FHelper::SetProperty(class UObjectProperty *prop, py::object val) {
+	if (!py::isinstance<UObject>(val))
+		return false;
+	((UObject **)(((char *)this) + prop->Offset_Internal))[0] = val.cast<UObject *>();
+	return true;
+}
+
+bool FHelper::SetProperty(class UComponentProperty *prop, py::object val) {
+	if (!py::isinstance<UComponent>(val))
+		return false;
+	((UComponent **)(((char *)this) + prop->Offset_Internal))[0] = val.cast<UComponent *>();
+	return true;
+}
+
+bool FHelper::SetProperty(class UClassProperty *prop, py::object val) {
+	if (!py::isinstance<UClass>(val))
+		return false;
+	((UClass **)(((char *)this) + prop->Offset_Internal))[0] = val.cast<UClass *>();
+	return true;
+}
+
+bool FHelper::SetProperty(class UNameProperty *prop, py::object val) {
+	if (!py::isinstance<py::str>(val))
+		return false;
+	memcpy(((char *)this) + prop->Offset_Internal, &FName(val.cast<std::string>().c_str()), sizeof(FName));
+	return true;
+}
+
+bool FHelper::SetProperty(class UInterfaceProperty *prop, py::object val) {
+	if (!py::isinstance<UInterface>(val))
+		return false;
+	((UInterface **)(((char *)this) + prop->Offset_Internal))[0] = val.cast<UInterface *>();
+	return true;
+}
+
+bool FHelper::SetProperty(class UDelegateProperty *prop, py::object val) {
+	if (!py::isinstance<FScriptDelegate>(val))
+		return false;
+		memcpy(((char *)this) + prop->Offset_Internal, &FScriptDelegate(val.cast<FScriptDelegate>()), sizeof(FScriptDelegate));
+	return true;
+}
+
+bool FHelper::SetProperty(class UFloatProperty *prop, py::object val) {
+	if (!py::isinstance<float>(val))
+		return false;
+	((float *)(((char *)this) + prop->Offset_Internal))[0] = val.cast<float>();
+	return true;
+}
+
+bool FHelper::SetProperty(class UIntProperty *prop, py::object val) {
+	if (!py::isinstance<py::int_>(val))
+		return false;
+	((int *)(((char *)this) + prop->Offset_Internal))[0] = val.cast<int>();
+	return true;
+}
+
+bool FHelper::SetProperty(class UByteProperty *prop, py::object val) {
+	if (!py::isinstance<int>(val) && val.cast<int>() <= 255)
+		return false;
+	(((char *)this) + prop->Offset_Internal)[0] = (char)val.cast<int>();
+	return true;
+}
+
+bool FHelper::SetProperty(class UBoolProperty *prop, py::object val) {
+	if (!py::isinstance<py::int_>(val))
+		return false;
+	if(val.cast<int>() != 0)
+		((((unsigned char *)this) + prop->Offset_Internal)[prop->ByteOffset] |= prop->ByteMask);
+	return true;
+}
+
+bool FHelper::SetProperty(class UArrayProperty *prop, py::object val) {
+	Logging::LogF("Setting Arrays is unimplemented!\n");
+	return false;
+}
+
+bool FHelper::SetProperty(class UProperty *prop, py::object val) {
+	Logging::LogD("FHelper::SetProperty Called with prop %s\n", prop->GetFullName().c_str());
+	if (!strcmp(prop->Class->GetName().c_str(), "StructProperty"))
+		return SetProperty((UStructProperty *)prop, val);
+	else if (!strcmp(prop->Class->GetName().c_str(), "StrProperty"))
+		return SetProperty((UStrProperty *)prop, val);
+	else if (!strcmp(prop->Class->GetName().c_str(), "ObjectProperty"))
+		return SetProperty((UObjectProperty *)prop, val);
+	else if (!strcmp(prop->Class->GetName().c_str(), "ComponentProperty"))
+		return SetProperty((UComponentProperty *)prop, val);
+	else if (!strcmp(prop->Class->GetName().c_str(), "ClassProperty"))
+		return SetProperty((UClassProperty *)prop, val);
+	else if (!strcmp(prop->Class->GetName().c_str(), "NameProperty"))
+		return SetProperty((UNameProperty *)prop, val);
+	else if (!strcmp(prop->Class->GetName().c_str(), "IntProperty"))
+		return SetProperty((UIntProperty *)prop, val);
+	else if (!strcmp(prop->Class->GetName().c_str(), "InterfaceProperty"))
+		return SetProperty((UInterfaceProperty *)prop, val);
+	else if (!strcmp(prop->Class->GetName().c_str(), "FloatProperty"))
+		return SetProperty((UFloatProperty *)prop, val);
+	else if (!strcmp(prop->Class->GetName().c_str(), "DelegateProperty"))
+		return SetProperty((UDelegateProperty *)prop, val);
+	else if (!strcmp(prop->Class->GetName().c_str(), "ByteProperty"))
+		return SetProperty((UByteProperty *)prop, val);
+	else if (!strcmp(prop->Class->GetName().c_str(), "BoolProperty"))
+		return SetProperty((UBoolProperty *)prop, val);
+	else if (!strcmp(prop->Class->GetName().c_str(), "ArrayProperty"))
+		return SetProperty((UArrayProperty *)prop, val);
+	return false;
+}
+
 TArray< UObject* >* UObject::GObjects()
 {
 	TArray< UObject* >* ObjectArray = (TArray< UObject* >*) BL2SDK::pGObjects;
@@ -287,7 +406,7 @@ pybind11::object UObject::GetProperty(std::string& PropName) {
 		return pybind11::cast(GetFunction(PropName));
 	else
 		return ((FHelper *)this)->GetProperty(prop);
-	Logging::LogF("GET Found unexpected type for %s\n", obj->GetFullName().c_str());
+	Logging::LogF("UObject::GetProperty Found unexpected type for %s\n", obj->GetFullName().c_str());
 	return pybind11::none();
 }
 

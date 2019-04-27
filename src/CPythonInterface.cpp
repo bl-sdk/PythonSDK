@@ -101,6 +101,7 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	m.def("FindObject", [](UClass *Class, char *ObjectFullName) { return UObject::Find(Class, ObjectFullName); }, py::return_value_policy::reference);
 	m.def("LoadObject", [](char *ClassName, char *ObjectFullName) { return UObject::Load(ClassName, ObjectFullName); }, py::return_value_policy::reference);
 	m.def("LoadObject", [](UClass *Class, char *ObjectFullName) { return UObject::Load(Class, ObjectFullName); }, py::return_value_policy::reference);
+	m.def("SetLoggingLevel", &Logging::SetLoggingLevel);
 	m.def("ConstructObject", &BL2SDK::ConstructObject, "Construct Objects", py::arg("Class"), py::arg("Outer") = BL2SDK::GetEngine()->Outer, py::arg("Name") = FName(), py::arg("SetFlags") = 0x1, py::arg("InternalSetFlags") = 0x00, py::arg("Template") = (UObject*)nullptr, py::arg("Error") = (FOutputDevice *)nullptr, py::arg("InstanceGraph") = (void*)nullptr, py::arg("bAssumeTemplateIsArchetype") = (int)0, py::return_value_policy::reference);
 	m.def("ConstructObject", [](char *ClassName, UObject* Outer, FName Name, unsigned int SetFlags, unsigned int InternalSetFlags, UObject* Template, FOutputDevice *Error, void* InstanceGraph, int bAssumeTemplateIsArchetype) {
 		return BL2SDK::ConstructObject(UObject::FindClass(ClassName), Outer, Name, SetFlags, InternalSetFlags, Template, Error, InstanceGraph, bAssumeTemplateIsArchetype);

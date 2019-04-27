@@ -131,9 +131,6 @@
     <ClInclude Include="src\include\stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\include\TypeMap.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\include\Util.h">
       <Filter>Header Files</Filter>
     </ClInclude>

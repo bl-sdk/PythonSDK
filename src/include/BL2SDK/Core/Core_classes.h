@@ -193,6 +193,21 @@ struct FHelper {
 	bool GetBoolProperty(class UBoolProperty *boolProp);
 	py::object GetArrayProperty(class UArrayProperty *prop);
 	pybind11::object GetProperty(class UProperty *prop);
+
+	bool SetProperty(class UStructProperty *prop, py::object val);
+	bool SetProperty(class UStrProperty *prop, py::object val);
+	bool SetProperty(class UObjectProperty *prop, py::object val);
+	bool SetProperty(class UComponentProperty *prop, py::object val);
+	bool SetProperty(class UClassProperty *prop, py::object val);
+	bool SetProperty(class UNameProperty *prop, py::object val);
+	bool SetProperty(class UInterfaceProperty *prop, py::object val);
+	bool SetProperty(class UDelegateProperty *prop, py::object val);
+	bool SetProperty(class UFloatProperty *prop, py::object val);
+	bool SetProperty(class UIntProperty *prop, py::object val);
+	bool SetProperty(class UByteProperty *prop, py::object val);
+	bool SetProperty(class UBoolProperty *boolProp, py::object val);
+	bool SetProperty(class UArrayProperty *prop, py::object val);
+	bool SetProperty(class UProperty *prop, py::object val);
 };
 
 // 0x003C
@@ -1309,113 +1324,24 @@ struct FFunction
 	UFunction *func;
 
 private:
-	bool InsertArg(py::object pyObj, UProperty *prop, FHelper *params) {
-		//if (!strcmp(prop->Class->GetName().c_str(), "StructProperty")) {
-		//	if (py::isinstance<FStruct>(pyObj)) {
-		//		(UObject *)(((char *)params) + prop->Offset_Internal) = pyObj.cast<FStruct>();
-		//	}
-		//	else
-		//		return false;
-		//}
-		Logging::LogF("InsertArg %s\n", prop->GetFullName().c_str());
-		if (!strcmp(prop->Class->GetName().c_str(), "StrProperty")) {
-			if (py::isinstance<py::str>(pyObj))
-				memcpy(((char *)params) + prop->Offset_Internal, &FString(pyObj.cast<std::string>().c_str()), sizeof(FString));
-			else
-				return false;
-			return true;
-		}
-		else if (!strcmp(prop->Class->GetName().c_str(), "ObjectProperty")) {
-			if (py::isinstance<UObject>(pyObj))
-				((UObject **)(((char *)params) + prop->Offset_Internal))[0] = pyObj.cast<UObject *>();
-			else
-				return false;
-			return true;
-		}
-		else if (!strcmp(prop->Class->GetName().c_str(), "ComponentProperty")) {
-			if (py::isinstance<UComponent>(pyObj))
-				((UComponent **)(((char *)params) + prop->Offset_Internal))[0] = pyObj.cast<UComponent *>();
-			else
-				return false;
-			return true;
-		}
-		else if (!strcmp(prop->Class->GetName().c_str(), "ClassProperty")) {
-			if (py::isinstance<UClass>(pyObj))
-				((UClass **)(((char *)params) + prop->Offset_Internal))[0] = pyObj.cast<UClass *>();
-			else
-				return false;
-			return true;
-		}
-		else if (!strcmp(prop->Class->GetName().c_str(), "NameProperty")) {
-			if (py::isinstance<py::str>(pyObj))
-				memcpy(((char *)params) + prop->Offset_Internal, &FName(pyObj.cast<std::string>().c_str()), sizeof(FName));
-			else
-				return false;
-			return true;
-		}
-		else if (!strcmp(prop->Class->GetName().c_str(), "IntProperty")) {
-			if (py::isinstance<py::int_>(pyObj))
-				((int *)(((char *)params) + prop->Offset_Internal))[0] = pyObj.cast<int>();
-			else
-				return false;
-			return true;
-		}
-		else if (!strcmp(prop->Class->GetName().c_str(), "InterfaceProperty")) {
-			if (py::isinstance<UInterface>(pyObj))
-				((UInterface **)(((char *)params) + prop->Offset_Internal))[0] = pyObj.cast<UInterface *>();
-			else
-				return false;
-			return true;
-		}
-		else if (!strcmp(prop->Class->GetName().c_str(), "FloatProperty")) {
-			if (py::isinstance<py::float_>(pyObj))
-				((float *)(((char *)params) + prop->Offset_Internal))[0] = pyObj.cast<float>();
-			else
-				return false;
-			return true;
-		}
-		else if (!strcmp(prop->Class->GetName().c_str(), "DelegateProperty")) {
-			if (py::isinstance<FScriptDelegate>(pyObj))
-				memcpy(((char *)params) + prop->Offset_Internal, &FScriptDelegate(pyObj.cast<FScriptDelegate>()), sizeof(FScriptDelegate));
-			else
-				return false;
-			return true;
-		}
-		else if (!strcmp(prop->Class->GetName().c_str(), "ByteProperty")) {
-			if (py::isinstance<py::int_>(pyObj) && pyObj.cast<int>() <= 255)
-				(((char *)params) + prop->Offset_Internal)[0] = (char)pyObj.cast<int>();
-			else
-				return false;
-			return true;
-		}
-		else if (!strcmp(prop->Class->GetName().c_str(), "BoolProperty")) {
-			UBoolProperty *boolProp = reinterpret_cast<UBoolProperty *>(prop);
-			((((unsigned char *)params) + boolProp->Offset_Internal)[boolProp->ByteOffset] |= boolProp->ByteMask);
-			return true;
-		}
-		Logging::LogF("INSERT Found unexpected type for %s\n", prop->GetFullName().c_str());
-		return false;
-	}
+	bool GenerateStruct(py::tuple tuple, UProperty *prop) {};
 
 	FHelper *GenerateParams(py::args args, py::kwargs kwargs) {
 		FHelper *params = (FHelper *)((tMalloc)BL2SDK::pGMalloc[0]->VfTable[1])(BL2SDK::pGMalloc[0], func->ParamsSize, 8);
 		memset(params, 0, func->ParamsSize);
 		int currentIndex = 0;
 		for (UProperty* Child = (UProperty *)func->Children; Child; Child = (UProperty *)Child->Next) {
-			Logging::LogF("GenerateParams Child= %s\n", Child->GetFullName().c_str());
 			if (!(Child->PropertyFlags & 0x80)) // Param
 				continue;
 			else if (kwargs.contains(Child->GetName().c_str())) {
-				Logging::LogF("\tFound kwarg\n");
-				if (!InsertArg(kwargs[Child->GetName().c_str()], Child, params)) {
+				if (!params->SetProperty(Child, kwargs[Child->GetName().c_str()])) {
 					((tFree)BL2SDK::pGMalloc[0]->VfTable[3])(BL2SDK::pGMalloc[0], params);
 					return nullptr;
 				}
 				continue;
 			}
 			else if (currentIndex < args.size()) {
-				Logging::LogF("\tUsing arg %d\n", currentIndex);
-				if (!InsertArg(args[currentIndex++], Child, params)) {
+				if (!params->SetProperty(Child, args[currentIndex++])) {
 					((tFree)BL2SDK::pGMalloc[0]->VfTable[3])(BL2SDK::pGMalloc[0], params);
 					return nullptr;
 				}
@@ -1453,16 +1379,18 @@ public:
 	{
 		if (!obj || !func)
 			return py::none();
-		Logging::LogF("Found obj and func\n");
+		Logging::LogD("FFunction::Call called %s.%s)\n", obj->GetFullName().c_str(), func->GetName().c_str());
 		FHelper *params = GenerateParams(args, kwargs);
 		if (!params)
 			return py::none();
-		Logging::LogF("made params\n");
+		Logging::LogD("made params\n");
 		auto flags = func->FunctionFlags;
 		obj->ProcessEvent(func, params);
 		func->FunctionFlags = flags;
-		Logging::LogF("Called ProcessEvent\n");
-		return GetReturn(args, kwargs, params);
+		Logging::LogD("Called ProcessEvent\n");
+		py::object ret = GetReturn(args, kwargs, params);
+		Logging::LogD("ProcessEvent Succeeded!\n");
+		return ret;
 	}
 };
 
