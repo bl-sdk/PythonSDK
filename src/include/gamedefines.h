@@ -265,7 +265,7 @@ public:
 		return object;
 	};
 	bool popBool() {
-		return (bool)popULong();
+		return !!popULong();
 	};
 };
 
@@ -320,7 +320,7 @@ public:
 		return obj;
 	};
 	bool popBool() {
-		return (bool)popULong();
+		return !!popULong();
 	};
 	TArray<UObject *> *popTArrayObjects() {
 		TArray<UObject *> *obj = new TArray<UObject *>();

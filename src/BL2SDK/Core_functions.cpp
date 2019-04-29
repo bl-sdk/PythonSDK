@@ -136,8 +136,21 @@ pybind11::object FHelper::GetProperty(UProperty *prop) {
 }
 
 bool FHelper::SetProperty(class UStructProperty *prop, py::object val) {
-	Logging::LogF("Setting Structs is unimplemented!\n");
-	return false;
+	if (!py::isinstance<py::tuple>(val))
+		return false;
+	py::tuple tup = (py::tuple)val;
+	
+	unsigned int currentIndex = 0;
+	for (UProperty* Child = (UProperty *)prop->Struct->Children; Child; Child = (UProperty *)Child->Next) {
+		Logging::LogD("Child = %s, %d\n", Child->GetFullName().c_str(), Child->Offset_Internal);
+		if (currentIndex < tup.size())
+			((FHelper *)(((char *)this) + prop->Offset_Internal))->SetProperty(Child, tup[currentIndex++]);
+	}
+	if (tup.size() > currentIndex) {
+		Logging::LogF("Not all tuple values converted for struct!\n");
+		return false;
+	}
+	return true;
 }
 
 bool FHelper::SetProperty(class UStrProperty *prop, py::object val) {
@@ -211,10 +224,9 @@ bool FHelper::SetProperty(class UByteProperty *prop, py::object val) {
 }
 
 bool FHelper::SetProperty(class UBoolProperty *prop, py::object val) {
-	if (!py::isinstance<py::int_>(val))
-		return false;
-	if(val.cast<int>() != 0)
-		((((unsigned char *)this) + prop->Offset_Internal)[prop->ByteOffset] |= prop->ByteMask);
+	if(val.cast<bool>())
+		((((unsigned char *)this) + prop->Offset_Internal)[prop->ByteOffset] |= prop->FieldMask);
+	Logging::LogF("%d, %x, %x\n", val.cast<bool>(), ((unsigned long *)prop)[0], ((unsigned long *)(((char *)this) + prop->Offset_Internal))[0]);
 	return true;
 }
 

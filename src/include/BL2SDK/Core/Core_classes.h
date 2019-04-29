@@ -1329,21 +1329,21 @@ private:
 	FHelper *GenerateParams(py::args args, py::kwargs kwargs) {
 		FHelper *params = (FHelper *)calloc(1, func->ParamsSize);
 		memset(params, 0, func->ParamsSize);
-		int currentIndex = 0;
+		unsigned int currentIndex = 0;
 		for (UProperty* Child = (UProperty *)func->Children; Child; Child = (UProperty *)Child->Next) {
 			if (!(Child->PropertyFlags & 0x80)) // Param
 				continue;
 			else if (kwargs.contains(Child->GetName().c_str())) {
 				if (!params->SetProperty(Child, kwargs[Child->GetName().c_str()])) {
 					free(params);
-					return nullptr;
+					throw std::exception(Util::Format("Unexpected value for %s", Child->GetFullName().c_str()).c_str());
 				}
 				continue;
 			}
 			else if (currentIndex < args.size()) {
 				if (!params->SetProperty(Child, args[currentIndex++])) {
 					free(params);
-					return nullptr;
+					throw std::exception(Util::Format("Unexpected value for %s", Child->GetFullName().c_str()).c_str());
 				}
 				continue;
 			}
@@ -1351,8 +1351,8 @@ private:
 				continue;
 			else if (Child->PropertyFlags & 0x100) // Output
 				continue;
+			throw std::exception("Invalid number of parameters");
 			free(params);
-			return nullptr;
 		}
 		return params;
 
@@ -1384,7 +1384,7 @@ public:
 		Logging::LogD("FFunction::Call called %s.%s)\n", obj->GetFullName().c_str(), func->GetName().c_str());
 		FHelper *params = GenerateParams(args, kwargs);
 		if (!params)
-			return py::none();
+			throw std::exception(Util::Format("Unable to generate parameters for %s", func->GetFullName().c_str()).c_str());
 		Logging::LogD("made params\n");
 		auto flags = func->FunctionFlags;
 		obj->ProcessEvent(func, params);
