@@ -62,12 +62,12 @@ void RegisterEngineHook(const std::string& funcName, const std::string& hookName
 			Logging::LogF(e.what());
 		}
 		return true;
-			}
+	}
 	);
 }
 
 void RegisterScriptHook(const std::string& funcName, const std::string& hookName, py::object funcHook) {
-	static const char *params[] = { "caller", "stack", "result", "function", "return"};
+	static const char *params[] = { "caller", "stack", "result", "function", "return" };
 	if (VerifyPythonFunction(funcHook, params))
 		GameHooks::UnrealScriptHookManager->Register(funcName, hookName, [funcHook](UObject* caller, FFrame& stack, void* const result, UFunction* function) {
 		try {
@@ -82,7 +82,7 @@ void RegisterScriptHook(const std::string& funcName, const std::string& hookName
 			Logging::LogF(e.what());
 		}
 		return true;
-			}
+	}
 	);
 }
 
@@ -105,7 +105,7 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	m.def("ConstructObject", &BL2SDK::ConstructObject, "Construct Objects", py::arg("Class"), py::arg("Outer") = BL2SDK::GetEngine()->Outer, py::arg("Name") = FName(), py::arg("SetFlags") = 0x1, py::arg("InternalSetFlags") = 0x00, py::arg("Template") = (UObject*)nullptr, py::arg("Error") = (FOutputDevice *)nullptr, py::arg("InstanceGraph") = (void*)nullptr, py::arg("bAssumeTemplateIsArchetype") = (int)0, py::return_value_policy::reference);
 	m.def("ConstructObject", [](char *ClassName, UObject* Outer, FName Name, unsigned int SetFlags, unsigned int InternalSetFlags, UObject* Template, FOutputDevice *Error, void* InstanceGraph, int bAssumeTemplateIsArchetype) {
 		return BL2SDK::ConstructObject(UObject::FindClass(ClassName), Outer, Name, SetFlags, InternalSetFlags, Template, Error, InstanceGraph, bAssumeTemplateIsArchetype);
-		}, "Construct Objects", py::arg("Class"), py::arg("Outer") = BL2SDK::GetEngine()->Outer, py::arg("Name") = FName(), py::arg("SetFlags") = 0x1, py::arg("InternalSetFlags") = 0x00, py::arg("Template") = (UObject*)nullptr, py::arg("Error") = (FOutputDevice *)nullptr, py::arg("InstanceGraph") = (void*)nullptr, py::arg("bAssumeTemplateIsArchetype") = (int)0, py::return_value_policy::reference);
+	}, "Construct Objects", py::arg("Class"), py::arg("Outer") = BL2SDK::GetEngine()->Outer, py::arg("Name") = FName(), py::arg("SetFlags") = 0x1, py::arg("InternalSetFlags") = 0x00, py::arg("Template") = (UObject*)nullptr, py::arg("Error") = (FOutputDevice *)nullptr, py::arg("InstanceGraph") = (void*)nullptr, py::arg("bAssumeTemplateIsArchetype") = (int)0, py::return_value_policy::reference);
 	m.def("RegisterEngineHook", &RegisterEngineHook);
 	m.def("GetEngine", &BL2SDK::GetEngine, py::return_value_policy::reference);
 	m.def("RegisterScriptHook", &RegisterScriptHook);

@@ -338,7 +338,7 @@ namespace BL2SDK
 		gameConsole = (UConsole *)UObject::Find("WillowConsole", "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0");
 		if (gameConsole && (gameConsole->ConsoleKey == FName("None") || gameConsole->ConsoleKey == FName("Undefined")))
 			gameConsole->ConsoleKey = FName("Tilde");
-		
+
 		GameHooks::UnrealScriptHookManager->RemoveStaticHook(function, "StartupSDK");
 		GameHooks::EngineHookManager->Register("WillowGame.WillowGameViewportClient.PostRender", "GetCanvas", getCanvasPostRender);
 

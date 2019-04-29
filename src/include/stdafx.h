@@ -339,7 +339,7 @@ namespace pybind11 {
 namespace pybind11 {
 	namespace detail {
 		template <> struct type_caster<UClass *> {
-		using value_conv = make_caster<UObject *>;
+			using value_conv = make_caster<UObject *>;
 		public:
 			PYBIND11_TYPE_CASTER(UClass *, _("UClass"));
 			bool load(handle src, bool) {

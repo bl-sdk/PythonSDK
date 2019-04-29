@@ -120,7 +120,8 @@ namespace Logging
 		}
 		else if (str == "CRITICAL") {
 			Logging::Level = CRITICAL;
-		} else {
+		}
+		else {
 			LogF("Unknown logging level '%s'\n", NewLevel);
 		}
 	}

@@ -139,7 +139,7 @@ bool FHelper::SetProperty(class UStructProperty *prop, py::object val) {
 	if (!py::isinstance<py::tuple>(val))
 		return false;
 	py::tuple tup = (py::tuple)val;
-	
+
 	unsigned int currentIndex = 0;
 	for (UProperty* Child = (UProperty *)prop->Struct->Children; Child; Child = (UProperty *)Child->Next) {
 		Logging::LogD("Child = %s, %d\n", Child->GetFullName().c_str(), Child->Offset_Internal);
@@ -198,7 +198,7 @@ bool FHelper::SetProperty(class UInterfaceProperty *prop, py::object val) {
 bool FHelper::SetProperty(class UDelegateProperty *prop, py::object val) {
 	if (!py::isinstance<FScriptDelegate>(val))
 		return false;
-		memcpy(((char *)this) + prop->Offset_Internal, &FScriptDelegate(val.cast<FScriptDelegate>()), sizeof(FScriptDelegate));
+	memcpy(((char *)this) + prop->Offset_Internal, &FScriptDelegate(val.cast<FScriptDelegate>()), sizeof(FScriptDelegate));
 	return true;
 }
 
@@ -224,7 +224,7 @@ bool FHelper::SetProperty(class UByteProperty *prop, py::object val) {
 }
 
 bool FHelper::SetProperty(class UBoolProperty *prop, py::object val) {
-	if(val.cast<bool>())
+	if (val.cast<bool>())
 		((((unsigned char *)this) + prop->Offset_Internal)[prop->ByteOffset] |= prop->FieldMask);
 	Logging::LogF("%d, %x, %x\n", val.cast<bool>(), ((unsigned long *)prop)[0], ((unsigned long *)(((char *)this) + prop->Offset_Internal))[0]);
 	return true;
