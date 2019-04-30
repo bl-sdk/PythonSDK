@@ -53,8 +53,9 @@ void RegisterEngineHook(const std::string& funcName, const std::string& hookName
 		try {
 			py::object py_caller = py::cast(caller, py::return_value_policy::reference);
 			py::object py_function = py::cast(function, py::return_value_policy::reference);
-			py::object py_params = py::cast(FStruct(params), py::return_value_policy::reference);
-			py::object py_result = py::cast(FStruct(result), py::return_value_policy::reference);
+			py::object py_params = py::cast(FStruct{ function, params }, py::return_value_policy::reference);
+			//py::object py_result = py::cast(FStruct{ function, result }, py::return_value_policy::reference);
+			py::object py_result = py::none();
 			py::object ret = funcHook(py_caller, py_function, py_params, py_result);
 			return ret.cast<bool>();
 		}
@@ -73,7 +74,8 @@ void RegisterScriptHook(const std::string& funcName, const std::string& hookName
 		try {
 			py::object py_caller = py::cast(caller, py::return_value_policy::reference);
 			py::object py_stack = py::cast(stack, py::return_value_policy::reference);
-			py::object py_result = py::cast(FStruct(result), py::return_value_policy::reference);
+			//py::object py_result = py::cast(FStruct{ function, result }, py::return_value_policy::reference);
+			py::object py_result = py::none();
 			py::object py_function = py::cast(function, py::return_value_policy::reference);
 			py::object ret = funcHook(py_caller, py_stack, py_result, py_function);
 			return ret.cast<bool>();

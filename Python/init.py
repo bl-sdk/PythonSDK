@@ -29,6 +29,7 @@ bl2sdk.Mods = []
 
 try:
 	import randomizer
+	import legacy
 except:
 	pass
 
@@ -36,7 +37,7 @@ def LoadModList(caller: UObject, function: UFunction, params: FStruct, result: F
 	caller.SetStoreHeader("Mods", 0, "By Abahbob", "Mod Manager")
 	pc = GetEngine().GamePlayers[0]
 	for idx, mod in enumerate(bl2sdk.Mods):
-		obj = caller.CreateMarketplaceItem(FMarketplaceContent())
+		obj, _ = caller.CreateMarketplaceItem(())
 		obj.SetString(caller.Prop_contentTitleText, mod.Name, pc.GetTranslationContext())
 		obj.SetString(caller.Prop_descriptionText, mod.Description, pc.GetTranslationContext())
 		obj.SetString(caller.Prop_offeringId, str(idx), pc.GetTranslationContext())
@@ -50,9 +51,10 @@ RegisterEngineHook("WillowGame.MarketplaceGFxMovie.OnDownloadableContentListRead
 
 def process_hook(caller: UObject, function: UFunction, params: FStruct, result: FStruct) -> bool:
 	pc = GetEngine().GamePlayers[0]
-	ControllerId = params.popInt()
-	ukey = params.popFName()
-	event = params.popByte()
+	ControllerId = params.ControllerId
+	ukey = params.ukey
+	event = params.uevent
+	print(ukey)
 	if ukey == 'Enter':
 		if event == 0:
 			selected_object = caller.GetSelectedObject()
@@ -77,8 +79,8 @@ RegisterEngineHook("WillowGame.MarketplaceGFxMovie.ShopInputKey", "OpenModMenu",
 def ReplaceDLCWithMods(caller: UObject, stack: FFrame, result: FStruct, function: UFunction) -> bool:
 	EventID = stack.popInt()
 	Caption = stack.popFString()
-	bDisabled = stack.popULong()
-	bNew = stack.popULong()
+	bDisabled = False
+	bNew = False
 	if Caption == "$WillowMenu.WillowScrollingListDataProviderFrontEnd.DLC":
 		Caption = "MODS"
 		bNew = True
@@ -96,7 +98,6 @@ def HookMainMenuPopulateForMods(caller: UObject, stack: FFrame, result: FStruct,
 
 RemoveEngineHook("WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods")
 RegisterScriptHook("WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods", HookMainMenuPopulateForMods)
-
 
 if os.getcwd().endswith('\\Plugins\\Python'):
 	os.chdir(os.getcwd().split('\\Plugins\\Python')[0])

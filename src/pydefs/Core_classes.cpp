@@ -29,6 +29,7 @@ void Export_pystes_Core_classes(py::module &m)
 		.def("GetObjectName", &UObject::GetObjectName)
 		.def("__repr__", &UObject::GetFullName)
 		.def("__getattr__", &UObject::GetProperty, py::return_value_policy::reference)
+		.def("__setattr__", &UObject::SetProperty, py::return_value_policy::reference)
 		.def("GetAddress", [](UObject *self) { return (int)self; })
 		.def("IsRelevantForDebugging", &UObject::IsRelevantForDebugging)
 		.def("GetGlobalDebugTarget", &UObject::GetGlobalDebugTarget, py::return_value_policy::reference)
@@ -543,5 +544,11 @@ void Export_pystes_Core_classes(py::module &m)
 		.def_readwrite("ClassDefaultObject", &UClass::ClassDefaultObject, py::return_value_policy::reference)
 		.def_readwrite("ClassFlags", &UClass::ClassFlags)
 		;
-
+	py::class_< FStruct >(m, "FStruct")
+		.def(py::init<UStruct *, void *>())
+		.def("__getattr__", &FStruct::GetProperty, py::return_value_policy::reference)
+		.def("__setattr__", &FStruct::SetProperty, py::return_value_policy::reference)
+		.def_readwrite("structType", &FStruct::structType, py::return_value_policy::reference)
+		.def("base", [](FStruct *self) { return (int)self->base; })
+		;
 }

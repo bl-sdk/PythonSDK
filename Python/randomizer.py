@@ -73,7 +73,9 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
             self.RandomizeBranch(Branch)
 
     def RandomizeBranch(self, SkillTreeBranchDef):
+        print(1)
         self.PreloadPackages()
+        print(2)
         TierCountOdds = [95, 40, 80, 30, 80, 40]
         HasBloodlust = False
         HasHellborn = False

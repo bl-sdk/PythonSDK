@@ -24,7 +24,6 @@ static std::map<std::string, const std::type_info *> uobject_type_map{
 	{"Field", &typeid(UField)},
 	{"FloatAttributeProperty", &typeid(UFloatAttributeProperty)},
 	{"FloatProperty", &typeid(UFloatProperty)},
-	{"Function", &typeid(FFunction)},
 	{"Function", &typeid(UFunction)},
 	{"HelpCommandlet", &typeid(UHelpCommandlet)},
 	{"IntAttributeProperty", &typeid(UIntAttributeProperty)},

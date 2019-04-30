@@ -30,8 +30,8 @@
 */
 
 
-class UScriptStruct* FHelper::GetStructProperty(UProperty *prop) {
-	return ((UScriptStruct **)(((char *)this) + prop->Offset_Internal))[0];
+struct FStruct FHelper::GetStructProperty(UStructProperty *prop) {
+	return FStruct{ prop->Struct, ((UScriptStruct **)(((char *)this) + prop->Offset_Internal))[0] };
 }
 
 struct FString* FHelper::GetStrProperty(UProperty *prop) {
@@ -75,7 +75,7 @@ unsigned char FHelper::GetByteProperty(UProperty *prop) {
 }
 
 bool FHelper::GetBoolProperty(UBoolProperty *boolProp) {
-	return !!((((unsigned char *)this) + boolProp->Offset_Internal)[boolProp->ByteOffset] & boolProp->ByteMask);
+	return !!((((unsigned int *)this) + boolProp->Offset_Internal)[0] & boolProp->Mask);
 }
 
 py::object FHelper::GetArrayProperty(UArrayProperty *prop) {
@@ -107,7 +107,7 @@ py::object FHelper::GetArrayProperty(UArrayProperty *prop) {
 pybind11::object FHelper::GetProperty(UProperty *prop) {
 	Logging::LogD("FHelper::GetProperty '%s' (offset %d) on %p\n", prop->GetFullName().c_str(), prop->Offset_Internal, this);
 	if (!strcmp(prop->Class->GetName().c_str(), "StructProperty"))
-		return pybind11::cast(GetStructProperty(prop));
+		return pybind11::cast(GetStructProperty((UStructProperty *)prop));
 	else if (!strcmp(prop->Class->GetName().c_str(), "StrProperty"))
 		return pybind11::cast(GetStrProperty(prop));
 	else if (!strcmp(prop->Class->GetName().c_str(), "ObjectProperty"))
@@ -225,8 +225,7 @@ bool FHelper::SetProperty(class UByteProperty *prop, py::object val) {
 
 bool FHelper::SetProperty(class UBoolProperty *prop, py::object val) {
 	if (val.cast<bool>())
-		((((unsigned char *)this) + prop->Offset_Internal)[prop->ByteOffset] |= prop->FieldMask);
-	Logging::LogF("%d, %x, %x\n", val.cast<bool>(), ((unsigned long *)prop)[0], ((unsigned long *)(((char *)this) + prop->Offset_Internal))[0]);
+		((((unsigned int *)this) + prop->Offset_Internal)[0] |= prop->Mask);
 	return true;
 }
 
@@ -423,11 +422,26 @@ pybind11::object UObject::GetProperty(std::string& PropName) {
 	return pybind11::none();
 }
 
+bool UObject::SetProperty(std::string& PropName, py::object val) {
+	class UObject *obj = this->Class->FindChildByName(FName(PropName));
+	if (!obj)
+		return false;
+	auto prop = reinterpret_cast<UProperty *>(obj);
+	if (!strcmp(obj->Class->GetName().c_str(), "Function"))
+		return ((FHelper *)((char *)this))->SetProperty((UObjectProperty *)prop, val);
+	else
+		return ((FHelper *)((char *)this))->SetProperty(prop, val);
+	Logging::LogF("UObject::SetProperty Found unexpected type for %s\n", obj->GetFullName().c_str());
+	return false;
+}
+
+
 struct FFunction UObject::GetFunction(std::string& PropName) {
 	class UObject *obj = this->Class->FindChildByName(FName(PropName));
 	auto function = reinterpret_cast<UFunction *>(obj);
 	return FFunction{ this, function };
 }
+
 //class FScriptMap* UObject::GetMapProperty(std::string& PropName) {
 //	class UProperty *prop = this->Class->FindPropeFindChildByNamertyByName(FName(PropName));
 //	if (!prop || prop->Class->GetName() != "MapProperty")

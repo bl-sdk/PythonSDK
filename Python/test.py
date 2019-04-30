@@ -12,8 +12,17 @@ from bl2sdk import *
 # RemoveScriptHook("Engine.Console.InputKey", "Test")
 # RegisterScriptHook("Engine.Console.InputKey", "Test", Test)
 
-pc = GetEngine().GamePlayers[0]
+# pc = GetEngine().GamePlayers[0]
+# Children = bl2sdk.FindObject("Function", "WillowGame.MarketplaceGFxMovie.CreateContentItem").Children
+# while Children:
+# 	if Children.Class.GetName() == "BoolProperty":
+# 		print("%x" % (Children.GetAddress() + 0x80))
+# 	Children = Children.Next
 # print(engine.CanUnpause())
+for service in bl2sdk.UObject.FindObjectsContaining("SparkServiceConfiguration Transient.SparkServiceConfiguration"):
+	# If the service's name is "micropatch" then it is the hotfix
+	# object, and we are done.
+	print(service.ServiceName)
 
 
 # class TestUObject(bl2sdk.UObject):

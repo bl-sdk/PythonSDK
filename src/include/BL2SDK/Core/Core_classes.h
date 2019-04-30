@@ -179,7 +179,7 @@
 */
 
 struct FHelper {
-	class UScriptStruct* GetStructProperty(class UProperty *prop);
+	struct FStruct GetStructProperty(class UStructProperty *prop);
 	struct FString* GetStrProperty(class UProperty *prop);
 	class UObject* GetObjectProperty(class UProperty *prop);
 	class UComponent* GetComponentProperty(class UProperty *prop);
@@ -311,6 +311,7 @@ public:
 	};
 
 	py::object GetProperty(std::string& PropName);
+	bool SetProperty(std::string& PropName, py::object val);
 	struct FFunction GetFunction(std::string& PropName);
 	//struct FScriptArray GetArrayProperty(std::string& PropName);
 	//struct FScriptMap GetMapProperty(std::string& PropName);
@@ -1156,10 +1157,7 @@ public:
 class UBoolProperty : public UProperty
 {
 public:
-	unsigned char FieldSize;
-	unsigned char ByteOffset;
-	unsigned char ByteMask;
-	unsigned char FieldMask;
+	unsigned int Mask;
 };
 
 // 0x0004 (0x0084 - 0x0080)
@@ -1358,7 +1356,8 @@ private:
 
 	}
 
-	py::object GetReturn(py::args args, py::kwargs kwargs, FHelper* params) {
+public:
+	py::object GetReturn(FHelper* params) {
 		std::deque<py::object> ReturnObjects{};
 		for (UProperty* Child = (UProperty *)func->Children; Child; Child = (UProperty *)Child->Next) {
 			Logging::LogD("Child = %s, %d\n", Child->GetFullName().c_str(), Child->Offset_Internal);
@@ -1368,7 +1367,6 @@ private:
 				ReturnObjects.push_back(params->GetProperty(Child));
 		}
 		Logging::LogD("Finished popping return\n");
-		free(params);
 		if (ReturnObjects.size() == 1)
 			return ReturnObjects[0];
 		else if (ReturnObjects.size() > 1)
@@ -1376,7 +1374,6 @@ private:
 		return py::none();
 	}
 
-public:
 	py::object Call(py::args args, py::kwargs kwargs)
 	{
 		if (!obj || !func)
@@ -1387,12 +1384,110 @@ public:
 			throw std::exception(Util::Format("Unable to generate parameters for %s", func->GetFullName().c_str()).c_str());
 		Logging::LogD("made params\n");
 		auto flags = func->FunctionFlags;
+		BL2SDK::doInjectedCallNext();
 		obj->ProcessEvent(func, params);
 		func->FunctionFlags = flags;
 		Logging::LogD("Called ProcessEvent\n");
-		py::object ret = GetReturn(args, kwargs, params);
+		py::object ret = GetReturn(params);
+		free(params);
 		Logging::LogD("ProcessEvent Succeeded!\n");
 		return ret;
+	}
+};
+
+
+struct FFrame : public FOutputDevice
+{
+	class UFunction* Node;
+	class UObject* Object;
+	unsigned char* Code;
+	unsigned char* Locals;
+
+	struct FFrame* PreviousFrame;
+	struct FOutParmRec* Outparams;
+
+public:
+	void SkipFunction() {
+		// allocate temporary memory on the stack for evaluating parameters
+		char* Frame = (char *)calloc(1, Node->ParamsSize);
+		for (UProperty* Property = (UProperty*)Node->Children; Code[0] != 0x16; Property = (UProperty*)Property->Next)
+		{
+			PreviousFrame = NULL;
+			BL2SDK::pFrameStep(this, this->Object, (void *)((Property->PropertyFlags & 0x100) ? NULL : Frame + Property->Offset_Internal));
+		}
+
+		Code++;
+		free(Frame);
+	}
+
+	UObject *popObject() {
+		UObject *obj = nullptr;
+		BL2SDK::pFrameStep(this, this->Object, &obj);
+		return obj;
+	};
+	struct FName *popFName() {
+		FName *obj = new FName();
+		BL2SDK::pFrameStep(this, this->Object, obj);
+		return obj;
+	};
+	struct FString *popFString() {
+		FString *obj = new FString();
+		BL2SDK::pFrameStep(this, this->Object, obj);
+		return obj;
+	};
+	float popFloat() {
+		float obj = 0;
+		BL2SDK::pFrameStep(this, this->Object, &obj);
+		return obj;
+	};
+	unsigned char popByte() {
+		unsigned char obj = 0;
+		BL2SDK::pFrameStep(this, this->Object, &obj);
+		return obj;
+	};
+	int popInt() {
+		int obj = 0;
+		BL2SDK::pFrameStep(this, this->Object, &obj);
+		return obj;
+	};
+	unsigned long popULong() {
+		unsigned long obj = 0;
+		BL2SDK::pFrameStep(this, this->Object, &obj);
+		return obj;
+	};
+	bool popBool() {
+		return !!popULong();
+	};
+	TArray<UObject *> *popTArrayObjects() {
+		TArray<UObject *> *obj = new TArray<UObject *>();
+		BL2SDK::pFrameStep(this, this->Object, obj);
+		return obj;
+	};
+};
+
+struct FStruct
+{
+	UStruct		*structType;
+	void		*base;
+	FStruct(UStruct *s, void *b) {
+		structType = s;
+		base = b;
+	};
+
+	pybind11::object GetProperty(std::string& PropName) {
+		class UObject *obj = structType->FindChildByName(FName(PropName));
+		if (!obj)
+			return pybind11::none();
+		auto prop = reinterpret_cast<UProperty *>(obj);
+		return ((FHelper *)((char *)base))->GetProperty(prop);
+	}
+
+	pybind11::object SetProperty(std::string& PropName, py::object value) {
+		class UObject *obj = structType->FindChildByName(FName(PropName));
+		if (!obj)
+			return pybind11::none();
+		auto prop = reinterpret_cast<UProperty *>(obj);
+		((FHelper *)((char *)base))->SetProperty(prop, value);
 	}
 };
 
