@@ -29,9 +29,8 @@ bl2sdk.Mods = []
 
 try:
 	import randomizer
-	import legacy
-except:
-	pass
+except Exception as e:
+	print(e)
 
 def LoadModList(caller: UObject, function: UFunction, params: FStruct, result: FStruct) -> bool:
 	caller.SetStoreHeader("Mods", 0, "By Abahbob", "Mod Manager")
@@ -77,19 +76,23 @@ RegisterEngineHook("WillowGame.MarketplaceGFxMovie.ShopInputKey", "OpenModMenu",
 
 
 def ReplaceDLCWithMods(caller: UObject, stack: FFrame, result: FStruct, function: UFunction) -> bool:
+	print('a')
 	EventID = stack.popInt()
 	Caption = stack.popFString()
-	bDisabled = False
-	bNew = False
+	bDisabled = stack.popULong()
+	bNew = stack.popULong()
 	if Caption == "$WillowMenu.WillowScrollingListDataProviderFrontEnd.DLC":
 		Caption = "MODS"
 		bNew = True
+	print((EventID, Caption, bDisabled, bNew))
 	caller.AddListItem(EventID, Caption, bDisabled, bNew)
 	stack.SkipFunction()
 	return False
 
 
 def HookMainMenuPopulateForMods(caller: UObject, stack: FFrame, result: FStruct, function: UFunction) -> bool:
+	# bl2sdk.LogAllProcessEventCalls(True)
+	# bl2sdk.LogAllUnrealScriptCalls(True)
 	RegisterScriptHook("WillowGame.WillowScrollingList.AddListItem", "ReplaceDLCWithMods", ReplaceDLCWithMods)
 	caller.Populate(stack.popObject())
 	RemoveScriptHook("WillowGame.WillowScrollingList.AddListItem", "ReplaceDLCWithMods")
@@ -101,3 +104,5 @@ RegisterScriptHook("WillowGame.WillowScrollingListDataProviderFrontEnd.Populate"
 
 if os.getcwd().endswith('\\Plugins\\Python'):
 	os.chdir(os.getcwd().split('\\Plugins\\Python')[0])
+
+bl2sdk.SetLoggingLevel("DEBUG")

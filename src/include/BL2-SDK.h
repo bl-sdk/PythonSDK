@@ -40,6 +40,7 @@ namespace BL2SDK
 	extern tLoadPackage pLoadPackage;
 	extern tByteOrderSerialize pByteOrderSerialize;
 	extern tGetDefaultObject pGetDefaultObject;
+	extern bool injectedCallNext;
 
 	extern std::map<std::string, UClass *> ClassMap;
 

@@ -249,7 +249,12 @@ public:
 
 	static UObject* Find(UClass *Class, const std::string& ObjectFullName)
 	{
-		return UObject::FindObject(FString((char *)ObjectFullName.c_str()), Class);
+		bool DoInjectedNext = BL2SDK::injectedCallNext;
+		BL2SDK::doInjectedCallNext();
+		UObject *ret = UObject::FindObject(FString((char *)ObjectFullName.c_str()), Class);
+		if (DoInjectedNext)
+			BL2SDK::doInjectedCallNext();
+		return ret;
 	}
 
 	static UObject* Find(const std::string& ClassName, const std::string& ObjectFullName)
@@ -1360,7 +1365,6 @@ public:
 	py::object GetReturn(FHelper* params) {
 		std::deque<py::object> ReturnObjects{};
 		for (UProperty* Child = (UProperty *)func->Children; Child; Child = (UProperty *)Child->Next) {
-			Logging::LogD("Child = %s, %d\n", Child->GetFullName().c_str(), Child->Offset_Internal);
 			if (Child->PropertyFlags & 0x400) // Return
 				ReturnObjects.push_front(params->GetProperty(Child));
 			else if (Child->PropertyFlags & 0x100) // Output
@@ -1409,15 +1413,17 @@ struct FFrame : public FOutputDevice
 public:
 	void SkipFunction() {
 		// allocate temporary memory on the stack for evaluating parameters
-		char* Frame = (char *)calloc(1, Node->ParamsSize);
-		for (UProperty* Property = (UProperty*)Node->Children; Code[0] != 0x16; Property = (UProperty*)Property->Next)
-		{
-			PreviousFrame = NULL;
-			BL2SDK::pFrameStep(this, this->Object, (void *)((Property->PropertyFlags & 0x100) ? NULL : Frame + Property->Offset_Internal));
-		}
+		//char* Frame = (char *)calloc(1, Node->ParamsSize);
+		//for (UProperty* Property = (UProperty*)Node->Children; Code[0] != 0x16; Property = (UProperty*)Property->Next)
+		//{
+		//	PreviousFrame = NULL;
+		//	BL2SDK::pFrameStep(this, this->Object, (void *)((Property->PropertyFlags & 0x100) ? NULL : Frame + Property->Offset_Internal));
+		//}
 
-		Code++;
-		free(Frame);
+		//Code++;
+		//free(Frame);
+		while ((this->Code++)[0] != 0x16)
+			;
 	}
 
 	UObject *popObject() {
@@ -1488,6 +1494,24 @@ struct FStruct
 			return pybind11::none();
 		auto prop = reinterpret_cast<UProperty *>(obj);
 		((FHelper *)((char *)base))->SetProperty(prop, value);
+	}
+};
+
+struct FStructArray : TArray<FHelper> {
+	UStruct		*structType;
+	FStructArray(UStruct *s, void *b) {
+		structType = s;
+		Data = (FHelper *)b;
+	}
+
+	int Num()
+	{
+		return this->Count;
+	}
+
+	struct FStruct operator() (int i)
+	{
+		return FStruct{ structType, (void *)(this->Data + i) };
 	}
 };
 

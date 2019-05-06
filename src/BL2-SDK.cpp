@@ -17,7 +17,6 @@ namespace BL2SDK
 {
 	static UConsole * gameConsole = nullptr;
 
-	bool injectedCallNext = false;
 	bool logAllProcessEvent = true;
 	bool logAllUnrealScriptCalls = true;
 
@@ -37,6 +36,7 @@ namespace BL2SDK
 	tByteOrderSerialize pByteOrderSerialize;
 	tGetDefaultObject pGetDefaultObject;
 	UObject *engine = nullptr;
+	bool injectedCallNext = false;
 
 	CPythonInterface *Python;
 
@@ -85,7 +85,9 @@ namespace BL2SDK
 			std::string callerName = caller->GetFullName();
 			std::string functionName = function->GetFullName();
 
-			Logging::LogF("===== CallFunction called =====\npCaller Name = %s\npFunction Name = %s\n", callerName.c_str(), functionName.c_str());
+			// Prevent infinite recursion when printing to console
+			if (functionName != "Function Engine.Console.OutputText" && functionName != "Function Engine.Console.OutputTextLine")
+				Logging::LogF("===== CallFunction called =====\npCaller Name = %s\npFunction Name = %s\n", callerName.c_str(), functionName.c_str());
 		}
 
 		if (!GameHooks::ProcessUnrealScriptHooks(caller, stack, result, function))

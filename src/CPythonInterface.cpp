@@ -114,6 +114,8 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	m.def("RemoveEngineHook", [](const std::string& funcName, const std::string& hookName) {GameHooks::EngineHookManager->Remove(funcName, hookName); });
 	m.def("RemoveScriptHook", [](const std::string& funcName, const std::string& hookName) {GameHooks::UnrealScriptHookManager->Remove(funcName, hookName); });
 	m.def("DoInjectedCallNext", &BL2SDK::doInjectedCallNext);
+	m.def("LogAllProcessEventCalls", &BL2SDK::LogAllProcessEventCalls);
+	m.def("LogAllUnrealScriptCalls", &BL2SDK::LogAllUnrealScriptCalls);
 }
 
 bool PythonGCTick(UObject* caller, UFunction* function, void* params, void* result)

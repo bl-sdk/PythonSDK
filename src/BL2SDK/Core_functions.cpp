@@ -79,8 +79,9 @@ bool FHelper::GetBoolProperty(UBoolProperty *boolProp) {
 }
 
 py::object FHelper::GetArrayProperty(UArrayProperty *prop) {
+	Logging::LogD("FHelper::GetArrayProperty Inner '%s'\n", prop->Inner->GetFullName().c_str());
 	if (!strcmp(prop->Inner->Class->GetName().c_str(), "StructProperty"))
-		return pybind11::cast((TArray<FStruct> *)(((char *)this) + prop->Offset_Internal));
+		return pybind11::cast((TArray<FHelper> *)(((char *)this) + prop->Offset_Internal));
 	else if (!strcmp(prop->Inner->Class->GetName().c_str(), "StrProperty"))
 		return pybind11::cast((TArray<FString> *)(((char *)this) + prop->Offset_Internal));
 	else if (!strcmp(prop->Inner->Class->GetName().c_str(), "ObjectProperty"))

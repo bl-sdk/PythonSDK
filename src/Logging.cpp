@@ -12,7 +12,7 @@ namespace Logging
 	HANDLE logFile = nullptr;
 	bool logToExternalConsole = true;
 	bool logToFile = true;
-	bool logToGameConsole = true;
+	bool logToGameConsole = false;
 	UConsole* gameConsole = nullptr;
 
 	void LogToFile(const char* buff, int len)
