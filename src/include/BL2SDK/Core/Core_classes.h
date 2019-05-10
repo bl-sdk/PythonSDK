@@ -1354,8 +1354,8 @@ private:
 				continue;
 			else if (Child->PropertyFlags & 0x100) // Output
 				continue;
-			throw std::exception("Invalid number of parameters");
 			free(params);
+			throw std::exception("Invalid number of parameters");
 		}
 		return params;
 
@@ -1388,7 +1388,6 @@ public:
 			throw std::exception(Util::Format("Unable to generate parameters for %s", func->GetFullName().c_str()).c_str());
 		Logging::LogD("made params\n");
 		auto flags = func->FunctionFlags;
-		BL2SDK::doInjectedCallNext();
 		obj->ProcessEvent(func, params);
 		func->FunctionFlags = flags;
 		Logging::LogD("Called ProcessEvent\n");

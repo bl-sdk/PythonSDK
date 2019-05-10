@@ -51,12 +51,12 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
             self.RandomizeTree(SkillTreeDef)
             return True
 
-        bl2sdk.RegisterScriptHook(
+        bl2sdk.RegisterHook(
             "WillowGame.PlayerSkillTree.Initialize", "InjectSkills", InjectSkills
         )
 
     def Disable(self):
-        bl2sdk.RemoveScriptHook("WillowGame.PlayerSkillTree.Initialize", "InjectSkills")
+        bl2sdk.RemoveHook("WillowGame.PlayerSkillTree.Initialize", "InjectSkills")
 
     def PreloadPackages(self):
         packages = [
@@ -137,7 +137,7 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
             NewTier.Skills = NewSkills
             NewTier.PointsToUnlockNextTier = min(MaxPoints, 5)
             SkillTreeBranchDef.Tiers[Tier] = NewTier
-    bl2sdk.Log("Done randomizing\n")
+        bl2sdk.Log("Done randomizing\n")
 
     ClassSkills = {
         "Soldier": [

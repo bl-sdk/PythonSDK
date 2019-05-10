@@ -71,13 +71,7 @@
     <ClInclude Include="src\include\BL2-SDK.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\include\CEngineHookManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\include\CPythonInterface.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\CScriptHookManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\include\CSigScan.h">
@@ -93,9 +87,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\include\gamedefines.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\GameHooks.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\include\Logging.h">
@@ -308,6 +299,9 @@
     <ClInclude Include="src\include\detours\detver.h">
       <Filter>Header Files\detours</Filter>
     </ClInclude>
+    <ClInclude Include="src\include\CHookManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pydefs\_TArray.cpp">
@@ -328,22 +322,13 @@
     <ClCompile Include="src\BL2-SDK.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\CEngineHookManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\CPythonInterface.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\CScriptHookManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\CSigScan.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\CSimpleDetour.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\GameHooks.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Logging.cpp">
@@ -405,6 +390,9 @@
     </ClCompile>
     <ClCompile Include="src\include\detours\modules.cpp">
       <Filter>Source Files\detours</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CHookManager.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

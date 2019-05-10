@@ -246,24 +246,19 @@ bool FHelper::SetProperty(class UBoolProperty *prop, py::object val) {
 bool FHelper::SetProperty(class UArrayProperty *prop, py::object val) {
 	if (!py::isinstance<py::sequence>(val))
 		return false;
-	Logging::LogD("A\n");
 	auto s = py::reinterpret_borrow<py::sequence>(val);
-	Logging::LogD("B\n");
 	((tFree)BL2SDK::pGMalloc[0]->VfTable[3])(BL2SDK::pGMalloc[0], (((void **)this) + prop->Offset_Internal)[0]);
 	char *Data = (char *)((tMalloc)BL2SDK::pGMalloc[0]->VfTable[1])(BL2SDK::pGMalloc[0], prop->Inner->ElementSize * s.size(), 8);
 	Logging::LogD("C %d %d %p %p %d %p\n", prop->Inner->ElementSize, prop->Offset_Internal, this, Data, s.size(), (TArray<void *> *)(((char *)this) + prop->Offset_Internal));
 	memset(Data, 0, prop->Inner->ElementSize * s.size());
-	Logging::LogD("D\n");
 	((TArray<void *> *)(((char *)this) + prop->Offset_Internal))->Data = (void **)Data;
 	((TArray<void *> *)(((char *)this) + prop->Offset_Internal))->Count = s.size();
 	((TArray<void *> *)(((char *)this) + prop->Offset_Internal))->Max = s.size();
-	Logging::LogD("E\n");
 	int x = 0;
 	for (auto it : val) {
 		Logging::LogD("%x\n", (Data + prop->Inner->ElementSize * x));
 		((FHelper *)(Data + prop->Inner->ElementSize * x++))->SetProperty(prop->Inner, py::reinterpret_borrow<py::object>(it));
 	}
-	Logging::LogD("F\n");
 	return true;
 }
 

@@ -32,7 +32,7 @@ try:
 except Exception as e:
 	print(e)
 
-def LoadModList(caller: UObject, function: UFunction, params: FStruct, result: FStruct) -> bool:
+def LoadModList(caller: UObject, function: UFunction, params: FStruct) -> bool:
 	caller.SetStoreHeader("Mods", 0, "By Abahbob", "Mod Manager")
 	pc = GetEngine().GamePlayers[0]
 	for idx, mod in enumerate(bl2sdk.Mods):
@@ -45,15 +45,14 @@ def LoadModList(caller: UObject, function: UFunction, params: FStruct, result: F
 	caller.PostContentLoaded(True)
 	return False
 
-RemoveEngineHook("WillowGame.MarketplaceGFxMovie.OnDownloadableContentListRead", "InjectMods")
-RegisterEngineHook("WillowGame.MarketplaceGFxMovie.OnDownloadableContentListRead", "InjectMods", LoadModList)
+RemoveHook("WillowGame.MarketplaceGFxMovie.OnDownloadableContentListRead", "InjectMods")
+RegisterHook("WillowGame.MarketplaceGFxMovie.OnDownloadableContentListRead", "InjectMods", LoadModList)
 
-def process_hook(caller: UObject, function: UFunction, params: FStruct, result: FStruct) -> bool:
+def process_hook(caller: UObject, function: UFunction, params: FStruct) -> bool:
 	pc = GetEngine().GamePlayers[0]
 	ControllerId = params.ControllerId
 	ukey = params.ukey
 	event = params.uevent
-	print(ukey)
 	if ukey == 'Enter':
 		if event == 0:
 			selected_object = caller.GetSelectedObject()
@@ -71,35 +70,28 @@ def process_hook(caller: UObject, function: UFunction, params: FStruct, result: 
 		return False
 	return True
 
-RemoveEngineHook("WillowGame.MarketplaceGFxMovie.ShopInputKey", "OpenModMenu")
-RegisterEngineHook("WillowGame.MarketplaceGFxMovie.ShopInputKey", "OpenModMenu", process_hook)
+RemoveHook("WillowGame.MarketplaceGFxMovie.ShopInputKey", "OpenModMenu")
+RegisterHook("WillowGame.MarketplaceGFxMovie.ShopInputKey", "OpenModMenu", process_hook)
 
-
-def ReplaceDLCWithMods(caller: UObject, stack: FFrame, result: FStruct, function: UFunction) -> bool:
-	EventID = stack.popInt()
-	Caption = stack.popFString()
-	bDisabled = stack.popULong()
-	bNew = stack.popULong()
+def ReplaceDLCWithMods(caller: UObject, function: UFunction, params: FStruct) -> bool:
+	Caption = params.Caption
+	bNew = params.bNew
 	if Caption == "$WillowMenu.WillowScrollingListDataProviderFrontEnd.DLC":
 		Caption = "MODS"
 		bNew = True
-	print((EventID, Caption, bDisabled, bNew))
-	caller.AddListItem(EventID, Caption, bDisabled, bNew)
-	stack.SkipFunction()
+	bl2sdk.DoInjectedCallNext()
+	caller.AddListItem(params.EventID, Caption, params.bDisabled, bNew)
 	return False
 
 
-def HookMainMenuPopulateForMods(caller: UObject, stack: FFrame, result: FStruct, function: UFunction) -> bool:
-	# bl2sdk.LogAllProcessEventCalls(True)
-	# bl2sdk.LogAllUnrealScriptCalls(True)
-	RegisterScriptHook("WillowGame.WillowScrollingList.AddListItem", "ReplaceDLCWithMods", ReplaceDLCWithMods)
-	caller.Populate(stack.popObject())
-	RemoveScriptHook("WillowGame.WillowScrollingList.AddListItem", "ReplaceDLCWithMods")
-	stack.SkipFunction()
+def HookMainMenuPopulateForMods(caller: UObject, function: UFunction, params: FStruct) -> bool:
+	RegisterHook("WillowGame.WillowScrollingList.AddListItem", "ReplaceDLCWithMods", ReplaceDLCWithMods)
+	caller.Populate(params.TheList)
+	RemoveHook("WillowGame.WillowScrollingList.AddListItem", "ReplaceDLCWithMods")
 	return False
 
-RemoveEngineHook("WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods")
-RegisterScriptHook("WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods", HookMainMenuPopulateForMods)
+RemoveHook("WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods")
+RegisterHook("WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods", HookMainMenuPopulateForMods)
 
 if os.getcwd().endswith('\\Plugins\\Python'):
 	os.chdir(os.getcwd().split('\\Plugins\\Python')[0])

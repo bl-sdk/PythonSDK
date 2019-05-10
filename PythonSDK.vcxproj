@@ -32,12 +32,10 @@
     <ClCompile Include="src\BL2SDK\WillowGame_functions.cpp" />
     <ClCompile Include="src\BL2SDK\WinDrv_functions.cpp" />
     <ClCompile Include="src\BL2SDK\XAudio2_functions.cpp" />
-    <ClCompile Include="src\CEngineHookManager.cpp" />
+    <ClCompile Include="src\CHookManager.cpp" />
     <ClCompile Include="src\CPythonInterface.cpp" />
-    <ClCompile Include="src\CScriptHookManager.cpp" />
     <ClCompile Include="src\CSigScan.cpp" />
     <ClCompile Include="src\CSimpleDetour.cpp" />
-    <ClCompile Include="src\GameHooks.cpp" />
     <ClCompile Include="src\include\detours\detours.cpp" />
     <ClCompile Include="src\include\detours\disasm.cpp" />
     <ClCompile Include="src\include\detours\modules.cpp" />
@@ -88,9 +86,8 @@
     <ClInclude Include="src\include\BL2SDK\XAudio2\XAudio2_classes.h" />
     <ClInclude Include="src\include\BL2SDK\XAudio2\XAudio2_f_structs.h" />
     <ClInclude Include="src\include\BL2SDK\XAudio2\XAudio2_structs.h" />
-    <ClInclude Include="src\include\CEngineHookManager.h" />
+    <ClInclude Include="src\include\CHookManager.h" />
     <ClInclude Include="src\include\CPythonInterface.h" />
-    <ClInclude Include="src\include\CScriptHookManager.h" />
     <ClInclude Include="src\include\CSigScan.h" />
     <ClInclude Include="src\include\CSimpleDetour.h" />
     <ClInclude Include="src\include\detours\detours.h" />
@@ -98,7 +95,6 @@
     <ClInclude Include="src\include\Exceptions.h" />
     <ClInclude Include="src\include\Exports.h" />
     <ClInclude Include="src\include\gamedefines.h" />
-    <ClInclude Include="src\include\GameHooks.h" />
     <ClInclude Include="src\include\Logging.h" />
     <ClInclude Include="src\include\MemoryDebug.h" />
     <ClInclude Include="src\include\MemorySignature.h" />

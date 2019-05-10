@@ -8,8 +8,7 @@
 struct LauncherStruct
 {
 	bool DisableAntiDebug;
-	bool LogAllProcessEventCalls;
-	bool LogAllUnrealScriptCalls;
+	bool LogAllCalls;
 	bool DisableCrashRpt;
 	bool DeveloperMode;
 	const LPWSTR BinPath;

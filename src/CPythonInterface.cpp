@@ -4,7 +4,6 @@
 #include "Settings.h"
 #include "Util.h"
 #include "BL2-SDK.h"
-#include "GameHooks.h"
 #include <algorithm>
 #include <sstream>
 #include <functional>
@@ -46,38 +45,15 @@ bool VerifyPythonFunction(py::object funcHook, const char** expectedKeys) {
 	return true;
 }
 
-void RegisterEngineHook(const std::string& funcName, const std::string& hookName, py::object funcHook) {
-	static const char *params[] = { "caller", "function", "params", "result", "return" };
+void RegisterHook(const std::string& funcName, const std::string& hookName, py::object funcHook) {
+	static const char *params[] = { "caller", "function", "params"};
 	if (VerifyPythonFunction(funcHook, params))
-		GameHooks::EngineHookManager->Register(funcName, hookName, [funcHook](UObject* caller, UFunction* function, void* params, void* result) {
+		BL2SDK::RegisterHook(funcName, hookName, [funcHook](UObject* caller, UFunction* function, FStruct *params) {
 		try {
 			py::object py_caller = py::cast(caller, py::return_value_policy::reference);
 			py::object py_function = py::cast(function, py::return_value_policy::reference);
-			py::object py_params = py::cast(FStruct{ function, params }, py::return_value_policy::reference);
-			//py::object py_result = py::cast(FStruct{ function, result }, py::return_value_policy::reference);
-			py::object py_result = py::none();
-			py::object ret = funcHook(py_caller, py_function, py_params, py_result);
-			return ret.cast<bool>();
-		}
-		catch (std::exception e) {
-			Logging::LogF(e.what());
-		}
-		return true;
-	}
-	);
-}
-
-void RegisterScriptHook(const std::string& funcName, const std::string& hookName, py::object funcHook) {
-	static const char *params[] = { "caller", "stack", "result", "function", "return" };
-	if (VerifyPythonFunction(funcHook, params))
-		GameHooks::UnrealScriptHookManager->Register(funcName, hookName, [funcHook](UObject* caller, FFrame& stack, void* const result, UFunction* function) {
-		try {
-			py::object py_caller = py::cast(caller, py::return_value_policy::reference);
-			py::object py_stack = py::cast(stack, py::return_value_policy::reference);
-			//py::object py_result = py::cast(FStruct{ function, result }, py::return_value_policy::reference);
-			py::object py_result = py::none();
-			py::object py_function = py::cast(function, py::return_value_policy::reference);
-			py::object ret = funcHook(py_caller, py_stack, py_result, py_function);
+			py::object py_params = py::cast(params, py::return_value_policy::reference);
+			py::object ret = funcHook(py_caller, py_function, py_params);
 			return ret.cast<bool>();
 		}
 		catch (std::exception e) {
@@ -108,19 +84,11 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	m.def("ConstructObject", [](char *ClassName, UObject* Outer, FName Name, unsigned int SetFlags, unsigned int InternalSetFlags, UObject* Template, FOutputDevice *Error, void* InstanceGraph, int bAssumeTemplateIsArchetype) {
 		return BL2SDK::ConstructObject(UObject::FindClass(ClassName), Outer, Name, SetFlags, InternalSetFlags, Template, Error, InstanceGraph, bAssumeTemplateIsArchetype);
 	}, "Construct Objects", py::arg("Class"), py::arg("Outer") = BL2SDK::GetEngine()->Outer, py::arg("Name") = FName(), py::arg("SetFlags") = 0x1, py::arg("InternalSetFlags") = 0x00, py::arg("Template") = (UObject*)nullptr, py::arg("Error") = (FOutputDevice *)nullptr, py::arg("InstanceGraph") = (void*)nullptr, py::arg("bAssumeTemplateIsArchetype") = (int)0, py::return_value_policy::reference);
-	m.def("RegisterEngineHook", &RegisterEngineHook);
+	m.def("RegisterHook", &RegisterHook);
 	m.def("GetEngine", &BL2SDK::GetEngine, py::return_value_policy::reference);
-	m.def("RegisterScriptHook", &RegisterScriptHook);
-	m.def("RemoveEngineHook", [](const std::string& funcName, const std::string& hookName) {GameHooks::EngineHookManager->Remove(funcName, hookName); });
-	m.def("RemoveScriptHook", [](const std::string& funcName, const std::string& hookName) {GameHooks::UnrealScriptHookManager->Remove(funcName, hookName); });
+	m.def("RemoveHook", [](const std::string& funcName, const std::string& hookName) { BL2SDK::RemoveHook(funcName, hookName); });
 	m.def("DoInjectedCallNext", &BL2SDK::doInjectedCallNext);
-	m.def("LogAllProcessEventCalls", &BL2SDK::LogAllProcessEventCalls);
-	m.def("LogAllUnrealScriptCalls", &BL2SDK::LogAllUnrealScriptCalls);
-}
-
-bool PythonGCTick(UObject* caller, UFunction* function, void* params, void* result)
-{
-	return true;
+	m.def("LogAllCalls", &BL2SDK::LogAllCalls);
 }
 
 void AddToConsoleLog(UConsole *console, FString input) {
@@ -136,28 +104,22 @@ void AddToConsoleLog(UConsole *console, FString input) {
 	console->SaveConfig();
 }
 
-bool CheckPythonCommand(UObject* caller, FFrame& stack, void* const result, UFunction* function)
+bool CheckPythonCommand(UObject* caller, UFunction* function, FStruct *params)
 {
-	FString *command = &FString();
-	unsigned char *code = stack.Code;
-	BL2SDK::pFrameStep(&stack, stack.Object, command);
+	FString *command = ((FHelper *)params->base)->GetStrProperty((UProperty *)params->structType->FindChildByName(FName("command")));
 	char *input = command->AsString();
 	if (strncmp("py ", input, 3) == 0) {
 		AddToConsoleLog((UConsole *)caller, *command);
 		Logging::LogF("\n>>> %s <<<\n", input);
 		BL2SDK::Python->DoString(input + 3);
-		stack.SkipFunction();
-		return false;
 	}
 	else if (strncmp("pyexec ", input, 7) == 0) {
 		AddToConsoleLog((UConsole *)caller, *command);
 		Logging::LogF("\n>>> %s <<<\n", input);
 		BL2SDK::Python->DoFile(input + 7);
-		stack.SkipFunction();
-		return false;
 	}
-	((UConsole *)caller)->ConsoleCommand(*command);
-	stack.SkipFunction();
+	else
+		((UConsole *)caller)->ConsoleCommand(*command);
 	return false;
 }
 
@@ -166,8 +128,7 @@ CPythonInterface::CPythonInterface()
 	m_modulesInitialized = false;
 	InitializeState();
 
-	GameHooks::EngineHookManager->Register("WillowGame.WillowGameViewportClient:Tick", "PythonGCTick", &PythonGCTick);
-	GameHooks::UnrealScriptHookManager->Register("Engine.Console.ShippingConsoleCommand", "CheckPythonCommand", &CheckPythonCommand);
+	BL2SDK::RegisterHook("Engine.Console.ShippingConsoleCommand", "CheckPythonCommand", &CheckPythonCommand);
 }
 
 CPythonInterface::~CPythonInterface()
@@ -179,7 +140,7 @@ CPythonInterface::~CPythonInterface()
 
 	CleanupState();
 
-	GameHooks::EngineHookManager->Remove("WillowGame.WillowGameViewportClient:Tick", "PythonGCTick");
+	BL2SDK::RemoveHook("WillowGame.WillowGameViewportClient:Tick", "PythonGCTick");
 }
 
 void CPythonInterface::InitializeState()
