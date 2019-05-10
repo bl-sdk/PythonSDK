@@ -1488,32 +1488,44 @@ struct FStruct
 		return ((FHelper *)((char *)base))->GetProperty(prop);
 	}
 
-	pybind11::object SetProperty(std::string& PropName, py::object value) {
+	bool SetProperty(std::string& PropName, py::object value) {
 		class UObject *obj = structType->FindChildByName(FName(PropName));
 		if (!obj)
-			return pybind11::none();
+			return false;
 		auto prop = reinterpret_cast<UProperty *>(obj);
-		((FHelper *)((char *)base))->SetProperty(prop, value);
+		return ((FHelper *)((char *)base))->SetProperty(prop, value);
 	}
 };
 
-struct FStructArray : TArray<FHelper> {
-	UStruct		*structType;
-	FStructArray(UStruct *s, void *b) {
-		structType = s;
-		Data = (FHelper *)b;
+struct FArrayStruct {
+	char *Data;
+	unsigned int Count;
+	unsigned int Max;
+	UStructProperty *type;
+
+	FArrayStruct(TArray <char> *array, UStructProperty *s) {
+		Logging::LogD("Creating FArrayStruct from %p\n", array);
+		Data = array->Data;
+		Count = array->Count;
+		Max = array->Max;
+		type = s;
+	};
+
+	struct FStruct GetItem(int i) {
+		Logging::LogD("ArrayStruct::GetItem %d %p %d\n", i, Data, type->ElementSize);
+		return FStruct{type->Struct, (void*)(Data + type->ElementSize * i)};
 	}
 
-	int Num()
-	{
-		return this->Count;
+	void SetItem(int i, py::object obj) {
+		((FHelper *)(Data + type->ElementSize * i))->SetProperty(type, obj);
 	}
 
-	struct FStruct operator() (int i)
-	{
-		return FStruct{ structType, (void *)(this->Data + i) };
+	int GetAddress() {
+		return (int)Data;
 	}
 };
+
+
 
 #ifdef _MSC_VER
 #pragma pack ( pop )

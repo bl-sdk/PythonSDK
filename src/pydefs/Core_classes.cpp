@@ -551,4 +551,14 @@ void Export_pystes_Core_classes(py::module &m)
 		.def_readwrite("structType", &FStruct::structType, py::return_value_policy::reference)
 		.def("base", [](FStruct *self) { return (int)self->base; })
 		;
+
+	py::class_< FArrayStruct >(m, "FArrayStruct")
+		.def(py::init<TArray <char> *, UStructProperty *>())
+		.def("__getitem__", &FArrayStruct::GetItem, py::return_value_policy::reference)
+		.def("__setitem__", &FArrayStruct::SetItem, py::return_value_policy::reference)
+		.def_readwrite("Count", &FArrayStruct::Count)
+		.def_readwrite("Max", &FArrayStruct::Max)
+		.def_readwrite("Data", &FArrayStruct::Data)
+		.def("GetAddress", &FArrayStruct::GetAddress, py::return_value_policy::reference)
+		;
 }

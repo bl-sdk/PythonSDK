@@ -80,8 +80,9 @@ bool FHelper::GetBoolProperty(UBoolProperty *boolProp) {
 
 py::object FHelper::GetArrayProperty(UArrayProperty *prop) {
 	Logging::LogD("FHelper::GetArrayProperty Inner '%s'\n", prop->Inner->GetFullName().c_str());
-	if (!strcmp(prop->Inner->Class->GetName().c_str(), "StructProperty"))
-		return pybind11::cast((TArray<FHelper> *)(((char *)this) + prop->Offset_Internal));
+	if (!strcmp(prop->Inner->Class->GetName().c_str(), "StructProperty")) {
+		return pybind11::cast(FArrayStruct{ (TArray<char> *)(((char *)this) + prop->Offset_Internal), (UStructProperty *)prop->Inner });
+	}
 	else if (!strcmp(prop->Inner->Class->GetName().c_str(), "StrProperty"))
 		return pybind11::cast((TArray<FString> *)(((char *)this) + prop->Offset_Internal));
 	else if (!strcmp(prop->Inner->Class->GetName().c_str(), "ObjectProperty"))
@@ -102,6 +103,8 @@ py::object FHelper::GetArrayProperty(UArrayProperty *prop) {
 		return pybind11::cast((TArray<FScriptDelegate> *)(((char *)this) + prop->Offset_Internal));
 	else if (!strcmp(prop->Inner->Class->GetName().c_str(), "ByteProperty"))
 		return pybind11::cast((TArray<char> *)(((char *)this) + prop->Offset_Internal));
+	else if (!strcmp(prop->Inner->Class->GetName().c_str(), "BoolProperty"))
+		return pybind11::cast((TArray<int> *)(((char *)this) + prop->Offset_Internal));
 	return py::none();
 }
 
@@ -137,21 +140,26 @@ pybind11::object FHelper::GetProperty(UProperty *prop) {
 }
 
 bool FHelper::SetProperty(class UStructProperty *prop, py::object val) {
-	if (!py::isinstance<py::tuple>(val))
-		return false;
-	py::tuple tup = (py::tuple)val;
+	if (py::isinstance<py::tuple>(val))
+	{
+		py::tuple tup = (py::tuple)val;
 
-	unsigned int currentIndex = 0;
-	for (UProperty* Child = (UProperty *)prop->Struct->Children; Child; Child = (UProperty *)Child->Next) {
-		Logging::LogD("Child = %s, %d\n", Child->GetFullName().c_str(), Child->Offset_Internal);
-		if (currentIndex < tup.size())
-			((FHelper *)(((char *)this) + prop->Offset_Internal))->SetProperty(Child, tup[currentIndex++]);
+		unsigned int currentIndex = 0;
+		for (UProperty* Child = (UProperty *)prop->Struct->Children; Child; Child = (UProperty *)Child->Next) {
+			Logging::LogD("Child = %s, %d\n", Child->GetFullName().c_str(), Child->Offset_Internal);
+			if (currentIndex < tup.size())
+				((FHelper *)(((char *)this) + prop->Offset_Internal))->SetProperty(Child, tup[currentIndex++]);
+		}
+		if (tup.size() > currentIndex) {
+			Logging::LogF("Not all tuple values converted for struct!\n");
+			return false;
+		}
+		return true;
 	}
-	if (tup.size() > currentIndex) {
-		Logging::LogF("Not all tuple values converted for struct!\n");
-		return false;
+	else if (py::isinstance<FStruct>(val)) {
+		Logging::LogD("FSTRUCT OMG\n");
 	}
-	return true;
+	return false;
 }
 
 bool FHelper::SetProperty(class UStrProperty *prop, py::object val) {
@@ -225,14 +233,38 @@ bool FHelper::SetProperty(class UByteProperty *prop, py::object val) {
 }
 
 bool FHelper::SetProperty(class UBoolProperty *prop, py::object val) {
-	if (val.cast<bool>())
-		((((unsigned int *)this) + prop->Offset_Internal)[0] |= prop->Mask);
+	try {
+		if (val.cast<bool>())
+			((((unsigned int *)this) + prop->Offset_Internal)[0] |= prop->Mask);
+	}
+	catch (std::exception e) {
+		Logging::LogF(e.what());
+	}
 	return true;
 }
 
 bool FHelper::SetProperty(class UArrayProperty *prop, py::object val) {
-	Logging::LogF("Setting Arrays is unimplemented!\n");
-	return false;
+	if (!py::isinstance<py::sequence>(val))
+		return false;
+	Logging::LogD("A\n");
+	auto s = py::reinterpret_borrow<py::sequence>(val);
+	Logging::LogD("B\n");
+	((tFree)BL2SDK::pGMalloc[0]->VfTable[3])(BL2SDK::pGMalloc[0], (((void **)this) + prop->Offset_Internal)[0]);
+	char *Data = (char *)((tMalloc)BL2SDK::pGMalloc[0]->VfTable[1])(BL2SDK::pGMalloc[0], prop->Inner->ElementSize * s.size(), 8);
+	Logging::LogD("C %d %d %p %p %d %p\n", prop->Inner->ElementSize, prop->Offset_Internal, this, Data, s.size(), (TArray<void *> *)(((char *)this) + prop->Offset_Internal));
+	memset(Data, 0, prop->Inner->ElementSize * s.size());
+	Logging::LogD("D\n");
+	((TArray<void *> *)(((char *)this) + prop->Offset_Internal))->Data = (void **)Data;
+	((TArray<void *> *)(((char *)this) + prop->Offset_Internal))->Count = s.size();
+	((TArray<void *> *)(((char *)this) + prop->Offset_Internal))->Max = s.size();
+	Logging::LogD("E\n");
+	int x = 0;
+	for (auto it : val) {
+		Logging::LogD("%x\n", (Data + prop->Inner->ElementSize * x));
+		((FHelper *)(Data + prop->Inner->ElementSize * x++))->SetProperty(prop->Inner, py::reinterpret_borrow<py::object>(it));
+	}
+	Logging::LogD("F\n");
+	return true;
 }
 
 bool FHelper::SetProperty(class UProperty *prop, py::object val) {

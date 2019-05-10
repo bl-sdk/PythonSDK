@@ -65,12 +65,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\include\external\detours\detours.h">
-      <Filter>Header Files\detours</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\external\detours\detver.h">
-      <Filter>Header Files\detours</Filter>
-    </ClInclude>
     <ClInclude Include="src\include\AntiDebug.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -307,6 +301,12 @@
     </ClInclude>
     <ClInclude Include="src\include\TypeMap.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\detours\detours.h">
+      <Filter>Header Files\detours</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\detours\detver.h">
+      <Filter>Header Files\detours</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

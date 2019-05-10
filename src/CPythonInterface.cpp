@@ -97,7 +97,7 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	Export_pystes_Core_classes(m);
 	Export_pystes_TArray(m);
 
-	m.def("Log", [](std::string in) { Logging::Log(in.c_str(), in.length()); });
+	m.def("Log", [](std::string in) { Logging::LogPy(in.c_str()); });
 	m.def("LoadPackage", &BL2SDK::LoadPackage, py::arg("filename"), py::arg("flags") = 0, py::arg("force") = false);
 	m.def("FindObject", [](char *ClassName, char *ObjectFullName) { return UObject::Find(ClassName, ObjectFullName); }, py::return_value_policy::reference);
 	m.def("FindObject", [](UClass *Class, char *ObjectFullName) { return UObject::Find(Class, ObjectFullName); }, py::return_value_policy::reference);

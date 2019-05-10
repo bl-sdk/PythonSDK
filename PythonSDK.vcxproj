@@ -93,10 +93,10 @@
     <ClInclude Include="src\include\CScriptHookManager.h" />
     <ClInclude Include="src\include\CSigScan.h" />
     <ClInclude Include="src\include\CSimpleDetour.h" />
+    <ClInclude Include="src\include\detours\detours.h" />
+    <ClInclude Include="src\include\detours\detver.h" />
     <ClInclude Include="src\include\Exceptions.h" />
     <ClInclude Include="src\include\Exports.h" />
-    <ClInclude Include="src\include\external\detours\detours.h" />
-    <ClInclude Include="src\include\external\detours\detver.h" />
     <ClInclude Include="src\include\gamedefines.h" />
     <ClInclude Include="src\include\GameHooks.h" />
     <ClInclude Include="src\include\Logging.h" />

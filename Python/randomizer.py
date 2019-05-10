@@ -5,6 +5,13 @@ import random
 import json
 import os
 
+def log(s):
+    s = str(s)
+    if not s.endswith('\n'):
+        s += '\n'
+    bl2sdk.Log(s)
+print = log
+
 
 class CrossSkillRandomizer(bl2sdk.BL2MOD):
     Description = "Randomize all the skills!"
@@ -73,15 +80,13 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
             self.RandomizeBranch(Branch)
 
     def RandomizeBranch(self, SkillTreeBranchDef):
-        print(1)
         self.PreloadPackages()
-        print(2)
         TierCountOdds = [95, 40, 80, 30, 80, 40]
         HasBloodlust = False
         HasHellborn = False
         for Tier in range(6):
             Pity = True
-            TierLayout = [0, 0, 0]
+            TierLayout = [False, False, False]
             MaxPoints = 0
             NewSkills = []
             for Skill in range(3):
@@ -93,12 +98,13 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
                     if (Skill == 2 and Pity):
                         Skill = self.RNG.randint(0, 2)
                     Pity = False
-                    TierLayout[Skill] = 1
+                    TierLayout[Skill] = True
                     SkillDefNum = self.RNG.randint(0, len(self.ValidSkills) - 1)
                     SkillDefName = self.ValidSkills.pop(SkillDefNum)
                     SkillDef = bl2sdk.FindObject("SkillDefinition", SkillDefName)
                     MaxPoints += SkillDef.MaxGrade
                     NewSkills.append(SkillDef)
+                    bl2sdk.Log("{}\n".format(str(SkillDef)))
                     HasHellborn = HasHellborn or "Hellborn" in SkillDef.GetFullName()
                     if not HasBloodlust and SkillDef.GetName() in ["BloodfilledGuns", "BloodyTwitch"]:
                         HasBloodlust = True
@@ -126,11 +132,12 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
                 )
             NewTierLayout = SkillTreeBranchDef.Layout.Tiers[Tier]
             NewTierLayout.bCellIsOccupied = TierLayout
-            SkillTreeBranchDef.Layout.Tiers.Set(Tier, NewTierLayout)
+            SkillTreeBranchDef.Layout.Tiers[Tier] = NewTierLayout
             NewTier = SkillTreeBranchDef.Tiers[Tier]
             NewTier.Skills = NewSkills
             NewTier.PointsToUnlockNextTier = min(MaxPoints, 5)
-            SkillTreeBranchDef.Tiers.Set(Tier, NewTier)
+            SkillTreeBranchDef.Tiers[Tier] = NewTier
+    bl2sdk.Log("Done randomizing\n")
 
     ClassSkills = {
         "Soldier": [

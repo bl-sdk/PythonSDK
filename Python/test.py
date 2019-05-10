@@ -19,11 +19,18 @@ from bl2sdk import *
 # 		print("%x" % (Children.GetAddress() + 0x80))
 # 	Children = Children.Next
 # print(engine.CanUnpause())
-for service in bl2sdk.UObject.FindObjectsContaining("SparkServiceConfiguration Transient.SparkServiceConfiguration"):
+# for service in bl2sdk.UObject.FindObjectsContaining("SparkServiceConfiguration Transient.SparkServiceConfiguration"):
 	# If the service's name is "micropatch" then it is the hotfix
 	# object, and we are done.
-	print(service.ServiceName)
+	# print(service.ServiceName)
 
+s = bl2sdk.FindObject("ScriptStruct", "WillowGame.IUpdatePostProcessOverride.MaterialEffectModifier")
+c = s.Children
+while c:
+	inner = c.Inner
+	if inner:
+		print(inner.Offset_Internal)
+	c = c.Next
 
 # class TestUObject(bl2sdk.UObject):
 # 	def __getattribute__(self, name):

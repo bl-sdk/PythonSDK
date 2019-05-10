@@ -76,7 +76,6 @@ RegisterEngineHook("WillowGame.MarketplaceGFxMovie.ShopInputKey", "OpenModMenu",
 
 
 def ReplaceDLCWithMods(caller: UObject, stack: FFrame, result: FStruct, function: UFunction) -> bool:
-	print('a')
 	EventID = stack.popInt()
 	Caption = stack.popFString()
 	bDisabled = stack.popULong()
