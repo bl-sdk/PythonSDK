@@ -5,14 +5,6 @@ import random
 import json
 import os
 
-def log(s):
-    s = str(s)
-    if not s.endswith('\n'):
-        s += '\n'
-    bl2sdk.Log(s)
-print = log
-
-
 class CrossSkillRandomizer(bl2sdk.BL2MOD):
     Description = "Randomize all the skills!"
 
@@ -37,10 +29,7 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
             bl2sdk.Mods.insert(0, NewRando)
 
     def Enable(self):
-        def InjectSkills(caller: UObject, stack: FFrame, result: FStruct, function: UFunction):
-            code = stack.Code
-            SkillTreeDef = stack.popObject()
-            stack.Code = code
+        def InjectSkills(caller: UObject, function: UFunction, params: FStruct) -> bool:
             if not self.Seed:
                 self.Seed = random.randrange(sys.maxsize)
                 bl2sdk.Log("Randomizing with seed '{}'".format(self.Seed))
@@ -48,7 +37,7 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
                 self.RecordSeed()
             else:
                 self.RNG = random.Random(self.Seed)
-            self.RandomizeTree(SkillTreeDef)
+            self.RandomizeTree(params.SkillTreeDef)
             return True
 
         bl2sdk.RegisterHook(
@@ -104,7 +93,6 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
                     SkillDef = bl2sdk.FindObject("SkillDefinition", SkillDefName)
                     MaxPoints += SkillDef.MaxGrade
                     NewSkills.append(SkillDef)
-                    bl2sdk.Log("{}\n".format(str(SkillDef)))
                     HasHellborn = HasHellborn or "Hellborn" in SkillDef.GetFullName()
                     if not HasBloodlust and SkillDef.GetName() in ["BloodfilledGuns", "BloodyTwitch"]:
                         HasBloodlust = True
@@ -137,7 +125,6 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
             NewTier.Skills = NewSkills
             NewTier.PointsToUnlockNextTier = min(MaxPoints, 5)
             SkillTreeBranchDef.Tiers[Tier] = NewTier
-        bl2sdk.Log("Done randomizing\n")
 
     ClassSkills = {
         "Soldier": [

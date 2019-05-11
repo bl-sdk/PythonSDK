@@ -97,4 +97,4 @@ RegisterHook("WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "Hoo
 if os.getcwd().endswith('\\Plugins\\Python'):
 	os.chdir(os.getcwd().split('\\Plugins\\Python')[0])
 
-bl2sdk.SetLoggingLevel("DEBUG")
+# bl2sdk.SetLoggingLevel("DEBUG")

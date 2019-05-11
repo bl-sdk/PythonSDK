@@ -346,7 +346,6 @@ namespace BL2SDK
 
 	void initialize(wchar_t * exeBaseFolder)
 	{
-		Logging::SetLoggingLevel("DEBUG");
 		HookAntiDebug();
 		HookManager = new CHookManager("EngineHooks");
 		hookGame();
