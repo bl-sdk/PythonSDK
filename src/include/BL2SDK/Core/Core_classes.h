@@ -1330,7 +1330,7 @@ private:
 	bool GenerateStruct(py::tuple tuple, UProperty *prop) {};
 
 	FHelper *GenerateParams(py::args args, py::kwargs kwargs) {
-		FHelper *params = (FHelper *)calloc(1, func->ParamsSize);
+		FHelper *params = (FHelper *)((tMalloc)BL2SDK::pGMalloc[0]->VfTable[1])(BL2SDK::pGMalloc[0], func->ParamsSize, 8);
 		memset(params, 0, func->ParamsSize);
 		unsigned int currentIndex = 0;
 		for (UProperty* Child = (UProperty *)func->Children; Child; Child = (UProperty *)Child->Next) {
@@ -1338,14 +1338,16 @@ private:
 				continue;
 			else if (kwargs.contains(Child->GetName().c_str())) {
 				if (!params->SetProperty(Child, kwargs[Child->GetName().c_str()])) {
-					free(params);
+					Logging::LogD("Freeing %p\n", params);
+					((tFree)BL2SDK::pGMalloc[0]->VfTable[3])(BL2SDK::pGMalloc[0], params);
 					throw std::exception(Util::Format("Unexpected value for %s", Child->GetFullName().c_str()).c_str());
 				}
 				continue;
 			}
 			else if (currentIndex < args.size()) {
 				if (!params->SetProperty(Child, args[currentIndex++])) {
-					free(params);
+					Logging::LogD("Freeing %p\n", params);
+					((tFree)BL2SDK::pGMalloc[0]->VfTable[3])(BL2SDK::pGMalloc[0], params);
 					throw std::exception(Util::Format("Unexpected value for %s", Child->GetFullName().c_str()).c_str());
 				}
 				continue;
@@ -1354,7 +1356,8 @@ private:
 				continue;
 			else if (Child->PropertyFlags & 0x100) // Output
 				continue;
-			free(params);
+			Logging::LogD("Freeing %p\n", params);
+			((tFree)BL2SDK::pGMalloc[0]->VfTable[3])(BL2SDK::pGMalloc[0], params);
 			throw std::exception("Invalid number of parameters");
 		}
 		return params;
@@ -1384,20 +1387,27 @@ public:
 			return py::none();
 		Logging::LogD("FFunction::Call called %s.%s)\n", obj->GetFullName().c_str(), func->GetName().c_str());
 		FHelper *params = GenerateParams(args, kwargs);
-		if (!params)
-			throw std::exception(Util::Format("Unable to generate parameters for %s", func->GetFullName().c_str()).c_str());
 		Logging::LogD("made params\n");
 		auto flags = func->FunctionFlags;
+		func->FunctionFlags |= 0x400;
 		obj->ProcessEvent(func, params);
 		func->FunctionFlags = flags;
 		Logging::LogD("Called ProcessEvent\n");
 		py::object ret = GetReturn(params);
-		free(params);
+		Logging::LogD("Freeing %p\n", params);
+		memset(params, 0, func->ParamsSize);
+		((tFree)BL2SDK::pGMalloc[0]->VfTable[3])(BL2SDK::pGMalloc[0], params);
 		Logging::LogD("ProcessEvent Succeeded!\n");
 		return ret;
 	}
 };
 
+struct FOutParmRec
+{
+	UProperty		*Property;
+	unsigned char	*PropAddr;
+	FOutParmRec		*NextOutParm;
+};
 
 struct FFrame : public FOutputDevice
 {
@@ -1412,17 +1422,15 @@ struct FFrame : public FOutputDevice
 public:
 	void SkipFunction() {
 		// allocate temporary memory on the stack for evaluating parameters
-		//char* Frame = (char *)calloc(1, Node->ParamsSize);
-		//for (UProperty* Property = (UProperty*)Node->Children; Code[0] != 0x16; Property = (UProperty*)Property->Next)
-		//{
-		//	PreviousFrame = NULL;
-		//	BL2SDK::pFrameStep(this, this->Object, (void *)((Property->PropertyFlags & 0x100) ? NULL : Frame + Property->Offset_Internal));
-		//}
+		char* Frame = (char *)((tMalloc)BL2SDK::pGMalloc[0]->VfTable[1])(BL2SDK::pGMalloc[0], Node->ParamsSize, 8);
+		memset(Frame, 0, Node->ParamsSize);
+		for (UProperty* Property = (UProperty*)Node->Children; Code[0] != 0x16; Property = (UProperty*)Property->Next)
+			BL2SDK::pFrameStep(this, this->Object, (void *)((Property->PropertyFlags & 0x100) ? NULL : Frame + Property->Offset_Internal));
 
-		//Code++;
-		//free(Frame);
-		while ((this->Code++)[0] != 0x16)
-			;
+		Code++;
+		Logging::LogD("Freeing frame %p\n", Frame);
+		memset(Frame, 0, Node->ParamsSize);
+		((tFree)BL2SDK::pGMalloc[0]->VfTable[3])(BL2SDK::pGMalloc[0], Frame);
 	}
 
 	UObject *popObject() {

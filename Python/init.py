@@ -86,6 +86,7 @@ def ReplaceDLCWithMods(caller: UObject, function: UFunction, params: FStruct) ->
 
 def HookMainMenuPopulateForMods(caller: UObject, function: UFunction, params: FStruct) -> bool:
 	RegisterHook("WillowGame.WillowScrollingList.AddListItem", "ReplaceDLCWithMods", ReplaceDLCWithMods)
+	bl2sdk.DoInjectedCallNext()
 	caller.Populate(params.TheList)
 	RemoveHook("WillowGame.WillowScrollingList.AddListItem", "ReplaceDLCWithMods")
 	return False

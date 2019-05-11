@@ -53,8 +53,11 @@ namespace Logging
 				if (!(length == 1 && formatted[0] == '\n'))
 				{
 					std::wstring wfmt = Util::Widen(formatted);
+					bool DoInjectedNext = BL2SDK::injectedCallNext;
 					BL2SDK::doInjectedCallNext();
 					gameConsole->OutputText(FString((wchar_t*)wfmt.c_str()));
+					if (DoInjectedNext)
+						BL2SDK::doInjectedCallNext();
 				}
 			}
 		}

@@ -57,9 +57,15 @@ bool CHookManager::ProcessHooks(UObject* pCaller, FFrame& Stack, void* const Res
 	if (iHooks != Hooks.end())
 	{
 		char* Frame = (char *)calloc(1, Function->ParamsSize);
-		for (UProperty* Property = (UProperty *)Function->Children; Stack.Code[0] != 0x16; Property = (UProperty*)Property->Next)
+		for (UProperty* Property = (UProperty *)Function->Children; Stack.Code[0] != 0x16; Property = (UProperty*)Property->Next) {
+			const bool bIsReturnParam = ((Property->PropertyFlags & 0x400) != 0);
+			if (bIsReturnParam)
+				continue;
 			BL2SDK::pFrameStep(&Stack, Stack.Object, Frame + Property->Offset_Internal);
+		}
 		bool ret = ProcessHooks(Function->GetObjectName(), pCaller, Function, &FStruct{ Function, (void *)Frame });
+		memset(Frame, 0, Function->ParamsSize);
+		Logging::LogD("Freeing frame2 %p\n", Frame);
 		free(Frame);
 		return ret;
 	}
