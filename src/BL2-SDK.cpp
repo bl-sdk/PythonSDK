@@ -1,10 +1,10 @@
 #include "stdafx.h"
 #include "CSimpleDetour.h"
 #include "CSigScan.h"
-#include "GameHooks.h"
 #include "Exceptions.h"
 #include "Signatures.h"
 #include "PackageFix.h"
+#include "CHookManager.h"
 #include "AntiDebug.h"
 #include "Util.h"
 #include "BL2-SDK.h"
@@ -17,9 +17,7 @@ namespace BL2SDK
 {
 	static UConsole * gameConsole = nullptr;
 
-	bool injectedCallNext = false;
-	bool logAllProcessEvent = true;
-	bool logAllUnrealScriptCalls = true;
+	bool logAllCalls = true;
 
 	void* pGObjects;
 	void* pGNames;
@@ -37,6 +35,8 @@ namespace BL2SDK
 	tByteOrderSerialize pByteOrderSerialize;
 	tGetDefaultObject pGetDefaultObject;
 	UObject *engine = nullptr;
+	CHookManager *HookManager = nullptr;
+	bool injectedCallNext = false;
 
 	CPythonInterface *Python;
 
@@ -50,6 +50,7 @@ namespace BL2SDK
 		UObject* caller;
 		_asm mov caller, ecx;
 
+		std::string functionName = function->GetObjectName();
 		if (injectedCallNext)
 		{
 			injectedCallNext = false;
@@ -57,15 +58,14 @@ namespace BL2SDK
 			return;
 		}
 
-		if (logAllProcessEvent)
+		if (logAllCalls)
 		{
 			std::string callerName = caller->GetFullName();
-			std::string functionName = function->GetFullName();
 
 			Logging::LogF("===== ProcessEvent called =====\npCaller Name = %s\npFunction Name = %s\n", callerName.c_str(), functionName.c_str());
 		}
 
-		if (!GameHooks::ProcessEngineHooks(caller, function, params, result))
+		if (HookManager->HasHook(functionName) && !HookManager->ProcessHooks(functionName, caller, function, &FStruct{ function, params }))
 		{
 			// The engine hook manager told us not to pass this function to the engine
 			return;
@@ -80,20 +80,24 @@ namespace BL2SDK
 		UObject* caller;
 		_asm mov caller, ecx;
 
-		if (logAllUnrealScriptCalls)
+		if (logAllCalls)
 		{
 			std::string callerName = caller->GetFullName();
 			std::string functionName = function->GetFullName();
 
-			Logging::LogF("===== CallFunction called =====\npCaller Name = %s\npFunction Name = %s\n", callerName.c_str(), functionName.c_str());
+			// Prevent infinite recursion when printing to console
+			if (functionName != "Function Engine.Console.OutputText" && functionName != "Function Engine.Console.OutputTextLine")
+				Logging::LogF("===== CallFunction called =====\npCaller Name = %s\npFunction Name = %s\n", callerName.c_str(), functionName.c_str());
 		}
 
-		if (!GameHooks::ProcessUnrealScriptHooks(caller, stack, result, function))
+		unsigned char *code = stack.Code;
+
+		if (!HookManager->ProcessHooks(caller, stack, result, function))
 		{
-			// UnrealScript hook manager already took care of it
+			stack.SkipFunction();
 			return;
 		}
-
+		stack.Code = code;
 		pCallFunction(caller, stack, result, function);
 	}
 
@@ -102,14 +106,9 @@ namespace BL2SDK
 		injectedCallNext = true;
 	}
 
-	void LogAllProcessEventCalls(bool enabled)
+	void LogAllCalls(bool enabled)
 	{
-		logAllProcessEvent = enabled;
-	}
-
-	void LogAllUnrealScriptCalls(bool enabled)
-	{
-		logAllUnrealScriptCalls = enabled;
+		logAllCalls = enabled;
 	}
 
 	int unrealExceptionHandler(unsigned int code, struct _EXCEPTION_POINTERS* ep)
@@ -253,6 +252,17 @@ namespace BL2SDK
 		pGetDefaultObject = reinterpret_cast<tGetDefaultObject>(sigscan.Scan(Signatures::GetDefaultObject));
 		Logging::LogF("[Internal] GetDefaultObject = 0x%p\n", pGetDefaultObject);
 
+		try {
+			void *SetCommand = sigscan.Scan(Signatures::SetCommand);
+			DWORD near out = 0;
+			if (!VirtualProtectEx(GetCurrentProcess(), SetCommand, 5, 0x40, &out)) {
+				Logging::LogF("WINAPI Error when enabling 'SET' commands: %d\n", GetLastError());
+			}
+			((unsigned char *)SetCommand)[5] = 0xFF;
+		}
+		catch(std::exception e) {
+			Logging::LogF("Exception when enabling 'SET' commands: %d\n", e.what());
+		}
 
 		// Detour UObject::ProcessEvent()
 		//SETUP_SIMPLE_DETOUR(detProcessEvent, pProcessEvent, hkProcessEvent);
@@ -291,11 +301,11 @@ namespace BL2SDK
 	}
 
 	// This function is used to get the dimensions of the game window for Gwen's renderer
-	bool getCanvasPostRender(UObject* caller, UFunction* function, void* params, void* result)
+	bool getCanvasPostRender(UObject* caller, UFunction* function, FStruct *params)
 	{
 		InitializePython();
 
-		GameHooks::EngineHookManager->RemoveStaticHook(function, "GetCanvas");
+		HookManager->Remove(function->GetObjectName(), "GetCanvas");
 		return true;
 	}
 
@@ -304,13 +314,13 @@ namespace BL2SDK
 		EngineVersion = UObject::GetEngineVersion();
 		ChangelistNumber = UObject::GetBuildChangelistNumber();
 
-		Logging::LogF("[Internal] Engine Version = %d, Build Changelist = %d\n", EngineVersion, ChangelistNumber);
+		Logging::LogD("[Internal] Engine Version = %d, Build Changelist = %d\n", EngineVersion, ChangelistNumber);
 	}
 
 	// This function is used to ensure that everything gets called in the game thread once the game itself has loaded
-	bool GameReady(UObject* caller, FFrame& stack, void* const result, UFunction* function)
+	bool GameReady(UObject* caller, UFunction* function, FStruct *params)
 	{
-		Logging::LogF("[GameReady] Thread: %i\n", GetCurrentThreadId());
+		Logging::LogD("[GameReady] Thread: %i\n", GetCurrentThreadId());
 
 		for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
 		{
@@ -338,9 +348,9 @@ namespace BL2SDK
 		gameConsole = (UConsole *)UObject::Find("WillowConsole", "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0");
 		if (gameConsole && (gameConsole->ConsoleKey == FName("None") || gameConsole->ConsoleKey == FName("Undefined")))
 			gameConsole->ConsoleKey = FName("Tilde");
-		
-		GameHooks::UnrealScriptHookManager->RemoveStaticHook(function, "StartupSDK");
-		GameHooks::EngineHookManager->Register("WillowGame.WillowGameViewportClient.PostRender", "GetCanvas", getCanvasPostRender);
+
+		HookManager->Remove(function->GetObjectName(), "StartupSDK");
+		HookManager->Register("WillowGame.WillowGameViewportClient.PostRender", "GetCanvas", getCanvasPostRender);
 
 		return true;
 	}
@@ -348,14 +358,13 @@ namespace BL2SDK
 	void initialize(wchar_t * exeBaseFolder)
 	{
 		HookAntiDebug();
-		GameHooks::Initialize();
+		HookManager = new CHookManager("EngineHooks");
 		hookGame();
 		//InitializePackageFix();
 
-		LogAllProcessEventCalls(false);
-		LogAllUnrealScriptCalls(false);
+		LogAllCalls(false);
 
-		GameHooks::UnrealScriptHookManager->Register("Engine.Console.Initialized", "StartupSDK", GameReady);
+		HookManager->Register("Engine.Console.Initialized", "StartupSDK", GameReady);
 		//GameHooks::UnrealScriptHookManager->Register("Engine.Interaction.NotifyGameSessionEnded", "ExitGame", &cleanup);
 	}
 
@@ -364,7 +373,8 @@ namespace BL2SDK
 	void cleanup()
 	{
 		Logging::Cleanup();
-		GameHooks::Cleanup();
+		delete HookManager;
+		HookManager = nullptr;
 		Util::CloseGame();
 	}
 
@@ -401,5 +411,13 @@ namespace BL2SDK
 		if (!engine)
 			engine = UObject::Find("WillowGameEngine", "Transient.WillowGameEngine");
 		return engine;
+	}
+
+	void RegisterHook(const std::string& funcName, const std::string& hookName, std::function<bool(UObject*, UFunction*, FStruct*)> funcHook) {
+		HookManager->Register(funcName, hookName, funcHook);
+	}
+
+	bool RemoveHook(const std::string& funcName, const std::string& hookName) {
+		return HookManager->Remove(funcName, hookName);
 	}
 }

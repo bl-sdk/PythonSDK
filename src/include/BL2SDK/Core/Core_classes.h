@@ -178,8 +178,40 @@
 # ========================================================================================= #
 */
 
+struct FHelper {
+	struct FStruct GetStructProperty(class UStructProperty *prop);
+	struct FString* GetStrProperty(class UProperty *prop);
+	class UObject* GetObjectProperty(class UProperty *prop);
+	class UComponent* GetComponentProperty(class UProperty *prop);
+	class UClass* GetClassProperty(class UProperty *prop);
+	struct FName* GetNameProperty(class UProperty *prop);
+	int GetIntProperty(class UProperty *prop);
+	struct FScriptInterface* GetInterfaceProperty(class UProperty *prop);
+	float GetFloatProperty(class UProperty *prop);
+	struct FScriptDelegate* GetDelegateProperty(class UProperty *prop);
+	unsigned char GetByteProperty(class UProperty *prop);
+	bool GetBoolProperty(class UBoolProperty *boolProp);
+	py::object GetArrayProperty(class UArrayProperty *prop);
+	pybind11::object GetProperty(class UProperty *prop);
+
+	bool SetProperty(class UStructProperty *prop, py::object val);
+	bool SetProperty(class UStrProperty *prop, py::object val);
+	bool SetProperty(class UObjectProperty *prop, py::object val);
+	bool SetProperty(class UComponentProperty *prop, py::object val);
+	bool SetProperty(class UClassProperty *prop, py::object val);
+	bool SetProperty(class UNameProperty *prop, py::object val);
+	bool SetProperty(class UInterfaceProperty *prop, py::object val);
+	bool SetProperty(class UDelegateProperty *prop, py::object val);
+	bool SetProperty(class UFloatProperty *prop, py::object val);
+	bool SetProperty(class UIntProperty *prop, py::object val);
+	bool SetProperty(class UByteProperty *prop, py::object val);
+	bool SetProperty(class UBoolProperty *boolProp, py::object val);
+	bool SetProperty(class UArrayProperty *prop, py::object val);
+	bool SetProperty(class UProperty *prop, py::object val);
+};
+
 // 0x003C
-class UObject
+class UObject : FHelper
 {
 public:
 	//struct FPointer                                    VfTableObject;                                    		// 0x0000 (0x0004) [0x0000000000821002]              ( CPF_Const | CPF_Native | CPF_EditConst | CPF_NoExport )
@@ -217,7 +249,12 @@ public:
 
 	static UObject* Find(UClass *Class, const std::string& ObjectFullName)
 	{
-		return UObject::FindObject(FString((char *)ObjectFullName.c_str()), Class);
+		bool DoInjectedNext = BL2SDK::injectedCallNext;
+		BL2SDK::doInjectedCallNext();
+		UObject *ret = UObject::FindObject(FString((char *)ObjectFullName.c_str()), Class);
+		if (DoInjectedNext)
+			BL2SDK::doInjectedCallNext();
+		return ret;
 	}
 
 	static UObject* Find(const std::string& ClassName, const std::string& ObjectFullName)
@@ -277,7 +314,13 @@ public:
 		static auto ptr = (UClass *)GObjects()->Data[2];
 		return ptr;
 	};
-	
+
+	py::object GetProperty(std::string& PropName);
+	bool SetProperty(std::string& PropName, py::object val);
+	struct FFunction GetFunction(std::string& PropName);
+	//struct FScriptArray GetArrayProperty(std::string& PropName);
+	//struct FScriptMap GetMapProperty(std::string& PropName);
+
 	bool IsRelevantForDebugging(class UObject* Source);
 	class UObject* GetGlobalDebugTarget();
 	void SetGlobalDebugTarget(class UObject* Target);
@@ -971,15 +1014,42 @@ public:
 	class UField*                                      Next;                                             		// NOT AUTO-GENERATED PROPERTY
 };
 
+// 0x0040 (0x0080 - 0x0040)
+class UProperty : public UField
+{
+public:
+	int					ArrayDim;
+	int					ElementSize;
+	unsigned int		PropertyFlags;
+	unsigned char		UnknownData00[0x14];
+	int					Offset_Internal;
+	UProperty*			PropertyLinkNext;
+	unsigned char		UnknownData01[0x18];
+};
+
 // 0x004C (0x008C - 0x0040)
 class UStruct : public UField
 {
 public:
-	unsigned char			UnknownData00[0x8];					// NOT AUTO-GENERATED PROPERTY
-	class UField*			SuperField;								// NOT AUTO-GENERATED PROPERTY
-	class UField*			Children;								// NOT AUTO-GENERATED PROPERTY
-	unsigned short			PropertySize;							// NOT AUTO-GENERATED PROPERTY
-	unsigned char			UnknownData01[0x3A];					// NOT AUTO-GENERATED PROPERTY
+	unsigned char			UnknownData00[0x8];
+	class UStruct*			SuperField;
+	class UField*			Children;
+	unsigned short			PropertySize;
+	char					UnknownData01[0x3A];
+
+	UObject* FindChildByName(FName InName) const
+	{
+		const UStruct *thisField = this;
+		while (thisField)
+		{
+			for (UField* Child = thisField->Children; Child != NULL; Child = Child->Next)
+				if (Child->Name == InName)
+					return Child;
+			thisField = thisField->SuperField;
+		}
+
+		return NULL;
+	}
 };
 
 // 0x001C (0x00A8 - 0x008C)
@@ -989,34 +1059,18 @@ public:
 	unsigned char                                      UnknownData00[0x1C];                            		// 0x008C (0x001C) MISSED OFFSET
 };
 
-// 0x0024 (0x00B0 - 0x008C)
 class UFunction : public UStruct
 {
 public:
-	unsigned long		FunctionFlags;								// NOT AUTO-GENERATED PROPERTY
-	unsigned short		iNative;									// NOT AUTO-GENERATED PROPERTY
-	unsigned short		RepOffset;									// NOT AUTO-GENERATED PROPERTY
-	struct FName		FriendlyName;								// NOT AUTO-GENERATED PROPERTY
-	unsigned short		Numparams;									// NOT AUTO-GENERATED PROPERTY
-	unsigned short		paramsSize;									// NOT AUTO-GENERATED PROPERTY
-	unsigned long		ReturnValueOffset;							// NOT AUTO-GENERATED PROPERTY
-	unsigned char		UnknownData00[0x4];						// NOT AUTO-GENERATED PROPERTY
-	void*				Func;										// NOT AUTO-GENERATED PROPERTY
-};
-
-// 0x0040 (0x0080 - 0x0040)
-class UProperty : public UField
-{
-public:
-	int					ArrayDim;
-	UProperty*			DestructorLinkNext;
-	int					ElementSize;
-	UProperty*			NextRef;
-	UProperty*			PostConstructLinkNext;
-	unsigned int		PropertyFlags;
-	UProperty*			PropertyLinkNext;
-	unsigned short		RepIndex;
-	FName				RepNotifyFunc;
+	unsigned long		FunctionFlags;
+	unsigned short		iNative;
+	unsigned short		RepOffset;
+	struct FName		FriendlyName;
+	unsigned char		OperPrecedence;
+	unsigned char		NumParams;
+	unsigned short		ParamsSize;
+	unsigned long		ReturnValueOffset;
+	void*				Func;
 };
 
 // 0x0004 (0x0084 - 0x0080)
@@ -1108,14 +1162,14 @@ public:
 class UBoolProperty : public UProperty
 {
 public:
-	unsigned char                                      UnknownData00[0x4];                             		// 0x0080 (0x0004) MISSED OFFSET
+	unsigned int Mask;
 };
 
 // 0x0004 (0x0084 - 0x0080)
 class UArrayProperty : public UProperty
 {
 public:
-	unsigned char                                      UnknownData00[0x4];                             		// 0x0080 (0x0004) MISSED OFFSET
+	UProperty                                      *Inner;
 };
 
 // 0x000C (0x004C - 0x0040)
@@ -1265,6 +1319,244 @@ public:
 		return ptr;
 	}
 };
+
+
+struct FFunction
+{
+	UObject *obj;
+	UFunction *func;
+
+private:
+	bool GenerateStruct(py::tuple tuple, UProperty *prop) {};
+
+	FHelper *GenerateParams(py::args args, py::kwargs kwargs, FHelper *params) {
+		unsigned int currentIndex = 0;
+		for (UProperty* Child = (UProperty *)func->Children; Child; Child = (UProperty *)Child->Next) {
+			if (!(Child->PropertyFlags & 0x80)) // Param
+				continue;
+			else if (kwargs.contains(Child->GetName().c_str())) {
+				if (!params->SetProperty(Child, kwargs[Child->GetName().c_str()]))
+					throw std::exception(Util::Format("Unexpected value for %s", Child->GetFullName().c_str()).c_str());
+				continue;
+			}
+			else if (currentIndex < args.size()) {
+				if (!params->SetProperty(Child, args[currentIndex++]))
+					throw std::exception(Util::Format("Unexpected value for %s", Child->GetFullName().c_str()).c_str());
+				continue;
+			}
+			else if (Child->PropertyFlags & 0x10) // Optional
+				continue;
+			else if (Child->PropertyFlags & 0x100) // Output
+				continue;
+			throw std::exception("Invalid number of parameters");
+		}
+		return params;
+
+	}
+
+public:
+	py::object GetReturn(FHelper* params) {
+		std::deque<py::object> ReturnObjects{};
+		for (UProperty* Child = (UProperty *)func->Children; Child; Child = (UProperty *)Child->Next) {
+			if (Child->PropertyFlags & 0x400) // Return
+				ReturnObjects.push_front(params->GetProperty(Child));
+			else if (Child->PropertyFlags & 0x100) // Output
+				ReturnObjects.push_back(params->GetProperty(Child));
+		}
+		Logging::LogD("Finished popping return\n");
+		if (ReturnObjects.size() == 1)
+			return ReturnObjects[0];
+		else if (ReturnObjects.size() > 1)
+			return py::cast(ReturnObjects);
+		return py::none();
+	}
+
+	py::object Call(py::args args, py::kwargs kwargs)
+	{
+		if (!obj || !func)
+			return py::none();
+		Logging::LogD("FFunction::Call called %s.%s)\n", obj->GetFullName().c_str(), func->GetName().c_str());
+		char params[1000] = "";
+		memset(params, 0, 1000);
+		GenerateParams(args, kwargs, (FHelper *)params);
+		Logging::LogD("made params\n");
+		auto flags = func->FunctionFlags;
+		func->FunctionFlags |= 0x400;
+		obj->ProcessEvent(func, params);
+		func->FunctionFlags = flags;
+		Logging::LogD("Called ProcessEvent\n");
+		py::object ret = GetReturn((FHelper *)params);
+		memset(params, 0, 1000);
+		Logging::LogD("ProcessEvent Succeeded!\n");
+		return ret;
+	}
+};
+
+struct FOutParmRec
+{
+	UProperty		*Property;
+	unsigned char	*PropAddr;
+	FOutParmRec		*NextOutParm;
+};
+
+struct FFrame : public FOutputDevice
+{
+	class UFunction* Node;
+	class UObject* Object;
+	unsigned char* Code;
+	unsigned char* Locals;
+
+	struct FFrame* PreviousFrame;
+	struct FOutParmRec* Outparams;
+
+public:
+	void SkipFunction() {
+		// allocate temporary memory on the stack for evaluating parameters
+		char params[1000] = "";
+		memset(params, 0, 1000);
+		for (UProperty* Property = (UProperty*)Node->Children; Code[0] != 0x16; Property = (UProperty*)Property->Next)
+			BL2SDK::pFrameStep(this, this->Object, (void *)((Property->PropertyFlags & 0x100) ? NULL : params + Property->Offset_Internal));
+
+		Code++;
+		memset(params, 0, 1000);
+	}
+
+	UObject *popObject() {
+		UObject *obj = nullptr;
+		BL2SDK::pFrameStep(this, this->Object, &obj);
+		return obj;
+	};
+	struct FName *popFName() {
+		FName *obj = new FName();
+		BL2SDK::pFrameStep(this, this->Object, obj);
+		return obj;
+	};
+	struct FString *popFString() {
+		FString *obj = new FString();
+		BL2SDK::pFrameStep(this, this->Object, obj);
+		return obj;
+	};
+	float popFloat() {
+		float obj = 0;
+		BL2SDK::pFrameStep(this, this->Object, &obj);
+		return obj;
+	};
+	unsigned char popByte() {
+		unsigned char obj = 0;
+		BL2SDK::pFrameStep(this, this->Object, &obj);
+		return obj;
+	};
+	int popInt() {
+		int obj = 0;
+		BL2SDK::pFrameStep(this, this->Object, &obj);
+		return obj;
+	};
+	unsigned long popULong() {
+		unsigned long obj = 0;
+		BL2SDK::pFrameStep(this, this->Object, &obj);
+		return obj;
+	};
+	bool popBool() {
+		return !!popULong();
+	};
+	TArray<UObject *> *popTArrayObjects() {
+		TArray<UObject *> *obj = new TArray<UObject *>();
+		BL2SDK::pFrameStep(this, this->Object, obj);
+		return obj;
+	};
+};
+
+struct FStruct
+{
+	UStruct		*structType;
+	void		*base;
+	FStruct(UStruct *s, void *b) {
+		Logging::LogD("Creating FStruct of type '%s' from %p\n", s->GetObjectName().c_str(), b);
+		structType = s;
+		base = b;
+	};
+
+	pybind11::object GetProperty(std::string PropName) {
+		class UObject *obj = structType->FindChildByName(FName(PropName));
+		if (!obj)
+			return pybind11::none();
+		auto prop = reinterpret_cast<UProperty *>(obj);
+		return ((FHelper *)((char *)base))->GetProperty(prop);
+	}
+
+	bool SetProperty(std::string& PropName, py::object value) {
+		class UObject *obj = structType->FindChildByName(FName(PropName));
+		if (!obj)
+			return false;
+		auto prop = reinterpret_cast<UProperty *>(obj);
+		return ((FHelper *)((char *)base))->SetProperty(prop, value);
+	}
+
+	py::str Repr() {
+		py::str s = "{";
+		const UStruct *thisField = structType;
+		while (thisField)
+		{
+			for (UField* Child = thisField->Children; Child != NULL; Child = Child->Next) {
+				s = py::str("{}{}: {}").format(s, Child->GetName(), py::repr(GetProperty(Child->GetName())));
+				if (Child->Next || (thisField->SuperField && thisField->SuperField->Children))
+					s = py::str("{}{}").format(s, ", ");
+			}
+			thisField = thisField->SuperField;
+		}
+		s = py::str("{}{}").format(s, "}");
+		return s;
+	}
+};
+
+struct FArray {
+	TArray <char> *arr;
+	UProperty *type;
+	int IterCounter;
+
+	FArray(TArray <char> *array, UProperty *s) {
+		Logging::LogD("Creating FArray from %p, count: %d, max: %d\n", array, array->Count, array->Max);
+		arr = array;
+		type = s;
+		IterCounter = 0;
+	};
+
+	py::object GetItem(int i) {
+		return ((FHelper *)(arr->Data + type->ElementSize * i))->GetProperty(type);
+	}
+
+	void SetItem(int i, py::object obj) {
+		((FHelper *)(arr->Data + type->ElementSize * i))->SetProperty(type, obj);
+	}
+
+	int GetAddress() {
+		return (int)arr->Data;
+	}
+
+	FArray *Iter() {
+		IterCounter = 0;
+		return this;
+	}
+
+	py::object Next() {
+		if (IterCounter >= arr->Count)
+			throw pybind11::stop_iteration();
+		return GetItem(IterCounter++);
+	}
+
+	py::str Repr() {
+		py::str s = "[";
+		for (int x = 0; x < arr->Count; x++) {
+			s = py::str("{}{}").format(s, py::repr(GetItem(x)));
+			if (x + 1 < arr->Count)
+				s = py::str("{}{}").format(s, ", ");
+		}
+		s = py::str("{}{}").format(s, "]");
+		return s;
+	}
+};
+
+
 
 #ifdef _MSC_VER
 #pragma pack ( pop )

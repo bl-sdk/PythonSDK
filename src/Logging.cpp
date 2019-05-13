@@ -12,7 +12,7 @@ namespace Logging
 	HANDLE logFile = nullptr;
 	bool logToExternalConsole = true;
 	bool logToFile = true;
-	bool logToGameConsole = true;
+	bool logToGameConsole = false;
 	UConsole* gameConsole = nullptr;
 
 	void LogToFile(const char* buff, int len)
@@ -53,8 +53,11 @@ namespace Logging
 				if (!(length == 1 && formatted[0] == '\n'))
 				{
 					std::wstring wfmt = Util::Widen(formatted);
+					bool DoInjectedNext = BL2SDK::injectedCallNext;
 					BL2SDK::doInjectedCallNext();
 					gameConsole->OutputText(FString((wchar_t*)wfmt.c_str()));
+					if (DoInjectedNext)
+						BL2SDK::doInjectedCallNext();
 				}
 			}
 		}
@@ -80,6 +83,50 @@ namespace Logging
 		va_end(args);
 
 		Log(formatted.c_str(), formatted.length());
+	}
+
+	enum LogLevel {
+		DEBUG,
+		INFO,
+		WARNING,
+		EXCEPTION,
+		CRITICAL
+	};
+	Logging::LogLevel Level = WARNING;
+
+	void LogD(const char* fmt, ...)
+	{
+		if (Logging::Level == LogLevel::DEBUG) {
+			va_list args;
+			va_start(args, fmt);
+			std::string formatted = "[DEBUG] " + Util::FormatInternal(fmt, args);
+			va_end(args);
+
+			Log(formatted.c_str(), formatted.length());
+		}
+	}
+
+	void SetLoggingLevel(const char *NewLevel) {
+		std::string str = NewLevel;
+		std::transform(str.begin(), str.end(), str.begin(), ::toupper);
+		if (str == "DEBUG") {
+			Logging::Level = DEBUG;
+		}
+		else if (str == "INFO") {
+			Logging::Level = INFO;
+		}
+		else if (str == "WARNING") {
+			Logging::Level = WARNING;
+		}
+		else if (str == "EXCEPTION") {
+			Logging::Level = EXCEPTION;
+		}
+		else if (str == "CRITICAL") {
+			Logging::Level = CRITICAL;
+		}
+		else {
+			LogF("Unknown logging level '%s'\n", NewLevel);
+		}
 	}
 
 	void InitializeExtern()

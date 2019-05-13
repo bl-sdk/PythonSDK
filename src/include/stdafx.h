@@ -39,6 +39,9 @@ namespace BL2SDK
 	extern FMalloc** pGMalloc;
 }
 
+typedef void *(__thiscall *tMalloc) (struct FMalloc*, unsigned long, unsigned long);
+typedef void(__thiscall *tFree) (struct FMalloc*, void*);
+
 #include "BL2SDK/Core/Core_structs.h"
 #include "BL2SDK/Core/Core_f_structs.h"
 #include "BL2SDK/Core/Core_classes.h"
@@ -85,9 +88,6 @@ namespace BL2SDK
 
 #include "TypeMap.h"
 
-typedef void *(__thiscall *tMalloc) (struct FMalloc*, unsigned long, unsigned long);
-typedef void(__thiscall *tFree) (struct FMalloc*, void*);
-
 namespace pybind11 {
 	template <typename itype> struct polymorphic_type_hook<itype, detail::enable_if_t<std::is_base_of<UObject, itype>::value>>
 	{
@@ -105,6 +105,7 @@ namespace pybind11 {
 		}
 	};
 }
+
 typedef struct {
 	PyObject_VAR_HEAD
 		PyObject **ob_item;
@@ -326,7 +327,10 @@ namespace pybind11 {
 				return true;
 			}
 			static handle cast(FString src, return_value_policy /* policy */, handle /* parent */) {
-				return PyUnicode_FromWideChar(src.Data, src.Count - 1);
+				Logging::LogD("FString cast %p %d\n", src.Data, src.Count);
+				if (src.Data && src.Count)
+					return PyUnicode_FromWideChar(src.Data, src.Count - 1);
+				return py::none();
 			}
 		};
 	}
@@ -335,7 +339,7 @@ namespace pybind11 {
 namespace pybind11 {
 	namespace detail {
 		template <> struct type_caster<UClass *> {
-		using value_conv = make_caster<UObject *>;
+			using value_conv = make_caster<UObject *>;
 		public:
 			PYBIND11_TYPE_CASTER(UClass *, _("UClass"));
 			bool load(handle src, bool) {

@@ -65,25 +65,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\include\external\detours\detours.h">
-      <Filter>Header Files\detours</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\external\detours\detver.h">
-      <Filter>Header Files\detours</Filter>
-    </ClInclude>
     <ClInclude Include="src\include\AntiDebug.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\include\BL2-SDK.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\include\CEngineHookManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\include\CPythonInterface.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\CScriptHookManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\include\CSigScan.h">
@@ -99,9 +87,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\include\gamedefines.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\GameHooks.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\include\Logging.h">
@@ -129,9 +114,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\include\stdafx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\TypeMap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\include\Util.h">
@@ -308,111 +290,30 @@
     <ClInclude Include="src\include\pybind11\buffer_info.h">
       <Filter>Header Files\pybind11</Filter>
     </ClInclude>
+    <ClInclude Include="src\include\TypeMap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\detours\detours.h">
+      <Filter>Header Files\detours</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\detours\detver.h">
+      <Filter>Header Files\detours</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\CHookManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pydefs\_TArray.cpp">
       <Filter>Source Files\Pydefs</Filter>
     </ClCompile>
-    <ClCompile Include="src\pydefs\AkAudio_classes.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\AkAudio_f_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\AkAudio_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
     <ClCompile Include="src\pydefs\Core_classes.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\Core_f_structs.cpp">
       <Filter>Source Files\Pydefs</Filter>
     </ClCompile>
     <ClCompile Include="src\pydefs\Core_structs.cpp">
       <Filter>Source Files\Pydefs</Filter>
     </ClCompile>
-    <ClCompile Include="src\pydefs\Engine_classes.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\Engine_f_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\Engine_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
     <ClCompile Include="src\pydefs\gamedefines.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\GameFramework_classes.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\GameFramework_f_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\GameFramework_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\GearboxFramework_classes.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\GearboxFramework_f_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\GearboxFramework_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\GFxUI_classes.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\GFxUI_f_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\GFxUI_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\IpDrv_classes.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\IpDrv_f_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\IpDrv_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\OnlineSubsystemSteamworks_classes.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\OnlineSubsystemSteamworks_f_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\OnlineSubsystemSteamworks_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\WillowGame_classes.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\WillowGame_f_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\WillowGame_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\WinDrv_classes.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\WinDrv_f_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\WinDrv_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\XAudio2_classes.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\XAudio2_f_structs.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\XAudio2_structs.cpp">
       <Filter>Source Files\Pydefs</Filter>
     </ClCompile>
     <ClCompile Include="src\AntiDebug.cpp">
@@ -421,22 +322,13 @@
     <ClCompile Include="src\BL2-SDK.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\CEngineHookManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="src\CPythonInterface.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\CScriptHookManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\CSigScan.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\CSimpleDetour.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\GameHooks.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\Logging.cpp">
@@ -498,6 +390,9 @@
     </ClCompile>
     <ClCompile Include="src\include\detours\modules.cpp">
       <Filter>Source Files\detours</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CHookManager.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

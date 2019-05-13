@@ -3,6 +3,7 @@
 #define BL2SDK_H
 
 #include <string>
+#include <functional>
 #include "CPythonInterface.h"
 
 class UObject;
@@ -12,11 +13,13 @@ class UPackage;
 class UWillowGameEngine;
 class UPlayer;
 class UConsole;
+class CHookManager;
 
 struct FFrame;
 struct FName;
 struct FOutputDevice;
 struct FArchive;
+struct FStruct;
 
 namespace BL2SDK
 {
@@ -40,18 +43,19 @@ namespace BL2SDK
 	extern tLoadPackage pLoadPackage;
 	extern tByteOrderSerialize pByteOrderSerialize;
 	extern tGetDefaultObject pGetDefaultObject;
+	extern bool injectedCallNext;
 
 	extern std::map<std::string, UClass *> ClassMap;
 
 	extern CPythonInterface * Python;
+	extern CHookManager *HookManager;
 
 	extern int EngineVersion;
 	extern int ChangelistNumber;
 
 	extern class UObject *engine;
 
-	void LogAllProcessEventCalls(bool enabled);
-	void LogAllUnrealScriptCalls(bool enabled);
+	void LogAllCalls(bool enabled);
 	//bool getGameVersion(std::wstring& appVersion);
 	void doInjectedCallNext();
 	void initialize(wchar_t * exeBaseFolder/*LauncherStruct* args*/);
@@ -59,6 +63,9 @@ namespace BL2SDK
 	void LoadPackage(const char* filename, DWORD flags = 0, bool force = false);
 	UObject			*ConstructObject(UClass* Class, UObject* InOuter, FName Name, unsigned int SetFlags, unsigned int InternalSetFlags, UObject* inTemplate, FOutputDevice *Error, void* InstanceGraph, int bAssumeTemplateIsArchetype);
 	UObject			*GetEngine();
+
+	void RegisterHook(const std::string& funcName, const std::string& hookName, std::function<bool(UObject*, UFunction*, FStruct*)> funcHook);
+	bool RemoveHook(const std::string& funcName, const std::string& hookName);
 }
 
 #endif

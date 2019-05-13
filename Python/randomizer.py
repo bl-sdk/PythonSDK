@@ -5,7 +5,6 @@ import random
 import json
 import os
 
-
 class CrossSkillRandomizer(bl2sdk.BL2MOD):
     Description = "Randomize all the skills!"
 
@@ -30,10 +29,7 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
             bl2sdk.Mods.insert(0, NewRando)
 
     def Enable(self):
-        def InjectSkills(caller: UObject, stack: FFrame, result: FStruct, function: UFunction):
-            code = stack.Code
-            SkillTreeDef = stack.popObject()
-            stack.Code = code
+        def InjectSkills(caller: UObject, function: UFunction, params: FStruct) -> bool:
             if not self.Seed:
                 self.Seed = random.randrange(sys.maxsize)
                 bl2sdk.Log("Randomizing with seed '{}'".format(self.Seed))
@@ -41,15 +37,15 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
                 self.RecordSeed()
             else:
                 self.RNG = random.Random(self.Seed)
-            self.RandomizeTree(SkillTreeDef)
+            self.RandomizeTree(params.SkillTreeDef)
             return True
 
-        bl2sdk.RegisterScriptHook(
+        bl2sdk.RegisterHook(
             "WillowGame.PlayerSkillTree.Initialize", "InjectSkills", InjectSkills
         )
 
     def Disable(self):
-        bl2sdk.RemoveScriptHook("WillowGame.PlayerSkillTree.Initialize", "InjectSkills")
+        bl2sdk.RemoveHook("WillowGame.PlayerSkillTree.Initialize", "InjectSkills")
 
     def PreloadPackages(self):
         packages = [
@@ -79,7 +75,7 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
         HasHellborn = False
         for Tier in range(6):
             Pity = True
-            TierLayout = [0, 0, 0]
+            TierLayout = [False, False, False]
             MaxPoints = 0
             NewSkills = []
             for Skill in range(3):
@@ -91,7 +87,7 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
                     if (Skill == 2 and Pity):
                         Skill = self.RNG.randint(0, 2)
                     Pity = False
-                    TierLayout[Skill] = 1
+                    TierLayout[Skill] = True
                     SkillDefNum = self.RNG.randint(0, len(self.ValidSkills) - 1)
                     SkillDefName = self.ValidSkills.pop(SkillDefNum)
                     SkillDef = bl2sdk.FindObject("SkillDefinition", SkillDefName)
@@ -124,11 +120,11 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
                 )
             NewTierLayout = SkillTreeBranchDef.Layout.Tiers[Tier]
             NewTierLayout.bCellIsOccupied = TierLayout
-            SkillTreeBranchDef.Layout.Tiers.Set(Tier, NewTierLayout)
+            SkillTreeBranchDef.Layout.Tiers[Tier] = NewTierLayout
             NewTier = SkillTreeBranchDef.Tiers[Tier]
             NewTier.Skills = NewSkills
             NewTier.PointsToUnlockNextTier = min(MaxPoints, 5)
-            SkillTreeBranchDef.Tiers.Set(Tier, NewTier)
+            SkillTreeBranchDef.Tiers[Tier] = NewTier
 
     ClassSkills = {
         "Soldier": [

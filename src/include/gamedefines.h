@@ -80,6 +80,11 @@ public:
 		BL2SDK::pFNameInit(this, (wchar_t *)Util::Widen(FindName).c_str(), 0, 1, 1);
 	}
 
+	FName(const std::string& FindName, int number)
+	{
+		BL2SDK::pFNameInit(this, (wchar_t *)Util::Widen(FindName).c_str(), number, 1, 1);
+	}
+
 	static TArray<FNameEntry*>* Names()
 	{
 		return (TArray<FNameEntry*>*)BL2SDK::pGNames;
@@ -92,6 +97,19 @@ public:
 		else
 			return this->Names()->Data[Index]->Name;
 	};
+
+	char *GetFullName() {
+		if (Index < 0 || Index > this->Names()->Num())
+			return (char*)"UnknownName";
+		char buffer[1000] = "";
+		memset(buffer, 0, 1000);
+		strcpy(buffer, GetName());
+		if (Number > 0) {
+			buffer[strlen(buffer)] = '_';
+			itoa(Number, buffer + strlen(buffer), 10);
+		}
+		return buffer;
+	}
 
 	void AppendString(std::string& out)
 	{
@@ -123,7 +141,7 @@ struct FString : public TArray<wchar_t>
 			wcscpy(this->Data, Other);
 	};
 
-	FString(char* Other)
+	FString(const char* Other)
 	{
 		this->Max = this->Count = Other ? (strlen(Other) + 1) : 0;
 		this->Data = (wchar_t *)calloc(this->Count, sizeof(wchar_t));
@@ -148,6 +166,8 @@ struct FString : public TArray<wchar_t>
 	};
 
 	char *AsString() {
+		if (this->Data == nullptr || this->Count == 0)
+			return (char *)"";
 		char *output = (char *)calloc(this->Count + 1, sizeof(char));
 		wcstombs(output, this->Data, this->Count);
 		return output;
@@ -160,7 +180,7 @@ struct FScriptDelegate
 	class UObject *Object;
 };
 
-class FScriptInterface
+struct FScriptInterface
 {
 	UObject* ObjectPointer;
 	void* InterfacePointer;
@@ -214,122 +234,126 @@ struct FMalloc
 {
 	void** VfTable;
 };
-
-struct FStruct
-{
-	void* base;
-public:
-	FStruct(void *base) {
-		this->base = base;
-	};
-	UObject *popObject() {
-		class UObject *object = ((UObject **)(this->base))[0];
-		this->base = (void*)((UObject **)this->base + 1);
-		return object;
-	};
-	struct FName *popFName() {
-		struct FName *object = (FName *)(this->base);
-		this->base = (void *)((FName *)this->base + 1);
-		return object;
-	};
-	struct FString *popFString() {
-		struct FString *object = (FString *)(this->base);
-		this->base = (void *)((FString *)this->base + 1);
-		return object;
-	};
-	struct FVector *popFVector() {
-		struct FVector *object = (FVector *)(this->base);
-		this->base = (void *)((int)this->base + 0xC);
-		return object;
-	};
-	float *popFloat() {
-		float *object = (float *)(this->base);
-		this->base = (void *)((float *)this->base + 1);
-		return object;
-	};
-	unsigned char popByte() {
-		unsigned char object = ((char *)(this->base))[0];
-		this->base = (void *)((char *)this->base + 1);
-		return object;
-	};
-	int popInt() {
-		int object = ((int *)(this->base))[0];
-		this->base = (void *)((int *)this->base + 1);
-		return object;
-	};
-	unsigned long popULong() {
-		unsigned long object = ((unsigned long *)(this->base))[0];
-		this->base = (void *)((unsigned long *)this->base + 1);
-		return object;
-	};
-	bool popBool() {
-		return (bool)popULong();
-	};
-};
-
-struct FFrame : public FOutputDevice
-{
-	class UStruct* Node;
-	class UObject* Object;
-	unsigned char* Code;
-	unsigned char* Locals;
-
-	struct FFrame* PreviousFrame;
-	struct FOutParmRec* Outparams;
-
-public:
-	void SkipFunction() {
-		while ((this->Code++)[0] != 0x16)
-			;
+/*
+struct TStringArray : TArray<void *> {
+	struct FString GetItem(int i) {
+		return ((FString *)Data)[i];
 	}
-	UObject *popObject() {
-		UObject *obj = nullptr;
-		BL2SDK::pFrameStep(this, this->Object, &obj);
-		return obj;
-	};
-	struct FName *popFName() {
-		FName *obj = new FName();
-		BL2SDK::pFrameStep(this, this->Object, obj);
-		return obj;
-	};
-	struct FString *popFString() {
-		FString *obj = new FString();
-		BL2SDK::pFrameStep(this, this->Object, obj);
-		return obj;
-	};
-	float popFloat() {
-		float obj = 0;
-		BL2SDK::pFrameStep(this, this->Object, &obj);
-		return obj;
-	};
-	unsigned char popByte() {
-		unsigned char obj = 0;
-		BL2SDK::pFrameStep(this, this->Object, &obj);
-		return obj;
-	};
-	int popInt() {
-		int obj = 0;
-		BL2SDK::pFrameStep(this, this->Object, &obj);
-		return obj;
-	};
-	unsigned long popULong() {
-		unsigned long obj = 0;
-		BL2SDK::pFrameStep(this, this->Object, &obj);
-		return obj;
-	};
-	bool popBool() {
-		return (bool)popULong();
-	};
-	TArray<UObject *> *popTArrayObjects() {
-		TArray<UObject *> *obj = new TArray<UObject *>();
-		BL2SDK::pFrameStep(this, this->Object, obj);
-		return obj;
-	};
-	py::tuple popRawTArray() {
-		TArray<void *> *obj = &TArray<void *>();
-		BL2SDK::pFrameStep(this, this->Object, obj);
-		return py::make_tuple(FStruct((void *)obj->Data), obj->Count);
-	};
+
+	void SetItem(int i, FString d) {
+		((FString *)Data)[i] = d;
+	}
 };
+
+struct TObjectArray : TArray<void *> {
+	class UObject *GetItem(int i) {
+		return ((UObject **)Data)[i];
+	}
+
+	void SetItem(int i, UObject * d) {
+		((UObject **)Data)[i] = d;
+	}
+};
+
+struct TComponentArray : TArray<void *> {
+	class UComponent *GetItem(int i) {
+		return ((UComponent **)Data)[i];
+	}
+
+	void SetItem(int i, UComponent * d) {
+		((UComponent **)Data)[i] = d;
+	}
+};
+
+struct TClassArray : TArray<void *> {
+	class UClass *GetItem(int i) {
+		return ((UClass **)Data)[i];
+	}
+
+	void SetItem(int i, UClass * d) {
+		((UClass **)Data)[i] = d;
+	}
+};
+
+struct TNameArray : TArray<void *> {
+	struct FName GetItem(int i) {
+		return ((FName *)Data)[i];
+	}
+
+	void SetItem(int i, FName d) {
+		((FName *)Data)[i] = d;
+	}
+};
+
+struct TNameEntryArray : TArray<void *> {
+	struct FNameEntry GetItem(int i) {
+		return ((FNameEntry *)Data)[i];
+	}
+
+	void SetItem(int i, FNameEntry d) {
+		((FNameEntry *)Data)[i] = d;
+	}
+};
+
+struct TIntArray : TArray<void *> {
+	int GetItem(int i) {
+		return ((int *)Data)[i];
+	}
+
+	void SetItem(int i, int d) {
+		((int *)Data)[i] = d;
+	}
+};
+
+struct TInterfaceArray : TArray<void *> {
+	class UInterface *GetItem(int i) {
+		return ((UInterface **)Data)[i];
+	}
+
+	void SetItem(int i, UInterface *d) {
+		((UInterface **)Data)[i] = d;
+	}
+};
+
+struct TFloatArray : TArray<void *> {
+	float GetItem(int i) {
+		return ((float *)Data)[i];
+	}
+
+	void SetItem(int i, float d) {
+		((float *)Data)[i] = d;
+	}
+};
+
+struct TDelegateArray : TArray<void *> {
+	struct FScriptDelegate GetItem(int i) {
+		return ((FScriptDelegate *)Data)[i];
+	}
+
+	void SetItem(int i, FScriptDelegate d) {
+		((FScriptDelegate *)Data)[i] = d;
+	}
+};
+
+struct TCharArray : TArray<void *> {
+	char GetItem(int i) {
+		return ((char *)Data)[i];
+	}
+
+	void SetItem(int i, char d) {
+		((char *)Data)[i] = d;
+	}
+};
+
+struct TWCharArray : TArray<void *> {
+	wchar_t GetItem(int i) {
+		return ((wchar_t *)Data)[i];
+	}
+
+	void SetItem(int i, wchar_t d) {
+		((wchar_t *)Data)[i] = d;
+	}
+};
+*/
 
 #endif
