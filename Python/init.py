@@ -276,11 +276,7 @@ bl2sdk.Mods = [ModOptions()]
 bl2sdk.ModMenuOpened = []
 
 try:
-	import legacy
 	import randomizer
-	import commander
-	import chatbot
-	import grenadoer
 except:
 	pass
 

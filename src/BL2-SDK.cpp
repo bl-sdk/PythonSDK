@@ -336,7 +336,7 @@ namespace BL2SDK
 				engine = Object;
 		}
 #ifdef _DEBUG
-		Logging::InitializeExtern();
+		//Logging::InitializeExtern();
 #endif
 		Logging::InitializeGameConsole();
 
