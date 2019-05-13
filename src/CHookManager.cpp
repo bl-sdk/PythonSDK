@@ -50,6 +50,12 @@ bool CHookManager::ProcessHooks(const std::string& funcName, const UObject *call
 	return true;
 }
 
+
+bool CHookManager::HasHook(const std::string& funcName) {
+	tiHooks iHooks = Hooks.find(funcName);
+	return (iHooks != Hooks.end() && iHooks->second.size() > 0);
+}
+
 bool CHookManager::ProcessHooks(UObject* pCaller, FFrame& Stack, void* const Result, UFunction* Function) {
 	tiHooks iHooks = Hooks.find(Function->GetObjectName());
 

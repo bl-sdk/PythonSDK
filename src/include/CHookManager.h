@@ -26,6 +26,7 @@ public:
 	bool Remove(const std::string& funcName, const std::string& hookName);
 	bool ProcessHooks(const std::string& funcName, const UObject *caller, const UFunction *func, const FStruct *params);
 	bool ProcessHooks(UObject* pCaller, FFrame& Stack, void* const Result, UFunction* Function);
+	bool HasHook(const std::string& funcName);
 };
 
 #endif

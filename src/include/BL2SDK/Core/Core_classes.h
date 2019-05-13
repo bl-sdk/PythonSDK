@@ -1471,11 +1471,12 @@ struct FStruct
 	UStruct		*structType;
 	void		*base;
 	FStruct(UStruct *s, void *b) {
+		Logging::LogD("Creating FStruct of type '%s' from %p\n", s->GetObjectName().c_str(), b);
 		structType = s;
 		base = b;
 	};
 
-	pybind11::object GetProperty(std::string& PropName) {
+	pybind11::object GetProperty(std::string PropName) {
 		class UObject *obj = structType->FindChildByName(FName(PropName));
 		if (!obj)
 			return pybind11::none();
@@ -1490,33 +1491,68 @@ struct FStruct
 		auto prop = reinterpret_cast<UProperty *>(obj);
 		return ((FHelper *)((char *)base))->SetProperty(prop, value);
 	}
+
+	py::str Repr() {
+		py::str s = "{";
+		const UStruct *thisField = structType;
+		while (thisField)
+		{
+			for (UField* Child = thisField->Children; Child != NULL; Child = Child->Next) {
+				s = py::str("{}{}: {}").format(s, Child->GetName(), py::repr(GetProperty(Child->GetName())));
+				if (Child->Next || (thisField->SuperField && thisField->SuperField->Children))
+					s = py::str("{}{}").format(s, ", ");
+			}
+			thisField = thisField->SuperField;
+		}
+		s = py::str("{}{}").format(s, "}");
+		return s;
+	}
 };
 
-struct FArrayStruct {
-	char *Data;
-	unsigned int Count;
-	unsigned int Max;
-	UStructProperty *type;
+struct FArray {
+	TArray <char> *arr;
+	UProperty *type;
+	int IterCounter;
 
-	FArrayStruct(TArray <char> *array, UStructProperty *s) {
-		Logging::LogD("Creating FArrayStruct from %p\n", array);
-		Data = array->Data;
-		Count = array->Count;
-		Max = array->Max;
+	FArray(TArray <char> *array, UProperty *s) {
+		Logging::LogD("Creating FArray from %p, count: %d, max: %d\n", array, array->Count, array->Max);
+		arr = array;
 		type = s;
+		IterCounter = 0;
 	};
 
-	struct FStruct GetItem(int i) {
-		Logging::LogD("ArrayStruct::GetItem %d %p %d\n", i, Data, type->ElementSize);
-		return FStruct{type->Struct, (void*)(Data + type->ElementSize * i)};
+	py::object GetItem(int i) {
+		return ((FHelper *)(arr->Data + type->ElementSize * i))->GetProperty(type);
 	}
 
 	void SetItem(int i, py::object obj) {
-		((FHelper *)(Data + type->ElementSize * i))->SetProperty(type, obj);
+		((FHelper *)(arr->Data + type->ElementSize * i))->SetProperty(type, obj);
 	}
 
 	int GetAddress() {
-		return (int)Data;
+		return (int)arr->Data;
+	}
+
+	FArray *Iter() {
+		IterCounter = 0;
+		return this;
+	}
+
+	py::object Next() {
+		if (IterCounter >= arr->Count)
+			throw pybind11::stop_iteration();
+		return GetItem(IterCounter++);
+	}
+
+	py::str Repr() {
+		py::str s = "[";
+		for (int x = 0; x < arr->Count; x++) {
+			s = py::str("{}{}").format(s, py::repr(GetItem(x)));
+			if (x + 1 < arr->Count)
+				s = py::str("{}{}").format(s, ", ");
+		}
+		s = py::str("{}{}").format(s, "]");
+		return s;
 	}
 };
 

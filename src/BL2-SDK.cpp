@@ -50,6 +50,7 @@ namespace BL2SDK
 		UObject* caller;
 		_asm mov caller, ecx;
 
+		std::string functionName = function->GetObjectName();
 		if (injectedCallNext)
 		{
 			injectedCallNext = false;
@@ -60,12 +61,11 @@ namespace BL2SDK
 		if (logAllCalls)
 		{
 			std::string callerName = caller->GetFullName();
-			std::string functionName = function->GetFullName();
 
 			Logging::LogF("===== ProcessEvent called =====\npCaller Name = %s\npFunction Name = %s\n", callerName.c_str(), functionName.c_str());
 		}
 
-		if (!HookManager->ProcessHooks(function->GetObjectName(), caller, function, &FStruct{ function, params }))
+		if (HookManager->HasHook(functionName) && !HookManager->ProcessHooks(functionName, caller, function, &FStruct{ function, params }))
 		{
 			// The engine hook manager told us not to pass this function to the engine
 			return;
@@ -252,6 +252,17 @@ namespace BL2SDK
 		pGetDefaultObject = reinterpret_cast<tGetDefaultObject>(sigscan.Scan(Signatures::GetDefaultObject));
 		Logging::LogF("[Internal] GetDefaultObject = 0x%p\n", pGetDefaultObject);
 
+		try {
+			void *SetCommand = sigscan.Scan(Signatures::SetCommand);
+			DWORD near out = 0;
+			if (!VirtualProtectEx(GetCurrentProcess(), SetCommand, 5, 0x40, &out)) {
+				Logging::LogF("WINAPI Error when enabling 'SET' commands: %d\n", GetLastError());
+			}
+			((unsigned char *)SetCommand)[5] = 0xFF;
+		}
+		catch(std::exception e) {
+			Logging::LogF("Exception when enabling 'SET' commands: %d\n", e.what());
+		}
 
 		// Detour UObject::ProcessEvent()
 		//SETUP_SIMPLE_DETOUR(detProcessEvent, pProcessEvent, hkProcessEvent);

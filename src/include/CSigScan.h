@@ -10,9 +10,9 @@ class CSigScan
 private:
 	char* m_pModuleBase;
 	size_t m_moduleLen;
-	HMODULE m_moduleHandle;
 
 public:
+	HMODULE m_moduleHandle;
 	CSigScan(const wchar_t* moduleName);
 
 	void* Scan(const MemorySignature& sigStruct);

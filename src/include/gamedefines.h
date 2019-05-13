@@ -80,6 +80,11 @@ public:
 		BL2SDK::pFNameInit(this, (wchar_t *)Util::Widen(FindName).c_str(), 0, 1, 1);
 	}
 
+	FName(const std::string& FindName, int number)
+	{
+		BL2SDK::pFNameInit(this, (wchar_t *)Util::Widen(FindName).c_str(), number, 1, 1);
+	}
+
 	static TArray<FNameEntry*>* Names()
 	{
 		return (TArray<FNameEntry*>*)BL2SDK::pGNames;
@@ -92,6 +97,19 @@ public:
 		else
 			return this->Names()->Data[Index]->Name;
 	};
+
+	char *GetFullName() {
+		if (Index < 0 || Index > this->Names()->Num())
+			return (char*)"UnknownName";
+		char buffer[1000] = "";
+		memset(buffer, 0, 1000);
+		strcpy(buffer, GetName());
+		if (Number > 0) {
+			buffer[strlen(buffer)] = '_';
+			itoa(Number, buffer + strlen(buffer), 10);
+		}
+		return buffer;
+	}
 
 	void AppendString(std::string& out)
 	{
