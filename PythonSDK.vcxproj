@@ -127,6 +127,7 @@
     <ClInclude Include="src\include\resource.h" />
     <ClInclude Include="src\include\Settings.h" />
     <ClInclude Include="src\include\Signatures.h" />
+    <ClInclude Include="src\include\stb_image.h" />
     <ClInclude Include="src\include\stdafx.h" />
     <ClInclude Include="src\include\TypeMap.h" />
     <ClInclude Include="src\include\Util.h" />

@@ -234,6 +234,7 @@ public:
 	std::string GetNameCPP();
 	std::string GetFullName();
 	std::string GetObjectName();
+	void DumpObject();
 	static UObject* Load(UClass *ClassToLoad, const std::string& ObjectFullName)
 	{
 		return GObjects()->Data[0]->DynamicLoadObject(FString((char *)ObjectFullName.c_str()), ClassToLoad, true);
@@ -308,14 +309,14 @@ public:
 		}
 		return (UPackage*)pkg;
 	};
-
+	
 	static UClass* StaticClass()
 	{
 		static auto ptr = (UClass *)GObjects()->Data[2];
 		return ptr;
 	};
 
-	py::object GetProperty(std::string& PropName);
+	py::object GetProperty(std::string PropName);
 	bool SetProperty(std::string& PropName, py::object val);
 	struct FFunction GetFunction(std::string& PropName);
 	//struct FScriptArray GetArrayProperty(std::string& PropName);

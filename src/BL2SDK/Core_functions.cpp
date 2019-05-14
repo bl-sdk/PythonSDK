@@ -416,7 +416,7 @@ bool UObject::IsA(UClass* pClass) const
 }
 
 
-pybind11::object UObject::GetProperty(std::string& PropName) {
+pybind11::object UObject::GetProperty(std::string PropName) {
 	class UObject *obj = this->Class->FindChildByName(FName(PropName));
 	if (!obj)
 		return pybind11::none();
@@ -445,6 +445,20 @@ struct FFunction UObject::GetFunction(std::string& PropName) {
 	class UObject *obj = this->Class->FindChildByName(FName(PropName));
 	auto function = reinterpret_cast<UFunction *>(obj);
 	return FFunction{ this, function };
+}
+
+void UObject::DumpObject() {
+	Logging::LogF("*** Property dump for object '%s' ***\n", this->GetFullName().c_str());
+	UStruct *thisField = this->Class;
+	while (thisField)
+	{
+		Logging::LogF("=== %s properties ===\n", thisField->GetName().c_str());
+		for (UField* Child = thisField->Children; Child != NULL; Child = Child->Next) {
+			if (Child->IsA(FindClass("Property")))
+				Logging::LogF(" %s=%s\n", Child->GetName().c_str(), py::cast<std::string>(py::repr(GetProperty(Child->GetName()))).c_str());
+		}
+		thisField = thisField->SuperField;
+	}
 }
 
 //class FScriptMap* UObject::GetMapProperty(std::string& PropName) {

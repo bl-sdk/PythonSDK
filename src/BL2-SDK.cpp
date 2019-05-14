@@ -12,6 +12,8 @@
 #include "Settings.h"
 #include "Exports.h"
 #include "gamedefines.h"
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
 
 namespace BL2SDK
 {
@@ -336,7 +338,7 @@ namespace BL2SDK
 				engine = Object;
 		}
 #ifdef _DEBUG
-		//Logging::InitializeExtern();
+		Logging::InitializeExtern();
 #endif
 		Logging::InitializeGameConsole();
 
@@ -419,5 +421,30 @@ namespace BL2SDK
 
 	bool RemoveHook(const std::string& funcName, const std::string& hookName) {
 		return HookManager->Remove(funcName, hookName);
+	}
+
+	UObject *LoadTexture(char *Filename, char *TextureName) {
+		UTexture2D *NewTexture = (UTexture2D *)UObject::Find("Texture2D", std::string("Transient.") + TextureName);
+		if (NewTexture)
+			return NewTexture;
+		int x, y, n;
+		unsigned char *data = stbi_load(Filename, &x, &y, &n, 4);
+		if (!data)
+			throw std::exception("Unable to parse image file");
+		NewTexture = (UTexture2D *)ConstructObject(UObject::FindClass("Texture2D"), GetEngine()->Outer, FName(TextureName), 0x83, 0, nullptr, nullptr, nullptr, false);
+		if (!NewTexture)
+			return nullptr;
+		NewTexture->ObjectFlags.A |= 0x4000;
+		NewTexture->SizeX = x;
+		NewTexture->OriginalSizeX = x;
+		NewTexture->SizeY = y;
+		NewTexture->OriginalSizeY = y;
+		NewTexture->Format = 2;
+		NewTexture->Mips.Data.Dummy = (int)data;
+		NewTexture->Mips.ArrayMax = 1;
+		NewTexture->Mips.ArrayNum = 1;
+		NewTexture->ResidentMips = 1;
+		NewTexture->RequestedMips = 1;
+		return (UObject *)NewTexture;
 	}
 }

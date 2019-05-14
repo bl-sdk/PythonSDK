@@ -63,6 +63,7 @@ namespace BL2SDK
 	void LoadPackage(const char* filename, DWORD flags = 0, bool force = false);
 	UObject			*ConstructObject(UClass* Class, UObject* InOuter, FName Name, unsigned int SetFlags, unsigned int InternalSetFlags, UObject* inTemplate, FOutputDevice *Error, void* InstanceGraph, int bAssumeTemplateIsArchetype);
 	UObject			*GetEngine();
+	UObject			*LoadTexture(char *Filename, char *TextureName);
 
 	void RegisterHook(const std::string& funcName, const std::string& hookName, std::function<bool(UObject*, UFunction*, FStruct*)> funcHook);
 	bool RemoveHook(const std::string& funcName, const std::string& hookName);

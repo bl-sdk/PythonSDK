@@ -51,4 +51,8 @@ void Export_pystes_gamedefines(py::module &m)
 		.def_readwrite("Data", &FString::Data)
 		.def("AsString", &FString::AsString)
 		;
+
+	py::class_< FScriptDelegate >(m, "FScriptDelegate")
+		.def(py::init<>())
+		;
 }

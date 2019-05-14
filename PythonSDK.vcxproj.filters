@@ -302,6 +302,9 @@
     <ClInclude Include="src\include\CHookManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\include\stb_image.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pydefs\_TArray.cpp">
