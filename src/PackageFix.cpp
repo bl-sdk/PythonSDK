@@ -29,25 +29,6 @@ namespace BL2SDK
 		VirtualProtect(hookLocation, hookLength, dwOldProtect, &dwDummy);
 	}
 
-	void __stdcall FixTextureLoad()
-	{
-		ULinkerLoad* Ar;
-		_asm mov Ar, esi;
-
-		if (GIsLoadingUDKPackage)
-		{
-			int flags, elementCount, dataSize, dataOffset = 0;
-			pByteOrderSerialize(Ar, &flags, 4);
-			pByteOrderSerialize(Ar, &elementCount, 4);
-			pByteOrderSerialize(Ar, &dataSize, 4);
-			pByteOrderSerialize(Ar, &dataOffset, 4);
-
-			Logging::LogF("[PackageFix] Skipping SourceArt: Flags = %d, Count = %d, Size = %d, Offset = %d\n", flags, elementCount, dataSize, dataOffset);
-
-			Ar->Loader->CurrentPos += dataSize;
-		}
-	}
-
 	__declspec(naked) void hkTexture2DSerialize()
 	{
 		__asm

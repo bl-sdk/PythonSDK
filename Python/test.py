@@ -1,16 +1,28 @@
 import bl2sdk
+from bl2sdk import *
+import time
 
-# for o in bl2sdk.UObject.FindObjectsContaining("Texture2D "):
-# 	if o.Mips:
-# 		if o.Mips.ArrayNum == 1:
-# 			print(o)
+# the_time = time.time()
+# def Tick(caller: UObject, function: UFunction, params: FStruct) -> bool:
+# 	# new_time = time.time()
+# 	# Log(new_time - the_time)
+# 	# the_time = new_time
+# 	print(params.DeltaTime)
+# 	return True
 
-# t = bl2sdk.FindObject("Texture2D", "CD_Skins_Siren_MainGame.Textures.Logo_Gearbox")
-# print(t.SizeY)
+# RemoveHook("Engine.PlayerController.PlayerTick", "Tick")
+# RegisterHook("Engine.PlayerController.PlayerTick", "Tick", Tick)
 
-console = bl2sdk.FindObject("WillowConsole", "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0")
-console.DefaultTexture_Black.DumpObject()
-# t = bl2sdk.LoadTexture("mopi.png", "TextureLoadTest")
-# objs = bl2sdk.UObject.FindObjectsContaining("WillowConsole ")
-# for obj in objs:
-# 	obj.DefaultTexture_Black = t
+
+def Tick(caller: UObject, function: UFunction, params: FStruct) -> bool:
+	# params.NewSaveGame.DumpObject()
+	# params.NewSaveGame.PlayerClassDefinition.DumpObject()
+	caller.PlayerClass = bl2sdk.FindObject("PlayerClassDefinition", "GD_Mercenary.Character.CharClass_Mercenary")
+	bl2sdk.DoInjectedCallNext()
+	caller.LoadPlayerSaveGame(bl2sdk.FindObject("PlayerClassDefinition", "GD_Mercenary.Character.CharClass_Mercenary"))
+	# params.NewSaveGame
+	return False
+
+
+RemoveHook("WillowGame.WillowPlayerController.LoadPlayerSaveGame", "Tick")
+RegisterHook("WillowGame.WillowPlayerController.LoadPlayerSaveGame", "Tick", Tick)

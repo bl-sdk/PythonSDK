@@ -1311,6 +1311,7 @@ public:
 
 	UObject* CreateDefaultObject()
 	{
+		Logging::LogF("DEFAULT %s\n", this->GetFullName().c_str());
 		return BL2SDK::pGetDefaultObject(this, 0);
 	}
 
@@ -1513,7 +1514,7 @@ struct FStruct
 struct FArray {
 	TArray <char> *arr;
 	UProperty *type;
-	int IterCounter;
+	unsigned int IterCounter;
 
 	FArray(TArray <char> *array, UProperty *s) {
 		Logging::LogD("Creating FArray from %p, count: %d, max: %d\n", array, array->Count, array->Max);
@@ -1547,7 +1548,7 @@ struct FArray {
 
 	py::str Repr() {
 		py::str s = "[";
-		for (int x = 0; x < arr->Count; x++) {
+		for (unsigned int x = 0; x < arr->Count; x++) {
 			s = py::str("{}{}").format(s, py::repr(GetItem(x)));
 			if (x + 1 < arr->Count)
 				s = py::str("{}{}").format(s, ", ");

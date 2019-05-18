@@ -44,6 +44,7 @@ namespace BL2SDK
 	extern tByteOrderSerialize pByteOrderSerialize;
 	extern tGetDefaultObject pGetDefaultObject;
 	extern bool injectedCallNext;
+	extern UConsole *gameConsole;
 
 	extern std::map<std::string, UClass *> ClassMap;
 
@@ -56,7 +57,6 @@ namespace BL2SDK
 	extern class UObject *engine;
 
 	void LogAllCalls(bool enabled);
-	//bool getGameVersion(std::wstring& appVersion);
 	void doInjectedCallNext();
 	void initialize(wchar_t * exeBaseFolder/*LauncherStruct* args*/);
 	void cleanup();

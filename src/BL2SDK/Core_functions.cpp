@@ -1348,7 +1348,12 @@ class UObject* UObject::FindObject(const struct FString& ObjectName, class UClas
 {
 	static UFunction* fn = NULL;
 	if (!fn)
-		fn = (UFunction *)UObject::GObjects()->Data[5528];
+		for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
+		{
+			UObject* Object = UObject::GObjects()->Data[i];
+			if (!strcmp(Object->GetFullName().c_str(), "Function Core.Object.FindObject"))
+				fn = (UFunction *)Object;
+		}
 
 	if (!fn)
 		return nullptr;
@@ -1356,12 +1361,16 @@ class UObject* UObject::FindObject(const struct FString& ObjectName, class UClas
 	UObject_FindObject_Params params;
 	params.ObjectName = ObjectName;
 	params.ObjectClass = ObjectClass;
+	params.ReturnValue = nullptr;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	Logging::LogF("%s %s %p\n", fn->GetFullName().c_str(), defaultObj->GetFullName().c_str(), defaultObj);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
+	//defaultObj->ProcessEvent(fn, &params);
+	Logging::LogF("found %p\n", params.ReturnValue);
 	fn->FunctionFlags = flags;
 
 	return params.ReturnValue;
