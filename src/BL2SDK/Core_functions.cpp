@@ -31,7 +31,7 @@
 
 
 struct FStruct FHelper::GetStructProperty(UStructProperty *prop) {
-	return FStruct{ prop->Struct, ((char *)this) + prop->Offset_Internal };
+	return FStruct{ prop->GetStruct(), ((char *)this) + prop->Offset_Internal };
 }
 
 struct FString* FHelper::GetStrProperty(UProperty *prop) {
@@ -75,16 +75,16 @@ unsigned char FHelper::GetByteProperty(UProperty *prop) {
 }
 
 bool FHelper::GetBoolProperty(UBoolProperty *boolProp) {
-	return !!(((unsigned int *)(((char *)this) + boolProp->Offset_Internal))[0] & boolProp->Mask);
+	return !!(((unsigned int *)(((char *)this) + boolProp->Offset_Internal))[0] & boolProp->GetMask());
 }
 
 py::object FHelper::GetArrayProperty(UArrayProperty *prop) {
-	Logging::LogD("FHelper::GetArrayProperty Inner '%s'\n", prop->Inner->GetFullName().c_str());
-	return pybind11::cast(FArray{ (TArray<char> *)(((char *)this) + prop->Offset_Internal), prop->Inner});
+	Logging::LogD("FHelper::GetArrayProperty Inner '%s'\n", prop->GetInner()->GetFullName().c_str());
+	return pybind11::cast(FArray{ (TArray<char> *)(((char *)this) + prop->Offset_Internal), prop->GetInner()});
 }
 
 pybind11::object FHelper::GetProperty(UProperty *prop) {
-	Logging::LogD("FHelper::GetProperty '%s' (offset %d) on %p\n", prop->GetFullName().c_str(), prop->Offset_Internal, this);
+	Logging::LogD("FHelper::GetProperty '%s' (offset 0x%x) (prop at 0x%p) on 0x%p\n", prop->GetFullName().c_str(), prop->Offset_Internal, prop, this);
 	if (!strcmp(prop->Class->GetName().c_str(), "StructProperty"))
 		return pybind11::cast(GetStructProperty((UStructProperty *)prop));
 	else if (!strcmp(prop->Class->GetName().c_str(), "StrProperty"))
@@ -121,7 +121,7 @@ bool FHelper::SetProperty(class UStructProperty *prop, py::object val) {
 		py::tuple tup = (py::tuple)val;
 
 		unsigned int currentIndex = 0;
-		for (UProperty* Child = (UProperty *)prop->Struct->Children; Child; Child = (UProperty *)Child->Next) {
+		for (UProperty* Child = (UProperty *)prop->GetStruct()->Children; Child; Child = (UProperty *)Child->Next) {
 			Logging::LogD("Child = %s, %d\n", Child->GetFullName().c_str(), Child->Offset_Internal);
 			if (currentIndex < tup.size())
 				((FHelper *)(((char *)this) + prop->Offset_Internal))->SetProperty(Child, tup[currentIndex++]);
@@ -209,11 +209,11 @@ bool FHelper::SetProperty(class UByteProperty *prop, py::object val) {
 
 bool FHelper::SetProperty(class UBoolProperty *prop, py::object val) {
 	try {
-		Logging::LogD("SetBoolProperty %d, mask: 0x%x, base: 0x%x, offset: 0x%x\n", val.cast<bool>(), prop->Mask, this, prop->Offset_Internal);
+		Logging::LogD("SetBoolProperty %d, mask: 0x%x, base: 0x%x, offset: 0x%x\n", val.cast<bool>(), prop->GetMask(), this, prop->Offset_Internal);
 		if (val.cast<bool>())
-			((unsigned int *)(((char *)this) + prop->Offset_Internal))[0] |= prop->Mask;
+			((unsigned int *)(((char *)this) + prop->Offset_Internal))[0] |= prop->GetMask();
 		else
-			((unsigned int *)(((char *)this) + prop->Offset_Internal))[0] &= ~prop->Mask;
+			((unsigned int *)(((char *)this) + prop->Offset_Internal))[0] &= ~prop->GetMask();
 	}
 	catch (std::exception e) {
 		Logging::LogF(e.what());
@@ -226,16 +226,16 @@ bool FHelper::SetProperty(class UArrayProperty *prop, py::object val) {
 		return false;
 	auto s = py::reinterpret_borrow<py::sequence>(val);
 	Logging::LogD("A\n");
-	char *Data = (char *)((tMalloc)BL2SDK::pGMalloc[0]->VfTable[1])(BL2SDK::pGMalloc[0], prop->Inner->ElementSize * s.size(), 8);
-	Logging::LogD("C %d %d %p %p %d %p\n", prop->Inner->ElementSize, prop->Offset_Internal, this, Data, s.size(), (TArray<void *> *)(((char *)this) + prop->Offset_Internal));
-	memset(Data, 0, prop->Inner->ElementSize * s.size());
+	char *Data = (char *)((tMalloc)BL2SDK::pGMalloc[0]->VfTable[1])(BL2SDK::pGMalloc[0], prop->GetInner()->ElementSize * s.size(), 8);
+	Logging::LogD("C %d %d %p %p %d %p\n", prop->GetInner()->ElementSize, prop->Offset_Internal, this, Data, s.size(), (TArray<void *> *)(((char *)this) + prop->Offset_Internal));
+	memset(Data, 0, prop->GetInner()->ElementSize * s.size());
 	((TArray<void *> *)(((char *)this) + prop->Offset_Internal))->Data = (void **)Data;
 	((TArray<void *> *)(((char *)this) + prop->Offset_Internal))->Count = s.size();
 	((TArray<void *> *)(((char *)this) + prop->Offset_Internal))->Max = s.size();
 	int x = 0;
 	for (auto it : val) {
-		Logging::LogD("%x\n", (Data + prop->Inner->ElementSize * x));
-		((FHelper *)(Data + prop->Inner->ElementSize * x++))->SetProperty(prop->Inner, py::reinterpret_borrow<py::object>(it));
+		Logging::LogD("%x\n", (Data + prop->GetInner()->ElementSize * x));
+		((FHelper *)(Data + prop->GetInner()->ElementSize * x++))->SetProperty(prop->GetInner(), py::reinterpret_borrow<py::object>(it));
 	}
 	return true;
 }
@@ -416,7 +416,7 @@ bool UObject::IsA(UClass* pClass) const
 }
 
 
-pybind11::object UObject::GetProperty(std::string& PropName) {
+pybind11::object UObject::GetProperty(std::string PropName) {
 	class UObject *obj = this->Class->FindChildByName(FName(PropName));
 	if (!obj)
 		return pybind11::none();
@@ -445,6 +445,20 @@ struct FFunction UObject::GetFunction(std::string& PropName) {
 	class UObject *obj = this->Class->FindChildByName(FName(PropName));
 	auto function = reinterpret_cast<UFunction *>(obj);
 	return FFunction{ this, function };
+}
+
+void UObject::DumpObject() {
+	Logging::LogF("*** Property dump for object '%s' ***\n", this->GetFullName().c_str());
+	UStruct *thisField = this->Class;
+	while (thisField)
+	{
+		Logging::LogF("=== %s properties ===\n", thisField->GetName().c_str());
+		for (UField* Child = thisField->Children; Child != NULL; Child = Child->Next) {
+			if (Child->IsA(FindClass("Property")))
+				Logging::LogF(" %s=%s\n", Child->GetName().c_str(), py::cast<std::string>(py::repr(GetProperty(Child->GetName()))).c_str());
+		}
+		thisField = thisField->SuperField;
+	}
 }
 
 //class FScriptMap* UObject::GetMapProperty(std::string& PropName) {
@@ -477,7 +491,7 @@ bool UObject::IsRelevantForDebugging(class UObject* Source)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -499,7 +513,7 @@ class UObject* UObject::GetGlobalDebugTarget()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -522,7 +536,7 @@ void UObject::SetGlobalDebugTarget(class UObject* Target)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -543,7 +557,7 @@ void UObject::LogContentDebug(const struct FString& Message)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -564,7 +578,7 @@ struct FString UObject::GetLanguage()
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -586,7 +600,7 @@ int UObject::GetRandomOptionSumFrequency(TArray<float>* FreqList)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -612,7 +626,7 @@ int UObject::GetBuildChangelistNumber()
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -634,7 +648,7 @@ int UObject::GetEngineVersion()
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -663,7 +677,7 @@ void UObject::GetSystemTime(int* Year, int* Month, int* DayOfWeek, int* Day, int
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -700,7 +714,7 @@ struct FString UObject::TimeStamp()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -728,7 +742,7 @@ struct FVector UObject::TransformVectorByRotation(const struct FRotator& SourceR
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -750,7 +764,7 @@ struct FName UObject::GetPackageName()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -772,7 +786,7 @@ bool UObject::IsPendingKill()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -797,7 +811,7 @@ float UObject::ByteToFloat(unsigned char inputByte, bool bSigned)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -822,7 +836,7 @@ unsigned char UObject::FloatToByte(float inputFloat, bool bSigned)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -846,7 +860,7 @@ float UObject::UnwindHeading(float A)
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -872,7 +886,7 @@ float UObject::FindDeltaAngle(float A1, float A2)
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -896,7 +910,7 @@ float UObject::GetHeadingAngle(const struct FVector& Dir)
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -918,7 +932,7 @@ void UObject::GetAngularDegreesFromRadians(struct FVector2D* OutFOV)
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -944,7 +958,7 @@ void UObject::GetAngularFromDotDist(const struct FVector2D& DotDist, struct FVec
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -977,7 +991,7 @@ bool UObject::GetAngularDistance(const struct FVector& Direction, const struct F
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1012,7 +1026,7 @@ bool UObject::GetDotDistance(const struct FVector& Direction, const struct FVect
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1046,7 +1060,7 @@ struct FVector UObject::PointProjectToPlane(const struct FVector& Point, const s
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -1074,7 +1088,7 @@ float UObject::PointDistToPlane(const struct FVector& Point, const struct FRotat
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -1106,7 +1120,7 @@ float UObject::PointDistToSegment(const struct FVector& Point, const struct FVec
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -1138,7 +1152,7 @@ float UObject::PointDistToLine(const struct FVector& Point, const struct FVector
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -1171,7 +1185,7 @@ bool UObject::GetPerObjectConfigSections(class UClass* SearchClass, class UObjec
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1195,7 +1209,7 @@ void UObject::StaticSaveConfig()
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1213,7 +1227,7 @@ void UObject::SaveConfig()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1235,7 +1249,7 @@ struct FString UObject::GetAttributeModiferDescriptor(const struct FName& Attrib
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -1259,7 +1273,7 @@ float UObject::GetAttributeValueByName(const struct FName& AttributeName)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -1287,7 +1301,7 @@ bool UObject::RemoveModifier(class UAttributeModifier* mod, const struct FName& 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1315,7 +1329,7 @@ bool UObject::AddModifier(class UAttributeModifier* mod, const struct FName& Att
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1334,7 +1348,12 @@ class UObject* UObject::FindObject(const struct FString& ObjectName, class UClas
 {
 	static UFunction* fn = NULL;
 	if (!fn)
-		fn = (UFunction *)UObject::GObjects()->Data[5528];
+		for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
+		{
+			UObject* Object = UObject::GObjects()->Data[i];
+			if (!strcmp(Object->GetFullName().c_str(), "Function Core.Object.FindObject"))
+				fn = (UFunction *)Object;
+		}
 
 	if (!fn)
 		return nullptr;
@@ -1342,12 +1361,13 @@ class UObject* UObject::FindObject(const struct FString& ObjectName, class UClas
 	UObject_FindObject_Params params;
 	params.ObjectName = ObjectName;
 	params.ObjectClass = ObjectClass;
+	params.ReturnValue = nullptr;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 	fn->FunctionFlags = flags;
 
 	return params.ReturnValue;
@@ -1375,7 +1395,7 @@ class UObject* UObject::DynamicLoadObject(const struct FString& ObjectName, clas
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -1402,7 +1422,7 @@ struct FName UObject::GetEnum(class UObject* E, int I)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -1425,7 +1445,7 @@ void UObject::Disable(const struct FName& ProbeFunc)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1446,7 +1466,7 @@ void UObject::Enable(const struct FName& ProbeFunc)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1463,7 +1483,7 @@ void UObject::ContinuedState()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1480,7 +1500,7 @@ void UObject::PausedState()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1497,7 +1517,7 @@ void UObject::PoppedState()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1514,7 +1534,7 @@ void UObject::PushedState()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1534,7 +1554,7 @@ void UObject::EndState(const struct FName& NextStateName)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1554,7 +1574,7 @@ void UObject::BeginState(const struct FName& PreviousStateName)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1575,7 +1595,7 @@ void UObject::BreakPoint(class UObject* SomeObject)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1593,7 +1613,7 @@ void UObject::PrintScriptStack()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1611,7 +1631,7 @@ void UObject::DumpStateStack()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1632,7 +1652,7 @@ void UObject::PopState(bool bPopAll)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1655,7 +1675,7 @@ void UObject::PushState(const struct FName& NewState, const struct FName& NewLab
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1675,7 +1695,7 @@ struct FName UObject::GetStateName()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -1701,7 +1721,7 @@ bool UObject::IsChildState(const struct FName& TestState, const struct FName& Te
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1727,7 +1747,7 @@ bool UObject::IsInState(const struct FName& TestState, bool bTestStateStack)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1756,7 +1776,7 @@ void UObject::GotoState(const struct FName& NewState, const struct FName& Label,
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1777,7 +1797,7 @@ bool UObject::IsUTracing()
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1801,7 +1821,7 @@ void UObject::SetUTracing(bool bShouldUTrace)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1822,7 +1842,7 @@ struct FName UObject::GetFuncName()
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -1848,7 +1868,7 @@ void UObject::DebugBreak(int UserFlags, unsigned char DebuggerType)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1869,7 +1889,7 @@ struct FString UObject::GetScriptTrace()
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -1890,7 +1910,7 @@ void UObject::ScriptTrace()
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1912,7 +1932,7 @@ struct FString UObject::ParseLocalizedPropertyPath(const struct FString& PathNam
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -1941,7 +1961,7 @@ struct FString UObject::Localize(const struct FString& SectionName, const struct
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -1969,7 +1989,7 @@ void UObject::LogIndentedInternal(const struct FString& S, const struct FName& L
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1991,7 +2011,7 @@ void UObject::WarnInternal(const struct FString& S)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2015,7 +2035,7 @@ void UObject::LogInternal(const struct FString& S, const struct FName& Tag)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2038,7 +2058,7 @@ struct FString UObject::GetStringForNameBasedObjectPath(const struct FNameBasedO
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2063,7 +2083,7 @@ void UObject::SetNameBasedObjectPath(class UObject* Object, struct FNameBasedObj
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -2089,7 +2109,7 @@ bool UObject::FlagHasBeenTrueFor(float TimeSeconds, struct FFlag* theFlag)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -2115,7 +2135,7 @@ float UObject::FlagTimeRemaining(struct FFlag* theFlag)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2141,7 +2161,7 @@ float UObject::FlagTimeSinceRaised(struct FFlag* theFlag)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2170,7 +2190,7 @@ void UObject::FlagSetValue(bool bNewValue, bool bForceTimeStamp, struct FFlag* t
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -2194,7 +2214,7 @@ bool UObject::FlagIsLowered(struct FFlag* theFlag)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -2220,7 +2240,7 @@ bool UObject::FlagIsRaised(struct FFlag* theFlag)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -2246,7 +2266,7 @@ bool UObject::FlagIsFalse(struct FFlag* theFlag)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -2272,7 +2292,7 @@ bool UObject::FlagIsTrue(struct FFlag* theFlag)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -2299,7 +2319,7 @@ void UObject::FlagSetTrueTimed(float Duration, struct FFlag* theFlag)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -2323,7 +2343,7 @@ float UObject::SmartVectTimeRemaining(struct FSmartVector* theSV)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2349,7 +2369,7 @@ float UObject::SmartVectTimeSinceSet(struct FSmartVector* theSV)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2376,7 +2396,7 @@ bool UObject::SmartVectGetVector(struct FSmartVector* theSV, struct FVector* Out
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -2404,7 +2424,7 @@ bool UObject::SmartVectIsSet(struct FSmartVector* theSV)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -2433,7 +2453,7 @@ void UObject::SmartVectSetVectorTimed(const struct FVector& InVector, float Dura
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -2457,7 +2477,7 @@ struct FVector UObject::SmartVectValue(struct FSmartVector* theSV)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2482,7 +2502,7 @@ void UObject::SmartVectReset(struct FSmartVector* theSV)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -2509,7 +2529,7 @@ void UObject::SmartVectSetVector(const struct FVector& InVector, bool bUpdateTim
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -2536,7 +2556,7 @@ struct FLinearColor UObject::Subtract_LinearColorLinearColor(const struct FLinea
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2562,7 +2582,7 @@ struct FLinearColor UObject::Multiply_LinearColorFloat(const struct FLinearColor
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2586,7 +2606,7 @@ struct FLinearColor UObject::ColorToLinearColor(const struct FColor& OldColor)
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2616,7 +2636,7 @@ struct FLinearColor UObject::MakeLinearColor(float R, float G, float B, float A)
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2640,7 +2660,7 @@ struct FString UObject::GetHTMLColor(struct FColor* C)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2671,7 +2691,7 @@ struct FColor UObject::LerpColor(const struct FColor& A, const struct FColor& B,
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2701,7 +2721,7 @@ struct FColor UObject::MakeColor(unsigned char R, unsigned char G, unsigned char
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2727,7 +2747,7 @@ struct FColor UObject::Add_ColorColor(const struct FColor& A, const struct FColo
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2753,7 +2773,7 @@ struct FColor UObject::Multiply_ColorFloat(const struct FColor& A, float B)
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2779,7 +2799,7 @@ struct FColor UObject::Multiply_FloatColor(float A, const struct FColor& B)
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2805,7 +2825,7 @@ struct FColor UObject::Subtract_ColorColor(const struct FColor& A, const struct 
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2831,7 +2851,7 @@ struct FVector2D UObject::EvalInterpCurveVector2D(const struct FInterpCurveVecto
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2857,7 +2877,7 @@ struct FVector UObject::EvalInterpCurveVector(const struct FInterpCurveVector& V
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2883,7 +2903,7 @@ float UObject::EvalInterpCurveFloat(const struct FInterpCurveFloat& FloatCurve, 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2909,7 +2929,7 @@ struct FVector2D UObject::vect2d(float InX, float InY)
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2938,7 +2958,7 @@ float UObject::GetMappedRangeValue(const struct FVector2D& InputRange, const str
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2964,7 +2984,7 @@ float UObject::GetRangePctByValue(const struct FVector2D& Range, float Value)
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2990,7 +3010,7 @@ float UObject::GetRangeValueByPct(const struct FVector2D& Range, float Pct)
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3016,7 +3036,7 @@ struct FVector2D UObject::SubtractEqual_Vector2DVector2D(const struct FVector2D&
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3045,7 +3065,7 @@ struct FVector2D UObject::AddEqual_Vector2DVector2D(const struct FVector2D& B, s
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3074,7 +3094,7 @@ struct FVector2D UObject::DivideEqual_Vector2DFloat(float B, struct FVector2D* A
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3103,7 +3123,7 @@ struct FVector2D UObject::MultiplyEqual_Vector2DFloat(float B, struct FVector2D*
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3133,7 +3153,7 @@ struct FVector2D UObject::Divide_Vector2DFloat(const struct FVector2D& A, float 
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3160,7 +3180,7 @@ struct FVector2D UObject::Multiply_Vector2DFloat(const struct FVector2D& A, floa
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3187,7 +3207,7 @@ struct FVector2D UObject::Subtract_Vector2DVector2D(const struct FVector2D& A, c
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3214,7 +3234,7 @@ struct FVector2D UObject::Add_Vector2DVector2D(const struct FVector2D& A, const 
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3241,7 +3261,7 @@ struct FQuat UObject::Subtract_QuatQuat(const struct FQuat& A, const struct FQua
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3268,7 +3288,7 @@ struct FQuat UObject::Add_QuatQuat(const struct FQuat& A, const struct FQuat& B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3299,7 +3319,7 @@ struct FQuat UObject::QuatSlerp(const struct FQuat& A, const struct FQuat& B, fl
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3324,7 +3344,7 @@ struct FRotator UObject::QuatToRotator(const struct FQuat& A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3349,7 +3369,7 @@ struct FQuat UObject::QuatFromRotator(const struct FRotator& A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3376,7 +3396,7 @@ struct FQuat UObject::QuatFromAxisAndAngle(const struct FVector& Axis, float Ang
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3403,7 +3423,7 @@ struct FQuat UObject::QuatFindBetween(const struct FVector& A, const struct FVec
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3430,7 +3450,7 @@ struct FVector UObject::QuatRotateVector(const struct FQuat& A, const struct FVe
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3455,7 +3475,7 @@ struct FQuat UObject::QuatInvert(const struct FQuat& A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3482,7 +3502,7 @@ float UObject::QuatDot(const struct FQuat& A, const struct FQuat& B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3509,7 +3529,7 @@ struct FQuat UObject::QuatProduct(const struct FQuat& A, const struct FQuat& B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3536,7 +3556,7 @@ struct FVector UObject::MatrixGetAxis(const struct FMatrix& TM, unsigned char Ax
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3561,7 +3581,7 @@ struct FVector UObject::MatrixGetOrigin(const struct FMatrix& TM)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3586,7 +3606,7 @@ struct FRotator UObject::MatrixGetRotator(const struct FMatrix& TM)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3611,7 +3631,7 @@ struct FMatrix UObject::MakeRotationMatrix(const struct FRotator& Rotation)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3638,7 +3658,7 @@ struct FMatrix UObject::MakeRotationTranslationMatrix(const struct FVector& Tran
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3665,7 +3685,7 @@ struct FVector UObject::InverseTransformNormal(const struct FMatrix& TM, const s
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3692,7 +3712,7 @@ struct FVector UObject::TransformNormal(const struct FMatrix& TM, const struct F
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3719,7 +3739,7 @@ struct FVector UObject::InverseTransformVector(const struct FMatrix& TM, const s
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3746,7 +3766,7 @@ struct FVector UObject::TransformVector(const struct FMatrix& TM, const struct F
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3773,7 +3793,7 @@ struct FMatrix UObject::Multiply_MatrixMatrix(const struct FMatrix& A, const str
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3800,7 +3820,7 @@ bool UObject::NotEqual_NameName(const struct FName& A, const struct FName& B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -3827,7 +3847,7 @@ bool UObject::EqualEqual_NameName(const struct FName& A, const struct FName& B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -3851,7 +3871,7 @@ FScriptInterface UObject::QueryInterface(class UClass* InterfaceClass)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3875,7 +3895,7 @@ bool UObject::IsA(const struct FName& ClassName)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -3902,7 +3922,7 @@ bool UObject::ClassIsChildOf(class UClass* TestClass, class UClass* ParentClass)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -3929,7 +3949,7 @@ bool UObject::NotEqual_InterfaceInterface(const FScriptInterface& A, const FScri
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -3956,7 +3976,7 @@ bool UObject::EqualEqual_InterfaceInterface(const FScriptInterface& A, const FSc
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -3983,7 +4003,7 @@ bool UObject::NotEqual_ObjectObject(class UObject* A, class UObject* B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -4010,7 +4030,7 @@ bool UObject::EqualEqual_ObjectObject(class UObject* A, class UObject* B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -4034,7 +4054,7 @@ struct FString UObject::GuidToString(struct FGuid* G)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4062,7 +4082,7 @@ struct FString UObject::PathName(class UObject* CheckObject)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4090,7 +4110,7 @@ TArray<struct FString> UObject::SplitString(const struct FString& Source, const 
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4119,7 +4139,7 @@ void UObject::ParseStringIntoArray(const struct FString& BaseString, const struc
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -4148,7 +4168,7 @@ void UObject::JoinArray(TArray<struct FString> StringArray, const struct FString
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -4173,7 +4193,7 @@ struct FString UObject::GetRightMost(const struct FString& Text)
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4201,7 +4221,7 @@ struct FString UObject::Split(const struct FString& Text, const struct FString& 
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4226,7 +4246,7 @@ int UObject::StringHash(const struct FString& S)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4257,7 +4277,7 @@ struct FString UObject::Repl(const struct FString& Src, const struct FString& Ma
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4282,7 +4302,7 @@ int UObject::Asc(const struct FString& S)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4307,7 +4327,7 @@ struct FString UObject::Chr(int I)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4332,7 +4352,7 @@ struct FString UObject::Locs(const struct FString& S)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4357,7 +4377,7 @@ struct FString UObject::Caps(const struct FString& S)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4384,7 +4404,7 @@ struct FString UObject::Right(const struct FString& S, int I)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4411,7 +4431,7 @@ struct FString UObject::Left(const struct FString& S, int I)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4440,7 +4460,7 @@ struct FString UObject::Mid(const struct FString& S, int I, int J)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4473,7 +4493,7 @@ int UObject::InStr(const struct FString& S, const struct FString& T, bool bSearc
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4498,7 +4518,7 @@ int UObject::Len(const struct FString& S)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4524,7 +4544,7 @@ struct FString UObject::SubtractEqual_StrStr(const struct FString& B, struct FSt
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4553,7 +4573,7 @@ struct FString UObject::AtEqual_StrStr(const struct FString& B, struct FString* 
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4582,7 +4602,7 @@ struct FString UObject::ConcatEqual_StrStr(const struct FString& B, struct FStri
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4612,7 +4632,7 @@ bool UObject::ComplementEqual_StrStr(const struct FString& A, const struct FStri
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -4639,7 +4659,7 @@ bool UObject::NotEqual_StrStr(const struct FString& A, const struct FString& B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -4666,7 +4686,7 @@ bool UObject::EqualEqual_StrStr(const struct FString& A, const struct FString& B
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -4693,7 +4713,7 @@ bool UObject::GreaterEqual_StrStr(const struct FString& A, const struct FString&
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -4720,7 +4740,7 @@ bool UObject::LessEqual_StrStr(const struct FString& A, const struct FString& B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -4747,7 +4767,7 @@ bool UObject::Greater_StrStr(const struct FString& A, const struct FString& B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -4774,7 +4794,7 @@ bool UObject::Less_StrStr(const struct FString& A, const struct FString& B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -4801,7 +4821,7 @@ struct FString UObject::At_StrStr(const struct FString& A, const struct FString&
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4828,7 +4848,7 @@ struct FString UObject::Concat_StrStr(const struct FString& A, const struct FStr
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4856,7 +4876,7 @@ struct FRotator UObject::MakeRotator(int Pitch, int Yaw, int Roll)
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4889,7 +4909,7 @@ bool UObject::SClampRotAxis(float DeltaTime, int ViewAxis, int MaxLimit, int Min
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -4920,7 +4940,7 @@ int UObject::ClampRotAxisFromRange(int Current, int Min, int Max)
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4948,7 +4968,7 @@ int UObject::ClampRotAxisFromBase(int Current, int Center, int MaxDelta)
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4976,7 +4996,7 @@ void UObject::ClampRotAxis(int ViewAxis, int MaxLimit, int MinLimit, int* out_De
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -5002,7 +5022,7 @@ float UObject::RSize(const struct FRotator& R)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5029,7 +5049,7 @@ float UObject::RDiff(const struct FRotator& A, const struct FRotator& B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5054,7 +5074,7 @@ int UObject::NormalizeRotAxis(int Angle)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5087,7 +5107,7 @@ struct FRotator UObject::RInterpTo(const struct FRotator& Current, const struct 
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5114,7 +5134,7 @@ struct FRotator UObject::RTransform(const struct FRotator& R, const struct FRota
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5145,7 +5165,7 @@ struct FRotator UObject::RLerp(const struct FRotator& A, const struct FRotator& 
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5170,7 +5190,7 @@ struct FRotator UObject::Normalize(const struct FRotator& Rot)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5199,7 +5219,7 @@ struct FRotator UObject::OrthoRotation(const struct FVector& X, const struct FVe
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5224,7 +5244,7 @@ struct FRotator UObject::RotRand(bool bRoll)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5251,7 +5271,7 @@ struct FVector UObject::GetRotatorAxis(const struct FRotator& A, int Axis)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5278,7 +5298,7 @@ void UObject::GetUnAxes(const struct FRotator& A, struct FVector* X, struct FVec
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -5310,7 +5330,7 @@ void UObject::GetAxes(const struct FRotator& A, struct FVector* X, struct FVecto
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -5342,7 +5362,7 @@ bool UObject::ClockwiseFrom_IntInt(int A, int B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -5368,7 +5388,7 @@ struct FRotator UObject::SubtractEqual_RotatorRotator(const struct FRotator& B, 
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5397,7 +5417,7 @@ struct FRotator UObject::AddEqual_RotatorRotator(const struct FRotator& B, struc
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5427,7 +5447,7 @@ struct FRotator UObject::Subtract_RotatorRotator(const struct FRotator& A, const
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5454,7 +5474,7 @@ struct FRotator UObject::Add_RotatorRotator(const struct FRotator& A, const stru
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5480,7 +5500,7 @@ struct FRotator UObject::DivideEqual_RotatorFloat(float B, struct FRotator* A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5509,7 +5529,7 @@ struct FRotator UObject::MultiplyEqual_RotatorFloat(float B, struct FRotator* A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5539,7 +5559,7 @@ struct FRotator UObject::Divide_RotatorFloat(const struct FRotator& A, float B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5566,7 +5586,7 @@ struct FRotator UObject::Multiply_FloatRotator(float A, const struct FRotator& B
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5593,7 +5613,7 @@ struct FRotator UObject::Multiply_RotatorFloat(const struct FRotator& A, float B
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5620,7 +5640,7 @@ bool UObject::NotEqual_RotatorRotator(const struct FRotator& A, const struct FRo
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -5647,7 +5667,7 @@ bool UObject::EqualEqual_RotatorRotator(const struct FRotator& A, const struct F
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -5678,7 +5698,7 @@ bool UObject::InCylinder(const struct FVector& Origin, const struct FRotator& Di
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -5705,7 +5725,7 @@ float UObject::NoZDot(const struct FVector& A, const struct FVector& B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5732,7 +5752,7 @@ struct FVector UObject::ClampLength(const struct FVector& V, float MaxLength)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5763,7 +5783,7 @@ struct FVector UObject::VInterpTo(const struct FVector& Current, const struct FV
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5788,7 +5808,7 @@ bool UObject::IsZero(const struct FVector& A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -5815,7 +5835,7 @@ struct FVector UObject::ProjectOnTo(const struct FVector& X, const struct FVecto
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5842,7 +5862,7 @@ struct FVector UObject::MirrorVectorByNormal(const struct FVector& InVect, const
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5871,7 +5891,7 @@ struct FVector UObject::VRandCone2(const struct FVector& Dir, float HorizontalCo
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5898,7 +5918,7 @@ struct FVector UObject::VRandCone(const struct FVector& Dir, float ConeHalfAngle
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5921,7 +5941,7 @@ struct FVector UObject::VRand()
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5950,7 +5970,7 @@ struct FVector UObject::VLerp(const struct FVector& A, const struct FVector& B, 
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5975,7 +5995,7 @@ struct FVector UObject::Normal(const struct FVector& A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6000,7 +6020,7 @@ float UObject::VSizeSq2D(const struct FVector& A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6025,7 +6045,7 @@ float UObject::VSizeSq(const struct FVector& A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6050,7 +6070,7 @@ float UObject::VSize2D(const struct FVector& A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6075,7 +6095,7 @@ float UObject::VSize(const struct FVector& A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6101,7 +6121,7 @@ struct FVector UObject::SubtractEqual_VectorVector(const struct FVector& B, stru
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6130,7 +6150,7 @@ struct FVector UObject::AddEqual_VectorVector(const struct FVector& B, struct FV
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6159,7 +6179,7 @@ struct FVector UObject::DivideEqual_VectorFloat(float B, struct FVector* A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6188,7 +6208,7 @@ struct FVector UObject::MultiplyEqual_VectorVector(const struct FVector& B, stru
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6217,7 +6237,7 @@ struct FVector UObject::MultiplyEqual_VectorFloat(float B, struct FVector* A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6247,7 +6267,7 @@ struct FVector UObject::Cross_VectorVector(const struct FVector& A, const struct
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6274,7 +6294,7 @@ float UObject::Dot_VectorVector(const struct FVector& A, const struct FVector& B
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6301,7 +6321,7 @@ bool UObject::NotEqual_VectorVector(const struct FVector& A, const struct FVecto
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -6328,7 +6348,7 @@ bool UObject::EqualEqual_VectorVector(const struct FVector& A, const struct FVec
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -6355,7 +6375,7 @@ struct FVector UObject::GreaterGreater_VectorRotator(const struct FVector& A, co
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6382,7 +6402,7 @@ struct FVector UObject::LessLess_VectorRotator(const struct FVector& A, const st
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6409,7 +6429,7 @@ struct FVector UObject::Subtract_VectorVector(const struct FVector& A, const str
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6436,7 +6456,7 @@ struct FVector UObject::Add_VectorVector(const struct FVector& A, const struct F
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6463,7 +6483,7 @@ struct FVector UObject::Divide_VectorFloat(const struct FVector& A, float B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6490,7 +6510,7 @@ struct FVector UObject::Multiply_VectorVector(const struct FVector& A, const str
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6517,7 +6537,7 @@ struct FVector UObject::Multiply_FloatVector(float A, const struct FVector& B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6544,7 +6564,7 @@ struct FVector UObject::Multiply_VectorFloat(const struct FVector& A, float B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6569,7 +6589,7 @@ struct FVector UObject::Subtract_PreVector(const struct FVector& A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6600,7 +6620,7 @@ float UObject::SmoothInterp(float DeltaTime, float InterpSpeed, float deltaDist,
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6631,7 +6651,7 @@ float UObject::FInterpConstantTo(float Current, float Target, float DeltaTime, f
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6662,7 +6682,7 @@ float UObject::FInterpTo(float Current, float Target, float DeltaTime, float Int
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6690,7 +6710,7 @@ float UObject::FPctByRange(float Value, float InMin, float InMax)
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6716,7 +6736,7 @@ float UObject::RandRange(float InMin, float InMax)
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6747,7 +6767,7 @@ float UObject::FInterpEaseInOut(float A, float B, float Alpha, float Exp)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6777,7 +6797,7 @@ float UObject::FInterpEaseOut(float A, float B, float Alpha, float Exp)
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6807,7 +6827,7 @@ float UObject::FInterpEaseIn(float A, float B, float Alpha, float Exp)
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6840,7 +6860,7 @@ float UObject::FCubicInterp(float P0, float T0, float P1, float T1, float A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6865,7 +6885,7 @@ int UObject::FCeil(float A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6890,7 +6910,7 @@ int UObject::FFloor(float A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6915,7 +6935,7 @@ int UObject::Round(float A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6944,7 +6964,7 @@ float UObject::Lerp(float A, float B, float Alpha)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6973,7 +6993,7 @@ float UObject::FClamp(float V, float A, float B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7000,7 +7020,7 @@ float UObject::FMax(float A, float B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7027,7 +7047,7 @@ float UObject::FMin(float A, float B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7050,7 +7070,7 @@ float UObject::FRand()
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7075,7 +7095,7 @@ float UObject::Square(float A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7100,7 +7120,7 @@ float UObject::Sqrt(float A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7125,7 +7145,7 @@ float UObject::Loge(float A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7150,7 +7170,7 @@ float UObject::Exp(float A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7177,7 +7197,7 @@ float UObject::Atan2(float A, float B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7202,7 +7222,7 @@ float UObject::Atan(float A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7227,7 +7247,7 @@ float UObject::Tan(float A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7252,7 +7272,7 @@ float UObject::Acos(float A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7277,7 +7297,7 @@ float UObject::Cos(float A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7302,7 +7322,7 @@ float UObject::Asin(float A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7327,7 +7347,7 @@ float UObject::Sin(float A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7352,7 +7372,7 @@ float UObject::Abs(float A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7378,7 +7398,7 @@ float UObject::SubtractEqual_FloatFloat(float B, float* A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7407,7 +7427,7 @@ float UObject::AddEqual_FloatFloat(float B, float* A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7436,7 +7456,7 @@ float UObject::DivideEqual_FloatFloat(float B, float* A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7465,7 +7485,7 @@ float UObject::MultiplyEqual_FloatFloat(float B, float* A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7495,7 +7515,7 @@ bool UObject::NotEqual_FloatFloat(float A, float B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -7522,7 +7542,7 @@ bool UObject::ComplementEqual_FloatFloat(float A, float B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -7549,7 +7569,7 @@ bool UObject::EqualEqual_FloatFloat(float A, float B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -7576,7 +7596,7 @@ bool UObject::GreaterEqual_FloatFloat(float A, float B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -7603,7 +7623,7 @@ bool UObject::LessEqual_FloatFloat(float A, float B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -7630,7 +7650,7 @@ bool UObject::Greater_FloatFloat(float A, float B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -7657,7 +7677,7 @@ bool UObject::Less_FloatFloat(float A, float B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -7684,7 +7704,7 @@ float UObject::Subtract_FloatFloat(float A, float B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7711,7 +7731,7 @@ float UObject::Add_FloatFloat(float A, float B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7738,7 +7758,7 @@ float UObject::Percent_FloatFloat(float A, float B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7765,7 +7785,7 @@ float UObject::Divide_FloatFloat(float A, float B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7792,7 +7812,7 @@ float UObject::Multiply_FloatFloat(float A, float B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7819,7 +7839,7 @@ float UObject::MultiplyMultiply_FloatFloat(float Base, float Exp)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7844,7 +7864,7 @@ float UObject::Subtract_PreFloat(float A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7869,7 +7889,7 @@ struct FString UObject::ToHex(int A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7898,7 +7918,7 @@ int UObject::Clamp(int V, int A, int B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7925,7 +7945,7 @@ int UObject::Max(int A, int B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7952,7 +7972,7 @@ int UObject::Min(int A, int B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -7977,7 +7997,7 @@ int UObject::Rand(int Max)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8001,7 +8021,7 @@ int UObject::SubtractSubtract_Int(int* A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8028,7 +8048,7 @@ int UObject::AddAdd_Int(int* A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8055,7 +8075,7 @@ int UObject::SubtractSubtract_PreInt(int* A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8082,7 +8102,7 @@ int UObject::AddAdd_PreInt(int* A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8111,7 +8131,7 @@ int UObject::SubtractEqual_IntInt(int B, int* A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8140,7 +8160,7 @@ int UObject::AddEqual_IntInt(int B, int* A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8169,7 +8189,7 @@ int UObject::DivideEqual_IntFloat(float B, int* A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8198,7 +8218,7 @@ int UObject::MultiplyEqual_IntFloat(float B, int* A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8228,7 +8248,7 @@ int UObject::Or_IntInt(int A, int B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8255,7 +8275,7 @@ int UObject::Xor_IntInt(int A, int B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8282,7 +8302,7 @@ int UObject::And_IntInt(int A, int B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8309,7 +8329,7 @@ bool UObject::NotEqual_IntInt(int A, int B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -8336,7 +8356,7 @@ bool UObject::EqualEqual_IntInt(int A, int B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -8363,7 +8383,7 @@ bool UObject::GreaterEqual_IntInt(int A, int B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -8390,7 +8410,7 @@ bool UObject::LessEqual_IntInt(int A, int B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -8417,7 +8437,7 @@ bool UObject::Greater_IntInt(int A, int B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -8444,7 +8464,7 @@ bool UObject::Less_IntInt(int A, int B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -8471,7 +8491,7 @@ int UObject::GreaterGreaterGreater_IntInt(int A, int B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8498,7 +8518,7 @@ int UObject::GreaterGreater_IntInt(int A, int B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8525,7 +8545,7 @@ int UObject::LessLess_IntInt(int A, int B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8552,7 +8572,7 @@ int UObject::Subtract_IntInt(int A, int B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8579,7 +8599,7 @@ int UObject::Add_IntInt(int A, int B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8606,7 +8626,7 @@ int UObject::Percent_IntInt(int A, int B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8633,7 +8653,7 @@ int UObject::Divide_IntInt(int A, int B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8660,7 +8680,7 @@ int UObject::Multiply_IntInt(int A, int B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8685,7 +8705,7 @@ int UObject::Subtract_PreInt(int A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8710,7 +8730,7 @@ int UObject::Complement_PreInt(int A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8734,7 +8754,7 @@ unsigned char UObject::SubtractSubtract_Byte(unsigned char* A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8761,7 +8781,7 @@ unsigned char UObject::AddAdd_Byte(unsigned char* A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8788,7 +8808,7 @@ unsigned char UObject::SubtractSubtract_PreByte(unsigned char* A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8815,7 +8835,7 @@ unsigned char UObject::AddAdd_PreByte(unsigned char* A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8844,7 +8864,7 @@ unsigned char UObject::SubtractEqual_ByteByte(unsigned char B, unsigned char* A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8873,7 +8893,7 @@ unsigned char UObject::AddEqual_ByteByte(unsigned char B, unsigned char* A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8902,7 +8922,7 @@ unsigned char UObject::DivideEqual_ByteByte(unsigned char B, unsigned char* A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8931,7 +8951,7 @@ unsigned char UObject::MultiplyEqual_ByteFloat(float B, unsigned char* A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8960,7 +8980,7 @@ unsigned char UObject::MultiplyEqual_ByteByte(unsigned char B, unsigned char* A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -8990,7 +9010,7 @@ bool UObject::OrOr_BoolBool(bool A, bool B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -9017,7 +9037,7 @@ bool UObject::XorXor_BoolBool(bool A, bool B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -9044,7 +9064,7 @@ bool UObject::AndAnd_BoolBool(bool A, bool B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -9071,7 +9091,7 @@ bool UObject::NotEqual_BoolBool(bool A, bool B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -9098,7 +9118,7 @@ bool UObject::EqualEqual_BoolBool(bool A, bool B)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -9123,7 +9143,7 @@ bool UObject::Not_PreBool(bool A)
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -9149,7 +9169,7 @@ struct FVector UDistributionVector::GetVectorValue(float F, int LastExtreme)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -9173,7 +9193,7 @@ float UDistributionFloat::GetFloatValue(float F)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -9196,7 +9216,7 @@ int UCommandlet::Main(const struct FString Params)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -9219,7 +9239,7 @@ int UHelpCommandlet::Main(const struct FString Params)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 

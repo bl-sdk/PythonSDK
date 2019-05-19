@@ -3,7 +3,6 @@
 #include "CSigScan.h"
 #include "Exceptions.h"
 #include "Signatures.h"
-#include "PackageFix.h"
 #include "CHookManager.h"
 #include "AntiDebug.h"
 #include "Util.h"
@@ -12,10 +11,12 @@
 #include "Settings.h"
 #include "Exports.h"
 #include "gamedefines.h"
+#define STB_IMAGE_IMPLEMENTATION
+#include "stb_image.h"
 
 namespace BL2SDK
 {
-	static UConsole * gameConsole = nullptr;
+	UConsole * gameConsole = nullptr;
 
 	bool logAllCalls = true;
 
@@ -29,10 +30,9 @@ namespace BL2SDK
 	tProcessEvent pProcessEvent;
 	tCallFunction pCallFunction;
 	tFrameStep pFrameStep;
-	tFNameInit pFNameInit;
+	tFNameInitOld pFNameInit;
 	tStaticConstructObject pStaticConstructObject;
 	tLoadPackage pLoadPackage;
-	tByteOrderSerialize pByteOrderSerialize;
 	tGetDefaultObject pGetDefaultObject;
 	UObject *engine = nullptr;
 	CHookManager *HookManager = nullptr;
@@ -65,7 +65,7 @@ namespace BL2SDK
 			Logging::LogF("===== ProcessEvent called =====\npCaller Name = %s\npFunction Name = %s\n", callerName.c_str(), functionName.c_str());
 		}
 
-		if (HookManager->HasHook(functionName) && !HookManager->ProcessHooks(functionName, caller, function, &FStruct{ function, params }))
+		if (HookManager->HasHook(caller, function) && !HookManager->ProcessHooks(functionName, caller, function, &FStruct{ function, params }))
 		{
 			// The engine hook manager told us not to pass this function to the engine
 			return;
@@ -138,115 +138,46 @@ namespace BL2SDK
 		return EXCEPTION_EXECUTE_HANDLER;
 	}
 
-	bool getGameVersion(std::wstring& appVersion)
-	{
-		const wchar_t* filename = L"Borderlands2.exe";
-
-		/*
-		// Allocate a block of memory for the version info
-		DWORD dummy;
-		DWORD size = GetFileVersionInfoSize(filename, &dummy);
-		if (size == 0)
-		{
-			Logging::LogF("[BL2SDK] ERROR: GetFileVersionInfoSize failed with error %d\n", GetLastError());
-			return false;
-		}
-
-		LPBYTE versionInfo = new BYTE[size];
-
-		// Load the version info
-		if (!GetFileVersionInfo(filename, NULL, size, &versionInfo[0]))
-		{
-			Logging::LogF("[BL2SDK] ERROR: GetFileVersionInfo failed with error %d\n", GetLastError());
-			return false;
-		}
-
-		// Get the version strings
-		VS_FIXEDFILEINFO* ffi;
-		unsigned int productVersionLen = 0;
-
-		if (!VerQueryValue(&versionInfo[0], L"\\", (LPVOID*)&ffi, &productVersionLen))
-		{
-			Logging::Log("[BL2SDK] ERROR: Can't obtain FixedFileInfo from resources\n");
-			return false;
-		}
-
-		DWORD fileVersionMS = ffi->dwFileVersionMS;
-		DWORD fileVersionLS = ffi->dwFileVersionLS;
-
-		delete[] versionInfo;
-
-		appVersion = Util::Format(L"%d.%d.%d.%d",
-			HIWORD(fileVersionMS),
-			LOWORD(fileVersionMS),
-			HIWORD(fileVersionLS),
-			LOWORD(fileVersionLS));
-
-			*/
-		return true;
-	}
-
 	void hookGame()
 	{
-		CSigScan sigscan(L"Borderlands2.exe");
+		TCHAR szEXEPath[2048];
+		char actualpath[2048];
+		GetModuleFileName(NULL, szEXEPath, 2048);
+		for (int j = 0; szEXEPath[j] != 0; j++)
+			actualpath[j] = (char)szEXEPath[j];
+		std::string str(actualpath);
+		std::size_t slash = str.find_last_of("/\\") + 1;
+		std::size_t dot = str.find_last_of(".");
+		Logging::LogF("Found EXE name as '%s.exe'\n", str.substr(slash, dot-slash).c_str());
+		CSigScan sigscan(Util::Widen(str.substr(slash, dot - slash) + ".exe").c_str());
 
-		// Sigscan for GOBjects
+		Signatures::InitSignatures(str.substr(slash, dot - slash));
+
 		pGObjects = *(void**)sigscan.Scan(Signatures::GObjects);
 		Logging::LogF("[Internal] GObjects = 0x%p\n", pGObjects);
 
-		// Sigscan for GNames
 		pGNames = *(void**)sigscan.Scan(Signatures::GNames);
 		Logging::LogF("[Internal] GNames = 0x%p\n", pGNames);
 
-		// Sigscan for UObject::ProcessEvent which will be used for pretty much everything
 		pProcessEvent = reinterpret_cast<tProcessEvent>(sigscan.Scan(Signatures::ProcessEvent));
 		Logging::LogF("[Internal] UObject::ProcessEvent() = 0x%p\n", pProcessEvent);
 
-		// Sigscan for UObject::GObjHash
-		pGObjHash = *(void**)sigscan.Scan(Signatures::GObjHash);
-		Logging::LogF("[Internal] GObjHash = 0x%p\n", pGObjHash);
-
-		// Sigscan for GCRCTable
-		pGCRCTable = *(void**)sigscan.Scan(Signatures::GCRCTable);
-		Logging::LogF("[Internal] GCRCTable = 0x%p\n", pGCRCTable);
-
-		// Sigscan for NameHash
-		pNameHash = *(void**)sigscan.Scan(Signatures::NameHash);
-		Logging::LogF("[Internal] NameHash = 0x%p\n", pNameHash);
-
-		// Sigscan for Unreal exception handler
-		void* addrUnrealEH = sigscan.Scan(Signatures::CrashHandler);
-		Logging::LogF("[Internal] Unreal Crash handler = 0x%p\n", addrUnrealEH);
-
-		// Sigscan for UObject::CallFunction
 		pCallFunction = reinterpret_cast<tCallFunction>(sigscan.Scan(Signatures::CallFunction));
 		Logging::LogF("[Internal] UObject::CallFunction() = 0x%p\n", pCallFunction);
 
-		// Sigscan for FFrame::Step
 		pFrameStep = reinterpret_cast<tFrameStep>(sigscan.Scan(Signatures::FrameStep));
 		Logging::LogF("[Internal] FFrame::Step() = 0x%p\n", pFrameStep);
 
-		// Sigscan for UObject::StaticConstructObject
 		pStaticConstructObject = reinterpret_cast<tStaticConstructObject>(sigscan.Scan(Signatures::StaticConstructor));
 		Logging::LogF("[Internal] UObject::StaticConstructObject() = 0x%p\n", pStaticConstructObject);
 
-		// Sigscan for UObject::LoadPackage
 		pLoadPackage = reinterpret_cast<tLoadPackage>(sigscan.Scan(Signatures::LoadPackage));
 		Logging::LogF("[Internal] UObject::LoadPackage() = 0x%p\n", pLoadPackage);
 
-		// Sigscan for FArchive::ByteOrderSerialize
-		pByteOrderSerialize = reinterpret_cast<tByteOrderSerialize>(sigscan.Scan(Signatures::ByteOrderSerialize));
-		Logging::LogF("[Internal] FArchive::ByteOrderSerialize() = 0x%p\n", pByteOrderSerialize);
-
-		// Sigscan for texture load fix location
-		pTextureFixLocation = sigscan.Scan(Signatures::TextureFixLocation);
-		Logging::LogF("[Internal] Texture Fix Location = 0x%p\n", pTextureFixLocation);
-
-		// Sigscan for GMalloc and its virtual function table
 		pGMalloc = *(FMalloc***)sigscan.Scan(Signatures::GMalloc);
 		Logging::LogF("[Internal] GMalloc = 0x%p\n", pGMalloc);
 
-		pFNameInit = reinterpret_cast<tFNameInit>(sigscan.Scan(Signatures::FNameInit));
+		pFNameInit = reinterpret_cast<tFNameInitOld>(sigscan.Scan(Signatures::FNameInit));
 		Logging::LogF("[Internal] FindOrCreateFName = 0x%p\n", pFNameInit);
 
 		pGetDefaultObject = reinterpret_cast<tGetDefaultObject>(sigscan.Scan(Signatures::GetDefaultObject));
@@ -268,11 +199,6 @@ namespace BL2SDK
 		//SETUP_SIMPLE_DETOUR(detProcessEvent, pProcessEvent, hkProcessEvent);
 		CSimpleDetour detProcessEvent(&(PVOID&)pProcessEvent, hkProcessEvent);
 		detProcessEvent.Attach();
-
-		//// Detour Unreal exception handler
-		////SETUP_SIMPLE_DETOUR(detUnrealEH, addrUnrealEH, unrealExceptionHandler);
-		//CSimpleDetour detUnrealEH(&(PVOID&)addrUnrealEH, unrealExceptionHandler);
-		//detUnrealEH.Attach();
 
 		// Detour UObject::CallFunction()
 		//SETUP_SIMPLE_DETOUR(detCallFunction, pCallFunction, hkCallFunction);
@@ -300,9 +226,15 @@ namespace BL2SDK
 		}
 	}
 
-	// This function is used to get the dimensions of the game window for Gwen's renderer
 	bool getCanvasPostRender(UObject* caller, UFunction* function, FStruct *params)
 	{
+		// Set console key to Tilde if not already set
+		gameConsole = (UConsole *)UObject::Find("WillowConsole", "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0");
+		if (gameConsole == nullptr && engine && ((UEngine *)engine)->GameViewport)
+			gameConsole = ((UEngine *)engine)->GameViewport->ViewportConsole;
+		if (gameConsole && (gameConsole->ConsoleKey == FName("None") || gameConsole->ConsoleKey == FName("Undefined")))
+			gameConsole->ConsoleKey = FName("Tilde");
+
 		InitializePython();
 
 		HookManager->Remove(function->GetObjectName(), "GetCanvas");
@@ -336,18 +268,12 @@ namespace BL2SDK
 				engine = Object;
 		}
 #ifdef _DEBUG
-		//Logging::InitializeExtern();
+		Logging::InitializeExtern();
 #endif
-		Logging::InitializeGameConsole();
 
 		initializeGameVersions();
 
 		Logging::PrintLogHeader();
-
-		//// Set console key to Tilde if not already set
-		gameConsole = (UConsole *)UObject::Find("WillowConsole", "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0");
-		if (gameConsole && (gameConsole->ConsoleKey == FName("None") || gameConsole->ConsoleKey == FName("Undefined")))
-			gameConsole->ConsoleKey = FName("Tilde");
 
 		HookManager->Remove(function->GetObjectName(), "StartupSDK");
 		HookManager->Register("WillowGame.WillowGameViewportClient.PostRender", "GetCanvas", getCanvasPostRender);
@@ -358,9 +284,9 @@ namespace BL2SDK
 	void initialize(wchar_t * exeBaseFolder)
 	{
 		HookAntiDebug();
+		//Logging::SetLoggingLevel("DEBUG");
 		HookManager = new CHookManager("EngineHooks");
 		hookGame();
-		//InitializePackageFix();
 
 		LogAllCalls(false);
 
@@ -381,7 +307,6 @@ namespace BL2SDK
 	void  LoadPackage(const char* filename, DWORD flags, bool force)
 	{
 		std::wstring wideFilename = Util::Widen(filename);
-		SetIsLoadingUDKPackage(true);
 		UPackage* result = BL2SDK::pLoadPackage(0, wideFilename.c_str(), flags);
 		if (force) {
 			for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
@@ -391,7 +316,6 @@ namespace BL2SDK
 					Object->ObjectFlags.A = Object->ObjectFlags.A | 0x4000;
 			}
 		}
-		SetIsLoadingUDKPackage(false);
 	};
 
 	UObject *ConstructObject(UClass* Class, UObject* Outer, FName Name, unsigned int SetFlags, unsigned int InternalSetFlags, UObject* Template, FOutputDevice *Error, void* InstanceGraph, int bAssumeTemplateIsArchetype)
@@ -419,5 +343,30 @@ namespace BL2SDK
 
 	bool RemoveHook(const std::string& funcName, const std::string& hookName) {
 		return HookManager->Remove(funcName, hookName);
+	}
+
+	UObject *LoadTexture(char *Filename, char *TextureName) {
+		UTexture2D *NewTexture = (UTexture2D *)UObject::Find("Texture2D", std::string("Transient.") + TextureName);
+		if (NewTexture)
+			return NewTexture;
+		int x, y, n;
+		unsigned char *data = stbi_load(Filename, &x, &y, &n, 4);
+		if (!data)
+			throw std::exception("Unable to parse image file");
+		NewTexture = (UTexture2D *)ConstructObject(UObject::FindClass("Texture2D"), GetEngine()->Outer, FName(TextureName), 0x83, 0, nullptr, nullptr, nullptr, false);
+		if (!NewTexture)
+			return nullptr;
+		NewTexture->ObjectFlags.A |= 0x4000;
+		NewTexture->SizeX = x;
+		NewTexture->OriginalSizeX = x;
+		NewTexture->SizeY = y;
+		NewTexture->OriginalSizeY = y;
+		NewTexture->Format = 2;
+		NewTexture->Mips.Data.Dummy = (int)data;
+		NewTexture->Mips.ArrayMax = 1;
+		NewTexture->Mips.ArrayNum = 1;
+		NewTexture->ResidentMips = 1;
+		NewTexture->RequestedMips = 1;
+		return (UObject *)NewTexture;
 	}
 }

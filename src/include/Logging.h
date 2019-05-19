@@ -14,7 +14,6 @@ namespace Logging
 	void SetLoggingLevel(const char *NewLevel);
 	void InitializeExtern();
 	void InitializeFile(const std::wstring& fileName);
-	void InitializeGameConsole();
 	void PrintLogHeader();
 	void Cleanup();
 }

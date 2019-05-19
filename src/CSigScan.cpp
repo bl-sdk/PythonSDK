@@ -73,6 +73,6 @@ void* CSigScan::Scan(const char* sig, const char* mask, int sigLength)
 
 		pData++;
 	}
-
-	throw FatalSDKException(3010, Util::Format("Sigscan failed (Signature not found, Mask = %s)", Util::StringToHex(sig, sigLength).c_str()));
+	Logging::LogF("Sigscan failed (Signature not found, Mask = %s)", Util::StringToHex(sig, sigLength).c_str());
+	return nullptr;
 }

@@ -32,10 +32,11 @@ namespace BL2SDK
 	typedef UPackage* (*tLoadPackage) (UPackage* outer, const wchar_t* filename, DWORD flags);
 	typedef FArchive& (__thiscall *tByteOrderSerialize) (FArchive* Ar, void* V, int Length);
 
-	typedef void(__thiscall *tFNameInit) (FName *out, wchar_t *Src, int InNumber, int FindType, int bSplitName);
+	typedef char *(__thiscall *tFNameInitOld) (FName *out, wchar_t *Src, int InNumber, int FindType, int bSplitName, int Unk1);
+	typedef void(__thiscall *tFNameInitNew) (FName *out, wchar_t *Src, int InNumber, int FindType, int bSplitName);
 	typedef UObject *(__thiscall *tGetDefaultObject)(UClass *, unsigned int);
 
-	extern tFNameInit pFNameInit;
+	extern tFNameInitOld pFNameInit;
 	extern tProcessEvent pProcessEvent;
 	extern tCallFunction pCallFunction;
 	extern tFrameStep pFrameStep;
@@ -44,6 +45,7 @@ namespace BL2SDK
 	extern tByteOrderSerialize pByteOrderSerialize;
 	extern tGetDefaultObject pGetDefaultObject;
 	extern bool injectedCallNext;
+	extern UConsole *gameConsole;
 
 	extern std::map<std::string, UClass *> ClassMap;
 
@@ -56,13 +58,13 @@ namespace BL2SDK
 	extern class UObject *engine;
 
 	void LogAllCalls(bool enabled);
-	//bool getGameVersion(std::wstring& appVersion);
 	void doInjectedCallNext();
 	void initialize(wchar_t * exeBaseFolder/*LauncherStruct* args*/);
 	void cleanup();
 	void LoadPackage(const char* filename, DWORD flags = 0, bool force = false);
 	UObject			*ConstructObject(UClass* Class, UObject* InOuter, FName Name, unsigned int SetFlags, unsigned int InternalSetFlags, UObject* inTemplate, FOutputDevice *Error, void* InstanceGraph, int bAssumeTemplateIsArchetype);
 	UObject			*GetEngine();
+	UObject			*LoadTexture(char *Filename, char *TextureName);
 
 	void RegisterHook(const std::string& funcName, const std::string& hookName, std::function<bool(UObject*, UFunction*, FStruct*)> funcHook);
 	bool RemoveHook(const std::string& funcName, const std::string& hookName);

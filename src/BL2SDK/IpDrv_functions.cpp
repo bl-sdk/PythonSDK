@@ -21,7 +21,7 @@ void AInternetLink::ResolveFailed()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -41,7 +41,7 @@ void AInternetLink::Resolved(const struct FIpAddr& Addr)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -61,7 +61,7 @@ void AInternetLink::GetLocalIP(struct FIpAddr* Arg)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -87,7 +87,7 @@ bool AInternetLink::StringToIpAddr(const struct FString& Str, struct FIpAddr* Ad
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -114,7 +114,7 @@ struct FString AInternetLink::IpAddrToString(const struct FIpAddr& Arg)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -136,7 +136,7 @@ int AInternetLink::GetLastError()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -159,7 +159,7 @@ void AInternetLink::Resolve(const struct FString& Domain)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -185,7 +185,7 @@ bool AInternetLink::ParseURL(const struct FString& URL, struct FString* Addr, in
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -216,7 +216,7 @@ bool AInternetLink::IsDataPending()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -240,7 +240,7 @@ void ATcpLink::ReceivedBinary(int Count, unsigned char B)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -260,7 +260,7 @@ void ATcpLink::ReceivedLine(const struct FString& Line)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -280,7 +280,7 @@ void ATcpLink::ReceivedText(const struct FString& Text)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -297,7 +297,7 @@ void ATcpLink::Closed()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -314,7 +314,7 @@ void ATcpLink::Opened()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -331,7 +331,7 @@ void ATcpLink::Accepted()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -354,7 +354,7 @@ int ATcpLink::ReadBinary(int Count, unsigned char* B)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -380,7 +380,7 @@ int ATcpLink::ReadText(struct FString* Str)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -409,7 +409,7 @@ int ATcpLink::SendBinary(int Count, unsigned char B)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -433,7 +433,7 @@ int ATcpLink::SendText(const struct FString& Str)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -455,7 +455,7 @@ bool ATcpLink::IsConnected()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -477,7 +477,7 @@ bool ATcpLink::Close()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -501,7 +501,7 @@ bool ATcpLink::Open(const struct FIpAddr& Addr)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -523,7 +523,7 @@ bool ATcpLink::Listen()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -549,7 +549,7 @@ int ATcpLink::BindPort(int PortNum, bool bUseNextAvailable)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -575,7 +575,7 @@ bool UOnlineEventsInterfaceMcp::UploadMatchmakingStats(const struct FUniqueNetId
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -601,7 +601,7 @@ bool UOnlineEventsInterfaceMcp::UpdatePlaylistPopulation(int PlaylistId, int Num
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -626,7 +626,7 @@ bool UOnlineEventsInterfaceMcp::UploadGameplayEventsData(const struct FUniqueNet
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -659,7 +659,7 @@ bool UOnlineEventsInterfaceMcp::UploadPlayerData(const struct FUniqueNetId& Uniq
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -684,7 +684,7 @@ struct FString UOnlineNewsInterfaceMcp::GetNews(unsigned char LocalUserNum, unsi
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -706,7 +706,7 @@ void UOnlineNewsInterfaceMcp::ClearReadNewsCompletedDelegate(const struct FScrip
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -726,7 +726,7 @@ void UOnlineNewsInterfaceMcp::AddReadNewsCompletedDelegate(const struct FScriptD
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -748,7 +748,7 @@ void UOnlineNewsInterfaceMcp::OnReadNewsCompleted(bool bWasSuccessful, unsigned 
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -772,7 +772,7 @@ bool UOnlineNewsInterfaceMcp::ReadNews(unsigned char LocalUserNum, unsigned char
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -794,7 +794,7 @@ void UOnlineTitleFileDownloadMcp::ClearShareTitleFileCompleteDelegate(const stru
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -814,7 +814,7 @@ void UOnlineTitleFileDownloadMcp::AddShareTitleFileCompleteDelegate(const struct
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -835,7 +835,7 @@ bool UOnlineTitleFileDownloadMcp::ShareTitleFile(const struct FString& FileToSha
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -859,7 +859,7 @@ bool UOnlineTitleFileDownloadMcp::ClearDownloadedFile(const struct FString& File
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -881,7 +881,7 @@ bool UOnlineTitleFileDownloadMcp::ClearDownloadedFiles()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -904,7 +904,7 @@ unsigned char UOnlineTitleFileDownloadMcp::GetTitleFileState(const struct FStrin
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -929,7 +929,7 @@ bool UOnlineTitleFileDownloadMcp::GetTitleFileContents(const struct FString& Fil
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -954,7 +954,7 @@ void UOnlineTitleFileDownloadMcp::ClearReadTitleFileCompleteDelegate(const struc
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -974,7 +974,7 @@ void UOnlineTitleFileDownloadMcp::AddReadTitleFileCompleteDelegate(const struct 
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -998,7 +998,7 @@ bool UOnlineTitleFileDownloadMcp::ReadTitleFile(unsigned char LocalUserNum, cons
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1024,7 +1024,7 @@ void UOnlineTitleFileDownloadMcp::OnShareTitleFileComplete(bool bWasSuccessful, 
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1046,7 +1046,7 @@ void UOnlineTitleFileDownloadMcp::OnReadTitleFileComplete(bool bWasSuccessful, c
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1064,7 +1064,7 @@ void UMeshBeacon::DestroyBeacon()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1091,7 +1091,7 @@ bool UMeshBeaconClient::SendHostNewGameSessionResponse(bool bSuccess, const stru
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1119,7 +1119,7 @@ void UMeshBeaconClient::OnCreateNewSessionRequestReceived(const struct FName& Se
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -1145,7 +1145,7 @@ void UMeshBeaconClient::OnTravelRequestReceived(const struct FName& SessionName,
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -1171,7 +1171,7 @@ void UMeshBeaconClient::OnReceivedBandwidthTestResults(unsigned char TestType, u
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -1194,7 +1194,7 @@ void UMeshBeaconClient::OnReceivedBandwidthTestRequest(unsigned char TestType)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1214,7 +1214,7 @@ void UMeshBeaconClient::OnConnectionRequestResult(unsigned char ConnectionResult
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1238,7 +1238,7 @@ bool UMeshBeaconClient::BeginBandwidthTest(unsigned char TestType, int TestBuffe
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1264,7 +1264,7 @@ bool UMeshBeaconClient::RequestConnection(bool bRegisterSecureAddress, struct FO
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1289,7 +1289,7 @@ void UMeshBeaconClient::DestroyBeacon()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1314,7 +1314,7 @@ void UMeshBeaconHost::OnReceivedClientCreateNewSessionResult(bool bSucceeded, co
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -1344,7 +1344,7 @@ bool UMeshBeaconHost::RequestClientCreateNewSession(const struct FUniqueNetId& P
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1373,7 +1373,7 @@ void UMeshBeaconHost::TellClientsToTravel(const struct FName& SessionName, class
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -1393,7 +1393,7 @@ void UMeshBeaconHost::OnAllPendingPlayersConnected()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1414,7 +1414,7 @@ bool UMeshBeaconHost::AllPlayersConnected(TArray<struct FUniqueNetId>* Players)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1441,7 +1441,7 @@ int UMeshBeaconHost::GetConnectionIndexForPlayer(const struct FUniqueNetId& Play
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -1462,7 +1462,7 @@ void UMeshBeaconHost::SetPendingPlayerConnections(TArray<struct FUniqueNetId>* P
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -1490,7 +1490,7 @@ void UMeshBeaconHost::OnFinishedBandwidthTest(const struct FUniqueNetId& PlayerN
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -1515,7 +1515,7 @@ void UMeshBeaconHost::OnStartedBandwidthTest(const struct FUniqueNetId& PlayerNe
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1534,7 +1534,7 @@ void UMeshBeaconHost::OnReceivedClientConnectionRequest(struct FClientMeshBeacon
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -1557,7 +1557,7 @@ void UMeshBeaconHost::AllowBandwidthTesting(bool bEnabled)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1575,7 +1575,7 @@ void UMeshBeaconHost::CancelPendingBandwidthTests()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1595,7 +1595,7 @@ bool UMeshBeaconHost::HasPendingBandwidthTest()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1615,7 +1615,7 @@ void UMeshBeaconHost::CancelInProgressBandwidthTests()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1635,7 +1635,7 @@ bool UMeshBeaconHost::HasInProgressBandwidthTest()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1663,7 +1663,7 @@ bool UMeshBeaconHost::RequestClientBandwidthTest(const struct FUniqueNetId& Play
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1683,7 +1683,7 @@ void UMeshBeaconHost::DestroyBeacon()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1705,7 +1705,7 @@ bool UMeshBeaconHost::InitHostBeacon(const struct FUniqueNetId& InOwningPlayerId
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1728,7 +1728,7 @@ void UOnlineSubsystemCommonImpl::GetRegisteredPlayers(const struct FName& Sessio
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -1755,7 +1755,7 @@ bool UOnlineSubsystemCommonImpl::IsPlayerInSession(const struct FName& SessionNa
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1778,7 +1778,7 @@ struct FString UOnlineSubsystemCommonImpl::GetPlayerNicknameFromIndex(int UserIn
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -1802,7 +1802,7 @@ int UOnlineAuthInterfaceImpl::FindLocalServerAuthSession(class UPlayer* ClientCo
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -1826,7 +1826,7 @@ int UOnlineAuthInterfaceImpl::FindServerAuthSession(class UPlayer* ServerConnect
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -1850,7 +1850,7 @@ int UOnlineAuthInterfaceImpl::FindLocalClientAuthSession(class UPlayer* ServerCo
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -1874,7 +1874,7 @@ int UOnlineAuthInterfaceImpl::FindClientAuthSession(class UPlayer* ClientConnect
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -1896,7 +1896,7 @@ bool UOnlineAuthInterfaceImpl::SendAuthRetryServer()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1920,7 +1920,7 @@ bool UOnlineAuthInterfaceImpl::SendAuthKillClient(class UPlayer* ClientConnectio
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1946,7 +1946,7 @@ bool UOnlineAuthInterfaceImpl::SendAuthBlobServer(class UPlayer* ClientConnectio
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1970,7 +1970,7 @@ bool UOnlineAuthInterfaceImpl::SendAuthBlobClient(int AuthBlobUID)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1992,7 +1992,7 @@ void UOnlineAuthInterfaceImpl::ClearServerConnectionCloseDelegate(const struct F
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2012,7 +2012,7 @@ void UOnlineAuthInterfaceImpl::AddServerConnectionCloseDelegate(const struct FSc
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2032,7 +2032,7 @@ void UOnlineAuthInterfaceImpl::ClearClientConnectionCloseDelegate(const struct F
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2052,7 +2052,7 @@ void UOnlineAuthInterfaceImpl::AddClientConnectionCloseDelegate(const struct FSc
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2072,7 +2072,7 @@ void UOnlineAuthInterfaceImpl::ClearAuthRetryServerDelegate(const struct FScript
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2092,7 +2092,7 @@ void UOnlineAuthInterfaceImpl::AddAuthRetryServerDelegate(const struct FScriptDe
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2112,7 +2112,7 @@ void UOnlineAuthInterfaceImpl::ClearAuthKillClientDelegate(const struct FScriptD
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2132,7 +2132,7 @@ void UOnlineAuthInterfaceImpl::AddAuthKillClientDelegate(const struct FScriptDel
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2152,7 +2152,7 @@ void UOnlineAuthInterfaceImpl::ClearAuthCompleteServerDelegate(const struct FScr
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2172,7 +2172,7 @@ void UOnlineAuthInterfaceImpl::AddAuthCompleteServerDelegate(const struct FScrip
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2192,7 +2192,7 @@ void UOnlineAuthInterfaceImpl::ClearAuthCompleteClientDelegate(const struct FScr
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2212,7 +2212,7 @@ void UOnlineAuthInterfaceImpl::AddAuthCompleteClientDelegate(const struct FScrip
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2232,7 +2232,7 @@ void UOnlineAuthInterfaceImpl::ClearAuthBlobReceivedServerDelegate(const struct 
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2252,7 +2252,7 @@ void UOnlineAuthInterfaceImpl::AddAuthBlobReceivedServerDelegate(const struct FS
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2272,7 +2272,7 @@ void UOnlineAuthInterfaceImpl::ClearAuthBlobReceivedClientDelegate(const struct 
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2292,7 +2292,7 @@ void UOnlineAuthInterfaceImpl::AddAuthBlobReceivedClientDelegate(const struct FS
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2312,7 +2312,7 @@ void UOnlineAuthInterfaceImpl::ClearAuthRequestServerDelegate(const struct FScri
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2332,7 +2332,7 @@ void UOnlineAuthInterfaceImpl::AddAuthRequestServerDelegate(const struct FScript
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2352,7 +2352,7 @@ void UOnlineAuthInterfaceImpl::ClearAuthRequestClientDelegate(const struct FScri
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2372,7 +2372,7 @@ void UOnlineAuthInterfaceImpl::AddAuthRequestClientDelegate(const struct FScript
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2392,7 +2392,7 @@ void UOnlineAuthInterfaceImpl::ClearAuthReadyDelegate(const struct FScriptDelega
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2412,7 +2412,7 @@ void UOnlineAuthInterfaceImpl::AddAuthReadyDelegate(const struct FScriptDelegate
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2431,7 +2431,7 @@ bool UOnlineGameInterfaceImpl::HasPendingBootInvite()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -2451,7 +2451,7 @@ void UOnlineGameInterfaceImpl::CancelNATNegotiation()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2471,7 +2471,7 @@ void UOnlineGameInterfaceImpl::ClearQosStatusChangedDelegate(const struct FScrip
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2491,7 +2491,7 @@ void UOnlineGameInterfaceImpl::AddQosStatusChangedDelegate(const struct FScriptD
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2513,7 +2513,7 @@ void UOnlineGameInterfaceImpl::OnQosStatusChanged(int NumComplete, int NumTotal)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2539,7 +2539,7 @@ bool UOnlineGameInterfaceImpl::BindPlatformSpecificSessionToSearch(unsigned char
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -2563,7 +2563,7 @@ bool UOnlineGameInterfaceImpl::ReadPlatformSpecificSessionInfoBySessionName(cons
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -2590,7 +2590,7 @@ bool UOnlineGameInterfaceImpl::ReadPlatformSpecificSessionInfo(struct FOnlineGam
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -2620,7 +2620,7 @@ bool UOnlineGameInterfaceImpl::QueryNonAdvertisedData(int StartAt, int NumberToQ
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -2642,7 +2642,7 @@ void UOnlineGameInterfaceImpl::ClearJoinMigratedOnlineGameCompleteDelegate(const
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2662,7 +2662,7 @@ void UOnlineGameInterfaceImpl::AddJoinMigratedOnlineGameCompleteDelegate(const s
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2684,7 +2684,7 @@ void UOnlineGameInterfaceImpl::OnJoinMigratedOnlineGameComplete(const struct FNa
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2708,7 +2708,7 @@ bool UOnlineGameInterfaceImpl::JoinMigratedOnlineGame(unsigned char PlayerNum, c
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -2733,7 +2733,7 @@ void UOnlineGameInterfaceImpl::ClearMigrateOnlineGameCompleteDelegate(const stru
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2753,7 +2753,7 @@ void UOnlineGameInterfaceImpl::AddMigrateOnlineGameCompleteDelegate(const struct
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2775,7 +2775,7 @@ void UOnlineGameInterfaceImpl::OnMigrateOnlineGameComplete(const struct FName& S
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2798,7 +2798,7 @@ bool UOnlineGameInterfaceImpl::MigrateOnlineGame(unsigned char HostingPlayerNum,
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -2820,7 +2820,7 @@ void UOnlineGameInterfaceImpl::ClearRecalculateSkillRatingCompleteDelegate(const
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2840,7 +2840,7 @@ void UOnlineGameInterfaceImpl::AddRecalculateSkillRatingCompleteDelegate(const s
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2862,7 +2862,7 @@ void UOnlineGameInterfaceImpl::OnRecalculateSkillRatingComplete(const struct FNa
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2884,7 +2884,7 @@ bool UOnlineGameInterfaceImpl::RecalculateSkillRating(const struct FName& Sessio
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -2909,7 +2909,7 @@ void UOnlineGameInterfaceImpl::ClearGameInviteProcessingStartedDelegate(const st
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2929,7 +2929,7 @@ void UOnlineGameInterfaceImpl::AddGameInviteProcessingStartedDelegate(const stru
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2946,7 +2946,7 @@ void UOnlineGameInterfaceImpl::OnGameInviteProcessingStarted()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2969,7 +2969,7 @@ bool UOnlineGameInterfaceImpl::AcceptGameInvite(unsigned char LocalUserNum, cons
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -2993,7 +2993,7 @@ void UOnlineGameInterfaceImpl::ClearGameInviteAcceptedDelegate(unsigned char Loc
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3015,7 +3015,7 @@ void UOnlineGameInterfaceImpl::AddGameInviteAcceptedDelegate(unsigned char Local
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3034,7 +3034,7 @@ void UOnlineGameInterfaceImpl::OnGameInviteAccepted(struct FOnlineGameSearchResu
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -3058,7 +3058,7 @@ TArray<struct FOnlineArbitrationRegistrant> UOnlineGameInterfaceImpl::GetArbitra
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3080,7 +3080,7 @@ void UOnlineGameInterfaceImpl::ClearArbitrationRegistrationCompleteDelegate(cons
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3100,7 +3100,7 @@ void UOnlineGameInterfaceImpl::AddArbitrationRegistrationCompleteDelegate(const 
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3122,7 +3122,7 @@ void UOnlineGameInterfaceImpl::OnArbitrationRegistrationComplete(const struct FN
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3143,7 +3143,7 @@ bool UOnlineGameInterfaceImpl::RegisterForArbitration(const struct FName& Sessio
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -3165,7 +3165,7 @@ void UOnlineGameInterfaceImpl::ClearEndOnlineGameCompleteDelegate(const struct F
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3185,7 +3185,7 @@ void UOnlineGameInterfaceImpl::AddEndOnlineGameCompleteDelegate(const struct FSc
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3207,7 +3207,7 @@ void UOnlineGameInterfaceImpl::OnEndOnlineGameComplete(const struct FName& Sessi
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3229,7 +3229,7 @@ bool UOnlineGameInterfaceImpl::EndOnlineGame(const struct FName& SessionName)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -3251,7 +3251,7 @@ void UOnlineGameInterfaceImpl::ClearStartOnlineGameCompleteDelegate(const struct
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3271,7 +3271,7 @@ void UOnlineGameInterfaceImpl::AddStartOnlineGameCompleteDelegate(const struct F
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3293,7 +3293,7 @@ void UOnlineGameInterfaceImpl::OnStartOnlineGameComplete(const struct FName& Ses
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3315,7 +3315,7 @@ bool UOnlineGameInterfaceImpl::StartOnlineGame(const struct FName& SessionName)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -3337,7 +3337,7 @@ void UOnlineGameInterfaceImpl::ClearUnregisterPlayerCompleteDelegate(const struc
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3357,7 +3357,7 @@ void UOnlineGameInterfaceImpl::AddUnregisterPlayerCompleteDelegate(const struct 
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3381,7 +3381,7 @@ void UOnlineGameInterfaceImpl::OnUnregisterPlayerComplete(const struct FName& Se
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3403,7 +3403,7 @@ bool UOnlineGameInterfaceImpl::UnregisterPlayers(const struct FName& SessionName
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -3431,7 +3431,7 @@ bool UOnlineGameInterfaceImpl::UnregisterPlayer(const struct FName& SessionName,
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -3453,7 +3453,7 @@ void UOnlineGameInterfaceImpl::ClearRegisterPlayerCompleteDelegate(const struct 
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3473,7 +3473,7 @@ void UOnlineGameInterfaceImpl::AddRegisterPlayerCompleteDelegate(const struct FS
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3497,7 +3497,7 @@ void UOnlineGameInterfaceImpl::OnRegisterPlayerComplete(const struct FName& Sess
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3519,7 +3519,7 @@ bool UOnlineGameInterfaceImpl::RegisterPlayers(const struct FName& SessionName, 
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -3549,7 +3549,7 @@ bool UOnlineGameInterfaceImpl::RegisterPlayer(const struct FName& SessionName, c
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -3574,7 +3574,7 @@ bool UOnlineGameInterfaceImpl::GetResolvedConnectString(const struct FName& Sess
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -3599,7 +3599,7 @@ void UOnlineGameInterfaceImpl::ClearJoinOnlineGameCompleteDelegate(const struct 
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3619,7 +3619,7 @@ void UOnlineGameInterfaceImpl::AddJoinOnlineGameCompleteDelegate(const struct FS
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3641,7 +3641,7 @@ void UOnlineGameInterfaceImpl::OnJoinOnlineGameComplete(const struct FName& Sess
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3666,7 +3666,7 @@ bool UOnlineGameInterfaceImpl::JoinOnlineGame(unsigned char PlayerNum, const str
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -3693,7 +3693,7 @@ bool UOnlineGameInterfaceImpl::FreeSearchResults(class UOnlineGameSearch* Search
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -3715,7 +3715,7 @@ void UOnlineGameInterfaceImpl::ClearCancelFindOnlineGamesCompleteDelegate(const 
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3735,7 +3735,7 @@ void UOnlineGameInterfaceImpl::AddCancelFindOnlineGamesCompleteDelegate(const st
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3755,7 +3755,7 @@ void UOnlineGameInterfaceImpl::OnCancelFindOnlineGamesComplete(bool bWasSuccessf
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3775,7 +3775,7 @@ bool UOnlineGameInterfaceImpl::CancelFindOnlineGames()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -3797,7 +3797,7 @@ void UOnlineGameInterfaceImpl::ClearFindOnlineGamesCompleteDelegate(const struct
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3817,7 +3817,7 @@ void UOnlineGameInterfaceImpl::AddFindOnlineGamesCompleteDelegate(const struct F
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3841,7 +3841,7 @@ bool UOnlineGameInterfaceImpl::FindOnlineGames(unsigned char SearchingPlayerNum,
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -3863,7 +3863,7 @@ void UOnlineGameInterfaceImpl::ClearDestroyOnlineGameCompleteDelegate(const stru
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3883,7 +3883,7 @@ void UOnlineGameInterfaceImpl::AddDestroyOnlineGameCompleteDelegate(const struct
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3905,7 +3905,7 @@ void UOnlineGameInterfaceImpl::OnDestroyOnlineGameComplete(const struct FName& S
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3927,7 +3927,7 @@ bool UOnlineGameInterfaceImpl::DestroyOnlineGame(const struct FName& SessionName
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -3949,7 +3949,7 @@ void UOnlineGameInterfaceImpl::ClearUpdateOnlineGameCompleteDelegate(const struc
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3969,7 +3969,7 @@ void UOnlineGameInterfaceImpl::AddUpdateOnlineGameCompleteDelegate(const struct 
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3991,7 +3991,7 @@ void UOnlineGameInterfaceImpl::OnUpdateOnlineGameComplete(const struct FName& Se
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4016,7 +4016,7 @@ bool UOnlineGameInterfaceImpl::UpdateOnlineGame(const struct FName& SessionName,
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -4038,7 +4038,7 @@ void UOnlineGameInterfaceImpl::ClearCreateOnlineGameCompleteDelegate(const struc
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4058,7 +4058,7 @@ void UOnlineGameInterfaceImpl::AddCreateOnlineGameCompleteDelegate(const struct 
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4080,7 +4080,7 @@ void UOnlineGameInterfaceImpl::OnCreateOnlineGameComplete(const struct FName& Se
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4106,7 +4106,7 @@ bool UOnlineGameInterfaceImpl::CreateOnlineGame(unsigned char HostingPlayerNum, 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -4127,7 +4127,7 @@ class UOnlineGameSearch* UOnlineGameInterfaceImpl::GetGameSearch()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4150,7 +4150,7 @@ class UOnlineGameSettings* UOnlineGameInterfaceImpl::GetGameSettings(const struc
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4172,7 +4172,7 @@ void UOnlineGameInterfaceImpl::OnFindOnlineGamesComplete(bool bWasSuccessful)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4192,7 +4192,7 @@ void UOnlinePlaylistManager::ParseDataCenterId(TArray<unsigned char>* Data)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -4217,7 +4217,7 @@ void UOnlinePlaylistManager::OnReadDataCenterIdComplete(bool bWasSuccessful, con
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4237,7 +4237,7 @@ void UOnlinePlaylistManager::ReadDataCenterId(unsigned char LocalUserNum)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4257,7 +4257,7 @@ void UOnlinePlaylistManager::SendPlaylistPopulationUpdate(int NumPlayers)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4279,7 +4279,7 @@ void UOnlinePlaylistManager::GetPopulationInfoFromPlaylist(int PlaylistId, int* 
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -4304,7 +4304,7 @@ void UOnlinePlaylistManager::ParsePlaylistPopulationData(TArray<unsigned char>* 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -4324,7 +4324,7 @@ void UOnlinePlaylistManager::OnPlaylistPopulationDataUpdated()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4346,7 +4346,7 @@ void UOnlinePlaylistManager::OnReadPlaylistPopulationComplete(bool bWasSuccessfu
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4366,7 +4366,7 @@ void UOnlinePlaylistManager::ReadPlaylistPopulation(unsigned char LocalUserNum)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4383,7 +4383,7 @@ void UOnlinePlaylistManager::Reset()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4404,7 +4404,7 @@ void UOnlinePlaylistManager::GetContentIdsFromPlaylist(int PlaylistId, TArray<in
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -4430,7 +4430,7 @@ class UClass* UOnlinePlaylistManager::GetInventorySwapFromPlaylist(int PlaylistI
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4453,7 +4453,7 @@ void UOnlinePlaylistManager::GetMapCycleFromPlaylist(int PlaylistId, TArray<stru
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -4477,7 +4477,7 @@ struct FString UOnlinePlaylistManager::GetUrlFromPlaylist(int PlaylistId)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4500,7 +4500,7 @@ int UOnlinePlaylistManager::GetMatchType(int PlaylistId)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4523,7 +4523,7 @@ bool UOnlinePlaylistManager::IsPlaylistArbitrated(int PlaylistId)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -4546,7 +4546,7 @@ void UOnlinePlaylistManager::GetLoadBalanceIdFromPlaylist(int PlaylistId, int* L
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -4572,7 +4572,7 @@ void UOnlinePlaylistManager::GetTeamInfoFromPlaylist(int PlaylistId, int* TeamSi
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -4600,7 +4600,7 @@ bool UOnlinePlaylistManager::PlaylistSupportsDedicatedServers(int PlaylistId)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -4623,7 +4623,7 @@ bool UOnlinePlaylistManager::HasAnyGameSettings(int PlaylistId)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -4648,7 +4648,7 @@ class UOnlineGameSettings* UOnlinePlaylistManager::GetGameSettings(int PlaylistI
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4668,7 +4668,7 @@ void UOnlinePlaylistManager::FinalizePlaylistObjects()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4690,7 +4690,7 @@ void UOnlinePlaylistManager::OnReadTitleFileComplete(bool bWasSuccessful, const 
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4710,7 +4710,7 @@ bool UOnlinePlaylistManager::ShouldRefreshPlaylists()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -4730,7 +4730,7 @@ void UOnlinePlaylistManager::DetermineFilesToDownload()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4750,7 +4750,7 @@ void UOnlinePlaylistManager::DownloadPlaylist(unsigned char LocalUserNum)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4770,7 +4770,7 @@ void UOnlinePlaylistManager::OnReadPlaylistComplete(bool bWasSuccessful)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4787,7 +4787,7 @@ void UPartyBeacon::OnDestroyComplete()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4805,7 +4805,7 @@ void UPartyBeacon::DestroyBeacon()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4823,7 +4823,7 @@ void UPartyBeaconClient::DestroyBeacon()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4845,7 +4845,7 @@ bool UPartyBeaconClient::CancelReservation(const struct FUniqueNetId& Cancelling
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -4871,7 +4871,7 @@ bool UPartyBeaconClient::RequestReservationUpdate(const struct FUniqueNetId& Req
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -4902,7 +4902,7 @@ bool UPartyBeaconClient::RequestReservation(const struct FUniqueNetId& Requestin
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -4926,7 +4926,7 @@ void UPartyBeaconClient::OnHostHasCancelled()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4943,7 +4943,7 @@ void UPartyBeaconClient::OnHostIsReady()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4967,7 +4967,7 @@ void UPartyBeaconClient::OnTravelRequestReceived(const struct FName& SessionName
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4987,7 +4987,7 @@ void UPartyBeaconClient::OnReservationCountUpdated(int ReservationRemaining)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -5007,7 +5007,7 @@ void UPartyBeaconClient::OnReservationRequestComplete(unsigned char ReservationR
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -5027,7 +5027,7 @@ int UPartyBeaconHost::GetMaxAvailableTeamSize()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5048,7 +5048,7 @@ void UPartyBeaconHost::GetPartyLeaders(TArray<struct FUniqueNetId>* PartyLeaders
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -5070,7 +5070,7 @@ void UPartyBeaconHost::GetPlayers(TArray<struct FUniqueNetId>* Players)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -5094,7 +5094,7 @@ void UPartyBeaconHost::AppendReservationSkillsToSearch(class UOnlineGameSearch* 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -5114,7 +5114,7 @@ void UPartyBeaconHost::UnregisterParty(const struct FUniqueNetId& PartyLeader)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -5131,7 +5131,7 @@ void UPartyBeaconHost::UnregisterPartyMembers()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -5148,7 +5148,7 @@ void UPartyBeaconHost::RegisterPartyMembers()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -5167,7 +5167,7 @@ bool UPartyBeaconHost::AreReservationsFull()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -5187,7 +5187,7 @@ void UPartyBeaconHost::TellClientsHostHasCancelled()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -5205,7 +5205,7 @@ void UPartyBeaconHost::TellClientsHostIsReady()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -5230,7 +5230,7 @@ void UPartyBeaconHost::TellClientsToTravel(const struct FName& SessionName, clas
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -5248,7 +5248,7 @@ void UPartyBeaconHost::DestroyBeacon()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -5268,7 +5268,7 @@ void UPartyBeaconHost::OnClientCancellationReceived(const struct FUniqueNetId& P
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -5285,7 +5285,7 @@ void UPartyBeaconHost::OnReservationsFull()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -5302,7 +5302,7 @@ void UPartyBeaconHost::OnReservationChange()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -5325,7 +5325,7 @@ void UPartyBeaconHost::HandlePlayerLogout(const struct FUniqueNetId& PlayerID, b
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -5346,7 +5346,7 @@ int UPartyBeaconHost::GetExistingReservation(struct FUniqueNetId* PartyLeader)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5374,7 +5374,7 @@ unsigned char UPartyBeaconHost::UpdatePartyReservationEntry(const struct FUnique
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5406,7 +5406,7 @@ unsigned char UPartyBeaconHost::AddPartyReservationEntry(const struct FUniqueNet
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5441,7 +5441,7 @@ bool UPartyBeaconHost::InitHostBeacon(int InNumTeams, int InNumPlayersPerTeam, i
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -5464,7 +5464,7 @@ void UPartyBeaconHost::PauseReservationRequests(bool bPause)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -5485,7 +5485,7 @@ int UWebRequest::GetHexDigit(const struct FString& D)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5507,7 +5507,7 @@ void UWebRequest::DecodeFormData(const struct FString& Data)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -5527,7 +5527,7 @@ void UWebRequest::ProcessHeaderString(const struct FString& S)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -5545,7 +5545,7 @@ void UWebRequest::Dump()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -5565,7 +5565,7 @@ void UWebRequest::GetVariables(TArray<struct FString>* varNames)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -5594,7 +5594,7 @@ struct FString UWebRequest::GetVariableNumber(const struct FString& VariableName
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5618,7 +5618,7 @@ int UWebRequest::GetVariableCount(const struct FString& VariableName)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5644,7 +5644,7 @@ struct FString UWebRequest::GetVariable(const struct FString& VariableName, cons
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5669,7 +5669,7 @@ void UWebRequest::AddVariable(const struct FString& VariableName, const struct F
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -5689,7 +5689,7 @@ void UWebRequest::GetHeaders(TArray<struct FString>* headers)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -5716,7 +5716,7 @@ struct FString UWebRequest::GetHeader(const struct FString& HeaderName, const st
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5741,7 +5741,7 @@ void UWebRequest::AddHeader(const struct FString& HeaderName, const struct FStri
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -5763,7 +5763,7 @@ struct FString UWebRequest::EncodeBase64(const struct FString& Decoded)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5787,7 +5787,7 @@ struct FString UWebRequest::DecodeBase64(const struct FString& Encoded)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -5808,7 +5808,7 @@ bool UWebResponse::SentResponse()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -5829,7 +5829,7 @@ bool UWebResponse::SentText()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -5851,7 +5851,7 @@ void UWebResponse::Redirect(const struct FString& URL)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -5873,7 +5873,7 @@ void UWebResponse::SendStandardHeaders(const struct FString& ContentType, bool b
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -5895,7 +5895,7 @@ void UWebResponse::HTTPError(int ErrorNum, const struct FString& Data)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -5912,7 +5912,7 @@ void UWebResponse::SendHeaders()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -5934,7 +5934,7 @@ void UWebResponse::AddHeader(const struct FString& Header, bool bReplace)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -5954,7 +5954,7 @@ void UWebResponse::HTTPHeader(const struct FString& Header)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -5974,7 +5974,7 @@ void UWebResponse::HTTPResponse(const struct FString& Header)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -5994,7 +5994,7 @@ void UWebResponse::FailAuthentication(const struct FString& Realm)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6017,7 +6017,7 @@ bool UWebResponse::SendCachedFile(const struct FString& Filename, const struct F
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -6041,7 +6041,7 @@ void UWebResponse::SendBinary(int Count, unsigned char B)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6063,7 +6063,7 @@ void UWebResponse::SendText(const struct FString& Text, bool bNoCRLF)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6081,7 +6081,7 @@ void UWebResponse::Dump()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6103,7 +6103,7 @@ struct FString UWebResponse::GetHTTPExpiration(int OffsetSeconds)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6127,7 +6127,7 @@ struct FString UWebResponse::LoadParsedUHTM(const struct FString& Filename)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6151,7 +6151,7 @@ bool UWebResponse::IncludeBinaryFile(const struct FString& Filename)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -6175,7 +6175,7 @@ bool UWebResponse::IncludeUHTM(const struct FString& Filename)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -6195,7 +6195,7 @@ void UWebResponse::ClearSubst()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6220,7 +6220,7 @@ void UWebResponse::Subst(const struct FString& Variable, const struct FString& V
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6242,7 +6242,7 @@ bool UWebResponse::FileExists(const struct FString& Filename)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -6265,7 +6265,7 @@ int UUIDataStore_OnlinePlaylists::GetMatchTypeForPlaylistId(int PlaylistId)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6292,7 +6292,7 @@ class UOnlinePlaylistProvider* UUIDataStore_OnlinePlaylists::GetOnlinePlaylistPr
 	auto flags = fn->FunctionFlags;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6322,7 +6322,7 @@ bool UUIDataStore_OnlinePlaylists::GetPlaylistProvider(const struct FName& Provi
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -6352,7 +6352,7 @@ int UUIDataStore_OnlinePlaylists::FindProviderIndexByFieldValue(const struct FNa
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6384,7 +6384,7 @@ bool UUIDataStore_OnlinePlaylists::GetProviderFieldValue(const struct FName& Pro
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -6412,7 +6412,7 @@ bool UUIDataStore_OnlinePlaylists::GetResourceProviderFields(const struct FName&
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -6440,7 +6440,7 @@ bool UUIDataStore_OnlinePlaylists::GetResourceProviders(const struct FName& Prov
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -6467,7 +6467,7 @@ int UUIDataStore_OnlinePlaylists::GetProviderCount(const struct FName& ProviderT
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6486,7 +6486,7 @@ void UUIDataStore_OnlinePlaylists::Init()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6508,7 +6508,7 @@ void UWebApplication::PostQuery(class UWebRequest* Request, class UWebResponse* 
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6530,7 +6530,7 @@ void UWebApplication::Query(class UWebRequest* Request, class UWebResponse* Resp
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6553,7 +6553,7 @@ bool UWebApplication::PreQuery(class UWebRequest* Request, class UWebResponse* R
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -6572,7 +6572,7 @@ void UWebApplication::CleanupApp()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6589,7 +6589,7 @@ void UWebApplication::Cleanup()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6606,7 +6606,7 @@ void UWebApplication::Init()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6628,7 +6628,7 @@ class UWebApplication* AWebServer::GetApplication(const struct FString& URI, str
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -6653,7 +6653,7 @@ void AWebServer::LostChild(class AActor* C)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6673,7 +6673,7 @@ void AWebServer::GainedChild(class AActor* C)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6690,7 +6690,7 @@ void AWebServer::Destroyed()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6707,7 +6707,7 @@ void AWebServer::PostBeginPlay()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6729,7 +6729,7 @@ void UHelloWeb::Query(class UWebRequest* Request, class UWebResponse* Response)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6746,7 +6746,7 @@ void UHelloWeb::Init()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6768,7 +6768,7 @@ void UImageServer::Query(class UWebRequest* Request, class UWebResponse* Respons
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6787,7 +6787,7 @@ bool AWebConnection::IsHanging()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -6806,7 +6806,7 @@ void AWebConnection::Cleanup()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6823,7 +6823,7 @@ void AWebConnection::CheckRawBytes()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6840,7 +6840,7 @@ void AWebConnection::EndOfHeaders()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6857,7 +6857,7 @@ void AWebConnection::CreateResponseObject()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6877,7 +6877,7 @@ void AWebConnection::ProcessPost(const struct FString& S)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6897,7 +6897,7 @@ void AWebConnection::ProcessGet(const struct FString& S)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6917,7 +6917,7 @@ void AWebConnection::ProcessHead(const struct FString& S)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6937,7 +6937,7 @@ void AWebConnection::ReceivedLine(const struct FString& S)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6957,7 +6957,7 @@ void AWebConnection::ReceivedText(const struct FString& Text)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6974,7 +6974,7 @@ void AWebConnection::Timer()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -6991,7 +6991,7 @@ void AWebConnection::Closed()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -7008,7 +7008,7 @@ void AWebConnection::Accepted()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }

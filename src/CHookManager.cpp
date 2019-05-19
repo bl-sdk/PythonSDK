@@ -47,12 +47,26 @@ bool CHookManager::ProcessHooks(const std::string& funcName, const UObject *call
 			if (!iterator->second((UObject *)caller, (UFunction *)func, (FStruct *)params))
 				return false;
 	}
+
+	iHooks = Hooks.find(((UObject *)caller)->GetObjectName() + "." + ((UFunction *)func)->GetName());
+
+	if (iHooks != Hooks.end())
+	{
+		tHookMap hooks = iHooks->second;
+
+		for (tiHookMap iterator = hooks.begin(); iterator != hooks.end(); iterator++)
+			if (!iterator->second((UObject *)caller, (UFunction *)func, (FStruct *)params))
+				return false;
+	}
 	return true;
 }
 
 
-bool CHookManager::HasHook(const std::string& funcName) {
-	tiHooks iHooks = Hooks.find(funcName);
+bool CHookManager::HasHook(UObject *caller, UFunction *func) {
+	tiHooks iHooks = Hooks.find(func->GetObjectName());
+	if (iHooks != Hooks.end() && iHooks->second.size() > 0)
+		return true;
+	iHooks = Hooks.find(caller->GetObjectName() + "." + func->GetName());
 	return (iHooks != Hooks.end() && iHooks->second.size() > 0);
 }
 
@@ -60,7 +74,7 @@ bool CHookManager::ProcessHooks(UObject* pCaller, FFrame& Stack, void* const Res
 	tiHooks iHooks = Hooks.find(Function->GetObjectName());
 
 	// Even though we check in the next function, check here to avoid messing with the stack when we don't need to
-	if (iHooks != Hooks.end())
+	if (iHooks != Hooks.end() || Hooks.find(pCaller->GetObjectName() + "." + Function->GetName()) != Hooks.end())
 	{
 		char* Frame = (char *)calloc(1, Function->ParamsSize);
 		for (UProperty* Property = (UProperty *)Function->Children; Stack.Code[0] != 0x16; Property = (UProperty*)Property->Next) {

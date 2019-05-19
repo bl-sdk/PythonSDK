@@ -13,7 +13,6 @@ namespace Logging
 	bool logToExternalConsole = true;
 	bool logToFile = true;
 	bool logToGameConsole = false;
-	UConsole* gameConsole = nullptr;
 
 	void LogToFile(const char* buff, int len)
 	{
@@ -42,23 +41,20 @@ namespace Logging
 		if (logToFile)
 			LogToFile(formatted, length);
 
-		if (logToGameConsole)
+		if (BL2SDK::gameConsole != nullptr)
 		{
-			if (gameConsole != nullptr)
+			// It seems that Unreal will automatically put a newline on the end of a 
+			// console output, but if there's already a \n at the end, then it won't
+			// add this \n onto the end. So if we're printing just a \n by itself, 
+			// just don't do anything.
+			if (!(length == 1 && formatted[0] == '\n'))
 			{
-				// It seems that Unreal will automatically put a newline on the end of a 
-				// console output, but if there's already a \n at the end, then it won't
-				// add this \n onto the end. So if we're printing just a \n by itself, 
-				// just don't do anything.
-				if (!(length == 1 && formatted[0] == '\n'))
-				{
-					std::wstring wfmt = Util::Widen(formatted);
-					bool DoInjectedNext = BL2SDK::injectedCallNext;
+				std::wstring wfmt = Util::Widen(formatted);
+				bool DoInjectedNext = BL2SDK::injectedCallNext;
+				BL2SDK::doInjectedCallNext();
+				BL2SDK::gameConsole->OutputText(FString((wchar_t*)wfmt.c_str()));
+				if (DoInjectedNext)
 					BL2SDK::doInjectedCallNext();
-					gameConsole->OutputText(FString((wchar_t*)wfmt.c_str()));
-					if (DoInjectedNext)
-						BL2SDK::doInjectedCallNext();
-				}
 			}
 		}
 	}
@@ -149,23 +145,6 @@ namespace Logging
 		}
 
 		logToFile = true;
-	}
-
-	// TODO: Cleanup
-	void InitializeGameConsole()
-	{
-		// There should only be 1 instance so we should be right to just use it in this way
-		UConsole* console = (UConsole *)UObject::Find("WillowConsole", "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0");
-
-		if (console != nullptr)
-		{
-			gameConsole = console;
-			logToGameConsole = true;
-		}
-		else
-		{
-			LogF("[Logging] ERROR: Attempted to hook game console but 'WillowConsole Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0' was not found.\n");
-		}
 	}
 
 	void PrintLogHeader()

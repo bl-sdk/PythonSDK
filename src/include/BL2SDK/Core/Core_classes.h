@@ -234,6 +234,7 @@ public:
 	std::string GetNameCPP();
 	std::string GetFullName();
 	std::string GetObjectName();
+	void DumpObject();
 	static UObject* Load(UClass *ClassToLoad, const std::string& ObjectFullName)
 	{
 		return GObjects()->Data[0]->DynamicLoadObject(FString((char *)ObjectFullName.c_str()), ClassToLoad, true);
@@ -308,14 +309,14 @@ public:
 		}
 		return (UPackage*)pkg;
 	};
-
+	
 	static UClass* StaticClass()
 	{
 		static auto ptr = (UClass *)GObjects()->Data[2];
 		return ptr;
 	};
 
-	py::object GetProperty(std::string& PropName);
+	py::object GetProperty(std::string PropName);
 	bool SetProperty(std::string& PropName, py::object val);
 	struct FFunction GetFunction(std::string& PropName);
 	//struct FScriptArray GetArrayProperty(std::string& PropName);
@@ -1077,7 +1078,13 @@ public:
 class UStructProperty : public UProperty
 {
 public:
-	UScriptStruct* Struct;
+	UScriptStruct* Struct_DONOTUSE;
+	UScriptStruct *GetStruct() {
+		if (BL2SDK::EngineVersion <= 8630)
+			return ((UScriptStruct **)(((char *)this) + 0x74))[0];
+		else
+			return ((UScriptStruct **)(((char *)this) + 0x80))[0];
+	}
 };
 
 // 0x0000 (0x0080 - 0x0080)
@@ -1087,7 +1094,13 @@ class UStrProperty : public UProperty {};
 class UObjectProperty : public UProperty
 {
 public:
-	UObject* Object;
+	UObject* Object_DONOTUSE;
+	UObject *GetObject() {
+		if (BL2SDK::EngineVersion <= 8630)
+			return ((UObject **)(((char *)this) + 0x74))[0];
+		else
+			return ((UObject **)(((char *)this) + 0x80))[0];
+	}
 };
 
 // 0x0000 (0x0084 - 0x0084)
@@ -1162,14 +1175,26 @@ public:
 class UBoolProperty : public UProperty
 {
 public:
-	unsigned int Mask;
+	unsigned int Mask_DONOTUSE;
+	unsigned int GetMask() {
+		if (BL2SDK::EngineVersion <= 8630)
+			return ((unsigned int *)(((char *)this) + 0x74))[0];
+		else
+			return ((unsigned int *)(((char *)this) + 0x80))[0];
+	}
 };
 
 // 0x0004 (0x0084 - 0x0080)
 class UArrayProperty : public UProperty
 {
 public:
-	UProperty                                      *Inner;
+	UProperty *Inner_DONOTUSE;
+	UProperty *GetInner() {
+		if (BL2SDK::EngineVersion <= 8630)
+			return ((UProperty **)(((char *)this) + 0x74))[0];
+		else
+			return ((UProperty **)(((char *)this) + 0x80))[0];
+	}
 };
 
 // 0x000C (0x004C - 0x0040)
@@ -1327,7 +1352,6 @@ struct FFunction
 	UFunction *func;
 
 private:
-	bool GenerateStruct(py::tuple tuple, UProperty *prop) {};
 
 	FHelper *GenerateParams(py::args args, py::kwargs kwargs, FHelper *params) {
 		unsigned int currentIndex = 0;
@@ -1382,7 +1406,11 @@ public:
 		Logging::LogD("made params\n");
 		auto flags = func->FunctionFlags;
 		func->FunctionFlags |= 0x400;
-		obj->ProcessEvent(func, params);
+		void *returnObj = nullptr;
+		for (UProperty* Child = (UProperty *)func->Children; Child; Child = (UProperty *)Child->Next)
+			if (Child->PropertyFlags & 0x400)
+				returnObj = params + Child->Offset_Internal;
+		BL2SDK::pProcessEvent(obj, func, params, returnObj);
 		func->FunctionFlags = flags;
 		Logging::LogD("Called ProcessEvent\n");
 		py::object ret = GetReturn((FHelper *)params);
@@ -1512,7 +1540,7 @@ struct FStruct
 struct FArray {
 	TArray <char> *arr;
 	UProperty *type;
-	int IterCounter;
+	unsigned int IterCounter;
 
 	FArray(TArray <char> *array, UProperty *s) {
 		Logging::LogD("Creating FArray from %p, count: %d, max: %d\n", array, array->Count, array->Max);
@@ -1522,10 +1550,14 @@ struct FArray {
 	};
 
 	py::object GetItem(int i) {
+		if (i >= arr->Count)
+			throw pybind11::index_error();
 		return ((FHelper *)(arr->Data + type->ElementSize * i))->GetProperty(type);
 	}
 
 	void SetItem(int i, py::object obj) {
+		if (i >= arr->Count)
+			throw pybind11::index_error();
 		((FHelper *)(arr->Data + type->ElementSize * i))->SetProperty(type, obj);
 	}
 
@@ -1546,7 +1578,7 @@ struct FArray {
 
 	py::str Repr() {
 		py::str s = "[";
-		for (int x = 0; x < arr->Count; x++) {
+		for (unsigned int x = 0; x < arr->Count; x++) {
 			s = py::str("{}{}").format(s, py::repr(GetItem(x)));
 			if (x + 1 < arr->Count)
 				s = py::str("{}{}").format(s, ", ");

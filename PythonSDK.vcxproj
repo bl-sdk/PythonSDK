@@ -41,7 +41,6 @@
     <ClCompile Include="src\include\detours\modules.cpp" />
     <ClCompile Include="src\Logging.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\PackageFix.cpp" />
     <ClCompile Include="src\pydefs\Core_classes.cpp" />
     <ClCompile Include="src\pydefs\Core_structs.cpp" />
     <ClCompile Include="src\pydefs\gamedefines.cpp" />
@@ -98,7 +97,6 @@
     <ClInclude Include="src\include\Logging.h" />
     <ClInclude Include="src\include\MemoryDebug.h" />
     <ClInclude Include="src\include\MemorySignature.h" />
-    <ClInclude Include="src\include\PackageFix.h" />
     <ClInclude Include="src\include\pybind11\attr.h" />
     <ClInclude Include="src\include\pybind11\buffer_info.h" />
     <ClInclude Include="src\include\pybind11\cast.h" />
@@ -127,6 +125,7 @@
     <ClInclude Include="src\include\resource.h" />
     <ClInclude Include="src\include\Settings.h" />
     <ClInclude Include="src\include\Signatures.h" />
+    <ClInclude Include="src\include\stb_image.h" />
     <ClInclude Include="src\include\stdafx.h" />
     <ClInclude Include="src\include\TypeMap.h" />
     <ClInclude Include="src\include\Util.h" />

@@ -31,7 +31,7 @@ bool UGFxFSCmdHandler::FSCommand(class UGFxMoviePlayer* Movie, class UGFxEvent_F
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -51,7 +51,7 @@ void UGFxInteraction::CloseAllMoviePlayers()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -69,7 +69,7 @@ void UGFxInteraction::NotifySplitscreenLayoutChanged()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -92,7 +92,7 @@ void UGFxInteraction::NotifyPlayerRemoved(int PlayerIndex, class ULocalPlayer* R
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -115,7 +115,7 @@ void UGFxInteraction::NotifyPlayerAdded(int PlayerIndex, class ULocalPlayer* Add
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -133,7 +133,7 @@ void UGFxInteraction::NotifyGameSessionEnded()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -155,7 +155,7 @@ class UGFxMoviePlayer* UGFxInteraction::GetFocusMovie(int ControllerId)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -179,7 +179,7 @@ class UGFxMoviePlayer* UGFxManager::GetFocusMovie(int ControllerId)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -202,7 +202,7 @@ class UAkEvent* UGFxManager::LookupSound(const struct FName& UIEvent)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -225,7 +225,7 @@ FScriptInterface UGFxManager::ShowDialog(class APlayerController* PC)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -247,7 +247,7 @@ void UGFxManager::Init(class UGFxManagerDefinition* Def)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -268,7 +268,7 @@ void UGFxMoviePlayer::UnregisterGFxObject(class UGFxObject* anObject)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -289,7 +289,7 @@ void UGFxMoviePlayer::RegisterGFxObject(class UGFxObject* anObject)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -307,7 +307,7 @@ void UGFxMoviePlayer::SendMousePos()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -327,7 +327,7 @@ bool UGFxMoviePlayer::IsShowingFlashMouse()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -347,7 +347,7 @@ void UGFxMoviePlayer::HookSaveScreenshot()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -368,7 +368,7 @@ void UGFxMoviePlayer::UpdateRenderTexture(class UTextureRenderTarget2D* NewRende
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -393,7 +393,7 @@ bool UGFxMoviePlayer::OnInputKey(int ControllerId, const struct FName& ukey, uns
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -417,7 +417,7 @@ bool UGFxMoviePlayer::WantsInput(const struct FName& ukey)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -441,7 +441,7 @@ bool UGFxMoviePlayer::WantsControllerInput(int ControllerId)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -469,7 +469,7 @@ bool UGFxMoviePlayer::InputKey(int ControllerId, const struct FName& ukey, unsig
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -492,7 +492,7 @@ class UGFxManager* UGFxMoviePlayer::GetGFxManager()
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -517,7 +517,7 @@ struct FString UGFxMoviePlayer::ResolveDataStoreMarkup(const struct FString& Mar
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -537,7 +537,7 @@ void UGFxMoviePlayer::UpdateSplitscreenLayout()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -557,7 +557,7 @@ void UGFxMoviePlayer::ApplyPriorityVisibilityEffect(bool bRemoveEffect)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -577,7 +577,7 @@ void UGFxMoviePlayer::ApplyPriorityBlurEffect(bool bRemoveEffect)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -599,7 +599,7 @@ void UGFxMoviePlayer::ApplyPriorityEffect(bool bRequestedBlurState, bool bReques
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -621,7 +621,7 @@ void UGFxMoviePlayer::PlaySoundFromTheme(const struct FName& EventName, const st
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -641,7 +641,7 @@ void UGFxMoviePlayer::OnFocusLost(int LocalPlayerIndex)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -661,7 +661,7 @@ void UGFxMoviePlayer::OnFocusGained(int LocalPlayerIndex)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -681,7 +681,7 @@ void UGFxMoviePlayer::ConsoleCommand(const struct FString& Command)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -702,7 +702,7 @@ void UGFxMoviePlayer::SetLP(class ULocalPlayer* LocPlay)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -722,7 +722,7 @@ class APlayerController* UGFxMoviePlayer::GetPC()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -744,7 +744,7 @@ class ULocalPlayer* UGFxMoviePlayer::GetLP()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -766,7 +766,7 @@ void UGFxMoviePlayer::Init(class ULocalPlayer* LocPlay)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -789,7 +789,7 @@ void UGFxMoviePlayer::SetWidgetPathBinding(class UGFxObject* WidgetToBind, const
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -806,7 +806,7 @@ void UGFxMoviePlayer::PostWidgetInit()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -831,7 +831,7 @@ bool UGFxMoviePlayer::WidgetUnloaded(const struct FName& WidgetName, const struc
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -858,7 +858,7 @@ bool UGFxMoviePlayer::WidgetInitialized(const struct FName& WidgetName, const st
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -882,7 +882,7 @@ class UGFxObject* UGFxMoviePlayer::ActionScriptObject(const struct FString& Path
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -906,7 +906,7 @@ struct FString UGFxMoviePlayer::ActionScriptString(const struct FString& Path)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -930,7 +930,7 @@ float UGFxMoviePlayer::ActionScriptFloat(const struct FString& Path)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -954,7 +954,7 @@ int UGFxMoviePlayer::ActionScriptInt(const struct FString& Path)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -977,7 +977,7 @@ void UGFxMoviePlayer::ActionScriptVoid(const struct FString& Path)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -998,7 +998,7 @@ void UGFxMoviePlayer::ActionScript(const struct FString& Path)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1022,7 +1022,7 @@ struct FASValue UGFxMoviePlayer::Invoke(const struct FString& Method, TArray<str
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -1047,7 +1047,7 @@ void UGFxMoviePlayer::ActionScriptSetFunction(class UGFxObject* Object, const st
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1067,7 +1067,7 @@ class UGFxObject* UGFxMoviePlayer::CreateArray()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -1093,7 +1093,7 @@ class UGFxObject* UGFxMoviePlayer::CreateObject(const struct FString& ASClass, c
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -1121,7 +1121,7 @@ bool UGFxMoviePlayer::SetVariableStringArray(const struct FString& Path, int Ind
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1149,7 +1149,7 @@ bool UGFxMoviePlayer::SetVariableFloatArray(const struct FString& Path, int Inde
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1177,7 +1177,7 @@ bool UGFxMoviePlayer::SetVariableIntArray(const struct FString& Path, int Index,
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1205,7 +1205,7 @@ bool UGFxMoviePlayer::SetVariableArray(const struct FString& Path, int Index, TA
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1232,7 +1232,7 @@ bool UGFxMoviePlayer::GetVariableStringArray(const struct FString& Path, int Ind
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1262,7 +1262,7 @@ bool UGFxMoviePlayer::GetVariableFloatArray(const struct FString& Path, int Inde
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1292,7 +1292,7 @@ bool UGFxMoviePlayer::GetVariableIntArray(const struct FString& Path, int Index,
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1322,7 +1322,7 @@ bool UGFxMoviePlayer::GetVariableArray(const struct FString& Path, int Index, TA
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1350,7 +1350,7 @@ void UGFxMoviePlayer::SetVariableObject(const struct FString& Path, class UGFxOb
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1373,7 +1373,7 @@ void UGFxMoviePlayer::SetVariableString(const struct FString& Path, const struct
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1396,7 +1396,7 @@ void UGFxMoviePlayer::SetVariableNumber(const struct FString& Path, float F)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1419,7 +1419,7 @@ void UGFxMoviePlayer::SetVariableBool(const struct FString& Path, bool B)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1442,7 +1442,7 @@ void UGFxMoviePlayer::SetVariable(const struct FString& Path, const struct FASVa
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1466,7 +1466,7 @@ class UGFxObject* UGFxMoviePlayer::GetVariableObject(const struct FString& Path,
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -1490,7 +1490,7 @@ struct FString UGFxMoviePlayer::GetVariableString(const struct FString& Path)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -1514,7 +1514,7 @@ float UGFxMoviePlayer::GetVariableNumber(const struct FString& Path)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -1538,7 +1538,7 @@ bool UGFxMoviePlayer::GetVariableBool(const struct FString& Path)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1562,7 +1562,7 @@ struct FASValue UGFxMoviePlayer::GetVariable(const struct FString& Path)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -1591,7 +1591,7 @@ bool UGFxMoviePlayer::FilterAxisInput(int ControllerId, const struct FName& Key,
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1618,7 +1618,7 @@ bool UGFxMoviePlayer::FilterButtonInput(int ControllerId, const struct FName& Bu
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -1641,7 +1641,7 @@ void UGFxMoviePlayer::FlushPlayerInput(bool capturekeysonly)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1659,7 +1659,7 @@ void UGFxMoviePlayer::ClearFocusIgnoreKeys()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1680,7 +1680,7 @@ void UGFxMoviePlayer::AddFocusIgnoreKey(const struct FName& Key)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1698,7 +1698,7 @@ void UGFxMoviePlayer::ClearCaptureKeys()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1719,7 +1719,7 @@ void UGFxMoviePlayer::AddCaptureKey(const struct FName& Key)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1740,7 +1740,7 @@ void UGFxMoviePlayer::SetMovieCanReceiveInput(bool bCanReceiveInput)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1761,7 +1761,7 @@ void UGFxMoviePlayer::SetMovieCanReceiveFocus(bool bCanReceiveFocus)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1782,7 +1782,7 @@ void UGFxMoviePlayer::SetSceneDPG(unsigned char NewDPG)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1802,7 +1802,7 @@ void UGFxMoviePlayer::SetPerspective3D(struct FMatrix* matPersp)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -1825,7 +1825,7 @@ void UGFxMoviePlayer::SetView3D(struct FMatrix* matView)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -1851,7 +1851,7 @@ void UGFxMoviePlayer::GetVisibleFrameRect(float* x0, float* y0, float* X1, float
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -1881,7 +1881,7 @@ void UGFxMoviePlayer::SetAlignment(unsigned char A)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1902,7 +1902,7 @@ void UGFxMoviePlayer::SetViewScaleMode(unsigned char SM)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1919,7 +1919,7 @@ void UGFxMoviePlayer::OnSetViewport()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1946,7 +1946,7 @@ void UGFxMoviePlayer::SetViewport(int X, int Y, int Width, int Height)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -1966,7 +1966,7 @@ class UGameViewportClient* UGFxMoviePlayer::GetGameViewportClient()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -1989,7 +1989,7 @@ void UGFxMoviePlayer::SetPriority(unsigned char NewPriority)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2007,7 +2007,7 @@ void UGFxMoviePlayer::PublishDataStoreValues()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2025,7 +2025,7 @@ void UGFxMoviePlayer::RefreshDataStoreBindings()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2049,7 +2049,7 @@ bool UGFxMoviePlayer::SetExternalTexture(const struct FString& Resource, class U
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -2071,7 +2071,7 @@ void UGFxMoviePlayer::SetExternalInterface(class UObject* H)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2092,7 +2092,7 @@ void UGFxMoviePlayer::SetTimingMode(unsigned char Mode)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2112,7 +2112,7 @@ void UGFxMoviePlayer::SetMovieInfo(class USwfMovie* Data)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2129,7 +2129,7 @@ void UGFxMoviePlayer::ConditionalClearPause()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2146,7 +2146,7 @@ void UGFxMoviePlayer::OnCleanup()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2163,7 +2163,7 @@ void UGFxMoviePlayer::OnClose()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2184,7 +2184,7 @@ void UGFxMoviePlayer::Close(bool Unload)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2205,7 +2205,7 @@ void UGFxMoviePlayer::SetPause(bool bPausePlayback)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2225,7 +2225,7 @@ void UGFxMoviePlayer::OnPostAdvance(float DeltaTime)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2246,7 +2246,7 @@ void UGFxMoviePlayer::PostAdvance(float DeltaTime)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2267,7 +2267,7 @@ void UGFxMoviePlayer::Advance(float Time)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2289,7 +2289,7 @@ bool UGFxMoviePlayer::Start(bool StartPaused)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -2316,7 +2316,7 @@ bool UGFxObject::WidgetUnloaded(const struct FName& WidgetName, const struct FNa
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -2343,7 +2343,7 @@ bool UGFxObject::WidgetInitialized(const struct FName& WidgetName, const struct 
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -2364,7 +2364,7 @@ bool UGFxObject::MouseHitTest()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -2391,7 +2391,7 @@ bool UGFxObject::HitTest(int TestX, int TestY, bool bTestShape)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -2418,7 +2418,7 @@ int UGFxObject::_HitTest(int TestX, int TestY, bool bTestShape)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2440,7 +2440,7 @@ float UGFxObject::GetNextHighestDepth()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2460,7 +2460,7 @@ void UGFxObject::RemoveMovieClip()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2488,7 +2488,7 @@ class UGFxObject* UGFxObject::AttachMovie(const struct FString& symbolname, cons
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2516,7 +2516,7 @@ class UGFxObject* UGFxObject::CreateEmptyMovieClip(const struct FString& instanc
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2539,7 +2539,7 @@ void UGFxObject::GotoAndStopI(int frame)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2560,7 +2560,7 @@ void UGFxObject::GotoAndStop(const struct FString& frame)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2581,7 +2581,7 @@ void UGFxObject::GotoAndPlayI(int frame)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2602,7 +2602,7 @@ void UGFxObject::GotoAndPlay(const struct FString& frame)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2624,7 +2624,7 @@ TArray<class UGFxObject*> UGFxObject::ActionScriptArray(const struct FString& Pa
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2648,7 +2648,7 @@ class UGFxObject* UGFxObject::ActionScriptObject(const struct FString& Path)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2672,7 +2672,7 @@ struct FString UGFxObject::ActionScriptString(const struct FString& Method)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2696,7 +2696,7 @@ float UGFxObject::ActionScriptFloat(const struct FString& Method)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2720,7 +2720,7 @@ int UGFxObject::ActionScriptInt(const struct FString& Method)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2743,7 +2743,7 @@ void UGFxObject::ActionScriptVoid(const struct FString& Method)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2767,7 +2767,7 @@ struct FASValue UGFxObject::Invoke(const struct FString& Member, TArray<struct F
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2792,7 +2792,7 @@ void UGFxObject::ActionScriptSetFunctionOn(class UGFxObject* Target, const struc
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2813,7 +2813,7 @@ void UGFxObject::ActionScriptSetFunction(const struct FString& Member)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2838,7 +2838,7 @@ void UGFxObject::SetElementMemberString(int Index, const struct FString& Member,
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2863,7 +2863,7 @@ void UGFxObject::SetElementMemberFloat(int Index, const struct FString& Member, 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2888,7 +2888,7 @@ void UGFxObject::SetElementMemberBool(int Index, const struct FString& Member, b
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2913,7 +2913,7 @@ void UGFxObject::SetElementMemberObject(int Index, const struct FString& Member,
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2938,7 +2938,7 @@ void UGFxObject::SetElementMember(int Index, const struct FString& Member, const
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -2962,7 +2962,7 @@ struct FString UGFxObject::GetElementMemberString(int Index, const struct FStrin
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -2988,7 +2988,7 @@ float UGFxObject::GetElementMemberFloat(int Index, const struct FString& Member)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3014,7 +3014,7 @@ bool UGFxObject::GetElementMemberBool(int Index, const struct FString& Member)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -3042,7 +3042,7 @@ class UGFxObject* UGFxObject::GetElementMemberObject(int Index, const struct FSt
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3068,7 +3068,7 @@ struct FASValue UGFxObject::GetElementMember(int Index, const struct FString& Me
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3093,7 +3093,7 @@ void UGFxObject::SetElementColorTransform(int Index, const struct FASColorTransf
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3118,7 +3118,7 @@ void UGFxObject::SetElementPosition(int Index, float X, float Y)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3141,7 +3141,7 @@ void UGFxObject::SetElementVisible(int Index, bool Visible)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3164,7 +3164,7 @@ void UGFxObject::SetElementDisplayMatrix(int Index, const struct FMatrix& M)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3187,7 +3187,7 @@ void UGFxObject::SetElementDisplayInfo(int Index, const struct FASDisplayInfo& D
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3209,7 +3209,7 @@ struct FMatrix UGFxObject::GetElementDisplayMatrix(int Index)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3233,7 +3233,7 @@ struct FASDisplayInfo UGFxObject::GetElementDisplayInfo(int Index)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3258,7 +3258,7 @@ void UGFxObject::SetElementString(int Index, const struct FString& S)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3281,7 +3281,7 @@ void UGFxObject::SetElementFloat(int Index, float F)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3304,7 +3304,7 @@ void UGFxObject::SetElementBool(int Index, bool B)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3327,7 +3327,7 @@ void UGFxObject::SetElementObject(int Index, class UGFxObject* val)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3350,7 +3350,7 @@ void UGFxObject::SetElement(int Index, const struct FASValue& Arg)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3372,7 +3372,7 @@ struct FString UGFxObject::GetElementString(int Index)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3396,7 +3396,7 @@ float UGFxObject::GetElementFloat(int Index)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3420,7 +3420,7 @@ bool UGFxObject::GetElementBool(int Index)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -3446,7 +3446,7 @@ class UGFxObject* UGFxObject::GetElementObject(int Index, class UClass* Type)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3470,7 +3470,7 @@ struct FASValue UGFxObject::GetElement(int Index)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3495,7 +3495,7 @@ void UGFxObject::SetText(const struct FString& Text, class UTranslationContext* 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3515,7 +3515,7 @@ struct FString UGFxObject::GetText()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3538,7 +3538,7 @@ void UGFxObject::SetVisible(bool Visible)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3559,7 +3559,7 @@ void UGFxObject::SetDisplayMatrix3D(const struct FMatrix& M)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3580,7 +3580,7 @@ void UGFxObject::SetDisplayMatrix(const struct FMatrix& M)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3601,7 +3601,7 @@ void UGFxObject::SetColorTransform(const struct FASColorTransform& cxform)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3624,7 +3624,7 @@ void UGFxObject::SetPosition(float X, float Y)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3644,7 +3644,7 @@ void UGFxObject::SetDisplayInfo(struct FASDisplayInfo* D)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -3667,7 +3667,7 @@ struct FMatrix UGFxObject::GetDisplayMatrix()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3689,7 +3689,7 @@ struct FASColorTransform UGFxObject::GetColorTransform()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3713,7 +3713,7 @@ bool UGFxObject::GetPosition(float* X, float* Y)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -3740,7 +3740,7 @@ void UGFxObject::GetDisplayInfo(struct FASDisplayInfo* D)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -3768,7 +3768,7 @@ struct FString UGFxObject::TranslateString(const struct FString& StringToTransla
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	defaultObj->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(defaultObj, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3795,7 +3795,7 @@ void UGFxObject::SetFunction(const struct FString& Member, class UObject* Contex
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3818,7 +3818,7 @@ void UGFxObject::SetObject(const struct FString& Member, class UGFxObject* val)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3843,7 +3843,7 @@ void UGFxObject::SetString(const struct FString& Member, const struct FString& S
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3866,7 +3866,7 @@ void UGFxObject::SetFloat(const struct FString& Member, float F)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3889,7 +3889,7 @@ void UGFxObject::SetBool(const struct FString& Member, bool B)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3912,7 +3912,7 @@ void UGFxObject::Set(const struct FString& Member, const struct FASValue& Arg)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -3936,7 +3936,7 @@ class UGFxObject* UGFxObject::GetObject(const struct FString& Member, class UCla
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3960,7 +3960,7 @@ struct FString UGFxObject::GetString(const struct FString& Member)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -3984,7 +3984,7 @@ float UGFxObject::GetFloat(const struct FString& Member)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4008,7 +4008,7 @@ bool UGFxObject::GetBool(const struct FString& Member)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -4032,7 +4032,7 @@ struct FASValue UGFxObject::Get(const struct FString& Member)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4054,7 +4054,7 @@ void UGFxClikWidget::ASRemoveAllEventListeners(const struct FString& Event)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4078,7 +4078,7 @@ void UGFxClikWidget::ASAddEventListener(const struct FString& Type, class UGFxOb
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4102,7 +4102,7 @@ void UGFxClikWidget::SetListener(class UGFxObject* O, const struct FString& Memb
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4123,7 +4123,7 @@ struct FString UGFxClikWidget::GetEventStringFromTypename(const struct FName& Ty
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4145,7 +4145,7 @@ void UGFxClikWidget::RemoveAllEventListeners(const struct FString& Event)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4167,7 +4167,7 @@ void UGFxClikWidget::AddEventListener(const struct FName& Type, const struct FSc
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4187,7 +4187,7 @@ void UGFxClikWidget::EventListener(const struct FEventData& Data)
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4207,7 +4207,7 @@ struct FString USwfMovie::GetPathForLoadMovie()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4228,7 +4228,7 @@ bool UGFxAction_CloseMovie::IsValidLevelSequenceObject()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -4249,7 +4249,7 @@ bool UGFxAction_GetVariable::IsValidLevelSequenceObject()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -4270,7 +4270,7 @@ bool UGFxAction_Invoke::IsValidLevelSequenceObject()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -4291,7 +4291,7 @@ bool UGFxAction_OpenMovie::IsValidLevelSequenceObject()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -4312,7 +4312,7 @@ bool UGFxAction_SetVariable::IsValidLevelSequenceObject()
 
 	auto flags = fn->FunctionFlags;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -4342,7 +4342,7 @@ bool UGFxFSCmdHandler_Kismet::FSCommand(class UGFxMoviePlayer* Movie, class UGFx
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -4367,7 +4367,7 @@ bool UGFxDataStoreSubscriber::SaveSubscriberValue(int BindingIndex, TArray<class
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -4390,7 +4390,7 @@ void UGFxDataStoreSubscriber::ClearBoundDataStores()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4410,7 +4410,7 @@ void UGFxDataStoreSubscriber::GetBoundDataStores(TArray<class UUIDataStore*>* ou
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -4442,7 +4442,7 @@ void UGFxDataStoreSubscriber::NotifyDataStoreValueUpdated(class UUIDataStore* So
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4464,7 +4464,7 @@ bool UGFxDataStoreSubscriber::RefreshSubscriberValue(int BindingIndex)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, ((char *)&params) + sizeof(params) - sizeof(unsigned long));
 
 	fn->FunctionFlags = flags;
 
@@ -4488,7 +4488,7 @@ struct FString UGFxDataStoreSubscriber::GetDataStoreBinding(int BindingIndex)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -4513,7 +4513,7 @@ void UGFxDataStoreSubscriber::SetDataStoreBinding(const struct FString& MarkupTe
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -4531,7 +4531,7 @@ void UGFxDataStoreSubscriber::PublishValues()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
