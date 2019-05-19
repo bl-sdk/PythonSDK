@@ -471,7 +471,7 @@ void Export_pystes_Core_classes(py::module &m)
 	py::class_< UBoolProperty, UProperty >(m, "UBoolProperty")
 		;
 	py::class_< UArrayProperty, UProperty >(m, "UArrayProperty")
-		.def_readwrite("Inner", &UArrayProperty::Inner, py::return_value_policy::reference)
+		.def("GetInner", &UArrayProperty::GetInner, py::return_value_policy::reference)
 		;
 	py::class_< UEnum, UField >(m, "UEnum")
 		;

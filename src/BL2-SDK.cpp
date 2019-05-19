@@ -30,7 +30,7 @@ namespace BL2SDK
 	tProcessEvent pProcessEvent;
 	tCallFunction pCallFunction;
 	tFrameStep pFrameStep;
-	tFNameInit pFNameInit;
+	tFNameInitOld pFNameInit;
 	tStaticConstructObject pStaticConstructObject;
 	tLoadPackage pLoadPackage;
 	tGetDefaultObject pGetDefaultObject;
@@ -138,54 +138,6 @@ namespace BL2SDK
 		return EXCEPTION_EXECUTE_HANDLER;
 	}
 
-	bool getGameVersion(std::wstring& appVersion)
-	{
-		const wchar_t* filename = L"Borderlands2.exe";
-
-		/*
-		// Allocate a block of memory for the version info
-		DWORD dummy;
-		DWORD size = GetFileVersionInfoSize(filename, &dummy);
-		if (size == 0)
-		{
-			Logging::LogF("[BL2SDK] ERROR: GetFileVersionInfoSize failed with error %d\n", GetLastError());
-			return false;
-		}
-
-		LPBYTE versionInfo = new BYTE[size];
-
-		// Load the version info
-		if (!GetFileVersionInfo(filename, NULL, size, &versionInfo[0]))
-		{
-			Logging::LogF("[BL2SDK] ERROR: GetFileVersionInfo failed with error %d\n", GetLastError());
-			return false;
-		}
-
-		// Get the version strings
-		VS_FIXEDFILEINFO* ffi;
-		unsigned int productVersionLen = 0;
-
-		if (!VerQueryValue(&versionInfo[0], L"\\", (LPVOID*)&ffi, &productVersionLen))
-		{
-			Logging::Log("[BL2SDK] ERROR: Can't obtain FixedFileInfo from resources\n");
-			return false;
-		}
-
-		DWORD fileVersionMS = ffi->dwFileVersionMS;
-		DWORD fileVersionLS = ffi->dwFileVersionLS;
-
-		delete[] versionInfo;
-
-		appVersion = Util::Format(L"%d.%d.%d.%d",
-			HIWORD(fileVersionMS),
-			LOWORD(fileVersionMS),
-			HIWORD(fileVersionLS),
-			LOWORD(fileVersionLS));
-
-			*/
-		return true;
-	}
-
 	void hookGame()
 	{
 		TCHAR szEXEPath[2048];
@@ -225,23 +177,23 @@ namespace BL2SDK
 		pGMalloc = *(FMalloc***)sigscan.Scan(Signatures::GMalloc);
 		Logging::LogF("[Internal] GMalloc = 0x%p\n", pGMalloc);
 
-		pFNameInit = reinterpret_cast<tFNameInit>(sigscan.Scan(Signatures::FNameInit));
+		pFNameInit = reinterpret_cast<tFNameInitOld>(sigscan.Scan(Signatures::FNameInit));
 		Logging::LogF("[Internal] FindOrCreateFName = 0x%p\n", pFNameInit);
 
 		pGetDefaultObject = reinterpret_cast<tGetDefaultObject>(sigscan.Scan(Signatures::GetDefaultObject));
 		Logging::LogF("[Internal] GetDefaultObject = 0x%p\n", pGetDefaultObject);
 
-		//try {
-		//	void *SetCommand = sigscan.Scan(Signatures::SetCommand);
-		//	DWORD near out = 0;
-		//	if (!VirtualProtectEx(GetCurrentProcess(), SetCommand, 5, 0x40, &out)) {
-		//		Logging::LogF("WINAPI Error when enabling 'SET' commands: %d\n", GetLastError());
-		//	}
-		//	((unsigned char *)SetCommand)[5] = 0xFF;
-		//}
-		//catch(std::exception e) {
-		//	Logging::LogF("Exception when enabling 'SET' commands: %d\n", e.what());
-		//}
+		try {
+			void *SetCommand = sigscan.Scan(Signatures::SetCommand);
+			DWORD near out = 0;
+			if (!VirtualProtectEx(GetCurrentProcess(), SetCommand, 5, 0x40, &out)) {
+				Logging::LogF("WINAPI Error when enabling 'SET' commands: %d\n", GetLastError());
+			}
+			((unsigned char *)SetCommand)[5] = 0xFF;
+		}
+		catch(std::exception e) {
+			Logging::LogF("Exception when enabling 'SET' commands: %d\n", e.what());
+		}
 
 		// Detour UObject::ProcessEvent()
 		//SETUP_SIMPLE_DETOUR(detProcessEvent, pProcessEvent, hkProcessEvent);
@@ -274,9 +226,15 @@ namespace BL2SDK
 		}
 	}
 
-	// This function is used to get the dimensions of the game window for Gwen's renderer
 	bool getCanvasPostRender(UObject* caller, UFunction* function, FStruct *params)
 	{
+		// Set console key to Tilde if not already set
+		gameConsole = (UConsole *)UObject::Find("WillowConsole", "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0");
+		if (gameConsole == nullptr && engine && ((UEngine *)engine)->GameViewport)
+			gameConsole = ((UEngine *)engine)->GameViewport->ViewportConsole;
+		if (gameConsole && (gameConsole->ConsoleKey == FName("None") || gameConsole->ConsoleKey == FName("Undefined")))
+			gameConsole->ConsoleKey = FName("Tilde");
+
 		InitializePython();
 
 		HookManager->Remove(function->GetObjectName(), "GetCanvas");
@@ -299,7 +257,6 @@ namespace BL2SDK
 		for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
 		{
 			UObject* Object = UObject::GObjects()->Data[i];
-			//Logging::LogF("%s\n", Object->GetFullName().c_str());
 
 			if (!Object || !Object->Class)
 				continue;
@@ -317,11 +274,6 @@ namespace BL2SDK
 		initializeGameVersions();
 
 		Logging::PrintLogHeader();
-
-		//// Set console key to Tilde if not already set
-		gameConsole = ((UEngine *)engine)->GameViewport->ViewportConsole;
-		if (gameConsole && (gameConsole->ConsoleKey == FName("None") || gameConsole->ConsoleKey == FName("Undefined")))
-			gameConsole->ConsoleKey = FName("Tilde");
 
 		HookManager->Remove(function->GetObjectName(), "StartupSDK");
 		HookManager->Register("WillowGame.WillowGameViewportClient.PostRender", "GetCanvas", getCanvasPostRender);

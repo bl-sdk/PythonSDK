@@ -32,10 +32,11 @@ namespace BL2SDK
 	typedef UPackage* (*tLoadPackage) (UPackage* outer, const wchar_t* filename, DWORD flags);
 	typedef FArchive& (__thiscall *tByteOrderSerialize) (FArchive* Ar, void* V, int Length);
 
-	typedef void(__thiscall *tFNameInit) (FName *out, wchar_t *Src, int InNumber, int FindType, int bSplitName);
+	typedef char *(__thiscall *tFNameInitOld) (FName *out, wchar_t *Src, int InNumber, int FindType, int bSplitName, int Unk1);
+	typedef void(__thiscall *tFNameInitNew) (FName *out, wchar_t *Src, int InNumber, int FindType, int bSplitName);
 	typedef UObject *(__thiscall *tGetDefaultObject)(UClass *, unsigned int);
 
-	extern tFNameInit pFNameInit;
+	extern tFNameInitOld pFNameInit;
 	extern tProcessEvent pProcessEvent;
 	extern tCallFunction pCallFunction;
 	extern tFrameStep pFrameStep;

@@ -30,7 +30,7 @@ TArray<struct FEnvironmentalEffectInfo> UIAkEnvironmentalEffectProvider::GetEnvi
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -53,7 +53,7 @@ void UISpecialOcclusionAccumulator::RemoveOcclusionProvider(class AActor* Source
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -76,7 +76,7 @@ void UISpecialOcclusionAccumulator::SetOcclusionForProvider(class AActor* Source
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -97,7 +97,7 @@ void AWwiseSoundGroup::RemoveOcclusionProvider(class AActor* Source)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -120,7 +120,7 @@ void AWwiseSoundGroup::SetOcclusionForProvider(class AActor* Source, float Amoun
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -140,7 +140,7 @@ float AWwiseSoundGroup::GetOcclusionAmount()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -163,7 +163,7 @@ void AWwiseSoundGroup::SetAkSwitchObject(class UAkSwitch* Switch)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -186,7 +186,7 @@ void AWwiseSoundGroup::SetRTPCObjectValue(class UAkRtpc* InRtpc, float TargetVal
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -207,7 +207,7 @@ void AWwiseSoundVolume::RemoveOcclusionProvider(class AActor* Source)
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -230,7 +230,7 @@ void AWwiseSoundVolume::SetOcclusionForProvider(class AActor* Source, float Amou
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
@@ -250,7 +250,7 @@ float AWwiseSoundVolume::GetOcclusionAmount()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -273,7 +273,7 @@ void AWwiseSoundVolume::UpdateAkComponentPosition(TArray<struct FVector>* Listen
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 
@@ -304,7 +304,7 @@ TArray<struct FEnvironmentalEffectInfo> AWwiseSoundVolume::GetEnvironmentalEffec
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
 
 	fn->FunctionFlags = flags;
 
@@ -324,7 +324,7 @@ void AWwiseSoundVolume::CalculateFacePlanes()
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
 
-	this->ProcessEvent(fn, &params);
+	BL2SDK::pProcessEvent(this, fn, &params, nullptr);
 
 	fn->FunctionFlags = flags;
 }
