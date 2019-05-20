@@ -302,8 +302,12 @@ def LoadModList(caller: UObject, function: UFunction, params: FStruct) -> bool:
 		obj.SetString(caller.Prop_offeringId, str(idx), translationContext)
 		obj.SetString(caller.Prop_contentTitleText, mod.Name, translationContext)
 		obj.SetString(caller.Prop_descriptionText, mod.Description, translationContext)
-		obj.SetString(caller.Prop_messageText, mod.Status, translationContext)
-		
+		if mod.Status == "Enabled" or mod.Status == "":
+			obj.SetString(caller.Prop_statusText, "<font color=\"#00FF00\">Enabled</font>")
+			obj.SetString(caller.Prop_messageText, "<font color=\"#00FF00\">Enabled</font>")
+		else:
+			obj.SetString(caller.Prop_statusText, "<font color=\"#FF0000\">Disabled</font>")
+			obj.SetString(caller.Prop_messageText, "<font color=\"#FF0000\">Disabled</font>")
 		try:
 			obj.SetFloat(caller.Prop_isSeasonPass, int(ModTypes.General in mod.Types))
 			obj.SetFloat(caller.Prop_isAddOn, int(ModTypes.Content in mod.Types))
