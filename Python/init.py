@@ -261,7 +261,7 @@ class GameInputBinding():
 class ModTypes(Enum):
 	Utility = 1
 	Content = 2
-	General = 3
+	Gameplay = 3
 
 class ModOptions(BL2MOD):
 
@@ -269,7 +269,7 @@ class ModOptions(BL2MOD):
 	Status = ""
 	Description = "Welcome to the Borderlands 2 Mod Manager by Abahbob!\n\nSee below for options."
 	SettingsInputs = { 'O': "Open Mods Folder", 'R': "Reload Mods", 'H': "Help" }
-	Types = [ModTypes.General]
+	Types = []
 
 	def SettingsInputPressed(self, name):
 		if name == "Open Mods Folder":
@@ -281,6 +281,7 @@ class ModOptions(BL2MOD):
 
 
 bl2sdk.BL2MOD = BL2MOD
+bl2sdk.ModTypes = ModTypes
 bl2sdk.Mods = [ModOptions()]
 bl2sdk.ModMenuOpened = []
 
@@ -295,6 +296,10 @@ except:
 
 
 def LoadModList(caller: UObject, function: UFunction, params: FStruct) -> bool:
+	caller.SetFilterFromStringAndSortNew("compatibility","Utility Mods", "isCompatibility:1")
+	caller.SetFilterFromStringAndSortNew("seasonpass","Gameplay Mods", "isSeasonPass:1")
+	caller.SetFilterFromStringAndSortNew("addon","Content Mods", "isAddon:1")
+	caller.SetFilterFromStringAndSortNew("all","All Mods","")
 	caller.SetStoreHeader("Mods", 0, "By Abahbob", "Mod Manager")
 	translationContext = GetEngine().GamePlayers[0].GetTranslationContext()
 	for idx, mod in enumerate(bl2sdk.Mods):
@@ -302,6 +307,7 @@ def LoadModList(caller: UObject, function: UFunction, params: FStruct) -> bool:
 		obj.SetString(caller.Prop_offeringId, str(idx), translationContext)
 		obj.SetString(caller.Prop_contentTitleText, mod.Name, translationContext)
 		obj.SetString(caller.Prop_descriptionText, mod.Description, translationContext)
+		obj.SetFloat(caller.Prop_isMisc, 0.0)
 		if mod.Status == "Enabled" or mod.Status == "":
 			obj.SetString(caller.Prop_statusText, "<font color=\"#00FF00\">Enabled</font>")
 			obj.SetString(caller.Prop_messageText, "<font color=\"#00FF00\">Enabled</font>")
@@ -309,7 +315,7 @@ def LoadModList(caller: UObject, function: UFunction, params: FStruct) -> bool:
 			obj.SetString(caller.Prop_statusText, "<font color=\"#FF0000\">Disabled</font>")
 			obj.SetString(caller.Prop_messageText, "<font color=\"#FF0000\">Disabled</font>")
 		try:
-			obj.SetFloat(caller.Prop_isSeasonPass, int(ModTypes.General in mod.Types))
+			obj.SetFloat(caller.Prop_isSeasonPass, int(ModTypes.Gameplay in mod.Types))
 			obj.SetFloat(caller.Prop_isAddOn, int(ModTypes.Content in mod.Types))
 			obj.SetFloat(caller.Prop_isCompatibility, int(ModTypes.Utility in mod.Types))			
 		except AttributeError:
