@@ -4,6 +4,7 @@ import os
 import sys
 import mypy
 import webbrowser
+from enum import Enum
 
 
 def log(s):
@@ -56,6 +57,10 @@ class BL2MOD():
 	manager, in the format { '[Key]': '[Action]' }. For example:
 
 		SettingsInputs = { 'Enter': "Do Something", "H": "Do Something Else" }
+	"""
+	Types = []
+	"""A list that specifies all the mod types that the mod is. 
+	For a list of mod types, see the ModTypes enum.
 	"""
 
 	def Enable(self):
@@ -215,7 +220,6 @@ class BL2MOD():
 		"""
 		pass
 
-
 class GameInputBinding():
 	"""An object that describes a key binding registered by a mod.
 
@@ -254,6 +258,10 @@ class GameInputBinding():
 			self.Key = key
 			GameInputBinding.ByKey[key] = self
 
+class ModTypes(Enum):
+	Utility = 1
+	Content = 2
+	General = 3
 
 class ModOptions(BL2MOD):
 
@@ -261,6 +269,7 @@ class ModOptions(BL2MOD):
 	Status = ""
 	Description = "Welcome to the Borderlands 2 Mod Manager by Abahbob!\n\nSee below for options."
 	SettingsInputs = { 'O': "Open Mods Folder", 'R': "Reload Mods", 'H': "Help" }
+	Types = [ModTypes.General]
 
 	def SettingsInputPressed(self, name):
 		if name == "Open Mods Folder":
@@ -287,13 +296,20 @@ except:
 
 def LoadModList(caller: UObject, function: UFunction, params: FStruct) -> bool:
 	caller.SetStoreHeader("Mods", 0, "By Abahbob", "Mod Manager")
+	translationContext = GetEngine().GamePlayers[0].GetTranslationContext()
 	for idx, mod in enumerate(bl2sdk.Mods):
-		translationContext = GetEngine().GamePlayers[0].GetTranslationContext()
 		obj, _ = caller.CreateMarketplaceItem(())
 		obj.SetString(caller.Prop_offeringId, str(idx), translationContext)
 		obj.SetString(caller.Prop_contentTitleText, mod.Name, translationContext)
 		obj.SetString(caller.Prop_descriptionText, mod.Description, translationContext)
 		obj.SetString(caller.Prop_messageText, mod.Status, translationContext)
+		
+		try:
+			obj.SetFloat(caller.Prop_isSeasonPass, int(ModTypes.General in mod.Types))
+			obj.SetFloat(caller.Prop_isAddOn, int(ModTypes.Content in mod.Types))
+			obj.SetFloat(caller.Prop_isCompatibility, int(ModTypes.Utility in mod.Types))			
+		except AttributeError:
+			pass
 		caller.AddContentData(obj)
 	caller.PostContentLoaded(True)
 	return False
@@ -374,7 +390,7 @@ def HookModSelected(caller: UObject, function: UFunction, params: FStruct) -> bo
 
 	inputs = mod.SettingsInputs.copy()
 	inputs['Escape'] = "Cancel"
-
+	inputs['Q'] = "Filter"
 	leftColumn = True
 	leftColumnEntries = []
 	rightColumnEntries = []
