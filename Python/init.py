@@ -62,6 +62,8 @@ class BL2MOD():
 	"""A list that specifies all the mod types that the mod is. 
 	For a list of mod types, see the ModTypes enum.
 	"""
+	Author = "Unknown"
+	"""The author(s) of the mod which is displayed in the mod manager menu.	"""
 
 	def Enable(self):
 		"""Called by the mod manager to enable the mod.
@@ -267,9 +269,10 @@ class ModOptions(BL2MOD):
 
 	Name = "General"
 	Status = ""
-	Description = "Welcome to the Borderlands 2 Mod Manager by Abahbob!\n\nSee below for options."
+	Description = "Welcome to the Borderlands 2 Mod Manager\n\nSee below for options."
 	SettingsInputs = { 'O': "Open Mods Folder", 'R': "Reload Mods", 'H': "Help" }
 	Types = []
+	Author = "Abahbob"
 
 	def SettingsInputPressed(self, name):
 		if name == "Open Mods Folder":
@@ -306,7 +309,8 @@ def LoadModList(caller: UObject, function: UFunction, params: FStruct) -> bool:
 		obj, _ = caller.CreateMarketplaceItem(())
 		obj.SetString(caller.Prop_offeringId, str(idx), translationContext)
 		obj.SetString(caller.Prop_contentTitleText, mod.Name, translationContext)
-		obj.SetString(caller.Prop_descriptionText, mod.Description, translationContext)
+		fullDescription = mod.Description + "\n\nCreated by: " + mod.Author
+		obj.SetString(caller.Prop_descriptionText, fullDescription, translationContext)
 		obj.SetFloat(caller.Prop_isMisc, 0.0)
 		if mod.Status == "Enabled" or mod.Status == "":
 			obj.SetString(caller.Prop_statusText, "<font color=\"#00FF00\">Enabled</font>")
