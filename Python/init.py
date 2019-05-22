@@ -17,7 +17,7 @@ print = log
 
 Win32Directory = os.path.dirname(sys.executable)
 ModsDirectory = os.path.join(Win32Directory, "Plugins\\Python")
-"""The path to our mods folder, determined via the directory containing the
+""" The path to our mods folder, determined via the directory containing the
 current executable (Borderlands2.exe)."""
 
 # Change our working directory to the mods directory.
@@ -297,12 +297,20 @@ try:
 except:
 	pass
 
+""" A generic helper function that removes a hook (if it exists) and then re-registers it. """
+def RunHook(functionName, name, function):
+	RemoveHook(functionName, name)
+	RegisterHook(functionName, name, function)
 
+""" Here we populate our mod manager with all of our mods that we've got loaded. """
 def LoadModList(caller: UObject, function: UFunction, params: FStruct) -> bool:
+	caller.MessageEnumerating = "Reloading Mods"
+
 	caller.SetFilterFromStringAndSortNew("compatibility","Utility Mods", "isCompatibility:1")
 	caller.SetFilterFromStringAndSortNew("seasonpass","Gameplay Mods", "isSeasonPass:1")
 	caller.SetFilterFromStringAndSortNew("addon","Content Mods", "isAddon:1")
 	caller.SetFilterFromStringAndSortNew("all","All Mods","")
+
 	caller.SetStoreHeader("Mods", 0, "By Abahbob", "Mod Manager")
 	translationContext = GetEngine().GamePlayers[0].GetTranslationContext()
 	for idx, mod in enumerate(bl2sdk.Mods):
@@ -328,9 +336,9 @@ def LoadModList(caller: UObject, function: UFunction, params: FStruct) -> bool:
 	caller.PostContentLoaded(True)
 	return False
 
-RemoveHook("WillowGame.MarketplaceGFxMovie.OnDownloadableContentListRead", "InjectMods")
-RegisterHook("WillowGame.MarketplaceGFxMovie.OnDownloadableContentListRead", "InjectMods", LoadModList)
+RunHook("WillowGame.MarketplaceGFxMovie.OnDownloadableContentListRead", "InjectMods", LoadModList)
 
+""" This function controls mod specific keybinds in the mod manager. """
 def HookShopInputKey(caller: UObject, function: UFunction, params: FStruct) -> bool:
 	key = params.ukey
 	event = params.uevent
@@ -362,10 +370,9 @@ def HookShopInputKey(caller: UObject, function: UFunction, params: FStruct) -> b
 
 	return False
 
-RemoveHook("WillowGame.MarketplaceGFxMovie.ShopInputKey", "HookShopInputKey")
-RegisterHook("WillowGame.MarketplaceGFxMovie.ShopInputKey", "HookShopInputKey", HookShopInputKey)
+RunHook("WillowGame.MarketplaceGFxMovie.ShopInputKey", "HookShopInputKey", HookShopInputKey)
 
-
+""" Now we replace the DLC menu with the mods. """
 def ReplaceDLCWithMods(caller: UObject, function: UFunction, params: FStruct) -> bool:
 	Caption = params.Caption
 	bNew = params.bNew
@@ -376,7 +383,7 @@ def ReplaceDLCWithMods(caller: UObject, function: UFunction, params: FStruct) ->
 	caller.AddListItem(params.EventID, Caption, params.bDisabled, bNew)
 	return False
 
-
+""" An efficient function that notifies us when we're in the main menu to populate the DLC menu. """
 def HookMainMenuPopulateForMods(caller: UObject, function: UFunction, params: FStruct) -> bool:
 	for modFunc in bl2sdk.ModMenuOpened:
 		try:
@@ -389,10 +396,9 @@ def HookMainMenuPopulateForMods(caller: UObject, function: UFunction, params: FS
 	RemoveHook("WillowGame.WillowScrollingList.AddListItem", "ReplaceDLCWithMods")
 	return False
 
-RemoveHook("WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods")
-RegisterHook("WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods", HookMainMenuPopulateForMods)
+RunHook("WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods", HookMainMenuPopulateForMods)
 
-
+""" Hook whenever we change the currently selected mod in the mod manager. 	"""
 def HookModSelected(caller: UObject, function: UFunction, params: FStruct) -> bool:
 	selectedObject = caller.GetSelectedObject()
 	try:
@@ -419,21 +425,18 @@ def HookModSelected(caller: UObject, function: UFunction, params: FStruct) -> bo
 	caller.SetTooltips(leftColumnText, rightColumnText)
 	return False
 
+RunHook("WillowGame.MarketplaceGFxMovie.extOnOfferingChanged", "HookModSelected", HookModSelected)
 
-RemoveHook("WillowGame.MarketplaceGFxMovie.extOnOfferingChanged", "HookModSelected")
-RegisterHook("WillowGame.MarketplaceGFxMovie.extOnOfferingChanged", "HookModSelected", HookModSelected)
-
-
+""" This function adds all of our keybinds to the keybind menu. """ 
 def HookInitKeyBinding(caller: UObject, function: UFunction, params: FStruct) -> bool:
 	for tag, binding in GameInputBinding.ByTag.items():
 		DoInjectedCallNext()
 		caller.AddKeyBindEntry(tag, tag, binding.Name)
 	return True
 
-RemoveHook("WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.InitKeyBinding", "HookInitKeyBinding")
-RegisterHook("WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.InitKeyBinding", "HookInitKeyBinding", HookInitKeyBinding)
+RunHook("WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.InitKeyBinding", "HookInitKeyBinding", HookInitKeyBinding)
 
-
+""" A function that gets localized versions of keys as not all keys are supported. """
 def GetFixedLocalizedKeyName(menu, key):
 	if key == 'None':
 		return ''
@@ -445,7 +448,7 @@ def GetFixedLocalizedKeyName(menu, key):
 	except:
 		return ''
 
-
+""" A function that hooks into the creation of config options. """
 def HookOnPopulateKeys(caller: UObject, function: UFunction, params: FStruct) -> bool:
 	DoInjectedCallNext()
 	caller.extOnPopulateKeys()
@@ -465,10 +468,9 @@ def HookOnPopulateKeys(caller: UObject, function: UFunction, params: FStruct) ->
 
 	return False
 
-RemoveHook("WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.extOnPopulateKeys", "HookOnPopulateKeys")
-RegisterHook("WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.extOnPopulateKeys", "HookOnPopulateKeys", HookOnPopulateKeys)
+RunHook("WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.extOnPopulateKeys", "HookOnPopulateKeys", HookOnPopulateKeys)
 
-
+""" A function that changes a mod's keybinds in the configuration menu. """
 def HookBindCurrentSelection(caller: UObject, function: UFunction, params: FStruct) -> bool:
 	selectedKeyBind = caller.KeyBinds[caller.CurrentKeyBindSelection]
 	selectedBinding = None
@@ -515,10 +517,9 @@ def HookBindCurrentSelection(caller: UObject, function: UFunction, params: FStru
 	caller.ControllerMappingClip.InvalidateKeyData()
 	return False
 
-RemoveHook("WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.BindCurrentSelection", "HookBindCurrentSelection")
-RegisterHook("WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.BindCurrentSelection", "HookBindCurrentSelection", HookBindCurrentSelection)
+RunHook("WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.BindCurrentSelection", "HookBindCurrentSelection", HookBindCurrentSelection)
 
-
+""" Hook onto player input so we know when a mod's keybinds were pressed. """
 def HookInputKey(caller: UObject, function: UFunction, params: FStruct) -> bool:
 	# If we do not have a binding associated with this key, we ignore it.
 	if params.Key not in GameInputBinding.ByKey:
@@ -536,9 +537,7 @@ def HookInputKey(caller: UObject, function: UFunction, params: FStruct) -> bool:
 
 	return False
 
-RemoveHook("WillowGame.WillowUIInteraction.InputKey", "HookInputKey")
-RegisterHook("WillowGame.WillowUIInteraction.InputKey", "HookInputKey", HookInputKey)
-
+RunHook("WillowGame.WillowUIInteraction.InputKey", "HookInputKey", HookInputKey)
 
 os.chdir(Win32Directory)
 
