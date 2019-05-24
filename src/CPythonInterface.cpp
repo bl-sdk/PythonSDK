@@ -75,11 +75,12 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 
 	m.def("Log", [](std::string in) { Logging::LogPy(in.c_str()); });
 	m.def("LoadPackage", &BL2SDK::LoadPackage, py::arg("filename"), py::arg("flags") = 0, py::arg("force") = false);
+	m.def("KeepAlive", &BL2SDK::KeepAlive);
 	m.def("FindObject", [](char *ClassName, char *ObjectFullName) { return UObject::Find(ClassName, ObjectFullName); }, py::return_value_policy::reference);
 	m.def("FindObject", [](UClass *Class, char *ObjectFullName) { return UObject::Find(Class, ObjectFullName); }, py::return_value_policy::reference);
 	m.def("LoadObject", [](char *ClassName, char *ObjectFullName) { return UObject::Load(ClassName, ObjectFullName); }, py::return_value_policy::reference);
 	m.def("LoadObject", [](UClass *Class, char *ObjectFullName) { return UObject::Load(Class, ObjectFullName); }, py::return_value_policy::reference);
-	m.def("LoadTexture", &BL2SDK::LoadTexture, py::return_value_policy::reference);
+	//m.def("LoadTexture", &BL2SDK::LoadTexture, py::return_value_policy::reference);
 	m.def("SetLoggingLevel", &Logging::SetLoggingLevel);
 	m.def("ConstructObject", &BL2SDK::ConstructObject, "Construct Objects", py::arg("Class"), py::arg("Outer") = BL2SDK::GetEngine()->Outer, py::arg("Name") = FName(), py::arg("SetFlags") = 0x1, py::arg("InternalSetFlags") = 0x00, py::arg("Template") = (UObject*)nullptr, py::arg("Error") = (FOutputDevice *)nullptr, py::arg("InstanceGraph") = (void*)nullptr, py::arg("bAssumeTemplateIsArchetype") = (int)0, py::return_value_policy::reference);
 	m.def("ConstructObject", [](char *ClassName, UObject* Outer, FName Name, unsigned int SetFlags, unsigned int InternalSetFlags, UObject* Template, FOutputDevice *Error, void* InstanceGraph, int bAssumeTemplateIsArchetype) {
@@ -90,6 +91,7 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	m.def("RemoveHook", [](const std::string& funcName, const std::string& hookName) { BL2SDK::RemoveHook(funcName, hookName); });
 	m.def("DoInjectedCallNext", &BL2SDK::doInjectedCallNext);
 	m.def("LogAllCalls", &BL2SDK::LogAllCalls);
+	m.def("CallPostEdit", [](bool NewValue) { BL2SDK::CallPostEdit = NewValue; });
 }
 
 void AddToConsoleLog(UConsole *console, FString input) {

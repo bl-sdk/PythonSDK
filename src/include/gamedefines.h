@@ -190,8 +190,8 @@ struct FScriptDelegate
 
 struct FScriptInterface
 {
-	UObject* ObjectPointer;
-	void* InterfacePointer;
+	UObject* ObjectPointer; //A pointer to a UObject that implements a native interface.
+	void* InterfacePointer; //Pointer to the location of the interface object within the UObject referenced by ObjectPointer.
 };
 
 struct FOutputDevice

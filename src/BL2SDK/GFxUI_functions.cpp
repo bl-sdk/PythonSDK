@@ -209,30 +209,6 @@ class UAkEvent* UGFxManager::LookupSound(const struct FName& UIEvent)
 	return params.ReturnValue;
 }
 
-
-// Function GFxUI.GFxManager.ShowDialog
-// (Event, Public)
-// Parameters:
-// class APlayerController*       PC                             (Parm)
-// FScriptInterface               ReturnValue                    (Parm, OutParm, ReturnParm)
-
-FScriptInterface UGFxManager::ShowDialog(class APlayerController* PC)
-{
-	static auto fn = (UFunction *)UObject::Find("Function", "GFxUI.GFxManager.ShowDialog");
-
-	UGFxManager_ShowDialog_Params params;
-	params.PC = PC;
-
-	auto flags = fn->FunctionFlags;
-
-	BL2SDK::pProcessEvent(this, fn, &params, &params.ReturnValue);
-
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-}
-
-
 // Function GFxUI.GFxManager.Init
 // (Defined, Event, Public)
 // Parameters:

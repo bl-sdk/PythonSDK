@@ -37,6 +37,7 @@ namespace BL2SDK
 	UObject *engine = nullptr;
 	CHookManager *HookManager = nullptr;
 	bool injectedCallNext = false;
+	bool CallPostEdit = true;
 
 	CPythonInterface *Python;
 
@@ -318,6 +319,11 @@ namespace BL2SDK
 		}
 	};
 
+	void KeepAlive(UObject *obj) {
+		for (UObject *outer = obj; outer; outer = outer->Outer)
+			outer->ObjectFlags.A |= 0x4000;
+	}
+
 	UObject *ConstructObject(UClass* Class, UObject* Outer, FName Name, unsigned int SetFlags, unsigned int InternalSetFlags, UObject* Template, FOutputDevice *Error, void* InstanceGraph, int bAssumeTemplateIsArchetype)
 	{
 		if (!Error) {
@@ -345,28 +351,39 @@ namespace BL2SDK
 		return HookManager->Remove(funcName, hookName);
 	}
 
-	UObject *LoadTexture(char *Filename, char *TextureName) {
-		UTexture2D *NewTexture = (UTexture2D *)UObject::Find("Texture2D", std::string("Transient.") + TextureName);
-		if (NewTexture)
-			return NewTexture;
-		int x, y, n;
-		unsigned char *data = stbi_load(Filename, &x, &y, &n, 4);
-		if (!data)
-			throw std::exception("Unable to parse image file");
-		NewTexture = (UTexture2D *)ConstructObject(UObject::FindClass("Texture2D"), GetEngine()->Outer, FName(TextureName), 0x83, 0, nullptr, nullptr, nullptr, false);
-		if (!NewTexture)
-			return nullptr;
-		NewTexture->ObjectFlags.A |= 0x4000;
-		NewTexture->SizeX = x;
-		NewTexture->OriginalSizeX = x;
-		NewTexture->SizeY = y;
-		NewTexture->OriginalSizeY = y;
-		NewTexture->Format = 2;
-		NewTexture->Mips.Data.Dummy = (int)data;
-		NewTexture->Mips.ArrayMax = 1;
-		NewTexture->Mips.ArrayNum = 1;
-		NewTexture->ResidentMips = 1;
-		NewTexture->RequestedMips = 1;
-		return (UObject *)NewTexture;
-	}
+	//UObject *LoadTexture(char *Filename, char *TextureName) {
+	//	UTexture2D *NewTexture = (UTexture2D *)UObject::Find("Texture2D", std::string("Transient.") + TextureName);
+	//	if (NewTexture)
+	//		return NewTexture;
+	//	int x, y, n;
+	//	unsigned char *data = stbi_load(Filename, &x, &y, &n, 4);
+	//	if (!data)
+	//		throw std::exception("Unable to parse image file");
+	//	NewTexture = (UTexture2D *)ConstructObject(UObject::FindClass("Texture2D"), GetEngine()->Outer, FName(TextureName), 0x83, 0, nullptr, nullptr, nullptr, false);
+	//	UTexture2D *DefaultTexture = (UTexture2D *)UObject::Find("Texture2D", "Engine.Default__Texture2D ");
+	//	if (!NewTexture)
+	//		return nullptr;
+	//	NewTexture->ObjectFlags.A |= 0x4000;
+	//	NewTexture->SizeX = x;
+	//	NewTexture->OriginalSizeX = x;
+	//	NewTexture->SizeY = y;
+	//	NewTexture->OriginalSizeY = y;
+	//	NewTexture->Format = 2;
+	//	FTexture2DMipMap *MipsData = (FTexture2DMipMap *)calloc(1, sizeof(FTexture2DMipMap));
+	//	MipsData->SizeX = x;
+	//	MipsData->SizeY = y;
+	//	memcpy(&MipsData->Data, &DefaultTexture->Mips.Data[0]->Data, sizeof(FUntypedBulkData_Mirror));
+	//	MipsData->Data.bShouldFreeOnEmpty = 0;
+	//	MipsData->Data.BulkData.Dummy = (int)data;
+	//	NewTexture->Mips.Data = (FTexture2DMipMap **)malloc(sizeof(FTexture2DMipMap *));
+	//	NewTexture->Mips.Data[0] = MipsData;
+	//	NewTexture->Mips.Count = 1;
+	//	NewTexture->Mips.Max = 1;
+	//	NewTexture->ResidentMips = 1;
+	//	FPropertyChangedEvent ChangeEvent {};
+	//	ChangeEvent.Property = (UProperty *)UObject::Find("BoolProperty", "Engine.Texture.SRGB");
+	//	ChangeEvent.ChangeType = 1;
+	//	NewTexture->PostEditChangeProperty(&ChangeEvent);
+	//	return (UObject *)NewTexture;
+	//}
 }
