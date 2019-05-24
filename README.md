@@ -36,3 +36,6 @@ On the main menu, `Downloadable Content` is replace with `Mods`
 
 Mods can be enabled and disabled by selecting them and pressing `Enter`  
 ![ModManager](https://i.imgur.com/8ZaUsDP.png)
+
+## Contact Us
+https://discord.gg/VJXtHvh
