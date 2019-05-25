@@ -1530,9 +1530,12 @@ struct FStruct
 		while (thisField)
 		{
 			for (UField* Child = thisField->Children; Child != NULL; Child = Child->Next) {
-				s = py::str("{}{}: {}").format(s, Child->GetName(), py::repr(GetProperty(Child->GetName())));
-				if (Child->Next || (thisField->SuperField && thisField->SuperField->Children))
-					s = py::str("{}{}").format(s, ", ");
+				UProperty *prop = (UProperty *)structType->FindChildByName(FName(Child->GetName()));
+				if (prop && prop->PropertyFlags & 0x80) {
+					s = py::str("{}{}: {}").format(s, Child->GetName(), py::repr(GetProperty(Child->GetName())));
+					if (Child->Next || (thisField->SuperField && thisField->SuperField->Children))
+						s = py::str("{}{}").format(s, ", ");
+				}
 			}
 			thisField = thisField->SuperField;
 		}
