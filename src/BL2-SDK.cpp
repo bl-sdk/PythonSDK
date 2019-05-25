@@ -75,6 +75,18 @@ namespace BL2SDK
 		pProcessEvent(caller, function, params, result);
 	}
 
+	void LogOutParams(FFrame *Stack) {
+		Logging::LogF("Logging stack, %s, %s\n", Stack->Object->GetFullName().c_str(), Stack->Node->GetFullName().c_str());
+		Logging::LogF("0x%p\n", Stack->Node);
+		Logging::LogF("0x%p\n", Stack->Object);
+		Logging::LogF("0x%p\n", Stack->Code);
+		Logging::LogF("0x%p\n", Stack->Locals);
+		Logging::LogF("0x%p\n", Stack->PreviousFrame);
+		Logging::LogF("0x%p\n", Stack->Outparams);
+		for (FOutParmRec* rec = Stack->Outparams; rec; rec = rec->NextOutParm) {
+			Logging::LogF("%s, 0x%x\n", rec->Property->GetFullName(), rec->PropAddr);
+		}
+	}
 	void __stdcall hkCallFunction(FFrame& stack, void* const result, UFunction* function)
 	{
 		// Get "this"
@@ -190,7 +202,9 @@ namespace BL2SDK
 			if (!VirtualProtectEx(GetCurrentProcess(), SetCommand, 5, 0x40, &out)) {
 				Logging::LogF("WINAPI Error when enabling 'SET' commands: %d\n", GetLastError());
 			}
-			((unsigned char *)SetCommand)[5] = 0xFF;
+			else {
+				((unsigned char *)SetCommand)[5] = 0xFF;
+			}
 		}
 		catch(std::exception e) {
 			Logging::LogF("Exception when enabling 'SET' commands: %d\n", e.what());

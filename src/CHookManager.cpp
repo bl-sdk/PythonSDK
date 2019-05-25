@@ -76,16 +76,47 @@ bool CHookManager::ProcessHooks(UObject* pCaller, FFrame& Stack, void* const Res
 	// Even though we check in the next function, check here to avoid messing with the stack when we don't need to
 	if (iHooks != Hooks.end() || Hooks.find(pCaller->GetObjectName() + "." + Function->GetName()) != Hooks.end())
 	{
+		UProperty* ReturnParm = nullptr;
 		char* Frame = (char *)calloc(1, Function->ParamsSize);
 		for (UProperty* Property = (UProperty *)Function->Children; Stack.Code[0] != 0x16; Property = (UProperty*)Property->Next) {
 			const bool bIsReturnParam = ((Property->PropertyFlags & 0x400) != 0);
-			if (bIsReturnParam)
+			if (bIsReturnParam) {
+				ReturnParm = Property;
 				continue;
+			}
 			BL2SDK::pFrameStep(&Stack, Stack.Object, Frame + Property->Offset_Internal);
 		}
 		bool ret = ProcessHooks(Function->GetObjectName(), pCaller, Function, &FStruct{ Function, (void *)Frame });
+		//if (!ret) {
+		//	if (ReturnParm)
+		//	{
+		//		memcpy(Result, Frame + ReturnParm->Offset_Internal, ReturnParm->ElementSize);
+		//		Stack.Outparams = (FOutParmRec *)malloc(sizeof(FOutParmRec));
+		//		Stack.Outparams->Property = ReturnParm;
+		//		Stack.Outparams->PropAddr = (unsigned char *)Result;
+		//	}
+		//	FOutParmRec** LastOut = &Stack.Outparams;
+		//	for (UProperty* Property = (UProperty *)Function->Children; Property; Property = (UProperty*)Property->Next) {
+		//		const bool bIsReturnParam = ((Property->PropertyFlags & 0x400) != 0);
+		//		if (bIsReturnParam)
+		//			continue;
+		//		if (Property->PropertyFlags & 0x100) {
+		//			FOutParmRec *NewOutParm = (FOutParmRec *)malloc(sizeof(FOutParmRec));
+		//			NewOutParm->Property = Property;
+		//			NewOutParm->PropAddr = (unsigned char *)malloc(sizeof(Property->ElementSize));
+		//			memcpy(NewOutParm->PropAddr, Frame + Property->Offset_Internal, Property->ElementSize);
+		//			if (*LastOut) {
+		//				(*LastOut)->NextOutParm = NewOutParm;
+		//				LastOut = &(*LastOut)->NextOutParm;
+		//			}
+		//			else {
+		//				*LastOut = NewOutParm;
+		//			}
+		//		}
+		//	}
+		//}
+		//LogOutParams(Stack);
 		memset(Frame, 0, Function->ParamsSize);
-		Logging::LogD("Freeing frame2 %p\n", Frame);
 		free(Frame);
 		return ret;
 	}
