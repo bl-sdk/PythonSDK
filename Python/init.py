@@ -236,6 +236,8 @@ class GameInputBinding():
 	"""A dictionary for looking up bindings by their tag."""
 	ByKey = dict()
 	"""A dictionary for looking up bindings by their currently assigned key."""
+	ByMod = dict()
+	"""A dictionary that looks up the mod names by their tags. """
 
 	def __init__(self, mod: BL2MOD, name: str, key: str):
 		self.Mod = mod
@@ -245,8 +247,8 @@ class GameInputBinding():
 		# it in the dictionary, and increment the tag index for the next one.
 		tag = "bl2sdk%s" % GameInputBinding.TagIndex
 		GameInputBinding.ByTag[tag] = self
+		GameInputBinding.ByMod[tag] = self.Mod.Name
 		GameInputBinding.TagIndex += 1
-
 		# If no default key was requested, default to "None."
 		if key == None:
 			self.Key = 'None'
@@ -305,13 +307,12 @@ def RunHook(functionName, name, function):
 """ Here we populate our mod manager with all of our mods that we've got loaded. """
 def LoadModList(caller: UObject, function: UFunction, params: FStruct) -> bool:
 	caller.MessageEnumerating = "Reloading Mods"
-
 	caller.SetFilterFromStringAndSortNew("compatibility","Utility Mods", "isCompatibility:1")
 	caller.SetFilterFromStringAndSortNew("seasonpass","Gameplay Mods", "isSeasonPass:1")
 	caller.SetFilterFromStringAndSortNew("addon","Content Mods", "isAddon:1")
 	caller.SetFilterFromStringAndSortNew("all","All Mods","")
-
 	caller.SetStoreHeader("Mods", 0, "By Abahbob", "Mod Manager")
+	
 	translationContext = GetEngine().GamePlayers[0].GetTranslationContext()
 	for idx, mod in enumerate(bl2sdk.Mods):
 		obj, _ = caller.CreateMarketplaceItem(())
@@ -398,6 +399,8 @@ def HookMainMenuPopulateForMods(caller: UObject, function: UFunction, params: FS
 
 RunHook("WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods", HookMainMenuPopulateForMods)
 
+seperatorNames = [""]
+
 """ Hook whenever we change the currently selected mod in the mod manager. 	"""
 def HookModSelected(caller: UObject, function: UFunction, params: FStruct) -> bool:
 	selectedObject = caller.GetSelectedObject()
@@ -429,7 +432,15 @@ RunHook("WillowGame.MarketplaceGFxMovie.extOnOfferingChanged", "HookModSelected"
 
 """ This function adds all of our keybinds to the keybind menu. """ 
 def HookInitKeyBinding(caller: UObject, function: UFunction, params: FStruct) -> bool:
+	seperatorNames.clear()
+	lastModName = ""
 	for tag, binding in GameInputBinding.ByTag.items():
+		modName = GameInputBinding.ByMod[tag]
+		if lastModName != modName:
+			lastModName = modName
+			nameOfSeperator = ("------ " + modName + " ------")
+			seperatorNames.append(nameOfSeperator)
+			caller.AddKeyBindEntry(nameOfSeperator, nameOfSeperator, nameOfSeperator)
 		DoInjectedCallNext()
 		caller.AddKeyBindEntry(tag, tag, binding.Name)
 	return True
@@ -456,6 +467,9 @@ def HookOnPopulateKeys(caller: UObject, function: UFunction, params: FStruct) ->
 	translationContext = GetEngine().GamePlayers[0].GetTranslationContext()
 
 	for keyBind in caller.KeyBinds:
+		if keyBind.Tag in seperatorNames:
+			keyBind.Object.SetString('value', "")
+			keyBind.Object.SetVisible(False)
 		if keyBind.Tag in GameInputBinding.ByTag:
 			binding = GameInputBinding.ByTag[keyBind.Tag]
 			keyBind.CurrentKey = binding.Key
@@ -473,6 +487,8 @@ RunHook("WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.extOnPop
 """ A function that changes a mod's keybinds in the configuration menu. """
 def HookBindCurrentSelection(caller: UObject, function: UFunction, params: FStruct) -> bool:
 	selectedKeyBind = caller.KeyBinds[caller.CurrentKeyBindSelection]
+	if selectedKeyBind.Tag in seperatorNames:
+		return False
 	selectedBinding = None
 
 	oldKey = selectedKeyBind.CurrentKey
@@ -518,6 +534,14 @@ def HookBindCurrentSelection(caller: UObject, function: UFunction, params: FStru
 	return False
 
 RunHook("WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.BindCurrentSelection", "HookBindCurrentSelection", HookBindCurrentSelection)
+
+def HookDoBind(caller: UObject, function: UFunction, params: FStruct) -> bool:
+	print(caller.KeyBinds[caller.CurrentKeyBindSelection].Caption)
+	if caller.KeyBinds[caller.CurrentKeyBindSelection].Caption in seperatorNames:
+		return False
+	return True
+
+RunHook("WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.DoBind", "HookDoBind", HookDoBind)
 
 """ Hook onto player input so we know when a mod's keybinds were pressed. """
 def HookInputKey(caller: UObject, function: UFunction, params: FStruct) -> bool:
