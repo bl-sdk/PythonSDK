@@ -572,6 +572,29 @@ struct FRawDistributionVector : FRawDistribution
 	class UDistributionVector*						 Distribution;									 		// 0x0018 (0x0004) [0x0000000006080009]			  ( CPF_Edit | CPF_ExportObject | CPF_Component | CPF_NoClear | CPF_EditInline )
 };
 
+struct FPropertyChangedEvent
+{
+	class UProperty*		Property;
+	class UProperty*		MemberProperty;
+	unsigned int			ChangeType;
+	int						ObjectIteratorIndex;
+};
+
+struct FTexturePlatformData
+{
+	int SizeX;
+	/** Height of the texture. */
+	int SizeY;
+	/** Number of texture slices. */
+	int NumSlices;
+	/** Format in which mip data is stored. */
+	int PixelFormat;
+	/** Mip data. */
+	TArray<struct FTexture2DMipMap> Mips;
+	FString DerivedDataKey;
+	FPointer AsyncTask;
+};
+
 #ifdef _MSC_VER
 #pragma pack ( pop )
 #endif

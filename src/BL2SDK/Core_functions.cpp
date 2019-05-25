@@ -115,99 +115,96 @@ pybind11::object FHelper::GetProperty(UProperty *prop) {
 	return py::none();
 }
 
-bool FHelper::SetProperty(class UStructProperty *prop, py::object val) {
+void FHelper::SetProperty(class UStructProperty *prop, py::object val) {
 	if (py::isinstance<py::tuple>(val))
 	{
 		py::tuple tup = (py::tuple)val;
 
 		unsigned int currentIndex = 0;
+		for (UProperty* Child = (UProperty *)prop->GetStruct()->Children; Child; Child = (UProperty *)Child->Next)
+			currentIndex++;
+
+		if (tup.size() > currentIndex) {
+			throw std::exception(Util::Format("FHelper::SetProperty: Not all tuple values converted for struct!\n").c_str());
+		}
+
+		currentIndex = 0;
 		for (UProperty* Child = (UProperty *)prop->GetStruct()->Children; Child; Child = (UProperty *)Child->Next) {
 			Logging::LogD("Child = %s, %d\n", Child->GetFullName().c_str(), Child->Offset_Internal);
 			if (currentIndex < tup.size())
 				((FHelper *)(((char *)this) + prop->Offset_Internal))->SetProperty(Child, tup[currentIndex++]);
 		}
-		if (tup.size() > currentIndex) {
-			Logging::LogF("Not all tuple values converted for struct!\n");
-			return false;
-		}
-		return true;
 	}
-	else if (py::isinstance<FStruct>(val)) {
-		Logging::LogD("FSTRUCT OMG\n");
-	}
-	return false;
+	else
+		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected tuple!\n").c_str());
 }
 
-bool FHelper::SetProperty(class UStrProperty *prop, py::object val) {
+void FHelper::SetProperty(class UStrProperty *prop, py::object val) {
 	if (!py::isinstance<py::str>(val))
-		return false;
+		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected string!\n").c_str());
 	memcpy(((char *)this) + prop->Offset_Internal, &FString(val.cast<std::string>().c_str()), sizeof(FString));
-	return true;
 }
 
-bool FHelper::SetProperty(class UObjectProperty *prop, py::object val) {
-	if (!py::isinstance<UObject>(val))
-		return false;
+void FHelper::SetProperty(class UObjectProperty *prop, py::object val) {
+	if (!py::isinstance<UObject>(val) && !py::isinstance<py::none>(val))
+		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected UObject!\n").c_str());
 	((UObject **)(((char *)this) + prop->Offset_Internal))[0] = val.cast<UObject *>();
-	return true;
 }
 
-bool FHelper::SetProperty(class UComponentProperty *prop, py::object val) {
-	if (!py::isinstance<UComponent>(val))
-		return false;
+void FHelper::SetProperty(class UComponentProperty *prop, py::object val) {
+	if (!py::isinstance<UComponent>(val) && !py::isinstance<py::none>(val))
+		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected UComponent!\n").c_str());
 	((UComponent **)(((char *)this) + prop->Offset_Internal))[0] = val.cast<UComponent *>();
-	return true;
 }
 
-bool FHelper::SetProperty(class UClassProperty *prop, py::object val) {
-	if (!py::isinstance<UClass>(val))
-		return false;
+void FHelper::SetProperty(class UClassProperty *prop, py::object val) {
+	if (!py::isinstance<UClass>(val) && !py::isinstance<py::none>(val))
+		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected UClass!\n").c_str());
 	((UClass **)(((char *)this) + prop->Offset_Internal))[0] = val.cast<UClass *>();
-	return true;
 }
 
-bool FHelper::SetProperty(class UNameProperty *prop, py::object val) {
+void FHelper::SetProperty(class UNameProperty *prop, py::object val) {
 	if (!py::isinstance<py::str>(val))
-		return false;
+		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected string!\n").c_str());
 	memcpy(((char *)this) + prop->Offset_Internal, &FName(val.cast<std::string>().c_str()), sizeof(FName));
-	return true;
 }
 
-bool FHelper::SetProperty(class UInterfaceProperty *prop, py::object val) {
-	if (!py::isinstance<UInterface>(val))
-		return false;
-	((UInterface **)(((char *)this) + prop->Offset_Internal))[0] = val.cast<UInterface *>();
-	return true;
+void FHelper::SetProperty(class UInterfaceProperty *prop, py::object val) {
+	if (!py::isinstance<UObject>(val) && !py::isinstance<py::none>(val))
+		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected UObject!\n").c_str());
+	if (py::isinstance<py::none>(val))
+		((FScriptInterface *)(((char *)this) + prop->Offset_Internal))[0] = FScriptInterface{0, 0};
+	else {
+		UObject *ObjVal = val.cast<UObject *>();
+		FScriptInterface interf = ObjVal->QueryInterface(prop->GetInterfaceClass());
+		((FScriptInterface *)(((char *)this) + prop->Offset_Internal))[0] = interf;
+	}
 }
 
-bool FHelper::SetProperty(class UDelegateProperty *prop, py::object val) {
+void FHelper::SetProperty(class UDelegateProperty *prop, py::object val) {
 	if (!py::isinstance<FScriptDelegate>(val))
-		return false;
+		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected FScriptDelegate!\n").c_str());
 	memcpy(((char *)this) + prop->Offset_Internal, &FScriptDelegate(val.cast<FScriptDelegate>()), sizeof(FScriptDelegate));
-	return true;
 }
 
-bool FHelper::SetProperty(class UFloatProperty *prop, py::object val) {
+void FHelper::SetProperty(class UFloatProperty *prop, py::object val) {
 	Logging::LogD("Set %f\n", val.cast<float>());
 	((float *)(((char *)this) + prop->Offset_Internal))[0] = val.cast<float>();
-	return true;
 }
 
-bool FHelper::SetProperty(class UIntProperty *prop, py::object val) {
+void FHelper::SetProperty(class UIntProperty *prop, py::object val) {
 	if (!py::isinstance<py::int_>(val))
-		return false;
+		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected int!\n").c_str());
 	((int *)(((char *)this) + prop->Offset_Internal))[0] = val.cast<int>();
-	return true;
 }
 
-bool FHelper::SetProperty(class UByteProperty *prop, py::object val) {
-	if (!py::isinstance<int>(val) && val.cast<int>() <= 255)
-		return false;
+void FHelper::SetProperty(class UByteProperty *prop, py::object val) {
+	if (!py::isinstance<py::int_>(val))
+		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected (char!\n").c_str());
 	(((char *)this) + prop->Offset_Internal)[0] = (char)val.cast<int>();
-	return true;
 }
 
-bool FHelper::SetProperty(class UBoolProperty *prop, py::object val) {
+void FHelper::SetProperty(class UBoolProperty *prop, py::object val) {
 	try {
 		Logging::LogD("SetBoolProperty %d, mask: 0x%x, base: 0x%x, offset: 0x%x\n", val.cast<bool>(), prop->GetMask(), this, prop->Offset_Internal);
 		if (val.cast<bool>())
@@ -216,60 +213,59 @@ bool FHelper::SetProperty(class UBoolProperty *prop, py::object val) {
 			((unsigned int *)(((char *)this) + prop->Offset_Internal))[0] &= ~prop->GetMask();
 	}
 	catch (std::exception e) {
-		Logging::LogF(e.what());
+		throw std::exception(Util::Format("FHelper::SetProperty: %s\n", e.what()).c_str());
 	}
-	return true;
 }
 
-bool FHelper::SetProperty(class UArrayProperty *prop, py::object val) {
+void FHelper::SetProperty(class UArrayProperty *prop, py::object val) {
 	if (!py::isinstance<py::sequence>(val))
-		return false;
+		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected list!\n").c_str());
 	auto s = py::reinterpret_borrow<py::sequence>(val);
-	Logging::LogD("A\n");
-	char *Data = (char *)((tMalloc)BL2SDK::pGMalloc[0]->VfTable[1])(BL2SDK::pGMalloc[0], prop->GetInner()->ElementSize * s.size(), 8);
-	Logging::LogD("C %d %d %p %p %d %p\n", prop->GetInner()->ElementSize, prop->Offset_Internal, this, Data, s.size(), (TArray<void *> *)(((char *)this) + prop->Offset_Internal));
-	memset(Data, 0, prop->GetInner()->ElementSize * s.size());
-	((TArray<void *> *)(((char *)this) + prop->Offset_Internal))->Data = (void **)Data;
-	((TArray<void *> *)(((char *)this) + prop->Offset_Internal))->Count = s.size();
-	((TArray<void *> *)(((char *)this) + prop->Offset_Internal))->Max = s.size();
+	if (s.size() > ((TArray<void *> *)(((char *)this) + prop->Offset_Internal))->Count) {
+		char *Data = (char *)((tMalloc)BL2SDK::pGMalloc[0]->VfTable[1])(BL2SDK::pGMalloc[0], prop->GetInner()->ElementSize * s.size(), 8);
+		memset(Data, 0, prop->GetInner()->ElementSize * s.size());
+		((TArray<char> *)(((char *)this) + prop->Offset_Internal))->Data = Data;
+		((TArray<char> *)(((char *)this) + prop->Offset_Internal))->Max = s.size();
+	}
+	((TArray<char> *)(((char *)this) + prop->Offset_Internal))->Count = s.size();
+	char *Data = ((TArray<char> *)(((char *)this) + prop->Offset_Internal))->Data;
 	int x = 0;
 	for (auto it : val) {
-		Logging::LogD("%x\n", (Data + prop->GetInner()->ElementSize * x));
 		((FHelper *)(Data + prop->GetInner()->ElementSize * x++))->SetProperty(prop->GetInner(), py::reinterpret_borrow<py::object>(it));
 	}
-	return true;
 }
 
-bool FHelper::SetProperty(class UProperty *prop, py::object val) {
+void FHelper::SetProperty(class UProperty *prop, py::object val) {
 	Logging::LogD("FHelper::SetProperty Called with '%s'\n", prop->GetFullName().c_str());
+	bool ret = false;
 	if (!strcmp(prop->Class->GetName().c_str(), "StructProperty"))
-		return SetProperty((UStructProperty *)prop, val);
+		SetProperty((UStructProperty *)prop, val);
 	else if (!strcmp(prop->Class->GetName().c_str(), "StrProperty"))
-		return SetProperty((UStrProperty *)prop, val);
+		SetProperty((UStrProperty *)prop, val);
 	else if (!strcmp(prop->Class->GetName().c_str(), "ObjectProperty"))
-		return SetProperty((UObjectProperty *)prop, val);
+		SetProperty((UObjectProperty *)prop, val);
 	else if (!strcmp(prop->Class->GetName().c_str(), "ComponentProperty"))
-		return SetProperty((UComponentProperty *)prop, val);
+		SetProperty((UComponentProperty *)prop, val);
 	else if (!strcmp(prop->Class->GetName().c_str(), "ClassProperty"))
-		return SetProperty((UClassProperty *)prop, val);
+		SetProperty((UClassProperty *)prop, val);
 	else if (!strcmp(prop->Class->GetName().c_str(), "NameProperty"))
-		return SetProperty((UNameProperty *)prop, val);
+		SetProperty((UNameProperty *)prop, val);
 	else if (!strcmp(prop->Class->GetName().c_str(), "IntProperty"))
-		return SetProperty((UIntProperty *)prop, val);
+		SetProperty((UIntProperty *)prop, val);
 	else if (!strcmp(prop->Class->GetName().c_str(), "InterfaceProperty"))
-		return SetProperty((UInterfaceProperty *)prop, val);
+		SetProperty((UInterfaceProperty *)prop, val);
 	else if (!strcmp(prop->Class->GetName().c_str(), "FloatProperty"))
-		return SetProperty((UFloatProperty *)prop, val);
+		SetProperty((UFloatProperty *)prop, val);
 	else if (!strcmp(prop->Class->GetName().c_str(), "DelegateProperty"))
-		return SetProperty((UDelegateProperty *)prop, val);
+		SetProperty((UDelegateProperty *)prop, val);
 	else if (!strcmp(prop->Class->GetName().c_str(), "ByteProperty"))
-		return SetProperty((UByteProperty *)prop, val);
+		SetProperty((UByteProperty *)prop, val);
 	else if (!strcmp(prop->Class->GetName().c_str(), "BoolProperty"))
-		return SetProperty((UBoolProperty *)prop, val);
+		SetProperty((UBoolProperty *)prop, val);
 	else if (!strcmp(prop->Class->GetName().c_str(), "ArrayProperty"))
-		return SetProperty((UArrayProperty *)prop, val);
-	throw std::exception(Util::Format("FHelper::SetProperty got unexpected property type '%s'", prop->GetFullName().c_str()).c_str());
-	return false;
+		SetProperty((UArrayProperty *)prop, val);
+	else
+		throw std::exception(Util::Format("FHelper::SetProperty got unexpected property type '%s'", prop->GetFullName().c_str()).c_str());
 }
 
 TArray< UObject* >* UObject::GObjects()
@@ -429,15 +425,21 @@ pybind11::object UObject::GetProperty(std::string PropName) {
 	return pybind11::none();
 }
 
-bool UObject::SetProperty(std::string& PropName, py::object val) {
+void UObject::SetProperty(std::string& PropName, py::object val) {
 	class UObject *obj = this->Class->FindChildByName(FName(PropName));
 	if (!obj)
-		return false;
+		return;
 	auto prop = reinterpret_cast<UProperty *>(obj);
 	if (!strcmp(obj->Class->GetName().c_str(), "Function"))
-		return ((FHelper *)((char *)this))->SetProperty((UObjectProperty *)prop, val);
+		((FHelper *)((char *)this))->SetProperty((UObjectProperty *)prop, val);
 	else
-		return ((FHelper *)((char *)this))->SetProperty(prop, val);
+		((FHelper *)((char *)this))->SetProperty(prop, val);
+	if (BL2SDK::CallPostEdit) {
+		FPropertyChangedEvent ChangeEvent{};
+		ChangeEvent.Property = prop;
+		ChangeEvent.ChangeType = 1;
+		PostEditChangeProperty(&ChangeEvent);
+	}
 }
 
 
@@ -3865,7 +3867,7 @@ FScriptInterface UObject::QueryInterface(class UClass* InterfaceClass)
 {
 	static auto fn = (UFunction *)UObject::Find("Function", "Core.Object.QueryInterface");
 
-	UObject_QueryInterface_Params params;
+	struct UObject_QueryInterface_Params params;
 	params.InterfaceClass = InterfaceClass;
 
 	auto flags = fn->FunctionFlags;

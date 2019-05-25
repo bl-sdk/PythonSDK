@@ -209,7 +209,6 @@ class UAkEvent* UGFxManager::LookupSound(const struct FName& UIEvent)
 	return params.ReturnValue;
 }
 
-
 // Function GFxUI.GFxManager.ShowDialog
 // (Event, Public)
 // Parameters:
@@ -231,7 +230,6 @@ FScriptInterface UGFxManager::ShowDialog(class APlayerController* PC)
 
 	return params.ReturnValue;
 }
-
 
 // Function GFxUI.GFxManager.Init
 // (Defined, Event, Public)

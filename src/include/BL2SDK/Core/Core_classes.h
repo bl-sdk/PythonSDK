@@ -194,20 +194,20 @@ struct FHelper {
 	py::object GetArrayProperty(class UArrayProperty *prop);
 	pybind11::object GetProperty(class UProperty *prop);
 
-	bool SetProperty(class UStructProperty *prop, py::object val);
-	bool SetProperty(class UStrProperty *prop, py::object val);
-	bool SetProperty(class UObjectProperty *prop, py::object val);
-	bool SetProperty(class UComponentProperty *prop, py::object val);
-	bool SetProperty(class UClassProperty *prop, py::object val);
-	bool SetProperty(class UNameProperty *prop, py::object val);
-	bool SetProperty(class UInterfaceProperty *prop, py::object val);
-	bool SetProperty(class UDelegateProperty *prop, py::object val);
-	bool SetProperty(class UFloatProperty *prop, py::object val);
-	bool SetProperty(class UIntProperty *prop, py::object val);
-	bool SetProperty(class UByteProperty *prop, py::object val);
-	bool SetProperty(class UBoolProperty *boolProp, py::object val);
-	bool SetProperty(class UArrayProperty *prop, py::object val);
-	bool SetProperty(class UProperty *prop, py::object val);
+	void SetProperty(class UStructProperty *prop, py::object val);
+	void SetProperty(class UStrProperty *prop, py::object val);
+	void SetProperty(class UObjectProperty *prop, py::object val);
+	void SetProperty(class UComponentProperty *prop, py::object val);
+	void SetProperty(class UClassProperty *prop, py::object val);
+	void SetProperty(class UNameProperty *prop, py::object val);
+	void SetProperty(class UInterfaceProperty *prop, py::object val);
+	void SetProperty(class UDelegateProperty *prop, py::object val);
+	void SetProperty(class UFloatProperty *prop, py::object val);
+	void SetProperty(class UIntProperty *prop, py::object val);
+	void SetProperty(class UByteProperty *prop, py::object val);
+	void SetProperty(class UBoolProperty *boolProp, py::object val);
+	void SetProperty(class UArrayProperty *prop, py::object val);
+	void SetProperty(class UProperty *prop, py::object val);
 };
 
 // 0x003C
@@ -317,7 +317,7 @@ public:
 	};
 
 	py::object GetProperty(std::string PropName);
-	bool SetProperty(std::string& PropName, py::object val);
+	void SetProperty(std::string& PropName, py::object val);
 	struct FFunction GetFunction(std::string& PropName);
 	//struct FScriptArray GetArrayProperty(std::string& PropName);
 	//struct FScriptMap GetMapProperty(std::string& PropName);
@@ -668,7 +668,7 @@ public:
 	virtual void VirtualFunction16() {};																			// 0x00F90510 (0x40)
 	virtual void VirtualFunction17() {};																			// 0x00C6EB60 (0x44)
 	virtual void VirtualFunction18() {};																			// 0x009CBC30 (0x48)
-	virtual void VirtualFunction19() {};																			// 0x00AEAFA0 (0x4C)
+	virtual void PostEditChangeProperty(FPropertyChangedEvent *PropertyChangedEvent) {};																			// 0x00AEAFA0 (0x4C)
 	virtual void VirtualFunction20() {};																			// 0x00A28430 (0x50)
 	virtual void VirtualFunction21() {};																			// 0x00601380 (0x54)
 	virtual void VirtualFunction22() {};																			// 0x0048AE50 (0x58)
@@ -733,7 +733,7 @@ public:
 	virtual void VirtualFunction81() {};																			// 0x00F9ECE0 (0x144)
 	virtual void VirtualFunction82() {};																			// 0x005838A0 (0x148)
 	virtual void VirtualFunction83() {};																			// 0x003AF620 (0x14C)
-	virtual void VirtualFunction84() {};																			// 0x00C22440 (0x150)
+	virtual int VirtualFunction84() { return 0; };																	// 0x00C22440 (0x150)
 	virtual void VirtualFunction85() {};																			// 0x001BDB80 (0x154)
 	virtual void VirtualFunction86() {};																			// 0x00CA2440 (0x158)
 	virtual void VirtualFunction87() {};																			// 0x00D78FB0 (0x15C)
@@ -1137,7 +1137,13 @@ public:
 class UInterfaceProperty : public UProperty
 {
 public:
-	unsigned char                                      UnknownData00[0x4];                             		// 0x0080 (0x0004) MISSED OFFSET
+	UClass *InterfaceClass_DONOTUSE;
+	UClass *GetInterfaceClass() {
+		if (BL2SDK::EngineVersion <= 8630)
+			return ((UClass **)(((char *)this) + 0x74))[0];
+		else
+			return ((UClass **)(((char *)this) + 0x80))[0];
+	}
 };
 
 // 0x0000 (0x0080 - 0x0080)
@@ -1359,13 +1365,11 @@ private:
 			if (!(Child->PropertyFlags & 0x80)) // Param
 				continue;
 			else if (kwargs.contains(Child->GetName().c_str())) {
-				if (!params->SetProperty(Child, kwargs[Child->GetName().c_str()]))
-					throw std::exception(Util::Format("Unexpected value for %s", Child->GetFullName().c_str()).c_str());
+				params->SetProperty(Child, kwargs[Child->GetName().c_str()]);
 				continue;
 			}
 			else if (currentIndex < args.size()) {
-				if (!params->SetProperty(Child, args[currentIndex++]))
-					throw std::exception(Util::Format("Unexpected value for %s", Child->GetFullName().c_str()).c_str());
+				params->SetProperty(Child, args[currentIndex++]);
 				continue;
 			}
 			else if (Child->PropertyFlags & 0x10) // Optional
@@ -1512,12 +1516,12 @@ struct FStruct
 		return ((FHelper *)((char *)base))->GetProperty(prop);
 	}
 
-	bool SetProperty(std::string& PropName, py::object value) {
+	void SetProperty(std::string& PropName, py::object value) {
 		class UObject *obj = structType->FindChildByName(FName(PropName));
 		if (!obj)
-			return false;
+			throw std::exception(Util::Format("FStruct::SetProperty: Unable to find property '%s'!\n", PropName.c_str()).c_str());
 		auto prop = reinterpret_cast<UProperty *>(obj);
-		return ((FHelper *)((char *)base))->SetProperty(prop, value);
+		((FHelper *)((char *)base))->SetProperty(prop, value);
 	}
 
 	py::str Repr() {

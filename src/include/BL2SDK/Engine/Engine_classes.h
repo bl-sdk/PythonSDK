@@ -10825,7 +10825,7 @@ public:
 	int                                                LODBias;                                                  // 0x0044(0x0004) (Edit)
 	int                                                CachedCombinedLODBias;                                    // 0x0048(0x0004) (Transient)
 	int                                                NumCinematicMipLevels;                                    // 0x004C(0x0004) (Edit)
-	struct FPointer                                    Resource;                                                 // 0x0050(0x0004) (Const, Native)
+	struct FTexturePlatformData*                       Resource;                                                 // 0x0050(0x0004) (Const, Native)
 	int                                                InternalFormatLODBias;                                    // 0x0054(0x0004) (Const)
 
 	static UClass* StaticClass()
@@ -10842,7 +10842,7 @@ public:
 class UTexture2D : public UTexture
 {
 public:
-	struct FIndirectArray_Mirror                       Mips;                                                     // 0x0058(0x000C) (Const, Native)
+	TArray<struct FTexture2DMipMap *>                  Mips;                                                     // 0x0058(0x000C) (Const, Native)
 	int                                                SizeX;                                                    // 0x0064(0x0004) (Const)
 	int                                                SizeY;                                                    // 0x0068(0x0004) (Const)
 	int                                                OriginalSizeX;                                            // 0x006C(0x0004) (Const)

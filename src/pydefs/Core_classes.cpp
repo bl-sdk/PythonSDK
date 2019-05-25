@@ -439,6 +439,7 @@ void Export_pystes_Core_classes(py::module &m)
 		.def_readwrite("Offset_Internal", &UProperty::Offset_Internal)
 		;
 	py::class_< UStructProperty, UProperty >(m, "UStructProperty")
+		.def("GetStruct", &UStructProperty::GetStruct, py::return_value_policy::reference)
 		;
 	py::class_< UStrProperty, UProperty >(m, "UStrProperty")
 		;
@@ -469,6 +470,7 @@ void Export_pystes_Core_classes(py::module &m)
 	py::class_< UByteAttributeProperty, UByteProperty >(m, "UByteAttributeProperty")
 		;
 	py::class_< UBoolProperty, UProperty >(m, "UBoolProperty")
+		.def("GetMask", &UBoolProperty::GetMask, py::return_value_policy::reference)
 		;
 	py::class_< UArrayProperty, UProperty >(m, "UArrayProperty")
 		.def("GetInner", &UArrayProperty::GetInner, py::return_value_policy::reference)
@@ -551,7 +553,7 @@ void Export_pystes_Core_classes(py::module &m)
 		.def("__setattr__", &FStruct::SetProperty, py::return_value_policy::reference)
 		.def("__repr__", &FStruct::Repr)
 		.def_readwrite("structType", &FStruct::structType, py::return_value_policy::reference)
-		.def("base", [](FStruct *self) { return (int)self->base; })
+		.def("GetBase", [](FStruct *self) { return (int)self->base; })
 		;
 
 	py::class_< FArray >(m, "FArray")
@@ -563,4 +565,12 @@ void Export_pystes_Core_classes(py::module &m)
 		.def("__repr__", &FArray::Repr)
 		.def("GetAddress", &FArray::GetAddress, py::return_value_policy::reference)
 		;
+
+	py::class_ < FScriptInterface >(m, "FScriptInterface")
+		.def(py::init<>())
+		.def("GetAddress", [](FScriptInterface *self) { return (int)&self; })
+		.def("GetInterfacePointer", [](FScriptInterface *self) { return (int)self->InterfacePointer; })
+		.def_readwrite("ObjectPointer", &FScriptInterface::ObjectPointer)
+		.def_readwrite("InterfacePointer", &FScriptInterface::InterfacePointer);
+
 }
