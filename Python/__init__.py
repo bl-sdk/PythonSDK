@@ -16,12 +16,9 @@ print = log
 
 
 Win32Directory = os.path.dirname(sys.executable)
-ModsDirectory = os.path.join(Win32Directory, "Plugins\\Python")
+ModsDirectory = os.path.join(Win32Directory, "Mods")
 """ The path to our mods folder, determined via the directory containing the
 current executable (Borderlands2.exe)."""
-
-# Change our working directory to the mods directory.
-os.chdir(ModsDirectory)
 
 class ModTypes(Enum):
 	""" A generic Enum type that's useful for giving plugins specific types, especially useful for sorting in the mod manager menu. """
@@ -730,5 +727,3 @@ def HookValueChange(caller: UObject, function: UFunction, params: FStruct) -> bo
 
 RunHook("WillowGame.WillowScrollingListDataProviderGameOptions.HandleSpinnerChange", "HookValueChange", HookValueChange)
 RunHook("WillowGame.WillowScrollingListDataProviderOptionsBase.HandleSliderChange", "HookValueChange", HookValueChange)
-
-os.chdir(Win32Directory)

@@ -11,8 +11,9 @@ class LegacyMod(bl2sdk.BL2MOD):
 	"""The path to the game's Binaries directory; this is the parent directory from
 	which we are executed."""
 
+	LocalModDir = os.path.dirname(os.path.realpath(__file__))
 
-	SettingsPath = os.path.join(BinariesDirectory, "Win32\\Plugins\\Python\\legacy_mods.json")
+	SettingsPath = os.path.join(LocalModDir, "settings.json")
 	"""The path to the file in which we store our settings."""
 
 	def LoadSettings():

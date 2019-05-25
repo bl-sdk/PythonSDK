@@ -8,6 +8,8 @@ import os
 class CrossSkillRandomizer(bl2sdk.BL2MOD):
     Description = "Randomize all the skills!"
 
+    LocalModDir = os.path.dirname(os.path.realpath(__file__))
+
     def __init__(self, seed=None):
         self.Seed = seed
         if seed:
@@ -16,7 +18,7 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
             self.Name = "Cross Class Skill Randomizer (New Seed)"
 
     def RecordSeed(self):
-        with open(".\\Plugins\\Python\\rando_log.json", "r+") as f:
+        with open(LocalModDir + "\\log.json", "r+") as f:
             history = json.loads(f.read())
             if self.Seed in history:
                 return
@@ -345,14 +347,15 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
         "GD_Tulip_Mechromancer_Skills.LittleBigTrouble.WiresDontTalk",
     ]
 
+rando = CrossSkillRandomizer()
 
-bl2sdk.Mods.append(CrossSkillRandomizer())
+bl2sdk.Mods.append(rando)
 
-if os.path.isfile("rando_log.json"):
-    with open("rando_log.json", "r") as f:
+if os.path.isfile(rando.LocalModDir + "\\log.json"):
+    with open(rando.LocalModDir + "\\log.json", "r") as f:
         seeds = json.loads(f.read())
         for seed in seeds:
             bl2sdk.Mods.append(CrossSkillRandomizer(seed))
 else:
-    with open("rando_log.json", "w") as f:
+    with open(rando.LocalModDir + "\\log.json", "w") as f:
         f.write("[]")
