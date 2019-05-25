@@ -30,7 +30,7 @@ namespace Settings
 
 	std::wstring GetConfigFile()
 	{
-		return GetBinFile(L"robeth-sdk.cfg");
+		return GetBinFile(L"python-sdk.cfg");
 	}
 
 	std::wstring GetBinFile(const std::wstring& filename)
@@ -50,7 +50,7 @@ namespace Settings
 	std::wstring GetPythonFile(const std::wstring& filename)
 	{
 		std::wstring newPath;
-		newPath = binPath + L"Plugins\\Python\\" + filename;
+		newPath = binPath + L"Mods\\" + filename;
 		return newPath;
 	}
 

@@ -383,14 +383,6 @@ bl2sdk.Options = Options
 bl2sdk.Mods = [ModOptions()]
 bl2sdk.ModMenuOpened = []
 
-try:
-	import legacy
-	import randomizer
-	import commander
-	import grenadoer
-	import chatbot
-except:
-	pass
 
 """ A generic helper function that removes a hook (if it exists) and then re-registers it. """
 def RunHook(functionName, name, function):
@@ -740,5 +732,3 @@ RunHook("WillowGame.WillowScrollingListDataProviderGameOptions.HandleSpinnerChan
 RunHook("WillowGame.WillowScrollingListDataProviderOptionsBase.HandleSliderChange", "HookValueChange", HookValueChange)
 
 os.chdir(Win32Directory)
-
-# SetLoggingLevel("DEBUG")

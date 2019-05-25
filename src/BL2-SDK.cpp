@@ -247,7 +247,7 @@ namespace BL2SDK
 		gameConsole = (UConsole *)UObject::Find("WillowConsole", "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0");
 		if (gameConsole == nullptr && engine && ((UEngine *)engine)->GameViewport)
 			gameConsole = ((UEngine *)engine)->GameViewport->ViewportConsole;
-		if (gameConsole && (gameConsole->ConsoleKey == FName("None") || gameConsole->ConsoleKey == FName("Undefined")))
+		if (gameConsole && (gameConsole->ConsoleKey == FName("None") || gameConsole->ConsoleKey == FName("Undefine")))
 			gameConsole->ConsoleKey = FName("Tilde");
 
 		InitializePython();

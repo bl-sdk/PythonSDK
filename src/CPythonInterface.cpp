@@ -164,14 +164,52 @@ void CPythonInterface::CleanupState()
 	py::finalize_interpreter();
 }
 
+std::vector<std::wstring> getSubdirs(const std::wstring& path)
+{
+	WIN32_FIND_DATA findfiledata;
+	HANDLE hFind = INVALID_HANDLE_VALUE;
+
+	wchar_t fullpath[MAX_PATH];
+	GetFullPathName(path.c_str(), MAX_PATH, fullpath, 0);
+	std::wstring fp(fullpath);
+
+	std::vector<std::wstring> output{};
+	hFind = FindFirstFile((fp + L"\\*").c_str(), &findfiledata);
+	if (hFind != INVALID_HANDLE_VALUE)
+	{
+		do
+		{
+			if ((findfiledata.dwFileAttributes | FILE_ATTRIBUTE_DIRECTORY) == FILE_ATTRIBUTE_DIRECTORY
+				&& (findfiledata.cFileName[0] != '.') && wcscmp(L"__pycache__", findfiledata.cFileName))
+			{
+				output.push_back(findfiledata.cFileName);
+			}
+		} while (FindNextFile(hFind, &findfiledata) != 0);
+	}
+	return output;
+}
+
 PythonStatus CPythonInterface::InitializeModules()
 {
 	m_modulesInitialized = false;
 	SetPaths();
-	if (DoFile("init.py") != 0)
-	{
+	try {
+		py::module::import("Mods");
+	}
+	catch (std::exception e) {
+		Logging::LogF(e.what());
 		Logging::Log("[Python] Failed to initialize Python modules\n");
 		return PYTHON_MODULE_ERROR;
+	}
+	std::vector<std::wstring> modFolders = getSubdirs(Settings::GetPythonFile(L""));
+	for (std::vector<std::wstring>::iterator it = modFolders.begin(); it != modFolders.end(); ++it) {
+		try {
+			py::module::import(Util::Narrow(*it).c_str());
+		}
+		catch (std::exception e) {
+			Logging::LogF(e.what());
+			Logging::LogF("[Python] Failed to import mod: %s\n", Util::Narrow(*it).c_str());
+		}
 	}
 	Logging::Log("[Python] Python initialized (" PYTHON_ABI_STRING ")\n");
 	m_modulesInitialized = true;
