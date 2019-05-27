@@ -44,6 +44,7 @@ class Options():
 			self.MaxValue = MaxValue
 			self.Increment = Increment
 			self.Description = Description
+			self.CurrentValue = StartingValue
 	
 	class SpinnerOption():
 		""" This option is especially useful when you want the user to choose between two or more, specified options. """
@@ -53,6 +54,7 @@ class Options():
 		def __init__(self, Caption: str, Description: str, StartingChoiceIndex: int, Choices: list):
 			self.Caption = Caption
 			self.StartingChoiceIndex = StartingChoiceIndex
+			self.CurrentValue = StartingChoiceIndex
 			self.Choices = Choices
 			self.Description = Description
 
@@ -64,6 +66,7 @@ class Options():
 		def __init__(self, Caption: str, Description: str, StartingValue: bool):
 			self.Caption = Caption
 			self.StartingChoiceIndex = int(StartingValue)
+			self.CurrentValue = StartingChoiceIndex
 			self.Description = Description
 			self.Choices = ["Off","On"]
 
@@ -713,9 +716,9 @@ def PopulateGameOptions(caller: UObject, function: UFunction, params: FStruct) -
 	   		caption = (mod.Name + ": " + option.Caption).upper()
 	   		option.EventID = startingIndex
 	   		if option.OptionType == 0:	
-	   			params.TheList.AddSpinnerListItem(startingIndex, caption, False, option.StartingChoiceIndex, option.Choices)
+	   			params.TheList.AddSpinnerListItem(startingIndex, caption, False, option.CurrentValue, option.Choices)
 	   		elif option.OptionType == 3:
-	   			params.TheList.AddSliderListItem(startingIndex, caption, False, option.StartingValue, option.MinValue, option.MaxValue, option.Increment)
+	   			params.TheList.AddSliderListItem(startingIndex, caption, False, option.CurrentValue, option.MinValue, option.MaxValue, option.Increment)
 	   		caller.AddDescription(startingIndex, option.Description)
 	   		startingIndex = startingIndex + 1
    else:
@@ -731,9 +734,11 @@ def HookValueChange(caller: UObject, function: UFunction, params: FStruct) -> bo
 		if option.EventID == params.EventID:
 			if params.NewSliderValue != None:
 				mod.ModOptionChanged(option, float(params.NewSliderValue))
+				option.CurrentValue = float(params.NewSliderValue)
 				break
 			elif params.NewChoiceIndex != None:
 				mod.ModOptionChanged(option, float(params.NewChoiceIndex))
+				option.CurrentValue = float(params.NewChoiceIndex)
 				break
 	DoInjectedCallNext()
 	return False
