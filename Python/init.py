@@ -390,11 +390,12 @@ def RunHook(functionName, name, function):
 
 """ Here we populate our mod manager with all of our mods that we've got loaded. """
 def LoadModList(caller: UObject, function: UFunction, params: FStruct) -> bool:
-	caller.MessageEnumerating = "Reloading Mods"
-	caller.SetFilterFromStringAndSortNew("compatibility","Utility Mods", "isCompatibility:1")
-	caller.SetFilterFromStringAndSortNew("seasonpass","Gameplay Mods", "isSeasonPass:1")
-	caller.SetFilterFromStringAndSortNew("addon","Content Mods", "isAddon:1")
+	caller.ClearFilters()
+	caller.SetFilterFromString("compatibility","Utility Mods", "isCompatibility:1")
+	caller.SetFilterFromString("seasonpass","Gameplay Mods", "isSeasonPass:1")
+	caller.SetFilterFromString("addon","Content Mods", "isAddon:1")
 	caller.SetFilterFromStringAndSortNew("all","All Mods","")
+
 	caller.SetStoreHeader("Mods", 0, "By Abahbob", "Mod Manager")
 	
 	translationContext = GetEngine().GamePlayers[0].GetTranslationContext()
@@ -445,8 +446,20 @@ def HookShopInputKey(caller: UObject, function: UFunction, params: FStruct) -> b
 			obj = caller.GetSelectedObject()
 			translationContext = GetEngine().GamePlayers[0].GetTranslationContext()
 			obj.SetString(caller.Prop_contentTitleText, mod.Name, translationContext)
-			obj.SetString(caller.Prop_descriptionText, mod.Description, translationContext)
-			obj.SetString(caller.Prop_messageText, mod.Status, translationContext)
+
+			fullDescription = mod.Description + "\n\nCreated by: " + mod.Author
+			if mod.Status == "Enabled" or mod.Status == "":
+				obj.SetString(caller.Prop_statusText, "<font color=\"#00FF00\">Enabled</font>")
+				obj.SetString(caller.Prop_messageText, "<font color=\"#00FF00\">Enabled</font>")
+			else:
+				obj.SetString(caller.Prop_statusText, "<font color=\"#FF0000\">Disabled</font>")
+				obj.SetString(caller.Prop_messageText, "<font color=\"#FF0000\">Disabled</font>")
+			try:
+				obj.SetFloat(caller.Prop_isSeasonPass, int(ModTypes.Gameplay in mod.Types))
+				obj.SetFloat(caller.Prop_isAddOn, int(ModTypes.Content in mod.Types))
+				obj.SetFloat(caller.Prop_isCompatibility, int(ModTypes.Utility in mod.Types))			
+			except AttributeError:
+				pass
 			caller.RefreshDLC()
 
 	elif key != 'Enter':
@@ -677,10 +690,12 @@ RunHook("WillowGame.WillowScrollingListDataProviderTopLevelOptions.Populate", "P
 global isMenuPluginMenu
 isMenuPluginMenu = False
 
-""" This function is ran whenever the selection of an item in a WillowScrollingListDataProviderBase, we only care to use this for detecting if our current selection is the `PLUGINS` menu.""" 
+""" This function is ran whenever the selection of an item in a WillowScrollingListDataProviderBase, we only care to use this for detecting if our current selection is the `PLUGINS` menu. """
 def HandleSelectionChange(caller: UObject, function: UFunction, params: FStruct) -> bool:
 	global isMenuPluginMenu
-	isMenuPluginMenu = (caller.MenuDisplayName == "OPTIONS" and params.EventID == 0 and (params.TheList.GetSelectedIndex() == 5 or params.TheList.GetSelectedIndex() == 4))
+	selectedIndex = params.TheList.GetSelectedIndex()
+	isMenuPluginMenu = (caller.MenuDisplayName == "OPTIONS" and params.EventID == 0 and (selectedIndex == 5 or selectedIndex == 4))
+	DoInjectedCallNext()
 	return True
 
 RunHook("WillowGame.WillowScrollingListDataProviderBase.HandleSelectionChange", "HandleSelectionChange", HandleSelectionChange)
