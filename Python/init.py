@@ -23,6 +23,49 @@ current executable (Borderlands2.exe)."""
 # Change our working directory to the mods directory.
 os.chdir(ModsDirectory)
 
+class ModTypes(Enum):
+	""" A generic Enum type that's useful for giving plugins specific types, especially useful for sorting in the mod manager menu. """
+	Utility = 1
+	Content = 2
+	Gameplay = 3
+
+class Options():
+	""" A generic helper class that stores all of the option types available in the `PLUGINS` menu. """
+
+	class SliderOption():
+		""" This class is a holder for all slider option types, useful for specifying integer/float values. """
+
+		EventID = 0
+		OptionType = 3
+		def __init__(self, Caption: str, Description: str, StartingValue: float, MinValue: float, MaxValue: float, Increment: float):
+			self.Caption = Caption
+			self.StartingValue = StartingValue
+			self.MinValue = MinValue
+			self.MaxValue = MaxValue
+			self.Increment = Increment
+			self.Description = Description
+	
+	class SpinnerOption():
+		""" This option is especially useful when you want the user to choose between two or more, specified options. """
+
+		EventID = 0
+		OptionType = 0
+		def __init__(self, Caption: str, Description: str, StartingChoiceIndex: int, Choices: list):
+			self.Caption = Caption
+			self.StartingChoiceIndex = StartingChoiceIndex
+			self.Choices = Choices
+			self.Description = Description
+
+	class BooleanOption():
+		""" This class is pretty much just a SpinnerOption, but is cleaner and more useful if you want a toggleable feature in your plugin. """
+
+		EventID = 0
+		OptionType = 0
+		def __init__(self, Caption: str, Description: str, StartingValue: bool):
+			self.Caption = Caption
+			self.StartingChoiceIndex = int(StartingValue)
+			self.Description = Description
+			self.Choices = ["Off","On"]
 
 class BL2MOD():
 	"""An object that describes a mod to be represented in the BL2 Mod Manager.
