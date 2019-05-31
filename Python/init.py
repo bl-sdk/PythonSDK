@@ -4,6 +4,7 @@ import os
 import sys
 import mypy
 import webbrowser
+from enum import Enum
 
 
 def log(s):
@@ -16,12 +17,64 @@ print = log
 
 Win32Directory = os.path.dirname(sys.executable)
 ModsDirectory = os.path.join(Win32Directory, "Plugins\\Python")
-"""The path to our mods folder, determined via the directory containing the
+""" The path to our mods folder, determined via the directory containing the
 current executable (Borderlands2.exe)."""
 
 # Change our working directory to the mods directory.
 os.chdir(ModsDirectory)
 
+class ModTypes(Enum):
+	""" A generic Enum type that's useful for giving plugins specific types, especially useful for sorting in the mod manager menu. """
+	Utility = 1
+	Content = 2
+	Gameplay = 3
+
+class Options():
+	""" A generic helper class that stores all of the option types available in the `PLUGINS` menu. """
+
+	# Helpful boolean to tell the `SETTINGS` menu that the currently selected menu is the plugin menu.
+	# We want to know this just so we can possibly remove all items in the `PLUGIN` menu, but not the `GAMEPLAY` menu.
+	isMenuPluginMenu = False
+	# We want this boolean to properly sort the PLUGINS menu. The menu should go after the `GAMEPAD` menu if its enabled.
+	isGamepadConnected = False
+
+	class SliderOption():
+		""" This class is a holder for all slider option types, useful for specifying integer/float values. """
+
+		EventID = 0
+		OptionType = 3
+		def __init__(self, Caption: str, Description: str, StartingValue: float, MinValue: float, MaxValue: float, Increment: float):
+			self.Caption = Caption
+			self.StartingValue = StartingValue
+			self.MinValue = MinValue
+			self.MaxValue = MaxValue
+			self.Increment = Increment
+			self.Description = Description
+			self.CurrentValue = StartingValue
+	
+	class SpinnerOption():
+		""" This option is especially useful when you want the user to choose between two or more, specified options. """
+
+		EventID = 0
+		OptionType = 0
+		def __init__(self, Caption: str, Description: str, StartingChoiceIndex: int, Choices: list):
+			self.Caption = Caption
+			self.StartingChoiceIndex = StartingChoiceIndex
+			self.CurrentValue = StartingChoiceIndex
+			self.Choices = Choices
+			self.Description = Description
+
+	class BooleanOption():
+		""" This class is pretty much just a SpinnerOption, but is cleaner and more useful if you want a toggleable feature in your plugin. """
+
+		EventID = 0
+		OptionType = 0
+		def __init__(self, Caption: str, Description: str, StartingValue: bool):
+			self.Caption = Caption
+			self.StartingChoiceIndex = int(StartingValue)
+			self.CurrentValue = int(StartingValue)
+			self.Description = Description
+			self.Choices = ["Off","On"]
 
 class BL2MOD():
 	"""An object that describes a mod to be represented in the BL2 Mod Manager.
@@ -57,6 +110,12 @@ class BL2MOD():
 
 		SettingsInputs = { 'Enter': "Do Something", "H": "Do Something Else" }
 	"""
+	Types = []
+	"""A list that specifies all the mod types that the mod is. 
+	For a list of mod types, see the ModTypes enum.
+	"""
+	Author = "Unknown"
+	"""The author(s) of the mod which is displayed in the mod manager menu.	"""
 
 	def Enable(self):
 		"""Called by the mod manager to enable the mod.
@@ -215,6 +274,37 @@ class BL2MOD():
 		"""
 		pass
 
+	def RegisterGameConfigOption(self, Option: Options):
+		"""Adds a given option to the `PLUGINS` menu, allowing the mod to change specific properties in the menu. """ 
+		for modOption, mod in ModOptionsBinding.OptionList.items():
+			if mod is self and modOption.Caption == Option.Caption:
+				return
+		ModOptionsBinding(self, Option)
+
+	def UnregisterGameConfigOption(self, Option: Options):
+		"""Removes a given option from the `PLUGINS` menu. """ 
+		for option, mod in ModOptionsBinding.OptionList.items():
+			if mod is self and option.Caption is Option.Caption:
+				del ModOptionsBinding.OptionList[Option]
+				return
+
+	def ModOptionChanged(self, Option: Options, newValue: float):
+		"""Called when the user changes the value of our option for the given setting. 
+		Mods may define this method, if for example they want to save the state of a given setting:
+			
+			def ModOptionChanged(self, Option, newValue):
+				currentModValue = newValue
+				MySettings.Save(currentModValue)
+
+		Parameters
+		----------
+		Option: Options
+			A class that is used to specify a type of a given setting. 
+		newValue: float
+			A float value that is the new value that the setting was changed in. 
+			If the changed option is a boolean/spinner option, it's the index in the `Choices` array.
+			If the changed option is a slider option, the value of the slider that the value was changed to. """
+		pass
 
 class GameInputBinding():
 	"""An object that describes a key binding registered by a mod.
@@ -230,6 +320,8 @@ class GameInputBinding():
 	"""A dictionary for looking up bindings by their tag."""
 	ByKey = dict()
 	"""A dictionary for looking up bindings by their currently assigned key."""
+	ByMod = dict()
+	"""A dictionary that looks up the mod names by their tags. """
 
 	def __init__(self, mod: BL2MOD, name: str, key: str):
 		self.Mod = mod
@@ -239,8 +331,8 @@ class GameInputBinding():
 		# it in the dictionary, and increment the tag index for the next one.
 		tag = "bl2sdk%s" % GameInputBinding.TagIndex
 		GameInputBinding.ByTag[tag] = self
+		GameInputBinding.ByMod[tag] = self.Mod.Name
 		GameInputBinding.TagIndex += 1
-
 		# If no default key was requested, default to "None."
 		if key == None:
 			self.Key = 'None'
@@ -254,13 +346,28 @@ class GameInputBinding():
 			self.Key = key
 			GameInputBinding.ByKey[key] = self
 
+class ModOptionsBinding():
+	"""An object that describes a option registered by a mod.
+
+	Each option object gets given a mod that the option is linked. This gets used to order all of our config options.
+	All of the menu options are bound to a specific mod as well. This is used to use sub-menus for our options menu.
+	"""
+
+	OptionList = dict()
+
+	def __init__(self, mod: BL2MOD, option: Options):
+		self.Options = option
+
+		ModOptionsBinding.OptionList[self.Options] = mod
 
 class ModOptions(BL2MOD):
 
 	Name = "General"
 	Status = ""
-	Description = "Welcome to the Borderlands 2 Mod Manager by Abahbob!\n\nSee below for options."
+	Description = "Welcome to the Borderlands 2 Mod Manager\n\nSee below for options."
 	SettingsInputs = { 'O': "Open Mods Folder", 'R': "Reload Mods", 'H': "Help" }
+	Types = []
+	Author = "Abahbob"
 
 	def SettingsInputPressed(self, name):
 		if name == "Open Mods Folder":
@@ -270,8 +377,9 @@ class ModOptions(BL2MOD):
 		elif name == "Help":
 			webbrowser.open("https://github.com/bl-sdk/BL2-Python-Plugins/wiki")
 
-
 bl2sdk.BL2MOD = BL2MOD
+bl2sdk.ModTypes = ModTypes
+bl2sdk.Options = Options
 bl2sdk.Mods = [ModOptions()]
 bl2sdk.ModMenuOpened = []
 
@@ -279,28 +387,52 @@ try:
 	import legacy
 	import randomizer
 	import commander
-	import chatbot
 	import grenadoer
+	import chatbot
 except:
 	pass
 
+""" A generic helper function that removes a hook (if it exists) and then re-registers it. """
+def RunHook(functionName, name, function):
+	RemoveHook(functionName, name)
+	RegisterHook(functionName, name, function)
 
+""" Here we populate our mod manager with all of our mods that we've got loaded. """
 def LoadModList(caller: UObject, function: UFunction, params: FStruct) -> bool:
+	caller.ClearFilters()
+	caller.SetFilterFromString("compatibility","Utility Mods", "isCompatibility:1")
+	caller.SetFilterFromString("seasonpass","Gameplay Mods", "isSeasonPass:1")
+	caller.SetFilterFromString("addon","Content Mods", "isAddon:1")
+	caller.SetFilterFromStringAndSortNew("all","All Mods","")
+
 	caller.SetStoreHeader("Mods", 0, "By Abahbob", "Mod Manager")
+	
+	translationContext = GetEngine().GamePlayers[0].GetTranslationContext()
 	for idx, mod in enumerate(bl2sdk.Mods):
-		translationContext = GetEngine().GamePlayers[0].GetTranslationContext()
 		obj, _ = caller.CreateMarketplaceItem(())
 		obj.SetString(caller.Prop_offeringId, str(idx), translationContext)
 		obj.SetString(caller.Prop_contentTitleText, mod.Name, translationContext)
-		obj.SetString(caller.Prop_descriptionText, mod.Description, translationContext)
-		obj.SetString(caller.Prop_messageText, mod.Status, translationContext)
+		fullDescription = mod.Description + "\n\nCreated by: " + mod.Author
+		obj.SetString(caller.Prop_descriptionText, fullDescription, translationContext)
+		if mod.Status == "Enabled" or mod.Status == "":
+			obj.SetString(caller.Prop_statusText, "<font color=\"#00FF00\">Enabled</font>")
+			obj.SetString(caller.Prop_messageText, "<font color=\"#00FF00\">Enabled</font>")
+		else:
+			obj.SetString(caller.Prop_statusText, "<font color=\"#FF0000\">Disabled</font>")
+			obj.SetString(caller.Prop_messageText, "<font color=\"#FF0000\">Disabled</font>")
+		try:
+			obj.SetFloat(caller.Prop_isSeasonPass, int(ModTypes.Gameplay in mod.Types))
+			obj.SetFloat(caller.Prop_isAddOn, int(ModTypes.Content in mod.Types))
+			obj.SetFloat(caller.Prop_isCompatibility, int(ModTypes.Utility in mod.Types))			
+		except AttributeError:
+			pass
 		caller.AddContentData(obj)
 	caller.PostContentLoaded(True)
 	return False
 
-RemoveHook("WillowGame.MarketplaceGFxMovie.OnDownloadableContentListRead", "InjectMods")
-RegisterHook("WillowGame.MarketplaceGFxMovie.OnDownloadableContentListRead", "InjectMods", LoadModList)
+RunHook("WillowGame.MarketplaceGFxMovie.OnDownloadableContentListRead", "InjectMods", LoadModList)
 
+""" This function controls mod specific keybinds in the mod manager. """
 def HookShopInputKey(caller: UObject, function: UFunction, params: FStruct) -> bool:
 	key = params.ukey
 	event = params.uevent
@@ -323,8 +455,20 @@ def HookShopInputKey(caller: UObject, function: UFunction, params: FStruct) -> b
 			obj = caller.GetSelectedObject()
 			translationContext = GetEngine().GamePlayers[0].GetTranslationContext()
 			obj.SetString(caller.Prop_contentTitleText, mod.Name, translationContext)
-			obj.SetString(caller.Prop_descriptionText, mod.Description, translationContext)
-			obj.SetString(caller.Prop_messageText, mod.Status, translationContext)
+
+			fullDescription = mod.Description + "\n\nCreated by: " + mod.Author
+			if mod.Status == "Enabled" or mod.Status == "":
+				obj.SetString(caller.Prop_statusText, "<font color=\"#00FF00\">Enabled</font>")
+				obj.SetString(caller.Prop_messageText, "<font color=\"#00FF00\">Enabled</font>")
+			else:
+				obj.SetString(caller.Prop_statusText, "<font color=\"#FF0000\">Disabled</font>")
+				obj.SetString(caller.Prop_messageText, "<font color=\"#FF0000\">Disabled</font>")
+			try:
+				obj.SetFloat(caller.Prop_isSeasonPass, int(ModTypes.Gameplay in mod.Types))
+				obj.SetFloat(caller.Prop_isAddOn, int(ModTypes.Content in mod.Types))
+				obj.SetFloat(caller.Prop_isCompatibility, int(ModTypes.Utility in mod.Types))			
+			except AttributeError:
+				pass
 			caller.RefreshDLC()
 
 	elif key != 'Enter':
@@ -332,21 +476,20 @@ def HookShopInputKey(caller: UObject, function: UFunction, params: FStruct) -> b
 
 	return False
 
-RemoveHook("WillowGame.MarketplaceGFxMovie.ShopInputKey", "HookShopInputKey")
-RegisterHook("WillowGame.MarketplaceGFxMovie.ShopInputKey", "HookShopInputKey", HookShopInputKey)
+RunHook("WillowGame.MarketplaceGFxMovie.ShopInputKey", "HookShopInputKey", HookShopInputKey)
 
-
+""" Now we replace the DLC menu with the mods. """
 def ReplaceDLCWithMods(caller: UObject, function: UFunction, params: FStruct) -> bool:
 	Caption = params.Caption
 	bNew = params.bNew
 	if Caption == "$WillowMenu.WillowScrollingListDataProviderFrontEnd.DLC":
 		Caption = "MODS"
-		bNew = True
+		bNew = False
 	DoInjectedCallNext()
 	caller.AddListItem(params.EventID, Caption, params.bDisabled, bNew)
 	return False
 
-
+""" An efficient function that notifies us when we're in the main menu to populate the DLC menu. """
 def HookMainMenuPopulateForMods(caller: UObject, function: UFunction, params: FStruct) -> bool:
 	for modFunc in bl2sdk.ModMenuOpened:
 		try:
@@ -359,10 +502,11 @@ def HookMainMenuPopulateForMods(caller: UObject, function: UFunction, params: FS
 	RemoveHook("WillowGame.WillowScrollingList.AddListItem", "ReplaceDLCWithMods")
 	return False
 
-RemoveHook("WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods")
-RegisterHook("WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods", HookMainMenuPopulateForMods)
+RunHook("WillowGame.WillowScrollingListDataProviderFrontEnd.Populate", "HookMainMenuPopulateForMods", HookMainMenuPopulateForMods)
 
+seperatorNames = [""]
 
+""" Hook whenever we change the currently selected mod in the mod manager. 	"""
 def HookModSelected(caller: UObject, function: UFunction, params: FStruct) -> bool:
 	selectedObject = caller.GetSelectedObject()
 	try:
@@ -374,7 +518,7 @@ def HookModSelected(caller: UObject, function: UFunction, params: FStruct) -> bo
 
 	inputs = mod.SettingsInputs.copy()
 	inputs['Escape'] = "Cancel"
-
+	inputs['Q'] = "Filter"
 	leftColumn = True
 	leftColumnEntries = []
 	rightColumnEntries = []
@@ -389,21 +533,26 @@ def HookModSelected(caller: UObject, function: UFunction, params: FStruct) -> bo
 	caller.SetTooltips(leftColumnText, rightColumnText)
 	return False
 
+RunHook("WillowGame.MarketplaceGFxMovie.extOnOfferingChanged", "HookModSelected", HookModSelected)
 
-RemoveHook("WillowGame.MarketplaceGFxMovie.extOnOfferingChanged", "HookModSelected")
-RegisterHook("WillowGame.MarketplaceGFxMovie.extOnOfferingChanged", "HookModSelected", HookModSelected)
-
-
+""" This function adds all of our keybinds to the keybind menu. """ 
 def HookInitKeyBinding(caller: UObject, function: UFunction, params: FStruct) -> bool:
+	seperatorNames.clear()
+	lastModName = ""
 	for tag, binding in GameInputBinding.ByTag.items():
+		modName = GameInputBinding.ByMod[tag]
+		if lastModName != modName:
+			lastModName = modName
+			nameOfSeperator = ("------ " + modName + " ------")
+			seperatorNames.append(nameOfSeperator)
+			caller.AddKeyBindEntry(nameOfSeperator, nameOfSeperator, nameOfSeperator)
 		DoInjectedCallNext()
 		caller.AddKeyBindEntry(tag, tag, binding.Name)
 	return True
 
-RemoveHook("WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.InitKeyBinding", "HookInitKeyBinding")
-RegisterHook("WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.InitKeyBinding", "HookInitKeyBinding", HookInitKeyBinding)
+RunHook("WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.InitKeyBinding", "HookInitKeyBinding", HookInitKeyBinding)
 
-
+""" A function that gets localized versions of keys as not all keys are supported. """
 def GetFixedLocalizedKeyName(menu, key):
 	if key == 'None':
 		return ''
@@ -415,7 +564,7 @@ def GetFixedLocalizedKeyName(menu, key):
 	except:
 		return ''
 
-
+""" A function that hooks into the creation of config options. """
 def HookOnPopulateKeys(caller: UObject, function: UFunction, params: FStruct) -> bool:
 	DoInjectedCallNext()
 	caller.extOnPopulateKeys()
@@ -423,6 +572,9 @@ def HookOnPopulateKeys(caller: UObject, function: UFunction, params: FStruct) ->
 	translationContext = GetEngine().GamePlayers[0].GetTranslationContext()
 
 	for keyBind in caller.KeyBinds:
+		if keyBind.Tag in seperatorNames:
+			keyBind.Object.SetString('value', "")
+			keyBind.Object.SetVisible(False)
 		if keyBind.Tag in GameInputBinding.ByTag:
 			binding = GameInputBinding.ByTag[keyBind.Tag]
 			keyBind.CurrentKey = binding.Key
@@ -435,12 +587,13 @@ def HookOnPopulateKeys(caller: UObject, function: UFunction, params: FStruct) ->
 
 	return False
 
-RemoveHook("WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.extOnPopulateKeys", "HookOnPopulateKeys")
-RegisterHook("WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.extOnPopulateKeys", "HookOnPopulateKeys", HookOnPopulateKeys)
+RunHook("WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.extOnPopulateKeys", "HookOnPopulateKeys", HookOnPopulateKeys)
 
-
+""" A function that changes a mod's keybinds in the configuration menu. """
 def HookBindCurrentSelection(caller: UObject, function: UFunction, params: FStruct) -> bool:
 	selectedKeyBind = caller.KeyBinds[caller.CurrentKeyBindSelection]
+	if selectedKeyBind.Tag in seperatorNames:
+		return False
 	selectedBinding = None
 
 	oldKey = selectedKeyBind.CurrentKey
@@ -485,30 +638,106 @@ def HookBindCurrentSelection(caller: UObject, function: UFunction, params: FStru
 	caller.ControllerMappingClip.InvalidateKeyData()
 	return False
 
-RemoveHook("WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.BindCurrentSelection", "HookBindCurrentSelection")
-RegisterHook("WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.BindCurrentSelection", "HookBindCurrentSelection", HookBindCurrentSelection)
+RunHook("WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.BindCurrentSelection", "HookBindCurrentSelection", HookBindCurrentSelection)
 
+def HookDoBind(caller: UObject, function: UFunction, params: FStruct) -> bool:
+	if caller.KeyBinds[caller.CurrentKeyBindSelection].Caption in seperatorNames:
+		return False
+	return True
 
+RunHook("WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.DoBind", "HookDoBind", HookDoBind)
+
+""" Hook onto player input so we know when a mod's keybinds were pressed. """
 def HookInputKey(caller: UObject, function: UFunction, params: FStruct) -> bool:
 	# If we do not have a binding associated with this key, we ignore it.
 	if params.Key not in GameInputBinding.ByKey:
 		return True
-
 	# Retrieve the binding data from our dictionary.
 	binding = GameInputBinding.ByKey[params.Key]
 
 	# An event of 0 correlates to the key being pressed.
 	if params.Event == 0:
-		binding.Mod.GameInputPressed(binding.Name)
+		binding.Mod.GameInputPressed(binding)
 	# An event of 0 correlates to the key being released.
 	elif params.Event == 1:
-		binding.Mod.GameInputReleased(binding.Name)
+		binding.Mod.GameInputReleased(binding)
 
 	return False
 
-RemoveHook("WillowGame.WillowUIInteraction.InputKey", "HookInputKey")
-RegisterHook("WillowGame.WillowUIInteraction.InputKey", "HookInputKey", HookInputKey)
+RunHook("WillowGame.WillowUIInteraction.InputKey", "HookInputKey", HookInputKey)
 
+""" This function adds the `PLUGINS` menu into the options menu. """
+def AddModConfigMenu(caller: UObject, function: UFunction, params: FStruct) -> bool:
+   Caption = params.Caption
+   DoInjectedCallNext()
+   caller.AddListItem(params.EventID, Caption, params.bDisabled, params.bNew)
+   correctMenuLocation = (Caption == "$WillowMenu.WillowScrollingListDataProviderTopLevelOptions.KeyboardMouseOptions" and Options.isGamepadConnected == False) or (Caption == "$WillowMenu.WillowScrollingListDataProviderTopLevelOptions.GamepadOptionsPC" and Options.isGamepadConnected == True)
+   if correctMenuLocation and (bool(ModOptionsBinding.OptionList) == True):
+      caller.AddListItem(0, "PLUGINS", False, False)
+   return False
+
+""" This function hooks onto the options menu to create the `PLUGINS` menu. """
+def PopulateGameplayOptions(caller: UObject, function: UFunction, params: FStruct) -> bool:
+   RegisterHook("WillowGame.WillowScrollingList.AddListItem", "AddModConfigMenu", AddModConfigMenu)
+   DoInjectedCallNext()
+   # We'll wanna set our gamepad boolean correctly here since we can't call it in AddListItem.
+   Options.isGamepadConnected = caller.IsPCGamepadConnected()
+   caller.Populate(params.TheList)
+   RemoveHook("WillowGame.WillowScrollingList.AddListItem", "AddModConfigMenu")
+   return False
+
+RunHook("WillowGame.WillowScrollingListDataProviderTopLevelOptions.Populate", "PopulateGameplayOptions", PopulateGameplayOptions)
+
+""" This function is ran whenever the selection of an item in a WillowScrollingListDataProviderBase, we only care to use this for detecting if our current selection is the `PLUGINS` menu. """
+def HandleSelectionChange(caller: UObject, function: UFunction, params: FStruct) -> bool:
+	if caller.MenuDisplayName == "OPTIONS":
+		selectedIndex = params.TheList.GetSelectedIndex()
+		Options.isMenuPluginMenu = (caller.MenuDisplayName == "OPTIONS" and params.EventID == 0 and (selectedIndex == 5 or selectedIndex == 4))
+	DoInjectedCallNext()
+	return False
+
+RunHook("WillowGame.WillowScrollingListDataProviderBase.HandleSelectionChange", "HandleSelectionChange", HandleSelectionChange)
+
+""" This function fills up our game options with the options we want from our given mods. """
+def PopulateGameOptions(caller: UObject, function: UFunction, params: FStruct) -> bool:
+   # We technically might not want to fully use this now, but it keeps everything safe for the HookValueChange() hook.
+   startingIndex = 556
+   # If we're in the plugin menu, we shouldn't fill in the other `GAMEPLAY` menu.
+   if Options.isMenuPluginMenu == True:
+	   for option, mod in ModOptionsBinding.OptionList.items():
+	   		caption = (mod.Name + ": " + option.Caption).upper()
+	   		option.EventID = startingIndex
+	   		if option.OptionType == 0:	
+	   			params.TheList.AddSpinnerListItem(startingIndex, caption, False, option.CurrentValue, option.Choices)
+	   		elif option.OptionType == 3:
+	   			params.TheList.AddSliderListItem(startingIndex, caption, False, option.CurrentValue, option.MinValue, option.MaxValue, option.Increment)
+	   		caller.AddDescription(startingIndex, option.Description)
+	   		startingIndex = startingIndex + 1
+	   DoInjectedCallNext()
+   else:
+   		DoInjectedCallNext()
+   		caller.Populate(params.TheList)
+   return False
+
+RunHook("WillowGame.WillowScrollingListDataProviderGameOptions.Populate", "PopulateGameOptions", PopulateGameOptions)
+
+""" This function here hooks onto a player changing the value of a setting. """
+def HookValueChange(caller: UObject, function: UFunction, params: FStruct) -> bool:
+	for option, mod in ModOptionsBinding.OptionList.items():
+		if option.EventID == params.EventID:
+			if params.NewSliderValue != None:
+				mod.ModOptionChanged(option, float(params.NewSliderValue))
+				option.CurrentValue = float(params.NewSliderValue)
+				break
+			elif params.NewChoiceIndex != None:
+				mod.ModOptionChanged(option, float(params.NewChoiceIndex))
+				option.CurrentValue = int(params.NewChoiceIndex)
+				break
+	DoInjectedCallNext()
+	return False
+
+RunHook("WillowGame.WillowScrollingListDataProviderGameOptions.HandleSpinnerChange", "HookValueChange", HookValueChange)
+RunHook("WillowGame.WillowScrollingListDataProviderOptionsBase.HandleSliderChange", "HookValueChange", HookValueChange)
 
 os.chdir(Win32Directory)
 
