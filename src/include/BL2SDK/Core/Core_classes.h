@@ -316,6 +316,17 @@ public:
 		return ptr;
 	};
 
+	static std::vector<UObject *> FindAllOfClass(UClass *inclass) {
+		std::vector<UObject *> ret;
+		for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
+		{
+			UObject* Object = UObject::GObjects()->Data[i];
+			if (Object && Object->Class == inclass)
+				ret.push_back(Object);
+		}
+		return ret;
+	}
+
 	py::object GetProperty(std::string PropName);
 	void SetProperty(std::string& PropName, py::object val);
 	struct FFunction GetFunction(std::string& PropName);

@@ -32,14 +32,20 @@ namespace Logging
 
 	void Log(const char* formatted, int length)
 	{
+		std::string out = formatted;
+		if (formatted[strlen(formatted) - 1] != '\n') {
+			out += "\n";
+		}
+		const char *outc = out.c_str();
+
 		if (length == 0)
-			length = strlen(formatted);
+			length = strlen(outc);
 
 		if (logToExternalConsole)
-			LogWinConsole(formatted, length);
+			LogWinConsole(outc, length);
 
 		if (logToFile)
-			LogToFile(formatted, length);
+			LogToFile(outc, length);
 
 		if (BL2SDK::gameConsole != nullptr)
 		{
@@ -47,9 +53,9 @@ namespace Logging
 			// console output, but if there's already a \n at the end, then it won't
 			// add this \n onto the end. So if we're printing just a \n by itself, 
 			// just don't do anything.
-			if (!(length == 1 && formatted[0] == '\n'))
+			if (!(length == 1 && outc[0] == '\n'))
 			{
-				std::wstring wfmt = Util::Widen(formatted);
+				std::wstring wfmt = Util::Widen(outc);
 				bool DoInjectedNext = BL2SDK::injectedCallNext;
 				BL2SDK::doInjectedCallNext();
 				BL2SDK::gameConsole->OutputText(FString((wchar_t*)wfmt.c_str()));

@@ -23,6 +23,8 @@ void Export_pystes_Core_classes(py::module &m)
 		.def_readwrite("Class", &UObject::Class, py::return_value_policy::reference)
 		.def_readwrite("ObjectArchetype", &UObject::ObjectArchetype, py::return_value_policy::reference)
 		.def_static("GObjects", &UObject::GObjects, py::return_value_policy::reference)
+		.def_static("FindAllOfClass", &UObject::FindAllOfClass, py::return_value_policy::reference)
+		.def("GetPackageObject", &UObject::GetPackageObject, py::return_value_policy::reference)
 		.def("GetName", &UObject::GetName)
 		.def("GetNameCPP", &UObject::GetNameCPP)
 		.def("GetFullName", &UObject::GetFullName)
@@ -402,7 +404,7 @@ void Export_pystes_Core_classes(py::module &m)
 		;
 	py::class_< ULinkerSave, ULinker >(m, "ULinkerSave")
 		;
-	py::class_< UInterface >(m, "UInterface")
+	py::class_< UInterface, UObject >(m, "UInterface")
 		;
 	py::class_< UField, UObject >(m, "UField")
 		.def_readwrite("Next", &UField::Next, py::return_value_policy::reference)
