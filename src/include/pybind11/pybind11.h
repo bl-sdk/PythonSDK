@@ -321,7 +321,7 @@ protected:
 
 			capsule rec_capsule(rec, [](void *ptr) {
 				destruct((detail::function_record *) ptr);
-				});
+			});
 
 			object scope_module;
 			if (rec->scope) {
@@ -1113,7 +1113,7 @@ template <typename T> struct has_operator_delete<T, void_t<decltype(static_cast<
 			static void add_base(detail::type_record &rec) {
 				rec.add_base(typeid(Base), [](void *src) -> void * {
 					return static_cast<Base *>(reinterpret_cast<type *>(src));
-					});
+				});
 			}
 
 			template <typename Base, detail::enable_if_t<!is_base<Base>::value, int> = 0>
@@ -1181,7 +1181,7 @@ template <typename T> struct has_operator_delete<T, void_t<decltype(static_cast<
 					if (!caster.load(obj, false))
 						return nullptr;
 					return new buffer_info(((capture *)ptr)->func(caster));
-					}, ptr);
+				}, ptr);
 				return *this;
 			}
 
@@ -1415,55 +1415,55 @@ template <typename T> struct has_operator_delete<T, void_t<decltype(static_cast<
 
 				m_base.attr("__repr__") = cpp_function(
 					[](handle arg) -> str {
-						handle type = arg.get_type();
-						object type_name = type.attr("__name__");
-						dict entries = type.attr("__entries");
-						for (const auto &kv : entries) {
-							object other = kv.second[int_(0)];
-							if (other.equal(arg))
-								return pybind11::str("{}.{}").format(type_name, kv.first);
-						}
-						return pybind11::str("{}.???").format(type_name);
-					}, is_method(m_base)
-						);
+					handle type = arg.get_type();
+					object type_name = type.attr("__name__");
+					dict entries = type.attr("__entries");
+					for (const auto &kv : entries) {
+						object other = kv.second[int_(0)];
+						if (other.equal(arg))
+							return pybind11::str("{}.{}").format(type_name, kv.first);
+					}
+					return pybind11::str("{}.???").format(type_name);
+				}, is_method(m_base)
+					);
 
 				m_base.attr("name") = property(cpp_function(
 					[](handle arg) -> str {
-						dict entries = arg.get_type().attr("__entries");
-						for (const auto &kv : entries) {
-							if (handle(kv.second[int_(0)]).equal(arg))
-								return pybind11::str(kv.first);
-						}
-						return "???";
-					}, is_method(m_base)
-						));
+					dict entries = arg.get_type().attr("__entries");
+					for (const auto &kv : entries) {
+						if (handle(kv.second[int_(0)]).equal(arg))
+							return pybind11::str(kv.first);
+					}
+					return "???";
+				}, is_method(m_base)
+					));
 
 				m_base.attr("__doc__") = static_property(cpp_function(
 					[](handle arg) -> std::string {
-						std::string docstring;
-						dict entries = arg.attr("__entries");
-						if (((PyTypeObject *)arg.ptr())->tp_doc)
-							docstring += std::string(((PyTypeObject *)arg.ptr())->tp_doc) + "\n\n";
-						docstring += "Members:";
-						for (const auto &kv : entries) {
-							auto key = std::string(pybind11::str(kv.first));
-							auto comment = kv.second[int_(1)];
-							docstring += "\n\n  " + key;
-							if (!comment.is_none())
-								docstring += " : " + (std::string) pybind11::str(comment);
-						}
-						return docstring;
+					std::string docstring;
+					dict entries = arg.attr("__entries");
+					if (((PyTypeObject *)arg.ptr())->tp_doc)
+						docstring += std::string(((PyTypeObject *)arg.ptr())->tp_doc) + "\n\n";
+					docstring += "Members:";
+					for (const auto &kv : entries) {
+						auto key = std::string(pybind11::str(kv.first));
+						auto comment = kv.second[int_(1)];
+						docstring += "\n\n  " + key;
+						if (!comment.is_none())
+							docstring += " : " + (std::string) pybind11::str(comment);
 					}
+					return docstring;
+				}
 				), none(), none(), "");
 
 				m_base.attr("__members__") = static_property(cpp_function(
 					[](handle arg) -> dict {
-						dict entries = arg.attr("__entries"), m;
-						for (const auto &kv : entries)
-							m[kv.first] = kv.second[int_(0)];
-						return m;
-					}), none(), none(), ""
-						);
+					dict entries = arg.attr("__entries"), m;
+					for (const auto &kv : entries)
+						m[kv.first] = kv.second[int_(0)];
+					return m;
+				}), none(), none(), ""
+					);
 
 #define PYBIND11_ENUM_OP_STRICT(op, expr, strict_behavior)                     \
             m_base.attr(op) = cpp_function(                                            \
@@ -1647,7 +1647,7 @@ template <typename T> struct has_operator_delete<T, void_t<decltype(static_cast<
 				weakref((PyObject *)type, cpp_function([type](handle wr) {
 					get_internals().registered_types_py.erase(type);
 					wr.dec_ref();
-					})).release();
+				})).release();
 			}
 
 			return res;
@@ -1684,7 +1684,7 @@ template <typename T> struct has_operator_delete<T, void_t<decltype(static_cast<
 						throw stop_iteration();
 					}
 					return *s.it;
-						}, std::forward<Extra>(extra)..., Policy);
+				}, std::forward<Extra>(extra)..., Policy);
 			}
 
 			return cast(state{ first, last, true });
@@ -1713,7 +1713,7 @@ template <typename T> struct has_operator_delete<T, void_t<decltype(static_cast<
 						throw stop_iteration();
 					}
 					return (*s.it).first;
-						}, std::forward<Extra>(extra)..., Policy);
+				}, std::forward<Extra>(extra)..., Policy);
 			}
 
 			return cast(state{ first, last, true });
@@ -1822,7 +1822,7 @@ template <typename T> struct has_operator_delete<T, void_t<decltype(static_cast<
 				catch (const CppException &e) {
 					detail::get_exception_object<CppException>()(e.what());
 				}
-				});
+			});
 			return ex;
 		}
 

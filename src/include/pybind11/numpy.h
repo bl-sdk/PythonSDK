@@ -493,8 +493,8 @@ private:
 
 		std::sort(field_descriptors.begin(), field_descriptors.end(),
 			[](const field_descr& a, const field_descr& b) {
-				return a.offset.cast<int>() < b.offset.cast<int>();
-			});
+			return a.offset.cast<int>() < b.offset.cast<int>();
+		});
 
 		list names, formats, offsets;
 		for (auto& descr : field_descriptors) {
@@ -1362,7 +1362,7 @@ template <size_t N>
 broadcast_trivial broadcast(const std::array<buffer_info, N> &buffers, ssize_t &ndim, std::vector<ssize_t> &shape) {
 	ndim = std::accumulate(buffers.begin(), buffers.end(), ssize_t(0), [](ssize_t res, const buffer_info &buf) {
 		return std::max(res, buf.ndim);
-		});
+	});
 
 	shape.clear();
 	shape.resize((size_t)ndim, 1);

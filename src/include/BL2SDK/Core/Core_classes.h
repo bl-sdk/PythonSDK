@@ -309,7 +309,7 @@ public:
 		}
 		return (UPackage*)pkg;
 	};
-	
+
 	static UClass* StaticClass()
 	{
 		static auto ptr = (UClass *)GObjects()->Data[2];

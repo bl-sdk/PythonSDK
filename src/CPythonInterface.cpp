@@ -46,7 +46,7 @@ bool VerifyPythonFunction(py::object funcHook, const char** expectedKeys) {
 }
 
 void RegisterHook(const std::string& funcName, const std::string& hookName, py::object funcHook) {
-	static const char *params[] = { "caller", "function", "params"};
+	static const char *params[] = { "caller", "function", "params" };
 	if (VerifyPythonFunction(funcHook, params))
 		BL2SDK::RegisterHook(funcName, hookName, [funcHook](UObject* caller, UFunction* function, FStruct *params) {
 		try {

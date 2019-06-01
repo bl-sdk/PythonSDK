@@ -2,7 +2,7 @@
 // Borderlands 2 (1.8.5) SDK
 
 #ifdef _MSC_VER
-	#pragma pack(push, 0x4)
+#pragma pack(push, 0x4)
 #endif
 
 #include "stdafx.h"
@@ -75645,5 +75645,5 @@ struct UWillowVersusDuelBehavior_ApplyBehaviorToContext_Params
 };
 
 #ifdef _MSC_VER
-	#pragma pack(pop)
+#pragma pack(pop)
 #endif

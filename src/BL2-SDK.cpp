@@ -161,7 +161,7 @@ namespace BL2SDK
 		std::string str(actualpath);
 		std::size_t slash = str.find_last_of("/\\") + 1;
 		std::size_t dot = str.find_last_of(".");
-		Logging::LogF("Found EXE name as '%s.exe'\n", str.substr(slash, dot-slash).c_str());
+		Logging::LogF("Found EXE name as '%s.exe'\n", str.substr(slash, dot - slash).c_str());
 		CSigScan sigscan(Util::Widen(str.substr(slash, dot - slash) + ".exe").c_str());
 
 		Signatures::InitSignatures(str.substr(slash, dot - slash));
@@ -206,7 +206,7 @@ namespace BL2SDK
 				((unsigned char *)SetCommand)[5] = 0xFF;
 			}
 		}
-		catch(std::exception e) {
+		catch (std::exception e) {
 			Logging::LogF("Exception when enabling 'SET' commands: %d\n", e.what());
 		}
 

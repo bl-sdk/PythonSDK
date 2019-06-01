@@ -173,7 +173,7 @@ struct constructor {
 	static void execute(Class &cl, const Extra&... extra) {
 		cl.def("__init__", [](value_and_holder &v_h, Args... args) {
 			v_h.value_ptr() = construct_or_initialize<Cpp<Class>>(std::forward<Args>(args)...);
-			}, is_new_style_constructor(), extra...);
+		}, is_new_style_constructor(), extra...);
 	}
 
 	template <typename Class, typename... Extra,
@@ -185,7 +185,7 @@ struct constructor {
 				v_h.value_ptr() = construct_or_initialize<Cpp<Class>>(std::forward<Args>(args)...);
 			else
 				v_h.value_ptr() = construct_or_initialize<Alias<Class>>(std::forward<Args>(args)...);
-			}, is_new_style_constructor(), extra...);
+		}, is_new_style_constructor(), extra...);
 	}
 
 	template <typename Class, typename... Extra,
@@ -194,7 +194,7 @@ struct constructor {
 		static void execute(Class &cl, const Extra&... extra) {
 		cl.def("__init__", [](value_and_holder &v_h, Args... args) {
 			v_h.value_ptr() = construct_or_initialize<Alias<Class>>(std::forward<Args>(args)...);
-			}, is_new_style_constructor(), extra...);
+		}, is_new_style_constructor(), extra...);
 	}
 };
 
@@ -205,7 +205,7 @@ template <typename... Args> struct alias_constructor {
 		static void execute(Class &cl, const Extra&... extra) {
 		cl.def("__init__", [](value_and_holder &v_h, Args... args) {
 			v_h.value_ptr() = construct_or_initialize<Alias<Class>>(std::forward<Args>(args)...);
-			}, is_new_style_constructor(), extra...);
+		}, is_new_style_constructor(), extra...);
 	}
 };
 
@@ -235,9 +235,9 @@ struct factory<Func, void_type(*)(), Return(Args...)> {
 		cl.def("__init__", [func]
 #endif
 			(value_and_holder &v_h, Args... args) {
-				construct<Class>(v_h, func(std::forward<Args>(args)...),
-					Py_TYPE(v_h.inst) != v_h.type->type);
-			}, is_new_style_constructor(), extra...);
+			construct<Class>(v_h, func(std::forward<Args>(args)...),
+				Py_TYPE(v_h.inst) != v_h.type->type);
+		}, is_new_style_constructor(), extra...);
 	}
 };
 
@@ -272,13 +272,13 @@ template <typename CFunc, typename AFunc,
 		cl.def("__init__", [class_func, alias_func]
 #endif
 			(value_and_holder &v_h, CArgs... args) {
-				if (Py_TYPE(v_h.inst) == v_h.type->type)
-					// If the instance type equals the registered type we don't have inheritance, so
-					// don't need the alias and can construct using the class function:
-					construct<Class>(v_h, class_func(std::forward<CArgs>(args)...), false);
-				else
-					construct<Class>(v_h, alias_func(std::forward<CArgs>(args)...), true);
-			}, is_new_style_constructor(), extra...);
+			if (Py_TYPE(v_h.inst) == v_h.type->type)
+				// If the instance type equals the registered type we don't have inheritance, so
+				// don't need the alias and can construct using the class function:
+				construct<Class>(v_h, class_func(std::forward<CArgs>(args)...), false);
+			else
+				construct<Class>(v_h, alias_func(std::forward<CArgs>(args)...), true);
+		}, is_new_style_constructor(), extra...);
 	}
 };
 
@@ -325,9 +325,9 @@ template <typename Get, typename Set,
 		cl.def("__setstate__", [func]
 #endif
 			(value_and_holder &v_h, ArgState state) {
-				setstate<Class>(v_h, func(std::forward<ArgState>(state)),
-					Py_TYPE(v_h.inst) != v_h.type->type);
-			}, is_new_style_constructor(), extra...);
+			setstate<Class>(v_h, func(std::forward<ArgState>(state)),
+				Py_TYPE(v_h.inst) != v_h.type->type);
+		}, is_new_style_constructor(), extra...);
 	}
 };
 
