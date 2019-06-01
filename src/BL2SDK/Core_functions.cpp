@@ -80,7 +80,7 @@ bool FHelper::GetBoolProperty(UBoolProperty *boolProp) {
 
 py::object FHelper::GetArrayProperty(UArrayProperty *prop) {
 	Logging::LogD("FHelper::GetArrayProperty Inner '%s'\n", prop->GetInner()->GetFullName().c_str());
-	return pybind11::cast(FArray{ (TArray<char> *)(((char *)this) + prop->Offset_Internal), prop->GetInner()});
+	return pybind11::cast(FArray{ (TArray<char> *)(((char *)this) + prop->Offset_Internal), prop->GetInner() });
 }
 
 pybind11::object FHelper::GetProperty(UProperty *prop) {
@@ -173,7 +173,7 @@ void FHelper::SetProperty(class UInterfaceProperty *prop, py::object val) {
 	if (!py::isinstance<UObject>(val) && !py::isinstance<py::none>(val))
 		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected UObject!\n").c_str());
 	if (py::isinstance<py::none>(val))
-		((FScriptInterface *)(((char *)this) + prop->Offset_Internal))[0] = FScriptInterface{0, 0};
+		((FScriptInterface *)(((char *)this) + prop->Offset_Internal))[0] = FScriptInterface{ 0, 0 };
 	else {
 		UObject *ObjVal = val.cast<UObject *>();
 		FScriptInterface interf = ObjVal->QueryInterface(prop->GetInterfaceClass());

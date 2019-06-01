@@ -9,17 +9,17 @@ namespace BL2SDK
 {
 	namespace Signatures
 	{
-		MemorySignature GObjects {};
-		MemorySignature GNames {};
-		MemorySignature ProcessEvent {};
-		MemorySignature CallFunction {};
-		MemorySignature FrameStep {};
-		MemorySignature StaticConstructor {};
-		MemorySignature LoadPackage {};
-		MemorySignature GMalloc {};
-		MemorySignature FNameInit {};
-		MemorySignature GetDefaultObject {};
-		MemorySignature SetCommand {};
+		MemorySignature GObjects{};
+		MemorySignature GNames{};
+		MemorySignature ProcessEvent{};
+		MemorySignature CallFunction{};
+		MemorySignature FrameStep{};
+		MemorySignature StaticConstructor{};
+		MemorySignature LoadPackage{};
+		MemorySignature GMalloc{};
+		MemorySignature FNameInit{};
+		MemorySignature GetDefaultObject{};
+		MemorySignature SetCommand{};
 
 
 		void InitBL2() {

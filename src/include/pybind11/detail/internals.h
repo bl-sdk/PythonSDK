@@ -184,16 +184,16 @@ PYBIND11_NOINLINE inline internals &get_internals() {
 #if !defined(__GLIBCXX__)
 		(*internals_pp)->registered_exception_translators.push_front(
 			[](std::exception_ptr p) -> void {
-				try {
-					if (p) std::rethrow_exception(p);
-				}
-				catch (error_already_set &e) {
-					e.restore();   return;
-				}
-				catch (const builtin_exception &e) {
-					e.set_error(); return;
-				}
+			try {
+				if (p) std::rethrow_exception(p);
 			}
+			catch (error_already_set &e) {
+				e.restore();   return;
+			}
+			catch (const builtin_exception &e) {
+				e.set_error(); return;
+			}
+		}
 		);
 #endif
 	}
@@ -220,41 +220,41 @@ PYBIND11_NOINLINE inline internals &get_internals() {
 		builtins[id] = capsule(internals_pp);
 		internals_ptr->registered_exception_translators.push_front(
 			[](std::exception_ptr p) -> void {
-				try {
-					if (p) std::rethrow_exception(p);
-				}
-				catch (error_already_set &e) {
-					e.restore();                                    return;
-				}
-				catch (const builtin_exception &e) {
-					e.set_error();                                  return;
-				}
-				catch (const std::bad_alloc &e) {
-					PyErr_SetString(PyExc_MemoryError, e.what()); return;
-				}
-				catch (const std::domain_error &e) {
-					PyErr_SetString(PyExc_ValueError, e.what()); return;
-				}
-				catch (const std::invalid_argument &e) {
-					PyErr_SetString(PyExc_ValueError, e.what()); return;
-				}
-				catch (const std::length_error &e) {
-					PyErr_SetString(PyExc_ValueError, e.what()); return;
-				}
-				catch (const std::out_of_range &e) {
-					PyErr_SetString(PyExc_IndexError, e.what()); return;
-				}
-				catch (const std::range_error &e) {
-					PyErr_SetString(PyExc_ValueError, e.what()); return;
-				}
-				catch (const std::exception &e) {
-					PyErr_SetString(PyExc_RuntimeError, e.what()); return;
-				}
-				catch (...) {
-					PyErr_SetString(PyExc_RuntimeError, "Caught an unknown exception!");
-					return;
-				}
+			try {
+				if (p) std::rethrow_exception(p);
 			}
+			catch (error_already_set &e) {
+				e.restore();                                    return;
+			}
+			catch (const builtin_exception &e) {
+				e.set_error();                                  return;
+			}
+			catch (const std::bad_alloc &e) {
+				PyErr_SetString(PyExc_MemoryError, e.what()); return;
+			}
+			catch (const std::domain_error &e) {
+				PyErr_SetString(PyExc_ValueError, e.what()); return;
+			}
+			catch (const std::invalid_argument &e) {
+				PyErr_SetString(PyExc_ValueError, e.what()); return;
+			}
+			catch (const std::length_error &e) {
+				PyErr_SetString(PyExc_ValueError, e.what()); return;
+			}
+			catch (const std::out_of_range &e) {
+				PyErr_SetString(PyExc_IndexError, e.what()); return;
+			}
+			catch (const std::range_error &e) {
+				PyErr_SetString(PyExc_ValueError, e.what()); return;
+			}
+			catch (const std::exception &e) {
+				PyErr_SetString(PyExc_RuntimeError, e.what()); return;
+			}
+			catch (...) {
+				PyErr_SetString(PyExc_RuntimeError, "Caught an unknown exception!");
+				return;
+			}
+		}
 		);
 		internals_ptr->static_property_type = make_static_property_type();
 		internals_ptr->default_metaclass = make_default_metaclass();

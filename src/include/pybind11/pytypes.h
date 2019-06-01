@@ -1157,7 +1157,7 @@ public:
 			auto destructor = reinterpret_cast<void(*)(void *)>(PyCapsule_GetContext(o));
 			void *ptr = PyCapsule_GetPointer(o, nullptr);
 			destructor(ptr);
-			});
+		});
 
 		if (!m_ptr)
 			pybind11_fail("Could not allocate capsule object!");
@@ -1170,7 +1170,7 @@ public:
 		m_ptr = PyCapsule_New(reinterpret_cast<void *>(destructor), nullptr, [](PyObject *o) {
 			auto destructor = reinterpret_cast<void(*)()>(PyCapsule_GetPointer(o, nullptr));
 			destructor();
-			});
+		});
 
 		if (!m_ptr)
 			pybind11_fail("Could not allocate capsule object!");

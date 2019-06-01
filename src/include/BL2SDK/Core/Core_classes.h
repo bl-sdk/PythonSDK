@@ -309,14 +309,17 @@ public:
 		}
 		return (UPackage*)pkg;
 	};
-	
+
 	static UClass* StaticClass()
 	{
 		static auto ptr = (UClass *)GObjects()->Data[2];
 		return ptr;
 	};
 
-	static std::vector<UObject *> FindAllOfClass(UClass *inclass) {
+	static std::vector<UObject *> FindAll(char *instr) {
+		UClass *inclass = FindClass(instr, true);
+		if (!inclass)
+			throw std::exception("Unable to find class");
 		std::vector<UObject *> ret;
 		for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
 		{
