@@ -5,6 +5,7 @@ import random
 import json
 import os
 
+
 class CrossSkillRandomizer(bl2sdk.BL2MOD):
     Description = "Randomize all the skills!"
 
@@ -86,7 +87,7 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
                     or Skill == 2
                     and Pity
                 ):
-                    if (Skill == 2 and Pity):
+                    if Skill == 2 and Pity:
                         Skill = self.RNG.randint(0, 2)
                     Pity = False
                     TierLayout[Skill] = True
@@ -96,7 +97,10 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
                     MaxPoints += SkillDef.MaxGrade
                     NewSkills.append(SkillDef)
                     HasHellborn = HasHellborn or "Hellborn" in SkillDef.GetFullName()
-                    if not HasBloodlust and SkillDef.GetName() in ["BloodfilledGuns", "BloodyTwitch"]:
+                    if not HasBloodlust and SkillDef.GetName() in [
+                        "BloodfilledGuns",
+                        "BloodyTwitch",
+                    ]:
                         HasBloodlust = True
                         self.ValidSkills += self.BloodlustSkills
                     if SkillDef.GetName() == "Anarchy":
@@ -342,6 +346,7 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
         "GD_Tulip_Mechromancer_Skills.LittleBigTrouble.ShockStorm",
         "GD_Tulip_Mechromancer_Skills.LittleBigTrouble.WiresDontTalk",
     ]
+
 
 rando = CrossSkillRandomizer()
 
