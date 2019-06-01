@@ -16,13 +16,13 @@ class Grenadoer(bl2sdk.BL2MOD):
 		rebound by the user. Use it to save our settings for the key binding."""
 		pass
 
-	def GameInputPressed(self, name):
+	def GameInputPressed(self, input):
 		"""Invoked by the SDK when one of the inputs we have registered for is
 		pressed in-game."""
-		if name == "Swap Grenade":
+		if input.Name == "Swap Grenade":
 			inventoryManager = bl2sdk.GetEngine().GamePlayers[0].Actor.GetPawnInventoryManager()
 			for inventory in inventoryManager.Backpack:
-				if type(inventory) is bl2sdk.AWillowGrenadeMod and inventory.Mark == 2:
+				if inventory.Class == bl2sdk.FindObject("Class", "WillowGrenadeMod") and inventory.Mark == 2:
 					inventoryManager.ReadyBackpackInventory(inventory, 0)
 					break
 

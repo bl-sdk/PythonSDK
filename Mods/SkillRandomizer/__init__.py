@@ -18,7 +18,7 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
             self.Name = "Cross Class Skill Randomizer (New Seed)"
 
     def RecordSeed(self):
-        with open(LocalModDir + "\\log.json", "r+") as f:
+        with open(self.LocalModDir + "\\log.json", "r+") as f:
             history = json.loads(f.read())
             if self.Seed in history:
                 return
@@ -120,13 +120,9 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
                         "GD_Lilac_Skills_Hellborn.Skills.AppliedStatusEffectListener",
                     )
                 )
-            NewTierLayout = SkillTreeBranchDef.Layout.Tiers[Tier]
-            NewTierLayout.bCellIsOccupied = TierLayout
-            SkillTreeBranchDef.Layout.Tiers[Tier] = NewTierLayout
-            NewTier = SkillTreeBranchDef.Tiers[Tier]
-            NewTier.Skills = NewSkills
-            NewTier.PointsToUnlockNextTier = min(MaxPoints, 5)
-            SkillTreeBranchDef.Tiers[Tier] = NewTier
+            SkillTreeBranchDef.Layout.Tiers[Tier].bCellIsOccupied = TierLayout
+            SkillTreeBranchDef.Tiers[Tier].Skills = NewSkills
+            SkillTreeBranchDef.Tiers[Tier].PointsToUnlockNextTier = min(MaxPoints, 5)
 
     ClassSkills = {
         "Soldier": [

@@ -67,8 +67,8 @@ class Commander(bl2sdk.BL2MOD):
 		for name in self.GameInputs:
 			self.UnregisterGameInput(name)
 
-	def GameInputPressed(self, name):
-		self.GameInputs[name][1]()
+	def GameInputPressed(self, input):
+		self.GameInputs[input.Name][1]()
 
 	def GameInputRebound(self, name, key):
 		self.Bindings[name] = key
