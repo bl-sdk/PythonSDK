@@ -76,6 +76,9 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	m.def("Log", [](std::string in) { Logging::LogPy(in.c_str()); });
 	m.def("LoadPackage", &BL2SDK::LoadPackage, py::arg("filename"), py::arg("flags") = 0, py::arg("force") = false);
 	m.def("KeepAlive", &BL2SDK::KeepAlive);
+	m.def("GetPackageObject", &UObject::GetPackageObject, py::return_value_policy::reference);
+	m.def("FindAll", &UObject::FindAll, py::return_value_policy::reference);
+	m.def("FindClass", &UObject::FindClass, py::arg("ClassName"), py::arg("Lookup") = false, py::return_value_policy::reference);
 	m.def("FindObject", [](char *ClassName, char *ObjectFullName) { return UObject::Find(ClassName, ObjectFullName); }, py::return_value_policy::reference);
 	m.def("FindObject", [](UClass *Class, char *ObjectFullName) { return UObject::Find(Class, ObjectFullName); }, py::return_value_policy::reference);
 	m.def("LoadObject", [](char *ClassName, char *ObjectFullName) { return UObject::Load(ClassName, ObjectFullName); }, py::return_value_policy::reference);
