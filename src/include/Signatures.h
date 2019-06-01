@@ -103,7 +103,7 @@ namespace BL2SDK
 		void InitSignatures(std::string ExeName) {
 			if (ExeName == "Borderlands2")
 				InitBL2();
-			else if (ExeName == "BorderlandsPreSequel")
+			else
 				InitTPS();
 			InitShared();
 		}
