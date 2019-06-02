@@ -356,18 +356,9 @@ class GameInputBinding:
         GameInputBinding.TagIndex += 1
         # Onto restoring our configs from the settings if they exist.
 
-        # A list of our currently loaded modules. We'll use this to find the module of the current mod.
-        modules = [m for m in sys.modules.values() if m]
         # A variable for our current module for the mod.
-        modModule = ""
-        # Iterate through all of our loaded modules, just to get the module path for the current mod.
-        for module in modules:
-            try:
-                if module.__file__.find("Win32\\Mods") != -1 and module.__file__.find("Win32\\Mods\\__init__.py") == -1:
-                    if mod.__class__.__name__ in module.__dir__():
-                        modModule = module
-                        break
-            except AttributeError: continue   
+        modModule = getModModule(mod)
+
         try: 
             modDirectory = os.path.dirname(os.path.realpath(modModule.__file__))
             settingsPath = os.path.join(modDirectory, "settings.json")
@@ -403,18 +394,8 @@ class ModOptionsBinding:
 
     def __init__(self, mod: BL2MOD, option: Options):
         self.Options = option
-        # A list of our currently loaded modules. We'll use this to find the module of the current mod.
-        modules = [m for m in sys.modules.values() if m]
-        # A variable for our current module for the mod.
-        modModule = ""
-        # Iterate through all of our loaded modules, just to get the module path for the current mod.
-        for module in modules:
-            try:
-                if module.__file__.find("Win32\\Mods") != -1 and module.__file__.find("Win32\\Mods\\__init__.py") == -1:
-                    if mod.__class__.__name__ in module.__dir__():
-                        modModule = module
-                        break
-            except AttributeError: continue   
+
+        modModule = getModModule()   
         try: 
             modDirectory = os.path.dirname(os.path.realpath(modModule.__file__))
             settingsPath = os.path.join(modDirectory, "settings.json")
@@ -456,14 +437,12 @@ bl2sdk.ModMenuOpened = []
 
 """ A generic helper function that removes a hook (if it exists) and then re-registers it. """
 
-
 def RunHook(functionName, name, function):
     RemoveHook(functionName, name)
     RegisterHook(functionName, name, function)
 
 
 """ Here we populate our mod manager with all of our mods that we've got loaded. """
-
 
 def LoadModList(caller: UObject, function: UFunction, params: FStruct) -> bool:
     caller.ClearFilters()
@@ -515,7 +494,6 @@ RunHook(
 )
 
 """ This function controls mod specific keybinds in the mod manager. """
-
 
 def HookShopInputKey(caller: UObject, function: UFunction, params: FStruct) -> bool:
     key = params.ukey
@@ -579,7 +557,6 @@ RunHook(
 
 """ Now we replace the DLC menu with the mods. """
 
-
 def ReplaceDLCWithMods(caller: UObject, function: UFunction, params: FStruct) -> bool:
     Caption = params.Caption
     bNew = params.bNew
@@ -592,7 +569,6 @@ def ReplaceDLCWithMods(caller: UObject, function: UFunction, params: FStruct) ->
 
 
 """ An efficient function that notifies us when we're in the main menu to populate the DLC menu. """
-
 
 def HookMainMenuPopulateForMods(caller: UObject, function: UFunction, params: FStruct) -> bool:
     for modFunc in bl2sdk.ModMenuOpened:
@@ -620,7 +596,6 @@ RunHook(
 seperatorNames = [""]
 
 """ Hook whenever we change the currently selected mod in the mod manager.  """
-
 
 def HookModSelected(caller: UObject, function: UFunction, params: FStruct) -> bool:
     selectedObject = caller.GetSelectedObject()
@@ -657,7 +632,6 @@ RunHook(
 
 """ This function adds all of our keybinds to the keybind menu. """
 
-
 def HookInitKeyBinding(caller: UObject, function: UFunction, params: FStruct) -> bool:
     seperatorNames.clear()
     lastModName = ""
@@ -671,7 +645,6 @@ def HookInitKeyBinding(caller: UObject, function: UFunction, params: FStruct) ->
         caller.AddKeyBindEntry(tag, tag, str("        " + binding.Name))
     return True
 
-
 RunHook(
     "WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.InitKeyBinding",
     "HookInitKeyBinding",
@@ -679,7 +652,6 @@ RunHook(
 )
 
 """ A function that gets localized versions of keys as not all keys are supported. """
-
 
 def GetFixedLocalizedKeyName(menu, key):
     if key == "None":
@@ -694,7 +666,6 @@ def GetFixedLocalizedKeyName(menu, key):
 
 
 """ A function that hooks into the creation of config options. """
-
 
 def HookOnPopulateKeys(caller: UObject, function: UFunction, params: FStruct) -> bool:
     DoInjectedCallNext()
@@ -832,7 +803,6 @@ def AddModConfigMenu(caller: UObject, function: UFunction, params: FStruct) -> b
         caller.AddListItem(0, "PLUGINS", False, False)
     return False
 
-
 """ This function hooks onto the options menu to create the `PLUGINS` menu. """
 
 def PopulateGameplayOptions(caller: UObject, function: UFunction, params: FStruct) -> bool:
@@ -844,11 +814,9 @@ def PopulateGameplayOptions(caller: UObject, function: UFunction, params: FStruc
     RemoveHook("WillowGame.WillowScrollingList.AddListItem", "AddModConfigMenu")
     return False
 
-
 RunHook("WillowGame.WillowScrollingListDataProviderTopLevelOptions.Populate","PopulateGameplayOptions", PopulateGameplayOptions)
 
 """ This function is ran whenever the selection of an item in a WillowScrollingListDataProviderBase, we only care to use this for detecting if our current selection is the `PLUGINS` menu. """
-
 
 def HandleSelectionChange(caller: UObject, function: UFunction, params: FStruct) -> bool:
     if caller.MenuDisplayName == "OPTIONS":
@@ -856,7 +824,6 @@ def HandleSelectionChange(caller: UObject, function: UFunction, params: FStruct)
         Options.isMenuPluginMenu = (params.EventID == 0 and (selectedIndex == 5 or selectedIndex == 4))
     DoInjectedCallNext()
     return False
-
 
 RunHook("WillowGame.WillowScrollingListDataProviderBase.HandleSelectionChange","HandleSelectionChange", HandleSelectionChange)
 
@@ -892,11 +859,9 @@ def PopulateGameOptions(caller: UObject, function: UFunction, params: FStruct) -
         caller.Populate(params.TheList)
     return False
 
-
 RunHook("WillowGame.WillowScrollingListDataProviderGameOptions.Populate","PopulateGameOptions", PopulateGameOptions)
 
 """ This function here hooks onto a player changing the value of a setting. """
-
 
 def HookValueChange(caller: UObject, function: UFunction, params: FStruct) -> bool:
     for option, mod in ModOptionsBinding.OptionList.items():
@@ -915,7 +880,6 @@ def HookValueChange(caller: UObject, function: UFunction, params: FStruct) -> bo
                 break
     DoInjectedCallNext()
     return True
-
 
 RunHook("WillowGame.WillowScrollingListDataProviderGameOptions.HandleSpinnerChange", "HookValueChange", HookValueChange)
 RunHook("WillowGame.WillowScrollingListDataProviderOptionsBase.HandleSliderChange","HookValueChange", HookValueChange)
@@ -939,6 +903,18 @@ def getLoadedMods():
             continue
     return loadedMods
 
+def getModModule(mod):
+    modModule = ""
+    modules = [m for m in sys.modules.values() if m]
+    for module in modules:
+        try:
+            if module.__file__.find("Win32\\Mods") != -1 and module.__file__.find("Win32\\Mods\\__init__.py") == -1:
+                if mod.__class__.__name__ in module.__dir__():
+                    modModule = module
+                    break
+        except AttributeError: continue 
+    return modModule
+
 """ Save all of our mod settings, keybinds, etc"""
 def storeModSettings():
     loadedMods = getLoadedMods()
@@ -954,11 +930,12 @@ def storeModSettings():
                 modSettings["Options"].update( {setting.Caption : setting.CurrentValue } )
         if mod.Name in GameInputBinding.ByMod.values():
             for tag, binding in GameInputBinding.ByTag.items():
-                taggedValue = GameInputBinding.ByTag[tag]
-                modSettings["Keybinds"].update( {taggedValue.Name : taggedValue.Key } ) 
-        
+                if GameInputBinding.ByMod[tag] == mod.Name:                 
+                    taggedValue = GameInputBinding.ByTag[tag]
+                    modSettings["Keybinds"].update( {taggedValue.Name : taggedValue.Key } ) 
         modDirectory = os.path.dirname(os.path.realpath(loadedMods[mod].__file__))
         settingsPath = os.path.join(modDirectory, "settings.json")
+        
         with open(settingsPath, "w") as configFile:
             json.dump(modSettings, configFile, indent=4)
 
