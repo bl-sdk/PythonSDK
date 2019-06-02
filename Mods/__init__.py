@@ -1,18 +1,17 @@
 import bl2sdk
 from bl2sdk import *
 import os
+import json
 import sys
 import mypy
 import webbrowser
 from enum import Enum
-
 
 def log(s):
     s = str(s)
     if not s.endswith("\n"):
         s += "\n"
     bl2sdk.Log(s)
-
 
 print = log
 
@@ -99,24 +98,24 @@ class Options:
 class BL2MOD:
     """An object that describes a mod to be represented in the BL2 Mod Manager.
 
-	All mods should set their Name and Description fields.
+    All mods should set their Name and Description fields.
 
-	By default, mods are given a `Status` of "Disabled", and respond to the
-	Enter key in the mod menu, which toggles their Status and calls the
-	`Enabled` and `Disabled` methods as appropriate. Mods should define
-	these methods to make use of this functionality.
+    By default, mods are given a `Status` of "Disabled", and respond to the
+    Enter key in the mod menu, which toggles their Status and calls the
+    `Enabled` and `Disabled` methods as appropriate. Mods should define
+    these methods to make use of this functionality.
 
-	For more complex interaction in the mods menu, mods should define their
-	`SettingsInputs` property and `SettingsInputPressed` method. (This will
-	override the `Enabled` and `Disabled` behavior described above.) They may
-	also display status text by setting their `Status` text.
+    For more complex interaction in the mods menu, mods should define their
+    `SettingsInputs` property and `SettingsInputPressed` method. (This will
+    override the `Enabled` and `Disabled` behavior described above.) They may
+    also display status text by setting their `Status` text.
 
-	Mods may also register for in-game key bindings by invoking their own
-	`RegisterGameInput` method (and also unregister them via
-	`UnregisterGameInput`). They may respond to their bindings being rebound by
-	the user, pressed, and released, by defining the `GameInputRebound`,
-	`GameInputPressed`, and `GameInputReleased` methods, respectively.
-	"""
+    Mods may also register for in-game key bindings by invoking their own
+    `RegisterGameInput` method (and also unregister them via
+    `UnregisterGameInput`). They may respond to their bindings being rebound by
+    the user, pressed, and released, by defining the `GameInputRebound`,
+    `GameInputPressed`, and `GameInputReleased` methods, respectively.
+    """
 
     Name = ""
     """The name of the mod to display in the mod manager."""
@@ -126,51 +125,51 @@ class BL2MOD:
     """The status of the mod to display in the mod manager."""
     SettingsInputs = {"Enter": "Enable"}
     """A dictionary that describes inputs the mod responds to in the mod
-	manager, in the format { '[Key]': '[Action]' }. For example:
+    manager, in the format { '[Key]': '[Action]' }. For example:
 
-		SettingsInputs = { 'Enter': "Do Something", "H": "Do Something Else" }
-	"""
+        SettingsInputs = { 'Enter': "Do Something", "H": "Do Something Else" }
+    """
     Types = []
     """A list that specifies all the mod types that the mod is. 
-	For a list of mod types, see the ModTypes enum.
-	"""
+    For a list of mod types, see the ModTypes enum.
+    """
     Author = "Unknown"
-    """The author(s) of the mod which is displayed in the mod manager menu.	"""
+    """The author(s) of the mod which is displayed in the mod manager menu. """
 
     def Enable(self):
         """Called by the mod manager to enable the mod.
 
-		Only invoked if the mod does not implement custom interaction via its 
-		`SettingsInputPressed` property and `SettingsInputPressed` method.
-		"""
+        Only invoked if the mod does not implement custom interaction via its 
+        `SettingsInputPressed` property and `SettingsInputPressed` method.
+        """
         pass
 
     def Disable(self):
         """Called by the mod manager to disable the mod.
 
-		Only invoked if the mod does not implement custom interaction via its 
-		`SettingsInputPressed` property and `SettingsInputPressed` method.
-		"""
+        Only invoked if the mod does not implement custom interaction via its 
+        `SettingsInputPressed` property and `SettingsInputPressed` method.
+        """
         pass
 
     def SettingsInputPressed(self, name: str):
         """Called by the mod manager when one of the actions the mod has
-		registered for has been invoked via its associated key.
+        registered for has been invoked via its associated key.
 
-		Mods may define this method to respond to user actions like so:
+        Mods may define this method to respond to user actions like so:
 
-			def SettingsInputPressed(self, name):
-				if name == "Do Something":
-					...
-				elif name == "Do Something Else":
-					...
+            def SettingsInputPressed(self, name):
+                if name == "Do Something":
+                    ...
+                elif name == "Do Something Else":
+                    ...
 
-		Parameters
-		----------
-		name : str
-		The name of the action that was associated with a key in the
-		`SettingsInputs` property, that has now been pressed by the user.
-		"""
+        Parameters
+        ----------
+        name : str
+        The name of the action that was associated with a key in the
+        `SettingsInputs` property, that has now been pressed by the user.
+        """
         if name == "Enable":
             self.Status = "Enabled"
             self.SettingsInputs = {"Enter": "Disable"}
@@ -182,31 +181,31 @@ class BL2MOD:
 
     def RegisterGameInput(self, name: str, key: str = None):
         """Adds a key binding option to the Keyboard Settings menu, allowing the
-		mod to respond to a key chosen by the user.
+        mod to respond to a key chosen by the user.
 
-		Mods call this method specifying the name of the binding (shown to the
-		user as well as used within the mod):
+        Mods call this method specifying the name of the binding (shown to the
+        user as well as used within the mod):
 
-			self.RegisterGameInput("Do Something In Game")
+            self.RegisterGameInput("Do Something In Game")
 
-		Optionally, a mod may specify a default key:
+        Optionally, a mod may specify a default key:
 
-			self.RegisterGameInput("Do Something Else In Game", key="J")
+            self.RegisterGameInput("Do Something Else In Game", key="J")
 
-		Parameters
-		----------
-		name : str
-			The name of the action called by the key the user defines. This is
-			displayed in the Keyboard Settings menu, and also passed to this
-			mod's `GameInputRebound`, `GameInputPressed`, and
-			`GameInputReleased` methods.
+        Parameters
+        ----------
+        name : str
+            The name of the action called by the key the user defines. This is
+            displayed in the Keyboard Settings menu, and also passed to this
+            mod's `GameInputRebound`, `GameInputPressed`, and
+            `GameInputReleased` methods.
 
-		key: str, optional
-			The key to attempt to bind the action to. This is ignored if the
-			user has another action bound to the same key. For a list of key
-			names, see: wiki.unrealengine.com/List_of_Key/Gamepad_Input_Names
+        key: str, optional
+            The key to attempt to bind the action to. This is ignored if the
+            user has another action bound to the same key. For a list of key
+            names, see: wiki.unrealengine.com/List_of_Key/Gamepad_Input_Names
 
-		"""
+        """
         for tag, binding in GameInputBinding.ByTag.items():
             if binding.Mod is self and binding.Name == name:
                 return
@@ -215,12 +214,12 @@ class BL2MOD:
     def UnregisterGameInput(self, name: str):
         """Removes a key binding option from the Keyboard Settings menu.
 
-		Parameters
-		----------
-		name : str
-			The name of the action as provided to `RegisterGameInput` when the
-			binding was registered for.
-		"""
+        Parameters
+        ----------
+        name : str
+            The name of the action as provided to `RegisterGameInput` when the
+            binding was registered for.
+        """
         unregisteredTag = None
         for tag, binding in GameInputBinding.ByTag.items():
             if binding.Mod is self and binding.Name == name:
@@ -233,65 +232,65 @@ class BL2MOD:
     def GameInputRebound(self, name: str, key: str):
         """Called when the user rebinds the key for the registered action.
 
-		Mods may define this method if, for example, they would like to save
-		their settings to reflect the user's preference:
+        Mods may define this method if, for example, they would like to save
+        their settings to reflect the user's preference:
 
-			def GameInputRebound(self, name, key):
-				MySettings.KeyBindings[name] = key
-				MySettings.Save()
+            def GameInputRebound(self, name, key):
+                MySettings.KeyBindings[name] = key
+                MySettings.Save()
 
-		Parameters
-		----------
-		name : str
-			The name of the action the user has rebound. This is the name that
-			was provided to `RegisterGameInput` when the binding was registered.
-		key : str
-			The key the user bebound the action to.
-		"""
+        Parameters
+        ----------
+        name : str
+            The name of the action the user has rebound. This is the name that
+            was provided to `RegisterGameInput` when the binding was registered.
+        key : str
+            The key the user bebound the action to.
+        """
         pass
 
     def GameInputPressed(self, name: str):
         """Called when the user presses the key for a key binding the mod has
-		registered for.
+        registered for.
 
-		Mods should define this method to perform actions when the user
-		initially presses the key of their choosing:
+        Mods should define this method to perform actions when the user
+        initially presses the key of their choosing:
 
-			def GameInputPressed(self, name):
-				if name == "Do Something In Game":
-					...
-				elif name == "Do Something Else In Game":
-					...
+            def GameInputPressed(self, name):
+                if name == "Do Something In Game":
+                    ...
+                elif name == "Do Something Else In Game":
+                    ...
 
-		Parameters
-		----------
-		name : str
-			The name of the action the user has pressed the key for. This is the
-			name that was provided to `RegisterGameInput` when the binding was
-			registered.
-		"""
+        Parameters
+        ----------
+        name : str
+            The name of the action the user has pressed the key for. This is the
+            name that was provided to `RegisterGameInput` when the binding was
+            registered.
+        """
         pass
 
     def GameInputReleased(self, name: str):
         """Called when the user releases the key for a key binding the mod has
-		registered for.
+        registered for.
 
-		Mods should define this method to perform actions when the user
-		releases the key of their choosing:
+        Mods should define this method to perform actions when the user
+        releases the key of their choosing:
 
-			def GameInputReleased(self, name):
-				if name == "Do Something In Game":
-					...
-				elif name == "Do Something Else In Game":
-					...
+            def GameInputReleased(self, name):
+                if name == "Do Something In Game":
+                    ...
+                elif name == "Do Something Else In Game":
+                    ...
 
-		Parameters
-		----------
-		name : str
-			The name of the action the user has pressed the key for. This is the
-			name that was provided to `RegisterGameInput` when the binding was
-			registered.
-		"""
+        Parameters
+        ----------
+        name : str
+            The name of the action the user has pressed the key for. This is the
+            name that was provided to `RegisterGameInput` when the binding was
+            registered.
+        """
         pass
 
     def RegisterGameConfigOption(self, Option: Options):
@@ -308,35 +307,36 @@ class BL2MOD:
                 del ModOptionsBinding.OptionList[Option]
                 return
 
-    def ModOptionChanged(self, Option: Options, newValuet):
+    def ModOptionChanged(self, Option: Options, newValue):
         """Called when the user changes the value of our option for the given setting. 
-		Mods may define this method, if for example they want to save the state of a given setting:
-			
-			def ModOptionChanged(self, Option, newValue):
-				currentModValue = newValue
-				MySettings.Save(currentModValue)
 
-		Parameters
-		----------
-		Option: Options
-			A class that is used to specify a type of a given setting. 
-		newValue: bool, int, float
-			A float value that is the new value that the setting was changed in. 
-			If the changed option is a boolean/spinner option, it's the index in the `Choices` array.
-			If the changed option is a slider option, the value of the slider that the value was changed to. """
+        Mods may define this method, if for example they want to save the state of a given setting:
+            
+            def ModOptionChanged(self, Option, newValue):
+                currentModValue = newValue
+                MySettings.Save(currentModValue)
+
+        Parameters
+        ----------
+        Option: Options
+            A class that is used to specify a type of a given setting. 
+        newValue: float
+            A float value that is the new value that the setting was changed in. 
+            If the changed option is a boolean/spinner option, it's the index in the `Choices` array.
+            If the changed option is a slider option, the value of the slider that the value was changed to. """
         pass
 
 
 class GameInputBinding:
     """An object that describes a key binding registered by a mod.
 
-	Each binding object is assigned a unique "tag" string upon creation; this is
-	used to refer to the binding from game objects that accept strings.
-	"""
+    Each binding object is assigned a unique "tag" string upon creation; this is
+    used to refer to the binding from game objects that accept strings.
+    """
 
     TagIndex = 0
     """An integer incremented upon binding creation, in order to generate a
-	unique tag for each one."""
+    unique tag for each one."""
     ByTag = dict()
     """A dictionary for looking up bindings by their tag."""
     ByKey = dict()
@@ -354,11 +354,36 @@ class GameInputBinding:
         GameInputBinding.ByTag[tag] = self
         GameInputBinding.ByMod[tag] = self.Mod.Name
         GameInputBinding.TagIndex += 1
-        # If no default key was requested, default to "None."
+        # Onto restoring our configs from the settings if they exist.
+
+        # A list of our currently loaded modules. We'll use this to find the module of the current mod.
+        modules = [m for m in sys.modules.values() if m]
+        # A variable for our current module for the mod.
+        modModule = ""
+        # Iterate through all of our loaded modules, just to get the module path for the current mod.
+        for module in modules:
+            try:
+                if module.__file__.find("Win32\\Mods") != -1 and module.__file__.find("Win32\\Mods\\__init__.py") == -1:
+                    if mod.__class__.__name__ in module.__dir__():
+                        modModule = module
+                        break
+            except AttributeError: continue   
+        try: 
+            modDirectory = os.path.dirname(os.path.realpath(modModule.__file__))
+            settingsPath = os.path.join(modDirectory, "settings.json")
+            with open(settingsPath) as configFile:
+                settings = json.load(configFile)
+                keybinds = settings.get("Keybinds", dict())
+                for keybindName, keybind in keybinds.items():
+                    if keybindName == name:
+                        key = str(keybind)
+        except: pass
+
+        # If no default key was requested, default to "None"
         if key == None:
-            self.Key = "None"
+             self.Key = "None"
         # If a requested key is already in use by another binding, default it
-        # to "None," and notify the mod of the rebinding.
+        # to "None" and notify the mod of the rebinding.
         elif key in GameInputBinding.ByKey:
             self.Key = "None"
             mod.GameInputRebound(name, "None")
@@ -367,18 +392,39 @@ class GameInputBinding:
             self.Key = key
             GameInputBinding.ByKey[key] = self
 
-
 class ModOptionsBinding:
     """An object that describes a option registered by a mod.
 
-	Each option object gets given a mod that the option is linked. This gets used to order all of our config options.
-	All of the menu options are bound to a specific mod as well. This is used to use sub-menus for our options menu.
-	"""
+    Each option object gets given a mod that the option is linked. This gets used to order all of our config options.
+    All of the menu options are bound to a specific mod as well. This is used to use sub-menus for our options menu.
+    """
 
     OptionList = dict()
 
     def __init__(self, mod: BL2MOD, option: Options):
         self.Options = option
+        # A list of our currently loaded modules. We'll use this to find the module of the current mod.
+        modules = [m for m in sys.modules.values() if m]
+        # A variable for our current module for the mod.
+        modModule = ""
+        # Iterate through all of our loaded modules, just to get the module path for the current mod.
+        for module in modules:
+            try:
+                if module.__file__.find("Win32\\Mods") != -1 and module.__file__.find("Win32\\Mods\\__init__.py") == -1:
+                    if mod.__class__.__name__ in module.__dir__():
+                        modModule = module
+                        break
+            except AttributeError: continue   
+        try: 
+            modDirectory = os.path.dirname(os.path.realpath(modModule.__file__))
+            settingsPath = os.path.join(modDirectory, "settings.json")
+            with open(settingsPath) as configFile:
+                settings = json.load(configFile)
+                options = settings.get("Options", dict())
+                for optionName, optionValue in options.items():
+                    if optionName == option.Caption:
+                        option.CurrentValue = float(optionValue)
+        except: pass
 
         ModOptionsBinding.OptionList[self.Options] = mod
 
@@ -548,9 +594,7 @@ def ReplaceDLCWithMods(caller: UObject, function: UFunction, params: FStruct) ->
 """ An efficient function that notifies us when we're in the main menu to populate the DLC menu. """
 
 
-def HookMainMenuPopulateForMods(
-    caller: UObject, function: UFunction, params: FStruct
-) -> bool:
+def HookMainMenuPopulateForMods(caller: UObject, function: UFunction, params: FStruct) -> bool:
     for modFunc in bl2sdk.ModMenuOpened:
         try:
             modFunc()
@@ -575,7 +619,7 @@ RunHook(
 
 seperatorNames = [""]
 
-""" Hook whenever we change the currently selected mod in the mod manager. 	"""
+""" Hook whenever we change the currently selected mod in the mod manager.  """
 
 
 def HookModSelected(caller: UObject, function: UFunction, params: FStruct) -> bool:
@@ -687,7 +731,6 @@ RunHook(
 
 """ A function that changes a mod's keybinds in the configuration menu. """
 
-
 def HookBindCurrentSelection(caller: UObject, function: UFunction, params: FStruct) -> bool:
     selectedKeyBind = caller.KeyBinds[caller.CurrentKeyBindSelection]
     if selectedKeyBind.Tag in seperatorNames:
@@ -740,12 +783,7 @@ def HookBindCurrentSelection(caller: UObject, function: UFunction, params: FStru
     caller.ControllerMappingClip.InvalidateKeyData()
     return False
 
-
-RunHook(
-    "WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.BindCurrentSelection",
-    "HookBindCurrentSelection",
-    HookBindCurrentSelection,
-)
+RunHook("WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.BindCurrentSelection", "HookBindCurrentSelection",HookBindCurrentSelection)
 
 
 def HookDoBind(caller: UObject, function: UFunction, params: FStruct) -> bool:
@@ -753,15 +791,9 @@ def HookDoBind(caller: UObject, function: UFunction, params: FStruct) -> bool:
         return False
     return True
 
-
-RunHook(
-    "WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.DoBind",
-    "HookDoBind",
-    HookDoBind,
-)
+RunHook("WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.DoBind","HookDoBind",HookDoBind)
 
 """ Hook onto player input so we know when a mod's keybinds were pressed. """
-
 
 def HookInputKey(caller: UObject, function: UFunction, params: FStruct) -> bool:
     # If we do not have a binding associated with this key, we ignore it.
@@ -779,11 +811,9 @@ def HookInputKey(caller: UObject, function: UFunction, params: FStruct) -> bool:
 
     return False
 
-
 RunHook("WillowGame.WillowUIInteraction.InputKey", "HookInputKey", HookInputKey)
 
 """ This function adds the `PLUGINS` menu into the options menu. """
-
 
 def AddModConfigMenu(caller: UObject, function: UFunction, params: FStruct) -> bool:
     Caption = params.Caption
@@ -805,15 +835,8 @@ def AddModConfigMenu(caller: UObject, function: UFunction, params: FStruct) -> b
 
 """ This function hooks onto the options menu to create the `PLUGINS` menu. """
 
-
-def PopulateGameplayOptions(
-    caller: UObject, function: UFunction, params: FStruct
-) -> bool:
-    RegisterHook(
-        "WillowGame.WillowScrollingList.AddListItem",
-        "AddModConfigMenu",
-        AddModConfigMenu,
-    )
+def PopulateGameplayOptions(caller: UObject, function: UFunction, params: FStruct) -> bool:
+    RegisterHook("WillowGame.WillowScrollingList.AddListItem", "AddModConfigMenu", AddModConfigMenu)
     DoInjectedCallNext()
     # We'll wanna set our gamepad boolean correctly here since we can't call it in AddListItem.
     Options.isGamepadConnected = caller.IsPCGamepadConnected()
@@ -822,37 +845,22 @@ def PopulateGameplayOptions(
     return False
 
 
-RunHook(
-    "WillowGame.WillowScrollingListDataProviderTopLevelOptions.Populate",
-    "PopulateGameplayOptions",
-    PopulateGameplayOptions,
-)
+RunHook("WillowGame.WillowScrollingListDataProviderTopLevelOptions.Populate","PopulateGameplayOptions", PopulateGameplayOptions)
 
 """ This function is ran whenever the selection of an item in a WillowScrollingListDataProviderBase, we only care to use this for detecting if our current selection is the `PLUGINS` menu. """
 
 
-def HandleSelectionChange(
-    caller: UObject, function: UFunction, params: FStruct
-) -> bool:
+def HandleSelectionChange(caller: UObject, function: UFunction, params: FStruct) -> bool:
     if caller.MenuDisplayName == "OPTIONS":
         selectedIndex = params.TheList.GetSelectedIndex()
-        Options.isMenuPluginMenu = (
-            caller.MenuDisplayName == "OPTIONS"
-            and params.EventID == 0
-            and (selectedIndex == 5 or selectedIndex == 4)
-        )
+        Options.isMenuPluginMenu = (params.EventID == 0 and (selectedIndex == 5 or selectedIndex == 4))
     DoInjectedCallNext()
     return False
 
 
-RunHook(
-    "WillowGame.WillowScrollingListDataProviderBase.HandleSelectionChange",
-    "HandleSelectionChange",
-    HandleSelectionChange,
-)
+RunHook("WillowGame.WillowScrollingListDataProviderBase.HandleSelectionChange","HandleSelectionChange", HandleSelectionChange)
 
 """ This function fills up our game options with the options we want from our given mods. """
-
 
 def PopulateGameOptions(caller: UObject, function: UFunction, params: FStruct) -> bool:
     # We technically might not want to fully use this now, but it keeps everything safe for the HookValueChange() hook.
@@ -864,7 +872,7 @@ def PopulateGameOptions(caller: UObject, function: UFunction, params: FStruct) -
             option.EventID = startingIndex
             if option.OptionType == 0:
                 params.TheList.AddSpinnerListItem(
-                    startingIndex, caption, False, option.CurrentValue, option.Choices
+                    startingIndex, caption, False, int(option.CurrentValue), option.Choices
                 )
             elif option.OptionType == 3:
                 params.TheList.AddSliderListItem(
@@ -885,11 +893,7 @@ def PopulateGameOptions(caller: UObject, function: UFunction, params: FStruct) -
     return False
 
 
-RunHook(
-    "WillowGame.WillowScrollingListDataProviderGameOptions.Populate",
-    "PopulateGameOptions",
-    PopulateGameOptions,
-)
+RunHook("WillowGame.WillowScrollingListDataProviderGameOptions.Populate","PopulateGameOptions", PopulateGameOptions)
 
 """ This function here hooks onto a player changing the value of a setting. """
 
@@ -913,13 +917,55 @@ def HookValueChange(caller: UObject, function: UFunction, params: FStruct) -> bo
     return True
 
 
-RunHook(
-    "WillowGame.WillowScrollingListDataProviderGameOptions.HandleSpinnerChange",
-    "HookValueChange",
-    HookValueChange,
-)
-RunHook(
-    "WillowGame.WillowScrollingListDataProviderOptionsBase.HandleSliderChange",
-    "HookValueChange",
-    HookValueChange,
-)
+RunHook("WillowGame.WillowScrollingListDataProviderGameOptions.HandleSpinnerChange", "HookValueChange", HookValueChange)
+RunHook("WillowGame.WillowScrollingListDataProviderOptionsBase.HandleSliderChange","HookValueChange", HookValueChange)
+
+""" Here goes all of our mod / keybind settings savings. """
+
+""" A list of the currently loaded modules. """ 
+def getLoadedMods():
+    modules = [m for m in sys.modules.values() if m]
+    loadedMods = dict()
+    for module in modules:
+        try:
+            # We don't want ourselves.
+            if module.__file__.find("Win32\\Mods") != -1 and module.__file__.find("Win32\\Mods\\__init__.py") == -1:
+                properties = module.__dir__()
+                for mod in bl2sdk.Mods: 
+                    if mod.Status != "Disabled" and mod.__class__.__name__ in properties:
+                        loadedMods[mod] = module
+                        break
+        except AttributeError:
+            continue
+    return loadedMods
+
+""" Save all of our mod settings, keybinds, etc"""
+def storeModSettings():
+    loadedMods = getLoadedMods()
+    for mod in loadedMods:
+        if (mod not in ModOptionsBinding.OptionList.values()) and (mod.Name not in GameInputBinding.ByMod.values()):
+            continue
+        modSettings = {}
+        modSettings["Options"] = {}
+        modSettings["Keybinds"] = {}
+        if mod in ModOptionsBinding.OptionList.values():
+            settingsList = [key for(key, value) in ModOptionsBinding.OptionList.items() if value == mod]
+            for setting in settingsList:
+                modSettings["Options"].update( {setting.Caption : setting.CurrentValue } )
+        if mod.Name in GameInputBinding.ByMod.values():
+            for tag, binding in GameInputBinding.ByTag.items():
+                taggedValue = GameInputBinding.ByTag[tag]
+                modSettings["Keybinds"].update( {taggedValue.Name : taggedValue.Key } ) 
+        
+        modDirectory = os.path.dirname(os.path.realpath(loadedMods[mod].__file__))
+        settingsPath = os.path.join(modDirectory, "settings.json")
+        with open(settingsPath, "w") as configFile:
+            json.dump(modSettings, configFile, indent=4)
+
+""" This function is called whenever the user leaves the KB&M / Gameplay (Plugins) menu"""
+def HookOnPop(caller: UObject, function: UFunction, params: FStruct) -> bool:
+    if caller.MenuDisplayName == "GAMEPLAY" or caller.MenuDisplayName == "PLUGINS" or caller.MenuDisplayName == "KEYBOARD & MOUSE":
+        storeModSettings()
+    return True
+
+RunHook("WillowGame.WillowScrollingListDataProviderOptionsBase.OnPop", "HookOnPop", HookOnPop)
