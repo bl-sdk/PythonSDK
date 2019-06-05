@@ -395,7 +395,7 @@ class ModOptionsBinding:
     def __init__(self, mod: BL2MOD, option: Options):
         self.Options = option
 
-        modModule = getModModule()   
+        modModule = getModModule(mod)
         try: 
             modDirectory = os.path.dirname(os.path.realpath(modModule.__file__))
             settingsPath = os.path.join(modDirectory, "settings.json")
