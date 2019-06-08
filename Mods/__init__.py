@@ -39,7 +39,7 @@ class Options:
     # We want this boolean to properly sort the PLUGINS menu. The menu should go after the `GAMEPAD` menu if its enabled.
     isGamepadConnected = False
 
-    class SliderOption:
+    class Slider:
         """ This class is a holder for all slider option types, useful for specifying integer/float values. """
 
         EventID = 0
@@ -62,7 +62,7 @@ class Options:
             self.Description = Description
             self.CurrentValue = StartingValue
 
-    class SpinnerOption:
+    class Spinner:
         """ This option is especially useful when you want the user to choose between two or more, specified options. """
 
         EventID = 0
@@ -81,7 +81,7 @@ class Options:
             self.Choices = Choices
             self.Description = Description
 
-    class BooleanOption:
+    class Boolean:
         """ This class is pretty much just a SpinnerOption, but is cleaner and more useful if you want a toggleable feature in your plugin. """
 
         EventID = 0
@@ -320,10 +320,9 @@ class BL2MOD:
         ----------
         Option: Options
             A class that is used to specify a type of a given setting. 
-        newValue: float
-            A float value that is the new value that the setting was changed in. 
-            If the changed option is a boolean/spinner option, it's the index in the `Choices` array.
-            If the changed option is a slider option, the value of the slider that the value was changed to. """
+        newValue:
+            If the changed option is a boolean/spinner option, it's the value in the `Choices` array.
+            If the changed option is a slider option, the value of the slider (float) that the value was changed to. """
         pass
 
 
@@ -404,7 +403,12 @@ class ModOptionsBinding:
                 options = settings.get("Options", dict())
                 for optionName, optionValue in options.items():
                     if optionName == option.Caption:
-                        option.CurrentValue = float(optionValue)
+                        if isinstance(optionValue, bool):
+                            option.CurrentValue = optionValue
+                        elif isinstance(optionValue, str):
+                            option.CurrentValue = option.Choices[option.Choices.index(optionValue)]
+                        else:
+                            option.CurrentValue = float(optionValue)
         except: pass
 
         ModOptionsBinding.OptionList[self.Options] = mod
@@ -639,8 +643,9 @@ def HookInitKeyBinding(caller: UObject, function: UFunction, params: FStruct) ->
         modName = GameInputBinding.ByMod[tag]
         if lastModName != modName:
             lastModName = modName
-            seperatorNames.append(modName)
-            caller.AddKeyBindEntry(modName, modName, modName)
+            nameOfSeperator = modName
+            seperatorNames.append(nameOfSeperator)
+            caller.AddKeyBindEntry(nameOfSeperator, nameOfSeperator, nameOfSeperator)
         DoInjectedCallNext()
         caller.AddKeyBindEntry(tag, tag, str("        " + binding.Name))
     return True
@@ -838,9 +843,14 @@ def PopulateGameOptions(caller: UObject, function: UFunction, params: FStruct) -
             caption = (mod.Name + ": " + option.Caption).upper()
             option.EventID = startingIndex
             if option.OptionType == 0:
-                params.TheList.AddSpinnerListItem(
-                    startingIndex, caption, False, int(option.CurrentValue), option.Choices
-                )
+                if type(option) is Options.Spinner:
+                    params.TheList.AddSpinnerListItem(
+                        startingIndex, caption, False, int(option.Choices.index(option.CurrentValue)), option.Choices
+                    )
+                else:
+                    params.TheList.AddSpinnerListItem(
+                        startingIndex, caption, False, int(option.CurrentValue), option.Choices
+                    )
             elif option.OptionType == 3:
                 params.TheList.AddSliderListItem(
                     startingIndex,
@@ -871,9 +881,12 @@ def HookValueChange(caller: UObject, function: UFunction, params: FStruct) -> bo
                 option.CurrentValue = float(params.NewSliderValue)
                 break
             elif params.NewChoiceIndex != None:
-                if type(option) is Option.BooleanOption:
+                if type(option) is Options.Boolean:
                     option.CurrentValue = bool(int(params.NewChoiceIndex))
                     mod.ModOptionChanged(option, bool(params.NewChoiceIndex))
+                elif type(option) is Options.Spinner:
+                    option.CurrentValue = option.Choices[params.NewChoiceIndex]
+                    mod.ModOptionChanged(option, option.Choices[params.NewChoiceIndex])
                 else:
                     option.CurrentValue = int(params.NewChoiceIndex)
                     mod.ModOptionChanged(option, int(params.NewChoiceIndex))
@@ -885,6 +898,7 @@ RunHook("WillowGame.WillowScrollingListDataProviderGameOptions.HandleSpinnerChan
 RunHook("WillowGame.WillowScrollingListDataProviderOptionsBase.HandleSliderChange","HookValueChange", HookValueChange)
 
 """ Here goes all of our mod / keybind settings savings. """
+
 
 """ A list of the currently loaded modules. """ 
 def getLoadedMods():
@@ -927,7 +941,11 @@ def storeModSettings():
         if mod in ModOptionsBinding.OptionList.values():
             settingsList = [key for(key, value) in ModOptionsBinding.OptionList.items() if value == mod]
             for setting in settingsList:
-                modSettings["Options"].update( {setting.Caption : setting.CurrentValue } )
+                if type(setting) is Options.Spinner:
+                    currentVal = setting.Choices[setting.CurrentValue]
+                    modSettings["Options"].update( {setting.Caption : currentVal } )
+                else:
+                    modSettings["Options"].update( {setting.Caption : setting.CurrentValue } )
         if mod.Name in GameInputBinding.ByMod.values():
             for tag, binding in GameInputBinding.ByTag.items():
                 if GameInputBinding.ByMod[tag] == mod.Name:                 
