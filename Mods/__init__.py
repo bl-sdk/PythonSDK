@@ -15,11 +15,9 @@ def log(s):
 
 print = log
 
-
+""" The path to our mods folder, determined via the directory containing the current executable (Borderlands2.exe)."""
 Win32Directory = os.path.dirname(sys.executable)
 ModsDirectory = os.path.join(Win32Directory, "Mods")
-""" The path to our mods folder, determined via the directory containing the
-current executable (Borderlands2.exe)."""
 
 
 class ModTypes(Enum):
@@ -28,7 +26,6 @@ class ModTypes(Enum):
     Utility = 1
     Content = 2
     Gameplay = 3
-
 
 class Options:
     """ A generic helper class that stores all of the option types available in the `PLUGINS` menu. """
@@ -72,12 +69,12 @@ class Options:
             self,
             Caption: str,
             Description: str,
-            StartingChoiceIndex: int,
+            StartingChoice: str,
             Choices: list,
         ):
             self.Caption = Caption
-            self.StartingChoiceIndex = StartingChoiceIndex
-            self.CurrentValue = StartingChoiceIndex
+            self.StartingChoice = StartingChoice
+            self.CurrentValue = StartingChoice
             self.Choices = Choices
             self.Description = Description
 
@@ -93,6 +90,24 @@ class Options:
             self.CurrentValue = int(StartingValue)
             self.Description = Description
             self.Choices = ["Off", "On"]
+    
+    class Hidden:
+        """ This class is a type of option that is never shown to the user but is specified in the settings.json file. 
+        You can use this to store things the user has no need to see but is still important to have persistent. """
+        OptionType = -1
+
+        def __init__(self, valueName: str, StartingValue):
+            self.Caption = valueName
+            self._currentValue = StartingValue
+
+        @property
+        def CurrentValue(self):
+            return self._currentValue
+
+        @CurrentValue.setter
+        def CurrentValue(self, value):
+            self._currentValue = value
+            storeModSettings()
 
 
 class BL2MOD:
@@ -325,7 +340,6 @@ class BL2MOD:
             If the changed option is a slider option, the value of the slider (float) that the value was changed to. """
         pass
 
-
 class GameInputBinding:
     """An object that describes a key binding registered by a mod.
 
@@ -402,17 +416,18 @@ class ModOptionsBinding:
                 settings = json.load(configFile)
                 options = settings.get("Options", dict())
                 for optionName, optionValue in options.items():
-                    if optionName == option.Caption:
+                    if optionName == option.Caption and type(option) != Options.Hidden:
                         if isinstance(optionValue, bool):
                             option.CurrentValue = optionValue
                         elif isinstance(optionValue, str):
                             option.CurrentValue = option.Choices[option.Choices.index(optionValue)]
-                        else:
+                        elif isinstance(optionValue, int) or isinstance(optionValue, float):
                             option.CurrentValue = float(optionValue)
+                    elif optionName == option.Caption and type(option) == Options.Hidden:
+                        option.CurrentValue = optionValue
         except: pass
 
         ModOptionsBinding.OptionList[self.Options] = mod
-
 
 class ModOptions(BL2MOD):
 
@@ -491,11 +506,7 @@ def LoadModList(caller: UObject, function: UFunction, params: FStruct) -> bool:
     return False
 
 
-RunHook(
-    "WillowGame.MarketplaceGFxMovie.OnDownloadableContentListRead",
-    "InjectMods",
-    LoadModList,
-)
+RunHook("WillowGame.MarketplaceGFxMovie.OnDownloadableContentListRead", "InjectMods", LoadModList)
 
 """ This function controls mod specific keybinds in the mod manager. """
 
@@ -555,9 +566,7 @@ def HookShopInputKey(caller: UObject, function: UFunction, params: FStruct) -> b
     return False
 
 
-RunHook(
-    "WillowGame.MarketplaceGFxMovie.ShopInputKey", "HookShopInputKey", HookShopInputKey
-)
+RunHook("WillowGame.MarketplaceGFxMovie.ShopInputKey", "HookShopInputKey", HookShopInputKey)
 
 """ Now we replace the DLC menu with the mods. """
 
@@ -591,11 +600,7 @@ def HookMainMenuPopulateForMods(caller: UObject, function: UFunction, params: FS
     return False
 
 
-RunHook(
-    "WillowGame.WillowScrollingListDataProviderFrontEnd.Populate",
-    "HookMainMenuPopulateForMods",
-    HookMainMenuPopulateForMods,
-)
+RunHook("WillowGame.WillowScrollingListDataProviderFrontEnd.Populate","HookMainMenuPopulateForMods",HookMainMenuPopulateForMods)
 
 seperatorNames = [""]
 
@@ -628,11 +633,7 @@ def HookModSelected(caller: UObject, function: UFunction, params: FStruct) -> bo
     return False
 
 
-RunHook(
-    "WillowGame.MarketplaceGFxMovie.extOnOfferingChanged",
-    "HookModSelected",
-    HookModSelected,
-)
+RunHook("WillowGame.MarketplaceGFxMovie.extOnOfferingChanged","HookModSelected", HookModSelected)
 
 """ This function adds all of our keybinds to the keybind menu. """
 
@@ -650,11 +651,7 @@ def HookInitKeyBinding(caller: UObject, function: UFunction, params: FStruct) ->
         caller.AddKeyBindEntry(tag, tag, str("        " + binding.Name))
     return True
 
-RunHook(
-    "WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.InitKeyBinding",
-    "HookInitKeyBinding",
-    HookInitKeyBinding,
-)
+RunHook("WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.InitKeyBinding","HookInitKeyBinding",HookInitKeyBinding)
 
 """ A function that gets localized versions of keys as not all keys are supported. """
 
@@ -668,7 +665,6 @@ def GetFixedLocalizedKeyName(menu, key):
         return "" if name is None else name
     except:
         return ""
-
 
 """ A function that hooks into the creation of config options. """
 
@@ -698,12 +694,7 @@ def HookOnPopulateKeys(caller: UObject, function: UFunction, params: FStruct) ->
 
     return False
 
-
-RunHook(
-    "WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.extOnPopulateKeys",
-    "HookOnPopulateKeys",
-    HookOnPopulateKeys,
-)
+RunHook("WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.extOnPopulateKeys","HookOnPopulateKeys",HookOnPopulateKeys,)
 
 """ A function that changes a mod's keybinds in the configuration menu. """
 
@@ -842,6 +833,8 @@ def PopulateGameOptions(caller: UObject, function: UFunction, params: FStruct) -
         for option, mod in ModOptionsBinding.OptionList.items():
             caption = (mod.Name + ": " + option.Caption).upper()
             option.EventID = startingIndex
+            if option.OptionType == -1:
+                continue
             if option.OptionType == 0:
                 if type(option) is Options.Spinner:
                     params.TheList.AddSpinnerListItem(
@@ -942,7 +935,7 @@ def storeModSettings():
             settingsList = [key for(key, value) in ModOptionsBinding.OptionList.items() if value == mod]
             for setting in settingsList:
                 if type(setting) is Options.Spinner:
-                    currentVal = setting.Choices[setting.CurrentValue]
+                    currentVal = setting.Choices[setting.Choices.index(setting.CurrentValue)]
                     modSettings["Options"].update( {setting.Caption : currentVal } )
                 else:
                     modSettings["Options"].update( {setting.Caption : setting.CurrentValue } )
