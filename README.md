@@ -10,7 +10,7 @@ An UnrealEngine Plugin enabling using Python to write plugins that interact dire
 Begin by [downloading the latest version of `PythonSDK.zip` here](https://github.com/Matt-Hurd/BL2-SDK/releases).
 
 
-For PythonSDK to be able to interact with the game, you must add a few things to the game's Win32 folder. If you already have PluginLoader installed, you are all set to go and may skip ahead to Step 6.
+For PythonSDK to be able to interact with the game, you must add a few things to the game's Win32 folder. If you already have PluginLoader installed, you'll need to overwrite some files.
 
 1. Quit the game if it is running.  
 
