@@ -350,13 +350,13 @@ class CrossSkillRandomizer(bl2sdk.BL2MOD):
 
 rando = CrossSkillRandomizer()
 
-bl2sdk.Mods.append(rando)
+bl2sdk.RegisterMod(rando)
 
 if os.path.isfile(rando.LocalModDir + "\\log.json"):
     with open(rando.LocalModDir + "\\log.json", "r") as f:
         seeds = json.loads(f.read())
         for seed in seeds:
-            bl2sdk.Mods.append(CrossSkillRandomizer(seed))
+            bl2sdk.RegisterMod(CrossSkillRandomizer(seed))
 else:
     with open(rando.LocalModDir + "\\log.json", "w") as f:
         f.write("[]")

@@ -29,4 +29,4 @@ class Grenadoer(bl2sdk.BL2MOD):
                     break
 
 
-bl2sdk.Mods.append(Grenadoer())
+bl2sdk.RegisterMod(Grenadoer())

@@ -1,7 +1,14 @@
 import bl2sdk
-import os
 import webbrowser
 from enum import Enum
+import sys
+import os
+import json
+
+""" The path to our mods folder, determined via the directory containing the current executable (Borderlands2.exe)."""
+Win32Directory = os.path.dirname(sys.executable)
+ModsDirectory = os.path.join(Win32Directory, "Mods")
+
 
 class ModTypes(Enum):
     """ A generic Enum type that's useful for giving plugins specific types, especially useful for sorting in the mod manager menu. """
@@ -191,7 +198,49 @@ class DefaultMod(BL2MOD):
         elif name == "Help":
             webbrowser.open("https://github.com/bl-sdk/BL2-Python-Plugins/wiki")
 
+def getModModule(mod):
+    modModule = ""
+    modules = [m for m in sys.modules.values() if m]
+    for module in modules:
+        try:
+            if module.__file__.find("Win32\\Mods") != -1 and module.__file__.find("Win32\\Mods\\__init__.py") == -1:
+                if mod.__class__.__name__ in module.__dir__():
+                    modModule = module
+                    break
+        except AttributeError: continue 
+    return modModule
+
+bl2sdk.Mods = [DefaultMod()]
+
+def RegisterMod(mod: BL2MOD):
+    modModule = getModModule(mod)
+    modDirectory = os.path.dirname(os.path.realpath(modModule.__file__))
+    settingsPath = os.path.join(modDirectory, "settings.json")
+    if os.path.isfile(settingsPath):
+        with open(settingsPath) as configFile:
+            settings = json.load(configFile)
+            options = settings.get("Options", dict())
+            for optionName, optionValue in options.items():
+                for option in mod.Options:
+                    if optionName in option.Caption:
+                        if type(option) != bl2sdk.Options.Hidden:
+                            if isinstance(optionValue, bool):
+                                option.CurrentValue = optionValue
+                            elif isinstance(optionValue, str):
+                                option.CurrentValue = option.Choices[option.Choices.index(optionValue)]
+                            elif isinstance(optionValue, int) or isinstance(optionValue, float):
+                                option.CurrentValue = float(optionValue)
+                        else:
+                            option.CurrentValue = optionValue
+            keybinds = settings.get("Keybinds", dict())
+            for keybindName, keybind in keybinds.items():
+                for GameInput in mod.Keybinds:
+                    if keybindName == GameInput[0]:
+                        GameInput[1] = str(keybind)
+    bl2sdk.Mods.append(mod)
+
+
 bl2sdk.BL2MOD = BL2MOD
 bl2sdk.ModTypes = ModTypes
-bl2sdk.Mods = [DefaultMod()]
 bl2sdk.ModMenuOpened = []
+bl2sdk.RegisterMod = RegisterMod

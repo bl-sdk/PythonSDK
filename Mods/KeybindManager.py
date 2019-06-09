@@ -2,20 +2,21 @@ import bl2sdk
 from bl2sdk import *
 from collections import namedtuple
 
+from .Util import getLoadedMods
+
 KeybindBinding = namedtuple('KeybindBinding', ['Name', 'Key'])
 
 """ This function adds all of our keybinds to the keybind menu. """
 
 def HookInitKeyBinding(caller: UObject, function: UFunction, params: FStruct) -> bool:
-    for mod in bl2sdk.Mods:
-        if mod.Status != "Disabled":
-            if mod.Keybinds:
-                tag = f"bl2sdk.seperator.{mod.Name}"
-                caller.AddKeyBindEntry(tag, tag, mod.Name)
-            for GameInput in mod.Keybinds:
-                InputName, InputKey = GameInput
-                tag = f"bl2sdk.input.{mod.Name}.{InputName}"
-                caller.AddKeyBindEntry(tag, tag, f"        {InputName}")
+    for mod in getLoadedMods():
+        if mod.Keybinds:
+            tag = f"bl2sdk.seperator.{mod.Name}"
+            caller.AddKeyBindEntry(tag, tag, mod.Name)
+        for GameInput in mod.Keybinds:
+            InputName, InputKey = GameInput
+            tag = f"bl2sdk.input.{mod.Name}.{InputName}"
+            caller.AddKeyBindEntry(tag, tag, f"        {InputName}")
     return True
 
 RunHook("WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.InitKeyBinding","HookInitKeyBinding",HookInitKeyBinding)
@@ -48,18 +49,17 @@ def HookOnPopulateKeys(caller: UObject, function: UFunction, params: FStruct) ->
                 keyBind.Object.SetString("value", "")
                 keyBind.Object.SetVisible(False)
             else:
-                for mod in bl2sdk.Mods:
-                    if mod.Status != "Disabled" and mod.Name == keyBind.Tag.split('.')[2]:
+                for mod in getLoadedMods():
+                    if mod.Name == keyBind.Tag.split('.')[2]:
                         for GameInput in mod.Keybinds:
                             if keyBind.Tag == f"bl2sdk.input.{mod.Name}.{GameInput[0]}":
                                 keyBind.CurrentKey = GameInput[1]
         if keyBind.CurrentKey != "None":
-            for mod in bl2sdk.Mods:
-                if mod.Status != "Disabled":
-                    for GameInput in mod.Keybinds:
-                        if keyBind.CurrentKey == GameInput[0]:
-                            GameInput[1] = "None"
-                            mod.GameInputRebound(binding.Name[0], "None")
+            for mod in getLoadedMods():
+                for GameInput in mod.Keybinds:
+                    if keyBind.CurrentKey == GameInput[0]:
+                        GameInput[1] = "None"
+                        mod.GameInputRebound(binding.Name[0], "None")
         keyBind.Object.SetString(
             "value",
             GetFixedLocalizedKeyName(caller, keyBind.CurrentKey),
@@ -84,8 +84,8 @@ def HookBindCurrentSelection(caller: UObject, function: UFunction, params: FStru
 
     for bind in caller.KeyBinds:
         if bind.Tag.startswith("bl2sdk") and bind.Tag in PreviousKeyBinds.keys() and PreviousKeyBinds[bind.Tag] != bind.CurrentKey:
-            for mod in bl2sdk.Mods:
-                if mod.Status != "Disabled" and mod.Name == bind.Tag.split('.')[2]:
+            for mod in getLoadedMods():
+                if mod.Name == bind.Tag.split('.')[2]:
                     for GameInput in mod.Keybinds:
                         if bind.Tag == f"bl2sdk.input.{mod.Name}.{GameInput[0]}":
                             GameInput[1] = bind.CurrentKey
@@ -118,17 +118,16 @@ RunHook("WillowGame.WillowScrollingListDataProviderKeyboardMouseOptions.DoBind",
 
 def HookInputKey(caller: UObject, function: UFunction, params: FStruct) -> bool:
     # If we do not have a binding associated with this key, we ignore it.
-    for mod in bl2sdk.Mods:
-        if mod.Status != "Disabled":
-            for GameInput in mod.Keybinds:
-                if GameInput[1] == params.Key:
-                    # An event of 0 correlates to the key being pressed.
-                    if params.Event == 0:
-                        mod.GameInputPressed(KeybindBinding(*GameInput))
-                    # An event of 0 correlates to the key being released.
-                    elif params.Event == 1:
-                        mod.GameInputReleased(KeybindBinding(*GameInput))
-                    return False
+    for mod in getLoadedMods():
+        for GameInput in mod.Keybinds:
+            if GameInput[1] == params.Key:
+                # An event of 0 correlates to the key being pressed.
+                if params.Event == 0:
+                    mod.GameInputPressed(KeybindBinding(*GameInput))
+                # An event of 0 correlates to the key being released.
+                elif params.Event == 1:
+                    mod.GameInputReleased(KeybindBinding(*GameInput))
+                return False
     return True
 
 RunHook("WillowGame.WillowUIInteraction.InputKey", "HookInputKey", HookInputKey)

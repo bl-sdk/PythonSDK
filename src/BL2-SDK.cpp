@@ -235,10 +235,6 @@ namespace BL2SDK
 			Util::Popup(L"Python Module Error",
 				L"An error occurred while loading the Python modules.\n\nPlease check your console for the exact error. Once you've fixed the error, press F11 to reload the Python state.");
 		}
-		else if (status == PYTHON_OK)
-		{
-			Logging::LogF("[Internal] Python initialized successfully.\n");
-		}
 	}
 
 	bool getCanvasPostRender(UObject* caller, UFunction* function, FStruct *params)

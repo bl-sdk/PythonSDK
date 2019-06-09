@@ -76,7 +76,7 @@ class LegacyMod(bl2sdk.BL2MOD):
                     continue
                 # Create the new legacy mod object and add it to the mods menu.
                 mod = LegacyMod(filename)
-                bl2sdk.Mods.append(mod)
+                bl2sdk.RegisterMod(mod)
 
             # Create a set to store a list of any and all mods we determine this
             # mod to conflict with.

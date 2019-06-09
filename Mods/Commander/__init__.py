@@ -254,4 +254,4 @@ class Commander(bl2sdk.BL2MOD):
         self.ConsoleCommand("disconnect")
 
 
-bl2sdk.Mods.append(Commander())
+bl2sdk.RegisterMod(Commander())
