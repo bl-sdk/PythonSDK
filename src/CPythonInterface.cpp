@@ -92,6 +92,7 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	m.def("RegisterHook", &RegisterHook);
 	m.def("GetEngine", &BL2SDK::GetEngine, py::return_value_policy::reference);
 	m.def("RemoveHook", [](const std::string& funcName, const std::string& hookName) { BL2SDK::RemoveHook(funcName, hookName); });
+	m.def("RunHook", [](const std::string& funcName, const std::string& hookName, py::object funcHook) { BL2SDK::RemoveHook(funcName, hookName); RegisterHook(funcName, hookName, funcHook); });
 	m.def("DoInjectedCallNext", &BL2SDK::doInjectedCallNext);
 	m.def("LogAllCalls", &BL2SDK::LogAllCalls);
 	m.def("CallPostEdit", [](bool NewValue) { BL2SDK::CallPostEdit = NewValue; });
