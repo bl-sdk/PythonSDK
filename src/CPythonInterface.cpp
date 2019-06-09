@@ -73,7 +73,7 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	Export_pystes_Core_classes(m);
 	Export_pystes_TArray(m);
 
-	m.def("Log", [](std::string in) { Logging::LogPy(in.c_str()); });
+	m.def("Log", [](py::object in) { Logging::LogPy(py::repr(in)); });
 	m.def("LoadPackage", &BL2SDK::LoadPackage, py::arg("filename"), py::arg("flags") = 0, py::arg("force") = false);
 	m.def("KeepAlive", &BL2SDK::KeepAlive);
 	m.def("GetPackageObject", &UObject::GetPackageObject, py::return_value_policy::reference);
