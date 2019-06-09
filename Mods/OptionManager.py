@@ -87,7 +87,7 @@ class Options:
 
 bl2sdk.Options = Options
 
-class ModOptionsBinding:
+class OptionsManager:
     """An object that describes a option registered by a mod.
 
     Each option object gets given a mod that the option is linked. This gets used to order all of our config options.
@@ -118,7 +118,7 @@ class ModOptionsBinding:
                         option.CurrentValue = optionValue
         except: pass
 
-        ModOptionsBinding.OptionList[self.Options] = mod
+        OptionsManager.OptionList[self.Options] = mod
 
 
 """ This function adds the `PLUGINS` menu into the options menu. """
@@ -136,7 +136,7 @@ def AddModConfigMenu(caller: UObject, function: UFunction, params: FStruct) -> b
         == "$WillowMenu.WillowScrollingListDataProviderTopLevelOptions.GamepadOptionsPC"
         and Options.isGamepadConnected == True
     )
-    if correctMenuLocation and (bool(ModOptionsBinding.OptionList) == True):
+    if correctMenuLocation and (bool(OptionsManager.OptionList) == True):
         caller.AddListItem(0, "PLUGINS", False, False)
     return False
 
@@ -172,7 +172,7 @@ def PopulateGameOptions(caller: UObject, function: UFunction, params: FStruct) -
     startingIndex = 556
     # If we're in the plugin menu, we shouldn't fill in the other `GAMEPLAY` menu.
     if Options.isMenuPluginMenu == True:
-        for option, mod in ModOptionsBinding.OptionList.items():
+        for option, mod in OptionsManager.OptionList.items():
             caption = (mod.Name + ": " + option.Caption).upper()
             option.EventID = startingIndex
             if option.OptionType == -1:
@@ -209,7 +209,7 @@ RunHook("WillowGame.WillowScrollingListDataProviderGameOptions.Populate","Popula
 """ This function here hooks onto a player changing the value of a setting. """
 
 def HookValueChange(caller: UObject, function: UFunction, params: FStruct) -> bool:
-    for option, mod in ModOptionsBinding.OptionList.items():
+    for option, mod in OptionsManager.OptionList.items():
         if option.EventID == params.EventID:
             if params.NewSliderValue != None:
                 mod.ModOptionChanged(option, float(params.NewSliderValue))

@@ -6,7 +6,7 @@ import sys
 import mypy
 
 from .ModManager import *
-from .OptionsManager import *
+from .OptionManager import *
 from .KeybindManager import *
 
 
@@ -53,13 +53,13 @@ def getModModule(mod):
 def storeModSettings():
     loadedMods = getLoadedMods()
     for mod in loadedMods:
-        if (mod not in ModOptionsBinding.OptionList.values()) and (not mod.Keybinds):
+        if (mod not in OptionsManager.OptionList.values()) and (not mod.Keybinds):
             continue
         modSettings = {}
         modSettings["Options"] = {}
         modSettings["Keybinds"] = {}
-        if mod in ModOptionsBinding.OptionList.values():
-            settingsList = [key for(key, value) in ModOptionsBinding.OptionList.items() if value == mod]
+        if mod in OptionsManager.OptionList.values():
+            settingsList = [key for(key, value) in OptionsManager.OptionList.items() if value == mod]
             for setting in settingsList:
                 if type(setting) is Options.Spinner:
                     currentVal = setting.Choices[setting.Choices.index(setting.CurrentValue)]
