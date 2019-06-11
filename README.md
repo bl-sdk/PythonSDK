@@ -19,6 +19,12 @@ If you are asked to overwrite any files, accept. This mod replaces (and function
 
 3. If you have installed an older version of the SDK, delete the old files. This includes `Win32\Plugins\PythonSDK.dll`
 
+### Linux (SteamPlay/Proton and Wine)
+
+PythonSDK does not yet work natively on Linux, but it seems to work well under SteamPlay/Proton and Wine.  To load properly, though, Wine needs to be told to allow `ddraw.dll` overrides.  Set the game's launch options (via `Properties -> General`) to `WINEDLLOVERRIDES="ddraw=n,b" %command%`
+
+Note that using `WINEDLLOVERRIDES` for `ddraw` isn't supported by the Wine developers, so if you experience problems with the game while using this method, please don't ask the WineHQ team for assistance.
+
 ## Usage
 
 `py <python code>` runs arbitrary python code.  
