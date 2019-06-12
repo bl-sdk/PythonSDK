@@ -28,7 +28,7 @@ Note that using `WINEDLLOVERRIDES` for `ddraw` isn't supported by the Wine devel
 ## Usage
 
 `py <python code>` runs arbitrary python code.  
-`pyexec <python file>` runs arbitrary python files from `binaries/Win32/Plugins/Python/`.
+`pyexec <python file>` runs arbitrary python files from `binaries/Win32/Mods/`.
 
 ## Borderlands Ingame Mod Manager
 
