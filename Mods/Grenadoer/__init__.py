@@ -1,7 +1,8 @@
 import bl2sdk
 
+from ..ModManager import BL2MOD, RegisterMod
 
-class Grenadoer(bl2sdk.BL2MOD):
+class Grenadoer(BL2MOD):
 
     Name = "Grenadoer"
     Description = "Cycles your equipped grenade mod through the ones marked as Favorite in your backpack. Configure binding from the Key Bindings settings menu."
@@ -29,4 +30,4 @@ class Grenadoer(bl2sdk.BL2MOD):
                     break
 
 
-bl2sdk.RegisterMod(Grenadoer())
+RegisterMod(Grenadoer())

@@ -5,8 +5,10 @@ import math
 import json
 from fractions import Fraction
 
+from ..ModManager import BL2MOD, RegisterMod
 
-class Commander(bl2sdk.BL2MOD):
+
+class Commander(BL2MOD):
 
     Name = "Commander"
     Description = (
@@ -254,4 +256,4 @@ class Commander(bl2sdk.BL2MOD):
         self.ConsoleCommand("disconnect")
 
 
-bl2sdk.RegisterMod(Commander())
+RegisterMod(Commander())
