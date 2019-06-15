@@ -6,7 +6,7 @@ class Grenadoer(bl2sdk.BL2MOD):
     Name = "Grenadoer"
     Description = "Cycles your equipped grenade mod through the ones marked as Favorite in your backpack. Configure binding from the Key Bindings settings menu."
 
-    Keybinds = [("Swap Grenade", "B")]
+    Keybinds = [["Swap Grenade", "B"]]
 
     def GameInputRebound(self, name, key):
         """Invoked by the SDK when one of the inputs we have registered for is
