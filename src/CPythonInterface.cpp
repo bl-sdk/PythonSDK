@@ -205,16 +205,16 @@ PythonStatus CPythonInterface::InitializeModules()
 		Logging::Log("[Python] Failed to initialize Python modules\n");
 		return PYTHON_MODULE_ERROR;
 	}
-	std::vector<std::wstring> modFolders = getSubdirs(Settings::GetPythonFile(L""));
-	for (std::vector<std::wstring>::iterator it = modFolders.begin(); it != modFolders.end(); ++it) {
-		try {
-			py::module::import(Util::Narrow(*it).c_str());
-		}
-		catch (std::exception e) {
-			Logging::LogF(e.what());
-			Logging::LogF("[Python] Failed to import mod: %s\n", Util::Narrow(*it).c_str());
-		}
-	}
+	//std::vector<std::wstring> modFolders = getSubdirs(Settings::GetPythonFile(L""));
+	//for (std::vector<std::wstring>::iterator it = modFolders.begin(); it != modFolders.end(); ++it) {
+	//	try {
+	//		py::module::import(Util::Narrow(*it).c_str());
+	//	}
+	//	catch (std::exception e) {
+	//		Logging::LogF(e.what());
+	//		Logging::LogF("[Python] Failed to import mod: %s\n", Util::Narrow(*it).c_str());
+	//	}
+	//}
 	Logging::Log("[Python] Python initialized (" PYTHON_ABI_STRING ")\n");
 	m_modulesInitialized = true;
 	return PYTHON_OK;

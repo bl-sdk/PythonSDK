@@ -9,3 +9,15 @@ from .OptionManager import *
 from .KeybindManager import *
 from .ModMenuManager import *
 from .SaveManager import *
+
+import os, importlib
+
+for module in os.listdir(os.path.dirname(__file__)):
+    absolute_file = f"{os.path.dirname(__file__)}\\{module}"
+    bl2sdk.Log(absolute_file)
+    if not os.path.isdir(absolute_file):
+        continue
+    try:
+    	importlib.import_module(f".{module}", "Mods")
+	except:
+		bl2sdk.Log(f"Failed to import mod: {module}")
