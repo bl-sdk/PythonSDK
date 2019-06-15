@@ -186,11 +186,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <TargetName>PythonSDK</TargetName>
+    <TargetName>ddraw</TargetName>
     <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
     <IncludePath>$(PYTHONPATH)\include;$(IncludePath);$(VC_SourcePath)\src\include;</IncludePath>
     <LibraryPath>$(PYTHONPATH)\libs;$(LibraryPath)</LibraryPath>
-    <OutDir>C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\Binaries\Win32\Plugins\</OutDir>
+    <OutDir>C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\Binaries\Win32\</OutDir>
     <IntDir>build\$(Configuration)\</IntDir>
     <SourcePath>$(VC_SourcePath)\src;</SourcePath>
   </PropertyGroup>
