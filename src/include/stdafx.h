@@ -320,7 +320,7 @@ namespace pybind11 {
 				if (!isinstance<sequence>(src))
 					return false;
 				PyObject *source = src.ptr();
-				char *tmp = PyUnicode_AsUTF8AndSize(source, nullptr);
+				const char *tmp = PyUnicode_AsUTF8AndSize(source, nullptr);
 				if (!tmp)
 					return false;
 				value = FString(tmp);
@@ -346,7 +346,7 @@ namespace pybind11 {
 				if (!isinstance<sequence>(src))
 					return false;
 				PyObject *source = src.ptr();
-				char *tmp = PyUnicode_AsUTF8AndSize(source, nullptr);
+				const char *tmp = PyUnicode_AsUTF8AndSize(source, nullptr);
 				if (!tmp)
 					return false;
 				value = UObject::FindClass(tmp, false);
@@ -369,7 +369,7 @@ namespace pybind11 {
 				if (!isinstance<sequence>(src))
 					return false;
 				PyObject *source = src.ptr();
-				char *tmp = PyUnicode_AsUTF8AndSize(source, nullptr);
+				const char *tmp = PyUnicode_AsUTF8AndSize(source, nullptr);
 				if (!tmp)
 					return false;
 				value = FName(tmp);

@@ -35,7 +35,7 @@ bool VerifyPythonFunction(py::object funcHook, const char** expectedKeys) {
 	}
 	for (int x = 0; x < PyList_GET_SIZE(Keys) - 1; x++) {
 		PyObject *Key = PyList_GET_ITEM(Keys, x);
-		char *KeyString = PyUnicode_AsUTF8AndSize(Key, 0);
+		const char *KeyString = PyUnicode_AsUTF8AndSize(Key, 0);
 		if (strcmp(KeyString, expectedKeys[x]))
 		{
 			Logging::LogF("[Error] Got unexpected argument '%s'. Expected '%s'.\n", KeyString, expectedKeys[x]);
