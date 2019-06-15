@@ -28,7 +28,7 @@ bool CHookManager::Remove(const std::string& funcName, const std::string& hookNa
 	tiHooks iHooks = Hooks.find(funcName);
 	if (iHooks == Hooks.end() || iHooks->second.find(hookName) == iHooks->second.end())
 	{
-		Logging::LogF("[HookManager] (%s) ERROR: Failed to remove hook \"%s\" for \"%s\"\n", this->DebugName.c_str(), hookName.c_str(), funcName.c_str());
+		Logging::LogD("[HookManager] (%s) ERROR: Failed to remove hook \"%s\" for \"%s\"\n", this->DebugName.c_str(), hookName.c_str(), funcName.c_str());
 		return false;
 	}
 

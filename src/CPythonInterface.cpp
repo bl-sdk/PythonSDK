@@ -73,7 +73,7 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	Export_pystes_Core_classes(m);
 	Export_pystes_TArray(m);
 
-	m.def("Log", [](std::string in) { Logging::LogPy(in.c_str()); });
+	m.def("Log", [](py::object in) { Logging::LogPy(py::repr(in)); });
 	m.def("LoadPackage", &BL2SDK::LoadPackage, py::arg("filename"), py::arg("flags") = 0, py::arg("force") = false);
 	m.def("KeepAlive", &BL2SDK::KeepAlive);
 	m.def("GetPackageObject", &UObject::GetPackageObject, py::return_value_policy::reference);
@@ -92,6 +92,7 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	m.def("RegisterHook", &RegisterHook);
 	m.def("GetEngine", &BL2SDK::GetEngine, py::return_value_policy::reference);
 	m.def("RemoveHook", [](const std::string& funcName, const std::string& hookName) { BL2SDK::RemoveHook(funcName, hookName); });
+	m.def("RunHook", [](const std::string& funcName, const std::string& hookName, py::object funcHook) { BL2SDK::RemoveHook(funcName, hookName); RegisterHook(funcName, hookName, funcHook); });
 	m.def("DoInjectedCallNext", &BL2SDK::doInjectedCallNext);
 	m.def("LogAllCalls", &BL2SDK::LogAllCalls);
 	m.def("CallPostEdit", [](bool NewValue) { BL2SDK::CallPostEdit = NewValue; });
@@ -204,16 +205,16 @@ PythonStatus CPythonInterface::InitializeModules()
 		Logging::Log("[Python] Failed to initialize Python modules\n");
 		return PYTHON_MODULE_ERROR;
 	}
-	std::vector<std::wstring> modFolders = getSubdirs(Settings::GetPythonFile(L""));
-	for (std::vector<std::wstring>::iterator it = modFolders.begin(); it != modFolders.end(); ++it) {
-		try {
-			py::module::import(Util::Narrow(*it).c_str());
-		}
-		catch (std::exception e) {
-			Logging::LogF(e.what());
-			Logging::LogF("[Python] Failed to import mod: %s\n", Util::Narrow(*it).c_str());
-		}
-	}
+	//std::vector<std::wstring> modFolders = getSubdirs(Settings::GetPythonFile(L""));
+	//for (std::vector<std::wstring>::iterator it = modFolders.begin(); it != modFolders.end(); ++it) {
+	//	try {
+	//		py::module::import(Util::Narrow(*it).c_str());
+	//	}
+	//	catch (std::exception e) {
+	//		Logging::LogF(e.what());
+	//		Logging::LogF("[Python] Failed to import mod: %s\n", Util::Narrow(*it).c_str());
+	//	}
+	//}
 	Logging::Log("[Python] Python initialized (" PYTHON_ABI_STRING ")\n");
 	m_modulesInitialized = true;
 	return PYTHON_OK;

@@ -72,9 +72,9 @@ namespace Logging
 		Log(output, 0);
 	}
 
-	void LogPy(const char* formatted)
+	void LogPy(std::string formatted)
 	{
-		Log(formatted, 0);
+		Log(formatted.c_str(), 0);
 	}
 
 	void LogF(const char* fmt, ...)
