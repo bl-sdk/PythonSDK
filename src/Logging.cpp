@@ -57,10 +57,10 @@ namespace Logging
 			{
 				std::wstring wfmt = Util::Widen(outc);
 				bool DoInjectedNext = BL2SDK::injectedCallNext;
-				BL2SDK::doInjectedCallNext();
+				BL2SDK::DoInjectedCallNext();
 				BL2SDK::gameConsole->OutputText(FString((wchar_t*)wfmt.c_str()));
 				if (DoInjectedNext)
-					BL2SDK::doInjectedCallNext();
+					BL2SDK::DoInjectedCallNext();
 			}
 		}
 	}

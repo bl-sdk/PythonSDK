@@ -2,83 +2,83 @@
 #include "stdafx.h"
 #include "CHookManager.h"
 
-void CHookManager::Register(const std::string& funcName, const std::string& hookName, std::function<bool(UObject*, UFunction*, FStruct*)> funcHook)
+void CHookManager::Register(const std::string& FuncName, const std::string& HookName, const std::function<bool(UObject*, UFunction*, FStruct*)> &FuncHook)
 {
 	char funcNameChar[255];
-	strcpy(funcNameChar, funcName.c_str());
+	strcpy(funcNameChar, FuncName.c_str());
 
 	// Create pair to insert
-	tHookPair hookPair = std::make_pair(hookName, funcHook);
+	tHookPair hookPair = std::make_pair(HookName, FuncHook);
 
-	tiHooks iHooks = Hooks.find(funcName);
-	if (iHooks != Hooks.end())
+	auto iHooks = hooks.find(FuncName);
+	if (iHooks != hooks.end())
 		iHooks->second.insert(hookPair);
 	else
 	{
 		tHookMap newMap;
 		newMap.insert(hookPair);
-		Hooks.emplace(funcName, newMap);
+		hooks.emplace(FuncName, newMap);
 	}
 
-	Logging::LogD("[HookManager] (%s) Hook \"%s\" added as hook for \"%s\"\n", this->DebugName.c_str(), hookPair.first.c_str(), funcName.c_str());
+	Logging::LogD("[HookManager] (%s) Hook \"%s\" added as hook for \"%s\"\n", this->debugName.c_str(), hookPair.first.c_str(), FuncName.c_str());
 }
 
-bool CHookManager::Remove(const std::string& funcName, const std::string& hookName)
+bool CHookManager::Remove(const std::string& FuncName, const std::string& HookName)
 {
-	tiHooks iHooks = Hooks.find(funcName);
-	if (iHooks == Hooks.end() || iHooks->second.find(hookName) == iHooks->second.end())
+	auto iHooks = hooks.find(FuncName);
+	if (iHooks == hooks.end() || iHooks->second.find(HookName) == iHooks->second.end())
 	{
-		Logging::LogD("[HookManager] (%s) ERROR: Failed to remove hook \"%s\" for \"%s\"\n", this->DebugName.c_str(), hookName.c_str(), funcName.c_str());
+		Logging::LogD("[HookManager] (%s) ERROR: Failed to remove hook \"%s\" for \"%s\"\n", this->debugName.c_str(), HookName.c_str(), FuncName.c_str());
 		return false;
 	}
 
-	iHooks->second.erase(hookName);
+	iHooks->second.erase(HookName);
 	return true;
 }
 
-bool CHookManager::ProcessHooks(const std::string& funcName, const UObject *caller, const UFunction *func, const FStruct *params) {
-	tiHooks iHooks = Hooks.find(funcName);
+bool CHookManager::ProcessHooks(const std::string& FuncName, const UObject *Caller, const UFunction *Func, const FStruct *Params) {
+	auto iHooks = hooks.find(FuncName);
 
-	if (iHooks != Hooks.end())
+	if (iHooks != hooks.end())
 	{
 		tHookMap hooks = iHooks->second;
 
 		for (tiHookMap iterator = hooks.begin(); iterator != hooks.end(); iterator++)
-			if (!iterator->second((UObject *)caller, (UFunction *)func, (FStruct *)params))
+			if (!iterator->second((UObject *)Caller, (UFunction *)Func, (FStruct *)Params))
 				return false;
 	}
 
-	iHooks = Hooks.find(((UObject *)caller)->GetObjectName() + "." + ((UFunction *)func)->GetName());
+	iHooks = hooks.find(((UObject *)Caller)->GetObjectName() + "." + ((UFunction *)Func)->GetName());
 
-	if (iHooks != Hooks.end())
+	if (iHooks != hooks.end())
 	{
 		tHookMap hooks = iHooks->second;
 
 		for (tiHookMap iterator = hooks.begin(); iterator != hooks.end(); iterator++)
-			if (!iterator->second((UObject *)caller, (UFunction *)func, (FStruct *)params))
+			if (!iterator->second((UObject *)Caller, (UFunction *)Func, (FStruct *)Params))
 				return false;
 	}
 	return true;
 }
 
 
-bool CHookManager::HasHook(UObject *caller, UFunction *func) {
-	tiHooks iHooks = Hooks.find(func->GetObjectName());
-	if (iHooks != Hooks.end() && iHooks->second.size() > 0)
+bool CHookManager::HasHook(UObject *Caller, UFunction *Func) {
+	auto iHooks = hooks.find(Func->GetObjectName());
+	if (iHooks != hooks.end() && iHooks->second.size() > 0)
 		return true;
-	iHooks = Hooks.find(caller->GetObjectName() + "." + func->GetName());
-	return (iHooks != Hooks.end() && iHooks->second.size() > 0);
+	iHooks = hooks.find(Caller->GetObjectName() + "." + Func->GetName());
+	return (iHooks != hooks.end() && iHooks->second.size() > 0);
 }
 
-bool CHookManager::ProcessHooks(UObject* pCaller, FFrame& Stack, void* const Result, UFunction* Function) {
-	tiHooks iHooks = Hooks.find(Function->GetObjectName());
+bool CHookManager::ProcessHooks(UObject* Caller, FFrame& Stack, void* const Result, UFunction* Function) {
+	auto iHooks = hooks.find(Function->GetObjectName());
 
 	// Even though we check in the next function, check here to avoid messing with the stack when we don't need to
-	if (iHooks != Hooks.end() || Hooks.find(pCaller->GetObjectName() + "." + Function->GetName()) != Hooks.end())
+	if (iHooks != hooks.end() || hooks.find(Caller->GetObjectName() + "." + Function->GetName()) != hooks.end())
 	{
 		UProperty* ReturnParm = nullptr;
 		char* Frame = (char *)calloc(1, Function->ParamsSize);
-		for (UProperty* Property = (UProperty *)Function->Children; Stack.Code[0] != 0x16; Property = (UProperty*)Property->Next) {
+		for (auto* Property = (UProperty *)Function->Children; Stack.Code[0] != 0x16; Property = (UProperty*)Property->Next) {
 			const bool bIsReturnParam = ((Property->PropertyFlags & 0x400) != 0);
 			if (bIsReturnParam) {
 				ReturnParm = Property;
@@ -86,7 +86,7 @@ bool CHookManager::ProcessHooks(UObject* pCaller, FFrame& Stack, void* const Res
 			}
 			BL2SDK::pFrameStep(&Stack, Stack.Object, Frame + Property->Offset_Internal);
 		}
-		bool ret = ProcessHooks(Function->GetObjectName(), pCaller, Function, &FStruct{ Function, (void *)Frame });
+		bool ret = ProcessHooks(Function->GetObjectName(), Caller, Function, &FStruct{ Function, (void *)Frame });
 		//if (!ret) {
 		//	if (ReturnParm)
 		//	{

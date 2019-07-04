@@ -28,12 +28,12 @@ namespace BL2SDK
 	typedef void(__thiscall *tCallFunction) (UObject*, FFrame&, void* const, UFunction*);
 	typedef void(__thiscall *tFrameStep) (FFrame*, UObject*, void* const);
 	// http://api.unrealengine.com/INT/API/Runtime/CoreUObject/UObject/StaticConstructObject_Internal/index.html
-	typedef UObject* (*tStaticConstructObject) (UClass* Class, UObject* InOuter, FName name, unsigned int SetFlags, unsigned int InternalSetFlags, UObject* InTemplate, FOutputDevice* Error, void* InstanceGraph, int bAssumeTemplateIsArchetype);
-	typedef UPackage* (*tLoadPackage) (UPackage* outer, const wchar_t* filename, DWORD flags);
+	typedef UObject* (*tStaticConstructObject) (UClass* Class, UObject* InOuter, FName Name, unsigned int SetFlags, unsigned int InternalSetFlags, UObject* InTemplate, FOutputDevice* Error, void* InstanceGraph, int AssumeTemplateIsArchetype);
+	typedef UPackage* (*tLoadPackage) (UPackage* Outer, const wchar_t* Filename, DWORD Flags);
 	typedef FArchive& (__thiscall *tByteOrderSerialize) (FArchive* Ar, void* V, int Length);
 
-	typedef char *(__thiscall *tFNameInitOld) (FName *out, wchar_t *Src, int InNumber, int FindType, int bSplitName, int Unk1);
-	typedef void(__thiscall *tFNameInitNew) (FName *out, wchar_t *Src, int InNumber, int FindType, int bSplitName);
+	typedef char *(__thiscall *tFNameInitOld) (FName *Out, wchar_t *Src, int InNumber, int FindType, int SplitName, int Unk1);
+	typedef void(__thiscall *tFNameInitNew) (FName *Out, wchar_t *Src, int InNumber, int FindType, int SplitName);
 	typedef UObject *(__thiscall *tGetDefaultObject)(UClass *, unsigned int);
 
 	extern tFNameInitOld pFNameInit;
@@ -58,18 +58,18 @@ namespace BL2SDK
 
 	extern class UObject *engine;
 
-	void LogAllCalls(bool enabled);
-	void doInjectedCallNext();
-	void initialize();
-	void cleanup();
-	void LoadPackage(const char* filename, DWORD flags = 0, bool force = false);
-	void KeepAlive(UObject *obj);
-	UObject			*ConstructObject(UClass* Class, UObject* InOuter, FName Name, unsigned int SetFlags, unsigned int InternalSetFlags, UObject* inTemplate, FOutputDevice *Error, void* InstanceGraph, int bAssumeTemplateIsArchetype);
+	void LogAllCalls(bool Enabled);
+	void DoInjectedCallNext();
+	void Initialize();
+	void Cleanup();
+	void LoadPackage(const char* Filename, DWORD Flags = 0, bool Force = false);
+	void KeepAlive(UObject *Obj);
+	UObject			*ConstructObject(UClass* Class, UObject* InOuter, FName Name, unsigned int SetFlags, unsigned int InternalSetFlags, UObject* InTemplate, FOutputDevice *Error, void* InstanceGraph, int AssumeTemplateIsArchetype);
 	UObject			*GetEngine();
 	//UObject			*LoadTexture(char *Filename, char *TextureName);
 
-	void RegisterHook(const std::string& funcName, const std::string& hookName, std::function<bool(UObject*, UFunction*, FStruct*)> funcHook);
-	bool RemoveHook(const std::string& funcName, const std::string& hookName);
+	void RegisterHook(const std::string& FuncName, const std::string& HookName, std::function<bool(UObject*, UFunction*, FStruct*)> FuncHook);
+	bool RemoveHook(const std::string& FuncName, const std::string& HookName);
 }
 
 #endif

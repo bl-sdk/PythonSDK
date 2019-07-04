@@ -7,6 +7,7 @@
 #include "AntiDebug.h"
 #include "Util.h"
 #include "BL2-SDK.h"
+#include <utility>
 #include "Logging.h"
 #include "Settings.h"
 #include "Exports.h"
@@ -114,14 +115,14 @@ namespace BL2SDK
 		pCallFunction(caller, stack, result, function);
 	}
 
-	void doInjectedCallNext()
+	void DoInjectedCallNext()
 	{
 		injectedCallNext = true;
 	}
 
-	void LogAllCalls(bool enabled)
+	void LogAllCalls(bool Enabled)
 	{
-		logAllCalls = enabled;
+		logAllCalls = Enabled;
 	}
 
 	void hookGame()
@@ -133,7 +134,7 @@ namespace BL2SDK
 			actualPath[j] = (char)szExePath[j];
 		std::string str(actualPath);
 		std::size_t slash = str.find_last_of("/\\") + 1;
-		std::size_t dot = str.find_last_of(".");
+		std::size_t dot = str.find_last_of('.');
 		Logging::LogF("Found EXE name as '%s.exe'\n", str.substr(slash, dot - slash).c_str());
 		CSigScan sigscan(Util::Widen(str.substr(slash, dot - slash) + ".exe").c_str());
 
@@ -179,8 +180,8 @@ namespace BL2SDK
 				static_cast<unsigned char *>(SetCommand)[5] = 0xFF;
 			}
 		}
-		catch (std::exception *e) {
-			Logging::LogF("Exception when enabling 'SET' commands: %d\n", e->what());
+		catch (std::exception e) {
+			Logging::LogF("Exception when enabling 'SET' commands: %d\n", e.what());
 		}
 
 		// Detour UObject::ProcessEvent()
@@ -266,7 +267,7 @@ namespace BL2SDK
 		return true;
 	}
 
-	void initialize()
+	void Initialize()
 	{
 		HookAntiDebug();
 		//Logging::SetLoggingLevel("DEBUG");
@@ -281,7 +282,7 @@ namespace BL2SDK
 
 	// This is called when the process is closing
 	// TODO: Other things might need cleaning up
-	void cleanup()
+	void Cleanup()
 	{
 		Logging::Cleanup();
 		delete HookManager;
@@ -289,11 +290,11 @@ namespace BL2SDK
 		Util::CloseGame();
 	}
 
-	void  LoadPackage(const char* filename, DWORD flags, bool force)
+	void  LoadPackage(const char* Filename, DWORD Flags, bool Force)
 	{
-		std::wstring wideFilename = Util::Widen(filename);
-		UPackage* result = BL2SDK::pLoadPackage(0, wideFilename.c_str(), flags);
-		if (force) {
+		std::wstring wideFilename = Util::Widen(Filename);
+		UPackage* result = BL2SDK::pLoadPackage(0, wideFilename.c_str(), Flags);
+		if (Force) {
 			for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
 			{
 				UObject* Object = UObject::GObjects()->Data[i];
@@ -303,12 +304,12 @@ namespace BL2SDK
 		}
 	};
 
-	void KeepAlive(UObject *obj) {
-		for (UObject *outer = obj; outer; outer = outer->Outer)
+	void KeepAlive(UObject *Obj) {
+		for (UObject *outer = Obj; outer; outer = outer->Outer)
 			outer->ObjectFlags.A |= 0x4000;
 	}
 
-	UObject *ConstructObject(UClass* Class, UObject* Outer, FName Name, unsigned int SetFlags, unsigned int InternalSetFlags, UObject* Template, FOutputDevice *Error, void* InstanceGraph, int bAssumeTemplateIsArchetype)
+	UObject *ConstructObject(UClass* Class, UObject* Outer, FName Name, unsigned int SetFlags, unsigned int InternalSetFlags, UObject* Template, FOutputDevice *Error, void* InstanceGraph, int AssumeTemplateIsArchetype)
 	{
 		if (!Error) {
 			Error = new FOutputDevice();
@@ -317,7 +318,7 @@ namespace BL2SDK
 		}
 		if (!Class)
 			return nullptr;
-		return BL2SDK::pStaticConstructObject(Class, Outer, Name, SetFlags | 0b1, InternalSetFlags, Template, Error, InstanceGraph, bAssumeTemplateIsArchetype);
+		return BL2SDK::pStaticConstructObject(Class, Outer, Name, SetFlags | 0b1, InternalSetFlags, Template, Error, InstanceGraph, AssumeTemplateIsArchetype);
 	};
 
 	UObject *GetEngine()
@@ -327,12 +328,12 @@ namespace BL2SDK
 		return engine;
 	}
 
-	void RegisterHook(const std::string& funcName, const std::string& hookName, std::function<bool(UObject*, UFunction*, FStruct*)> funcHook) {
-		HookManager->Register(funcName, hookName, funcHook);
+	void RegisterHook(const std::string& FuncName, const std::string& HookName, std::function<bool(UObject*, UFunction*, FStruct*)> FuncHook) {
+		HookManager->Register(FuncName, HookName, std::move(FuncHook));
 	}
 
-	bool RemoveHook(const std::string& funcName, const std::string& hookName) {
-		return HookManager->Remove(funcName, hookName);
+	bool RemoveHook(const std::string& FuncName, const std::string& HookName) {
+		return HookManager->Remove(FuncName, HookName);
 	}
 
 	//UObject *LoadTexture(char *Filename, char *TextureName) {

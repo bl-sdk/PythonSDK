@@ -1,6 +1,6 @@
 #pragma once
-#ifndef ANTIDEBUG_H
-#define ANTIDEBUG_H
+#ifndef ANTI_DEBUG_H
+#define ANTI_DEBUG_H
 
 namespace BL2SDK
 {
