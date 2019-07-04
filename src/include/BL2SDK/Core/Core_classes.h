@@ -194,20 +194,20 @@ struct FHelper {
 	py::object GetArrayProperty(class UArrayProperty *prop);
 	pybind11::object GetProperty(class UProperty *prop);
 
-	void SetProperty(class UStructProperty *prop, py::object val);
-	void SetProperty(class UStrProperty *prop, py::object val);
-	void SetProperty(class UObjectProperty *prop, py::object val);
-	void SetProperty(class UComponentProperty *prop, py::object val);
-	void SetProperty(class UClassProperty *prop, py::object val);
-	void SetProperty(class UNameProperty *prop, py::object val);
-	void SetProperty(class UInterfaceProperty *prop, py::object val);
-	void SetProperty(class UDelegateProperty *prop, py::object val);
-	void SetProperty(class UFloatProperty *prop, py::object val);
-	void SetProperty(class UIntProperty *prop, py::object val);
-	void SetProperty(class UByteProperty *prop, py::object val);
-	void SetProperty(class UBoolProperty *boolProp, py::object val);
-	void SetProperty(class UArrayProperty *prop, py::object val);
-	void SetProperty(class UProperty *Prop, py::object val);
+	void SetProperty(class UStructProperty *prop, const py::object& val);
+	void SetProperty(class UStrProperty *prop, const py::object& val);
+	void SetProperty(class UObjectProperty *prop, const py::object& val);
+	void SetProperty(class UComponentProperty *prop, const py::object& val);
+	void SetProperty(class UClassProperty *prop, const py::object& val);
+	void SetProperty(class UNameProperty *prop, const py::object& val);
+	void SetProperty(class UInterfaceProperty *prop, const py::object& val);
+	void SetProperty(class UDelegateProperty *prop, const py::object& val);
+	void SetProperty(class UFloatProperty *prop, const py::object& val);
+	void SetProperty(class UIntProperty *prop, const py::object& val);
+	void SetProperty(class UByteProperty *prop, const py::object& val);
+	void SetProperty(class UBoolProperty *boolProp, const py::object& val);
+	void SetProperty(class UArrayProperty *prop, const py::object& val);
+	void SetProperty(class UProperty *Prop, const py::object& val);
 };
 
 // 0x003C
@@ -248,7 +248,7 @@ public:
 	static std::vector<UObject*> FindAll(char* instr);
 
 	py::object GetProperty(std::string PropName);
-	void SetProperty(std::string& PropName, py::object Val);
+	void SetProperty(std::string& PropName, const py::object& Val);
 	struct FFunction GetFunction(std::string& PropName);
 	//struct FScriptArray GetArrayProperty(std::string& PropName);
 	//struct FScriptMap GetMapProperty(std::string& PropName);
@@ -1288,7 +1288,7 @@ struct FFunction
 	UFunction *func;
 
 private:
-	FHelper* GenerateParams(py::args args, py::kwargs kwargs, FHelper* params);
+	FHelper* GenerateParams(const py::args& args, const py::kwargs& kwargs, FHelper* params);
 
 public:
 	py::object GetReturn(FHelper* params);
@@ -1322,7 +1322,7 @@ struct FStruct
 	void		*base;
 	FStruct(UStruct* s, void* b);
 
-	pybind11::object GetProperty(std::string PropName) const;
+	pybind11::object GetProperty(const std::string& PropName) const;
 	void SetProperty(std::string& PropName, py::object value) const;
 	py::str Repr();
 };
