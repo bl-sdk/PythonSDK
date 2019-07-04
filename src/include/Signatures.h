@@ -3,7 +3,6 @@
 #define SIGNATURES_H
 
 #include "MemorySignature.h"
-#include "CSigScan.h"
 
 namespace BL2SDK
 {

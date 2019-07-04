@@ -21,7 +21,6 @@ void CSimpleDetour::Attach()
 	if (result != NO_ERROR)
 	{
 		throw FatalSDKException(4000, Util::Format("Failed to attach detour (Old = 0x%p, Hook = 0x%p, Result = 0x%X)", m_fnOld, m_fnReplacement, result));
-		MessageBox(nullptr, TEXT("ERROR"), TEXT("Failed to attach detour (Old = 0x%p, Hook = 0x%p, Result = 0x%X)", m_fnOld, m_fnReplacement, result), MB_OK);
 	}
 
 	m_bAttached = true;

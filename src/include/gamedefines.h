@@ -5,7 +5,6 @@
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
 #include <stdlib.h>
-#include <stdio.h>
 #include <string>
 #include "Util.h"
 #include "stdafx.h"
@@ -57,11 +56,6 @@ struct FNameEntry
 {
 	unsigned char UnknownData00[0x10];
 	char Name[1024];
-
-	void AppendNameToString(std::string& out)
-	{
-		out += Name;
-	}
 };
 
 struct FName
@@ -98,37 +92,13 @@ public:
 		return (TArray<FNameEntry*>*)BL2SDK::pGNames;
 	}
 
-	char* GetName()
+	const char* GetName() const
 	{
-		if (Index < 0 || Index > this->Names()->Num())
-			return (char*)"UnknownName";
+		if (Index < 0 || Index > Names()->Num())
+			return "UnknownName";
 		else
-			return this->Names()->Data[Index]->Name;
+			return Names()->Data[Index]->Name;
 	};
-
-	char *GetFullName() {
-		if (Index < 0 || Index > this->Names()->Num())
-			return (char*)"UnknownName";
-		char buffer[1000] = "";
-		memset(buffer, 0, 1000);
-		strcpy(buffer, GetName());
-		if (Number > 0) {
-			buffer[strlen(buffer)] = '_';
-			itoa(Number, buffer + strlen(buffer), 10);
-		}
-		return buffer;
-	}
-
-	void AppendString(std::string& out)
-	{
-		FNameEntry* entry = Names()->Data[Index];
-		entry->AppendNameToString(out);
-		if (Number != 0)
-		{
-			out += "_";
-			out += std::to_string(Number - 1);
-		}
-	}
 
 	bool operator == (const FName& A) const
 	{

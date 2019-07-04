@@ -84,7 +84,7 @@ namespace BL2SDK
 		Logging::LogF("0x%p\n", Stack->PreviousFrame);
 		Logging::LogF("0x%p\n", Stack->Outparams);
 		for (FOutParmRec* rec = Stack->Outparams; rec; rec = rec->NextOutParm) {
-			Logging::LogF("%s, 0x%x\n", rec->Property->GetFullName(), rec->PropAddr);
+			Logging::LogF("%s, 0x%x\n", rec->Property->GetFullName().c_str(), rec->PropAddr);
 		}
 	}
 	void __stdcall hkCallFunction(FFrame& stack, void* const result, UFunction* function)
@@ -124,41 +124,14 @@ namespace BL2SDK
 		logAllCalls = enabled;
 	}
 
-	int unrealExceptionHandler(unsigned int code, struct _EXCEPTION_POINTERS* ep)
-	{
-		if (IsDebuggerPresent())
-		{
-			DebugBreak();
-		}
-		/*
-		else if (CrashRptHelper::GenerateReport(code, ep))
-		{
-			Util::CloseGame();
-		}
-		*/
-		else if (Settings::DisableAntiDebug())
-		{
-			Util::Popup(L"Fatal Error", std::to_wstring(code).c_str());
-			if (IsDebuggerPresent())
-			{
-				DebugBreak();
-			}
-		}
-
-		// Don't ever pass it back into the engine
-		Util::CloseGame();
-
-		return EXCEPTION_EXECUTE_HANDLER;
-	}
-
 	void hookGame()
 	{
-		TCHAR szEXEPath[2048];
-		char actualpath[2048];
-		GetModuleFileName(NULL, szEXEPath, 2048);
-		for (int j = 0; szEXEPath[j] != 0; j++)
-			actualpath[j] = (char)szEXEPath[j];
-		std::string str(actualpath);
+		TCHAR szExePath[2048];
+		char actualPath[2048];
+		GetModuleFileName(nullptr, szExePath, 2048);
+		for (int j = 0; szExePath[j] != 0; j++)
+			actualPath[j] = (char)szExePath[j];
+		std::string str(actualPath);
 		std::size_t slash = str.find_last_of("/\\") + 1;
 		std::size_t dot = str.find_last_of(".");
 		Logging::LogF("Found EXE name as '%s.exe'\n", str.substr(slash, dot - slash).c_str());
@@ -187,7 +160,7 @@ namespace BL2SDK
 		pLoadPackage = reinterpret_cast<tLoadPackage>(sigscan.Scan(Signatures::LoadPackage));
 		Logging::LogF("[Internal] UObject::LoadPackage() = 0x%p\n", pLoadPackage);
 
-		pGMalloc = *(FMalloc***)sigscan.Scan(Signatures::GMalloc);
+		pGMalloc = *static_cast<FMalloc***>(sigscan.Scan(Signatures::GMalloc));
 		Logging::LogF("[Internal] GMalloc = 0x%p\n", pGMalloc);
 
 		pFNameInit = reinterpret_cast<tFNameInitOld>(sigscan.Scan(Signatures::FNameInit));
@@ -203,11 +176,11 @@ namespace BL2SDK
 				Logging::LogF("WINAPI Error when enabling 'SET' commands: %d\n", GetLastError());
 			}
 			else {
-				((unsigned char *)SetCommand)[5] = 0xFF;
+				static_cast<unsigned char *>(SetCommand)[5] = 0xFF;
 			}
 		}
-		catch (std::exception e) {
-			Logging::LogF("Exception when enabling 'SET' commands: %d\n", e.what());
+		catch (std::exception *e) {
+			Logging::LogF("Exception when enabling 'SET' commands: %d\n", e->what());
 		}
 
 		// Detour UObject::ProcessEvent()
@@ -240,9 +213,10 @@ namespace BL2SDK
 	bool getCanvasPostRender(UObject* caller, UFunction* function, FStruct *params)
 	{
 		// Set console key to Tilde if not already set
-		gameConsole = (UConsole *)UObject::Find("WillowConsole", "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0");
-		if (gameConsole == nullptr && engine && ((UEngine *)engine)->GameViewport)
-			gameConsole = ((UEngine *)engine)->GameViewport->ViewportConsole;
+		gameConsole = static_cast<UConsole *>(UObject::Find("WillowConsole",
+		                                                    "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0"));
+		if (gameConsole == nullptr && engine && static_cast<UEngine *>(engine)->GameViewport)
+			gameConsole = static_cast<UEngine *>(engine)->GameViewport->ViewportConsole;
 		if (gameConsole && (gameConsole->ConsoleKey == FName("None") || gameConsole->ConsoleKey == FName("Undefine")))
 			gameConsole->ConsoleKey = FName("Tilde");
 
@@ -272,8 +246,8 @@ namespace BL2SDK
 			if (!Object || !Object->Class)
 				continue;
 
-			if (!strcmp(Object->Class->GetName().c_str(), "Class"))
-				BL2SDK::ClassMap[Object->GetName()] = (UClass *)Object;
+			if (!strcmp(Object->Class->GetName(), "Class"))
+				BL2SDK::ClassMap[Object->GetName()] = static_cast<UClass *>(Object);
 
 			if (!strcmp(Object->GetFullName().c_str(), "WillowGameEngine Transient.WillowGameEngine"))
 				engine = Object;
@@ -292,7 +266,7 @@ namespace BL2SDK
 		return true;
 	}
 
-	void initialize(wchar_t * exeBaseFolder)
+	void initialize()
 	{
 		HookAntiDebug();
 		//Logging::SetLoggingLevel("DEBUG");

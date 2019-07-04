@@ -60,7 +60,7 @@ namespace BL2SDK
 
 	void LogAllCalls(bool enabled);
 	void doInjectedCallNext();
-	void initialize(wchar_t * exeBaseFolder/*LauncherStruct* args*/);
+	void initialize();
 	void cleanup();
 	void LoadPackage(const char* filename, DWORD flags = 0, bool force = false);
 	void KeepAlive(UObject *obj);

@@ -4,10 +4,6 @@
 #include "Settings.h"
 #include "Util.h"
 #include "BL2-SDK.h"
-#include <algorithm>
-#include <sstream>
-#include <functional>
-#include <iostream>
 #include <string>
 #include <cstdlib>
 
@@ -224,7 +220,6 @@ void CPythonInterface::SetPaths()
 {
 	m_PythonPath = Util::Narrow(Settings::GetPythonFile(L""));
 	const char *fmt = "import sys;sys.path.append(r'%s\\')";
-	const char *pythonString = Util::Format("import sys;sys.path.append(r'%s\\')", m_PythonPath.c_str()).c_str();
 	size_t needed = strlen(fmt) + strlen(m_PythonPath.c_str()) - 1;
 	char *buffer = (char *)malloc(needed);
 	sprintf(buffer, fmt, m_PythonPath.c_str());

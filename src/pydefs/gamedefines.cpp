@@ -17,7 +17,6 @@ void Export_pystes_gamedefines(py::module &m)
 	py::class_< FNameEntry >(m, "FNameEntry")
 		.def(py::init<>())
 		.def_readonly("Name", &FNameEntry::Name)
-		.def("AppendNameToString", &FNameEntry::AppendNameToString)
 		;
 	py::class_< FOutputDevice >(m, "FOutputDevice")
 		.def(py::init<>())
