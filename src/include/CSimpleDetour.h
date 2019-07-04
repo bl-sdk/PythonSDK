@@ -9,13 +9,13 @@
 class CSimpleDetour
 {
 public:
-	CSimpleDetour(void **old, void *replacement);
+	CSimpleDetour(void** old, void* replacement);
 
 	void Attach();
 	void Detach();
 private:
-	void **m_fnOld;
-	void *m_fnReplacement;
+	void** m_fnOld;
+	void* m_fnReplacement;
 
 	bool m_bAttached;
 };
@@ -43,6 +43,5 @@ private:
 	extern CSimpleDetour *Detour_##name
 
 #define SETUP_DETOUR_TRAMP( ret, conv, name, params ) \
-	ret ( conv *name##_T ) params = NULL; \
-
+	ret ( conv *name##_T ) params = NULL;
 #endif // !CSIMPLEDETOUR_H_

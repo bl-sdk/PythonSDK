@@ -9,7 +9,7 @@ namespace Settings
 	bool developerMode;
 	bool disableAntiDebug;
 
-	void Initialize(wchar_t * binPath_/*LauncherStruct* args*/)
+	void Initialize(wchar_t* binPath_/*LauncherStruct* args*/)
 	{
 		/*
 		if (args == nullptr || args->BinPath == nullptr)

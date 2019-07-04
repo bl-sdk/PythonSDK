@@ -17,15 +17,19 @@
 */
 namespace py = pybind11;
 
-class PyTArray {
-public:
-	PyTArray() {}
-};
-
-template<class T> struct TArray
+class PyTArray
 {
 public:
-	T * Data;
+	PyTArray()
+	{
+	}
+};
+
+template <class T>
+struct TArray
+{
+public:
+	T* Data;
 	unsigned int Count;
 	unsigned int Max;
 
@@ -41,12 +45,12 @@ public:
 		return this->Count;
 	}
 
-	T& operator() (int i)
+	T& operator()(int i)
 	{
 		return this->Data[i];
 	}
 
-	const T& operator() (int i) const
+	const T& operator()(int i) const
 	{
 		return this->Data[i];
 	}
@@ -64,7 +68,8 @@ struct FName
 	int Number;
 
 public:
-	FName() {
+	FName()
+	{
 		Index = 0;
 		Number = 0;
 	};
@@ -82,7 +87,8 @@ public:
 	FName(const std::string& FindName, int number)
 	{
 		if (BL2SDK::EngineVersion <= 8630)
-			((BL2SDK::tFNameInitOld)(BL2SDK::pFNameInit))(this, (wchar_t *)Util::Widen(FindName).c_str(), number, 1, 1, 0);
+			((BL2SDK::tFNameInitOld)(BL2SDK::pFNameInit))(this, (wchar_t *)Util::Widen(FindName).c_str(), number, 1, 1,
+			                                              0);
 		else
 			((BL2SDK::tFNameInitNew)(BL2SDK::pFNameInit))(this, (wchar_t *)Util::Widen(FindName).c_str(), number, 1, 1);
 	}
@@ -96,11 +102,10 @@ public:
 	{
 		if (Index < 0 || Index > Names()->Num())
 			return "UnknownName";
-		else
-			return Names()->Data[Index]->Name;
+		return Names()->Data[Index]->Name;
 	};
 
-	bool operator == (const FName& A) const
+	bool operator ==(const FName& A) const
 	{
 		return Index == A.Index;
 	}
@@ -108,7 +113,9 @@ public:
 
 struct FString : public TArray<wchar_t>
 {
-	FString() {};
+	FString()
+	{
+	};
 
 	FString(wchar_t* Other)
 	{
@@ -128,9 +135,11 @@ struct FString : public TArray<wchar_t>
 			mbstowcs(this->Data, Other, this->Count);
 	};
 
-	~FString() {};
+	~FString()
+	{
+	};
 
-	FString operator = (wchar_t* Other)
+	FString operator =(wchar_t* Other)
 	{
 		if (this->Data != Other)
 		{
@@ -143,10 +152,11 @@ struct FString : public TArray<wchar_t>
 		return *this;
 	};
 
-	char *AsString() {
+	char* AsString()
+	{
 		if (this->Data == nullptr || this->Count == 0)
 			return (char *)"";
-		char *output = (char *)calloc(this->Count + 1, sizeof(char));
+		char* output = (char *)calloc(this->Count + 1, sizeof(char));
 		wcstombs(output, this->Data, this->Count);
 		return output;
 	}
@@ -155,13 +165,14 @@ struct FString : public TArray<wchar_t>
 struct FScriptDelegate
 {
 	struct FName FunctionName;
-	class UObject *Object;
+	class UObject* Object;
 };
 
 struct FScriptInterface
 {
 	UObject* ObjectPointer; //A pointer to a UObject that implements a native interface.
-	void* InterfacePointer; //Pointer to the location of the interface object within the UObject referenced by ObjectPointer.
+	void* InterfacePointer;
+	//Pointer to the location of the interface object within the UObject referenced by ObjectPointer.
 };
 
 struct FOutputDevice
@@ -188,7 +199,7 @@ struct FDeferredMessage
 		SHORT LeftShift;
 		SHORT RightShift;
 		SHORT Menu;
-	}	KeyStates;
+	} KeyStates;
 };
 
 struct FArchive
@@ -212,6 +223,7 @@ struct FMalloc
 {
 	void** VfTable;
 };
+
 /*
 struct TStringArray : TArray<void *> {
 	struct FString GetItem(int i) {

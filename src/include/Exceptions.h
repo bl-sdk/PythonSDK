@@ -13,7 +13,7 @@ private:
 public:
 	FatalSDKException(int errorCode, const std::string& errorStr)
 		: std::runtime_error(errorStr),
-		m_errorCode(errorCode)
+		  m_errorCode(errorCode)
 	{
 	}
 

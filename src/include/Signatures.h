@@ -21,7 +21,8 @@ namespace BL2SDK
 		MemorySignature SetCommand{};
 
 
-		void InitBL2() {
+		void InitBL2()
+		{
 			GNames = {
 				"\x00\x00\x00\x00\x83\x3C\x81\x00\x74\x5C",
 				"????xxxxxx",
@@ -29,7 +30,8 @@ namespace BL2SDK
 			};
 		}
 
-		void InitTPS() {
+		void InitTPS()
+		{
 			GNames = {
 				"\x00\x00\x00\x00\x8B\x04\xB1\x5E\x5D\xC3\x8B\x15",
 				"????xxxxxxxx",
@@ -37,7 +39,8 @@ namespace BL2SDK
 			};
 		}
 
-		void InitShared() {
+		void InitShared()
+		{
 			GObjects = {
 				"\x00\x00\x00\x00\x8B\x04\xB1\x8B\x40\x08",
 				"????xxxxxx",
@@ -99,7 +102,8 @@ namespace BL2SDK
 			};
 		}
 
-		void InitSignatures(std::string ExeName) {
+		void InitSignatures(std::string ExeName)
+		{
 			if (ExeName == "Borderlands2")
 				InitBL2();
 			else

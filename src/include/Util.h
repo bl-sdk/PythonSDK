@@ -20,9 +20,9 @@ namespace Util
 	std::string StringToHex(const char* input, size_t len);
 
 	void Initialize();
-	const char *ServerPath();
-	const char *LogPath();
-	const char *LayoutPath();
+	const char* ServerPath();
+	const char* LogPath();
+	const char* LayoutPath();
 	HWND getToplevelWindows();
 	DWORD GetMainThreadId(DWORD dwPid);
 	HANDLE GetMainThreadHandle(DWORD dwPid, DWORD dwDesiredAccess);

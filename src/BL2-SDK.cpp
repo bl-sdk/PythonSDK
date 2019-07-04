@@ -17,7 +17,7 @@
 
 namespace BL2SDK
 {
-	UConsole * gameConsole = nullptr;
+	UConsole* gameConsole = nullptr;
 
 	bool logAllCalls = true;
 
@@ -35,17 +35,18 @@ namespace BL2SDK
 	tStaticConstructObject pStaticConstructObject;
 	tLoadPackage pLoadPackage;
 	tGetDefaultObject pGetDefaultObject;
-	UObject *engine = nullptr;
-	CHookManager *HookManager = nullptr;
+	UObject* engine = nullptr;
+	CHookManager* HookManager = nullptr;
 	bool injectedCallNext = false;
 	bool CallPostEdit = true;
 
-	CPythonInterface *Python;
+	CPythonInterface* Python;
 
 	int EngineVersion = -1;
 	int ChangelistNumber = -1;
 
 	std::map<std::string, UClass *> ClassMap = std::map<std::string, UClass *>{};
+
 	void __stdcall hkProcessEvent(UFunction* function, void* params, void* result)
 	{
 		// Get "this"
@@ -64,10 +65,12 @@ namespace BL2SDK
 		{
 			std::string callerName = caller->GetFullName();
 
-			Logging::LogF("===== ProcessEvent called =====\npCaller Name = %s\npFunction Name = %s\n", callerName.c_str(), functionName.c_str());
+			Logging::LogF("===== ProcessEvent called =====\npCaller Name = %s\npFunction Name = %s\n",
+			              callerName.c_str(), functionName.c_str());
 		}
 
-		if (HookManager->HasHook(caller, function) && !HookManager->ProcessHooks(functionName, caller, function, &FStruct{ function, params }))
+		if (HookManager->HasHook(caller, function) && !HookManager->ProcessHooks(
+			functionName, caller, function, &FStruct{function, params}))
 		{
 			// The engine hook manager told us not to pass this function to the engine
 			return;
@@ -76,18 +79,22 @@ namespace BL2SDK
 		pProcessEvent(caller, function, params, result);
 	}
 
-	void LogOutParams(FFrame *Stack) {
-		Logging::LogF("Logging stack, %s, %s\n", Stack->Object->GetFullName().c_str(), Stack->Node->GetFullName().c_str());
+	void LogOutParams(FFrame* Stack)
+	{
+		Logging::LogF("Logging stack, %s, %s\n", Stack->Object->GetFullName().c_str(),
+		              Stack->Node->GetFullName().c_str());
 		Logging::LogF("0x%p\n", Stack->Node);
 		Logging::LogF("0x%p\n", Stack->Object);
 		Logging::LogF("0x%p\n", Stack->Code);
 		Logging::LogF("0x%p\n", Stack->Locals);
 		Logging::LogF("0x%p\n", Stack->PreviousFrame);
 		Logging::LogF("0x%p\n", Stack->Outparams);
-		for (FOutParmRec* rec = Stack->Outparams; rec; rec = rec->NextOutParm) {
+		for (FOutParmRec* rec = Stack->Outparams; rec; rec = rec->NextOutParm)
+		{
 			Logging::LogF("%s, 0x%x\n", rec->Property->GetFullName().c_str(), rec->PropAddr);
 		}
 	}
+
 	void __stdcall hkCallFunction(FFrame& stack, void* const result, UFunction* function)
 	{
 		// Get "this"
@@ -100,11 +107,13 @@ namespace BL2SDK
 			std::string functionName = function->GetFullName();
 
 			// Prevent infinite recursion when printing to console
-			if (functionName != "Function Engine.Console.OutputText" && functionName != "Function Engine.Console.OutputTextLine")
-				Logging::LogF("===== CallFunction called =====\npCaller Name = %s\npFunction Name = %s\n", callerName.c_str(), functionName.c_str());
+			if (functionName != "Function Engine.Console.OutputText" && functionName !=
+				"Function Engine.Console.OutputTextLine")
+				Logging::LogF("===== CallFunction called =====\npCaller Name = %s\npFunction Name = %s\n",
+				              callerName.c_str(), functionName.c_str());
 		}
 
-		unsigned char *code = stack.Code;
+		unsigned char* code = stack.Code;
 
 		if (!HookManager->ProcessHooks(caller, stack, result, function))
 		{
@@ -170,17 +179,21 @@ namespace BL2SDK
 		pGetDefaultObject = reinterpret_cast<tGetDefaultObject>(sigscan.Scan(Signatures::GetDefaultObject));
 		Logging::LogF("[Internal] GetDefaultObject = 0x%p\n", pGetDefaultObject);
 
-		try {
-			void *SetCommand = sigscan.Scan(Signatures::SetCommand);
+		try
+		{
+			void* SetCommand = sigscan.Scan(Signatures::SetCommand);
 			DWORD near out = 0;
-			if (!VirtualProtectEx(GetCurrentProcess(), SetCommand, 5, 0x40, &out)) {
+			if (!VirtualProtectEx(GetCurrentProcess(), SetCommand, 5, 0x40, &out))
+			{
 				Logging::LogF("WINAPI Error when enabling 'SET' commands: %d\n", GetLastError());
 			}
-			else {
+			else
+			{
 				static_cast<unsigned char *>(SetCommand)[5] = 0xFF;
 			}
 		}
-		catch (std::exception e) {
+		catch (std::exception e)
+		{
 			Logging::LogF("Exception when enabling 'SET' commands: %d\n", e.what());
 		}
 
@@ -202,20 +215,21 @@ namespace BL2SDK
 		if (status == PYTHON_MODULE_ERROR && !Settings::DeveloperModeEnabled())
 		{
 			Util::Popup(L"Python Module Error",
-				L"A core Python module failed to load correctly, and the SDK cannot continue to run.\n\nThis may indicate that BL2 has been patched and the SDK needs updating.");
+			            L"A core Python module failed to load correctly, and the SDK cannot continue to run.\n\nThis may indicate that BL2 has been patched and the SDK needs updating.");
 		}
 		else if (status == PYTHON_MODULE_ERROR && Settings::DeveloperModeEnabled())
 		{
 			Util::Popup(L"Python Module Error",
-				L"An error occurred while loading the Python modules.\n\nPlease check your console for the exact error. Once you've fixed the error, press F11 to reload the Python state.");
+			            L"An error occurred while loading the Python modules.\n\nPlease check your console for the exact error. Once you've fixed the error, press F11 to reload the Python state.");
 		}
 	}
 
-	bool getCanvasPostRender(UObject* caller, UFunction* function, FStruct *params)
+	bool getCanvasPostRender(UObject* caller, UFunction* function, FStruct* params)
 	{
 		// Set console key to Tilde if not already set
 		gameConsole = static_cast<UConsole *>(UObject::Find("WillowConsole",
-		                                                    "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0"));
+		                                                    "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0")
+		);
 		if (gameConsole == nullptr && engine && static_cast<UEngine *>(engine)->GameViewport)
 			gameConsole = static_cast<UEngine *>(engine)->GameViewport->ViewportConsole;
 		if (gameConsole && (gameConsole->ConsoleKey == FName("None") || gameConsole->ConsoleKey == FName("Undefine")))
@@ -236,7 +250,7 @@ namespace BL2SDK
 	}
 
 	// This function is used to ensure that everything gets called in the game thread once the game itself has loaded
-	bool GameReady(UObject* caller, UFunction* function, FStruct *params)
+	bool GameReady(UObject* caller, UFunction* function, FStruct* params)
 	{
 		Logging::LogD("[GameReady] Thread: %i\n", GetCurrentThreadId());
 
@@ -248,7 +262,7 @@ namespace BL2SDK
 				continue;
 
 			if (!strcmp(Object->Class->GetName(), "Class"))
-				BL2SDK::ClassMap[Object->GetName()] = static_cast<UClass *>(Object);
+				ClassMap[Object->GetName()] = static_cast<UClass *>(Object);
 
 			if (!strcmp(Object->GetFullName().c_str(), "WillowGameEngine Transient.WillowGameEngine"))
 				engine = Object;
@@ -290,11 +304,12 @@ namespace BL2SDK
 		Util::CloseGame();
 	}
 
-	void  LoadPackage(const char* Filename, DWORD Flags, bool Force)
+	void LoadPackage(const char* Filename, DWORD Flags, bool Force)
 	{
 		std::wstring wideFilename = Util::Widen(Filename);
-		UPackage* result = BL2SDK::pLoadPackage(0, wideFilename.c_str(), Flags);
-		if (Force) {
+		UPackage* result = pLoadPackage(nullptr, wideFilename.c_str(), Flags);
+		if (Force)
+		{
 			for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
 			{
 				UObject* Object = UObject::GObjects()->Data[i];
@@ -304,35 +319,43 @@ namespace BL2SDK
 		}
 	};
 
-	void KeepAlive(UObject *Obj) {
-		for (UObject *outer = Obj; outer; outer = outer->Outer)
+	void KeepAlive(UObject* Obj)
+	{
+		for (UObject* outer = Obj; outer; outer = outer->Outer)
 			outer->ObjectFlags.A |= 0x4000;
 	}
 
-	UObject *ConstructObject(UClass* Class, UObject* Outer, FName Name, unsigned int SetFlags, unsigned int InternalSetFlags, UObject* Template, FOutputDevice *Error, void* InstanceGraph, int AssumeTemplateIsArchetype)
+	UObject* ConstructObject(UClass* Class, UObject* Outer, FName Name, unsigned int SetFlags,
+	                         unsigned int InternalSetFlags, UObject* Template, FOutputDevice* Error,
+	                         void* InstanceGraph, int AssumeTemplateIsArchetype)
 	{
-		if (!Error) {
+		if (!Error)
+		{
 			Error = new FOutputDevice();
 			Error->VfTable = (void *)calloc(2, sizeof(void *));
 			((void **)Error->VfTable)[1] = (void *)&Logging::LogW;
 		}
 		if (!Class)
 			return nullptr;
-		return BL2SDK::pStaticConstructObject(Class, Outer, Name, SetFlags | 0b1, InternalSetFlags, Template, Error, InstanceGraph, AssumeTemplateIsArchetype);
+		return pStaticConstructObject(Class, Outer, Name, SetFlags | 0b1, InternalSetFlags, Template, Error,
+		                              InstanceGraph, AssumeTemplateIsArchetype);
 	};
 
-	UObject *GetEngine()
+	UObject* GetEngine()
 	{
 		if (!engine)
 			engine = UObject::Find("WillowGameEngine", "Transient.WillowGameEngine");
 		return engine;
 	}
 
-	void RegisterHook(const std::string& FuncName, const std::string& HookName, std::function<bool(UObject*, UFunction*, FStruct*)> FuncHook) {
+	void RegisterHook(const std::string& FuncName, const std::string& HookName,
+	                  std::function<bool(UObject*, UFunction*, FStruct*)> FuncHook)
+	{
 		HookManager->Register(FuncName, HookName, std::move(FuncHook));
 	}
 
-	bool RemoveHook(const std::string& FuncName, const std::string& HookName) {
+	bool RemoveHook(const std::string& FuncName, const std::string& HookName)
+	{
 		return HookManager->Remove(FuncName, HookName);
 	}
 

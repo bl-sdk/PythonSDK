@@ -13,9 +13,9 @@
 namespace Util
 {
 	static bool isInit = false;
-	static char serverPath[MAX_PATH] = { 0 };
-	static char logPath[MAX_PATH] = { 0 };
-	static char layoutPath[MAX_PATH] = { 0 };
+	static char serverPath[MAX_PATH] = {0};
+	static char logPath[MAX_PATH] = {0};
+	static char layoutPath[MAX_PATH] = {0};
 
 	void Initialize()
 	{
@@ -25,19 +25,25 @@ namespace Util
 	}
 
 	//Get top window
-	static HWND	topWnd = NULL;
-	struct EnumWindowsCallbackArgs {
-		EnumWindowsCallbackArgs(DWORD p) : pid(p) { }
+	static HWND topWnd = nullptr;
+
+	struct EnumWindowsCallbackArgs
+	{
+		EnumWindowsCallbackArgs(DWORD p) : pid(p)
+		{
+		}
+
 		const DWORD pid;
 		std::vector<HWND> handles;
 	};
 
 	static BOOL CALLBACK EnumWindowsCallback(HWND hnd, LPARAM lParam)
 	{
-		EnumWindowsCallbackArgs *args = (EnumWindowsCallbackArgs *)lParam;
+		EnumWindowsCallbackArgs* args = (EnumWindowsCallbackArgs *)lParam;
 		DWORD windowPID;
-		(void)::GetWindowThreadProcessId(hnd, &windowPID);
-		if (windowPID == args->pid) {
+		(void)GetWindowThreadProcessId(hnd, &windowPID);
+		if (windowPID == args->pid)
+		{
 			args->handles.push_back(hnd);
 		}
 		return TRUE;
@@ -47,9 +53,10 @@ namespace Util
 	{
 		if (topWnd)
 			return topWnd;
-		EnumWindowsCallbackArgs args(::GetCurrentProcessId());
-		if (::EnumWindows(&EnumWindowsCallback, (LPARAM)&args) == FALSE) {
-			return NULL;
+		EnumWindowsCallbackArgs args(GetCurrentProcessId());
+		if (EnumWindows(&EnumWindowsCallback, (LPARAM)&args) == FALSE)
+		{
+			return nullptr;
 		}
 		return topWnd = args.handles[0];
 	}
@@ -64,10 +71,10 @@ namespace Util
 			mov[lpTid], eax
 		}
 		HANDLE hProcess = OpenProcess(PROCESS_VM_READ, FALSE, dwPid);
-		if (hProcess == NULL)
+		if (hProcess == nullptr)
 			return NULL;
 		DWORD dwTid;
-		if (ReadProcessMemory(hProcess, lpTid, &dwTid, sizeof(dwTid), NULL) == FALSE)
+		if (ReadProcessMemory(hProcess, lpTid, &dwTid, sizeof(dwTid), nullptr) == FALSE)
 		{
 			CloseHandle(hProcess);
 			return NULL;
@@ -80,7 +87,7 @@ namespace Util
 	{
 		DWORD dwTid = GetMainThreadId(dwPid);
 		if (dwTid == FALSE)
-			return NULL;
+			return nullptr;
 		return OpenThread(dwDesiredAccess, FALSE, dwTid);
 	}
 
@@ -93,7 +100,7 @@ namespace Util
 		if (buffSize <= 1)
 			return str;
 
-		char *szBuff = (char *)calloc(buffSize, sizeof(char));
+		char* szBuff = (char *)calloc(buffSize, sizeof(char));
 
 		vsprintf_s(szBuff, buffSize, fmt, args);
 
@@ -124,7 +131,7 @@ namespace Util
 		if (buffSize <= 1)
 			return str;
 
-		wchar_t *szBuff = (wchar_t *)calloc(buffSize, sizeof(wchar_t));
+		wchar_t* szBuff = (wchar_t *)calloc(buffSize, sizeof(wchar_t));
 
 		vswprintf_s(szBuff, buffSize, fmt, args);
 
@@ -193,14 +200,16 @@ namespace Util
 
 	int WaitForModules(std::int32_t timeout, const std::initializer_list<std::wstring>& modules)
 	{
-		bool signaled[32] = { 0 };
+		bool signaled[32] = {false};
 		bool success = false;
 
 		std::uint32_t totalSlept = 0;
 
-		if (timeout == 0) {
-			for (auto& mod : modules) {
-				if (GetModuleHandleW(std::data(mod)) == NULL)
+		if (timeout == 0)
+		{
+			for (auto& mod : modules)
+			{
+				if (GetModuleHandleW(std::data(mod)) == nullptr)
 					return WAIT_TIMEOUT;
 			}
 			return WAIT_OBJECT_0;
@@ -209,29 +218,36 @@ namespace Util
 		if (timeout < 0)
 			timeout = INT32_MAX;
 
-		while (true) {
-			for (auto i = 0u; i < modules.size(); ++i) {
+		while (true)
+		{
+			for (auto i = 0u; i < modules.size(); ++i)
+			{
 				auto& module = *(modules.begin() + i);
-				if (!signaled[i] && GetModuleHandleW(std::data(module)) != NULL) {
+				if (!signaled[i] && GetModuleHandleW(std::data(module)) != nullptr)
+				{
 					signaled[i] = true;
 
 					//
 					// Checks if all modules are signaled
 					//
 					bool done = true;
-					for (auto j = 0u; j < modules.size(); ++j) {
-						if (!signaled[j]) {
+					for (auto j = 0u; j < modules.size(); ++j)
+					{
+						if (!signaled[j])
+						{
 							done = false;
 							break;
 						}
 					}
-					if (done) {
+					if (done)
+					{
 						success = true;
 						goto exit;
 					}
 				}
 			}
-			if (totalSlept > std::uint32_t(timeout)) {
+			if (totalSlept > std::uint32_t(timeout))
+			{
 				break;
 			}
 			Sleep(10);

@@ -2,7 +2,8 @@
 #include "stdafx.h"
 #include "CHookManager.h"
 
-void CHookManager::Register(const std::string& FuncName, const std::string& HookName, const std::function<bool(UObject*, UFunction*, FStruct*)> &FuncHook)
+void CHookManager::Register(const std::string& FuncName, const std::string& HookName,
+                            const std::function<bool(UObject*, UFunction*, FStruct*)>& FuncHook)
 {
 	char funcNameChar[255];
 	strcpy(funcNameChar, FuncName.c_str());
@@ -20,7 +21,8 @@ void CHookManager::Register(const std::string& FuncName, const std::string& Hook
 		hooks.emplace(FuncName, newMap);
 	}
 
-	Logging::LogD("[HookManager] (%s) Hook \"%s\" added as hook for \"%s\"\n", this->debugName.c_str(), hookPair.first.c_str(), FuncName.c_str());
+	Logging::LogD("[HookManager] (%s) Hook \"%s\" added as hook for \"%s\"\n", this->debugName.c_str(),
+	              hookPair.first.c_str(), FuncName.c_str());
 }
 
 bool CHookManager::Remove(const std::string& FuncName, const std::string& HookName)
@@ -28,7 +30,8 @@ bool CHookManager::Remove(const std::string& FuncName, const std::string& HookNa
 	auto iHooks = hooks.find(FuncName);
 	if (iHooks == hooks.end() || iHooks->second.find(HookName) == iHooks->second.end())
 	{
-		Logging::LogD("[HookManager] (%s) ERROR: Failed to remove hook \"%s\" for \"%s\"\n", this->debugName.c_str(), HookName.c_str(), FuncName.c_str());
+		Logging::LogD("[HookManager] (%s) ERROR: Failed to remove hook \"%s\" for \"%s\"\n", this->debugName.c_str(),
+		              HookName.c_str(), FuncName.c_str());
 		return false;
 	}
 
@@ -36,7 +39,9 @@ bool CHookManager::Remove(const std::string& FuncName, const std::string& HookNa
 	return true;
 }
 
-bool CHookManager::ProcessHooks(const std::string& FuncName, const UObject *Caller, const UFunction *Func, const FStruct *Params) {
+bool CHookManager::ProcessHooks(const std::string& FuncName, const UObject* Caller, const UFunction* Func,
+                                const FStruct* Params)
+{
 	auto iHooks = hooks.find(FuncName);
 
 	if (iHooks != hooks.end())
@@ -62,7 +67,8 @@ bool CHookManager::ProcessHooks(const std::string& FuncName, const UObject *Call
 }
 
 
-bool CHookManager::HasHook(UObject *Caller, UFunction *Func) {
+bool CHookManager::HasHook(UObject* Caller, UFunction* Func)
+{
 	auto iHooks = hooks.find(Func->GetObjectName());
 	if (iHooks != hooks.end() && iHooks->second.size() > 0)
 		return true;
@@ -70,7 +76,8 @@ bool CHookManager::HasHook(UObject *Caller, UFunction *Func) {
 	return (iHooks != hooks.end() && iHooks->second.size() > 0);
 }
 
-bool CHookManager::ProcessHooks(UObject* Caller, FFrame& Stack, void* const Result, UFunction* Function) {
+bool CHookManager::ProcessHooks(UObject* Caller, FFrame& Stack, void* const Result, UFunction* Function)
+{
 	auto iHooks = hooks.find(Function->GetObjectName());
 
 	// Even though we check in the next function, check here to avoid messing with the stack when we don't need to
@@ -78,15 +85,18 @@ bool CHookManager::ProcessHooks(UObject* Caller, FFrame& Stack, void* const Resu
 	{
 		UProperty* ReturnParm = nullptr;
 		char* Frame = (char *)calloc(1, Function->ParamsSize);
-		for (auto* Property = (UProperty *)Function->Children; Stack.Code[0] != 0x16; Property = (UProperty*)Property->Next) {
+		for (auto* Property = (UProperty *)Function->Children; Stack.Code[0] != 0x16; Property = (UProperty*)Property->
+		     Next)
+		{
 			const bool bIsReturnParam = ((Property->PropertyFlags & 0x400) != 0);
-			if (bIsReturnParam) {
+			if (bIsReturnParam)
+			{
 				ReturnParm = Property;
 				continue;
 			}
 			BL2SDK::pFrameStep(&Stack, Stack.Object, Frame + Property->Offset_Internal);
 		}
-		bool ret = ProcessHooks(Function->GetObjectName(), Caller, Function, &FStruct{ Function, (void *)Frame });
+		bool ret = ProcessHooks(Function->GetObjectName(), Caller, Function, &FStruct{Function, (void *)Frame});
 		//if (!ret) {
 		//	if (ReturnParm)
 		//	{
