@@ -1282,77 +1282,17 @@ public:
 	}
 };
 
-
 struct FFunction
 {
 	UObject *obj;
 	UFunction *func;
 
 private:
-
-	FHelper *GenerateParams(py::args args, py::kwargs kwargs, FHelper *params) {
-		unsigned int currentIndex = 0;
-		for (UProperty* Child = (UProperty *)func->Children; Child; Child = (UProperty *)Child->Next) {
-			if (!(Child->PropertyFlags & 0x80)) // Param
-				continue;
-			else if (kwargs.contains(Child->GetName())) {
-				params->SetProperty(Child, kwargs[Child->GetName()]);
-				continue;
-			}
-			else if (currentIndex < args.size()) {
-				params->SetProperty(Child, args[currentIndex++]);
-				continue;
-			}
-			else if (Child->PropertyFlags & 0x10) // Optional
-				continue;
-			else if (Child->PropertyFlags & 0x100) // Output
-				continue;
-			throw std::exception("Invalid number of parameters");
-		}
-		return params;
-
-	}
+	FHelper* GenerateParams(py::args args, py::kwargs kwargs, FHelper* params);
 
 public:
-	py::object GetReturn(FHelper* params) {
-		std::deque<py::object> ReturnObjects{};
-		for (UProperty* Child = (UProperty *)func->Children; Child; Child = (UProperty *)Child->Next) {
-			if (Child->PropertyFlags & 0x400) // Return
-				ReturnObjects.push_front(params->GetProperty(Child));
-			else if (Child->PropertyFlags & 0x100) // Output
-				ReturnObjects.push_back(params->GetProperty(Child));
-		}
-		Logging::LogD("Finished popping return\n");
-		if (ReturnObjects.size() == 1)
-			return ReturnObjects[0];
-		else if (ReturnObjects.size() > 1)
-			return py::cast(ReturnObjects);
-		return py::none();
-	}
-
-	py::object Call(py::args args, py::kwargs kwargs)
-	{
-		if (!obj || !func)
-			return py::none();
-		Logging::LogD("FFunction::Call called %s.%s)\n", obj->GetFullName().c_str(), func->GetName());
-		char params[1000] = "";
-		memset(params, 0, 1000);
-		GenerateParams(args, kwargs, (FHelper *)params);
-		Logging::LogD("made params\n");
-		auto flags = func->FunctionFlags;
-		func->FunctionFlags |= 0x400;
-		void *returnObj = nullptr;
-		for (UProperty* Child = (UProperty *)func->Children; Child; Child = (UProperty *)Child->Next)
-			if (Child->PropertyFlags & 0x400)
-				returnObj = params + Child->Offset_Internal;
-		BL2SDK::pProcessEvent(obj, func, params, returnObj);
-		func->FunctionFlags = flags;
-		Logging::LogD("Called ProcessEvent\n");
-		py::object ret = GetReturn((FHelper *)params);
-		memset(params, 0, 1000);
-		Logging::LogD("ProcessEvent Succeeded!\n");
-		return ret;
-	}
+	py::object GetReturn(FHelper* params);
+	py::object Call(py::args args, py::kwargs kwargs);
 };
 
 struct FOutParmRec
@@ -1373,106 +1313,18 @@ struct FFrame : public FOutputDevice
 	struct FOutParmRec* Outparams;
 
 public:
-	void SkipFunction() {
-		// allocate temporary memory on the stack for evaluating parameters
-		char params[1000] = "";
-		memset(params, 0, 1000);
-		for (UProperty* Property = (UProperty*)Node->Children; Code[0] != 0x16; Property = (UProperty*)Property->Next)
-			BL2SDK::pFrameStep(this, this->Object, (void *)((Property->PropertyFlags & 0x100) ? NULL : params + Property->Offset_Internal));
-
-		Code++;
-		memset(params, 0, 1000);
-	}
-
-	UObject *popObject() {
-		UObject *obj = nullptr;
-		BL2SDK::pFrameStep(this, this->Object, &obj);
-		return obj;
-	};
-	struct FName *popFName() {
-		FName *obj = new FName();
-		BL2SDK::pFrameStep(this, this->Object, obj);
-		return obj;
-	};
-	struct FString *popFString() {
-		FString *obj = new FString();
-		BL2SDK::pFrameStep(this, this->Object, obj);
-		return obj;
-	};
-	float popFloat() {
-		float obj = 0;
-		BL2SDK::pFrameStep(this, this->Object, &obj);
-		return obj;
-	};
-	unsigned char popByte() {
-		unsigned char obj = 0;
-		BL2SDK::pFrameStep(this, this->Object, &obj);
-		return obj;
-	};
-	int popInt() {
-		int obj = 0;
-		BL2SDK::pFrameStep(this, this->Object, &obj);
-		return obj;
-	};
-	unsigned long popULong() {
-		unsigned long obj = 0;
-		BL2SDK::pFrameStep(this, this->Object, &obj);
-		return obj;
-	};
-	bool popBool() {
-		return !!popULong();
-	};
-	TArray<UObject *> *popTArrayObjects() {
-		TArray<UObject *> *obj = new TArray<UObject *>();
-		BL2SDK::pFrameStep(this, this->Object, obj);
-		return obj;
-	};
+	void SkipFunction();
 };
 
 struct FStruct
 {
 	UStruct		*structType;
 	void		*base;
-	FStruct(UStruct *s, void *b) {
-		Logging::LogD("Creating FStruct of type '%s' from %p\n", s->GetObjectName().c_str(), b);
-		structType = s;
-		base = b;
-	};
+	FStruct(UStruct* s, void* b);
 
-	pybind11::object GetProperty(std::string PropName) {
-		class UObject *obj = structType->FindChildByName(FName(PropName));
-		if (!obj)
-			return pybind11::none();
-		auto prop = reinterpret_cast<UProperty *>(obj);
-		return ((FHelper *)((char *)base))->GetProperty(prop);
-	}
-
-	void SetProperty(std::string& PropName, py::object value) {
-		class UObject *obj = structType->FindChildByName(FName(PropName));
-		if (!obj)
-			throw std::exception(Util::Format("FStruct::SetProperty: Unable to find property '%s'!\n", PropName.c_str()).c_str());
-		auto prop = reinterpret_cast<UProperty *>(obj);
-		((FHelper *)((char *)base))->SetProperty(prop, value);
-	}
-
-	py::str Repr() {
-		py::str s = "{";
-		const UStruct *thisField = structType;
-		while (thisField)
-		{
-			for (UField* Child = thisField->Children; Child != NULL; Child = Child->Next) {
-				UProperty *prop = (UProperty *)structType->FindChildByName(FName(Child->GetName()));
-				if (prop && prop->PropertyFlags & 0x80) {
-					s = py::str("{}{}: {}").format(s, Child->GetName(), py::repr(GetProperty(Child->GetName())));
-					if (Child->Next || (thisField->SuperField && thisField->SuperField->Children))
-						s = py::str("{}{}").format(s, ", ");
-				}
-			}
-			thisField = thisField->SuperField;
-		}
-		s = py::str("{}{}").format(s, "}");
-		return s;
-	}
+	pybind11::object GetProperty(std::string PropName) const;
+	void SetProperty(std::string& PropName, py::object value) const;
+	py::str Repr();
 };
 
 struct FArray {
@@ -1480,50 +1332,14 @@ struct FArray {
 	UProperty *type;
 	unsigned int IterCounter;
 
-	FArray(TArray <char> *array, UProperty *s) {
-		Logging::LogD("Creating FArray from %p, count: %d, max: %d\n", array, array->Count, array->Max);
-		arr = array;
-		type = s;
-		IterCounter = 0;
-	};
+	FArray(TArray <char>* array, UProperty* s);
 
-	py::object GetItem(unsigned int i) {
-		if (i >= arr->Count)
-			throw pybind11::index_error();
-		return ((FHelper *)(arr->Data + type->ElementSize * i))->GetProperty(type);
-	}
-
-	void SetItem(unsigned int i, py::object obj) {
-		if (i >= arr->Count)
-			throw pybind11::index_error();
-		((FHelper *)(arr->Data + type->ElementSize * i))->SetProperty(type, obj);
-	}
-
-	int GetAddress() {
-		return (int)arr->Data;
-	}
-
-	FArray *Iter() {
-		IterCounter = 0;
-		return this;
-	}
-
-	py::object Next() {
-		if (IterCounter >= arr->Count)
-			throw pybind11::stop_iteration();
-		return GetItem(IterCounter++);
-	}
-
-	py::str Repr() {
-		py::str s = "[";
-		for (unsigned int x = 0; x < arr->Count; x++) {
-			s = py::str("{}{}").format(s, py::repr(GetItem(x)));
-			if (x + 1 < arr->Count)
-				s = py::str("{}{}").format(s, ", ");
-		}
-		s = py::str("{}{}").format(s, "]");
-		return s;
-	}
+	py::object GetItem(unsigned int i);
+	void SetItem(unsigned int i, py::object obj);
+	int GetAddress();
+	FArray* Iter();
+	py::object Next();
+	py::str Repr();
 };
 
 #ifdef _MSC_VER
