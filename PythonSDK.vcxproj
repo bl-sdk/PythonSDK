@@ -33,6 +33,7 @@
     <ClCompile Include="src\BL2SDK\WinDrv_functions.cpp" />
     <ClCompile Include="src\BL2SDK\XAudio2_functions.cpp" />
     <ClCompile Include="src\CHookManager.cpp" />
+    <ClCompile Include="src\CoreExtensions.cpp" />
     <ClCompile Include="src\CPythonInterface.cpp" />
     <ClCompile Include="src\CSigScan.cpp" />
     <ClCompile Include="src\CSimpleDetour.cpp" />
@@ -122,7 +123,6 @@
     <ClInclude Include="src\include\pybind11\stl.h" />
     <ClInclude Include="src\include\pybind11\stl_bind.h" />
     <ClInclude Include="src\include\pydef.h" />
-    <ClInclude Include="src\include\resource.h" />
     <ClInclude Include="src\include\Settings.h" />
     <ClInclude Include="src\include\Signatures.h" />
     <ClInclude Include="src\include\stb_image.h" />
@@ -135,7 +135,7 @@
     <ProjectGuid>{32794345-2BB2-45E0-A461-914D13B0279F}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>bl2sdk</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
     <ProjectName>Borderlands 2 SDK</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -149,7 +149,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -267,29 +267,32 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <PrecompiledHeader>Create</PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
-      <Optimization>MinSpace</Optimization>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
-      <IntrinsicFunctions>
-      </IntrinsicFunctions>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>false</SDLCheck>
       <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;BL2SDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
-      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <MultiProcessorCompilation>
+      </MultiProcessorCompilation>
       <DebugInformationFormat>
       </DebugInformationFormat>
       <MinimalRebuild>
       </MinimalRebuild>
       <WholeProgramOptimization>true</WholeProgramOptimization>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
-      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
       <OmitFramePointers>true</OmitFramePointers>
       <EnableFiberSafeOptimizations />
       <BufferSecurityCheck />
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <DisableSpecificWarnings>4100;4121;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

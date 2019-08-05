@@ -12,32 +12,35 @@
 
 namespace Util
 {
-	static bool isInit = false;
-	static char serverPath[MAX_PATH] = { 0 };
-	static char logPath[MAX_PATH] = { 0 };
-	static char layoutPath[MAX_PATH] = { 0 };
+	static bool gIsInit = false;
+
+	//Get top window
+	static HWND gTopWnd = nullptr;
 
 	void Initialize()
 	{
-		if (isInit)
+		if (gIsInit)
 			return;
-		isInit = true;
+		gIsInit = true;
 	}
 
-	//Get top window
-	static HWND	topWnd = NULL;
-	struct EnumWindowsCallbackArgs {
-		EnumWindowsCallbackArgs(DWORD p) : pid(p) { }
+	struct EnumWindowsCallbackArgs
+	{
+		EnumWindowsCallbackArgs(DWORD p) : pid(p)
+		{
+		}
+
 		const DWORD pid;
 		std::vector<HWND> handles;
 	};
 
 	static BOOL CALLBACK EnumWindowsCallback(HWND hnd, LPARAM lParam)
 	{
-		EnumWindowsCallbackArgs *args = (EnumWindowsCallbackArgs *)lParam;
+		EnumWindowsCallbackArgs* args = (EnumWindowsCallbackArgs *)lParam;
 		DWORD windowPID;
-		(void)::GetWindowThreadProcessId(hnd, &windowPID);
-		if (windowPID == args->pid) {
+		(void)GetWindowThreadProcessId(hnd, &windowPID);
+		if (windowPID == args->pid)
+		{
 			args->handles.push_back(hnd);
 		}
 		return TRUE;
@@ -45,16 +48,17 @@ namespace Util
 
 	HWND getToplevelWindows()
 	{
-		if (topWnd)
-			return topWnd;
-		EnumWindowsCallbackArgs args(::GetCurrentProcessId());
-		if (::EnumWindows(&EnumWindowsCallback, (LPARAM)&args) == FALSE) {
-			return NULL;
+		if (gTopWnd)
+			return gTopWnd;
+		EnumWindowsCallbackArgs args(GetCurrentProcessId());
+		if (EnumWindows(&EnumWindowsCallback, (LPARAM)&args) == FALSE)
+		{
+			return nullptr;
 		}
-		return topWnd = args.handles[0];
+		return gTopWnd = args.handles[0];
 	}
 
-	DWORD GetMainThreadId(DWORD dwPid)
+	DWORD GetMainThreadId(DWORD DwPid)
 	{
 		LPVOID lpTid;
 		_asm
@@ -63,11 +67,11 @@ namespace Util
 			add eax, 36
 			mov[lpTid], eax
 		}
-		HANDLE hProcess = OpenProcess(PROCESS_VM_READ, FALSE, dwPid);
-		if (hProcess == NULL)
+		HANDLE hProcess = OpenProcess(PROCESS_VM_READ, FALSE, DwPid);
+		if (hProcess == nullptr)
 			return NULL;
 		DWORD dwTid;
-		if (ReadProcessMemory(hProcess, lpTid, &dwTid, sizeof(dwTid), NULL) == FALSE)
+		if (ReadProcessMemory(hProcess, lpTid, &dwTid, sizeof(dwTid), nullptr) == FALSE)
 		{
 			CloseHandle(hProcess);
 			return NULL;
@@ -76,26 +80,26 @@ namespace Util
 		return dwTid;
 	}
 
-	HANDLE GetMainThreadHandle(DWORD dwPid, DWORD dwDesiredAccess)
+	HANDLE GetMainThreadHandle(const DWORD DwPid, const DWORD DwDesiredAccess)
 	{
-		DWORD dwTid = GetMainThreadId(dwPid);
+		const DWORD dwTid = GetMainThreadId(DwPid);
 		if (dwTid == FALSE)
-			return NULL;
-		return OpenThread(dwDesiredAccess, FALSE, dwTid);
+			return nullptr;
+		return OpenThread(DwDesiredAccess, FALSE, dwTid);
 	}
 
-	std::string FormatInternal(const char* fmt, va_list args)
+	std::string FormatInternal(const char* Fmt, const va_list Args)
 	{
 		std::string str;
 
-		int buffSize = _vscprintf(fmt, args) + 1;
+		const int buffSize = _vscprintf(Fmt, Args) + 1;
 
 		if (buffSize <= 1)
 			return str;
 
-		char *szBuff = (char *)calloc(buffSize, sizeof(char));
+		char* szBuff = (char *)calloc(buffSize, sizeof(char));
 
-		vsprintf_s(szBuff, buffSize, fmt, args);
+		vsprintf_s(szBuff, buffSize, Fmt, Args);
 
 		szBuff[buffSize - 1] = 0;
 
@@ -119,19 +123,19 @@ namespace Util
 	{
 		std::wstring str;
 
-		int buffSize = _vscwprintf(fmt, args) + 1;
+		const int buffSize = _vscwprintf(fmt, args) + 1;
 
 		if (buffSize <= 1)
 			return str;
 
-		wchar_t *szBuff = (wchar_t *)calloc(buffSize, sizeof(wchar_t));
+		wchar_t* szBuff = (wchar_t *)calloc(buffSize, sizeof(wchar_t));
 
 		vswprintf_s(szBuff, buffSize, fmt, args);
 
 		szBuff[buffSize - 1] = 0;
 
 		str = szBuff;
-		delete[] szBuff;
+		free(szBuff);
 
 		return str;
 	}
@@ -147,23 +151,23 @@ namespace Util
 	}
 
 	// TODO: Benchmarking and whatnot to see how these perform
-	std::wstring Widen(const std::string& input)
+	std::wstring Widen(const std::string& Input)
 	{
 		std::wstring out;
-		out.assign(input.begin(), input.end());
+		out.assign(Input.begin(), Input.end());
 		return out;
 	}
 
-	std::string Narrow(const std::wstring& input)
+	std::string Narrow(const std::wstring& Input)
 	{
 		std::string out;
-		out.assign(input.begin(), input.end());
+		out.assign(Input.begin(), Input.end());
 		return out;
 	}
 
-	void Popup(const std::wstring& strName, const std::wstring& strText)
+	void Popup(const std::wstring& StrName, const std::wstring& StrText)
 	{
-		MessageBox(nullptr, strText.c_str(), strName.c_str(), MB_OK | MB_ICONASTERISK);
+		MessageBox(nullptr, StrText.c_str(), StrName.c_str(), MB_OK | MB_ICONASTERISK);
 	}
 
 	void CloseGame()
@@ -173,15 +177,15 @@ namespace Util
 
 	// This will convert a string like "Hello World" to "48 65 6C 6C 6F 20 57 6F 72 6C 64"
 	// Taken mostly from http://stackoverflow.com/questions/3381614/c-convert-string-to-hexadecimal-and-vice-versa
-	std::string StringToHex(const char* input, size_t len)
+	std::string StringToHex(const char* Input, const size_t Len)
 	{
 		static const char* const lut = "0123456789ABCDEF";
 
 		std::string output;
-		output.reserve((2 * len) + len);
-		for (size_t i = 0; i < len; ++i)
+		output.reserve((2 * Len) + Len);
+		for (size_t i = 0; i < Len; ++i)
 		{
-			const unsigned char c = input[i];
+			const unsigned char c = Input[i];
 			output.push_back(lut[c >> 4]);
 			output.push_back(lut[c & 15]);
 			output.push_back(' ');
@@ -191,47 +195,56 @@ namespace Util
 		return output;
 	}
 
-	int WaitForModules(std::int32_t timeout, const std::initializer_list<std::wstring>& modules)
+	int WaitForModules(std::int32_t Timeout, const std::initializer_list<std::wstring>& Modules)
 	{
-		bool signaled[32] = { 0 };
+		bool signaled[32] = {false};
 		bool success = false;
 
 		std::uint32_t totalSlept = 0;
 
-		if (timeout == 0) {
-			for (auto& mod : modules) {
-				if (GetModuleHandleW(std::data(mod)) == NULL)
+		if (Timeout == 0)
+		{
+			for (auto& mod : Modules)
+			{
+				if (GetModuleHandleW(std::data(mod)) == nullptr)
 					return WAIT_TIMEOUT;
 			}
 			return WAIT_OBJECT_0;
 		}
 
-		if (timeout < 0)
-			timeout = INT32_MAX;
+		if (Timeout < 0)
+			Timeout = INT32_MAX;
 
-		while (true) {
-			for (auto i = 0u; i < modules.size(); ++i) {
-				auto& module = *(modules.begin() + i);
-				if (!signaled[i] && GetModuleHandleW(std::data(module)) != NULL) {
+		while (true)
+		{
+			for (auto i = 0u; i < Modules.size(); ++i)
+			{
+				auto& module = *(Modules.begin() + i);
+				if (!signaled[i] && GetModuleHandleW(std::data(module)) != nullptr)
+				{
 					signaled[i] = true;
 
 					//
 					// Checks if all modules are signaled
 					//
 					bool done = true;
-					for (auto j = 0u; j < modules.size(); ++j) {
-						if (!signaled[j]) {
+					for (auto j = 0u; j < Modules.size(); ++j)
+					{
+						if (!signaled[j])
+						{
 							done = false;
 							break;
 						}
 					}
-					if (done) {
+					if (done)
+					{
 						success = true;
 						goto exit;
 					}
 				}
 			}
-			if (totalSlept > std::uint32_t(timeout)) {
+			if (totalSlept > std::uint32_t(Timeout))
+			{
 				break;
 			}
 			Sleep(10);

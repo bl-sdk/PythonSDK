@@ -179,35 +179,36 @@
 */
 
 struct FHelper {
-	struct FStruct GetStructProperty(class UStructProperty *prop);
-	struct FString* GetStrProperty(class UProperty *prop);
-	class UObject* GetObjectProperty(class UProperty *prop);
-	class UComponent* GetComponentProperty(class UProperty *prop);
-	class UClass* GetClassProperty(class UProperty *prop);
-	struct FName* GetNameProperty(class UProperty *prop);
-	int GetIntProperty(class UProperty *prop);
-	struct FScriptInterface* GetInterfaceProperty(class UProperty *prop);
-	float GetFloatProperty(class UProperty *prop);
-	struct FScriptDelegate* GetDelegateProperty(class UProperty *prop);
-	unsigned char GetByteProperty(class UProperty *prop);
-	bool GetBoolProperty(class UBoolProperty *boolProp);
-	py::object GetArrayProperty(class UArrayProperty *prop);
-	pybind11::object GetProperty(class UProperty *prop);
+	struct FStruct GetStructProperty(class UStructProperty *Prop);
+	struct FString* GetStrProperty(class UProperty *Prop);
+	class UObject* GetObjectProperty(class UProperty *Prop);
+	class UComponent* GetComponentProperty(class UProperty *Prop);
+	class UClass* GetClassProperty(class UProperty *Prop);
+	struct FName* GetNameProperty(class UProperty *Prop);
+	int GetIntProperty(class UProperty * Prop);
+	struct FScriptInterface* GetInterfaceProperty(class UProperty *Prop);
+	float GetFloatProperty(class UProperty *Prop);
+	struct FScriptDelegate* GetDelegateProperty(class UProperty *Prop);
+	unsigned char GetByteProperty(class UProperty * Prop);
+	bool GetBoolProperty(class UBoolProperty *Prop);
+	void* GetPropertyAddress(class UProperty* Prop);
+	py::object GetArrayProperty(class UArrayProperty *Prop);
+	pybind11::object GetProperty(class UProperty * Prop);
 
-	void SetProperty(class UStructProperty *prop, py::object val);
-	void SetProperty(class UStrProperty *prop, py::object val);
-	void SetProperty(class UObjectProperty *prop, py::object val);
-	void SetProperty(class UComponentProperty *prop, py::object val);
-	void SetProperty(class UClassProperty *prop, py::object val);
-	void SetProperty(class UNameProperty *prop, py::object val);
-	void SetProperty(class UInterfaceProperty *prop, py::object val);
-	void SetProperty(class UDelegateProperty *prop, py::object val);
-	void SetProperty(class UFloatProperty *prop, py::object val);
-	void SetProperty(class UIntProperty *prop, py::object val);
-	void SetProperty(class UByteProperty *prop, py::object val);
-	void SetProperty(class UBoolProperty *boolProp, py::object val);
-	void SetProperty(class UArrayProperty *prop, py::object val);
-	void SetProperty(class UProperty *prop, py::object val);
+	void SetProperty(class UStructProperty *Prop, const py::object& Val);
+	void SetProperty(class UStrProperty *Prop, const py::object& Val);
+	void SetProperty(class UObjectProperty *Prop, const py::object& Val);
+	void SetProperty(class UComponentProperty *Prop, const py::object& Val);
+	void SetProperty(class UClassProperty *Prop, const py::object& Val);
+	void SetProperty(class UNameProperty *Prop, const py::object& Val);
+	void SetProperty(class UInterfaceProperty *Prop, const py::object& Val);
+	void SetProperty(class UDelegateProperty *Prop, const py::object& Val);
+	void SetProperty(class UFloatProperty *Prop, const py::object& Val);
+	void SetProperty(class UIntProperty *Prop, const py::object& Val);
+	void SetProperty(class UByteProperty *Prop, const py::object& Val);
+	void SetProperty(class UBoolProperty *boolProp, const py::object& Val);
+	void SetProperty(class UArrayProperty *Prop, const py::object& Val);
+	void SetProperty(class UProperty *Prop, const py::object& val);
 };
 
 // 0x003C
@@ -230,108 +231,25 @@ public:
 
 public:
 	static TArray< UObject* >* GObjects();
-	std::string GetName();
-	std::string GetNameCPP();
+	const char *GetName() const;
+	std::string GetNameCpp() const;
 	std::string GetFullName();
 	std::string GetObjectName();
 	void DumpObject();
-	static UObject* Load(UClass *ClassToLoad, const std::string& ObjectFullName)
-	{
-		return GObjects()->Data[0]->DynamicLoadObject(FString((char *)ObjectFullName.c_str()), ClassToLoad, true);
-	}
-
-	static UObject* Load(const std::string& ClassName, const std::string& ObjectFullName)
-	{
-		UClass *classToLoad = FindClass((char *)ClassName.c_str());
-		if (classToLoad)
-			return Load(classToLoad, ObjectFullName);
-		return nullptr;
-	}
-
-	static UObject* Find(UClass *Class, const std::string& ObjectFullName)
-	{
-		bool DoInjectedNext = BL2SDK::injectedCallNext;
-		BL2SDK::doInjectedCallNext();
-		UObject *ret = UObject::FindObject(FString((char *)ObjectFullName.c_str()), Class);
-		if (DoInjectedNext)
-			BL2SDK::doInjectedCallNext();
-		return ret;
-	}
-
-	static UObject* Find(const std::string& ClassName, const std::string& ObjectFullName)
-	{
-		UClass *classToFind = FindClass((char *)ClassName.c_str(), true);
-		if (classToFind)
-			return Find(classToFind, ObjectFullName);
-		return nullptr;
-	}
-
-	static std::vector<UObject*> FindObjectsRegex(const std::string& regexString)
-	{
-		std::regex re = std::regex(regexString);
-		std::vector<UObject *> ret;
-		while (!UObject::GObjects())
-			Sleep(100);
-		while (!FName::Names())
-			Sleep(100);
-		for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
-		{
-			UObject* Object = UObject::GObjects()->Data[i];
-			if (Object && std::regex_match(Object->GetFullName(), re))
-				ret.push_back(Object);
-		}
-		return ret;
-	}
-	static std::vector<UObject*> FindObjectsContaining(const std::string& stringLookup)
-	{
-		std::vector<UObject *> ret;
-		while (!UObject::GObjects())
-			Sleep(100);
-		while (!FName::Names())
-			Sleep(100);
-		for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
-		{
-			UObject* Object = UObject::GObjects()->Data[i];
-			if (Object && Object->GetFullName().find(stringLookup) != std::string::npos)
-				ret.push_back(Object);
-		}
-		return ret;
-	}
+	static UObject* Load(UClass* ClassToLoad, const char* ObjectFullName);
+	static UObject* Load(const char* ClassName, const char* ObjectFullName);
+	static UObject* Find(UClass* Class, const char* ObjectFullName);
+	static UObject* Find(const char* ClassName, const char* ObjectFullName);
+	static std::vector<UObject*> FindObjectsRegex(const std::string& RegexString);
+	static std::vector<UObject*> FindObjectsContaining(const std::string& StringLookup);
 	static UClass* FindClass(const char* ClassName, bool Lookup = false);
-	bool IsA(UClass* pClass) const;
-
-	class UPackage* GetPackageObject() {
-		UObject *pkg;
-		UObject *outer = this->Outer;
-		while (outer) {
-			pkg = outer;
-			outer = pkg->Outer;
-		}
-		return (UPackage*)pkg;
-	};
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = (UClass *)GObjects()->Data[2];
-		return ptr;
-	};
-
-	static std::vector<UObject *> FindAll(char *instr) {
-		UClass *inclass = FindClass(instr, true);
-		if (!inclass)
-			throw std::exception("Unable to find class");
-		std::vector<UObject *> ret;
-		for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
-		{
-			UObject* Object = UObject::GObjects()->Data[i];
-			if (Object && Object->Class == inclass)
-				ret.push_back(Object);
-		}
-		return ret;
-	}
+	bool IsA(UClass* PClass) const;
+	class UPackage* GetPackageObject() const;
+	static UClass* StaticClass();
+	static std::vector<UObject*> FindAll(char* InStr);
 
 	py::object GetProperty(std::string PropName);
-	void SetProperty(std::string& PropName, py::object val);
+	void SetProperty(std::string& PropName, const py::object& Val);
 	struct FFunction GetFunction(std::string& PropName);
 	//struct FScriptArray GetArrayProperty(std::string& PropName);
 	//struct FScriptMap GetMapProperty(std::string& PropName);
@@ -682,7 +600,7 @@ public:
 	virtual void VirtualFunction16() {};																			// 0x00F90510 (0x40)
 	virtual void VirtualFunction17() {};																			// 0x00C6EB60 (0x44)
 	virtual void VirtualFunction18() {};																			// 0x009CBC30 (0x48)
-	virtual void PostEditChangeProperty(FPropertyChangedEvent *PropertyChangedEvent) {};																			// 0x00AEAFA0 (0x4C)
+	virtual void PostEditChangeProperty(FPropertyChangedEvent *PropertyChangedEvent) {};							// 0x00AEAFA0 (0x4C)
 	virtual void VirtualFunction20() {};																			// 0x00A28430 (0x50)
 	virtual void VirtualFunction21() {};																			// 0x00601380 (0x54)
 	virtual void VirtualFunction22() {};																			// 0x0048AE50 (0x58)
@@ -730,7 +648,7 @@ public:
 	virtual void VirtualFunction64() {};																			// 0x0028AA90 (0x100)
 	virtual void VirtualFunction65() {};																			// 0x00EE7430 (0x104)
 	virtual void VirtualFunction66() {};																			// 0x00592990 (0x108)
-	virtual void ProcessEvent(class UFunction* pFunction, void* params, void* pResult = NULL) {};																			// 0x00F757C0 (0x10C)
+	virtual void ProcessEvent(class UFunction* pFunction, void* params, void* pResult = NULL) {};					// 0x00F757C0 (0x10C)
 	virtual void VirtualFunction68() {};																			// 0x001E10C0 (0x110)
 	virtual void VirtualFunction69() {};																			// 0x01218070 (0x114)
 	virtual void VirtualFunction70() {};																			// 0x00782B80 (0x118)
@@ -1365,77 +1283,17 @@ public:
 	}
 };
 
-
 struct FFunction
 {
 	UObject *obj;
 	UFunction *func;
 
 private:
-
-	FHelper *GenerateParams(py::args args, py::kwargs kwargs, FHelper *params) {
-		unsigned int currentIndex = 0;
-		for (UProperty* Child = (UProperty *)func->Children; Child; Child = (UProperty *)Child->Next) {
-			if (!(Child->PropertyFlags & 0x80)) // Param
-				continue;
-			else if (kwargs.contains(Child->GetName().c_str())) {
-				params->SetProperty(Child, kwargs[Child->GetName().c_str()]);
-				continue;
-			}
-			else if (currentIndex < args.size()) {
-				params->SetProperty(Child, args[currentIndex++]);
-				continue;
-			}
-			else if (Child->PropertyFlags & 0x10) // Optional
-				continue;
-			else if (Child->PropertyFlags & 0x100) // Output
-				continue;
-			throw std::exception("Invalid number of parameters");
-		}
-		return params;
-
-	}
+	FHelper* GenerateParams(const py::args& args, const py::kwargs& kwargs, FHelper* params);
 
 public:
-	py::object GetReturn(FHelper* params) {
-		std::deque<py::object> ReturnObjects{};
-		for (UProperty* Child = (UProperty *)func->Children; Child; Child = (UProperty *)Child->Next) {
-			if (Child->PropertyFlags & 0x400) // Return
-				ReturnObjects.push_front(params->GetProperty(Child));
-			else if (Child->PropertyFlags & 0x100) // Output
-				ReturnObjects.push_back(params->GetProperty(Child));
-		}
-		Logging::LogD("Finished popping return\n");
-		if (ReturnObjects.size() == 1)
-			return ReturnObjects[0];
-		else if (ReturnObjects.size() > 1)
-			return py::cast(ReturnObjects);
-		return py::none();
-	}
-
-	py::object Call(py::args args, py::kwargs kwargs)
-	{
-		if (!obj || !func)
-			return py::none();
-		Logging::LogD("FFunction::Call called %s.%s)\n", obj->GetFullName().c_str(), func->GetName().c_str());
-		char params[1000] = "";
-		memset(params, 0, 1000);
-		GenerateParams(args, kwargs, (FHelper *)params);
-		Logging::LogD("made params\n");
-		auto flags = func->FunctionFlags;
-		func->FunctionFlags |= 0x400;
-		void *returnObj = nullptr;
-		for (UProperty* Child = (UProperty *)func->Children; Child; Child = (UProperty *)Child->Next)
-			if (Child->PropertyFlags & 0x400)
-				returnObj = params + Child->Offset_Internal;
-		BL2SDK::pProcessEvent(obj, func, params, returnObj);
-		func->FunctionFlags = flags;
-		Logging::LogD("Called ProcessEvent\n");
-		py::object ret = GetReturn((FHelper *)params);
-		memset(params, 0, 1000);
-		Logging::LogD("ProcessEvent Succeeded!\n");
-		return ret;
-	}
+	py::object GetReturn(FHelper* params);
+	py::object Call(py::args args, py::kwargs kwargs);
 };
 
 struct FOutParmRec
@@ -1456,106 +1314,18 @@ struct FFrame : public FOutputDevice
 	struct FOutParmRec* Outparams;
 
 public:
-	void SkipFunction() {
-		// allocate temporary memory on the stack for evaluating parameters
-		char params[1000] = "";
-		memset(params, 0, 1000);
-		for (UProperty* Property = (UProperty*)Node->Children; Code[0] != 0x16; Property = (UProperty*)Property->Next)
-			BL2SDK::pFrameStep(this, this->Object, (void *)((Property->PropertyFlags & 0x100) ? NULL : params + Property->Offset_Internal));
-
-		Code++;
-		memset(params, 0, 1000);
-	}
-
-	UObject *popObject() {
-		UObject *obj = nullptr;
-		BL2SDK::pFrameStep(this, this->Object, &obj);
-		return obj;
-	};
-	struct FName *popFName() {
-		FName *obj = new FName();
-		BL2SDK::pFrameStep(this, this->Object, obj);
-		return obj;
-	};
-	struct FString *popFString() {
-		FString *obj = new FString();
-		BL2SDK::pFrameStep(this, this->Object, obj);
-		return obj;
-	};
-	float popFloat() {
-		float obj = 0;
-		BL2SDK::pFrameStep(this, this->Object, &obj);
-		return obj;
-	};
-	unsigned char popByte() {
-		unsigned char obj = 0;
-		BL2SDK::pFrameStep(this, this->Object, &obj);
-		return obj;
-	};
-	int popInt() {
-		int obj = 0;
-		BL2SDK::pFrameStep(this, this->Object, &obj);
-		return obj;
-	};
-	unsigned long popULong() {
-		unsigned long obj = 0;
-		BL2SDK::pFrameStep(this, this->Object, &obj);
-		return obj;
-	};
-	bool popBool() {
-		return !!popULong();
-	};
-	TArray<UObject *> *popTArrayObjects() {
-		TArray<UObject *> *obj = new TArray<UObject *>();
-		BL2SDK::pFrameStep(this, this->Object, obj);
-		return obj;
-	};
+	void SkipFunction();
 };
 
 struct FStruct
 {
 	UStruct		*structType;
 	void		*base;
-	FStruct(UStruct *s, void *b) {
-		Logging::LogD("Creating FStruct of type '%s' from %p\n", s->GetObjectName().c_str(), b);
-		structType = s;
-		base = b;
-	};
+	FStruct(UStruct* s, void* b);
 
-	pybind11::object GetProperty(std::string PropName) {
-		class UObject *obj = structType->FindChildByName(FName(PropName));
-		if (!obj)
-			return pybind11::none();
-		auto prop = reinterpret_cast<UProperty *>(obj);
-		return ((FHelper *)((char *)base))->GetProperty(prop);
-	}
-
-	void SetProperty(std::string& PropName, py::object value) {
-		class UObject *obj = structType->FindChildByName(FName(PropName));
-		if (!obj)
-			throw std::exception(Util::Format("FStruct::SetProperty: Unable to find property '%s'!\n", PropName.c_str()).c_str());
-		auto prop = reinterpret_cast<UProperty *>(obj);
-		((FHelper *)((char *)base))->SetProperty(prop, value);
-	}
-
-	py::str Repr() {
-		py::str s = "{";
-		const UStruct *thisField = structType;
-		while (thisField)
-		{
-			for (UField* Child = thisField->Children; Child != NULL; Child = Child->Next) {
-				UProperty *prop = (UProperty *)structType->FindChildByName(FName(Child->GetName()));
-				if (prop && prop->PropertyFlags & 0x80) {
-					s = py::str("{}{}: {}").format(s, Child->GetName(), py::repr(GetProperty(Child->GetName())));
-					if (Child->Next || (thisField->SuperField && thisField->SuperField->Children))
-						s = py::str("{}{}").format(s, ", ");
-				}
-			}
-			thisField = thisField->SuperField;
-		}
-		s = py::str("{}{}").format(s, "}");
-		return s;
-	}
+	pybind11::object GetProperty(const std::string& PropName) const;
+	void SetProperty(std::string& PropName, py::object value) const;
+	py::str Repr() const;
 };
 
 struct FArray {
@@ -1563,53 +1333,15 @@ struct FArray {
 	UProperty *type;
 	unsigned int IterCounter;
 
-	FArray(TArray <char> *array, UProperty *s) {
-		Logging::LogD("Creating FArray from %p, count: %d, max: %d\n", array, array->Count, array->Max);
-		arr = array;
-		type = s;
-		IterCounter = 0;
-	};
+	FArray(TArray <char>* array, UProperty* s);
 
-	py::object GetItem(int i) {
-		if (i >= arr->Count)
-			throw pybind11::index_error();
-		return ((FHelper *)(arr->Data + type->ElementSize * i))->GetProperty(type);
-	}
-
-	void SetItem(int i, py::object obj) {
-		if (i >= arr->Count)
-			throw pybind11::index_error();
-		((FHelper *)(arr->Data + type->ElementSize * i))->SetProperty(type, obj);
-	}
-
-	int GetAddress() {
-		return (int)arr->Data;
-	}
-
-	FArray *Iter() {
-		IterCounter = 0;
-		return this;
-	}
-
-	py::object Next() {
-		if (IterCounter >= arr->Count)
-			throw pybind11::stop_iteration();
-		return GetItem(IterCounter++);
-	}
-
-	py::str Repr() {
-		py::str s = "[";
-		for (unsigned int x = 0; x < arr->Count; x++) {
-			s = py::str("{}{}").format(s, py::repr(GetItem(x)));
-			if (x + 1 < arr->Count)
-				s = py::str("{}{}").format(s, ", ");
-		}
-		s = py::str("{}{}").format(s, "]");
-		return s;
-	}
+	py::object GetItem(unsigned int i) const;
+	void SetItem(unsigned int I, py::object Obj) const;
+	int GetAddress() const;
+	FArray* Iter();
+	py::object Next();
+	py::str Repr();
 };
-
-
 
 #ifdef _MSC_VER
 #pragma pack ( pop )

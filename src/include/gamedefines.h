@@ -5,7 +5,6 @@
 #define WIN32_LEAN_AND_MEAN
 #include <Windows.h>
 #include <stdlib.h>
-#include <stdio.h>
 #include <string>
 #include "Util.h"
 #include "stdafx.h"
@@ -18,15 +17,19 @@
 */
 namespace py = pybind11;
 
-class PyTArray {
-public:
-	PyTArray() {}
-};
-
-template<class T> struct TArray
+class PyTArray
 {
 public:
-	T * Data;
+	PyTArray()
+	{
+	}
+};
+
+template <class T>
+struct TArray
+{
+public:
+	T* Data;
 	unsigned int Count;
 	unsigned int Max;
 
@@ -42,12 +45,12 @@ public:
 		return this->Count;
 	}
 
-	T& operator() (int i)
+	T& operator()(int i)
 	{
 		return this->Data[i];
 	}
 
-	const T& operator() (int i) const
+	const T& operator()(int i) const
 	{
 		return this->Data[i];
 	}
@@ -57,11 +60,6 @@ struct FNameEntry
 {
 	unsigned char UnknownData00[0x10];
 	char Name[1024];
-
-	void AppendNameToString(std::string& out)
-	{
-		out += Name;
-	}
 };
 
 struct FName
@@ -70,7 +68,8 @@ struct FName
 	int Number;
 
 public:
-	FName() {
+	FName()
+	{
 		Index = 0;
 		Number = 0;
 	};
@@ -88,7 +87,8 @@ public:
 	FName(const std::string& FindName, int number)
 	{
 		if (BL2SDK::EngineVersion <= 8630)
-			((BL2SDK::tFNameInitOld)(BL2SDK::pFNameInit))(this, (wchar_t *)Util::Widen(FindName).c_str(), number, 1, 1, 0);
+			((BL2SDK::tFNameInitOld)(BL2SDK::pFNameInit))(this, (wchar_t *)Util::Widen(FindName).c_str(), number, 1, 1,
+			                                              0);
 		else
 			((BL2SDK::tFNameInitNew)(BL2SDK::pFNameInit))(this, (wchar_t *)Util::Widen(FindName).c_str(), number, 1, 1);
 	}
@@ -98,39 +98,14 @@ public:
 		return (TArray<FNameEntry*>*)BL2SDK::pGNames;
 	}
 
-	char* GetName()
+	const char* GetName() const
 	{
-		if (Index < 0 || Index > this->Names()->Num())
-			return (char*)"UnknownName";
-		else
-			return this->Names()->Data[Index]->Name;
+		if (Index < 0 || Index > Names()->Num())
+			return "UnknownName";
+		return Names()->Data[Index]->Name;
 	};
 
-	char *GetFullName() {
-		if (Index < 0 || Index > this->Names()->Num())
-			return (char*)"UnknownName";
-		char buffer[1000] = "";
-		memset(buffer, 0, 1000);
-		strcpy(buffer, GetName());
-		if (Number > 0) {
-			buffer[strlen(buffer)] = '_';
-			itoa(Number, buffer + strlen(buffer), 10);
-		}
-		return buffer;
-	}
-
-	void AppendString(std::string& out)
-	{
-		FNameEntry* entry = Names()->Data[Index];
-		entry->AppendNameToString(out);
-		if (Number != 0)
-		{
-			out += "_";
-			out += std::to_string(Number - 1);
-		}
-	}
-
-	bool operator == (const FName& A) const
+	bool operator ==(const FName& A) const
 	{
 		return Index == A.Index;
 	}
@@ -138,7 +113,9 @@ public:
 
 struct FString : public TArray<wchar_t>
 {
-	FString() {};
+	FString()
+	{
+	};
 
 	FString(wchar_t* Other)
 	{
@@ -158,9 +135,11 @@ struct FString : public TArray<wchar_t>
 			mbstowcs(this->Data, Other, this->Count);
 	};
 
-	~FString() {};
+	~FString()
+	{
+	};
 
-	FString operator = (wchar_t* Other)
+	FString operator =(wchar_t* Other)
 	{
 		if (this->Data != Other)
 		{
@@ -173,10 +152,11 @@ struct FString : public TArray<wchar_t>
 		return *this;
 	};
 
-	char *AsString() {
+	char* AsString()
+	{
 		if (this->Data == nullptr || this->Count == 0)
 			return (char *)"";
-		char *output = (char *)calloc(this->Count + 1, sizeof(char));
+		char* output = (char *)calloc(this->Count + 1, sizeof(char));
 		wcstombs(output, this->Data, this->Count);
 		return output;
 	}
@@ -185,13 +165,14 @@ struct FString : public TArray<wchar_t>
 struct FScriptDelegate
 {
 	struct FName FunctionName;
-	class UObject *Object;
+	class UObject* Object;
 };
 
 struct FScriptInterface
 {
 	UObject* ObjectPointer; //A pointer to a UObject that implements a native interface.
-	void* InterfacePointer; //Pointer to the location of the interface object within the UObject referenced by ObjectPointer.
+	void* InterfacePointer;
+	//Pointer to the location of the interface object within the UObject referenced by ObjectPointer.
 };
 
 struct FOutputDevice
@@ -218,7 +199,7 @@ struct FDeferredMessage
 		SHORT LeftShift;
 		SHORT RightShift;
 		SHORT Menu;
-	}	KeyStates;
+	} KeyStates;
 };
 
 struct FArchive
@@ -242,6 +223,7 @@ struct FMalloc
 {
 	void** VfTable;
 };
+
 /*
 struct TStringArray : TArray<void *> {
 	struct FString GetItem(int i) {
