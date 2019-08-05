@@ -126,7 +126,7 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	});
 	m.def("DoInjectedCallNext", &BL2SDK::DoInjectedCallNext);
 	m.def("LogAllCalls", &BL2SDK::LogAllCalls);
-	m.def("CallPostEdit", [](bool NewValue) { BL2SDK::CallPostEdit = NewValue; });
+	m.def("CallPostEdit", [](bool NewValue) { BL2SDK::gCallPostEdit = NewValue; });
 }
 
 void AddToConsoleLog(UConsole* console, FString input)

@@ -9,44 +9,44 @@
 
 namespace Logging
 {
-	HANDLE logFile = nullptr;
-	bool logToExternalConsole = true;
-	bool logToFile = true;
-	bool logToGameConsole = false;
+	HANDLE gLogFile = nullptr;
+	bool gLogToExternalConsole = true;
+	bool gLogToFile = true;
+	bool gLogToGameConsole = false;
 
-	void LogToFile(const char* buff, int len)
+	void LogToFile(const char* Buff, const int Len)
 	{
-		if (logFile != INVALID_HANDLE_VALUE)
+		if (gLogFile != INVALID_HANDLE_VALUE)
 		{
 			DWORD bytesWritten = 0;
-			WriteFile(logFile, buff, len, &bytesWritten, nullptr);
+			WriteFile(gLogFile, Buff, Len, &bytesWritten, nullptr);
 		}
 	}
 
-	void LogWinConsole(const char* buff, int len)
+	void LogWinConsole(const char* Buff, const int Len)
 	{
-		HANDLE output = GetStdHandle(STD_OUTPUT_HANDLE);
+		const HANDLE output = GetStdHandle(STD_OUTPUT_HANDLE);
 		DWORD bytesWritten = 0;
-		WriteFile(output, buff, len, &bytesWritten, nullptr);
+		WriteFile(output, Buff, Len, &bytesWritten, nullptr);
 	}
 
-	void Log(const char* formatted, int length)
+	void Log(const char* Formatted, int Length)
 	{
-		std::string out = formatted;
-		if (formatted[strlen(formatted) - 1] != '\n')
+		std::string out = Formatted;
+		if (Formatted[strlen(Formatted) - 1] != '\n')
 		{
 			out += "\n";
 		}
 		const char* outc = out.c_str();
 
-		if (length == 0)
-			length = strlen(outc);
+		if (Length == 0)
+			Length = strlen(outc);
 
-		if (logToExternalConsole)
-			LogWinConsole(outc, length);
+		if (gLogToExternalConsole)
+			LogWinConsole(outc, Length);
 
-		if (logToFile)
-			LogToFile(outc, length);
+		if (gLogToFile)
+			LogToFile(outc, Length);
 
 		if (BL2SDK::gameConsole != nullptr)
 		{
@@ -54,22 +54,22 @@ namespace Logging
 			// console output, but if there's already a \n at the end, then it won't
 			// add this \n onto the end. So if we're printing just a \n by itself, 
 			// just don't do anything.
-			if (!(length == 1 && outc[0] == '\n'))
+			if (!(Length == 1 && outc[0] == '\n'))
 			{
 				std::wstring wfmt = Util::Widen(outc);
-				bool DoInjectedNext = BL2SDK::injectedCallNext;
+				const bool doInjectedNext = BL2SDK::gInjectedCallNext;
 				BL2SDK::DoInjectedCallNext();
 				BL2SDK::gameConsole->OutputText(FString((wchar_t*)wfmt.c_str()));
-				if (DoInjectedNext)
+				if (doInjectedNext)
 					BL2SDK::DoInjectedCallNext();
 			}
 		}
 	}
 
-	void LogW(wchar_t* formatted, signed int length)
+	void LogW(wchar_t* Formatted, const signed int Length)
 	{
-		char* output = (char *)calloc(length + 1, sizeof(char));
-		wcstombs(output, formatted, length);
+		char* output = (char *)calloc(Length + 1, sizeof(char));
+		wcstombs(output, Formatted, Length);
 		Log(output, 0);
 	}
 
@@ -147,23 +147,23 @@ namespace Logging
 		BOOL result = AllocConsole();
 		if (result)
 		{
-			logToExternalConsole = true;
+			gLogToExternalConsole = true;
 		}
 	}
 
 	// Everything else can fail, but InitializeFile must work.
 	void InitializeFile(const std::wstring& fileName)
 	{
-		logFile = CreateFile(fileName.c_str(), GENERIC_WRITE, FILE_SHARE_READ, nullptr, CREATE_ALWAYS,
+		gLogFile = CreateFile(fileName.c_str(), GENERIC_WRITE, FILE_SHARE_READ, nullptr, CREATE_ALWAYS,
 		                     FILE_ATTRIBUTE_NORMAL, nullptr);
-		if (logFile == INVALID_HANDLE_VALUE)
+		if (gLogFile == INVALID_HANDLE_VALUE)
 		{
 			std::string errMsg = Util::Format("Failed to initialize log file (INVALID_HANDLE_VALUE, LastError = %d)",
 			                                  GetLastError());
 			throw FatalSDKException(1000, errMsg);
 		}
 
-		logToFile = true;
+		gLogToFile = true;
 	}
 
 	void PrintLogHeader()
@@ -173,10 +173,10 @@ namespace Logging
 
 	void Cleanup()
 	{
-		if (logFile != INVALID_HANDLE_VALUE)
+		if (gLogFile != INVALID_HANDLE_VALUE)
 		{
-			FlushFileBuffers(logFile);
-			CloseHandle(logFile);
+			FlushFileBuffers(gLogFile);
+			CloseHandle(gLogFile);
 		}
 	}
 }

@@ -179,34 +179,35 @@
 */
 
 struct FHelper {
-	struct FStruct GetStructProperty(class UStructProperty *prop);
-	struct FString* GetStrProperty(class UProperty *prop);
-	class UObject* GetObjectProperty(class UProperty *prop);
-	class UComponent* GetComponentProperty(class UProperty *prop);
-	class UClass* GetClassProperty(class UProperty *prop);
-	struct FName* GetNameProperty(class UProperty *prop);
-	int GetIntProperty(class UProperty *prop);
-	struct FScriptInterface* GetInterfaceProperty(class UProperty *prop);
-	float GetFloatProperty(class UProperty *prop);
-	struct FScriptDelegate* GetDelegateProperty(class UProperty *prop);
-	unsigned char GetByteProperty(class UProperty *prop);
-	bool GetBoolProperty(class UBoolProperty *boolProp);
-	py::object GetArrayProperty(class UArrayProperty *prop);
-	pybind11::object GetProperty(class UProperty *prop);
+	struct FStruct GetStructProperty(class UStructProperty *Prop);
+	struct FString* GetStrProperty(class UProperty *Prop);
+	class UObject* GetObjectProperty(class UProperty *Prop);
+	class UComponent* GetComponentProperty(class UProperty *Prop);
+	class UClass* GetClassProperty(class UProperty *Prop);
+	struct FName* GetNameProperty(class UProperty *Prop);
+	int GetIntProperty(class UProperty * Prop);
+	struct FScriptInterface* GetInterfaceProperty(class UProperty *Prop);
+	float GetFloatProperty(class UProperty *Prop);
+	struct FScriptDelegate* GetDelegateProperty(class UProperty *Prop);
+	unsigned char GetByteProperty(class UProperty * Prop);
+	bool GetBoolProperty(class UBoolProperty *Prop);
+	void* GetPropertyAddress(class UProperty* Prop);
+	py::object GetArrayProperty(class UArrayProperty *Prop);
+	pybind11::object GetProperty(class UProperty * Prop);
 
-	void SetProperty(class UStructProperty *prop, const py::object& val);
-	void SetProperty(class UStrProperty *prop, const py::object& val);
-	void SetProperty(class UObjectProperty *prop, const py::object& val);
-	void SetProperty(class UComponentProperty *prop, const py::object& val);
-	void SetProperty(class UClassProperty *prop, const py::object& val);
-	void SetProperty(class UNameProperty *prop, const py::object& val);
-	void SetProperty(class UInterfaceProperty *prop, const py::object& val);
-	void SetProperty(class UDelegateProperty *prop, const py::object& val);
-	void SetProperty(class UFloatProperty *prop, const py::object& val);
-	void SetProperty(class UIntProperty *prop, const py::object& val);
-	void SetProperty(class UByteProperty *prop, const py::object& val);
-	void SetProperty(class UBoolProperty *boolProp, const py::object& val);
-	void SetProperty(class UArrayProperty *prop, const py::object& val);
+	void SetProperty(class UStructProperty *Prop, const py::object& Val);
+	void SetProperty(class UStrProperty *Prop, const py::object& Val);
+	void SetProperty(class UObjectProperty *Prop, const py::object& Val);
+	void SetProperty(class UComponentProperty *Prop, const py::object& Val);
+	void SetProperty(class UClassProperty *Prop, const py::object& Val);
+	void SetProperty(class UNameProperty *Prop, const py::object& Val);
+	void SetProperty(class UInterfaceProperty *Prop, const py::object& Val);
+	void SetProperty(class UDelegateProperty *Prop, const py::object& Val);
+	void SetProperty(class UFloatProperty *Prop, const py::object& Val);
+	void SetProperty(class UIntProperty *Prop, const py::object& Val);
+	void SetProperty(class UByteProperty *Prop, const py::object& Val);
+	void SetProperty(class UBoolProperty *boolProp, const py::object& Val);
+	void SetProperty(class UArrayProperty *Prop, const py::object& Val);
 	void SetProperty(class UProperty *Prop, const py::object& val);
 };
 
@@ -239,13 +240,13 @@ public:
 	static UObject* Load(const char* ClassName, const char* ObjectFullName);
 	static UObject* Find(UClass* Class, const char* ObjectFullName);
 	static UObject* Find(const char* ClassName, const char* ObjectFullName);
-	static std::vector<UObject*> FindObjectsRegex(const std::string& regexString);
-	static std::vector<UObject*> FindObjectsContaining(const std::string& stringLookup);
+	static std::vector<UObject*> FindObjectsRegex(const std::string& RegexString);
+	static std::vector<UObject*> FindObjectsContaining(const std::string& StringLookup);
 	static UClass* FindClass(const char* ClassName, bool Lookup = false);
 	bool IsA(UClass* PClass) const;
-	class UPackage* GetPackageObject();
+	class UPackage* GetPackageObject() const;
 	static UClass* StaticClass();
-	static std::vector<UObject*> FindAll(char* instr);
+	static std::vector<UObject*> FindAll(char* InStr);
 
 	py::object GetProperty(std::string PropName);
 	void SetProperty(std::string& PropName, const py::object& Val);
@@ -1324,7 +1325,7 @@ struct FStruct
 
 	pybind11::object GetProperty(const std::string& PropName) const;
 	void SetProperty(std::string& PropName, py::object value) const;
-	py::str Repr();
+	py::str Repr() const;
 };
 
 struct FArray {
@@ -1334,9 +1335,9 @@ struct FArray {
 
 	FArray(TArray <char>* array, UProperty* s);
 
-	py::object GetItem(unsigned int i);
-	void SetItem(unsigned int i, py::object obj);
-	int GetAddress();
+	py::object GetItem(unsigned int i) const;
+	void SetItem(unsigned int I, py::object Obj) const;
+	int GetAddress() const;
 	FArray* Iter();
 	py::object Next();
 	py::str Repr();

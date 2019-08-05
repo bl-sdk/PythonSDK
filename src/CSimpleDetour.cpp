@@ -17,7 +17,7 @@ void CSimpleDetour::Attach()
 
 	DetourAttach(m_fnOld, m_fnReplacement);
 
-	LONG result = DetourTransactionCommit();
+	const LONG result = DetourTransactionCommit();
 	if (result != NO_ERROR)
 	{
 		throw FatalSDKException(4000, Util::Format("Failed to attach detour (Old = 0x%p, Hook = 0x%p, Result = 0x%X)",

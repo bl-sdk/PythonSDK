@@ -35,10 +35,10 @@ namespace BL2SDK
 	tStaticConstructObject pStaticConstructObject;
 	tLoadPackage pLoadPackage;
 	tGetDefaultObject pGetDefaultObject;
-	UObject* engine = nullptr;
-	CHookManager* HookManager = nullptr;
-	bool injectedCallNext = false;
-	bool CallPostEdit = true;
+	UObject* gEngine = nullptr;
+	CHookManager* gHookManager = nullptr;
+	bool gInjectedCallNext = false;
+	bool gCallPostEdit = true;
 
 	CPythonInterface* Python;
 
@@ -47,17 +47,17 @@ namespace BL2SDK
 
 	std::map<std::string, UClass *> ClassMap = std::map<std::string, UClass *>{};
 
-	void __stdcall hkProcessEvent(UFunction* function, void* params, void* result)
+	void __stdcall hkProcessEvent(UFunction* Function, void* Params, void* Result)
 	{
 		// Get "this"
 		UObject* caller;
 		_asm mov caller, ecx;
 
-		std::string functionName = function->GetObjectName();
-		if (injectedCallNext)
+		std::string functionName = Function->GetObjectName();
+		if (gInjectedCallNext)
 		{
-			injectedCallNext = false;
-			pProcessEvent(caller, function, params, result);
+			gInjectedCallNext = false;
+			pProcessEvent(caller, Function, Params, Result);
 			return;
 		}
 
@@ -69,14 +69,14 @@ namespace BL2SDK
 			              callerName.c_str(), functionName.c_str());
 		}
 
-		if (HookManager->HasHook(caller, function) && !HookManager->ProcessHooks(
-			functionName, caller, function, &FStruct{function, params}))
+		if (gHookManager->HasHook(caller, Function) && !gHookManager->ProcessHooks(
+			functionName, caller, Function, &FStruct{Function, Params}))
 		{
 			// The engine hook manager told us not to pass this function to the engine
 			return;
 		}
 
-		pProcessEvent(caller, function, params, result);
+		pProcessEvent(caller, Function, Params, Result);
 	}
 
 	void LogOutParams(FFrame* Stack)
@@ -95,7 +95,7 @@ namespace BL2SDK
 		}
 	}
 
-	void __stdcall hkCallFunction(FFrame& stack, void* const result, UFunction* function)
+	void __stdcall hkCallFunction(FFrame& Stack, void* const Result, UFunction* Function)
 	{
 		// Get "this"
 		UObject* caller;
@@ -104,7 +104,7 @@ namespace BL2SDK
 		if (logAllCalls)
 		{
 			std::string callerName = caller->GetFullName();
-			std::string functionName = function->GetFullName();
+			std::string functionName = Function->GetFullName();
 
 			// Prevent infinite recursion when printing to console
 			if (functionName != "Function Engine.Console.OutputText" && functionName !=
@@ -113,23 +113,23 @@ namespace BL2SDK
 				              callerName.c_str(), functionName.c_str());
 		}
 
-		unsigned char* code = stack.Code;
+		unsigned char* code = Stack.Code;
 
-		if (!HookManager->ProcessHooks(caller, stack, result, function))
+		if (!gHookManager->ProcessHooks(caller, Stack, Result, Function))
 		{
-			stack.SkipFunction();
+			Stack.SkipFunction();
 			return;
 		}
-		stack.Code = code;
-		pCallFunction(caller, stack, result, function);
+		Stack.Code = code;
+		pCallFunction(caller, Stack, Result, Function);
 	}
 
 	void DoInjectedCallNext()
 	{
-		injectedCallNext = true;
+		gInjectedCallNext = true;
 	}
 
-	void LogAllCalls(bool Enabled)
+	void LogAllCalls(const bool Enabled)
 	{
 		logAllCalls = Enabled;
 	}
@@ -211,7 +211,7 @@ namespace BL2SDK
 	void InitializePython()
 	{
 		Python = new CPythonInterface();
-		PythonStatus status = Python->InitializeModules();
+		const PythonStatus status = Python->InitializeModules();
 		if (status == PYTHON_MODULE_ERROR && !Settings::DeveloperModeEnabled())
 		{
 			Util::Popup(L"Python Module Error",
@@ -224,20 +224,20 @@ namespace BL2SDK
 		}
 	}
 
-	bool getCanvasPostRender(UObject* caller, UFunction* function, FStruct* params)
+	bool getCanvasPostRender(UObject* Caller, UFunction* Function, FStruct* Params)
 	{
 		// Set console key to Tilde if not already set
 		gameConsole = static_cast<UConsole *>(UObject::Find("WillowConsole",
 		                                                    "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0")
 		);
-		if (gameConsole == nullptr && engine && static_cast<UEngine *>(engine)->GameViewport)
-			gameConsole = static_cast<UEngine *>(engine)->GameViewport->ViewportConsole;
+		if (gameConsole == nullptr && gEngine && static_cast<UEngine *>(gEngine)->GameViewport)
+			gameConsole = static_cast<UEngine *>(gEngine)->GameViewport->ViewportConsole;
 		if (gameConsole && (gameConsole->ConsoleKey == FName("None") || gameConsole->ConsoleKey == FName("Undefine")))
 			gameConsole->ConsoleKey = FName("Tilde");
 
 		InitializePython();
 
-		HookManager->Remove(function->GetObjectName(), "GetCanvas");
+		gHookManager->Remove(Function->GetObjectName(), "GetCanvas");
 		return true;
 	}
 
@@ -250,7 +250,7 @@ namespace BL2SDK
 	}
 
 	// This function is used to ensure that everything gets called in the game thread once the game itself has loaded
-	bool GameReady(UObject* caller, UFunction* function, FStruct* params)
+	bool GameReady(UObject* Caller, UFunction* Function, FStruct* Params)
 	{
 		Logging::LogD("[GameReady] Thread: %i\n", GetCurrentThreadId());
 
@@ -265,7 +265,7 @@ namespace BL2SDK
 				ClassMap[Object->GetName()] = static_cast<UClass *>(Object);
 
 			if (!strcmp(Object->GetFullName().c_str(), "WillowGameEngine Transient.WillowGameEngine"))
-				engine = Object;
+				gEngine = Object;
 		}
 #ifdef _DEBUG
 		Logging::InitializeExtern();
@@ -275,8 +275,8 @@ namespace BL2SDK
 
 		Logging::PrintLogHeader();
 
-		HookManager->Remove(function->GetObjectName(), "StartupSDK");
-		HookManager->Register("WillowGame.WillowGameViewportClient.PostRender", "GetCanvas", getCanvasPostRender);
+		gHookManager->Remove(Function->GetObjectName(), "StartupSDK");
+		gHookManager->Register("WillowGame.WillowGameViewportClient.PostRender", "GetCanvas", getCanvasPostRender);
 
 		return true;
 	}
@@ -285,12 +285,12 @@ namespace BL2SDK
 	{
 		HookAntiDebug();
 		//Logging::SetLoggingLevel("DEBUG");
-		HookManager = new CHookManager("EngineHooks");
+		gHookManager = new CHookManager("EngineHooks");
 		hookGame();
 
 		LogAllCalls(false);
 
-		HookManager->Register("Engine.Console.Initialized", "StartupSDK", GameReady);
+		gHookManager->Register("Engine.Console.Initialized", "StartupSDK", GameReady);
 		//GameHooks::UnrealScriptHookManager->Register("Engine.Interaction.NotifyGameSessionEnded", "ExitGame", &cleanup);
 	}
 
@@ -299,14 +299,14 @@ namespace BL2SDK
 	void Cleanup()
 	{
 		Logging::Cleanup();
-		delete HookManager;
-		HookManager = nullptr;
+		delete gHookManager;
+		gHookManager = nullptr;
 		Util::CloseGame();
 	}
 
-	void LoadPackage(const char* Filename, DWORD Flags, bool Force)
+	void LoadPackage(const char* Filename, const DWORD Flags, const bool Force)
 	{
-		std::wstring wideFilename = Util::Widen(Filename);
+		const std::wstring wideFilename = Util::Widen(Filename);
 		UPackage* result = pLoadPackage(nullptr, wideFilename.c_str(), Flags);
 		if (Force)
 		{
@@ -325,7 +325,7 @@ namespace BL2SDK
 			outer->ObjectFlags.A |= 0x4000;
 	}
 
-	UObject* ConstructObject(UClass* Class, UObject* Outer, FName Name, unsigned int SetFlags,
+	UObject* ConstructObject(UClass* Class, UObject* Outer, const FName Name, const unsigned int SetFlags,
 	                         unsigned int InternalSetFlags, UObject* Template, FOutputDevice* Error,
 	                         void* InstanceGraph, int AssumeTemplateIsArchetype)
 	{
@@ -343,20 +343,20 @@ namespace BL2SDK
 
 	UObject* GetEngine()
 	{
-		if (!engine)
-			engine = UObject::Find("WillowGameEngine", "Transient.WillowGameEngine");
-		return engine;
+		if (!gEngine)
+			gEngine = UObject::Find("WillowGameEngine", "Transient.WillowGameEngine");
+		return gEngine;
 	}
 
 	void RegisterHook(const std::string& FuncName, const std::string& HookName,
-	                  std::function<bool(UObject*, UFunction*, FStruct*)> FuncHook)
+	                  const std::function<bool(UObject*, UFunction*, FStruct*)>& FuncHook)
 	{
-		HookManager->Register(FuncName, HookName, std::move(FuncHook));
+		gHookManager->Register(FuncName, HookName, FuncHook);
 	}
 
 	bool RemoveHook(const std::string& FuncName, const std::string& HookName)
 	{
-		return HookManager->Remove(FuncName, HookName);
+		return gHookManager->Remove(FuncName, HookName);
 	}
 
 	//UObject *LoadTexture(char *Filename, char *TextureName) {

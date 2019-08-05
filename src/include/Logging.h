@@ -6,7 +6,7 @@
 
 namespace Logging
 {
-	void Log(const char* formatted, int length = 0);
+	void Log(const char* Formatted, int Length = 0);
 	void LogW(wchar_t*, int);
 	void LogPy(std::string formatted);
 	void LogF(const char* szFmt, ...);

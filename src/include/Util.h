@@ -10,24 +10,24 @@
 namespace Util
 {
 	std::string Format(const char* fmt, ...);
-	std::string FormatInternal(const char* fmt, va_list args);
+	std::string FormatInternal(const char* Fmt, va_list Args);
 	std::wstring Format(const wchar_t* fmt, ...);
 	std::wstring FormatInternal(const wchar_t* fmt, va_list args);
-	std::wstring Widen(const std::string& input);
-	std::string Narrow(const std::wstring& input);
-	void Popup(const std::wstring& strName, const std::wstring& strText);
+	std::wstring Widen(const std::string& Input);
+	std::string Narrow(const std::wstring& Input);
+	void Popup(const std::wstring& StrName, const std::wstring& StrText);
 	void CloseGame();
-	std::string StringToHex(const char* input, size_t len);
+	std::string StringToHex(const char* Input, size_t Len);
 
 	void Initialize();
 	const char* ServerPath();
 	const char* LogPath();
 	const char* LayoutPath();
 	HWND getToplevelWindows();
-	DWORD GetMainThreadId(DWORD dwPid);
-	HANDLE GetMainThreadHandle(DWORD dwPid, DWORD dwDesiredAccess);
+	DWORD GetMainThreadId(DWORD DwPid);
+	HANDLE GetMainThreadHandle(DWORD DwPid, DWORD DwDesiredAccess);
 
-	int WaitForModules(std::int32_t timeout, const std::initializer_list<std::wstring>& modules);
+	int WaitForModules(std::int32_t Timeout, const std::initializer_list<std::wstring>& Modules);
 }
 
 #endif

@@ -47,19 +47,19 @@ namespace BL2SDK
 	extern tLoadPackage pLoadPackage;
 	extern tByteOrderSerialize pByteOrderSerialize;
 	extern tGetDefaultObject pGetDefaultObject;
-	extern bool injectedCallNext;
+	extern bool gInjectedCallNext;
 	extern UConsole* gameConsole;
-	extern bool CallPostEdit;
+	extern bool gCallPostEdit;
 
 	extern std::map<std::string, UClass *> ClassMap;
 
 	extern CPythonInterface* Python;
-	extern CHookManager* HookManager;
+	extern CHookManager* gHookManager;
 
 	extern int EngineVersion;
 	extern int ChangelistNumber;
 
-	extern class UObject* engine;
+	extern class UObject* gEngine;
 
 	void LogAllCalls(bool Enabled);
 	void DoInjectedCallNext();
@@ -67,14 +67,14 @@ namespace BL2SDK
 	void Cleanup();
 	void LoadPackage(const char* Filename, DWORD Flags = 0, bool Force = false);
 	void KeepAlive(UObject* Obj);
-	UObject* ConstructObject(UClass* Class, UObject* InOuter, FName Name, unsigned int SetFlags,
+	UObject* ConstructObject(UClass* Class, UObject* Outer, FName Name, unsigned int SetFlags,
 	                         unsigned int InternalSetFlags, UObject* InTemplate, FOutputDevice* Error,
 	                         void* InstanceGraph, int AssumeTemplateIsArchetype);
 	UObject* GetEngine();
 	//UObject			*LoadTexture(char *Filename, char *TextureName);
 
 	void RegisterHook(const std::string& FuncName, const std::string& HookName,
-	                  std::function<bool(UObject*, UFunction*, FStruct*)> FuncHook);
+	                  const std::function<bool(UObject*, UFunction*, FStruct*)>& FuncHook);
 	bool RemoveHook(const std::string& FuncName, const std::string& HookName);
 }
 

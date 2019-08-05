@@ -46,21 +46,21 @@ bool CHookManager::ProcessHooks(const std::string& FuncName, const UObject* Call
 
 	if (iHooks != hooks.end())
 	{
-		tHookMap hooks = iHooks->second;
+		tHookMap matchedHooks = iHooks->second;
 
-		for (tiHookMap iterator = hooks.begin(); iterator != hooks.end(); iterator++)
-			if (!iterator->second((UObject *)Caller, (UFunction *)Func, (FStruct *)Params))
+		for (auto& hook : matchedHooks)
+			if (!hook.second(const_cast<UObject *>(Caller), const_cast<UFunction *>(Func), const_cast<FStruct *>(Params)))
 				return false;
 	}
 
-	iHooks = hooks.find(((UObject *)Caller)->GetObjectName() + "." + ((UFunction *)Func)->GetName());
+	iHooks = hooks.find(const_cast<UObject *>(Caller)->GetObjectName() + "." + const_cast<UFunction *>(Func)->GetName());
 
 	if (iHooks != hooks.end())
 	{
-		tHookMap hooks = iHooks->second;
+		tHookMap matchedHooks = iHooks->second;
 
-		for (tiHookMap iterator = hooks.begin(); iterator != hooks.end(); iterator++)
-			if (!iterator->second((UObject *)Caller, (UFunction *)Func, (FStruct *)Params))
+		for (auto& hook : matchedHooks)
+			if (!hook.second(const_cast<UObject *>(Caller), const_cast<UFunction *>(Func), const_cast<FStruct *>(Params)))
 				return false;
 	}
 	return true;
@@ -70,23 +70,23 @@ bool CHookManager::ProcessHooks(const std::string& FuncName, const UObject* Call
 bool CHookManager::HasHook(UObject* Caller, UFunction* Func)
 {
 	auto iHooks = hooks.find(Func->GetObjectName());
-	if (iHooks != hooks.end() && iHooks->second.size() > 0)
+	if (iHooks != hooks.end() && !iHooks->second.empty())
 		return true;
 	iHooks = hooks.find(Caller->GetObjectName() + "." + Func->GetName());
-	return (iHooks != hooks.end() && iHooks->second.size() > 0);
+	return (iHooks != hooks.end() && !iHooks->second.empty());
 }
 
 bool CHookManager::ProcessHooks(UObject* Caller, FFrame& Stack, void* const Result, UFunction* Function)
 {
-	auto iHooks = hooks.find(Function->GetObjectName());
+	const auto iHooks = hooks.find(Function->GetObjectName());
 
 	// Even though we check in the next function, check here to avoid messing with the stack when we don't need to
 	if (iHooks != hooks.end() || hooks.find(Caller->GetObjectName() + "." + Function->GetName()) != hooks.end())
 	{
-		UProperty* ReturnParm = nullptr;
-		char* Frame = (char *)calloc(1, Function->ParamsSize);
-		for (auto* Property = (UProperty *)Function->Children; Stack.Code[0] != 0x16; Property = (UProperty*)Property->
-		     Next)
+		UProperty* ReturnParm;
+		char* Frame = static_cast<char *>(calloc(1, Function->ParamsSize));
+		for (auto* Property = static_cast<UProperty *>(Function->Children); Stack.Code[0] != 0x16; Property = static_cast<UProperty*>(Property->
+			     Next))
 		{
 			const bool bIsReturnParam = ((Property->PropertyFlags & 0x400) != 0);
 			if (bIsReturnParam)
@@ -96,7 +96,7 @@ bool CHookManager::ProcessHooks(UObject* Caller, FFrame& Stack, void* const Resu
 			}
 			BL2SDK::pFrameStep(&Stack, Stack.Object, Frame + Property->Offset_Internal);
 		}
-		bool ret = ProcessHooks(Function->GetObjectName(), Caller, Function, &FStruct{Function, (void *)Frame});
+		const bool ret = ProcessHooks(Function->GetObjectName(), Caller, Function, &FStruct{Function, (void *)Frame});
 		//if (!ret) {
 		//	if (ReturnParm)
 		//	{
