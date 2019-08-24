@@ -52,21 +52,21 @@ void RegisterHook(const std::string& funcName, const std::string& hookName, py::
 	static const char* params[] = {"caller", "function", "params"};
 	if (VerifyPythonFunction(funcHook, params))
 		BL2SDK::RegisterHook(funcName, hookName, [funcHook](UObject* caller, UFunction* function, FStruct* params)
-		                     {
-			                     try
-			                     {
-				                     py::object py_caller = cast(caller, py::return_value_policy::reference);
-				                     py::object py_function = cast(function, py::return_value_policy::reference);
-				                     py::object py_params = cast(params, py::return_value_policy::reference);
-				                     py::object ret = funcHook(py_caller, py_function, py_params);
-				                     return ret.cast<bool>();
-			                     }
-			                     catch (std::exception e)
-			                     {
-				                     Logging::LogF(e.what());
-			                     }
-			                     return true;
-		                     }
+			{
+				try
+				{
+					py::object py_caller = cast(caller, py::return_value_policy::reference);
+					py::object py_function = cast(function, py::return_value_policy::reference);
+					py::object py_params = cast(params, py::return_value_policy::reference);
+					py::object ret = funcHook(py_caller, py_function, py_params);
+					return ret.cast<bool>();
+				}
+				catch (std::exception e)
+				{
+					Logging::LogF(e.what());
+				}
+				return true;
+			}
 		);
 }
 
@@ -79,6 +79,7 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	Export_pystes_Core_classes(m);
 	Export_pystes_TArray(m);
 
+	m.def("GetVersion", []() { return py::make_tuple(VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH); });
 	m.def("Log", [](py::object in) { Logging::LogPy(repr(in)); });
 	m.def("LoadPackage", &BL2SDK::LoadPackage, py::arg("filename"), py::arg("flags") = 0, py::arg("force") = false);
 	m.def("KeepAlive", &BL2SDK::KeepAlive);
