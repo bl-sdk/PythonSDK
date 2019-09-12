@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\include\AntiDebug.h" />
+    <ClInclude Include="src\include\Games.h" />
     <ClInclude Include="src\include\UnrealEngine\Core\Core_classes.h" />
     <ClInclude Include="src\include\UnrealEngine\Core\Core_f_structs.h" />
     <ClInclude Include="src\include\UnrealEngine\Core\Core_structs.h" />
