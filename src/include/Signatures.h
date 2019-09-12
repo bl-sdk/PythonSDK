@@ -4,7 +4,7 @@
 
 #include "MemorySignature.h"
 
-namespace BL2SDK
+namespace UnrealSDK
 {
 	namespace Signatures
 	{

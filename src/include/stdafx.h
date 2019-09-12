@@ -23,7 +23,7 @@
 #include <Shlwapi.h>
 #pragma comment (lib, "Shlwapi.lib")
 
-namespace BL2SDK
+namespace UnrealSDK
 {
 	extern void* pGObjects;
 	extern void* pGNames;
@@ -36,13 +36,13 @@ namespace BL2SDK
 
 #include "logging.h"
 
-#include "BL2SDK/Core/Core_structs.h"
-#include "BL2SDK/Core/Core_f_structs.h"
-#include "BL2SDK/Core/Core_classes.h"
+#include "UnrealEngine/Core/Core_structs.h"
+#include "UnrealEngine/Core/Core_f_structs.h"
+#include "UnrealEngine/Core/Core_classes.h"
 
-#include "BL2SDK/Engine/Engine_structs.h"
-#include "BL2SDK/Engine/Engine_f_structs.h"
-#include "BL2SDK/Engine/Engine_classes.h"
+#include "UnrealEngine/Engine/Engine_structs.h"
+#include "UnrealEngine/Engine/Engine_f_structs.h"
+#include "UnrealEngine/Engine/Engine_classes.h"
 
 #include "TypeMap.h"
 

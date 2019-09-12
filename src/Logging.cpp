@@ -2,7 +2,7 @@
 #include <Windows.h>
 #include <stdio.h>
 #include "stdafx.h"
-#include "BL2-SDK.h"
+#include "UnrealSdk.h"
 #include "Logging.h"
 #include "Util.h"
 #include "Exceptions.h"
@@ -48,7 +48,7 @@ namespace Logging
 		if (gLogToFile)
 			LogToFile(outc, Length);
 
-		if (BL2SDK::gameConsole != nullptr)
+		if (UnrealSDK::gameConsole != nullptr)
 		{
 			// It seems that Unreal will automatically put a newline on the end of a 
 			// console output, but if there's already a \n at the end, then it won't
@@ -57,11 +57,11 @@ namespace Logging
 			if (!(Length == 1 && outc[0] == '\n'))
 			{
 				std::wstring wfmt = Util::Widen(outc);
-				const bool doInjectedNext = BL2SDK::gInjectedCallNext;
-				BL2SDK::DoInjectedCallNext();
-				BL2SDK::gameConsole->OutputText(FString((wchar_t*)wfmt.c_str()));
+				const bool doInjectedNext = UnrealSDK::gInjectedCallNext;
+				UnrealSDK::DoInjectedCallNext();
+				UnrealSDK::gameConsole->OutputText(FString((wchar_t*)wfmt.c_str()));
 				if (doInjectedNext)
-					BL2SDK::DoInjectedCallNext();
+					UnrealSDK::DoInjectedCallNext();
 			}
 		}
 	}
@@ -168,7 +168,7 @@ namespace Logging
 
 	void PrintLogHeader()
 	{
-		LogF("======== BL2 PythonSDK Loaded (Version %d) ========\n", BL2SDK::EngineVersion);
+		LogF("======== UnrealEngine PythonSDK Loaded (Version %d) ========\n", UnrealSDK::EngineVersion);
 	}
 
 	void Cleanup()

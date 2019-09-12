@@ -8,7 +8,7 @@
 #include <string>
 #include "Util.h"
 #include "stdafx.h"
-#include "BL2-SDK.h"
+#include "UnrealSDK.h"
 #include "logging.h"
 
 /*
@@ -78,25 +78,25 @@ public:
 public:
 	FName(const std::string& FindName)
 	{
-		if (BL2SDK::EngineVersion <= 8630)
-			((BL2SDK::tFNameInitOld)(BL2SDK::pFNameInit))(this, (wchar_t *)Util::Widen(FindName).c_str(), 0, 1, 1, 0);
+		if (UnrealSDK::EngineVersion <= 8630)
+			((UnrealSDK::tFNameInitOld)(UnrealSDK::pFNameInit))(this, (wchar_t *)Util::Widen(FindName).c_str(), 0, 1, 1, 0);
 		else
-			((BL2SDK::tFNameInitNew)(BL2SDK::pFNameInit))(this, (wchar_t *)Util::Widen(FindName).c_str(), 0, 1, 1);
+			((UnrealSDK::tFNameInitNew)(UnrealSDK::pFNameInit))(this, (wchar_t *)Util::Widen(FindName).c_str(), 0, 1, 1);
 		Logging::LogD("Made FName; Index: %d, Number: %d, Name: %s\n", Index, Number, GetName());
 	}
 
 	FName(const std::string& FindName, int number)
 	{
-		if (BL2SDK::EngineVersion <= 8630)
-			((BL2SDK::tFNameInitOld)(BL2SDK::pFNameInit))(this, (wchar_t *)Util::Widen(FindName).c_str(), number, 1, 1,
+		if (UnrealSDK::EngineVersion <= 8630)
+			((UnrealSDK::tFNameInitOld)(UnrealSDK::pFNameInit))(this, (wchar_t *)Util::Widen(FindName).c_str(), number, 1, 1,
 			                                              0);
 		else
-			((BL2SDK::tFNameInitNew)(BL2SDK::pFNameInit))(this, (wchar_t *)Util::Widen(FindName).c_str(), number, 1, 1);
+			((UnrealSDK::tFNameInitNew)(UnrealSDK::pFNameInit))(this, (wchar_t *)Util::Widen(FindName).c_str(), number, 1, 1);
 	}
 
 	static TArray<FNameEntry*>* Names()
 	{
-		return (TArray<FNameEntry*>*)BL2SDK::pGNames;
+		return (TArray<FNameEntry*>*)UnrealSDK::pGNames;
 	}
 
 	const char* GetName() const

@@ -8,7 +8,7 @@
 #define STATUS_SUCCESS ((NTSTATUS)0x00000000L)
 #define STATUS_PORT_NOT_SET ((NTSTATUS)0xC0000353L)
 
-namespace BL2SDK
+namespace UnrealSDK
 {
 	typedef NTSTATUS (WINAPI* tNtSIT)(HANDLE, THREAD_INFORMATION_CLASS, PVOID, ULONG);
 	tNtSIT pNtSetInformationThread = nullptr;

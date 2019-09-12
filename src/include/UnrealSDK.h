@@ -1,6 +1,6 @@
 #pragma once
-#ifndef BL2SDK_H
-#define BL2SDK_H
+#ifndef UnrealSDK_H
+#define UnrealSDK_H
 
 #include <string>
 #include <functional>
@@ -21,7 +21,7 @@ struct FOutputDevice;
 struct FArchive;
 struct FStruct;
 
-namespace BL2SDK
+namespace UnrealSDK
 {
 	typedef void (__thiscall *tProcessEvent)(UObject*, UFunction*, void*, void*);
 	typedef int (tUnrealEH)(unsigned int, struct _EXCEPTION_POINTERS*);

@@ -18,11 +18,11 @@ UObject* UObject::Load(const char* ClassName, const char* ObjectFullName)
 
 UObject* UObject::Find(UClass* Class, const char* ObjectFullName)
 {
-	const bool doInjectedNext = BL2SDK::gInjectedCallNext;
-	BL2SDK::DoInjectedCallNext();
+	const bool doInjectedNext = UnrealSDK::gInjectedCallNext;
+	UnrealSDK::DoInjectedCallNext();
 	UObject* ret = FindObject(FString(ObjectFullName), Class);
 	if (doInjectedNext)
-		BL2SDK::DoInjectedCallNext();
+		UnrealSDK::DoInjectedCallNext();
 	return ret;
 }
 
@@ -336,7 +336,7 @@ void FHelper::SetProperty(class UArrayProperty* Prop, const py::object& Val)
 	const auto currentArray = reinterpret_cast<TArray<char>*>(GetPropertyAddress(Prop));
 	if (s.size() > currentArray->Count)
 	{
-		char *data = static_cast<char*>(static_cast<tMalloc>(BL2SDK::pGMalloc[0][0][1])(BL2SDK::pGMalloc[0],
+		char *data = static_cast<char*>(static_cast<tMalloc>(UnrealSDK::pGMalloc[0][0][1])(UnrealSDK::pGMalloc[0],
 		                                                                           Prop->GetInner()->ElementSize * s.size(), 8));
 		memset(data, 0, Prop->GetInner()->ElementSize * s.size());
 		currentArray->Data = data;
@@ -387,7 +387,7 @@ void FHelper::SetProperty(class UProperty* Prop, const py::object& val)
 
 TArray<UObject*>* UObject::GObjects()
 {
-	const auto objectArray = static_cast<TArray<UObject*>*>(BL2SDK::pGObjects);
+	const auto objectArray = static_cast<TArray<UObject*>*>(UnrealSDK::pGObjects);
 	return objectArray;
 }
 
@@ -446,8 +446,8 @@ std::string UObject::GetFullName()
 
 UClass* UObject::FindClass(const char* ClassName, const bool Lookup)
 {
-	if (BL2SDK::ClassMap.count(ClassName))
-		return BL2SDK::ClassMap[ClassName];
+	if (UnrealSDK::ClassMap.count(ClassName))
+		return UnrealSDK::ClassMap[ClassName];
 
 	if (!Lookup)
 		return nullptr;
@@ -462,10 +462,10 @@ UClass* UObject::FindClass(const char* ClassName, const bool Lookup)
 		// Might as well lookup all objects since we're going to be iterating over most objects regardless
 		const char* c = object->Class->GetName();
 		if (!strcmp(c, "Class"))
-			BL2SDK::ClassMap[object->GetName()] = static_cast<UClass*>(object);
+			UnrealSDK::ClassMap[object->GetName()] = static_cast<UClass*>(object);
 	}
-	if (BL2SDK::ClassMap.count(ClassName))
-		return BL2SDK::ClassMap[ClassName];
+	if (UnrealSDK::ClassMap.count(ClassName))
+		return UnrealSDK::ClassMap[ClassName];
 	return nullptr;
 }
 
@@ -502,7 +502,7 @@ void UObject::SetProperty(std::string& PropName, const py::object& Val)
 		reinterpret_cast<FHelper*>(this)->SetProperty(static_cast<UObjectProperty*>(prop), Val);
 	else
 		reinterpret_cast<FHelper*>(this)->SetProperty(prop, Val);
-	if (BL2SDK::gCallPostEdit)
+	if (UnrealSDK::gCallPostEdit)
 	{
 		FPropertyChangedEvent changeEvent{};
 		changeEvent.Property = prop;
@@ -604,7 +604,7 @@ py::object FFunction::Call(py::args args, py::kwargs kwargs)
 	for (UProperty* Child = (UProperty*)func->Children; Child; Child = (UProperty*)Child->Next)
 		if (Child->PropertyFlags & 0x400)
 			returnObj = params + Child->Offset_Internal;
-	BL2SDK::pProcessEvent(obj, func, params, returnObj);
+	UnrealSDK::pProcessEvent(obj, func, params, returnObj);
 	func->FunctionFlags = flags;
 	Logging::LogD("Called ProcessEvent\n");
 	py::object ret = GetReturn((FHelper*)params);
@@ -619,7 +619,7 @@ void FFrame::SkipFunction()
 	char params[1000] = "";
 	memset(params, 0, 1000);
 	for (UProperty* Property = (UProperty*)Node->Children; Code[0] != 0x16; Property = (UProperty*)Property->Next)
-		BL2SDK::pFrameStep(this, this->Object,
+		UnrealSDK::pFrameStep(this, this->Object,
 		                   (void*)((Property->PropertyFlags & 0x100) ? nullptr : params + Property->Offset_Internal));
 
 	Code++;

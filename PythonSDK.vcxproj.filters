@@ -15,18 +15,6 @@
     <Filter Include="Header Files\detours">
       <UniqueIdentifier>{4cb6112d-4243-443f-ac29-227e7f2aee8f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\BL2SDK">
-      <UniqueIdentifier>{7bf7198c-b867-4f19-8dd0-9d0c5b3dd967}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\BL2SDK\Core">
-      <UniqueIdentifier>{04c08247-d924-4643-9cc3-81d3f780584f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\BL2SDK\Engine">
-      <UniqueIdentifier>{ac95e023-e0c6-4b75-8573-f4e1cdb4ced8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\BL2SDK">
-      <UniqueIdentifier>{ca10c96a-ad51-49b0-9c52-82799b632232}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\pybind11">
       <UniqueIdentifier>{4743287b-5d52-4c1a-9a74-1fe28a8f731e}</UniqueIdentifier>
     </Filter>
@@ -36,12 +24,21 @@
     <Filter Include="Source Files\detours">
       <UniqueIdentifier>{98795b3c-cdd8-4e5a-b1f7-e589dae14fe2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\UnrealEngine">
+      <UniqueIdentifier>{7bf7198c-b867-4f19-8dd0-9d0c5b3dd967}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UnrealEngine">
+      <UniqueIdentifier>{ca10c96a-ad51-49b0-9c52-82799b632232}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UnrealEngine\Core">
+      <UniqueIdentifier>{c426e8a1-da76-4498-a118-babd525c9e1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UnrealEngine\Engine">
+      <UniqueIdentifier>{14d8a551-59e4-49f9-9701-b7a3b9dad928}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\include\AntiDebug.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\BL2-SDK.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\include\CPythonInterface.h">
@@ -85,24 +82,6 @@
     </ClInclude>
     <ClInclude Include="src\include\Util.h">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\BL2SDK\Core\Core_f_structs.h">
-      <Filter>Header Files\BL2SDK\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\BL2SDK\Core\Core_structs.h">
-      <Filter>Header Files\BL2SDK\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\BL2SDK\Core\Core_classes.h">
-      <Filter>Header Files\BL2SDK\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\BL2SDK\Engine\Engine_f_structs.h">
-      <Filter>Header Files\BL2SDK\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\BL2SDK\Engine\Engine_structs.h">
-      <Filter>Header Files\BL2SDK\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\BL2SDK\Engine\Engine_classes.h">
-      <Filter>Header Files\BL2SDK\Engine</Filter>
     </ClInclude>
     <ClInclude Include="src\include\pybind11\detail\class.h">
       <Filter>Header Files\pybind11\detail</Filter>
@@ -191,6 +170,27 @@
     <ClInclude Include="src\include\stb_image.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\include\UnrealSDK.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\UnrealEngine\Engine\Engine_f_structs.h">
+      <Filter>Header Files\UnrealEngine\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\UnrealEngine\Engine\Engine_structs.h">
+      <Filter>Header Files\UnrealEngine\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\UnrealEngine\Engine\Engine_classes.h">
+      <Filter>Header Files\UnrealEngine\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\UnrealEngine\Core\Core_f_structs.h">
+      <Filter>Header Files\UnrealEngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\UnrealEngine\Core\Core_structs.h">
+      <Filter>Header Files\UnrealEngine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\UnrealEngine\Core\Core_classes.h">
+      <Filter>Header Files\UnrealEngine\Core</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pydefs\_TArray.cpp">
@@ -206,9 +206,6 @@
       <Filter>Source Files\Pydefs</Filter>
     </ClCompile>
     <ClCompile Include="src\AntiDebug.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="src\BL2-SDK.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\CPythonInterface.cpp">
@@ -235,12 +232,6 @@
     <ClCompile Include="src\Util.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\BL2SDK\Core_functions.cpp">
-      <Filter>Source Files\BL2SDK</Filter>
-    </ClCompile>
-    <ClCompile Include="src\BL2SDK\Engine_functions.cpp">
-      <Filter>Source Files\BL2SDK</Filter>
-    </ClCompile>
     <ClCompile Include="src\include\detours\detours.cpp">
       <Filter>Source Files\detours</Filter>
     </ClCompile>
@@ -255,6 +246,15 @@
     </ClCompile>
     <ClCompile Include="src\CoreExtensions.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UnrealSDK.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UnrealEngine\Core_functions.cpp">
+      <Filter>Source Files\UnrealEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UnrealEngine\Engine_functions.cpp">
+      <Filter>Source Files\UnrealEngine</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
