@@ -8,6 +8,7 @@
 #include <string>
 #include "Util.h"
 #include "stdafx.h"
+#include "BL2-SDK.h"
 #include "logging.h"
 
 /*
@@ -219,10 +220,6 @@ struct ULinkerLoad : FArchive
 	FArchiveAsync* Loader;
 };
 
-struct FMalloc
-{
-	void** VfTable;
-};
 
 /*
 struct TStringArray : TArray<void *> {

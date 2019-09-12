@@ -61,6 +61,8 @@ namespace BL2SDK
 
 	extern class UObject* gEngine;
 
+	extern void**** pGMalloc;
+
 	void LogAllCalls(bool Enabled);
 	void DoInjectedCallNext();
 	void Initialize();
