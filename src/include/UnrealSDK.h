@@ -5,12 +5,12 @@
 #include <string>
 #include <functional>
 #include "CPythonInterface.h"
+#include <map>
 
 class UObject;
 class UFunction;
 class UClass;
 class UPackage;
-class UWillowGameEngine;
 class UPlayer;
 class UConsole;
 class CHookManager;
@@ -52,6 +52,8 @@ namespace UnrealSDK
 	extern bool gCallPostEdit;
 
 	extern std::map<std::string, UClass *> ClassMap;
+
+	extern std::map<std::string, std::string> ObjectMap;
 
 	extern CPythonInterface* Python;
 	extern CHookManager* gHookManager;

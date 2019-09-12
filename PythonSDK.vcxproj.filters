@@ -191,6 +191,9 @@
     <ClInclude Include="src\include\UnrealEngine\Core\Core_classes.h">
       <Filter>Header Files\UnrealEngine\Core</Filter>
     </ClInclude>
+    <ClInclude Include="src\include\Games.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pydefs\_TArray.cpp">

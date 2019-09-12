@@ -44,7 +44,10 @@ namespace UnrealSDK
 	int EngineVersion = -1;
 	int ChangelistNumber = -1;
 
-	std::map<std::string, UClass *> ClassMap = std::map<std::string, UClass *>{};
+
+	std::map<std::string, std::string> ObjectMap = {};
+
+	std::map<std::string, UClass *> ClassMap = {};
 
 	void __stdcall hkProcessEvent(UFunction* Function, void* Params, void* Result)
 	{
@@ -143,10 +146,12 @@ namespace UnrealSDK
 		std::string str(actualPath);
 		std::size_t slash = str.find_last_of("/\\") + 1;
 		std::size_t dot = str.find_last_of('.');
-		Logging::LogF("Found EXE name as '%s.exe'\n", str.substr(slash, dot - slash).c_str());
+		std::string exeName = str.substr(slash, dot - slash);
+		Logging::LogF("Found EXE name as '%s.exe'\n", exeName.c_str());
+		ObjectMap = game_object_map[str.substr(slash, dot - slash)];
 		CSigScan sigscan(Util::Widen(str.substr(slash, dot - slash) + ".exe").c_str());
 
-		Signatures::InitSignatures(str.substr(slash, dot - slash));
+		Signatures::InitSignatures(exeName);
 
 		pGObjects = *(void**)sigscan.Scan(Signatures::GObjects);
 		Logging::LogF("[Internal] GObjects = 0x%p\n", pGObjects);
@@ -226,8 +231,7 @@ namespace UnrealSDK
 	bool getCanvasPostRender(UObject* Caller, UFunction* Function, FStruct* Params)
 	{
 		// Set console key to Tilde if not already set
-		gameConsole = static_cast<UConsole *>(UObject::Find("WillowConsole",
-		                                                    "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0")
+		gameConsole = static_cast<UConsole *>(UObject::Find(ObjectMap["ConsoleObjectType"].c_str(), ObjectMap["ConsoleObjectName"].c_str())
 		);
 		if (gameConsole == nullptr && gEngine && static_cast<UEngine *>(gEngine)->GameViewport)
 			gameConsole = static_cast<UEngine *>(gEngine)->GameViewport->ViewportConsole;
@@ -263,7 +267,7 @@ namespace UnrealSDK
 			if (!strcmp(Object->Class->GetName(), "Class"))
 				ClassMap[Object->GetName()] = static_cast<UClass *>(Object);
 
-			if (!strcmp(Object->GetFullName().c_str(), "WillowGameEngine Transient.WillowGameEngine"))
+			if (!strcmp(Object->GetFullName().c_str(), ObjectMap["EngineFullName"].c_str()))
 				gEngine = Object;
 		}
 #ifdef _DEBUG
@@ -275,7 +279,7 @@ namespace UnrealSDK
 		Logging::PrintLogHeader();
 
 		gHookManager->Remove(Function->GetObjectName(), "StartupSDK");
-		gHookManager->Register("WillowGame.WillowGameViewportClient.PostRender", "GetCanvas", getCanvasPostRender);
+		gHookManager->Register(ObjectMap["PostRenderFunction"], "GetCanvas", getCanvasPostRender);
 
 		return true;
 	}
@@ -343,7 +347,7 @@ namespace UnrealSDK
 	UObject* GetEngine()
 	{
 		if (!gEngine)
-			gEngine = UObject::Find("WillowGameEngine", "Transient.WillowGameEngine");
+			gEngine = UObject::Find(ObjectMap["EngineObjectType"].c_str(), ObjectMap["EngineObjectName"].c_str());
 		return gEngine;
 	}
 

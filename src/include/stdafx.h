@@ -46,6 +46,8 @@ namespace UnrealSDK
 
 #include "TypeMap.h"
 
+#include "Games.h"
+
 namespace pybind11
 {
 	template <typename itype>

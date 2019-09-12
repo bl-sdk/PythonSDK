@@ -4801,7 +4801,7 @@ struct FRBCollisionChannelContainer
 	unsigned long                                      EnemyVehicle : 1;                                         // 0x0000(0x0004) (Edit, Const)
 	unsigned long                                      PlayerVehicleEnemyVehicle : 1;                            // 0x0000(0x0004) (Edit, Const)
 	unsigned long                                      TossedItemsPlayerVehicleEnemyVehicle : 1;                 // 0x0000(0x0004) (Edit, Const)
-	unsigned long                                      WillowPickup : 1;                                         // 0x0000(0x0004) (Edit, Const)
+	unsigned long                                      Pickup : 1;                                         // 0x0000(0x0004) (Edit, Const)
 };
 
 // ScriptStruct Engine.BrushComponent.KCachedConvexData_Mirror
