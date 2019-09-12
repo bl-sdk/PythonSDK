@@ -26,8 +26,7 @@ namespace BL2SDK
 	void* pGObjHash;
 	void* pGCRCTable;
 	void* pNameHash;
-	void* pTextureFixLocation;
-	FMalloc** pGMalloc;
+	void**** pGMalloc = nullptr;
 	tProcessEvent pProcessEvent;
 	tCallFunction pCallFunction;
 	tFrameStep pFrameStep;
@@ -170,7 +169,7 @@ namespace BL2SDK
 		pLoadPackage = reinterpret_cast<tLoadPackage>(sigscan.Scan(Signatures::LoadPackage));
 		Logging::LogF("[Internal] UObject::LoadPackage() = 0x%p\n", pLoadPackage);
 
-		pGMalloc = *static_cast<FMalloc***>(sigscan.Scan(Signatures::GMalloc));
+		pGMalloc = *static_cast<void*****>(sigscan.Scan(Signatures::GMalloc));
 		Logging::LogF("[Internal] GMalloc = 0x%p\n", pGMalloc);
 
 		pFNameInit = reinterpret_cast<tFNameInitOld>(sigscan.Scan(Signatures::FNameInit));

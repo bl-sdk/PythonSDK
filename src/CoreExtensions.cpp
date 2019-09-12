@@ -336,7 +336,7 @@ void FHelper::SetProperty(class UArrayProperty* Prop, const py::object& Val)
 	const auto currentArray = reinterpret_cast<TArray<char>*>(GetPropertyAddress(Prop));
 	if (s.size() > currentArray->Count)
 	{
-		char *data = static_cast<char*>(static_cast<tMalloc>(BL2SDK::pGMalloc[0]->VfTable[1])(BL2SDK::pGMalloc[0],
+		char *data = static_cast<char*>(static_cast<tMalloc>(BL2SDK::pGMalloc[0][0][1])(BL2SDK::pGMalloc[0],
 		                                                                           Prop->GetInner()->ElementSize * s.size(), 8));
 		memset(data, 0, Prop->GetInner()->ElementSize * s.size());
 		currentArray->Data = data;

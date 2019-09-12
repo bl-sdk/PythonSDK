@@ -1343,6 +1343,9 @@ struct FArray {
 	py::str Repr();
 };
 
+typedef void* (__thiscall* tMalloc)(void***, unsigned long, unsigned long);
+typedef void(__thiscall* tFree)(void***, void*);
+
 #ifdef _MSC_VER
 #pragma pack ( pop )
 #endif
