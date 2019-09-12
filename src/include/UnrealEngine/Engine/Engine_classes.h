@@ -178,7 +178,7 @@ public:
 	unsigned long                                      bProjectileMoveSingleBlocking : 1;                        // 0x00C0(0x0004)
 	unsigned long                                      bTraceListeners : 1;                                      // 0x00C0(0x0004)
 	unsigned long                                      bIsBlockingMesh : 1;                                      // 0x00C0(0x0004)
-	unsigned long                                      bIsWillowInteractiveObject : 1;                           // 0x00C0(0x0004)
+	unsigned long                                      bIsInteractiveObject : 1;                           // 0x00C0(0x0004)
 	unsigned long                                      bIgnoreRadiusDamageCheck : 1;                             // 0x00C0(0x0004)
 	unsigned long                                      bNoEncroachCheck : 1;                                     // 0x00C0(0x0004) (Edit)
 	unsigned long                                      bCollideAsEncroacher : 1;                                 // 0x00C0(0x0004) (Edit)
@@ -6550,7 +6550,7 @@ public:
 	static int GetPS3SplitScreenPlayerChosenResult();
 	static void PS3UserSelect();
 	void ServerDestroy();
-	bool CanDrop(class AWillowInventory* Inv);
+	bool CanDrop(class AInventory* Inv);
 	unsigned char GetDLCPackageMask();
 	void ClearAllPoolComponents();
 	void OnGameInviteAcceptedP3(struct FOnlineGameSearchResult* InviteResult);
@@ -33035,7 +33035,7 @@ class ADroppedPickup : public AActor
 {
 public:
 	struct FPointer                                    VfTable_IIPickupable;                                     // 0x0188(0x0004) (Const, Native, NoExport)
-	class AWillowInventory*                            Inventory;                                                // 0x018C(0x0004) (Net, RepNotify)
+	class AInventory*                            Inventory;                                                // 0x018C(0x0004) (Net, RepNotify)
 	class ANavigationPoint*                            PickupCache;                                              // 0x0190(0x0004)
 	unsigned long                                      bFadeOut : 1;                                             // 0x0194(0x0004) (Net, RepNotify)
 	unsigned long                                      bUseRBPhysics : 1;                                        // 0x0194(0x0004) (Net, RepNotify)
@@ -33062,8 +33062,8 @@ public:
 	bool IsDiscovered();
 	bool DenyPickupAttempt(class APlayerController* PC);
 	bool Pickupable_IsEnabled();
-	class UWillowInventoryDefinition* GetPickupableInventoryDefinition();
-	class AWillowInventory* GetPickupableInventory();
+	class UInventoryDefinition* GetPickupableInventoryDefinition();
+	class AInventory* GetPickupableInventory();
 	bool IsPickupableInventoryAutomaticallyPickedUp();
 	void RecheckValidTouch();
 	void FailedPickup();
@@ -33074,7 +33074,7 @@ public:
 	void EncroachedBy(class AActor* Other);
 	void SetPickupParticles(class UParticleSystemComponent* PickupParticles);
 	void SetPickupMesh(class UPrimitiveComponent* PickupMesh);
-	void InitializeFromInventory(class AWillowInventory* InInv, class APawn* InInstigator, bool bEnablePickup);
+	void InitializeFromInventory(class AInventory* InInv, class APawn* InInstigator, bool bEnablePickup);
 	void Reset();
 	void ReplicatedEvent(const struct FName& VarName);
 	void Destroyed();
@@ -33133,165 +33133,9 @@ public:
 };
 
 
-// Class Engine.WillowInventory
-// 0x06D0 (0x01C8 - 0x0898)
-class AWillowInventory : public AInventory
-{
-public:
-	struct FPointer                                    VfTable_IIBalancedActor;                                  // 0x01C8(0x0004) (Const, Native, NoExport)
-	struct FPointer                                    VfTable_IIAttributeSlotEffectProvider;                    // 0x01CC(0x0004) (Const, Native, NoExport)
-	int                                                MonetaryValue;                                            // 0x01D0(0x0004) (Edit, Net)
-	float                                              MonetaryValueModifierTotal;                               // 0x01D4(0x0004)
-	int                                                Quantity;                                                 // 0x01D8(0x0004) (Edit, Net)
-	int                                                RarityLevel;                                              // 0x01DC(0x0004) (Net)
-	int                                                ExpLevel;                                                 // 0x01E0(0x0004)
-	int                                                GameStage;                                                // 0x01E4(0x0004) (Transient)
-	int                                                AwesomeLevel;                                             // 0x01E8(0x0004) (Transient)
-	class UObject*                                     AdditionalQueryInterfaceSource;                           // 0x01EC(0x0004)
-	float                                              ClonedForSharing;                                         // 0x01F0(0x0004) (Transient)
-	int                                                LastCanBeUsedByResult;                                    // 0x01F4(0x0004) (Transient)
-	struct FName                                       ZippyFrame;                                               // 0x01F8(0x0008)
-	struct FString                                     ItemFrame;                                                // 0x0200(0x000C) (NeedCtorLink)
-	struct FName                                       ElementalFrame;                                           // 0x020C(0x0008)
-	struct FName                                       SourceDefinitionName;                                     // 0x0214(0x0008) (Transient)
-	struct FName                                       SourceResponsibleName;                                    // 0x021C(0x0008) (Transient)
-	unsigned char                                      ItemLocation;                                             // 0x0224(0x0001) (Transient)
-	unsigned char                                      Mark;                                                     // 0x0225(0x0001) (Net)
-	unsigned char                                      UnknownData00[0x2];                                       // 0x0226(0x0002) MISSED OFFSET
-	unsigned long                                      bShopsHaveInfiniteQuantity : 1;                           // 0x0228(0x0004) (Const)
-	unsigned long                                      bOnlyCompareStatsForMatchingAttributes : 1;               // 0x0228(0x0004) (Const)
-	struct FAttributeSlotData                          AttributeSlots[0x13];                                     // 0x022C(0x0050) (Const)
-	float                                              ReplicatedAttributeSlotModifierValues[0x13];              // 0x081C(0x0004) (Const, Net)
-	class UGBXDefinition*                              RuntimeAttributeSlotSkill;                                // 0x0868(0x0004) (Const)
-	float                                              TempStatModifier;                                         // 0x086C(0x0004) (Transient)
-	float                                              TempStatModifierBaseValue;                                // 0x0870(0x0004) (Const)
-	TArray<class UAttributeModifier*>                  TempStatModifierModifierStack;                            // 0x0874(0x000C) (Const, Transient, NeedCtorLink)
-	TArray<struct FAppliedAttributeEffect>             AppliedAttributeSlotEffects;                              // 0x0880(0x000C) (Native, Transient)
-	TArray<class AActor*>                              ExternalLikenessConsumers;                                // 0x088C(0x000C) (Transient, NeedCtorLink)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("WillowInventory");
-		return ptr;
-	}
-
-
-	bool TryConsume();
-	void Consume();
-	bool IsReadied();
-	unsigned char GetHolsteredGearLikenessType();
-	void RemoveExternalLikenessConsumer(class AActor* LikenessActor);
-	void AddExternalLikenessConsumer(class AActor* LikenessActor);
-	int GetRarityLevel();
-	void SetMark(unsigned char NewMark);
-	unsigned char GetMark();
-	void LogInventoryDebug();
-	void ResetTempStatModifier(float NewBaseValue);
-	float GetAttributeSlotModifierValue(const struct FName& SlotName);
-	int GetAttributeSlotGrade(const struct FName& SlotName);
-	void CloneAttributeSlotData(class AWillowInventory* NewInventory);
-	void InitializeAttributeSlotsForNameParts();
-	void InitializeAttributeSlots(bool bIncludeNameParts);
-	int GetAttributeSlotIndex(const struct FName& SlotName);
-	static bool IsFindMissingAttributeSlotPresentationsDebugEnabled();
-	static void ToggleFindMissingAttributeSlotPresentationsDebugEnabled();
-	struct FString GetElementalFrame();
-	struct FString GetZippyFrame();
-	struct FName GetCategoryKey();
-	class UMeshComponent* ClonePrimaryMeshForUI();
-	class USkeletalMeshComponent* CloneInventorySkelMeshComponent(class AActor* CloneOwner, class USkeletalMeshComponent* SourceMeshComponent, float SourceMeshScale, class USkeletalMeshComponent* DestMeshComponent);
-	void CloneAppearance(class AActor* CloneOwner, class USkeletalMeshComponent* ClonedPrimaryMeshComponent, TArray<class UPrimitiveComponent*>* ClonedComponentsAttachedToPrimaryMesh, class UMaterialInstance** ClonedMeshMaterial);
-	class UMeshComponent* ClonePrimaryMesh();
-	void AttachMeshToPickup(class AActor* Pickup);
-	struct FString GetModelName();
-	class UImpactDefinition* GetDroppedImpactDefinition();
-	int CompareUIStat(int StatIdx, class AWillowInventory* CompareTo);
-	bool CanBeReadiedOnPickup(class APawn* Other);
-	bool HandlePickupQuery(class APawn* Other, const FScriptInterface& Pickup);
-	bool CanBeUsedBy(class APawn* Other);
-	bool IsConsumable();
-	bool IsDLCRequirementMet(class APlayerController* Other);
-	struct FString GetDLCRestrictedMessage(class APlayerController* Other, bool bShort);
-	class APlayerController* GetPawnController(class APawn* Other);
-	void TranslateUseFailure(class APawn* Other, int FailureFlag, struct FString* Output);
-	static struct FString GetUseFailureOPLevelMessage();
-	struct FString GetLastCanBeUsedByResult(class APawn* Other);
-	bool IsLevelRequirementMet(class AController* C, int* RequiredLevel);
-	int GetControllerPlayerExpLevelRequiredToUse(class AController* OtherController);
-	int GetPlayerExpLevelRequiredToUse(class APawn* Other);
-	class AWillowInventory* CreateClone();
-	void GivenTo(class APawn* thisPawn, bool bReady, bool bDoNotActivate);
-	bool IsItemAutoUsedBy(class APawn* Other);
-	int GetInventorySpaceRequirement();
-	void ClientSoldTo(bool bSoldAll);
-	void RemoveFromShop();
-	void SoldTo(class APawn* Buyer, int SellQuantity, bool bReady);
-	bool MissionDenyPickup();
-	class ADroppedPickup* CreatePickup(bool bDroppedPickup, bool bEnablePickup, const struct FVector& StartLocation);
-	class ADroppedPickup* GetPickup(bool bDisableRigidBody, bool bEnablePickup);
-	class ADroppedPickup* DropFromNative(const struct FVector& StartLocation, const struct FVector& StartVelocity, bool bForceNoRBPhysics, bool bTorque, const struct FVector& Torque);
-	class ADroppedPickup* DropFrom(const struct FVector& StartLocation, const struct FVector& StartVelocity, bool bForceNoRBPhysics, bool bTorque, const struct FVector& Torque);
-	struct FRotator GetDroppedPickupRotation();
-	void PickupDisassociated(class ADroppedPickup* Pickup);
-	void PickupAssociated(class ADroppedPickup* Pickup);
-	class ADroppedPickup* SpawnPickup();
-	static class UMeshComponent* InitConstructPreview(class UMeshComponent* PreviewComponent, class UWillowInventoryDefinition* InvDef);
-	void PlayPickupSound(class APawn* Other, bool bEquipped);
-	void AnnouncePickup(class APawn* Other);
-	struct FString GetTemplateString(int Switch, class APlayerReplicationInfo* RelatedPRI_2, class APlayerReplicationInfo* RelatedPRI_3);
-	void ConsumeItem();
-	struct FString GetHumanReadableNameNativeHook();
-	struct FString GetInventoryCardString(bool bIncludeManufacturer, bool bIncludeModelName, bool bIncludePrefixTitle);
-	class UInventoryCardPresentationDefinition* GetPresentationDefinition();
-	struct FString GetShortHumanReadableName();
-	struct FString GetHumanReadableName();
-	bool CanThrow();
-	bool CanInventoryBeSoldOrStoredByOwner();
-	bool CanInventoryBeDroppedByOwner();
-	bool PassesDroppabilityCheck(unsigned char MaxDroppability);
-	static class USkeletalMesh* StaticCreateCompositeMesh(TArray<class USkeletalMesh*>* PartMeshes);
-	void OverrideMonetaryValue(int NewMonetaryValue);
-	int ComputeMonetaryValue();
-	static int GetCappedCurrencyAmount(unsigned char FormOfCurrency, int Amount);
-	int GetMonetaryValueInCurrency(unsigned char FormOfCurrency);
-	int GetMonetaryValue();
-	unsigned char GetCurrencyTypeInventoryIsValuedIn();
-	void ClientInitializeInventoryFromDefinition();
-	void InitializeInventory(class UBaseBalanceDefinition* InBalanceDef, class UManufacturerDefinition* InManufacturer, int InGradeIndex, class UObject* InAdditionalQueryInterfaceSource);
-	int GetUniqueID();
-	static int GenerateUniqueID();
-	struct FName GetBalancedActorTypeIdentifier();
-	void SetExpLevel(int NewExpLevel);
-	void SetAwesomeLevel(int NewAwesomeLevel);
-	void SetGameStage(int NewGameStage);
-	int GetExpLevelForEquip();
-	int GetExpLevel();
-	int GetAwesomeLevel();
-	int GetGameStage();
-	void ApplyExternalSlotEffectModifiers(class AController* ContextSource, int MaxSlotsActivated, class UObject* OverrideContextSource, TArray<struct FAppliedAttributeEffect>* AttributeModifiers);
-	void ApplyInternalSlotEffectModifiers(bool bBackupSlotEffectsApplied, int MaxSlotsActivated, TArray<struct FAppliedAttributeEffect>* AttributeModifiers);
-	int GetManufacturerGradeIndex();
-	class UManufacturerDefinition* GetManufacturer();
-	class UWillowInventoryDefinition* GetInventoryDefinition();
-	static bool IsLevelRequirementsDebugEnabled();
-	static void ToggleLevelRequirementsDebug();
-	int GetAttributeSlotIndexByAttributeDef(class UAttributeDefinition* AttributeDef);
-	struct FName GetEquippedStat();
-	static void ResetSerialNumber(struct FInventorySerialNumber* SerialNumber);
-	static bool IsSKULoaded(const struct FInventorySerialNumber& SerialNumber);
-	static bool IsSerialNumberNone(const struct FInventorySerialNumber& SerialNumber);
-	static bool PeekIsItem(const struct FInventorySerialNumber& SerialNumber);
-	static bool PeekIsWeapon(const struct FInventorySerialNumber& SerialNumber);
-	struct FString GetSerialNumberString();
-	struct FInventorySerialNumber CreateSerialNumber();
-	static class AWillowInventory* CreateInventoryFromSerialNumberString(class UObject* InAdditionalQueryInterfaceSource, struct FString* SerialNumberString);
-	static class AWillowInventory* CreateInventoryFromSerialNumber(class UObject* InAdditionalQueryInterfaceSource, struct FInventorySerialNumber* SerialNumber);
-};
-
-
 // Class Engine.Weapon
 // 0x0114 (0x0898 - 0x09AC)
-class AWeapon : public AWillowInventory
+class AWeapon : public AInventory
 {
 public:
 	unsigned char                                      CurrentFireMode;                                          // 0x0898(0x0001)
@@ -33519,111 +33363,6 @@ public:
 
 };
 
-
-// Class Engine.WillowInventoryDefinition
-// 0x0144 (0x003C - 0x0180)
-class UWillowInventoryDefinition : public UGBXDefinition
-{
-public:
-	class UClass*                                      InventoryClass;                                           // 0x003C(0x0004) (Edit, Const, EditConst)
-	unsigned long                                      bAutomaticallyPickup : 1;                                 // 0x0040(0x0004) (Edit, Const)
-	unsigned long                                      bPickupInBulk : 1;                                        // 0x0040(0x0004) (Edit, Const)
-	unsigned long                                      bDisallowAIFromGrabbingPickup : 1;                        // 0x0040(0x0004) (Edit, Const)
-	unsigned long                                      bDuplicatePickupJustAddsQuantity : 1;                     // 0x0040(0x0004) (Edit, Const)
-	unsigned long                                      bSuppressPickupCard : 1;                                  // 0x0040(0x0004) (Edit, Const)
-	unsigned long                                      bTorque : 1;                                              // 0x0040(0x0004) (Const)
-	unsigned long                                      bNeverDisplayPickupMessage : 1;                           // 0x0040(0x0004) (Edit, Const)
-	unsigned long                                      bShopsHaveInfiniteQuantity : 1;                           // 0x0040(0x0004) (Edit, Const)
-	unsigned long                                      bCanCompare : 1;                                          // 0x0040(0x0004) (Edit, Const)
-	unsigned long                                      bUsesPlayerLevelRequirement : 1;                          // 0x0040(0x0004) (Edit, Const)
-	unsigned long                                      bUIMeshRotationNeedsTransformFixup : 1;                   // 0x0040(0x0004)
-	unsigned long                                      bIsConsumable : 1;                                        // 0x0040(0x0004) (Edit)
-	unsigned long                                      bAllowInventoryDefToModifyPartWeight : 1;                 // 0x0040(0x0004) (Const)
-	unsigned char                                      PlayerDroppability;                                       // 0x0044(0x0001) (Edit, Const)
-	unsigned char                                      FormOfCurrency;                                           // 0x0045(0x0001) (Edit, Const)
-	unsigned char                                      OnUseConstraintsMode;                                     // 0x0046(0x0001) (Edit, Const)
-	unsigned char                                      AttributeSlotEffectMode;                                  // 0x0047(0x0001) (Edit, Const)
-	float                                              PickupLifeSpan;                                           // 0x0048(0x0004) (Edit, Const)
-	float                                              PickupFlagScale;                                          // 0x004C(0x0004) (Edit, Const)
-	class UTexture2D*                                  PickupFlagIcon;                                           // 0x0050(0x0004) (Edit, Const)
-	struct FVector                                     PickupFlagOffset;                                         // 0x0054(0x000C) (Edit, Const)
-	struct FVector                                     Torque;                                                   // 0x0060(0x000C) (Edit, Const)
-	float                                              ThirdPersonMeshScale;                                     // 0x006C(0x0004) (Edit, Const)
-	TArray<struct FConditionalSoundData>               PickupSounds;                                             // 0x0070(0x000C) (Edit, Const, NeedCtorLink)
-	TArray<struct FConditionalSoundData>               PickupAndEquipSounds;                                     // 0x007C(0x000C) (Edit, Const, NeedCtorLink)
-	class UClass*                                      MaterialClass;                                            // 0x0088(0x0004) (Edit, Const)
-	class UPhysicsAsset*                               PhysicsAsset;                                             // 0x008C(0x0004) (Edit, Const)
-	struct FString                                     PickupMessage;                                            // 0x0090(0x000C) (Edit, Const, Localized, NeedCtorLink)
-	struct FString                                     UseFailureLevelMessage;                                   // 0x009C(0x000C) (Edit, Const, Localized, NeedCtorLink)
-	struct FString                                     UseFailureConstraintsMessage;                             // 0x00A8(0x000C) (Edit, Const, Localized, NeedCtorLink)
-	struct FString                                     NoManufacturerName;                                       // 0x00B4(0x000C) (Edit, Const, Localized, NeedCtorLink)
-	struct FAttributeInitializationData                BaseRarity;                                               // 0x00C0(0x0010) (Edit, Const)
-	struct FAttributeInitializationData                MonetaryValue;                                            // 0x00D0(0x0010) (Edit, Const)
-	float                                              BaseMonetaryValueModifier;                                // 0x00E0(0x0004) (Edit, Const)
-	struct FAttributeInitializationData                PlayerUseLevelBonus;                                      // 0x00E4(0x0010) (Edit, Const)
-	TArray<struct FAttributeExpressionData>            OnUseConstraints;                                         // 0x00F4(0x000C) (Edit, Const, NeedCtorLink)
-	TArray<struct FUIStatData>                         UIStatList;                                               // 0x0100(0x000C) (Edit, Const, NeedCtorLink)
-	struct FRotator                                    UIMeshRotation;                                           // 0x010C(0x000C) (Edit)
-	class UInventoryCardPresentationDefinition*        Presentation;                                             // 0x0118(0x0004) (Edit)
-	class UGearboxCalloutDefinition*                   CalloutDefinition;                                        // 0x011C(0x0004) (Edit, Const)
-	struct FName                                       PickedUpStatID;                                           // 0x0120(0x0008) (Edit, Const)
-	struct FName                                       PurchasedStatID;                                          // 0x0128(0x0008) (Edit, Const)
-	float                                              FocusRadius;                                              // 0x0130(0x0004) (Edit, Const)
-	struct FVector                                     FocusOffset;                                              // 0x0134(0x000C) (Edit, Const)
-	struct FAttributeInitializationData                AttributeSlotEffectSkillDuration;                         // 0x0140(0x0010) (Edit, Const)
-	struct FAttributeInitializationData                AttributeSlotBaseGrade;                                   // 0x0150(0x0010) (Edit, Const)
-	int                                                AttributeSlotMaxActivated;                                // 0x0160(0x0004) (Edit, Const)
-	TArray<struct FAttributeSlotEffectData>            AttributeSlotEffects;                                     // 0x0164(0x000C) (Edit, Const, NeedCtorLink)
-	TArray<struct FAttributeSlotUpgradeData>           AttributeSlotUpgrades;                                    // 0x0170(0x000C) (Edit, Const, NeedCtorLink)
-	struct FColor                                      LootBeamColorOverride;                                    // 0x017C(0x0004) (Edit, Const)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("WillowInventoryDefinition");
-		return ptr;
-	}
-
-
-	bool CanPickupInBulk();
-	bool ShouldPlayerAutomaticallyPickup(class APlayerController* PC);
-	int GetAttributeSlotMaxActivated();
-	struct FString GetLocalizedInventoryName();
-	int GetInventorySpaceRequirement();
-	int GetBaseRarityLevel();
-};
-
-
-// Class Engine.WillowInventoryPartDefinition
-// 0x005C (0x003C - 0x0098)
-class UWillowInventoryPartDefinition : public UGBXDefinition
-{
-public:
-	class UMaterialInstanceConstant*                   Material;                                                 // 0x003C(0x0004) (Edit, Const)
-	unsigned long                                      bIsGestaltMode : 1;                                       // 0x0040(0x0004) (Edit, Const, EditConst)
-	struct FName                                       GestaltModeSkeletalMeshName;                              // 0x0044(0x0008) (Edit, Const, EditConst)
-	class USkeletalMesh*                               NongestaltSkeletalMesh;                                   // 0x004C(0x0004) (Edit, Const, EditConst)
-	struct FName                                       AdditionalGestaltModeSkeletalMeshNames[0x2];              // 0x0050(0x0008) (Edit, Const, EditConst)
-	TArray<struct FAttributeSlotEffectData>            AttributeSlotEffects;                                     // 0x0060(0x000C) (Edit, Const, NeedCtorLink)
-	TArray<struct FAttributeSlotUpgradeData>           AttributeSlotUpgrades;                                    // 0x006C(0x000C) (Edit, Const, NeedCtorLink)
-	class UAttributeDefinition*                        MonetaryValueMod;                                         // 0x0078(0x0004) (Edit, Const)
-	struct FAttributeInitializationData                Rarity;                                                   // 0x007C(0x0010) (Edit, Const)
-	TArray<struct FVectorParameterValue>               MaterialVectorParameterValues;                            // 0x008C(0x000C) (Edit, Const, NeedCtorLink)
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("WillowInventoryPartDefinition");
-		return ptr;
-	}
-
-
-	void ApplyMaterialModifiers(class UMaterialInstance* MatInst);
-	class USkeletalMesh* GetSkeletalMesh();
-	void AddAdditionalGestaltMeshNames(TArray<struct FName>* PartMeshNames);
-	struct FName GetSkeletalMeshName();
-	int GetRarityLevel();
-};
-
-
 // Class Engine.IPickupable
 // 0x0000 (0x003C - 0x003C)
 class UIPickupable : public UInterface
@@ -33643,8 +33382,8 @@ public:
 	void FailedPickup();
 	bool DenyPickupAttempt(class APlayerController* PC);
 	bool Pickupable_IsEnabled();
-	class UWillowInventoryDefinition* GetPickupableInventoryDefinition();
-	class AWillowInventory* GetPickupableInventory();
+	class UInventoryDefinition* GetPickupableInventoryDefinition();
+	class AInventory* GetPickupableInventory();
 	class APickupableMeshActor* GetPickupableMeshActor();
 	void GiveTo(class APawn* P, bool bReady);
 };

@@ -10,7 +10,6 @@ class UObject;
 class UFunction;
 class UClass;
 class UPackage;
-class UWillowGameEngine;
 class UPlayer;
 class UConsole;
 class CHookManager;
