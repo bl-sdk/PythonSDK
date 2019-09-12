@@ -3,7 +3,7 @@
 #include "Logging.h"
 #include "Settings.h"
 #include "Util.h"
-#include "BL2-SDK.h"
+#include "UnrealSDK.h"
 #include <string>
 #include <cstdlib>
 
@@ -51,7 +51,7 @@ void RegisterHook(const std::string& funcName, const std::string& hookName, py::
 {
 	static const char* params[] = {"caller", "function", "params"};
 	if (VerifyPythonFunction(funcHook, params))
-		BL2SDK::RegisterHook(funcName, hookName, [funcHook](UObject* caller, UFunction* function, FStruct* params)
+		UnrealSDK::RegisterHook(funcName, hookName, [funcHook](UObject* caller, UFunction* function, FStruct* params)
 			{
 				try
 				{
@@ -72,7 +72,7 @@ void RegisterHook(const std::string& funcName, const std::string& hookName, py::
 
 namespace py = pybind11;
 
-PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
+PYBIND11_EMBEDDED_MODULE(unrealsdk, m)
 {
 	Export_pystes_gamedefines(m);
 	Export_pystes_Core_structs(m);
@@ -81,8 +81,8 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 
 	m.def("GetVersion", []() { return py::make_tuple(VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH); });
 	m.def("Log", [](py::object in) { Logging::LogPy(repr(in)); });
-	m.def("LoadPackage", &BL2SDK::LoadPackage, py::arg("filename"), py::arg("flags") = 0, py::arg("force") = false);
-	m.def("KeepAlive", &BL2SDK::KeepAlive);
+	m.def("LoadPackage", &UnrealSDK::LoadPackage, py::arg("filename"), py::arg("flags") = 0, py::arg("force") = false);
+	m.def("KeepAlive", &UnrealSDK::KeepAlive);
 	m.def("GetPackageObject", &UObject::GetPackageObject, py::return_value_policy::reference);
 	m.def("FindAll", &UObject::FindAll, py::return_value_policy::reference);
 	m.def("FindClass", &UObject::FindClass, py::arg("ClassName"), py::arg("Lookup") = false,
@@ -95,10 +95,10 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	      py::return_value_policy::reference);
 	m.def("LoadObject", [](UClass* Class, char* ObjectFullName) { return UObject::Load(Class, ObjectFullName); },
 	      py::return_value_policy::reference);
-	//m.def("LoadTexture", &BL2SDK::LoadTexture, py::return_value_policy::reference);
+	//m.def("LoadTexture", &UnrealSDK::LoadTexture, py::return_value_policy::reference);
 	m.def("SetLoggingLevel", &Logging::SetLoggingLevel);
-	m.def("ConstructObject", &BL2SDK::ConstructObject, "Construct Objects", py::arg("Class"),
-	      py::arg("Outer") = BL2SDK::GetEngine()->Outer, py::arg("Name") = FName(), py::arg("SetFlags") = 0x1,
+	m.def("ConstructObject", &UnrealSDK::ConstructObject, "Construct Objects", py::arg("Class"),
+	      py::arg("Outer") = UnrealSDK::GetEngine()->Outer, py::arg("Name") = FName(), py::arg("SetFlags") = 0x1,
 	      py::arg("InternalSetFlags") = 0x00, py::arg("Template") = (UObject*)nullptr,
 	      py::arg("Error") = (FOutputDevice *)nullptr, py::arg("InstanceGraph") = (void*)nullptr,
 	      py::arg("bAssumeTemplateIsArchetype") = (int)0, py::return_value_policy::reference);
@@ -106,28 +106,28 @@ PYBIND11_EMBEDDED_MODULE(bl2sdk, m)
 	                            unsigned int InternalSetFlags, UObject* Template, FOutputDevice* Error,
 	                            void* InstanceGraph, int bAssumeTemplateIsArchetype)
 	      {
-		      return BL2SDK::ConstructObject(UObject::FindClass(ClassName), Outer, Name, SetFlags, InternalSetFlags,
+		      return UnrealSDK::ConstructObject(UObject::FindClass(ClassName), Outer, Name, SetFlags, InternalSetFlags,
 		                                     Template,
 		                                     Error, InstanceGraph, bAssumeTemplateIsArchetype);
-	      }, "Construct Objects", py::arg("Class"), py::arg("Outer") = BL2SDK::GetEngine()->Outer,
+	      }, "Construct Objects", py::arg("Class"), py::arg("Outer") = UnrealSDK::GetEngine()->Outer,
 	      py::arg("Name") = FName(),
 	      py::arg("SetFlags") = 0x1, py::arg("InternalSetFlags") = 0x00, py::arg("Template") = (UObject*)nullptr,
 	      py::arg("Error") = (FOutputDevice *)nullptr, py::arg("InstanceGraph") = (void*)nullptr,
 	      py::arg("bAssumeTemplateIsArchetype") = (int)0, py::return_value_policy::reference);
 	m.def("RegisterHook", &RegisterHook);
-	m.def("GetEngine", &BL2SDK::GetEngine, py::return_value_policy::reference);
+	m.def("GetEngine", &UnrealSDK::GetEngine, py::return_value_policy::reference);
 	m.def("RemoveHook", [](const std::string& funcName, const std::string& hookName)
 	{
-		BL2SDK::RemoveHook(funcName, hookName);
+		UnrealSDK::RemoveHook(funcName, hookName);
 	});
 	m.def("RunHook", [](const std::string& funcName, const std::string& hookName, py::object funcHook)
 	{
-		BL2SDK::RemoveHook(funcName, hookName);
+		UnrealSDK::RemoveHook(funcName, hookName);
 		RegisterHook(funcName, hookName, funcHook);
 	});
-	m.def("DoInjectedCallNext", &BL2SDK::DoInjectedCallNext);
-	m.def("LogAllCalls", &BL2SDK::LogAllCalls);
-	m.def("CallPostEdit", [](bool NewValue) { BL2SDK::gCallPostEdit = NewValue; });
+	m.def("DoInjectedCallNext", &UnrealSDK::DoInjectedCallNext);
+	m.def("LogAllCalls", &UnrealSDK::LogAllCalls);
+	m.def("CallPostEdit", [](bool NewValue) { UnrealSDK::gCallPostEdit = NewValue; });
 }
 
 void AddToConsoleLog(UConsole* console, FString input)
@@ -154,13 +154,13 @@ bool CheckPythonCommand(UObject* caller, UFunction* function, FStruct* params)
 	{
 		AddToConsoleLog((UConsole *)caller, *command);
 		Logging::LogF("\n>>> %s <<<\n", input);
-		BL2SDK::Python->DoString(input + 3);
+		UnrealSDK::Python->DoString(input + 3);
 	}
 	else if (strncmp("pyexec ", input, 7) == 0)
 	{
 		AddToConsoleLog((UConsole *)caller, *command);
 		Logging::LogF("\n>>> %s <<<\n", input);
-		BL2SDK::Python->DoFile(input + 7);
+		UnrealSDK::Python->DoFile(input + 7);
 	}
 	else
 		((UConsole *)caller)->ConsoleCommand(*command);
@@ -172,7 +172,7 @@ CPythonInterface::CPythonInterface()
 	m_modulesInitialized = false;
 	InitializeState();
 
-	BL2SDK::RegisterHook("Engine.Console.ShippingConsoleCommand", "CheckPythonCommand", &CheckPythonCommand);
+	UnrealSDK::RegisterHook("Engine.Console.ShippingConsoleCommand", "CheckPythonCommand", &CheckPythonCommand);
 }
 
 CPythonInterface::~CPythonInterface()
@@ -190,7 +190,7 @@ void CPythonInterface::InitializeState()
 	try
 	{
 		py::initialize_interpreter();
-		py::module::import("bl2sdk");
+		py::module::import("unrealsdk");
 		m_mainNamespace = py::module::import("__main__");
 	}
 	catch (std::exception e)

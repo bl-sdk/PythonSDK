@@ -2,7 +2,7 @@
 #ifndef ANTI_DEBUG_H
 #define ANTI_DEBUG_H
 
-namespace BL2SDK
+namespace UnrealSDK
 {
 	void HookAntiDebug();
 }

@@ -1012,7 +1012,7 @@ class UStructProperty : public UProperty
 public:
 	UScriptStruct* Struct_DONOTUSE;
 	UScriptStruct *GetStruct() {
-		if (BL2SDK::EngineVersion <= 8630)
+		if (UnrealSDK::EngineVersion <= 8630)
 			return ((UScriptStruct **)(((char *)this) + 0x74))[0];
 		else
 			return ((UScriptStruct **)(((char *)this) + 0x80))[0];
@@ -1028,7 +1028,7 @@ class UObjectProperty : public UProperty
 public:
 	UObject* Object_DONOTUSE;
 	UObject *GetObject() {
-		if (BL2SDK::EngineVersion <= 8630)
+		if (UnrealSDK::EngineVersion <= 8630)
 			return ((UObject **)(((char *)this) + 0x74))[0];
 		else
 			return ((UObject **)(((char *)this) + 0x80))[0];
@@ -1071,7 +1071,7 @@ class UInterfaceProperty : public UProperty
 public:
 	UClass *InterfaceClass_DONOTUSE;
 	UClass *GetInterfaceClass() {
-		if (BL2SDK::EngineVersion <= 8630)
+		if (UnrealSDK::EngineVersion <= 8630)
 			return ((UClass **)(((char *)this) + 0x74))[0];
 		else
 			return ((UClass **)(((char *)this) + 0x80))[0];
@@ -1115,7 +1115,7 @@ class UBoolProperty : public UProperty
 public:
 	unsigned int Mask_DONOTUSE;
 	unsigned int GetMask() {
-		if (BL2SDK::EngineVersion <= 8630)
+		if (UnrealSDK::EngineVersion <= 8630)
 			return ((unsigned int *)(((char *)this) + 0x74))[0];
 		else
 			return ((unsigned int *)(((char *)this) + 0x80))[0];
@@ -1128,7 +1128,7 @@ class UArrayProperty : public UProperty
 public:
 	UProperty *Inner_DONOTUSE;
 	UProperty *GetInner() {
-		if (BL2SDK::EngineVersion <= 8630)
+		if (UnrealSDK::EngineVersion <= 8630)
 			return ((UProperty **)(((char *)this) + 0x74))[0];
 		else
 			return ((UProperty **)(((char *)this) + 0x80))[0];
@@ -1273,7 +1273,7 @@ public:
 
 	UObject* CreateDefaultObject()
 	{
-		return BL2SDK::pGetDefaultObject(this, 0);
+		return UnrealSDK::pGetDefaultObject(this, 0);
 	}
 
 	static UClass* StaticClass()

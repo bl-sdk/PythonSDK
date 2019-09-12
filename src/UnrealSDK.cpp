@@ -6,7 +6,7 @@
 #include "CHookManager.h"
 #include "AntiDebug.h"
 #include "Util.h"
-#include "BL2-SDK.h"
+#include "UnrealSdk.h"
 #include <utility>
 #include "Logging.h"
 #include "Settings.h"
@@ -15,7 +15,7 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
-namespace BL2SDK
+namespace UnrealSDK
 {
 	UConsole* gameConsole = nullptr;
 
@@ -214,7 +214,7 @@ namespace BL2SDK
 		if (status == PYTHON_MODULE_ERROR && !Settings::DeveloperModeEnabled())
 		{
 			Util::Popup(L"Python Module Error",
-			            L"A core Python module failed to load correctly, and the SDK cannot continue to run.\n\nThis may indicate that BL2 has been patched and the SDK needs updating.");
+			            L"A core Python module failed to load correctly, and the SDK cannot continue to run.\n\nThis may indicate that the game has been patched and the SDK needs updating.");
 		}
 		else if (status == PYTHON_MODULE_ERROR && Settings::DeveloperModeEnabled())
 		{

@@ -2,7 +2,7 @@
 #ifndef MEMORYDEBUG_H
 #define MEMORYDEBUG_H
 
-namespace BL2SDK
+namespace UnrealSDK
 {
 	void HookMemoryAllocator();
 }

@@ -94,7 +94,7 @@ bool CHookManager::ProcessHooks(UObject* Caller, FFrame& Stack, void* const Resu
 				ReturnParm = Property;
 				continue;
 			}
-			BL2SDK::pFrameStep(&Stack, Stack.Object, Frame + Property->Offset_Internal);
+			UnrealSDK::pFrameStep(&Stack, Stack.Object, Frame + Property->Offset_Internal);
 		}
 		const bool ret = ProcessHooks(Function->GetObjectName(), Caller, Function, &FStruct{Function, (void *)Frame});
 		//if (!ret) {
