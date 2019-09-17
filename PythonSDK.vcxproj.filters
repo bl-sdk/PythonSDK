@@ -167,9 +167,6 @@
     <ClInclude Include="src\include\CHookManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\include\stb_image.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\include\UnrealSDK.h">
       <Filter>Header Files</Filter>
     </ClInclude>

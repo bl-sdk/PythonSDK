@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -90,7 +90,6 @@
     <ClInclude Include="src\include\pydef.h" />
     <ClInclude Include="src\include\Settings.h" />
     <ClInclude Include="src\include\Signatures.h" />
-    <ClInclude Include="src\include\stb_image.h" />
     <ClInclude Include="src\include\stdafx.h" />
     <ClInclude Include="src\include\TypeMap.h" />
     <ClInclude Include="src\include\Util.h" />
@@ -100,7 +99,7 @@
     <ProjectGuid>{32794345-2BB2-45E0-A461-914D13B0279F}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>bl2sdk</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
     <ProjectName>Unreal Engine PythonSDK</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,7 +126,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v140</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -167,14 +166,20 @@
     </LinkIncremental>
     <TargetName>ddraw</TargetName>
     <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
-    <IncludePath>$(PYTHONPATH)\include;$(IncludePath);$(VC_SourcePath)\src\include;</IncludePath>
-    <LibraryPath>$(PYTHONPATH)\libs;$(LibraryPath)</LibraryPath>
-    <OutDir>C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\Binaries\Win32\</OutDir>
-    <IntDir>build\$(Configuration)\</IntDir>
+    <IncludePath>$(PYTHONPATH_x86)\include;$(IncludePath);$(VC_SourcePath)\src\include;</IncludePath>
+    <LibraryPath>$(PYTHONPATH_x86)\libs;$(LibraryPath)</LibraryPath>
+    <OutDir>C:\Program Files\Epic Games\Borderlands3\OakGame\Binaries\Win64\</OutDir>
+    <IntDir>build\$(Platform)\$(Configuration)\</IntDir>
     <SourcePath>$(VC_SourcePath)\src;</SourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <OutDir>C:\Program Files\Epic Games\Borderlands3\OakGame\Binaries\Win64\</OutDir>
+    <IntDir>build\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>ddraw</TargetName>
+    <SourcePath>$(VC_SourcePath)\src;</SourcePath>
+    <IncludePath>$(PYTHONPATH_x64)\include;$(IncludePath);$(VC_SourcePath)\src\include;</IncludePath>
+    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64;$(PYTHONPATH_x64)\libs</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -280,14 +285,21 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
-      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;BL2SDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat />
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <DisableSpecificWarnings>4100;4121;%(DisableSpecificWarnings)</DisableSpecificWarnings>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

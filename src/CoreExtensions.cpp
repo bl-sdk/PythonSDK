@@ -696,9 +696,9 @@ void FArray::SetItem(unsigned int I, py::object Obj) const
 	((FHelper*)(arr->Data + type->ElementSize * I))->SetProperty(type, std::move(Obj));
 }
 
-int FArray::GetAddress() const
+long FArray::GetAddress() const
 {
-	return (int)arr->Data;
+	return (long)arr->Data;
 }
 
 FArray* FArray::Iter()

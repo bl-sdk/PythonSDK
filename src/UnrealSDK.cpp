@@ -12,8 +12,6 @@
 #include "Settings.h"
 #include "Exports.h"
 #include "gamedefines.h"
-#define STB_IMAGE_IMPLEMENTATION
-#include "stb_image.h"
 
 namespace UnrealSDK
 {
@@ -47,13 +45,10 @@ namespace UnrealSDK
 
 	std::map<std::string, std::string> ObjectMap = {};
 
-	std::map<std::string, UClass *> ClassMap = {};
+	std::map<std::string, UClass*> ClassMap = {};
 
-	void __stdcall hkProcessEvent(UFunction* Function, void* Params, void* Result)
+	void __fastcall hkProcessEvent(UObject* caller, void* edx, UFunction* Function, void* Params, void* Result)
 	{
-		// Get "this"
-		UObject* caller;
-		_asm mov caller, ecx;
 
 		std::string functionName = Function->GetObjectName();
 		if (gInjectedCallNext)
@@ -68,11 +63,11 @@ namespace UnrealSDK
 			std::string callerName = caller->GetFullName();
 
 			Logging::LogF("===== ProcessEvent called =====\npCaller Name = %s\npFunction Name = %s\n",
-			              callerName.c_str(), functionName.c_str());
+				callerName.c_str(), functionName.c_str());
 		}
 
 		if (gHookManager->HasHook(caller, Function) && !gHookManager->ProcessHooks(
-			functionName, caller, Function, &FStruct{Function, Params}))
+			functionName, caller, Function, &FStruct{ Function, Params }))
 		{
 			// The engine hook manager told us not to pass this function to the engine
 			return;
@@ -84,7 +79,7 @@ namespace UnrealSDK
 	void LogOutParams(FFrame* Stack)
 	{
 		Logging::LogF("Logging stack, %s, %s\n", Stack->Object->GetFullName().c_str(),
-		              Stack->Node->GetFullName().c_str());
+			Stack->Node->GetFullName().c_str());
 		Logging::LogF("0x%p\n", Stack->Node);
 		Logging::LogF("0x%p\n", Stack->Object);
 		Logging::LogF("0x%p\n", Stack->Code);
@@ -97,12 +92,8 @@ namespace UnrealSDK
 		}
 	}
 
-	void __stdcall hkCallFunction(FFrame& Stack, void* const Result, UFunction* Function)
+	void __fastcall hkCallFunction(UObject* caller, void* edx, FFrame& Stack, void* const Result, UFunction* Function)
 	{
-		// Get "this"
-		UObject* caller;
-		_asm mov caller, ecx;
-
 		if (logAllCalls)
 		{
 			std::string callerName = caller->GetFullName();
@@ -112,7 +103,7 @@ namespace UnrealSDK
 			if (functionName != "Function Engine.Console.OutputText" && functionName !=
 				"Function Engine.Console.OutputTextLine")
 				Logging::LogF("===== CallFunction called =====\npCaller Name = %s\npFunction Name = %s\n",
-				              callerName.c_str(), functionName.c_str());
+					callerName.c_str(), functionName.c_str());
 		}
 
 		unsigned char* code = Stack.Code;
@@ -140,6 +131,7 @@ namespace UnrealSDK
 	{
 		TCHAR szExePath[2048];
 		char actualPath[2048];
+		memset(actualPath, 0, 2048);
 		GetModuleFileName(nullptr, szExePath, 2048);
 		for (int j = 0; szExePath[j] != 0; j++)
 			actualPath[j] = (char)szExePath[j];
@@ -148,16 +140,24 @@ namespace UnrealSDK
 		std::size_t dot = str.find_last_of('.');
 		std::string exeName = str.substr(slash, dot - slash);
 		Logging::LogF("Found EXE name as '%s.exe'\n", exeName.c_str());
-		ObjectMap = game_object_map[str.substr(slash, dot - slash)];
-		CSigScan sigscan(Util::Widen(str.substr(slash, dot - slash) + ".exe").c_str());
-
+		ObjectMap = game_object_map[exeName];
+		Logging::LogF("Loaded object map\n");
+		CSigScan sigscan(Util::Widen(exeName + ".exe").c_str());
+		Logging::LogF("Loading sigs\n");
 		Signatures::InitSignatures(exeName);
+		Logging::LogF("Sigs loaded\n");
 
-		pGObjects = *(void**)sigscan.Scan(Signatures::GObjects);
-		Logging::LogF("[Internal] GObjects = 0x%p\n", pGObjects);
+		void*** tempGObjects = (void***)sigscan.Scan(Signatures::GObjects);
+		if (tempGObjects != nullptr) {
+			pGObjects = *tempGObjects;
+			Logging::LogF("[Internal] GObjects = 0x%p\n", pGObjects);
+		}
 
-		pGNames = *(void**)sigscan.Scan(Signatures::GNames);
-		Logging::LogF("[Internal] GNames = 0x%p\n", pGNames);
+		void*** tempGNames = (void***)sigscan.Scan(Signatures::GNames);
+		if (tempGNames != nullptr) {
+			pGNames = *tempGNames;
+			Logging::LogF("[Internal] GNames = 0x%p\n", pGNames);
+		}
 
 		pProcessEvent = reinterpret_cast<tProcessEvent>(sigscan.Scan(Signatures::ProcessEvent));
 		Logging::LogF("[Internal] UObject::ProcessEvent() = 0x%p\n", pProcessEvent);
@@ -193,7 +193,7 @@ namespace UnrealSDK
 			}
 			else
 			{
-				static_cast<unsigned char *>(SetCommand)[5] = 0xFF;
+				static_cast<unsigned char*>(SetCommand)[5] = 0xFF;
 			}
 		}
 		catch (std::exception e)
@@ -201,15 +201,19 @@ namespace UnrealSDK
 			Logging::LogF("Exception when enabling 'SET' commands: %d\n", e.what());
 		}
 
-		// Detour UObject::ProcessEvent()
-		//SETUP_SIMPLE_DETOUR(detProcessEvent, pProcessEvent, hkProcessEvent);
-		CSimpleDetour detProcessEvent(&(PVOID&)pProcessEvent, hkProcessEvent);
-		detProcessEvent.Attach();
+		if (pProcessEvent != nullptr) {
+			// Detour UObject::ProcessEvent()
+			//SETUP_SIMPLE_DETOUR(detProcessEvent, pProcessEvent, hkProcessEvent);
+			CSimpleDetour detProcessEvent(&(PVOID&)pProcessEvent, hkProcessEvent);
+			detProcessEvent.Attach();
+		}
 
-		// Detour UObject::CallFunction()
-		//SETUP_SIMPLE_DETOUR(detCallFunction, pCallFunction, hkCallFunction);
-		CSimpleDetour detCallFunction(&(PVOID&)pCallFunction, hkCallFunction);
-		detCallFunction.Attach();
+		if (pCallFunction != nullptr) {
+			// Detour UObject::CallFunction()
+			//SETUP_SIMPLE_DETOUR(detCallFunction, pCallFunction, hkCallFunction);
+			CSimpleDetour detCallFunction(&(PVOID&)pCallFunction, hkCallFunction);
+			detCallFunction.Attach();
+		}
 	}
 
 	void InitializePython()
@@ -287,14 +291,15 @@ namespace UnrealSDK
 	void Initialize()
 	{
 		HookAntiDebug();
-		//Logging::SetLoggingLevel("DEBUG");
+		Logging::SetLoggingLevel("DEBUG");
 		gHookManager = new CHookManager("EngineHooks");
 		hookGame();
 
 		LogAllCalls(false);
 
+		UObject::GObjects()->Data[566]->ProcessEvent((UFunction *)0, 0);
+
 		gHookManager->Register("Engine.Console.Initialized", "StartupSDK", GameReady);
-		//GameHooks::UnrealScriptHookManager->Register("Engine.Interaction.NotifyGameSessionEnded", "ExitGame", &cleanup);
 	}
 
 	// This is called when the process is closing
@@ -317,7 +322,7 @@ namespace UnrealSDK
 			{
 				UObject* Object = UObject::GObjects()->Data[i];
 				if (Object->GetPackageObject() == result)
-					Object->ObjectFlags.A = Object->ObjectFlags.A | 0x4000;
+					Object->ObjectFlags |= 0x4000;
 			}
 		}
 	};
@@ -325,7 +330,7 @@ namespace UnrealSDK
 	void KeepAlive(UObject* Obj)
 	{
 		for (UObject* outer = Obj; outer; outer = outer->Outer)
-			outer->ObjectFlags.A |= 0x4000;
+			outer->ObjectFlags |= 0x4000;
 	}
 
 	UObject* ConstructObject(UClass* Class, UObject* Outer, const FName Name, const unsigned int SetFlags,
