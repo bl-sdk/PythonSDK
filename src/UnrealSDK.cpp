@@ -49,6 +49,12 @@ namespace UnrealSDK
 
 	void __fastcall hkProcessEvent(UObject* caller, void* edx, UFunction* Function, void* Params, void* Result)
 	{
+		Logging::LogF("ProcessEvent Called\n");
+		Logging::LogF("Caller: 0x%x\n", caller);
+		Logging::LogF("edx: 0x%x\n", edx);
+		Logging::LogF("Function: 0x%x\n", Function);
+		Logging::LogF("Params: 0x%x\n", Params);
+		Logging::LogF("Result: 0x%x\n", Result);
 
 		std::string functionName = Function->GetObjectName();
 		if (gInjectedCallNext)
@@ -149,13 +155,22 @@ namespace UnrealSDK
 
 		void*** tempGObjects = (void***)sigscan.Scan(Signatures::GObjects);
 		if (tempGObjects != nullptr) {
+#ifdef ENVIRONMENT64
+			pGObjects = tempGObjects;
+#else
 			pGObjects = *tempGObjects;
+#endif
 			Logging::LogF("[Internal] GObjects = 0x%p\n", pGObjects);
 		}
 
 		void*** tempGNames = (void***)sigscan.Scan(Signatures::GNames);
 		if (tempGNames != nullptr) {
+
+#ifdef ENVIRONMENT64
+			pGNames = tempGNames;
+#else
 			pGNames = *tempGNames;
+#endif
 			Logging::LogF("[Internal] GNames = 0x%p\n", pGNames);
 		}
 
@@ -174,8 +189,13 @@ namespace UnrealSDK
 		pLoadPackage = reinterpret_cast<tLoadPackage>(sigscan.Scan(Signatures::LoadPackage));
 		Logging::LogF("[Internal] UObject::LoadPackage() = 0x%p\n", pLoadPackage);
 
-		pGMalloc = *static_cast<void*****>(sigscan.Scan(Signatures::GMalloc));
-		Logging::LogF("[Internal] GMalloc = 0x%p\n", pGMalloc);
+		void* gm = sigscan.Scan(Signatures::GMalloc);
+		if (gm != nullptr) {
+			pGMalloc = *static_cast<void*****>(sigscan.Scan(Signatures::GMalloc));
+			Logging::LogF("[Internal] GMalloc = 0x%p\n", pGMalloc);
+		} else {
+			pGMalloc = nullptr;
+		}
 
 		pFNameInit = reinterpret_cast<tFNameInitOld>(sigscan.Scan(Signatures::FNameInit));
 		Logging::LogF("[Internal] FindOrCreateFName = 0x%p\n", pFNameInit);
@@ -208,12 +228,12 @@ namespace UnrealSDK
 			detProcessEvent.Attach();
 		}
 
-		if (pCallFunction != nullptr) {
-			// Detour UObject::CallFunction()
-			//SETUP_SIMPLE_DETOUR(detCallFunction, pCallFunction, hkCallFunction);
-			CSimpleDetour detCallFunction(&(PVOID&)pCallFunction, hkCallFunction);
-			detCallFunction.Attach();
-		}
+		//if (pCallFunction != nullptr) {
+		//	// Detour UObject::CallFunction()
+		//	//SETUP_SIMPLE_DETOUR(detCallFunction, pCallFunction, hkCallFunction);
+		//	CSimpleDetour detCallFunction(&(PVOID&)pCallFunction, hkCallFunction);
+		//	detCallFunction.Attach();
+		//}
 	}
 
 	void InitializePython()
@@ -263,7 +283,7 @@ namespace UnrealSDK
 
 		for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
 		{
-			UObject* Object = UObject::GObjects()->Data[i];
+			UObject* Object = UObject::GObjects()->Get(i);
 
 			if (!Object || !Object->Class)
 				continue;
@@ -295,9 +315,13 @@ namespace UnrealSDK
 		gHookManager = new CHookManager("EngineHooks");
 		hookGame();
 
-		LogAllCalls(false);
+		LogAllCalls(true);
 
-		UObject::GObjects()->Data[566]->ProcessEvent((UFunction *)0, 0);
+		//for (int x = 0; x < UObject::GObjects()->Count; x++) {
+		//	if (UObject::GObjects()->Get(x) != nullptr && UObject::GObjects()->Get(x)->Class != nullptr && strcmp(UObject::GObjects()->Get(x)->Class->GetName(), "Class"))
+		//		Logging::LogF("%d %s\n", x, UObject::GObjects()->Get(x)->GetFullName().c_str());
+		//	//Logging::LogF("%x\n", UObject::GObjects()->Get(x));
+		//}
 
 		gHookManager->Register("Engine.Console.Initialized", "StartupSDK", GameReady);
 	}
@@ -320,7 +344,7 @@ namespace UnrealSDK
 		{
 			for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
 			{
-				UObject* Object = UObject::GObjects()->Data[i];
+				UObject* Object = UObject::GObjects()->Get(i);
 				if (Object->GetPackageObject() == result)
 					Object->ObjectFlags |= 0x4000;
 			}

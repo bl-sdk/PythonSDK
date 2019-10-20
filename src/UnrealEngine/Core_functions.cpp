@@ -910,7 +910,7 @@ class UObject* UObject::FindObject(const struct FString& ObjectName, class UClas
 	if (!fn)
 		for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
 		{
-			UObject* Object = UObject::GObjects()->Data[i];
+			UObject* Object = UObject::GObjects()->Get(i);
 			if (!strcmp(Object->GetFullName().c_str(), "Function Core.Object.FindObject"))
 				fn = (UFunction *)Object;
 		}

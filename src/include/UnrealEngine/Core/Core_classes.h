@@ -219,6 +219,51 @@ inline Fn GetVFunction(const void* instance, std::size_t index)
 	return reinterpret_cast<Fn>(vtable[index]);
 }
 
+
+struct FUObjectItem
+{
+	// Pointer to the allocated object
+	class UObject* Object;
+	// Internal flags
+	int Flags;
+	// UObject Owner Cluster Index
+	int ClusterRootIndex;
+	// Weak Object Pointer Serial number associated with the object
+	int SerialNumber;
+	// Weak Object Pointer Serial number associated with the object
+	int Unknown;
+};
+
+struct FChunkedFixedUObjectArray
+{
+	enum
+	{
+		NumElementsPerChunk = 64 * 1024,
+	};
+
+	/** Master table to chunks of pointers **/
+	FUObjectItem** Objects;
+	/** If requested, a contiguous memory where all objects are allocated **/
+	FUObjectItem* PreAllocatedObjects;
+	/** Maximum number of elements **/
+	int Max;
+	/** Number of elements we currently have **/
+	int Count;
+	/** Maximum number of chunks **/
+	int MaxChunks;
+	/** Number of chunks we currently have **/
+	int NumChunks;
+
+	UObject* Get(size_t index) {
+		return Objects[index / NumElementsPerChunk][index % NumElementsPerChunk].Object;
+	}
+
+	UObject* operator()(size_t index)
+	{
+		return Get(index);
+	}
+};
+
 // 0x003C
 class UObject : FHelper
 {
@@ -230,6 +275,7 @@ public:
 	class UClass*										Class;
 	FName												Name;
 	class UObject*										Outer;
+	static FChunkedFixedUObjectArray* GObjects();
 #else
 	//struct FPointer                                    VfTableObject;                                    		// 0x0000 (0x0004) [0x0000000000821002]              ( CPF_Const | CPF_Native | CPF_EditConst | CPF_NoExport )
 	struct FPointer                                    HashNext;                                         		// 0x0004 (0x0004) [0x0000000000021002]              ( CPF_Const | CPF_Native | CPF_EditConst )
@@ -244,10 +290,9 @@ public:
 	struct FName                                       Name;                                             		// 0x002C (0x0008) [0x0000000000021003]              ( CPF_Edit | CPF_Const | CPF_Native | CPF_EditConst )
 	class UClass*                                      Class;                                            		// 0x0034 (0x0004) [0x0000000000021002]              ( CPF_Const | CPF_Native | CPF_EditConst )
 	class UObject*                                     ObjectArchetype;                                  		// 0x0038 (0x0004) [0x0000000000021003]              ( CPF_Edit | CPF_Const | CPF_Native | CPF_EditConst )
+	static TArray< UObject* >* GObjects();
 #endif
 
-public:
-	static TArray< UObject* >* GObjects();
 	const char *GetName() const;
 	std::string GetNameCpp() const;
 	std::string GetFullName();
@@ -607,7 +652,7 @@ public:
 	inline void ProcessEvent(class UFunction* function, void* parms)
 	{
 #ifdef ENVIRONMENT64
-		return GetVFunction<void(*)(UObject*, class UFunction*, void*)>(this, 58)(this, function, parms);
+		return GetVFunction<void(*)(UObject*, class UFunction*, void*)>(this, 65)(this, function, parms);
 #else
 		return GetVFunction<void(*)(UObject*, class UFunction*, void*)>(this, 67)(this, function, parms);
 #endif

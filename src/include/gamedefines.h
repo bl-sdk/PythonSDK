@@ -50,6 +50,12 @@ public:
 		return this->Data[i];
 	}
 
+
+	T& Get(size_t i)
+	{
+		return this->Data[i];
+	}
+
 	const T& operator()(int i) const
 	{
 		return this->Data[i];
@@ -61,6 +67,30 @@ struct FNameEntry
 	unsigned char UnknownData00[0x10];
 	char Name[1024];
 };
+
+
+struct FChunkedFNameEntryArray
+{
+	enum
+	{
+		NumElementsPerChunk = 0x4000,
+		MaxChunkCount = 0x80
+	};
+
+	FNameEntry*** Objects;
+	int Count;
+	int ChunksCount;
+
+	FNameEntry* Get(size_t index) {
+		return Objects[index / NumElementsPerChunk][index % NumElementsPerChunk];
+	}
+
+	FNameEntry* operator()(size_t index)
+	{
+		return Get(index);
+	}
+};
+
 
 struct FName
 {
@@ -93,16 +123,23 @@ public:
 			((UnrealSDK::tFNameInitNew)(UnrealSDK::pFNameInit))(this, (wchar_t *)Util::Widen(FindName).c_str(), number, 1, 1);
 	}
 
+#ifdef ENVIRONMENT64
+	static FChunkedFNameEntryArray* Names()
+	{
+		return (FChunkedFNameEntryArray*)UnrealSDK::pGNames;
+	}
+#else
 	static TArray<FNameEntry*>* Names()
 	{
 		return (TArray<FNameEntry*>*)UnrealSDK::pGNames;
 	}
+#endif
 
 	const char* GetName() const
 	{
-		if (Index < 0 || Index > Names()->Num())
+		if (Index < 0 || Index > Names()->Count)
 			return "UnknownName";
-		return Names()->Data[Index]->Name;
+		return Names()->Get(Index)->Name;
 	};
 
 	bool operator ==(const FName& A) const

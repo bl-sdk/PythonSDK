@@ -12,7 +12,7 @@ CSigScan::CSigScan(const wchar_t* moduleName)
 	if (m_moduleHandle == nullptr)
 	{
 		throw FatalSDKException(3000, Util::Format("Sigscan failed (GetModuleHandle returned NULL, Error = %d)",
-		                                           GetLastError()));
+			GetLastError()));
 	}
 
 	void* pAddr = m_moduleHandle;
@@ -22,7 +22,7 @@ CSigScan::CSigScan(const wchar_t* moduleName)
 	if (!VirtualQuery(pAddr, &mem, sizeof(mem)))
 	{
 		throw FatalSDKException(3001, Util::Format("Sigscan failed (VirtualQuery returned NULL, Error = %d)",
-		                                           GetLastError()));
+			GetLastError()));
 	}
 
 	m_pModuleBase = (char*)mem.AllocationBase;
@@ -41,17 +41,13 @@ CSigScan::CSigScan(const wchar_t* moduleName)
 	Logging::LogF("%x\n", (IMAGE_NT_HEADERS*)((unsigned long)dos + (unsigned long)dos->e_lfanew));
 	Logging::LogF("Module base %x\n", m_pModuleBase);
 
-
-	if (pe->Signature != IMAGE_NT_SIGNATURE)
-	{
-		//throw FatalSDKException(3003, "Sigscan failed (pe points to a bad location)");
-		m_moduleLen = 0x25000000;
-	}
-	else {
-		m_moduleLen = (size_t)pe->OptionalHeader.SizeOfImage;
-		Logging::LogF("Module len %x\n", m_moduleLen);
-	}
-
+#ifdef ENVIRONMENT64
+	m_moduleLen = 0x21000000;
+	Logging::LogF("Module len %x\n", m_moduleLen);
+#else
+	m_moduleLen = (size_t)pe->OptionalHeader.SizeOfImage;
+	Logging::LogF("Module len %x\n", m_moduleLen);
+#endif
 }
 
 void* CSigScan::Scan(const MemorySignature& sigStruct)
