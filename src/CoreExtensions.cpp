@@ -423,14 +423,20 @@ std::string UObject::GetObjectName()
 {
 	std::stack<UObject*> parents{};
 
-	for (auto current = this; current; current = current->Outer)
+	Logging::LogF("Getting parents\n");
+	for (auto current = this; current; current = current->Outer) {
+		Logging::LogF("Got parent %p\n", current);
 		parents.push(current);
+	}
+	Logging::LogF("Got Parents\n");
 
 	std::string output{};
 
 	while (!parents.empty())
 	{
+		Logging::LogF("Getting Name\n");
 		output += parents.top()->GetName();
+		Logging::LogF("Current output: %s\n", output);
 		parents.pop();
 		if (!parents.empty())
 			output += '.';
@@ -608,11 +614,7 @@ py::object FFunction::Call(py::args args, py::kwargs kwargs)
 	Logging::LogD("made params\n");
 	auto flags = func->FunctionFlags;
 	func->FunctionFlags |= 0x400;
-	void* returnObj = nullptr;
-	for (UProperty* Child = (UProperty*)func->Children; Child; Child = (UProperty*)Child->Next)
-		if (Child->PropertyFlags & 0x400)
-			returnObj = params + Child->Offset_Internal;
-	UnrealSDK::pProcessEvent(obj, func, params, returnObj);
+	UnrealSDK::pProcessEvent(obj, func, params);
 	func->FunctionFlags = flags;
 	Logging::LogD("Called ProcessEvent\n");
 	py::object ret = GetReturn((FHelper*)params);

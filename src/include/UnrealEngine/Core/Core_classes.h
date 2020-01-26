@@ -179,6 +179,7 @@
 */
 
 struct FHelper {
+public:
 	struct FStruct GetStructProperty(class UStructProperty *Prop);
 	struct FString* GetStrProperty(class UProperty *Prop);
 	class UObject* GetObjectProperty(class UProperty *Prop);
@@ -269,6 +270,7 @@ class UObject : FHelper
 {
 public:
 #ifdef ENVIRONMENT64
+	// 0x28
 	//void*												Vtable;
 	int													ObjectFlags;
 	int													InternalIndex; 
@@ -285,7 +287,7 @@ public:
 	class UObject*                                     Linker;                                           		// 0x0018 (0x0004) [0x0000000000821002]              ( CPF_Const | CPF_Native | CPF_EditConst | CPF_NoExport )
 	struct FPointer                                    LinkerIndex;                                      		// 0x001C (0x0004) [0x0000000000821002]              ( CPF_Const | CPF_Native | CPF_EditConst | CPF_NoExport )
 	int                                                ObjectInternalInteger;                            		// 0x0020 (0x0004) [0x0000000000821002]              ( CPF_Const | CPF_Native | CPF_EditConst | CPF_NoExport )
-	int                                                InternalIndex;                                         		// 0x0024 (0x0004) [0x0000000000821002]              ( CPF_Const | CPF_Native | CPF_EditConst | CPF_NoExport )
+	int                                                InternalIndex;											// 0x0024 (0x0004) [0x0000000000821002]              ( CPF_Const | CPF_Native | CPF_EditConst | CPF_NoExport )
 	class UObject*                                     Outer;                                            		// 0x0028 (0x0004) [0x0000000000021002]              ( CPF_Const | CPF_Native | CPF_EditConst )
 	struct FName                                       Name;                                             		// 0x002C (0x0008) [0x0000000000021003]              ( CPF_Edit | CPF_Const | CPF_Native | CPF_EditConst )
 	class UClass*                                      Class;                                            		// 0x0034 (0x0004) [0x0000000000021002]              ( CPF_Const | CPF_Native | CPF_EditConst )
@@ -755,11 +757,19 @@ public:
 class UStruct : public UField
 {
 public:
+#ifndef ENVIRONMENT64
 	unsigned char			UnknownData00[0x8];
+#endif
 	class UStruct*			SuperField;
 	class UField*			Children;
+#ifndef ENVIRONMENT64
 	unsigned short			PropertySize;
 	char					UnknownData01[0x3A];
+#else
+	int						PropertySize;
+	int						MinAlignment;
+	char					UnknownData01[0x40];
+#endif
 
 	UObject* FindChildByName(FName InName) const
 	{
@@ -786,6 +796,18 @@ public:
 class UFunction : public UStruct
 {
 public:
+#ifdef ENVIRONMENT64
+	int												FunctionFlags;
+	short                                           RepOffset;
+	char                                            NumParams;
+	short                                           ParamsSize;
+	short											ReturnValueOffset;
+	short											RPCResponseId;
+	class UProperty*								FirstPropertyToInit;
+	class UFunction*								EventGraphFunction;
+	int												EventGraphCallOffset;
+	void* Func;
+#else
 	unsigned long		FunctionFlags;
 	unsigned short		iNative;
 	unsigned short		RepOffset;
@@ -795,6 +817,7 @@ public:
 	unsigned short		ParamsSize;
 	unsigned long		ReturnValueOffset;
 	void*				Func;
+#endif
 };
 
 // 0x0004 (0x0084 - 0x0080)

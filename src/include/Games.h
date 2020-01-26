@@ -77,8 +77,8 @@ static std::map<std::string, MemorySignature> bl2_signatures{{
 static std::map<std::string, MemorySignature> bl3_signatures{ {
 	{
 	"GNames", {
-		"\x80\x00\x9B\x00\x00\x00\x00\x00\x40\x00\x00\x00\x00\x00\x00\x00\x01",
-		"xxxxxxxxxx??xxxxx",
+		"\x80\x00\x00\x00\x00\x00\x00\x00\x40\x00\x00\x00\x00\x00\x00\x00\x01",
+		"xx??xxxxxx??xxxxx",
 		17
 	}},
 	{
@@ -182,8 +182,18 @@ static std::map<std::string, std::string> bl2_object_map{
 };
 
 
+static std::map<std::string, std::string> bl3_object_map{
+	{"ConsoleObjectType", "Console"},
+	{"ConsoleObjectName", "/Script/Engine.Default__Console"},
+	{"EngineObjectType", "/Script/OakGame.OakGameEngine"},
+	{"EngineObjectName", "/Engine/Transient.OakGameEngine"},
+	{"EngineFullName", "OakGameEngine /Engine/Transient.OakGameEngine"},
+	{"PostRenderFunction", "/Script/Engine.HUD.ReceiveDrawHUD"}
+};
+
+
 static std::map<std::string, std::map<std::string, std::string>> game_object_map{
 	{"Borderlands2", bl2_object_map},
 	{"BorderlandsPreSequel", bl2_object_map},
-	{"Borderlands3", bl2_object_map},
+	{"Borderlands3", bl3_object_map},
 };
