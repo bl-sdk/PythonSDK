@@ -682,7 +682,7 @@ class UStructProperty : public UProperty
 public:
 	UScriptStruct* Struct_DONOTUSE;
 	UScriptStruct *GetStruct() {
-		if (UnrealSDK::EngineVersion <= 8630)
+		if (UnrealSDK::EngineVersion <= 8631)
 			return ((UScriptStruct **)(((char *)this) + 0x74))[0];
 		else
 			return Struct_DONOTUSE;
@@ -698,7 +698,7 @@ class UObjectProperty : public UProperty
 public:
 	UObject* Object_DONOTUSE;
 	UObject *GetObject() {
-		if (UnrealSDK::EngineVersion <= 8630)
+		if (UnrealSDK::EngineVersion <= 8631)
 			return ((UObject **)(((char *)this) + 0x74))[0];
 		else
 			return Object_DONOTUSE;
@@ -741,7 +741,7 @@ class UInterfaceProperty : public UProperty
 public:
 	UClass *InterfaceClass_DONOTUSE;
 	UClass *GetInterfaceClass() {
-		if (UnrealSDK::EngineVersion <= 8630)
+		if (UnrealSDK::EngineVersion <= 8631)
 			return ((UClass **)(((char *)this) + 0x74))[0];
 		else
 			return InterfaceClass_DONOTUSE;
@@ -785,7 +785,7 @@ class UBoolProperty : public UProperty
 public:
 	unsigned int Mask_DONOTUSE;
 	unsigned int GetMask() {
-		if (UnrealSDK::EngineVersion <= 8630)
+		if (UnrealSDK::EngineVersion <= 8631)
 			return ((unsigned int *)(((char *)this) + 0x74))[0];
 		else
 			return Mask_DONOTUSE;
@@ -798,7 +798,7 @@ class UArrayProperty : public UProperty
 public:
 	UProperty *Inner_DONOTUSE;
 	UProperty *GetInner() {
-		if (UnrealSDK::EngineVersion <= 8630)
+		if (UnrealSDK::EngineVersion <= 8631)
 			return ((UProperty **)(((char *)this) + 0x74))[0];
 		else
 			return Inner_DONOTUSE;
