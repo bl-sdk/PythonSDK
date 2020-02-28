@@ -167,9 +167,9 @@
     </LinkIncremental>
     <TargetName>ddraw</TargetName>
     <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
-    <IncludePath>$(PYTHONPATH)\include;$(IncludePath);$(VC_SourcePath)\src\include;</IncludePath>
-    <LibraryPath>$(PYTHONPATH)\libs;$(LibraryPath)</LibraryPath>
-    <OutDir>C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\Binaries\Win32\</OutDir>
+    <IncludePath>$(PYTHONPATH_X86)\include;$(IncludePath);$(VC_SourcePath)\src\include;</IncludePath>
+    <LibraryPath>$(PYTHONPATH_X86)\libs;$(LibraryPath)</LibraryPath>
+    <OutDir>D:\Games\SteamLibrary\steamapps\common\BorderlandsPreSequel\Binaries\Win32\</OutDir>
     <IntDir>build\$(Configuration)\</IntDir>
     <SourcePath>$(VC_SourcePath)\src;</SourcePath>
   </PropertyGroup>

@@ -78,7 +78,7 @@ public:
 public:
 	FName(const std::string& FindName)
 	{
-		if (UnrealSDK::EngineVersion <= 8630)
+		if (UnrealSDK::EngineVersion <= 8631)
 			((UnrealSDK::tFNameInitOld)(UnrealSDK::pFNameInit))(this, (wchar_t *)Util::Widen(FindName).c_str(), 0, 1, 1, 0);
 		else
 			((UnrealSDK::tFNameInitNew)(UnrealSDK::pFNameInit))(this, (wchar_t *)Util::Widen(FindName).c_str(), 0, 1, 1);
@@ -87,7 +87,7 @@ public:
 
 	FName(const std::string& FindName, int number)
 	{
-		if (UnrealSDK::EngineVersion <= 8630)
+		if (UnrealSDK::EngineVersion <= 8631)
 			((UnrealSDK::tFNameInitOld)(UnrealSDK::pFNameInit))(this, (wchar_t *)Util::Widen(FindName).c_str(), number, 1, 1,
 			                                              0);
 		else
