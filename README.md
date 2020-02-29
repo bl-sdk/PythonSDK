@@ -19,10 +19,6 @@ If you are asked to overwrite any files, accept. This mod replaces (and function
 
 3. If you have installed an older version of the SDK, delete the old files. This includes `Win32\Plugins\PythonSDK.dll`
 
-## Installing Mods
-
-Mods live in the `Borderlands 2\Binaries\Win32\Mods` folder. Each mod should be place in it's own subfolder, and contain an `__init__.py`. Example: `Win32\Mods\SkillRandomizer\__init__.py`   
-
 ### Linux (SteamPlay/Proton and Wine)
 
 PythonSDK does not yet work natively on Linux, but it seems to work well under SteamPlay/Proton and Wine.  To load properly, though, Wine needs to be told to allow `ddraw.dll` overrides.  Additionally, the latest SDK release (as of February 29, 2020) wants the main executable name to be `Borderlands2.exe`, so the common workaround of a `Launcher.exe` symlink/copy won't do the trick.  Instead, set the game's launch options (via `Properties -> General`) to:
@@ -35,6 +31,12 @@ Note that using `WINEDLLOVERRIDES` for `ddraw` isn't supported by the Wine devel
 
 `py <python code>` runs arbitrary python code.  
 `pyexec <python file>` runs arbitrary python files from `binaries/Win32/Mods/`.
+
+
+### Installing Mods
+
+Mods live in the `Borderlands 2\Binaries\Win32\Mods` folder. Each mod should be place in it's own subfolder, and contain an `__init__.py`. Example: `Win32\Mods\SkillRandomizer\__init__.py`   
+
 
 ## Borderlands Ingame Mod Manager
 
