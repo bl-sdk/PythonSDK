@@ -1,10 +1,11 @@
 #pragma once
-#ifndef HOOKMANAGER_H
-#define HOOKMANAGER_H
+#ifndef C_HOOK_MANAGER_H
+#define C_HOOK_MANAGER_H
 
 #include <string>
 #include <map>
 #include <functional>
+#include <utility>
 #include <stdafx.h>
 
 class CHookManager
@@ -12,21 +13,26 @@ class CHookManager
 public:
 	typedef std::map<std::string, std::function<bool(UObject*, UFunction*, FStruct*)>> tHookMap;
 	typedef std::pair<std::string, std::function<bool(UObject*, UFunction*, FStruct*)>> tHookPair;
-	typedef tHookMap::iterator tiHookMap;
-	typedef std::map<std::string, tHookMap>::iterator tiHooks;
 
 public:
-	std::map<std::string, tHookMap> Hooks;
-	std::string DebugName;
+	std::map<std::string, tHookMap> hooks;
+	std::string debugName;
 
-	CHookManager() : DebugName("Unknown") {}
-	CHookManager(std::string debugName) : DebugName(debugName) {}
+	CHookManager() : debugName("Unknown")
+	{
+	}
 
-	void Register(const std::string& funcName, const std::string& hookName, std::function<bool(UObject*, UFunction*, FStruct*)> funcHook);
-	bool Remove(const std::string& funcName, const std::string& hookName);
-	bool ProcessHooks(const std::string& funcName, const UObject *caller, const UFunction *func, const FStruct *params);
-	bool ProcessHooks(UObject* pCaller, FFrame& Stack, void* const Result, UFunction* Function);
-	bool HasHook(UObject *caller, UFunction *func);
+	CHookManager(std::string DebugName) : debugName(std::move(DebugName))
+	{
+	}
+
+	void Register(const std::string& FuncName, const std::string& HookName,
+	              const std::function<bool(UObject*, UFunction*, FStruct*)>
+	              & FuncHook);
+	bool Remove(const std::string& FuncName, const std::string& HookName);
+	bool ProcessHooks(const std::string& FuncName, const UObject* Caller, const UFunction* Func, const FStruct* Params);
+	bool ProcessHooks(UObject* Caller, FFrame& Stack, void* Result, UFunction* Function);
+	bool HasHook(UObject* Caller, UFunction* Func);
 };
 
 #endif

@@ -2,79 +2,80 @@
 #include <Windows.h>
 #include <stdio.h>
 #include "stdafx.h"
-#include "BL2-SDK.h"
+#include "UnrealSdk.h"
 #include "Logging.h"
 #include "Util.h"
 #include "Exceptions.h"
 
 namespace Logging
 {
-	HANDLE logFile = nullptr;
-	bool logToExternalConsole = true;
-	bool logToFile = true;
-	bool logToGameConsole = false;
+	HANDLE gLogFile = nullptr;
+	bool gLogToExternalConsole = true;
+	bool gLogToFile = true;
+	bool gLogToGameConsole = false;
 
-	void LogToFile(const char* buff, int len)
+	void LogToFile(const char* Buff, const int Len)
 	{
-		if (logFile != INVALID_HANDLE_VALUE)
+		if (gLogFile != INVALID_HANDLE_VALUE)
 		{
 			DWORD bytesWritten = 0;
-			WriteFile(logFile, buff, len, &bytesWritten, nullptr);
+			WriteFile(gLogFile, Buff, Len, &bytesWritten, nullptr);
 		}
 	}
 
-	void LogWinConsole(const char* buff, int len)
+	void LogWinConsole(const char* Buff, const int Len)
 	{
-		HANDLE output = GetStdHandle(STD_OUTPUT_HANDLE);
+		const HANDLE output = GetStdHandle(STD_OUTPUT_HANDLE);
 		DWORD bytesWritten = 0;
-		WriteFile(output, buff, len, &bytesWritten, nullptr);
+		WriteFile(output, Buff, Len, &bytesWritten, nullptr);
 	}
 
-	void Log(const char* formatted, int length)
+	void Log(const char* Formatted, int Length)
 	{
-		std::string out = formatted;
-		if (formatted[strlen(formatted) - 1] != '\n') {
+		std::string out = Formatted;
+		if (Formatted[strlen(Formatted) - 1] != '\n')
+		{
 			out += "\n";
 		}
-		const char *outc = out.c_str();
+		const char* outc = out.c_str();
 
-		if (length == 0)
-			length = strlen(outc);
+		if (Length == 0)
+			Length = strlen(outc);
 
-		if (logToExternalConsole)
-			LogWinConsole(outc, length);
+		if (gLogToExternalConsole)
+			LogWinConsole(outc, Length);
 
-		if (logToFile)
-			LogToFile(outc, length);
+		if (gLogToFile)
+			LogToFile(outc, Length);
 
-		if (BL2SDK::gameConsole != nullptr)
+		if (UnrealSDK::gameConsole != nullptr)
 		{
 			// It seems that Unreal will automatically put a newline on the end of a 
 			// console output, but if there's already a \n at the end, then it won't
 			// add this \n onto the end. So if we're printing just a \n by itself, 
 			// just don't do anything.
-			if (!(length == 1 && outc[0] == '\n'))
+			if (!(Length == 1 && outc[0] == '\n'))
 			{
 				std::wstring wfmt = Util::Widen(outc);
-				bool DoInjectedNext = BL2SDK::injectedCallNext;
-				BL2SDK::doInjectedCallNext();
-				BL2SDK::gameConsole->OutputText(FString((wchar_t*)wfmt.c_str()));
-				if (DoInjectedNext)
-					BL2SDK::doInjectedCallNext();
+				const bool doInjectedNext = UnrealSDK::gInjectedCallNext;
+				UnrealSDK::DoInjectedCallNext();
+				UnrealSDK::gameConsole->OutputText(FString((wchar_t*)wfmt.c_str()));
+				if (doInjectedNext)
+					UnrealSDK::DoInjectedCallNext();
 			}
 		}
 	}
 
-	void LogW(wchar_t *formatted, signed int length)
+	void LogW(wchar_t* Formatted, const signed int Length)
 	{
-		char *output = (char *)calloc(length + 1, sizeof(char));
-		wcstombs(output, formatted, length);
+		char* output = (char *)calloc(Length + 1, sizeof(char));
+		wcstombs(output, Formatted, Length);
 		Log(output, 0);
 	}
 
-	void LogPy(const char* formatted)
+	void LogPy(std::string formatted)
 	{
-		Log(formatted, 0);
+		Log(formatted.c_str(), 0);
 	}
 
 	void LogF(const char* fmt, ...)
@@ -87,18 +88,21 @@ namespace Logging
 		Log(formatted.c_str(), formatted.length());
 	}
 
-	enum LogLevel {
+	enum LogLevel
+	{
 		DEBUG,
 		INFO,
 		WARNING,
 		EXCEPTION,
 		CRITICAL
 	};
-	Logging::LogLevel Level = WARNING;
+
+	LogLevel Level = WARNING;
 
 	void LogD(const char* fmt, ...)
 	{
-		if (Logging::Level == LogLevel::DEBUG) {
+		if (Level == DEBUG)
+		{
 			va_list args;
 			va_start(args, fmt);
 			std::string formatted = "[DEBUG] " + Util::FormatInternal(fmt, args);
@@ -108,25 +112,32 @@ namespace Logging
 		}
 	}
 
-	void SetLoggingLevel(const char *NewLevel) {
+	void SetLoggingLevel(const char* NewLevel)
+	{
 		std::string str = NewLevel;
-		std::transform(str.begin(), str.end(), str.begin(), ::toupper);
-		if (str == "DEBUG") {
-			Logging::Level = DEBUG;
+		std::transform(str.begin(), str.end(), str.begin(), toupper);
+		if (str == "DEBUG")
+		{
+			Level = DEBUG;
 		}
-		else if (str == "INFO") {
-			Logging::Level = INFO;
+		else if (str == "INFO")
+		{
+			Level = INFO;
 		}
-		else if (str == "WARNING") {
-			Logging::Level = WARNING;
+		else if (str == "WARNING")
+		{
+			Level = WARNING;
 		}
-		else if (str == "EXCEPTION") {
-			Logging::Level = EXCEPTION;
+		else if (str == "EXCEPTION")
+		{
+			Level = EXCEPTION;
 		}
-		else if (str == "CRITICAL") {
-			Logging::Level = CRITICAL;
+		else if (str == "CRITICAL")
+		{
+			Level = CRITICAL;
 		}
-		else {
+		else
+		{
 			LogF("Unknown logging level '%s'\n", NewLevel);
 		}
 	}
@@ -136,34 +147,36 @@ namespace Logging
 		BOOL result = AllocConsole();
 		if (result)
 		{
-			logToExternalConsole = true;
+			gLogToExternalConsole = true;
 		}
 	}
 
 	// Everything else can fail, but InitializeFile must work.
 	void InitializeFile(const std::wstring& fileName)
 	{
-		logFile = CreateFile(fileName.c_str(), GENERIC_WRITE, FILE_SHARE_READ, nullptr, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, nullptr);
-		if (logFile == INVALID_HANDLE_VALUE)
+		gLogFile = CreateFile(fileName.c_str(), GENERIC_WRITE, FILE_SHARE_READ, nullptr, CREATE_ALWAYS,
+		                     FILE_ATTRIBUTE_NORMAL, nullptr);
+		if (gLogFile == INVALID_HANDLE_VALUE)
 		{
-			std::string errMsg = Util::Format("Failed to initialize log file (INVALID_HANDLE_VALUE, LastError = %d)", GetLastError());
+			std::string errMsg = Util::Format("Failed to initialize log file (INVALID_HANDLE_VALUE, LastError = %d)",
+			                                  GetLastError());
 			throw FatalSDKException(1000, errMsg);
 		}
 
-		logToFile = true;
+		gLogToFile = true;
 	}
 
 	void PrintLogHeader()
 	{
-		LogF("======== BL2 PythonSDK Loaded (Version %d) ========\n", BL2SDK::EngineVersion);
+		LogF("======== UnrealEngine PythonSDK Loaded (Version %d) ========\n", UnrealSDK::EngineVersion);
 	}
 
 	void Cleanup()
 	{
-		if (logFile != INVALID_HANDLE_VALUE)
+		if (gLogFile != INVALID_HANDLE_VALUE)
 		{
-			FlushFileBuffers(logFile);
-			CloseHandle(logFile);
+			FlushFileBuffers(gLogFile);
+			CloseHandle(gLogFile);
 		}
 	}
 }

@@ -16,11 +16,11 @@ struct LauncherStruct
 
 namespace Settings
 {
-	void Initialize(wchar_t * binPath_/* LauncherStruct* args*/);
+	void Initialize(wchar_t* BinPath/* LauncherStruct* args*/);
 	std::wstring GetLogFilePath();
-	std::wstring GetBinFile(const std::wstring& filename);
-	std::wstring GetTextureFile(const std::wstring& filename);
-	std::wstring GetPythonFile(const std::wstring& filename);
+	std::wstring GetBinFile(const std::wstring& Filename);
+	std::wstring GetTextureFile(const std::wstring& Filename);
+	std::wstring GetPythonFile(const std::wstring& Filename);
 	bool DeveloperModeEnabled();
 	bool DisableAntiDebug();
 }

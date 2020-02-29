@@ -1,11 +1,12 @@
-import bl2sdk
+import unrealsdk
 import os
 import sys
 import json
 import re
 
+from ..ModManager import BL2MOD, RegisterMod
 
-class LegacyMod(bl2sdk.BL2MOD):
+class LegacyMod(BL2MOD):
 
     BinariesDirectory = os.path.dirname(os.path.dirname(sys.executable))
     """The path to the game's Binaries directory; this is the parent directory from
@@ -60,7 +61,7 @@ class LegacyMod(bl2sdk.BL2MOD):
             # We will be either locating or creating a mod object for this file.
             mod = None
             # Iterate over each existing mod in the menu.
-            for existingMod in bl2sdk.Mods:
+            for existingMod in unrealsdk.Mods:
                 # If the mod is a legacy mod and has the same file name as our
                 # own, we will be using that.
                 if type(existingMod) is LegacyMod and existingMod.Filename == filename:
@@ -76,7 +77,7 @@ class LegacyMod(bl2sdk.BL2MOD):
                     continue
                 # Create the new legacy mod object and add it to the mods menu.
                 mod = LegacyMod(filename)
-                bl2sdk.Mods.append(mod)
+                RegisterMod(mod)
 
             # Create a set to store a list of any and all mods we determine this
             # mod to conflict with.
@@ -280,7 +281,7 @@ class LegacyMod(bl2sdk.BL2MOD):
 
         # We will be looking up the object responsible for storing hotfixes.
         micropatch = None
-        for service in bl2sdk.FindObject(
+        for service in unrealsdk.FindObject(
             "GearboxAccountData", "Transient.GearboxAccountData_1"
         ).Services:
             # If the service's name is "micropatch" then it is the hotfix
@@ -301,7 +302,7 @@ class LegacyMod(bl2sdk.BL2MOD):
         micropatch.Values = []
 
         # Obtain the current player controller object.
-        playerController = bl2sdk.GetEngine().GamePlayers[0].Actor
+        playerController = unrealsdk.GetEngine().GamePlayers[0].Actor
         try:
             # Use the controller to perform a console command executing the
             # legacy mod file. We wrap this in a `try` statement to suppress the
@@ -339,7 +340,7 @@ class LegacyMod(bl2sdk.BL2MOD):
         elif name == "Hide Mod":
             LegacyMod.IgnoredFiles.add(self.Filename)
             LegacyMod.SaveSettings()
-            bl2sdk.Mods.remove(self)
+            unrealsdk.Mods.remove(self)
 
         # When the insert key is pressed, reset our list of ignored files, then
         # re-populate the SDK's mods menu.
@@ -352,4 +353,4 @@ class LegacyMod(bl2sdk.BL2MOD):
 # On launch, load our settings.
 LegacyMod.LoadSettings()
 # Add a hook to populate the SDK's mod menu each time it is opened.
-bl2sdk.ModMenuOpened.append(LegacyMod.Populate)
+unrealsdk.ModMenuOpened.append(LegacyMod.Populate)

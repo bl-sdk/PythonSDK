@@ -3,7 +3,7 @@
 #define EXCEPTIONS_H
 
 #include <string>
-#include <stdexcpt.h>
+#include <stdexcept>
 
 class FatalSDKException : public std::runtime_error
 {
@@ -13,7 +13,7 @@ private:
 public:
 	FatalSDKException(int errorCode, const std::string& errorStr)
 		: std::runtime_error(errorStr),
-		m_errorCode(errorCode)
+		  m_errorCode(errorCode)
 	{
 	}
 

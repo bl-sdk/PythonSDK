@@ -5,11 +5,11 @@
 
 namespace Settings
 {
-	std::wstring binPath;
-	bool developerMode;
-	bool disableAntiDebug;
+	std::wstring gBinPath;
+	bool gDeveloperMode;
+	bool gDisableAntiDebug;
 
-	void Initialize(wchar_t * binPath_/*LauncherStruct* args*/)
+	void Initialize(wchar_t* BinPath/*LauncherStruct* args*/)
 	{
 		/*
 		if (args == nullptr || args->BinPath == nullptr)
@@ -18,9 +18,9 @@ namespace Settings
 		}
 		*/
 
-		binPath = binPath_; //args->BinPath;
-		developerMode = true; //args->DeveloperMode;
-		disableAntiDebug = true; // args->DisableAntiDebug;
+		gBinPath = BinPath; //args->BinPath;
+		gDeveloperMode = true; //args->DeveloperMode;
+		gDisableAntiDebug = true; // args->DisableAntiDebug;
 	}
 
 	std::wstring GetLogFilePath()
@@ -33,34 +33,31 @@ namespace Settings
 		return GetBinFile(L"python-sdk.cfg");
 	}
 
-	std::wstring GetBinFile(const std::wstring& filename)
+	std::wstring GetBinFile(const std::wstring& Filename)
 	{
-		std::wstring newPath;
-		newPath = binPath + filename;
+		std::wstring newPath = gBinPath + Filename;
 		return newPath;
 	}
 
-	std::wstring GetTextureFile(const std::wstring& filename)
+	std::wstring GetTextureFile(const std::wstring& Filename)
 	{
-		std::wstring newPath;
-		newPath = binPath + L"textures\\" + filename;
+		std::wstring newPath = gBinPath + L"textures\\" + Filename;
 		return newPath;
 	}
 
-	std::wstring GetPythonFile(const std::wstring& filename)
+	std::wstring GetPythonFile(const std::wstring& Filename)
 	{
-		std::wstring newPath;
-		newPath = binPath + L"Mods\\" + filename;
+		std::wstring newPath = gBinPath + L"Mods\\" + Filename;
 		return newPath;
 	}
 
 	bool DeveloperModeEnabled()
 	{
-		return developerMode;
+		return gDeveloperMode;
 	}
 
 	bool DisableAntiDebug()
 	{
-		return disableAntiDebug;
+		return gDisableAntiDebug;
 	}
 }

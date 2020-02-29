@@ -8,9 +8,9 @@
 #define STATUS_SUCCESS ((NTSTATUS)0x00000000L)
 #define STATUS_PORT_NOT_SET ((NTSTATUS)0xC0000353L)
 
-namespace BL2SDK
+namespace UnrealSDK
 {
-	typedef NTSTATUS(WINAPI* tNtSIT) (HANDLE, THREAD_INFORMATION_CLASS, PVOID, ULONG);
+	typedef NTSTATUS (WINAPI* tNtSIT)(HANDLE, THREAD_INFORMATION_CLASS, PVOID, ULONG);
 	tNtSIT pNtSetInformationThread = nullptr;
 
 	NTSTATUS NTAPI hkNtSetInformationThread(
@@ -25,10 +25,11 @@ namespace BL2SDK
 			return STATUS_SUCCESS;
 		}
 
-		return pNtSetInformationThread(ThreadHandle, ThreadInformationClass, ThreadInformation, ThreadInformationLength);
+		return pNtSetInformationThread(ThreadHandle, ThreadInformationClass, ThreadInformation,
+		                               ThreadInformationLength);
 	}
 
-	typedef NTSTATUS(WINAPI* tNtQIP) (HANDLE, PROCESSINFOCLASS, PVOID, ULONG, PULONG);
+	typedef NTSTATUS (WINAPI* tNtQIP)(HANDLE, PROCESSINFOCLASS, PVOID, ULONG, PULONG);
 	tNtQIP pNtQueryInformationProcess = nullptr;
 
 	NTSTATUS WINAPI hkNtQueryInformationProcess(
@@ -43,7 +44,8 @@ namespace BL2SDK
 			return STATUS_PORT_NOT_SET;
 		}
 
-		return pNtQueryInformationProcess(ProcessHandle, ProcessInformationClass, ProcessInformation, ProcessInformationLength, ReturnLength);
+		return pNtQueryInformationProcess(ProcessHandle, ProcessInformationClass, ProcessInformation,
+		                                  ProcessInformationLength, ReturnLength);
 	}
 
 	void HookAntiDebug()
@@ -51,13 +53,15 @@ namespace BL2SDK
 		HMODULE hNtdll = GetModuleHandle(L"ntdll.dll");
 		if (!hNtdll)
 		{
-			throw FatalSDKException(7000, Util::Format("GetModuleHandle failed for ntdll.dll (Error = 0x%X)", GetLastError()));
+			throw FatalSDKException(7000, Util::Format("GetModuleHandle failed for ntdll.dll (Error = 0x%X)",
+			                                           GetLastError()));
 		}
 
 		pNtSetInformationThread = (tNtSIT)GetProcAddress(hNtdll, "NtSetInformationThread");
 		if (!pNtSetInformationThread)
 		{
-			throw FatalSDKException(7001, Util::Format("GetProcAddress failed for NtSetInformationThread (Error = 0x%X)", GetLastError()));
+			throw FatalSDKException(
+				7001, Util::Format("GetProcAddress failed for NtSetInformationThread (Error = 0x%X)", GetLastError()));
 		}
 
 		SETUP_SIMPLE_DETOUR(detNtSIT, pNtSetInformationThread, hkNtSetInformationThread);
@@ -67,7 +71,9 @@ namespace BL2SDK
 		pNtQueryInformationProcess = (tNtQIP)GetProcAddress(hNtdll, "NtQueryInformationProcess");
 		if (!pNtQueryInformationProcess)
 		{
-			throw FatalSDKException(7002, Util::Format("GetProcAddress failed for NtQueryInformationProcess (Error = 0x%X)", GetLastError()));
+			throw FatalSDKException(
+				7002, Util::Format("GetProcAddress failed for NtQueryInformationProcess (Error = 0x%X)",
+				                   GetLastError()));
 		}
 
 		SETUP_SIMPLE_DETOUR(detNtQIP, pNtQueryInformationProcess, hkNtQueryInformationProcess);

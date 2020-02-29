@@ -1,10 +1,10 @@
 #pragma once
 #include "stdafx.h"
-#include "BL2-SDK.h"
+#include "UnrealSDK.h"
 #include "PackageFix.h"
 #include "gamedefines.h"
 
-namespace BL2SDK
+namespace UnrealSDK
 {
 	bool GIsLoadingUDKPackage = false;
 	DWORD dwTextureFixReturn;

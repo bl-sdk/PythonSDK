@@ -1,12 +1,14 @@
-import bl2sdk
+import unrealsdk
 import sys
 import os
 import math
 import json
 from fractions import Fraction
 
+from ..ModManager import BL2MOD, RegisterMod
 
-class Commander(bl2sdk.BL2MOD):
+
+class Commander(BL2MOD):
 
     Name = "Commander"
     Description = (
@@ -52,6 +54,8 @@ class Commander(bl2sdk.BL2MOD):
             "Quit Without Saving": ("End", self.QuitWithoutSaving),
         }
 
+        self.Keybinds = [[key, value[0]] for key, value in self.GameInputs.items()]
+
     def SaveSettings(self):
         """Saves the current settings in JSON format to our settings file."""
 
@@ -60,15 +64,6 @@ class Commander(bl2sdk.BL2MOD):
         # Save the settings dictionary to our settings file in JSON format.
         with open(self.SettingsPath, "w") as settingsFile:
             json.dump(settings, settingsFile, indent=4)
-
-    def Enable(self):
-        for name, (key, _) in self.GameInputs.items():
-            key = self.Bindings.get(name, key)
-            self.RegisterGameInput(name, key)
-
-    def Disable(self):
-        for name in self.GameInputs:
-            self.UnregisterGameInput(name)
 
     def GameInputPressed(self, input):
         self.GameInputs[input.Name][1]()
@@ -79,9 +74,9 @@ class Commander(bl2sdk.BL2MOD):
 
     def GetPlayerController(self):
         """Return the current WillowPlayerController object for the local player."""
-        return bl2sdk.GetEngine().GamePlayers[0].Actor
+        return unrealsdk.GetEngine().GamePlayers[0].Actor
 
-    DefaultGameInfo = bl2sdk.FindObject(
+    DefaultGameInfo = unrealsdk.FindObject(
         "WillowCoopGameInfo", "WillowGame.Default__WillowCoopGameInfo"
     )
     """A reference to the WillowCoopGameInfo template object."""
@@ -139,7 +134,7 @@ class Commander(bl2sdk.BL2MOD):
         speed = self.DefaultGameInfo.GameSpeed
         if speed > 0.0625:
             speed /= 2
-            worldInfo = bl2sdk.GetEngine().GetCurrentWorldInfo()
+            worldInfo = unrealsdk.GetEngine().GetCurrentWorldInfo()
             worldInfo.TimeDilation = speed
             self.DefaultGameInfo.GameSpeed = speed
         self.Feedback("Game Speed: " + str(Fraction(speed)))
@@ -148,13 +143,13 @@ class Commander(bl2sdk.BL2MOD):
         speed = self.DefaultGameInfo.GameSpeed
         if speed < 32:
             speed *= 2
-            worldInfo = bl2sdk.GetEngine().GetCurrentWorldInfo()
+            worldInfo = unrealsdk.GetEngine().GetCurrentWorldInfo()
             worldInfo.TimeDilation = speed
             self.DefaultGameInfo.GameSpeed = speed
         self.Feedback("Game Speed: " + str(Fraction(speed)))
 
     def ResetGameSpeed(self):
-        worldInfo = bl2sdk.GetEngine().GetCurrentWorldInfo()
+        worldInfo = unrealsdk.GetEngine().GetCurrentWorldInfo()
         worldInfo.TimeDilation = 1.0
         self.DefaultGameInfo.GameSpeed = 1.0
         self.Feedback("Game Speed: 1")
@@ -162,7 +157,7 @@ class Commander(bl2sdk.BL2MOD):
     def ToggleHUD(self):
         self.ConsoleCommand("ToggleHUD")
 
-    DamageNumberEmitterObject = bl2sdk.FindObject(
+    DamageNumberEmitterObject = unrealsdk.FindObject(
         "ParticleSystem", "FX_CHAR_Damage_Matrix.Particles.Part_Dynamic_Number"
     )
     DamageNumberEmitters = list(DamageNumberEmitterObject.Emitters)
@@ -195,7 +190,7 @@ class Commander(bl2sdk.BL2MOD):
             self.Feedback("Damage Numbers: Off")
 
     def GetMapName(self):
-        return bl2sdk.GetEngine().GetCurrentWorldInfo().GetMapName(True)
+        return unrealsdk.GetEngine().GetCurrentWorldInfo().GetMapName(True)
 
     def GetRotationAndLocation(self):
         # Assume our local player controller is the first in the engine's list.
@@ -248,7 +243,7 @@ class Commander(bl2sdk.BL2MOD):
 
     def TogglePlayersOnly(self):
         # Get the current WorldInfo object from the engine.
-        worldInfo = bl2sdk.GetEngine().GetCurrentWorldInfo()
+        worldInfo = unrealsdk.GetEngine().GetCurrentWorldInfo()
         # Get the WorldInfo's current players only state.
         playersOnly = worldInfo.bPlayersOnly
 
@@ -261,4 +256,4 @@ class Commander(bl2sdk.BL2MOD):
         self.ConsoleCommand("disconnect")
 
 
-bl2sdk.Mods.append(Commander())
+RegisterMod(Commander())
