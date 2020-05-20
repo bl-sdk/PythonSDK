@@ -150,9 +150,11 @@ namespace UnrealSDK
 		std::size_t dot = str.find_last_of('.');
 		std::string exeName = str.substr(slash, dot - slash);
 		Logging::LogF("Found EXE name as '%s.exe'\n", exeName.c_str());
+
 		ObjectMap = game_object_map[exeName];
 		Logging::LogF("Loaded object map\n");
 		CSigScan sigscan(Util::Widen(exeName + ".exe").c_str());
+
 		Logging::LogF("Loading sigs\n");
 		Signatures::InitSignatures(exeName);
 		Logging::LogF("Sigs loaded\n");
@@ -197,35 +199,34 @@ namespace UnrealSDK
 		if (gm != nullptr) {
 			pGMalloc = *static_cast<void*****>(sigscan.Scan(Signatures::GMalloc));
 			Logging::LogF("[Internal] GMalloc = 0x%p\n", pGMalloc);
-		} else {
+		} else 
 			pGMalloc = nullptr;
-		}
 
 		pFNameInit = reinterpret_cast<tFNameInitOld>(sigscan.Scan(Signatures::FNameInit));
 		Logging::LogF("[Internal] FindOrCreateFName = 0x%p\n", pFNameInit);
 
 		pGetDefaultObject = reinterpret_cast<tGetDefaultObject>(sigscan.Scan(Signatures::GetDefaultObject));
 		Logging::LogF("[Internal] GetDefaultObject = 0x%p\n", pGetDefaultObject);
-
-		try
-		{
-			void* SetCommand = sigscan.Scan(Signatures::SetCommand);
-			DWORD near out = 0;
-			if (!VirtualProtectEx(GetCurrentProcess(), SetCommand, 5, 0x40, &out))
+		if (exeName != "Borderlands3.exe") {
+			try
 			{
-				Logging::LogF("WINAPI Error when enabling 'SET' commands: %d\n", GetLastError());
+				void* SetCommand = sigscan.Scan(Signatures::SetCommand);
+				DWORD near out = 0;
+				if (!VirtualProtectEx(GetCurrentProcess(), SetCommand, 5, 0x40, &out))
+				{
+					Logging::LogF("WINAPI Error when enabling 'SET' commands: %d\n", GetLastError());
+				}
+				else
+				{
+					static_cast<unsigned char*>(SetCommand)[5] = 0xFF;
+				}
 			}
-			else
+			catch (std::exception e)
 			{
-				static_cast<unsigned char*>(SetCommand)[5] = 0xFF;
+				Logging::LogF("Exception when enabling 'SET' commands: %d\n", e.what());
 			}
+			Logging::LogF("Enabled SET commands\n");
 		}
-		catch (std::exception e)
-		{
-			Logging::LogF("Exception when enabling 'SET' commands: %d\n", e.what());
-		}
-		Logging::LogF("Enabled SET commands\n");
-
 		MH_Initialize();
 
 		if (pProcessEvent != nullptr) {
@@ -359,7 +360,11 @@ namespace UnrealSDK
 			{
 				UObject* Object = UObject::GObjects()->Get(i);
 				if (Object->GetPackageObject() == result)
+#ifndef ENVIRONMENT64
 					Object->ObjectFlags.A |= 0x4000;
+#else
+					Object->ObjectFlags |= 0x4000;
+#endif
 			}
 		}
 	};
@@ -367,7 +372,11 @@ namespace UnrealSDK
 	void KeepAlive(UObject* Obj)
 	{
 		for (UObject* outer = Obj; outer; outer = outer->Outer)
-			outer->ObjectFlags.A |= 0x4000;
+#ifndef ENVIRONMENT64
+					outer->ObjectFlags.A |= 0x4000;
+#else
+			outer->ObjectFlags |= 0x4000;
+#endif
 	}
 
 	UObject* ConstructObject(UClass* Class, UObject* Outer, const FName Name, const unsigned int SetFlags,

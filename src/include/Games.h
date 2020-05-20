@@ -4,6 +4,8 @@
 #include <map>
 #include "MemorySignature.h"
 
+#pragma region Borderlands 2 / TPS
+
 static std::map<std::string, MemorySignature> bl2_signatures{{
 	{
 	"GNames", {
@@ -73,6 +75,39 @@ static std::map<std::string, MemorySignature> bl2_signatures{{
 	}}
 }};
 
+static std::map<std::string, MemorySignature> tps_signatures{ {
+	{
+	"GNames", {
+		"\x00\x00\x00\x00\x8B\x04\xB1\x5E\x5D\xC3\x8B\x15",
+		"????xxxxxxxx",
+		12
+	}},
+	{"GObjects", bl2_signatures["GObjects"]},
+	{"SetCommand", bl2_signatures["SetCommand"]},
+	{"ProcessEvent", bl2_signatures["ProcessEvent"]},
+	{"CallFunction", bl2_signatures["CallFunction"]},
+	{"FrameStep", bl2_signatures["FrameStep"]},
+	{"StaticConstructor", bl2_signatures["StaticConstructor"]},
+	{"LoadPackage", bl2_signatures["LoadPackage"]},
+	{"GMalloc", bl2_signatures["GMalloc"]},
+	{"FNameInit", bl2_signatures["FNameInit"]},
+	{"GetDefaultObject", bl2_signatures["GetDefaultObject"]},
+} };
+
+static std::map<std::string, std::string> bl2_object_map {
+	{"ConsoleObjectType", "WillowConsole"},
+	{"ConsoleObjectName", "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0"},
+	{"EngineObjectType", "WillowGameEngine"},
+	{"EngineObjectName", "Transient.WillowGameEngine"},
+	{"EngineFullName", "WillowGameEngine Transient.WillowGameEngine"},
+	{"PostRenderFunction", "WillowGame.WillowGameViewportClient.PostRender"}
+};
+
+#pragma endregion
+
+#pragma region Borderlands 3
+
+// TODO: Update these signs / possibly the object map...
 
 static std::map<std::string, MemorySignature> bl3_signatures{ {
 	{
@@ -144,44 +179,6 @@ static std::map<std::string, MemorySignature> bl3_signatures{ {
 	}},
 } };
 
-
-
-static std::map<std::string, MemorySignature> tps_signatures{ {
-	{
-	"GNames", {
-		"\x00\x00\x00\x00\x8B\x04\xB1\x5E\x5D\xC3\x8B\x15",
-		"????xxxxxxxx",
-		12
-	}},
-	{"GObjects", bl2_signatures["GObjects"]},
-	{"SetCommand", bl2_signatures["SetCommand"]},
-	{"ProcessEvent", bl2_signatures["ProcessEvent"]},
-	{"CallFunction", bl2_signatures["CallFunction"]},
-	{"FrameStep", bl2_signatures["FrameStep"]},
-	{"StaticConstructor", bl2_signatures["StaticConstructor"]},
-	{"LoadPackage", bl2_signatures["LoadPackage"]},
-	{"GMalloc", bl2_signatures["GMalloc"]},
-	{"FNameInit", bl2_signatures["FNameInit"]},
-	{"GetDefaultObject", bl2_signatures["GetDefaultObject"]},
-}};
-
-
-static std::map<std::string, std::map<std::string, MemorySignature>> game_signature_map{
-	{"Borderlands2", bl2_signatures},
-	{"BorderlandsPreSequel", tps_signatures},
-	{"Borderlands3", bl3_signatures}
-};
-
-static std::map<std::string, std::string> bl2_object_map{
-	{"ConsoleObjectType", "WillowConsole"},
-	{"ConsoleObjectName", "Transient.WillowGameEngine_0:WillowGameViewportClient_0.WillowConsole_0"},
-	{"EngineObjectType", "WillowGameEngine"},
-	{"EngineObjectName", "Transient.WillowGameEngine"},
-	{"EngineFullName", "WillowGameEngine Transient.WillowGameEngine"},
-	{"PostRenderFunction", "WillowGame.WillowGameViewportClient.PostRender"}
-};
-
-
 static std::map<std::string, std::string> bl3_object_map{
 	{"ConsoleObjectType", "Console"},
 	{"ConsoleObjectName", "/Script/Engine.Default__Console"},
@@ -191,9 +188,16 @@ static std::map<std::string, std::string> bl3_object_map{
 	{"PostRenderFunction", "/Script/Engine.HUD.ReceiveDrawHUD"}
 };
 
+#pragma endregion
 
 static std::map<std::string, std::map<std::string, std::string>> game_object_map{
 	{"Borderlands2", bl2_object_map},
 	{"BorderlandsPreSequel", bl2_object_map},
 	{"Borderlands3", bl3_object_map},
+};
+
+static std::map<std::string, std::map<std::string, MemorySignature>> game_signature_map{
+	{"Borderlands2", bl2_signatures},
+	{"BorderlandsPreSequel", tps_signatures},
+	{"Borderlands3", bl3_signatures}
 };
