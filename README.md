@@ -14,10 +14,12 @@ For PythonSDK to be able to interact with the game, you must add a few things to
 
 1. Quit the game if it is running.  
 
-2. Extract all of the contents of PythonSDK.zip into your `Borderlands 2\Binaries\Win32` directory.  
-If you are asked to overwrite any files, accept. This mod replaces (and functions the same as) c0dy's Plugin Loader.
+2. Extract all of the contents of the folder in the PythonSDK.zip into your `Borderlands 2\Binaries\Win32` directory, overwriting files if necessary.  
+   You want there to be a file `Win32\ddraw.dll`, *not* `Win32\PythonSDK\ddraw.dll`.  
 
-3. If you have installed an older version of the SDK, delete the old files. This includes `Win32\Plugins\PythonSDK.dll`
+3. If you have installed an older version of the SDK, delete any extra old files that weren't overwritten.
+
+4. Download and install [this](https://aka.ms/vs/16/release/vc_redist.x86.exe) Mircosoft Visual C++ Redistributable. Most of the time this will already be installed.
 
 ### Linux (SteamPlay/Proton and Wine)
 
