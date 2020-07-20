@@ -10,6 +10,8 @@
 #include "UnrealSDK.h"
 #include "logging.h"
 
+#pragma warning(disable: 4267)
+
 /*
 # ========================================================================================= #
 # Structs

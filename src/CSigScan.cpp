@@ -6,9 +6,9 @@
 #include "Exceptions.h"
 // Based off CSigScan from AlliedModders
 
-CSigScan::CSigScan(const wchar_t* moduleName)
+CSigScan::CSigScan(const wchar_t* moduleName = NULL)
 {
-	m_moduleHandle = GetModuleHandle(NULL);
+	m_moduleHandle = GetModuleHandle(moduleName);
 	if (m_moduleHandle == nullptr)
 	{
 		throw FatalSDKException(3000, Util::Format("Sigscan failed (GetModuleHandle returned NULL, Error = %d)",
@@ -18,13 +18,12 @@ CSigScan::CSigScan(const wchar_t* moduleName)
 	void* pAddr = m_moduleHandle;
 
 	MEMORY_BASIC_INFORMATION mem;
-
 	if (!VirtualQuery(pAddr, &mem, sizeof(mem)))
 	{
 		throw FatalSDKException(3001, Util::Format("Sigscan failed (VirtualQuery returned NULL, Error = %d)",
 			GetLastError()));
 	}
-
+	
 	m_pModuleBase = (char*)mem.AllocationBase;
 	if (m_pModuleBase == nullptr)
 	{
@@ -34,20 +33,20 @@ CSigScan::CSigScan(const wchar_t* moduleName)
 	IMAGE_DOS_HEADER* dos = (IMAGE_DOS_HEADER*)mem.AllocationBase;
 	IMAGE_NT_HEADERS* pe = (IMAGE_NT_HEADERS*)((unsigned long)dos + (unsigned long)dos->e_lfanew);
 
-	Logging::LogF("m_moduleHandle: %x\n", m_moduleHandle);
-	Logging::LogF("baseAddress: %x\n", mem.BaseAddress);
-	Logging::LogF("%x\n", dos);
-	Logging::LogF("%x\n", dos->e_lfanew);
-	Logging::LogF("%x\n", (IMAGE_NT_HEADERS*)((unsigned long)dos + (unsigned long)dos->e_lfanew));
-	Logging::LogF("Module base %x\n", m_pModuleBase);
+	Logging::LogF("Module Handle: %X\n", m_moduleHandle);
+	Logging::LogF("Base Address: 0x%X\n", mem.BaseAddress);
+	Logging::LogF("IMAGE_DOS_HEADER: 0x%X\n", dos);
+	Logging::LogF("NEW EXE HEADER: 0x%X\n", dos->e_lfanew);
+	Logging::LogF("PE HEADER POINTER: 0x%X\n", (IMAGE_NT_HEADERS*)((unsigned long)dos + (unsigned long)dos->e_lfanew));
+	Logging::LogF("Module Base: 0x%x\n", m_pModuleBase);
 
 #ifdef ENVIRONMENT64
 	m_moduleLen = 0x21000000;
-	Logging::LogF("Module len %x\n", m_moduleLen);
 #else
 	m_moduleLen = (size_t)pe->OptionalHeader.SizeOfImage;
-	Logging::LogF("Module len %x\n", m_moduleLen);
 #endif
+	Logging::LogF("Module Length: %x\n", m_moduleLen);
+
 }
 
 void* CSigScan::Scan(const MemorySignature& sigStruct)
@@ -83,6 +82,6 @@ void* CSigScan::Scan(const char* sig, const char* mask, int sigLength)
 
 		pData++;
 	}
-	Logging::LogF("Sigscan failed (Signature not found, Mask = %s)\n", Util::StringToHex(sig, sigLength).c_str());
+	Logging::LogF("Sigscan failed (Signature not found, Signature = %s)\n", Util::SigPatternToHex(sig, mask, sigLength).c_str());
 	return nullptr;
 }

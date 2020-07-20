@@ -18,6 +18,7 @@ namespace Util
 	void Popup(const std::wstring& StrName, const std::wstring& StrText);
 	void CloseGame();
 	std::string StringToHex(const char* Input, size_t Len);
+	std::string SigPatternToHex(const char* Input, const char* Mask, const size_t Len);
 
 	void Initialize();
 	const char* ServerPath();

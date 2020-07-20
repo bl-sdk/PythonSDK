@@ -130,6 +130,29 @@ namespace Util
 		return output;
 	}
 
+	std::string SigPatternToHex(const char* Input, const char* Mask, const size_t Len) {
+		static const char* const lut = "0123456789ABCDEF";
+		std::string output;
+		size_t mI = 0;
+		output.reserve((2 * Len) + Len);
+		for (size_t i = 0; i < Len; ++i ) {
+			if (Mask[i] == 'x') {
+				const unsigned char c = Input[i];
+				output.push_back(lut[c >> 4]);
+				output.push_back(lut[c & 15]);
+				output.push_back(' ');
+			}
+			else {
+				output.push_back('?');
+				output.push_back('?');
+				output.push_back(' ');
+			}
+		}
+
+		output.resize(output.size() - 1); // Remove that last space
+		return output;
+	}
+
 	int WaitForModules(std::int32_t Timeout, const std::initializer_list<std::wstring>& Modules)
 	{
 		bool signaled[32] = {false};

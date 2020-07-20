@@ -112,9 +112,15 @@ static std::map<std::string, std::string> bl2_object_map {
 static std::map<std::string, MemorySignature> bl3_signatures{ {
 	{
 	"GNames", {
+		// 80 00 ?? ?? 00 00 00 00 40 00 ?? ?? 00 00 00 00 01
 		"\x80\x00\x00\x00\x00\x00\x00\x00\x40\x00\x00\x00\x00\x00\x00\x00\x01",
 		"xx??xxxxxx??xxxxx",
 		17
+
+		//  00 00 ?? ?? 00 00 00 00 00 00 ?? 03 00 00 00 00 00 00 ?? 16 00 00 00 00 00 00 ?? 05
+		//"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x03\x00\x00\x00\x00\x00\x00\x00\x16\x00\x00\x00\x00\x00\x00\x00\x05",
+		//"xx??xxxxxx?xxxxxxx?xxxxxxx?x",
+		//28,
 	}},
 	{
 	"NewObject", { //NewObject(UObject* Outer = (UObject*)GetTransientPackage())
@@ -130,9 +136,10 @@ static std::map<std::string, MemorySignature> bl3_signatures{ {
 	}},
 	{
 	"GObjects", {
-		"\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x21\x00\x00\x00\x00\x00\x21",
-		"????xxxxxxxxxxxxxxxx???xx",
-		25
+		"\x00\x00\x6E\x00\x69\x00\x00\x00\x63\x00\x6B\x00\x2E\x00\x69\x00\x6E\x00\x69\x00\x00\x00\x00\x00\x00\x00\x00\x1F\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00",
+		// 00 00 6E 00 69 00 00 00 63 00 6B 00 2E 00 69 00 6E 00 69 00 00 00 00 00 00 00 ?? 
+		  "xxxxxxxxxxxxxxxxxxxxxxxxxx?xxxxxxxxxxxxxxxxxxxxx",
+		48
 	}},
 
 	{

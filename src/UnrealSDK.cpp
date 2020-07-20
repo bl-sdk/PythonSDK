@@ -207,7 +207,7 @@ namespace UnrealSDK
 
 		pGetDefaultObject = reinterpret_cast<tGetDefaultObject>(sigscan.Scan(Signatures::GetDefaultObject));
 		Logging::LogF("[Internal] GetDefaultObject = 0x%p\n", pGetDefaultObject);
-		if (exeName != "Borderlands3.exe") {
+		if (exeName != "Borderlands3.exe") { // Borderlands 3 doesn't have a `SET` command implemented at all, it got cooked out
 			try
 			{
 				void* SetCommand = sigscan.Scan(Signatures::SetCommand);
