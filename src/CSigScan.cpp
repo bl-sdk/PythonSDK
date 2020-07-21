@@ -4,6 +4,9 @@
 #include "CSigScan.h"
 #include "Util.h"
 #include "Exceptions.h"
+
+#include <cstring>
+#include <Psapi.h>
 // Based off CSigScan from AlliedModders
 
 CSigScan::CSigScan(const wchar_t* moduleName = NULL)
@@ -40,7 +43,7 @@ CSigScan::CSigScan(const wchar_t* moduleName = NULL)
 	Logging::LogF("PE HEADER POINTER: 0x%X\n", (IMAGE_NT_HEADERS*)((unsigned long)dos + (unsigned long)dos->e_lfanew));
 	Logging::LogF("Module Base: 0x%x\n", m_pModuleBase);
 
-#ifdef ENVIRONMENT64
+#ifdef UE4
 	m_moduleLen = 0x21000000;
 #else
 	m_moduleLen = (size_t)pe->OptionalHeader.SizeOfImage;
@@ -84,4 +87,39 @@ void* CSigScan::Scan(const char* sig, const char* mask, int sigLength)
 	}
 	Logging::LogF("Sigscan failed (Signature not found, Signature = %s)\n", Util::SigPatternToHex(sig, mask, sigLength).c_str());
 	return nullptr;
+}
+
+
+uintptr_t CSigScan::FindPattern(HMODULE module, const unsigned char* pattern, const char* mask)
+{
+	MODULEINFO info = { };
+	GetModuleInformation(GetCurrentProcess(), module, &info, sizeof(MODULEINFO));
+
+	return FindPattern(reinterpret_cast<uintptr_t>(module), info.SizeOfImage, pattern, mask);
+}
+
+uintptr_t CSigScan::FindPattern(uintptr_t start, size_t length, const unsigned char* pattern, const char* mask)
+{
+	size_t pos = 0;
+	auto maskLength = std::strlen(mask) - 1;
+
+	auto startAdress = start;
+	for (auto it = startAdress; it < startAdress + length; ++it)
+	{
+		if (*reinterpret_cast<unsigned char*>(it) == pattern[pos] || mask[pos] == '?')
+		{
+			if (mask[pos + 1] == '\0')
+			{
+				return it - maskLength;
+			}
+
+			pos++;
+		}
+		else
+		{
+			pos = 0;
+		}
+	}
+
+	return -1;
 }

@@ -385,7 +385,7 @@ void FHelper::SetProperty(class UProperty* Prop, const py::object& val)
 		                                  Prop->GetFullName().c_str()).c_str());
 }
 
-#ifdef ENVIRONMENT64
+#ifdef UE4
 FChunkedFixedUObjectArray* UObject::GObjects()
 {
 	const auto objectArray = static_cast<FChunkedFixedUObjectArray*>(UnrealSDK::pGObjects);

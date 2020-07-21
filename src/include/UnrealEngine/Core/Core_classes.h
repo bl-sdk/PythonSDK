@@ -45,135 +45,6 @@
 
 /*
 # ========================================================================================= #
-# Enums
-# ========================================================================================= #
-*/
-
-// Enum Core.Object.EDebugBreakType
-/*enum EDebugBreakType
-{
-	DEBUGGER_NativeOnly                                = 0,
-	DEBUGGER_ScriptOnly                                = 1,
-	DEBUGGER_Both                                      = 2,
-	DEBUGGER_MAX                                       = 3
-};*/
-
-// Enum Core.Object.EAutomatedRunResult
-/*enum EAutomatedRunResult
-{
-	ARR_Unknown                                        = 0,
-	ARR_OOM                                            = 1,
-	ARR_Passed                                         = 2,
-	ARR_MAX                                            = 3
-};*/
-
-// Enum Core.Object.EAspectRatioAxisConstraint
-/*enum EAspectRatioAxisConstraint
-{
-	AspectRatio_MaintainYFOV                           = 0,
-	AspectRatio_MaintainXFOV                           = 1,
-	AspectRatio_MajorAxisFOV                           = 2,
-	AspectRatio_MAX                                    = 3
-};*/
-
-// Enum Core.Object.EInterpCurveMode
-/*enum EInterpCurveMode
-{
-	CIM_Linear                                         = 0,
-	CIM_CurveAuto                                      = 1,
-	CIM_Constant                                       = 2,
-	CIM_CurveUser                                      = 3,
-	CIM_CurveBreak                                     = 4,
-	CIM_CurveAutoClamped                               = 5,
-	CIM_MAX                                            = 6
-};*/
-
-// Enum Core.Object.EInterpMethodType
-/*enum EInterpMethodType
-{
-	IMT_UseFixedTangentEvalAndNewAutoTangents          = 0,
-	IMT_UseFixedTangentEval                            = 1,
-	IMT_UseBrokenTangentEval                           = 2,
-	IMT_MAX                                            = 3
-};*/
-
-// Enum Core.Object.EAxis
-/*enum EAxis
-{
-	AXIS_NONE                                          = 0,
-	AXIS_X                                             = 1,
-	AXIS_Y                                             = 2,
-	AXIS_BLANK                                         = 3,
-	AXIS_Z                                             = 4,
-	AXIS_MAX                                           = 5
-};*/
-
-// Enum Core.Object.ETickingGroup
-/*enum ETickingGroup
-{
-	TG_PreAsyncWork                                    = 0,
-	TG_DuringAsyncWork                                 = 1,
-	TG_PostAsyncWork                                   = 2,
-	TG_PostUpdateWork                                  = 3,
-	TG_EffectsUpdateWork                               = 4,
-	TG_MAX                                             = 5
-};*/
-
-// Enum Core.Object.EInputEvent
-/*enum EInputEvent
-{
-	IE_Pressed                                         = 0,
-	IE_Released                                        = 1,
-	IE_Repeat                                          = 2,
-	IE_DoubleClick                                     = 3,
-	IE_Axis                                            = 4,
-	IE_MAX                                             = 5
-};*/
-
-// Enum Core.Object.AlphaBlendType
-/*enum AlphaBlendType
-{
-	ABT_Linear                                         = 0,
-	ABT_Cubic                                          = 1,
-	ABT_Sinusoidal                                     = 2,
-	ABT_EaseInOutExponent2                             = 3,
-	ABT_EaseInOutExponent3                             = 4,
-	ABT_EaseInOutExponent4                             = 5,
-	ABT_EaseInOutExponent5                             = 6,
-	ABT_MAX                                            = 7
-};*/
-
-// Enum Core.AttributeModifier.EModifierType
-/*enum EModifierType
-{
-	MT_Scale                                           = 0,
-	MT_PreAdd                                          = 1,
-	MT_PostAdd                                         = 2,
-	MT_MAX                                             = 3
-};*/
-
-// Enum Core.DistributionVector.EDistributionVectorLockFlags
-/*enum EDistributionVectorLockFlags
-{
-	EDVLF_None                                         = 0,
-	EDVLF_XY                                           = 1,
-	EDVLF_XZ                                           = 2,
-	EDVLF_YZ                                           = 3,
-	EDVLF_XYZ                                          = 4,
-	EDVLF_MAX                                          = 5
-};*/
-
-// Enum Core.DistributionVector.EDistributionVectorMirrorFlags
-/*enum EDistributionVectorMirrorFlags
-{
-	EDVMF_Same                                         = 0,
-	EDVMF_Different                                    = 1,
-	EDVMF_Mirror                                       = 2,
-	EDVMF_MAX                                          = 3
-};*/
-
-/*
-# ========================================================================================= #
 # Classes
 # ========================================================================================= #
 */
@@ -265,11 +136,21 @@ struct FChunkedFixedUObjectArray
 	}
 };
 
+class FUObjectArray
+{
+public:
+	int ObjFirstGCIndex;
+	int ObjLastNonGCIndex;
+	int MaxObjectsNotConsideredByGC;
+	bool OpenForDisregardForGC;
+	FChunkedFixedUObjectArray ObjObjects;
+};
+
 // 0x003C
 class UObject : FHelper
 {
 public:
-#ifdef ENVIRONMENT64
+#ifdef UE4
 	// 0x28
 	//void*												Vtable;
 	int													ObjectFlags;
@@ -653,7 +534,7 @@ public:
 
 	inline void ProcessEvent(class UFunction* function, void* parms)
 	{
-#ifdef ENVIRONMENT64
+#ifdef UE4
 		return GetVFunction<void(*)(UObject*, class UFunction*, void*)>(this, 65)(this, function, parms);
 #else
 		return GetVFunction<void(*)(UObject*, class UFunction*, void*)>(this, 67)(this, function, parms);
@@ -757,18 +638,21 @@ public:
 class UStruct : public UField
 {
 public:
-#ifndef ENVIRONMENT64
+
+#ifndef UE4
 	unsigned char			UnknownData00[0x8];
 #endif
+
 	class UStruct*			SuperField;
 	class UField*			Children;
-#ifndef ENVIRONMENT64
-	unsigned short			PropertySize;
-	char					UnknownData01[0x3A];
-#else
+
+#ifdef UE4
 	int						PropertySize;
 	int						MinAlignment;
 	char					UnknownData01[0x40];
+#else
+	unsigned short			PropertySize;
+	char					UnknownData01[0x3A];
 #endif
 
 	UObject* FindChildByName(FName InName) const
@@ -796,7 +680,7 @@ public:
 class UFunction : public UStruct
 {
 public:
-#ifdef ENVIRONMENT64
+#ifdef UE4
 	int												FunctionFlags;
 	short                                           RepOffset;
 	char                                            NumParams;

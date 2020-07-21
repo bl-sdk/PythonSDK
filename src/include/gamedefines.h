@@ -64,6 +64,18 @@ public:
 	}
 };
 
+struct FNameEntryHeader
+{
+	uint16_t bIsWide : 1;
+#if WITH_CASE_PRESERVING_NAME
+	uint16 Len : 15;
+#else
+	static constexpr uint32_t ProbeHashBits = 5;
+	uint16_t LowercaseProbeHash : ProbeHashBits;
+	uint16_t Len : 10;
+#endif
+};
+
 class FNameEntry
 {
 public:
@@ -93,7 +105,6 @@ public:
 	{
 		return AnsiName;
 	}
-
 	inline const wchar_t* GetWideName() const
 	{
 		return WideName;
@@ -159,11 +170,13 @@ public:
 			((UnrealSDK::tFNameInitNew)(UnrealSDK::pFNameInit))(this, (wchar_t *)Util::Widen(FindName).c_str(), number, 1, 1);
 	}
 
-#ifdef ENVIRONMENT64
+#ifdef UE4
 	static FChunkedFNameEntryArray* Names()
 	{
-		return (FChunkedFNameEntryArray*)UnrealSDK::pGNames;
+
+		return *(FChunkedFNameEntryArray**)UnrealSDK::pGNames;
 	}
+
 #else
 	static TArray<FNameEntry*>* Names()
 	{

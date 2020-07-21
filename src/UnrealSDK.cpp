@@ -19,6 +19,7 @@ namespace UnrealSDK
 	bool logAllCalls = true;
 
 	void* pGObjects;
+
 	void* pGNames;
 	void* pGObjHash;
 	void* pGCRCTable;
@@ -123,6 +124,7 @@ namespace UnrealSDK
 			Stack.SkipFunction();
 			return;
 		}
+
 		Stack.Code = code;
 		oCallFunction(caller, Stack, Result, Function);
 	}
@@ -155,30 +157,47 @@ namespace UnrealSDK
 		Logging::LogF("Loaded object map\n");
 		CSigScan sigscan(Util::Widen(exeName + ".exe").c_str());
 
-		Logging::LogF("Loading sigs\n");
+		Logging::LogF("Loading Sigs...\n");
 		Signatures::InitSignatures(exeName);
-		Logging::LogF("Sigs loaded\n");
+		Logging::LogF("Sigs Loaded\n");
 
+#ifdef UE4
+			// UE4 has a different setup & patterns for the GNames / GObjects, they're now chunked up and not just a standard TArray<UObject*>*
+
+			Logging::LogF("\n\nInitializing UE4 SDK...\n");
+			auto addy = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::GObjects.Sig, Signatures::GObjects.Mask);
+			auto x = (FUObjectArray*)(0x140000000 + (0x00fffffff & (addy + *(DWORD*)(addy + 0x3) + 0x7)));
+
+			pGObjects = (void*)(&(x->ObjObjects));
+
+			Logging::LogF("[Internal] FUObjectArray = 0x%p\n", x);
+			Logging::LogF("[Internal] GObjects = 0x%p\n", x->ObjObjects.Objects);
+			Logging::LogF("[Debug] Total Objects: %d\n", UObject::GObjects()->Count);
+
+			
+			auto addy2 = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::GNames.Sig, Signatures::GNames.Mask);
+			auto y = (*(FChunkedFNameEntryArray**)(addy2 + *(DWORD*)(addy2 + 0xB) + 0xF));
+			pGNames = (void***)(y->Objects);
+
+			Logging::LogF("[Internal] TNameEntryArray = 0x%p\n", y);
+			Logging::LogF("[Internal] GNames = 0x%p\n", pGNames);
+
+			Logging::LogF("[Debug] Names = 0x%p", *(FChunkedFNameEntryArray**)UnrealSDK::pGNames);
+
+#else 
 		void*** tempGObjects = (void***)sigscan.Scan(Signatures::GObjects);
-		if (tempGObjects != nullptr) {
-#ifdef ENVIRONMENT64
-			pGObjects = tempGObjects;
-#else
+		if (tempGOBjects != nullptr) {
 			pGObjects = *tempGObjects;
-#endif
 			Logging::LogF("[Internal] GObjects = 0x%p\n", pGObjects);
 		}
 
 		void*** tempGNames = (void***)sigscan.Scan(Signatures::GNames);
 		if (tempGNames != nullptr) {
-
-#ifdef ENVIRONMENT64
-			pGNames = tempGNames;
-#else
 			pGNames = *tempGNames;
-#endif
 			Logging::LogF("[Internal] GNames = 0x%p\n", pGNames);
 		}
+#endif
+		__debugbreak();
 
 		pProcessEvent = reinterpret_cast<tProcessEvent>(sigscan.Scan(Signatures::ProcessEvent));
 		Logging::LogF("[Internal] UObject::ProcessEvent() = 0x%p\n", pProcessEvent);
@@ -186,6 +205,7 @@ namespace UnrealSDK
 		pCallFunction = reinterpret_cast<tCallFunction>(sigscan.Scan(Signatures::CallFunction));
 		Logging::LogF("[Internal] UObject::CallFunction() = 0x%p\n", pCallFunction);
 
+		/*
 		pFrameStep = reinterpret_cast<tFrameStep>(sigscan.Scan(Signatures::FrameStep));
 		Logging::LogF("[Internal] FFrame::Step() = 0x%p\n", pFrameStep);
 
@@ -227,6 +247,8 @@ namespace UnrealSDK
 			}
 			Logging::LogF("Enabled SET commands\n");
 		}
+		*/
+
 		MH_Initialize();
 
 		if (pProcessEvent != nullptr) {
@@ -245,6 +267,7 @@ namespace UnrealSDK
 			MH_EnableHook((PVOID&)pCallFunction);
 			Logging::LogF("Hooked CallFunction\n");
 		}
+		
 	}
 
 	void InitializePython()
@@ -322,7 +345,7 @@ namespace UnrealSDK
 	void Initialize()
 	{
 		Logging::SetLoggingLevel("DEBUG");
-		gHookManager = new CHookManager("EngineHooks");
+		//gHookManager = new CHookManager("EngineHooks");
 		hookGame();
 
 		//for (int x = 0; x < UObject::GObjects()->Count; x++) {
@@ -337,7 +360,7 @@ namespace UnrealSDK
 		//	//Logging::LogF("%x\n", UObject::GObjects()->Get(x));
 		//}
 
-		gHookManager->Register("Engine.Console.Initialized", "StartupSDK", GameReady);
+		//gHookManager->Register("Engine.Console.Initialized", "StartupSDK", GameReady);
 	}
 
 	// This is called when the process is closing
@@ -360,10 +383,10 @@ namespace UnrealSDK
 			{
 				UObject* Object = UObject::GObjects()->Get(i);
 				if (Object->GetPackageObject() == result)
-#ifndef ENVIRONMENT64
-					Object->ObjectFlags.A |= 0x4000;
-#else
+#ifdef UE4
 					Object->ObjectFlags |= 0x4000;
+#else
+					Object->ObjectFlags.A |= 0x4000;
 #endif
 			}
 		}
@@ -372,10 +395,10 @@ namespace UnrealSDK
 	void KeepAlive(UObject* Obj)
 	{
 		for (UObject* outer = Obj; outer; outer = outer->Outer)
-#ifndef ENVIRONMENT64
-					outer->ObjectFlags.A |= 0x4000;
-#else
+#ifdef UE4
 			outer->ObjectFlags |= 0x4000;
+#else
+			outer->ObjectFlags.A |= 0x4000;
 #endif
 	}
 
