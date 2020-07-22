@@ -177,12 +177,10 @@ namespace UnrealSDK
 			
 			auto addy2 = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::GNames.Sig, Signatures::GNames.Mask);
 			auto y = (*(FChunkedFNameEntryArray**)(addy2 + *(DWORD*)(addy2 + 0xB) + 0xF));
-			pGNames = (void***)(y->Objects);
+			pGNames = (void***)(y);
 
-			Logging::LogF("[Internal] TNameEntryArray = 0x%p\n", y);
-			Logging::LogF("[Internal] GNames = 0x%p\n", pGNames);
-
-			Logging::LogF("[Debug] Names = 0x%p", *(FChunkedFNameEntryArray**)UnrealSDK::pGNames);
+			Logging::LogF("[Internal] FChunkedFNameEntryArray = 0x%p\n", y);
+			Logging::LogF("[Internal] GNames = 0x%p\n", (void***)(y->Objects) );
 
 #else 
 		void*** tempGObjects = (void***)sigscan.Scan(Signatures::GObjects);
@@ -197,7 +195,6 @@ namespace UnrealSDK
 			Logging::LogF("[Internal] GNames = 0x%p\n", pGNames);
 		}
 #endif
-		__debugbreak();
 
 		pProcessEvent = reinterpret_cast<tProcessEvent>(sigscan.Scan(Signatures::ProcessEvent));
 		Logging::LogF("[Internal] UObject::ProcessEvent() = 0x%p\n", pProcessEvent);
