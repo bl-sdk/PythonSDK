@@ -3,7 +3,6 @@
 #include "Logging.h"
 #include "Settings.h"
 #include "Util.h"
-#include "UnrealSDK.h"
 #include <string>
 #include <cstdlib>
 

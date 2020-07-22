@@ -423,20 +423,20 @@ std::string UObject::GetObjectName()
 {
 	std::stack<UObject*> parents{};
 
-	Logging::LogF("Getting parents\n");
+	// Logging::LogF("Getting parents\n");
 	for (auto current = this; current; current = current->Outer) {
-		Logging::LogF("Got parent %p\n", current);
+		// Logging::LogF("Got parent %p\n", current);
 		parents.push(current);
 	}
-	Logging::LogF("Got Parents\n");
+	// Logging::LogF("Got Parents\n");
 
 	std::string output{};
 
 	while (!parents.empty())
 	{
-		Logging::LogF("Getting Name\n");
+		// Logging::LogF("Getting Name\n");
 		output += parents.top()->GetName();
-		Logging::LogF("Current output: %s\n", output);
+		// Logging::LogF("Current output: %s\n", output);
 		parents.pop();
 		if (!parents.empty())
 			output += '.';

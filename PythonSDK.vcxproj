@@ -57,6 +57,7 @@
     <ClInclude Include="src\include\UnrealEngine\Engine\Engine_classes.h" />
     <ClInclude Include="src\include\UnrealEngine\Engine\Engine_f_structs.h" />
     <ClInclude Include="src\include\UnrealEngine\Engine\Engine_structs.h" />
+    <ClInclude Include="src\include\UnrealEngine\UE4Defines.h" />
     <ClInclude Include="src\include\UnrealSDK.h" />
     <ClInclude Include="src\include\CHookManager.h" />
     <ClInclude Include="src\include\CPythonInterface.h" />
@@ -97,6 +98,7 @@
     <ClInclude Include="src\include\stdafx.h" />
     <ClInclude Include="src\include\TypeMap.h" />
     <ClInclude Include="src\include\Util.h" />
+    <ClInclude Include="src\UnrealEngine\UE3Defines.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
@@ -253,8 +255,7 @@
       <WholeProgramOptimization>false</WholeProgramOptimization>
       <OmitFramePointers>false</OmitFramePointers>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
-      <MinimalRebuild>
-      </MinimalRebuild>
+      <MinimalRebuild>true</MinimalRebuild>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>

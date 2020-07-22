@@ -1,7 +1,6 @@
 #include <Windows.h>
 #include <stdio.h>
 #include "stdafx.h"
-#include "UnrealSdk.h"
 #include "Logging.h"
 #include "Util.h"
 #include "Exceptions.h"

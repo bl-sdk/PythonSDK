@@ -38,6 +38,8 @@
 #include <regex>
 #include <typeinfo>
 
+#include "UnrealSDK.h"
+
 #include <Shlwapi.h>
 #pragma comment (lib, "Shlwapi.lib")
 
@@ -50,7 +52,6 @@ namespace UnrealSDK
 	extern void* pNameHash;
 }
 
-#include "gamedefines.h"
 
 #include "logging.h"
 

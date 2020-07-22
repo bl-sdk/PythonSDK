@@ -1,5 +1,8 @@
 #pragma once
 #include "stdafx.h"
+
+#include "gamedefines.h"
+
 /*
 #############################################################################################
 # Borderlands 2 (1.7) SDK

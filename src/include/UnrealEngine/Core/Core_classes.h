@@ -3,6 +3,9 @@
 #define CORECLASSES_H
 
 #include "stdafx.h"
+
+#include "gamedefines.h"
+
 /*
 #############################################################################################
 # Borderlands 2 (1.7) SDK
@@ -957,7 +960,12 @@ public:
 };
 
 // 0x0100 (0x01D0 - 0x00D0)
+#ifdef UE4
+class UClass : public UStruct
+#else
 class UClass : public UState
+#endif
+
 {
 public:
 	unsigned long		bCooked : 1;

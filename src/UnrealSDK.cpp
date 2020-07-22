@@ -5,7 +5,6 @@
 #include "Signatures.h"
 #include "CHookManager.h"
 #include "Util.h"
-#include "UnrealSdk.h"
 #include <utility>
 #include "Logging.h"
 #include "Settings.h"
@@ -342,7 +341,7 @@ namespace UnrealSDK
 	void Initialize()
 	{
 		Logging::SetLoggingLevel("DEBUG");
-		//gHookManager = new CHookManager("EngineHooks");
+		gHookManager = new CHookManager("EngineHooks");
 		hookGame();
 
 		//for (int x = 0; x < UObject::GObjects()->Count; x++) {

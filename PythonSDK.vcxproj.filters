@@ -209,6 +209,12 @@
     <ClInclude Include="src\include\minhook\buffer.h">
       <Filter>Header Files\minhook</Filter>
     </ClInclude>
+    <ClInclude Include="src\include\UnrealEngine\UE4Defines.h">
+      <Filter>Header Files\UnrealEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\UnrealEngine\UE3Defines.h">
+      <Filter>Header Files\UnrealEngine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pydefs\_TArray.cpp">
