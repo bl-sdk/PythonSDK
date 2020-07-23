@@ -1,4 +1,6 @@
 #include "stdafx.h"
+
+#include "UnrealEngine/Core/Core_classes.h"
 // Using =======================================================================
 namespace py = pybind11;
 

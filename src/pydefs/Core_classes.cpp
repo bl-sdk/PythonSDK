@@ -80,6 +80,21 @@ void Export_pystes_Core_classes(py::module &m)
 		.def_readwrite("obj", &FFunction::obj, py::return_value_policy::reference)
 		.def_readwrite("func", &FFunction::func, py::return_value_policy::reference)
 		;
+#ifdef UE4
+	py::class_< UProperty, UField >(m, "UProperty")
+		.def_readwrite("ArrayDim", &UProperty::ArrayDim)
+		.def_readwrite("ElementSize", &UProperty::ElementSize)
+		.def_readwrite("PropertyFlags", &UProperty::PropertyFlags)
+		.def_readwrite("RepIndex", &UProperty::RepIndex)
+		.def_readwrite("BlueprintReplicationCondition", &UProperty::BlueprintReplicationCondition)
+		.def_readwrite("Offset_Internal", &UProperty::Offset_Internal)
+		.def_readwrite("RepNotifyFunc", &UProperty::RepNotifyFunc)
+		.def_readwrite("PropertyLinkNext", &UProperty::PropertyLinkNext)
+		.def_readwrite("NextRef", &UProperty::NextRef)
+		.def_readwrite("DestructorLinkNext", &UProperty::DestructorLinkNext)
+		.def_readwrite("PostConstructLinkNext", &UProperty::PostConstructLinkNext)
+		;
+#else
 	py::class_< UProperty, UField >(m, "UProperty")
 		.def_readwrite("ArrayDim", &UProperty::ArrayDim)
 		.def_readwrite("ElementSize", &UProperty::ElementSize)
@@ -87,6 +102,7 @@ void Export_pystes_Core_classes(py::module &m)
 		.def_readwrite("PropertyLinkNext", &UProperty::PropertyLinkNext, py::return_value_policy::reference)
 		.def_readwrite("Offset_Internal", &UProperty::Offset_Internal)
 		;
+#endif
 	py::class_< UStructProperty, UProperty >(m, "UStructProperty")
 		.def("GetStruct", &UStructProperty::GetStruct, py::return_value_policy::reference)
 		;

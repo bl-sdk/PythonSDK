@@ -66,7 +66,6 @@ bool CHookManager::ProcessHooks(const std::string& FuncName, const UObject* Call
 	return true;
 }
 
-
 bool CHookManager::HasHook(UObject* Caller, UFunction* Func)
 {
 	auto iHooks = hooks.find(Func->GetObjectName());
@@ -79,6 +78,7 @@ bool CHookManager::HasHook(UObject* Caller, UFunction* Func)
 bool CHookManager::ProcessHooks(UObject* Caller, FFrame& Stack, void* const Result, UFunction* Function)
 {
 	const auto iHooks = hooks.find(Function->GetObjectName());
+	const auto funcName = Caller->GetObjectName() + "." + Function->GetName();
 
 	// Even though we check in the next function, check here to avoid messing with the stack when we don't need to
 	if (iHooks != hooks.end() || hooks.find(Caller->GetObjectName() + "." + Function->GetName()) != hooks.end())

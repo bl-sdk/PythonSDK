@@ -162,9 +162,9 @@ static std::map<std::string, MemorySignature> bl3_signatures { {
 	}},
 	{
 	"FrameStep", {
-		"\x55\x8B\xEC\x8B\x41\x18\x0F\xB6\x10",
-		"xxxxxxxxx",
-		9
+		"\x48\x8B\x41\x20\x4C\x8B\xD2\x48\x8B\xD1",
+		"xxxxxxxxxx",
+		10
 	}},
 	{
 	"StaticConstructor", {

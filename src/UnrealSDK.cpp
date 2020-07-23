@@ -51,27 +51,26 @@ namespace UnrealSDK
 
 	void __fastcall hkProcessEvent(UObject* caller, UFunction* Function, void* Params)
 	{
-		Logging::LogF("ProcessEvent\n");
-		Logging::LogF("0x%p\n", caller);
-		Logging::LogF("0x%p\n", Function);
-		Logging::LogF("0x%p\n", Params);
-		Logging::LogF("0x%p\n", oProcessEvent);
+		//Logging::LogF("ProcessEvent\n");
+		//Logging::LogF("0x%p\n", caller);
+		//Logging::LogF("0x%p\n", Function);
+		//Logging::LogF("0x%p\n", Params);
+		//Logging::LogF("0x%p\n", oProcessEvent);
 		if (gInjectedCallNext)
 		{
 			gInjectedCallNext = false;
 			oProcessEvent(caller, Function, Params);
 			return;
 		}
-		Logging::LogF("1\n");
+		//Logging::LogF("1\n");
 
 		std::string functionName = Function->GetObjectName();
-		Logging::LogF("2\n");
+		//Logging::LogF("2\n");
 		if (logAllCalls)
 		{
-			std::string callerName = caller->GetFullName();
+			//std::string callerName = caller->GetFullName();
 
-			Logging::LogF("===== ProcessEvent called =====\npCaller Name = %s\npFunction Name = %s\n",
-				callerName.c_str(), functionName.c_str());
+			//Logging::LogF("===== ProcessEvent called =====\npCaller Name = %s\npFunction Name = %s\n", callerName.c_str(), functionName.c_str());
 		}
 
 		if (gHookManager->HasHook(caller, Function) && !gHookManager->ProcessHooks(
@@ -80,7 +79,7 @@ namespace UnrealSDK
 			// The engine hook manager told us not to pass this function to the engine
 			return;
 		}
-		Logging::LogF("3\n");
+		//Logging::LogF("3\n");
 
 		oProcessEvent(caller, Function, Params);
 	}
@@ -101,7 +100,12 @@ namespace UnrealSDK
 		}
 	}
 
+#ifdef UE4
+	// __fastcall isn't used in x64 (only x86), thus EDX is a pointless parameter
+	void hkCallFunction(UObject* caller, FFrame& Stack, void* const Result, UFunction* Function)
+#else
 	void __fastcall hkCallFunction(UObject* caller, void* edx, FFrame& Stack, void* const Result, UFunction* Function)
+#endif
 	{
 		Logging::LogF("CallFunction\n");
 		if (logAllCalls)
@@ -201,10 +205,11 @@ namespace UnrealSDK
 		pCallFunction = reinterpret_cast<tCallFunction>(sigscan.Scan(Signatures::CallFunction));
 		Logging::LogF("[Internal] UObject::CallFunction() = 0x%p\n", pCallFunction);
 
-		/*
+		
 		pFrameStep = reinterpret_cast<tFrameStep>(sigscan.Scan(Signatures::FrameStep));
 		Logging::LogF("[Internal] FFrame::Step() = 0x%p\n", pFrameStep);
 
+		// TODO: Add these sigs
 		pStaticConstructObject = reinterpret_cast<tStaticConstructObject>(sigscan.Scan(Signatures::StaticConstructor));
 		Logging::LogF("[Internal] UObject::StaticConstructObject() = 0x%p\n", pStaticConstructObject);
 
@@ -223,7 +228,8 @@ namespace UnrealSDK
 
 		pGetDefaultObject = reinterpret_cast<tGetDefaultObject>(sigscan.Scan(Signatures::GetDefaultObject));
 		Logging::LogF("[Internal] GetDefaultObject = 0x%p\n", pGetDefaultObject);
-		if (exeName != "Borderlands3.exe") { // Borderlands 3 doesn't have a `SET` command implemented at all, it got cooked out
+
+#ifndef UE4 // When generated properly, UE4 games don't actually have the SET command in them :(
 			try
 			{
 				void* SetCommand = sigscan.Scan(Signatures::SetCommand);
@@ -242,8 +248,8 @@ namespace UnrealSDK
 				Logging::LogF("Exception when enabling 'SET' commands: %d\n", e.what());
 			}
 			Logging::LogF("Enabled SET commands\n");
-		}
-		*/
+#endif
+		
 
 		MH_Initialize();
 
@@ -356,7 +362,14 @@ namespace UnrealSDK
 		//	//Logging::LogF("%x\n", UObject::GObjects()->Get(x));
 		//}
 
-		//gHookManager->Register("Engine.Console.Initialized", "StartupSDK", GameReady);
+#ifdef UE4 
+		// This function is used in BL3 near the map start up
+		// TODO: Make this more generalized per game, that's probably better to do instead of this approach
+		gHookManager->Register("/Script/OakGame.MenuMapMenuFlow.Start", "StartupSDK", GameReady);
+#else
+		gHookManager->Register("Engine.Console.Initialized", "StartupSDK", GameReady);
+#endif
+
 	}
 
 	// This is called when the process is closing

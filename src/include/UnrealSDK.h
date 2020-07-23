@@ -27,6 +27,7 @@ namespace UnrealSDK
 	typedef int (tUnrealEH)(unsigned int, struct _EXCEPTION_POINTERS*);
 	typedef void (__thiscall *tCallFunction)(UObject*, FFrame&, void*, UFunction*);
 	typedef void (__thiscall *tFrameStep)(FFrame*, UObject*, void*);
+
 	// http://api.unrealengine.com/INT/API/Runtime/CoreUObject/UObject/StaticConstructObject_Internal/index.html
 	typedef UObject* (*tStaticConstructObject)(UClass* Class, UObject* InOuter, FName Name, unsigned int SetFlags,
 	                                           unsigned int InternalSetFlags, UObject* InTemplate, FOutputDevice* Error,

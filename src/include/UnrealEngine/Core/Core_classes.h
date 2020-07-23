@@ -1,8 +1,18 @@
 #pragma once
+
 #ifndef CORECLASSES_H
 #define CORECLASSES_H
 
 #include "stdafx.h"
+
+#ifdef UE4
+
+#include "UnrealEngine/UE4Defines.h"
+
+#else
+
+#include "UnrealEngine/UE3Defines.h"
+#endif
 
 #include "gamedefines.h"
 
@@ -95,59 +105,7 @@ inline Fn GetVFunction(const void* instance, std::size_t index)
 }
 
 
-struct FUObjectItem
-{
-	// Pointer to the allocated object
-	class UObject* Object;
-	// Internal flags
-	int Flags;
-	// UObject Owner Cluster Index
-	int ClusterRootIndex;
-	// Weak Object Pointer Serial number associated with the object
-	int SerialNumber;
-	// Weak Object Pointer Serial number associated with the object
-	int Unknown;
-};
 
-struct FChunkedFixedUObjectArray
-{
-	enum
-	{
-		NumElementsPerChunk = 64 * 1024,
-	};
-
-	/** Master table to chunks of pointers **/
-	FUObjectItem** Objects;
-	/** If requested, a contiguous memory where all objects are allocated **/
-	FUObjectItem* PreAllocatedObjects;
-	/** Maximum number of elements **/
-	int Max;
-	/** Number of elements we currently have **/
-	int Count;
-	/** Maximum number of chunks **/
-	int MaxChunks;
-	/** Number of chunks we currently have **/
-	int NumChunks;
-
-	UObject* Get(size_t index) {
-		return Objects[index / NumElementsPerChunk][index % NumElementsPerChunk].Object;
-	}
-
-	UObject* operator()(size_t index)
-	{
-		return Get(index);
-	}
-};
-
-class FUObjectArray
-{
-public:
-	int ObjFirstGCIndex;
-	int ObjLastNonGCIndex;
-	int MaxObjectsNotConsideredByGC;
-	bool OpenForDisregardForGC;
-	FChunkedFixedUObjectArray ObjObjects;
-};
 
 // 0x003C
 class UObject : FHelper
@@ -618,12 +576,39 @@ class UInterface : public UObject {
 };
 
 // 0x0004 (0x0040 - 0x003C)
-class UField : public UObject
-{
+class UField : public UObject {
 public:
-	class UField*                                      Next;                                             		// NOT AUTO-GENERATED PROPERTY
+	class UField* Next;                                             		// NOT AUTO-GENERATED PROPERTY
 };
 
+// TODO: FIGURE OUT HOW TO SEPERATE THIS OUT INTO ITS OWN FILE
+// The compiler ends up complaining and completely hates me trying to do this :)
+#ifdef UE4
+class UProperty : public UField
+{
+public:
+	int						ArrayDim;
+	int						ElementSize;
+	EPropertyFlags			PropertyFlags;
+	unsigned short			RepIndex;
+
+	ELifetimeCondition BlueprintReplicationCondition;
+
+	// In memory variables (generated during Link()).
+	int		Offset_Internal;
+
+	FName		RepNotifyFunc;
+
+	/** In memory only: Linked list of properties from most-derived to base **/
+	UProperty* PropertyLinkNext;
+	/** In memory only: Linked list of object reference properties from most-derived to base **/
+	UProperty* NextRef;
+	/** In memory only: Linked list of properties requiring destruction. Note this does not include things that will be destroyed byt he native destructor **/
+	UProperty* DestructorLinkNext;
+	/** In memory only: Linked list of properties requiring post constructor initialization.**/
+	UProperty* PostConstructLinkNext;
+};
+#else
 // 0x0040 (0x0080 - 0x0040)
 class UProperty : public UField
 {
@@ -633,9 +618,10 @@ public:
 	unsigned int		PropertyFlags;
 	unsigned char		UnknownData00[0x14];
 	int					Offset_Internal;
-	UProperty*			PropertyLinkNext;
+	UProperty* PropertyLinkNext;
 	unsigned char		UnknownData01[0x18];
 };
+#endif
 
 // 0x004C (0x008C - 0x0040)
 class UStruct : public UField
@@ -1051,6 +1037,8 @@ struct FArray {
 
 typedef void* (__thiscall* tMalloc)(void***, unsigned long, unsigned int);
 typedef void(__thiscall* tFree)(void***, void*);
+
+
 
 #ifdef _MSC_VER
 #pragma pack ( pop )
