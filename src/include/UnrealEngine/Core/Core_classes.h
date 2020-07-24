@@ -167,7 +167,13 @@ public:
 	static struct FString GetLanguage();
 	int GetRandomOptionSumFrequency(TArray<float>* FreqList);
 	static int GetBuildChangelistNumber();
+
+#ifdef UE4
+	static FString GetEngineVersion();
+#else
 	static int GetEngineVersion();
+#endif
+
 	void GetSystemTime(int* Year, int* Month, int* DayOfWeek, int* Day, int* Hour, int* Min, int* Sec, int* MSec);
 	struct FString TimeStamp();
 	struct FVector TransformVectorByRotation(const struct FRotator& SourceRotation, const struct FVector& SourceVector, bool bInverse);

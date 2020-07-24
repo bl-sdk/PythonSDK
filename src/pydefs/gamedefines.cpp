@@ -23,7 +23,9 @@ void Export_pystes_gamedefines(py::module &m)
 	py::class_< FOutputDevice >(m, "FOutputDevice")
 		.def(py::init<>())
 		.def_readwrite("VfTable", &FOutputDevice::VfTable, py::return_value_policy::reference)
+		#ifndef UE4
 		.def_readwrite("bAllowSuppression", &FOutputDevice::bAllowSuppression, py::return_value_policy::reference)
+		#endif
 		.def_readwrite("bSuppressEventTag", &FOutputDevice::bSuppressEventTag, py::return_value_policy::reference)
 		.def_readwrite("bAutoEmitLineTerminator", &FOutputDevice::bAutoEmitLineTerminator, py::return_value_policy::reference)
 		;

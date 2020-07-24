@@ -160,6 +160,16 @@ struct FString : public TArray<wchar_t>
 			mbstowcs(this->Data, Other, this->Count);
 	};
 
+
+	char* AsString()
+	{
+		if (this->Data == nullptr || this->Count == 0)
+			return (char*)"";
+		char* output = (char*)calloc(this->Count + 1, sizeof(char));
+		wcstombs(output, this->Data, this->Count);
+		return output;
+	}
+
 	~FString()
 	{
 	};
@@ -177,14 +187,6 @@ struct FString : public TArray<wchar_t>
 		return *this;
 	};
 
-	char* AsString()
-	{
-		if (this->Data == nullptr || this->Count == 0)
-			return (char *)"";
-		char* output = (char *)calloc(this->Count + 1, sizeof(char));
-		wcstombs(output, this->Data, this->Count);
-		return output;
-	}
 };
 
 struct FScriptDelegate
@@ -198,14 +200,6 @@ struct FScriptInterface
 	UObject* ObjectPointer; //A pointer to a UObject that implements a native interface.
 	void* InterfacePointer;
 	//Pointer to the location of the interface object within the UObject referenced by ObjectPointer.
-};
-
-struct FOutputDevice
-{
-	void* VfTable;
-	unsigned long bAllowSuppression;
-	unsigned long bSuppressEventTag;
-	unsigned long bAutoEmitLineTerminator;
 };
 
 struct FWindowsViewport;
@@ -366,5 +360,11 @@ struct TWCharArray : TArray<void *> {
 	}
 };
 */
+
+struct KismetSystemLibrary_GetEngineVersion_Params
+{
+	FString                                                ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
 
 #endif

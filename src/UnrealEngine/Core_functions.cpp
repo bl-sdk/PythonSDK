@@ -198,11 +198,19 @@ int UObject::GetBuildChangelistNumber()
 // (Final, Defined, Iterator, Latent, PreOperator, Singular, Net, NetReliable, Simulated, Exec, Native, Event, Operator, Static, HasOptionalparams, Const, Public, Private, Protected, Delegate, NetServer, HasOutparams, HasDefaults, NetClient, DLLImport, K2Call, K2Override, K2Pure)
 // Parameters:
 // int                            ReturnValue                    (Parm, OutParm, ReturnParm)
-
+#ifdef UE4
+FString UObject::GetEngineVersion()
+#else
 int UObject::GetEngineVersion()
+#endif
 {
+#ifndef UE4
 	static auto fn = (UFunction*)UObject::Find("Function", "Core.Object.GetEngineVersion");
 	UObject_GetEngineVersion_Params params;
+#else
+	static auto fn = (UFunction*)UObject::Find("Function", "Engine.KismetSystemLibrary.GetEngineVersion");
+	KismetSystemLibrary_GetEngineVersion_Params params;
+#endif
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -906,6 +914,7 @@ bool UObject::AddModifier(class UAttributeModifier* mod, const struct FName& Att
 
 class UObject* UObject::FindObject(const struct FString& ObjectName, class UClass* ObjectClass)
 {
+#ifndef UE4
 	static UFunction* fn = NULL;
 	if (!fn)
 		for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
@@ -931,6 +940,19 @@ class UObject* UObject::FindObject(const struct FString& ObjectName, class UClas
 	fn->FunctionFlags = flags;
 
 	return params.ReturnValue;
+#else
+	char[Const]
+	for(size_t)
+	const char* objName = (ObjectClass->GetFullName()).append();
+	for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
+	{
+		UObject* Object = UObject::GObjects()->Get(i);
+		if (!strcmp(Object->GetFullName().c_str(), "Function Core.Object.FindObject"))
+			fn = (UFunction*)Object;
+	}
+
+
+#endif
 }
 
 

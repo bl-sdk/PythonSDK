@@ -16,4 +16,19 @@ public:
 	unsigned char		UnknownData01[0x18];
 };
 
+struct FOutputDevice
+{
+	void* VfTable;
+	unsigned long bAllowSuppression;
+	unsigned long bSuppressEventTag;
+	unsigned long bAutoEmitLineTerminator;
+};
+
+// Function Core.Object.GetEngineVersion
+struct UObject_GetEngineVersion_Params
+{
+	int                                                ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
+
+
 #endif

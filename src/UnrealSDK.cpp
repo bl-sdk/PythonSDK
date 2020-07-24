@@ -38,6 +38,7 @@ namespace UnrealSDK
 
 	CPythonInterface* Python;
 
+	
 	int EngineVersion = -1;
 	int ChangelistNumber = -1;
 
@@ -306,10 +307,16 @@ namespace UnrealSDK
 
 	void initializeGameVersions()
 	{
+#ifndef UE4
 		EngineVersion = UObject::GetEngineVersion();
 		ChangelistNumber = UObject::GetBuildChangelistNumber();
+		Logging::LogD("[Internal] Engine Version = %d, Build Changelist = %d\n", EngineVer, ChangelistNumber);
+#else
+		auto x = UObject::GetEngineVersion();
+#endif
 
-		Logging::LogD("[Internal] Engine Version = %d, Build Changelist = %d\n", EngineVersion, ChangelistNumber);
+
+		
 	}
 
 	// This function is used to ensure that everything gets called in the game thread once the game itself has loaded
