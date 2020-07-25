@@ -1,34 +1,32 @@
-import traceback
 import unrealsdk
+import importlib
+import os
+import traceback
 
-# Hack for backwards compatibility
-import sys
-sys.modules['bl2sdk'] = unrealsdk
+# Need to make sure this is all loaded and aliased up before loading any mods
+from Mods import ModMenu  # noqa
 
-""" Increment this version any time you update ANY core Python API """
-unrealsdk.PythonManagerVersion = 1
-
-
-from .ModManager import *
-from .OptionManager import *
-from .KeybindManager import *
-from .ModMenuManager import *
-from .SaveManager import *
-
-from .General import *
-
-import os, importlib
+unrealsdk.SDK_VERSION = 1
 
 
-for module in os.listdir(os.path.dirname(__file__)):
-    absolute_file = f"{os.path.dirname(__file__)}\\{module}"
-    if not os.path.isdir(absolute_file) or module == 'General':
+_full_traceback = False
+
+for name in os.listdir(os.path.dirname(__file__)):
+    absolute_path = os.path.join(os.path.dirname(__file__), name)
+    if not os.path.isdir(absolute_path):
         continue
+    if name.startswith(".") or name in ("__pycache__", "ModMenu"):
+        continue
+
     try:
-        importlib.import_module(f".{module}", "Mods")
-    except Exception as ex:
-        unrealsdk.Log(f"Failed to import mod: {module}")
-        tb = traceback.format_exc()
-        tb = tb.split('\n')
-        unrealsdk.Log("    " + tb[len(tb) - 3].strip())
-        unrealsdk.Log("    " + tb[len(tb) - 2].strip())
+        importlib.import_module(f".{name}", "Mods")
+    except Exception:
+        unrealsdk.Log(f"Failed to import mod: {name}")
+        tb = traceback.format_exc().split('\n')
+        if _full_traceback:
+            for line in tb:
+                unrealsdk.Log(line)
+        else:
+            unrealsdk.Log(f"    {tb[-4].strip()}")
+            unrealsdk.Log(f"    {tb[-3].strip()}")
+            unrealsdk.Log(f"    {tb[-2].strip()}")
