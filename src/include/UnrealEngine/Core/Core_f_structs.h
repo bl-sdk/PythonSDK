@@ -7,6 +7,7 @@
 
 #include "stdafx.h"
 
+#pragma warning(disable : 26495)
 
 #include "gamedefines.h"
 

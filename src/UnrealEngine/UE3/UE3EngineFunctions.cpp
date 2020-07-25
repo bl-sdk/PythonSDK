@@ -1,10 +1,13 @@
-// Borderlands 2 (1.8.5) SDK
+#pragma once
+#include "stdafx.h"
+
+#ifndef UE4
 
 #ifdef _MSC_VER
 #pragma pack(push, 0x4)
 #endif
 
-#include "stdafx.h"
+
 
 //---------------------------------------------------------------------------
 //Functions
@@ -118779,4 +118782,7 @@ void AWaterVolume::Touch(class AActor* Other, class UPrimitiveComponent* OtherCo
 
 #ifdef _MSC_VER
 #pragma pack(pop)
+#endif
+
+
 #endif

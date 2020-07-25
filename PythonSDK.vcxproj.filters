@@ -42,6 +42,12 @@
     <Filter Include="Header Files\minhook\hde">
       <UniqueIdentifier>{5744815d-9755-4d79-8933-1e15d83fa7e4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\UnrealEngine\UE4">
+      <UniqueIdentifier>{749fcd68-7b7c-4b73-8744-10830c62941f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\UnrealEngine\UE3">
+      <UniqueIdentifier>{2420570f-25bf-48e4-b9de-de6274d666c5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\include\CPythonInterface.h">
@@ -212,7 +218,7 @@
     <ClInclude Include="src\include\UnrealEngine\UE4Defines.h">
       <Filter>Header Files\UnrealEngine</Filter>
     </ClInclude>
-    <ClInclude Include="src\UnrealEngine\UE3Defines.h">
+    <ClInclude Include="src\include\UnrealEngine\UE3Defines.h">
       <Filter>Header Files\UnrealEngine</Filter>
     </ClInclude>
   </ItemGroup>
@@ -259,12 +265,6 @@
     <ClCompile Include="src\UnrealSDK.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\UnrealEngine\Core_functions.cpp">
-      <Filter>Source Files\UnrealEngine</Filter>
-    </ClCompile>
-    <ClCompile Include="src\UnrealEngine\Engine_functions.cpp">
-      <Filter>Source Files\UnrealEngine</Filter>
-    </ClCompile>
     <ClCompile Include="src\include\minhook\hde\hde64.cpp">
       <Filter>Source Files\minhook\hde</Filter>
     </ClCompile>
@@ -279,6 +279,18 @@
     </ClCompile>
     <ClCompile Include="src\include\minhook\trampoline.cpp">
       <Filter>Source Files\minhook</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UnrealEngine\UE3\UE3CoreFunctions.cpp">
+      <Filter>Source Files\UnrealEngine\UE3</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UnrealEngine\UE3\UE3EngineFunctions.cpp">
+      <Filter>Source Files\UnrealEngine\UE3</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UnrealEngine\UE4\UE4CoreFunctions.cpp">
+      <Filter>Source Files\UnrealEngine\UE4</Filter>
+    </ClCompile>
+    <ClCompile Include="src\UnrealEngine\UE4\UE4EngineFunctions.cpp">
+      <Filter>Source Files\UnrealEngine\UE4</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

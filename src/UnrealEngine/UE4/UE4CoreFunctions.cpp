@@ -1,48 +1,16 @@
 #pragma once
-
-#ifndef UE4
-
 #include "stdafx.h"
-/*
-#############################################################################################
-# Borderlands 2 (1.7) SDK
-# Generated with TheFeckless UE3 SDK Generator v1.4_Beta-Rev.51
-# ========================================================================================= #
-# File: Core_functions.h
-# ========================================================================================= #
-# Credits: uNrEaL, Tamimego, SystemFiles, R00T88, _silencer, the1domo, K@N@VEL
-# Thanks: HOOAH07, lowHertz
-# Forums: www.uc-forum.com, www.gamedeception.net
-#############################################################################################
-*/
+
+//---------------------------------------------------------------------------
+// Unreal Engine 4 Functions
+//---------------------------------------------------------------------------
+
+#ifdef UE4
+
 
 #ifdef _MSC_VER
 #pragma pack ( push, 0x4 )
 #endif
-
-/*
-# ========================================================================================= #
-# Global Static Class Pointers
-# ========================================================================================= #
-*/
-
-/*
-# ========================================================================================= #
-# Basic Functions
-# ========================================================================================= #
-*/
-
-/*
-# ========================================================================================= #
-# Functions
-# ========================================================================================= #
-*/
-
-// Function Core.Object.IsRelevantForDebugging
-// (Native, Public)
-// Parameters:
-// class UObject*                 Source                         (Parm)
-// bool                           ReturnValue                    (Parm, OutParm, ReturnParm)
 
 bool UObject::IsRelevantForDebugging(class UObject* Source)
 {
@@ -168,7 +136,7 @@ int UObject::GetRandomOptionSumFrequency(TArray<float>* FreqList)
 	fn->FunctionFlags = flags;
 
 	if (FreqList != nullptr)
-		* FreqList = params.FreqList;
+		*FreqList = params.FreqList;
 
 	return params.ReturnValue;
 }
@@ -201,19 +169,10 @@ int UObject::GetBuildChangelistNumber()
 // (Final, Defined, Iterator, Latent, PreOperator, Singular, Net, NetReliable, Simulated, Exec, Native, Event, Operator, Static, HasOptionalparams, Const, Public, Private, Protected, Delegate, NetServer, HasOutparams, HasDefaults, NetClient, DLLImport, K2Call, K2Override, K2Pure)
 // Parameters:
 // int                            ReturnValue                    (Parm, OutParm, ReturnParm)
-#ifdef UE4
 FString UObject::GetEngineVersion()
-#else
-int UObject::GetEngineVersion()
-#endif
 {
-#ifndef UE4
-	static auto fn = (UFunction*)UObject::Find("Function", "Core.Object.GetEngineVersion");
-	UObject_GetEngineVersion_Params params;
-#else
 	static auto fn = (UFunction*)UObject::Find("Function", "/Script/Engine.KismetSystemLibrary.GetEngineVersion");
 	KismetSystemLibrary_GetEngineVersion_Params params;
-#endif
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -253,21 +212,21 @@ void UObject::GetSystemTime(int* Year, int* Month, int* DayOfWeek, int* Day, int
 	fn->FunctionFlags = flags;
 
 	if (Year != nullptr)
-		* Year = params.Year;
+		*Year = params.Year;
 	if (Month != nullptr)
-		* Month = params.Month;
+		*Month = params.Month;
 	if (DayOfWeek != nullptr)
-		* DayOfWeek = params.DayOfWeek;
+		*DayOfWeek = params.DayOfWeek;
 	if (Day != nullptr)
-		* Day = params.Day;
+		*Day = params.Day;
 	if (Hour != nullptr)
-		* Hour = params.Hour;
+		*Hour = params.Hour;
 	if (Min != nullptr)
-		* Min = params.Min;
+		*Min = params.Min;
 	if (Sec != nullptr)
-		* Sec = params.Sec;
+		*Sec = params.Sec;
 	if (MSec != nullptr)
-		* MSec = params.MSec;
+		*MSec = params.MSec;
 }
 
 
@@ -508,7 +467,7 @@ void UObject::GetAngularDegreesFromRadians(struct FVector2D* OutFOV)
 	fn->FunctionFlags = flags;
 
 	if (OutFOV != nullptr)
-		* OutFOV = params.OutFOV;
+		*OutFOV = params.OutFOV;
 }
 
 
@@ -534,7 +493,7 @@ void UObject::GetAngularFromDotDist(const struct FVector2D& DotDist, struct FVec
 	fn->FunctionFlags = flags;
 
 	if (OutAngDist != nullptr)
-		* OutAngDist = params.OutAngDist;
+		*OutAngDist = params.OutAngDist;
 }
 
 
@@ -567,7 +526,7 @@ bool UObject::GetAngularDistance(const struct FVector& Direction, const struct F
 	fn->FunctionFlags = flags;
 
 	if (OutAngularDist != nullptr)
-		* OutAngularDist = params.OutAngularDist;
+		*OutAngularDist = params.OutAngularDist;
 
 	return params.ReturnValue;
 }
@@ -602,7 +561,7 @@ bool UObject::GetDotDistance(const struct FVector& Direction, const struct FVect
 	fn->FunctionFlags = flags;
 
 	if (OutDotDist != nullptr)
-		* OutDotDist = params.OutDotDist;
+		*OutDotDist = params.OutDotDist;
 
 	return params.ReturnValue;
 }
@@ -664,7 +623,7 @@ float UObject::PointDistToPlane(const struct FVector& Point, const struct FRotat
 	fn->FunctionFlags = flags;
 
 	if (out_ClosestPoint != nullptr)
-		* out_ClosestPoint = params.out_ClosestPoint;
+		*out_ClosestPoint = params.out_ClosestPoint;
 
 	return params.ReturnValue;
 }
@@ -696,7 +655,7 @@ float UObject::PointDistToSegment(const struct FVector& Point, const struct FVec
 	fn->FunctionFlags = flags;
 
 	if (OutClosestPoint != nullptr)
-		* OutClosestPoint = params.OutClosestPoint;
+		*OutClosestPoint = params.OutClosestPoint;
 
 	return params.ReturnValue;
 }
@@ -728,7 +687,7 @@ float UObject::PointDistToLine(const struct FVector& Point, const struct FVector
 	fn->FunctionFlags = flags;
 
 	if (OutClosestPoint != nullptr)
-		* OutClosestPoint = params.OutClosestPoint;
+		*OutClosestPoint = params.OutClosestPoint;
 
 	return params.ReturnValue;
 }
@@ -761,7 +720,7 @@ bool UObject::GetPerObjectConfigSections(class UClass* SearchClass, class UObjec
 	fn->FunctionFlags = flags;
 
 	if (out_SectionNames != nullptr)
-		* out_SectionNames = params.out_SectionNames;
+		*out_SectionNames = params.out_SectionNames;
 
 	return params.ReturnValue;
 }
@@ -917,38 +876,11 @@ bool UObject::AddModifier(class UAttributeModifier* mod, const struct FName& Att
 
 class UObject* UObject::FindObject(const struct FString& ObjectName, class UClass* ObjectClass)
 {
-#ifndef UE4
-	static UFunction* fn = NULL;
-	if (!fn)
-		for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
-		{
-			UObject* Object = UObject::GObjects()->Get(i);
-			if (!strcmp(Object->GetFullName().c_str(), "Function Core.Object.FindObject"))
-				fn = (UFunction*)Object;
-		}
-
-	if (!fn)
-		return nullptr;
-
-	UObject_FindObject_Params params;
-	params.ObjectName = ObjectName;
-	params.ObjectClass = ObjectClass;
-	params.ReturnValue = nullptr;
-
-	auto flags = fn->FunctionFlags;
-	fn->FunctionFlags |= 0x400;
-
-	static auto defaultObj = StaticClass()->CreateDefaultObject();
-	UnrealSDK::pProcessEvent(defaultObj, fn, &params);
-	fn->FunctionFlags = flags;
-
-	return params.ReturnValue;
-#else
 	static UObject* fn = NULL;
 
 	std::string obj;
 	std::wstring x;
-	x.append( Util::Widen(ObjectClass->GetName()) );
+	x.append(Util::Widen(ObjectClass->GetName()));
 	x.append(L" ");
 
 	for (size_t i = 0; i < ObjectName.Count; ++i) {
@@ -967,7 +899,6 @@ class UObject* UObject::FindObject(const struct FString& ObjectName, class UClas
 	}
 
 	return fn;
-#endif
 }
 
 
@@ -1685,7 +1616,7 @@ void UObject::SetNameBasedObjectPath(class UObject* Object, struct FNameBasedObj
 	fn->FunctionFlags = flags;
 
 	if (ObjectPath != nullptr)
-		* ObjectPath = params.ObjectPath;
+		*ObjectPath = params.ObjectPath;
 }
 
 
@@ -1711,7 +1642,7 @@ bool UObject::FlagHasBeenTrueFor(float TimeSeconds, struct FFlag* theFlag)
 	fn->FunctionFlags = flags;
 
 	if (theFlag != nullptr)
-		* theFlag = params.theFlag;
+		*theFlag = params.theFlag;
 
 	return params.ReturnValue;
 }
@@ -1737,7 +1668,7 @@ float UObject::FlagTimeRemaining(struct FFlag* theFlag)
 	fn->FunctionFlags = flags;
 
 	if (theFlag != nullptr)
-		* theFlag = params.theFlag;
+		*theFlag = params.theFlag;
 
 	return params.ReturnValue;
 }
@@ -1763,7 +1694,7 @@ float UObject::FlagTimeSinceRaised(struct FFlag* theFlag)
 	fn->FunctionFlags = flags;
 
 	if (theFlag != nullptr)
-		* theFlag = params.theFlag;
+		*theFlag = params.theFlag;
 
 	return params.ReturnValue;
 }
@@ -1792,7 +1723,7 @@ void UObject::FlagSetValue(bool bNewValue, bool bForceTimeStamp, struct FFlag* t
 	fn->FunctionFlags = flags;
 
 	if (theFlag != nullptr)
-		* theFlag = params.theFlag;
+		*theFlag = params.theFlag;
 }
 
 
@@ -1816,7 +1747,7 @@ bool UObject::FlagIsLowered(struct FFlag* theFlag)
 	fn->FunctionFlags = flags;
 
 	if (theFlag != nullptr)
-		* theFlag = params.theFlag;
+		*theFlag = params.theFlag;
 
 	return params.ReturnValue;
 }
@@ -1842,7 +1773,7 @@ bool UObject::FlagIsRaised(struct FFlag* theFlag)
 	fn->FunctionFlags = flags;
 
 	if (theFlag != nullptr)
-		* theFlag = params.theFlag;
+		*theFlag = params.theFlag;
 
 	return params.ReturnValue;
 }
@@ -1868,7 +1799,7 @@ bool UObject::FlagIsFalse(struct FFlag* theFlag)
 	fn->FunctionFlags = flags;
 
 	if (theFlag != nullptr)
-		* theFlag = params.theFlag;
+		*theFlag = params.theFlag;
 
 	return params.ReturnValue;
 }
@@ -1894,7 +1825,7 @@ bool UObject::FlagIsTrue(struct FFlag* theFlag)
 	fn->FunctionFlags = flags;
 
 	if (theFlag != nullptr)
-		* theFlag = params.theFlag;
+		*theFlag = params.theFlag;
 
 	return params.ReturnValue;
 }
@@ -1921,7 +1852,7 @@ void UObject::FlagSetTrueTimed(float Duration, struct FFlag* theFlag)
 	fn->FunctionFlags = flags;
 
 	if (theFlag != nullptr)
-		* theFlag = params.theFlag;
+		*theFlag = params.theFlag;
 }
 
 
@@ -1945,7 +1876,7 @@ float UObject::SmartVectTimeRemaining(struct FSmartVector* theSV)
 	fn->FunctionFlags = flags;
 
 	if (theSV != nullptr)
-		* theSV = params.theSV;
+		*theSV = params.theSV;
 
 	return params.ReturnValue;
 }
@@ -1971,7 +1902,7 @@ float UObject::SmartVectTimeSinceSet(struct FSmartVector* theSV)
 	fn->FunctionFlags = flags;
 
 	if (theSV != nullptr)
-		* theSV = params.theSV;
+		*theSV = params.theSV;
 
 	return params.ReturnValue;
 }
@@ -1998,9 +1929,9 @@ bool UObject::SmartVectGetVector(struct FSmartVector* theSV, struct FVector* Out
 	fn->FunctionFlags = flags;
 
 	if (theSV != nullptr)
-		* theSV = params.theSV;
+		*theSV = params.theSV;
 	if (OutVector != nullptr)
-		* OutVector = params.OutVector;
+		*OutVector = params.OutVector;
 
 	return params.ReturnValue;
 }
@@ -2026,7 +1957,7 @@ bool UObject::SmartVectIsSet(struct FSmartVector* theSV)
 	fn->FunctionFlags = flags;
 
 	if (theSV != nullptr)
-		* theSV = params.theSV;
+		*theSV = params.theSV;
 
 	return params.ReturnValue;
 }
@@ -2055,7 +1986,7 @@ void UObject::SmartVectSetVectorTimed(const struct FVector& InVector, float Dura
 	fn->FunctionFlags = flags;
 
 	if (theSV != nullptr)
-		* theSV = params.theSV;
+		*theSV = params.theSV;
 }
 
 
@@ -2079,7 +2010,7 @@ struct FVector UObject::SmartVectValue(struct FSmartVector* theSV)
 	fn->FunctionFlags = flags;
 
 	if (theSV != nullptr)
-		* theSV = params.theSV;
+		*theSV = params.theSV;
 
 	return params.ReturnValue;
 }
@@ -2104,7 +2035,7 @@ void UObject::SmartVectReset(struct FSmartVector* theSV)
 	fn->FunctionFlags = flags;
 
 	if (theSV != nullptr)
-		* theSV = params.theSV;
+		*theSV = params.theSV;
 }
 
 
@@ -2131,7 +2062,7 @@ void UObject::SmartVectSetVector(const struct FVector& InVector, bool bUpdateTim
 	fn->FunctionFlags = flags;
 
 	if (theSV != nullptr)
-		* theSV = params.theSV;
+		*theSV = params.theSV;
 }
 
 
@@ -2262,7 +2193,7 @@ struct FString UObject::GetHTMLColor(struct FColor* C)
 	fn->FunctionFlags = flags;
 
 	if (C != nullptr)
-		* C = params.C;
+		*C = params.C;
 
 	return params.ReturnValue;
 }
@@ -2638,7 +2569,7 @@ struct FVector2D UObject::SubtractEqual_Vector2DVector2D(const struct FVector2D&
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -2667,7 +2598,7 @@ struct FVector2D UObject::AddEqual_Vector2DVector2D(const struct FVector2D& B, s
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -2696,7 +2627,7 @@ struct FVector2D UObject::DivideEqual_Vector2DFloat(float B, struct FVector2D* A
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -2725,7 +2656,7 @@ struct FVector2D UObject::MultiplyEqual_Vector2DFloat(float B, struct FVector2D*
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -3656,7 +3587,7 @@ struct FString UObject::GuidToString(struct FGuid* G)
 	fn->FunctionFlags = flags;
 
 	if (G != nullptr)
-		* G = params.G;
+		*G = params.G;
 
 	return params.ReturnValue;
 }
@@ -3741,7 +3672,7 @@ void UObject::ParseStringIntoArray(const struct FString& BaseString, const struc
 	fn->FunctionFlags = flags;
 
 	if (Pieces != nullptr)
-		* Pieces = params.Pieces;
+		*Pieces = params.Pieces;
 }
 
 
@@ -3770,7 +3701,7 @@ void UObject::JoinArray(TArray<struct FString> StringArray, const struct FString
 	fn->FunctionFlags = flags;
 
 	if (out_Result != nullptr)
-		* out_Result = params.out_Result;
+		*out_Result = params.out_Result;
 }
 
 
@@ -4146,7 +4077,7 @@ struct FString UObject::SubtractEqual_StrStr(const struct FString& B, struct FSt
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -4175,7 +4106,7 @@ struct FString UObject::AtEqual_StrStr(const struct FString& B, struct FString* 
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -4204,7 +4135,7 @@ struct FString UObject::ConcatEqual_StrStr(const struct FString& B, struct FStri
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -4511,7 +4442,7 @@ bool UObject::SClampRotAxis(float DeltaTime, int ViewAxis, int MaxLimit, int Min
 	fn->FunctionFlags = flags;
 
 	if (out_DeltaViewAxis != nullptr)
-		* out_DeltaViewAxis = params.out_DeltaViewAxis;
+		*out_DeltaViewAxis = params.out_DeltaViewAxis;
 
 	return params.ReturnValue;
 }
@@ -4598,7 +4529,7 @@ void UObject::ClampRotAxis(int ViewAxis, int MaxLimit, int MinLimit, int* out_De
 	fn->FunctionFlags = flags;
 
 	if (out_DeltaViewAxis != nullptr)
-		* out_DeltaViewAxis = params.out_DeltaViewAxis;
+		*out_DeltaViewAxis = params.out_DeltaViewAxis;
 }
 
 
@@ -4900,11 +4831,11 @@ void UObject::GetUnAxes(const struct FRotator& A, struct FVector* X, struct FVec
 	fn->FunctionFlags = flags;
 
 	if (X != nullptr)
-		* X = params.X;
+		*X = params.X;
 	if (Y != nullptr)
-		* Y = params.Y;
+		*Y = params.Y;
 	if (Z != nullptr)
-		* Z = params.Z;
+		*Z = params.Z;
 }
 
 
@@ -4932,11 +4863,11 @@ void UObject::GetAxes(const struct FRotator& A, struct FVector* X, struct FVecto
 	fn->FunctionFlags = flags;
 
 	if (X != nullptr)
-		* X = params.X;
+		*X = params.X;
 	if (Y != nullptr)
-		* Y = params.Y;
+		*Y = params.Y;
 	if (Z != nullptr)
-		* Z = params.Z;
+		*Z = params.Z;
 }
 
 
@@ -4990,7 +4921,7 @@ struct FRotator UObject::SubtractEqual_RotatorRotator(const struct FRotator& B, 
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -5019,7 +4950,7 @@ struct FRotator UObject::AddEqual_RotatorRotator(const struct FRotator& B, struc
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -5102,7 +5033,7 @@ struct FRotator UObject::DivideEqual_RotatorFloat(float B, struct FRotator* A)
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -5131,7 +5062,7 @@ struct FRotator UObject::MultiplyEqual_RotatorFloat(float B, struct FRotator* A)
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -5723,7 +5654,7 @@ struct FVector UObject::SubtractEqual_VectorVector(const struct FVector& B, stru
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -5752,7 +5683,7 @@ struct FVector UObject::AddEqual_VectorVector(const struct FVector& B, struct FV
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -5781,7 +5712,7 @@ struct FVector UObject::DivideEqual_VectorFloat(float B, struct FVector* A)
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -5810,7 +5741,7 @@ struct FVector UObject::MultiplyEqual_VectorVector(const struct FVector& B, stru
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -5839,7 +5770,7 @@ struct FVector UObject::MultiplyEqual_VectorFloat(float B, struct FVector* A)
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -7000,7 +6931,7 @@ float UObject::SubtractEqual_FloatFloat(float B, float* A)
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -7029,7 +6960,7 @@ float UObject::AddEqual_FloatFloat(float B, float* A)
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -7058,7 +6989,7 @@ float UObject::DivideEqual_FloatFloat(float B, float* A)
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -7087,7 +7018,7 @@ float UObject::MultiplyEqual_FloatFloat(float B, float* A)
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -7623,7 +7554,7 @@ int UObject::SubtractSubtract_Int(int* A)
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -7650,7 +7581,7 @@ int UObject::AddAdd_Int(int* A)
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -7677,7 +7608,7 @@ int UObject::SubtractSubtract_PreInt(int* A)
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -7704,7 +7635,7 @@ int UObject::AddAdd_PreInt(int* A)
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -7733,7 +7664,7 @@ int UObject::SubtractEqual_IntInt(int B, int* A)
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -7762,7 +7693,7 @@ int UObject::AddEqual_IntInt(int B, int* A)
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -7791,7 +7722,7 @@ int UObject::DivideEqual_IntFloat(float B, int* A)
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -7820,7 +7751,7 @@ int UObject::MultiplyEqual_IntFloat(float B, int* A)
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -8356,7 +8287,7 @@ unsigned char UObject::SubtractSubtract_Byte(unsigned char* A)
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -8383,7 +8314,7 @@ unsigned char UObject::AddAdd_Byte(unsigned char* A)
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -8410,7 +8341,7 @@ unsigned char UObject::SubtractSubtract_PreByte(unsigned char* A)
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -8437,7 +8368,7 @@ unsigned char UObject::AddAdd_PreByte(unsigned char* A)
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -8466,7 +8397,7 @@ unsigned char UObject::SubtractEqual_ByteByte(unsigned char B, unsigned char* A)
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -8495,7 +8426,7 @@ unsigned char UObject::AddEqual_ByteByte(unsigned char B, unsigned char* A)
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -8524,7 +8455,7 @@ unsigned char UObject::DivideEqual_ByteByte(unsigned char B, unsigned char* A)
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -8553,7 +8484,7 @@ unsigned char UObject::MultiplyEqual_ByteFloat(float B, unsigned char* A)
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -8582,7 +8513,7 @@ unsigned char UObject::MultiplyEqual_ByteByte(unsigned char B, unsigned char* A)
 	fn->FunctionFlags = flags;
 
 	if (A != nullptr)
-		* A = params.A;
+		*A = params.A;
 
 	return params.ReturnValue;
 }
@@ -8845,7 +8776,6 @@ int UHelpCommandlet::Main(const struct FString Params)
 
 #ifdef _MSC_VER
 #pragma pack ( pop )
-
 #endif
 
 #endif

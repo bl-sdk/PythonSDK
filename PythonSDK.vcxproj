@@ -24,8 +24,10 @@
     <ClCompile Include="src\include\minhook\hde\hde64.cpp" />
     <ClCompile Include="src\include\minhook\hook.cpp" />
     <ClCompile Include="src\include\minhook\trampoline.cpp" />
-    <ClCompile Include="src\UnrealEngine\Core_functions.cpp" />
-    <ClCompile Include="src\UnrealEngine\Engine_functions.cpp" />
+    <ClCompile Include="src\UnrealEngine\UE3\UE3CoreFunctions.cpp" />
+    <ClCompile Include="src\UnrealEngine\UE3\UE3EngineFunctions.cpp" />
+    <ClCompile Include="src\UnrealEngine\UE4\UE4CoreFunctions.cpp" />
+    <ClCompile Include="src\UnrealEngine\UE4\UE4EngineFunctions.cpp" />
     <ClCompile Include="src\UnrealSDK.cpp" />
     <ClCompile Include="src\CHookManager.cpp" />
     <ClCompile Include="src\CoreExtensions.cpp" />
@@ -98,7 +100,7 @@
     <ClInclude Include="src\include\stdafx.h" />
     <ClInclude Include="src\include\TypeMap.h" />
     <ClInclude Include="src\include\Util.h" />
-    <ClInclude Include="src\UnrealEngine\UE3Defines.h" />
+    <ClInclude Include="src\include\UnrealEngine\UE3Defines.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

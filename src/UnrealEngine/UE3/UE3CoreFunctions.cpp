@@ -1,8 +1,9 @@
 #pragma once
+#include "stdafx.h"
 
 #ifndef UE4
 
-#include "stdafx.h"
+
 /*
 #############################################################################################
 # Borderlands 2 (1.7) SDK
@@ -201,19 +202,10 @@ int UObject::GetBuildChangelistNumber()
 // (Final, Defined, Iterator, Latent, PreOperator, Singular, Net, NetReliable, Simulated, Exec, Native, Event, Operator, Static, HasOptionalparams, Const, Public, Private, Protected, Delegate, NetServer, HasOutparams, HasDefaults, NetClient, DLLImport, K2Call, K2Override, K2Pure)
 // Parameters:
 // int                            ReturnValue                    (Parm, OutParm, ReturnParm)
-#ifdef UE4
-FString UObject::GetEngineVersion()
-#else
 int UObject::GetEngineVersion()
-#endif
 {
-#ifndef UE4
 	static auto fn = (UFunction*)UObject::Find("Function", "Core.Object.GetEngineVersion");
 	UObject_GetEngineVersion_Params params;
-#else
-	static auto fn = (UFunction*)UObject::Find("Function", "/Script/Engine.KismetSystemLibrary.GetEngineVersion");
-	KismetSystemLibrary_GetEngineVersion_Params params;
-#endif
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
@@ -917,7 +909,6 @@ bool UObject::AddModifier(class UAttributeModifier* mod, const struct FName& Att
 
 class UObject* UObject::FindObject(const struct FString& ObjectName, class UClass* ObjectClass)
 {
-#ifndef UE4
 	static UFunction* fn = NULL;
 	if (!fn)
 		for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
@@ -943,31 +934,6 @@ class UObject* UObject::FindObject(const struct FString& ObjectName, class UClas
 	fn->FunctionFlags = flags;
 
 	return params.ReturnValue;
-#else
-	static UObject* fn = NULL;
-
-	std::string obj;
-	std::wstring x;
-	x.append( Util::Widen(ObjectClass->GetName()) );
-	x.append(L" ");
-
-	for (size_t i = 0; i < ObjectName.Count; ++i) {
-		auto z = (const wchar_t)ObjectName.Data[i];
-		x.push_back(z);
-	}
-
-	std::string objName = Util::Narrow(x);
-
-	for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
-	{
-		UObject* Object = UObject::GObjects()->Get(i);
-		std::string z = Object->GetFullName();
-		if (z.compare(objName) == 0)
-			fn = (UFunction*)Object;
-	}
-
-	return fn;
-#endif
 }
 
 
@@ -8847,5 +8813,7 @@ int UHelpCommandlet::Main(const struct FString Params)
 #pragma pack ( pop )
 
 #endif
+
+
 
 #endif
