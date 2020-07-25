@@ -208,7 +208,7 @@ int UObject::GetEngineVersion()
 	static auto fn = (UFunction*)UObject::Find("Function", "Core.Object.GetEngineVersion");
 	UObject_GetEngineVersion_Params params;
 #else
-	static auto fn = (UFunction*)UObject::Find("Function", "Engine.KismetSystemLibrary.GetEngineVersion");
+	static auto fn = (UFunction*)UObject::Find("Function", "/Script/Engine.KismetSystemLibrary.GetEngineVersion");
 	KismetSystemLibrary_GetEngineVersion_Params params;
 #endif
 
@@ -941,17 +941,29 @@ class UObject* UObject::FindObject(const struct FString& ObjectName, class UClas
 
 	return params.ReturnValue;
 #else
-	char[Const]
-	for(size_t)
-	const char* objName = (ObjectClass->GetFullName()).append();
+	static UObject* fn = NULL;
+
+	std::string obj;
+	std::wstring x;
+	x.append( Util::Widen(ObjectClass->GetName()) );
+	x.append(L" ");
+
+	for (size_t i = 0; i < ObjectName.Count; ++i) {
+		auto z = (const wchar_t)ObjectName.Data[i];
+		x.push_back(z);
+	}
+
+	std::string objName = Util::Narrow(x);
+
 	for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
 	{
 		UObject* Object = UObject::GObjects()->Get(i);
-		if (!strcmp(Object->GetFullName().c_str(), "Function Core.Object.FindObject"))
+		std::string z = Object->GetFullName();
+		if (z.compare(objName) == 0)
 			fn = (UFunction*)Object;
 	}
 
-
+	return fn;
 #endif
 }
 

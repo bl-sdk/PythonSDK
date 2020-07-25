@@ -11,6 +11,8 @@
 #include "Exports.h"
 #include "gamedefines.h"
 
+#include <fstream>
+
 namespace UnrealSDK
 {
 	UConsole* gameConsole = nullptr;
@@ -324,6 +326,12 @@ namespace UnrealSDK
 	{
 		Logging::LogD("[GameReady] Thread: %i\n", GetCurrentThreadId());
 
+#ifdef _DEBUG // This should probably done a better way, but it doesn't sink in too much time
+		remove("SDKDumps.txt");
+		std::ofstream file;
+		file.open("SDKDumps.txt", std::ios::app);
+#endif
+
 		for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
 		{
 			UObject* Object = UObject::GObjects()->Get(i);
@@ -336,8 +344,14 @@ namespace UnrealSDK
 
 			if (!strcmp(Object->GetFullName().c_str(), ObjectMap["EngineFullName"].c_str()))
 				gEngine = Object;
+
+			#ifdef _DEBUG
+			file << Object->GetFullName() << std::endl;
+			#endif
 		}
+
 #ifdef _DEBUG
+		file.close();
 		Logging::InitializeExtern();
 #endif
 
