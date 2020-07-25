@@ -4,7 +4,7 @@ import os
 import traceback
 
 # Need to make sure this is all loaded and aliased up before loading any mods
-from Mods import ModMenu  # noqa
+from Mods import ModMenu  # noqa: F401
 
 unrealsdk.SDK_VERSION = 1
 
@@ -15,7 +15,9 @@ for name in os.listdir(os.path.dirname(__file__)):
     absolute_path = os.path.join(os.path.dirname(__file__), name)
     if not os.path.isdir(absolute_path):
         continue
-    if name.startswith(".") or name in ("__pycache__", "ModMenu"):
+
+    # Temporarily filter out `General` incase people forget to delete it
+    if name.startswith(".") or name in ("__pycache__", "ModMenu", "General"):
         continue
 
     try:

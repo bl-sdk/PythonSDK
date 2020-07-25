@@ -4,7 +4,7 @@ import unrealsdk
 import copy
 import enum
 from abc import ABCMeta
-from typing import Any, ClassVar, Dict, List, Optional, Sequence, Tuple
+from typing import Any, Dict, List, Optional, Sequence, Tuple
 
 from . import KeybindManager
 from . import OptionManager
@@ -81,7 +81,7 @@ class _ModMeta(ABCMeta):
     It's a rather easy to mistakenly edit these references, and affect all other mods, so it's
      probably better to prevent it happening in the first place.
     """
-    Attributes: ClassVar[Tuple[str, ...]] = (
+    Attributes: Tuple[str, ...] = (
         "Author",
         "Description",
         "Version",
@@ -139,15 +139,15 @@ class SDKMod(metaclass=_ModMeta):
              default this returns if the status is currently "Enabled". Once overwritten, it will
              return whatever value it was set to.
     """
-    Name: ClassVar[str]
-    Author: ClassVar[str] = "Unknown"
-    Description: ClassVar[str] = ""
-    Version: ClassVar[str] = "Unknown Version"
+    Name: str
+    Author: str = "Unknown"
+    Description: str = ""
+    Version: str = "Unknown Version"
 
-    SupportedGames: ClassVar[Game] = Game.BL2 | Game.TPS
-    Types: ClassVar[ModTypes] = ModTypes.NONE
-    Priority: ClassVar[int] = ModPriorities.Standard
-    SaveEnabledState: ClassVar[EnabledSaveType] = EnabledSaveType.NotSaved
+    SupportedGames: Game = Game.BL2 | Game.TPS
+    Types: ModTypes = ModTypes.NONE
+    Priority: int = ModPriorities.Standard
+    SaveEnabledState: EnabledSaveType = EnabledSaveType.NotSaved
 
     Status: str = "Disabled"
     SettingsInputs: Dict[str, str] = {"Enter": "Enable"}
@@ -181,8 +181,11 @@ class SDKMod(metaclass=_ModMeta):
                 pass
             inst.Name = f"<font color=\"#ff0000\">{inst.Name}</font>"
             inst.Status = "<font color=\"#ff0000\">Incompatible</font>"
+
+            if len(inst.Description) > 0:
+                inst.Description += "\n\n"
             inst.Description += (
-                f"\n\n<font color=\"#FF0000\">Incompatible with {Game.GetCurrent().name}!</font>"
+                f"<font color=\"#FF0000\">Incompatible with {Game.GetCurrent().name}!</font>"
             )
         return inst
 

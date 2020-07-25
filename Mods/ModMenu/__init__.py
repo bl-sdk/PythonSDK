@@ -8,30 +8,30 @@ VERSION_MINOR = 0
 
 
 # Exports
-from . import Options as Options  # noqa: F401, F402
-from .DeprecationHelper import Deprecated as Deprecated  # noqa: F401, F402
-from .DeprecationHelper import NameChangeMsg as NameChangeMsg  # noqa: F401, F402
-from .DeprecationHelper import PrintWarning as PrintWarning  # noqa: F401, F402
-from .KeybindManager import InputEvent as InputEvent  # noqa: F401, F402
-from .KeybindManager import Keybind as Keybind  # noqa: F401, F402
-from .MenuManager import GetOrderedModList as GetOrderedModList  # noqa: F401, F402
-from .ModObjects import EnabledSaveType as EnabledSaveType  # noqa: F401, F402
-from .ModObjects import Game as Game  # noqa: F401, F402
-from .ModObjects import ModPriorities as ModPriorities  # noqa: F401, F402
-from .ModObjects import Mods as Mods  # noqa: F401, F402
-from .ModObjects import ModTypes as ModTypes  # noqa: F401, F402
-from .ModObjects import RegisterMod as RegisterMod  # noqa: F401, F402
-from .ModObjects import SDKMod as SDKMod  # noqa: F401, F402
-from .SettingsManager import GetSettingsFilePath as GetSettingsFilePath  # noqa: F401, F402
-from .SettingsManager import LoadModSettings as LoadModSettings  # noqa: F401, F402
-from .SettingsManager import SaveAllModSettings as SaveAllModSettings  # noqa: F401, F402
-from .SettingsManager import SaveModSettings as SaveModSettings  # noqa: F401, F402
+from . import Options as Options  # noqa: F401, E402
+from .DeprecationHelper import Deprecated as Deprecated  # noqa: F401, E402
+from .DeprecationHelper import NameChangeMsg as NameChangeMsg  # noqa: F401, E402
+from .DeprecationHelper import PrintWarning as PrintWarning  # noqa: F401, E402
+from .KeybindManager import InputEvent as InputEvent  # noqa: F401, E402
+from .KeybindManager import Keybind as Keybind  # noqa: F401, E402
+from .MenuManager import GetOrderedModList as GetOrderedModList  # noqa: F401, E402
+from .ModObjects import EnabledSaveType as EnabledSaveType  # noqa: F401, E402
+from .ModObjects import Game as Game  # noqa: F401, E402
+from .ModObjects import ModPriorities as ModPriorities  # noqa: F401, E402
+from .ModObjects import Mods as Mods  # noqa: F401, E402
+from .ModObjects import ModTypes as ModTypes  # noqa: F401, E402
+from .ModObjects import RegisterMod as RegisterMod  # noqa: F401, E402
+from .ModObjects import SDKMod as SDKMod  # noqa: F401, E402
+from .SettingsManager import GetSettingsFilePath as GetSettingsFilePath  # noqa: F401, E402
+from .SettingsManager import LoadModSettings as LoadModSettings  # noqa: F401, E402
+from .SettingsManager import SaveAllModSettings as SaveAllModSettings  # noqa: F401, E402
+from .SettingsManager import SaveModSettings as SaveModSettings  # noqa: F401, E402
 
 # Extra imports
-from . import DeprecationHelper as dh  # noqa: F402
-from . import ModObjects  # noqa: F402
-from . import OptionManager  # noqa: F402
-from . import SettingsManager  # noqa: F402
+from . import DeprecationHelper as dh  # noqa: E402
+from . import ModObjects  # noqa: E402
+from . import OptionManager  # noqa: E402
+from . import SettingsManager  # noqa: E402
 
 
 """

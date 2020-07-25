@@ -5,7 +5,7 @@ import re
 import sys
 import webbrowser
 from functools import cmp_to_key
-from typing import ClassVar, Dict, List, Set
+from typing import Dict, List, Set
 
 from Mods import ModMenu
 from . import DeprecationHelper as dh
@@ -54,16 +54,16 @@ def GetOrderedModList() -> List[ModObjects.SDKMod]:
 
 
 class _General(ModObjects.SDKMod):
-    Name: ClassVar[str] = "General"
-    Author: ClassVar[str] = "apple1417"
-    Description: ClassVar[str] = (
+    Name: str = "General"
+    Author: str = "PythonSDK"
+    Description: str = (
         "Welcome to the Borderlands 2 SDK Mod Manager\n"
         "\n"
         "See below for options.\n"
     )
-    Version: ClassVar[str] = f"{ModMenu.VERSION_MAJOR}.{ModMenu.VERSION_MINOR}"
+    Version: str = f"{ModMenu.VERSION_MAJOR}.{ModMenu.VERSION_MINOR}"
 
-    Types: ClassVar[ModObjects.ModTypes] = ModObjects.ModTypes.All
+    Types: ModObjects.ModTypes = ModObjects.ModTypes.All
 
     Status: str = ""
     SettingsInputs: Dict[str, str] = {
