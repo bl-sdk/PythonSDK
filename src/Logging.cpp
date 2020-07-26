@@ -166,7 +166,11 @@ namespace Logging
 
 	void PrintLogHeader()
 	{
+#ifndef UE4
 		LogF("======== UnrealEngine PythonSDK Loaded (Version %d) ========\n", UnrealSDK::EngineVersion);
+#else
+		LogF("======== UnrealEngine PythonSDK Loaded (Version %s) ========\n", UnrealSDK::EngineBuild);
+#endif
 	}
 
 	void Cleanup()

@@ -187,6 +187,8 @@ struct FString : public TArray<wchar_t>
 		return *this;
 	};
 
+	
+
 };
 
 struct FScriptDelegate

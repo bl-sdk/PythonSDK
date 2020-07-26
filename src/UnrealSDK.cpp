@@ -44,6 +44,7 @@ namespace UnrealSDK
 	int EngineVersion = -1;
 	int ChangelistNumber = -1;
 
+	char* EngineBuild;
 
 	tProcessEvent oProcessEvent = nullptr;
 	tCallFunction oCallFunction = nullptr;
@@ -294,10 +295,11 @@ namespace UnrealSDK
 	bool getCanvasPostRender(UObject* Caller, UFunction* Function, FStruct* Params)
 	{
 		// Set console key to Tilde if not already set
-		gameConsole = static_cast<UConsole *>(UObject::Find(ObjectMap["ConsoleObjectType"].c_str(), ObjectMap["ConsoleObjectName"].c_str())
-		);
+		gameConsole = static_cast<UConsole *>(UObject::Find(ObjectMap["ConsoleObjectType"].c_str(), ObjectMap["ConsoleObjectName"].c_str()));
+		auto eng = static_cast<UEngine*>(gEngine);
+
 		if (gameConsole == nullptr && gEngine && static_cast<UEngine *>(gEngine)->GameViewport)
-			gameConsole = static_cast<UEngine *>(gEngine)->GameViewport->ViewportConsole;
+			gameConsole = eng->GameViewport->ViewportConsole;
 		if (gameConsole && (gameConsole->ConsoleKey == FName("None") || gameConsole->ConsoleKey == FName("Undefine")))
 			gameConsole->ConsoleKey = FName("Tilde");
 
@@ -314,11 +316,10 @@ namespace UnrealSDK
 		ChangelistNumber = UObject::GetBuildChangelistNumber();
 		Logging::LogD("[Internal] Engine Version = %d, Build Changelist = %d\n", EngineVer, ChangelistNumber);
 #else
-		auto x = UObject::GetEngineVersion();
+		EngineBuild = UObject::GetEngineVersion().AsString();
+		// UE4 doesn't really have a good version of "Changelist" its effectively just in Engine Version now
+		Logging::LogD("[Internal] Engine Version: %s\n", EngineBuild);
 #endif
-
-
-		
 	}
 
 	// This function is used to ensure that everything gets called in the game thread once the game itself has loaded

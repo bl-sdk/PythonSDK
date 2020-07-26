@@ -178,12 +178,14 @@ FString UObject::GetEngineVersion()
 	fn->FunctionFlags |= 0x400;
 
 	static auto defaultObj = StaticClass()->CreateDefaultObject();
+
 	UnrealSDK::pProcessEvent(defaultObj, fn, &params);
 
 	fn->FunctionFlags = flags;
 
 	return params.ReturnValue;
 }
+
 
 
 // Function Core.Object.GetSystemTime
@@ -876,7 +878,7 @@ bool UObject::AddModifier(class UAttributeModifier* mod, const struct FName& Att
 
 class UObject* UObject::FindObject(const struct FString& ObjectName, class UClass* ObjectClass)
 {
-	static UObject* fn = NULL;
+	static UObject* fn = nullptr;
 
 	std::string obj;
 	std::wstring x;
@@ -894,13 +896,15 @@ class UObject* UObject::FindObject(const struct FString& ObjectName, class UClas
 	{
 		UObject* Object = UObject::GObjects()->Get(i);
 		std::string z = Object->GetFullName();
-		if (z.compare(objName) == 0)
+
+		if (!strcmp(z.c_str(), objName.c_str())) {
 			fn = (UFunction*)Object;
+			break;
+		}
 	}
 
 	return fn;
 }
-
 
 // Function Core.Object.DynamicLoadObject
 // (Final, Native, Static, HasOptionalparams, Public)

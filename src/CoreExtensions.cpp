@@ -81,7 +81,13 @@ class UPackage* UObject::GetPackageObject() const
 
 UClass* UObject::StaticClass()
 {
+
+#ifdef UE4
+	static auto ptr = static_cast<UClass*>(GObjects()->Get(1));
+#else
 	static auto ptr = static_cast<UClass*>(GObjects()->Get(2));
+#endif
+
 	return ptr;
 };
 
