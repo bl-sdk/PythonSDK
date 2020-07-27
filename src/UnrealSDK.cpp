@@ -173,12 +173,13 @@ namespace UnrealSDK
 
 			Logging::LogF("\n\nInitializing UE4 SDK...\n");
 			auto addy = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::GObjects.Sig, Signatures::GObjects.Mask);
-			auto x = (FUObjectArray*)(0x140000000 + (0x00fffffff & (addy + *(DWORD*)(addy + 0x3) + 0x7)));
+			auto x = (0x140000000 + ( (addy + *(DWORD*)(addy + 0x3) + 0x7)) );
 
-			pGObjects = (void*)(&(x->ObjObjects));
+			auto z = (FUObjectArray*)x;
+			pGObjects = (void*)(&(z->ObjObjects));
 
-			Logging::LogF("[Internal] FUObjectArray = 0x%p\n", x);
-			Logging::LogF("[Internal] GObjects = 0x%p\n", x->ObjObjects.Objects);
+			Logging::LogF("[Internal] FUObjectArray = 0x%p\n", z);
+			Logging::LogF("[Internal] GObjects = 0x%p\n", z->ObjObjects.Objects);
 			Logging::LogF("[Debug] Total Objects: %d\n", UObject::GObjects()->Count);
 
 			
@@ -294,6 +295,7 @@ namespace UnrealSDK
 
 	bool getCanvasPostRender(UObject* Caller, UFunction* Function, FStruct* Params)
 	{
+#ifndef UE4
 		// Set console key to Tilde if not already set
 		gameConsole = static_cast<UConsole *>(UObject::Find(ObjectMap["ConsoleObjectType"].c_str(), ObjectMap["ConsoleObjectName"].c_str()));
 		auto eng = static_cast<UEngine*>(gEngine);
@@ -307,6 +309,8 @@ namespace UnrealSDK
 
 		gHookManager->Remove(Function->GetObjectName(), "GetCanvas");
 		return true;
+#endif
+		return true;
 	}
 
 	void initializeGameVersions()
@@ -316,7 +320,7 @@ namespace UnrealSDK
 		ChangelistNumber = UObject::GetBuildChangelistNumber();
 		Logging::LogD("[Internal] Engine Version = %d, Build Changelist = %d\n", EngineVer, ChangelistNumber);
 #else
-		EngineBuild = UObject::GetEngineVersion().AsString();
+		EngineBuild = UKismetSystemLibrary::GetEngineVersion().AsString();
 		// UE4 doesn't really have a good version of "Changelist" its effectively just in Engine Version now
 		Logging::LogD("[Internal] Engine Version: %s\n", EngineBuild);
 #endif
@@ -437,6 +441,7 @@ namespace UnrealSDK
 	                         unsigned int InternalSetFlags, UObject* Template, FOutputDevice* Error,
 	                         void* InstanceGraph, int AssumeTemplateIsArchetype)
 	{
+#ifndef UE4
 		if (!Error)
 		{
 			Error = new FOutputDevice();
@@ -447,6 +452,10 @@ namespace UnrealSDK
 			return nullptr;
 		return pStaticConstructObject(Class, Outer, Name, SetFlags | 0b1, InternalSetFlags, Template, Error,
 		                              InstanceGraph, AssumeTemplateIsArchetype);
+#else
+		// TODO: CONSTRUCTOBJECT
+		return nullptr;
+#endif
 	};
 
 	UObject* GetEngine()

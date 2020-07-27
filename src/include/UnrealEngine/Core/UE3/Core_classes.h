@@ -1,15 +1,11 @@
 #pragma once
 
-#ifndef CORECLASSES_H
-#define CORECLASSES_H
-
 #include "stdafx.h"
 
-#ifdef UE4
-#include "UnrealEngine/UE4Defines.h"
-#else
-#include "UnrealEngine/UE3Defines.h"
-#endif
+#ifndef UE4
+
+#ifndef CORECLASSES_H
+#define CORECLASSES_H
 
 #include "gamedefines.h"
 
@@ -1033,5 +1029,11 @@ typedef void(__thiscall* tFree)(void***, void*);
 #ifdef _MSC_VER
 #pragma pack ( pop )
 #endif
+
+#endif
+
+#else
+
+#include "UnrealEngine/Core/UE4/UE4CoreClasses.h"
 
 #endif

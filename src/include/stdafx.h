@@ -55,14 +55,6 @@ namespace UnrealSDK
 
 #include "logging.h"
 
-#include "UnrealEngine/Core/Core_structs.h"
-#include "UnrealEngine/Core/Core_f_structs.h"
-#include "UnrealEngine/Core/Core_classes.h"
-
-#include "UnrealEngine/Engine/Engine_structs.h"
-#include "UnrealEngine/Engine/Engine_f_structs.h"
-#include "UnrealEngine/Engine/Engine_classes.h"
-
 #include "TypeMap.h"
 
 #include "Games.h"
@@ -96,7 +88,11 @@ namespace pybind11
 	namespace detail
 	{
 		template <>
+#ifndef UE4
 		struct type_caster<struct FString>
+#else
+		struct type_caster<class FString>
+#endif
 		{
 		public:
 		PYBIND11_TYPE_CASTER(FString, _("FString"));
@@ -143,7 +139,11 @@ namespace pybind11
 				const char* tmp = PyUnicode_AsUTF8AndSize(source, nullptr);
 				if (!tmp)
 					return false;
+#ifndef UE4
 				value = UObject::FindClass(tmp, false);
+#else
+				value = UObject::FindClass(tmp);
+#endif
 				return value != nullptr;
 			}
 

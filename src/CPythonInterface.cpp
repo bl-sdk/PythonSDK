@@ -129,6 +129,11 @@ PYBIND11_EMBEDDED_MODULE(unrealsdk, m)
 	m.def("CallPostEdit", [](bool NewValue) { UnrealSDK::gCallPostEdit = NewValue; });
 }
 
+#ifndef UE4
+
+// TODO: Implement UE4 AddToConsoleLog
+// TODO: Implement UE4 CheckPythonCommand
+
 void AddToConsoleLog(UConsole* console, FString input)
 {
 	int prev = (console->HistoryTop - 1) % 16;
@@ -165,13 +170,15 @@ bool CheckPythonCommand(UObject* caller, UFunction* function, FStruct* params)
 		((UConsole *)caller)->ConsoleCommand(*command);
 	return false;
 }
+#endif
 
 CPythonInterface::CPythonInterface()
 {
 	m_modulesInitialized = false;
 	InitializeState();
 
-	UnrealSDK::RegisterHook("Engine.Console.ShippingConsoleCommand", "CheckPythonCommand", &CheckPythonCommand);
+	// TODO: Implement UE4 CheckPythonCommand
+	// UnrealSDK::RegisterHook("Engine.Console.ShippingConsoleCommand", "CheckPythonCommand", &CheckPythonCommand);
 }
 
 CPythonInterface::~CPythonInterface()

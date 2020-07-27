@@ -48,6 +48,24 @@
     <Filter Include="Source Files\UnrealEngine\UE3">
       <UniqueIdentifier>{2420570f-25bf-48e4-b9de-de6274d666c5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\UnrealEngine\Core\UE3">
+      <UniqueIdentifier>{e114d1cf-0204-4712-9bca-b379bd6ef9a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UnrealEngine\Core\UE4">
+      <UniqueIdentifier>{ac7e0e96-3176-4410-aa1a-1dd7cb1c3608}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UnrealEngine\Engine\UE3">
+      <UniqueIdentifier>{db4bd273-6b34-42f8-a464-89d6f2b7ed08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\UnrealEngine\Engine\UE4">
+      <UniqueIdentifier>{0885023f-c95c-45dc-9aa5-6e96d7a358fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Pydefs\UE3">
+      <UniqueIdentifier>{f508cb7d-ce7d-4198-8dbd-031c7682ebb9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Pydefs\UE4">
+      <UniqueIdentifier>{df53748d-b7d8-44f9-a0c5-46b81aca0ff5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\include\CPythonInterface.h">
@@ -170,24 +188,6 @@
     <ClInclude Include="src\include\UnrealSDK.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\include\UnrealEngine\Engine\Engine_f_structs.h">
-      <Filter>Header Files\UnrealEngine\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\UnrealEngine\Engine\Engine_structs.h">
-      <Filter>Header Files\UnrealEngine\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\UnrealEngine\Engine\Engine_classes.h">
-      <Filter>Header Files\UnrealEngine\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\UnrealEngine\Core\Core_f_structs.h">
-      <Filter>Header Files\UnrealEngine\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\UnrealEngine\Core\Core_structs.h">
-      <Filter>Header Files\UnrealEngine\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\include\UnrealEngine\Core\Core_classes.h">
-      <Filter>Header Files\UnrealEngine\Core</Filter>
-    </ClInclude>
     <ClInclude Include="src\include\Games.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -221,15 +221,45 @@
     <ClInclude Include="src\include\UnrealEngine\UE3Defines.h">
       <Filter>Header Files\UnrealEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\include\UnrealEngine\Core\UE3\Core_classes.h">
+      <Filter>Header Files\UnrealEngine\Core\UE3</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\UnrealEngine\Core\UE3\Core_f_structs.h">
+      <Filter>Header Files\UnrealEngine\Core\UE3</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\UnrealEngine\Core\UE3\Core_structs.h">
+      <Filter>Header Files\UnrealEngine\Core\UE3</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\UnrealEngine\Engine\UE3\Engine_classes.h">
+      <Filter>Header Files\UnrealEngine\Engine\UE3</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\UnrealEngine\Engine\UE3\Engine_f_structs.h">
+      <Filter>Header Files\UnrealEngine\Engine\UE3</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\UnrealEngine\Engine\UE3\Engine_structs.h">
+      <Filter>Header Files\UnrealEngine\Engine\UE3</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\UnrealEngine\Core\UE4\UE4CoreClasses.h">
+      <Filter>Header Files\UnrealEngine\Core\UE4</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\UnrealEngine\Core\UE4\UE4CoreFStructs.h">
+      <Filter>Header Files\UnrealEngine\Core\UE4</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\UnrealEngine\Core\UE4\UE4CoreStructs.h">
+      <Filter>Header Files\UnrealEngine\Core\UE4</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\UnrealEngine\Engine\UE4\UE4EngineClasses.h">
+      <Filter>Header Files\UnrealEngine\Engine\UE4</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\UnrealEngine\Engine\UE4\UE4EngineFStructs.h">
+      <Filter>Header Files\UnrealEngine\Engine\UE4</Filter>
+    </ClInclude>
+    <ClInclude Include="src\include\UnrealEngine\Engine\UE4\UE4EngineStructs.h">
+      <Filter>Header Files\UnrealEngine\Engine\UE4</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\pydefs\_TArray.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\Core_classes.cpp">
-      <Filter>Source Files\Pydefs</Filter>
-    </ClCompile>
-    <ClCompile Include="src\pydefs\Core_structs.cpp">
       <Filter>Source Files\Pydefs</Filter>
     </ClCompile>
     <ClCompile Include="src\pydefs\gamedefines.cpp">
@@ -291,6 +321,18 @@
     </ClCompile>
     <ClCompile Include="src\UnrealEngine\UE4\UE4EngineFunctions.cpp">
       <Filter>Source Files\UnrealEngine\UE4</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\UE3\UE3CoreClasses.cpp">
+      <Filter>Source Files\Pydefs\UE3</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\UE3\UE3CoreStructs.cpp">
+      <Filter>Source Files\Pydefs\UE3</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\UE4\UE4CoreClasses.cpp">
+      <Filter>Source Files\Pydefs\UE4</Filter>
+    </ClCompile>
+    <ClCompile Include="src\pydefs\UE4\UE4CoreStructs.cpp">
+      <Filter>Source Files\Pydefs\UE4</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

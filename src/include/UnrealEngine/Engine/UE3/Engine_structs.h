@@ -7,6 +7,8 @@
 
 #include "stdafx.h"
 
+#ifndef UE4
+
 //---------------------------------------------------------------------------
 //Constants
 //---------------------------------------------------------------------------
@@ -9253,4 +9255,9 @@ struct FLevelStreamingData
 
 #ifdef _MSC_VER
 #pragma pack(pop)
+#endif
+
+
+#else
+#include "UnrealEngine/Engine/UE4/UE4EngineStructs.h"
 #endif

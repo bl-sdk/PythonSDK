@@ -1,10 +1,55 @@
 #ifdef UE4
-
 #pragma once
+
+#pragma warning(disable : 4267)
+
 #include <cstdint>
+#include <unordered_set>
+#include <string>
+#include <stdafx.h>
+#include <Util.h>
 
-#include "gamedefines.h"
 
+template <class T>
+struct TArray
+{
+public:
+	T* Data;
+	unsigned int Count;
+	unsigned int Max;
+
+	TArray()
+	{
+		Data = nullptr;
+		Count = 0;
+		Max = 0;
+	}
+
+	int Num()
+	{
+		return this->Count;
+	}
+
+	T& operator()(int i)
+	{
+		return this->Data[i];
+	}
+
+
+	T& Get(size_t i)
+	{
+		return this->Data[i];
+	}
+
+	const T& operator()(int i) const
+	{
+		return this->Data[i];
+	}
+};
+
+class UObject;
+
+#pragma region GObjects
 struct FUObjectItem
 {
 	// Pointer to the allocated object
@@ -43,6 +88,10 @@ struct FChunkedFixedUObjectArray
 		return Objects[index / NumElementsPerChunk][index % NumElementsPerChunk].Object;
 	}
 
+	UObject* GetByIndex(size_t index) {
+		return Objects[index / NumElementsPerChunk][index % NumElementsPerChunk].Object;
+	}
+
 	UObject* operator()(size_t index)
 	{
 		return Get(index);
@@ -58,19 +107,9 @@ public:
 	bool OpenForDisregardForGC;
 	FChunkedFixedUObjectArray ObjObjects;
 };
+#pragma endregion
 
-struct FNameEntryHeader
-{
-	uint16_t bIsWide : 1;
-#if WITH_CASE_PRESERVING_NAME
-	uint16 Len : 15;
-#else
-	static constexpr uint32_t ProbeHashBits = 5;
-	uint16_t LowercaseProbeHash : ProbeHashBits;
-	uint16_t Len : 10;
-#endif
-};
-
+#pragma region GNames
 class FNameEntry
 {
 public:
@@ -129,128 +168,349 @@ struct FChunkedFNameEntryArray
 	}
 };
 
-/// <summary>
-/// Enum for the flags that go onto a UProperty
-/// </summary>
-enum EPropertyFlags : unsigned long long
+struct FName
 {
-	CPF_None = 0,
-	CPF_Edit = 0x0000000000000001,
-	CPF_ConstParm = 0x0000000000000002,
-	CPF_BlueprintVisible = 0x0000000000000004,
-	CPF_ExportObject = 0x0000000000000008,
-	CPF_BlueprintReadOnly = 0x0000000000000010,
-	CPF_Net = 0x0000000000000020,
-	CPF_EditFixedSize = 0x0000000000000040,
-	CPF_Parm = 0x0000000000000080,
-	CPF_OutParm = 0x0000000000000100,
-	CPF_ZeroConstructor = 0x0000000000000200,
-	CPF_ReturnParm = 0x0000000000000400,
-	CPF_DisableEditOnTemplate = 0x0000000000000800,
-	CPF_Transient = 0x0000000000002000,
-	CPF_Config = 0x0000000000004000,
-	CPF_DisableEditOnInstance = 0x0000000000010000,
-	CPF_EditConst = 0x0000000000020000,
-	CPF_GlobalConfig = 0x0000000000040000,
-	CPF_InstancedReference = 0x0000000000080000,
-	CPF_DuplicateTransient = 0x0000000000200000,
-	CPF_SubobjectReference = 0x0000000000400000,
-	CPF_SaveGame = 0x0000000001000000,
-	CPF_NoClear = 0x0000000002000000,
-	CPF_ReferenceParm = 0x0000000008000000,
-	CPF_BlueprintAssignable = 0x0000000010000000,
-	CPF_Deprecated = 0x0000000020000000,
-	CPF_IsPlainOldData = 0x0000000040000000,
-	CPF_RepSkip = 0x0000000080000000,
-	CPF_RepNotify = 0x0000000100000000,
-	CPF_Interp = 0x0000000200000000,
-	CPF_NonTransactional = 0x0000000400000000,
-	CPF_EditorOnly = 0x0000000800000000,
-	CPF_NoDestructor = 0x0000001000000000,
-	CPF_AutoWeak = 0x0000004000000000,
-	CPF_ContainsInstancedReference = 0x0000008000000000,
-	CPF_AssetRegistrySearchable = 0x0000010000000000,
-	CPF_SimpleDisplay = 0x0000020000000000,
-	CPF_AdvancedDisplay = 0x0000040000000000,
-	CPF_Protected = 0x0000080000000000,
-	CPF_BlueprintCallable = 0x0000100000000000,
-	CPF_BlueprintAuthorityOnly = 0x0000200000000000,
-	CPF_TextExportTransient = 0x0000400000000000,
-	CPF_NonPIEDuplicateTransient = 0x0000800000000000,
-	CPF_ExposeOnSpawn = 0x0001000000000000,
-	CPF_PersistentInstance = 0x0002000000000000,
-	CPF_UObjectWrapper = 0x0004000000000000,
-	CPF_HasGetValueTypeHash = 0x0008000000000000,
-	CPF_NativeAccessSpecifierPublic = 0x0010000000000000,
-	CPF_NativeAccessSpecifierProtected = 0x0020000000000000,
-	CPF_NativeAccessSpecifierPrivate = 0x0040000000000000,
-	CPF_SkipSerialization = 0x0080000000000000,
-};
+	int Index;
+	int Number;
 
-enum EFunctionFlags : unsigned long
-{
-	FUNC_None = 0x00000000,
-	FUNC_Final = 0x00000001,
-	FUNC_RequiredAPI = 0x00000002,
-	FUNC_BlueprintAuthorityOnly = 0x00000004,
-	FUNC_BlueprintCosmetic = 0x00000008,
-	FUNC_Net = 0x00000040,
-	FUNC_NetReliable = 0x00000080,
-	FUNC_NetRequest = 0x00000100,
-	FUNC_Exec = 0x00000200,
-	FUNC_Native = 0x00000400,
-	FUNC_Event = 0x00000800,
-	FUNC_NetResponse = 0x00001000,
-	FUNC_Static = 0x00002000,
-	FUNC_NetMulticast = 0x00004000,
-	FUNC_UbergraphFunction = 0x00008000,
-	FUNC_MulticastDelegate = 0x00010000,
-	FUNC_Public = 0x00020000,
-	FUNC_Private = 0x00040000,
-	FUNC_Protected = 0x00080000,
-	FUNC_Delegate = 0x00100000,
-	FUNC_NetServer = 0x00200000,
-	FUNC_HasOutParms = 0x00400000,
-	FUNC_HasDefaults = 0x00800000,
-	FUNC_NetClient = 0x01000000,
-	FUNC_DLLImport = 0x02000000,
-	FUNC_BlueprintCallable = 0x04000000,
-	FUNC_BlueprintEvent = 0x08000000,
-	FUNC_BlueprintPure = 0x10000000,
-	FUNC_EditorOnly = 0x20000000,
-	FUNC_Const = 0x40000000,
-	FUNC_NetValidate = 0x80000000,
-	FUNC_AllFlags = 0xFFFFFFFF,
-};
+public:
+	FName()
+	{
+		Index = 0;
+		Number = 0;
+	};
 
-enum ELifetimeCondition
-{
-	COND_None = 0,
-	COND_InitialOnly = 1,
-	COND_OwnerOnly = 2,
-	COND_SkipOwner = 3,
-	COND_SimulatedOnly = 4,
-	COND_AutonomousOnly = 5,
-	COND_SimulatedOrPhysics = 6,
-	COND_InitialOrOwner = 7,
-	COND_Custom = 8,
-	COND_ReplayOrOwner = 9,
-	COND_ReplayOnly = 10,
-	COND_SimulatedOnlyNoReplay = 11,
-	COND_SimulatedOrPhysicsNoReplay = 12,
-	COND_SkipReplay = 13,
-	COND_Never = 15,
-	COND_Max = 16,
-};
+public:
+	FName(const std::string& FindName)
+	{
+		Index = 0;
+		Number = 0;
+#ifndef UE4
+		if (UnrealSDK::EngineVersion <= 8630)
+			((UnrealSDK::tFNameInitOld)(UnrealSDK::pFNameInit))(this, (wchar_t*)Util::Widen(FindName).c_str(), 0, 1, 1, 0);
+		else
+			((UnrealSDK::tFNameInitNew)(UnrealSDK::pFNameInit))(this, (wchar_t*)Util::Widen(FindName).c_str(), 0, 1, 1);
+#endif
+		Logging::LogD("Made FName; Index: %d, Number: %d, Name: %s\n", Index, Number, GetName());
+	}
 
-struct FOutputDevice
+	FName(const std::string& FindName, int number)
+	{
+		Index = 0;
+		Number = 0;
+#ifndef UE4
+		if (UnrealSDK::EngineVersion <= 8630)
+			((UnrealSDK::tFNameInitOld)(UnrealSDK::pFNameInit))(this, (wchar_t*)Util::Widen(FindName).c_str(), number, 1, 1,
+				0);
+		else
+			((UnrealSDK::tFNameInitNew)(UnrealSDK::pFNameInit))(this, (wchar_t*)Util::Widen(FindName).c_str(), number, 1, 1);
+#endif
+	}
+
+	static FChunkedFNameEntryArray* Names()
+	{
+
+		return (FChunkedFNameEntryArray*)UnrealSDK::pGNames;
+	}
+
+
+	const char* GetName() const
+	{
+		if (Index < 0 || Index > Names()->Count)
+			return "UnknownName";
+		return Names()->Get(Index)->GetAnsiName();
+	};
+
+	bool operator ==(const FName& A) const
+	{
+		return Index == A.Index;
+	}
+};
+#pragma endregion
+
+class FString : public TArray<wchar_t>
 {
-	void* VfTable;
-	unsigned long bSuppressEventTag;
-	unsigned long bAutoEmitLineTerminator;
+public:
+	FString()
+	{
+	};
+
+	FString(wchar_t* Other)
+	{
+		this->Max = this->Count = Other ? (wcslen(Other) + 1) : 0;
+		this->Data = (wchar_t*)calloc(this->Count, sizeof(wchar_t));
+
+		if (this->Count && this->Data != 0)
+			wcscpy(this->Data, Other);
+	};
+
+	FString(const char* Other)
+	{
+		this->Max = this->Count = Other ? (strlen(Other) + 1) : 0;
+		this->Data = (wchar_t*)calloc(this->Count, sizeof(wchar_t));
+
+		if (this->Count)
+			mbstowcs(this->Data, Other, this->Count);
+	};
+
+
+	char* AsString()
+	{
+		if (this->Data == nullptr || this->Count == 0)
+			return (char*)"";
+		char* output = (char*)calloc(this->Count + 1, sizeof(char));
+		wcstombs(output, this->Data, this->Count);
+		return output;
+	}
+
+	~FString()
+	{
+	};
+
+	FString operator =(wchar_t* Other)
+	{
+		if (this->Data != Other)
+		{
+			this->Max = this->Count = *Other ? (wcslen(Other) + 1) : 0;
+
+			if (this->Count)
+				this->Data = Other;
+		}
+
+		return *this;
+	};
+
+
+
 };
 
 
+struct FScriptDelegate
+{
+	struct FName FunctionName;
+	class UObject* Object;
+};
+
+template<class TEnum>
+class TEnumAsByte
+{
+public:
+	inline TEnumAsByte()
+	{
+	}
+
+	inline TEnumAsByte(TEnum _value)
+		: value(static_cast<uint8_t>(_value))
+	{
+	}
+
+	explicit inline TEnumAsByte(int32_t _value)
+		: value(static_cast<uint8_t>(_value))
+	{
+	}
+
+	explicit inline TEnumAsByte(uint8_t _value)
+		: value(_value)
+	{
+	}
+
+	inline operator TEnum() const
+	{
+		return (TEnum)value;
+	}
+
+	inline TEnum GetValue() const
+	{
+		return (TEnum)value;
+	}
+
+private:
+	uint8_t value;
+};
+
+class FScriptInterface
+{
+public:
+	UObject* ObjectPointer;
+	void* InterfacePointer;
+
+public:
+	inline UObject* GetObject() const
+	{
+		return ObjectPointer;
+	}
+
+	inline UObject*& GetObjectRef()
+	{
+		return ObjectPointer;
+	}
+
+	inline void* GetInterface() const
+	{
+		return ObjectPointer != nullptr ? InterfacePointer : nullptr;
+	}
+};
+
+
+template<class InterfaceType>
+class TScriptInterface : public FScriptInterface
+{
+public:
+	inline InterfaceType* operator->() const
+	{
+		return (InterfaceType*)GetInterface();
+	}
+
+	inline InterfaceType& operator*() const
+	{
+		return *((InterfaceType*)GetInterface());
+	}
+
+	inline operator bool() const
+	{
+		return GetInterface() != nullptr;
+	}
+};
+
+
+struct FText
+{
+	char UnknownData[0x28];
+};
+
+
+
+template<typename Key, typename Value>
+class TMap
+{
+	char UnknownData[0x50];
+};
+
+struct FScriptMulticastDelegate
+{
+	char UnknownData[0x10];
+};
+
+
+struct FWeakObjectPtr
+{
+public:
+	bool IsValid() const;
+
+	UObject* Get() const;
+
+	int32_t ObjectIndex;
+	int32_t ObjectSerialNumber;
+};
+
+template<class T, class TWeakObjectPtrBase = FWeakObjectPtr>
+struct TWeakObjectPtr : private TWeakObjectPtrBase
+{
+public:
+	inline T* Get() const
+	{
+		return (T*)TWeakObjectPtrBase::Get();
+	}
+
+	inline T& operator*() const
+	{
+		return *Get();
+	}
+
+	inline T* operator->() const
+	{
+		return Get();
+	}
+
+	inline bool IsValid() const
+	{
+		return TWeakObjectPtrBase::IsValid();
+	}
+};
+
+template<class T, class TBASE>
+class TAutoPointer : public TBASE
+{
+public:
+	inline operator T* () const
+	{
+		return TBASE::Get();
+	}
+
+	inline operator const T* () const
+	{
+		return (const T*)TBASE::Get();
+	}
+
+	explicit inline operator bool() const
+	{
+		return TBASE::Get() != nullptr;
+	}
+};
+
+template<class T>
+class TAutoWeakObjectPtr : public TAutoPointer<T, TWeakObjectPtr<T>>
+{
+public:
+};
+
+template<typename TObjectID>
+class TPersistentObjectPtr
+{
+public:
+	FWeakObjectPtr WeakPtr;
+	int32_t TagAtLastTest;
+	TObjectID ObjectID;
+};
+
+struct FStringAssetReference_
+{
+	char UnknownData[0x10];
+};
+
+class FAssetPtr : public TPersistentObjectPtr<FStringAssetReference_>
+{
+
+};
+
+template<typename ObjectType>
+class TAssetPtr : FAssetPtr
+{
+
+};
+
+struct FSoftObjectPath
+{
+	FName AssetPathName;
+	FString SubPathString;
+};
+
+class FSoftObjectPtr : public TPersistentObjectPtr<FSoftObjectPath>
+{
+
+};
+
+template<typename ObjectType>
+class TSoftObjectPtr : FSoftObjectPtr
+{
+
+};
+
+struct FUniqueObjectGuid_
+{
+	char UnknownData[0x10];
+};
+
+class FLazyObjectPtr : public TPersistentObjectPtr<FUniqueObjectGuid_>
+{
+
+};
+
+template<typename ObjectType>
+class TLazyObjectPtr : FLazyObjectPtr
+{
+
+};
 
 
 #endif

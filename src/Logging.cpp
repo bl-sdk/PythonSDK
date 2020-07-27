@@ -57,7 +57,9 @@ namespace Logging
 				std::wstring wfmt = Util::Widen(outc);
 				const bool doInjectedNext = UnrealSDK::gInjectedCallNext;
 				UnrealSDK::DoInjectedCallNext();
-				UnrealSDK::gameConsole->OutputText(FString((wchar_t*)wfmt.c_str()));
+				// TODO: Implement UE4 UnrealSDK::gameConsole->OutputText
+
+				// UnrealSDK::gameConsole->OutputText(FString((wchar_t*)wfmt.c_str()));
 				if (doInjectedNext)
 					UnrealSDK::DoInjectedCallNext();
 			}

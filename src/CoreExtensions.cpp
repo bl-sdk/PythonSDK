@@ -2,6 +2,31 @@
 #include <stack>
 #include <utility>
 
+#ifndef UE4
+#include "UnrealEngine/Core/UE3/Core_classes.h"
+#include "UnrealEngine/Engine/UE3/Engine_classes.h"
+#else
+#include "UnrealEngine/Core/UE4/UE4CoreClasses.h"
+#include "UnrealEngine/Engine/UE4/UE4EngineClasses.h"
+#endif
+
+const char* UObject::GetName() const
+{
+	return this->Name.GetName();
+}
+
+std::string UObject::GetFullName()
+{
+	if (!this->Class)
+		return "(null)";
+
+	std::string output = this->Class->GetName();
+	output += " ";
+
+	output += GetObjectName();
+
+	return output;
+}
 
 UObject* UObject::Load(UClass* ClassToLoad, const char* ObjectFullName)
 {
@@ -79,17 +104,14 @@ class UPackage* UObject::GetPackageObject() const
 	return static_cast<UPackage*>(pkg);
 };
 
+#ifndef UE4
 UClass* UObject::StaticClass()
 {
 
-#ifdef UE4
-	static auto ptr = static_cast<UClass*>(GObjects()->Get(1));
-#else
 	static auto ptr = static_cast<UClass*>(GObjects()->Get(2));
-#endif
-
 	return ptr;
 };
+#endif
 
 std::vector<UObject*> UObject::FindAll(char* InStr)
 {
@@ -111,26 +133,58 @@ void* FHelper::GetPropertyAddress(UProperty* Prop)
 	return reinterpret_cast<char*>(this) + Prop->Offset_Internal;
 }
 
+#ifndef UE4
 
 struct FStruct FHelper::GetStructProperty(UStructProperty* Prop)
 {
 	return FStruct{Prop->GetStruct(), GetPropertyAddress(Prop)};
 }
 
+
 struct FString* FHelper::GetStrProperty(UProperty* Prop)
 {
 	return reinterpret_cast<FString*>(GetPropertyAddress(Prop));
 }
+
+class UComponent* FHelper::GetComponentProperty(UProperty* Prop)
+{
+	return reinterpret_cast<UComponent**>(GetPropertyAddress(Prop))[0];
+}
+
+py::object FHelper::GetArrayProperty(UArrayProperty* Prop)
+{
+	const auto array = reinterpret_cast<TArray<char>*>(GetPropertyAddress(Prop));
+	return pybind11::cast(FArray{ array, Prop->GetInner() });
+}
+
+#else
+
+// TODO: FIX THESE HELPERS!!!!
+
+struct FStruct FHelper::GetStructProperty(UStructProperty* Prop)
+{
+	return FStruct{ nullptr, nullptr };
+}
+
+
+class FString* FHelper::GetStrProperty(UProperty* Prop)
+{
+	return nullptr;
+}
+
+
+py::object FHelper::GetArrayProperty(UArrayProperty* Prop)
+{
+	return py::cast<py::none>(Py_None);
+}
+
+#endif
 
 class UObject* FHelper::GetObjectProperty(UProperty* Prop)
 {
 	return reinterpret_cast<UObject **>(GetPropertyAddress(Prop))[0];
 }
 
-class UComponent* FHelper::GetComponentProperty(UProperty* Prop)
-{
-	return reinterpret_cast<UComponent **>(GetPropertyAddress(Prop))[0];
-}
 
 class UClass* FHelper::GetClassProperty(UProperty* Prop)
 {
@@ -167,15 +221,10 @@ unsigned char FHelper::GetByteProperty(UProperty* Prop)
 	return reinterpret_cast<unsigned char*>(GetPropertyAddress(Prop))[0];
 }
 
+
 bool FHelper::GetBoolProperty(UBoolProperty* Prop)
 {
 	return !!(GetIntProperty(Prop) & Prop->GetMask());
-}
-
-py::object FHelper::GetArrayProperty(UArrayProperty* Prop)
-{
-	const auto array = reinterpret_cast<TArray<char>*>(GetPropertyAddress(Prop));
-	return pybind11::cast(FArray{ array, Prop->GetInner()});
 }
 
 pybind11::object FHelper::GetProperty(UProperty* Prop)
@@ -188,8 +237,10 @@ pybind11::object FHelper::GetProperty(UProperty* Prop)
 		return pybind11::cast(GetStrProperty(Prop));
 	if (!strcmp(Prop->Class->GetName(), "ObjectProperty"))
 		return pybind11::cast(GetObjectProperty(Prop));
+#ifndef UE4
 	if (!strcmp(Prop->Class->GetName(), "ComponentProperty"))
 		return pybind11::cast(GetComponentProperty(Prop));
+#endif
 	if (!strcmp(Prop->Class->GetName(), "ClassProperty"))
 		return pybind11::cast(GetClassProperty(Prop));
 	if (!strcmp(Prop->Class->GetName(), "NameProperty"))
@@ -212,6 +263,7 @@ pybind11::object FHelper::GetProperty(UProperty* Prop)
 	                                  Prop->GetFullName().c_str()).c_str());
 }
 
+#ifndef UE4
 void FHelper::SetProperty(class UStructProperty* Prop, const py::object& Val)
 {
 	if (py::isinstance<py::tuple>(Val))
@@ -239,6 +291,22 @@ void FHelper::SetProperty(class UStructProperty* Prop, const py::object& Val)
 	else
 		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected tuple!\n").c_str());
 }
+#else
+
+void FHelper::SetProperty(class UStructProperty* Prop, const py::object& Val) {
+	return;
+}
+
+void FHelper::SetProperty(class UDelegateProperty* Prop, const py::object& Val)
+{
+	return;
+}
+
+void FHelper::SetProperty(class UInterfaceProperty* Prop, const py::object& Val)
+{
+	return;
+}
+#endif
 
 void FHelper::SetProperty(class UStrProperty* Prop, const py::object& Val)
 {
@@ -254,12 +322,17 @@ void FHelper::SetProperty(class UObjectProperty* Prop, const py::object& Val)
 	reinterpret_cast<UObject **>(GetPropertyAddress(Prop))[0] = Val.cast<UObject*>();
 }
 
+#ifndef UE4
+
 void FHelper::SetProperty(class UComponentProperty* Prop, const py::object& Val)
 {
 	if (!py::isinstance<UComponent>(Val) && !py::isinstance<py::none>(Val))
 		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected UComponent!\n").c_str());
 	reinterpret_cast<UComponent * *>(GetPropertyAddress(Prop))[0] = Val.cast<UComponent*>();
 }
+
+
+#endif
 
 void FHelper::SetProperty(class UClassProperty* Prop, const py::object& Val)
 {
@@ -275,6 +348,7 @@ void FHelper::SetProperty(class UNameProperty* Prop, const py::object& Val)
 	memcpy(GetPropertyAddress(Prop), &FName(Val.cast<std::string>().c_str()), sizeof(FName));
 }
 
+#ifndef UE4
 void FHelper::SetProperty(class UInterfaceProperty* Prop, const py::object& Val)
 {
 	if (!py::isinstance<UObject>(Val) && !py::isinstance<py::none>(Val))
@@ -297,6 +371,7 @@ void FHelper::SetProperty(class UDelegateProperty* Prop, const py::object& Val)
 	memcpy(GetPropertyAddress(Prop), &FScriptDelegate(Val.cast<FScriptDelegate>()),
 	       sizeof(FScriptDelegate));
 }
+#endif
 
 void FHelper::SetProperty(class UFloatProperty* Prop, const py::object& Val)
 {
@@ -338,15 +413,20 @@ void FHelper::SetProperty(class UArrayProperty* Prop, const py::object& Val)
 {
 	if (!py::isinstance<py::sequence>(Val))
 		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected list!\n").c_str());
+#ifndef UE4
 	const auto s = py::reinterpret_borrow<py::sequence>(Val);
 	const auto currentArray = reinterpret_cast<TArray<char>*>(GetPropertyAddress(Prop));
 	if (s.size() > currentArray->Count)
 	{
+
+		// TODO: SETUP GMALLOC AND ARRAY RESIZING!!!!!!!!!!!
+
 		char *data = static_cast<char*>(static_cast<tMalloc>(UnrealSDK::pGMalloc[0][0][1])(UnrealSDK::pGMalloc[0],
 		                                                                           Prop->GetInner()->ElementSize * s.size(), 8));
 		memset(data, 0, Prop->GetInner()->ElementSize * s.size());
 		currentArray->Data = data;
 		currentArray->Max = s.size();
+
 	}
 	currentArray->Count = s.size();
 	int x = 0;
@@ -355,6 +435,7 @@ void FHelper::SetProperty(class UArrayProperty* Prop, const py::object& Val)
 		reinterpret_cast<FHelper*>(currentArray->Data + Prop->GetInner()->ElementSize * x++)->SetProperty(
 			Prop->GetInner(), py::reinterpret_borrow<py::object>(it));
 	}
+#endif
 }
 
 void FHelper::SetProperty(class UProperty* Prop, const py::object& val)
@@ -366,8 +447,10 @@ void FHelper::SetProperty(class UProperty* Prop, const py::object& val)
 		SetProperty(static_cast<UStrProperty*>(Prop), val);
 	else if (!strcmp(Prop->Class->GetName(), "ObjectProperty"))
 		SetProperty(static_cast<UObjectProperty*>(Prop), val);
+#ifndef UE4
 	else if (!strcmp(Prop->Class->GetName(), "ComponentProperty"))
 		SetProperty(static_cast<UComponentProperty*>(Prop), val);
+#endif
 	else if (!strcmp(Prop->Class->GetName(), "ClassProperty"))
 		SetProperty(static_cast<UClassProperty*>(Prop), val);
 	else if (!strcmp(Prop->Class->GetName(), "NameProperty"))
@@ -391,13 +474,7 @@ void FHelper::SetProperty(class UProperty* Prop, const py::object& val)
 		                                  Prop->GetFullName().c_str()).c_str());
 }
 
-#ifdef UE4
-FChunkedFixedUObjectArray* UObject::GObjects()
-{
-	const auto objectArray = static_cast<FChunkedFixedUObjectArray*>(UnrealSDK::pGObjects);
-	return objectArray;
-}
-#else
+#ifndef UE4
 TArray<UObject*>* UObject::GObjects()
 {
 	const auto objectArray = static_cast<TArray<UObject*>*>(UnrealSDK::pGObjects);
@@ -405,10 +482,6 @@ TArray<UObject*>* UObject::GObjects()
 }
 #endif
 
-const char* UObject::GetName() const
-{
-	return this->Name.GetName();
-}
 
 std::string UObject::GetNameCpp() const
 {
@@ -423,7 +496,6 @@ std::string UObject::GetNameCpp() const
 
 	return output;
 }
-
 
 std::string UObject::GetObjectName()
 {
@@ -451,18 +523,7 @@ std::string UObject::GetObjectName()
 	return output;
 }
 
-std::string UObject::GetFullName()
-{
-	if (!this->Class)
-		return "(null)";
 
-	std::string output = this->Class->GetName();
-	output += " ";
-
-	output += GetObjectName();
-
-	return output;
-}
 
 UClass* UObject::FindClass(const char* ClassName, const bool Lookup)
 {
@@ -522,6 +583,7 @@ void UObject::SetProperty(std::string& PropName, const py::object& Val)
 		reinterpret_cast<FHelper*>(this)->SetProperty(static_cast<UObjectProperty*>(prop), Val);
 	else
 		reinterpret_cast<FHelper*>(this)->SetProperty(prop, Val);
+#ifndef UE4
 	if (UnrealSDK::gCallPostEdit)
 	{
 		FPropertyChangedEvent changeEvent{};
@@ -529,6 +591,7 @@ void UObject::SetProperty(std::string& PropName, const py::object& Val)
 		changeEvent.ChangeType = 1;
 		PostEditChangeProperty(&changeEvent);
 	}
+#endif
 }
 
 
@@ -642,12 +705,6 @@ void FFrame::SkipFunction()
 	memset(params, 0, 1000);
 }
 
-FStruct::FStruct(UStruct* s, void* b)
-{
-	Logging::LogD("Creating FStruct of type '%s' from %p\n", s->GetObjectName().c_str(), b);
-	structType = s;
-	base = b;
-};
 
 pybind11::object FStruct::GetProperty(const std::string& PropName) const
 {

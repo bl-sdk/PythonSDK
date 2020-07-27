@@ -7,6 +7,8 @@
 
 #include "stdafx.h"
 
+#ifndef UE4
+
 #pragma warning(disable : 26495)
 
 #include "gamedefines.h"
@@ -2578,4 +2580,9 @@ struct UHelpCommandlet_Main_Params
 
 #ifdef _MSC_VER
 #pragma pack(pop)
+#endif
+
+
+#else
+#include "UnrealEngine/Core/UE4/UE4CoreFStructs.h"
 #endif

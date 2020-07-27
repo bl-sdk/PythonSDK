@@ -11,13 +11,13 @@
 #include "logging.h"
 
 #ifdef UE4
-
+#include "UnrealEngine/Engine/UE4/UE4EngineClasses.h"
+#include "UnrealEngine/Core/UE4/UE4CoreClasses.h"
 #include "UnrealEngine/UE4Defines.h"
-
 #else
-
 #include "UnrealEngine/UE3Defines.h"
-
+#include "UnrealEngine/Engine/UE3/Engine_classes.h"
+#include "UnrealEngine/Core/UE3/Core_classes.h"
 #endif
 
 #pragma warning(disable: 4267)
@@ -37,105 +37,9 @@ public:
 	}
 };
 
-template <class T>
-struct TArray
-{
-public:
-	T* Data;
-	unsigned int Count;
-	unsigned int Max;
-
-	TArray()
-	{
-		Data = nullptr;
-		Count = 0;
-		Max = 0;
-	}
-
-	int Num()
-	{
-		return this->Count;
-	}
-
-	T& operator()(int i)
-	{
-		return this->Data[i];
-	}
 
 
-	T& Get(size_t i)
-	{
-		return this->Data[i];
-	}
-
-	const T& operator()(int i) const
-	{
-		return this->Data[i];
-	}
-};
-
-struct FName
-{
-	int Index;
-	int Number;
-
-public:
-	FName()
-	{
-		Index = 0;
-		Number = 0;
-	};
-
-public:
-	FName(const std::string& FindName)
-	{
-		Index = 0;
-		Number = 0;
-		if (UnrealSDK::EngineVersion <= 8630)
-			((UnrealSDK::tFNameInitOld)(UnrealSDK::pFNameInit))(this, (wchar_t *)Util::Widen(FindName).c_str(), 0, 1, 1, 0);
-		else
-			((UnrealSDK::tFNameInitNew)(UnrealSDK::pFNameInit))(this, (wchar_t *)Util::Widen(FindName).c_str(), 0, 1, 1);
-		Logging::LogD("Made FName; Index: %d, Number: %d, Name: %s\n", Index, Number, GetName());
-	}
-
-	FName(const std::string& FindName, int number)
-	{
-		Index = 0;
-		Number = 0;
-		if (UnrealSDK::EngineVersion <= 8630)
-			((UnrealSDK::tFNameInitOld)(UnrealSDK::pFNameInit))(this, (wchar_t *)Util::Widen(FindName).c_str(), number, 1, 1,
-			                                              0);
-		else
-			((UnrealSDK::tFNameInitNew)(UnrealSDK::pFNameInit))(this, (wchar_t *)Util::Widen(FindName).c_str(), number, 1, 1);
-	}
-
-#ifdef UE4
-	static FChunkedFNameEntryArray* Names()
-	{
-
-		return (FChunkedFNameEntryArray*)UnrealSDK::pGNames;
-	}
-
-#else
-	static TArray<FNameEntry*>* Names()
-	{
-		return (TArray<FNameEntry*>*)UnrealSDK::pGNames;
-	}
-#endif
-
-	const char* GetName() const
-	{
-		if (Index < 0 || Index > Names()->Count)
-			return "UnknownName";
-		return Names()->Get(Index)->GetAnsiName();
-	};
-
-	bool operator ==(const FName& A) const
-	{
-		return Index == A.Index;
-	}
-};
-
+#ifndef UE4
 struct FString : public TArray<wchar_t>
 {
 	FString()
@@ -190,12 +94,9 @@ struct FString : public TArray<wchar_t>
 	
 
 };
+#endif
 
-struct FScriptDelegate
-{
-	struct FName FunctionName;
-	class UObject* Object;
-};
+#ifndef UE4
 
 struct FScriptInterface
 {
@@ -203,6 +104,11 @@ struct FScriptInterface
 	void* InterfacePointer;
 	//Pointer to the location of the interface object within the UObject referenced by ObjectPointer.
 };
+
+#else
+
+#endif
+
 
 struct FWindowsViewport;
 
@@ -362,11 +268,6 @@ struct TWCharArray : TArray<void *> {
 	}
 };
 */
-
-struct KismetSystemLibrary_GetEngineVersion_Params
-{
-	FString                                                ReturnValue;                                              // (Parm, OutParm, ReturnParm)
-};
 
 
 #endif

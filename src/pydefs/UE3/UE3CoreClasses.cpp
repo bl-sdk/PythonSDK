@@ -1,4 +1,6 @@
 #include "stdafx.h"
+
+#ifndef UE4
 // Using =======================================================================
 namespace py = pybind11;
 
@@ -10,7 +12,6 @@ void Export_pystes_Core_classes(py::module &m)
 		.def_static("FindClass", &UObject::FindClass, py::return_value_policy::reference)
 		.def_static("FindObjectsRegex", &UObject::FindObjectsRegex, py::return_value_policy::reference)
 		.def_static("FindObjectsContaining", &UObject::FindObjectsContaining, py::return_value_policy::reference)
-#ifndef UE4
 		.def_readwrite("HashNext", &UObject::HashNext, py::return_value_policy::reference)
 		.def_readwrite("HashOuterNext", &UObject::HashOuterNext, py::return_value_policy::reference)
 		.def_readwrite("StateFrame", &UObject::StateFrame, py::return_value_policy::reference)
@@ -18,7 +19,7 @@ void Export_pystes_Core_classes(py::module &m)
 		.def_readwrite("LinkerIndex", &UObject::LinkerIndex, py::return_value_policy::reference)
 		.def_readwrite("ObjectInternalInteger", &UObject::ObjectInternalInteger)
 		.def_readwrite("ObjectArchetype", &UObject::ObjectArchetype, py::return_value_policy::reference)
-#endif
+
 		.def_readwrite("ObjectFlags", &UObject::ObjectFlags, py::return_value_policy::reference)
 		.def_readwrite("InternalIndex", &UObject::InternalIndex)
 		.def_readwrite("Outer", &UObject::Outer, py::return_value_policy::reference)
@@ -202,11 +203,7 @@ void Export_pystes_Core_classes(py::module &m)
 		;
 	py::class_< UPackage, UObject >(m, "UPackage")
 		;
-#ifdef UE4
-	py::class_< UClass, UStruct>(m, "UClass")
-#else
 	py::class_< UClass, UState >(m, "UClass")
-#endif
 		.def_static("StaticClass", &UClass::StaticClass, py::return_value_policy::reference)
 		.def_property("bCooked", [](UClass &self) {return self.bCooked; }, [](UClass &self, bool value) {self.bCooked = value ? 1 : 0; })
 		.def_readwrite("ClassAddReferencedObjects", &UClass::ClassAddReferencedObjects)
@@ -243,3 +240,5 @@ void Export_pystes_Core_classes(py::module &m)
 		.def_readwrite("InterfacePointer", &FScriptInterface::InterfacePointer);
 
 }
+
+#endif

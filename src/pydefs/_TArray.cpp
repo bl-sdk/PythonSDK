@@ -1,4 +1,6 @@
 #include "stdafx.h"
+
+#include "gamedefines.h"
 // Using =======================================================================
 namespace py = pybind11;
 

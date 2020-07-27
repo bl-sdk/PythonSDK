@@ -1,4 +1,7 @@
 #include "stdafx.h"
+
+#ifndef UE4
+
 // Using =======================================================================
 namespace py = pybind11;
 
@@ -371,3 +374,5 @@ void Export_pystes_Core_structs(py::module &m)
 		;
 
 }
+
+#endif

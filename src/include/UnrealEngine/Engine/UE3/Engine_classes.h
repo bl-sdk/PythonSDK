@@ -7,6 +7,11 @@
 
 #include "stdafx.h"
 
+#ifndef UE4
+
+#include "UnrealEngine/UE3Defines.h"
+
+
 //---------------------------------------------------------------------------
 //Classes
 //---------------------------------------------------------------------------
@@ -1140,7 +1145,7 @@ public:
 	unsigned char InstallDLC(struct FOnlineContent* DLCBundle);
 };
 
-
+#ifndef UE4
 // Class Engine.Engine
 // 0x0600 (0x0040 - 0x0640)
 class UEngine : public USubsystem
@@ -1489,7 +1494,16 @@ public:
 	bool CreateNamedNetDriver(const struct FName& NetDriverName);
 };
 
+#else
 
+class UEngine {
+public:
+	UFont* TinyFont;
+	FSoftObjectPath TinyFontName;
+};
+
+
+#endif
 // Class Engine.InGameAdManager
 // 0x0034 (0x003C - 0x0070)
 class UInGameAdManager : public UObject
@@ -36603,4 +36617,10 @@ public:
 
 #ifdef _MSC_VER
 #pragma pack(pop)
+#endif
+
+
+#else
+
+#include "UnrealEngine/Engine/UE4/UE4EngineClasses.h"
 #endif

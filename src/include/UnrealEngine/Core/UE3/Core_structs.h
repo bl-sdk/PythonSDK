@@ -1,20 +1,8 @@
 #pragma once
 #include "stdafx.h"
 
+#ifndef UE4
 #include "gamedefines.h"
-
-/*
-#############################################################################################
-# Borderlands 2 (1.7) SDK
-# Generated with TheFeckless UE3 SDK Generator v1.4_Beta-Rev.51
-# ========================================================================================= #
-# File: Core_structs.h
-# ========================================================================================= #
-# Credits: uNrEaL, Tamimego, SystemFiles, R00T88, _silencer, the1domo, K@N@VEL
-# Thanks: HOOAH07, lowHertz
-# Forums: www.uc-forum.com, www.gamedeception.net
-#############################################################################################
-*/
 
 #ifdef _MSC_VER
 #pragma pack ( push, 0x4 )
@@ -600,4 +588,8 @@ struct FTexturePlatformData
 
 #ifdef _MSC_VER
 #pragma pack ( pop )
+#endif
+
+#else
+#include "UnrealEngine/Core/UE4/UE4CoreStructs.h"
 #endif

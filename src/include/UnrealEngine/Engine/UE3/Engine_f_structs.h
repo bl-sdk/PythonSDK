@@ -5,6 +5,8 @@
 #pragma pack(push, 0x4)
 #endif
 
+#ifndef UE4
+
 #include "stdafx.h"
 
 //---------------------------------------------------------------------------
@@ -35965,4 +35967,10 @@ struct AWaterVolume_Touch_Params
 
 #ifdef _MSC_VER
 #pragma pack(pop)
+#endif
+
+
+#else
+
+#include "UnrealEngine/Engine/UE4/UE4EngineFStructs.h"
 #endif
