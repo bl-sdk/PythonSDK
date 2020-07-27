@@ -6,9 +6,6 @@ import traceback
 # Need to make sure this is all loaded and aliased up before loading any mods
 from Mods import ModMenu  # noqa: F401
 
-unrealsdk.SDK_VERSION = 1
-
-
 _full_traceback = False
 
 for name in os.listdir(os.path.dirname(__file__)):
