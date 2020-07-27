@@ -3,8 +3,11 @@ import importlib
 import os
 import traceback
 
+# Print this first incase we fail while loading the mod menu
+unrealsdk.Log("[Python] Version: " + ".".join([str(x) for x in unrealsdk.GetVersion()]))
+
 # Need to make sure this is all loaded and aliased up before loading any mods
-from Mods import ModMenu  # noqa: F401
+from Mods import ModMenu  # noqa: F401, E402
 
 _full_traceback = False
 

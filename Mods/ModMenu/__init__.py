@@ -6,6 +6,7 @@ import sys
 VERSION_MAJOR = 2
 VERSION_MINOR = 0
 
+unrealsdk.Log(f"[ModMenu] Version: {VERSION_MAJOR}.{VERSION_MINOR}")
 
 # Exports
 from . import Options as Options  # noqa: F401, E402
