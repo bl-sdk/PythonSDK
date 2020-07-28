@@ -59,7 +59,6 @@ public:
 class UObject : FHelper
 {
 public:
-	void* VTableObject;                                             // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
 	int32_t                                            ObjectFlags;                                              // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
 	int32_t                                            InternalIndex;                                            // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
 	class UClass* Class;                                                    // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY

@@ -7,6 +7,8 @@
 #include "stdafx.h"
 
 #ifdef UE4
+#pragma warning(disable : 26495)
+
 #include "UE4EngineClasses.h"
 
 //---------------------------------------------------------------------------

@@ -8,6 +8,8 @@
 
 #ifdef UE4
 
+#pragma warning(disable : 26495)
+
 #include "UnrealEngine/UE4Defines.h"
 #include "UnrealEngine/Core/UE4/UE4CoreClasses.h"
 #include "UnrealEngine/Engine/UE4/UE4EngineClasses.h"

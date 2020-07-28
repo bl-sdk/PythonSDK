@@ -6,9 +6,10 @@
 #ifdef _MSC_VER
 #pragma pack(push, 0x8)
 #endif
-
-
 #include "UnrealEngine/UE4Defines.h"
+
+#pragma warning(disable : 26495)
+
 
 //---------------------------------------------------------------------------
 //Enums
