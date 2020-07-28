@@ -48,6 +48,7 @@ CSigScan::CSigScan(const wchar_t* moduleName = NULL)
 #else
 	m_moduleLen = (size_t)pe->OptionalHeader.SizeOfImage;
 #endif
+
 	Logging::LogF("Module Length: %x\n", m_moduleLen);
 
 }
@@ -89,13 +90,13 @@ void* CSigScan::Scan(const char* sig, const char* mask, int sigLength)
 	return nullptr;
 }
 
-
 uintptr_t CSigScan::FindPattern(HMODULE module, const unsigned char* pattern, const char* mask)
 {
-	MODULEINFO info = { };
-	GetModuleInformation(GetCurrentProcess(), module, &info, sizeof(MODULEINFO));
+	// Originally this code used the (better solution) of calling `GetModuleInformation` but instead it magically broke on an upgrade 
+	// Physically I have no absolute idea on how it of all functions broke but have a good day :)
+	uintptr_t start = reinterpret_cast<uintptr_t>(module);
 
-	return FindPattern(reinterpret_cast<uintptr_t>(module), info.SizeOfImage, pattern, mask);
+	return FindPattern(start, m_moduleLen, pattern, mask);
 }
 
 uintptr_t CSigScan::FindPattern(uintptr_t start, size_t length, const unsigned char* pattern, const char* mask)

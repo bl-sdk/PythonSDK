@@ -173,13 +173,12 @@ namespace UnrealSDK
 
 			Logging::LogF("\n\nInitializing UE4 SDK...\n");
 			auto addy = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::GObjects.Sig, Signatures::GObjects.Mask);
-			auto x = (0x140000000 + ( (addy + *(DWORD*)(addy + 0x3) + 0x7)) );
+			auto x = (FUObjectArray*)(0x140000000 + (0x00fffffff & (addy + *(DWORD*)(addy + 0x3) + 0x7)));
 
-			auto z = (FUObjectArray*)x;
-			pGObjects = (void*)(&(z->ObjObjects));
+			pGObjects = (void*)(&(x->ObjObjects));
 
-			Logging::LogF("[Internal] FUObjectArray = 0x%p\n", z);
-			Logging::LogF("[Internal] GObjects = 0x%p\n", z->ObjObjects.Objects);
+			Logging::LogF("[Internal] FUObjectArray = 0x%p\n", x);
+			Logging::LogF("[Internal] GObjects = 0x%p\n", x->ObjObjects.Objects);
 			Logging::LogF("[Debug] Total Objects: %d\n", UObject::GObjects()->Count);
 
 			
