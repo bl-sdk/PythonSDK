@@ -114,7 +114,7 @@ public:
 			UObject* obj = UObject::GObjects()->Get(i);
 			if (obj == nullptr) continue;
 
-			if (obj->GetFullName() == name) {
+			if (!strcmp(obj->GetFullName().c_str(), name.c_str())) {
 				return static_cast<UObject*>(obj);
 			}
 

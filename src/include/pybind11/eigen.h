@@ -82,7 +82,6 @@ template <bool EigenRowMajor> struct EigenConformable {
 	EigenConformable(EigenIndex r, EigenIndex c,
 		EigenIndex rstride, EigenIndex cstride) :
 		conformable{ true }, rows{ r }, cols{ c } {
-		// TODO: when Eigen bug #747 is fixed, remove the tests for non-negativity. http://eigen.tuxfamily.org/bz/show_bug.cgi?id=747
 		if (rstride < 0 || cstride < 0) {
 			negativestrides = true;
 		}

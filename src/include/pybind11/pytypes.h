@@ -769,10 +769,6 @@ class unpacking_collector;
 
 NAMESPACE_END(detail)
 
-// TODO: After the deprecated constructors are removed, this macro can be simplified by
-//       inheriting ctors: `using Parent::Parent`. It's not an option right now because
-//       the `using` statement triggers the parent deprecation warning even if the ctor
-//       isn't even used.
 #define PYBIND11_OBJECT_COMMON(Name, Parent, CheckFun) \
     public: \
         PYBIND11_DEPRECATED("Use reinterpret_borrow<"#Name">() or reinterpret_steal<"#Name">()") \

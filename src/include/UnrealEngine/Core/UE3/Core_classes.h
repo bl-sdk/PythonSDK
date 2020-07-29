@@ -567,8 +567,6 @@ public:
 	class UField* Next;                                             		// NOT AUTO-GENERATED PROPERTY
 };
 
-// TODO: FIGURE OUT HOW TO SEPERATE THIS OUT INTO ITS OWN FILE
-// The compiler ends up complaining and completely hates me trying to do this :)
 #ifdef UE4
 class UProperty : public UField
 {

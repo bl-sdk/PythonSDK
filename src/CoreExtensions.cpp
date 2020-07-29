@@ -545,8 +545,10 @@ UClass* UObject::FindClass(const char* ClassName, const bool Lookup)
 		if (!strcmp(c, "Class"))
 			UnrealSDK::ClassMap[object->GetName()] = static_cast<UClass*>(object);
 	}
+
 	if (UnrealSDK::ClassMap.count(ClassName))
 		return UnrealSDK::ClassMap[ClassName];
+
 	return nullptr;
 }
 

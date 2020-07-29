@@ -84,8 +84,6 @@ namespace Util
 
 		return formatted;
 	}
-
-	// TODO: Benchmarking and whatnot to see how these perform
 	std::wstring Widen(const std::string& Input)
 	{
 		std::wstring out;

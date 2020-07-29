@@ -294,6 +294,9 @@ namespace UnrealSDK
 
 	bool getCanvasPostRender(UObject* Caller, UFunction* Function, FStruct* Params)
 	{
+		gameConsole = static_cast<UConsole*>(UObject::Find(ObjectMap["ConsoleObjectType"].c_str(), ObjectMap["ConsoleObjectName"].c_str()));
+		auto eng = static_cast<UEngine*>(gEngine);
+
 #ifndef UE4
 		// Set console key to Tilde if not already set
 		gameConsole = static_cast<UConsole *>(UObject::Find(ObjectMap["ConsoleObjectType"].c_str(), ObjectMap["ConsoleObjectName"].c_str()));
@@ -309,6 +312,7 @@ namespace UnrealSDK
 		gHookManager->Remove(Function->GetObjectName(), "GetCanvas");
 		return true;
 #endif
+
 		return true;
 	}
 
@@ -344,7 +348,12 @@ namespace UnrealSDK
 				continue;
 
 			if (!strcmp(Object->Class->GetName(), "Class"))
-				ClassMap[Object->GetName()] = static_cast<UClass *>(Object);
+#ifndef UE4
+				ClassMap[Object->GetName()] = static_cast<UClass*>(Object);
+#else 
+				// Technically this is just a bandaid solution, in reality UE4EngineClasses.h should've been generated better
+				ClassMap[Object->GetFullName()] = static_cast<UClass*>(Object);
+#endif
 
 			if (!strcmp(Object->GetFullName().c_str(), ObjectMap["EngineFullName"].c_str()))
 				gEngine = Object;
