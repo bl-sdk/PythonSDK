@@ -371,7 +371,10 @@ def _FrontEndUpdateTooltips(caller: unrealsdk.UObject, function: unrealsdk.UFunc
 
     if caller.WPCOwner.WorldInfo.NetMode != 3:
         tooltip += caller.TooltipSpacing + caller.NetworkOptionsTooltip
-        tooltip += caller.TooltipSpacing + "[M] Mods"
+
+        # Only show on the main menu, not also the pause menu
+        if caller.Class.Name == "FrontendGFxMovie":
+            tooltip += caller.TooltipSpacing + "[M] Mods"
 
     if caller.MyFrontendDefinition is not None:
         caller.SetVariableString(
