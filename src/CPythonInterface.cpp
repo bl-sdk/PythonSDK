@@ -240,6 +240,8 @@ PythonStatus CPythonInterface::InitializeModules()
 {
 	m_modulesInitialized = false;
 	SetPaths();
+	Logging::LogPy(Util::Format("[Python] Version: %d.%d.%d", VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH));
+
 	try
 	{
 		py::module::import("unrealsdk");
@@ -254,6 +256,7 @@ PythonStatus CPythonInterface::InitializeModules()
 		Logging::Log("[Python] Failed to initialize Python modules\n");
 		return PYTHON_MODULE_ERROR;
 	}
+	
 	Logging::Log("[Python] Python initialized (" PYTHON_ABI_STRING ")\n");
 	m_modulesInitialized = true;
 	return PYTHON_OK;
