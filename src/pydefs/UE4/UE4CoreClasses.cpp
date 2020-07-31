@@ -1,6 +1,10 @@
 #include "stdafx.h"
 
 #ifdef UE4
+
+#pragma warning(push)
+#pragma warning(disable : 26444)
+
 // Using =======================================================================
 namespace py = pybind11;
 
@@ -93,6 +97,7 @@ void Export_pystes_Core_classes(py::module& m)
 		.def_readwrite("FormatExtension", &UExporter::FormatExtension, py::return_value_policy::reference)
 		.def_readwrite("FormatDescription", &UExporter::FormatDescription, py::return_value_policy::reference);
 
+	py::class_<UDistribution>(m, "UDistribution");
 
 	py::class_< UDistributionVector, UDistribution >(m, "UDistributionVector")
 		.def_property("bCanBeBaked", [](UDistributionVector& self) {return self.bCanBeBaked; }, [](UDistributionVector& self, bool value) {self.bCanBeBaked = value ? 1 : 0; })
@@ -155,4 +160,7 @@ void Export_pystes_Core_classes(py::module& m)
 		.def_readwrite("InterfacePointer", &FScriptInterface::InterfacePointer);
 
 }
+
+#pragma warning(pop)
+
 #endif

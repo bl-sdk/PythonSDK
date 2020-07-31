@@ -59,6 +59,7 @@ namespace UnrealSDK
 
 	extern CPythonInterface* Python;
 	extern CHookManager* gHookManager;
+	extern bool bPythonInitTried;
 
 	extern int EngineVersion;
 	extern int ChangelistNumber;
@@ -83,6 +84,9 @@ namespace UnrealSDK
 	void RegisterHook(const std::string& FuncName, const std::string& HookName,
 	                  const std::function<bool(UObject*, UFunction*, FStruct*)>& FuncHook);
 	bool RemoveHook(const std::string& FuncName, const std::string& HookName);
+
+	void ReloadPython();
+
 }
 
 #endif

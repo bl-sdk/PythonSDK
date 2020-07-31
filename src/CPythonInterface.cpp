@@ -129,13 +129,10 @@ PYBIND11_EMBEDDED_MODULE(unrealsdk, m)
 	m.def("CallPostEdit", [](bool NewValue) { UnrealSDK::gCallPostEdit = NewValue; });
 }
 
-#ifndef UE4
-
-// TODO: Implement UE4 AddToConsoleLog
-// TODO: Implement UE4 CheckPythonCommand
 
 void AddToConsoleLog(UConsole* console, FString input)
 {
+#ifndef UE4
 	int prev = (console->HistoryTop - 1) % 16;
 	if (!console->History[prev].Data || strcmp(input.AsString(), console->History[prev].AsString()))
 	{
@@ -147,6 +144,10 @@ void AddToConsoleLog(UConsole* console, FString input)
 	}
 	console->HistoryCur = console->HistoryTop;
 	console->SaveConfig();
+#else
+	// TODO: Implement UE4 AddToConsoleLog
+	// In UE4, its not just a fixed size array, now its a TArray<FString> without any max defined size
+#endif
 }
 
 bool CheckPythonCommand(UObject* caller, UFunction* function, FStruct* params)
@@ -156,28 +157,36 @@ bool CheckPythonCommand(UObject* caller, UFunction* function, FStruct* params)
 	char* input = command->AsString();
 	if (strncmp("py ", input, 3) == 0)
 	{
-		AddToConsoleLog((UConsole *)caller, *command);
+		AddToConsoleLog((UConsole*)caller, *command);
 		Logging::LogF("\n>>> %s <<<\n", input);
 		UnrealSDK::Python->DoString(input + 3);
 	}
 	else if (strncmp("pyexec ", input, 7) == 0)
 	{
-		AddToConsoleLog((UConsole *)caller, *command);
+		AddToConsoleLog((UConsole*)caller, *command);
 		Logging::LogF("\n>>> %s <<<\n", input);
 		UnrealSDK::Python->DoFile(input + 7);
 	}
-	else
-		((UConsole *)caller)->ConsoleCommand(*command);
+	else {
+#ifndef UE4
+	((UConsole*)caller)->ConsoleCommand(*command);
+#else
+	// TODO: Test whether or not this actually executes a console command idfk
+
+	UWorld* engineWorld = static_cast<UWorld*>(UObject::FindObject("Class /Script/Engine.World"));
+	APlayerController* targetPlayer = ( (UConsole*)caller)->ConsoleTargetPlayer->PlayerController;
+	UKismetSystemLibrary::ExecuteConsoleCommand(engineWorld, *command, targetPlayer);
+#endif
+	}
 	return false;
 }
-#endif
 
 CPythonInterface::CPythonInterface()
 {
 	m_modulesInitialized = false;
 	InitializeState();
 
-	// TODO: Implement UE4 CheckPythonCommand
+	// TODO: Figure out the UE4 function to hook into for this function call
 	// UnrealSDK::RegisterHook("Engine.Console.ShippingConsoleCommand", "CheckPythonCommand", &CheckPythonCommand);
 }
 
@@ -189,6 +198,19 @@ CPythonInterface::~CPythonInterface()
 	}
 
 	CleanupState();
+}
+
+PythonStatus CPythonInterface::ReloadState() {
+	try {
+		mainModule.reload();
+		Logging::Log("[Python] Successfully reloaded Python modules");
+	}
+	catch (std::exception e) {
+		Logging::LogF("%s\n", e.what());
+		Logging::Log("[Python] Failed to reload Python modules");
+		return PYTHON_MODULE_ERROR;
+	}
+	return PYTHON_OK;
 }
 
 void CPythonInterface::InitializeState()
@@ -242,11 +264,11 @@ PythonStatus CPythonInterface::InitializeModules()
 	SetPaths();
 	try
 	{
-		py::module::import("Mods");
+		mainModule = py::module::import("Mods");
 	}
 	catch (std::exception e)
 	{
-		Logging::LogF(e.what());
+		Logging::LogF("%s\n", e.what());
 		Logging::Log("[Python] Failed to initialize Python modules\n");
 		return PYTHON_MODULE_ERROR;
 	}

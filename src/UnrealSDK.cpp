@@ -39,7 +39,7 @@ namespace UnrealSDK
 	bool gCallPostEdit = true;
 
 	CPythonInterface* Python;
-
+	bool bPythonInitTried = false;
 	
 	int EngineVersion = -1;
 	int ChangelistNumber = -1;
@@ -111,9 +111,9 @@ namespace UnrealSDK
 	void __fastcall hkCallFunction(UObject* caller, void* edx, FFrame& Stack, void* const Result, UFunction* Function)
 #endif
 	{
-		Logging::LogF("CallFunction\n");
 		if (logAllCalls)
 		{
+			Logging::LogF("CallFunction\n");
 			std::string callerName = caller->GetFullName();
 			std::string functionName = Function->GetFullName();
 
@@ -213,10 +213,10 @@ namespace UnrealSDK
 		pFrameStep = reinterpret_cast<tFrameStep>(sigscan.Scan(Signatures::FrameStep));
 		Logging::LogF("[Internal] FFrame::Step() = 0x%p\n", pFrameStep);
 
-		// TODO: Add these sigs
 		pStaticConstructObject = reinterpret_cast<tStaticConstructObject>(sigscan.Scan(Signatures::StaticConstructor));
 		Logging::LogF("[Internal] UObject::StaticConstructObject() = 0x%p\n", pStaticConstructObject);
-
+		
+		// TODO: Add these sigs
 		pLoadPackage = reinterpret_cast<tLoadPackage>(sigscan.Scan(Signatures::LoadPackage));
 		Logging::LogF("[Internal] UObject::LoadPackage() = 0x%p\n", pLoadPackage);
 
@@ -254,6 +254,7 @@ namespace UnrealSDK
 			Logging::LogF("Enabled SET commands\n");
 #endif
 		
+		LogAllCalls(false);
 
 		MH_Initialize();
 
@@ -276,26 +277,34 @@ namespace UnrealSDK
 		
 	}
 
+	void ReloadPython() {
+		Logging::Log("Reloading python modules...");
+
+		if (Python->ReloadState() == PYTHON_MODULE_ERROR && Settings::DeveloperModeEnabled()) {
+			Util::Popup(L"Python Module Error",
+				L"An error occurred while reloading the Python modules.\n\nPlease check your console for the exact error. Once you've fixed the error, press F11 to reload the Python state.");
+		}
+	}
+
 	void InitializePython()
 	{
 		Python = new CPythonInterface();
+		bPythonInitTried = true;
 		const PythonStatus status = Python->InitializeModules();
 		if (status == PYTHON_MODULE_ERROR && !Settings::DeveloperModeEnabled())
 		{
 			Util::Popup(L"Python Module Error",
-			            L"A core Python module failed to load correctly, and the SDK cannot continue to run.\n\nThis may indicate that the game has been patched and the SDK needs updating.");
+				L"A core Python module failed to load correctly, and the SDK cannot continue to run.\n\nThis may indicate that the game has been patched and the SDK needs updating.");
 		}
 		else if (status == PYTHON_MODULE_ERROR && Settings::DeveloperModeEnabled())
 		{
 			Util::Popup(L"Python Module Error",
-			            L"An error occurred while loading the Python modules.\n\nPlease check your console for the exact error. Once you've fixed the error, press F11 to reload the Python state.");
+				L"An error occurred while loading the Python modules.\n\nPlease check your console for the exact error. Once you've fixed the error, press F11 to reload the Python state.");
 		}
 	}
 
 	bool getCanvasPostRender(UObject* Caller, UFunction* Function, FStruct* Params)
 	{
-		gameConsole = static_cast<UConsole*>(UObject::Find(ObjectMap["ConsoleObjectType"].c_str(), ObjectMap["ConsoleObjectName"].c_str()));
-		auto eng = static_cast<UEngine*>(gEngine);
 
 #ifndef UE4
 		// Set console key to Tilde if not already set
@@ -307,26 +316,52 @@ namespace UnrealSDK
 		if (gameConsole && (gameConsole->ConsoleKey == FName("None") || gameConsole->ConsoleKey == FName("Undefine")))
 			gameConsole->ConsoleKey = FName("Tilde");
 
-		InitializePython();
+#else
+		gameConsole = static_cast<UConsole*>(UObject::Find(ObjectMap["ConsoleObjectType"].c_str(), ObjectMap["ConsoleObjectName"].c_str()));
+		auto eng = static_cast<UEngine*>(gEngine);
 
-		gHookManager->Remove(Function->GetObjectName(), "GetCanvas");
-		return true;
+		// TODO: Enable the UE4 console
+
+		// In the event the gameConsole found through UObject::Find
+		// This being set probably means that the console already exists but meh
+		if (eng && gameConsole == nullptr && eng->GameViewport)  
+			gameConsole = eng->GameViewport->ViewportConsole;
+		
+		// If our console wasn't initialized in the first place
+		// Generally ViewportConsole will end up being nullptr if the game is built for shipping
+		if (eng && eng->GameViewport && gameConsole) { 
+			/*
+			for (UObject* obj : UObject::FindAll( (char*)"Class /Script/Engine.InputSettings")) {
+				UInputSettings* pc = static_cast<UInputSettings*>(obj);
+				// 13786: Tilde
+			}
+			
+			eng->GameViewport->ViewportConsole = gameConsole;
+			*/
+		}
+
+
+		
 #endif
 
+
+		InitializePython();
+		gHookManager->Remove(Function->GetObjectName(), "GetCanvas");
 		return true;
+
 	}
 
 	void initializeGameVersions()
 	{
-#ifndef UE4
-		EngineVersion = UObject::GetEngineVersion();
-		ChangelistNumber = UObject::GetBuildChangelistNumber();
-		Logging::LogD("[Internal] Engine Version = %d, Build Changelist = %d\n", EngineVer, ChangelistNumber);
-#else
-		EngineBuild = UKismetSystemLibrary::GetEngineVersion().AsString();
-		// UE4 doesn't really have a good version of "Changelist" its effectively just in Engine Version now
-		Logging::LogD("[Internal] Engine Version: %s\n", EngineBuild);
-#endif
+		#ifndef UE4
+			EngineVersion = UObject::GetEngineVersion();
+			ChangelistNumber = UObject::GetBuildChangelistNumber();
+			Logging::LogD("[Internal] Engine Version = %d, Build Changelist = %d\n", EngineVer, ChangelistNumber);
+		#else
+			EngineBuild = UKismetSystemLibrary::GetEngineVersion().AsString();
+			// UE4 doesn't really have a good version of "Changelist" its effectively just in Engine Version now
+			Logging::LogD("[Internal] Engine Version: %s\n", EngineBuild);
+		#endif
 	}
 
 	// This function is used to ensure that everything gets called in the game thread once the game itself has loaded
@@ -334,11 +369,11 @@ namespace UnrealSDK
 	{
 		Logging::LogD("[GameReady] Thread: %i\n", GetCurrentThreadId());
 
-#ifdef _DEBUG // This should probably done a better way, but it doesn't sink in too much time
+		#ifdef _DEBUG // This should probably done a better way, but it doesn't sink in too much time
 		remove("SDKDumps.txt");
 		std::ofstream file;
 		file.open("SDKDumps.txt", std::ios::app);
-#endif
+		#endif
 
 		for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
 		{
@@ -347,13 +382,14 @@ namespace UnrealSDK
 			if (!Object || !Object->Class)
 				continue;
 
-			if (!strcmp(Object->Class->GetName(), "Class"))
-#ifndef UE4
-				ClassMap[Object->GetName()] = static_cast<UClass*>(Object);
-#else 
+			if (!strcmp(Object->Class->GetName(), "Class")) {
 				// Technically this is just a bandaid solution, in reality UE4EngineClasses.h should've been generated better
+				#ifndef UE4
+				ClassMap[Object->GetName()] = static_cast<UClass*>(Object);
+				#else 
 				ClassMap[Object->GetFullName()] = static_cast<UClass*>(Object);
-#endif
+				#endif
+			}
 
 			if (!strcmp(Object->GetFullName().c_str(), ObjectMap["EngineFullName"].c_str()))
 				gEngine = Object;
@@ -363,11 +399,34 @@ namespace UnrealSDK
 			#endif
 		}
 
-#ifdef _DEBUG
+		#ifdef _DEBUG
 		file.close();
 		Logging::InitializeExtern();
-#endif
+		#endif
 
+		#ifdef _DEBUG
+				remove("SDKNames.txt");
+				std::ofstream f;
+				file.open("SDKNames.txt", std::ios::app);
+				for (size_t i = 0; i < FName::Names()->Count; ++i) {
+					try {
+						auto z = FName::Names()->Get(i);
+						if (z == nullptr) continue;
+
+						std::string output;
+						if (z->IsWide()) 
+							output.append( Util::Narrow(std::wstring(z->GetWideName())) );
+						else 
+							output.append(z->GetAnsiName());
+						file << "[" << i << "]: " << output << std::endl;
+					}
+					catch (...) { 
+						file << "UNKNOWN [" << i << "]" << std::endl; 
+					}
+				}
+
+				f.close();
+		#endif
 		initializeGameVersions();
 
 		Logging::PrintLogHeader();
@@ -384,25 +443,13 @@ namespace UnrealSDK
 		gHookManager = new CHookManager("EngineHooks");
 		hookGame();
 
-		//for (int x = 0; x < UObject::GObjects()->Count; x++) {
-		//	if (UObject::GObjects()->Get(x) != nullptr && UObject::GObjects()->Get(x)->Class != nullptr && !strcmp(UObject::GObjects()->Get(x)->Class->GetName(), "Class")) {
-		//		UClass* obj = (UClass *)UObject::GObjects()->Get(x);
-		//		Logging::LogF("%d %s\n", x, obj->GetFullName().c_str());
-		//		for (auto superClass = obj->SuperField; superClass; superClass = static_cast<UClass*>(superClass->SuperField)) {
-		//			Logging::LogF("\t%s\n", superClass->GetFullName().c_str());
-
-		//		}
-		//	}
-		//	//Logging::LogF("%x\n", UObject::GObjects()->Get(x));
-		//}
-
-#ifdef UE4 
-		// This function is used in BL3 near the map start up
-		// TODO: Make this more generalized per game, that's probably better to do instead of this approach
-		gHookManager->Register("/Script/OakGame.MenuMapMenuFlow.Start", "StartupSDK", GameReady);
-#else
-		gHookManager->Register("Engine.Console.Initialized", "StartupSDK", GameReady);
-#endif
+		#ifdef UE4 
+			// This function is used in BL3 near the map start up
+			// TODO: Make this more generalized per game, that's probably better to do instead of this approach
+			gHookManager->Register("/Script/OakGame.MenuMapMenuFlow.Start", "StartupSDK", GameReady);
+		#else
+			gHookManager->Register("Engine.Console.Initialized", "StartupSDK", GameReady);
+		#endif
 
 	}
 

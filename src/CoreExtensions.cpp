@@ -163,13 +163,14 @@ py::object FHelper::GetArrayProperty(UArrayProperty* Prop)
 
 struct FStruct FHelper::GetStructProperty(UStructProperty* Prop)
 {
-	return FStruct{ nullptr, nullptr };
+	
+	return FStruct{ nullptr, GetPropertyAddress(Prop) };
 }
 
 
 class FString* FHelper::GetStrProperty(UProperty* Prop)
 {
-	return nullptr;
+	return reinterpret_cast<FString*>(GetPropertyAddress(Prop));
 }
 
 

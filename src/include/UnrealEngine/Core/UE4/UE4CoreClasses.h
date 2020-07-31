@@ -125,6 +125,8 @@ public:
 
 	static class UObject* DynamicLoadObject(const class FString& ObjectName, class UClass* ObjectClass, bool MayFail) {
 		// TODO: Implement UE4 DynamicLoadObject
+		// See: https://docs.unrealengine.com/en-US/API/Runtime/CoreUObject/UObject/FSoftObjectPtr/index.html
+		
 		return nullptr;
 	}
 	void DumpObject();
@@ -205,16 +207,26 @@ public:
 class UStruct : public UField
 {
 public:
-	class UStruct* SuperField;                                               // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
-	class UField* Children;                                                 // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
-	int32_t                                            PropertySize;                                             // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
-	int32_t                                            MinAlignment;                                             // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
-	TArray<uint8_t>                                    Script;                                                   // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
-	class UProperty* PropertyLink;                                             // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
-	class UProperty* RefLink;                                                  // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
-	class UProperty* DestructorLink;                                           // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
-	class UProperty* PostConstructLink;                                        // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
-	TArray<UObject*>                                   ScriptObjectReferences;                                   // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
+	/* Struct this inherits from, may be null */
+	class UStruct* SuperField;
+	/* Pointer to start of linked list of child fields */
+	class UField* Children;
+	/* Total size of all UProperties, the allocated structure may be larger due to alignment */
+	int32_t                                            PropertySize;
+	/* Alignment of structure in memory, structure will be at least this large */
+	int32_t                                            MinAlignment;
+	/* Script bytecode associated with this object */
+	TArray<uint8_t>                                    Script;
+	/* In memory only: Linked list of properties from most-derived to base */
+	class UProperty* PropertyLink;
+	/* In memory only: Linked list of object reference properties from most-derived to base */
+	class UProperty* RefLink;
+	/* In memory only: Linked list of properties requiring destruction. Note this does not include things that will be destroyed byt he native destructor */
+	class UProperty* DestructorLink;
+	/** In memory only: Linked list of properties requiring post constructor initialization */
+	class UProperty* PostConstructLink;
+	/* Array of object references embedded in script code. Mirrored for easy access by realtime garbage collection code */
+	TArray<UObject*>                                   ScriptObjectReferences;
 
 	static UClass* StaticClass()
 	{

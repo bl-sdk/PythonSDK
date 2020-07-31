@@ -15,6 +15,8 @@ public:
 	~CPythonInterface();
 
 	PythonStatus InitializeModules();
+	PythonStatus ReloadState();
+
 	int RunString(const char* string);
 	void CallShutdownFuncs();
 	int DoFile(const char* filename);
@@ -31,6 +33,7 @@ private:
 	int DoFileAbsolute(const char* path);
 
 	pybind11::object m_mainNamespace;
+	pybind11::module mainModule;
 	std::string m_PythonPath;
 	std::string m_StdoutBuffer;
 	std::string m_StderrBuffer;
