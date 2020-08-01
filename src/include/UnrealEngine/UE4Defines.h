@@ -168,6 +168,8 @@ struct FChunkedFNameEntryArray
 	}
 };
 
+
+
 struct FName
 {
 	int Index;
@@ -183,14 +185,12 @@ public:
 public:
 	FName(const std::string& FindName)
 	{
+
 		Index = 0;
 		Number = 0;
-#ifndef UE4
-		if (UnrealSDK::EngineVersion <= 8630)
-			((UnrealSDK::tFNameInitOld)(UnrealSDK::pFNameInit))(this, (wchar_t*)Util::Widen(FindName).c_str(), 0, 1, 1, 0);
-		else
-			((UnrealSDK::tFNameInitNew)(UnrealSDK::pFNameInit))(this, (wchar_t*)Util::Widen(FindName).c_str(), 0, 1, 1);
-#endif
+		FName output = ((UnrealSDK::UE4FNameInit)(UnrealSDK::pFNameInit))(Util::Widen(FindName).c_str(), 0, 1);
+		*this = output;
+
 		Logging::LogD("Made FName; Index: %d, Number: %d, Name: %s\n", Index, Number, GetName());
 	}
 
@@ -198,13 +198,9 @@ public:
 	{
 		Index = 0;
 		Number = 0;
-#ifndef UE4
-		if (UnrealSDK::EngineVersion <= 8630)
-			((UnrealSDK::tFNameInitOld)(UnrealSDK::pFNameInit))(this, (wchar_t*)Util::Widen(FindName).c_str(), number, 1, 1,
-				0);
-		else
-			((UnrealSDK::tFNameInitNew)(UnrealSDK::pFNameInit))(this, (wchar_t*)Util::Widen(FindName).c_str(), number, 1, 1);
-#endif
+
+		FName output = ((UnrealSDK::UE4FNameInit)(UnrealSDK::pFNameInit))(Util::Widen(FindName).c_str(), number, 1);
+		*this = output;
 	}
 
 	static FChunkedFNameEntryArray* Names()

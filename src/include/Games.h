@@ -138,9 +138,10 @@ static std::map<std::string, MemorySignature> bl3_signatures { {
 
 	{
 	"FNameInit", {
-		"\x55\x8B\xEC\x6A\xFF\x68\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x50\x81\xEC\x9C\x0C",
-		"xxxxxx??????xxxxxxxxx",
-		21
+		// 40  53  48  83  EC  30  C7  44  24  ??  ??  ??  ??  ??
+		"\x40\x53\x48\x83\xEC\x30\xC7\x44\x24\x00\x00\x00\x00\x00",
+		"xxxxxxxxx?????",
+		14
 	}},
 	{
 	"SetCommand", {

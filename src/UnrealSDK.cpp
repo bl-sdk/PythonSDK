@@ -29,7 +29,7 @@ namespace UnrealSDK
 	tProcessEvent pProcessEvent;
 	tCallFunction pCallFunction;
 	tFrameStep pFrameStep;
-	tFNameInitOld pFNameInit;
+	void* pFNameInit;
 	tStaticConstructObject pStaticConstructObject;
 	tLoadPackage pLoadPackage;
 	tGetDefaultObject pGetDefaultObject;
@@ -189,6 +189,9 @@ namespace UnrealSDK
 			Logging::LogF("[Internal] FChunkedFNameEntryArray = 0x%p\n", y);
 			Logging::LogF("[Internal] GNames = 0x%p\n", (void***)(y->Objects) );
 
+
+			pFNameInit = reinterpret_cast<UE4FNameInit>(sigscan.Scan(Signatures::FNameInit));
+			Logging::LogF("[Internal] FindOrCreateFName = 0x%p\n", pFNameInit);
 #else 
 		void*** tempGObjects = (void***)sigscan.Scan(Signatures::GObjects);
 		if (tempGOBjects != nullptr) {
@@ -201,6 +204,9 @@ namespace UnrealSDK
 			pGNames = *tempGNames;
 			Logging::LogF("[Internal] GNames = 0x%p\n", pGNames);
 		}
+
+		pFNameInit = reinterpret_cast<tFNameInitOld>(sigscan.Scan(Signatures::FNameInit));
+		Logging::LogF("[Internal] FindOrCreateFName = 0x%p\n", pFNameInit);
 #endif
 
 		pProcessEvent = reinterpret_cast<tProcessEvent>(sigscan.Scan(Signatures::ProcessEvent));
@@ -227,8 +233,7 @@ namespace UnrealSDK
 		} else 
 			pGMalloc = nullptr;
 
-		pFNameInit = reinterpret_cast<tFNameInitOld>(sigscan.Scan(Signatures::FNameInit));
-		Logging::LogF("[Internal] FindOrCreateFName = 0x%p\n", pFNameInit);
+
 
 		pGetDefaultObject = reinterpret_cast<tGetDefaultObject>(sigscan.Scan(Signatures::GetDefaultObject));
 		Logging::LogF("[Internal] GetDefaultObject = 0x%p\n", pGetDefaultObject);
@@ -330,17 +335,18 @@ namespace UnrealSDK
 		// If our console wasn't initialized in the first place
 		// Generally ViewportConsole will end up being nullptr if the game is built for shipping
 		if (eng && eng->GameViewport && gameConsole) { 
-			/*
+			FName n = FName(std::string("Tilde"));
+			
 			for (UObject* obj : UObject::FindAll( (char*)"Class /Script/Engine.InputSettings")) {
 				UInputSettings* pc = static_cast<UInputSettings*>(obj);
-				// 13786: Tilde
+				pc->ConsoleKey.KeyName = n;
 			}
 			
 			eng->GameViewport->ViewportConsole = gameConsole;
-			*/
+			
 		}
 
-
+		
 		
 #endif
 
