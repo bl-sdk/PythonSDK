@@ -218,9 +218,9 @@ def _HandleSpinnerSliderChange(caller: unrealsdk.UObject, function: unrealsdk.UF
     if isinstance(changed_option, Options.Slider):
         new_value = int(params.NewSliderValue)
     elif isinstance(changed_option, Options.Boolean):
-        changed_option.CurrentValue = bool(params.NewChoiceIndex)
+        new_value = bool(params.NewChoiceIndex)
     elif isinstance(changed_option, Options.Spinner):
-        changed_option.CurrentValue = changed_option.Choices[params.NewChoiceIndex]
+        new_value = changed_option.Choices[params.NewChoiceIndex]
     else:
         raise RuntimeError(f"Option of bad type '{type(changed_option)}' somehow changed value.")
 
