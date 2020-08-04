@@ -628,7 +628,7 @@ public:
 class UArrayProperty : public UProperty
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0070(0x0008) MISSED OFFSET
+	UProperty* Inner_DONOTUSE;
 
 	static UClass* StaticClass()
 	{
@@ -636,6 +636,9 @@ public:
 		return ptr;
 	}
 
+	UProperty* GetInner() {
+		return Inner_DONOTUSE;
+	}
 };
 
 
@@ -990,13 +993,16 @@ public:
 class UStructProperty : public UProperty
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0070(0x0008) MISSED OFFSET
+	UScriptStruct* STRUCT_DONOTUSE;
+	//unsigned char                                      UnknownData00[0x8];                                       // 0x0070(0x0008) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindClass("Class CoreUObject.StructProperty");
 		return ptr;
 	}
+
+	UScriptStruct* GetStruct() { return STRUCT_DONOTUSE; }
 
 };
 

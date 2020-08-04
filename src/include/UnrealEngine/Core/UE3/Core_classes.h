@@ -91,16 +91,6 @@ inline Fn GetVFunction(const void* instance, std::size_t index)
 class UObject : FHelper
 {
 public:
-#ifdef UE4
-	// 0x28
-	//void*												Vtable;
-	int													ObjectFlags;
-	int													InternalIndex; 
-	class UClass*										Class;
-	FName												Name;
-	class UObject*										Outer;
-	static FChunkedFixedUObjectArray* GObjects();
-#else
 	//struct FPointer                                    VfTableObject;                                    		// 0x0000 (0x0004) [0x0000000000821002]              ( CPF_Const | CPF_Native | CPF_EditConst | CPF_NoExport )
 	struct FPointer                                    HashNext;                                         		// 0x0004 (0x0004) [0x0000000000021002]              ( CPF_Const | CPF_Native | CPF_EditConst )
 	struct FQWord                                      ObjectFlags;                                      		// 0x0008 (0x0008) [0x0000000000021002]              ( CPF_Const | CPF_Native | CPF_EditConst )
@@ -114,8 +104,10 @@ public:
 	struct FName                                       Name;                                             		// 0x002C (0x0008) [0x0000000000021003]              ( CPF_Edit | CPF_Const | CPF_Native | CPF_EditConst )
 	class UClass*                                      Class;                                            		// 0x0034 (0x0004) [0x0000000000021002]              ( CPF_Const | CPF_Native | CPF_EditConst )
 	class UObject*                                     ObjectArchetype;                                  		// 0x0038 (0x0004) [0x0000000000021003]              ( CPF_Edit | CPF_Const | CPF_Native | CPF_EditConst )
-	static TArray< UObject* >* GObjects();
-#endif
+	static inline TArray< UObject* >* GObjects() {
+		const auto objectArray = static_cast<TArray<UObject*>*>(UnrealSDK::pGObjects);
+		return objectArray;
+	}
 
 	const char *GetName() const;
 	std::string GetNameCpp() const;

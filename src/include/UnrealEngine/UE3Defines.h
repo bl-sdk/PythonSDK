@@ -74,6 +74,7 @@ public:
 			((UnrealSDK::tFNameInitNew)(UnrealSDK::pFNameInit))(this, (wchar_t*)Util::Widen(FindName).c_str(), number, 1, 1);
 	}
 
+
 	static TArray<FNameEntry*>* Names()
 	{
 		return (TArray<FNameEntry*>*)UnrealSDK::pGNames;

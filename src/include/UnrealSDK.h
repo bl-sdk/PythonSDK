@@ -14,12 +14,15 @@ class UPackage;
 class UPlayer;
 class UConsole;
 class CHookManager;
+class CSigScan;
 
 struct FFrame;
 struct FName;
 struct FOutputDevice;
 struct FArchive;
 struct FStruct;
+
+
 
 namespace UnrealSDK
 {
@@ -29,17 +32,26 @@ namespace UnrealSDK
 	typedef void (__thiscall *tFrameStep)(FFrame*, UObject*, void*);
 
 	// http://api.unrealengine.com/INT/API/Runtime/CoreUObject/UObject/StaticConstructObject_Internal/index.html
+
+#ifndef UE4
 	typedef UObject* (*tStaticConstructObject)(UClass* Class, UObject* InOuter, FName Name, unsigned int SetFlags,
 	                                           unsigned int InternalSetFlags, UObject* InTemplate, FOutputDevice* Error,
 	                                           void* InstanceGraph, int AssumeTemplateIsArchetype);
+#else
+	typedef UObject* (*tStaticConstructObject)(UClass* Class, UObject* InOuter, FName Name, unsigned int SetFlags,
+		unsigned int InternalSetFlags, UObject* InTemplate, int CopyTransientsFromClassDefaults,
+		void* InstanceGraph, int AssumeTemplateIsArchetype);
+#endif
+
 	typedef UPackage* (*tLoadPackage)(UPackage* Outer, const wchar_t* Filename, DWORD Flags);
 	typedef FArchive& (__thiscall *tByteOrderSerialize)(FArchive* Ar, void* V, int Length);
 
 	typedef char*(__thiscall *tFNameInitOld)(FName* Out, wchar_t* Src, int InNumber, int FindType, int SplitName,
 	                                         int Unk1);
 	typedef void (__thiscall *tFNameInitNew)(FName* Out, wchar_t* Src, int InNumber, int FindType, int SplitName);
-
+	
 	typedef FName (*UE4FNameInit)(const wchar_t* Name, int32_t InNumber, int FindType);
+	typedef void* (*UE4GlobalLogSingleton)();
 
 	typedef UObject*(__thiscall *tGetDefaultObject)(UClass*, unsigned int);
 
@@ -71,6 +83,8 @@ namespace UnrealSDK
 
 	extern void**** pGMalloc;
 
+	extern CSigScan scanner;
+
 	void LogAllCalls(bool Enabled);
 	void DoInjectedCallNext();
 	void Initialize();
@@ -89,6 +103,7 @@ namespace UnrealSDK
 
 	void ReloadPython();
 
+	void GenerateDumpFiles();
 }
 
 #endif

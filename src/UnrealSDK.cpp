@@ -53,6 +53,8 @@ namespace UnrealSDK
 
 	std::map<std::string, UClass*> ClassMap = {};
 
+	CSigScan scanner = nullptr;
+
 	void __fastcall hkProcessEvent(UObject* caller, UFunction* Function, void* Params)
 	{
 		//Logging::LogF("ProcessEvent\n");
@@ -164,6 +166,8 @@ namespace UnrealSDK
 		Logging::LogF("Loaded object map\n");
 		CSigScan sigscan(Util::Widen(exeName + ".exe").c_str());
 
+		scanner = sigscan;
+
 		Logging::LogF("Loading Sigs...\n");
 		Signatures::InitSignatures(exeName);
 		Logging::LogF("Sigs Loaded\n");
@@ -192,6 +196,11 @@ namespace UnrealSDK
 
 			pFNameInit = reinterpret_cast<UE4FNameInit>(sigscan.Scan(Signatures::FNameInit));
 			Logging::LogF("[Internal] FindOrCreateFName = 0x%p\n", pFNameInit);
+
+			auto addy3 = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::StaticConstructor.Sig, Signatures::StaticConstructor.Mask);
+			auto z = (0x140000000 + (0x00fffffff & (addy3 + *(DWORD*)(addy3 + 0x1) + 5)));
+			pStaticConstructObject = reinterpret_cast<tStaticConstructObject>(z);
+
 #else 
 		void*** tempGObjects = (void***)sigscan.Scan(Signatures::GObjects);
 		if (tempGOBjects != nullptr) {
@@ -207,6 +216,9 @@ namespace UnrealSDK
 
 		pFNameInit = reinterpret_cast<tFNameInitOld>(sigscan.Scan(Signatures::FNameInit));
 		Logging::LogF("[Internal] FindOrCreateFName = 0x%p\n", pFNameInit);
+
+		pStaticConstructObject = reinterpret_cast<tStaticConstructObject>(sigscan.Scan(Signatures::StaticConstructor));
+		Logging::LogF("[Internal] UObject::StaticConstructObject() = 0x%p\n", pStaticConstructObject);
 #endif
 
 		pProcessEvent = reinterpret_cast<tProcessEvent>(sigscan.Scan(Signatures::ProcessEvent));
@@ -219,9 +231,7 @@ namespace UnrealSDK
 		pFrameStep = reinterpret_cast<tFrameStep>(sigscan.Scan(Signatures::FrameStep));
 		Logging::LogF("[Internal] FFrame::Step() = 0x%p\n", pFrameStep);
 
-		pStaticConstructObject = reinterpret_cast<tStaticConstructObject>(sigscan.Scan(Signatures::StaticConstructor));
-		Logging::LogF("[Internal] UObject::StaticConstructObject() = 0x%p\n", pStaticConstructObject);
-		
+
 		// TODO: Add these sigs
 		pLoadPackage = reinterpret_cast<tLoadPackage>(sigscan.Scan(Signatures::LoadPackage));
 		Logging::LogF("[Internal] UObject::LoadPackage() = 0x%p\n", pLoadPackage);
@@ -322,10 +332,12 @@ namespace UnrealSDK
 			gameConsole->ConsoleKey = FName("Tilde");
 
 #else
-		gameConsole = static_cast<UConsole*>(UObject::Find(ObjectMap["ConsoleObjectType"].c_str(), ObjectMap["ConsoleObjectName"].c_str()));
+/*
+		gameConsole = ( UnrealSDK::pStaticConstructObject(gameConsole->Class, gameConsole->Outer, FName(std::string("UConsole")), 0, 0, NULL, 0, NULL, 0) );
 		auto eng = static_cast<UEngine*>(gEngine);
 
 		// TODO: Enable the UE4 console
+
 
 		// In the event the gameConsole found through UObject::Find
 		// This being set probably means that the console already exists but meh
@@ -340,13 +352,14 @@ namespace UnrealSDK
 			for (UObject* obj : UObject::FindAll( (char*)"Class /Script/Engine.InputSettings")) {
 				UInputSettings* pc = static_cast<UInputSettings*>(obj);
 				pc->ConsoleKey.KeyName = n;
+				
 			}
 			
 			eng->GameViewport->ViewportConsole = gameConsole;
 			
 		}
 
-		
+*/
 		
 #endif
 
@@ -368,6 +381,33 @@ namespace UnrealSDK
 			// UE4 doesn't really have a good version of "Changelist" its effectively just in Engine Version now
 			Logging::LogD("[Internal] Engine Version: %s\n", EngineBuild);
 		#endif
+	}
+
+	void GenerateDumpFiles() {
+		Logging::Log("Dumping object/name data");
+		std::ofstream file;
+		file.open("SDKDumps.txt");
+		for (size_t i = 0; i < UObject::GObjects()->Count; ++i) {
+			UObject* obj = UObject::GObjects()->Get(i);
+			if (obj && obj->Class) 
+				file << obj->GetFullName() << std::endl;
+		}
+		file.close();
+
+		std::ofstream f;
+		file.open("SDKNames.txt");
+		for (size_t i = 0; i < FName::Names()->Count; ++i) {
+			auto z = FName::Names()->Get(i);
+			if (z == nullptr) continue;
+
+			std::string output;
+			if (z->IsWide())
+				output.append(Util::Narrow(std::wstring(z->GetWideName())));
+			else
+				output.append(z->GetAnsiName());
+			file << "[" << i << "]: " << output << std::endl;
+		}
+		Logging::Log("Object/name data dumped generated...");
 	}
 
 	// This function is used to ensure that everything gets called in the game thread once the game itself has loaded
@@ -415,20 +455,15 @@ namespace UnrealSDK
 				std::ofstream f;
 				file.open("SDKNames.txt", std::ios::app);
 				for (size_t i = 0; i < FName::Names()->Count; ++i) {
-					try {
-						auto z = FName::Names()->Get(i);
-						if (z == nullptr) continue;
+					auto z = FName::Names()->Get(i);
+					if (z == nullptr) continue;
 
-						std::string output;
-						if (z->IsWide()) 
-							output.append( Util::Narrow(std::wstring(z->GetWideName())) );
-						else 
-							output.append(z->GetAnsiName());
-						file << "[" << i << "]: " << output << std::endl;
-					}
-					catch (...) { 
-						file << "UNKNOWN [" << i << "]" << std::endl; 
-					}
+					std::string output;
+					if (z->IsWide()) 
+						output.append( Util::Narrow(std::wstring(z->GetWideName())) );
+					else 
+						output.append(z->GetAnsiName());
+					file << "[" << i << "]: " << output << std::endl;
 				}
 
 				f.close();

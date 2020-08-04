@@ -10,6 +10,15 @@
 #include "UnrealEngine/Engine/UE4/UE4EngineClasses.h"
 #endif
 
+// UObject =======================================================================
+#ifndef UE4
+TArray<UObject*>* UObject::GObjects()
+{
+	const auto objectArray = static_cast<TArray<UObject*>*>(UnrealSDK::pGObjects);
+	return objectArray;
+}
+#endif
+
 const char* UObject::GetName() const
 {
 	return this->Name.GetName();
@@ -104,6 +113,133 @@ class UPackage* UObject::GetPackageObject() const
 	return static_cast<UPackage*>(pkg);
 };
 
+std::string UObject::GetNameCpp() const
+{
+	std::string output = "U";
+
+	if (this->IsA(FindClass("Actor")))
+	{
+		output = "A";
+	}
+
+	output += GetName();
+
+	return output;
+}
+
+std::string UObject::GetObjectName()
+{
+	std::stack<UObject*> parents{};
+
+	// Logging::LogF("Getting parents\n");
+	for (auto current = this; current; current = current->Outer) {
+		// Logging::LogF("Got parent %p\n", current);
+		parents.push(current);
+	}
+	// Logging::LogF("Got Parents\n");
+
+	std::string output{};
+
+	while (!parents.empty())
+	{
+		// Logging::LogF("Getting Name\n");
+		output += parents.top()->GetName();
+		// Logging::LogF("Current output: %s\n", output);
+		parents.pop();
+		if (!parents.empty())
+			output += '.';
+	}
+
+	return output;
+}
+
+UClass* UObject::FindClass(const char* ClassName, const bool Lookup)
+{
+	if (UnrealSDK::ClassMap.count(ClassName))
+		return UnrealSDK::ClassMap[ClassName];
+
+	if (!Lookup)
+		return nullptr;
+
+	for (size_t i = 0; i < GObjects()->Count; ++i)
+	{
+		const auto object = GObjects()->Get(i);
+
+		if (!object || !object->Class)
+			continue;
+
+		// Might as well lookup all objects since we're going to be iterating over most objects regardless
+		const char* c = object->Class->GetName();
+		if (!strcmp(c, "Class"))
+			UnrealSDK::ClassMap[object->GetName()] = static_cast<UClass*>(object);
+	}
+
+	if (UnrealSDK::ClassMap.count(ClassName))
+		return UnrealSDK::ClassMap[ClassName];
+
+	return nullptr;
+}
+
+bool UObject::IsA(UClass* PClass) const
+{
+	for (auto superClass = this->Class; superClass; superClass = static_cast<UClass*>(superClass->SuperField))
+	{
+		if (superClass == PClass)
+			return true;
+	}
+
+	return false;
+}
+
+pybind11::object UObject::GetProperty(std::string PropName)
+{
+	const auto obj = this->Class->FindChildByName(FName(PropName));
+	if (!obj)
+		return pybind11::none();
+	const auto prop = reinterpret_cast<UProperty*>(obj);
+	if (!strcmp(obj->Class->GetName(), "Function"))
+		return pybind11::cast(GetFunction(PropName));
+	return reinterpret_cast<FHelper*>(this)->GetProperty(prop);
+}
+
+void UObject::SetProperty(std::string& PropName, const py::object& Val)
+{
+	const auto obj = this->Class->FindChildByName(FName(PropName));
+	if (!obj)
+		return;
+	const auto prop = reinterpret_cast<UProperty*>(obj);
+	if (!strcmp(obj->Class->GetName(), "Function"))
+		reinterpret_cast<FHelper*>(this)->SetProperty(static_cast<UObjectProperty*>(prop), Val);
+	else
+		reinterpret_cast<FHelper*>(this)->SetProperty(prop, Val);
+#ifndef UE4
+	if (UnrealSDK::gCallPostEdit)
+	{
+		FPropertyChangedEvent changeEvent{};
+		changeEvent.Property = prop;
+		changeEvent.ChangeType = 1;
+		PostEditChangeProperty(&changeEvent);
+	}
+#endif
+}
+
+void UObject::DumpObject()
+{
+	Logging::LogF("*** Property dump for object '%s' ***\n", this->GetFullName().c_str());
+	UStruct* thisField = this->Class;
+	while (thisField)
+	{
+		Logging::LogF("=== %s properties ===\n", thisField->GetName());
+		for (auto child = thisField->Children; child != nullptr; child = child->Next)
+		{
+			if (child->IsA(FindClass("Property")))
+				Logging::LogF(" %s=%s\n", child->GetName(),
+					py::cast<std::string>(repr(GetProperty(child->GetName()))).c_str());
+		}
+		thisField = thisField->SuperField;
+	}
+}
+
 #ifndef UE4
 UClass* UObject::StaticClass()
 {
@@ -128,28 +264,28 @@ std::vector<UObject*> UObject::FindAll(char* InStr)
 	return ret;
 }
 
+// FHelper =======================================================================
 void* FHelper::GetPropertyAddress(UProperty* Prop)
 {
 	return reinterpret_cast<char*>(this) + Prop->Offset_Internal;
 }
-
-#ifndef UE4
 
 struct FStruct FHelper::GetStructProperty(UStructProperty* Prop)
 {
 	return FStruct{Prop->GetStruct(), GetPropertyAddress(Prop)};
 }
 
-
 struct FString* FHelper::GetStrProperty(UProperty* Prop)
 {
 	return reinterpret_cast<FString*>(GetPropertyAddress(Prop));
 }
 
+#ifndef UE4
 class UComponent* FHelper::GetComponentProperty(UProperty* Prop)
 {
 	return reinterpret_cast<UComponent**>(GetPropertyAddress(Prop))[0];
 }
+#endif
 
 py::object FHelper::GetArrayProperty(UArrayProperty* Prop)
 {
@@ -157,35 +293,10 @@ py::object FHelper::GetArrayProperty(UArrayProperty* Prop)
 	return pybind11::cast(FArray{ array, Prop->GetInner() });
 }
 
-#else
-
-// TODO: FIX THESE HELPERS!!!!
-
-struct FStruct FHelper::GetStructProperty(UStructProperty* Prop)
-{
-	
-	return FStruct{ nullptr, GetPropertyAddress(Prop) };
-}
-
-
-class FString* FHelper::GetStrProperty(UProperty* Prop)
-{
-	return reinterpret_cast<FString*>(GetPropertyAddress(Prop));
-}
-
-
-py::object FHelper::GetArrayProperty(UArrayProperty* Prop)
-{
-	return py::cast<py::none>(Py_None);
-}
-
-#endif
-
 class UObject* FHelper::GetObjectProperty(UProperty* Prop)
 {
 	return reinterpret_cast<UObject **>(GetPropertyAddress(Prop))[0];
 }
-
 
 class UClass* FHelper::GetClassProperty(UProperty* Prop)
 {
@@ -222,7 +333,6 @@ unsigned char FHelper::GetByteProperty(UProperty* Prop)
 	return reinterpret_cast<unsigned char*>(GetPropertyAddress(Prop))[0];
 }
 
-
 bool FHelper::GetBoolProperty(UBoolProperty* Prop)
 {
 	return !!(GetIntProperty(Prop) & Prop->GetMask());
@@ -246,7 +356,7 @@ pybind11::object FHelper::GetProperty(UProperty* Prop)
 		return pybind11::cast(GetClassProperty(Prop));
 	if (!strcmp(Prop->Class->GetName(), "NameProperty"))
 		return pybind11::cast(GetNameProperty(Prop));
-	if (!strcmp(Prop->Class->GetName(), "IntProperty"))
+	if (!strcmp(Prop->Class->GetName(), "IntProperty") || !strcmp(Prop->Class->GetName(), "EnumProperty"))
 		return pybind11::cast(GetIntProperty(Prop));
 	if (!strcmp(Prop->Class->GetName(), "InterfaceProperty"))
 		return pybind11::cast(GetInterfaceProperty(Prop));
@@ -264,7 +374,6 @@ pybind11::object FHelper::GetProperty(UProperty* Prop)
 	                                  Prop->GetFullName().c_str()).c_str());
 }
 
-#ifndef UE4
 void FHelper::SetProperty(class UStructProperty* Prop, const py::object& Val)
 {
 	if (py::isinstance<py::tuple>(Val))
@@ -292,20 +401,26 @@ void FHelper::SetProperty(class UStructProperty* Prop, const py::object& Val)
 	else
 		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected tuple!\n").c_str());
 }
-#else
 
-void FHelper::SetProperty(class UStructProperty* Prop, const py::object& Val) {
-	return;
-}
-
-void FHelper::SetProperty(class UDelegateProperty* Prop, const py::object& Val)
-{
-	return;
-}
-
+#ifdef UE4
+// TODO: Look into how this might work, not sure if its even necessary in UE4 idk
 void FHelper::SetProperty(class UInterfaceProperty* Prop, const py::object& Val)
 {
-	return;
+	throw std::exception(Util::Format("FHelper::SetProperty: Unknown how to deal with UInterfaceProperty\n").c_str());
+}
+#else
+void FHelper::SetProperty(class UInterfaceProperty* Prop, const py::object& Val)
+{
+	if (!py::isinstance<UObject>(Val) && !py::isinstance<py::none>(Val))
+		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected UObject!\n").c_str());
+	if (py::isinstance<py::none>(Val))
+		static_cast<FScriptInterface*>(GetPropertyAddress(Prop))[0] = FScriptInterface{ nullptr, nullptr };
+	else
+	{
+		const auto objVal = Val.cast<UObject*>();
+		const auto scriptInterface = objVal->QueryInterface(Prop->GetInterfaceClass());
+		reinterpret_cast<FScriptInterface*>(GetPropertyAddress(Prop))[0] = scriptInterface;
+	}
 }
 #endif
 
@@ -324,15 +439,12 @@ void FHelper::SetProperty(class UObjectProperty* Prop, const py::object& Val)
 }
 
 #ifndef UE4
-
 void FHelper::SetProperty(class UComponentProperty* Prop, const py::object& Val)
 {
 	if (!py::isinstance<UComponent>(Val) && !py::isinstance<py::none>(Val))
 		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected UComponent!\n").c_str());
 	reinterpret_cast<UComponent * *>(GetPropertyAddress(Prop))[0] = Val.cast<UComponent*>();
 }
-
-
 #endif
 
 void FHelper::SetProperty(class UClassProperty* Prop, const py::object& Val)
@@ -350,20 +462,6 @@ void FHelper::SetProperty(class UNameProperty* Prop, const py::object& Val)
 }
 
 #ifndef UE4
-void FHelper::SetProperty(class UInterfaceProperty* Prop, const py::object& Val)
-{
-	if (!py::isinstance<UObject>(Val) && !py::isinstance<py::none>(Val))
-		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected UObject!\n").c_str());
-	if (py::isinstance<py::none>(Val))
-		static_cast<FScriptInterface*>(GetPropertyAddress(Prop))[0] = FScriptInterface{nullptr, nullptr};
-	else
-	{
-		const auto objVal = Val.cast<UObject*>();
-		const auto scriptInterface = objVal->QueryInterface(Prop->GetInterfaceClass());
-		reinterpret_cast<FScriptInterface*>(GetPropertyAddress(Prop))[0] = scriptInterface;
-	}
-}
-
 void FHelper::SetProperty(class UDelegateProperty* Prop, const py::object& Val)
 {
 	if (!py::isinstance<FScriptDelegate>(Val))
@@ -475,153 +573,6 @@ void FHelper::SetProperty(class UProperty* Prop, const py::object& val)
 		                                  Prop->GetFullName().c_str()).c_str());
 }
 
-#ifndef UE4
-TArray<UObject*>* UObject::GObjects()
-{
-	const auto objectArray = static_cast<TArray<UObject*>*>(UnrealSDK::pGObjects);
-	return objectArray;
-}
-#endif
-
-
-std::string UObject::GetNameCpp() const
-{
-	std::string output = "U";
-
-	if (this->IsA(FindClass("Actor")))
-	{
-		output = "A";
-	}
-
-	output += GetName();
-
-	return output;
-}
-
-std::string UObject::GetObjectName()
-{
-	std::stack<UObject*> parents{};
-
-	// Logging::LogF("Getting parents\n");
-	for (auto current = this; current; current = current->Outer) {
-		// Logging::LogF("Got parent %p\n", current);
-		parents.push(current);
-	}
-	// Logging::LogF("Got Parents\n");
-
-	std::string output{};
-
-	while (!parents.empty())
-	{
-		// Logging::LogF("Getting Name\n");
-		output += parents.top()->GetName();
-		// Logging::LogF("Current output: %s\n", output);
-		parents.pop();
-		if (!parents.empty())
-			output += '.';
-	}
-
-	return output;
-}
-
-
-
-UClass* UObject::FindClass(const char* ClassName, const bool Lookup)
-{
-	if (UnrealSDK::ClassMap.count(ClassName))
-		return UnrealSDK::ClassMap[ClassName];
-
-	if (!Lookup)
-		return nullptr;
-
-	for (size_t i = 0; i < GObjects()->Count; ++i)
-	{
-		const auto object = GObjects()->Get(i);
-
-		if (!object || !object->Class)
-			continue;
-
-		// Might as well lookup all objects since we're going to be iterating over most objects regardless
-		const char* c = object->Class->GetName();
-		if (!strcmp(c, "Class"))
-			UnrealSDK::ClassMap[object->GetName()] = static_cast<UClass*>(object);
-	}
-
-	if (UnrealSDK::ClassMap.count(ClassName))
-		return UnrealSDK::ClassMap[ClassName];
-
-	return nullptr;
-}
-
-bool UObject::IsA(UClass* PClass) const
-{
-	for (auto superClass = this->Class; superClass; superClass = static_cast<UClass*>(superClass->SuperField))
-	{
-		if (superClass == PClass)
-			return true;
-	}
-
-	return false;
-}
-
-
-pybind11::object UObject::GetProperty(std::string PropName)
-{
-	const auto obj = this->Class->FindChildByName(FName(PropName));
-	if (!obj)
-		return pybind11::none();
-	const auto prop = reinterpret_cast<UProperty*>(obj);
-	if (!strcmp(obj->Class->GetName(), "Function"))
-		return pybind11::cast(GetFunction(PropName));
-	return reinterpret_cast<FHelper*>(this)->GetProperty(prop);
-}
-
-void UObject::SetProperty(std::string& PropName, const py::object& Val)
-{
-	const auto obj = this->Class->FindChildByName(FName(PropName));
-	if (!obj)
-		return;
-	const auto prop = reinterpret_cast<UProperty*>(obj);
-	if (!strcmp(obj->Class->GetName(), "Function"))
-		reinterpret_cast<FHelper*>(this)->SetProperty(static_cast<UObjectProperty*>(prop), Val);
-	else
-		reinterpret_cast<FHelper*>(this)->SetProperty(prop, Val);
-#ifndef UE4
-	if (UnrealSDK::gCallPostEdit)
-	{
-		FPropertyChangedEvent changeEvent{};
-		changeEvent.Property = prop;
-		changeEvent.ChangeType = 1;
-		PostEditChangeProperty(&changeEvent);
-	}
-#endif
-}
-
-
-struct FFunction UObject::GetFunction(std::string& PropName)
-{
-	const auto obj = this->Class->FindChildByName(FName(PropName));
-	const auto function = reinterpret_cast<UFunction*>(obj);
-	return FFunction{this, function};
-}
-
-void UObject::DumpObject()
-{
-	Logging::LogF("*** Property dump for object '%s' ***\n", this->GetFullName().c_str());
-	UStruct* thisField = this->Class;
-	while (thisField)
-	{
-		Logging::LogF("=== %s properties ===\n", thisField->GetName());
-		for (auto child = thisField->Children; child != nullptr; child = child->Next)
-		{
-			if (child->IsA(FindClass("Property")))
-				Logging::LogF(" %s=%s\n", child->GetName(),
-				              py::cast<std::string>(repr(GetProperty(child->GetName()))).c_str());
-		}
-		thisField = thisField->SuperField;
-	}
-}
-
 //class FScriptMap* UObject::GetMapProperty(std::string& PropName) {
 //	class UProperty *prop = this->Class->FindPropeFindChildByNamertyByName(FName(PropName));
 //	if (!prop || prop->Class->GetName() != "MapProperty")
@@ -630,6 +581,13 @@ void UObject::DumpObject()
 //}
 //struct FScriptArray UObject::GetArrayProperty(std::string& PropName);
 
+// FFunction =======================================================================
+struct FFunction UObject::GetFunction(std::string& PropName)
+{
+	const auto obj = this->Class->FindChildByName(FName(PropName));
+	const auto function = reinterpret_cast<UFunction*>(obj);
+	return FFunction{ this, function };
+}
 
 FHelper* FFunction::GenerateParams(const py::args& args, const py::kwargs& kwargs, FHelper* params)
 {
@@ -695,6 +653,7 @@ py::object FFunction::Call(py::args args, py::kwargs kwargs)
 	return ret;
 }
 
+// FFrame =======================================================================
 void FFrame::SkipFunction()
 {
 	// allocate temporary memory on the stack for evaluating parameters
@@ -708,7 +667,7 @@ void FFrame::SkipFunction()
 	memset(params, 0, 1000);
 }
 
-
+// FStruct =======================================================================
 pybind11::object FStruct::GetProperty(const std::string& PropName) const
 {
 	class UObject* obj = structType->FindChildByName(FName(PropName));
@@ -737,7 +696,11 @@ py::str FStruct::Repr() const
 		for (UField* Child = thisField->Children; Child != nullptr; Child = Child->Next)
 		{
 			UProperty* prop = (UProperty*)structType->FindChildByName(FName(Child->GetName()));
+#ifndef UE4
 			if (prop && prop->PropertyFlags & 0x80)
+#else
+			if(prop)
+#endif
 			{
 				s = py::str("{}{}: {}").format(s, Child->GetName(), repr(GetProperty(Child->GetName())));
 				if (Child->Next || (thisField->SuperField && thisField->SuperField->Children))
@@ -750,6 +713,7 @@ py::str FStruct::Repr() const
 	return s;
 }
 
+// FArray =======================================================================
 FArray::FArray(TArray<char>* array, UProperty* s)
 {
 	Logging::LogD("Creating FArray from %p, count: %d, max: %d\n", array, array->Count, array->Max);

@@ -51,17 +51,20 @@ DWORD WINAPI Start(LPVOID lpParam)
 
 DWORD WINAPI ListenForReload(LPVOID lpParam) {
 	while (!UnrealSDK::bPythonInitTried) { }
-	bool bClosing = false;
-	char spaceState, lastSpaceState;
+#ifdef _DEBUG
 	while (true) {
 
 		if((GetKeyState(VK_NUMPAD0) & 0x80)) {
 			UnrealSDK::ReloadPython();
 			while ((GetKeyState(VK_NUMPAD0) & 0x80)) { }
 		}
+		else if (GetKeyState(VK_NUMPAD7) & 0x80) {
+			UnrealSDK::GenerateDumpFiles();
+			while ((GetKeyState(VK_NUMPAD7) & 0x80)) { }
+		}
 
 	}
-
+#endif
 	return 0;
 }
 

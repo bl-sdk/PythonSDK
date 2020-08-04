@@ -8,6 +8,13 @@ void CHookManager::Register(const std::string& FuncName, const std::string& Hook
 	char funcNameChar[255];
 	strcpy(funcNameChar, FuncName.c_str());
 
+	std::vector<std::string> functionNames;
+	for (auto f : UObject::FindAll((char*)"Function")) { functionNames.push_back(f->GetFullName().substr(9)); }
+	if (!std::count(functionNames.begin(), functionNames.end(), FuncName)) {
+		Logging::LogD("[HookManager] Unable to find function object for %s\n", FuncName.c_str());
+		return;
+	}
+
 	// Create pair to insert
 	tHookPair hookPair = std::make_pair(HookName, FuncHook);
 
