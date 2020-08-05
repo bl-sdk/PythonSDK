@@ -153,11 +153,11 @@
     <LinkIncremental>true</LinkIncremental>
     <TargetName>ddraw</TargetName>
     <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
-    <IncludePath>$(PYTHONPATH)\include;$(IncludePath);$(VC_SourcePath)\src\include;</IncludePath>
-    <LibraryPath>$(PYTHONPATH)\libs;$(LibraryPath)</LibraryPath>
-    <OutDir>C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\Binaries\Win32\</OutDir>
+    <OutDir>D:\SteamLibrary\steamapps\common\Borderlands 2\Binaries\Win32\</OutDir>
     <IntDir>build\$(Configuration)\</IntDir>
     <SourcePath>$(VC_SourcePath)\src;</SourcePath>
+    <IncludePath>C:\Users\apple1417\AppData\Local\Programs\Python\Python37-32\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\apple1417\AppData\Local\Programs\Python\Python37-32\libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -167,11 +167,11 @@
     </LinkIncremental>
     <TargetName>ddraw</TargetName>
     <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
-    <IncludePath>$(PYTHONPATH_X86)\include;$(IncludePath);$(VC_SourcePath)\src\include;</IncludePath>
-    <LibraryPath>$(PYTHONPATH_X86)\libs;$(LibraryPath)</LibraryPath>
-    <OutDir>D:\Games\SteamLibrary\steamapps\common\BorderlandsPreSequel\Binaries\Win32\</OutDir>
+    <OutDir>D:\SteamLibrary\steamapps\common\Borderlands 2\Binaries\Win32\</OutDir>
     <IntDir>build\$(Configuration)\</IntDir>
     <SourcePath>$(VC_SourcePath)\src;</SourcePath>
+    <IncludePath>C:\Users\apple1417\AppData\Local\Programs\Python\Python37-32\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\apple1417\AppData\Local\Programs\Python\Python37-32\libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -237,7 +237,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>false</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;BL2SDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WINDOWS_IGNORE_PACKING_MISMATCH;WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;BL2SDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(ProjectDir)src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
