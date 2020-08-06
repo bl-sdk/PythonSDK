@@ -19,6 +19,7 @@ namespace UnrealSDK
 		MemorySignature FNameInit{};
 		MemorySignature GetDefaultObject{};
 		MemorySignature SetCommand{};
+		MemorySignature StaticExec{};
 
 		void InitSignatures(std::string ExeName)
 		{
@@ -34,6 +35,7 @@ namespace UnrealSDK
 			FNameInit = SignatureMap["FNameInit"];
 			GetDefaultObject = SignatureMap["GetDefaultObject"];
 			SetCommand = SignatureMap["SetCommand"];
+			if (SignatureMap.count("StaticExec")) StaticExec = SignatureMap["StaticExec"];
 		}
 	}
 }

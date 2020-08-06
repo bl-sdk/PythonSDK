@@ -8,6 +8,8 @@ enum PythonStatus
 	PYTHON_MODULE_ERROR
 };
 
+class UConsole;
+
 class CPythonInterface
 {
 public:
@@ -23,6 +25,8 @@ public:
 	int DoString(const char* command);
 
 	pybind11::object GetPythonNamespace();
+
+	void AddToConsoleLog(UConsole* console, const char* input);
 
 private:
 	void InitializeState();

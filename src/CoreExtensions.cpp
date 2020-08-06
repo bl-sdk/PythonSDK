@@ -280,12 +280,10 @@ struct FString* FHelper::GetStrProperty(UProperty* Prop)
 	return reinterpret_cast<FString*>(GetPropertyAddress(Prop));
 }
 
-#ifndef UE4
 class UComponent* FHelper::GetComponentProperty(UProperty* Prop)
 {
 	return reinterpret_cast<UComponent**>(GetPropertyAddress(Prop))[0];
 }
-#endif
 
 py::object FHelper::GetArrayProperty(UArrayProperty* Prop)
 {
@@ -469,6 +467,15 @@ void FHelper::SetProperty(class UDelegateProperty* Prop, const py::object& Val)
 			Util::Format("FHelper::SetProperty: Got unexpected type, expected FScriptDelegate!\n").c_str());
 	memcpy(GetPropertyAddress(Prop), &FScriptDelegate(Val.cast<FScriptDelegate>()),
 	       sizeof(FScriptDelegate));
+}
+#else
+void FHelper::SetProperty(class UDelegateProperty* Prop, const py::object& Val)
+{
+	if (!py::isinstance<FScriptDelegate>(Val))
+		throw std::exception(
+			Util::Format("FHelper::SetProperty: Got unexpected type, expected FScriptDelegate!\n").c_str());
+	memcpy(GetPropertyAddress(Prop), &FScriptDelegate(Val.cast<FScriptDelegate>()),
+		sizeof(FScriptDelegate));
 }
 #endif
 
@@ -727,6 +734,10 @@ py::object FArray::GetItem(unsigned int i) const
 	if (i >= arr->Count)
 		throw pybind11::index_error();
 	return ((FHelper*)(arr->Data + type->ElementSize * i))->GetProperty(type);
+}
+
+void FArray::Clear() {
+	arr->Empty();
 }
 
 void FArray::SetItem(unsigned int I, py::object Obj) const

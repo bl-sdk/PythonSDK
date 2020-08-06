@@ -129,10 +129,17 @@ PYBIND11_EMBEDDED_MODULE(unrealsdk, m)
 	m.def("CallPostEdit", [](bool NewValue) { UnrealSDK::gCallPostEdit = NewValue; });
 }
 
+#ifdef UE4
+void CPythonInterface::AddToConsoleLog(UConsole* console, const char* input) {
+	// TODO: Implement a UE4 version of this, that's basically only where this function's used
+	// In UE4, its not just a fixed size array, now its a TArray<FString> without any max defined size
+}
+#endif
 
+#ifndef UE4
 void AddToConsoleLog(UConsole* console, FString input)
 {
-#ifndef UE4
+
 	int prev = (console->HistoryTop - 1) % 16;
 	if (!console->History[prev].Data || strcmp(input.AsString(), console->History[prev].AsString()))
 	{
@@ -144,16 +151,16 @@ void AddToConsoleLog(UConsole* console, FString input)
 	}
 	console->HistoryCur = console->HistoryTop;
 	console->SaveConfig();
-#else
-	// TODO: Implement UE4 AddToConsoleLog
-	// In UE4, its not just a fixed size array, now its a TArray<FString> without any max defined size
-#endif
 }
+#endif
 
+#ifndef UE4
 bool CheckPythonCommand(UObject* caller, UFunction* function, FStruct* params)
 {
+
 	FString* command = ((FHelper *)params->base)->GetStrProperty(
 		(UProperty *)params->structType->FindChildByName(FName("command")));
+
 	char* input = command->AsString();
 	if (strncmp("py ", input, 3) == 0)
 	{
@@ -168,26 +175,21 @@ bool CheckPythonCommand(UObject* caller, UFunction* function, FStruct* params)
 		UnrealSDK::Python->DoFile(input + 7);
 	}
 	else {
-#ifndef UE4
-	((UConsole*)caller)->ConsoleCommand(*command);
-#else
-	// TODO: Test whether or not this actually executes a console command idfk
-
-	UWorld* engineWorld = static_cast<UWorld*>(UObject::FindObject("Class /Script/Engine.World"));
-	APlayerController* targetPlayer = ( (UConsole*)caller)->ConsoleTargetPlayer->PlayerController;
-	UKismetSystemLibrary::ExecuteConsoleCommand(engineWorld, *command, targetPlayer);
-#endif
+		((UConsole*)caller)->ConsoleCommand(*command);
 	}
 	return false;
 }
+#endif
 
 CPythonInterface::CPythonInterface()
 {
 	m_modulesInitialized = false;
 	InitializeState();
 
-	// TODO: Figure out the UE4 function to hook into for this function call
-	// UnrealSDK::RegisterHook("Engine.Console.ShippingConsoleCommand", "CheckPythonCommand", &CheckPythonCommand);
+	#ifndef UE4
+	// This function is only used in UE3, if you want a UE4 version go to UnrealSDK::hkStaticExec();
+	UnrealSDK::RegisterHook("Engine.Console.ShippingConsoleCommand", "CheckPythonCommand", &CheckPythonCommand);
+	#endif
 }
 
 CPythonInterface::~CPythonInterface()

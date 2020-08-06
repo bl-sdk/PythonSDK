@@ -15,6 +15,9 @@ namespace Util
 	std::wstring FormatInternal(const wchar_t* fmt, va_list args);
 	std::wstring Widen(const std::string& Input);
 	std::string Narrow(const std::wstring& Input);
+
+	std::string Narrow(const wchar_t* Input);
+
 	void Popup(const std::wstring& StrName, const std::wstring& StrText);
 	void CloseGame();
 	std::string StringToHex(const char* Input, size_t Len);

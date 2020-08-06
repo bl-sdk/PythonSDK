@@ -7090,12 +7090,28 @@ public:
 class UConsole : public UObject
 {
 public:
-	unsigned char                                      UnknownData00[0x10];                                      // 0x0028(0x0010) MISSED OFFSET
+	unsigned char                                      UnknownData00[0x10];
+	/** The player which the next console command should be executed in the context of.  If nullptr, execute in the viewport. */
 	class ULocalPlayer* ConsoleTargetPlayer;                                      // 0x0038(0x0008) (ZeroConstructor, IsPlainOldData)
 	class UTexture2D* DefaultTexture_Black;                                     // 0x0040(0x0008) (ZeroConstructor, IsPlainOldData)
 	class UTexture2D* DefaultTexture_White;                                     // 0x0048(0x0008) (ZeroConstructor, IsPlainOldData)
+	// TODO: I'm fairly certain that this is instead something like:
+	/*
+
+		// Holds the scrollback buffer
+		TArray<FString> Scrollback;
+
+		//  Where in the scrollback buffer are we
+		int32 SBHead;
+		int32 SBPos;
+
+		// Max number of command history entries
+		static const int32 MAX_HISTORY_ENTRIES = 50;
+	*/
 	unsigned char                                      UnknownData01[0x18];                                      // 0x0050(0x0018) MISSED OFFSET
-	TArray<class FString>                              HistoryBuffer;                                            // 0x0068(0x0010) (ZeroConstructor, Config)
+																												 
+	/* Holds the history buffer, order is old to new */
+	TArray<class FString>                              HistoryBuffer;
 	unsigned char                                      UnknownData02[0xB8];                                      // 0x0078(0x00B8) MISSED OFFSET
 
 	static UClass* StaticClass()

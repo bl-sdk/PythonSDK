@@ -98,6 +98,13 @@ namespace Util
 		return out;
 	}
 
+	std::string Narrow(const wchar_t* Input) {
+		std::wstring str(Input);
+		std::string out;
+		out.assign(str.begin(), str.end());
+		return out;
+	}
+
 	void Popup(const std::wstring& StrName, const std::wstring& StrText)
 	{
 		MessageBox(nullptr, StrText.c_str(), StrName.c_str(), MB_OK | MB_ICONASTERISK);

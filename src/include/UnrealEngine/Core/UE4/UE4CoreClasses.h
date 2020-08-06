@@ -28,6 +28,8 @@ public:
 	class UObject* GetObjectProperty(class UProperty* Prop);
 	class UClass* GetClassProperty(class UProperty* Prop);
 	struct FName* GetNameProperty(class UProperty* Prop);
+	class UComponent* GetComponentProperty(UProperty* Prop);
+
 	int GetIntProperty(class UProperty* Prop);
 	class FScriptInterface* GetInterfaceProperty(class UProperty* Prop);
 	float GetFloatProperty(class UProperty* Prop);
@@ -277,6 +279,8 @@ struct FArray {
 	py::object GetItem(unsigned int i) const;
 	void SetItem(unsigned int I, py::object Obj) const;
 	long GetAddress() const;
+
+	void Clear();
 	FArray* Iter();
 	py::object Next();
 	py::str Repr();

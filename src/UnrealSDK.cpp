@@ -38,6 +38,11 @@ namespace UnrealSDK
 	bool gInjectedCallNext = false;
 	bool gCallPostEdit = true;
 
+#ifdef UE4
+	tStaticExec pStaticExec;
+	tStaticExec oStaticExec = nullptr;
+#endif
+
 	CPythonInterface* Python;
 	bool bPythonInitTried = false;
 	
@@ -138,6 +143,30 @@ namespace UnrealSDK
 		oCallFunction(caller, Stack, Result, Function);
 	}
 
+#ifdef UE4
+	// This function gets called whenever a UE4 console execs a console command..
+	bool hkStaticExec(UWorld* world, const wchar_t* cmd, FOutputDevice& Ar) {
+		if (wcsncmp(L"py ", cmd, 3) == 0) {
+			auto z = Util::Narrow(cmd);
+			const char* input = z.c_str();
+			Python->AddToConsoleLog(gameConsole, input);
+			Logging::LogF("\n>>> %s <<<\n", input);
+			Python->DoString(input + 3);
+			return true;
+		}
+		else if (wcsncmp(L"pyexec ", cmd, 7) == 0)
+		{
+			const char* input = Util::Narrow(cmd).c_str();
+			Python->AddToConsoleLog(gameConsole, input);
+			Logging::LogF("\n>>> %s <<<\n", cmd);
+			UnrealSDK::Python->DoFile(input + 7);
+			return true;
+		}
+		return oStaticExec(world, cmd, Ar);
+	}
+#endif
+
+
 	void DoInjectedCallNext()
 	{
 		gInjectedCallNext = true;
@@ -183,14 +212,11 @@ namespace UnrealSDK
 
 			Logging::LogF("[Internal] FUObjectArray = 0x%p\n", x);
 			Logging::LogF("[Internal] GObjects = 0x%p\n", x->ObjObjects.Objects);
-			Logging::LogF("[Debug] Total Objects: %d\n", UObject::GObjects()->Count);
-
 			
 			auto addy2 = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::GNames.Sig, Signatures::GNames.Mask);
 			auto y = (*(FChunkedFNameEntryArray**)(addy2 + *(DWORD*)(addy2 + 0xB) + 0xF));
 			pGNames = (void***)(y);
 
-			Logging::LogF("[Internal] FChunkedFNameEntryArray = 0x%p\n", y);
 			Logging::LogF("[Internal] GNames = 0x%p\n", (void***)(y->Objects) );
 
 
@@ -200,6 +226,12 @@ namespace UnrealSDK
 			auto addy3 = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::StaticConstructor.Sig, Signatures::StaticConstructor.Mask);
 			auto z = (0x140000000 + (0x00fffffff & (addy3 + *(DWORD*)(addy3 + 0x1) + 5)));
 			pStaticConstructObject = reinterpret_cast<tStaticConstructObject>(z);
+			Logging::LogF("[Internal] UObject::StaticConstructObject() = 0x%p\n", pStaticConstructObject);
+
+			auto addy4 = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::StaticExec.Sig, Signatures::StaticExec.Mask);
+			auto j = (0x140000000 + (0x00fffffff & (addy4 + *(DWORD*)(addy4 + 0x1) + 5)));
+			pStaticExec = reinterpret_cast<tStaticExec>(j);
+			Logging::LogF("[Internal] StaticExec() = 0x%p\n", pStaticExec);
 
 #else 
 		void*** tempGObjects = (void***)sigscan.Scan(Signatures::GObjects);
@@ -243,10 +275,9 @@ namespace UnrealSDK
 		} else 
 			pGMalloc = nullptr;
 
-
-
 		pGetDefaultObject = reinterpret_cast<tGetDefaultObject>(sigscan.Scan(Signatures::GetDefaultObject));
 		Logging::LogF("[Internal] GetDefaultObject = 0x%p\n", pGetDefaultObject);
+
 
 #ifndef UE4 // When generated properly, UE4 games don't actually have the SET command in them :(
 			try
@@ -290,6 +321,14 @@ namespace UnrealSDK
 			Logging::LogF("Hooked CallFunction\n");
 		}
 		
+#ifdef UE4
+		if (pStaticExec != nullptr) {
+			// Detour StaticExec()
+			MH_CreateHook((PVOID&)pStaticExec, &hkStaticExec, &(PVOID&)oStaticExec);
+			MH_EnableHook((PVOID&)pStaticExec);
+			Logging::LogF("Hooked pStaticExec");
+		}
+#endif
 	}
 
 	void ReloadPython() {
@@ -332,35 +371,31 @@ namespace UnrealSDK
 			gameConsole->ConsoleKey = FName("Tilde");
 
 #else
-/*
-		gameConsole = ( UnrealSDK::pStaticConstructObject(gameConsole->Class, gameConsole->Outer, FName(std::string("UConsole")), 0, 0, NULL, 0, NULL, 0) );
+
+		auto consoleClass = static_cast<UConsole*>(UObject::Find(ObjectMap["ConsoleObjectType"].c_str(), ObjectMap["ConsoleObjectName"].c_str()));
+		gameConsole = static_cast<UConsole*>(UnrealSDK::pStaticConstructObject(consoleClass->Class, consoleClass->Outer, FName(std::string("UConsole")), 0, 0, NULL, 0, NULL, 0));
 		auto eng = static_cast<UEngine*>(gEngine);
-
-		// TODO: Enable the UE4 console
-
 
 		// In the event the gameConsole found through UObject::Find
 		// This being set probably means that the console already exists but meh
-		if (eng && gameConsole == nullptr && eng->GameViewport)  
-			gameConsole = eng->GameViewport->ViewportConsole;
+		if (eng && gameConsole == nullptr && eng->GameViewport)  gameConsole = eng->GameViewport->ViewportConsole;
 		
 		// If our console wasn't initialized in the first place
 		// Generally ViewportConsole will end up being nullptr if the game is built for shipping
 		if (eng && eng->GameViewport && gameConsole) { 
-			FName n = FName(std::string("Tilde"));
-			
+			gameConsole->ConsoleTargetPlayer = eng->GameViewport->World->OwningGameInstance->LocalPlayers(0);
+			FName n = FName(std::string("Tilde"));	
+
+			// This is probably a costly call to do, but its also kinda the best option imo
 			for (UObject* obj : UObject::FindAll( (char*)"Class /Script/Engine.InputSettings")) {
 				UInputSettings* pc = static_cast<UInputSettings*>(obj);
 				pc->ConsoleKey.KeyName = n;
-				
-			}
-			
-			eng->GameViewport->ViewportConsole = gameConsole;
-			
-		}
 
-*/
-		
+				// This'll remove any extra ConsoleKeys that get set (generally via internal ini files or something)
+				if(pc->ConsoleKeys.Count > 0) pc->ConsoleKeys.Count -= 1;
+			}
+			eng->GameViewport->ViewportConsole = gameConsole;
+		}
 #endif
 
 

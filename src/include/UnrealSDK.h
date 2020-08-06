@@ -8,6 +8,7 @@
 #include <map>
 
 class UObject;
+class UWorld;
 class UFunction;
 class UClass;
 class UPackage;
@@ -30,6 +31,8 @@ namespace UnrealSDK
 	typedef int (tUnrealEH)(unsigned int, struct _EXCEPTION_POINTERS*);
 	typedef void (__thiscall *tCallFunction)(UObject*, FFrame&, void*, UFunction*);
 	typedef void (__thiscall *tFrameStep)(FFrame*, UObject*, void*);
+
+	typedef bool (*tStaticExec)(UWorld* world, const wchar_t* Cmd, FOutputDevice& Ar);
 
 	// http://api.unrealengine.com/INT/API/Runtime/CoreUObject/UObject/StaticConstructObject_Internal/index.html
 
@@ -66,6 +69,10 @@ namespace UnrealSDK
 	extern bool gInjectedCallNext;
 	extern UConsole* gameConsole;
 	extern bool gCallPostEdit;
+
+#ifdef UE4
+	extern tStaticExec pStaticExec;
+#endif
 
 	extern std::map<std::string, UClass *> ClassMap;
 

@@ -35,6 +35,9 @@ public:
 		return this->Data[i];
 	}
 
+	void Empty() {
+		Count = 0;
+	}
 
 	T& Get(size_t i)
 	{
