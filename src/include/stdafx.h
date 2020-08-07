@@ -2,7 +2,7 @@
 
 #define VERSION_MAJOR	0
 #define VERSION_MINOR	7
-#define VERSION_PATCH	4
+#define VERSION_PATCH	8
 
 #include <SDKDDKVer.h>
 #define WIN32_LEAN_AND_MEAN

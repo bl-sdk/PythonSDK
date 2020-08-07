@@ -80,7 +80,14 @@ PYBIND11_EMBEDDED_MODULE(unrealsdk, m)
 	Export_pystes_TArray(m);
 
 	m.def("GetVersion", []() { return py::make_tuple(VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH); });
-	m.def("Log", [](py::object in) { Logging::LogPy(repr(in)); });
+	m.def("Log", [](py::args args) {
+		std::string msg = "";
+		for (int i = 0; i < args.size(); i++) {
+			if (i >= 1) msg += " ";
+			msg += py::str(args[i]);
+		}
+		Logging::LogPy(msg);
+	});
 	m.def("LoadPackage", &UnrealSDK::LoadPackage, py::arg("filename"), py::arg("flags") = 0, py::arg("force") = false);
 	m.def("KeepAlive", &UnrealSDK::KeepAlive);
 	m.def("GetPackageObject", &UObject::GetPackageObject, py::return_value_policy::reference);
@@ -190,7 +197,6 @@ void CPythonInterface::InitializeState()
 	try
 	{
 		py::initialize_interpreter();
-		py::module::import("unrealsdk");
 		m_mainNamespace = py::module::import("__main__");
 	}
 	catch (std::exception e)
@@ -234,9 +240,15 @@ PythonStatus CPythonInterface::InitializeModules()
 {
 	m_modulesInitialized = false;
 	SetPaths();
+	Logging::LogPy(Util::Format("[Python] Version: %d.%d.%d", VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH));
+
 	try
 	{
+		py::module::import("unrealsdk");
 		py::module::import("Mods");
+
+		// Also make these accessable on console
+		DoString("import unrealsdk, Mods");
 	}
 	catch (std::exception e)
 	{
@@ -244,6 +256,7 @@ PythonStatus CPythonInterface::InitializeModules()
 		Logging::Log("[Python] Failed to initialize Python modules\n");
 		return PYTHON_MODULE_ERROR;
 	}
+	
 	Logging::Log("[Python] Python initialized (" PYTHON_ABI_STRING ")\n");
 	m_modulesInitialized = true;
 	return PYTHON_OK;
@@ -252,11 +265,6 @@ PythonStatus CPythonInterface::InitializeModules()
 void CPythonInterface::SetPaths()
 {
 	m_PythonPath = Util::Narrow(Settings::GetPythonFile(L""));
-	const char* fmt = "import sys;sys.path.append(r'%s\\')";
-	size_t needed = strlen(fmt) + strlen(m_PythonPath.c_str()) - 1;
-	char* buffer = (char *)malloc(needed);
-	sprintf(buffer, fmt, m_PythonPath.c_str());
-	DoString(buffer);
 }
 
 int CPythonInterface::DoFile(const char* filename)
