@@ -153,11 +153,11 @@
     <LinkIncremental>true</LinkIncremental>
     <TargetName>ddraw</TargetName>
     <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
-    <OutDir>D:\SteamLibrary\steamapps\common\Borderlands 2\Binaries\Win32\</OutDir>
+    <OutDir>C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\Binaries\Win32\</OutDir>
     <IntDir>build\$(Configuration)\</IntDir>
     <SourcePath>$(VC_SourcePath)\src;</SourcePath>
-    <IncludePath>C:\Users\apple1417\AppData\Local\Programs\Python\Python37-32\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\apple1417\AppData\Local\Programs\Python\Python37-32\libs;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(PYTHONPATH)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(PYTHONPATH)\libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -167,11 +167,11 @@
     </LinkIncremental>
     <TargetName>ddraw</TargetName>
     <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
-    <OutDir>D:\SteamLibrary\steamapps\common\Borderlands 2\Binaries\Win32\</OutDir>
+    <OutDir>C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\Binaries\Win32\</OutDir>
     <IntDir>build\$(Configuration)\</IntDir>
     <SourcePath>$(VC_SourcePath)\src;</SourcePath>
-    <IncludePath>C:\Users\apple1417\AppData\Local\Programs\Python\Python37-32\include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\apple1417\AppData\Local\Programs\Python\Python37-32\libs;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(PYTHONPATH)include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(PYTHONPATH)libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>

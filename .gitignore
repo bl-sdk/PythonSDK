@@ -4,3 +4,4 @@
 *.dll
 *.pyc
 *.json
+*.vcxproj.user
