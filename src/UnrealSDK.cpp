@@ -161,6 +161,17 @@ namespace UnrealSDK
 			Logging::LogF("\n>>> %s <<<\n", cmd);
 			UnrealSDK::Python->DoFile(input + 7);
 			return true;
+		}		
+		// Most UE4 games that get built don't actually have any of the `obj [...]` commands, this being the most useful version
+		else if (wcsncmp(L"obj dump ", cmd, 9) == 0) {
+			std::string objName = Util::Narrow(cmd).substr(9);
+			UObject* objectToDump = UObject::FindObject(objName);
+			if (objectToDump == nullptr) {
+				Logging::LogF("Unable to find object of name: %s\n", objName.c_str()); 
+				return true;
+			}
+			objectToDump->DumpObject();
+			return true;
 		}
 		return oStaticExec(world, cmd, Ar);
 	}
@@ -412,9 +423,10 @@ namespace UnrealSDK
 			ChangelistNumber = UObject::GetBuildChangelistNumber();
 			Logging::LogD("[Internal] Engine Version = %d, Build Changelist = %d\n", EngineVer, ChangelistNumber);
 		#else
-			EngineBuild = UKismetSystemLibrary::GetEngineVersion().AsString();
+			//! THIS MAGICALLY BROKE :)
+			//! EngineBuild = UKismetSystemLibrary::GetEngineVersion().AsString();
 			// UE4 doesn't really have a good version of "Changelist" its effectively just in Engine Version now
-			Logging::LogD("[Internal] Engine Version: %s\n", EngineBuild);
+			//! Logging::LogD("[Internal] Engine Version: %s\n", EngineBuild);
 		#endif
 	}
 

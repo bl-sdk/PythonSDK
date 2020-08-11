@@ -368,6 +368,13 @@ pybind11::object FHelper::GetProperty(UProperty* Prop)
 		return pybind11::cast(GetBoolProperty(static_cast<UBoolProperty*>(Prop)));
 	if (!strcmp(Prop->Class->GetName(), "ArrayProperty"))
 		return GetArrayProperty(static_cast<UArrayProperty*>(Prop));
+	if (!strcmp(Prop->Class->GetName(), "MapProperty"))
+		// TODO: Figure out MapProperty
+		return pybind11::none();
+	if (!strcmp(Prop->Class->GetName(), "MulticastDelegateProperty"))
+		// TODO: Figure out MulticastDelegateProperty
+		return pybind11::none();
+
 	throw std::exception(Util::Format("FHelper::GetProperty got unexpected property type '%s'",
 	                                  Prop->GetFullName().c_str()).c_str());
 }
