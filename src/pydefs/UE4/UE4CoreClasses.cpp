@@ -4,7 +4,8 @@
 
 #pragma warning(push)
 #pragma warning(disable : 26444)
-
+#pragma warning(disable : 4311) // 'type cast': pointer truncation from 'UObject *' to 'int'
+#pragma warning(disable : 4302) //  truncation from 'UObject *' to 'int'
 // Using =======================================================================
 namespace py = pybind11;
 

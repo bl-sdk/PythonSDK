@@ -165,7 +165,7 @@ namespace UnrealSDK
 		// Most UE4 games that get built don't actually have any of the `obj [...]` commands, this being the most useful version
 		else if (wcsncmp(L"obj dump ", cmd, 9) == 0) {
 			std::string objName = Util::Narrow(cmd).substr(9);
-			UObject* objectToDump = UObject::FindObject(objName);
+			UObject* objectToDump = UObject::FindObjectClassless(objName);
 			if (objectToDump == nullptr) {
 				Logging::LogF("Unable to find object of name: %s\n", objName.c_str()); 
 				return true;
@@ -337,7 +337,7 @@ namespace UnrealSDK
 			// Detour StaticExec()
 			MH_CreateHook((PVOID&)pStaticExec, &hkStaticExec, &(PVOID&)oStaticExec);
 			MH_EnableHook((PVOID&)pStaticExec);
-			Logging::LogF("Hooked pStaticExec");
+			Logging::LogF("Hooked StaticExec\n");
 		}
 #endif
 	}

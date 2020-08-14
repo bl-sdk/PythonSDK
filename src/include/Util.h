@@ -18,6 +18,8 @@ namespace Util
 
 	std::string Narrow(const wchar_t* Input);
 
+	void ThrowException(const std::string exceptionText);
+
 	void Popup(const std::wstring& StrName, const std::wstring& StrText);
 	void CloseGame();
 	std::string StringToHex(const char* Input, size_t Len);

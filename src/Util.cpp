@@ -110,6 +110,13 @@ namespace Util
 		MessageBox(nullptr, StrText.c_str(), StrName.c_str(), MB_OK | MB_ICONASTERISK);
 	}
 
+	void ThrowException(std::string exceptionText) {
+		Logging::LogF("[DEBUG] EXCEPTION: %s", exceptionText.c_str());
+		Logging::Cleanup();
+
+		throw std::exception(exceptionText.c_str());
+	}
+
 	void CloseGame()
 	{
 		TerminateProcess(GetCurrentProcess(), 1);

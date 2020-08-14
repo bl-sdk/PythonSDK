@@ -31,6 +31,7 @@ public:
 	class UComponent* GetComponentProperty(UProperty* Prop);
 
 	int GetIntProperty(class UProperty* Prop);
+
 	class FScriptInterface* GetInterfaceProperty(class UProperty* Prop);
 	float GetFloatProperty(class UProperty* Prop);
 	struct FScriptDelegate* GetDelegateProperty(class UProperty* Prop);
@@ -39,6 +40,13 @@ public:
 	void* GetPropertyAddress(class UProperty* Prop);
 	py::object GetArrayProperty(class UArrayProperty* Prop);
 	pybind11::object GetProperty(class UProperty* Prop);
+
+#ifdef UE4
+	py::object GetMapProperty(class UMapProperty* Prop);
+	class UObject* GetWeakObjectProperty(class UWeakObjectProperty* Prop);
+
+	struct FString* GetTextProperty(class UProperty* Prop);
+#endif
 
 	void SetProperty(class UStructProperty* Prop, const py::object& Val);
 	void SetProperty(class UStrProperty* Prop, const py::object& Val);
@@ -53,6 +61,7 @@ public:
 	void SetProperty(class UBoolProperty* boolProp, const py::object& Val);
 	void SetProperty(class UArrayProperty* Prop, const py::object& Val);
 	void SetProperty(class UProperty* Prop, const py::object& val);
+
 };
 
 
@@ -67,10 +76,12 @@ public:
 	FName                                              Name;                                                     // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
 	class UObject* Outer;                                                    // 0x0000(0x0000) NOT AUTO-GENERATED PROPERTY
 
+
 	static inline FChunkedFixedUObjectArray* GObjects()
 	{
 		return static_cast<FChunkedFixedUObjectArray*>(UnrealSDK::pGObjects);
 	}
+
 
 	const char* GetName() const;
 	std::string GetNameCpp() const;
@@ -120,6 +131,19 @@ public:
 				return static_cast<UObject*>(obj);
 			}
 
+		}
+
+		return nullptr;
+	}
+
+	static UObject* FindObjectClassless(const std::string& objName) {
+		for (size_t i = 0; i < UObject::GObjects()->Count; ++i) {
+			UObject* obj = UObject::GObjects()->Get(i);
+			if (obj == nullptr) continue;
+
+			if (!strcmp(obj->GetObjectName().c_str(), objName.c_str())) {
+				return static_cast<UObject*>(obj);
+			}
 		}
 
 		return nullptr;
@@ -648,10 +672,12 @@ public:
 
 // Class CoreUObject.ObjectPropertyBase
 // 0x0008 (0x0078 - 0x0070)
+
 class UObjectPropertyBase : public UProperty
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0070(0x0008) MISSED OFFSET
+	UClass* PropertyClass;
+	//unsigned char                                      UnknownData00[0x8];                                       // 0x0070(0x0008) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -660,7 +686,6 @@ public:
 	}
 
 };
-
 
 // Class CoreUObject.BoolProperty
 // 0x0008 (0x0078 - 0x0070)
@@ -883,12 +908,36 @@ public:
 };
 
 
+// TODO: Setup stuff for FScriptSparseArray, FScriptMap, etc 
+// I kinda hate it and its just a ton of jumps into different functions from various classes and I hate looking at it in the UE4 source
+struct FScriptSparseArrayLayout {
+	int Alignment;
+	int Size;
+};
+
+struct FScriptSetLayout {
+	int HashIndexOffset;
+	int HashNextIdOffset;
+	int Size;
+	FScriptSparseArrayLayout SpareArrayLayout;
+};
+
+struct FScriptMapLayout {
+	FScriptSetLayout SetLayout;
+	int ValueOffset;
+};
+
+
 // Class CoreUObject.MapProperty
 // 0x0038 (0x00A8 - 0x0070)
 class UMapProperty : public UProperty
 {
 public:
-	unsigned char                                      UnknownData00[0x38];                                      // 0x0070(0x0038) MISSED OFFSET
+	UProperty* KeyProp;
+	UProperty* ValueProp;
+	FScriptMapLayout MapLayout;
+
+	//unsigned char                                      UnknownData00[0x38];                                      // 0x0070(0x0038) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
@@ -904,7 +953,8 @@ public:
 class UMulticastDelegateProperty : public UProperty
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0070(0x0008) MISSED OFFSET
+	UFunction* SignatureFunction;
+	//unsigned char                                      UnknownData00[0x8];                                       // 0x0070(0x0008) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{

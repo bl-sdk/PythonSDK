@@ -1,4 +1,5 @@
 #ifdef UE4
+
 #pragma once
 
 #pragma warning(disable : 4267)
@@ -9,6 +10,24 @@
 #include <stdafx.h>
 #include <Util.h>
 
+/** Objects flags for internal use (GC, low level UObject code) */
+enum class EInternalObjectFlags : int
+{
+	None = 0,
+	//~ All the other bits are reserved, DO NOT ADD NEW FLAGS HERE!
+
+	ReachableInCluster = 1 << 23, // External reference to object in cluster exists
+	ClusterRoot = 1 << 24, // Root of a cluster
+	Native = 1 << 25, // Native (UClass only). 
+	Async = 1 << 26, // Object exists only on a different thread than the game thread.
+	AsyncLoading = 1 << 27, // Object is being asynchronously loaded.
+	Unreachable = 1 << 28, // Object is not reachable on the object graph.
+	PendingKill = 1 << 29, // Objects that are pending destruction (invalid for gameplay but valid objects)
+	RootSet = 1 << 30, // Object will not be garbage collected, even if unreferenced.
+
+	GarbageCollectionKeepFlags = Native | Async | AsyncLoading,
+	AllFlags = ReachableInCluster | ClusterRoot | Native | Async | AsyncLoading | Unreachable | PendingKill | RootSet
+};
 
 template <class T>
 struct TArray
@@ -52,6 +71,7 @@ public:
 
 class UObject;
 
+
 #pragma region GObjects
 struct FUObjectItem
 {
@@ -65,6 +85,14 @@ struct FUObjectItem
 	int SerialNumber;
 	// Weak Object Pointer Serial number associated with the object
 	int Unknown;
+
+	inline bool IsUnreachable() const {
+		return !!(Flags & int(EInternalObjectFlags::Unreachable));
+	}
+
+	inline bool IsPendingKill() const {
+		return !!(Flags & int(EInternalObjectFlags::PendingKill));
+	}
 };
 
 struct FChunkedFixedUObjectArray
@@ -95,9 +123,19 @@ struct FChunkedFixedUObjectArray
 		return Objects[index / NumElementsPerChunk][index % NumElementsPerChunk].Object;
 	}
 
-	UObject* operator()(size_t index)
+	UObject* operator[](size_t index)
 	{
 		return Get(index);
+	}
+
+	FUObjectItem GetObjectItem(size_t index) {
+		return Objects[index / NumElementsPerChunk][index % NumElementsPerChunk];
+	}
+
+	inline bool IsValid(FUObjectItem* ObjectItem, bool bEvenIfPendingKill = true) {
+		if (ObjectItem) 
+			return bEvenIfPendingKill ? !ObjectItem->IsUnreachable() : !(ObjectItem->IsUnreachable() || ObjectItem->IsPendingKill());
+		return false;
 	}
 };
 
@@ -109,7 +147,15 @@ public:
 	int MaxObjectsNotConsideredByGC;
 	bool OpenForDisregardForGC;
 	FChunkedFixedUObjectArray ObjObjects;
+
+	// This is kinda a round-about way of fixing an issue (but it kinda should be here anyway meh)
+	static inline FChunkedFixedUObjectArray* GObjects()
+	{
+		return static_cast<FChunkedFixedUObjectArray*>(UnrealSDK::pGObjects);
+	}
 };
+
+
 #pragma endregion
 
 #pragma region GNames
@@ -394,21 +440,45 @@ struct FScriptMulticastDelegate
 struct FWeakObjectPtr
 {
 public:
-	bool IsValid() const;
-
-	UObject* Get() const;
-
 	int32_t ObjectIndex;
 	int32_t ObjectSerialNumber;
+
+	inline FUObjectItem* GetObjectItem() const {
+		// Technically there's more checks involved in this, from looking at the UE4 source but it might be fine *shrug*
+		if (ObjectSerialNumber == 0 || ObjectIndex < 0) { return nullptr; }
+
+		FUObjectItem objItem = FUObjectArray::GObjects()->GetObjectItem(ObjectIndex);
+		if (ObjectSerialNumber != objItem.SerialNumber) return nullptr;
+
+		return &objItem;
+	}
+
+	inline UObject* Get() const {
+		FUObjectItem* objItem = GetObjectItem();
+		UObject* obj = objItem->Object;
+		return ( (objItem != nullptr) && (FUObjectArray::GObjects()->IsValid(objItem)) ) ? obj : nullptr;
+	}
+
+	inline bool IsValid() {
+		FUObjectItem* objItem = GetObjectItem();
+		return (objItem != nullptr) && (FUObjectArray::GObjects()->IsValid(objItem) );
+	}
 };
 
-template<class T, class TWeakObjectPtrBase = FWeakObjectPtr>
+template<class T = UObject, class TWeakObjectPtrBase = FWeakObjectPtr>
 struct TWeakObjectPtr : private TWeakObjectPtrBase
 {
 public:
+
+	inline UObject* GetObjectPtr() const
+	{
+		UObject* obj = TWeakObjectPtrBase::Get();
+		return obj;
+	}
+
 	inline T* Get() const
 	{
-		return (T*)TWeakObjectPtrBase::Get();
+		return TWeakObjectPtrBase::Get();
 	}
 
 	inline T& operator*() const
