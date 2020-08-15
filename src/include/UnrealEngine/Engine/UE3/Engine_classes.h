@@ -8,9 +8,11 @@
 #include "stdafx.h"
 
 #ifndef UE4
-
 #include "UnrealEngine/UE3Defines.h"
-
+#include "UnrealEngine/Core/UE3/Core_classes.h"
+#include "UnrealEngine/Core/UE3/Core_structs.h"
+#include "UnrealEngine/Engine/UE3/Engine_structs.h"
+#include "UnrealEngine/Engine/UE3/Engine_f_structs.h"
 
 //---------------------------------------------------------------------------
 //Classes

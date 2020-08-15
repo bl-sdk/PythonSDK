@@ -7,20 +7,20 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Unreal Engine PythonSDK", "
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|x64 = Debug|x64
-		Debug|x86 = Debug|x86
-		Release|x64 = Release|x64
-		Release|x86 = Release|x86
+		Debug|UE3 = Debug|UE3
+		Debug|UE4 = Debug|UE4
+		Release|UE3 = Release|UE3
+		Release|UE4 = Release|UE4
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{32794345-2BB2-45E0-A461-914D13B0279F}.Debug|x64.ActiveCfg = Debug|x64
-		{32794345-2BB2-45E0-A461-914D13B0279F}.Debug|x64.Build.0 = Debug|x64
-		{32794345-2BB2-45E0-A461-914D13B0279F}.Debug|x86.ActiveCfg = Debug|Win32
-		{32794345-2BB2-45E0-A461-914D13B0279F}.Debug|x86.Build.0 = Debug|Win32
-		{32794345-2BB2-45E0-A461-914D13B0279F}.Release|x64.ActiveCfg = Release|x64
-		{32794345-2BB2-45E0-A461-914D13B0279F}.Release|x64.Build.0 = Release|x64
-		{32794345-2BB2-45E0-A461-914D13B0279F}.Release|x86.ActiveCfg = Release|Win32
-		{32794345-2BB2-45E0-A461-914D13B0279F}.Release|x86.Build.0 = Release|Win32
+		{32794345-2BB2-45E0-A461-914D13B0279F}.Debug|UE3.ActiveCfg = Debug|Win32
+		{32794345-2BB2-45E0-A461-914D13B0279F}.Debug|UE3.Build.0 = Debug|Win32
+		{32794345-2BB2-45E0-A461-914D13B0279F}.Debug|UE4.ActiveCfg = Debug|x64
+		{32794345-2BB2-45E0-A461-914D13B0279F}.Debug|UE4.Build.0 = Debug|x64
+		{32794345-2BB2-45E0-A461-914D13B0279F}.Release|UE3.ActiveCfg = Release|Win32
+		{32794345-2BB2-45E0-A461-914D13B0279F}.Release|UE3.Build.0 = Release|Win32
+		{32794345-2BB2-45E0-A461-914D13B0279F}.Release|UE4.ActiveCfg = Release|x64
+		{32794345-2BB2-45E0-A461-914D13B0279F}.Release|UE4.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -13,6 +13,8 @@
 #pragma pack ( push, 0x4 )
 #endif
 
+#include "UnrealEngine/Core/UE3/Core_structs.h"
+
 /*
 # ========================================================================================= #
 # Constants
@@ -104,6 +106,7 @@ public:
 	struct FName                                       Name;                                             		// 0x002C (0x0008) [0x0000000000021003]              ( CPF_Edit | CPF_Const | CPF_Native | CPF_EditConst )
 	class UClass*                                      Class;                                            		// 0x0034 (0x0004) [0x0000000000021002]              ( CPF_Const | CPF_Native | CPF_EditConst )
 	class UObject*                                     ObjectArchetype;                                  		// 0x0038 (0x0004) [0x0000000000021003]              ( CPF_Edit | CPF_Const | CPF_Native | CPF_EditConst )
+
 	static inline TArray< UObject* >* GObjects() {
 		const auto objectArray = static_cast<TArray<UObject*>*>(UnrealSDK::pGObjects);
 		return objectArray;
@@ -139,13 +142,7 @@ public:
 	static struct FString GetLanguage();
 	int GetRandomOptionSumFrequency(TArray<float>* FreqList);
 	static int GetBuildChangelistNumber();
-
-#ifdef UE4
-	static FString GetEngineVersion();
-#else
 	static int GetEngineVersion();
-#endif
-
 	void GetSystemTime(int* Year, int* Month, int* DayOfWeek, int* Day, int* Hour, int* Min, int* Sec, int* MSec);
 	struct FString TimeStamp();
 	struct FVector TransformVectorByRotation(const struct FRotator& SourceRotation, const struct FVector& SourceVector, bool bInverse);
@@ -473,15 +470,25 @@ public:
 
 	inline void ProcessEvent(class UFunction* function, void* parms)
 	{
-#ifdef UE4
-		return GetVFunction<void(*)(UObject*, class UFunction*, void*)>(this, 65)(this, function, parms);
-#else
 		return GetVFunction<void(*)(UObject*, class UFunction*, void*)>(this, 67)(this, function, parms);
-#endif
 	}
 
 	virtual void Dummy() {};
 };
+
+struct FScriptDelegate
+{
+	struct FName FunctionName;
+	class UObject* Object;
+};
+
+struct FScriptInterface
+{
+	UObject* ObjectPointer; //A pointer to a UObject that implements a native interface.
+	void* InterfacePointer;
+	//Pointer to the location of the interface object within the UObject referenced by ObjectPointer.
+};
+
 
 // 0x0024 (0x0060 - 0x003C)
 class UTextBuffer : public UObject
@@ -971,6 +978,14 @@ struct FOutParmRec
 	FOutParmRec		*NextOutParm;
 };
 
+struct FOutputDevice
+{
+	void* VfTable;
+	unsigned long bAllowSuppression;
+	unsigned long bSuppressEventTag;
+	unsigned long bAutoEmitLineTerminator;
+};
+
 struct FFrame : public FOutputDevice
 {
 	class UFunction* Node;
@@ -989,7 +1004,12 @@ struct FStruct
 {
 	UStruct		*structType;
 	void		*base;
-	FStruct(UStruct* s, void* b);
+
+	inline FStruct(UStruct* s, void* b) {
+		Logging::LogD("Creating FStruct of type '%s' from %p\n", s->GetObjectName().c_str(), b);
+		structType = s;
+		base = b;
+	}
 
 	pybind11::object GetProperty(const std::string& PropName) const;
 	void SetProperty(std::string& PropName, py::object value) const;
@@ -1009,6 +1029,7 @@ struct FArray {
 	FArray* Iter();
 	py::object Next();
 	py::str Repr();
+	void Clear();
 };
 
 typedef void* (__thiscall* tMalloc)(void***, unsigned long, unsigned int);

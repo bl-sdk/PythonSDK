@@ -11,13 +11,6 @@
 #endif
 
 // UObject =======================================================================
-#ifndef UE4
-TArray<UObject*>* UObject::GObjects()
-{
-	const auto objectArray = static_cast<TArray<UObject*>*>(UnrealSDK::pGObjects);
-	return objectArray;
-}
-#endif
 
 const char* UObject::GetName() const
 {
@@ -213,6 +206,7 @@ void UObject::SetProperty(std::string& PropName, const py::object& Val)
 	else
 		reinterpret_cast<FHelper*>(this)->SetProperty(prop, Val);
 	// TODO: Implement this (https://docs.unrealengine.com/en-US/API/Runtime/CoreUObject/UObject/FPropertyChangedEvent/index.html)
+
 #ifndef UE4
 	if (UnrealSDK::gCallPostEdit)
 	{
@@ -244,7 +238,6 @@ void UObject::DumpObject()
 #ifndef UE4
 UClass* UObject::StaticClass()
 {
-
 	static auto ptr = static_cast<UClass*>(GObjects()->Get(2));
 	return ptr;
 };
@@ -344,7 +337,6 @@ py::object FHelper::GetMapProperty(UMapProperty* Prop) {
 	UProperty* ValueProp = Prop->ValueProp;
 
 	// Its kinda just a mess all around for the UMap stuff :)
-
 	return pybind11::none();
 }
 
@@ -352,17 +344,21 @@ py::object FHelper::GetMapProperty(UMapProperty* Prop) {
 // Note: the return of this *CAN* be nullptr
 // Not sure how well this works with pybind, we'll see when it comes to that
 class UObject* FHelper::GetWeakObjectProperty(UWeakObjectProperty* Prop) {
-	TWeakObjectPtr<> weakObjPtr = reinterpret_cast<TWeakObjectPtr<>*>(GetPropertyAddress(Prop))[0];
-	
+	TWeakObjectPtr<> weakObjPtr = reinterpret_cast<TWeakObjectPtr<>*>(GetPropertyAddress(Prop))[0];	
 	UObject* weakObj = weakObjPtr.GetObjectPtr();
 
 	return weakObj;
 	
 }
 
-struct FString* FHelper::GetTextProperty(UProperty* Prop) {
+const wchar_t* FHelper::GetTextProperty(UTextProperty* Prop) {
 	auto z = reinterpret_cast<FText*>(GetPropertyAddress(Prop));
-	
+	return z->GetName();
+}
+
+py::object FHelper::GetSetProperty(USetProperty* Prop) {
+	// TODO: Figure out SetProperty
+	return pybind11::none();
 }
 #endif
 
@@ -372,65 +368,44 @@ pybind11::object FHelper::GetProperty(UProperty* Prop)
 	Logging::LogD("FHelper::GetProperty '%s' (offset 0x%x) (Prop at 0x%p) on 0x%p\n", Prop->GetFullName().c_str(),
 		Prop->Offset_Internal, Prop, this);
 	const char* className = Prop->Class->GetName();
-	if (!strcmp(className, "StructProperty"))
-		return pybind11::cast(GetStructProperty(static_cast<UStructProperty*>(Prop)));
-	if (!strcmp(className, "StrProperty"))
-		return pybind11::cast(GetStrProperty(Prop));
-	if (!strcmp(className, "ObjectProperty"))
-		return pybind11::cast(GetObjectProperty(Prop));
-#ifndef UE4
-	if (!strcmp(className, "ComponentProperty"))
-		return pybind11::cast(GetComponentProperty(Prop));
-#endif
-	if (!strcmp(className, "ClassProperty"))
-		return pybind11::cast(GetClassProperty(Prop));
-	if (!strcmp(className, "NameProperty"))
-		return pybind11::cast(GetNameProperty(Prop));
-	if (!strcmp(className, "IntProperty") || !strcmp(className, "EnumProperty"))
-		return pybind11::cast(GetIntProperty(Prop));
-	if (!strcmp(className, "InterfaceProperty"))
-		return pybind11::cast(GetInterfaceProperty(Prop));
-	if (!strcmp(className, "FloatProperty"))
-		return pybind11::cast(GetFloatProperty(Prop));
-	if (!strcmp(className, "DelegateProperty"))
-		return pybind11::cast(GetDelegateProperty(Prop));
-	if (!strcmp(className, "ByteProperty"))
-		return pybind11::cast(GetByteProperty(Prop));
-	if (!strcmp(className, "BoolProperty"))
-		return pybind11::cast(GetBoolProperty(static_cast<UBoolProperty*>(Prop)));
-	if (!strcmp(className, "ArrayProperty"))
-		return GetArrayProperty(static_cast<UArrayProperty*>(Prop));
+	if (!strcmp(className, "StructProperty")) return pybind11::cast(GetStructProperty(static_cast<UStructProperty*>(Prop)));
+	if (!strcmp(className, "StrProperty")) return pybind11::cast(GetStrProperty(Prop));
+	if (!strcmp(className, "ObjectProperty")) return pybind11::cast(GetObjectProperty(Prop));
+	#ifndef UE4
+	if (!strcmp(className, "ComponentProperty")) return pybind11::cast(GetComponentProperty(Prop));
+	#endif
+	if (!strcmp(className, "ClassProperty")) return pybind11::cast(GetClassProperty(Prop));
+	if (!strcmp(className, "NameProperty")) return pybind11::cast(GetNameProperty(Prop));
+	if (!strcmp(className, "IntProperty") || !strcmp(className, "EnumProperty")) return pybind11::cast(GetIntProperty(Prop));
+	if (!strcmp(className, "InterfaceProperty")) return pybind11::cast(GetInterfaceProperty(Prop));
+	if (!strcmp(className, "FloatProperty")) return pybind11::cast(GetFloatProperty(Prop));
+	if (!strcmp(className, "DelegateProperty")) return pybind11::cast(GetDelegateProperty(Prop));
+	if (!strcmp(className, "ByteProperty")) return pybind11::cast(GetByteProperty(Prop));
+	if (!strcmp(className, "BoolProperty")) return pybind11::cast(GetBoolProperty(static_cast<UBoolProperty*>(Prop)));
+	if (!strcmp(className, "ArrayProperty")) return GetArrayProperty(static_cast<UArrayProperty*>(Prop));
 
 	#ifdef UE4
 
 	// These are probably UE4 specific properties, not quite sure but *eh*
 	// They're all basically the same thing as IntProperty, just different return types so I didn't wanna create 300 different new functions for it just cause its they're identical imo
-	if (!strcmp(className, "UInt32Property"))
-		return pybind11::cast(reinterpret_cast<unsigned int*>(GetPropertyAddress(Prop))[0]);
-	if (!strcmp(className, "UInt64Property"))
-		return pybind11::cast(reinterpret_cast<unsigned long*>(GetPropertyAddress(Prop))[0]);
-	if (!strcmp(className, "UInt16Property"))
-		return pybind11::cast(reinterpret_cast<unsigned short*>(GetPropertyAddress(Prop))[0]);
-	if (!strcmp(className, "Int64Property"))
-		return pybind11::cast(reinterpret_cast<long*>(GetPropertyAddress(Prop))[0]);
-	if (!strcmp(className, "Int16Property"))
-		return pybind11::cast(reinterpret_cast<short*>(GetPropertyAddress(Prop))[0]);
-	if (!strcmp(className, "Int8Property"))
-		return pybind11::cast(reinterpret_cast<char*>(GetPropertyAddress(Prop))[0]);
+	if (!strcmp(className, "UInt32Property")) return pybind11::cast(reinterpret_cast<unsigned int*>(GetPropertyAddress(Prop))[0]);
+	if (!strcmp(className, "UInt64Property")) return pybind11::cast(reinterpret_cast<unsigned long*>(GetPropertyAddress(Prop))[0]);
+	if (!strcmp(className, "UInt16Property")) return pybind11::cast(reinterpret_cast<unsigned short*>(GetPropertyAddress(Prop))[0]);
+	if (!strcmp(className, "Int64Property"))  return pybind11::cast(reinterpret_cast<long*>(GetPropertyAddress(Prop))[0]);
+	if (!strcmp(className, "Int16Property"))  return pybind11::cast(reinterpret_cast<short*>(GetPropertyAddress(Prop))[0]);
+	if (!strcmp(className, "Int8Property"))   return pybind11::cast(reinterpret_cast<char*>(GetPropertyAddress(Prop))[0]);
 
 	if (!strcmp(className, "MulticastDelegateProperty"))
 		//  IMO its best to just pass out the function name, just cause its a delegate, and there's not much else to do with it
 		//? Not sure whether or not, it should be `GetFullName` or just `GetName`
 		return pybind11::cast((static_cast<UMulticastDelegateProperty*>(Prop))->SignatureFunction->GetFullName());
 
+	if (!strcmp(className, "WeakObjectProperty")) return pybind11::cast(GetWeakObjectProperty(static_cast<UWeakObjectProperty*>(Prop)));
+	if (!strcmp(className, "TextProperty")) return pybind11::cast(GetTextProperty(static_cast<UTextProperty*>(Prop)));
+
 	// TODO: These types of properties, they're kinda just bleh to work on but y'know gotta do them :)
-	// MapProperty is probably a bit more complex
-	if (!strcmp(className, "MapProperty"))
-		return GetMapProperty(static_cast<UMapProperty*>(Prop));
-	if (!strcmp(className, "WeakObjectProperty"))
-		return pybind11::cast(GetWeakObjectProperty(static_cast<UWeakObjectProperty*>(Prop)));
-	if (!strcmp(className, "TextProperty"))
-		return pybind11::cast(GetTextProperty(static_cast<UTextProperty*>(Prop)));
+	if (!strcmp(className, "MapProperty")) return GetMapProperty(static_cast<UMapProperty*>(Prop));
+	if (!strcmp(className, "SetProperty")) return GetSetProperty(static_cast<USetProperty*>(Prop));
 
 	#endif
 
@@ -468,8 +443,14 @@ void FHelper::SetProperty(class UStructProperty* Prop, const py::object& Val)
 
 #ifdef UE4
 
-// TODO: UE4 (U)Int Setters,
+// TODO: UE4 Int Setters (UInt32, UInt64, UInt16, Int64, Int16, Int8)
+// TODO: UE4 WeakObjectSetter
+// TODO: UE4 MulticastDelegateProperty Setter
+// TODO: UE4 WeakObjectProperty Setter
+// TODO: UE4 TextProperty Setter
 
+// TODO: UE4 MapProperty Setter
+// TODO: UE4 SetProperty Setter
 
 // TODO: Look into how this might work, not sure if its even necessary in UE4 idk
 void FHelper::SetProperty(class UInterfaceProperty* Prop, const py::object& Val)
@@ -529,25 +510,13 @@ void FHelper::SetProperty(class UNameProperty* Prop, const py::object& Val)
 	memcpy(GetPropertyAddress(Prop), &FName(Val.cast<std::string>().c_str()), sizeof(FName));
 }
 
-#ifndef UE4
 void FHelper::SetProperty(class UDelegateProperty* Prop, const py::object& Val)
 {
 	if (!py::isinstance<FScriptDelegate>(Val))
-		throw std::exception(
-			Util::Format("FHelper::SetProperty: Got unexpected type, expected FScriptDelegate!\n").c_str());
-	memcpy(GetPropertyAddress(Prop), &FScriptDelegate(Val.cast<FScriptDelegate>()),
-	       sizeof(FScriptDelegate));
+		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected FScriptDelegate!\n").c_str());
+	memcpy(GetPropertyAddress(Prop), &FScriptDelegate(Val.cast<FScriptDelegate>()), sizeof(FScriptDelegate));
 }
-#else
-void FHelper::SetProperty(class UDelegateProperty* Prop, const py::object& Val)
-{
-	if (!py::isinstance<FScriptDelegate>(Val))
-		throw std::exception(
-			Util::Format("FHelper::SetProperty: Got unexpected type, expected FScriptDelegate!\n").c_str());
-	memcpy(GetPropertyAddress(Prop), &FScriptDelegate(Val.cast<FScriptDelegate>()),
-		sizeof(FScriptDelegate));
-}
-#endif
+
 
 void FHelper::SetProperty(class UFloatProperty* Prop, const py::object& Val)
 {

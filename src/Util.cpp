@@ -111,7 +111,7 @@ namespace Util
 	}
 
 	void ThrowException(std::string exceptionText) {
-		Logging::LogF("[DEBUG] EXCEPTION: %s", exceptionText.c_str());
+		Logging::LogD("EXCEPTION: %s", exceptionText.c_str());
 		Logging::Cleanup();
 
 		throw std::exception(exceptionText.c_str());

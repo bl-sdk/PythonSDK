@@ -13,6 +13,7 @@
 
 #include "gamedefines.h"
 
+#include "UnrealEngine/Core/UE3/Core_structs.h"
 //---------------------------------------------------------------------------
 //Parameters
 //---------------------------------------------------------------------------
@@ -61,7 +62,11 @@ struct UObject_GetBuildChangelistNumber_Params
 	int                                                ReturnValue;                                              // (Parm, OutParm, ReturnParm)
 };
 
-
+// Function Core.Object.GetEngineVersion
+struct UObject_GetEngineVersion_Params
+{
+	int                                                ReturnValue;                                              // (Parm, OutParm, ReturnParm)
+};
 
 // Function Core.Object.GetSystemTime
 struct UObject_GetSystemTime_Params

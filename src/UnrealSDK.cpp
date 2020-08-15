@@ -25,7 +25,6 @@ namespace UnrealSDK
 	void* pGObjHash;
 	void* pGCRCTable;
 	void* pNameHash;
-	void**** pGMalloc = nullptr;
 	tProcessEvent pProcessEvent;
 	tCallFunction pCallFunction;
 	tFrameStep pFrameStep;
@@ -41,6 +40,9 @@ namespace UnrealSDK
 #ifdef UE4
 	tStaticExec pStaticExec;
 	tStaticExec oStaticExec = nullptr;
+	tMalloc pGMalloc;
+#else
+	void**** pGMalloc;
 #endif
 
 	CPythonInterface* Python;
@@ -150,7 +152,7 @@ namespace UnrealSDK
 			auto z = Util::Narrow(cmd);
 			const char* input = z.c_str();
 			Python->AddToConsoleLog(gameConsole, input);
-			Logging::LogF("\n>>> %s <<<\n", input);
+			Logging::LogIgnoreUE(">>> %s <<<", input);
 			Python->DoString(input + 3);
 			return true;
 		}
@@ -158,16 +160,16 @@ namespace UnrealSDK
 		{
 			const char* input = Util::Narrow(cmd).c_str();
 			Python->AddToConsoleLog(gameConsole, input);
-			Logging::LogF("\n>>> %s <<<\n", cmd);
+			Logging::LogIgnoreUE(">>> %s <<<", cmd);
 			UnrealSDK::Python->DoFile(input + 7);
 			return true;
-		}		
+		}
 		// Most UE4 games that get built don't actually have any of the `obj [...]` commands, this being the most useful version
 		else if (wcsncmp(L"obj dump ", cmd, 9) == 0) {
 			std::string objName = Util::Narrow(cmd).substr(9);
 			UObject* objectToDump = UObject::FindObjectClassless(objName);
 			if (objectToDump == nullptr) {
-				Logging::LogF("Unable to find object of name: %s\n", objName.c_str()); 
+				Logging::LogF("Unable to find object of name: %s\n", objName.c_str());
 				return true;
 			}
 			objectToDump->DumpObject();
@@ -244,9 +246,14 @@ namespace UnrealSDK
 			pStaticExec = reinterpret_cast<tStaticExec>(j);
 			Logging::LogF("[Internal] StaticExec() = 0x%p\n", pStaticExec);
 
+			auto addy5 = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::GMalloc.Sig, Signatures::GMalloc.Mask);
+			auto k = (0x140000000 + (0x00fffffff & (addy5 + *(DWORD*)(addy5 + 0x1) + 5)));
+			pGMalloc = reinterpret_cast<tMalloc>(k);
+			Logging::LogF("[Internal] Malloc() = 0x%p\n", pGMalloc);
+
 #else 
 		void*** tempGObjects = (void***)sigscan.Scan(Signatures::GObjects);
-		if (tempGOBjects != nullptr) {
+		if (tempGObjects != nullptr) {
 			pGObjects = *tempGObjects;
 			Logging::LogF("[Internal] GObjects = 0x%p\n", pGObjects);
 		}
@@ -262,6 +269,14 @@ namespace UnrealSDK
 
 		pStaticConstructObject = reinterpret_cast<tStaticConstructObject>(sigscan.Scan(Signatures::StaticConstructor));
 		Logging::LogF("[Internal] UObject::StaticConstructObject() = 0x%p\n", pStaticConstructObject);
+
+		void* gm = sigscan.Scan(Signatures::GMalloc);
+		if (gm != nullptr) {
+			pGMalloc = *static_cast<void*****>(sigscan.Scan(Signatures::GMalloc));
+			Logging::LogF("[Internal] GMalloc = 0x%p\n", pGMalloc);
+		}
+		else
+			pGMalloc = nullptr;
 #endif
 
 		pProcessEvent = reinterpret_cast<tProcessEvent>(sigscan.Scan(Signatures::ProcessEvent));
@@ -278,13 +293,6 @@ namespace UnrealSDK
 		// TODO: Add these sigs
 		pLoadPackage = reinterpret_cast<tLoadPackage>(sigscan.Scan(Signatures::LoadPackage));
 		Logging::LogF("[Internal] UObject::LoadPackage() = 0x%p\n", pLoadPackage);
-
-		void* gm = sigscan.Scan(Signatures::GMalloc);
-		if (gm != nullptr) {
-			pGMalloc = *static_cast<void*****>(sigscan.Scan(Signatures::GMalloc));
-			Logging::LogF("[Internal] GMalloc = 0x%p\n", pGMalloc);
-		} else 
-			pGMalloc = nullptr;
 
 		pGetDefaultObject = reinterpret_cast<tGetDefaultObject>(sigscan.Scan(Signatures::GetDefaultObject));
 		Logging::LogF("[Internal] GetDefaultObject = 0x%p\n", pGetDefaultObject);
@@ -331,15 +339,15 @@ namespace UnrealSDK
 			MH_EnableHook((PVOID&)pCallFunction);
 			Logging::LogF("Hooked CallFunction\n");
 		}
-		
-#ifdef UE4
+
+		#ifdef UE4
 		if (pStaticExec != nullptr) {
 			// Detour StaticExec()
 			MH_CreateHook((PVOID&)pStaticExec, &hkStaticExec, &(PVOID&)oStaticExec);
 			MH_EnableHook((PVOID&)pStaticExec);
 			Logging::LogF("Hooked StaticExec\n");
 		}
-#endif
+		#endif
 	}
 
 	void ReloadPython() {
@@ -421,12 +429,12 @@ namespace UnrealSDK
 		#ifndef UE4
 			EngineVersion = UObject::GetEngineVersion();
 			ChangelistNumber = UObject::GetBuildChangelistNumber();
-			Logging::LogD("[Internal] Engine Version = %d, Build Changelist = %d\n", EngineVer, ChangelistNumber);
+			Logging::LogD("[Internal] Engine Version = %d, Build Changelist = %d\n", EngineVersion, ChangelistNumber);
 		#else
 			//! THIS MAGICALLY BROKE :)
-			//! EngineBuild = UKismetSystemLibrary::GetEngineVersion().AsString();
+			//	EngineBuild = UKismetSystemLibrary::GetEngineVersion().AsString();
 			// UE4 doesn't really have a good version of "Changelist" its effectively just in Engine Version now
-			//! Logging::LogD("[Internal] Engine Version: %s\n", EngineBuild);
+			//	Logging::LogD("[Internal] Engine Version: %s\n", EngineBuild);
 		#endif
 	}
 
@@ -596,7 +604,7 @@ namespace UnrealSDK
 		return pStaticConstructObject(Class, Outer, Name, SetFlags | 0b1, InternalSetFlags, Template, Error,
 		                              InstanceGraph, AssumeTemplateIsArchetype);
 #else
-		// TODO: CONSTRUCTOBJECT
+		// TODO: UE4 CONSTRUCTOBJECT
 		return nullptr;
 #endif
 	};

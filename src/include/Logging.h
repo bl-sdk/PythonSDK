@@ -6,6 +6,8 @@
 
 namespace Logging
 {
+	void LogIgnoreUE(const char* fmt, ...);
+
 	void Log(const char* Formatted, int Length = 0);
 	void LogW(wchar_t*, int);
 	void LogPy(std::string formatted);

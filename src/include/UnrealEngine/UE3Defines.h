@@ -1,6 +1,6 @@
 #ifndef UE4
-
 #pragma once
+#include "stdafx.h"
 
 template <class T>
 struct TArray
@@ -36,6 +36,100 @@ public:
 	const T& operator()(int i) const
 	{
 		return this->Data[i];
+	}
+
+	void Empty() {
+		Count = 0;
+	}
+};
+
+struct FString : public TArray<wchar_t>
+{
+	FString()
+	{
+	};
+
+	FString(wchar_t* Other)
+	{
+		this->Max = this->Count = Other ? (wcslen(Other) + 1) : 0;
+		this->Data = (wchar_t*)calloc(this->Count, sizeof(wchar_t));
+
+		if (this->Count && this->Data != 0)
+			wcscpy(this->Data, Other);
+	};
+
+	FString(const char* Other)
+	{
+		this->Max = this->Count = Other ? (strlen(Other) + 1) : 0;
+		this->Data = (wchar_t*)calloc(this->Count, sizeof(wchar_t));
+
+		if (this->Count)
+			mbstowcs(this->Data, Other, this->Count);
+	};
+
+
+	char* AsString()
+	{
+		if (this->Data == nullptr || this->Count == 0)
+			return (char*)"";
+		char* output = (char*)calloc(this->Count + 1, sizeof(char));
+		wcstombs(output, this->Data, this->Count);
+		return output;
+	}
+
+	~FString()
+	{
+	};
+
+	FString operator =(wchar_t* Other)
+	{
+		if (this->Data != Other)
+		{
+			this->Max = this->Count = *Other ? (wcslen(Other) + 1) : 0;
+
+			if (this->Count)
+				this->Data = Other;
+		}
+
+		return *this;
+	};
+
+
+
+};
+
+class FNameEntry
+{
+public:
+	static const auto NAME_WIDE_MASK = 0x1;
+	static const auto NAME_INDEX_SHIFT = 1;
+
+	int32_t Index;
+	char UnknownData00[0x04];
+	FNameEntry* HashNext;
+	union
+	{
+		char AnsiName[1024];
+		wchar_t WideName[1024];
+	};
+
+	inline const int32_t GetIndex() const
+	{
+		return Index >> NAME_INDEX_SHIFT;
+	}
+
+	inline bool IsWide() const
+	{
+		return Index & NAME_WIDE_MASK;
+	}
+
+	inline const char* GetAnsiName() const
+	{
+		return AnsiName;
+	}
+	inline const wchar_t* GetWideName() const
+	{
+		return WideName;
 	}
 };
 
@@ -82,7 +176,7 @@ public:
 
 	const char* GetName() const
 	{
-		if (Index < 0 || Index > Names()->Count)
+		if (Index < 0 || (unsigned int)Index > Names()->Count)
 			return "UnknownName";
 		return Names()->Get(Index)->GetAnsiName();
 	};
@@ -93,11 +187,7 @@ public:
 	}
 };
 
-struct FScriptDelegate
-{
-	struct FName FunctionName;
-	class UObject* Object;
-};
+
 
 
 #endif

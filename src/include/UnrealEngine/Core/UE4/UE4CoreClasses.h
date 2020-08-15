@@ -45,7 +45,8 @@ public:
 	py::object GetMapProperty(class UMapProperty* Prop);
 	class UObject* GetWeakObjectProperty(class UWeakObjectProperty* Prop);
 
-	struct FString* GetTextProperty(class UProperty* Prop);
+	py::object GetSetProperty(class USetProperty* Prop);
+	const wchar_t* GetTextProperty(class UTextProperty* Prop);
 #endif
 
 	void SetProperty(class UStructProperty* Prop, const py::object& Val);

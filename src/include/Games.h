@@ -124,9 +124,9 @@ static std::map<std::string, MemorySignature> bl3_signatures{ {
 	}},
 	{
 	"GMalloc", {
-		"\x00\x00\x00\x00\x00\x00\x00\x00\x00\xE0\xCE\x39\x46\x01",
-		"????????xxxxxx",
-		14
+		"\xE8\x00\x00\x00\x00\x4C\x63\x7B\x40",
+		"x????xxxx",
+		9
 	}},
 	{
 	"GObjects", {

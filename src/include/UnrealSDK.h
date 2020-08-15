@@ -57,6 +57,8 @@ namespace UnrealSDK
 	typedef void* (*UE4GlobalLogSingleton)();
 
 	typedef UObject*(__thiscall *tGetDefaultObject)(UClass*, unsigned int);
+	typedef void* (__thiscall *tMalloc)(unsigned long, unsigned int);
+
 
 	extern void* pFNameInit;
 	extern tProcessEvent pProcessEvent;
@@ -72,6 +74,9 @@ namespace UnrealSDK
 
 #ifdef UE4
 	extern tStaticExec pStaticExec;
+	extern tMalloc pGMalloc;
+#else
+	extern void**** pGMalloc;
 #endif
 
 	extern std::map<std::string, UClass *> ClassMap;
@@ -88,7 +93,6 @@ namespace UnrealSDK
 
 	extern class UObject* gEngine;
 
-	extern void**** pGMalloc;
 
 	extern CSigScan scanner;
 

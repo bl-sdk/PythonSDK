@@ -28,23 +28,38 @@ namespace Logging
 		WriteFile(output, Buff, Len, &bytesWritten, nullptr);
 	}
 
+	void LogIgnoreUE(const char* fmt, ...) {
+
+		va_list args;
+		va_start(args, fmt);
+		std::string formatted = Util::FormatInternal(fmt, args);
+		va_end(args);
+
+		std::string out = formatted + "\n";
+		const char* outc = out.c_str();
+		int Length = strlen(outc);
+
+		if (gLogToExternalConsole) LogWinConsole(outc, Length);
+		if (gLogToFile) LogToFile(outc, Length);
+	}
+
 	void Log(const char* Formatted, int Length)
 	{
 		std::string out = Formatted;
-		if (Formatted[strlen(Formatted) - 1] != '\n')
-		{
+
+		// UE4 Logging doesn't actually want a line break
+		#ifndef UE4	
+		if (Formatted[strlen(Formatted) - 1] != '\n') 
 			out += "\n";
-		}
+		#endif
+
 		const char* outc = out.c_str();
 
-		if (Length == 0)
-			Length = strlen(outc);
+		if (Length == 0) Length = strlen(outc);
 
-		if (gLogToExternalConsole)
-			LogWinConsole(outc, Length);
+		if (gLogToExternalConsole) LogWinConsole(outc, Length);
 
-		if (gLogToFile)
-			LogToFile(outc, Length);
+		if (gLogToFile) LogToFile(outc, Length);
 
 		if (UnrealSDK::gameConsole != nullptr)
 		{
@@ -52,15 +67,22 @@ namespace Logging
 			// console output, but if there's already a \n at the end, then it won't
 			// add this \n onto the end. So if we're printing just a \n by itself, 
 			// just don't do anything.
-			if (!(Length == 1 && outc[0] == '\n'))
+			if (!(Length == 1))
 			{
 				std::wstring wfmt = Util::Widen(outc);
 				const bool doInjectedNext = UnrealSDK::gInjectedCallNext;
 				UnrealSDK::DoInjectedCallNext();
-				// TODO: Implement UE4 UnrealSDK::gameConsole->OutputText
-				// UnrealSDK::gameConsole->OutputText(FString((wchar_t*)wfmt.c_str()));
-				if (doInjectedNext)
-					UnrealSDK::DoInjectedCallNext();
+
+				#ifdef UE4
+				if (UnrealSDK::gameConsole->Scrollback.Data != NULL) {
+					UnrealSDK::gameConsole->Scrollback.Add(FString((wchar_t*)wfmt.c_str()));
+					UnrealSDK::gameConsole->SBHead++;
+				}
+				#else
+				UnrealSDK::gameConsole->OutputText(FString((wchar_t*)wfmt.c_str()));
+				#endif
+
+				if (doInjectedNext) UnrealSDK::DoInjectedCallNext();
 			}
 		}
 	}

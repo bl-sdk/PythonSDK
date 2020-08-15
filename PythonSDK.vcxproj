@@ -167,11 +167,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <TargetName>PythonSDK</TargetName>
+    <TargetName>ddraw</TargetName>
     <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
-    <IncludePath>$(PYTHONPATH)\include;$(IncludePath);$(VC_SourcePath)\src\include</IncludePath>
-    <LibraryPath>$(PYTHONPATH)\libs;$(LibraryPath)</LibraryPath>
-    <OutDir>K:\Borderlands3\OakGame\Binaries\Win64\Plugins</OutDir>
+    <IncludePath>$(PYTHONPATH_X86)\include;$(IncludePath);$(VC_SourcePath)\src\include</IncludePath>
+    <LibraryPath>$(PYTHONPATH_X86)\libs;$(LibraryPath)</LibraryPath>
+    <OutDir>J:\Steeeeeeeeeem\steamapps\common\Borderlands 2\Binaries\Win32</OutDir>
     <IntDir>build\$(Configuration)\</IntDir>
     <SourcePath>$(VC_SourcePath)\src;</SourcePath>
   </PropertyGroup>

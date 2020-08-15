@@ -67,6 +67,21 @@ public:
 	{
 		return this->Data[i];
 	}
+
+	void Add(T Item)
+	{
+		if (Count == Max) {
+			int newCapacity = sizeof(T) * (Count * 2);
+			T* arr = (T*)(UnrealSDK::pGMalloc(newCapacity, sizeof(T)));
+
+			memset(arr, 0, newCapacity);
+			memcpy(arr, this->Data, sizeof(T) * Count);
+			this->Data = arr;
+			this->Max = Count * 2;
+		}
+		this->Data[Count] = Item;
+		this->Count++;
+	}
 };
 
 class UObject;
@@ -417,10 +432,21 @@ public:
 	}
 };
 
+struct FTextData {
+	unsigned char UnknownData[0x30];
 
-struct FText
-{
-	char UnknownData[0x28];
+	wchar_t* Name;
+	int Length;
+};
+
+struct FText {
+	unsigned char UnknownData[0x8];
+
+	FTextData* Data;
+	wchar_t* GetName() const {
+		if (Data) return Data->Name;
+		return nullptr;
+	}
 };
 
 
@@ -444,7 +470,6 @@ public:
 	int32_t ObjectSerialNumber;
 
 	inline FUObjectItem* GetObjectItem() const {
-		// Technically there's more checks involved in this, from looking at the UE4 source but it might be fine *shrug*
 		if (ObjectSerialNumber == 0 || ObjectIndex < 0) { return nullptr; }
 
 		FUObjectItem objItem = FUObjectArray::GObjects()->GetObjectItem(ObjectIndex);
@@ -455,8 +480,13 @@ public:
 
 	inline UObject* Get() const {
 		FUObjectItem* objItem = GetObjectItem();
+		if (objItem == nullptr) return nullptr;
+
 		UObject* obj = objItem->Object;
-		return ( (objItem != nullptr) && (FUObjectArray::GObjects()->IsValid(objItem)) ) ? obj : nullptr;
+		// imo its not a good idea to give out an object that's in the process of getting destroyed (or near to it atleast)
+		if (FUObjectArray::GObjects()->IsValid(objItem, false)) 
+			return obj;
+		return nullptr;
 	}
 
 	inline bool IsValid() {

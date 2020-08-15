@@ -8,6 +8,11 @@
 #ifndef UE4
 
 #include "stdafx.h"
+#include "UnrealEngine/UE3Defines.h"
+
+#include "UnrealEngine/Core/UE3/Core_classes.h"
+#include "UnrealEngine/Core/UE3/Core_structs.h"
+#include "UnrealEngine/Core/UE3/Core_f_structs.h"
 
 //---------------------------------------------------------------------------
 //Parameters
