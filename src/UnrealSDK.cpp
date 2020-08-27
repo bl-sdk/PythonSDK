@@ -41,6 +41,7 @@ namespace UnrealSDK
 	tStaticExec pStaticExec;
 	tStaticExec oStaticExec = nullptr;
 	tMalloc pGMalloc;
+	tRealloc pRealloc;
 #else
 	void**** pGMalloc;
 #endif
@@ -250,6 +251,11 @@ namespace UnrealSDK
 			auto k = (0x140000000 + (0x00fffffff & (addy5 + *(DWORD*)(addy5 + 0x1) + 5)));
 			pGMalloc = reinterpret_cast<tMalloc>(k);
 			Logging::LogF("[Internal] Malloc() = 0x%p\n", pGMalloc);
+
+			auto addy6 = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::Realloc.Sig, Signatures::Realloc.Mask);
+			auto m = (0x140000000 + (0x00fffffff & (addy6 + *(DWORD*)(addy6 + 0x1) + 5)));
+			pRealloc = reinterpret_cast<tRealloc>(m);
+			Logging::LogF("[Internal] Realloc() = 0x%p\n", pRealloc);
 
 #else 
 		void*** tempGObjects = (void***)sigscan.Scan(Signatures::GObjects);

@@ -68,19 +68,37 @@ public:
 		return this->Data[i];
 	}
 
-	void Add(T Item)
+	void Add(T InputData)
 	{
-		if (Count == Max) {
-			int newCapacity = sizeof(T) * (Count * 2);
-			T* arr = (T*)(UnrealSDK::pGMalloc(newCapacity, sizeof(T)));
-
-			memset(arr, 0, newCapacity);
-			memcpy(arr, this->Data, sizeof(T) * Count);
-			this->Data = arr;
-			this->Max = Count * 2;
+		if ((Count + 1) > Max) {
+			Data = (T*)UnrealSDK::pRealloc(Data, sizeof(T) * (Count + 1), 0);
+			Max++;
 		}
-		this->Data[Count] = Item;
-		this->Count++;
+		Data[Count++] = InputData;
+	};
+
+	/**
+	 * Removes an element (or elements) at given location
+	 *
+	 * @param Index Location in array of the element to remove.
+	 * @param NumToRemove Number of elements to remove.
+	 */
+	void RemoveAt(int Index, int NumToRemove)
+	{
+		if (NumToRemove)
+		{
+			int NumToMove = Count - Index - NumToRemove;
+			if (NumToMove)
+			{
+				memmove
+				(
+					(uint8_t*)Data + (Index * sizeof(T)),
+					(uint8_t*)Data + ((Index + NumToRemove) * sizeof(T)),
+					NumToMove * sizeof(T)
+				);
+			}
+			Count -= NumToRemove;
+		}
 	}
 };
 
@@ -435,7 +453,7 @@ public:
 struct FTextData {
 	unsigned char UnknownData[0x30];
 
-	wchar_t* Name;
+	const wchar_t* Name;
 	int Length;
 };
 
@@ -443,7 +461,7 @@ struct FText {
 	unsigned char UnknownData[0x8];
 
 	FTextData* Data;
-	wchar_t* GetName() const {
+	const wchar_t* GetName() const {
 		if (Data) return Data->Name;
 		return nullptr;
 	}

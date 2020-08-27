@@ -7085,6 +7085,34 @@ public:
 };
 
 
+// Class EngineSettings.ConsoleSettings
+// 0x0048 (0x0070 - 0x0028)
+class UConsoleSettings : public UObject
+{
+public:
+	int                                                MaxScrollbackSize;                                        // 0x0028(0x0004) (Edit, ZeroConstructor, Config, GlobalConfig, IsPlainOldData)
+	unsigned char                                      UnknownData00[0x4];                                       // 0x002C(0x0004) MISSED OFFSET
+	TArray<struct FAutoCompleteCommand>                ManualAutoCompleteList;                                   // 0x0030(0x0010) (Edit, ZeroConstructor, Config)
+	TArray<class FString>                              AutoCompleteMapPaths;                                     // 0x0040(0x0010) (Edit, ZeroConstructor, Config)
+	float                                              BackgroundOpacityPercentage;                              // 0x0050(0x0004) (Edit, ZeroConstructor, Config, IsPlainOldData)
+	bool                                               bOrderTopToBottom;                                        // 0x0054(0x0001) (Edit, ZeroConstructor, Config, IsPlainOldData)
+	unsigned char                                      UnknownData01[0x3];                                       // 0x0055(0x0003) MISSED OFFSET
+	struct FColor                                      InputColor;                                               // 0x0058(0x0004) (Edit, Config, IsPlainOldData)
+	struct FColor                                      HistoryColor;                                             // 0x005C(0x0004) (Edit, Config, IsPlainOldData)
+	struct FColor                                      AutoCompleteCommandColor;                                 // 0x0060(0x0004) (Edit, Config, IsPlainOldData)
+	struct FColor                                      AutoCompleteCVarColor;                                    // 0x0064(0x0004) (Edit, Config, IsPlainOldData)
+	struct FColor                                      AutoCompleteFadedColor;                                   // 0x0068(0x0004) (Edit, Config, IsPlainOldData)
+	unsigned char                                      UnknownData02[0x4];                                       // 0x006C(0x0004) MISSED OFFSET
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class /Script/EngineSettings.ConsoleSettings");
+		return ptr;
+	}
+
+};
+
+
 // Class Engine.Console
 // 0x0108 (0x0130 - 0x0028)
 class UConsole : public UObject
@@ -7098,15 +7126,33 @@ public:
 	TArray<FString> Scrollback;
 	int SBHead;
 	int SBPos;
-																									 
+
 	/* Holds the history buffer, order is old to new */
 	TArray<class FString>                              HistoryBuffer;
-	unsigned char                                      UnknownData02[0xB8];                                      // 0x0078(0x00B8) MISSED OFFSET
+	unsigned char                                      UnknownData02[0xA0];                                      // 0x0078(0x00B8) MISSED OFFSET
+	class UConsoleSettings* ConsoleSettings;
+	unsigned char UnknownData03[0x10];
 
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindClass("Class /Script/Engine.Console");
 		return ptr;
+	}
+
+	void OutputText(const FString& Text)
+	{
+		// If we are full, delete the first line
+		if (Scrollback.Num() > ConsoleSettings->MaxScrollbackSize)
+		{
+			Scrollback.RemoveAt(1, 1);
+			SBHead = ConsoleSettings->MaxScrollbackSize + 1;
+		}
+		else
+		{
+			SBHead++;
+		}
+		// Add the line
+		Scrollback.Add(Text);
 	}
 
 };

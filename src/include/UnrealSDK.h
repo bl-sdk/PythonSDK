@@ -58,7 +58,7 @@ namespace UnrealSDK
 
 	typedef UObject*(__thiscall *tGetDefaultObject)(UClass*, unsigned int);
 	typedef void* (__thiscall *tMalloc)(unsigned long, unsigned int);
-
+	typedef void* (__thiscall* tRealloc)(void*, unsigned long, unsigned int);
 
 	extern void* pFNameInit;
 	extern tProcessEvent pProcessEvent;
@@ -75,6 +75,7 @@ namespace UnrealSDK
 #ifdef UE4
 	extern tStaticExec pStaticExec;
 	extern tMalloc pGMalloc;
+	extern tRealloc pRealloc;
 #else
 	extern void**** pGMalloc;
 #endif

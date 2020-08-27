@@ -16,6 +16,7 @@ namespace UnrealSDK
 		MemorySignature StaticConstructor{};
 		MemorySignature LoadPackage{};
 		MemorySignature GMalloc{};
+		MemorySignature Realloc{};
 		MemorySignature FNameInit{};
 		MemorySignature GetDefaultObject{};
 		MemorySignature SetCommand{};
@@ -32,6 +33,7 @@ namespace UnrealSDK
 			StaticConstructor = SignatureMap["StaticConstructor"];
 			LoadPackage = SignatureMap["LoadPackage"];
 			GMalloc = SignatureMap["GMalloc"];
+			Realloc = SignatureMap["Realloc"];
 			FNameInit = SignatureMap["FNameInit"];
 			GetDefaultObject = SignatureMap["GetDefaultObject"];
 			SetCommand = SignatureMap["SetCommand"];
