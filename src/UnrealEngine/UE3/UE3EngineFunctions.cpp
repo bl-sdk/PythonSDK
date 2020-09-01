@@ -71500,6 +71500,7 @@ void UMaterialInstanceConstant::SetVectorParameterValue(const struct FName& Para
 
 	UMaterialInstanceConstant_SetVectorParameterValue_Params params;
 	params.ParameterName = ParameterName;
+	params.Value = *Value;
 
 	auto flags = fn->FunctionFlags;
 	fn->FunctionFlags |= 0x400;
