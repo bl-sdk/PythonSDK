@@ -7063,7 +7063,7 @@ public:
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindClass("Class /Script/Engine.CollisionProfile");
-		return ptr;
+return ptr;
 	}
 
 };
@@ -7155,6 +7155,24 @@ public:
 		Scrollback.Add(Text);
 	}
 
+	void OutputTextCpp(wchar_t* text)
+	{
+		if (wcsstr(text, L"\n")) {
+			std::wstring s = text;
+			// https://stackoverflow.com/questions/14265581/parse-split-a-string-in-c-using-string-delimiter-standard-c
+			size_t last = 0;
+			size_t next = 0;
+
+			while ((next = s.find(L"\n", last)) != std::string::npos) {
+				OutputText(FString((wchar_t*)(s.substr(last, next - last).c_str())));
+				last = next + 1;
+			}
+			OutputText(FString((wchar_t*)(s.substr(last).c_str())));
+		}
+		else {
+			OutputText(FString(text));
+		}
+	}
 };
 
 

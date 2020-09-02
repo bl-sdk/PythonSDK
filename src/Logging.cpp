@@ -75,7 +75,7 @@ namespace Logging
 
 				#ifdef UE4
 				if (UnrealSDK::gameConsole->Scrollback.Data != NULL) {
-					UnrealSDK::gameConsole->OutputText(FString((wchar_t*)wfmt.c_str()));
+					UnrealSDK::gameConsole->OutputTextCpp((wchar_t*)wfmt.c_str());
 				}
 				#else
 				UnrealSDK::gameConsole->OutputText(FString((wchar_t*)wfmt.c_str()));
