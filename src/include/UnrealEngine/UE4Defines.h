@@ -365,8 +365,9 @@ public:
 
 struct FScriptDelegate
 {
-	struct FName FunctionName;
+	// Technically in the UE4 source this is a TWeakPtr
 	class UObject* Object;
+	struct FName FunctionName;
 };
 
 template<class TEnum>

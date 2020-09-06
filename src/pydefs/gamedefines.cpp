@@ -48,6 +48,6 @@ void Export_pystes_gamedefines(py::module &m)
 		;
 
 	py::class_< FScriptDelegate >(m, "FScriptDelegate")
-		.def(py::init<>())
+		.def(py::init<UObject*, FName>())
 		;
 }

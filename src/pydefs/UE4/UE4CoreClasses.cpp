@@ -17,7 +17,7 @@ void Export_pystes_Core_classes(py::module& m)
 		.def_static("FindClass", &UObject::FindClass, py::return_value_policy::reference)
 		.def_static("FindObjectsRegex", &UObject::FindObjectsRegex, py::return_value_policy::reference)
 		.def_static("FindObjectsContaining", &UObject::FindObjectsContaining, py::return_value_policy::reference)
-
+		.def_static("FindObject", &UObject::FindObjectClassless, py::return_value_policy::reference)
 		.def_readwrite("ObjectFlags", &UObject::ObjectFlags, py::return_value_policy::reference)
 		.def_readwrite("InternalIndex", &UObject::InternalIndex)
 		.def_readwrite("Outer", &UObject::Outer, py::return_value_policy::reference)

@@ -182,8 +182,6 @@ void Export_pystes_Core_structs(py::module& m)
 	py::class_< FRawDistributionVector, FRawDistribution >(m, "FRawDistributionVector")
 		.def(py::init<>())
 		.def_readwrite("Distribution", &FRawDistributionVector::Distribution, py::return_value_policy::reference);
-
-
 }
 
 #endif

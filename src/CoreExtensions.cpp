@@ -342,6 +342,17 @@ py::object FHelper::GetMapProperty(UMapProperty* Prop) {
 
 
 // Note: the return of this *CAN* be nullptr
+// There's technically a distinction between WeakObjectPtr and SoftObjectPtr in which Soft can go from invalid -> valid multiple times
+// In the SDK there's actually no distinction between these two so like ???
+class UClass* FHelper::GetSoftClassProperty(USoftClassProperty* Prop) {
+	TWeakObjectPtr<UClass*> weakObjPtr = reinterpret_cast<TWeakObjectPtr<UClass*>*>(GetPropertyAddress(Prop))[0];
+	UClass* classObject = static_cast<UClass*>(weakObjPtr.GetObjectPtr());
+
+	return classObject;
+}
+
+
+// Note: the return of this *CAN* be nullptr
 // Not sure how well this works with pybind, we'll see when it comes to that
 class UObject* FHelper::GetWeakObjectProperty(UWeakObjectProperty* Prop) {
 	TWeakObjectPtr<> weakObjPtr = reinterpret_cast<TWeakObjectPtr<>*>(GetPropertyAddress(Prop))[0];	
@@ -402,6 +413,10 @@ pybind11::object FHelper::GetProperty(UProperty* Prop)
 
 	if (!strcmp(className, "WeakObjectProperty")) return pybind11::cast(GetWeakObjectProperty(static_cast<UWeakObjectProperty*>(Prop)));
 	if (!strcmp(className, "TextProperty")) return pybind11::cast(GetTextProperty(static_cast<UTextProperty*>(Prop)));
+
+	if (!strcmp(className, "SoftClassProperty")) { 
+		return pybind11::cast(GetSoftClassProperty(static_cast<USoftClassProperty*>(Prop)));
+	}
 
 	// TODO: These types of properties, they're kinda just bleh to work on but y'know gotta do them :)
 	if (!strcmp(className, "MapProperty")) return GetMapProperty(static_cast<UMapProperty*>(Prop));

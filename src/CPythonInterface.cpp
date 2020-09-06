@@ -6,6 +6,7 @@
 #include <string>
 #include <cstdlib>
 
+
 bool VerifyPythonFunction(py::object funcHook, const char** expectedKeys)
 {
 	PyObject* obj = funcHook.ptr();

@@ -47,6 +47,7 @@ public:
 
 	py::object GetSetProperty(class USetProperty* Prop);
 	const wchar_t* GetTextProperty(class UTextProperty* Prop);
+	class UClass* GetSoftClassProperty(class USoftClassProperty* Prop);
 #endif
 
 	void SetProperty(class UStructProperty* Prop, const py::object& Val);
@@ -141,8 +142,8 @@ public:
 		for (size_t i = 0; i < UObject::GObjects()->Count; ++i) {
 			UObject* obj = UObject::GObjects()->Get(i);
 			if (obj == nullptr) continue;
-
-			if (!strcmp(obj->GetObjectName().c_str(), objName.c_str())) {
+			const char* name = obj->GetObjectName().c_str();
+			if (!strcmp(name, objName.c_str())) {
 				return static_cast<UObject*>(obj);
 			}
 		}
@@ -997,14 +998,17 @@ public:
 };
 
 
+
 // Class CoreUObject.SoftObjectProperty
 // 0x0000 (0x0078 - 0x0078)
+// Describes a reference variable to another object which may be nil, and will become valid or invalid at any point
 class USoftObjectProperty : public UObjectPropertyBase
 {
 public:
 
 	static UClass* StaticClass()
 	{
+		
 		static auto ptr = UObject::FindClass("Class CoreUObject.SoftObjectProperty");
 		return ptr;
 	}
@@ -1014,15 +1018,21 @@ public:
 
 // Class CoreUObject.SoftClassProperty
 // 0x0008 (0x0080 - 0x0078)
+// Describes a reference variable to another class which may be nil, and will become valid or invalid at any point
 class USoftClassProperty : public USoftObjectProperty
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0078(0x0008) MISSED OFFSET
+	// This is actually just the class of the class object we're storing (I think?)
+	class UClass* MetaClass;
 
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindClass("Class CoreUObject.SoftClassProperty");
 		return ptr;
+	}
+
+	UClass* GetMetaClass() {
+		return MetaClass;
 	}
 
 };
