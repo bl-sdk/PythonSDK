@@ -176,10 +176,21 @@ namespace UnrealSDK
 			objectToDump->DumpObject();
 			return true;
 		}
+		// When outside of the UE4 editor, there's no line wrapping in the console itself, and there's not an easy way to re-enable it,
+		// So why not just write it out into a txt file
+		else if (wcsncmp(L"flushlog", cmd, 8) == 0) {
+			std::ofstream file;
+			file.open("console.log");
+			for (size_t i = 0; i < UnrealSDK::gameConsole->Scrollback.Count; i++) {
+				FString str = UnrealSDK::gameConsole->Scrollback(i);
+				file << str.AsString() << "\n";
+			}
+			return true;
+		}
+
 		return oStaticExec(world, cmd, Ar);
 	}
 #endif
-
 
 	void DoInjectedCallNext()
 	{
@@ -295,14 +306,12 @@ namespace UnrealSDK
 		pFrameStep = reinterpret_cast<tFrameStep>(sigscan.Scan(Signatures::FrameStep));
 		Logging::LogF("[Internal] FFrame::Step() = 0x%p\n", pFrameStep);
 
-
-		// TODO: Add these sigs
-		pLoadPackage = reinterpret_cast<tLoadPackage>(sigscan.Scan(Signatures::LoadPackage));
-		Logging::LogF("[Internal] UObject::LoadPackage() = 0x%p\n", pLoadPackage);
-
 		pGetDefaultObject = reinterpret_cast<tGetDefaultObject>(sigscan.Scan(Signatures::GetDefaultObject));
 		Logging::LogF("[Internal] GetDefaultObject = 0x%p\n", pGetDefaultObject);
 
+		// TODO: Add these sigs
+		// pLoadPackage = reinterpret_cast<tLoadPackage>(sigscan.Scan(Signatures::LoadPackage));
+		// Logging::LogF("[Internal] UObject::LoadPackage() = 0x%p\n", pLoadPackage);
 
 #ifndef UE4 // When generated properly, UE4 games don't actually have the SET command in them :(
 			try
@@ -331,7 +340,6 @@ namespace UnrealSDK
 
 		if (pProcessEvent != nullptr) {
 			// Detour UObject::ProcessEvent()
-			//SETUP_SIMPLE_DETOUR(detProcessEvent, pProcessEvent, hkProcessEvent);
 			MH_CreateHook((PVOID&)pProcessEvent, &hkProcessEvent, &(PVOID&)oProcessEvent);
 			MH_EnableHook((PVOID&)pProcessEvent);
 			Logging::LogF("Hooked ProcessEvent\n");
@@ -575,11 +583,11 @@ namespace UnrealSDK
 			{
 				UObject* Object = UObject::GObjects()->Get(i);
 				if (Object->GetPackageObject() == result)
-#ifdef UE4
+					#ifdef UE4
 					Object->ObjectFlags |= 0x4000;
-#else
+					#else
 					Object->ObjectFlags.A |= 0x4000;
-#endif
+					#endif
 			}
 		}
 	};

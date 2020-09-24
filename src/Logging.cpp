@@ -25,7 +25,15 @@ namespace Logging
 	{
 		const HANDLE output = GetStdHandle(STD_OUTPUT_HANDLE);
 		DWORD bytesWritten = 0;
-		WriteFile(output, Buff, Len, &bytesWritten, nullptr);
+
+		std::string f = Buff;
+		if (f.find("\n", 0) == std::string::npos) {
+			f += "\n";
+		}
+		const char* outc = f.c_str();
+		int Length = strlen(outc);
+		WriteFile(output, f.c_str(), Length, &bytesWritten, nullptr);
+
 	}
 
 	void LogIgnoreUE(const char* fmt, ...) {
