@@ -131,10 +131,8 @@ PYBIND11_EMBEDDED_MODULE(unrealsdk, m)
 }
 
 #ifdef UE4
-void CPythonInterface::AddToConsoleLog(UConsole* console, const char* input) {
-	// TODO: Implement a UE4 version of this, that's basically only where this function's used
-	// In UE4, its not just a fixed size array, now its a TArray<FString> without any max defined size
-}
+// This function is empty in UE4 because its useless, it's way more important to do this in another function
+void CPythonInterface::AddToConsoleLog(UConsole* console, const char* input) { }
 #endif
 
 #ifndef UE4

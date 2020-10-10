@@ -47,7 +47,17 @@ public:
 
 	py::object GetSetProperty(class USetProperty* Prop);
 	const wchar_t* GetTextProperty(class UTextProperty* Prop);
-	class UClass* GetSoftClassProperty(class USoftClassProperty* Prop);
+	py::object GetSoftClassProperty(class USoftClassProperty* Prop);
+	py::object GetSoftObjectProperty(class USoftObjectProperty* Prop);
+
+	void SetProperty(class USoftObjectProperty* Prop, const py::object& Val);
+	void SetProperty(class UWeakObjectProperty* Prop, const py::object& Val);
+	void SetProperty(class UUInt16Property* Prop, const py::object& Val);
+	void SetProperty(class UUInt32Property* Prop, const py::object& Val);
+	void SetProperty(class UUInt64Property* Prop, const py::object& Val);
+	void SetProperty(class UInt64Property* Prop, const py::object& Val);
+	void SetProperty(class UInt16Property* Prop, const py::object& Val);
+	void SetProperty(class UInt8Property* Prop, const py::object& Val);
 #endif
 
 	void SetProperty(class UStructProperty* Prop, const py::object& Val);
@@ -142,8 +152,7 @@ public:
 		for (size_t i = 0; i < UObject::GObjects()->Count; ++i) {
 			UObject* obj = UObject::GObjects()->Get(i);
 			if (obj == nullptr) continue;
-			const char* name = obj->GetObjectName().c_str();
-			if (!strcmp(name, objName.c_str())) {
+			if (!strcmp(obj->GetObjectName().c_str(), objName.c_str())) {
 				return static_cast<UObject*>(obj);
 			}
 		}

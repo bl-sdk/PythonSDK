@@ -184,6 +184,8 @@ namespace UnrealSDK
 			for (size_t i = 0; i < UnrealSDK::gameConsole->Scrollback.Count; i++) {
 				FString str = UnrealSDK::gameConsole->Scrollback(i);
 				file << str.AsString() << "\n";
+
+				Logging::LogIgnoreUE(str.AsString());
 			}
 			return true;
 		}
@@ -496,8 +498,9 @@ namespace UnrealSDK
 
 			if (!Object || !Object->Class)
 				continue;
+			const char* cName = Object->Class->GetName();
 
-			if (!strcmp(Object->Class->GetName(), "Class")) {
+			if (!strcmp(cName, "Class")) {
 				// Technically this is just a bandaid solution, in reality UE4EngineClasses.h should've been generated better
 				#ifndef UE4
 				ClassMap[Object->GetName()] = static_cast<UClass*>(Object);
@@ -506,37 +509,46 @@ namespace UnrealSDK
 				#endif
 			}
 
+			#ifdef UE4
+			else if (strncmp(cName, "BlueprintGeneratedClass", 23) == 0) {
+				ClassMap[Object->GetFullName()] = static_cast<UBlueprintGeneratedClass*>(Object);
+			}
+			#endif
+
 			if (!strcmp(Object->GetFullName().c_str(), ObjectMap["EngineFullName"].c_str()))
 				gEngine = Object;
 
+
+
 			#ifdef _DEBUG
-			file << Object->GetFullName() << std::endl;
+			file << Object->GetFullName() << "\n";
 			#endif
 		}
 
 		#ifdef _DEBUG
+		file.flush();
 		file.close();
 		Logging::InitializeExtern();
+
+		remove("SDKNames.txt");
+		std::ofstream f;
+		file.open("SDKNames.txt", std::ios::app);
+		for (size_t i = 0; i < FName::Names()->Count; ++i) {
+			auto z = FName::Names()->Get(i);
+			if (z == nullptr) continue;
+
+			std::string output;
+			if (z->IsWide())
+				output.append(Util::Narrow(std::wstring(z->GetWideName())));
+			else
+				output.append(z->GetAnsiName());
+			file << "[" << i << "]: " << output << "\n";
+		}
+		f.flush();
+		f.close();
+
 		#endif
 
-		#ifdef _DEBUG
-				remove("SDKNames.txt");
-				std::ofstream f;
-				file.open("SDKNames.txt", std::ios::app);
-				for (size_t i = 0; i < FName::Names()->Count; ++i) {
-					auto z = FName::Names()->Get(i);
-					if (z == nullptr) continue;
-
-					std::string output;
-					if (z->IsWide()) 
-						output.append( Util::Narrow(std::wstring(z->GetWideName())) );
-					else 
-						output.append(z->GetAnsiName());
-					file << "[" << i << "]: " << output << std::endl;
-				}
-
-				f.close();
-		#endif
 		initializeGameVersions();
 
 		Logging::PrintLogHeader();
@@ -625,13 +637,11 @@ namespace UnrealSDK
 
 	UObject* GetEngine()
 	{
-		if (!gEngine)
-			gEngine = UObject::Find(ObjectMap["EngineObjectType"].c_str(), ObjectMap["EngineObjectName"].c_str());
+		if (!gEngine) gEngine = UObject::Find(ObjectMap["EngineObjectType"].c_str(), ObjectMap["EngineObjectName"].c_str());
 		return gEngine;
 	}
 
-	void RegisterHook(const std::string& FuncName, const std::string& HookName,
-	                  const std::function<bool(UObject*, UFunction*, FStruct*)>& FuncHook)
+	void RegisterHook(const std::string& FuncName, const std::string& HookName, const std::function<bool(UObject*, UFunction*, FStruct*)>& FuncHook)
 	{
 		gHookManager->Register(FuncName, HookName, FuncHook);
 	}

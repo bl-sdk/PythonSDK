@@ -104,7 +104,6 @@ public:
 
 class UObject;
 
-
 #pragma region GObjects
 struct FUObjectItem
 {
@@ -116,7 +115,7 @@ struct FUObjectItem
 	int ClusterRootIndex;
 	// Weak Object Pointer Serial number associated with the object
 	int SerialNumber;
-	// Weak Object Pointer Serial number associated with the object
+	// ???
 	int Unknown;
 
 	inline bool IsUnreachable() const {
@@ -186,8 +185,15 @@ public:
 	{
 		return static_cast<FChunkedFixedUObjectArray*>(UnrealSDK::pGObjects);
 	}
-};
 
+
+	static inline size_t ReverseObjectLookup(UObject* obj) {
+		for (size_t i = 0; i < GObjects()->Count; ++i) {
+			if (GObjects()->GetByIndex(i) == obj) return i;
+		}
+		return -1;
+	}
+};
 
 #pragma endregion
 
@@ -249,8 +255,6 @@ struct FChunkedFNameEntryArray
 		return Get(index);
 	}
 };
-
-
 
 struct FName
 {
@@ -361,7 +365,6 @@ public:
 
 
 };
-
 
 struct FScriptDelegate
 {
@@ -512,6 +515,22 @@ public:
 		FUObjectItem* objItem = GetObjectItem();
 		return (objItem != nullptr) && (FUObjectArray::GObjects()->IsValid(objItem) );
 	}
+
+	inline void Set(UObject* obj) {
+		// If the obj is null we wanna do some other stuff instead
+		if(obj != nullptr) {
+			size_t index = FUObjectArray::ReverseObjectLookup(obj);
+			if (index == -1) return;
+
+			ObjectIndex = (int)index;
+			FUObjectItem objItem = FUObjectArray::GObjects()->GetObjectItem(ObjectIndex);
+			ObjectSerialNumber = objItem.SerialNumber;
+		}
+		else {
+			ObjectIndex = 0;
+			ObjectSerialNumber = -1;
+		}
+	}
 };
 
 template<class T = UObject, class TWeakObjectPtrBase = FWeakObjectPtr>
@@ -543,6 +562,10 @@ public:
 	inline bool IsValid() const
 	{
 		return TWeakObjectPtrBase::IsValid();
+	}
+
+	inline void SetObjectPtr(UObject* obj) {
+		TWeakObjectPtrBase::Set(obj);
 	}
 };
 

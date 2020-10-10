@@ -177,11 +177,11 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(PYTHONPATH)\include;$(IncludePath);$(VC_SourcePath)\src\include</IncludePath>
+    <IncludePath>$(PYTHONPATH_x64)\include;$(IncludePath);$(VC_SourcePath)\src\include</IncludePath>
     <OutDir>K:\Borderlands3\OakGame\Binaries\Win64\Plugins</OutDir>
     <IntDir>build\$(Configuration)\</IntDir>
     <TargetName>PythonSDK</TargetName>
-    <LibraryPath>$(PYTHONPATH)\libs;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
+    <LibraryPath>$(PYTHONPATH_x64)\libs;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
     <SourcePath>$(VC_SourcePath)\src;</SourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
