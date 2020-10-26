@@ -50,6 +50,7 @@ public:
 	py::object GetSoftClassProperty(class USoftClassProperty* Prop);
 	py::object GetSoftObjectProperty(class USoftObjectProperty* Prop);
 
+	void SetProperty(class UTextProperty* Prop, const py::object& Val);
 	void SetProperty(class USoftObjectProperty* Prop, const py::object& Val);
 	void SetProperty(class UWeakObjectProperty* Prop, const py::object& Val);
 	void SetProperty(class UUInt16Property* Prop, const py::object& Val);
@@ -1481,7 +1482,7 @@ public:
 
 
 
-typedef void* (__thiscall* tMalloc)(void***, unsigned long, unsigned int);
+typedef void* (__thiscall* tMalloc)(unsigned long, unsigned int);
 typedef void(__thiscall* tFree)(void***, void*);
 
 

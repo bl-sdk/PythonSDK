@@ -7139,20 +7139,29 @@ public:
 		return ptr;
 	}
 
-	void OutputText(const FString& Text)
+	void OutputTextLine(const FString& Text)
 	{
+		// TODO: Figure out why this is causing a buffer overflow after it reaches the max
+		// Possibly it happens because the FStrings aren't being deconstructed after being removed?
+
+		/*
+
+		// UE3 SDK is capable of calling this function through UE itself, UE4 isn't :/
+
 		// If we are full, delete the first line
-		if (Scrollback.Num() > ConsoleSettings->MaxScrollbackSize)
+		if (Scrollback.Num() > ConsoleSettings->MaxScrollbackSize - 1)
 		{
-			Scrollback.RemoveAt(1, 1);
-			SBHead = ConsoleSettings->MaxScrollbackSize + 1;
+			Scrollback.RemoveAt(0, 1);
+			SBHead = Scrollback.Num() - 1;
 		}
 		else
 		{
-			SBHead++;
+			SBHead += 1;
 		}
+
 		// Add the line
 		Scrollback.Add(Text);
+		*/
 	}
 
 	void OutputTextCpp(wchar_t* text)
@@ -7164,13 +7173,13 @@ public:
 			size_t next = 0;
 
 			while ((next = s.find(L"\n", last)) != std::string::npos) {
-				OutputText(FString((wchar_t*)(s.substr(last, next - last).c_str())));
+				OutputTextLine(FString((wchar_t*)(s.substr(last, next - last).c_str())));
 				last = next + 1;
 			}
-			OutputText(FString((wchar_t*)(s.substr(last).c_str())));
+			OutputTextLine(FString((wchar_t*)(s.substr(last).c_str())));
 		}
 		else {
-			OutputText(FString(text));
+			OutputTextLine(FString(text));
 		}
 	}
 };

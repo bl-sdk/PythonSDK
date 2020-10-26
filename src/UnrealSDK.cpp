@@ -159,7 +159,8 @@ namespace UnrealSDK
 		}
 		else if (wcsncmp(L"pyexec ", cmd, 7) == 0)
 		{
-			const char* input = Util::Narrow(cmd).c_str();
+			auto z = Util::Narrow(cmd);
+			const char* input = z.c_str();
 			Python->AddToConsoleLog(gameConsole, input);
 			Logging::LogIgnoreUE(">>> %s <<<", cmd);
 			UnrealSDK::Python->DoFile(input + 7);
@@ -189,6 +190,8 @@ namespace UnrealSDK
 			}
 			return true;
 		}
+		// TODO: Consider implementing a way for Python-based mods to interface with this function
+		// Unlike in UE3, you can't just create a hook so there should maybe be some way of messing with this from the SDK itself?
 
 		return oStaticExec(world, cmd, Ar);
 	}
@@ -263,13 +266,12 @@ namespace UnrealSDK
 			auto addy5 = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::GMalloc.Sig, Signatures::GMalloc.Mask);
 			auto k = (0x140000000 + (0x00fffffff & (addy5 + *(DWORD*)(addy5 + 0x1) + 5)));
 			pGMalloc = reinterpret_cast<tMalloc>(k);
-			Logging::LogF("[Internal] Malloc() = 0x%p\n", pGMalloc);
+			Logging::LogF("[Internal] FMemory::MallocExternal() = 0x%p\n", pGMalloc);
 
 			auto addy6 = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::Realloc.Sig, Signatures::Realloc.Mask);
 			auto m = (0x140000000 + (0x00fffffff & (addy6 + *(DWORD*)(addy6 + 0x1) + 5)));
 			pRealloc = reinterpret_cast<tRealloc>(m);
-			Logging::LogF("[Internal] Realloc() = 0x%p\n", pRealloc);
-
+			Logging::LogF("[Internal] FMemory::Realloc() = 0x%p\n", pRealloc);
 #else 
 		void*** tempGObjects = (void***)sigscan.Scan(Signatures::GObjects);
 		if (tempGObjects != nullptr) {
@@ -315,7 +317,7 @@ namespace UnrealSDK
 		// pLoadPackage = reinterpret_cast<tLoadPackage>(sigscan.Scan(Signatures::LoadPackage));
 		// Logging::LogF("[Internal] UObject::LoadPackage() = 0x%p\n", pLoadPackage);
 
-#ifndef UE4 // When generated properly, UE4 games don't actually have the SET command in them :(
+		#ifndef UE4 // When generated properly, UE4 games don't actually have the SET command in them :(
 			try
 			{
 				void* SetCommand = sigscan.Scan(Signatures::SetCommand);
@@ -334,7 +336,7 @@ namespace UnrealSDK
 				Logging::LogF("Exception when enabling 'SET' commands: %d\n", e.what());
 			}
 			Logging::LogF("Enabled SET commands\n");
-#endif
+		#endif
 		
 		LogAllCalls(false);
 
@@ -607,33 +609,36 @@ namespace UnrealSDK
 	void KeepAlive(UObject* Obj)
 	{
 		for (UObject* outer = Obj; outer; outer = outer->Outer)
-#ifdef UE4
+			#ifdef UE4
 			outer->ObjectFlags |= 0x4000;
-#else
+			#else
 			outer->ObjectFlags.A |= 0x4000;
-#endif
+			#endif
 	}
 
-	UObject* ConstructObject(UClass* Class, UObject* Outer, const FName Name, const unsigned int SetFlags,
-	                         unsigned int InternalSetFlags, UObject* Template, FOutputDevice* Error,
-	                         void* InstanceGraph, int AssumeTemplateIsArchetype)
+	#ifndef UE4
+	UObject* ConstructObject(UClass* Class, UObject* Outer, const FName Name, const unsigned int SetFlags, unsigned int InternalSetFlags, UObject* Template, FOutputDevice* Error, void* InstanceGraph, int AssumeTemplateIsArchetype)
 	{
-#ifndef UE4
+
 		if (!Error)
 		{
 			Error = new FOutputDevice();
-			Error->VfTable = (void *)calloc(2, sizeof(void *));
-			((void **)Error->VfTable)[1] = (void *)&Logging::LogW;
+			Error->VfTable = (void*)calloc(2, sizeof(void*));
+			((void**)Error->VfTable)[1] = (void*)&Logging::LogW;
 		}
 		if (!Class)
 			return nullptr;
 		return pStaticConstructObject(Class, Outer, Name, SetFlags | 0b1, InternalSetFlags, Template, Error,
-		                              InstanceGraph, AssumeTemplateIsArchetype);
-#else
-		// TODO: UE4 CONSTRUCTOBJECT
-		return nullptr;
-#endif
+			InstanceGraph, AssumeTemplateIsArchetype);
 	};
+	#else
+	UObject* ConstructObject(UClass* Class, UObject* InOuter, FName Name, unsigned int SetFlags, unsigned int InternalSetFlags, UObject* InTemplate, int CopyTransientsFromClassDefaults, void* InstanceGraph, int AssumeTemplateIsArchetype) {
+		if (!Class) return nullptr;
+
+		return pStaticConstructObject(Class, InOuter, Name, SetFlags | 0b1, InternalSetFlags, InTemplate, CopyTransientsFromClassDefaults, InstanceGraph, AssumeTemplateIsArchetype);
+	};
+	#endif
+	
 
 	UObject* GetEngine()
 	{

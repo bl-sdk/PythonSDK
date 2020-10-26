@@ -8,7 +8,8 @@
 #include <unordered_set>
 #include <string>
 #include <stdafx.h>
-#include <Util.h>
+#include "Util.h"
+#include <algorithm>
 
 /** Objects flags for internal use (GC, low level UObject code) */
 enum class EInternalObjectFlags : int
@@ -44,6 +45,12 @@ public:
 		Max = 0;
 	}
 
+	~TArray() {
+		DestroyItems(Data, Count);
+
+		volatile const T* Dummy = &DebugGet(0);
+	}
+
 	int Num()
 	{
 		return this->Count;
@@ -70,36 +77,126 @@ public:
 
 	void Add(T InputData)
 	{
+		/*
 		if ((Count + 1) > Max) {
-			Data = (T*)UnrealSDK::pRealloc(Data, sizeof(T) * (Count + 1), 0);
+			size_t sizeOfT = static_cast<size_t>(sizeof(T));
+			size_t NewSize = (static_cast<size_t>(Count) + 1) * sizeOfT;
+			Data = (T*)UnrealSDK::pRealloc(Data, NewSize, 0);
 			Max++;
 		}
 		Data[Count++] = InputData;
+		*/
+		
+		if (Count + 1 > Max) {
+			// This is the equivalent of `ArrayMax = AllocatorInstance.CalculateSlackGrow(ArrayNum, ArrayMax, sizeof(ElementType));`
+			Max = CalculateSlackGrow(Count + 1, Max, sizeof(T));
+			ResizeAllocation(Count, Max, sizeof(T));
+		}
+		Data[Count++] = InputData;
+		
 	};
 
 	/**
 	 * Removes an element (or elements) at given location
 	 *
 	 * @param Index Location in array of the element to remove.
-	 * @param NumToRemove Number of elements to remove.
+	 * @param num Number of elements to remove.
 	 */
-	void RemoveAt(int Index, int NumToRemove)
+	void RemoveAt(int Index, int num, bool bAllowShrinking = true)
 	{
-		if (NumToRemove)
-		{
-			int NumToMove = Count - Index - NumToRemove;
-			if (NumToMove)
-			{
-				memmove
-				(
-					(uint8_t*)Data + (Index * sizeof(T)),
-					(uint8_t*)Data + ((Index + NumToRemove) * sizeof(T)),
-					NumToMove * sizeof(T)
-				);
+		if (num) {
+			if( !(Count >= 0 && Max >= Count)) { return; }
+			if( !(Index >= 0 && ( (unsigned int)(Index + num) <= Count))) { return; }
+
+			// Call the destructors of the items in the array
+			DestroyItems(Data+Index, num);
+
+			// Skip the memmove if we have nothing to move
+			int NumToMove = Count - Index - num;
+			if (NumToMove) {
+				void* dst = (uint8_t*)Data + ( (Index)          *sizeof(T) );
+				void* src = (uint8_t*)Data + ( (Index + num)    *sizeof(T) );
+				size_t size = NumToMove * sizeof(T);
+				memmove(dst, src, size);
 			}
-			Count -= NumToRemove;
+			Count = Count - num;
+
+			if (bAllowShrinking) {
+				ResizeShrink();
+			}
 		}
 	}
+
+private:
+	void DestroyItems(T* Elements, int c) {
+		while (c) {
+			typedef T ElementType;
+			Elements->ElementType::~ElementType();
+			++Elements;
+			--c;
+		}
+		Data = Elements;
+	}
+
+	void ResizeShrink() {
+		const int NewMax = CalculateSlackShrink(Count, Max, sizeof(T));
+		if (NewMax != -1 && NewMax != Max) {
+			Max = NewMax;
+			if (!(Max >= Count)) { return; }
+			ResizeAllocation(Count, Max, sizeof(T));
+		}
+	}
+
+	void ResizeAllocation(int PreviousNumElements, int NumElements, size_t NumBytesPerElement) {
+		if (Data || NumElements) {
+			Data = (T*)UnrealSDK::pRealloc(Data, NumElements * NumBytesPerElement, 0);
+		}
+	}
+
+	int CalculateSlackGrow(int NumElements, int NumAllocated, size_t BytesPer, bool bQuantize = false, unsigned int alignment = 0) {
+		// These values are if !AGGRESSIVE_MEMORY_SAVING btw
+		const size_t FirstGrow = 4; // 1 if AGGRESSIVE_MEMORY_SAVING
+		const size_t ConstantGrow = 16; // 0 if ^^^^^
+
+		int retVal;
+		size_t Grow = FirstGrow;
+		if (NumAllocated || size_t(NumElements) > Grow) {
+			Grow = size_t(NumElements) + 3 * size_t(NumElements) / 8 + ConstantGrow;
+		}
+		if (bQuantize) {
+
+		}
+		else {
+			retVal = Grow;
+		}
+
+		if (NumElements > retVal) {
+			retVal = INT32_MAX;
+		}
+
+		return retVal;
+	}
+
+	int CalculateSlackShrink(int NumElements, int NumAllocated, size_t BytesPer, bool bQuantize = false, unsigned int alignment = 0) {
+		int Retval;
+		if (NumElements > NumAllocated) { return -1; }
+
+		const int CurrentSlackElements = NumAllocated - NumElements;
+		const size_t CurrentSlackBytes = (NumAllocated - NumElements) * BytesPer;
+		const bool bTooManySlackBytes = CurrentSlackBytes >= 16384;
+		const bool bTooManySlackElements = 3 * NumElements < 2 * NumAllocated;
+		if ((bTooManySlackBytes || bTooManySlackElements) && (CurrentSlackElements > 64 || !NumElements)) {
+			Retval = NumElements;
+			if(Retval > 0 && bQuantize) { }
+		}
+		else {
+			Retval = NumAllocated;
+		}
+
+		return Retval;
+	}
+
+	const T& DebugGet(int Index) const { return this->Data[Index]; }
 };
 
 class UObject;
@@ -310,7 +407,7 @@ public:
 };
 #pragma endregion
 
-class FString : public TArray<wchar_t>
+class FString : public TArray<TCHAR>
 {
 public:
 	FString()
@@ -340,14 +437,10 @@ public:
 	{
 		if (this->Data == nullptr || this->Count == 0)
 			return (char*)"";
-		char* output = (char*)calloc(this->Count + 1, sizeof(char));
+		char* output = (char*)calloc( (size_t)this->Count + 1, sizeof(char));
 		wcstombs(output, this->Data, this->Count);
 		return output;
 	}
-
-	~FString()
-	{
-	};
 
 	FString operator =(wchar_t* Other)
 	{
@@ -466,7 +559,8 @@ struct FText {
 
 	FTextData* Data;
 	const wchar_t* GetName() const {
-		if (Data) return Data->Name;
+		if (Data) 
+			return Data->Name;
 		return nullptr;
 	}
 };

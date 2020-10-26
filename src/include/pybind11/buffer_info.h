@@ -1,3 +1,6 @@
+#pragma warning(push)
+#pragma warning( disable: 26439)
+
 /*
 	pybind11/buffer_info.h: Python buffer object interface
 
@@ -106,3 +109,5 @@ template <typename T> struct compare_buffer_info<T, detail::enable_if_t<std::is_
 
 NAMESPACE_END(detail)
 NAMESPACE_END(PYBIND11_NAMESPACE)
+
+#pragma warning(pop)

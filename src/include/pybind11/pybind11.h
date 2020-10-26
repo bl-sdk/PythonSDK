@@ -1,3 +1,7 @@
+#pragma warning(push)
+#pragma warning( disable: 28182)
+#pragma warning( disable: 6011)
+
 /*
 	pybind11/pybind11.h: Main header file of the C++11 python
 	binding generator library
@@ -2119,3 +2123,5 @@ template <typename T> struct has_operator_delete<T, void_t<decltype(static_cast<
 #elif defined(__GNUG__) && !defined(__clang__)
 #  pragma GCC diagnostic pop
 #endif
+
+#pragma warning(pop)

@@ -1,3 +1,6 @@
+#pragma warning(push)
+#pragma warning( disable : 26437)
+#pragma warning( disable : 26495)
 /*
 	pybind11/pytypes.h: Convenience wrapper classes for basic Python types
 
@@ -1436,3 +1439,5 @@ PYBIND11_MATH_OPERATOR_BINARY(operator>>=, PyNumber_InPlaceRshift)
 
 NAMESPACE_END(detail)
 NAMESPACE_END(PYBIND11_NAMESPACE)
+
+#pragma warning(pop)

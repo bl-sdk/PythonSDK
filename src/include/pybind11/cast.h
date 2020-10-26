@@ -1,3 +1,8 @@
+#pragma warning(push)
+#pragma warning( disable : 26495)
+#pragma warning( disable : 28020) 
+#pragma warning( disable : 6054)
+#pragma warning( disable : 26817)
 /*
 	pybind11/cast.h: Partial template specializations to cast between
 	C++ and Python types
@@ -2125,3 +2130,5 @@ template <typename T1, typename T2> struct is_copy_constructible<std::pair<T1, T
 #define PYBIND11_TYPE(...) __VA_ARGS__
 
 					NAMESPACE_END(PYBIND11_NAMESPACE)
+
+#pragma warning(pop)
