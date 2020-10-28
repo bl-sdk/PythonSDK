@@ -70,6 +70,34 @@ void RegisterHook(const std::string& funcName, const std::string& hookName, py::
 		);
 }
 
+#ifdef UE4 // Console command handling
+
+bool RegisterConsoleCommand(const std::string& ConsoleCommand, py::object funcHook) {
+	// Function Verification 
+	static const char* params[] = { "command"};
+	if (!VerifyPythonFunction(funcHook, params)) { return false; }
+	return UnrealSDK::RegisterConsoleCommand(ConsoleCommand, [funcHook](std::string& command)
+		{
+			try
+			{
+				py::object py_cmd = cast(command, py::return_value_policy::reference);
+				py::object ret = funcHook(py_cmd);
+				return ret.cast<bool>();
+			}
+			catch (std::exception e)
+			{
+				Logging::LogF(e.what());
+			}
+			return true;
+		}
+	);
+}
+
+void RemoveConsoleCommand(const std::string& ConsoleCommand) {
+	UnrealSDK::RemoveConsoleCommand(ConsoleCommand);
+}
+#endif
+
 namespace py = pybind11;
 
 PYBIND11_EMBEDDED_MODULE(unrealsdk, m)
@@ -102,6 +130,7 @@ PYBIND11_EMBEDDED_MODULE(unrealsdk, m)
 	      py::arg("InternalSetFlags") = 0x00, py::arg("Template") = (UObject*)nullptr,
 	      py::arg("Error") = (FOutputDevice *)nullptr, py::arg("InstanceGraph") = (void*)nullptr,
 	      py::arg("bAssumeTemplateIsArchetype") = (int)0, py::return_value_policy::reference);
+#ifndef UE4
 	m.def("ConstructObject", [](char* ClassName, UObject* Outer, FName Name, unsigned int SetFlags,
 	                            unsigned int InternalSetFlags, UObject* Template, FOutputDevice* Error,
 	                            void* InstanceGraph, int bAssumeTemplateIsArchetype)
@@ -114,6 +143,21 @@ PYBIND11_EMBEDDED_MODULE(unrealsdk, m)
 	      py::arg("SetFlags") = 0x1, py::arg("InternalSetFlags") = 0x00, py::arg("Template") = (UObject*)nullptr,
 	      py::arg("Error") = (FOutputDevice *)nullptr, py::arg("InstanceGraph") = (void*)nullptr,
 	      py::arg("bAssumeTemplateIsArchetype") = (int)0, py::return_value_policy::reference);
+#else
+	m.def("ConstructObject", [](char* ClassName, UObject* Outer, FName Name, unsigned int SetFlags,
+		unsigned int InternalSetFlags, UObject* Template, int CopyTransientsFromDefault,
+		void* InstanceGraph, int bAssumeTemplateIsArchetype)
+		{
+			return UnrealSDK::ConstructObject(UObject::FindClass(ClassName), Outer, Name, SetFlags, InternalSetFlags,
+				Template, CopyTransientsFromDefault, InstanceGraph, bAssumeTemplateIsArchetype);
+		}, "Construct Objects", py::arg("Class"), py::arg("Outer") = UnrealSDK::GetEngine()->Outer,
+			py::arg("Name") = FName(),
+			py::arg("SetFlags") = 0x1, py::arg("InternalSetFlags") = 0x00, py::arg("Template") = (UObject*)nullptr, 
+			py::arg("CopyTransientsFromDefault") = 0x00, 
+			py::arg("InstanceGraph") = (void*)nullptr, py::arg("bAssumeTemplateIsArchetype") = (int)0, py::return_value_policy::reference);
+	m.def("RegisterConsoleCommand", [](std::string& Command, py::object FuncToCall) { RegisterConsoleCommand(Command, FuncToCall); });
+	m.def("RemoveConsoleCommand", [](std::string& Command) { RemoveConsoleCommand(Command); });
+#endif
 	m.def("RegisterHook", &RegisterHook);
 	m.def("GetEngine", &UnrealSDK::GetEngine, py::return_value_policy::reference);
 	m.def("RemoveHook", [](const std::string& funcName, const std::string& hookName)
@@ -133,6 +177,73 @@ PYBIND11_EMBEDDED_MODULE(unrealsdk, m)
 #ifdef UE4
 // This function is empty in UE4 because its useless, it's way more important to do this in another function
 void CPythonInterface::AddToConsoleLog(UConsole* console, const char* input) { }
+
+bool CPythonInterface::RegisterConsoleCommand(const std::string& ConsoleCommand, const std::function<bool(std::string&)>& FuncHook)
+{
+	char funcNameChar[255];
+	strcpy(funcNameChar, ConsoleCommand.c_str());
+
+	auto iCommands = m_consoleCommandMap.find(ConsoleCommand);
+	if (iCommands != m_consoleCommandMap.end()) {
+		return false;
+		// iCommands->second.swap(const_cast<std::function<bool(std::string&)>&>(FuncHook));
+	}
+	else {
+		std::function<bool(std::string&)>& z = const_cast<std::function<bool(std::string&)>&>(FuncHook);
+		m_consoleCommandMap.emplace(ConsoleCommand, z);
+		return true;
+	}
+	return false;
+}
+
+bool CPythonInterface::ProcessCommands(const wchar_t* cmd) {
+	const std::string command = Util::Narrow(cmd);
+
+	auto iCommands = m_consoleCommandMap.find(command);
+	if (iCommands != m_consoleCommandMap.end()) {
+		std::function<bool(std::string&)> functionsToCheck = iCommands->second;
+		bool returnVal = functionsToCheck(const_cast<std::string&>(command));
+		/*
+		bool returnVal = false;
+		for (auto& funcsToCall : functionsToCheck) {
+			auto result = funcsToCall(const_cast<std::string&>(command));
+			returnVal = returnVal || result;
+		}
+		*/
+		return returnVal;
+	}
+	// Weird way of checking for arguments but meh
+	else {
+		for (auto& x : m_consoleCommandMap) {
+
+			// Get all commands with possible arguments
+			if (x.first.find(" (...)") != std::string::npos) {
+				std::vector<std::string> split = Util::Split(x.first, " "); // Split it up to be only the first portion, we've got no way of determining the # of args easily
+				auto firstElement = split.at(0).c_str();
+				std::string com = command.substr(0, command.find(" "));
+				if (strcmp(firstElement, com.c_str()) == 0) {
+					bool returnVal = x.second(const_cast<std::string&>(command));
+					if (returnVal) {
+						return true;
+					}
+				}
+			}
+		}
+	}
+
+	return false;
+}
+
+bool CPythonInterface::RemoveConsoleCommand(const std::string& ConsoleCommand) {
+	auto iCommands = m_consoleCommandMap.find(ConsoleCommand);
+	if (iCommands != m_consoleCommandMap.end()) {
+		m_consoleCommandMap.erase(ConsoleCommand);
+		return true;
+	}
+	else {
+		return false;
+	}
+}
 #endif
 
 #ifndef UE4

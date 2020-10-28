@@ -42,6 +42,7 @@ namespace UnrealSDK
 	tStaticExec oStaticExec = nullptr;
 	tMalloc pGMalloc;
 	tRealloc pRealloc;
+
 #else
 	void**** pGMalloc;
 #endif
@@ -190,8 +191,9 @@ namespace UnrealSDK
 			}
 			return true;
 		}
-		// TODO: Consider implementing a way for Python-based mods to interface with this function
-		// Unlike in UE3, you can't just create a hook so there should maybe be some way of messing with this from the SDK itself?
+		else if (Python->ProcessCommands(cmd)) {
+			return true;
+		}
 
 		return oStaticExec(world, cmd, Ar);
 	}
@@ -650,6 +652,18 @@ namespace UnrealSDK
 	{
 		gHookManager->Register(FuncName, HookName, FuncHook);
 	}
+
+	#ifdef UE4
+	bool RegisterConsoleCommand(const std::string& Command, const std::function<bool(std::string&)>& FuncToCall)
+	{
+		return Python->RegisterConsoleCommand(Command, FuncToCall);
+	}
+
+	bool RemoveConsoleCommand(const std::string& Command)
+	{
+		return Python->RemoveConsoleCommand(Command);
+	}
+	#endif
 
 	bool RemoveHook(const std::string& FuncName, const std::string& HookName)
 	{

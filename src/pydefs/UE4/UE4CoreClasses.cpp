@@ -127,6 +127,7 @@ void Export_pystes_Core_classes(py::module& m)
 	py::class_< UPackage, UObject >(m, "UPackage");
 
 	py::class_< UClass, UStruct >(m, "UClass")
+		.def("GetProperties", &UClass::GetProperties, py::return_value_policy::reference)
 		.def_static("StaticClass", &UClass::StaticClass, py::return_value_policy::reference)
 		.def_property("bCooked", [](UClass& self) {return self.bCooked; }, [](UClass& self, bool value) {self.bCooked = value ? 1 : 0; })
 		.def_readwrite("ClassAddReferencedObjects", &UClass::ClassAddReferencedObjects)

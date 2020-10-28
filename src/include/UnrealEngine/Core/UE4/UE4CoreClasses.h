@@ -394,6 +394,19 @@ public:
 
 		return NULL;
 	}
+
+
+	std::vector<UProperty*> GetProperties() const {
+		const UStruct* thisField = this;
+		std::vector<UProperty*> propertyList;
+		while (thisField)
+		{
+			for (UField* Child = thisField->Children; Child != NULL; Child = Child->Next)
+				propertyList.push_back(reinterpret_cast<UProperty*>(Child));
+			thisField = thisField->SuperField;
+		}
+		return propertyList;
+	}
 };
 
 

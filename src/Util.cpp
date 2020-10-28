@@ -165,6 +165,21 @@ namespace Util
 		return output;
 	}
 
+	std::vector<std::string> Split(std::string in, const char* delim) {
+		std::vector<std::string> cont;
+
+		std::size_t current, previous = 0;
+		current = in.find(delim);
+		while (current != std::string::npos) {
+			cont.push_back(in.substr(previous, current - previous));
+			previous = current + 1;
+			current = in.find(delim, previous);
+		}
+		cont.push_back(in.substr(previous, current - previous));
+
+		return cont;
+	}
+
 	int WaitForModules(std::int32_t Timeout, const std::initializer_list<std::wstring>& Modules)
 	{
 		bool signaled[32] = {false};

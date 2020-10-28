@@ -17,6 +17,7 @@ namespace Util
 	std::string Narrow(const std::wstring& Input);
 
 	std::string Narrow(const wchar_t* Input);
+	std::vector<std::string> Split(std::string in, const char* delim);
 
 	void ThrowException(const std::string exceptionText);
 

@@ -103,9 +103,13 @@ namespace UnrealSDK
 	void Cleanup();
 	void LoadPackage(const char* Filename, DWORD Flags = 0, bool Force = false);
 	void KeepAlive(UObject* Obj);
+#ifndef UE4
 	UObject* ConstructObject(UClass* Class, UObject* Outer, FName Name, unsigned int SetFlags,
 	                         unsigned int InternalSetFlags, UObject* InTemplate, FOutputDevice* Error,
 	                         void* InstanceGraph, int AssumeTemplateIsArchetype);
+#else
+	UObject* ConstructObject(UClass* Class, UObject* InOuter, FName Name, unsigned int SetFlags, unsigned int InternalSetFlags, UObject* InTemplate, int CopyTransientsFromClassDefaults, void* InstanceGraph, int AssumeTemplateIsArchetype);
+#endif
 	UObject* GetEngine();
 	//UObject			*LoadTexture(char *Filename, char *TextureName);
 
@@ -116,6 +120,12 @@ namespace UnrealSDK
 	void ReloadPython();
 
 	void GenerateDumpFiles();
+
+#ifdef UE4
+	bool RegisterConsoleCommand(const std::string& Command, const std::function<bool(std::string&)>& FuncToCall);
+
+	bool RemoveConsoleCommand(const std::string& Command);
+#endif
 }
 
 #endif
