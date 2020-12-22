@@ -355,59 +355,6 @@ public:
 
 };
 
-// Class CoreUObject.Class
-// 0x0178 (0x0200 - 0x0088)
-class UClass : public UStruct
-{
-public:
-	unsigned long		bCooked : 1;
-	FPointer			ClassAddReferencedObjects;
-	unsigned long		ClassCastFlags;
-	FName				ClassConfigName;
-	FPointer			ClassConstructor;
-	UObject* ClassDefaultObject;
-	unsigned int		ClassFlags;
-	unsigned char       UnknownData00[0xD8];                           		// 0x00D0 (0x0100) MISSED OFFSET
-
-
-	UObject* CreateDefaultObject()
-	{
-		return UnrealSDK::pGetDefaultObject(this, 0);
-	}
-
-	static UClass* StaticClass()
-	{
-		static auto ptr = UObject::FindClass("Class CoreUObject.Class");
-		return ptr;
-	}
-
-	UObject* FindChildByName(FName InName) const
-	{
-		const UStruct* thisField = this;
-		while (thisField)
-		{
-			for (UField* Child = thisField->Children; Child != NULL; Child = Child->Next)
-				if (Child->Name == InName)
-					return Child;
-			thisField = thisField->SuperField;
-		}
-
-		return NULL;
-	}
-
-
-	std::vector<UProperty*> GetProperties() const {
-		const UStruct* thisField = this;
-		std::vector<UProperty*> propertyList;
-		while (thisField)
-		{
-			for (UField* Child = thisField->Children; Child != NULL; Child = Child->Next)
-				propertyList.push_back(reinterpret_cast<UProperty*>(Child));
-			thisField = thisField->SuperField;
-		}
-		return propertyList;
-	}
-};
 
 
 // Class CoreUObject.GCObjectReferencer
@@ -479,6 +426,78 @@ public:
 		return ptr;
 	}
 
+	std::vector<UProperty*> GetParameters();
+	std::vector<UProperty*> GetReturnType();
+
+};
+
+// Class CoreUObject.Class
+// 0x0178 (0x0200 - 0x0088)
+class UClass : public UStruct
+{
+public:
+	unsigned long		bCooked : 1;
+	FPointer			ClassAddReferencedObjects;
+	unsigned long		ClassCastFlags;
+	FName				ClassConfigName;
+	FPointer			ClassConstructor;
+	UObject* ClassDefaultObject;
+	unsigned int		ClassFlags;
+	unsigned char       UnknownData00[0xD8];                           		// 0x00D0 (0x0100) MISSED OFFSET
+
+
+	UObject* CreateDefaultObject()
+	{
+		return UnrealSDK::pGetDefaultObject(this, 0);
+	}
+
+	static UClass* StaticClass()
+	{
+		static auto ptr = UObject::FindClass("Class CoreUObject.Class");
+		return ptr;
+	}
+
+	UObject* FindChildByName(FName InName) const
+	{
+		const UStruct* thisField = this;
+		while (thisField)
+		{
+			for (UField* Child = thisField->Children; Child != NULL; Child = Child->Next)
+				if (Child->Name == InName)
+					return Child;
+			thisField = thisField->SuperField;
+		}
+
+		return NULL;
+	}
+
+
+	std::vector<UProperty*> GetProperties() const {
+		const UStruct* thisField = this;
+		std::vector<UProperty*> propertyList;
+		while (thisField)
+		{
+			for (UField* Child = thisField->Children; Child != NULL; Child = Child->Next)
+				propertyList.push_back(reinterpret_cast<UProperty*>(Child));
+			thisField = thisField->SuperField;
+		}
+		return propertyList;
+	}
+
+	std::vector<UFunction*> GetFunctions() {
+		const UStruct* thisField = this;
+		std::vector<UFunction*> propertyList;
+		while (thisField)
+		{
+			for (UField* Child = thisField->Children; Child != NULL; Child = Child->Next) {
+				if (Child->GetFullName().find("Function ") != std::string::npos) { // Odd kinda janky solution imo but eh
+					propertyList.push_back(reinterpret_cast<UFunction*>(Child));
+				}
+			}
+			thisField = thisField->SuperField;
+		}
+		return propertyList;
+	}
 };
 
 

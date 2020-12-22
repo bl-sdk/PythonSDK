@@ -58,7 +58,9 @@ void Export_pystes_Core_classes(py::module& m)
 		.def_readwrite("NumParams", &UFunction::NumParams)
 		.def_readwrite("ParamsSize", &UFunction::ParamsSize)
 		.def_readwrite("ReturnValueOffset", &UFunction::ReturnValueOffset)
-		.def_readwrite("Func", &UFunction::Func, py::return_value_policy::reference);
+		.def_readwrite("Func", &UFunction::Func, py::return_value_policy::reference)
+		.def("GetParameters", &UFunction::GetParameters, py::return_value_policy::reference)
+		.def("GetReturnType", &UFunction::GetReturnType, py::return_value_policy::reference);
 
 	py::class_< FFunction >(m, "FFunction")
 		.def("__getattr__", [](FFunction self, std::string& in) { return self.func->GetProperty(in); }, py::return_value_policy::reference)
@@ -81,7 +83,8 @@ void Export_pystes_Core_classes(py::module& m)
 
 	py::class_< UStructProperty, UProperty >(m, "UStructProperty");
 	py::class_< UStrProperty, UProperty >(m, "UStrProperty");
-	py::class_< UObjectProperty, UProperty >(m, "UObjectProperty");
+	py::class_< UObjectProperty, UProperty >(m, "UObjectProperty")
+		.def_readonly("PropertyClass", &UObjectProperty::PropertyClass);
 	py::class_< UClassProperty, UObjectProperty >(m, "UClassProperty");
 	py::class_< UNameProperty, UProperty >(m, "UNameProperty");
 	py::class_< UMapProperty, UProperty >(m, "UMapProperty");
@@ -91,7 +94,9 @@ void Export_pystes_Core_classes(py::module& m)
 	py::class_< UDelegateProperty, UProperty >(m, "UDelegateProperty");
 	py::class_< UByteProperty, UProperty >(m, "UByteProperty");
 	py::class_< UBoolProperty, UProperty >(m, "UBoolProperty");
-	py::class_< UArrayProperty, UProperty >(m, "UArrayProperty");
+	py::class_< UArrayProperty, UProperty >(m, "UArrayProperty")
+		// .def_property("InnerProperty", [](UArrayProperty& self) { return self.GetInner(); }, []() {});
+		.def_readonly("InnerProperty", &UArrayProperty::Inner_DONOTUSE);
 	py::class_< UEnum, UField >(m, "UEnum");
 
 	py::class_< UExporter, UObject >(m, "UExporter")
@@ -128,6 +133,7 @@ void Export_pystes_Core_classes(py::module& m)
 
 	py::class_< UClass, UStruct >(m, "UClass")
 		.def("GetProperties", &UClass::GetProperties, py::return_value_policy::reference)
+		.def("GetFunctions", &UClass::GetFunctions, py::return_value_policy::reference)
 		.def_static("StaticClass", &UClass::StaticClass, py::return_value_policy::reference)
 		.def_property("bCooked", [](UClass& self) {return self.bCooked; }, [](UClass& self, bool value) {self.bCooked = value ? 1 : 0; })
 		.def_readwrite("ClassAddReferencedObjects", &UClass::ClassAddReferencedObjects)

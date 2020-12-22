@@ -197,9 +197,9 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\Binaries\Win32\</OutDir>
-    <IntDir>build\$(Platform)\$(Configuration)\</IntDir>
-    <TargetName>ddraw</TargetName>
+    <OutDir>K:\Borderlands3\OakGame\Binaries\Win64\Plugins\</OutDir>
+    <IntDir>build\$(Configuration)\</IntDir>
+    <TargetName>PythonSDK</TargetName>
     <SourcePath>$(VC_SourcePath)\src;</SourcePath>
     <IncludePath>$(PYTHONPATH_x64)\include;$(IncludePath);$(VC_SourcePath)\src\include;</IncludePath>
     <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64;$(PYTHONPATH_x64)\libs</LibraryPath>
@@ -339,9 +339,9 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>false</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;BL2SDK_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;BL2SDK_EXPORTS;_WINDOWS;_USRDLL;_CRT_SECURE_NO_WARNINGS;UE4;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard>Default</LanguageStandard>
       <AdditionalIncludeDirectories>$(ProjectDir)src\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat />
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>

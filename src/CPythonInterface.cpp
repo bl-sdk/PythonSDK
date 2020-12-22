@@ -244,6 +244,7 @@ bool CPythonInterface::RemoveConsoleCommand(const std::string& ConsoleCommand) {
 		return false;
 	}
 }
+
 #endif
 
 #ifndef UE4

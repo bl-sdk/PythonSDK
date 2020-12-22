@@ -10,6 +10,30 @@
 #include "UnrealEngine/Engine/UE4/UE4EngineClasses.h"
 #endif
 
+std::vector<UProperty*> UFunction::GetParameters() {
+	std::vector<UProperty*> parms;
+	unsigned int currentIndex = 0;
+	for (UProperty* Child = (UProperty*)Children; Child; Child = (UProperty*)Child->Next)
+	{
+		if (!(Child->PropertyFlags & 0x80)) // Param
+			continue;
+		parms.push_back(Child);
+	}
+	return parms;
+}
+
+std::vector<UProperty*> UFunction::GetReturnType() {
+	std::vector<UProperty*> parms;
+	for (UProperty* Child = (UProperty*)Children; Child; Child = (UProperty*)Child->Next)
+	{
+		if (Child->PropertyFlags & 0x400) // Return
+			parms.push_back(Child);
+	}
+
+	return parms;
+}
+
+
 // UObject =======================================================================
 
 const char* UObject::GetName() const
