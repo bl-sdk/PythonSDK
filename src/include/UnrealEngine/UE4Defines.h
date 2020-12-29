@@ -548,7 +548,7 @@ public:
 };
 
 struct FTextData {
-	unsigned char UnknownData[0x30];
+	unsigned char UnknownData[0x35];
 
 	const wchar_t* Name;
 	int Length;

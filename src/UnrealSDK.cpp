@@ -187,7 +187,9 @@ namespace UnrealSDK
 				FString str = UnrealSDK::gameConsole->Scrollback(i);
 				file << str.AsString() << "\n";
 
-				Logging::LogIgnoreUE(str.AsString());
+				// This extra format specifier needs to be here (sometimes) because certain objects can have format specifiers in them
+				// The format specifiers in the string get interpreted as such and then it crashes.
+				Logging::LogIgnoreUE("%s", str.AsString());
 			}
 			return true;
 		}

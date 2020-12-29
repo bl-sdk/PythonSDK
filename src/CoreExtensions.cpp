@@ -442,6 +442,7 @@ pybind11::object FHelper::GetProperty(UProperty* Prop)
 	if (!strcmp(className, "Int64Property"))  return pybind11::cast(reinterpret_cast<long*>(GetPropertyAddress(Prop))[0]);
 	if (!strcmp(className, "Int16Property"))  return pybind11::cast(reinterpret_cast<short*>(GetPropertyAddress(Prop))[0]);
 	if (!strcmp(className, "Int8Property"))   return pybind11::cast(reinterpret_cast<char*>(GetPropertyAddress(Prop))[0]);
+	if (!strcmp(className, "DoubleProperty")) return pybind11::cast(reinterpret_cast<double*>(GetPropertyAddress(Prop))[0]);
 
 	if (!strcmp(className, "MulticastDelegateProperty"))
 		//  IMO its best to just pass out the function name, just cause its a delegate, and there's not much else to do with it
