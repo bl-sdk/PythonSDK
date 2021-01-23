@@ -4,7 +4,7 @@ import sys
 
 # Need to define these up here so that they're accessable when importing the other files
 VERSION_MAJOR = 2
-VERSION_MINOR = 2
+VERSION_MINOR = 3
 
 unrealsdk.Log(f"[ModMenu] Version: {VERSION_MAJOR}.{VERSION_MINOR}")
 
@@ -27,6 +27,9 @@ from .SettingsManager import GetSettingsFilePath as GetSettingsFilePath  # noqa:
 from .SettingsManager import LoadModSettings as LoadModSettings  # noqa: F401, E402
 from .SettingsManager import SaveAllModSettings as SaveAllModSettings  # noqa: F401, E402
 from .SettingsManager import SaveModSettings as SaveModSettings  # noqa: F401, E402
+from .NetworkManager import RegisterNetworkMethods as RegisterNetworkMethods  # noqa: F401, E402
+from .NetworkManager import UnregisterNetworkMethods as UnregisterNetworkMethods  # noqa: F401, E402
+
 
 # Extra imports
 from . import DeprecationHelper as dh  # noqa: E402

@@ -5,7 +5,7 @@ import enum
 import sys
 from abc import ABCMeta
 from os import path
-from typing import Any, Dict, List, Optional, Sequence, Tuple
+from typing import Any, Dict, List, Optional, Sequence, Tuple, Callable
 
 from . import KeybindManager
 from . import OptionManager
@@ -140,6 +140,12 @@ class SDKMod(metaclass=_ModMeta):
         Keybinds:
             A sequence of the mod's in game keybinds. These are only displayed, and the callback
              will only be called, while the mod is enabled.
+        ServerMethods:
+            A sequence of the mod's methods that, when invoked on the client, should be called on
+            the server's copy of the mod instead, so long as both have registered the methods.
+        ClientMethods:
+            A sequence of the mod's methods that, when invoked on the server, should be called on
+            clients' copies of the mod instead, so long as both have registered the methods.
 
         IsEnabled:
             A bool that is True if the mod is currently enabled. For compatibility reasons, by
@@ -161,6 +167,12 @@ class SDKMod(metaclass=_ModMeta):
     Options: Sequence[OptionManager.Options.Base] = []
     Keybinds: Sequence[KeybindManager.Keybind] = []
 
+    ServerMethods: Sequence[Callable[..., None]] = []
+    ClientMethods: Sequence[Callable[..., None]] = []
+
+    _network_serializer: Callable[[Any], str] = None
+    _network_deserializer: Callable[[str], Any] = None
+    
     _is_enabled: Optional[bool] = None
 
     @property
