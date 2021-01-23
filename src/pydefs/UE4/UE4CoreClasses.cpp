@@ -97,7 +97,12 @@ void Export_pystes_Core_classes(py::module& m)
 	py::class_< UArrayProperty, UProperty >(m, "UArrayProperty")
 		// .def_property("InnerProperty", [](UArrayProperty& self) { return self.GetInner(); }, []() {});
 		.def_readonly("InnerProperty", &UArrayProperty::Inner_DONOTUSE);
-	py::class_< UEnum, UField >(m, "UEnum");
+
+	py::class_ < UEnum, UField >(m, "UEnum")
+		.def(py::init<>())
+		.def("GetNames", [](UEnum* self) { return py::cast(self->GetNames()); })
+		.def_readwrite("CppType", &UEnum::CppType)
+		.def_readwrite("CppForm", &UEnum::CppForm);
 
 	py::class_< UExporter, UObject >(m, "UExporter")
 		.def_readwrite("FormatExtension", &UExporter::FormatExtension, py::return_value_policy::reference)
@@ -166,7 +171,6 @@ void Export_pystes_Core_classes(py::module& m)
 		.def("GetInterfacePointer", [](FScriptInterface* self) { return (int)self->InterfacePointer; })
 		.def_readwrite("ObjectPointer", &FScriptInterface::ObjectPointer)
 		.def_readwrite("InterfacePointer", &FScriptInterface::InterfacePointer);
-
 }
 
 #pragma warning(pop)

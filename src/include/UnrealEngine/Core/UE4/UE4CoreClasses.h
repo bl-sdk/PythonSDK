@@ -1,5 +1,6 @@
 #pragma once
 #include "stdafx.h"
+#include <map>
 
 #ifdef UE4
 
@@ -49,7 +50,9 @@ public:
 	const wchar_t* GetTextProperty(class UTextProperty* Prop);
 	py::object GetSoftClassProperty(class USoftClassProperty* Prop);
 	py::object GetSoftObjectProperty(class USoftObjectProperty* Prop);
+	py::object GetEnumProperty(class UEnumProperty* Prop);
 
+	void SetProperty(class UEnumProperty* Prop, const py::object& Val);
 	void SetProperty(class UTextProperty* Prop, const py::object& Val);
 	void SetProperty(class USoftObjectProperty* Prop, const py::object& Val);
 	void SetProperty(class UWeakObjectProperty* Prop, const py::object& Val);
@@ -553,12 +556,23 @@ public:
 class UEnum : public UField
 {
 public:
-	unsigned char                                      UnknownData00[0x30];                                      // 0x0030(0x0030) MISSED OFFSET
+	FString CppType;
+	TArray<TPair<FName, uint64_t>> Names;
+	int64_t CppForm;
 
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindClass("Class CoreUObject.Enum");
 		return ptr;
+	}
+
+	std::map<std::string, uint64_t> GetNames() {
+		std::map<std::string, uint64_t> returnNames;
+		for (auto i = 0; i < Names.Num(); ++i) {
+			auto enumName = Names.Get(i);
+			returnNames.insert(std::pair<std::string, uint64_t>(std::string(enumName.Key.GetName()), enumName.Value));
+		}
+		return returnNames;
 	}
 
 };
@@ -604,13 +618,16 @@ public:
 class UEnumProperty : public UProperty
 {
 public:
-	unsigned char                                      UnknownData00[0x10];                                      // 0x0070(0x0010) MISSED OFFSET
+	class UNumericProperty* UnderlyingProp;
+	class UEnum* Enum;
+	// unsigned char                                      UnknownData00[0x10];                                      // 0x0070(0x0010) MISSED OFFSET
 
 	static UClass* StaticClass()
 	{
 		static auto ptr = UObject::FindClass("Class CoreUObject.EnumProperty");
 		return ptr;
 	}
+
 
 };
 

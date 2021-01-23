@@ -30,6 +30,8 @@ enum class EInternalObjectFlags : int
 	AllFlags = ReachableInCluster | ClusterRoot | Native | Async | AsyncLoading | Unreachable | PendingKill | RootSet
 };
 
+
+
 template <class T>
 struct TArray
 {
@@ -198,6 +200,15 @@ private:
 
 	const T& DebugGet(int Index) const { return this->Data[Index]; }
 };
+
+template<typename KeyType, typename ValueType>
+class TPair
+{
+public:
+	KeyType   Key;
+	ValueType Value;
+};
+
 
 class UObject;
 
