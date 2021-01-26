@@ -189,9 +189,6 @@ class SDKMod(metaclass=_ModMeta):
     Options: Sequence[OptionManager.Options.Base] = []
     Keybinds: Sequence[KeybindManager.Keybind] = []
 
-    ServerMethods: Sequence[Callable[..., None]] = []
-    ClientMethods: Sequence[Callable[..., None]] = []
-
     NetworkSerializer: Callable[[Any], str] = json.dumps
     NetworkDeserializer: Callable[[str], Any] = json.loads
     
@@ -231,10 +228,6 @@ class SDKMod(metaclass=_ModMeta):
             inst.Description += (
                 f"<font color=\"#FF0000\">Incompatible with {Game.GetCurrent().name}!</font>"
             )
-
-        # for attributeName, attributeValue in cls.__dict__.items():
-        #     if callable(attributeValue) and hasattr(attributeValue, '_unrealsdk_server'):
-
 
         return inst
 
