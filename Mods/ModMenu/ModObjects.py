@@ -3,9 +3,10 @@ from __future__ import annotations
 import copy
 import enum
 import sys
+import json
 from abc import ABCMeta
 from os import path
-from typing import Any, Dict, List, Optional, Sequence, Tuple, Callable
+from typing import Any, Callable, Dict, List, Optional, Sequence, Set, Tuple
 
 from . import KeybindManager
 from . import OptionManager
@@ -100,6 +101,10 @@ class _ModMeta(ABCMeta):
         "SettingsInputs",
         "Options",
         "Keybinds",
+        "NetworkSerializer",
+        "NetworkDeserializer",
+        "_server_functions",
+        "_client_functions",
         "_is_enabled",
     )
 
@@ -108,6 +113,20 @@ class _ModMeta(ABCMeta):
 
         for name in _ModMeta.Attributes:
             setattr(cls, name, copy.copy(getattr(cls, name)))
+
+        functions = (attribute for attribute in cls.__dict__.values() if callable(attribute))
+        for function in functions:
+            # We will do our best to handle a scenario where the mod developer has nested our
+            # decorated functions within other arbitrary ones. If their arbitrary ones follow
+            # convention and use @functools.wrapped, then we can follow the nesting via __wrapped__.
+            wrapped = function
+            while wrapped is not None:
+                if getattr(wrapped, "_is_server", False):
+                    cls._server_functions.add(function)
+                if getattr(wrapped, "_is_client", False):
+                    cls._client_functions.add(function)
+
+                wrapped = getattr(wrapped, "__wrapped__", None)
 
 
 class SDKMod(metaclass=_ModMeta):
@@ -140,12 +159,15 @@ class SDKMod(metaclass=_ModMeta):
         Keybinds:
             A sequence of the mod's in game keybinds. These are only displayed, and the callback
              will only be called, while the mod is enabled.
-        ServerMethods:
-            A sequence of the mod's methods that, when invoked on the client, should be called on
-            the server's copy of the mod instead, so long as both have registered the methods.
-        ClientMethods:
-            A sequence of the mod's methods that, when invoked on the server, should be called on
-            clients' copies of the mod instead, so long as both have registered the methods.
+
+        NetworkSerializer:
+            A callable to be used to serialize parameters sent through networked methods. This
+            callable must be able to accept at least a `dict` containing a `list` as well as another
+            `dict`, and output the serialized results as a text string.
+        NetworkDeserializer:
+            A callable to be used to deserialize parameters when received through networked methods.
+            This must accept the text string as output by the callable passed to `serializer`, and
+            return the `dict` containing a `list` and another `dict` as originally sent.
 
         IsEnabled:
             A bool that is True if the mod is currently enabled. For compatibility reasons, by
@@ -170,9 +192,12 @@ class SDKMod(metaclass=_ModMeta):
     ServerMethods: Sequence[Callable[..., None]] = []
     ClientMethods: Sequence[Callable[..., None]] = []
 
-    _network_serializer: Callable[[Any], str] = None
-    _network_deserializer: Callable[[str], Any] = None
+    NetworkSerializer: Callable[[Any], str] = json.dumps
+    NetworkDeserializer: Callable[[str], Any] = json.loads
     
+    _server_functions: Set[Callable[..., None]] = set()
+    _client_functions: Set[Callable[..., None]] = set()
+
     _is_enabled: Optional[bool] = None
 
     @property
@@ -206,6 +231,11 @@ class SDKMod(metaclass=_ModMeta):
             inst.Description += (
                 f"<font color=\"#FF0000\">Incompatible with {Game.GetCurrent().name}!</font>"
             )
+
+        # for attributeName, attributeValue in cls.__dict__.items():
+        #     if callable(attributeValue) and hasattr(attributeValue, '_unrealsdk_server'):
+
+
         return inst
 
     def Enable(self) -> None:

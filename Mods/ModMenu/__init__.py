@@ -27,6 +27,8 @@ from .SettingsManager import GetSettingsFilePath as GetSettingsFilePath  # noqa:
 from .SettingsManager import LoadModSettings as LoadModSettings  # noqa: F401, E402
 from .SettingsManager import SaveAllModSettings as SaveAllModSettings  # noqa: F401, E402
 from .SettingsManager import SaveModSettings as SaveModSettings  # noqa: F401, E402
+from .NetworkManager import ServerMethod as ServerMethod  # noqa: F401, E402
+from .NetworkManager import ClientMethod as ClientMethod  # noqa: F401, E402
 from .NetworkManager import RegisterNetworkMethods as RegisterNetworkMethods  # noqa: F401, E402
 from .NetworkManager import UnregisterNetworkMethods as UnregisterNetworkMethods  # noqa: F401, E402
 
