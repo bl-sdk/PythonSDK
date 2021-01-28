@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import unrealsdk
 import json
 import functools
@@ -8,11 +10,7 @@ from typing import Callable, Any
 from . import ModObjects
 
 
-_server_message_types = {}
-_client_message_types = {}
-
 _message_queue = deque()
-
 
 class _Message():
     """
@@ -54,15 +52,14 @@ class _Message():
             self.playerController.ServerSpeech(self.messageType, 0, self.arguments)
         else:
             self.playerController.ClientMessage(self.arguments, self.messageType)
-        # Set our timeout to be 1.5x (for leeway) the ping to and from the receiving end.
-        self.timeout = time() + self.playerController.PlayerReplicationInfo.ExactPing * 3
+        # Set our timeout to be 2x (for leeway) the ping in each direction from the receiving end.
+        self.timeout = time() + self.playerController.PlayerReplicationInfo.ExactPing * 4
 
 
 def _PlayerTick(caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct):
     if time() > _message_queue[0].timeout:
         _DequeueMessage()
     return True
-
 
 def _EnqueueMessage(message: _Message) -> None:
     """Add a message to the message queue, sending it if message queue is empty."""
@@ -73,7 +70,6 @@ def _EnqueueMessage(message: _Message) -> None:
     if len(_message_queue) == 1:
         message.Send()
         unrealsdk.RegisterHook("Engine.PlayerController.PlayerTick", "ModMenu.NetworkManager", _PlayerTick)
-
 
 def _DequeueMessage() -> None:
     """Remove the frontmost message from the message queue, sending the following one, if any."""
@@ -87,7 +83,24 @@ def _DequeueMessage() -> None:
         unrealsdk.RemoveHook("Engine.PlayerController.PlayerTick", "ModMenu.NetworkManager")
 
 
-def _MethodSender(function: Callable[..., None]) -> Callable[..., None]:
+_method_senders = set()
+
+def _FindMethodSender(function: Callable[..., Any]) -> Callable[..., Any]:
+    """
+    Searches through arbitrarily nested decorator functions to attempt to find a method sender,
+    returning it, or `None` if one isn't found.
+
+    This assumes the decorators all follow the convention and use `@functools.wraps`, so we can
+    follow the nesting via `__wrapped__`.
+    """
+    while function is not None:
+        if function in _method_senders:
+            break
+        function = getattr(function, "__wrapped__", None)
+    return function
+
+
+def _CreateMethodSender(function: Callable[..., None]) -> Callable[..., None]:
     """
     Create a new function that will replace ones decorated as network methods, intercepting their
     local calls, and instead transmitting a request to remote copies of the mod.
@@ -124,6 +137,8 @@ def _MethodSender(function: Callable[..., None]) -> Callable[..., None]:
     # Assign the server and client attributes to identify this method's role.
     methodSender._is_server = False
     methodSender._is_client = False
+
+    _method_senders.add(methodSender)
     return methodSender
 
 
@@ -133,12 +148,13 @@ def ServerMethod(function: Callable[..., None]) -> Callable[..., None]:
     mod rather than the local copy.
     """
 
-    # Assuming the function to decorate is not already a sender function, create one from it.
-    if not hasattr(function, "_message_type"):
-        function = _MethodSender(function)
-    # Mark the function to send server requests.
-    function._is_server = True
-    return function
+    # Check if the function already has a method sender. If it doesn't, create one now.
+    method_sender = _FindMethodSender(function)
+    if method_sender is None:
+        method_sender = _CreateMethodSender(function)
+
+    method_sender._is_server = True
+    return method_sender
 
 
 def ClientMethod(function: Callable[..., None]) -> Callable[..., None]:
@@ -146,11 +162,18 @@ def ClientMethod(function: Callable[..., None]) -> Callable[..., None]:
     A decorator function for mods' instance methods that should be invoked on client copies of the
     mod rather than the local copy.
     """
-    if not hasattr(function, "_message_type"):
-        function = _MethodSender(function)
-    function._is_client = True
-    return function
 
+    # Check if the function already has a method sender. If it doesn't, create one now.
+    method_sender = _FindMethodSender(function)
+    if method_sender is None:
+        method_sender = _CreateMethodSender(function)
+
+    method_sender._is_client = True
+    return method_sender
+
+
+_server_message_types = {}
+_client_message_types = {}
 
 def RegisterNetworkMethods(mod: ModObjects.SDKMod) -> None:
     """
@@ -180,7 +203,6 @@ def RegisterNetworkMethods(mod: ModObjects.SDKMod) -> None:
             _client_message_types[function._message_type].add(method)
         else:
             _client_message_types[function._message_type] = {method}
-
 
 def UnregisterNetworkMethods(mod: ModObjects.SDKMod) -> None:
     """
@@ -235,15 +257,33 @@ def _ServerSpeech(caller: unrealsdk.UObject, function: unrealsdk.UFunction, para
     methods = _server_message_types.get(message_type)
     if methods is not None and len(methods) > 0:
         # All of the methods in this set are known to be bound to mods of the same class. Retrieve
-        # any one of them, and from its class, get the designated deserializer function. Use that
-        # to deserialize the arguments from the parameter in the player controller method.
-        deserializer = type(next(iter(methods)).__self__).NetworkDeserializer
-        arguments = deserializer(message_components[1])
-        # Call each method registered for the message type.
-        for method in methods:
-            method(*arguments["args"], **arguments["kwargs"])
+        # any one of them to get the class.
+        cls = type(next(iter(methods)).__self__)
 
-    # Send acknowledgement back to the 
+        # Attempt to use the class's deserializer callable to deserialize the message's arguments.
+        arguments = None
+        try:
+            arguments = cls.NetworkDeserializer(message_components[1])
+        except Exception:
+            unrealsdk.Log(f"Unable to deserialize arguments for '{message_type}'")
+            tb = traceback.format_exc().split('\n')
+            unrealsdk.Log(f"    {tb[-4].strip()}")
+            unrealsdk.Log(f"    {tb[-3].strip()}")
+            unrealsdk.Log(f"    {tb[-2].strip()}")
+        
+        # If argument deserialization was successful, invoke each method registered for the type.
+        if arguments is not None:
+            for method in methods:
+                try:
+                    method(*arguments["args"], **arguments["kwargs"])
+                except Exception:
+                    unrealsdk.Log(f"Unable to call remotely requested method {method}.")
+                    tb = traceback.format_exc().split('\n')
+                    unrealsdk.Log(f"    {tb[-4].strip()}")
+                    unrealsdk.Log(f"    {tb[-3].strip()}")
+                    unrealsdk.Log(f"    {tb[-2].strip()}")
+
+    # Send acknowledgement of the message back to the client.
     caller.ClientMessage("unrealsdk.__serverack__", message_id)
     return False
 
@@ -266,10 +306,28 @@ def _ClientMessage(caller: unrealsdk.UObject, function: unrealsdk.UFunction, par
 
     methods = _client_message_types.get(message_type)
     if methods is not None and len(methods) > 0:
-        deserializer = type(next(iter(methods)).__self__).NetworkDeserializer
-        arguments = deserializer(message_components[1])
-        for method in methods:
-            method(*arguments["args"], **arguments["kwargs"])
+        cls = type(next(iter(methods)).__self__)
+
+        arguments = None
+        try:
+            arguments = cls.NetworkDeserializer(message_components[1])
+        except Exception:
+            unrealsdk.Log(f"Unable to deserialize arguments for '{message_type}'")
+            tb = traceback.format_exc().split('\n')
+            unrealsdk.Log(f"    {tb[-4].strip()}")
+            unrealsdk.Log(f"    {tb[-3].strip()}")
+            unrealsdk.Log(f"    {tb[-2].strip()}")
+        
+        if arguments is not None:
+            for method in methods:
+                try:
+                    method(*arguments["args"], **arguments["kwargs"])
+                except Exception:
+                    unrealsdk.Log(f"Unable to call remotely requested method {method}.")
+                    tb = traceback.format_exc().split('\n')
+                    unrealsdk.Log(f"    {tb[-4].strip()}")
+                    unrealsdk.Log(f"    {tb[-3].strip()}")
+                    unrealsdk.Log(f"    {tb[-2].strip()}")
 
     caller.ServerSpeech(message_id, 0, "unrealsdk.__clientack__")
     return False

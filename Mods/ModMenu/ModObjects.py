@@ -9,6 +9,7 @@ from os import path
 from typing import Any, Callable, Dict, List, Optional, Sequence, Set, Tuple
 
 from . import KeybindManager
+from . import NetworkManager
 from . import OptionManager
 from . import SettingsManager
 
@@ -116,17 +117,13 @@ class _ModMeta(ABCMeta):
 
         functions = (attribute for attribute in cls.__dict__.values() if callable(attribute))
         for function in functions:
-            # We will do our best to handle a scenario where the mod developer has nested our
-            # decorated functions within other arbitrary ones. If their arbitrary ones follow
-            # convention and use @functools.wrapped, then we can follow the nesting via __wrapped__.
-            wrapped = function
-            while wrapped is not None:
-                if getattr(wrapped, "_is_server", False):
-                    cls._server_functions.add(function)
-                if getattr(wrapped, "_is_client", False):
-                    cls._client_functions.add(function)
 
-                wrapped = getattr(wrapped, "__wrapped__", None)
+            method_sender = NetworkManager._FindMethodSender(function)
+            if method_sender is not None:
+                if method_sender._is_server:
+                    cls._server_functions.add(method_sender)
+                if method_sender._is_client:
+                    cls._client_functions.add(method_sender)
 
 
 class SDKMod(metaclass=_ModMeta):
@@ -232,11 +229,15 @@ class SDKMod(metaclass=_ModMeta):
         return inst
 
     def Enable(self) -> None:
-        """ Called by the mod manager to enable the mod. """
+        """ Called by the mod manager to enable the mod. The default implementation calls
+        ModMenu.RegisterNetworkMethods(self) on the mod."""
+        ModMenu.RegisterNetworkMethods(self)
         pass
 
     def Disable(self) -> None:
-        """ Called by the mod manager to disable the mod. """
+        """ Called by the mod manager to disable the mod. The default implementation calls
+        ModMenu.UnregisterNetworkMethods(self) on the mod."""
+        ModMenu.UnregisterNetworkMethods(self)
         pass
 
     def SettingsInputPressed(self, action: str) -> None:
