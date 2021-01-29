@@ -3,9 +3,9 @@ from __future__ import annotations
 import unrealsdk
 import json
 import functools
+import traceback
 from collections import deque
 from time import time
-import traceback
 from typing import Callable, Any
 
 from . import ModObjects
@@ -26,7 +26,6 @@ class _Message():
         server: `True` if the message is destined to a server, `False` if destined to a client.
         timeout: `None` if the message has been sent, otherwise a float representing the real time
             it will time out.
-
     """
     def __init__(self, playerController: unrealsdk.UObject, message_type: str, arguments: str, server: bool):
         """
@@ -100,7 +99,6 @@ def _FindMethodSender(function: Callable[..., Any]) -> Callable[..., Any]:
         function = getattr(function, "__wrapped__", None)
     return function
 
-
 def _CreateMethodSender(function: Callable[..., None]) -> Callable[..., None]:
     """
     Create a new function that will replace ones decorated as network methods, intercepting their
@@ -156,7 +154,6 @@ def ServerMethod(function: Callable[..., None]) -> Callable[..., None]:
 
     method_sender._is_server = True
     return method_sender
-
 
 def ClientMethod(function: Callable[..., None]) -> Callable[..., None]:
     """
@@ -288,7 +285,6 @@ def _ServerSpeech(caller: unrealsdk.UObject, function: unrealsdk.UFunction, para
     caller.ClientMessage("unrealsdk.__serverack__", message_id)
     return False
 
-
 def _ClientMessage(caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct):
     message = params.S
     message_type = params.Type
@@ -332,7 +328,6 @@ def _ClientMessage(caller: unrealsdk.UObject, function: unrealsdk.UFunction, par
 
     caller.ServerSpeech(message_id, 0, "unrealsdk.__clientack__")
     return False
-
 
 unrealsdk.RunHook("Engine.PlayerController.ServerSpeech", "ModMenu.NetworkManager", _ServerSpeech)
 unrealsdk.RunHook("WillowGame.WillowPlayerController.ClientMessage", "ModMenu.NetworkManager", _ClientMessage)

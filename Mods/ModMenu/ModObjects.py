@@ -231,13 +231,13 @@ class SDKMod(metaclass=_ModMeta):
     def Enable(self) -> None:
         """ Called by the mod manager to enable the mod. The default implementation calls
         ModMenu.RegisterNetworkMethods(self) on the mod."""
-        ModMenu.RegisterNetworkMethods(self)
+        NetworkManager.RegisterNetworkMethods(self)
         pass
 
     def Disable(self) -> None:
         """ Called by the mod manager to disable the mod. The default implementation calls
         ModMenu.UnregisterNetworkMethods(self) on the mod."""
-        ModMenu.UnregisterNetworkMethods(self)
+        NetworkManager.UnregisterNetworkMethods(self)
         pass
 
     def SettingsInputPressed(self, action: str) -> None:
