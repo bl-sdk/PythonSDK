@@ -1,8 +1,8 @@
 from __future__ import annotations
 
 import unrealsdk
-import json
 import functools
+import inspect
 import traceback
 from collections import deque
 from time import time
@@ -21,25 +21,25 @@ class _Message():
     Attributes:
         ID: The unique ID of the message.
         playerController: The player controller the message will be sent through.
-        message_type: The message type string.
+        messageType: The message type string.
         arguments: The serialized argument string.
         server: `True` if the message is destined to a server, `False` if destined to a client.
         timeout: `None` if the message has been sent, otherwise a float representing the real time
             it will time out.
     """
-    def __init__(self, playerController: unrealsdk.UObject, message_type: str, arguments: str, server: bool):
+    def __init__(self, playerController: unrealsdk.UObject, messageType: str, arguments: str, server: bool):
         """
         Create a new message.
 
         Args:
             playerController: The player controller to send the message through.
-            message_type: The message type string.
+            messageType: The message type string.
             arguments: The serialized argument string.
             server: `True` if the message is destined to a server, `False` if destined to a client.
         """
         self.ID = str(id(self))
         self.playerController = playerController
-        self.messageType = message_type
+        self.messageType = messageType
         self.arguments = f"{self.ID}:{arguments}"
         self.server = server
         self.timeout = None
@@ -104,36 +104,49 @@ def _CreateMethodSender(function: Callable[..., None]) -> Callable[..., None]:
     Create a new function that will replace ones decorated as network methods, intercepting their
     local calls, and instead transmitting a request to remote copies of the mod.
     """
+    # Format the unique message type we will use to identify requests sent and received for this
+    # method, using the module and hierarchy within the module it was defined in.
+    message_type = f"unrealsdk.{function.__module__}.{function.__qualname__}"
+
+    if len(inspect.signature(function).parameters) < 2:
+        unrealsdk.Log(f"Unable to register network method <{message_type}>.")
+        unrealsdk.Log("    @ServerMethod and @ClientMethod decorated methods must be mod instance methods with the following signature:")
+        unrealsdk.Log("        (self, caller: Optional[unrealsdk.UObject], ...)")
+        return None
 
     # "Wrap" the original function. Among other things, this assigns the original function to the
     # __wrapped__ attribute of the new one.
     @functools.wraps(function)
-    def methodSender(self, *args, **kwargs):
-        # Get a list of replicated players. If there aren't multiple, we aren't in multiplayer.
-        PRIs = list(unrealsdk.GetEngine().GetCurrentWorldInfo().GRI.PRIArray)
-        if len(PRIs) < 2:
-            return
-        # Players will or will not have controllers based on who's server and who's client.
-        playerControllers = [PRI.Owner for PRI in PRIs if PRI.Owner is not None]
+    def methodSender(self: ModObjects.SDKMod, caller: Optional[unrealsdk.UObject], *args, **kwargs) -> None:
+        # If the current netmode doesn't indicate client mode, we will be sending a server message.
+        worldInfo = unrealsdk.GetEngine().GetCurrentWorldInfo()
 
-        # If there is only one player controller, we are a client. If this method is designated as a
-        # server method, we will send a request to the server now.
-        if methodSender._is_server and len(playerControllers) == 1:
+        # If this method is marked to send messages to the server, and we are currently a client, we
+        # will message to the server.
+        if methodSender._is_server and worldInfo.NetMode == 3: # ENetMode.NM_Client
             # Serialize the arguments we were called with using the class's serializer function, and
-            # queue the message.
+            # queue the message for each applicable player controller.
             arguments = type(self).NetworkSerializer({"args": args, "kwargs": kwargs})
-            _EnqueueMessage(_Message(playerControllers[0], methodSender._message_type, arguments, True))
+            # We will be using our client-side copy of our player controller to message the server.
+            playerController = unrealsdk.GetEngine().GamePlayers[0].Actor
+            _EnqueueMessage(_Message(playerController, methodSender._message_type, arguments, True))
 
-        # If there is more than one player controller, we are a server, and message each client.
-        elif methodSender._is_client and len(playerControllers) > 1:
+        # If this method is marked to send messages to clients, and we are currently the server, we
+        # will message client(s) now.
+        elif methodSender._is_client and worldInfo.NetMode != 3: # ENetMode.NM_Client
+            # Get an applicable player controller for each replicated player. If we were provided a
+            # specific player controller to message, filter by it.
+            if caller is None:
+                playerControllers = [PRI.Owner for PRI in worldInfo.GRI.PRIArray if PRI.Owner is not None]
+            else:
+                playerControllers = [PRI.Owner for PRI in worldInfo.GRI.PRIArray if PRI.Owner is caller]
+
             arguments = type(self).NetworkSerializer({"args": args, "kwargs": kwargs})
             for playerController in playerControllers:
                 _EnqueueMessage(_Message(playerController, methodSender._message_type, arguments, False))
 
-    # Format the unique message type we will use to identify requests sent and received for this
-    # method, using the module and hierarchy within the module it was defined in.
-    methodSender._message_type = f"unrealsdk.{function.__module__}.{function.__qualname__}"
     # Assign the server and client attributes to identify this method's role.
+    methodSender._message_type = message_type
     methodSender._is_server = False
     methodSender._is_client = False
 
@@ -151,6 +164,8 @@ def ServerMethod(function: Callable[..., None]) -> Callable[..., None]:
     method_sender = _FindMethodSender(function)
     if method_sender is None:
         method_sender = _CreateMethodSender(function)
+        if method_sender is None:
+            return function
 
     method_sender._is_server = True
     return method_sender
@@ -165,6 +180,8 @@ def ClientMethod(function: Callable[..., None]) -> Callable[..., None]:
     method_sender = _FindMethodSender(function)
     if method_sender is None:
         method_sender = _CreateMethodSender(function)
+        if method_sender is None:
+            return function
 
     method_sender._is_client = True
     return method_sender
@@ -273,9 +290,9 @@ def _ServerSpeech(caller: unrealsdk.UObject, function: unrealsdk.UFunction, para
         if arguments is not None:
             for method in methods:
                 try:
-                    method(*arguments["args"], **arguments["kwargs"])
+                    method(caller, *arguments["args"], **arguments["kwargs"])
                 except Exception:
-                    unrealsdk.Log(f"Unable to call remotely requested method {method}.")
+                    unrealsdk.Log(f"Unable to call remotely requested {method}.")
                     tb = traceback.format_exc().split('\n')
                     unrealsdk.Log(f"    {tb[-4].strip()}")
                     unrealsdk.Log(f"    {tb[-3].strip()}")
@@ -318,9 +335,9 @@ def _ClientMessage(caller: unrealsdk.UObject, function: unrealsdk.UFunction, par
         if arguments is not None:
             for method in methods:
                 try:
-                    method(*arguments["args"], **arguments["kwargs"])
+                    method(None, *arguments["args"], **arguments["kwargs"])
                 except Exception:
-                    unrealsdk.Log(f"Unable to call remotely requested method {method}.")
+                    unrealsdk.Log(f"Unable to call remotely requested {method}.")
                     tb = traceback.format_exc().split('\n')
                     unrealsdk.Log(f"    {tb[-4].strip()}")
                     unrealsdk.Log(f"    {tb[-3].strip()}")
