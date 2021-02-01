@@ -45,9 +45,7 @@ class _Message():
         self.timeout = None
 
     def Send(self) -> None:
-        """
-        Send the message.
-        """
+        """Send the message."""
         if self.server:
             self.playerController.ServerSpeech(self.messageType, 0, self.arguments)
         else:
@@ -382,11 +380,9 @@ def _ClientMessage(caller: unrealsdk.UObject, function: unrealsdk.UFunction, par
             unrealsdk.Log(f"    {tb[-2].strip()}")
         
         if arguments is not None:
-            bindings = inspect.signature(sampleMethod).bind(*arguments["args"], **arguments["kwargs"])
-
             for method in methods:
                 try:
-                    method(*bindings.args, **bindings.kwargs)
+                    method(*arguments["args"], **arguments["kwargs"])
                 except Exception:
                     unrealsdk.Log(f"Unable to call remotely requested {method}.")
                     tb = traceback.format_exc().split('\n')
