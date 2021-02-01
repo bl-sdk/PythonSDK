@@ -6,7 +6,7 @@ import inspect
 import traceback
 from collections import deque
 from time import time
-from typing import Callable, Any
+from typing import Any, Callable
 
 from . import ModObjects
 
@@ -108,42 +108,67 @@ def _CreateMethodSender(function: Callable[..., None]) -> Callable[..., None]:
     # method, using the module and hierarchy within the module it was defined in.
     message_type = f"unrealsdk.{function.__module__}.{function.__qualname__}"
 
-    if len(inspect.signature(function).parameters) < 2:
+    signature = inspect.signature(function)
+    parameters = list(signature.parameters.values())
+    if len(parameters) < 1:
         unrealsdk.Log(f"Unable to register network method <{message_type}>.")
-        unrealsdk.Log("    @ServerMethod and @ClientMethod decorated methods must be mod instance methods with the following signature:")
-        unrealsdk.Log("        (self, caller: Optional[unrealsdk.UObject], ...)")
+        unrealsdk.Log("    @ServerMethod and @ClientMethod decorated methods must be mod instance methods")
         return None
+
+    # To be able to correctly map arguments to their parameters, remove the first (`self`)
+    # parameters from the signature.
+    del parameters[0]
+    signature = signature.replace(parameters=parameters)
+
+    # Record whether or not this function includes a parameter for specifying a player controller.
+    specifiesPlayerController = (signature.parameters.get("playerController") is not None)
 
     # "Wrap" the original function. Among other things, this assigns the original function to the
     # __wrapped__ attribute of the new one.
     @functools.wraps(function)
-    def methodSender(self: ModObjects.SDKMod, caller: Optional[unrealsdk.UObject], *args, **kwargs) -> None:
+    def methodSender(self: ModObjects.SDKMod, *args, **kwargs) -> None:
         # If the current netmode doesn't indicate client mode, we will be sending a server message.
         worldInfo = unrealsdk.GetEngine().GetCurrentWorldInfo()
+        PRIs = list(worldInfo.GRI.PRIArray)
+
+        # Determine whether this message should be sent to a server and whether it should be sent to
+        # client(s). If neither, we have nothing to send.
+        sendServer = (methodSender._is_server and worldInfo.NetMode == 3) # ENetMode.NM_Client
+        sendClient = (methodSender._is_client and worldInfo.NetMode != 3 and len(PRIs) > 1)
+        if not (sendServer or sendClient):
+            return
+
+        # Use the inspect module to correctly map the received arguments to their parameters.
+        bindings = signature.bind(*args, **kwargs)
+        # If the arguments include one specifying a player controller we will be messaging, retrieve
+        # which one, and purge it.
+        if specifiesPlayerController:
+            playerController = bindings.arguments.get("playerController")
+            bindings.arguments["playerController"] = None
+        else:
+            playerController = None
+
+        # Serialize the arguments we were called with using the class's serializer function.
+        arguments = type(self).NetworkSerializer({"args": bindings.args, "kwargs": bindings.kwargs})
 
         # If this method is marked to send messages to the server, and we are currently a client, we
         # will message to the server.
-        if methodSender._is_server and worldInfo.NetMode == 3: # ENetMode.NM_Client
-            # Serialize the arguments we were called with using the class's serializer function, and
-            # queue the message for each applicable player controller.
-            arguments = type(self).NetworkSerializer({"args": args, "kwargs": kwargs})
+        if sendServer:
             # We will be using our client-side copy of our player controller to message the server.
             playerController = unrealsdk.GetEngine().GamePlayers[0].Actor
-            _EnqueueMessage(_Message(playerController, methodSender._message_type, arguments, True))
+            _EnqueueMessage(_Message(playerController, message_type, arguments, True))
 
-        # If this method is marked to send messages to clients, and we are currently the server, we
-        # will message client(s) now.
-        elif methodSender._is_client and worldInfo.NetMode != 3: # ENetMode.NM_Client
-            # Get an applicable player controller for each replicated player. If we were provided a
-            # specific player controller to message, filter by it.
-            if caller is None:
-                playerControllers = [PRI.Owner for PRI in worldInfo.GRI.PRIArray if PRI.Owner is not None]
+        elif sendClient:
+            # If the mapped arguments do include one specifying a specific player controller to
+            # message, we will spend this message to it.
+            if playerController is not None:
+                _EnqueueMessage(_Message(playerController, message_type, arguments, False))
+            # If no player controller was specified, then send a message to each replicated player
+            # that has a player controller that is not our own.
             else:
-                playerControllers = [PRI.Owner for PRI in worldInfo.GRI.PRIArray if PRI.Owner is caller]
-
-            arguments = type(self).NetworkSerializer({"args": args, "kwargs": kwargs})
-            for playerController in playerControllers:
-                _EnqueueMessage(_Message(playerController, methodSender._message_type, arguments, False))
+                for PRI in PRIs:
+                    if PRI.Owner is not None and PRI.Owner is not unrealsdk.GetEngine().GamePlayers[0].Actor:
+                        _EnqueueMessage(_Message(PRI.Owner, message_type, arguments, False))
 
     # Assign the server and client attributes to identify this method's role.
     methodSender._message_type = message_type
@@ -157,7 +182,10 @@ def _CreateMethodSender(function: Callable[..., None]) -> Callable[..., None]:
 def ServerMethod(function: Callable[..., None]) -> Callable[..., None]:
     """
     A decorator function for mods' instance methods that should be invoked on server copies of the
-    mod rather than the local copy.
+    mod rather than the local copy. The decorated function must be an instance method (have `self`
+    as the first parameter). It may optionally include a parameter named `playerController`; if it
+    does, upon invokation on the server, its value will be set to the player controller for the
+    client who requested the method.
     """
 
     # Check if the function already has a method sender. If it doesn't, create one now.
@@ -173,7 +201,10 @@ def ServerMethod(function: Callable[..., None]) -> Callable[..., None]:
 def ClientMethod(function: Callable[..., None]) -> Callable[..., None]:
     """
     A decorator function for mods' instance methods that should be invoked on client copies of the
-    mod rather than the local copy.
+    mod rather than the local copy. The decorated function must be an instance method (have `self`
+    as the first parameter). It may optionally include a parameter named `playerController`; if it
+    does, and if a client's player controller is specified when calling this method on the server,
+    the invokation will be sent to that client.
     """
 
     # Check if the function already has a method sender. If it doesn't, create one now.
@@ -271,9 +302,10 @@ def _ServerSpeech(caller: unrealsdk.UObject, function: unrealsdk.UFunction, para
     # Get the list of methods registered to respond to this message type. If none are, we're done.
     methods = _server_message_types.get(message_type)
     if methods is not None and len(methods) > 0:
-        # All of the methods in this set are known to be bound to mods of the same class. Retrieve
-        # any one of them to get the class.
-        cls = type(next(iter(methods)).__self__)
+        # All of the methods in this set are known to be identical functions, just bound to
+        # different instances. Retrieve any one of them, and get the mod's class from it.
+        sampleMethod = next(iter(methods))
+        cls = type(sampleMethod.__self__)
 
         # Attempt to use the class's deserializer callable to deserialize the message's arguments.
         arguments = None
@@ -286,11 +318,18 @@ def _ServerSpeech(caller: unrealsdk.UObject, function: unrealsdk.UFunction, para
             unrealsdk.Log(f"    {tb[-3].strip()}")
             unrealsdk.Log(f"    {tb[-2].strip()}")
         
-        # If argument deserialization was successful, invoke each method registered for the type.
+        # If argument deserialization was successful, we will invoke each method.
         if arguments is not None:
+            # Use the inspect module to correctly map the received arguments to their parameters.
+            bindings = inspect.signature(sampleMethod).bind(*arguments["args"], **arguments["kwargs"])
+            # If this method has a parameter through which to pass a player controller, assign the
+            # caller to it.
+            if bindings.signature.parameters.get("playerController") is not None:
+                bindings.arguments["playerController"] = caller
+
             for method in methods:
                 try:
-                    method(caller, *arguments["args"], **arguments["kwargs"])
+                    method(*bindings.args, **bindings.kwargs)
                 except Exception:
                     unrealsdk.Log(f"Unable to call remotely requested {method}.")
                     tb = traceback.format_exc().split('\n')
@@ -320,7 +359,8 @@ def _ClientMessage(caller: unrealsdk.UObject, function: unrealsdk.UFunction, par
 
     methods = _client_message_types.get(message_type)
     if methods is not None and len(methods) > 0:
-        cls = type(next(iter(methods)).__self__)
+        sampleMethod = next(iter(methods))
+        cls = type(sampleMethod.__self__)
 
         arguments = None
         try:
@@ -333,9 +373,11 @@ def _ClientMessage(caller: unrealsdk.UObject, function: unrealsdk.UFunction, par
             unrealsdk.Log(f"    {tb[-2].strip()}")
         
         if arguments is not None:
+            bindings = inspect.signature(sampleMethod).bind(*arguments["args"], **arguments["kwargs"])
+
             for method in methods:
                 try:
-                    method(None, *arguments["args"], **arguments["kwargs"])
+                    method(*bindings.args, **bindings.kwargs)
                 except Exception:
                     unrealsdk.Log(f"Unable to call remotely requested {method}.")
                     tb = traceback.format_exc().split('\n')

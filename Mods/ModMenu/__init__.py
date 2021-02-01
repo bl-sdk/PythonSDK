@@ -23,14 +23,18 @@ from .ModObjects import Mods as Mods  # noqa: F401, E402
 from .ModObjects import ModTypes as ModTypes  # noqa: F401, E402
 from .ModObjects import RegisterMod as RegisterMod  # noqa: F401, E402
 from .ModObjects import SDKMod as SDKMod  # noqa: F401, E402
-from .SettingsManager import GetSettingsFilePath as GetSettingsFilePath  # noqa: F401, E402
-from .SettingsManager import LoadModSettings as LoadModSettings  # noqa: F401, E402
-from .SettingsManager import SaveAllModSettings as SaveAllModSettings  # noqa: F401, E402
-from .SettingsManager import SaveModSettings as SaveModSettings  # noqa: F401, E402
+from .HookManager import Hook as Hook  # noqa: F401, E402
+from .HookManager import HookMethod as HookMethod  # noqa: F401, E402
+from .HookManager import RegisterHooks as RegisterHooks  # noqa: F401, E402
+from .HookManager import UnregisterHooks as UnregisterHooks  # noqa: F401, E402
 from .NetworkManager import ServerMethod as ServerMethod  # noqa: F401, E402
 from .NetworkManager import ClientMethod as ClientMethod  # noqa: F401, E402
 from .NetworkManager import RegisterNetworkMethods as RegisterNetworkMethods  # noqa: F401, E402
 from .NetworkManager import UnregisterNetworkMethods as UnregisterNetworkMethods  # noqa: F401, E402
+from .SettingsManager import GetSettingsFilePath as GetSettingsFilePath  # noqa: F401, E402
+from .SettingsManager import LoadModSettings as LoadModSettings  # noqa: F401, E402
+from .SettingsManager import SaveAllModSettings as SaveAllModSettings  # noqa: F401, E402
+from .SettingsManager import SaveModSettings as SaveModSettings  # noqa: F401, E402
 
 
 # Extra imports

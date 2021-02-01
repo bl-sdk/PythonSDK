@@ -8,6 +8,7 @@ from abc import ABCMeta
 from os import path
 from typing import Any, Callable, Dict, List, Optional, Sequence, Set, Tuple
 
+from . import HookManager
 from . import KeybindManager
 from . import NetworkManager
 from . import OptionManager
@@ -104,6 +105,7 @@ class _ModMeta(ABCMeta):
         "Keybinds",
         "NetworkSerializer",
         "NetworkDeserializer",
+        "_hooks",
         "_server_functions",
         "_client_functions",
         "_is_enabled",
@@ -117,6 +119,9 @@ class _ModMeta(ABCMeta):
 
         functions = (attribute for attribute in cls.__dict__.values() if callable(attribute))
         for function in functions:
+
+            if hasattr(function, "_hook_target"):
+                cls._hooks.add(function)
 
             method_sender = NetworkManager._FindMethodSender(function)
             if method_sender is not None:
@@ -189,6 +194,7 @@ class SDKMod(metaclass=_ModMeta):
     NetworkSerializer: Callable[[Any], str] = json.dumps
     NetworkDeserializer: Callable[[str], Any] = json.loads
     
+    _hooks: Set[Callable[[SDKMod, unrealsdk.UObject, unrealsdk.UFunction, unrealsdk.FStruct], Any]] = set()
     _server_functions: Set[Callable[..., None]] = set()
     _client_functions: Set[Callable[..., None]] = set()
 
@@ -229,14 +235,20 @@ class SDKMod(metaclass=_ModMeta):
         return inst
 
     def Enable(self) -> None:
-        """ Called by the mod manager to enable the mod. The default implementation calls
-        ModMenu.RegisterNetworkMethods(self) on the mod."""
+        """
+        Called by the mod manager to enable the mod. The default implementation calls
+        ModMenu.RegisterHooks(self) and ModMenu.RegisterNetworkMethods(self) on the mod.
+        """
+        HookManager.RegisterHooks(self)
         NetworkManager.RegisterNetworkMethods(self)
         pass
 
     def Disable(self) -> None:
-        """ Called by the mod manager to disable the mod. The default implementation calls
-        ModMenu.UnregisterNetworkMethods(self) on the mod."""
+        """
+        Called by the mod manager to disable the mod. The default implementation calls
+        ModMenu.UnregisterHooks(self) and ModMenu.UnregisterNetworkMethods(self) on the mod.
+        """
+        HookManager.UnregisterHooks(self)
         NetworkManager.UnregisterNetworkMethods(self)
         pass
 
