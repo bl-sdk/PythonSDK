@@ -210,7 +210,7 @@ def ClientMethod(function: Callable[..., None]) -> Callable[..., None]:
     Additionally it may contain any parameters, so long as the values passed through them are
     serializable through the mod class's `NetworkSerializer` and `NetworkDeserializer`.
 
-    The decorated function may optionally include a parameter named `playerController`; if it does,
+    The decorated function may optionally include a parameter named `playerController`. If it does,
     and if an `unrealsdk.UObject` `WillowPlayerController` associated with a given client is
     specified when calling this method on the server, the invokation will be sent to that client.
     In the absense of a specified client, the request is sent to all clients.
@@ -233,9 +233,9 @@ _client_message_types = {}
 def RegisterNetworkMethods(mod: ModObjects.SDKMod) -> None:
     """
     Enables a mod's interaction with server and client copies of itself. Methods for the mod that
-    are decorated with @NetworkManager.Server and @NetworkManager.Client subsequently send requests
+    are decorated with @ModMenu.ServerMethod and @ModMenu.ClientMethod subsequently send requests
     to servers and clients when invoked locally. In addition, said methods have ther original
-    implementations invoked locally when requests are recieved from servers and clients.
+    implementations invoked locally when requests are received from servers and clients.
 
     Args:
         mod: The instance of the mod to register for network method handling.
@@ -261,7 +261,7 @@ def RegisterNetworkMethods(mod: ModObjects.SDKMod) -> None:
 def UnregisterNetworkMethods(mod: ModObjects.SDKMod) -> None:
     """
     Disables a mod's interaction with server and client copies of itself. Requests will no longer be
-    sent when @NetworkManager.Server and @NetworkManager.Client methods are invoked locally, and
+    sent when @ModMenu.ServerMethod and @ModMenu.ClientMethod methods are invoked locally, and
     incoming requests for said methods will be ignored.
 
     Args:
@@ -325,7 +325,6 @@ def _ServerSpeech(caller: unrealsdk.UObject, function: unrealsdk.UFunction, para
             unrealsdk.Log(f"    {tb[-3].strip()}")
             unrealsdk.Log(f"    {tb[-2].strip()}")
         
-        # If argument deserialization was successful, we will invoke each method.
         if arguments is not None:
             # Use the inspect module to correctly map the received arguments to their parameters.
             bindings = inspect.signature(sampleMethod).bind(*arguments["args"], **arguments["kwargs"])
@@ -334,6 +333,7 @@ def _ServerSpeech(caller: unrealsdk.UObject, function: unrealsdk.UFunction, para
             if bindings.signature.parameters.get("playerController") is not None:
                 bindings.arguments["playerController"] = caller
 
+            # Invoke each registered method with the mapped arguments.
             for method in methods:
                 try:
                     method(*bindings.args, **bindings.kwargs)
