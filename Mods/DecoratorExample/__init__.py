@@ -22,6 +22,7 @@ def RemoteDecorator(function):
 
 
 @Hook("WillowGame.WillowUIInteraction.InputKey")
+@Hook("WillowGame.WillowUIInteraction.InputKey", "{0}.{1}.AlsoShould")
 def LogSomethingOnInput(caller: UObject, function: UFunction, params: FStruct):
     Log(f"LogSomethingOnInput called ({params})")
     return True
@@ -67,6 +68,7 @@ class DecoratorExample(ModMenu.SDKMod):
         Log(f"BothLogSomething called (arg1: {arg1}, arg2: {arg2})")
 
     @HookMethod("WillowGame.WillowUIInteraction.InputKey")
+    @HookMethod("WillowGame.WillowUIInteraction.InputKey", "{0}.{1}.{2}.AlsoShould")
     def InstanceLogSomethingOnInput(self, caller: UObject, function: UFunction, params: FStruct):
         Log(f"InstanceLogSomethingOnInput called ({params})")
         return True

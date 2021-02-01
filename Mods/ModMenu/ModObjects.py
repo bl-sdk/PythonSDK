@@ -120,7 +120,7 @@ class _ModMeta(ABCMeta):
         functions = (attribute for attribute in cls.__dict__.values() if callable(attribute))
         for function in functions:
 
-            if hasattr(function, "_hook_target"):
+            if hasattr(function, "_hooks"):
                 cls._hooks.add(function)
 
             method_sender = NetworkManager._FindMethodSender(function)
