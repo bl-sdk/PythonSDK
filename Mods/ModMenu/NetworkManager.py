@@ -143,31 +143,31 @@ def _CreateMethodSender(function: Callable[..., None]) -> Callable[..., None]:
         # If the arguments include one specifying a player controller we will be messaging, retrieve
         # which one, and purge it.
         if specifiesPlayerController:
-            playerController = bindings.arguments.get("playerController")
+            remotePlayerController = bindings.arguments.get("playerController")
             bindings.arguments["playerController"] = None
         else:
-            playerController = None
-
+            remotePlayerController = None
         # Serialize the arguments we were called with using the class's serializer function.
         arguments = type(self).NetworkSerializer({"args": bindings.args, "kwargs": bindings.kwargs})
 
+        # Retrieve our own player controller.
+        localPlayerController = unrealsdk.GetEngine().GamePlayers[0].Actor
+
         # If this method is marked to send messages to the server, and we are currently a client, we
-        # will message to the server.
+        # message to the server using our client-side copy of our player controller.
         if sendServer:
-            # We will be using our client-side copy of our player controller to message the server.
-            playerController = unrealsdk.GetEngine().GamePlayers[0].Actor
-            _EnqueueMessage(_Message(playerController, message_type, arguments, True))
+            _EnqueueMessage(_Message(localPlayerController, message_type, arguments, True))
 
         elif sendClient:
             # If the mapped arguments do include one specifying a specific player controller to
             # message, we will spend this message to it.
-            if playerController is not None:
-                _EnqueueMessage(_Message(playerController, message_type, arguments, False))
+            if remotePlayerController is not None:
+                _EnqueueMessage(_Message(remotePlayerController, message_type, arguments, False))
             # If no player controller was specified, then send a message to each replicated player
             # that has a player controller that is not our own.
             else:
                 for PRI in PRIs:
-                    if PRI.Owner is not None and PRI.Owner is not unrealsdk.GetEngine().GamePlayers[0].Actor:
+                    if PRI.Owner is not None and PRI.Owner is not localPlayerController:
                         _EnqueueMessage(_Message(PRI.Owner, message_type, arguments, False))
 
     # Assign the server and client attributes to identify this method's role.
@@ -182,10 +182,15 @@ def _CreateMethodSender(function: Callable[..., None]) -> Callable[..., None]:
 def ServerMethod(function: Callable[..., None]) -> Callable[..., None]:
     """
     A decorator function for mods' instance methods that should be invoked on server copies of the
-    mod rather than the local copy. The decorated function must be an instance method (have `self`
-    as the first parameter). It may optionally include a parameter named `playerController`; if it
-    does, upon invokation on the server, its value will be set to the player controller for the
-    client who requested the method.
+    mod rather than the local copy.
+
+    The decorated function must be an instance method (have `self` as the first parameter).
+    Additionally it may contain any parameters, so long as the values passed through them are
+    serializable through the mod class's `NetworkSerializer` and `NetworkDeserializer`.
+
+    The decorated function may optionally include a parameter named `playerController`. If it does,
+    upon invokation on the server, its value will contain the `unrealsdk.UObject`
+    `WillowPlayerController` for the client who requested the method.
     """
 
     # Check if the function already has a method sender. If it doesn't, create one now.
@@ -201,10 +206,16 @@ def ServerMethod(function: Callable[..., None]) -> Callable[..., None]:
 def ClientMethod(function: Callable[..., None]) -> Callable[..., None]:
     """
     A decorator function for mods' instance methods that should be invoked on client copies of the
-    mod rather than the local copy. The decorated function must be an instance method (have `self`
-    as the first parameter). It may optionally include a parameter named `playerController`; if it
-    does, and if a client's player controller is specified when calling this method on the server,
-    the invokation will be sent to that client.
+    mod rather than the local copy.
+
+    The decorated function must be an instance method (have `self` as the first parameter).
+    Additionally it may contain any parameters, so long as the values passed through them are
+    serializable through the mod class's `NetworkSerializer` and `NetworkDeserializer`.
+
+    The decorated function may optionally include a parameter named `playerController`; if it does,
+    and if an `unrealsdk.UObject` `WillowPlayerController` associated with a given client is
+    specified when calling this method on the server, the invokation will be sent to that client.
+    In the absense of a specified client, the request is sent to all clients.
     """
 
     # Check if the function already has a method sender. If it doesn't, create one now.
@@ -231,7 +242,6 @@ def RegisterNetworkMethods(mod: ModObjects.SDKMod) -> None:
     Args:
         mod: The instance of the mod to register for network method handling.
     """
-
     cls = type(mod)
 
     # For each network method in this mod's class, create a bound version for this mod instance, and
@@ -259,7 +269,6 @@ def UnregisterNetworkMethods(mod: ModObjects.SDKMod) -> None:
     Args:
         mod: The instance of the mod to unregister for network method handling.
     """
-
     cls = type(mod)
 
     # For each network method in this mod's class, find the set of methods associated with the
