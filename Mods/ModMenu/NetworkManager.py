@@ -13,69 +13,69 @@ from . import ModObjects
 
 _message_queue = deque()
 
-class _Message():
+class _message():
     """
     A simple class that tracks the various pieces of information involved in, and facilitates the
     # sending of, a network message.
 
     Attributes:
         ID: The unique ID of the message.
-        playerController: The player controller the message will be sent through.
-        messageType: The message type string.
+        PC: The player controller the message will be sent through.
+        message_type: The message type string.
         arguments: The serialized argument string.
         server: `True` if the message is destined to a server, `False` if destined to a client.
         timeout: `None` if the message has been sent, otherwise a float representing the real time
             it will time out.
     """
-    def __init__(self, playerController: unrealsdk.UObject, messageType: str, arguments: str, server: bool):
+    def __init__(self, PC: unrealsdk.UObject, message_type: str, arguments: str, server: bool):
         """
         Create a new message.
 
         Args:
-            playerController: The player controller to send the message through.
-            messageType: The message type string.
+            PC: The player controller to send the message through.
+            message_type: The message type string.
             arguments: The serialized argument string.
             server: `True` if the message is destined to a server, `False` if destined to a client.
         """
         self.ID = str(id(self))
-        self.playerController = playerController
-        self.messageType = messageType
+        self.PC = PC
+        self.message_type = message_type
         self.arguments = f"{self.ID}:{arguments}"
         self.server = server
         self.timeout = None
 
-    def Send(self) -> None:
+    def send(self) -> None:
         """Send the message."""
         if self.server:
-            self.playerController.ServerSpeech(self.messageType, 0, self.arguments)
+            self.PC.ServerSpeech(self.message_type, 0, self.arguments)
         else:
-            self.playerController.ClientMessage(self.arguments, self.messageType)
+            self.PC.ClientMessage(self.arguments, self.message_type)
         # Set our timeout to be 2x (for leeway) the ping in each direction from the receiving end.
-        self.timeout = time() + self.playerController.PlayerReplicationInfo.ExactPing * 4
+        self.timeout = time() + self.PC.PlayerReplicationInfo.ExactPing * 4
 
 
 def _PlayerTick(caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct):
     if time() > _message_queue[0].timeout:
-        _DequeueMessage()
+        _dequeue_message()
     return True
 
-def _EnqueueMessage(message: _Message) -> None:
+def _enqueue_message(message: _message) -> None:
     """Add a message to the message queue, sending it if message queue is empty."""
     _message_queue.append(message)
 
     # If this was the first message to be added to the queue, send it now, and register our tick
     # hook to observe for its timeout.
     if len(_message_queue) == 1:
-        message.Send()
+        message.send()
         unrealsdk.RegisterHook("Engine.PlayerController.PlayerTick", "ModMenu.NetworkManager", _PlayerTick)
 
-def _DequeueMessage() -> None:
+def _dequeue_message() -> None:
     """Remove the frontmost message from the message queue, sending the following one, if any."""
     _message_queue.popleft()
 
     # If the queue is not empty, send the now-frontmost message.
     if len(_message_queue) > 0:
-        _message_queue[0].Send()
+        _message_queue[0].send()
     # If this was the last message in the queue, we may cease observing message timeouts.
     else:
         unrealsdk.RemoveHook("Engine.PlayerController.PlayerTick", "ModMenu.NetworkManager")
@@ -83,7 +83,7 @@ def _DequeueMessage() -> None:
 
 _method_senders = set()
 
-def _FindMethodSender(function: Callable[..., Any]) -> Callable[..., Any]:
+def _find_method_sender(function: Callable[..., Any]) -> Callable[..., Any]:
     """
     Searches through arbitrarily nested decorator functions to attempt to find a method sender,
     returning it, or `None` if one isn't found.
@@ -97,7 +97,7 @@ def _FindMethodSender(function: Callable[..., Any]) -> Callable[..., Any]:
         function = getattr(function, "__wrapped__", None)
     return function
 
-def _CreateMethodSender(function: Callable[..., None]) -> Callable[..., None]:
+def _create_method_sender(function: Callable[..., None]) -> Callable[..., None]:
     """
     Create a new function that will replace ones decorated as network methods, intercepting their
     local calls, and instead transmitting a request to remote copies of the mod.
@@ -119,62 +119,67 @@ def _CreateMethodSender(function: Callable[..., None]) -> Callable[..., None]:
     signature = signature.replace(parameters=parameters)
 
     # Record whether or not this function includes a parameter for specifying a player controller.
-    specifiesPlayerController = (signature.parameters.get("playerController") is not None)
+    specifies_pc = (signature.parameters.get("PC") is not None)
 
     # "Wrap" the original function. Among other things, this assigns the original function to the
     # __wrapped__ attribute of the new one.
     @functools.wraps(function)
-    def methodSender(self: ModObjects.SDKMod, *args, **kwargs) -> None:
-        # If the current netmode doesn't indicate client mode, we will be sending a server message.
-        worldInfo = unrealsdk.GetEngine().GetCurrentWorldInfo()
-        PRIs = list(worldInfo.GRI.PRIArray)
+    def method_sender(self: ModObjects.SDKMod, *args, **kwargs) -> None:
+        # Get the current world info, and from that, the current list of replicated players.
+        world_info = unrealsdk.GetEngine().GetCurrentWorldInfo()
+        PRIs = list(world_info.GRI.PRIArray)
 
         # Determine whether this message should be sent to a server and whether it should be sent to
         # client(s). If neither, we have nothing to send.
-        sendServer = (methodSender._is_server and worldInfo.NetMode == 3) # ENetMode.NM_Client
-        sendClient = (methodSender._is_client and worldInfo.NetMode != 3 and len(PRIs) > 1)
-        if not (sendServer or sendClient):
+        send_server = (method_sender._is_server and world_info.NetMode == 3) # ENetMode.NM_Client
+        send_client = (method_sender._is_client and world_info.NetMode != 3 and len(PRIs) > 1)
+        if not (send_server or send_client):
             return
 
         # Use the inspect module to correctly map the received arguments to their parameters.
         bindings = signature.bind(*args, **kwargs)
         # If the arguments include one specifying a player controller we will be messaging, retrieve
         # which one, and purge it.
-        if specifiesPlayerController:
-            remotePlayerController = bindings.arguments.get("playerController")
-            bindings.arguments["playerController"] = None
+        if specifies_pc:
+            remote_pc = bindings.arguments.get("PC")
+            bindings.arguments["PC"] = None
         else:
-            remotePlayerController = None
+            remote_pc = None
         # Serialize the arguments we were called with using the class's serializer function.
         arguments = type(self).NetworkSerializer({"args": bindings.args, "kwargs": bindings.kwargs})
 
         # Retrieve our own player controller.
-        localPlayerController = unrealsdk.GetEngine().GamePlayers[0].Actor
+        local_pc = unrealsdk.GetEngine().GamePlayers[0].Actor
 
-        # If this method is marked to send messages to the server, and we are currently a client, we
-        # message to the server using our client-side copy of our player controller.
-        if sendServer:
-            _EnqueueMessage(_Message(localPlayerController, message_type, arguments, True))
+        # If we're sending a message to the server, send it using our own player controller.
+        if send_server:
+            _enqueue_message(_message(local_pc, message_type, arguments, True))
 
-        elif sendClient:
-            # If the mapped arguments do include one specifying a specific player controller to
-            # message, we will spend this message to it.
-            if remotePlayerController is not None:
-                _EnqueueMessage(_Message(remotePlayerController, message_type, arguments, False))
-            # If no player controller was specified, then send a message to each replicated player
-            # that has a player controller that is not our own.
+        # If we're sending to a client, and the mapped arguments do specify a specific player
+        # controller to message, we will spend this message to it.
+        elif send_client and remote_pc is not None:
+            if type(remote_pc) is unrealsdk.UObject and remote_pc.Class.Name != "WillowPlayerController":
+                _enqueue_message(_message(remote_pc, message_type, arguments, False))
             else:
-                for PRI in PRIs:
-                    if PRI.Owner is not None and PRI.Owner is not localPlayerController:
-                        _EnqueueMessage(_Message(PRI.Owner, message_type, arguments, False))
+                raise TypeError(
+                    f"Invalid player controller specified for {message_type}. Expected " +
+                    f"unrealsdk.UObject of UClass WillowPlayerController, received {remote_pc}."
+                )
+
+        # If no player controller was specified, send a message to each replicated player that has a
+        # player controller that is not our own.
+        elif send_client:
+            for PRI in PRIs:
+                if PRI.Owner is not None and PRI.Owner is not local_pc:
+                    _enqueue_message(_message(PRI.Owner, message_type, arguments, False))
 
     # Assign the server and client attributes to identify this method's role.
-    methodSender._message_type = message_type
-    methodSender._is_server = False
-    methodSender._is_client = False
+    method_sender._message_type = message_type
+    method_sender._is_server = False
+    method_sender._is_client = False
 
-    _method_senders.add(methodSender)
-    return methodSender
+    _method_senders.add(method_sender)
+    return method_sender
 
 
 def ServerMethod(function: Callable[..., None]) -> Callable[..., None]:
@@ -192,9 +197,9 @@ def ServerMethod(function: Callable[..., None]) -> Callable[..., None]:
     """
 
     # Check if the function already has a method sender. If it doesn't, create one now.
-    method_sender = _FindMethodSender(function)
+    method_sender = _find_method_sender(function)
     if method_sender is None:
-        method_sender = _CreateMethodSender(function)
+        method_sender = _create_method_sender(function)
         if method_sender is None:
             return function
 
@@ -217,9 +222,9 @@ def ClientMethod(function: Callable[..., None]) -> Callable[..., None]:
     """
 
     # Check if the function already has a method sender. If it doesn't, create one now.
-    method_sender = _FindMethodSender(function)
+    method_sender = _find_method_sender(function)
     if method_sender is None:
-        method_sender = _CreateMethodSender(function)
+        method_sender = _create_method_sender(function)
         if method_sender is None:
             return function
 
@@ -287,7 +292,7 @@ def UnregisterNetworkMethods(mod: ModObjects.SDKMod) -> None:
                 del _client_message_types[function._message_type]
 
 
-def _ServerSpeech(caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct):
+def _server_speech(caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct):
     message = params.Callsign
     message_type = params.Type
     if message_type is None or not message_type.startswith("unrealsdk."):
@@ -297,7 +302,7 @@ def _ServerSpeech(caller: unrealsdk.UObject, function: unrealsdk.UFunction, para
     # we had sent. If so, and its ID matches that of our last message, dequeue it and we are done.
     if message_type == "unrealsdk.__clientack__":
         if message == _message_queue[0].ID:
-            _DequeueMessage()
+            _dequeue_message()
         return False
 
     # This message's ID and serialized arguments should be separated by a ":". If not, ignore it.
@@ -330,8 +335,8 @@ def _ServerSpeech(caller: unrealsdk.UObject, function: unrealsdk.UFunction, para
             bindings = inspect.signature(sampleMethod).bind(*arguments["args"], **arguments["kwargs"])
             # If this method has a parameter through which to pass a player controller, assign the
             # caller to it.
-            if bindings.signature.parameters.get("playerController") is not None:
-                bindings.arguments["playerController"] = caller
+            if bindings.signature.parameters.get("PC") is not None:
+                bindings.arguments["PC"] = caller
 
             # Invoke each registered method with the mapped arguments.
             for method in methods:
@@ -348,7 +353,7 @@ def _ServerSpeech(caller: unrealsdk.UObject, function: unrealsdk.UFunction, para
     caller.ClientMessage("unrealsdk.__serverack__", message_id)
     return False
 
-def _ClientMessage(caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct):
+def _client_message(caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct):
     message = params.S
     message_type = params.Type
     if message_type is None or not message_type.startswith("unrealsdk."):
@@ -356,7 +361,7 @@ def _ClientMessage(caller: unrealsdk.UObject, function: unrealsdk.UFunction, par
 
     if message_type == "unrealsdk.__serverack__":
         if message == _message_queue[0].ID:
-            _DequeueMessage()
+            _dequeue_message()
         return False
 
     message_components = message.split(":", 1)
@@ -393,5 +398,5 @@ def _ClientMessage(caller: unrealsdk.UObject, function: unrealsdk.UFunction, par
     caller.ServerSpeech(message_id, 0, "unrealsdk.__clientack__")
     return False
 
-unrealsdk.RunHook("Engine.PlayerController.ServerSpeech", "ModMenu.NetworkManager", _ServerSpeech)
-unrealsdk.RunHook("WillowGame.WillowPlayerController.ClientMessage", "ModMenu.NetworkManager", _ClientMessage)
+unrealsdk.RunHook("Engine.PlayerController.ServerSpeech", "ModMenu.NetworkManager", _server_speech)
+unrealsdk.RunHook("WillowGame.WillowPlayerController.ClientMessage", "ModMenu.NetworkManager", _client_message)

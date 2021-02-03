@@ -123,7 +123,7 @@ class _ModMeta(ABCMeta):
             if hasattr(function, "_hooks"):
                 cls._hooks.add(function)
 
-            method_sender = NetworkManager._FindMethodSender(function)
+            method_sender = NetworkManager._find_method_sender(function)
             if method_sender is not None:
                 if method_sender._is_server:
                     cls._server_functions.add(method_sender)
