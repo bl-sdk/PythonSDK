@@ -118,7 +118,7 @@ struct FString : public TArray<wchar_t>
 	{
 	};
 
-	FString(wchar_t* Other)
+	FString(const wchar_t* Other)
 	{
 		this->Max = this->Count = Other ? (wcslen(Other) + 1) : 0;
 		this->Data = (wchar_t *)calloc(this->Count, sizeof(wchar_t));

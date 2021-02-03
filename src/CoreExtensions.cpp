@@ -238,7 +238,7 @@ void FHelper::SetProperty(class UStrProperty* Prop, const py::object& Val)
 {
 	if (!py::isinstance<py::str>(Val))
 		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected string!\n").c_str());
-	memcpy(GetPropertyAddress(Prop), &FString(Val.cast<std::string>().c_str()), sizeof(FString));
+	memcpy(GetPropertyAddress(Prop), &FString(Val.cast<std::wstring>().c_str()), sizeof(FString));
 }
 
 void FHelper::SetProperty(class UObjectProperty* Prop, const py::object& Val)
