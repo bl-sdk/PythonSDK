@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include <stack>
 #include <utility>
+#include <sstream>
 
 
 UObject* UObject::Load(UClass* ClassToLoad, const char* ObjectFullName)
@@ -652,26 +653,22 @@ void FStruct::SetProperty(std::string& PropName, py::object value) const
 	((FHelper*)((char*)base))->SetProperty(prop, std::move(value));
 }
 
-py::str FStruct::Repr() const
-{
-	py::str s = "{";
+py::str FStruct::Repr() const {
+	std::ostringstream output;
+	output << "{";
+
 	const UStruct* thisField = structType;
-	while (thisField)
-	{
-		for (UField* Child = thisField->Children; Child != nullptr; Child = Child->Next)
-		{
-			UProperty* prop = (UProperty*)structType->FindChildByName(FName(Child->GetName()));
-			if (prop && prop->PropertyFlags & 0x80)
-			{
-				s = py::str("{}{}: {}").format(s, Child->GetName(), repr(GetProperty(Child->GetName())));
-				if (Child->Next || (thisField->SuperField && thisField->SuperField->Children))
-					s = py::str("{}{}").format(s, ", ");
+	while (thisField) {
+		for (UField* Child = thisField->Children; Child != nullptr; Child = Child->Next) {
+			if (Child != thisField->Children) {
+				output << ", ";
 			}
+			output << Child->GetName() << ": " << py::repr(GetProperty(Child->GetName()));
 		}
 		thisField = thisField->SuperField;
 	}
-	s = py::str("{}{}").format(s, "}");
-	return s;
+	output << "}";
+	return output.str();
 }
 
 FArray::FArray(TArray<char>* array, UProperty* s)
@@ -714,15 +711,15 @@ py::object FArray::Next()
 	return GetItem(IterCounter++);
 }
 
-py::str FArray::Repr()
-{
-	py::str s = "[";
-	for (unsigned int x = 0; x < arr->Count; x++)
-	{
-		s = py::str("{}{}").format(s, repr(GetItem(x)));
-		if (x + 1 < arr->Count)
-			s = py::str("{}{}").format(s, ", ");
+py::str FArray::Repr() {
+	std::ostringstream output;
+	output << "[";
+	for (unsigned int i = 0; i < arr->Count; i++) {
+		if (i > 0) {
+			output << ", ";
+		}
+		output << py::repr(GetItem(i));
 	}
-	s = py::str("{}{}").format(s, "]");
-	return s;
+	output << "]";
+	return output.str();
 }

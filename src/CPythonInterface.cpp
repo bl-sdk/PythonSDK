@@ -6,6 +6,7 @@
 #include "UnrealSDK.h"
 #include <string>
 #include <cstdlib>
+#include <sstream>
 
 bool VerifyPythonFunction(py::object funcHook, const char** expectedKeys)
 {
@@ -81,12 +82,14 @@ PYBIND11_EMBEDDED_MODULE(unrealsdk, m)
 
 	m.def("GetVersion", []() { return py::make_tuple(VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH); });
 	m.def("Log", [](py::args args) {
-		std::string msg = "";
-		for (int i = 0; i < args.size(); i++) {
-			if (i >= 1) msg += " ";
-			msg += py::str(args[i]);
+		std::ostringstream msg;
+		for (py::size_t i = 0; i < args.size(); i++) {
+			if (i > 0) {
+				msg << " ";
+			}
+			msg << py::str(args[i]);
 		}
-		Logging::LogPy(msg);
+		Logging::LogPy(msg.str());
 	});
 	m.def("LoadPackage", &UnrealSDK::LoadPackage, py::arg("filename"), py::arg("flags") = 0, py::arg("force") = false);
 	m.def("KeepAlive", &UnrealSDK::KeepAlive);
