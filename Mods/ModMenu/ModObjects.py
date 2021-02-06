@@ -2,12 +2,17 @@ from __future__ import annotations
 
 import copy
 import enum
+import functools
+import json
+import weakref
 import sys
 from abc import ABCMeta
 from os import path
-from typing import Any, Dict, List, Optional, Sequence, Tuple
+from typing import Any, Callable, Dict, List, Optional, Sequence, Set, Tuple
 
+from . import HookManager
 from . import KeybindManager
+from . import NetworkManager
 from . import OptionManager
 from . import SettingsManager
 
@@ -100,6 +105,10 @@ class _ModMeta(ABCMeta):
         "SettingsInputs",
         "Options",
         "Keybinds",
+        "NetworkSerializer",
+        "NetworkDeserializer",
+        "_server_functions",
+        "_client_functions",
         "_is_enabled",
     )
 
@@ -108,6 +117,15 @@ class _ModMeta(ABCMeta):
 
         for name in _ModMeta.Attributes:
             setattr(cls, name, copy.copy(getattr(cls, name)))
+
+        functions = (attribute for attribute in cls.__dict__.values() if callable(attribute))
+        for function in functions:
+            method_sender = NetworkManager._find_method_sender(function)
+            if method_sender is not None:
+                if method_sender._is_server:
+                    cls._server_functions.add(method_sender)
+                if method_sender._is_client:
+                    cls._client_functions.add(method_sender)
 
 
 class SDKMod(metaclass=_ModMeta):
@@ -141,6 +159,15 @@ class SDKMod(metaclass=_ModMeta):
             A sequence of the mod's in game keybinds. These are only displayed, and the callback
              will only be called, while the mod is enabled.
 
+        NetworkSerializer:
+            A callable to be used to serialize parameters sent through networked methods. This
+            callable must be able to accept at least a `dict` containing a `list` as well as another
+            `dict`, and output the serialized results as a text string.
+        NetworkDeserializer:
+            A callable to be used to deserialize parameters when received through networked methods.
+            This must accept the text string as output by the callable passed to `serializer`, and
+            return the `dict` containing a `list` and another `dict` as originally sent.
+
         IsEnabled:
             A bool that is True if the mod is currently enabled. For compatibility reasons, by
              default this returns if the status is currently "Enabled". Once overwritten, it will
@@ -160,6 +187,12 @@ class SDKMod(metaclass=_ModMeta):
     SettingsInputs: Dict[str, str] = {"Enter": "Enable"}
     Options: Sequence[OptionManager.Options.Base] = []
     Keybinds: Sequence[KeybindManager.Keybind] = []
+
+    NetworkSerializer: Callable[[Any], str] = json.dumps
+    NetworkDeserializer: Callable[[str], Any] = json.loads
+    
+    _server_functions: Set[Callable[..., None]] = set()
+    _client_functions: Set[Callable[..., None]] = set()
 
     _is_enabled: Optional[bool] = None
 
@@ -197,11 +230,21 @@ class SDKMod(metaclass=_ModMeta):
         return inst
 
     def Enable(self) -> None:
-        """ Called by the mod manager to enable the mod. """
+        """
+        Called by the mod manager to enable the mod. The default implementation calls
+        ModMenu.RegisterHooks(self) and ModMenu.RegisterNetworkMethods(self) on the mod.
+        """
+        HookManager.RegisterHooks(self)
+        NetworkManager.RegisterNetworkMethods(self)
         pass
 
     def Disable(self) -> None:
-        """ Called by the mod manager to disable the mod. """
+        """
+        Called by the mod manager to disable the mod. The default implementation calls
+        ModMenu.UnregisterHooks(self) and ModMenu.UnregisterNetworkMethods(self) on the mod.
+        """
+        HookManager.RemoveHooks(self)
+        NetworkManager.UnregisterNetworkMethods(self)
         pass
 
     def SettingsInputPressed(self, action: str) -> None:
