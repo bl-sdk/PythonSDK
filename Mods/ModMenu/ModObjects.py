@@ -2,8 +2,9 @@ from __future__ import annotations
 
 import copy
 import enum
-import sys
+import functools
 import json
+import sys
 from abc import ABCMeta
 from os import path
 from typing import Any, Callable, Dict, List, Optional, Sequence, Set, Tuple
@@ -105,7 +106,6 @@ class _ModMeta(ABCMeta):
         "Keybinds",
         "NetworkSerializer",
         "NetworkDeserializer",
-        "_hooks",
         "_server_functions",
         "_client_functions",
         "_is_enabled",
@@ -119,10 +119,6 @@ class _ModMeta(ABCMeta):
 
         functions = (attribute for attribute in cls.__dict__.values() if callable(attribute))
         for function in functions:
-
-            if hasattr(function, "_hooks"):
-                cls._hooks.add(function)
-
             method_sender = NetworkManager._find_method_sender(function)
             if method_sender is not None:
                 if method_sender._is_server:
@@ -194,7 +190,6 @@ class SDKMod(metaclass=_ModMeta):
     NetworkSerializer: Callable[[Any], str] = json.dumps
     NetworkDeserializer: Callable[[str], Any] = json.loads
     
-    _hooks: Set[Callable[[SDKMod, unrealsdk.UObject, unrealsdk.UFunction, unrealsdk.FStruct], Any]] = set()
     _server_functions: Set[Callable[..., None]] = set()
     _client_functions: Set[Callable[..., None]] = set()
 
@@ -248,7 +243,7 @@ class SDKMod(metaclass=_ModMeta):
         Called by the mod manager to disable the mod. The default implementation calls
         ModMenu.UnregisterHooks(self) and ModMenu.UnregisterNetworkMethods(self) on the mod.
         """
-        HookManager.UnregisterHooks(self)
+        HookManager.RemoveHooks(self)
         NetworkManager.UnregisterNetworkMethods(self)
         pass
 
