@@ -35,7 +35,6 @@ from .SettingsManager import LoadModSettings as LoadModSettings  # noqa: F401, E
 from .SettingsManager import SaveAllModSettings as SaveAllModSettings  # noqa: F401, E402
 from .SettingsManager import SaveModSettings as SaveModSettings  # noqa: F401, E402
 
-
 # Extra imports
 from . import DeprecationHelper as dh  # noqa: E402
 from . import ModObjects  # noqa: E402

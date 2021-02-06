@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import copy
 import enum
-import functools
 import json
 import sys
 from abc import ABCMeta
