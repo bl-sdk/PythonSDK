@@ -14,14 +14,23 @@ _HookAny = Union[_HookFunction, _HookMethod]
 
 def Hook(target: str, name: str = "{0}.{1}") -> Callable[[_HookAny], _HookAny]:
     """
-    A decorator function for functions that should be invoked in response to an Unreal Engine
-    method's invokation. The signature of the function being decorated must match that of
-    `unrealsdk.RegisterHook` functions:
+    A decorator for functions that should be invoked in response to an Unreal Engine method's
+    invokation.
+
+    The function being decorated may be a standalone function, in which case its signature must
+    match that of `unrealsdk.RegisterHook` functions:
         (caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct)
 
-    Upon invokation, the `caller` argument will contain the Unreal Engine object whose method was
-    invoked, the `function` argument will contain the Unreal Engine function that was invoked,
-    and the `params` argument will contain an `FStruct` with the arguments passed to the method.
+    Alternatively, the function may also be an instance method of any object. In this case, the hook
+    will be activated once `ModMenu.RegisterHooks(object)` has been called on the object. The
+    sigature of the method must match that of `unrealsdk.RegisterHook` functions, with the addition
+    of `self` as the first parameter:
+        (self, caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct)
+
+    Upon invokation of the Unreal Engine method, the decorated function will be called. Its `caller`
+    argument will contain the Unreal Engine object whose method was invoked, the `function` argument
+    will contain the Unreal Engine function that was invoked, and the `params` argument will contain
+    an `FStruct` with the arguments passed to the method.
 
     Args:
         target:
