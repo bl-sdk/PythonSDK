@@ -103,8 +103,6 @@ class _ModMeta(ABCMeta):
         "SettingsInputs",
         "Options",
         "Keybinds",
-        "NetworkSerializer",
-        "NetworkDeserializer",
         "_server_functions",
         "_client_functions",
         "_is_enabled",
@@ -156,15 +154,6 @@ class SDKMod(metaclass=_ModMeta):
         Keybinds:
             A sequence of the mod's in game keybinds. These are only displayed, and the callback
              will only be called, while the mod is enabled.
-
-        NetworkSerializer:
-            A callable to be used to serialize parameters sent through networked methods. This
-            callable must be able to accept at least a `dict` containing a `list` as well as another
-            `dict`, and output the serialized results as a text string.
-        NetworkDeserializer:
-            A callable to be used to deserialize parameters when received through networked methods.
-            This must accept the text string as output by the callable passed to `serializer`, and
-            return the `dict` containing a `list` and another `dict` as originally sent.
 
         IsEnabled:
             A bool that is True if the mod is currently enabled. For compatibility reasons, by
@@ -314,3 +303,32 @@ class SDKMod(metaclass=_ModMeta):
             new_value: The new value which `option.CurrentValue` will be updated to.
         """
         pass
+
+    @staticmethod
+    def NetworkSerialize(arguments: dict) -> str:
+        """
+        Called when instances of this class invoke methods decorated with `@ModMenu.ServerMethod`
+        or `@ModMenu.ClientMethod`, performing the serialization of any arguments passed to said
+        methods. The default implementation uses `json.dumps()`.
+        Arguments:
+            arguments:
+                The arguments that need to be serialized. The top-level object passed will be a
+                `dict` keyed with `str`, containing a `list` as well as another `dict`.
+        Returns:
+            The arguments serialized into a text string.
+        """
+        return json.dumps(arguments)
+
+    @staticmethod
+    def NetworkDeserialize(serialized: str) -> dict:
+        """
+        Called when instances of this class receive requests for methods decorated with
+        `@ModMenu.ServerMethod` or `@ModMenu.ClientMethod`, performing the deserialization of any
+        arguments passed to said methods. The default implementation uses `json.loads()`.
+        Arguments:
+            serialized:
+                The string containing the serialized arguments as returned by 'NetworkSerialize'.
+        Returns:
+            The deserialized arguments in the same format as they were passed to `NetworkSerialize`.
+        """
+        return json.loads(serialized)

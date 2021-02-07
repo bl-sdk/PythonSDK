@@ -67,7 +67,7 @@ def _enqueue_message(message: _message) -> None:
     # hook to observe for its timeout.
     if len(_message_queue) == 1:
         message.send()
-        unrealsdk.RegisterHook("Engine.PlayerController.PlayerTick", "ModMenu.NetworkManager", _PlayerTick)
+        unrealsdk.RunHook("Engine.PlayerController.PlayerTick", "ModMenu.NetworkManager", _PlayerTick)
 
 def _dequeue_message() -> None:
     """Remove the frontmost message from the message queue, sending the following one, if any."""
@@ -140,13 +140,11 @@ def _create_method_sender(function: Callable[..., None]) -> Callable[..., None]:
         bindings = signature.bind(*args, **kwargs)
         # If the arguments include one specifying a player controller we will be messaging, retrieve
         # which one, and purge it.
+        remote_pc = bindings.arguments.get("PC", None)
         if specifies_pc:
-            remote_pc = bindings.arguments.get("PC")
             bindings.arguments["PC"] = None
-        else:
-            remote_pc = None
         # Serialize the arguments we were called with using the class's serializer function.
-        arguments = type(self).NetworkSerializer({"args": bindings.args, "kwargs": bindings.kwargs})
+        arguments = type(self).NetworkSerialize({"args": bindings.args, "kwargs": bindings.kwargs})
 
         # Retrieve our own player controller.
         local_pc = unrealsdk.GetEngine().GamePlayers[0].Actor
@@ -158,7 +156,7 @@ def _create_method_sender(function: Callable[..., None]) -> Callable[..., None]:
         # If we're sending to a client, and the mapped arguments do specify a specific player
         # controller to message, we will spend this message to it.
         elif send_client and remote_pc is not None:
-            if type(remote_pc) is unrealsdk.UObject and remote_pc.Class.Name != "WillowPlayerController":
+            if type(remote_pc) is unrealsdk.UObject and remote_pc.Class.Name == "WillowPlayerController":
                 _enqueue_message(_message(remote_pc, message_type, arguments, False))
             else:
                 raise TypeError(
@@ -189,10 +187,10 @@ def ServerMethod(function: Callable[..., None]) -> Callable[..., None]:
 
     The decorated function must be an instance method (have `self` as the first parameter).
     Additionally it may contain any parameters, so long as the values passed through them are
-    serializable through the mod class's `NetworkSerializer` and `NetworkDeserializer`.
+    serializable through the mod class's `NetworkSerialize` and `NetworkDeserialize`.
 
-    The decorated function may optionally include a parameter named `playerController`. If it does,
-    upon invokation on the server, its value will contain the `unrealsdk.UObject`
+    The decorated function may optionally include a parameter named `PC`. If it does, upon
+    invokation on the server, its value will contain the `unrealsdk.UObject`
     `WillowPlayerController` for the client who requested the method.
     """
 
@@ -213,12 +211,12 @@ def ClientMethod(function: Callable[..., None]) -> Callable[..., None]:
 
     The decorated function must be an instance method (have `self` as the first parameter).
     Additionally it may contain any parameters, so long as the values passed through them are
-    serializable through the mod class's `NetworkSerializer` and `NetworkDeserializer`.
+    serializable through the mod class's `NetworkSerialize` and `NetworkDeserialize`.
 
-    The decorated function may optionally include a parameter named `playerController`. If it does,
-    and if an `unrealsdk.UObject` `WillowPlayerController` associated with a given client is
-    specified when calling this method on the server, the invokation will be sent to that client.
-    In the absense of a specified client, the request is sent to all clients.
+    The decorated function may optionally include a parameter named `PC`. If it does, and if an
+    `unrealsdk.UObject` `WillowPlayerController` associated with a given client is specified when
+    calling this method on the server, the invokation will be sent to that client. In the absense of
+    a specified client, the request is sent to all clients.
     """
 
     # Check if the function already has a method sender. If it doesn't, create one now.
@@ -322,7 +320,7 @@ def _server_speech(caller: unrealsdk.UObject, function: unrealsdk.UFunction, par
         # Attempt to use the class's deserializer callable to deserialize the message's arguments.
         arguments = None
         try:
-            arguments = cls.NetworkDeserializer(message_components[1])
+            arguments = cls.NetworkDeserialize(message_components[1])
         except Exception:
             unrealsdk.Log(f"Unable to deserialize arguments for '{message_type}'")
             tb = traceback.format_exc().split('\n')

@@ -8,7 +8,7 @@ from inspect import signature, Parameter
 
 
 _HookFunction = Callable[[unrealsdk.UObject, unrealsdk.UFunction, unrealsdk.FStruct], Any]
-_HookMethod = Callable[[Any, unrealsdk.UObject, unrealsdk.UFunction, unrealsdk.FStruct], Any]
+_HookMethod = Callable[[object, unrealsdk.UObject, unrealsdk.UFunction, unrealsdk.FStruct], Any]
 _HookAny = Union[_HookFunction, _HookMethod]
 
 
@@ -21,10 +21,10 @@ def Hook(target: str, name: str = "{0}.{1}") -> Callable[[_HookAny], _HookAny]:
     match that of `unrealsdk.RegisterHook` functions:
         (caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct)
 
-    Alternatively, the function may also be an instance method of any object. In this case, the hook
-    will be activated once `ModMenu.RegisterHooks(object)` has been called on the object. The
-    sigature of the method must match that of `unrealsdk.RegisterHook` functions, with the addition
-    of `self` as the first parameter:
+    Alternatively, the function may be an instance method of any object. In this case, the hook will
+    be activated once `ModMenu.RegisterHooks(object)` has been called on the object. The signature
+    of the method must match that of `unrealsdk.RegisterHook` functions, with the addition of `self`
+    as the first parameter:
         (self, caller: unrealsdk.UObject, function: unrealsdk.UFunction, params: unrealsdk.FStruct)
 
     Upon invokation of the Unreal Engine method, the decorated function will be called. Its `caller`
@@ -42,9 +42,10 @@ def Hook(target: str, name: str = "{0}.{1}") -> Callable[[_HookAny], _HookAny]:
             and `id()` (in the case of mod instance method hooks, the mod instance's `id()` is used
             instead).
 
-            A custom name may be provided in the form of a format string. If desired, argument `{0}`
-            will contain the function's module name and qualified name, separated by a ".". Argument
-            `{1}` will contain the `id()` of the function or mod instance.
+            If a custom name is provided, it may be a simple string, or a format string with either
+            one or two replacement tokens. Token `{0}` will contain the function's module name and
+            qualified name, separated by a ".". Argument `{1}` will contain the `id()` of the
+            function or mod instance.
     """
     def apply_hook(function: _HookAny) -> _HookAny:
         # If the function has four parameters, it should be a method.
@@ -69,15 +70,14 @@ def Hook(target: str, name: str = "{0}.{1}") -> Callable[[_HookAny], _HookAny]:
             for param in params:
                 if Parameter.POSITIONAL_ONLY != param.kind != Parameter.POSITIONAL_OR_KEYWORD:
                     raise paramException
-            # Matches the behavior of the SDK itself (CPythonInterface.cpp), should include?
-            if params[0].name != "caller" or params[1].name != "function" or params[2].name != "params":
-                raise paramException
 
+            # If the function is a method, store the name format string on it for formatting with
+            # future instances. If it's a simple function, format its name for use now.
             function.HookName = name if is_method else name.format(
                 f"{function.__module__}.{function.__qualname__}", id(function)
             )
 
-            # With the function now known as valid, create its dictionary of targets.
+            # With the function now known as valid, create its set of targets.
             hook_targets = function.HookTargets = set()
 
         hook_targets.add(target)
@@ -107,20 +107,29 @@ def RegisterHooks(obj: object) -> None:
     Args:
         obj: The object for which to register method hooks.
     """
-    cls = type(obj)
+
+    # Create a weak reference to the object which we may use in attributes on it without creating
+    # cyclical references. Before destruction, `RemoveHooks` should be called on the object to
+    # ensure there are no remaining hooks that reference it.
     obj_ref = weakref.ref(obj, RemoveHooks)
 
-    for attribute_name, function in cls.__dict__.items():
+    # Iterate over each attribute on the object's class that contains a function.
+    for attribute_name, function in type(obj).__dict__.items():
         if not callable(function):
             continue
 
+        # Attempt to get the set of hook targets from the function. If it doesn't have one, or if
+        # its signature doesn't have 4 parameters, it is not a hook method.
         hook_targets = getattr(function, "HookTargets", None)
         if hook_targets is None or len(signature(function).parameters) != 4:
             continue
 
+        # Create a wrapper to replace the descriptor of the attribute, "binding" the function to the
+        # mod's weak reference, in a function that can be passed to `unrealsdk.RunHook`.
         method_wrapper = _create_method_wrapper(obj_ref, function)
         setattr(obj, attribute_name, method_wrapper)
 
+        # Format the provided hook name.
         method_wrapper.HookName = function.HookName.format(
             f"{function.__module__}.{function.__qualname__}", id(obj)
         )
@@ -131,11 +140,11 @@ def RegisterHooks(obj: object) -> None:
 
 def RemoveHooks(obj: object) -> None:
     """
-    Unregisters all `@Hook` decorated methods for the mod instance. Said methods will no longer be
-    called in response to the hooked Unreal Engine methods.
+    Unregisters all `@Hook` decorated methods for the object. Said methods will no longer be called
+    in response to the hooked Unreal Engine methods.
 
     Args:
-        mod: The mod for which to unregister method hooks.
+        obj: The object for which to unregister method hooks.
     """
     for function in obj.__dict__.values():
         if not callable(function):
