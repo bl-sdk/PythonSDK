@@ -8,67 +8,44 @@
 #include <cstdlib>
 #include <sstream>
 
-bool VerifyPythonFunction(py::object funcHook, const char** expectedKeys)
-{
+bool VerifyPythonFunction(py::object funcHook) {
 	PyObject* obj = funcHook.ptr();
-	if (!obj)
-	{
+	if (!obj) {
 		Logging::LogF("[Error] Object passed to hook is null\n");
 		return false;
 	}
-	if (!PyFunction_Check(obj))
-	{
+	if (!PyFunction_Check(obj)) {
 		Logging::LogF("[Error] Object passed to hook is not a function\n");
 		return false;
 	}
-	PyObject* Annotations = PyFunction_GetAnnotations(obj);
-	if (!Annotations || !PyDict_Check(Annotations))
-	{
-		Logging::LogF("[Error] Function passed to hook does not contain annotations\n");
+	PyCodeObject* code = (PyCodeObject*)PyFunction_GetCode(obj);
+	if (!code) {
+		Logging::LogF("[Error] Unable to retrive code from object passed to hook\n");
 		return false;
 	}
-	// Python dicts aren't ordered, but we need to assume this dict is to verify the function args
-	PyObject* Keys = PyDict_Keys(Annotations);
-	PyObject* Values = PyDict_Values(Annotations);
-	if (!PyList_Check(Keys) || !PyList_Check(Values))
-	{
-		Logging::LogF("[Error] Function passed to hook does not contain annotations\n");
+	if (code->co_argcount != 3) {
+		Logging::LogF("[Error] Function passed to hook must have exactly 3 arguments\n");
 		return false;
-	}
-	for (int x = 0; x < PyList_GET_SIZE(Keys) - 1; x++)
-	{
-		PyObject* Key = PyList_GET_ITEM(Keys, x);
-		const char* KeyString = PyUnicode_AsUTF8AndSize(Key, nullptr);
-		if (strcmp(KeyString, expectedKeys[x]))
-		{
-			Logging::LogF("[Error] Got unexpected argument '%s'. Expected '%s'.\n", KeyString, expectedKeys[x]);
-			return false;
-		}
 	}
 	return true;
 }
 
-void RegisterHook(const std::string& funcName, const std::string& hookName, py::object funcHook)
-{
-	static const char* params[] = {"caller", "function", "params"};
-	if (VerifyPythonFunction(funcHook, params))
-		UnrealSDK::RegisterHook(funcName, hookName, [funcHook](UObject* caller, UFunction* function, FStruct* params)
-			{
-				try
-				{
-					py::object py_caller = cast(caller, py::return_value_policy::reference);
-					py::object py_function = cast(function, py::return_value_policy::reference);
-					py::object py_params = cast(params, py::return_value_policy::reference);
-					py::object ret = funcHook(py_caller, py_function, py_params);
-					return ret.cast<bool>();
-				}
-				catch (std::exception e)
-				{
-					Logging::LogF(e.what());
-				}
-				return true;
-			}
-		);
+void RegisterHook(const std::string& funcName, const std::string& hookName, py::object funcHook) {
+	if (!VerifyPythonFunction(funcHook)) {
+		return;
+	}
+	UnrealSDK::RegisterHook(funcName, hookName, [funcHook](UObject* caller, UFunction* function, FStruct* params) {
+		try {
+			py::object py_caller = cast(caller, py::return_value_policy::reference);
+			py::object py_function = cast(function, py::return_value_policy::reference);
+			py::object py_params = cast(params, py::return_value_policy::reference);
+			py::object ret = funcHook(py_caller, py_function, py_params);
+			return ret.cast<bool>();
+		} catch (std::exception e) {
+			Logging::LogF(e.what());
+		}
+		return true;
+	});
 }
 
 namespace py = pybind11;
