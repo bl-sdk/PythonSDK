@@ -175,9 +175,6 @@ class SDKMod(metaclass=_ModMeta):
     Options: Sequence[OptionManager.Options.Base] = []
     Keybinds: Sequence[KeybindManager.Keybind] = []
 
-    NetworkSerializer: Callable[[Any], str] = json.dumps
-    NetworkDeserializer: Callable[[str], Any] = json.loads
-    
     _server_functions: Set[Callable[..., None]] = set()
     _client_functions: Set[Callable[..., None]] = set()
 
