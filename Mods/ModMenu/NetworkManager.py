@@ -374,7 +374,7 @@ def _client_message(caller: unrealsdk.UObject, function: unrealsdk.UFunction, pa
 
         arguments = None
         try:
-            arguments = cls.NetworkDeserializer(message_components[1])
+            arguments = cls.NetworkDeserialize(message_components[1])
         except Exception:
             unrealsdk.Log(f"Unable to deserialize arguments for '{message_type}'")
             tb = traceback.format_exc().split('\n')
