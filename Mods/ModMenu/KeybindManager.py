@@ -362,10 +362,12 @@ def _BindCurrentSelection(caller: unrealsdk.UObject, function: unrealsdk.UFuncti
                 if caller != dialog:
                     return True
 
-                if params.uevent == InputEvent.Released:
-                    if params.ukey in ("Escape", "XboxTypeS_B", "XboxTypeS_Back"):
-                        dialog.Close()
-                        unrealsdk.RemoveHook("WillowGame.WillowGFxDialogBox.HandleInputKey", "ModMenu.KeybindManager")
+                if (
+                    params.uevent == InputEvent.Released
+                    and params.ukey in ("Escape", "XboxTypeS_B", "XboxTypeS_Back")
+                ):
+                    dialog.Close()
+                    unrealsdk.RemoveHook("WillowGame.WillowGFxDialogBox.HandleInputKey", "ModMenu.KeybindManager")
                 return True
 
             unrealsdk.RunHook("WillowGame.WillowGFxDialogBox.HandleInputKey", "ModMenu.KeybindManager", HandleInputKey)

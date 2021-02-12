@@ -252,9 +252,8 @@ class SDKMod(metaclass=_ModMeta):
             action: The name of the action.
         """
         # Even though we removed these from `SettingsInputs`, need this check for auto enable
-        if Game.GetCurrent() not in self.SupportedGames:
-            if action in ("Enable", "Disable"):
-                return
+        if Game.GetCurrent() not in self.SupportedGames and action in ("Enable", "Disable"):
+            return
 
         if action == "Enable":
             if not self.IsEnabled:
