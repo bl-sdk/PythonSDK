@@ -204,12 +204,20 @@ namespace UnrealSDK
 	void HookGame()
 	{
 		TCHAR szExePath[2048];
-		char actualPath[2048];
-		memset(actualPath, 0, 2048);
-		GetModuleFileName(nullptr, szExePath, 2048);
-		for (int j = 0; szExePath[j] != 0; j++)
-			actualPath[j] = (char)szExePath[j];
-		std::string str(actualPath);
+
+		// For some god forsaken reason, GetModuleFileName can sometimes just fail ???
+		if (GetModuleFileName(NULL, szExePath, 2048) == 0) {
+			LOG(ERROR, "WINAPI Error when finding exe name commands: %d\n", GetLastError());
+			// Maybe we can try using another form of getting the module exe???
+			// https://stackoverflow.com/questions/6924195/get-dll-path-at-runtime
+			if (GetModuleFileName(GetModuleHandle(NULL), szExePath, 2048) == 0) {
+				LOG(ERROR, "WINAPI Error #2 when finding exe name commands: %d\n", GetLastError());
+				return;
+			}
+			// If we make it here, that means that the second check actually went through and worked ????
+		}
+
+		std::string str = Util::Narrow(std::wstring(szExePath));
 		std::size_t slash = str.find_last_of("/\\") + 1;
 		std::size_t dot = str.find_last_of('.');
 		std::string exeName = str.substr(slash, dot - slash);
