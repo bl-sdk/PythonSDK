@@ -2,7 +2,7 @@
 
 #define VERSION_MAJOR	0
 #define VERSION_MINOR	7
-#define VERSION_PATCH	8
+#define VERSION_PATCH	9
 
 #include <SDKDDKVer.h>
 #define WIN32_LEAN_AND_MEAN
@@ -87,7 +87,7 @@ namespace pybind11
 				if (!isinstance<sequence>(src))
 					return false;
 				PyObject* source = src.ptr();
-				const char* tmp = PyUnicode_AsUTF8AndSize(source, nullptr);
+				const wchar_t* tmp = PyUnicode_AsWideCharString(source, nullptr);
 				if (!tmp)
 					return false;
 				value = FString(tmp);
