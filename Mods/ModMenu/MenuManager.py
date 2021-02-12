@@ -5,12 +5,14 @@ import re
 import sys
 import webbrowser
 from functools import cmp_to_key
-from typing import Dict, List, Set
+from typing import Dict, List, Set, Tuple
 
-from Mods import ModMenu
+from . import VERSION_MAJOR, VERSION_MINOR
 from . import DeprecationHelper as dh
-from . import KeybindManager
-from . import ModObjects
+from . import KeybindManager, ModObjects
+
+__all__: Tuple[str, ...] = ()
+
 
 _MODS_EVENT_ID: int = 1417
 _MODS_MENU_NAME: str = "MODS"
@@ -61,7 +63,7 @@ class _General(ModObjects.SDKMod):
         "\n"
         "See below for options.\n"
     )
-    Version: str = f"{ModMenu.VERSION_MAJOR}.{ModMenu.VERSION_MINOR}"
+    Version: str = f"{VERSION_MAJOR}.{VERSION_MINOR}"
 
     Types: ModObjects.ModTypes = ModObjects.ModTypes.All
 
