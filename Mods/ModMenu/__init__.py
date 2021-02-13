@@ -42,7 +42,7 @@ VERSION_MINOR = 3
 unrealsdk.Log(f"[ModMenu] Version: {VERSION_MAJOR}.{VERSION_MINOR}")
 
 from . import DeprecationHelper as dh  # noqa: E402
-from . import ModObjects, OptionManager, Options, SettingsManager  # noqa: E402
+from . import OptionManager, Options, SettingsManager  # noqa: E402
 from .DeprecationHelper import Deprecated, NameChangeMsg, PrintWarning  # noqa: E402
 from .HookManager import (AnyHook, Hook, HookFunction, HookMethod, RegisterHooks,  # noqa: E402
                           RemoveHooks)
@@ -54,6 +54,8 @@ from .NetworkManager import (ClientMethod, RegisterNetworkMethods, ServerMethod,
                              UnregisterNetworkMethods)
 from .SettingsManager import (GetSettingsFilePath, LoadModSettings,  # noqa: E402
                               SaveAllModSettings, SaveModSettings)
+
+from . import ModObjects  # noqa: E402  # isort: skip  # Avoid circular import
 
 """
 From this point on this file defines just aliases, most of which should be considered deprecated.
