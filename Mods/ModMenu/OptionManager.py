@@ -234,7 +234,7 @@ def _HandleSpinnerSliderChange(caller: unrealsdk.UObject, function: unrealsdk.UF
             for option in option_list
         )
 
-    for mod in unrealsdk.Mods:
+    for mod in ModObjects.Mods:
         if in_option_list(mod.Options):
             # Calling this before updating the value
             mod.ModOptionChanged(changed_option, new_value)
