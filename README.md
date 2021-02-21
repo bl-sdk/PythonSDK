@@ -7,19 +7,29 @@ An UnrealEngine Plugin enabling using Python to write plugins that interact dire
 
 ## Installation
 
-Begin by [downloading the latest version of `PythonSDK.zip` here](https://github.com/Matt-Hurd/BL2-SDK/releases).
+1. [Download the latest version of `PythonSDK.zip`.](https://github.com/Matt-Hurd/BL2-SDK/releases) Ensure you download `PythonSDK.zip` from that page:
 
+![PythonSDK Download Page](https://i.imgur.com/tBlidGi.png)
 
-For PythonSDK to be able to interact with the game, you must add a few things to the game's Win32 folder. If you already have PluginLoader installed, you'll need to overwrite some files.
+2. Open `PythonSDK.zip`. It should contain 4 items:
 
-1. Quit the game if it is running.  
+![PythonSDK.zip Contents](https://i.imgur.com/jd77dnB.png)
 
-2. Extract all of the contents of the folder in the PythonSDK.zip into your `Borderlands 2\Binaries\Win32` directory, overwriting files if necessary.  
-   You want there to be a file `Win32\ddraw.dll`, *not* `Win32\PythonSDK\ddraw.dll`.  
+3. Locate your game's files. In Steam, this can be done by right-clicking on the game in your library, selecting "Properties," then in the "Local Files" section, clicking "Browse":
 
-3. If you have installed an older version of the SDK, delete any extra old files that weren't overwritten.
+![Steam Contextual Menu](https://i.imgur.com/eyfn3ht.png) ![Steam Local Files Properties](https://i.imgur.com/wok2ZUA.png)
 
-4. Download and install [this](https://aka.ms/vs/16/release/vc_redist.x86.exe) Mircosoft Visual C++ Redistributable. Most of the time this will already be installed.
+4. In the game's files, navigate to the `Binaries`, then the `Win32` folder. This folder should contain the `.exe` for your game (i.e. `Borderlands2.exe` or `BorderlandsPreSequel.exe`).
+
+5. Copy the 4 items from `PythonSDK.zip` **exactly as they** are to the `Win32` folder. Note that `pythonXX.zip` should *not* be un-zipped:
+
+![Win32 Folder Contents](https://i.imgur.com/hIvNi7w.png)
+
+6. If you had previously installed an older version of the SDK, delete any old files that weren't overwritten by the ones in the latest `PythonSDK.zip`.
+
+7. You are done, and may launch the game (if it is running, relaunch it now). You should see a "Mods" menu in the main menu!
+
+8. If the SDK fails to run with the files correctly in place as described above, you may need to [download and install Mircosoft Visual C++ Redistributable](https://aka.ms/vs/16/release/vc_redist.x86.exe).
 
 ### Linux (SteamPlay/Proton and Wine)
 
