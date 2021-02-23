@@ -14,8 +14,14 @@ _nested_options_stack: List[Options.Nested] = []
 _MOD_OPTIONS_EVENT_ID: int = 1417
 _MOD_OPTIONS_MENU_NAME: str = "MODS"
 
-_HEADER_OPTION_MARK: str = "_modmenu_header_option"
 _INDENT: int = 2
+
+
+class _ModHeader(Options.Field):
+    def __init__(self, Caption: str) -> None:
+        self.Caption = Caption
+        self.Description = ""
+        self.IsHidden = False
 
 
 def _create_data_provider(name: str) -> unrealsdk.UObject:
@@ -152,9 +158,7 @@ def _DataProviderOptionsBasePopulate(caller: unrealsdk.UObject, function: unreal
                     continue
                 if not one_shown:
                     one_shown = True
-                    header_option = Options.Field(mod.Name)
-                    setattr(header_option, _HEADER_OPTION_MARK, True)
-                    all_options.append(header_option)
+                    all_options.append(_ModHeader(mod.Name))
                 all_options.append(option)
 
         _nested_options_stack.append(Options.Nested(_MOD_OPTIONS_MENU_NAME, "", all_options))
@@ -164,7 +168,7 @@ def _DataProviderOptionsBasePopulate(caller: unrealsdk.UObject, function: unreal
         if option.IsHidden:
             continue
 
-        indent = " " * _INDENT if first_level and not hasattr(option, _HEADER_OPTION_MARK) else ""
+        indent = " " * _INDENT if first_level and not isinstance(option, _ModHeader) else ""
 
         if isinstance(option, Options.Spinner):
             spinner_idx: int
@@ -188,11 +192,9 @@ def _DataProviderOptionsBasePopulate(caller: unrealsdk.UObject, function: unreal
             )
         elif isinstance(option, Options.Field):
             disabled = False
-            caption = option.Caption
             if isinstance(option, Options.Nested):
                 disabled = not _is_anything_shown(option.Children)
-                caption += "¬"
-            params.TheList.AddListItem(idx, indent + caption, disabled, False)
+            params.TheList.AddListItem(idx, indent + option.Caption, disabled, False)
 
         caller.AddDescription(idx, option.Description)
 

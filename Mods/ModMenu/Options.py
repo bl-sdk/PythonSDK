@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import Any, Optional, Sequence, Tuple
+from typing import Any, Generic, Optional, Sequence, Tuple, TypeVar
 
 from . import DeprecationHelper as dh
 
@@ -13,6 +13,8 @@ __all__: Tuple[str, ...] = (
     "Spinner",
     "Value",
 )
+
+T = TypeVar("T")
 
 
 class Base(ABC):
@@ -39,7 +41,7 @@ class Base(ABC):
         raise NotImplementedError
 
 
-class Value(Base):
+class Value(Base, Generic[T]):
     """
     The abstract base class for all options that store a value.
 
@@ -52,22 +54,22 @@ class Value(Base):
 
         IsHidden: If the option is hidden from the options menu.
     """
-    CurrentValue: Any
-    StartingValue: Any
+    CurrentValue: T
+    StartingValue: T
 
     @abstractmethod
     def __init__(
         self,
         Caption: str,
         Description: str,
-        StartingValue: Any,
+        StartingValue: T,
         *,
         IsHidden: bool = True
     ) -> None:
         raise NotImplementedError
 
 
-class Hidden(Value):
+class Hidden(Value[T]):
     """
     A hidden option that never displays in the menu but stores an arbitrary (json serializable)
      value to the settings file.
@@ -81,11 +83,12 @@ class Hidden(Value):
         StartingValue: The default value of the option.
         IsHidden: If the option is hidden from the options menu. This is forced to True.
     """
+
     def __init__(
         self,
         Caption: str,
         Description: str = "",
-        StartingValue: Any = None,
+        StartingValue: T = None,  # type: ignore
         *,
         IsHidden: bool = True
     ) -> None:
@@ -117,7 +120,7 @@ class Hidden(Value):
         pass
 
 
-class Slider(Value):
+class Slider(Value[int]):
     """
     An option which allows users to select a value along a slider.
 
@@ -177,7 +180,7 @@ class Slider(Value):
         self.IsHidden = IsHidden
 
 
-class Spinner(Value):
+class Spinner(Value[str]):
     """
     An option which allows users to select one value from a sequence of strings.
 
@@ -243,7 +246,7 @@ class Spinner(Value):
             )
 
 
-class Boolean(Spinner):
+class Boolean(Spinner, Value[bool]):
     """
     A special form of a spinner, with two options representing boolean values.
 
@@ -257,6 +260,7 @@ class Boolean(Spinner):
 
         IsHidden: If the option is hidden from the options menu.
     """
+
     StartingValue: bool  # type: ignore
     Choices: Tuple[str, str]
 
@@ -320,32 +324,10 @@ class Field(Base):
         IsHidden: If the field is hidden from the options menu.
     """
 
-    def __init__(
-        self,
-        Caption: str,
-        Description: str = "",
-        *,
-        IsHidden: bool = False
-    ) -> None:
-        """
-        Creates the option.
-
-        Args:
-            Caption: The name of the option.
-            Description: A short description of the option to show when hovering over it in the menu.
-            IsHidden (keyword only): If the value is hidden from the options menu.
-        """
-        self.Caption = Caption
-        self.Description = Description
-        self.IsHidden = IsHidden
-
 
 class Nested(Field):
     """
     A field which when clicked opens up a nested menu with more options.
-
-    These are distinguished from normal fields by having the "new" exclaimation mark to the side of
-     it, but you should probably still give it a meaningful description.
 
     Note that these fields will be disabled if all child options are either hidden or other disabled
      nested fields.
