@@ -1,4 +1,5 @@
 from abc import ABC, abstractmethod
+from reprlib import recursive_repr
 from typing import Any, Generic, Optional, Sequence, Tuple, TypeVar
 
 from . import DeprecationHelper as dh
@@ -119,6 +120,16 @@ class Hidden(Value[T]):
     def IsHidden(self, val: bool) -> None:
         pass
 
+    @recursive_repr()
+    def __repr__(self) -> str:
+        return (
+            f"Hidden("
+            f"Caption={repr(self.Caption)},"
+            f"Description={repr(self.Description)},"
+            f"*,IsHidden={repr(self.IsHidden)}"
+            f")"
+        )
+
 
 class Slider(Value[int]):
     """
@@ -178,6 +189,21 @@ class Slider(Value[int]):
         self.MaxValue = MaxValue
         self.Increment = Increment
         self.IsHidden = IsHidden
+
+    @recursive_repr()
+    def __repr__(self) -> str:
+        return (
+            f"Slider("
+            f"Caption={repr(self.Caption)},"
+            f"Description={repr(self.Description)},"
+            f"CurrentValue={repr(self.CurrentValue)},"
+            f"StartingValue={repr(self.StartingValue)},"
+            f"MinValue={repr(self.MinValue)},"
+            f"MaxValue={repr(self.MaxValue)},"
+            f"Increment={repr(self.Increment)},"
+            f"*,IsHidden={repr(self.IsHidden)}"
+            f")"
+        )
 
 
 class Spinner(Value[str]):
@@ -245,6 +271,19 @@ class Spinner(Value[str]):
                 f"Provided starting value '{self.StartingValue}' is not in the list of choices."
             )
 
+    @recursive_repr()
+    def __repr__(self) -> str:
+        return (
+            f"Spinner("
+            f"Caption={repr(self.Caption)},"
+            f"Description={repr(self.Description)},"
+            f"CurrentValue={repr(self.CurrentValue)},"
+            f"StartingValue={repr(self.StartingValue)},"
+            f"Choices={repr(self.Choices)},"
+            f"*,IsHidden={repr(self.IsHidden)}"
+            f")"
+        )
+
 
 class Boolean(Spinner, Value[bool]):
     """
@@ -260,7 +299,6 @@ class Boolean(Spinner, Value[bool]):
 
         IsHidden: If the option is hidden from the options menu.
     """
-
     StartingValue: bool  # type: ignore
     Choices: Tuple[str, str]
 
@@ -312,6 +350,19 @@ class Boolean(Spinner, Value[bool]):
             self._current_value = bool(self.Choices.index(val))
         else:
             self._current_value = bool(val)
+
+    @recursive_repr()
+    def __repr__(self) -> str:
+        return (
+            f"Boolean("
+            f"Caption={repr(self.Caption)},"
+            f"Description={repr(self.Description)},"
+            f"CurrentValue={repr(self.CurrentValue)},"
+            f"StartingValue={repr(self.StartingValue)},"
+            f"Choices={repr(self.Choices)},"
+            f"*,IsHidden={repr(self.IsHidden)}"
+            f")"
+        )
 
 
 class Field(Base):
@@ -365,3 +416,14 @@ class Nested(Field):
         self.Description = Description
         self.Children = Children
         self.IsHidden = IsHidden
+
+    @recursive_repr()
+    def __repr__(self) -> str:
+        return (
+            f"Nested("
+            f"Caption={repr(self.Caption)},"
+            f"Description={repr(self.Description)},"
+            f"Children={repr(self.Children)},"
+            f"*,IsHidden={repr(self.IsHidden)}"
+            f")"
+        )
