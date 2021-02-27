@@ -240,7 +240,7 @@ namespace UnrealSDK
 
 			Logging::LogF("\n\nInitializing UE4 SDK...\n");
 			auto addy = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::GObjects.Sig, Signatures::GObjects.Mask);
-			auto x = (FUObjectArray*)(0x140000000 + (0x00fffffff & (addy + *(DWORD*)(addy + 0x3) + 0x7)));
+			auto x = (FUObjectArray*)(addy + *(signed long*)(addy + 0x3) + 0x7);
 
 			pGObjects = (void*)(&(x->ObjObjects));
 
@@ -248,7 +248,7 @@ namespace UnrealSDK
 			Logging::LogF("[Internal] GObjects = 0x%p\n", x->ObjObjects.Objects);
 			
 			auto addy2 = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::GNames.Sig, Signatures::GNames.Mask);
-			auto y = (*(FChunkedFNameEntryArray**)(addy2 + *(DWORD*)(addy2 + 0xB) + 0xF));
+			auto y = (*(FChunkedFNameEntryArray**)(addy2 + *(signed long*)(addy2 + 0xB) + 0xF));
 			pGNames = (void***)(y);
 
 			Logging::LogF("[Internal] GNames = 0x%p\n", (void***)(y->Objects) );
@@ -258,22 +258,22 @@ namespace UnrealSDK
 			Logging::LogF("[Internal] FindOrCreateFName = 0x%p\n", pFNameInit);
 
 			auto addy3 = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::StaticConstructor.Sig, Signatures::StaticConstructor.Mask);
-			auto z = (0x140000000 + (0x00fffffff & (addy3 + *(DWORD*)(addy3 + 0x1) + 5)));
+			auto z = (addy3 + *(signed long*)(addy3 + 0x1) + 5);
 			pStaticConstructObject = reinterpret_cast<tStaticConstructObject>(z);
 			Logging::LogF("[Internal] UObject::StaticConstructObject() = 0x%p\n", pStaticConstructObject);
 
 			auto addy4 = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::StaticExec.Sig, Signatures::StaticExec.Mask);
-			auto j = (0x140000000 + (0x00fffffff & (addy4 + *(DWORD*)(addy4 + 0x1) + 5)));
+			auto j = (addy4 + *(signed long*)(addy4 + 0x1) + 5);
 			pStaticExec = reinterpret_cast<tStaticExec>(j);
 			Logging::LogF("[Internal] StaticExec() = 0x%p\n", pStaticExec);
 
 			auto addy5 = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::GMalloc.Sig, Signatures::GMalloc.Mask);
-			auto k = (0x140000000 + (0x00fffffff & (addy5 + *(DWORD*)(addy5 + 0x1) + 5)));
+			auto k = (addy5 + *(signed long*)(addy5 + 0x1) + 5);
 			pGMalloc = reinterpret_cast<tMalloc>(k);
 			Logging::LogF("[Internal] FMemory::MallocExternal() = 0x%p\n", pGMalloc);
 
 			auto addy6 = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::Realloc.Sig, Signatures::Realloc.Mask);
-			auto m = (0x140000000 + (0x00fffffff & (addy6 + *(DWORD*)(addy6 + 0x1) + 5)));
+			auto m = (addy6 + *(signed long*)(addy6 + 0x1) + 5);
 			pRealloc = reinterpret_cast<tRealloc>(m);
 			Logging::LogF("[Internal] FMemory::Realloc() = 0x%p\n", pRealloc);
 #else 
