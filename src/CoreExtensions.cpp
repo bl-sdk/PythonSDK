@@ -733,3 +733,8 @@ py::str FArray::Repr()
 	output << "]";
 	return output.str();
 }
+
+int FArray::len()
+{
+	return arr->Count;
+}
