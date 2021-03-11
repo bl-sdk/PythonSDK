@@ -90,7 +90,7 @@ namespace UnrealSDK
 
 	extern int EngineVersion;
 	extern int ChangelistNumber;
-	extern char* EngineBuild;
+	extern const char* EngineBuild;
 
 	extern class UObject* gEngine;
 

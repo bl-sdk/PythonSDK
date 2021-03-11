@@ -325,9 +325,6 @@ struct FArray {
 	py::str Repr();
 };
 
-
-
-
 // Class CoreUObject.Interface
 // 0x0000 (0x0028 - 0x0028)
 class UInterface : public UObject
@@ -566,11 +563,11 @@ public:
 		return ptr;
 	}
 
-	std::map<std::string, uint64_t> GetNames() {
-		std::map<std::string, uint64_t> returnNames;
+	std::map<std::wstring, uint64_t> GetNames() {
+		std::map<std::wstring, uint64_t> returnNames;
 		for (auto i = 0; i < Names.Num(); ++i) {
 			auto enumName = Names.Get(i);
-			returnNames.insert(std::pair<std::string, uint64_t>(std::string(enumName.Key.GetName()), enumName.Value));
+			returnNames.insert(std::pair<std::wstring, uint64_t>(Util::Widen(std::string(enumName.Key.GetName())), enumName.Value));
 		}
 		return returnNames;
 	}

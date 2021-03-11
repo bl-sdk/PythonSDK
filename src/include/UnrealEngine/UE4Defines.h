@@ -11,6 +11,8 @@
 #include "Util.h"
 #include <algorithm>
 
+struct FText;
+
 /** Objects flags for internal use (GC, low level UObject code) */
 enum class EInternalObjectFlags : int
 {
@@ -425,7 +427,7 @@ public:
 	{
 	};
 
-	FString(wchar_t* Other)
+	FString(const wchar_t* Other)
 	{
 		this->Max = this->Count = Other ? (wcslen(Other) + 1) : 0;
 		this->Data = (wchar_t*)calloc(this->Count, sizeof(wchar_t));
@@ -444,13 +446,11 @@ public:
 	};
 
 
-	char* AsString()
+	const wchar_t* AsString()
 	{
 		if (this->Data == nullptr || this->Count == 0)
-			return (char*)"";
-		char* output = (char*)calloc( (size_t)this->Count + 1, sizeof(char));
-		wcstombs(output, this->Data, this->Count);
-		return output;
+			return (wchar_t*)"";
+		return this->Data;
 	}
 
 	FString operator =(wchar_t* Other)
@@ -466,8 +466,13 @@ public:
 		return *this;
 	};
 
-
-
+	bool IsValid() {
+		// An FString is valid if:
+		//	* Data is not nullptr
+		//  * Count is greater than 0
+		//  * Count is less than (or equal to) the max
+		return (this->Data != nullptr && (this->Count > 0) && (this->Count <= this->Max));
+	}
 };
 
 struct FScriptDelegate
@@ -558,21 +563,97 @@ public:
 	}
 };
 
-struct FTextData {
-	unsigned char UnknownData[0x35];
+/* Information about any given FText */
+namespace ETextFlag
+{
+	enum Type /* Information about any given FText */
+	{
+		Transient = (1 << 0), // Practically all FStrings set in game will use this (See: definition of transient for more :P)
+		CultureInvariant = (1 << 1), // A string that does not care about any culture
+		ConvertedProperty = (1 << 2),
+		Immutable = (1 << 3),
+		InitializedFromString = (1 << 4),  // This FText was created by using FText::FromString
+	};
+}
 
-	const wchar_t* Name;
-	int Length;
+/*
+* No complexity to it, just holds the source string. 
+* This is *usually* the class that is used for FText-s, but sometimes they use other things like ones from a pool of FStrings
+*/
+class FTextHistory {
+public:
+	void** __vfptr;
+
+	/* Revision index of this history, rebuilds when it is out of sync with the FTextLocalizationManager */
+	uint16_t Revision;
+
+	unsigned char UnknownData0[14]; /* Unknown Data */
+
+	/* 
+	* Technically this isn't the proper format, but instead something different in most cases
+	* But it should work in place, the PooledString will be used if its valid (i.e. not nullptr && `Count > Max` && `Count <= 0`)
+	* Normally the pooled version is a subclass of FTextHistory, but this seems to work and you can just check if PooledString is valid
+	*/
+	class FString* PooledString;
+
+	unsigned char UnknownData[24]; /* Unknown Data */
+
+	/* The actual FText data, stored as an FString */
+	class FString SourceString;
+
+	FString* GetSourceString() {
+		if (PooledString != nullptr && PooledString->IsValid()) {
+			return PooledString;
+		}
+		return &SourceString;
+	}
+
+	void SetSourceString(FString* val) {
+		// When setting the source string, we want to override both the PooledString AND the SourceString for consistency
+
+		if (PooledString != nullptr && PooledString->IsValid()) { // Don't copy if it is nullptr or invalid (if its invalid, then that means its not used)
+			memcpy(PooledString, val, sizeof(FString*));
+			PooledString->Count = val->Count;
+			PooledString->Max = val->Max;
+		}
+		if (&SourceString != nullptr) { // Always copy to SourceString if the pointer is fine
+			memcpy(&SourceString, val, sizeof(FString*));
+			SourceString.Count = val->Count;
+			SourceString.Max = val->Max;
+		}
+	}
 };
 
 struct FText {
-	unsigned char UnknownData[0x8];
+	unsigned char UnknownData[0x8]; // Unknown
 
-	FTextData* Data;
-	const wchar_t* GetName() const {
-		if (Data) 
-			return Data->Name;
+	FTextHistory* Data; 
+
+	uint32_t Flags; /* Flags with various information on what sort of FText this is, see: ETextFlag::Type */
+
+	const wchar_t* ToString() const {
+		if (Data) {
+			FString* result = Data->GetSourceString();
+			if (result == nullptr || !result->IsValid()) return nullptr;
+			return result->AsString();
+		}
 		return nullptr;
+	}
+
+	FString* GetFString() {
+		if (Data) {
+			FString* src = Data->GetSourceString();
+			// Return nullptr if src is nullptr or the string isn't valid
+			if (src == nullptr || !src->IsValid()) return nullptr;
+			return src;
+		}
+		return nullptr;
+	}
+
+	void SetString(FString* str) {
+		if (Data) {
+			Data->SetSourceString(str);
+		}
 	}
 };
 
@@ -584,10 +665,6 @@ class TMap
 	char UnknownData[0x50];
 };
 
-struct FScriptMulticastDelegate
-{
-	char UnknownData[0x10];
-};
 
 
 struct FWeakObjectPtr
@@ -756,6 +833,12 @@ template<typename ObjectType>
 class TLazyObjectPtr : FLazyObjectPtr
 {
 
+};
+
+struct FScriptMulticastDelegate
+{
+	FName FunctionName; // Name of the function to call on the bound object
+	FWeakObjectPtr Object; // The object bound to this delegate, or nullptr if no object is bound
 };
 
 

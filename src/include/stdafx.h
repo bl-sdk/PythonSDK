@@ -102,7 +102,7 @@ namespace pybind11
 				if (!isinstance<sequence>(src))
 					return false;
 				PyObject* source = src.ptr();
-				const char* tmp = PyUnicode_AsUTF8AndSize(source, nullptr);
+				const wchar_t* tmp = PyUnicode_AsWideCharString(source, nullptr);
 				if (!tmp)
 					return false;
 				value = FString(tmp);

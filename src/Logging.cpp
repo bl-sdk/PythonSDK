@@ -86,7 +86,7 @@ namespace Logging
 					UnrealSDK::gameConsole->OutputTextCpp((wchar_t*)wfmt.c_str());
 				}
 				#else
-				UnrealSDK::gameConsole->OutputText(FString((wchar_t*)wfmt.c_str()));
+				UnrealSDK::gameConsole->OutputText(FString(wfmt.c_str()));
 				#endif
 
 				if (doInjectedNext) UnrealSDK::DoInjectedCallNext();

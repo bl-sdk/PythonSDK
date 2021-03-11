@@ -5,6 +5,7 @@
 #include "Util.h"
 #include <string>
 #include <cstdlib>
+#include <sstream>
 
 
 bool VerifyPythonFunction(py::object funcHook, const char** expectedKeys)
@@ -108,7 +109,14 @@ PYBIND11_EMBEDDED_MODULE(unrealsdk, m)
 	Export_pystes_TArray(m);
 
 	m.def("GetVersion", []() { return py::make_tuple(VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH); });
-	m.def("Log", [](py::object in) { Logging::LogPy(repr(in)); });
+	m.def("Log", [](py::args args) { 
+		std::ostringstream msg;
+		for (py::size_t i = 0; i < args.size(); i++) {
+			if (i > 0) msg << " ";
+			msg << py::str(args[i]);
+		}
+		Logging::LogPy(msg.str());
+	});
 	m.def("LoadPackage", &UnrealSDK::LoadPackage, py::arg("filename"), py::arg("flags") = 0, py::arg("force") = false);
 	m.def("KeepAlive", &UnrealSDK::KeepAlive);
 	m.def("GetPackageObject", &UObject::GetPackageObject, py::return_value_policy::reference);

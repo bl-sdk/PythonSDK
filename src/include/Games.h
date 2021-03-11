@@ -100,7 +100,8 @@ static std::map<std::string, std::string> bl2_object_map {
 	{"EngineObjectType", "WillowGameEngine"},
 	{"EngineObjectName", "Transient.WillowGameEngine"},
 	{"EngineFullName", "WillowGameEngine Transient.WillowGameEngine"},
-	{"PostRenderFunction", "WillowGame.WillowGameViewportClient.PostRender"}
+	{"PostRenderFunction", "WillowGame.WillowGameViewportClient.PostRender"},
+	{"StartupSDK", "Engine.Console.Initialized"}
 };
 
 #pragma endregion
@@ -185,7 +186,7 @@ static std::map<std::string, MemorySignature> bl3_signatures{ {
 		"xxxxxx????xx????xxxxx????xxxxx",
 		30
 	}},
-	{
+	{ // TODO: Fix this signature, it seems to not entirely work
 	"GetDefaultObject", {
 		"\x48\x85\xD2\x0F\x84\x00\x00\x00\x00\x4C\x8B\xDC\x57\x48\x81\xEC\x00\x00\x00\x00\x48\x8B\x05\x00\x00\x00\x00\x48\x33\xC4\x48\x89\x84\x24\x00\x00\x00\x00\x48\x8B\xC2",
 		"xxxxx????xxxxxxx????xxx????xxxxxxx????xxx",
@@ -205,7 +206,8 @@ static std::map<std::string, std::string> bl3_object_map{
 	{"EngineObjectType", "/Script/OakGame.OakGameEngine"},
 	{"EngineObjectName", "/Engine/Transient.OakGameEngine"},
 	{"EngineFullName", "OakGameEngine /Engine/Transient.OakGameEngine"},
-	{"PostRenderFunction", "/Script/Engine.HUD.ReceiveDrawHUD"}
+	{"PostRenderFunction", "/Script/Engine.HUD.ReceiveDrawHUD"},
+	{"StartupSDK", "/Script/OakGame.MenuMapMenuFlow.Start"} // This function is used in BL3 near the map start up
 };
 
 #pragma endregion

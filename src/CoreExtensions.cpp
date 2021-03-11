@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include <stack>
 #include <utility>
+#include <sstream>
 
 #ifndef UE4
 #include "UnrealEngine/Core/UE3/Core_classes.h"
@@ -191,7 +192,7 @@ UClass* UObject::FindClass(const char* ClassName, const bool Lookup)
 			UnrealSDK::ClassMap[object->GetName()] = static_cast<UClass*>(object);
 		#ifdef UE4
 		else if (strncmp(c, "BlueprintGeneratedClass", 23) == 0) 
-			UnrealSDK::ClassMap[object->GetFullName()] = static_cast<UBlueprintGeneratedClass*>(object);
+			UnrealSDK::ClassMap[object->GetName()] = static_cast<UBlueprintGeneratedClass*>(object);
 		#endif
 	}
 
@@ -403,9 +404,12 @@ class UObject* FHelper::GetWeakObjectProperty(UWeakObjectProperty* Prop) {
 const wchar_t* FHelper::GetTextProperty(UTextProperty* Prop) {
 	auto addr = GetPropertyAddress(Prop);
 	auto z = reinterpret_cast<FText*>(addr);
-	// TODO: Fix this crashing on empty strings
-	// For example: obj dump /Game/PlayerCharacters/Operative/_Shared/_Design/Character/BPChar_Operative.Default__BPChar_Operative_C
-	return z->GetName();
+
+	FString* ptr = z->GetFString();
+	if (ptr != nullptr) 
+		return ptr->AsString();
+	else 
+		return L"";
 }
 
 py::object FHelper::GetSetProperty(USetProperty* Prop) {
@@ -534,13 +538,11 @@ void FHelper::SetProperty(class UTextProperty* Prop, const py::object& Val)
 		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected string!\n").c_str());
 	auto z = reinterpret_cast<FText*>(GetPropertyAddress(Prop));
 
-	if (z->Data) {
-		std::wstring str = Val.cast<std::wstring>();
-		// wcslen doesn't include the final null byte btw
-		z->Data->Length = (int)wcslen(str.c_str())+1;
-		const wchar_t* cstr = str.c_str();
-		// Copy the passed python object as a string into the name buffer
-		wcsncpy(const_cast<wchar_t*>(z->Data->Name), cstr, z->Data->Length);
+	if (z->Data) { // Setting the property of a pre-existing string
+		z->SetString(&FString(Val.cast<std::wstring>().c_str()));
+	}
+	else {
+
 	}
 }
 
@@ -637,7 +639,9 @@ void FHelper::SetProperty(class UStrProperty* Prop, const py::object& Val)
 {
 	if (!py::isinstance<py::str>(Val))
 		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected string!\n").c_str());
-	memcpy(GetPropertyAddress(Prop), &FString(Val.cast<std::string>().c_str()), sizeof(FString));
+	auto setString = FString(Val.cast<std::wstring>().c_str());
+
+	memcpy(GetPropertyAddress(Prop), &setString, sizeof(FString));
 }
 
 void FHelper::SetProperty(class UObjectProperty* Prop, const py::object& Val)
@@ -657,14 +661,16 @@ void FHelper::SetProperty(class UClassProperty* Prop, const py::object& Val)
 void FHelper::SetProperty(class UNameProperty* Prop, const py::object& Val)
 {
 	if (!py::isinstance<py::str>(Val)) throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected string!\n").c_str());
-	memcpy(GetPropertyAddress(Prop), &FName(Val.cast<std::string>().c_str()), sizeof(FName));
+	auto name = FName(Val.cast<std::string>().c_str());
+	memcpy(GetPropertyAddress(Prop), &name, sizeof(FName));
 }
 
 void FHelper::SetProperty(class UDelegateProperty* Prop, const py::object& Val)
 {
 	if (!py::isinstance<FScriptDelegate>(Val)) 
 		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected FScriptDelegate!\n").c_str());
-	memcpy(GetPropertyAddress(Prop), &FScriptDelegate(Val.cast<FScriptDelegate>()), sizeof(FScriptDelegate));
+	auto script = FScriptDelegate(Val.cast<FScriptDelegate>());
+	memcpy(GetPropertyAddress(Prop), &script, sizeof(FScriptDelegate));
 }
 
 void FHelper::SetProperty(class UFloatProperty* Prop, const py::object& Val)
@@ -694,14 +700,14 @@ void FHelper::SetProperty(class UEnumProperty* Prop, const py::object& Val)
 	auto EnumNames = Prop->Enum->GetNames();
 
 	bool bUnknownEnumValue = true;
-	std::string acceptableValues = "";
+	std::wstring acceptableValues = L"";
 
 	if (py::isinstance<py::str>(Val)) {
-		std::string inputValue = Val.cast<std::string>();
-		for (std::pair<std::string, uint64_t> element : EnumNames) {
-			std::string Name = element.first;
-			std::string simplifiedName = element.first.substr(element.first.find_last_of(':') + 1);
-			acceptableValues.append(element.first + ", " + simplifiedName + ", ");
+		std::wstring inputValue = Val.cast<std::wstring>();
+		for (std::pair<std::wstring, uint64_t> element : EnumNames) {
+			std::wstring Name = element.first;
+			std::wstring simplifiedName = element.first.substr(element.first.find_last_of(':') + 1);
+			acceptableValues.append(element.first + L", " + simplifiedName + L", ");
 			if (inputValue == Name || inputValue == simplifiedName) {
 				enumValue = element.second;
 				bUnknownEnumValue = false;
@@ -714,8 +720,8 @@ void FHelper::SetProperty(class UEnumProperty* Prop, const py::object& Val)
 		enumValue = Val.cast<int>();
 
 		// Some simple sanity checking in order to make sure you can't set the enum to a value that it can't be
-		for (std::pair<std::string, uint64_t> element : EnumNames) {
-			acceptableValues.append(std::to_string(element.second) + ", ");
+		for (std::pair<std::wstring, uint64_t> element : EnumNames) {
+			acceptableValues.append(std::to_wstring(element.second) + L", ");
 			if (element.second == enumValue) {
 				bUnknownEnumValue = false;
 				break;
@@ -729,22 +735,22 @@ void FHelper::SetProperty(class UEnumProperty* Prop, const py::object& Val)
 		if (!enumDict.contains("Type") || !enumDict.contains("Name") || !enumDict.contains("Value"))
 			throw std::exception(Util::Format("FHelper::SetProperty: Unexpected enum value! Enum Dictionary Format: { Type: UEnum, Name: Str, Value: Int}\n").c_str());
 
-		std::string ValName = enumDict["Name"].cast<std::string>();
+		std::wstring ValName = enumDict["Name"].cast<std::wstring>();
 		UEnum* ValEnum = enumDict["Type"].cast<UEnum*>();
 		enumValue = enumDict["Value"].cast<int>();
 
 		if(ValEnum != Prop->Enum) // Different enums between inputs
 			throw std::exception(Util::Format("FHelper::SetProperty: Unexpected enum value! Cannot convert %s to %s\n", ValEnum->GetName(), Prop->Enum->GetName()).c_str());
 
-		std::string completeName = Prop->Enum->CppType.AsString();
-		completeName.append("::" + ValName);
+		std::wstring completeName = Prop->Enum->CppType.AsString();
+		completeName.append(L"::" + ValName);
 
 		if (EnumNames.count(completeName) == 0) // If the given name is not valid
 			throw std::exception(Util::Format("FHelper::SetProperty: Unexpected enum value! Unknown enum name of %s\n", ValName.c_str()).c_str());
 
 
-		for (std::pair<std::string, uint64_t> element : EnumNames) {
-			acceptableValues.append(std::to_string(element.second) + ", ");
+		for (std::pair<std::wstring, uint64_t> element : EnumNames) {
+			acceptableValues.append(std::to_wstring(element.second) + L", ");
 			if (element.second == enumValue) {
 				bUnknownEnumValue = false;
 				break;
@@ -752,7 +758,7 @@ void FHelper::SetProperty(class UEnumProperty* Prop, const py::object& Val)
 		}
 	}
 
-	acceptableValues = acceptableValues.substr(0, acceptableValues.find_last_of(","));
+	acceptableValues = acceptableValues.substr(0, acceptableValues.find_last_of(L","));
 
 	if (bUnknownEnumValue)
 		throw std::exception(Util::Format("FHelper::SetProperty: Unexpected enum value! Acceptable values: %s\n", acceptableValues.c_str()).c_str());
@@ -800,10 +806,10 @@ void FHelper::SetProperty(class UArrayProperty* Prop, const py::object& Val)
 
 	}
 	currentArray->Count = s.size();
-	int x = 0;
+	long x = 0;
 	for (const auto it : Val)
 	{
-		reinterpret_cast<FHelper*>(currentArray->Data + Prop->GetInner()->ElementSize * x++)->SetProperty(
+		reinterpret_cast<FHelper*>(currentArray->Data + (long)Prop->GetInner()->ElementSize * x++)->SetProperty(
 			Prop->GetInner(), py::reinterpret_borrow<py::object>(it));
 	}
 
@@ -966,28 +972,19 @@ void FStruct::SetProperty(std::string& PropName, py::object value) const
 
 py::str FStruct::Repr() const
 {
-	py::str s = "{";
+	std::ostringstream output;
+	output << "{";
+
 	const UStruct* thisField = structType;
-	while (thisField)
-	{
-		for (UField* Child = thisField->Children; Child != nullptr; Child = Child->Next)
-		{
-			UProperty* prop = (UProperty*)structType->FindChildByName(FName(Child->GetName()));
-#ifndef UE4
-			if (prop && prop->PropertyFlags & 0x80)
-#else
-			if(prop)
-#endif
-			{
-				s = py::str("{}{}: {}").format(s, Child->GetName(), repr(GetProperty(Child->GetName())));
-				if (Child->Next || (thisField->SuperField && thisField->SuperField->Children))
-					s = py::str("{}{}").format(s, ", ");
-			}
+	while (thisField) {
+		for (UField* Child = thisField->Children; Child != nullptr; Child = Child->Next) {
+			if (Child != thisField->Children) output << ", ";
+			output << Child->GetName() << ": " << py::repr(GetProperty(Child->GetName()));
 		}
 		thisField = thisField->SuperField;
 	}
-	s = py::str("{}{}").format(s, "}");
-	return s;
+	output << "}"; 
+	return output.str();
 }
 
 // FArray =======================================================================
@@ -1003,18 +1000,18 @@ py::object FArray::GetItem(unsigned int i) const
 {
 	if (i >= arr->Count)
 		throw pybind11::index_error();
-	return ((FHelper*)(arr->Data + type->ElementSize * i))->GetProperty(type);
+	return ((FHelper*)(arr->Data + type->ElementSize * (long)i))->GetProperty(type);
 }
 
 void FArray::Clear() {
 	arr->Empty();
 }
 
-void FArray::SetItem(unsigned int I, py::object Obj) const
+void FArray::SetItem(unsigned int i, py::object Obj) const
 {
-	if (I >= arr->Count)
+	if (i >= arr->Count)
 		throw pybind11::index_error();
-	((FHelper*)(arr->Data + type->ElementSize * I))->SetProperty(type, std::move(Obj));
+	((FHelper*)(arr->Data + type->ElementSize * (long)i))->SetProperty(type, std::move(Obj));
 }
 
 long FArray::GetAddress() const
@@ -1035,15 +1032,15 @@ py::object FArray::Next()
 	return GetItem(IterCounter++);
 }
 
-py::str FArray::Repr()
-{
-	py::str s = "[";
-	for (unsigned int x = 0; x < arr->Count; x++)
-	{
-		s = py::str("{}{}").format(s, repr(GetItem(x)));
-		if (x + 1 < arr->Count)
-			s = py::str("{}{}").format(s, ", ");
+py::str FArray::Repr() {
+	std::ostringstream output;
+	output << "[";
+	for (unsigned int i = 0; i < arr->Count; i++) {
+		if (i > 0) {
+			output << ", ";
+		}
+		output << py::repr(GetItem(i));
 	}
-	s = py::str("{}{}").format(s, "]");
-	return s;
+	output << "]";
+	return output.str();
 }

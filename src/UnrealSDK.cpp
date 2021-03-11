@@ -53,7 +53,7 @@ namespace UnrealSDK
 	int EngineVersion = -1;
 	int ChangelistNumber = -1;
 
-	char* EngineBuild;
+	const char* EngineBuild;
 
 	tProcessEvent oProcessEvent = nullptr;
 	tCallFunction oCallFunction = nullptr;
@@ -83,16 +83,18 @@ namespace UnrealSDK
 		//Logging::LogF("2\n");
 		if (logAllCalls)
 		{
-			//std::string callerName = caller->GetFullName();
+			std::string callerName = caller->GetFullName();
 
-			//Logging::LogF("===== ProcessEvent called =====\npCaller Name = %s\npFunction Name = %s\n", callerName.c_str(), functionName.c_str());
+			Logging::LogF("===== ProcessEvent called =====\npCaller Name = %s\npFunction Name = %s\n", callerName.c_str(), functionName.c_str());
 		}
 
-		if (gHookManager->HasHook(caller, Function) && !gHookManager->ProcessHooks(
-			functionName, caller, Function, &FStruct{ Function, Params }))
+		if (gHookManager->HasHook(caller, Function))
 		{
-			// The engine hook manager told us not to pass this function to the engine
-			return;
+			auto fParams = FStruct{ Function, Params };
+			if (!gHookManager->ProcessHooks(functionName, caller, Function, &fParams)) {
+				// The engine hook manager told us not to pass this function to the engine
+				return;
+			}
 		}
 		//Logging::LogF("3\n");
 
@@ -163,7 +165,7 @@ namespace UnrealSDK
 			auto z = Util::Narrow(cmd);
 			const char* input = z.c_str();
 			Python->AddToConsoleLog(gameConsole, input);
-			Logging::LogIgnoreUE(">>> %s <<<", cmd);
+			Logging::LogIgnoreUE(">>> %s <<<", input);
 			UnrealSDK::Python->DoFile(input + 7);
 			return true;
 		}
@@ -211,7 +213,7 @@ namespace UnrealSDK
 		logAllCalls = Enabled;
 	}
 
-	void hookGame()
+	void HookGame()
 	{
 		TCHAR szExePath[2048];
 		char actualPath[2048];
@@ -350,16 +352,14 @@ namespace UnrealSDK
 			// Detour UObject::ProcessEvent()
 			MH_CreateHook((PVOID&)pProcessEvent, &hkProcessEvent, &(PVOID&)oProcessEvent);
 			MH_EnableHook((PVOID&)pProcessEvent);
-			Logging::LogF("Hooked ProcessEvent\n");
+			Logging::LogF("[Internal] Hooked ProcessEvent, Hook: 0x%p, Original: 0x%p\n", pProcessEvent, oProcessEvent);
 		}
-
-		Logging::LogF("Detour created\n");
 
 		if (pCallFunction != nullptr) {
 			// Detour UObject::CallFunction()
 			MH_CreateHook((PVOID&)pCallFunction, &hkCallFunction, &(PVOID&)oCallFunction);
 			MH_EnableHook((PVOID&)pCallFunction);
-			Logging::LogF("Hooked CallFunction\n");
+			Logging::LogF("[Internal] Hooked CallFunction, Hook: 0x%p, Original: 0x%p\n", pCallFunction, oCallFunction);
 		}
 
 		#ifdef UE4
@@ -367,7 +367,7 @@ namespace UnrealSDK
 			// Detour StaticExec()
 			MH_CreateHook((PVOID&)pStaticExec, &hkStaticExec, &(PVOID&)oStaticExec);
 			MH_EnableHook((PVOID&)pStaticExec);
-			Logging::LogF("Hooked StaticExec\n");
+			Logging::LogF("[Internal] Hooked StaticExec, Hook: 0x%p, Original: 0x%p\n", pStaticExec, oStaticExec);
 		}
 		#endif
 	}
@@ -412,7 +412,6 @@ namespace UnrealSDK
 			gameConsole->ConsoleKey = FName("Tilde");
 
 #else
-
 		auto consoleClass = static_cast<UConsole*>(UObject::Find(ObjectMap["ConsoleObjectType"].c_str(), ObjectMap["ConsoleObjectName"].c_str()));
 		gameConsole = static_cast<UConsole*>(UnrealSDK::pStaticConstructObject(consoleClass->Class, consoleClass->Outer, FName(std::string("UConsole")), 0, 0, NULL, 0, NULL, 0));
 		auto eng = static_cast<UEngine*>(gEngine);
@@ -439,14 +438,12 @@ namespace UnrealSDK
 		}
 #endif
 
-
 		InitializePython();
 		gHookManager->Remove(Function->GetObjectName(), "GetCanvas");
 		return true;
-
 	}
 
-	void initializeGameVersions()
+	void InitializeGameVersions()
 	{
 		#ifndef UE4
 			EngineVersion = UObject::GetEngineVersion();
@@ -454,9 +451,9 @@ namespace UnrealSDK
 			Logging::LogD("[Internal] Engine Version = %d, Build Changelist = %d\n", EngineVersion, ChangelistNumber);
 		#else
 			//! THIS MAGICALLY BROKE :)
-			//	EngineBuild = UKismetSystemLibrary::GetEngineVersion().AsString();
+			// EngineBuild = Util::Narrow(UKismetSystemLibrary::GetEngineVersion().AsString()).c_str();
 			// UE4 doesn't really have a good version of "Changelist" its effectively just in Engine Version now
-			//	Logging::LogD("[Internal] Engine Version: %s\n", EngineBuild);
+			// Logging::LogD("[Internal] Engine Version: %s\n", EngineBuild);
 		#endif
 	}
 
@@ -555,7 +552,7 @@ namespace UnrealSDK
 
 		#endif
 
-		initializeGameVersions();
+		InitializeGameVersions();
 
 		Logging::PrintLogHeader();
 
@@ -569,16 +566,9 @@ namespace UnrealSDK
 	{
 		Logging::SetLoggingLevel("DEBUG");
 		gHookManager = new CHookManager("EngineHooks");
-		hookGame();
+		HookGame();
 
-		#ifdef UE4 
-			// This function is used in BL3 near the map start up
-			// TODO: Make this more generalized per game, that's probably better to do instead of this approach
-			gHookManager->Register("/Script/OakGame.MenuMapMenuFlow.Start", "StartupSDK", GameReady);
-		#else
-			gHookManager->Register("Engine.Console.Initialized", "StartupSDK", GameReady);
-		#endif
-
+		gHookManager->Register(ObjectMap["StartupSDK"], "StartupSDK", GameReady);
 	}
 
 	// This is called when the process is closing
