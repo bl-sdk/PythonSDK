@@ -51,7 +51,7 @@ DWORD WINAPI Start(LPVOID lpParam)
 
 DWORD WINAPI ListenForReload(LPVOID lpParam) {
 	while (!UnrealSDK::bPythonInitTried) { }
-#ifdef _DEBUG
+
 	while (true) {
 
 		if((GetKeyState(VK_NUMPAD0) & 0x80)) {
@@ -64,7 +64,7 @@ DWORD WINAPI ListenForReload(LPVOID lpParam) {
 		}
 
 	}
-#endif
+
 	return 0;
 }
 

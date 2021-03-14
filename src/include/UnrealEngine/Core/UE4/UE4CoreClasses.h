@@ -13,6 +13,7 @@
 #include "UnrealEngine/UE4Defines.h"
 
 class UStruct;
+struct FScriptDelegate;
 
 template<typename Fn>
 inline Fn GetVFunction(const void* instance, std::size_t index)
@@ -133,6 +134,10 @@ public:
 		return ptr;
 	}
 
+	inline void PostEditChangeProperty(FPropertyChangedEvent* PropertyChangedEvent) {
+		return GetVFunction<void(*)(UObject*, FPropertyChangedEvent& PropertyChangedEvent)>(this, 28)(this, *PropertyChangedEvent);
+	}
+
 	inline void ProcessEvent(class UFunction* function, void* parms)
 	{
 		return GetVFunction<void(*)(UObject*, class UFunction*, void*)>(this, 65)(this, function, parms);
@@ -197,6 +202,8 @@ public:
 	py::object GetReturn(FHelper* params);
 	py::object Call(py::args args, py::kwargs kwargs);
 };
+
+
 
 struct FOutParmRec
 {
@@ -431,20 +438,96 @@ public:
 
 };
 
+
+struct FScriptDelegate
+{
+public:
+	/* The object bound to this delegate, or nullptr if no object is bound */
+	FWeakObjectPtr Object;
+
+	/* Name of the function to call on the bound object */
+	struct FName FunctionName;
+	
+	/* Empty constructor to satisfy the compiler */
+	FScriptDelegate() { }
+
+	FScriptDelegate(FWeakObjectPtr Obj, FName func) {
+		Object = Obj;
+		FunctionName = func;
+	}
+
+	FScriptDelegate(UObject* obj, FName func) {
+		Object.Set(obj);
+		FunctionName = func;
+	}
+
+	/* An FScriptDelegate won't be bound if:
+		- Object is nullptr
+		- Object doesn't have a function by the name of `FunctionName`
+	*/
+	inline bool IsBound() const {
+		if (FunctionName.IsValid()) {
+			UObject* objPtr = Object.Get();
+			if (objPtr != nullptr) {
+				std::string funcName = std::string(FunctionName.GetName());
+				return (objPtr->GetFunction(funcName).func != nullptr);
+			}
+		}
+		return false;
+	}
+	/* Return a string representation of the given FScriptDelegate */
+	inline std::string ToString() const {
+		if (IsBound()) {
+			UObject* objPtr = Object.Get();
+			std::string funcName = std::string(FunctionName.GetName());
+			std::string fullName = objPtr->GetFunction(funcName).func->GetFullName();
+			return fullName; // Get the function and then return the full name
+		}
+
+		return "<UNBOUND>"; // Return "<UNBOUND>" if the FScriptDelegate isn't actually bound to anything
+	};
+};
+
+
+struct FRepRecord
+{
+	UProperty* Property;
+	int32_t Index;
+	FRepRecord(UProperty* InProperty, int32_t InIndex) : Property(InProperty), Index(InIndex) {}
+};
+
 // Class CoreUObject.Class
 // 0x0178 (0x0200 - 0x0088)
 class UClass : public UStruct
 {
 public:
+	uint32_t ClassUnique : 31;
+	uint32_t bCooked : 1;
+
+	EClassFlags ClassFlags;
+	EClassCastFlags ClassCastFlags;
+
+	UClass* ClassWithin;
+	UObject* ClassGeneratedBy;
+
+	FName ClassConfigName;
+	TArray<FRepRecord> ClassReps;
+	TArray<UField*> NetFields;
+
+	UClass* ClassDefaultObject;
+
+	unsigned char UnknownData01[0xB6];
+	
+	/*
 	unsigned long		bCooked : 1;
 	FPointer			ClassAddReferencedObjects;
-	unsigned long		ClassCastFlags;
+	EClassCastFlags		ClassCastFlags;
 	FName				ClassConfigName;
 	FPointer			ClassConstructor;
 	UObject* ClassDefaultObject;
-	unsigned int		ClassFlags;
+	EClassFlags		ClassFlags;
 	unsigned char       UnknownData00[0xD8];                           		// 0x00D0 (0x0100) MISSED OFFSET
-
+	*/
 
 	UObject* CreateDefaultObject()
 	{
@@ -473,6 +556,8 @@ public:
 
 
 	std::vector<UProperty*> GetProperties() const {
+		const auto size = sizeof(UClass);
+
 		const UStruct* thisField = this;
 		std::vector<UProperty*> propertyList;
 		while (thisField)
@@ -940,7 +1025,8 @@ public:
 class UInterfaceProperty : public UProperty
 {
 public:
-	unsigned char                                      UnknownData00[0x8];                                       // 0x0070(0x0008) MISSED OFFSET
+	/* Native interface class that this interface property refers to */
+	class UClass* InterfaceClass;
 
 	static UClass* StaticClass()
 	{
@@ -948,6 +1034,7 @@ public:
 		return ptr;
 	}
 
+	UClass* GetInterfaceClass() { return InterfaceClass;  }
 };
 
 

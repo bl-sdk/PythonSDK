@@ -49,5 +49,10 @@ void Export_pystes_gamedefines(py::module &m)
 
 	py::class_< FScriptDelegate >(m, "FScriptDelegate")
 		.def(py::init<UObject*, FName>())
+#ifdef UE4
+		.def("IsBound", &FScriptDelegate::IsBound)
+		.def("ToString", &FScriptDelegate::ToString)
+		.def("__repr__", &FScriptDelegate::ToString)
+#endif
 		;
 }

@@ -141,10 +141,10 @@ void Export_pystes_Core_classes(py::module& m)
 		.def("GetFunctions", &UClass::GetFunctions, py::return_value_policy::reference)
 		.def_static("StaticClass", &UClass::StaticClass, py::return_value_policy::reference)
 		.def_property("bCooked", [](UClass& self) {return self.bCooked; }, [](UClass& self, bool value) {self.bCooked = value ? 1 : 0; })
-		.def_readwrite("ClassAddReferencedObjects", &UClass::ClassAddReferencedObjects)
+		//.def_readwrite("ClassAddReferencedObjects", &UClass::ClassAddReferencedObjects)
 		.def_readwrite("ClassCastFlags", &UClass::ClassCastFlags)
 		.def_readwrite("ClassConfigName", &UClass::ClassConfigName)
-		.def_readwrite("ClassConstructor", &UClass::ClassConstructor)
+		//.def_readwrite("ClassConstructor", &UClass::ClassConstructor)
 		.def_readwrite("ClassDefaultObject", &UClass::ClassDefaultObject, py::return_value_policy::reference)
 		.def_readwrite("ClassFlags", &UClass::ClassFlags);
 

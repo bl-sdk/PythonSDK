@@ -234,17 +234,14 @@ void UObject::SetProperty(std::string& PropName, const py::object& Val)
 		reinterpret_cast<FHelper*>(this)->SetProperty(static_cast<UObjectProperty*>(prop), Val);
 	else
 		reinterpret_cast<FHelper*>(this)->SetProperty(prop, Val);
-	// TODO: Implement this (https://docs.unrealengine.com/en-US/API/Runtime/CoreUObject/UObject/FPropertyChangedEvent/index.html)
 
-	#ifndef UE4
-		if (UnrealSDK::gCallPostEdit)
-		{
-			FPropertyChangedEvent changeEvent{};
-			changeEvent.Property = prop;
-			changeEvent.ChangeType = 1;
-			PostEditChangeProperty(&changeEvent);
-		}
-	#endif
+	if (UnrealSDK::gCallPostEdit)
+	{
+		FPropertyChangedEvent changeEvent{};
+		changeEvent.Property = prop;
+		changeEvent.ChangeType = 1; // See: UE4 -- EPropertyChangeType::Unspecified
+		PostEditChangeProperty(&changeEvent);
+	}
 }
 
 void UObject::DumpObject()
@@ -865,6 +862,8 @@ void FHelper::SetProperty(class UProperty* Prop, const py::object& val)
 }
 
 // FFunction =======================================================================
+
+/* Get the given function (PropName) on the UObject, FFunction.func will be null if the function can't be found */
 struct FFunction UObject::GetFunction(std::string& PropName)
 {
 	const auto obj = this->Class->FindChildByName(FName(PropName));

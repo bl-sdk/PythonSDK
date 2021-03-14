@@ -52,7 +52,7 @@ public:
 	~TArray() {
 		DestroyItems(Data, Count);
 
-		volatile const T* Dummy = &DebugGet(0);
+		// volatile const T* Dummy = &DebugGet(0);
 	}
 
 	int Num()
@@ -301,7 +301,7 @@ public:
 		for (size_t i = 0; i < GObjects()->Count; ++i) {
 			if (GObjects()->GetByIndex(i) == obj) return i;
 		}
-		return -1;
+		return (size_t)-1;
 	}
 };
 
@@ -417,6 +417,14 @@ public:
 	{
 		return Index == A.Index;
 	}
+
+	/* An FName will be valid if:
+		- The Index is >= 0
+		- The Index is less than the size of GNames
+	*/
+	const bool IsValid() const {
+		return (Index >= 0 && Index < Names()->Count);
+	}
 };
 #pragma endregion
 
@@ -449,7 +457,7 @@ public:
 	const wchar_t* AsString()
 	{
 		if (this->Data == nullptr || this->Count == 0)
-			return (wchar_t*)"";
+			return L"";
 		return this->Data;
 	}
 
@@ -475,12 +483,6 @@ public:
 	}
 };
 
-struct FScriptDelegate
-{
-	// Technically in the UE4 source this is a TWeakPtr
-	class UObject* Object;
-	struct FName FunctionName;
-};
 
 template<class TEnum>
 class TEnumAsByte
@@ -522,7 +524,10 @@ private:
 class FScriptInterface
 {
 public:
+	// A pointer to a UObject that implements a native interface
 	UObject* ObjectPointer;
+
+	// A pointer to the location of the interface object within the UObject referenced by ObjectPointer.
 	void* InterfacePointer;
 
 public:
@@ -674,7 +679,8 @@ public:
 	int32_t ObjectSerialNumber;
 
 	inline FUObjectItem* GetObjectItem() const {
-		if (ObjectSerialNumber == 0 || ObjectIndex < 0) { return nullptr; }
+		// If the serial is 0 and the index is <= 0, that means the obj pointer has been corrupted
+		if (ObjectSerialNumber == 0 && ObjectIndex <= 0) { return nullptr; }
 
 		FUObjectItem objItem = FUObjectArray::GObjects()->GetObjectItem(ObjectIndex);
 		if (ObjectSerialNumber != objItem.SerialNumber) return nullptr;
@@ -834,6 +840,7 @@ class TLazyObjectPtr : FLazyObjectPtr
 {
 
 };
+
 
 struct FScriptMulticastDelegate
 {

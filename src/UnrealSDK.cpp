@@ -183,15 +183,17 @@ namespace UnrealSDK
 		// When outside of the UE4 editor, there's no line wrapping in the console itself, and there's not an easy way to re-enable it,
 		// So why not just write it out into a txt file
 		else if (wcsncmp(L"flushlog", cmd, 8) == 0) {
-			std::ofstream file;
+			std::wofstream file;
 			file.open("console.log");
 			for (size_t i = 0; i < UnrealSDK::gameConsole->Scrollback.Count; i++) {
 				FString str = UnrealSDK::gameConsole->Scrollback(i);
 				file << str.AsString() << "\n";
 
+				std::string flattened = Util::Narrow(str.AsString());
+
 				// This extra format specifier needs to be here (sometimes) because certain objects can have format specifiers in them
 				// The format specifiers in the string get interpreted as such and then it crashes.
-				Logging::LogIgnoreUE("%s", str.AsString());
+				Logging::LogIgnoreUE("%s", flattened.c_str());
 			}
 			return true;
 		}
@@ -463,8 +465,9 @@ namespace UnrealSDK
 		file.open("SDKDumps.txt");
 		for (size_t i = 0; i < UObject::GObjects()->Count; ++i) {
 			UObject* obj = UObject::GObjects()->Get(i);
-			if (obj && obj->Class) 
+			if (obj && obj->Class) {
 				file << obj->GetFullName() << std::endl;
+			}
 		}
 		file.close();
 
@@ -489,11 +492,10 @@ namespace UnrealSDK
 	{
 		Logging::LogD("[GameReady] Thread: %i\n", GetCurrentThreadId());
 
-		#ifdef _DEBUG // This should probably done a better way, but it doesn't sink in too much time
+		// This should probably done a better way, but it doesn't sink in too much time
 		remove("SDKDumps.txt");
 		std::ofstream file;
 		file.open("SDKDumps.txt", std::ios::app);
-		#endif
 
 		for (size_t i = 0; i < UObject::GObjects()->Count; ++i)
 		{
@@ -521,17 +523,15 @@ namespace UnrealSDK
 			if (!strcmp(Object->GetFullName().c_str(), ObjectMap["EngineFullName"].c_str()))
 				gEngine = Object;
 
-
-
-			#ifdef _DEBUG
 			file << Object->GetFullName() << "\n";
-			#endif
 		}
 
-		#ifdef _DEBUG
+
 		file.flush();
 		file.close();
+#ifdef _DEBUG
 		Logging::InitializeExtern();
+#endif
 
 		remove("SDKNames.txt");
 		std::ofstream f;
@@ -549,8 +549,6 @@ namespace UnrealSDK
 		}
 		f.flush();
 		f.close();
-
-		#endif
 
 		InitializeGameVersions();
 
