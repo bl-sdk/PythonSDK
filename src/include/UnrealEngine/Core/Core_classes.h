@@ -247,7 +247,7 @@ public:
 	bool IsA(UClass* PClass) const;
 	class UPackage* GetPackageObject() const;
 	static UClass* StaticClass();
-	static std::vector<UObject*> FindAll(char* InStr);
+	static std::vector<UObject*> FindAll(char* InStr, bool IncludeSubclasses);
 
 	py::object GetProperty(std::string PropName);
 	void SetProperty(std::string& PropName, const py::object& Val);

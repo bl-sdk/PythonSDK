@@ -86,7 +86,7 @@ UClass* UObject::StaticClass()
 	return ptr;
 };
 
-std::vector<UObject*> UObject::FindAll(char* InStr)
+std::vector<UObject*> UObject::FindAll(char* InStr, bool IncludeSubclasses = false)
 {
 	UClass* inClass = FindClass(InStr, true);
 	if (!inClass)
@@ -95,8 +95,17 @@ std::vector<UObject*> UObject::FindAll(char* InStr)
 	for (size_t i = 0; i < GObjects()->Count; ++i)
 	{
 		UObject* object = GObjects()->Data[i];
-		if (object && object->Class == inClass)
-			ret.push_back(object);
+		if (!object || !object->Class) {
+			continue;
+		}
+		UClass* cls = object->Class;
+		do {
+			if (cls == inClass) {
+				ret.push_back(object);
+				break;
+			}
+			cls = static_cast<UClass*>(cls->SuperField);
+		} while (IncludeSubclasses && cls);
 	}
 	return ret;
 }
