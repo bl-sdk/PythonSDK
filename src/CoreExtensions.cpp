@@ -335,7 +335,7 @@ void FHelper::SetDelegateProperty(class UProperty* Prop, int idx, const py::obje
 
 void FHelper::SetFloatProperty(class UProperty* Prop, int idx, const py::object& Val)
 {
-	if (!py::isinstance<py::float_>(Val))
+	if (!py::isinstance<py::float_>(Val) && !py::isinstance<py::int_>(Val))
 		throw py::type_error("FHelper::SetProperty: Got unexpected type, expected float!");
 
 	reinterpret_cast<float*>(GetPropertyAddress(Prop, idx))[0] = Val.cast<float>();
@@ -368,9 +368,9 @@ void FHelper::SetBoolProperty(class UProperty* Prop, int idx, const py::object& 
 		Logging::LogD("SetBoolProperty %d, mask: 0x%x, base: 0x%x, offset: 0x%x\n", Val.cast<bool>(), static_cast<UBoolProperty*>(Prop)->GetMask(),
 		              this, Prop->Offset_Internal);
 		if (Val.cast<bool>())
-			reinterpret_cast<unsigned int*>(GetPropertyAddress(Prop, idx))[0] |= static_cast<UBoolProperty*>(Prop)->GetMask();
+			reinterpret_cast<unsigned int*>(GetPropertyAddress(Prop, 0))[0] |= static_cast<UBoolProperty*>(Prop)->GetMask();
 		else
-			reinterpret_cast<unsigned int*>(GetPropertyAddress(Prop, idx))[0] &= ~static_cast<UBoolProperty*>(Prop)->GetMask();
+			reinterpret_cast<unsigned int*>(GetPropertyAddress(Prop, 0))[0] &= ~static_cast<UBoolProperty*>(Prop)->GetMask();
 	}
 	catch (std::exception e)
 	{
@@ -467,10 +467,10 @@ void FHelper::SetProperty(class UProperty* Prop, const py::object& Val)
 		));
 	}
 
-	for (auto i = 0; i < size; i++) {
+	for (size_t i = 0; i < size; i++) {
 		(this->*setter)(Prop, i, seq[i]);
 	}
-	for (auto i = size; i < (size_t)Prop->ArrayDim; i++) {
+	for (size_t i = size; i < (size_t)Prop->ArrayDim; i++) {
 		(this->*setter)(Prop, i, py::none());
 	}
 }
