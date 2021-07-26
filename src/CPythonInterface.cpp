@@ -135,11 +135,9 @@ void AddToConsoleLog(UConsole* console, FString input)
 
 bool CheckPythonCommand(UObject* caller, UFunction* function, FStruct* params)
 {
-	FString* command = reinterpret_cast<FString*>(
-		((FHelper *)params->base)->GetPropertyAddress(
-			(UProperty *)params->structType->FindChildByName(FName("command")),
-			0
-		)
+	FString* command = ((FHelper*)params->base)->GetStrProperty(
+		(UProperty*)params->structType->FindChildByName(FName("command")),
+		0
 	);
 	char* input = command->AsString();
 	if (strncmp("py ", input, 3) == 0)

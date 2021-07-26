@@ -183,19 +183,19 @@ struct FHelper {
 	py::object GetProperty(class UProperty* Prop);
 	void SetProperty(class UProperty* Prop, const py::object& Val);
 
-	py::object GetStructProperty(class UProperty *Prop, int idx);
-	py::object GetStrProperty(class UProperty *Prop, int idx);
-	py::object GetObjectProperty(class UProperty *Prop, int idx);
-	py::object GetComponentProperty(class UProperty *Prop, int idx);
-	py::object GetClassProperty(class UProperty *Prop, int idx);
-	py::object GetNameProperty(class UProperty *Prop, int idx);
-	py::object GetInterfaceProperty(class UProperty *Prop, int idx);
-	py::object GetDelegateProperty(class UProperty *Prop, int idx);
-	py::object GetFloatProperty(class UProperty *Prop, int idx);
-	py::object GetIntProperty(class UProperty *Prop, int idx);
-	py::object GetByteProperty(class UProperty *Prop, int idx);
-	py::object GetBoolProperty(class UProperty *Prop, int idx);
-	py::object GetArrayProperty(class UProperty *Prop, int idx);
+	struct FStruct GetStructProperty(class UProperty *Prop, int idx);
+	struct FString* GetStrProperty(class UProperty *Prop, int idx);
+	class UObject* GetObjectProperty(class UProperty *Prop, int idx);
+	class UComponent* GetComponentProperty(class UProperty *Prop, int idx);
+	class UClass* GetClassProperty(class UProperty *Prop, int idx);
+	struct FName* GetNameProperty(class UProperty *Prop, int idx);
+	struct FScriptInterface* GetInterfaceProperty(class UProperty *Prop, int idx);
+	struct FScriptDelegate* GetDelegateProperty(class UProperty *Prop, int idx);
+	float GetFloatProperty(class UProperty *Prop, int idx);
+	int GetIntProperty(class UProperty *Prop, int idx);
+	unsigned char GetByteProperty(class UProperty *Prop, int idx);
+	bool GetBoolProperty(class UProperty *Prop, int idx);
+	struct FArray GetArrayProperty(class UProperty *Prop, int idx);
 
 	void SetStructProperty(class UProperty* Prop, int idx, const py::object& Val);
 	void SetStrProperty(class UProperty* Prop, int idx, const py::object& Val);
@@ -1290,7 +1290,7 @@ struct FFunction
 	UFunction *func;
 
 private:
-	FHelper* GenerateParams(const py::args& args, const py::kwargs& kwargs, FHelper* params);
+	void GenerateParams(const py::args& args, const py::kwargs& kwargs, FHelper* params);
 
 public:
 	py::object GetReturn(FHelper* params);
