@@ -71,8 +71,9 @@ namespace UnrealSDK
 			              callerName.c_str(), functionName.c_str());
 		}
 
+		auto ParamsStruct = FStruct{Function, Params};
 		if (gHookManager->HasHook(caller, Function) && !gHookManager->ProcessHooks(
-			functionName, caller, Function, &FStruct{Function, Params}))
+			functionName, caller, Function, &ParamsStruct))
 		{
 			// The engine hook manager told us not to pass this function to the engine
 			return;

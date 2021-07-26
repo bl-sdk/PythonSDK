@@ -279,7 +279,8 @@ void FHelper::SetStrProperty(class UProperty* Prop, int idx, const py::object& V
 	if (!py::isinstance<py::str>(Val))
 		throw py::type_error("FHelper::SetProperty: Got unexpected type, expected string!");
 
-	memcpy(GetPropertyAddress(Prop, idx), &FString(Val.cast<std::wstring>().c_str()), sizeof(FString));
+	auto str = FString(Val.cast<std::wstring>().c_str());
+	memcpy(GetPropertyAddress(Prop, idx), &str, sizeof(FString));
 }
 
 void FHelper::SetObjectProperty(class UProperty* Prop, int idx, const py::object& Val)
@@ -311,7 +312,8 @@ void FHelper::SetNameProperty(class UProperty* Prop, int idx,  const py::object&
 	if (!py::isinstance<py::str>(Val))
 		throw py::type_error("FHelper::SetProperty: Got unexpected type, expected string!");
 
-	memcpy(GetPropertyAddress(Prop, idx), &FName(Val.cast<std::string>().c_str()), sizeof(FName));
+	auto name = FName(Val.cast<std::string>().c_str());
+	memcpy(GetPropertyAddress(Prop, idx), &name, sizeof(FName));
 }
 
 void FHelper::SetInterfaceProperty(class UProperty* Prop, int idx, const py::object& Val)
@@ -334,9 +336,10 @@ void FHelper::SetDelegateProperty(class UProperty* Prop, int idx, const py::obje
 	if (!py::isinstance<FScriptDelegate>(Val))
 		throw py::type_error("FHelper::SetProperty: Got unexpected type, expected FScriptDelegate!");
 
+	auto ScriptDelegate = FScriptDelegate(Val.cast<FScriptDelegate>());
 	memcpy(
 		GetPropertyAddress(Prop, idx),
-		&FScriptDelegate(Val.cast<FScriptDelegate>()),
+		&ScriptDelegate,
 	    sizeof(FScriptDelegate)
 	);
 }
