@@ -41,7 +41,7 @@ void RegisterHook(const std::string& funcName, const std::string& hookName, py::
 			py::object ret = funcHook(py_caller, py_function, py_params);
 			return ret.cast<bool>();
 		} catch (std::exception e) {
-			Logging::LogF(e.what());
+			LOG(ERROR, e.what());
 		}
 		return true;
 	});
@@ -52,7 +52,7 @@ void RegisterHook(const std::string& funcName, const std::string& hookName, py::
 bool RegisterConsoleCommand(const std::string& ConsoleCommand, py::object funcHook) {
 	// Function Verification
 	static const char* params[] = { "command"};
-	if (!VerifyPythonFunction(funcHook, params)) { return false; }
+	if (!VerifyPythonFunction(funcHook)) { return false; }
 	return UnrealSDK::RegisterConsoleCommand(ConsoleCommand, [funcHook](std::string& command)
 		{
 			try
@@ -274,10 +274,10 @@ void AddToConsoleLog(UConsole* console, FString input)
 #ifndef UE4
 bool CheckPythonCommand(UObject* caller, UFunction* function, FStruct* params)
 {
-
 	FString* command = ((FHelper *)params->base)->GetStrProperty(
-		(UProperty *)params->structType->FindChildByName(FName("command")));
-
+		(UProperty *)params->structType->FindChildByName(FName("command")),
+		0
+	);
 	char* input = command->AsString();
 	if (strncmp("py ", input, 3) == 0)
 	{

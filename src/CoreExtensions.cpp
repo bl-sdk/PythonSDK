@@ -288,83 +288,90 @@ std::vector<UObject*> UObject::FindAll(char* InStr, bool IncludeSubclasses)
 	return ret;
 }
 
-// FHelper =======================================================================
-void* FHelper::GetPropertyAddress(UProperty* Prop)
+void* FHelper::GetPropertyAddress(UProperty* Prop, int idx)
 {
-	return reinterpret_cast<char*>(this) + Prop->Offset_Internal;
+	return reinterpret_cast<char*>(this) + Prop->Offset_Internal + (idx * Prop->ElementSize);
 }
 
-struct FStruct FHelper::GetStructProperty(UStructProperty* Prop)
+
+struct FStruct FHelper::GetStructProperty(UProperty* Prop, int idx)
 {
-	return FStruct{Prop->GetStruct(), GetPropertyAddress(Prop)};
+	return FStruct{
+		static_cast<UStructProperty*>(Prop)->GetStruct(),
+		GetPropertyAddress(Prop, idx)
+	};
 }
 
-struct FString* FHelper::GetStrProperty(UProperty* Prop)
+struct FString* FHelper::GetStrProperty(UProperty* Prop, int idx)
 {
-	return reinterpret_cast<FString*>(GetPropertyAddress(Prop));
+	return reinterpret_cast<FString*>(GetPropertyAddress(Prop, idx));
 }
 
-class UComponent* FHelper::GetComponentProperty(UProperty* Prop)
+class UComponent* FHelper::GetComponentProperty(UProperty* Prop, int idx)
 {
-	return reinterpret_cast<UComponent**>(GetPropertyAddress(Prop))[0];
+	return reinterpret_cast<UComponent**>(GetPropertyAddress(Prop, idx))[0];
 }
 
-py::object FHelper::GetArrayProperty(UArrayProperty* Prop)
+struct FArray FHelper::GetArrayProperty(UProperty* Prop, int idx)
 {
-	const auto array = reinterpret_cast<TArray<char>*>(GetPropertyAddress(Prop));
-	return pybind11::cast(FArray{ array, Prop->GetInner() });
+	const auto array = reinterpret_cast<TArray<char>*>(GetPropertyAddress(Prop, idx));
+	return FArray{ array, static_cast<UArrayProperty*>(Prop)->GetInner()};
 }
 
-class UObject* FHelper::GetObjectProperty(UProperty* Prop)
+
+class UObject* FHelper::GetObjectProperty(UProperty* Prop, int idx)
 {
-	return reinterpret_cast<UObject **>(GetPropertyAddress(Prop))[0];
+	return reinterpret_cast<UObject **>(GetPropertyAddress(Prop, idx))[0];
 }
 
-class UClass* FHelper::GetClassProperty(UProperty* Prop)
+class UClass* FHelper::GetClassProperty(UProperty* Prop, int idx)
 {
-	return reinterpret_cast<UClass **>(GetPropertyAddress(Prop))[0];
+	return reinterpret_cast<UClass **>(GetPropertyAddress(Prop, idx))[0];
 }
 
-struct FName* FHelper::GetNameProperty(UProperty* Prop)
+struct FName* FHelper::GetNameProperty(UProperty* Prop, int idx)
 {
-	return reinterpret_cast<FName*>(GetPropertyAddress(Prop));
+	return reinterpret_cast<FName*>(GetPropertyAddress(Prop, idx));
 }
 
-int FHelper::GetIntProperty(UProperty* Prop)
+struct FScriptInterface* FHelper::GetInterfaceProperty(UProperty* Prop, int idx)
 {
-	return reinterpret_cast<int*>(GetPropertyAddress(Prop))[0];
+	return reinterpret_cast<FScriptInterface*>(GetPropertyAddress(Prop, idx));
 }
 
-struct FScriptInterface* FHelper::GetInterfaceProperty(UProperty* Prop)
+struct FScriptDelegate* FHelper::GetDelegateProperty(UProperty* Prop, int idx)
 {
-	return reinterpret_cast<FScriptInterface*>(GetPropertyAddress(Prop));
+	return reinterpret_cast<FScriptDelegate*>(GetPropertyAddress(Prop, idx));
 }
 
-float FHelper::GetFloatProperty(UProperty* Prop)
+float FHelper::GetFloatProperty(UProperty* Prop, int idx)
 {
-	return reinterpret_cast<float*>(GetPropertyAddress(Prop))[0];
+	return reinterpret_cast<float*>(GetPropertyAddress(Prop, idx))[0];
 }
 
-struct FScriptDelegate* FHelper::GetDelegateProperty(UProperty* Prop)
-{
-	return reinterpret_cast<FScriptDelegate*>(GetPropertyAddress(Prop));
+int FHelper::GetIntProperty(UProperty* Prop, int idx) {
+	return reinterpret_cast<int*>(GetPropertyAddress(Prop, idx))[0];
 }
 
-unsigned char FHelper::GetByteProperty(UProperty* Prop)
+unsigned char FHelper::GetByteProperty(UProperty* Prop, int idx)
 {
-	return reinterpret_cast<unsigned char*>(GetPropertyAddress(Prop))[0];
+	return reinterpret_cast<unsigned char*>(GetPropertyAddress(Prop, idx))[0];
 }
 
-bool FHelper::GetBoolProperty(UBoolProperty* Prop)
+bool FHelper::GetBoolProperty(UProperty* Prop, int idx)
 {
-	return !!(GetIntProperty(Prop) & Prop->GetMask());
+	if (idx != 0) {
+		// Pretty sure this is a requirement of the engine, so we'll never actually run into it
+		throw py::index_error("FHelper::SetProperty: Bool arrays are not supported");
+	}
+	return !!(GetIntProperty(Prop, 0) & static_cast<UBoolProperty*>(Prop)->GetMask());
 }
 
 #ifdef UE4
-py::object FHelper::GetMapProperty(UMapProperty* Prop) {
+py::object FHelper::GetMapProperty(UProperty* Prop, int idx) {
 	// TODO: Figure out MapProperty
-	UProperty* KeyProp = Prop->KeyProp;
-	UProperty* ValueProp = Prop->ValueProp;
+	UProperty* KeyProp = static_cast<UMapProperty*>(Prop)->KeyProp;
+	UProperty* ValueProp = static_cast<UMapProperty*>(Prop)->ValueProp;
 
 	// Its kinda just a mess all around for the UMap stuff :)
 	return pybind11::none();
@@ -378,8 +385,8 @@ py::object FHelper::GetMapProperty(UMapProperty* Prop) {
 			^^^ I'm not quite sure if its a good decision if we do this
 			Possibly add a few functions of `USoftObjectProperty.GetAssetPath()` and `USoftObjectProperty.GetObject()` where GetObject() can return null
 */
-py::object FHelper::GetSoftClassProperty(USoftClassProperty* Prop) {
-	FSoftObjectPtr weakObjPtr = reinterpret_cast<FSoftObjectPtr*>(GetPropertyAddress(Prop))[0];
+py::object FHelper::GetSoftClassProperty(UProperty* Prop, int idx) {
+	FSoftObjectPtr weakObjPtr = reinterpret_cast<FSoftObjectPtr*>(GetPropertyAddress(Prop, idx))[0];
 	UClass* classObject = static_cast<UClass*>(weakObjPtr.WeakPtr.Get());
 	if (classObject != nullptr)
 		return py::cast(classObject);
@@ -387,8 +394,8 @@ py::object FHelper::GetSoftClassProperty(USoftClassProperty* Prop) {
 		return py::cast(weakObjPtr.ObjectID.AssetPathName);
 }
 
-py::object FHelper::GetSoftObjectProperty(USoftObjectProperty* Prop) {
-	FSoftObjectPtr weakObjPtr = reinterpret_cast<FSoftObjectPtr*>(GetPropertyAddress(Prop))[0];
+py::object FHelper::GetSoftObjectProperty(UProperty* Prop, int idx) {
+	FSoftObjectPtr weakObjPtr = reinterpret_cast<FSoftObjectPtr*>(GetPropertyAddress(Prop, idx))[0];
 	UObject* weakObj = weakObjPtr.WeakPtr.Get();
 	if (weakObj != nullptr)
 		return py::cast(weakObj);
@@ -396,14 +403,14 @@ py::object FHelper::GetSoftObjectProperty(USoftObjectProperty* Prop) {
 		return py::cast(weakObjPtr.ObjectID.AssetPathName);
 }
 
-class UObject* FHelper::GetWeakObjectProperty(UWeakObjectProperty* Prop) {
-	TWeakObjectPtr<> weakObjPtr = reinterpret_cast<TWeakObjectPtr<>*>(GetPropertyAddress(Prop))[0];
+class UObject* FHelper::GetWeakObjectProperty(UProperty* Prop, int idx) {
+	TWeakObjectPtr<> weakObjPtr = reinterpret_cast<TWeakObjectPtr<>*>(GetPropertyAddress(Prop, idx))[0];
 	UObject* weakObj = weakObjPtr.GetObjectPtr();
 	return weakObj;
 }
 
-const wchar_t* FHelper::GetTextProperty(UTextProperty* Prop) {
-	auto addr = GetPropertyAddress(Prop);
+const wchar_t* FHelper::GetTextProperty(UProperty* Prop, int idx) {
+	auto addr = GetPropertyAddress(Prop, idx);
 	auto z = reinterpret_cast<FText*>(addr);
 
 	FString* ptr = z->GetFString();
@@ -413,19 +420,19 @@ const wchar_t* FHelper::GetTextProperty(UTextProperty* Prop) {
 		return L"";
 }
 
-py::object FHelper::GetSetProperty(USetProperty* Prop) {
+py::object FHelper::GetSetProperty(UProperty* Prop, int idx) {
 	// TODO: Figure out SetProperty
 	return pybind11::none();
 }
 
-py::object FHelper::GetEnumProperty(UEnumProperty* Prop) {
+py::object FHelper::GetEnumProperty(UProperty* Prop, int idx) {
 	std::string simplifiedEnumName;
-	auto& names = Prop->Enum->Names;
+	auto& names = static_cast<UEnumProperty*>(Prop)->Enum->Names;
 
 	// TODO: Convert this into a better way of being able to read the value in the respective type
 	// Enums aren't always technically going to be uint8_t values.
 	// For now this does fine though.
-	uint64_t enumValue = reinterpret_cast<unsigned char*>(GetPropertyAddress(Prop))[0];
+	uint64_t enumValue = reinterpret_cast<unsigned char*>(GetPropertyAddress(Prop, idx))[0];
 
 	// Iterate over all of the available Enum names (ie "EGbxParamValueType::Float")
 	for (auto i = 0; i < names.Num(); ++i) {
@@ -440,7 +447,7 @@ py::object FHelper::GetEnumProperty(UEnumProperty* Prop) {
 
 	// For example: {"Type": EGbxParamValueType, "Name": "Int", "Value": 2}
 	py::dict returnDict;
-	returnDict["Type"] = Prop->Enum;
+	returnDict["Type"] = static_cast<UEnumProperty*>(Prop)->Enum;
 	returnDict["Name"] = simplifiedEnumName;
 	returnDict["Value"] = enumValue;
 
@@ -450,65 +457,108 @@ py::object FHelper::GetEnumProperty(UEnumProperty* Prop) {
 
 pybind11::object FHelper::GetProperty(UProperty* Prop)
 {
-	LOG(INTERNAL, "FHelper::GetProperty '%s' (offset 0x%x) (Prop at 0x%p) on 0x%p", Prop->GetFullName().c_str(),
-		Prop->Offset_Internal, Prop, this);
-	const char* className = Prop->Class->GetName();
-	if (!strcmp(className, "StructProperty")) return pybind11::cast(GetStructProperty(static_cast<UStructProperty*>(Prop)));
-	if (!strcmp(className, "StrProperty")) return pybind11::cast(GetStrProperty(Prop));
-	if (!strcmp(className, "ObjectProperty")) return pybind11::cast(GetObjectProperty(Prop));
-	#ifndef UE4
-	if (!strcmp(className, "ComponentProperty")) return pybind11::cast(GetComponentProperty(Prop));
-	#endif
-	if (!strcmp(className, "ClassProperty")) return pybind11::cast(GetClassProperty(Prop));
-	if (!strcmp(className, "NameProperty")) return pybind11::cast(GetNameProperty(Prop));
-	if (!strcmp(className, "IntProperty")) return pybind11::cast(GetIntProperty(Prop));
-	if (!strcmp(className, "InterfaceProperty")) return pybind11::cast(GetInterfaceProperty(Prop));
-	if (!strcmp(className, "FloatProperty")) return pybind11::cast(GetFloatProperty(Prop));
-	if (!strcmp(className, "DelegateProperty")) return pybind11::cast(GetDelegateProperty(Prop));
-	if (!strcmp(className, "ByteProperty")) return pybind11::cast(GetByteProperty(Prop));
-	if (!strcmp(className, "BoolProperty")) return pybind11::cast(GetBoolProperty(static_cast<UBoolProperty*>(Prop)));
-	if (!strcmp(className, "ArrayProperty")) return GetArrayProperty(static_cast<UArrayProperty*>(Prop));
+	LOG(INTERNAL,
+		"FHelper::GetProperty '%s' (offset 0x%x, arraydim %d) (Prop at 0x%p) on 0x%p\n",
+		Prop->GetFullName().c_str(),
+		Prop->Offset_Internal,
+		Prop->ArrayDim,
+		Prop,
+		this
+	);
 
+	py::object (*getter)(FHelper*, UProperty*, int);
+	const char* className = Prop->Class->GetName();
+
+	if (!strcmp(className, "StructProperty"))
+		getter = [](FHelper* obj, UProperty* Prop, int idx) { return py::cast(obj->GetStructProperty(Prop, idx)); };
+	else if (!strcmp(className, "StrProperty"))
+		getter = [](FHelper* obj, UProperty* Prop, int idx) { return py::cast(obj->GetStrProperty(Prop, idx)); };
+	else if (!strcmp(className, "ObjectProperty"))
+		getter = [](FHelper* obj, UProperty* Prop, int idx) { return py::cast(obj->GetObjectProperty(Prop, idx)); };
+	#ifndef UE4
+	else if (!strcmp(className, "ComponentProperty"))
+		getter = [](FHelper* obj, UProperty* Prop, int idx) { return py::cast(obj->GetComponentProperty(Prop, idx)); };
+	#endif
+	else if (!strcmp(className, "ClassProperty"))
+		getter = [](FHelper* obj, UProperty* Prop, int idx) { return py::cast(obj->GetClassProperty(Prop, idx)); };
+	else if (!strcmp(className, "NameProperty"))
+		getter = [](FHelper* obj, UProperty* Prop, int idx) { return py::cast(obj->GetNameProperty(Prop, idx)); };
+	else if (!strcmp(className, "InterfaceProperty"))
+		getter = [](FHelper* obj, UProperty* Prop, int idx) { return py::cast(obj->GetInterfaceProperty(Prop, idx)); };
+	else if (!strcmp(className, "DelegateProperty"))
+		getter = [](FHelper* obj, UProperty* Prop, int idx) { return py::cast(obj->GetDelegateProperty(Prop, idx)); };
+	else if (!strcmp(className, "FloatProperty"))
+		getter = [](FHelper* obj, UProperty* Prop, int idx) { return py::cast(obj->GetFloatProperty(Prop, idx)); };
+	else if (!strcmp(className, "IntProperty"))
+		getter = [](FHelper* obj, UProperty* Prop, int idx) { return py::cast(obj->GetIntProperty(Prop, idx)); };
+	else if (!strcmp(className, "ByteProperty"))
+		getter = [](FHelper* obj, UProperty* Prop, int idx) { return py::cast(obj->GetByteProperty(Prop, idx)); };
+	else if (!strcmp(className, "BoolProperty"))
+		getter = [](FHelper* obj, UProperty* Prop, int idx) { return py::cast(obj->GetBoolProperty(Prop, idx)); };
+	else if (!strcmp(className, "ArrayProperty"))
+		getter = [](FHelper* obj, UProperty* Prop, int idx) { return py::cast(obj->GetArrayProperty(Prop, idx)); };
 	#ifdef UE4
 	// These are probably UE4 specific properties, not quite sure but *eh*
 	// They're all basically the same thing as IntProperty, just different return types so I didn't wanna create 300 different new functions for it just cause its they're identical imo
-	if (!strcmp(className, "UInt32Property")) return pybind11::cast(reinterpret_cast<unsigned int*>(GetPropertyAddress(Prop))[0]);
-	if (!strcmp(className, "UInt64Property")) return pybind11::cast(reinterpret_cast<unsigned long*>(GetPropertyAddress(Prop))[0]);
-	if (!strcmp(className, "UInt16Property")) return pybind11::cast(reinterpret_cast<unsigned short*>(GetPropertyAddress(Prop))[0]);
-	if (!strcmp(className, "Int64Property"))  return pybind11::cast(reinterpret_cast<long*>(GetPropertyAddress(Prop))[0]);
-	if (!strcmp(className, "Int16Property"))  return pybind11::cast(reinterpret_cast<short*>(GetPropertyAddress(Prop))[0]);
-	if (!strcmp(className, "Int8Property"))   return pybind11::cast(reinterpret_cast<char*>(GetPropertyAddress(Prop))[0]);
-	if (!strcmp(className, "DoubleProperty")) return pybind11::cast(reinterpret_cast<double*>(GetPropertyAddress(Prop))[0]);
-
-	if (!strcmp(className, "EnumProperty")) return GetEnumProperty(static_cast<UEnumProperty*>(Prop));
-
-	if (!strcmp(className, "MulticastDelegateProperty"))
-		//  IMO its best to just pass out the function name, just cause its a delegate, and there's not much else to do with it
+	else if (!strcmp(className, "UInt32Property"))
+		getter = [](FHelper* obj, UProperty* Prop, int idx) { return py::cast(reinterpret_cast<unsigned int*>(obj->GetPropertyAddress(Prop, idx))[0]); } ;
+	else if (!strcmp(className, "UInt64Property"))
+		getter = [](FHelper* obj, UProperty* Prop, int idx) { return py::cast(reinterpret_cast<unsigned long*>(obj->GetPropertyAddress(Prop, idx))[0]); } ;
+	else if (!strcmp(className, "UInt16Property"))
+		getter = [](FHelper* obj, UProperty* Prop, int idx) { return py::cast(reinterpret_cast<unsigned short*>(obj->GetPropertyAddress(Prop, idx))[0]); } ;
+	else if (!strcmp(className, "Int64Property"))
+		getter = [](FHelper* obj, UProperty* Prop, int idx) { return py::cast(reinterpret_cast<long*>(obj->GetPropertyAddress(Prop, idx))[0]); } ;
+	else if (!strcmp(className, "Int16Property"))
+		getter = [](FHelper* obj, UProperty* Prop, int idx) { return py::cast(reinterpret_cast<short*>(obj->GetPropertyAddress(Prop, idx))[0]); } ;
+	else if (!strcmp(className, "Int8Property"))
+		getter = [](FHelper* obj, UProperty* Prop, int idx) { return py::cast(reinterpret_cast<char*>(obj->GetPropertyAddress(Prop, idx))[0]); } ;
+	else if (!strcmp(className, "DoubleProperty"))
+		getter = [](FHelper* obj, UProperty* Prop, int idx) { return py::cast(reinterpret_cast<double*>(obj->GetPropertyAddress(Prop, idx))[0]); } ;
+	else if (!strcmp(className, "EnumProperty"))
+		getter = [](FHelper* obj, UProperty* Prop, int idx) { return obj->GetEnumProperty(static_cast<UEnumProperty*>(Prop), idx); };
+	else if (!strcmp(className, "MulticastDelegateProperty"))
+		// IMO its best to just pass out the function name, just cause its a delegate, and there's not much else to do with it
 		//? Not sure whether or not, it should be `GetFullName` or just `GetName`
-		return pybind11::cast((static_cast<UMulticastDelegateProperty*>(Prop))->SignatureFunction->GetFullName());
-
-	if (!strcmp(className, "WeakObjectProperty")) return pybind11::cast(GetWeakObjectProperty(static_cast<UWeakObjectProperty*>(Prop)));
-	if (!strcmp(className, "TextProperty")) return pybind11::cast(GetTextProperty(static_cast<UTextProperty*>(Prop)));
-
-	if (!strcmp(className, "SoftClassProperty")) return GetSoftClassProperty(static_cast<USoftClassProperty*>(Prop));
-	if (!strcmp(className, "SoftObjectProperty")) return GetSoftObjectProperty(static_cast<USoftObjectProperty*>(Prop));
-
-	if (!strcmp(className, "MapProperty")) return GetMapProperty(static_cast<UMapProperty*>(Prop));
-	if (!strcmp(className, "SetProperty")) return GetSetProperty(static_cast<USetProperty*>(Prop));
+		getter = [](FHelper* obj, UProperty* Prop, int idx) { return py::cast((static_cast<UMulticastDelegateProperty*>(Prop))->SignatureFunction->GetFullName()); };
+	else if (!strcmp(className, "WeakObjectProperty"))
+		getter = [](FHelper* obj, UProperty* Prop, int idx) { return py::cast(obj->GetWeakObjectProperty(static_cast<UWeakObjectProperty*>(Prop), idx)); };
+	else if (!strcmp(className, "TextProperty"))
+		getter = [](FHelper* obj, UProperty* Prop, int idx) { return py::cast(obj->GetTextProperty(static_cast<UTextProperty*>(Prop), idx)); };
+	else if (!strcmp(className, "SoftClassProperty"))
+		getter = [](FHelper* obj, UProperty* Prop, int idx) { return obj->GetSoftClassProperty(static_cast<USoftClassProperty*>(Prop), idx); };
+	else if (!strcmp(className, "SoftObjectProperty"))
+		getter = [](FHelper* obj, UProperty* Prop, int idx) { return obj->GetSoftObjectProperty(static_cast<USoftObjectProperty*>(Prop), idx); };
+	else if (!strcmp(className, "MapProperty"))
+		getter = [](FHelper* obj, UProperty* Prop, int idx) { return obj->GetMapProperty(static_cast<UMapProperty*>(Prop), idx); };
+	else if (!strcmp(className, "SetProperty"))
+		getter = [](FHelper* obj, UProperty* Prop, int idx) { return obj->GetSetProperty(static_cast<USetProperty*>(Prop), idx); };
 	#endif
+	else
+		throw std::runtime_error(Util::Format(
+			"FHelper::GetProperty got unexpected property type '%s'",
+			Prop->GetFullName().c_str()
+		).c_str());
 
-	Util::ThrowException(Util::Format("FHelper::GetProperty got unexpected property type '%s'",
-		Prop->Class->GetName()));
+	if (Prop->ArrayDim == 1) {
+		return getter(this, Prop, 0);
+	}
+
+	auto list = pybind11::list();
+	for (int i = 0; i < Prop->ArrayDim; i++) {
+		list.append(getter(this, Prop, i));
+	}
+
+	return list;
 }
 
-void FHelper::SetProperty(class UStructProperty* Prop, const py::object& Val)
+void FHelper::SetStructProperty(class UProperty* Prop, int idx, const py::object& Val)
 {
 	if (py::isinstance<py::tuple>(Val))
 	{
 		const py::tuple tup = static_cast<py::tuple>(Val);
 
 		unsigned int currentIndex = 0;
-		for (auto* child = static_cast<UProperty*>(Prop->GetStruct()->Children); child; child = static_cast<UProperty*>(child->Next))
+		for (auto* child = static_cast<UProperty*>(static_cast<UStructProperty*>(Prop)->GetStruct()->Children); child; child = static_cast<UProperty*>(child->Next))
 			currentIndex++;
 
 		if (tup.size() > currentIndex)
@@ -518,26 +568,26 @@ void FHelper::SetProperty(class UStructProperty* Prop, const py::object& Val)
 		}
 
 		currentIndex = 0;
-		for (auto* child = static_cast<UProperty*>(Prop->GetStruct()->Children); child; child = static_cast<UProperty*>(child->Next))
+		for (auto* child = static_cast<UProperty*>(static_cast<UStructProperty*>(Prop)->GetStruct()->Children); child; child = static_cast<UProperty*>(child->Next))
 		{
 			LOG(INTERNAL, "Child = %s, %d", child->GetFullName().c_str(), child->Offset_Internal);
 			if (currentIndex < tup.size())
-				reinterpret_cast<FHelper*>(GetPropertyAddress(Prop))->SetProperty(child, tup[currentIndex++]);
+				reinterpret_cast<FHelper*>(GetPropertyAddress(Prop, idx))->SetProperty(child, tup[currentIndex++]);
 		}
 	}
 	else
-		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected tuple!\n").c_str());
+		throw py::type_error("FHelper::SetProperty: Got unexpected type, expected tuple!");
 }
 
 #ifdef UE4
 
 // TODO: UE4 MulticastDelegateProperty Setter
 
-void FHelper::SetProperty(class UTextProperty* Prop, const py::object& Val)
+void FHelper::SetTextProperty(class UProperty* Prop, int idx, const py::object& Val)
 {
 	if (!py::isinstance<py::str>(Val))
 		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected string!\n").c_str());
-	auto z = reinterpret_cast<FText*>(GetPropertyAddress(Prop));
+	auto z = reinterpret_cast<FText*>(GetPropertyAddress(Prop, idx));
 
 	if (z->Data) { // Setting the property of a pre-existing string
 		auto str = FString(Val.cast<std::wstring>().c_str());
@@ -553,25 +603,25 @@ void FHelper::SetProperty(class UTextProperty* Prop, const py::object& Val)
 // TODO: UE4 SetProperty Setter
 
 // TODO: Look into how this might work, not sure if its even necessary in UE4 idk
-void FHelper::SetProperty(class UInterfaceProperty* Prop, const py::object& Val)
+void FHelper::SetInterfaceProperty(class UProperty* Prop, int idx, const py::object& Val)
 {
 	throw std::exception(Util::Format("FHelper::SetProperty: Unknown how to deal with UInterfaceProperty\n").c_str());
 }
 
 // TODO: Look into how these Weak/Soft setters work (if they do)
-void FHelper::SetProperty(class UWeakObjectProperty* Prop, const py::object& Val) {
+void FHelper::SetWeakObjectProperty(class UProperty* Prop, int idx, const py::object& Val) {
 	if (!py::isinstance<UObject>(Val) && !py::isinstance<py::none>(Val))
 		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected UObject!\n").c_str());
 
-	TWeakObjectPtr<> weakObjPtr = reinterpret_cast<TWeakObjectPtr<>*>(GetPropertyAddress(Prop))[0];
+	TWeakObjectPtr<> weakObjPtr = reinterpret_cast<TWeakObjectPtr<>*>(GetPropertyAddress(Prop, idx))[0];
 	UObject* obj = py::isinstance<py::none>(Val) ? nullptr : Val.cast<UObject*>();
 	weakObjPtr.SetObjectPtr(obj);
 }
-void FHelper::SetProperty(class USoftObjectProperty* Prop, const py::object& Val) {
+void FHelper::SetSoftObjectProperty(class UProperty* Prop, int idx, const py::object& Val) {
 	if (!py::isinstance<UObject>(Val) && !py::isinstance<py::none>(Val) && !py::isinstance<py::str>(Val))
 		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected UObject or string!\n").c_str());
 
-	FSoftObjectPtr weakObjPtr = reinterpret_cast<FSoftObjectPtr*>(GetPropertyAddress(Prop))[0];
+	FSoftObjectPtr weakObjPtr = reinterpret_cast<FSoftObjectPtr*>(GetPropertyAddress(Prop, idx))[0];
 	if (py::isinstance<UObject>(Val) || py::isinstance<py::none>(Val)) {
 		UObject* obj = py::isinstance<py::none>(Val) ? nullptr : Val.cast<UObject*>();
 		weakObjPtr.WeakPtr.Set(obj);
@@ -582,125 +632,149 @@ void FHelper::SetProperty(class USoftObjectProperty* Prop, const py::object& Val
 	}
 }
 
-void FHelper::SetProperty(class UUInt32Property* Prop, const py::object& Val)
+void FHelper::SetUInt32Property(class UProperty* Prop, int idx, const py::object& Val)
 {
 	if (!py::isinstance<py::int_>(Val)) throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected int!\n").c_str());
-	reinterpret_cast<unsigned int*>(GetPropertyAddress(Prop))[0] = Val.cast<unsigned int>();
+	reinterpret_cast<unsigned int*>(GetPropertyAddress(Prop, idx))[0] = Val.cast<unsigned int>();
 }
-void FHelper::SetProperty(class UUInt64Property* Prop, const py::object& Val)
+void FHelper::SetUInt64Property(class UProperty* Prop, int idx, const py::object& Val)
 {
 	if (!py::isinstance<py::int_>(Val)) throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected UInt64 (int)!\n").c_str());
-	reinterpret_cast<unsigned long*>(GetPropertyAddress(Prop))[0] = Val.cast<unsigned long>();
+	reinterpret_cast<unsigned long*>(GetPropertyAddress(Prop, idx))[0] = Val.cast<unsigned long>();
 }
-void FHelper::SetProperty(class UUInt16Property* Prop, const py::object& Val)
+void FHelper::SetUInt16Property(class UProperty* Prop, int idx, const py::object& Val)
 {
 	if (!py::isinstance<py::int_>(Val)) throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected UInt16 (int)!\n").c_str());
-	reinterpret_cast<unsigned short*>(GetPropertyAddress(Prop))[0] = Val.cast<unsigned short>();
+	reinterpret_cast<unsigned short*>(GetPropertyAddress(Prop, idx))[0] = Val.cast<unsigned short>();
 }
-void FHelper::SetProperty(class UInt16Property* Prop, const py::object& Val)
+void FHelper::SetInt16Property(class UProperty* Prop, int idx, const py::object& Val)
 {
 	if (!py::isinstance<py::int_>(Val)) throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected int16 (int)!\n").c_str());
-	reinterpret_cast<short*>(GetPropertyAddress(Prop))[0] = Val.cast<short>();
+	reinterpret_cast<short*>(GetPropertyAddress(Prop, idx))[0] = Val.cast<short>();
 }
-void FHelper::SetProperty(class UInt64Property* Prop, const py::object& Val)
+void FHelper::SetInt64Property(class UProperty* Prop, int idx, const py::object& Val)
 {
 	if (!py::isinstance<py::int_>(Val)) throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected int64 (int)!\n").c_str());
-	reinterpret_cast<long*>(GetPropertyAddress(Prop))[0] = Val.cast <long>();
+	reinterpret_cast<long*>(GetPropertyAddress(Prop, idx))[0] = Val.cast <long>();
 }
-void FHelper::SetProperty(class UInt8Property* Prop, const py::object& Val)
+void FHelper::SetInt8Property(class UProperty* Prop, int idx, const py::object& Val)
 {
 	if (!py::isinstance<py::int_>(Val)) throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected int8 (int)!\n").c_str());
-	reinterpret_cast<char*>(GetPropertyAddress(Prop))[0] = Val.cast <char>();
+	reinterpret_cast<char*>(GetPropertyAddress(Prop, idx))[0] = Val.cast <char>();
 }
 
 #else
 
-void FHelper::SetProperty(class UInterfaceProperty* Prop, const py::object& Val)
+void FHelper::SetInterfaceProperty(class UProperty* Prop, int idx, const py::object& Val)
 {
 	if (!py::isinstance<UObject>(Val) && !py::isinstance<py::none>(Val))
-		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected UObject!\n").c_str());
+		throw py::type_error("FHelper::SetProperty: Got unexpected type, expected UObject!");
 	if (py::isinstance<py::none>(Val))
-		static_cast<FScriptInterface*>(GetPropertyAddress(Prop))[0] = FScriptInterface{ nullptr, nullptr };
+		static_cast<FScriptInterface*>(GetPropertyAddress(Prop, idx))[0] = FScriptInterface{ nullptr, nullptr };
 	else
 	{
 		const auto objVal = Val.cast<UObject*>();
 		const auto scriptInterface = objVal->QueryInterface(Prop->GetInterfaceClass());
-		reinterpret_cast<FScriptInterface*>(GetPropertyAddress(Prop))[0] = scriptInterface;
+		reinterpret_cast<FScriptInterface*>(GetPropertyAddress(Prop, idx))[0] = scriptInterface;
 	}
 }
 
-void FHelper::SetProperty(class UComponentProperty* Prop, const py::object& Val)
+void FHelper::SetComponentProperty(class UProperty* Prop, int idx, const py::object& Val)
 {
 	if (!py::isinstance<UComponent>(Val) && !py::isinstance<py::none>(Val))
 		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected UComponent!\n").c_str());
-	reinterpret_cast<UComponent**>(GetPropertyAddress(Prop))[0] = Val.cast<UComponent*>();
+	reinterpret_cast<UComponent**>(GetPropertyAddress(Prop, idx))[0] = Val.cast<UComponent*>();
 }
 #endif
 
-
-void FHelper::SetProperty(class UStrProperty* Prop, const py::object& Val)
+void FHelper::SetStrProperty(class UProperty* Prop, int idx, const py::object& Val)
 {
 	if (!py::isinstance<py::str>(Val))
-		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected string!\n").c_str());
-	auto setString = FString(Val.cast<std::wstring>().c_str());
+		throw py::type_error("FHelper::SetProperty: Got unexpected type, expected string!");
 
-	memcpy(GetPropertyAddress(Prop), &setString, sizeof(FString));
+	auto str = FString(Val.cast<std::wstring>().c_str());
+	memcpy(GetPropertyAddress(Prop, idx), &str, sizeof(FString));
 }
 
-void FHelper::SetProperty(class UObjectProperty* Prop, const py::object& Val)
+void FHelper::SetObjectProperty(class UProperty* Prop, int idx, const py::object& Val)
 {
 	if (!py::isinstance<UObject>(Val) && !py::isinstance<py::none>(Val))
-		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected UObject!\n").c_str());
-	reinterpret_cast<UObject **>(GetPropertyAddress(Prop))[0] = Val.cast<UObject*>();
+		throw py::type_error("FHelper::SetProperty: Got unexpected type, expected UObject!");
+
+	reinterpret_cast<UObject **>(GetPropertyAddress(Prop, idx))[0] = Val.cast<UObject*>();
 }
 
-void FHelper::SetProperty(class UClassProperty* Prop, const py::object& Val)
+#ifndef UE4
+void FHelper::SetComponentProperty(class UProperty* Prop, int idx, const py::object& Val)
+{
+	if (!py::isinstance<UComponent>(Val) && !py::isinstance<py::none>(Val))
+		throw py::type_error("FHelper::SetProperty: Got unexpected type, expected UComponent!");
+
+	reinterpret_cast<UComponent **>(GetPropertyAddress(Prop, idx))[0] = Val.cast<UComponent*>();
+}
+#endif
+
+void FHelper::SetClassProperty(class UProperty* Prop, int idx, const py::object& Val)
 {
 	if (!py::isinstance<UClass>(Val) && !py::isinstance<py::none>(Val))
-		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected UClass!\n").c_str());
-	reinterpret_cast<UClass * *>(GetPropertyAddress(Prop))[0] = Val.cast<UClass*>();
+		throw py::type_error("FHelper::SetProperty: Got unexpected type, expected UClass!");
+
+	reinterpret_cast<UClass * *>(GetPropertyAddress(Prop, idx))[0] = Val.cast<UClass*>();
 }
 
-void FHelper::SetProperty(class UNameProperty* Prop, const py::object& Val)
+void FHelper::SetNameProperty(class UProperty* Prop, int idx,  const py::object& Val)
 {
-	if (!py::isinstance<py::str>(Val)) throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected string!\n").c_str());
+	if (!py::isinstance<py::str>(Val))
+		throw py::type_error("FHelper::SetProperty: Got unexpected type, expected string!");
+
 	auto name = FName(Val.cast<std::string>().c_str());
-	memcpy(GetPropertyAddress(Prop), &name, sizeof(FName));
+	memcpy(GetPropertyAddress(Prop, idx), &name, sizeof(FName));
 }
 
-void FHelper::SetProperty(class UDelegateProperty* Prop, const py::object& Val)
+void FHelper::SetDelegateProperty(class UProperty* Prop, int idx, const py::object& Val)
 {
 	if (!py::isinstance<FScriptDelegate>(Val))
-		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected FScriptDelegate!\n").c_str());
-	auto script = FScriptDelegate(Val.cast<FScriptDelegate>());
-	memcpy(GetPropertyAddress(Prop), &script, sizeof(FScriptDelegate));
+		throw py::type_error("FHelper::SetProperty: Got unexpected type, expected FScriptDelegate!");
+
+	auto ScriptDelegate = FScriptDelegate(Val.cast<FScriptDelegate>());
+	memcpy(
+		GetPropertyAddress(Prop, idx),
+		&ScriptDelegate,
+	    sizeof(FScriptDelegate)
+	);
 }
 
-void FHelper::SetProperty(class UFloatProperty* Prop, const py::object& Val)
+void FHelper::SetFloatProperty(class UProperty* Prop, int idx, const py::object& Val)
 {
-	reinterpret_cast<float*>(GetPropertyAddress(Prop))[0] = Val.cast<float>();
+	if (!py::isinstance<py::float_>(Val) && !py::isinstance<py::int_>(Val))
+		throw py::type_error("FHelper::SetProperty: Got unexpected type, expected float!");
+
+	reinterpret_cast<float*>(GetPropertyAddress(Prop, idx))[0] = Val.cast<float>();
 }
 
-void FHelper::SetProperty(class UIntProperty* Prop, const py::object& Val)
+void FHelper::SetIntProperty(class UProperty* Prop, int idx, const py::object& Val)
 {
-	if (!py::isinstance<py::int_>(Val)) throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected int!\n").c_str());
-	reinterpret_cast<int*>(GetPropertyAddress(Prop))[0] = Val.cast<int>();
+	if (!py::isinstance<py::int_>(Val))
+		throw py::type_error("FHelper::SetProperty: Got unexpected type, expected int!");
+
+	reinterpret_cast<int*>(GetPropertyAddress(Prop, idx))[0] = Val.cast<int>();
 }
 
-void FHelper::SetProperty(class UByteProperty* Prop, const py::object& Val)
+void FHelper::SetByteProperty(class UProperty* Prop, int idx, const py::object& Val)
 {
-	if (!py::isinstance<py::int_>(Val)) throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected char!\n").c_str());
-	reinterpret_cast<char*>(GetPropertyAddress(Prop))[0] = static_cast<char>(Val.cast<int>());
+	if (!py::isinstance<py::int_>(Val))
+		throw py::type_error("FHelper::SetProperty: Got unexpected type, expected int!");
+
+	reinterpret_cast<char*>(GetPropertyAddress(Prop, idx))[0] = static_cast<char>(Val.cast<int>());
 }
 
-void FHelper::SetProperty(class UEnumProperty* Prop, const py::object& Val)
+void FHelper::SetEnumProperty(class UProperty* Prop, int idx, const py::object& Val)
 {
-
 	if (!py::isinstance<py::int_>(Val) && !py::isinstance<py::str>(Val) && !py::isinstance<py::dict>(Val) )
-		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected int/string/dict!\n").c_str());
+		throw py::type_error("FHelper::SetProperty: Got unexpected type, expected int/string/dict!");
 
 	int enumValue = 0;
-	auto EnumNames = Prop->Enum->GetNames();
+	auto EnumNames = static_cast<UEnumProperty*>(Prop)->Enum->GetNames();
 
 	bool bUnknownEnumValue = true;
 	std::wstring acceptableValues = L"";
@@ -742,10 +816,10 @@ void FHelper::SetProperty(class UEnumProperty* Prop, const py::object& Val)
 		UEnum* ValEnum = enumDict["Type"].cast<UEnum*>();
 		enumValue = enumDict["Value"].cast<int>();
 
-		if(ValEnum != Prop->Enum) // Different enums between inputs
-			throw std::exception(Util::Format("FHelper::SetProperty: Unexpected enum value! Cannot convert %s to %s\n", ValEnum->GetName(), Prop->Enum->GetName()).c_str());
+		if(ValEnum != static_cast<UEnumProperty*>(Prop)->Enum) // Different enums between inputs
+			throw std::exception(Util::Format("FHelper::SetProperty: Unexpected enum value! Cannot convert %s to %s\n", ValEnum->GetName(), static_cast<UEnumProperty*>(Prop)->Enum->GetName()).c_str());
 
-		std::wstring completeName = Prop->Enum->CppType.AsString();
+		std::wstring completeName = static_cast<UEnumProperty*>(Prop)->Enum->CppType.AsString();
 		completeName.append(L"::" + ValName);
 
 		if (EnumNames.count(completeName) == 0) // If the given name is not valid
@@ -766,19 +840,23 @@ void FHelper::SetProperty(class UEnumProperty* Prop, const py::object& Val)
 	if (bUnknownEnumValue)
 		throw std::exception(Util::Format("FHelper::SetProperty: Unexpected enum value! Acceptable values: %s\n", acceptableValues.c_str()).c_str());
 
-	reinterpret_cast<char*>(GetPropertyAddress(Prop))[0] = static_cast<char>(enumValue);
+	reinterpret_cast<char*>(GetPropertyAddress(Prop, idx))[0] = static_cast<char>(enumValue);
 }
 
-void FHelper::SetProperty(class UBoolProperty* Prop, const py::object& Val)
+void FHelper::SetBoolProperty(class UProperty* Prop, int idx, const py::object& Val)
 {
+	if (idx != 0) {
+		throw py::index_error("FHelper::SetProperty: Bool arrays are not supported");
+	}
+
 	try
 	{
-		LOG(INTERNAL, "SetBoolProperty %d, mask: 0x%x, base: 0x%x, offset: 0x%x", Val.cast<bool>(), Prop->GetMask(),
+		LOG(INTERNAL, "SetBoolProperty %d, mask: 0x%x, base: 0x%x, offset: 0x%x", Val.cast<bool>(), static_cast<UBoolProperty*>(Prop)->GetMask(),
 		              this, Prop->Offset_Internal);
 		if (Val.cast<bool>())
-			reinterpret_cast<unsigned int*>(GetPropertyAddress(Prop))[0] |= Prop->GetMask();
+			reinterpret_cast<unsigned int*>(GetPropertyAddress(Prop, 0))[0] |= static_cast<UBoolProperty*>(Prop)->GetMask();
 		else
-			reinterpret_cast<unsigned int*>(GetPropertyAddress(Prop))[0] &= ~Prop->GetMask();
+			reinterpret_cast<unsigned int*>(GetPropertyAddress(Prop, 0))[0] &= ~static_cast<UBoolProperty*>(Prop)->GetMask();
 	}
 	catch (std::exception e)
 	{
@@ -786,13 +864,13 @@ void FHelper::SetProperty(class UBoolProperty* Prop, const py::object& Val)
 	}
 }
 
-void FHelper::SetProperty(class UArrayProperty* Prop, const py::object& Val)
+void FHelper::SetArrayProperty(class UProperty* Prop, int idx, const py::object& Val)
 {
 	if (!py::isinstance<py::sequence>(Val))
-		throw std::exception(Util::Format("FHelper::SetProperty: Got unexpected type, expected list!\n").c_str());
+		throw py::type_error("FHelper::SetProperty: Got unexpected type, expected sequence!");
 
 	const auto s = py::reinterpret_borrow<py::sequence>(Val);
-	const auto currentArray = reinterpret_cast<TArray<char>*>(GetPropertyAddress(Prop));
+	const auto currentArray = reinterpret_cast<TArray<char>*>(GetPropertyAddress(Prop, idx));
 	if (s.size() > currentArray->Count)
 	{
 
@@ -800,10 +878,10 @@ void FHelper::SetProperty(class UArrayProperty* Prop, const py::object& Val)
 		#ifndef UE4
 		char *data = static_cast<char*>(static_cast<tMalloc>(UnrealSDK::pGMalloc[0][0][1])(UnrealSDK::pGMalloc[0], Prop->GetInner()->ElementSize * s.size(), 8));
 		#else
-		char* data = static_cast<char*>( static_cast<tMalloc>(UnrealSDK::pGMalloc)(Prop->GetInner()->ElementSize * s.size(), 8));
+		char* data = static_cast<char*>( static_cast<tMalloc>(UnrealSDK::pGMalloc)(static_cast<UArrayProperty*>(Prop)->GetInner()->ElementSize * s.size(), 8));
 		#endif
 
-		memset(data, 0, Prop->GetInner()->ElementSize * s.size());
+		memset(data, 0, static_cast<UArrayProperty*>(Prop)->GetInner()->ElementSize * s.size());
 		currentArray->Data = data;
 		currentArray->Max = s.size();
 
@@ -812,59 +890,108 @@ void FHelper::SetProperty(class UArrayProperty* Prop, const py::object& Val)
 	long x = 0;
 	for (const auto it : Val)
 	{
-		reinterpret_cast<FHelper*>(currentArray->Data + (long)Prop->GetInner()->ElementSize * x++)->SetProperty(
-			Prop->GetInner(), py::reinterpret_borrow<py::object>(it));
+		reinterpret_cast<FHelper*>(currentArray->Data + (long)static_cast<UArrayProperty*>(Prop)->GetInner()->ElementSize * x++)->SetProperty(
+			static_cast<UArrayProperty*>(Prop)->GetInner(), py::reinterpret_borrow<py::object>(it));
 	}
 
 }
 
-void FHelper::SetProperty(class UProperty* Prop, const py::object& val)
+void FHelper::SetProperty(class UProperty* Prop, const py::object& Val)
 {
-	const char* cName = Prop->Class->GetName();
-	LOG(INTERNAL, "FHelper::SetProperty Called with '%s'", cName);
-	if (!strcmp(cName, "StructProperty"))
-		SetProperty(static_cast<UStructProperty*>(Prop), val);
-	else if (!strcmp(cName, "StrProperty"))
-		SetProperty(static_cast<UStrProperty*>(Prop), val);
-	else if (!strcmp(cName, "ObjectProperty"))
-		SetProperty(static_cast<UObjectProperty*>(Prop), val);
+	LOG(INTERNAL,
+		"FHelper::SetProperty '%s' (offset 0x%x, arraydim %d) (Prop at 0x%p) on 0x%p\n",
+		Prop->GetFullName().c_str(),
+		Prop->Offset_Internal,
+		Prop->ArrayDim,
+		Prop,
+		this
+	);
+
+	void (FHelper::*setter)(UProperty*, int, const py::object&);
+	const char* ClassName = Prop->Class->GetName();
+
+	if (!strcmp(ClassName, "StructProperty"))
+		setter = &FHelper::SetStructProperty;
+	else if (!strcmp(ClassName, "StrProperty"))
+		setter = &FHelper::SetStrProperty;
+	else if (!strcmp(ClassName, "ObjectProperty"))
+		setter = &FHelper::SetObjectProperty;
 #ifndef UE4
-	else if (!strcmp(cName, "ComponentProperty"))
-		SetProperty(static_cast<UComponentProperty*>(Prop), val);
+	else if (!strcmp(ClassName, "ComponentProperty"))
+		setter = &FHelper::SetComponentProperty;
 #endif
-	else if (!strcmp(cName, "ClassProperty"))
-		SetProperty(static_cast<UClassProperty*>(Prop), val);
-	else if (!strcmp(cName, "NameProperty"))
-		SetProperty(static_cast<UNameProperty*>(Prop), val);
-	else if (!strcmp(cName, "IntProperty"))
-		SetProperty(static_cast<UIntProperty*>(Prop), val);
-	else if (!strcmp(cName, "InterfaceProperty"))
-		SetProperty(static_cast<UInterfaceProperty*>(Prop), val);
-	else if (!strcmp(cName, "FloatProperty"))
-		SetProperty(static_cast<UFloatProperty*>(Prop), val);
-	else if (!strcmp(cName, "DelegateProperty"))
-		SetProperty(static_cast<UDelegateProperty*>(Prop), val);
-	else if (!strcmp(cName, "ByteProperty"))
-		SetProperty(static_cast<UByteProperty*>(Prop), val);
-	else if (!strcmp(cName, "BoolProperty"))
-		SetProperty(static_cast<UBoolProperty*>(Prop), val);
-	else if (!strcmp(cName, "ArrayProperty"))
-		SetProperty(static_cast<UArrayProperty*>(Prop), val);
+	else if (!strcmp(ClassName, "ClassProperty"))
+		setter = &FHelper::SetClassProperty;
+	else if (!strcmp(ClassName, "NameProperty"))
+		setter = &FHelper::SetNameProperty;
+	else if (!strcmp(ClassName, "InterfaceProperty"))
+		setter = &FHelper::SetInterfaceProperty;
+	else if (!strcmp(ClassName, "DelegateProperty"))
+		setter = &FHelper::SetDelegateProperty;
+	else if (!strcmp(ClassName, "FloatProperty"))
+		setter = &FHelper::SetFloatProperty;
+	else if (!strcmp(ClassName, "IntProperty"))
+		setter = &FHelper::SetIntProperty;
+	else if (!strcmp(ClassName, "ByteProperty"))
+		setter = &FHelper::SetByteProperty;
+	else if (!strcmp(ClassName, "BoolProperty"))
+		setter = &FHelper::SetBoolProperty;
+	else if (!strcmp(ClassName, "ArrayProperty"))
+		setter = &FHelper::SetArrayProperty;
 #ifdef UE4
-	else if (!strcmp(cName, "EnumProperty"))
-		SetProperty(static_cast<UEnumProperty*>(Prop), val);
-	else if (!strcmp(cName, "UInt32Property")) SetProperty(static_cast<UUInt32Property*>(Prop), val);
-	else if (!strcmp(cName, "UInt64Property")) SetProperty(static_cast<UUInt64Property*>(Prop), val);
-	else if (!strcmp(cName, "UInt16Property")) SetProperty(static_cast<UUInt16Property*>(Prop), val);
-	else if (!strcmp(cName, "Int64Property"))  SetProperty(static_cast<UInt64Property*>(Prop), val);
-	else if (!strcmp(cName, "Int16Property"))  SetProperty(static_cast<UInt16Property*>(Prop), val);
-	else if (!strcmp(cName, "Int8Property"))   SetProperty(static_cast<UInt8Property*>(Prop), val);
-	else if (!strcmp(cName, "WeakObjectProperty")) SetProperty(static_cast<UWeakObjectProperty*>(Prop), val);
-	else if (!strcmp(cName, "SoftObjectProperty")) SetProperty(static_cast<USoftObjectProperty*>(Prop), val);
-	else if (!strcmp(cName, "TextProperty")) SetProperty(static_cast<UTextProperty*>(Prop), val);
+	else if (!strcmp(ClassName, "EnumProperty"))
+		setter = &FHelper::SetEnumProperty;
+	else if (!strcmp(ClassName, "UInt32Property"))
+		setter = &FHelper::SetUInt32Property;
+	else if (!strcmp(ClassName, "UInt64Property"))
+		setter = &FHelper::SetUInt64Property;
+	else if (!strcmp(ClassName, "UInt16Property"))
+		setter = &FHelper::SetUInt16Property;
+	else if (!strcmp(ClassName, "Int64Property"))
+		setter = &FHelper::SetInt64Property;
+	else if (!strcmp(ClassName, "Int16Property"))
+		setter = &FHelper::SetInt16Property;
+	else if (!strcmp(ClassName, "Int8Property"))
+		setter = &FHelper::SetInt8Property;
+	else if (!strcmp(ClassName, "WeakObjectProperty"))
+		setter = &FHelper::SetWeakObjectProperty;
+	else if (!strcmp(ClassName, "SoftObjectProperty"))
+		setter = &FHelper::SetSoftObjectProperty;
+	else if (!strcmp(ClassName, "TextProperty"))
+		setter = &FHelper::SetTextProperty;
 #endif
 	else
-		throw std::exception(Util::Format("FHelper::SetProperty got unexpected property type '%s'", Prop->GetFullName().c_str()).c_str());
+		throw std::runtime_error(Util::Format(
+			"FHelper::SetProperty got unexpected property type '%s'",
+			Prop->GetFullName().c_str()
+		).c_str());
+
+	if (Prop->ArrayDim == 1) {
+		(this->*setter)(Prop, 0, Val);
+		return;
+	}
+
+	if (!py::isinstance<py::sequence>(Val)) {
+		throw py::type_error("FHelper::SetProperty: Got unexpected type, expected sequence!");
+	}
+
+	auto seq = py::reinterpret_borrow<py::sequence>(Val);
+	auto size = seq.size();
+
+	if (size > (size_t)Prop->ArrayDim) {
+		throw py::type_error(Util::Format(
+			"FHelper::SetProperty: Sequence is too long, %s supports max of %d values!",
+			Prop->GetName(),
+			Prop->ArrayDim
+		));
+	}
+
+	for (size_t i = 0; i < size; i++) {
+		(this->*setter)(Prop, i, seq[i]);
+	}
+	for (size_t i = size; i < (size_t)Prop->ArrayDim; i++) {
+		(this->*setter)(Prop, i, py::none());
+	}
 }
 
 // FFunction =======================================================================
@@ -926,17 +1053,33 @@ py::object FFunction::Call(py::args args, py::kwargs kwargs)
 	if (!obj || !func)
 		return py::none();
 	LOG(INTERNAL, "FFunction::Call called %s.%s)", obj->GetFullName().c_str(), func->GetName());
+
 	char params[1000] = "";
 	memset(params, 0, 1000);
 	GenerateParams(std::move(args), std::move(kwargs), (FHelper*)params);
 	LOG(INTERNAL, "made params");
+
 	auto flags = func->FunctionFlags;
 	func->FunctionFlags |= 0x400;
+
+#if UE3
+	void* returnObj = nullptr;
+	for (UProperty* Child = (UProperty*)func->Children; Child; Child = (UProperty*)Child->Next)
+		if (Child->PropertyFlags & 0x400)
+			returnObj = params + Child->Offset_Internal;
+
+	UnrealSDK::pProcessEvent(obj, func, params, returnObj);
+#else
 	UnrealSDK::pProcessEvent(obj, func, params);
+#endif
+
 	func->FunctionFlags = flags;
+
 	LOG(INTERNAL, "Called ProcessEvent");
+
 	py::object ret = GetReturn((FHelper*)params);
 	memset(params, 0, 1000);
+
 	LOG(INTERNAL, "ProcessEvent Succeeded!");
 	return ret;
 }

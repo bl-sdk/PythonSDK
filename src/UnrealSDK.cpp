@@ -427,7 +427,7 @@ namespace UnrealSDK
 			FName n = FName(std::string("Tilde"));
 
 			// This is probably a costly call to do, but its also kinda the best option imo
-			for (UObject* obj : UObject::FindAll( (char*)"Class /Script/Engine.InputSettings")) {
+			for (UObject* obj : UObject::FindAll( (char*)"Class /Script/Engine.InputSettings", false)) {
 				UInputSettings* pc = static_cast<UInputSettings*>(obj);
 				pc->ConsoleKey.KeyName = n;
 
