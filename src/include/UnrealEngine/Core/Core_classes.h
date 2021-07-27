@@ -179,36 +179,37 @@
 */
 
 struct FHelper {
-	struct FStruct GetStructProperty(class UStructProperty *Prop);
-	struct FString* GetStrProperty(class UProperty *Prop);
-	class UObject* GetObjectProperty(class UProperty *Prop);
-	class UComponent* GetComponentProperty(class UProperty *Prop);
-	class UClass* GetClassProperty(class UProperty *Prop);
-	struct FName* GetNameProperty(class UProperty *Prop);
-	int GetIntProperty(class UProperty * Prop);
-	struct FScriptInterface* GetInterfaceProperty(class UProperty *Prop);
-	float GetFloatProperty(class UProperty *Prop);
-	struct FScriptDelegate* GetDelegateProperty(class UProperty *Prop);
-	unsigned char GetByteProperty(class UProperty * Prop);
-	bool GetBoolProperty(class UBoolProperty *Prop);
-	void* GetPropertyAddress(class UProperty* Prop);
-	py::object GetArrayProperty(class UArrayProperty *Prop);
-	pybind11::object GetProperty(class UProperty * Prop);
+	void* GetPropertyAddress(class UProperty* Prop, int idx);
+	py::object GetProperty(class UProperty* Prop);
+	void SetProperty(class UProperty* Prop, const py::object& Val);
 
-	void SetProperty(class UStructProperty *Prop, const py::object& Val);
-	void SetProperty(class UStrProperty *Prop, const py::object& Val);
-	void SetProperty(class UObjectProperty *Prop, const py::object& Val);
-	void SetProperty(class UComponentProperty *Prop, const py::object& Val);
-	void SetProperty(class UClassProperty *Prop, const py::object& Val);
-	void SetProperty(class UNameProperty *Prop, const py::object& Val);
-	void SetProperty(class UInterfaceProperty *Prop, const py::object& Val);
-	void SetProperty(class UDelegateProperty *Prop, const py::object& Val);
-	void SetProperty(class UFloatProperty *Prop, const py::object& Val);
-	void SetProperty(class UIntProperty *Prop, const py::object& Val);
-	void SetProperty(class UByteProperty *Prop, const py::object& Val);
-	void SetProperty(class UBoolProperty *boolProp, const py::object& Val);
-	void SetProperty(class UArrayProperty *Prop, const py::object& Val);
-	void SetProperty(class UProperty *Prop, const py::object& val);
+	struct FStruct GetStructProperty(class UProperty *Prop, int idx);
+	struct FString* GetStrProperty(class UProperty *Prop, int idx);
+	class UObject* GetObjectProperty(class UProperty *Prop, int idx);
+	class UComponent* GetComponentProperty(class UProperty *Prop, int idx);
+	class UClass* GetClassProperty(class UProperty *Prop, int idx);
+	struct FName* GetNameProperty(class UProperty *Prop, int idx);
+	struct FScriptInterface* GetInterfaceProperty(class UProperty *Prop, int idx);
+	struct FScriptDelegate* GetDelegateProperty(class UProperty *Prop, int idx);
+	float GetFloatProperty(class UProperty *Prop, int idx);
+	int GetIntProperty(class UProperty *Prop, int idx);
+	unsigned char GetByteProperty(class UProperty *Prop, int idx);
+	bool GetBoolProperty(class UProperty *Prop, int idx);
+	struct FArray GetArrayProperty(class UProperty *Prop, int idx);
+
+	void SetStructProperty(class UProperty* Prop, int idx, const py::object& Val);
+	void SetStrProperty(class UProperty* Prop, int idx, const py::object& Val);
+	void SetObjectProperty(class UProperty* Prop, int idx, const py::object& Val);
+	void SetComponentProperty(class UProperty* Prop, int idx, const py::object& Val);
+	void SetClassProperty(class UProperty* Prop, int idx, const py::object& Val);
+	void SetNameProperty(class UProperty* Prop, int idx, const py::object& Val);
+	void SetInterfaceProperty(class UProperty* Prop, int idx, const py::object& Val);
+	void SetDelegateProperty(class UProperty* Prop, int idx, const py::object& Val);
+	void SetFloatProperty(class UProperty* Prop, int idx, const py::object& Val);
+	void SetIntProperty(class UProperty* Prop, int idx, const py::object& Val);
+	void SetByteProperty(class UProperty* Prop, int idx, const py::object& Val);
+	void SetBoolProperty(class UProperty* Prop, int idx, const py::object& Val);
+	void SetArrayProperty(class UProperty* Prop, int idx, const py::object& Val);
 };
 
 // 0x003C
@@ -246,7 +247,7 @@ public:
 	bool IsA(UClass* PClass) const;
 	class UPackage* GetPackageObject() const;
 	static UClass* StaticClass();
-	static std::vector<UObject*> FindAll(char* InStr);
+	static std::vector<UObject*> FindAll(char* InStr, bool IncludeSubclasses);
 
 	py::object GetProperty(std::string PropName);
 	void SetProperty(std::string& PropName, const py::object& Val);
@@ -1289,7 +1290,7 @@ struct FFunction
 	UFunction *func;
 
 private:
-	FHelper* GenerateParams(const py::args& args, const py::kwargs& kwargs, FHelper* params);
+	void GenerateParams(const py::args& args, const py::kwargs& kwargs, FHelper* params);
 
 public:
 	py::object GetReturn(FHelper* params);

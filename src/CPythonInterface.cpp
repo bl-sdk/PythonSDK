@@ -71,7 +71,8 @@ PYBIND11_EMBEDDED_MODULE(unrealsdk, m)
 	m.def("LoadPackage", &UnrealSDK::LoadPackage, py::arg("filename"), py::arg("flags") = 0, py::arg("force") = false);
 	m.def("KeepAlive", &UnrealSDK::KeepAlive);
 	m.def("GetPackageObject", &UObject::GetPackageObject, py::return_value_policy::reference);
-	m.def("FindAll", &UObject::FindAll, py::return_value_policy::reference);
+	m.def("FindAll", &UObject::FindAll, py::arg("InStr"), py::arg("IncludeSubclasses") = false,
+		  py::return_value_policy::reference);
 	m.def("FindClass", &UObject::FindClass, py::arg("ClassName"), py::arg("Lookup") = false,
 	      py::return_value_policy::reference);
 	m.def("FindObject", [](char* ClassName, char* ObjectFullName) { return UObject::Find(ClassName, ObjectFullName); },
@@ -134,8 +135,10 @@ void AddToConsoleLog(UConsole* console, FString input)
 
 bool CheckPythonCommand(UObject* caller, UFunction* function, FStruct* params)
 {
-	FString* command = ((FHelper *)params->base)->GetStrProperty(
-		(UProperty *)params->structType->FindChildByName(FName("command")));
+	FString* command = ((FHelper*)params->base)->GetStrProperty(
+		(UProperty*)params->structType->FindChildByName(FName("command")),
+		0
+	);
 	char* input = command->AsString();
 	if (strncmp("py ", input, 3) == 0)
 	{
