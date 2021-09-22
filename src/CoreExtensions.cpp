@@ -269,7 +269,7 @@ UClass* UObject::StaticClass()
 };
 #endif
 
-std::vector<UObject*> UObject::FindAll(char* InStr)
+std::vector<UObject*> UObject::FindAll(char* InStr, bool IncludeSubclasses) 
 {
 	UClass* inClass = FindClass(InStr, true);
 	if (!inClass)
@@ -278,8 +278,17 @@ std::vector<UObject*> UObject::FindAll(char* InStr)
 	for (size_t i = 0; i < GObjects()->Count; ++i)
 	{
 		UObject* object = GObjects()->Get(i);
-		if (object && object->IsA(inClass))
-			ret.push_back(object);
+		if (!object || !object->Class) {
+			continue;
+		}
+		UClass* cls = object->Class;
+		do {
+			if (cls == inClass) {
+				ret.push_back(object);
+				break;
+			}
+			cls = static_cast<UClass*>(cls->SuperField);
+		} while (IncludeSubclasses && cls);
 	}
 	return ret;
 }
@@ -536,7 +545,8 @@ void FHelper::SetProperty(class UTextProperty* Prop, const py::object& Val)
 	auto z = reinterpret_cast<FText*>(GetPropertyAddress(Prop));
 
 	if (z->Data) { // Setting the property of a pre-existing string
-		z->SetString(&FString(Val.cast<std::wstring>().c_str()));
+		auto str = FString(Val.cast<std::wstring>().c_str());
+		z->SetString(&str);
 	}
 	else {
 
@@ -572,7 +582,8 @@ void FHelper::SetProperty(class USoftObjectProperty* Prop, const py::object& Val
 		weakObjPtr.WeakPtr.Set(obj);
 	}
 	else {
-		memcpy(&weakObjPtr.ObjectID.AssetPathName, &FName(Val.cast<std::string>().c_str()), sizeof(FName));
+		FName name = FName(Val.cast<std::string>().c_str());
+		memcpy(&weakObjPtr.ObjectID.AssetPathName, &name, sizeof(FName));
 	}
 }
 

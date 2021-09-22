@@ -96,8 +96,8 @@ bool CHookManager::ProcessHooks(UObject* Caller, FFrame& Stack, void* const Resu
 			}
 			UnrealSDK::pFrameStep(&Stack, Stack.Object, Frame + Property->Offset_Internal);
 		}
-		auto Params = FStruct{ Function, (void*)Frame };
-		const bool ret = ProcessHooks(Function->GetObjectName(), Caller, Function, &Params);
+		auto FrameStruct = FStruct{ Function, (void*)Frame };
+		const bool ret = ProcessHooks(Function->GetObjectName(), Caller, Function, &FrameStruct);
 		//if (!ret) {
 		//	if (ReturnParm)
 		//	{

@@ -204,8 +204,8 @@ static std::map<std::string, std::string> bl3_object_map{
 	{"ConsoleObjectType", "Console"},
 	{"ConsoleObjectName", "/Script/Engine.Default__Console"},
 	{"EngineObjectType", "/Script/OakGame.OakGameEngine"},
-	{"EngineObjectName", "/Engine/Transient.OakGameEngine"},
-	{"EngineFullName", "OakGameEngine /Engine/Transient.OakGameEngine"},
+	{"EngineObjectName", "/Engine/Transient.OakGameEngine_0"},
+	{"EngineFullName", "OakGameEngine /Engine/Transient.OakGameEngine_0"},
 	{"PostRenderFunction", "/Script/Engine.HUD.ReceiveDrawHUD"},
 	{"StartupSDK", "/Script/OakGame.MenuMapMenuFlow.Start"} // This function is used in BL3 near the map start up
 };

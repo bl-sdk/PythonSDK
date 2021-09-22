@@ -17,7 +17,15 @@ namespace Logging
 		if (gLogFile != INVALID_HANDLE_VALUE)
 		{
 			DWORD bytesWritten = 0;
-			WriteFile(gLogFile, Buff, Len, &bytesWritten, nullptr);
+
+			std::string f = Buff;
+			if (f.find("\n", 0) == std::string::npos) {
+				f += "\n";
+			}
+			const char* outc = f.c_str();
+			int Length = strlen(outc);
+
+			WriteFile(gLogFile, outc, Length, &bytesWritten, nullptr);
 		}
 	}
 

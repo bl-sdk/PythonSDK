@@ -377,7 +377,7 @@ namespace UnrealSDK
 	void ReloadPython() {
 		Logging::Log("Reloading python modules...");
 
-		if (Python->ReloadState() == PYTHON_MODULE_ERROR && Settings::DeveloperModeEnabled()) {
+		if (Python->ReloadState() == PythonStatus::PYTHON_MODULE_ERROR && Settings::DeveloperModeEnabled()) {
 			Util::Popup(L"Python Module Error",
 				L"An error occurred while reloading the Python modules.\n\nPlease check your console for the exact error. Once you've fixed the error, press F11 to reload the Python state.");
 		}
@@ -388,12 +388,12 @@ namespace UnrealSDK
 		Python = new CPythonInterface();
 		bPythonInitTried = true;
 		const PythonStatus status = Python->InitializeModules();
-		if (status == PYTHON_MODULE_ERROR && !Settings::DeveloperModeEnabled())
+		if (status == PythonStatus::PYTHON_MODULE_ERROR && !Settings::DeveloperModeEnabled())
 		{
 			Util::Popup(L"Python Module Error",
 				L"A core Python module failed to load correctly, and the SDK cannot continue to run.\n\nThis may indicate that the game has been patched and the SDK needs updating.");
 		}
-		else if (status == PYTHON_MODULE_ERROR && Settings::DeveloperModeEnabled())
+		else if (status == PythonStatus::PYTHON_MODULE_ERROR && Settings::DeveloperModeEnabled())
 		{
 			Util::Popup(L"Python Module Error",
 				L"An error occurred while loading the Python modules.\n\nPlease check your console for the exact error. Once you've fixed the error, press F11 to reload the Python state.");

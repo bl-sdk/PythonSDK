@@ -2,7 +2,7 @@
 #ifndef CPYTHONINTERFACE_H
 #define CPYTHONINTERFACE_H
 
-enum PythonStatus {
+enum class PythonStatus {
 	PYTHON_OK,
 	PYTHON_MODULE_ERROR
 };

@@ -410,7 +410,19 @@ public:
 	{
 		if (Index < 0 || Index > Names()->Count)
 			return "UnknownName";
-		return Names()->Get(Index)->GetAnsiName();
+		const char* ansi = Names()->Get(Index)->GetAnsiName();
+		if (Number == 0) return ansi;
+		else {
+			char* buf = new char[strlen(ansi) + 11];
+			strcpy(buf, ansi);
+			strcat(buf, "_");
+			
+			char numBuf[10];
+			sprintf(numBuf, "%d", Number - 1);
+			strcat(buf, numBuf);
+
+			return buf;
+		}
 	};
 
 	bool operator ==(const FName& A) const
@@ -582,7 +594,7 @@ namespace ETextFlag
 }
 
 /*
-* No complexity to it, just holds the source string. 
+* No complexity to it, just holds the source string.
 * This is *usually* the class that is used for FText-s, but sometimes they use other things like ones from a pool of FStrings
 */
 class FTextHistory {
@@ -594,16 +606,20 @@ public:
 
 	unsigned char UnknownData0[14]; /* Unknown Data */
 
-	/* 
+	/*
 	* Technically this isn't the proper format, but instead something different in most cases
 	* But it should work in place, the PooledString will be used if its valid (i.e. not nullptr && `Count > Max` && `Count <= 0`)
 	* Normally the pooled version is a subclass of FTextHistory, but this seems to work and you can just check if PooledString is valid
 	*/
 	class FString* PooledString;
 
-	unsigned char UnknownData[24]; /* Unknown Data */
+	unsigned char UnknownData1[24]; /* Unknown Data */
 
-	/* The actual FText data, stored as an FString */
+
+	/* 
+		The actual FText data, stored as an FString 
+		Offset by 8 if the text is culturally invariant
+	*/
 	class FString SourceString;
 
 	FString* GetSourceString() {
@@ -627,7 +643,15 @@ public:
 			SourceString.Max = val->Max;
 		}
 	}
+
+	FString* GetInvariantString() {
+		const wchar_t* invariant = (const wchar_t*) ( ( (size_t)&SourceString) + 8);
+
+		return new FString(invariant); //! Possibly consider doing a fallback to GetSourceString()
+	}
 };
+
+// 0x0000029684EE4A98 - 0x0000029684EE4AA0
 
 struct FText {
 	unsigned char UnknownData[0x8]; // Unknown
@@ -636,18 +660,24 @@ struct FText {
 
 	uint32_t Flags; /* Flags with various information on what sort of FText this is, see: ETextFlag::Type */
 
-	const wchar_t* ToString() const {
+	const wchar_t* ToString() {
 		if (Data) {
-			FString* result = Data->GetSourceString();
-			if (result == nullptr || !result->IsValid()) return nullptr;
-			return result->AsString();
+			FString* result = GetFString();
+			if (result != nullptr && result->IsValid()) 
+				return result->AsString();
 		}
 		return nullptr;
 	}
 
 	FString* GetFString() {
-		if (Data) {
+		if (Data && ( (Flags & ETextFlag::CultureInvariant) == 0)) {
 			FString* src = Data->GetSourceString();
+			// Return nullptr if src is nullptr or the string isn't valid
+			if (src == nullptr || !src->IsValid()) return nullptr;
+			return src;
+		}
+		else if (Data) { // Invariant strings require a bit more effort to extract out
+			FString* src = Data->GetInvariantString();
 			// Return nullptr if src is nullptr or the string isn't valid
 			if (src == nullptr || !src->IsValid()) return nullptr;
 			return src;

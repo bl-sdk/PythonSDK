@@ -126,7 +126,7 @@ public:
 
 	bool IsA(UClass* cmp) const;
 	class UPackage* GetPackageObject() const;
-	static std::vector<UObject*> FindAll(char* InStr);
+	static std::vector<UObject*> FindAll(char* InStr, bool IncludeSubclasses = false);
 
 	static UClass* StaticClass()
 	{

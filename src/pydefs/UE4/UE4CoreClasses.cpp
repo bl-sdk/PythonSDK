@@ -81,7 +81,8 @@ void Export_pystes_Core_classes(py::module& m)
 		.def_readwrite("DestructorLinkNext", &UProperty::DestructorLinkNext)
 		.def_readwrite("PostConstructLinkNext", &UProperty::PostConstructLinkNext);
 
-	py::class_< UStructProperty, UProperty >(m, "UStructProperty");
+	py::class_< UStructProperty, UProperty >(m, "UStructProperty")
+		.def_readonly("InnerProperty", &UStructProperty::STRUCT_DONOTUSE);
 	py::class_< UStrProperty, UProperty >(m, "UStrProperty");
 	py::class_< UObjectProperty, UProperty >(m, "UObjectProperty")
 		.def_readonly("PropertyClass", &UObjectProperty::PropertyClass);
@@ -89,13 +90,13 @@ void Export_pystes_Core_classes(py::module& m)
 	py::class_< UNameProperty, UProperty >(m, "UNameProperty");
 	py::class_< UMapProperty, UProperty >(m, "UMapProperty");
 	py::class_< UIntProperty, UProperty >(m, "UIntProperty");
-	py::class_< UInterfaceProperty, UProperty >(m, "UInterfaceProperty");
+	py::class_< UInterfaceProperty, UProperty >(m, "UInterfaceProperty")
+		.def_readonly("InterfaceClass", &UInterfaceProperty::InterfaceClass);
 	py::class_< UFloatProperty, UProperty >(m, "UFloatProperty");
 	py::class_< UDelegateProperty, UProperty >(m, "UDelegateProperty");
 	py::class_< UByteProperty, UProperty >(m, "UByteProperty");
 	py::class_< UBoolProperty, UProperty >(m, "UBoolProperty");
 	py::class_< UArrayProperty, UProperty >(m, "UArrayProperty")
-		// .def_property("InnerProperty", [](UArrayProperty& self) { return self.GetInner(); }, []() {});
 		.def_readonly("InnerProperty", &UArrayProperty::Inner_DONOTUSE);
 
 	py::class_ < UEnum, UField >(m, "UEnum")
