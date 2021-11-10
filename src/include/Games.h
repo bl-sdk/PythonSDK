@@ -95,7 +95,8 @@ static std::map<std::string, MemorySignature> tps_signatures{ {
 
 static std::map<std::string, std::map<std::string, MemorySignature>> game_signature_map{
 	{"Borderlands2", bl2_signatures},
-	{"BorderlandsPreSequel", tps_signatures}
+	{"BorderlandsPreSequel", tps_signatures},
+	{"TinyTina", tps_signatures}
 };
 
 static std::map<std::string, std::string> bl2_object_map{
@@ -110,4 +111,5 @@ static std::map<std::string, std::string> bl2_object_map{
 static std::map<std::string, std::map<std::string, std::string>> game_object_map{
 	{"Borderlands2", bl2_object_map},
 	{"BorderlandsPreSequel", bl2_object_map},
+	{"TinyTina", bl2_object_map}
 };
