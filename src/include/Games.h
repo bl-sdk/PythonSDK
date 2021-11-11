@@ -19,9 +19,9 @@ static std::map<std::string, MemorySignature> bl2_signatures{{
 	}},
 	{
 	"SetCommand", {
-		"\xFF\x83\xC4\x0C\x85\xC0\x75\x1A\x6A\x01\x8D",
-		"xxxxxxxxxxx",
-		11
+		"\x83\xC4\x0C\x85\xC0\x75\x1A\x6A\x01\x8D",
+		"xxxxxxxxxx",
+		10
 	}},
 	{
 	"ProcessEvent", {
@@ -95,7 +95,8 @@ static std::map<std::string, MemorySignature> tps_signatures{ {
 
 static std::map<std::string, std::map<std::string, MemorySignature>> game_signature_map{
 	{"Borderlands2", bl2_signatures},
-	{"BorderlandsPreSequel", tps_signatures}
+	{"BorderlandsPreSequel", tps_signatures},
+	{"TinyTina", tps_signatures}
 };
 
 static std::map<std::string, std::string> bl2_object_map{
@@ -110,4 +111,5 @@ static std::map<std::string, std::string> bl2_object_map{
 static std::map<std::string, std::map<std::string, std::string>> game_object_map{
 	{"Borderlands2", bl2_object_map},
 	{"BorderlandsPreSequel", bl2_object_map},
+	{"TinyTina", bl2_object_map}
 };

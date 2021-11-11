@@ -196,14 +196,16 @@ namespace UnrealSDK
 		try
 		{
 			void* SetCommand = sigscan.Scan(Signatures::SetCommand);
-			DWORD near out = 0;
-			if (!VirtualProtectEx(GetCurrentProcess(), SetCommand, 5, 0x40, &out))
+			Logging::LogF("[Internal] SetCommand = 0x%p\n", SetCommand);
+			DWORD oldProtect = 0;
+			if (!VirtualProtectEx(GetCurrentProcess(), SetCommand, 7, PAGE_EXECUTE_READWRITE, &oldProtect))
 			{
 				Logging::LogF("WINAPI Error when enabling 'SET' commands: %d\n", GetLastError());
 			}
 			else
 			{
-				static_cast<unsigned char *>(SetCommand)[5] = 0xFF;
+				static_cast<unsigned char *>(SetCommand)[5] = 0x90;
+				static_cast<unsigned char *>(SetCommand)[6] = 0x90;
 			}
 		}
 		catch (std::exception e)
@@ -280,9 +282,6 @@ namespace UnrealSDK
 			if (!strcmp(Object->GetFullName().c_str(), ObjectMap["EngineFullName"].c_str()))
 				gEngine = Object;
 		}
-#ifdef _DEBUG
-		Logging::InitializeExtern();
-#endif
 
 		initializeGameVersions();
 
