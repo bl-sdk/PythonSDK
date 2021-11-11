@@ -19,9 +19,9 @@ static std::map<std::string, MemorySignature> bl2_signatures{{
 	}},
 	{
 	"SetCommand", {
-		"\xFF\x83\xC4\x0C\x85\xC0\x75\x1A\x6A\x01\x8D",
-		"xxxxxxxxxxx",
-		11
+		"\x83\xC4\x0C\x85\xC0\x75\x1A\x6A\x01\x8D",
+		"xxxxxxxxxx",
+		10
 	}},
 	{
 	"ProcessEvent", {
