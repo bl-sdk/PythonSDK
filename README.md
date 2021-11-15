@@ -1,4 +1,5 @@
 # UnrealEngine PythonSDK
+[![Support Discord](https://img.shields.io/static/v1?label=&message=Support%20Discord&logo=discord&color=424)](https://discord.gg/bXeqV8Ef9R)
 [![Developer Discord](https://img.shields.io/static/v1?label=&message=Developer%20Discord&logo=discord&color=222)](https://discord.gg/VJXtHvh)
 
 An UnrealEngine Plugin enabling using Python to write plugins that interact directly with UE objects
