@@ -1,5 +1,6 @@
 from unrealsdk import *
 from ..ModManager import BL2MOD, RegisterMod
+from Mods import ModMenu
 import math
 
 class ReadOnly(BL2MOD):
@@ -9,7 +10,7 @@ class ReadOnly(BL2MOD):
     toggledReadOnly = False
 
     DefaultGameInfo = UObject.FindObjectsContaining("WillowCoopGameInfo WillowGame.Default__WillowCoopGameInfo")[0]
-    Keybinds = [["Toggle Read Only", "F2"]]
+    Keybinds = [ModMenu.Keybind("Toggle Read Only", "F2")]
 
     def displayFeedback(self):
         PC = GetEngine().GamePlayers[0].Actor
