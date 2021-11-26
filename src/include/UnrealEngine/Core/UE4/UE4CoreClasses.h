@@ -19,7 +19,7 @@ template<typename Fn>
 inline Fn GetVFunction(const void* instance, std::size_t index)
 {
 	auto vtable = *reinterpret_cast<const void***>(const_cast<void*>(instance));
-	__debugbreak();
+	// __debugbreak();
 	return reinterpret_cast<Fn>(vtable[index]);
 }
 

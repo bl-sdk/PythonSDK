@@ -410,7 +410,10 @@ public:
 	{
 		if (Index < 0 || Index > Names()->Count)
 			return "UnknownName";
+		
 		const char* ansi = Names()->Get(Index)->GetAnsiName();
+		return ansi;
+		/*
 		if (Number == 0) return ansi;
 		else {
 			char* buf = new char[strlen(ansi) + 11];
@@ -423,6 +426,7 @@ public:
 
 			return buf;
 		}
+		*/
 	};
 
 	bool operator ==(const FName& A) const

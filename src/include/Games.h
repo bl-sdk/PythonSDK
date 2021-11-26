@@ -176,9 +176,9 @@ static std::map<std::string, MemorySignature> bl3_signatures{ {
 	}},
 	{
 	"StaticConstructor", {
-		"\xE8\x00\x00\x00\x00\x41\x89\x3E",
-		"x????xxx",
-		8
+		"\xE8\x00\x00\x00\x00\x41\x89\x3E\x4D\x8D\x46\x04",
+		"x????xxxxxxx",
+		12
 	}},
 	{
 	"LoadPackage", {
@@ -204,8 +204,8 @@ static std::map<std::string, std::string> bl3_object_map{
 	{"ConsoleObjectType", "Console"},
 	{"ConsoleObjectName", "/Script/Engine.Default__Console"},
 	{"EngineObjectType", "/Script/OakGame.OakGameEngine"},
-	{"EngineObjectName", "/Engine/Transient.OakGameEngine_0"},
-	{"EngineFullName", "OakGameEngine /Engine/Transient.OakGameEngine_0"},
+	{"EngineObjectName", "/Engine/Transient.OakGameEngine"},
+	{"EngineFullName", "OakGameEngine /Engine/Transient.OakGameEngine"},
 	{"PostRenderFunction", "/Script/Engine.HUD.ReceiveDrawHUD"},
 	{"StartupSDK", "/Script/OakGame.MenuMapMenuFlow.Start"} // This function is used in BL3 near the map start up
 };
