@@ -9,7 +9,7 @@ An UnrealEngine Plugin enabling using Python to write plugins that interact dire
 - Borderlands: The Pre-Sequel
 - Tiny Tina’s Assault on Dragon Keep: A Wonderlands One-shot Adventure
 
-### [For installation instructions, see the project site.](bl-sdk.github.io/)
+### [For installation instructions, see the project site.](https://bl-sdk.github.io/)
 
 ## Linux (SteamPlay/Proton and Wine)
 
