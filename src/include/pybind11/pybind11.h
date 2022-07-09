@@ -681,6 +681,14 @@ protected:
 			e.restore();
 			return nullptr;
 		}
+		catch (const builtin_exception& e) {
+			e.set_error();
+			return nullptr;
+		}
+		catch (const std::exception& e) {
+			PyErr_SetString(PyExc_RuntimeError, e.what());
+			return nullptr;
+		}
 		catch (...) {
 			/* When an exception is caught, give each registered exception
 			   translator a chance to translate it to a Python exception
