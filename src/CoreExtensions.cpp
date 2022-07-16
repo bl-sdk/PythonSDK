@@ -830,3 +830,7 @@ py::str FArray::Repr() {
 	output << "]";
 	return output.str();
 }
+
+int FArray::Length() {
+	return arr->Count;
+}
