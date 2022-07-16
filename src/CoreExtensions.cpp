@@ -813,9 +813,14 @@ FArray* FArray::Iter()
 
 py::object FArray::Next()
 {
-	if (IterCounter >= arr->Count)
+	if (IterCounter >= arr->Count) {
 		throw pybind11::stop_iteration();
+	}
 	return GetItem(IterCounter++);
+}
+
+int FArray::Length() {
+	return arr->Count;
 }
 
 py::str FArray::Repr() {
