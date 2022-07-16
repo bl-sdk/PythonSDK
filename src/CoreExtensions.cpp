@@ -831,6 +831,6 @@ py::str FArray::Repr() {
 	return output.str();
 }
 
-int FArray::Length() {
+unsigned int FArray::Length() {
 	return arr->Count;
 }
