@@ -1032,6 +1032,7 @@ struct FArray {
 	py::object Next();
 	py::str Repr();
 	void Clear();
+	int Length();
 };
 
 typedef void* (__thiscall* tMalloc)(void***, unsigned long, unsigned int);

@@ -331,6 +331,7 @@ struct FArray {
 	FArray* Iter();
 	py::object Next();
 	py::str Repr();
+	int Length();
 };
 
 // Class CoreUObject.Interface

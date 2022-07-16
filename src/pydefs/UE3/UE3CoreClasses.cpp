@@ -229,6 +229,7 @@ void Export_pystes_Core_classes(py::module_ &m)
 		.def("__iter__", &FArray::Iter, py::return_value_policy::reference)
 		.def("__next__", &FArray::Next, py::return_value_policy::reference)
 		.def("__repr__", &FArray::Repr)
+		.def("__len__", &FArray::Length)
 		.def("GetAddress", &FArray::GetAddress, py::return_value_policy::reference)
 		;
 
