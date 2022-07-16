@@ -566,6 +566,7 @@ void Export_pystes_Core_classes(py::module &m)
 		.def("__next__", &FArray::Next, py::return_value_policy::reference)
 		.def("__repr__", &FArray::Repr)
 		.def("GetAddress", &FArray::GetAddress, py::return_value_policy::reference)
+		.def("__len__", &FArray::Length)
 		;
 
 	py::class_ < FScriptInterface >(m, "FScriptInterface")
