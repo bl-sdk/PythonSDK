@@ -17,3 +17,4 @@ PythonSDK does not yet work natively on Linux, but it seems to work well under S
 
     WINEDLLOVERRIDES="ddraw=n,b" %command%
 
+If you want or need to bypass the launcher you can add `-nolauncher` to the launch options after `%command%`
