@@ -1,4 +1,5 @@
 # Ignore the in use file, users should copy the template
+copy_build_to_game.bat
 Directory.Build.props
 
 ## Ignore Visual Studio temporary files, build results, and

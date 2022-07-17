@@ -1,0 +1,11 @@
+@echo off
+
+set "target=%~1"
+set "configuration=%~2"
+set "platform=%~3"
+
+if /i "%configuration:~0,3%" == "UE4" (
+    if "%platform%" == "x64" (
+        copy "%target%" "C:\Program Files (x86)\Steam\steamapps\common\Borderlands 3\OakGame\Binaries\Win64\Plugins\PythonSDK.dll"
+    )
+)
