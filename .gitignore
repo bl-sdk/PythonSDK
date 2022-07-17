@@ -5,3 +5,4 @@
 *.pyc
 *.json
 PythonSDK.vcxproj.user
+Directory.Build.props

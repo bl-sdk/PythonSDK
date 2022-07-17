@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -166,46 +166,20 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LinkIncremental>true</LinkIncremental>
-    <TargetName>ddraw</TargetName>
-    <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
-    <IncludePath>$(PYTHONPATH_X86)\include;$(IncludePath);$(VC_SourcePath)\src\include</IncludePath>
-    <LibraryPath>$(PYTHONPATH_X86)\libs;$(LibraryPath)</LibraryPath>
-    <OutDir>J:\Steeeeeeeeeem\steamapps\common\Borderlands 2\Binaries\Win32</OutDir>
-    <IntDir>build\$(Configuration)\</IntDir>
-    <SourcePath>$(VC_SourcePath)\src;</SourcePath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(PYTHONPATH_x64)\include;$(IncludePath);$(VC_SourcePath)\src\include</IncludePath>
-    <OutDir>K:\Borderlands3\OakGame\Binaries\Win64\Plugins\</OutDir>
-    <IntDir>build\$(Configuration)\</IntDir>
-    <TargetName>PythonSDK</TargetName>
-    <LibraryPath>$(PYTHONPATH_x64)\libs;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
-    <SourcePath>$(VC_SourcePath)\src;</SourcePath>
+    <IncludePath>$(ProjectDir)\src\include;$(SDK_PYTHON_PATH)\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>$(SDK_PYTHON_PATH)\libs;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <LinkIncremental>
-    </LinkIncremental>
-    <TargetName>ddraw</TargetName>
-    <PreBuildEventUseInBuild>false</PreBuildEventUseInBuild>
-    <IncludePath>$(PYTHONPATH_x86)\include;$(IncludePath);$(VC_SourcePath)\src\include;</IncludePath>
-    <LibraryPath>$(PYTHONPATH_x86)\libs;$(LibraryPath)</LibraryPath>
-    <OutDir>C:\Program Files (x86)\Steam\steamapps\common\Borderlands 2\Binaries\Win32</OutDir>
-    <IntDir>build\$(Platform)\$(Configuration)\</IntDir>
-    <SourcePath>$(VC_SourcePath)\src;</SourcePath>
+    <IncludePath>$(ProjectDir)\src\include;$(SDK_PYTHON_PATH)\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>$(SDK_PYTHON_PATH)\libs;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(ProjectDir)\src\include;$(SDK_PYTHON_PATH)\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>$(SDK_PYTHON_PATH)\libs;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LinkIncremental>false</LinkIncremental>
-    <OutDir>K:\Borderlands3\OakGame\Binaries\Win64\Plugins\</OutDir>
-    <IntDir>build\$(Configuration)\</IntDir>
-    <TargetName>PythonSDK</TargetName>
-    <SourcePath>$(VC_SourcePath)\src;</SourcePath>
-    <IncludePath>$(PYTHONPATH_x64)\include;$(IncludePath);$(VC_SourcePath)\src\include;</IncludePath>
-    <LibraryPath>$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64);$(NETFXKitsDir)Lib\um\x64;$(PYTHONPATH_x64)\libs</LibraryPath>
-  </PropertyGroup>
-  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <VcpkgEnabled>false</VcpkgEnabled>
+    <IncludePath>$(ProjectDir)\src\include;$(SDK_PYTHON_PATH)\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>$(SDK_PYTHON_PATH)\libs;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
