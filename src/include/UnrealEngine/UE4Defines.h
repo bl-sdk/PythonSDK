@@ -457,7 +457,7 @@ public:
 		this->Data = (wchar_t*)calloc(this->Count, sizeof(wchar_t));
 
 		if (this->Count && this->Data != 0)
-			wcscpy(this->Data, Other);
+			wcscpy_s(this->Data, this->Max, Other);
 	};
 
 	FString(const char* Other)
@@ -466,7 +466,10 @@ public:
 		this->Data = (wchar_t*)calloc(this->Count, sizeof(wchar_t));
 
 		if (this->Count)
-			mbstowcs(this->Data, Other, this->Count);
+		{
+			size_t ret;
+			mbstowcs_s(&ret, this->Data, this->Max, Other, this->Count);
+		}
 	};
 
 
