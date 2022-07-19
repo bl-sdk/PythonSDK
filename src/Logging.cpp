@@ -105,7 +105,8 @@ namespace Logging
 	void LogW(wchar_t* Formatted, const signed int Length)
 	{
 		char* output = (char *)calloc(Length + 1, sizeof(char));
-		wcstombs(output, Formatted, Length);
+		size_t ret;
+		wcstombs_s(&ret, output, Length, Formatted, Length);
 		Log(output, 0);
 	}
 

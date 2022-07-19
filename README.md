@@ -1,42 +1,25 @@
 # UnrealEngine PythonSDK
+[![Support Discord](https://img.shields.io/static/v1?label=&message=Support%20Discord&logo=discord&color=424)](https://discord.gg/bXeqV8Ef9R)
+[![Developer Discord](https://img.shields.io/static/v1?label=&message=Developer%20Discord&logo=discord&color=222)](https://discord.gg/VJXtHvh)
+
+## [The BL2/TPS/AoDK Mod Manager has moved, click here](https://github.com/bl-sdk/bl2-mod-manager/)
+
 An UnrealEngine Plugin enabling using Python to write plugins that interact directly with UE objects
 
-## List of compatible games
-* Borderlands 2 (1.8.7)
-* Borderlands: The Pre-Sequel!
+## List of confirmed compatible games
+- Borderlands 2
+- Borderlands: The Pre-Sequel
+- Tiny Tina’s Assault on Dragon Keep: A Wonderlands One-shot Adventure
 
-## Installation
+# Compiling
+This repo uses a few template files, which allows you to modifying the actual in-use files without creating conflicts.
+This does however mean that you can't immediately compile the repo, there are a few things you need to do first.
 
-Begin by [downloading the latest version of `PythonSDK.zip` here](https://github.com/Matt-Hurd/BL2-SDK/releases).
+1. Install Python. Make sure to install the dev headers.
+   
+2. Copy `Directory.Build.props.template` to `Directory.Build.props`.
+   The template is set to read from your `PYTHONPATH`, you may need to overwrite this, especially if you're planning on compiling for both 32 and 64-bit.
 
-
-For PythonSDK to be able to interact with the game, you must add a few things to the game's Win32 folder. If you already have PluginLoader installed, you'll need to overwrite some files.
-
-1. Quit the game if it is running.  
-
-2. Extract all of the contents of PythonSDK.zip into your `Borderlands 2\Binaries\Win32` directory.  
-If you are asked to overwrite any files, accept. This mod replaces (and functions the same as) c0dy's Plugin Loader.
-
-3. If you have installed an older version of the SDK, delete the old files. This includes `Win32\Plugins\PythonSDK.dll`
-
-### Linux (SteamPlay/Proton and Wine)
-
-PythonSDK does not yet work natively on Linux, but it seems to work well under SteamPlay/Proton and Wine.  To load properly, though, Wine needs to be told to allow `ddraw.dll` overrides.  Set the game's launch options (via `Properties -> General`) to `WINEDLLOVERRIDES="ddraw=n,b" %command%`
-
-Note that using `WINEDLLOVERRIDES` for `ddraw` isn't supported by the Wine developers, so if you experience problems with the game while using this method, please don't ask the WineHQ team for assistance.
-
-## Usage
-
-`py <python code>` runs arbitrary python code.  
-`pyexec <python file>` runs arbitrary python files from `binaries/Win32/Mods/`.
-
-## Borderlands Ingame Mod Manager
-
-On the main menu, `Downloadable Content` is replace with `Mods`  
-![Mods](https://i.imgur.com/HOHcwYh.jpg)  
-
-Mods can be enabled and disabled by selecting them and pressing `Enter`  
-![ModManager](https://i.imgur.com/8ZaUsDP.png)
-
-## Contact Us
-https://discord.gg/VJXtHvh
+3. (OPTIONAL) Copy `copy_build_to_game.bat.template` to `copy_build_to_game.bat`.
+   This script is run post-build, taking the project configuration and platform, and path to the built SDK dll as args.
+   You can use it to copy this file into your game directory for testing. You *will* need to manually modify it for your setup.

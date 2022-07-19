@@ -1,0 +1,8 @@
+<Project DefaultTargets="BuildExtension">
+  <PropertyGroup Condition="'$(Platform)'=='Win32'">
+    <SDK_PYTHON_PATH>$(PYTHONPATH)</SDK_PYTHON_PATH>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Platform)'=='x64'">
+    <SDK_PYTHON_PATH>$(PYTHONPATH)</SDK_PYTHON_PATH>
+  </PropertyGroup>
+</Project>
