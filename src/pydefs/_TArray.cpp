@@ -5,7 +5,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_TArray(py::module &m)
+void Export_pystes_TArray(py::module_ &m)
 {
 	py::class_< PyTArray>(m, "PyTArray", py::dynamic_attr());
 }

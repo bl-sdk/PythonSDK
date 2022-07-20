@@ -10,7 +10,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_Core_classes(py::module& m)
+void Export_pystes_Core_classes(py::module_& m)
 {
 	py::class_< UObject >(m, "UObject")
 		.def_static("StaticClass", &UObject::StaticClass, py::return_value_policy::reference)

@@ -6,7 +6,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_gamedefines(py::module &m)
+void Export_pystes_gamedefines(py::module_ &m)
 {
 	py::class_< FName >(m, "FName")
 		.def(py::init<>())

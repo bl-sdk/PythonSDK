@@ -74,7 +74,7 @@ void RegisterHook(const std::string& funcName, const std::string& hookName, py::
 #ifdef UE4 // Console command handling
 
 bool RegisterConsoleCommand(const std::string& ConsoleCommand, py::object funcHook) {
-	// Function Verification 
+	// Function Verification
 	static const char* params[] = { "command"};
 	if (!VerifyPythonFunction(funcHook, params)) { return false; }
 	return UnrealSDK::RegisterConsoleCommand(ConsoleCommand, [funcHook](std::string& command)
@@ -109,7 +109,7 @@ PYBIND11_EMBEDDED_MODULE(unrealsdk, m)
 	Export_pystes_TArray(m);
 
 	m.def("GetVersion", []() { return py::make_tuple(VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH); });
-	m.def("Log", [](py::args args) { 
+	m.def("Log", [](py::args args) {
 		std::ostringstream msg;
 		for (py::size_t i = 0; i < args.size(); i++) {
 			if (i > 0) msg << " ";
@@ -161,8 +161,8 @@ PYBIND11_EMBEDDED_MODULE(unrealsdk, m)
 				Template, CopyTransientsFromDefault, InstanceGraph, bAssumeTemplateIsArchetype);
 		}, "Construct Objects", py::arg("Class"), py::arg("Outer") = UnrealSDK::GetEngine()->Outer,
 			py::arg("Name") = FName(),
-			py::arg("SetFlags") = 0x1, py::arg("InternalSetFlags") = 0x00, py::arg("Template") = (UObject*)nullptr, 
-			py::arg("CopyTransientsFromDefault") = 0x00, 
+			py::arg("SetFlags") = 0x1, py::arg("InternalSetFlags") = 0x00, py::arg("Template") = (UObject*)nullptr,
+			py::arg("CopyTransientsFromDefault") = 0x00,
 			py::arg("InstanceGraph") = (void*)nullptr, py::arg("bAssumeTemplateIsArchetype") = (int)0, py::return_value_policy::reference);
 	m.def("RegisterConsoleCommand", [](std::string& Command, py::object FuncToCall) { RegisterConsoleCommand(Command, FuncToCall); });
 	m.def("RemoveConsoleCommand", [](std::string& Command) { RemoveConsoleCommand(Command); });
@@ -340,8 +340,8 @@ void CPythonInterface::InitializeState()
 	try
 	{
 		py::initialize_interpreter();
-		py::module::import("unrealsdk");
-		m_mainNamespace = py::module::import("__main__");
+		py::module_::import("unrealsdk");
+		m_mainNamespace = py::module_::import("__main__");
 	}
 	catch (std::exception e)
 	{
@@ -386,7 +386,7 @@ PythonStatus CPythonInterface::InitializeModules()
 	SetPaths();
 	try
 	{
-		mainModule = py::module::import("Mods");
+		mainModule = py::module_::import("Mods");
 	}
 	catch (std::exception e)
 	{
