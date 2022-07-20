@@ -1,0 +1,54 @@
+name: MSBuild
+
+on:
+  push:
+    branches: ["bl3"]
+  pull_request:
+    branches: ["bl3"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    strategy:
+      matrix:
+        configuration: ["UE3 Release", "UE4 Release"]
+        platform: [Win32, x64]
+        python_version: [3.7]
+        exclude:
+          # Known issue that this fails to compile, will be added back once it works
+          - configuration: UE3 Release
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Add MSBuild to PATH
+      uses: microsoft/setup-msbuild@v1.0.2
+
+    - name: Setup Python (32bit)
+      if: ${{ matrix.platform == 'Win32' }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python_version }}
+        architecture: x86
+
+    - name: Setup Python (64bit)
+      if: ${{ matrix.platform == 'x64' }}
+      uses: actions/setup-python@v4
+      with:
+        python-version: ${{ matrix.python_version }}
+        architecture: x64
+
+    - name: Copy the build properties file
+      run: copy Directory.Build.props.template Directory.Build.props
+      shell: powershell
+
+    - name: Build
+      working-directory: ${{ env.GITHUB_WORKSPACE }}
+      env:
+        PYTHONPATH: ${{ env.pythonLocation }}
+      run: msbuild /m /p:Configuration="${{ matrix.configuration }}" /p:Platform="${{ matrix.platform }}" PythonSDK.sln
