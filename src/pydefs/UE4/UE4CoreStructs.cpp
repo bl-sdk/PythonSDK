@@ -6,7 +6,7 @@
 namespace py = pybind11;
 
 // Module ======================================================================
-void Export_pystes_Core_structs(py::module& m)
+void Export_pystes_Core_structs(py::module_& m)
 {
 	py::class_< FRotator >(m, "FRotator")
 		.def(py::init<>())

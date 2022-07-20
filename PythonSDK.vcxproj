@@ -94,30 +94,6 @@
     <ClInclude Include="src\include\Logging.h" />
     <ClInclude Include="src\include\MemoryDebug.h" />
     <ClInclude Include="src\include\MemorySignature.h" />
-    <ClInclude Include="src\include\pybind11\attr.h" />
-    <ClInclude Include="src\include\pybind11\buffer_info.h" />
-    <ClInclude Include="src\include\pybind11\cast.h" />
-    <ClInclude Include="src\include\pybind11\chrono.h" />
-    <ClInclude Include="src\include\pybind11\common.h" />
-    <ClInclude Include="src\include\pybind11\complex.h" />
-    <ClInclude Include="src\include\pybind11\detail\class.h" />
-    <ClInclude Include="src\include\pybind11\detail\common.h" />
-    <ClInclude Include="src\include\pybind11\detail\descr.h" />
-    <ClInclude Include="src\include\pybind11\detail\init.h" />
-    <ClInclude Include="src\include\pybind11\detail\internals.h" />
-    <ClInclude Include="src\include\pybind11\detail\typeid.h" />
-    <ClInclude Include="src\include\pybind11\eigen.h" />
-    <ClInclude Include="src\include\pybind11\embed.h" />
-    <ClInclude Include="src\include\pybind11\eval.h" />
-    <ClInclude Include="src\include\pybind11\functional.h" />
-    <ClInclude Include="src\include\pybind11\iostream.h" />
-    <ClInclude Include="src\include\pybind11\numpy.h" />
-    <ClInclude Include="src\include\pybind11\operators.h" />
-    <ClInclude Include="src\include\pybind11\options.h" />
-    <ClInclude Include="src\include\pybind11\pybind11.h" />
-    <ClInclude Include="src\include\pybind11\pytypes.h" />
-    <ClInclude Include="src\include\pybind11\stl.h" />
-    <ClInclude Include="src\include\pybind11\stl_bind.h" />
     <ClInclude Include="src\include\pydef.h" />
     <ClInclude Include="src\include\Settings.h" />
     <ClInclude Include="src\include\Signatures.h" />
@@ -222,56 +198,56 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UE3 Debug|Win32'">
-    <IncludePath>$(ProjectDir)\src\include;$(SDK_PYTHON_PATH)\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <IncludePath>$(ProjectDir)\src\include;$(ProjectDir)\libs\pybind11\include;$(SDK_PYTHON_PATH)\include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
     <LibraryPath>$(SDK_PYTHON_PATH)\libs;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
     <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\obj\$(Platform)\$(Configuration)\</IntDir>
     <TargetName>PythonSDK</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UE4 Debug|Win32'">
-    <IncludePath>$(ProjectDir)\src\include;$(SDK_PYTHON_PATH)\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <IncludePath>$(ProjectDir)\src\include;$(ProjectDir)\libs\pybind11\include;$(SDK_PYTHON_PATH)\include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
     <LibraryPath>$(SDK_PYTHON_PATH)\libs;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
     <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\obj\$(Platform)\$(Configuration)\</IntDir>
     <TargetName>PythonSDK</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UE3 Release|Win32'">
-    <IncludePath>$(ProjectDir)\src\include;$(SDK_PYTHON_PATH)\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <IncludePath>$(ProjectDir)\src\include;$(ProjectDir)\libs\pybind11\include;$(SDK_PYTHON_PATH)\include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
     <LibraryPath>$(SDK_PYTHON_PATH)\libs;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
     <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\obj\$(Platform)\$(Configuration)\</IntDir>
     <TargetName>PythonSDK</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UE4 Release|Win32'">
-    <IncludePath>$(ProjectDir)\src\include;$(SDK_PYTHON_PATH)\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <IncludePath>$(ProjectDir)\src\include;$(ProjectDir)\libs\pybind11\include;$(SDK_PYTHON_PATH)\include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
     <LibraryPath>$(SDK_PYTHON_PATH)\libs;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
     <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\obj\$(Platform)\$(Configuration)\</IntDir>
     <TargetName>PythonSDK</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UE3 Debug|x64'">
-    <IncludePath>$(ProjectDir)\src\include;$(SDK_PYTHON_PATH)\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <IncludePath>$(ProjectDir)\src\include;$(ProjectDir)\libs\pybind11\include;$(SDK_PYTHON_PATH)\include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
     <LibraryPath>$(SDK_PYTHON_PATH)\libs;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
     <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\obj\$(Platform)\$(Configuration)\</IntDir>
     <TargetName>PythonSDK</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UE4 Debug|x64'">
-    <IncludePath>$(ProjectDir)\src\include;$(SDK_PYTHON_PATH)\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <IncludePath>$(ProjectDir)\src\include;$(ProjectDir)\libs\pybind11\include;$(SDK_PYTHON_PATH)\include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
     <LibraryPath>$(SDK_PYTHON_PATH)\libs;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
     <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\obj\$(Platform)\$(Configuration)\</IntDir>
     <TargetName>PythonSDK</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UE3 Release|x64'">
-    <IncludePath>$(ProjectDir)\src\include;$(SDK_PYTHON_PATH)\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <IncludePath>$(ProjectDir)\src\include;$(ProjectDir)\libs\pybind11\include;$(SDK_PYTHON_PATH)\include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
     <LibraryPath>$(SDK_PYTHON_PATH)\libs;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
     <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\obj\$(Platform)\$(Configuration)\</IntDir>
     <TargetName>PythonSDK</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='UE4 Release|x64'">
-    <IncludePath>$(ProjectDir)\src\include;$(SDK_PYTHON_PATH)\include;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <IncludePath>$(ProjectDir)\src\include;$(ProjectDir)\libs\pybind11\include;$(SDK_PYTHON_PATH)\include;$(VC_IncludePath);$(WindowsSDK_IncludePath)</IncludePath>
     <LibraryPath>$(SDK_PYTHON_PATH)\libs;$(VC_LibraryPath_x64);$(WindowsSDK_LibraryPath_x64)</LibraryPath>
     <OutDir>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)\obj\$(Platform)\$(Configuration)\</IntDir>
