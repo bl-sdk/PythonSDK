@@ -676,6 +676,9 @@ public:
 	unsigned long		ReturnValueOffset;
 	void*				Func;
 #endif
+
+	std::vector<UProperty*> GetParameters();
+	std::vector<UProperty*> GetReturnType();
 };
 
 // 0x0004 (0x0084 - 0x0080)

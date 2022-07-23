@@ -52,7 +52,7 @@ namespace UnrealSDK
 	typedef char*(__thiscall *tFNameInitOld)(FName* Out, wchar_t* Src, int InNumber, int FindType, int SplitName,
 	                                         int Unk1);
 	typedef void (__thiscall *tFNameInitNew)(FName* Out, wchar_t* Src, int InNumber, int FindType, int SplitName);
-	
+
 	typedef FName (*UE4FNameInit)(const wchar_t* Name, int32_t InNumber, int FindType);
 	typedef void* (*UE4GlobalLogSingleton)();
 

@@ -674,7 +674,7 @@ void FHelper::SetInterfaceProperty(class UProperty* Prop, int idx, const py::obj
 	else
 	{
 		const auto objVal = Val.cast<UObject*>();
-		const auto scriptInterface = objVal->QueryInterface(Prop->GetInterfaceClass());
+		const auto scriptInterface = objVal->QueryInterface(static_cast<UInterfaceProperty*>(Prop)->GetInterfaceClass());
 		reinterpret_cast<FScriptInterface*>(GetPropertyAddress(Prop, idx))[0] = scriptInterface;
 	}
 }
@@ -703,16 +703,6 @@ void FHelper::SetObjectProperty(class UProperty* Prop, int idx, const py::object
 
 	reinterpret_cast<UObject **>(GetPropertyAddress(Prop, idx))[0] = Val.cast<UObject*>();
 }
-
-#ifndef UE4
-void FHelper::SetComponentProperty(class UProperty* Prop, int idx, const py::object& Val)
-{
-	if (!py::isinstance<UComponent>(Val) && !py::isinstance<py::none>(Val))
-		throw py::type_error("FHelper::SetProperty: Got unexpected type, expected UComponent!");
-
-	reinterpret_cast<UComponent **>(GetPropertyAddress(Prop, idx))[0] = Val.cast<UComponent*>();
-}
-#endif
 
 void FHelper::SetClassProperty(class UProperty* Prop, int idx, const py::object& Val)
 {
@@ -768,6 +758,7 @@ void FHelper::SetByteProperty(class UProperty* Prop, int idx, const py::object& 
 	reinterpret_cast<char*>(GetPropertyAddress(Prop, idx))[0] = static_cast<char>(Val.cast<int>());
 }
 
+#ifdef UE4
 void FHelper::SetEnumProperty(class UProperty* Prop, int idx, const py::object& Val)
 {
 	if (!py::isinstance<py::int_>(Val) && !py::isinstance<py::str>(Val) && !py::isinstance<py::dict>(Val) )
@@ -842,6 +833,7 @@ void FHelper::SetEnumProperty(class UProperty* Prop, int idx, const py::object& 
 
 	reinterpret_cast<char*>(GetPropertyAddress(Prop, idx))[0] = static_cast<char>(enumValue);
 }
+#endif
 
 void FHelper::SetBoolProperty(class UProperty* Prop, int idx, const py::object& Val)
 {
@@ -876,7 +868,7 @@ void FHelper::SetArrayProperty(class UProperty* Prop, int idx, const py::object&
 
 		// TODO: Test this GMalloc implementation & array resizing
 		#ifndef UE4
-		char *data = static_cast<char*>(static_cast<tMalloc>(UnrealSDK::pGMalloc[0][0][1])(UnrealSDK::pGMalloc[0], Prop->GetInner()->ElementSize * s.size(), 8));
+		char *data = static_cast<char*>(static_cast<tMalloc>(UnrealSDK::pGMalloc[0][0][1])(UnrealSDK::pGMalloc[0], static_cast<UArrayProperty*>(Prop)->GetInner()->ElementSize * s.size(), 8));
 		#else
 		char* data = static_cast<char*>( static_cast<tMalloc>(UnrealSDK::pGMalloc)(static_cast<UArrayProperty*>(Prop)->GetInner()->ElementSize * s.size(), 8));
 		#endif
@@ -1004,7 +996,7 @@ struct FFunction UObject::GetFunction(std::string& PropName)
 	return FFunction{ this, function };
 }
 
-FHelper* FFunction::GenerateParams(const py::args& args, const py::kwargs& kwargs, FHelper* params)
+void FFunction::GenerateParams(const py::args& args, const py::kwargs& kwargs, FHelper* params)
 {
 	unsigned int currentIndex = 0;
 	for (UProperty* Child = (UProperty*)func->Children; Child; Child = (UProperty*)Child->Next)
@@ -1027,7 +1019,6 @@ FHelper* FFunction::GenerateParams(const py::args& args, const py::kwargs& kwarg
 			continue;
 		throw std::exception("Invalid number of parameters");
 	}
-	return params;
 }
 
 py::object FFunction::GetReturn(FHelper* params)
@@ -1061,18 +1052,7 @@ py::object FFunction::Call(py::args args, py::kwargs kwargs)
 
 	auto flags = func->FunctionFlags;
 	func->FunctionFlags |= 0x400;
-
-#if UE3
-	void* returnObj = nullptr;
-	for (UProperty* Child = (UProperty*)func->Children; Child; Child = (UProperty*)Child->Next)
-		if (Child->PropertyFlags & 0x400)
-			returnObj = params + Child->Offset_Internal;
-
-	UnrealSDK::pProcessEvent(obj, func, params, returnObj);
-#else
 	UnrealSDK::pProcessEvent(obj, func, params);
-#endif
-
 	func->FunctionFlags = flags;
 
 	LOG(INTERNAL, "Called ProcessEvent");

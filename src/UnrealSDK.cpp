@@ -613,8 +613,11 @@ namespace UnrealSDK
 		if (!Error)
 		{
 			Error = new FOutputDevice();
+			/*
+			WTF ??
 			Error->VfTable = (void*)calloc(2, sizeof(void*));
 			((void**)Error->VfTable)[1] = (void*)&Logging::LogW;
+			*/
 		}
 		if (!Class)
 			return nullptr;

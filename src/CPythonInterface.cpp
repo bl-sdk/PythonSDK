@@ -258,7 +258,7 @@ void AddToConsoleLog(UConsole* console, FString input)
 {
 
 	int prev = (console->HistoryTop - 1) % 16;
-	if (!console->History[prev].Data || strcmp(input.AsString(), console->History[prev].AsString()))
+	if (!console->History[prev].Data || wcscmp(input.AsString(), console->History[prev].AsString()))
 	{
 		console->PurgeCommandFromHistory(input);
 		console->History[console->HistoryTop] = input;
@@ -278,18 +278,20 @@ bool CheckPythonCommand(UObject* caller, UFunction* function, FStruct* params)
 		(UProperty *)params->structType->FindChildByName(FName("command")),
 		0
 	);
-	char* input = command->AsString();
-	if (strncmp("py ", input, 3) == 0)
+	const wchar_t* input = command->AsString();
+	if (wcsncmp(L"py ", input, 3) == 0)
 	{
+		const char* narrow = Util::Narrow(input).c_str();
 		AddToConsoleLog((UConsole*)caller, *command);
-		LOG(CONSOLE, "\n>>> %s <<<", input);
-		UnrealSDK::Python->DoString(input + 3);
+		LOG(CONSOLE, ">>> %s <<<", narrow);
+		UnrealSDK::Python->DoString(narrow + 3);
 	}
-	else if (strncmp("pyexec ", input, 7) == 0)
+	else if (wcsncmp(L"pyexec ", input, 7) == 0)
 	{
+		const char* narrow = Util::Narrow(input).c_str();
 		AddToConsoleLog((UConsole*)caller, *command);
-		LOG(CONSOLE, "\n>>> %s <<<", input);
-		UnrealSDK::Python->DoFile(input + 7);
+		LOG(CONSOLE, ">>> %s <<<", narrow);
+		UnrealSDK::Python->DoFile(narrow + 7);
 	}
 	else {
 		((UConsole*)caller)->ConsoleCommand(*command);

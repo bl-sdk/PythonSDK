@@ -197,7 +197,7 @@ struct FFunction
 	UFunction* func;
 
 private:
-	FHelper* GenerateParams(const py::args& args, const py::kwargs& kwargs, FHelper* params);
+	void GenerateParams(const py::args& args, const py::kwargs& kwargs, FHelper* params);
 
 public:
 	py::object GetReturn(FHelper* params);
