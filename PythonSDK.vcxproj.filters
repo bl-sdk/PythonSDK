@@ -24,12 +24,6 @@
     <Filter Include="Header Files\UnrealEngine\Engine">
       <UniqueIdentifier>{14d8a551-59e4-49f9-9701-b7a3b9dad928}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\minhook">
-      <UniqueIdentifier>{1a7051f8-dda4-4008-a721-d1d981d18640}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\minhook\hde">
-      <UniqueIdentifier>{c5eb54d4-1dc7-4337-a0eb-f83831633364}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Header Files\minhook">
       <UniqueIdentifier>{8532794f-64df-46d5-9762-eb2cfc219726}</UniqueIdentifier>
     </Filter>
@@ -59,6 +53,18 @@
     </Filter>
     <Filter Include="Source Files\Pydefs\UE4">
       <UniqueIdentifier>{df53748d-b7d8-44f9-a0c5-46b81aca0ff5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\libs">
+      <UniqueIdentifier>{85c9ffb3-5778-42a8-aed1-ea9a6ed6aed1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\libs\loguru">
+      <UniqueIdentifier>{0d1cb484-e168-4c69-864e-246be8b9a8d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\libs\minhook">
+      <UniqueIdentifier>{1a7051f8-dda4-4008-a721-d1d981d18640}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\libs\minhook\hde">
+      <UniqueIdentifier>{c5eb54d4-1dc7-4337-a0eb-f83831633364}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -218,19 +224,19 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="src\include\minhook\hde\hde64.cpp">
-      <Filter>Source Files\minhook\hde</Filter>
+      <Filter>Source Files\libs\minhook\hde</Filter>
     </ClCompile>
     <ClCompile Include="src\include\minhook\hde\hde32.cpp">
-      <Filter>Source Files\minhook\hde</Filter>
+      <Filter>Source Files\libs\minhook\hde</Filter>
     </ClCompile>
     <ClCompile Include="src\include\minhook\buffer.cpp">
-      <Filter>Source Files\minhook</Filter>
+      <Filter>Source Files\libs\minhook</Filter>
     </ClCompile>
     <ClCompile Include="src\include\minhook\hook.cpp">
-      <Filter>Source Files\minhook</Filter>
+      <Filter>Source Files\libs\minhook</Filter>
     </ClCompile>
     <ClCompile Include="src\include\minhook\trampoline.cpp">
-      <Filter>Source Files\minhook</Filter>
+      <Filter>Source Files\libs\minhook</Filter>
     </ClCompile>
     <ClCompile Include="src\UnrealEngine\UE3\UE3CoreFunctions.cpp">
       <Filter>Source Files\UnrealEngine\UE3</Filter>
@@ -255,6 +261,9 @@
     </ClCompile>
     <ClCompile Include="src\pydefs\UE4\UE4CoreStructs.cpp">
       <Filter>Source Files\Pydefs\UE4</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\loguru\loguru.cpp">
+      <Filter>Source Files\libs\loguru</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
