@@ -49,7 +49,7 @@ namespace UnrealSDK
 
 	CPythonInterface* Python;
 	bool bPythonInitTried = false;
-	
+
 	int EngineVersion = -1;
 	int ChangelistNumber = -1;
 
@@ -66,26 +66,19 @@ namespace UnrealSDK
 
 	void __fastcall hkProcessEvent(UObject* caller, UFunction* Function, void* Params)
 	{
-		//Logging::LogF("ProcessEvent\n");
-		//Logging::LogF("0x%p\n", caller);
-		//Logging::LogF("0x%p\n", Function);
-		//Logging::LogF("0x%p\n", Params);
-		//Logging::LogF("0x%p\n", oProcessEvent);
 		if (gInjectedCallNext)
 		{
 			gInjectedCallNext = false;
 			oProcessEvent(caller, Function, Params);
 			return;
 		}
-		//Logging::LogF("1\n");
 
 		std::string functionName = Function->GetObjectName();
-		//Logging::LogF("2\n");
 		if (logAllCalls)
 		{
 			std::string callerName = caller->GetFullName();
 
-			Logging::LogF("===== ProcessEvent called =====\npCaller Name = %s\npFunction Name = %s\n", callerName.c_str(), functionName.c_str());
+			LOG(HOOKS, "===== ProcessEvent called =====\npCaller Name = %s\npFunction Name = %s", callerName.c_str(), functionName.c_str());
 		}
 
 		if (gHookManager->HasHook(caller, Function))
@@ -96,24 +89,23 @@ namespace UnrealSDK
 				return;
 			}
 		}
-		//Logging::LogF("3\n");
 
 		oProcessEvent(caller, Function, Params);
 	}
 
 	void LogOutParams(FFrame* Stack)
 	{
-		Logging::LogF("Logging stack, %s, %s\n", Stack->Object->GetFullName().c_str(),
+		LOG(HOOKS, "Logging stack, %s, %s", Stack->Object->GetFullName().c_str(),
 			Stack->Node->GetFullName().c_str());
-		Logging::LogF("0x%p\n", Stack->Node);
-		Logging::LogF("0x%p\n", Stack->Object);
-		Logging::LogF("0x%p\n", Stack->Code);
-		Logging::LogF("0x%p\n", Stack->Locals);
-		Logging::LogF("0x%p\n", Stack->PreviousFrame);
-		Logging::LogF("0x%p\n", Stack->Outparams);
+		LOG(HOOKS, "0x%p", Stack->Node);
+		LOG(HOOKS, "0x%p", Stack->Object);
+		LOG(HOOKS, "0x%p", Stack->Code);
+		LOG(HOOKS, "0x%p", Stack->Locals);
+		LOG(HOOKS, "0x%p", Stack->PreviousFrame);
+		LOG(HOOKS, "0x%p", Stack->Outparams);
 		for (FOutParmRec* rec = Stack->Outparams; rec; rec = rec->NextOutParm)
 		{
-			Logging::LogF("%s, 0x%x\n", rec->Property->GetFullName().c_str(), rec->PropAddr);
+			LOG(HOOKS, "%s, 0x%x", rec->Property->GetFullName().c_str(), rec->PropAddr);
 		}
 	}
 
@@ -126,14 +118,14 @@ namespace UnrealSDK
 	{
 		if (logAllCalls)
 		{
-			Logging::LogF("CallFunction\n");
+			LOG(HOOKS, "CallFunction");
 			std::string callerName = caller->GetFullName();
 			std::string functionName = Function->GetFullName();
 
 			// Prevent infinite recursion when printing to console
 			if (functionName != "Function Engine.Console.OutputText" && functionName !=
 				"Function Engine.Console.OutputTextLine")
-				Logging::LogF("===== CallFunction called =====\npCaller Name = %s\npFunction Name = %s\n",
+				LOG(HOOKS, "===== CallFunction called =====\npCaller Name = %s\npFunction Name = %s",
 					callerName.c_str(), functionName.c_str());
 		}
 
@@ -156,7 +148,7 @@ namespace UnrealSDK
 			auto z = Util::Narrow(cmd);
 			const char* input = z.c_str();
 			Python->AddToConsoleLog(gameConsole, input);
-			Logging::LogIgnoreUE(">>> %s <<<", input);
+			LOG(CONSOLE, ">>> %s <<<", input);
 			Python->DoString(input + 3);
 			return true;
 		}
@@ -165,7 +157,7 @@ namespace UnrealSDK
 			auto z = Util::Narrow(cmd);
 			const char* input = z.c_str();
 			Python->AddToConsoleLog(gameConsole, input);
-			Logging::LogIgnoreUE(">>> %s <<<", input);
+			LOG(CONSOLE, ">>> %s <<<", input);
 			UnrealSDK::Python->DoFile(input + 7);
 			return true;
 		}
@@ -174,7 +166,7 @@ namespace UnrealSDK
 			std::string objName = Util::Narrow(cmd).substr(9);
 			UObject* objectToDump = UObject::FindObjectClassless(objName);
 			if (objectToDump == nullptr) {
-				Logging::LogF("Unable to find object of name: %s\n", objName.c_str());
+				LOG(CONSOLE, "Unable to find object of name: %s", objName.c_str());
 				return true;
 			}
 			objectToDump->DumpObject();
@@ -188,12 +180,6 @@ namespace UnrealSDK
 			for (size_t i = 0; i < UnrealSDK::gameConsole->Scrollback.Count; i++) {
 				FString str = UnrealSDK::gameConsole->Scrollback(i);
 				file << str.AsString() << "\n";
-
-				std::string flattened = Util::Narrow(str.AsString());
-
-				// This extra format specifier needs to be here (sometimes) because certain objects can have format specifiers in them
-				// The format specifiers in the string get interpreted as such and then it crashes.
-				Logging::LogIgnoreUE("%s", flattened.c_str());
 			}
 			return true;
 		}
@@ -227,125 +213,129 @@ namespace UnrealSDK
 		std::size_t slash = str.find_last_of("/\\") + 1;
 		std::size_t dot = str.find_last_of('.');
 		std::string exeName = str.substr(slash, dot - slash);
-		Logging::LogF("Found EXE name as '%s.exe'\n", exeName.c_str());
+		LOG(MISC, "Found EXE name as '%s.exe'", exeName.c_str());
 
 		ObjectMap = game_object_map[exeName];
-		Logging::LogF("Loaded object map\n");
+		LOG(MISC, "Loaded object map");
 		CSigScan sigscan(Util::Widen(exeName + ".exe").c_str());
 
 		scanner = sigscan;
 
-		Logging::LogF("Loading Sigs...\n");
+		LOG(MISC, "Loading Sigs...");
 		Signatures::InitSignatures(exeName);
-		Logging::LogF("Sigs Loaded\n");
+		LOG(MISC, "Sigs Loaded");
 
 #ifdef UE4
 			// UE4 has a different setup & patterns for the GNames / GObjects, they're now chunked up and not just a standard TArray<UObject*>*
 
-			Logging::LogF("\n\nInitializing UE4 SDK...\n");
+			LOG(MISC, "Initializing UE4 SDK...");
 			auto addy = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::GObjects.Sig, Signatures::GObjects.Mask);
 			auto x = (FUObjectArray*)(addy + *(signed long*)(addy + 0x3) + 0x7);
 
 			pGObjects = (void*)(&(x->ObjObjects));
 
-			Logging::LogF("[Internal] FUObjectArray = 0x%p\n", x);
-			Logging::LogF("[Internal] GObjects = 0x%p\n", x->ObjObjects.Objects);
-			
+			LOG(MISC, "[Internal] FUObjectArray = 0x%p", x);
+			LOG(MISC, "[Internal] GObjects = 0x%p", x->ObjObjects.Objects);
+
 			auto addy2 = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::GNames.Sig, Signatures::GNames.Mask);
 			auto y = (*(FChunkedFNameEntryArray**)(addy2 + *(signed long*)(addy2 + 0xB) + 0xF));
 			pGNames = (void***)(y);
 
-			Logging::LogF("[Internal] GNames = 0x%p\n", (void***)(y->Objects) );
+			LOG(MISC, "[Internal] GNames = 0x%p", (void***)(y->Objects) );
 
 
 			pFNameInit = reinterpret_cast<UE4FNameInit>(sigscan.Scan(Signatures::FNameInit));
-			Logging::LogF("[Internal] FindOrCreateFName = 0x%p\n", pFNameInit);
+			LOG(MISC, "[Internal] FindOrCreateFName = 0x%p", pFNameInit);
 
 			auto addy3 = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::StaticConstructor.Sig, Signatures::StaticConstructor.Mask);
 			auto z = (addy3 + *(signed long*)(addy3 + 0x1) + 5);
 			pStaticConstructObject = reinterpret_cast<tStaticConstructObject>(z);
-			Logging::LogF("[Internal] UObject::StaticConstructObject() = 0x%p\n", pStaticConstructObject);
+			LOG(MISC, "[Internal] UObject::StaticConstructObject() = 0x%p", pStaticConstructObject);
 
 			auto addy4 = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::StaticExec.Sig, Signatures::StaticExec.Mask);
 			auto j = (addy4 + *(signed long*)(addy4 + 0x1) + 5);
 			pStaticExec = reinterpret_cast<tStaticExec>(j);
-			Logging::LogF("[Internal] StaticExec() = 0x%p\n", pStaticExec);
+			LOG(MISC, "[Internal] StaticExec() = 0x%p", pStaticExec);
 
 			auto addy5 = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::GMalloc.Sig, Signatures::GMalloc.Mask);
 			auto k = (addy5 + *(signed long*)(addy5 + 0x1) + 5);
 			pGMalloc = reinterpret_cast<tMalloc>(k);
-			Logging::LogF("[Internal] FMemory::MallocExternal() = 0x%p\n", pGMalloc);
+			LOG(MISC, "[Internal] FMemory::MallocExternal() = 0x%p", pGMalloc);
 
 			auto addy6 = sigscan.FindPattern(GetModuleHandle(NULL), (unsigned char*)Signatures::Realloc.Sig, Signatures::Realloc.Mask);
 			auto m = (addy6 + *(signed long*)(addy6 + 0x1) + 5);
 			pRealloc = reinterpret_cast<tRealloc>(m);
-			Logging::LogF("[Internal] FMemory::Realloc() = 0x%p\n", pRealloc);
-#else 
+			LOG(MISC, "[Internal] FMemory::Realloc() = 0x%p", pRealloc);
+#else
 		void*** tempGObjects = (void***)sigscan.Scan(Signatures::GObjects);
 		if (tempGObjects != nullptr) {
 			pGObjects = *tempGObjects;
-			Logging::LogF("[Internal] GObjects = 0x%p\n", pGObjects);
+			LOG(MISC, "[Internal] GObjects = 0x%p", pGObjects);
 		}
 
 		void*** tempGNames = (void***)sigscan.Scan(Signatures::GNames);
 		if (tempGNames != nullptr) {
 			pGNames = *tempGNames;
-			Logging::LogF("[Internal] GNames = 0x%p\n", pGNames);
+			LOG(MISC, "[Internal] GNames = 0x%p", pGNames);
 		}
 
 		pFNameInit = reinterpret_cast<tFNameInitOld>(sigscan.Scan(Signatures::FNameInit));
-		Logging::LogF("[Internal] FindOrCreateFName = 0x%p\n", pFNameInit);
+		LOG(MISC, "[Internal] FindOrCreateFName = 0x%p", pFNameInit);
 
 		pStaticConstructObject = reinterpret_cast<tStaticConstructObject>(sigscan.Scan(Signatures::StaticConstructor));
-		Logging::LogF("[Internal] UObject::StaticConstructObject() = 0x%p\n", pStaticConstructObject);
+		LOG(MISC, "[Internal] UObject::StaticConstructObject() = 0x%p", pStaticConstructObject);
 
 		void* gm = sigscan.Scan(Signatures::GMalloc);
 		if (gm != nullptr) {
 			pGMalloc = *static_cast<void*****>(sigscan.Scan(Signatures::GMalloc));
-			Logging::LogF("[Internal] GMalloc = 0x%p\n", pGMalloc);
+			LOG(MISC, "[Internal] GMalloc = 0x%p", pGMalloc);
 		}
 		else
 			pGMalloc = nullptr;
 #endif
 
 		pProcessEvent = reinterpret_cast<tProcessEvent>(sigscan.Scan(Signatures::ProcessEvent));
-		Logging::LogF("[Internal] UObject::ProcessEvent() = 0x%p\n", pProcessEvent);
+		LOG(MISC, "[Internal] UObject::ProcessEvent() = 0x%p", pProcessEvent);
 
 		pCallFunction = reinterpret_cast<tCallFunction>(sigscan.Scan(Signatures::CallFunction));
-		Logging::LogF("[Internal] UObject::CallFunction() = 0x%p\n", pCallFunction);
+		LOG(MISC, "[Internal] UObject::CallFunction() = 0x%p", pCallFunction);
 
-		
+
 		pFrameStep = reinterpret_cast<tFrameStep>(sigscan.Scan(Signatures::FrameStep));
-		Logging::LogF("[Internal] FFrame::Step() = 0x%p\n", pFrameStep);
+		LOG(MISC, "[Internal] FFrame::Step() = 0x%p", pFrameStep);
 
 		pGetDefaultObject = reinterpret_cast<tGetDefaultObject>(sigscan.Scan(Signatures::GetDefaultObject));
-		Logging::LogF("[Internal] GetDefaultObject = 0x%p\n", pGetDefaultObject);
+		LOG(MISC, "[Internal] GetDefaultObject = 0x%p", pGetDefaultObject);
 
 		// TODO: Add these sigs
 		// pLoadPackage = reinterpret_cast<tLoadPackage>(sigscan.Scan(Signatures::LoadPackage));
-		// Logging::LogF("[Internal] UObject::LoadPackage() = 0x%p\n", pLoadPackage);
+		// LOG(MISC, "[Internal] UObject::LoadPackage() = 0x%p", pLoadPackage);
 
 		#ifndef UE4 // When generated properly, UE4 games don't actually have the SET command in them :(
 			try
 			{
 				void* SetCommand = sigscan.Scan(Signatures::SetCommand);
-				DWORD near out = 0;
-				if (!VirtualProtectEx(GetCurrentProcess(), SetCommand, 5, 0x40, &out))
-				{
-					Logging::LogF("WINAPI Error when enabling 'SET' commands: %d\n", GetLastError());
-				}
-				else
-				{
-					static_cast<unsigned char*>(SetCommand)[5] = 0xFF;
+				if (SetCommand == nullptr) {
+					LOG(MISC, "Couldn't find set command signature, assuming already edited");
+				} else {
+					DWORD near out = 0;
+					if (!VirtualProtectEx(GetCurrentProcess(), SetCommand, 5, 0x40, &out))
+					{
+						LOG(ERROR, "WINAPI Error when enabling 'SET' commands: %d", GetLastError());
+					}
+					else
+					{
+						static_cast<unsigned char*>(SetCommand)[5] = 0xFF;
+					}
+					LOG(MISC, "Enabled SET commands");
 				}
 			}
 			catch (std::exception e)
 			{
-				Logging::LogF("Exception when enabling 'SET' commands: %d\n", e.what());
+				LOG(ERROR, "Exception when enabling 'SET' commands: %d", e.what());
 			}
-			Logging::LogF("Enabled SET commands\n");
 		#endif
-		
+
 		LogAllCalls(false);
 
 		MH_Initialize();
@@ -354,14 +344,14 @@ namespace UnrealSDK
 			// Detour UObject::ProcessEvent()
 			MH_CreateHook((PVOID&)pProcessEvent, &hkProcessEvent, &(PVOID&)oProcessEvent);
 			MH_EnableHook((PVOID&)pProcessEvent);
-			Logging::LogF("[Internal] Hooked ProcessEvent, Hook: 0x%p, Original: 0x%p\n", pProcessEvent, oProcessEvent);
+			LOG(MISC, "[Internal] Hooked ProcessEvent, Hook: 0x%p, Original: 0x%p", pProcessEvent, oProcessEvent);
 		}
 
 		if (pCallFunction != nullptr) {
 			// Detour UObject::CallFunction()
 			MH_CreateHook((PVOID&)pCallFunction, &hkCallFunction, &(PVOID&)oCallFunction);
 			MH_EnableHook((PVOID&)pCallFunction);
-			Logging::LogF("[Internal] Hooked CallFunction, Hook: 0x%p, Original: 0x%p\n", pCallFunction, oCallFunction);
+			LOG(MISC, "[Internal] Hooked CallFunction, Hook: 0x%p, Original: 0x%p", pCallFunction, oCallFunction);
 		}
 
 		#ifdef UE4
@@ -369,13 +359,13 @@ namespace UnrealSDK
 			// Detour StaticExec()
 			MH_CreateHook((PVOID&)pStaticExec, &hkStaticExec, &(PVOID&)oStaticExec);
 			MH_EnableHook((PVOID&)pStaticExec);
-			Logging::LogF("[Internal] Hooked StaticExec, Hook: 0x%p, Original: 0x%p\n", pStaticExec, oStaticExec);
+			LOG(MISC, "[Internal] Hooked StaticExec, Hook: 0x%p, Original: 0x%p", pStaticExec, oStaticExec);
 		}
 		#endif
 	}
 
 	void ReloadPython() {
-		Logging::Log("Reloading python modules...");
+		LOG(INFO, "Reloading python modules...");
 
 		if (Python->ReloadState() == PythonStatus::PYTHON_MODULE_ERROR && Settings::DeveloperModeEnabled()) {
 			Util::Popup(L"Python Module Error",
@@ -421,12 +411,12 @@ namespace UnrealSDK
 		// In the event the gameConsole found through UObject::Find
 		// This being set probably means that the console already exists but meh
 		if (eng && gameConsole == nullptr && eng->GameViewport)  gameConsole = eng->GameViewport->ViewportConsole;
-		
+
 		// If our console wasn't initialized in the first place
 		// Generally ViewportConsole will end up being nullptr if the game is built for shipping
-		if (eng && eng->GameViewport && gameConsole) { 
+		if (eng && eng->GameViewport && gameConsole) {
 			gameConsole->ConsoleTargetPlayer = eng->GameViewport->World->OwningGameInstance->LocalPlayers(0);
-			FName n = FName(std::string("Tilde"));	
+			FName n = FName(std::string("Tilde"));
 
 			// This is probably a costly call to do, but its also kinda the best option imo
 			for (UObject* obj : UObject::FindAll( (char*)"Class /Script/Engine.InputSettings")) {
@@ -450,17 +440,23 @@ namespace UnrealSDK
 		#ifndef UE4
 			EngineVersion = UObject::GetEngineVersion();
 			ChangelistNumber = UObject::GetBuildChangelistNumber();
-			Logging::LogD("[Internal] Engine Version = %d, Build Changelist = %d\n", EngineVersion, ChangelistNumber);
+			LOG(MISC, "[Internal] Engine Version = %d, Build Changelist = %d", EngineVersion, ChangelistNumber);
 		#else
 			//! THIS MAGICALLY BROKE :)
 			// EngineBuild = Util::Narrow(UKismetSystemLibrary::GetEngineVersion().AsString()).c_str();
 			// UE4 doesn't really have a good version of "Changelist" its effectively just in Engine Version now
-			// Logging::LogD("[Internal] Engine Version: %s\n", EngineBuild);
+			// LOG(MISC, "[Internal] Engine Version: %s", EngineBuild);
 		#endif
+
+#ifndef UE4
+		LOG(INFO, "======== UnrealEngine PythonSDK Loaded (Version %d) ========", UnrealSDK::EngineVersion);
+#else
+		LOG(INFO, "======== UnrealEngine PythonSDK Loaded (Version %s) ========", UnrealSDK::EngineBuild);
+#endif
 	}
 
 	void GenerateDumpFiles() {
-		Logging::Log("Dumping object/name data");
+		LOG(INFO, "Dumping object/name data");
 		std::ofstream file;
 		file.open("SDKDumps.txt");
 		for (size_t i = 0; i < UObject::GObjects()->Count; ++i) {
@@ -484,13 +480,13 @@ namespace UnrealSDK
 				output.append(z->GetAnsiName());
 			file << "[" << i << "]: " << output << std::endl;
 		}
-		Logging::Log("Object/name data dumped generated...");
+		LOG(INFO, "Object/name data dumped generated...");
 	}
 
 	// This function is used to ensure that everything gets called in the game thread once the game itself has loaded
 	bool GameReady(UObject* Caller, UFunction* Function, FStruct* Params)
 	{
-		Logging::LogD("[GameReady] Thread: %i\n", GetCurrentThreadId());
+		LOG(MISC, "[GameReady] Thread: %i", GetCurrentThreadId());
 
 		// This should probably done a better way, but it doesn't sink in too much time
 		remove("SDKDumps.txt");
@@ -509,7 +505,7 @@ namespace UnrealSDK
 				// Technically this is just a bandaid solution, in reality UE4EngineClasses.h should've been generated better
 				#ifndef UE4
 				ClassMap[Object->GetName()] = static_cast<UClass*>(Object);
-				#else 
+				#else
 				ClassMap[Object->GetFullName()] = static_cast<UClass*>(Object);
 				#endif
 			}
@@ -529,9 +525,6 @@ namespace UnrealSDK
 
 		file.flush();
 		file.close();
-#ifdef _DEBUG
-		Logging::InitializeExtern();
-#endif
 
 		remove("SDKNames.txt");
 		std::ofstream f;
@@ -552,8 +545,6 @@ namespace UnrealSDK
 
 		InitializeGameVersions();
 
-		Logging::PrintLogHeader();
-
 		gHookManager->Remove(Function->GetObjectName(), "StartupSDK");
 		gHookManager->Register(ObjectMap["PostRenderFunction"], "GetCanvas", getCanvasPostRender);
 
@@ -562,7 +553,6 @@ namespace UnrealSDK
 
 	void Initialize()
 	{
-		Logging::SetLoggingLevel("DEBUG");
 		gHookManager = new CHookManager("EngineHooks");
 		HookGame();
 
@@ -630,7 +620,7 @@ namespace UnrealSDK
 		return pStaticConstructObject(Class, InOuter, Name, SetFlags | 0b1, InternalSetFlags, InTemplate, CopyTransientsFromClassDefaults, InstanceGraph, AssumeTemplateIsArchetype);
 	};
 	#endif
-	
+
 
 	UObject* GetEngine()
 	{

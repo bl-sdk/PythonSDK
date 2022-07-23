@@ -172,7 +172,7 @@ public:
 	static class UObject* DynamicLoadObject(const class FString& ObjectName, class UClass* ObjectClass, bool MayFail) {
 		// TODO: Implement UE4 DynamicLoadObject
 		// See: https://docs.unrealengine.com/en-US/API/Runtime/CoreUObject/UObject/FSoftObjectPtr/index.html
-		
+
 		return nullptr;
 	}
 	void DumpObject();
@@ -305,7 +305,7 @@ public:
 	void* base;
 
 	inline FStruct(UStruct* s, void* b) {
-		Logging::LogD("Creating FStruct of type '%s' from %p\n", s->GetObjectName().c_str(), b);
+		LOG(INTERNAL, "Creating FStruct of type '%s' from %p", s->GetObjectName().c_str(), b);
 		structType = s;
 		base = b;
 	}
@@ -447,7 +447,7 @@ public:
 
 	/* Name of the function to call on the bound object */
 	struct FName FunctionName;
-	
+
 	/* Empty constructor to satisfy the compiler */
 	FScriptDelegate() { }
 
@@ -517,7 +517,7 @@ public:
 	UClass* ClassDefaultObject;
 
 	unsigned char UnknownData01[0xB6];
-	
+
 	/*
 	unsigned long		bCooked : 1;
 	FPointer			ClassAddReferencedObjects;
@@ -1053,7 +1053,7 @@ public:
 };
 
 
-// TODO: Setup stuff for FScriptSparseArray, FScriptMap, etc 
+// TODO: Setup stuff for FScriptSparseArray, FScriptMap, etc
 // I kinda hate it and its just a ton of jumps into different functions from various classes and I hate looking at it in the UE4 source
 struct FScriptSparseArrayLayout {
 	int Alignment;
@@ -1151,7 +1151,7 @@ public:
 
 	static UClass* StaticClass()
 	{
-		
+
 		static auto ptr = UObject::FindClass("Class CoreUObject.SoftObjectProperty");
 		return ptr;
 	}

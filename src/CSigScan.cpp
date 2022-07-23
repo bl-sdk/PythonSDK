@@ -26,7 +26,7 @@ CSigScan::CSigScan(const wchar_t* moduleName = NULL)
 		throw FatalSDKException(3001, Util::Format("Sigscan failed (VirtualQuery returned NULL, Error = %d)",
 			GetLastError()));
 	}
-	
+
 	m_pModuleBase = (char*)mem.AllocationBase;
 	if (m_pModuleBase == nullptr)
 	{
@@ -36,12 +36,12 @@ CSigScan::CSigScan(const wchar_t* moduleName = NULL)
 	IMAGE_DOS_HEADER* dos = (IMAGE_DOS_HEADER*)mem.AllocationBase;
 	IMAGE_NT_HEADERS* pe = (IMAGE_NT_HEADERS*)((unsigned long)dos + (unsigned long)dos->e_lfanew);
 
-	Logging::LogF("Module Handle: %X\n", m_moduleHandle);
-	Logging::LogF("Base Address: 0x%X\n", mem.BaseAddress);
-	Logging::LogF("IMAGE_DOS_HEADER: 0x%X\n", dos);
-	Logging::LogF("NEW EXE HEADER: 0x%X\n", dos->e_lfanew);
-	Logging::LogF("PE HEADER POINTER: 0x%X\n", (IMAGE_NT_HEADERS*)((unsigned long)dos + (unsigned long)dos->e_lfanew));
-	Logging::LogF("Module Base: 0x%x\n", m_pModuleBase);
+	LOG(MISC, "Module Handle: %X", m_moduleHandle);
+	LOG(MISC, "Base Address: 0x%X", mem.BaseAddress);
+	LOG(MISC, "IMAGE_DOS_HEADER: 0x%X", dos);
+	LOG(MISC, "NEW EXE HEADER: 0x%X", dos->e_lfanew);
+	LOG(MISC, "PE HEADER POINTER: 0x%X", (IMAGE_NT_HEADERS*)((unsigned long)dos + (unsigned long)dos->e_lfanew));
+	LOG(MISC, "Module Base: 0x%x", m_pModuleBase);
 
 #ifdef UE4
 	m_moduleLen = 0x21000000;
@@ -49,7 +49,7 @@ CSigScan::CSigScan(const wchar_t* moduleName = NULL)
 	m_moduleLen = (size_t)pe->OptionalHeader.SizeOfImage;
 #endif
 
-	Logging::LogF("Module Length: %x\n", m_moduleLen);
+	LOG(MISC, "Module Length: %x", m_moduleLen);
 
 }
 
@@ -86,13 +86,13 @@ void* CSigScan::Scan(const char* sig, const char* mask, int sigLength)
 
 		pData++;
 	}
-	Logging::LogF("Sigscan failed (Signature not found, Signature = %s)\n", Util::SigPatternToHex(sig, mask, sigLength).c_str());
+	LOG(MISC, "Sigscan failed (Signature not found, Signature = %s)", Util::SigPatternToHex(sig, mask, sigLength).c_str());
 	return nullptr;
 }
 
 uintptr_t CSigScan::FindPattern(HMODULE module, const unsigned char* pattern, const char* mask)
 {
-	// Originally this code used the (better solution) of calling `GetModuleInformation` but instead it magically broke on an upgrade 
+	// Originally this code used the (better solution) of calling `GetModuleInformation` but instead it magically broke on an upgrade
 	// Physically I have no absolute idea on how it of all functions broke but have a good day :)
 	uintptr_t start = reinterpret_cast<uintptr_t>(module);
 

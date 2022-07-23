@@ -13,18 +13,18 @@ bool VerifyPythonFunction(py::object funcHook, const char** expectedKeys)
 	PyObject* obj = funcHook.ptr();
 	if (!obj)
 	{
-		Logging::LogF("[Error] Object passed to hook is null\n");
+		LOG(ERROR, "[Error] Object passed to hook is null");
 		return false;
 	}
 	if (!PyFunction_Check(obj))
 	{
-		Logging::LogF("[Error] Object passed to hook is not a function\n");
+		LOG(ERROR, "[Error] Object passed to hook is not a function");
 		return false;
 	}
 	PyObject* Annotations = PyFunction_GetAnnotations(obj);
 	if (!Annotations || !PyDict_Check(Annotations))
 	{
-		Logging::LogF("[Error] Function passed to hook does not contain annotations\n");
+		LOG(ERROR, "[Error] Function passed to hook does not contain annotations");
 		return false;
 	}
 	// Python dicts aren't ordered, but we need to assume this dict is to verify the function args
@@ -32,7 +32,7 @@ bool VerifyPythonFunction(py::object funcHook, const char** expectedKeys)
 	PyObject* Values = PyDict_Values(Annotations);
 	if (!PyList_Check(Keys) || !PyList_Check(Values))
 	{
-		Logging::LogF("[Error] Function passed to hook does not contain annotations\n");
+		LOG(ERROR, "[Error] Function passed to hook does not contain annotations");
 		return false;
 	}
 	for (int x = 0; x < PyList_GET_SIZE(Keys) - 1; x++)
@@ -41,7 +41,7 @@ bool VerifyPythonFunction(py::object funcHook, const char** expectedKeys)
 		const char* KeyString = PyUnicode_AsUTF8AndSize(Key, nullptr);
 		if (strcmp(KeyString, expectedKeys[x]))
 		{
-			Logging::LogF("[Error] Got unexpected argument '%s'. Expected '%s'.\n", KeyString, expectedKeys[x]);
+			LOG(ERROR, "[Error] Got unexpected argument '%s'. Expected '%s'.", KeyString, expectedKeys[x]);
 			return false;
 		}
 	}
@@ -64,7 +64,7 @@ void RegisterHook(const std::string& funcName, const std::string& hookName, py::
 				}
 				catch (std::exception e)
 				{
-					Logging::LogF(e.what());
+					LOG(ERROR, e.what());
 				}
 				return true;
 			}
@@ -87,7 +87,7 @@ bool RegisterConsoleCommand(const std::string& ConsoleCommand, py::object funcHo
 			}
 			catch (std::exception e)
 			{
-				Logging::LogF(e.what());
+				LOG(ERROR, e.what());
 			}
 			return true;
 		}
@@ -99,6 +99,12 @@ void RemoveConsoleCommand(const std::string& ConsoleCommand) {
 }
 #endif
 
+static void ValidateLogLevel(int level) {
+	if (level < Logging::SDKVerbosity::MIN || level > Logging::SDKVerbosity::MAX) {
+		throw py::value_error("Log level out of range");
+	}
+}
+
 namespace py = pybind11;
 
 PYBIND11_EMBEDDED_MODULE(unrealsdk, m)
@@ -109,14 +115,20 @@ PYBIND11_EMBEDDED_MODULE(unrealsdk, m)
 	Export_pystes_TArray(m);
 
 	m.def("GetVersion", []() { return py::make_tuple(VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH); });
-	m.def("Log", [](py::args args) {
+	m.def("Log", [](py::args args, int level) {
+		ValidateLogLevel(level);
+
 		std::ostringstream msg;
 		for (py::size_t i = 0; i < args.size(); i++) {
 			if (i > 0) msg << " ";
 			msg << py::str(args[i]);
 		}
-		Logging::LogPy(msg.str());
-	});
+
+		PyFrameObject* frame = PyEval_GetFrame();
+		std::string filename = py::str(frame->f_code->co_filename);
+		int line_number = PyFrame_GetLineNumber(frame);
+		loguru::log(level, filename.c_str(), line_number, msg.str().c_str());
+	}, py::arg("level") = (int)Logging::SDKVerbosity::INFO);
 	m.def("LoadPackage", &UnrealSDK::LoadPackage, py::arg("filename"), py::arg("flags") = 0, py::arg("force") = false);
 	m.def("KeepAlive", &UnrealSDK::KeepAlive);
 	m.def("GetPackageObject", &UObject::GetPackageObject, py::return_value_policy::reference);
@@ -133,7 +145,6 @@ PYBIND11_EMBEDDED_MODULE(unrealsdk, m)
 	m.def("LoadObject", [](UClass* Class, char* ObjectFullName) { return UObject::Load(Class, ObjectFullName); },
 	      py::return_value_policy::reference);
 	//m.def("LoadTexture", &UnrealSDK::LoadTexture, py::return_value_policy::reference);
-	m.def("SetLoggingLevel", &Logging::SetLoggingLevel);
 	m.def("ConstructObject", &UnrealSDK::ConstructObject, "Construct Objects", py::arg("Class"),
 	      py::arg("Outer") = UnrealSDK::GetEngine()->Outer, py::arg("Name") = FName(), py::arg("SetFlags") = 0x1,
 	      py::arg("InternalSetFlags") = 0x00, py::arg("Template") = (UObject*)nullptr,
@@ -181,6 +192,16 @@ PYBIND11_EMBEDDED_MODULE(unrealsdk, m)
 	m.def("DoInjectedCallNext", &UnrealSDK::DoInjectedCallNext);
 	m.def("LogAllCalls", &UnrealSDK::LogAllCalls);
 	m.def("CallPostEdit", [](bool NewValue) { UnrealSDK::gCallPostEdit = NewValue; });
+
+	m.def("SetConsoleLogLevel", [](int level) {
+		ValidateLogLevel(level);
+		Logging::SetConsoleVerbosity((Logging::SDKVerbosity)level);
+	});
+	m.def("SetFileLogLevel", [](int level) {
+		ValidateLogLevel(level);
+		Logging::SetFileVerbosity((Logging::SDKVerbosity)level);
+	});
+	m.def("SetThreadName", loguru::set_thread_name);
 }
 
 #ifdef UE4
@@ -190,7 +211,7 @@ void CPythonInterface::AddToConsoleLog(UConsole* console, const char* input) { }
 bool CPythonInterface::RegisterConsoleCommand(const std::string& ConsoleCommand, const std::function<bool(std::string&)>& FuncHook)
 {
 	char funcNameChar[255];
-	strcpy(funcNameChar, ConsoleCommand.c_str());
+	strcpy_s(funcNameChar, sizeof(funcNameChar), ConsoleCommand.c_str());
 
 	auto iCommands = m_consoleCommandMap.find(ConsoleCommand);
 	if (iCommands != m_consoleCommandMap.end()) {
@@ -285,13 +306,13 @@ bool CheckPythonCommand(UObject* caller, UFunction* function, FStruct* params)
 	if (strncmp("py ", input, 3) == 0)
 	{
 		AddToConsoleLog((UConsole*)caller, *command);
-		Logging::LogF("\n>>> %s <<<\n", input);
+		LOG(CONSOLE, "\n>>> %s <<<", input);
 		UnrealSDK::Python->DoString(input + 3);
 	}
 	else if (strncmp("pyexec ", input, 7) == 0)
 	{
 		AddToConsoleLog((UConsole*)caller, *command);
-		Logging::LogF("\n>>> %s <<<\n", input);
+		LOG(CONSOLE, "\n>>> %s <<<", input);
 		UnrealSDK::Python->DoFile(input + 7);
 	}
 	else {
@@ -325,11 +346,11 @@ CPythonInterface::~CPythonInterface()
 PythonStatus CPythonInterface::ReloadState() {
 	try {
 		mainModule.reload();
-		Logging::Log("[Python] Successfully reloaded Python modules");
+		LOG(INFO, "[Python] Successfully reloaded Python modules");
 	}
 	catch (std::exception e) {
-		Logging::LogF("%s\n", e.what());
-		Logging::Log("[Python] Failed to reload Python modules");
+		LOG(ERROR, "%s", e.what());
+		LOG(ERROR, "[Python] Failed to reload Python modules");
 		return PythonStatus::PYTHON_MODULE_ERROR;
 	}
 	return PythonStatus::PYTHON_OK;
@@ -345,7 +366,7 @@ void CPythonInterface::InitializeState()
 	}
 	catch (std::exception e)
 	{
-		Logging::LogF("%s", e.what());
+		LOG(ERROR, "%s", e.what());
 	}
 }
 
@@ -390,11 +411,11 @@ PythonStatus CPythonInterface::InitializeModules()
 	}
 	catch (std::exception e)
 	{
-		Logging::LogF("%s\n", e.what());
-		Logging::Log("[Python] Failed to initialize Python modules\n");
+		LOG(ERROR, "%s", e.what());
+		LOG(ERROR, "[Python] Failed to initialize Python modules");
 		return PythonStatus::PYTHON_MODULE_ERROR;
 	}
-	Logging::Log("[Python] Python initialized (" PYTHON_ABI_STRING ")\n");
+	LOG(INFO, "[Python] Python initialized (" PYTHON_ABI_STRING ")");
 	m_modulesInitialized = true;
 	return PythonStatus::PYTHON_OK;
 }
@@ -405,7 +426,7 @@ void CPythonInterface::SetPaths()
 	const char* fmt = "import sys;sys.path.append(r'%s\\')";
 	size_t needed = strlen(fmt) + strlen(m_PythonPath.c_str()) - 1;
 	char* buffer = (char *)malloc(needed);
-	sprintf(buffer, fmt, m_PythonPath.c_str());
+	sprintf_s(buffer, needed, fmt, m_PythonPath.c_str());
 	DoString(buffer);
 }
 
@@ -422,7 +443,7 @@ int CPythonInterface::DoString(const char* command)
 	}
 	catch (std::exception e)
 	{
-		Logging::LogF("%s", e.what());
+		LOG(ERROR, "%s", e.what());
 	}
 	return 0;
 }
@@ -435,7 +456,7 @@ int CPythonInterface::DoFileAbsolute(const char* path)
 	}
 	catch (std::exception e)
 	{
-		Logging::LogF("%s", e.what());
+		LOG(ERROR, "%s", e.what());
 	}
 	return 0;
 }

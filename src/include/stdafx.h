@@ -53,6 +53,7 @@ namespace UnrealSDK
 }
 
 
+#include <loguru.hpp>
 #include "logging.h"
 
 #include "TypeMap.h"
@@ -111,7 +112,7 @@ namespace pybind11
 
 			static handle cast(FString src, return_value_policy /* policy */, handle /* parent */)
 			{
-				Logging::LogD("FString cast %p %d\n", src.Data, src.Count);
+				LOG(INTERNAL, "FString cast %p %d", src.Data, src.Count);
 				if (src.Data && src.Count)
 					return PyUnicode_FromWideChar(src.Data, src.Count - 1);
 				return none();

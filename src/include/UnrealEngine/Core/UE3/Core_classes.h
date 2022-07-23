@@ -1006,7 +1006,7 @@ struct FStruct
 	void		*base;
 
 	inline FStruct(UStruct* s, void* b) {
-		Logging::LogD("Creating FStruct of type '%s' from %p\n", s->GetObjectName().c_str(), b);
+		LOG(INTERNAL, "Creating FStruct of type '%s' from %p", s->GetObjectName().c_str(), b);
 		structType = s;
 		base = b;
 	}

@@ -21,7 +21,7 @@ enum class EInternalObjectFlags : int
 
 	ReachableInCluster = 1 << 23, // External reference to object in cluster exists
 	ClusterRoot = 1 << 24, // Root of a cluster
-	Native = 1 << 25, // Native (UClass only). 
+	Native = 1 << 25, // Native (UClass only).
 	Async = 1 << 26, // Object exists only on a different thread than the game thread.
 	AsyncLoading = 1 << 27, // Object is being asynchronously loaded.
 	Unreachable = 1 << 28, // Object is not reachable on the object graph.
@@ -90,14 +90,14 @@ public:
 		}
 		Data[Count++] = InputData;
 		*/
-		
+
 		if (Count + 1 > Max) {
 			// This is the equivalent of `ArrayMax = AllocatorInstance.CalculateSlackGrow(ArrayNum, ArrayMax, sizeof(ElementType));`
 			Max = CalculateSlackGrow(Count + 1, Max, sizeof(T));
 			ResizeAllocation(Count, Max, sizeof(T));
 		}
 		Data[Count++] = InputData;
-		
+
 	};
 
 	/**
@@ -275,7 +275,7 @@ struct FChunkedFixedUObjectArray
 	}
 
 	inline bool IsValid(FUObjectItem* ObjectItem, bool bEvenIfPendingKill = true) {
-		if (ObjectItem) 
+		if (ObjectItem)
 			return bEvenIfPendingKill ? !ObjectItem->IsUnreachable() : !(ObjectItem->IsUnreachable() || ObjectItem->IsPendingKill());
 		return false;
 	}
@@ -387,7 +387,7 @@ public:
 		FName output = ((UnrealSDK::UE4FNameInit)(UnrealSDK::pFNameInit))(Util::Widen(FindName).c_str(), 0, 1);
 		*this = output;
 
-		Logging::LogD("Made FName; Index: %d, Number: %d, Name: %s\n", Index, Number, GetName());
+		LOG(INTERNAL, "Made FName; Index: %d, Number: %d, Name: %s", Index, Number, GetName());
 	}
 
 	FName(const std::string& FindName, int number)
@@ -410,7 +410,7 @@ public:
 	{
 		if (Index < 0 || Index > Names()->Count)
 			return "UnknownName";
-		
+
 		const char* ansi = Names()->Get(Index)->GetAnsiName();
 		return ansi;
 		/*
@@ -419,7 +419,7 @@ public:
 			char* buf = new char[strlen(ansi) + 11];
 			strcpy(buf, ansi);
 			strcat(buf, "_");
-			
+
 			char numBuf[10];
 			sprintf(numBuf, "%d", Number - 1);
 			strcat(buf, numBuf);
@@ -623,8 +623,8 @@ public:
 	unsigned char UnknownData1[24]; /* Unknown Data */
 
 
-	/* 
-		The actual FText data, stored as an FString 
+	/*
+		The actual FText data, stored as an FString
 		Offset by 8 if the text is culturally invariant
 	*/
 	class FString SourceString;
@@ -663,14 +663,14 @@ public:
 struct FText {
 	unsigned char UnknownData[0x8]; // Unknown
 
-	FTextHistory* Data; 
+	FTextHistory* Data;
 
 	uint32_t Flags; /* Flags with various information on what sort of FText this is, see: ETextFlag::Type */
 
 	const wchar_t* ToString() {
 		if (Data) {
 			FString* result = GetFString();
-			if (result != nullptr && result->IsValid()) 
+			if (result != nullptr && result->IsValid())
 				return result->AsString();
 		}
 		return nullptr;
@@ -731,7 +731,7 @@ public:
 
 		UObject* obj = objItem->Object;
 		// imo its not a good idea to give out an object that's in the process of getting destroyed (or near to it atleast)
-		if (FUObjectArray::GObjects()->IsValid(objItem, false)) 
+		if (FUObjectArray::GObjects()->IsValid(objItem, false))
 			return obj;
 		return nullptr;
 	}

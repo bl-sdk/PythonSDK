@@ -22,29 +22,33 @@ DWORD WINAPI Start(LPVOID lpParam)
 
 	SetExecutableFolder();
 	Settings::Initialize(exeBaseFolder);
-	Logging::InitializeFile(Settings::GetLogFilePath());
 
-	Logging::LogF("======= Unreal Engine Python Loader =======\n");
+	Logging::Initalize();
+#ifdef _DEBUG
+	Logging::InitalizeExternal();
+#endif
+
+	LOG(INFO, "======= Unreal Engine Python Loader =======");
 	try {
 		UnrealSDK::Initialize();
 	}
 	catch (const std::runtime_error& re)
 	{
 		// speciffic handling for runtime_error
-		Logging::LogF("Runtime error: %s", re.what());
+		LOG(ERROR, "Runtime error: %s", re.what());
 	}
 	catch (const std::exception& ex)
 	{
 		// speciffic handling for all exceptions extending std::exception, except
 		// std::runtime_error which is handled explicitly
-		Logging::LogF("Error occurred: %s", ex.what());
+		LOG(ERROR, "Error occurred: %s", ex.what());
 	}
 	catch (...)
 	{
 		// catch any other errors (that we have no information about)
-		Logging::LogF("Unknown failure occurred. Possible memory corruption");
+		LOG(ERROR, "Unknown failure occurred. Possible memory corruption");
 	}
-	
+
 
 	return 0;
 }
